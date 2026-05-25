@@ -1,0 +1,163 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "FRANCE QURE",
+      "bbox": {
+        "x_pct": 20.698,
+        "y_pct": 53.64,
+        "w_pct": 7.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page header / artifact"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de lintime ou de find\u0000termination; faisant part \u0000 lunicit\u0000 de chaque visage; son caract\u0000re de surpri",
+      "bbox": {
+        "x_pct": 20.698,
+        "y_pct": 9.203,
+        "w_pct": 33.581,
+        "h_pct": 4.499
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lultime respect d\u0000 \u0000 lhomme se marque dans la distance que prend humblement son semblable, ave",
+      "bbox": {
+        "x_pct": 20.591,
+        "y_pct": 14.249,
+        "w_pct": 33.735,
+        "h_pct": 12.101
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "78",
+      "bbox": {
+        "x_pct": 23.209,
+        "y_pct": 84.763,
+        "w_pct": 1.149,
+        "h_pct": 1.186
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les fondements des Droits de Phomme dans la conscience individuelle",
+      "bbox": {
+        "x_pct": 60.637,
+        "y_pct": 11.877,
+        "w_pct": 27.177,
+        "h_pct": 4.46
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne HERSCH",
+      "bbox": {
+        "x_pct": 60.665,
+        "y_pct": 17.984,
+        "w_pct": 9.907,
+        "h_pct": 1.957
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "es efforts d\u0000ploy\u0000s par ceux luttent aujourdhui pour Droits de L lhomme me paraissent r\u0000pondre ava",
+      "bbox": {
+        "x_pct": 60.433,
+        "y_pct": 35.178,
+        "w_pct": 33.786,
+        "h_pct": 11.838
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut bien constater que ce double souci comporte souvent une contradiction dans la mesure toujour",
+      "bbox": {
+        "x_pct": 60.372,
+        "y_pct": 48.221,
+        "w_pct": 33.814,
+        "h_pct": 7.642
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette contradiction nest pas fortuite elle tient \u0000 la condition humaine elle-m\u0000me. Lexigence des",
+      "bbox": {
+        "x_pct": 60.386,
+        "y_pct": 56.739,
+        "w_pct": 33.767,
+        "h_pct": 7.312
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La juridicit\u0000 des Droits et celle des conditions concr\u0000tes n\u0000cessaires \u0000 leur exercice s'excluent",
+      "bbox": {
+        "x_pct": 60.358,
+        "y_pct": 65.264,
+        "w_pct": 33.795,
+        "h_pct": 9.065
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest ce explique, je pense, que le travail sur les paragraphes et le souci de leur efficacit\u0000 finiss",
+      "bbox": {
+        "x_pct": 60.293,
+        "y_pct": 75.099,
+        "w_pct": 33.893,
+        "h_pct": 7.444
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "79",
+      "bbox": {
+        "x_pct": 90.0,
+        "y_pct": 84.7,
+        "w_pct": 1.149,
+        "h_pct": 1.186
+      },
+      "changed": true,
+      "change_reason": "Detected page number 79"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Page number 78 was mislabeled as text.",
+    "Page number 79 was not detected.",
+    "Running header FRANCE QUERE was missed."
+  ],
+  "doc_id": "2670",
+  "page": 1,
+  "elapsed_seconds": 6.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "252",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 14.39,
+        "w_pct": 2.22,
+        "h_pct": 1.63
+      },
+      "changed": true,
+      "change_reason": "Page number identified as header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "J. MARIAS",
+      "bbox": {
+        "x_pct": 44.8,
+        "y_pct": 14.54,
+        "w_pct": 10.36,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Running header identified."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qu'elles-mêmes. Lorsqu'on essaie de connaître des réalités qui intéressent par elles-mémes, qui sont irréductibles, l'explication ne sert plus. C'est le cas de la vie humaine et de l'histoire. De Kierkegaard à Nietzsche, William James, Dilthey, Bergson, Unamuno, Spengler, la pensée a abandonné la raison -- identifiée à tort avec une de ses formes -- pour tomber dans l'irrationalisme.",
+      "bbox": {
+        "x_pct": 14.99,
+        "y_pct": 17.109,
+        "w_pct": 69.232,
+        "h_pct": 10.713
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le seul inconvénient important de l'irrationalisme est son impossibilité. L'homme a besoin de la raison pour vivre, parce que sa vie, si elle lui est donnée, n'est pas faite mais à faire, comme une tâche. L'homme doit choisir parmi les possibilités des circonstances, de sa situation, et il ne peut le faire qu'en justifiant son choix, c'est-à-dire en rendant compte de la réalité qui l'entoure. Or, c'est là précisément la fonction originelle de la raison : λόγον διδόναι, disaient Hérodote et Platon. L'homme doit saisir la réalité dans son interconnexion, et cela veut dire raisonner.",
+      "bbox": {
+        "x_pct": 15.133,
+        "y_pct": 27.544,
+        "w_pct": 69.293,
+        "h_pct": 15.492
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, c'est la vie humaine elle-même qui nous fait comprendre, instrumentum reddendi rationem. On comprend quelque chose dès qu'on lui fait remplir un rôle dans sa vie. C'est la signification de la raison vitale, dont Ortega a fait le pivot et la méthode de sa philosophie, et que j'ai étudiée dans plusieurs de mes livres 1. La raison vitale est une raison narrative, qui se fonde sur une analytique universelle et relativement abstraite, dégagée de l'analyse de la vie humaine concrète. La narration est, pour les réalités humaines, ce qui correspond à l'énoncé ou statement. On ne comprend ce qui a rapport à l'homme qu'en racontant une histoire.",
+      "bbox": {
+        "x_pct": 15.133,
+        "y_pct": 42.992,
+        "w_pct": 69.6,
+        "h_pct": 18.706
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais nous avons vu que la vie humaine individuelle est intrinsèquement historique et sociale. Cela veut dire qu'elle est « faite de temps historique », qu'elle se trouve toujours à un certain niveau, donc que la raison vitale devient, si on la considère dans son caractère concret, raison historique. Il ne s'agit pas de la raison appliquée",
+      "bbox": {
+        "x_pct": 15.471,
+        "y_pct": 61.806,
+        "w_pct": 69.293,
+        "h_pct": 8.668
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Cf. Introduccion a la Filosofia, 1947 (trad. anglaise : Reason and Life : the Introduction to Philosophy, Yale University Press, New Haven ; Hollis & Carter, London, 1956 ; trad. portugaise : Introdução à Filosofia, Livraria Duas Cidades, São Paulo, 1960). Idea de la Metafisica. Ortega. I : Circunslancia y vocacion, 1960. Cf. aussi Philosophes espagnols de notre temps, Aubier, Paris, 1954.",
+      "bbox": {
+        "x_pct": 15.748,
+        "y_pct": 72.475,
+        "w_pct": 68.986,
+        "h_pct": 7.746
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to footnote as it is a bibliographic citation block."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number at top was incorrectly labeled as paragraph.",
+    "Running header J. MARIAS was incorrectly labeled as paragraph.",
+    "Bibliographic block at bottom was labeled as list_item instead of footnote.",
+    "OCR quality is poor/fragmented in some areas, manual correction of text content implied for logical flow."
+  ],
+  "doc_id": "540",
+  "page": 24,
+  "elapsed_seconds": 6.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

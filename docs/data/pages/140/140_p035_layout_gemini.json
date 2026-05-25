@@ -1,0 +1,156 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "116",
+      "bbox": {
+        "x_pct": 12.396,
+        "y_pct": 2.0,
+        "w_pct": 4.545,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 23.958,
+        "y_pct": 2.0,
+        "w_pct": 52.841,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JIUe Hersch.",
+      "bbox": {
+        "x_pct": 12.622,
+        "y_pct": 16.826,
+        "w_pct": 17.692,
+        "h_pct": 2.091
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je constate simplement. Je nai_pas le problème de ces  plans. Je constate qu'ils sont là. Et, comme ",
+      "bbox": {
+        "x_pct": 12.161,
+        "y_pct": 19.162,
+        "w_pct": 74.358,
+        "h_pct": 21.749
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a des conflits possibles, et les modes sont tout de même séparés. Ce que le savant cherche, c'est une totalité physique; mais l'être auquel il se réfère, c'est l'Etre : il veut atteindre ce qui est, et non pas un aspect ou une partie de ce qui est. Vous croyez qu'il se contente de chercher un aspect ?",
+      "bbox": {
+        "x_pct": 12.558,
+        "y_pct": 40.85,
+        "w_pct": 73.564,
+        "h_pct": 12.141
+      },
+      "changed": true,
+      "change_reason": "ADDED: text block in between"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le même.",
+      "bbox": {
+        "x_pct": 12.558,
+        "y_pct": 53.685,
+        "w_pct": 10.606,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing section start text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui, je le erois.",
+      "bbox": {
+        "x_pct": 17.359,
+        "y_pct": 56.581,
+        "w_pct": 22.595,
+        "h_pct": 2.205
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mlle Hersch.",
+      "bbox": {
+        "x_pct": 12.5,
+        "y_pct": 59.5,
+        "w_pct": 20.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing section header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En théorie, les physiciens modernes limitent énormément leurs exigences et leurs prétentions. Mais e",
+      "bbox": {
+        "x_pct": 13.176,
+        "y_pct": 61.726,
+        "w_pct": 73.343,
+        "h_pct": 18.519
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le même.",
+      "bbox": {
+        "x_pct": 13.666,
+        "y_pct": 81.442,
+        "w_pct": 13.573,
+        "h_pct": 1.92
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais je crois que la   pbysique modernc, c'est cela !",
+      "bbox": {
+        "x_pct": 13.666,
+        "y_pct": 82.866,
+        "w_pct": 72.946,
+        "h_pct": 4.541
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing section header before final Mlle Hersch",
+    "Missing text block between paragraphs",
+    "Missing page header/footer regions"
+  ],
+  "doc_id": "140",
+  "page": 35,
+  "elapsed_seconds": 9.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 5
+  }
+}

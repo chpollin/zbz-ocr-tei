@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Institutionen etwas Äußeres, Bürokratisches, ziemlich Lebloses. Sie haben zunächst nicht viel Gemeinsames mit dem wilden Ursprung jener Instanz. Vielleicht weniger als ein menschlicher Tyrann, der eben ein Mensch ist, der die Fähigkeit hat, zu wollen. Und man kann sich zu ihm verhalten wie zu einem Menschen, der einen Willen hat. Gesetze und Institutionen aber sind unpersönlich. Und sie sind nie vollkommen, nie endgültig, nie absolut. Sie sind nicht von Gott her wie der König von Frankreich. Man muß Sokrates sein, um die Ehrfurcht zu haben, für solche Gesetze zu sterben, wie er es tat, als er sagte: „Die Gesetze sind mein Vater und meine Mutter . . .“ usw. Man muß Sokrates sein und seine Ebene der Weisheit erreicht haben, um in diesen Gesetzen und Institutionen, die so nüchtern aussehen und sowenig Anziehungskraft besitzen, die so relativ sind und so veränderlich, einen Abglanz von etwas Absolutem zu sehen, das sie eben ermöglichen und schützen. Wenn man diese Situation klar sieht, dann versteht man auch, wie groß die Widersprüche und Paradoxien in der Einstellung der Menschen zu den demokratischen Institutionen sind, die in der Geschichte weiterwirken und durch die die Französische Revolution unvergessen bleibt.",
+      "bbox": {
+        "x_pct": 6.614,
+        "y_pct": 8.882,
+        "w_pct": 87.302,
+        "h_pct": 34.0
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Auf der einen Seite gibt es die Gesetze und die Institutionen, auf der anderen Seite jene Freiheit, jene autonome innere Instanz. Und statt sich gegenseitig zu bedingen, zu stärken und zu rechtfertigen, ist es oft umgekehrt: sie entleeren einander wechselseitig. Die Gesetze und Institutionen fallen dann zurück in die leblosen Ketten der Kräfteverhältnisse: und die Freiheit, die innere Instanz sucht sich, außerhalb von jenen Gesetzen und Institutionen, etwas Absolutes, was ihr ermöglicht, in dessen Namen diese Gesetze zu verachten und noch mehr zu entheiligen. Oder, und das ist eine zweite Möglichkeit, wenn die Menschen bestimmte äußere Freiheit genießen, dann besteht die Gefahr, daß jene innere Instanz sich entleert, ihren Sinn und ihre Substanz verliert, so daß Gesetze und Institutionen, deren Grund und Funktion es ist, diese Freiheit zu schützen, ihren Sinn gänzlich verlieren. Dann ist man in der Sinnlosigkeit. Sinnlosigkeit und Leere sind die zwei größten Gefahren, die einer demokratischen Struktur drohen können.",
+      "bbox": {
+        "x_pct": 7.579,
+        "y_pct": 42.58,
+        "w_pct": 86.733,
+        "h_pct": 28.176
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and layout classification."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Freiheit hat sozusagen zwei Seiten, das Wort „Freiheit“ ist zweideutig. Einerseits bezeichnet es die Freiheit, die wir in einem freiheitlichen Land genießen, wo das Wort „Freiheit“ auf all den öffentlichen Gebäuden steht. Freiheit ist dann der „leere Raum“, der Staat um jeden individuellen Menschen schützt und der ihm zur Verfügung steht, so daß er ihn mit seiner eigenen Substanz füllen kann. Man macht oft dem demokratischen oder republikanischen Regime den Vorwurf, daß sie keinen Glauben haben, keine Ethik, überhaupt nichts, daß sie einfach funktionieren – und erhabene Geister wollen mehr.",
+      "bbox": {
+        "x_pct": 7.672,
+        "y_pct": 70.731,
+        "w_pct": 86.772,
+        "h_pct": 16.891
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and formatting."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "68",
+      "bbox": {
+        "x_pct": 75.0,
+        "y_pct": 898.0,
+        "w_pct": 26.0,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Corrected labeling of page number from text to page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was severely truncated or misparsed in the provided labels.",
+    "Page number 68 was incorrectly tagged as paragraph text."
+  ],
+  "doc_id": "2660",
+  "page": 9,
+  "elapsed_seconds": 4.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

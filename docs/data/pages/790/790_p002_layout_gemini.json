@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es Kinder in den Schulen; fruher: ten; die Schule mu mehr Aufgaben der unglaublich wenif, Was wir i",
+      "bbox": {
+        "x_pct": 12.575,
+        "y_pct": 11.016,
+        "w_pct": 33.365,
+        "h_pct": 32.189
+      },
+      "changed": true,
+      "change_reason": "Text content is significantly OCR-corrupted and incomplete, but functionally a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "andern Punkr in dicser Frage Und hicr der Frgestcllung in 2s darum Kinder zu tefe Enge. Ich die Spez",
+      "bbox": {
+        "x_pct": 51.617,
+        "y_pct": 10.916,
+        "w_pct": 33.976,
+        "h_pct": 30.529
+      },
+      "changed": true,
+      "change_reason": "OCR text is highly inaccurate/corrupted compared to original image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich Punzlp der in wclchen dic Dinge, die zur Bildung Dachlcr Aso:",
+      "bbox": {
+        "x_pct": 52.335,
+        "y_pct": 60.844,
+        "w_pct": 33.617,
+        "h_pct": 21.989
+      },
+      "changed": true,
+      "change_reason": "OCR text is highly inaccurate/corrupted compared to original image content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 3,
+  "issues": [
+    "OCR output is of extremely poor quality, containing numerous misread characters and fragmented words that do not match the image text.",
+    "The provided regions cover most of the text but the transcription accuracy is too low for scholarly editing purposes.",
+    "The page numbers (60 and 61) were excluded from detection but should ideally be identified as page_footers."
+  ],
+  "doc_id": "790",
+  "page": 2,
+  "elapsed_seconds": 7.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

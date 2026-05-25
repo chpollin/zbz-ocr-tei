@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SECONDE PARTIE",
+      "bbox": {
+        "x_pct": 32.274,
+        "y_pct": 22.431,
+        "w_pct": 36.506,
+        "h_pct": 2.574
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Histoire de l'illusion philosophique",
+      "bbox": {
+        "x_pct": 21.235,
+        "y_pct": 27.645,
+        "w_pct": 57.334,
+        "h_pct": 2.955
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label to section_header as it is a subtitle/chapter group heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE V",
+      "bbox": {
+        "x_pct": 40.407,
+        "y_pct": 40.038,
+        "w_pct": 22.952,
+        "h_pct": 2.316
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Destruction de l'illusion à travers l'histoire",
+      "bbox": {
+        "x_pct": 17.515,
+        "y_pct": 44.995,
+        "w_pct": 65.663,
+        "h_pct": 2.097
+      },
+      "changed": true,
+      "change_reason": "Labeled as section_header because it is the chapter title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si la philosophie est et doit nécessairement être bâtie sur un paradoxe, si elle repose nécessairement sur une illusion qui ne diminue pourtant en rien sa vérité, que devient-elle une fois qu'elle a découvert le paradoxe et l'illusion et qu'elle les a reconnus inévitables et nécessaires? Il est clair qu'une telle découverte ne peut pas rester sans conséquences : une illusion dévoilée n'en est plus une; et si vraiment la philosophie dépend d'une illusion, que devient-elle après l'avoir décelée? Je n'espère pas répondre à cette question. Je me propose seulement, dans cette partie de mon étude, d'examiner à travers l'histoire de la philosophie quel a été le rapport entre la vérité explicite et la vérité métaphysique. J'essayerai de faire à grands traits l'histoire de l'illusion",
+      "bbox": {
+        "x_pct": 11.852,
+        "y_pct": 50.4,
+        "w_pct": 76.506,
+        "h_pct": 38.608
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match the full paragraph text."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction for paragraph was truncated.",
+    "Subtitle 'Histoire de l'illusion philosophique' was incorrectly labeled as paragraph.",
+    "Chapter subtitle 'Destruction de l'illusion à travers l'histoire' was incorrectly labeled as paragraph."
+  ],
+  "doc_id": "20",
+  "page": 108,
+  "elapsed_seconds": 5.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

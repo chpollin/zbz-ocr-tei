@@ -1,0 +1,100 @@
+/*
+ * Hersch Design Tokens
+ * Single Source of Truth fuer Farben, Typo, Spacing.
+ * Implementiert das Jeanne Hersch Design System v1.1.
+ */
+:root {
+  /* ---- Palette ---- */
+  --h-bg:               #F5F0E8;
+  --h-bg-alt:           #EDE6D8;
+  --h-surface:          #FAFAF7;
+  --h-bg-inverse:       #2C2825;
+
+  --h-anthrazit:        #2C2825;
+  --h-anthrazit-light:  #3D3835;
+  --h-ziegelrot:        #8B3A3A;
+  --h-ziegelrot-light:  #A85454;
+  --h-ziegelrot-subtle: rgba(139, 58, 58, 0.08);
+  --h-preussischblau:   #2B4C7E;
+  --h-preussischblau-light: #3D6199;
+  --h-preussischblau-subtle: rgba(43, 76, 126, 0.08);
+  --h-olivgruen:        #6B7B5E;
+  --h-olivgruen-subtle: rgba(107, 123, 94, 0.08);
+
+  /* ---- Text ---- */
+  --h-text:             #2C2825;
+  --h-text-secondary:   #5C554E;
+  --h-text-muted:       #8A8279;
+  --h-text-inverse:     #F5F0E8;
+
+  /* ---- Borders + Shadow ---- */
+  --h-border:           rgba(44, 40, 37, 0.12);
+  --h-border-emphasis:  rgba(44, 40, 37, 0.25);
+  --h-border-accent:    rgba(139, 58, 58, 0.3);
+  --h-shadow:           rgba(44, 40, 37, 0.06);
+
+  /* ---- Status (Layout-Region-Typen) ---- */
+  --h-heading:          var(--h-ziegelrot);
+  --h-paragraph:        var(--h-anthrazit-light);
+  --h-footnote:         var(--h-preussischblau);
+  --h-caption:          var(--h-olivgruen);
+  --h-filter:           #8A8279;
+  --h-skip:             #C2BBB1;
+
+  /* ---- Typography ---- */
+  --h-font-body:    'EB Garamond', Garamond, Georgia, serif;
+  --h-font-heading: 'Jost', Futura, 'Gill Sans', sans-serif;
+  --h-font-mono:    'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* Type Scale (Kleine Terz, Ratio 1.2) */
+  --h-xs:  0.694rem;
+  --h-sm:  0.833rem;
+  --h-base: 1rem;
+  --h-lg:  1.2rem;
+  --h-xl:  1.44rem;
+  --h-2xl: 1.728rem;
+  --h-3xl: 2.074rem;
+
+  --h-line:         1.55;
+  --h-line-tight:   1.35;
+  --h-tracking-caps: 0.08em;
+
+  /* ---- Spacing (4px-Grid) ---- */
+  --h-space-xs:  0.25rem;
+  --h-space-sm:  0.5rem;
+  --h-space-md:  1rem;
+  --h-space-lg:  1.5rem;
+  --h-space-xl:  2rem;
+  --h-space-2xl: 3rem;
+
+  /* ---- Layout ---- */
+  --h-radius-sm: 2px;
+  --h-radius:    4px;
+  --h-radius-lg: 6px;
+
+  --h-shadow-sm: 0 1px 2px var(--h-shadow);
+  --h-shadow-md: 0 2px 8px var(--h-shadow);
+
+  --h-transition:      200ms ease;
+  --h-transition-fast: 120ms ease;
+
+  /* ---- Viewer-spezifisch ---- */
+  --v-sidebar-width:    280px;
+  --v-header-height:    56px;
+  --v-toolbar-height:   44px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --h-bg:               #1F1B18;
+    --h-bg-alt:           #2A2522;
+    --h-surface:          #25201C;
+    --h-text:             #E8DFD2;
+    --h-text-secondary:   #B5A99A;
+    --h-text-muted:       #7A7268;
+    --h-text-inverse:     #2C2825;
+    --h-border:           rgba(232, 223, 210, 0.12);
+    --h-border-emphasis:  rgba(232, 223, 210, 0.25);
+    --h-shadow:           rgba(0, 0, 0, 0.3);
+  }
+}

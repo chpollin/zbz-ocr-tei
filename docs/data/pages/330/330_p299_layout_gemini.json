@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 265",
+      "bbox": {
+        "x_pct": 29.8,
+        "y_pct": 8.7,
+        "w_pct": 58.7,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "aux yeux des hommes et des gouvernements « de gauche », du mot « nationalisation ». Il semblait impossible, même hors de toute considération juridique touchant la souveraineté égyptienne, d'attaquer cette mesure du colonel Nasser sans paraître prendre la défense des actionnaires de la Compagnie du Canal, donc sans se solidariser avec les capitalistes. On aurait pu pourtant faire valoir qu'une nationalisation n'est une mesure démocratique que dans la mesure où les biens nationalisés sont réellement remis à une autorité responsable devant le peuple, dans la mesure donc où leur gestion est soumise à un contrôle démocratique. Tel n'est pas et ne peut pas être le cas sous un régime dictatorial comme l'est aujourd'hui celui de l'Égypte.",
+      "bbox": {
+        "x_pct": 3.343,
+        "y_pct": 11.408,
+        "w_pct": 84.916,
+        "h_pct": 25.553
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais, rien mieux que l'émoi provoqué par le coup unilatéral de Suez ne pouvait faire apparaître à quel point la politique occidentale, basée sur l'ancienne « morale internationale » des États souverains absolus, repose désormais sur des fictions. On s'est aperçu soudain que ce puissant Commonwealth auquel la Grande-Bretagne n'a cessé de sacrifier l'Union européenne, dépendait de quelques minces articulations vulnérables, et qu'il suffirait de bloquer l'une ou l'autre pour réduire ce grand corps à la paralysie et bientôt au chaos. S'est aperçu qu'il suffirait d'une mesure égyptienne pour que ces fiers États souverains sentent se figer leurs industries et tout le sang de leurs veines. Aucun pays ne peut se vanter d'être autarcique, non seulement quant à sa plus ou moins grande prospérité, mais pour ce qui touche à ses nécessités vitales elles-mêmes. Enfin la faiblesse et la dépendance des États européens - Grande-Bretagne comprise - devant le monde islamique et celui du communisme est apparue plus grande que nul n'eût pu le craindre. Tirera-t-on les conséquences de ces faits? Renoncera-t-on à des souverainetés presque purement verbales et décoratives au profit d'une Communauté européenne permettant aux peuples d'Europe de disposer d'eux-mêmes avec la dignité et l'indépendance qui, sur le plan national, leur sont désormais refusées? L'avenir le dira.",
+      "bbox": {
+        "x_pct": 3.76,
+        "y_pct": 35.98,
+        "w_pct": 85.613,
+        "h_pct": 45.098
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est tout de même la déstalinisation qui a été, au de vue idéologique, le réactif le plus efficace.",
+      "bbox": {
+        "x_pct": 4.22,
+        "y_pct": 83.182,
+        "w_pct": 85.014,
+        "h_pct": 4.608
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Demandons-nous d'abord ce que recouvre ce mot dans l'esprit",
+      "bbox": {
+        "x_pct": 7.563,
+        "y_pct": 87.282,
+        "w_pct": 81.95,
+        "h_pct": 2.317
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Raw OCR text was extremely poor for several blocks.",
+    "Page header was misclassified as text.",
+    "Multiple typos in OCR content requiring manual correction."
+  ],
+  "doc_id": "330",
+  "page": 299,
+  "elapsed_seconds": 9.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

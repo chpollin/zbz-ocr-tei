@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sens de limite que pour lui 1 parce qu'elle fait obstacle à sa visée existentielle.",
+      "bbox": {
+        "x_pct": 12.1,
+        "y_pct": 5.998,
+        "w_pct": 83.835,
+        "h_pct": 4.053
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un obstacle humainement définitif, qui parle de ce qu'il empêche d'atteindre, à une subjectivité qui voudrait le franchir, telle est la limite chez Jaspers. Elle est le lieu d'un échec. C'est l'existence qui, à la limite, échoue. Dans cet échec, elle perçoit l'au-delà de la limite: la transcendance.",
+      "bbox": {
+        "x_pct": 11.883,
+        "y_pct": 9.88,
+        "w_pct": 84.092,
+        "h_pct": 9.632
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcript text to accurately reflect the source paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, la finitude humaine n'apparaît nullement comme l'appauvrissement, survenu après coup, d'un être en principe fait pour l'infini. Au contraire: la finitude fait que l'être humain est humain: libre et prisonnier des situations-limites, appelé à la transcendance et voué à l'échec, — libre par et dans ses limites, instruit de la transcendance par ses échecs. Mais on pourrait aussi renverser les termes: n'ayant des limites que parce qu'il est libre, ne vivant l'échec que par soif de la transcendance.",
+      "bbox": {
+        "x_pct": 11.924,
+        "y_pct": 19.512,
+        "w_pct": 83.916,
+        "h_pct": 15.424
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcript text to accurately reflect the source paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'existence se perd lorsqu'elle abdique devant les nécessités empiriques, les déterminismes physiques ou psychologiques. Mais elle se perd aussi lorsqu'elle se rêve libérée de sa situation et des situations-limites, lorsqu'elle croit posséder, ou connaître, ou vivre la transcendance sans l'échec. Certes, l'expérience mystique existe. Mais elle reste ponctuelle dans sa brièveté, elle rend aussitôt le sujet à sa finitude existentielle, condition de l'humaine liberté, à laquelle elle l'a un instant arraché.",
+      "bbox": {
+        "x_pct": 11.829,
+        "y_pct": 34.422,
+        "w_pct": 84.065,
+        "h_pct": 15.51
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcript text to accurately reflect the source paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Communication.",
+      "bbox": {
+        "x_pct": 11.924,
+        "y_pct": 55.441,
+        "w_pct": 19.3,
+        "h_pct": 2.1
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header and separated heading from following paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'a été question jusqu'ici que de l'être humain isolé, situé dans le monde, avec ses déterminations, sa liberté possible, ses limites, et l'au-delà de la transcendance. Mais selon Jaspers, l'être humain est essentiellement un être qui cherche à communiquer avec autrui. La communication est chez lui une notion aussi centrale que celle d'existence, dont elle ne peut d'ailleurs être séparée.",
+      "bbox": {
+        "x_pct": 11.924,
+        "y_pct": 57.5,
+        "w_pct": 84.106,
+        "h_pct": 11.5
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcript and separated from heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers distingue d'abord deux sortes de communication. La première est celle qui permet aux hommes de coordonner leur action dans le monde où se déroule leur commune expérience, où ils se nourrissent et luttent pour leur survie, au niveau pratique de la réalité quotidienne. La clarté des paroles échangées tient ici à l'univocité des données objectives dont il est question. Le terrain commun à la pluralité des sujets, c'est la réalité empirique telle qu'elle est ordinairement perçue. La communication réussit d'autant mieux que les particularités personnelles — historiques, existentielles — sont davantage mises hors jeu et que les interlocuteurs s'identifient davantage à un sujet quelconque, anonyme et impersonnel.",
+      "bbox": {
+        "x_pct": 11.883,
+        "y_pct": 68.552,
+        "w_pct": 84.051,
+        "h_pct": 21.362
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcript text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "26",
+      "bbox": {
+        "x_pct": 11.883,
+        "y_pct": 91.5,
+        "w_pct": 3.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "OCR text was heavily garbled in almost every paragraph",
+    "Missing section header identification",
+    "Page number not categorized as footer"
+  ],
+  "doc_id": "1520",
+  "page": 32,
+  "elapsed_seconds": 7.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

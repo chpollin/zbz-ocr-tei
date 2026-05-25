@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME 113",
+      "bbox": {
+        "x_pct": 10.748,
+        "y_pct": 9.471,
+        "w_pct": 68.688,
+        "h_pct": 1.458
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header detected"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lence esl spiriluellemenl constante   inaperçue. Il n'en est   que vrai qu'elle fait partie de la mo",
+      "bbox": {
+        "x_pct": 10.748,
+        "y_pct": 12.073,
+        "w_pct": 68.688,
+        "h_pct": 9.188
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si la notion  dexistence réelle implique en elle-même une valeur; simplemenl réel est, et si la form",
+      "bbox": {
+        "x_pct": 10.552,
+        "y_pct": 23.364,
+        "w_pct": 68.769,
+        "h_pct": 49.985
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "8 L'Etre et la Forme.",
+      "bbox": {
+        "x_pct": 13.774,
+        "y_pct": 75.042,
+        "w_pct": 17.871,
+        "h_pct": 1.215
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region in original",
+    "Incorrect label for footnote"
+  ],
+  "doc_id": "110",
+  "page": 115,
+  "elapsed_seconds": 3.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label to footnote": 1,
+    "ADDED": 1
+  }
+}

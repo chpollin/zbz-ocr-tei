@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Grundlage; zur theoretischen Voraussetzung für alle weitere Kritik.",
+      "bbox": {
+        "x_pct": 14.988,
+        "y_pct": 7.88,
+        "w_pct": 65.294,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it serves as a heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn aber die Religion aufhören sollte, «der Seufzer der bedrängten Kreatur» zu sein, dann mußte die «Kritik des Himmels» in die «Kritik der Erde», die «Kritik der Religion» in die «Kritik des Rechts», die «Kritik der Theologie» in die «Kritik der Politik» verwandelt werden, sagte Marx.",
+      "bbox": {
+        "x_pct": 14.988,
+        "y_pct": 9.907,
+        "w_pct": 65.294,
+        "h_pct": 10.266
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and removed redundant section header inclusion."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Damit wollen wir die philosophiehistorische Argumentation verlassen, um ein weiteres Argument aufzugreifen, das humanistische. Eine der «Geschichten von Herrn Keuner» von Brecht geht folgendermaßen:",
+      "bbox": {
+        "x_pct": 14.827,
+        "y_pct": 20.369,
+        "w_pct": 65.407,
+        "h_pct": 7.454
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "«Einer fragte Herrn K., ob es einen Gott gäbe. Herr K. sagte: ,Ich rate dir, nachzudenken, ob dein Verhalten je nach der Antwort auf diese Frage sich ändern würde. Würde es sich nicht ändern, dann können wir die Frage fallen lassen. Würde es sich ändern, dann kann ich dir wenigstens noch so weit behilflich sein, daß ich dir sage, du hast dich schon entschieden: Du brauchst einen Gott.›»",
+      "bbox": {
+        "x_pct": 17.913,
+        "y_pct": 29.127,
+        "w_pct": 62.401,
+        "h_pct": 7.524
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete/corrupted text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erforderlich ist hierfür die Gegenüberstellung von spätbürgerlicher Philosophie und dialektischem Materialismus hinsichtlich unseres Problems. Es zeigt sich nämlich, daß die atheistische Erbschaft auch bei der spätbürgerlichen Philosophie auf Interesse gestoßen ist. Ich nenne zunächst wieder einige Namen: Schopenhauer, Kierkegaard, Nietzsche, Sartre. Schopenhauer, der das Christentum entschieden ablehnte, den Theismus eine «Idololatrie» nannte, betrachtete die Religion als eine Angelegenheit für den «großen Haufen», als «die Metaphysik des Volks». Gestrichen wird also bei ihm das Erziehungsideal der klassischen Aufklärung, deren stets proklamierte Volksverbundenheit, die Bildungsfähigkeit jedes Individuums. Der Individualismus wird elitär, die «Umwertung aller Werte», wie bei Nietzsche, zu einer «Übermenschlichkeit». Das ist zwar keine Vergöttlichung, wohl aber eine Vergötzung, und zwar nicht des Menschen schlechthin, sondern des Menschen als Individuum. Von daher kommt denn auch der Nihilismus, «jener unheimliche Gast» und «die radikale Ablehnung von Wert, Sinn und Wünschbarkeit» (Nietzsche). Solche vermeintlich auf sich allein gestellten Individualisten müssen zwangsläufig ihre Gottlosigkeit als Verlassenheit, als ein gänzliches Sichselbstüberlassensein empfinden. Derartiges Gestimmtsein veranlaßt diesen oder jenen dann wohl auch, den Säkularisierungsprozeß nicht mehr im Sinne der bisherigen bürgerlichen und dann auch spätbürgerlichen Philosophietradition fortzusetzen, sondern ihn rück-",
+      "bbox": {
+        "x_pct": 14.851,
+        "y_pct": 39.675,
+        "w_pct": 65.431,
+        "h_pct": 45.664
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 14.851,
+        "y_pct": 87.5,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text extraction was heavily truncated/corrupted in the JSON input.",
+    "Page number at the bottom was missing in the detection input.",
+    "Section header was mislabeled as paragraph text."
+  ],
+  "doc_id": "3100",
+  "page": 5,
+  "elapsed_seconds": 5.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

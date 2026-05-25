@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "M. Schaff d'clare qu'en derni(re analyse ce sont les instruments de production qui d'terminent toutes les structures sociales, comment comprendre qu'une r(volution soit possible? Mais cette question n'a pas arr(t( M. Schaff : il a simplement substitu( en cours de route, ( ces ( instruments ( dont il avait parl( d'abord, la notion des ( rapports de propri(t( (.",
+      "bbox": {
+        "x_pct": 6.796,
+        "y_pct": 11.326,
+        "w_pct": 40.61,
+        "h_pct": 16.667
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and updated label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pr(tentions au ( concret ( : ce mot r(p(t(, c'est le comble d'abstraction et de g(n(ralit(.",
+      "bbox": {
+        "x_pct": 8.647,
+        "y_pct": 67.298,
+        "w_pct": 33.038,
+        "h_pct": 8.169
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "sion",
+      "bbox": {
+        "x_pct": 6.574,
+        "y_pct": 77.361,
+        "w_pct": 2.816,
+        "h_pct": 1.679
+      },
+      "changed": true,
+      "change_reason": "Tiny fragment of text identified as artifact or noise."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il se pr(tend poss(der la cl( scientifique par lequel s'accomplit une universalisation certaine, tandis que M. Ginsberg ne poss(de, de ce progr(s, que des signes, des indices ; il ne fait qu'en d(couvrir la possibilit(, par moments, la probabilit( ; en outre, ce progr(s, il lui laisse une beaucoup plus grande complexit(. D'autre part, pour M. Schaff, le facteur d(cisif, c'est le r(gime de propri(t( ; pour M. Ginsberg c'est le d(veloppement de la science. Malgr( ces divergences, cependant, il faut reconna(tre que M. Ginsberg admet lui aussi un ( d(veloppement (, qu'il d(finit comme un processus de changements corr(latifs, et j(ajouterai : de changements corr(latifs.",
+      "bbox": {
+        "x_pct": 53.027,
+        "y_pct": 9.508,
+        "w_pct": 40.51,
+        "h_pct": 19.192
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'opposition de M. Raymond Aron aux deux conceptions pr(c(dentes tient aux points de Raymond Aron est la suivante.",
+      "bbox": {
+        "x_pct": 54.401,
+        "y_pct": 47.727,
+        "w_pct": 39.135,
+        "h_pct": 4.571
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Severe OCR degradation in original regions",
+    "Incorrect labels used in layout detection"
+  ],
+  "doc_id": "690",
+  "page": 2,
+  "elapsed_seconds": 7.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

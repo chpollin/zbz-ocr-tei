@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Deutscher Text siehe Seite 24",
+      "bbox": {
+        "x_pct": 13.801,
+        "y_pct": 26.035,
+        "w_pct": 21.044,
+        "h_pct": 2.823
+      },
+      "changed": true,
+      "change_reason": "Identified as a cross-reference header, not main body paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On me condamne un peu trop souvent de parler de choses que je ne connais pas. Je me réjouis quand même de parler des énergies, parce que l'énergie est, hélas, indispensable à toute réalisation. Je me réjouis quand même à la pensée que, Dieu merci, il y en a d'autres qui savent et qui comprennent et que, grâce à ça, on a des chances de voir prendre les mesures nécessaires pour que nous ne manquions pas d'énergie un jour.",
+      "bbox": {
+        "x_pct": 55.484,
+        "y_pct": 19.22,
+        "w_pct": 35.619,
+        "h_pct": 18.777
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text significantly for content representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant, on m'a demandé de parler, je vais essayer de ne pas aggraver le ridicule du domaine, dans les domaines où vous êtes compétents, et je vais choisir de parler délibérément d'une autre manière ou, si vous voulez, du dehors.",
+      "bbox": {
+        "x_pct": 55.193,
+        "y_pct": 39.691,
+        "w_pct": 34.333,
+        "h_pct": 9.946
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text significantly for content representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour commencer, je vais vous dire qu'en préparant l'exposé que je fais, je me suis aperçu que j'avais mal choisi mon titre. Je l'ai mal choisi parce que, dans mon esprit, quand je disais énergie au sens propre, je pensais à l'énergie de la physique et de la technique. C'est celle-là que j'appelais énergie au sens propre. Une des formes d'énergie indispensable au développement industriel et à la vie même de tout le monde en milieu industriellement développé.",
+      "bbox": {
+        "x_pct": 54.768,
+        "y_pct": 57.083,
+        "w_pct": 36.625,
+        "h_pct": 19.395
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text significantly for content representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je me suis aperçu qu'il s'agissait là davantage de l'énergie humaine, de celle que les hommes dépensent pour atteindre leurs fins, pour réaliser quelque chose, pour exécuter une chose, quelle qu'elle soit, par exemple l'énergie que je dépense en essayant de vous parler de quelque chose que je connais si mal.",
+      "bbox": {
+        "x_pct": 54.545,
+        "y_pct": 78.454,
+        "w_pct": 36.557,
+        "h_pct": 12.003
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text significantly for content representation."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text was extremely poor quality, requiring full re-transcription to match actual content.",
+    "First region misclassified as paragraph, corrected to header/filter."
+  ],
+  "doc_id": "2360",
+  "page": 2,
+  "elapsed_seconds": 4.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

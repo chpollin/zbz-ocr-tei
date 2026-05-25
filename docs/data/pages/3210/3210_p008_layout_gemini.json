@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dann stelle ich eine sehr geheimnisvolle und sehr unmittelbare Frage, wie es viele philosophische Fragen sind: Wo ist denn, worin besteht diese vergangene geschichtliche Wirklichkeit? Nicht im Raum möglicher Erfahrung, nicht im Gedächtnis der Zeitgenossen; denn auch das Vergessene bleibt so und nicht anders. Auch hier leuchtet eine metaphysische Dimension der Zeit, eine geschichtliche Ewigkeit durch, obgleich diese beiden Worte sich widersprechen.",
+      "bbox": {
+        "x_pct": 5.773,
+        "y_pct": 7.9,
+        "w_pct": 87.157,
+        "h_pct": 12.616
+      },
+      "changed": true,
+      "change_reason": "The text was truncated/corrupted in the original detection; corrected the transcription to match the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Unser normales Leben spielt sich also in der Inkohärenz der verschiedenen Zeiten ab, die zu unserem Menschsein und Natursein gehören. Man hat oft von der ewigen Natur gesprochen. Man meinte damit, dass der Frühling immer wieder dieselben Blumen und Schmetterlinge bringt. Ist die Natur wirklich ewig? Wenn man näher zuschaut, sind alle Lebewesen in der Natur von Todesangst besessen. Um nicht zu sterben, müssen sie unter Lebensgefahr ihre Nahrung suchen oder zur Nahrung anderer werden. Aber der Frühling kehrt wieder, und man hat von ewiger Wiederkehr gesprochen. Obgleich dieses Symbol nie wirklich angenommen werden konnte, spiegelt es den unmöglichen Traum wider, der die Menschen immer dahin treibt, die verschiedenen, einander widersprechenden Dimensionen der Zeiten im Menschsein zu vereinen oder zu versöhnen — ob es geht oder nicht. Diese Dimensionen bleiben einander fremd, und zugleich unentbehrlich.",
+      "bbox": {
+        "x_pct": 5.698,
+        "y_pct": 22.777,
+        "w_pct": 87.282,
+        "h_pct": 24.92
+      },
+      "changed": true,
+      "change_reason": "Truncated transcription; corrected to match the full paragraph in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun sitze ich im Konzert. Ich höre zu; sonst tue ich nichts. Ich habe meine menschliche Fähigkeit, zu entscheiden und zu handeln, jetzt aufgegeben. Ich spiele im Orchester nicht mit. Bin ich deswegen, wie manche glauben, passiv? Keineswegs, ich bin empfänglich, und diese Tätigkeit des Empfangens empfinde ich als eine Aktivität, die intensiver ist als viele Taten und Arbeiten. Ich bin so aktiv, dass ich müde werde, so dass ich meistens finde, wie vor dem Vortrag schon gesagt wurde, dass die Konzerte zu lang sind; denn wir sind nicht fähig, so lange aktiv zu bleiben. Es ist, als ob die Zeit selbst durch die Musik in mir eine Art Eigenleben entwickeln würde. Im Konzert ist die Freiheit nicht mehr, in der Zerrissenheit der Zeiten, eine schwierige Pflicht, das unmöglichste alles Geschenke, wie Dostojewski einmal sagte. Viele Leute glauben, die Freiheit sei gegeben; sie ist nie gegeben: sie ist immer im Leben erst aufgegeben, eine Pflicht. Aber im Konzert ist sie nicht mehr aufgegeben, sondern in der geistigen, gefühlsmässigen, körperlichen Affektivität als Einheit erlebt. Es ist, als wäre jeder Klang, jede Biegung der Melodie, jeder neue Rhythmus entscheidend, wie eine freie Entscheidung, aber ohne dass etwas Besonderes auf dem Spiel steht, wie es im Leben sonst ist; als ginge es nur um die Entfaltung oder die Qual der Freiheit selbst. Nichts steht auf dem Spiel, nur die Freiheit selbst.",
+      "bbox": {
+        "x_pct": 5.611,
+        "y_pct": 50.237,
+        "w_pct": 87.319,
+        "h_pct": 35.512
+      },
+      "changed": true,
+      "change_reason": "Truncated transcription; corrected to match the full paragraph in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die erlebte Zeit gewinnt hier eine seltsame Einheit. Die Gegenwart ist gegenwärtiger denn je, aber ohne Tat. Die Vergangenheit ist Sehnsucht, aber ohne Gegenstand. Die Zukunft ist absolute Erwartung, aber ohne Hoffnung auf etwas Bestimmtes. Gleichzeitig",
+      "bbox": {
+        "x_pct": 5.698,
+        "y_pct": 88.036,
+        "w_pct": 87.195,
+        "h_pct": 6.376
+      },
+      "changed": true,
+      "change_reason": "Truncated/corrupted transcription; corrected to include full content visible in the block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": {
+        "x_pct": 91.246,
+        "y_pct": 96.67,
+        "w_pct": 1.25,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original transcriptions were heavily truncated and contained inaccurate characters.",
+    "Page number at the bottom was missing from the original JSON."
+  ],
+  "doc_id": "3210",
+  "page": 8,
+  "elapsed_seconds": 5.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

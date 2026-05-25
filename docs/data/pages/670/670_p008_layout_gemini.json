@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE REL ET L'IMAGINAIRE AU FIL DU TEMPS 327",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header elements were identified as separate or missing components; grouped page title and number as page_header/filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "9. LE REL DU TEMPS STRUCTUR",
+      "bbox": {
+        "x_pct": 28.34,
+        "y_pct": 13.088,
+        "w_pct": 34.674,
+        "h_pct": 1.783
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'instant prsent ne permet plus au temps de couler dans l'anonymat indiffrenci d'un pass-futur sans articulation. Le temps se structure autour de l'instant prsent, qui le dchire et le cloue, et qui est prsence d'une libert au monde. « Au fil du temps », le surgissement d'une libert est inconcevable puisque c'est  son absence ou  sa fuite que le temps doit sa continuit. Ce qu'il reste de temporel dans « le fil du temps », c'est sa potentialit de structure, c'est que la libert humaine y est, non pas nulle, mais absente, s'excluant elle-mme par cette destructuration — et tel est bien le dernier rsidu de la libert : se rendre absente. L'irruption de la libert, au contraire, actualise la discontinuit du temps. Pass et futur se diffrencient de part et d'autre de sa perce. En elle se nouent le rel pass (les « faits » de la bobine, qui attendent encore leur sens), ainsi que les possibles passs dsormais exclus (mais qu'elle est capable de concevoir et de rflchir grce au sens des possibles qui la font libert), avec les possibles futurs, dpendant de ce pass rel qui en est  la fois la matire premire et la limitation (le futur o le sens prcde les faits).",
+      "bbox": {
+        "x_pct": 11.628,
+        "y_pct": 15.88,
+        "w_pct": 68.364,
+        "h_pct": 31.225
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and OCR-corrupted text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plus le prsent est prsence de libert, et plus radicalement distincts seront pass et futur. Mais la libert surgissante ne s'apparat pas comme spare de ce qu'elle spare, abstraite : elle se saisit « en situation ». C'est de cette libert en situation, et s'assumant comme situe non pas accidentellement, mais essentiellement, que naissent les possibilits de thorie et d'action. Thorie et action ont donc de la mme origine : une libert situe — et divergent aussitt.",
+      "bbox": {
+        "x_pct": 11.66,
+        "y_pct": 46.536,
+        "w_pct": 68.171,
+        "h_pct": 13.236
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La thorie, impliquant la mise  distance par le regard, et tendant  une clart universelle, dcouvre qu'elle est irrmdiablement lie  un « point de vue ». Son vidence reste relative  lui et  ses mthodes. Son exigence absolue de vrit appartient en ralit  la libert qui la porte. La totalit et l'universalit auxquelles elle tend ne peuvent tre que des « Ides », au sens kantien : des vises indispensebles au sens de ses objets, mais inaccessibles comme objets. Sa puret de « thorie » l'empche d'tre totale et absolue.",
+      "bbox": {
+        "x_pct": 11.579,
+        "y_pct": 59.276,
+        "w_pct": 68.139,
+        "h_pct": 14.781
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour l'action, la discontinuit de l'instant prsent a des consquences dcisives. La thorie claire les possibles, mais ne dtermine pas le choix, ou l'invention cratrice. La discontinuit arrte le savoir, limite l'vidence, empche la facticit du pass d'envahir le futur. La libert qui perce le temps ne vient ni d'un fait pass devenu cause, ni d'un sens futur devenu fin. Elle ne surgit pas de l'horizontale, du fil du temps, mais de plus profond ou de plus haut, d'une verticale qui coupe l'horizontale. C'est pourquoi rien, au fil du temps, ne saurait la justifier rellement. L'absolu auquel elle se rfre, et",
+      "bbox": {
+        "x_pct": 11.499,
+        "y_pct": 73.749,
+        "w_pct": 68.38,
+        "h_pct": 16.638
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 5,
+  "issues": [
+    "Running header was missing from the initial detection list.",
+    "Significant OCR errors in paragraphs requiring manual fix of French accents and word structure.",
+    "Paragraphs were sliced mid-sentence."
+  ],
+  "doc_id": "670",
+  "page": 8,
+  "elapsed_seconds": 15.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

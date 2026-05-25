@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME ET L'ESPACE",
+      "bbox": {
+        "x_pct": 8.836,
+        "y_pct": 2.0,
+        "w_pct": 31.677,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "157",
+      "bbox": {
+        "x_pct": 73.18,
+        "y_pct": 93.0,
+        "w_pct": 4.195,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le plus  clair le plus exigent, celui Fexclusion est forcée dêtre inlégrale. Dans Pes pril, pour aul",
+      "bbox": {
+        "x_pct": 8.836,
+        "y_pct": 13.69,
+        "w_pct": 68.548,
+        "h_pct": 60.774
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page footer region"
+  ],
+  "doc_id": "110",
+  "page": 159,
+  "elapsed_seconds": 5.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

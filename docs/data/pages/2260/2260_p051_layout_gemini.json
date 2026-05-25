@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE POIDS DE L'HEURE ZÉRO",
+      "bbox": {
+        "x_pct": 18.339,
+        "y_pct": 25.084,
+        "w_pct": 50.836,
+        "h_pct": 2.694
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voici qu'approche l'heure zéro. La mystérieuse heure zéro, dont les hommes s'appliquent à cacher le mystère sous le fracas des klaxons, des cris et des vœux.",
+      "bbox": {
+        "x_pct": 10.788,
+        "y_pct": 33.754,
+        "w_pct": 65.939,
+        "h_pct": 11.254
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors to match source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'heure zéro: on ne sait pas si elle est encore en 1971 ou déjà en 1972, si c'est le soir qui finit ou le matin qui commence, s'il convient de recueillir au creux de l'âme tout ce que fut l'an qui s'achève, ou de l'ouvrir, neuve et baignée de frais, à l'attente de l'an futur.",
+      "bbox": {
+        "x_pct": 10.788,
+        "y_pct": 46.549,
+        "w_pct": 65.903,
+        "h_pct": 19.167
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors to match source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'heure zéro: on fait ses comptes avec soi-même, avec les autres, avec Dieu. On pèse le temps perdu, le temps gâché, le temps sauvé. Qu'ai-je fait de ces minutes, de ces heures, de",
+      "bbox": {
+        "x_pct": 10.752,
+        "y_pct": 67.618,
+        "w_pct": 65.733,
+        "h_pct": 11.195
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors to match source text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "53",
+      "bbox": {
+        "x_pct": 73.084,
+        "y_pct": 81.655,
+        "w_pct": 2.502,
+        "h_pct": 2.062
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text transcription was significantly flawed and required manual correction.",
+    "Page number at bottom right was labeled as text instead of page_footer."
+  ],
+  "doc_id": "2260",
+  "page": 51,
+  "elapsed_seconds": 4.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

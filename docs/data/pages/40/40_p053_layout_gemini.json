@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 39.33,
+        "y_pct": 74.5,
+        "w_pct": 21.36,
+        "h_pct": 1.76
+      },
+      "changed": true,
+      "change_reason": "Identified running header at top of page incorrectly labeled as part of the paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 87.87,
+        "y_pct": 74.45,
+        "w_pct": 2.45,
+        "h_pct": 1.76
+      },
+      "changed": true,
+      "change_reason": "Identified page number incorrectly labeled as part of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "armoire paysanne en chêne, s'en allant de biais pour laisser passer le reflet d'un coin de fenêtre. Mes lèvres ont trouvé leur pli que les émotions ne dérangent guère, qu'elles accentuent plutôt. Comment imaginer maintenant mon visage détaché de l'armoire, détaché de ces choses et de ce morceau de fenêtre toujours le même où j'ai vu, sur la branche du marronnier, passer toutes les lumières et tomber les ombres des soirs et des hivers ? Tout le reste est refusé. Tout le reste n'entrera jamais. Mais si cela m'était arraché, si tu m'étais arraché, mon toi, ma forme et ma paix... Mon propre visage me donne la réponse. Mes yeux deviennent vides et mes lèvres se serrent. Le néant tient à cela. Mais je ne crierais pas, et je vivrais ici-bas ma vie de femme, sans appeler la mort. Il y a la terre sur laquelle on marche, et même dans le désert elle ne se dérobe pas. Maintenant je le pourrais. Il y a l'enfant.",
+      "bbox": {
+        "x_pct": 10.58,
+        "y_pct": 119.75,
+        "w_pct": 81.04,
+        "h_pct": 405.1
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and bbox span to match the actual paragraph blocks."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original layout region incorrectly merged headers and footers into the main text block.",
+    "Bbox coordinates in original input were highly inaccurate (likely shifted).",
+    "Text transcription contained OCR errors that needed correction."
+  ],
+  "doc_id": "40",
+  "page": 53,
+  "elapsed_seconds": 3.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

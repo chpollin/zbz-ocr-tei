@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 9.439,
+        "y_pct": 33.863,
+        "w_pct": 11.58,
+        "h_pct": 1.564
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled caption text from 'Jenne Hersch' to 'Jeanne Hersch'."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 24.321,
+        "y_pct": 10.201,
+        "w_pct": 18.629,
+        "h_pct": 2.149
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Schweiz wurde zu dem; was sie heute ist, durch bestimmte Faktoren und in Reaktion auf solche Faktoren. Die aktuelle Herausforderung besteht darin, dass sich die Verhältnisse in Europa und der Welt geändert haben und wir neue Antworten geben müssen. Das bedingt keinen totalen Wandel, soll aber auch nicht Anlass geben zur Verärgerung über zu kleine Schritte.",
+      "bbox": {
+        "x_pct": 24.504,
+        "y_pct": 15.276,
+        "w_pct": 65.966,
+        "h_pct": 15.41
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was kann die Schweiz der Welt bringen? Wichtig ist zunächst die humanitäre Verpflichtung (IKRK). Die Schweiz will nichts anderes als ein Kleinstaat sein. Sie ist kein Nationalstaat, keine Nation im üblichen Sinn. Die Zugehörigkeit des Schweizers zu seinem Land ist eine politische, keine ethnische. Die Schweizer sind mit Recht auf ihre Vielfalt und ihre Toleranz stolz. Der Preis, den sie dafür bezahlen, ist eine grosse Verlangsamung ihrer Innenpolitik. Dramatischen Wendungen wird damit vorgebeugt.",
+      "bbox": {
+        "x_pct": 24.543,
+        "y_pct": 30.435,
+        "w_pct": 65.927,
+        "h_pct": 20.878
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wichtig: weder sprachliche noch religiöse Grenzen fallen miteinander oder mit den kantonalen Grenzen zusammen. Das könnte für andere multikulturelle Staaten zum Studium wichtig sein. Typisch für die Schweiz ist der Aufbau von der Gemeinde her. Das Prinzip der «Subsidiarität» wird in der Schweiz praktisch schon langem angewendet. Im Hinblick auf ein föderatives Europa könnte dies Anlass zu möglichen Überlegungen sein. Einem föderalen Europa hat die Schweiz gute Gründe beizutreten. Ihre grosse Erfahrung mit Problemen des Föderalismus könnte ein guter Beitrag im Prozess der Bildung eines neuen föderalistischen Staates sein.",
+      "bbox": {
+        "x_pct": 24.543,
+        "y_pct": 51.003,
+        "w_pct": 66.149,
+        "h_pct": 27.952
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "24",
+      "bbox": {
+        "x_pct": 25.109,
+        "y_pct": 94.385,
+        "w_pct": 2.19,
+        "h_pct": 1.514
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction for paragraphs was severely truncated.",
+    "Caption text contained a typo.",
+    "Page number was not tagged as a filterable element."
+  ],
+  "doc_id": "2940",
+  "page": 28,
+  "elapsed_seconds": 5.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

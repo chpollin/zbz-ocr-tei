@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "144",
+      "bbox": {
+        "x_pct": 127.3,
+        "y_pct": 74.0,
+        "w_pct": 34.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "The page number '144' was incorrectly labeled as text and lumped into the paragraph region."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 408.0,
+        "y_pct": 74.0,
+        "w_pct": 182.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "The running header 'TEMPS ALTERNÉS' was incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'ailleurs mon attention, bien que concentrée tout entière sur lui, était dissociée presque douloureusement et altérait le son de ma voix. Je suivais des yeux son apparence, ses mouvements, toute l'expression de son corps; j'écoutais les intonations de sa voix, les ruptures des phrases inachevées. Avec la pensée, je suivais ses jugements et partageais ses vues. Mais en même temps j'épiais, avec des antennes dressées, ce qu'il me fallait percevoir d'essentiel, je me demandais d'où et comment allait jaillir d'un élan la réponse capitale, la vraie. Nous montions toujours, lentement, avec nos gros souliers, en devisant dans les replats du chemin. Quand la pente se faisait plus raide, nous nous taisions, pour ne pas gaspiller notre souffle, et notre accord dans la marche, dans notre réponse à la montagne, restait entier, plein d'équilibre et de joie. Le soleil devint de plus en plus chaud, le vent frais du matin tomba, le paysage s'étendit autour de nous, le lac étala ses surfaces précieuses, les montagnes qui occupaient mes fenétres parurent s'abaisser, tandis que de lointains glaciers bleuis tentaient de se séparer du ciel. La fatigue venait, le cœur battait plus fort; en même temps, l'attente en moi s'apaisait. Un délai nous était évidemment accordé, et rien d'important ne serait dit avant la halte au sommet. Je me sentis gaie tout à coup, libre et enfant pour une heure, je retrouvai presque l'inconscience de jadis. Les problèmes de ma propre vie me devinrent extérieurs; en croisant une troupe qui descendait bruyamment, je pensai une minute que ces gens nous voyaient faire une simple course de montagne;",
+      "bbox": {
+        "x_pct": 128.0,
+        "y_pct": 120.0,
+        "w_pct": 745.0,
+        "h_pct": 737.0
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text extraction and removed header artifacts from the paragraph selection."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 3,
+  "issues": [
+    "Page number identified as paragraph text",
+    "Running header identified as paragraph text",
+    "Initial text extraction was incomplete/garbled"
+  ],
+  "doc_id": "40",
+  "page": 142,
+  "elapsed_seconds": 7.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "82 Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 14.583,
+        "y_pct": 4.1,
+        "w_pct": 79.9,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected page number and running header from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nicht deshalb, weil die Philosophie dasselbe wäre, sondern im Gegenteil deshalb, weil sie anders ist. Sie hat es nötig, die Einstellung, die man in der Technik erlebt, vor sich zu haben, sich sozusagen vor dem Hintergrund dieser ganz anderen Einstellung zu verstehen, sich im Unterschied zu ihr zu verstehen. Und sie hat es gar nicht nötig, zu verachten, zu verwerfen oder zu übertreiben, sondern sie sollte nach Möglichkeit den Ort und die Rolle, die die Technik neben der Philosophie hat, begreifen. Das ist eine Seite unserer Geschichtlichkeit.",
+      "bbox": {
+        "x_pct": 14.583,
+        "y_pct": 7.459,
+        "w_pct": 80.061,
+        "h_pct": 15.625
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction for better accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gerade weil in der Philosophie so vieles möglich ist, man so vieles sagen kann, was gut aussieht, muß man seine Redlichkeit üben. Selbst außerhalb der Philosophie ist diese Redlichkeit nötig, sonst ergreift das Gegenteil der Redlichkeit die Macht.",
+      "bbox": {
+        "x_pct": 14.583,
+        "y_pct": 23.248,
+        "w_pct": 79.988,
+        "h_pct": 8.002
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Doch heute möchte ich von der Philosophie selbst sprechen, denn ich bin, wie ich am Anfang sagte, etwas unruhig über manche Aspekte oder manche Weisen, Philosophie zu betreiben. Die philosophische Reflexion ist schon immer schwierig gewesen. Das ist nicht erst heute so. Warum? Weil man sich in der Philosophie eigentlich immer Fragen zweiten Grades stellt. Man fragt nicht direkt nach etwas, sondern weiter über ein Zweites. Zum Beispiel fragt man sich nicht, welchen Sinn die Tatsachen, die wir in der Natur beobachten oder die wir in der Geschichte feststellen, haben, sondern man fragt: Wie bekommt man diese Tatsachen. Wie beobachtet man sie? Vor welchem Hintergrund kommen sie in unser Bewußtsein? Die Fragen zielen also auf die Erkenntnis der Erkenntnis der Tatsachen. Welche Vorbedingungen hat die Erkenntnis, das Wissen? Was tut derjenige, der behauptet, daß er jetzt weiß? Denn man ist überzeugt, daß die Art, wie er zum Wissen kommt, wie er Wissenschaft betreibt, daß die Methode selbst das Wesen dessen, was er im Geschichtlichen studiert, beeinflußt.",
+      "bbox": {
+        "x_pct": 14.375,
+        "y_pct": 31.061,
+        "w_pct": 80.196,
+        "h_pct": 29.572
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn Sokrates fragte: „Wie macht man es, daß man weiß, wie man ein gutes Leben führt?“, so ging es ihm nicht darum, die Jungen zu lehren, wie sie ein gutes Leben leben werden. Es ist nicht direkt Pädagogik, sondern indirekt; entzweite Pädagogik sozusagen. Was soll ich mit ihnen tun, damit sie sehen werden, was man tun kann, um zu einem guten Leben zu kommen? Der Philosoph, welche Tendenz auch immer er hat, gibt sich große Mühe, damit dieses Wie bei seinen Schülern, bei denen, die verstehen wollen, so gegenwärtig und klar wird, wie irgend möglich; damit der Schüler nicht nur etwas erwirbt, und lernt, wie man das macht. Er soll bei dem sein und über das selbst urteilen, das man ihm nahelegt, um zu dem eigenen Ergebnis zu kommen.",
+      "bbox": {
+        "x_pct": 14.179,
+        "y_pct": 60.526,
+        "w_pct": 80.098,
+        "h_pct": 22.262
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun hat sich in unserer zeitgenössischen Welt alles viel komplizierter entwickelt, und unter ihrem Einfluß ist die Philosophie dazu gekommen,",
+      "bbox": {
+        "x_pct": 14.338,
+        "y_pct": 81.933,
+        "w_pct": 79.988,
+        "h_pct": 4.498
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 6,
+  "issues": [
+    "Page number and running header at the top were incorrectly tagged as paragraph text.",
+    "OCR text quality was poor and required significant manual cleanup to match the image accurately."
+  ],
+  "doc_id": "2990",
+  "page": 75,
+  "elapsed_seconds": 6.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Kierkegaard vivant",
+      "bbox": {
+        "x_pct": 20.538,
+        "y_pct": 7.676,
+        "w_pct": 57.343,
+        "h_pct": 15.218
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Colloque organisé par l'Unesco à Paris du 21 au 23 avril 1964",
+      "bbox": {
+        "x_pct": 17.773,
+        "y_pct": 27.22,
+        "w_pct": 62.919,
+        "h_pct": 5.664
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label as it functions as a sub-heading for the event."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ALLOCUTION DE RENÉ MAHEU DIRECTEUR GÉNÉRAL DE L'UNESCO",
+      "bbox": {
+        "x_pct": 21.613,
+        "y_pct": 38.205,
+        "w_pct": 51.813,
+        "h_pct": 4.398
+      },
+      "changed": true,
+      "change_reason": "Recognized as a title/heading for the speaker, therefore should be section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TEXTES DE JEAN-PAUL SARTRE, JEAN BEAUFRET, GABRIEL MARCEL, LUCIEN GOLDMANN, MARTIN HEIDEGGER, ENZO PACI, KARL JASPERS, JEAN WAHL, JEANNE HERSCH, NIELS THULSTRUP",
+      "bbox": {
+        "x_pct": 18.326,
+        "y_pct": 44.326,
+        "w_pct": 62.12,
+        "h_pct": 16.494
+      },
+      "changed": true,
+      "change_reason": "This block lists names of contributors to the volume and acts as a content heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gallimard",
+      "bbox": {
+        "x_pct": 40.246,
+        "y_pct": 86.234,
+        "w_pct": 18.633,
+        "h_pct": 3.05
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "KATALOG",
+      "bbox": {
+        "x_pct": 45.269,
+        "y_pct": 95.156,
+        "w_pct": 10.645,
+        "h_pct": 2.355
+      },
+      "changed": true,
+      "change_reason": "This is a catalog marker/index tag at the bottom of the page, classifying as page_footer for filtering."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was poor, requiring heavy manual string correction.",
+    "Multiple headings were labeled as generic text.",
+    "Catalog marker identified as paragraph instead of footer/meta-data.",
+    "OCR quality on names and bibliographic data needs improvement."
+  ],
+  "doc_id": "740",
+  "page": 2,
+  "elapsed_seconds": 9.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

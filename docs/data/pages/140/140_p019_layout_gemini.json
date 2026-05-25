@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "100 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 12.345,
+        "y_pct": 100,
+        "w_pct": 60,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest une impossibilité de poser la question de cette manière",
+      "bbox": {
+        "x_pct": 12.465,
+        "y_pct": 16.564,
+        "w_pct": 72.484,
+        "h_pct": 4.786
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici, on se heurte à une sorte dévidence; que je crois unique, extraordinaire; exception nelle, nest ",
+      "bbox": {
+        "x_pct": 12.345,
+        "y_pct": 21.197,
+        "w_pct": 73.463,
+        "h_pct": 30.524
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si on la refuse, on pe peut pas penser. Cela",
+      "bbox": {
+        "x_pct": 17.295,
+        "y_pct": 51.379,
+        "w_pct": 68.421,
+        "h_pct": 3.077
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "revient \u0000 dire que la question : l'existence exis- terait-elle si je n'existais pas ? n'est pas une question, parce que l'existence sans le sujet qui la met en question n'a pas de sens. Une \u0000vidence qui ne serait pas mise en question, oppos\u0000e au n\u0000ant par une conscience, qui se- rait par cons\u0000quent au del\u0000 de toute sp\u0000cifica- tion humaine, n'est pas concevable.",
+      "bbox": {
+        "x_pct": 12.345,
+        "y_pct": 54.5,
+        "w_pct": 73.5,
+        "h_pct": 17.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Middle text block"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et je crois pour mon compte que cest là cncore un des sens je crois quils sont très nombreux de larg",
+      "bbox": {
+        "x_pct": 12.465,
+        "y_pct": 72.291,
+        "w_pct": 73.527,
+        "h_pct": 8.182
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jai cru très longtemps cet argument était un échafaudage   purement formel ; et je vais; et moins je",
+      "bbox": {
+        "x_pct": 12.281,
+        "y_pct": 79.299,
+        "w_pct": 73.897,
+        "h_pct": 8.034
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing body text region in middle of page",
+    "Missing page header"
+  ],
+  "doc_id": "140",
+  "page": 19,
+  "elapsed_seconds": 8.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

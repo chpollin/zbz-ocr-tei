@@ -1,0 +1,139 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "sprung her dic Theorie keine Beschreibung cines sich unabhängig von ihr vollzichenden Prozesses scin",
+      "bbox": {
+        "x_pct": 14.242,
+        "y_pct": 6.662,
+        "w_pct": 38.571,
+        "h_pct": 20.395
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aus drci Qucllen, und zwar ganz verschiedener",
+      "bbox": {
+        "x_pct": 14.805,
+        "y_pct": 31.331,
+        "w_pct": 32.294,
+        "h_pct": 2.652
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Versuchen  wir doch zucrst cinmal, uns dic Thesen von Marx zu vergegenwirugen. wichugsten springt da",
+      "bbox": {
+        "x_pct": 14.805,
+        "y_pct": 26.628,
+        "w_pct": 37.744,
+        "h_pct": 5.191
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "ist, soll s0 mcint Mar wird die Wis Fußc crheben. gestelle",
+      "bbox": {
+        "x_pct": 14.892,
+        "y_pct": 58.712,
+        "w_pct": 37.879,
+        "h_pct": 23.16
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es eigentliche  Zukunft gangenhcit. gibr",
+      "bbox": {
+        "x_pct": 14.762,
+        "y_pct": 82.522,
+        "w_pct": 38.139,
+        "h_pct": 4.708
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Standpunkt wird aber nicht in irgendwelche {erne ent Gegenwart. Von dicser gegcbenen Gedic vergangen",
+      "bbox": {
+        "x_pct": 54.757,
+        "y_pct": 9.539,
+        "w_pct": 35.719,
+        "h_pct": 15.785
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Menschheit   geschicht durch cinen mit cinem wird der als crster den Klasscnkampf beschrieben und an",
+      "bbox": {
+        "x_pct": 54.892,
+        "y_pct": 46.374,
+        "w_pct": 35.801,
+        "h_pct": 38.42
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "hingegen blickt in die Zukunft, In den Manuskripten von beschreibt cr den Kommunismus als das Eode d",
+      "bbox": {
+        "x_pct": 54.892,
+        "y_pct": 24.729,
+        "w_pct": 35.455,
+        "h_pct": 22.565
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "228",
+      "bbox": {
+        "x_pct": 14.762,
+        "y_pct": 89.2,
+        "w_pct": 5,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "229",
+      "bbox": {
+        "x_pct": 88.0,
+        "y_pct": 89.2,
+        "w_pct": 5,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page numbers as regions"
+  ],
+  "doc_id": "1080",
+  "page": 3,
+  "elapsed_seconds": 5.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

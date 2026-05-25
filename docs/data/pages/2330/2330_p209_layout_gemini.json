@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "appelait Théâtre Vérité et publiées sous ce titre. Dans le cadre de ces publications, une pièce a traité d'Oppenheimer et de ses différends avec le gouvernement américain. La pièce s'appelait : Le Dossier Oppenheimer, pour bien mettre l'accent sur l'aspect de vérité. Cette pièce a été jouée, je suis allée la voir, et je me suis dit : il est exclu que les choses se soient passées comme on nous les montre. Je connaissais assez Oppenheimer pour avoir entière confiance en lui. Quand j'ai confiance en quelqu'un, c'est une confiance solide, dont le fondement est pour moi plus profond que celle qu'on peut avoir dans une loi de la nature. — Sur ces entrefaites, il s'est trouvé que je me suis cassé la jambe et j'ai été condamnée à l'immobilité, de sorte que je disposais de beaucoup de temps. J'ai donc décidé de faire venir les Minutes du procès d'Oppenheimer. Ces Minutes se présentaient sous la forme d'un énorme volume d'à peu près 2000 pages. Je me mets à étudier ce pavé et à le comparer au texte du Dossier Oppenheimer. Jean Vilar avait affirmé que, dans la pièce, il n'y avait pas un mot qui ne soit tiré des Minutes. Et c'était vrai. Seulement là où dans les Minutes on posait une question à laquelle on répondait « oui », eh bien ! dans la pièce, on répondait « non ». Bien sûr, ailleurs se trouvait le mot « non ». A un moment donné, dans les Minutes, Oppenheimer raconte comment les choses se sont passées. Dans la pièce de Vilar, on retrouve le passage textuellement ; mais à l'endroit décisif, quelqu'un survient, il s'interrompt, et on n'a jamais la fin du récit, et le texte est faussé. Je me suis mise à noter soigneusement les points les plus nets de cette falsification. Et j'ai écrit un article, où je dressais le bilan de cette confrontation de textes. J'ai demandé à Victor Weisskopf de signer l'article avec moi. Nous avons essayé de le faire paraître dans le Monde, qui a tergiversé, tergiversé, laissé passer le temps — une technique journalistique bien connue — jusqu'au moment où l'article aurait risqué de perdre toute actualité. Pour finir, il a paru dans le Figaro littéraire, assorti d'une soi-disant réponse de Jean Vilar, un petit paragraphe où il faisait une pirouette.",
+      "bbox": {
+        "x_pct": 4.151,
+        "y_pct": 3.685,
+        "w_pct": 79.731,
+        "h_pct": 61.879
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the image content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2. Artistes et écrivains",
+      "bbox": {
+        "x_pct": 4.847,
+        "y_pct": 69.298,
+        "w_pct": 26.081,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in the section header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — Vous avez été liée, tout au long de votre vie, à de nombreux artistes, peintres, poètes, musiciens. Parmi ces derniers, j'aimerais mentionner celui dont le nom reste attaché à tant de compositeurs d'avant-guerre (de Stravinsky à Britten, en passant par Honegger, Satie, etc.), le fondateur de l'Orchestre de la Suisse romande : Ernest Ansermet. J.H. — Quand on me parle d'Ansermet, j'éprouve un grand malaise, car je me suis misérablement conduite avec lui, bien malgré moi. Il m'est difficile, comme pour la plupart de mes amis, de dire précisément quand et comment je l'ai connu. J'ai été à l'école avec sa femme, Juliette. Mes",
+      "bbox": {
+        "x_pct": 4.274,
+        "y_pct": 72.984,
+        "w_pct": 79.695,
+        "h_pct": 16.234
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled text transcription based on the image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "205",
+      "bbox": {
+        "x_pct": 79.1,
+        "y_pct": 93.6,
+        "w_pct": 4.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and correctly identified as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction contained significant OCR artifacts and truncation errors.",
+    "Section header had a typo 'el' instead of 'et'.",
+    "Missing page number region in initial detection."
+  ],
+  "doc_id": "2330",
+  "page": 209,
+  "elapsed_seconds": 6.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

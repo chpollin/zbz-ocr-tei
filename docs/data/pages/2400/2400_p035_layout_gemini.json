@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Gefährdung der Demokratie: Eigeninteressen",
+      "bbox": {
+        "x_pct": 7.542,
+        "y_pct": 15.699,
+        "w_pct": 16.513,
+        "h_pct": 5.677
+      },
+      "changed": true,
+      "change_reason": "Identified as a section heading/title rather than body text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Kann die Demokratie Autoritäten akzeptieren?",
+      "bbox": {
+        "x_pct": 5.932,
+        "y_pct": 81.317,
+        "w_pct": 18.039,
+        "h_pct": 5.269
+      },
+      "changed": true,
+      "change_reason": "Identified as a section heading/title rather than body text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mehr wählen. Entsprechend den Politikern halten sich auch sehr viele Wähler. Sie fragen zuerst danach, wer ihre Interessen am besten vertritt, wobei sie natürlich ihre Einzel- und Gruppeninteressen immer als Allgemeininteressen verstehen. So sind unsere Wahlen voller Risiken.",
+      "bbox": {
+        "x_pct": 26.634,
+        "y_pct": 5.655,
+        "w_pct": 65.012,
+        "h_pct": 15.473
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Ich möchte noch einmal auf die Frage nach der Autorität zurückkommen. Mir scheint, hier liege eine mögliche Antwort auf das Problem komplexer Sachverhalte und Entscheidungen.",
+      "bbox": {
+        "x_pct": 26.598,
+        "y_pct": 23.632,
+        "w_pct": 65.133,
+        "h_pct": 11.689
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Im Unternehmen scheint mir das Problem der Autorität lösbar, weil wir an der Spitze klare Verantwortungen haben. Beispiele – ich denke an einen Lee Iaccoca bei Chrysler, an einen Carlo de Benedetti bei Olivetti – zeigen, was jemand erreichen kann, der das Vertrauen seiner Leute genießt. Aber haben solche Autoritäten – das ist meine Frage an Herrn Muheim – in unserem demokratischen Staatswesen Platz? Kann die Demokratie solche Autoritäten akzeptieren?",
+      "bbox": {
+        "x_pct": 26.634,
+        "y_pct": 64.214,
+        "w_pct": 65.339,
+        "h_pct": 22.613
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lassen Sie mich kurz ein Schlüsselerlebnis schildern, das mir in dieser Frage wichtig scheint. Als verantwortlicher Schiffsführer geriet ich mit einem kleinen Boot auf dem Meer in schwere See. Ich hatte unter anderem einen Passagier, der nicht seegewohnt war, aber ich hatte keine Zeit, mich um ihn zu kümmern. Als der Sturm vorbei war, fragte ich ihn, ob er Angst gehabt habe. Seine Antwort war: ‹Nein, ich habe Dich angeschaut, und solange ich gespürt habe, daß Du keine Angst hattest, hatte ich auch keine Angst. › Das illustriert doch, was Herr Muheim meint, wenn er für mehr Autorität im Staat plädiert.",
+      "bbox": {
+        "x_pct": 26.513,
+        "y_pct": 34.913,
+        "w_pct": 65.46,
+        "h_pct": 29.425
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition based on visual content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "36",
+      "bbox": {
+        "x_pct": 58.12,
+        "y_pct": 91.56,
+        "w_pct": 2.2,
+        "h_pct": 2.3
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR text was severely truncated and inaccurate.",
+    "Multiple section headers were misclassified as body text.",
+    "Page number at bottom not initially detected or incorrectly labeled."
+  ],
+  "doc_id": "2400",
+  "page": 35,
+  "elapsed_seconds": 6.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

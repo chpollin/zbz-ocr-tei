@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "70 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 10.282,
+        "y_pct": 94.632,
+        "w_pct": 78.489,
+        "h_pct": 53.973
+      },
+      "changed": true,
+      "change_reason": "Page number and header incorrectly labeled as paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit d'autre part l'agressivité soviétique se multiplier de tous les côtés, dans tous les continents et sous toutes les formes possibles. En même temps, les pays européens isolés se montrent de plus en plus incapables de préparer l'avenir. Partout on pousse des cris d'alarme ; comment préparer des ingénieurs ? des savants ? des maîtres ? Comment préparer la foule de cadres dont on a déjà besoin et dont on aura de plus en plus besoin au cours des années qui viennent ? A ce propos, je voudrais vous dire que, contrairement à la manière dont beaucoup d'Européens considèrent l'Amérique, à savoir comme une espèce d'enfant qui nous suit et qui devra atteindre peu à peu l'âge adulte qui est le nôtre, je vois, moi, l'Amérique nous précéder sur le chemin, à bien des égards. En Amérique, le niveau des écoles secondaires, par exemple, a déjà baissé d'une façon extraordinaire parce qu'on a besoin d'un tel nombre de professeurs d'université que dès que quelqu'un sait quelque chose, il est déjà à l'université. Or le processus va se produire très prochainement chez nous, en Europe, si nous ne changeons pas rapidement nos manières de faire.",
+      "bbox": {
+        "x_pct": 10.282,
+        "y_pct": 13.632,
+        "w_pct": 78.489,
+        "h_pct": 53.973
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Devant toutes ces perspectives, que fait la Suisse ? Dans un tel moment, elle s'est enfermée dans l'AELE. Si ce que j'ai dit de l'AELE tout à l'heure est exact, je pense qu'il faudrait que les fédéralistes suisses reconnaissent tout simplement que cette entrée de la Suisse dans l'AELE a été une erreur. Il ne faut pas, je crois, feindre que c'est une bonne démarche, et qui va nous mener là où nous voulons aller. Il faut reconnaître que c'était une erreur. Je crois d'ailleurs que beaucoup de gens commencent à s'en douter, même parmi ceux qui ne",
+      "bbox": {
+        "x_pct": 10.589,
+        "y_pct": 67.381,
+        "w_pct": 78.143,
+        "h_pct": 25.248
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription error."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and header were incorrectly merged with body text.",
+    "OCR text transcription was truncated in the second paragraph.",
+    "Region labeling required adjustment based on document structure rules."
+  ],
+  "doc_id": "530",
+  "page": 11,
+  "elapsed_seconds": 3.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

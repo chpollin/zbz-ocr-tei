@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "18 SON UNITÉ?",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correctly identifying page number and running header as _filter instead of paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des philosophes, les avait résolus. L'objet étant aussi mobile, la méthode n'étant pas fixée davantage, le but changeant du tout au tout, où réside donc l'unité de cette chose mystérieuse qu'on appelle d'un seul nom, « la philosophie »? Possède-t-elle en général de l'unité? Certes oui; preuve en soit l'acharnement avec lequel on a toujours attaqué les autres « philosophies ». Cet acharnement n'est pas ce qu'il y a de moins étrange dans son étrange histoire. Quand la métaphysique était condamnée, on continuait à lire les anciennes métaphysiques, on continuait à les réfuter, — avec quelle ardeur! Pourquoi? On ne s'attaquait pas à des disciplines étrangères, on ne s'en prenait pas aux théories des alchimistes, — on ne s'acharne pas sur des morts. De quoi donc était faite cette continuité qui rendait nécessaires tant de luttes et de colères?",
+      "bbox": {
+        "x_pct": 15.407,
+        "y_pct": 11.754,
+        "w_pct": 76.461,
+        "h_pct": 45.891
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les problèmes avaient changé. Les méthodes avaient changé. Les intentions des hommes avaient changé. Il est évident dès lors que pour saisir l'élément constant qui s'est toujours appelé « philosophie » il nous faudra surtout soustraire et dire : ce n'est pas ceci..., ni cela..., ni cela...",
+      "bbox": {
+        "x_pct": 15.211,
+        "y_pct": 57.741,
+        "w_pct": 76.506,
+        "h_pct": 15.882
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voyons d'abord ce qui s'est passé pour les problèmes qui ont été éliminés définitivement de la philosophie. Ainsi la structure du système solaire. Elle était chez les Grecs un des objets de la philosophie. Aujourd'hui, aucun philosophe ne s'aviserait de décrire la forme, le mouvement et les",
+      "bbox": {
+        "x_pct": 15.211,
+        "y_pct": 73.432,
+        "w_pct": 76.461,
+        "h_pct": 15.386
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was truncated and contained significant errors.",
+    "Page number and header were incorrectly included in paragraph detection.",
+    "Labels needed adjustment to exclude header/page metadata."
+  ],
+  "doc_id": "20",
+  "page": 20,
+  "elapsed_seconds": 4.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

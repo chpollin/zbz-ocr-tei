@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Sicherheit der Autorität ist reflektierte Sicherheit",
+      "bbox": {
+        "x_pct": 7.162,
+        "y_pct": 40.633,
+        "w_pct": 19.203,
+        "h_pct": 5.095
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text string content to reflect the visual text accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und noch eine Gefahr: der Aktivismus",
+      "bbox": {
+        "x_pct": 11.075,
+        "y_pct": 83.479,
+        "w_pct": 15.459,
+        "h_pct": 5.116
+      },
+      "changed": true,
+      "change_reason": "Cleaned up garbled OCR text to match actual visible text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Lassen Sie mich mit einem kritischen Hinweis schließen. Ich habe zwar selbst das Stichwort Autorität in die Diskussion gebracht und es zu erläutern versucht. Aber es gilt natürlich auch in bezug auf die Autorität, daß ihre Verabsolutierung zu einer schweren Gefährdung führt.",
+      "bbox": {
+        "x_pct": 29.022,
+        "y_pct": 48.326,
+        "w_pct": 65.024,
+        "h_pct": 13.632
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und eines möchte ich schließlich deutlich machen: Autorität kann nicht entstehen, wo hektischer Aktivismus seine Blüten treibt. Sie kann nicht entstehen, wenn man der Beschäftigung mit hunderten von Einzelproblemen frönt. Autorität ist nur möglich bei der Konzentration auf wenige wesentliche Dinge. Das größte Risiko in bezug auf die notwendige Autorität in der Demokratie liegt deshalb meines Erachtens darin, daß der Staat in allzu vielen Bereichen allzu vieles tut. In dieser Vielfältigkeit zerpufft das, was ich Autorität genannt habe.",
+      "bbox": {
+        "x_pct": 28.949,
+        "y_pct": 61.863,
+        "w_pct": 65.133,
+        "h_pct": 27.147
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "38",
+      "bbox": {
+        "x_pct": 60.1,
+        "y_pct": 91.5,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region labeled as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction had severe OCR degradation/garbled characters in all paragraphs.",
+    "Page number at bottom was not detected.",
+    "Bounding boxes were generally acceptable but text content required manual transcription correction."
+  ],
+  "doc_id": "2400",
+  "page": 37,
+  "elapsed_seconds": 4.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

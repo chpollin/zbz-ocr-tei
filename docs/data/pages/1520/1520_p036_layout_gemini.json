@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "même le contraire de ce qu'il faut comprendre. Ainsi l'expression « chose en soi » est, selon la conception kantienne, une contradiction dans les termes : ce que l'« en soi » ne peut être en aucun cas, c'est « une chose ». Mais ce que le langage, par la violence qui lui est ainsi faite, doit faire comprendre, c'est justement cette impossibilité.",
+      "bbox": {
+        "x_pct": 11.423,
+        "y_pct": 5.656,
+        "w_pct": 83.74,
+        "h_pct": 11.654
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misrecognized OCR text to match original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers fait de même, il ne peut pas ne pas faire de même. Seulement, je vois chez lui deux traits différents. Le premier, c'est que cette difficulté insurmontable devient l'un des thèmes de sa « réflexion » métaphysique, alors que Kant n'a cessé de s'y débattre sans jamais — ou presque jamais — la thématiser. Le second, c'est que la méthode d'exposition de Jaspers est moins statiquement logique que celle de Kant. Elle est itinérante, elle va. Elle emmène le lecteur, par des voies multiples, jusqu'au terme où il ne constate pas seulement une impossibilité logique, mais où il fait l'expérience d'une limite et d'un échec. Jaspers a constamment recours à la voie négative (via negationis), mais c'est toujours une voie où il faut réellement s'engager, qu'il faut réellement suivre, dont il faut réellement accomplir les opérations intellectuelles successives, — et si l'existence s'est effectivement mise en jeu dans ces opérations, alors l'expérience de la limite réussit à lui signifier quelque chose de la transcendance. Tel est le « penser métaphysique ».",
+      "bbox": {
+        "x_pct": 11.382,
+        "y_pct": 17.138,
+        "w_pct": 84.051,
+        "h_pct": 30.763
+      },
+      "changed": true,
+      "change_reason": "Corrected fragmented/misrecognized OCR text to match original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La transcendance, Jaspers l'a parfois (plus souvent dans les œuvres tardives) appelée Dieu. Mais c'est alors un Dieu caché (deus absconditus) et qui ne se révèle pas. La transcendance n'a absolument rien d'un être empirique, dont on pourrait se demander s'il est réel — dans quel espace ? dans quel temps ? La question n'a pas de sens. La transcendance, c'est l'être, l'englobant absolu. Humainement, elle n'a de réalité que pour l'existence, ce qui signifie que sa présence est vécue, agie, et non connue, — vécue et agie dans la mesure où par elle l'existence s'engage absolument. Aucune certitude objective n'est possible lorsqu'il s'agit du fondement absolu de toute certitude, de ce qui donne un sens à la certitude comme telle. La question : Dieu existe-t-il ? n'a plus de sens à partir du moment où Dieu, c'est la transcendance de l'être, condition de sens de toute question portant sur l'existence. De deux choses l'une : ou bien la question est posée à partir de la transcendance de l'être, et la réponse ne peut être qu'une tautologie affirmative ; ou bien elle est posée au niveau de la réalité empirique, et la réponse ne peut être qu'une négation qui ignore ce qu'elle nie.",
+      "bbox": {
+        "x_pct": 11.382,
+        "y_pct": 49.614,
+        "w_pct": 84.241,
+        "h_pct": 34.593
+      },
+      "changed": true,
+      "change_reason": "Corrected incoherent OCR and noise prefix 'Dieu caché. dans les œuvres' to match original text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La connaissance empirique ou scientifique ne rencontre jamais la transcendance, que celle-ci ne soit sensible — mais inaccessible — que pour l'existence, qu'on ne puisse guère parler d'elle",
+      "bbox": {
+        "x_pct": 11.477,
+        "y_pct": 83.462,
+        "w_pct": 83.957,
+        "h_pct": 6.341
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "30",
+      "bbox": {
+        "x_pct": 11.758,
+        "y_pct": 91.554,
+        "w_pct": 2.344,
+        "h_pct": 3.237
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Severe OCR degradation in original ingestion requiring complete text replacement.",
+    "Page number '30' misclassified as text.",
+    "The start of the 3rd region contained noise/artifacts from previous lines."
+  ],
+  "doc_id": "1520",
+  "page": 36,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

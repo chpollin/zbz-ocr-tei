@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 24 -",
+      "bbox": {
+        "x_pct": 429.0,
+        "y_pct": 65.0,
+        "w_pct": 142.0,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à cause de ces menaces et de ces tentations qui incitent l'homme à renoncer à être un homme, la didactique doit s'inspirer toujours de cette spécificité de l'être humain. Malheureusement, la didactique a tendance à devenir une discipline parmi d'autres. Si on se réfère au vécu du développement scientifique, dont je parlais tout à l'heure, il n' y a pas, ou très peu, de didactique générale. La didactique fait corps avec ceux qui ont enseigné, avec ceux qui ont transmis, elle est tout à fait différente selon celui qui la met en œuvre. J'ai moi-même donné des cours de didactique, mais je suis d'avis, expérience faite et après beaucoup d'années d'enseignement, que les principes généraux de la didactique sont en très petit nombre. Dès qu'on veut les développer il faut entrer dans les matières, dans les domaines particuliers, dans les choses à enseigner. Parce que \"le vécu\" est différent selon ce dont il s'agit. On ne pratique pas une formation permanente en général, on pratique telle formation permanente déterminée. Cela me paraît tout à fait essentiel. Cela tient au fait que l'homme a besoin de son cerveau et de sa finalité, de son cerveau et de son manque, pour sa visée spirituelle.",
+      "bbox": {
+        "x_pct": 9.7,
+        "y_pct": 13.68,
+        "w_pct": 81.35,
+        "h_pct": 40.67
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rimbaud disait à propos de l'homme qu'il est une âme et un corps. Le mot spécifiquement humain ici c'est \"et\": une âme et un corps. A ce croisement l'homme s'engage tout entier, mais il s'agit alors de réalités spécifiques, de braches concrètes, où la recherche se vit d'une manière propre. Dans sa généralité, on tombe très vite dans une activité mécanique, ou alors dans une illusion verbale de totalité, on se contente de rêver les choses, on se complaît dans les états de l'âme, et il ne s'agit plus d'une véritable formation.",
+      "bbox": {
+        "x_pct": 9.65,
+        "y_pct": 55.28,
+        "w_pct": 80.11,
+        "h_pct": 19.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée, la vraie pensée est un acte. Elle est aux prises avec les corps, avec les choses. Entre ces deux objectivités il y a la présence responsable et libre de l'homme, tel qu'il change et tel qu'il ne change pas.",
+      "bbox": {
+        "x_pct": 9.57,
+        "y_pct": 75.3,
+        "w_pct": 77.63,
+        "h_pct": 8.51
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Merci.",
+      "bbox": {
+        "x_pct": 9.49,
+        "y_pct": 84.68,
+        "w_pct": 6.21,
+        "h_pct": 1.64
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text recognition."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at top was missing in initial detection.",
+    "Small typo in 'Merci' corrected."
+  ],
+  "doc_id": "2230",
+  "page": 9,
+  "elapsed_seconds": 5.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais le rêve d'une vie qui serait une fête ininterrompue est absurde, contradictoire en soi. La fête sombrerait dans la convoitise et étoufferait dans le non-sens. Peut-être avons-nous dès aujourd'hui perdu le don de la fête parce que son succédané, les jouissances quotidiennes, sont devenues par trop banales.",
+      "bbox": {
+        "x_pct": 11.394,
+        "y_pct": 11.364,
+        "w_pct": 65.782,
+        "h_pct": 19.756
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La fête arrache à une vie de travail, le temps nécessaire à sa structure magique. Elle ne peut être que rare. Il y faut des intervalles, de longues attentes, ou alors la surprise préparée de l'amour.",
+      "bbox": {
+        "x_pct": 11.515,
+        "y_pct": 32.466,
+        "w_pct": 65.818,
+        "h_pct": 13.889
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'elle brille donc de tout l'éclat de sa joie calme pour ceux qui savent la vivre sans oublier qu'ils devront mourir.",
+      "bbox": {
+        "x_pct": 11.6,
+        "y_pct": 47.87,
+        "w_pct": 65.648,
+        "h_pct": 8.502
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/inaccurate OCR and removed erroneous leading digit."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "The OCR text for all three paragraphs was significantly truncated and contained reading errors.",
+    "The third paragraph contained an incorrect leading '1' likely derived from a misread footnote marker."
+  ],
+  "doc_id": "2260",
+  "page": 77,
+  "elapsed_seconds": 3.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

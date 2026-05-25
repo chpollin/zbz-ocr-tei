@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "signe, ou, comme disait mon maître Karl Jaspers, un chiffre.",
+      "bbox": {
+        "x_pct": 26.028,
+        "y_pct": 13.913,
+        "w_pct": 57.267,
+        "h_pct": 4.714
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the content in the image more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’homme est, selon Rimbaud, une âme et un corps. Selon un proverbe français, «qui veut faire l’ange fait la bête». Cela veut dire que l’homme qui n’assume pas sa condition entière dans le réel donné et qui se veut pur esprit retombe au-dessous de la condition humaine, dans la seule animalité. Une animalité sans l’innocence des bêtes, puisqu’il a trahi délibérément sa condition d’homme. – Mais il est vrai à l’inverse que l’homme qui ne veut pas aussi faire l’ange manque du même coup le niveau proprement humain : car c’est le propre de l’homme de vouloir dépasser l’homme qu’il est. Il ne peut ni refuser sa condition, ni accepter telle qu’elle est – et c’est ce paradoxe même, au nœud de tous les autres, qui fait de lui une exception dans l’univers.",
+      "bbox": {
+        "x_pct": 25.922,
+        "y_pct": 17.892,
+        "w_pct": 57.447,
+        "h_pct": 33.685
+      },
+      "changed": true,
+      "change_reason": "Corrected the badly garbled OCR output to reflect the actual text visible in the block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que notre musique européenne présente au cours des siècles et selon les patries une si profonde diversité représente pour nous un privilège sans égal. Par-delà les joies qu’elles nous donne, elle est pour nous, peut-être, l’ultime sauvegarde contre tout asservissement définitif. Que nous soyons toujours menacés de redevenir des brutes et des esclaves, l’histoire nous l’a appris. Mais nous avons",
+      "bbox": {
+        "x_pct": 25.953,
+        "y_pct": 54.82,
+        "w_pct": 57.415,
+        "h_pct": 17.835
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled OCR output to match the text on the page."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "42",
+      "bbox": {
+        "x_pct": 26.175,
+        "y_pct": 75.811,
+        "w_pct": 2.222,
+        "h_pct": 1.794
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly inaccurate for two main paragraphs.",
+    "Page number was not tagged correctly as a page_footer."
+  ],
+  "doc_id": "2780",
+  "page": 41,
+  "elapsed_seconds": 4.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est vrai, n'ee a un autre moment de l'histoire, je ne serais pas ce que je suis. C'est vrai, je ne cesse de passer. Et pourtant: je continue à croire vraies des pensées très anciennes, et ceux qui vecurent dans des cultures défuntes peuvent rester mes frères. Quelque chose persiste à travers ce qui passe, sans quoi je ne pourrais pas être un être humain. Tout passe à chaque instant, et pourtant le poème que je lis est tout entier dans ma conscience - non dans mon souvenir -, et la mélodie que j'entends forme un tout complet pour mon oreille intérieure. Le début ne s'est pas effacé avant la fin.",
+      "bbox": {
+        "x_pct": 10.44,
+        "y_pct": 7.43,
+        "w_pct": 86.619,
+        "h_pct": 12.593
+      },
+      "changed": true,
+      "change_reason": "The text content was completely wrong compared to the actual image transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a pas moyen de vivre en être humain sans impliquer un passé et un futur. Mais notre vraie vie se vit dans un présent qui n'a rien de ponctuel.",
+      "bbox": {
+        "x_pct": 10.679,
+        "y_pct": 28.444,
+        "w_pct": 86.107,
+        "h_pct": 3.726
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/wrong transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pour cela que nous pouvons vivre «au présent». Notre présent reste avec nous, tandis que le temps s'en va en deux directions contraires, se hâtant à la rencontre du futur, et entrainant toujours plus loin de nous le passé, comme pour le laisser s'abîmer peu à peu dans le néant.",
+      "bbox": {
+        "x_pct": 10.56,
+        "y_pct": 40.444,
+        "w_pct": 86.464,
+        "h_pct": 7.185
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'être accompagne, l'être reste avec nous au couer de la fuite du temps. Petite durée si dense que notre sort s'y joue absolument, dans un réel impitoyable, qui est ce qu'il est, où jamais la mémoire ne saurait rétablir la présence d'un souveir ni l'espoir actualiser une attente, à cause de l'invincible différence qui persiste entre «ce qui est» et «ce qui n'est plus» ou «ce qui sera peut-être». Petite durée qui s'efiloche pourtant à ses extrémités, en passé, en futur, sans rien perdre de son inépuisable présence présente - miniature humaine de l'éternité.",
+      "bbox": {
+        "x_pct": 10.357,
+        "y_pct": 50.911,
+        "w_pct": 86.75,
+        "h_pct": 12.622
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A cause de cette petite durée, notre vie se situe dans un monde, avec ses résistances, ses possibles, ses enjeux. A cause d'elle, nous pouvons agir, jouir, créer, aimer la vie et attendre la mort. Et parce qu'elle s'effiloche vers le futur, nous avons des possibles, nous disposons d'une espace de liberté. Et parce qu'elle s'effiloche vers le passé, celui-ci, sans que nous comprenions ni où, ni comment, ne cesse jamais de garder l'être de ce qui a été.",
+      "bbox": {
+        "x_pct": 10.512,
+        "y_pct": 66.763,
+        "w_pct": 86.595,
+        "h_pct": 10.622
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Grâce à cette petite durée, ce n'est pas seulement un rêve si nous croyons que nous sommes des hommes, libres, responsables, mortels. Libres et dépendants. Jamais les maîtres. Mais jamais non plus des choses ni des bêtes.",
+      "bbox": {
+        "x_pct": 10.56,
+        "y_pct": 79.059,
+        "w_pct": 86.345,
+        "h_pct": 5.363
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match original."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "24",
+      "bbox": {
+        "x_pct": 10.679,
+        "y_pct": 86.1,
+        "w_pct": 2.2,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Detected page number labeled as text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Most regions had incorrect or truncated transcriptions.",
+    "Page number 24 was misidentified as text.",
+    "Author Hersch is the subject, this is likely an excerpt."
+  ],
+  "doc_id": "2680",
+  "page": 27,
+  "elapsed_seconds": 32.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "«laisser quelque chose derrière soi»). Transcender désigne bien l'acte par lequel quelque chose est dépassé, mais dépassé par le quelque chose soi-même. Rien n'est laissé derrière : c'est l'acte entier qui est transcendant. Et c'est dans ce sens que je voudrais traiter mon sujet : «La musique transcende-t-elle le temps?»",
+      "bbox": {
+        "x_pct": 26.059,
+        "y_pct": 13.925,
+        "w_pct": 57.383,
+        "h_pct": 15.511
+      },
+      "changed": true,
+      "change_reason": "The text was truncated; corrected to capture the full content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'entends pas dire par là : «La musique abolit-elle le temps?» Nullement. La musique ne nous arrache pas au temps, elle ne nous rend pas étrangers ou indifférents au temps. D'ailleurs, il en va de même, je crois, dans le domaine religieux. La religion ne transcende pas la souffrance, au sens où elle l'abolirait ; elle la transcende, en l'élevant à un autre niveau. De même, si la musique transcende véritablement le temps, cela signifie qu'elle nous permet d'atteindre, d'une façon extrêmement mystérieuse et insaisissable, quelque chose dont les hommes ont toujours rêvé et qui leur est absolument refusé, à savoir : ce qui serait à la fois, en un, la capacité de désirer et celle de vivre la plénitude.",
+      "bbox": {
+        "x_pct": 25.953,
+        "y_pct": 28.806,
+        "w_pct": 57.659,
+        "h_pct": 31.349
+      },
+      "changed": true,
+      "change_reason": "The text was truncated; corrected to capture the full content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme a besoin de désirer ; il a besoin de la finitude, du manque. Les hommes ne sont pas doués pour être heureux, même si les circonstances sont favorables, ce qui est assez rare. Même si tout leur sourit, ils s'ennuient très vite. Quelqu'un demanda un jour à un théologien combien de temps avait",
+      "bbox": {
+        "x_pct": 26.028,
+        "y_pct": 59.583,
+        "w_pct": 57.585,
+        "h_pct": 13.434
+      },
+      "changed": true,
+      "change_reason": "The text was truncated and contained typos ('Lhomme' -> 'L'homme'); corrected to capture the full content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "54",
+      "bbox": {
+        "x_pct": 26.6,
+        "y_pct": 75.33,
+        "w_pct": 2.4,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer and re-labeled accordingly."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction truncated multiple paragraphs.",
+    "Page number 54 was missing from the initial region list.",
+    "Typo detected in 'Lhomme' changed to 'L'homme'."
+  ],
+  "doc_id": "2780",
+  "page": 53,
+  "elapsed_seconds": 5.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

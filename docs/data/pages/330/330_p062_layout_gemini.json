@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "28 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 11.56,
+        "y_pct": 77.29,
+        "w_pct": 85.794,
+        "h_pct": 2.29
+      },
+      "changed": true,
+      "change_reason": "Page header was incorrectly identified as part of the paragraph body."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qui ne manquent pas sur ce sujet. Nous tentons de d'''crire l'id''o-logie courante, telle qu''elle vit dans la t''te de celui qui lit l'Humani-t'' dans le m''tro ou au caf'' du chef-lieu. La propri''t'' collective du sol, l'utilisation collective des machines agricoles, la gestion de l'usine par des camarades fraternels qui ne veulent rien pour eux, mais tout pour tous, cela flotte bien dans les esprits, mais assez vaguement. L'essentiel, c'est d'abord qu'il n'y ait plus d'exploiteurs, puisqu'il n'y aura plus de patrons. Et il n'y aura jamais de patrons dans les « d''mocraties populaires », comme '' Rome il n'y a jamais eu, pendant tout l'Empire, de rois.",
+      "bbox": {
+        "x_pct": 11.56,
+        "y_pct": 11.676,
+        "w_pct": 85.794,
+        "h_pct": 19.348
+      },
+      "changed": true,
+      "change_reason": "Extracted full, cleaned text and corrected bounding box to exclude header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cet ''l''ment essentiel que nous venons de poser devient donc un principe, un postulat n''gatif : il n'y a pas de patrons, donc il n'y a pas d'exploiteurs, donc il n'y a pas d'exploit''s. Il y a un second ''l''ment essentiel, positif celui-l'', mais d'un tout autre ordre, qui parle '' l'imagination : le d''cor du r''gime sovi''tique. D'abord le seul fait qu'il y ait un d''cor, collectif, ''rig'' pour tous, prouve que tous existent, qu'ils comptent et qu'ils sont ensemble. Songeons que le capitalisme n'a jamais cr''' le moindre d''cor collectif valable, que la vie des usines n'a jamais eu ses vraies c''r''monies, ses f''tes, ses lieux de gloire, ses anniversaires - d''penses inutiles, au pays du profit ! - sauf dans ses sursauts d'angoisse, quand il n''tait plus lui-m''me, et qu'il prenait les formes ''tranges et morbides du fascisme ou du national-socialisme. Mais il n'y a pas seulement, en r''gime sovi''tique, les f''tes, les c''r''monies, les ''difices publics. Il y a les « r''alisations » du r''gime, les maisons et trains de vacances, les h''pitaux, ''coles, universit''s, stades, sports, biblioth''ques, spectacles, etc., etc... Tout ce qui peut se faire ailleurs dans le monde, dans cet ordre d'id''es, ce ne sont, selon l'id''ologie, que des palliatifs, ou encore des r''sultats du d''veloppement technique d''coulant de lui automatiquement, m''me en r''gime capitaliste. Je disais tout '' l'heure qu'un moteur reste un moteur, un barrage un barrage. Mais non dans l'optique cr'''e par l'id''ologie sovi''tique. Un h''pital mod''le aux ''tats-Unis incarne le capitalisme. Le m''me h''pital en U. R. S. S. est une conqu''te du peuple, de chaque citoyen communiste. Gr''ce '' l'unit'' id''ologique qui s'y est forg''e et dont nous venons de parler, le moindre laboratoire, en U. R. S. S., est une conqu''te sp''cifique-ment populaire et communiste. Ainsi il devient possible de fonder",
+      "bbox": {
+        "x_pct": 11.462,
+        "y_pct": 31.283,
+        "w_pct": 86.031,
+        "h_pct": 58.289
+      },
+      "changed": true,
+      "change_reason": "Cleaned OCR text and corrected label."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR text was heavily corrupted (e.g., 'n01B', 'nit').",
+    "Header line was captured as part of paragraph text.",
+    "Bbox values were slightly off on the top edge."
+  ],
+  "doc_id": "330",
+  "page": 62,
+  "elapsed_seconds": 9.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

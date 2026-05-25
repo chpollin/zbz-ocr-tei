@@ -1,0 +1,109 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quiconque érige en absolu l'évidence de la pensée ramène au relatif ce qui appartient à l'existence.",
+      "bbox": {
+        "x_pct": 11.748,
+        "y_pct": 5.596,
+        "w_pct": 79.539,
+        "h_pct": 4.199
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'accroche à une vérité apodictique et permanente comme si elle était absolue, et il est pour lui-même un rien, quelque chose d'indifférent ; reste alors son individualité psychique empirique, qui se déploie avec ses besoins instinctifs de prestige, de puissance et de jouissance, avec ses faiblesses nerveuses et ses angoisses. Il s'imagine peut-être trouver la plénitude d'un sens par l'étude d'une vérité permanente qu'il appelle philosophie, alors qu'en réalité il se complaît à des constructions intellectuelles imaginaires, dénuées de la validité contraignante propre à la science, et qui, esquissées sans engagement de l'existence, manquent en même temps de contenu substantiel à communiquer.",
+      "bbox": {
+        "x_pct": 11.477,
+        "y_pct": 11.225,
+        "w_pct": 84.051,
+        "h_pct": 21.251
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quiconque érige en absolu ce qui concerne l'existence ramène nécessairement au relatif ce qui appartient à la pensée. Personne ne peut actualiser son existence sans mettre en question, à l'infini, tout le contenu de sa pensée et sans le voir dans sa relativité. Mais accomplissant cette mise en question sans limite, il ne fournit pourtant pas ainsi la preuve de son existence. Qu'il soit existence, il ne peut jamais le savoir. S'il tente de faire de son existence quelque chose de connu, et par là de possédé, il tombe dans un mouvement circulaire qui l'égare et le trompe par son propre reflet dans un jeu de miroirs. Telle est la conséquence néfaste d'une recherche philosophique objectivement fixée, qui se propose de connaître l'existence au lieu de l'éclairer. C'est la même erreur que celle que comment la recherche philosophique qui prétend s'en tenir à l'objectivité des choses ; mais avec cette différence qu'ici, le sujet qui philosophe s'attribue à lui-même une importance infinie, de façon telle que le sérieux de ce qui le concerne lui-même se trouve, justement par là, détruit.",
+      "bbox": {
+        "x_pct": 11.477,
+        "y_pct": 33.822,
+        "w_pct": 83.916,
+        "h_pct": 32.819
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3 Limite de la réduction au relatif. Il est impossible de posséder comme générale et objective la vérité qui est absolue. Il est tout aussi impossible de réduire au relatif, par scepticisme, la vérité qui pour moi, en tant qu'existe, est unique, sous prétexte qu'elle n'a pas la validité et la généralité d'une vérité scientifique.",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 67.892,
+        "w_pct": 83.74,
+        "h_pct": 10.06
+      },
+      "changed": true,
+      "change_reason": "Corrected classification from list_item to section_header and fixed transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout devenir objectif de la vérité absolue est, en tant qu'objectif, historiquement relatif. Pour une raison inverse, tout ce qui est général, valable hors du temps, est relatif, justement parce que sa vérité ne peut jamais devenir historique, et donc existentielle.",
+      "bbox": {
+        "x_pct": 11.247,
+        "y_pct": 77.549,
+        "w_pct": 83.875,
+        "h_pct": 8.029
+      },
+      "changed": true,
+      "change_reason": "Corrected order and transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La réduction au relatif, différente en son essence mais poursuivie sans fin, ne trouve sa limite qu'à l'origine positive de l'existence.",
+      "bbox": {
+        "x_pct": 11.477,
+        "y_pct": 85.116,
+        "w_pct": 83.469,
+        "h_pct": 4.199
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "98",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 91.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Added page footer region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text transcriptions were heavily truncated/corrupted by OCR errors.",
+    "List item label was incorrect for a section header.",
+    "Paragraph order was incorrect in original extraction.",
+    "Page number 98 was missing from regions.",
+    "Formatting and labels were inconsistent with ZBZ requirements."
+  ],
+  "doc_id": "1520",
+  "page": 104,
+  "elapsed_seconds": 6.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

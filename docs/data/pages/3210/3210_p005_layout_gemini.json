@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "erreicht die Zeit, durch ihr Zerfliessen, die Stunde des erwarteten Konzerts; es ist also 20 Uhr. Nun fängt das Konzert an.",
+      "bbox": {
+        "x_pct": 6.272,
+        "y_pct": 7.9,
+        "w_pct": 87.706,
+        "h_pct": 4.208
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Dauer dieses Konzerts ist seltsam zweideutig, wenn Sie darüber nachdenken: Einerseits dauert es ganz einfach zwei Stunden. Das ist die Zeit, die der Physiker auch in der Natur messen kann. Ich darf zum Beispiel mit jemandem eine Verabredung treffen: er wird mich um 10 Uhr abends abholen, und dann komme ich zu meiner praktischen, normalen Zeit zurück, wie ich sie den ganzen Tag vor dem Konzert erlebte. Es gibt also ein «vor dem Konzert» und ein «nach dem Konzert», genauso, wie es ein Vorher und ein Nachher im Experimentieren des Physikers gibt.",
+      "bbox": {
+        "x_pct": 6.272,
+        "y_pct": 14.225,
+        "w_pct": 87.83,
+        "h_pct": 14.903
+      },
+      "changed": true,
+      "change_reason": "Corrected the full OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber was geschieht im Konzert selbst? Im Konzert selbst gibt es aber keine eigentliche Gegenwart der Entscheidung oder des Tuns. Da will ich eben nichts entscheiden, ich will nichts tun. Und deswegen ist «das Vorher» des Konzerts keine Vergangenheit und «das Nachher» des Konzerts keine Zukunft des Konzerts. Das ist ein Vorher und ein Nachher, aber nicht des Konzerts. Ich möchte das mit einer Malerei vergleichen. Wenn Sie ein Gemälde an Ihre Wand hängen, braucht es natürlich einen bestimmten Raum. Aber der Raum des Gemäldes hat sehr wenig mit dem Raum zu tun, den das Bild mit seinem Rahmen, oder ohne Rahmen, auf der Wand in Anspruch nimmt. Es ist ein anderer Raum, er ist anderer Natur. Und genauso, glaube ich, ist die Zeit des Konzerts, seine Dauer, anderer Natur als die zwei Stunden, die das Konzert von dem Vorher und von dem Nachher trennen. Das ist eben etwas Geheimnisvolles. Was ist es also im Konzert? Es ist auch nicht ein Jetzt im Sinne der menschlich-praktischen Zeit; denn, wie ich schon sagte, will ich im Konzert nichts tun, nichts entscheiden. In der Naturzeit, mit ihrer Vorher- und Nachherbeziehung, ist nur eine kausale Beziehung möglich, nicht aber eine freie Entscheidung. Im Konzert jedoch geht es um das, was in meiner entscheidenden Freiheit geschehen kann. Ich erlebe das Konzert; jetzt erlebe ich das Konzert. Es dauert als Konzert ganz anders als zwei Stunden. Und doch vergeht es: es kommt ja eine Zeit, wo das Konzert vergangen ist. Es ist also Gegenwart, weil es meine Freiheit angeht, und es wird Vergangenheit, wenn es meine Freiheit nicht mehr angehen wird.",
+      "bbox": {
+        "x_pct": 6.11,
+        "y_pct": 31.16,
+        "w_pct": 87.993,
+        "h_pct": 40.364
+      },
+      "changed": true,
+      "change_reason": "Corrected the full OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich würde sagen: da berühren wir einen der Grundzüge des Menschseins, nämlich dass es sich in der gegenwartslosen Naturzeit der Aufeinanderfolge von Vorher und Nachher abspielt, und zugleich in der von der entscheidenden Gegenwart strukturierten Zeit eines freien Wesens. In der Naturzeit gibt es Ursache und Wirkung, Vorher und Nachher. In der menschlich frei erlebten Zeit gibt es ein Jetzt, eine Gegenwart, die nicht ein Vorher und ein Nachher ist, die nicht Ursache und Wirkung verträgt, die eben Entscheidung ist, und beides zugleich, das Eine nicht ohne das Andere, das menschliche Leben beherrscht, so dass sie voneinander kaum zu trennen sind, das ist einer der Grundzüge des Menschseins. Denn es ist für uns immer ziemlich schwierig, zwischen dem Kausalen und dem Freien zu unterscheiden. Wir kommen immer wieder in Ver-",
+      "bbox": {
+        "x_pct": 6.11,
+        "y_pct": 73.353,
+        "w_pct": 87.818,
+        "h_pct": 21.169
+      },
+      "changed": true,
+      "change_reason": "Corrected the full OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "4",
+      "bbox": {
+        "x_pct": 6.366,
+        "y_pct": 96.804,
+        "w_pct": 1.25,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text was heavily truncated or incorrect in original JSON.",
+    "Page number 4 was mislabeled as text.",
+    "Required manual transcription of paragraph contents to fix text accuracy."
+  ],
+  "doc_id": "3210",
+  "page": 5,
+  "elapsed_seconds": 5.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

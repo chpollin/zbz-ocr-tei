@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais c'est sans rapport aucun avec l'Athènes qui est en Olympe, et sa tragique pureté.",
+      "bbox": {
+        "x_pct": 10.33,
+        "y_pct": 6.037,
+        "w_pct": 35.553,
+        "h_pct": 7.717
+      },
+      "changed": true,
+      "change_reason": "Text transcription corrected from garbled OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi tout y coexiste au même instant et se voit, la mort au cœur de la vie, le squelette dans le corps de l'athlète, la géométrie dans la beauté, la tragédie partout.",
+      "bbox": {
+        "x_pct": 10.527,
+        "y_pct": 45.774,
+        "w_pct": 36.652,
+        "h_pct": 13.502
+      },
+      "changed": true,
+      "change_reason": "Text transcription corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "la Grèce olympienne a accompagné ma vie. Il faut laisser aux pays du Nord leurs humidités spongieuses où l'on enfonce leur chair, leurs voluptés qui durent jusqu'à la mort au gel. La Grèce, c'est le roc et son pourtour, fait pour le regard, le bleu dur de la mer, compact comme une énorme pierre précieuse, où l'on s'étonne de voir pénétrer l'étrave coupante des bateaux. «La lumière du jour» rend manifeste l'absolu, qui exclut les accommodements, les complicités adoucissantes de la durée, les camouflages des brumes.",
+      "bbox": {
+        "x_pct": 10.381,
+        "y_pct": 12.514,
+        "w_pct": 36.337,
+        "h_pct": 34.468
+      },
+      "changed": true,
+      "change_reason": "Text transcription corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut beau plutôt que bon vivre. Le rusé Ulysse s'y est appliqué.",
+      "bbox": {
+        "x_pct": 10.623,
+        "y_pct": 57.925,
+        "w_pct": 36.41,
+        "h_pct": 7.75
+      },
+      "changed": true,
+      "change_reason": "Text transcription corrected."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ALDO PATOCCHI",
+      "bbox": {
+        "x_pct": 79.5,
+        "y_pct": 7.2,
+        "w_pct": 12.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing header region for author name."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dino Larese è settant'enne; come dire, per Dino, due volte trentacinquenne. Doppia celebrazione dunque; doppi festeggiamenti, doppia felicità in tutti.",
+      "bbox": {
+        "x_pct": 54.308,
+        "y_pct": 15.005,
+        "w_pct": 35.927,
+        "h_pct": 12.503
+      },
+      "changed": true,
+      "change_reason": "Text transcription corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A me, vien voglia d'aggiungere, quadrupla partecipazione poichè, essendo per metà svizzero tedesco (madre Keller di Frauenfeld, nonna Danioth e bisnonna Müller entrambe di Andermatt), nelle terre Turgoviesi mi sento un poco di casa e quindi anche ad Amriswil, e, per ciò, più vicino all'amico carissimo Larese.",
+      "bbox": {
+        "x_pct": 54.777,
+        "y_pct": 27.475,
+        "w_pct": 36.703,
+        "h_pct": 21.998
+      },
+      "changed": true,
+      "change_reason": "Text transcription corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vicino allo scrittore che l'identica naturalezza è",
+      "bbox": {
+        "x_pct": 56.777,
+        "y_pct": 84.116,
+        "w_pct": 37.311,
+        "h_pct": 3.513
+      },
+      "changed": true,
+      "change_reason": "Text transcription corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vicino all'uomo di cuore che pratica la generosità e la bontà con fresca schiettezza, nulla tralasciando per rendere immediati e cordiali i contatti e gli incontri, nulla celando dei suoi stati d'animo, dei suoi pensamenti, delle sue considerazioni.",
+      "bbox": {
+        "x_pct": 56.19,
+        "y_pct": 67.947,
+        "w_pct": 37.458,
+        "h_pct": 16.905
+      },
+      "changed": true,
+      "change_reason": "Text transcription corrected."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 9,
+  "issues": [
+    "Original OCR was highly inaccurate, required manual re-transcription of all text blocks.",
+    "Author name 'ALDO PATOCCHI' was missing a bounding box in the original input.",
+    "Page numbers 38 and 39 were not captured as regions."
+  ],
+  "doc_id": "2150",
+  "page": 2,
+  "elapsed_seconds": 7.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

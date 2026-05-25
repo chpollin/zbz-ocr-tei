@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 10.779,
+        "y_pct": 2.0,
+        "w_pct": 27.065,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "45",
+      "bbox": {
+        "x_pct": 76.516,
+        "y_pct": 100,
+        "w_pct": 2.776,
+        "h_pct": 1.405
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number region"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "K nécessité de Pexistence dautrui doit   être.. du type même avec cogito que la de la nécessité de f",
+      "bbox": {
+        "x_pct": 18.719,
+        "y_pct": 13.667,
+        "w_pct": 60.414,
+        "h_pct": 3.461
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La connaissance dans une solitude impersonnelle et dépose finalement des résultats constituent un pa",
+      "bbox": {
+        "x_pct": 10.779,
+        "y_pct": 18.983,
+        "w_pct": 68.585,
+        "h_pct": 27.765
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Laction; sur le du donné,   représente le   type sociale. Modifiant social, elle atteint autrui. Ces",
+      "bbox": {
+        "x_pct": 10.817,
+        "y_pct": 46.646,
+        "w_pct": 68.47,
+        "h_pct": 16.882
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "si le solispsisme doit être rejeté, ce ne peut être que parce qu'il est impossible ou, si Ton préfèr",
+      "bbox": {
+        "x_pct": 10.894,
+        "y_pct": 66.388,
+        "w_pct": 68.316,
+        "h_pct": 8.479
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header",
+    "Missing page number"
+  ],
+  "doc_id": "110",
+  "page": 47,
+  "elapsed_seconds": 5.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

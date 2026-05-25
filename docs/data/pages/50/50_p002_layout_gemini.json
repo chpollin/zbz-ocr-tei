@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "54",
+      "bbox": {
+        "x_pct": 77.24,
+        "y_pct": 105.0,
+        "w_pct": 9.464,
+        "h_pct": 2.764
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 36.313,
+        "y_pct": 115.0,
+        "w_pct": 27.894,
+        "h_pct": 2.707
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 89.24,
+        "y_pct": 105.0,
+        "w_pct": 2.464,
+        "h_pct": 2.764
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TECHNICITÉ EN PHILOSOPHIE",
+      "bbox": {
+        "x_pct": 53.613,
+        "y_pct": 115.0,
+        "w_pct": 37.894,
+        "h_pct": 2.707
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un peintre peint avec des couleurs, un musicien compose avec des sons, un poète exprime avec des mots. Imaginons un peintre qui fait de la poésie avec ses couleurs, un musicien qui fait de la peinture avec ses sons, un poète qui fait de la musique avec ses mots : le résultat sera qu'on n'aura ni vraie peinture, ni vraie musique, ni vraie poésie. Je voudrais on comprenne bien ici ce que j'entends par « vraie » : ni « sincère », ni « plaisante ». Une peinture poétique (ou musicale), une musique picturale (ou poétique), une poésie musicale (ou picturale) peuvent être sincères, ou plaisantes, ou les deux à la fois. Il arrive même qu'une œuvre intermédiaire de ce genre gagne en charme, du fait qu'elle acquiert des pouvoirs qu'on n'attendrait pas de sa technique propre, et d'autant plus efficaces, du fait aussi que toute ambiguïté en art tend d'elle-même à libérer la fantaisie. Non, « vraie » a ici un sens ontologique et signifie : « existante », « douée d'être », « tirée dans l'être ». — Je veux donc dire que l'œuvre ambiguë, mettant les techniques d'un art au service d'un autre, sans renoncer à la sincérité, ou au charme, renonce forcément à un certain degré de cohérence ontologique, elle consent à n'être qu'à moitié, que dans une certaine mesure. Dans la mesure, justement, où il y a malgré tout une certaine unité objective entre les techniques des arts, une certaine correspondance dans les réactions subjectives aux diverses sensations. Et cette façon qu'ont certaines œuvres de n'être que jusqu'à un certain point constitue parfois un troisième élément de charme, celui dont jouissent les époques pressées et avides, celui de l'éphémère, du mélange de la vie et de la mort.",
+      "bbox": {
+        "x_pct": 9.687,
+        "y_pct": 19.041,
+        "w_pct": 37.464,
+        "h_pct": 62.862
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsque Baudelaire parlait des sensations, il mettait en jeu et il le savait bien — et ténébreuse et profonde unité. Il la mettait en jeu non seulement là où il parle d'elle, mais ailleurs, dans le trou qui subsiste entre deux mots éclatants. Il est des parfums frais comme des chairs d'enfants. Doux comme les hauts-bois, verts comme les prairies. Entre « parfums » et « frais », entre « parfums » et « vert » il y a dans un sens sonore (hauts-bois), entre « parfum » et « vert » il y a un gouffre, il y a une ténébreuse et profonde unité. Ces couples de mots ne se soudent pas, ils sont discontinus, l'abîme est entre eux, et ils là pour cet abîme autant que pour eux-mêmes ; plus que pour eux-mêmes. Mais qu'est-ce que cet abîme, qu'est-ce que cette « vaste et ténébreuse unité » ? Pour le poème, c'est ce qu'il n'est pas. Ce n'est pas l'unité du poème, puisque l'abîme n'est pas possédé, cerné par lui, puisqu'il s'ouvre, béant, dans ses failles, dans le discontinu de ses mots. Le poème se brise, et sa brisure confère une étrange existence poétique au non-être, ce qu'il préfère, ce la « ténébreuse et profonde unité ». Le poème cette brisure. Les classiques étaient pour la distinction des genres, et l'on pense souvent que ce fut par formalisme, ou, si l'on préfère, ce formalisme n'était pas l'anarchie actuelle comme un affranchissement. Mais ce ne fut pas par formalisme, — il était métaphysique. Il signifiait un refus de collaborer avec le néant, une volonté de tailler l'œuvre dans un aspect continu de l'être. Le monde est donné à l'homme dans un aspect continu de l'être. Le monde est donné à l'homme dans des aspects discontinus. Kant était déjà que le monde en tant qu'unité totale n'est qu'une idée, et Jaspers a bien montré combien sont réfractaires à toute synthèse substantielle.",
+      "bbox": {
+        "x_pct": 56.313,
+        "y_pct": 14.154,
+        "w_pct": 34.894,
+        "h_pct": 73.707
+      },
+      "changed": true,
+      "change_reason": "Grouped disjointed text blocks into a single coherent paragraph region."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "OCR output for the left column was highly distorted and contained artifacts.",
+    "Running headers and page numbers were detected as paragraph text.",
+    "The right column was split into unnecessary fragments instead of a unified paragraph block.",
+    "Multiple layout regions incorrectly merged or fragmented content."
+  ],
+  "doc_id": "50",
+  "page": 2,
+  "elapsed_seconds": 6.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

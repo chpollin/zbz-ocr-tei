@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DANS UNE SITUATION EMPIRIQUE",
+      "bbox": {
+        "x_pct": 266.0,
+        "y_pct": 84.0,
+        "w_pct": 395.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "157",
+      "bbox": {
+        "x_pct": 827.0,
+        "y_pct": 81.0,
+        "w_pct": 33.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tout autre morale qui régit la recherche théorique en science et en philosophie » (I).",
+      "bbox": {
+        "x_pct": 99.4,
+        "y_pct": 120.11,
+        "w_pct": 759.49,
+        "h_pct": 55.96
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors and truncated text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que le monde n'arrive pas à constituer pour nous une unité totale, c'est pour l'orientation scientifique une limite négative. Du point de vue de l'existence possible, c'est une limite positive : elle signifie liberté. « Cette limite me conduit à moi-même. Je suis moi-même là où je ne me retire plus derrière un point de vue objectif que je ne fais que représenter, là où ni moi-même, ni l'existence d'autrui ne peut plus devenir objet pour moi (I). »",
+      "bbox": {
+        "x_pct": 100.45,
+        "y_pct": 175.41,
+        "w_pct": 763.55,
+        "h_pct": 230.41
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(I) Philosophie, I, pp. 264 sqq",
+      "bbox": {
+        "x_pct": 139.01,
+        "y_pct": 826.22,
+        "w_pct": 389.61,
+        "h_pct": 23.16
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Cf. là-dessus l'article déjà cité de Gabriel MARCEL, dans les Recherches philosophiques, t. II.",
+      "bbox": {
+        "x_pct": 109.49,
+        "y_pct": 846.23,
+        "w_pct": 756.93,
+        "h_pct": 44.14
+      },
+      "changed": true,
+      "change_reason": "Changed label from list_item to footnote"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Misidentified page header and page number as text",
+    "Severe OCR errors in body text",
+    "List item at bottom is actually a footnote",
+    "Bounding boxes for headers/footers were missing from input"
+  ],
+  "doc_id": "20",
+  "page": 159,
+  "elapsed_seconds": 4.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

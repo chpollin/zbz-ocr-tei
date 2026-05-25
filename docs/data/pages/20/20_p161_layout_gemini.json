@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SA SIMPLICITÉ; SON INACHÈVEMENT 159",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified as running header and page number, moved to filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fausse simplicité peut tromper en donnant l'illusion que le contenu peut être appris, alors qu'en réalité il doit être intérieurement accompli (vollzogen). La simplicité philosophique est celle de l'acte intérieur, quand son sens est sans ambiguïté (eindeutig), et reste pourtant inexplicable par l'analyse rationnelle ou psychologique. « Cette simplicité, quand elle est vraie, n'est pas indépendante du temps dans lequel elle se manifeste, et elle ne peut pas se répéter identiquement. Elle est le rare résultat de la tension de toute une vie (I). » Elle n'est pas simplification, mais simplicité d'une pensée qui a comme source l'existence. Le simple, c'est ici « l'expression de l'être qui a trouvé des mots dont le contenu soit inépuisable » (2). Grâce à cette simplicité fondamentale, chaque phrase d'une véritable philosophie touche déjà à l'essentiel, et le tout ne fait qu'un avec les parties.",
+      "bbox": {
+        "x_pct": 9.533,
+        "y_pct": 11.81,
+        "w_pct": 76.416,
+        "h_pct": 46.19
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Néanmoins, la simplicité philosophique ne révèle jamais un résultat définitif. La pensée discursive se place ici entre une réalité passée qu'elle éclaire et une réalité future qu'elle rend possible. Puisqu'il s'agit d'un devenir possible du moi, elle restera toujours inachevée. « Celui qui fait de la philosophie parle de son moi; celui qui n'en parle pas ne fait pas de philosophie; il trompe, car il n'est pas présent — il se cache (2). »",
+      "bbox": {
+        "x_pct": 9.488,
+        "y_pct": 57.714,
+        "w_pct": 76.25,
+        "h_pct": 23.171
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content more accurately."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Philosophie, I, p. 266.",
+      "bbox": {
+        "x_pct": 12.696,
+        "y_pct": 84.448,
+        "w_pct": 32.937,
+        "h_pct": 2.095
+      },
+      "changed": true,
+      "change_reason": "Mapped to footnote instead of list_item."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(2) Idem, p. 271.",
+      "bbox": {
+        "x_pct": 12.756,
+        "y_pct": 86.514,
+        "w_pct": 25.798,
+        "h_pct": 2.248
+      },
+      "changed": true,
+      "change_reason": "Mapped to footnote instead of list_item; fixed text transcription error."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR text was heavily truncated or incorrect.",
+    "Page header/number was labeled as text.",
+    "Footnotes were labeled as list_items."
+  ],
+  "doc_id": "20",
+  "page": 161,
+  "elapsed_seconds": 4.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA DESTRUCTION DE L'ILLUSION 185",
+      "bbox": {
+        "x_pct": 273.0,
+        "y_pct": 82.0,
+        "w_pct": 530.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label and tag for page header containing title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette illusion, on s'en souvient, consistait à croire que l'objet apparent de la philosophie est aussi son objet réel, et que la philosophie doit par conséquent fonder une « vérité objective ». Il est évident qu'il faut croire à l'objet choisi pour pouvoir philosopher à son propos. Or Jaspers a fait une analyse extrêmement profonde et précise de l'expression indirecte, par signes et par chiffres. Il a montré comment la pensée philosophique, à la limite, doit détruire l'objet par lequel elle s'exprime et comment le cercle vicieux ou la contradiction lui permettent d'atteindre sa profondeur et son véritable sens. Il a donc détruit la foi nécessaire en l'objet apparent.",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 130.0,
+        "w_pct": 756.0,
+        "h_pct": 361.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text and updated boundaries to reflect full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais alors quel est l'objet apparent de sa propre philosophie? Car elle doit en avoir un, et elle doit en parlant de lui penser réellement à lui. Comment cela est-il encore possible après cette destruction?",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 490.0,
+        "w_pct": 756.0,
+        "h_pct": 98.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match visual paragraph flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'objet apparent de la philosophie de Jaspers est cette destruction elle-même. Elle ne se contente pas de faire parler sans cesse les limites. Elle est elle-même une limite, en ce sens qu'elle ne peut plus avoir d'autre objet qu'elle-même et que sa propre limitation. Elle ne se contente pas de montrer le sens et la vérité métaphysique du cercle vicieux, elle est elle-même un cercle. Car c'est en décrivant ce que peut être une philosophie, — ce qu'elle-même peut être, — qu'elle se réalise, s'accomplit, et trouve dans son échec final, sa plénitude. Elle ne peut pas être autre chose que la description",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 595.0,
+        "w_pct": 756.0,
+        "h_pct": 305.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match original paragraph."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR in JSON was severely truncated and incorrect compared to image source.",
+    "Page header was misclassified as text.",
+    "Regional bounding boxes needed strict verification against paragraph breaks."
+  ],
+  "doc_id": "20",
+  "page": 187,
+  "elapsed_seconds": 4.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

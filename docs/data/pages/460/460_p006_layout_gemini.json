@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "4 L'EUROPE AU DÉFI",
+      "bbox": {
+        "x_pct": 11.647,
+        "y_pct": 74.324,
+        "w_pct": 78.514,
+        "h_pct": 11.955
+      },
+      "changed": true,
+      "change_reason": "Corrected the bounding box label which incorrectly combined the page number/header and the start of the paragraph into a single region. The header and page number should be separated or treated as _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "prévisible se dessine, que nous aurons choisi sans l'avoir voulu.",
+      "bbox": {
+        "x_pct": 11.74,
+        "y_pct": 10.477,
+        "w_pct": 78.179,
+        "h_pct": 5.171
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le livre que voici dit : Voilà l'enjeu. Voilà ce qui menace. Voilà ce qui est possible. Aujourd'hui, voilà nos chances. Elles ne sont pas permanentes. Elles sont celles d'aujourd'hui, non de demain. Européens, à vous !",
+      "bbox": {
+        "x_pct": 11.647,
+        "y_pct": 15.613,
+        "w_pct": 78.514,
+        "h_pct": 11.955
+      },
+      "changed": true,
+      "change_reason": "The OCR text was significantly incomplete and inaccurate compared to the visible text on the page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On verra qu'il a été écrit par des hommes qui pensent froidement et qui aiment avec ardeur. Qu'aiment-ils? L'Europe, certes, mais qu'est-ce à dire? Ce n'est pas un territoire, d'ailleurs bien mal délimité. Ce n'est pas une « nation », au sens où l'on verra ce mot défini plus loin, puisque « la nation européenne » n'existe pas et que nul ne songe à la faire exister. C'est peut-être « une patrie », si l'on entend par là une réalité complexe, à la fois concrète et vague, puissante, chargée d'affectivité, liée à des sensations, des expériences, des sentiments si anciens qu'il est absurde de tenter d'en démêler l'écheveau. C'est peut-être davantage une patrie que le sont nos « nations », abstraites et juridiques, prétentieuses au point de ne reconnaître au-dessus d'elles aucune loi. Peut-être, après tout, cette communauté « Europe », qui s'est déchirée elle-même et que nul pendant longtemps n'a nommée, est-elle plus proche, en vérité, que la nation, dans notre cœur, du village ou de la rue, de la montagne ou du fleuve, du champ de blé ou des cheminées où se garde à jamais notre enfance.",
+      "bbox": {
+        "x_pct": 10.442,
+        "y_pct": 32.432,
+        "w_pct": 80.013,
+        "h_pct": 50.541
+      },
+      "changed": true,
+      "change_reason": "The initial OCR text was severely fragmented and inaccurate."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 3,
+  "issues": [
+    "The bounding box detected at the top contains the page number and title 'L'EUROPE AU DÉFI' which was incorrectly labeled as text.",
+    "OCR text for paragraphs was highly inaccurate and incomplete.",
+    "Detection failed to treat the header/page number as a distinct block from the start of the body text."
+  ],
+  "doc_id": "460",
+  "page": 6,
+  "elapsed_seconds": 4.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

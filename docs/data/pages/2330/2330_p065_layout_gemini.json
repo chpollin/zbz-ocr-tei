@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IV. Les années d'enseignement",
+      "bbox": {
+        "x_pct": 15.665,
+        "y_pct": 22.607,
+        "w_pct": 54.823,
+        "h_pct": 3.886
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text to match OCR image content."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "1",
+      "bbox": {
+        "x_pct": 3.419,
+        "y_pct": 32.422,
+        "w_pct": 11.929,
+        "h_pct": 1.689
+      },
+      "changed": true,
+      "change_reason": "Misidentified small fragment, likely a marker, should be ignored/filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En 1933, à 23 ans, votre licence en poche, vous entrez à l'Ecole Internationale de Genève comme professeur de français, de latin et de philosophie.",
+      "bbox": {
+        "x_pct": 2.894,
+        "y_pct": 36.259,
+        "w_pct": 79.768,
+        "h_pct": 6.195
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors in the paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — Pas encore de philosophie. On m'a confié cet enseignement au moment de la guerre, lorsque plusieurs professeurs ont été mobilisés. Mais je voudrais remonter un peu en arrière. J'ai commencé par donner des leçons particulières quand j'étais étudiante. Je montais sur ma bicyclette et je me rendais chez mes élèves. A cette époque les leçons privées n'étaient pas aussi bien payées qu'aujourd'hui. Mais la petite somme que je gagnais me donnait l'impression que j'avais fait quelque chose d'utile. Je me disais : je commence à payer ma dette envers la société. Toute jeune, j'ai eu le sentiment très net de l'immense privilège que j'avais de faire des études, pendant que d'autres jeunes de mon âge travaillaient pour gagner leur vie. Et je me disais qu'il fallait le plus vite possible rembourser cette dette. C'est pourquoi j'ai été indignée lorsque j'ai entendu plus tard certains étudiants déclarer : « Moi, je ne dois rien à la société ». Et j'ai toujours pensé que la principale inégalité entre les hommes était l'inégalité de la formation.",
+      "bbox": {
+        "x_pct": 2.845,
+        "y_pct": 42.156,
+        "w_pct": 79.976,
+        "h_pct": 29.903
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C. D. — Certains ne veulent pas recevoir une formation supérieure.\nJ.H. — C'est vrai, seulement il est assez difficile d'en tirer argument. On ne sait jamais pourquoi ils ne le veulent pas, est-ce vraiment leur choix personnel ou l'effet de causes extérieures ? La première fois où je me suis aperçue de cette inégalité, c'est le jour où, voyant mes parents et leurs amis étudiants s'en aller tous les jours à l'université, j'ai fini par demander à mon père et à ma mère : « Mais quand est-ce que la concierge va à l'université ? Je la rencontre tous les jours dans l'escalier ». J'ai grandi avec cette idée, naturellement fausse et ridicule, mais qui était",
+      "bbox": {
+        "x_pct": 3.053,
+        "y_pct": 72.349,
+        "w_pct": 79.89,
+        "h_pct": 17.932
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality and formatting."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "61",
+      "bbox": {
+        "x_pct": 80.0,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Severe OCR degradation in initial paragraphs.",
+    "Section header had typo.",
+    "Page number missing from initial detection.",
+    "Incomplete text in paragraph regions."
+  ],
+  "doc_id": "2330",
+  "page": 65,
+  "elapsed_seconds": 6.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

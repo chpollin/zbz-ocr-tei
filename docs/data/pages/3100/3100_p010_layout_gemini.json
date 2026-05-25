@@ -1,0 +1,131 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "die Lehren aus der Zeit des deutschen Faschismus zu geschichtlicher Wahrheit zu verallgemeinern.",
+      "bbox": {
+        "x_pct": 15.093,
+        "y_pct": 7.254,
+        "w_pct": 65.06,
+        "h_pct": 4.142
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte jetzt den Kreis, den wir mit unseren Überlegungen gezogen haben, durch eine Rückkehr zum Ausgangspunkt schließen. Wer vor die Gottesfrage gestellt wird, soll sie ehrlich beantworten können. Die bürgerlichen Atheisten hatten es nicht leicht. Die Lebensgefährlichkeit des Atheismus ist keine Legende. In solchen Zeiten leben wir heute nicht mehr. So empfand es wohl auch Bertolt Brecht, als er «besser» «wusste» im Krankenzimmer der Charité. Wenn er in seiner «Hauspostille» noch gesagt hatte: «Es kommt kein Morgen mehr», zweifelsohne der Ausdruck eines nihilistischen schattierten Individualismus, so «wusste» er es nun «besser». Der alte Brecht (der immer noch Atheist geblieben war, aber inzwischen Marx und Lenin studiert hatte), der todkranke Brecht, hatte die Freude erworben «alles Amselgesanges» nach ihm auch.",
+      "bbox": {
+        "x_pct": 14.907,
+        "y_pct": 11.225,
+        "w_pct": 65.189,
+        "h_pct": 26.228
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction which was severely truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Für diesen Morgen, der nach uns kommt, auch philosophisch zu arbeiten: Gehört das nicht mit zur Verantwortung in unserem wissenschaftlichen Zeitalter, das konkrete Wahrheiten verlangt?",
+      "bbox": {
+        "x_pct": 14.907,
+        "y_pct": 37.054,
+        "w_pct": 65.052,
+        "h_pct": 5.983
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction which was truncated."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Gabriel Widmer",
+      "bbox": {
+        "x_pct": 39.106,
+        "y_pct": 45.544,
+        "w_pct": 16.898,
+        "h_pct": 1.863
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour le théologien, la question de Dieu revêt aujourd'hui plusieurs aspects. Le mot «Dieu» peut être, en effet, entendu soit comme le sujet, soit comme l'objet de l'interrogation. Ou bien, c'est Dieu qui appelle et interpelle tel homme, tel peuple; ou bien c'est tel homme ou telle collectivité qui questionne Dieu; ou bien encore, ces deux possibilités interfèrent: Dieu s'adresse à l'homme qui, à son tour, pose des questions à Dieu (ou vice versa).",
+      "bbox": {
+        "x_pct": 14.932,
+        "y_pct": 48.889,
+        "w_pct": 65.254,
+        "h_pct": 13.96
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction which was truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La théologie biblique insiste sur la priorité de l'appel de Dieu. C'est Dieu qui se rend en quelque sorte visible et audible en interpellant ses serviteurs; Abraham, Moïse, David, Esaïe, Jérémie et plus tard Jean-Baptiste, les apôtres et de manière exemplaire Jésus de Nazareth, sont des appelés, et comme élus, des hommes de Dieu qui, à leur tour, adressent l'appel à d'autres. Il y a appel à la repentance et au changement de vie, à la fidélité et à l'obéissance, parce que Dieu fait connaître ses promesses de pardon, de salut, de vie, les tient et les réalise.",
+      "bbox": {
+        "x_pct": 14.746,
+        "y_pct": 62.604,
+        "w_pct": 65.488,
+        "h_pct": 17.738
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction which was truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la théologie biblique rapporte aussi les questions que les serviteurs de Dieu lui adressent. A l'issue de son combat avec l'ange,",
+      "bbox": {
+        "x_pct": 14.932,
+        "y_pct": 80.268,
+        "w_pct": 65.085,
+        "h_pct": 4.137
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction which was truncated."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2 Studia Philosophica XXX/XXXI",
+      "bbox": {
+        "x_pct": 15.176,
+        "y_pct": 88.583,
+        "w_pct": 39.467,
+        "h_pct": 1.25
+      },
+      "changed": true,
+      "change_reason": "Identified as page footer information."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 78.536,
+        "y_pct": 86.438,
+        "w_pct": 1.077,
+        "h_pct": 1.346
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Most paragraph text extractions were truncated or garbled by OCR logic, requiring full manual correction.",
+    "Page number and footer info were initially labeled as text.",
+    "Author signature/name formatting consistent with section heading."
+  ],
+  "doc_id": "3100",
+  "page": 10,
+  "elapsed_seconds": 6.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

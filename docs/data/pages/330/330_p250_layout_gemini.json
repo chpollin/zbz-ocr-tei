@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "216 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 11.379,
+        "y_pct": 8.167,
+        "w_pct": 85.557,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "The top line contains the page number and running header, should be classified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'où la formation d'un prolétariat dont tout l'idéal est bourgeois et qui, dès qu'il le peut, achète des meubles, des vêtements, qui lui permettent d'imiter le décor de la vie bourgeoise. (Ainsi dans les petits appartements des maisons ouvrières modestes et soignées, on trouve presque toujours la « chambre à coucher » complète, avec son lit immense, monumental, qui est comme l'autel du logis, son armoire à glace, sa coiffeuse avec un petit fauteuil ou un tabouret rembourré sur lequel jamais, au grand jamais, la femme ouvrière n'aura le temps de s'asseoir. De là ces affreux bois, soyeux, vernis, imitant les bois précieux. De là ces rideaux qui retiennent hors de la chambre, en hiver, le reste de jour que le brouillard et la grande ville auraient laissé filtrer.) Et ainsi de suite.",
+      "bbox": {
+        "x_pct": 11.379,
+        "y_pct": 13.485,
+        "w_pct": 85.557,
+        "h_pct": 27.13
+      },
+      "changed": true,
+      "change_reason": "Corrected the severely corrupted OCR text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces tendances de en plus bourgeoises de la classe ouvrière, loin d'atténuer la lutte des classes, lui donnent une rigueur accrue, tout en la vidant partiellement de son sens et en rendant plus complexes et parfois inextricables les lignes selon lesquelles ces « classes » s'affrontent. Ici, quelques remarques deviennent nécessaires.",
+      "bbox": {
+        "x_pct": 11.56,
+        "y_pct": 40.401,
+        "w_pct": 85.474,
+        "h_pct": 10.873
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'un des arguments « moraux », voire chrétiens, que l'autodéfense bourgeoise emploie avec prédilection contre l'idéologie marxiste, c'est l'accusation de prêcher la haine, de pousser à la guerre civile, de préconiser la « lutte des classes ». A quoi tous les partis et mouvements ouvriers répondent que c'est là calomnie pure, qu'ils ne font que dénoncer une lutte des classes qui se déroule en fait tous les jours, et que s'ils la dénoncent, c'est précisément comme un fléau aux ravages duquel il s'agit de mettre fin. En droit ils ont raison, et la propagande bourgeoise, sur ce point, ment, dans la plupart des cas sciemment. En fait cependant, il en va des données sociales comme de celles de la psychologie. L'objet d'une description ou sociale se modifie sous l'effet de la description ; il en est altéré, plus ou moins, parfois profondément, parfois jusque dans son essence. Pour prendre un exemple, que l'on songe au rôle socialement stabilisateur joué en fait par les religions. Elles l'ont joué à l'insu des croyants. Dès que ceux-ci en ont pris conscience, elles ont perdu une très grande part de leur signification propre pour prendre une valeur d'utilité sociologique de tech-",
+      "bbox": {
+        "x_pct": 11.56,
+        "y_pct": 52.887,
+        "w_pct": 85.474,
+        "h_pct": 43.141
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph region that was not captured in the initial selection."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily corrupted.",
+    "Page number and running header were not filtered out initially.",
+    "Missing lower paragraph segment.",
+    "Bbox for page header was included as part of the first paragraph text region."
+  ],
+  "doc_id": "330",
+  "page": 250,
+  "elapsed_seconds": 6.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

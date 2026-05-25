@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 11.473,
+        "y_pct": 2.0,
+        "w_pct": 24.312,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header corrected to _filter"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "67",
+      "bbox": {
+        "x_pct": 77.018,
+        "y_pct": 93.0,
+        "w_pct": 2.875,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number corrected to _filter"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "bien la prise   formatrice; avec le plan   esthétique; social et les éléments psychologiques sont   ",
+      "bbox": {
+        "x_pct": 11.473,
+        "y_pct": 13.288,
+        "w_pct": 68.47,
+        "h_pct": 9.666
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il esl fondamenlalement différent de poser le problème de la démarcation entre matière et forme les ",
+      "bbox": {
+        "x_pct": 11.588,
+        "y_pct": 22.627,
+        "w_pct": 68.619,
+        "h_pct": 43.257
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling 'esl' to 'est' and 'fondamenlalement' to 'fondamentalement' in text field"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans le domaine de l'action, nous l'avons vu, il ne s'agit plus de dévoiler une part de forme ignorée ou masquée; il s'agit d'une appropriation plus ou moins radicale et étendue du donné, par laquelle le donné devient une dépendance de la responsabilité, une matière de liberté, — la potentialité d'une forme morale. Puisque",
+      "bbox": {
+        "x_pct": 11.588,
+        "y_pct": 65.885,
+        "w_pct": 68.619,
+        "h_pct": 7.625
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph at bottom of page"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Fixed labels for page header and page number",
+    "Added missing bottom paragraph"
+  ],
+  "doc_id": "110",
+  "page": 69,
+  "elapsed_seconds": 6.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected spelling 'esl' to 'est' and 'fondamenlalement' to 'fondamentalement' in text field": 1,
+    "ADDED": 3
+  }
+}

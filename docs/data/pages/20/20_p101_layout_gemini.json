@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DEVANT L'ÉTERNITÉ ET LA NÉCESSITÉ",
+      "bbox": {
+        "x_pct": 242.0,
+        "y_pct": 77.0,
+        "w_pct": 499.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header at top of page, which should be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "99",
+      "bbox": {
+        "x_pct": 834.0,
+        "y_pct": 77.0,
+        "w_pct": 28.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number at top of page, which should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'empêche pas ensuite d'unir d'un trait de plume un Grec et un chien (Die Vernunft in der Geschichte p. 209). Ce n'est qu'une façon de dire, une figure de style, je le veux bien; mais comme tout moyen d'expression, celui-là n'en est pas moins révélateur d'une attitude réelle envers les êtres.",
+      "bbox": {
+        "x_pct": 11.446,
+        "y_pct": 12.0,
+        "w_pct": 76.054,
+        "h_pct": 15.238
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et ce n'est pas la mort seulement qui reste étrangère à cette philosophie : l'échec non plus n'y a pas de place. Il arrive qu'un individu isolé échoue; mais son échec n'aura jamais de conséquences historiques, puisque la nécessité, expression temporelle de l'éternité, règne sur l'évolution de l'histoire. Il y a bien le hasard, mais il est impuissant. Les héros sont des instruments de l'esprit universel (Weltgeist); ils ne peuvent pas savoir eux-mêmes s'ils sont des héros ou non — mais la postérité le sait, car leurs actes réussissent. La réussite est le critère de l'acte héroïque. Il n'y a pas de héros qui échouent. Celui qui échoue appartient au hasard.",
+      "bbox": {
+        "x_pct": 11.446,
+        "y_pct": 27.81,
+        "w_pct": 76.265,
+        "h_pct": 33.495
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hegel paraît bien avoir cédé à un souci d'esthétique. Le besoin qu'il avait d'une forme fermée, d'un cercle clos, son dégoût devant tout infini indéterminé, l'ont amené à enlever à la pensée le temps qui lui est indispensable, à l'histoire son avenir, à la vie sa mort et son échec. Ce que Hegel a tenté de réaliser dans son système se réalise dans le domaine de l'art, mais là seulement. En art, l'espace occupé par une statue n'est plus espace, car il se referme sur lui-même, il n'est plus partie d'un espace infini, il n'est plus divisible. De même,",
+      "bbox": {
+        "x_pct": 11.34,
+        "y_pct": 60.733,
+        "w_pct": 76.461,
+        "h_pct": 28.381
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction errors."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Detected page header not marked as _filter in original",
+    "Detected page number not marked as _filter in original",
+    "Text content for all paragraphs was severely misread by OCR",
+    "Bounding boxes were provided in the input, but labels and tags needed manual re-evaluation."
+  ],
+  "doc_id": "20",
+  "page": 101,
+  "elapsed_seconds": 6.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

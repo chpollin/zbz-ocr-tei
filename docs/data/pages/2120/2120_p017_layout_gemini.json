@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "- 153 -",
+      "bbox": {
+        "x_pct": 43.148,
+        "y_pct": 2.532,
+        "w_pct": 13.911,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "wieder ein Anspruch. ZunAchst meinen wir vielleicht - und ich hatte gestern mehrmals das Gefuhl, daß es so wäre -, \"ich hätte das niemals ertragen; ich hätte mich einfach auf den Boden gelegt, gleichgültig, was geschehen wäre\". Aber wenn man dann sieht, wenn man dann hört, wie Menschen sich dort verhalten haben, dann kommt einem der Gedanke \"Warum sollte das nicht auch können? Der Mensch hat es ja getan.\" Hier liegt also ein Anspruch auf Ausdauer, auf Mut, auf Nicht-Nachgeben, auf Anstand; aber hier liegt auch eine Warnung, daß wir alle wachsam werden, und - wie ich meine - wachsam für die ganze Menschheit, nicht nur für uns selbst, nicht nur für die eigene Familie, nicht nur für das eigene Volk, sondern für alle Menschen.",
+      "bbox": {
+        "x_pct": 8.931,
+        "y_pct": 8.319,
+        "w_pct": 75.462,
+        "h_pct": 24.084
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und noch eines haben diese Ereignisse gezeigt: wie sehr die Menschen es nötig haben, zivilisiert zu werden. Man darf sie nicht im \"wilden\" Zustand belassen; sie brauchen Gesetze; sie brauchen Grenzen; sie brauchen Gewohnheiten; sie brauchen Formen; sie brauchen Erziehung - sie dürfen sich nicht auf eine wilde, engelhafte Spontaneität verlassen. Wir haben hier fast immer von der deutschen Seite gesprochen. Ich möchte jetzt von den Menschen sprechen, die den Aufstand gemacht haben. Diese Menschen waren, als sie dort kämpften, halbtot vor Hunger, vor Elend, vor Trauer und vor Unglück und vor dem Sterben der ihnen Nahen und Nächsten. Diese halbtoten Menschen haben ohne jede Hoffnung gekämpft. Aber nicht ohne Sinn.",
+      "bbox": {
+        "x_pct": 8.821,
+        "y_pct": 33.432,
+        "w_pct": 76.59,
+        "h_pct": 25.108
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das erinnert mich an Antigone, an das Gespräch von Antigone mit ihrer Schwester Ismene. Es geht darum, daß der König verboten hat, Erde auf den Leichnam ihres Bruders zu werfen, und Antigone es trotzdem tun will, weil es in den ungeschriebenen Gesetzen der Götter steht. Ihre Schwester sie ist sehr vernünftig, diese Schwester - fragt Antigone, wozu sie das tun wolle. Die Soldaten würden ja doch kommen und die Erde wieder fortnehmen; es sei zwecklos, was sie tun wolle. Und es werde Tote geben, überall werde es Tote geben, und Antigone werde getötet werden und alle, die sie liebe. Und Antigone tut es dennoch - obwohl sie es eigentlich nicht rechtfertigen kann.",
+      "bbox": {
+        "x_pct": 9.05,
+        "y_pct": 59.86,
+        "w_pct": 77.634,
+        "h_pct": 21.658
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich glaube, die Kämpfer des Gettos hätten sich vernünftigerweise ebenfalls nicht rechtfertigen können, denn sie wußten, sie selbst und sehr viele Menschen würden sterben - und das war es nicht, was sie wollten. Sie wollten nicht soviel töten wie möglich. Ich glaube nicht einmal, daß sie sich rächen wollten. Was sie wollten, war - glaube ich -, nicht",
+      "bbox": {
+        "x_pct": 9.186,
+        "y_pct": 82.781,
+        "w_pct": 76.59,
+        "h_pct": 10.663
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text extraction was highly truncated for most paragraphs.",
+    "Page number at top was labeled as text, moved to _filter."
+  ],
+  "doc_id": "2120",
+  "page": 17,
+  "elapsed_seconds": 7.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

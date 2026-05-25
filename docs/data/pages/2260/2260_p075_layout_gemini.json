@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mentations politiques et religieuses, les fêtes sont comme un filet rituel par lequel on tente de saisir et de retenir le sens symbolique. Non pour cacher la réalité nue, mais pour que lui-se, à travers elle, son sens.",
+      "bbox": {
+        "x_pct": 11.273,
+        "y_pct": 11.438,
+        "w_pct": 65.576,
+        "h_pct": 14.071
+      },
+      "changed": true,
+      "change_reason": "The text was truncated in the provided JSON and did not match the full content visible in the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a la fête d'un seul. Tous se sont réunis, pour lui seul. Il lui est donné alors de vivre une heure pendant laquelle – enjoué, mais grave – il reçoit une merveilleuse confirmation: ce n'est pas seulement pour lui-même qu'il est unique, mais aussi pour les autres, qui l'aiment. Chaque enfant, dans la famille, quel que soit le nombre des frères et sœurs, a besoin parfois de concentrer sur lui seul, toute l'attention de sa mère. De même tout être humain exige parfois d'être reconnu par ses proches dans son unicité. S'il est ainsi fêté, ce moment le comble, et la source indispensable du sens jaillira et retombera sur sa vie.",
+      "bbox": {
+        "x_pct": 11.152,
+        "y_pct": 26.913,
+        "w_pct": 65.733,
+        "h_pct": 41.606
+      },
+      "changed": true,
+      "change_reason": "The text was truncated in the provided JSON and did not match the full content visible in the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fêtons ceux qui nous aiment, et les saisons, et les lunes. Chacun alors retrouvera la certitude qu'il y a une",
+      "bbox": {
+        "x_pct": 11.152,
+        "y_pct": 70.589,
+        "w_pct": 65.455,
+        "h_pct": 8.301
+      },
+      "changed": true,
+      "change_reason": "The text was incomplete and contained transcription errors compared to the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "75",
+      "bbox": {
+        "x_pct": 73.515,
+        "y_pct": 81.822,
+        "w_pct": 2.424,
+        "h_pct": 2.646
+      },
+      "changed": true,
+      "change_reason": "The page number was missing from the regions list."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original JSON content for paragraphs was truncated/incomplete.",
+    "Page number missing from initial detections.",
+    "OCR errors in paragraph text."
+  ],
+  "doc_id": "2260",
+  "page": 75,
+  "elapsed_seconds": 4.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

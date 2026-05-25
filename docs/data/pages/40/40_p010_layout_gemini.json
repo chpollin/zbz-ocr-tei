@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 75.337,
+        "y_pct": 82.529,
+        "w_pct": 11.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 35.833,
+        "y_pct": 82.529,
+        "w_pct": 28.274,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tels je les voyais, perdus dans leur propre absence. Chacun déployait autour de lui, avec ses mains, ses yeux, ses pas, des lieux qui n'étaient qu'à lui et qu'il ignorait. Je voyais bien se croiser leurs allées et venues et s'embarrasser leurs cœurs, mais ce n'était là pour moi qu'un emmêlement de rêve, la confusion de plusieurs photographies prises sur un seul cliché, et la solitude brûlante de chaque visage en restait inaltérée. Peut-être y avait-il de l'amour dans chacune de mes visions, car comment ne pas aimer ce qui est seul au monde, ce qui est tout au monde. Et si je n'avais aucune coquetterie, ce n'était pas par fierté, ni par oubli, mais parce que je n'étais pas là et que je n'étais nulle part.",
+      "bbox": {
+        "x_pct": 7.257,
+        "y_pct": 12.353,
+        "w_pct": 80.986,
+        "h_pct": 35.756
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image content exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On me rappelait sans cesse hors de cette contemplation où s'engourdissaient mes actes. Du fond de l'espace où il existait seul, l'autre tendait la main pour emporter mon assiette et s'indignait de la trouver encore pleine. L'autre m'envoyait à grand bruit chercher un châle, parce que, paraît-il, j'étais bleue de froid. L'autre me réclamait la boîte de clous que je devais rapporter de la ville, — mais où et quand avais-je écouté ces syllabes lointaines, gratuites, adressées à personne, inefficaces comme si elles voulaient faire tenir au même endroit du ciel les plus petits nuages, à jamais ? Bien sûr, j'avais entendu, mais est-ce que cela me concernait, est-ce que j'y pouvais quelque chose ? Et naturellement, je n'avais pas les clous.",
+      "bbox": {
+        "x_pct": 7.162,
+        "y_pct": 47.854,
+        "w_pct": 81.351,
+        "h_pct": 35.255
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image content exactly."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Ces brusques rappels, ces chutes désemparées m'épui-",
+      "bbox": {
+        "x_pct": 10.635,
+        "y_pct": 83.431,
+        "w_pct": 77.743,
+        "h_pct": 2.769
+      },
+      "changed": true,
+      "change_reason": "Identified as a footnote marked by digit 1."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original transcriptions contained hallucinations and errors.",
+    "Page number and running header were mislabeled as text.",
+    "Footnote was mislabeled as text."
+  ],
+  "doc_id": "40",
+  "page": 10,
+  "elapsed_seconds": 4.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

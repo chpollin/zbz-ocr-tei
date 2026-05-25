@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">L'AVORTEMENT</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1250</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>L'AVORTEMENT</title>
+          <author>Jeanne Hersch</author>
+          <date>1975</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-t2" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Titel L'AVORTEMENT korrekt. Autorin Jeanne Hersch. Datum 1975. Sprache fra korrekt. sourceDesc als bibl (nicht biblStruct).; 6 Seiten. S.1 Titelblatt (Konferenz: Colloque interdisciplinaire, Geneve 29-30 Nov 1974). S.2 Inhaltsverzeichnis mit detaillierter div-Struktur. S.4 (n=67) Beginn von Herschs Beitrag. div type=conference, type=bibliography korrekt.; Hersch (GND:118815679). Zahlreiche Konferenzteilnehmer als persName (Morand, Heer, Graven, Geisendorf, Kellerhals, Pasini, Rumpf, Cottier, Morel, Simone Veil). orgName fuer Fakultaeten und Universitaet Genf. placeName fuer Geneve. (+2 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="997" lry="1378">
+      <zone xml:id="facs_1_r_1" ulx="167" uly="107" lrx="741" lry="159" />
+      <zone xml:id="facs_1_r_2" ulx="250" uly="450" lrx="664" lry="497" />
+      <zone xml:id="facs_1_r_3" ulx="263" uly="549" lrx="646" lry="571" />
+      <zone xml:id="facs_1_r_4" ulx="265" uly="585" lrx="644" lry="607" />
+      <zone xml:id="facs_1_r_5" ulx="315" uly="1174" lrx="595" lry="1194" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="966" lry="1373">
+      <zone xml:id="facs_2_r_1" ulx="354" uly="144" lrx="621" lry="170" />
+      <zone xml:id="facs_2_r_2" ulx="82" uly="224" lrx="888" lry="1266" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="925" lry="1368">
+      <zone xml:id="facs_3_r_1" ulx="351" uly="52" lrx="523" lry="76" />
+      <zone xml:id="facs_3_r_2" ulx="59" uly="95" lrx="864" lry="558" />
+      <zone xml:id="facs_3_r_3" ulx="79" uly="1213" lrx="868" lry="1255" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="963" lry="1364">
+      <zone xml:id="facs_4_r_1" ulx="69" uly="137" lrx="512" lry="222" />
+      <zone xml:id="facs_4_r_2" ulx="393" uly="269" lrx="877" lry="344" />
+      <zone xml:id="facs_4_r_3" ulx="72" uly="405" lrx="876" lry="458" />
+      <zone xml:id="facs_4_r_4" ulx="70" uly="464" lrx="877" lry="667" />
+      <zone xml:id="facs_4_r_5" ulx="68" uly="673" lrx="876" lry="778" />
+      <zone xml:id="facs_4_r_6" ulx="70" uly="781" lrx="877" lry="855" />
+      <zone xml:id="facs_4_r_7" ulx="71" uly="877" lrx="879" lry="954" />
+      <zone xml:id="facs_4_r_8" ulx="69" uly="970" lrx="878" lry="1019" />
+      <zone xml:id="facs_4_r_9" ulx="68" uly="1019" lrx="877" lry="1097" />
+      <zone xml:id="facs_4_r_10" ulx="66" uly="1115" lrx="878" lry="1266" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="959" lry="1357">
+      <zone xml:id="facs_5_r_1" ulx="112" uly="73" lrx="919" lry="149" />
+      <zone xml:id="facs_5_r_2" ulx="113" uly="207" lrx="919" lry="530" />
+      <zone xml:id="facs_5_r_3" ulx="112" uly="528" lrx="920" lry="683" />
+      <zone xml:id="facs_5_r_4" ulx="113" uly="712" lrx="923" lry="1138" />
+      <zone xml:id="facs_5_r_5" ulx="115" uly="1152" lrx="923" lry="1255" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="931" lry="1361">
+      <zone xml:id="facs_6_r_1" ulx="43" uly="52" lrx="850" lry="195" />
+      <zone xml:id="facs_6_r_2" ulx="43" uly="193" lrx="848" lry="294" />
+      <zone xml:id="facs_6_r_3" ulx="41" uly="322" lrx="849" lry="451" />
+      <zone xml:id="facs_6_r_4" ulx="41" uly="449" lrx="850" lry="552" />
+      <zone xml:id="facs_6_r_5" ulx="823" uly="1279" lrx="851" lry="1320" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="conference">
+        <pb facs="#facs_1" n="1" />
+        <div type="text">
+<p facs="#facs_1_r_1">
+          Etudes interdisciplinaires<lb facs="#facs_1_l_1_1" n="N001" />de l'Association des Professeurs de l'<orgName ref="GND:unknown">Université de Genève</orgName>
+        </p>
+        <p>
+          <title type="main">L'AVORTEMENT</title>
+        </p>
+        <p facs="#facs_1_r_3">
+          COLLOQUE INTERDISCIPLINAIRE<lb facs="#facs_1_l_3_1" n="N001" />GENEVE, 29-30 NOVEMBRE 1974
+        </p>
+        <figure>
+          <head>Logo de l'Université de Genève</head>
+        </figure>
+        <p facs="#facs_1_r_5">
+          MEDECINE ET HYGIENE<lb facs="#facs_1_l_5_1" n="N001" />GENEVE<lb facs="#facs_1_l_5_2" n="N002" />1975
+        </p>
+      </div>
+<pb facs="#facs_2" n="2" />
+        <div type="text">
+<head facs="#facs_2_r_1">
+          TABLE DES MATIERES
+        </head>
+        </div>
+<div n="2">
+          <head>Introduction</head>
+          <p facs="#facs_2_r_2">
+            par <persName ref="GND:unknown">Ch.-A. Morand</persName>, Président du colloque  V
+          </p>
+        </div>
+        <div n="2">
+          <head>Allocution d'ouverture</head>
+          <p>
+            par <persName ref="GND:unknown">E. Heer</persName>, Recteur de l'<orgName ref="GND:unknown">Université</orgName>  VII
+          </p>
+        </div>
+        <div n="2">
+          <div type="text">
+<head>I. Les règles juridiques et leur mise en oeuvre</head>
+          </div>
+<div n="3">
+            <head>L'interruption de la grossesse en droit pénal suisse</head>
+            <p>
+              par <persName ref="GND:unknown">Philippe Graven</persName>, Professeur de droit pénal<lb facs="#facs_2_l_5_1" n="N001" />à la <orgName ref="GND:unknown">Faculté de Droit à Genève</orgName>  1
+            </p>
+          </div>
+          <div n="3">
+            <head>L'interruption médicale de la grossesse à Genève</head>
+            <p>
+              par <persName ref="GND:unknown">William Geisendorf</persName>, Professeur de gynécologie,<lb facs="#facs_2_l_6_1" n="N001" />Doyen de la <orgName ref="GND:unknown">Faculté de Médecine à Genève</orgName>  31
+            </p>
+          </div>
+        </div>
+        <div n="2">
+          <div type="text">
+<head>II. L'adéquation de la règle de droit</head>
+          </div>
+<div n="3">
+            <head>L'avortement dans la société d'abondance : essai de sociologie du droit</head>
+            <p>
+              par <persName ref="GND:unknown">Jean Kellerhals</persName>, Professeur assistant de sociologie<lb facs="#facs_2_l_8_1" n="N001" />à la <orgName ref="GND:unknown">Faculté des Sciences économiques et sociales de l'Université de Genève</orgName>  39
+            </p>
+          </div>
+          <div n="3">
+            <head>Aspects psychologiques de l'interruption légale de la grossesse</head>
+            <p>
+              par <persName ref="GND:unknown">Willy Pasini</persName>, Professeur assistant<lb facs="#facs_2_l_9_1" n="N001" />à la <orgName ref="GND:unknown">Faculté de médecine de Genève</orgName>, Directeur de l'<orgName ref="GND:unknown">Unité de gynécologie psychomatique et de sexologie</orgName>  61
+            </p>
+          </div>
+        </div>
+        <div n="2">
+          <div type="text">
+<head>III. La reconstruction normative</head>
+          </div>
+<div n="3">
+            <head>Quelques réflexions sur le problème de l'avortement</head>
+            <p>
+              par <persName ref="GND:118815679">Jeanne Hersch</persName>, Professeur de philosophie<lb facs="#facs_2_l_11_1" n="N001" />à la <orgName ref="GND:unknown">Faculté des Lettres, Genève</orgName>  67
+            </p>
+          </div>
+          <div n="3">
+            <head>Le point de vue éthique et théologique</head>
+            <p>
+              par <persName ref="GND:unknown">Louis Rumpf</persName>, Professeur d'éthique<lb facs="#facs_2_l_12_1" n="N001" />à la <orgName ref="GND:unknown">Faculté de théologie, Lausanne</orgName>  71
+            </p>
+          </div>
+          <div n="3">
+            <head>Quelques pistes de réflexion</head>
+            <p>
+              par <persName ref="GND:unknown">Georges Cottier</persName>, Professeur de philosophie, Genève  81
+            </p>
+          </div>
+          <div n="3">
+            <head>Quelques remarques sur le “religieux” comme fondement du normatif”</head>
+            <p>
+              par <persName ref="GND:unknown">Bernard Morel</persName>, Professeur à la <orgName ref="GND:unknown">Faculté de théologie, Genève</orgName>  85
+            </p>
+          </div>
+        </div>
+        <div type="text">
+<p>
+          III
+        </p>
+      </div>
+<pb facs="#facs_3" n="3" />
+        <div type="text">
+<head facs="#facs_3_r_1">
+          IV. Conclusions
+        </head>
+        </div>
+<div n="2">
+          <head facs="#facs_3_r_2">
+            En guise de conclusion : Quelques questions
+          </head>
+          <p facs="#facs_3_r_3">
+            par <persName ref="GND:unknown">Jean-Marc Chappuis</persName>,<lb facs="#facs_3_l_3_1" n="N001" /><hi rendition="#i">Président de l'<orgName ref="GND:unknown">Association des professeurs de l'Université</orgName></hi>,<lb facs="#facs_3_l_3_2" n="N002" />Professeur à la <orgName ref="GND:unknown">Faculté de théologie</orgName>, <placeName ref="GND:unknown">Genève</placeName> 89
+          </p>
+        </div>
+        <div n="2" type="bibliography">
+          <head facs="#facs_3_r_4">
+            Annexes
+          </head>
+          <listBibl>
+            <bibl>
+              <hi rendition="#b">Avortement et démographie</hi>
+              <lb facs="#facs_3_l_6_1" n="N001" />par <persName ref="GND:unknown">Hermann-Michel Hagmann</persName>,<lb facs="#facs_3_l_6_2" n="N002" /><hi rendition="#i">Chargé de cours de démographie à la <orgName ref="GND:unknown">Faculté des sciences économiques et sociales</orgName></hi>,<lb facs="#facs_3_l_6_3" n="N003" /><placeName ref="GND:unknown">Genève</placeName> 93
+            </bibl>
+            <bibl>
+              <hi rendition="#b">La répression pénale de l'avortement. Notes de droit comparé</hi>
+              <lb facs="#facs_3_l_8_1" n="N001" />par <persName ref="GND:unknown">Dick F. Marty</persName>,<lb facs="#facs_3_l_8_2" n="N002" /><hi rendition="#i">Responsable de la section de droit suisse de l'<orgName ref="GND:unknown">Institut Max-Planck</orgName>, <placeName ref="GND:unknown">Fribourg-en-Brisgau</placeName></hi> 99
+            </bibl>
+            <bibl>
+              Bibliographie 106
+            </bibl>
+          </listBibl>
+        </div>
+        <div type="text">
+<p facs="#facs_3_r_9">
+          * Les textes qui forment le présent ouvrage ont été publiés dans le Volume 27, No 4, 1974 de la <orgName ref="GND:unknown">Revue Internationale de Criminologie et de Police technique</orgName>.
+        </p>
+      </div>
+<pb facs="#facs_4" n="67" />
+        <div type="text">
+<head facs="#facs_4_r_1">
+          Quelques réflexions<lb facs="#facs_4_l_1_1" n="N001" />sur le problème de l'avortement
+        </head>
+        
+          <p facs="#facs_4_r_2">
+            par <persName ref="GND:118815679">Jeanne HERSCH</persName><lb facs="#facs_4_l_2_1" n="N001" />Professeur de philosophie à la <orgName ref="GND:unknown">Faculté des Lettres</orgName><lb facs="#facs_4_l_2_2" n="N002" />de l'<orgName ref="GND:unknown">Université de Genève</orgName>
+          </p>
+        
+        <p facs="#facs_4_r_3">
+          <lb facs="#facs_4_l_3_1" n="N001" />Qu’il me soit permis de présenter deux observations préliminaires, qui sembleront d’abord<lb facs="#facs_4_l_3_2" n="N002" />étrangères au sujet.
+        </p>
+        <p facs="#facs_4_r_4">
+          <lb facs="#facs_4_l_4_1" n="N001" />La première : le nouveau-né humain, si on le compare aux nouveau-nés des autres espèces,<lb facs="#facs_4_l_4_2" n="N002" />est le plus inachevé de tous. Son devenir se poursuit dans le milieu social. C’est pourquoi<lb facs="#facs_4_l_4_3" n="N003" />l’influence de milieu social, avec ses conditions et ses traditions, ne s’ajoute pas du dehors<lb facs="#facs_4_l_4_4" n="N004" />à une constitution entièrement déterminée déjà par les facteurs biologiques de l’hérédité.<lb facs="#facs_4_l_4_5" n="N005" />Elle est en fait mêlée à ces facteurs, et constitutive de l’être humain au même titre qu’eux.<lb facs="#facs_4_l_4_6" n="N006" />L’être humain est inextricablement constitué à la fois par la nature et par la société. C’est<lb facs="#facs_4_l_4_7" n="N007" />dire que ses déterminations culturelles sont aussi profondes que ses déterminations<lb facs="#facs_4_l_4_8" n="N008" />biologiques et qu’il est vain d’en faire abstraction, ou de les rejeter comme simples préjugés<lb facs="#facs_4_l_4_9" n="N009" />conventionnels.
+        </p>
+        <p facs="#facs_4_r_5">
+          <lb facs="#facs_4_l_5_1" n="N001" />La deuxième : dans toutes les cultures on découvre, à une place centrale, le rôle joué par<lb facs="#facs_4_l_5_2" n="N002" />le sacré, quel que soit d’ailleurs ce sacré. Dans la plupart des cultures, si je suis bien<lb facs="#facs_4_l_5_3" n="N003" />informée, ce sacré se rattache de façon privilégiée à la sexualité, liée à l’enfantement, et par<lb facs="#facs_4_l_5_4" n="N004" />là à la mort et à la victoire remportée sur la mort.
+        </p>
+        <p facs="#facs_4_r_6">
+          <lb facs="#facs_4_l_6_1" n="N001" />Ce qui est sacré se trouve en général à la fois valorisé et frappé d’interdit, parce qu’en lui<lb facs="#facs_4_l_6_2" n="N002" />quelque chose intervient, au niveau de faits, qui n’appartient pas au monde des faits,<lb facs="#facs_4_l_6_3" n="N003" />quelque chose d’absolu.
+        </p>
+        <p facs="#facs_4_r_7">
+          <lb facs="#facs_4_l_7_1" n="N001" />On peut se demander si l’aménagement désacralisateur de la sexualité auquel nous assistons<lb facs="#facs_4_l_7_2" n="N002" />ne va pas, en même temps qu’il lève l’interdit, la réduire à un simple élément de confort ou<lb facs="#facs_4_l_7_3" n="N003" />d’hygiène, et la faire ainsi sombrer dans l’ennui.
+        </p>
+        <p facs="#facs_4_r_8">
+          <lb facs="#facs_4_l_8_1" n="N001" />Ce danger me paraît beaucoup plus grave que l’érotisme. La victoire de l’ennui peut détruire<lb facs="#facs_4_l_8_2" n="N002" />le sens même de la vie.
+        </p>
+        <p facs="#facs_4_r_9">
+          <lb facs="#facs_4_l_9_1" n="N001" />La libéralisation de l’avortement s’inscrit dans ce processus. Il me paraîtrait plus facile d’y<lb facs="#facs_4_l_9_2" n="N002" />recourir si la société où nous vivons y répugnait davantage. Mais la libéralisation va dans le<lb facs="#facs_4_l_9_3" n="N003" />sens de toutes ses tentations. L’avortement y devient banal.
+        </p>
+        <p facs="#facs_4_r_10">
+          <lb facs="#facs_4_l_10_1" n="N001" />On me permettra de ne pas revenir sur l’angoisse à laquelle tant de femmes sont en proie<lb facs="#facs_4_l_10_2" n="N002" />lorsqu’elles prennent conscience d’une grossesse que, pour une raison ou une autre, elles sont<lb facs="#facs_4_l_10_3" n="N003" />convaincues de ne pas pouvoir assumer. Tout a été dit sur l’injustice dont elles sont victimes,<lb facs="#facs_4_l_10_4" n="N004" />par comparaison avec la liberté et l’impunité de leur partenaire d’une part, et en fonction de<lb facs="#facs_4_l_10_5" n="N005" />leur situation sociale de l’autre. Tout a été dit aussi, je crois, sur les conséquences réelles,<lb facs="#facs_4_l_10_6" n="N006" />et non doctrinales ou théoriques, du caractère pénal donné à l’avortement par la loi actuelle.
+        </p>
+      </div>
+<pb facs="#facs_5" n="5" />
+        <div type="text">
+<p facs="#facs_5_r_1">
+          <lb facs="#facs_5_r_1" n="N001" />Je voudrais seulement, sans conclure pour l'instant, ni prendre parti, attirer l'attention sur <lb facs="#facs_5_r_1" n="N002" />deux problèmes, ou deux aspects du problème, qui me paraissent avoir retenu trop peu <lb facs="#facs_5_r_1" n="N003" />l'attention. L'un concerne l'argument “toute femme a le droit de disposer librement d'elle-même <lb facs="#facs_5_r_1" n="N004" />et de son corps”. L'autre concerne les répercussions d'une décriminalisation totale de <lb facs="#facs_5_r_1" n="N005" />l'avortement sur la sensibilité diffuse de notre société, sur son “sens du vivant”.
+        </p>
+        <p facs="#facs_5_r_2">
+          <lb facs="#facs_5_r_2" n="N001" />La liberté de la femme. Il me semble qu'on s'en fait très souvent une idée très abstraite, <lb facs="#facs_5_r_2" n="N002" />comme si la possibilité légale de se faire avorter sans frais dans de bonnes conditions médicales <lb facs="#facs_5_r_2" n="N003" />constituait par elle-même une “liberté”. Cela peut être une issue, souvent la seule, et on la rend <lb facs="#facs_5_r_2" n="N004" />moins difficile et moins dangereuse. Mais ce n'est pas encore une “liberté”. Pour que la femme <lb facs="#facs_5_r_2" n="N005" />soit vraiment libre, il faut qu'elle ait vraiment le choix, un choix concret, dont les termes lui <lb facs="#facs_5_r_2" n="N006" />soient offerts : garder son enfant dans des conditions matérielles acceptables, avec un minimum <lb facs="#facs_5_r_2" n="N007" />de sécurité, ou du moins de chances offertes pour l'avenir; — ou bien renoncer à lui, mais le <lb facs="#facs_5_r_2" n="N008" />mettre au monde et consentir à ce qu'il soit élevé dans de bonnes conditions par d'autres; — ou <lb facs="#facs_5_r_2" n="N009" />bien se faire avorter. Mais si les deux premières possibilités ne lui sont pas concrètement <lb facs="#facs_5_r_2" n="N010" />offertes, la femme n'a pas le choix : elle est acculée à l'avortement, et qu'on le rende plus facile <lb facs="#facs_5_r_2" n="N011" />ne change rien à ce fait. L'avortement est bien moins cher et plus facile à réaliser, pour la <lb facs="#facs_5_r_2" n="N012" />société, que les conditions nécessaires aux deux premiers termes du choix, et surtout au premier.
+        </p>
+        <p facs="#facs_5_r_3">
+          <lb facs="#facs_5_r_3" n="N001" />J'ajoute que, dans un domaine comme celui-ci, la prétendue “libre décision” dépend d'une <lb facs="#facs_5_r_3" n="N002" />foule de facteurs affectifs et sensibles momentanés. Elle peut varier d'une semaine à l'autre, <lb facs="#facs_5_r_3" n="N003" />d'un jour à l'autre. Une femme peut se décider facilement à l'avortement parce qu'elle sait, <lb facs="#facs_5_r_3" n="N004" />mais qu'elle n'imagine pas le caractère vivant de l'être qu'elle porte. Le professeur <lb facs="#facs_5_r_3" n="N005" /><persName ref="GND:unknown">Geisendorf</persName> nous a dit que la décision changeait souvent quand la femme avait pu entendre, <lb facs="#facs_5_r_3" n="N006" />grâce à un instrument, battre le cœur de l'enfant. Il faut se garder ici de prôner une liberté <lb facs="#facs_5_r_3" n="N007" />tout abstraite.
+        </p>
+        <p facs="#facs_5_r_4">
+          <lb facs="#facs_5_r_4" n="N001" />Les répercussions sur la “sensibilité sociale”. Je parle ici de quelque chose de vague, mais qui <lb facs="#facs_5_r_4" n="N002" />me paraît très important dans la texture d'une société, dans les “tissus” affectifs et moraux où <lb facs="#facs_5_r_4" n="N003" />se constituent les comportements. Quand nous marchons dans la rue, nous n'avançons pas <lb facs="#facs_5_r_4" n="N004" />comme des bulldozers aveugles, nous évitons de nous heurter les uns les autres, nous tenons <lb facs="#facs_5_r_4" n="N005" />compte “instinctivement” (mais c'est un instinct social) de la présence et du passage des autres. <lb facs="#facs_5_r_4" n="N006" />Il existe un respect diffus du corps vivant, auquel, sans aucune réflexion morale, on évite de <lb facs="#facs_5_r_4" n="N007" />faire mal. Lorsque l'avortement entre dans les moeurs, cet instinct, cette retenue, ce respect <lb facs="#facs_5_r_4" n="N008" />diffus s'affaiblissent. Ce qui allait de soi dans un contexte social normal : ne pas blesser, ne pas <lb facs="#facs_5_r_4" n="N009" />faire mal, ne pas tuer — désormais s'examine et se discute. Il en va de même de l'euthanasie, <lb facs="#facs_5_r_4" n="N010" />toute proche. Je sais bien que dans les deux cas il s'agit en fait de diminuer la souffrance et <lb facs="#facs_5_r_4" n="N011" />même les risques de mort. Mais dans une société qui prévoit l'avortement, ceux-là même qui <lb facs="#facs_5_r_4" n="N012" />n'y sont nullement impliqués (ni médecin, ni femme enceinte, ni parent) respirent un air où il est <lb facs="#facs_5_r_4" n="N013" />permis et organisé de faire mourir ce qui pourrait vivre. Le sens du vivant en est certainement <lb facs="#facs_5_r_4" n="N014" />altéré. Il devient un moyen, il se subordonne à un résultat. L'homme étant ce qu'il est, toujours <lb facs="#facs_5_r_4" n="N015" />si proche de la violence et de la fureur lorsqu'il s'agit de son propre vouloir-vivre, une telle <lb facs="#facs_5_r_4" n="N016" />atteinte comporte des conséquences difficiles à prévoir. Car la vie de l'autre cesse d'être la <lb facs="#facs_5_r_4" n="N017" />même chose que la mienne.
+        </p>
+        <p facs="#facs_5_r_5">
+          <lb facs="#facs_5_r_5" n="N001" />Ce n'est pas là à mes yeux un argument suffisant contre une libéralisation raisonnable, face <lb facs="#facs_5_r_5" n="N002" />aux tragédies auxquelles donne lieu la loi actuelle. Il est pourtant suffisant, je crois, pour faire <lb facs="#facs_5_r_5" n="N003" />réfléchir, pour qu'on continue à considérer l'avortement comme un déplorable et ultime <lb facs="#facs_5_r_5" n="N004" />recours, et qu'il n'entre pas dans les moeurs comme s'il était aussi normal qu'une naissance.
+        </p>
+        <p>
+          <lb facs="#facs_5_r_6" n="N001" />68
+        </p>
+      </div>
+<pb facs="#facs_6" n="6" />
+        <div type="text">
+<p facs="#facs_6_r_1">
+          <lb facs="#facs_6_r_1" n="N001" />Il n'est pas, dans ce domaine, de “bonne loi”. Mais il faut reconnaître que ce qui se passe <lb facs="#facs_6_r_1" n="N002" />actuellement viole, sur une échelle énorme et inadmissible, à la fois la loi et l'humanité. Cela <lb facs="#facs_6_r_1" n="N003" />étant, la loi française telle qu'elle a été défendue par Mme <persName ref="GND:unknown">Simone Veil</persName> me paraît la moins <lb facs="#facs_6_r_1" n="N004" />mauvaise possible, d'autant plus que, décriminalisant l'avortement précoce, elle arrache la <lb facs="#facs_6_r_1" n="N005" />femme à sa solitude, l'oblige à un entretien explorant les voies possibles, et lui impose un délai <lb facs="#facs_6_r_1" n="N006" />de réflexion.
+        </p>
+        <p facs="#facs_6_r_2">
+          <lb facs="#facs_6_r_2" n="N001" />Néanmoins je voudrais encore insister sur un point. Aussi bien les partisans de la libéralisation <lb facs="#facs_6_r_2" n="N002" />que ceux du maintien du caractère criminel de l'avortement restent dans l'hypocrisie tant qu'ils <lb facs="#facs_6_r_2" n="N003" />ne luttent pas avant tout pour que la société offre à la mère une autre voie en préparant <lb facs="#facs_6_r_2" n="N004" />l'accueil de l'enfant.
+        </p>
+        <p facs="#facs_6_r_3">
+          <lb facs="#facs_6_r_3" n="N001" />Les partisans de la libéralisation parlent de la “liberté” de la femme, alors que celle-ci n'a pas <lb facs="#facs_6_r_3" n="N002" />le choix. Leurs adversaires appellent “crime” un acte inévitable, faute d'autres possibilités. Dans <lb facs="#facs_6_r_3" n="N003" />les deux hypothèses, ce qui s'impose, c'est le devoir pour la société d'assurer le respect de la <lb facs="#facs_6_r_3" n="N004" />mère et de l'enfant en toutes circonstances, la sécurité de la mère, et l'accueil, réel et prolongé, <lb facs="#facs_6_r_3" n="N005" />de l'enfant (congés de maternité, soutien efficace, conseils, travail à temps partiel, crèches, etc.).
+        </p>
+        <p facs="#facs_6_r_4">
+          <lb facs="#facs_6_r_4" n="N001" />Mais tout cela coûterait très cher à la société. En y réfléchissant, on en vient à se demander si <lb facs="#facs_6_r_4" n="N002" />la libéralisation de l'avortement, tant qu'elle n'est pas équilibrée par les institutions indispen<lb facs="#facs_6_r_4" n="N003" break="no" />sables à la mère et à l'enfant, est bien une mesure sociale et progressiste, ou si elle n'est pas, de <lb facs="#facs_6_r_4" n="N004" />la part de la société, une fuite devant des tâches plus lourdes, plus coûteuses et plus difficiles.
+        </p>
+        <p facs="#facs_6_r_5">
+          <lb facs="#facs_6_r_5" n="N001" />69
+        </p>
+      </div>
+</div>
+</body></text>
+</TEI>

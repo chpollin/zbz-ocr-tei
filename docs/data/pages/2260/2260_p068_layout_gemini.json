@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fragile qui naît non d’un disque, mais d’un violon vivant, avant de se répandre dans la nuit: chaque seconde de sereine harmonie est comme une victoire dangereuse sur l’irruption d’une mort toujours menaçante et qui, à travers elle, guette son heure. Ainsi vacille la fête, qui tente d’arracher au temps quelques moments de pure joie. Le renoncement à la durée permettra peut-être d’atteindre la perfection  impondérable d’une réussite éphémère.",
+      "bbox": {
+        "x_pct": 23.058,
+        "y_pct": 11.254,
+        "w_pct": 65.983,
+        "h_pct": 28.897
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misinterpreted text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rien de plus contraire à l’essence de la fête que de vouloir s’assurer contre un échec éventuel. Le risque est en son cœur. Sur les branches du sapin les flammes courtes tremblent. Elles vont peut-être s’éteindre, ou provoquer un incendie, – et la sécurité des confortables guirlandes d’ampoules électriques n’a ici ni sa place, ni son sens. La mort se cache dans tout anniversaire, et j’entends encore mon père dire, alors qu’on fêtait ses soixante ans: «Ces soixante ans que vous fêtez sont soixante ans que je n’ai plus.» Je ne crois pas que, disant",
+      "bbox": {
+        "x_pct": 23.095,
+        "y_pct": 43.914,
+        "w_pct": 66.226,
+        "h_pct": 33.948
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misinterpreted text content to match image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "68",
+      "bbox": {
+        "x_pct": 23.513,
+        "y_pct": 82.563,
+        "w_pct": 3.733,
+        "h_pct": 2.223
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR content for paragraphs was severely truncated and incorrect.",
+    "Page number 68 was incorrectly tagged as text."
+  ],
+  "doc_id": "2260",
+  "page": 68,
+  "elapsed_seconds": 3.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

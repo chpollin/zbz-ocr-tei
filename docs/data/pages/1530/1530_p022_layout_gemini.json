@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "94",
+      "bbox": {
+        "x_pct": 14.502,
+        "y_pct": 6.848,
+        "w_pct": 2.518,
+        "h_pct": 2.128
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to _filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 43.834,
+        "y_pct": 6.848,
+        "w_pct": 12.019,
+        "h_pct": 2.128
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "un cynique à la force nue, un sentimental à la protection paternelle, un rationaliste à la cohérence d’un vouloir collectif, un moraliste à l’incarnation des valeurs, un théologien à l’instrument du divin. Cette liste n’est pas exhaustive. Chacune de ces composantes prise isolément se prête à des interprétations cohérentes, mais réductives, et qui manquent l’essentiel: l’unité de ce mixte qu’est le pouvoir. Chacune permet de construire une doctrine univoque et dogmatique de l’Etat et dispense de la perplexité qu’engendre la multiplicité des composantes. La réalité mixte du pouvoir exige que chaque décision historique et responsable soit prise, hic et nunc, dans le concret, sans qu’elle puisse jamais être déduite d’un système ni donnée par un ordinateur.",
+      "bbox": {
+        "x_pct": 14.502,
+        "y_pct": 10.719,
+        "w_pct": 75.891,
+        "h_pct": 27.05
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’un des plus redoutables paradoxes toujours à l’œuvre dans une organisation démocratique du pouvoir, c’est qu’elle pousse ainsi à l’abstraction.",
+      "bbox": {
+        "x_pct": 14.468,
+        "y_pct": 37.331,
+        "w_pct": 75.961,
+        "h_pct": 5.041
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aussi voudrais-je conclure en disant ceci: plus encore que la dispersion et le contrôle du Pouvoir, ce qui le limite le mieux sans le détruire, c’est ce qui le nourrit sans l’accroître: la substance vivante des hommes qui l’exercent et sur qui il s’exerce, et surtout la riche complexité du tissus et des traditions de chaque société.",
+      "bbox": {
+        "x_pct": 14.618,
+        "y_pct": 44.273,
+        "w_pct": 75.775,
+        "h_pct": 11.595
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certes le Pouvoir, c’est l’action, la production du futur, alors que traditions et tissus sociaux sont «déjà là», déposés par le passé. C’est ce qui a permis à des futuristes abstraits de rejeter tissus et traditions dans la poubelle réactionnaire et de rêver d’une table rase humaine et sociale, d’un vide où le Pouvoir, démiurge du futur, ne rencontrerait nulle résistance et créerait pour ainsi dire ex nihilo l’Homme nouveau dans la Nouvelle Société. Mais comment justifier cet Homme, cette Société, sinon par des valeurs qui sont «déjà là»?",
+      "bbox": {
+        "x_pct": 14.618,
+        "y_pct": 55.017,
+        "w_pct": 75.926,
+        "h_pct": 20.545
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A l’inverse, d’autres considèrent que tissus sociaux, traditions, cultures, sont autant de ruses utilisées par le Pouvoir, rejeté comme mal en soi. L’abstraction, ici, n’est plus une dogmatique du Pouvoir, mais une dogmatique de l’Antipouvoir, une dogmatique de sa contestation et si possible de sa destruction. Eux aussi rêvent d’éliminer tout ce qui est «déjà là», en tant qu’étant au service du Pouvoir ou compromis avec lui, de façon à permettre le",
+      "bbox": {
+        "x_pct": 14.965,
+        "y_pct": 75.264,
+        "w_pct": 75.625,
+        "h_pct": 16.058
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at top was incorrectly labeled as text.",
+    "Running header at top was incorrectly labeled as text."
+  ],
+  "doc_id": "1530",
+  "page": 22,
+  "elapsed_seconds": 5.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

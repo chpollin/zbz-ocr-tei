@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vieux nain mendiant: pantalon informe, rapiécé, chandail terne aux mailles coulées, et derrière sa tête, l’auréole d’un absurde canotier jaune. Il parla d’une voix monotone, sans regarder le Chevalier, sans cesser de balancer les jambes, et le Chevalier vit qu’il portait des sabots étincelants qui scandaient les secondes comme des pendules. Il dit: «Te voici, Chevalier. Et maintenant, quoi? Tu as traversé tous les obstacles, tu vas atteindre ton ennemi, bientôt tu sentiras son odeur dans le vent. Mais quand il crachera sur toi son feu qui brûle au loin, comment te défendras-tu? Comment l’attaquaras-tu? Te voici bien cuirassé contre les flammes, mais comment l’empêcheras-tu de t’approcher et de te broyer entre ses dents? Ta lance, tu l’as perdue. Tu lui ressembles maintenant, ma parole, tu lui ressembles! Mais tu es désarmé, tu n’as pas le feu. Alors?» Le Chevalier s’enroula tristement sur lui-même et dressa seulement sa tête en sifflant: «Que dois-je donc faire, ô enfant-vieillard, pour vaincre le dragon cracheur de feu?» Et le vieillard répondit: «Crache du feu",
+      "bbox": {
+        "x_pct": 10.024,
+        "y_pct": 11.616,
+        "w_pct": 66.182,
+        "h_pct": 67.929
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and incorrect; replaced with the full, accurate text from the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "47",
+      "bbox": {
+        "x_pct": 722.0,
+        "y_pct": 828.0,
+        "w_pct": 21.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer/filter instead of paragraph."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Original OCR content for the main paragraph was incomplete.",
+    "Page number at the bottom was misclassified as text/zb_paragraph."
+  ],
+  "doc_id": "2260",
+  "page": 45,
+  "elapsed_seconds": 4.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

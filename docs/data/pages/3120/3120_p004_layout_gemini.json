@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un être humain asservi à ce qu'il méprise court à la catastrophe. Une société, une civilisation tout entière, qui rejettent avec arrogance ce qui les fait vivre, se condamnent nécessairement à la violence, à la drogue et au suicide. Car elles en viennent, quel que soit le confort et le niveau de vie dont elles jouissent, à ne plus avoir de sens à leurs propres yeux.",
+      "bbox": {
+        "x_pct": 5.198,
+        "y_pct": 3.687,
+        "w_pct": 89.289,
+        "h_pct": 14.004
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR errors to match actual printed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Face à cette situation, ceux qui, dans cette société, dans cette civilisation, travaillent dans les domaines \"humanistes\" de la pensée, dans les langues et les arts, se sentent à la fois menacés dans leur existence et chargés d'une mission presque désespérée. Ils cherchent, dès lors, à dénoncer en toute circonstance la position prépondérante, des professionnels de la science et de la technique, que ce soit au niveau des moyens, des locaux, des crédits ou des heures d'enseignement, tirant la couverture à eux dans toute la mesure du possible, réclamant qu'on leur accorde d'urgence des conditions de rayonnement plus favorables, sous peine d'une déshumanisation générale dans un bref avenir.",
+      "bbox": {
+        "x_pct": 5.472,
+        "y_pct": 17.21,
+        "w_pct": 89.562,
+        "h_pct": 23.306
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils n'ont pas tort, je crois, quant au danger qu'ils signalent. Ils ont tort cependant: la tâche urgente n'est pas avant tout d'accroître la part des humanités aux dépens des sciences et des techniques, mais bien de déchiffrer ce qu'il y a d'humaniste dans l'histoire même des sciences et des techniques, - dans la recherche qui a permis leur développement.",
+      "bbox": {
+        "x_pct": 6.156,
+        "y_pct": 39.828,
+        "w_pct": 89.152,
+        "h_pct": 13.252
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre malheur, c'est de n'avoir pas su déchiffrer les langues des sciences dans leur humanité, de n'avoir pas tenté assez profondément de \"digérer\" leur démarche, le sens et la finalité de leurs résultats. Nos \"humanistes\" ont cru hâtivement pouvoir rejeter science et technique du seul côté de la rationalité mécanique. Ils n'ont pas vu que les sciences - et chaque science à sa manière - sont des branches de notre culture, des langages culturels. Et il est vrai que, sous cet angle, tout, ou presque tout, reste à comprendre, à déchiffrer et à mimer.",
+      "bbox": {
+        "x_pct": 6.334,
+        "y_pct": 53.17,
+        "w_pct": 89.248,
+        "h_pct": 18.596
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais ici risquer un exemple, malgré mon incompétence en physique et en mathématique, - l'exemple du \"big bang\". Les astrophysiciens ont trouvé moyen, d'après l'état actuel de notre univers et la manière dont il évolue aujourd'hui, de calculer de façon conver-",
+      "bbox": {
+        "x_pct": 7.114,
+        "y_pct": 84.629,
+        "w_pct": 89.056,
+        "h_pct": 9.185
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 94.393,
+        "y_pct": 96.081,
+        "w_pct": 1.488,
+        "h_pct": 2.215
+      },
+      "changed": true,
+      "change_reason": "Detected unlabelled page number, assigned to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text extraction contained numerous OCR errors throughout.",
+    "Page number 9 at bottom right was not identified by the system."
+  ],
+  "doc_id": "3120",
+  "page": 4,
+  "elapsed_seconds": 5.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

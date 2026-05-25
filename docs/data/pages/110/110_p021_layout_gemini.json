@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "INTRODUCTION",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 11.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header region"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 16.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ne met en doute Pexistence toute   subjective de A au sein de ma conscience; et de son existence abs",
+      "bbox": {
+        "x_pct": 12.98,
+        "y_pct": 13.06,
+        "w_pct": 68.548,
+        "h_pct": 14.604
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit que toute   question radicale   concernant la réalité dun objet suppose Tanéantissement du s",
+      "bbox": {
+        "x_pct": 12.558,
+        "y_pct": 27.866,
+        "w_pct": 68.74,
+        "h_pct": 18.755
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Reste à savoir si les termes moi > indépendamment de K si   je n'existais   pas > ont véritablement ",
+      "bbox": {
+        "x_pct": 12.135,
+        "y_pct": 48.621,
+        "w_pct": 69.048,
+        "h_pct": 25.791
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page number region"
+  ],
+  "doc_id": "110",
+  "page": 21,
+  "elapsed_seconds": 7.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

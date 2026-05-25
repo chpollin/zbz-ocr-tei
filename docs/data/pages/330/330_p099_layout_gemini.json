@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 65",
+      "bbox": {
+        "x_pct": 348.5,
+        "y_pct": 92.5,
+        "w_pct": 303.0,
+        "h_pct": 14.5
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page header/number block as _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le nationalisme agressif peut bien s'en mêler, les objectifs de la politique traditionnelle de prestige et de conquête peuvent bien jouer un rôle relativement important, ces facteurs restent secondaires, subordonnés au premier et conditionnés par lui.",
+      "bbox": {
+        "x_pct": 31.06,
+        "y_pct": 122.1,
+        "w_pct": 841.23,
+        "h_pct": 86.72
+      },
+      "changed": true,
+      "change_reason": "Corrected full paragraph text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Régimes fascistes et communistes mettent donc forcément le peuple sur pied de guerre. Ils ont besoin, nous l'avons vu, de dire qu'ils sont menacés, et bientôt d'être menacés réellement. Ils ont besoin de leurs ennemis. Ils ont d'ailleurs besoin les uns des autres, tant pour la politique intérieure que pour la politique internationale. La guerre est pour eux dangereuse : d'après ce que l'histoire paraît montrer, depuis que les armements modernes ont rendu vaines les héroïques rébellions intérieures, seules les guerres ont fait crouler les régimes despotiques. Mais en même temps, ils ne peuvent pas ne pas jouer avec la guerre, ils ont besoin de la peur qu'elle inspire et de tout faire comme si elle allait éclater. D'où une propagande sur deux tableaux, pour la paix (afin que la responsabilité du danger de guerre incombe aux autres, que la résistance anticipée contre l'ennemi soit renforcée et la terreur régnante justifiée) — et pour l'armée et la préparation guerrière (qui augmentent la force matérielle des dirigeants, soutiennent le moral national et, effrayant les autres, les amènent à prendre des mesures défensives dont la propagande fera des actes menaçants). Étrange jeu, où la colombe survole les parades militaires. Étrange, mais cohérent et efficace en tous ses aspects.",
+      "bbox": {
+        "x_pct": 28.83,
+        "y_pct": 204.37,
+        "w_pct": 844.43,
+        "h_pct": 411.5
+      },
+      "changed": true,
+      "change_reason": "Corrected full paragraph text content."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial JSON missed the page header block entirely.",
+    "Initial JSON truncated the text content of the paragraphs.",
+    "Bounding boxes were slightly offset/scaled incorrectly in the provided initial JSON."
+  ],
+  "doc_id": "330",
+  "page": 99,
+  "elapsed_seconds": 4.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

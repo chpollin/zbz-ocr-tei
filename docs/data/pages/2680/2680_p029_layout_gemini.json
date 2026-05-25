@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "constater que; de nos jours et en Occident, ces rapports ont un relief un mordant sur nos vies; pour lesquels nous ne trouvons aucun précédent. Le vieux sage grec qui, le premier, s'est avisé de dire «panta rhei», a pu le faire dans un contexte incomparable plus calme que le nôtre.",
+      "bbox": {
+        "x_pct": 9.643,
+        "y_pct": 6.319,
+        "w_pct": 86.429,
+        "h_pct": 7.089
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match image content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, il se contentait de constater l'écoulement universel; il ne l'imputait aucune- ment à lui-même et à ses contemporains.",
+      "bbox": {
+        "x_pct": 9.798,
+        "y_pct": 14.911,
+        "w_pct": 86.238,
+        "h_pct": 3.659
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or l'accélération prodigieuse des changements que les humains eux-mêmes ont intro- duits dans le monde où ils vivent, et dont ils sont responsables, - comme aussi les changements ultérieurs qui découleront de ces changements et qu'ils cherchent en vain à embrasser par leur science prospective - donnent au panta rhei une tout autre dimension, un tout autre impact, et surtout une tout autre nature, - justement parce qu'ils s'en sentent responsables.",
+      "bbox": {
+        "x_pct": 9.56,
+        "y_pct": 19.926,
+        "w_pct": 86.595,
+        "h_pct": 10.889
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est une étrange évolution, contradictoire elle aussi comme le temps lui-même. A notre époque, les hommes tendent à rejeter une responsabilité, une culpabilité décou- lant d'un péché originel, pour lui substituer l'innocence d'un monde scientifiquement exploré, dans lequel ils sont entièrement soumis à des lois non seulement physiques, mais aussi biologiques, psychologiques, sociales, régissant non seulement la nature, mais aussi leur histoire, leur société et leur âme. Or voici qu'ils se retrouvent, en fait, responsables, à travers les nouveaux pouvoirs que leur donnent les développe- ments imprévus des techniques dérivées des sciences, non seulement de l'avenir du genre humain, mais encore de celui de la vie sur la terre, des espèces vivantes, et de la terre elle-même. Rien d'étonnant s'ils prennent peur, et si le «panta rhei», pre- nant pour eux des sens multiples et nouveaux, les épouvante. Ils en viennent à jeter l'anathème sur la science et la technique, sur les générations auxquelles ils en sont redevables, sur la civilisation tout entière à laquelle ils doivent ce qu'ils sont et ce qu'ils peuvent devenir.",
+      "bbox": {
+        "x_pct": 9.405,
+        "y_pct": 32.074,
+        "w_pct": 86.667,
+        "h_pct": 25.259
+      },
+      "changed": true,
+      "change_reason": "Corrected extensive OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parlons d'abord de la terre et de l'univers. L'histoire de leurs transformations à travers les mythes et les sciences, a de tout temps fasciné la pensée et l'imagination des hom- mes. Par de nombreuses méthodes indirectes, ils ont cherché à comprendre comment la terre et l'univers n'ont cessé de se transformer, dans les dimensions toujours plus vastes et inimaginables de l'espace et surtout du temps. En découvrant les règles permanentes qui assurent la stabilité de la nature, ils ont voulu expliquer les lents changements et les soudaines révolutions de l'univers matériel et ainsi d'en raconter l'histoire.",
+      "bbox": {
+        "x_pct": 9.524,
+        "y_pct": 58.837,
+        "w_pct": 86.548,
+        "h_pct": 14.074
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et ce justifiait ce récit et en confortait les hypothèses, c'est qu'il aboutissait à l'univers présent, concret, celui où ils vivaient et où se déroulaient leurs expériences.",
+      "bbox": {
+        "x_pct": 9.643,
+        "y_pct": 74.689,
+        "w_pct": 86.274,
+        "h_pct": 3.659
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "26",
+      "bbox": {
+        "x_pct": 96.0,
+        "y_pct": 89.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer for page number."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 6,
+  "issues": [
+    "Most transcribed text contained severe OCR errors.",
+    "Page number at bottom left not detected initially.",
+    "Original bounding boxes were mostly correct but labels required fixing."
+  ],
+  "doc_id": "2680",
+  "page": 29,
+  "elapsed_seconds": 6.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

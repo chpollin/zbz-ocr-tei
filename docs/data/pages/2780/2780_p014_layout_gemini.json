@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "den saisir aucune. Non nous vivons le présent sous la forme d'une «petite durée» qui, à proprement parler, ne s'écoule pas, que nous emportons en quelque sorte avec nous, le long du temps, à la rencontre de l'avenir. Elle s'écoule, et pourtant elle ne s'écoule pas.",
+      "bbox": {
+        "x_pct": 15.996,
+        "y_pct": 13.818,
+        "w_pct": 57.447,
+        "h_pct": 13.573
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content from garbled OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'heure du concert, tant attendue, est arrivée. Il est huit heures du soir.",
+      "bbox": {
+        "x_pct": 15.922,
+        "y_pct": 29.084,
+        "w_pct": 57.097,
+        "h_pct": 4.71
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La durée du concert est étrangement ambiguë. Dans un sens, le concert dure simplement deux heures. Je peux fixer à quelqu'un un rendez-vous à la sortie, il viendra me chercher à dix heures, et dès ce moment je retrouverai le temps pratique, normal, que j'ai vécu tout au long de la journée, avant le concert. Il y a donc un «avant le concert» et un «après le concert». Mais pour ce qui est du concert lui-même, il ne comporte aucun présent proprement dit, où pourrait se prendre une décision, une action s'accomplir. Et c'est pourquoi, par rapport à lui, l'«avant» n'est pas un passé, l'«après» n'est pas un futur. Il n'y a, par rapport à lui, qu'un «avant» et un «après», deux moments le long d'un temps qui s'écoule continûment. Et remarquons-le, telle est justement la manière dont les physiciens par exemple représentent le temps de la nature : ils se servent d'une droite orientée, le long de laquelle",
+      "bbox": {
+        "x_pct": 15.646,
+        "y_pct": 33.442,
+        "w_pct": 57.691,
+        "h_pct": 39.787
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 69.873,
+        "y_pct": 75.394,
+        "w_pct": 2.219,
+        "h_pct": 1.942
+      },
+      "changed": true,
+      "change_reason": "Relabeled page number from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcription was highly inaccurate.",
+    "Page number at bottom right was misclassified as text."
+  ],
+  "doc_id": "2780",
+  "page": 14,
+  "elapsed_seconds": 4.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

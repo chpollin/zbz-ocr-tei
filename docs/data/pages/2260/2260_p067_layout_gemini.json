@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "son désespoir ne fera que croître. – Il suffit de penser aux yeux pleins d'attente d'enfants qui ont préparé eux-mêmes une fête et qui accueillent leurs invités. Le choix efficace des moyens est ici remplacé par l'espérance gratuite.",
+      "bbox": {
+        "x_pct": 11.067,
+        "y_pct": 11.305,
+        "w_pct": 65.709,
+        "h_pct": 16.448
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une fête est une œuvre d'art dont la matière est un morceau limité de temps. Il n'y a plus alors que la plénitude d'un présent qui se suffit à lui-même, – sans plan ni avenir. Pendant la durée de la fête, la liberté responsable est en vacance, relayée par la joie et la solennité. Les excès eux-mêmes deviennent rituels.",
+      "bbox": {
+        "x_pct": 10.994,
+        "y_pct": 29.545,
+        "w_pct": 65.648,
+        "h_pct": 22.029
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une fête ne réussit pas toujours, il ne faut pas qu'elle réussisse à coup sûr, justement parce que son succès n'est pas la conséquence de moyens appropriés. Les préparatifs ne peuvent qu'accroître les chances de la fête, sans fournir aucune sécurité. La fête balance, hésite – elle est comme la musique parfaite et",
+      "bbox": {
+        "x_pct": 10.994,
+        "y_pct": 57.769,
+        "w_pct": 65.733,
+        "h_pct": 19.865
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated text content to match image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "67",
+      "bbox": {
+        "x_pct": 72.825,
+        "y_pct": 82.316,
+        "w_pct": 2.506,
+        "h_pct": 2.221
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text content was heavily corrupted/incomplete in original detection.",
+    "Page number at the bottom was missing from the detection list.",
+    "Page number at bottom incorrectly identified as text."
+  ],
+  "doc_id": "2260",
+  "page": 67,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

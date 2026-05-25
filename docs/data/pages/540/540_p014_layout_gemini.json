@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "242",
+      "bbox": {
+        "x_pct": 15.061,
+        "y_pct": 145.479,
+        "w_pct": 3.42,
+        "h_pct": 1.489
+      },
+      "changed": true,
+      "change_reason": "Page number should be classified as page_footer and filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "J. HERSCH",
+      "bbox": {
+        "x_pct": 44.858,
+        "y_pct": 145.479,
+        "w_pct": 10.152,
+        "h_pct": 1.489
+      },
+      "changed": true,
+      "change_reason": "Running header should be classified as page_header and filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'où le paradoxe : l'histoire vécue n'existe comme telle que par la liberté articulant le temps, de part et d'autre du présent, en passé accompli et futur inconnu, ouvert aux possibles. Pour connaître cette histoire vécue aussi adéquatement que possible et en faire le récit fidèle, l'historien ne peut qu'abolir la structure essentielle du temps vécu et lui substituer la continuité homogène d'un espace-temps, contenant une série d'événements de même modalité, le « présent historique » introduisant un fantôme de liberté actuelle dans le passé, et l'avenir étant aussi connu que le passé. L'histoire vécue est essentiellement structuration existentielle du temps ; la connaissance que l'on prend d'elle abolit le temps structuré.",
+      "bbox": {
+        "x_pct": 14.682,
+        "y_pct": 17.298,
+        "w_pct": 69.775,
+        "h_pct": 19.148
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and corrected OCR errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "A propos des valeurs : La perte de structure du temps dans l'histoire-récit",
+      "bbox": {
+        "x_pct": 15.061,
+        "y_pct": 37.961,
+        "w_pct": 69.641,
+        "h_pct": 3.292
+      },
+      "changed": true,
+      "change_reason": "The line starting with '4 A propos des valeurs...' is a section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La perte de structure du temps dans l'histoire-récit entraîne une sorte d'aplatissement général du relief de l'histoire vécue, une relativisation universelle des valeurs qui la constituent. L'histoire est toujours vécue au présent. Les valeurs au nom desquelles le passé y est jugé et le futur projeté y sont actives en tant que présentes, exemptes d'usure et de relativité temporelle. Même lorsqu'elles sont conçues théoriquement comme étant elles-mêmes des produits de l'histoire, leur exigence est intemporelle et plonge directement, sans rien perdre de son absoluité, dans l'instant présent. Ainsi, ce n'est pas parce qu'elle résulte d'une évolution économique et sociale nécessaire que l'exigence d'une libération du prolétaire s'impose dans l'action marxiste, ni parce qu'elle coïncide avec le cours nécessaire des événements futurs, mais parce qu'elle est l'incarnation présente de la justice. Au contraire l'histoire-récit, dans la mesure où elle tend à une connaissance impersonnelle, effaçant le présent (la présence) de l'historien et son point de vue temporel, transforme les valeurs en données positives, tout en leur conservant un résidu de puissance impérative juste suffisant pour leur permettre de figurer parmi les divers facteurs de l'histoire ; résidu provenant lui-même de la condition concrète de l'historien, plongé comme tout homme dans le présent valorisateur de l'histoire vécue.",
+      "bbox": {
+        "x_pct": 15.061,
+        "y_pct": 41.253,
+        "w_pct": 69.641,
+        "h_pct": 34.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire vécue est donc valorisée par son présent. L'histoire-récit, organisant la connaissance historique, transforme cette valorisation existentielle, protégée par l'unicité sans cesse retrouvée de",
+      "bbox": {
+        "x_pct": 15.441,
+        "y_pct": 75.271,
+        "w_pct": 69.262,
+        "h_pct": 5.303
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.844,
+        "y_pct": 92.571,
+        "w_pct": 36.312,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "JSTOR footer is not part of the main text block, labeled as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction had broken sentences.",
+    "Section header was misidentified as list item.",
+    "Running header and page numbers were not correctly filtered."
+  ],
+  "doc_id": "540",
+  "page": 14,
+  "elapsed_seconds": 5.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

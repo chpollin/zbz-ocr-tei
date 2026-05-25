@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "GGN 8650",
+      "bbox": {
+        "x_pct": 8.66,
+        "y_pct": 2.16,
+        "w_pct": 11.786,
+        "h_pct": 7.168
+      },
+      "changed": true,
+      "change_reason": "Library call number/catalog label marked as text, should be filtered as page_header/info."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "exions sur la liberté humaine Concepts of Human Freedom",
+      "bbox": {
+        "x_pct": 15.828,
+        "y_pct": 8.819,
+        "w_pct": 72.186,
+        "h_pct": 17.613
+      },
+      "changed": true,
+      "change_reason": "Main book title, should be section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mélanges offerts à André Mercier à loccasion de son 75e anniversaire",
+      "bbox": {
+        "x_pct": 13.008,
+        "y_pct": 31.553,
+        "w_pct": 74.066,
+        "h_pct": 5.583
+      },
+      "changed": true,
+      "change_reason": "Subtitle/Festschrift description, should be section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Festschrift zum 75. Geburtstag von André Mercier",
+      "bbox": {
+        "x_pct": 21.622,
+        "y_pct": 38.997,
+        "w_pct": 56.675,
+        "h_pct": 5.583
+      },
+      "changed": true,
+      "change_reason": "Subtitle/Festschrift description, should be section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Festschrift in Honour of André Mercier on the Occasion of His 75th Birthday",
+      "bbox": {
+        "x_pct": 17.979,
+        "y_pct": 46.359,
+        "w_pct": 64.277,
+        "h_pct": 6.149
+      },
+      "changed": true,
+      "change_reason": "Subtitle/Festschrift description, should be section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Edités par / Herausgegeben von Maja Svilar",
+      "bbox": {
+        "x_pct": 26.404,
+        "y_pct": 59.976,
+        "w_pct": 47.004,
+        "h_pct": 6.149
+      },
+      "changed": true,
+      "change_reason": "Editor information, should be section_header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Peter Lang",
+      "bbox": {
+        "x_pct": 41.281,
+        "y_pct": 88.325,
+        "w_pct": 18.214,
+        "h_pct": 3.074
+      },
+      "changed": true,
+      "change_reason": "Publisher name at bottom, should be filtered as page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Most text blocks were incorrectly labeled as generic paragraphs.",
+    "Library classification number incorrectly labeled as content.",
+    "Publisher name at the bottom should be metadata/footer."
+  ],
+  "doc_id": "2600",
+  "page": 1,
+  "elapsed_seconds": 5.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

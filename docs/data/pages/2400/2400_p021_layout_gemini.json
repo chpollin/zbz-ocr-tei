@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das größte Risiko: Sicherheit um jeden Preis",
+      "bbox": {
+        "x_pct": 5.546,
+        "y_pct": 23.777,
+        "w_pct": 19.369,
+        "h_pct": 5.262
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Frage nach Sinn",
+      "bbox": {
+        "x_pct": 3.92,
+        "y_pct": 58.901,
+        "w_pct": 21.044,
+        "h_pct": 1.965
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/incorrect OCR text to accurately reflect the visual content in the margin."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: Ich glaube wie Herr Schmidheiny, daß das größte Risiko entsteht, wenn man die Sicherheit um jeden Preis sucht. Und absolute Sicherheit hat man nur, wenn man im Kirchhof liegt – vielleicht.",
+      "bbox": {
+        "x_pct": 27.512,
+        "y_pct": 17.635,
+        "w_pct": 65.17,
+        "h_pct": 11.259
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in speaker name and paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte aber eine andere Frage aufwerfen. Sie sprechen so, als sei der Begriff Risiko eindeutig. Im Zusammenhang mit dem unternehmerischen Handeln denken wir natürlich an das wirtschaftliche Risiko. Es geht darum, sich im Wettbewerb zu halten, es geht um Erfolg. Nun aber entsteht ein weiteres Problem. Weil nämlich das wirtschaftliche Risiko so viel Aufmerksamkeit verlangt, übersieht man leicht eine weitere Frage, die Frage nämlich: Wozu das alles? Man arbeitet nicht, um sich im Wettbewerb zu halten, oder es genügt nicht, wenn man arbeitet, um sich zu halten. Erfolg zu haben im Wettbewerb ist notwendig, aber das ist keine Quelle des Sinns.",
+      "bbox": {
+        "x_pct": 27.512,
+        "y_pct": 29.207,
+        "w_pct": 65.328,
+        "h_pct": 31.492
+      },
+      "changed": true,
+      "change_reason": "Corrected inaccurate OCR text to match the original document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn sich heute Junge vom Wettbewerb abwenden, so hat dies mit Ihrer Frage nach Sinn zu tun und damit, daß die Erwachsenen auf die Frage nach Sinn nicht antworten können. Was ist der Sinn des Erfolges? Erfolg ist nicht das Letzte. Und hier liegt, scheint mir, heutzutage ein sehr großes Risiko: Der Verlust von Sinn.",
+      "bbox": {
+        "x_pct": 27.755,
+        "y_pct": 60.822,
+        "w_pct": 65.243,
+        "h_pct": 15.328
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors to match document text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Ich stimme Ihnen zu, Frau Hersch. Die Sinnfrage ist absolut zentral. Und wenn ich versuche, Risiken der Wirtschaft, der Industrieländer mit einer gewissen Distanz zu",
+      "bbox": {
+        "x_pct": 27.755,
+        "y_pct": 78.821,
+        "w_pct": 65.17,
+        "h_pct": 9.098
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and formatting."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "22",
+      "bbox": {
+        "x_pct": 58.747,
+        "y_pct": 90.725,
+        "w_pct": 1.76,
+        "h_pct": 1.708
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter tag."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Heavy OCR errors in the provided original JSON text segments",
+    "Page number not filtered",
+    "Paragraphs were poorly segmented/transcribed"
+  ],
+  "doc_id": "2400",
+  "page": 21,
+  "elapsed_seconds": 8.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

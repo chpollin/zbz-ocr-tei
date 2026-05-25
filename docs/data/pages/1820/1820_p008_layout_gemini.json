@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qu'il ait la moindre conscience et qu'il n'y a aucun espoir de l'en sortir, s'agit-il encore de «vie» au sens humain du terme? La vie, au sens humain du terme, comporte non seulement respirer, manger, évacuer, mais surtout conscience et liberté. Conscience et liberté. J'entends par liberté, non pas nécessairement une liberté de mouvement: on peut être attaché à un poteau et avoir de la liberté; on peut, comme je l'ai vu chez une femme il y a quelque temps, être paraplégique des quatre membres, complètement immobilisée et avoir manifestement liberté et courage, et être même utile aux autres. Tel est le critère: s'il y a conscience et liberté, il s'agit véritablement d'une vie humaine. S'il s'agit d'une vie humaine, ou s'il y a le moindre espoir de restaurer une vie humaine suspendue pendant un certain temps, cette vie humaine est intangible. Là, le principe me paraît absolu. S'il n'y a aucun espoir, si ces caractéristiques de la vie n'existent plus, on se trouve dans la situation où j'étais devant mon propre chien, que j'aimais de tout mon cœur et que j'ai fait piquer.",
+      "bbox": {
+        "x_pct": 11.232,
+        "y_pct": 13.023,
+        "w_pct": 38.388,
+        "h_pct": 54.767
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content and adjusted bounding box logic to represent the actual paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La difficulté que les limites sont floues. On n'est jamais sûr de ce que vit le malade, ni de l'avenir possible. C'est pourquoi d'un point de vue général, il est impossible de donner une règle d'application. Il me semble que pour ces situations extrêmes, créées par les progrès de la médecine - la question ne se posait pas naguère - les médecins devraient établir entre eux une déontologie leur permettant de partager leur responsabilité avec une équipe. Aucune loi ne peut trancher,",
+      "bbox": {
+        "x_pct": 21.384,
+        "y_pct": 67.629,
+        "w_pct": 36.512,
+        "h_pct": 25.563
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Der philosophische Aspekt",
+      "bbox": {
+        "x_pct": 50.188,
+        "y_pct": 38.159,
+        "w_pct": 40.69,
+        "h_pct": 2.492
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie Frau Professor Hersch feststellt, sind die Verfechter des Rechts auf Leben unerbittlich in der Frage des Schwangerschaftsabbruchs. Auf der anderen Seite sind die Befürworter einer Liberalisierung des Schwangerschaftsabbruchs ebenso absolut in ihren Ansichten. Die einen betrachten das Leben nach dem Buchstaben genauso, wie es sich vor ihren Augen abspielt - es gibt für sie nur die eine Sicht, und es ist diejenige, die ihrem Gefühl entspricht. Die andern sehen in der Tatsache, ob eine Schwangerschaft weitergeführt oder unterbrochen wird, eine Symbolik, bei der es um den Sinn des Lebens schlechthin geht und die transzendentale Dimensionen annimmt. Auf beiden Seiten sind die Ansichten so tief verwurzelt, dass die konkreten Umstände und Situationen vergessen werden. Es geht nur noch um Grundsätze, Prinzipien, die dem wirklichen Leben so fremd gegenüberstehen, dass gar nichts anderes übrigbleibt, als die Ansicht des «Gegners» zu akzeptieren, ohne ihn deswegen zu verachten.",
+      "bbox": {
+        "x_pct": 49.9,
+        "y_pct": 42.468,
+        "w_pct": 47.378,
+        "h_pct": 50.86
+      },
+      "changed": true,
+      "change_reason": "Corrected typos in the German transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "311",
+      "bbox": {
+        "x_pct": 93.387,
+        "y_pct": 95.334,
+        "w_pct": 3.256,
+        "h_pct": 2.093
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text for paragraphs was truncated or garbled.",
+    "Page number at bottom right was missing a label.",
+    "Corrected German text transcription errors."
+  ],
+  "doc_id": "1820",
+  "page": 8,
+  "elapsed_seconds": 6.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

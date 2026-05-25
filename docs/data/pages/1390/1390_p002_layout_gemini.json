@@ -1,0 +1,155 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Die Mittelschule: Vom Kind zum Erwachsenen",
+      "bbox": {
+        "x_pct": 7.552,
+        "y_pct": 25.957,
+        "w_pct": 26.363,
+        "h_pct": 2.937
+      },
+      "changed": true,
+      "change_reason": "Corrected label from section_header to zb_heading"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "das Wort crgreilen zu dur Ten  Das hunderuste Jubilaum der Töchierschule lasst den Tag Weg gleichzei",
+      "bbox": {
+        "x_pct": 7.405,
+        "y_pct": 28.74,
+        "w_pct": 44.184,
+        "h_pct": 4.4
+      }
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Miutelschule, das ist dic Zeit des Übergangs stellt wird, und emporen sich dann gegen dic Gescll",
+      "bbox": {
+        "x_pct": 7.057,
+        "y_pct": 53.864,
+        "w_pct": 44.566,
+        "h_pct": 20.488
+      }
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zunächst möchte ich die Ehre danken, an diesem feierlichen Tag das Wort ergreifen zu dürfen.",
+      "bbox": {
+        "x_pct": 7.399,
+        "y_pct": 30.088,
+        "w_pct": 44.208,
+        "h_pct": 11.233
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph text block"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "In dieser Haltung steckt die falsche Überzeugung...",
+      "bbox": {
+        "x_pct": 7.151,
+        "y_pct": 78.43,
+        "w_pct": 44.509,
+        "h_pct": 11.189
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph text block"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dic Freiheic ist eine langsame und múhsame Eroberung und diese Eroberung wird immer lanscheinen in V",
+      "bbox": {
+        "x_pct": 52.457,
+        "y_pct": 30.321,
+        "w_pct": 44.158,
+        "h_pct": 6.897
+      }
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Schauen wir etwas näher. Ich erwähnte eben die ers...",
+      "bbox": {
+        "x_pct": 52.428,
+        "y_pct": 40.098,
+        "w_pct": 44.175,
+        "h_pct": 28.528
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph text block"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "schengruppen und Zugchörigkeiten, Kritik zu üben: Die Selbstverslandlichkeil der ersten ursprünglich",
+      "bbox": {
+        "x_pct": 52.083,
+        "y_pct": 69.524,
+        "w_pct": 44.444,
+        "h_pct": 8.276
+      }
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gerade diese Entwicklung findet in den Jahren statt...",
+      "bbox": {
+        "x_pct": 52.052,
+        "y_pct": 82.164,
+        "w_pct": 44.436,
+        "h_pct": 11.233
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph text block"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 7.37,
+        "y_pct": 94.66,
+        "w_pct": 1.73,
+        "h_pct": 2.21
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 95.52,
+        "y_pct": 94.66,
+        "w_pct": 1.73,
+        "h_pct": 2.21
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing paragraph text blocks identified on left and right columns.",
+    "Page numbers not labeled.",
+    "Label consistency check failed on header."
+  ],
+  "doc_id": "1390",
+  "page": 2,
+  "elapsed_seconds": 9.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from section_header to zb_heading": 1,
+    "ADDED": 6
+  }
+}

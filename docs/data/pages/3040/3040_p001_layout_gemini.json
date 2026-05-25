@@ -1,0 +1,152 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "751",
+      "bbox": {
+        "x_pct": 33.0,
+        "y_pct": 0,
+        "w_pct": 3.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "JASPERS",
+      "bbox": {
+        "x_pct": 91.0,
+        "y_pct": 0,
+        "w_pct": 6.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à intervenir dans la cité. Il est frappant à cet égard que des principaux   professeurs des Petites ",
+      "bbox": {
+        "x_pct": 3.238,
+        "y_pct": 6.536,
+        "w_pct": 42.829,
+        "h_pct": 32.498
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le moraliste de Port-Royal ruse ainsi perpétuellement parvient toujours à restituer au sujet dépossé",
+      "bbox": {
+        "x_pct": 3.401,
+        "y_pct": 38.666,
+        "w_pct": 42.492,
+        "h_pct": 23.699
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si les thèmes et les objets de Nicole; ses thèses; sont par[ois Cl peu aptes à mobiliser un du Xx\" S",
+      "bbox": {
+        "x_pct": 3.473,
+        "y_pct": 61.953,
+        "w_pct": 42.288,
+        "h_pct": 19.381
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Embarrassée, la pensée de Nicole correspond somme celle dun moraliste strictement chrétien du cel (D",
+      "bbox": {
+        "x_pct": 3.79,
+        "y_pct": 80.744,
+        "w_pct": 41.971,
+        "h_pct": 16.802
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Les Essais de morale, dont sont tirees la plupart des citations ct des analyses de cet article, sont",
+      "bbox": {
+        "x_pct": 49.581,
+        "y_pct": 35.689,
+        "w_pct": 43.371,
+        "h_pct": 7.959
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to footnote"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "BERGER G. Les origines du libéralisme. Pierre Nicole w, Com p. 275-284 CARRAUD V Nicole \", Diction b",
+      "bbox": {
+        "x_pct": 49.438,
+        "y_pct": 45.711,
+        "w_pct": 43.749,
+        "h_pct": 27.34
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to footnote"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Amour de s0i Augustinisme Christianisme Descartes Genres {ittéraires Grice Jésus Malebranche Mvorali",
+      "bbox": {
+        "x_pct": 52.329,
+        "y_pct": 75.018,
+        "w_pct": 40.623,
+        "h_pct": 3.633
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to footnote"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JASPERS Karl, 1883-1969 La philosophie morale de Jaspers et Fexistentialisme moderne",
+      "bbox": {
+        "x_pct": 49.642,
+        "y_pct": 83.662,
+        "w_pct": 30.919,
+        "h_pct": 4.473
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Invité à donner en 1937 trois conférences à Francfort sur (( présente son sujet en ces termes { Ce q",
+      "bbox": {
+        "x_pct": 49.51,
+        "y_pct": 90.052,
+        "w_pct": 43.575,
+        "h_pct": 7.237
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header/footer",
+    "List items were actually footnotes"
+  ],
+  "doc_id": "3040",
+  "page": 1,
+  "elapsed_seconds": 7.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

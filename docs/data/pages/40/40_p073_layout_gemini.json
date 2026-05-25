@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNS 75",
+      "bbox": {
+        "x_pct": 384.0,
+        "y_pct": 81.0,
+        "w_pct": 526.0,
+        "h_pct": 98.0
+      },
+      "changed": true,
+      "change_reason": "Page header was incorrectly labeled as text and partially merged."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "équilibre de sourires. Ils étaient nés de la lumière des lustres et s'effaceraient avec elle, sans veille et sans lendemain. Une griserie passait dans ma robe, dans mes cheveux, vers le pur plaisir fleurissant sans dessein comme une arme inutile. Les pas de danse ne vont nulle part sur le parquet ciré, pas sans traces, aucun sentier ne se creuse, — on peut repasser mille fois au même endroit, il reste neuf, — on peut passer ailleurs, c'est le même, — méandres, un seul mouvement écrit et défait des figures perméables à d'autres figures... Une valse commença, et alors je le vis. Ce fut d'un coup une image et une douleur, une image en pièces détachées, sa tête au-dessus d'une table, sur un fond de satin bleu ciel, près d'une tête de jeune femme à perruque blanche. Je m'appuyais de tout mon long contre la colonne, avec le sentiment que j'allais glisser, sombrer dans un trou énorme, éclatant, rempli de grimaces vermillonnées, pendant que la douleur, une douleur vraie, avec des veilles et des lendemains, prenait en grinçant possession de mon corps. Je dansai cette valse; je passai devant lui, il me vit et me salua.",
+      "bbox": {
+        "x_pct": 100.0,
+        "y_pct": 124.76,
+        "w_pct": 809.05,
+        "h_pct": 529.02
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content to match image content fully."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le reste de la nuit s'est effacé. Je sais seulement, sans en retrouver le souvenir vivant, qu'il dansa avec moi deux fois. Comment se fait-il qu'il ne m'en reste aucune sensation nette ? Peut-être l'équilibre des sourires s'était-il pour moi trop violemment rompu. Peut-être la douleur avait-elle aboli jusqu'à la réalité instantanée du monde du plaisir, si bien que tout ce que faisait mon corps m'était étranger, pendant qu'au fond de moi se martelait la seule",
+      "bbox": {
+        "x_pct": 100.95,
+        "y_pct": 657.18,
+        "w_pct": 808.51,
+        "h_pct": 204.82
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content to match image content fully."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page header missing or incorrectly merged in initial JSON",
+    "Text content was severely truncated in initial JSON",
+    "Initial layout detection missed the top page header/footer line"
+  ],
+  "doc_id": "40",
+  "page": 73,
+  "elapsed_seconds": 5.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

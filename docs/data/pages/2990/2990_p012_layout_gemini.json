@@ -1,0 +1,96 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Menschsein, Grenzen und Widersprüche 19",
+      "bbox": {
+        "x_pct": 62.439,
+        "y_pct": 47.785,
+        "w_pct": 24.364,
+        "h_pct": 2.215
+      },
+      "changed": true,
+      "change_reason": "Page header was misclassified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "glaubt, entweder weil etwas in einer heiligen Schrift steht oder weil er einen Beweis gefunden hat, der mit Vernunft nicht geleugnet werden kann. Die Theologia negativa wird dagegen von Denkern praktiziert, die davon überzeugt sind, daß sie nur sagen können, daß sie nur wissen können, daß Gott nicht sein kann. Zum Beispiel kann Gott nicht böse sein. Das ist auch etwas, was man von Gott sagt, aber nur negativ.",
+      "bbox": {
+        "x_pct": 6.786,
+        "y_pct": 77.292,
+        "w_pct": 86.419,
+        "h_pct": 118.847
+      },
+      "changed": true,
+      "change_reason": "Corrected text block boundary and updated content to match image text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Also ist die Theologia negativa eine Theologie, die mehr Distanz zwischen dem Theologen und dem Gott, von dem der Theologe spricht, bestehen läßt. Ich bin fast geneigt zu sagen, daß diese Distanz auch etwas von Gott sagt, wie der Theologe ihn sich vorstellt. Der Theologe, der eine Theologia negativa praktiziert, fragt sich nicht in erster Linie, was Gott ist, sondern wo seine eigenen Grenzen sind, wenn er versucht, etwas über Gott zu sagen. Er fragt also nach sich selbst, aber gleichzeitig ist das natürlich eine Weise, etwas über Gott zu sagen. Diese Weise beruht darauf, daß er nach seinen eigenen Grenzen fragt. Deswegen versucht er zu wissen, was er nicht von Gott wissen kann und warum er es nicht wissen kann. Und wenn er versteht, warum er es nicht wissen kann, dann entsteht eine Art Wissen über Gott und über seine Beziehung zu Gott. Also ist der Fragende jemand, der nach seinen eigenen Grenzen fragt und danach, was diese Grenzen zeigen.",
+      "bbox": {
+        "x_pct": 6.786,
+        "y_pct": 197.809,
+        "w_pct": 86.419,
+        "h_pct": 284.145
+      },
+      "changed": true,
+      "change_reason": "Corrected text block boundary and updated content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers ist für mich immer ein Philosoph gewesen, der eine Philosophia negativa praktiziert. Jaspers' Philosophie ist ein Suchen, das dem Menschen Klarheit über sein Menschsein verschafft, über die Grenzen dieses Menschseins, darüber, was er nicht überschreiten kann.",
+      "bbox": {
+        "x_pct": 6.786,
+        "y_pct": 483.568,
+        "w_pct": 86.419,
+        "h_pct": 77.014
+      },
+      "changed": true,
+      "change_reason": "Corrected text block boundary and updated content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zum Beispiel weiß der Mensch, daß er sterblich ist, aber er weiß nicht wann und wie er sterben wird. Das ist etwas, das sehr viel über sein Menschsein zeigt und sagt. Das sind Grundgegebenheiten des Menschseins, und dieses Menschsein ist das, jeder Mensch als sein Selbstsein als Mensch erlebt; das zeigt sich an dem, was er wissen kann und was er nicht wissen kann. Das hat eine tiefe Wirkung auf die eigene Freiheit. Diese Klarheit wirft viel Licht auf seinen eigenen Glauben oder auf seinen eigenen Zweifel. Sein Glaube oder sein Zweifel wird sehr tief dadurch beleuchtet, daß er die Erfahrung gemacht hat von dem, was er von seinem Mensch-Sein wissen kann oder nicht wissen kann.",
+      "bbox": {
+        "x_pct": 6.786,
+        "y_pct": 560.582,
+        "w_pct": 86.419,
+        "h_pct": 197.669
+      },
+      "changed": true,
+      "change_reason": "Corrected text block boundary and updated content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte Ihnen ein anderes Beispiel aus dem Mittelalter geben. Viele von Ihnen kennen wahrscheinlich, was man im Mittelalter den ontologischen Beweis nannte. Das war der Gottesbeweis, der vom heiligen Anselmus stammte. Dieser Gottesbeweis ist ganz wunderbar in der Geschichte der Philosophie, weil er scheinbar so einfach ist. Er sagt, es ist evident, daß es Gott gibt, weil Gott nicht ohne Sein sein kann; denn das wäre ein Wider-",
+      "bbox": {
+        "x_pct": 6.786,
+        "y_pct": 758.251,
+        "w_pct": 86.419,
+        "h_pct": 126.974
+      },
+      "changed": true,
+      "change_reason": "Corrected text block boundary and updated content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Page number and header merged into page_header",
+    "Text block boundaries incorrectly defined",
+    "OCR text content significantly truncated in initial extraction",
+    "Bounding boxes were disjointed from line flow",
+    "Missing line segments in paragraphs"
+  ],
+  "doc_id": "2990",
+  "page": 12,
+  "elapsed_seconds": 7.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

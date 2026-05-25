@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 10.709,
+        "y_pct": 2.0,
+        "w_pct": 21.053,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "47",
+      "bbox": {
+        "x_pct": 75.862,
+        "y_pct": 2.0,
+        "w_pct": 3.737,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "renvoyant à qu'à son objet   apparent. Aussi la relation humaine établit ne se laisse-t-elle en aucu",
+      "bbox": {
+        "x_pct": 10.522,
+        "y_pct": 13.632,
+        "w_pct": 68.395,
+        "h_pct": 7.436
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La condition humaine telle que nous Favons décrite se lit se représente lhomme comme composé dun cor",
+      "bbox": {
+        "x_pct": 10.561,
+        "y_pct": 21.067,
+        "w_pct": 68.77,
+        "h_pct": 31.563
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest parce aura ici une place privilégiée. que qu'il",
+      "bbox": {
+        "x_pct": 10.946,
+        "y_pct": 52.656,
+        "w_pct": 36.443,
+        "h_pct": 3.642
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Fixed missing page header labels",
+    "Corrected OCR errors in existing regions during verification"
+  ],
+  "doc_id": "110",
+  "page": 49,
+  "elapsed_seconds": 5.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

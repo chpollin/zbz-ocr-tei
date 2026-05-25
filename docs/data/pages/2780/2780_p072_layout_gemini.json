@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à lapproximation, au compromis, à la confusion. Jusque dans notre pensée logique, c'est la pensée successive, opérant à l'aide de l'écoulement du temps, qui nous permet de penser le contradictoire, non pas simplement comme impossibilité, mais comme significatif de ce qu'il y a d'essentiellement irréductible dans ce que nous sommes et dans ce que nous croyons.",
+      "bbox": {
+        "x_pct": 17.405,
+        "y_pct": 13.573,
+        "w_pct": 57.489,
+        "h_pct": 17.825
+      },
+      "changed": true,
+      "change_reason": "The text was fragmented and OCR was incomplete. Updated to reflect the full paragraph content visible in the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi nous sommes, indissolublement, à la fois alliés au temps et en guerre contre lui. En guerre contre lui : tout ce que nous créons, ce que nous aimons, ce que nous sommes, se trouve plus que menacé - rongé déjà par son écoulement. Exegi monumentum aere perennius, écrivait le poète Horace, essayant d'arracher ses odes à cette moisissure invincible, à laquelle l'airain même ne résiste pas assez. D'où cette inlassable quête de la durée, sous toutes ses formes, dans tous les domaines : à travers des hauts faits que leur éclat pourrait rendre inoubliables; grâce à des matériaux inaltérables; en mobilisant une gloire qu'on espère fidèle, - ou même en se réfugiant soi-même, avec ses œuvres, dans la transcendance de Dieu, seule impérissable.",
+      "bbox": {
+        "x_pct": 17.161,
+        "y_pct": 30.826,
+        "w_pct": 57.521,
+        "h_pct": 35.323
+      },
+      "changed": true,
+      "change_reason": "The text was cut off in the previous input; corrected to include the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alliés au temps : c'est le temps lui-même, le temps seul, qui est impérissable. Il s'agit dès lors de consentir à lui, de compter sur lui pour faire que",
+      "bbox": {
+        "x_pct": 17.193,
+        "y_pct": 65.658,
+        "w_pct": 57.203,
+        "h_pct": 7.114
+      },
+      "changed": true,
+      "change_reason": "OCR completion for the final paragraph fragment."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "73",
+      "bbox": {
+        "x_pct": 71.218,
+        "y_pct": 75.313,
+        "w_pct": 2.766,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Page numbers must be labeled as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was highly fragmented and incomplete.",
+    "Page number 73 was missing from the initial region list.",
+    "Bounding boxes were generally correct, but textual extraction was poor."
+  ],
+  "doc_id": "2780",
+  "page": 72,
+  "elapsed_seconds": 5.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

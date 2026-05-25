@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Menschlich erlebte Zeit",
+      "bbox": {
+        "x_pct": 7.316,
+        "y_pct": 2.704,
+        "w_pct": 21.034,
+        "h_pct": 1.769
+      },
+      "changed": true,
+      "change_reason": "Identified running page header mislabeled as text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "35",
+      "bbox": {
+        "x_pct": 83.716,
+        "y_pct": 2.604,
+        "w_pct": 3.034,
+        "h_pct": 1.869
+      },
+      "changed": true,
+      "change_reason": "Identified page number mislabeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sozusagen die ganze erlebte Zeit in eine einzige Wirklichkeit. Man sieht, wie nicht nur zweideutig, sondern wie vieldeutig die Zeit ist.",
+      "bbox": {
+        "x_pct": 7.316,
+        "y_pct": 6.604,
+        "w_pct": 79.534,
+        "h_pct": 4.169
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie erleben wir unsere Zeitlichkeit? Wir erleben sie als einen Verlust an Sein. Wir sind weniger, glauben wir, weil wir zeitlich sind. Wir träumen davon – irgendwie begleitet dieser Traum die Menschheit –, nicht zeitlich zu sein. Wir sehnen uns eigentlich danach. Und die Sehnsucht nach dem irdischen Paradies ist eine Sehnsucht nach einem Sein ohne Zeit. Wir empfinden also dieses zeitliche Sein als einen Fall, als eine Sünde, als eine Zerbrechlichkeit, jedenfalls als einen Mangel an Fülle. Uns fehlt eine bestimmte Fülle, weil wir zeitlich sind. Es gibt da im menschlichen Erleben der Zeit eine Art „Enteignung“, die durch die Zeit geschieht. Wir sind dessen, was uns eigentlich gehört, enteignet. Es gibt eine Art Enttäuschung des Besitzes. Wir besitzen nicht mehr, was wir zu besitzen glaubten. Nichts gehört uns wirklich. Es gehört uns nur dem Schein nach. Und weswegen? Wegen der Zeitlichkeit. Was uns am allerwenigsten gehört, ist unser Leben; denn wenn etwas in der Zeitlichkeit ist, so ist es unser Leben. Das ist natürlich ein Zeichen, das Zeichen par excellence sozusagen, des Zeitlichseins, unserer Zeitlichkeit. Daraus ergibt sich eine Art Zwielicht, durch welches die irdischen Wirklichkeiten von ihrem Wert verlieren. Deswegen wächst eine Lust zu transzendieren, eine Lust, die nur den Weg findet, das Vorübergehende, also das Zeitliche, zu entwerten, so daß man Sehnsucht nach dem bekommt, was sich nicht entwerten läßt.",
+      "bbox": {
+        "x_pct": 6.949,
+        "y_pct": 10.444,
+        "w_pct": 80.025,
+        "h_pct": 39.449
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Andererseits ist für uns nur das wirklich, womit wir eine Verabredung in der Zeit haben. Wenn es etwas gibt, womit wir keine Verabredung in der Zeit haben – in der Zeit, in der wir leben –, dann ist dieses Etwas für uns nicht seiend. Es ist, als gäbe es das nicht. Wenn man sich danach sehnt, eine Verabredung mit etwas oder mit jemandem zu haben, das oder der nicht zeitlich ist, nicht der Zeit unterworfen ist, so würde man sich dadurch ganz dazu verurteilen, mit Nichts eine Verabredung zu haben. Also wird das eine entwertet, und das andere ist nicht erreichbar. Wir können nur in der Zeit eine Verabredung mit diesem Etwas haben, seien es Menschen oder Dinge.",
+      "bbox": {
+        "x_pct": 6.9,
+        "y_pct": 49.613,
+        "w_pct": 79.828,
+        "h_pct": 20.255
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt jedoch in unserer ganzen Literatur immer wieder Übungen der Desorientierung in der Zeit. Ein sehr bemerkenswerter Künstler in dieser Hinsicht ist Proust. Proust war jemand, für den, ich würde fast sagen, jede Art zu leben eine Übung der Desorientierung in der Zeit war. Was war diese Desorientierung? Die Erfahrung der Nicht-Überwindbarkeit der Zeit, der Tatsache, daß die Zeit immer und unvermeidlich da ist und daß sie gleichzeitig mit uns unversöhnlich bleibt. Sie ist unvermeidlich und unversöhnlich. Diese doppelte Erfahrung gab für Proust dem menschlichen Erlebten",
+      "bbox": {
+        "x_pct": 6.74,
+        "y_pct": 69.268,
+        "w_pct": 79.902,
+        "h_pct": 16.176
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected page header and page number incorrectly labeled as text.",
+    "Text content extraction needed significant correction for accuracy.",
+    "Multiple paragraphs merged into single blocks by OCR/segmentation."
+  ],
+  "doc_id": "2990",
+  "page": 28,
+  "elapsed_seconds": 6.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

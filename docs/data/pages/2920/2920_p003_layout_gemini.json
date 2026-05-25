@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LES DROITS DE L'HOMME D'UN POINT DE VUE PHILOSOPHIQUE",
+      "bbox": {
+        "x_pct": 15.317,
+        "y_pct": 15.604,
+        "w_pct": 46.348,
+        "h_pct": 6.575
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PAR J HERSCH",
+      "bbox": {
+        "x_pct": 28.277,
+        "y_pct": 24.76,
+        "w_pct": 20.427,
+        "h_pct": 1.668
+      },
+      "changed": true,
+      "change_reason": "Author name/signature in all caps acts as a section header element in this context."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le détour philosophique",
+      "bbox": {
+        "x_pct": 3.829,
+        "y_pct": 39.519,
+        "w_pct": 30.383,
+        "h_pct": 2.807
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le respect ou la violation des exigences des droits de l'homme a des implications si directes et si concrètes dans la vie des êtres humains concernés que le détour philosophique peut paraître, à leur sujet, vain ou même inacceptable, presque indécent. Après tout, au niveau de l'adhésion théorique, il n'y a pratiquement plus personne qui ose ouvertement les récuser. Il suffirait, dès lors, semble-t-il, de les tenir pour acquis et de consacrer tous les efforts, d'une part, à les définir juridiquement, d'autre part, à en assurer la mise en œuvre par le droit international, dans le monde entier.",
+      "bbox": {
+        "x_pct": 3.682,
+        "y_pct": 43.965,
+        "w_pct": 71.178,
+        "h_pct": 24.367
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le « détour philosophique » s'impose cependant si nous voulons tenter de comprendre pourquoi, malgré une reconnaissance quasi universelle, ils continuent à être violés de mille manières, aux yeux de tous, un peu partout sur notre planète. On se fait sans doute une idée trop facile, superficielle et complaisante de leur influence effective, et surtout de ce qui, dans la nature de l'homme et dans sa condition, s'oppose à celle-ci. L'angélisme et ses illusions se font ici les complices du pire.",
+      "bbox": {
+        "x_pct": 4.271,
+        "y_pct": 68.077,
+        "w_pct": 70.442,
+        "h_pct": 21.688
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La première question qui se pose, à propos des",
+      "bbox": {
+        "x_pct": 6.775,
+        "y_pct": 89.764,
+        "w_pct": 67.791,
+        "h_pct": 3.003
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in text content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Multiple OCR errors in paragraph text.",
+    "Author signature was mislabeled as paragraph text instead of section header."
+  ],
+  "doc_id": "2920",
+  "page": 3,
+  "elapsed_seconds": 4.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

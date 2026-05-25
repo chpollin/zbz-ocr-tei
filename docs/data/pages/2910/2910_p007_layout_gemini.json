@@ -1,0 +1,125 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Continent de l'incarnation, créatrice d'histoire",
+      "bbox": {
+        "x_pct": 270,
+        "y_pct": 43,
+        "w_pct": 461,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Identified as the section header at the top of the page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tinents, de peuple consente aujourd 'hui à en étre Dou, maintenant, pour F'Ouest développé, une nouvelle tâche «incarnative», impérieuse et inéluctable: celle de contribuer d'urgence au développement scientifique et technique des régions pauvres de la planète.",
+      "bbox": {
+        "x_pct": 6.821,
+        "y_pct": 7.854,
+        "w_pct": 42.151,
+        "h_pct": 12.234
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense que les Européens ne se sont pas assez sérieusement pose assez sérieusement une question qui leur aurait peut-étre permis de saisir pour-",
+      "bbox": {
+        "x_pct": 6.852,
+        "y_pct": 19.703,
+        "w_pct": 42.12,
+        "h_pct": 5.439
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un va-et-vient entre la constatation étonnée de ce qui se passe dans la nature, et le besoin d'en établir la relation rigoureuse et permanente; d'où: invention de l'hypothèse, par laquelle la pensée répond à l'incitation de l'événement, puis retour au donné qui va juger l'hypothèse, et ainsi de suite. On voit alors naître aussi le besoin d'appareils, permettant de poser au donné des questions de plus en plus précises.",
+      "bbox": {
+        "x_pct": 6.642,
+        "y_pct": 43.314,
+        "w_pct": 42.288,
+        "h_pct": 17.165
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "recherche scientifique et l'invention technique ont été et sont encore - une prodigieuse aventure, vécue d'abord par l'Europe, puis par l'Amérique, et qui est en train de devenir une entreprise généralement humaine. On peut seulement déplorer qu'aujourd'hui tant d'Européens s'acharnent à la dénigrer en la rendant responsable de tous leurs maux, - au lieu de s'efforcer d'en saisir eux-mêmes le sens et les effets libérateurs, et de les faire comprendre à tous les peuples qui s'efforcent aujourd'hui d'y prendre part.",
+      "bbox": {
+        "x_pct": 6.684,
+        "y_pct": 59.732,
+        "w_pct": 42.109,
+        "h_pct": 22.502
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne s'agit nullement pour moi d'idéaliser comme si elle était la source de tous les biens pour les autres continents. J'ai voulu ici seulement mettre en lumière une de ses caractéristiques à mes yeux centrale: le «va-et-vient» inlassable, intense et rigoureux, entre ce qui est donné aux hommes",
+      "bbox": {
+        "x_pct": 6.789,
+        "y_pct": 81.871,
+        "w_pct": 42.004,
+        "h_pct": 11.798
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tels qu'ils ont vécu au cours des millénaires, ils ont beaucoup apporté au reste du monde; et n'ont cessé de se réjouir de son népuisable diversité. En bien et en mal, ils ont stimulé partout le sens de ce que cela veut dire: étre un homme, présent à l'histoire.",
+      "bbox": {
+        "x_pct": 51.238,
+        "y_pct": 56.708,
+        "w_pct": 41.91,
+        "h_pct": 11.552
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais ajouter quelques mots concernant l'avenir, non seulement de l'Europe, mais de l'humanité. Deux tâches semblent s'étre aujourd'hui imposées à la conscience de nos contemporains, au point que les discours à leur sujet finissent par lasser ou éclipser le reste. C'est, d'une part, l'urgence qu'il y a de réduire l'écart des ressources et des niveaux de vie entre les peuples du nord et ceux du sud. C'est, d'autre part, l'urgence qu'il y a de prendre soin de notre planète elle-même, d'user avec mesure de ses ressources non-renouvelables, notamment de celles qui sont sources d'énergie, comme aussi de limiter l'accumulation de",
+      "bbox": {
+        "x_pct": 50.923,
+        "y_pct": 68.405,
+        "w_pct": 42.288,
+        "h_pct": 25.337
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "87",
+      "bbox": {
+        "x_pct": 487,
+        "y_pct": 954,
+        "w_pct": 18,
+        "h_pct": 13
+      },
+      "changed": true,
+      "change_reason": "Corrected page number label to page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Section header missing in initial extraction.",
+    "Page number at bottom of page not labeled as page_footer."
+  ],
+  "doc_id": "2910",
+  "page": 7,
+  "elapsed_seconds": 7.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

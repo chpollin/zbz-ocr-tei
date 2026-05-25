@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 8.051,
+        "y_pct": 3.825,
+        "w_pct": 33.778,
+        "h_pct": 2.186
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Herzlichen Dank! Wenn ich auch noch kurz dazu was sagen darf, ich bin ja sowieso angesprochen worden und mißbrauche die mir dadurch gegebene Antwortlizenz dazu, auch zu der Frage C – als Antwort – eine Frage zu stellen. Die Frage heißt:",
+      "bbox": {
+        "x_pct": 7.496,
+        "y_pct": 6.129,
+        "w_pct": 85.052,
+        "h_pct": 9.144
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "1 Nehmen wir einmal an, es handle sich bei der Behauptung, wir seien sowohl determiniert als auch frei, gar nicht um ein Paradox, sondern um eine Behauptung, die sich in ihrem paradoxen Charakter sofort auflöst, wenn wir fragen, in welcher Hinsicht dies gilt. Dann stellen wir fest, daß dies, zugleich determiniert und frei, nur dann geht, wenn wir verschiedene Hinsichten in Ansatz bringen. Wir sind niemals in derselben Hinsicht zugleich determiniert und frei, wenn denn Freiheit auch heißt Selbstdetermination. Insofern determinieren wir uns, frei zu sein. Aber das ist ja nicht das Paradoxe daran. Deswegen bin ich schon sehr skeptisch, ob es sich bei diesem scheinbar basalen Paradox wirklich ein unauflösbares Paradox handelt.",
+      "bbox": {
+        "x_pct": 7.541,
+        "y_pct": 16.967,
+        "w_pct": 85.217,
+        "h_pct": 28.907
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "2 Von wo aus sprechen wir? Nun, wenn es sich nicht um ein Paradox handelt, dann würde ich sagen, eindeutig vom Standpunkt der Freiheit. Denn was sonst, wenn nicht Denken, soll frei sein? Wenn es sich aber in der Tat um ein Paradox handelt, geraten wir in Schwierigkeiten, denn wir wissen dann nie genau, ob wir jetzt denken oder ob wir gedacht werden, welches sozusagen die Anteile daran sind, in denen wir frei und determiniert sind. Eine übertriebene Interpretation der philosophischen Hermeneutik, die dann sagen würde, es ist soviel Tradition hinter unserem Rücken, daß wir es gar nie schaffen, frei zu denken; wir käuen immer nur nach, was passiert. Das ist in der Tat ein schwieriges Problem.",
+      "bbox": {
+        "x_pct": 7.601,
+        "y_pct": 48.087,
+        "w_pct": 85.052,
+        "h_pct": 27.231
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun zu dem; was ich eigentlich gefragt worden bin: Widersprüche und im Gegensatz dazu das asiatische Verständnis von Polaritäten. Mit Frau Pieper sitzt eine nicht nur in der Existenzphilosophie, sondern auch in Schelling gut ausgewiesene Expertin bei uns am Tisch, und die wird Ihnen bestätigen können, daß das Denken in Polaritäten keineswegs eine Eigentümlichkeit des asiatischen Denkraumes ist, sondern Schelling, der",
+      "bbox": {
+        "x_pct": 7.691,
+        "y_pct": 77.022,
+        "w_pct": 85.262,
+        "h_pct": 16.029
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "60",
+      "bbox": {
+        "x_pct": 82.684,
+        "y_pct": 94.672,
+        "w_pct": 3.75,
+        "h_pct": 2.277
+      },
+      "changed": true,
+      "change_reason": "Corrected labeling of page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction truncated content in most paragraphs.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "3180",
+  "page": 37,
+  "elapsed_seconds": 5.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

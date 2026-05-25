@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "60",
+      "bbox": {
+        "x_pct": 19.928,
+        "y_pct": 2.0,
+        "w_pct": 13.935,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number in header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 66.86,
+        "y_pct": 2.0,
+        "w_pct": 14.153,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le donné social conserver est comme il est, et   exclusif, si complexe que puisse être dailleurs str",
+      "bbox": {
+        "x_pct": 18.353,
+        "y_pct": 13.113,
+        "w_pct": 69.516,
+        "h_pct": 61.222
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number not detected as header",
+    "Running header not detected"
+  ],
+  "doc_id": "110",
+  "page": 62,
+  "elapsed_seconds": 5.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 76.0,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "PHILOSOPHIE",
+      "bbox": {
+        "x_pct": 42.5,
+        "y_pct": 76.0,
+        "w_pct": 15.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et cela définitivement dès que la science peut le résoudre avec évidence. En outre, les solutions antérieures à la solution scientifique gardent pour nous, indépendamment de leur justesse effective, un intérêt qui reste à déterminer.",
+      "bbox": {
+        "x_pct": 12.696,
+        "y_pct": 12.095,
+        "w_pct": 76.205,
+        "h_pct": 12.543
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le problème philosophique se révèle ainsi extrêmement différent du problème scientifique : celui-ci en effet n'existe comme tel lorsqu'il est susceptible d'une solution évidente, et il ne vaut en somme qu'en fonction de sa solution. La solution proposée est-elle erronée, elle est aussitôt comme si elle n'avait jamais été.",
+      "bbox": {
+        "x_pct": 12.636,
+        "y_pct": 24.476,
+        "w_pct": 76.325,
+        "h_pct": 18.19
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais en montrant que la philosophie recule devant l'évidence scientifique, l'avons-nous rapprochée de la théologie? Serait-elle dogme, article de foi? Si des solutions reconnues non conformes à la réalité des faits gardent quelque valeur, si la démonstration scientifique leur enlève par contre tout intérêt philosophique, on pourrait se croire dans le domaine du credo quia absurdum. Or il suffit de jeter un coup d'œil sur l'histoire de la philosophie pour s'apercevoir qu'il n'en est rien.",
+      "bbox": {
+        "x_pct": 12.244,
+        "y_pct": 42.762,
+        "w_pct": 76.461,
+        "h_pct": 25.743
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord la philosophie s'éloigne trop de la science pour rejoindre le dogme : non seulement l'erreur y garde son intérêt, mais encore des erreurs contradictoires. On étudie non seulement une théorie erronée, mais aussi telle autre, erronée également, et qui combattait la première. Est-ce que par intérêt psychologique on chercherait dans l'histoire de ses erreurs le mécanisme de l'esprit",
+      "bbox": {
+        "x_pct": 12.093,
+        "y_pct": 68.095,
+        "w_pct": 76.31,
+        "h_pct": 20.762
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text detection had poor OCR performance.",
+    "Running headers and page numbers were misclassified as text.",
+    "Bbox coordinates were mostly correct, but text content required manual correction due to poor OCR extraction."
+  ],
+  "doc_id": "20",
+  "page": 22,
+  "elapsed_seconds": 6.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

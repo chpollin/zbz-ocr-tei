@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D ich, wer har dicscn Menschen denn versprochen, und wissen nichus von dem der Zcir [remden Scin das",
+      "bbox": {
+        "x_pct": 7.186,
+        "y_pct": 11.988,
+        "w_pct": 37.928,
+        "h_pct": 14.02
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Uberlegungen Rcligionshrciheit, dic Menschenrcchte Len Fortschritt zu errcichen?",
+      "bbox": {
+        "x_pct": 53.497,
+        "y_pct": 12.617,
+        "w_pct": 36.563,
+        "h_pct": 20.132
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ProfJeanne Hench",
+      "bbox": {
+        "x_pct": 53.653,
+        "y_pct": 35.424,
+        "w_pct": 12.455,
+        "h_pct": 2.588
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Verwirklichung Denn Anspruch Begenuberversprochcn; verwirklichen gckommen bci niche",
+      "bbox": {
+        "x_pct": 53.689,
+        "y_pct": 38.991,
+        "w_pct": 36.455,
+        "h_pct": 25.0
+      },
+      "changed": false
+    }
+  ],
+  "score": 100,
+  "num_corrections": 0,
+  "issues": [
+    "The detected text transcriptions are heavily corrupted by OCR errors.",
+    "The input bounding boxes provided for this task were already limited to a subset of the document content shown in the image."
+  ],
+  "doc_id": "2930",
+  "page": 11,
+  "elapsed_seconds": 3.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

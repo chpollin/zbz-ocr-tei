@@ -1,0 +1,149 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1 pour désagréger davantage...",
+      "bbox": {
+        "x_pct": 15.56,
+        "y_pct": 5.602,
+        "w_pct": 74.864,
+        "h_pct": 10.092
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La science, comme aussi la technique...",
+      "bbox": {
+        "x_pct": 15.593,
+        "y_pct": 19.172,
+        "w_pct": 74.831,
+        "h_pct": 11.957
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Résumé",
+      "bbox": {
+        "x_pct": 47.802,
+        "y_pct": 40.635,
+        "w_pct": 10.816,
+        "h_pct": 1.756
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour qu'il y ait il faut Y ait...",
+      "bbox": {
+        "x_pct": 15.963,
+        "y_pct": 44.231,
+        "w_pct": 74.57,
+        "h_pct": 4.097
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La science développe des langages...",
+      "bbox": {
+        "x_pct": 19.946,
+        "y_pct": 49.055,
+        "w_pct": 51.654,
+        "h_pct": 2.366
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre question comporte ainsi une...",
+      "bbox": {
+        "x_pct": 15.778,
+        "y_pct": 51.756,
+        "w_pct": 74.723,
+        "h_pct": 4.515
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'activité de recherche n'a pas le même...",
+      "bbox": {
+        "x_pct": 15.778,
+        "y_pct": 56.58,
+        "w_pct": 75.049,
+        "h_pct": 6.271
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sens des langages réside dans leur...",
+      "bbox": {
+        "x_pct": 15.854,
+        "y_pct": 63.654,
+        "w_pct": 74.897,
+        "h_pct": 5.886
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selon certains savants, la science...",
+      "bbox": {
+        "x_pct": 15.963,
+        "y_pct": 70.376,
+        "w_pct": 75.223,
+        "h_pct": 5.769
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans les deux cas, on est conduit à...",
+      "bbox": {
+        "x_pct": 16.028,
+        "y_pct": 77.316,
+        "w_pct": 74.614,
+        "h_pct": 7.742
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "86",
+      "bbox": {
+        "x_pct": 16.486,
+        "y_pct": 93.633,
+        "w_pct": 2.583,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "Page number identified and categorized as filter."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at bottom not initially labeled.",
+    "Small typo in resume header text."
+  ],
+  "doc_id": "2020",
+  "page": 6,
+  "elapsed_seconds": 8.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

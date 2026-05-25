@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'Est-Ouest me paraît dominer tous les autres, ce n'est pas que l'Est soit prêt à partir en guerre contre l'Occident ; je n'y crois pas du tout. Ce que je crois, c'est que le régime soviétique ne peut pas accepter réellement, à longue échéance, l'existence du monde libre à ses portes. Un des indices, c'est le mur qui traverse l'Allemagne, et qui, finalement, d'une certaine manière, traverse l'Europe entière. Pour un régime comme le régime soviétique, la seule existence du monde libre est en soi, indépendamment de toute opération militaire et de tout affrontement, une contestation insupportable. Le fait qu'il y ait la liberté, le fait qu'il puisse y avoir la liberté, le fait même que selon toute apparence la liberté semble beaucoup mieux réussir que le régime totalitaire soviétique, est en soi insupportable. C'est pourquoi je crois qu'il faut se méfier au plus haut point. On pense toujours à l'alternative guerre-paix, mais on perd de vue la raison pour laquelle l'alternative guerre-paix ne peut pas s'effacer devant nous. Et cette raison, c'est qu'il y a un enjeu. La plupart des gens parlent comme si l'alternative guerre-paix ne comportait pas d'enjeu en dehors d'elle-même. Mais il y a un formidable enjeu, et c'est à cause de lui qu'on n'arrive pas à organiser la paix.",
+      "bbox": {
+        "x_pct": 3.993,
+        "y_pct": 3.524,
+        "w_pct": 79.927,
+        "h_pct": 35.968
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous ne pensez donc pas qu'une libéralisation des régimes de l'Est, du régime soviétique en particulier, soit concevable, à la faveur, par exemple, comme le pensent certains, d'échanges commerciaux ou culturels ?",
+      "bbox": {
+        "x_pct": 4.029,
+        "y_pct": 40.427,
+        "w_pct": 79.817,
+        "h_pct": 7.823
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A la faveur d'échanges commerciaux ou culturels, non, je ne le crois pas. Cela ne veut pas dire que je sois contre tout échange commercial ou culturel, au contraire ; si l'on sait adopter les lignes de conduite, les règles nécessaires lors de ces échanges, il faut qu'ils aient lieu ; il faut malgré tout garder des ponts, et même construire des ponts, entre l'Est et l'Ouest. Mais je doute beaucoup qu'on puisse en espérer une amélioration des relations internationales quant à l'alternative guerre-paix. L'obstacle est infiniment plus profond et l'Est considère tous les échanges comme les armes d'un combat sans guerre. Il ne peut pas en être autrement : par exemple, lorsqu'un Soviétique a un contact avec l'Ouest, il a un contact avec un monde qui lui paraît désirable — et les autorités soviétiques le savent bien. L'inverse n'est pas vrai ; c'est pourquoi elles ne consentent à envoyer que des gens choisis, déterminés à se faire les agents de leur propagande et de leur ligne de conduite et dont elles sont sûres qu'ils ne seront pas entamés par leurs contacts avec l'Ouest. Ceux-ci sont, en même temps, extrêmement désirés ; un voyage à l'Ouest représente l'une des plus grandes récompenses qu'on puisse donner à quelqu'un qui a consenti à un acte de complicité avec le régime. Par exemple, si un collègue signe une déclaration contre un dissident, cela peut lui valoir un voyage à l'Ouest. Je pense que les gens à l'Ouest doivent y penser.",
+      "bbox": {
+        "x_pct": 3.907,
+        "y_pct": 48.089,
+        "w_pct": 79.976,
+        "h_pct": 40.056
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text and removed erroneous leading numbers."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "149",
+      "bbox": {
+        "x_pct": 79.512,
+        "y_pct": 93.387,
+        "w_pct": 4.024,
+        "h_pct": 2.218
+      },
+      "changed": true,
+      "change_reason": "Identified page number, updated label to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR was highly corrupted.",
+    "Page number at bottom right was misidentified as text."
+  ],
+  "doc_id": "2330",
+  "page": 153,
+  "elapsed_seconds": 7.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

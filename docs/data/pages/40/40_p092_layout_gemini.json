@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "94 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 98.7,
+        "y_pct": 79.2,
+        "w_pct": 1.3,
+        "h_pct": 20.8
+      },
+      "changed": true,
+      "change_reason": "Page header identified at the top of the page should be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y avait une route qui s'en allait à flanc de coteau, entre des peupliers. C'était midi; dans la chaleur l'ombre des peupliers était courte. De légers nuages moutonnaient dans le ciel selon des formes rigoureusement géométriques. Je marchais avec je ne sais quelle diffuse tendresse, je faisais des pas et des pas pendant des heures, et il me semble que je souriais. Pourtant je n'avançais pas. La route emportait avec elle ses peupliers, ses nuages, le paysage diffus de la plaine, en bas, noyée dans trop de lumière. La route me suivait avec tout cela. Seuls les passants changeaient. Pour eux, visiblement, la route était comme toutes les routes, elle menait quelque part, et ils se hâtaient. Il suffisait de les regarder pour en être sûr. Ils ne voyaient que ce qui marquait les distances; ils avaient les yeux fixés sur le tournant prochain, jamais ailleurs. Ils voyaient où il fallait marcher pour aller plus vite, ils traversaient la route quand le côté où ils avançaient devenait pierreux. Mais ils ne voyaient pas des choses bien plus visibles, par exemple sur la route blanche la barre d'ombre bleue, presque violette, d'un peuplier. Ils mettaient le pied dessus, sans avoir l'impression d'entrer dans une flaque d'eau, sans même s'en douter. Ils étaient des silhouettes fermées, coudes au corps, entourés d'un tas de choses absentes, séparés. Je les aimais. Je les aimais dès qu'ils apparaissaient comme s'ils étaient seuls au monde pour moi, et jusqu'au moment où ils me croisaient sans me voir. J'étais libre pour eux, mais ils ne me voyaient pas. Et dès qu'ils étaient derrière moi je les oubliais; jamais je ne me suis retournée. Je faisais des",
+      "bbox": {
+        "x_pct": 9.149,
+        "y_pct": 12.694,
+        "w_pct": 81.162,
+        "h_pct": 73.346
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match document content."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text extraction was incomplete and contained OCR artifacts.",
+    "Page header was incorrectly identified as paragraph text."
+  ],
+  "doc_id": "40",
+  "page": 92,
+  "elapsed_seconds": 4.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

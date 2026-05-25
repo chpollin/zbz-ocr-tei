@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir haben das Bedürfnis der zu sein, der man sein möchte, das Bedürfnis – auch dies gilt wiederum für den einzelnen, für die Unternehmung und für den Staat – nach einer bestimmten Identität. Dieses Sein, diese Identität bedarf der Sicherheit. Unser Leben spielt sich ab in der Polarität zwischen Risiko und Sicherheit, weil wir beides brauchen. Lebendigkeit und Identität. Wir haben am Anfang unseres Gesprächs die Frage nach der Verantwortung aufgeworfen. Darf ich zum Schluß darauf zurückkommen? Wir dürfen, scheint mir, Verantwortung nicht nur im Zusammenhang mit dem einen oder dem anderen sehen. Weil es um das Sein und um das Lebendigsein geht, erstreckt sich unsere Verantwortung auf beides: auf das Suchen der Sicherheit und auf die Bereitschaft zum Risiko.",
+      "bbox": {
+        "x_pct": 8.259,
+        "y_pct": 4.825,
+        "w_pct": 65.26,
+        "h_pct": 35.691
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to accurately reflect the full content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Frau Hersch, Herr Muheim, Herr Schmidheiny: ich danke Ihnen für dieses Gespräch.",
+      "bbox": {
+        "x_pct": 8.343,
+        "y_pct": 42.868,
+        "w_pct": 64.897,
+        "h_pct": 4.898
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sicherheit und Risiko, Grundlagen für Identität und Lebendigkeit",
+      "bbox": {
+        "x_pct": 75.574,
+        "y_pct": 31.514,
+        "w_pct": 20.036,
+        "h_pct": 7.132
+      },
+      "changed": true,
+      "change_reason": "Corrected typos in the OCR text (Sicherheir -> Sicherheit, Identitat -> Identität)."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 39.26,
+        "y_pct": 91.077,
+        "w_pct": 2.228,
+        "h_pct": 2.285
+      },
+      "changed": true,
+      "change_reason": "Identified and correctly labeled page number as page_footer/filter."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR text for the first paragraph was heavily truncated.",
+    "Typographical errors in the margin note.",
+    "Page number at the bottom was missing from the initial detection."
+  ],
+  "doc_id": "2400",
+  "page": 54,
+  "elapsed_seconds": 5.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

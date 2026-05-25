@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Préoccupée de la situation de l'enfant dans la haute conjoncture, l'Ecole des Parents de Lausanne a organisé cet hiver un cycle de cinq conférences consacrées à ce sujet.",
+      "bbox": {
+        "x_pct": 12.548,
+        "y_pct": 23.561,
+        "w_pct": 81.459,
+        "h_pct": 5.198
+      },
+      "changed": true,
+      "change_reason": "Label corrected to section_header and text corrected for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Grâce à la grande obligeance de Mlle Jeanne Hersch, professeur de philosophie à l'Université de Genève, nous avons le privilège de publier, dans ce premier numéro de l'année de notre revue, le texte de la conférence qu'elle a prononcée récemment devant le public lausannois.",
+      "bbox": {
+        "x_pct": 12.474,
+        "y_pct": 28.937,
+        "w_pct": 81.575,
+        "h_pct": 7.347
+      },
+      "changed": true,
+      "change_reason": "Text corrected for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous remercions très vivement Mlle Jeanne Hersch de sa précieuse collaboration",
+      "bbox": {
+        "x_pct": 12.653,
+        "y_pct": 36.253,
+        "w_pct": 81.321,
+        "h_pct": 2.017
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA VILLE, MILIEU NATUREL",
+      "bbox": {
+        "x_pct": 39.609,
+        "y_pct": 50.636,
+        "w_pct": 26.776,
+        "h_pct": 1.908
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sujet de mon exposé, « L'enfant dans la ville », suggère d'abord que je vais me lamenter sur la situation de l'enfant dans la ville moderne, tellement plus périlleuse que celle de l'enfant d'autrefois, dans les campagnes, les villages ou les petits bourgs. Telle n'est pas mon intention. Il y a une optique dont il faudrait nous débarrasser et qui nous tente toujours, qui consiste à imaginer un enfant qui serait enfant pour la seconde fois, qui aurait vécu une première enfance à la campagne, puis une seconde dans la ville. Nous sommes tentés de regarder l'existence en ville avec le regard de quelqu'un qui n'y a pas toujours vécu. Alors le milieu de la ville nous paraît factice et nous nous demandons comment l'enfant peut s'y développer.",
+      "bbox": {
+        "x_pct": 12.156,
+        "y_pct": 54.771,
+        "w_pct": 81.607,
+        "h_pct": 17.867
+      },
+      "changed": true,
+      "change_reason": "Text corrected for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, pour l'enfant né en ville et y a toujours vécu, la ville est un milieu naturel, elle va de soi et tout ce qui la constitue, les rues, les voitures, les maisons, le néon, les affiches, fait partie pour lui du monde qui va sans dire. Le côté factice, c'est nous qui le surajoutons.",
+      "bbox": {
+        "x_pct": 12.336,
+        "y_pct": 73.181,
+        "w_pct": 81.004,
+        "h_pct": 7.013
+      },
+      "changed": true,
+      "change_reason": "Text corrected for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut donc d'abord comprendre que pour des enfants citadins, la ville est une nouvelle nature. La circulation elle-même, dont nous avons si peur pour les enfants, est pour eux un phénomène naturel. Il est pour eux aussi naturel d'affronter la circulation que pour des enfants de la campagne ou de la montagne d'affronter les intempéries, les mauvais chemins ou d'autres obstacles appartenant à ce que nous appelons la nature. Il faut essayer de se représenter ce que c'est qu'une ville vécue par un enfant qui y est né et pour qui elle est une nature.",
+      "bbox": {
+        "x_pct": 12.262,
+        "y_pct": 81.071,
+        "w_pct": 81.184,
+        "h_pct": 13.654
+      },
+      "changed": true,
+      "change_reason": "Text corrected for accuracy."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for the first paragraph was significantly corrupted.",
+    "Multiple paragraphs had truncated text that needed completion based on the image.",
+    "Label for the first region was incorrectly assigned as text instead of section_header.",
+    "Need for consistent text cleanup for OCR errors."
+  ],
+  "doc_id": "640",
+  "page": 3,
+  "elapsed_seconds": 7.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDEOLOGIES ET REALITE",
+      "bbox": {
+        "x_pct": 322.0,
+        "y_pct": 77.0,
+        "w_pct": 322.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as text, changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "143",
+      "bbox": {
+        "x_pct": 860.0,
+        "y_pct": 77.0,
+        "w_pct": 27.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fondamentale et imprécise. Elles sont là avant toute réflexion. Leur présence s'affirme déjà dans la réflexion qui les prend pour objet. Elles ont dans la pensée une permanence qui rappelle la nécessité et l'universalité kantiennes. Même jugées, même rejetées, elles subsistent, diffuses, dans l'affectivité et les réactions obscures. L'intellect n'a pas beaucoup de prise sur elles, et elles se servent de lui sans doute plus facilement que lui d'elles. Il est en revanche facile de les mobiliser pour jeter l'homme à l'action : elles sont sensibles à tous les moyens de suggestion, symboles, fastes, musique. Chose curieuse, elles perdent de leur force lorsqu'elles sont devenues objets de réflexion, qu'elles ont reçu un nom, qu'elles ont été mises à distance, appréciées et acceptées. D'avoir été un moment distinctes du sujet qui les pensait leur enlève leur consubstantialité originelle, les met sur le même plan, ou presque, que les objets de choix proposés à la liberté. Elles peuvent dès lors figurer dans les programmes des partis.",
+      "bbox": {
+        "x_pct": 5.71,
+        "y_pct": 10.705,
+        "w_pct": 84.401,
+        "h_pct": 32.89
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un diffère foncièrement d'entités collectives comme celles dont nous venons de parler. Même relativement ancien, il garde une origine, une ligne d'existence bien trop nettes pour bénéficier du vague substantiel que possèdent les âmes collectives. Dès sa création il a une raison d'être, une justification rationnelle ; il aurait pu ne pas être, il est né à distance des consciences humaines, il a été, en quelque sorte, fabriqué du dehors. Il a même eu une raison d'être avant d'être ; ce qui le porte dans l'être, ce n'est pas une réalité donnée s'imposant par sa présence, — ce sont ses fins. Son rôle technique, instrumental, prime d'emblée son être. Créé en vue de certaines fins, il est le produit des hommes. Et qu'on ne dise pas que les Églises, elles aussi, ont un rôle instrumental, qu'elles ont été créées par des hommes en vue de certaines fins. C'est là vue d'incroyant pour qui, en vérité, il n'y a pas d'Églises, mais seulement des partis religieux. Tout l'effort des Églises tend à conserver une nature métaphysique, une présence substantielle, à être en quelque sorte le corps de la divinité sur la terre. « Là où deux ou trois sont assemblés en mon nom, je suis au milieu d'eux. » Lorsque les Églises réformées mettent l'accent sur leur rôle instrumental et non sur leur réalité substantielle, elles sont toujours menacées de devenir des partis, proposés à l'option des individus, pouvant être choisis ou non, être ou non. Tandis qu'une Église est,",
+      "bbox": {
+        "x_pct": 5.292,
+        "y_pct": 43.202,
+        "w_pct": 84.68,
+        "h_pct": 45.29
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Detected text was heavily truncated in original JSON.",
+    "Header and page number were labeled as text.",
+    "Bbox for header/page number are missing in the input scan, manually identified."
+  ],
+  "doc_id": "330",
+  "page": 177,
+  "elapsed_seconds": 8.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

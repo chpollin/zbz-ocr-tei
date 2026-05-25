@@ -1,0 +1,125 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de faire un saut décisif, et pour peu qu'on en prenne conscience, ce saut devient nécessaire : la simple juxtaposition ne me donne pas la paix, le besoin de découvrir comment tout tient à tout, de saisir l'unité et de la produire devient insatiable.",
+      "bbox": {
+        "x_pct": 11.287,
+        "y_pct": 5.827,
+        "w_pct": 84.201,
+        "h_pct": 7.995
+      },
+      "changed": false
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "(Von der Wahrheit, p. 49-50)",
+      "bbox": {
+        "x_pct": 70.596,
+        "y_pct": 24.619,
+        "w_pct": 24.661,
+        "h_pct": 4.199
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to caption as this is a bibliographical reference/citation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce saut conduit à la raison. Elle veut être, elle est le lien de tous les modes de l'englobant et de tout ce qui se manifeste en eux. Il y a ainsi en elle, toute préparée, une nécessité secrète, issue de son origine propre. Pourtant c'est seulement l'existence vivante qui met cette raison en mouvement, qui fait d'elle l'englobant ouvert à tout et cherchant sans relâche le lien de tout avec tout.",
+      "bbox": {
+        "x_pct": 11.341,
+        "y_pct": 13.393,
+        "w_pct": 84.051,
+        "h_pct": 11.542
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans n'importe quelle situation la raison tend à mettre en mouvement les réalités dispersées et indifférentes, de façon à rétablir entre elles des liens d'appartenance réciproque. Elles étaient sans lien, étrangères les unes aux autres, et la raison veut qu'elles soient concernées les unes par les autres. Rien ne doit être perdu.",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 30.48,
+        "w_pct": 85.054,
+        "h_pct": 9.906
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Considérons les sciences. Face à l'accumulation sans fin de connaissances exactes, la raison est la force qui relie. Elle pousse le chercheur à dépasser toute limite d'une science, à découvrir les contradictions, à trouver des relations et des compléments. Elle agit en tant qu'idée de l'unité de toutes les sciences.",
+      "bbox": {
+        "x_pct": 11.612,
+        "y_pct": 40.163,
+        "w_pct": 83.74,
+        "h_pct": 9.597
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais au-delà l'unité du savoir scientifique, la raison tend à établir un lien universel. C'est elle qui, lorsqu'on tente d'éclairer l'englobant, force à passer d'un de ses modes à l'autre, se refuse à laisser aucun d'eux dans son isolement et exige l'unification de tous.",
+      "bbox": {
+        "x_pct": 11.558,
+        "y_pct": 49.357,
+        "w_pct": 83.875,
+        "h_pct": 7.995
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi la raison s'engage aussi dans des voies que les critères de l'apodicticité ne sauraient défendre. Elle se tourne vers l'exception, qui dément la règle générale, et vers l'autorité, qui exige sans se justifier rationnellement. Mais elle ne s'arrête pas là, comme si elle était au but. Exception, autorité ne sont encore, par rapport à l'Un qui l'appelle, que réalités provisoires, qui appartiennent au temps. Si grandiose qu'en puisse être l'aspect, rien de provisoire ne peut donner à la raison sa paix.",
+      "bbox": {
+        "x_pct": 11.423,
+        "y_pct": 57.181,
+        "w_pct": 83.93,
+        "h_pct": 15.51
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La raison est attirée même par ce qui lui est le plus étranger. Lorsque la passion pour la nuit (die Leidenschaft zur Nacht) fait exploser la loi du jour (das Gesetz des Tages) par sa force négatrice et par la destruction du moi, la raison s'efforce encore, par sa lumière, d'amener à l'être cette passion même, de lui donner la parole, et non de la laisser disparaître comme si elle n'était rien. La raison se hâte d'aller là où l'unité, quelle qu'elle soit, a été rompue, pour saisir encore la vérité de cette rupture. Lorsqu'une unité se brise, révélant ainsi son caractère provisoire et son insuffisance, elle",
+      "bbox": {
+        "x_pct": 11.423,
+        "y_pct": 72.468,
+        "w_pct": 84.011,
+        "h_pct": 17.361
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "94",
+      "bbox": {
+        "x_pct": 11.4,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing bounding box for page number",
+    "Incorrect label for citation"
+  ],
+  "doc_id": "1520",
+  "page": 100,
+  "elapsed_seconds": 5.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

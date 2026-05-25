@@ -1,0 +1,127 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Theorie von cincr großen Anzahl Marxisten und von all haben, vcrworfen ist (Der Wert, $. 53) Gelrung",
+      "bbox": {
+        "x_pct": 10.586,
+        "y_pct": 10.087,
+        "w_pct": 39.054,
+        "h_pct": 7.117
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bchauprung auf: Die Tatsache, daß dic marxistischen Thesen gleichzeitig und untrennbar philosophisch",
+      "bbox": {
+        "x_pct": 9.955,
+        "y_pct": 25.294,
+        "w_pct": 39.414,
+        "h_pct": 34.767
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das ist übrigens cincr der Grinde, weswegen die Philoso phic, obwohl sie immer mit der Wissenschaft ",
+      "bbox": {
+        "x_pct": 9.82,
+        "y_pct": 60.061,
+        "w_pct": 39.099,
+        "h_pct": 15.822
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "sich folgendes :",
+      "bbox": {
+        "x_pct": 9.73,
+        "y_pct": 77.419,
+        "w_pct": 10.631,
+        "h_pct": 2.714
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wollten wir versuchen, bci den marxistischen Thescn wis- in der Theorie oder die mathematische Folge",
+      "bbox": {
+        "x_pct": 9.865,
+        "y_pct": 79.621,
+        "w_pct": 38.739,
+        "h_pct": 2.253
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Auflage des \"Kapitalsw schrieb Marx: dn ihrer rationcllen Gestalr ist sic (dic Dialektik) dem positi",
+      "bbox": {
+        "x_pct": 50.676,
+        "y_pct": 29.083,
+        "w_pct": 38.649,
+        "h_pct": 46.902
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Unver nderlich ist nach Marx cinzig und allein dic Ab- straktion der Bewegung",
+      "bbox": {
+        "x_pct": 50.856,
+        "y_pct": 79.365,
+        "w_pct": 38.514,
+        "h_pct": 2.919
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "232",
+      "bbox": {
+        "x_pct": 9.91,
+        "y_pct": 86.804,
+        "w_pct": 4.505,
+        "h_pct": 2.164
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number to footer"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "233",
+      "bbox": {
+        "x_pct": 86.667,
+        "y_pct": 86.804,
+        "w_pct": 4.505,
+        "h_pct": 2.164
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number to footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page numbers detected as text."
+  ],
+  "doc_id": "1080",
+  "page": 5,
+  "elapsed_seconds": 5.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

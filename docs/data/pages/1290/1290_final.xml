@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">CIVITAS</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1290</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>CIVITAS</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1976</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+        <language ident="ita" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-claude" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Fehler, 0 Warnings; Entities: 17p 7o 0l 0w = 24 (GND-Referenzen); Overlay S.1+10: CIVITAS Titelseite und letzte Seite korrekt (+1 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="780" lry="1223">
+      <zone xml:id="facs_1_r_1" ulx="10" uly="441" lrx="196" lry="501" />
+      <zone xml:id="facs_1_r_2" ulx="10" uly="514" lrx="135" lry="541" />
+      <zone xml:id="facs_1_r_3" ulx="10" uly="602" lrx="144" lry="662" />
+      <zone xml:id="facs_1_r_4" ulx="10" uly="673" lrx="180" lry="722" />
+      <zone xml:id="facs_1_r_5" ulx="10" uly="792" lrx="113" lry="815" />
+      <zone xml:id="facs_1_r_6" ulx="10" uly="827" lrx="179" lry="907" />
+      <zone xml:id="facs_1_r_7" ulx="10" uly="964" lrx="716" lry="1030" />
+      <zone xml:id="facs_1_r_8" ulx="209" uly="1108" lrx="721" lry="1150" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="799" lry="1244">
+      <zone xml:id="facs_2_r_1" ulx="190" uly="38" lrx="559" lry="192" />
+      <zone xml:id="facs_2_r_2" ulx="234" uly="278" lrx="512" lry="303" />
+      <zone xml:id="facs_2_r_3" ulx="204" uly="320" lrx="545" lry="347" />
+      <zone xml:id="facs_2_r_4" ulx="333" uly="362" lrx="416" lry="385" />
+      <zone xml:id="facs_2_r_5" ulx="347" uly="786" lrx="422" lry="803" />
+      <zone xml:id="facs_2_r_6" ulx="257" uly="826" lrx="512" lry="843" />
+      <zone xml:id="facs_2_r_7" ulx="245" uly="853" lrx="524" lry="870" />
+      <zone xml:id="facs_2_r_8" ulx="326" uly="899" lrx="447" lry="916" />
+      <zone xml:id="facs_2_r_9" ulx="280" uly="926" lrx="492" lry="944" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="799" lry="1244">
+      <zone xml:id="facs_3_r_1" ulx="439" uly="49" lrx="519" lry="87" />
+      <zone xml:id="facs_3_r_2" ulx="435" uly="264" lrx="752" lry="390" />
+      <zone xml:id="facs_3_r_3" ulx="97" uly="354" lrx="228" lry="379" />
+      <zone xml:id="facs_3_r_4" ulx="96" uly="499" lrx="764" lry="625" />
+      <zone xml:id="facs_3_r_5" ulx="97" uly="619" lrx="762" lry="813" />
+      <zone xml:id="facs_3_r_6" ulx="97" uly="811" lrx="759" lry="1099" />
+      <zone xml:id="facs_3_r_7" ulx="95" uly="1144" lrx="127" lry="1194" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="799" lry="1244">
+      <zone xml:id="facs_4_r_1" ulx="55" uly="54" lrx="718" lry="102" />
+      <zone xml:id="facs_4_r_2" ulx="57" uly="103" lrx="721" lry="301" />
+      <zone xml:id="facs_4_r_3" ulx="61" uly="357" lrx="344" lry="387" />
+      <zone xml:id="facs_4_r_4" ulx="61" uly="412" lrx="727" lry="678" />
+      <zone xml:id="facs_4_r_5" ulx="66" uly="676" lrx="729" lry="795" />
+      <zone xml:id="facs_4_r_6" ulx="66" uly="793" lrx="732" lry="1130" />
+      <zone xml:id="facs_4_r_7" ulx="700" uly="1149" lrx="726" lry="1177" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="799" lry="1244">
+      <zone xml:id="facs_5_r_1" ulx="89" uly="49" lrx="750" lry="82" />
+      <zone xml:id="facs_5_r_2" ulx="88" uly="102" lrx="751" lry="221" />
+      <zone xml:id="facs_5_r_3" ulx="89" uly="222" lrx="751" lry="534" />
+      <zone xml:id="facs_5_r_4" ulx="87" uly="530" lrx="749" lry="701" />
+      <zone xml:id="facs_5_r_5" ulx="88" uly="704" lrx="748" lry="789" />
+      <zone xml:id="facs_5_r_6" ulx="88" uly="788" lrx="748" lry="866" />
+      <zone xml:id="facs_5_r_7" ulx="88" uly="894" lrx="343" lry="922" />
+      <zone xml:id="facs_5_r_8" ulx="88" uly="956" lrx="747" lry="1130" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="799" lry="1244">
+      <zone xml:id="facs_6_r_1" ulx="42" uly="52" lrx="709" lry="171" />
+      <zone xml:id="facs_6_r_2" ulx="42" uly="169" lrx="712" lry="462" />
+      <zone xml:id="facs_6_r_3" ulx="47" uly="458" lrx="716" lry="771" />
+      <zone xml:id="facs_6_r_4" ulx="52" uly="762" lrx="716" lry="1011" />
+      <zone xml:id="facs_6_r_5" ulx="56" uly="1005" lrx="716" lry="1122" />
+      <zone xml:id="facs_6_r_6" ulx="686" uly="1146" lrx="713" lry="1178" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="799" lry="1244">
+      <zone xml:id="facs_7_r_1" ulx="95" uly="58" lrx="284" lry="82" />
+      <zone xml:id="facs_7_r_2" ulx="94" uly="106" lrx="757" lry="562" />
+      <zone xml:id="facs_7_r_3" ulx="91" uly="557" lrx="754" lry="936" />
+      <zone xml:id="facs_7_r_4" ulx="93" uly="938" lrx="751" lry="1132" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="799" lry="1244">
+      <zone xml:id="facs_8_r_1" ulx="65" uly="54" lrx="739" lry="365" />
+      <zone xml:id="facs_8_r_2" ulx="72" uly="365" lrx="741" lry="656" />
+      <zone xml:id="facs_8_r_3" ulx="77" uly="702" lrx="281" lry="724" />
+      <zone xml:id="facs_8_r_4" ulx="78" uly="767" lrx="744" lry="916" />
+      <zone xml:id="facs_8_r_5" ulx="80" uly="912" lrx="744" lry="1131" />
+      <zone xml:id="facs_8_r_6" ulx="713" uly="1148" lrx="743" lry="1175" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="799" lry="1244">
+      <zone xml:id="facs_9_r_1" ulx="84" uly="51" lrx="746" lry="175" />
+      <zone xml:id="facs_9_r_2" ulx="84" uly="172" lrx="746" lry="539" />
+      <zone xml:id="facs_9_r_3" ulx="82" uly="530" lrx="744" lry="797" />
+      <zone xml:id="facs_9_r_4" ulx="85" uly="790" lrx="743" lry="913" />
+      <zone xml:id="facs_9_r_5" ulx="84" uly="905" lrx="741" lry="1032" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="799" lry="1244">
+      <zone xml:id="facs_10_r_1" ulx="57" uly="50" lrx="261" lry="75" />
+      <zone xml:id="facs_10_r_2" ulx="59" uly="99" lrx="732" lry="672" />
+      <zone xml:id="facs_10_r_3" ulx="69" uly="667" lrx="733" lry="764" />
+      <zone xml:id="facs_10_r_4" ulx="72" uly="761" lrx="735" lry="886" />
+      <zone xml:id="facs_10_r_5" ulx="74" uly="906" lrx="733" lry="949" />
+      <zone xml:id="facs_10_r_6" ulx="702" uly="1143" lrx="728" lry="1171" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <div type="text">
+<head facs="#facs_1_r_1">
+          XU 312:32
+        </head>
+        <p facs="#facs_1_r_2">
+          <title type="main">CIVITAS</title>
+        </p>
+        </div>
+<div n="2">
+          <head>Considerazioni sull'architettura</head>
+          <p facs="#facs_1_r_4">
+            <persName ref="GND:unknown">Alberto Camenzind</persName>
+          </p>
+        </div>
+        <div n="2">
+          <head>Katholischer StV heute</head>
+          <p facs="#facs_1_r_6">
+            <persName ref="GND:unknown">Peter Jäggi</persName> †<lb facs="#facs_1_l_6_1" n="N001" />
+            <persName ref="GND:unknown">Bernhard Schnyder</persName>
+          </p>
+        </div>
+        <div n="2">
+          <head>Philosophie</head>
+          <p facs="#facs_1_r_8">
+            <persName ref="GND:unknown">Alfred Eggenspieler</persName><lb facs="#facs_1_l_8_1" n="N001" />
+            <persName ref="GND:unknown">Paul Good</persName><lb facs="#facs_1_l_8_2" n="N002" />
+            <persName ref="GND:unknown">Adolphe Sierro</persName>
+          </p>
+        </div>
+        <div type="text">
+<figure facs="#facs_1_r_9" />
+        
+          <p>
+            <foreign xml:lang="deu">Monatsschrift für Politik und Kultur</foreign> / <foreign xml:lang="fra">Revue mensuelle politique et culturelle</foreign> / <foreign xml:lang="ita">Mensile di politica e cultura</foreign>
+          </p>
+          <p>
+            1/2
+          </p>
+          <p>
+            Oktober 1976
+          </p>
+          <p>
+            32. Jahrgang
+          </p>
+          <p>
+            Herausgeber / éditeur: <orgName ref="GND:unknown">Schweizerischer Studentenverein</orgName><lb facs="#facs_1_l_14_1" n="N001" />
+            <orgName ref="GND:unknown">Société des Etudiants Suisses</orgName> / <orgName ref="GND:unknown">Società degli Studenti Svizzeri</orgName>
+          </p>
+        
+      </div>
+<pb facs="#facs_2" n="2" />
+        <div type="text">
+<head facs="#facs_2_r_1">
+          CIVITAS
+        </head>
+        <p facs="#facs_2_r_2">
+          32. Jahrgang / 32<hi rendition="#sup">e</hi> année
+        </p>
+        <p facs="#facs_2_r_3">
+          121. Jahrgang der Monatsrosen
+        </p>
+        <p facs="#facs_2_r_4">
+          1976/77
+        </p>
+        <p facs="#facs_2_r_5">
+          Redaktion
+        </p>
+        <p facs="#facs_2_r_6">
+          Chefredaktion und deutscher Teil<lb facs="#facs_2_l_6_1" n="N001" />
+          <persName ref="GND:unknown">Willy Kaufmann</persName>, lic. iur., Bassersdorf
+        </p>
+        <p facs="#facs_2_r_7">
+          <foreign xml:lang="fra">Partie française</foreign><lb facs="#facs_2_l_7_1" n="N001" />
+          <persName ref="GND:unknown">Daniel Mudry</persName>, lic. iur., Lens
+        </p>
+        <p facs="#facs_2_r_8">
+          <foreign xml:lang="ita">Parte italiana</foreign><lb facs="#facs_2_l_8_1" n="N001" />
+          <persName ref="GND:unknown">Antonio Riva</persName>, lic. iur., Lugano
+        </p>
+        <p facs="#facs_2_r_9">
+          Druck: Buchdruckerei Maihof, Luzern
+        </p>
+      </div>
+<pb facs="#facs_3" n="3" />
+        <div type="text">
+<head>
+          <title type="main">DOSSIER</title>
+        </head>
+        <p facs="#facs_3_r_2">
+          <persName ref="GND:118815679">Jeanne Hersch</persName>
+        </p>
+        <p>
+          <hi rendition="#b">Le progrès – <lb facs="#facs_3_r_3" n="N001" />évidences, ambiguïtés, mensonges</hi>
+        </p>
+        <p facs="#facs_3_r_4">
+          <lb facs="#facs_3_r_4" n="N001" />Le progrès est une notion qui semble claire et dont la réalité ne saurait être <lb facs="#facs_3_r_4" n="N002" />mise en doute. Pourtant, malgré des évidences massives et incontestables, <lb facs="#facs_3_r_4" n="N003" />elle comporte beaucoup d’ambiguïtés. Les avantages que le progrès procure <lb facs="#facs_3_r_4" n="N004" />paraissent contrebalancés par des inconvénients graves. En même temps, les <lb facs="#facs_3_r_4" n="N005" />espoirs qu’on met en lui sont peut-être démesurés.
+        </p>
+        <p facs="#facs_3_r_5">
+          <lb facs="#facs_3_r_5" n="N001" />Un premier malentendu est à éviter : il ne faut pas identifier progrès et devenir. <lb facs="#facs_3_r_5" n="N002" />Lorsque les choses changent, il n’y a pas nécessairement progrès. Ce qui vient <lb facs="#facs_3_r_5" n="N003" />après n’est pas nécessairement meilleur que ce qui est venu avant. On le croit <lb facs="#facs_3_r_5" n="N004" />volontiers de nos jours, c’est un préjugé largement répandu, mais sa diffusion <lb facs="#facs_3_r_5" n="N005" />ne suffit pas à le rendre vrai. Le mot « dépassé » (<foreign xml:lang="deu">überholt</foreign> en allemand) <lb facs="#facs_3_r_5" n="N006" />est très à la mode : <persName ref="GND:118594893">Platon</persName> est « dépassé », <persName ref="GND:118507893">Beethoven</persName> est « dépassé » — ou bien le <lb facs="#facs_3_r_5" n="N007" />souci d’objectivité est lui aussi « dépassé », dit-on — mais ce mot n’a pas de <lb facs="#facs_3_r_5" n="N008" />sens clair.
+        </p>
+        <p facs="#facs_3_r_6">
+          <lb facs="#facs_3_r_6" n="N001" />Non seulement la valeur d’une chose ne dépend pas nécessairement de l’ordre <lb facs="#facs_3_r_6" n="N002" />de la succession dans laquelle elle apparaît, mais encore il n’est pas du tout <lb facs="#facs_3_r_6" n="N003" />facile de discerner entre ce qui est une survivance du passé et ce qui amorce <lb facs="#facs_3_r_6" n="N004" />et prépare le futur. L’histoire fait des zigzags, on a dit que sa démarche était <lb facs="#facs_3_r_6" n="N005" />celle d’une femme ivre. C’est pourquoi on se trompe souvent, on confond les <lb facs="#facs_3_r_6" n="N006" />résidus d’une époque révolue avec les signes précurseurs d’une ère nouvelle. <lb facs="#facs_3_r_6" n="N007" />Quand on a mon âge, on se souvient qu’à l’époque hitlérienne, des foules de <lb facs="#facs_3_r_6" n="N008" />gens, parmi lesquels d’illustres intellectuels, ont cru que « la révolution <lb facs="#facs_3_r_6" n="N009" />nationale » c’était l’avenir, en train de vaincre un « conservatisme démocratique » <lb facs="#facs_3_r_6" n="N010" />périmé, défendu par des troglodytes retardataires. Il en va de même en histoire <lb facs="#facs_3_r_6" n="N011" />de l’art. Il y a peu, tout le monde croyait que l’art figuratif était désormais <lb facs="#facs_3_r_6" n="N012" />« dépassé », qu’il n’y avait d’avenir que pour l’abstrait. Or aujourd’hui, l’art <lb facs="#facs_3_r_6" n="N013" />figuratif n’est même plus assez réaliste, il nous faut la présence
+        </p>
+        <p facs="#facs_3_r_7">
+          <lb facs="#facs_3_r_7" n="N001" />124
+        </p>
+      </div>
+<pb facs="#facs_4" n="4" />
+        <div type="text">
+<p facs="#facs_4_r_1">
+          <lb facs="#facs_4_r_1" n="N001" />littérale des objets eux-mêmes, couteaux, pots de chambre et autres marchan-<lb facs="#facs_4_r_1" n="N002" break="no" />dises.
+        </p>
+        <p facs="#facs_4_r_2">
+          <lb facs="#facs_4_r_2" n="N001" />Ainsi donc, ni l'ordre de succession du futur n'est véritablement connu au <lb facs="#facs_4_r_2" n="N002" />moment présent, ni la valeur de ce qui se succède dans le temps n'est assurée <lb facs="#facs_4_r_2" n="N003" />par cette succession. Même un authentique signe précurseur du futur n'est pas <lb facs="#facs_4_r_2" n="N004" />de ce fait nécessairement supérieur à ce qui l'a précédé — ni d'ailleurs nécessai-<lb facs="#facs_4_r_2" n="N005" break="no" />rement inférieur : simplement, les critères du « progrès » restent en quelque <lb facs="#facs_4_r_2" n="N006" />sorte « <foreign xml:lang="deu">in der Schwebe</foreign> », comme disait mon maître <persName ref="GND:118557106">Jaspers</persName>, « en suspens ». Ils <lb facs="#facs_4_r_2" n="N007" />n'ont pas d'univocité ; le progrès lui-même n'est pas univoque, et il ne peut <lb facs="#facs_4_r_2" n="N008" />dès lors servir à écraser l'adversaire sous une prétendue supériorité de fait.
+        </p>
+        </div>
+<div n="2">
+          <head>
+            <lb facs="#facs_4_r_3" n="N001" />Les optimistes et les pessimistes
+          </head>
+          <p facs="#facs_4_r_4">
+            <lb facs="#facs_4_r_4" n="N001" />Notre époque est très ambiguë : on peut tout en dire — et le contraire. On peut <lb facs="#facs_4_r_4" n="N002" />dire que c'est la meilleure de toutes les époques, ou aussi la pire. Tout le <lb facs="#facs_4_r_4" n="N003" />monde est accablé de travail et de sollicitations, et en même temps il paraît <lb facs="#facs_4_r_4" n="N004" />que le problème des loisirs se pose de façon angoissante. Et ainsi de suite : <lb facs="#facs_4_r_4" n="N005" />Jean-qui-pleure et Jean-qui-rit, une seule tête à deux faces. Une certaine <lb facs="#facs_4_r_4" n="N006" />année, les <orgName ref="GND:unknown">Rencontres Internationales de Genève</orgName> avaient pris pour sujet « Comment <lb facs="#facs_4_r_4" n="N007" />vivre demain ? » Les auditeurs, un soir, entendirent d'abord un célèbre <lb facs="#facs_4_r_4" n="N008" />journaliste américain dépeindre un présent vraiment suicidaire et un avenir <lb facs="#facs_4_r_4" n="N009" />pire encore ; puis ils entendirent <persName ref="GND:unknown">Raymond Cartier</persName> chanter un hymne à la gloire <lb facs="#facs_4_r_4" n="N010" />de notre temps et s'exclamer pour finir : « Ah, Mesdames et Messieurs, <lb facs="#facs_4_r_4" n="N011" />si seulement j'étais né demain ! »
+          </p>
+          <p facs="#facs_4_r_5">
+            <lb facs="#facs_4_r_5" n="N001" />Ce qui est incontesté, dans notre époque, c'est la croissance prodigieuse et <lb facs="#facs_4_r_5" n="N002" />multiple des pouvoirs humains, dans toutes les directions où se déploie le <lb facs="#facs_4_r_5" n="N003" />progrès technique. D'où de prodigieuses possibilités de maîtrise du monde <lb facs="#facs_4_r_5" n="N004" />environnant, de la nature, mais aussi du corps humain, de certaines réalités <lb facs="#facs_4_r_5" n="N005" />sociales et même de la conscience.
+          </p>
+          <p facs="#facs_4_r_6">
+            <lb facs="#facs_4_r_6" n="N001" />Ces pouvoirs extraordinaires, on s'y habitue. On en use comme s'ils étaient <lb facs="#facs_4_r_6" n="N002" />donnés naturellement. Et pourtant, quand on les considère dans leur en-<lb facs="#facs_4_r_6" n="N003" break="no" />semble, il arrive qu'on prenne peur. L'engourdissement de l'habitude con-<lb facs="#facs_4_r_6" n="N004" break="no" />jugué avec cette peur diffuse répand un redoutable pessimisme. Un étudiant <lb facs="#facs_4_r_6" n="N005" />m'a parlé un jour, comme d'une chose évidente, du « fiasco total de notre <lb facs="#facs_4_r_6" n="N006" />civilisation ». J'ai bondi : « Qu'est-ce que vous regrettez ? De n'avoir pas à <lb facs="#facs_4_r_6" n="N007" />casser la glace, le matin, pour trouver de l'eau ? Regrettez-vous le temps où <lb facs="#facs_4_r_6" n="N008" />pour une égratignure au bras il eût peut-être fallu l'amputer ? Et l'amputer <lb facs="#facs_4_r_6" n="N009" />sans anesthésie ? Et ensuite cautériser la plaie au fer rouge ? Tout cela n'est <lb facs="#facs_4_r_6" n="N010" />pas encore très ancien, savez-vous ? » En effet, les techniques qui permettent <lb facs="#facs_4_r_6" n="N011" />de désinfecter les plaies, de supprimer la douleur, de sauvegarder les membres, <lb facs="#facs_4_r_6" n="N012" />de rester valide jusqu'à une mort toujours plus tardive sont relativement <lb facs="#facs_4_r_6" n="N013" />nouvelles. La <orgName ref="GND:unknown">Cour des Miracles</orgName> décrite par <persName ref="GND:unknown">Victor Hugo</persName> n'était pas imagination <lb facs="#facs_4_r_6" n="N014" />de poète. J'ai demandé encore : « Regrettez-vous le temps où les femmes mou-<lb facs="#facs_4_r_6" n="N015" break="no" />
+          </p>
+        </div>
+        <div type="text">
+<p facs="#facs_4_r_7">
+          <lb facs="#facs_4_r_7" n="N001" />125
+        </p>
+      </div>
+<pb facs="#facs_5" n="5" />
+        <div type="text">
+<p facs="#facs_5_r_1">
+          <lb facs="#facs_5_r_1" n="N001" />raient en couche, laissant leur nouveau-né orphelin? Les épidémies qui déci<lb break="no" facs="#facs_5_r_1" n="N002" />maient les villes?»
+        </p>
+        <p facs="#facs_5_r_2">
+          <lb facs="#facs_5_r_2" n="N001" />On devrait avoir honte de cracher ainsi sur l'œuvre accomplie, au prix de <lb facs="#facs_5_r_2" n="N002" />quels efforts, par ceux qui vécurent avant nous et dont nous bénéficions, <lb facs="#facs_5_r_2" n="N003" />d'insulter ceux qui ont sacrifié leur temps et leur vie à travailler dans des <lb facs="#facs_5_r_2" n="N004" />laboratoires obscurs ou des hôpitaux mal équipés, au lieu d'éprouver une gra<lb break="no" facs="#facs_5_r_2" n="N005" />titude émerveillée.
+        </p>
+        <p facs="#facs_5_r_3">
+          <lb facs="#facs_5_r_3" n="N001" />Parmi les résultats de cet énorme déploiement des pouvoirs, il y a le recul de <lb facs="#facs_5_r_3" n="N002" />la souffrance. On meurt beaucoup plus tard dans les pays développés. La vie <lb facs="#facs_5_r_3" n="N003" />dure plus longtemps. On souffre encore, mais on souffre moins. La durée de <lb facs="#facs_5_r_3" n="N004" />travail est réduite, les conditions de travail sont améliorées. L'information et <lb facs="#facs_5_r_3" n="N005" />les moyens de penser sont diffusés à un beaucoup plus grand nombre d'êtres <lb facs="#facs_5_r_3" n="N006" />humains par l'école, par les media. Les possibilités sont multipliées pour tous; <lb facs="#facs_5_r_3" n="N007" />consommation, déplacement, pratique des sports, exploration du monde, etc. <lb facs="#facs_5_r_3" n="N008" />Cela veut dire que <hi rendition="#i">virtuellement</hi>, la vie de tous s'est humanisée. Je dis <lb facs="#facs_5_r_3" n="N009" />«<hi rendition="#i">virtuellement</hi>» parce que, pour qu'elle s'humanise <hi rendition="#i">actuellement</hi>, pour qu'elle <lb facs="#facs_5_r_3" n="N010" />s'humanise en fait, il faut une contribution de chaque personne. Il faut que <lb facs="#facs_5_r_3" n="N011" />les hommes, <hi rendition="#i">dans leur liberté</hi>, le veuillent bien. On ne peut pas faire des <lb facs="#facs_5_r_3" n="N012" />hommes par force. Mais aujourd'hui, il y a plus d'hommes qui ont la possibi<lb break="no" facs="#facs_5_r_3" n="N013" />lité d'être des hommes que peut-être jamais dans l'histoire jusqu'ici.
+        </p>
+        <p facs="#facs_5_r_4">
+          <lb facs="#facs_5_r_4" n="N001" />Certes, il y a des problèmes, des ambiguïtés, des menaces. Les difficultés me <lb facs="#facs_5_r_4" n="N002" />paraissent être de trois ordres. Elles tiennent d'une part à la nature, qui n'est <lb facs="#facs_5_r_4" n="N003" />pas inépuisable dans ses ressources, et qui peut être envahie et tuée par la <lb facs="#facs_5_r_4" n="N004" />pollution. Ces menaces n'existaient pas auparavant. Nous avons donc des <lb facs="#facs_5_r_4" n="N005" />problèmes nouveaux, plus graves que ceux d'autrefois. Qui a plus de pouvoirs <lb facs="#facs_5_r_4" n="N006" />a plus de problèmes. Qui a plus de pouvoirs peut faire plus de mal, et nous <lb facs="#facs_5_r_4" n="N007" />avons tous maintenant plus de pouvoirs.
+        </p>
+        <p facs="#facs_5_r_5">
+          <lb facs="#facs_5_r_5" n="N001" />Deuxième ordre de problèmes et de questions: non plus la nature, mais les <lb facs="#facs_5_r_5" n="N002" />mécanismes sociaux, et surtout les mécanismes économiques, qui ne semblent <lb facs="#facs_5_r_5" n="N003" />pas maîtrisés, qui paraissent se bloquer parfois, ou s'emballer, et nous mener <lb facs="#facs_5_r_5" n="N004" />là où nous ne voulons pas aller.
+        </p>
+        <p facs="#facs_5_r_6">
+          <lb facs="#facs_5_r_6" n="N001" />Le troisième ordre de questions, probablement le plus grave et le plus difficile, <lb facs="#facs_5_r_6" n="N002" />c'est le problème de l'être humain lui-même aux prises avec ses nouveaux <lb facs="#facs_5_r_6" n="N003" />pouvoirs. Il semble jusqu'ici incapable de croître à leur mesure.
+        </p>
+        </div>
+<div n="2">
+          <head>
+            <lb facs="#facs_5_r_7" n="N001" />Le «progrès» et la nature
+          </head>
+          <p facs="#facs_5_r_8">
+            <lb facs="#facs_5_r_8" n="N001" />Les problèmes que pose la nature, je ne vais pas m'y attarder longtemps: les <lb facs="#facs_5_r_8" n="N002" />journaux en sont pleins. Ceux de l'épuisement des ressources et de la pollu<lb break="no" facs="#facs_5_r_8" n="N003" />tion sont les plus évidents, et, en apparence, les plus radicaux, les plus rigou<lb break="no" facs="#facs_5_r_8" n="N004" />reux. Il n'y aura plus d'énergie, les lacs seront morts, les espèces vivantes <lb facs="#facs_5_r_8" n="N005" />auront disparu, il n'y aura plus de nature, on vivra dans un monde de béton, <lb facs="#facs_5_r_8" n="N006" />etc. etc. Mais en fait je ne crois pas que ce soient les problèmes les plus diffi<lb break="no" facs="#facs_5_r_8" n="N007" />ciles. Ce sont des problèmes techniques, et les problèmes techniques sont le
+          </p>
+        </div>
+        <div type="text">
+<p>
+          <lb facs="#facs_5_r_9" n="N001" />126
+        </p>
+      </div>
+<pb facs="#facs_6" n="6" />
+        <div type="text">
+<p facs="#facs_6_r_1">
+          <lb facs="#facs_6_r_1" n="N001" />plus souvent solubles, quand on le veut vraiment. Il s'agit d'y mettre le prix. <lb facs="#facs_6_r_1" n="N002" />Et quand je dis «y mettre le prix», je ne dis pas «eux, là-bas, à Berne, les <lb facs="#facs_6_r_1" n="N003" />autorités, ils doivent y mettre le prix». Ce que je veux dire, c'est que l'orienta<lb break="no" facs="#facs_6_r_1" n="N004" />tion de nos rapports avec la nature dépend, pour commencer, du budget de <lb facs="#facs_6_r_1" n="N005" />chacun d'entre nous.
+        </p>
+        <p facs="#facs_6_r_2">
+          <lb facs="#facs_6_r_2" n="N001" />Quand nous faisons un budget, il s'agit de savoir si nous préférons changer <lb facs="#facs_6_r_2" n="N002" />de voiture plus souvent ou avoir une voiture plus vieille mais non-polluante. <lb facs="#facs_6_r_2" n="N003" />Il s'agit de savoir si nous préférons avoir des camelotes vite substituables ou <lb facs="#facs_6_r_2" n="N004" />si nous préférons payer plus cher quelque chose que nous avons à faire durer. <lb facs="#facs_6_r_2" n="N005" />Dans beaucoup d'autres domaines les mêmes questions se posent. Il s'agit de <lb facs="#facs_6_r_2" n="N006" />savoir si pour nos vacances nous choisissons un morceau de ville transporté <lb facs="#facs_6_r_2" n="N007" />au bout du monde, ou bien si nous préférons partir moins loin et nous offrir <lb facs="#facs_6_r_2" n="N008" />le luxe du silence et de la solitude. Il s'agit de savoir si nous voulons payer le <lb facs="#facs_6_r_2" n="N009" />prix du silence, ou permettre que le bruit l'emporte toujours par définition <lb facs="#facs_6_r_2" n="N010" />sur le silence. Et il s'agit de savoir si, et dans quelle mesure, nous sommes <lb facs="#facs_6_r_2" n="N011" />prêts, au nom du silence ou de la nature, à renoncer à un bénéfice conditionné <lb facs="#facs_6_r_2" n="N012" />par une pollution ou par le bruit.
+        </p>
+        <p facs="#facs_6_r_3">
+          <lb facs="#facs_6_r_3" n="N001" />Ces questions sont très concrètes et elles sont très constantes. Il ne s'agit pas <lb facs="#facs_6_r_3" n="N002" />seulement d'une discipline à acquérir, qui interdise par exemple de jeter du <lb facs="#facs_6_r_3" n="N003" />plastic dans la nature. C'est important, mais ce n'est pas tout. Il s'agit pour <lb facs="#facs_6_r_3" n="N004" />chacun de beaucoup d'autres choses, de civiliser, de cultiver ses envies, ses <lb facs="#facs_6_r_3" n="N005" />désirs, de les travailler jusqu'à ce qu'ils prennent de la qualité. A mon avis, <lb facs="#facs_6_r_3" n="N006" />à l'école, si on s'efforce parfois d'enseigner aux élèves à dompter leurs impul<lb break="no" facs="#facs_6_r_3" n="N007" />sions, on néglige l'éducation des désirs, c'est-à-dire leur orientation vers une <lb facs="#facs_6_r_3" n="N008" />qualité plus fine et plus humaine. On pose en général la question ainsi: ou <lb facs="#facs_6_r_3" n="N009" />bien les enfants font ce qu'ils veulent, ou bien il faut de la discipline. Or les <lb facs="#facs_6_r_3" n="N010" />enfants ne doivent pas faire ce qu'ils veulent, mais la discipline n'est pas le fin <lb facs="#facs_6_r_3" n="N011" />mot de l'histoire. Ni l'un ni l'autre. Il faut éduquer les désirs. Et cela ne se fait <lb facs="#facs_6_r_3" n="N012" />pas par des sermons théoriques, mais en exerçant pratiquement le goût de <lb facs="#facs_6_r_3" n="N013" />la qualité.
+        </p>
+        <p facs="#facs_6_r_4">
+          <lb facs="#facs_6_r_4" n="N001" />Ainsi, les problèmes posés par la nature sont liés à la qualité profonde des <lb facs="#facs_6_r_4" n="N002" />désirs des hommes, à l'éducation de leurs désirs, de leurs options. Il ne suffit <lb facs="#facs_6_r_4" n="N003" />pas d'accuser la société, il faut se demander: moi, qu'est-ce que je veux et <lb facs="#facs_6_r_4" n="N004" />qu'est-ce que je suis prêt à payer pour ce que je veux? A vrai dire, on devrait <lb facs="#facs_6_r_4" n="N005" />dépasser l'ère de la camelote, parce que l'ère de la camelote, c'est celle du <lb facs="#facs_6_r_4" n="N006" />bruit, de la pollution, de l'épuisement de la nature. Ce qui n'est pas de la <lb facs="#facs_6_r_4" n="N007" />camelote économise et épargne la nature. Mais attention, on n'a pas l'éternité <lb facs="#facs_6_r_4" n="N008" />devant soi, et il ne faudrait pas, dans divers domaines, atteindre le <foreign xml:lang="eng">point of no <lb facs="#facs_6_r_4" n="N009" />return</foreign>, le point d'où il n'y a pas de retour. Lorsqu'une espèce vivante a disparu, <lb facs="#facs_6_r_4" n="N010" />elle a disparu, et ni vous et ni moi ne la refabriquerons jamais.
+        </p>
+        <p facs="#facs_6_r_5">
+          <lb facs="#facs_6_r_5" n="N001" />Si nous sommes tous maintenant à genoux devant le pétrole, c'est parce que <lb facs="#facs_6_r_5" n="N002" />le pétrole était meilleur marché, tout simplement. Il y avait d'autres moyens <lb facs="#facs_6_r_5" n="N003" />d'avoir de l'énergie, mais ils n'étaient pas commercialement compétitifs. Cela <lb facs="#facs_6_r_5" n="N004" />montre qu'il faut être prêt parfois à payer plus cher pour la qualité qui épargne <lb facs="#facs_6_r_5" n="N005" />la nature.
+        </p>
+        <p facs="#facs_6_r_6">
+          <lb facs="#facs_6_r_6" n="N001" />127
+        </p>
+      </div>
+<pb facs="#facs_7" n="7" />
+        <div type="text">
+<head facs="#facs_7_r_1">
+          <lb facs="#facs_7_r_1" n="N001" />128
+        </head>
+        <p facs="#facs_7_r_2">
+          <lb facs="#facs_7_r_2" n="N001" />La dimension sociale
+        </p>
+        <p facs="#facs_7_r_3">
+          <lb facs="#facs_7_r_3" n="N001" />La deuxième sorte de problèmes, ce sont ceux que posent l'orientation et la <lb facs="#facs_7_r_3" n="N002" />maîtrise sociale des nouveaux pouvoirs. Or nous voyons se déployer, sous la <lb facs="#facs_7_r_3" n="N003" />pression du profit, le gaspillage de la publicité, qui vole non seulement des <lb facs="#facs_7_r_3" n="N004" />ressources et du travail, mais encore, à tous ceux qui écoutent la radio et sur<lb facs="#facs_7_r_3" n="N005" break="no" />tout la télévision tous les jours, un temps de leur vie que personne ne leur <lb facs="#facs_7_r_3" n="N006" />rendra, ce temps limité et précieux car nul n'est immortel. Les stimulants <lb facs="#facs_7_r_3" n="N007" />automatiques de la concurrence jouent sans que les hommes apprennent à se <lb facs="#facs_7_r_3" n="N008" />servir des pouvoirs sociaux. La préparation militaire des États, elle aussi, <lb facs="#facs_7_r_3" n="N009" />semble croître automatiquement, de plus en plus exorbitante, démesurée. <lb facs="#facs_7_r_3" n="N010" />Il ne suffit pas du tout, à mon avis, de répondre aux excès simplement par le <lb facs="#facs_7_r_3" n="N011" />refus. Il s'agit de trouver les voies et moyens cohérents, ayant un sens, per<lb facs="#facs_7_r_3" n="N012" break="no" />mettant de maîtriser, de limiter les effets de la concurrence et de la course aux <lb facs="#facs_7_r_3" n="N013" />armements. Où est la volonté de maîtriser ces forces? Où sont les organes <lb facs="#facs_7_r_3" n="N014" />pour les maîtriser? Où peut s'exercer le contrôle démocratique? On nous parle <lb facs="#facs_7_r_3" n="N015" />de plus en plus de ces superbes sociétés multinationales, dont le pouvoir <lb facs="#facs_7_r_3" n="N016" />semble, dans le domaine économique, bien supérieur à celui des États, et qui <lb facs="#facs_7_r_3" n="N017" />ne seraient soumises à aucune espèce de contrôle démocratique. Mais le pro<lb facs="#facs_7_r_3" n="N018" break="no" />blème est plus vaste: Comment maîtriser tout ce qui s'est développé en même <lb facs="#facs_7_r_3" n="N019" />temps que les nouveaux pouvoirs?
+        </p>
+        <p facs="#facs_7_r_4">
+          <lb facs="#facs_7_r_4" n="N001" />Le drame, c'est que par suite de notre impuissance, les jeunes, en particulier, <lb facs="#facs_7_r_4" n="N002" />se sentent — et sur ce point avec raison — comme écrasés par une seconde <lb facs="#facs_7_r_4" n="N003" />nature superposée à la première, une nature de déterminisme social qui roule <lb facs="#facs_7_r_4" n="N004" />toute seule, que personne ne commande, dont certains profitent davantage <lb facs="#facs_7_r_4" n="N005" />que d'autres, mais surtout qui n'est maîtrisée et conduite par personne. Elle <lb facs="#facs_7_r_4" n="N006" />donne aux jeunes une prodigieuse impression d'impuissance, qui discrédite <lb facs="#facs_7_r_4" n="N007" />à leurs yeux la démocratie traditionnelle. Par exemple, ils aiment un paysage, <lb facs="#facs_7_r_4" n="N008" />et ce paysage, un peu plus tôt, un peu plus tard, est détruit. Il est détruit parce <lb facs="#facs_7_r_4" n="N009" />qu'à un moment donné, même ceux qui l'aiment le plus consentent à ce qu'on <lb facs="#facs_7_r_4" n="N010" />y construise un immense édifice de béton. On dirait que la situation univer<lb facs="#facs_7_r_4" n="N011" break="no" />selle, c'est celle décrite par <persName ref="GND:unknown">Dürrenmatt</persName> dans «La visite de la vieille dame»: <lb facs="#facs_7_r_4" n="N012" />en vertu de la fatalité due à une pression économique à laquelle personne ne <lb facs="#facs_7_r_4" n="N013" />peut résister, tout le monde consent finalement à ce que chacun initialement <lb facs="#facs_7_r_4" n="N014" />ne voulait à aucun prix. Soudain, voilà qu'on fait ce qu'on ne voulait pas <lb facs="#facs_7_r_4" n="N015" />faire, voilà qu'on l'a fait, on a subi jusque dans son acte une contrainte <lb facs="#facs_7_r_4" n="N016" />irrésistible.
+        </p>
+        <p facs="#facs_7_r_5">
+          <lb facs="#facs_7_r_5" n="N001" />Il y a une espèce de non-digestion sociale des nouveaux pouvoirs de l'huma<lb facs="#facs_7_r_5" n="N002" break="no" />nité. Et cette non-digestion sociale ne se situe pas seulement au niveau du <lb facs="#facs_7_r_5" n="N003" />pouvoir économique, mais encore dans bien d'autres domaines. Il existe un <lb facs="#facs_7_r_5" n="N004" />nombre de nouveaux pouvoirs au sujet desquels les hommes ne savent pas si <lb facs="#facs_7_r_5" n="N005" />oui ou non ils doivent être employés, s'ils sont légitimes ou non. Par exemple, <lb facs="#facs_7_r_5" n="N006" />dans le domaine des greffes, vous pouvez entendre des médecins se disputer <lb facs="#facs_7_r_5" n="N007" />sans merci. Dans celui des traitements psychiques, les divergences sur ce qui <lb facs="#facs_7_r_5" n="N008" />est licite ou non sont énormes. Prenez un film comme «Orange mécanique».
+        </p>
+      </div>
+<pb facs="#facs_8" n="8" />
+        <div type="text">
+<p facs="#facs_8_r_1">
+          <lb facs="#facs_8_r_1" n="N001" />On y voit un jeune criminel d'une violence sexuelle et meurtrière prodigieuse, <lb facs="#facs_8_r_1" n="N002" />qui est «guéri» dans une clinique par un traitement spécifique de drogues et <lb facs="#facs_8_r_1" n="N003" />de chocs. Quand il sort de là, il est doux comme un mouton, mais il est com<lb facs="#facs_8_r_1" n="N004" break="no" />plètement détruit comme être humain. A-t-on le droit d'adapter les êtres à la <lb facs="#facs_8_r_1" n="N005" />société par des traitements de ce genre, est-ce autorisé, est-ce défendu? <lb facs="#facs_8_r_1" n="N006" />L'avortement est un véritable champ de bataille. Les manipulations géné<lb facs="#facs_8_r_1" n="N007" break="no" />tiques: jusqu'à quel point a-t-on ou n'a-t-on pas le droit de pratiquer des inter<lb facs="#facs_8_r_1" n="N008" break="no" />ventions dans le domaine du patrimoine génétique? Jusqu'où peut-on, et peut-on <lb facs="#facs_8_r_1" n="N009" />en général, pratiquer l'expérimentation des nouveaux moyens médicaux <lb facs="#facs_8_r_1" n="N010" />sur des êtres humains? Où commence le crime médical? Où est la recherche <lb facs="#facs_8_r_1" n="N011" />légitime? J'ai entendu sur ce point, dans des congrès de médecins, les discus<lb facs="#facs_8_r_1" n="N012" break="no" />sions les plus âpres, les uns déclarant faire chaque jour ce que les autres con<lb facs="#facs_8_r_1" n="N013" break="no" />sidèrent comme criminel.
+        </p>
+        <p facs="#facs_8_r_2">
+          <lb facs="#facs_8_r_2" n="N001" />Il faut donc constater que tout cela n'a pas été traversé par la pensée, le juge<lb facs="#facs_8_r_2" n="N002" break="no" />ment moral de l'ensemble des hommes. Il n'existe pas de consensus social sur <lb facs="#facs_8_r_2" n="N003" />l'usage de ces pouvoirs. M. Jenks, le directeur du <orgName ref="GND:unknown">Bureau international du <lb facs="#facs_8_r_2" n="N004" />travail</orgName> récemment décédé, a fait une conférence, il y a quelques années, où <lb facs="#facs_8_r_2" n="N005" />il disait que les pouvoirs traditionnels, beaucoup moins considérables, sont <lb facs="#facs_8_r_2" n="N006" />réglés par des lois, mais que les nouveaux pouvoirs des hommes, dans tous les <lb facs="#facs_8_r_2" n="N007" />domaines, sont encore à l'état sauvage. Il n'existe à leur sujet ni droit, ni opi<lb facs="#facs_8_r_2" n="N008" break="no" />nion publique cohérente, aucun consensus social, même pas un consensus <lb facs="#facs_8_r_2" n="N009" />professionnel. Nous sommes là dans le chaos intellectuel et moral. Les pou<lb facs="#facs_8_r_2" n="N010" break="no" />voirs à l'état sauvage ont une résultante de force, c'est-à-dire que le droit du <lb facs="#facs_8_r_2" n="N011" />plus fort règne. Il n'y a là rien de construit, rien de maîtrisé. On pourrait multi<lb facs="#facs_8_r_2" n="N012" break="no" />plier les exemples.
+        </p>
+        </div>
+<div n="2">
+          <head>
+            <lb facs="#facs_8_r_3" n="N001" />Le devoir de l'individu
+          </head>
+          <p facs="#facs_8_r_4">
+            <lb facs="#facs_8_r_4" n="N001" />Maintenant le troisième niveau, le problème de l'être humain. L'accroisse<lb facs="#facs_8_r_4" n="N002" break="no" />ment des pouvoirs devrait s'accompagner d'un approfondissement humain <lb facs="#facs_8_r_4" n="N003" />pour leur utilisation. Les nouveaux pouvoirs exigent de l'être humain l'acqui<lb facs="#facs_8_r_4" n="N004" break="no" />sition d'une dimension plus profonde. Si cette dimension était acquise, alors <lb facs="#facs_8_r_4" n="N005" />oui, on pourrait reconnaître à l'être humain toute sa liberté et sa dignité. Mais <lb facs="#facs_8_r_4" n="N006" />l'être humain n'est pas plein de dignité, de liberté et de profondeur par droit <lb facs="#facs_8_r_4" n="N007" />de naissance, pour ainsi dire. Il y faut du travail, il y faut de la peine.
+          </p>
+          <p facs="#facs_8_r_5">
+            <lb facs="#facs_8_r_5" n="N001" />Quand on parle de l'avortement comme d'une chose qui va sans dire et qui ne <lb facs="#facs_8_r_5" n="N002" />se discute même pas, avec cette légèreté, cette frivolité qui décrète que « la <lb facs="#facs_8_r_5" n="N003" />femme est maîtresse de son corps », eh bien, cette formule dite comme elle <lb facs="#facs_8_r_5" n="N004" />l'est n'a pas de sens, parce que personne n'est maître de son corps. Chacun <lb facs="#facs_8_r_5" n="N005" />doit son corps à une foule de gens qui ont vécu avant lui, à son père, à sa <lb facs="#facs_8_r_5" n="N006" />mère, à la société qui l'a nourri, qui l'a entretenu, qui l'a sauvé et qui le main<lb facs="#facs_8_r_5" n="N007" break="no" />tient en vie. Et peut-être encore au-delà. — Un autre exemple: le sens du <lb facs="#facs_8_r_5" n="N008" />vivant — chat, chien, fleur — le sens de la vie. On le détruit quand, dans cer<lb facs="#facs_8_r_5" n="N009" break="no" />taines écoles, pour développer le sens de l'observation, on apprend aux en
+          </p>
+        </div>
+        <div type="text">
+<p facs="#facs_8_r_6">
+          <lb facs="#facs_8_r_6" n="N001" />129
+        </p>
+      </div>
+<pb facs="#facs_9" n="9" />
+        <div type="text">
+<p facs="#facs_9_r_1">
+          <lb facs="#facs_9_r_1" n="N001" />fants, chaque fois qu'ils ont une fleur dans la main, à l'ouvrir pour voir com<lb break="no" facs="#facs_9_r_1" n="N002" />ment c'est fait dedans, et chaque fois qu'ils voient un escargot, à le sortir de <lb facs="#facs_9_r_1" n="N003" />sa coquille et le couper par le milieu pour voir comment il est fait. Par cette <lb facs="#facs_9_r_1" n="N004" />méthode employée trop tôt, on tue chez l'enfant le sens de la vie, car ce qu'il <lb facs="#facs_9_r_1" n="N005" />trouve est déjà mort. Le sens du vivant, c'est autre chose.
+        </p>
+        <p facs="#facs_9_r_2">
+          <lb facs="#facs_9_r_2" n="N001" />Pour avoir le droit de disposer de lui-même et des nouveaux pouvoirs mis à <lb facs="#facs_9_r_2" n="N002" />sa disposition, il faut que le sujet humain approfondisse le sens de sa condi<lb break="no" facs="#facs_9_r_2" n="N003" />tion d'homme et qu'il devienne davantage ce qu'il est. Alors, tous ses actes <lb facs="#facs_9_r_2" n="N004" />seront renouvelés. Or, on dirait que le contraire se passe. L'homme s'habitue <lb facs="#facs_9_r_2" n="N005" />à se concevoir lui-même comme une parcelle du monde, le monde étant lui-même <lb facs="#facs_9_r_2" n="N006" />régissable techniquement. L'homme finit par se concevoir lui-même comme <lb facs="#facs_9_r_2" n="N007" />pouvant être régi et traité techniquement. Il est étudié par les sciences <lb facs="#facs_9_r_2" n="N008" />humaines, qui font de lui le plus souvent le produit, passif et innocent, de <lb facs="#facs_9_r_2" n="N009" />données biologiques, chromosomes ou gènes, de sa classe sociale, des don<lb break="no" facs="#facs_9_r_2" n="N010" />nées psychologiques de sa petite enfance. Il est un produit. Et dans la mesure <lb facs="#facs_9_r_2" n="N011" />où il se prend lui-même pour un produit, il s'en va chercher le médecin tech<lb break="no" facs="#facs_9_r_2" n="N012" />nicien et lui dit: «Docteur, il y a ceci, dans mon corps ou dans mon esprit, qui <lb facs="#facs_9_r_2" n="N013" />ne marche pas très bien; s'il vous plaît, rafistolez-moi ça.» Chose curieuse, <lb facs="#facs_9_r_2" n="N014" />c'est au moment où lui viennent ces prodigieux pouvoirs que l'homme tend à <lb facs="#facs_9_r_2" n="N015" />abdiquer son être propre de sujet libre et responsable.
+        </p>
+        <p facs="#facs_9_r_3">
+          <lb facs="#facs_9_r_3" n="N001" />Certes, il y a des données; mais on peut encore en faire quelque chose, de ces <lb facs="#facs_9_r_3" n="N002" />données. Or, cet homme, qui abdique son être propre, en même temps exige. <lb facs="#facs_9_r_3" n="N003" />Il exige une solution complète, immédiate, technique, de tous les problèmes. <lb facs="#facs_9_r_3" n="N004" />Et il est scandalisé de vivre dans un monde et dans une société où ne règnent <lb facs="#facs_9_r_3" n="N005" />pas partout le bonheur, l'égalité sociale, la liberté absolue de faire n'importe <lb facs="#facs_9_r_3" n="N006" />quoi n'importe quand, la fraternité universelle entre tous les hommes de tous <lb facs="#facs_9_r_3" n="N007" />les continents et de toutes les couleurs. C'est-à-dire: il est scandalisé que la <lb facs="#facs_9_r_3" n="N008" />technique n'ait pas été capable de mettre sur pied une société angélique qui <lb facs="#facs_9_r_3" n="N009" />fonctionnerait comme une machine parfaite. Il pratique à la fois une abdica<lb break="no" facs="#facs_9_r_3" n="N010" />tion totale de sa liberté propre et un angelisme hyperbolique, un optimisme <lb facs="#facs_9_r_3" n="N011" />technique illimité, combiné avec une totale démission personnelle.
+        </p>
+        <p facs="#facs_9_r_4">
+          <lb facs="#facs_9_r_4" n="N001" />Il résulte de tout cela une situation non-vivable, et c'est pour cela qu'il y en a <lb facs="#facs_9_r_4" n="N002" />tant aujourd'hui qui ne peuvent plus vivre. Pourquoi une situation non<lb break="no" facs="#facs_9_r_4" n="N003" />vivable? Parce que tout ce progrès dont nous avons parlé perd son sens central <lb facs="#facs_9_r_4" n="N004" />et devient un non-sens: son sens était d'accroître les possibilités de chaque <lb facs="#facs_9_r_4" n="N005" />homme. Si chaque homme démissionne, ce progrès n'a pas de sens.
+        </p>
+        <p facs="#facs_9_r_5">
+          <lb facs="#facs_9_r_5" n="N001" />Pourquoi s'intéressent-ils tant à avoir un monde parfait? Pour qui? Est-il si <lb facs="#facs_9_r_5" n="N002" />intéressant qu'une étable humaine soit parfaitement organisée? Si l'homme <lb facs="#facs_9_r_5" n="N003" />n'est plus l'homme parce qu'il se veut ange, ou bête, ou robot, on se trouve <lb facs="#facs_9_r_5" n="N004" />dans le non-sens. Il ne reste que la fuite, le suicide, la drogue. Ou alors, le <lb facs="#facs_9_r_5" n="N005" />refuge imaginaire dans la révolution, parce que la révolution va instaurer <lb facs="#facs_9_r_5" n="N006" />l'ordre à la fois angélique et technique dont j'ai parlé.
+        </p>
+        <p>
+          <lb facs="#facs_9_r_6" n="N001" />130
+        </p>
+      </div>
+<pb facs="#facs_10" n="131" />
+        <div type="text">
+<head facs="#facs_10_r_1">
+          <lb facs="#facs_10_r_1" n="N001" />131
+        </head>
+        <p facs="#facs_10_r_2">
+          <lb facs="#facs_10_r_2" n="N001" />La condition humaine
+        </p>
+        <p facs="#facs_10_r_3">
+          <lb facs="#facs_10_r_3" n="N001" />Je crois que du progrès on a tiré des promesses fallacieuses. On a donné aux hommes l'impression que, grâce au progrès, ils allaient échapper à la condition humaine. Et les hommes se sont mis à détester la condition humaine et à rêver d'une autre. Il importe de montrer à quel point absurdes, littéralement absurdes parce que contradictoires, sont ces idéaux de « Paradis tout de suite ». Il faut montrer quels sont les éléments constitutifs de la condition humaine. La condition humaine n'existe que si l'homme est libre. Elle n'existe aussi que si l'homme est déterminé en partie par des données de fait. Il y a des données, il ne part pas de rien, il ne choisit pas tout. Mais à partir de ce qui lui est donné, il peut faire ceci ou cela. Jamais on ne supprimera les limites capitales de la condition humaine, celles que mon maître <persName ref="GND:118557106">Karl Jaspers</persName> appelait les <foreign xml:lang="de">« Grenzsituationen »</foreign>. L'homme continue à être mortel, même s'il meurt plus tard, même s'il meurt moins douloureusement. L'homme continue à commettre des fautes, même s'il est plus informé et s'il sait plus de choses. Il y aura toujours des conflits entre les hommes, parce qu'il y aura toujours des choses que les uns convoitent et que d'autres convoitent aussi. Tant que les hommes aimeront quelqu'un ou quelque chose, ils auront quelqu'un ou quelque chose de vulnérable, de fragile, à défendre, et, par conséquent, il y aura des conflits. On ne supprimera pas la souffrance : les hommes verront mourir ceux qui leur sont chers, ils échoueront parfois, ils seront parfois infidèles. Ce sont des traits de la condition humaine et qui la constituent. Si ces traits disparaissaient, l'homme ne serait plus un homme. Il serait quelque chose que je n'imagine pas, quelque chose peut-être entre un ange et un robot ou un animal, mais pas un homme, justement.
+        </p>
+        <p facs="#facs_10_r_4">
+          <lb facs="#facs_10_r_4" n="N001" />Or on dirait parfois que les hommes d'aujourd'hui rêvent de fuir la condition humaine dans celle d'ange, de robot, d'animal. L'homme est précisément ce croisement de puissance et d'impuissance, qu'il doit assumer en profondeur. Et le sens de sa vie tient à cette combinaison d'éléments contradictoires.
+        </p>
+        <p facs="#facs_10_r_5">
+          <lb facs="#facs_10_r_5" n="N001" />C'est grâce à ces situations-limite que l'homme est l'homme. Je pense qu'Adam et Eve avant la chute n'étaient pas vraiment des hommes, au sens où nous l'entendons. Ils n'avaient pas d'histoire. C'est après la chute que l'histoire humaine et la condition humaine commencent, et il importe, je crois, de réapprendre à les aimer.
+        </p>
+        <p facs="#facs_10_r_6">
+          <lb facs="#facs_10_r_6" n="N001" />Exposé à l'occasion de la 50e Assemblée des délégués de l'<orgName ref="GND:unknown">Association Suisse des femmes universitaires</orgName> à Lucerne, le 4 novembre 1973.
+        </p>
+      </div>
+</div>
+</body></text>
+</TEI>

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 109",
+      "bbox": {
+        "x_pct": 374.0,
+        "y_pct": 87.0,
+        "w_pct": 252.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header text identified as body text in original analysis."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à se manifester, à prononcer des mots. Mais il y avait aussi de la volupté à sentir approcher la condamnation définitive, à l'attendre précise, après les mois marécageux que je venais de vivre. Volupté aussi — l'oiseau augural n'étant pourtant pas quelconque, mais Pierre — d'attendre quelque chose de lui, fût-ce une condamnation, fût-ce un coup. Il ferait quelque chose envers moi. Ses pas se dirigeraient vers moi, ses paroles me seraient adressées, quelques minutes, le temps de tout détruire. Je l'attendais sans espoir. J'allais souffrir d'une souffrance déterminée qui me viendrait de lui. J'allais vivre un moment par lui. La grisaille et le temps qui passent sur tous ne m'enseveliraient plus vaguement, sans me vouloir de mal. Ce serait lui. Volupté. Après ? Qu'importe après ?",
+      "bbox": {
+        "x_pct": 9.23,
+        "y_pct": 13.11,
+        "w_pct": 80.905,
+        "h_pct": 35.595
+      },
+      "changed": true,
+      "change_reason": "Text content in label/field was truncated/incorrect; updated with full text from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand j'arrivai au rendez-vous, il était déjà là. Nous nous mîmes à marcher côte à côte; il poussait d'une main sa bicyclette. Pendant quelques secondes il me sembla que je n'allais pas pouvoir parler, et pourtant il attendait. L'idée ne me vint pas de prendre un répit, de parler d'autre chose. Tu le sais bien, toi, Marc, je n'ai jamais rien su préparer, amortir, adoucir, de ce qui met mon âme en jeu. Je ne peux faire qu'un grand effort droit, jeter tous les dés, et attendre la réponse dans une vertigineuse impuissance. Cette fois-là encore, aucune aide ne me fut donnée, car autour de nous le monde commun et secourable, soufflant aux lèvres des hommes les mots inoffensifs, s'était effacé. Il n'y avait plus de rue, plus de bruit, plus de lumière, nos pas sans échos s'en allaient",
+      "bbox": {
+        "x_pct": 9.054,
+        "y_pct": 51.068,
+        "w_pct": 80.811,
+        "h_pct": 35.51
+      },
+      "changed": true,
+      "change_reason": "Text content in label/field was truncated/incorrect; updated with full text from the image."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page header was incorrectly classified as paragraph text.",
+    "The OCR text extraction for both paragraphs was truncated/incomplete.",
+    "Missing regional detection for the page header text block in the initial input."
+  ],
+  "doc_id": "40",
+  "page": 107,
+  "elapsed_seconds": 4.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

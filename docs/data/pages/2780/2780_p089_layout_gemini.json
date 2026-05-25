@@ -1,0 +1,51 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais le premier paradoxe auquel nous nous heurtons est déjà là : ce temps sans mystère, uni-dimensionnel et mesurable, dont les physiciens se servent sans risquer aucun autre démenti expérimental que celui de l’insaisissable simultanéité, reste tout à fait inconcevable tant qu’on n’y introduit pas subrepticement, une conscience, – «témoin» devant lequel se déroule le processus naturel. La nature n’a d’«histoire» que pour ce «témoin», car quelle sorte de réalité peut bien avoir «le moment d’avant» ou le «moment d’après» d’une nature dénuée de conscience? La nature, semble-t-il, est si étrangère au temps qu’elle n’est là qu’au présent.",
+      "bbox": {
+        "x_pct": 25.953,
+        "y_pct": 13.505,
+        "w_pct": 57.521,
+        "h_pct": 29.036
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant le temps de la nature ne se laisse pas réduire à un idéalisme pur, puisqu'il constitue une facteur nécessaire, réel, de ce qui s’y passe. Toutes choses égales d’ailleurs, il faut «du temps» pour que l’eau se mette à bouillir, pour que la goutte qui tombe creuse le rocher, pour que le poussin devienne poule. Il y a donc bien une histoire des phénomènes naturels, dont le devenir «prend du temps», avec ou sans observateur. Mais ce temps de la nature est pour nous encore bien plus inconcevable que celui que nous vivons, en tant qu’homme, entre la naissance et la mort. Il est tellement inconcevable qu’après cette courte digression sur les bords du kantisme je renonce à le",
+      "bbox": {
+        "x_pct": 25.71,
+        "y_pct": 42.075,
+        "w_pct": 57.585,
+        "h_pct": 30.94
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "90",
+      "bbox": {
+        "x_pct": 26.315,
+        "y_pct": 74.965,
+        "w_pct": 2.505,
+        "h_pct": 1.768
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number 90 was missing from the initial region list."
+  ],
+  "doc_id": "2780",
+  "page": 89,
+  "elapsed_seconds": 5.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

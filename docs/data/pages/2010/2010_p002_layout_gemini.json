@@ -1,0 +1,155 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "14 septembre 1983",
+      "bbox": {
+        "x_pct": 62.14,
+        "y_pct": 49.32,
+        "w_pct": 14.67,
+        "h_pct": 1.25
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to section_header/page_header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "MDECINE ET HYGINE",
+      "bbox": {
+        "x_pct": 42.67,
+        "y_pct": 48.33,
+        "w_pct": 14.73,
+        "h_pct": 1.12
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "41 anne",
+      "bbox": {
+        "x_pct": 91.24,
+        "y_pct": 46.52,
+        "w_pct": 6.34,
+        "h_pct": 1.25
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": " la soliludc des aulrcs, cn dcvcprsents pour cux qu'ils se consacrent 4 Foublicr ni Tabolir, ne ce",
+      "bbox": {
+        "x_pct": 9.687,
+        "y_pct": 10.53,
+        "w_pct": 40.741,
+        "h_pct": 2.771
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "prophylaxie dc mdccine. Les sonncl Sculs s'panouissent ceux oublient dc lc vouloir parcc qui",
+      "bbox": {
+        "x_pct": 6.173,
+        "y_pct": 14.139,
+        "w_pct": 44.469,
+        "h_pct": 7.109
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Adresse dc lauleur: Mme Jeanne Hersch, 14, avenue PicrreOdicr. 1208 Gcnvc.",
+      "bbox": {
+        "x_pct": 52.206,
+        "y_pct": 14.783,
+        "w_pct": 44.971,
+        "h_pct": 2.948
+      },
+      "changed": true,
+      "change_reason": "Author address belongs to heading/metadata"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Tire  part",
+      "bbox": {
+        "x_pct": 52.288,
+        "y_pct": 19.669,
+        "w_pct": 7.539,
+        "h_pct": 1.271
+      },
+      "changed": true,
+      "change_reason": "Header label"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Analyse de livres",
+      "bbox": {
+        "x_pct": 34.239,
+        "y_pct": 25.143,
+        "w_pct": 33.276,
+        "h_pct": 4.259
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Hmatologie",
+      "bbox": {
+        "x_pct": 45.786,
+        "y_pct": 32.326,
+        "w_pct": 11.72,
+        "h_pct": 1.653
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Neurologie",
+      "bbox": {
+        "x_pct": 70.041,
+        "y_pct": 50.228,
+        "w_pct": 10.123,
+        "h_pct": 1.636
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2954",
+      "bbox": {
+        "x_pct": 4.3,
+        "y_pct": 96.5,
+        "w_pct": 4.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified"
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Author signature in text body identified as author metadata",
+    "Mixed segment detection in list items",
+    "Missing page footer detection in original",
+    "Running headers mislabeled"
+  ],
+  "doc_id": "2010",
+  "page": 2,
+  "elapsed_seconds": 6.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

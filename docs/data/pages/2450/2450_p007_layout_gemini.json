@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "wart ist nur eine Grenze zwischen diesen beiden Nichts also es keine Zeit? Und doch gibt",
+      "bbox": {
+        "x_pct": 13.506,
+        "y_pct": 6.635,
+        "w_pct": 81.135,
+        "h_pct": 4.172
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist unmöglich, die Zeit zu denken, ohne sie zu transzendieren, ohne sich auf eine undenkbare Ewigkeit zu beziehen. Es ist unmöglich, die Zeit wirklich zu erleben, ohne sich abzustützen auf das, was der Zeit ein Ende setzt: unser Tod. Mein Tod. Es gibt keine in ihrer Einmaligkeit echt erlebte Gegenwart ohne Bezug auf meinen Tod als das Ende meiner Zeit.",
+      "bbox": {
+        "x_pct": 13.693,
+        "y_pct": 10.815,
+        "w_pct": 81.092,
+        "h_pct": 15.339
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR to match source image accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der jetzige Augenblick. Der Augenblick meines Todes. Der Augenblick der Ewigkeit. Ein auseinandergerissenes Dreieck, das mir keine Ruhe läßt. Ein bißchen gespenstische Dauer versucht, sich daran zu knüpfen, ohne daß es mir möglich wird, in ihr zu sein.",
+      "bbox": {
+        "x_pct": 13.75,
+        "y_pct": 26.292,
+        "w_pct": 81.078,
+        "h_pct": 10.79
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich habe das Ersticken geahnt. Doch gerade dann entdeckte ich meinen Irrtum. Sich ans Leben klammern, als wäre es das höchste Gut, das bedeutet den Tod der Hoffnung, da alles sterblich ist. Oder dann bliebe nichts anderes übrig, als sich in ein »zukünftiges Leben« zu flüchten, in dem Sinn, daß die Zeit jenseits des Todes fortgesetzt würde, woanders; in dem Sinn, daß, an einem Dienstag sterbend, ich mich am Mittwoch noch irgendwo befinden würde, lebend nach dem Tod. »Nach dem Tod« aber gäbe es für mich keine Zeit mehr. Was bedeutet also »nach dem Tod«, wenn es doch keine Zeit mehr gibt?",
+      "bbox": {
+        "x_pct": 13.506,
+        "y_pct": 37.142,
+        "w_pct": 81.221,
+        "h_pct": 21.906
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Angst bekommt ein anderes Gesicht. Sie ist nicht mehr die Angst vor dem Tod, sondern die Angst, in einem Leben gefangen zu sein, das ohne Ende wäre. Dieses »ohne Ende« ist erstickender als das »Never more«. Ein Ohne-Ende, in dem sich das Leben endlos erschöpfen würde in einer gegenwartslosen, vergangenheitslosen, zukunftslosen Zeit. In einer Zeit, die nicht mehr verginge.",
+      "bbox": {
+        "x_pct": 13.549,
+        "y_pct": 59.167,
+        "w_pct": 81.236,
+        "h_pct": 15.511
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine für mich unvorstellbare Zeit. Um die Zeit zu denken, muß ich sie transzendieren. Denn ohne den Tod gäbe es keine echte Gegenwart, die die Vergangenheit von der Zukunft, die Zukunft von der Vergangenheit trennen könnte.",
+      "bbox": {
+        "x_pct": 13.649,
+        "y_pct": 74.446,
+        "w_pct": 81.135,
+        "h_pct": 9.073
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dann bleibt, um die Todesangst zu besiegen, nur eine Möglichkeit: sich der Gegenwart des Todes zu stellen. Ich denke an eine Stute, die ich in früheren Zeiten gepflegt habe. Sie hatte",
+      "bbox": {
+        "x_pct": 13.75,
+        "y_pct": 83.03,
+        "w_pct": 80.977,
+        "h_pct": 7.013
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "316",
+      "bbox": {
+        "x_pct": 13.5,
+        "y_pct": 92.5,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Detected page number, changed from text to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR text content was highly fragmented and incorrect.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "2450",
+  "page": 7,
+  "elapsed_seconds": 6.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

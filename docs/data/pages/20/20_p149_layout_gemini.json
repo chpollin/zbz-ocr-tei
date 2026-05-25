@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JASPERS : L'ILLUSION DÉTRUITE 147",
+      "bbox": {
+        "x_pct": 283,
+        "y_pct": 77,
+        "w_pct": 579,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Page headers must be categorized as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "contemporains ont cherché pour la plupart à sauvegarder l'illusion en restreignant la philosophie, en la réduisant à une prudente épistémologie. La profondeur métaphysique a été par là non seulement niée, mais perdue : on n'entrevoyait même plus ce qu'elle pouvait être. La philosophie tout entière devint ainsi malgré des efforts héroïques et des réussites, une sorte de science moins pure que les autres.",
+      "bbox": {
+        "x_pct": 110,
+        "y_pct": 123,
+        "w_pct": 763,
+        "h_pct": 226
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est en Allemagne que la métaphysique, persistant désespérément, découvrit enfin et révéla avec netteté sous une forme philosophique, son illusion. Ce faisant, elle s'enlevait à elle-même ses possibilités d'existence. Cette évolution, créatrice et destructrice à la fois, et que Kant avait commencée de telle sorte qu'on ne pouvait plus lui échapper, me paraît achevée dans la philosophie de Karl Jaspers (1).",
+      "bbox": {
+        "x_pct": 112,
+        "y_pct": 352,
+        "w_pct": 761,
+        "h_pct": 232
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Karl JASPERS, professeur de philosophie à l'Université de Heidelberg, commença sa carrière comme médecin spécialisé dans la psychiâtrie et publia alors sa Psychologie der Weltanschauungen, Verlag Springer, 1919. Depuis, ses principales publications ont été : Die geistige Situation der Zeit, Göschen, 1931, et surtout sa Philosophie en trois volumes, Verlag Springer, 1932.",
+      "bbox": {
+        "x_pct": 113,
+        "y_pct": 612,
+        "w_pct": 759,
+        "h_pct": 154
+      },
+      "changed": true,
+      "change_reason": "Removed list_item tag; this is a standard paragraph/bio block."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Detected page header and numbered page as text.",
+    "Incorrect classification of biographical text as list_item."
+  ],
+  "doc_id": "20",
+  "page": 149,
+  "elapsed_seconds": 3.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

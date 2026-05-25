@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Besonders gern lassen sich unsere Zeitgenossen von der Illusion verleiten, ausschließlich den Frieden zu lieben, als ob der Friede der Normalzustand wäre, in dem alle leben würden, wenn es nicht vereinzelte Bösewichte oder Psychopathen gäbe, zu allem bereit, um ihre maßlosen Begierden zu befriedigen. In ihren Augen hat jeder Konflikt seinen Ursprung in der Gier oder der Intoleranz der einen, in der fehlenden Weisheit der anderen. Es wäre genug, ein für allemal Gewaltverhältnisse unter Individuen oder Nationen abzuschaffen, jeden zu gegenseitigem Verständnis und zur Achtung zu erziehen, eine stabile und von allen respektierte Rechtsordnung einzuführen, Dialoge, Kontakte, Kongresse zu pflegen, um einen endgültigen Weltfrieden zu genießen. Alle bisherigen Waffen würden dann in historische Museen gehören, und vor der bloßen Vorstellung, sie könnten wieder einmal gebraucht werden, würde den Menschen grauen.",
+      "bbox": {
+        "x_pct": 3.372,
+        "y_pct": 4.934,
+        "w_pct": 82.156,
+        "h_pct": 36.3
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-incorrect text content to reflect original document text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine solche Einstellung ist heutzutage in unserer westlichen Welt um so geläufiger, als zweierlei entscheidende Erfahrungen andauernd weiterwirken. Dank der Fortschritte der Elektronik sind im Zweiten Weltkrieg Aufnahmen gemacht worden, deren Anblick dermaßen unerträglich, daß die heutigen Zuschauer ausrufen möchten: »Hören Sie auf damit! Alles, alles lieber als das!« Hinzu kommt dann die Erinnerung an die Atombombe mit Bildern von Hiroshima und Nagasaki und deren dauernde Folgen für Männer, Frauen und Kinder. Weiter kommt hinzu das Bewußtsein der seither erreichten technischen »Fortschritte« – mit dem allgemein verbreiteten Gelübde: Nie wieder! Offensichtlich ist von nun an die Menschheit durch das Grauen selbst zum Frieden verurteilt.",
+      "bbox": {
+        "x_pct": 3.372,
+        "y_pct": 40.943,
+        "w_pct": 82.055,
+        "h_pct": 29.278
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-incorrect text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dazu kommt ein dritter Faktor. Der Lebensstandard ist in Westeuropa so hoch gestiegen, bis hinauf in die sozialen Klassen, die als »arm« gelten – und es in der Tat relativ auch sind –, daß der Sinn für eine vitale Bedrohung ganz einfach abstumpft. Das Wissen um die ständige Bedrohung menschlichen Lebens in der Natur verdunkelt sich, zusammen mit der Dringlichkeit der Bedürfnisse und der Gefahren, die auf ihm lasten. Die elementarsten Notwendigkeiten scheinen aus der Distanz harmlos und lassen sich ganz einfach vergessen. Nachgeben, verzichten,",
+      "bbox": {
+        "x_pct": 3.372,
+        "y_pct": 70.308,
+        "w_pct": 82.012,
+        "h_pct": 20.264
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-incorrect text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "185",
+      "bbox": {
+        "x_pct": 80.0,
+        "y_pct": 92.5,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text was heavily truncated in the initial input.",
+    "Page number 185 was missing a bounding box and label.",
+    "Multiple layout boxes were not present in the input.",
+    "Initial text content did not match document content."
+  ],
+  "doc_id": "2830",
+  "page": 2,
+  "elapsed_seconds": 5.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

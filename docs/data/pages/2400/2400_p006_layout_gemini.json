@@ -1,0 +1,58 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Vorwort",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region added as it represents the section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Unternehmer und Führungskräfte aus Industrie, Gewerbe, Handel, Politik und Wissenschaft sind ständig mit der Frage konfrontiert, mit welchen aus Staat, Gesellschaft und Wirtschaft herauswachsenden Risiken wir uns auseinanderzusetzen haben. Jeder muß sich fragen, wo und wie latente Bedrohungen erkennbar werden und was dagegen vorzukehren ist. Wie haben wir uns zu verhalten, damit wir auch die den Risiken innewohnenden Chancen wahrnehmen und nutzen? Dabei würden wir nur mit großem Unbehagen jenen Grad an Sicherheit einbüßen, den wir allzuoft als Selbstverständlichkeit beanspruchen. Die Art und Weise, wie wir im Spannungsverhältnis zwischen Risiko und Sicherheit neue Wege zu finden vermögen, wird bestimmend für die Gestaltung der gesellschaftlichen Zukunft sein.",
+      "bbox": {
+        "x_pct": 8.948,
+        "y_pct": 15.284,
+        "w_pct": 65.937,
+        "h_pct": 38.523
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Helvetia Schweizerische Feuerversicherungs-Gesellschaft, St. Gallen, feierte im vergangenen Jahr das Jubiläum ihres 125jährigen Bestehens. Aus diesem Anlaß ließ sie das Thema Wirtschaft, Gesellschaft und Staat zwischen Risiko und Sicherheit durch Professor Jeanne Hersch, Ständerat Franz Muheim und Dr. Stephan Schmidheiny aus verschiedenen Erfahrungsgebieten und aus unterschiedlichen Perspektiven am Helvetia-Forum vom 22. Oktober 1986 beleuchten. An diesem Anlaß nahmen rund 600 Persönlichkeiten aus Wissenschaft, Politik und Privatwirtschaft teil. Das Podiumsgespräch unter Leitung von Professor Dr. Johannes Anderegg, Rektor der Hochschule St. Gallen, war für alle Teilnehmer ein großer per-",
+      "bbox": {
+        "x_pct": 8.912,
+        "y_pct": 54.221,
+        "w_pct": 66.022,
+        "h_pct": 34.33
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing page number region and correctly classified as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original JSON had truncated text for paragraph regions.",
+    "Missing 'Vorwort' heading region.",
+    "Missing page footer '7' region."
+  ],
+  "doc_id": "2400",
+  "page": 6,
+  "elapsed_seconds": 6.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

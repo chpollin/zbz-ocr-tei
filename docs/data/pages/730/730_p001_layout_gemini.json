@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "14 9 4<",
+      "bbox": {
+        "x_pct": 16.266,
+        "y_pct": 0.952,
+        "w_pct": 15.21,
+        "h_pct": 3.225
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/artifact, should be filtered."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "EXCLU PRÊT",
+      "bbox": {
+        "x_pct": 73.524,
+        "y_pct": 2.182,
+        "w_pct": 19.032,
+        "h_pct": 3.362
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1866 1966 Luisenschule Essen",
+      "bbox": {
+        "x_pct": 52.315,
+        "y_pct": 8.815,
+        "w_pct": 36.798,
+        "h_pct": 8.718
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. Jeanne Hersch",
+      "bbox": {
+        "x_pct": 8.605,
+        "y_pct": 39.829,
+        "w_pct": 31.661,
+        "h_pct": 2.205
+      },
+      "changed": true,
+      "change_reason": "Author name at start of document serves as a section header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Die Frau heute Gerede und ernste Verantwortung",
+      "bbox": {
+        "x_pct": 8.548,
+        "y_pct": 44.063,
+        "w_pct": 62.661,
+        "h_pct": 6.707
+      },
+      "changed": true,
+      "change_reason": "Title of the work should be marked as a heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Den Schølerinnen, Eltern, Freunden und Gönnern überreicht die Luisenschule zur Erinnerung an ihr hundertyähriges Jubiläum den Text der Ansprache, die Frau Prof. Dr. Jeanne Hersch (Universität Genf, z. Z. Unesco, Paris) bei dem Festakt am 18. Oktober 1966 gehalten hat.",
+      "bbox": {
+        "x_pct": 8.815,
+        "y_pct": 71.379,
+        "w_pct": 80.839,
+        "h_pct": 7.368
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text to match visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "DR. JACOBS",
+      "bbox": {
+        "x_pct": 73.766,
+        "y_pct": 83.362,
+        "w_pct": 15.831,
+        "h_pct": 2.205
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text of signature."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oberstudiendirektor",
+      "bbox": {
+        "x_pct": 73.79,
+        "y_pct": 85.658,
+        "w_pct": 15.831,
+        "h_pct": 1.481
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled title from OCR."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Several OCR inaccuracies in text regions",
+    "Labels for title and author were set as standard paragraph",
+    "Artifact labeled as text instead of filtered"
+  ],
+  "doc_id": "730",
+  "page": 1,
+  "elapsed_seconds": 9.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

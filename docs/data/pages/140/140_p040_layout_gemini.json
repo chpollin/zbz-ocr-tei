@@ -1,0 +1,177 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DISCONTINUITÉ DES PERSPECTIVES HUMAINES",
+      "bbox": {
+        "x_pct": 14.035,
+        "y_pct": 10.98,
+        "w_pct": 63.038,
+        "h_pct": 2.564
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "121",
+      "bbox": {
+        "x_pct": 80.785,
+        "y_pct": 10.597,
+        "w_pct": 3.738,
+        "h_pct": 2.459
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "plus aux résultats de sa science que vous ne Je pensez.",
+      "bbox": {
+        "x_pct": 11.237,
+        "y_pct": 15.345,
+        "w_pct": 74.358,
+        "h_pct": 4.199
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Un assistant.",
+      "bbox": {
+        "x_pct": 11.884,
+        "y_pct": 21.328,
+        "w_pct": 18.218,
+        "h_pct": 1.937
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une queslion m'a beaucoup troublé pourquoi avons-nous des plans de visée différents ? qui",
+      "bbox": {
+        "x_pct": 11.607,
+        "y_pct": 23.858,
+        "w_pct": 73.924,
+        "h_pct": 4.746
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mle Hersch.",
+      "bbox": {
+        "x_pct": 11.939,
+        "y_pct": 29.954,
+        "w_pct": 18.098,
+        "h_pct": 2.085
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'en sais rien. Je le constate dans nos attitudes.",
+      "bbox": {
+        "x_pct": 11.884,
+        "y_pct": 32.632,
+        "w_pct": 73.555,
+        "h_pct": 3.909
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le même.",
+      "bbox": {
+        "x_pct": 11.847,
+        "y_pct": 38.33,
+        "w_pct": 14.192,
+        "h_pct": 2.085
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourquoi à certains moments constatez-vous, et à d'autres expliquez-vous ?",
+      "bbox": {
+        "x_pct": 11.884,
+        "y_pct": 41.311,
+        "w_pct": 73.527,
+        "h_pct": 4.234
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mle Hersch.",
+      "bbox": {
+        "x_pct": 11.976,
+        "y_pct": 46.912,
+        "w_pct": 18.218,
+        "h_pct": 2.091
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et si Je De peux pas expliquer, je constate Pourquoi cela se présente ainsi ? Cest comme si vous me demandiez : pourquoi n’y a-t-il pas un seul sens, un sens au lieu de cinq sens ? Pourquoi avons-nous des yeux, une langue, des mains, etc. ? C’est à peu près comme cela : je ne sais pas... Je crois qu’au fur et à mesure que l’un de ces domaines acquiert de la rigueur dans l’établissement de ses conditions de réalité, au fur et à mesure il se différencie d’une façon plus nette par rapport aux différents modes de réalité. Je crois bien que, originairement, tout se trouve plus ou moins mêlé, plus ou moins confus.",
+      "bbox": {
+        "x_pct": 11.939,
+        "y_pct": 49.897,
+        "w_pct": 73.961,
+        "h_pct": 22.524
+      },
+      "changed": true,
+      "change_reason": "OCR text corrected for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un dessin d'homme préhistorique était peut-être un objet pratique, un objet mystique ; à l'origine, c'est mêlé ; mais au fur et à mesure que chaque plan est devenu plus rigoureusement constitué, il s'est plus rigoureusement différencié.",
+      "bbox": {
+        "x_pct": 12.253,
+        "y_pct": 72.308,
+        "w_pct": 73.62,
+        "h_pct": 9.533
+      },
+      "changed": true,
+      "change_reason": "OCR text corrected for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais pourquoi il se constitue ainsi, je ne le sais pas.",
+      "bbox": {
+        "x_pct": 12.253,
+        "y_pct": 81.385,
+        "w_pct": 73.647,
+        "h_pct": 4.142
+      },
+      "changed": true,
+      "change_reason": "OCR text corrected for accuracy."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page header misidentified as text.",
+    "Page number at top right was missing from original detection.",
+    "OCR text for the two main paragraphs was highly inaccurate."
+  ],
+  "doc_id": "140",
+  "page": 40,
+  "elapsed_seconds": 5.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

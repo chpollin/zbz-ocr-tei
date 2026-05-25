@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "II",
+      "bbox": {
+        "x_pct": 48.775,
+        "y_pct": 9.458,
+        "w_pct": 3.739,
+        "h_pct": 1.763
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text/zb_paragraph to section_header/zb_heading as it is a Roman numeral heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il ne faudrait pas croire que les préjugés soient toujours au service de « mauvaises » causes, de forfaits ou de crimes. Des préjugés tout aussi forts peuvent jouer en faveur de causes humanitaires, pacifistes et même fraternalistes. Ils conduisent alors --- ou bien ils en dérivent — au péché d’angélisme. Ils s’efforcent de nier, sous toutes ses formes, le tragique de la condition humaine, ses antinomies irréductibles, et ils posent en certitude première la convergence univoque des valeurs et des « vertus ». Ces préjugés sont déterminants dans la bien-pensance onusienne ou pacifiste, et c’est ce qui donne à cette dernière son agressivité propre. Ainsi, par exemple, pour renforcer l’exigence du respect inconditionnel de chaque être humain par une évidence scientifique, on combattra le racisme en « démontrant » l’égalité du Quotient moyen d’Intelligence entre toutes les races. On affirmera l’identité non problématique du Développement et de la Paix, — comme aussi celle de la Paix et des Droits de l’homme, — et ainsi de suite. Pas de cas de conscience pour ceux qui veulent le bien.",
+      "bbox": {
+        "x_pct": 9.162,
+        "y_pct": 13.284,
+        "w_pct": 80.338,
+        "h_pct": 33.54
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les préjugés ne se caractérisent donc pas par les mauvaises intentions ou les desseins pernicieux de ceux dont, à leur insu, ils commandent la pensée et l’action, mais par autre chose : le refus de toute révision, de tout réexamen, une indifférence à demi volontaire, mais obstinée, aux faits, une tendance très forte à universaliser et à totaliser des certitudes, un refus des problèmes et des antinomies.",
+      "bbox": {
+        "x_pct": 9.001,
+        "y_pct": 46.391,
+        "w_pct": 80.04,
+        "h_pct": 12.902
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les préjugés tirent leur force du nombre de ceux qui les soutiennent et les mettent en pratique ; ils sont donc rarement affaire individuelle. Ils se nourrissent aussi de leur durée : plus ils sont anciens, plus leurs traces jusqu’à leur origine se perdent, moins on perçoit leur raison d’être, et plus il est impensable de les mettre en question. Ils ne se justifient pas et n’ont d’ailleurs pas à se justifier car ils sont de l’ordre de l’évidence, préalable à toute justification. Celle-ci serait plutôt le signe de leur affaiblissement. Ils collent au sens qu’une société donne à ce qu’elle considère comme « réel ».",
+      "bbox": {
+        "x_pct": 8.517,
+        "y_pct": 58.911,
+        "w_pct": 80.419,
+        "h_pct": 18.472
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "III",
+      "bbox": {
+        "x_pct": 46.6,
+        "y_pct": 79.761,
+        "w_pct": 3.739,
+        "h_pct": 1.864
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il existe, semble-t-il, deux manières de se libérer d’un préjugé : l’une s’en prend à son « contenu », l’autre à la « nature » de l’adhésion qu’on lui donne.",
+      "bbox": {
+        "x_pct": 8.139,
+        "y_pct": 83.62,
+        "w_pct": 80.878,
+        "h_pct": 6.517
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 84.846,
+        "y_pct": 91.56,
+        "w_pct": 4.148,
+        "h_pct": 2.181
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Initial parsing missed the Roman numeral heading 'II' at the top.",
+    "Initial parsing did not capture the page number '28' as a footer element."
+  ],
+  "doc_id": "1850",
+  "page": 5,
+  "elapsed_seconds": 10.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

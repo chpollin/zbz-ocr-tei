@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "140",
+      "bbox": {
+        "x_pct": 105.797,
+        "y_pct": 80.323,
+        "w_pct": 34.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 393.0,
+        "y_pct": 80.0,
+        "w_pct": 236.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fois, à une autre sagesse, à un autre bien que les miens. Seule, je ne saurais jamais. Mais avec toi, Marc, je saurai. Parce que ce n’est pas seulement en toi que j’ai confiance; le fait que tu existes rend l’espace entier sûr et pieux.",
+      "bbox": {
+        "x_pct": 10.176,
+        "y_pct": 12.732,
+        "w_pct": 81.135,
+        "h_pct": 10.359
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le jour même, du bout du lac, j’écrivis à Pierre que moi aussi j’avais voulu le voir, avant l’arrivée de sa lettre, et que je l’attendrais dimanche.",
+      "bbox": {
+        "x_pct": 10.541,
+        "y_pct": 25.359,
+        "w_pct": 80.851,
+        "h_pct": 7.694
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le reste de la semaine se passa dans un effort constant d’abandon, d’oubli, de retour à la limpidité de naguère. J’essayais de tout suspendre en moi, d’annuler le passé, de ne pas deviner l’avenir, de préparer une page blanche où pût s’écrire le vrai. Je faisais de longues promenades où la fatigue physique m’aidait plus que la beauté des paysages. Je cherchais un état de sommeil sur lequel les jours pussent glisser, je rêvais de pentes recouvertes de neige vierge, des chemins de l’air que les oiseaux laissent intacts, de l’eau qui efface les sillages des bateaux. J’emmenais des enfants avec moi quand je le pouvais et je jouais à être l’un d’eux, car leurs yeux et leurs mains et tout leur corps sont sans cesse disponibles pour ce qu’offre la minute présente, et, bien qu’elle les modèle souvent d’une façon définitive, ils l’ignorent et l’oublient, la suivante les trouve libres et ils s’ouvrent à elle tout entiers.",
+      "bbox": {
+        "x_pct": 10.365,
+        "y_pct": 35.51,
+        "w_pct": 81.122,
+        "h_pct": 42.533
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text was severely corrupted/truncated in all paragraphs.",
+    "Page number and header were labeled as text paragraphs."
+  ],
+  "doc_id": "40",
+  "page": 138,
+  "elapsed_seconds": 5.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

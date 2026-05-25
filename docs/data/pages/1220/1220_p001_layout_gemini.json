@@ -1,0 +1,169 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "sic Vielfal der Antworren Platz in der einen nischen Ausdrudsforin als idi von der Mur des Unabhangi",
+      "bbox": {
+        "x_pct": 10.831,
+        "y_pct": 9.22,
+        "w_pct": 28.082,
+        "h_pct": 4.255
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "werden? Id komme damit zurud: Juf den bcrogen",
+      "bbox": {
+        "x_pct": 10.898,
+        "y_pct": 12.255,
+        "w_pct": 22.395,
+        "h_pct": 4.766
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Dr Lukas Vischer",
+      "bbox": {
+        "x_pct": 11.12,
+        "y_pct": 31.39,
+        "w_pct": 11.164,
+        "h_pct": 2.61
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Glauben und Kirdenverfassung beim Okumenischen für Rar dcr Eeben",
+      "bbox": {
+        "x_pct": 11.009,
+        "y_pct": 35.56,
+        "w_pct": 37.661,
+        "h_pct": 12.894
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "HERSCH",
+      "bbox": {
+        "x_pct": 58.503,
+        "y_pct": 10.879,
+        "w_pct": 6.319,
+        "h_pct": 2.553
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_heading as it is a speaker name"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE",
+      "bbox": {
+        "x_pct": 52.816,
+        "y_pct": 12.383,
+        "w_pct": 5.721,
+        "h_pct": 1.05
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_heading as it is a speaker name"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Religion; Ideologie und Wirklichkeit",
+      "bbox": {
+        "x_pct": 52.738,
+        "y_pct": 23.305,
+        "w_pct": 31.63,
+        "h_pct": 4.823
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ideplogien und die Wirklichkeit setzen der uon Marxismus sozusagen als Realtion, als Schnsudu nach d",
+      "bbox": {
+        "x_pct": 52.805,
+        "y_pct": 29.972,
+        "w_pct": 36.585,
+        "h_pct": 22.184
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "J. H.: Man darf von Ideologie nicht erst im Zusammenhang...",
+      "bbox": {
+        "x_pct": 52.805,
+        "y_pct": 52.6,
+        "w_pct": 36.585,
+        "h_pct": 35.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph text in the right column"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alrertum Veranderuing in der ncucren vielen, dic Eab gb,",
+      "bbox": {
+        "x_pct": 71.918,
+        "y_pct": 56.369,
+        "w_pct": 17.14,
+        "h_pct": 10.255
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "66",
+      "bbox": {
+        "x_pct": 11.2,
+        "y_pct": 89.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "67",
+      "bbox": {
+        "x_pct": 85.5,
+        "y_pct": 89.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Misidentified speaker names as regular text",
+    "Missing text block in right column",
+    "Missing page numbers"
+  ],
+  "doc_id": "1220",
+  "page": 1,
+  "elapsed_seconds": 7.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to zb_heading as it is a speaker name": 2,
+    "ADDED": 3
+  }
+}

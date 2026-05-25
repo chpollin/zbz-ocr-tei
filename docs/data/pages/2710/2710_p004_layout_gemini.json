@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Empiriquement, ils ne naissent, à l'évidence, ni libres, ni égaux. Ils ne sont \"libres et égaux\" en dignité et en droit\", donc: dans une visée, selon une volonté, dans la dimension de leur possible devenir. Il s'agit d'un programme et d'un espoir. Une nouvelle Constitution qui se veut fidèle à la Déclaration universelle doit énumérer les Droits qui permettront, dans toute la mesure du possible, de transformer cet espoir en réalité.",
+      "bbox": {
+        "x_pct": 8.703,
+        "y_pct": 36.32,
+        "w_pct": 84.769,
+        "h_pct": 14.18
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated and incorrect in the original extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces Droits sont d'ordres divers. Pour en établir la liste, il faudra d'abord repérer les catégories d'obstacles qui empêchent les hommes d'être \"libres et égaux\", c'est-à-dire de pouvoir assumer pleinement leur condition propre d'êtres autonomes et responsables, capables de prendre des décisions et de les assumer, en tant qu'ils sont doués de conscience et de raison.",
+      "bbox": {
+        "x_pct": 8.642,
+        "y_pct": 16.872,
+        "w_pct": 84.769,
+        "h_pct": 8.487
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated and missing key phrases."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a d'abord les droits qui s'opposent aux contraintes s'exerçant de l'extérieur sur les hommes, par la force, et qui peut être celle de l'Etat. On appelle ces Droits, par lesquels l'Etat, à travers ses lois, limite son pouvoir, les Droits fondamentaux: protection contre l'arbitraire et la violence, possibilité de participer à la mise en forme et aux décisions de l'Etat, droit d'expression et d'association, inviolabilité de la sphère privée, etc. Ces droits sont exigibles, car rien d'extérieur ne peut en principe contraindre l'Etat à les violer. S'ils le sont, il ne s'agit plus d'un Etat de droit.",
+      "bbox": {
+        "x_pct": 8.703,
+        "y_pct": 27.953,
+        "w_pct": 84.795,
+        "h_pct": 15.175
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated and incorrect."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La conscience de contraintes d'un tout autre ordre a été bien plus tardive. Doué de conscience et de raison, l'être humain est aussi un corps vivant, appartenant à la nature animale, et soumis, comme tout autre corps naturel, peut-être même plus étroitement que tout autre, à des besoins matériels et à des conditions d'existence dont dépend sa survie, comme aussi celle de ses petits et de ses proches. Il est clair que sans une sécurité suffisante à ce niveau, le souci immédiat de sa survie, qu'il a en commun avec les autres espèces vivantes, l'empêche de s'ouvrir à sa vocation proprement humaine d'être \"libre et égal à tous les autres hommes en dignité et en droits\" grâce à sa possible liberté responsable. C'est pourquoi, afin non pas d'abolir la menace de ces besoins - elle n'est jamais abolie, tant que le corps vit -, mais de la mettre à distance, permettant ainsi à l'être humain de devenir lui-même, de nouveaux droits se sont ajoutés aux droits fondamentaux déjà reconnus: les Droits sociaux, permettant de mettre à distance les menaces naturelles en assurant en principe à chacun une marge suffisante de sécurité, face aux besoins, pour lui et les siens. Ceux qui prétendent que les contraintes du système de sécurité sociale sont contraires à la liberté se trompent, non pas seulement par égoïsme, mais aussi par aveuglement et méconnaissance de la condition humaine. La sécurité sociale tient compte de l'unité de l'être humain dans sa double nature et lui permet d'advenir à lui-même. C'est ce que reconnaît aussi la Déclaration universelle.",
+      "bbox": {
+        "x_pct": 8.355,
+        "y_pct": 45.561,
+        "w_pct": 84.795,
+        "h_pct": 36.89
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated and missing the full passage."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malheureusement, ces droits sociaux ne sont pas exigibles dans le même sens où le sont les droits fondamentaux, car ils dépendent toujours de divers facteurs liés au niveau de",
+      "bbox": {
+        "x_pct": 8.555,
+        "y_pct": 85.359,
+        "w_pct": 84.282,
+        "h_pct": 4.059
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "- 31 -",
+      "bbox": {
+        "x_pct": 47.4,
+        "y_pct": 94.2,
+        "w_pct": 5.2,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most text fields were truncated or poorly OCR'd.",
+    "Page number missing from initial extraction.",
+    "Overlaps between paragraph boundaries need careful checking against original OCR engine."
+  ],
+  "doc_id": "2710",
+  "page": 4,
+  "elapsed_seconds": 10.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

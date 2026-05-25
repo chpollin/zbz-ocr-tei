@@ -1,0 +1,111 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Même si la science s'efforce d'exclure...",
+      "bbox": {
+        "x_pct": 15.234,
+        "y_pct": 4.766,
+        "w_pct": 74.679,
+        "h_pct": 6.104
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or le vrai implique ladéquation du langage...",
+      "bbox": {
+        "x_pct": 15.016,
+        "y_pct": 11.538,
+        "w_pct": 74.973,
+        "h_pct": 9.891
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a ni unité des sciences, ni totalité...",
+      "bbox": {
+        "x_pct": 15.158,
+        "y_pct": 22.132,
+        "w_pct": 74.94,
+        "h_pct": 18.06
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce divers langages ont en commun une visée...",
+      "bbox": {
+        "x_pct": 15.125,
+        "y_pct": 41.028,
+        "w_pct": 64.45,
+        "h_pct": 3.93
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On en reste inévitablement à des cohérences...",
+      "bbox": {
+        "x_pct": 15.049,
+        "y_pct": 46.012,
+        "w_pct": 74.973,
+        "h_pct": 9.674
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourquoi ai-je dit: \"à telle époque\"?...",
+      "bbox": {
+        "x_pct": 14.94,
+        "y_pct": 56.58,
+        "w_pct": 75.19,
+        "h_pct": 9.473
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On entend parfois, de nos jours, des savants...",
+      "bbox": {
+        "x_pct": 15.092,
+        "y_pct": 69.875,
+        "w_pct": 75.082,
+        "h_pct": 19.59
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "84",
+      "bbox": {
+        "x_pct": 15.2,
+        "y_pct": 93.5,
+        "w_pct": 3.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Page number at the bottom of the page was initially mislabeled as text."
+  ],
+  "doc_id": "2020",
+  "page": 4,
+  "elapsed_seconds": 4.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

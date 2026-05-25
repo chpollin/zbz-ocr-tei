@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "110 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 19.355,
+        "y_pct": 2.0,
+        "w_pct": 68.583,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tabîme; et Tesprit de Dieu étail SUT celle des eaux \" Lors que Dicu crée la   lumière; Onl dirait en",
+      "bbox": {
+        "x_pct": 19.124,
+        "y_pct": 13.462,
+        "w_pct": 68.664,
+        "h_pct": 18.375
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La créalion commence donc par la séparation; avant laquelle il n'y a rien que le la   forme. créatio",
+      "bbox": {
+        "x_pct": 19.355,
+        "y_pct": 32.096,
+        "w_pct": 68.583,
+        "h_pct": 26.067
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cependant   il ne   faudrait pas oublier de dans contexte; une remarque importante: la création   di",
+      "bbox": {
+        "x_pct": 19.355,
+        "y_pct": 57.836,
+        "w_pct": 68.514,
+        "h_pct": 16.955
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header in initial annotations",
+    "Incorrect label for page header if it was treated as text"
+  ],
+  "doc_id": "110",
+  "page": 112,
+  "elapsed_seconds": 6.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

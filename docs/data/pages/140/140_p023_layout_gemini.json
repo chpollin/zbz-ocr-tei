@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "104 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header detected"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "morales sont spécifques-et distinctes ' des conditions dexistence artistique; et la vie est autre ch",
+      "bbox": {
+        "x_pct": 14.284,
+        "y_pct": 14.53,
+        "w_pct": 73.038,
+        "h_pct": 7.407
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ou encore, lorsqu'une attitude vólontaire; un comportement tendant à un but pratique veut subordonne",
+      "bbox": {
+        "x_pct": 14.247,
+        "y_pct": 21.521,
+        "w_pct": 73.869,
+        "h_pct": 32.855
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais inversement, on peut tendre à lunité en éliminant certains plans sont des plans Sur lesquels Ph",
+      "bbox": {
+        "x_pct": 14.377,
+        "y_pct": 53.886,
+        "w_pct": 74.081,
+        "h_pct": 31.111
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "1",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 10.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page footer detected"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number missing from initial region list",
+    "Running header missing from initial region list"
+  ],
+  "doc_id": "140",
+  "page": 23,
+  "elapsed_seconds": 5.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

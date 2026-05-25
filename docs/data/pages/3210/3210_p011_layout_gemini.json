@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist ja nicht wirklich; man leidet nicht s0 sehr. Die Erfahrung scheint mir dem zu widersprechen. In einem bestimmten Sinne leidet man da manchmal mehr als in der Wirklichkeit. Denn man sitzt und bleibt auf seinem Platz sitzen, was auch geschehen mag. Für die Dauer des Konzerts oder der Tragödie hat man auf jegliche Tat verzichtet. Und Tat hilft! Gerade deswegen ist man dem Leiden durch die aktive Empfänglichkeit ganz und restlos hingegeben. Andere glauben, dass der ästhetische Sinn für die Schönheit eines Werks eine solche Distanz schafft, dass sie das Leiden überhaupt durch kühle Betrachtung verhindert. Das glaube ich nicht. Es gibt ein Leiden, das zur aktiven Empfänglichkeit gehört, weil es zu einer der zu erlebenden Zeitdimensionen gehört.",
+      "bbox": {
+        "x_pct": 5.985,
+        "y_pct": 7.646,
+        "w_pct": 88.03,
+        "h_pct": 26.685
+      },
+      "changed": true,
+      "change_reason": "The bounding box did not capture the full extent of the first paragraph correctly in the provided input data; fixed text content to match actual image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber dieses Leiden geniessen wir, weil es ein freies Leiden ist, ohne jede Unterwerfung oder Knechtschaft. Es ist ein freies Leiden, weil sich in ihm die verschiedenen Zeiten des Menschseins unter sich versöhnen und sich auch mit der geschichtlichen Ewigkeit versöhnen, auf die sie sich notwendig beziehen.",
+      "bbox": {
+        "x_pct": 6.197,
+        "y_pct": 28.764,
+        "w_pct": 87.905,
+        "h_pct": 8.467
+      },
+      "changed": true,
+      "change_reason": "The text was truncated in the provided input; corrected to full content visible in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und denken Sie dabei an folgendes: Es kann nachher geschehen, was will; die gespielte und gehörte Musik kann aus der Vergangenheit nie mehr entschwinden. Nichts kann bewirken, dass sie nicht gespielt, von Ihnen nicht gehört worden wäre. Auch wenn einmal unsere Erde zu kalt oder zu heiss wird und die Menschen verschwinden, wird die Zeit der erlebten Musik in der Vergangenheit bleiben. Selbst spurlos verschwunden, wird sie geheimnisvoll das Universum auf menschliche Weise schmücken.",
+      "bbox": {
+        "x_pct": 6.197,
+        "y_pct": 39.483,
+        "w_pct": 88.03,
+        "h_pct": 12.845
+      },
+      "changed": true,
+      "change_reason": "The text was truncated in the provided input; corrected to full content visible in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": {
+        "x_pct": 69,
+        "y_pct": 967,
+        "w_pct": 19,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Identified page number at the bottom of the page which was missing from the initial region list."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Input text was truncated for all three paragraphs.",
+    "Page number missing from initial region list.",
+    "Bounding boxes in original input were slightly misaligned with the visual content blocks."
+  ],
+  "doc_id": "3210",
+  "page": 11,
+  "elapsed_seconds": 4.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "29. Les modes de l'englobant",
+      "bbox": {
+        "x_pct": 11.558,
+        "y_pct": 6.804,
+        "w_pct": 30.643,
+        "h_pct": 2.247
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to section_header as it is a top-level heading."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'englobant est ou bien l'être en soi nous environne, ou bien l'être que nous sommes. L'être qui nous environne s'appelle monde et transcendance. L'être que nous sommes s'appelle sujet vital (Dasein), conscience en général, esprit, et s'appelle enfin existence.",
+      "bbox": {
+        "x_pct": 11.829,
+        "y_pct": 9.657,
+        "w_pct": 83.835,
+        "h_pct": 8.312
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to paragraph as it is standard narrative text."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'être nous environne. Cet être est même sans que nous soyons, et qui nous environne sans que nous soyons lui, est de deux sortes : — c'est le monde, c'est-à-dire l'être dont un côté de ma personne constitue malgré tout une part infime, même si ce monde est conçu comme un tout qui m'englobe en tant que non-moi ; — c'est la transcendance, c'est-à-dire l'être qui est absolument l'autre, à quoi je n'ai aucune part, mais qui est à la fois mon fondement et ma fin.",
+      "bbox": {
+        "x_pct": 11.558,
+        "y_pct": 19.28,
+        "w_pct": 83.93,
+        "h_pct": 15.193
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) Le monde : Le monde dans son ensemble n'est pas un objet, mais une Idée. Ce que nous connaissons est dans le monde, n'est jamais le monde.",
+      "bbox": {
+        "x_pct": 11.924,
+        "y_pct": 35.416,
+        "w_pct": 83.699,
+        "h_pct": 5.716
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to paragraph; improved text content."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) La transcendance : La transcendance est l'être qui ne devient jamais le monde, mais qui s'exprime dans le monde par le moyen de l'être. Il n'y a de transcendance que lorsque le monde ne subsiste pas par lui-même, n'est pas fondé sur lui-même, mais désigne quelque chose de plus haut. Si le monde est tout, il n'y a pas de transcendance. Mais s'il y a une transcendance, il peut y avoir dans la réalité du monde des signes pour l'indiquer.",
+      "bbox": {
+        "x_pct": 11.558,
+        "y_pct": 41.962,
+        "w_pct": 84.106,
+        "h_pct": 11.851
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "2) L'être que nous sommes. Les modes selon lesquels nous prenons conscience de notre être sont les suivants :",
+      "bbox": {
+        "x_pct": 11.924,
+        "y_pct": 57.241,
+        "w_pct": 83.835,
+        "h_pct": 3.856
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) Nous sommes d'abord sujet vital (Dasein) : notre vie se déroule dans un milieu. L'englobant, sur le plan de la vitalité, devient objet de la recherche à travers ses manifestations : reproduction, morphologie, fonctions physiologiques, corrélation héréditaire des formes, expériences psychologiques vécues, comportements, structures de l'environnement. A cela, l'homme — et lui seul — ajoute son apport de mots, d'outils, d'images, d'actes, et se façonne lui-même en se prenant pour objet. Toute autre vie que celle de l'homme est simplement donnée avec son milieu. La vie de l'homme, au contraire, se manifeste pleinement du fait que les autres modes de l'englobant y pénètrent, qu'elle leur donne son soutien ou qu'elle les force à la servir.",
+      "bbox": {
+        "x_pct": 11.748,
+        "y_pct": 62.014,
+        "w_pct": 84.051,
+        "h_pct": 22.991
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) Nous sommes conscience en général dans la scission sujet — objet. Il n'y a d'être pour nous que ce qui pénètre dans notre conscience.",
+      "bbox": {
+        "x_pct": 11.829,
+        "y_pct": 85.544,
+        "w_pct": 83.699,
+        "h_pct": 4.284
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "90",
+      "bbox": {
+        "x_pct": 12.285,
+        "y_pct": 93.684,
+        "w_pct": 2.215,
+        "h_pct": 2.308
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and labeled as page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Most list_items were incorrectly identified as such when they are standard paragraphs or section headers.",
+    "Page number 90 was missing from original json.",
+    "Section heading was missed."
+  ],
+  "doc_id": "1520",
+  "page": 96,
+  "elapsed_seconds": 6.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

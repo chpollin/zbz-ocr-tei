@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Idéologies et réalité. que l'inégalité des forces économiques en présence risque d'altérer le fonctionnement de la démocratie ; que les choix se font souvent, non selon les opinions, les options réelles des gens, mais qu'ils sont influencés par l'inégalité énorme des ressources des pouvoirs en présence. Cela je continue à le croire. Mais quand j'ai écrit Idéologies et réalité, j'étais déjà favorable à un système mixte et je l'ai dit. Je n'étais pas simplement pour la suppression du libre marché et je le suis de moins en moins, parce qu'il faut se rendre à l'évidence : au cours des dernières décennies, les pays qui ont appliqué un système intégralement dirigiste en matière d'économie ont fait la preuve d'un fiasco complet. Il est impossible de nier que les masses humaines y sont plus asservies et non seulement politiquement, mais économiquement et socialement plus pauvres, plus misérables que dans les pays où existent la libre concurrence et le libre marché. Seulement je me trouve ici sur un terrain où je me sens mal à l'aise à cause de mon incompétence ; je ne suis pas économiste. Il me semble qu'il faudrait tendre à un système mixte, comportant un secteur économique collectif, non pas nécessairement étatique, mais collectif sous une forme ou sous une autre, et conserver un vaste secteur de libre entreprise et de libre concurrence. Je crois que c'est indispensable et imposé par les faits. J'en suis d'ailleurs bien plus convaincue aujourd'hui que lorsque j'ai écrit Idéologies et réalité. En revanche, je pense aujourd'hui de façon beaucoup plus résolue qu'alors que des initiatives devraient être prises du côté de l'économie privée elle-même, du côté des entreprises pour s'interroger sur les finalités de la production, ses conditions et son orientation. Des accords devraient ensuite être conclus en vue d'une meilleure adaptation de cette production — qui s'est accrue d'une façon fantastique — aux besoins des êtres humains. C'est un vaste programme.",
+      "bbox": {
+        "x_pct": 13.712,
+        "y_pct": 4.218,
+        "w_pct": 80.269,
+        "h_pct": 56.081
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. : Vous avez écrit un jour : « La déformation capitaliste de la démocratie la compromet tout entière », estimant au surplus qu'il ne fallait pas sous-estimer les critiques que lui adressaient ses adversaires communistes. Pouvez-vous vous expliquer à ce sujet ?",
+      "bbox": {
+        "x_pct": 14.249,
+        "y_pct": 60.645,
+        "w_pct": 79.609,
+        "h_pct": 8.524
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — Oui, je voudrais d'abord examiner la deuxième partie de la phrase. Quand j'ai dit qu'il ne fallait pas sous-estimer les critiques que les communistes adressent à la démocratie, je ne voulais pas dire par là qu'ils avaient un droit, une quelconque légitimité pour le faire. J'estime au contraire que les communistes n'ont aucun droit de lui adresser des critiques de ce genre pour la raison que j'ai déjà développée, à savoir qu'il n'y a ni démocratie économique, ni justice sociale sans liberté démocratique. Quand j'ai dit qu'il fallait prendre tout de même leurs critiques au sérieux, c'est que ces critiques sont parfois fondées sur des situations de fait, déplorables selon nos critères, et non selon les leurs. Cela n'ajoute aucune légitimité au parti communiste à mes yeux, mais",
+      "bbox": {
+        "x_pct": 14.249,
+        "y_pct": 69.456,
+        "w_pct": 79.609,
+        "h_pct": 23.468
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "110",
+      "bbox": {
+        "x_pct": 14.249,
+        "y_pct": 94.619,
+        "w_pct": 2.76,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was heavily corrupted.",
+    "Page number at the bottom was missing from the initial layout detections.",
+    "Multiple paragraphs were truncated in the provided layout list."
+  ],
+  "doc_id": "2330",
+  "page": 114,
+  "elapsed_seconds": 6.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

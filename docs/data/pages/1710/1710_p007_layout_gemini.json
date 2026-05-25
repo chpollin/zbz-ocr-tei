@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "il sc veul lidelc à c du ndhesion loynle En Tu'il inlervienl coreligionnnires. 1I syupathie il de so",
+      "bbox": {
+        "x_pct": 8.823,
+        "y_pct": 7.898,
+        "w_pct": 18.119,
+        "h_pct": 7.01
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ouvant 4un processus nnlure]. paradoxale souligner ici la relalion rcciproque de lu v&eacute;rit&eacute; de lu l",
+      "bbox": {
+        "x_pct": 8.701,
+        "y_pct": 37.419,
+        "w_pct": 38.507,
+        "h_pct": 23.935
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dol croit. qui qui",
+      "bbox": {
+        "x_pct": 59.563,
+        "y_pct": 12.793,
+        "w_pct": 31.857,
+        "h_pct": 7.504
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "2 la ralion absolue Entre sujel inunanence Lhisloire . Func s&eacute;paprix .",
+      "bbox": {
+        "x_pct": 53.155,
+        "y_pct": 22.708,
+        "w_pct": 38.507,
+        "h_pct": 10.677
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Spinoza (suivi en cela pr Iaymond Arpn d'odellre philosoloricile authentique. E1 pour saisir lincarn",
+      "bbox": {
+        "x_pct": 53.313,
+        "y_pct": 46.121,
+        "w_pct": 38.762,
+        "h_pct": 15.233
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Aron juif.",
+      "bbox": {
+        "x_pct": 55.947,
+        "y_pct": 78.801,
+        "w_pct": 10.522,
+        "h_pct": 2.623
+      },
+      "changed": true,
+      "change_reason": "Correction of misidentified page content near the footer area."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Aron Ignace Teconnail",
+      "bbox": {
+        "x_pct": 56.311,
+        "y_pct": 81.1,
+        "w_pct": 27.791,
+        "h_pct": 2.962
+      },
+      "changed": true,
+      "change_reason": "Correction of misidentified page content near the footer area."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Two regions at the bottom were incorrectly identified as text instead of page content footer elements.",
+    "The OCR quality is very poor in several bounding boxes, impacting readability."
+  ],
+  "doc_id": "1710",
+  "page": 7,
+  "elapsed_seconds": 3.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

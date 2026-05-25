@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il importe de rétablir et de maintenir la hiérarchie des finalités, afin que le sens passe, par dérivation, de la liberté, à travers ses conditions, jusqu'à la vie quotidienne et aux tendances, qui en sont inséparables, à éviter la souffrance et à rechercher le plaisir.",
+      "bbox": {
+        "x_pct": 6.264,
+        "y_pct": 3.408,
+        "w_pct": 88.996,
+        "h_pct": 8.993
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a ici de la nécessité de défendre “une nouvelle conception politique de la santé publique”, et de “la responsabilité de l'individu devant sa santé”, qui serait la forme la meilleure de la prévention, — ce qui permettrait de remédier à la démesure du budget de la santé. Certes. Mais par-delà ce budget, il y a quelque chose de plus important encore. Il faut que l'homme redécouvre la merveille unique qu'il est dans l'univers et qu'il apprenne à le respecter en lui-même, dans son corps et dans son esprit. La respecter en lui-même, cela signifie ne pas pouvoir supporter d'encrasser ses poumons avec de la nicotine, son cerveau avec des drogues de tout genre, sa pensée avec des mensonges. Il y a une hygiène inspirée par le respect de l'être humain que l'on est soi-même.",
+      "bbox": {
+        "x_pct": 6.773,
+        "y_pct": 19.142,
+        "w_pct": 89.072,
+        "h_pct": 22.467
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais cette hygiène n'a rien de commun avec une “hygiénisation” generale de la vie, avec le seul souci du plaisir et de la santé. Prenons pour exemple la sexualité. A force de la “dédramatiser”, comme on s'efforce de dédramatiser toute chose, à force de la “naturaliser”, on n'est pas loin de la réduire à un ensemble de mesures d'hygiène et de plaisir, mesures que l'éducation s'efforce de généraliser. Or, par l'action conjointe de la nature et de la tradition, la sexualité chez les êtres humains est une force qui implique et traverse leur condition à tous ses niveaux, du plus matériel au plus transcendant, du plus bachique au plus apollinien, réalisant en elle l'unité de la vie biologique, affective, sensorielle, rationnelle, religieuse. C'est à cette condition qu'elle devient à la fois humaine et dangereuse, qu'elle comporte des enjeux décisifs, qu'elle risque de faire souffrir. Les fameux “mariages à l'essai”, si raisonnables dans leur prudence, ne sont qu'une mesure très bourgeoise de protection : on ne joue pas sa vie, on s'assure d'abord de la valeur de l'objet. On ne veut pas souffrir. On ne mourra pas d'amour. Mais faute d'enjeux, on mourra peut-être d'ennui.",
+      "bbox": {
+        "x_pct": 7.281,
+        "y_pct": 41.584,
+        "w_pct": 88.907,
+        "h_pct": 35.206
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "\"Non propter vitam vitae perdere causas\", disait le poète latin. \"Ne pas perdre, pour vivre, les raisons de vivre.\" Telle pourrait être la devise, limitative, de la médicalisation de la vie.",
+      "bbox": {
+        "x_pct": 7.205,
+        "y_pct": 76.213,
+        "w_pct": 89.199,
+        "h_pct": 6.353
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il a une grande ambiguïté dans le “volontarisme” contemporain : on parle de créer un homme nouveau, de supprimer la vieillesse et la mort. Pourtant la condition mortelle, avec les menaces de maladie, de souffrance et de malheur qu'elle comporte, reste indissociable de la temporalité, sans laquelle la liberté humaine reste",
+      "bbox": {
+        "x_pct": 7.586,
+        "y_pct": 82.318,
+        "w_pct": 88.729,
+        "h_pct": 10.479
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "303",
+      "bbox": {
+        "x_pct": 91.0,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 5,
+  "issues": [
+    "Several paragraphs had incomplete or truncated OCR text.",
+    "Page number at bottom right was labeled as text, changed to page_footer."
+  ],
+  "doc_id": "1880",
+  "page": 5,
+  "elapsed_seconds": 5.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

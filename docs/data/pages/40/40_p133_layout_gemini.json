@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 135",
+      "bbox": {
+        "x_pct": 396.0,
+        "y_pct": 81.0,
+        "w_pct": 208.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header elements detected as paragraphs, must be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je savais que je ne cèderais pas, que je ne pouvais pas céder. Mais je me sentais les doigts crispés, tremblants, et je me demandais comment nous allions faire dimanche, Pierre et moi, quand nous nous pencherions ensemble vers la vérité, pour reconnaître nos visages dans une onde aussi troublée.",
+      "bbox": {
+        "x_pct": 11.662,
+        "y_pct": 12.505,
+        "w_pct": 80.595,
+        "h_pct": 17.391
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and removed redundant overlapping fragments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur tes traits calmes, Marc, je vois une contraction qui s’y montre rarement. Je me souviens l’avoir vue une fois, quand nous marchions dans la rue. Une femme à côté de nous tirait par la main une petite fille habillée comme une poupée; la petite fille venait de perdre son ballon que le vent emportait en arrière, au fond du ciel. Elle ne pleurait pas, elle tâchait de le suivre des yeux en renversant la tête, et sur sa face à peine modelée s’étalait en ce moment, avant toute peine, l’effacement, l’absence. Sa mère la secouait, voulait la ramener de force à la marche en avant, au souci de ses souliers vernis qu’il ne fallait pas placer dans les flaques d’eau. — Une autre fois c’était dans un tram, un homme en face de nous passait son bras sous celui d’une femme qui visiblement lui appartenait, mais dont le corps n’était que refus. — On dirait qu’une souffrance naît alors en toi de ne pas pouvoir déployer la force de tes mains pour écarter ces viols. Tes mains se ferment, et on te sent à la recherche de ta propre paix et de ta propre soumission. Oui, on m’avait mutilé mon beau calme limpide, on avait estropié mes yeux qui ne voulaient que voir une image vraie. Mais",
+      "bbox": {
+        "x_pct": 11.662,
+        "y_pct": 32.769,
+        "w_pct": 81.351,
+        "h_pct": 53.147
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text detection was severely fragmented and contained hallucinated/duplicated tokens.",
+    "Header content (page title/number) was incorrectly included in the text block.",
+    "Text transcription contained significant OCR artifacts.",
+    "Bbox for header was not initially defined."
+  ],
+  "doc_id": "40",
+  "page": 133,
+  "elapsed_seconds": 4.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

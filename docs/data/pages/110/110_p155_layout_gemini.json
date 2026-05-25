@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME ET L'ESPACE",
+      "bbox": {
+        "x_pct": 12.083,
+        "y_pct": 9.388,
+        "w_pct": 20.357,
+        "h_pct": 2.457
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header corrected to _filter"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "153",
+      "bbox": {
+        "x_pct": 76.548,
+        "y_pct": 93.0,
+        "w_pct": 4.167,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number corrected to _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "reluse & remplacer une portion despace par une autre; un par autre; ce monlre a beau imaginer   Tesp",
+      "bbox": {
+        "x_pct": 12.083,
+        "y_pct": 12.769,
+        "w_pct": 68.78,
+        "h_pct": 57.587
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous Vavons la perspective et  exclusive. en acquérir une nouvelle en perdant ahsolument qu' peut",
+      "bbox": {
+        "x_pct": 12.163,
+        "y_pct": 70.561,
+        "w_pct": 68.274,
+        "h_pct": 3.998
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page_header label",
+    "Missing page_footer label",
+    "Typographical errors in existing text labels"
+  ],
+  "doc_id": "110",
+  "page": 155,
+  "elapsed_seconds": 6.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

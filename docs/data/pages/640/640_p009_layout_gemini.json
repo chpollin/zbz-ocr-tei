@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 50.1,
+        "y_pct": 3.9,
+        "w_pct": 1.2,
+        "h_pct": 1.2
+      },
+      "changed": true,
+      "change_reason": "Identified page number, should be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qu'il relira sa dictée, il n'entendra plus rien, il ne fera plus attention à rien de ce qui n'est pas sa dictée, il ne sera plus distrait, il sera seul, tout à son travail. Mais quand on lui dit « fais attention en traversant la rue », on lui demande exactement le contraire : d'ouvrir les yeux et les oreilles, d'être sur le qui-vive, attentif à l'extrême à ce qui est hors de lui. La présence de la ville stimule le second sens de « faire attention » et ne stimule pas le premier, et en stimulant le second, elle tend à engourdir le premier.",
+      "bbox": {
+        "x_pct": 11.19,
+        "y_pct": 7.538,
+        "w_pct": 86.678,
+        "h_pct": 12.485
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voyez aussi l'ambiguïté qu'il y a dans cette notion de la pédagogie moderne, « développer le sens de l'observation », c'est-à-dire : pouvoir dire comment étaient les choses dans un endroit où l'on a été. D'un certain côté, cette faculté d'observation est de la distraction, car si l'on est véritablement concentré sur un objet intérieur, on ne voit pas ces choses-là. Le fait d'avoir tout vu montre qu'on n'était pas concentré. C'est ainsi qu'on s'est moqué de la concentration portée à son comble, celle du philosophe qui tombe dans un puits parce qu'il est distrait.",
+      "bbox": {
+        "x_pct": 11.19,
+        "y_pct": 20.308,
+        "w_pct": 86.566,
+        "h_pct": 14.077
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ROUTINE ET CONVENTIONS",
+      "bbox": {
+        "x_pct": 40.146,
+        "y_pct": 38.385,
+        "w_pct": 28.429,
+        "h_pct": 1.562
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a autre chose : l'exigence d'adaptation pèse à l'excès sur l'enfant des villes et le fatigue ; et parce que cela fatigue, cela lui donne le goût de la routine à force d'être fatigué par cette vigilance à laquelle il est sans cesse contraint. Je ne crois pas que l'enfant de la ville soit d'humeur très aventureuse. L'école buissonnière traditionnelle n'existe guère maintenant pour lui. Cela ne veut pas dire qu'il n'y ait pas de fugues, mais ces fugues ont en général un caractère différent, et plus inquiétant que l'école buissonnière traditionnelle de l'époque pré-citadine.",
+      "bbox": {
+        "x_pct": 11.033,
+        "y_pct": 42.1,
+        "w_pct": 86.498,
+        "h_pct": 14.308
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La relation entre l'enfant et la routine, entre l'enfant et la règle, entre l'enfant et la convention sociale, se trouve donc altérée par cette stimulation excessive de la réponse, et de la vigilance, que la ville entretient.",
+      "bbox": {
+        "x_pct": 10.92,
+        "y_pct": 56.669,
+        "w_pct": 86.42,
+        "h_pct": 5.538
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, le sens du signe, du signal, du mot, du langage vient remplacer dans une très large mesure la chose lourde, pleine, résistante. La vraie chose, qui a son vrai poids, est de plus en plus remplacée par le signe de la chose, par l'image ou le nom de la chose. Là encore, cela augmente la légèreté, la maniabilité de tout. C'est pourquoi l'enfant citadin a plus d'aisance relative. Il a une familiarité naturelle extraordinaire, quand on y réfléchit, avec un acquis social très complexe. Quand on réfléchit au nombre de choses que doit connaître, comprendre un enfant de l'âge que j'ai indiqué pour se comporter dans une ville, pour se tirer d'affaire, c'est extraordinaire, et pour lui c'est pourtant tout à fait naturel. L'enfant est dans la ville comme le poisson dans l'eau. Il sait tout de suite nager dans cette eau. Mais la contrepartie me paraît assez curieuse. La contrepartie, c'est que les conventions sociales prennent aussi pour lui le caractère de « cela va sans dire », de données naturelles. Pendant très longtemps, l'humanité a vécu dans des sociétés qui allaient sans dire, où l'on ne se demandait pas si l'ordre social pouvait être tel ou tel parce qu'on admettait l'ordre social tel qu'il était. C'était en quelque sorte le stade préhistorique, au sens propre du terme. On peut dire qu'on atteint le stade historique à partir du moment où on se rend compte « qu'on peut quelque chose », qu'on a un certain choix, que quelque chose peut être changé. Alors on en vient.",
+      "bbox": {
+        "x_pct": 10.696,
+        "y_pct": 62.792,
+        "w_pct": 86.835,
+        "h_pct": 33.131
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Page number not identified as page_footer/filter initially.",
+    "Major OCR errors in all text blocks.",
+    "Layout order seems correct."
+  ],
+  "doc_id": "640",
+  "page": 9,
+  "elapsed_seconds": 7.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

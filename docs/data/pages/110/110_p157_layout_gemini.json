@@ -1,0 +1,27 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vraie. Des   linguistes   peuvent essayer d'expliquer; tort Ou à raison; la diversité presque contra",
+      "bbox": {
+        "x_pct": 9.931,
+        "y_pct": 13.265,
+        "w_pct": 68.815,
+        "h_pct": 53.781
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing section header annotation",
+    "Missing page number annotation"
+  ],
+  "doc_id": "110",
+  "page": 157,
+  "elapsed_seconds": 5.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

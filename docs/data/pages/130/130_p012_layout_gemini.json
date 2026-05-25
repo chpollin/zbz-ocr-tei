@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "18 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 2.0,
+        "w_pct": 79.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified page header missing from input"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne s'agit pas seulement, ni même surtout; de la journée de travail. Il s'agit des vacances. Sans ",
+      "bbox": {
+        "x_pct": 12.221,
+        "y_pct": 15.85,
+        "w_pct": 79.106,
+        "h_pct": 56.455
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce précède m'amène à signaler les écueils que Féducation ouvrière doit éviter à tout prix. Il ne fau",
+      "bbox": {
+        "x_pct": 12.05,
+        "y_pct": 77.522,
+        "w_pct": 78.318,
+        "h_pct": 15.879
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page header region"
+  ],
+  "doc_id": "130",
+  "page": 12,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

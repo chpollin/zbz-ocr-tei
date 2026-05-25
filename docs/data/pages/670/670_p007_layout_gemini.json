@@ -1,0 +1,114 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "326 JEANNE HERSCH",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header elements identified as text should be classified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "moment de l'histoire, quel cran d'arrêt du futur servira de tribunal au passé tout entier.",
+      "bbox": {
+        "x_pct": 10.612,
+        "y_pct": 10.866,
+        "w_pct": 67.897,
+        "h_pct": 3.584
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une fois tout logos transtemporel, il ne reste que le règne d'un temps destructuré. En même temps, une fois la transcendance réduite au futur, le mystère qui seul imposait de suspendre et de restreindre la contrainte se trouve éliminé. Rien ne limite dès lors les prétentions arbitraires et totalitaires d'une « science » et d'une « technique » de l'histoire, comportant des ingénieurs et des ministères de la Vérité à la manière d'Orwell, et capables à la fois de prédire le futur et de refaire le passé.",
+      "bbox": {
+        "x_pct": 10.419,
+        "y_pct": 14.53,
+        "w_pct": 68.364,
+        "h_pct": 14.53
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "8. PRÉCARITÉ DU THÉORIQUE",
+      "bbox": {
+        "x_pct": 28.364,
+        "y_pct": 31.51,
+        "w_pct": 31.16,
+        "h_pct": 2.125
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les remarques qui précèdent me paraissent rendre manifeste une vérité essentielle, le plus souvent méconnue par le rationalisme et l'éthique classiques : c'est que la « théorie », et le monde qui est le sien, ne vont pas sans dire, ne sont pas des données naturelles de l'esprit humain. Théorie et monde théorique ont besoin, pour exister, d'être posés par un acte du sujet théoricien et d'être soutenus par les valeurs (essentiellement : celle de vérité) qui commandent cet acte. Les zones où règne l'objectivité impersonnelle — par exemple : celle de la « science » kantienne, celle du « Bewusstsein überhaupt » de Jaspers, celle des « lumières naturelles de la raison » — ne sont jamais données et définies une fois pour toutes. Pour exister, elles ont besoin aussi d'un acte, historiquement et existentiellement situé, qui les rend indépendantes de lui. L'acte de théorie reste une décision existentielle. C'est pourquoi, l'historicité étant partout, la philosophie est partout. Elle ne surplombe pas les sciences, elle ne les englobe pas, elle coule dans la sève de leurs racines. Et c'est pourquoi la lutte pour « dégager » le « réel » et le « vrai » n'est jamais gagnée.",
+      "bbox": {
+        "x_pct": 10.21,
+        "y_pct": 34.262,
+        "w_pct": 68.493,
+        "h_pct": 31.396
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si elle a l'air de cesser, d'être désormais superflue, parce que l'omniprésence de l'historique permet de barbouiller le passage des faits aux projets et de destructurer le temps, alors se produit la grande corruption de l'esprit. C'est l'oubli, ou le reniement, du miracle grec, la perte du « regard », avec son « point de vue » et sa « distance », c'est le retour à l'état pré-théorique, où la force finit par décider du vrai.",
+      "bbox": {
+        "x_pct": 10.258,
+        "y_pct": 65.168,
+        "w_pct": 68.525,
+        "h_pct": 12.456
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour reconquérir sans cesse la transparence du théorique, il ne sert à rien de chercher à nier l'omniprésence de l'historicité. Au contraire : il importe de reconnaître que la racine du théorique même est toujours historiquement « située ».",
+      "bbox": {
+        "x_pct": 10.475,
+        "y_pct": 77.647,
+        "w_pct": 68.276,
+        "h_pct": 7.538
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle reconnaissance exige que le sujet consente à la structure du temps humain et qu'il s'enracine dans ce qui est le cœur et le centre du temps, sa discontinuité et son nœud : l'instant présent.",
+      "bbox": {
+        "x_pct": 10.338,
+        "y_pct": 84.803,
+        "w_pct": 68.308,
+        "h_pct": 5.949
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "OCR text was heavily truncated for all body text paragraphs",
+    "Missing page header/footer separation in initial layout extraction",
+    "Formatting of section header was mostly correct but needed validation"
+  ],
+  "doc_id": "670",
+  "page": 7,
+  "elapsed_seconds": 6.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

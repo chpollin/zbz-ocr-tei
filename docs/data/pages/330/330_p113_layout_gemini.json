@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ID\tOLOGIES ET R\tALIT\t",
+      "bbox": {
+        "x_pct": 30.125,
+        "y_pct": 8.886,
+        "w_pct": 31.616,
+        "h_pct": 1.988
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "79",
+      "bbox": {
+        "x_pct": 85.0,
+        "y_pct": 8.886,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'on accepte ou l'on rejette telle ou telle croyance religieuse, on accepte ou l'on rejette telle ou telle croyance philosophique? Est-il bien vrai que si je crois que je crois sur le plan de la foi ou de la religion, c'est telle voie d'action politique ou \tconomique qui s'impose \t moi d'elle-m\tme, \t l'exclusion d'une autre? Est-il vrai que lorsque des hommes unissent leurs efforts pour r\taliser telle fin terrestre d\ttermin\te, ils doivent avoir entre eux une unanimit\t de pens\te et de sentiment totale, s'\ttendaut \t tous les aspects de leur vie, \t tous les mondes o\t ils font acte de pr\tsence?",
+      "bbox": {
+        "x_pct": 3.997,
+        "y_pct": 12.478,
+        "w_pct": 84.345,
+        "h_pct": 18.717
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et inversement : certains sont s\tduits par un aspect d'une id\tologie, mais les autres leur r\tpugnent. Ils sont pr\tts \t collaborer sur un plan, tout en voulant ignorer les autres, pour garder les mains pures. Est-ce possible? Peut-on avoir ceci sans contribuer pour sa part, bon gr\t mal gr\t, \t cela? Je suis pour la suppression du patronat priv\t, mais je ne veux pas de la dictature polici\tre. Je vais lutter avec les communistes contre les privil\tges patronaux. Mais je ne suis pour rien dans leurs camps de concentration... Je suis pour l'ordre, les traditions, l'attachement \t la patrie et au pass\t. Je vais donc soutenir la campagne des conservateurs. Mais je ne suis pour rien dans l'exploitation des masses ouvri\tres...",
+      "bbox": {
+        "x_pct": 4.081,
+        "y_pct": 30.865,
+        "w_pct": 84.499,
+        "h_pct": 22.879
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est-ce possible, est-ce loyal?",
+      "bbox": {
+        "x_pct": 7.284,
+        "y_pct": 54.367,
+        "w_pct": 37.521,
+        "h_pct": 2.522
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Autant de probl\tmes qu'il nous faut examiner.",
+      "bbox": {
+        "x_pct": 7.242,
+        "y_pct": 57.041,
+        "w_pct": 61.56,
+        "h_pct": 2.647
+      },
+      "changed": true,
+      "change_reason": "Fixed broken segmentation of sentence."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "COH\tRENCE DES ID\tOLOGIES TOTALITAIRES",
+      "bbox": {
+        "x_pct": 4.499,
+        "y_pct": 62.184,
+        "w_pct": 55.71,
+        "h_pct": 2.103
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il nous faut examiner s\tpar\tment les \t id\tologies totalitaires \t et celles qui ne le sont pas. J'appelle ici totalitaire une id\tologie qui ne se propose pas au jugement comme une possibilit\t d'adh\tsion et d'action, mais qui pr\ttend s'imposer d'embl\te comme la seule possible \t quelle que soit d'ailleurs l'autorit\t ou l'\tvidence indiscutable dont elle se r\tclame. Dans ce sens, nous l'avons vu, les id\tologies fascistes et communistes sont totalitaires. La premi\tre s'attribue une mission et une efficience divine ou magique, la seconde l'omniscience, la co\tncidence avec les n\tcessit\ts de l'histoire. Elles tirent toutes deux leur prestige et leur force attractive pr\tcis\tment de la coh\trence indissoluble de tous leurs aspects, donc de l'unanimit\t passionn\te qu'elles suscitent parmi leurs",
+      "bbox": {
+        "x_pct": 4.276,
+        "y_pct": 65.686,
+        "w_pct": 84.485,
+        "h_pct": 24.572
+      },
+      "changed": true,
+      "change_reason": "Corrected heavily garbled OCR content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 6,
+  "issues": [
+    "Severe OCR misrecognitions in almost every text region.",
+    "Page number missing from initial detection.",
+    "Text region segmentation breaks mid-sentences."
+  ],
+  "doc_id": "330",
+  "page": 113,
+  "elapsed_seconds": 8.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

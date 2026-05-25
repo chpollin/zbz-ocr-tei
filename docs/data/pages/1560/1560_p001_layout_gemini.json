@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Schweizerische Zeitschrift für Gemeinnützigkeit",
+      "bbox": {
+        "x_pct": 6.082,
+        "y_pct": 1.166,
+        "w_pct": 71.548,
+        "h_pct": 8.766
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Revue suisse d'utilité publique\nRivista svizzera d'utilità pubblica\nPeriodic svizzer ad ütil public",
+      "bbox": {
+        "x_pct": 6.409,
+        "y_pct": 13.302,
+        "w_pct": 58.005,
+        "h_pct": 10.587
+      },
+      "changed": true,
+      "change_reason": "Corrected label from paragraph to section_header as it contains the alternative titles of the journal."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Organ für Fragen des Sozialwesens",
+      "bbox": {
+        "x_pct": 6.771,
+        "y_pct": 30.579,
+        "w_pct": 38.573,
+        "h_pct": 2.468
+      },
+      "changed": true,
+      "change_reason": "Corrected label from paragraph to section_header as it describes the nature of the publication."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Redaktion: Geschäftsstelle der Schweizerischen Gemeinnützigen Gesellschaft Brandschenkestrasse 36, 8039 Zürich 1",
+      "bbox": {
+        "x_pct": 49.335,
+        "y_pct": 53.472,
+        "w_pct": 42.116,
+        "h_pct": 6.187
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "117. Jahrgang 1978",
+      "bbox": {
+        "x_pct": 49.782,
+        "y_pct": 66.723,
+        "w_pct": 23.458,
+        "h_pct": 2.613
+      },
+      "changed": true,
+      "change_reason": "Corrected label from paragraph to page_footer as it contains volume and year information, and corrected OCR text."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial labels were mostly set to paragraph regardless of content type.",
+    "OCR errors present in journal title translations and contact information.",
+    "Missing bibliographic metadata in the provided bounding boxes (at the very bottom of the page)."
+  ],
+  "doc_id": "1560",
+  "page": 1,
+  "elapsed_seconds": 3.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

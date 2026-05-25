@@ -1,0 +1,96 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 24 -",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified as a page number/header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 25 -",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified as a page number/header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sehr geehrte Damen und Herren",
+      "bbox": {
+        "x_pct": 9.03,
+        "y_pct": 14.229,
+        "w_pct": 19.515,
+        "h_pct": 2.088
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in 'Damen'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es kommt recht oft vor, dass ich mich dazu überreden lasse, über Dinge zu sprechen, die ich nicht verstehe, und zwar vor Leuten, die diese Dinge sehr, sehr gut kennen. So auch jetzt. Trotzdem freue ich mich, heute zu Ihnen über die Energie zu sprechen, ist sie doch zu jeder Betätigung unerlässlich. Ich bin froh darüber, dass es - Gott sei Dank - genug Leute gibt, die in Energiefragen beschlagen sind und die jeweils rechtzeitig die nötigen Massnahmen ergreifen, damit uns die Energie nicht eines Tages ausgeht.",
+      "bbox": {
+        "x_pct": 8.489,
+        "y_pct": 17.779,
+        "w_pct": 35.589,
+        "h_pct": 18.923
+      },
+      "changed": true,
+      "change_reason": "OCR correction for readability."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "wozu?",
+      "bbox": {
+        "x_pct": 14.515,
+        "y_pct": 51.862,
+        "w_pct": 3.707,
+        "h_pct": 1.902
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zu Beginn möchte ich Ihnen sagen, dass ich den Titel geändert habe. Es hat sich anders gewählt hat - te. Und zwar deswegen, weil ich beim Wort Energie im eigentlichen Sinn nur an die \"nichtmenschliche\" Energie der Physik und der Technik gedacht hatte. An jene Energie also, die für die industrielle Entwicklung und ganz allgemein für das Leben jedes Menschen in einem industrialisierten Umfeld unerlässlich ist. Dann ist mir aber bewusst geworden, dass es sich dabei eben auch um \"menschliche\" Energie handelt, um jene physische Kraft, die wir alle aufwenden müssen, um unsere Ziele zu erreichen, um etwas Bestimmtes zu verwirklichen, um irgend eine Tätigkeit auszuüben.",
+      "bbox": {
+        "x_pct": 6.53,
+        "y_pct": 55.359,
+        "w_pct": 37.928,
+        "h_pct": 25.625
+      },
+      "changed": true,
+      "change_reason": "OCR correction for readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Weiter habe ich mir bei der Vorbereitung des Vortrags überlegt, ob nicht auch der übertragene Sinn - die geistige Energie des Menschen - der eigentliche, der fundamentale Sinn der Energie sein könnte. Haben wir nicht alle seinerzeit geistig unsere ersten Erfahrungen mit der Energie gemacht, als wir feststellten, dass jede Bewegung unserer Muskeln einer physischen Anstrengung bedarf, dass jede unserer Tätigkeiten mit Energie verbunden ist? Dann wäre logischerweise der Sinn jener Energie, die wir im Zusammenhang mit der Beschaffung von Rohstoffen oder im Gespräch mit Parlamentariern oder Wirtschaftsvertretern meinen, der übertragene, sinnbildliche. Dies würde bedeuten, dass das Wort \"Energie\" einen sinnbildlichen, gleichsam poetischen Inhalt hätte. Diese Ueberlegungen, die ich bei der Erarbeitung dieses Vortrags angestellt habe, sind, so glaube ich, nicht ohne Bedeutung. Sie haben nämlich zur Konsequenz, dass sie die vorhandene oder eben nicht vorhandene Beziehung zwischen der Energie einerseits und ihrer Zweckbestimmung andererseits in Frage stellen. Wenn wir von Energie im rein physikalischen Sinne sprechen, fragen wir uns, wie wir uns diese Energie beschaffen können. Niemand jedoch stellt sich die Frage nach Ziel und Zweck dieser Energie. Wir reden von den benötigten Energiemengen, von den Kosten der Energie, von den Risiken für Mensch und Umwelt und über die Konsequenzen der Energienutzung im allgemeinen. Kaum jemand aber redet über die Zielrichtung dieser Energie, über deren Sinn und Zweck, über das Warum und das Wofür.",
+      "bbox": {
+        "x_pct": 54.439,
+        "y_pct": 14.136,
+        "w_pct": 36.816,
+        "h_pct": 58.777
+      },
+      "changed": true,
+      "change_reason": "OCR correction for readability."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR in paragraph regions was significantly distorted.",
+    "Page headers were missing from layout definitions.",
+    "OCR cleanup applied to ensure text content validity."
+  ],
+  "doc_id": "2360",
+  "page": 13,
+  "elapsed_seconds": 6.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

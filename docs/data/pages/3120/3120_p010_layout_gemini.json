@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La causalité a une composante existentielle, sans laquelle il n'est pas possible de la penser.",
+      "bbox": {
+        "x_pct": 4.966,
+        "y_pct": 3.442,
+        "w_pct": 88.372,
+        "h_pct": 4.955
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling in extracted text (existenticlle -> existentielle, penscr -> penser)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pourrait sans doute dévoiler de même, pour la plupart des notions et catégories de la recherche scientifique sinon pour toutes -, que le chercheur serait incapable de les penser et de les mettre en oeuvre s'il ne glissait en elles ce qu'il est lui-même: un sujet existentiel à la recherche du vrai, et capable de préférer absolument le vrai au faux.",
+      "bbox": {
+        "x_pct": 4.925,
+        "y_pct": 7.88,
+        "w_pct": 88.741,
+        "h_pct": 12.02
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misrecognized text from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'ai jusqu'ici que des implications existentielles dans quelques notions fondamentales de la recherche. Mais il faudrait s'interroger aussi sur les motivations et les fins. Certains ont prétendu que les succès de la recherche scientifique suffisent à rejeter la croyance à la liberté humaine du côté des superstitions périmées de l'humanité. Ils pensent que les prévisions réussies des savants ne seraient pas possibles si la liberté, par ses actes, pouvait mettre en échec le déterminisme universel. On peut leur répondre que la science, du seul fait qu'elle existe, réfute leur affirmation. En effet, la science en tant que recherche du vrai serait inconcevable dans un monde totalement déterminé. Les théories scientifiques ne seraient elles-mêmes que \"des faits, déterminés\", ni vrais, ni faux. La recherche du vrai serait dépourvue de sens. Une théorie ne serait pas plus vraie qu'une autre, elle ne serait, comme l'autre, qu'un \"fait\". La dimension de la visée, du sens, se trouverait totalement obstruée par l'universalité du seul \"réel\".",
+      "bbox": {
+        "x_pct": 5.198,
+        "y_pct": 19.293,
+        "w_pct": 89.289,
+        "h_pct": 35.779
+      },
+      "changed": true,
+      "change_reason": "Corrected misrecognized text and expanded to match full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or la science existe. Elle connaît un prodigieux développement. Elle suscite des efforts passionnés, parfois aux dépens de la santé ou même de la vie des chercheurs. Et s'ils sont souvent stimulés par l'espoir d'un prix Nobel, au point de se laisser entraîner à négliger certaines précautions à force d'impatience, ce n'est pourtant pas le prix Nobel qui inspire leurs hypothèses et leurs vérifications.",
+      "bbox": {
+        "x_pct": 5.746,
+        "y_pct": 55.19,
+        "w_pct": 89.097,
+        "h_pct": 13.922
+      },
+      "changed": true,
+      "change_reason": "Corrected misrecognized text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et bien que souvent des réussites de la recherche pure aient entraîné des applications techniques imprévues, aux conséquences économiques et sociales incalculables, ce n'est pas là ce que visent les chercheurs théoriciens. Ils voudraient établir la théorie la plus féconde en \"vérité\", c'est-à-dire celle qui rendra compte du plus grand nombre de faits observables les plus divers, et qui, de ce fait, semblera la plus, \"vraie\" c'est-à-dire la plus adéquate aux nécessités qui commandent les développements des phénomènes.",
+      "bbox": {
+        "x_pct": 5.841,
+        "y_pct": 68.75,
+        "w_pct": 89.508,
+        "h_pct": 16.277
+      },
+      "changed": true,
+      "change_reason": "Corrected misrecognized text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 92.298,
+        "y_pct": 95.815,
+        "w_pct": 2.235,
+        "h_pct": 2.518
+      },
+      "changed": true,
+      "change_reason": "Identified missing page number region as page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 6,
+  "issues": [
+    "Text OCR extraction was severely corrupted/truncated.",
+    "Page footer was missing from the initial detection list.",
+    "Paragraphs were split incorrectly due to OCR errors."
+  ],
+  "doc_id": "3120",
+  "page": 10,
+  "elapsed_seconds": 4.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

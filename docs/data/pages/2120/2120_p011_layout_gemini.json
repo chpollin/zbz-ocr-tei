@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 147 -",
+      "bbox": {
+        "x_pct": 41.525,
+        "y_pct": 2.825,
+        "w_pct": 16.949,
+        "h_pct": 1.412
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "war ich in der Schweiz. Meine Eltern waren als Studenten nach Genf gegangen, um in einer freien Stadt, in einem freien Land studieren zu können, und dort bin ich geboren worden, und dort habe ich gelebt. Als all das geschah, worüber wir hier gesprochen haben, war ich jung und weitgehend mit meinem eigenen Leben und mit meinen eigenen Problemen beschäftigt. Aus diesem Grund habe ich immer das Gefühl gehabt, meine Verabredung mit der Geschichte nicht eingehalten und nicht das getan zu haben, war ich eigentlich hätte tun sollen. Natürlich habe ich einiges getan, aber es war wenig, sehr, sehr wenig, und es ist nicht der Mühe wert, davon zu reden.",
+      "bbox": {
+        "x_pct": 10.424,
+        "y_pct": 8.181,
+        "w_pct": 76.949,
+        "h_pct": 21.363
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Trotzdem möchte ich einige Punkte, über die hier gesprochen worden ist, etwas näher eingehen, und zwar aufgrund meiner eigenen Erfahrung, aufgrund vor allem zweier Erfahrungen.",
+      "bbox": {
+        "x_pct": 10.508,
+        "y_pct": 30.791,
+        "w_pct": 74.831,
+        "h_pct": 6.045
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine dieser Erfahrungen war meine Studienzeit in Deutschland in den Jahren 1932/33. Ich war damals Studentin bei Karl Jaspers, der lebenslänglich mein Lehrer geblieben ist. An Karl Jaspers möchte ich hier auch deswegen erinnern, weil meines Wissens bisher niemand in diesem Kreis seinen Namen und Die Schuldfrage erwähnt hat, seine erste Vorlesung und seine erste Veröffentlichung im Jahre 1945 und - soweit ich weiß - die erste Untersuchung zu diesem Thema seit Kriegsende überhaupt; sie ist heute wie damals noch immer gültig.",
+      "bbox": {
+        "x_pct": 10.534,
+        "y_pct": 38.164,
+        "w_pct": 76.949,
+        "h_pct": 16.992
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Während meiner Studienzeit in Deutschland habe ich aus meinem engen studentischen Blickwinkel die Machtübernahme der Nationalsozialisten miterlebt. Wenn hier und heute nun gefragt wird, wie es damals dazu hat kommen können - eine Frage, die ja immer wieder gestellt wird -, kann ich natürlich darauf keine Antwort geben, denn eine Antwort darauf gibt es nicht. Aber ich möchte zwei Faktoren besonders betonen, über die zumeist kaum gesprochen wird. Sie beziehen sich darauf, wie ein totalitäres Regime, wie das nationalsozialistische, sich so weit hat ausbreiten können. Hier spielt - wie ich glaube - ein physischer Faktor eine wichtige Rolle. Wie er wirkt, konnte man erfahren, wenn man einmal - wie es mit eines Tages auf dem Platz vor der Universität in Freiburg im Breisgau passierte - eine nationalsozialistische \"Feierstunde\" erlebte, ganz zufällig und unwillkürlich, eigentlich nur deshalb, weil man sich aus dem Gedränge nicht mehr entfernen konnte. Die Menschen sangen das \"Horst-Wessel-Lied\", alle und alle mit erhobenem Arm - als ich am nächsten Tag ein Foto davon sah, hatte ich den Eindruck eines Waldes gleichmäßig, \"einstimmig\" erhobener Arme. Und ich stand",
+      "bbox": {
+        "x_pct": 10.619,
+        "y_pct": 56.449,
+        "w_pct": 77.203,
+        "h_pct": 36.622
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Page number incorrectly labeled as text.",
+    "Significant transcription errors in all paragraphs.",
+    "Need to ensure better OCR accuracy for future runs."
+  ],
+  "doc_id": "2120",
+  "page": 11,
+  "elapsed_seconds": 5.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

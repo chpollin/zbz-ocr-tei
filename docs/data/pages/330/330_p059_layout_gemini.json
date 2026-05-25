@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 29.58,
+        "y_pct": 74.0,
+        "w_pct": 40.52,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page header labeled as text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "25",
+      "bbox": {
+        "x_pct": 84.58,
+        "y_pct": 74.0,
+        "w_pct": 3.12,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page number labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "les moins bons sont presque plus significatifs que les meilleurs) : le développement industriel de la Russie apparaît littéralement comme une épopée communiste. On pourrait croire que nulle part ailleurs l'industrie ne s'est épanouie. Il est vrai que là-bas cet épanouissement s'est accompli à une vitesse étonnante, cherchant avec violence à rattraper le temps perdu sur celui de l'Occident. Mais tout de même, la transformation industrielle de l'Occident tout entier, si on la compare avec les périodes historiques antérieures, s'est faite à une vitesse foudroyante — elle n'est pas devenue épopée pour autant. Au contraire, les écrivains, les poètes l'ont vue plus rationnelle, plus mécanique, plus pauvre d'humanité, de souffle, de pouvoir de métamorphose, d'imagination, de poésie, qu'elle ne l'est dans son histoire réelle. Peut-être y a-t-il là l'une des sources de la pauvreté, de la faiblesse idéologique actuelle de l'Occident : il s'est donné souvent corps et âme aux conquêtes industrielles, il en a usé et abusé — sans les aimer. Il n'en a connu — quelques savants créateurs mis à part — que les résultats dans le domaine de la science, que les produits et le profit dans le domaine technique (car le travail, pendant la longue période où le monde de l'homme occidental fut véritablement transformé par la technique, était fait par des esclaves, trop écrasés par leur condition pour vivre leur aventure créatrice, et muets). Méprisant l'industrie qui façonnait toute sa vie et le façonnait lui-même, il devait perdre bientôt cette dose d'amour de soi, qui n'est ni rapacité, ni orgueil, sans laquelle il n'y a plus ni confiance, ni piété.",
+      "bbox": {
+        "x_pct": 21.67,
+        "y_pct": 105.89,
+        "w_pct": 866.67,
+        "h_pct": 634.44
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and messy OCR text block and improved bounding box scope to cover the first paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au contraire, dans l'idéologie soviétique, l'équipe ouvrière est censée vivre une formidable aventure ; où que chacun regarde, il la retrouve, sous mille formes, multipliée à l'infini. Même le travail à la chaîne, par l'émulation, les tableaux d'honneur, devient entreprise sportive. Et comme toute aventure, comme tout concours sportif, il comporte des risques, des chances aussi. Risques matériels d'accident, de mutilation physique, ou plus simplement d'échec technique — tout aussi grave dans un pays où l'échec ne se distingue guère du sabotage et n'est jamais loin de l'exil ou de la mort. Mais chances, chances princières, car — et les romans, les films soviétiques sont là pour montrer — celui qui réussit une performance difficile, que ce soit dans le domaine de l'invention",
+      "bbox": {
+        "x_pct": 21.67,
+        "y_pct": 639.44,
+        "w_pct": 866.67,
+        "h_pct": 305.56
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph block."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text detection was cut off and incorrectly bounded.",
+    "Page number and header were not filtered out as separate regions.",
+    "The second paragraph was completely missing from the initial detection."
+  ],
+  "doc_id": "330",
+  "page": 59,
+  "elapsed_seconds": 5.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

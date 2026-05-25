@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "écoute le chant grégorien ; les psaumes de Pales trina ; les Messes, la Chacone, le Clavecin de Bach ; les sonates, Cosi fan tutte, le Requiem de Mozart ; le concerto et les quatuors de Beethoven ; nous avons entendu les Lieder de Schubert, et Pelléas, et Bartok, et Debussy, et Wozzeck ; et tant d'autres. Il semble impossible, après cela, que la liberté soit oubliée, que nous puissions renier à jamais l'homme en nous-mêmes et en autrui. Ces voix de toutes les patries viendraient nous réveiller, nous rappeler qui nous sommes et qui nous avons à être, et quelle dette est la nôtre envers cette Europe où elles se sont déployées ; elles exigeraient de nous l'acte de présence indispensable à l'avenir de la liberté. Bien plus radicalement encore que Rilke ne l'a fait à propos du Torse d'Apollon, cette musique dirait : «Du musst dein Leben ändern».",
+      "bbox": {
+        "x_pct": 17.553,
+        "y_pct": 13.818,
+        "w_pct": 57.553,
+        "h_pct": 37.146
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and contained misrecognized characters; updated to reflect the full content of the paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gabriel Marcel, qui fut pour moi un ami cher, a prononcé ici même, en 1965, une «Festrede» qu'il avait intitulée : «Die Musik als Heimat der Seele» (La musique comme patrie de l'âme). Je lui ai un instant envié ce titre. Puis j'ai éprouvé le besoin d'en trouver pour moi une variante, qui signifierait : «La musique comme absence de patrie», (Die Musik als Heimatlosigkeit). C'est qu'elle reflète et résume, comme j'ai essayé de le dire ici, les contradictions, les paradoxes qui em-",
+      "bbox": {
+        "x_pct": 17.617,
+        "y_pct": 50.728,
+        "w_pct": 57.362,
+        "h_pct": 22.347
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and contained misrecognized characters; updated to reflect the full content of the paragraph block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "43",
+      "bbox": {
+        "x_pct": 71.702,
+        "y_pct": 75.766,
+        "w_pct": 2.234,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region which was misidentified or missing from original extraction."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text content was incomplete and contained erroneous characters.",
+    "Page number 43 was missing from the initial region list."
+  ],
+  "doc_id": "2780",
+  "page": 42,
+  "elapsed_seconds": 3.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

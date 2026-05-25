@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "241",
+      "bbox": {
+        "x_pct": 80.312,
+        "y_pct": 93.304,
+        "w_pct": 3.738,
+        "h_pct": 1.772
+      },
+      "changed": true,
+      "change_reason": "Page number identified as document_index, moved to page_footer/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Les Commissions fédérales d'experts — Engagement politique : armement atomique, énergie nucléaire, défense nationale et objection de conscience — Angélisme et politique — Le sens de la neutralité suisse — La Suisse et l'ONU.",
+      "bbox": {
+        "x_pct": 115.158,
+        "y_pct": 39.404,
+        "w_pct": 71.028,
+        "h_pct": 71.213
+      },
+      "changed": true,
+      "change_reason": "Corrected bounding box and categorization for text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "3. L'organisation politique de l'humanité ............................... 148",
+      "bbox": {
+        "x_pct": 58.73,
+        "y_pct": 145.412,
+        "w_pct": 79.902,
+        "h_pct": 10.158
+      },
+      "changed": true,
+      "change_reason": "Parsed table of contents entry."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "3.1. L'organisation de la société internationale ................... 148",
+      "bbox": {
+        "x_pct": 58.73,
+        "y_pct": 172.585,
+        "w_pct": 79.902,
+        "h_pct": 10.158
+      },
+      "changed": true,
+      "change_reason": "Parsed table of contents entry."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "VII. La communication .............................................................. 165",
+      "bbox": {
+        "x_pct": 58.73,
+        "y_pct": 369.833,
+        "w_pct": 79.902,
+        "h_pct": 10.158
+      },
+      "changed": true,
+      "change_reason": "Section header identified."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "VIII. Quelques amitiés intellectuelles ....................................... 189",
+      "bbox": {
+        "x_pct": 58.73,
+        "y_pct": 813.064,
+        "w_pct": 79.902,
+        "h_pct": 10.158
+      },
+      "changed": true,
+      "change_reason": "Section header identified."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original detection box was a single massive artifact spanning the whole page instead of individual lines.",
+    "Multiple entries in TOC need granular segmentation.",
+    "Page number at the bottom right was incorrectly included in the document_index group."
+  ],
+  "doc_id": "2330",
+  "page": 245,
+  "elapsed_seconds": 5.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

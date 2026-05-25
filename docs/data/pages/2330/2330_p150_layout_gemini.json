@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "actuellemnent. Dans ce sens, le pays devrait être un ilot d'information objective, d'interprétation adéquate, de vision des choses telles qu'elles sont. Nous avons un énorme devoir d'intelligence et d'information à remplir ; nous avons le devoir de disposer d'une force armée de défense — ce qu'elle pèse, nous n'en savons rien. Avant la dernière guerre, on pouvait aussi penser qu'elle n'était d'aucun poids.",
+      "bbox": {
+        "x_pct": 16.85,
+        "y_pct": 4.379,
+        "w_pct": 79.695,
+        "h_pct": 12.177
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'est-ce que vous entendez par liberté plus scrupuleuse que celle qui règne actuellement dans nos media ?",
+      "bbox": {
+        "x_pct": 16.972,
+        "y_pct": 16.935,
+        "w_pct": 77.83,
+        "h_pct": 2.661
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text and expanded to cover the complete question line."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — J'entends que nos media sont trop souvent complaisants à des courants à la mode. Ces courants sont très souvent, parce qu'ils sont à la mode, arrogants. Il faut avoir le courage de donner la parole à des gens qui parlent contre la mode, et permettre aux opinions de s'affronter, non pas dans un « combat de reines », comme on les aime dans les médias, où l'on choisit un extrême libéral, d'un côté, et un communiste de l'autre, ou bien un fasciste, d'un côté, et un extrême gauchiste, de l'autre. Au contraire, il faut choisir des adversaires dont les opinions de base soient suffisamment voisines pour qu'ils puissent discuter telle ou telle mesure concrète qui est en question, à partir de prémisses auxquelles ils puissent l'un et l'autre se référer. Cela éclairerait le public et affinerait son jugement. Bien sûr, il faudrait à chaque fois déplacer « le lieu » des prémisses communes, de façon qu'à tour de rôle tout « l'éventail » politique ait la parole.",
+      "bbox": {
+        "x_pct": 16.935,
+        "y_pct": 19.718,
+        "w_pct": 79.768,
+        "h_pct": 31.29
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text and separated from the preceding question line."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense que la neutralité implique aussi des devoirs internationaux et, parmi ceux-ci, il y a, d'une part, l'asile, d'autre part, le courage du témoignage et de l'arbitrage. Mais cela implique qu'on soit au-dessus du",
+      "bbox": {
+        "x_pct": 16.972,
+        "y_pct": 85.024,
+        "w_pct": 79.609,
+        "h_pct": 6.403
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "146",
+      "bbox": {
+        "x_pct": 16.972,
+        "y_pct": 94.6,
+        "w_pct": 3.4,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Severe OCR degradation in original extraction.",
+    "Incorrect segmentation of the question-answer dialogue.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "2330",
+  "page": 150,
+  "elapsed_seconds": 4.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "einen Beweis aus der Geometrie nehmen. Man beweist Ihnen, daß ein bestimmtes Theorem richtig ist. Es ist so, und nicht anders. Und Sie verstehen die Beweisführung. Sie verstehen die Beweisführung, und Sie werden zornig. Und Sie sagen, ich verstehe die Beweisführung, aber ich bin nicht einverstanden. Können Sie das tun? Es ist unmöglich. Es ist unmöglich, denn Sie können nicht mit Ihrer Vernunft beweisen, daß Ihre Vernunft sinnlos ist. Und da sieht man, wie sehr die Intoleranz nicht nur brutal ist, sondern sinnlos. Sie ist ein Nichtdenken. Sie ist eine Abwesenheit der Vernunft. Sie ist eine Hingabe, ein Abgeben, ein Reducement. Man verzichtet auf die Vernunft im Moment, wo man das sagt. Ich sage, ich finde das sehr schön, aber ich bin nicht einverstanden. Was bedeutet das? Es gibt Gebiete, natürlich, die komplizierter sind und wo man eventuell verstehen, aber nicht mitmachen kann. Was bedeutet es dann? Das bedeutet, daß dann etwas in uns, nicht die Vernunft, etwas anderes auf dem Spiele steht. Wo wir an etwas hängen, und wir halten es für wahr. Und Sie halten es für wahr, nicht in der Art und Weise, wo man etwas von außen feststellt, sondern in der Art, daß Sie existieren, solange Sie das glauben, und wenn Sie es nicht mehr glauben, existieren Sie nicht mehr. Es ist irgendwie eine Grundbedingung, um sich selbst zu sein. Und wenn man in dieser Gegend ist, da ist es nicht eine Reduktion von allem auf die Räson, auf die Vernunft. Aber da muß man achtgeben, denn es gibt die Möglichkeit, daß die Menschen versuchen, den Frieden unter den Menschen auf die Einheit der Vernunft zu reduzieren. Ich glaube, das läßt sich nicht wirklich vollziehen im Menschen, denn der Mensch ist nicht nur seine Vernunft. Er ist auch etwas anderes, womit er sich aufbaut, womit er eine Welt um sich herum aufbaut, und da kommt das Interessante unter den Menschen, nämlich was mein Lehrer Jaspers nannte: die Kommunikation. Die Kommunikation ist der Versuch, den anderen in der Tiefe zu verstehen, da, wo er an etwas hängt, was für ihn eine Lebensbedingung zu sein scheint. Und das bedeutet nicht, daß er irgend etwas glauben würde, sondern, daß das menschliche Spiel sich sozusagen nicht schließt. Daß der Mensch immer noch die Wahrheit sucht. Und auf der Suche nach der Wahrheit zu sein, das verlangt die Öffnung in diese Richtung, die Öffnung, aber gleichzeitig die Forderung weiterzumachen. Das muß sein. Also nicht die reine Kraft, nicht der reine Zwang und nicht die reine Vernünftigkeit, sondern die Notwendigkeit, weiter zu klären, weil man das Ganze nicht besitzt. Weil man die ganze Wahrheit nicht reduzieren kann. Es gibt für den Menschen immer noch etwas jenseits dessen, was er erreicht hat, und wo er Sicherheit sucht. Und das ist eine Grundbedingung.",
+      "bbox": {
+        "x_pct": 9.03,
+        "y_pct": 5.094,
+        "w_pct": 80.14,
+        "h_pct": 65.431
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content which was erroneously shortened in the provided JSON."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun möchte ich jetzt am Ende, wenn Sie mir ein paar Minuten geben, noch etwas betonen: die Berlin-Frage. Wer ist Ausländer und wer ist nicht Ausländer? In einem bestimmten Sinne sage ich, wenn wir die Idee des Ausländerseins vertiefen, so entdecken wir, daß wir alle Ausländer sind. Wir sind alle Ausländer. Wer gehört ausschließlich zu dem Ort, wo er durch das alltägliche Leben eingesperrt ist? Wer gehört dazu? Ist nicht erstaunlich, wenn Sie daran denken, daß so viele Leute, die nicht viel Geld haben, sobald sie Geld haben, brauchen sie es, um eine Fahrkarte, Flugkarte, Zugkarte oder Schiffskarte zu lösen. Wo sie",
+      "bbox": {
+        "x_pct": 9.03,
+        "y_pct": 75.571,
+        "w_pct": 80.023,
+        "h_pct": 14.815
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 86.41,
+        "y_pct": 93.366,
+        "w_pct": 1.259,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter/page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text content was severely truncated in the input JSON.",
+    "Page number 11 was labeled as part of the text body.",
+    "The text extraction in the provided input was incomplete."
+  ],
+  "doc_id": "3200",
+  "page": 13,
+  "elapsed_seconds": 4.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

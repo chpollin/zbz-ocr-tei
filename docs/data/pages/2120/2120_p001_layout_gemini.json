@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FRIEDRICH EBERT STIFTUNG",
+      "bbox": {
+        "x_pct": 38.215,
+        "y_pct": 1.488,
+        "w_pct": 29.749,
+        "h_pct": 12.394
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in OCR text from 'FRIEDRKH' to 'FRIEDRICH'."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1) Die Vergangenheit mahnt! – Zum 40. Jahrestag des Aufstandes im Warschauer Getto",
+      "bbox": {
+        "x_pct": 9.359,
+        "y_pct": 35.135,
+        "w_pct": 85.156,
+        "h_pct": 12.494
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match visual content, removed extraneous characters."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine Tagung der Friedrich-Ebert-Stiftung in Zusammenarbeit mit der Ernst-Strassmann-Stiftung vom 27. bis 29. Mai 1983 in Bergneustadt",
+      "bbox": {
+        "x_pct": 9.818,
+        "y_pct": 53.059,
+        "w_pct": 84.749,
+        "h_pct": 9.335
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete/corrupted OCR text to match full content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dokumentation",
+      "bbox": {
+        "x_pct": 10.338,
+        "y_pct": 85.688,
+        "w_pct": 23.83,
+        "h_pct": 2.606
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "OCR errors in logo text",
+    "OCR errors in main heading",
+    "OCR errors in paragraph text"
+  ],
+  "doc_id": "2120",
+  "page": 1,
+  "elapsed_seconds": 3.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

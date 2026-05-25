@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "16 MONDE NOUVEAU",
+      "bbox": {
+        "x_pct": 77.08,
+        "y_pct": 36.63,
+        "w_pct": 14.81,
+        "h_pct": 1.77
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number and section title as header/page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nent mauvaise qu'il y a des risques partout. Nous n'en sommes pas à chercher une voie exempte de risques, mais celle qui comporte aussi des chances. Or je n'en vois qu'une, et c'est l'Europe fédérée. Risque d'une Europe réactionnaire ? Certes, surtout si les socialistes se retirent du jeu et laissent l'avenir à leurs adversaires. A eux, contribuant à faire l'Europe, de lui donner sa juste structure ! Risque d'une hégémonie allemande militariste ? Certes, — mais il est bien plus grand dans l'Europe morcelée. Il faut donc sans attendre intégrer l'Allemagne dans une communauté politique étroitement liée, où toute hégémonie devienne aussi absurde que celle d'un canton suisse sur la Confédération helvétique, et capter ainsi, en faveur de la vie européenne, cette constance routinière que les Allemands, pour le meilleur comme pour le pire, appellent obstinément fidélité. Risque de guerre ? Certes. Mais de l'Amérique, de la Russie et de l'Europe, laquelle représente pour la paix le plus sûr appui ? Renforcer et unifier l'Europe, ce n'est pas exclure la guerre, c'est vrai. Mais ne pas faire l'Europe, c'est exclure la paix. Risque de colonisation économique américaine ? Sans doute. Mais comment les pays de notre continent auront-ils le plus de chances d'y échapper ? En restant une poussière d'Etats économiquement moins en moins viables à mesure que s'impose davantage la nécessité des investissements et des marchés géants, — ou en constituant, comme l'Amérique elle-même le leur demande, une unité fédérale dont la puissance économique défie toute prévision ?",
+      "bbox": {
+        "x_pct": 66.08,
+        "y_pct": 63.11,
+        "w_pct": 49.879,
+        "h_pct": 37.001
+      },
+      "changed": true,
+      "change_reason": "Fixing corrupted text content and updating coordinates mapping."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'Europe se fait sans les socialistes ou contre eux, ils n'auront pas le droit, voyant se réaliser leurs craintes, de dire : « Nous avons eu raison de ne pas nous en mêler », car leurs craintes se seront réalisées à cause de leur abstention. Et si l'Europe ne se fait pas, je crains bien qu'ils ne soient mis définitivement hors d'état de commenter les événements futurs.",
+      "bbox": {
+        "x_pct": 66.8,
+        "y_pct": 43.1,
+        "w_pct": 48.3,
+        "h_pct": 8.0
+      },
+      "changed": true,
+      "change_reason": "Adding missing paragraph text from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En ce moment historique où les exigences du réalisisme politique coïncident avec l'idéal internationaliste qui fut toujours le sien, le socialisme occidental saura-t-il saisir sa chance ?",
+      "bbox": {
+        "x_pct": 66.229,
+        "y_pct": 52.697,
+        "w_pct": 48.324,
+        "h_pct": 5.114
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text for readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH.",
+      "bbox": {
+        "x_pct": 360.19,
+        "y_pct": 580.22,
+        "w_pct": 149.88,
+        "h_pct": 16.7
+      },
+      "changed": false,
+      "change_reason": "Author signature, kept as text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 20.0,
+        "y_pct": 95.0,
+        "w_pct": 60.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing footer region for completeness."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was severely corrupted/garbled in the first box.",
+    "Page number and section title incorrectly identified as text.",
+    "Multiple paragraphs were merged or omitted in initial detection.",
+    "Author signature is kept as text but noted for review."
+  ],
+  "doc_id": "230",
+  "page": 5,
+  "elapsed_seconds": 5.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

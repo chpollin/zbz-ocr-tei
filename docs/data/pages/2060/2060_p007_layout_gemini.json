@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Biologische und das Kulturelle untrennbar zusammen entwickeln. Beides ist gar nicht voneinander zu trennen. Die Diskussion, was dem oder dem zugehört, scheint mir künstlich. Denn wesentlich ist gerade, daß es zusammen geschieht.",
+      "bbox": {
+        "x_pct": 10.948,
+        "y_pct": 8.472,
+        "w_pct": 71.869,
+        "h_pct": 11.243
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was folgt daraus? Ich erwähne nur thesenartig einige Punkte. Eins, wir leben in einer von der Wissenschaft und von der Technik geprägten Welt. Diese Welt ist für fast alle von uns ganz undurchsichtig, unleserlich geworden. Warum? Weil wir das kulturelle Werden der wissenschaftlichen und technischen Zivilisation nicht kennen und nicht nacherleben.",
+      "bbox": {
+        "x_pct": 10.908,
+        "y_pct": 19.034,
+        "w_pct": 71.829,
+        "h_pct": 15.645
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In den Schulen genügt es nicht, Gesetze der Physik oder der Chemie auswendig zu lernen oder sogar im Laboratorium ein Experiment nachzumachen. Wichtig wäre, an zwei oder drei Beispielen von dem Erlebnis der Forschung mehr zu erfahren, wie die Forscher die Entdeckung dieser Gesetze vollzogen haben. Die Leidenschaft, die dabei mitspielte; warum man das wissen wollte; welches der Impuls war zu diesem Wissen. Das, was Oppenheimer die Bezifferung der Schönheit der Welt nannte. Was stand da auf dem Spiel, welche Art Begeisterung, welche Art Geduld, welche Art Redlichkeit? Die Stärke der Forderung. Ich mache soundsoviele Experimente, die gegen meine Hypothese sind, und je mehr sie gegen meine Hypothese sind, desto mehr mache ich sie, denn ich will ganz sicher sein. Was heißt das? Warum will ich ganz sicher sein? Was bedeutet im Grunde dieses Bedürfnis nach sicherem Wissen? Da liegt auch eine Frömmigkeit drin und auch eine Ethik. Nicht in erlernter Wissenschaft natürlich, aber in ihrem Werden. Wir hätten keine Wissenschaft, wenn die Forscher nicht so arbeiten würden. Dasselbe gilt auch für die Technik.",
+      "bbox": {
+        "x_pct": 9.746,
+        "y_pct": 34.679,
+        "w_pct": 72.857,
+        "h_pct": 46.532
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was hat man bei der Technik gewollt? Was für einen Sinn hatten die Bemühungen dieser Erfinder und Gelehrten, die wahrscheinlich lieber schwimmen gehen würden",
+      "bbox": {
+        "x_pct": 9.706,
+        "y_pct": 80.784,
+        "w_pct": 72.977,
+        "h_pct": 6.698
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "285",
+      "bbox": {
+        "x_pct": 77.346,
+        "y_pct": 89.231,
+        "w_pct": 5.03,
+        "h_pct": 4.103
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Docling missed the page number 285 in the layout detection."
+  ],
+  "doc_id": "2060",
+  "page": 7,
+  "elapsed_seconds": 4.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

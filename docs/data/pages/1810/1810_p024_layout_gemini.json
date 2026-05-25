@@ -1,0 +1,99 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Des jeunes dont les parents prétendent avoir l'esprit ouvert et sans préjugés découvrent soudain, parfois durement, ce qu'il en coûte, même à leurs yeux, d'avoir pris leurs discours à la lettre, ou parfois d'avoir suivi leur exemple. Ou encore ils se découvrent soudain dans l'impasse, sans moyens pour organiser leur vie ou pour servir à quelque chose. Les adolescents vieillis, en général, se sont mieux tirés d'affaire. Ils vivent, souvent très bien, des anathèmes qu'ils jettent, dans leurs discours, leurs livres, leurs articles, leurs chansons, à travers les médias, sur la société qu'ils désagrègent.",
+      "bbox": {
+        "x_pct": 12.04,
+        "y_pct": 6.239,
+        "w_pct": 82.251,
+        "h_pct": 15.893
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Culture",
+      "bbox": {
+        "x_pct": 12.427,
+        "y_pct": 29.213,
+        "w_pct": 10.352,
+        "h_pct": 1.943
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment espérer une culture, dans une société sans adultes, qui se rêve sans mœurs, sans institutions, sans lois, sans interdits – alors qu'il lui faut assumer les exigences et les rigueurs du monde industriel dont les rouages sont d'une complexité sans précédent? Comment des rêves désincarnés, qui évacuent le réel, la condition sociale, la condition humaine, pourraient-ils engendrer une culture?",
+      "bbox": {
+        "x_pct": 12.309,
+        "y_pct": 31.605,
+        "w_pct": 82.016,
+        "h_pct": 11.928
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La Commission nous dit que les jeunes ont besoin d'espaces pour y déployer leur propre «subculture», ou «culture alternative», comme on dit aussi. Reste à savoir s'il s'agit après tout de culture, de «créativité» tendant à assumer dans des formes une condition réelle – ou seulement d'un éclatement contre le mur du fond de l'impasse.",
+      "bbox": {
+        "x_pct": 12.227,
+        "y_pct": 62.368,
+        "w_pct": 82.028,
+        "h_pct": 9.913
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Education",
+      "bbox": {
+        "x_pct": 12.227,
+        "y_pct": 73.666,
+        "w_pct": 13.681,
+        "h_pct": 2.234
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les jeunes d'aujourd'hui sont déjà, dans l'ensemble, le produit des écoles et des méthodes corrigées et recorrigées sans trêve après 1968. Si l'on croit la Commission, il est difficile de parler d'un succès. Les jeunes, selon elle, souffrent d'un intolérable isolement, ils ne savent pas communiquer, ils se sentent incompris et aliénés, ils sont fragiles, meurtris par la vie. Eprouvant un immense besoin de s'exprimer, ils se sont créé – dit-elle – un langage qui leur est propre, un «contre-langage», qui est un moyen pour eux de crier leur désespoir, et dont la violence, si je comprends bien, n'est qu'une",
+      "bbox": {
+        "x_pct": 12.392,
+        "y_pct": 75.948,
+        "w_pct": 81.981,
+        "h_pct": 15.814
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 69,
+        "y_pct": 898,
+        "w_pct": 21,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer"
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Page number at bottom left was not labeled in original json."
+  ],
+  "doc_id": "1810",
+  "page": 24,
+  "elapsed_seconds": 7.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

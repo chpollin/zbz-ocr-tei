@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Many people, even today, do not really know what...",
+      "bbox": {
+        "x_pct": 29.169,
+        "y_pct": 15.946,
+        "w_pct": 61.29,
+        "h_pct": 24.23
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In opposing the claim to absolute knowledge, philo...",
+      "bbox": {
+        "x_pct": 28.976,
+        "y_pct": 42.035,
+        "w_pct": 61.161,
+        "h_pct": 23.358
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "KARL JASPERS",
+      "bbox": {
+        "x_pct": 50.702,
+        "y_pct": 69.538,
+        "w_pct": 17.419,
+        "h_pct": 2.052
+      },
+      "changed": true,
+      "change_reason": "Author name at the end of a review text is a section header/author signature."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "154",
+      "bbox": {
+        "x_pct": 22.75,
+        "y_pct": 89.55,
+        "w_pct": 3.75,
+        "h_pct": 1.55
+      },
+      "changed": true,
+      "change_reason": "Correcting page number classification."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Missing bounding box detection for the page number 154.",
+    "Author signature was incorrectly tagged as simple paragraph text."
+  ],
+  "doc_id": "3090",
+  "page": 12,
+  "elapsed_seconds": 6.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

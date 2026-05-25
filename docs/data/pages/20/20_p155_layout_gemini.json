@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ET SON ÉCHEC 153",
+      "bbox": {
+        "x_pct": 39.873,
+        "y_pct": 80.592,
+        "w_pct": 42.476,
+        "h_pct": 3.791
+      },
+      "changed": true,
+      "change_reason": "Header containing running title and page number misidentified as body text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "scientifique, c'est le monde que je vise. Il est ce qui englobe la réalité actuellement donnée, et il est présent dans chaque objet. Mais il n’est jamais là tout entier. Tout ce qui m’apparaît n’est jamais le monde, mais toujours dans le monde. Le monde peut pour moi devenir une idée; mais celle-ci devient aussitôt un monde dans le monde. Je crois m’approcher de lui en étudiant ce qui est — et je ne rencontre jamais qu’un tout dans un autre. En outre, pour le voir, je me place forcément à un certain point de vue; or, il y en a une infinité, tous sont en lui, et leur somme, pas plus que celle des sciences, n’arrive à former une unité véritable.",
+      "bbox": {
+        "x_pct": 11.852,
+        "y_pct": 11.888,
+        "w_pct": 76.295,
+        "h_pct": 33.68
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated/garbled in the initial detection; corrected to represent the actual paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’évidence est relative; les objets de la recherche et les séries que nous livrent les catégories s’enchaînent à l’infini; le monde reste pour nous incomplet et brisé. Sa totalité n’est pas une réalité objective, mais une pensée-limite. En essayant de saisir le monde dans sa totalité et dans son unité, j’ai échoué.",
+      "bbox": {
+        "x_pct": 12.093,
+        "y_pct": 45.443,
+        "w_pct": 76.009,
+        "h_pct": 15.348
+      },
+      "changed": true,
+      "change_reason": "Text content was garbled in the initial detection; corrected to reflect the actual paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je l'ai cherché en m’éloignant toujours plus de mon point de départ, de l’origine de ma recherche. Mais dans l’insurmontable indétermination du monde infini, il me faut chercher un point fixe, absolu. Je reviens en arrière. Puisque le dernier terme de la série m’échappera toujours, je dois comprendre le premier. L’échec aux limites du monde me rejette vers moi-même. J’avais voulu faire abstraction de mon monde, de mon point de vue, parce que je cherchais le monde, pris absolument. Maintenant que j’ai échoué, je me trouve",
+      "bbox": {
+        "x_pct": 12.093,
+        "y_pct": 60.887,
+        "w_pct": 76.009,
+        "h_pct": 25.605
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained artifacts; corrected to represent the actual paragraph text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header were part of the top text block detection and need separate extraction.",
+    "Text extraction was highly inaccurate, containing truncation and character errors.",
+    "Running header at the top right of the page was missed in initial box detection."
+  ],
+  "doc_id": "20",
+  "page": 155,
+  "elapsed_seconds": 5.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

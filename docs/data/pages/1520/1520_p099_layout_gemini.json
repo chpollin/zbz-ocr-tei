@@ -1,0 +1,121 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans chaque mode de lenglobant la vérité a un sens lui propre : au niveau de la conscience en général, c'est la validité apodictique, contraignante pour quiconque sait dire « je pense » ; — pour le sujet vital, c'est la plénitude de la vie, l'affirmation de soi, le bonheur et la satisfaction de soi, éprouvés par tel ou tel individu empirique ; — pour l'esprit, c'est le mouvement par lequel s'accomplit la saisie d'un sens (interprétation originelle et découverte créatrice de formes) et c'est la compréhension de ce qui a déjà été compris (interprétation des interprétations) ; — pour l'existence, c'est s'identifier à l'origine par le caractère absolu des décisions prises au fil de l'histoire, grâce à la répétition, s'approfondissant à l'infini, de l'amour et de la raison (durch die ins Unendliche sich vertiefende Wiederholung der Liebe und der Vernunft).",
+      "bbox": {
+        "x_pct": 6.775,
+        "y_pct": 9.769,
+        "w_pct": 83.997,
+        "h_pct": 24.961
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsqu'on cherche à la transmettre, la vérité suscite l'accord ou le refus : au niveau de la conscience en général s'établit en commun une connaissance contraignante pour les divers individus, substituables les uns aux autres comme des points ; pour le sujet vital, ce qui compte, ce sont les intérêts de chaque sujet qui veut s'affirmer et croître, intérêts qui peuvent coïncider ou s'exclure ; au niveau de l'esprit se développe le plaisir commun, libre et sans engagement, du jeu des formes, des figures, des mouvements, des représentations, des gestes et des attitudes ; — au niveau de l'existence, ce sont les combats aimants ou l'amour combatif de ceux qui cherchent la vraie communication, par laquelle chacun est lui-même, irremplaçable, et lié à l'autre dans l'éternité.",
+      "bbox": {
+        "x_pct": 6.775,
+        "y_pct": 34.422,
+        "w_pct": 83.916,
+        "h_pct": 21.165
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour chaque mode de lenglobant c'est une autre vérité qui est décisive. Y a-t-il quand même un fond commun ? Si oui, ce ne peut être que dans l'englobant de tous les englobants, dans la transcendance.",
+      "bbox": {
+        "x_pct": 6.775,
+        "y_pct": 57.069,
+        "w_pct": 83.835,
+        "h_pct": 7.738
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Der philosophische Glaube angesichts der Offenbarung, p. 123)",
+      "bbox": {
+        "x_pct": 45.705,
+        "y_pct": 64.807,
+        "w_pct": 44.715,
+        "h_pct": 4.259
+      },
+      "changed": true,
+      "change_reason": "Bibliographic reference at the end of a paragraph is a footnote"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "32. La raison, lien de tous les modes",
+      "bbox": {
+        "x_pct": 6.911,
+        "y_pct": 71.38,
+        "w_pct": 46.341,
+        "h_pct": 2.082
+      },
+      "changed": true,
+      "change_reason": "Added missing period to section number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non seulement il y a une pluralité d'englobants, mais encore la pluralité surgit dans chacun des modes de l'englobant. Celui-ci se perd dans la diversité; des contradictions apparaissent, dont les termes semblent se détruire ou s'exclure l'un l'autre.",
+      "bbox": {
+        "x_pct": 6.734,
+        "y_pct": 74.096,
+        "w_pct": 83.55,
+        "h_pct": 6.084
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est possible, certes, de se mouvoir dans ce qui est multiple, de se satisfaire de la juxtaposition, de ne pas se laisser troubler par des réalités étrangères, de vivre sans problèmes dans la dispersion. Mais l'expérience de l'insatisfaction où la dispersion nous laisse permet",
+      "bbox": {
+        "x_pct": 6.64,
+        "y_pct": 81.688,
+        "w_pct": 83.645,
+        "h_pct": 7.943
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "93",
+      "bbox": {
+        "x_pct": 87.0,
+        "y_pct": 91.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number, incorrectly excluded by auto-detection, assigned to footer"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 8,
+  "issues": [
+    "Docling missed the page number 93 at bottom right",
+    "Text content in paragraphs was truncated",
+    "Bibliographic reference incorrectly labeled as body text",
+    "Section header punctuation missing"
+  ],
+  "doc_id": "1520",
+  "page": 99,
+  "elapsed_seconds": 5.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

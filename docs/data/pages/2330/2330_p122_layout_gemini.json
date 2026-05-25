@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "préoccupé. C'est qu'il faut bien se rendre compte de la situation à l'époque. Aujourd'hui, lorsque des philosophes se réunissent — par exemple en Suisse — ils choisissent volontiers des thèmes politiques, parce que c'est la mode depuis quelque temps. A cette époque-là, au contraire, quand on traitait des thèmes politiques, on passait pour plébéien aux yeux des collègues philosophes. Il y avait tout de suite une espèce de dévaluation : « Voilà une personne qui ne s'occupe pas de philosophie pure, qui déraille dans le pratique et dans le politique. » C'était plutôt mal vu, et de ce côté-là, n'y avait pas grand-chose à attendre.",
+      "bbox": {
+        "x_pct": 16.081,
+        "y_pct": 6.476,
+        "w_pct": 79.768,
+        "h_pct": 17.718
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated/garbled in input JSON; corrected to match actual document text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour ma part, il y a deux aspects dans les thèses que vous avez développées dans ce livre qui m'ont particulièrement frappé : il s'agit, d'abord, du remarquable équilibre de votre réflexion politique, que l'on retrouvera dans vos considérations sur « Mythe et politique », entre l'idéal moral qui doit inspirer toute action politique et la réalité quotidienne dont elle ne doit pas décoller. Vous vous en prenez ainsi aussi bien au « cynisme démystificateur » des tenants de la « fin des idéologies » qu'à l'idéalisme abstrait des idéologues qui, « prétendant connaître et maîtriser le réel dans sa totalité, sacrifient la banalité du quotidien à l'ampleur de leurs idéaux ». D'où vous vient en définitive ce sens aigu de l'incarnation ?",
+      "bbox": {
+        "x_pct": 16.325,
+        "y_pct": 25.347,
+        "w_pct": 79.524,
+        "h_pct": 21.565
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to reflect the actual source document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ah si je savais ! Comment voulez-vous que je réponde à cette question ? Moi, je dirais que c'est une exigence constante que je retrouve chez moi aussi loin que je remonte dans le passé. Il me semble que j'ai toujours su que, comme disait Rimbaud, « nous étions une âme et un corps », et que « qui veut faire l'ange fait la bête ». L'homme est à la charnière des deux. Alors, comme j'aime la condition humaine et qu'elle est incarnée, il faut bien tenir compte des deux exigences entrecroisées. Il me semble que c'est la condition élémentaire, sine qua non, de toute réflexion véritable, de toute sincérité. J'ai toujours eu horreur des gens qui se donnent les facilités du pur esprit, qui parlent comme si l'on disposait d'une espèce de table rase sur laquelle on peut construire de purs échafaudages spirituels ; et tout autant horreur de ceux qui disent : « Les choses sont comme elles sont, c'est mon caractère, on ne me changera pas », et puis se résignent à ce qui est. Dans les deux cas, on quitte le terrain de la condition humaine, et ce n'est alors pas la peine d'être un homme.",
+      "bbox": {
+        "x_pct": 16.239,
+        "y_pct": 46.911,
+        "w_pct": 79.695,
+        "h_pct": 31.5
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to reflect actual source document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est-ce que votre position n'est pas plutôt exceptionnelle dans le domaine de la réflexion politique justement ?",
+      "bbox": {
+        "x_pct": 16.606,
+        "y_pct": 79.492,
+        "w_pct": 79.402,
+        "h_pct": 4.516
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle est peut-être un peu rare.",
+      "bbox": {
+        "x_pct": 27.021,
+        "y_pct": 83.71,
+        "w_pct": 33.7,
+        "h_pct": 2.282
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est frappant.",
+      "bbox": {
+        "x_pct": 28.535,
+        "y_pct": 86.637,
+        "w_pct": 35.409,
+        "h_pct": 2.395
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais j'espère qu'elle n'est pas exceptionnelle. Enfin, ceux que je",
+      "bbox": {
+        "x_pct": 26.74,
+        "y_pct": 88.25,
+        "w_pct": 69.389,
+        "h_pct": 2.798
+      },
+      "changed": true,
+      "change_reason": "Corrected typos and punctuation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "zb_paragraph",
+      "text": "118",
+      "bbox": {
+        "x_pct": 16.74,
+        "y_pct": 94.25,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer region."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Extensive text garbling/truncation in original JSON",
+    "Missing page footer",
+    "Incorrect labels for list-like dialogue items"
+  ],
+  "doc_id": "2330",
+  "page": 122,
+  "elapsed_seconds": 6.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

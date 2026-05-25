@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n'est pas pour elle seule, et elle n'est pas tout ; car elle n'est que par son rapport à l'autre existence et à la transcendance, devant laquelle, en tant que l'Autre absolu, elle prend conscience de ne pas être seulement par elle-même; alors que cependant le sujet empirique, en tant que sphère relative d'un donné sans fin peut être dit infini, l'infinitude de l'existence n'a rien d'une sphère, étant possibilité ouverte. Pour le sujet empirique, l'action inspirée par l'existence possible est toujours contestable : sa volonté de vivre, pour durer dans le temps, s'oppose nécessairement à l'exigence absolue de l'existence, dont les voies lui paraissent suspectes, puisqu'elles risquent de lui occasionner des pertes et même de le conduire à l'anéantissement. La volonté de vivre voudrait subordonner l'action existentielle aux conditions de sa propre sauvegarde; mais pour l'existence possible, la saisie et la jouissance inconditionnelles de la réalité empirique est déjà une chute, parce qu'elle subordonne de son côté son actualisation empirique à des conditions à travers lesquelles elle se saisit elle-même comme absolue. Mais la volonté de vivre pure et simple, lorsque sa condition empirique lui apparaît clairement dans sa réalité, qui est celle d'un échec total, est acculée au désespoir.",
+      "bbox": {
+        "x_pct": 6.68,
+        "y_pct": 5.913,
+        "w_pct": 84.065,
+        "h_pct": 38.389
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sujet empirique s'accomplit en étant dans le monde. Pour l'existence possible, le monde est le champ où elle s'apparaît. (Philosophie, II, p. 1-2)",
+      "bbox": {
+        "x_pct": 10.935,
+        "y_pct": 43.899,
+        "w_pct": 79.444,
+        "h_pct": 6.033
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misrecognized OCR text to match original content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "9. Situation et situations-limites",
+      "bbox": {
+        "x_pct": 7.141,
+        "y_pct": 52.588,
+        "w_pct": 39.512,
+        "h_pct": 1.825
+      },
+      "changed": true,
+      "change_reason": "Added missing punctuation for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Des données de ma condition telles que celle-ci : je me trouve toujours dans une situation déterminée, je ne peux pas vivre sans combattre et souffrir, j'assume inévitablement des culpabilités, je vais nécessairement mourir, — je les nomme situations-limites. (Grenzsituationen). Elles ne varient pas, sinon dans leurs manifestations particulières ; dans notre condition empirique elles sont définitives. Elles sont opaques devant notre regard; dans notre condition empirique, nous ne voyons derrière elles plus rien d'autre. Elles sont comme un mur auquel nous nous heurtons, contre lequel nous échouons. Nous n'y pouvons rien changer. La seule chose que nous pouvons faire, c'est les voir bien clairement, sans pour autant parvenir à les expliquer ou à les dériver de quelque chose d'autre. Elles sont données avec la condition empirique elle-même.",
+      "bbox": {
+        "x_pct": 6.599,
+        "y_pct": 55.381,
+        "w_pct": 83.74,
+        "h_pct": 24.97
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete/truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le mot < limite > signifie : il y autre chose, mais en même temps : cet « autre chose » n'est pas accessible à la conscience dans la condition empirique. La situation-limite n'est plus situation pour la conscience en général (Bewusstsein überhaupt), parce que la conscience, en tant que elle sait et qu'elle agit en vue d'un but, ne la saisit",
+      "bbox": {
+        "x_pct": 6.545,
+        "y_pct": 79.949,
+        "w_pct": 83.523,
+        "h_pct": 9.683
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misrecognized OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "73",
+      "bbox": {
+        "x_pct": 86.864,
+        "y_pct": 91.569,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text quality was poor, missing large sections of words.",
+    "Page number at bottom right was not labeled initially.",
+    "Section header text was slightly inaccurate."
+  ],
+  "doc_id": "1520",
+  "page": 79,
+  "elapsed_seconds": 5.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

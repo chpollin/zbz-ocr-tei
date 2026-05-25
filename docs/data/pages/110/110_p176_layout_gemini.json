@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "174 L'ÊIRE ET LA FORME",
+      "bbox": {
+        "x_pct": 21.715,
+        "y_pct": 2.0,
+        "w_pct": 68.354,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified page header/number line"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "correspond à Fattitude dun sujet sait qu'il prendre   telle attitudc telle autre. Cest cetle potenti",
+      "bbox": {
+        "x_pct": 21.715,
+        "y_pct": 13.386,
+        "w_pct": 68.354,
+        "h_pct": 11.465
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le panier de prunes n'est plus une mnasse de malière organique; ni un ensemble équilibré de physique",
+      "bbox": {
+        "x_pct": 21.519,
+        "y_pct": 24.677,
+        "w_pct": 68.619,
+        "h_pct": 35.232
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A moins d'étre une sorte d'idéogramme ou d'enseigne, c'est l'existence esthétique qu'il essaye évidemment d'acquérir. Or, il est contradictoire de chercher l'existence esthétique dans une forme dont la ressemblance est la seule justification, la seule affirmation ontologique, l'existence esthétique exigeant une forme absolue (non dérivée) valable par elle-même, et la ressemblance étant la dérivation, la subordination même. Aussi est-il impossible de faire exister une œuvre d'art au moyen de la ressemblance et ce qui fait",
+      "bbox": {
+        "x_pct": 21.519,
+        "y_pct": 60.14,
+        "w_pct": 68.619,
+        "h_pct": 14.731
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph block"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing paragraph at bottom of page.",
+    "Page number/header line identification."
+  ],
+  "doc_id": "110",
+  "page": 176,
+  "elapsed_seconds": 6.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

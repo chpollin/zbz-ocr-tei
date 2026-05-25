@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il incombe donc aux philosophes de montrer que le rapport entre faits et valeur est faussé dès 'on l",
+      "bbox": {
+        "x_pct": 14.045,
+        "y_pct": 9.328,
+        "w_pct": 65.407,
+        "h_pct": 23.282
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Indétermination des visées et idéalisations irréalistes",
+      "bbox": {
+        "x_pct": 25.407,
+        "y_pct": 33.977,
+        "w_pct": 42.82,
+        "h_pct": 1.675
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malgré Pabondante littérature qui, au cours des dernières années, a traité du changement;, la descri",
+      "bbox": {
+        "x_pct": 14.319,
+        "y_pct": 36.849,
+        "w_pct": 65.214,
+        "h_pct": 16.028
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Le problème des compossibles",
+      "bbox": {
+        "x_pct": 34.649,
+        "y_pct": 55.459,
+        "w_pct": 24.416,
+        "h_pct": 2.188
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au niveau des slogans, les hommes de notre époque négligent ralement le problème de savoir quelles c",
+      "bbox": {
+        "x_pct": 14.182,
+        "y_pct": 58.575,
+        "w_pct": 65.278,
+        "h_pct": 13.544
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela me rappelle une remarque dAlfred Sauvy disait que nous avions résolu presque tous les problèmes",
+      "bbox": {
+        "x_pct": 14.343,
+        "y_pct": 72.325,
+        "w_pct": 65.085,
+        "h_pct": 14.0
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "5",
+      "bbox": {
+        "x_pct": 77.5,
+        "y_pct": 88.0,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    }
+  ],
+  "score": 100,
+  "num_corrections": 1,
+  "issues": [],
+  "doc_id": "1140",
+  "page": 6,
+  "elapsed_seconds": 6.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

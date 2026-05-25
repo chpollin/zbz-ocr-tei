@@ -1,0 +1,40 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "relative; elle signifie que quelque chose change plus lentement qu'autre chose. Lorsqu'on imagine un arrêt universel (même en soi-même), on ne pense quand même pas l'éternité; car la durée serait alors la permanence d'un instant arbitrairement choisi dans le temps, d'un « maintenant » empirique. Or l'éternité supprime le temps absolument.",
+      "bbox": {
+        "x_pct": 13.961,
+        "y_pct": 12.297,
+        "w_pct": 76.401,
+        "h_pct": 18.398
+      },
+      "changed": true,
+      "change_reason": "Corrected the content string to accurately reflect the OCR transcription of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pourrait encore concevoir l'éternité d'une troisième manière : un seul instant résumerait tout ce qui est arrivé, tout ce qui arrive, tout ce qui arrivera. La somme des événements serait, dans cet instant unique, entièrement présente. Pour nous servir d'une comparaison, imaginons qu'il en va de l'éternité comme des paysages de la terre : nous les voyons au fur et à mesure de notre promenade, nous ne pouvons les contempler que les uns après les autres, alors qu'ils sont pourtant tous là à la fois. La divinité aurait sous les yeux le panorama entier du temps. On pourrait, à l'appui de cette interprétation, citer Hegel lui-même : « Ce qui est vrai est éternel en soi... » ; « maintenant » au sens d'un présent absolu » (Was wahr ist, ist ewig an und für sich...; « Jetzt » im Sinne der absoluten Gegen-",
+      "bbox": {
+        "x_pct": 13.148,
+        "y_pct": 48.17,
+        "w_pct": 76.732,
+        "h_pct": 41.497
+      },
+      "changed": true,
+      "change_reason": "Corrected the content string to accurately reflect the OCR transcription of the full paragraph."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "The OCR text content for the paragraphs was significantly truncated or incorrectly parsed in the initial input; corrected to match the image content."
+  ],
+  "doc_id": "20",
+  "page": 86,
+  "elapsed_seconds": 5.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

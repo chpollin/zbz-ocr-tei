@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "166 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 11.666,
+        "y_pct": 7.427,
+        "w_pct": 85.557,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header based on document structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "enseigner et de s'enseigner à soi-même — à vivre et à mourir, au fil des mille tentations quotidiennes, parmi les idoles toutes faites que le monde ne cesse d'offrir, pour la défense parfois héroïque, le plus souvent banale, d'un vide, d'un silence, d'une suspension du commandement! Combien plus difficile de mourir pour que rien ne soit commandé que pour assurer l'exécution d'un ordre!",
+      "bbox": {
+        "x_pct": 11.741,
+        "y_pct": 10.339,
+        "w_pct": 85.474,
+        "h_pct": 13.191
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Encore cette défense ne s'accomplit-elle nullement selon quelque balance commercialement correcte : il n'y a pas de commune mesure entre le prix qu'on paie et la liberté que l'on conquiert. L'enjeu — l'histoire encore récente l'a montré — peut être la vie même, parfois davantage : la possibilité de poursuivre sa tâche, son œuvre, d'atteindre les autres, ou encore : la vie des êtres aimés, la possibilité de les défendre contre la misère et la police. Mais par cet enjeu, souvent définitif, sans repentir possible puisqu'il est lié à la mort, qu'espère-t-on sauver? Une liberté précaire, sans cesse menacée, jamais définitivement acquise, se nourrissant de sacrifices toujours recommencés; une liberté qui par elle-même n'est rien et dont on ignore si les hommes voudront en faire usage; une liberté que grignotent et effritent des besoins humains naturellement tyranniques, et dont on peut souvent douter que les hommes, vraiment, la désirent.",
+      "bbox": {
+        "x_pct": 11.699,
+        "y_pct": 22.79,
+        "w_pct": 85.557,
+        "h_pct": 31.64
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle est pourtant le seul dogmatisme commun qu'un socialisme vivant puisse se permettre, et la seule source vive aujourd'hui à laquelle puisse s'alimenter l'enthousiasme de tous.",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 54.037,
+        "w_pct": 85.279,
+        "h_pct": 6.774
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match image content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected page header labeled as text",
+    "Severe OCR misrecognitions in paragraph text",
+    "Missing bounding box for top running header",
+    "OCR output did not match source text"
+  ],
+  "doc_id": "330",
+  "page": 200,
+  "elapsed_seconds": 5.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

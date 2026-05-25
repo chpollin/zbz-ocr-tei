@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 28.53,
+        "y_pct": 82.5,
+        "w_pct": 42.88,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Identified running header as page_header/filter."
+    },
+    {
+      "label": "page_number",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 82.85,
+        "y_pct": 82.5,
+        "w_pct": 3.75,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "formes démocratiques pourraient être dangereuses, car l'ennemi rôde. Comme dans le régime fasciste, il faut ici un ennemi, — mais là encore, pas tout à fait pour les mêmes raisons. Il ne s'agit ici que secondairement de renforcer le nationalisme, qui reste, malgré sa virulence actuelle dans le régime russe et malgré les services qu'il rend à la propagande du parti dans tous les pays, un phénomène secondaire de l'idéologie communiste, artificiel et, je le crois, passager (1). Non, il s'agit de justifier les précautions prises à l'intérieur, le recours à la force. Dans un régime fasciste, l'unanimité autour du chef est le bien, la révolte est le mal. Mais ce mal, on reconnaît qu'il existe. Il est vraisemblable. Il peut y avoir des gens qui restent aveugles aux qualités surhumaines du chef, aux signes qui le prédestinent à sa mission. Ces gens doivent être réduits par tous les moyens, — les camps de concentration, la torture et la mort. Or, dans l'idéologie communiste, l'unanimité étant fondée sur une évidence scientifique et sur une coïncidence d'intérêts, l'ennemi ne peut être qu'à l'extérieur, et les ennemis de l'intérieur ne peuvent être que des agents de cet ennemi de l'extérieur, donc des traîtres. De là l'extraordinaire prolifération des « traîtres » en Russie soviétique, qui gagna à peu près toute la vieille garde de la Révolution, les héros antitzaristes revenus de Sibérie après de torturantes années imposées par la police de l'ancien régime. La classe des anciens propriétaires dépouillés par la Révolution, après trente-quatre ans de régime soviétique, il faut bien admettre qu'elle n'existe plus. Donc, plus de vrais ennemis à l'intérieur. Rien que des traîtres, vendus aux pays capitalistes... Pourquoi l'élite du régime a-t-elle été si facile à corrompre? Nul ne le demande.",
+      "bbox": {
+        "x_pct": 1.769,
+        "y_pct": 12.834,
+        "w_pct": 84.861,
+        "h_pct": 58.262
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc, à l'intérieur, le règne de la force, les tribunaux d'exception, les emprisonnements, les déportations, les exécutions sont justifiés par l'existence, au dehors, des pays capitalistes et, au dedans, de leurs agents. Mais il y a autre chose : l'État ne veut pas, en principe, contraindre; recourant à la psychologie et à la pédagogie modernes, il veut éduquer. C'est ici qu'on trouve, dans",
+      "bbox": {
+        "x_pct": 2.368,
+        "y_pct": 70.882,
+        "w_pct": 84.443,
+        "h_pct": 13.012
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Dans la revue Preuves, mai 1955, son étude intitulée La France seule.",
+      "bbox": {
+        "x_pct": 4.638,
+        "y_pct": 86.096,
+        "w_pct": 73.398,
+        "h_pct": 3.503
+      },
+      "changed": true,
+      "change_reason": "Changed label to footnote per instructions."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original text was truncated/corrupted in detection",
+    "Footnote not tagged as such",
+    "Running header and page number not filtered out"
+  ],
+  "doc_id": "330",
+  "page": 49,
+  "elapsed_seconds": 6.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

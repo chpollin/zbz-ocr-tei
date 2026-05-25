@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "public. Ce n'est pas une vraie rencontre, comme on se l'imagine trop souvent. D'ailleurs, je ne considère pas que ce soit un échec. Cela tient probablement à la nature même de l'art, de l'activité créatrice et de l'activité réceptrice, et l'attitude de part et d'autre est donc très différente. Je peux donc délimiter la question posée au départ : que se passe-t-il lorsqu'il y a musique, non pas chez ceux qui la produisent, mais chez ceux qui la reçoivent ?",
+      "bbox": {
+        "x_pct": 9.105,
+        "y_pct": 8.254,
+        "w_pct": 81.427,
+        "h_pct": 12.415
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and garbled characters."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'aborde ce problème un peu par bravade, parce que nous vivons une époque où l'on a tendance à croire qu'être actif, c'est, par exemple, jouer dans un orchestre ou chanter dans un chœur. Si l'on intervient dans une discussion, on est actif ; mais si l'on écoute, on est passif. Tous vous qui êtes assis devant moi et qui m'écoutez, vous pensez peut-être que vous êtes passifs et que la seule personne active dans cette salle, c'est moi, parce que je parle. Or, je crois que c'est complètement faux. Il se peut que je parle sans être particulièrement active. Et il se peut que ce que je dis suscite chez vous une activité bien plus importante que celle à laquelle je me livre en exprimant devant vous des pensées peut-être déjà anciennes.",
+      "bbox": {
+        "x_pct": 8.948,
+        "y_pct": 21.769,
+        "w_pct": 81.741,
+        "h_pct": 20.638
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ecouter, écouter vraiment, ce n'est pas du tout une passivité ; c'est ce que j'aimerais appeler une réceptivité active. J'illustre cela par un exemple : il y a quelque temps, j'ai eu un long entretien avec un garçon qui avait été un des contestataires de Zurich, en 1980. Je parlais avec lui lorsque, tout à coup, il a esquissé un mouvement de retrait et m'a dit, en allemand : « Sie tun etwas in mir, ich spüre das, Sie tun etwas in mir. » « Vous faites quelque chose en moi, je le sens, vous faites quelque chose en moi. » J'ai ri, et je lui ai répondu : « J'essaie ! Sinon, pourquoi parlerions-nous ensemble ? »",
+      "bbox": {
+        "x_pct": 8.948,
+        "y_pct": 43.408,
+        "w_pct": 81.536,
+        "h_pct": 16.769
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De même, la musique « fait quelque chose en nous » quand nous l'écoutons. Elle a comme effet que quelque chose se passe en nous, que nous faisons quelque chose de nous-mêmes. Un poème de Rilke intitulé Le Torse d'Apollon est à ce propos fort explicite : ce petit poème décrit en quelques vers un torse d'Apollon, d'une façon parfaitement plastique, objective. Et puis soudain, d'une manière très abrupte, surgit un vers : « Du musst dein Leben ändern. » « Tu dois changer ta vie. » Ce n'est ni amené, ni préparé ; cela vient abruptement après la description objective du torse d'Apollon. Eh bien, c'est exactement de cela qu'il s'agit. Le poème ne dit pas ce qu'il s'agit de devenir, ce qu'il convient de faire ; mais le torse d'Apollon, dans sa plasticité objective, provoque une espèce de secousse de la liberté intérieure. Cette réceptivité active, dont j'ai parlé, c'est une réceptivité de la liberté, c'est une réceptivité par la liberté. Ainsi, beaucoup de gens font de la musique sans se destiner du",
+      "bbox": {
+        "x_pct": 9.274,
+        "y_pct": 61.208,
+        "w_pct": 81.415,
+        "h_pct": 26.692
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "40",
+      "bbox": {
+        "x_pct": 97.0,
+        "y_pct": 90.0,
+        "w_pct": 3.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original JSON had significant text truncation errors",
+    "Missing page number region",
+    "OCR errors throughout the identified text blocks"
+  ],
+  "doc_id": "2740",
+  "page": 3,
+  "elapsed_seconds": 5.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

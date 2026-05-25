@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Sur le « sens de l’histoire » 99",
+      "bbox": {
+        "x_pct": 14.137,
+        "y_pct": 9.482,
+        "w_pct": 62.21,
+        "h_pct": 2.826
+      },
+      "changed": true,
+      "change_reason": "Corrected label and tag for page header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pas à s’enchaîner selon une finalité propre), être chargées d’une signification transhistorique. Ni la direction continue, ni la signification discontinue de chaque « petite totalité » considérée comme unique, ne constituent l’histoire. Celle-ci exige la continuité de sens — donc à la fois la continuité temporelle d’une finalité qui réussit à s’incarner dans les faits et le recours à la dialectique de la dialectique, c’est-à-dire au permanent transhistorique, qui sauve le sens compromis par son renvoi sans fin à l’infini.",
+      "bbox": {
+        "x_pct": 14.137,
+        "y_pct": 12.308,
+        "w_pct": 62.21,
+        "h_pct": 15.003
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(( Il faut, disait Karl Barth, lire la Bible et le journal. » « La Bible » pourrait symboliser la source transcendante réelle de sens et de valeur, qui, intemporelle, donne, indépendamment de toute continuité et de toute réussite finale, son poids à chaque « petite totalité » au niveau de l’action — ainsi que le phantasme efficace qui projette cette source de sens dans le futur, sous la forme d’un achèvement temporel de l’histoire. « Le journal », c’est le lieu où s’élabore l’intelligibilité de l’action, au fil du temps, entre l’histoire faite et les données qu’elle dépose et impose d’une part, la décision et sa structure finale de l’autre, petite totalisation précaire, mais réelle, vite effilochée, au vent.",
+      "bbox": {
+        "x_pct": 14.218,
+        "y_pct": 26.285,
+        "w_pct": 61.806,
+        "h_pct": 19.681
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette petite totalisation ne peut pas ne pas impliquer, en quelque mesure si faible soit-elle, le phantasme totalisateur de l’histoire entière. Mais si cette totalisation qu’elle implique était, fût-ce virtuellement, réelle, elle perdrait elle-même à la fois sens et réalité. Telle est l’aporie de l’existence historique. La vraie fidélité, ici, renvoie à la source transcendante — et celle-ci renvoie, par-delà toute philosophie de l’histoire totale nécessairement négatrice d’elle-même, à l’honnête activité du journal.",
+      "bbox": {
+        "x_pct": 14.331,
+        "y_pct": 45.339,
+        "w_pct": 61.5,
+        "h_pct": 14.319
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nombreux sont sans doute les amis de Raymond Aron qui regrettent que sa passion vigilante pour les problèmes actuels l’empêche d’écrire les grands livres qu’il projette depuis longtemps. Ils ont sûrement raison, mais ils ont peut-être tort aussi. Il me paraît si naturel — peut-être si nécessaire — que Raymond Aron accomplisse service de la vérité sur le présent le plus immédiat — donc : dans le journal. Le présent le plus immédiat ne perd son importance littéralement cruciale que du point de vue de Sirius, ou du point de vue de l’achèvement futur. C’est qu’alors le phantasme contradictoire du « sens total » tarit la source transcendante du « sens actuel ». Raymond Aron connaît les phantasmes et ne les prend pas pour des réalités.",
+      "bbox": {
+        "x_pct": 14.298,
+        "y_pct": 64.313,
+        "w_pct": 61.355,
+        "h_pct": 20.912
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was heavily corrupted.",
+    "Page number and running header were mislabeled as text.",
+    "Region labeling required significant cleanup."
+  ],
+  "doc_id": "910",
+  "page": 9,
+  "elapsed_seconds": 7.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

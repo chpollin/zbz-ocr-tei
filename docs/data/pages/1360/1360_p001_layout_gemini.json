@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "UBIQUITÉ DE LA PUISSANCE ET VOLONTÉ DE JUSTICE",
+      "bbox": {
+        "x_pct": 59.149,
+        "y_pct": 14.014,
+        "w_pct": 24.787,
+        "h_pct": 5.446
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "EC un nœud impossible crancher, tant 1 51 simplemeni de noire vie quotidienne; celle quc nous 2vons ",
+      "bbox": {
+        "x_pct": 53.404,
+        "y_pct": 25.095,
+        "w_pct": 36.351,
+        "h_pct": 33.919
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La norion de puissance Yemploic d qu'1u dessus des appellz parle PZrcc",
+      "bbox": {
+        "x_pct": 53.798,
+        "y_pct": 60.135,
+        "w_pct": 36.021,
+        "h_pct": 8.243
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cavse des besoins des mcnaces un bec plus Puisqui qui qui qui",
+      "bbox": {
+        "x_pct": 58.011,
+        "y_pct": 74.446,
+        "w_pct": 31.777,
+        "h_pct": 9.473
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "67",
+      "bbox": {
+        "x_pct": 88.085,
+        "y_pct": 85.811,
+        "w_pct": 1.702,
+        "h_pct": 2.703
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number identified as page_footer/_filter"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 62.411,
+        "y_pct": 9.615,
+        "w_pct": 17.589,
+        "h_pct": 1.554
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header identified and categorized as _filter"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page footer page number missing from existing segmentation",
+    "Running header missing from existing segmentation"
+  ],
+  "doc_id": "1360",
+  "page": 1,
+  "elapsed_seconds": 4.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

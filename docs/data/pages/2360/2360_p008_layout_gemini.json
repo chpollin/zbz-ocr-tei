@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 14 -",
+      "bbox": {
+        "x_pct": 274.0,
+        "y_pct": 74.0,
+        "w_pct": 22.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Page numbering should be labeled as page_header/page_footer for filtering."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 15 -",
+      "bbox": {
+        "x_pct": 740.0,
+        "y_pct": 82.0,
+        "w_pct": 23.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Page numbering should be labeled as page_header/page_footer for filtering."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ner d29 r9percussiong, lui donner d2 1' d1ffuser Btendre Port9e de nos limit9s gui, grace aux par Co",
+      "bbox": {
+        "x_pct": 4.484,
+        "y_pct": 13.621,
+        "w_pct": 38.638,
+        "h_pct": 49.775
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Economie de march9 et finalit9s de sens",
+      "bbox": {
+        "x_pct": 44.0,
+        "y_pct": 711.0,
+        "w_pct": 322.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Section heading misidentified as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il doute que 1' exp9rience 1' montr9, Vne 1'echoc, on g9en radical du terme L'9conomie de March9 ebt",
+      "bbox": {
+        "x_pct": 2.792,
+        "y_pct": 70.915,
+        "w_pct": 38.551,
+        "h_pct": 18.342
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "maniere Jes Finalites de B2n5 Et geng devraient de Alors, pourrait-on orienler une une d'autre pare,",
+      "bbox": {
+        "x_pct": 54.601,
+        "y_pct": 14.629,
+        "w_pct": 36.673,
+        "h_pct": 35.332
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jc gont devenus aujourd'hui Erop pour qu ils puissent continuec Concucrenticl avcun frein, orientati",
+      "bbox": {
+        "x_pct": 53.473,
+        "y_pct": 52.082,
+        "w_pct": 38.648,
+        "h_pct": 34.695
+      },
+      "changed": false
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Page numbers were incorrectly labeled as text.",
+    "Section header at bottom left was labeled as paragraph.",
+    "OCR text quality is low, causing issues in structural parsing."
+  ],
+  "doc_id": "2360",
+  "page": 8,
+  "elapsed_seconds": 4.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

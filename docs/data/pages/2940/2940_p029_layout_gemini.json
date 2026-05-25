@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "KURT FURGLER",
+      "bbox": {
+        "x_pct": 12.75,
+        "y_pct": 9.925,
+        "w_pct": 16.288,
+        "h_pct": 1.839
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Schweizerische Staatsgedanke ist aktueller denn je. Er bedeutet Eid-Genossenschaft, Bund der Eidgenossen, im Namen Gottes abgeschlossen; zur Behauptung der Unabhängigkeit, dem Schutz der Freiheit und der Rechte der Eidgenossen und der Förderung ihrer gemeinsamen Wohlfahrt bestimmt. So steht es in der Verfassung. Staatenbund zuerst, Bundesstaat seit 1848, Ausdruck des politischen Willens von Volk und Ständen zur eigenen Nation. 26 Kantone, Gliedstaaten, Gemeinschaften mit eigener Geschichte, unterschiedlichem ethnischem Ursprung, verschiedenen Sprachen, Religionen und Kulturen.",
+      "bbox": {
+        "x_pct": 12.537,
+        "y_pct": 14.824,
+        "w_pct": 63.0,
+        "h_pct": 25.811
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match image content."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alle Schweizer sind vor dem Gesetze gleich; Verfassungsnorm als Dauerauftrag! Respekt vor der Einmaligkeit jeder Person kommt darin zum Ausdruck, ob zur Mehrheit oder Minderheit gehörend.",
+      "bbox": {
+        "x_pct": 16.962,
+        "y_pct": 43.085,
+        "w_pct": 56.375,
+        "h_pct": 10.318
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match image content."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Föderalistischer Staatsaufbau: die Kantone sind souverän; so souverän, soweit ihre Souveränität nicht durch die Bundesverfassung beschränkt ist. Souveränität und Interdependenz, Herausforderung auch für die Schweiz als Ganzes im werdenden Europa, in der Welt.",
+      "bbox": {
+        "x_pct": 17.0,
+        "y_pct": 53.537,
+        "w_pct": 54.5,
+        "h_pct": 12.709
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Können diese Gedanken auch wegweisend sein für die Zukunft? Der Schweizer Philosoph Amiel sagte: «Die Erfahrung jedes Menschen wiederholt sich immer von neuem; nur die Institutionen gewinnen an Weisheit: sie sammeln die kollektive Erfahrung und aus dieser Erfahrung und dieser Weisheit heraus wird sich bei den Menschen, die den gleichen Regeln unterworfen sind, zwar nicht ihr Wesen, aber doch ihr Verhalten schrittweise ändern.» Vom Staatenbund zum Bundesstaat; von der Bewahrung der Eidgenossenschaft zur vertieften Teilnahme an Europa, am Welt-",
+      "bbox": {
+        "x_pct": 12.537,
+        "y_pct": 68.729,
+        "w_pct": 63.125,
+        "h_pct": 23.161
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match image content."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Kurt Furgler",
+      "bbox": {
+        "x_pct": 78.838,
+        "y_pct": 33.445,
+        "w_pct": 9.412,
+        "h_pct": 1.672
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "25",
+      "bbox": {
+        "x_pct": 72.5,
+        "y_pct": 93.5,
+        "w_pct": 2.2,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified missing page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text content was truncated in original extraction",
+    "Missing bounding box for page footer"
+  ],
+  "doc_id": "2940",
+  "page": 29,
+  "elapsed_seconds": 6.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cune attitude combative: livré à ce ne dépend de lui qui plus",
+      "bbox": {
+        "x_pct": 23.842,
+        "y_pct": 11.052,
+        "w_pct": 65.576,
+        "h_pct": 5.724
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une autre difficulté vient de ce que je n'ai pas su m'installer clairement dans un seul genre d'écrits. Mon premier livre, L'Illusion philosophique, est un petit essai de réflexion sur la philosophie pure. Le second, Temps alternés, me paraît impossible à classer. Son éditeur le décréta «roman», pour des raisons évidentes. Mais il ne répond pas du tout à l'idée que je me fais du roman, aux exigences que le genre «roman» comporte à mes yeux. J'aurais voulu le sous-titrer «Exercice de composition», parce que pour moi sa raison d'être, c'était un jeu musical de thèmes quotidiens, à travers lesquels je cherchais, par l'écriture même, une unité personnelle secrète, par delà les démentis de la vie. Mon troisième livre, L'Etre et la forme, traite de philosophie pure, mais la métaphysique, l'esthétique, la morale y mêlent leurs problèmes. Incommode pour les bibliographies! Enfin, mon quatrième livre Idéologies et réalités, est un essai d'orientation politique où s'affrontent et se confrontent les divers",
+      "bbox": {
+        "x_pct": 23.273,
+        "y_pct": 16.608,
+        "w_pct": 66.545,
+        "h_pct": 61.591
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on full document content in OCR region."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "80",
+      "bbox": {
+        "x_pct": 24.167,
+        "y_pct": 82.26,
+        "w_pct": 2.778,
+        "h_pct": 1.767
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer and removed from text block."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text extraction for paragraph 2 was incomplete.",
+    "Page number at bottom left was mislabeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 80,
+  "elapsed_seconds": 4.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

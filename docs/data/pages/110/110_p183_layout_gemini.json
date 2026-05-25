@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 10.979,
+        "y_pct": 100,
+        "w_pct": 30.686,
+        "h_pct": 2.454
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page title/heading"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "181",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 3.73,
+        "h_pct": 2.607
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans le passage de la Toue les   joints de deux   rails,   dune nole basse dans le bruit dun moleur,",
+      "bbox": {
+        "x_pct": 10.795,
+        "y_pct": 13.364,
+        "w_pct": 68.157,
+        "h_pct": 11.26
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prenons un autre exemple;   emprunté à \"art dramalique. Une pièce de théâtre   peut, comme une nalur",
+      "bbox": {
+        "x_pct": 10.979,
+        "y_pct": 26.219,
+        "w_pct": 68.71,
+        "h_pct": 48.747
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/title label",
+    "Missing page footer label"
+  ],
+  "doc_id": "110",
+  "page": 183,
+  "elapsed_seconds": 6.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

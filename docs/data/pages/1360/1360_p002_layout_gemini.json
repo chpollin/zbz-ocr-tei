@@ -1,0 +1,135 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "crssibles fairs perd Pour",
+      "bbox": {
+        "x_pct": 7.387,
+        "y_pct": 24.026,
+        "w_pct": 20.656,
+        "h_pct": 12.781
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "économiques millions  mais des centaines de millions d'hommcs qui vic, chaque le travail (le temps e",
+      "bbox": {
+        "x_pct": 7.065,
+        "y_pct": 46.715,
+        "w_pct": 32.419,
+        "h_pct": 27.06
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "un",
+      "bbox": {
+        "x_pct": 89.065,
+        "y_pct": 30.026,
+        "w_pct": 1.548,
+        "h_pct": 1.232
+      },
+      "changed": true,
+      "change_reason": "Artifact, not part of regular text flow."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Congres Berne en janvier 1975 pour chances professionnclles, cienne ESE CI dc miracle, devicnt pl",
+      "bbox": {
+        "x_pct": 54.376,
+        "y_pct": 37.351,
+        "w_pct": 36.473,
+        "h_pct": 46.0
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Max Weber, Gesammelte Politische Schriften, 2., erweiterte Auflage, heraus- gegeben von J. Winckelmann, Tübingen 1958, p. 141, cité d'après Raymond Aron, Les étapes de la pensée sociologique, Paris 1967, p. 648, crochets, de l'auteur.",
+      "bbox": {
+        "x_pct": 7.065,
+        "y_pct": 80.0,
+        "w_pct": 32.5,
+        "h_pct": 9.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Footnote text at bottom left."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "68",
+      "bbox": {
+        "x_pct": 7.0,
+        "y_pct": 88.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "69",
+      "bbox": {
+        "x_pct": 96.0,
+        "y_pct": 88.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number."
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 24.0,
+        "y_pct": 3.0,
+        "w_pct": 14.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header title."
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "UBIQUITÉ DE LA PUISSANCE ET VOLONTÉ DE JUSTICE",
+      "bbox": {
+        "x_pct": 53.0,
+        "y_pct": 3.0,
+        "w_pct": 43.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header title."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Footnote was not labeled.",
+    "Page numbers were missing from labels.",
+    "Page headers were missing from labels.",
+    "Small artifact labeled as text paragraph."
+  ],
+  "doc_id": "1360",
+  "page": 2,
+  "elapsed_seconds": 5.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Artifact, not part of regular text flow.": 1,
+    "ADDED": 5
+  }
+}

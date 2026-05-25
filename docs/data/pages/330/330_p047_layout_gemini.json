@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 13",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Combined page header and page number should be filtered out from the content flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "toire va dans le sens de sa libération? Ou doit-il être libéré parce qu'il est composé d'hommes qui ont le droit et la vocation de sortir de la servitude, de l'aliénation? Nulle réponse n'est donnée, ou bien l'on vous dira que la question est posée « d'un point de vue idéaliste » et que cette dissociation n'a aucun sens à l'intérieur du système. Ce qui est vrai d'ailleurs. Et c'est ici qu'apparaît une fois de plus la force extraordinaire, l'efficacité accrue, sur le plan social, des idées confuses, de ces « Choses Vagues » dont parlait Paul Valéry. Car le chemin philosophique, étroit et difficile, du marxisme, où l'on voit la dialectique vider de son sens la question posée, ne tient guère de placé dans l'idéologie communiste telle qu'elle déploie en fait son efficacité dans les foules et telle, donc, qu'elle nous intéresse ici. Loin d'être gênée par l'ambiguïté apparente de cette position fondamentale, l'opinion communiste adhère à l'idéal de la libération du prolétariat avec d'autant plus de force qu'il repose à la fois sur la reconnaissance morale du droit de chaque homme à la plénitude de sa liberté et sur la constatation scientifique que telle est bien en fait l'orientation du déterminisme historique. L'adhésion morale puise de la force dans la certitude d'être scientifiquement conforme au cours réel des événements, et le cours des événements prend le prestige d'un jugement moral porté — absurdement — par le déterminisme lui-même. La raison et l'enthousiasme, la raison et l'indignation, la raison et les sentiments les plus passionnés iront désormais de pair, se prêtant réciproquement des forces.",
+      "bbox": {
+        "x_pct": 11.257,
+        "y_pct": 11.257,
+        "w_pct": 84.582,
+        "h_pct": 52.086
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect the actual text in the bounding box."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Politique intérieure.",
+      "bbox": {
+        "x_pct": 11.253,
+        "y_pct": 64.439,
+        "w_pct": 16.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified 'Politique intérieure' as a section header/subheading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Idéologiquement, dans le portrait qu'il fait de lui-même, le régime communiste se caractérise de façon assez ambiguë, car il oscille constamment — et de plus en plus, à mesure que les faits russes cadrent moins avec son autoportrait — entre la description d'un régime actuel : le régime soviétique russe, pour lequel on réclame à l'intérieur et à l'extérieur un véritable amour, et la description d'un régime futur idéal : « Le communisme n'est pas encore réalisé en Russie. » Mais ne nous laissons pas égarer; c'est surtout lorsqu'on objecte à des communistes les conditions de vie misérables de la population ouvrière, actuellement, en Russie et dans les pays satellites, qu'ils vous renvoient à un avenir meilleur. En revanche, les méthodes concen-",
+      "bbox": {
+        "x_pct": 11.253,
+        "y_pct": 66.5,
+        "w_pct": 84.401,
+        "h_pct": 23.223
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and removed section header from the paragraph region."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was heavily truncated in original JSON.",
+    "Section header was merged into paragraph.",
+    "Page header/number was not classified as filtered."
+  ],
+  "doc_id": "330",
+  "page": 47,
+  "elapsed_seconds": 5.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

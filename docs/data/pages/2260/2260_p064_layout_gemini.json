@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sèche, la Grèce olympienne accompagnée ma vie. Il faut laisser aux pays du Nord leurs humidités spongieuses où l'on enfonce, leur chair, leurs voluptés qui durent jusqu'à la mort ou au gel. La Grèce, c'est le roc et son pourtour, fait pour le regard, le bleu dur de la mer, compact comme une énorme pierre précieuse, où l'on s'étonne de voir pénétrer l'étrave coupante des bateaux. «La lumière du jour» rend manifeste l'absolu, qui exclut les accommodements, les complicités adoucissantes de la durée, les camouflages des brumes.",
+      "bbox": {
+        "x_pct": 21.006,
+        "y_pct": 16.355,
+        "w_pct": 66.061,
+        "h_pct": 36.448
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR output for the paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi tout y coexiste au même instant et se voit, la mort au cœur de la vie, le squelette dans le corps de l'athlète, la géométrie dans la beauté, la tragédie partout.",
+      "bbox": {
+        "x_pct": 21.006,
+        "y_pct": 56.086,
+        "w_pct": 65.745,
+        "h_pct": 11.759
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR output for the paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il fait beau – plutôt que bon – vivre. Le rusé Ulysse s'y est appliqué.",
+      "bbox": {
+        "x_pct": 24.691,
+        "y_pct": 70.202,
+        "w_pct": 55.636,
+        "h_pct": 6.17
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR output for the paragraph content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "The OCR in the provided regions was heavily truncated and contained significant garbled text errors.",
+    "The provided JSON input labels for the paragraphs were correct, but the text content needed extensive reconstruction to match the image accurately."
+  ],
+  "doc_id": "2260",
+  "page": 64,
+  "elapsed_seconds": 4.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

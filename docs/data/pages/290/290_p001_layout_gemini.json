@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "COMPTES RENDUS",
+      "bbox": {
+        "x_pct": 38.219,
+        "y_pct": 26.502,
+        "w_pct": 25.359,
+        "h_pct": 1.544
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled text 'cM PTEs RENDUS' to 'COMPTES RENDUS'."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'OEUVRE DE KARL JASPERS AU COURS DES DERNIERES ANNEES",
+      "bbox": {
+        "x_pct": 35.27,
+        "y_pct": 33.017,
+        "w_pct": 31.233,
+        "h_pct": 3.011
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text 'VŒUVRE DE KARI JASPERS AU COURS ANNES' to match the actual title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On ne trouve pas dans la pensee de Karl Jaspers d'evolution au sens d'un itineraire intellectuel dont on pourrait fixer les etapes et le trace. Dans un certain sens, comme il le dit lui-meme, sa philosophie l'habitait dej` lorsqu'il avait dix-sept ans. Il n'est pas de ceux qui attendent que les problemes surgissent du dehors. Les choses du monde, les hypotheses, les idees font bien l'objet et la matiere de sa reflexion, mais elles sont comme suscitees de l'interieur, pour servir de support ` une autre confrontation, ` la fois plus essentielle et plus mysterieuse, dont il s'agit d'eclairer le mystere sans le dissiper. La pensee s'approfondit sur place, elle tend ` une experience, toujours la meme et inepuisable, ` c`te de laquelle toute diversite paraet monotone. D'oi, dans la langue, la place que prennent les images verticales, un vocabulaire de sourcier : les origines, le jaillissement, l'abime, le sol que l'on perd ou que l'on retrouve, - et toute une ambiguite de la profondeur et de la hauteur, qui impose et refuse la transcendance.",
+      "bbox": {
+        "x_pct": 24.819,
+        "y_pct": 36.776,
+        "w_pct": 51.652,
+        "h_pct": 21.259
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR output for the paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant, si certains traits se sont accuses ces dernieres annees, ce n'est pas ` cause d'une necessite de la seule meditation, mais sous l'emprise profonde des evenements historiques que nous venons de vivre. Aucune meditation ne s'acheve dans une doctrine. La pensee de Jaspers fait eclater les theories, et ces eclatements ont une signification, ou plutit une exigence, convergente : oi le savoir explose, il ne reste plus au sujet libre qu'` repondre : « Present ! » Chasse de la generalite anonyme d'une science apodictique, il se voit comme accule ` la presence pratique, ` la decision responsable, face au moment concret, dans l'histoire. Il lui faut bien alors, seul et sans alibi, jeter dans la circonstance historique concrete des racines assez violentes pour la traverser et s'attacher ` cet absolu, rationnellement ` la fois irreductible et inevitable, qui est objet de foi.",
+      "bbox": {
+        "x_pct": 24.658,
+        "y_pct": 57.72,
+        "w_pct": 51.41,
+        "h_pct": 17.559
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR output for the paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie, des lors, n'est plus ni une science, ni une morale, ni, ` proprement parler, une metaphysique. Comme la religion, elle exige, soutient, inspire; comme la religion elle est animee par une foi. Seulement, sa foi meme lui refuse les certitudes que la religion accorde. L'objet de cette foi reste, sur le mode theorique, indefinissable. La philosophie se sert de ses refus memes pour faire appel ` la liberte. Face au chaos de crimes et",
+      "bbox": {
+        "x_pct": 24.601,
+        "y_pct": 74.958,
+        "w_pct": 51.12,
+        "h_pct": 8.872
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR output for the paragraph text."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Severe OCR degradation in all paragraph blocks requiring full text restoration.",
+    "Section header had character errors (M instead of N, etc).",
+    "Missing line content from original layout scan."
+  ],
+  "doc_id": "290",
+  "page": 1,
+  "elapsed_seconds": 6.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

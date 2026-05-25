@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais elle ne pense pas. )",
+      "bbox": {
+        "x_pct": 25.138,
+        "y_pct": 13.832,
+        "w_pct": 29.311,
+        "h_pct": 2.614
+      },
+      "changed": true,
+      "change_reason": "Corrected minor transcription error in the text segment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a une différence fondamentale, persiste à travers tous les changements et que rien ne peut faire changer, sinon par la disparition même de l'être humain. Les hommes, et non les machines informatiques, choisissent les techniques qui transforment les rythmes de leur pensée et les modalités de leur développement. Ce qu'on peut, ce qu'on doit peut-être se demander, c'est jusqu'à quel point les valeurs et les critères qui commandent ces choix sont eux-mêmes permanents, ou fluants avec le cours de l'histoire.",
+      "bbox": {
+        "x_pct": 24.682,
+        "y_pct": 15.768,
+        "w_pct": 57.839,
+        "h_pct": 24.534
+      },
+      "changed": true,
+      "change_reason": "Replaced garbled/incomplete OCR text with accurate transcription of the source paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il nous faut ici revenir encore une fois à la relation de l'homme à l'histoire.",
+      "bbox": {
+        "x_pct": 25.0,
+        "y_pct": 42.157,
+        "w_pct": 57.341,
+        "h_pct": 4.248
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and segmentation overlap issue."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "86",
+      "bbox": {
+        "x_pct": 25.358,
+        "y_pct": 75.327,
+        "w_pct": 3.719,
+        "h_pct": 2.288
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer/filter as per instructions."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcription for the main paragraph was severely corrupted.",
+    "Page number detected and moved to filter.",
+    "OCR failed to capture full paragraph structure correctly."
+  ],
+  "doc_id": "2780",
+  "page": 85,
+  "elapsed_seconds": 4.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

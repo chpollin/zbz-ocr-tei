@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "64 L'aspect philosophique du problème des rapports",
+      "bbox": {
+        "x_pct": 8.086,
+        "y_pct": 52.674,
+        "w_pct": 85.076,
+        "h_pct": 3.809
+      },
+      "changed": true,
+      "change_reason": "Header identified as page_header not text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "se trouvaient soudain impliquées comme si elles allaient sans dire.",
+      "bbox": {
+        "x_pct": 8.086,
+        "y_pct": 12.674,
+        "w_pct": 85.076,
+        "h_pct": 3.809
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai entendu - je ne crois pas m'être trompée - utiliser les mots de « menaces » ou de « chances » impliquées dans ceci ou dans cela. Il est bien évident que si des menaces ou des chances sont impliquées dans quelque chose, c'est qu'on a déjà déterminé ce qui est souhaitable ou redoutable et que, par conséquent, il y a là tout un ensemble de valeurs implicites. Et je me suis demandé comment on obtenait la transition scientifique, le joint scientifique, entre la théorie positive et la valorisation implicite.",
+      "bbox": {
+        "x_pct": 8.003,
+        "y_pct": 17.563,
+        "w_pct": 85.34,
+        "h_pct": 15.978
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il me semble impossible de construire une science rigoureuse par la seule juxtaposition d'un souci méthodologique très serré, poussé et subtil, d'une part, et de l'autre, de développements qui ne tiennent guère compte de ces soucis méthodologiques et en sont en quelque sorte séparés. Et comme je cherche toujours à savoir ce que c'est que la sociologie, parce que la sociologie m'intéresse beaucoup, je me demande encore : qu'est-ce en somme que la sociologie ? Mais sans doute les sociologues se demandent-ils aussi. Remarquez : la philosophie se demande aussi ce qu'elle est. Ce serait d'ailleurs, si on voulait bien le reconnaître, un motif de fraternité.",
+      "bbox": {
+        "x_pct": 8.044,
+        "y_pct": 34.203,
+        "w_pct": 85.354,
+        "h_pct": 21.317
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a maintenant une remarque fondamentale que je voudrais faire au sujet des problèmes de méthodes traités l'an passé.",
+      "bbox": {
+        "x_pct": 8.363,
+        "y_pct": 56.546,
+        "w_pct": 84.383,
+        "h_pct": 4.125
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On avait poussé le scrupule d'objectivité extrêmement loin, comme je le disais tout à l'heure. Mais on a raisonné comme si ce qui empêchait le sociologue d'être un pur homme de science, c'était le fait d'appartenir lui-même à une société, d'être par conséquent sociologiquement conditionné. L'obstacle, pour le sociologue, ce serait sa subjectivité de sujet social, à cause du conditionnement social qu'elle implique. J'ai eu l'impression, en lisant les Actes, qu'il y avait en quelque sorte, à l'horizon de cet examen critique, l'idéal d'un sociologue parfait qui serait obtenu par soustraction : le sociologue concret, socialement conditionné, moins conditionnement social. Et ce qui resterait, ce serait un véritable savant sociologue à l'état pur.",
+      "bbox": {
+        "x_pct": 8.322,
+        "y_pct": 61.514,
+        "w_pct": 84.882,
+        "h_pct": 23.502
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, il me semble, à moi, que ce savant, ce sociologue idéal, ne serait justement pas sociologue, pour une raison bien simple : c'est qu'un sociologue qui pourrait faire complètement abstraction de son conditionnement sociologique ne comprendrait absolument rien à son objet.",
+      "bbox": {
+        "x_pct": 8.599,
+        "y_pct": 85.465,
+        "w_pct": 84.508,
+        "h_pct": 8.328
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Page number and running header were missing or incorrectly handled.",
+    "OCR text extraction was poor, requiring significant cleanup for readability.",
+    "Initial label for header was incorrect."
+  ],
+  "doc_id": "550",
+  "page": 5,
+  "elapsed_seconds": 5.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

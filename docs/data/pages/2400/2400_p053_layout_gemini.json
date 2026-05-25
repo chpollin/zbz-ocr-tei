@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wer viel besitzt, hat um vieles Angst",
+      "bbox": {
+        "x_pct": 6.039,
+        "y_pct": 32.656,
+        "w_pct": 19.928,
+        "h_pct": 3.857
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die sinkende Risikobereitschaft von heute h&auml;ngt wohl zwangsl&auml;ufig damit zusammen, da&szlig; es uns zu gut geht. Wer vieles besitzt, hat auch um vieles Angst, wer wenig hat, kann alles gewinnen. Das scheint mir eine gen&uuml;gende Erkl&auml;rung daf&uuml;r, da&szlig; der Zeitgeist eines satten Volkes sich nicht durch besondere Risikobereitschaft auszeichnet. Deshalb pl&auml;diere ich als Unternehmer daf&uuml;r, da&szlig; wir uns dem Gedanken des Risikos &ouml;ffnen. Und schlie&szlig;lich noch zur Tatsache, da&szlig; wir die h&ouml;chsten Pro-Kopf-Pr&auml;mienzahler sind: Das h&auml;ngt wohl damit zusammen, da&szlig; wir hier die besten Versicherungsgesellschaften haben - Anwesende ausnahmsweise nicht ausgeschlossen.",
+      "bbox": {
+        "x_pct": 28.261,
+        "y_pct": 4.898,
+        "w_pct": 65.097,
+        "h_pct": 31.783
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Risiko und Sicherheit unser Gespr&auml;ch hat gezeigt, da&szlig; wir beides brauchen. Es ist deutlich geworden, da&szlig; wir - der einzelne, die Gesellschaft, der Staat, die Wirtschaft - eine Art von Gleichgewicht zwischen Sicherheit und Risiko suchen m&uuml;ssen. Es scheint mir aber wichtig, da&szlig; man nicht beim Hinweis auf die Notwendigkeit eines Gleichgewichts, auf die Notwendigkeit von Sicherheit und Risiko stehen bleibt. Wir sollten uns deutlich machen, was uns das eine und was uns das andere bringt, und inwiefern das eine und das andere zu unserem Leben geh&ouml;rt. Vielleicht l&auml;&szlig;t sich das, was unser Gespr&auml;ch in dieser Hinsicht erbracht hat, so zusammenfassen: Ein Risiko eingehen k&ouml;nnen - das hat offenbar mit Freiheit und Dynamik zu tun. Bezogen auf den einzelnen, auf die Unternehmung, auf den Staat hei&szlig;t Risikobereitschaft: Lebendig sein, sich lebendig f&uuml;hlen. Wer kein Risiko mehr eingeht, hat aufgeh&ouml;rt, lebendig zu sein.",
+      "bbox": {
+        "x_pct": 28.261,
+        "y_pct": 38.668,
+        "w_pct": 65.254,
+        "h_pct": 45.269
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir haben aber nicht nur das Bed&uuml;rfnis, lebendig zu sein, sondern auch das andere, lebendig zu sein.",
+      "bbox": {
+        "x_pct": 28.865,
+        "y_pct": 83.188,
+        "w_pct": 64.855,
+        "h_pct": 5.044
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "54",
+      "bbox": {
+        "x_pct": 59.9,
+        "y_pct": 90.8,
+        "w_pct": 2.7,
+        "h_pct": 2.4
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer and added missing region."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR text extraction for main body paragraphs was significantly incomplete/truncated.",
+    "Page number 54 was missing from the initial detection list."
+  ],
+  "doc_id": "2400",
+  "page": 53,
+  "elapsed_seconds": 6.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

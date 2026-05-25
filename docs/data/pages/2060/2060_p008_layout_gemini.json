@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "oder in der Sonne und die Wolken anschauen? Wo ist der lebendige Impuls dazu und die Zweifel und der kritische Sinn und die Begeisterung und das Zusammengehören und dieses wunderbare Gefühl: irgendeine Ordnung ist da? Das alles haben wir aus den Augen verloren. Und das wird nicht gelehrt, das wird nicht vermittelt. Deswegen ist es so leicht, den Haß in den Leuten gegen diese Zivilisation zu erwecken: weil sie sie in ihrem Werden nicht miterleben.",
+      "bbox": {
+        "x_pct": 16.954,
+        "y_pct": 8.648,
+        "w_pct": 73.673,
+        "h_pct": 19.709
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match the full extent of the source block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Weiter die Gesellschaft, in der wir leben. Da soll man auch von klein auf verstehen lernen, was eine offene Gesellschaft ist und wie sie funktioniert. Was Demokratie überhaupt ist. Welches ihre Bedingungen sind. Wie ihre Institutionen entstehen und funktionieren. Wie sie erworben worden sind. Mit welcher Mühe, nach welchen Kämpfen. Man sprach heute für und gegen die Gewerkschaften. Aber was haben die Gewerkschaften erreicht an Veränderungen unserer Arbeitswelt? Das alles, die erlebte Geschichte unserer Gesellschaft, gehört auch potentiell zu unserer Kultur. Sie sollte dazu gehören. Man sagt, die Leute mißbrauchen die Sozialsicherheit; natürlich mißbrauchen sie sie. Wie sollen sie sie nicht mißbrauchen, wenn sie nicht wissen, wie sie entstanden ist, unter welchen Anstrengungen, wie sie funktioniert, was ihr droht und daß sie sie dabei zerstören. Die überwiegende Mehrheit der Menschen hat keine Vorstellung davon. Zum Beispiel: Wenn Erwachsene mit ihren Kindern auf einer Straße fahren, welche Eltern machen die Kinder darauf aufmerksam, daß diese Straße kein Naturprodukt ist, sondern investierte menschliche Mühe? Wissen, suchen, zeichnen, bauen - all das. Warum hat man nicht einen Gedanken der Dankbarkeit für die menschlich investierte Mühe, die in jedem Gegenstand, den wir brauchen, steckt? Daß diese Arbeit bezahlt wird, ändert an der Sache nichts. Denn in Wirklichkeit bezahlt man Arbeitszeit nur mit Arbeitszeit. Unser Leben ist nicht",
+      "bbox": {
+        "x_pct": 17.778,
+        "y_pct": 28.381,
+        "w_pct": 73.856,
+        "h_pct": 58.884
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match the actual image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "286",
+      "bbox": {
+        "x_pct": 19.145,
+        "y_pct": 90.279,
+        "w_pct": 4.167,
+        "h_pct": 2.155
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text segments were highly truncated and incomplete compared to the visual text.",
+    "Page number at the bottom was missing from the initial detection list.",
+    "The text block segmentation was inaccurate."
+  ],
+  "doc_id": "2060",
+  "page": 8,
+  "elapsed_seconds": 4.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

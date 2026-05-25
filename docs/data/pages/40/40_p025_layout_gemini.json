@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 27",
+      "bbox": {
+        "x_pct": 398.0,
+        "y_pct": 82.0,
+        "w_pct": 204.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page header and page number to filter out as requested."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "regardé moment les aiguilles, les épingles, les ciseaux, ces morceaux de métal où s'accrochent bizarrement les reflets de la flamme. Dans mes mains, ils s'éteindraient, deviendraient mats et utiles; leur forme perdrait sa fantaisie, trouverait son sens; ils glisseraient de la tendresse dans l'étoffe passive. J'ai pris mon tricot, le gros chandail gris que j'ai commencé pour toi. J'ai tiré vers le feu le grand fauteuil et m'y suis installée. Il a été modelé tout entier afin de soutenir mon corps. Pour le peloton de laine, il y a une sorte de boîte transparente en celluloïd, percée d'un trou par où le fil sort. On peut la laisser par terre, le peloton ne se salit pas et se déroule tout seul. Même le chat, venu par lentes étapes de la cuisine parce qu'il a deviné le feu, ne pourrait pas lui faire de mal. D'ailleurs il ne joue pas, la paresse l'a engourdi; il s'est roulé au bord du tapis et dort, — il se gonfle et se dégonfle, on dirait que des ondes invisibles se propagent jusqu'à lui selon un rythme venu du fond de la mer.",
+      "bbox": {
+        "x_pct": 11.311,
+        "y_pct": 12.287,
+        "w_pct": 80.851,
+        "h_pct": 47.76
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match original image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'enfant grandit. Le chandail s'allonge. Je suis plus près de toi que jamais. Et pourtant je pense à ce que j'ai écrit. Est-ce que je vais te l'envoyer là-bas ? Je sais maintenant que non, que c'est impossible. Je te le donnerai à lire ici, quand nous serons toi dans ce fauteuil et moi par terre, la tête contre tes genoux. Alors je sentirai, au contact du drap de ton habit sous ma joue, quand tu auras besoin d'être rassuré. Je prendrai ton visage entre mes deux mains, et tu me verras jusqu'au fond.",
+      "bbox": {
+        "x_pct": 11.581,
+        "y_pct": 60.331,
+        "w_pct": 80.581,
+        "h_pct": 24.896
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match original image content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original layout region for header/page number was missing or incorrectly merged.",
+    "Transcriptions in original JSON were severely truncated and incorrect.",
+    "Missing bounding box for header."
+  ],
+  "doc_id": "40",
+  "page": 25,
+  "elapsed_seconds": 5.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pas un segment de droite, dans ces schèmes, qui ne soit un vecteur. Tous ensemble, agissant les uns sur les autres autour du nœud de l'acte libre, ils structurent le temps de la liberté. Il y a le temps de l'intention, le temps humain, qui va d'Avant en Après, d'Alpha en Oméga. Il y a le temps du « sens de l'histoire » qui va d'Oméga en Alpha. Il y a l'Instant parfait de l'Élection ou de la « consolation sans cause », et l'instant imparfait, tout mêlé de passé et d'avenir, qui oblige le moi à une vigilance constante pour discerner l'Instant et le « temps suivant ». Il y a l'Éternité verticale, plongeant dans cet Instant (ingredi-egredi), présence et évanescence du Transcendant. Et il y a l'Éternité circulaire, dont la vie n'est pas le mouvement sur la circonférence de Hegel, mais une pulsation centrée sur le hic et nunc, dilatation et contraction alternées entre le tout et le rien — pulsation hors de laquelle la liberté serait soit impossible, soit vide de sens.",
+      "bbox": {
+        "x_pct": 21.676,
+        "y_pct": 15.979,
+        "w_pct": 57.653,
+        "h_pct": 21.785
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and merged incorrectly split blocks."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "* * *",
+      "bbox": {
+        "x_pct": 49.336,
+        "y_pct": 39.377,
+        "w_pct": 3.018,
+        "h_pct": 0.828
+      },
+      "changed": true,
+      "change_reason": "Identified as decorative section break rather than meaningless characters."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai écrit la présente étude dans l'espoir de donner à quelques philosophes l'envie de lire, malgré son titre, le livre du P. Fessard. Et de le lire l'esprit ouvert, l'imagination disponible, le moi présent, prêt au don d'un « chiffre » métaphysique nouveau. Qu'ai-je compris de cet ouvrage ? Ce n'est pas sans méfiance de moi que j'ai tenté d'en suggérer la vie. Théologiquement, j'en ai parlé de l'extérieur ; si j'ai repris presque partout les termes mêmes de l'auteur, c'est que son langage n'est pas le mien et que j'ai craint sans cesse de le trahir. Mais c'est un langage que j'entends. Jaspers a écrit : « La théologie fonde sa compréhension sur le Saint-Esprit. Qu'il souffle quelque part ou non, qui peut en décider valablement pour tous ! Mais celui qui l'entend a le droit de dire qu'il se sent atteint par lui, fût-ce faiblement ¹. » Il a dit encore : « Quand la théologie devient philosophie de telle manière qu'on n'y perçoit plus ce que la religion comporte d'unique et de spéciﬁque, le philosophe peut à bon droit prendre peur. C'est comme si soudain disparaissait l'adversaire qu'en ce monde il sait indispensable. Dans la lutte qu'il menait contre lui, ses propres impulsions devenaient plus claires et plus ardentes. Il se demande où donc, sous quelle forme, se cache malgré tout son vieil adversaire. Jamais il n'avait voulu le détruire, mais seulement l'amener à lui parler à cœur ouvert ; et maintenant, cet adversaire, c'est comme s'il ne pouvait s'en passer. » ²",
+      "bbox": {
+        "x_pct": 21.652,
+        "y_pct": 42.304,
+        "w_pct": 58.308,
+        "h_pct": 33.513
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai tenté de dire ici comment et pourquoi l'ouvrage du P. Fessard m'avait atteint. C'est de la vraie théologie, nullement « démythisée », heureusement. Un « chiffre », dont la cohérence et la beauté viennent entièrement d'un centre religieux. La source pratique de sa pensée : la dialec-",
+      "bbox": {
+        "x_pct": 21.757,
+        "y_pct": 75.272,
+        "w_pct": 58.074,
+        "h_pct": 6.409
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1. Karl Jaspers, Die Frage der Entmythologisierung, Piper, Munich, 1955, p. 32.\n2. Ibid., p. 51.",
+      "bbox": {
+        "x_pct": 21.757,
+        "y_pct": 82.5,
+        "w_pct": 58.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Labeled as footnote correctly; included full bibliographic entry content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "384",
+      "bbox": {
+        "x_pct": 22.0,
+        "y_pct": 86.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was highly inaccurate, failing to reconstruct words properly.",
+    "Footnote content was split and misidentified.",
+    "Section header was misinterpreted.",
+    "Page number at bottom left was ignored by initial extraction."
+  ],
+  "doc_id": "350",
+  "page": 15,
+  "elapsed_seconds": 6.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

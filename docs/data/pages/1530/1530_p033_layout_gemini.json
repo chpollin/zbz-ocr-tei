@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "106",
+      "bbox": {
+        "x_pct": 13.507,
+        "y_pct": 5.78,
+        "w_pct": 3.472,
+        "h_pct": 1.736
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ENTRETIEN PUBLIC",
+      "bbox": {
+        "x_pct": 41.551,
+        "y_pct": 5.95,
+        "w_pct": 17.014,
+        "h_pct": 1.562
+      },
+      "changed": true,
+      "change_reason": "Identified as running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pouvoir. D'une partie l'origine divine du pouvoir, d'autre part la force que vous avez définie comme force matérielle mais neutre; enfin, ce que j'appellerais volontiers le démoniaque. Ce qui m'a frappé, dans votre conférence, c'est qu'alors même qu'elle faisait preuve d'une telle confiance dans la puissance du verbe et dans sa capacité de convaincre, vous ayez si peu fait allusion au pouvoir du verbe, de la parole, c'est-à-dire aussi à la possibilité et à l'efficacité du mensonge.",
+      "bbox": {
+        "x_pct": 13.507,
+        "y_pct": 9.669,
+        "w_pct": 76.042,
+        "h_pct": 12.372
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela m'a frappé parce que, en considérant la situation dans laquelle nous sommes aujourd'hui, je crois que les principes que j'ai médités dans votre livre Idéologie et Réalité, c'est-à-dire les principes démocratiques, sont vécus dans un tout petit carré du monde, un carré qui a tendance à se rétrécir comme la peau de chagrin. Si bien que la question que je me pose est de savoir comment les principes que vous avez développés peuvent s'appliquer dans les situations où le pouvoir vit, en quelque sorte, comme un parasite sur le corps de la société civile. Je pense à certains pays totalitaires où les hommes s'interrogent pour savoir comment réinvestir humainement le pouvoir, en se demandant s'ils vont le faire par la force (mais la force de l'opposition est peu de chose là-bas) ou par la raison (mais la raison, de fait, est extrêmement fragile et peu écoutée). Que dirions-nous dès lors, ou que diriez-vous aux hommes pris dans ce dilemme? Voilà une question, au moins, que je voudrais vous poser.",
+      "bbox": {
+        "x_pct": 13.391,
+        "y_pct": 21.43,
+        "w_pct": 75.926,
+        "h_pct": 24.107
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH: Je vous remercie, mais je n'ai pas tout à fait compris une chose. Vous avez enchaîné à partir du démoniaque sur la parole et le verbe. Est-ce que vous mettez le verbe du côté du démon?",
+      "bbox": {
+        "x_pct": 13.391,
+        "y_pct": 46.554,
+        "w_pct": 75.926,
+        "h_pct": 6.86
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "M MICHEL SALES: Je ne mets pas nécessairement le verbe du côté du démon, mais le langage est le lieu où s'incarnent à la fois la vérité et le mensonge. J'ai été très impressionné par le dernier texte qu'a écrit Soljenitsyne avant de quitter la terre russe, au moment où il était encore incertain de son sort, texte dans lequel il a très bien montré qu'il y avait toujours une collusion entre la force, la violence et le mensonge. La violence à l'état pur est finalement très faible, mais ce qui est fort, c'est la force appuyée sur le mensonge qui lui est de l'ordre du langage.",
+      "bbox": {
+        "x_pct": 13.275,
+        "y_pct": 54.901,
+        "w_pct": 75.88,
+        "h_pct": 15.736
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH: Je suis tout à fait d'accord avec vous, et je crois l'avoir dit hier: la force physique, à elle seule, ne suffirait pas. Et c'est justement parce que le pouvoir est un «mixte» que la force brute ne suffit pas. Mais, ce que vous voulez dire, c'est qu'il y a trois origines au pouvoir: divine, force matérielle et mensonge?",
+      "bbox": {
+        "x_pct": 13.495,
+        "y_pct": 71.43,
+        "w_pct": 75.66,
+        "h_pct": 8.959
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "M. MICHEL SALES: Oui. Il y a en outre une chose qui m'a toujours, comme philosophe, un peu étonné, c'est le rapport entre la vérité et la force physique. J'ai toujours été saisi par la triste formule de Goebbels: «Quand on me parle de culture, je tire mon revolver.» Je ne sais si Goebbels a jamais prononcé cette phrase, mais,",
+      "bbox": {
+        "x_pct": 13.461,
+        "y_pct": 81.488,
+        "w_pct": 75.66,
+        "h_pct": 8.785
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Identified and corrected page number and running header labels.",
+    "The text region contains speaker names as part of the paragraph body, which is standard for this transcript format."
+  ],
+  "doc_id": "1530",
+  "page": 33,
+  "elapsed_seconds": 8.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

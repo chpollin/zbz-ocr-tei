@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 33.575,
+        "y_pct": 5.198,
+        "w_pct": 37.627,
+        "h_pct": 3.877
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Der Mensch ist nicht von Natur aus friedlich",
+      "bbox": {
+        "x_pct": 23.444,
+        "y_pct": 11.128,
+        "w_pct": 57.786,
+        "h_pct": 7.524
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch, geboren 1910 in Genf, 1956 bis 1977 Professorin für Philosophie an der Universität Genf. Schülerin und Übersetzerin von Karl Jaspers. 1966 bis 1968 Vorsteherin der Abteilung Philosophie der UNESCO. 1970 bis 1972 Vertreterin der Schweiz im Exekutivrat der UNESCO, Teilnahme an mehreren Generalkonferenzen. Mitglied der Nationalen Schweizerischen UNESCO-Kommission. Mitglied der Sozialdemokratischen Partei der Schweiz sowie verschiedener europäischer föderalistischer Organisationen. Herbst 1985: Chefin der Schweizer Delegation am KSZE-Kulturforum in Budapest. Zahlreiche Auszeichnungen, u. a. 1973 Preis für Freiheit und Menschenrechte, der erstmals verliehen wurde, und 1988 Ehrenpreis der UNESCO für die Lehre der Menschenrechte. Sie veröffentlichte zahlreiche Schriften über Philosophie und Gegenwartsfragen, z. B.: Das philosophische Staunen, 1981. Schwierige Freiheit, 1986.",
+      "bbox": {
+        "x_pct": 10.955,
+        "y_pct": 68.256,
+        "w_pct": 81.809,
+        "h_pct": 22.555
+      },
+      "changed": true,
+      "change_reason": "The original detection had a truncated text and incorrect region boundaries. Updated to include the full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "184",
+      "bbox": {
+        "x_pct": 112.5,
+        "y_pct": 929.5,
+        "w_pct": 43.5,
+        "h_pct": 35.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Original text extraction for the biography was fragmented and incomplete.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "2830",
+  "page": 1,
+  "elapsed_seconds": 4.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

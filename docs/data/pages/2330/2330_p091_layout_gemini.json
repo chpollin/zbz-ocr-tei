@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "V. Le travail à l’Unesco",
+      "bbox": {
+        "x_pct": 24.298,
+        "y_pct": 24.032,
+        "w_pct": 43.18,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Corrected the label content to match the visible text on the page header and removed redundant fragment detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En 1966 vous êtes appelée à l’Unesco comme Directeur de la Division de philosophie, qui vient d’être créée.",
+      "bbox": {
+        "x_pct": 5.495,
+        "y_pct": 32.476,
+        "w_pct": 48.056,
+        "h_pct": 3.79
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription errors to reflect the actual text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je l'ai portée sur les fonts baptismaux. Elle avait été créée par le Directeur général, René Maheu, et il n'y avait rien d'analogue dans le système des Nations Unies.",
+      "bbox": {
+        "x_pct": 5.372,
+        "y_pct": 36.508,
+        "w_pct": 79.609,
+        "h_pct": 6.258
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous conservez ce poste jusqu'en 1968. Quelles sont les circonstances dans lesquelles vous avez été amenée à assumer cette charge ?",
+      "bbox": {
+        "x_pct": 5.409,
+        "y_pct": 43.363,
+        "w_pct": 79.451,
+        "h_pct": 6.363
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un beau jour, je reçois un coup de téléphone du Palais fédéral. On me dit qu'une inscription a été ouverte pour le poste de directeur de cette Division nouvelle. Attirée une fois de plus par la nouveauté et le changement, j'ai accepté, après réflexion, de poser ma candidature. J'étais séduite par la perspective d'une vie tout autre, je voulais me mettre à l'épreuve. J'étais fille de professeur, j'avais enseigné toute ma vie, je ne connaissais pratiquement que l'enseignement. Je me demandais jusqu'à quel point j'étais capable de fonctionner dans une grande administration et de me servir de ses rouages pour réaliser quelque chose ou exercer une influence utile. J'ai demandé un congé de deux ans à l'université. Je tenais en effet à rester liée à l'université pour ne pas dépendre définitivement de l'Unesco. Je ne voulais à aucun prix devenir esclave d'un traitement en dollars ou prisonnière de certains privilèges.",
+      "bbox": {
+        "x_pct": 5.165,
+        "y_pct": 49.355,
+        "w_pct": 79.78,
+        "h_pct": 25.863
+      },
+      "changed": true,
+      "change_reason": "Full correction of text OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En quoi consistaient vos fonctions de Directeur de la Division de philosophie ?",
+      "bbox": {
+        "x_pct": 5.372,
+        "y_pct": 75.863,
+        "w_pct": 79.365,
+        "h_pct": 4.242
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je vais vous raconter comment ma vie là-bas a commencé. J'ai été reçue par le Directeur général. René Maheu était un homme remarquablement intelligent, avec d'énormes qualités et d'énormes défauts. Une de ses qualités était que, lorsqu'il entrait dans une salle, on cessait de s'y ennuyer. Il savait traverser de pensée et de sens toutes les parties de cette énorme machine. Il savait animer l'Unesco en fonction de",
+      "bbox": {
+        "x_pct": 5.336,
+        "y_pct": 79.677,
+        "w_pct": 79.487,
+        "h_pct": 12.202
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "87",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 94.5,
+        "w_pct": 3.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "High error rate in original OCR text.",
+    "Page number missing from initial detections.",
+    "Section header bounding box was incomplete."
+  ],
+  "doc_id": "2330",
+  "page": 91,
+  "elapsed_seconds": 5.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,36 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "196 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number and running header incorrectly identified as text paragraph; merged content to exclude from main text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut donc laisser une liberté d'action beaucoup plus considérable à l'exécutif, pour qu'il ait des chances de réussir. Cela implique du même coup un exécutif suffisamment homogène. Il y a certes des cas où un gouvernement d'union nationale est indispensable, qu'il faille résister à une pression étrangère, donner au milieu d'une crise l'appui du pays entier à des mesures d'exception, ou que le rapport des forces, à l'intérieur, constitue une impasse politique. En temps normal, cependant, et pour des réalisations de longue haleine, l'exécutif doit étre suffisamment homogène pour appliquer un plan sans marchandages, sans que les uns, pour obtenir l'adhésion des autres sur telle partie du plan, se voient contraints d'en abandonner telle autre qui risque de priver l'ensemble de son efficacité. Il faut que, pendant un temps suffisant, une politique soit appliquée de façon cohérente; sinon on finit par accumuler simplement les inconvénients et les causes d'échec de chacune des politiques possibles, sans récolter les fruits d'aucune. Il est vrai cependant que la distinction entre le législatif et l'exécutif ne saurait étre, dans la vie politique réelle d'un pays, ni nette ni évidente. Sur le plan politique, plus encore que sur le plan privé, les fins et les moyens ne cessent de s'emmêler. Mais malgré cette confusion qui tient aux conditions mêmes de l'action, il importe de savoir clairement à quoi l'on tend, quelle distinction idéale on désire maintenir tant bien que mal entre les pouvoirs. Peut-étre est-ce même, pour le régime démocratique, une question vitale. Ceux qui poussent la volonté de démocratisation à l'extrême et croient servir la démocratie en paralysant de plus en plus l'exécutif se trompent et risquent de creuser eux-mêmes la fosse où ira s'ensevelir ce qu'ils ont aimé sans mesure ni discernement. Mais les dangers inverses existent. L'exécutif dispose de la force. La force de l'État, nous l'avons vu plus haut, est, grâce aux armes modernes, et même, plus simplement, grâce aux dimensions de tout l'appareil social, si grande actuellement que l'ère des soulèvements héroïques paraît close. En laissant les mains libres à l'exécutif pendant un laps de temps suffisant pour qu'il puisse faire ses preuves grâce à une politique cohérente, on risque de se trouver soudain dans une situation de fait, politique, économique, sociale, où le contrôle démocratique serait réduit à l'impuissance. Des précautions doivent étre prises. Par exemple, des",
+      "bbox": {
+        "x_pct": 10.724,
+        "y_pct": 11.203,
+        "w_pct": 86.351,
+        "h_pct": 78.904
+      },
+      "changed": true,
+      "change_reason": "Corrected erroneous and fragmented text content; fixed OCR errors in the source string."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR was highly fragmented and contained significant transcription errors.",
+    "Page number and header were incorrectly included in the paragraph block."
+  ],
+  "doc_id": "330",
+  "page": 230,
+  "elapsed_seconds": 8.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

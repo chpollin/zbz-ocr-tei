@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. — Par rapport à cette conception que vous venez de développer, de la mission de l'Europe dans le monde, quelles ont été alors les raisons de votre activisme européen ?",
+      "bbox": {
+        "x_pct": 178.0,
+        "y_pct": 36.85,
+        "w_pct": 620.27,
+        "h_pct": 46.21
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcription of the text as it was garbled in the input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — « La mission de l'Europe dans le monde », c'est beaucoup dire ! J'emploie très rarement ce mot. Si l'Europe a quelque chose à donner au monde, le monde a aussi des choses à lui donner. En ce moment, il est hors de doute que c'est la civilisation européenne qui est en train de se répandre dans le monde ; et ce que je déplore, c'est qu'au fur et à mesure que « le développement à l'européenne » se répand dans le monde, on perd de plus en plus, en Europe, le sens de la beauté, de la grandeur et de l'utilité de ce développement lui-même.",
+      "bbox": {
+        "x_pct": 179.85,
+        "y_pct": 96.77,
+        "w_pct": 798.53,
+        "h_pct": 126.05
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. — Je parlais des raisons de votre activisme européen.",
+      "bbox": {
+        "x_pct": 287.3,
+        "y_pct": 488.71,
+        "w_pct": 558.85,
+        "h_pct": 27.18
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — Les raisons de mon activisme européen ? Il me paraît lamentable qu'au moment précisément où l'Europe a une telle tâche à remplir dans le monde, elle devienne elle-même un continent de troisième ou de quatrième ordre, de par sa propre faiblesse et ses propres divisions. Dans la constellation mondiale actuelle, et surtout face à ce conflit Est-Ouest qui reste pour moi central, ce qui différencie et oppose les peuples d'Europe entre eux est tout à fait secondaire. Nous avons en commun quelque chose de beaucoup plus essentiel, ne fût-ce que cette façon commune de vivre la diversité. Les Européens doivent en prendre conscience et acquérir enfin une échelle valable de l'importance respective des divers enjeux. Il est absolument essentiel que l'Europe se fédère.",
+      "bbox": {
+        "x_pct": 179.49,
+        "y_pct": 510.73,
+        "w_pct": 800.61,
+        "h_pct": 219.35
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. — Quels ont été, pour vous, les grands artisans de la construction de l'Europe et quels ont été ceux qui lui ont fait obstacle ?",
+      "bbox": {
+        "x_pct": 176.19,
+        "y_pct": 745.97,
+        "w_pct": 799.02,
+        "h_pct": 165.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "156",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing page footer region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Transcription was heavily corrupted by OCR errors",
+    "Missing bounding box for page number 156"
+  ],
+  "doc_id": "2330",
+  "page": 160,
+  "elapsed_seconds": 6.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

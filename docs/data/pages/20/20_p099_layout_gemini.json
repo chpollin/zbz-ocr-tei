@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "jamais. } La mort donne \u0000 la force vitale son but et ses limites, et ainsi cest elle, en somme, qui cr\u0000e9e tout cela. C'est parce qu'il y a la mort que surgit tout ce qui est limit\u0000e9, form\u0000e9, achev\u0000e9, tout ce qui est individualis\u0000e9, tout ce qui est ind\u0000e9pendant, \u0000 pour se limiter contre la mort... Sinon, la vie continuerait \u0000 couler, \u0000ternellement et en ligne droite, indistincte et sans forme (1).",
+      "bbox": {
+        "x_pct": 8.539,
+        "y_pct": 13.06,
+        "w_pct": 76.145,
+        "h_pct": 20.467
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons remarqu\u0000e9 plus haut que pour Hegel non seulement les individus mais aussi les peuples meurent n\u0000e9cessairement. Pourtant le temps devient irr\u0000e9el dans sa Philosophie de l'Histoire, car la mort des individus et celle des peuples n'est pas une v\u0000e9ritable mort.",
+      "bbox": {
+        "x_pct": 8.735,
+        "y_pct": 33.46,
+        "w_pct": 75.858,
+        "h_pct": 14.967
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les individus meurent quand ils ont accompli ce qu'ils avaient \u0000 accomplir. Les peuples meurent quand ils n'ont plus rien \u0000 donner \u0000 l'histoire. Ce qu'ils ont accompli ne meurt pas avec eux; si c'est conforme \u0000 l'Id\u0000e9e, c'est \u0000ternel. Ce qui vient du hasard est irr\u0000e9el, et ce qui est vrai s'accomplit de toute fa\u0000e7on. \u0000 Nicht die allgemeine Idee ist es, welche sich in Gegensatz und Kampf, welche sich in Gefahr begibt; sie h\u0000e4lt sich unangegriffen und unbesch\u0000e4digt im Hintergrund und schickt das Besondere der Leidenschaft in den Kampf, sich abzureiben (2) \u0000.",
+      "bbox": {
+        "x_pct": 8.931,
+        "y_pct": 48.78,
+        "w_pct": 76.054,
+        "h_pct": 28.217
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle certitude laisse subsister qu'une",
+      "bbox": {
+        "x_pct": 12.605,
+        "y_pct": 76.997,
+        "w_pct": 72.184,
+        "h_pct": 2.383
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Fritz KLATT: Die Sch\u0000f6pferische Pause, \u0000ed. Diederichs, J\u0000e9na, 1923, p. 63.",
+      "bbox": {
+        "x_pct": 9.036,
+        "y_pct": 82.965,
+        "w_pct": 75.858,
+        "h_pct": 4.709
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed title text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(2) Die Vernunft in der Geschichte, p. 83.",
+      "bbox": {
+        "x_pct": 12.455,
+        "y_pct": 87.255,
+        "w_pct": 47.937,
+        "h_pct": 2.545
+      },
+      "changed": true,
+      "change_reason": "Completed truncated text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Paragraph 1 text significantly truncated by OCR.",
+    "Paragraph 2 text significantly truncated by OCR.",
+    "Paragraph 3 text significantly truncated by OCR.",
+    "Footnote 1 text contained OCR errors.",
+    "Footnote 2 text truncated."
+  ],
+  "doc_id": "20",
+  "page": 99,
+  "elapsed_seconds": 6.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

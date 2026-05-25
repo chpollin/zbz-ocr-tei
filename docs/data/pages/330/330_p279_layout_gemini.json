@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE IV",
+      "bbox": {
+        "x_pct": 37.423,
+        "y_pct": 25.963,
+        "w_pct": 16.713,
+        "h_pct": 1.488
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POLITIQUE INTERNATIONALE",
+      "bbox": {
+        "x_pct": 21.63,
+        "y_pct": 29.144,
+        "w_pct": 47.827,
+        "h_pct": 2.522
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il fut un temps où l'un des éléments essentiels de la définition de la « gauche », c'était l'internationalisme. Et ses adversaires mettaient même une grande obstination à souligner qu' « étre de gauche » est incompatible avec l'amour de la patrie et n'importe quelle fidélité nationale. « Le prolétaire n'a pas de patrie ». Les fêtes patriotiques, même celles qui commémorent des révoltes populaires, même celles qui appartiennent le plus manifestement au patrimoine révolutionnaire, étaient accaparées par « la droite » et un homme public de gauche eùt cru se déshonorer en y prenant part. Malraux, dans une interview récente, soulignait que l'internationalisme avait été l'un des critères des mouvements et des hommes de gauche, mais qu'aujourd'hui, on n'en parlait plus guère.",
+      "bbox": {
+        "x_pct": 3.44,
+        "y_pct": 36.988,
+        "w_pct": 84.903,
+        "h_pct": 24.768
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La formule « le prolétaire n'a pas de patrie » faisait allusion au dénuement ouvrier : la patrie est le lieu où l'on possède quelque chose et où ce quelque chose est défendu par tous ; celui qui ne possède rien n'en a pas. La formule rappelait aussi la solidarité ouvrière : celui qui ne possède rien a plus d'intérêts communs avec celui qui ne possède rien dans n'importe quel autre pays qu'avec celui qui, dans le même pays, possède quelque chose. Inexistence de la patrie, intérêts de classe. Si l'internationalisme « de gauche » n'avait réellement que ce sens-là, il serait périmé. Les prolétaires, souvent à titre individuel, ou, en tout cas, par les grands organismes qu'ils ont su se créer, possèdent maintenant des biens qu'ils leur importe de défendre : des droits et des ressources. Ils en sont tellement conscients qu'ils mettent le plus",
+      "bbox": {
+        "x_pct": 3.482,
+        "y_pct": 61.346,
+        "w_pct": 85.139,
+        "h_pct": 26.827
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "245",
+      "bbox": {
+        "x_pct": 128,
+        "y_pct": 892,
+        "w_pct": 22,
+        "h_pct": 15
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region at bottom left."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 771,
+        "y_pct": 892,
+        "w_pct": 19,
+        "h_pct": 15
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region at bottom right."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text extraction for the two paragraph regions was highly corrupted and inaccurate.",
+    "Page numbers at the bottom were not detected by initial layout pass."
+  ],
+  "doc_id": "330",
+  "page": 279,
+  "elapsed_seconds": 6.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

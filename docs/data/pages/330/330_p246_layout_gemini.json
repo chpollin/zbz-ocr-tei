@@ -1,0 +1,58 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "212 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected from paragraph to page_header as it contains page number and section title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi les exploiteurs coloniaux, par exemple, ne se trompent guère quand ils s'efforcent précisément de maintenir un état de misère dans la population indigène. Dès que se desserre l'étau des menaces élémentaires, dès que les conditions de nourriture, de température, de repos sont suffisantes, d'autres besoins, d'autres soifs s'éveillent en foule et cherchent obstinément, audacieusement, à se satisfaire. L'homme est par nature un animal mécontent. On l'accuse de vouloir toujours davantage, — mais cela est vrai et cela est bon. La tâche d'une civilisation n'est pas et ne peut pas être d'atrophier ses appétits, mais de les orienter dans telle direction plutôt que dans telle autre. Que l'ouvrier qui a une bicyclette convoite une moto, que celui qui a une moto convoite une voiture, que l'ouvrier américain qui a une voiture en convoite une plus belle, cela n'éveille pas mon indignation. Dans un monde où de belles voitures existent, pourquoi devrait-il se dire : « Moi, je suis un ouvrier, les belles voitures ne sont pas pour moi » ? Je ne déplore pas qu'il convoite la belle voiture, mais seulement qu'il ne convoite pas autre chose davantage encore.",
+      "bbox": {
+        "x_pct": 10.682,
+        "y_pct": 10.312,
+        "w_pct": 85.877,
+        "h_pct": 37.816
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le progrès technique a envahi notre univers, plus particulièrement nos grandes villes, et le niveau de vie s'est élevé dans des proportions imprévues. La foule connaît aujourd'hui une puissance de déplacement, des possibilités d'hygiène, une variété de plaisirs que Louis XIV n'a jamais imaginés. Sur ce terrain favorable, les convoitises prospèrent. La nourriture, souvent, n'est pas encore suffisante, le logis trop étroit manque du confort que l'on connaît, que l'on voit chez autrui, à côté, la sécurité n'est pas établie; et le monde hurle par toutes ses devantures, par toutes ses affiches, par toutes ses enseignes lumineuses, un infini de choses désirables.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing paragraph detected in the image that was previously omitted."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Paradoxe et anarchie du monde capitaliste : la féodalité dressait ses esclaves à tendre avant tout au salut de leur âme, — le capitalisme, non. Il a besoin d'écouler ses produits. Dès lors, il fait tous ses efforts pour susciter les besoins de ceux auxquels il refuse les moyens de les satisfaire. Les mouvements politiques et syndicaux qui ont assuré la défense de la classe salariée n'ont pas assez — n'ont presque pas — pris garde au fait qu'elle était utilisée à des fins de profit non seulement en tant que productrice, mais aussi, et de plus en plus, en tant que consommatrice. Dans les pays économi-",
+      "bbox": {
+        "x_pct": 10.724,
+        "y_pct": 70.143,
+        "w_pct": 85.557,
+        "h_pct": 17.317
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial transcription was highly inaccurate.",
+    "Missing paragraph block identified in the middle of the text.",
+    "Page number and running head incorrectly included as paragraph text."
+  ],
+  "doc_id": "330",
+  "page": 246,
+  "elapsed_seconds": 6.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

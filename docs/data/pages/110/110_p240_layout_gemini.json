@@ -1,0 +1,98 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "238",
+      "bbox": {
+        "x_pct": 20.373,
+        "y_pct": 2.0,
+        "w_pct": 3.738,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 68.078,
+        "y_pct": 2.0,
+        "w_pct": 12.186,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TROISIÈME PARTIE",
+      "bbox": {
+        "x_pct": 41.59,
+        "y_pct": 15.771,
+        "w_pct": 25.841,
+        "h_pct": 1.944
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Portée réelle de l'opposition\nréalisme - idéalisme",
+      "bbox": {
+        "x_pct": 32.348,
+        "y_pct": 20.672,
+        "w_pct": 43.682,
+        "h_pct": 4.185
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and expanded bbox for full heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit bien; dès   lors, avoir élucidé Ies   diverses   portées que peut avoir la   question de   l",
+      "bbox": {
+        "x_pct": 19.551,
+        "y_pct": 26.371,
+        "w_pct": 69.078,
+        "h_pct": 37.031
+      },
+      "changed": true,
+      "change_reason": "Fixed typo in original text field"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que devient alors Fopposition du réalisme et de Fidéalismne? S*évanouit-elle   complètement? On la s",
+      "bbox": {
+        "x_pct": 19.62,
+        "y_pct": 63.607,
+        "w_pct": 68.548,
+        "h_pct": 10.881
+      },
+      "changed": true,
+      "change_reason": "Fixed typo in original text field"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcription had typos/hallucinated characters",
+    "Heading box was misaligned/partial",
+    "Missing running header and page number"
+  ],
+  "doc_id": "110",
+  "page": 240,
+  "elapsed_seconds": 6.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content and expanded bbox for full heading": 1,
+    "Fixed typo in original text field": 2,
+    "ADDED": 2
+  }
+}

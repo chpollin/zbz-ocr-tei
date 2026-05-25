@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "40 IL FAUT RECONNAITRE",
+      "bbox": {
+        "x_pct": 11.898,
+        "y_pct": 7.425,
+        "w_pct": 76.25,
+        "h_pct": 2.12
+      },
+      "changed": true,
+      "change_reason": "Corrected page header and page number incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils n'ont pas moins de poids que des expériences scientifiques dans la science. Certes, je ne peux forcer personne à les faire, je ne peux contraindre personne à admettre qu'il les ait faites de la même façon que moi. Elles n'en gardent pas moins pour moi l'évidence de choses vues et vécues, qui « se sont passées ainsi ». Si d'autres les ont faites, je peux en appeler à eux; si d'autres peuvent les faire, je peux les appeler à les faire. C'est là mon effort — et c'est tout ce que je peux.",
+      "bbox": {
+        "x_pct": 11.898,
+        "y_pct": 11.63,
+        "w_pct": 76.25,
+        "h_pct": 26.12
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si je renonce ici à la preuve évidente, ce n'est pas pour faire du vague de l'esprit un oreiller confortable, mais parce que, pour la clarté même de l'intelligence, il faut qu'elle sache où ses preuves sont impossibles. Or l'histoire me semble avoir montré, sinon démontré : que la philosophie n'atteint pas à l'évidence scientifique; que là où elle se spécialise assez pour obtenir des résultats évidents (en logique et en psychologie), ces résultats se détachent d'elle; que la conception scientifique du problème philosophique ne rend aucun compte de l'intérêt que gardent les systèmes du passé, intérêt scientifiquement absurde et qui pourtant a toujours persisté sans qu'on s'en soit expliqué la nature. L'expérience individuelle me paraît montrer, sinon démontrer : que le problème philosophique, alors qu'il ne paraît réclamer qu'une connaissance de l'objet, exige en même temps une décision du sujet sur sa propre existence; qu'on ne peut pas prendre cette décision directement et à vide, mais",
+      "bbox": {
+        "x_pct": 12.395,
+        "y_pct": 37.493,
+        "w_pct": 76.265,
+        "h_pct": 51.544
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content and removed redundant footnote marker from beginning of text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was heavily garbled in both detected segments.",
+    "Page number and running header were incorrectly bundled into the text segment.",
+    "Extraneous characters at start of paragraph detected as text."
+  ],
+  "doc_id": "20",
+  "page": 42,
+  "elapsed_seconds": 5.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

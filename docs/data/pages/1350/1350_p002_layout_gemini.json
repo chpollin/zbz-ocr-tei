@@ -1,0 +1,154 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "6",
+      "bbox": {
+        "x_pct": 57.0,
+        "y_pct": 100,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number label"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "JEAN WAHL ET GABRIEL MARCEL",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 20.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "INTRODUCTION",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 10.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "7",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number label"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "frappe. cest ce les qui qui qui qui",
+      "bbox": {
+        "x_pct": 12.395,
+        "y_pct": 16.454,
+        "w_pct": 33.47,
+        "h_pct": 14.197
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "8 1974 plus",
+      "bbox": {
+        "x_pct": 10.831,
+        "y_pct": 36.385,
+        "w_pct": 25.0,
+        "h_pct": 5.346
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jean Wall apres qui qui",
+      "bbox": {
+        "x_pct": 14.357,
+        "y_pct": 50.388,
+        "w_pct": 31.186,
+        "h_pct": 11.108
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "pouriani, Pen",
+      "bbox": {
+        "x_pct": 57.173,
+        "y_pct": 18.837,
+        "w_pct": 8.792,
+        "h_pct": 1.981
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Recherches   philosophiques On bier profondeur est plus évidente qu'autrefois.",
+      "bbox": {
+        "x_pct": 59.457,
+        "y_pct": 51.939,
+        "w_pct": 27.938,
+        "h_pct": 6.233
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Royce WV Junes;",
+      "bbox": {
+        "x_pct": 79.157,
+        "y_pct": 61.773,
+        "w_pct": 11.829,
+        "h_pct": 1.898
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils loin; devanf des   Publics si fil accomplíe, Corps",
+      "bbox": {
+        "x_pct": 56.319,
+        "y_pct": 71.288,
+        "w_pct": 34.335,
+        "h_pct": 13.199
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing running headers labels",
+    "Missing page numbers labels"
+  ],
+  "doc_id": "1350",
+  "page": 2,
+  "elapsed_seconds": 8.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 4
+  }
+}

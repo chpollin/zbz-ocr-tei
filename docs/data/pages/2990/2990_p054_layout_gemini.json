@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Vom Wissen und Nicht-Wissen",
+      "bbox": {
+        "x_pct": 8.012,
+        "y_pct": 7.097,
+        "w_pct": 62.54,
+        "h_pct": 3.289
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zunächst wollte ich versuchen zu beschreiben, was Wissen und was Nicht-Wissen ist. Das war aber so schwer, daß ich es aufgegeben habe. In der letzten Vorlesung haben wir darüber gesprochen, wie junge Gelehrte, die eigentlich die Physik des 20. Jahrhunderts geschaffen haben, untereinander über das Wesen und die Grundlagen dieser Wissenschaft und über das Verhältnis der Theorie dieser Wissenschaft zur Erfahrung, zur Mathematik und zu ihren eigenen Grundbegriffen gesprochen haben. Wir haben einige dieser Begriffe erwähnt, z.B. Ursache, Gesetz, Theorie, Raum, Zeit, Geschwindigkeit. Wenn man an diese Worte denkt, werden sie nicht allmählich klarer, sondern – jedenfalls für mich – vorrener. Denn diese Worte haben nicht überall denselben Sinn, sie wirken nicht auf dieselbe Weise, und man kann sie nicht auf dieselbe Weise gebrauchen. Es fragt sich, welche Möglichkeiten und welche Gefahren für eine Wissenschaft entstehen, wenn ihre Grundbegriffe von dieser Art sind.",
+      "bbox": {
+        "x_pct": 7.325,
+        "y_pct": 25.715,
+        "w_pct": 80.037,
+        "h_pct": 27.714
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Allmählich bekam ich das Gefühl, daß es einem Physiker seltsam erscheinen muß, so als würde seine Wissenschaft oder eher sein Forschen, seine Tätigkeit des Forschens allmählich individualisiert, personifiziert, als würde es mehr und mehr dem eigenen Wesen Menschen entsprechen. Und es ist tatsächlich so, daß man in den Büchern, in denen diese Geschichten erzählt werden, die Menschen, die Wissenschaftler allmählich kennenlernt. Wenn man liest, daß jemand dasund das gesagt hat, weiß man schon, wer das ist. Es ist also irgendwie persönlich geworden. Das ist in einer Wissenschaft, deren Theorie doch eine Gesamttheorie ist, die für alle Menschen gelten kann – wenn auch nicht unbedingt gelten muß –, ein wenig beunruhigend. Es ist, als ob die Quellen, die Impulse dieser Theorie und auch die Zweckmäßigkeit und die Kriterien den Stempel jedes einzelnen tragen würden, der darin gearbeitet hat.",
+      "bbox": {
+        "x_pct": 7.276,
+        "y_pct": 53.289,
+        "w_pct": 79.84,
+        "h_pct": 25.765
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man könnte sagen, daß je genauer das Messen in einer Wissenschaft wird, desto empfindlicher wird es im Verhältnis zu den verschiedenen Arten, den Gegenständen zu nähern. Vielleicht ist es wahr, denn eine sehr genaue Uhr ist sensibler als eine grobe. Vielleicht ist es auch so bei",
+      "bbox": {
+        "x_pct": 7.325,
+        "y_pct": 78.808,
+        "w_pct": 79.669,
+        "h_pct": 8.199
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate text transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "The OCR/transcription for the paragraphs was highly inaccurate and truncated.",
+    "The input regions were incorrectly parsed; the third and fourth paragraphs were incorrectly separated/merged."
+  ],
+  "doc_id": "2990",
+  "page": 54,
+  "elapsed_seconds": 5.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

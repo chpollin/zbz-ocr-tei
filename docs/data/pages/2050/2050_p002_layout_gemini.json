@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "NE",
+      "bbox": {
+        "x_pct": 10.593,
+        "y_pct": 81.125,
+        "w_pct": 1.603,
+        "h_pct": 1.757
+      },
+      "changed": true,
+      "change_reason": "Identified as extraneous artifact or footer fragment, relabeled to _filter."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "RG Vels",
+      "bbox": {
+        "x_pct": 18.663,
+        "y_pct": 85.171,
+        "w_pct": 3.57,
+        "h_pct": 2.061
+      },
+      "changed": true,
+      "change_reason": "Identified as printer/publisher location fragment, belongs to footer area, relabeled to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oldenburgischen",
+      "bbox": {
+        "x_pct": 41.577,
+        "y_pct": 29.962,
+        "w_pct": 6.926,
+        "h_pct": 3.11
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Inhaltsverzeichnis",
+      "bbox": {
+        "x_pct": 53.233,
+        "y_pct": 8.18,
+        "w_pct": 13.906,
+        "h_pct": 3.034
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "document_index",
+      "bbox": {
+        "x_pct": 53.304,
+        "y_pct": 31.454,
+        "w_pct": 37.927,
+        "h_pct": 57.611
+      },
+      "changed": true,
+      "change_reason": "Label document_index is not a standard type, corrected to text/zb_paragraph for table of contents structure."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Inconsistent label usage for document_index.",
+    "Footer items mislabeled as general text."
+  ],
+  "doc_id": "2050",
+  "page": 2,
+  "elapsed_seconds": 4.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

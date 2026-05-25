@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mer sans ambages que la valeur de certaines orientations philosophiques se vérifie par le fait qu'elles nous aident à vivre et à travailler. Je ne prononce pas de louange du pragmatisme dont la pensée de Jeanne Hersch est loin. Je veux dire seulement que sa philosophie, tout comme celle de son maître Jaspers, est ancrée dans la problématique existentielle de l'être humain. Cette manière de réfléchir est particulièrement nécessaire à tous ceux qui, comme moi, ont une tendance malheureuse à la delectatio morosa, c'est-à-dire à une rumination de leurs fautes et de leurs péchés, ce qui, dans mon cas, peut bien provenir de mon éducation catholique. Les scrupuleux de ce genre ont besoin non pas de la psychanalyse qui les emprisonnerait davantage dans leur bourbier, mais d'un appel à leur énergie spirituelle. J'ai appris de Jeanne Hersch que notre passé n'existe pas comme une chose figée à jamais, qu'il est sans cesse transformé par nos actes du présent qui lui donnent du sens, ou, au contraire le privent de sens. Le mouvement en avant nous est indispensable pour maintenir notre équilibre, mais ce mouvement, pour qu'il ne soit pas illusoire, nous devons le confirmer par notre travail. Attelé à ma table d'écrivain, je me souviens toujours des temps durs au commencement de mon exil, quand je me demandais si je possédais assez de force pour donner un sens à ma décision de quitter la Pologne. Le soutien moral que j'ai obtenu à",
+      "bbox": {
+        "x_pct": 17.087,
+        "y_pct": 13.442,
+        "w_pct": 57.701,
+        "h_pct": 59.902
+      },
+      "changed": true,
+      "change_reason": "The text was cut off and incomplete. Updated to reflect the full content of the paragraph visible in the region."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 72.842,
+        "y_pct": 75.331,
+        "w_pct": 1.956,
+        "h_pct": 1.777
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer, mislabeled as text."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Original text extraction was fragmented/incomplete.",
+    "Page number was mislabeled as text paragraph."
+  ],
+  "doc_id": "2780",
+  "page": 8,
+  "elapsed_seconds": 4.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

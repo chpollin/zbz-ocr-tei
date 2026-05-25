@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "croisent. Il ne peut vivre ni dans la permanence, ni dans l'écoulement ; ni avec le temps, ni sans le temps.",
+      "bbox": {
+        "x_pct": 26.939,
+        "y_pct": 13.598,
+        "w_pct": 57.278,
+        "h_pct": 6.901
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription and fixed truncated words."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est l'écoulement qui lui accorde l'effacement de l'intolérable et qui lui permet d'espérer le nécessaire ou le désirable. C'est lui qui lui permet de nouveaux commencements, qui lui rend la disponibilité de la page blanche, de la table rase. Grâce à lui, naissances et renaissances bravent les défis définitifs du désespoir.",
+      "bbox": {
+        "x_pct": 26.769,
+        "y_pct": 20.139,
+        "w_pct": 57.521,
+        "h_pct": 15.617
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription error and content merging."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais c'est l'écoulement aussi qui donne, à tout ce qui est, l'inconsistance de l'éphémère, qui jette sur tout ce qui est, l'ombre anticipée du néant et le soupçon du non-sens.",
+      "bbox": {
+        "x_pct": 26.981,
+        "y_pct": 35.38,
+        "w_pct": 57.267,
+        "h_pct": 9.101
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription and fixed truncated words."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Contre la mort, contre l'inexistence, contre la peur du néant, l'homme cherche refuge dans la permanence. Il cherche à créer des œuvres qui dureront toujours, à faire être ce qui continuera à être sans lui quand lui sera mort, victime de l'écoulement ; ce qui échappera au temps soit en transperçant en un instant éternel, soit en persistant dans une durée sans fin. Contre la fragilité du temporel, il cherche la vérité, la cohérence, la non-contradiction, l'indécomposable, le simple. Il se réfugie dans ce qui résiste au temps ou ce qui est indifférent au temps, les matériaux les plus durs, les mathématiques, les chefs-d'œuvre, - la densité",
+      "bbox": {
+        "x_pct": 26.907,
+        "y_pct": 44.015,
+        "w_pct": 57.341,
+        "h_pct": 28.896
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "78",
+      "bbox": {
+        "x_pct": 27.27,
+        "y_pct": 74.92,
+        "w_pct": 2.7,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Transcription errors in all text blocks",
+    "Page number at the bottom was not detected as a separate block",
+    "Incomplete text in blocks"
+  ],
+  "doc_id": "2780",
+  "page": 77,
+  "elapsed_seconds": 4.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

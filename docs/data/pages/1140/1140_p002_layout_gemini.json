@@ -1,0 +1,126 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Philosophie und Reformen des Bildungswesen La philosophie et les réformes actuelles de lenseignement",
+      "bbox": {
+        "x_pct": 14.126,
+        "y_pct": 17.225,
+        "w_pct": 65.351,
+        "h_pct": 6.12
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Symposium der schweizerischen philosophischen Gesellschaft in Luzern am 24. Februar 1974 Symposium d",
+      "bbox": {
+        "x_pct": 18.106,
+        "y_pct": 24.917,
+        "w_pct": 57.558,
+        "h_pct": 7.846
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "QUELQUES REMARQUES SUR LES RÉFORMES ÉDUCATIVES ET LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 14.907,
+        "y_pct": 35.994,
+        "w_pct": 63.634,
+        "h_pct": 3.681
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par Madame Jeanne Hersch, professeur 1",
+      "bbox": {
+        "x_pct": 29.388,
+        "y_pct": 41.464,
+        "w_pct": 34.456,
+        "h_pct": 1.994
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous vivons aujourdhui non seulement une crise politique très grave, mais encore une authentique cri",
+      "bbox": {
+        "x_pct": 14.239,
+        "y_pct": 45.282,
+        "w_pct": 64.996,
+        "h_pct": 7.578
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Cunanimité sur des clichés",
+      "bbox": {
+        "x_pct": 35.27,
+        "y_pct": 56.182,
+        "w_pct": 22.804,
+        "h_pct": 1.595
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il se produit actuellement un phénomène rare: la plupart de ceux se servent des mass media sont entr",
+      "bbox": {
+        "x_pct": 13.997,
+        "y_pct": 58.786,
+        "w_pct": 65.133,
+        "h_pct": 21.652
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Texte reproduit à peu tel qu'il a été prononcé en damorce son caractère oral. guise près gardé",
+      "bbox": {
+        "x_pct": 17.994,
+        "y_pct": 83.06,
+        "w_pct": 60.919,
+        "h_pct": 3.305
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "1",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 14.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page number region."
+  ],
+  "doc_id": "1140",
+  "page": 2,
+  "elapsed_seconds": 6.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

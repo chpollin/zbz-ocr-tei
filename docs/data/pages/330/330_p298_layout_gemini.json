@@ -1,0 +1,115 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "264",
+      "bbox": {
+        "x_pct": 11.462,
+        "y_pct": 69.117,
+        "w_pct": 2.786,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Page number should be identified as page_header/page_footer."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 36.351,
+        "y_pct": 69.117,
+        "w_pct": 26.546,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Running header should be identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "rôle dans l'ensemble fédéral français, ouvrirait aussi à la France la possibilité d'une association avec les autres nations au sein d'une Fédération européenne. Et tous les problèmes : nationaux, coloniaux, européens, mondiaux, se poseraient en termes différents. Le jeu serait changé et la fatalité vaincue.",
+      "bbox": {
+        "x_pct": 11.462,
+        "y_pct": 105.0,
+        "w_pct": 85.933,
+        "h_pct": 8.761
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chimère. Le gouvernement français à présidence socialiste n'a pas osé prendre l'initiative d'un changement d'orientation politique radical. Peut-être n'a-t-il même pas, à force de « réalisme », pris le temps d'y songer. Il a poursuivi les efforts de « relance européenne », mais en tirant de l'échec de la C. E. D. une leçon de prudence supplémentaire : alors que les circonstances ne laissent plus de chances qu'à l'audace, il a consenti à supprimer, dans Euratom, tout ce qui pouvait offrir un jour une chance de supra-nationalité. Et en Algérie, il fait la guerre.",
+      "bbox": {
+        "x_pct": 11.379,
+        "y_pct": 198.0,
+        "w_pct": 86.017,
+        "h_pct": 19.34
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On peut se demander s'il n'a pas, lui aussi, comme tous les mouvements socialistes le font depuis longtemps, triché encore une fois avec le hic et nunc, le réel présent : il ne peut pas, en ce moment, mener en Algérie une politique socialiste. Alors, fidèle à son idéal, il en prépare la possibilité - par la guerre. Plus tard, un jour, quand les choses seront autres qu'elles ne le sont, il sera socialiste. Et ce jour-là, tout le monde verra sa loyauté profonde.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing paragraph content not included in initial OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce jour-là, toujours futur - n'est-ce pas l'irréel lui-même?",
+      "bbox": {
+        "x_pct": 15.181,
+        "y_pct": 530.0,
+        "w_pct": 82.451,
+        "h_pct": 2.531
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le dernier congrès de la S. F. I. O. a réagi, il est vrai, si fortement à la politique gouvernementale que les autorités du Parti ont dû amender profondément le texte de la résolution proposée et y introduire notamment, à propos de l'Algérie, en opposition directe aux propos du ministre résidant, « la lutte à mener sur deux fronts. » Preuve que l'idéologie socialiste comporte encore à la base des exigences précises. Mais elles restent sentimentales, moralisantes, assez mollement confrontées avec les faits, entachées des faiblesses et des paresses trop longtemps entretenues par la situation facile de « parti d'opposition ».",
+      "bbox": {
+        "x_pct": 12.075,
+        "y_pct": 572.0,
+        "w_pct": 86.072,
+        "h_pct": 21.248
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous ne nous attarderons pas sur l'affaire de Suez et le coup du colonel Nasser. Jusqu'ici, les réactions de l'Occident ont été avant tout nationales, imposées par des menaces économiques évidentes. Un facteur idéologique pourtant a joué : le prestige,",
+      "bbox": {
+        "x_pct": 12.535,
+        "y_pct": 800.0,
+        "w_pct": 85.515,
+        "h_pct": 8.708
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text content."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Most text regions had significant OCR errors.",
+    "Page number and header were labeled as text.",
+    "Multiple paragraphs were entirely missed in the extraction."
+  ],
+  "doc_id": "330",
+  "page": 298,
+  "elapsed_seconds": 6.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

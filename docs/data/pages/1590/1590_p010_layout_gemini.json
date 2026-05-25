@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "jamais existé. On en catalogue tous les défauts et tous les dangers. On ne se reporte pour ainsi dire jamais à ce qu'était la vie concrète de naguère: durée et conditions du travail, inexistence des vacances, pas de sécurité sociale, conditions de logement, pauvreté et rareté de la scolarisation, absence d'hygiène, peines de la ménagère privée d'eau courante, d'auxiliaires électro-ménagers, maladies, épidémies, mortalité infantile ou précoce, douleurs physiques qu'on ne savait soulager, etc..., etc... On méconnaît systématiquement les énormes progrès accomplis dans la réalité de la vie quotidienne, et on ne met en relief que les nouveaux maux et les nouveaux problèmes impliqués par la révolution scientifique et technique, comme si elle avait succédé directement à la perfection et à la pureté du jardin d'Eden. On postule chez les hommes une innocence à la fois animale et angélique, — animale parce qu'elle exclut tout jugement moral, angélique parce qu'elle feint d'ignorer jusqu'à l'inexistence tout besoin du corps. Il semble dès lors qu'une vie collective idéale soit immédiatement réalisable, le désir crée le droit, il suffirait que chacun fasse ce qui lui plaît.",
+      "bbox": {
+        "x_pct": 13.531,
+        "y_pct": 7.25,
+        "w_pct": 80.328,
+        "h_pct": 37.047
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans ce climat, s'il n'en est pas ainsi en fait, si chacun ne cesse de subir des contraintes et des limitations, la faute en incombe, pense-t-on, uniquement à la malignité d'institutions d'ailleurs inutiles: Etat, travail, économie, droit, école, etc. Il importe donc de les détruire pour rétablir «la spontanéité», au nom des droits de l'homme. Comparer le donné au rêvé, montrer la supériorité du rêvé sur le donné, détruire le donné. Les terroristes ont certes recours à des méthodes que, pour divers motifs, plus psychologiques que logiques, et aussi simplement par crainte, la plupart des intellectuels récusent. Il n'en reste pas moins que d'une certaine manière floue, les finalités se rejoignent. Au fond, les terroristes ne font que tirer les conséquences — sans doute avec un courage qui va jusqu'à la témérité — de ce dont, plus ou moins clairement, on s'était laissé persuader.",
+      "bbox": {
+        "x_pct": 13.115,
+        "y_pct": 44.058,
+        "w_pct": 80.542,
+        "h_pct": 28.09
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'activisme terroriste n'est plus vraiment jugé sous l'angle de ses victimes, le plus souvent innocentes et arbitrairement atteintes, alors qu'elles sont sans défense, et donc de la façon la plus lâche, mais comme un comportement, cohérent dans son fanatisme, qui découle d'un idéalisme totalisateur.",
+      "bbox": {
+        "x_pct": 12.774,
+        "y_pct": 73.943,
+        "w_pct": 80.631,
+        "h_pct": 8.638
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce même idéalisme puise en outre sa force dans l'horreur très réelle qu'inspirent en Europe des monstruosités récentes. Après les abus de la",
+      "bbox": {
+        "x_pct": 12.61,
+        "y_pct": 84.553,
+        "w_pct": 80.202,
+        "h_pct": 4.686
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "56",
+      "bbox": {
+        "x_pct": 13.235,
+        "y_pct": 91.137,
+        "w_pct": 2.457,
+        "h_pct": 2.213
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer for page number."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number missed as part of document text in original extraction."
+  ],
+  "doc_id": "1590",
+  "page": 10,
+  "elapsed_seconds": 7.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

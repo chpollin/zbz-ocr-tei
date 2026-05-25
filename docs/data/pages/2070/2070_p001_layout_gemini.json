@@ -1,0 +1,124 @@
+{
+  "doc_id": "2070",
+  "page": 1,
+  "image_width": 1240,
+  "image_height": 1838,
+  "num_regions": 10,
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.9,
+        "y_pct": 8.0,
+        "w_pct": 60.7,
+        "h_pct": 1.2
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.9,
+        "y_pct": 10.4,
+        "w_pct": 26.3,
+        "h_pct": 0.9
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.9,
+        "y_pct": 12.5,
+        "w_pct": 86.1,
+        "h_pct": 3.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.9,
+        "y_pct": 16.3,
+        "w_pct": 49.1,
+        "h_pct": 1.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.9,
+        "y_pct": 18.8,
+        "w_pct": 51.2,
+        "h_pct": 1.2
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.9,
+        "y_pct": 23.1,
+        "w_pct": 87.1,
+        "h_pct": 3.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.9,
+        "y_pct": 27.2,
+        "w_pct": 87.1,
+        "h_pct": 1.8
+      }
+    },
+    {
+      "label": "picture",
+      "zbz_tag": "_skip",
+      "text": "",
+      "bbox": {
+        "x_pct": 6.4,
+        "y_pct": 83.6,
+        "w_pct": 19.5,
+        "h_pct": 7.6
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 15.6,
+        "y_pct": 83.7,
+        "w_pct": 70.1,
+        "h_pct": 2.0
+      }
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "",
+      "bbox": {
+        "x_pct": 35.8,
+        "y_pct": 93.6,
+        "w_pct": 27.9,
+        "h_pct": 2.7
+      }
+    }
+  ],
+  "elapsed_seconds": 3.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini-detect",
+  "page_orientation": "unknown",
+  "num_columns": 1
+}

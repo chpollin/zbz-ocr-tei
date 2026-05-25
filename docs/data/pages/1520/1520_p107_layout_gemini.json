@@ -1,0 +1,146 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie, contrairement à la foi révélée, ne fait pas de propagande, elle laisse à chaque homme, en tant qu'il est lui-même, sa libre décision. Elle n'annonce ni ne force la conviction. En elle, des hommes libres se rencontrent en tant que compagnons ayant un destin commun. Selon certains, ma manière de philosopher doit conduire à la foi révélée — mais telle n'est nullement mon intention. Moi-même je ne peux que penser avec Kant : si la Révélation était une réalité, ce serait le désastre pour la liberté créée de l'être humain.",
+      "bbox": {
+        "x_pct": 6.911,
+        "y_pct": 9.623,
+        "w_pct": 84.146,
+        "h_pct": 17.541
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and combined split lines into a single coherent paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant je ne veux pas que ma pensée exclue finalement la Révélation — même s'il me paraît impossible que je puisse y croire jamais. La foi philosophique est une origine propre. Mais elle laisse ouverte pour autrui la possibilité de la Révélation, sans pouvoir la comprendre. Elle cherche non l'hostilité, mais la loyauté, non la rupture, mais la communication, non la violence, mais la libéralité.",
+      "bbox": {
+        "x_pct": 6.951,
+        "y_pct": 26.907,
+        "w_pct": 84.011,
+        "h_pct": 11.765
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text to match actual source."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(La foi philosophique face à la Révélation, p. 37-38)",
+      "bbox": {
+        "x_pct": 57.724,
+        "y_pct": 38.389,
+        "w_pct": 33.062,
+        "h_pct": 4.027
+      },
+      "changed": true,
+      "change_reason": "Combined fragmented footnote lines and assigned to footnote label."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "40. L'autorité",
+      "bbox": {
+        "x_pct": 7.182,
+        "y_pct": 44.841,
+        "w_pct": 17.751,
+        "h_pct": 1.859
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling of header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'autorité ne s'incarne pas nécessairement dans une institution et un clergé qui la représente, à qui l'on accepte d'obéir. Elle peut se fonder aussi sur la spiritualité d'un grand passé trois fois millénaire, que l'on respecte et que l'on écoute avec confiance, que l'on accepte en se l'assimilant. On peut rappeler à son propos cette vérité : nul ne peut poser un autre fondement que celui qui existe dès le début. De là vient cette influence englobante, cette autorité en suspens qui nous guide, sans se laisser capter par aucune structure objective, identique pour tous.",
+      "bbox": {
+        "x_pct": 6.599,
+        "y_pct": 47.841,
+        "w_pct": 84.187,
+        "h_pct": 17.515
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in paragraph text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(La foi philosophique, trad. française, p. 153)",
+      "bbox": {
+        "x_pct": 61.748,
+        "y_pct": 65.039,
+        "w_pct": 29.038,
+        "h_pct": 4.027
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to footnote."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "41. La religion biblique",
+      "bbox": {
+        "x_pct": 6.911,
+        "y_pct": 71.38,
+        "w_pct": 29.81,
+        "h_pct": 2.596
+      },
+      "changed": true,
+      "change_reason": "Corrected header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La foi philosophique nous permet de faire ici deux constatations que je voudrais justifier, l'une négative, l'autre positive :",
+      "bbox": {
+        "x_pct": 10.935,
+        "y_pct": 74.379,
+        "w_pct": 79.621,
+        "h_pct": 2.314
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1) La religion biblique contient en germe une prétention qui apparaît dans toutes ses ramifications, mais qui n'est peut-être ni indispensable, ni définitive, c'est d'être la seule vraie. Cet exclusivisme, en ses mobiles comme en ses effets, est la cause de notre perte, à nous, hommes. Pour le salut de la vérité et celui de nos âmes, nous devons combattre cette prétention, elle est mortelle.",
+      "bbox": {
+        "x_pct": 6.68,
+        "y_pct": 77.918,
+        "w_pct": 83.97,
+        "h_pct": 11.945
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "101",
+      "bbox": {
+        "x_pct": 86.4,
+        "y_pct": 91.5,
+        "w_pct": 4.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified and labeled page number as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 8,
+  "issues": [
+    "Severe OCR errors throughout text blocks.",
+    "Footer page number was not captured as a distinct object.",
+    "Section headings incorrectly identified as text."
+  ],
+  "doc_id": "1520",
+  "page": 107,
+  "elapsed_seconds": 6.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

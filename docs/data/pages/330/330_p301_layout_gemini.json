@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 267",
+      "bbox": {
+        "x_pct": 301.0,
+        "y_pct": 89.0,
+        "w_pct": 395.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le régime stalinien avait été celui de l'arbitraire, de l'incompétence, des polices, de la terreur, du crime. Il ne restait rien de ces « démocraties d'un autre type », fondées sur l'égalité économique, la suppression des classes et l'unanimité des opinions, que les adeptes occidentaux, et surtout les intellectuels progressistes, s'efforçaient avec tant d'ingéniosité de faire comprendre et admettre à l'opinion publique. Rien, il n'en restait rien. A vrai dire, le rapport de Khrouchtchev n'apportait de confirmation qu'à une seule sorte de presse : celle qui était, selon « l'opinion bien pensante de gauche à Paris », vendue depuis des années aux Américains et qui, sous les insultes, n'avait cessé de dénoncer les crimes que Khrouchtchev maintenant énumérait ; celle qui n'avait cessé d'affirmer que la démocratie économique exige le contrôle de la démocratie politique et que la suppression de celle-ci entraîne nécessairement l'exploitation économique sous toutes ses formes ; celle qui avait donc constamment repoussé l'alternative fallacieuse : démocratie formelle ou démocratie économique, droits politiques ou justice sociale. Oui, Khrouchtchev décrivait le régime stalinien comme l'avaient fait longtemps nombre de traîtres social-démocrates...",
+      "bbox": {
+        "x_pct": 3.064,
+        "y_pct": 11.791,
+        "w_pct": 85.613,
+        "h_pct": 43.021
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Khrouchtchev serait-il donc social-démocrate? Ici intervient l'élément proprement fantastique qui donne à cet épisode décisif de notre histoire l'irréalité d'un cauchemar : Khrouchtchev a été l'un des principaux complices du criminel qu'il dénonce. S'agit-il donc de repentir? Va-t-il se déclarer coupable, condamner le régime où de tels forfaits ont pu se produire et se reproduire pendant des dizaines d'années, où la terreur était telle que lui, Khrouchtchev, se trouvait réduit au silence et à la docilité sous peine de mort?",
+      "bbox": {
+        "x_pct": 3.621,
+        "y_pct": 54.813,
+        "w_pct": 85.139,
+        "h_pct": 18.538
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nullement. Il reste au pouvoir. Il offre aux Occidentaux son sourire jovial. Le régime? Il suffira de remplacer « le culte de la personnalité » par la « direction collective », et tout ira bien. Le reste? Affaire de technique et de productivité. C'est tout.",
+      "bbox": {
+        "x_pct": 3.9,
+        "y_pct": 73.262,
+        "w_pct": 84.958,
+        "h_pct": 8.85
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelles furent les réactions des divers types idéologiques occidentaux à cette extraordinaire « déstalinisation »? Une remarque d'abord : d'une façon tout à fait générale, l'Occi-",
+      "bbox": {
+        "x_pct": 47.0,
+        "y_pct": 834.0,
+        "w_pct": 887.0,
+        "h_pct": 112.0
+      },
+      "changed": true,
+      "change_reason": "Added missing block detected at the bottom of the page."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page header was misidentified as text.",
+    "Bottom paragraph was missing from the initial region list.",
+    "OCR text extraction quality is low due to poor recognition of original characters."
+  ],
+  "doc_id": "330",
+  "page": 301,
+  "elapsed_seconds": 4.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

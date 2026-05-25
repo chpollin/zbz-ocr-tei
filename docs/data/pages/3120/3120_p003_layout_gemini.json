@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Philosophie",
+      "bbox": {
+        "x_pct": 41.409,
+        "y_pct": 5.163,
+        "w_pct": 18.14,
+        "h_pct": 3.288
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch (Genève)",
+      "bbox": {
+        "x_pct": 5.65,
+        "y_pct": 12.165,
+        "w_pct": 33.707,
+        "h_pct": 2.627
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Aux Sources existentielles des Sciences (Vom existentiellen Ursprung der Wissenschaft)",
+      "bbox": {
+        "x_pct": 5.65,
+        "y_pct": 18.777,
+        "w_pct": 75.705,
+        "h_pct": 5.589
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand nous parlons de science, nous pensons à la connaissance que nous avons du monde qui nous entoure, de notre propre corps, de la société où nous vivons, ou des mouvements de notre propre pensée. Quand nous parlons de technique, nous pensons au pouvoir que ce savoir nous permet d'acquérir sur le monde qui nous entoure, et dont fait partie notre corps, mortel et vulnérable. Dans les deux cas, ce que nous avons dans l'esprit, ce sont les résultats de la recherche scientifique et de l'invention technique. Ces résultats nous fascinent au point de nous faire oublier que science et technique sont avant tout des activités de recherche, et donc de libres efforts de l'esprit, des aventures voulues, souvent avec passion, dont le ressort ultime reste le plus souvent caché.",
+      "bbox": {
+        "x_pct": 5.376,
+        "y_pct": 32.4,
+        "w_pct": 89.33,
+        "h_pct": 26.721
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La science semble se réduire souvent à un catalogue de résultats appris, la technique, à un ensemble de recettes efficaces. On s'offre alors le luxe de les juger de haut, de les déshumaniser jusqu'à ne voir en elles que des facteurs de déshumanisation. Ainsi se crée une situation proprement schizophrénique: alors que la vie concrète est façonnée vingt-quatre heures sur vingt-quatre par les conquêtes techniques dérivées des sciences, alors que, dans leur manière de vivre, de penser, de croire, et même d'aimer, nos contemporains se soumettent, sans même s'en apercevoir, à des croyances scientistes souvent plus destructrices que n'importe quelles superstitions, - ces mêmes contemporains professent pour la science et pour la technique le mépris le plus profond, comme si ce mépris devait leur rendre leur dignité de sujets spirituels. Etrange revanche, paresseuse, vide, par laquelle on s'imagine sauvegarder une dimension de liberté créatrice, une épaisseur de mystère sans objet.",
+      "bbox": {
+        "x_pct": 4.925,
+        "y_pct": 59.121,
+        "w_pct": 89.562,
+        "h_pct": 33.995
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors in text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 5.376,
+        "y_pct": 95.332,
+        "w_pct": 1.488,
+        "h_pct": 2.47
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "OCR transcription in paragraph 1 contains multiple errors.",
+    "OCR transcription in paragraph 2 contains multiple errors.",
+    "Page number 8 was incorrectly labeled as text."
+  ],
+  "doc_id": "3120",
+  "page": 3,
+  "elapsed_seconds": 4.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

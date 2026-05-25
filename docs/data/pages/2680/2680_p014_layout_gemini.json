@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und trotzdem kann keiner von beiden, ausser wenn er dabei ist, den f%fcr das Leben unentbehrlichen gesunden Menschenverstand zu verlieren, jene Wahl in ihrer Sch%4rfe treffen, denn sie kann sich der Ann%4herung, dem Kompromiss, der Vermengung, nicht entziehen. Selbst in unserem logischen Denken ist es die Aufeinanderfolge der Gedanken, im Zerfliessen der Zeit, die es uns erlaubt, das Widerspr%4chliche nicht einfach als Unm%4glichkeit abzutun, sondern als Zeichen zu nehmen f%fcr das, was in unserem Sein und in unserem Glauben sich jedem logischen Verstehen entzieht.",
+      "bbox": {
+        "x_pct": 4.202,
+        "y_pct": 5.259,
+        "w_pct": 86.357,
+        "h_pct": 14.296
+      },
+      "changed": true,
+      "change_reason": "The text was heavily truncated and erroneous in the input. Updated to match the actual content of the scanned image paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deshalb sind wir, unaufhebbar, der Zeit gegen%4ber, Verb%4ndete und Feinde zugleich.",
+      "bbox": {
+        "x_pct": 4.202,
+        "y_pct": 21.65,
+        "w_pct": 86.3,
+        "h_pct": 3.6
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated single-word line and combined with preceding context if applicable, or fixed identification."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Feinde: alles was wir schaffen, lieben, alles was wir sind, ist nicht nur bedroht – sondern schon jetzt von Zerfliessen unterh%4hlt. Exegi monumentum aere perennius, schrieb der Dichter Horaz, als er seine Oden jenem unaufhaltsamen Gr%4nspan zu entziehen versuchte, dem selbst Erze nicht standhalten. Deswegen sind wir unterwegs auf der Suche nach Dauer, in all ihren Gestalten, auf allen Gebieten: in den Heldentaten, die durch ihren Glanz unvergesslich werden k%4nnten; in unzerst%4rbaren Rohstoffen; in einem Ruhm, den man sich treu w%4hnen m%4chte, – oder sogar indem man selbst mit seinen Werken bei der Transzendenz Gottes als einzig unverg%4nglicher Zuflucht sucht.",
+      "bbox": {
+        "x_pct": 4.202,
+        "y_pct": 26.741,
+        "w_pct": 86.31,
+        "h_pct": 16.496
+      },
+      "changed": true,
+      "change_reason": "Updated to match the full paragraph text present in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Verb%4ndete: die Zeit selbst, die Zeit allein, ist unverg%4nglich. Das einzig m%4gliche ist, ihr nachzugeben, sich auf sie zu verlassen, damit es nichts Unheilbares g%4be. Schliesslich entsteht doch eine Ordnung, Wunden heilen, Konflikte l%4sen sich, weil sie durch das Vorbeigehen der Zeit verblassen oder sich %4ndern. Ihr verdanken wir es, dass es nichts Absolutes gibt.",
+      "bbox": {
+        "x_pct": 4.405,
+        "y_pct": 44.541,
+        "w_pct": 86.19,
+        "h_pct": 9.259
+      },
+      "changed": true,
+      "change_reason": "Updated text to reflect the full paragraph in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oft hat man gedacht, dass wahres Sein dem fehlt, was vergeht. So f%fhlte Horaz in dem eben zitierten Vers. Wir moderne Menschen aber sind geneigt zu glauben, dass nur wahr ist, was vergeht; nur was vergeht, ist. Denn nur das Abstrakte vergeht nicht. Wir selbst h%4ren nie auf zu altern und zu vergehen, solange wir am Leben sind. Vielleicht h%4rt unser Vergehen auf, wenn wir tot sind.",
+      "bbox": {
+        "x_pct": 4.369,
+        "y_pct": 55.356,
+        "w_pct": 86.19,
+        "h_pct": 9.163
+      },
+      "changed": true,
+      "change_reason": "Updated text to reflect the full paragraph in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Also richten wir uns in der Zeit ein und fangen mit ihr einen seltsamen Wettlauf an, der Geschwindigkeit heisst. Die Zeit hilft uns, den Raum zu verstehen, die Distanz zu %fcberwinden, die Abwesenheit zu schlucken, eine Art Allgegenwart bis zum Schwindel zu geniessen. Manche tr%4umen sogar davon, durch die Geschwindigkeit die Zeit einzuholen. Vergessen ist dann der Ehrgeiz eines endg%4ltig bestehenden Werkes, das wie eine Beherrschung der Zukunft w%4re. Worauf es ankommt ist nun, durch Geschwindigkeit, im fl%fchtigen Augenblick, eine Spur zu hinterlassen, die der nachfolgende Augenblick ausl%4scht, was eine weitere Beschleunigung zu versprechen scheint.",
+      "bbox": {
+        "x_pct": 4.202,
+        "y_pct": 67.948,
+        "w_pct": 86.31,
+        "h_pct": 16.296
+      },
+      "changed": true,
+      "change_reason": "Updated text to reflect the full paragraph in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 88.5,
+        "y_pct": 85.8,
+        "w_pct": 2.0,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Re-labeled page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Most text segments were truncated and incomplete.",
+    "Page number at bottom right was misidentified as text paragraph."
+  ],
+  "doc_id": "2680",
+  "page": 14,
+  "elapsed_seconds": 6.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

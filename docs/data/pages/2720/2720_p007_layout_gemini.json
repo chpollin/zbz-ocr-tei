@@ -1,0 +1,144 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 89.289,
+        "y_pct": 14.86,
+        "w_pct": 1.258,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "stessi il peso che queste cose hanno per i giovani.",
+      "bbox": {
+        "x_pct": 2.676,
+        "y_pct": 52.747,
+        "w_pct": 42.169,
+        "h_pct": 1.677
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non bisogna assumere l'atteggiamento di persone distinte per le quali queste cose, cui gli altri sono così disperatamente attaccati, sono diventate cose frivole.",
+      "bbox": {
+        "x_pct": 2.782,
+        "y_pct": 54.153,
+        "w_pct": 42.414,
+        "h_pct": 5.882
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Saper ancora riconoscere l'importanza di un abito; di una escursione; di una cosa passeggera che un altro vive e che forse voi stessi vivrete, sapere dare a queste cose il giusto peso ma con quell'indispensabile elemento di distacco, la vera serenità vivente, non quella neutra e distante che è già insita nella morte.",
+      "bbox": {
+        "x_pct": 2.758,
+        "y_pct": 59.977,
+        "w_pct": 42.414,
+        "h_pct": 11.527
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'è un'altra cosa: invecchiare investe il rapporto che si ha con il proprio corpo; il corpo dei giovani è uno strumento perfetto, è così perfetto che non ha bisogno che ci si pensi, tranne quando ciò faccia piacere.",
+      "bbox": {
+        "x_pct": 2.758,
+        "y_pct": 71.411,
+        "w_pct": 42.439,
+        "h_pct": 7.461
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Per le persone anziane il corpo è spesso uno strumento doloroso e minacciato.",
+      "bbox": {
+        "x_pct": 2.725,
+        "y_pct": 78.676,
+        "w_pct": 42.34,
+        "h_pct": 3.088
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'è una certa imminenza della minaccia nell'età; e questa è causa del motivo per cui spesso le persone anziane nella vita quotidiana sono più pesantemente preoccupate del loro corpo che non i giovani che possono permettersi di dimenticarlo.",
+      "bbox": {
+        "x_pct": 2.594,
+        "y_pct": 81.492,
+        "w_pct": 42.578,
+        "h_pct": 8.832
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il corpo prende, per così dire, un posto preponderante; conosco persone che passano il loro tempo a spostare uno scialle a seconda della direzione di un soffio di vento e che hanno sempre male da qualche parte, a cominciare dalla punta dei piedi fino alla punta dei capelli.",
+      "bbox": {
+        "x_pct": 2.643,
+        "y_pct": 90.168,
+        "w_pct": 42.529,
+        "h_pct": 3.222
+      },
+      "changed": true,
+      "change_reason": "Merged content from other erroneous text boxes."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Questo implica naturalmente un modo di vivere estremamente doloroso e penoso, una enorme dipendenza e servitù; si è presi così in un circolo vizioso dal quale non si riesce più ad uscire. Non esiste più quella contraddizione vivente della quale ho parlato prima, e non può esserci in questa situazione un vero equilibrio.",
+      "bbox": {
+        "x_pct": 48.879,
+        "y_pct": 52.747,
+        "w_pct": 42.962,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Combined erroneous fragmented text boxes for logical flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "È però assolutamente necessario, anche qui, trovare il giusto limite tra occuparsene e dimenticarsene, restando liberi nella vigilanza e non lasciandosi ossessionare.",
+      "bbox": {
+        "x_pct": 48.912,
+        "y_pct": 82.996,
+        "w_pct": 42.905,
+        "h_pct": 5.94
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 8,
+  "issues": [
+    "Fragmented paragraphs",
+    "Missing text content",
+    "Page number not identified correctly"
+  ],
+  "doc_id": "2720",
+  "page": 7,
+  "elapsed_seconds": 6.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

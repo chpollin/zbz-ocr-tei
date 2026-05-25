@@ -1,0 +1,72 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 9.125,
+        "y_pct": 9.689,
+        "w_pct": 21.033,
+        "h_pct": 1.481
+      },
+      "changed": true,
+      "change_reason": "ADDED: header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "187",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 93.0,
+        "w_pct": 2.27,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "création dart. L'un et Tautre essayent   d'échapper la même de Tincarnation; et & gagner le monde de",
+      "bbox": {
+        "x_pct": 9.125,
+        "y_pct": 12.756,
+        "w_pct": 68.4,
+        "h_pct": 50.19
+      },
+      "changed": true,
+      "change_reason": "corrected label/tag alignment"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-êlre servir ici dune formule de Gælhe : Den Stoff sieht jedermann sich ; den Gehalt findet der ",
+      "bbox": {
+        "x_pct": 9.287,
+        "y_pct": 62.87,
+        "w_pct": 68.193,
+        "h_pct": 11.139
+      },
+      "changed": true,
+      "change_reason": "corrected label/tag alignment"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction in provided JSON was corrupted/incomplete",
+    "Missing running header and page number",
+    "Need to ensure text content matches the OCR content"
+  ],
+  "doc_id": "110",
+  "page": 189,
+  "elapsed_seconds": 4.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "corrected label/tag alignment": 2,
+    "ADDED": 2
+  }
+}

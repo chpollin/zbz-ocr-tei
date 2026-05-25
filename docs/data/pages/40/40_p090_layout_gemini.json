@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "92",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 81.33,
+        "w_pct": 21.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to _filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 365.0,
+        "y_pct": 81.33,
+        "w_pct": 204.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je sentis alors avec une netteté impitoyable que je mettais une tache sur la beauté et la fraîcheur du monde. Là où j'étais, il y avait comme un point de maladie, de fièvre. Il fallait se détourner, fermer les yeux, aller vite. Là où j'étais, lui ne pouvait plus passer. Il fallait qu'il pût passer partout, qu'il pût ouvrir sur tout ses yeux bleus. Il fallait que je ne fusse plus nulle part.",
+      "bbox": {
+        "x_pct": 8.149,
+        "y_pct": 12.826,
+        "w_pct": 80.946,
+        "h_pct": 17.864
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le suicide ne me tenta pas. Peut-être étais-je trop saine. Peut-être trop épuisée. Le suicide exprime une passion encore violente, capable de chercher son remède jusque dans la mort. Je n'avais rien fait pour défendre mon amour, et je ne fis rien pour échapper à la peine. Je me laissais dériver. Le monde, pour moi vide et incompréhensible, me faisait horreur; mais je me faisais encore plus horreur à moi-même, chose non aimée, chose à fuir.",
+      "bbox": {
+        "x_pct": 8.203,
+        "y_pct": 30.501,
+        "w_pct": 81.027,
+        "h_pct": 20.227
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le soir du Nouvel-An, je suis allée près de la cathédrale entendre sonner les cloches. Elles me parurent un glas et me donnèrent une grande paix. L'idée que la mort était certaine me rassura, et je la désirai et la demandai avec ferveur. Il me semblait que si je mourais tout rentrerait dans l'ordre, un ordre très beau se répétant sans cesse dans une éternité immobile, horizontale.",
+      "bbox": {
+        "x_pct": 8.149,
+        "y_pct": 50.595,
+        "w_pct": 81.27,
+        "h_pct": 17.807
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nature désormais me refusait; j'avais une honte de voleuse à sentir sur moi un rayon de soleil ou claquer le vent. S'ils me touchaient, c'était parce qu'ils étaient forcés d'être partout, donc aussi sur moi. Mais j'étais mauvaise à réchauffer, mauvaise à rafraîchir, mauvaise à porter. Alors je vécus, dès que les autres me laissaient échapper, dans des paysages imaginaires. J'y marchais",
+      "bbox": {
+        "x_pct": 8.284,
+        "y_pct": 68.497,
+        "w_pct": 81.351,
+        "h_pct": 18.299
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Page number at top was incorrectly categorized as text.",
+    "Running header at top was incorrectly categorized as text.",
+    "OCR for all paragraphs was heavily truncated or corrupted.",
+    "Missing text content in bounding box fields due to poor OCR capture."
+  ],
+  "doc_id": "40",
+  "page": 90,
+  "elapsed_seconds": 6.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

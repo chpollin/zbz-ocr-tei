@@ -1,0 +1,42 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME 125",
+      "bbox": {
+        "x_pct": 9.436,
+        "y_pct": 2.0,
+        "w_pct": 68.55,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified page header as filtered content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "offre des facilités, favorise une paresse. Le réalisme est toujours dans une polarité dont les reste",
+      "bbox": {
+        "x_pct": 9.436,
+        "y_pct": 13.311,
+        "w_pct": 68.55,
+        "h_pct": 61.503
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header was initially included as text body."
+  ],
+  "doc_id": "110",
+  "page": 127,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant, c'est à travers nos souvenirs, et à travers un présent vécu déjà comme souvenir, que nous vivons la séparation et l'exil - ou nous-mêmes en tant qu'exilés.",
+      "bbox": {
+        "x_pct": 9.782,
+        "y_pct": 11.522,
+        "w_pct": 65.491,
+        "h_pct": 11.497
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Exilés du passé par son absence présente ; exilés du présent par son acuité et notre propre somnolence, par l'évidence de ses refus, ou par son évanescence, ou par l'ardeur avec laquelle il se tend vers un futur encore malléable à l'attente et au désir; exilés du futur par son irréalité et par notre impatience - nous ne savons où trouver, dans le temps, notre lieu de vie.",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 22.817,
+        "w_pct": 65.782,
+        "h_pct": 24.87
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'opacité du temps aussi bien que sa transparence, son omniprésence insaisissable, nous séparent de nous-mêmes. C'est ainsi seulement, séparés de nous-mêmes, que nous pouvons, à travers un réel fugitif, échapper à l'éternité - pour nous mortelle.",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 48.082,
+        "w_pct": 65.661,
+        "h_pct": 16.989
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mortelle ? Non pas à la façon de la mort humaine. La mort projette dans tous les coins",
+      "bbox": {
+        "x_pct": 9.733,
+        "y_pct": 73.448,
+        "w_pct": 65.418,
+        "h_pct": 5.946
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "95",
+      "bbox": {
+        "x_pct": 71.745,
+        "y_pct": 82.261,
+        "w_pct": 2.242,
+        "h_pct": 3.737
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "Transcription errors in all paragraphs.",
+    "Page number missing from initial annotation list.",
+    "Bounding box for the page number not detected initially."
+  ],
+  "doc_id": "2260",
+  "page": 95,
+  "elapsed_seconds": 10.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

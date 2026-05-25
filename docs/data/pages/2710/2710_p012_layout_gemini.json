@@ -1,0 +1,97 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils veulent nous faire trembler, et quand quelqu’un refuse de trembler et de se laisser intimider par les terribles perspectives qu’ils nous ouvrent, ils sont scandalisés. Pour ma part je pense que cette habitude de faire trembler le peuple tous les jours dans toutes les gazettes pour trente-six raisons différentes nous rend imperméables à l’argumentation des écologistes. Ils feraient bien d’y faire attention. Il est évident que quand le pouvoir des hommes grandit dans toutes les directions comme le fait actuellement, de nombreux problèmes, et pas seulement écologiques, se posent. Les problèmes qui touchent l’être humain comme tel me font plus peur que les problèmes écologiques, parce que j’ai le sentiment, malgré tout, que face à l’immensité de la Terre et du système solaire, que nous faisons est quand même assez petit. Mais permettez-moi de vous raconter une petite histoire. Un jour j’ai signé des livres chez Jelmoli à Zurich. Une dame d’un certain âge est venue me raconter quelles catastrophes écologiques nous attendaient; elle avait l’air tellement désespérée et tremblante que j’ai voulu la rassurer un peu, lui dire que le pire n’était pas certain. Me voyant la consoler ainsi, elle devint absolument furieuse, parce que je voulais lui enlever, en quelque sorte, sa raison d’être du moment: ce catastrophisme qui la possédait de la tête aux pieds. Il faut éviter cela. Lorsque l’on constate quelque chose avec précision et qu’on peut le dire (car après tout il s’agit de réalités physiques, constatables et étudiables qu’on peut établir même si elles sont complexes), il faut dire ce qui est et tâcher de prendre les mesures correspondantes. Mais il ne faut pas opérer avec la peur et l’intimidation.",
+      "bbox": {
+        "x_pct": 7.224,
+        "y_pct": 3.401,
+        "w_pct": 85.466,
+        "h_pct": 41.543
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Bemerkung aus dem Plenum. Mit dem letzten kann ich mich nicht einverstanden erklären.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region identified in image as a sub-header, needs label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn Sie sagen, die Ökologen nützen bewusst die latente Angst der Leute aus, dann kann ich dem in dieser Form nicht zustimmen. Es mag solche Ökologen geben, aber für mich ist die Kausalität umgekehrt: Die Bedrohung ist da. Wir wissen nicht, ob wir noch einmal Glück haben. Diese Ängste sind vorhanden. Es gibt viele Fakten, Prognosen und Hypothesen. Wer davon spricht, wird bestraft, gleichwie in der Antike derjenige bestraft wurde, der die schlechte Nachricht überbrachte. Ich sehe den Umweltschutz vielmehr in dieser Rolle. Ihren Fortschrittsglauben, man könne das alles mit der Wissenschaft in den Griff bekommen, habe ich nicht. Es ist eine echte Unsicherheit, die uns beunruhigt, und überhaupt nicht die Lust, den Leuten Angst zu machen.",
+      "bbox": {
+        "x_pct": 7.224,
+        "y_pct": 49.869,
+        "w_pct": 85.318,
+        "h_pct": 19.822
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in original extraction; corrected to full text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Was wäre dann, wenn Sie Lust daran hätten?",
+      "bbox": {
+        "x_pct": 7.337,
+        "y_pct": 72.184,
+        "w_pct": 47.032,
+        "h_pct": 1.804
+      },
+      "changed": true,
+      "change_reason": "Fixed text recognition."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Bemerkung aus dem Plenum. Ich habe keine. Ich möchte nicht diese Rolle haben!",
+      "bbox": {
+        "x_pct": 7.137,
+        "y_pct": 76.576,
+        "w_pct": 72.124,
+        "h_pct": 1.958
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Bestraft sind die Ökologen heute sowieso nicht. Denn sie verfügen über alle Zeitungen, über alle Medien, über alles, und man hört jeden Tag davon. Also darüber können Sie sich nicht beklagen. Sie kommen in die Regierungen, in die Parlamente - bestraft sind die dabei nicht, im Gegenteil: Diejenigen, die sagen, was ich jetzt sage, werden bestraft.",
+      "bbox": {
+        "x_pct": 7.076,
+        "y_pct": 80.831,
+        "w_pct": 85.091,
+        "h_pct": 8.766
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 48 -",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page number, should be ignored/filtered."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Missing region for header before second paragraph",
+    "Truncated text in paragraph 2",
+    "Minor transcription errors in Hersch speech headers",
+    "Missing page footer detection in original JSON",
+    "Inconsistent labeling for section headers"
+  ],
+  "doc_id": "2710",
+  "page": 12,
+  "elapsed_seconds": 7.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

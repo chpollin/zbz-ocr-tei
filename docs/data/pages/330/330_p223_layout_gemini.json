@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 189",
+      "bbox": {
+        "x_pct": 303.42,
+        "y_pct": 77.26,
+        "w_pct": 537.49,
+        "h_pct": 14.15
+      },
+      "changed": true,
+      "change_reason": "Header elements identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "individus cessent d'être à la merci du pouvoir dès que les garanties juridiques qui leur sont accordées excluent une arrestation ou une exécution sommaires. Le peuple commence à prendre son destin en main à partir du moment où le régime politique, avant même de lui en reconnaître le droit, lui assure le temps de s'associer. Certes, c'est un sophisme de prétendre qu'entre le patron et le salarié la condition soit égale, et cela pour bien des raisons; la principale c'est que le salarié a devant lui, en règle générale un patron, tandis que le patron a devant lui une foule de salariés. Ce rapport ne change que lorsque le patron a devant lui le syndicat des salariés. Alors commence la prise en main, par les salariés, de leur sort commun. Ils se constituent en une force avec laquelle il faudra compter, qui leur permettra d'imposer certaines conditions de travail et d'utiliser leur arme majeure, la seule vraiment efficace: la grève.",
+      "bbox": {
+        "x_pct": 3.579,
+        "y_pct": 10.49,
+        "w_pct": 84.721,
+        "h_pct": 30.918
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated and messy transcription text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le décisif, ici, n'est pas que le droit d'association ou de grève soit inscrit ou non dans une Constitution - ce qui a bien, d'autre part, son prix. Je voudrais faire apparaître que, par sa nature même, et quelle que soit, en fait la constitution écrite du pays, la démocratie politique, même en régime capitaliste, et malgré toutes les altérations qu'elle subit alors, implique la possibilité, pour les individus, de s'associer de diverses manières, de coordonner leurs efforts et d'user de la grève. Il apparaît du même coup que tout régime privé des garanties « formelles » élémentaires de la démocratie exclut en fait les droits d'association et de grève.",
+      "bbox": {
+        "x_pct": 3.719,
+        "y_pct": 41.328,
+        "w_pct": 84.958,
+        "h_pct": 20.971
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated and messy transcription text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les droits d'association et de grève ne sont pas « formels », même pas si l'on consent à donner à ce mot, comme le font les communistes, le sens de « purement théorique », c'est-à-dire abstrait et fictif. Précisément, dans la mesure où l'on croit à la lutte des classes, comment s'expliquer l'extraordinaire élévation du niveau de vie de la population tout entière en Occident, au cours du dernier demi-siècle, sinon grâce à la force acquise par les associations ouvrières, - partis et syndicats? Il est donc faux de dire que la « démocratie formelle » ne profite qu'aux exploiteurs économiques; faux de dire qu'elle est inefficace sur le plan de la vie concrète, quotidienne, des masses. Elle est un instrument mis aux mains du peuple, grâce auquel il peut lutter pour de meilleures conditions de travail, des loisirs, pour une distribution plus équi-",
+      "bbox": {
+        "x_pct": 3.858,
+        "y_pct": 61.943,
+        "w_pct": 84.903,
+        "h_pct": 26.765
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated and messy transcription text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 3,
+  "issues": [
+    "The initial transcriptions for the paragraphs were highly truncated and inaccurate.",
+    "The top header was mislabeled as text.",
+    "Bbox coordinates are correct, but the text content needed substantial correction."
+  ],
+  "doc_id": "330",
+  "page": 223,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

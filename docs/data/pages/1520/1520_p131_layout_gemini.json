@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TABLE DES MATIÈRES",
+      "bbox": {
+        "x_pct": 33.564,
+        "y_pct": 17.935,
+        "w_pct": 32.425,
+        "h_pct": 2.142
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "I. LA VIE\nDATES PRINCIPALES . . . . . . . . . . . . . . . . . . . 7\nLES GRANDS THÈMES . . . . . . . . . . . . . . . . . . . 7\nEtudes de psychiatrie, 7. Maladie, 7. Mariage, 8. Ren- contre avec la politique et l’histoire, 8. Philosophie face aux sciences, 9. Philosophie face à la religion, 9. Uni- versité, 10. Mort et écrits posthumes, 11.\n\nII. L’ŒUVRE\nPSYCHIATRIE . . . . . . . . . . . . . . . . . . . . . . . . . 13\nPsychologie explicative, psychologie compréhensive, 13. « Théories », 15. Psychanalyse, 16. Ethique du médecin, 19.\n« PHILOSOPHIE » . . . . . . . . . . . . . . . . . . . . . . . . . 19\nOrientation dans le monde . . . . . . . . . . . . . . . . 20\nObjectivité, 20. Totalité, 20. Scission sujet-objet, 21. Echec d’une ontologie, 21.\nEclairement de l’existence . . . . . . . . . . . . . . . . 22\nMéthodes et langage indirect, 22. L’inconditionné et la transcendance, 23. Situation et situations-limites, 24. Communication, 26. Sciences humaines et existence, 28.\nMétaphysique . . . . . . . . . . . . . . . . . . . . . . . . . 29\nDieu caché, 30. Ecriture chiffrée, 31. Ambiguïté, 32. Transcendance accessible-inaccessible, 33. Echec, 34. Nature et liberté, 35. Silence contre néant, 37. Supporter et agir, 38.",
+      "bbox": {
+        "x_pct": 7.71,
+        "y_pct": 23.299,
+        "w_pct": 84.146,
+        "h_pct": 66.667
+      },
+      "changed": true,
+      "change_reason": "Corrected the generic document_index label to text and populated the text content for proper indexing."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "125",
+      "bbox": {
+        "x_pct": 86.85,
+        "y_pct": 91.317,
+        "w_pct": 3.738,
+        "h_pct": 2.235
+      },
+      "changed": true,
+      "change_reason": "Corrected page number from missing/part of paragraph to page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Initial label document_index was incorrect, changed to text with full content.",
+    "Page number 125 was missing from original segmentation."
+  ],
+  "doc_id": "1520",
+  "page": 131,
+  "elapsed_seconds": 5.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

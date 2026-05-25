@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Reflexion auf das reflektierende Subjekt mit einzubeziehen und zu bemerken, daß diese Widersprüche – die Widersprüche zwischen dem, was das Subjekt meint, was die Wahrheit sei, und dem, was es in seinem Denken als kläglich versagendes Resultat in bezug auf dieses Gemeinte erzielt – konstitutiv sind. Kurz: Es ist der Hegel der Phänomenologie.",
+      "bbox": {
+        "x_pct": 6.287,
+        "y_pct": 4.672,
+        "w_pct": 85.18,
+        "h_pct": 13.634
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Hegel, auf den sich aber Kierkegaard und der Panlogismus vorwurf kritisch beziehen, das ist der Hegel, ja natürlich, nach Bamberg. Also dort, wo er nicht mehr lebendige Mitreflektieren des Einbezogenseins der eigenen Reflexionsposition in das Reflektierte erfuhr – das erfährt man hier einfach dauernd dadurch, daß man hier von Regnitzwasser umspült ist, und, wo auch immer man hingeht, dadurch, daß einem das dialektische Formulieren von Gegensätzen besonders leicht fällt nach längerem Kellerbesuch, wie Hegel ja, wie Sie alle wissen, auch besonders wegen des guten Bieres hierher gekommen ist, das heißt, das ist die Form, die hier in Bamberg gleichsam lebenspraktisch zu erfahren ist. Danach ging er – das wollen wir nicht verschweigen – nach Nürnberg, und dort, kein Wunder, dort wurde er zum Panlogisten.",
+      "bbox": {
+        "x_pct": 6.093,
+        "y_pct": 20.246,
+        "w_pct": 85.419,
+        "h_pct": 31.603
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mit anderen Worten: Dies erklärt uns, warum es zwei so ganz verschiedene Hegelbilder gibt und warum beide zutreffen. Nun, weil Menschen selbst in ihrer eigenen Biographie sich dadurch definieren, daß sie erst das werden, was sie sind, dadurch, daß sie anders werden, als sie sind. Leben, das, so sagt der vorbambergische Hegel, „ewig entgegensetzend sich bildet“. Also mit anderen Worten: Es gibt so etwas wie eine direkte Beziehung dessen, was wir an diesem kleinen entwicklungsgeschichtlichen Beispiel sehen können, auf unser Problem. Natürlich ist man nicht der oder die, der oder die man war, sondern man ist das, was man ist, indem man das andere dessen wird, man war, sich also verändert und sich trotzdem in seiner existentiellen Identität in der Veränderung durchhält.",
+      "bbox": {
+        "x_pct": 5.838,
+        "y_pct": 53.643,
+        "w_pct": 85.374,
+        "h_pct": 29.171
+      },
+      "changed": true,
+      "change_reason": "Corrected heavily garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der zweite Punkt ist der, daß ich auch ein bißchen in meiner Eigenschaft als gedanklicher Erzieher von einigen, die hier sitzen, die Verpflichtung fühle zu sagen, daß das Lob von Paradoxien und Widersprüchen nicht bedeutet, daß von jetzt an jeder",
+      "bbox": {
+        "x_pct": 6.033,
+        "y_pct": 84.727,
+        "w_pct": 85.284,
+        "h_pct": 9.199
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "34",
+      "bbox": {
+        "x_pct": 65.0,
+        "y_pct": 95.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and assigned to filter."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR was extremely poor and truncated within the boxes.",
+    "Page number at bottom left was ignored by previous detection.",
+    "Formatting of German text in regions was consistently broken."
+  ],
+  "doc_id": "3180",
+  "page": 11,
+  "elapsed_seconds": 5.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "KIERKEGAARD",
+      "bbox": {
+        "x_pct": 40.5,
+        "y_pct": 85.0,
+        "w_pct": 19.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text; corrected to page_header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "141",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 85.0,
+        "w_pct": 4.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text; corrected to page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "semble-t-il, un pas de plus dans la marche en avant du rationalisme, du Socrate nietzschéen. Le dernier pas, peut-être. Car la science, quand elle savait par ses ambitions illimitées et sa foi en elle-même dépasser ses limites sans le savoir, avait encore en elle quelque chose de la force du mythe. Dépouillée de son illusion, elle n'était plus que science. Et le mythe, réclamé à grands cris comme indispensable, s'est trouvé plus éloigné, plus inaccessible, plus définitivement perdu. Il aurait pu renaître, peut-être, par création spontanée, par jeu, mais jamais pour répondre à un besoin reconnu, démontré par la raison. Si paradoxale que cette idée puisse paraître, je crois bien que Nietzsche a achevé l'œuvre de Socrate, du Socrate tel qu'il l'avait compris, dénoncé et combattu.",
+      "bbox": {
+        "x_pct": 11.401,
+        "y_pct": 12.952,
+        "w_pct": 76.355,
+        "h_pct": 40.476
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Kierkegaard",
+      "bbox": {
+        "x_pct": 11.792,
+        "y_pct": 55.59,
+        "w_pct": 18.133,
+        "h_pct": 2.571
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'influence de Nietzsche venait à la philosophie des confins de l'art. Une autre, décisive, s'y est fait sentir, qui venait des confins de la théologie : je veux parler de Kierkegaard, le philosophe chrétien danois.",
+      "bbox": {
+        "x_pct": 11.596,
+        "y_pct": 58.924,
+        "w_pct": 76.054,
+        "h_pct": 12.505
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text content to match image more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce pur de la conscience que représente Kant dans l'histoire de l'esprit ne pouvait pas être maintenu longtemps. Nietzsche avait tiré des limites kantiennes de la raison un triomphe dionysiaque, Kierkegaard en tira la ferveur du paradoxe. Il fut, plus que tout autre moderne, le philosophe du Credo quia absurdum. Kierkegaard com-",
+      "bbox": {
+        "x_pct": 11.446,
+        "y_pct": 71.838,
+        "w_pct": 76.099,
+        "h_pct": 17.876
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text content to match image more accurately."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR text contained minor character errors.",
+    "Page number and header were not explicitly identified as non-text regions in initial detection."
+  ],
+  "doc_id": "20",
+  "page": 143,
+  "elapsed_seconds": 4.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

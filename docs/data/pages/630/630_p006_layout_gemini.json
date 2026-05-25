@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'autre part ce genre de choses, qui croient qu'au contraire l'homme doit constamment '''etre mis '''a la crois'''ee des chemins entre le devoir et la tentation. Eh bien! je crois que vous le savez tous, il vaut mieux prier le sort de nous pr'''eserver des '''etres humains qui nous font du bien en remportant sans cesse des victoires sur leurs tentations. Il y a aussi une conception fondamentale commune au mouvement coop'''eratif et aux tentatives f'''ed'''eralistes europ'''eennes. Il y a, '''a la base, cet effort pour imbriquer les int'''er'''ets, cr'''eer les institutions au-del'''a des nations, au-dessus des nations, de fa'''con '''a '''eviter aussi l'''anarchie des nations, ce domaine des grands fauves-nations errant dans la jungle o'''u r'''egne la loi du plus fort, malgr'''e toutes les petites et faibles tentatives de droit international qui ont pu '''etre r'''ealis'''ees. Donc, ni l'''anarchie, ni l'''h'''eg'''emonie d'''un Etat dominant et d'''un pouvoir dominant qui '''ecraserait les autres, mais, tr'''es sp'''ecifiquement, le f'''ed'''eralisme. J'''ajoute tout de suite que ce f'''ed'''eralisme, qui mettrait au-dessus des Etats des organes dot'''es d'''un pouvoir limit'''e mais r'''eel, tend aussi '''a d'''ecentraliser '''a l'''int'''erieur les Etats trop centralis'''es de l'''Europe. C'''est-'''a-dire que le niveau Etat-nation se trouverait en quelque sorte r'''eduit quant '''a sa puissance par en haut et par en bas. Il y aurait d'''ecentralisation '''a la base, comme on tend d'''ailleurs toujours '''a d'''ecentraliser le travail dans les structures coop'''eratives, et il y aurait supranationalit'''e au sommet, mais une supranationalit'''e, bien entendu, d'''ependant d'''emocratiquement des volont'''es des participants '''a cette f'''ed'''eration. Voil'''a une premi'''ere parent'''e qui me para'''it tout '''a fait essentielle entre le mouvement coop'''eratif et les tentatives f'''ed'''eralistes. Je crois aussi que plus les coop'''erateurs qui s'''int'''eresseraient aux tentatives f'''ed'''eralistes europ'''eennes seraient nombreux, et plus les tentatives de f'''ed'''eration europ'''eenne porteraient la marque de l'''esprit coop'''eratif; c'''est dire que je suis profond'''ement oppos'''ee '''a l'''attitude qui a '''et'''e tr'''es longtemps, trop longtemps et trop souvent l'''attitude des hommes politiques et des organisations politiques de gauche, par exemple, qui d'''esiraient voir quelle sorte d'''Europe allait se faire, et si cette Europe '''etait bien de gauche, et si cette Europe '''etait bien conforme '''a leurs propres id'''eaux, avant de s'''en m'''eler. C'''est une erreur de calcul; l'''Europe naissante est une Europe encore mall'''eable; sa forme, sa structure, son sens d'''ependent encore tr'''es fortement des conceptions de ceux qui la font, et il est bien '''evident qu'''en s'''abstenant, on contribue au contraire '''a laisser le champ libre '''a ceux qui veulent faire une Europe diff'''erente - apr'''es quoi on dira: vous voyez, ce n'''est pas l'''Europe que nous voulions, nous avions bien raison de nous abstenir. Mais non, c'''est parce que vous vous '''etes abstenus que cette Europe est devenue telle.",
+      "bbox": {
+        "x_pct": 7.89,
+        "y_pct": 9.101,
+        "w_pct": 85.427,
+        "h_pct": 54.983
+      },
+      "changed": true,
+      "change_reason": "The initial text extraction was incomplete and fragmented."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a, je crois, une deuxi'''eme parent'''e fondamentale entre l'''id'''eologie, si vous voulez, qui inspire le mouvement coop'''eratif et celle qui inspire les tentatives pour f'''ed'''erer l'''Europe. Le mouvement coop'''eratif, je crois, consid'''ere qu'''il est avant tout au service de l'''homme. Sur tous les cornets, sur tous les papiers, sur tous les paquetages, sur tous les journaux du mouvement coop'''eratif on voit un petit bonhomme, une petite bonne femme, un petit bonhomme, une petite bonne femme. Et je crois que ces petits bonshommes et ces petites bonnes femmes ne sont pas simplement une d'''ecoration; ils sont importants. Le mouvement coop'''eratif est au service de l'''homme, c'''est l'''homme pour qui tout cela se fait. Pourquoi l'''homme? Eh bien! je suppose, parce que nous le concevons tous plus ou moins clairement comme un '''etre libre, qui a la responsabilit'''e de ses propres choix, comme un '''etre sensible qui per'''coit et sent le monde et ce qui l'''entoure, c'''est-'''a-dire comme le lieu o'''u le monde trouve son image et son sens, comme un '''etre vuln'''erable, qui peut avoir mal, qui peut tomber malade, qui peut mourir pour relativement peu de chose; et ce caract'''ere-l'''a il le partage avec toute la nature. Mais le caract'''ere qu'''il ne partage pas avec toute la nature, c'''est qu'''il est conscient de sa vuln'''erabilit'''e, conscient de la vuln'''erabilit'''e des '''etres qu'''il aime, qu'''il est capable d'''aimer des",
+      "bbox": {
+        "x_pct": 7.927,
+        "y_pct": 65.239,
+        "w_pct": 85.646,
+        "h_pct": 27.145
+      },
+      "changed": true,
+      "change_reason": "The initial text extraction was incomplete and fragmented."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "5",
+      "bbox": {
+        "x_pct": 91.246,
+        "y_pct": 94.636,
+        "w_pct": 1.258,
+        "h_pct": 2.158
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction was incomplete in both paragraphs.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "630",
+  "page": 6,
+  "elapsed_seconds": 11.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

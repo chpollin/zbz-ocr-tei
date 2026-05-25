@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Dieu lui donna l'Intelligence.",
+      "bbox": {
+        "x_pct": 13.718,
+        "y_pct": 10.715,
+        "w_pct": 43.357,
+        "h_pct": 4.074
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header because this serves as a section title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Intelligence aussitôt lia le divers en une cohésion qui était celle-là même de Dieu. Elle doubla d'une ombre pensée Son acte créateur. Elle fit écho, à l'unisson ou à l'octave, à Ses pensées éternelles, et rien d'autre.",
+      "bbox": {
+        "x_pct": 10.024,
+        "y_pct": 13.577,
+        "w_pct": 65.511,
+        "h_pct": 14.79
+      },
+      "changed": true,
+      "change_reason": "Improved text accuracy based on OCR inspection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu alors la fixa, l'attacha en un point de la terre, encombra sa vue de quelques brins d'herbe mouvants, lui déroba l'universel.",
+      "bbox": {
+        "x_pct": 10.313,
+        "y_pct": 28.114,
+        "w_pct": 65.102,
+        "h_pct": 8.333
+      },
+      "changed": true,
+      "change_reason": "Improved text accuracy based on OCR inspection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sans l'universel, l'Intelligence se flétrit sous la main créatrice en une mosaïque inerte. L'Homme ne ressembla pas à Dieu, mais aux pierres de la terre.",
+      "bbox": {
+        "x_pct": 10.193,
+        "y_pct": 36.111,
+        "w_pct": 65.295,
+        "h_pct": 11.338
+      },
+      "changed": true,
+      "change_reason": "Improved text accuracy based on OCR inspection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu fit miroiter l'universel au bord de l'horizon inaccessible, au fond des cieux fugitifs, et sauva l'Intelligence. Il lui rendit les sphères et les triangles et Ses pensées éternelles d'avant le temps. Il les lui rendit, mais vides et séparées à jamais des perspectives encombrées de paysages. L'Intelligence se mit en route, parmi les perspectives des perspectives. Vers l'impossible.",
+      "bbox": {
+        "x_pct": 10.108,
+        "y_pct": 47.837,
+        "w_pct": 65.427,
+        "h_pct": 25.421
+      },
+      "changed": true,
+      "change_reason": "Improved text accuracy based on OCR inspection."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing page number region which was ignored by initial detection."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text detection contained significant typos.",
+    "Page number at the bottom right was completely missed by the detection model.",
+    "Title was misidentified as a paragraph."
+  ],
+  "doc_id": "2260",
+  "page": 17,
+  "elapsed_seconds": 6.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

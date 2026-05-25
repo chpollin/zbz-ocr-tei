@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cs ist ein tiefes Bedüirfnis des   Menschen; arbeiten können; W2s er will, sich alles einzurichten, ",
+      "bbox": {
+        "x_pct": 3.358,
+        "y_pct": 10.813,
+        "w_pct": 45.333,
+        "h_pct": 20.805
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und hier zeigt sich auch, was man im Leben oft verkennt, dass Was man sich wünscht, einem nicht unbe",
+      "bbox": {
+        "x_pct": 3.552,
+        "y_pct": 31.145,
+        "w_pct": 46.267,
+        "h_pct": 62.357
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zeichen des Erwachsenseins), muss man da ein bisschen misstrauisch sein, nicht nur den andern gegenü",
+      "bbox": {
+        "x_pct": 50.509,
+        "y_pct": 11.145,
+        "w_pct": 45.648,
+        "h_pct": 10.432
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Widersprüchliche Bedürfnisse",
+      "bbox": {
+        "x_pct": 50.873,
+        "y_pct": 24.124,
+        "w_pct": 34.012,
+        "h_pct": 2.124
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "'Zwischen dem subjektiven und dem gen, wobei das Objektive im Vordergrund steht. Aber das ist nicht ",
+      "bbox": {
+        "x_pct": 50.63,
+        "y_pct": 27.162,
+        "w_pct": 46.424,
+        "h_pct": 66.556
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "115",
+      "bbox": {
+        "x_pct": 93.333,
+        "y_pct": 95.333,
+        "w_pct": 3.333,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at bottom right corner"
+    }
+  ],
+  "score": 100,
+  "num_corrections": 1,
+  "issues": [],
+  "doc_id": "1460",
+  "page": 3,
+  "elapsed_seconds": 9.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME 119",
+      "bbox": {
+        "x_pct": 10.736,
+        "y_pct": 2.0,
+        "w_pct": 68.746,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Extracted page header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "bruit quelconque; une couleur quelconque ont une exislence posilive en tan' que   phénomènes nalurel",
+      "bbox": {
+        "x_pct": 10.736,
+        "y_pct": 14.176,
+        "w_pct": 68.746,
+        "h_pct": 61.45
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region in original JSON."
+  ],
+  "doc_id": "110",
+  "page": 121,
+  "elapsed_seconds": 4.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

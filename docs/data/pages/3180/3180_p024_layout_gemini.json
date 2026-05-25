@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "paradoxe Grundstruktur vermieden werden sollte. Bleiben wir beim Beispiel der ökologischen Ethik. Wenn wir zu wissen meinen, was das moralisch Richtige ist, was wir tun sollen, aber nicht danach handeln, uns nun aber über einen Willensakt dazu motivieren, das Richtige nicht nur zu denken, sondern zu tun (wahrscheinlich nicht nur durch einen reinen Willensakt, sondern durch einen Willensakt, der seinerseits durch ein Motiv bestimmt ist), neigen wir in gewissen Fällen eher dazu, weil wir z.B. Natur lieber in Form von Wald mögen als in Form von irgendwelchen, technisch veränderten Artefakten. Wir entscheiden uns jetzt oder kriegen es irgendwie hin, uns entsprechend zu verhalten. Das kann wieder eine Reihe von Widersprüchen generieren, das steht außer Frage. Ich stelle plötzlich fest, daß ich doch nicht das Richtige getan habe, weil sich unterdessen das Wissen darüber geändert hat, was denn nun eigentlich die Ursache für das Waldsterben war, und ich wollte zwar das Richtige tun, bei Betrachtung der Folgen stellt sich aber heraus, daß ich nur lauter neue Widersprüche in die Welt gesetzt habe ...",
+      "bbox": {
+        "x_pct": 8.189,
+        "y_pct": 3.525,
+        "w_pct": 85.269,
+        "h_pct": 42.769
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Annemarie Pieper:",
+      "bbox": {
+        "x_pct": 8.578,
+        "y_pct": 48.06,
+        "w_pct": 27.5,
+        "h_pct": 3.151
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber die habe ich doch nicht gewollt. Wenn ich den guten Willen voraussetze, will ich nicht die Widersprüche, sondern ich will, daß etwas Gutes herauskommt. Da ich nun aber meine Zukunft nicht berechnen kann in dem Sinne, daß ich wirklich exakt angeben kann, welche Folgen eine Handlung haben wird, kann natürlich das passieren, was Sie gesagt haben, daß dann Widersprüche auftauchen. Diese sind aber nicht gewollt, und man kann versuchen, wiederum durch neue Überlegungen, sie zumindest einzugrenzen.",
+      "bbox": {
+        "x_pct": 8.189,
+        "y_pct": 50.392,
+        "w_pct": 85.18,
+        "h_pct": 20.492
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 9.087,
+        "y_pct": 72.741,
+        "w_pct": 33.772,
+        "h_pct": 2.004
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eben! Mein Plädoyer ist allerdings ein Plädoyer für das Andauern des Versuches, dem Anschein von Paradoxien Widerstand zu leisten. Dieses Andauern des Versuches selbst läßt durchaus zu, daß es darunterliegend vielleicht irgend etwas wie eine unentrinnbare Paradoxie geben mag, daß wir also aus dieser Paradoxie nie herauskommen können. Wir müssen sie aber immer ein Stück weiter zurücktreiben. Es bleibt gar keine andere Möglichkeit als zu versuchen, sie – jedenfalls in jedem",
+      "bbox": {
+        "x_pct": 8.578,
+        "y_pct": 74.526,
+        "w_pct": 85.329,
+        "h_pct": 18.552
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "47",
+      "bbox": {
+        "x_pct": 89.167,
+        "y_pct": 94.673,
+        "w_pct": 2.583,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Added page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was heavily truncated.",
+    "Page number at bottom right was missing a bounding box.",
+    "Several OCR transcription errors in the initial text blocks."
+  ],
+  "doc_id": "3180",
+  "page": 24,
+  "elapsed_seconds": 5.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

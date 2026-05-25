@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "80",
+      "bbox": {
+        "x_pct": 242.0,
+        "y_pct": 952.0,
+        "w_pct": 28.0,
+        "h_pct": 22.0
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "81",
+      "bbox": {
+        "x_pct": 729.0,
+        "y_pct": 937.0,
+        "w_pct": 19.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "formation. Il ne s'agit pas de refaire une générale. Il s'agit de donner saupoudrer l'incompétence d'une certaine culture générale.",
+      "bbox": {
+        "x_pct": 5.246,
+        "y_pct": 4.616,
+        "w_pct": 40.992,
+        "h_pct": 11.716
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better representation of OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En ce qui concerne les travailleurs, on a, bien entendu, énormément amélioré leurs conditions de travail.",
+      "bbox": {
+        "x_pct": 5.267,
+        "y_pct": 16.616,
+        "w_pct": 40.65,
+        "h_pct": 18.645
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better representation of OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin, la société, elle, a essentiellement besoin d'avoir un sens. Et pour avoir un sens, il ne faut pas seulement se poser la question du payable, du remboursable, du retour, mais de la finalité.",
+      "bbox": {
+        "x_pct": 4.993,
+        "y_pct": 77.251,
+        "w_pct": 41.607,
+        "h_pct": 13.147
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better representation of OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le profit est une condition. Il n'est pas le but, la finalité. Le profit est une condition de fonctionnement de notre pensée, il n'est pas la finalité de notre pensée.",
+      "bbox": {
+        "x_pct": 53.126,
+        "y_pct": 15.64,
+        "w_pct": 40.055,
+        "h_pct": 21.517
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better representation of OCR."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR text was heavily garbled.",
+    "Page numbers were included in the text segmentation incorrectly.",
+    "Bboxes for page numbers missing in original detection."
+  ],
+  "doc_id": "1930",
+  "page": 4,
+  "elapsed_seconds": 5.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

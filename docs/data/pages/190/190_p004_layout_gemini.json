@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à la réaction au singulier, donc à la subjectivité; et le fondement de toute science, la généralité, se ramène à une fiction.",
+      "bbox": {
+        "x_pct": 15.496,
+        "y_pct": 9.191,
+        "w_pct": 64.98,
+        "h_pct": 4.199
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le singulier, disions-nous, est signal ou signe. Ce mode d’être «signalisateur» ne se surajoute pas, comme si l’être singulier existait indépendamment de sa valeur de signal. Ce mode d’être est constitutif du singulier. Celui-ci dépend donc du sujet et ne peut pas être conçu «en soi». Mais il ne peut pas non plus être conçu comme subjectivité pure, en termes d’idéalisme: cela impliquerait en effet que ce dont il est le signal se trouve présent dans la conscience au même titre que le signal lui-même.",
+      "bbox": {
+        "x_pct": 15.391,
+        "y_pct": 17.134,
+        "w_pct": 65.246,
+        "h_pct": 16.011
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cependant, pour autant que la généralité est une fiction scientifique, elle reste sans cesse soumise au critère du singulier, dans l’expérience. C’est donc malgré tout au cœur du singulier, si précaire, inséparable du sujet, et risquant toujours d’être noyé dans la dévaluation du multiple divers et approximativement semblable, que réside le minimum d’affirmation réaliste sans laquelle la vérité perd son sens, et avec elle toute affirmation, fût-ce celle qui nie toute vérité.",
+      "bbox": {
+        "x_pct": 15.391,
+        "y_pct": 32.707,
+        "w_pct": 65.246,
+        "h_pct": 15.84
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu’est-ce que cette autorité du singulier ? Quel poids ontologique a-t-il donc ?",
+      "bbox": {
+        "x_pct": 15.689,
+        "y_pct": 52.308,
+        "w_pct": 64.915,
+        "h_pct": 4.085
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J’appellerai ici «transcendance» ce qu’un objet peut comporter d’irréductibilité essentielle, c’est-à-dire ce qui dans son essence reste proposé à l’esprit sans être possédé par lui, sans pouvoir jamais être épuisé par lui.",
+      "bbox": {
+        "x_pct": 15.77,
+        "y_pct": 56.296,
+        "w_pct": 64.948,
+        "h_pct": 8.108
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le singulier est essentiellement inépuisable, et c’est même là le sens du mot «concret». Qu’on pense à l’effort inlassable d’un écrivain comme Proust pour atteindre une essence du singulier. Son acharnement fait pressentir cette essence par l’impossibilité même où il est de finir jamais. Prétendre analyser le singulier, c’est en fait se mettre à décrire, entreprendre une description, à la lettre, interminable, jamais exhaustive. Le singulier garde un quant-à-soi, une épaisseur, une opacité jusque sous le regard le plus pénétrant, le plus lucide. On peut même dire que cette opacité gagne en profondeur avec la lucidité accrue du regard, car elle est en réalité une virtualité de transparences à l’infini. Et c’est parce",
+      "bbox": {
+        "x_pct": 15.633,
+        "y_pct": 64.199,
+        "w_pct": 65.294,
+        "h_pct": 21.897
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "46",
+      "bbox": {
+        "x_pct": 16.033,
+        "y_pct": 87.26,
+        "w_pct": 1.76,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Most text content was incorrectly transcribed by OCR.",
+    "Page number at bottom not identified as page_footer.",
+    "Multiple paragraphs contained broken text fragments."
+  ],
+  "doc_id": "190",
+  "page": 4,
+  "elapsed_seconds": 7.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

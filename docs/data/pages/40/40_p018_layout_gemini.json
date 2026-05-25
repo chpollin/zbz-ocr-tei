@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 98.0,
+        "y_pct": 79.0,
+        "w_pct": 20.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 375.0,
+        "y_pct": 79.0,
+        "w_pct": 250.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'arrivai juste à temps; j'ai levé la main, la portière s'est ouverte, je suis montée.",
+      "bbox": {
+        "x_pct": 9.284,
+        "y_pct": 12.571,
+        "w_pct": 81.027,
+        "h_pct": 5.198
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il était en face de moi, mais d'abord je ne le vis pas. L'effort que je venais de faire, brusquement interrompu, m'étranglait. Le vacarme intérieur de mon corps était assourdissant, et je haletais si fort que parler fut longtemps impossible. Trois visages inconnus, dont je ne voyais rien d'autre que le caractère inconnu, souriaient vaguement en tout sens à travers un chaos, et moi aussi je souriais. Puis l'ordre se fit, ou plutôt l'immobilité, et il n'y eut plus que lui.",
+      "bbox": {
+        "x_pct": 9.108,
+        "y_pct": 17.647,
+        "w_pct": 81.203,
+        "h_pct": 22.836
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y eut que lui, et pourtant je continuais à ne pas le voir. Il n'avait pas de visage au sens où les hommes ont un visage, et je crois bien que pour moi il n'en a jamais eu. Non, je ne lui connais pas ce contour, ce relief, cette forme caractéristique que me laisse en souvenir le premier passant venu. Ce n'est pas que ses traits soient effacés à cause d'une expression plus saisissante qu'il aurait eue et qui seule m'aurait frappée. Je ne lui connais pas non plus d'expression propre. Une angoisse me prend maintenant devant mon impuissance à dire, à savoir ce que j'ai vu alors, qui a fait disparaître le monde. Bien des fois, plus tard, je l'ai rencontré dans la pleine lumière. Mais comprends-moi, Marc, tant que je l'ai aimé, je ne l'ai pas vu. Quelque chose de bleu qui venait des yeux mais qui n'avait pas leur forme, qui n'avait aucune forme; de petites rides sur les tempes; un sourire, mais qui n'a jamais évoqué le dessin de sa bouche; quelque chose de tendu qui semblait ramener vers l'intérieur toute la",
+      "bbox": {
+        "x_pct": 8.554,
+        "y_pct": 40.388,
+        "w_pct": 81.486,
+        "h_pct": 45.312
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text blocks had OCR errors in initial parsing.",
+    "Page number and header were incorrectly labeled as text.",
+    "Bbox contents were clipped or incorrectly merged."
+  ],
+  "doc_id": "40",
+  "page": 18,
+  "elapsed_seconds": 5.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

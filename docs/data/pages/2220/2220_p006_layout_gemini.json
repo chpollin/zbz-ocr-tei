@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "haben, dann ist sie eben, wie sie ihre Form wie sie vorne ist, hat ihre Konsequenzen hinten. Sie können es nicht wechseln, Sie haben nicht diese «malléabilité» des Traumes.",
+      "bbox": {
+        "x_pct": 5.594,
+        "y_pct": 6.602,
+        "w_pct": 41.531,
+        "h_pct": 5.993
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Freiheit ist nur Freiheit für das Selbstsein, wenn sie es mit der Wirklichkeit zu tun hat, mit dem hartnäckigen Widerstand der Wirklichkeit, mit der Ausschliesslichkeit der Dinge, die so sind und nicht anders. Wie oft haben wir im alltäglichen Leben das Gefühl, wir könnten so gut zusammenleben, so freundlich, es wäre so leicht, wenn nur dies oder jenes anders wäre, dieser Mensch, diese Frau, nur eine Kleinigkeit – und das geschieht nicht. Denn wir haben es mit wirklichen Menschen zu tun, mit der Wirklichkeit, und diese muss erkannt werden, so wie sie ist. Sonst gibt es keine Freiheit, denn die Freiheit kommt hinein in diese Wirklichkeit, oder sie existiert nicht. Sie dringt in diese Wirklichkeit, sie muss also wissen, wohin sie kommt und was sie ändert. Das bedeutet, dass die Freiheit den Determinismus und den Zwang des Äussern unbedingt braucht, ohne dies gibt es keine Freiheit im Menschsein. Wenn die Freiheit allein herrscht, wenn wir das Gefühl haben, dass wir irgend etwas in unserer Freiheit können, so ist das eine verlorene Freiheit.",
+      "bbox": {
+        "x_pct": 5.594,
+        "y_pct": 14.155,
+        "w_pct": 41.531,
+        "h_pct": 31.816
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie viele Leute unter unseren Zeitgenossen erträumen zum Beispiel heutzutage, dass man alles wieder von vorne anfangen kann, als gäbe es nichts Gegebenes: einen neuen Menschen, eine neue Gesellschaft, eine neue Welt. Dies ist eine so verlorene Freiheit, dass sie fast den Arzt braucht, damit er diese Freiheit mit den Zwängen wieder versöhnt, die für sie unentbehrlich sind. Also Anerkennung der Nicht-Freiheit, Anerkennung der Zwänge, Anerkennung der Gegebenheit. Aber: ich muss sogleich das Gegenteil sagen. Wenn das so anerkannt wird, dass die Freiheit resigniert, dass die Freiheit sagt: Dann kann ich nichts dafür, wenn sie sich unterwirft, so ist sie auch verloren. Im Grunde gibt es da noch einen Rest von Freiheit, einen ganz letzten Rest, der darin besteht, dass man verzweifelt. Aber sie ist verloren.",
+      "bbox": {
+        "x_pct": 5.456,
+        "y_pct": 47.467,
+        "w_pct": 41.531,
+        "h_pct": 25.595
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Problem ist also nicht ein zufälliges Problem, und nicht ein lokales. Es ist ein Problem, das wirklich in den Wurzeln des freien Selbstseins steckt. Das Problem wird natürlich noch schwieriger, wenn man es mit inneren Zwängen zu tun hat. Bis jetzt habe ich von der Wirklichkeit sozusagen gesprochen, als wäre sie draussen. Aber die Freiheit kommt aus der geschichtlichen Tiefe des Subjekts, und aus dieser bindet sich die Freiheit an etwas, was sie unbedingt will. Dieses Wort «unbedingt» in diesem Kontext – wo ich nur von Zwängen und Zwang gesprochen habe – klingt seltsam. Aber das ist",
+      "bbox": {
+        "x_pct": 5.399,
+        "y_pct": 72.869,
+        "w_pct": 41.531,
+        "h_pct": 18.725
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich will einige Beispiele erwähnen. Denken Sie an die grossen Tragödien, zum Beispiel an «Antigone» von Sophokles und an «Phädra» von Racine. Antigone diskutiert mit ihrer Schwester Ismede über ihr Verhalten zur Leiche ihres Bruders. Die Schwester",
+      "bbox": {
+        "x_pct": 48.265,
+        "y_pct": 83.739,
+        "w_pct": 41.45,
+        "h_pct": 7.592
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Schweizerische Ärztezeitung / Bulletin des médecins suisses Band 66, 1985, Heft 27 3.7.85 1243",
+      "bbox": {
+        "x_pct": 5.456,
+        "y_pct": 94.39,
+        "w_pct": 89.873,
+        "h_pct": 2.764
+      },
+      "changed": true,
+      "change_reason": "Identified page footer components and labeled as _filter"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text transcriptions were heavily truncated and incorrect.",
+    "Footer was incorrectly identified as text paragraph."
+  ],
+  "doc_id": "2220",
+  "page": 6,
+  "elapsed_seconds": 6.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

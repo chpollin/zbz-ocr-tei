@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LEW KOWARSKI JEAN STAROBINSKI JEANNE HERSCH CLAUDE KETTERER PIERRE NORA JACQUES ATTALI STEPHEN R GRA",
+      "bbox": {
+        "x_pct": 9.849,
+        "y_pct": 6.091,
+        "w_pct": 75.585,
+        "h_pct": 9.421
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE POUVOIR",
+      "bbox": {
+        "x_pct": 9.884,
+        "y_pct": 25.868,
+        "w_pct": 75.747,
+        "h_pct": 7.38
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Textes des conf\u0000rences et des entretiens organis\u0000s par les vingt-sixi\u0000mes",
+      "bbox": {
+        "x_pct": 10.197,
+        "y_pct": 41.463,
+        "w_pct": 75.632,
+        "h_pct": 5.174
+      },
+      "changed": true,
+      "change_reason": "Subtitles and descriptive block of the conference title should be section_header/zb_heading"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "RENCONTRES INTERNATIONALES DE GEN\u0000VE",
+      "bbox": {
+        "x_pct": 10.197,
+        "y_pct": 47.298,
+        "w_pct": 75.585,
+        "h_pct": 2.479
+      },
+      "changed": true,
+      "change_reason": "Part of the title block, should be section_header/zb_heading"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1977",
+      "bbox": {
+        "x_pct": 44.577,
+        "y_pct": 50.636,
+        "w_pct": 6.524,
+        "h_pct": 1.843
+      },
+      "changed": true,
+      "change_reason": "Small date/year identifier at the bottom of the title block is treated as page-level metadata/footer"
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text labels were too generic; converted title block parts to section headers.",
+    "Small year element incorrectly categorized as paragraph text."
+  ],
+  "doc_id": "1530",
+  "page": 1,
+  "elapsed_seconds": 4.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Permettez-moi d'en citer quelques lignes : «La récolte fut admirable. Surprenant par la quantité, la qualité des textes et par la variété des problèmes, des idées, des modes d'expression qui s'y manifestent. Mais plus encore saisissante par l'extraordinaire impression de similitudes harmoniques jusque dans les contrastes les plus marqués ou, pour mieux dire, de parenté, bref, de fraternité, qui se dégageait de cette double quête des hommes de ce temps à la recherche des substrats historiques les plus profonds de leur conscience et des hommes de tous les temps à la recherche de l'ordre humain.",
+      "bbox": {
+        "x_pct": 24.093,
+        "y_pct": 21.819,
+        "w_pct": 51.869,
+        "h_pct": 12.634
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text to match the full visible paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "«Nous vîmes s'ouvrir, en quelque sorte de lui-même, le large éventail des thèmes qui ont inspiré la Déclaration universelle ; et sur chacun de ces thèmes, comme au long d'un chemin poursuivi jusqu'aux plus lointains horizons du monde et de la mémoire, on est venu déposer devant nous comme des offrandes, pieusement conservés dans les voiles des paroles de jadis et d'ailleurs, les pensées et les gestes qui ont été – et demeurent – les questions et les réponses, les aspirations et les preuves, les annonciations et les accomplissements, obscurs ou lumineux, par où l'homme s'est révélé à lui-même».",
+      "bbox": {
+        "x_pct": 24.311,
+        "y_pct": 34.111,
+        "w_pct": 51.732,
+        "h_pct": 12.811
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text to match the full visible paragraph content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Universalité.",
+      "bbox": {
+        "x_pct": 24.658,
+        "y_pct": 49.487,
+        "w_pct": 10.048,
+        "h_pct": 1.408
+      },
+      "changed": true,
+      "change_reason": "Cleaned up trailing dot/text artifact in OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A la suite d'un tel travail, certaines conclusions s'imposent. Si on m'interroge sur l'universalité du concept des droits de l'homme dans toutes les traditions, je dirai : non, ce concept n'a pas été universel. Mais de façon imagée, diffuse, profondément vécue, il y a eu chez tous les hommes, dans toutes les cultures, le besoin, l'attente, le sens de ces droits. Ce n'étaient pas partout les mêmes droits, et le besoin qu'on en avait ne s'est pas manifesté de la même façon. Souvent, à ce qu'il semble, il s'exprime d'abord à travers une plainte ou une révolte, à propos d'une violence, d'une privation, d'une contrainte, d'un mensonge, d'une injustice. Mais l'essentiel, c'est que partout on perçoit cette exigence fondamentale : quelque chose est dû à l'être humain parce qu'il est un être humain. Quelque chose : un respect, un égard ; quelque chose qui sauvegarde ses chances de faire de lui-même ce qu'il est capable de devenir ; une dignité qu'il revendique du seul fait qu'il vise un futur. Cette universalité me paraît d'autant plus saisissante que l'extrême diversité des modes d'expression en garantit l'authenticité.",
+      "bbox": {
+        "x_pct": 24.311,
+        "y_pct": 52.263,
+        "w_pct": 51.676,
+        "h_pct": 22.349
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text to match the full visible paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 73.8,
+        "y_pct": 75.8,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified and correctly labeled the page number in the footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR for paragraph text was highly truncated and corrupted.",
+    "Page number missing from initial detection.",
+    "Labeling consistency improved."
+  ],
+  "doc_id": "1770",
+  "page": 4,
+  "elapsed_seconds": 4.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

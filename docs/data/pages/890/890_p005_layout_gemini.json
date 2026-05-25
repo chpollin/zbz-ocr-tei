@@ -1,0 +1,217 @@
+{
+  "doc_id": "890",
+  "page": 5,
+  "image_width": 1241,
+  "image_height": 1755,
+  "num_regions": 18,
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 5.7,
+        "w_pct": 38.8,
+        "h_pct": 8.1
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 13.9,
+        "w_pct": 38.8,
+        "h_pct": 14.7
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 28.9,
+        "w_pct": 38.8,
+        "h_pct": 2.1
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 31.8,
+        "w_pct": 38.8,
+        "h_pct": 10.5
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 42.6,
+        "w_pct": 38.8,
+        "h_pct": 10.7
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 58.8,
+        "w_pct": 22.4,
+        "h_pct": 1.8
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 61.3,
+        "w_pct": 38.8,
+        "h_pct": 30.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 46.7,
+        "y_pct": 7.9,
+        "w_pct": 38.7,
+        "h_pct": 34.6
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 52.1,
+        "y_pct": 43.5,
+        "w_pct": 27.9,
+        "h_pct": 1.7
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 46.7,
+        "y_pct": 51.8,
+        "w_pct": 38.7,
+        "h_pct": 3.3
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 46.7,
+        "y_pct": 58.3,
+        "w_pct": 38.7,
+        "h_pct": 3.4
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 46.7,
+        "y_pct": 62.0,
+        "w_pct": 38.7,
+        "h_pct": 7.5
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 46.7,
+        "y_pct": 70.2,
+        "w_pct": 38.7,
+        "h_pct": 5.1
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 46.7,
+        "y_pct": 76.1,
+        "w_pct": 38.7,
+        "h_pct": 5.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 46.7,
+        "y_pct": 81.6,
+        "w_pct": 19.0,
+        "h_pct": 7.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 73.2,
+        "y_pct": 83.6,
+        "w_pct": 13.2,
+        "h_pct": 6.6
+      }
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 94.1,
+        "w_pct": 17.4,
+        "h_pct": 1.2
+      }
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 82.9,
+        "y_pct": 93.5,
+        "w_pct": 3.5,
+        "h_pct": 1.4
+      }
+    }
+  ],
+  "elapsed_seconds": 7.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini-detect",
+  "page_orientation": "portrait",
+  "num_columns": 2,
+  "label_counts": {
+    "text": 12,
+    "section_header": 4,
+    "page_footer": 2
+  }
+}

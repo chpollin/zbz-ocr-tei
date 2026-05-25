@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "182",
+      "bbox": {
+        "x_pct": 19.333,
+        "y_pct": 100,
+        "w_pct": 2.766,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 66.866,
+        "y_pct": 2.0,
+        "w_pct": 21.031,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vie pralique moins urgence pour ceux qu'il alteint, il exis terait moins que le drame vécu. 4 revien",
+      "bbox": {
+        "x_pct": 19.413,
+        "y_pct": 13.265,
+        "w_pct": 68.47,
+        "h_pct": 16.727
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jai une fois   jouer ensemble Moissi et Tilla   Durieux. C'élait une expérience très saisissante Lac",
+      "bbox": {
+        "x_pct": 19.333,
+        "y_pct": 30.015,
+        "w_pct": 68.849,
+        "h_pct": 44.753
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/footer in initial input",
+    "Labels were correct, but page metadata was missing"
+  ],
+  "doc_id": "110",
+  "page": 184,
+  "elapsed_seconds": 6.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "84 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 74.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: header text"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "tivité Doù il est possible de souligner' d'emblée lambiguïté de la notion dintelligiJle lintelligibl",
+      "bbox": {
+        "x_pct": 13.324,
+        "y_pct": 16.182,
+        "w_pct": 74.118,
+        "h_pct": 31.413
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il n'était peut-être même pas besoin morceal de cire du feu. Tel était là, froid, avec ses qual",
+      "bbox": {
+        "x_pct": 14.007,
+        "y_pct": 46.724,
+        "w_pct": 74.571,
+        "h_pct": 40.097
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "missing page header region"
+  ],
+  "doc_id": "140",
+  "page": 3,
+  "elapsed_seconds": 9.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "impossibility. Further: it is a bondage which ex...",
+      "bbox": {
+        "x_pct": 18.282,
+        "y_pct": 11.795,
+        "w_pct": 73.573,
+        "h_pct": 20.359
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling of impossibility"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Philosophical obligation is an \"objectless\" obliga...",
+      "bbox": {
+        "x_pct": 17.685,
+        "y_pct": 32.291,
+        "w_pct": 73.581,
+        "h_pct": 30.291
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Philosophical obligation has, therefore, no object...",
+      "bbox": {
+        "x_pct": 17.903,
+        "y_pct": 62.45,
+        "w_pct": 72.258,
+        "h_pct": 3.858
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "But although it has no object, it nevertheless inv...",
+      "bbox": {
+        "x_pct": 17.419,
+        "y_pct": 66.228,
+        "w_pct": 72.524,
+        "h_pct": 20.285
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in transcription"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "148",
+      "bbox": {
+        "x_pct": 17.742,
+        "y_pct": 87.892,
+        "w_pct": 3.79,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_footer as it is a page number"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text field had incorrect spelling for impossibility",
+    "Missing detection of page number in original, required adding it as a region",
+    "Punctuation errors in transcription text",
+    "Original labels missed the page number tag"
+  ],
+  "doc_id": "3090",
+  "page": 6,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

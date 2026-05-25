@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA POLITIQUE ET L'HUMANISME par Jeanne Hersch",
+      "bbox": {
+        "x_pct": 25.645,
+        "y_pct": 10.655,
+        "w_pct": 54.329,
+        "h_pct": 5.299
+      },
+      "changed": true,
+      "change_reason": "Corrected typographical errors in title extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Professeur à l'Ecole supérieure de jeunes filles à Genève, Mlle Jeanne Hersch fait autorité dans les questions philosophiques et sociales. Elle est parfaitement au courant de tous les mouvements qui agitent la pensée contemporaine et l'auteur de Temps alternés.",
+      "bbox": {
+        "x_pct": 24.143,
+        "y_pct": 22.775,
+        "w_pct": 64.788,
+        "h_pct": 6.946
+      },
+      "changed": true,
+      "change_reason": "Text content was incorrectly truncated and contained OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'humanisme, c'est le souci de l'homme primant les autres soucis; c'est vouloir que l'homme puisse devenir et être lui-même, qu'il puisse vivre sa condition d'homme, en longueur, largeur et profondeur; non pas avant tout qu'il soit heureux, mais bien qu'il puisse courir les risques auxquels il a droit, et qui sont ceux de la liberté. L'homme invente son avenir, quand on le laisse être un homme; il lui donne telle ou telle forme, tel ou tel contenu, tel ou tel sens. Son passé n'est pas une galerie de modèles limitant sa liberté, mais au contraire un monde de suggestions qui multiplient ses possibles. L'homme est un être à qui le monde peut donner bien plus que la satisfaction de ses besoins: de la joie. L'humanisme se soucie de cette joie de l'homme, de sa richesse, de sa qualité. Mais il sait qu'elle est imprévisible, différente pour chacun, qu'elle est une difficile joie d'homme libre, impossible à planifier.",
+      "bbox": {
+        "x_pct": 17.845,
+        "y_pct": 50.387,
+        "w_pct": 71.316,
+        "h_pct": 19.601
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and required full restoration based on the document source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La politique, c'est l'art d'organiser la vie commune d'une grande collectivité d'hommes. Et c'est difficile, d'abord parce que cette vie commune comprend tous les plans d'existence auxquels l'homme participe individuellement, du plus matériel au plus spirituel, et que les incidences de ces plans les uns sur",
+      "bbox": {
+        "x_pct": 18.286,
+        "y_pct": 72.952,
+        "w_pct": 70.822,
+        "h_pct": 10.068
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 18.847,
+        "y_pct": 85.578,
+        "w_pct": 2.21,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "Page number identified and categorized as filter."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction for paragraphs was severely truncated.",
+    "OCR failed to capture complete sentences in the body text.",
+    "Page footer was missing as a region.",
+    "Header text contained character errors."
+  ],
+  "doc_id": "170",
+  "page": 1,
+  "elapsed_seconds": 3.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

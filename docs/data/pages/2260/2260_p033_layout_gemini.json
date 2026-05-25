@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'escorte s'en est retournée. Un écuyer tire par la bride la jument arabe qui refuse d'abandonner son maître, les naseaux dilatés de révolte.",
+      "bbox": {
+        "x_pct": 10.218,
+        "y_pct": 17.197,
+        "w_pct": 65.745,
+        "h_pct": 10.859
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript errors and punctuation in the text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Chevalier, armé de sa lance, s'est engagé dans le lit asséché du torrent. Il monte.",
+      "bbox": {
+        "x_pct": 10.218,
+        "y_pct": 28.114,
+        "w_pct": 65.988,
+        "h_pct": 5.724
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript errors (added missing words like 'Il' and 'asséché')."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nuit se fait vite, dans cette vallée. A midi, c'est à peine si on y sort du crépuscule, à peine si un peu de chaleur dorée y effleure la surface emmêlée des lierres et des mousses. Les hauts sapins n'ont presque pas d'aiguilles. Ils dressent des écharpes de lichens d'un vert-de-gris lépreux, - on dirait des squelettes noirs soulevant des linceuls en lambeaux, des morts qui auraient oublié de tomber. Des roches informes, suintantes d'eau glacée, s'entassent, couvertes d'une mousse spongieuse, d'une épaisseur suspecte. Pas un oiseau, - mais c'est le nid des cloportes, des mille-pattes, des limaces, de ce qui rampe, glue, frôle, de ce qui vit de moisissure et grouille dans l'ombre humide.",
+      "bbox": {
+        "x_pct": 10.024,
+        "y_pct": 33.981,
+        "w_pct": 66.061,
+        "h_pct": 44.663
+      },
+      "changed": true,
+      "change_reason": "Corrected significant transcript errors (missing text, typos) to match the actual image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "35",
+      "bbox": {
+        "x_pct": 72.457,
+        "y_pct": 82.533,
+        "w_pct": 1.774,
+        "h_pct": 2.274
+      },
+      "changed": true,
+      "change_reason": "Detected page number and moved from 'text' to 'page_footer'."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR/transcription of the paragraph text was extremely inaccurate and incomplete.",
+    "Page number at the bottom was incorrectly identified as 'text'."
+  ],
+  "doc_id": "2260",
+  "page": 33,
+  "elapsed_seconds": 4.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,111 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "autre on traite en ennemi alors qu'il n'est que l'autre étranger, opposant une résistance semblable à celle de la nature —, il s'agit, dans le combat pour l'existence, de quelque chose d'infiniment différent: d'une ouverture totale, de l'exclusion de toute puissance ou de toute supériorité, de la liberté (Selbstsein) de l'autre aussi bien que de la sienne propre. Dans ce combat les deux partenaires osent se montrer sans réserve et se laisser mettre en question. Si l'existence est possible, elle apparaîtra dans cette conquête de soi (qui ne devient jamais objective) au fil d'un combat où l'on se donne soi-même (don qui devient en partie objectif sans qu'il s'explique jamais au niveau des motivations empiriques). (Philosophie, II, p. 65)",
+      "bbox": {
+        "x_pct": 7.629,
+        "y_pct": 6.058,
+        "w_pct": 84.011,
+        "h_pct": 23.162
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "15. Impossibilité de la communication",
+      "bbox": {
+        "x_pct": 7.954,
+        "y_pct": 31.705,
+        "w_pct": 47.425,
+        "h_pct": 2.399
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Devant certaines attitudes humaines caractéristiques, qui condamnent d'emblée et définitivement à l'échec tout rapprochement authentique, il ne reste que le renoncement:",
+      "bbox": {
+        "x_pct": 7.683,
+        "y_pct": 34.447,
+        "w_pct": 83.916,
+        "h_pct": 6.315
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) L'homme qui vit dans une objectivité pétrifiée, comme dans un univers d'opinions matérialisées qui représentent pour lui l'être absolu, se trouve en tant que sujet libre (als er selbst) hors d'atteinte. Tels sont les êtres humains étroits et superstitieux, qui ne recherchent aucune communication, ne s'engagent jamais dans un véritable échange de paroles, mais qui parlent sans entendre ce qui vient d'autrui. Ils ne sont capables que d'un bavardage impersonnel ou d'exposer leurs dogmes;",
+      "bbox": {
+        "x_pct": 7.683,
+        "y_pct": 40.274,
+        "w_pct": 83.916,
+        "h_pct": 15.681
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) L'homme dont la morale est rationnellement fixée, qui est moins occupé à agir lui-même qu'à accabler les autres de ses jugements et de ses exigences, ignore l'expérience d'une vie originelle; il cherche seulement à justifier, sur le ton pathétique d'une revendication morale et en prétendant à l'évidence, des conclusions qu'il applique à tous les cas qui se présentent. Sa vie révèle ce qu'il est: des actions morales excessives, tirées en ligne droite de certains principes, se mêlent à des comportements dictés par une affectivité animale ou une ruse instinctive. Il reste incapable de s'engager en tant que sujet libre dans la communication.",
+      "bbox": {
+        "x_pct": 7.588,
+        "y_pct": 55.356,
+        "w_pct": 83.916,
+        "h_pct": 19.537
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "c) L'orgueil obstiné d'un homme qui ne veut être que lui-même repousse la communication. Il voudrait identifier le monde avec lui-même et ne connaît qu'une seule volonté: posséder le monde. S'il écoute les autres, et par curiosité et par avidité; il ne supporte pas de révéler un point faible ou de se trouver dans un rapport d'infériorité. Il ne recherche pas la solidarité avec les hommes, il veut les conquérir et se les approprier.",
+      "bbox": {
+        "x_pct": 7.629,
+        "y_pct": 74.464,
+        "w_pct": 83.794,
+        "h_pct": 13.882
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(Philosophie, II, p. 91)",
+      "bbox": {
+        "x_pct": 62.696,
+        "y_pct": 87.858,
+        "w_pct": 28.726,
+        "h_pct": 2.142
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "77",
+      "bbox": {
+        "x_pct": 87.5,
+        "y_pct": 91.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "One page number (77) was not detected as a region initially."
+  ],
+  "doc_id": "1520",
+  "page": 83,
+  "elapsed_seconds": 5.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

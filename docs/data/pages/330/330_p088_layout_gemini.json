@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "54 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 122.0,
+        "y_pct": 94.0,
+        "w_pct": 639.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "souvent à cette lutte une âpreté extrême. La main-d'œuvre étrangère a été considérée mainte et mainte fois comme une menace patronale, l'ouvrier étranger n'étant plus qu'un être inférieur, toléré lorsque tout va bien, intrus à la moindre menace, parfois voleur de travail et de pain. Les droits des nationaux d'abord, c'est aujourd'hui, je crois, une formule qui, dans les syndicats des pays socialement avancés, ne se discute presque plus. Cette attitude défensive à l'égard de l'étranger ressemble d'autant plus à de l'hostilité que la conquête des droits fut plus difficile, que la vie est plus rude, qu'il s'agit du nécessaire. Pour les mêmes raisons parallèlement, des soucis électoraux obligent les divers partis socialistes à suivre la même voie.",
+      "bbox": {
+        "x_pct": 122.0,
+        "y_pct": 124.0,
+        "w_pct": 856.0,
+        "h_pct": 249.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and assigned correct zbz_tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ajoutons une remarque qui paraît importante. Le nationalisme conservateur et bourgeois contre lequel luttèrent les grands militants du socialisme primitif dans un esprit pacifiste, internationaliste, de fraternité universelle, avait cependant à l'intérieur de lui-même un correctif : la tradition et la culture. La tradition, bien sûr, apparaît d'abord comme devant renforcer le nationalisme, puisqu'elle est étroitement liée au passé de ce pays, avec son histoire particulière, ses mœurs, ses rites. Elle est particulière et s'oppose à d'autres traditions. Néanmoins, lorsqu'elle n'est pas artificielle, fabriquée tout exprès à des fins de propagande déterminées, lorsqu'elle plonge vraiment ses racines dans l'histoire vécue d'une communauté, il y a en elle quelque chose qui dépasse sa particularité, la traverse, et va s'alimenter à une source commune. Celui qui a vécu dans une forte tradition, encore riche de substance, aime en général non seulement sa tradition propre, mais toutes les autres. Celui qui connaît le sens et l'efficacité d'une légende dont son imagination s'est nourrie depuis l'enfance, aime toutes les légendes et sait les accueillir. Il connaît le suc précieux de la particularité humaine et il sait le découvrir et l'apprécier partout, chez tous. Une telle tradition, diffuse, mais consciente et délibérée chez les meilleurs esprits, existait dans le conservatisme bourgeois, et loin de durcir le nationalisme où se cristallisait la défense des intérêts matériels, elle l'humanisait. En outre, parmi ces privilégiés, il y avait une bonne part de gens « cultivés », dans un sens plus ou moins profond, assez cependant pour connaître une ou deux langues étrangères, quelques",
+      "bbox": {
+        "x_pct": 120.0,
+        "y_pct": 370.0,
+        "w_pct": 856.0,
+        "h_pct": 543.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Detected page header/title was grouped as text.",
+    "OCR text content was incomplete in original JSON."
+  ],
+  "doc_id": "330",
+  "page": 88,
+  "elapsed_seconds": 5.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

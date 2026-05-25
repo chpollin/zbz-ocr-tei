@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans la nuit maintenant profonde, le rideau de flammes se creusait et s'effilochait sous le vent. Le Chevalier avança. Il imaginait sans la sentir la chaleur du brasier. Une visière d'élytres protégeait son visage. Il passa dans le feu, s'y attarda un instant, éprouvant son invulnérabilité, et admira son long corps incandescent, dur, et souple malgré les écailles rigides. Il glissa sur des croupes de flammes et coupa des houles infernales. Quand il retrouva la nuit, l'air froid, de l'autre côté, et qu'il vit derrière lui la barrière flambante déjà lointaine et vaincue, il était intact. Il se permit alors de penser à son amour.",
+      "bbox": {
+        "x_pct": 23.871,
+        "y_pct": 11.843,
+        "w_pct": 66.214,
+        "h_pct": 39.672
+      },
+      "changed": true,
+      "change_reason": "The OCR text was corrupted with artifacts and incorrect segmentation; updated to reflect the actual content of the text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il vit sur une branche d'arolle une étrange créature qui balançait mélancoliquement les jambes. Elle avait la taille et le visage d'un enfant, mais son regard, sous les paupières ridées, était celui d'un petit vieux. Il semblait avoir tout vu et être inexprimablement las. Ses vêtements aussi étaient ceux d'un",
+      "bbox": {
+        "x_pct": 23.871,
+        "y_pct": 59.874,
+        "w_pct": 66.177,
+        "h_pct": 19.251
+      },
+      "changed": true,
+      "change_reason": "The OCR text was incomplete and contained artifacts; updated to reflect the actual text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "46",
+      "bbox": {
+        "x_pct": 24.316,
+        "y_pct": 82.909,
+        "w_pct": 2.766,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was highly inaccurate and fragmented.",
+    "Page number at the bottom was misidentified as standard text."
+  ],
+  "doc_id": "2260",
+  "page": 44,
+  "elapsed_seconds": 4.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

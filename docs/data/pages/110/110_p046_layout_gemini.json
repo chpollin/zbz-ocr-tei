@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "44",
+      "bbox": {
+        "x_pct": 18.66,
+        "y_pct": 10.0,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 72.3,
+        "y_pct": 10.0,
+        "w_pct": 14.3,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faudrait   pas   dailleurs donner au mot K solitude > tel que je lemploie ici une nuance quelc",
+      "bbox": {
+        "x_pct": 18.182,
+        "y_pct": 13.187,
+        "w_pct": 68.508,
+        "h_pct": 22.323
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest ainsi que soit mathématicien ou physicien (à cet  égard,  exceplionnellement, on réunir ces   d",
+      "bbox": {
+        "x_pct": 18.067,
+        "y_pct": 35.358,
+        "w_pct": 68.585,
+        "h_pct": 22.475
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Zurich 1941. Cet ouvrage de sociologie et de droit contient des pages   de critique  philosophique d",
+      "bbox": {
+        "x_pct": 17.76,
+        "y_pct": 62.035,
+        "w_pct": 68.968,
+        "h_pct": 12.68
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header regions",
+    "Score deduction for missing page header/footer detection"
+  ],
+  "doc_id": "110",
+  "page": 46,
+  "elapsed_seconds": 6.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

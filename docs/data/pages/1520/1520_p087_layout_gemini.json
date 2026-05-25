@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sensible. L'analyse systématique de l'objectivité absolue, son assimilation et — dans la mesure où elle n'est pas seulement image et récit, mais concept pensé — sa création, telle est la tâche de la métaphysique philosophique.",
+      "bbox": {
+        "x_pct": 6.463,
+        "y_pct": 5.63,
+        "w_pct": 83.957,
+        "h_pct": 8.192
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and garbled characters."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aux questions posées, non par la conscience en général, mais par l'existence possible dans les situations-limites, je ne trouve dans le monde aucune réponse valable pour tous comme le serait un savoir universel. Mais l'existence, lorsqu'elle se comprend historiquement elle-même en se tournant vers l'être, perçoit des réponses : à travers images et concepts, ces objets finis qui deviennent des symboles, elle se donne à la profondeur transcendante. Quand la conscience s'interroge sur l'objectivité du symbole, il peut devenir chiffre : écriture d'un Autre, qui, illisible au niveau de la généralité, est déchiffrée par l'existence. Si on s'efforce de maintenir l'objet, comme si dans son objectivité il était lui-même la transcendance, il perd sa consistance et s'effrite. Mais lorsqu'à travers quelque chose d'absolu se manifeste à l'existence, il prend une réalité incomparable. Par l'évanescence de son être objectif il actualise l'être véritable pour l'existence.",
+      "bbox": {
+        "x_pct": 6.409,
+        "y_pct": 13.368,
+        "w_pct": 84.201,
+        "h_pct": 26.907
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and garbled characters."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On rencontre ainsi une objectivité qui ne s'est pas présentée dans les analyses des concepts d'être. Les objets qui lui appartiennent ne sont pas des réalités au sens où ils pourraient m'être donnés empiriquement, quelque part, comme des objets. Comme tels, ils ne sont, du point de vue de l'étude positive des réalités du monde, que de vagues chimères de la conscience. Ils sont, dans la conscience, des objets absolus pour l'existence, pour autant que celle-ci trouve en eux sa propre transparence et s'assure de sa transcendance. Ce n'est pas l'entendement, c'est l'imagination, et non pas l'imagination arbitraire de la conscience, mais celle où joue le fondement de l'existence, qui est l'organe par lequel l'existence s'assure de l'être. (Philosophie, I, p. 33-34)",
+      "bbox": {
+        "x_pct": 6.463,
+        "y_pct": 41.705,
+        "w_pct": 84.011,
+        "h_pct": 23.222
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and garbled characters."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "20. La divinité comme transcendance formelle",
+      "bbox": {
+        "x_pct": 6.734,
+        "y_pct": 67.549,
+        "w_pct": 57.493,
+        "h_pct": 2.057
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On aura beau transcender formellement les catégories, la divinité ne deviendra pas pour autant une idée substantielle, et on n'entrera pas en relation avec elle, tant qu'on n'aura pas été existentiellement touché. C'est alors seulement qu'un contenu vient la remplir.",
+      "bbox": {
+        "x_pct": 6.369,
+        "y_pct": 70.351,
+        "w_pct": 83.97,
+        "h_pct": 9.94
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que l'impensable soit la divinité, voilà n'est nullement impliqué d'emblée par le mouvement de pensée qui échoue dans le non-penser. Parmi les argumentations transcendantes de ce genre il en est plusieurs qui sont restées identiques au cours des millénaires, presque comme des raisonnements mathématiques. Formellement",
+      "bbox": {
+        "x_pct": 6.64,
+        "y_pct": 79.666,
+        "w_pct": 83.875,
+        "h_pct": 9.734
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "81",
+      "bbox": {
+        "x_pct": 87.26,
+        "y_pct": 91.56,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled as page footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "OCR text was heavily truncated in all paragraphs.",
+    "Page number 81 was not captured in the original JSON.",
+    "Section header had typo '20 La' instead of '20. La'."
+  ],
+  "doc_id": "1520",
+  "page": 87,
+  "elapsed_seconds": 6.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

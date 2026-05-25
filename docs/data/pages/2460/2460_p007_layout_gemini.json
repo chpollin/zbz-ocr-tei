@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "formee par les sciences, la rendre plus acceptable en la depouillant de ce qu'elle peut avoir de «mythique»; le second voulait lui conserver sa litteralite parce qu'` ses yeux, c'etait ainsi seulement qu'elle pouvait conserver son efficacite de «chiffre», d'«ecriture chiffree» de la transcendance, parlant ` la liberte de la foi.",
+      "bbox": {
+        "x_pct": 12.929,
+        "y_pct": 8.324,
+        "w_pct": 77.551,
+        "h_pct": 10.258
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was fragmented and contained artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De cette tradition biblique dont il se reclamait, Jaspers ne rejetait qu'une seule chose: le «Ausschleiblichkeitsanspruch», l'exigence d'exclusivite, au niveau de la transcendance. Toute expression de la transcendance se faisant necessairement en langage humain est necessairement aussi inadequate. L'approche de la transcendance ne saurait donc se faire par la possession de sa parole, mais seulement par la communication entre les hommes, ce «liebender Kampf», ce combat livre sans fin par amour, - amour de l'autre et de l'inaccessible verite.",
+      "bbox": {
+        "x_pct": 13.001,
+        "y_pct": 18.144,
+        "w_pct": 77.479,
+        "h_pct": 16.312
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was fragmented and contained artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais tout en rejetant «la pretention ` l'exclusivite» de la tradition biblique, Jaspers reconnaissait que toute adhesion ` une confession determinee implique forcement une telle exclusive, - «chiffre» ` son tour, sans doute, de la verite visee dans la transcendance. C'est ` cause de la priorite absolue, pour lui, du Dieu unique et transcendant qu'il s'en est tenu, quant ` lui, toute sa vie, ` ce qu'il a appele «la foi philosophique».",
+      "bbox": {
+        "x_pct": 12.761,
+        "y_pct": 34.143,
+        "w_pct": 77.551,
+        "h_pct": 14.33
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was fragmented and contained artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La place me manque pour illustrer mon propos par d'autres exemples un tant soit peu developpes. Je me contenterai de mentionner l'un ou l'autre, laissant au lecteur le soin d'y reflechir.",
+      "bbox": {
+        "x_pct": 12.881,
+        "y_pct": 50.196,
+        "w_pct": 77.479,
+        "h_pct": 6.186
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was fragmented and contained artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi: j'ai assiste un dimanche ` une messe oecumenique retransmise ` la television. Comme il est encore interdit aux catholiques de s'unir aux protestants dans l'eucharistie, on ne s'est pas servi d'hosties, mais d'une corbeille pleine de morceaux de pain. Selon les attitudes des participants, ceux-ci ressentirent la ceremonie comme un depassement du «scandale» et un progres vers l'unite gr`ce ` une eucharistie debarrassee de toute superstition retrograde, - ou bien comme un culte celebre au niveau de l'exigence morale d'une fraternite pure, - ou encore comme le simulacre d'une messe depouillee de sa realite centrale. Ce fut certainement d'une grande ambiguite. A mon sens, ce ne fut ni une messe, ni un culte, - tout au plus la manifestation commune d'une bonne volonte dont on evacuait les enjeux. Or il s'agissait d'enjeux d'un grand prix: ` savoir, de la nature et du sens, de la permanence actuelle du sacrifice divin. Pour les catholiques, il y avait l` un noeud de tous les problemes: le realisme de leur foi, auquel le temps qui passe ne saurait rien changer.",
+      "bbox": {
+        "x_pct": 12.881,
+        "y_pct": 55.81,
+        "w_pct": 77.359,
+        "h_pct": 30.587
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was fragmented and contained artifacts."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "139",
+      "bbox": {
+        "x_pct": 86.458,
+        "y_pct": 88.583,
+        "w_pct": 3.704,
+        "h_pct": 2.47
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer/filter."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was highly fragmented and contained multiple punctuation artifacts in the text strings.",
+    "Page number at the bottom right was incorrectly labeled as text.",
+    "Manual correction of OCR output text required for readability."
+  ],
+  "doc_id": "2460",
+  "page": 7,
+  "elapsed_seconds": 7.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

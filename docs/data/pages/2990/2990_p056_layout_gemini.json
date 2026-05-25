@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Vom Wissen und Nicht-Wissen 63",
+      "bbox": {
+        "x_pct": 73.16,
+        "y_pct": 2.225,
+        "w_pct": 19.853,
+        "h_pct": 3.033
+      },
+      "changed": true,
+      "change_reason": "Page header was misidentified as part of the main text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "der Gegenwart dieser Wissenschaft und dieser Welt und gegenüber dieser Anstrengung. Werner Heisenberg, der von einem jungen Studenten nach der Wirklichkeit der Atome gefragt wurde, hat geantwortet: „Vielleicht wird man es eines Tages verstehen. Vielleicht. Und dann wird man vielleicht verstehen, was Verstehen heißt.“",
+      "bbox": {
+        "x_pct": 7.316,
+        "y_pct": 6.225,
+        "w_pct": 79.853,
+        "h_pct": 10.033
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie sehen, wie tief dieses Bewegtsein dringt und wie tief das den Menschen und den Geist des Menschen verändert. Ich glaube, es liegt an der Dringlichkeit, die diese Probleme in unserer Welt bekommen haben, daß ich es gewagt habe, so ein Thema zu behandeln, obwohl ich keine Physikerin bin. Ich spreche aus meiner Unwissenheit heraus, und ich will auch nicht so tun, als wäre ich eine Gelehrte. Es ist aber so dringend geworden, daß man über diese Probleme nachdenkt und eine klare Vorstellung von ihnen bekommt, sie in unserem eigenen Bewußtsein irgendwie zähmt. Natürlich wäre es viel besser, wenn ein großer Physiker an meiner Stelle sprechen würde. Um mich zu rechtfertigen, möchte ich mich auf Heisenberg berufen. In seinem Buch Der Teil und das Ganze hat er den Wunsch ausgesprochen, daß so viele Zeitgenossen wie möglich an der Diskussion über die heutige Wissenschaft teilnehmen sollten. Ich habe versucht, diesem Wunsch nachzukommen.",
+      "bbox": {
+        "x_pct": 7.23,
+        "y_pct": 16.036,
+        "w_pct": 79.779,
+        "h_pct": 27.525
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Doch jetzt will ich ein wenig mehr zu Hause sein. Ich glaube, Jaspers kann uns heute helfen, in einer Art, die ich sonst bei kaum einem Philosophen kenne. Er kann uns helfen, weil er die Wissenschaft nicht verachtet, sondern liebt und schätzt, weil er Wissenschaftler gewesen ist und weil er ein Bedürfnis nach Wissenschaft hat. Er bringt also neues Holz in das Feuer, das man jetzt überall schürt, und das soviel Erfolg bei den Medien hat, in denen man die Wissenschaft überhaupt mitsamt der Technik verurteilt und verwirft, während man natürlich gleichzeitig Tag und Nacht in ihr lebt. Das ist im Grunde nur eine Heuchelei. Ich möchte zu einer Anstrengung auffordern, nicht die Reichweite der Wissenschaften, ihre Ausdehnung, zu „begrenzen“, sondern das unabdingbar „Menschliche“ in den Strukturen der Wissenschaften selbst aufzudecken.",
+      "bbox": {
+        "x_pct": 7.022,
+        "y_pct": 43.61,
+        "w_pct": 79.828,
+        "h_pct": 23.602
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dagegen ist die Auseinandersetzung mit der Entwicklung der modernen Wissenschaft für Jaspers eine der Bedingungen der Authentizität des philosophischen Denkens; das gehört zur Geschichtlichkeit des philosophischen Denkens, wie wir überhaupt geschichtlich sind. Die Geschichtlichkeit ist also etwas Wesentliches, und es ist in seinen Augen etwas Unreines und Unannehmbares, wenn man etwas Wesentliches, das zu unserer Zeit gehört, einfach beiseite schiebt und trotzdem etwas über Philosophie sagt. Es gehört zur Geschichtlichkeit der jetzigen Welt, davon etwas zu wissen und zu verstehen. Die Wissenschaft ist nicht nur und nicht in erster Linie durch die",
+      "bbox": {
+        "x_pct": 6.985,
+        "y_pct": 66.965,
+        "w_pct": 79.816,
+        "h_pct": 17.961
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "The page header containing the title and page number was initially merged into the first paragraph."
+  ],
+  "doc_id": "2990",
+  "page": 56,
+  "elapsed_seconds": 5.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

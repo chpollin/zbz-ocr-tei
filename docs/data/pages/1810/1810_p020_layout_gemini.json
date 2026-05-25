@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est là une donnée psychologique et sociale décisive, implique; avec chaque génération nouvelle, un",
+      "bbox": {
+        "x_pct": 11.276,
+        "y_pct": 6.192,
+        "w_pct": 82.553,
+        "h_pct": 9.992
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette situation initiale du humain, d'avoir à apprendre, implique chez lui une incertitude initiale;",
+      "bbox": {
+        "x_pct": 11.206,
+        "y_pct": 15.838,
+        "w_pct": 82.553,
+        "h_pct": 25.413
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rien de tout cela ne disparaît chez ladolescent, ni même, à vrai dire; chez Tadulte_ Les rapports se",
+      "bbox": {
+        "x_pct": 11.276,
+        "y_pct": 40.858,
+        "w_pct": 82.248,
+        "h_pct": 6.168
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand lenfant brave ladulte, enfreint soudain ou progressivement une interdiction; cest bien sûr sou",
+      "bbox": {
+        "x_pct": 11.276,
+        "y_pct": 46.444,
+        "w_pct": 82.4,
+        "h_pct": 15.791
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne s'agit donc pas d'un apprentissage n\u0000e9cessaire...",
+      "bbox": {
+        "x_pct": 11.276,
+        "y_pct": 62.467,
+        "w_pct": 82.4,
+        "h_pct": 20.354
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph at bottom of text block"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "16",
+      "bbox": {
+        "x_pct": 60,
+        "y_pct": 89,
+        "w_pct": 5,
+        "h_pct": 5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing bottom paragraph",
+    "Missing page number"
+  ],
+  "doc_id": "1810",
+  "page": 20,
+  "elapsed_seconds": 6.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

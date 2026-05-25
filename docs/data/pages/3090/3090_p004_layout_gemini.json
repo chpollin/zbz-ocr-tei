@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "chance he knew French and he was surprised to find...",
+      "bbox": {
+        "x_pct": 17.661,
+        "y_pct": 8.165,
+        "w_pct": 72.661,
+        "h_pct": 7.789
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A days later, Jaspers' lectures had become such an...",
+      "bbox": {
+        "x_pct": 17.234,
+        "y_pct": 16.085,
+        "w_pct": 73.008,
+        "h_pct": 33.43
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The next day, before the Seminar opened, I knocked...",
+      "bbox": {
+        "x_pct": 16.96,
+        "y_pct": 49.402,
+        "w_pct": 73.065,
+        "h_pct": 21.84
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better readability and accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A third of a century has passed since then. I'm s...",
+      "bbox": {
+        "x_pct": 16.911,
+        "y_pct": 70.923,
+        "w_pct": 72.927,
+        "h_pct": 7.897
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "It is not only that we rejoice because of his pres...",
+      "bbox": {
+        "x_pct": 16.96,
+        "y_pct": 80.302,
+        "w_pct": 72.798,
+        "h_pct": 8.131
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "146",
+      "bbox": {
+        "x_pct": 17.3,
+        "y_pct": 89.65,
+        "w_pct": 3.79,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Page number 146 was missing from the initial detection list.",
+    "Minor OCR errors in text extraction corrected."
+  ],
+  "doc_id": "3090",
+  "page": 4,
+  "elapsed_seconds": 5.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

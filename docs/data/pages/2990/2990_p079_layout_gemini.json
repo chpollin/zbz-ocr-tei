@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "86                                             Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 14.153,
+        "y_pct": 4.113,
+        "w_pct": 80.081,
+        "h_pct": 2.479
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page_header/page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sondern daß ich weiß wer spricht, wie ich mit ihm spreche, wie ich mit ihm denke. Davon sprach Kierkegaard, als er von der indirekten Mitteilung sprach, wenn direkte Mitteilung unmöglich ist. Das bedeutet, daß man natürlich nicht von allem so sprechen kann, als liege es auf dem Tisch. Es gibt eine indirekte Mitteilung, die im Grunde in einer Übung besteht, durch die der Leser versteht, was ich habe tun wollen und was ich getan habe.",
+      "bbox": {
+        "x_pct": 14.093,
+        "y_pct": 7.648,
+        "w_pct": 80.11,
+        "h_pct": 12.171
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Natürlich kann es sein, daß man in einem philosophischen Text eine künstliche Objektivität findet, bei der Sie sehr zufrieden sind, weil Sie glauben, das kann ich jetzt von außen verstehen. Aber sehr oft ist diese Eindeutigkeit, die dem Leser hilft einzudringen, philosophisch nur imaginär. Manchmal muß gerade der Philosoph entdecken und zeigen, wie wenig in dem, wovon er spricht, eine objektive Entdeckung oder Erkenntnis möglich ist, wie unmöglich sie ist Warum spricht er dann davon? Warum zeigt er, wieso das nicht objektiv werden kann? Weil er gerade die Philosophie zu ihrer wahren Tätigkeit zurückbringen will. Er will zeigen, was die echte Natur dieser Philosophie ist, und das existentielle Verstehen, die existentielle Erkenntnis klarer hervorbringen. Dem entspricht die Frage: Ist es das, was er denkt, oder ist es nicht das, was er denkt? Ist diese Bewegung wirklich das Wesentliche oder ist es nicht das Wesentliche? Dazu wird er die Unmöglichkeiten einer objektiven Erkenntnis, wo sie nicht zu überwinden sind, offen legen.",
+      "bbox": {
+        "x_pct": 14.093,
+        "y_pct": 19.63,
+        "w_pct": 80.147,
+        "h_pct": 29.712
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gerade weil also die Philosophie eigentlich immer in Gefahr ist, die Dunkelheit zu ertragen und anzunehmen, sollte man umso mehr Klarheit verlangen. Die Klarheit ist unentbehrlich, wenn man verhindern will, daß man von dem Dunkeln beherrscht wird. Wenn es um die Freiheit geht, ist es unverständlich, was dadurch gewonnen ist, daß man sich von der Dunkelheit beherrschen läßt. Nur dann wird derjenige, den man liest, als klarer Mensch auf uns wirken. Unser Denken kann auf verschiedenen Stufen eine bestimmte Klarheit schaffen, und zwar auf verschiedene Weisen.",
+      "bbox": {
+        "x_pct": 13.885,
+        "y_pct": 50.987,
+        "w_pct": 80.233,
+        "h_pct": 13.791
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Denken wir z. B. jetzt an den Satz von Pythagoras. Wenn man den Beweis von diesem Theorem nimmt, wo ist die Evidenz dieser geometrischen Verhältnisse? Worin besteht die Macht dieser Evidenz, die mich zwingt, sie anzuerkennen? Ich kann nicht anders als sagen: Ja, so ist es. Welchen Sinn hat die Kraft des Beweises für den Geist? Der Geist, und nicht das Gefühl, sagt Ja. Es gibt die Fähigkeit zu einem ganz kategorischen Ja, das da gegeben wird. Wem wird dieses Ja gegeben? Es wird dem Sein gegeben. Weil das, was so kohärent ist und sich uns als evident aufzwingt, gerade ein Zeichen des Seins ist. Aber ist so ein Beweis eine Knechtschaft, weil man gezwungen wird?",
+      "bbox": {
+        "x_pct": 14.007,
+        "y_pct": 64.827,
+        "w_pct": 79.988,
+        "h_pct": 19.877
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One region needed correction from text to page_header."
+  ],
+  "doc_id": "2990",
+  "page": 79,
+  "elapsed_seconds": 4.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

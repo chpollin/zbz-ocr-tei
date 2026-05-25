@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sich, gegen einen Zaun stürzend, die Nüstern aufgerissen; die Wunde klaffte so tief, daß ich sie mir nicht ansehen konnte. Da nahm ich den Kopf des Pferdes zwischen meine Hände und schaute mir die Wunde aus nächster Nähe in allen Einzelheiten an. Jetzt erst wurde ich fähig zu tun, was getan werden mußte.",
+      "bbox": {
+        "x_pct": 8.003,
+        "y_pct": 6.266,
+        "w_pct": 80.934,
+        "h_pct": 11.245
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Uns den Tod so gegenwärtig zu machen, wie er es zuläßt . Obgleich wir weder den Tag noch die Stunde kennen, uns der Gewißheit des Todes bewußt zu werden. Ihn frei zu lassen, damit er alle seine Wirkungen über die Zeit breitet, in der wir jetzt leben – in erster Linie über den jetzigen Augenblick, der es ihm verdankt, einzigartig zu sein, Vergangenheit und Zukunft entgegensetzend und trennend.",
+      "bbox": {
+        "x_pct": 7.945,
+        "y_pct": 17.339,
+        "w_pct": 81.135,
+        "h_pct": 15.597
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Tod des Nächsten. Er war für mich der Nächste. Seine Hand, sein Blick, seine Stimme, sein Atem. Er ist nicht mehr. Ich bin bis zum Kirchhof einem unwahrscheinlichen Sarg gefolgt und habe ihn, von Seilen gehalten, in die feuchte Tiefe hinabgleiten sehen. Schon fielen die Erdschollen auf den Sargdeckel. Und ich gehe nach Hause. In diese seltsame Stille – nein, ich werde nicht erwarten, daß er die Tür aufmacht und plötzlich dasteht. Ich werde keinen Teller für ihn auflegen. Ich werde nicht in den Schubladen nach alten Photographien suchen in der Hoffnung, sein Gesicht wieder zusammenzusetzen. Ich werde versuchen, in der Nacht nicht nach ihm zu rufen. Ich lasse ihn ziehen. Ich vertraue ihn seiner Ewigkeit an.",
+      "bbox": {
+        "x_pct": 7.945,
+        "y_pct": 32.644,
+        "w_pct": 80.891,
+        "h_pct": 26.412
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und ich danke dafür, daß mir die einzige Gewißheit gegeben ist: Auch ich werde sterben. Diese Zeit, in der ich lebe, ist nicht das letzte Wort der Zeit.",
+      "bbox": {
+        "x_pct": 8.046,
+        "y_pct": 58.738,
+        "w_pct": 80.848,
+        "h_pct": 6.558
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein Trost ist es nicht, wie es – scheinbar – ein in derselben Zeit fortgesetztes Leben sein könnte. Nein, es ist kein Trost, und kein Schmerz wird dadurch gemildert, keine Sehnsucht gestillt. Aber ein Schimmer zeichnet sich ab. Nur eben ein Schimmer, eine Spur von Offenbarung. Gerade nur eine Undurchsichtigkeit, die etwas nachgibt.",
+      "bbox": {
+        "x_pct": 7.802,
+        "y_pct": 65.468,
+        "w_pct": 81.092,
+        "h_pct": 13.416
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn die Zeit, in der ich lebe, nicht mehr das letzte Wort der Zeit ist, hören Tod und Angst auf, die Lebensfreude zu zerstören. Tod und Angst transportieren eher die Lebensfreude und umhüllen sie geheimnisvoll; sie versetzen sie in die Ferne und schenken ihr Leichtigkeit, so daß Tod und Freude",
+      "bbox": {
+        "x_pct": 7.759,
+        "y_pct": 78.567,
+        "w_pct": 81.034,
+        "h_pct": 11.159
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "317",
+      "bbox": {
+        "x_pct": 83.71,
+        "y_pct": 91.55,
+        "w_pct": 4.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Initial text transcriptions were heavily truncated and inaccurate.",
+    "Page number 317 was missing from the initial region list."
+  ],
+  "doc_id": "2450",
+  "page": 8,
+  "elapsed_seconds": 6.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

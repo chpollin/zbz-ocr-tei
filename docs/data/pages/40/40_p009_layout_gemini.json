@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 11",
+      "bbox": {
+        "x_pct": 397,
+        "y_pct": 80,
+        "w_pct": 216,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Identified as page header including page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'inflige l'expérience aux illusions de la jeunesse. Je n'ai encore subi aucun désaveu. Oh, sans doute ! Mon premier amour, je l'ai cru éternel. Mon premier désespoir, je l'ai cru inconsolable. Et me voilà ta femme. Et voilà notre enfant. Et voilà mon bonheur, inépuisable à faire trembler mes mains. Mais ce n'est pas un désaveu. Marc, quelque part il est bien éternel, l'autre amour. Quelque part il est bien inconsolable. C'est là que je voudrais aller avec toi. Non te rappeler des faits que tu connais d'une histoire finie; mais te donner ce quelque chose d'éternel et d'inconsolable.",
+      "bbox": {
+        "x_pct": 11.486,
+        "y_pct": 12.098,
+        "w_pct": 80.851,
+        "h_pct": 27.911
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to reflect original page text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je vois tes yeux devant lesquels ce qui n'est pas éternel s'effrite en néant. Tes yeux gris sans étincelles, qui éclairent d'une lumière égale, pareille à celle du jour. Tes yeux larges qui ne scrutent jamais, qui contemplent. Car ils ne veulent que l'éternel, et l'éternel ne se prend pas de force. Tes yeux calmes. Je vois sortir de l'ombre ton arcade sourcilière, ton front, cette roche lisse. Tes lèvres, prêtes à vivre et immobiles. Oui, je peux te dire tout ce qui est vrai.",
+      "bbox": {
+        "x_pct": 11.716,
+        "y_pct": 40.331,
+        "w_pct": 80.851,
+        "h_pct": 22.268
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to reflect original page text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A seize ans, je supportais mal les humains, et encore plus mal d'être l'un d'eux. J'oubliais constamment ma propre présence parmi les autres, la place qu'occupait mon corps dans l'espace commun, les gestes qu'ils attendaient de lui. J'oubliais que mon regard posé sur eux était visible, et j'étais comme devant un champ de blé ou la courbe d'un fleuve. Je les contemplais trop longtemps.",
+      "bbox": {
+        "x_pct": 11.851,
+        "y_pct": 67.987,
+        "w_pct": 80.716,
+        "h_pct": 17.807
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to reflect original page text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page header/number was labeled as text",
+    "OCR text extraction was poor/corrupted"
+  ],
+  "doc_id": "40",
+  "page": 9,
+  "elapsed_seconds": 4.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

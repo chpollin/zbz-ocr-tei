@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ID\u0000OLOGIES ET R\u0000ALIT\u0000 197",
+      "bbox": {
+        "x_pct": 308.0,
+        "y_pct": 74.0,
+        "w_pct": 692.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified page header and page number as _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "commissions parlementaires competentes pourraient connaitre de facon suivie les decisions de l'executif, avec droit de regard et voix consultative. En cas d'urgence (mais des precautions limitatives seraient necessaires pour prevenir tout usage abusif de ce droit), elles pourraient demander la convocation du parlement en session extraordinaire. Ici encore, tout est affaire d'equilibre, non d'integralite. Vouloir, par esprit democratique, soumettre l'executif ` une ratification constante, ` la fois partielle et vague, du legislatif, c'est faire naitre un dangereux besoin de « gouvernement fort », un appel ` la dictature.",
+      "bbox": {
+        "x_pct": 36.63,
+        "y_pct": 100.98,
+        "w_pct": 849.58,
+        "h_pct": 213.64
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, les institutions democratiques doivent enfin tenir compte de l'importance croissante des forces economiques. Le succhs de la doctrine marxiste vulgarisee est dû avant tout au fait qu'elle parait denoncer une apparence hypocrite en montrant les realites de l'economie sous le decor politique. Le jeu des interhts opposes agit sur la politique d'un itat pour ainsi dire par la bande, d'une facon toujours plus ou moins indirecte, sournoise, honteuse. Les temps sont probablement mûrs pour que ces conflits se deroulent, non plus dans les coulisses, mais sur la schne politique. L'homme de la rue, aujourd'hui, sait parfaitement que des puissances economiques s'affrontent dans le monde, et il desire voir clair et jouer son rhle dans cet affrontement. Il convient de donner forme ` cette volonte, de creer les organes politiques legitimes de la lutte economique. Le capital, les syndicats, la paysannerie, les consommateurs, les cooperatives de production et de distribution, le grand et le petit commerce doivent avoir une assemblee où leurs thhses soient debattues directement par leurs representants — et non intervenir de facon masquee, par personnes interposees, par des pressions, sous divers pretextes, dans des debats qui paraissent avoir un objet avant tout politique ou même, parfois, culturel et moral. Si les entites economiques agissantes dans notre monde occidental apparaissaient plus souvent ` visage decouvert, les problhmes deviendraient limites et techniques, ils appelleraient des solutions plus concrhtes, et la vie politique tout entihre gagnerait ` la fois en franchise, en realite et en efficacite.",
+      "bbox": {
+        "x_pct": 33.84,
+        "y_pct": 304.55,
+        "w_pct": 850.97,
+        "h_pct": 513.37
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est pas certain que la meilleure voie pour atteindre ce but soit de creer des institutions du type « Chambre economique », par exemple. En democratie, il faut toujours veiller ` laisser leur",
+      "bbox": {
+        "x_pct": 34.82,
+        "y_pct": 817.91,
+        "w_pct": 846.38,
+        "h_pct": 68.63
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 758.0,
+        "y_pct": 888.0,
+        "w_pct": 21.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as _filter"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 2,
+  "issues": [
+    "Detected and moved page header and footer to filter category.",
+    "OCR text content in the region objects was truncated or incorrect and needs full verification."
+  ],
+  "doc_id": "330",
+  "page": 231,
+  "elapsed_seconds": 9.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

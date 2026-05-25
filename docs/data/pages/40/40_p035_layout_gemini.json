@@ -1,0 +1,27 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hier, j'ai cessé brusquement d'écrire. Mon sang ne coulait plus comme il le faut pour l'enfant. La mauvaise tension de jadis crispait de nouveau mon corps. Je ne veux plus jamais sentir cela, je te le jure, Marc. Je me suis remise en pensée en face de ton visage, longuement. Comme toujours, la paix m'a été rendue, et le désir de faire quelque chose pour toi, pour la maison, de toucher quelque chose de bon avec mes mains. Je suis descendue à la cuisine et me suis mise à tourner la pâte pour un biscuit. Ida avait son jour de congé, la cuisine était en ordre, blanche, nette. Il n'était guère que quatre heures, mais il pleuvait dehors dans un mélange de brume et de crépuscule. La cuisine éclairée était inattaquable. Je tournais la pâte, je ne pensais plus à rien de ce que j'avais écrit, et j'écoutais comme si tu me lisais quelque chose à haute voix, un de ces livres que tu aurais choisis, Don Quichotte ou l'Iliade. Un peu après, Monica est arrivée. Elle était surexcitée, et, en parlant, elle marchait en tous sens dans la cuisine qui devint soudain étroite, minuscule. Chacun de ses pas laissait une trace de boue sur le carrelage, un petit tas de terre agglutiné autour d'une feuille",
+      "bbox": {
+        "x_pct": 9.905,
+        "y_pct": 32.864,
+        "w_pct": 81.176,
+        "h_pct": 53.686
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was truncated and riddled with typos. Corrected the text to accurately reflect the source image."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 1,
+  "issues": [
+    "Initial text extraction was incomplete and contained several transcription errors."
+  ],
+  "doc_id": "40",
+  "page": 35,
+  "elapsed_seconds": 3.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JOHANNES ANDEREGG",
+      "bbox": {
+        "x_pct": 9.3,
+        "y_pct": 15.553,
+        "w_pct": 32.645,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled name text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Geboren 1938, studierte Germanistik, Anglistik und Kunstgeschichte an den Universitäten München, Cambridge und Zürich, war Professor für germanistische Literaturwissenschaft an der Universität Kassel und ist seit 1978 Professor für deutsche Sprache und Literatur an der Hochschule St. Gallen; seit März 1986 deren Rektor.",
+      "bbox": {
+        "x_pct": 9.577,
+        "y_pct": 17.518,
+        "w_pct": 65.217,
+        "h_pct": 11.71
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 9.3,
+        "y_pct": 31.346,
+        "w_pct": 24.481,
+        "h_pct": 2.183
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Geboren 1910, studierte Sprachen und Philosophie an den Universitäten Genf, Paris, Heidelberg und Freiburg im Breisgau; sie war Schülerin von Karl Jaspers. Nach Lehrtätigkeit in Genf und den USA erhielt sie 1956 eine Professur für systematische Philosophie an der Universität Genf. Während zweieinhalb Jahren leitete sie die Abteilung für Philosophie der Unesco in Paris. Sie veröffentlichte zahlreiche Bücher, u. a. <Die Ideologien und die Wirklichkeit>, <Die Unfähigkeit, Freiheit zu ertragen>, <Die Hoffnung, Mensch zu sein>.",
+      "bbox": {
+        "x_pct": 9.505,
+        "y_pct": 33.479,
+        "w_pct": 65.29,
+        "h_pct": 17.518
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FRANZ MUHEIM",
+      "bbox": {
+        "x_pct": 9.577,
+        "y_pct": 54.782,
+        "w_pct": 23.478,
+        "h_pct": 2.132
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Geboren 1923, studierte Rechtswissenschaften an den Universitäten Fribourg, Zürich und Bern und ist seit 1948 Rechtsanwalt und Notar in Altdorf/Uri. Er war von 1959 bis 1972 Landrat von Uri, 1964 Landratspräsident, seit 1971 ist er Ständerat. Herr Muheim ist Präsident des Verwaltungsrates der Schindler Holding AG.",
+      "bbox": {
+        "x_pct": 9.662,
+        "y_pct": 56.965,
+        "w_pct": 65.133,
+        "h_pct": 11.718
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "STEPHAN SCHMIDHEINY",
+      "bbox": {
+        "x_pct": 9.541,
+        "y_pct": 70.451,
+        "w_pct": 35.109,
+        "h_pct": 2.351
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled name text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Geboren 1947 in Heerbrugg SG, studierte Rechtswissenschaften in Zürich und Rom, doktorierte an der Universität Zürich im Jahre 1972. Herr Schmidheiny ist Präsident des Verwaltungsrates der ANOVA Holding AG sowie Mitglied des Verwaltungsrates der Schweizerischen Bankgesellschaft, der Brown Boveri & Cie AG, der SMH, Schweiz. Gesellschaft für Mikroelektronik und Uhrenindustrie AG und der Landis & Gyr AG.",
+      "bbox": {
+        "x_pct": 9.626,
+        "y_pct": 72.394,
+        "w_pct": 65.169,
+        "h_pct": 15.91
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Text regions were heavily truncated in initial input.",
+    "Multiple typos in names (e.g. Schmidheiny, Johannes Anderegg)."
+  ],
+  "doc_id": "2400",
+  "page": 4,
+  "elapsed_seconds": 7.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

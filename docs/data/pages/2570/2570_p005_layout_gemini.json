@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": {
+        "x_pct": 864.0,
+        "y_pct": 27.0,
+        "w_pct": 14.0,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des contraintes. Supposons donc que Gorbatchov s'efforce d'agir dans ce sens, tout en maintenant - comme il déclare vouloir le faire - l'ordre communiste traditionnel dans tous les domaines. Cela paraît presque impossible : les contradictions portent en elles un échec futur. En outre, au niveau des faits, une telle évolution coaliserait contre Gorbatchov la plupart des privilégiés, menacés par un tel assouplissement, comme aussi une bonne partie des masses, plus un nombre croissant de dissidents finalement frustrés de leur espoir.",
+      "bbox": {
+        "x_pct": 39.68,
+        "y_pct": 98.77,
+        "w_pct": 897.2,
+        "h_pct": 193.49
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deuxième hypothèse : Gorbatchov réussit à réaliser ce que nous Occidentaux, appellerions une libération progressive, mais radicale. L'histoire devient alors tout-à-fait imprévisible : le régime de fer que la Russie subit depuis quelque 70 ans explose, et avec lui, les pays asservis et les diverses nationalités. Il se produit des affrontements dont nul ne peut prévoir l'issue. Cette hypothèse, improbable, ne nous permet donc pas de concevoir à l'avance une conduite raisonnable.",
+      "bbox": {
+        "x_pct": 39.04,
+        "y_pct": 310.45,
+        "w_pct": 949.23,
+        "h_pct": 171.19
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est une troisième hypothèse qui me paraît la plus probable. Gorbatchov réussit - ou un autre réussit à sa place - à maintenir le système dans toute sa rigueur par la force et la menace, grâce à un rôle accru de l'armée, tout en sauvant certaines apparences de réforme, surtout au niveau culturel du langage, des media, de l'affiche, du spectacle. Réussite, certes, toujours menacée, en équilibre instable, mais efficace de plusieurs manières, et surtout vers l'extérieur, - vers l'Europe et même les Etats-Unis. Cette ligne me paraît la plus probable, c'est celle qui s'annonce le plus clairement. Elle arriverait à se maintenir à l'intérieur par la force, et à l'extérieur par les apparences, la façade. L'arme idéologique est alors inefficace à l'intérieur, mais efficace à l'extérieur : je lisais encore ce matin que les textes et déclarations que l'Occident accueille avec tant d'enthousiasme sont à peine accessibles à l'intérieur de l'URSS; le public soviétique n'en a pas connaissance. Mais ils sont efficaces à l'extérieur : on n'a pas assez remarqué à quel point l'idéologie gorbatchovienne est calquée sur les aspirations, non pas tant du peuple russe que des peuples de l'Occident. Elle est faite pour répondre à l'attente des peuples occidentaux, et surtout à celle du peuple allemand.",
+      "bbox": {
+        "x_pct": 39.04,
+        "y_pct": 500.59,
+        "w_pct": 898.74,
+        "h_pct": 458.51
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR quality poor, required full re-transcription",
+    "Page number misidentified as text",
+    "Missing bounding box for page number in provided original layout"
+  ],
+  "doc_id": "2570",
+  "page": 5,
+  "elapsed_seconds": 6.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

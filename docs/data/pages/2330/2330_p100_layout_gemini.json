@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H . Oh cest tôt. Déjà comme fille. Il faut penser que le monde dans lequel jai été enfant n'était pas le même que celui où nous vivons aujourd'hui. Il était bien plus inégalitaire, et la pauvreté, la misère, y étaient bien plus réelles que dans notre monde actuel. Ce n'est pas à comparer. Il n'y avait pas d'assurance-vieillesse ; il y avait beaucoup plus d'alcoolisme ; les journées de travail étaient beaucoup plus longues et plus lourdes. Quand j'étais enfant, nous avions une femme de ménage ; elle avait une fille à peu près de mon âge avec laquelle je jouais ; le père de cette fille était un ouvrier alcoolique, qui a fini par se pendre dans un accès d'éthylisme. J'avais peut-être 7 ou 8 ans quand c'est arrivé. Cela ne m'est pas apparu comme une déficience personnelle, mais déjà comme un vice social. J'ai toujours entendu parler de ces problèmes, et ils étaient toujours posés, en termes politiques, comme si on y pouvait quelque chose. Dans le milieu où je vivais, on ne considérait pas la pauvreté comme faisant nécessaire partie de l'ordre du monde.",
+      "bbox": {
+        "x_pct": 16.484,
+        "y_pct": 4.411,
+        "w_pct": 79.731,
+        "h_pct": 29.427
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelles ont été alors les options fondamentales de votre pensée et de votre action politiques ?",
+      "bbox": {
+        "x_pct": 16.813,
+        "y_pct": 34.702,
+        "w_pct": 79.487,
+        "h_pct": 4.387
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je dirai dabord que dans mon enfance, puisque je vivais dans un pays libre, ce ne sont pas les problèmes d'oppression politique qui ont été au premier plan, sauf au niveau théorique où j'entendais débattre des problèmes de l'Est. Mais dans le concret, c'étaient des problèmes sociaux. Je pensais que dans ce domaine il y avait énormément à faire, et je continue d'ailleurs à le penser, bien que les choses aient beaucoup changé. Vous voyez, c'est peut-être difficile à comprendre pour des gens d'aujourd'hui ; d'une part, ils ne subissent plus la pression de la pauvreté qu'on voyait à l'époque et qui était insupportable et, d'autre part, ils vivent dans un milieu où ces problèmes ne sont pas au premier plan des préoccupations. Tandis que moi, j'ai connu l'un et l'autre : j'entendais constamment parler de ces problèmes et j'avais des cas de misère et d'existences mutilées sous les yeux.",
+      "bbox": {
+        "x_pct": 16.447,
+        "y_pct": 38.734,
+        "w_pct": 79.768,
+        "h_pct": 25.54
+      },
+      "changed": true,
+      "change_reason": "The transcription was incomplete and truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et comment se sont articulées vos options proprement politiques par rapport à la perception de ces problèmes essentiellement concrets et je dirais socio-politiques ?",
+      "bbox": {
+        "x_pct": 16.606,
+        "y_pct": 65.185,
+        "w_pct": 79.402,
+        "h_pct": 6.323
+      },
+      "changed": true,
+      "change_reason": "The transcription was incomplete and truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jai limpression davoir reçu tout le long de ma vie une certaine éducation socialiste. D'abord, à la maison, par mes parents et par les amis de mes parents, et puis j'étais très jeune quand on m'a emmenée à des réunions ou des conférences où mon père et certains de ses amis exposaient leurs idées et leurs conceptions. Je ne me rappelle pas à quel âge j'ai commencé à aller au Foyer international socialiste. Il a été créé, je crois, peu après la Société des Nations et le Bureau international du Travail. L'occasion des réunions de la Société des Nations et du Bureau international du Travail, des quantités de gens passaient par Genève, qui venaient de tous les pays qui étaient socialistes, socialistes démocrates.",
+      "bbox": {
+        "x_pct": 16.447,
+        "y_pct": 71.185,
+        "w_pct": 79.902,
+        "h_pct": 19.968
+      },
+      "changed": true,
+      "change_reason": "The transcription was incomplete and truncated."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "96",
+      "bbox": {
+        "x_pct": 17.2,
+        "y_pct": 94.0,
+        "w_pct": 2.2,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Transcription for paragraphs 3, 4, and 5 was truncated in the provided JSON.",
+    "Page number 96 was missing from the regions list.",
+    "The transcription content needs to be verified for accuracy against the provided image."
+  ],
+  "doc_id": "2330",
+  "page": 100,
+  "elapsed_seconds": 7.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DANS L'ACTION 191",
+      "bbox": {
+        "x_pct": 374.88,
+        "y_pct": 77.0,
+        "w_pct": 251.24,
+        "h_pct": 11.23
+      },
+      "changed": true,
+      "change_reason": "Header elements detected as paragraphs. 'DANS L'ACTION' and '191' constitute the running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "au contraire que faute de pouvoir recourir à un système philosophique, le savant érige la science en philosophie. Il se ferme par là toute possibilité d'effort philosophique véritable, toute communication, et fait mentir la science en lui faisant promettre plus qu'elle ne peut donner.",
+      "bbox": {
+        "x_pct": 8.991,
+        "y_pct": 12.078,
+        "w_pct": 75.753,
+        "h_pct": 15.5
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans l'action, la vérité métaphysique ne s'affirme pas et même ne se connaît pas elle-même. Elle se manifeste par une fidélité imprévisible, reflet de l'existence qui est libre parce qu'elle s'engage. Elle est, dans l'action, la conscience que cette action a un autre sens que le but particulier qu'elle se propose. Le but particulier ne devient pas par là indifférent; au contraire, il puise son importance et son poids dans ce « sens » dont il est le seul représentant, en l'absence de tout essai d'explication philosophique. C'est par ce sens caché seul qu'un fait peut devenir un motif. Ici encore l'élément philosophique est la conscience d'une limite : le sens ultime des actes reste incompréhensible. Cette conscience empêche ainsi de faire du motif une obligation universelle et de déclarer traître quiconque n'y cède pas. — Mais d'autre part la tentation peut être forte, en l'absence d'une philosophie, d'ériger en philosophie un programme d'action concrète; on se ferme par là tout accès aux sources mêmes de l'action en méconnaissant le fait qu'à la source de toute action il y a déjà une croyance. Telle est l'erreur de bien des courants politiques : un programme d'action économique",
+      "bbox": {
+        "x_pct": 8.78,
+        "y_pct": 27.264,
+        "w_pct": 75.964,
+        "h_pct": 61.745
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription error."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Detected header elements were wrongly categorized as part of the paragraph content.",
+    "The OCR text for the main paragraph was significantly truncated and contained spelling errors."
+  ],
+  "doc_id": "20",
+  "page": 193,
+  "elapsed_seconds": 5.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

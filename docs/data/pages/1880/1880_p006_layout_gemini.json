@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "inconcevable. Rêver de vivre au paradis, c'est rêver de n'être plus un homme. Un ange, une bête, peut-être. Mais un homme, non.",
+      "bbox": {
+        "x_pct": 6.734,
+        "y_pct": 4.703,
+        "w_pct": 89.072,
+        "h_pct": 4.596
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Etre un homme, c'est accepter au présent la rencontre avec un monde que le passé nous donne, et assumer la responsabilité d'agir sur lui au présent, selon une visée, dans l'avenir, de ce qui n'est pas encore. Certes, comme on l'a dit, c'est lutter contre la souffrance, mais c'est en même temps reconnaître son sens et son lien avec la liberté.",
+      "bbox": {
+        "x_pct": 6.607,
+        "y_pct": 8.853,
+        "w_pct": 89.492,
+        "h_pct": 10.594
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est apprendre à discerner sans cesse entre les techniques de tous ordres, inventées par les hommes pour accroître les chances de leur liberté, et celles qui, dans tous les domaines, tentent de se substituer à la liberté. Là réside toujours la tentation. Dostoïevski disait bien que pour les hommes, la liberté est le cadeau le plus lourd à porter.",
+      "bbox": {
+        "x_pct": 6.315,
+        "y_pct": 18.837,
+        "w_pct": 89.492,
+        "h_pct": 10.759
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "304",
+      "bbox": {
+        "x_pct": 59,
+        "y_pct": 947,
+        "w_pct": 46,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Added page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extractions were severely truncated/incomplete.",
+    "Page number missing from initial detection.",
+    "OCR text needs to match image content precisely."
+  ],
+  "doc_id": "1880",
+  "page": 6,
+  "elapsed_seconds": 3.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

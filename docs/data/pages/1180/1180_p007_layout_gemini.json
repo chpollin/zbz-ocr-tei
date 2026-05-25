@@ -1,0 +1,116 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pouvoir appliquer à lhomme et à tous les domaines humains les principes d'explications dérivatifs et",
+      "bbox": {
+        "x_pct": 7.932,
+        "y_pct": 7.483,
+        "w_pct": 88.149,
+        "h_pct": 20.137
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les techniques   triomphantes   aboutissent à une de médicalisation générale de tous les problèmes e",
+      "bbox": {
+        "x_pct": 7.608,
+        "y_pct": 29.266,
+        "w_pct": 88.338,
+        "h_pct": 26.365
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Sème thèse:",
+      "bbox": {
+        "x_pct": 7.608,
+        "y_pct": 59.36,
+        "w_pct": 14.243,
+        "h_pct": 1.792
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le changement est devenu la devise de lépoque. Tout change, et il faut tout changer, la société Nous",
+      "bbox": {
+        "x_pct": 7.432,
+        "y_pct": 61.323,
+        "w_pct": 88.203,
+        "h_pct": 7.807
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici, le problème est celui des fins: Tous ces efforts pour faire quoi? Or justement, dans le domaine",
+      "bbox": {
+        "x_pct": 7.527,
+        "y_pct": 73.148,
+        "w_pct": 87.919,
+        "h_pct": 16.587
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Du même coup, elles détruisent chez les êtres humains, le sens du sens. Or quand un être humain a vu",
+      "bbox": {
+        "x_pct": 7.568,
+        "y_pct": 89.189,
+        "w_pct": 87.838,
+        "h_pct": 4.411
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "222",
+      "bbox": {
+        "x_pct": 1.986,
+        "y_pct": 93.174,
+        "w_pct": 3.419,
+        "h_pct": 2.278
+      },
+      "changed": true,
+      "change_reason": "Separated page number from text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Même si les sciences humaines se mettent au service d’une révolution déter-",
+      "bbox": {
+        "x_pct": 5.405,
+        "y_pct": 93.174,
+        "w_pct": 89.986,
+        "h_pct": 2.278
+      },
+      "changed": true,
+      "change_reason": "Separated paragraph text from page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number 222 merged with text in original layout"
+  ],
+  "doc_id": "1180",
+  "page": 7,
+  "elapsed_seconds": 4.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Separated page number from text": 1,
+    "Separated paragraph text from page number": 1
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est plus une histoire humaine, faute de discontinuité, d'incertitude et d'enjeux.",
+      "bbox": {
+        "x_pct": 15.922,
+        "y_pct": 13.271,
+        "w_pct": 57.203,
+        "h_pct": 4.857
+      },
+      "changed": true,
+      "change_reason": "OCR correction applied to fix scrambled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a pas d'histoire humaine sans temps vécu, au sens décrit ci-dessus. Mais parce que ce temps vécu reste contradictoire et discontinu, il implique, pour la liberté responsable constitutive du présent et de cette discontinuité même, une référence, interrogative et absolue, à ce qui transcende le temps en toutes ses structures et toutes ses dimensions. Transcendance qui, loin d'abolir les discontinuités ou de résoudre les contradictions, les rend, dans la condition humaine, définitives, - ou plutôt : sans cesse renaissantes.",
+      "bbox": {
+        "x_pct": 15.752,
+        "y_pct": 17.661,
+        "w_pct": 57.627,
+        "h_pct": 24.039
+      },
+      "changed": true,
+      "change_reason": "OCR correction applied for improved readability and accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Condition humaine disloquée, écartelée, sans solution - mais historique et libre. Avec tout juste l'ignorance nécessaire à une possible recherche d'un sens, à un pauvre, indestructible espoir.",
+      "bbox": {
+        "x_pct": 15.604,
+        "y_pct": 41.562,
+        "w_pct": 57.489,
+        "h_pct": 9.24
+      },
+      "changed": true,
+      "change_reason": "OCR correction applied to fix text fragmentation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sujet agissant dans l'histoire se sert parfois de la transcendance pour échapper de son mieux à sa condition temporelle. Il le fait alors en isolant et en absolutisant une seule des dimensions du temps vécu. Il peut recourir à l'être indestructible du passé en y situant l'âge d'or. Il peut recourir à la malléabilité du futur et à la constante fuite en avant qu'il permet.",
+      "bbox": {
+        "x_pct": 15.752,
+        "y_pct": 50.147,
+        "w_pct": 57.521,
+        "h_pct": 18.128
+      },
+      "changed": true,
+      "change_reason": "OCR correction applied for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la transcendance est au présent, dans cette «petite durée» qui joint et sépare le passé de l'a-",
+      "bbox": {
+        "x_pct": 15.752,
+        "y_pct": 67.76,
+        "w_pct": 57.373,
+        "h_pct": 5.119
+      },
+      "changed": true,
+      "change_reason": "OCR correction applied for readability."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "97",
+      "bbox": {
+        "x_pct": 70.1,
+        "y_pct": 74.8,
+        "w_pct": 2.8,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer and added missing region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR for text blocks was highly fragmented and contained significant errors.",
+    "Page number 97 was initially missing from detected regions."
+  ],
+  "doc_id": "2780",
+  "page": 96,
+  "elapsed_seconds": 6.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SON HISTOIRE 161",
+      "bbox": {
+        "x_pct": 393.0,
+        "y_pct": 74.0,
+        "w_pct": 218.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header elements identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pure objectivité il se dégrade en chose utilisable et qu'il suffit d'apprendre.",
+      "bbox": {
+        "x_pct": 9.292,
+        "y_pct": 11.792,
+        "w_pct": 76.099,
+        "h_pct": 5.367
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons donc que les caractères fondamentaux de la philosophie sont : totalité, « historicité », inachèvement.",
+      "bbox": {
+        "x_pct": 9.488,
+        "y_pct": 16.997,
+        "w_pct": 75.904,
+        "h_pct": 7.407
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment Jaspers conçoit-il le rapport entre la philosophie et son histoire? — A chaque époque nouvelle, la philosophie prend d'autres formes. Intérieurement elle tend toujours à une seule et même chose : l'être. La transformation de sa forme à travers le temps n'est pourtant pas un processus extérieur : elle a ses racines dans la situation fondamentale du sujet lié à son époque. En quel sens le passé reste-t-il présent? — En science, l'histoire n'est que la forme temporelle de la conquête de la vérité; elle reste étrangère à la vérité elle-même et pour elle sans intérêt réel. La logique, la psychologie, dont la philosophie peut faire ses instruments, s'accroissent et subissent des pertes; on peut les apprendre et les enrichir. Mais ce qu'on apprend là n'est justement pas philosophie, et apprendre n'est pas philosopher. — Nous trouvons dans l'histoire de la philosophie des œuvres qui nous paraissent achevées. Nous sommes sûrs de ne pas pouvoir faire mieux. Lorsqu'on considère la forme par laquelle s'est réalisée à une certaine époque l'activité philosophique d'un grand penseur, c'est un non sens de dire qu'il aurait dû ici ou là penser autrement et qu'alors il aurait eu raison. Là où il y a des erreurs de détail, elles sont justement sans impor-",
+      "bbox": {
+        "x_pct": 9.533,
+        "y_pct": 24.376,
+        "w_pct": 76.867,
+        "h_pct": 64.471
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 796.0,
+        "y_pct": 895.0,
+        "w_pct": 22.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer to be filtered out."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected running header was labeled as text",
+    "Detected page number was labeled as text",
+    "OCR corruption in paragraph text needs fixing",
+    "The bounding box provided for the main text in the source was too encompassing (included the top part of the page content wrongly)"
+  ],
+  "doc_id": "20",
+  "page": 163,
+  "elapsed_seconds": 4.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

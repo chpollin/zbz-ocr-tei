@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POSTFACE",
+      "bbox": {
+        "x_pct": 38.12,
+        "y_pct": 27.003,
+        "w_pct": 16.295,
+        "h_pct": 2.141
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce n'est pas sans crainte ni mauvaise conscience que j'achève ce livre. Pendant que je l'écrivais, la C. E. D. a été enterrée, la guerre d'Indochine a pris fin. L'Afrique du Nord est à la croisée des chemins. L'U. R. S. S. a déplacé l'accent, de l'industrie lourde sur les biens de consommation, puis elle l'a remis sur l'industrie lourde. Mac Carthy a grandi, sévi, il est tombé et risque d'avoir des successeurs. L'Allemagne occidentale se déchire entre ceux qui se cramponnent à l'Atlantique et ceux qui espèrent la bienveillance de l'Est. Nous sommes d'ailleurs en pleine « détente ». Savants, diplomates, généraux proclament la paix perpétuelle. Neutralisme et communisme envahissent laboratoires et universités. Des livres ont reçu des prix littéraires et se sont multipliés sous les arbres de Noël. On y lisait que quiconque ne veut pas être un salaud doit être de gauche et qu' « être de gauche » signifie être « pour l'U. R. S. S., seul espoir de l'humanité ». Pourquoi? On ne sait pas. Slogans. « Les millions de Chinois », « les Malgaches », « le prolétariat » — slogans. Mais les Chinois, les Indochinois, les Malais, les Sénégalais, les ouvriers et les ouvrières des usines, je les ai vus. Ce ne sont pas du tout des slogans. Pas des slogans, les corps épuisés, les esprits atrophiés, la funèbre résignation, la vie dévorée et perdue. Pas des slogans, les artistes suicidés dont les œuvres posthumes enrichissent les marchands. Mais pas des slogans non plus, malgré la « destalinisation », les camps de travail forcé du grand Nord, la frayeur sans chuchotement, le mensonge, le conformisme et la délation devenus vertus primordiales de la vie quotidienne et de toute création. Pas des slogans non plus, là-bas, cette classe ouvrière réduite à la totale",
+      "bbox": {
+        "x_pct": 3.022,
+        "y_pct": 32.739,
+        "w_pct": 85.877,
+        "h_pct": 56.021
+      },
+      "changed": true,
+      "change_reason": "Corrected the severely truncated and OCR-corrupted text content for the paragraph region."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "251",
+      "bbox": {
+        "x_pct": 113.333,
+        "y_pct": 895.0,
+        "w_pct": 21.667,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer label with _filter tag."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text extraction for the main paragraph was highly inaccurate and truncated.",
+    "Page number 251 was not captured as a distinct region initially."
+  ],
+  "doc_id": "330",
+  "page": 285,
+  "elapsed_seconds": 8.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

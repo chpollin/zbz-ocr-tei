@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Quelques réflexions sur l'Europe lasse d'elle-même *",
+      "bbox": {
+        "x_pct": 17.021,
+        "y_pct": 11.503,
+        "w_pct": 61.79,
+        "h_pct": 6.49
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text errors in the title."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par Jeanne HERSCH",
+      "bbox": {
+        "x_pct": 35.582,
+        "y_pct": 21.289,
+        "w_pct": 25.119,
+        "h_pct": 2.22
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mesdames et Messieurs, mes amis,",
+      "bbox": {
+        "x_pct": 11.677,
+        "y_pct": 29.436,
+        "w_pct": 40.976,
+        "h_pct": 2.417
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation (comma instead of semicolon)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le prix Montaigne m'est remis en cette journée du 5 mai 1979, qui se trouve être la Journée de l'Europe et le trentième anniversaire du Conseil de l'Europe. Il m'est remis en ce Château de Coppet, qui restera pour toujours celui de la grande Européenne que fut Madame de Staël. Le prix lui-même, par sa nature et son intention, se met au service de l'Europe. Il signifie que celui qui le reçoit a contribué, dans la mesure — grande ou modeste — de ses forces, à la culture européenne, et qu'il s'engage à poursuivre ses efforts dans ce sens. Les noms de ceux qui l'ont reçu avant moi — et il en est plusieurs auxquels je voue depuis longtemps gratitude et vénération — ne peuvent qu'accroître le sentiment de reconnaissance que j'éprouve pour le Jury et pour la Fondation qui me l'ont cette année attribué.",
+      "bbox": {
+        "x_pct": 8.26,
+        "y_pct": 31.315,
+        "w_pct": 80.313,
+        "h_pct": 25.303
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and improved OCR accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce sentiment est d'autant plus vif que, grâce à cette décision, il m'a été possible de désigner mon ancienne étudiante, Mademoiselle Michèle Petrosillo, pour une bourse lui permettant une année d'étude dans une université allemande. Ce faisant, j'ai pensé, bien sûr, aux semestres de travail philosophique intense que j'ai eu moi-même le privilège de vivre dans l'Allemagne d'avant le nazisme, alors que je suivais les cours et les séminaires de Karl Jaspers. Je souhaite à Michèle Petrosillo de rencontrer là-bas, sinon un maître, du moins un professeur dont la réflexion soit centrée sur l'essentiel.",
+      "bbox": {
+        "x_pct": 9.174,
+        "y_pct": 56.251,
+        "w_pct": 79.725,
+        "h_pct": 18.753
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and full text body content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'essentiel, pour un Européen, qu'est-ce que cela peut bien être ? Il semble parfois, lorsque nous écoutons nombre de nos contemporains,",
+      "bbox": {
+        "x_pct": 9.637,
+        "y_pct": 74.748,
+        "w_pct": 79.387,
+        "h_pct": 4.671
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and OCR."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "* Discours prononcé à l'occasion de la remise du Prix Montaigne au château de Coppet le 5 Mai 1979.",
+      "bbox": {
+        "x_pct": 9.925,
+        "y_pct": 80.76,
+        "w_pct": 74.268,
+        "h_pct": 4.492
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and punctuation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 87.5,
+        "y_pct": 87.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as filter region."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 6,
+  "issues": [
+    "Several paragraphs had truncated or incorrectly segmented OCR text.",
+    "Footnote had incorrect marker formatting.",
+    "Page number not captured as separate region.",
+    "Punctuation errors throughout text."
+  ],
+  "doc_id": "1580",
+  "page": 2,
+  "elapsed_seconds": 5.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

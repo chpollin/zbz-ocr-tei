@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "exige à la fois présence et distance par rapport aux événements contemporains et aux options qu’ils réclament. En même temps, elle impose aux maîtres et aux élèves, par l’histoire de la philosophie et la lecture des textes, l’obligation merveilleuse de vivre chaque jour dans la société des plus grands esprits philosophiques de tous les temps.",
+      "bbox": {
+        "x_pct": 9.661,
+        "y_pct": 6.795,
+        "w_pct": 84.241,
+        "h_pct": 11.945
+      },
+      "changed": true,
+      "change_reason": "The text was truncated in the original extraction, updated to reflect the full content of the block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mort et écrits posthumes",
+      "bbox": {
+        "x_pct": 10.068,
+        "y_pct": 21.225,
+        "w_pct": 31.396,
+        "h_pct": 2.168
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malade, condamné depuis le début par les médecins, Jaspers vécut très longtemps, et il a mis longtemps pour mourir. La passion avec laquelle il accomplissait sa tâche ne le lâchait pas. Lorsque vers la fin se manifestèrent chez lui certains troubles de conscience momentanés, il continua de les observer, de les interpréter, de porter des diagnostics sur leur nature. Sa lucidité sereine ne se laissa jamais obscurcir.",
+      "bbox": {
+        "x_pct": 9.715,
+        "y_pct": 23.882,
+        "w_pct": 84.011,
+        "h_pct": 13.625
+      },
+      "changed": true,
+      "change_reason": "The text was truncated in the original extraction, updated to reflect the full content of the block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Son œuvre publiée est considérable, mais les écrits posthumes, dont la masse est extraordinaire, montrent que nous n’avons là qu’un fragment de ce qu’il avait conçu. Une œuvre considérable, et qui n’est qu’un fragment : telle devrait bien apparaître à la postérité une philosophie toujours en quête d’une totalité sans cesse brisée, et qui lisait dans cet échec même l’être de l’absolu. (61)",
+      "bbox": {
+        "x_pct": 9.81,
+        "y_pct": 43.042,
+        "w_pct": 83.821,
+        "h_pct": 11.457
+      },
+      "changed": true,
+      "change_reason": "The text was truncated in the original extraction, updated to reflect the full content of the block."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original extraction significantly truncated the text within paragraphs.",
+    "Page number at bottom of page not captured as region."
+  ],
+  "doc_id": "1520",
+  "page": 17,
+  "elapsed_seconds": 3.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

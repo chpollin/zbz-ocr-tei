@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "528",
+      "bbox": {
+        "x_pct": 27.103,
+        "y_pct": 9.588,
+        "w_pct": 5.441,
+        "h_pct": 2.061
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "title/section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Coups de sonde",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region for the heading 'Coups de sonde' which appears in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "gênante et, à vrai dire, malgré leur acceptation, inacceptable. L'accent qu'ils prétendaient mettre chez eux sur les droits économiques et sociaux plutôt que sur les droits civils et politiques contribua à les mettre à l'aise sur la scène internationale — jusqu'au moment où il devint évident aux yeux de tous que la seconde catégorie de ces droits était la condition de réalité de la première.",
+      "bbox": {
+        "x_pct": 26.662,
+        "y_pct": 13.67,
+        "w_pct": 70.941,
+        "h_pct": 18.126
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il fallut donc découvrir que l'exigence des droits avait été en quelque sorte inversée. Destinée à défendre les chances de la liberté personnelle qui, par la force des choses, se trouve menacée de toutes parts, et particulièrement par l'État, voici que l'État lui-même devenait le « protégé privilégié », à défendre contre toute contrainte extérieure ou intérieure. La garantie des droits de l'homme individuel fut désormais affaiblie, sinon compromise, par ce radical renversement. Les langues vernaculaires enseignées obligatoirement aux enfants, aux dépens de leur avenir individuel, dont il a été question plus haut, ne constituent ici qu'un exemple parmi d'autres.",
+      "bbox": {
+        "x_pct": 26.618,
+        "y_pct": 31.305,
+        "w_pct": 70.632,
+        "h_pct": 29.372
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est la personne humaine qui est capable de liberté responsable, d'assumer un enjeu absolu, c'est elle qui a de ce fait une dignité et des droits. Mais il faut reconnaître que la collectivité est, de bien des manières, indispensable à l'individu qui en fait partie, et à l'actualisation de sa liberté. C'est elle qui lui donne son passé, sa culture, les moyens d'assurer sa sécurité matérielle, son contexte humain, sa langue, ses possibilités d'action. Elle est en outre responsable du respect ou de la violation des droits de chacun et de tous. Elle a donc effectivement des droits, mais ceux-ci sont dérivés de ceux de la personne, et non l'inverse.",
+      "bbox": {
+        "x_pct": 26.324,
+        "y_pct": 59.696,
+        "w_pct": 70.515,
+        "h_pct": 27.085
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En pratique, le problème est si peu simple qu'il ne pourra sans doute jamais être définitivement résolu. Il constitue une des données irréductibles de la condition humaine.",
+      "bbox": {
+        "x_pct": 26.515,
+        "y_pct": 86.094,
+        "w_pct": 70.059,
+        "h_pct": 7.134
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Page number labeled as text.",
+    "Incorrect and truncated text transcriptions in multiple paragraphs.",
+    "Missing bounding box and region for document title.",
+    "Multiple transcription segments truncated, preventing full analysis."
+  ],
+  "doc_id": "2920",
+  "page": 26,
+  "elapsed_seconds": 5.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

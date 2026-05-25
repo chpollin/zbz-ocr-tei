@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART 199",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 68.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header corrected to filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par des distinctions   multipliées . La dureté de toul  dualisme se laisse surmonter avec une plus g",
+      "bbox": {
+        "x_pct": 10.967,
+        "y_pct": 13.073,
+        "w_pct": 68.516,
+        "h_pct": 33.035
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y aura donc lieu de distinguer dans le poème les divers élémenls de son sens et de saisir leurs  ",
+      "bbox": {
+        "x_pct": 11.128,
+        "y_pct": 46.335,
+        "w_pct": 68.47,
+        "h_pct": 27.792
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region in original input."
+  ],
+  "doc_id": "110",
+  "page": 201,
+  "elapsed_seconds": 5.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

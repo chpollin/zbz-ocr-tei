@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "106",
+      "bbox": {
+        "x_pct": 8.0,
+        "y_pct": 8.448,
+        "w_pct": 4.195,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, which should be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 36.311,
+        "y_pct": 8.529,
+        "w_pct": 27.273,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Identified as running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "secret trois jours, Pauvre Marc, tous te dront gardé plain -",
+      "bbox": {
+        "x_pct": 8.149,
+        "y_pct": 13.072,
+        "w_pct": 80.73,
+        "h_pct": 4.631
+      },
+      "changed": true,
+      "change_reason": "Corrected OMR/OCR typos in transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais toi, ces dernières lignes te fâchent et tu ne leur donnes pas un sourire. Tu m'en veux d'essayer de m'excuser. Tu n'aimes pas cette légèreté, fausse et sacrilège. Tu me dis: « Laisse-ça, ce n'est pas toi. Ne mens pas. Reviens. » Et je reviens, et je te regarde. Voilà tes yeux de søreté qui savent la valeur de chaque chose. Je n'ai jamais vu sur ta bouche le pli du mépris, jamais entendu dans ta voix la nuance du persiflage. Mais j'ai vu beaucoup de choses dont les autres parlent avec solennité crouler devant toi, cesser d'étre, cesser d'embarrasser cet espace magnifique où tu mets des gestes sørs et toujours efficaces. Il y a des paroles que tu dépasses simplement, sans un signe, des pensées que tu laisses tomber, des difficultés sur lesquelles tu marches. Il y a des hommes et des femmes que tu n'entends pas quand ils te parlent. Quelquefois tu as l'air d'un aveugle, d'un sourd dont l'infirmité serait la puissance. Et tout à coup un détail te réveille, un tout petit acte, un geste, un rien, parfois simplement un silence ou un mot retenu, et tu es là, plus réel et plus attentif que tous les autres, récompensant la vérité par la joie de tes yeux. Je n'ai jamais connu les critères de ton choix, et sans doute ne les connais-tu pas toi-même. Mais je sais qu'il est sør. Et alors, si petits que soient pour tous les autres les souvenirs qui m'habitent, il faut bien que sur une autre échelle ils existent cependant, puisque devant toi j'existe, puisque tu m'aimes et m'as donné un enfant. Qu'est-ce que je saurais de moi, sans toi ?",
+      "bbox": {
+        "x_pct": 8.108,
+        "y_pct": 18.176,
+        "w_pct": 81.716,
+        "h_pct": 68.242
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors and incomplete text segment."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number detected as paragraph.",
+    "Running header detected as paragraph.",
+    "Transcription of text block contained severe OCR errors and omissions.",
+    "OCR text did not match visual layout of content."
+  ],
+  "doc_id": "40",
+  "page": 104,
+  "elapsed_seconds": 5.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

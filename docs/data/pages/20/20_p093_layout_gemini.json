@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NÉCESSITÉ 91",
+      "bbox": {
+        "x_pct": 521.0,
+        "y_pct": 82.0,
+        "w_pct": 349.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and header text mixed with document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le progrès dans la conscience de la liberté, — un progrès que nous devons reconnaître dans sa nécessité (I). »",
+      "bbox": {
+        "x_pct": 11.596,
+        "y_pct": 12.898,
+        "w_pct": 69.834,
+        "h_pct": 7.76
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais alors on a beau insister, comme nous avons vu Hegel le faire, sur la réalité du temps, le temps s'annule quand même. En effet, ce qui dans l'histoire se réalisera plus tard existe pourtant déjà maintenant — peu importe de quelle manière. Hegel le dit expressément : « De même que le noyau porte en lui toute la nature de l'arbre, le goût, la forme des fruits, de même les premiers vestiges de l'esprit contiennent déjà en puissance toute l'histoire (2) ». Le temps est détruit. Comme créateur, comme imprévisible évolution d'un être vivant, il n'est plus. Il n'est produit que par le déploiement d'événements d'avance nécessaires; il n'est plus, pour ce déploiement, que l'espace indispensable et indifférent.",
+      "bbox": {
+        "x_pct": 11.34,
+        "y_pct": 20.524,
+        "w_pct": 76.114,
+        "h_pct": 38.103
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "À l'histoire, la loi éternelle se révèle dans le fait que, quoique « les circonstances soient différentes », « le lien intérieur des circonstances », « l'esprit général des rapports » (der allgemeine Geist der Verhältnisse) est « quelque chose qui dure, ne vieillit jamais », « est toujours présent (3) ». Ainsi donc, ce n'est pas par une contemplation panoramique à vol d'oiseau de l'histoire qu'on",
+      "bbox": {
+        "x_pct": 11.551,
+        "y_pct": 59.037,
+        "w_pct": 75.753,
+        "h_pct": 20.439
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Die Vernunft in der Geschichte, p. 40.",
+      "bbox": {
+        "x_pct": 14.608,
+        "y_pct": 83.098,
+        "w_pct": 52.756,
+        "h_pct": 2.479
+      },
+      "changed": true,
+      "change_reason": "Labeled as footnote because it is part of the footnote section."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Op. cit., pp. 38 et 39.",
+      "bbox": {
+        "x_pct": 14.759,
+        "y_pct": 85.357,
+        "w_pct": 32.229,
+        "h_pct": 2.278
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(3) Op. cit., p. 173.",
+      "bbox": {
+        "x_pct": 14.654,
+        "y_pct": 87.483,
+        "w_pct": 24.91,
+        "h_pct": 2.288
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Corrupted text extraction in multiple paragraphs.",
+    "Page header/number misidentified as paragraph.",
+    "Footnotes labeled as list_items."
+  ],
+  "doc_id": "20",
+  "page": 93,
+  "elapsed_seconds": 5.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

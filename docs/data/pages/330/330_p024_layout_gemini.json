@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "X IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected from text/zb_paragraph to page_header as it is the running header of the page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Surprenante légèreté, alors, de la condition charnelle. Que l'esprit devienne sensuel et on comprend mieux qu'ailleurs qu'il y ait eu Valéry, Giraudoux. La Flandre est loin. Si loin qu'elle suscite la nostalgie.",
+      "bbox": {
+        "x_pct": 14.304,
+        "y_pct": 11.97,
+        "w_pct": 85.279,
+        "h_pct": 6.809
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text which had errors in reading the original document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée, délestée, désengluée, se fait prompte, audacieuse, à l'affût du nouveau. Et ici apparaît son paradoxe fondamental. Elle recherche avant tout ce qui n'est pas elle, ce qui est lourd, concret. Les mots « abstrait », « idéaliste », sont devenus injurieux. Mais en même temps, elle ne croit pas réellement aux conséquences incarnées de ses propres écarts. D'où, à la fois, une sorte d'humilité devant ce qui est — on se prétend volontiers « matériel », « matérialiste » — et une extraordinaire irresponsabilité.",
+      "bbox": {
+        "x_pct": 14.206,
+        "y_pct": 17.977,
+        "w_pct": 85.195,
+        "h_pct": 17.112
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text which had errors in reading the original document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un nombre de penseurs, d'écrivains, d'artistes, découvrent sur le tard les problèmes sociaux. Comme toutes les crises qui se produisent après l'âge normal, celle-ci entraîne des complications. Puisqu'il y a de monstrueuses injustices dans l'ordre établi, il faut être en tout cas du parti de ceux qui se disent résolus à le changer — quelle que puisse être en fait l'efficacité de leur action. Bien plus : puisque la condamnation qu'ils portent est juste, il faut essayer de penser comme eux. L'heure n'est pas au sens critique, mais à une docilité chargée de repentir.",
+      "bbox": {
+        "x_pct": 14.067,
+        "y_pct": 34.759,
+        "w_pct": 85.279,
+        "h_pct": 19.189
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text which had errors in reading the original document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La plupart de ces intellectuels, cependant, ont derrière eux des professions de foi publiques, répandues du haut de chaires universitaires ou par des livres à fort tirage, des revues ou des quotidiens. On les voit alors recourir à toutes les ressources de la virtuosité intellectuelle pour créer des apparences de continuité et de synthèse là où il y a inconséquence, incompatibilité, abandon au contradictoire. De minces articulations logiques, de subtils jeux de mots, des bonds précis sur le trapèze de la dialectique, paraissent réconcilier désormais, mieux que chez Hegel, les options traditionnellement hostiles. Immanence et transcendance, déterminisme et liberté, scientisme et mystère, orgueil démiurgique et humilité chrétienne, tant d'autres antithèses déchirantes se trouvent désormais dépassées, noyées, fondues par le flux dialectique d'un néo-réalisme enraciné dans la nouvelle Conscience de l'Histoire. Toutes sortes de marxismes, d'existentialismes, de thomismes, de christianismes, échangent fraternellement leurs atouts. La physique moderne elle-même, et, bien entendu, la psy-",
+      "bbox": {
+        "x_pct": 13.886,
+        "y_pct": 53.057,
+        "w_pct": 85.376,
+        "h_pct": 35.686
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text which had errors in reading the original document."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original text transcription was highly inaccurate.",
+    "Page header 'X IDÉOLOGIES ET RÉALITÉ' was misidentified as standard paragraph text."
+  ],
+  "doc_id": "330",
+  "page": 24,
+  "elapsed_seconds": 5.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

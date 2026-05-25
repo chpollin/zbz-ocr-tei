@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "PARADOXAUX 23",
+      "bbox": {
+        "x_pct": 38.99,
+        "y_pct": 82.26,
+        "w_pct": 22.01,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Corrected page header (text and page number) from text/zb_paragraph to page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "scientifique; comme si son but unique était d'apporter une solution vraie au problème posé; comme si ses résultats formaient un tout définitif, ou du moins la base définitive d'une nouvelle science.",
+      "bbox": {
+        "x_pct": 10.09,
+        "y_pct": 12.421,
+        "w_pct": 75.708,
+        "h_pct": 10.362
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Là où il y a évidence scientifique, il n'y a pas philosophie. Lorsqu'une solution proposée par la philosophie a été démontrée fausse par la science, cette solution n'en continue pas moins à nous intéresser. Enfin, aucune philosophie n'a jamais rempli la mission scientifique, fondamentale, définitive, dont la chargeait son auteur.",
+      "bbox": {
+        "x_pct": 10.196,
+        "y_pct": 22.66,
+        "w_pct": 75.843,
+        "h_pct": 18.332
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comparant la philosophie à la théologie, nous avons vu qu'à la différence de celle-ci la philosophie trouve un intérêt à des solutions contradictoires, et cela sans les accepter. Sa forme reste scientifique et vise à l'évidence. Bien qu'elle ait l'apparence d'un système achevé, non sans parenté avec le dogme, elle traduit une recherche, un effort, plutôt que l'état d'un homme qui a trouvé la paix. Enfin, à la différence de la théologie, malgré ses défaites et pour trouver le sens de ses défaites, elle ne veut se servir que de l'esprit humain et refuse de prendre pour base aucune révélation.",
+      "bbox": {
+        "x_pct": 10.196,
+        "y_pct": 40.801,
+        "w_pct": 75.904,
+        "h_pct": 30.791
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que peut-on tirer de résultats aussi contradictoires? Il est certain que la philosophie est la recherche de la vérité. Si l'évidence apparente du système ne peut être qu'apparente (sinon elle serait scientifique, et il n'y aurait plus de philosophie), c'est qu'il y a en lui une autre évidence. Si l'erreur, offusquant la vérité, garde une valeur",
+      "bbox": {
+        "x_pct": 10.09,
+        "y_pct": 71.9,
+        "w_pct": 75.7,
+        "h_pct": 22.5
+      },
+      "changed": true,
+      "change_reason": "Identified additional paragraph text block that was missing."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected page header and number as body text.",
+    "OCR quality was extremely poor for the provided regions.",
+    "Missing text region identified for the bottom paragraph.",
+    "Overlapping bounding boxes in original detection."
+  ],
+  "doc_id": "20",
+  "page": 25,
+  "elapsed_seconds": 4.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

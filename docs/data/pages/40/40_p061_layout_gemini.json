@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 358.0,
+        "y_pct": 84.0,
+        "w_pct": 197.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text, moved to _filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "63",
+      "bbox": {
+        "x_pct": 845.0,
+        "y_pct": 83.0,
+        "w_pct": 21.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, moved to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "les ailes, se mettent à voguer, toutes voiles dehors. J'écoute encore les ruisseaux de cette journée, comment ils coulaient et bruissaient à travers la lumière et grimpaient en méandres dans le ciel. Les bulles de l'air, plus lisses, glissaient avec des éclats de vif-argent au sein du vide, égrenaient des tintements dont les échos se divisaient en reflets distincts. Aucune fusion ou confusion dans ce bloc de transparence qu'égratignaient seulement des lignes déliées, dans ce silence si résistant et si neuf que mille contrepoints n'y formaient pas un accord, chaque mélodie construisant séparée l'échelle de sa joie. Que se passa-t-il au juste ? Je n'en sais rien. Je revois la tapisserie blanche à fleurs jaunes de ma chambre, comme un jardin de fleurs de soleil, de fleurs d'abeilles. Un gros paquet arriva, avec une lettre. La lettre parlait d'impossibilité présente, d'amitié, de vague espoir; mais surtout elle apportait, sur le papier, une présence, et son tracé lourd, obstiné, un peu haché, noir sur fond gris, m'importa bien plus que son sens. Dans le paquet il y avait — je vis tous les sentiers que j'allais gravir avec mon petit frère sur le dos, et ses souliers me cogneraient les hanches — un porte-bébé qu'il avait fait lui-même, pareil au sien, mais plus beau, rembourré, et recouvert de velours beige. Ce cadeau, inventé par lui, fabriqué de ses mains, j'imagine qu'il me donna une joie très primitive, celle d'une femme d'avant le commerce, d'avant l'achat, quand l'homme lui apportait un morceau de matière qu'il avait façonné pour elle. Le feu allumé jadis au creux de la terre mouillée se ralluma, comme à l'entrée d'une grotte où j'aurais pu",
+      "bbox": {
+        "x_pct": 73.374,
+        "y_pct": 12.921,
+        "w_pct": 81.135,
+        "h_pct": 73.374
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original detection did not identify the running head and page number as separate entities from the main paragraph.",
+    "The bounding box provided for the text block in the input was misaligned and essentially encompassed the entire content area including the header/number."
+  ],
+  "doc_id": "40",
+  "page": 61,
+  "elapsed_seconds": 4.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

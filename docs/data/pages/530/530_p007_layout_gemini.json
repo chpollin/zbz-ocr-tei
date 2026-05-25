@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "66 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 9.3,
+        "y_pct": 5.5,
+        "w_pct": 81.6,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Top section is a page header, not paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ce sont de grands titres, des manchettes, et même le texte entier des articles et des éditoriaux. Admettons que la part d'hypocrisie là-dedans soit énorme ; elle reste utile à la cause que nous servons, pourvu que nous voyions clair et ne nous laissions pas duper. Pour faire avancer l'idée européenne dans le peuple, pour susciter la conscience de cette grande chose en train de se faire, cette hypocrisie est une grande alliée. L'Europe est devenue un slogan de propagande à peu près inévitable dans les pays d'Europe occidentale. Même ses adversaires s'en déclarent partisans. L'AELE a été obligée de se donner pour un mécanisme monté en vue de faciliter malgré tout l'unification de l'Europe. Le gouvernement de Gaulle ne peut pas ne pas se dire européen, et c'est ce qui l'a obligé à inventer la formule de l' « Europe des patries ». Mais c'est encore l'Europe. Au niveau de la propagande, on ne peut plus éviter de se prétendre Européen comme on ne peut plus éviter de se prétendre partisan de la justice. Je trouve cela un acquis extraordinairement important, tant pour la justice que pour l'Europe, car, malgré tout, les mots obligent dans une certaine mesure et d'une certaine façon.",
+      "bbox": {
+        "x_pct": 9.419,
+        "y_pct": 10.589,
+        "w_pct": 81.506,
+        "h_pct": 55.888
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il un autre signe montrant que beaucoup a été fait et que beaucoup pourrait être fait, c'est l'intérêt des Soviétiques pour les entreprises fédéralistes européennes. M. Rieben 1 qui est ici le sait : si quelqu'un s'intéresse",
+      "bbox": {
+        "x_pct": 10.264,
+        "y_pct": 66.284,
+        "w_pct": 80.621,
+        "h_pct": 11.062
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR errors."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Professeur Henri Rieben, titulaire de la chaire d'intégration européenne à l'Université de Lausanne et directeur du Centre de recherches européennes qui publie régulièrement de nombreux travaux consacrés aux différents problèmes de l'intégration de l'économie européenne.",
+      "bbox": {
+        "x_pct": 10.568,
+        "y_pct": 79.826,
+        "w_pct": 80.357,
+        "h_pct": 8.687
+      },
+      "changed": true,
+      "change_reason": "Label changed to footnote as it describes the author reference."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction contained significant OCR errors in the middle and bottom blocks.",
+    "Header line was misidentified as part of the paragraph.",
+    "Footnote was misidentified as body text."
+  ],
+  "doc_id": "530",
+  "page": 7,
+  "elapsed_seconds": 7.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

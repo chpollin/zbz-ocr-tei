@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "14 L'Être ET LA FORME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 98.0,
+        "w_pct": 100,
+        "h_pct": 100
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number and header consolidated into header region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien que les philosophes aient fait un usage fréquent de la notion de forme en lui donnant des sens ",
+      "bbox": {
+        "x_pct": 17.952,
+        "y_pct": 12.984,
+        "w_pct": 68.968,
+        "h_pct": 18.628
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Suivant   Texemple de Kant, nous aborderons   Tontologie par la voie indirecte de la critique. Cest ",
+      "bbox": {
+        "x_pct": 18.22,
+        "y_pct": 31.359,
+        "w_pct": 68.7,
+        "h_pct": 28.195
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette différence est liée à une autre nous rapproche au contraire de la forme aristotélicienne: alor",
+      "bbox": {
+        "x_pct": 18.182,
+        "y_pct": 61.25,
+        "w_pct": 68.776,
+        "h_pct": 12.807
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Combined page header and page number into one region."
+  ],
+  "doc_id": "110",
+  "page": 16,
+  "elapsed_seconds": 8.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

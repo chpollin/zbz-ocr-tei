@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME",
+      "bbox": {
+        "x_pct": 11.23,
+        "y_pct": 2.0,
+        "w_pct": 77.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "109",
+      "bbox": {
+        "x_pct": 75.8,
+        "y_pct": 93.0,
+        "w_pct": 2.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "question de   degrés. Car dès nle s 'agit   plus de pensée sentalive,  mais   dactes, de mimer des  ",
+      "bbox": {
+        "x_pct": 10.91,
+        "y_pct": 13.493,
+        "w_pct": 68.433,
+        "h_pct": 16.932
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais le   problème de Forigine du monde beaucoup plus   irréductible sous autre   aspect: à cause de",
+      "bbox": {
+        "x_pct": 11.06,
+        "y_pct": 30.197,
+        "w_pct": 68.468,
+        "h_pct": 20.524
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès lors toutes les Genèses seront   forcément des mythes, c'est-à positivement et concrèlement ce q",
+      "bbox": {
+        "x_pct": 11.141,
+        "y_pct": 50.645,
+        "w_pct": 68.583,
+        "h_pct": 24.07
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing running header",
+    "Missing page number"
+  ],
+  "doc_id": "110",
+  "page": 111,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "182 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 10.822,
+        "y_pct": 82.0,
+        "w_pct": 85.836,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected page header misidentified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "puleux d'une communauté de ne pas voir les injustices, les misères ou les sacrifices humains les plus massifs, qui se produisent cependant à toute heure et en plein jour. Mais à partir du moment où la démocratie est contestée, ses adversaires savent bien dénoncer ses plaies, ses trahisons à l'égard de sa propre nature. Sur la défensive, elle ne peut que se cramponner davantage aux valeurs sur lesquelles elle se fonde, donnant ainsi plus de force encore aux attaques ennemies. Son drame, c'est que lorsqu'elle est menacée, le recours à la force auquel on l'accule nie sa propre nature et se retourne contre elle. En elle, morale et force ont partie liée, tout en élevant des exigences contradictoires. Machiavel ne peut pas se passer de Kant, qui condamne Machiavel sans pouvoir s'en passer.",
+      "bbox": {
+        "x_pct": 10.822,
+        "y_pct": 11.025,
+        "w_pct": 85.836,
+        "h_pct": 27.389
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR and fixed parsing of paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces contradictions internes qui, en démocratie, se révèlent avec une rigueur apparemment inflexible dans toutes les circonstances critiques, ne constituent pas, comme certains le prétendent, un vice congénital du régime, manifestant son absurdité. Elles sont au contraire le signe que le régime est bien conforme à la condition humaine, dont il n'efface aucun aspect, dont il n'écrase, par conséquent, aucun paradoxe ni ne supprime aucun problème. Seulement il a aussi, de la condition humaine, l'inachèvement et la fragilité. Un régime de pure contrainte peut élaborer d'une part un système de force sans faille, de l'autre un édifice idéologique parfait, l'un soutenant l'autre en bloc, mais sans aucune confrontation possible des faits avec les idées. La démocratie, elle, ne vit que de cette confrontation. Elle n'est pas vouée à la perfection — aussi peu que la condition humaine. Mais elle est vouée au progrès, non au sens d'un développement automatique, dû en quelque sorte par une loi de l'histoire, mais au sens d'une obligation constante d'incarner toujours mieux les valeurs dans les faits.",
+      "bbox": {
+        "x_pct": 10.682,
+        "y_pct": 37.674,
+        "w_pct": 85.738,
+        "h_pct": 35.766
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and refined text representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit dès lors que l'inégale dignité reconnue aux citoyens par les démocraties capitalistes, le travail traité comme une marchandise, la mutilation des possibles dès la naissance de l'enfant par la situation sociale, l'impossibilité de fait où se trouvent les masses de participer à l'exercice et au contrôle réel du pouvoir, leur non-participation à la culture, aux arts, leur exclusion d'un très large secteur des biens matériels, techniques, produits grâce à leur travail par la société où elles vivent — tout cela enlève à la",
+      "bbox": {
+        "x_pct": 10.487,
+        "y_pct": 73.03,
+        "w_pct": 85.571,
+        "h_pct": 16.988
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR errors and improved legibility of paragraph."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly inaccurate.",
+    "Page header '182 IDÉOLOGIES ET RÉALITÉ' was mislabeled as paragraph text.",
+    "Text segments contained major transcription errors."
+  ],
+  "doc_id": "330",
+  "page": 216,
+  "elapsed_seconds": 5.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

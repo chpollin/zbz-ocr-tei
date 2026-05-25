@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 239",
+      "bbox": {
+        "x_pct": 296.8,
+        "y_pct": 77.0,
+        "w_pct": 574.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "comme dans toute société terrestre ; et le sort de celles-ci aura besoin de compensations : brièveté de la durée du travail et utilisation judicieuse des loisirs.",
+      "bbox": {
+        "x_pct": 3.022,
+        "y_pct": 10.401,
+        "w_pct": 84.582,
+        "h_pct": 6.533
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est possible aussi qu'une partie du travail le plus ingrat puisse être accomplie par l'ensemble des citoyens, au cours d'un service civil dont la portée morale et culturelle serait, si l'on savait l'organiser et lui donner sa signification, décisive pour la vie du pays.",
+      "bbox": {
+        "x_pct": 2.925,
+        "y_pct": 16.337,
+        "w_pct": 85.0,
+        "h_pct": 8.431
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais un problème se pose, bien plus fondamental. Le socialisme, disons-nous, se réclame d'une valeur absolue, celle de l'être humain en tant qu'il est libre, qu'il a des possibles. Or quand nous disons « il est libre », nous voulons dire qu'il peut, s'il le veut, se rendre libre. Sa liberté n'est pas un fait, une donnée. Elle n'est elle-même qu'un possible. L'homme veut-il être libre? L'homme est-il bien celui sur qui le socialisme se fonde? Est-il avide de se rendre libre? Ou n'est-il au contraire qu'à l'affût d'une occasion lui permettant de se démettre, d'abdiquer entre les mains d'un maître, d'une classe de maîtres, d'une doctrine dogmatiquement imposée qui lui donnera la paix des certitudes et des prisons?",
+      "bbox": {
+        "x_pct": 2.967,
+        "y_pct": 24.599,
+        "w_pct": 84.916,
+        "h_pct": 23.324
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il sembler parfois, on considère par exemple l'usage fait aujourd'hui par les masses des grands moyens modernes de diffusion, que la place de l'homme soit toujours dans un chœur unanime, non dans la solitude de la liberté et de la communication entre êtres libres. Cependant la question posée ne saurait recevoir aucune réponse sur le plan théorique. L'immense majorité des êtres humains n'ont pas vécu jusqu'ici dans des conditions où leur liberté, à moins d'héroïsme, fût possible. Et, de toute façon, la liberté ne se constate pas. Elle se vit, elle est pratique, elle anime l'action, le faire — ou elle est objet de foi et d'espoir. L'homme doit être traité comme s'il pouvait et voulait être libre. Sinon, plus rien n'aurait d'importance.",
+      "bbox": {
+        "x_pct": 2.604,
+        "y_pct": 47.389,
+        "w_pct": 85.599,
+        "h_pct": 25.223
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 44.053,
+        "y_pct": 74.305,
+        "w_pct": 1.811,
+        "h_pct": 0.98
+      },
+      "changed": true,
+      "change_reason": "Small artifact/page number fragment, filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La question de savoir si l'homme a ou n'a pas la vocation d'être libre n'est pas susceptible de recevoir une réponse a priori. Il est certain, en revanche, qu'il reste énormément à faire pour augmenter les chances d'une réponse affirmative. C'est, nous l'avons vu, ce qui donne leur sens aux réformes de structure préconisées.",
+      "bbox": {
+        "x_pct": 2.604,
+        "y_pct": 80.009,
+        "w_pct": 85.418,
+        "h_pct": 8.761
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was extremely poor quality, requiring full re-transcription of all main paragraph text blocks.",
+    "Header and page number were misidentified as text.",
+    "Multiple layout regions contained scrambled text fragments."
+  ],
+  "doc_id": "330",
+  "page": 273,
+  "elapsed_seconds": 7.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de Jacob » La foi philosophique, dit Jaspers, c'est «une exigence inouïe ». Aucune communauté organisée ne s'en réclame, aucune force sociale objective ne la soutient. Elle s'impose à partir d'une tradition philosophique faite elle-même de divergences et de contestations, et celui qui la vit reste, face aux autres, livré à sa solitude et à sa précarité, avec pour seul soutien la clarté de son intime conviction, et l'échange avec les grands philosophes du passé.",
+      "bbox": {
+        "x_pct": 10.528,
+        "y_pct": 6.452,
+        "w_pct": 84.146,
+        "h_pct": 13.916
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« La vraie patrie religieuse » de Jaspers, celle où il a toujours puisé de quoi nourrir sa vie et sa pensée, c'est la tradition philosophique, non seulement de l'Occident, mais du monde entier. Aucun philosophe n'a produit une œuvre sans s'alimenter auprès de ceux qui l'ont précédé. Mais ce lien, pour Jaspers, paraît plus essentiel, plus central, plus personnel aussi. Les grands philosophes du passé ont été pour lui plus que des amis. Il a vécu avec eux. Il a disputé avec eux. Il les vénérait. Ils ont été pour lui source, exigence, norme. De les trouver, au fil de l'étude, toujours plus inégalables, le remplissait de joie. Il aimait les admirer. Les grands d'entre eux lui donnaient, selon son expression, «la mesure de ce que peut être un homme ». Avec eux, il était chez lui, «à la maison ».",
+      "bbox": {
+        "x_pct": 10.569,
+        "y_pct": 19.854,
+        "w_pct": 84.282,
+        "h_pct": 23.051
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up OCR artifacts."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Université",
+      "bbox": {
+        "x_pct": 10.976,
+        "y_pct": 45.527,
+        "w_pct": 12.832,
+        "h_pct": 1.945
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La visée universelle qui, pour Jaspers, traverse sans les abolir les particularités, les différences, les conflits, pour atteindre l'existence même de l'être humain, s'actualise — ou devrait s'actualiser — avant tout dans l'institution, à ses yeux privilégiée, qu'est l'Université.",
+      "bbox": {
+        "x_pct": 10.664,
+        "y_pct": 48.218,
+        "w_pct": 84.051,
+        "h_pct": 9.649
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers se faisait de l'Université la conception la plus haute. Il la vénérait, non certes telle qu'elle était, mais dans son «Idée», dans son intention, son éthique et son sens. Il parlait d'elle avec une gratitude enthousiaste, peu comme Socrate, chez Platon, parle des Lois. Par amour, il en critiquait sans merci les déviations, les infidélités. Elle était pour lui le lieu par excellence qui permet et favorise cette activité étrange et précaire, objectivement vaine et existentiellement décisive, qu'est la philosophie.",
+      "bbox": {
+        "x_pct": 10.528,
+        "y_pct": 57.841,
+        "w_pct": 84.458,
+        "h_pct": 15.51
+      },
+      "changed": true,
+      "change_reason": "Swapped order with subsequent text block to maintain logical flow and cleaned up OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne cessait de rappeler les privilèges, et par conséquent les devoirs, d'un professeur de philosophie à l'Université: sa totale indépendance, dans son enseignement, dans sa pensée, dans l'utilisation de son temps; la beauté de sa tâche, la plus grande qui soit: éveiller les esprits à leur existence possible, stimuler en eux le sens et l'exigence sans fin du vrai absolu, jamais atteint, mais source constante de rigueur dans le cheminement à travers les vérités relatives. Dans cet enseignement, liberté, vérité, communication et travail consciencieux ne font qu'un. La situation universitaire permet et",
+      "bbox": {
+        "x_pct": 10.339,
+        "y_pct": 72.896,
+        "w_pct": 84.201,
+        "h_pct": 17.361
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up OCR artifacts."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": {
+        "x_pct": 10.976,
+        "y_pct": 92.518,
+        "w_pct": 2.227,
+        "h_pct": 2.285
+      },
+      "changed": true,
+      "change_reason": "Identified page number and re-labeled to filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Text truncation in multiple paragraphs due to poor OCR/segmentation.",
+    "Page number not identified as page_footer.",
+    "Paragraphs were slightly out of order in the provided JSON mapping."
+  ],
+  "doc_id": "1520",
+  "page": 16,
+  "elapsed_seconds": 7.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

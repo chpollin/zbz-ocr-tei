@@ -1,0 +1,128 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "überall vermeiden scheint mir eine sehr legitime und sehr funktionale Forderung zu sein, wie an diesem Beispiel zu sehen ist.",
+      "bbox": {
+        "x_pct": 7.979,
+        "y_pct": 4.098,
+        "w_pct": 85.18,
+        "h_pct": 6.831
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie, Frau Hersch; haben heute im Seminar gesagt, Jaspers sei ein Mensch gewesen, der keine Angst hatte. Das ist eine Aussage, die philosophisch zunächst überrascht, weil wir alle immer irgendwie auf dem Hintergrund der Philosophie Kierkegaards und Heideggers denken und Angst eben als Existential interpretieren. Ebenso wie wir jene Angst, von der Sie sprechen, als eine dem existierenden Individuum Karl Jaspers zuzuschreibende Eigenschaft verstehen müssen, die nicht identisch ist mit jener fundamentalen Angst, die wir existential zuschreiben als charakterisierende menschliche Größe, ebenso müssen wir wahrscheinlich unterscheiden zwischen jenen Paradoxen oder Paradoxien, die wir auf unserer individuellen Interaktionsebene vermeiden müssen, und jener existentiellen Grundverfassung, von der Sie sprechen, daß wir nämlich, wenn wir nur lang genug versuchen, unsere Gedankengänge weiterzuführen, letztlich überall in Paradoxien landen werden. Wie ich vorhin sagte, ist dies aber keine Lizenz, nun die anderen Paradoxien und Widersprüche bestehen zu lassen.",
+      "bbox": {
+        "x_pct": 8.084,
+        "y_pct": 13.57,
+        "w_pct": 85.434,
+        "h_pct": 40.437
+      },
+      "changed": true,
+      "change_reason": "Corrected heavily truncated text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 8.728,
+        "y_pct": 56.257,
+        "w_pct": 23.114,
+        "h_pct": 2.004
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ja, ich glaube aber, daß, wenn man diese Theorie, die Sie eben erwähnten, annehmen würde, das ganze Feld irgendwie verwesen würde. Das ganze Feld wäre nicht mehr in Ordnung, so wie Sie es geschildert haben; das ganze Feld wäre verloren, und man hätte das Ganze zu retten. Glauben Sie nicht?",
+      "bbox": {
+        "x_pct": 8.728,
+        "y_pct": 58.169,
+        "w_pct": 85.135,
+        "h_pct": 11.348
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 9.237,
+        "y_pct": 72.495,
+        "w_pct": 33.728,
+        "h_pct": 2.004
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich verstehe es noch nicht ganz.",
+      "bbox": {
+        "x_pct": 8.638,
+        "y_pct": 74.681,
+        "w_pct": 44.955,
+        "h_pct": 2.55
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 8.728,
+        "y_pct": 80.237,
+        "w_pct": 23.114,
+        "h_pct": 2.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Also mir scheint, daß das nicht begrenzt werden kann; daß man nicht sagen kann: hier kann es begrenzt werden, sonst sei es unannehmbar, und dann erhielte man das Anständige und das Nichtanständige, sondern das Ganze ist dann angesteckt und verloren. Denn diese Unmöglichkeit der Wortwörtlichkeit - und",
+      "bbox": {
+        "x_pct": 8.638,
+        "y_pct": 82.031,
+        "w_pct": 85.225,
+        "h_pct": 11.53
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "44",
+      "bbox": {
+        "x_pct": 90.0,
+        "y_pct": 95.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Text content was severely truncated in original detection.",
+    "Page number 44 was missing from detections."
+  ],
+  "doc_id": "3180",
+  "page": 21,
+  "elapsed_seconds": 5.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "172 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 20.657,
+        "y_pct": 10.366,
+        "w_pct": 68.203,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nuances   inattendues moyen   desquelles   Fauteur de la croûle a réussi, malgré le lisse gras press",
+      "bbox": {
+        "x_pct": 20.657,
+        "y_pct": 13.417,
+        "w_pct": 68.203,
+        "h_pct": 5.513
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non, toutes ces explications ne satisfont pas. Il faut essayer de répondre avec moins de parti-pris, en tenant compte des faits qui sont ici les œuvres, avec plus de profondeur et surtout plus de précision.",
+      "bbox": {
+        "x_pct": 20.657,
+        "y_pct": 19.349,
+        "w_pct": 68.203,
+        "h_pct": 5.672
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing paragraph"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deux peintres   travaillant devant le même   panier de   prunes peignent   pourtant   pas le même   ",
+      "bbox": {
+        "x_pct": 20.703,
+        "y_pct": 26.12,
+        "w_pct": 68.583,
+        "h_pct": 37.304
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'originalilé réelle provient dune façon  différente de & constituer Fêtre de Fobjet. Nous Favons nu",
+      "bbox": {
+        "x_pct": 20.737,
+        "y_pct": 63.349,
+        "w_pct": 68.664,
+        "h_pct": 11.314
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header region",
+    "Missing body paragraph between 1st and 2nd paragraph",
+    "Needs verification of labels"
+  ],
+  "doc_id": "110",
+  "page": 174,
+  "elapsed_seconds": 6.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

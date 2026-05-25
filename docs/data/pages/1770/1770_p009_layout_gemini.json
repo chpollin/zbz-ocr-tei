@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sorbés dans la recherche de leur nourriture, recherche qui ne cesse de les exposer à des menaces de mort. Tant que l'être humain doit vivre ainsi, sa liberté a bien peu de chances de s'actualiser autrement que dans cette recherche elle-même, qui l'absorbe tout entier, sans que s'ouvre l'espace, le vide nécessaire à son exercice humain.",
+      "bbox": {
+        "x_pct": 25.197,
+        "y_pct": 22.389,
+        "w_pct": 52.458,
+        "h_pct": 5.849
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete text content based on the actual OCR reading of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certes, les contraintes des besoins et des menaces naturelles ne se laissent jamais écarter totalement ni définitivement. L'homme, en tant que mortel et vulnérable, continue et continuera toujours à faire partie aussi de la nature, où règnent les besoins et la loi du plus fort. Mais la civilisation – et l'élaboration des droits de l'homme – tend justement à écarter dans une certaine mesure les contraintes des besoins, à les mettre en quelque sorte à une certaine distance, afin d'ouvrir, ici encore, à l'être humain, un espace disponible, pour l'exercice effectif de sa liberté. Tel est le sens de la sécurité, dont on a dit à tort tant de mal. Tel est le sens universel des droits sociaux et matériels, qui s'efforcent de la réaliser, au moins dans une certaine mesure, pour tous.",
+      "bbox": {
+        "x_pct": 25.085,
+        "y_pct": 29.379,
+        "w_pct": 52.78,
+        "h_pct": 15.53
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete text content based on the actual OCR reading of the paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Orientation et culture.",
+      "bbox": {
+        "x_pct": 25.197,
+        "y_pct": 46.351,
+        "w_pct": 17.164,
+        "h_pct": 1.499
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce n'est pas tout. L'espace nécessaire à l'exercice de la liberté n'est pas seulement celui dont l'être humain est privé par la contrainte physique ou par les menaces immédiates de l'insécurité naturelle. C'est aussi celui qui s'ouvre lorsqu'un homme devient capable, par delà son environnement immédiat, de se situer et de s'orienter dans l'espace et dans l'histoire. Nous vivons dans un monde de plus en plus interdépendant en toutes ses parties, et dans une histoire de plus en plus rapide et intense. Comment faire acte de liberté responsable sans connaissance du contexte spatial et temporel, d'un passé d'où l'on est issu et à partir duquel on cherche à modeler l'avenir? Comment nourrir la liberté virtuelle de chacun, comment enrichir de substance ses possibles sinon par ce qui fut vécu, raconté, créé, mis en forme, par les hommes avant nous? Comment multiplier les possibles de notre liberté, sinon en apprenant à connaître, en profondeur et souvent en s'y identifiant, les manières de vivre, les épreuves, les rêves et les possibles des autres, qui furent et qui sont différents? – Ici interviennent les derniers venus des Déclarations: les droits culturels. Eux aussi trouvent, en tant que droits, leur sens et leur destination dans la possible liberté de chaque être humain.",
+      "bbox": {
+        "x_pct": 24.98,
+        "y_pct": 48.803,
+        "w_pct": 52.965,
+        "h_pct": 26.551
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete text content based on the actual OCR reading of the paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "24",
+      "bbox": {
+        "x_pct": 25.197,
+        "y_pct": 76.5,
+        "w_pct": 2.0,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified and correctly labeled the page number as a footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected text was truncated in the original JSON extraction.",
+    "Page number 24 was missing from the extraction list."
+  ],
+  "doc_id": "1770",
+  "page": 9,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

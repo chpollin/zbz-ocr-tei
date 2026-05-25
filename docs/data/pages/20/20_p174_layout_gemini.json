@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "172",
+      "bbox": {
+        "x_pct": 14.501,
+        "y_pct": 8.121,
+        "w_pct": 3.71,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Page number identified as header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "RÉALITÉ INACCESSIBLE",
+      "bbox": {
+        "x_pct": 37.001,
+        "y_pct": 8.121,
+        "w_pct": 27.51,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Running header identified as section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "aime la vérité de lexistence dautrui là où elle la absolu, justement parce qu'elle a le sien. Mais le fond et l'unité de « ces vérités » (puisqu'il n'y a pas moyen d'échapper au pluriel) reste un mystère, et notre échec à le saisir nous pousse plus loin. Il ne suffit pas d'avoir reconnu l'existence possible d'une unité subjective (au sens métaphysique où nous avons employé ce mot); la lutte des vérités, la nécessité de cette lutte par laquelle seule je suis existence possible, et l'absolu de ma vérité, me forcent à chercher dans la transcendance l'unité objective. C'est le sujet de la Metaphysik (I). (Volume III.)",
+      "bbox": {
+        "x_pct": 13.901,
+        "y_pct": 12.421,
+        "w_pct": 76.31,
+        "h_pct": 33.46
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seule l'existence possible, elle échoue aux limites de la réalité empirique et de la réalité existentielle révélée dans la communication, peut éprouver l'être réel de la « transcendance » (2).",
+      "bbox": {
+        "x_pct": 13.961,
+        "y_pct": 45.691,
+        "w_pct": 76.19,
+        "h_pct": 10.62
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En sens de la métaphysique, l'être de la transcendance, est-il réel?",
+      "bbox": {
+        "x_pct": 14.111,
+        "y_pct": 55.987,
+        "w_pct": 75.949,
+        "h_pct": 5.052
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout concept d'un objet réel (Wirklichkeitsbegrift) se délimite par opposition à un concept d'irréalité. En tant qu'existence possible, je cherche, en me dégageant de tout ce qui est particulier, la réalité absolue. Celle-ci est pour moi transcendante.",
+      "bbox": {
+        "x_pct": 13.855,
+        "y_pct": 60.848,
+        "w_pct": 76.551,
+        "h_pct": 13.222
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Il faut remarquer que j'ai employé dans la présente étude ce mot dans un sens plus étendu, désignant par métaphysique toute réalité extra-objective, — donc aussi ce que Jaspers appelle existentiel.",
+      "bbox": {
+        "x_pct": 13.855,
+        "y_pct": 78.265,
+        "w_pct": 76.31,
+        "h_pct": 9.371
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(2) Philosophie, III, pp. 8 sqq.",
+      "bbox": {
+        "x_pct": 16.822,
+        "y_pct": 87.197,
+        "w_pct": 39.503,
+        "h_pct": 2.288
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header were incorrectly labeled as paragraph text.",
+    "Footnote markers and content at the bottom of the page were labeled as list_item/paragraph instead of footnote.",
+    "Some OCR transcription quality is low.",
+    "Multiple layout tags required correction."
+  ],
+  "doc_id": "20",
+  "page": 174,
+  "elapsed_seconds": 5.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

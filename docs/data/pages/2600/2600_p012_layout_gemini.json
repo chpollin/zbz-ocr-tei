@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce présent paradoxal seul permet de concevoir que la liberté soit possible. Celle-ci serait inconcevable sans le support d’un passé qui, bien qu’étant ce qui n’est plus, donne à ce qui n’est plus l’immuabilité substantielle de ce qui échappe désormais à toute intervention active, de ce qui est désormais à jamais ce qu’il a été, précisément parce qu’il n’est plus, parce qu’il est sous l’abri définitif du néant, hors d’atteinte. Sans cette immuabilité du passé, aucun acte libre ne serait possible, à force de frivolité et d’inconsistance. Mais le présent paradoxal n’entame en rien l’immuabilité du passé. Au contraire, il l’assume et il compte sur lui dans sa visée de l’avenir, et c’est à travers lui que cet avenir va devenir un passé immuable. Mais il ne découle pas de lui puisqu’il y met un terme en ne s’écoulant pas. “Miniature d’éternité”, le présent n’est pas un point, mais une sorte d’interruption qui dure, qui s’effrange en passé, en futur, comme la molécule entre les deux vagues, une interruption qui ne s’écoule pas, qui fonde le temps et l’alimente peut-être d’ailleurs, sans lui échapper et sans lui appartenir.",
+      "bbox": {
+        "x_pct": 17.181,
+        "y_pct": 7.539,
+        "w_pct": 80.816,
+        "h_pct": 44.057
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il en va de même de la liberté. Aucune liberté n’est libre de causalité. Mais aucune liberté n’est libre non plus sans “les lois non-écrites des dieux”. Aucune liberté ne se réduit à une causalité, mais aucune liberté n’est pure soumission à “des lois non-écrites” définissant une fois pour toutes l’acte libre du fond de l’éternité. La liberté n’est possible qu’au sein du présent paradoxal.",
+      "bbox": {
+        "x_pct": 17.385,
+        "y_pct": 53.924,
+        "w_pct": 80.74,
+        "h_pct": 16.342
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C’est pourquoi “les lois” doivent être “non-écrites”. C’est pourquoi l’impératif catégorique kantien, seul synonyme, dans cette philosophie, de la liberté elle-même, ne peut être qu’une formule si abstraite que certains la jugent vide. Le présent paradoxal",
+      "bbox": {
+        "x_pct": 17.385,
+        "y_pct": 73.175,
+        "w_pct": 80.791,
+        "h_pct": 9.701
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content for accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "62",
+      "bbox": {
+        "x_pct": 17.75,
+        "y_pct": 88.8,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified and reclassified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was severely truncated or misread for all paragraphs.",
+    "Page number '62' was incorrectly identified as paragraph text."
+  ],
+  "doc_id": "2600",
+  "page": 12,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "76",
+      "bbox": {
+        "x_pct": 14.687,
+        "y_pct": 2.457,
+        "w_pct": 1.779,
+        "h_pct": 1.933
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 55.675,
+        "y_pct": 2.457,
+        "w_pct": 39.049,
+        "h_pct": 1.933
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Schwebe; eine Welt in der Schwebe zwischen dem Vorfindlichen und dem Hervorgebrachten.",
+      "bbox": {
+        "x_pct": 14.687,
+        "y_pct": 6.39,
+        "w_pct": 79.669,
+        "h_pct": 4.079
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das menschliche Leben hier ist eigentlich wie eine Flamme, die nur in dem Zwischenraum zwischen diesen beiden nicht wirklichen Welten brennt. Wir müssen uns, glaube ich, daran gewöhnen, daß der Widerspruch uns so schöpferisch macht und vielleicht als einziges schöpferisch machen kann. Denn zwischen den beiden Seiten der Widersprüche, was auch immer sie sind, geschieht etwas. Die Freiheit entwickelt sich in diesem Zwischen. Die Welt ist also niemals nur vorfindlich oder nur hervorgebracht, sondern überhaupt der Begriff „Welt“ ist immer ein Dazwischen im Widersprüchlichen, und dieser Widerspruch trägt dazu bei, daß ich frei und unfrei handeln kann. Frei und unfrei - und eine absolute Freiheit können wir genauso wenig haben wie eine absolut vorfindliche oder absolut hervorgebrachte Welt. Vielmehr ist unser Handeln immer nur frei und unfrei, und durch diesen Widerspruch kann es menschlich wirklich sein.",
+      "bbox": {
+        "x_pct": 14.393,
+        "y_pct": 10.222,
+        "w_pct": 80.245,
+        "h_pct": 25.938
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and combined blocks for better flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt also einen doppelten Sinn dieser Welt, in der man sich - wie Jaspers sagt - orientiert. Man orientiert sich nach zwei Polen: Nach einem objektiven, den wir vorfinden, und zu dem wir doch beitragen und dem gegenüber wir nicht passiv und abwesend sind; und andererseits nach der Transzendenz, wo wir auch nicht in einem freien Raum, in dem uns nichts zwingt, unsere Freiheit entfalten können; sondern auch da haben wir es mit Zwängen zu tun. Die eine Freiheit ist wirklich nur durch die andere - wirklich in dem starken Sinne des Wortes.",
+      "bbox": {
+        "x_pct": 14.233,
+        "y_pct": 35.855,
+        "w_pct": 80.245,
+        "h_pct": 15.896
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich glaube, in der Tiefe ist das der Ursprung dessen, was wir unsere Geschichtlichkeit nennen. Wir sind in der Geschichte, weil wir uns nicht außerhalb des Widerstandes befinden können und weil wir nichts tun können, ohne zugleich auch in dessen Widerspruch zu geraten. Der Mensch ändert nichts am Determinismus, aber er studiert ihn. Er liest ihn sozusagen. Er liest ihn, indem er sich ihm fügt. Das Sich-Fügen ist auch eine Weise des Handelns im Widerspruch. Denn wir fügen uns nicht nur, sondern in diesem Sich-Fügen gebrauchen wir den Determinismus, wir biegen ihn sozusagen in die Richtung, die wir wollen. Wir konkretisieren ihn und biegen ihn zu unseren Zwecken um. Also beides: Wir reduzieren unsere Unterwerfung, wir gewinnen Zeit, wir operieren mit unseren Bedürfnissen und den Bedrohungen, die wir erleiden, indem wir sie ein bißchen weiter von uns schieben, sodaß ein Raum entsteht, ein Raum im Widerspruch.",
+      "bbox": {
+        "x_pct": 14.233,
+        "y_pct": 51.587,
+        "w_pct": 80.282,
+        "h_pct": 25.798
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und in diesem Widerspruch entwickeln sich auch das Denken und die Freiheit. Dazu ist auch die Technik da. Ich glaube, die Technik ist nichts Außerordentliches der modernen Zeit, sondern eine Antwort auf einen dieser Pole der Widersprüchlichkeit, in der wir sind. Das sollte eigentlich",
+      "bbox": {
+        "x_pct": 14.442,
+        "y_pct": 77.22,
+        "w_pct": 79.791,
+        "h_pct": 8.084
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR was highly truncated in multiple blocks.",
+    "Page number and header were labeled as standard text.",
+    "Bounding boxes were slightly offset from text content."
+  ],
+  "doc_id": "2990",
+  "page": 69,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

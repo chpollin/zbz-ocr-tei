@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C.D.k. Vous arrive-t-il, après tant d'années d'intense travail, de jeter un regard en arrière et de porter un jugement sur votre œuvre et sur votre vie ?",
+      "bbox": {
+        "x_pct": 3.785,
+        "y_pct": 3.444,
+        "w_pct": 79.328,
+        "h_pct": 5.75
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and punctuation from OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui, et je trouve ce paysage un peu hétéroclite. Mais, d'un autre côté, je trouve qu'il l'est en surface, pas en profondeur. Je sais qu'il y a en tout cela une certaine fidélité centrale, bien qu'il soit assez difficile de dire de quelle nature. Quand je regarde ma vie passée, je trouve que j'ai perdu beaucoup de temps d'une façon assez curieuse, dont je ne sais pas très bien si c'était de la distraction ou de la concentration. J'ai toujours été frappée, au cours de ma vie, par la ressemblance qu'il y a entre la distraction et la concentration. J'ai vu travailler des amis : au moment où ils voulaient faire quelque chose, ils étaient déjà en train de le faire. Mais moi, si vous saviez comme j'ai dû prendre mon élan, à cause de cette peur d'affronter la page blanche. Il est difficile d'articuler un projet, et je redoutais cet effort. Et puis, il y a aussi chez moi un côté stupéfait. J'ai souvent l'impression que j'ai passé une partie de mon enfance, de mon adolescence et de ma jeunesse dans une sorte de stupeur ; je regardais, je regardais et c'était tellement absorbant de regarder que je ne faisais pas autre chose. Je pense, par exemple, à ce petit appartement où j'ai passé la fin de mon enfance, entre 7 et 15 ans. Il était situé au rez-de-chaussée, il ouvrait sur un tout petit jardin, et à côté il y avait un grand jardin, où l'on entendait fouiner toutes sortes de bêtes. Je restais des heures assise sur le petit escalier du perron ; il n'y avait rien d'extraordinaire à voir ; qu'est-ce que je regardais ? Je ne sais pas, mais je sais que j'ai beaucoup reçu sur ce petit escalier.",
+      "bbox": {
+        "x_pct": 3.333,
+        "y_pct": 9.194,
+        "w_pct": 79.853,
+        "h_pct": 43.605
+      },
+      "changed": true,
+      "change_reason": "Corrected substantial OCR errors throughout the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'était la rêverie active de Baudelaire.",
+      "bbox": {
+        "x_pct": 6.349,
+        "y_pct": 53.685,
+        "w_pct": 52.503,
+        "h_pct": 1.823
+      },
+      "changed": true,
+      "change_reason": "Removed 'GDk:' which is likely speaker metadata."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois beaucoup à la rêverie active, mais je ne suis pas sûre d'avoir fait produire à cette rêverie active ce qu'elle aurait pu produire, à cause de cette paresse ultérieure qui m'empêchait d'affronter la mise en forme et l'élaboration, le faire concret de l'œuvre. C'est peut-être à cause de cette difficulté que, dans L'Etre et la Forme, j'ai attaché tant d'importance au faire.",
+      "bbox": {
+        "x_pct": 3.333,
+        "y_pct": 55.645,
+        "w_pct": 79.658,
+        "h_pct": 12.395
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and OCR inaccuracies."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez dit un jour, à propos de Raymond Aron, qu'il a accompli « son œuvre au service de la vérité sur le présent le plus immédiat ». Cette remarque ne pourrait-elle s'appliquer à vous et à un aspect de votre œuvre ?",
+      "bbox": {
+        "x_pct": 3.455,
+        "y_pct": 68.387,
+        "w_pct": 79.487,
+        "h_pct": 6.371
+      },
+      "changed": true,
+      "change_reason": "Corrected speaker prefix and improved transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certainement, mais seulement toute proportion gardée. Je vous en prie, ne m'identifiez pas à Raymond Aron. Cela ne fait pas souffrir ma modestie, cela fait souffrir mon sens de la vérité. Il n'y a aucune comparaison entre la présence au présent, pénétrante, transparente, compétente dans tous les domaines de la vie commune, qui a été celle de Raymond Aron, et la mienne. Mais j'ai en commun avec lui, en effet, d'être intensément tournée vers le présent. Je vais vous dire quelle est la",
+      "bbox": {
+        "x_pct": 3.297,
+        "y_pct": 76.024,
+        "w_pct": 79.695,
+        "h_pct": 14.379
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "221",
+      "bbox": {
+        "x_pct": 78.432,
+        "y_pct": 95.534,
+        "w_pct": 3.42,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as _filter (page_footer)."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Several paragraphs contained significant OCR errors requiring manual transcription correction.",
+    "Speaker identifier 'GDk' was not consistently excluded from the paragraph text.",
+    "Page number at the bottom right was incorrectly labeled as a text/paragraph region."
+  ],
+  "doc_id": "2330",
+  "page": 225,
+  "elapsed_seconds": 8.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

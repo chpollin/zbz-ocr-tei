@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais signaler à point, aujourd'hui; les informations sur les techniques de Pamour et de la pr",
+      "bbox": {
+        "x_pct": 11.115,
+        "y_pct": 8.839,
+        "w_pct": 75.263,
+        "h_pct": 20.427
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jen viens à parler   maintenant des dangers sont impliqués dans action préventive. Il faut très cons",
+      "bbox": {
+        "x_pct": 11.249,
+        "y_pct": 29.76,
+        "w_pct": 74.995,
+        "h_pct": 8.015
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le deuxième; cest de se tromper aussi sur le sens et les conditions de la santé. La santé est là pou",
+      "bbox": {
+        "x_pct": 10.836,
+        "y_pct": 38.3,
+        "w_pct": 75.47,
+        "h_pct": 30.24
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'action pr\u0000ventive est indispensable, mais elle doit \u0000tre tr\u0000s consciente,",
+      "bbox": {
+        "x_pct": 10.836,
+        "y_pct": 69.577,
+        "w_pct": 75.47,
+        "h_pct": 23.36
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing paragraph"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "101",
+      "bbox": {
+        "x_pct": 81.336,
+        "y_pct": 93.639,
+        "w_pct": 4.97,
+        "h_pct": 2.219
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing text paragraph",
+    "Missing page footer"
+  ],
+  "doc_id": "1340",
+  "page": 9,
+  "elapsed_seconds": 4.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

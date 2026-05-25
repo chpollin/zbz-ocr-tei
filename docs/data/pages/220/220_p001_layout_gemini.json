@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 79.363,
+        "y_pct": 11.715,
+        "w_pct": 8.88,
+        "h_pct": 2.594
+      },
+      "changed": true,
+      "change_reason": "Identified as page header/running title, not paragraph text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Philosophie der Universität Genf",
+      "bbox": {
+        "x_pct": 74.646,
+        "y_pct": 14.741,
+        "w_pct": 13.679,
+        "h_pct": 3.17
+      },
+      "changed": true,
+      "change_reason": "Identified as page header/running title, not paragraph text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Ausblicke",
+      "bbox": {
+        "x_pct": 82.512,
+        "y_pct": 29.64,
+        "w_pct": 5.967,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header/title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In den vorhergehenden fünf Vorträgen haben Denker verschiedener Weltanschauung schilderten die schilderten Drohung des Vierten Menschen Stellung genommen. Nach Alfred Weber steht der Typus Mensch, der bis jetzt in der eigentlichen Geschichte waltete, in der Gefahr, zu verschwinden, zugunsten eines innerlich desintegrierten, freiheits- und transzendenzlosen Wesens, das im ungeheuren mechanischen Apparat der modernen Welt nur noch als «Funktionär» weiterlebt. Alle bisherigen Redner weigerten sich - wie Alfred Weber selbst -, diese Entwicklung als die einzig mögliche zu betrachten. Sie waren auch einig in der Beurteilung, Webers Bedingungen der Rettung seien noch nicht genügend klar umschrieben. Professor Röpke sah in Webers Numerierung selbst ein Verfallen in die Relativität des Vierten Menschen und behauptete, dass man den Glauben aufrechterhalten müsse an den einen absoluten Menschen und dessen absolute Werte. Auf andere Art und Weise verlangten auch meine anderen Kollegen den in Ihrer Auffassung unentbehrlichen",
+      "bbox": {
+        "x_pct": 52.913,
+        "y_pct": 44.496,
+        "w_pct": 36.686,
+        "h_pct": 42.003
+      },
+      "changed": true,
+      "change_reason": "OCR correction applied to provide meaningful paragraph text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR for paragraph text was highly garbled.",
+    "Running headers mislabeled as text.",
+    "Section header mislabeled as text."
+  ],
+  "doc_id": "220",
+  "page": 1,
+  "elapsed_seconds": 3.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

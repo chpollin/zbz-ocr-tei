@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Er hätte Gott verloren und stünde allein auf sich angewiesen. Um ihn herum bildete sich ein Feld des Nihilismus. Mit diesem Menschenbild hat der Marxismus nichts gemeinsam. Indem Marx Philosophie und Arbeiterbewegung miteinander verband, versah er die menschliche Monade mit Fenstern. Er stellte das Individuum nicht in die Gesellschaft von reinen Ideen, sondern in die Gesellschaft von tätigen denkenden Menschen. Ebenso wie die Natur für die menschliche Gesellschaft, so waren und so sind für jedes Individuum die Verkehrsverhältnisse menschlich-gesellschaftlichen Lebens vorausgesetzt. Oder anders gesagt: Ohne Existenz der menschlichen Gesellschaft keine Existenz irgendeines Individuums. Das Individuum kann sich nur in und nur mittels der Gesellschaft vereinzeln. Marx hat das Individuum gelehrt, sich in Gemeinschaft mit anderen, aus und in dieser Gemeinschaft, als Veränderer zu begreifen und zu betätigen. Vom Ursprung her, und dieser Ursprung heißt Arbeit.",
+      "bbox": {
+        "x_pct": 14.827,
+        "y_pct": 7.937,
+        "w_pct": 65.375,
+        "h_pct": 30.011
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and mangled text content to match the full paragraph readable in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Arbeit ist nach Marx jener «Prozeß zwischen Mensch und Natur», in welchem «der Mensch seinen Stoffwechsel mit der Natur durch seine eigene Tat vermittelt, regelt und kontrolliert». In den Blick kommt dabei auch eine Arbeit, der arbeitende Mensch «als Spiel seiner eigenen körperlichen und geistigen Kräfte genießt». Arbeit ist aber zugleich Kooperation.",
+      "bbox": {
+        "x_pct": 14.907,
+        "y_pct": 37.664,
+        "w_pct": 65.326,
+        "h_pct": 11.778
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and fixed mangled characters like 'V' to 'Natur' and 'Sto' to 'Stoffwechsel'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Beides ist von fundamentaler Bedeutung für das Selbstverständnis in unserer Zeit. Wie kann der Philosoph sich als – um einen Ausdruck von Husserl zu verwenden – «Funktionär der Menschheit» betätigen? Mir scheint, wenn er sich darum bemüht, daß – und ich gebrauche jetzt eine Formulierung Lenins – jede Köchin den Staat regiert, nicht unbedingt als Ministerpräsidentin, obwohl auch das möglich sein muß, nein, von ihrem Platz aus, und das gilt für jeden arbeitenden Menschen, insbesondere auch körperlich arbeitenden Menschen. «Ideen», so schrieb Marx, «können nie über einen alten Weltzustand, sondern immer nur über die Ideen des alten Weltzustandes hinausführen. Ideen können überhaupt nichts ausführen. Zum Ausführen der Ideen bedarf es der Menschen, welche eine praktische Gewalt aufbieten». Nicht auf einer praktischen Vernunft, sondern auf dieser praktischen Gewalt, d. h. auf der Arbeit, beruht die Existenz der menschlichen Gesellschaft. Mir persönlich – und Sie gestatten mit bitte dieses Bekenntnis – ist es eine gesellschaftliche Pflicht gewesen und eine Erfüllung von Freiheit, den Standpunkt der Arbeiterklasse einzunehmen. In diesem Zusammenhange möchte ich mir",
+      "bbox": {
+        "x_pct": 14.907,
+        "y_pct": 49.362,
+        "w_pct": 65.455,
+        "h_pct": 35.766
+      },
+      "changed": true,
+      "change_reason": "Corrected mangled text content and truncation errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "6",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 87.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and labeled as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extractions were severely truncated and contained OCR errors (mangled characters).",
+    "Page number missing from initial detections."
+  ],
+  "doc_id": "3100",
+  "page": 7,
+  "elapsed_seconds": 5.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

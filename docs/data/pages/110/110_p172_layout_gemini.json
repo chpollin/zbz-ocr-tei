@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "170",
+      "bbox": {
+        "x_pct": 19.125,
+        "y_pct": 2.0,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number recognized as header/footer"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 71.0,
+        "y_pct": 2.0,
+        "w_pct": 16.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Faulre un tableau reconnu commne un   chef-dœuvre, par Thistoire de Tart. Nous   pourrons   peut-êtr",
+      "bbox": {
+        "x_pct": 18.929,
+        "y_pct": 13.341,
+        "w_pct": 68.594,
+        "h_pct": 7.464
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout le monde ici Ou là, dans la salle à manger dune pension de famille dun café de village, un trom",
+      "bbox": {
+        "x_pct": 18.929,
+        "y_pct": 20.828,
+        "w_pct": 68.71,
+        "h_pct": 23.759
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Devant le trompe-lœil humiliant, évoquons le souvenir du Panicr de prunes de Chardin. nous 4 habitué",
+      "bbox": {
+        "x_pct": 19.009,
+        "y_pct": 44.822,
+        "w_pct": 68.583,
+        "h_pct": 22.453
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aujourd'hui, demandons de la poésie tous Ies arls . On suggère rien; dit tout,tan Oui, c'est vrai, C",
+      "bbox": {
+        "x_pct": 21.855,
+        "y_pct": 66.796,
+        "w_pct": 65.737,
+        "h_pct": 7.593
+      }
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "added page number and header regions",
+    "some French diacritics representational issues in text"
+  ],
+  "doc_id": "110",
+  "page": 172,
+  "elapsed_seconds": 9.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

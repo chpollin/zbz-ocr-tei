@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "apparut une furieuse, couverte d'écail- les, aux naseaux avidement ouverts. Un ins- tant, il y eut le silence, le double guet, le double souffle suspendu, les deux monstres immobiles. Un rayon de soleil fit luire l'acier bleu des anneaux dressés. Puis chacun se ramassa sur lui-même. Quelques bonds ram- pés, les lourdes queues heurtant souches et buissons, le jet sifflant des flammes, et déjà deux cuirasses s'entrechoquaient avec fu- reur.",
+      "bbox": {
+        "x_pct": 9.818,
+        "y_pct": 11.448,
+        "w_pct": 65.782,
+        "h_pct": 30.53
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match full paragraph in image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le premier le Chevalier reçut une cruelle morsure, au défaut de sa cuirasse, là où il avait eu naguère sa nuque d'homme. Il s'affaissa un moment. Mais le feu qui dévorait sa poitrine le redressa, le jeta sur l'ennemi. Il lui laboura un côté de la tête et lui creva un œil. Dès lors il était possible de feindre, d'attaquer par sur- prise, du côté où la proie était aveugle. Il prit du champ, repéra les cassures, les articulations vitales sous la cuirasse souillée de terre et de son propre sang. Il les visa des dents, des griffes, et bondit. Longtemps ils restèrent presque immobiles. Le dragon, sous l'empri-",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 42.534,
+        "w_pct": 66.061,
+        "h_pct": 37.071
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match full paragraph in image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "49",
+      "bbox": {
+        "x_pct": 721.0,
+        "y_pct": 826.0,
+        "w_pct": 24.0,
+        "h_pct": 22.0
+      },
+      "changed": true,
+      "change_reason": "Label changed from text to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction in regions was heavily truncated/corrupted.",
+    "Page number 49 was incorrectly labeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 47,
+  "elapsed_seconds": 3.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

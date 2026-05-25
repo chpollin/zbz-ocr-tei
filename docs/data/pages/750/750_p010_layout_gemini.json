@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "134",
+      "bbox": {
+        "x_pct": 23.21,
+        "y_pct": 128.53,
+        "w_pct": 2.51,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_footer."
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 41.53,
+        "y_pct": 127.32,
+        "w_pct": 17.65,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Author name/running header identified as text, changed to zb_heading."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après tout ce qui a été dit sur la prépondérance des facteurs spécifiquement humains : mobilité, histoire, société, culture, que peut bien signifier ce « maintien des liens biologiques » et « de l'unité de l'espèce humaine » par le métissage? Quelle en est l'importance? A-t-elle une signification scientifique?",
+      "bbox": {
+        "x_pct": 26.65,
+        "y_pct": 152.78,
+        "w_pct": 50.23,
+        "h_pct": 99.33
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que signifie ici « la diversité humaine », couplée avec « l'unité biologique » par le métissage? A-t-elle un sens autre que rhétorique?",
+      "bbox": {
+        "x_pct": 26.83,
+        "y_pct": 246.67,
+        "w_pct": 49.97,
+        "h_pct": 50.97
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph and fixed OCR errors."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les propositions mettent l'accent sur l'intervention des facteurs culturels dans l'évolution de l'homme. « L'homme, depuis son origine, dispose de moyens culturels sans cesse plus efficaces d'adaptation non génétique. » Il faut souligner ici l'importance de « depuis son origine ». Les auteurs des Propositions n'ont donc pas voulu envisager une évolution humaine purement biologique d'abord, à laquelle les facteurs culturels seraient venus s'ajouter. Non, ces derniers sont à l'œuvre d'emblée. Nous y reviendrons. On nous dit d'ailleurs que facteurs biologiques et facteurs culturels ne restent nullement indépendants. Les facteurs culturels, en élargissant les cercles de mariage, « agissent sur les structures génétiques des populations ». Mais « rien n'autorise à attribuer les particularités culturelles à des caractéristiques du patrimoine génétique ». Le paragraphe 12 apparaît comme particulièrement délicat et nuancé, avec un « cependant » et un « mais ». Il semble admettre « un certain degré de coïncidence entre traits physiques d'une part, linguistiques et culturels d'autre part », dû aux effets génétiques de facteurs culturels, et non l'inverse.",
+      "bbox": {
+        "x_pct": 22.89,
+        "y_pct": 307.74,
+        "w_pct": 54.09,
+        "h_pct": 308.34
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and consolidated text."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'exclusion, en tout ce qui concerne les races et leur classification, de caractères mentaux, en particulier de ceux qu'on mesure par « certains tests psychologiques », est moins radicale qu'elle ne l'était dans la Déclaration. On admet une intervention possible de l'hérédité, mais on souligne aussitôt à ce sujet l'absence de preuves, les difficultés de l'étude, alors que l'« intervention » du milieu physique, culturel et social a été abondamment mise en lumière ». En outre, on rattache « la capacité génétique d'épanouissement intellectuel » à des caractéristiques biologiques de valeur universelle (de même que « certains grands traits anatomiques propres à l'espèce humaine »), « en raison de son importance pour la survie de l'espèce dans n'importe quel environnement naturel culturel ».",
+      "bbox": {
+        "x_pct": 22.97,
+        "y_pct": 627.99,
+        "w_pct": 54.01,
+        "h_pct": 208.95
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and consolidated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Copyright © 2010 ProQuest LLC. All rights reserved. Copyright © Presses Universitaires de France.",
+      "bbox": {
+        "x_pct": 15.65,
+        "y_pct": 940.67,
+        "w_pct": 48.78,
+        "h_pct": 4.17
+      },
+      "changed": true,
+      "change_reason": "Added page_footer region for copyright notice."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Severe OCR degradation in original JSON text content.",
+    "Missing layout labels for footer content.",
+    "Inconsistent naming convention (list_item vs text) for identical content blocks."
+  ],
+  "doc_id": "750",
+  "page": 10,
+  "elapsed_seconds": 11.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 35",
+      "bbox": {
+        "x_pct": 286.0,
+        "y_pct": 82.0,
+        "w_pct": 427.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Combined running header and page number into one _filter block for consistency."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Devant l'équité limpide de ce système, les troubles déclenchés par telle ou telle faction prennent une allure criminelle. Le système, en effet, paraît être celui-là même de la justice. Mais c'est qu'on considère l'épure et qu'on oublie la réalité. La réalité quotidienne de la vie est faite non de droits, mais de l'exercice de ces droits, c'est-à-dire d'actes et de faits concrets. Les droits égaux font rire la misère, pour laquelle il n'y a, entre le travail et le sommeil, guère d'autre interstice que la peur de perdre le travail. Le droit de parler, d'écrire, de voyager, intéresse peu celui qui ne sait ni parler ni écrire et qui n'a pas de quoi voyager. Et le droit, à longue échéance, de changer par les lois le système dont il se sent la victime, n'est pas pour lui, comme on le prétend, affaire de discipline et de patience. Car la vie, l'unique, passe, loin de biens essentiels. Et quand on a des enfants ou une femme à aimer, la patience, parfois, prend figure de lâcheté ou de sacrifice humain.",
+      "bbox": {
+        "x_pct": 15.65,
+        "y_pct": 154.0,
+        "w_pct": 794.0,
+        "h_pct": 308.0
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text and updated coordinates to match the primary paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Car le raisonnement peut être limpide, mais il est faux s'il oublie la chair de la vie et la chair de l'homme. Le libéralisme conservateur joue à oublier l'existence de cette chair. Toute la littérature de l'époque où il régnait, tout le secteur de la littérature qui dépend encore de ses critères esthétiques ou moraux, tendent à la faire oublier, ou bien à en faciliter un oubli feint. C'est pas pour rien que l'érotisme déchaîné dans la littérature va de pair avec des mouvements révolutionnaires. La décence — qui ne permettait, en fait d'amour physique, qu'un acte distrait, nocturne, oublié dès le réveil — allait de pair avec cette « correction », d'un cynisme aveugle, qui a permis le régime économique du siècle dernier, l'esclavage meurtrier, à l'usine, des femmes et des enfants, qui permettent encore aujourd'hui la vie déshumanisée du travail industriel dans les banlieues des grandes villes, aux colonies, celle des ouvriers agricoles où un peu partout dans le monde, celle de toutes les victimes dont la société, sans sévices, aveuglément, broie l'existence.",
+      "bbox": {
+        "x_pct": 16.0,
+        "y_pct": 460.0,
+        "w_pct": 792.0,
+        "h_pct": 348.0
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph block for flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, sur le plan social, la chair que les conservateurs libéraux s'obstinent à ignorer — elle se laisse oublier lorsqu'elle est satisfaite —, ce sont les besoins économiques.",
+      "bbox": {
+        "x_pct": 16.0,
+        "y_pct": 808.0,
+        "w_pct": 792.0,
+        "h_pct": 48.0
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous y reviendrons plus loin.",
+      "bbox": {
+        "x_pct": 51.0,
+        "y_pct": 863.0,
+        "w_pct": 371.0,
+        "h_pct": 24.0
+      },
+      "changed": false,
+      "change_reason": "Corrected OCR typo 'J' to 'y'."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly fragmented and garbled.",
+    "Page number and header were incorrectly tagged as paragraph.",
+    "Multiple paragraphs were entirely missed by the detector."
+  ],
+  "doc_id": "330",
+  "page": 69,
+  "elapsed_seconds": 6.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

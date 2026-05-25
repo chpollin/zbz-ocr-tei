@@ -1,0 +1,125 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 89.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Page number 12 detected."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 889.0,
+        "y_pct": 89.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Page number 13 detected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Loperu di Jaspers. Ricordo cbe Jean Wahl che stimnava grandemente i] pensiero di Jaspers sisrcmatico",
+      "bbox": {
+        "x_pct": 10.105,
+        "y_pct": 11.485,
+        "w_pct": 35.272,
+        "h_pct": 16.899
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Noi siamo coMc chiusi in orizzonte, qu2llo del bile sapere. possi - non 2 Muta; Ma qualunquc sia, ci",
+      "bbox": {
+        "x_pct": 9.695,
+        "y_pct": 55.624,
+        "w_pct": 35.071,
+        "h_pct": 4.297
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "annunzi: abbracciante opni possibili oriz",
+      "bbox": {
+        "x_pct": 8.866,
+        "y_pct": 78.449,
+        "w_pct": 20.906,
+        "h_pct": 4.113
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Per noi aperla, derci nel modo chiaro € distinto , secondo le condizioni dell'oggettività, (ondamcnt",
+      "bbox": {
+        "x_pct": 81.792,
+        "y_pct": 21.064,
+        "w_pct": 8.456,
+        "h_pct": 2.024
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "in modaliti plurnlità precisare 2 il molo Tinglobane non cessi di non non costiluisce In quali sfug:",
+      "bbox": {
+        "x_pct": 54.881,
+        "y_pct": 45.243,
+        "w_pct": 35.586,
+        "h_pct": 18.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si scoprire 2 del no S[TO 'onologia. que]",
+      "bbox": {
+        "x_pct": 55.005,
+        "y_pct": 68.108,
+        "w_pct": 35.367,
+        "h_pct": 6.137
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mu non Esso   [ulliun E",
+      "bbox": {
+        "x_pct": 56.311,
+        "y_pct": 76.741,
+        "w_pct": 34.252,
+        "h_pct": 7.976
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page numbers 12 and 13 were misclassified as text.",
+    "OCR output is significantly degraded."
+  ],
+  "doc_id": "2030",
+  "page": 2,
+  "elapsed_seconds": 5.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

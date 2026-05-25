@@ -1,0 +1,135 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "78 Discussion sur les communications",
+      "bbox": {
+        "x_pct": 9.473,
+        "y_pct": 5.45,
+        "w_pct": 52.378,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Identified as page header / running head."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais maintenant revenir sur un problème qui, à mon sens, doit être résolu ou aurait dû être résolu par chacun avant le début même de ces débats.",
+      "bbox": {
+        "x_pct": 9.473,
+        "y_pct": 12.618,
+        "w_pct": 85.076,
+        "h_pct": 5.915
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parler de la démocratie économique nous entraîne tous à présenter des jugements de valeur; nous parlons des chances et des risques de la démocratie, montrant par là que nous lui sommes attachés. Est-ce à dire que ce point de départ condamne toute possibilité d'analyse scientifique?",
+      "bbox": {
+        "x_pct": 9.251,
+        "y_pct": 19.692,
+        "w_pct": 85.201,
+        "h_pct": 10.063
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense au contraire, et cette position est très «classique» que l'analyse sociologique est impossible si elle ne pose pas clairement ce point de départ.",
+      "bbox": {
+        "x_pct": 9.431,
+        "y_pct": 30.284,
+        "w_pct": 84.84,
+        "h_pct": 6.412
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette affirmation doit-elle conduire la sociologie à n'être qu'une histoire d'idéologies politiques ou morales, organisée, orientée au gré des préférences de l'observateur?",
+      "bbox": {
+        "x_pct": 9.528,
+        "y_pct": 37.2,
+        "w_pct": 84.743,
+        "h_pct": 6.199
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On acquiesce à cette issue désespérée à la simple condition de reconnaître que l'objet de la sociologie est l'étude des conduites humaines, que les conduites sont orientées, ne sont pas des réactions mécaniques et qu'il est donc impossible de les servir autrement que dans leur nature propre, d'actions significatives.",
+      "bbox": {
+        "x_pct": 9.196,
+        "y_pct": 44.109,
+        "w_pct": 85.021,
+        "h_pct": 10.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Faut-il rappeler que c'est là le fossé qui sépare pour toujours les sciences de l'homme des sciences de la nature?",
+      "bbox": {
+        "x_pct": 9.196,
+        "y_pct": 54.787,
+        "w_pct": 84.938,
+        "h_pct": 4.022
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il ne s'agit pas de détacher ces significations de ce qu'elles signifient et de jouer avec des idées dégagées, non de leurs conditions sociales, expression qui me semble tout à fait dangereuse et renvoie indirectement au monde transcendantal, mais de leur réalité sociale.",
+      "bbox": {
+        "x_pct": 9.154,
+        "y_pct": 59.834,
+        "w_pct": 84.924,
+        "h_pct": 9.803
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est pas suffisant de dire que nous avons le choix d'étudier la démocratie économique dans nos sociétés, parce que celles-ci la reconnaissent comme une de leurs valeurs centrales. Le concept de démocratie n'est qu'une expression institutionnelle de la notion de société du travail, qui est création d'objets et rappel du produit au producteur. Cette conception du sujet historique prend des formes et rencontre des obstacles qui dépendent des conditions du travail lui-même.",
+      "bbox": {
+        "x_pct": 9.251,
+        "y_pct": 71.112,
+        "w_pct": 84.827,
+        "h_pct": 15.3
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi se trouve créé ce qui a été appelé un cercle vicieux. Bienheureux cercle vicieux, puisqu'il nous permet de proposer des analyses systématiques qui n'ont pas à recourir à des",
+      "bbox": {
+        "x_pct": 9.431,
+        "y_pct": 87.382,
+        "w_pct": 84.466,
+        "h_pct": 6.309
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page header to regions."
+  ],
+  "doc_id": "550",
+  "page": 19,
+  "elapsed_seconds": 6.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

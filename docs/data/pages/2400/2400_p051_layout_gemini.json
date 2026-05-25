@@ -1,0 +1,109 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Fragen aus der Zuhörerschaft und Zusammenfassung",
+      "bbox": {
+        "x_pct": 313.0,
+        "y_pct": 53.0,
+        "w_pct": 374.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header rather than body text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Ohne Geschichte keine Zukunft",
+      "bbox": {
+        "x_pct": 7.141,
+        "y_pct": 55.364,
+        "w_pct": 17.676,
+        "h_pct": 3.151
+      },
+      "changed": true,
+      "change_reason": "This is a marginal summary/sidebar note, not part of the main paragraph flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Diese Diskussion hat mich einmal mehr daran erinnert, daß es für denkende Menschen nicht ein Entweder-Oder gibt. Das Leben ist offensichtlich viel zu komplex, als daß man ihm mit Schwarz oder Weiß beikommen könnte.",
+      "bbox": {
+        "x_pct": 27.457,
+        "y_pct": 16.106,
+        "w_pct": 65.207,
+        "h_pct": 11.063
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein Fragesteller macht uns aufmerksam auf ein Problem, dem wir zu wenig Beachtung geschenkt haben: auf das Problem der Geschichte. Er wirft den Politikern und Unternehmern kurzfristiges Denken vor. Dieser Kritik kann ich mich anschließen. In Übereinstimmung mit dem Fragesteller möchte ich sagen: Langfristiges Denken ist eine notwendige Voraussetzung zur Minimierung von Risiken. Und langfristiges Denken heißt in diesem Zusammenhang auch: geschichtliches Denken. Ohne Bewußtsein der Geschichte hat in der heutigen Welt ein Volk, eine Regierung und ein Parlament überhaupt keine Zukunft. Und ein Volk, das beispielsweise nicht mehr gewillt ist, von seiner Heimat zu sprechen, geht Risiken für die Zukunft ein.",
+      "bbox": {
+        "x_pct": 27.457,
+        "y_pct": 27.365,
+        "w_pct": 65.45,
+        "h_pct": 35.757
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for full readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein anderer Fragesteller behauptet: <Mais l’autorité n’existe qu’au bénéfice de celui qui sait mieux que les autres>. Ich kann mich diesem lapidaren Satz nicht ohne weiteres anschließen. Ich glaube nicht, daß Autorität nur Ausfluß des Wissens ist. Ich kann mir sehr wohl eine Autorität denken, die nicht darauf angewiesen ist, mehr zu wissen als andere.",
+      "bbox": {
+        "x_pct": 27.372,
+        "y_pct": 63.195,
+        "w_pct": 65.45,
+        "h_pct": 17.882
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein dritter Fragesteller befürchtet, daß die Autorität für sich das Sichere beansprucht und das Riskante auf dem Delegationsweg abgibt. Ein sol-",
+      "bbox": {
+        "x_pct": 27.579,
+        "y_pct": 81.245,
+        "w_pct": 65.207,
+        "h_pct": 7.06
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": {
+        "x_pct": 589.0,
+        "y_pct": 910.0,
+        "w_pct": 20.0,
+        "h_pct": 30.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction had severe OCR errors.",
+    "Page number 52 not identified as page_footer.",
+    "Section header was mislabeled as text.",
+    "Marginal text was misidentified.",
+    "The text content was truncated in the initial JSON."
+  ],
+  "doc_id": "2400",
+  "page": 51,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

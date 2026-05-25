@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Un livre sur le temps et la liberté",
+      "bbox": {
+        "x_pct": 22.16,
+        "y_pct": 27.987,
+        "w_pct": 56.164,
+        "h_pct": 3.07
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En intitulant le livre qu'il vient de publier La Dialectique des Exercices spirituels de saint Ignace de Loyola, le P. Fessard éclaire assez mal ceux qui devraient devenir ses lecteurs. On est tenté de croire, en effet, qu'il s'agit exclusivement d'un commentaire des Exercices, s'adressant à ceux qui leur portent un intérêt exceptionnel, donc à peu près uniquement aux membres de la Compagnie de Jésus. Tout au plus entrevoit-on, grâce au mot « dialectique », que le commentaire proposé recourra, afin de pénétrer mieux la pensée du Fondateur de la Compagnie, à des modes de pensée modernes, étrangers à l'auteur étudié, inspirés de Hegel et de sa descendance nombreuse et divergente. Or, en fait, si Hegel ici permet de faire apparaître dans le texte des Exercices des richesses ignorées, les Exercices, à leur tour, interprétés avec l'aide de Hegel, jettent une lumière nouvelle sur les problèmes métaphysiques cruciaux de notre époque : ceux qui concernent la nature du temps structuré par l'acte libre, et les rapports du déroulement historique avec la liberté humaine et la liberté de Dieu. Il n'est donc pas surprenant que l'auteur annonce, en terminant, un ouvrage ultérieur intitulé Théologie et Histoire.",
+      "bbox": {
+        "x_pct": 20.709,
+        "y_pct": 35.493,
+        "w_pct": 58.622,
+        "h_pct": 24.976
+      },
+      "changed": true,
+      "change_reason": "OCR transcription was significantly truncated and contained typos (e.g. Ezercices, richegse, oge). Replaced with corrected full text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est à cause de cette richesse métaphysique qu'une plume non catholique comme la mienne ose entreprendre de retracer les grandes lignes de l'ouvrage. Il est évident que bon nombre de ses éléments essentiels restent pour moi opaques et plus ou moins dénués de signification — cela d'autant que, comme le P. Fessard le souligne lui-même à juste titre, « beaucoup plus que les ouvrages d'ascètes ou même de mystiques tels que Saint-Jean de la Croix, les Exercices restent un livre scellé pour les incroyants. » J'ignore, à vrai dire, quels sont ceux qu'il appelle « incroyants ». Tel cependant que je l'ai lu et dans la mesure où je l'ai compris, le nouveau livre du P. Fessard me paraît mettre au ciel de la philosophia perennis une constellation neuve. Quoique sa lumière se nourrisse de tout un passé, elle est bien d'aujourd'hui. Elle est, pour ceux qui posent à la manière actuelle les problèmes de toujours, un chiffre précieux, un signe, qu'il importe à chacun de déchiffrer.",
+      "bbox": {
+        "x_pct": 20.492,
+        "y_pct": 61.758,
+        "w_pct": 58.614,
+        "h_pct": 22.049
+      },
+      "changed": true,
+      "change_reason": "OCR transcription was truncated. Replaced with corrected full text."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR was truncated for both paragraph regions.",
+    "OCR had multiple character recognition errors (spelling mistakes)."
+  ],
+  "doc_id": "350",
+  "page": 1,
+  "elapsed_seconds": 10.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

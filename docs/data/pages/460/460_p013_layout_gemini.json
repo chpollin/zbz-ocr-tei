@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'EUROPE AU DÉFI 11",
+      "bbox": {
+        "x_pct": 365.0,
+        "y_pct": 91.0,
+        "w_pct": 539.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page header and number should be tagged as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n'osera pas s'attaquer à nous. Notre passé nous protège, n'est-ce pas, et de toute façon, nous en avons vu d'autres. Et puis, nous sommes trop faibles : que pouvons-nous faire entre les deux Grands? Tenons-nous tranquilles, comptons sur les Américains ; même si nous les insultons, ils ne peuvent nous abandonner ; et les Russes ont besoin de paix. Quant aux pays sous-développés d'Afrique, d'Asie, d'Amérique du Sud, les besoins y sont si immenses que mieux vaut ne rien faire. Que peut la Petite Europe devant le raz de marée démographique, l'insurrection des races, les menaces de famine? Et la stratégie atomique, et l'utilisation pacifique de l'énergie nucléaire, et la recherche scientifique, laissons tout cela à de plus riches et de plus puissants. Nos savants iront travailler dans leurs laboratoires, nous conduirons les étrangers à travers nos musées et nos églises, et la vie continuera, car chez nous, on sait vivre.",
+      "bbox": {
+        "x_pct": 11.513,
+        "y_pct": 12.73,
+        "w_pct": 80.054,
+        "h_pct": 43.369
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce livre dit qu'elle ne continuera pas. Il résulte de chacune des études réunies ici une alternative extrême. Ou bien les Européens ne saisiront pas l'année, l'heure qui s'offre, pour s'unir et remplir ensemble les tâches qui s'imposent aujourd'hui, et alors, rapidement, inéluctablement, le déclin de leur prestige, de leur productivité, de leur pouvoir concurrentiel, de leur influence politique, de leur sécurité militaire, de leur créativité scientifique, technique, artistique ira s'accentuant, élargissant l'écart entre eux et les grandes",
+      "bbox": {
+        "x_pct": 13.119,
+        "y_pct": 63.0,
+        "w_pct": 79.92,
+        "h_pct": 24.685
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page header and number included in OCR text region",
+    "OCR text content significantly corrupted in source bounding boxes"
+  ],
+  "doc_id": "460",
+  "page": 13,
+  "elapsed_seconds": 3.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

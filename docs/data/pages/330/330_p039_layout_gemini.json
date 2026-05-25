@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 5",
+      "bbox": {
+        "x_pct": 30.13,
+        "y_pct": 89.28,
+        "w_pct": 69.45,
+        "h_pct": 3.25
+      },
+      "changed": true,
+      "change_reason": "Header containing page title and number should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sur l'autre représente pour le régime concentrationnaire qui l'utilise un avantage stratégique et le rend, pour ses adversaires, d'autant plus dangereux. Mais on n'apprend pas à résister à une arme en l'ignorant ou en la méprisant. Dire « mensonge » ne suffit pas, parce que, comme nous l'avons vu, il s'agit d'un mensonge efficace, qui devient donc, en pratique, pour des domaines limités, partiellement vrai.",
+      "bbox": {
+        "x_pct": 3.245,
+        "y_pct": 11.702,
+        "w_pct": 84.596,
+        "h_pct": 14.528
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "GÉOGRAPHIE DE SITUATION IDÉOLOGIQUE CONTEMPORAINE",
+      "bbox": {
+        "x_pct": 3.9,
+        "y_pct": 32.291,
+        "w_pct": 79.526,
+        "h_pct": 2.05
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces réserves étaient nécessaires au début du présent chapitre. Nous allons tenter d'esquisser une sorte de géographie de la situation idéologique contemporaine en prenant en considération, d'une part, la propagande idéologique des diverses tendances politiques, les valeurs que celles-ci invoquent ou impliquent et grâce auxquelles elles obtiennent l'adhésion de leurs militants, et de l'autre, la manière dont chacune d'elles s'inscrit dans les faits de la lutte politique et sociale. Après ce qui précède, on comprendra qu'il ne s'agit nullement de faire la caricature des mouvements contemporains en opposant leurs actes à leurs paroles pour constater leur hypocrisie générale. Au contraire, j'entends bien que les fronts idéologiques des partis, dans la mesure où ils sont vraiment défendus, constituent, eux aussi, des facteurs réels, des « faits » moraux socialement efficaces. Reste à savoir malgré tout si ces faits correspondent aux actes. Il importe de voir clairement et d'interpréter les divergences et les écarts éventuels entre l'intention morale des individus et la pratique collective.",
+      "bbox": {
+        "x_pct": 3.719,
+        "y_pct": 35.945,
+        "w_pct": 84.54,
+        "h_pct": 35.241
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce n'est pas tout. La situation actuelle est plus compliquée. Non seulement il existe parfois dans un parti une divergence à peu près constante entre le front idéologique et le front de lutte pratique, mais encore, dans son idéologie même, il peut y avoir divergence entre ce qu'il professe sur le plan religieux ou philosophique d'une part, et ce qu'il réclame sur le plan politique ou économique de l'autre. Ou bien, si même il n'y a pas à proprement parler divorce entre ces deux plans, il se peut que l'idéologie qu'il défend sur l'un ne se trouve que fortuitement liée à celle qu'il",
+      "bbox": {
+        "x_pct": 3.802,
+        "y_pct": 70.829,
+        "w_pct": 84.777,
+        "h_pct": 18.476
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": {
+        "x_pct": 78.41,
+        "y_pct": 89.47,
+        "w_pct": 1.25,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified at bottom right."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Detected page header and footer incorrectly labeled as text.",
+    "OCR text in JSON was malformed or incomplete relative to the visual source."
+  ],
+  "doc_id": "330",
+  "page": 39,
+  "elapsed_seconds": 6.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

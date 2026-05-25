@@ -1,0 +1,129 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La musique et la liberté",
+      "bbox": {
+        "x_pct": 18.182,
+        "y_pct": 11.742,
+        "w_pct": 63.453,
+        "h_pct": 5.079
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 39.972,
+        "y_pct": 19.868,
+        "w_pct": 19.78,
+        "h_pct": 1.742
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous sommes heureux d'offrir à nos lecteurs ces réflexions de Jeanne Hersch sur la musique, présentées à l'ouverture du Festival de Salzbourg en juillet 1985.",
+      "bbox": {
+        "x_pct": 11.23,
+        "y_pct": 25.411,
+        "w_pct": 77.447,
+        "h_pct": 3.53
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text truncation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un moment de préparer ce discours, j'ai tremblé devant ma tâche. Il me fallait parler de musique, et cela à Salzbourg, dans cette ville où chaque pierre, chaque courant d'air, ont absorbé à jamais les noms et les sons qui, interdisant les vains bavardages, imposent dans le monde entier silence et recueillement. Laissez-moi pourtant un instant vous dire combien je suis reconnaissante pour l'honneur que représente l'invitation à prendre ici la parole, pour la confiance qui m'est ainsi témoignée et pour la joie que j'en ai ressentie. Il vous faudra donc un peu de patience. Bientôt les voix et les instruments vont couvrir mes paroles téméraires. Le temps de l'attente sera passé, et nous retiendrons notre souffle dans le temps intemporel de la musique.",
+      "bbox": {
+        "x_pct": 10.955,
+        "y_pct": 34.901,
+        "w_pct": 37.53,
+        "h_pct": 25.252
+      },
+      "changed": true,
+      "change_reason": "Full text restoration based on visible image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Successive et simultanée",
+      "bbox": {
+        "x_pct": 10.927,
+        "y_pct": 63.51,
+        "w_pct": 24.49,
+        "h_pct": 1.874
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment donc « le temps intemporel » ? Que la musique se déploie dans le temps, c'est évident. Mais dans quel sens serait-elle intemporelle ? Ce concert, nous l'avons longtemps attendu. Maintenant nous sommes dans la salle, ce sont les dernières minutes, les musiciens accordent leurs instruments, je pense encore au travail que j'ai quitté pour venir ici, je me prépare à le reprendre tout à l'heure. Et puis, le silence. La baguette du chef se lève. La première note passe comme une ride sur l'eau ou au fond de l'âme. Le temps a disparu. Un autre temps vient de naître, tout différent.",
+      "bbox": {
+        "x_pct": 10.927,
+        "y_pct": 67.483,
+        "w_pct": 37.53,
+        "h_pct": 19.291
+      },
+      "changed": true,
+      "change_reason": "Full text restoration."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La musique se déroule et s'enroule du même",
+      "bbox": {
+        "x_pct": 12.92,
+        "y_pct": 86.669,
+        "w_pct": 35.409,
+        "h_pct": 1.656
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette musique, j'en ai pourtant suivi le déroulement, je l'ai contemplé tel qu'il se faisait dans un temps dont j'étais absente, que je regardais du dehors, d'un point immobile, alors que lui passait comme un paysage vu d'un train. Un temps spatialisé, celui de la nature où il n'y a personne, que le physicien observe, dont il compare l'état à des moments différents, l'un avant, l'autre après, sans aucun « maintenant », sinon seulement l'acte humain d'observer. Mais en même temps, cette musique, je l'ai existentiellement vécue comme un présent où s'actualisait à chaque instant un passé déjà donné et reçu, et un futur possible, attendu, exigé, désiré, craint. Chaque note, chaque accord, chaque rythme devait sa nature et son efficacité à ce qui l'avait précédé, par rapport à quoi je le percevais comme continuité ou rupture, solution ou étranglement, repos, problème ou tremplin. N'étant",
+      "bbox": {
+        "x_pct": 51.212,
+        "y_pct": 59.914,
+        "w_pct": 37.649,
+        "h_pct": 28.497
+      },
+      "changed": true,
+      "change_reason": "Full text restoration."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "486",
+      "bbox": {
+        "x_pct": 113.0,
+        "y_pct": 895.0,
+        "w_pct": 30.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was highly fragmented and truncated.",
+    "Multiple paragraphs contained broken text that needed manual restoration.",
+    "Page number at bottom left was ignored by initial extraction."
+  ],
+  "doc_id": "2290",
+  "page": 1,
+  "elapsed_seconds": 7.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

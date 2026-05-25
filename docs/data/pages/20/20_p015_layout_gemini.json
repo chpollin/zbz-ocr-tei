@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "INTRODUCTION 13",
+      "bbox": {
+        "x_pct": 12.349,
+        "y_pct": 87.1,
+        "w_pct": 76.099,
+        "h_pct": 13.918
+      },
+      "changed": true,
+      "change_reason": "Header elements like INTRODUCTION and page numbers should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans la preuve ontologique de saint Anselme, dans le doute syst©matique de Descartes; puis viendra, avec Kant, la splendide clart© destructrice; et enfin, apr¨s Nietzsche et Kierkegaard, la philosophie contemporaine de Karl Jaspers.",
+      "bbox": {
+        "x_pct": 12.349,
+        "y_pct": 12.936,
+        "w_pct": 76.099,
+        "h_pct": 13.918
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text segmentation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'on objectait que ce choix est arbitraire et ne d©rive pas logiquement de la question pos©e, je r©pondrais tout simplement: il suffit que dans ces quelques exemples les philosophes aient rendu toujours plus probl©matique la question philosophique elle-m©me pour que la question soit probl©matique d©sormais. Peu importe qu'il y ait encore, en m©me temps qu'eux et apr¨s eux, des philosophes dogmatiques pour croire aux probl¨mes et   leur solution. Tant qu'on n'a pas d©pass© les autres, - et « d©passer » ne signifie jamais: « faire comme s'ils n'avaient jamais exist© » - le probl¨me philosophique reste douteux, ambigu, ©quivoque, - et peut-©tre par essence vou©   la destruction.",
+      "bbox": {
+        "x_pct": 12.395,
+        "y_pct": 26.883,
+        "w_pct": 76.355,
+        "h_pct": 38.704
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and formatting."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si telle id©e para©t au premier abord difficile   saisir, si l'expression manque de clart©, qu'on veuille bien avoir quelque indulgence. Mon ©tude commence l  o© finit la philosophie explicite; elle se trouve d'embl©e,   l'©gard du langage, dans une situation paradoxale.",
+      "bbox": {
+        "x_pct": 12.801,
+        "y_pct": 65.615,
+        "w_pct": 76.31,
+        "h_pct": 16.587
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial bounding box for INTRODUCTION/page number was incorrectly labeled as paragraph text.",
+    "OCR output for paragraph text was heavily corrupted.",
+    "Bbox for header was incorrectly linked to the first paragraph in the provided JSON."
+  ],
+  "doc_id": "20",
+  "page": 15,
+  "elapsed_seconds": 4.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

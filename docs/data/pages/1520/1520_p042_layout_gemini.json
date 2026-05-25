@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "P''etre humain, p'ech'e et libert'e naissent ensemble et restent ins'epa- rables.",
+      "bbox": {
+        "x_pct": 10.84,
+        "y_pct": 5.141,
+        "w_pct": 83.564,
+        "h_pct": 4.259
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription and recognized as a full paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi la transcendance n'est pas dans la seule libert'e, mais 'a travers celle-ci, 'egalement dans la nature. Celle-ci, en tant que ''l'autre'' de l'existence, est le chiffre qui d'esigne le fond dont je tiens moi aussi mon 'etre, mais non pas moi seul. Le monde r'eel qui m'entoure m'appara'it d'abord simplement comme un mat'eriau offert 'a ma libert'e; mais ensuite, j'apprends 'a reconna'itre en lui aussi autre chose: l'annonce d'un 'etre propre, ind'ependant, celui de la nature, auquel je me trouve moi-m'eme soumis. La nature n'est pas l''etre en soi, mais l'existence n'est pas tout. Une philosophie de l'existence qui se fermerait sur elle-m'eme deviendrait incapable de percevoir ''l'autre'' de l'existence, ce qui n'est ni elle, ni par elle.",
+      "bbox": {
+        "x_pct": 10.799,
+        "y_pct": 9.314,
+        "w_pct": 83.957,
+        "h_pct": 21.388
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand l'existence se resserre sur soi jusqu'a r'eduire la nature 'a un simple mat'eriau de sa libert'e, la nature commence par se r'evolter au fond de l'existence m'eme. D'autre part, l'existence prend n'ecessairement ce chemin: utiliser la nature comme un mat'eriau. D'o'u son 'eclatement in'evitable: elle viole la nature. Telle est l'antinomie de la libert'e: s'unissant 'a la nature, l'existence s'an'eantit comme libert'e; violant la nature, elle 'echoue au niveau du r'eel.",
+      "bbox": {
+        "x_pct": 10.84,
+        "y_pct": 30.189,
+        "w_pct": 84.011,
+        "h_pct": 13.659
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'absolu de l'existence voudrait transgresser la finitude du r'eel. Ce r'eel implique la coexistence d'une foule d''etres, qui se disputent le possible et l'espace. D'o'u la n'ecessit'e d'une organisation, du recours 'a la mesure, aux limitations, aux concessions, aux compromis, en vue d'une relative stabilit'e. Mais l'existence authentique d'erange tout cela, l'absolu ignore la mesure. L'absolu, condition de l'existence, devient sa faute, qui doit 'etre expi'ee: le r'eel tend 'a le d'etruire, afin de durer. D'o'u, de par le monde, deux sortes d''ethiques. L'une, qui se veut g'en'erale, cultive le sens de la mesure et du relatif, l'attitude prudente et raisonnable, excluant le sens de l''echec; l'autre, saisie par l'absolu de la libert'e, croit que tout est possible et se livre au chiffre de l''echec. Toutes deux s'exigent et se limitent l'une l'autre. L''ethique de la mesure a une validit'e relative en tant qu'elle assure dans la r'egle dur'ee et stabilit'e, rendant ainsi possibles au niveau du r'eel la pr'esence et l'exercice de la libert'e; l''ethique de l'absolu devient relative en s'ins'erant dans un r'eel qui lui conc'ede une place d''exception'', et son origine ''autre'' ne se manifeste avec 'eclat que lorsqu'elle s'an'eantit.",
+      "bbox": {
+        "x_pct": 10.664,
+        "y_pct": 43.385,
+        "w_pct": 84.146,
+        "h_pct": 34.704
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Absolue, l'existence est vou'ee 'a l'impossible. R'ealit'e finie, elle doit reconna'itre les autres, et l'autre de la nature. Sa mesure la plus haute n'a plus de mesure. D'o'u son 'echec in'evitable. Le caract'ere fragmentaire de sa pr'esence empirique et de son 'oeuvre devient chiffre de la transcendance pour l'existence d'autrui.",
+      "bbox": {
+        "x_pct": 10.664,
+        "y_pct": 79.289,
+        "w_pct": 83.821,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "36",
+      "bbox": {
+        "x_pct": 10.84,
+        "y_pct": 91.2,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Relabeled page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text transcriptions were severely truncated/incomplete.",
+    "Page number at bottom was incorrectly labeled as text.",
+    "Overall character transcription quality was poor due to missing diacritics/ligatures."
+  ],
+  "doc_id": "1520",
+  "page": 42,
+  "elapsed_seconds": 10.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

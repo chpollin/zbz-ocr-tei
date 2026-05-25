@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "utilizing opportunities for acquiring knowledge an...",
+      "bbox": {
+        "x_pct": 9.54,
+        "y_pct": 11.641,
+        "w_pct": 73.468,
+        "h_pct": 10.222
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "And thus we perceive that philosophy cannot be sal...",
+      "bbox": {
+        "x_pct": 9.863,
+        "y_pct": 21.236,
+        "w_pct": 73.444,
+        "h_pct": 15.67
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "It is therefore by no means sufficient to renounce...",
+      "bbox": {
+        "x_pct": 10.726,
+        "y_pct": 36.279,
+        "w_pct": 72.798,
+        "h_pct": 13.105
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "As Jaspers conceives it, philosophy is thus not a ...",
+      "bbox": {
+        "x_pct": 10.863,
+        "y_pct": 49.157,
+        "w_pct": 73.435,
+        "h_pct": 37.128
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "149",
+      "bbox": {
+        "x_pct": 80.957,
+        "y_pct": 87.525,
+        "w_pct": 3.75,
+        "h_pct": 1.708
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number at the bottom right was incorrectly labeled as text."
+  ],
+  "doc_id": "3090",
+  "page": 7,
+  "elapsed_seconds": 4.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

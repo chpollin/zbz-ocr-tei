@@ -1,0 +1,488 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Reason, Action, and Experience: Essays in Honor of Raymond Klibansky</title>
+        <author>Helmut Kohlenberger</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1610</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Reason, Action, and Experience: Essays in Honor of Raymond Klibansky</title>
+          <author>Helmut Kohlenberger</author>
+          <date>1979</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+        <language ident="eng" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). teiHeader author ist Herausgeber (Kohlenberger), nicht Beitragsautorin (Hersch)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1949" lry="1418">
+      <zone xml:id="facs_1_r_1" ulx="1200" uly="146" lrx="1726" lry="243" />
+      <zone xml:id="facs_1_r_2" ulx="1346" uly="304" lrx="1580" lry="363" />
+      <zone xml:id="facs_1_r_3" ulx="1333" uly="361" lrx="1594" lry="405" />
+      <zone xml:id="facs_1_r_4" ulx="1374" uly="435" lrx="1592" lry="487" />
+      <zone xml:id="facs_1_r_5" ulx="475" uly="1069" lrx="824" lry="1199" />
+      <zone xml:id="facs_1_r_6" ulx="1294" uly="1125" lrx="1625" lry="1148" />
+      <zone xml:id="facs_1_r_7" ulx="1379" uly="1162" lrx="1531" lry="1189" />
+      <zone xml:id="facs_1_r_8" ulx="1101" uly="1208" lrx="1420" lry="1330" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1948" lry="1417">
+      <zone xml:id="facs_2_r_1" ulx="361" uly="142" lrx="882" lry="185" />
+      <zone xml:id="facs_2_r_2" ulx="1418" uly="206" lrx="1505" lry="229" />
+      <zone xml:id="facs_2_r_3" ulx="1115" uly="322" lrx="1798" lry="1197" />
+      <zone xml:id="facs_2_r_4" ulx="438" uly="327" lrx="811" lry="348" />
+      <zone xml:id="facs_2_r_5" ulx="438" uly="357" lrx="782" lry="456" />
+      <zone xml:id="facs_2_r_6" ulx="486" uly="1079" lrx="777" lry="1104" />
+      <zone xml:id="facs_2_r_7" ulx="382" uly="1107" lrx="884" lry="1191" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1948" lry="1417">
+      <zone xml:id="facs_3_r_1" ulx="286" uly="140" lrx="967" lry="366" />
+      <zone xml:id="facs_3_r_2" ulx="1401" uly="209" lrx="1523" lry="232" />
+      <zone xml:id="facs_3_r_3" ulx="1381" uly="257" lrx="1540" lry="284" />
+      <zone xml:id="facs_3_r_4" ulx="1121" uly="330" lrx="1801" lry="623" />
+      <zone xml:id="facs_3_r_5" ulx="1122" uly="618" lrx="1800" lry="855" />
+      <zone xml:id="facs_3_r_6" ulx="1120" uly="854" lrx="1801" lry="1176" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1949" lry="1417">
+      <zone xml:id="facs_4_r_1" ulx="1391" uly="259" lrx="1522" lry="272" />
+      <zone xml:id="facs_4_r_2" ulx="1282" uly="301" lrx="1633" lry="317" />
+      <zone xml:id="facs_4_r_3" ulx="1132" uly="369" lrx="1783" lry="749" />
+      <zone xml:id="facs_4_r_4" ulx="1132" uly="752" lrx="1783" lry="912" />
+      <zone xml:id="facs_4_r_5" ulx="1132" uly="915" lrx="1783" lry="1000" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1949" lry="1417">
+      <zone xml:id="facs_5_r_1" ulx="292" uly="131" lrx="615" lry="181" />
+      <zone xml:id="facs_5_r_2" ulx="1124" uly="132" lrx="1805" lry="255" />
+      <zone xml:id="facs_5_r_3" ulx="291" uly="178" lrx="968" lry="251" />
+      <zone xml:id="facs_5_r_4" ulx="1124" uly="250" lrx="1805" lry="428" />
+      <zone xml:id="facs_5_r_5" ulx="292" uly="276" lrx="971" lry="399" />
+      <zone xml:id="facs_5_r_6" ulx="291" uly="398" lrx="972" lry="734" />
+      <zone xml:id="facs_5_r_7" ulx="1125" uly="421" lrx="1803" lry="474" />
+      <zone xml:id="facs_5_r_8" ulx="1127" uly="465" lrx="1804" lry="566" />
+      <zone xml:id="facs_5_r_9" ulx="1127" uly="565" lrx="1804" lry="617" />
+      <zone xml:id="facs_5_r_10" ulx="1161" uly="638" lrx="1658" lry="664" />
+      <zone xml:id="facs_5_r_11" ulx="1126" uly="664" lrx="1806" lry="833" />
+      <zone xml:id="facs_5_r_12" ulx="1128" uly="830" lrx="1806" lry="980" />
+      <zone xml:id="facs_5_r_13" ulx="291" uly="919" lrx="969" lry="1070" />
+      <zone xml:id="facs_5_r_14" ulx="1127" uly="973" lrx="1809" lry="1119" />
+      <zone xml:id="facs_5_r_15" ulx="290" uly="1063" lrx="971" lry="1186" />
+      <zone xml:id="facs_5_r_16" ulx="1130" uly="1121" lrx="1811" lry="1196" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1948" lry="1417">
+      <zone xml:id="facs_6_r_1" ulx="1117" uly="132" lrx="1797" lry="258" />
+      <zone xml:id="facs_6_r_2" ulx="293" uly="133" lrx="971" lry="231" />
+      <zone xml:id="facs_6_r_3" ulx="293" uly="227" lrx="972" lry="305" />
+      <zone xml:id="facs_6_r_4" ulx="1119" uly="252" lrx="1798" lry="471" />
+      <zone xml:id="facs_6_r_5" ulx="293" uly="325" lrx="971" lry="453" />
+      <zone xml:id="facs_6_r_6" ulx="292" uly="441" lrx="971" lry="544" />
+      <zone xml:id="facs_6_r_7" ulx="1120" uly="466" lrx="1798" lry="592" />
+      <zone xml:id="facs_6_r_8" ulx="292" uly="540" lrx="971" lry="659" />
+      <zone xml:id="facs_6_r_9" ulx="1121" uly="588" lrx="1801" lry="788" />
+      <zone xml:id="facs_6_r_10" ulx="294" uly="685" lrx="972" lry="832" />
+      <zone xml:id="facs_6_r_11" ulx="1123" uly="805" lrx="1800" lry="1003" />
+      <zone xml:id="facs_6_r_12" ulx="294" uly="825" lrx="972" lry="1002" />
+      <zone xml:id="facs_6_r_13" ulx="295" uly="994" lrx="973" lry="1072" />
+      <zone xml:id="facs_6_r_14" ulx="1123" uly="996" lrx="1804" lry="1194" />
+      <zone xml:id="facs_6_r_15" ulx="295" uly="1091" lrx="972" lry="1168" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1949" lry="1417">
+      <zone xml:id="facs_7_r_1" ulx="300" uly="132" lrx="977" lry="300" />
+      <zone xml:id="facs_7_r_2" ulx="300" uly="300" lrx="980" lry="493" />
+      <zone xml:id="facs_7_r_3" ulx="1125" uly="366" lrx="1804" lry="442" />
+      <zone xml:id="facs_7_r_4" ulx="1126" uly="441" lrx="1805" lry="540" />
+      <zone xml:id="facs_7_r_5" ulx="301" uly="515" lrx="979" lry="659" />
+      <zone xml:id="facs_7_r_6" ulx="1127" uly="535" lrx="1807" lry="735" />
+      <zone xml:id="facs_7_r_7" ulx="301" uly="661" lrx="978" lry="738" />
+      <zone xml:id="facs_7_r_8" ulx="1127" uly="729" lrx="1806" lry="976" />
+      <zone xml:id="facs_7_r_9" ulx="301" uly="729" lrx="979" lry="857" />
+      <zone xml:id="facs_7_r_10" ulx="300" uly="848" lrx="979" lry="999" />
+      <zone xml:id="facs_7_r_11" ulx="1126" uly="968" lrx="1808" lry="1189" />
+      <zone xml:id="facs_7_r_12" ulx="301" uly="998" lrx="979" lry="1043" />
+      <zone xml:id="facs_7_r_13" ulx="301" uly="1066" lrx="979" lry="1193" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1949" lry="1418">
+      <zone xml:id="facs_8_r_1" ulx="304" uly="132" lrx="982" lry="378" />
+      <zone xml:id="facs_8_r_2" ulx="302" uly="373" lrx="982" lry="682" />
+      <zone xml:id="facs_8_r_3" ulx="1118" uly="419" lrx="1799" lry="518" />
+      <zone xml:id="facs_8_r_4" ulx="1121" uly="517" lrx="1797" lry="616" />
+      <zone xml:id="facs_8_r_5" ulx="1121" uly="631" lrx="1799" lry="759" />
+      <zone xml:id="facs_8_r_6" ulx="301" uly="709" lrx="978" lry="758" />
+      <zone xml:id="facs_8_r_7" ulx="301" uly="756" lrx="981" lry="1023" />
+      <zone xml:id="facs_8_r_8" ulx="1121" uly="756" lrx="1799" lry="927" />
+      <zone xml:id="facs_8_r_9" ulx="1116" uly="921" lrx="1800" lry="1142" />
+      <zone xml:id="facs_8_r_10" ulx="300" uly="1016" lrx="981" lry="1189" />
+      <zone xml:id="facs_8_r_11" ulx="1118" uly="1138" lrx="1796" lry="1189" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1949" lry="1418">
+      <zone xml:id="facs_9_r_1" ulx="311" uly="125" lrx="989" lry="155" />
+      <zone xml:id="facs_9_r_2" ulx="311" uly="170" lrx="990" lry="342" />
+      <zone xml:id="facs_9_r_3" ulx="1340" uly="256" lrx="1574" lry="284" />
+      <zone xml:id="facs_9_r_4" ulx="1390" uly="329" lrx="1524" lry="351" />
+      <zone xml:id="facs_9_r_5" ulx="312" uly="339" lrx="988" lry="433" />
+      <zone xml:id="facs_9_r_6" ulx="1117" uly="374" lrx="1795" lry="599" />
+      <zone xml:id="facs_9_r_7" ulx="310" uly="434" lrx="988" lry="512" />
+      <zone xml:id="facs_9_r_8" ulx="311" uly="509" lrx="986" lry="555" />
+      <zone xml:id="facs_9_r_9" ulx="309" uly="555" lrx="987" lry="704" />
+      <zone xml:id="facs_9_r_10" ulx="1116" uly="592" lrx="1797" lry="860" />
+      <zone xml:id="facs_9_r_11" ulx="1299" uly="902" lrx="1613" lry="933" />
+      <zone xml:id="facs_9_r_12" ulx="1121" uly="952" lrx="1798" lry="1079" />
+      <zone xml:id="facs_9_r_13" ulx="1119" uly="1073" lrx="1798" lry="1199" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          2547/90
+        </head>
+        <p facs="#facs_1_r_2">
+          
+        </p>
+        <p facs="#facs_1_r_3">
+          <persName ref="#zbz-p.588">Raymond Klibansky</persName>
+        </p>
+        <p facs="#facs_1_r_4">
+          REASON, ACTION, AND EXPERIENCE
+        </p>
+        <figure facs="#facs_1_r_5">
+          <head>RW 280</head>
+        </figure>
+        <p facs="#facs_1_r_6">
+          Essays in Honor of <persName ref="#zbz-p.588">Raymond Klibansky</persName>
+        </p>
+        <p facs="#facs_1_r_7">
+          Edited by <persName ref="#zbz-p.589">Helmut Kohlenberger</persName>
+        </p>
+        <p facs="#facs_1_r_8">
+          S: 1230573
+        </p>
+        <p>
+          <orgName ref="#zbz-o.206">FELIX MEINER VERLAG</orgName><lb facs="#facs_1_l_9_1" n="N001" /><placeName ref="#zbz-l.218">HAMBURG</placeName>
+        </p>
+        <p>
+          Bibliothek<lb facs="#facs_1_l_10_1" n="N001" />des phtos. Seminars a.d. <orgName ref="#zbz-o.46">Universität</orgName><lb facs="#facs_1_l_10_2" n="N002" />— <placeName ref="#zbz-l.45">ZÜRICH</placeName> —
+        </p>
+        <p>
+          790456
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          Gedruckt mit Unterstützung der Förderungs- und Beihilfefonds<lb facs="#facs_2_l_1_1" n="N001" />Wissenschaft der VG Wort GmbH, Goethestraße 49, 8000 <placeName ref="#zbz-l.22">München</placeName> 2
+        </p>
+        <p facs="#facs_2_r_2">
+          CIP-Kurztitelaufnahme der <orgName ref="#zbz-o.48">Deutschen Bibliothek</orgName><lb facs="#facs_2_l_2_1" n="N001" />Reason, <bibl ref="#zbz-w.186">Action</bibl>, and Experience: essays in<lb facs="#facs_2_l_2_2" n="N002" />honor of <persName ref="#zbz-p.588">Raymond Klibansky</persName>/ed. by Helmut<lb facs="#facs_2_l_2_3" n="N003" />Kohlenberger. — <placeName ref="#zbz-l.218">Hamburg</placeName>: Meiner, 1979. —<lb facs="#facs_2_l_2_4" n="N004" />ISBN 3-7873-0447-9<lb facs="#facs_2_l_2_5" n="N005" />NE: Kohlenberger, Helmut [Hrsg.]
+        </p>
+        <p facs="#facs_2_r_3">
+          © <orgName ref="#zbz-o.206">Felix Meiner Verlag</orgName>, <placeName ref="#zbz-l.218">Hamburg</placeName> 1979<lb facs="#facs_2_l_3_1" n="N001" />Alle Rechte, auch die des auszugsweisen Nachdrucks, der photomechanischen Wiedergabe und der Übersetzung vorbehalten.<lb facs="#facs_2_l_3_2" n="N002" />Satz: münchner fotoprint gmbh, <placeName ref="#zbz-l.22">München</placeName>. Druck: Proff GmbH &amp;amp; Co. KG, Bad Honnef. Printed in <placeName ref="#zbz-l.241">Germany</placeName>
+        </p>
+        <p facs="#facs_2_r_4">
+          INHALT
+        </p>
+        <p facs="#facs_2_r_5">
+          <persName ref="#zbz-p.590">Alfred J. Ayer</persName>, <placeName ref="#zbz-l.219">Oxford</placeName>: Foreword 1<lb facs="#facs_2_l_5_1" n="N001" /><persName ref="#zbz-p.591">Henry Duméry</persName>, <placeName ref="#zbz-l.1">Paris</placeName>: Un philosophe des humanités 3
+        </p>
+        <p facs="#facs_2_r_6">
+          I.<lb facs="#facs_2_l_6_1" n="N001" /><persName ref="#zbz-p.592">Paul Ricoeur</persName>, <placeName ref="#zbz-l.1">Paris</placeName>, <placeName ref="#zbz-l.220">Chicago</placeName>: <persName ref="#zbz-p.16">Hegel</persName> and <persName ref="#zbz-p.46">Husserl</persName> on Intersubjectivity 13<lb facs="#facs_2_l_6_2" n="N002" /><persName ref="#zbz-p.593">Jan Patočka</persName>, <placeName ref="#zbz-l.153">Prag</placeName>: Was ist <bibl ref="#zbz-w.8">Phänomenologie</bibl>? 31<lb facs="#facs_2_l_6_3" n="N003" /><persName ref="#zbz-p.2">Jeanne Hersch</persName>, <placeName ref="#zbz-l.5">Genève</placeName>: Anémie d’être? — Symptômes et diagnostic 51<lb facs="#facs_2_l_6_4" n="N004" /><persName ref="#zbz-p.594">Max Black</persName>, <placeName ref="#zbz-l.221">Ithaca, N.Y.</placeName>: The Rationality of Voting 61<lb facs="#facs_2_l_6_5" n="N005" /><persName ref="#zbz-p.595">Manfred Moritz</persName>, <placeName ref="#zbz-l.222">Lund</placeName>: Bemerkungen zu einem sog. deontischen Paradox 71<lb facs="#facs_2_l_6_6" n="N006" /><persName ref="#zbz-p.596">Seyyed Hossein Nasr</persName>, <placeName ref="#zbz-l.223">Teheran</placeName>: Post-Avicennan Islamic Philosophy and the Study of Being 87<lb facs="#facs_2_l_6_7" n="N007" /><persName ref="#zbz-p.597">Toshihiko Izutsu</persName>, <placeName ref="#zbz-l.224">Montreal</placeName>: The beardless face of Bodhidharma — The “A-thinking thinking” in Zen Buddhism 95
+        </p>
+        <p facs="#facs_2_r_7">
+          II.<lb facs="#facs_2_l_7_1" n="N001" /><persName ref="#zbz-p.598">Georg Henrik von Wright</persName>, <placeName ref="#zbz-l.143">Helsinki</placeName>: The Determinants of <bibl ref="#zbz-w.186">Action</bibl> 107<lb facs="#facs_2_l_7_2" n="N002" /><persName ref="#zbz-p.599">Alan Montefiore</persName>, <placeName ref="#zbz-l.219">Oxford</placeName>: Philosophy, Neutrality, Activity 121<lb facs="#facs_2_l_7_3" n="N003" /><persName ref="#zbz-p.600">Lucien Jerphagnon</persName>, <placeName ref="#zbz-l.1">Paris</placeName>: La culture philosophique des empereurs de <placeName ref="#zbz-l.145">Rome</placeName> et leur action politique 137<lb facs="#facs_2_l_7_4" n="N004" /><persName ref="#zbz-p.601">Masao Matsumoto</persName>, <placeName ref="#zbz-l.225">Tokyo</placeName>: Equality of Human Rights and the “Principle of Individuation” in <persName ref="#zbz-p.141">St. Thomas Aquinas</persName> 153<lb facs="#facs_2_l_7_5" n="N005" /><persName ref="#zbz-p.602">Vittorio Mathieu</persName>, <placeName ref="#zbz-l.226">Turin</placeName>: Egalité pour le droit et égalité par le droit 167
+        </p>
+        <p>
+          III.<lb facs="#facs_2_l_8_1" n="N001" /><persName ref="#zbz-p.110">Hilde Domin</persName>, <placeName ref="#zbz-l.21">Heidelberg</placeName>: Experience 175<lb facs="#facs_2_l_8_2" n="N002" /><persName ref="#zbz-p.603">Eugen Biser</persName>, <placeName ref="#zbz-l.22">München</placeName>: Der Gang der Gottesfrage 181
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          VI<lb facs="#facs_3_l_1_1" n="N001" />Inhalt
+        </p>
+        <p facs="#facs_3_r_2">
+          <persName ref="#zbz-p.589">Helmut Kohlenberger</persName>, <placeName ref="#zbz-l.11">Wien</placeName>: Zur zwischenmenschlichen Erfahrung im Kontext sozialphänomenologischer Anthropologie 191<lb facs="#facs_3_l_2_1" n="N001" /><persName ref="#zbz-p.604">Ernst Topitsch</persName>, <placeName ref="#zbz-l.227">Graz</placeName>: Das anagogische Kunstwerk 211<lb facs="#facs_3_l_2_2" n="N002" /><persName ref="#zbz-p.605">Guido Calogero</persName>, <placeName ref="#zbz-l.145">Rome</placeName>: Some Thoughts on the Idea of Coherence 229<lb facs="#facs_3_l_2_3" n="N003" />Bibliography of <persName ref="#zbz-p.588">Raymond Klibansky</persName>’s Writings 243<lb facs="#facs_3_l_2_4" n="N004" />Index of Persons 251<lb facs="#facs_3_l_2_5" n="N005" />Index of Subjects 255
+        </p>
+        <p facs="#facs_3_r_3">
+          FOREWORD
+        </p>
+        <p facs="#facs_3_r_4">
+          by <persName ref="#zbz-p.590">Alfred J. Ayer</persName>
+        </p>
+        <p facs="#facs_3_r_5">
+          I am very happy to have been given the opportunity to write a foreword to this collection of essays in honour of my friend Professor <persName ref="#zbz-p.588">Raymond Klibansky</persName>. I have known Professor <persName ref="#zbz-p.588">Klibansky</persName> since the nineteen thirties when he came to <placeName ref="#zbz-l.219">Oxford</placeName> as an exile from <placeName ref="#zbz-l.26">Nazi Germany</placeName>. He had been bred in the great classical tradition of German scholarship and impressed very many of us, including those who had themselves enjoyed a classical education, with the breadth of his learning, his critical acumen, the readiness of his memory and his extraordinary gift for languages, both ancient and modern. He excelled us particularly in his knowledge and understanding of mediaeval philosophy which is insufficiently studied in <placeName ref="#zbz-l.228">England</placeName>, where the history of philosophy is still too often taught as if <persName ref="#zbz-p.340">Francis Bacon</persName>, <persName ref="#zbz-p.606">Hobbes</persName> and <persName ref="#zbz-p.179">Descartes</persName> were born in the century in which <persName ref="#zbz-p.240">Aristotle</persName> died.
+        </p>
+        <p facs="#facs_3_r_6">
+          In those early days at <placeName ref="#zbz-l.219">Oxford</placeName>, Professor <persName ref="#zbz-p.588">Klibansky</persName> was occupied more with research than teaching, but in his long tenure of a Professorship at <orgName ref="#zbz-o.207">McGill</orgName>, where he went soon after the war, during which he displayed an uncommon gift for the subtleties of Political Intelligence, he has succeeded in communicating to his many pupils both his enthusiasm for ideas and some measure of his own high standard of scholarship. This standard is revealed in his work on the <hi rendition="#i"><bibl ref="#zbz-w.260">Corpus Platonicum</bibl></hi> and in his numerous critical editions of important philosophical texts. A lover of libraries, he enjoys the gift of serendipity, and the knowledge to appreciate the historical value of his discoveries.
+        </p>
+        <p>
+          Though he can be impatient of poor scholarship or the pretentious verbiage, which sometimes passes for philosophical profundity, Professor <persName ref="#zbz-p.588">Klibansky</persName>’s philosophical sympathies are wide. He has been keenly alive to the importance of promoting international understanding among philosophers and has devoted much time and energy to this cause. A former President of the <orgName ref="#zbz-o.208">International Institute of Philosophy</orgName>, he has for many years borne the chief responsibility for the excellent Bibliographies which the Institute has issued and for the translations which it has sponsored of seminal works in moral and political theory, such as <persName ref="#zbz-p.607">John Locke</persName>’s <hi rendition="#i"><bibl ref="#zbz-w.261">Letters Concerning Toleration</bibl></hi>. Even more important have been his organization and editorship of the volumes of Chroniques in which experts on all the branches of philosophy have combined to give an illuminating overall picture of the contemporary state of the subject. I cannot think of anyone else
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_4_r_2">
+          Anémie d'être? – Symptômes et diagnostic
+        </p>
+        <p facs="#facs_4_r_3">
+          Il est bien difficile d'écrire aujourd'hui, surtout quand la réflexion doit se concentrer sur trois mots – trois «noms» – chargés d'histoire et de prestige tels que raison – action – expérience. D'abord, j'ai imaginé de traiter le sujet de façon intemporelle: montrer l'hétérogénéité radicale de ces termes, la sorte d'exclusive que chacun d'eux jette sur les deux autres, et l'hétérogénéité même de nature entre ces trois exclusives, qui interdit d'en faire un terme commun. Ensuite, montrer à quel point ces termes sont radicalement interdépendants, de sorte qu'aucun n'a de réalité sans les deux autres, – bien plus: leur interdépendance est une interpénétration, une perméabilité réciproque, chacun des termes étant, malgré l'exclusive à laquelle il soumet les deux autres et celle à laquelle il est lui-même soumis, intimement constitutif de leur nature et indispensable à leur être. Cette exclusive et cette indispensable porosité entraînent – voulais-je montrer – une inadéquation essentielle de chacun, et des trois, à leur visée, à leur finalité, un échec fondamental, mais d'une qualité si particulière que même dévoilé dans son irrémédiabilité définitive il ne peut engendrer aucun renoncement. Il n'a cessé, au contraire, à travers Ioniens et Eléates, querelle des Universaux, <persName ref="#zbz-p.142">Spinozistes</persName> et Empiristes, et bien d'autres, d'alimenter notre philosophie occidentale. Puis, cette inadéquation essentielle des trois termes, chacun à lui-même et chacun aux deux autres, je voulais la valoriser, y trouver une condition essentielle du sens, et donc de la condition humaine, impossible sans la non-possession de l'être, qui seule fait vivre la nostalgie de <persName ref="#zbz-p.7">Platon</persName> et l'espérance chrétienne, permet le langage, l'échange et la communication.
+        </p>
+        <p facs="#facs_4_r_4">
+          J'avais envie de développer ces thèmes et d'arriver, après quelques méandres moins faciles, à cet apaisement où l'homme reconnaît la valeur constitutive de son insatisfaction et y consent.
+        </p>
+        <p facs="#facs_4_r_5">
+          … quand, Dieu sait pourquoi, j'ai pris en main le livre d'<persName ref="#zbz-p.437">André Glucksmann</persName>, «<bibl ref="#zbz-w.262">La cuisinière et le mangeur d'hommes</bibl>», qui traînait sur ma table, et j'y ai lu (p. 165) la citation de la thèse d'<persName ref="#zbz-p.608">Hermogène</persName>, tirée du <hi rendition="#i"><bibl ref="#zbz-w.263">Cratyle</bibl></hi> de <persName ref="#zbz-p.7">Platon</persName>: «A mon avis, le nom qu'on assigne à un objet est le mot juste; le change-t-on ensuite en un autre, en abandonnant celui-là, le second n'est pas moins juste que le premier …» J'ai lu la suite, sur «ceux qui ont le pouvoir de nommer et ceux (ce) qui ne peuvent que recevoir passivement un nom, sur «la séparation des deux mondes», et sur sa version contemporaine, celle
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          52 <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_5_l_1_1" n="N001" />53 Anémie d'être — Symptômes et diagnostic
+        </p>
+        <p facs="#facs_5_r_2">
+          d'<persName ref="#zbz-p.609">Althusser</persName>, «la coupure épistémologique entre la science et l'empirique, la théorie et l'expérience...» (p. 168).
+        </p>
+        <p facs="#facs_5_r_3">
+          Et je me suis dit : non, je vais prendre le sujet tout autrement. L'époque, hélas, ne permet plus de le traiter sans polémique. Les crimes sont là, et la menace sur tous.
+        </p>
+        <p facs="#facs_5_r_4">
+          Que s'est-il passé au niveau de ces trois notions : raison, action, expérience, qui permette aujourd'hui d'exploiter leur exclusive réciproque pour justifier une théorie despotique ? Pouvons-nous encore employer ces termes avec la relative innocence de la tradition ? Nous avons d'emblée le sentiment qu'une sorte de maladie a gagné leur sens et se répand sur leur emploi. Quelle maladie ?
+        </p>
+        <p facs="#facs_5_r_5">
+          Une chose est évidente : il est impossible de parler de ces trois termes sans en faire usage. C'est dire qu'il est impossible de tenter un diagnostic sans être soi-même atteint par leur maladie. Il est en outre impossible aujourd'hui d'en parler sur la base d'un texte défini, puisqu'il s'agit d'une maladie d'époque, — non pas précisément « sociale », comme la mode nous incite à le prétendre, mais « spirituelle ». Seulement, il ne faut pas donner à ce dernier mot son sens intérieur : il s'agit d'une « ambiance ». Ce qui est malade, c'est « l'esprit objectif ». Or, quand on entreprend de parler de « l'esprit objectif », et surtout d'une de ses « maladies », il faut consentir à parler de ce que <persName ref="#zbz-p.260">Valéry</persName> appelait les Choses Vagues, et être conscient de cette imprécision essentielle. Aux divers niveaux de « ce qui est » correspondent des degrés différents de rigueur et de précision, comportant une sorte de mise au point consciente du diaphragme de l'observateur. Ici, aucune subtilité, aucune exigence de profondeur ne permet de surmonter une imprécision essentielle.
+        </p>
+        <p facs="#facs_5_r_6">
+          Raison. Toute l'histoire de la philosophie, et plus particulièrement l'oeuvre de <persName ref="#zbz-p.6">Kant</persName>, montre combien divers en extension et en visée peuvent être les usages de ce terme. Contentons-nous ici d'une définition sommaire, aussi proche que possible de l'usage commun. La Raison est la faculté de cohérence capable de constituer des unités synthétiques (et de viser une unité synthétique) représentatives de « ce qui est » et propres à satisfaire ainsi le besoin de « connaître » ce qui est.
+        </p>
+        <p facs="#facs_5_r_7">
+          L'expression vague « ce qui est » sert à désigner ce à quoi la raison s'applique, ce qu'elle a en vue, et qui varie évidemment selon l'entreprise considérée. (« Ce qui est » peut recouvrir des phénomènes physiques ou psychiques, des relations mathématiques, des données sociales ou historiques, ou l'être en soi. C'est dire qu'il englobe aussi bien — grâce à sa « grossièreté », le Seiendes que le Sein, l'étant que l'être. )
+        </p>
+        <p facs="#facs_5_r_8">
+          Voyons un peu les implications d'une telle définition, aussi générale que possible. Ce ne sont pas, à proprement parler, les implications de la définition qu'il s'agit de dégager, mais celles de toute mise en action de la raison, autrement dit, celles qui sont là, qu'on le veuille ou non, dès que la raison est en acte.
+        </p>
+        <p facs="#facs_5_r_9">
+          L'implication fondamentale, dont toutes les autres découlent, est réaliste : l'être est. Je souligne est parce qu'il ne s'agit pas ici d'une nécessité logique, comme celle qu'invoquait <bibl ref="#zbz-w.840">Parménide</bibl> lorsqu'il refusait la contradiction « le non-être est ». Il s'agit d'une nécessité de présence : dès que la raison est en acte, l'être lui est présent.
+        </p>
+        <p facs="#facs_5_r_10">
+          Cela signifie que l'acte de la raison se met d'emblée face à l'être de ce qui répond à sa visée. Dès lors, la cohérence qui le caractérise n'est pas une exigence purement formelle. Elle s'attribue d'emblée, comme sa condition de possibilité et de sens, une efficacité symbolique : elle « correspond » à la densité d'être de « ce qui est ». Elle en « répond » parce qu'elle l'implique, parce que sans cette densité elle ne s'accomplirait pas. La raison ne serait pas la raison.
+        </p>
+        <p facs="#facs_5_r_11">
+          La connaissance, à laquelle tend la raison, n'a ainsi sens et valeur que parce que ce qu'elle vise est.
+        </p>
+        <p facs="#facs_5_r_12">
+          Mais du même coup le symbole efficace (cohérence) se distingue et se sépare de ce qu'il symbolise (l'être de ce qui est). La distance ontologique entre connaissance et être s'installe, irrémédiable. Nous percevons la question de <persName ref="#zbz-p.6">Kant</persName>, limitative avant toute réponse : <bibl ref="#zbz-w.264">Was kann ich wissen ?</bibl>
+        </p>
+        <p facs="#facs_5_r_13">
+          Telle était la situation traditionnelle de la raison. Non pas quelque conception unanime, qui n'a jamais existé, mais sa situation opératoire.
+        </p>
+        <p facs="#facs_5_r_14">
+          Or qu'est-il arrivé ? La raison a perdu la foi en elle-même.
+        </p>
+        <p facs="#facs_5_r_15">
+          On a beaucoup parlé de la perte de la foi religieuse sous les coups du rationalisme. Mais le rationalisme est une foi. Il érige la raison en fondement absolu — non dérivable, non réductible — de la connaissance. S'il la rattache à autre chose qu'elle-même, c'est à Dieu. Encore n'en fait-il pas un dérivé : elle coïncide avec Dieu, avec la « pensée » de Dieu. Sa clarté, son évidence sont des caractères divins. Si Dieu n'intervient pas, elle se suffit à elle-même, elle est donnée première, elle est raison, pour la connaissance de « ce qui est ».
+        </p>
+        <p facs="#facs_5_r_16">
+          Or voici que la raison se dénonce elle-même comme étant non pas la condition d'une cohérence capable, en vertu d'une adéquation symbolique, de représenter « ce qui est » (cette adéquation qui s'appelle « vérité »), mais comme étant elle-même le produit de « ce qui est ». Du coup, elle perd son privilège instrumental au service du vrai et retombe dans le monisme des faits, un fait parmi d'autres.
+        </p>
+        <p>
+          Du même coup, comme c'est pour elle, en vue du symbolisme adéquat dont elle se voulait l'instrument, que « ce qui est » avait valeur et sens, cette valeur, ce sens, s'évanouissent avec elle. Il se produit un affaissement dans l'indifférencié, à un seul terme, sans tension, sans visée, d'où toute pensée se trouve exclue, un aquarium glauque où se produisent des tropismes indifférents.
+        </p>
+        <p>
+          Pour <persName ref="#zbz-p.5">Heidegger</persName>, la vérité était dévoilement de l'être. Désormais, il ne saurait en être question. Ce qui se dévoile, ce n'est plus la vérité, mais l'utilisation idéologique du mot « vérité », et d'ailleurs du logos tout entier.
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_6_l_1_1" n="N001" />Anémie d'être — Symptômes et diagnostic
+        </p>
+        <p facs="#facs_6_r_2">
+          Dévoiler ne peut plus être le fait d'une recherche, amoureuse ou (et) pieuse. Dévoiler, c'est dénoncer. Seule la dénonciation est « vraie ». Il n'y a plus qu'une immense et multiforme enquête judiciaire, pour laquelle par hypothèse il ne saurait y avoir d'innocence, ni de juge.
+        </p>
+        <p facs="#facs_6_r_3">
+          La clarté du langage, par exemple, n'est que fausse candeur, dissimulation. Ainsi un de mes étudiants m'a reproché comme une hypocrisie « le jargon de la clarté » dont j'essaye de me servir.
+        </p>
+        <p facs="#facs_6_r_4">
+          On le voit : la dénonciation porte conjointement sur l'être de « ce qui est » et sur la raison qui en cherche l'adéquation symbolique cohérente. La vérité et ses critères perdent tout impact. Il n'y a plus qu'à mettre « être » et « raison » au service de l'action efficace. C'est à quoi sert aujourd'hui « la dialectique ».
+        </p>
+        <p facs="#facs_6_r_5">
+          La dialectique est un trapèze, qui permet d'éblouissantes acrobaties. Or le véritable acrobate défie la chute parce qu'il sait mieux que les autres obéir aux lois de la pesanteur. Le dialecticien, acrobate du contradictoire, et jouant donc dans le champ de la raison, donne des ailes à la cohérence.
+        </p>
+        <p facs="#facs_6_r_6">
+          Mais lorsque la visée du logos et de l'être lui manque, il n'est plus que l'acrobate de l'apesanteur. C'est-à-dire un acrobate imaginaire, tel qu'on pouvait le rêver comme le plus léger de tous, avant d'avoir vu les cosmonautes se mouvoir avec peine à la surface de la lune. Les critères de l'adéquation à « ce qui est » font défaut. Il ne reste que l'efficacité de l'action.
+        </p>
+        <p facs="#facs_6_r_7">
+          Lorsque les hommes n'ont pas les mêmes croyances ni les mêmes visées et que pourtant ils déploient leur action sur la même terre, il ne leur reste qu'un seul arbitre commun qui leur permette encore de se parler plutôt que de se combattre. C'est la raison. La confrontation rationnelle — celle où chacun s'efforce « d'avoir raison » — n'est pas le niveau le plus précieux des échanges humains. Mais elle est l'ultime recours avant l'usage de la force.
+        </p>
+        <p facs="#facs_6_r_8">
+          Or ce recours n'existe plus — et la confrontation prétendument rationnelle n'est qu'un début de combat lorsque les mots perdent leur sens, lorsque la raison perd son pouvoir arbitral parce que l'arbitrage même n'a plus de sens, lorsque donc la raison n'est plus raison, et que du même coup le langage, ou la science, ne sont plus que prétendu langage, prétendue science, ne se rapportent plus à rien « qui est », et ne peuvent plus servir que d'arme à une unité (unanimité de fait) future, conquise par la force.
+        </p>
+        <p facs="#facs_6_r_9">
+          Curieusement, une nouvelle dialectique « de fait » ressurgit ici : le double sens du terme « raison » aboutit à une « unité » qui n'est qu'une univocité unanime, imposée par toutes les formes de la terreur.
+        </p>
+        <p facs="#facs_6_r_10">
+          <bibl ref="#zbz-w.186">Action</bibl>. Ici encore, contentons-nous d'une définition au niveau du sens commun. L'action est une intervention intentionnelle dans le champ préalable de « ce qui est » pour le modifier plus ou moins, toujours partiellement.
+        </p>
+        <p facs="#facs_6_r_11">
+          Il ne peut être question d'action, à proprement parler, que si l'on admet la liberté de celui qui agit, sa capacité de prendre l'initiative de son intervention et de s'en reconnaître responsable. Sans cette première implication, la liberté du sujet de l'action, celle-ci s'effondre comme telle et s'affaisse dans le monisme « des faits », de « ce qui se passe », « du cours des choses ».
+        </p>
+        <p facs="#facs_6_r_12">
+          Il faut peut-être noter en passant que « dire les faits », les « décrire », les « raconter », les « connaître », les « comprendre », ce sont là, non des faits, mais des actions. Il y a là tout un noeud de malentendus, dont les conséquences sont innombrables et graves. Parce que la science s'occupe des faits et parce qu'elle dépose de long de son progrès des lois, des théories, des formules, des ouvrages, des méthodes, on la range elle-même (et souvent elle se range) parmi les faits. Mais la science n'a son sens de science, elle n'est intelligible en tant que telle, que comme action exploratrice, interrogative et connaissance.
+        </p>
+        <p facs="#facs_6_r_13">
+          La seconde implication de notre définition de l'action rejoint celle de la raison : ce qui est, est. Mais il y a une différence : la raison implique la référence à l'être, à la densité ontologique. L'action, elle, s'accomplit dans le contexte de l'être, elle s'y insère, elle s'en sert, il est le substrat aussi bien de l'action que du résultat qu'elle vise et qu'il déborde infiniment.
+        </p>
+        <p facs="#facs_6_r_14">
+          Il s'ensuit une troisième implication : la finitude de l'action — qui ne porte jamais sur la totalité de « ce qui est » — et en même temps ses conséquences « additionnelles », distinctes de sa visée, en grande partie imprévisibles, se poursuivant indéfiniment dans « ce qui est ». Ce déploiement des conséquences est d'un tout autre ordre que la visée de l'action, — mais il interfère dans le même contexte. La visée de l'action est d'un tout autre ordre que le contexte donné dans lequel elle s'insère, et qui est pourtant pour elle inévitable et indispensable. Was soll ich tun ? demandait <persName ref="#zbz-p.6">Kant</persName>.
+        </p>
+        <p facs="#facs_6_r_15">
+          Qu'est-il arrivé à notre sens de l'action, je veux dire : au sens que l'action a eu pour nous au cours des siècles ? On dirait qu'aujourd'hui nous n'acceptons plus les conditions limitatives de toute action humaine et que nous nous agitons seulement entre deux extrêmes : une visée qui exige le règne total de la justice et du bonheur — et une abdication non moins totale, un aveu d'impuissance absolue — agitation nécessairement vaine, excessive et condamnée. Qu'est-il donc arrivé ? Comment en sommes-nous venus à cet emprisonnement dans une « dialectique » aussi paralysante ?
+        </p>
+        <p>
+          À ce qu'il me semble, la conscience commune s'est laissée envahir par le prestige et parfois l'ivresse du fabuleux développement de la science et de la technique, mais sans en saisir ni les conditions, ni la nature, ni les limitations, ni l'insurmontable imprévisibilité. Les pouvoirs techniques, cumulatifs et proliférants, ont été extrapolés à la totalité, comme s'ils pouvaient fournir la solution à tous les problèmes de la condition humaine, remplacer le travail, vaincre la souffrance ; à l'aide de procédés éducatifs et de traitements, refaire l'homme et lui rendre le paradis perdu. « Ce qui est » perd son statut
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          56 <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_7_l_1_1" n="N001" />57 Anémie d'être — Symptômes et diagnostic
+        </p>
+        <p facs="#facs_7_r_2">
+          de substrat permanent pour n'être plus que l'ensemble des moyens d'un futur radicalement différent. — En même temps, l'habitude des enchaînements nécessaires épuise progressivement le sens de la liberté jusqu'à sa négation plus ou moins radicale, plus ou moins diffuse. Ainsi l'action perd son privilège moral alors même qu'elle se rattache à une exigence démesurée. <hi rendition="#i">Hybris et paralysie</hi>, — ici encore l'action retombe dans le monisme des «faits», où tout sens s'éteint.
+        </p>
+        <p facs="#facs_7_r_3">
+          Cela n'empêche pas la conscience commune de porter sur «ce qui est» un jugement moral par comparaison avec la totalité visée ou plutôt rêvée, et, insatisfaite, de le condamner. Elle croit, elle prétend juger «un certain type de société». Mais ce qu'elle rejette réellement, c'est beaucoup plus: c'est la condition humaine elle-même, ses données permanentes, ses limitations essentielles, la situation incarnée, temporelle, finie, toutes ses situations-limites, toutes les non-compossibilités qu'elle comporte et sans lesquelles elle n'est plus. La condition humaine est condamnée parce que l'action va engendrer «l'homme total».
+        </p>
+        <p facs="#facs_7_r_4">
+          Le langage devient l'un des moyens de cette action démiurgique. Mais comment se servir du langage quand <hi rendition="#i">le sens se perd</hi>? Il se perd parce qu'il n'y a de sens que dans la finitude, avec les causes finales que celle-ci comporte et appelle. Tandis que ni les causes finales, ni le sens ne sont concevables au niveau de «l'homme total», qui n'est plus aux prises avec l'être de «ce qui est».
+        </p>
+        <p facs="#facs_7_r_5">
+          Le sens se perd. Ce n'est pas «ceci», ou «cela» qui n'a plus de sens. Ce n'est même pas «tout» qui n'en a plus. C'est «le sens» qui n'en a plus. L'action devient ainsi à la fois impossible et inintelligible.
+        </p>
+        <p facs="#facs_7_r_6">
+          Le <hi rendition="#i">non-sens</hi> d'une telle situation se dissimule sous une idéologie dénonciatrice de l'imperfection actuelle au nom d'une perfection totale future, et sous la virulence bruyante d'un combat qui se dit «politique», mais qui est radicalement <hi rendition="#i">nihiliste</hi>, en ce qu'il refuse les conditions de sa réalité, le seul «ce qui est» compatible avec la condition humaine.
+        </p>
+        <p facs="#facs_7_r_7">
+          La dialectique vraie — celle qui permet à l'histoire de mettre en mouvement, de mettre en œuvre, de rendre efficaces les paradoxes de la condition humaine — se réduit alors, faute d'être, à l'acrobatie de fanatismes irréels, épris d'eux-mêmes, aux logomachies, aux logocraties destructrices du <hi rendition="#i">logos</hi>. C'est le règne d'un mensonge étrange, qui n'est plus contraire à la vérité, mais <hi rendition="#i">inconsistant</hi> parce que «vérité» n'a plus de sens.
+        </p>
+        <p facs="#facs_7_r_8">
+          Il ne reste alors que le recours à la seule chose consistante encore possible: la force.
+        </p>
+        <p facs="#facs_7_r_9">
+          <hi rendition="#i">Expérience</hi>. Nous ne prendrons pas ce mot au sens le plus large, qui lui permet d'englober tout ce qui possède une présence, de quelque mode que ce soit, dans notre conscience, mais au sens qu'il a en science. L'expérience consiste alors à réaliser, ou à repérer, certaines conditions bien déterminées par lesquelles «on pose une question» à «ce qui est», question à laquelle
+        </p>
+        <p facs="#facs_7_r_10">
+          «ce qui va être» donnera une réponse. L'interlocuteur, c'est la «réalité objective» sur laquelle porte la recherche, ce sont «les faits», c'est ce qui est «donné». L'objectivité, c'est, d'avance, reconnaître la validité de la réponse de ce «donné» et s'y soumettre. Les conditions de l'expérience ont pu être artificiellement réalisées par le chercheur. La «réponse» qu'il reçoit ou les conclusions qu'il en tire peuvent être mises au service d'interventions actives modifiant «le donné» toujours davantage, en extension et en profondeur. La part de l'interprétation peut être impossible à éliminer. Cela ne change rien au fait fondamental: l'expérimentateur attend la réponse de l'autre, du donné, pour l'accepter et s'y soumettre.
+        </p>
+        <p facs="#facs_7_r_11">
+          La première implication de l'expérience, c'est donc, ici encore: ce qui est, <hi rendition="#i">est</hi>. «En face» du chercheur, il y a «l'autre», sans lequel l'expérience n'aurait jamais eu lieu, faute d'objet.
+        </p>
+        <p facs="#facs_7_r_12">
+          Mais il y a plus. Le chercheur postule que l'être de «ce qui est» est «représenté» dans «ce qui est» par sa cohérence, sa constance, donc par ce qui le rend «lisible» à la raison. Lisibilité, certes, toujours partielle, mais qui reste ouverte à la raison, offerte, à l'infini.
+        </p>
+        <p facs="#facs_7_r_13">
+          Je voudrais qu'on me comprenne bien: je n'essaie pas ici d'ajouter à la recherche scientifique une théorie ou des actes de foi philosophiques. J'explicite seulement des implications qui sont celles de l'acte de recherche lui-même, que le chercheur en soit conscient ou non, — implications sans lesquelles les conditions de pensabilité de l'expérience scientifique ne seraient pas remplies. Puisque l'expérience scientifique a effectivement lieu, c'est que ses conditions de pensabilité sont effectivement remplies. Et ces conditions, ce sont les implications explicitées ci-dessus.
+        </p>
+        <p>
+          Il y a plus. Non seulement la cohérence de «ce qui est» est postulée parce que «ce qui est» est, — et c'est ce qui le rend «lisible» pour le chercheur —, mais encore cette cohérence «mérite» d'être lue. Il vaut la peine de la lire, — et cela encore est impliqué dans l'acte du chercheur, sinon cet acte n'aurait pas lieu. Il vaut la peine de la lire, — non pas d'abord, ni nécessairement, à cause des nouveaux pouvoirs techniques qu'elle peut promettre, mais plutôt, et presque à l'inverse, parce qu'elle représente <hi rendition="#i">l'être</hi> de «ce qui est», le fait que «ce qui est» est donné au chercheur comme être. Et si j'ai dit «à l'inverse», c'est qu'il s'agit de «lire» la cohérence représentative de l'être telle qu'elle est, et nullement telle que pourrait l'altérer le chercheur.
+        </p>
+        <p>
+          Nous trouvons ici une nouvelle dialectique, pleine de sens, aussi inépuisable dans son sens que dans ses pièges et ses apparentes complaisances: celle du «savoir» et du «faire». Le chercheur agit lorsqu'il cherche le savoir dans l'expérience, son action est volontaire, finalisée, motivée par des valeurs. Seulement, au lieu d'agir pour changer «ce qui est» par son intervention, il agit pour «voir» ce qui est tel qu'il est, pour ne pas le changer, ou pour le changer le moins possible, de manière à pouvoir tenir compte du changement qu'il n'a pu éviter d'y introduire, l'éliminer ensuite, l'annuler, et donc rejoindre, à la fin de son acte, «ce qui est» tel qu'il est.
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          58 <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_8_l_1_1" n="N001" />59 Anémie d'être — Symptômes et diagnostic
+        </p>
+        <p facs="#facs_8_r_2">
+          On voit que fondamentalement, et malgré la dépendance réciproque qui les emmêle inextricablement, l'expérience scientifique est l'inverse de l'action technique. Cette dernière, avons-nous vu, tel l'acrobate qui connaît et reconnaît la pesanteur pour se jouer d'elle, connaît et reconnaît ce qui est tel qu'il est pour le changer, le rendre autre. L'expérience scientifique, elle, modifie les conditions données de «ce qui est» pour atteindre finalement à la connaissance de «ce qui est» tel qu'il est. Quelles que puissent être les imbrications des processus concrets, cette polarité essentielle subsiste entre le sens de l'action et celui de l'expérience scientifique, entre l'attitude, la visée, du sujet agissant et celles du chercheur.
+        </p>
+        <p facs="#facs_8_r_3">
+          Et pourtant, connaître est aussi un acte, agir est aussi une connaissance. C'est au cœur de cette dialectique, me semble-t-il, qu'il faut situer la <bibl ref="#zbz-w.222">Critique du jugement</bibl> et sa notion centrale de finalité. Plus essentiellement encore que la nature de l'être vivant ou celle de l'oeuvre d'art, la finalité commande l'acte de juger, — alors qu'elle ne figure pourtant pas parmi les catégories. L'acte de juger — comme tout acte — implique la finalité comme condition de sens, comme condition de pensabilité, comme condition de réalité. Et la finalité ne se projette en avant que dans un espace d'espérance. Ici, espérance d'un sens, répondant dans «ce qui est» au sens du sens chez le chercheur. Espérance qu'aucune preuve ni aucune vérification ne saurait assurer puisque «preuve» et «vérification» l'impliquent d'abord. Espérance qui, assurée, ne serait plus espérance. Chez <persName ref="#zbz-p.6">Kant</persName>, êtres vivants, oeuvres d'art, ne sont que des lueurs dans la nuit. «Was darf ich hoffen?»
+        </p>
+        <p facs="#facs_8_r_4">
+          Mais ici encore: qu'est-il arrivé à l'expérience, à son sens, à la finalité, à l'espérance?
+        </p>
+        <p facs="#facs_8_r_5">
+          <bibl ref="#zbz-w.85">La philosophie</bibl> et la science ont découvert, chacune selon sa méthode, le rôle joué par le sujet (par l'observateur) dans la manière dont «ce qui est» se livre à lui. Certes, le rôle de <persName ref="#zbz-p.6">Kant</persName>, dans cette découverte, a été capital. Mais on n'a pas assez remarqué combien <persName ref="#zbz-p.6">Kant</persName> en limite lui-même la portée, alors que les effets, certes, en sont infinis. Le rôle du sujet se borne à la mise en forme constitutive de l'objet en tant qu'objet. Le sujet n'ajoute rien, n'altère en rien, «ce qui est». Le pouvoir ontologique du sujet est nul. <persName ref="#zbz-p.6">Kant</persName> y insiste. Et il faut bien voir que si le sujet n'était pas absolument privé de toute efficacité ontologique, c'est tout le système kantien de pensée qui s'effondrerait. Cette pensée n'a rien d'idéaliste au niveau de «ce qui est». Le sujet ne crée pas la moindre parcelle d'être. «Ce qui est» lui est préalablement donné.
+        </p>
+        <p facs="#facs_8_r_6">
+          Or, par une hybris caractéristique de notre temps, la découverte du rôle joué par le sujet a entraîné la dégradation et la désagrégation de l'objet en tant que «ce qui est», en tant que «donné», qui dans l'expérience jugeait l'hypothèse. L'objet est déchu de sa réalité de tribunal, représentant «ce qui est». Le sujet se trouve être désormais, insurmontablement, juge et partie, disposant donc de l'arbitraire et lui-même livré à lui. Bien plus, poussant le vertige plus loin, il se dénonce comme étant «le produit» de ces objets, qui
+        </p>
+        <p facs="#facs_8_r_7">
+          sont devenus pour lui, jusque dans leur être, ses propres produits. Le monde objectif, le donné, retombé parmi les superstitions dépassées et ayant perdu son privilège arbitral, la pensée s'enlise dans le magma moniste des interprétations. Commence le règne du monisme herméneutique. Il n'existe plus de «vérité» scientifique, ni historique, — notions naïves, dépassées. On est enfin délivré de l'être; et se déploient les artifices d'herméneutiques arbitraires, idéologiques, ou pragmatiques, ou vaguement poétiques. Ce sont les délices infinies et indéfinies du dire du dire, du langage sur le langage, — de l'autophagie et de la propagande, — de la dénonciation universelle, qui dénonce tout, sauf elle-même. Clarté et objectivité ne sont plus que masques ou naïvetés archaïques. Il ne reste qu'une seule «norme» (si on peut dire), c'est l'efficacité brute, politique ou technique.
+        </p>
+        <p facs="#facs_8_r_8">
+          Etrangement, dans l'espace vidé de sens et de visée, la recherche continue par une sorte d'automatisme démultiplié, dans des usines scientifiques où la prolifération des «expériences pour voir» suscitées et opérées par des ordinateurs remplace la visée du vrai des chercheurs.
+        </p>
+        <p facs="#facs_8_r_9">
+          L'expérience, à dire vrai, ne mérite plus son nom, faute d'une question posée, de l'attente d'une réponse, de la présence, «en face», de «ce qui est». Elle se réduit à un processus quasi mécanique, arbitraire, vide de sens, et, en rigueur, impensable, — qui ne peut fournir qu'armes et pouvoir.
+        </p>
+        <p facs="#facs_8_r_10">
+          Le noeud: La vie humaine s'articule tout entière autour d'une différence cruciale: cela est ou cela n'est pas. Sans le caractère irréductible de cette différence, il n'y aurait pas d'eros chez l'homme. L'être humain ne tendrait à rien, il ne chercherait rien, il ne désirerait rien. Il n'y aurait ni raison, ni action, ni expérience.
+        </p>
+        <p facs="#facs_8_r_11">
+          «Cela a été, cela n'est plus». — «Cela n'est pas, cela sera peut-être». — «Cela est imaginé, mais cela n'est pas». — La différence entre réalité actuelle et absence d'une réalité qui n'existe que dans le souvenir, l'attente ou l'imagination, structure l'affectivité, la représentation, le savoir, le désir, la volonté. Au cœur de cette différence il y a ce mystère décisif: «c'est» — une insaisissable immédiateté. A travers les méandres infinis de l'histoire dialectique, <persName ref="#zbz-p.16">Hegel</persName> ne cesse d'y revenir.
+        </p>
+        <p>
+          C'est seulement pour la logique formelle qu'il y a une symétrie entre «cela est» et «cela n'est pas». Substantiellement et existentiellement il n'y en a aucune. Le «cela» qui «est» pourrait projeter son reflet dans la conscience, comme un nuage le fait dans une eau calme. Le «cela» qui «n'est pas», jamais. Ce décalage entre affirmation-négation en logique et leur portée dans la réalité est décisif pour la condition de la conscience. A cause de lui, la conscience sera toujours irréductible à la raison, et la raison irréductible à elle-même, car son acte contredit sa forme, et son opération négatrice ne rejoint pas l'absence simple de ce qu'elle nie.
+        </p>
+        <p>
+          Peut-être est-ce là qu'il faut chercher le foyer morbide de ce qui est arrivé à la raison, à l'action, à l'expérience: le «c'est» est malade. A force de
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          60 <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_9_r_2">
+          faire que les choses soient comme nous voulons; à force de décréter notre condition, nous ne savons plus le sens fort de «c'est».
+        </p>
+        <p facs="#facs_9_r_3">
+          Au-delà — ou, si l'on veu, au-dessous — du «pouvoir de nommer» ou seulement d'«être nommé», au-delà de «la séparation des deux mondes» et de leur différence irréductible de langage, au-delà de «la coupure épistémologique entre la science et l'empirique, la théorie et l'expérience», il reste quand même leur visée commune: celle de «ce qui est». Grâce à lui, la raison reste universelle — l'action, sensée — l'expérience, arbitrale — la parole, possible.
+        </p>
+        <p facs="#facs_9_r_4">
+          La cohérence rationnelle n'a pas son sens en elle-même, mais en tant que signe de la densité d'être du «c'est». Et c'est seulement par rapport à cette cohérence que le mouvement dialectique dans le contradictoire prend sens et efficacité.
+        </p>
+        <p facs="#facs_9_r_5">
+          L'action, elle aussi, n'a de sens que s'il s'agit de faire être ou d'empêcher d'être ceci ou cela. Elle n'a de réalité que si est réelle la différence radicale entre «c'est» et «ce n'est pas».
+        </p>
+        <p facs="#facs_9_r_6">
+          L'expérience se développe dans le «c'est», pour l'explorer et en approfondir l'être cohérent.
+        </p>
+        <p facs="#facs_9_r_7">
+          Les jeunes nous disent parfois qu'ils n'arrivent pas à rejoindre «la réalité». Mais c'est qu'il n'y a pas de réalité pour qui croit pouvoir exiger, échappant à la condition humaine, «le paradis, tout de suite». — La réalité, c'est «ce qui est»: l'autre, l'en-face, l'être indocile dont l'irréductible altérité donnée permet à l'homme d'être, à travers sa finitude, ce qu'il est, et de devenir sans fin ce qu'il a à être.
+        </p>
+        <p facs="#facs_9_r_8">
+          ---
+        </p>
+        <p facs="#facs_9_r_9">
+          <persName ref="#zbz-p.594">MAX BLACK</persName>
+        </p>
+        <p facs="#facs_9_r_10">
+          The Rationality of Voting
+        </p>
+        <p facs="#facs_9_r_11">
+          1. Introduction
+        </p>
+        <p facs="#facs_9_r_12">
+          A central problem for political theory is to determine how far private interest can be reconciled with public good. It is important to understand what rational motives an individual citizen can have for contributing, even at the sacrifice of immediate self-interest, to indivisible services that only a government or a state can provide. Since the time of <persName ref="#zbz-p.606">Hobbes</persName>, it has been widely held that the requisite social co-operation can be ensured only by force and the threat of force. Without questioning this general proposition, I shall try to show that a case can sometimes be made for free and rational individual contributions to a public good.
+        </p>
+        <p facs="#facs_9_r_13">
+          In the following discussion, I confine myself to one facet of these problems, by considering whether and to what degree an individual voter in a large democratic election can have good reasons for voting, from the standpoint of immediate self-interest. That there are such reasons is not immediately obvious. Indeed, a number of plausible arguments can be produced, as will be seen, for the contention that short-term self-interest cannot rationally justify the expense involved in voting in large elections. I shall try to demonstrate the unsoundness of these arguments and will supply some self-interested reasons for voting, even in large elections. (Many of the issues that arise are relevant to the broader questions discussed by economists and other social scientists under the heading of the rationality of “free-riding”.)
+        </p>
+        <p>
+          2. The first argument against voting
+        </p>
+        <p>
+          Before setting off for the polling station, a prospective voter, say <persName ref="#zbz-p.610">Joe Doakes</persName>, might stop to consider whether there was any point in his taking the trouble to vote. For he might think that his vote “would make no difference” to the outcome. Now, since the act of voting would cost him something, in time, trouble or expense, rationality would seem to dictate that he stay at home.
+        </p>
+        <p>
+          This line of thought in favor of abstention from voting might be countered by the following reply. A single vote can make some difference, because that vote might break a tie-vote, or produce a tie. (To simplify the following discussion, I shall simply ignore the second possibility.) Suppose the chance of a tie, if <persName ref="#zbz-p.610">Joe Doakes</persName> does not vote, is $p$; suppose the value to
+        </p>
+      </div>
+      </body></text>
+</TEI>

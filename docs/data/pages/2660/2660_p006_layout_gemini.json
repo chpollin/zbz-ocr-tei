@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gesetzen beruhen: auf Gesetzen und Institutionen, die die Menschen selbst geschaffen haben, denen sie selbst zugestimmt haben, mit denen sie sich selbst einverstanden erklärt haben.",
+      "bbox": {
+        "x_pct": 8.739,
+        "y_pct": 8.966,
+        "w_pct": 82.472,
+        "h_pct": 5.597
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription from OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das bedeutet, daß in dieser mythischen Vorstellung der Französischen Revolution keine Macht auf Kraft beruhte, auf physischer Kraft oder Gewalt. Es ist sehr schwer, mich hier auf deutsch richtig auszudrücken, denn die Worte bedeuten im Französischen und im Deutschen gar nicht dasselbe. Die Grenzen zwischen den Worten Macht und Kraft und Gewalt sind ganz anders gezogen in unseren zwei Sprachen. Das sollte einmal sehr gründlich studiert werden. Also, die physische Macht wurde sozusagen außer Kraft gesetzt. Und was galt, war ,,le contract social“, ein Gesellschaftsvertrag, ein soziales Bündnis mit Gesetzen, die von jedem und allen angenommen und anerkannt wurden. Dieses Schema klingt abstrakt und idealistisch. Man darf auch nicht behaupten, daß die Dinge sich tatsächlich auf diese Weise entwickelt haben – aber sie werden so gewertet und erlebt. Und heute noch werden sie auf diese Art und Weise gewertet und erlebt. Warum sieht trotzdem dieses Schema so abstrakt aus? Zunächst, weil darin das Tiersein der Menschen verkannt wird. Dabei wird auch vergessen, daß der Mensch immer vom Tode bedroht ist, daß er es weiß und daß er sich immer wieder mit allen Mitteln wehren muß. Das wird nicht in Betracht gezogen. Man vergißt auch die natürliche Ungleichheit der Menschen. Wenn die Menschenrechtserklärungen behaupten, alle Menschen würden in Gleichheit geboren, so muß man gleich hinzufügen, wie es auch in der universellen Menschenrechtserklärung gesagt wird: ,,in Rechten und Würde“. Die Menschen sind gleich, aber nur in ,,Rechten und Würde“, denn sachlich sind sie in allem ungleich, wie jeder offensichtlich feststellen kann.",
+      "bbox": {
+        "x_pct": 8.449,
+        "y_pct": 14.429,
+        "w_pct": 82.812,
+        "h_pct": 45.21
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In der schönen Vorstellung der individuellen Freiheit im sozialen Bündnis der Gesetze übersieht man weiter folgende Tatsache: Wenn die Menschen einen Glauben haben, etwas für die letzte Wahrheit halten, dann können sie nicht anders, als sich daran absolut binden. Und eine solche Bindung an etwas, was man für absolut hält, droht immer Gewalt ins Spiel zu bringen. Hinzu kommt noch die Ungleichheit der Güter, die die Menschen besitzen, und die folgenschwer für Leben und Tod ist. Alle diese Grundgegebenheiten des Menschseins sind einfach in der mythischen Vorstellung der ,,révolution française“ nicht gegenwärtig.",
+      "bbox": {
+        "x_pct": 8.537,
+        "y_pct": 59.496,
+        "w_pct": 82.509,
+        "h_pct": 17.202
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun sagt man auf französisch: ,,Qui veux faire l'ange, fait la bête.“ – ,,Wer den Engel spielt, wird zum Tier.“ Man hat als Folge der Französischen Revolution den blutigen Terror gehabt und die Napoleonischen Kriege in ganz Europa. Als man später jene mythische Vorstellung der Revolution wiederherstellen wollte, von der ich am Anfang sprach, mußte man sich mit der Gewalt im Dienste der Gesetze wieder versöhnen. Nicht",
+      "bbox": {
+        "x_pct": 8.575,
+        "y_pct": 76.387,
+        "w_pct": 82.434,
+        "h_pct": 11.37
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "65",
+      "bbox": {
+        "x_pct": 87.896,
+        "y_pct": 89.873,
+        "w_pct": 2.219,
+        "h_pct": 2.29
+      },
+      "changed": true,
+      "change_reason": "Identify page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text blocks contained OCR truncations.",
+    "Page number at the bottom right was incorrectly labeled as text.",
+    "Multiple paragraphs were merged or misidentified by the initial parser."
+  ],
+  "doc_id": "2660",
+  "page": 6,
+  "elapsed_seconds": 5.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

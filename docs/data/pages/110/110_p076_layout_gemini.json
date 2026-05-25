@@ -1,0 +1,84 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "74",
+      "bbox": {
+        "x_pct": 18.267,
+        "y_pct": 2.0,
+        "w_pct": 2.502,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: PAGE NUMBER"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 65.626,
+        "y_pct": 2.0,
+        "w_pct": 16.551,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: RUNNING HEADER"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "5a propre continuité, il n'y aurait plus pour la Ziberté. Celle-ci ne donc exisler condition de rest",
+      "bbox": {
+        "x_pct": 18.007,
+        "y_pct": 13.189,
+        "w_pct": 68.629,
+        "h_pct": 16.781
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il suit de là que toute activité humaine créalrice; c'est-à-dire formalrice, donc Taclivité hum",
+      "bbox": {
+        "x_pct": 18.053,
+        "y_pct": 29.894,
+        "w_pct": 68.468,
+        "h_pct": 12.954
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La science enchaînera des   rapports. Elle formulera des lois par rapport à un certain ordre de la r",
+      "bbox": {
+        "x_pct": 17.546,
+        "y_pct": 44.746,
+        "w_pct": 68.859,
+        "h_pct": 29.787
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction contained transcription errors",
+    "Missing page header/footer in original JSON"
+  ],
+  "doc_id": "110",
+  "page": 76,
+  "elapsed_seconds": 8.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content and label": 1,
+    "Corrected text content": 1,
+    "ADDED": 2
+  }
+}

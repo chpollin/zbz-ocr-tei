@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "68 L'aspect philosophique du problème des rapports",
+      "bbox": {
+        "x_pct": 78.0,
+        "y_pct": 53.0,
+        "w_pct": 8.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page header element."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prenons l'exemple d'une caisse d'assurance sociale. On aime bien être assuré. Pourquoi ? Pour n'avoir plus besoin de penser à sa sécurité, et non pas pour penser toute sa vie à la caisse d'assurance sociale. Et qu'il soit si difficile de faire venir les membres directement intéressés aux assemblées des mutuelles qui gèrent leurs intérêts dans les divers types d'assurance que nous connaissons, cela ne s'explique pas nécessairement par la frivolité ou l'instinct de blouson noir de tous les membres de ces assurances, mais tout simplement par le fait qu'ils se sont assurés pour acheter ainsi une disponibilité actuelle de l'esprit, pour pouvoir oublier leur sécurité et s'occuper d'autre chose, qui est moins intéressant peut-être, mais aussi, peut-être, plus intéressant, ou en tout cas plus intéressant à leurs yeux.",
+      "bbox": {
+        "x_pct": 7.725,
+        "y_pct": 12.674,
+        "w_pct": 85.187,
+        "h_pct": 25.599
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Beaucoup de gens, me semble-t-il, voudraient que, sur le plan économique, les choses tournent pour ainsi dire toutes seules. Et le contrôle démocratique, dans tous les domaines, n'est une valeur sur le plan social que comme moyen nécessaire de sauvegarde, et non parce qu'est une valeur en soi d'exercer en tout le contrôle démocratique, non parce que c'est une valeur en soi de s'occuper tout le temps de ces affaires plus ou moins ennuyeuses. Il n'a de valeur que parce qu'il est un moyen nécessaire pour sauvegarder la valeur trans-sociale, cette valeur trans-sociale qu'est l'affranchissement de l'individu par la préservation, autour de lui, d'un espace libre. Cette valeur trans-sociale qui, considérée objectivement, est parfaitement vide, est une disponibilité préservée, et rien de plus.",
+      "bbox": {
+        "x_pct": 8.086,
+        "y_pct": 39.062,
+        "w_pct": 85.298,
+        "h_pct": 25.473
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si ce précède est vrai, c'est dans ce fond que les difficultés de la démocratie économique apparaissent ancrées. Elles tiennent au fait que le social implique le trans-social et qu'il est, en quelque sorte, partout poreux. Et c'est ce qui fait, je crois, que la sociologie - j'y reviendrai plus loin - doit faire, certes, des efforts pour être aussi scientifique que possible, mais savoir, malgré cela, et reconnaître sans trop de tristesse, qu'elle reste liée à la philosophie plus qu'elle ne le voudrait. Si elle s'y refuse, elle ne peut que perdre à la fois la spécificité de son étude, la transparence de ses méthodes, la réalité de ses buts, et pour finir son sens du concret.",
+      "bbox": {
+        "x_pct": 8.779,
+        "y_pct": 65.323,
+        "w_pct": 84.882,
+        "h_pct": 21.372
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant, il y a encore dans le titre, les termes de « structures sociales ». Ici, je voudrais faire une remarque. Il y a toujours une différence insurmontable entre n'importe quelle",
+      "bbox": {
+        "x_pct": 9.667,
+        "y_pct": 87.595,
+        "w_pct": 84.05,
+        "h_pct": 5.938
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR was highly inaccurate.",
+    "Page header was labeled as text.",
+    "Incorrect segmentation of the first paragraph header."
+  ],
+  "doc_id": "550",
+  "page": 9,
+  "elapsed_seconds": 5.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

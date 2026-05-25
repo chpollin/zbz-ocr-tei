@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du moi, sa liberté Conscience en général et esprit ouvrent au moi de vastes espaces. L'existence, au contraire, est comme un rétrécissement. Elle s'ancre dans un sujet vital, dans une individualité, dans une unicité qui, devant la conscience en général et l'esprit, semble n'avoir qu'une réalité ponctuelle, arbitraire, substituable. Pourtant, c'est ainsi, à travers le corps même du sujet vital où elle s'incarne, que la profondeur de l'être vient au monde en tant qu'existence (ou liberté possible). L'existence, c'est-à-dire « la condition historique » ou « historicité », où sujet vital et existence tendent à ne faire plus qu'un, — non pas en vertu d'une unité harmonieuse réalisée, mais dans une lutte sans fin pour l'unité.",
+      "bbox": {
+        "x_pct": 7.859,
+        "y_pct": 6.058,
+        "w_pct": 84.051,
+        "h_pct": 21.277
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sujet vital, avec ses particularités, ses passions, ses appétits, ses effrois devant ce qui le menace, n'est pas encore existence. C'est l'existence qui lui donne sa gravité — son poids — de sujet historiquement situé et agissant dans l'histoire, donc son « historicité » (Geschichtlichkeit). L'existence assume la particularité et les situations-limites de son sujet vital; elle se rattache à ses origines, famille, terre, patrie; elle fait siennes sa joie et sa souffrance essentielles. Elle devient — elle seule — le sens chiffré, concret, historique, de ce sujet vital, et elle seule peut déchiffrer ce sens.",
+      "bbox": {
+        "x_pct": 7.9,
+        "y_pct": 26.932,
+        "w_pct": 83.835,
+        "h_pct": 17.652
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text and region boundary content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant elle n'est nullement elle-même un produit naturel de toutes les données impliquées dans le sujet vital, et c'est pourquoi l'homme en tant qu'homme échappe précisément à de telles dérivations. L'origine de l'existence reste un mystère. Par elle, le sujet vital devient autre chose que ce qu'il était, et elle a une autre origine que lui. Aucune généralisation, ici, n'est possible: on ne peut ni affirmer, ni nier que tout sujet vital appartienne à une existence. Il n'y a là aucun « savoir » car on reste dans l'unique concret: l'existence seule peut appréhender l'existence.",
+      "bbox": {
+        "x_pct": 7.818,
+        "y_pct": 43.933,
+        "w_pct": 83.957,
+        "h_pct": 17.506
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "title/section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Deux problèmes.",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 63.008,
+        "w_pct": 16.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified heading that was merged with paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Impossible de donner ici autre chose que quelques aperçus fragmentaires de la vie dialectique instaurée par Jaspers entre les modes de l'englobant, entre modes de l'englobant que je suis et modes de l'englobant qu'est le monde, entre modes immanents et modes transcendants. En guise d'illustration, indiquons seulement la manière dont Jaspers en tire parti pour éclairer les conditions dans lesquelles sont posés deux problèmes classiques: celui de l'origine de la vie et celui de l'origine de l'homme.",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 63.008,
+        "w_pct": 83.686,
+        "h_pct": 17.198
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription and separated heading from text block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "49",
+      "bbox": {
+        "x_pct": 88.0,
+        "y_pct": 91.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR text extraction was highly fragmented and incorrect.",
+    "Section heading was erroneously grouped with the paragraph below it.",
+    "Page number not detected in original regions."
+  ],
+  "doc_id": "1520",
+  "page": 55,
+  "elapsed_seconds": 5.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

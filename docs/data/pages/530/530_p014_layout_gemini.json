@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA SUISSE DANS L'EUROPE ACTUELLE 73",
+      "bbox": {
+        "x_pct": 272.0,
+        "y_pct": 63.0,
+        "w_pct": 521.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header containing page title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "savions pas , autres Suisses , que pour se garantir de la pression des grands pays il faut un système fédéral, et qu'on est livré en réalité aux grands pays quand celui-ci fait défaut. Or il n'y en a pas dans l'AELE. Aussi pouvons-nous nous attendre à ce que la Grande-Bretagne, progressivement, lâche l'AELE. Ce qui nous remettra au moins devant des possibilités fédéralistes européennes en rapport avec le Marché commun.",
+      "bbox": {
+        "x_pct": 11.765,
+        "y_pct": 10.718,
+        "w_pct": 79.51,
+        "h_pct": 20.829
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il semble, autrement dit, que la Suisse ne peut faire grand-chose, en ce moment, et ce qu'elle pourrait faire n'a pas une énorme importance, ce qui ne veut pas dire qu'il ne faut pas tâcher de le faire tout de même. En revanche, je crois que les Suisses peuvent faire quelque chose, les hommes suisses et les femmes suisses qui sont pour la fédération européenne.",
+      "bbox": {
+        "x_pct": 11.688,
+        "y_pct": 31.173,
+        "w_pct": 78.905,
+        "h_pct": 20.768
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A ce propos, je dois vous dire qu'à mon sens, il est actuellement indispensable que nous agissions très fortement dans le sens européen, non pas seulement pour l'Europe, mais pour la jeunesse suisse tout particulièrement. Il m'est arrivé dernièrement plusieurs fois de voir des étudiants suisses, ou des étrangers qui avaient séjourné quelque temps dans notre pays, venir me dire : « Vous savez, ici on ne sait pas ce qu'il y a, mais on étouffe. » Pourquoi étouffaient-ils ?",
+      "bbox": {
+        "x_pct": 11.727,
+        "y_pct": 51.699,
+        "w_pct": 78.698,
+        "h_pct": 23.327
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout simplement, ils avaient le sentiment de n'être pas dans le coup. Ils avaient le sentiment — c'est moi qui interprète maintenant, mais c'est ce que j'ai compris d'après leurs paroles — de ne pas être les contemporains de leurs contemporains, d'être en exil dans leur époque. Pourquoi ? Parce que notre époque est essentiellement historique ; toutes les formes",
+      "bbox": {
+        "x_pct": 11.508,
+        "y_pct": 75.056,
+        "w_pct": 79.304,
+        "h_pct": 17.968
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected running header/page number missing from original list, identified and moved to _filter."
+  ],
+  "doc_id": "530",
+  "page": 14,
+  "elapsed_seconds": 3.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

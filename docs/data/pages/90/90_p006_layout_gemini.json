@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "660",
+      "bbox": {
+        "x_pct": 48.331,
+        "y_pct": 46.36,
+        "w_pct": 3.738,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header for filtering"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "das Ethische in ein ganz anderes Licht. Denn Freiheit gibt es in dieser Welt eigentlich nicht, oder nur das wenige, das zu Gewissensbissen, zum Erschrecken vor sich selbst, nitig ist. „On ne choisit pas“, oder besser: man wahlt notwendig. Unsere tiefste Wahl ist unveranderliches Schicksal. — Es gibt immer nur einen Weg. — Und dann, manchmal, keinen mehr: „Toutes les clefs sont perdues pour nous.“",
+      "bbox": {
+        "x_pct": 7.313,
+        "y_pct": 15.048,
+        "w_pct": 86.142,
+        "h_pct": 13.441
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Merkwürdig, und typisch für welsche Gesinnung, bleibt, selbst in einer solchen entmoralisierten Welt, die Trennung zwischen gut und schlecht, zwischen Erlaubtem und Unerlaubtem, deutlich und streng. Ein Kuß ist immer ein schwerwiegendes Ereignis. Überhaupt bleibt die Gesellschaft in fester Struktur, sehr fest gegen den chaotisierenden Zwang der Leidenschaften, sehr fest im Tatsächlichen, — und in der Wirklichkeit der Seelen doch vollkommen machtlos gegen die Teufel. Handlungen und Worte folgen aufeinander in der normalen, erwarteten Art und Weise, — nur in der Einsamkeit nicht mehr, oder wenn die Personen wie Nachtwandler mit erschreckender Sicherheit und Blindheit sich in einer Wirklichkeit bewegen, die den engen wahllosen Gängen der Träume ähnlich ist. Und je stärker der soziale, nicht in Frage gestellte Zwang, der soziale Rahmen ist, desto unberóhrter und wilder ist das verborgene Wesen.",
+      "bbox": {
+        "x_pct": 7.038,
+        "y_pct": 28.191,
+        "w_pct": 86.567,
+        "h_pct": 28.942
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eigentlich gibt es in diesem Werk nur ein einziges, echtes ethisches Problem: Lüge und Wahrheit. Lüge erscheint als die gefährlichste, schwerste Sünde. Sie beschwört das Nichts herauf. Sie erweckt Grauen.",
+      "bbox": {
+        "x_pct": 7.038,
+        "y_pct": 56.809,
+        "w_pct": 86.498,
+        "h_pct": 6.462
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In dem was wirklich ist, existiert unter dem hiesigen Licht die Spitze des Wesentlichen. Das Konkrete ist durchsichtig, und dessen sachliche Genauigkeit selbst enthält sozusagen die lebendige Gegenwart einer Transzendenz. Sie ist da in dem, was sie verbirgt. Sie wird sich gleich selber nennen, — man spitzt die Ohren, — aber sie nennt sich nicht. „Il leur restait si peu de minutes à étre ensemble — Elle cherchait le mot, le mot essentiel, — il doit exister des mots sources, des mots lumière qui illumineraient tout, ce n’est pas possible que nous soyons toujours dans la nuit. Mais elle ne le trouva pas.“",
+      "bbox": {
+        "x_pct": 7.118,
+        "y_pct": 63.304,
+        "w_pct": 86.533,
+        "h_pct": 19.467
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "31 Bois-Mort\" 9 'Le Cavalier de Paille der Roman ist nicht fertig, es fehlt noch ein Band. Wir warten darauf.",
+      "bbox": {
+        "x_pct": 7.118,
+        "y_pct": 83.013,
+        "w_pct": 86.372,
+        "h_pct": 4.491
+      },
+      "changed": true,
+      "change_reason": "Changed label to footnote as it indicates a bibliographic reference"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at top was incorrectly categorized as paragraph text",
+    "Footnote reference at bottom was incorrectly categorized as paragraph text"
+  ],
+  "doc_id": "90",
+  "page": 6,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

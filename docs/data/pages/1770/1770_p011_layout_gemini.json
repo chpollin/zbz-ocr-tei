@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ment ou implicitement, à des valeurs. Non seulement ils s'y réfèrent, mais encore ils s'engagent envers elles, ils s'y lient.",
+      "bbox": {
+        "x_pct": 25.407,
+        "y_pct": 22.024,
+        "w_pct": 52.409,
+        "h_pct": 3.33
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces liens, ils ne les ressentent pas comme des contraintes, mais comme leur être même. Au besoin, pour elles - et parfois sans le dire ni se le dire - ils exposent leur vie.",
+      "bbox": {
+        "x_pct": 25.439,
+        "y_pct": 24.857,
+        "w_pct": 52.321,
+        "h_pct": 4.715
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tel est le fondement universel des Droits de l'homme. C'est à partir de ce fondement que naît le respect de la différence, de l'inconditionnalité d'autrui (même si on ne la comprend pas) et le seul authentique fondement de vie commune pour l'humanité dans son ensemble.",
+      "bbox": {
+        "x_pct": 25.383,
+        "y_pct": 29.076,
+        "w_pct": 52.514,
+        "h_pct": 5.929
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription from OCR."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Texte «occidental».",
+      "bbox": {
+        "x_pct": 25.544,
+        "y_pct": 37.611,
+        "w_pct": 15.471,
+        "h_pct": 1.403
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in heading text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ayant écrit ces lignes, je me rends bien compte qu'elles ne sont pas rédigées dans un langage universel, mais très spécifiquement dans un langage occidental. On parle, on écrit toujours dans une langue particulière. N'importe quel esperanto est encore une langue particulière. Le rêve d'une langue universelle est humainement aussi irréalisable qu'humainement inconcevable un point de vue universel. Mais heureusement : les langues sont compréhensibles les unes aux autres. Je ne peux qu'espérer que ma langue occidentale soit compréhensible pour tous, en tant qu'elle désigne, en quelque sorte, le lieu commun à tous où se fondent les droits de l'homme pour tous, afin que chacun puisse tenter d'être un homme libre, selon lui-même et sa différence.",
+      "bbox": {
+        "x_pct": 25.383,
+        "y_pct": 40.325,
+        "w_pct": 52.836,
+        "h_pct": 15.547
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription from OCR."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "En marge du document de travail.",
+      "bbox": {
+        "x_pct": 25.624,
+        "y_pct": 58.341,
+        "w_pct": 25.568,
+        "h_pct": 1.596
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in heading text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord il est exact que les Droits de l'homme sont devenus aujourd'hui un problème politique international, en tant qu'il existe maintenant des textes internationaux qui engagent les Etats. Cela signifie, à mon sens, que la protection des droits de l'homme élémentaires, ceux dont l'exigence est définissable, exigible, et concerne directement la liberté individuelle constitutive de l'être humain en tant que tel, sont désormais placés en principe sous la protection de la communauté internationale, malgré et par delà le principe de non-immixtion dans les affaires intérieures des Etats. - Il en découle de nouveaux problèmes",
+      "bbox": {
+        "x_pct": 25.947,
+        "y_pct": 61.1,
+        "w_pct": 52.619,
+        "h_pct": 14.401
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription from OCR. Labelled as paragraph instead of list_item as it is part of the flow."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "26",
+      "bbox": {
+        "x_pct": 25.75,
+        "y_pct": 76.5,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and assigned to footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "OCR text was heavily truncated in the provided JSON.",
+    "Page number 26 was missing from detection.",
+    "Several text regions required full transcription cleanup."
+  ],
+  "doc_id": "1770",
+  "page": 11,
+  "elapsed_seconds": 5.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

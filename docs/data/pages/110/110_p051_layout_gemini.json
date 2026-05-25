@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE 49",
+      "bbox": {
+        "x_pct": 12.293,
+        "y_pct": 2.0,
+        "w_pct": 68.433,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header/number"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "ouvrage) la loi, La loi existe dans la nalure; elle est agissante au sein de la réalité expérimentée",
+      "bbox": {
+        "x_pct": 12.293,
+        "y_pct": 13.225,
+        "w_pct": 68.433,
+        "h_pct": 22.36
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour d'autres, la limite passe entre la pure et simple succession des phénomènes dans la nature d'une part, et la loi de l'autre, la loi étant imposée, elle, comme une forme humainement nécessaire, à cette succession inorganisée. Il n'y a pas pour eux de loi dans la nature, et toute législation vient de l'homme. On peut se demander alors pourquoi le savant doit choisir avec tant de soin sa législation, pourquoi l'une convient et l'autre pas, pourquoi il n'y aurait pas autant de physiques différentes possibles qu'il y a de géométries, comment, en un mot, une nature complètement « alégale », pourrait résister à une législation quelconque. Aussi certains adoptent-ils l'attitude pragmatiste et relativiste selon laquelle, en effet, un système d'explication physique trouve sa vérité uniquement dans son efficacité momentanée.",
+      "bbox": {
+        "x_pct": 12.293,
+        "y_pct": 35.84,
+        "w_pct": 68.433,
+        "h_pct": 23.366
+      },
+      "changed": true,
+      "change_reason": "ADDED: intermediate paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "de la  vérité, et si la vérité   malgré tout ne se conçoit que comme adéquation 4 faudra du même cou",
+      "bbox": {
+        "x_pct": 12.247,
+        "y_pct": 59.59,
+        "w_pct": 68.71,
+        "h_pct": 15.243
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "L'Etre et la Forme",
+      "bbox": {
+        "x_pct": 17.857,
+        "y_pct": 76.047,
+        "w_pct": 15.242,
+        "h_pct": 1.32
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_heading"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header/number at top",
+    "Missing body paragraph in middle of page"
+  ],
+  "doc_id": "110",
+  "page": 51,
+  "elapsed_seconds": 6.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to zb_heading": 1,
+    "ADDED": 2
+  }
+}

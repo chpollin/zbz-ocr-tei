@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 100,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header text region"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "25",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 96.0,
+        "w_pct": 14.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "existence antérieure. Il n'y a pas une existence plus une loi, mais une existence-selon-la-loi const",
+      "bbox": {
+        "x_pct": 12.044,
+        "y_pct": 12.873,
+        "w_pct": 68.815,
+        "h_pct": 61.482
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page footer region"
+  ],
+  "doc_id": "110",
+  "page": 27,
+  "elapsed_seconds": 3.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

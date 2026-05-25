@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Zur Einleitung",
+      "bbox": {
+        "x_pct": 34.662,
+        "y_pct": 5.059,
+        "w_pct": 30.676,
+        "h_pct": 2.146
+      },
+      "changed": true,
+      "change_reason": "Missing region for page header/title was not detected."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Über die Polarität von Sicherheit und Risiko",
+      "bbox": {
+        "x_pct": 18.321,
+        "y_pct": 8.464,
+        "w_pct": 50.314,
+        "h_pct": 5.051
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Wir leben in Polaritäten. Begriffe wie <Nähe und Ferne>, <Ernst und Spiel>, <Werden und Vergehen>, <Statik und Dynamik>, aber auch <Ich und Du>, <Freund und Feind>, <das Eigene> und <das Fremde> rufen uns in Erinnerung, daß Polaritäten, fundamental und unausweichlich, unser Denken und Wahrnehmen bestimmen. Zu den grundsätzlichen Polaritäten unseres Lebens scheint auch diejenige zu gehören, auf die die Titelbegriffe unseres Symposiums hindeuten: Sicherheit und Risiko.",
+      "bbox": {
+        "x_pct": 10.749,
+        "y_pct": 16.179,
+        "w_pct": 65.459,
+        "h_pct": 24.651
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated or corrupted in the original detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Unser Gespräch wird in zweifacher Weise auf das Begriffspaar Sicherheit und Risiko bezogen sein müssen. Zum einen wird es darum gehen, unsere Lebenswelt unter der Perspektive zu betrachten, die durch die Begriffe Sicherheit und Risiko eröffnet wird. Wie zeigt sich unsere Wirklichkeit, so werden wir fragen müssen, wenn man sie auf die Polarität von Sicherheit und Risiko hin untersucht, welche Wahrnehmungen drängen sich auf, welche Erfahrungen werden möglich, welche Probleme zeigen sich? Zum andern wird es darum gehen, einen sinnvollen Gebrauch der beiden Begriffe zu finden. Wie müssen wir die beiden Begriffe begrenzen, damit sie wirklich zu einem Instrument des Verstehens werden können? Wo, in welchen Zusammenhängen sollen wir sie einsetzen, wenn sie uns helfen sollen, uns und unsere Wirklichkeit zu begreifen?",
+      "bbox": {
+        "x_pct": 10.507,
+        "y_pct": 41.026,
+        "w_pct": 65.495,
+        "h_pct": 40.728
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in the original detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wer die Aufgabe hat, ein Gespräch zum Thema <Sicherheit und Risiko> einzuleiten, hat es schwer: nicht etwa, weil ihm nichts zu diesem Thema ein-",
+      "bbox": {
+        "x_pct": 10.664,
+        "y_pct": 81.659,
+        "w_pct": 65.097,
+        "h_pct": 6.747
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Polaritäten bestimmen unser Leben",
+      "bbox": {
+        "x_pct": 78.382,
+        "y_pct": 33.479,
+        "w_pct": 17.186,
+        "h_pct": 4.971
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "II",
+      "bbox": {
+        "x_pct": 47.947,
+        "y_pct": 91.246,
+        "w_pct": 4.106,
+        "h_pct": 2.226
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing initial page header detection.",
+    "Multiple paragraphs contained truncated text strings.",
+    "Page number incorrectly identified as text.",
+    "Overall text extraction for paragraphs was incomplete/corrupted in input."
+  ],
+  "doc_id": "2400",
+  "page": 10,
+  "elapsed_seconds": 6.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

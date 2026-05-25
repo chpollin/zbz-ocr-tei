@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "46",
+      "bbox": {
+        "x_pct": 10.658,
+        "y_pct": 6.223,
+        "w_pct": 2.459,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 68.306,
+        "y_pct": 6.223,
+        "w_pct": 20.355,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "inextricable, loin de dispenser la personne sing...",
+      "bbox": {
+        "x_pct": 10.386,
+        "y_pct": 9.75,
+        "w_pct": 80.714,
+        "h_pct": 11.362
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comme dans toutes les choses humaines, nous avons...",
+      "bbox": {
+        "x_pct": 10.574,
+        "y_pct": 22.99,
+        "w_pct": 80.492,
+        "h_pct": 13.272
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il existe aussi une tentation inverse, relat...",
+      "bbox": {
+        "x_pct": 10.621,
+        "y_pct": 35.963,
+        "w_pct": 80.679,
+        "h_pct": 11.313
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest pourquoi j'ai centré ma réflexion sur la rela...",
+      "bbox": {
+        "x_pct": 10.656,
+        "y_pct": 49.098,
+        "w_pct": 80.679,
+        "h_pct": 21.628
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lhomme ne prend conscience de sa possible liberté...",
+      "bbox": {
+        "x_pct": 10.808,
+        "y_pct": 70.774,
+        "w_pct": 80.609,
+        "h_pct": 22.135
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number 46 and running header JEANNE HERSCH were initially missing detection or incorrectly labeled as text."
+  ],
+  "doc_id": "2900",
+  "page": 2,
+  "elapsed_seconds": 4.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

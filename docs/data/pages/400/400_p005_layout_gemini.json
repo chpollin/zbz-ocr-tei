@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "presque mythique; on les écrit avec des majuscules, on se dispense de les confronter avec les réalités consécutives à la victoire communiste, on ne s'inquiète pas de savoir s'ils correspondent désormais à des données objectives. C'est vrai pour la notion de prolétariat, par exemple, jamais réexaminée malgré toutes les transformations sociales survenues : ce Prolétariat — avec un grand « P » — qui apparaît comme une sorte de Sauveur — avec un grand « S » —, et qui en joue le rôle dans l'eschatologie rationnelle dont nous avons parlé.",
+      "bbox": {
+        "x_pct": 12.5,
+        "y_pct": 8.775,
+        "w_pct": 64.573,
+        "h_pct": 15.174
+      },
+      "changed": true,
+      "change_reason": "Combined fragmented text into a single coherent paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parallèlement, il y a l'autre aspect, cette résistance qu'on rencontre, contrairement à l'hypothèse, dans la nature humaine. Dans les expériences communistes, on s'est trouvé devant des gens chez qui quelque chose refusait d'accepter ce qui était évidemment dans leur intérêt. Ils voulaient autre chose et refusaient de laisser pénétrer en eux ce qu'on tentait de leur inculquer.",
+      "bbox": {
+        "x_pct": 12.581,
+        "y_pct": 23.801,
+        "w_pct": 64.355,
+        "h_pct": 10.427
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and combined sentences."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette résistance a été mise en évidence, lors de l'insurrection de 1956, par le comportement de jeunes Hongrois qui pourtant n'avaient jamais connu d'autre régime. J'ai eu, pour ma part, cette même révélation au procès des insurgés de Poznam, que j'ai suivi de près en comprenant la langue. Il y avait longtemps qu'en Occident, je n'avais vécu des journées aussi étrangères à la doctrine communiste que celles que j'ai passées là-bas. J'ai vu cependant défiler bon nombre de jeunes gens, pour la plupart de 18 à 21 ans, de toutes les catégories sociales, de tous les genres, et qui tous parlaient de leurs cours de formation marxiste. Mais jamais, ni dans leur langage, ni dans leur manière de penser, on n'en percevait aucune trace. La seule argumentation proprement communiste que j'aie entendue, ce furent les phrases d'un avocat, déclarant que pour lui, militant communiste, ce procès était conçu d'une façon absurde du point de vue marxiste. Et il s'est précisément servi du marxisme pour démolir la machine judiciaire montée par le régime polonais antérieur à Gomulka.",
+      "bbox": {
+        "x_pct": 12.605,
+        "y_pct": 33.561,
+        "w_pct": 64.331,
+        "h_pct": 28.091
+      },
+      "changed": true,
+      "change_reason": "Corrected missing words and completed the paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On peut donc dire que les expériences communistes offrent, tant aux adhérents d'autres doctrines qu'à ceux qui ne se réclament d'aucune, le spectacle étrange d'une réalité de fait rendue efficace précisément par le contraire de ce qu'elle prétend être sur le plan idéologique.",
+      "bbox": {
+        "x_pct": 12.798,
+        "y_pct": 61.14,
+        "w_pct": 64.0,
+        "h_pct": 8.547
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and missing words."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Efficace par le contraire, en effet : théoriquement anti-religieuse, anti-absolutiste, scientifique, faite pour le devenir de l'histoire, pour épouser tous les changements, elle s'affirme partout comme une religion absolue et absolutiste, demandant à régner sans partage et définitivement sur les esprits.",
+      "bbox": {
+        "x_pct": 12.718,
+        "y_pct": 69.157,
+        "w_pct": 64.081,
+        "h_pct": 8.832
+      },
+      "changed": true,
+      "change_reason": "Corrected words like 'anti-reli' split incorrectly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vu du dehors, cet optimisme historique et eschatologique apparaît non comme une marche en avant, une projection vers le futur, mais comme un retour à un état de chose antérieur, à des superstitions, à un stade de pensée apparemment dépassé par la direction générale du sens de l'histoire. Lorsqu'on lit les comptes rendus de certaines discussions, de certains mea culpa et de certaines confrontations, on reste stupéfait des termes",
+      "bbox": {
+        "x_pct": 12.847,
+        "y_pct": 77.362,
+        "w_pct": 64.089,
+        "h_pct": 11.926
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR formatting artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "page_footer",
+      "text": "31",
+      "bbox": {
+        "x_pct": 74.234,
+        "y_pct": 90.767,
+        "w_pct": 1.774,
+        "h_pct": 2.215
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer as it is a page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Initial OCR was highly fragmented and contained broken lines.",
+    "Page number at the bottom was mislabeled as text.",
+    "Significant manual transcription cleanup required due to poor OCR segmentation."
+  ],
+  "doc_id": "400",
+  "page": 5,
+  "elapsed_seconds": 8.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

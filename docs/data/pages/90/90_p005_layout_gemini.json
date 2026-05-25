@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "659",
+      "bbox": {
+        "x_pct": 47.935,
+        "y_pct": 3.791,
+        "w_pct": 4.103,
+        "h_pct": 2.508
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "erscheint. Fieberhaft entfaltet sich in der Zeit - ist sie kurz? ist sie lang? ein außerzeitliches Fatum.",
+      "bbox": {
+        "x_pct": 5.396,
+        "y_pct": 14.241,
+        "w_pct": 87.945,
+        "h_pct": 4.152
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das wichtigste, und beinahe einzige Werkzeug dieses Fatums ist die Liebe. (Siehe die Überschrift von Sophokles: „Amour, invincible amour“.) Diese Liebe stammt aus derselben Quelle wie die, von der „Phèdre“ bei Racine besessen wird. Mit Verdiensten des oder der Geliebten (selbst mit solchen, die ihnen vom Liebenden zugedacht wären) hat sie nichts zu tun. Sie versucht nirgends, auch nicht im subjektivsten Träumen, sich zu rechtfertigen. Sie ist nur da - und ist zeitlos. Sie wird im Augenblick entdeckt, nie aber fängt sie an, nie hört sie auf. Beim Sterben wird die Seele von ihr bis zu allerletzt besessen, bis in den Tod hinein. Und diese menschliche Liebe ist immer stärker, dringender als die Liebe zu Gott: sie ist wie eine lastende, endgültige Verurteilung zum konkreten, unmittelbar und doch irgendwie fern, in einer fremden Wunderwelt erscheinenden Menschen. Als der ältere Pfarrer, der gerade von einer erbarmungslosen Liebe besessen ist, sich am Sterbebett eines frommen, ganz jungen Mädchens festhält, und unter der verzweifelten Verurteilung des eigenen Herzens sie plötzlich fragt: - „Du hast nie jemanden mehr geliebt als Gott, du, nicht wahr, kleine Alice?“ - kommt die Antwort, - des Mädchens letzte Worte: - „Ich habe Sie mehr geliebt als Ihn.“",
+      "bbox": {
+        "x_pct": 5.545,
+        "y_pct": 18.441,
+        "w_pct": 87.945,
+        "h_pct": 39.903
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Liebe ist hier nicht gegenseitig. Sie hat mit Glück überhaupt nichts zu tun. - „Heureuse? - Il prononca le mot d'une façon si étrange qu'il lui donnait une irréalité complète, comme s'il avait articulé un mot en mal-gache, quelque chose dont personne ne connaissait le sens.“ Liebe berechnet nichts, bereitet nichts für die Zukunft. Sie ist in der menschlichen Seele, unter den Geldsorgen, Schulden, Habsucht- und Neidgefühlen, wie die letzte, allmächtige, herrliche, reinigende, sündhafte, erschreckende Zuflucht der inbrünstigen Unentgeltlichkeit. Und wenn auch ihre Unbedingtheit Gott so schrecklich verblassen läßt, so ist Gott doch nur durch ihre Macht so dringend ruhig da. - Einmal scheint eine gegenseitige Liebe Geschehnis zu werden, einige dunkle, wortlose, regungslose Minuten lang, - aber es sind ein Mädchen und ein verheirateter Mann, denen dies geschieht. Alles ist immer unmöglich. Die ersten (und im veröffentlichten Werk einzigen) Worte der Liebe sind: „Ich soll Sie nie wiedersehen. Nie.“",
+      "bbox": {
+        "x_pct": 6.119,
+        "y_pct": 58.263,
+        "w_pct": 87.646,
+        "h_pct": 30.727
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was die Einbildungskraft schafft, ist wirklich. Die jahrelang gehegte Liebe zu einem ganz unbekannten Menschen ist wahre, wirkliche Liebe, die bis zum Letzten des Schicksals wird führen müssen. Dadurch kommt",
+      "bbox": {
+        "x_pct": 6.51,
+        "y_pct": 88.958,
+        "w_pct": 87.256,
+        "h_pct": 6.519
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Docling text OCR is severely garbled, I have kept the labels and structure but the content extraction needs significant improvement."
+  ],
+  "doc_id": "90",
+  "page": 5,
+  "elapsed_seconds": 5.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

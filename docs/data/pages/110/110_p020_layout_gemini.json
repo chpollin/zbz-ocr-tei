@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "18 L’ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 19.009,
+        "y_pct": 10.0,
+        "w_pct": 68.779,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "faire être le plan humain apparaît de la manière la pure et absolue. Car il me paraît   évident qu'e",
+      "bbox": {
+        "x_pct": 19.009,
+        "y_pct": 12.959,
+        "w_pct": 68.779,
+        "h_pct": 31.384
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant à la signification transcendante de la forme, elle ne saurait par   définition être au moyen d",
+      "bbox": {
+        "x_pct": 18.894,
+        "y_pct": 44.369,
+        "w_pct": 68.856,
+        "h_pct": 29.891
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region in original input"
+  ],
+  "doc_id": "110",
+  "page": 20,
+  "elapsed_seconds": 6.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "INTERNATIONAL COMMISSION OF JURISTS",
+      "bbox": {
+        "x_pct": 14.635,
+        "y_pct": 9.408,
+        "w_pct": 31.714,
+        "h_pct": 3.8
+      },
+      "changed": true,
+      "change_reason": "Header identifying organizations, should be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SWISS COMMITTEE AGAINST TORTURE",
+      "bbox": {
+        "x_pct": 64.127,
+        "y_pct": 9.538,
+        "w_pct": 20.138,
+        "h_pct": 3.131
+      },
+      "changed": true,
+      "change_reason": "Header identifying organizations, should be filtered."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Torture: How to Make the International Convention Effective",
+      "bbox": {
+        "x_pct": 21.238,
+        "y_pct": 26.408,
+        "w_pct": 55.693,
+        "h_pct": 15.592
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "A DRAFT OPTIONAL PROTOCOL",
+      "bbox": {
+        "x_pct": 30.508,
+        "y_pct": 49.438,
+        "w_pct": 37.82,
+        "h_pct": 1.869
+      },
+      "changed": true,
+      "change_reason": "This is a subtitle/section heading for the document title."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "With articles by",
+      "bbox": {
+        "x_pct": 41.302,
+        "y_pct": 68.185,
+        "w_pct": 15.947,
+        "h_pct": 2.662
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Niall MacDermot Eric Martin",
+      "bbox": {
+        "x_pct": 24.55,
+        "y_pct": 71.023,
+        "w_pct": 18.275,
+        "h_pct": 3.746
+      },
+      "changed": true,
+      "change_reason": "Author list, should be categorized as a section heading/metadata."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jean-Jacques Gautier François de Vargas",
+      "bbox": {
+        "x_pct": 53.439,
+        "y_pct": 70.977,
+        "w_pct": 22.571,
+        "h_pct": 4.308
+      },
+      "changed": true,
+      "change_reason": "Author list, should be categorized as a section heading/metadata."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "and comments by",
+      "bbox": {
+        "x_pct": 39.862,
+        "y_pct": 76.515,
+        "w_pct": 18.593,
+        "h_pct": 2.531
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Card. Paulo E. ARNS, Francis BLANCHARD, Rafael CALDERA, Hans HAUG, Jeanne HERSCH, Werner KAEGI, Felix MARTI AMBEL, Keba MBAYE, Pierre MENDES FRANCE, Philip POTTER, Nigel RODLEY, Joaquin RUIZ-GIMENEZ, † Marc SCHREIBER, Willy SPUEHLER, Denis SZABO, Friedrich T. WAHLEN",
+      "bbox": {
+        "x_pct": 15.45,
+        "y_pct": 80.615,
+        "w_pct": 68.328,
+        "h_pct": 6.823
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and updated label to section_header as this is a list of contributors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original text detection for contributors list was truncated and contained OCR errors.",
+    "Multiple section headings were misidentified as standard paragraphs.",
+    "Page headers were not correctly filtered."
+  ],
+  "doc_id": "1630",
+  "page": 1,
+  "elapsed_seconds": 4.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

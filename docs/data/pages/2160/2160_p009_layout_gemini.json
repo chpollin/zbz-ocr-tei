@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hier, in der täglichen Hingabe an sterbliche Wesen, vergessen wir immer wieder, jeden Tag, jede Stunde, den Tod und den Abschied. Und, selbstverständlich, auch in der Liebe zu uns selbst. Leichtsinnig ist unsere Hingabe, verträumt unsere Wachsamkeit, zerstreut unsere Aufmerksamkeit.",
+      "bbox": {
+        "x_pct": 13.302,
+        "y_pct": 7.517,
+        "w_pct": 77.445,
+        "h_pct": 10.569
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich blicke in dein Gesicht, fast ohne es zu sehen, so als hätte ich die Gewißheit, es jederzeit wieder ansehen zu können. Der rotbraune Stamm einer Fichte vor einer grünen Meeresbucht, darauf ein weißes Segel - und ich bemerke es kaum. Der Hund, der auf den kühlen Fliesen mit ausgestreckten Pfoten daliegt, wie auf einer Höhlenzeichnung in Lascaux - und ich mache einen großen Schritt über ihn weg, ohne ihn zu sehen. Ohne Trennung, ohne Abschied. In einer Gegenwart, die von nichts bedroht wird. Und es ist gut so.",
+      "bbox": {
+        "x_pct": 13.186,
+        "y_pct": 17.568,
+        "w_pct": 77.445,
+        "h_pct": 18.404
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Doch eines Tages werden wir verzweifelt danach suchen - die harte Glätte dieser Stirn in unserer Hand, jene Tönung des Wassers hinter dem Stamm, das leise Wellenspiel unter dem Boot, das unbewegliche Rennen im Traum des schlafenden Hundes und seine atmenden Flanken ... Umsonst. Je mehr wir dies alles geliebt haben, je weniger können wir es bewahren. Vielleicht auch haben wir diese Bilder abgenützt, indem wir sie allzuoft mit unserer Erinnerung greifen wollten; vielleicht sind sie ausgetreten wie die Stufen, die zu einer heiligen Stätte führen, durch die zahllosen Schritte der Pilger.",
+      "bbox": {
+        "x_pct": 12.987,
+        "y_pct": 35.425,
+        "w_pct": 77.211,
+        "h_pct": 20.746
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Trennung vom Verschwindenden. Der Abschied gilt niemandem mehr. Wer erlebt eigentlich die Trennung? Wer nimmt Abschied? Ich, dieser zerstreute Wanderer, dieser Verschwender, vergänglich und fordernd?",
+      "bbox": {
+        "x_pct": 13.151,
+        "y_pct": 55.528,
+        "w_pct": 76.931,
+        "h_pct": 8.529
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die universelle Vergänglichkeit könnte so vollkommen sein wie ein umsonst beschriebenes Blatt, dem man sein ursprüngliches Weiß zurückgibt. Doch etwas bleibt und wird nicht ausgelöscht. Etwas, das vor der Trennung nicht da war und das keinem Vergessen weichen kann: die Schuld.",
+      "bbox": {
+        "x_pct": 12.567,
+        "y_pct": 65.802,
+        "w_pct": 77.515,
+        "h_pct": 10.717
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was getan wurde und was versäumt wurde; was gesagt wurde und was verschwiegen wurde; was ungesagt blieb, bis Trennung oder Tod dazwischenkamen; was für einen flüchtigen Augenblick - und für immer - gedacht oder empfunden wurde. Der Blick war anderswohin gerichtet, vielleicht auf das vorbeiziehende Boot. Dem andern Schmerz zugefügt haben. Das unsägliche Leid der andern überlebt haben und frei und offen sein für",
+      "bbox": {
+        "x_pct": 12.404,
+        "y_pct": 75.462,
+        "w_pct": 77.561,
+        "h_pct": 14.908
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "252",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 92.5,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR text was severely truncated in almost every paragraph block.",
+    "Page number at bottom was not identified and was missing from the initial JSON regions."
+  ],
+  "doc_id": "2160",
+  "page": 9,
+  "elapsed_seconds": 4.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

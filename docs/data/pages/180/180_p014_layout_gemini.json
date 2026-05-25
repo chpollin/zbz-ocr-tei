@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "46 L'INSTRUCTION PUBLIQUE EN SUISSE",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region for page header and page number was ignored. Added to correct layout interpretation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "elle qu'on sacrifiera toujours de quelque manière. C'est pourquoi je reste convaincue qu'elle ne sera enseignée sérieusement au gymnase que si elle devient matière d'examen pour la maturité fédérale. Et cela ne la « ravalera » nullement. Elle n'apparaîtra pas comme une préparation servile à l'examen. Tout dépendra du maître.",
+      "bbox": {
+        "x_pct": 12.571,
+        "y_pct": 9.63,
+        "w_pct": 70.346,
+        "h_pct": 11.037
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne me reste plus qu'à espérer que cet article trouve l'écho que je souhaite dans les milieux du corps enseignant secondaire. Peut-être sera-t-il possible de préparer un plan de réforme de l'horaire et un programme d'enseignement de la philosophie dans le cadre de la Société suisse des maîtres de philosophie qui est en train de se constituer.",
+      "bbox": {
+        "x_pct": 12.732,
+        "y_pct": 20.758,
+        "w_pct": 70.185,
+        "h_pct": 11.094
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A supposer, bien sûr, que beaucoup de maîtres soient d'accord pour le principe : qu'un enseignement de la philosophie au degré secondaire est non seulement souhaitable, mais nécessaire.",
+      "bbox": {
+        "x_pct": 12.869,
+        "y_pct": 31.681,
+        "w_pct": 70.048,
+        "h_pct": 5.926
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH.",
+      "bbox": {
+        "x_pct": 61.08,
+        "y_pct": 39.014,
+        "w_pct": 19.041,
+        "h_pct": 1.88
+      },
+      "changed": false,
+      "change_reason": "Author signature maintained as text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction contained significant OCR errors/truncations.",
+    "Page header '46' and 'L'INSTRUCTION PUBLIQUE EN SUISSE' were missing from detected regions.",
+    "Signature labeled correctly but OCR had spacing errors."
+  ],
+  "doc_id": "180",
+  "page": 14,
+  "elapsed_seconds": 4.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

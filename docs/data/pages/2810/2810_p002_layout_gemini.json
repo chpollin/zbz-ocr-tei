@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de drogue. Bouleversée, Madame informe son mari de ce soupçon, le priant de démissionner aussitôt. Et comme elle doit se rendre à une séance, elle conseille à son mari de demander plus de détails à sa collaboratrice. Ce qui fut fait. Le mari démissionne le jour même.",
+      "bbox": {
+        "x_pct": 9.787,
+        "y_pct": 7.258,
+        "w_pct": 80.64,
+        "h_pct": 10.645
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pendant plusieurs semaines, Madame Kopp, sans dissimuler l'existence de ce coup de fil, dont plusieurs personnes de son Département ont eu presque aussitôt connaissance, sans demander le silence de quiconque, s'abstient pourtant d'en parler. Elle ne reconnut le fait que lorsqu'il devint impossible de faire autrement.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 20.105,
+        "w_pct": 80.464,
+        "h_pct": 12.823
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tels furent les faits, dans leur nudité. Et c'est tout.",
+      "bbox": {
+        "x_pct": 14.429,
+        "y_pct": 35.161,
+        "w_pct": 46.587,
+        "h_pct": 4.032
+      },
+      "changed": true,
+      "change_reason": "Fixed minor transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une première scission se produisit aussitôt. Dans les milieux politiques et juridiques, on jugea que la Conseillère avait abusé de sa fonction pour protéger son mari par une mise en garde efficace, commettant ainsi une faute politique et juridique, doublée et prolongée par une faute morale (dissimulation ou mensonge par omission).",
+      "bbox": {
+        "x_pct": 10.163,
+        "y_pct": 43.548,
+        "w_pct": 80.389,
+        "h_pct": 13.04
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais dans l'esprit du « public », à travers les nouvelles qu'on lui prodiguait chaque jour, il s'agissait d'un crime : en prévenant son mari, dont on rappelait avec force détails les démêlés, anciens ou récents, qu'il avait pu avoir avec l'armée, le barreau, le fisc ou la Justice, la Conseillère s'était rendue complice d'une énorme affaire de drogue et de blanchiment d'argent sale.",
+      "bbox": {
+        "x_pct": 10.075,
+        "y_pct": 58.387,
+        "w_pct": 80.552,
+        "h_pct": 13.306
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "S'en trouvèrent éclaboussés, avant tout les organes politiques concernés, et d'abord ceux qui avaient été à l'origine de l'élection : les institutions zurichoises, le Parti radical, — puis le Gouvernement et le Parlement. Rien ne devait être épargné pour prouver au peuple entier que l'on allait maîtriser cette situation à force d'en éclairer tous les aspects.",
+      "bbox": {
+        "x_pct": 10.251,
+        "y_pct": 73.548,
+        "w_pct": 80.552,
+        "h_pct": 12.927
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On monta donc une énorme machine d'enquête politico-",
+      "bbox": {
+        "x_pct": 14.592,
+        "y_pct": 88.363,
+        "w_pct": 76.035,
+        "h_pct": 2.363
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 935.0,
+        "w_pct": 35.0,
+        "h_pct": 35.0
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Most OCR text was highly corrupted and required manual correction.",
+    "Page number at bottom left was initially unidentified.",
+    "OCR output did not correctly capture the flow of sentences."
+  ],
+  "doc_id": "2810",
+  "page": 2,
+  "elapsed_seconds": 5.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Famille et isolement",
+      "bbox": {
+        "x_pct": 11.475,
+        "y_pct": 6.318,
+        "w_pct": 27.014,
+        "h_pct": 2.022
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les Thèses insistent beaucoup sur l’isolement dont souffrent les jeunes, sur le manque de communication dont ils cherchent à sortir par le «langage» de la violence. Ici la Commission a raison – mais il faut interpréter une telle constatation.",
+      "bbox": {
+        "x_pct": 11.475,
+        "y_pct": 8.812,
+        "w_pct": 82.119,
+        "h_pct": 7.553
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and character recognition errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chose remarquable, il est très peu question, et très sommairement, dans ce contexte, de la famille. Pourtant la famille devrait être, semble-t-il, le refuge immédiat contre l’isolement, le lieu privilégié de la communication. Manifestement, elle ne l’est pas. Pourquoi?",
+      "bbox": {
+        "x_pct": 11.358,
+        "y_pct": 16.467,
+        "w_pct": 82.119,
+        "h_pct": 7.821
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On nous dit seulement que les familles sont trop petites, les parents trop absorbés par ailleurs pour dialoguer comme il faudrait. On suggère le recours aux «communautés». Or, personne n’a réussi à montrer jusqu’ici que les formes de vie communautaires fussent plus stables, et leurs membres, à la longue, plus disponibles et plus ouverts au dialogue. Est-ce vraiment tout ce qu’il y a à dire aujourd’hui sur les familles – ou bien la Commission a-t-elle reculé devant ce qu’il y aurait à dire, et qui ne va pas, loin de là, dans le sens des clichés «autorisés»?",
+      "bbox": {
+        "x_pct": 11.206,
+        "y_pct": 24.209,
+        "w_pct": 82.272,
+        "h_pct": 15.13
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est vrai que les jeunes souffrent d’isolement et de manque d’échanges, vrai que les familles, trop petites, ont plus de peine à maintenir un climat vivant de présence et de disponibilité. Mais la «petite famille», réunissant seulement la mère, le père et deux enfants ou même un seul, ne date pas de",
+      "bbox": {
+        "x_pct": 11.475,
+        "y_pct": 39.182,
+        "w_pct": 82.084,
+        "h_pct": 8.183
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and flow."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "«L’atmosphère empoisonnée» des immeubles locatifs. (Photo Claude Huber.)",
+      "bbox": {
+        "x_pct": 11.71,
+        "y_pct": 87.703,
+        "w_pct": 80.948,
+        "h_pct": 2.093
+      },
+      "changed": true,
+      "change_reason": "Cleaned up punctuation and quotes."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR for text blocks was severely degraded.",
+    "Multiple character recognition failures (e.g. l’isolement became lisolement).",
+    "Missing punctuation in several lines."
+  ],
+  "doc_id": "1810",
+  "page": 16,
+  "elapsed_seconds": 6.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "eine Wende tut not",
+      "bbox": {
+        "x_pct": 7.162,
+        "y_pct": 34.643,
+        "w_pct": 18.804,
+        "h_pct": 1.477
+      },
+      "changed": true,
+      "change_reason": "This appears to be a marginal note or running head equivalent, not part of the main paragraph flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir müssen lernen, mit der modernen Welt umzugehen...",
+      "bbox": {
+        "x_pct": 6.643,
+        "y_pct": 60.335,
+        "w_pct": 19.565,
+        "h_pct": 5.626
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich kann also an dieses <Zurück zur Natur> nicht recht glauben. Aber ich bin allerdings der Meinung, daß wir heute in gewissen Bereichen das Menschenmögliche erreicht haben, die Grenzen des Menschlichen, und daß wir eine Wende vollziehen müssen. Das reine Gesetz des freien Marktes, des Wettbewerbs, ist eine blinde Macht, die nicht Gottes Urteil sein kann und die man korrigieren muß. Ich bin nicht für die Planwirtschaft, denn es hat sich ja gezeigt, daß diese mehr Probleme schafft als sie löst. Aber ich habe die leise Hoffnung, daß recht bald wichtige Vertreter der Unternehmer selbst dazu kommen werden, die Produktion in eine bewußt sinnvolle, in eine für die Freiheit nützliche Richtung zu lenken.",
+      "bbox": {
+        "x_pct": 28.587,
+        "y_pct": 5.0,
+        "w_pct": 65.012,
+        "h_pct": 33.865
+      },
+      "changed": true,
+      "change_reason": "Full paragraph content correction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und ich möchte im Hinblick auf die moderne Zivilisation folgendes beifügen: Ich habe den Eindruck, daß wir alle nouveaux riches sind, Menschen, die vieles zur Verfügung haben, woran sie sich noch nicht haben gewöhnen können und womit sie noch nicht umzugehen verstehen. Viele Errungenschaften der letzten 30 oder 40 Jahre sind wie neue Spielzeuge: Wir sind davon fasziniert, wissen aber noch nicht recht, wie man damit umgehen soll. Ich habe die Hoffnung, daß sich dies ändert. Ich glaube, daß wir von vielem einen besseren Gebrauch machen könnten als wir es jetzt tun.",
+      "bbox": {
+        "x_pct": 28.744,
+        "y_pct": 38.668,
+        "w_pct": 64.94,
+        "h_pct": 26.958
+      },
+      "changed": true,
+      "change_reason": "Full paragraph content correction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Ihre Antwort; daß wir nouveaux riches sind, daß wir beispielsweise noch nicht gelernt haben, mit der Konsumfreiheit umzugehen, überzeugt mich. Und ich teile Ihren Optimismus, daß sich ein Lerneffekt einstellen kann. Und darin würde ich auch fast die einzige Möglichkeit sehen, das Marktgeschehen zu lenken.",
+      "bbox": {
+        "x_pct": 28.744,
+        "y_pct": 67.955,
+        "w_pct": 64.976,
+        "h_pct": 15.815
+      },
+      "changed": true,
+      "change_reason": "Full paragraph content correction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "48",
+      "bbox": {
+        "x_pct": 59.8,
+        "y_pct": 90.7,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified and corrected label to footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction was heavily truncated and contained significant OCR errors.",
+    "Page number missing from initial detection.",
+    "Marginal note identified as text instead of filter/marginalia.",
+    "Significant OCR gaps in long paragraphs."
+  ],
+  "doc_id": "2400",
+  "page": 47,
+  "elapsed_seconds": 6.05,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

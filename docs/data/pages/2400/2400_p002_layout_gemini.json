@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Sicherheit und Risiko",
+      "bbox": {
+        "x_pct": 10.109,
+        "y_pct": 4.753,
+        "w_pct": 60.87,
+        "h_pct": 4.978
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ein Gespräch",
+      "bbox": {
+        "x_pct": 32.041,
+        "y_pct": 9.607,
+        "w_pct": 17.355,
+        "h_pct": 2.744
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Wirtschaft, Gesellschaft und Staat zwischen Risiko und Sicherheit Helvetia-Forum vom 22. Oktober 1986 in der Aula der Hochschule St. Gallen",
+      "bbox": {
+        "x_pct": 7.246,
+        "y_pct": 17.176,
+        "w_pct": 67.029,
+        "h_pct": 14.025
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and reclassified as section_header/zb_heading as it constitutes the bibliographic/event title information."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Im Auftrag der Helvetia-Feuer redigiert und herausgegeben von Johannes Anderegg",
+      "bbox": {
+        "x_pct": 15.664,
+        "y_pct": 35.422,
+        "w_pct": 49.915,
+        "h_pct": 9.068
+      },
+      "changed": true,
+      "change_reason": "Reclassified as section_header/zb_heading as this is editorial/bibliographic metadata."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Detected text was incomplete and contained erroneous characters ('>').",
+    "Metadata regarding editorial responsibility and event details should be tagged as section_header for bibliographic accuracy."
+  ],
+  "doc_id": "2400",
+  "page": 2,
+  "elapsed_seconds": 7.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

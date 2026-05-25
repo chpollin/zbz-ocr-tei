@@ -1,0 +1,162 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Sur le « sens de l'histoire »",
+      "bbox": {
+        "x_pct": 11.23,
+        "y_pct": 89.28,
+        "w_pct": 27.51,
+        "h_pct": 2.21
+      },
+      "changed": true,
+      "change_reason": "Identified as page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "93",
+      "bbox": {
+        "x_pct": 76.54,
+        "y_pct": 88.94,
+        "w_pct": 2.22,
+        "h_pct": 2.21
+      },
+      "changed": true,
+      "change_reason": "Identified as page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "*",
+      "bbox": {
+        "x_pct": 43.548,
+        "y_pct": 14.832,
+        "w_pct": 1.315,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On me dira que jenfonce des   portes ouvertes. Chacun sait aujourd'hui que Fhistoire est inconcevabl",
+      "bbox": {
+        "x_pct": 12.339,
+        "y_pct": 17.282,
+        "w_pct": 66.96,
+        "h_pct": 7.447
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voyons si la dialectique abolit le dilemme.",
+      "bbox": {
+        "x_pct": 14.677,
+        "y_pct": 23.989,
+        "w_pct": 43.79,
+        "h_pct": 2.775
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "4 4 *",
+      "bbox": {
+        "x_pct": 43.331,
+        "y_pct": 27.88,
+        "w_pct": 4.194,
+        "h_pct": 1.88
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous   allons tenter de prendre le mot (( dialectique ) dans un sens restreint; d\u0000\u0000viter les usages \u0000",
+      "bbox": {
+        "x_pct": 11.718,
+        "y_pct": 30.883,
+        "w_pct": 67.613,
+        "h_pct": 15.88
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Appliquant le mot \u0000 lhistoire, nous pouvons dire, dapr\u0000s ce pr\u0000c\u0000de, que lhistoire est dialectique c",
+      "bbox": {
+        "x_pct": 11.847,
+        "y_pct": 46.479,
+        "w_pct": 67.484,
+        "h_pct": 10.444
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On montrerait dailleurs facilement que, dune fa\u0000on g\u0000n\u0000rale, la dialectique est le signe m\u0000me, et le",
+      "bbox": {
+        "x_pct": 11.774,
+        "y_pct": 56.883,
+        "w_pct": 67.581,
+        "h_pct": 5.111
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "4 4 4",
+      "bbox": {
+        "x_pct": 43.121,
+        "y_pct": 63.744,
+        "w_pct": 4.081,
+        "h_pct": 1.783
+      },
+      "changed": true,
+      "change_reason": "Should be section heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seulement voil\u0000 il se trouve que la dialectique; ici; ne s'accepte ne se laissent pas mutuellement e",
+      "bbox": {
+        "x_pct": 11.508,
+        "y_pct": 66.65,
+        "w_pct": 68.008,
+        "h_pct": 7.635
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand Hegel nous dit que le devenir est une synth\u0000se de letre ct du non-\u0000tre, son affirmation n'a, d",
+      "bbox": {
+        "x_pct": 11.024,
+        "y_pct": 73.903,
+        "w_pct": 68.839,
+        "h_pct": 10.866
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Page number and running header were incorrectly labeled as text.",
+    "Small separator markers labeled as text instead of heading."
+  ],
+  "doc_id": "910",
+  "page": 3,
+  "elapsed_seconds": 7.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

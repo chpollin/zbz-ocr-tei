@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "540 Coups de sonde",
+      "bbox": {
+        "x_pct": 26.132,
+        "y_pct": 74.0,
+        "w_pct": 46.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Top line '540 Coups de sonde' is a page header/number combination, not paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "inspirée par cette « éthique des limites » dont parle, après Camus, Vargas Llosa, et que Jaspers avait en vue lorsqu'il recommandait, face à l'absolu, la modestie (sich bescheiden).",
+      "bbox": {
+        "x_pct": 26.132,
+        "y_pct": 11.03,
+        "w_pct": 70.971,
+        "h_pct": 9.117
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce n'est pas sans un vif sentiment de gêne et même de remords qu'on peut écrire aussi longuement sur les droits de l'homme. Il suffit de regarder les actualités — la faim, les camps de réfugiés, les bateaux sans asile balayés par la mer, le chantage, le mensonge exigé, les persécutions, les bidonvilles, les abus psychiatriques — pour avoir envie de poser la plume.",
+      "bbox": {
+        "x_pct": 25.985,
+        "y_pct": 20.088,
+        "w_pct": 71.074,
+        "h_pct": 15.829
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and layout representation to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant, comment se taire quand il semble parfois que la racine intérieure des droits de l'homme, cette racine absolue qui dit « Tu dois » ou qui dit « Non, à aucun prix » et qui devrait être au centre de tout enseignement des droits de l'homme, risque de s'atrophier? Sans elle, les droits perdent jusqu'à leur sens. Il faut la soigner, la nourrir, la stimuler, tout en préservant, en soi et en autrui, la mesure d'une incarnation toujours parfaite et progressive, à réaliser par bien des voies, et en particulier à l'aide d'instruments juridiques inspirés par la Déclaration universelle.",
+      "bbox": {
+        "x_pct": 25.779,
+        "y_pct": 35.358,
+        "w_pct": 71.088,
+        "h_pct": 26.497
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text to match complete paragraph."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial parsing failed to capture the complete text content in paragraphs.",
+    "The page number and chapter title were incorrectly labeled as paragraph text.",
+    "The bounding boxes in the original JSON did not align with the actual content blocks provided in the image."
+  ],
+  "doc_id": "2920",
+  "page": 38,
+  "elapsed_seconds": 3.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

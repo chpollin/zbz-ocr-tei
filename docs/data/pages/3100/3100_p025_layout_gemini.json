@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sibilité de parler. C’est pourquoi les hommes parlent tous, ils parlent d’innombrables langues, et ils peuvent apprendre les langues des autres: c’est qu’ils croient au sens d’un dire. Croire au sens d’un dire, c’est se situer au-delà ou en deçà de toute expérience et de toute rationalité, en quelque chose qu’en ce jour d’impudeur où je consens à parler ici, je pourrais appeler Dieu: cela me paraît mériter ce nom.",
+      "bbox": {
+        "x_pct": 14.988,
+        "y_pct": 7.407,
+        "w_pct": 65.375,
+        "h_pct": 12.04
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to match actual content in block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Posons maintenant sur ce fond le problème de nos croyances particulières. J’ai souvent employé une formule que vous m’excuserez de répéter: je crois que les hommes, très souvent, ne croient pas ce qu’ils croient croire. Et je crois qu’il est extrêmement difficile de savoir ce qu’on croit. La portée du «oui» des croyants, la portée du «non» des athées, quelle est-elle? Quand je dis «je crois», qu’est-ce que je crois? Quand je dis que je crois en Dieu, qu’est-ce que j’entends par Dieu? Et qu’est-ce que j’entends par cette existence que je prête ou que je reconnais à Dieu? Toute la théologie et toute la philosophie essaient de répondre à cette question. Et je pense qu’il est bon pour les êtres humains de laisser à Dieu le compte des siens. Parce que, véritablement, je ne vois pas comment on pourrait procéder autrement.",
+      "bbox": {
+        "x_pct": 15.125,
+        "y_pct": 19.299,
+        "w_pct": 65.27,
+        "h_pct": 23.818
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to match actual content in block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Simone Weil a dit qu’il faut se représenter Dieu à la fois comme personnel et comme impersonnel, sinon ce n’est pas Dieu qu’on se représente. C’est marquer évidemment qu’on ne peut pas se représenter Dieu, parce qu’on ne peut pas se représenter à la fois le personnel et l’impersonnel. La formule met en échec notre pouvoir de représentation. Elle m’empêche de m’installer confortablement dans la merveilleuse lumière divine de la rationalité, mais elle ne m’oblige pas à la renier. Elle empêcherait d’autre part M. Widmer de se représenter Dieu uniquement comme une personne, comme une liberté (d’un autre type, dit-il, mais faisant face à la liberté humaine). Ici encore je rejoins Spinoza: entre la liberté et la nécessité il ne doit guère y avoir de différence en Dieu. En disant cela, je sais bien que je dis quelque chose que je ne comprends pas. Mais il y a des formules qu’on ne comprend pas et qu’on prononce, et qui ont pourtant un sens, qui «signifient», dans le sens de faire signe dans une certaine direction.",
+      "bbox": {
+        "x_pct": 14.988,
+        "y_pct": 42.98,
+        "w_pct": 65.246,
+        "h_pct": 31.419
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to match actual content in block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je lisais récemment un livre de Heisenberg, qui rapporte des entretiens qu’il a eus avec Niels Bohr et avec Pauli: tous trois tombèrent d’accord pour dire qu’il n’y avait rien de plus stupide que de diviser le monde en deux domaines, celui dont on peut parler en termes clairs, et celui dont il ne faut pas parler du tout. A regarder les choses",
+      "bbox": {
+        "x_pct": 15.012,
+        "y_pct": 74.49,
+        "w_pct": 65.246,
+        "h_pct": 10.313
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to match actual content in block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "24",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 86.8,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was truncated/incomplete in all regions.",
+    "Page number 24 was missing from the initial layout detection."
+  ],
+  "doc_id": "3100",
+  "page": 25,
+  "elapsed_seconds": 5.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

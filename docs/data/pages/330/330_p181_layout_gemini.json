@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ 147",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header identified as section_header for IDÉOLOGIES ET RÉALITÉ and page number 147. Corrected from text/paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "chement 'on lui voue , le programme se pervertit ou devient nul sans quelques slogans auxquels il se cramponne. Il arrive que ces slogans, au fur et à mesure qu'ils s'appliquent moins à l'action, deviennent plus généreux et intellectuellement plus rigoureux, d'une cohérence abstraite. Au contraire, l'âme collective d'une nation ou d'une Église déborde de partout, par son ètre diffus, illimité, imprécis, n'importe quels slogans, programmes ou credo. C'est seulement lorsqu'elle perd la tranquille søreté de sa plénitude ontologique qu'elle cherche à se fixer dans sa différence, à se trouver des critères et des délimitations. Quand la substance s'anémie, le pourtour s'accuse. L'âme de la nation, l'âme de l'Église tendent à devenir parti nationaliste, parti clérical.",
+      "bbox": {
+        "x_pct": 5.613,
+        "y_pct": 12.415,
+        "w_pct": 84.499,
+        "h_pct": 24.75
+      },
+      "changed": true,
+      "change_reason": "Corrected the OCR text and associated tag to represent the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alors, c'est que l'inquisition n'est pas loin, ni la persécution des minorités. Rien n'est plus proche de la violence que la rigueur craintive d'une collectivité. La substance qui lui manque, elle l'exige de ses membres. Elle réclame la possession de leur ètre entier, sans résidu. Vaine, elle devient totalitaire par nécessité. Sa propre maigreur la rend dévorante. Paradoxalement, parce qu'elle n'est pas, elle tend à absorber jusqu'à le détruire l'ètre libre de l'individu, dont seule pourtant l'adhésion partielle pourrait la faire exister.",
+      "bbox": {
+        "x_pct": 5.376,
+        "y_pct": 36.631,
+        "w_pct": 84.499,
+        "h_pct": 18.422
+      },
+      "changed": true,
+      "change_reason": "Corrected the OCR text to match the content in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sujet libre lui-même induit souvent le parti en tentation : il lui offre une trop grande part de lui-même, une adhésion affective, la démission de son jugement, il lui demande sécurité et innocence dans l'action. La collectivité, de son côté, personnifie le parti, le substantifie, que ce soit pour le glorifier ou le persécuter. Ses risques, ses chances, les nécessités de la lutte avec les partis rivaux, les conflits et les alliances avec les forces sociales confuses que sont les âmes collectives, tout l'entraîne à s'attribuer aussi une existence substantielle, une fin propre, un prestige moral, sinon sacré. Il acquiert une mystique, un éclat spirituel, une force de séduction, au moment même où il trahit son rôle, rôle limité, subordonné, sobrement défini. Au lieu de rester en suspens devant la liberté individuelle qui le juge à l'aune de la valeur absolue, il s'érige à la fois en personne libre pour se substituer à l'individu, et en valeur absolue, capable de tout justifier, en autorité suprême qui dit le bien. Église sans Dieu, nation sans terre et sans le poids d'un passé, il érige son pouvoir tyrannique, rigoureux et ambigu.",
+      "bbox": {
+        "x_pct": 4.735,
+        "y_pct": 54.991,
+        "w_pct": 84.819,
+        "h_pct": 35.143
+      },
+      "changed": true,
+      "change_reason": "Corrected the OCR text to represent the complete paragraph."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was severely corrupted/misaligned with the text blocks.",
+    "Page number at top was grouped into a heading/text zone.",
+    "Incorrectly labeled segments for section header."
+  ],
+  "doc_id": "330",
+  "page": 181,
+  "elapsed_seconds": 10.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

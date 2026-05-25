@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 100,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "33",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 15.65,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vivre et mourir . La humaine est ici nette et manifeste; du moins tant qu'on se tient sur un certain",
+      "bbox": {
+        "x_pct": 9.896,
+        "y_pct": 13.49,
+        "w_pct": 68.508,
+        "h_pct": 36.497
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il ne faut pas sy méprendre. Ce est clair; ce sont deux termes   appartenant au donné: Pobjet s",
+      "bbox": {
+        "x_pct": 9.705,
+        "y_pct": 49.861,
+        "w_pct": 68.546,
+        "h_pct": 22.906
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Du de se comme point",
+      "bbox": {
+        "x_pct": 12.351,
+        "y_pct": 72.69,
+        "w_pct": 54.315,
+        "h_pct": 1.62
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "3 L'Etre et la Forme",
+      "bbox": {
+        "x_pct": 12.927,
+        "y_pct": 76.209,
+        "w_pct": 17.3,
+        "h_pct": 1.215
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header regions in original",
+    "Typographical error in original JSON text field for footnote"
+  ],
+  "doc_id": "110",
+  "page": 35,
+  "elapsed_seconds": 4.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

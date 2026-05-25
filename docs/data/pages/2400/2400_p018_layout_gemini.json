@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Herr Schmidheiny, Sie haben Ihre Antwort an Herrn Muheim gleich wieder ins Allgemeinphilosophische ausgeweitet. Ich würde gerne noch einen Augenblick beim Konkreten, bei den Härten der Wirklichkeit verweilen. Gestatten sie also, daß ich die Frage von Herrn Muheim noch einmal aufgreife und zuspitze. Sie forderten den Unternehmer dazu auf, mehr Risikofreude zu zeigen. Könnte es nicht sein, daß es sich dabei um ein Risiko handelt, das der Unternehmer gar nicht selbst auffangen muss. Daß er Risiken eingeht, die von anderen getragen werden müssen?",
+      "bbox": {
+        "x_pct": 8.056,
+        "y_pct": 5.24,
+        "w_pct": 64.891,
+        "h_pct": 27.606
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ScHMIDHEINY: Ich freue mich über diese Zuspitzung der Frage. Man unterscheidet ja oft zwischen Unternehmer und Manager, und ich glaube, die Unterscheidung wird oft zu Unrecht gemacht. Ein Element aber, das den Unternehmer gegenüber dem Manager charakterisiert, ist, daß er mit seinem Risikokapital haftet. Er begibt sich mit seinem Kapital in das Risiko, in die Gefahr, und das ist ein wesentliches Merkmal der Risikobereitschaft, die ich meine.",
+      "bbox": {
+        "x_pct": 8.056,
+        "y_pct": 34.956,
+        "w_pct": 65.133,
+        "h_pct": 22.416
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie haben, Herr Anderegg, in Ihrer Einleitung an frühere Zeiten erinnert. Denken wir an Kolumbus! Für ihn und Spanien wäre es sicherer gewesen, wenn er nicht mit einer für die damaligen Verhältnisse teuren Expedition nach Amerika aufgebrochen wäre. Er hätte anderen Menschen das Risiko erspart, aber hätte materielle Mittel gespart. Aber sind wir heute nicht froh, daß er damals aufgebrochen ist?",
+      "bbox": {
+        "x_pct": 8.128,
+        "y_pct": 57.111,
+        "w_pct": 65.145,
+        "h_pct": 20.619
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: ...daß er ein Schiff voller Matrosen hatte, denen nicht viel anderes übrig blieb, als mitzugehen, weil sie von irgendetwas leben mußten?",
+      "bbox": {
+        "x_pct": 8.37,
+        "y_pct": 79.862,
+        "w_pct": 64.577,
+        "h_pct": 8.69
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Wer trägt das Risiko?",
+      "bbox": {
+        "x_pct": 75.725,
+        "y_pct": 28.552,
+        "w_pct": 21.099,
+        "h_pct": 1.82
+      },
+      "changed": true,
+      "change_reason": "Relabeled text block in margin as caption"
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Der Unternehmer haftet",
+      "bbox": {
+        "x_pct": 75.447,
+        "y_pct": 51.696,
+        "w_pct": 18.309,
+        "h_pct": 3.202
+      },
+      "changed": true,
+      "change_reason": "Relabeled text block in margin as caption"
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Aber: die einen wollen, die andern müssen ins Risiko",
+      "bbox": {
+        "x_pct": 75.725,
+        "y_pct": 71.929,
+        "w_pct": 15.302,
+        "h_pct": 3.275
+      },
+      "changed": true,
+      "change_reason": "Relabeled text block in margin as caption"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 39.467,
+        "y_pct": 91.558,
+        "w_pct": 2.22,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer region"
+    }
+  ],
+  "score": 65,
+  "num_corrections": 8,
+  "issues": [
+    "Original text transcription was truncated in all main paragraphs.",
+    "Margin annotations were incorrectly labeled as main text.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "2400",
+  "page": 18,
+  "elapsed_seconds": 7.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

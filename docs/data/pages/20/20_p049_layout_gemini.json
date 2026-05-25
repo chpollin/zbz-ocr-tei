@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA MATIÈRE INCOMPRÉHENSIBLE",
+      "bbox": {
+        "x_pct": 28.53,
+        "y_pct": 77.294,
+        "w_pct": 43.193,
+        "h_pct": 10.353
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "47",
+      "bbox": {
+        "x_pct": 83.584,
+        "y_pct": 77.529,
+        "w_pct": 3.012,
+        "h_pct": 10.235
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle en est apparentée et je puis intérieurement la « mimer ». Au contraire, je n'ai aucun contact avec cette énorme indifférence. Celle des rochers environnants ne m'aurait pas frappé, car ils sont immobiles, et l'immobilité est humainement l'attitude normale de l'indifférence. Mais maintenant que grâce à sa violence et à son fracas l'indifférence de la cascade m'est apparue dans son impénétrabilité, celle de tout le paysage s'impose. Je vois l'épaisseur compacte, opaque, de la matière, dans laquelle ne peut entrer mon regard, à laquelle aucune interprétation humaine ne peut donner un sens, avec laquelle je ne peux ni m'unir, ni lutter. Toute communion sentimentale est morte. Le monde qui m'entoure n'est pas un contre-sens, je ne peux pas m'exaspérer contre lui, — c'est pire : il n'a pas de sens, c'est à dire qu'il est absurde de lui chercher un sens. Un abîme s'est ouvert entre la vie, proche et compréhensible, et l'inaccessible matière.",
+      "bbox": {
+        "x_pct": 11.34,
+        "y_pct": 11.983,
+        "w_pct": 76.506,
+        "h_pct": 49.152
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and misread text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Car dans un tel moment, le préjugé tombe, qui nous vient de la science, suivant lequel c'est la matière d'abord qui est compréhensible, et la vie ensuite, seulement en tant qu'elle se laisse ramener à de la matière. Comme s'il suffisait de pouvoir mesurer pour comprendre...",
+      "bbox": {
+        "x_pct": 11.702,
+        "y_pct": 60.505,
+        "w_pct": 76.355,
+        "h_pct": 15.882
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Imaginez que je me trouve sur la passerelle jetée par dessus la cascade en compagnie d'un psychologue auquel je confie ma bouleversante découverte. Il essayera de me calmer en m'expliquant les causes de cette impression si étrange. Un repas trop lourd,",
+      "bbox": {
+        "x_pct": 11.642,
+        "y_pct": 75.882,
+        "w_pct": 76.461,
+        "h_pct": 13.127
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Text content was severely misread in initial JSON generation.",
+    "Headers and page numbers were misclassified as body text.",
+    "Bbox coordinates seem to be misaligned with the visual regions shown in the overlay provided."
+  ],
+  "doc_id": "20",
+  "page": 49,
+  "elapsed_seconds": 4.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

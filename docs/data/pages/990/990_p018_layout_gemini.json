@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ficio 4 quella del tetto conico, fatto di bambú e di In occasione della prima cerimonia che si è tenuta dopo l'indipendenza, gli agenti dei riti hanno disegnato sul circuito del santuario, accanto a figure tradizionali, le bandiere del Malí. L'avvento straordinario dell'indipendenza veniva cosí registrato al livello della tradizione, in una prospettiva del tempo mitica, storica e politica. Questo ingresso dell'indipendenza nella tradizione - simbolizzata dalle bandiere - fu sottolineato dalle sei bandiere scelte; il numero sei è fondamentalmente legato alla genesi dell'universo e precisamente a quella del primo « seme » vivente, immagine dell'atomo, in quanto ne indica la formazione del sesso, dunque la sua riproduzione futura e la proliferazione della vita. Il tetto del Santuario, composto dai sei spigoli che mettono in luce lo stesso simbolismo, viene rifatto contemporaneamente all'intonacatura e alle pitture rituali del Santuario stesso.",
+      "bbox": {
+        "x_pct": 9.457,
+        "y_pct": 7.45,
+        "w_pct": 85.52,
+        "h_pct": 31.068
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and messy text content to reflect the actual readable text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Altri esempi forniti dalle cerimonie sessantennali del Sigui presso i Dogon, che si sono svolte dal 1967 in diverse regioni, e della durata complessiva di sei o otto anni, e dalle cerimonie annuali della società iniziatica del Komo presso i Bambara. Si tratta in tutti i casi di rendere di nuovo attuali alcune tappe importanti della storia mitica dell'umanità, in una prospettiva dinamica: quanto accade, cioè la storia, è introdotto in una continuità. I fruitori si rivolgono verso un passato compiuto ma sempre vivo - in quanto contiene i prolegomeni dei fondamenti della vita e del suo sviluppo, - assorbono il presente e guardano verso il futuro, in una stessa prospettiva. Dal che deriva l'introduzione pressoché perenne - nelle uscite di maschere dogon e bambara - di avvenimenti o fatti notevoli (maschera « marabut », « governatore », « etnologo », « aereo » poi « turista », « macchina elettronica », ecc.).",
+      "bbox": {
+        "x_pct": 8.944,
+        "y_pct": 38.518,
+        "w_pct": 85.973,
+        "h_pct": 29.503
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed erroneous placeholder segments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Presso i Bambara, l'insegnamento, essenzialmente religioso, impartito dalla società iniziatica del Komo, è basato su classificazioni di tipo enciclopedico degli esseri e delle cose: si tratta di insegnare progressivamente agli iniziati tutto ciò che della natura, della cultura, dell'uomo, della società, ecc. fu o è stato di recente registrato e classificato. Da qui la risposta degli iniziati ai sostenitori e agli « apostoli » dell'islamismo: « Il culto di Hallah è certamente veritiero, ma quello del Komo è l'evidenza stessa ».",
+      "bbox": {
+        "x_pct": 9.246,
+        "y_pct": 67.881,
+        "w_pct": 85.43,
+        "h_pct": 17.301
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled text representation of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mi sembra che questi esempi dimostrino come il problema della storia - e parallelamente della preistoria - cosí come viene concepito dalle civiltà dell'Africa occidentale è essenzialmente differente da come siamo soliti considerarlo noi.",
+      "bbox": {
+        "x_pct": 9.155,
+        "y_pct": 84.71,
+        "w_pct": 85.46,
+        "h_pct": 7.757
+      },
+      "changed": true,
+      "change_reason": "Corrected the text spelling and transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "246",
+      "bbox": {
+        "x_pct": 92.5,
+        "y_pct": 94.6,
+        "w_pct": 4.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number in text and reclassified as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Text content for all paragraphs was severely misidentified and garbled in the initial detection.",
+    "Page number 246 was incorrectly labeled as text.",
+    "Need to be more precise with OCR-like transcription."
+  ],
+  "doc_id": "990",
+  "page": 18,
+  "elapsed_seconds": 6.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

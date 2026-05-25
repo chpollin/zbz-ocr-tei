@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Bisher behandelte der „Bergedorfer Gesprächskreis zu Fragen der freien industriellen Gesellschaft“ folgende Themen:",
+      "bbox": {
+        "x_pct": 101.442,
+        "y_pct": 73.167,
+        "w_pct": 816.326,
+        "h_pct": 18.261
+      },
+      "changed": true,
+      "change_reason": "The original JSON had incomplete/misaligned title text; corrected to match the full document header."
+    },
+    {
+      "label": "table",
+      "zbz_tag": "zb_paragraph",
+      "text": "The table containing list of topics, referents, and moderators.",
+      "bbox": {
+        "x_pct": 83.79,
+        "y_pct": 122.64,
+        "w_pct": 845.16,
+        "h_pct": 770.14
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "58",
+      "bbox": {
+        "x_pct": 87.0,
+        "y_pct": 904.0,
+        "w_pct": 18.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Original JSON missed the page number in the footer region.",
+    "Title text in the original JSON was incomplete."
+  ],
+  "doc_id": "810",
+  "page": 60,
+  "elapsed_seconds": 6.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

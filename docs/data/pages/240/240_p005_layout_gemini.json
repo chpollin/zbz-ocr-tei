@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SOURCES HUMAINES DE LA DÉMOCRATIE 53",
+      "bbox": {
+        "x_pct": 322,
+        "y_pct": 208,
+        "w_pct": 358,
+        "h_pct": 19
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a dit souvent qu'une revanche assez basse de cette carence. Nous n'avons été dignes d'elle, ni par notre réflexion, ni par nos actes. Elle imposait clairement, dans le possible où rien ne permet à la volonté humaine de se dérober, des devoirs difficiles, mais concrets.",
+      "bbox": {
+        "x_pct": 22.619,
+        "y_pct": 23.204,
+        "w_pct": 49.557,
+        "h_pct": 7.338
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from extracted OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a dit de la démocratie qu'elle est le gouvernement par le peuple et on l'a justifiée par l'excellence de la volonté populaire (vox populi, vox Dei). Mais cela est aussi faux que de justifier le régime monarchique par un bon roi ou une bonne dynastie. Une fois postulée l'excellence des hommes qui portent un régime, tout le problème politique s'évanouit, et la politique elle-même. Dans une société d'anges, il n'y aurait pas de politique ; dans une société gouvernée par une élite incontestable, pas davantage. La politique, comme le droit, se fonde sur la claire reconnaissance du mal que sont portés à faire les hommes, et ici, particulièrement, les hommes au pouvoir. Elle doit être une technique permettant à la fois l'exercice du pouvoir et un contrôle de ce pouvoir destiné à limiter le mal.",
+      "bbox": {
+        "x_pct": 22.401,
+        "y_pct": 30.274,
+        "w_pct": 49.694,
+        "h_pct": 19.726
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from extracted OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "S'il y avait un signe objectif permettant de discerner l'élite véritable (par exemple un sang bleu), la politique se réduirait à la recherche de techniques administratives efficaces. Ce signe n'existant pas, il faut bien consentir à ce que les gouvernants soient contrôlés par tous les gouvernés. Il faut même le vouloir et le vouloir à tout prix, car si le mal existe, si l'élite reste indiscernable, ce régime démocratique — ce pis-aller — est la seule garantie de ce qui fait le prix de l'être humain : sa possible liberté.",
+      "bbox": {
+        "x_pct": 22.78,
+        "y_pct": 50.171,
+        "w_pct": 49.283,
+        "h_pct": 13.056
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from extracted OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelles que soient les formes constitutionnelles de ce contrôle, il faut avant tout qu'il y ait des hommes en grand nombre qui veuillent l'exercer et en soient capables.",
+      "bbox": {
+        "x_pct": 22.16,
+        "y_pct": 64.407,
+        "w_pct": 49.637,
+        "h_pct": 4.618
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from extracted OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce nous amène à poser que la condition sine qua non d'une démocratie réelle, c'est une éducation suffisante du peuple.",
+      "bbox": {
+        "x_pct": 22.24,
+        "y_pct": 68.831,
+        "w_pct": 49.476,
+        "h_pct": 4.47
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from extracted OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que faut-il pour qu'un citoyen soit capable d'exercer réellement son contrôle sur les gouvernants ?",
+      "bbox": {
+        "x_pct": 22.321,
+        "y_pct": 73.301,
+        "w_pct": 36.044,
+        "h_pct": 3.096
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from extracted OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut qu'il sache se situer dans l'espace réel de la vie",
+      "bbox": {
+        "x_pct": 26.164,
+        "y_pct": 76.243,
+        "w_pct": 45.689,
+        "h_pct": 1.847
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from extracted OCR."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 178,
+        "y_pct": 850,
+        "w_pct": 605,
+        "h_pct": 15
+      },
+      "changed": true,
+      "change_reason": "Identified as page footer/meta info."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 9,
+  "issues": [
+    "Initial labels were incorrect for header, footer and body text.",
+    "OCR extraction of paragraph text was fragmented and incomplete."
+  ],
+  "doc_id": "240",
+  "page": 5,
+  "elapsed_seconds": 5.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

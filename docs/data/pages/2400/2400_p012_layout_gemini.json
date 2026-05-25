@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nach Sicherheit Risiken schafft. Oder ist es umge kehrt? Streben wir nur deshalb nach Sicherheit, weil durch die allgemeine Entwicklung unsere Risiken größer werden? Und vielleicht hat man es weniger mit Tatsachen als vielmehr mit unterschiedlichen Auffassungen zu tun: Im allgemeinen scheint Risikofreude heute nicht hoch im Kurs zu stehen; Zustimmung findet, wer für Sicherheit plädiert. Das war aber nicht immer so. Es gab Zeiten, in denen der Einzelne dem Risiko sehr viel eher zugetan war als heute. Ich denke an die Bildungsreisen junger Leute im 17. und 18. Jahrhundert und an das abenteuerliche Unternehmertum von Kaufleuten in einer Welt, die noch nicht durch abgesicherte Verkehrsnetze erschlossen war.",
+      "bbox": {
+        "x_pct": 8.317,
+        "y_pct": 5.335,
+        "w_pct": 65.375,
+        "h_pct": 33.799
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wer von Sicherheit und Risiko spricht – er ziele nun auf die Beschreibung sogenannter Tatsachen oder aber auf die Analyse bestimmter Auffassungen oder Einstellungen – wird allemal die historischen Veränderungen zu bedenken haben. Und das heißt: Konkretisierung tut not, wenn wir im weiten Feld von Sicherheit und Risiko Fuß fassen wollen. Darum beginnen wir mit dem vielleicht konkretesten Bereich, mit dem Bereich der Wirtschaft und des Unternehmertums. Herr Schmidheiny, Sie sind so freundlich, unsere erste Runde zu eröffnen.",
+      "bbox": {
+        "x_pct": 8.475,
+        "y_pct": 39.374,
+        "w_pct": 65.133,
+        "h_pct": 26.805
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the content in the image accurately."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Sicherheit und Risiko: geht es um Tatsachen oder um Anschauungen?",
+      "bbox": {
+        "x_pct": 76.029,
+        "y_pct": 29.934,
+        "w_pct": 19.007,
+        "h_pct": 7.278
+      },
+      "changed": true,
+      "change_reason": "Relabeled as section_header because it serves as a sidebar title. Corrected text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 39.5,
+        "y_pct": 92.1,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as footer to be filtered out."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Transcription for the second paragraph was incomplete.",
+    "Sidebar item should be a section header.",
+    "Missing page number region."
+  ],
+  "doc_id": "2400",
+  "page": 12,
+  "elapsed_seconds": 5.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

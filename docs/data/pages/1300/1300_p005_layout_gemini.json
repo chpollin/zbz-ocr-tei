@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce n'est pas un problème dégalité, comme on le dit parfois. Ce n'est pas parce que le chirurgie",
+      "bbox": {
+        "x_pct": 7.003,
+        "y_pct": 6.404,
+        "w_pct": 79.373,
+        "h_pct": 7.544
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En outre; aucune société ne pourrait subsister sans un certains nombre de prestiges symboliques conc",
+      "bbox": {
+        "x_pct": 6.887,
+        "y_pct": 32.54,
+        "w_pct": 80.221,
+        "h_pct": 16.863
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le malade a besoin de reconnaître à son chirurgien les deux prestiges dont pOur que sa confiance seu",
+      "bbox": {
+        "x_pct": 7.282,
+        "y_pct": 49.12,
+        "w_pct": 80.139,
+        "h_pct": 20.505
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai dit: «avant» ou «après», et non «pendant». Nous retrouvons ici une des polarités «chirurgien-médecin» qui font la difficulté peut-être essentielle de votre profession et qu'il importe, je crois, d'élucider.",
+      "bbox": {
+        "x_pct": 7.933,
+        "y_pct": 69.873,
+        "w_pct": 79.408,
+        "h_pct": 4.545
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing intermediate paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pendant lopération, le chirurgien est tellement absorbé par son acte 'il ne peut pas être angoissé. ",
+      "bbox": {
+        "x_pct": 7.933,
+        "y_pct": 74.904,
+        "w_pct": 79.408,
+        "h_pct": 11.423
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "423",
+      "bbox": {
+        "x_pct": 83.212,
+        "y_pct": 88.0,
+        "w_pct": 4.195,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing text fragment identified as intermediate paragraph",
+    "Missing page number region"
+  ],
+  "doc_id": "1300",
+  "page": 5,
+  "elapsed_seconds": 8.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

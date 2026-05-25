@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "VII. La communication",
+      "bbox": {
+        "x_pct": 24.542,
+        "y_pct": 22.823,
+        "w_pct": 40.574,
+        "h_pct": 2.685
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1. Les conférences",
+      "bbox": {
+        "x_pct": 5.287,
+        "y_pct": 31.476,
+        "w_pct": 20.842,
+        "h_pct": 2.016
+      },
+      "changed": true,
+      "change_reason": "Corrected numbering format in text to match OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Votre œuvre de philosophe et de pédagogue déborde le cadre de l'enseignement scolaire et universitaire. Votre philosophie n'affirme-t-elle pas que la pensée humaine, loin de flotter dans les nuages, se trouve inscrite, qu'elle le veuille ou non, dans le temps et dans l'histoire ? Ne pensez-vous pas, en conséquence, qu'il y a une certaine continuité entre votre travail d'enseignante et les tâches qui relèvent de ce que le Père Fessard a appelé, à votre sujet, une « pédagogie de la vie » ?",
+      "bbox": {
+        "x_pct": 4.725,
+        "y_pct": 35.298,
+        "w_pct": 79.768,
+        "h_pct": 14.435
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. Je voudrais bien mériter ce que le Père Fessard a dit. S'il y a une continuité ? Certainement, je ne vois pas de rupture entre les conférences que j'ai données et mes cours. La seule différence, c'est que dans les conférences je me permets de prendre position, alors que dans mes cours je me suis toujours efforcée de faire comprendre les différentes doctrines en les présentant sous leur meilleur jour. Mais pour en revenir à la formule du Père Fessard, je pense et j'espère que mes prises de position se sont toujours rattachées au sens fondamental de ce que, à mes yeux, est et doit être un être humain. Je donnerai un exemple : j'ai fait récemment une conférence dans laquelle j'ai souligné, contre les opinions qui avaient cours lors des événements de mai 68, que l'être humain est aussi un animal, qu'il n'y a pas moyen d'être un homme si on n'assume pas ce qu'il y a en nous d'animal, tout en s'efforçant de lui donner forme humaine. — Il se trouve d'autre part que je me suis exprimée sur l'énergie atomique, et que je me suis prononcée pour le recours à l'énergie atomique, précisément parce que je pense que lorsqu'on fait l'ange on fait la bête : c'est la part d'animalité en nous qui fait que nous avons besoin d'énergie. Plus notre civilisation se développe — cette civilisation à laquelle je consens, que je trouve admirable et qui, malgré toutes les menaces qui peuvent surgir, donne toujours plus de chances à toujours plus d'hommes de devenir libres et responsables — cette civilisation, plus elle se",
+      "bbox": {
+        "x_pct": 4.64,
+        "y_pct": 49.089,
+        "w_pct": 79.853,
+        "h_pct": 41.935
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "165",
+      "bbox": {
+        "x_pct": 80.3,
+        "y_pct": 93.5,
+        "w_pct": 4.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified and added page number region."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text blocks were heavily truncated by OCR.",
+    "Section header numbering was inconsistent.",
+    "Page footer was missing."
+  ],
+  "doc_id": "2330",
+  "page": 169,
+  "elapsed_seconds": 6.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

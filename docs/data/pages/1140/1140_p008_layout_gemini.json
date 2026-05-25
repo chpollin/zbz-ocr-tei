@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "donc en un sens de plus en plus dure. Mais on ne réalisera jamais une société parfaitement juste; pa",
+      "bbox": {
+        "x_pct": 14.077,
+        "y_pct": 9.476,
+        "w_pct": 64.891,
+        "h_pct": 7.749
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans le rapport Faurel on trouve une idée comporte; à mon avis, une vérité dun côté et quelque chose",
+      "bbox": {
+        "x_pct": 14.102,
+        "y_pct": 17.282,
+        "w_pct": 65.052,
+        "h_pct": 39.755
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici se pose un problème de compossibilité: est-il possible de dire que tout le monde doit aller à lu",
+      "bbox": {
+        "x_pct": 14.206,
+        "y_pct": 56.621,
+        "w_pct": 64.98,
+        "h_pct": 11.681
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le but de la démocratisation ne doit pas être de procurer un <stansocial (sinon ilfaudrait plutôt la",
+      "bbox": {
+        "x_pct": 14.126,
+        "y_pct": 68.735,
+        "w_pct": 64.948,
+        "h_pct": 11.909
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Apprendre à être, rapport international sur léducation; Fayard-Unesco, 1972.",
+      "bbox": {
+        "x_pct": 14.263,
+        "y_pct": 82.775,
+        "w_pct": 65.028,
+        "h_pct": 3.191
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "7",
+      "bbox": {
+        "x_pct": 77.0,
+        "y_pct": 88.0,
+        "w_pct": 2.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Footnote text was missing the index number",
+    "Page number at bottom was missing a region"
+  ],
+  "doc_id": "1140",
+  "page": 8,
+  "elapsed_seconds": 6.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content.": 1,
+    "ADDED": 1
+  }
+}

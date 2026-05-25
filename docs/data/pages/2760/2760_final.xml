@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">HISTOIRE ENTRE TEMPS ET TRANSCENDANCE</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2760</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>HISTOIRE ENTRE TEMPS ET TRANSCENDANCE</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>unknown</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screen-t2" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Fehler, 1 Warning (W6: keine lb-Elemente -- akzeptabel fuer Buchkapitel); Overlay S1+S3: Buchseiten-Layout korrekt, S3 hat grosse Zones (Scan-Skalierung) aber Text passt; Text koherent, philosophischer Aufsatz Histoire entre temps et transcendance, dichtes Franzoesisch (+2 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1229" lry="1742">
+      <zone xml:id="facs_1_r_1" ulx="660" uly="618" lrx="810" lry="643" />
+      <zone xml:id="facs_1_r_2" ulx="461" uly="701" lrx="1010" lry="729" />
+      <zone xml:id="facs_1_r_3" ulx="401" uly="817" lrx="1068" lry="981" />
+      <zone xml:id="facs_1_r_4" ulx="398" uly="979" lrx="1069" lry="1246" />
+      <zone xml:id="facs_1_r_5" ulx="398" uly="1242" lrx="1069" lry="1487" />
+      <zone xml:id="facs_1_r_6" ulx="398" uly="1486" lrx="1067" lry="1567" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1229" lry="1742">
+      <zone xml:id="facs_2_r_1" ulx="184" uly="150" lrx="852" lry="389" />
+      <zone xml:id="facs_2_r_2" ulx="181" uly="393" lrx="851" lry="662" />
+      <zone xml:id="facs_2_r_3" ulx="182" uly="661" lrx="850" lry="845" />
+      <zone xml:id="facs_2_r_4" ulx="182" uly="847" lrx="851" lry="953" />
+      <zone xml:id="facs_2_r_5" ulx="182" uly="958" lrx="851" lry="1225" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1229" lry="1742">
+      <zone xml:id="facs_3_r_1" ulx="3922" uly="5096" lrx="10609" lry="5939" />
+      <zone xml:id="facs_3_r_2" ulx="3920" uly="5897" lrx="10620" lry="8049" />
+      <zone xml:id="facs_3_r_3" ulx="3929" uly="8052" lrx="10602" lry="9129" />
+      <zone xml:id="facs_3_r_4" ulx="3927" uly="9100" lrx="10633" lry="10982" />
+      <zone xml:id="facs_3_r_5" ulx="4362" uly="10977" lrx="8762" lry="11279" />
+      <zone xml:id="facs_3_r_6" ulx="3936" uly="11256" lrx="10622" lry="13147" />
+      <zone xml:id="facs_3_r_7" ulx="3927" uly="13093" lrx="10622" lry="15023" />
+      <zone xml:id="facs_3_r_8" ulx="4357" uly="15000" lrx="8323" lry="15283" />
+      <zone xml:id="facs_3_r_9" ulx="4339" uly="15533" lrx="10612" lry="15853" />
+      <zone xml:id="facs_3_r_10" ulx="7091" uly="16043" lrx="7435" lry="16287" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1229" lry="1742">
+      <zone xml:id="facs_4_r_1" ulx="185" uly="161" lrx="852" lry="318" />
+      <zone xml:id="facs_4_r_2" ulx="1141" uly="217" lrx="1229" lry="239" />
+      <zone xml:id="facs_4_r_3" ulx="1140" uly="243" lrx="1229" lry="269" />
+      <zone xml:id="facs_4_r_4" ulx="1142" uly="270" lrx="1229" lry="292" />
+      <zone xml:id="facs_4_r_5" ulx="183" uly="324" lrx="852" lry="458" />
+      <zone xml:id="facs_4_r_6" ulx="1141" uly="328" lrx="1228" lry="345" />
+      <zone xml:id="facs_4_r_7" ulx="1183" uly="350" lrx="1229" lry="372" />
+      <zone xml:id="facs_4_r_8" ulx="1141" uly="403" lrx="1229" lry="426" />
+      <zone xml:id="facs_4_r_9" ulx="1182" uly="429" lrx="1228" lry="451" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1229" lry="1742">
+      <zone xml:id="facs_5_r_1" ulx="390" uly="514" lrx="1060" lry="698" />
+      <zone xml:id="facs_5_r_2" ulx="390" uly="700" lrx="1060" lry="783" />
+      <zone xml:id="facs_5_r_3" ulx="389" uly="779" lrx="1059" lry="940" />
+      <zone xml:id="facs_5_r_4" ulx="387" uly="938" lrx="1060" lry="1072" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </head>
+        <p facs="#facs_1_r_2">
+          <bibl ref="#zbz-w.509">HISTOIRE ENTRE TEMPS ET TRANSCENDANCE</bibl>
+        </p>
+        <p facs="#facs_1_r_3">
+          Nous vivons de façon si constante dans le temps que lorsqu'il change, selon ce qui le remplit, de nature et de structure, nous ne nous en apercevons pas. Nous admettons comme allant de soi que le monde ambiant, avec notre propre corps, ainsi que la conscience que nous en avons, durent et changent dans un temps qui leur est commun et qui reste identique à lui-même à travers tous les changements.
+        </p>
+        <p facs="#facs_1_r_4">
+          Pourtant, à la réflexion, il paraît évident que les savants qui s'attachent à l'étude des phénomènes de la nature pour ensuite nous en rapporter l'histoire - ou les histoires - recourent à un temps spécifique. Ils mesurent les intervalles entre des moments du devenir, le long d'un temps à une seule dimension, c'est-à-dire s'écoulant dans un seul sens, et dénué de présent. Les seuls repères, le long de cet écoulement, ce sont ceux d'"avant" et d'"après", et d'intervalle entre les deux. Ce temps, où des intervalles peuvent être mesurés, fonctionne dans les équations de la physique. En revanche, les notions de passé ou de futur n'y ont aucun sens, faute d'un présent pour les séparer.
+        </p>
+        <p facs="#facs_1_r_5">
+          Mais le premier paradoxe auquel nous nous heurtons est déjà là: ce temps sans mystère, unidimensionnel et mesurable, dont les physiciens se servent sans risquer aucun autre démenti expérimental que celui de l'insaisissable simultanéité, reste tout-à-fait inconcevable tant qu'on n'y introduit pas, subrepticement, une conscience, - "témoin" devant lequel se déroule le processus naturel. La nature n'a d'"histoire" que pour ce "témoin", car quelle sorte de réalité peut bien avoir "le moment d'avant" ou "le moment d'après" d'une nature dénuée de conscience? La nature, semble-t-il, est si étrangère au temps qu'elle n'est là qu'au présent.
+        </p>
+        <p facs="#facs_1_r_6">
+          Et pourtant le temps de la nature se ne laisse pas réduire à un idéalisme pur, puisqu'il constitue un facteur nécessaire, réel, de ce qui s'y passe. Toutes choses égales d'ailleurs, il faut "du temps" pour que l'eau
+        </p>
+        <p>
+          147
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          se mette à bouillir, pour que la goutte qui tombe creuse le rocher, pour que le poussin devienne poule. Il y a donc bien une histoire des phénomènes naturels, dont le devenir "prend du temps", avec ou sans observateur. Mais ce temps de la nature est pour nous encore bien plus inconcevable que celui que nous vivons, en tant qu'homme, entre la naissance et la mort. Il est tellement inconcevable qu'après cette courte digression sur les bords du kantisme je renonce à le comprendre ou à l'imaginer, pour m'en tenir à celui de l'histoire humaine, tel que nous le vivons quand nous y vivons.
+        </p>
+        <p facs="#facs_2_r_2">
+          Le temps vécu par les hommes, contrairement à celui que les physiciens mesurent dans la nature, est centré sur un présent, autour duquel s'articulent, de part et d'autre, un passé et un avenir. Telles sont les trois dimensions qui lui sont indispensables. Il est donc constitué par le présent - par la présence - d'une conscience, celle d'un sujet à la fois acteur et témoin. Tout moment du temps est un présent - actuel ou virtuel - d'acteur actuel ou virtuel. C'est ce que la langue appelle "le présent historique", qui peut se situer en n'importe quel point du passé ou du futur, mais qui se caractérise par la présence du monde à tel sujet donné, permettant à celui-ci d'y inscrire une action.
+        </p>
+        <p facs="#facs_2_r_3">
+          Il est étrange de constater combien nous sommes peu conscients du fait que pour agir il faut avoir un monde, et que nous n'avons un monde qu'au présent. Le monde passé est désormais pour nous hors d'atteinte. Le monde à venir n'est pas encore là. Pour qui veut agir, manquer le présent est irréparable. Savoir ce qu'on aurait voulu faire à tel moment du passé, ou ce qu'on rêve de faire à tel moment du futur, ne donne aucune prise sur le réel.
+        </p>
+        <p facs="#facs_2_r_4">
+          Le présent de l'agent historique est donc constitutif de l'histoire, et il se double de celui du témoin historique, pour qui le présent de l'agent devient présent historique. Tous deux sont indispensables pour qu'il y ait histoire.
+        </p>
+        <p facs="#facs_2_r_5">
+          Mais ils ne suffisent pas. Pour qu'il y ait histoire, il faut encore que la dimension du passé soit vécue pleinement "au passé". Il faut que soit reconnu, explicitement ou implicitement, "l'être du passé", que l'historien s'efforcera de rejoindre. C'est-à-dire que ce qui s'est passé et ce qui a été fait dans le passé devient, en tant que passé, immuable. Faute de quoi il n'y aurait plus, pour l'historien, de "vérité" à rejoindre; du point de vue de la "vérité historique", une version des faits et des actions en vaudrait une autre. L'histoire des hommes s'écrirait à la surface de l'eau. La recherche perdrait son sens. Il est à la mode aujourd'hui de nier le critère de cette adéquation du récit à "ce qui s'est réellement passé", -
+        </p>
+        <p>
+          148
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          mais je pense qu'il faudrait dans ce cas être conséquent et reconnaître que l'histoire et ses méthodes scientifiques n'ont pas de sens et doivent être remplacées par l'épopée ou le roman.
+        </p>
+        <p facs="#facs_3_r_2">
+          Pourtant, qu'est-ce que ce passé, non malléable, non substituable, qui reste à jamais tel qu'il a été? “Où est désormais ce passé? Quelle en est la nature, la “réalité”? On dira qu'il persiste dans le souvenir, ou dans des traces et des documents qu'on pourrait retrouver, ou dans des conséquences qui permettraient de remonter à leurs causes, - et tout cela comporte une part de réalité. Mais notre sens du passé, c'est encore autre chose. Nous sommes au fond convaincus que le passé est à jamais tel qu'il a été.
+        </p>
+        <p facs="#facs_3_r_3">
+          Avec les époques, les interprétations de ce passé changent. Mais si elles changent, c'est pour mieux rejoindre ce passé tel qu'il a été, pour mieux saisir les intentions qui furent celles de ses acteurs, de mieux comprendre les causes agissantes lorsqu'elles ont agi.
+        </p>
+        <p facs="#facs_3_r_4">
+          Tous les livres d'histoire, tous les professeurs, nous ont enseigné que <persName ref="#zbz-p.788">Brutus</persName> avait tué <persName ref="#zbz-p.789">César</persName>. A supposer que nul n'en doute et que personne ne dise ni n'écrive autre chose jusqu'à la fin de l'humanité, - si c'est un autre que <persName ref="#zbz-p.788">Brutus</persName> qui a tué <persName ref="#zbz-p.789">César</persName>, la thèse selon laquelle <persName ref="#zbz-p.788">Brutus</persName> a tué <persName ref="#zbz-p.789">César</persName> restera fausse jusqu'à la fin des temps vécus par les hommes. D'ailleurs, personne n'en doute. Nous croyons tous, bon gré mal gré, à l'immuabilité du passé, qui fut un présent où des hommes ont agi.
+        </p>
+        <p facs="#facs_3_r_5">
+          Sans un tel passé, le temps vécu se décompose.
+        </p>
+        <p facs="#facs_3_r_6">
+          Le futur, tout différent, n'est pas symétriquement inverse. Le témoin ou l'agent historique n'est pas dans le futur. Il est dans le présent, avec une imminence de futur: le futur va être. Il implique à la fois une certitude et une indétermination. Il est la dimension du possible, de la visée, de la liberté. Il s'ouvre au présent de l'agent, qui est le futur de son passé historique. Ce qui est possible maintenant pour l'agent devient, comme passé, immuable pour l'historien.
+        </p>
+        <p facs="#facs_3_r_7">
+          Toute la condition humaine se joue dans ce glissement, cette substitution, et cette irréductible incompatibilité. Causalité, finalité, liberté. Causalité, grâce à l'immuabilité du passé. Finalité, grâce à la disponibilité partielle de l'avenir. Liberté, grâce à la “petite durée” du présent, qui ne s'écoule pas, mais s'effiloche vers le passé et le futur. Responsabilité, à cause du glissement, de la continuité inconcevable des dimensions contradictoires et réciproquement indispensables.
+        </p>
+        <p facs="#facs_3_r_8">
+          D'où: l'historicité de chaque sujet humain.
+        </p>
+        <p facs="#facs_3_r_9">
+          D'où: l'histoire.
+        </p>
+        <p facs="#facs_3_r_10">
+          L'histoire du monde physique, réduite au seul temps unidimensionnel
+        </p>
+        <p>
+          149
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          des intervalles entre causes et effets, ne nous ramène pas, comme on a souvent tendance à le croire, à un positivisme simpliste, mais au temps de la nature, dans son impénétrabilité. Pour l'être humain, le cœur des sciences, et déjà de leur possibilité, est plus mystérieux, plus inapprochable, que le cœur du temps vécu. Ce mystère, <persName ref="#zbz-p.5">Heidegger</persName> me semble l'avoir méconnu.
+        </p>
+        <p facs="#facs_4_r_2">
+          Le temps de la nature, nous ne savons pas "ce qu'il est". Mais nous savons qu'il ne peut pas "être rien". Le temps de <persName ref="#zbz-p.6">Kant</persName>, "forme a priori de la sensibilité", si génialement efficace qu'il soit comme langage philosophique, ne rend pas compte de sa souveraine réalité, que son opacité ne peut que rendre plus dense encore.
+        </p>
+        <p facs="#facs_4_r_3">
+          Le "big bang", quel que puisse être son succès en tant qu'hypothèse scientifique, ne peut que nous contraindre à faire plus concrètement l'expérience de cette opacité. Il supprime la question, il n'y répond pas.
+        </p>
+        <p facs="#facs_4_r_4">
+          Il me faut maintenant préciser le sens de mon titre "<bibl ref="#zbz-w.509">Histoire entre temps et transcendance</bibl>".
+        </p>
+        <p facs="#facs_4_r_5">
+          D'après ce qui précède, "histoire" ici ne peut signifier qu'"histoire humaine" et "temps" ne peut signifier que "temps humainement vécu". Parler d'"histoire de l'univers" ou d'"histoire naturelle" ou "physique", implique une double extrapolation. La première prolonge à l'infini - ou plutôt : "à l'indéfini", le temps fait d'intervalles dont se sert la science, vers "un commencement" et "une fin" imaginaires et inimaginables. La seconde consiste à introduire "quelque part", ou : virtuellement "n'importe où" - donc : virtuellement : "partout" - un observateur humain, une conscience, pour laquelle ce "temps" pourra constituer "une histoire".
+        </p>
+        <p facs="#facs_4_r_6">
+          Mais en dehors de ces conditions imaginaires, il n'y a d'histoire que pour des hommes ; le critère, pour eux, d'une "situation historique", c'est que leur temps s'articule, à partir du présent de leur présence, en passé immuable et en futur qui dépend encore en partie de leur action dans leur "petite durée".
+        </p>
+        <p facs="#facs_4_r_7">
+          D'après ce qui précède, la condition historique est si contradictoire et si béante - alors que s'imposent les exigences concrètes, situées, de l'action hic et nunc -, que les hommes ont constamment cherché à la rattacher à une "métaphysique" déterminée, à une "transcendance" révélée et racontée. Mais cela revient aussitôt à empiéter sur les discontinuités constitutives du temps vécu, et par conséquent à lui faire perdre son devenir (au sens fort) pour le remplacer par un déroulement, dérivé du récit métaphysique. Dès lors, cette "histoire" n'est plus une histoire humaine, faute de discontinuité, d'incertitude et d'enjeux.
+        </p>
+        <p facs="#facs_4_r_8">
+          Il n'y a pas d'histoire humaine sans temps vécu, au sens décrit ci-
+        </p>
+        <p facs="#facs_4_r_9">
+          150
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          151
+        </p>
+        <p facs="#facs_5_r_2">
+          dessus. Mais parce que ce temps vécu reste contradictoire et discontinu, il implique, pour la liberté responsable constitutive du présent et de cette discontinuité même, une référence, interrogative et absolue, à ce qui transcende le temps en toutes ses structures et toutes ses dimensions. Transcendance qui, loin d'abolir les discontinuités ou de résoudre les contradictions, les rend, dans la condition humaine, définitives, - ou plutôt: sans cesse renaissantes.
+        </p>
+        <p facs="#facs_5_r_3">
+          Condition humaine disloquée, écartelée, sans solution - mais historique et libre. Avec tout juste l'ignorance nécessaire à une possible recherche d'un sens, à un pauvre, indestructible espoir.
+        </p>
+        <p facs="#facs_5_r_4">
+          Le sujet agissant dans l'histoire se sert parfois de la transcendance pour échapper de son mieux à sa condition temporelle. Il le fait alors en isolant et en absolutisant une seule des dimensions du temps vécu. Il peut recourir à l'être indestructible du passé en y situant l'âge d'or. Il peut recourir à la malléabilité du futur et à la constante fuite en avant qu'il permet.
+        </p>
+        <p>
+          Mais la transcendance est au présent, dans cette "petite durée" qui joint et sépare le passé et l'avenir, qui ne s'écoule pas puisqu'elle permet la pensée et la mélodie, qui s'effiloche seulement en ses extrémités en passé et en futur, en souvenir et en projet, et que j'ai appelée, parce qu'elle ne s'écoule pas, miniature d'éternité.
+        </p>
+      </div>
+      </body></text>
+</TEI>

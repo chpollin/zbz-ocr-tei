@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "la Et au bout de vingt-quatre heures, tu seras notre proie: par toutes nos pattes, par notre dard nous sucerons tout ton sang. Telle est la loi du dragon, notre maître! A moins – et ici le scarabée éclata d'un rire perçant – à moins que l'homme, avant vingt-quatre heures, n'ait tué le dragon, notre maître! Car alors c'est lui que nous servirons fidèlement, hi, hi, hi, hi...! et ton sort dépendra de sa volonté...» Le scarabée fit un nouveau bond, enfonça encore une fois ses pattes dans la chair: «Le veux-tu?» Et le Chevalier répondit «Oui».",
+      "bbox": {
+        "x_pct": 10.145,
+        "y_pct": 11.389,
+        "w_pct": 65.976,
+        "h_pct": 33.956
+      },
+      "changed": true,
+      "change_reason": "The text was incorrectly truncated/corrupted in the initial OCR parsing, corrected to reflect the full content visible in the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aussitôt, mille piqûres brûlantes s'abattirent sur son corps. Son cri s'étouffa dans son gosier. Il voulut passer la main sur sa peau torturée; mais il sentit seulement que quelque chose de dur était repoussé par quelque chose de dur. Il était séparé de son propre cœur. Sa douleur même lui devenait étrangère. Il savait seulement qu'il avait une haine et un amour. Il lui fallait aller vers l'objet de sa haine. Il avança.",
+      "bbox": {
+        "x_pct": 10.097,
+        "y_pct": 47.753,
+        "w_pct": 65.988,
+        "h_pct": 28.232
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated text content to match the visible text within the paragraph block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "45",
+      "bbox": {
+        "x_pct": 72.338,
+        "y_pct": 82.529,
+        "w_pct": 2.454,
+        "h_pct": 2.378
+      },
+      "changed": true,
+      "change_reason": "Page number identified at bottom right, correctly classified as page_footer/filter."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text for both paragraphs was heavily fragmented and truncated.",
+    "Page number at the bottom was missing from the initial detection."
+  ],
+  "doc_id": "2260",
+  "page": 43,
+  "elapsed_seconds": 4.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

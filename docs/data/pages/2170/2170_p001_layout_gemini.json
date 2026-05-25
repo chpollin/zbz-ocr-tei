@@ -1,0 +1,154 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La condition humaine pour un Europ\u0000en daujourdhui",
+      "bbox": {
+        "x_pct": 3.868,
+        "y_pct": 15.29,
+        "w_pct": 24.714,
+        "h_pct": 8.163
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si loin que nous remontions dans Thistoire de lesprit europ\u0000en, il semble avoir eu, plus ou moins cl",
+      "bbox": {
+        "x_pct": 3.924,
+        "y_pct": 26.18,
+        "w_pct": 27.8,
+        "h_pct": 14.555
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lanalyse se veut s'efforce de dissocier les faits et les symboles, de dissoudre les antith\u0000ses indis",
+      "bbox": {
+        "x_pct": 3.844,
+        "y_pct": 67.673,
+        "w_pct": 28.203,
+        "h_pct": 22.555
+      },
+      "changed": true,
+      "change_reason": "Corrected minor punctuation and text transcription artifacts"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Celles-ci sont apparues comme formant un complexe de facteurs divers ou m\u0000me contradictoires, entre",
+      "bbox": {
+        "x_pct": 3.844,
+        "y_pct": 40.629,
+        "w_pct": 28.445,
+        "h_pct": 27.314
+      },
+      "changed": true,
+      "change_reason": "Corrected broken word 'formant' and punctuation"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les exigences de la condition humaine on dirait que les Europ\u0000ens daujourdhui sont trop fatigu\u0000s pou",
+      "bbox": {
+        "x_pct": 33.981,
+        "y_pct": 15.347,
+        "w_pct": 28.364,
+        "h_pct": 7.29
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chacun sait, chacun sent que ce n'est pas fini, que le totalitarisme continue et va continuer \u0000 mult",
+      "bbox": {
+        "x_pct": 34.005,
+        "y_pct": 58.857,
+        "w_pct": 28.203,
+        "h_pct": 22.588
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est vrai que les forfaits de notre si\u0000cle ne sont pas faits pour rendre cette condition plus acceptabl",
+      "bbox": {
+        "x_pct": 34.061,
+        "y_pct": 22.612,
+        "w_pct": 28.413,
+        "h_pct": 36.302
+      },
+      "changed": true,
+      "change_reason": "Corrected missing 'vrai' and minor punctuation"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Structures et institutions sont discr\u0000dit\u0000es. Elles ont perdu leur caract\u0000re symbolique qui justifiait",
+      "bbox": {
+        "x_pct": 34.085,
+        "y_pct": 80.71,
+        "w_pct": 28.018,
+        "h_pct": 9.518
+      },
+      "changed": true,
+      "change_reason": "Fixed clipped word completion"
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Der Wilton-Park-Idee zugetan: die Genfer Philosophieprofessorin Jeanne Hersch",
+      "bbox": {
+        "x_pct": 64.118,
+        "y_pct": 57.167,
+        "w_pct": 23.852,
+        "h_pct": 5.796
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du bon droit, de la dignit\u0000 humaine, de la v\u0000rit\u0000, et elles s'y trouvent encore dans de nombreux pays",
+      "bbox": {
+        "x_pct": 64.037,
+        "y_pct": 66.122,
+        "w_pct": 28.63,
+        "h_pct": 22.343
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "22",
+      "bbox": {
+        "x_pct": 11.23,
+        "y_pct": 88.58,
+        "w_pct": 2.45,
+        "h_pct": 2.12
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region"
+    }
+  ],
+  "score": 85,
+  "num_corrections": 6,
+  "issues": [
+    "Missing page number region identification in original",
+    "Several text regions contained minor OCR transcription artifacts",
+    "One text region was slightly miscropped/clipped in original labels"
+  ],
+  "doc_id": "2170",
+  "page": 1,
+  "elapsed_seconds": 6.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

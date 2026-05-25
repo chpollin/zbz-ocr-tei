@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ŒUVRE DU VINGTIÈME SIÈCLE 81",
+      "bbox": {
+        "x_pct": 201.0,
+        "y_pct": 339.0,
+        "w_pct": 461.0,
+        "h_pct": 33.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header containing running title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "quelle fut la valeur de la réponse implicitement donnée par le festival dans son ensemble.",
+      "bbox": {
+        "x_pct": 7.518,
+        "y_pct": 36.716,
+        "w_pct": 48.783,
+        "h_pct": 3.176
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une remarque d'abord : une partie de la presse parisienne (aussi bien des journaux « de gauche » que d'autres, conservateurs à outrance) ont présenté le festival comme une machine de guerre américaine, prétendant que n'avaient été conviés aux conférences et aux entretiens que des personnalités d' « extrême droite », voire fascistes. On a été jusqu'à faire dire à certains orateurs, sous l'apparence d'une citation littérale, le contraire de ce qu'ils avaient dit en réalité, de préférence lorsque ce « contraire » était ridicule ou odieux, ou bien ridicule et odieux à la fois.",
+      "bbox": {
+        "x_pct": 7.357,
+        "y_pct": 40.439,
+        "w_pct": 48.993,
+        "h_pct": 14.447
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed formatting."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces calomnies doivent être démenties. La plupart de ceux qui prirent la parole étaient des démocrates de gauche. La plupart dénoncèrent les vices du régime occidental, ces vices altérèrent en fait la liberté qui est aujourd'hui son drapeau. Plusieurs mirent en garde contre les dangers fascistes qui menacent aujourd'hui en plusieurs points du globe et que la pression communiste risque trop, parfois, de faire oublier. A maintes reprises, on réaffirma la nécessité de comprendre mieux le véritable sens du régime communiste, d'une part pour le mieux combattre, mais de l'autre aussi afin de sauvegarder, au delà de la division politique ou idéologique, l'unité plus profonde des aspirations humaines et la possibilité d'un dialogue universel.",
+      "bbox": {
+        "x_pct": 7.494,
+        "y_pct": 55.57,
+        "w_pct": 49.073,
+        "h_pct": 19.059
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "S'il y eut quelque chose à reprocher à ceux qui prirent la parole dans les deux conférences publiques ou dans les entretiens, c'est que trop souvent ils se montrèrent incapables de s'insérer dans l'ensemble de la séance, d'atteindre à la concision et à la netteté que de telles circonstances exigent. La diversité est bonne, mais elle ne doit pas rester désorganisée, éparse ; il faut que l'auditeur saisisse avec précision le point où les divergences s'affrontent, afin d'appliquer là sa propre réflexion. Trop souvent la succession lâche, non centrée, des monologues fut ressentie comme illustrant non pas la vraie liberté qui devrait être celle de l'Occident, mais une certaine négligence molle, tolérante non par respect de la",
+      "bbox": {
+        "x_pct": 7.494,
+        "y_pct": 74.726,
+        "w_pct": 49.13,
+        "h_pct": 17.731
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "6",
+      "bbox": {
+        "x_pct": 108.0,
+        "y_pct": 924.0,
+        "w_pct": 12.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "The OCR text provided in the source JSON was incomplete/corrupted compared to the visual image.",
+    "Page header was labeled as generic text.",
+    "Page number at bottom was labeled as generic text.",
+    "OCR errors within paragraph content necessitated correction."
+  ],
+  "doc_id": "250",
+  "page": 4,
+  "elapsed_seconds": 6.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

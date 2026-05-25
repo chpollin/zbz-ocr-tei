@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "68 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 97.0,
+        "y_pct": 60.0,
+        "w_pct": 2.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Page header labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "légal. Du légal, de la légalité. Les Européens ont accompli des pas décisifs de leur histoire lorsqu'ils ont spécifié les divers domaines de la vie collective, en réalisant par exemple la séparation de l'Eglise et de l'Etat. Ils ont spécifié les plans et leur ont donné à chacun une forme légale propre, s'imposant en tant que forme. Je crois que c'est grâce au prestige des formes, en Europe — je ne veux pas faire ici de développement philosophique — mais c'est grâce au prestige des formes en Europe que l'Europe a été une terre où s'est développée la liberté. Le prestige du formel est lié à la liberté. Or, dans cette France où le nationalisme est ainsi en croissance, celui-ci s'accompagne d'une perte du formel et de la légalité comme telle, les actes arbitraires se multiplient avec de bonnes ou de mauvaises justifications, selon les options de chacun, mais peu importe. Ils se multiplient des deux côtés, et même du côté du pouvoir, tandis que les intellectuels qui s'opposent à lui défendent de leur côté « le droit à l'insoumission » — ce qui est une contradiction dans les termes : à partir du moment où il y a un droit à l'insoumission, il n'y a plus d'insoumission. Il peut y avoir un devoir d'insoumission, à mon avis, il est absurde de parler ici de droit.",
+      "bbox": {
+        "x_pct": 9.075,
+        "y_pct": 11.004,
+        "w_pct": 81.057,
+        "h_pct": 58.031
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette perte du formel, ce nationalisme grandissant et se personnifiant risque de provoquer en Allemagne, à la longue, des réactions extrêmement dangereuses. M. Lüthy nous a parlé hier de cette habitude que les Allemands ont prise d'avaler les couleuvres 1. Mais il y a une limite à l'avalement des",
+      "bbox": {
+        "x_pct": 9.247,
+        "y_pct": 69.431,
+        "w_pct": 80.713,
+        "h_pct": 13.9
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Voir p. 52.",
+      "bbox": {
+        "x_pct": 14.1,
+        "y_pct": 86.9,
+        "w_pct": 14.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing footnote region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header were not correctly labeled.",
+    "OCR text in the provided input was severely truncated and broken.",
+    "Footnote was completely ignored by the original detection model."
+  ],
+  "doc_id": "530",
+  "page": 9,
+  "elapsed_seconds": 4.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

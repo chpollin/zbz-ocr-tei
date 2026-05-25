@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DA 15491",
+      "bbox": {
+        "x_pct": 30.328,
+        "y_pct": 1.023,
+        "w_pct": 26.499,
+        "h_pct": 4.744
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 31.932,
+        "y_pct": 7.608,
+        "w_pct": 28.454,
+        "h_pct": 2.408
+      },
+      "changed": true,
+      "change_reason": "Author name at top of document should be classified as a section_header/heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'ENNEMI CEST LE NIHILISME",
+      "bbox": {
+        "x_pct": 11.206,
+        "y_pct": 16.916,
+        "w_pct": 70.211,
+        "h_pct": 3.328
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ANTITHÈSES",
+      "bbox": {
+        "x_pct": 15.07,
+        "y_pct": 34.359,
+        "w_pct": 63.302,
+        "h_pct": 7.679
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "AUX THÈSES DE LA COMMISSION FÉDÉRALE POUR LA JEUNESSE",
+      "bbox": {
+        "x_pct": 15.304,
+        "y_pct": 44.98,
+        "w_pct": 61.124,
+        "h_pct": 9.992
+      },
+      "changed": true,
+      "change_reason": "Subtitle/bibliographic entry should be classified as section_header/heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "GEORG GENÈVE 1981",
+      "bbox": {
+        "x_pct": 26.464,
+        "y_pct": 89.748,
+        "w_pct": 39.262,
+        "h_pct": 2.911
+      },
+      "changed": true,
+      "change_reason": "Bibliographic publisher and year entry should be classified as section_header/heading."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "6",
+      "bbox": {
+        "x_pct": 90.948,
+        "y_pct": 2.832,
+        "w_pct": 3.747,
+        "h_pct": 2.596
+      },
+      "changed": true,
+      "change_reason": "Page number must be labeled as page_footer/filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Ju",
+      "bbox": {
+        "x_pct": 93.56,
+        "y_pct": 3.721,
+        "w_pct": 6.288,
+        "h_pct": 3.989
+      },
+      "changed": true,
+      "change_reason": "Running header artifact should be classified as page_header/filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Misclassification of author name as paragraph",
+    "Misclassification of subtitle as paragraph",
+    "Misclassification of bibliographic imprint as paragraph",
+    "Page number not filtered",
+    "Running header fragment not filtered"
+  ],
+  "doc_id": "1810",
+  "page": 5,
+  "elapsed_seconds": 4.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "wir versuchten; unser Sprechen irgendwie mit der Wirklichkeit dessen, was wir ausdrücken wollten, zusammenzubringen. Das muß einen Sinn haben. Diese Unerreichbarkeit unserer selbst muß einen Sinn haben. Allerdings ist es sehr schwer zu sagen, welchen Sinn das hat, denn wir besitzen ihn nicht auf eine Weise, die uns erlaubt, von ihm ohne Widersprüche und Paradoxien zu sprechen. Es gibt Leute, die glauben, daß wir möglicherweise mit dem Sprechen etwas könnten, das wir eigentlich nicht können – aber das ist eben nicht der Fall. Wir können auch mit dem Sprechen nicht das tun, was wir möchten, ohne in diese Paradoxien zu geraten.",
+      "bbox": {
+        "x_pct": 7.59,
+        "y_pct": 4.399,
+        "w_pct": 85.225,
+        "h_pct": 24.927
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und hier kommen wir zu einem anderen Punkt des philosophischen – soll man sagen ‚Wissen‘, ich weiß nicht, vielleicht ist das ein Wissen. Wir können das nicht in Kauf nehmen, sondern wir müssen für unser Sein etwas daraus schließen. Unser Sein läuft uns weg, droht zu verschwinden in diesen Paradoxien. Deswegen glaube ich, daß man etwas Menschliches ruhiger, wie soll man sagen, besitzen kann, wenn man sich mit unserer condition humaine versöhnt, wenn man sie irgendwie annimmt, wenn man in diesem Punkt resigniert, denn dann kann man in dieser Art Resignation vielleicht das Aufregende der Paradoxien anerkennen.",
+      "bbox": {
+        "x_pct": 7.38,
+        "y_pct": 31.302,
+        "w_pct": 85.18,
+        "h_pct": 24.317
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir können es vielleicht noch deutlicher zeigen, wenn wir an die Freiheit denken, wenn wir daran denken, daß wir etwas frei oder nicht frei tun. Das ist im Grunde dasselbe, denn wir können nie sagen, daß das, was wir tun, nur frei ist. Wir müssen diesen Paradoxien Raum lassen, diesen Paradoxien, die sich nicht regeln lassen. Daß sie sich nicht regeln lassen, müssen wir anerkennen, und in dem Maße, in dem wir das anerkennen, können wir dem näherkommen, was wir eben nicht ausdrücken können und uns eben immer irgendwie von hinten trifft.",
+      "bbox": {
+        "x_pct": 7.335,
+        "y_pct": 57.623,
+        "w_pct": 85.329,
+        "h_pct": 22.368
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content for accuracy."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 7.635,
+        "y_pct": 82.213,
+        "w_pct": 33.877,
+        "h_pct": 2.24
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Frau Pieper, Sie haben vorhin in Ihrer Eingangsthese, die vielleicht provokanter klingt, als Sie nach Ihren Ausführungen ist, trotzdem etwas gesagt, was sich jetzt dem sehr deutlich entgegensetzen läßt, was Frau Hersch ausführt. Das, was Frau Hersch",
+      "bbox": {
+        "x_pct": 7.036,
+        "y_pct": 84.335,
+        "w_pct": 85.434,
+        "h_pct": 9.317
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content for accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "37",
+      "bbox": {
+        "x_pct": 88.38,
+        "y_pct": 95.3,
+        "w_pct": 3.75,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "New region identified: page number at the bottom right corner."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text contents in the original regions were heavily truncated and needed manual restoration.",
+    "Page number at the bottom right was missing in the original JSON."
+  ],
+  "doc_id": "3180",
+  "page": 14,
+  "elapsed_seconds": 4.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

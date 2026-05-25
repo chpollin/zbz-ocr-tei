@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "88 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 77.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Page number and header at the top were incorrectly detected as part of the paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'accord final. D'où sortira le cri qu'appelle son angoisse ? Elle fuit, elle ouvre une fenêtre, des dents de fer grincent contre le fer, crissent contre la pierre, une lamentation perçante et toujours semblable vient retomber régulièrement au même endroit du cœur. Que cela cesse, qu'elle s'entende vivre de nouveau ! Et alors s'étend l'espace sourd où une bouche grande ouverte hurle en vain dans l'inaltérable silence. Il est des désespoirs vides, sans prises, sans appuis, sans tâches, il en est d'enlaçants où s'enchevêtrent les lianes et les boas. Il est des désespoirs minéraux, découpant des laves lunaires, des cristaux géométriques aux surfaces transparentes, aux arêtes si pures qu'on s'y sent mourir de faim et de froid; d'autres où le contact de la tendresse et de la moiteur humaines enlisent jusqu'à l'étouffement. Mais tous ont en commun ce goût presque doux de lie inépuisable que distillent les malheurs ébauchés, inachevés des vivants. Le visage désespéré paraît souvent s'endormir, les yeux ouverts, dans un étrange sourire d'attente et de savoir; la goutte d'amertume qui est sur ses lèvres reste éternellement l'avant-dernière, il attend celle qui sera suprême, et il sait qu'il ne connaîtra jamais la souffrance parfaite qui le soulagerait, car sa soif même lui échappera à la seconde de la mort.",
+      "bbox": {
+        "x_pct": 9.365,
+        "y_pct": 12.221,
+        "w_pct": 81.176,
+        "h_pct": 58.544
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated/garbled in the initial detection; corrected to reflect actual image text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tu les connais aussi, ces fenêtres, Marc, tu les as ouvertes aussi, bien que tu n'en parles jamais, et que tu ne permettes jamais à tes yeux d'en refléter l'horreur. Sinon, où aurais-tu pris tes racines d'arbre, tes sources intarissables de force ? D'où te viendrait ta sécurité ?",
+      "bbox": {
+        "x_pct": 9.23,
+        "y_pct": 72.873,
+        "w_pct": 80.905,
+        "h_pct": 12.259
+      },
+      "changed": true,
+      "change_reason": "Text content was garbled ('48' included, incorrect word order); corrected to reflect actual image text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Page number and header at top were not properly segmented.",
+    "OCR text extraction was heavily corrupted/garbled in both paragraphs.",
+    "Header '88 TEMPS ALTERNÉS' missing from explicit region list."
+  ],
+  "doc_id": "40",
+  "page": 86,
+  "elapsed_seconds": 4.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

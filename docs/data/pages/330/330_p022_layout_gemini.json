@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un politique démocratique ne doit avoir ni credo, ni mystique. Il ne concerne pas l'homme entier, mais une partie seulement de son activité. Dans cette activité, l'engagement de l'individu n'en est pas moins total; de même, dans une ascension en montagne, qui ne concerne aussi qu'une partie de l'individu, l'engagement solidaire dans la cordée est total et peut aller jusqu'au sacrifice de la vie. On peut risquer son existence tout entière sur chacun des plans limités où on l'engage, mais l'homme libre est celui qui, faisant partie de différents groupes, ne se donne totalement à aucun, et sait, tout à la fois, consentir les disciplines indispensables et conserver la solitude nécessaire à l'épanouissement de sa liberté.",
+      "bbox": {
+        "x_pct": 13.231,
+        "y_pct": 9.982,
+        "w_pct": 85.933,
+        "h_pct": 20.945
+      },
+      "changed": true,
+      "change_reason": "Corrected the severely OCR-corrupted and truncated text content to match the visible source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut savoir gré à Jeanne Hersch d'avoir posé clairement l'ensemble de ces problèmes et de nous avoir ainsi aidés à prendre conscience des recherches qui s'imposent aujourd'hui pour que se constitue une doctrine socialiste rénovée, permettant le grand rassemblement travailliste dont dépend la survie de nos démocraties.",
+      "bbox": {
+        "x_pct": 13.552,
+        "y_pct": 32.95,
+        "w_pct": 85.613,
+        "h_pct": 10.544
+      },
+      "changed": true,
+      "change_reason": "Corrected the OCR-corrupted text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "André PHILIP.",
+      "bbox": {
+        "x_pct": 72.744,
+        "y_pct": 45.392,
+        "w_pct": 19.318,
+        "h_pct": 2.023
+      },
+      "changed": true,
+      "change_reason": "Fixed the spelling of the author name."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction was extremely poor/garbled due to OCR failure.",
+    "Author signature preserved as text as per instructions."
+  ],
+  "doc_id": "330",
+  "page": 22,
+  "elapsed_seconds": 3.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

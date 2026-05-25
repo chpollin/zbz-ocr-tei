@@ -1,0 +1,114 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "ich  wissen ? Was soll ich tun? Was kann anachronique et inactuelle Essai de paraphrase",
+      "bbox": {
+        "x_pct": 56.395,
+        "y_pct": 20.919,
+        "w_pct": 30.649,
+        "h_pct": 3.783
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_heading as it is a title/heading."
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Essai de paraphrase anachronique et inactuelle",
+      "bbox": {
+        "x_pct": 54.49,
+        "y_pct": 28.5,
+        "w_pct": 33.5,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing section heading."
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne HERSCH",
+      "bbox": {
+        "x_pct": 67.471,
+        "y_pct": 34.809,
+        "w_pct": 8.692,
+        "h_pct": 1.742
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_heading for author name."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "de Kanl, la présencc de son La elementaires de philosophic, malentendus. Le plus souvent, Pour simpl",
+      "bbox": {
+        "x_pct": 53.731,
+        "y_pct": 41.885,
+        "w_pct": 37.093,
+        "h_pct": 25.501
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un tel enseignement n'est pas entièrement erroné. Ce serait trop simple. Il peut d'ailleurs invoquer une tendance à choisir, parmi les trois",
+      "bbox": {
+        "x_pct": 53.731,
+        "y_pct": 68.8,
+        "w_pct": 37.093,
+        "h_pct": 4.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing body text paragraph start."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je devais la croyance. phrase",
+      "bbox": {
+        "x_pct": 73.614,
+        "y_pct": 70.37,
+        "w_pct": 17.345,
+        "h_pct": 4.129
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dou,   fréquemment, la clivisir , choisi Jø Crifique de la Raison pour la Crifique de Parmi plus",
+      "bbox": {
+        "x_pct": 55.882,
+        "y_pct": 74.499,
+        "w_pct": 35.368,
+        "h_pct": 11.265
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original labels for headings were incorrect.",
+    "Multiple text regions were missing from the selection.",
+    "The OCR text provided in the input had several artifacts and typos."
+  ],
+  "doc_id": "1380",
+  "page": 1,
+  "elapsed_seconds": 4.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected to zb_heading as it is a title/heading.": 1,
+    "Label corrected to zb_heading for author name.": 1,
+    "Corrected text content for better accuracy.": 1,
+    "Corrected text content.": 2,
+    "ADDED": 2
+  }
+}

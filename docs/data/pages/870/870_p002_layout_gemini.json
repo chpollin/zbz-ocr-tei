@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The people who created UNESCO as well as the Declaration of Human Rights clearly were predominantly Western. Nevertheless, it was intended that the Declaration should be taken as universal in application. The word \"universal\" was made a part of the title of the Declaration, and it is important to note that this was done deliberately. It was intended that the Declaration be both more universal and more concrete than such former declarations as the French and American ones, which were written by particular groups of national citizens. It was conceived as applying to all nations, and it attempted to take into account those material and economic conditions under which human",
+      "bbox": {
+        "x_pct": 8.492,
+        "y_pct": 18.989,
+        "w_pct": 37.562,
+        "h_pct": 17.263
+      },
+      "changed": true,
+      "change_reason": "The original text was garbled OCR noise; updated to the actual text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "influence on reality by forming and shaping the material conditions of humanity, in this way the organization becomes the testing ground for the best dreams of humanity.",
+      "bbox": {
+        "x_pct": 53.417,
+        "y_pct": 16.276,
+        "w_pct": 37.063,
+        "h_pct": 6.005
+      },
+      "changed": true,
+      "change_reason": "The original text was garbled OCR noise; updated to the actual text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "This is the situation we now have. The people from the developing countries must see declarations of human rights as changing, as wherever it needs changing, and not simply as applying to the economically mature Western world. Many in the Western world used to accept the view that the concept of human rights is a Western invention; indeed, not simply Western but only Christian. It is something, they say, which only the Christian Western era has created. Others, however, would claim that there is another interpretation, i.e., that human rights are the creation of an anti-Christian tradition. For instance, the concept of human rights has served as the flag of the French Revolution, and one cannot say that the French Revolution is to be taken as a typically Christian event, in spite of the fact that you can find the intellectual roots of the French Revolution in Christianity. All this is extremely ambiguous, for there has been a fight between the Christians and Church tradition on the one hand, and the liberal human rights tradition on the other. I want to tell you something about an experiment which we in the Division of Philosophy of UNESCO have conducted to try to answer the question which is the title of this paper. \"Is",
+      "bbox": {
+        "x_pct": 53.716,
+        "y_pct": 22.367,
+        "w_pct": 37.463,
+        "h_pct": 32.133
+      },
+      "changed": true,
+      "change_reason": "The original text was garbled OCR noise; updated to the actual text content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 3,
+  "issues": [
+    "The OCR output provided in the initial JSON was completely garbled and did not match the document content.",
+    "Bboxes are acceptable but text extraction failed entirely.",
+    "Must verify OCR quality in future batches."
+  ],
+  "doc_id": "870",
+  "page": 2,
+  "elapsed_seconds": 4.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

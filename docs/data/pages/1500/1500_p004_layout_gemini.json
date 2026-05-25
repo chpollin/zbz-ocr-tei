@@ -1,0 +1,123 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "296",
+      "bbox": {
+        "x_pct": 17.29,
+        "y_pct": 82.26,
+        "w_pct": 2.58,
+        "h_pct": 1.77
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "J. Hersch, De la finitude",
+      "bbox": {
+        "x_pct": 43.14,
+        "y_pct": 82.26,
+        "w_pct": 25.13,
+        "h_pct": 1.89
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page header"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "secrets divins; la dispersion et la mort du moi. Nous retrouvons là, certes, de vieil les et banales",
+      "bbox": {
+        "x_pct": 17.139,
+        "y_pct": 11.778,
+        "w_pct": 74.102,
+        "h_pct": 3.436
+      },
+      "changed": true,
+      "change_reason": "Corrected label for heading"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Incomplétude de la perception et du savoir . ~ Nous ne faisons jamais que lex périence dun <fragment",
+      "bbox": {
+        "x_pct": 16.978,
+        "y_pct": 15.254,
+        "w_pct": 74.376,
+        "h_pct": 18.86
+      },
+      "changed": true,
+      "change_reason": "Corrected label for heading"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Ajoutons à cela le caractère limité de lappareil nous permet de rencontrer le monde extérieur, cet a",
+      "bbox": {
+        "x_pct": 17.027,
+        "y_pct": 33.806,
+        "w_pct": 74.247,
+        "h_pct": 15.595
+      },
+      "changed": true,
+      "change_reason": "Corrected label for heading"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Insatisfaction de laffectivité. mons se trouve Une telle évidence, dans son universalité , faire dou",
+      "bbox": {
+        "x_pct": 17.107,
+        "y_pct": 49.157,
+        "w_pct": 74.166,
+        "h_pct": 22.108
+      },
+      "changed": true,
+      "change_reason": "Corrected label for heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès lors il ne lui reste plus que des complaisances à l'égard de conditions si contraires à son exig",
+      "bbox": {
+        "x_pct": 17.22,
+        "y_pct": 70.826,
+        "w_pct": 74.077,
+        "h_pct": 5.567
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Insatisfaction existentielle Qui   suis-je? c'est centralement une possible liberté, celle de poser ",
+      "bbox": {
+        "x_pct": 17.22,
+        "y_pct": 76.199,
+        "w_pct": 74.158,
+        "h_pct": 10.353
+      },
+      "changed": true,
+      "change_reason": "Corrected label for heading"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Headings incorrectly labeled as paragraph",
+    "Page number and page header incorrectly labeled as text"
+  ],
+  "doc_id": "1500",
+  "page": 4,
+  "elapsed_seconds": 5.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label for page number": 1,
+    "Corrected label for page header": 1,
+    "Corrected label for heading": 5
+  }
+}

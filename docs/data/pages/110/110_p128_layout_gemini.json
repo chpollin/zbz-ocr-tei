@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "126 L’ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 21.394,
+        "y_pct": 2.0,
+        "w_pct": 69.194,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header at top"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "est beaucoup plus à mes yeux un signe de leur irréalité que de leur profondeur. Je sais que je touch",
+      "bbox": {
+        "x_pct": 21.394,
+        "y_pct": 13.364,
+        "w_pct": 69.194,
+        "h_pct": 57.783
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Cf. BERGSON, Matière et Mémoire. Alcan, Paris, 1896, p. 165 sqq.",
+      "bbox": {
+        "x_pct": 21.394,
+        "y_pct": 73.076,
+        "w_pct": 69.194,
+        "h_pct": 5.432
+      },
+      "changed": true,
+      "change_reason": "ADDED: Footnote at bottom"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header and footer regions in initial input"
+  ],
+  "doc_id": "110",
+  "page": 128,
+  "elapsed_seconds": 5.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "VÉRITÉ MÉTAPHYSIQUE DES LIMITES 101",
+      "bbox": {
+        "x_pct": 260.0,
+        "y_pct": 78.0,
+        "w_pct": 476.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number which should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'une individualité Et ce n'est pas un hasard : c'est parce qu'elle impose sa forme à tout et à tous qu'elle ne laisse aucune place à l'action philosophique d'autrui. Pour Hegel seul, elle a été action, accomplissement, vérité métaphysique.",
+      "bbox": {
+        "x_pct": 11.446,
+        "y_pct": 12.135,
+        "w_pct": 75.798,
+        "h_pct": 13.031
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous verrons même que ce qui est une limite pour l'étudiant peut apparaître comme signe de vérité métaphysique.",
+      "bbox": {
+        "x_pct": 11.551,
+        "y_pct": 25.195,
+        "w_pct": 75.497,
+        "h_pct": 7.569
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par exemple, l'absence d'avenir. Pour Hegel, le présent et l'action concrète étaient réels. S'il avait pensé à vide et sans poser au fond la question métaphysique « être ou ne pas être », il aurait pu déduire l'action actuellement juste de la nécessité qu'il voyait se manifester dans l'histoire. Or une telle déduction aurait enlevé sa valeur à toute décision : puisqu'on pourrait la déduire, je n'étais plus moi-même en la prenant; un autre aurait pu me remplacer, comme le savant peut remplacer le savant. Cette déduction rationnellement si facile, Hegel se garde de l'accomplir. Il ne sacrifie pas à son système la liberté de son action. Entre son système et son action s'établit une séparation radicale, un vide pour sa liberté. Sur le plan du problème explicitement posé, l'histoire qu'il écrivit resta sans avenir.",
+      "bbox": {
+        "x_pct": 10.542,
+        "y_pct": 32.574,
+        "w_pct": 76.401,
+        "h_pct": 43.308
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On peut reprocher à Hegel de ne s'être pas libéré de son époque, de n'avoir pas su rendre relatives les institutions et les croyances de son temps, et d'avoir vu dans le siècle où s'écoulait empiriquement sa vie l'accomplissement historique du plan de la",
+      "bbox": {
+        "x_pct": 10.693,
+        "y_pct": 76.044,
+        "w_pct": 76.054,
+        "h_pct": 13.213
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image transcript."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Page header and number detected as text, must be filtered.",
+    "OCR text content for paragraphs was highly inaccurate.",
+    "Missing running header region in initial detection."
+  ],
+  "doc_id": "20",
+  "page": 103,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

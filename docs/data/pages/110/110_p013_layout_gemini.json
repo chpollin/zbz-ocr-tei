@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "INTRODUCTION",
+      "bbox": {
+        "x_pct": 12.697,
+        "y_pct": 10.23,
+        "w_pct": 21.053,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "ADDED: Introduction header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "page_header",
+      "text": "11",
+      "bbox": {
+        "x_pct": 77.941,
+        "y_pct": 2.0,
+        "w_pct": 3.309,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "laquelle s'appuie la pensée   humaine; et sans   laquelle celle-ci est impossible. En à lui-même; el",
+      "bbox": {
+        "x_pct": 12.543,
+        "y_pct": 13.151,
+        "w_pct": 68.623,
+        "h_pct": 15.099
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or ce n'est pas de la pensée et de ses  conditions nous vou drions savoir et dire   quelque chose; c",
+      "bbox": {
+        "x_pct": 12.543,
+        "y_pct": 27.997,
+        "w_pct": 68.776,
+        "h_pct": 46.459
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Added section header",
+    "Added page number"
+  ],
+  "doc_id": "110",
+  "page": 13,
+  "elapsed_seconds": 7.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

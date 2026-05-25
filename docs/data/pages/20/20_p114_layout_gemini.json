@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "112",
+      "bbox": {
+        "x_pct": 149.0,
+        "y_pct": 85.0,
+        "w_pct": 32.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to _filter"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SENS DU CERCLE VICIEUX",
+      "bbox": {
+        "x_pct": 352.0,
+        "y_pct": 84.0,
+        "w_pct": 293.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Running header/section title identified as text, changed to section_header/zb_heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le lecteur; car si les scolastiques se sont servis de fargument ontologique comme chiffre, c'est probablement que ce qu'ils avaient à exprimer était inexprimable autrement que par un chiffre. Il faudrait pour ainsi dire regarder longtemps l'argument ontologique sans intention par trop volontaire et critique — plutôt dans une attitude détendue et réceptive. Alors apparaîtra, je crois, son sens caché, comme apparaît un profil dans les contours de certains paysages dessinés pour les enfants, ou un visage nouveau dans la pleine lune.",
+      "bbox": {
+        "x_pct": 138.55,
+        "y_pct": 125.55,
+        "w_pct": 762.05,
+        "h_pct": 287.51
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce sens caché sera, me semble-t-il, le suivant : la question de l'existence de Dieu n'est pas une question. Car « existence », quand il s'agit de Dieu, ne peut pas avoir le sens qu'a ordinairement ce mot quand nous parlons de quelqu'un ou de quelque chose qui existe quelque part. Celle que nous prêtons à Dieu quand nous disons simplement « Dieu » ne peut pas être objective, mais doit être métaphysique (au sens où nous avons employé ce mot), ou même : Dieu est la base de toute existence métaphysique. En ce sens, Dieu existe dès que nous l'avons posé comme existence métaphysique, parce que son nom même signifie existence métaphysique.",
+      "bbox": {
+        "x_pct": 139.01,
+        "y_pct": 409.91,
+        "w_pct": 763.55,
+        "h_pct": 359.1
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Logiquement, l'argument de saint Anselme n'est qu'un cercle vicieux. Nous parlerons plus loin, dans ce travail, du rôle fondamental que joue, dans toute pensée philosophique, le cercle vicieux. Nous verrons qu'une philosophie est loin d'être condamnée",
+      "bbox": {
+        "x_pct": 140.06,
+        "y_pct": 767.68,
+        "w_pct": 764.01,
+        "h_pct": 130.6
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Page number 112 was improperly labeled as text.",
+    "Section title SENS DU CERCLE VICIEUX was improperly labeled as text."
+  ],
+  "doc_id": "20",
+  "page": 114,
+  "elapsed_seconds": 4.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

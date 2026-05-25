@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "38 COLLOQUES DE RHEINFELDEN",
+      "bbox": {
+        "x_pct": 14.34,
+        "y_pct": 8.953,
+        "w_pct": 32.043,
+        "h_pct": 19.705
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header containing the running title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment l'Occident se justifierait-il lui-même, à ses propres yeux et aux yeux des non-Occidentaux, si l'on ne savait pas, sans autre, par la manipulation des forces naturelles et des ètres sociaux, s'il ignorait, au delà des sciences et des techniques, la recherche de la Raison, nature essentielle de l'homme et (ou) réalisation à travers l'histoire?",
+      "bbox": {
+        "x_pct": 18.011,
+        "y_pct": 34.41,
+        "w_pct": 28.16,
+        "h_pct": 3.053
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction based on original source text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "BRÊVES REMARQUES",
+      "bbox": {
+        "x_pct": 60.0,
+        "y_pct": 25.029,
+        "w_pct": 17.553,
+        "h_pct": 2.891
+      },
+      "changed": true,
+      "change_reason": "This is a section heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par Jeanne HERSCH",
+      "bbox": {
+        "x_pct": 61.564,
+        "y_pct": 31.711,
+        "w_pct": 14.638,
+        "h_pct": 2.463
+      },
+      "changed": true,
+      "change_reason": "Author name line treated as heading/metadata."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce texte, extrêmement intéressant et suggestif, ne semble n'avoir qu'un défaut, difficile à définir. Il s'agit d'une sorte d'épure, si nette, si limpide, que tout ce qui appartient à la confusion et à l'émmèlement du donné social apparaît inintelligent et, de ce fait, dépourvu de réalité. Raymond Aron crève nombre de slogans, il vide de leur substance intellectuelle des oppositions pathétiques où quantité d'Occidentaux puisent le meilleur et le pire de leurs indignations et de leurs enthousiasmes. Ces oppositions cependant sont des faits même si leurs motifs déclarés n'en sont pas toujours. Elles impliquent, reflètent et signifient souvent quelque chose de plus réel que les théories aux quelles elles se réfèrent.",
+      "bbox": {
+        "x_pct": 52.16,
+        "y_pct": 37.419,
+        "w_pct": 33.585,
+        "h_pct": 28.805
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output to reflect actual text paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par exemple, contre les socialistes et leur slogan de lutte de classes, Raymond Aron invoque la situation actuelle où tout le monde admet bien l'idéal égalitaire que le planisme économique. Mais il néglige le fait que cette situation a été en grande partie créée et imposée par la lutte socialiste et syndicale elle-même. Il ne s'agit pas d'une harmonie préétablie. Or ce passé n'est pas un passé seulement. Il contribue à qualifier le présent, et la",
+      "bbox": {
+        "x_pct": 52.521,
+        "y_pct": 67.847,
+        "w_pct": 33.968,
+        "h_pct": 18.879
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output to reflect actual text paragraph."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR extraction was heavily degraded.",
+    "Labels for page headers and section headings were incorrectly categorized as text.",
+    "Bounding boxes contained poorly parsed text snippets due to poor OCR."
+  ],
+  "doc_id": "480",
+  "page": 1,
+  "elapsed_seconds": 6.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

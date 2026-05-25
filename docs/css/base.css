@@ -1,0 +1,221 @@
+/*
+ * Base Layer
+ * Reset, Typography, Layout-Primitives, allgemeine Komponenten.
+ * Geladen nach tokens.css, vor viewer.css.
+ */
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img, svg, video { max-width: 100%; display: block; }
+button { font: inherit; cursor: pointer; background: none; border: none; padding: 0; color: inherit; }
+input, textarea, select { font: inherit; }
+
+/* ---- Document ---- */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: var(--h-font-body);
+  font-size: var(--h-base);
+  line-height: var(--h-line);
+  color: var(--h-text);
+  background: var(--h-bg);
+  min-height: 100vh;
+}
+
+/* ---- Headings ---- */
+h1, h2, h3, h4 {
+  font-family: var(--h-font-heading);
+  font-weight: 500;
+  line-height: var(--h-line-tight);
+  margin: 0;
+  color: var(--h-text);
+}
+h1 { font-size: var(--h-2xl); }
+h2 { font-size: var(--h-xl); }
+h3 { font-size: var(--h-lg); }
+h4 { font-size: var(--h-base); }
+
+/* ---- Links ---- */
+a {
+  color: var(--h-ziegelrot);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--h-transition);
+}
+a:hover { color: var(--h-ziegelrot-light); }
+a:focus-visible { outline: 2px solid var(--h-ziegelrot); outline-offset: 2px; }
+
+/* ---- Code ---- */
+code, pre, kbd {
+  font-family: var(--h-font-mono);
+  font-size: 0.93em;
+}
+
+/* ---- Hidden ---- */
+.hidden { display: none !important; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--h-space-sm);
+  padding: 0.4em 0.9em;
+  border: 1px solid var(--h-border-emphasis);
+  border-radius: var(--h-radius);
+  background: var(--h-surface);
+  color: var(--h-text);
+  font-family: var(--h-font-heading);
+  font-size: var(--h-sm);
+  cursor: pointer;
+  transition: all var(--h-transition-fast);
+}
+.btn:hover {
+  background: var(--h-bg-alt);
+  border-color: var(--h-text-muted);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--h-ziegelrot);
+  outline-offset: 1px;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn--primary {
+  background: var(--h-ziegelrot);
+  border-color: var(--h-ziegelrot);
+  color: var(--h-text-inverse);
+}
+.btn--primary:hover {
+  background: var(--h-ziegelrot-light);
+  border-color: var(--h-ziegelrot-light);
+}
+.btn--ghost {
+  border-color: transparent;
+  background: transparent;
+}
+.btn--ghost:hover {
+  background: var(--h-bg-alt);
+}
+.btn--sm {
+  padding: 0.25em 0.6em;
+  font-size: var(--h-xs);
+}
+.btn--icon {
+  padding: 0.35em 0.5em;
+}
+.btn[aria-pressed="true"] {
+  background: var(--h-ziegelrot-subtle);
+  border-color: var(--h-ziegelrot);
+  color: var(--h-ziegelrot);
+}
+
+/* ---- Inputs ---- */
+.input {
+  padding: 0.4em 0.7em;
+  border: 1px solid var(--h-border-emphasis);
+  border-radius: var(--h-radius);
+  background: var(--h-surface);
+  color: var(--h-text);
+  font-size: var(--h-sm);
+  width: 100%;
+}
+.input:focus-visible {
+  outline: 2px solid var(--h-ziegelrot);
+  outline-offset: 1px;
+  border-color: var(--h-ziegelrot);
+}
+select.input {
+  cursor: pointer;
+  padding-right: 1.8em;
+}
+
+/* ---- Badges ---- */
+.badge {
+  display: inline-block;
+  padding: 0.15em 0.55em;
+  border-radius: var(--h-radius-sm);
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  background: var(--h-bg-alt);
+  color: var(--h-text-secondary);
+  border: 1px solid var(--h-border);
+}
+.badge--ok      { background: rgba(34,197,94,0.15);   color: #166534; border-color: rgba(34,197,94,0.3); }
+.badge--warn    { background: rgba(245,158,11,0.15);  color: #b45309; border-color: rgba(245,158,11,0.3); }
+.badge--error   { background: rgba(220,38,38,0.12);   color: #b91c1c; border-color: rgba(220,38,38,0.3); }
+.badge--info    { background: var(--h-preussischblau-subtle); color: var(--h-preussischblau); border-color: var(--h-preussischblau); }
+.badge--accent  { background: var(--h-ziegelrot-subtle); color: var(--h-ziegelrot); border-color: var(--h-border-accent); }
+
+/* ---- Cards ---- */
+.card {
+  background: var(--h-surface);
+  border: 1px solid var(--h-border);
+  border-radius: var(--h-radius);
+  padding: var(--h-space-md);
+}
+
+/* ---- Tabs ---- */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--h-border-emphasis);
+}
+.tab {
+  padding: 0.5em 1em;
+  border: none;
+  background: transparent;
+  color: var(--h-text-secondary);
+  font-family: var(--h-font-heading);
+  font-size: var(--h-sm);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color var(--h-transition-fast), border-color var(--h-transition-fast);
+}
+.tab:hover { color: var(--h-text); }
+.tab[aria-selected="true"] {
+  color: var(--h-ziegelrot);
+  border-bottom-color: var(--h-ziegelrot);
+}
+
+/* ---- Toast (von core.js verwendet) ---- */
+#zbz-toast-container { position: fixed; top: 70px; right: 20px; z-index: 10000; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast {
+  background: var(--h-anthrazit);
+  color: var(--h-text-inverse);
+  padding: 0.6em 1em;
+  border-radius: var(--h-radius);
+  box-shadow: var(--h-shadow-md);
+  font-size: var(--h-sm);
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity var(--h-transition), transform var(--h-transition);
+}
+.toast.visible { opacity: 1; transform: translateY(0); }
+.toast--ok    { background: #166534; }
+.toast--warn  { background: #b45309; }
+.toast--error { background: #b91c1c; }
+
+/* ---- Scrollbar (Webkit) ---- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--h-bg); }
+::-webkit-scrollbar-thumb { background: var(--h-border-emphasis); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--h-text-muted); }

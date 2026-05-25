@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du terme, ni d'une succession filmée, mais d'un tout, présent en chacun de ses éléments.",
+      "bbox": {
+        "x_pct": 26.875,
+        "y_pct": 13.41,
+        "w_pct": 57.309,
+        "h_pct": 4.988
+      },
+      "changed": true,
+      "change_reason": "The text was OCR'd with significant errors in punctuation and letters; corrected the transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A ce point, on peut faire une remarque. Précisément parce que la musique est ce tout à la fois temporel et intemporel, successif et non successif, la plupart des morceaux de musique n'attachent pas une très grande importance à leur début et à leur fin. Pour moi, d'ordinaire, ce qui vient à la fin d'une œuvre est important. Depuis ma petite enfance, j'ai pris l'habitude, lorsque je me demandais si je voulais lire tel ou tel livre, de m'arrêter non pas au titre, mais à la dernière phrase. Je la lisais, et d'après elle, je décidais si j'allais me plonger ou non dans cet ouvrage. Je le fais encore, et, je crois, avec raison, car la dernière phrase d'un livre est toujours soignée par l'auteur. Elle n'est pas écrite fortuitement ; elle est, par conséquent, révélatrice de ce qu'aime l'écrivain, de ce qu'il apprécie, bref, de son goût littéraire. En musique, par contre, ce n'est pas du tout le cas. Une œuvre se termine souvent par de grands accords qui marquent la fin et qui sont quasiment donnés par les règles mêmes de l'harmonie. Ou encore, elle se termine en catimini. Mais quoi qu'il en soit, cette fin est inessentielle. Il en est de même du début, car rien encore ne l'a précédé. Un morceau de musique est bien obligé de commencer et il est",
+      "bbox": {
+        "x_pct": 26.589,
+        "y_pct": 18.046,
+        "w_pct": 57.733,
+        "h_pct": 54.783
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and poor OCR output."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "60",
+      "bbox": {
+        "x_pct": 26.875,
+        "y_pct": 74.87,
+        "w_pct": 2.75,
+        "h_pct": 2.25
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number from 'text' to 'page_footer'."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR output contained major errors in French characters and word structure.",
+    "Page number at the bottom was incorrectly labeled as text.",
+    "The primary text block was identified as a single large block, which is acceptable but the transcription contained significant OCR artifacts."
+  ],
+  "doc_id": "2780",
+  "page": 59,
+  "elapsed_seconds": 4.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

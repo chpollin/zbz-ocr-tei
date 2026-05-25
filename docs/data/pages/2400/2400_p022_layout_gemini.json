@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "beurteilen, s0 erscheint mir die Sinnfrage als eines der größten Risiken überhaupt. Denn seit einigen Jahren stellen wir eine zunehmende Diskrepanz fest zwischen den wirtschaftlichen und technologischen Entwicklungen einerseits und der gesellschaftlichen Akzeptanz dieser Entwicklungen andererseits. Man denke etwa an das Problem der Kernenergie. Es ist richtig: Für viele, für Jugendliche vor allem, ist der Sinn einer solchen Entwicklung nicht mehr unmittelbar einzusehen.",
+      "bbox": {
+        "x_pct": 6.017,
+        "y_pct": 4.491,
+        "w_pct": 65.654,
+        "h_pct": 22.853
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to reflect the actual content in the scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: So lange es um das Überleben geht, stellt sich die Sinnfrage nicht. Sinn scheint dann selbstverständlich gegeben zu sein. Aber sobald eine gewisse Sicherheit erreicht worden ist, verliert die Sache den Sinn. Wenn wir einigermaßen gesichert leben, stellt sich die Frage nach dem Sinn.",
+      "bbox": {
+        "x_pct": 6.332,
+        "y_pct": 29.381,
+        "w_pct": 65.182,
+        "h_pct": 15.524
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to reflect the actual content in the scan."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Die Gefahr: Sinnverlust in der Sicherheit",
+      "bbox": {
+        "x_pct": 73.971,
+        "y_pct": 37.678,
+        "w_pct": 18.487,
+        "h_pct": 5.022
+      },
+      "changed": true,
+      "change_reason": "Relabeled side column text as caption."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Gerade deshalb ist der Dialog mit einer kritischen Jugend wichtig, und wir dürfen die Jungen nicht pauschal als Außenseiter bezeichnen, nur weil sie bohrende Fragen stellen, auf die wir nicht ohne weiteres eine Antwort haben. Wir müssen uns – ich zähle mich in diesem Fall zur älteren Generation – dem Dialog mit den Jüngeren stellen, wir müssen uns die Fragen stellen und dürfen uns nicht mit pauschalen Antworten zufrieden geben. Sonst riskieren wir in der Tat einen gesellschaftlichen Dissens zwischen denen, die glauben, das einzig Richtige zu kennen, die wirtschaftliche Entwicklung immer weiter, schneller, immer höher treiben wollen, die alle Probleme für technologisch lösbar halten und die zu gestalten imstande sind, und anderseits jenen, die sich als Opfer der Entwicklung empfinden, die keinen Einfluß auf den Gang der Dinge haben.",
+      "bbox": {
+        "x_pct": 6.138,
+        "y_pct": 47.111,
+        "w_pct": 65.533,
+        "h_pct": 41.245
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to reflect the actual content in the scan."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Notwendig: das Gespräch zwischen den Generationen",
+      "bbox": {
+        "x_pct": 73.814,
+        "y_pct": 80.08,
+        "w_pct": 19.564,
+        "h_pct": 5.364
+      },
+      "changed": true,
+      "change_reason": "Relabeled side column text as caption."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page number missing from detection and added as a filterable region."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text blocks contained incorrect or truncated OCR text.",
+    "Side column captions were misidentified as main paragraphs.",
+    "Page number at the bottom was missing from the detection."
+  ],
+  "doc_id": "2400",
+  "page": 22,
+  "elapsed_seconds": 5.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

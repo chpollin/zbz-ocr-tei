@@ -1,0 +1,111 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Discussion sur les communications 79",
+      "bbox": {
+        "x_pct": 521.8,
+        "y_pct": 62.4,
+        "w_pct": 421.1,
+        "h_pct": 14.8
+      },
+      "changed": true,
+      "change_reason": "Corrected labels for page header/number inclusion."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« valeurs » supposées placées hors du cercle, hors de l'histoire et de la société, comme des idées platoniciennes.",
+      "bbox": {
+        "x_pct": 9.806,
+        "y_pct": 13.147,
+        "w_pct": 84.688,
+        "h_pct": 4.282
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est une grande illusion de penser que la sociologie positive suppose la séparation du monde des valeurs et du monde des réalités sociales. La sociologie n'est positive qu'à condition de réintroduire les valeurs comme des types d'action sociale.",
+      "bbox": {
+        "x_pct": 9.75,
+        "y_pct": 18.115,
+        "w_pct": 84.799,
+        "h_pct": 8.123
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelle que soit la distance qui sépare sur ce point fondamental Marx, Durkheim, Deweber et Malinowski, tous acceptent cette affirmation, sans laquelle il n'y a pas de sociologie possible et les critiques qu'on leur adresse, visent plutôt à sanctionner leur infidélité au principe qu'ils ont eux-mêmes reconnu.",
+      "bbox": {
+        "x_pct": 9.39,
+        "y_pct": 26.916,
+        "w_pct": 85.243,
+        "h_pct": 9.937
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne souhaite pas qu'un tel départ occupe le temps limité de ce Colloque, mais il est impossible à un sociologue de ne pas protester contre la question et le doute préalables que leur oppose un certain type de pensée philosophique.",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 37.642,
+        "w_pct": 85.021,
+        "h_pct": 8.123
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Réponse de M. Girod",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 48.525,
+        "w_pct": 30.153,
+        "h_pct": 2.634
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais répondre aux remarques de M. Moreau-Reibel. La première concernait les révolutions ensablées. Là, ma remarque se limitera en somme à une excuse. Les observations de M. Moreau-Reibel m'ont montré que le sociologue ne devrait pas sortir de son domaine pour prétendre, en deux mots, « révolution ensablée » par exemple, indiquer quoi que ce soit de sérieux à propos d'événements de la taille de 1789 ou de 1917. Ce que j'ai voulu dire, ou plutôt suggérer, c'est simplement que, dans les deux cas, la révolution s'était heurtée à la résistance de formes sociales contraires à ses buts et les avait même renforcées à certains égards. Songeons par exemple aux relations entre révolution soviétique et bureaucratie. Plus simplement encore, je voulais faire ressortir qu'il n'y avait pas proprement parler de révolution-miracle modifiant dans leurs profondeurs les structures sociales.",
+      "bbox": {
+        "x_pct": 9.847,
+        "y_pct": 52.579,
+        "w_pct": 85.576,
+        "h_pct": 28.943
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après ces excuses pour avoir débordé mon sujet, je voudrais examiner la question que M. Moreau-Reibel a posée à propos de la sociologie en général et de l'étude des groupes restreints. Je crois, qu'il a absolument raison de dire qu'il y a, en dehors des grands ensembles sociaux, des unités plus petites qui suscitent attention. Mais il me semble non moins évident que la",
+      "bbox": {
+        "x_pct": 10.68,
+        "y_pct": 82.098,
+        "w_pct": 85.021,
+        "h_pct": 11.751
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected running header/page number mix-up at the top."
+  ],
+  "doc_id": "550",
+  "page": 20,
+  "elapsed_seconds": 6.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

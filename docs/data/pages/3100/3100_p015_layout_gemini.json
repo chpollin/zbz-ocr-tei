@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et de son appel? Ne risquait-elle pas d'oublier sa première mission au profit de tâches secondaires qui lui étaient peut-être contraires?",
+      "bbox": {
+        "x_pct": 15.149,
+        "y_pct": 8.661,
+        "w_pct": 64.948,
+        "h_pct": 4.046
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and mangled OCR text to match the content of the document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire de l'Eglise raconte les contradictions qui surgirent de la confusion entre le devoir de proclamer l'Evangile et l'obligation de l'adapter au monde. L'Eglise veut être fidèle à son Seigneur et à ses apôtres; mais elle doit s'assurer une place dans le monde. D'une part, elle se soumet à la critique de l'Evangile; de l'autre, elle entre dans la voie des compromis. L'Eglise oscille à la recherche d'un équilibre entre les forces opposées qui l'animent. Elle en oublie parfois la question de Dieu, en se laissant aller à sacraliser la nature, la race, la nation, le pouvoir et même le savoir. Cette sacralisation la rend sourde à l'appel de Dieu.",
+      "bbox": {
+        "x_pct": 14.932,
+        "y_pct": 12.496,
+        "w_pct": 65.351,
+        "h_pct": 19.909
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to include the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le danger de l'oubli s'aggrave encore avec la croyance universelle au progrès; la foi véritable et l'espérance sans garantie en sont meurtries. Car la croyance au progrès détermine une manière de vivre incompatible avec le genre d'existence que suscitent la foi et l'espérance en l'appel de Dieu. La croyance au progrès tend à effacer la ligne de partage que l'Evangile avait fortement tracée entre la survie de l'humanité et son salut. Il appartient à l'homme d'inventer les moyens qui lui assureront de survivre aux famines, aux épidémies, aux guerres. Il appartient à Dieu seul de délivrer l'homme définitivement du néant; il le fait en occultant sa miséricorde dans la faiblesse et le sacrifice de ses serviteurs et de son serviteur par excellence, Jésus de Nazareth. C'est là un paradoxe irréductible. C'est sous ce paradoxe de l'occultation de Dieu que la question de Dieu prend son relief et inquiète la croyance au progrès pour la survie de l'humanité.",
+      "bbox": {
+        "x_pct": 14.827,
+        "y_pct": 32.382,
+        "w_pct": 65.455,
+        "h_pct": 27.977
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to include the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi l'oubli de Dieu favorise paradoxalement la question de Dieu. Grâce à cet oubli, Dieu ne peut plus être assimilé aux produits de la peur, de l'imagination, de la conscience projective et sublimatrice. A travers l'oubli, en deçà et au-delà de la croyance au progrès qui cherche à se substituer à la foi et à l'espérance, la fidélité du Dieu caché éclate: Dieu n'est ni dans la société, ni dans l'homme, mais l'homme, ses sociétés, son univers sont en Dieu, même quand toute la création semble l'ignorer. L'un des motifs fondamentaux du message chrétien, c'est de faire surgir de l'oubli de Dieu la question, l'appel de Dieu; cette question et cet appel annoncent à la fois quelque chose de très ancien et de très nouveau: il y a plus dans les actes des hommes que des actions, plus dans leurs pensées que des idées, plus dans leurs discours que des mots et ce quelque chose de plus,",
+      "bbox": {
+        "x_pct": 15.044,
+        "y_pct": 59.812,
+        "w_pct": 65.431,
+        "h_pct": 26.131
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to include the full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "14",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 87.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "The OCR text provided in the input was heavily truncated or mangled, requiring complete manual restoration for all paragraphs.",
+    "The page number 14 at the bottom was missing a bounding box and classification in the original input."
+  ],
+  "doc_id": "3100",
+  "page": 15,
+  "elapsed_seconds": 5.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

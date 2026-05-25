@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Vom Drang zu den Wissenschaften",
+      "bbox": {
+        "x_pct": 8.626,
+        "y_pct": 7.048,
+        "w_pct": 70.356,
+        "h_pct": 3.832
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Wissenschaft ist eine der spezifisch menschlichen BeschAftigungen. Bauen gibt es bei Tieren, aber Jura, Wissenschaften gibt es nicht. Man kann sich fragen, wie Wissenschaft als Anstrengung, etwas zu wissen, bei den Menschen überhaupt entstanden ist. Wahrscheinlich hing es davon ab, wie der Mensch lebte und wie er sich seine Begegnung mit dem Nicht-Menschen, dem Nicht-Ich vorstellte, mit dem, was wir einfach Welt nennen, wo der Mensch aufhört, er selbst zu sein, mit dem Ort, wo er lebt und wo er stirbt. Zu diesem Ort haben wahrscheinlich die Menschen einen anderen Bezug als andere Lebewesen. Wenn ich hier ganz vage von der Welt oder dem Nicht-Ich spreche, so meine ich natürlich nicht ein umgreifendes Ganzes, sondern einfach das, was um den Menschen da ist. So weit wir es beurteilen können, gibt es dieses Entgegengesetztsein von Ich und Nicht-Ich bei anderen Lebewesen nicht.",
+      "bbox": {
+        "x_pct": 8.221,
+        "y_pct": 25.387,
+        "w_pct": 80.0,
+        "h_pct": 25.765
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription to match the source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Mensch blieb also unbeweglich und hat geschaut. Er hat geschaut, gelauert, beobachtet, und indem er das tat, hat er sich natürlich die ganze Zeit vorgestellt, wie es wäre, wenn er dies oder jenes tun würde. Die Ein-",
+      "bbox": {
+        "x_pct": 8.258,
+        "y_pct": 80.65,
+        "w_pct": 79.804,
+        "h_pct": 6.275
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed missing text from the paragraph."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR transcription for paragraph 1 was truncated and incomplete.",
+    "Initial OCR transcription for paragraph 2 contained formatting artifacts and minor character errors."
+  ],
+  "doc_id": "2990",
+  "page": 44,
+  "elapsed_seconds": 5.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

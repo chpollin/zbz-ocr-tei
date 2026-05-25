@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme, en tant qu'il échappe aux calculs de l'ingénieur politique et risque de troubler leur perfection.",
+      "bbox": {
+        "x_pct": 18.26,
+        "y_pct": 9.897,
+        "w_pct": 64.576,
+        "h_pct": 4.786
+      },
+      "changed": true,
+      "change_reason": "Corrected the broken OCR text transcription of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La tentation à laquelle cède l'ingénieur politique totalitaire que nous venons de décrire consiste à prétendre savoir le secret de l'histoire dans sa totalité (il prouve par là qu'il ignore ce qu'est l'homme), et à revendiquer, au nom de ce savoir, le droit de réduire l'homme, par tous les moyens, à un rouage de cette politique scientifiquement justifiée.",
+      "bbox": {
+        "x_pct": 18.198,
+        "y_pct": 13.96,
+        "w_pct": 70.698,
+        "h_pct": 12.194
+      },
+      "changed": true,
+      "change_reason": "Corrected the broken OCR text transcription of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'autre tentation, c'est de considérer la réalité politique comme étrangère à ce qui est essentiel pour l'homme, comme extérieure à lui, à sa liberté. Pour être libre, on fera le moins de politique possible - juste ce qu'on sera forcé d'en faire pour l'empêcher d'envahir toute la vie - on aura le moins possible de lois, de plans, de règlements. On cultivera la partie la plus noble de l'homme, qui est son être solitaire, ou lié à quelques amis. On oubliera le reste de l'homme, considéré comme inférieur, par quoi il dépend si étroitement des autres, en une promiscuité assez vexante - surtout: par quoi il dépend du travail des autres. On se crée alors une sorte de légitimité personnelle, limitée, grâce à cet instrument si propre, si nettoyé de sueur, de larmes et de sang, si merveilleusement abstrait, qu'est l'argent. On paye, on quitte - il suffit de payer pour que la réalité politique se laisse ignorer, pour que l'âme soit rendue à sa liberté qui seule compte, et qui est individuelle. O triomphe de l'humanisme! En fait, on laisse les forts écraser les faibles, on renonce à donner une forme humaine à la réalité politique, on l'abandonne au jeu aveugle et mécanique des forces qui la travaillent, on abdique sa liberté. C'est ce qui arrive quand l'homme dédaigne ou ignore telle partie de son être ou de sa vie: l'élément refusé par l'esprit poursuit sa vie propre et exerce sa tyrannie brutale et cachée. Se laver les mains de toute réalité politique, ce fut pendant longtemps une attitude de conservatisme social: ne pas faire de politique revenait à maintenir le statut actuel; ne pas intervenir dans les structures économiques revenait à accepter la tyrannie des facteurs économiques que l'esprit se refusait non seulement à dompter mais même à connaître et à reconnaître. Un peu comme un malade qui, voulant s'occuper uniquement",
+      "bbox": {
+        "x_pct": 18.286,
+        "y_pct": 25.47,
+        "w_pct": 70.822,
+        "h_pct": 57.054
+      },
+      "changed": true,
+      "change_reason": "Corrected the broken OCR text transcription of the paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 19.3,
+        "y_pct": 84.7,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR output for paragraphs was heavily fragmented and incorrect.",
+    "Page number 16 was not classified correctly."
+  ],
+  "doc_id": "170",
+  "page": 3,
+  "elapsed_seconds": 4.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,153 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Torture: How to Make the International Convention Effective",
+      "bbox": {
+        "x_pct": 18.169,
+        "y_pct": 17.669,
+        "w_pct": 55.619,
+        "h_pct": 15.869
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "A DRAFT OPTIONAL PROTOCOL",
+      "bbox": {
+        "x_pct": 27.545,
+        "y_pct": 40.869,
+        "w_pct": 37.534,
+        "h_pct": 1.746
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "With articles by",
+      "bbox": {
+        "x_pct": 38.095,
+        "y_pct": 52.0,
+        "w_pct": 16.402,
+        "h_pct": 2.231
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Niall MacDermot Eric Martin",
+      "bbox": {
+        "x_pct": 21.302,
+        "y_pct": 54.515,
+        "w_pct": 18.349,
+        "h_pct": 3.715
+      },
+      "changed": true,
+      "change_reason": "Labeling names as section header/zb_heading as they are contributors list"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jean-Jacques Gautier Fran'cois de Vargas",
+      "bbox": {
+        "x_pct": 50.19,
+        "y_pct": 54.615,
+        "w_pct": 22.508,
+        "h_pct": 4.308
+      },
+      "changed": true,
+      "change_reason": "Labeling names as section header/zb_heading as they are contributors list"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "and comments by",
+      "bbox": {
+        "x_pct": 36.751,
+        "y_pct": 60.462,
+        "w_pct": 18.804,
+        "h_pct": 2.023
+      },
+      "changed": true,
+      "change_reason": "Part of the header structure identifying contributors"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Card. Paulo E ARNS Francis BLANCHARD, Rafael CALDERA, Hans HAUG, Jeanne HERSCH, Wemer KAEGI, Felix M",
+      "bbox": {
+        "x_pct": 12.095,
+        "y_pct": 62.715,
+        "w_pct": 68.116,
+        "h_pct": 8.308
+      },
+      "changed": true,
+      "change_reason": "List of names constitutes a structural section/block"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "INTERNATIONAL COMMISSION OF JURISTS",
+      "bbox": {
+        "x_pct": 11.852,
+        "y_pct": 79.538,
+        "w_pct": 31.714,
+        "h_pct": 3.515
+      },
+      "changed": true,
+      "change_reason": "Organizational headers identified as structural markers"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SWISS COMMITTEE AGAINST TORTURE",
+      "bbox": {
+        "x_pct": 59.894,
+        "y_pct": 79.692,
+        "w_pct": 20.106,
+        "h_pct": 3.231
+      },
+      "changed": true,
+      "change_reason": "Organizational headers identified as structural markers"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B.P 120 CH-1224 Ch'enc-Bougeries /Geneva (Switzerland)",
+      "bbox": {
+        "x_pct": 12.349,
+        "y_pct": 83.562,
+        "w_pct": 30.963,
+        "h_pct": 4.823
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "BP. 2402 CH-1002 Lausanne (Switzerland)",
+      "bbox": {
+        "x_pct": 61.344,
+        "y_pct": 83.615,
+        "w_pct": 17.354,
+        "h_pct": 4.946
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Most list entries were incorrectly tagged as general text paragraph instead of structural header information.",
+    "OCR text needs minor normalization in some regions."
+  ],
+  "doc_id": "1630",
+  "page": 2,
+  "elapsed_seconds": 5.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

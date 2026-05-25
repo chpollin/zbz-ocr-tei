@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE II",
+      "bbox": {
+        "x_pct": 37.563,
+        "y_pct": 25.843,
+        "w_pct": 16.1,
+        "h_pct": 1.606
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text extraction"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DE LA DÉMOCRATIE",
+      "bbox": {
+        "x_pct": 28.788,
+        "y_pct": 29.17,
+        "w_pct": 33.705,
+        "h_pct": 2.346
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JUSTIFICATION PESSIMISTE DE LA DÉMOCRATIE",
+      "bbox": {
+        "x_pct": 3.997,
+        "y_pct": 35.299,
+        "w_pct": 60.306,
+        "h_pct": 2.052
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "À première vue, un régime démocratique est caractérisé par le suffrage universel. C'est le bulletin de vote qui donne au citoyen conscience de la part de puissance dont il dispose à l'intérieur de l'État, et en même temps conscience que cette part de puissance est égale pour chacun. Puisque nul n'en a plus que lui, il n'est subordonné à personne, il est un homme libre. Le suffrage universel commence ainsi par satisfaire le besoin de liberté et le besoin de justice qui vit chez tout individu.",
+      "bbox": {
+        "x_pct": 3.663,
+        "y_pct": 38.564,
+        "w_pct": 84.401,
+        "h_pct": 17.101
+      },
+      "changed": true,
+      "change_reason": "Corrected text to match full content of the region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais bientôt, dans la pratique, le citoyen s'aperçoit que, malgré le suffrage universel ou à cause de lui, il lui est souvent impossible de faire passer ses désirs dans la réalité politique. On lui demande de se soumettre aux décisions de la majorité. Or celle-ci l'écrase par sa masse plus que par son prestige. Il lui semble qu'il aurait peut-être pu convaincre un homme, ou quelques-uns. Mais la majorité lui apparaît comme une lourde masse de matière opaque sur laquelle les idées n'ont pas de prise.",
+      "bbox": {
+        "x_pct": 3.663,
+        "y_pct": 55.245,
+        "w_pct": 84.401,
+        "h_pct": 16.806
+      },
+      "changed": true,
+      "change_reason": "Corrected text to match full content of the region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a essayé de dire que l'opinion de la majorité était forcément la bonne. Dans une telle perspective idéologique, le peuple, c'est-à-dire la majorité des citoyens, finit par dire le bien, au sens fort où une autorité juridique dit le droit. Le peuple, dès lors, est non seulement d'accord par nature avec les normes absolues d'un bien politique transcendant, mais il a le pouvoir de créer ces normes, de les actualiser par les décisions qu'il prend, et de définir par là le bien lui-même. Vox populi, vox Dei.",
+      "bbox": {
+        "x_pct": 3.663,
+        "y_pct": 71.543,
+        "w_pct": 84.499,
+        "h_pct": 16.414
+      },
+      "changed": true,
+      "change_reason": "Corrected text to match full content of the region"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "107",
+      "bbox": {
+        "x_pct": 120.0,
+        "y_pct": 894.0,
+        "w_pct": 24.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction for paragraphs was severely truncated or misaligned",
+    "Typo in title extraction (CHAPITIE -> CHAPITRE)",
+    "Page number 107 was not annotated as a region"
+  ],
+  "doc_id": "330",
+  "page": 141,
+  "elapsed_seconds": 5.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

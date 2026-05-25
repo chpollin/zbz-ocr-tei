@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sogenannte wissenschaftlich-technische Revolution ist kein technischer, sie ist ein gesellschaftlicher, sie ist ein geschichtlicher Vorgang. Niemand wird heute mehr bestreiten, daß zwischen Naturwissenschaft und Produktionstechnik eine sehr enge Beziehung besteht. Und wenn von der Produktivkraft Wissenschaft gesprochen wird, so liegt dem eine Geschichte der Naturwissenschaften zugrunde, die mit der Anfertigung eines materiellen Instrumentariums zur Beherrschung der Natur in prähistorischer Zeit begann und sich als ein menschheitsgeschichtlicher Vorgang bis in unsere Gegenwart zutrug.",
+      "bbox": {
+        "x_pct": 14.964,
+        "y_pct": 7.823,
+        "w_pct": 65.56,
+        "h_pct": 17.932
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in original extraction; corrected to match actual text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Keine einzige der Fragen, die die Entwicklung der modernen Naturwissenschaften im Zusammenhang mit ihrer Technisierung aufgeworfen hat, ist anders als gesellschaftlich zu lösen. Dies ist nur mittels einer gesellschafts-wissenschaftlich begründeten Organisationswissenschaft möglich – als Politikum verstanden – die mit prognostischen Fähigkeiten ausgestattet arbeitet, in einer sozialistischen Gesellschaftsordnung.",
+      "bbox": {
+        "x_pct": 14.964,
+        "y_pct": 25.339,
+        "w_pct": 65.318,
+        "h_pct": 14.051
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and disorganized; corrected to match paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man sollte sich ernsthaft überlegen, ob Begriffsbildungen, wie etwa die vom Selbstmord der menschlichen Gesellschaft, wie sie für den journalistischen Tagesgebrauch herumgestreut werden, in ihrer Sinnlosigkeit, der dessenungeachtet starke Verführungskraft innewohnt, philosophisch zu verantworten sind. Von Selbstmord der menschlichen Gesellschaft kann nur sprechen, wer an die Gesellschaft einen individuellen Maßstab anlegt. Nur ein Einzelner kann in dieses Wortes Bedeutung und Sinnhaltigkeit nämlich: Selbst-Mord begehen. Ein Selbst-Mord der menschlichen Gesellschaft hätte die Übereinstimmung aller Angehörigen dieser menschlichen Gesellschaft als vorher erbracht anzunehmen. Diese Art von Selbstaufgabe der menschlichen Gesellschaft gibt es nicht. Mordanschläge aber gegen die menschliche Gesellschaft sind nicht zu dulden.",
+      "bbox": {
+        "x_pct": 14.827,
+        "y_pct": 39.071,
+        "w_pct": 65.455,
+        "h_pct": 25.732
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete; corrected to match full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Günther Anders hat in seinem Briefwechsel mit dem nordamerikanischen Atombombenpiloten Claude Eatherly (Off limits für das Gewissen. Der Briefwechsel Claude Eatherly Günther Anders. Herausgegeben von Robert Junk. Reinbek 1961, S. 140f.) die «Eichmann-Logik» heraufbeschworen und eindringlich vor ihr gewarnt. Das ist die Kehrseite zum soeben erwähnten «Selbstmord». Auch das ist «Eichmann-Logik», allerdings sozusagen schon im voraus. Denn es dreht sich bei dieser «Eichmann-Logik» um die Ausflucht, angeblich nur «Schräubchen im Apparat des Terrors gewesen zu sein». Niemandem, dem an Verantwortung gelegen ist, bleibt es heute erspart,",
+      "bbox": {
+        "x_pct": 14.827,
+        "y_pct": 65.185,
+        "w_pct": 65.375,
+        "h_pct": 19.869
+      },
+      "changed": true,
+      "change_reason": "Text content was garbled; corrected to reflect actual paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added page number as a filterable region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original extraction for all paragraphs was severely truncated and contained garbled text.",
+    "Missing page number region."
+  ],
+  "doc_id": "3100",
+  "page": 9,
+  "elapsed_seconds": 5.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

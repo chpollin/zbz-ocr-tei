@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fragt, warum haben die Menschen Rechte, dann würde ich sagen, die Menschen haben Rechte, insofern sie Rechte wollen, weil es schwieriger ist, Rechte zu haben, als keine Rechte zu haben. Aber schwieriger, da muß man sehr klar sein, denn es gibt Möglichkeiten, ganz feige seine Rechte aufzugeben. So ist das. Es kommt darauf an, daß man den Preis der menschlichen Freiheit bezahlt.",
+      "bbox": {
+        "x_pct": 10.28,
+        "y_pct": 5.283,
+        "w_pct": 79.907,
+        "h_pct": 9.203
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents which were truncated/incorrectly parsed."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Also, es geht darum, das Menschsein anzunehmen, es zu lieben und es zu vertiefen, obgleich es schwieriger ist als das Nichtmenschsein. Aber es lohnt sich, denn es ist die einzige Ausnahme in der Welt. Und vielleicht machen wir uns keine adäquate Vorstellung der Seltenheit des Menschseins in der Wirklichkeit der Welt. Wir können das gar nicht übertreiben, denn es ist nicht zu übertreiben, es ist nur bei den Menschen der Fall. Ich weiß, es gibt Ökologen und viele Leute, die sich in Tiere verlieben und die dann beweisen, daß bei Tieren viel netter ist als bei den Menschen, weil die Tiere nicht solche Kriege führen wie die Menschen, und so weiter und so weiter. Aber das ist doch kein Beweis. Das bedeutet nur, daß für den Menschen etwas anderes auf dem Spiele steht, daß es um andere Fragen geht. Und daß diese Fragen eventuell verlangen können, daß der Mensch faktisch Schmerzhafteres oder Grausameres schafft als die Tiere, weil das ganze „Spiel“, ein anderes Spiel ist. Denn es kommt darauf an, was für eine menschliche Freiheit da eben auf dem Spiele steht. Deswegen müssen wir verstehen, worum es geht, was wirklich für die Freiheit, für die menschliche Freiheit, einen Unterschied bedeutet. Ich glaube, daß je nachdem, was die Menschen mit ihrer Freiheit tun, sich nicht nur das Gesicht der Menschheit, das Gesicht des Menschseins ändert, sondern sogar das Gesicht der Welt. Die Welt ist dadurch geändert, weil die Welt der Ort ist, der Rahmen, wo diese Möglichkeit jetzt existiert, wo die Menschen frei für sich oder für die anderen oder nicht sind. Das Tragen oder Nichttragen der möglichen Verantwortung.",
+      "bbox": {
+        "x_pct": 10.199,
+        "y_pct": 16.105,
+        "w_pct": 79.988,
+        "h_pct": 38.373
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun müssen wir bemerken, daß es gar nicht so leicht ist, denn im Menschsein selbst sind wir im Dunkeln. Wir möchten alles wissen, und wir möchten im Wissen entscheiden und lehren und zeigen: es ist so und es ist nicht so. Aber es stimmt nicht, wir wissen wenig.",
+      "bbox": {
+        "x_pct": 10.245,
+        "y_pct": 55.957,
+        "w_pct": 79.743,
+        "h_pct": 7.642
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Warum ist Toleranz so selten? Toleranz ist selten, weil die Menschen sehr oft glauben, daß sie ein totales Wissen haben. Sie wissen alles. Und da sie es wissen und da für sie die Wahrheit wichtig ist, wollen sie sie um jeden Preis gegen die anderen verteidigen. Das ist also eine Wahl, eine Überzeugung, eine Sicherheit, und der Mensch glaubt: ich darf das, weil ich das alles wirklich weiß. Aber es stimmt nicht, denn der Mensch ist eine Ausnahme. Und das Ausnahmesein kommt daher, daß der Mensch über sich selbst und das Entscheidende im Menschsein weiß. Ich glaube, es gibt im Menschen zwei Unmöglichkeiten des Wissens. Es gibt die Kenntnis des Todes und der Zeit des Todes für jeden einzelnen einerseits, und es gibt auf der anderen Seite die physischen Zwänge, die sich auswirken und die über ihn bestehen. Wir müssen merken, daß es nicht stimmt, daß der Mensch frei von den Zwängen des Restes der Welt ist. Er ist es nicht. Er unterliegt den physikalischen Gesetzen. Er steht unter dem Zwang des Sichselbstnährens, die Mittel zu finden, um weiterzuleben, und so weiter und",
+      "bbox": {
+        "x_pct": 10.164,
+        "y_pct": 66.886,
+        "w_pct": 79.79,
+        "h_pct": 23.747
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 88.08,
+        "y_pct": 93.635,
+        "w_pct": 1.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer to remove from main text flow."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text was severely fragmented and inaccurate.",
+    "Page number at bottom right was labeled as text, reclassified to _filter."
+  ],
+  "doc_id": "3200",
+  "page": 11,
+  "elapsed_seconds": 5.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

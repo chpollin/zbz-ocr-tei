@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Précarité et inconditionnalité.",
+      "bbox": {
+        "x_pct": 25.222,
+        "y_pct": 21.91,
+        "w_pct": 21.757,
+        "h_pct": 1.391
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'esquisse que je viens de faire des Droits de l'homme en tant que conquêtes spécifiquement humaines – et toujours précaires – sur la nature, où règnent les contraintes de la force et des besoins comme aussi celles de l'opacité primitive, concerne, à ce que je crois, la condition humaine comme telle, et donc tous les hommes. Elle est bien universelle.",
+      "bbox": {
+        "x_pct": 25.141,
+        "y_pct": 24.704,
+        "w_pct": 51.515,
+        "h_pct": 8.29
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and misaligned."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai dit que les conquêtes des Droits de l'homme sont toujours précaires, toujours menacées par le règne naturel de la force, partout où il y a des hommes. Mais justement à cause de cette précarité, l'exigence, l'impérativité des droits de l'homme doit être considérée comme absolue, au sens d'inconditionnelle. Il y a toujours de bonnes raisons pour violer les droits de l'homme, et il est rare qu'ils soient violés sans que de bonnes raisons soient avancées. C'est pourquoi les bonnes raisons sont non valables. Il faut comprendre à la fois cette précarité et cette inconditionnalité. Jamais les droits de l'homme ne sont ni ne seront intégralement mis en œuvre. Jamais leur mise en œuvre ne sera assurée de durer. Mais jamais il ne sera permis de renoncer à leur impératif inconditionnel – sous peine de renoncer à notre possible liberté responsable, c'est-à-dire à être des hommes.",
+      "bbox": {
+        "x_pct": 25.085,
+        "y_pct": 32.765,
+        "w_pct": 51.604,
+        "h_pct": 18.375
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Universalité et diversité.",
+      "bbox": {
+        "x_pct": 25.222,
+        "y_pct": 53.706,
+        "w_pct": 17.994,
+        "h_pct": 1.539
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais que devient alors, me demandera-t-on, une fois admise cette universalité fondamentale, la diversité des cultures, dans le temps et dans l'espace? Après tout, l'actualisation d'une liberté humaine manifeste essentiellement l'être intime, la substance humaine, de celui qui agit, de ceux qui agissent, – donc : leur spécificité culturelle. Alors, l'universalité?",
+      "bbox": {
+        "x_pct": 25.165,
+        "y_pct": 56.425,
+        "w_pct": 51.305,
+        "h_pct": 8.472
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'universalité, c'est celle d'une liberté responsable, virtuelle en tout homme, qui fonde sa dignité de sujet de droits, parce qu'il lui appartient de la traduire en actes. Mais l'universalité n'implique en aucune façon l'identité de cette traduction, de ces actes. Les valeurs auxquelles les hommes se réfèrent dans l'exercice de leur liberté ne sont pas nécessairement identiques, ni identiquement hiérarchisées. Ce qui est universel, c'est que, actualisant leur liberté, ils se réfèrent, explicitement",
+      "bbox": {
+        "x_pct": 25.165,
+        "y_pct": 65.17,
+        "w_pct": 51.305,
+        "h_pct": 8.35
+      },
+      "changed": true,
+      "change_reason": "Missing text region identified."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "25",
+      "bbox": {
+        "x_pct": 74.34,
+        "y_pct": 75.83,
+        "w_pct": 2.15,
+        "h_pct": 2.12
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Original text extraction was severely truncated.",
+    "Page number at the bottom right was missing.",
+    "Additional paragraph at the bottom was missing."
+  ],
+  "doc_id": "1770",
+  "page": 10,
+  "elapsed_seconds": 5.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

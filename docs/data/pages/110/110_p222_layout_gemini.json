@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "220",
+      "bbox": {
+        "x_pct": 19.349,
+        "y_pct": 10.33,
+        "w_pct": 3.738,
+        "h_pct": 1.77
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number/running header at top"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "L'ÊIRE ET LA FORME",
+      "bbox": {
+        "x_pct": 68.327,
+        "y_pct": 10.33,
+        "w_pct": 19.387,
+        "h_pct": 1.77
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tons confusément dans la notion sens contradictoires ce est manifestementlà, et ce est au   delà ren",
+      "bbox": {
+        "x_pct": 19.159,
+        "y_pct": 13.407,
+        "w_pct": 68.594,
+        "h_pct": 20.076
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Résumant ce précède; pouvons dire  que la forme se révèle comme la coïncidence, Fidentificalion en l",
+      "bbox": {
+        "x_pct": 19.044,
+        "y_pct": 33.71,
+        "w_pct": 68.629,
+        "h_pct": 24.127
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais Tavons la   matérialité, ce n'esl pas se nier. C'est condition   dexislence; sur le plan humain",
+      "bbox": {
+        "x_pct": 18.929,
+        "y_pct": 57.762,
+        "w_pct": 68.664,
+        "h_pct": 16.745
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/number regions in original input."
+  ],
+  "doc_id": "110",
+  "page": 222,
+  "elapsed_seconds": 4.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

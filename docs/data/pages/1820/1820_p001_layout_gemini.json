@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "achblatt t\u0000r Rehabilitation Revue de r\u0000\u0000adaptatio Rivista per la riabilitazione",
+      "bbox": {
+        "x_pct": 0.0,
+        "y_pct": 0.0,
+        "w_pct": 99.007,
+        "h_pct": 6.619
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_header because it is a publication title/running header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PRO INFIRMIS",
+      "bbox": {
+        "x_pct": 0.0,
+        "y_pct": 12.974,
+        "w_pct": 100.0,
+        "h_pct": 10.287
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Recht auf Leben – Verhinderung von Leben – Sterbehilfe",
+      "bbox": {
+        "x_pct": 16.96,
+        "y_pct": 74.506,
+        "w_pct": 65.794,
+        "h_pct": 6.571
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to include omitted punctuation dashes."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Droit à la vie – empêchement de la vie – euthanasie",
+      "bbox": {
+        "x_pct": 17.246,
+        "y_pct": 81.579,
+        "w_pct": 69.355,
+        "h_pct": 6.858
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to include omitted punctuation dashes and accents."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diritto alla vita – impedimento alla vita – eutanasia",
+      "bbox": {
+        "x_pct": 17.494,
+        "y_pct": 89.498,
+        "w_pct": 67.407,
+        "h_pct": 6.332
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to include omitted punctuation dashes."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Running header mislabeled as text.",
+    "Omissions in transcript text including punctuation and accents.",
+    "Page number 4 and 1981 in image were not captured as regions; should be annotated as page_footer if captured."
+  ],
+  "doc_id": "1820",
+  "page": 1,
+  "elapsed_seconds": 3.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

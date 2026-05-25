@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "s'ajoute ainsi l'inégalité biologique des capacités, et que le dommage ainsi subi par l'enfant apparaît d'autant plus profond, l'atteignant dans son être même, et non seulement quant à son bagage acquis. Il s'ensuit que ce dommage doit être compensé au maximum, et dès l'âge le plus tendre, et tout au long de la scolarité. A ce propos, la démocratisation des études a peut-être été conçue de façon trop abstraite, trop détachée du contexte social. Elle exige sans doute la mise en place de tout un réseau d'organismes culturels accompagnant les êtres humains tout au long de leur vie. Mais si cette inégalité au départ doit être corrigée, ce n'est certes pas par l'abolition de la culture pour tous ! La culture passée est de droit le bien actuel de tous. Le passé jeté au néant abolit aussi l'avenir. La culture n'est pas une poudre irisée dont se pare à certaines heures de relâche la recherche du gain et du confort. Elle est source de sens et exigence de sens, donc mise en question et contestation réelle, au nom de quelque chose, et non la contestation dans le vide, à partir de rien et en vue d'on ne sait quoi. Et elle est cette source et cette substance parce que le prix en a été payé au cours des siècles et des millénaires, par tous ceux qui ont appelé l'homme à devenir ce qu'il a vocation de devenir. Je voudrais évoquer ici le modèle de tous les professeurs, le plus simple, le plus « dialoguant », le plus rigoureux qu'on ait jamais connu, le plus exigeant et le plus respectueux, je veux dire : Socrate, — et rappeler son rapport avec la cité, sa contestation du pouvoir, son lucide mépris, son inébranlable obéissance, et sa mort.",
+      "bbox": {
+        "x_pct": 94.444,
+        "y_pct": 118.724,
+        "w_pct": 365.572,
+        "h_pct": 610.34
+      },
+      "changed": true,
+      "change_reason": "The text was poorly OCR'd and the bounding box coordinates were scaled incorrectly by a factor of 10 in the provided input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela m'amène à l'allégeance à mes yeux suprême, celle qui subordonne toutes les autres et donne leur sens à toutes : l'allégeance envers l'homme qui, en tout homme, transcende ce qu'il est en fait.",
+      "bbox": {
+        "x_pct": 103.76,
+        "y_pct": 741.751,
+        "w_pct": 329.26,
+        "h_pct": 48.823
+      },
+      "changed": true,
+      "change_reason": "Text transcription corrected to match the image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 89.0,
+        "y_pct": 830.0,
+        "w_pct": 20.0,
+        "h_pct": 30.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and re-labeled to filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cende ce qu'il est en fait, c'est-à-dire essentiellement, sous l'angle de l'Université, envers l'homme qui, à l'aide de la raison, cherche à connaître le vrai. L'Université trouve ici sa dimension universelle. A travers la science et la réflexion sur la science, à travers l'histoire et la réflexion sur l'histoire, à travers la culture et la réflexion sur la culture, l'homme cherche ce qui est vrai, il le cherche hors de lui et il cherche à devenir capable de le saisir. Le vrai n'est jamais tout fait et tout offert, à portée de notre main ou tombant sous le sens. Même quand il se dévoile il faut avoir purifié son regard pour être capable de le saisir. Platon le savait, et les plus grands parmi les savants contemporains l'ont confirmé. Si l'allégeance envers l'étudiant concerne avant tout le présent de l'Université, si l'allégeance envers la vie actuelle du passé concerne la vie actuelle du passé ; si l'allégeance envers la société concerne surtout son développement futur, l'allégeance envers la vérité opère sur n'importe quel moment du temps, mais le traverse et le transcende. L'exercice qui veut tout subordonner à la recherche du vrai a son lieu privilégié à l'Université, et le souvenir des années universitaires ne devrait par la suite jamais laisser s'atténuer les exigences que cet exercice implique. Cet exercice sensibilise à bien des choses, qu'il rend difficiles à supporter ; il n'aide sans doute ni à vivre, ni à être heureux : il sensibilise à l'injustice, à tout ce qui étouffe ou altère le sens, la perception, l'interprétation et la transmission du vrai, au non-sens des arguments de la force, de la publicité, de toutes les pressions sociales. D'où un état normal de tension avec toute forme de force ou de pouvoir. D'où l'horreur de la police à l'Université. Mais n'ont le droit — et le devoir — de",
+      "bbox": {
+        "x_pct": 563.22,
+        "y_pct": 120.0,
+        "w_pct": 350.0,
+        "h_pct": 750.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed the improperly sliced bounding box merging two paragraphs."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 940.0,
+        "y_pct": 830.0,
+        "w_pct": 20.0,
+        "h_pct": 30.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and re-labeled to filter."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 5,
+  "issues": [
+    "OCR transcription errors in almost all regions",
+    "Bounding boxes incorrectly scaled/not covering full content",
+    "Page numbers not filtered",
+    "One text region merged two distinct paragraphs across the right-hand page gutter"
+  ],
+  "doc_id": "850",
+  "page": 6,
+  "elapsed_seconds": 7.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

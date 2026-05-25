@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "146 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 18.975,
+        "y_pct": 9.944,
+        "w_pct": 68.468,
+        "h_pct": 2.241
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "tischen  Denken  auftreten. Und es wäre wahre Bedeutung  des dreidimensionalen w Raumes   (innerhalb",
+      "bbox": {
+        "x_pct": 18.975,
+        "y_pct": 12.951,
+        "w_pct": 68.468,
+        "h_pct": 9.127
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "2. Spécificité modale de la gpatialité",
+      "bbox": {
+        "x_pct": 30.876,
+        "y_pct": 24.332,
+        "w_pct": 44.666,
+        "h_pct": 2.549
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il me semble en eflet évident Son sens son aspect et son rôle dépend de Fattitude du sujet Femploie.",
+      "bbox": {
+        "x_pct": 18.664,
+        "y_pct": 27.466,
+        "w_pct": 68.813,
+        "h_pct": 22.329
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour la première de ces deux   tâches, il nous   faudra   suivre un ordre nécessairement arbitraire.",
+      "bbox": {
+        "x_pct": 18.548,
+        "y_pct": 49.719,
+        "w_pct": 68.629,
+        "h_pct": 12.747
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Espace  transcendental . Le sujet n'est que   sujet, face à Fobjectivité   quelconque; jetant Sur el",
+      "bbox": {
+        "x_pct": 18.318,
+        "y_pct": 64.469,
+        "w_pct": 68.744,
+        "h_pct": 5.637
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Paul HÄBERLIN, op. cit. p. 134.",
+      "bbox": {
+        "x_pct": 21.056,
+        "y_pct": 72.392,
+        "w_pct": 30.133,
+        "h_pct": 1.758
+      },
+      "changed": true,
+      "change_reason": "Corrected text coverage"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Fixed missing page header region",
+    "Corrected footnote text and bbox"
+  ],
+  "doc_id": "110",
+  "page": 148,
+  "elapsed_seconds": 6.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text coverage": 1,
+    "ADDED": 1
+  }
+}

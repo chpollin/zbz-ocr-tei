@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gewalt zum Durchbruch zu verhelfen. Was aber diese Illusion nährt, ist die Tatsache, daß das menschliche Gesetz im Menschsein ohne Zugriff auf das Naturgesetz nie ganz auszukommen vermag. Zum Beispiel kann der Respekt der Rechtsordnung nie ohne Hilfe einer Polizeigewalt eingehalten werden. Hier drängt sich uns noch einmal die erschreckende Verwicklung menschlicher Dinge auf, die zur Folge hat, daß das Beste immer in Gefahr ist, das Schlimmste hervorzurufen. Diesmal besteht die Falle nicht in der Gleichgültigkeit, sondern im Gegenteil: in jener dogmatischen und fanatischen Leidenschaft, die sich selbst die absoluten Rechte eines Rettungsauftrags zusprechend, mit gutem Recht glaubt, zu jeder Gewalt greifen zu dürfen.",
+      "bbox": {
+        "x_pct": 10.318,
+        "y_pct": 5.225,
+        "w_pct": 82.012,
+        "h_pct": 29.374
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to reflect the full content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man sieht also, daß es im Zeitalter der atomaren Bedrohung ganz besonders gefährlich wäre, die Verwerfung des Krieges zu banalisieren, als ob es genügte, ein bißchen guten Willen oder wohlwollende Gleichgültigkeit den anderen Menschen gegenüber an den Tag zu legen – welches auch ihre Hautfarbe, ihre Rasse, ihre Überlieferungen sein mögen –, um das Reich des Friedens auf Erden zu sichern. Gerade bei so ungeheuren Drohungen ist es unbedingt notwendig, dem Menschsein ins Auge zu blicken und die möglichen Ursachen der Konflikte, die zunächst aus dem Naturgesetz hervorgehen, wahrzunehmen. Die einfachste Vorsicht verlangt, daß man tatsächlich und hartnäckig den Mißständen der Gewalt und deren Bedrohungen im voraus entgegenwirkt. Aber dies genügt noch lange nicht. Mein Lehrer, Karl Jaspers, behauptete, daß der Friede eine echte Bekehrung der Menschen verlangt. Es tut not, die Forderungen des menschlichen Gesetzes zu stärken und zu konkretisieren, das heißt in sich selbst und in der Gesellschaft das Verständnis für ihren Sinn und für das, was auf dem Spiel steht, zu vertiefen.",
+      "bbox": {
+        "x_pct": 10.275,
+        "y_pct": 34.097,
+        "w_pct": 82.156,
+        "h_pct": 40.943
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to reflect the full content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es also darum unter den Vorbedingungen zum Frieden diejenigen zu unterscheiden, die das Überleben allein betreffen, und die, welche sich auf die universelle Ehrfurcht vor dem »Ich«, dem »Du«, dem »Er« beziehen, also vor den Rechten eines jeden Menschen. Es kommt demnach darauf an, in jedem Menschen im Namen des Friedens das spezifisch Menschliche zu nähren und zu stärken – durch Aneignung einer Vergangen-",
+      "bbox": {
+        "x_pct": 10.42,
+        "y_pct": 74.449,
+        "w_pct": 82.156,
+        "h_pct": 16.564
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to reflect the full content of the paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "192",
+      "bbox": {
+        "x_pct": 11.2,
+        "y_pct": 93.3,
+        "w_pct": 4.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer/filter as per instructions."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was heavily truncated for all paragraphs.",
+    "Page number 192 was initially labeled as text.",
+    "Some punctuation marks in OCR were incorrectly identified as semicolons in the provided input."
+  ],
+  "doc_id": "2830",
+  "page": 9,
+  "elapsed_seconds": 5.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

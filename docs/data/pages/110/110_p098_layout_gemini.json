@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "96",
+      "bbox": {
+        "x_pct": 20.119,
+        "y_pct": 10.057,
+        "w_pct": 2.381,
+        "h_pct": 2.37
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top left"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 75.893,
+        "y_pct": 10.057,
+        "w_pct": 12.872,
+        "h_pct": 2.37
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header at top right"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "melle ; ce revient 4 dire n'y a rien dans tout le champ du réel humain; rien de Ce existe  de n'impo",
+      "bbox": {
+        "x_pct": 19.873,
+        "y_pct": 13.083,
+        "w_pct": 68.746,
+        "h_pct": 9.339
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au   chapitre I, avons tenté détablir que dans le domaine sans une prise de Tesprit; et ous somnmne5",
+      "bbox": {
+        "x_pct": 19.908,
+        "y_pct": 24.396,
+        "w_pct": 68.435,
+        "h_pct": 10.759
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que fait théorie scienlilique? Nul doule qu'elle tend à Tunilé, dans la Inesure où elle réussil. Ell",
+      "bbox": {
+        "x_pct": 19.643,
+        "y_pct": 35.558,
+        "w_pct": 68.769,
+        "h_pct": 38.876
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header/footer regions in initial input."
+  ],
+  "doc_id": "110",
+  "page": 98,
+  "elapsed_seconds": 6.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

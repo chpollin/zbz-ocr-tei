@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "anzuknupfen 05 Und da komme ich auch zu Ihrer warum dic weise in den Grundrechten;",
+      "bbox": {
+        "x_pct": 7.246,
+        "y_pct": 12.068,
+        "w_pct": 37.645,
+        "h_pct": 19.838
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof Jeanne Hersch",
+      "bbox": {
+        "x_pct": 7.005,
+        "y_pct": 53.87,
+        "w_pct": 13.128,
+        "h_pct": 2.452
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Da 'ch will niche ist schon cinc [undamentalr Tragc und da dies heute cin berszeil. Dicses Eraphen ",
+      "bbox": {
+        "x_pct": 6.763,
+        "y_pct": 58.05,
+        "w_pct": 37.838,
+        "h_pct": 25.007
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dieses Spannungslel zwischen Fteidoch nicht vergessen 25 ja Grundrechtc nicht ohne Cine stcll Also o",
+      "bbox": {
+        "x_pct": 53.659,
+        "y_pct": 31.566,
+        "w_pct": 36.316,
+        "h_pct": 28.36
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 0,
+  "issues": [
+    "OCR text quality is very poor with significant artifacts and character misrecognition.",
+    "The bounding box content is heavily corrupted by scan artifacts.",
+    "Section header identified correctly but needs verification against source metadata."
+  ],
+  "doc_id": "2930",
+  "page": 9,
+  "elapsed_seconds": 3.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

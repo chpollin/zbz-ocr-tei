@@ -1,0 +1,134 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE",
+      "bbox": {
+        "x_pct": 29.569,
+        "y_pct": 147.245,
+        "w_pct": 40.78,
+        "h_pct": 0.581
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "239",
+      "bbox": {
+        "x_pct": 80.528,
+        "y_pct": 145.426,
+        "w_pct": 2.768,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "contraintes présentés qu'il se refuserait à en prendre conscience, alors qu'elles existent — différentes — dans toute société. Bien plus, il se mettrait dans l'impossibilité de comprendre réellement ce dont il veut pourtant parler : le possible, le choix, l'hypothèse, la décision, conditions de toute existence historique.",
+      "bbox": {
+        "x_pct": 14.754,
+        "y_pct": 17.317,
+        "w_pct": 69.641,
+        "h_pct": 9.009
+      },
+      "changed": true,
+      "change_reason": "Expanded text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'objectivité — au sens positiviste du mot — est certes nécessaire au cours de recherches tendant à établir les faits les plus nus. Mais pour que ces faits s'organisent en « histoire », en « connaissance historique » véritable, il faut davantage, ou, si l'on veut, une autre « objectivité » : une curiosité généreuse, mettant en jeu la subjectivité de l'historien, avec tous ses engagements propres et l'entraînant à une confrontation radicale avec la subjectivité des hommes du passé, dans leur existence historique concrète.",
+      "bbox": {
+        "x_pct": 14.928,
+        "y_pct": 25.865,
+        "w_pct": 69.395,
+        "h_pct": 14.287
+      },
+      "changed": true,
+      "change_reason": "Expanded text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un historien purement objectif ne comprendrait rien à l'existence historique. Mais celui qui, recherchant la confrontation avec les autres jusque sur les bords de l'oubli, retient et sauve par son récit ce qui peut être sauvé de présence humaine, aura recours à toutes les sciences humaines, et notamment à toutes les sciences sociales, pour saisir mieux les contraintes, les séries causales, les servitudes économiques, parmi lesquelles se sont ouverts aux hommes du passé le possible, le choix, l'hypothèse, la décision — en somme l'histoire. Si la liberté humaine est la condition de l'histoire, il importe d'autant plus de connaître la pesanteur des mécanismes qui y exercent leur tyrannie, comme aussi l'efficacité impersonnelle des formes assurant la cohésion des groupes sociaux.",
+      "bbox": {
+        "x_pct": 14.887,
+        "y_pct": 40.739,
+        "w_pct": 69.436,
+        "h_pct": 20.833
+      },
+      "changed": true,
+      "change_reason": "Expanded text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit que la confusion verbale engendrée par le seul mot « histoire » s'appliquant à la fois à l'histoire vécue et à l'étude de cette histoire n'est pas simple erreur et correspond à un emmêlement réel et inextricable. Emmêlement nécessaire aussi, sans lequel la connaissance historique verrait disparaître son objet.",
+      "bbox": {
+        "x_pct": 15.092,
+        "y_pct": 62.393,
+        "w_pct": 69.201,
+        "h_pct": 8.756
+      },
+      "changed": true,
+      "change_reason": "Expanded text content for accuracy."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "II. Inadéquation de l'histoire-récit à l'histoire vécue",
+      "bbox": {
+        "x_pct": 15.092,
+        "y_pct": 73.043,
+        "w_pct": 55.263,
+        "h_pct": 1.85
+      },
+      "changed": true,
+      "change_reason": "Fixed header text including the number 'II.'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais maintenant mettre en lumière quelques-uns des éléments constitutifs de l'histoire vécue, qui la rendent irréductible à une science objective.",
+      "bbox": {
+        "x_pct": 15.195,
+        "y_pct": 75.297,
+        "w_pct": 69.129,
+        "h_pct": 5.278
+      },
+      "changed": true,
+      "change_reason": "Expanded text content for accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.879,
+        "y_pct": 92.593,
+        "w_pct": 36.326,
+        "h_pct": 3.704
+      },
+      "changed": true,
+      "change_reason": "New region identified as page footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 7,
+  "issues": [
+    "Incomplete OCR text in initial region annotations",
+    "Missing section header number",
+    "Missing footer content",
+    "Missing page header content"
+  ],
+  "doc_id": "540",
+  "page": 11,
+  "elapsed_seconds": 5.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

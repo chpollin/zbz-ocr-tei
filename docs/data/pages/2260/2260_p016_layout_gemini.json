@@ -1,0 +1,116 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "leursv, lui déroba même son azur. Et tendant à que nul être ne possède, les cieux furent.",
+      "bbox": {
+        "x_pct": 23.217,
+        "y_pct": 11.338,
+        "w_pct": 65.542,
+        "h_pct": 7.997
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu créa le manque il en brisa le cœur, et il y eut une multitude de cœurs. Il enferma loin du Sien chaque cœur isolé qui battit tout seul dans sa cage d’os et de chair. Et il le resserra entre deux morts. Alors les vivants furent.",
+      "bbox": {
+        "x_pct": 23.289,
+        "y_pct": 22.475,
+        "w_pct": 65.47,
+        "h_pct": 16.944
+      },
+      "changed": true,
+      "change_reason": "OCR text transcription was severely incomplete/corrupted compared to the visual content in the region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu se trouva au milieu du temps et de l'espace, au milieu de ses œuvres qui ne lui ressemblaient pas.",
+      "bbox": {
+        "x_pct": 23.458,
+        "y_pct": 42.34,
+        "w_pct": 65.373,
+        "h_pct": 8.502
+      },
+      "changed": true,
+      "change_reason": "OCR text transcription was corrupted, included extraneous words and missed parts of the original text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il se sentit seul",
+      "bbox": {
+        "x_pct": 27.072,
+        "y_pct": 50.901,
+        "w_pct": 22.807,
+        "h_pct": 2.239
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il avait été tout, et il était seul.",
+      "bbox": {
+        "x_pct": 26.952,
+        "y_pct": 53.594,
+        "w_pct": 46.337,
+        "h_pct": 2.719
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il voulut créer l'Homme à son image. Mais il n'avait pas d'image. Et un être ayant une image ne pouvait pas Lui ressembler. Et un être ne pouvait pas Lui ressembler sans perdre l'être en Lui.",
+      "bbox": {
+        "x_pct": 23.253,
+        "y_pct": 59.175,
+        "w_pct": 65.663,
+        "h_pct": 13.636
+      },
+      "changed": true,
+      "change_reason": "OCR text transcription was corrupted/incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu travailla à faire un être qui Lui ressemblât autant qu'il était possible.",
+      "bbox": {
+        "x_pct": 23.41,
+        "y_pct": 73.375,
+        "w_pct": 65.181,
+        "h_pct": 5.892
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted with extra words and incorrect conjugation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 23.494,
+        "y_pct": 82.203,
+        "w_pct": 3.012,
+        "h_pct": 2.259
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Multiple regions contained severe OCR transcription errors.",
+    "Page number 18 was improperly labeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 16,
+  "elapsed_seconds": 5.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

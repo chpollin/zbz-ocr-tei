@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "style, et, avant tout; de regard. Cet ouvrage difficile, sous-titré «Essai d'une philosophie de la relation», et au fil duquel on retrouve nombre de problèmes traditionnels – par exemple, sous un éclairage tout neuf, le problème des Universaux – est le poème d'un visionnaire, un film métaphysique.",
+      "bbox": {
+        "x_pct": 13.272,
+        "y_pct": 8.678,
+        "w_pct": 66.64,
+        "h_pct": 7.066
+      },
+      "changed": true,
+      "change_reason": "OCR correction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le regard, en effet, structure cette pensée, est bien plutôt celui de la caméra que celui du phénoménologue. Il est à chaque instant double et polarisé à l'extrême: d'une part, il se pose sur le lointain le plus lointain, là où l'individuel s'efface, où promesses et menaces s'abolissent, où règne la généralité indifférente et immuable; d'autre part, il se tient aux aguets de la présence immédiate, particulière, dont va dépendre, dont dépend déjà l'instant imminent.",
+      "bbox": {
+        "x_pct": 13.215,
+        "y_pct": 15.538,
+        "w_pct": 66.616,
+        "h_pct": 11.601
+      },
+      "changed": true,
+      "change_reason": "OCR correction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous retrouvons ainsi tous nos problèmes, même ceux, politiques, sociaux, existentiels, que nous pose le temps où nous vivons. Impérieusement interrogative, la philosophie nous rejette dans notre vie incarnée, hic et nunc.",
+      "bbox": {
+        "x_pct": 13.4,
+        "y_pct": 55.858,
+        "w_pct": 66.398,
+        "h_pct": 4.826
+      },
+      "changed": true,
+      "change_reason": "OCR correction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 66.213,
+        "y_pct": 61.726,
+        "w_pct": 11.628,
+        "h_pct": 1.675
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Giuseppe Semerari: Storicismo e ontologismo critico. 2a edizione. Manduria, Bari, Perugia, ed. Lacaita, 1960, 306 pages.",
+      "bbox": {
+        "x_pct": 13.352,
+        "y_pct": 67.236,
+        "w_pct": 66.64,
+        "h_pct": 4.313
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header and fixed OCR transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le dessein de M. G. Semerari, connu entre autres par un important ouvrage sur Schelling (cf. Studia philosophica, XIX, 230), est de dépasser l'historicisme, illustré en Italie par B. Croce et G. Gentile, vers une conscience concrète de l'historicité; il met en valeur, à cet effet, l'ontologie critique qu'a élaborée Pantaleo Carabellese (1877-1948), dont nous avons signalé (Studia philosophica, XVI, p. 256) un recueil de textes choisis en français paru sous le titre: La conscience concrète, où l'être concret est caractérisé par son activité. M. Semerari tient grand compte aussi du Husserl de la Krisis et de la Phénoménologie de la perception de Merleau-Ponty. Comme",
+      "bbox": {
+        "x_pct": 13.215,
+        "y_pct": 72.746,
+        "w_pct": 66.72,
+        "h_pct": 15.345
+      },
+      "changed": true,
+      "change_reason": "OCR correction"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Multiple paragraphs had significant OCR errors.",
+    "Bibliographic entry should be labeled as section_header.",
+    "Author signature correctly identified as text."
+  ],
+  "doc_id": "570",
+  "page": 3,
+  "elapsed_seconds": 5.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">GLASNOST - PERESTROJKA</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2570</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>GLASNOST - PERESTROJKA</title>
+          <author>Jeanne Hersch</author>
+          <date>1988</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screen-claude" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: 0 Fehler, 0 Warnings; Overlay S.1: Schreibmaschinentext, Zonen korrekt. S.4: FRA-Allocution korrekt; S.5 facs-Zonen mit uebergrossen Koordinaten (lrx bis 10959, Surface nur 1109x1704) -- systematisches Layoutmuster, kein Textverlust (+2 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1109" lry="1704">
+      <zone xml:id="facs_1_r_1" ulx="90" uly="132" lrx="443" lry="169" />
+      <zone xml:id="facs_1_r_2" ulx="798" uly="190" lrx="1073" lry="253" />
+      <zone xml:id="facs_1_r_3" ulx="321" uly="304" lrx="750" lry="337" />
+      <zone xml:id="facs_1_r_4" ulx="373" uly="353" lrx="705" lry="383" />
+      <zone xml:id="facs_1_r_5" ulx="92" uly="480" lrx="1056" lry="940" />
+      <zone xml:id="facs_1_r_6" ulx="94" uly="983" lrx="962" lry="1014" />
+      <zone xml:id="facs_1_r_7" ulx="95" uly="1039" lrx="923" lry="1070" />
+      <zone xml:id="facs_1_r_8" ulx="151" uly="1095" lrx="1080" lry="1595" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1109" lry="1704">
+      <zone xml:id="facs_2_r_1" ulx="124" uly="136" lrx="1045" lry="425" />
+      <zone xml:id="facs_2_r_2" ulx="125" uly="469" lrx="1050" lry="1011" />
+      <zone xml:id="facs_2_r_3" ulx="70" uly="1066" lrx="997" lry="1229" />
+      <zone xml:id="facs_2_r_4" ulx="123" uly="1253" lrx="1061" lry="1413" />
+      <zone xml:id="facs_2_r_5" ulx="220" uly="1448" lrx="1072" lry="1611" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1109" lry="1704">
+      <zone xml:id="facs_3_r_1" ulx="196" uly="160" lrx="1084" lry="362" />
+      <zone xml:id="facs_3_r_2" ulx="195" uly="389" lrx="1044" lry="640" />
+      <zone xml:id="facs_3_r_3" ulx="194" uly="663" lrx="1040" lry="1036" />
+      <zone xml:id="facs_3_r_4" ulx="97" uly="1081" lrx="1061" lry="1327" />
+      <zone xml:id="facs_3_r_5" ulx="46" uly="1365" lrx="895" lry="1488" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1109" lry="1704">
+      <zone xml:id="facs_4_r_1" ulx="62" uly="119" lrx="525" lry="149" />
+      <zone xml:id="facs_4_r_2" ulx="63" uly="195" lrx="579" lry="222" />
+      <zone xml:id="facs_4_r_3" ulx="63" uly="269" lrx="385" lry="296" />
+      <zone xml:id="facs_4_r_4" ulx="62" uly="328" lrx="1065" lry="433" />
+      <zone xml:id="facs_4_r_5" ulx="61" uly="466" lrx="1079" lry="647" />
+      <zone xml:id="facs_4_r_6" ulx="59" uly="675" lrx="1079" lry="930" />
+      <zone xml:id="facs_4_r_7" ulx="60" uly="964" lrx="1064" lry="1365" />
+      <zone xml:id="facs_4_r_8" ulx="60" uly="1396" lrx="1065" lry="1620" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1109" lry="1704">
+      <zone xml:id="facs_5_r_1" ulx="440" uly="1683" lrx="10389" lry="4980" />
+      <zone xml:id="facs_5_r_2" ulx="432" uly="5290" lrx="10959" lry="8207" />
+      <zone xml:id="facs_5_r_3" ulx="432" uly="8530" lrx="10399" lry="16343" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1109" lry="1705">
+      <zone xml:id="facs_6_r_1" ulx="64" uly="118" lrx="1036" lry="634" />
+      <zone xml:id="facs_6_r_2" ulx="66" uly="670" lrx="1036" lry="812" />
+      <zone xml:id="facs_6_r_3" ulx="67" uly="844" lrx="1051" lry="1057" />
+      <zone xml:id="facs_6_r_4" ulx="65" uly="1091" lrx="1081" lry="1604" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1109" lry="1704">
+      <zone xml:id="facs_7_r_1" ulx="35" uly="163" lrx="1029" lry="873" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          3
+        </head>
+        <p facs="#facs_1_r_2">
+          Institut für internationale Problematik<lb facs="#facs_1_l_2_1" n="N001" />"Neuorientierung zwischen <placeName ref="#zbz-l.12">West</placeName> und <placeName ref="#zbz-l.13">Ost</placeName>"
+        </p>
+        <p facs="#facs_1_r_3">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>, <placeName ref="#zbz-l.48">Genf</placeName><lb facs="#facs_1_l_3_1" n="N001" />Zusammenfassung
+        </p>
+        <p facs="#facs_1_r_4">
+          "<bibl ref="#zbz-w.481">GLASNOST - PERESTROJKA</bibl>"<lb facs="#facs_1_l_4_1" n="N001" />- ein ideologischer Eingriff
+        </p>
+        <p facs="#facs_1_r_5">
+          Im <placeName ref="#zbz-l.56">Westen</placeName> stellen sich die meisten Leute seit einiger <bibl ref="#zbz-w.705">Zeit</bibl> die Frage nach der Aufrichtigkeit von <persName ref="#zbz-p.1120">Gorbatschow</persName>. Die Optimisten halten ihn für aufrichtig, die Pessimisten dagegen nicht. Meiner Ansicht nach ist dies aber nicht die richtige Fragestellung. Zunächst muss man sich bewusst sein, dass "Aufrichtigkeit" im <placeName ref="#zbz-l.56">Westen</placeName> und im <placeName ref="#zbz-l.13">Osten</placeName> nicht dasselbe bedeutet, sodass die gestellte Frage sich in einer unerschöpflichen Komplexität verliert. - Ausserdem ist es nicht <persName ref="#zbz-p.1120">Gorbatschows</persName> Aufrichtigkeit, die über die faktischen Wirkungen der jetzigen Reformen entscheiden wird, sondern viel eher die Machtverhältnisse, die diese Reformen zur Folge haben werden, - zunächst im <placeName ref="#zbz-l.13">Osten</placeName>, dann im <placeName ref="#zbz-l.56">Westen</placeName>, und zuletzt zwischen <placeName ref="#zbz-l.13">Ost</placeName> und <placeName ref="#zbz-l.12">West</placeName>.
+        </p>
+        <p facs="#facs_1_r_6">
+          Gehen wir deshalb das Problem unter diesem dreifachen Aspekt an.
+        </p>
+        <p facs="#facs_1_r_7">
+          1. Im <placeName ref="#zbz-l.13">Osten</placeName>. Da kann man drei Hypothesen in Betracht ziehen:
+        </p>
+        <p facs="#facs_1_r_8">
+          a) Es gelingt <persName ref="#zbz-p.1120">Gorbatschow</persName>, wie es anscheinend seine Absicht ist, die wirtschaftlichen und kulturellen Strukturen des Sowjetregimes genügend aufzulockern, damit es mit einer Forschung, einer Produktivität und einem kritischen Sinn vereinbar wird, wie sie die zeitgenössische, technisch entwickelte Welt verlangt und trotzdem die kommunistische Ordnung auf allen Gebieten aufrecht zu erhalten. Das scheint eigentlich ausgeschlossen. Zunächst einmal, weil es widersprüchlich ist; weiter, weil <persName ref="#zbz-p.1120">Gorbatschow</persName> dann den grössten Teil der Privilegierten gegen sich hätte und noch dazu einen grossen Teil der Massen, um nicht von den immer zahlreicheren Dissidenten zu sprechen, die ihrer Hoffnung beraubt wären.
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          4
+        </p>
+        <p facs="#facs_2_r_2">
+          b) Es gelingt <persName ref="#zbz-p.1120">Gorbatschow</persName>, eine progressive, aber radikale Liberalisierung zu verwirklichen. In dieser Hypothese würde das eiserne Regime, unter dem <placeName ref="#zbz-l.18">Russland</placeName> seit mehr als 60 Jahren niedergedrückt wird, gebrochen, die unterdrückten Länder stünden auf, die Geschichte wird unvorhersehbar. <persName ref="#zbz-p.1120">Gorbatschow</persName> würde wahrscheinlich durch <persName ref="#zbz-p.50">Gott</persName> weiss was weggefegt. Das Ganze scheint äusserst unwahrscheinlich.
+        </p>
+        <p facs="#facs_2_r_3">
+          c) Es gelingt <persName ref="#zbz-p.1120">Gorbatschow</persName> - oder nicht ihm, dafür aber einem anderen -, die ganze Strenge des Systems durch Zwang und Drohung aufrecht zu erhalten, in dem die <placeName ref="#zbz-l.565">Rolle</placeName> der Armee noch grösser wird, hauptsächlich was die unterjochten Länder betrifft, in dem aber doch manche Scheinreformen gerettet würden auf der Ebene der Sprache, der Kultur, der Werbung. Das wäre ein ständig bedrohter Erfolg, der aber auf verschiedene Weisen gegen aussen wirksam wäre, ganz besonders <placeName ref="#zbz-l.14">Europa</placeName> gegenüber, und sogar den <placeName ref="#zbz-l.285">USA</placeName>. Diese Linie ist die wahrscheinlichste. Sie könnte sich lange halten, umso mehr wenn sie nach innen und nach aussen Erfolge zu verzeichnen hätte. Die ideologische Waffe hat dann kaum mehr Wirkung im Inneren, sie kann aber nach aussen sehr wirksam sein.
+        </p>
+        <p facs="#facs_2_r_4">
+          2. Im <placeName ref="#zbz-l.56">Westen</placeName>. Man hat vielleicht nicht genug unterstrichen, wie sehr <persName ref="#zbz-p.1120">Gorbatschows</persName> Ideologie der Sehnsucht entspricht, nicht so sehr des russischen Volkes, als der westlichen Völker, hauptsächlich der <persName ref="#zbz-p.830">Europäer</persName>, und in erster Linie des deutschen Volkes.
+        </p>
+        <p facs="#facs_2_r_5">
+          a) Lage des deutschen Volkes. Mehr als 40 Jahre nach Kriegsende befindet sich <placeName ref="#zbz-l.241">Deutschland</placeName> in einer auf die Dauer unhaltbaren Lage, besonders aber für die Generationen, die weder den Hitlerismus noch den Krieg erlebt haben.
+        </p>
+        <p>
+          - Das Land ist in zwei Teile gespalten, jeder Teil gehört einer Welt an, die der anderen in allem entgegengesetzt ist. Zwischen beiden Teilen steht eine Mauer, ein mit Beton befestigtes Niemandsland; eine Mauer, die noch vor einiger <bibl ref="#zbz-w.705">Zeit</bibl> die
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          5
+        </p>
+        <p facs="#facs_3_r_2">
+          'Mauer der Schande' genannt wurde. Diese Mauer teilt auch die frühere Hauptstadt <placeName ref="#zbz-l.16">Berlin</placeName>. Als die letzten Besprechungen zwischen den zwei Grossen stattgefunden haben, hat man sie anscheinend vergessen. Und doch sind viele junge Leute gestorben beim Versuch, sie zu überklettern.
+        </p>
+        <p facs="#facs_3_r_3">
+          - Es gibt noch kein politisches <placeName ref="#zbz-l.14">Europa</placeName>, das die Abwehr des Westens an der Ostgrenze auf sich nehmen könnte. Die neuen Vereinbarungen zwischen <persName ref="#zbz-p.1122">Reagan</persName> und <persName ref="#zbz-p.1120">Gorbatschow</persName> schwächen oder löschen die Dissuasion aus, die <placeName ref="#zbz-l.12">Westeuropa</placeName> schützte, <placeName ref="#zbz-l.16">Berlin</placeName> inbegriffen. Die <persName ref="#zbz-p.42">Deutschen</persName>, die keine Nuklearverteidigung besitzen, müssen sich ausgesetzt fühlen.
+        </p>
+        <p facs="#facs_3_r_4">
+          - Ausser diesen faktischen Gegebenheiten spielen auch mächtige psychologische Faktoren eine <placeName ref="#zbz-l.565">Rolle</placeName>. Die Erinnerung an den Hitlerismus und an den letzten Weltkrieg nährt in <placeName ref="#zbz-l.241">Deutschland</placeName> einen tiefgreifenden Pazifismus. Die ökologische Bewegung knüpft an die Ueberlieferungen der früheren "Jugendbewegung" an und wirkt in dieselbe Richtung. Schliesslich ist da noch die Sehnsucht nach Einheit, deren Wirkungskraft schwer abgeschätzt werden kann, und die heute nur von immer engeren Kontakten mit dem <placeName ref="#zbz-l.13">Osten</placeName> etwas zu erwarten hat – also von der <placeName ref="#zbz-l.55">USSR</placeName>.
+        </p>
+        <p facs="#facs_3_r_5">
+          b) Die Ideologie <persName ref="#zbz-p.1120">Gorbatschows</persName> passt nach Mass auf diese verschiedenen Sehnsüchte. Manche Initiativen, die relativ leicht durchzuführen wären, hätten die Möglichkeit, demnächst diese Verführungskraft noch zu stärken. Es wäre wohl nicht erst nötig, zu den Waffen zu greifen: jene Lage der Nicht-Abwehr genügt vollkommen, um die jungen <persName ref="#zbz-p.42">Deutschen</persName> zur Neutralität hin abgleiten zu lassen.
+        </p>
+        <p>
+          3. Und dann wird es zu spät sein, damit die französische und britische atomare Dissuasion noch eine <placeName ref="#zbz-l.565">Rolle</placeName> spielen könnte, um den Rest eines politischen <placeName ref="#zbz-l.14">Europas</placeName> zu schaffen.
+        </p>
+        <p>
+          (14. Januar 1988)
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          6
+        </p>
+        <p facs="#facs_4_r_2">
+          <bibl ref="#zbz-w.546">Symposium</bibl> du 14.1.1988 à <placeName ref="#zbz-l.6">Berne</placeName>
+        </p>
+        <p facs="#facs_4_r_3">
+          Allocution de <persName ref="#zbz-p.2">Madame Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_4_r_4">
+          Mesdames et Messieurs,
+        </p>
+        <p facs="#facs_4_r_5">
+          Je vais parler en français. Ceux qui le désirent peuvent se reporter à l'esquisse de mon discours, qui est à votre disposition en allemand.
+        </p>
+        <p facs="#facs_4_r_6">
+          Ceux qui désirent aujourd'hui entrevoir ce que sera l'avenir s'interrogent avant tout sur les pensées et les intentions secrètes réelles des grands personnages politiques. Comme je ne les ai pas approchés et que je ne suis absolument pas prophète, je n'essaierai pas de prédire l'avenir.
+        </p>
+        <p facs="#facs_4_r_7">
+          Je voudrais simplement mettre en lumière le danger le plus grand qui nous menace aujourd'hui, afin qu'il nous aide à nous souvenir de tout ce que nous aurions dû faire dans le passé, et que nous n'avons pas fait. Il s'agit avant tout de l'unification de l'<placeName ref="#zbz-l.29">Europe</placeName> et de la solution du problème allemand, dont nous aurions dû nous occuper avec bien plus de vigilance depuis des dizaines et des dizaines d'années.
+        </p>
+        <p facs="#facs_4_r_8">
+          Tout le monde s'interroge sur la sincérité de <persName ref="#zbz-p.1123">M. Gorbachov</persName>, sur sa volonté de mettre fin au régime totalitaire soviétique pour se rapprocher d'un régime démocratique à la manière occidentale. Cette question peut intéresser les proches de <persName ref="#zbz-p.1123">M. Gorbachov</persName> ou ceux qui se soucient du salut de son âme. Mais pour nous, l'avenir ne dépend que dans une faible mesure de sa sincérité ou de sa non-sincérité. Bien plus importants seront les rapports de force qui s'établiront autour de lui, sans compter que la sincérité est quelque chose de très différent à l'<placeName ref="#zbz-l.13">Est</placeName> et à l'<placeName ref="#zbz-l.12">Ouest</placeName>. Il vaut mieux concevoir des hypothèses concernant les faits. Trois perspectives semblent possibles.
+        </p>
+        <p>
+          Depuis très longtemps, j'avais mis, pour ma part, de grands espoirs dans la nécessité où se trouvaient, non <persName ref="#zbz-p.1123">Gorbachov</persName> dont on ne parlait pas encore, mais les dirigeants soviétiques en général, d'évoluer dans une certaine mesure pour pouvoir former des savants, des industriels et des techniciens. Cela n'est pas possible sans un certain sens critique, un certain assouplissement
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          7
+        </p>
+        <p facs="#facs_5_r_2">
+          des contraintes. Supposons donc que <persName ref="#zbz-p.1123">Gorbachov</persName> s'efforce d'agir dans ce sens, tout en maintenant - comme il déclare vouloir le faire - l'ordre communiste traditionnel dans tous les domaines. Cela paraît presque impossible : les contradictions portent en elles un échec futur. En outre, au niveau des faits, une telle évolution coaliserait contre <persName ref="#zbz-p.1123">Gorbachov</persName> la plupart des privilégiés, menacés par un tel assouplissement, comme aussi une bonne partie des masses, plus un nombre croissant de dissidents finalement frustrés de leur espoir.
+        </p>
+        <p facs="#facs_5_r_3">
+          Deuxième hypothèse : <persName ref="#zbz-p.1123">Gorbachov</persName> réussit à réaliser ce que nous, <persName ref="#zbz-p.2100">Occidentaux</persName>, appellerions une libération progressive, mais radicale. L'histoire devient alors tout-à-fait imprévisible : le régime de fer que la <placeName ref="#zbz-l.111">Russie</placeName> subit depuis quelque 70 ans explose, et avec lui, les pays asservis et les diverses nationalités. Il se produit des affrontements dont nul ne peut prévoir l'issue. Cette hypothèse, improbable, ne nous permet donc pas de concevoir à l'avance une conduite raisonnable.
+        </p>
+        <p>
+          C'est une troisième hypothèse qui me paraît la plus probable. <persName ref="#zbz-p.1123">Gorbachov</persName> réussit - ou un autre réussit à sa place - à maintenir le système dans toute sa rigueur par la force et la menace, grâce à un rôle accru de l'armée, tout en sauvant certaines apparences de réforme, surtout au niveau culturel du langage, des media, de l'affiche, du spectacle. Réussite, certes, toujours menacée, en équilibre instable, mais efficace de plusieurs manières, et surtout vers l'extérieur, - vers l'<placeName ref="#zbz-l.29">Europe</placeName> et même les <placeName ref="#zbz-l.703">États-Unis</placeName>. Cette ligne me paraît la plus probable, c'est celle qui s'annonce le plus clairement. Elle arriverait à se maintenir à l'intérieur par la force, et à l'extérieur par les apparences, la façade. L'arme idéologique est alors inefficace à l'intérieur, mais efficace à l'extérieur : je lisais encore ce matin que les textes et déclarations que l'<placeName ref="#zbz-l.27">Occident</placeName> accueille avec tant d'enthousiasme sont à peine accessibles à l'intérieur de l'<placeName ref="#zbz-l.59">URSS</placeName>; le public soviétique n'en a pas connaissance. Mais ils sont efficaces à l'extérieur : on n'a pas assez remarqué à quel point l'idéologie gorbachovienne est calquée sur les aspirations, non pas tant du peuple russe que des peuples de l'<placeName ref="#zbz-l.27">Occident</placeName>. Elle est faite pour répondre à l'attente des peuples occidentaux, et surtout à celle du <persName ref="#zbz-p.42">peuple allemand</persName>.
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          8
+        </p>
+        <p facs="#facs_6_r_2">
+          Il me faut parler ici, spécialement, du <persName ref="#zbz-p.42">peuple allemand</persName>. Plus de quarante ans après la fin de la guerre, l'<placeName ref="#zbz-l.26">Allemagne</placeName> se trouve toujours dans une situation à la longue intenable, surtout pour les générations qui viennent et qui n'ont vécu ni l'hitlérisme, ni la guerre. Le pays est divisé en deux, et chaque partie appartient à un monde que tout oppose à l'autre monde. La frontière entre les deux est marquée par un mur, un no man's land fortifié, bétonné, qu'on appelait naguère — mais c'est bien passé — le mur de la honte. Ce mur partage aussi l'ancienne capitale <placeName ref="#zbz-l.16">Berlin</placeName>, et à ma stupeur j'ai pu constater que, lors des accords récents des deux grands, on a même oublié de le mentionner. Le mur a été simplement oublié. Pourtant, à <placeName ref="#zbz-l.16">Berlin</placeName>, on ne peut pas l'oublier, et bien des jeunes sont morts en tentant de le franchir.
+        </p>
+        <p facs="#facs_6_r_3">
+          Quelle est la situation psychologique des jeunes gens allemands qui n'ont pas vécu ce que les autres ont vécu, et qui découvrent cette indifférence, cette amnésie du reste de l'univers envers une chose aussi invraisemblable que le <placeName ref="#zbz-l.16">mur de Berlin</placeName> ?
+        </p>
+        <p facs="#facs_6_r_4">
+          D'autre part, nous avons eu beaucoup de temps pour réaliser une europolitique ; mais, pour le moment, il n'y a pas encore d'euro-politique permettant d'assumer la défense de l'<placeName ref="#zbz-l.27">Occident</placeName>. A propos de la défense de l'<placeName ref="#zbz-l.27">Occident</placeName>, y compris l'<placeName ref="#zbz-l.26">Allemagne</placeName>, on entend à peu près tous les deux jours des déclarations parfaitement contradictoires concernant sa frontière orientale.
+        </p>
+        <p>
+          Les accords conclus entre <persName ref="#zbz-p.1122">Reagan</persName> et <persName ref="#zbz-p.1123">Gorbachov</persName> réduisent ou annulent la dissuasion qui couvrait l'<placeName ref="#zbz-l.60">Europe occidentale</placeName>, y compris <placeName ref="#zbz-l.16">Berlin</placeName>. Les <persName ref="#zbz-p.42">Allemands</persName>, dépourvus de défense nucléaire, se sentent nécessairement à découvert. Or, à ces données de fait s'ajoutent des facteurs psychologiques puissants. Le mouvement écologiste, tellement à la mode dans nos pays, rejoint en <placeName ref="#zbz-l.26">Allemagne</placeName> les traditions anciennes, très vives, de la Jugendbewegung. La nostalgie de l'unité, dont il est difficile d'évaluer l'influence, ne peut aujourd'hui dépendre que de contacts de plus en plus étroits, non pas avec l'<placeName ref="#zbz-l.12">Ouest</placeName>, mais avec l'<placeName ref="#zbz-l.13">Est</placeName>, donc avec l'<placeName ref="#zbz-l.59">URSS</placeName>. L'idéologie gorbatchovienne est faite sur mesure pour lier ces diverses aspirations allemandes. Certains gestes, relativement faciles à esquisser par l'<placeName ref="#zbz-l.59">URSS</placeName>, pourraient accroître bientôt sa force de séduction. Nous raisonnons en termes de
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          9
+        </p>
+        <p>
+          défense et d'économie. Mais il n'y aura peut-être pas besoin de recourir aux armes, il suffira peut-être de cérémonies et de fêtes, dans une situation de non-défense bien suffisante pour que les jeunes <persName ref="#zbz-p.42">Allemands</persName> glissent vers la neutralité. Et si l'<placeName ref="#zbz-l.26">Allemagne</placeName> glisse vers la neutralité, que reste-t-il, s'il vous plaît, de l'<placeName ref="#zbz-l.60">Europe occidentale</placeName> ? Il sera alors trop tard pour que la dissuasion française et britannique serve encore à protéger un reste d'<placeName ref="#zbz-l.29">Europe</placeName> politique, encore à créer à ce moment-là. Voilà pourquoi mon exposé est pessimiste; devant des réalités aussi éclatantes nous sommes étrangement oublieux. On a souvent l'impression qu'en <placeName ref="#zbz-l.60">Europe occidentale</placeName> on est un peu amnésique: on pense à une chose un moment, on n'y pense plus le lendemain; on y repense à un autre moment et on l'oublie à nouveau. L'exigence de certaines situations ne s'impose pas de façon continue. La vigilance - nous sommes tellement distraits par tant de choses, et il fait si bon vivre en <placeName ref="#zbz-l.27">Occident</placeName>. Je ne dis pas que tout est perdu. L'<placeName ref="#zbz-l.27">Occident</placeName> et les démocraties sont pleines de ressources cachées, et l'histoire l'a illustré. Mais il faudrait qu'elle se dépêche un peu pour les montrer.
+        </p>
+        <p>
+          <hi rendition="#i">*</hi>
+        </p>
+      </div>
+      </body></text>
+</TEI>

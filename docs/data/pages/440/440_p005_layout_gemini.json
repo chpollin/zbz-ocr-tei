@@ -1,0 +1,58 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH 51",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header elements detected; need to be categorized as filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "œuvre philosophique ne saurait même suggérer la surabondance désespérante et adorable du monde où l'homme vit. Si je m'y mettais, il me faudrait négliger tout le reste, me promener beaucoup, dormir, lire des livres dont les mots tout ordinaires laissent pourtant une saveur aux lèvres, perdre du temps avec une prodigalité entière, au risque même qu'il n'en résulte rien et sans vouloir trop fort qu'il en résulte quelque chose, me plonger dans cet état de vigilance réceptive et docile en même temps qui est aux antipodes de celui où l'on travaille dans l'abstrait.",
+      "bbox": {
+        "x_pct": 4.19,
+        "y_pct": 7.239,
+        "w_pct": 87.635,
+        "h_pct": 18.74
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and formatting."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, une telle mise est pour moi presque impossible, dans le temps qui est le nôtre, et dont je ne cesse de sentir la pression, l'exigence, la menace. Une terrible bataille est engagée, une seule et unique bataille dont l'enjeu semble être la condition humaine elle-même, ou du moins ce qui en fait le sens et le prix. La condition humaine sur toute notre boule ronde, devenue si petite, avec des continents si liés, que c'en fait désormais des histoires nationales et que l'histoire universelle a commencé. Une seule et unique bataille, disais-je, — oui, mais avec des fronts innombrables, enchevêtrés, qui passent par les rues de Budapest, les carrefours d'Algérie, les villages de Chine, les usines, les prisons, les parlements, les églises, les laboratoires, les journaux et l'âme de chacun d'entre nous. Partout des hommes, dont la jouissance des libertés a émoussé le sens de la liberté, s'ingénient à préparer, par la confusion des idées et grâce à la complicité de la peur, les voies de la servitude. Partout d'autres hommes, jusqu'ici asservis par la misère, l'ignorance ou le travail servile, mettent la civilisation humaniste au pied du mur. L'heure de vérité semble proche. Ces valeurs proclamées au cours des siècles et des millénaires, étaient-ce des mots ou des promesses? Elles vont s'incarner dans les structures politiques et sociales ou périr.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing paragraph region detected in image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment ne pas entendre ce tintamarre, ces explosions, ces chuchotements? Comment ignorer ces propagandes, ces séductions? Comment, alors qu'il s'agit du sens même de la vie, ne pas chercher son poste de combat et ses compagnons? Il est difficile d'écrire, lorsqu'on entre dans la lutte, sur les problèmes éternels de l'homme et sur la surabondance du monde. Mais il me semble que si je n'entrais pas dans cette lutte, j'écrirais en vain. Je ne sais pas ce qu'il en était à d'autres époques; mais dans la nôtre, je suis convaincue que nul ne saurait échapper à l'histoire en train de s'écrire aujourd'hui, dans l'espoir d'atteindre l'éternel. Cela seul aujourd'hui sera peut-être éternel qui passe avec le plus d'acuité par le hic et nunc.",
+      "bbox": {
+        "x_pct": 2.044,
+        "y_pct": 68.574,
+        "w_pct": 88.759,
+        "h_pct": 24.876
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "Page header/page number missing from original detection.",
+    "OCR text was heavily corrupted/truncated.",
+    "One entire paragraph of text was missed in the original parsing."
+  ],
+  "doc_id": "440",
+  "page": 5,
+  "elapsed_seconds": 6.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

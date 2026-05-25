@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "corps luisant, sinueux et dur, gisant sur le flanc, inerte à jamais. «O mon Chevalier, chanta son espérance, ô mon Chevalier, tu as vaincu!»",
+      "bbox": {
+        "x_pct": 22.945,
+        "y_pct": 11.548,
+        "w_pct": 65.903,
+        "h_pct": 8.663
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est alors qu'elle entendit, multiplié par l'écho profond du rocher, mêlé à l'odeur de pourriture commençante qui venait du monstre mort, le cri d'un dragon en chasse.",
+      "bbox": {
+        "x_pct": 22.824,
+        "y_pct": 22.935,
+        "w_pct": 65.939,
+        "h_pct": 11.632
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle devint la proie de l'épouvante.",
+      "bbox": {
+        "x_pct": 26.667,
+        "y_pct": 34.087,
+        "w_pct": 52.727,
+        "h_pct": 3.364
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": {
+        "x_pct": 23.273,
+        "y_pct": 82.523,
+        "w_pct": 3.273,
+        "h_pct": 2.443
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction had major OCR errors.",
+    "Page number at bottom left was labeled as text instead of page_footer."
+  ],
+  "doc_id": "2260",
+  "page": 50,
+  "elapsed_seconds": 3.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

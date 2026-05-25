@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "publié l'Introduction à une monumentale Histoire de la philosophie universelle, dans laquelle le volume Les Grands philosophes, le seul publié du vivant de l'auteur, représente le tome III. Nous avons réédité ce volume, puis publié deux autres volumes de textes inédits appartenant au même ensemble. La fondation a encore publié les Notes prises par Jaspers au sujet de Heidegger tout au long de sa vie. Maintenant elle prépare la publication de la correspondance de Jaspers avec Hannah Arendt, qui sera certainement du plus haut intérét, car c'est toute une époque mouvementée et tragique qui se reflète dans cet échange de lettres.",
+      "bbox": {
+        "x_pct": 16.117,
+        "y_pct": 3.363,
+        "w_pct": 80.012,
+        "h_pct": 22.427
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction and scope for the paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "C.D.K. — Racontez comment, à 26 ans, vous avez fait la connaissance de Jean Wahl et de Gabriel Marcel.",
+      "bbox": {
+        "x_pct": 16.5,
+        "y_pct": 25.4,
+        "w_pct": 79.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified as a question prompt/section heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui, je les ai connus lors de la soirée dont j'ai parlé. Le seul fait d'avoir organisé ce petit colloque pour une jeune fille étrangère que personne ne connaissait, illustre bien la générosité et l'ouverture d'esprit de Gabriel Marcel. Je suis restée en rapport amical, à vrai dire assez espacé, avec Gabriel Marcel. Lorsque j'allais à Paris, je lui rendais visite. Il y avait en lui à la fois une intense présence et quelque chose d'insaisissable. Il avait une manière d'étre assis dans son fauteuil, qui était celle d'un chat qui se met en boule. Et, de cette forme pelotonnée sortaient de petites phrases aiguë, percutantes. Il se montrait réceptif à une grande diversité de manières d'étre homme ou philosophe. Sa curiosité était sans cesse en éveil. Envers la pensée d'autrui, il faisait preuve non pas de bienveillance, mais d'une grande capacité de mime en profondeur. Ce n'est pas un hasard s'il a été le premier en France à écrire sur Jaspers. Et j'ai beaucoup aimé l'indignation passionnée qui le saisissait face à la bêtise, à la prétention et au mensonge.",
+      "bbox": {
+        "x_pct": 16.117,
+        "y_pct": 29.194,
+        "w_pct": 80.22,
+        "h_pct": 30.024
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si Gabriel Marcel ressemblait à un chat, Jean Wahl était comme un insecte, avec un dard extraordinairement pénétrant. La pensée de Gabriel Marcel était essentiellement méditative et continue, alors que l'enseignement et les écrits de Jean Wahl vivaient d'intuitions soudaines, profondes et plongeantes. Il avait dans l'esprit une sóreté instinctive qui lui faisait plonger son dard au cœur de la pensée d'autrui.",
+      "bbox": {
+        "x_pct": 16.239,
+        "y_pct": 60.105,
+        "w_pct": 79.976,
+        "h_pct": 12.258
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quels étaient les rapports de Jean Wahl avec Gabriel Marcel ? J.H. — Leurs rapports étaient aussi étroits dans l'amitié que dans l'hostilité. Gabriel Marcel était plutót, en terminologie banale, un homme de droite, et c'est ce qui a donné un caractère alternatif, en quelque sorte, à ses rapports avec Jean Wahl, qui s'est voulu, pendant quelques années, très à gauche — si l'on appelle « gauche », ce que moi je me refuse à faire, une certaine solidarité à l'égard du communisme. Ils se sont souvent trouvés ensemble pour élever les mêmes protestations ; puis survenait une",
+      "bbox": {
+        "x_pct": 16.484,
+        "y_pct": 74.46,
+        "w_pct": 79.609,
+        "h_pct": 16.129
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "194",
+      "bbox": {
+        "x_pct": 17.0,
+        "y_pct": 93.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction in regions was heavily corrupted or incomplete.",
+    "Page number at bottom was incorrectly labeled as text.",
+    "Section headers within the text body were incorrectly labeled as paragraphs.",
+    "Author signature/J.H. markers need careful handling."
+  ],
+  "doc_id": "2330",
+  "page": 198,
+  "elapsed_seconds": 7.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 21 -",
+      "bbox": {
+        "x_pct": 44.97,
+        "y_pct": 57.06,
+        "w_pct": 10.05,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/header, corrected label and tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "très souvent les gens de notre époque parler come si le moindre risque était déjà une condamnation de l'essai, comme si on ne devait jamais rien risquer du tout. Si on ne risque rien, on n'avance absolument pas. Il n'y a pas d'avance sans risque. Mais nous sommes tous mortels: cette dimension de la mortalité donne aux hommes, et leur a toujours donné - je parle du passé - une certaine légèreté, une certaine frivolité par rapport à leur propre vie, qui les a rendus capables de la risquer. Et c'est ce qui a permis le développement de la civilisation actuelle, parce que les risques ont été assumés. Ce sont là des donnés fondamentales, quant aux rapports de l'homme avec sa condition.",
+      "bbox": {
+        "x_pct": 9.863,
+        "y_pct": 13.301,
+        "w_pct": 79.145,
+        "h_pct": 23.432
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme d'aujourd'hui doit en redevenir conscient. Or aujourd'hui, du fait que grâce aux progrès de la science et de la technique, le travail indispensable à la vie nous asservit d'une façon tellement moins inhumaine et moins universelle, ne doit pas nous faire perdre conscience du fait fondamental que, sans aucun travail, nous ne pouvons plus ni manger, ni nous protéger du froid, ni vivre. On peut diminuer la durée du travail, Dieu merci!, mais on ne peut pas le supprimer.",
+      "bbox": {
+        "x_pct": 9.782,
+        "y_pct": 37.816,
+        "w_pct": 81.371,
+        "h_pct": 17.03
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je me rappelle les jeunes étudiants de 1968 à Paris: ils circulaient avec leurs banderoles: \"Le paradis, tout de suite!\". Mais - \"le paradis, tout de suite!\" - c'est une absurdité. C'est d'abord une absurdité parce que les exigences élémentaires et constantes de la condition humaine sont toujours là. Mais c'est encore une absurdité pour une autre raison: au paradis, des êtres qui vivent dans la durée s'ennuient. Adam et Eve au paradis vivaient hors du temps et de l'histoire. Mais pour ce qui est de nous, qui sommes dans le temps et dans l'histoire - je nous mets au défi: nous ne resterions pas longtemps au paradis terrestre. Quelqu'un demanda un jour à un théologien combien de temps Adam et Eve avaient passé au paradis. Le théologien répondit: \"On ne sait pas, mais tout porte à croire que ce fut bref.\" Je crois qu'il avait raison.",
+      "bbox": {
+        "x_pct": 9.46,
+        "y_pct": 55.775,
+        "w_pct": 78.097,
+        "h_pct": 29.8
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR truncation in all paragraph blocks.",
+    "Page number at top was labeled as text."
+  ],
+  "doc_id": "2230",
+  "page": 6,
+  "elapsed_seconds": 5.05,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

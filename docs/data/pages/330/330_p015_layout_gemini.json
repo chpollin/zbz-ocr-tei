@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "AVANT-PROPOS",
+      "bbox": {
+        "x_pct": 269,
+        "y_pct": 272,
+        "w_pct": 461,
+        "h_pct": 29
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header as it is a title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le livre de Jeanne Hersch a le mérite exceptionnel de poser clairement quelques-uns des principaux problèmes politiques et sociaux de notre époque en remontant à leur source : l'attitude philosophique subconsciente des hommes et leur tempérament. L'auteur a étudié les principes des diverses idéologies politiques, défini la nature et l'esprit de la démocratie, fixé les limites que rencontre inévitablement toute action politique.",
+      "bbox": {
+        "x_pct": 3.301,
+        "y_pct": 37.317,
+        "w_pct": 84.164,
+        "h_pct": 14.795
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce livre n'est cependant nullement abstrait. Les attitudes qu'il décrit peuvent entrainer des prises de position précises dans l'action quotidienne. Il élucide ainsi les données politiques de notre temps et apporte sa contribution à un problème fondamental d'aujourd'hui : la nécessaire reconstruction de la doctrine socialiste.",
+      "bbox": {
+        "x_pct": 3.343,
+        "y_pct": 51.604,
+        "w_pct": 84.304,
+        "h_pct": 10.25
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais, dans cette préface, prolonger quelques-unes des analyses de Jeanne Hersch jusqu'à certaines des conséquences qu'elles impliquent, sur quatre points essentiels : a) élaboration d'une pensée politique concrète; b) pouvoir politique efficace; c) réadaptation des partis aux réalités actuelles; d) limites et sens réel de l'action politique.",
+      "bbox": {
+        "x_pct": 3.3,
+        "y_pct": 62.5,
+        "w_pct": 84.4,
+        "h_pct": 11.5
+      },
+      "changed": true,
+      "change_reason": "Missing text block identified and corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) Élaboration d'une pensée politique concrète. — Jamais le marxisme n'a été étudié avec autant de sympathie qu'aujourd'hui par les intellectuels, et particulièrement par les philosophes. Beaucoup d'entre eux voient dans cette doctrine l'expression de la pensée ouvrière et ils éprouvent pour le communisme une sorte d'attirance sentimentale. Se considérant comme des privilégiés, ils cherchent à se faire pardonner une situation à laquelle ils ne renoncent pas,",
+      "bbox": {
+        "x_pct": 3.301,
+        "y_pct": 74.002,
+        "w_pct": 84.401,
+        "h_pct": 14.831
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing text block identified in source document",
+    "Multiple OCR errors in detected text blocks",
+    "Section header was mislabeled as paragraph"
+  ],
+  "doc_id": "330",
+  "page": 15,
+  "elapsed_seconds": 4.05,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

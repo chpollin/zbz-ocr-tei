@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tendu s'incarner dans leur histoire concrète, comme pour subir l'épreuve du feu. Hypothèses jugées par l'expérimentation, et ce sont les sciences de la nature. Elans de la foi, cohérence des nombres, et s'élèvent les cathédrales. Idéaux d'ordre, de puissance, de justice, de liberté, et ce sont les alliances et les conflits de la politique et de l'histoire. Quand on feuillette un atlas historique, il y a presque toujours, invisible entre deux cartes, caché dans l'épaisseur du papier, un conflit d'idée ou de foi. Pour le meilleur et pour le pire, les Européens ont nourri, subi, vécu — dans la lourdeur même des appétits et des besoins, — le débat sans fin du relatif avec l'absolu, de l'absolu avec le relatif.",
+      "bbox": {
+        "x_pct": 6.272,
+        "y_pct": 6.076,
+        "w_pct": 80.424,
+        "h_pct": 23.163
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est courant, de nos jours, de considérer l'histoire de l'Europe, ainsi engendrée, comme accumulant tous les crimes de l'humanité : impérialisme, conquête, asservissement, exploitation, extermination, génocide. Il y a peu, les Européens eux-mêmes étaient prêts à reconnaître qu'au milieu des peuples de la terre, tous pacifiques par nature, ils étaient les seuls belliqueux. Or depuis un certain temps, les peuples des autres continents ont accédé, un à un, à l'indépendance, sous l'égide d'une Organisation mondiale vouée en principe à la défense des Droits de l'homme et de la Paix. Ils se sont ainsi, à leur tour, engagés dans l'histoire, affrontant eux aussi l'épreuve d'avoir à incarner, dans les réalités sociales, économiques et politiques, les aspirations et les volontés divergentes ou même contradictoires des hommes, ou encore leurs appétits identiques, insatisfaits et rivaux. Des conflits se sont alors allumés un peu partout, dont seule la pauvreté des forces et des ressources a pu limiter les destructions et la brutalité meurtrière.",
+      "bbox": {
+        "x_pct": 6.945,
+        "y_pct": 28.954,
+        "w_pct": 80.586,
+        "h_pct": 33.596
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'est-ce que cela signifie donc : entrer dans l'histoire ? Ce processus d'incarnation dont nous venons de parler, implique-t-il l'asservissement à une fatalité guerrière — ou tend-il au contraire à universaliser et actualiser les Droits de l'homme, seule manière d'objectiver, de réaliser en fait, pour tous les êtres humains, les chances favorables à leur authentique liberté ?",
+      "bbox": {
+        "x_pct": 7.893,
+        "y_pct": 62.576,
+        "w_pct": 79.85,
+        "h_pct": 12.939
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il me semble qu'entrer en histoire suppose une certaine manière d'habiter et de structurer le temps. Avant l'histoire, il y a certainement déjà de l'histoire, mais si lente qu'elle se déroule à peine, dans un présent à peu près répétitif et étale. L'homme entre en histoire lorsqu'il scinde le temps par son surgissement, par son acte de présence au",
+      "bbox": {
+        "x_pct": 8.267,
+        "y_pct": 75.108,
+        "w_pct": 79.601,
+        "h_pct": 10.83
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "7",
+      "bbox": {
+        "x_pct": 86.4,
+        "y_pct": 87.8,
+        "w_pct": 1.7,
+        "h_pct": 3.4
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "The page number at the bottom was initially classified as a paragraph text."
+  ],
+  "doc_id": "1580",
+  "page": 4,
+  "elapsed_seconds": 4.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

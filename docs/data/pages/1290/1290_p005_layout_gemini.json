@@ -1,0 +1,124 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "raient en couche, laissant leur nouveau-né orphelin? Les épidémies déciqui",
+      "bbox": {
+        "x_pct": 11.227,
+        "y_pct": 4.019,
+        "w_pct": 82.728,
+        "h_pct": 2.653
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On devrait avoir honte de cracher ainsi sur lœuvre  accomplie, au de efforts, par ceux vécurent avan",
+      "bbox": {
+        "x_pct": 11.051,
+        "y_pct": 8.223,
+        "w_pct": 83.029,
+        "h_pct": 9.598
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parmi les résultats de cet énorme déploiement des pouvoirs, il y a le recul de la souffrance. On meu",
+      "bbox": {
+        "x_pct": 11.139,
+        "y_pct": 17.846,
+        "w_pct": 82.891,
+        "h_pct": 25.137
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certes, il y a des problèmes, des ambiguïtés, des menaces. Les difficultés me paraissent être de tro",
+      "bbox": {
+        "x_pct": 10.889,
+        "y_pct": 42.605,
+        "w_pct": 82.891,
+        "h_pct": 13.77
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deuxième ordre de problèmes et de questions: non plus la nature, mais les mécanismes sociaux, et surtout les mécanismes économiques, qui ne semblent pas maîtrisés, qui paraissent se bloquer parfois, ou s'emballer, et nous mener là où nous ne voulons pas aller.",
+      "bbox": {
+        "x_pct": 11.101,
+        "y_pct": 56.669,
+        "w_pct": 82.61,
+        "h_pct": 6.757
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing text region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le troisième ordre de questions, probablement Ie plus grave et le plus difficile, cest le problème d",
+      "bbox": {
+        "x_pct": 11.101,
+        "y_pct": 63.424,
+        "w_pct": 82.553,
+        "h_pct": 6.246
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le «progrès» et la nature",
+      "bbox": {
+        "x_pct": 11.089,
+        "y_pct": 71.933,
+        "w_pct": 31.841,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing section header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les problèmes que pose la nature; je ne vais pas m'y attarder longtemps: les journaux en sont tion s",
+      "bbox": {
+        "x_pct": 11.014,
+        "y_pct": 76.905,
+        "w_pct": 82.478,
+        "h_pct": 13.955
+      }
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "126",
+      "bbox": {
+        "x_pct": 11.101,
+        "y_pct": 92.518,
+        "w_pct": 3.791,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Missing text region identified",
+    "Missing heading identified",
+    "Missing page number identified"
+  ],
+  "doc_id": "1290",
+  "page": 5,
+  "elapsed_seconds": 5.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chacune tend à construire, en quelque sorte, l'homme tout entier autour de ses principes. Chacune existe donc sur plusieurs plans, — comme l'homme lui-même. Je devrais même dire : à la place de l'homme. En effet, tout être humain existe sur une pluralité de plans ayant chacun sa cohérence propre : vous faites des mathématiques, et vous êtes aux prises avec les nécessités d'un monde peuplé d'êtres de raison ; vous faites de la physique, et vous vous soumettez à des résultats expérimentaux; vous louez un logis, vous mangez un beefsteak, vous vendez un brevet, et vous vous insérez dans les interdépendances pratiques, économiques, biologiques; vous aimez, et vous affrontez les exigences et les épreuves de la communication humaine; vous murmurez une prière, et vous vous mettez sous l'œil de Dieu, choisissant la révolte, le marchandage ou l'adoration. Quand vous demandez votre carte de membre d'un parti, quand vous élisez vos représentants au Parlement de votre pays, quand vous accomplissez des actes spécifiquement politiques, vous essayez de prendre en main, en quelque sorte, un plan d'existence sociale et de vous en rendre responsable. La charnière commune de tous ces plans d'existence, c'est l'homme lui-même, l'homme qui existe en eux plus ou moins consciemment, assumant avec plus ou moins de clarté la responsabilité de son existence (1). Le problème de la cohérence de ces plans entre eux, c'est son propre problème, celui de son unité, de sa fidélité à soi. Or, les idéologies politiques doivent l'un de leurs plus puissants moyens de séduction au fait qu'elles tendent à délivrer l'homme de ce problème essentiel et difficile en le résolvant une fois pour toutes à sa place. Au lieu d'être proposés à chaque homme comme une tâche sans fin, la cohésion des plans d'existence devient l'affaire d'un corps de doctrine, elle s'enseigne en lui et s'obtient par lui. Telle est la tentation totalitaire des idéologies. J'ai donc été obligée d'étudier chacune d'elles sur plusieurs plans et de mettre en question leur cohésion. Mais dans la mesure où je réussissais à dégager d'elles certains éléments clairs, je les altérais déjà par cette analyse même, je paraissais perdre",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 11.864,
+        "w_pct": 86.253,
+        "h_pct": 70.856
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Sur la place de l'existence sociale parmi les autres « plans d'existence »",
+      "bbox": {
+        "x_pct": 15.223,
+        "y_pct": 83.497,
+        "w_pct": 81.574,
+        "h_pct": 2.203
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote as it starts with (1) and refers to the main text."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "The OCR text in the first block was significantly corrupted and had to be manually corrected to match the source image content.",
+    "Footnote was misidentified as standard text paragraph."
+  ],
+  "doc_id": "330",
+  "page": 28,
+  "elapsed_seconds": 4.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

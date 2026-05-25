@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA NATURE DU POUVOIR 115",
+      "bbox": {
+        "x_pct": 365.0,
+        "y_pct": 65.0,
+        "w_pct": 272.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Header was misidentified as text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH: Il est bien clair que toute la pense politique attache  la libert, dans les pays europens continentaux, est pleine de nostalgie pour ce qui a t ralis en Angleterre et aux Etats-Unis. Mme chez ceux qui jettent l'anathme sur ces pays, pour une raison ou pour une autre. Cette nostalgie est vivante, et on cherche partout la manire dont on pourrait transplanter ailleurs, sinon la thorie, du moins la pratique politique de ces pays.",
+      "bbox": {
+        "x_pct": 11.379,
+        "y_pct": 10.165,
+        "w_pct": 75.492,
+        "h_pct": 12.289
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header and tag to zb_heading as this is an author entry."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-tre ces pays pouvaient-ils se permettre de mpriser thoriquement le pouvoir parce qu'ils savaient le faire coexister en pratique avec la libert. Je crois que ni l'Angleterre, ni les Etats-Unis, n'ont jamais t des Etats en anarchie: s'ils ont leurs anarchistes, le phnomne reste marginal et ne faonne pas la vie et l'histoire de ces pays. Peut-tre est-ce pour cette raison qu'ils n'ont pas tellement rflchi  la ncessit du pouvoir. Mais, en ce qui nous concerne, il est sans doute extrmement utile de le faire. C'est ainsi que j'ai employ le terme  apprivoiser le pouvoir . Je me suis demand comment on le traduirait en anglais. Il y a le verbe to tame, mais il signifie  dompter . Or, dompter et apprivoiser, ce n'est pas la mme chose ! Si vous pensez au  Petit Prince , on ne peut dompter la rose, mais on peut l'apprivoiser. On peut, aussi, se demander pourquoi il y a une diffrence dj entre le mot  power  et le mot  pouvoir .",
+      "bbox": {
+        "x_pct": 11.275,
+        "y_pct": 21.488,
+        "w_pct": 75.829,
+        "h_pct": 24.24
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A l'origine de la force du pouvoir, il y a un certain lien avec le courage. On ne peut, en effet, compltement sparer la force et le courage. Le courage est,  sa manire, une force. La libert, quand elle acquiert une certaine efficacit, devient force, ce qui la met  dans le circuit , en quelque sorte, du pouvoir. Le pouvoir est capacit d'imposer un vouloir et, donc, de faire usage de sa libert, ce qui est le nud de notre condition humaine. Ainsi, cela mme qui menace sans cesse d'craser notre libert a, en mme temps, partie lie, intimement, avec la condition d'tre humain libre. Nous n'avons pas une libert anglique, thre, dbarrasse de toute espce de poids de pouvoir, et j'ai essay de montrer, hier, que ceux qui ont horreur du pouvoir, qui sont contre tout pouvoir, usent qu'ils le veuillent ou non, de moyens qui sont des moyens de pouvoir.",
+      "bbox": {
+        "x_pct": 11.506,
+        "y_pct": 45.182,
+        "w_pct": 75.747,
+        "h_pct": 22.281
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "THRSE ROMEO: J'essayerai d'tre brve, bien que l'espce d'appendice que je souhaiterais apporter  la confrence de Jeanne Hersch sur les causes de la dsagrgation du pouvoir mriterait videmment, une confrence tout entire.",
+      "bbox": {
+        "x_pct": 11.669,
+        "y_pct": 68.347,
+        "w_pct": 75.62,
+        "h_pct": 7.273
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header and tag to zb_heading as this is an author entry."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "N'tant ni politologue, ni, mme, philosophe, c'est au nom de l'usager que je souhaite parler; cet usager est trs caractris, puisque je suis Franaise et citoyenne, citoyenne que je souhaite consciente. Or, nous avons vcu, en France, un certain nombre d'vnements qui nous ont montr,  la cadence extraordinaire d'un vnement ou deux par dcennie, un phnomne de dgradation du pouvoir. Prenons l'exemple du 10 juin 1940. La France vivait alors, on peut bien le dire, sous ce mixte dont parlait hier Jeanne Hersch, et ce mixte tait la Rpublique, avec ce que cela pouvait comporter de...",
+      "bbox": {
+        "x_pct": 11.9,
+        "y_pct": 85.149,
+        "w_pct": 75.388,
+        "h_pct": 5.736
+      },
+      "changed": true,
+      "change_reason": "Combined fragmented text regions into one logical paragraph."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Page number in header missing or integrated into header region incorrectly.",
+    "Author signatures (Jeanne Hersch, Thrse Romeo) identified as section headers.",
+    "OCR text quality is low and requires manual verification for specific words."
+  ],
+  "doc_id": "1530",
+  "page": 42,
+  "elapsed_seconds": 7.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

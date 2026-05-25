@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "überleben. Sie sind in der engen Notwendigkeit gefangen, überleben zu müssen, und dieses Überleben muß ihnen gelingen, unter ständiger Todesgefahr. Diese Ebene des Daseins darf bei Jaspers nie leicht genommen, vergessen oder verachtet werden. Sie ist immer, und es gehört zur Echtheit der Existenz, das ganze Gewicht, die ganze Drohung, die Radikalität dieser Drohung, mit beizubehalten. Das ist »Dasein«.",
+      "bbox": {
+        "x_pct": 14.883,
+        "y_pct": 5.245,
+        "w_pct": 73.65,
+        "h_pct": 15.718
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to reflect the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dann kommt die zweite Perspektive, die Jaspers Bewußtsein überhaupt nennt. »Bewußtsein überhaupt« ist sozusagen das dem Dasein Entgegengesetzteste. Es ist die Dimension des abstrakten Denkens, der Sachlichkeit, der Objektivität, der Unpersönlichkeit, der Allgemeingültigkeit, also alles dessen, was sich in den Wissenschaften verwirklicht. Dieses »Bewußtsein überhaupt« ist der Form nach überall da, wo Menschen denken. Ohne »Bewußtsein überhaupt« gibt es kein Denken. »Bewußtsein überhaupt« ist an sich zeitlos und ungeschichtlich. Gar nicht zeitlich fixiert, wie es das Dasein in seiner Gegenwart ist. Seine Atemwelt, wenn ich so sagen darf, ist die Allgemeinheit, eine zeitlose Allgemeinheit und Allgemeingültigkeit.",
+      "bbox": {
+        "x_pct": 14.932,
+        "y_pct": 21.112,
+        "w_pct": 73.28,
+        "h_pct": 27.064
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to reflect the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die dritte Dimension nennt Jaspers Geist. Sie bezieht sich auf das Subjekt als im historisch-kulturellen Raum gegenwärtig. Das Subjekt befindet sich nicht nur als Dasein in einer naturgegebenen Umwelt, sondern auch in großen Einheiten, die es kulturell und geschichtlich bedingen und die es, geistig gesprochen, immer einatmet. Der Geist gehört zum Gemeinsamen - nicht zum Unpersönlichen, sondern zum gesellschaftlichen und geschichtlichen Gemeinsamen: Traditionen, Begriffe, Werke usw. Diesen Begriff »Geist« hat Jaspers in erster Linie aus der Hegelschen Philosophie genommen und teilweise polemisch gegen Hegel gebraucht. Das Dasein erweitert sich in dem geistigen Raum, das Bewußtsein überhaupt übt sich darin auch. Es ist das Feld des Gemischten, des Unklaren, aber Wirklichen, der gemeinsam gegenwärtigen Geschichtlichkeit.",
+      "bbox": {
+        "x_pct": 14.77,
+        "y_pct": 47.816,
+        "w_pct": 73.602,
+        "h_pct": 31.146
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to reflect the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese drei Perspektiven nennt Jaspers die drei Umgreifenden des Subjektes, also dessen, was ich bin. Die drei Umgreifenden kann man sich, immer inadäquat, als drei Perspektiven oder drei Horizonte vorstellen. Sie kommen ineinander hinein, sie greifen ineinander. Aber das bedeutet keineswegs, daß sie Übergänge un-",
+      "bbox": {
+        "x_pct": 14.883,
+        "y_pct": 79.076,
+        "w_pct": 73.328,
+        "h_pct": 11.842
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to reflect the full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 14.883,
+        "y_pct": 92.417,
+        "w_pct": 2.45,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kiesow, S. / WISGS - 35",
+      "bbox": {
+        "x_pct": 14.47,
+        "y_pct": 96.67,
+        "w_pct": 70.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer/filter and identified artifact at bottom."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR for paragraph text was heavily truncated.",
+    "Page number at bottom left not labeled correctly.",
+    "Footer noise at bottom not labeled correctly."
+  ],
+  "doc_id": "2630",
+  "page": 6,
+  "elapsed_seconds": 6.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

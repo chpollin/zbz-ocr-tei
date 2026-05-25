@@ -1,0 +1,151 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "JASPERS",
+      "bbox": {
+        "x_pct": 5.751,
+        "y_pct": 2.458,
+        "w_pct": 8.169,
+        "h_pct": 2.646
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header heading"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "752",
+      "bbox": {
+        "x_pct": 93.308,
+        "y_pct": 2.646,
+        "w_pct": 2.646,
+        "h_pct": 2.333
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "caractérise aujourdhui en recourant à 'existence\" Ce terme presque oubliée pendant un certain temps ",
+      "bbox": {
+        "x_pct": 5.751,
+        "y_pct": 6.338,
+        "w_pct": 43.718,
+        "h_pct": 16.433
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest de là pour comprendre on ait pu rattacher aussi dillerents memc opposés que Husserl ct dauphéno",
+      "bbox": {
+        "x_pct": 5.751,
+        "y_pct": 22.498,
+        "w_pct": 43.585,
+        "h_pct": 27.981
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aucune œuvre de Karl Jaspers ne pourrait s'intituler philosophie Toutes, pourtant, s'efforcent déluc",
+      "bbox": {
+        "x_pct": 5.894,
+        "y_pct": 50.31,
+        "w_pct": 43.442,
+        "h_pct": 8.696
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Karl Jaspers naît le 23 fevrier 1883 à Oldenburg; non loin des côtes de la mer du Nord. Après quelqu",
+      "bbox": {
+        "x_pct": 5.822,
+        "y_pct": 58.902,
+        "w_pct": 43.647,
+        "h_pct": 29.676
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bouleversante fut pour lui l'expérience de la...",
+      "bbox": {
+        "x_pct": 5.822,
+        "y_pct": 88.665,
+        "w_pct": 43.647,
+        "h_pct": 8.946
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing text block bottom left"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ment ; en 1938, du droir de publier. En occupant Heideux; dans 52 propre patrie. Son   premier 1945,",
+      "bbox": {
+        "x_pct": 53.146,
+        "y_pct": 6.212,
+        "w_pct": 42.431,
+        "h_pct": 9.138
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers avait été élevé hors de toute religion institutionalisée. Il s est ancré dans ce appelle <la",
+      "bbox": {
+        "x_pct": 52.942,
+        "y_pct": 15.203,
+        "w_pct": 42.635,
+        "h_pct": 23.581
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Son publiée est   considérable; mais les livres posthumes montrent que ce n'était qu'un fragment dc ",
+      "bbox": {
+        "x_pct": 53.115,
+        "y_pct": 38.489,
+        "w_pct": 42.217,
+        "h_pct": 5.999
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Læuvre  psychiatrique de Jaspers, que nous ne qu'eflleurer ici, révèle certains caractères essentiel",
+      "bbox": {
+        "x_pct": 53.146,
+        "y_pct": 44.488,
+        "w_pct": 42.155,
+        "h_pct": 52.881
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Missing bottom left text block",
+    "Missing top left page title",
+    "Missing top right page number"
+  ],
+  "doc_id": "3040",
+  "page": 2,
+  "elapsed_seconds": 6.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

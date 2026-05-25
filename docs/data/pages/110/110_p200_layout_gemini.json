@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "198",
+      "bbox": {
+        "x_pct": 22.776,
+        "y_pct": 2.0,
+        "w_pct": 3.013,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified as page number header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 73.834,
+        "y_pct": 2.0,
+        "w_pct": 17.784,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified as running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "donner une importance grandissante au comment de la  puissance évocatrice; à ce est convenu & forme ",
+      "bbox": {
+        "x_pct": 22.776,
+        "y_pct": 13.994,
+        "w_pct": 68.848,
+        "h_pct": 50.524
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais diminuer la netteté d'une méthode, en estomper les articulations, ce n'est pas inventer une nouvelle. Je pense que l'arbitraire que comporte la dislocation du poème en fond et forme (inévitable par la raison tout à fait générale qu'un tout ne peut être humainement saisi comme tel grâce à une distinction des parties) doit être corrigé non par moins de netteté analytique, mais",
+      "bbox": {
+        "x_pct": 22.776,
+        "y_pct": 64.717,
+        "w_pct": 68.848,
+        "h_pct": 8.528
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph text at the bottom"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header and footer regions in initial input.",
+    "Missing body paragraph text at the bottom."
+  ],
+  "doc_id": "110",
+  "page": 200,
+  "elapsed_seconds": 6.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

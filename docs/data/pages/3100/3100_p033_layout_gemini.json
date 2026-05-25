@@ -1,0 +1,144 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "das weiß ich. Und in diesem Zusammenhang eine Gegenfrage an Sie! Hersch: Damit ist meine Frage nicht beantwortet!",
+      "bbox": {
+        "x_pct": 15.286,
+        "y_pct": 7.595,
+        "w_pct": 64.972,
+        "h_pct": 4.217
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mende: Meine Gegenfrage steht damit im Zusammenhang. War Gott immer eine «Chiffre»?",
+      "bbox": {
+        "x_pct": 15.254,
+        "y_pct": 11.567,
+        "w_pct": 65.028,
+        "h_pct": 4.103
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Ja.",
+      "bbox": {
+        "x_pct": 17.703,
+        "y_pct": 15.801,
+        "w_pct": 10.524,
+        "h_pct": 1.749
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mende: Das ist historisch nicht wahr!",
+      "bbox": {
+        "x_pct": 17.703,
+        "y_pct": 17.681,
+        "w_pct": 34.778,
+        "h_pct": 1.732
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Gott war für die wirklich Gläubigen nie eine positive Wirklichkeit, im Sinne der Sinneserfahrung.",
+      "bbox": {
+        "x_pct": 15.044,
+        "y_pct": 19.316,
+        "w_pct": 65.238,
+        "h_pct": 4.313
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mende: Dies wird durch die Religionsgeschichte eindeutig widerlegt. Wenn gesagt wird, daß Gott immer «Chiffre» war, so wird dies in die Geschichte hineininterpretiert.",
+      "bbox": {
+        "x_pct": 15.23,
+        "y_pct": 23.265,
+        "w_pct": 65.085,
+        "h_pct": 6.251
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fernand Brunner (Neuchâtel): M. Widmer ne veut retenir que les questions que Dieu pose à lhomme et considère les problèmes de lexistence et de lessence de Dieu comme relevant dune philosophie ancienne manière. Mais ne doit-on pas se demander ce quon entend par «Dieu» dans la proposition «Dieu minterpelle»? Ainsi réapparaît la question de lessence de Dieu. Et comme nous pouvons avoir lillusion que quelquun nous adresse la parole, la question de lexistence de Dieu na pas perdu son sens non plus. En acceptant que la philosophie aujourdhui ne parle plus de Dieu, ne court-on pas le risque de réduire dangereusement le rôle de la raison en théologie jusquà verser du côté du fidéisme?",
+      "bbox": {
+        "x_pct": 14.988,
+        "y_pct": 29.533,
+        "w_pct": 65.407,
+        "h_pct": 21.709
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Günter Himmer (Doktorand, St. Gallen): Frau Prof. Hersch, wie begründen Sie erkenntnistheoretisch die Aussage, «Gott sei immer ,Chiffre‘ gewesen?»",
+      "bbox": {
+        "x_pct": 15.012,
+        "y_pct": 69.003,
+        "w_pct": 65.27,
+        "h_pct": 4.028
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Die Begründung ist die folgende: Die Chiffre existiert für Freiheit. Gott ist ein Wort, dessen Bedeutung nur für Freiheit Sinn hat. Wäre es nicht so, dann wäre Gott ein faktisches Geschöpf. Wäre es so, dann wäre dieses Geschöpf nicht mehr Gott im transzendenten Sinn. Dies ist ein Zirkelschluß. Aber man kann dieses Problem nicht jenseits seiner eigenen Evidenz rechtfertigen oder ableiten.",
+      "bbox": {
+        "x_pct": 14.77,
+        "y_pct": 73.031,
+        "w_pct": 65.568,
+        "h_pct": 12.228
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "32",
+      "bbox": {
+        "x_pct": 15.012,
+        "y_pct": 86.877,
+        "w_pct": 2.45,
+        "h_pct": 2.668
+      },
+      "changed": true,
+      "change_reason": "Labeled page number correctly as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 9,
+  "issues": [
+    "Most text blocks were truncated by OCR in original suggestions.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "3100",
+  "page": 33,
+  "elapsed_seconds": 7.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

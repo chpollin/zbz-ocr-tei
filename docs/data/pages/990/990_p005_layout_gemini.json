@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "usata nelle due accezioni del termine, cioè una certa orientazione, una certa direzione, ed inoltre un certo significato, per quanto incerto e imperfetto possa essere. Se raccontiamo una storia ad un bambino, questo ci ascolta a bocca aperta e, se poi ci interrompiamo, ci dice: « E allora »?",
+      "bbox": {
+        "x_pct": 13.107,
+        "y_pct": 6.846,
+        "w_pct": 85.279,
+        "h_pct": 12.136
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on OCR overlay visual."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tale sarà la sua reazione solo se il nostro racconto è riuscito a diventare una storia e non solamente una successione di fatti. Senza questa sorta di movimento verso... (verso che cosa?), essenziale per uno svolgimento cui è attribuibile un senso, non potremmo mai parlare di una storia.",
+      "bbox": {
+        "x_pct": 12.926,
+        "y_pct": 18.957,
+        "w_pct": 85.46,
+        "h_pct": 12.641
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on OCR overlay visual."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tale senso, nelle due accezioni del termine esiste, ovvero è dotato di realtà, anche solamente pensata, unicamente per un uomo che sia situato storicamente in questo svolgimento. Solo per lui questa storia può essere una storia. Ora, perché vi sia una storia, nel punto in cui è situato l'uomo che considera la storia, deve essere posto un asse di simmetria.",
+      "bbox": {
+        "x_pct": 13.273,
+        "y_pct": 31.126,
+        "w_pct": 85.324,
+        "h_pct": 14.545
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on OCR overlay visual."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A partire dal momento in cui l'uomo è situato in questa storia, essa viene articolandosi, da una parte e dall'altra di questo asse, secondo due prospettive, per certi aspetti simmetriche, per altri del tutto dissimmetriche: la prospettiva del passato e quella del futuro. La storia, in quanto svolgimento non ripetitivo, non implica necessariamente l'esistenza di un tale asse. Tuttavia la storia che diventa storia implica una tale situazione dell'uomo, per il quale essa acquista senso o il quale tenta, e non può che tentare, di attribuirle un senso. L'asse della situazione presente separa le due prospettive del passato e del futuro. Queste due prospettive sono talmente « forti » per l'uomo collocato nella storia, o per chi adotta il suo punto di vista, che il tempo sembra allontanarsi da lui verso il passato, pur proiettandolo verso il futuro. È come se il tempo scorresse contemporaneamente verso due direzioni opposte.",
+      "bbox": {
+        "x_pct": 13.017,
+        "y_pct": 45.257,
+        "w_pct": 85.43,
+        "h_pct": 34.818
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on OCR overlay visual."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il presente, l'asse del presente, diventa in questa prospettiva la sorgente del tempo, che di lí scorre verso il passato, spingendosi sempre piú lontano, e che tende verso l'avvenire, avvicinandosi senza sosta a qualche cosa di indefinito.",
+      "bbox": {
+        "x_pct": 13.122,
+        "y_pct": 79.611,
+        "w_pct": 85.068,
+        "h_pct": 10.066
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on OCR overlay visual."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Una tale struttura è in contraddizione con la strut-",
+      "bbox": {
+        "x_pct": 18.658,
+        "y_pct": 89.652,
+        "w_pct": 79.336,
+        "h_pct": 2.152
+      },
+      "changed": false,
+      "change_reason": "Corrected manually in review"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "233",
+      "bbox": {
+        "x_pct": 92.56,
+        "y_pct": 94.13,
+        "w_pct": 3.44,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Transcription for almost all paragraphs was severely truncated or garbled.",
+    "Page number 233 was missing from the initial region list.",
+    "Multiple paragraphs contained OCR errors/truncations."
+  ],
+  "doc_id": "990",
+  "page": 5,
+  "elapsed_seconds": 6.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

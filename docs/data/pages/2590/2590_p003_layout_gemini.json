@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 43.68,
+        "y_pct": 10.45,
+        "w_pct": 12.63,
+        "h_pct": 1.58
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text, changed to filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "En quête de l'être",
+      "bbox": {
+        "x_pct": 52.61,
+        "y_pct": 10.48,
+        "w_pct": 12.33,
+        "h_pct": 1.58
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text, changed to filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "43",
+      "bbox": {
+        "x_pct": 92.51,
+        "y_pct": 89,
+        "w_pct": 2.22,
+        "h_pct": 1.77
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(allgemeingultiges, zwingendes Wissen); le sujet pratique s'appellera \"existence possible\"...",
+      "bbox": {
+        "x_pct": 7.149,
+        "y_pct": 13.7,
+        "w_pct": 41.265,
+        "h_pct": 9.653
+      },
+      "changed": true,
+      "change_reason": "OCR correction required to reflect actual text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai parle de demultiplication, chez Jaspers, de l'experience faite par Kant d'une limite absolve du connaitre...",
+      "bbox": {
+        "x_pct": 7.471,
+        "y_pct": 36.646,
+        "w_pct": 41.158,
+        "h_pct": 27.302
+      },
+      "changed": true,
+      "change_reason": "OCR correction required to reflect actual text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La grande difference, entre l'echec d'une cosmologie rationnelle chez Kant et chez Jaspers, c'est que chez Kant...",
+      "bbox": {
+        "x_pct": 52.272,
+        "y_pct": 12.908,
+        "w_pct": 41.618,
+        "h_pct": 19.851
+      },
+      "changed": true,
+      "change_reason": "OCR correction required to reflect actual text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le monde lui-meme, en tant que s'articulent les multiples perspectives du monde...",
+      "bbox": {
+        "x_pct": 59.882,
+        "y_pct": 62.587,
+        "w_pct": 34.255,
+        "h_pct": 13.527
+      },
+      "changed": true,
+      "change_reason": "OCR correction required to reflect actual text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected labels for page header and page number were incorrect.",
+    "OCR output for regions was severely hallucinated and required manual correction contextually.",
+    "Missing bounding boxes for missing paragraphs on the page."
+  ],
+  "doc_id": "2590",
+  "page": 3,
+  "elapsed_seconds": 8.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

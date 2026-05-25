@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "'repr&eacute;sentation\" de cette immensit&eacute; ind&eacute;finie, qui est l&agrave;, qui n'est pas lui, et dont sa vie, &agrave; lui, d&eacute;pend. Mais il aime aussi ce monde, qui est le sien. Et il y a longtemps que les th&eacute;ologiens l'ont dit: ce qu'on aime, on s'efforce de le conna&icirc;tre, m&ecirc;me si cet effort semble vou&eacute; &agrave; l'&eacute;chec.",
+      "bbox": {
+        "x_pct": 5.472,
+        "y_pct": 2.627,
+        "w_pct": 89.33,
+        "h_pct": 9.574
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was significantly degraded."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est dire que la technique, avec la part de science qu'elle implique, est aussi ancienne que l'homme.",
+      "bbox": {
+        "x_pct": 5.923,
+        "y_pct": 27.717,
+        "w_pct": 89.33,
+        "h_pct": 5.045
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was significantly degraded."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Des mill&eacute;naires, ou plut&ocirc;t des millions d'ann&eacute;es plus tard, quand la civilisation assura aux hommes un espace de s&eacute;curit&eacute; suffisant gr&acirc;ce &agrave; la mise &agrave; distance des menaces et des besoins vitaux, on en vint &agrave; concevoir une science pure, faite pour le seul regard de l'esprit, et exprimant de fa&ccedil;on ad&eacute;quate, pour ce seul regard, le devenir du monde ext&eacute;rieur. Il s'agissait d&eacute;sormais de rep&eacute;rer, dans ce devenir, des r&eacute;gularit&eacute;s de plus en plus nombreuses et de plus en plus g&eacute;n&eacute;rales, devant correspondre &agrave; ce qui se passait effectivement dans le monde ext&eacute;rieur, et de les &eacute;noncer sous forme de lois. La v&eacute;rit&eacute; de ces lois, c'&eacute;tait leur ad&eacute;quation &agrave; la r&eacute;alit&eacute; ext&eacute;rieure, et cette v&eacute;rit&eacute; se v&eacute;rifiait par la possibilit&eacute; de pr&eacute;voir ce qui allait se passer.",
+      "bbox": {
+        "x_pct": 5.937,
+        "y_pct": 32.219,
+        "w_pct": 89.508,
+        "h_pct": 25.362
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was significantly degraded."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les lois s'&eacute;non&ccedil;aient en &eacute;tablissant un lien pr&eacute;cis et n&eacute;cessaire entre des causes et des effets, ou par des &eacute;quations math&eacute;matiques correspondant aux processus consid&eacute;r&eacute;s. Elles pouvaient comporter des utilisations pratiques, mais leur v&eacute;rit&eacute; n'en d&eacute;pendait pas. Celle-ci &eacute;tait purement th&eacute;orique et n'int&eacute;ressait que la volont&eacute; de savoir.",
+      "bbox": {
+        "x_pct": 6.389,
+        "y_pct": 57.065,
+        "w_pct": 89.33,
+        "h_pct": 11.658
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was significantly degraded."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certains, saisis par la passion de la recherche scientifique, estim&egrave;rent qu'elle seule &eacute;tait digne de l'humanit&eacute;. Tout le reste de la civilisation - humanit&eacute;s, litt&eacute;ratures, arts, langues, religions, affectivit&eacute;, enracinement - n'&eacute;tait que superstition d&eacute;pass&eacute;e. Tout ce qui, dans",
+      "bbox": {
+        "x_pct": 6.977,
+        "y_pct": 83.451,
+        "w_pct": 89.371,
+        "h_pct": 9.937
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was significantly degraded."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 93.0,
+        "y_pct": 95.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Severe OCR errors in almost every text region",
+    "Page number at bottom right was labeled as text",
+    "Missing content at end of paragraphs"
+  ],
+  "doc_id": "3120",
+  "page": 6,
+  "elapsed_seconds": 6.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

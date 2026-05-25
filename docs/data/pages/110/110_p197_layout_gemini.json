@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 10.484,
+        "y_pct": 2.0,
+        "w_pct": 30.627,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header at the top of the page"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "195",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 3.42,
+        "h_pct": 1.558
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at the top/right side"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle 1 dabord avec la nécessité physique ceci de commun qu'elle concerne une réalité sensible; non u",
+      "bbox": {
+        "x_pct": 10.484,
+        "y_pct": 12.984,
+        "w_pct": 68.859,
+        "h_pct": 50.19
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nécessité   physique une relation   explicative; ellicace ontologiquement, mais idéellement seule",
+      "bbox": {
+        "x_pct": 11.325,
+        "y_pct": 63.045,
+        "w_pct": 68.433,
+        "h_pct": 5.649
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nécessité logique 4 avec la nécessité esthétique   ceci de mun qu'elle contraint le   concept & d",
+      "bbox": {
+        "x_pct": 11.256,
+        "y_pct": 68.436,
+        "w_pct": 68.433,
+        "h_pct": 5.877
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header and page number annotations in initial input"
+  ],
+  "doc_id": "110",
+  "page": 197,
+  "elapsed_seconds": 4.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

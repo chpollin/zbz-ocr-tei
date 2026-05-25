@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eorschuldigen Geschichtsauffassung hincinpresVerrklichung dicscs seincs Endzielcs bitte ,",
+      "bbox": {
+        "x_pct": 18.868,
+        "y_pct": 25.074,
+        "w_pct": 26.901,
+        "h_pct": 32.847
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "74",
+      "bbox": {
+        "x_pct": 11.001,
+        "y_pct": 83.434,
+        "w_pct": 2.164,
+        "h_pct": 2.204
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "75",
+      "bbox": {
+        "x_pct": 94.321,
+        "y_pct": 83.419,
+        "w_pct": 2.126,
+        "h_pct": 2.404
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des Handelns und Jer denlueller Nun Ich glube, in Marx' und",
+      "bbox": {
+        "x_pct": 54.946,
+        "y_pct": 55.31,
+        "w_pct": 34.005,
+        "h_pct": 21.224
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Detected text regions incorrectly included partial words/page numbers.",
+    "Page number 74 was mislabeled as a text paragraph.",
+    "Page number 75 was mislabeled as a text paragraph.",
+    "Bounding boxes provided in the prompt were fragmented/incorrectly segmented."
+  ],
+  "doc_id": "410",
+  "page": 9,
+  "elapsed_seconds": 2.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

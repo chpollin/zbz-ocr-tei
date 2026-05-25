@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">La transcendance du singulier</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">190</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>La transcendance du singulier</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1950</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screening-t3" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). 'Kierkegaard' (1x, S.8) tagged as bibl ref=zbz-w.529 -- refers to the philosopher, not a book title; Validator: Keine lb-Elemente im body (9 Seiten); 1 Fussnote (S.2, korrekt als note) (+2 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_1_r_1" ulx="348" uly="128" lrx="1123" lry="220" />
+      <zone xml:id="facs_1_r_2" ulx="144" uly="130" lrx="279" lry="160" />
+      <zone xml:id="facs_1_r_3" ulx="145" uly="229" lrx="311" lry="260" />
+      <zone xml:id="facs_1_r_4" ulx="351" uly="229" lrx="852" lry="299" />
+      <zone xml:id="facs_1_r_5" ulx="145" uly="269" lrx="221" lry="295" />
+      <zone xml:id="facs_1_r_6" ulx="350" uly="346" lrx="692" lry="383" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_2_r_1" ulx="356" uly="276" lrx="827" lry="358" />
+      <zone xml:id="facs_2_r_2" ulx="191" uly="448" lrx="1001" lry="766" />
+      <zone xml:id="facs_2_r_3" ulx="194" uly="760" lrx="1003" lry="1113" />
+      <zone xml:id="facs_2_r_4" ulx="194" uly="1110" lrx="1005" lry="1453" />
+      <zone xml:id="facs_2_r_5" ulx="227" uly="1489" lrx="918" lry="1522" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_3_r_1" ulx="191" uly="161" lrx="999" lry="266" />
+      <zone xml:id="facs_3_r_2" ulx="193" uly="332" lrx="1001" lry="511" />
+      <zone xml:id="facs_3_r_3" ulx="194" uly="505" lrx="1003" lry="794" />
+      <zone xml:id="facs_3_r_4" ulx="193" uly="848" lrx="1003" lry="1406" />
+      <zone xml:id="facs_3_r_5" ulx="196" uly="1404" lrx="1003" lry="1512" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_4_r_1" ulx="192" uly="161" lrx="998" lry="234" />
+      <zone xml:id="facs_4_r_2" ulx="191" uly="300" lrx="1000" lry="581" />
+      <zone xml:id="facs_4_r_3" ulx="191" uly="574" lrx="1000" lry="851" />
+      <zone xml:id="facs_4_r_4" ulx="194" uly="918" lrx="1000" lry="989" />
+      <zone xml:id="facs_4_r_5" ulx="195" uly="987" lrx="1001" lry="1130" />
+      <zone xml:id="facs_4_r_6" ulx="194" uly="1126" lrx="1004" lry="1510" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_5_r_1" ulx="193" uly="165" lrx="1002" lry="476" />
+      <zone xml:id="facs_5_r_2" ulx="196" uly="478" lrx="1003" lry="728" />
+      <zone xml:id="facs_5_r_3" ulx="193" uly="720" lrx="1004" lry="1104" />
+      <zone xml:id="facs_5_r_4" ulx="193" uly="1165" lrx="1003" lry="1521" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_6_r_1" ulx="195" uly="155" lrx="1004" lry="403" />
+      <zone xml:id="facs_6_r_2" ulx="194" uly="399" lrx="1004" lry="991" />
+      <zone xml:id="facs_6_r_3" ulx="192" uly="989" lrx="1002" lry="1515" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_7_r_1" ulx="193" uly="177" lrx="1002" lry="423" />
+      <zone xml:id="facs_7_r_2" ulx="195" uly="421" lrx="1003" lry="529" />
+      <zone xml:id="facs_7_r_3" ulx="193" uly="591" lrx="1004" lry="771" />
+      <zone xml:id="facs_7_r_4" ulx="194" uly="768" lrx="1002" lry="840" />
+      <zone xml:id="facs_7_r_5" ulx="193" uly="838" lrx="1003" lry="1430" />
+      <zone xml:id="facs_7_r_6" ulx="196" uly="1428" lrx="1002" lry="1535" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_8_r_1" ulx="195" uly="173" lrx="1002" lry="317" />
+      <zone xml:id="facs_8_r_2" ulx="194" uly="310" lrx="1003" lry="728" />
+      <zone xml:id="facs_8_r_3" ulx="194" uly="727" lrx="1001" lry="832" />
+      <zone xml:id="facs_8_r_4" ulx="194" uly="832" lrx="1001" lry="1107" />
+      <zone xml:id="facs_8_r_5" ulx="194" uly="1111" lrx="1001" lry="1386" />
+      <zone xml:id="facs_8_r_6" ulx="193" uly="1459" lrx="1000" lry="1530" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_9_r_1" ulx="193" uly="169" lrx="1002" lry="581" />
+      <zone xml:id="facs_9_r_2" ulx="192" uly="582" lrx="1003" lry="763" />
+      <zone xml:id="facs_9_r_3" ulx="193" uly="829" lrx="1001" lry="1033" />
+      <zone xml:id="facs_9_r_4" ulx="194" uly="1036" lrx="1001" lry="1178" />
+      <zone xml:id="facs_9_r_5" ulx="194" uly="1173" lrx="1003" lry="1310" />
+      <zone xml:id="facs_9_r_6" ulx="194" uly="1313" lrx="1003" lry="1495" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <p facs="#facs_1_r_1">
+          Zeitschrift: <bibl ref="#zbz-w.180">Studia philosophica</bibl> : Schweizerische Zeitschrift für <bibl ref="#zbz-w.1">Philosophie</bibl> = Revue suisse de philosophie = Rivista svizzera della filosofia = Swiss journal of philosophy
+        </p>
+        <p facs="#facs_1_r_2">
+          Herausgeber: <orgName ref="#zbz-o.9">Schweizerische Philosophische Gesellschaft</orgName>
+        </p>
+        <p facs="#facs_1_r_3">
+          Band: 10 (1950)
+        </p>
+        <p facs="#facs_1_r_4">
+          Artikel: <bibl ref="#zbz-w.309">La transcendance du singulier</bibl>
+        </p>
+        <p facs="#facs_1_r_5">
+          Autor: <persName ref="#zbz-p.2">Hersch, Jeanne</persName>
+        </p>
+        <p facs="#facs_1_r_6">
+          DOI: https://doi.org/10.5169/seals-883439
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          44
+        </p>
+        <p facs="#facs_2_r_2">
+          La transcendance du singulier¹
+        </p>
+        <p facs="#facs_2_r_3">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>, <placeName ref="#zbz-l.5">Genève</placeName>
+        </p>
+        <p facs="#facs_2_r_4">
+          L'homme se trouve, dans le monde où il vit, aux prises avec une diversité à la fois inépuisable et imparfaite. Une multitude d'êtres l'assaillent, qui ne sont ni identiques, ni parfaitement différents, qui se répètent à peu près. L'approximation règne. Les arbres, les visages, les destins se ressemblent sans se ressembler, diffèrent, mais peu. C'est ce qui risque de faire le désespoir du peintre ou celui du romancier, lorsqu'ils ne savent pas tirer l'unique sujet d'eux-mêmes et qu'ils le mendient dans le monde : les sujets y sont innombrables, et à l'instant même, chacun se trouve sans privilège, dévalorisé.
+        </p>
+        <note place="foot" n="1" xml:id="fn2-1" facs="#facs_2_r_5">
+          Devant ce monde, la conscience, avec sa nostalgie d'une rigueur inhumaine, resserre son diaphragme. Elle tend à ne laisser passer que le général (unité abstraite d'une diversité approximative) et l'unique (réalité concrète à laquelle aucune autre ne ressemble). Le général et l'unique correspondent, sur le plan représentatif, aux deux pôles du comportement psychologique : le général permet le jeu de l'habitude, un comportement à peu près semblable face à des données représentatives qui se répètent à peu près ; l'unique exige l'adaptation par l'invention d'un comportement neuf devant une présence neuve.
+        </note>
+        <p>
+          Or ce n'est pas seulement, comme nous venons de le voir, pour le romancier ou le peintre que la répétition approximative dévalorise les sujets. Cette dévalorisation se produit sur tout le plan psychologique, puisque la répétition fait tomber ce qui se répète dans le subconscient ; sur le plan moral, où les actes fréquemment reproduits perdent leur caractère décisif et prennent figure de bagatelles, ce qui les dispense d'être bons ou mauvais, tellement ils sont frivoles ; sur le plan ontologique, où les êtres tirés à un grand nombre d'exemplaires possèdent une moindre densité d'être, un moindre poids modal.
+        </p>
+        <p>
+          ¹ Conférence faite au <orgName ref="#zbz-o.172">Collège philosophique</orgName>, à <placeName ref="#zbz-l.1">Paris</placeName>, en janvier 1948.
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          Quel rapport y a-t-il donc entre cette densité ontologique qu'on désigne vaguement du nom de « réalité », et l'unicité d'une chose quelle qu'elle soit ?
+        </p>
+        <p facs="#facs_3_r_2">
+          *
+        </p>
+        <p facs="#facs_3_r_3">
+          Et d'abord à quoi pensons-nous quand nous parlons d'un être singulier ? — Nous voyons la pupille de l'esprit se rétrécir : on n'accueille plus que quelque chose de restreint. Il se produit comme un mouvement négatif, un refus de la totalité, de l'universalité, de la généralité.
+        </p>
+        <p facs="#facs_3_r_4">
+          A ce rétrécissement du champ correspond une précision accrue de l'objet. Celui-ci tend à devenir un signal efficace, ou un signe. A la limite, l'objet singulier tend à exclure tout « autour », de façon si radicale qu'il cesse d'être une représentation partielle découpée dans l'ensemble du « monde » objectif pour s'isoler, s'ériger en absolu, et coïncider avec une réaction subjective totale. Ainsi une nouvelle totalité se crée par l'étranglement exclusif de l'esprit que provoque l'unique.
+        </p>
+        <p facs="#facs_3_r_5">
+          *
+        </p>
+        <p>
+          Mais, d'autre part, « il n'y a de science que du général ». Le singulier paraît bien être, en effet, du côté du pôle subjectif, dans la condition humaine. Il est lié à la réaction, donc à l'action, — non à la connaissance impersonnelle qui voudrait se passer d'un point de vue (cet élément singulier toujours insinué partout et contre lequel on n'en finit pas de ruser). Et pourtant la connaissance, se voulant objective, revient toujours à l'expérience comme à l'instance suprême. Or il n'y a d'expérience que du singulier. Le général n'affecte aucun de nos sens, aucun de nos instruments. Le singulier, nous le rencontrons, nous nous y heurtons, il nous assaille. Le général, nous l'inventons, ou du moins nous ne le rencontrons dans sa nécessité propre que lorsque nous faisons exister pour nous le mode tout entier des généralités. Ce réseau fictif présente bien en lui des nécessités internes, — mais tel est le cas de toute fiction : sinon elle n'existe pas. Le général n'a pas les efficacités des objets.
+        </p>
+        <p>
+          On voit ainsi le paradoxe qui nous montre, une fois de plus, à quel point, quand nous avons affaire au « monde », nous restons emmêlés à nous-mêmes : le fondement de l'objectivité se ramène
+        </p>
+        <p>
+          45
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          à la réaction au singulier, donc à la subjectivité; et le fondement de toute science, la généralité, se ramène à une fiction.
+        </p>
+        <p facs="#facs_4_r_2">
+          *
+        </p>
+        <p facs="#facs_4_r_3">
+          Le singulier, disions-nous, est signal ou signe. Ce mode d'être «signalisateur» ne se surajoute pas, comme si l'être singulier existait indépendamment de sa valeur de signal. Ce mode d'être est constitutif du singulier. Celui-ci dépend donc du sujet et ne peut pas être conçu «en soi». Mais il ne peut pas non plus être conçu comme subjectivité pure, en termes d'idéalisme: cela impliquerait en effet que ce dont il est le signal se trouve présent dans la conscience au même titre que le signal lui-même.
+        </p>
+        <p facs="#facs_4_r_4">
+          Cependant, pour autant que la généralité est une fiction scientifique, elle reste sans cesse soumise au critère du singulier, dans l'expérience. C'est donc malgré tout au cœur du singulier, si précaire, inséparable du sujet, et risquant toujours d'être noyé dans la dévaluation du multiple divers et approximativement semblable, que réside le minimum d'affirmation réaliste sans laquelle la vérité perd son sens, et avec elle toute affirmation, fût-ce celle qui nie toute vérité.
+        </p>
+        <p facs="#facs_4_r_5">
+          *
+        </p>
+        <p facs="#facs_4_r_6">
+          Qu'est-ce que cette autorité du singulier? Quel poids ontologique a-t-il donc?
+        </p>
+        <p>
+          J'appellerai ici «transcendance» ce qu'un objet peut comporter d'irréductibilité essentielle, c'est-à-dire ce qui dans son essence reste proposé à l'esprit sans être possédé par lui, sans pouvoir jamais être épuisé par lui.
+        </p>
+        <p>
+          Le singulier est essentiellement inépuisable, et c'est même là le sens du mot «concret». Qu'on pense à l'effort inlassable d'un écrivain comme <persName ref="#zbz-p.257">Proust</persName> pour atteindre une essence du singulier. Son acharnement fait pressentir cette essence par l'impossibilité même où il est de finir jamais. Prétendre analyser le singulier, c'est en fait se mettre à décrire, entreprendre une description, à la lettre, interminable, jamais exhaustive. Le singulier garde un quant-à-soi, une épaisseur, une opacité jusque sous le regard le plus pénétrant, le plus lucide. On peut même dire que cette opacité gagne en profondeur avec la lucidité accrue du regard, car elle est en réalité une virtualité de transparences à l'infini. Et c'est parce
+        </p>
+        <p>
+          46
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          que l'objet singulier se présente au sujet comme une virtualité infinie que le sujet lui attribue les qualités d'unité, de continuité qui fondent sa cohésion ontologique. Nous retrouvons ici le jeu des monades de <persName ref="#zbz-p.255">Leibniz</persName> : chacune possède l'unité et la continuité sans défaut parce qu'elle est pour toutes les autres une virtualité infinie d'aperceptions. Ce quant-à-soi inépuisable, toujours au-delà de ce que l'analyse a réduit, ce résidu de toute objectivation, c'est là l'être même du singulier, son «en-soi», éprouvé comme résistance irréductible — comme transcendance.
+        </p>
+        <p facs="#facs_5_r_2">
+          Lorsqu'il s'agit du général, c'est le contraire qui se produit. L'analyse décompose les termes qui constituent la compréhension d'un concept. Cette analyse doit être, en principe, exhaustive, discontinue, livrant une transparence achevée, réduite, sans résidu. On obtient ainsi les conditions logiques d'une existence logique — et non une description —, et ni les conditions, ni l'existence considérée n'ont de poids ontologique.
+        </p>
+        <p facs="#facs_5_r_3">
+          Tout cela n'est vrai qu'«en principe». En effet, un terme général peut devenir à son tour un être singulier. Par exemple, on peut tirer de diverses choses approximativement circulaires le terme général «cercle». Celui-ci est alors une invention abstraite impliquant un ensemble de caractéristiques d'une transparence simple et explicitées par une définition. Mais ce terme général «cercle» peut devenir sur le plan mathématique un être singulier, et même unique, dont on découvre sans fin les propriétés et les relations, et qui les transcende toutes. Ce nouvel être singulier, loin de se vider de toute transcendance ontologique, devient inépuisable sur un mode différent.
+        </p>
+        <p facs="#facs_5_r_4">
+          *
+        </p>
+        <p>
+          Il est souvent difficile de discerner entre le général et le singulier. Ainsi on a dit souvent de <persName ref="#zbz-p.7">Platon</persName> qu'il avait créé une ontologie des généralités, en substantialisant celles-ci. Mais je crois que c'est là une interprétation erronée. Il s'agit chez lui non d'une ontologie des généralités, mais d'une ontologie des qualités. C'est le singulier qu'il pousse, dans les Idées, jusqu'à l'unicité. Ce mouvement transcendant, loin de se répandre dans le général, s'étrangle lui-même dans l'unique. Et ce n'est pas pour rien que tout culmine dans l'amour. Les Idées ne sont pas des notions générales, mais des Singuliers purs. — Mais il est vrai, d'autre part, que
+        </p>
+        <p>
+          47
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          48
+        </p>
+        <p facs="#facs_6_r_2">
+          <persName ref="#zbz-p.7">Platon</persName>, parlant des Singuliers purs, nous fait sortir de la condition humaine, comme il nous en avertit d'ailleurs lui-même, par ses mythes et par la théorie de la réminiscence. Car dans la condition humaine nous ne connaissons, en fait de singuliers, que des «objets de rencontre», tous ceux, jamais identiques, et imparfaitement différents, qui se trouvent sur le chemin de notre histoire à travers le temps.
+        </p>
+        <p facs="#facs_6_r_3">
+          Lorsqu'au moyen âge, dans la Querelle des universaux, on se demandait si c'était le singulier ou le général qui était «réel», le sens du «réel» allait encore sans dire. Il ne s'agissait pas, je crois, d'une recherche ontologique. Au fond, la question servait plutôt à confronter deux modes de penser, l'un positif, l'autre transcendant et religieux. Le premier était celui de l'empirisme renaissant, ou qui tentait de renaître, et qui voulait se tourner vers la nature comme vers la réalité la plus réelle. L'autre était à la fois, avec des variantes, théologique et rationnel; pour lui, le réel, c'étaient les modèles des choses dans la pensée de Dieu, ou, comme <persName ref="#zbz-p.16">Hegel</persName> devait le dire plus tard, «les pensées de Dieu avant la création». Mais poser ainsi l'alternative, c'était se faire une conception purement positive de la positivité. On n'entrevoyait pas — ou bien on oubliait qu'on avait entrevu — que le fait lui-même (le singulier) implique psychologiquement et ontologiquement la transcendance dans son essence. Le positivisme le plus rigoureux a toujours la transcendance dans son jeu; seulement c'est à son insu.
+        </p>
+        <p>
+          On négligeait encore autre chose. La transcendance impliquée par le singulier représente le point unique de convergence pour les données approximativement semblables de la vie quotidienne — ce que <persName ref="#zbz-p.7">Platon</persName> exprimait par la participation. Il y a donc toujours dans le singulier (le fait) une généralité virtuelle. C'est à cause de cette méconnaissance que le «problème de l'induction» a paru si difficile et qu'on a été amené à lui chercher des solutions positives compliquées. Mais le général est déjà dans le singulier. Quand nous faisons des expériences avec du soufre, de l'eau, une souris, un oignon de tulipe, nous disons le soufre, l'eau, la souris, l'oignon, non par suite d'une généralisation incontrôlée, mais en vertu d'un symbolisme qui règne dans toute notre conscience dans la mesure où elle opère avec des représentations. Le morceau de soufre dans ma main, c'est la présence même du soufre, sans aucune généralisation. Et bien sûr, le comportement d'une souris ne me permet
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          pas de décrire celui de n'importe quelle souris. Il faudra que j'en étudie un grand nombre. Cependant il ne s'agira pas pour moi d'aligner ces comportements singuliers, mais de savoir finalement comment se comporte la souris. Lorsque les comportements diffèrent, on voit comment la science a pu être amenée à créer ce mythe moderne d'un « être statistique » représenté par quelques pourcentages de probabilités.
+        </p>
+        <p facs="#facs_7_r_2">
+          Tout ce symbolisme, donc, ne s'ajoute pas à quelque « expérience nue » qui lui serait antérieure. Il est essentiel, consubstantiel à la présence de toute représentation.
+        </p>
+        <p facs="#facs_7_r_3">
+          *
+        </p>
+        <p facs="#facs_7_r_4">
+          On le voit, d'autre part, ce symbolisme est double. Le singulier implique à la fois le général, c'est-à-dire l'unicité logique, et l'être, c'est-à-dire l'unicité ontologique. Par rapport au général, le singulier est un représentant, un échantillon. Par rapport à l'être, le singulier est présence inépuisable.
+        </p>
+        <p facs="#facs_7_r_5">
+          C'est pourquoi l'idée de « dépasser le singulier » reste dans tous les domaines extrêmement ambiguë.
+        </p>
+        <p facs="#facs_7_r_6">
+          Considérons les liens qui peuvent se créer entre les hommes. Il existe entre eux — bien que jamais à l'état pur — des associations techniques : ils conjuguent leurs efforts en vue d'un but commun. Ils sont tous tournés vers ce but, et non les uns vers les autres. Le singulier n'est pas alors dépassé, il est seulement ignoré. Au contraire, le singulier surgit à l'instant où un homme, tourné vers son prochain, ne le voit plus comme un individu parmi d'autres, auxquels il ressemble à peu près, mais le transcende à la fois en direction de l'homme comme tel et en direction de cet homme unique. Un tel rapport se manifeste avec l'éclat le plus pur dans l'amour, à cause de l'exclusivisme qu'il implique : on n'aimerait pas un homme ou une femme dont on saurait qu'il ou elle a été tiré à plusieurs exemplaires. Le prestige du singulier est ici poussé radicalement jusqu'à l'unique. Mais cela est vrai aussi de l'amitié, car ce terme vague, paresseux, ne recouvre qu'en apparence une multiplicité de liens approximativement semblables : chaque amitié est singulière, par l'unicité de l'ami.
+        </p>
+        <p>
+          Dans le domaine de l'art, aucune création, au sens fort de ce mot, n'est possible sans que la donnée, quelle qu'elle soit, objective ou subjective, offerte par le monde de la ressemblance — dif-
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          férence approximative — soit transcendée à la fois vers la généralité et vers l'unicité singulière. Il serait trop long de montrer ici l'inexistence insurmontable, sur le plan de l'art, de ce qui n'est que général ou de ce qui n'est qu'à peu près particulier.
+        </p>
+        <p facs="#facs_8_r_2">
+          Mais c'est dans le domaine religieux que cette polarité invincible se fait le plus violemment sentir, peut-être. C'est à cause d'elle que l'opposition du libéralisme et du dogmatisme ne se détendra jamais : elle est constitutive de la situation de la foi. La foi, en effet, a forcément pour objet un être singulier, et non l'être en général, dénué de toute détermination, dont <persName ref="#zbz-p.16">Hegel</persName> a bien montré qu'il s'identifiait au néant. Et c'est cette détermination concrète de l'être singulier que signifient en principe les dogmes, ainsi que les éléments historiques qu'imposent les religions aux croyants. C'est pourquoi les églises chrétiennes insistent pour que les croyants passent par cette porte étroite, par ce récit, qui détermine Dieu.
+        </p>
+        <p facs="#facs_8_r_3">
+          Mais aussitôt la détermination d'un Dieu particulier chasse Dieu hors de ce Dieu — qui devient un être singulier, à transcender doublement.
+        </p>
+        <p facs="#facs_8_r_4">
+          Ainsi donc on peut dire que la foi dans un Dieu singulier, ultime et sans transcendance, n'est pas la foi en Dieu. Et tel est le piège tendu au croyant par le réalisme, pour lequel Dieu est littéralement réel. Mais la foi dans le Dieu général, la foi qui croit atteindre en lui la transcendance par une visée directe, exempte de toute détermination limitative, n'est pas la foi en Dieu. Et tel est le piège tendu par l'idéalisme, qui propose au croyant une divinité sans être.
+        </p>
+        <p facs="#facs_8_r_5">
+          Croire en un Dieu singulier en ayant conscience qu'une détermination est nécessaire, telle est la vraie situation d'un croyant lucide. Mais c'est une situation impossible parce que la nécessité d'une détermination une fois reconnue rend toute détermination à la fois inévitable et relative : inévitable en tant que détermination, et relative en tant qu'elle est telle ou telle. Nous retrouvons ici les paradoxes sans fin dans lesquels se débattait <bibl ref="#zbz-w.529">Kierkegaard</bibl>.
+        </p>
+        <p facs="#facs_8_r_6">
+          *
+        </p>
+        <p>
+          Partout nous voyons s'affirmer le prestige de l'unicité : d'un seul Dieu, d'un seul amour. Ce qui fait le prestige des Idées, chez
+        </p>
+        <p>
+          50
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          <persName ref="#zbz-p.7">Platon</persName>, c'est que chacune est unique dans sa pureté. Le principe des indiscernables, chez <persName ref="#zbz-p.255">Leibniz</persName>, assure celui des monades dans un sens analogue. Pour <persName ref="#zbz-p.141">saint Thomas</persName>, chaque ange absorbe en lui l'unicité d'un genre. Et chez <persName ref="#zbz-p.3">Bergson</persName>, le prestige de l'unicité entraîne une dévaluation inverse : si les individus d'une même espèce répètent à peu près un modèle unique, cela vient d'une fatigue de l'élan vital, d'un épuisement de sa force créatrice, du rôle négatif dévolu à la matière. Et malgré les apparences, ce n'est pas grâce à la répétition approximative d'une sensation que <persName ref="#zbz-p.257">Proust</persName> rejoint le temps perdu, ou l'éternité qui est comme un temps devenu d'une épaisseur infinie, mais par la singularisation instantanée et absolue de la sensation.
+        </p>
+        <p facs="#facs_9_r_2">
+          D'où vient à l'unique ce prestige ? — C'est que rien ne peut devenir symbole de la transcendance (c'est-à-dire provoquer un acte qui la vise) sans être exclusif et unique. C'est qu'un tel symbole doit correspondre à l'unicité de l'être, fondement de toute pensée et de toute action.
+        </p>
+        <p facs="#facs_9_r_3">
+          *
+        </p>
+        <p facs="#facs_9_r_4">
+          La situation humaine est pleine de pièges. L'esprit risque de se vouer à une généralité qui perd son efficacité symbolique et se réduit à des cadres vides. Tout est là, mais ontologiquement si anémié qu'il n'y a presque plus rien. L'esprit jouit alors d'une étrange légèreté, d'une facilité trichée, qui tient à l'absence de l'être.
+        </p>
+        <p facs="#facs_9_r_5">
+          Ou bien l'esprit risque de se vouer à des données particulières dont il ignore la transcendance et l'unicité. Il croit être au cœur de l'expérience, mais en fait il retombe dans le général, faute d'inépuisable concret.
+        </p>
+        <p facs="#facs_9_r_6">
+          Ou encore l'esprit risque de prétendre atteindre la transcendance sans passer par le symbolisme du singulier et de se perdre ainsi dans l'inconsistance d'une pensée qui essaye d'échapper aux nécessités humaines de l'incarnation.
+        </p>
+        <p>
+          Au fur et à mesure que ces pièges apparaissent plus nettement à la conscience, l'homme se voit de plus en plus contraint de sauver la transcendance par l'épreuve de l'immanence maximum, par le singulier. C'est pourquoi notre philosophie tend de plus en plus à s'éprouver dans notre action.
+        </p>
+        <p>
+          51
+        </p>
+      </div>
+      </body></text>
+</TEI>

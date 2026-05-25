@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "retour Ce symbole reflète le rêve impossible des hommes, s'efforcent malgré tout d'unir ou de réconcilier entre elles les diverses dimensions contradictoires des temps où ils vivent leur étrange condition. Dimensions qui restent étrangères entre elles, et en même temps indispensables.",
+      "bbox": {
+        "x_pct": 17.585,
+        "y_pct": 13.549,
+        "w_pct": 57.383,
+        "h_pct": 13.704
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais je suis au concert. J'écoute. En dehors d'écouter, je ne fais rien. J'ai renoncé ici à ma capacité humaine de décision et d'action. Je ne joue pas dans l'orchestre. Suis-je « passive », pour autant ? Nullement. Je suis réceptive, et je ressens cette réceptivité comme une activité plus intense que bien des actions ou bien des efforts. C'est comme si, à travers la musique, le temps lui-même déployait en moi une sorte de vie propre.",
+      "bbox": {
+        "x_pct": 17.479,
+        "y_pct": 29.027,
+        "w_pct": 57.521,
+        "h_pct": 19.951
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La liberté a cessé d'être, dans le déchirement des temps qui s'excluent, un devoir difficile, - «le plus insupportable de tous les cadeaux», disait Dostoïevsky. La liberté n'est plus une tâche à remplir, elle est vécue comme unité par l'affectivité de l'esprit, du sentiment, du corps. C'est comme si chaque son, chaque courbure de la mélodie, chaque surprise du rythme était une décision libre, mais sans aucun enjeu particulier, comme s'il ne s'agissait que du déploiement - ou de la souffrance - de la seule liberté.",
+      "bbox": {
+        "x_pct": 17.373,
+        "y_pct": 48.545,
+        "w_pct": 57.659,
+        "h_pct": 23.957
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "21",
+      "bbox": {
+        "x_pct": 71.696,
+        "y_pct": 75.334,
+        "w_pct": 1.77,
+        "h_pct": 1.556
+      },
+      "changed": true,
+      "change_reason": "Identified page number and assigned to filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text was significantly truncated/corrupted in regions.",
+    "Page number 21 was missing from detection.",
+    "Labels for text regions were correct but content was incomplete."
+  ],
+  "doc_id": "2780",
+  "page": 20,
+  "elapsed_seconds": 4.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

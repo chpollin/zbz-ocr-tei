@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "9 Herrschaft der Gesetze und Institutionen",
+      "bbox": {
+        "x_pct": 17.314,
+        "y_pct": 8.597,
+        "w_pct": 64.943,
+        "h_pct": 2.555
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and removed incorrect punctuation."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Zur Problematik der „äußeren“ und „inneren“ Freiheit",
+      "bbox": {
+        "x_pct": 18.373,
+        "y_pct": 13.336,
+        "w_pct": 62.459,
+        "h_pct": 2.151
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header as it serves as a sub-heading for the article."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 40.82,
+        "y_pct": 19.689,
+        "w_pct": 17.528,
+        "h_pct": 1.681
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "„Révolution française“, die Französische Revolution, das ist ein Ereignis, das außergewöhnlich komplexe Ursprünge gehabt hat und das nie aufgehört hat, im kulturellen Bewußtsein und im ethischen und intellektuellen Bewußtsein derer, die später gelebt haben, sich fortzusetzen und zu ändern. Eben deswegen ist die Wirklichkeit der „révolution française“ immer komplexer geworden. Und als ich daran dachte, daß ich hier in einer dreiviertel Stunde darüber sprechen muß, da bekam ich Angst, denn diese Wirklichkeit kann und darf nicht einseitig reduziert werden. Überspitzt würde ich sagen: Alles, was man von der „révolution française“ sagt, stimmt – aber das Gegenteil auch. Und deswegen ist es etwas erschreckend, darüber zu sprechen; das Widerspruchsvolle kann man doch nicht so einfach hinnehmen, auch wenn es in der Wirklichkeit gegeben ist. Und je nach den verschiedenen Forschungsdisziplinen, die man auf dieses Objekt anwendet, bekommt man andere Eindrücke und andere Deutungen, bis hin zu dieser letzten Auswirkung der „bourgeois révolution“, „la révolution bourgeoise“ – der „Bürgerlichen Revolution“ –, die noch in unserer Zeit, oder fast in unserer Zeit, zum Kampf zwischen Kommunisten und Antikommunisten nicht wenig beigetragen hat.",
+      "bbox": {
+        "x_pct": 8.449,
+        "y_pct": 25.378,
+        "w_pct": 82.598,
+        "h_pct": 34.454
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Auch vor der Revolution waren ihre Ursprünge vielschichtig. Es wurden schon einige Namen erwähnt, aber ich möchte auch noch auf Rousseau hinweisen. Rousseau war bestimmt nicht von derselben Richtung wie Voltaire; das ist eine andere Welt. Die beiden sind so verschieden. Und man kann vermuten, daß keiner von ihnen hätte er gesehen, was für Folgen die Französische Revolution in der Geschichte gehabt hat, gesagt hätte: Das habe ich gewollt. Das haben sie eben nicht gewollt. Die Geschichte entwickelte aus jenem Ereignis und aus jenen Gedanken etwas anderes.",
+      "bbox": {
+        "x_pct": 8.411,
+        "y_pct": 59.328,
+        "w_pct": 82.421,
+        "h_pct": 15.21
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Frage stellt sich also, wie soll man sich in der Vieldeutigkeit, in der Komplexität der Wirklichkeit, nicht verlieren? Nun möchte ich noch etwas zum Untertitel des Symposions sagen. „Mythos und Realität“. Ich glaube, daß Mythen in der Geschichte, wenn sie lang genug wirken, Wirklichkeit werden. Sie werden Realität durch ihre Wirkung. Denn, wenn Tatsachen geschehen, so müssen sie doch irgendwelche Ursachen haben; eine solche Ursache ist nicht eine objektiv feststellbare Tatsache, sondern eben",
+      "bbox": {
+        "x_pct": 8.613,
+        "y_pct": 74.227,
+        "w_pct": 82.346,
+        "h_pct": 13.361
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "63",
+      "bbox": {
+        "x_pct": 87.777,
+        "y_pct": 89.286,
+        "w_pct": 2.222,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Re-classified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Several paragraphs contained broken text due to OCR errors.",
+    "Section headings were mislabeled as paragraph text.",
+    "Page number was mislabeled as paragraph text.",
+    "The text content was significantly cleaned for readability."
+  ],
+  "doc_id": "2660",
+  "page": 4,
+  "elapsed_seconds": 6.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

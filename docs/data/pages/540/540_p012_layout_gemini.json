@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "240",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 14.489,
+        "w_pct": 2.766,
+        "h_pct": 1.491
+      },
+      "changed": true,
+      "change_reason": "Page number identified as paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "J. HERSCH",
+      "bbox": {
+        "x_pct": 44.821,
+        "y_pct": 14.631,
+        "w_pct": 10.328,
+        "h_pct": 1.278
+      },
+      "changed": true,
+      "change_reason": "Running header identified as paragraph."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "1. Ce fait que l'histoire est l'histoire, c'est d'abord l'existence de collectivités humaines. Or, malgré ce que pensent certains sociologues, une collectivité humaine ne se laisse pas comprendre par une analyse objective, si complexe et subtile qu'elle soit. Le sociologue introduit dans son étude l'expérience personnelle qu'il a d'une vie au sein d'une collectivité, et c'est par là qu'il sait de quoi il parle. C'est parce que son existence ne surgit jamais que dans une collectivité, par son consentement ou sa révolte à l'égard des liens formels que cette collectivité impose et qui lui donnent cohésion et réalité, qu'il parle de cette collectivité autrement que d'un troupeau, d'une forêt ou d'un banc de corail. Il peut bien, dès lors, l'étudier objectivement, et même quantitativement, chacun des mots dont il se sert pour énoncer les questions qu'il se pose, les méthodes qu'il applique, les résultats empiriquement obtenus, est chargé d'un sens existentiel ainsi clandestinement réintroduit. Cela est vrai, à plus forte raison, de l'historien qui étudie ces mêmes collectivités humaines, mais au fil d'une histoire, tenant compte forcément d'intentions, de desseins, de valeurs. Nul ne serait historien s'il ne vivait consciemment dans une communauté d'hommes aux prises avec l'histoire.",
+      "bbox": {
+        "x_pct": 14.99,
+        "y_pct": 17.361,
+        "w_pct": 69.672,
+        "h_pct": 34.659
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was truncated and garbled."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "2. J'ai parlé à l'instant d'intentions, de desseins, de valeurs. Il me faut donc enfin prononcer le mot de liberté. Sans liberté, il n'y aurait pas de collectivités humaines, au sens qu'elles ont pour le sujet qui existe en elles. Mais s'il y a liberté, c'est que les plans sur lesquels s'actualise l'existence humaine sont multiples et discontinus, sans transitions et sans liens empiriques, articulés par delà l'expérience. Un jeune sociologue grec, Panayis Papaligouras, écrivait il y a près de vingt ans : « La dialectique des différents plans de notre existence concrète permet l'histoire : l'histoire qui est à la fois critique, décomposition des formes passées et croyance génératrice; l'histoire qui est une synthèse de toutes les contradictions de l'être et qui en même temps permet à ces contradictions de se réaliser. » Ou encore : « L'histoire pour le philosophe est la dialectique supérieure en vertu de laquelle se produit l'histoire concrète et réelle. » 1 L'histoire apparaît ainsi comme la construction",
+      "bbox": {
+        "x_pct": 15.236,
+        "y_pct": 52.544,
+        "w_pct": 69.672,
+        "h_pct": 25.821
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was truncated and garbled."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Panayis Papaligouras, Théorie de la société internationale, Zürich, 1941.",
+      "bbox": {
+        "x_pct": 15.01,
+        "y_pct": 78.851,
+        "w_pct": 64.754,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote and fixed OCR errors in text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.857,
+        "y_pct": 92.528,
+        "w_pct": 36.284,
+        "h_pct": 2.486
+      },
+      "changed": true,
+      "change_reason": "JSTOR metadata is a footer filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text segments were severely truncated and contained OCR errors.",
+    "Page number and header were labeled as paragraphs.",
+    "Footnote was misclassified.",
+    "JSTOR metadata footer was not classified as a filter."
+  ],
+  "doc_id": "540",
+  "page": 12,
+  "elapsed_seconds": 6.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

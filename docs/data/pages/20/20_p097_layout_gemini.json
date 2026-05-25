@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'HISTOIRE N'A PLUS D'AVENIR 95",
+      "changed": true,
+      "change_reason": "Corrected from paragraph/header text to page_header based on location and content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2. Limite de l'histoire",
+      "bbox": {
+        "x_pct": 32.38,
+        "y_pct": 14.19,
+        "w_pct": 32.229,
+        "h_pct": 2.124
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text typo in the label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans l'histoire universelle de Hegel, il n'y a pas d'avenir. Hegel ne se demande pas de quoi demain sera fait. Bien plus, la question ne reste pas ouverte; quand on part de la « Philosophie de l'Histoire », on ne peut pas la poser. Elle est effleurée une seule fois dans cette œuvre, lorsqu'il parle de l'Amérique; Hegel la repousse simplement : « Als Land der Zukunft geht es uns überhaupt hier nichts an (1) ».",
+      "bbox": {
+        "x_pct": 10.648,
+        "y_pct": 18.667,
+        "w_pct": 75.994,
+        "h_pct": 20.762
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette lacune n'est pas accidentelle; elle résulte nécessairement de la conception hégélienne du temps et du point de vue que Hegel a choisi :",
+      "bbox": {
+        "x_pct": 10.587,
+        "y_pct": 39.076,
+        "w_pct": 75.753,
+        "h_pct": 8.038
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Du point de vue choisi : Dans l'histoire, ce qui est éternel, c'est une loi. L'histoire suit le plan de la Providence, elle ne marche pas à l'infini, elle marche vers un but. Ce but, c'est l'époque de Hegel. Il est vrai que bien des choses restent encore à réaliser, mais on sait maintenant quelle est la meilleure forme du gouvernement, la véritable religion, la vraie philosophie. Puisque tout le passé aboutit à l'époque de Hegel, considérée comme l'achèvement de l'histoire universelle, on ne peut plus parler d'avenir.",
+      "bbox": {
+        "x_pct": 10.256,
+        "y_pct": 46.79,
+        "w_pct": 76.084,
+        "h_pct": 28.419
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De la conception hégélienne du temps : En faisant dans son système une part à l'avenir, Hegel aurait dû nécessairement sacrifier soit la forme du système,",
+      "bbox": {
+        "x_pct": 10.241,
+        "y_pct": 75.048,
+        "w_pct": 75.949,
+        "h_pct": 7.686
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Die Vernunft in der Geschichte, p. 200.",
+      "bbox": {
+        "x_pct": 13.253,
+        "y_pct": 86.543,
+        "w_pct": 54.367,
+        "h_pct": 2.381
+      },
+      "changed": true,
+      "change_reason": "Changed label to footnote and corrected OCR text typo."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Page header missing in original JSON.",
+    "Significant OCR errors in multiple paragraphs.",
+    "Footnote not tagged as footnote."
+  ],
+  "doc_id": "20",
+  "page": 97,
+  "elapsed_seconds": 5.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

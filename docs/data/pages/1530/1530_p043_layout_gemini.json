@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "116 ENTRETIEN PUBLIC",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page header identified at the top of the document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "symboles, d'institutions, de langages, et de formules presque magiques. Car il y a des gens qui ont cru à Marianne comme on croit à une sorte de divinité. Or, le 10 juin 1940, que s'est-il passé? Naturellement il y avait bien eu la défaite, et un certain nombre d'événements avaient bouleversé le pays. Mais, le 10 juin 40, les députés, les gens à qui le peuple français avait délégué le pouvoir comme députés de la République ont voté les pleins pouvoirs au maréchal Pétain, c'est-à-dire qu'ils ont renoncé à la République pour créer l'Etat français. Que s'était-il passé? Ils n'y croyaient plus! Il y avait surtout le lâche abandon dont a parlé Léon Blum, et la possibilité de se dire qu'on évitait le pire en faisant cela, mais il y avait d'autres moments dans l'histoire de France, où des défaites presque aussi écrasantes avaient suscité un mouvement diamétralement opposé. Ce que l'on pouvait constater c'est que pour que le pouvoir dure, il faut d'abord que ceux qui l'exercent commencent par y croire.",
+      "bbox": {
+        "x_pct": 13.507,
+        "y_pct": 9.529,
+        "w_pct": 75.926,
+        "h_pct": 23.967
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription and maintained block as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deuxième exemple, qui m'a paru alors tout à fait singulier, c'est l'exemple de mai 68. En mai 68, on vit sous la Cinquième République dirigée par un homme qui jouit d'un prestige largement reconnu. On a des institutions qui paraissent être durables, et que se passe-t-il? On descend dans la rue, on fait la fête, c'est l'anarchie. Mais quelle est la cause de cet extraordinaire mouvement qui avait, d'ailleurs, des allures de fête, de spectacle? Car on brûlait beaucoup: on brûlait des voitures, des arbres, on chantait, on inventait, on mettait des graffiti partout, c'était la jeunesse dans une sorte de fête sans frontières. Que s'était-il passé? Le pouvoir n'avait pas vu les forces qui montaient, le pouvoir ne s'était rendu compte de rien.",
+      "bbox": {
+        "x_pct": 13.507,
+        "y_pct": 33.116,
+        "w_pct": 75.926,
+        "h_pct": 19.008
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription and maintained block as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être vous rappelez-vous ce que le général de Gaulle disait en parlant des étudiants: « Ils veulent aller dans les chambres des filles! » Il s'imaginait que la revendication de la jeunesse se bornait à cela. En réalité, il y avait un divorce profond entre le pouvoir et le peuple, le peuple qui avait honte et ne souhaitait pas assumer l'héritage du colonialisme, en se rendant complice de toutes sortes de contradictions, de crimes et de scandales. Il n'est pas douteux qu'il y avait là une question morale. Puis, à ce qui s'est passé dans la rue a succédé une sorte de cérémonial, une sorte de rituel: il a suffi que le général de Gaulle ramasse cinq cent mille personnes, et leur fasse descendre, en cadence, les Champs-Elysées pour que les choses deviennent un petit peu différentes. Il ne s'agit pas ici d'analyser cette reprise en main, car ce qui compte, c'est ce divorce profond entre le pouvoir et le peuple qui avait amené une espèce de corrida extraordinaire à travers les rues de Paris.",
+      "bbox": {
+        "x_pct": 13.461,
+        "y_pct": 51.074,
+        "w_pct": 75.891,
+        "h_pct": 23.934
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription and maintained block as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si nous en venons, maintenant, à ce qui se passe aujourd'hui, je crois que nous pouvons jeter un regard assez clair sur les causes qui risquent de changer radicalement la République française. Nous vivons, aujourd'hui, sous un régime qui a des aspects particuliers. Un contre-régime se dessine et profite, comme ont profité tous les régimes possibles, de toutes les réformes qui sont faites. Jamais une révolution ne s'est faite sans que le pouvoir en place n'ait, par des réformes successives, amorcé pour ainsi dire la révolution. Vuillot disait déjà: « Réclamons-leur la liberté au nom de nos principes, liberté que nous leur refuserons au nom des leurs. »",
+      "bbox": {
+        "x_pct": 13.623,
+        "y_pct": 74.57,
+        "w_pct": 75.764,
+        "h_pct": 15.736
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription and maintained block as paragraph."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR text was heavily garbled in all paragraphs.",
+    "Page number 116 was ignored in original detection.",
+    "Bounding boxes were generally correct but labels for text were poor quality."
+  ],
+  "doc_id": "1530",
+  "page": 43,
+  "elapsed_seconds": 7.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

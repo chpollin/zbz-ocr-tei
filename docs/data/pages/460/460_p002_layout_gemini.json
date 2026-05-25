@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "tribune libre 42",
+      "bbox": {
+        "x_pct": 12.067,
+        "y_pct": 8.371,
+        "w_pct": 71.012,
+        "h_pct": 10.072
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'EUROPE AU DÉFI",
+      "bbox": {
+        "x_pct": 22.025,
+        "y_pct": 20.359,
+        "w_pct": 52.136,
+        "h_pct": 16.527
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription error in the text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 44.619,
+        "y_pct": 54.303,
+        "w_pct": 2.58,
+        "h_pct": 1.742
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/artifact, reclassified to page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PLON",
+      "bbox": {
+        "x_pct": 38.183,
+        "y_pct": 88.391,
+        "w_pct": 27.101,
+        "h_pct": 4.201
+      },
+      "changed": true,
+      "change_reason": "Publisher name reclassified as section_header."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Incorrect transcription for L'EUROPE AU DÉFI",
+    "Page number 9 mislabeled as paragraph",
+    "Publisher PLON mislabeled as paragraph"
+  ],
+  "doc_id": "460",
+  "page": 2,
+  "elapsed_seconds": 2.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

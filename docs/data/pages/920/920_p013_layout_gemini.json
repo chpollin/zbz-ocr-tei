@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "J. Hersch: Nouveaux pouvoirs de l'homme 351",
+      "bbox": {
+        "x_pct": 11.839,
+        "y_pct": 7.643,
+        "w_pct": 74.408,
+        "h_pct": 1.458
+      },
+      "changed": true,
+      "change_reason": "Identified as page header containing title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "malades privil©gi©s plus difficile   admettre. M©me si nous supposons d©nor mes progr¨s sociaux, le traitement m©dical se heurtera toujours   des limites th©oriques et pratiques. Le «droit   la sant©», fond© sur quelque chose d'absolu en l'homme, sera toujours limit© et relatif, il ne saurait signifier l'abolition de la souffrance, de la maladie, de la vieillesse et de la mort. On a tendance   entretenir aujourd'hui, autour de ces ©vidences, un halo d'illusions verbales qui emp©che les hommes de regarder ces v©rit©s en face et de les assumer   c'est- -dire d'©tre des hommes. Finalement, le mot supporter n'est pas et ne sera jamais, dans la condition humaine, un mot p©rim©. Il y a et il y aura toujours «  supporter». Ceux qui promettent et ceux qui r©clament «le paradis, tout de suite!» mentent aux autres et   eux-m©mes.",
+      "bbox": {
+        "x_pct": 11.839,
+        "y_pct": 10.838,
+        "w_pct": 74.408,
+        "h_pct": 19.65
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text extraction."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Savoir supporter fait partie de la sant©",
+      "bbox": {
+        "x_pct": 11.839,
+        "y_pct": 34.111,
+        "w_pct": 36.247,
+        "h_pct": 1.968
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela signifie, d'une part, que l'effort, au niveau des faits m©dicaux et sociaux, pour r©duire, dans toute la mesure du possible, la douleur, l'angoisse, les incapacit©s, la d©pendance, l'insuffisance et l'in©galit© des soins doit ©tre poursuivi sans cesse, et sans espoir d'atteindre un ©tat paradisiaque. Cela signifie, d'autre part, que l'obligation et la facult© de «supporter» font partie de la condition humaine. A supposer que l'homme puisse un jour vivre tr¨s longtemps en ©tant toujours au meilleur niveau de sa sant©, cela signifierait qu'il aurait subordonn© toute sa vie   cette sant©, qu'il refuserait de se fatiguer au service d'aucune t¢che, qu'il ne se donnerait d©sormais   rien. Une telle «option» ne serait plus humaine. Il aurait perdu sa libre conscience pour retomber comme un fait parmi les faits, parmi les seules n©cessit©s d'une hygi¨ne parfaite. La parfaite sant© aurait perdu sa raison d'©tre.",
+      "bbox": {
+        "x_pct": 11.734,
+        "y_pct": 37.733,
+        "w_pct": 74.736,
+        "h_pct": 21.618
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est dans une telle voie que la m©decine pr©ventive d'aujourd'hui semble parfois engager les gens quand elle recommande de multiplier les contr¤les de tous genres et que les conseils savants ou pseudo-savants envahissent la publicit©.",
+      "bbox": {
+        "x_pct": 11.66,
+        "y_pct": 59.089,
+        "w_pct": 74.567,
+        "h_pct": 7.362
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme reste un ©tre   qui il incombe de maintenir,   travers la maladie et devant la mort, par sa mani¨re m©me de les supporter, le sens de la vie   le sens de sa vie. Ce sens n'est pas la sant©. La sant© est au service de ce sens. Elle tire de lui son propre sens et ses droits.",
+      "bbox": {
+        "x_pct": 11.734,
+        "y_pct": 66.254,
+        "w_pct": 74.45,
+        "h_pct": 7.413
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La sant©, d'apr¨s ce qui pr©c¨de, n'est pas et ne peut pas ©tre parfaite. Elle est un ©tat de relative aisance et de relatif bien-©tre. Elle comporte, m©me sans «maladie», des maux et des malaises passagers, p©riodiques ou chroniques, que souvent on ne sait pas gu©rir et qui doivent ©tre support©s. Faut-il penser que le droit au bien-©tre ordonne de recourir aussit¤t aux tranquillisants, euphorisants, etc.? Les m©decins, surcharg©s, encouragent   cet ©gard l'autom©dication pendant de longues p©riodes. Les producteurs aussi. Au nom du droit au bien-©tre et de celui de disposer de soi, on recourt aux moyens chimiques pour fuir tout malaise. Mais on n'est pas seul. La fuite se propage, devient ©pid©mie.",
+      "bbox": {
+        "x_pct": 11.702,
+        "y_pct": 73.324,
+        "w_pct": 74.767,
+        "h_pct": 16.596
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number at top was merged into paragraph 1 and not recognized as a separate header.",
+    "Multiple paragraphs had significant OCR errors in the source json.",
+    "Page number 351 needs to be filtered out/labeled as page header."
+  ],
+  "doc_id": "920",
+  "page": 13,
+  "elapsed_seconds": 9.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

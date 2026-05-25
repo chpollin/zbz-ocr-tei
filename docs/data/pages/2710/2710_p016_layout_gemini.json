@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hirt. Die zweite Frage: Herr Doktor Saner, Sie haben gesagt, dass das Mehrheitsprinzip kein Schutz mehr sei, da die Mehrheit statt in der Qualität in der Quantität liegen könnte. Quantität ist für uns einfach, nämlich rechnerisch festzustellen. Was müsste dann Ihrer Auffassung nach das Mehrheitsprinzip ersetzen?",
+      "bbox": {
+        "x_pct": 7.163,
+        "y_pct": 4.136,
+        "w_pct": 85.292,
+        "h_pct": 8.665
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Saner. Hier besteht tatsächlich ein Problem. Ich habe ausgedrückt, dass die Mehrheit eine Kategorie der Quantität ist, das aber dasjenige, was wir aber suchen, die gute Verfassung, die gute Politik, eigentlich qualitative Bestimmungen sind. Und nun lebt die Demokratie aus der Hoffnung und aus dem Glauben, dass man über die Quantität die Qualität erreichen könne. Die Quantität hat das Angenehme, dass man abzählen kann, und dass man auf jeden Fall auf ein Resultat kommt, während die positiven Qualitäten des politischen Lebens umstritten sind. Man kommt nicht unbedingt auf einen Konsens. Weil das so ist, hat man sich für ein quantitatives Verfahren entschieden. Dennoch kann es sein, dass die Mehrheit das qualitativ Schlechtere wählt. Und dies muss man immer im Hinterkopf halten. Das ist einer der Gründe für den Schutz der Minderheiten.",
+      "bbox": {
+        "x_pct": 7.076,
+        "y_pct": 17.347,
+        "w_pct": 85.326,
+        "h_pct": 19.49
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match the image content and merged with prefix."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hirt. Ich habe immer noch nicht begriffen, wer in diesem Rechtsstaat die qualitativen Merkmale als die richtigen festlegt, wenn die Quantität nicht Massstab gelten soll.",
+      "bbox": {
+        "x_pct": 7.224,
+        "y_pct": 39.407,
+        "w_pct": 85.091,
+        "h_pct": 4.469
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Saner. Sie haben Sie falsch verstanden. Ich habe nie gesagt, dass die Quantität nicht als Massstab gelten soll. Ich habe gesagt, sie gilt als Massstab. Diesen Schritt hat die Demokratie getan. Das Mehrheitsprinzip gilt unter anderem übrigens auch, weil es eine eigene Qualität hat, nämlich dem Postulat von Freiheit und Gerechtigkeit entspricht. Aber als Mehrheitsprinzip, als Kategorie der Quantität garantiert es trotzdem nicht, dass Qualität erreicht wird. Nur wenn Sie fragen, was man dann tun soll, dann sage ich Ihnen, man soll den qualitativen Bereich ausdiskutieren. Aber im Entscheiden gibt es keine andere Möglichkeit als die quantitativen Kriterien.",
+      "bbox": {
+        "x_pct": 6.989,
+        "y_pct": 46.35,
+        "w_pct": 85.265,
+        "h_pct": 16.932
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hirt. Meine dritte Frage dreht sich um das Widerstandsrecht. Sie haben in Ihrem Referat gesagt, dass das Widerstandsrecht dann anders zu beurteilen wäre, wenn es selber klar umschriebenes Verfassungsrecht wäre, und somit in die Verfassung aufgenommen würde. Das scheint mir persönlich ein Widerspruch zu sein. Die Verfassung als Hierarchiespitze eines Staates legt einerseits den Inhalt des Rechtsstaates und anderseits die Rechte, die angewendet und auch vollstreckt werden sollen, fest. Widerstandsrecht richtet sich aber per definitionem gegen die Anwendung des formellen Rechts, weil es nämlich davon ausgeht, dass dieses formelle Recht materiell falsch ist. Da meine ich, dass die Verfassung, wenn sie ein derartiges Widerstandsrecht aufnehmen würde, in sich selber falsch wäre, weil sie dann von Anfang an aussagen würde, dass das Recht materiell an sich falsch sei.",
+      "bbox": {
+        "x_pct": 6.963,
+        "y_pct": 66.095,
+        "w_pct": 85.352,
+        "h_pct": 22.018
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match the image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "- 52 -",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing page footer region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Transcription errors in all segments.",
+    "Page number missing from initial JSON layout.",
+    "Initial text segments were incomplete or incorrect."
+  ],
+  "doc_id": "2710",
+  "page": 16,
+  "elapsed_seconds": 7.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

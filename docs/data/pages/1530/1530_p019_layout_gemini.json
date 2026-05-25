@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA NATURE DU POUVOIR 91",
+      "bbox": {
+        "x_pct": 374.0,
+        "y_pct": 65.0,
+        "w_pct": 512.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text/paragraph to page_header and assigned to _filter because it contains title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sans cesse pour retrouver le niveau humain, le seul où il est possible d'être un homme. — Ni avec le Pouvoir, ni sans lui, mais tout mêlés à lui, nous tentons de vivre vers plus de Liberté.",
+      "bbox": {
+        "x_pct": 12.167,
+        "y_pct": 10.107,
+        "w_pct": 75.817,
+        "h_pct": 6.917
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ni avec lui, ni sans lui. Vivre avec lui, ce serait finalement s'identifier dans l'absolu à ce qui est. Vivre sans lui, ce serait s'ancrer dans le refus absolu de tout pouvoir qui ne peut conduire qu'à la mort. D'un point de vue transcendant, ces deux impossibilités se rejoignent au-delà de toute histoire et de toute humanité. Il faut donc, si nous acceptons notre humanité, apprendre à vivre à la fois avec le Pouvoir et contre lui, dans « cette zone moyenne des hommes » dont parle André Glucksmann, qui remarque aussi que « l'histoire joue dans l'entre-deux ».",
+      "bbox": {
+        "x_pct": 12.051,
+        "y_pct": 16.967,
+        "w_pct": 75.863,
+        "h_pct": 20.083
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il nous faut à la fois donner au Pouvoir son pouvoir, et l'apprivoiser en l'aménageant parmi les tissus complexes de la Société. Mais pour pouvoir s'atteler à cette tâche — qui est, à vrai dire, la tâche essentielle de l'histoire — il faut d'abord avoir reconnu le Pouvoir, au sens fort de ce verbe « reconnaître ».",
+      "bbox": {
+        "x_pct": 12.132,
+        "y_pct": 36.917,
+        "w_pct": 75.736,
+        "h_pct": 11.099
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sens de cette « reconnaissance » est complexe. Il implique d'abord une « connaissance » du pouvoir, de son omniprésence, de ses composantes, de ses menaces constantes contre la liberté et de son caractère pourtant inévitable dès que la liberté refuse le simple règne naturel de la force. A cette « connaissance » se joint une reconnaissance pratique, liée à une méfiance de tous les instants. Reconnaissance: il faut qu'il y ait un Pouvoir; méfiance: il faut que ce Pouvoir soit contrôlé, fragmenté, limité — finalement subordonné. A quoi? dans quel sens?",
+      "bbox": {
+        "x_pct": 12.051,
+        "y_pct": 47.909,
+        "w_pct": 75.701,
+        "h_pct": 20.017
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'humanité ne cessera jamais de rêver d'une Conscience universelle, arbitre des Pouvoirs. Mais ou bien cette Conscience est elle-même un Pouvoir plus puissant que tous les autres, et dès lors, plus dangereux que chacun d'eux. Ou bien elle est impuissante par elle-même, de sorte qu'elle devient fatalement l'instrument des forces mises en jeu par les Pouvoirs (et le Secrétaire général de l'ONU remet alors à M. Brejnev la Médaille d'Or du service de la paix).",
+      "bbox": {
+        "x_pct": 12.016,
+        "y_pct": 68.041,
+        "w_pct": 76.014,
+        "h_pct": 15.868
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a pas sur terre d'arbitre souverain au-dessus des Pouvoirs, auquel on pourrait, par exemple, confier la bombe atomique pour en faire l'instrument définitif d'une paix juste.",
+      "bbox": {
+        "x_pct": 12.086,
+        "y_pct": 83.612,
+        "w_pct": 75.944,
+        "h_pct": 6.777
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected redundant page header region in main scan analysis.",
+    "OCR text quality in input was poor and required manual correction to match provided image text."
+  ],
+  "doc_id": "1530",
+  "page": 19,
+  "elapsed_seconds": 5.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

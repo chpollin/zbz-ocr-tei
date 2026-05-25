@@ -1,0 +1,99 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tout Je la pense à laide dun détour par le caractère inachevable de la réalité, à travers limpossibi",
+      "bbox": {
+        "x_pct": 6.599,
+        "y_pct": 6.315,
+        "w_pct": 83.821,
+        "h_pct": 7.969
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La transcendance se manifeste ainsi reste sans détermination et, bien qu'inconnaissable et impensabl",
+      "bbox": {
+        "x_pct": 6.328,
+        "y_pct": 13.993,
+        "w_pct": 84.011,
+        "h_pct": 22.965
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi, dans F'acte transcendant formel, la divinité reste absolument cachée Elle ne semble ",
+      "bbox": {
+        "x_pct": 6.328,
+        "y_pct": 38.56,
+        "w_pct": 83.875,
+        "h_pct": 19.169
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Philosophie; III, p. 66-67)",
+      "bbox": {
+        "x_pct": 57.046,
+        "y_pct": 57.472,
+        "w_pct": 33.022,
+        "h_pct": 2.142
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to footnote for bibliographic reference."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "21 Liberté et transcendance",
+      "bbox": {
+        "x_pct": 6.409,
+        "y_pct": 64.156,
+        "w_pct": 35.827,
+        "h_pct": 1.911
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme prend vraiment conscience de sa liberté acquiert en même temps la certitude de Dieu. La lib",
+      "bbox": {
+        "x_pct": 6.504,
+        "y_pct": 66.727,
+        "w_pct": 83.374,
+        "h_pct": 6.17
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je suis certain dune chose : en tant qu'être libre, je n'existe pas ne peux pas conquérir ma liberté",
+      "bbox": {
+        "x_pct": 6.233,
+        "y_pct": 72.468,
+        "w_pct": 83.78,
+        "h_pct": 10.077
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One bibliographic reference was mislabeled as text; corrected to footnote."
+  ],
+  "doc_id": "1520",
+  "page": 89,
+  "elapsed_seconds": 5.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

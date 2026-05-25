@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ce que je ne ferai pas à ce moment-là, et comment je le ferai ou omettrai de le faire, et la gratitude ou l'amertume avec laquelle je regarderai fuir l'année finie, et l'espérance active ou la désespérance passive avec laquelle j'accueillerai l'année qui commence.",
+      "bbox": {
+        "x_pct": 22.694,
+        "y_pct": 11.338,
+        "w_pct": 65.983,
+        "h_pct": 16.742
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette heure zéro va sonner et sera pour un instant la toute dernière de toute l'histoire du monde, est-elle de ce fait la plus belle de toute l'histoire du monde? Est-elle au contraire la pire? Nous voudrions bien la faire comparaître devant un arbitre extérieur à l'histoire et la faire juger. Nous voudrions bien avoir un bilan clair et définitif qui nous permette de la juger. Mais les arguments des apologies et ceux des réquisitoires ne cessent de se combattre. Les progrès matériels ne sont contestés par personne, mais certains nous disent qu'ils sont nocifs, que nous sommes en train de vendre nos âmes et que ce qui est matériel doit être méprisé. Est-ce vrai? - et peut-on lorsqu'on est homme, c'est-à-dire l'unité d'une âme et d'un corps, délimiter et",
+      "bbox": {
+        "x_pct": 22.852,
+        "y_pct": 30.051,
+        "w_pct": 65.825,
+        "h_pct": 47.727
+      },
+      "changed": true,
+      "change_reason": "Updated text to match full content of the paragraph visible in the OCR/image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "56",
+      "bbox": {
+        "x_pct": 22.694,
+        "y_pct": 82.531,
+        "w_pct": 3.79,
+        "h_pct": 2.273
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number not labeled as footer.",
+    "The OCR text provided in the input was truncated."
+  ],
+  "doc_id": "2260",
+  "page": 54,
+  "elapsed_seconds": 3.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

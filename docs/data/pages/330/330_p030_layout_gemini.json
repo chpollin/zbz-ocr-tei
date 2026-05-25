@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "XVI IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 13.552,
+        "y_pct": 8.528,
+        "w_pct": 85.195,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "savoir,  travers des catgories plus immdiates, mais trop lches, la complexit infinie du concret.",
+      "bbox": {
+        "x_pct": 13.552,
+        "y_pct": 11.203,
+        "w_pct": 85.195,
+        "h_pct": 5.348
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour tablir les quelques types idologiques dont je me servirai ici, je n'ai recouru systmatiquement ni aux livres exposant les doctrines considres, ni aux organes politiques des partis, journaux et revues, ni mme  des enqutes auprs des militants. Je suis convaincue qu'il existe un cart considrable entre les idologies officielles des partis  le plus souvent dpasses par les vnements et pieusement conserves par ftichisme ou  clricalisme  politique  et celles qui ordonnent et coordonnent en fait les penses, les impulsions, les actes des militants. Or ces dernires seules m'intressaient. J'ai donc d recourir  une mthode aussi peu acadmique que possible : me mettre dans l'impossibilit de justifier mes dires en invoquant soit des sources crites, soit des observations empiriques. Mthode ttonnante qui donne peu de garanties, qui dfend mal contre l'erreur et me laisse sans armes contre les contestations. Il m'a bien fallu, par exemple, renoncer ici aux uvres de Marx et d'Engels et  celles de leurs successeurs. Chaque fois qu'on veut discuter la doctrine de Marx, on se perd dans le maquis de ses uvres propres, de celles des collaborateurs et des disciples plus ou moins fidles. On se bat  grand renfort de citations : « Marx lui-mme a dit... », et le jeune Marx s'oppose au Marx des uvres de vieillesse. Pendant ce temps les mouvements socialistes se vident de substance et d'inspiration. Nous ne sommes pas des scolastiques. Les nuances que la pense marxiste a subtilement introduites dans le dterminisme dialectique peuvent tre d'un trs grand intrt pour des philosophes (1). Ici, en revanche, il ne s'agit pas de rendre justice  Marx dans sa ralit historique, ni de dfinir de faon prcise, subtile et fidle le marxisme tel qu'il doit figurer,  sa place, dans l'histoire des doctrines. Il s'agit uniquement de dfinir le marxisme tel qu'il existe  ou qu'il existe  peine  dans la conscience de ceux qui adhrent aujourd'hui  des mouvements auxquels il sert encore",
+      "bbox": {
+        "x_pct": 13.329,
+        "y_pct": 15.624,
+        "w_pct": 85.39,
+        "h_pct": 64.563
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) D'autant plus qu'elles ne se laissent pas fixer, comme l'exprience des discussions philosophiques avec les marxistes nous le montre : la fameuse « position » marxiste se ramne toujours  une oscillation ou un sautillement perptuel d'une position  une autre. Voir I. LEPP, le Marxisme, philosophie ambigu et efficace.",
+      "bbox": {
+        "x_pct": 13.607,
+        "y_pct": 81.551,
+        "w_pct": 84.763,
+        "h_pct": 8.316
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote"
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Docling missed page header",
+    "OCR errors in paragraph",
+    "Footnote labeled as text"
+  ],
+  "doc_id": "330",
+  "page": 30,
+  "elapsed_seconds": 6.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

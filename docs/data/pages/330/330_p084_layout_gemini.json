@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "50 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page header and number were missed and should be excluded."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "universitaire allemande, par exemple, beaucoup plus faible en France, à peu près nulle en Suisse. Mais un mouvement politique ne saurait vivre longtemps impunément, à notre époque, sans doctrine, surtout si, comme le socialisme, il prétend en comporter une et exclut ainsi d'autres adhésions. Il ne préserve ainsi qu'un vide; l'homme reste là avec une faim qu'il ignore lui-même, toute une part de son étre restant vulnérable et perméable à des satisfactions que les adversaires s'empressent de lui offrir.",
+      "bbox": {
+        "x_pct": 12.674,
+        "y_pct": 11.381,
+        "w_pct": 85.752,
+        "h_pct": 14.884
+      },
+      "changed": true,
+      "change_reason": "Refined OCR content to match actual page text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comme les communistes, les socialistes se réclament de Marx. Nous l'avons déjà dit, peu importe dans la présente étude ce que Marx a réellement dit ou voulu dire. C'est le marxisme courant, simplifié et infidèle, qui nous importe ici; c'est lui seul que nous voulons tenter d'analyser.",
+      "bbox": {
+        "x_pct": 12.674,
+        "y_pct": 27.986,
+        "w_pct": 85.474,
+        "h_pct": 11.052
+      },
+      "changed": true,
+      "change_reason": "Refined OCR content to match actual page text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plan philosophique ou religieux. — L'idéologie socialiste sous sa forme la plus typique, bien que tolérante envers les croyants, est cependant athée. La religion passe pour étre l'opium du peuple. L'humilité préconisée par le christianisme, l'insistance qu'il met à suggérer « un autre monde » servent à engourdir les velléités révolutionnaires des peuples. Mais ce n'est pas le christianisme seul qui est visé: c'est toute transcendance. Admettre n'importe quelle réalité au-delà des données positives, des faits, c'est déjà démissionner de notre poste d'action terrestre et inciter les autres à la même démission. Sartre a dit que si Dieu existe, l'homme n'existe pas. Les socialistes diraient que si Dieu existe, le révolutionnaire n'existe pas. « Que Ta volonté soit faite et non la mienne », c'est la formule même de l'abdication terrestre, du consentement à l'injustice, de la soumission à une situation de fait, où règnent les privilégiés, où la masse est esclave. Se soumettre à la volonté de Dieu, c'est renforcer la tyrannie des puissants. La démission, la trahison envers les victimes du régime commence déjà lorsque, même sans credo, sans résignation religieuse, on affirme l'existence d'un ordre de réalités indépendantes de la condition matérielle; valoriser cet ordre sans tenir compte des effets qu'il peut avoir sur la réalité sociale positive, c'est déjà abandonner à la fois la condition d'homme responsable et les victimes de l'ordre social. Dire que Socrate forcé de boire la ciguë était libre, c'est rendre la révolution superflue.",
+      "bbox": {
+        "x_pct": 12.214,
+        "y_pct": 40.437,
+        "w_pct": 85.794,
+        "h_pct": 49.697
+      },
+      "changed": true,
+      "change_reason": "Refined OCR content to match actual page text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text was highly corrupted.",
+    "Missing page header/number region.",
+    "Bbox spans multiple distinct paragraphs but was labeled as single region."
+  ],
+  "doc_id": "330",
+  "page": 84,
+  "elapsed_seconds": 7.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

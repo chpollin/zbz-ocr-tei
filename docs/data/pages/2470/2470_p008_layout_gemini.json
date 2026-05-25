@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 8 -",
+      "bbox": {
+        "x_pct": 476.0,
+        "y_pct": 95.0,
+        "w_pct": 48.0,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as paragraph text; changed to filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "wie schwer es ist. Wir können alle wissen, daß die Verkehrungen gerade da wachsen, wo das Menschsein aus maßlosen Ansprüchen in Feigheit umkippt, und sich dann auf furchtbare Weise trotzdem zu behaupten versucht. Wenn wir nicht vergessen, können wir vielleicht tiefer eine andere Brüderlichkeit wiederfinden, indem wir uns selbst tiefer verstehen, auf einem Weg, wo man die Wörter Friede, Gerechtigkeit, Nächstenliebe nur ganz leise, nur bescheiden und nur zitternd auszusprechen wagt. Wir sind jetzt auf dem Weg zu einer gemeinsamen Zukunft. Diese Zukunft heißt Europa. Ein Europa, das wir so aufbauen möchten, daß die Europäer für immer mehr Menschen immer günstigere Bedingungen schaffen, eine verantwortliche Freiheit ohne große Worte, ohne übertriebene Ansprüche schaffen, Schritt für Schritt, wie man es in Europa immer getan hat, wenn es gut gegangen ist. Also nicht durch engelhaftes, anspruchsvolles Menschsein ist dies zu erreichen, wo das Absolute sonst zu einer gefährlichen Waffe wird, und oft sogar zu einem Verknechtungsmittel, sondern mit Hilfe von Institutionen, nüchternen Institutionen, nüchternen Gesetzen, nüchterner Verteilung der Macht und Kontrolle der Macht, die der Schwierigkeit, Mensch zu sein, Rechenschaft tragen, also demokratisch und bescheiden! Ich danke Ihnen.",
+      "bbox": {
+        "x_pct": 8.605,
+        "y_pct": 11.677,
+        "w_pct": 81.339,
+        "h_pct": 47.012
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CJZ-Manuskriptdruck Nr. 15 (1987) herausgegeben von der: Gesellschaft für Christlich-Jüdische Zusammenarbeit Stuttgart e.V. Marienstr. 1 B, 7000 Stuttgart 1",
+      "bbox": {
+        "x_pct": 9.493,
+        "y_pct": 83.333,
+        "w_pct": 81.339,
+        "h_pct": 6.843
+      },
+      "changed": true,
+      "change_reason": "Bibliographic/publisher details identified as section header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Druck: Hermann Krauß GmbH & Co., Holderäckerstr. 6, 7016 Gerlingen",
+      "bbox": {
+        "x_pct": 9.355,
+        "y_pct": 90.899,
+        "w_pct": 57.903,
+        "h_pct": 2.479
+      },
+      "changed": true,
+      "change_reason": "Printer information is part of the footer block/bibliographic metadata, correctly marked as heading/meta."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text detection significantly mismerged the page number and main text, as well as the bibliographic footer information.",
+    "OCR text needs re-processing for accurate transcription.",
+    "Bounding boxes captured multiple distinct semantic regions as one in the original detection."
+  ],
+  "doc_id": "2470",
+  "page": 8,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

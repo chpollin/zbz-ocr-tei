@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "206",
+      "bbox": {
+        "x_pct": 11.24,
+        "y_pct": 8.296,
+        "w_pct": 4.178,
+        "h_pct": 1.579
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "humain n'est pas cette réalité et irremplaçable dont nous avons parlé, mais une marchandise comme une autre, qu'il s'agit dès lors d'acheter le moins cher possible, le vendeur étant, naturellement, subordonné au client, et non l'inverse. Cette méthode fait de la vie humaine, de ses heures et de ses jours, une marchandise. Elle permet d'accumuler de l'argent et de le réinvestir.",
+      "bbox": {
+        "x_pct": 10.864,
+        "y_pct": 11.418,
+        "w_pct": 85.376,
+        "h_pct": 13.202
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les réinvestissements, augmentent la quantité des produits sans augmenter proportionnellement le pouvoir d'achat des travailleurs, ont provoqué périodiquement les fameuses crises que l'on a appelées « crises de surproduction » et qui sont en réalité des crises de sous-consommation, puisque jamais jusqu'ici les besoins du grand nombre n'ont été pleinement satisfaits.",
+      "bbox": {
+        "x_pct": 11.003,
+        "y_pct": 23.934,
+        "w_pct": 85.334,
+        "h_pct": 13.292
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A ces crises de sous-consommation, la machine économique du monde capitaliste interdit de donner des solutions saines, telles que l'élévation du pouvoir d'achat des masses ou l'augmentation des loisirs ouvriers, ou encore les deux à la fois. Jusqu'ici on semble avoir recouru presque uniquement à l'une des trois solutions suivantes :",
+      "bbox": {
+        "x_pct": 11.003,
+        "y_pct": 36.396,
+        "w_pct": 85.237,
+        "h_pct": 12.756
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) Résorption de la « surproduction » par les armements ;",
+      "bbox": {
+        "x_pct": 13.928,
+        "y_pct": 49.153,
+        "w_pct": 76.56,
+        "h_pct": 2.739
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) Organisation, sur l'initiative de l'Etat, de « grands travaux », dits d'utilité publique ;",
+      "bbox": {
+        "x_pct": 11.1,
+        "y_pct": 53.434,
+        "w_pct": 30.167,
+        "h_pct": 2.525
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "c) Défense professionnelle, syndicale et nationale; contre toute main-d'œuvre venue de l'extérieur.",
+      "bbox": {
+        "x_pct": 11.184,
+        "y_pct": 55.397,
+        "w_pct": 85.097,
+        "h_pct": 4.434
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La première de ces solutions n'en est pas une et ne mérite par conséquent presque aucune attention, dans un ouvrage de réflexion théorique. Tout au plus peut-on faire à son propos deux remarques. D'abord : il est bon que le peuple, élus et électeurs, ait été mis en garde contre cette façon d'échapper, en régime capitaliste, au chaos de la crise et du chômage; le contrôle soupçonneux qu'il ne cesse d'exercer sur ce point, afin d'empêcher le capital de chercher dans la préparation de la guerre ou la guerre elle-même un remède à son cercle vicieux interne, est légitime et nécessaire. Ensuite : il faut cependant mettre le peuple en garde contre une façon simpliste et presque monomane de voir les choses, à laquelle la propagande marxiste, par plusieurs de ses slogans, l'a entraîné. Que « le capital porte en lui la guerre comme la nuée l'orage », cela peut être vrai, sous certaines réserves. Il est vrai que le principe de la libre concurrence est en soi la jungle et la guerre, à l'intérieur de chaque",
+      "bbox": {
+        "x_pct": 10.724,
+        "y_pct": 59.741,
+        "w_pct": 85.613,
+        "h_pct": 29.581
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "High error rate in OCR text extraction",
+    "Label inconsistency for list items",
+    "False positive classification for page number"
+  ],
+  "doc_id": "330",
+  "page": 240,
+  "elapsed_seconds": 7.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

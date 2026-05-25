@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "gewählt. Es ist eben gegeben. Und der junge Mensch muß Sinn dafür bekommen, daß es Gegebenes gibt. Die Umstände des Lebens haben sich sehr verändert – aber man wird immer noch geboren, man stirbt immer noch, man erlebt noch immer eine unglückliche Liebe, usw. Das alles bleibt. Der junge Mensch muß den Sinn für Zeit und Geschichte erlangen. Er muß lernen, die Vergangenheit seiner Gemeinschaft zu kennen und auf sich zu nehmen; und eine Zukunft erhoffen. Er muß lernen, in diesem Zusammenhang und in dieser Trennung von Vergangenheit und Zukunft, auf die Gegenwart einzuwirken, und er muß sich auf dieses Einwirken vorbereiten.",
+      "bbox": {
+        "x_pct": 10.996,
+        "y_pct": 8.509,
+        "w_pct": 71.371,
+        "h_pct": 28.571
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie sollen aber junge Menschen irgendwelche Begeisterung für diese Vorbereitung empfinden, wenn man ihnen jeden Tag sagt, daß wir alle in einer teuflischen Zivilisation leben, die keinen Sinn und keinen Wert hat? Sie muß rehabilitiert werden. Das ist unbedingt nötig. Dann wird es vielleicht wieder möglich sein, geschichtlich als Menschen in der Zeit zu leben.",
+      "bbox": {
+        "x_pct": 11.423,
+        "y_pct": 37.237,
+        "w_pct": 71.281,
+        "h_pct": 15.199
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Auch die Institutionen gilt es zu rehabilitieren, und unter ihnen das Recht. Das Recht ist diskreditiert. Warum? Das Recht ist eine menschliche Institution. Um das Recht zu verurteilen, bezieht man sich auf eine absolute Gerechtigkeit. Das stimmt auch: wer das Recht entwickelt oder anwendet, versucht, sich auf eine absolute Gerechtigkeit zu beziehen. Aber gerade dieser Bezug zeigt, daß das Recht niemals die absolute Gerechtigkeit sein kann. Also muß man sich bescheiden. Und wie man auf französisch sagt: „Qui veut faire l'ange, fait la bête“, wer den Engel spielen will, wird zum Tier. Jeder Respekt, jede Anerkennung der Institutionen ist eine Anerkennung des Menschseins und des Nicht-Engel-Seins. Ich fürchte, daß die Engelhaftigkeit, der Anspruch auf Engelhaftigkeit, heute die verbreitetste Sünde ist.",
+      "bbox": {
+        "x_pct": 12.031,
+        "y_pct": 52.436,
+        "w_pct": 71.578,
+        "h_pct": 32.521
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zum Schluß: Wir müssen wieder zu unserem Menschsein",
+      "bbox": {
+        "x_pct": 12.587,
+        "y_pct": 84.442,
+        "w_pct": 70.854,
+        "h_pct": 2.701
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "291",
+      "bbox": {
+        "x_pct": 78.892,
+        "y_pct": 89.654,
+        "w_pct": 3.197,
+        "h_pct": 2.115
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Previous transcription was truncated in several paragraphs.",
+    "Page number at bottom right was missing from original label extraction."
+  ],
+  "doc_id": "2060",
+  "page": 13,
+  "elapsed_seconds": 5.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est pas sans appréhension que je reviens à ce slogan. Mais comment n'y pas revenir? Plus j'y réfléchis et moins je comprends le rôle qu'on lui fait jouer.",
+      "bbox": {
+        "x_pct": 12.258,
+        "y_pct": 34.644,
+        "w_pct": 66.589,
+        "h_pct": 5.943
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match document transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a évidemment l'ambiguïté du mot « sens » : direction ou signification. Les doctrinaires du sens de l'histoire ont souvent remplacé le terme « sens » par celui de « vague » : ils parlent de « la vague de l'histoire », qui porte les uns vers la réalité, abandonnant les autres à l'irréalité des limbes. Si le « sens » peut être remplacé par une « vague », c'est qu'il signifie direction. On repère alors dans la succession des moments une orientation continue, une suite, que l'enchaînement causal suffirait à déterminer. Mais cette « orientation » ou cette « vague », les doctrinaires ne se contentent pas de la constater : ils la valorisent. Mieux, ils en font la source et le critère de toute valeur. C'est donc qu'il s'agit en même temps de l'autre sens du « sens » : de signification et de « raison d'être ». Avoir un sens, c'est alors le contraire de « n'avoir aucun sens », le contraire du « non-sens ». La finalité intervient.",
+      "bbox": {
+        "x_pct": 11.879,
+        "y_pct": 40.057,
+        "w_pct": 66.968,
+        "h_pct": 24.085
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and merged fragmented lines into full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Suffit-il que l'histoire manifeste une orientation ou une direction déterminée pour qu'elle ait du même coup une signification? Inversement, est-il impossible qu'une histoire dépourvue de toute direction continue ait cependant une signification?",
+      "bbox": {
+        "x_pct": 11.855,
+        "y_pct": 63.875,
+        "w_pct": 66.911,
+        "h_pct": 7.39
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match document transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Répondre à cette question semble facile aussi longtemps qu'on se sert d'une temporalité à une seule dimension, symbolisée par une droite. L'histoire se développant le long d'une simple droite orientée du passé vers l'avenir, sa cohérence, si elle existe, implique la continuité de ses moments successifs, donc une direction univoque, lisible dans leur ensemble. Cette direction continue, si elle n'implique pas encore nécessairement un sens, au sens d'une signification, semble pourtant en être au moins la condition.",
+      "bbox": {
+        "x_pct": 11.718,
+        "y_pct": 70.729,
+        "w_pct": 67.315,
+        "h_pct": 14.074
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match document transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction contained significant OCR errors/garbled characters in all paragraphs.",
+    "Multiple paragraphs contained truncated text content that did not reflect the full sentence structures visible in the source image."
+  ],
+  "doc_id": "910",
+  "page": 1,
+  "elapsed_seconds": 5.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

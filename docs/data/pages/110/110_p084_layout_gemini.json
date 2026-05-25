@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "82",
+      "bbox": {
+        "x_pct": 19.102,
+        "y_pct": 9.94,
+        "w_pct": 2.533,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header label for page number"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 66.273,
+        "y_pct": 9.94,
+        "w_pct": 21.019,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header label for running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais doù cela   vient-il? Il doit bien y avoir; malgré  tout, quelque chose de commun toules les æuv",
+      "bbox": {
+        "x_pct": 18.067,
+        "y_pct": 12.627,
+        "w_pct": 69.079,
+        "h_pct": 55.862
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Cf.  Robert   HAINARD, Et la nature ? Editiong Gérard de Buren, 1943, P. 36.",
+      "bbox": {
+        "x_pct": 18.216,
+        "y_pct": 71.093,
+        "w_pct": 68.435,
+        "h_pct": 2.961
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page_header annotations",
+    "Typo in existing footnote text extraction"
+  ],
+  "doc_id": "110",
+  "page": 84,
+  "elapsed_seconds": 6.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

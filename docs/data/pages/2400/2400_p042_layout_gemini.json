@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "genwart und Zukunft lC55t sich nicht beseitigen. Unsere Pflicht ist es, uns, so gut es geht, zu informieren, unsere Erkenntnisse soweit wie moglich auszudehnen, aber je mehr wir wissen, um so überzeugter sind wir, daß wir das Leben nicht beherrschen und daß das Risiko bleibt.",
+      "bbox": {
+        "x_pct": 6.196,
+        "y_pct": 4.294,
+        "w_pct": 65.024,
+        "h_pct": 13.588
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese Problematik ist unser geschichtliches Schicksal. Wäre sie nicht vorhanden, so hätten wir – wie die Vögel, die jedes Jahr dasselbe Nest bauen – keine Geschichte; wir würden uns wiederholen und wären nicht Menschen.",
+      "bbox": {
+        "x_pct": 6.316,
+        "y_pct": 17.831,
+        "w_pct": 64.903,
+        "h_pct": 11.354
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mensch sein heißt Geschichte haben, heißt in der Spannung von Gegenwart und Zukunft zu leben. Es bleibt uns nur, bei unseren Entscheidungen die Augen so offen wie möglich zu halten. Nicht nur zum Glauben, sondern auch zum Handeln gehört eine seltsame Mischung von Vertrauen und Mißtrauen, von Zuversicht und Zweifel. Bei dieser seltsamen Mischung von Vertrauen und Mißtrauen handelt es sich nicht um die Frage der subjektiven Gemütsverfassung. Vielmehr gehört beides grundsätzlich zu unserem Menschsein: Zweifel und Zuversicht.",
+      "bbox": {
+        "x_pct": 6.159,
+        "y_pct": 29.454,
+        "w_pct": 64.855,
+        "h_pct": 26.805
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Sicherheit müssen wir nicht um der Sicherheit willen suchen, sondern weil sie Freiheit möglich macht. Die Sicherheit darf nicht Selbstzweck werden. Es ist wie bei der Gesundheit: Wer nur dafür lebt, sich gesund zu erhalten, ist krank. Die Gesundheit ist eine Vorbedingung für anderes, sie ist nicht Selbstzweck. So steht es auch um die Sicherheit. Wir brauchen sie, weil wir nur aus ihr Freiheit entwickeln und das heißt auch Risiken eingehen können.",
+      "bbox": {
+        "x_pct": 6.244,
+        "y_pct": 56.528,
+        "w_pct": 64.928,
+        "h_pct": 22.656
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Der Applaus, der Ihnen eben gespendet wurde, ist, wie jeder Applaus, gefährlich: Applaus hat immer etwas Abschließendes. Ich",
+      "bbox": {
+        "x_pct": 6.196,
+        "y_pct": 81.245,
+        "w_pct": 64.94,
+        "h_pct": 6.965
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Wir leben in der Spannung zwischen Gegenwart und Zukunft",
+      "bbox": {
+        "x_pct": 73.466,
+        "y_pct": 8.857,
+        "w_pct": 19.771,
+        "h_pct": 6.841
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header as it serves as a marginal heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Menschsein heißt: Geschichte haben",
+      "bbox": {
+        "x_pct": 73.792,
+        "y_pct": 50.633,
+        "w_pct": 18.152,
+        "h_pct": 3.348
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header as it serves as a marginal heading."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "43",
+      "bbox": {
+        "x_pct": 46.883,
+        "y_pct": 91.077,
+        "w_pct": 2.053,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and set to filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Most OCR transcriptions were highly inaccurate and required manual correction.",
+    "Marginal text regions identified as paragraphs should be section_headers.",
+    "Page number at bottom of page was not detected in original regions."
+  ],
+  "doc_id": "2400",
+  "page": 42,
+  "elapsed_seconds": 7.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

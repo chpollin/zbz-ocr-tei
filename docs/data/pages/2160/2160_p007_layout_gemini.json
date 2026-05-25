@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir erleben nur selten den mitleidlosen Schiedsspruch unserer Gegenwart: Meistens suchen wir Zuflucht in einer Art Nest, das wir uns mit unseren Erinnerungen und Träumen bauen. Es ist erstaunlich, wie unser ganzes Gefühlsleben sich um dieses »Ja« oder dieses »Nein« dreht, das die gegenwärtige Wirklichkeit unseren Wünschen entgegenstellt; und trotzdem - oder gerade deswegen - bleibt unser Gegenwartssinn schwach. Wenn nicht ganz außergewöhnliche Umstände da sind oder wenn es uns nicht ausnahmsweise gelungen ist, Mittel und Mut aufzubringen, um das Schicksal an die Wand zu spielen, leben wir im verschwommenen Durcheinander von Erinnerungen und Sehnsüchten, so daß die Gegenwart ganz in der Zeit zerfließt. Die Art, wie wir mit der Zeit umgehen, ist sehr seltsam. Wir leben in der Zeit, gut oder schlecht, wie Gefangene, die von ihrer Verbannung geblendet sind.",
+      "bbox": {
+        "x_pct": 11.398,
+        "y_pct": 7.766,
+        "w_pct": 77.321,
+        "h_pct": 28.943
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "So verschwinden die Alternativen, die »Entweder-Oder«, weil auf beiden Seiten gleichwertige Ansprüche sich geltend machen. So erscheint, was sich in Wirklichkeit ausschließt, in der Zeit doch vereinbar. Menschen wähnen, sie könnten wie Engel wählen, ohne Wertvolles auszuschließen. Da verschwindet das Absolute der Forderung, wie etwa der Fremde sie erleben mußte: Alles, nur nicht die Lüge. Lieber sterben.",
+      "bbox": {
+        "x_pct": 11.868,
+        "y_pct": 39.859,
+        "w_pct": 76.498,
+        "h_pct": 12.807
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in the original detection; updated to include full paragraph text as visible in source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Allmählich läßt uns das Leben nur noch Erinnerungen. Sie sind unser ganzer Besitz. Die, die wir am häufigsten hervorrufen, werden mit der Zeit schal und abgenützt. Die meisten entziehen sich uns oder geraten durcheinander. Glückliche Erinnerungen werfen auf die Gegenwart den Schatten der Abwesenheit. Traurige Erinnerungen, deren Trauer die Zeit allmählich gelindert hat, sind geneigt, sich in der Sprachwelt mit Worten zu verbinden, mit deren Hilfe man sie erzählen kann - nicht ohne schlechtes Gewissen -, so als wollte man sie aus Untreue loswerden. Und trotzdem, erst durch unsere Erinnerungen und durch eine schon als Erinnerung erlebte Gegenwart, kennen wir die Trennung und die Verbannung - schließlich auch die Trennung von uns selbst, die Verbannung von uns selbst, oder uns selbst als Verbannte.",
+      "bbox": {
+        "x_pct": 11.833,
+        "y_pct": 54.058,
+        "w_pct": 76.381,
+        "h_pct": 28.347
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in the original detection; updated to include full paragraph text as visible in source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Verbannt aus der Vergangenheit durch ihre jetzige Abwesenheit, verbannt aus der Gegenwart durch ihre Schärfe und unsere eigene Schlaffheit, durch die Unerbittlichkeit ihrer Absage oder ihr zu rasches Entschwinden, oder durch ihre unge-",
+      "bbox": {
+        "x_pct": 12.068,
+        "y_pct": 82.48,
+        "w_pct": 75.793,
+        "h_pct": 8.414
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in the original detection; updated to include full visible fragment."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "250",
+      "bbox": {
+        "x_pct": 126.0,
+        "y_pct": 925.0,
+        "w_pct": 31.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer according to rules."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original detection truncated the full paragraph text in multiple regions.",
+    "Page number 250 was mislabeled as text and missing a valid bbox mapping.",
+    "Multiple regions required text reconstruction based on OCR source content."
+  ],
+  "doc_id": "2160",
+  "page": 7,
+  "elapsed_seconds": 4.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

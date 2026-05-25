@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LES ENTRETIENS SUR LE TEMPS EU LIEU DU 14 AU 23 JUILLET",
+      "bbox": {
+        "x_pct": 25.756,
+        "y_pct": 8.137,
+        "w_pct": 45.207,
+        "h_pct": 4.936
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1964 SOUS LA DIRECTION DE JEANNE HERSCH ET RENÉ POIRIER",
+      "bbox": {
+        "x_pct": 23.998,
+        "y_pct": 11.345,
+        "w_pct": 53.158,
+        "h_pct": 8.092
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "avec la collaboration de",
+      "bbox": {
+        "x_pct": 35.532,
+        "y_pct": 21.435,
+        "w_pct": 25.722,
+        "h_pct": 1.705
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "AMÉDÉE AYFRE, CLAUDE BALLIF, ROBERT BARANDE, MONIQUE COURNUT-JANIN, GEORGES CHARAIRE, JEAN DELHAYE, MICHEL ESTÈVE, JEAN FOLLAIN, JOSEPH GABEL, CLAUDE LE GUEN, ANDRÉ JACOB, FRANÇOIS LE LIONNAIS, GABRIEL MARCEL, CLAUDE OLLIER, JEAN-PIERRE PETER, JEAN RICARDOU, MARINA SCRIABINE, GABRIÈLE SEGUR ET ROBERT VALLÉE.",
+      "bbox": {
+        "x_pct": 10.605,
+        "y_pct": 24.47,
+        "w_pct": 75.991,
+        "h_pct": 9.79
+      },
+      "changed": true,
+      "change_reason": "Corrected the label to section_header and expanded text to match source content more accurately."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "et la participation de",
+      "bbox": {
+        "x_pct": 37.032,
+        "y_pct": 36.289,
+        "w_pct": 22.912,
+        "h_pct": 1.901
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FRANÇOIS BERGER, GASTON FESSARD, MAURICE DE GANDILLAC, PAUL IDATTE, KHALIL JAOUICHE, ANDRÉ S. LABARTHE, ROBERT MALAVAL, MARCEL MARIE, ABRAHAM MOLES, EMILE NAMER, JEAN OULIF, PAULINE DE PANGE, JEANNE PARAIN-VIAL, CLÉMENCE RAMNOUX, ALAIN ROBBE-GRILLET, EDDY TRÈVES ET MARCELLE WAHL.",
+      "bbox": {
+        "x_pct": 10.84,
+        "y_pct": 39.572,
+        "w_pct": 75.864,
+        "h_pct": 7.761
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header and fixed garbled OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1967, Mouton. Printed in France",
+      "bbox": {
+        "x_pct": 32.699,
+        "y_pct": 85.823,
+        "w_pct": 34.636,
+        "h_pct": 1.653
+      },
+      "changed": true,
+      "change_reason": "Bibliographic footnote/footer moved to _filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "OCR output for names was extremely poor and required manual reconstruction.",
+    "Multiple section headings were incorrectly labeled as text.",
+    "Footer was incorrectly labeled as text."
+  ],
+  "doc_id": "780",
+  "page": 3,
+  "elapsed_seconds": 9.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

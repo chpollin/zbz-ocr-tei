@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNS 53",
+      "bbox": {
+        "x_pct": 379.0,
+        "y_pct": 86.0,
+        "w_pct": 242.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header/page number combo as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "promenades, le soir, mais je n'tais plus pour les choses un miroir disponible. Je leur prtais et leur parlais un langage plus prcis et plus intress. Je les forais  devenir un dcor assorti  mon me, alors que jusque l elles l'avaient envahie  leur gr. Et l'apparition toujours possible d'une certaine silhouette, inimaginable  force d'tre connue et unique, plus relle que tout mme absente, suffisait pour n'accorder au reste du monde qu'une ralit drive et toujours sur le point d'tre abolie.",
+      "bbox": {
+        "x_pct": 9.635,
+        "y_pct": 13.043,
+        "w_pct": 81.0,
+        "h_pct": 22.845
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parfois pourtant, il y eut des heures sourdes o je ne savais plus rien, o j'tais vraiment seule et dans une nature dfunte. La rencontre quotidienne perdait son clat de miracle sans cesse nouveau, son langage d'amour d'autant plus sr qu'il ne disait absolument rien d'autre que lui-mme. Elle n'avait sans doute aucun sens. Elle tenait du hasard ou de l'utile. J'crivais alors sur quelque bout de papier des mots de dtresse, de lassitude et d'attente de la mort.",
+      "bbox": {
+        "x_pct": 9.905,
+        "y_pct": 38.403,
+        "w_pct": 80.865,
+        "h_pct": 22.495
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je sens encore, prcis comme un got d'hier, la prsence de ces heures sans espoir. Je n'y retrouve aucune amertume, aucune rvolte. La douleur tait alors aussi vaste que la joie, et comme elle offerte en culte  une puissance toujours prsente. L'univers pouvait tre mort, il ne devenait jamais un dsert. Je ne sais pas si je croyais en Dieu. Je me souviens que je m'adressais parfois  lui avec une ferveur mle de mfiance, non contre lui, mais contre moi, parce que ce besoin de lui me venait dans l'angoisse bien plus que dans le bonheur. Mais je ne",
+      "bbox": {
+        "x_pct": 9.419,
+        "y_pct": 61.03,
+        "w_pct": 81.216,
+        "h_pct": 25.52
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text transcription contained significant OCR errors/hallucinations.",
+    "Page header and number were lumped into a single block with text.",
+    "Missing page header block in initial detection."
+  ],
+  "doc_id": "40",
+  "page": 51,
+  "elapsed_seconds": 5.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

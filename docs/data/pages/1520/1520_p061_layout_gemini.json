@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cendance. Pour nous, en Occident, la tradition philosophique où nous avons nos racines, c'est celle qui nous vient des Grecs, et de ce que Jaspers appelle «la religion biblique». Mais cette tradition, malgré son inépuisable profondeur, n'est pas la seule.",
+      "bbox": {
+        "x_pct": 8.171,
+        "y_pct": 5.887,
+        "w_pct": 83.604,
+        "h_pct": 8.141
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Vers une philosophie mondiale.",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 15.596,
+        "w_pct": 38.753,
+        "h_pct": 2.057
+      },
+      "changed": true,
+      "change_reason": "This is a section header, not a body paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce fut surtout pendant ses années d'«exil sur place», sous le national-socialisme, que se précisèrent dans l'esprit de Jaspers les lignes de force d'une nouvelle tâche. Il ne suffisait plus maintenant d'être européen.",
+      "bbox": {
+        "x_pct": 49.322,
+        "y_pct": 15.313,
+        "w_pct": 42.507,
+        "h_pct": 2.511
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plus encore que le gros volume publié sur « Les grands philosophes », l'œuvre posthume témoigne de l'énergie ambitieuse avec laquelle il s'engagea dans cette perspective nouvelle. Il projetait d'étudier la philosophie mondiale avec une ampleur sans précédent, sous toute une série d'angles divers. Il multipliait les ébauches, les notes, les lectures. La passion qu'il y mettait ne provenait pas de l'extension d'un projet qui embrassait désormais la terre entière, mais du fait qu'une philosophie mondiale, lorsqu'elle refuse d'être l'abstraction appauvrie des traditions particulières, s'attache nécessairement à l'humain dans l'homme, sans que rien d'accessoire vienne l'en détourner. (45 à 50).",
+      "bbox": {
+        "x_pct": 7.724,
+        "y_pct": 51.217,
+        "w_pct": 84.106,
+        "h_pct": 21.474
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POLITIQUE",
+      "bbox": {
+        "x_pct": 7.995,
+        "y_pct": 76.29,
+        "w_pct": 16.978,
+        "h_pct": 2.057
+      },
+      "changed": false,
+      "change_reason": "Correctly labeled as section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie de Jaspers imprègne sa vie entière et lui donne, à tous ses niveaux : celui du savant et du médecin, celui du psychologue, du professeur, de l'époux, une unité exceptionnelle, qui se confirme et se renforce encore au niveau du citoyen. Jaspers n'a jamais pu faire de « politique active » à cause de son état de santé —",
+      "bbox": {
+        "x_pct": 7.629,
+        "y_pct": 79.803,
+        "w_pct": 83.97,
+        "h_pct": 9.974
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 88.0,
+        "y_pct": 91.5,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR corruption in multiple text blocks.",
+    "Section header was mislabeled as paragraph.",
+    "Page number at bottom right was not identified by initial pass."
+  ],
+  "doc_id": "1520",
+  "page": 61,
+  "elapsed_seconds": 5.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

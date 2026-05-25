@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "clort de discernement conslnmment renouvcle",
+      "bbox": {
+        "x_pct": 8.727,
+        "y_pct": 6.927,
+        "w_pct": 37.491,
+        "h_pct": 6.401
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1 Inent unique, @u paradoxnl",
+      "bbox": {
+        "x_pct": 8.968,
+        "y_pct": 12.347,
+        "w_pct": 28.175,
+        "h_pct": 5.391
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "2l histoire el religion que Aronl, fait semblable \" e 0 dillerent de cC quil esl pour le non-Juif.",
+      "bbox": {
+        "x_pct": 9.16,
+        "y_pct": 18.492,
+        "w_pct": 37.455,
+        "h_pct": 25.818
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, lorsque le Pere Fessard compare le Juif et le sujet historique Tobligent galement paradoxa",
+      "bbox": {
+        "x_pct": 9.448,
+        "y_pct": 46.615,
+        "w_pct": 37.335,
+        "h_pct": 31.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On comprendra mnieux 5005 le Pere Fessard 1 un livre Fexislenee paradoxale des comprendre (par Tall",
+      "bbox": {
+        "x_pct": 50.648,
+        "y_pct": 12.987,
+        "w_pct": 39.304,
+        "h_pct": 29.587
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alors scientifique que possible; tout en montrant diflicults et limites de de engoge exislentiellem",
+      "bbox": {
+        "x_pct": 51.261,
+        "y_pct": 44.993,
+        "w_pct": 39.208,
+        "h_pct": 26.23
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les contradicliong irremediables devicnnenl perceplion de Texislence historique et la volont dactua",
+      "bbox": {
+        "x_pct": 51.705,
+        "y_pct": 73.642,
+        "w_pct": 38.932,
+        "h_pct": 11.323
+      },
+      "changed": false
+    }
+  ],
+  "score": 50,
+  "num_corrections": 0,
+  "issues": [
+    "Page numbers 20 and 21 at the bottom are missing as regions.",
+    "The OCR text quality is very poor and does not match the image content accurately.",
+    "Multiple regions are missing content or have severe misreadings."
+  ],
+  "doc_id": "1710",
+  "page": 9,
+  "elapsed_seconds": 4.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,99 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "156",
+      "bbox": {
+        "x_pct": 20.392,
+        "y_pct": 100,
+        "w_pct": 3.737,
+        "h_pct": 2.19
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ETRE ET LA FORME",
+      "bbox": {
+        "x_pct": 72.84,
+        "y_pct": 2.0,
+        "w_pct": 16.335,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TROISIEME PARTIE",
+      "bbox": {
+        "x_pct": 41.82,
+        "y_pct": 13.667,
+        "w_pct": 25.772,
+        "h_pct": 1.974
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Esquisse de la fonction symbolique de lespace pour Peeprit",
+      "bbox": {
+        "x_pct": 31.256,
+        "y_pct": 16.986,
+        "w_pct": 46.659,
+        "h_pct": 4.905
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des   tentations de Ja chair expliquer conçoive banalement le monde malériel comme étant celui de Ia",
+      "bbox": {
+        "x_pct": 20.392,
+        "y_pct": 23.409,
+        "w_pct": 68.514,
+        "h_pct": 16.279
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette impossibilité   correspond une exigence   spirituelle fon damentale dans la condition humaine ",
+      "bbox": {
+        "x_pct": 20.392,
+        "y_pct": 39.56,
+        "w_pct": 68.744,
+        "h_pct": 28.398
+      }
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Il de Boi que la succeusion juxtaposition  dang ]espace. CE  la   réduction opérée à Ce sujet par   ",
+      "bbox": {
+        "x_pct": 20.507,
+        "y_pct": 70.03,
+        "w_pct": 68.744,
+        "h_pct": 4.328
+      }
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header and footer regions in original input.",
+    "Page number and running header were not labeled."
+  ],
+  "doc_id": "110",
+  "page": 158,
+  "elapsed_seconds": 5.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

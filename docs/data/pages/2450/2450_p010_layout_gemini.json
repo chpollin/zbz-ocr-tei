@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sie nach Belieben neu erdenken. Meistens sucht man eine Ausflucht in der Erinnerung. Man sagt: Die Vergangenheit existiert noch in der Erinnerung; sie bleibt im Gedächtnis, und erst mit diesem zerfällt sie ins Nichts; Denkmäler, Gottesdienste, Zeremonien erfüllen eine Funktion des Kampfes gegen das Nichts. Deswegen stellt uns in der Erinnerung eine Aufgabe der Treue.",
+      "bbox": {
+        "x_pct": 8.046,
+        "y_pct": 6.524,
+        "w_pct": 81.078,
+        "h_pct": 15.082
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und das stimmt auch auf der Ebene der Zeit, in der wir bis zu unserem eigenen Tod fortdauern. Die Vergangenheit aber ist noch auf eine andere Weise – unwiderruflich, unantastbar. Die Vergangenheit ist. So wie sie gewesen ist. Unverändert durch Vergessen, Verschönern der Erinnerungen oder zerrüttende Umwälzungen der Geschichte. Man hat überall und in allen Sprachen gesagt und geschrieben, daß Brutus Cäsar getötet hat, und man wird es wohl auch weiterhin sagen und schreiben, solange es Menschen gibt. Nehmen wir aber einen Augenblick lang an, daß es falsch war, daß ein anderer ihm den tödlichen Schlag versetzt hat; dann wird die Aussage »Brutus hat Cäsar getötet« eine Lüge und ein Irrtum bleiben für immer, bis ans Ende der Zeiten, bis ins Ende der Zeiten hinein. Und es gibt nichts, was je den letzten Atemzug eines jüdischen Kindes auslöschen könnte, das nach Luft rang, als das Gas hochkam.",
+      "bbox": {
+        "x_pct": 7.859,
+        "y_pct": 21.777,
+        "w_pct": 81.178,
+        "h_pct": 33.013
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Vergangenheit ist der einzige Reichtum und die einzige Hölle, die uns für immer gegeben ist, eine unwiderrufliche Gabe, weil sie nicht mehr in der Zeit ist. Jenseits der Erinnerung. Außerhalb unserer Reichweite. In der Wahrheit des Seins.",
+      "bbox": {
+        "x_pct": 7.945,
+        "y_pct": 54.361,
+        "w_pct": 81.092,
+        "h_pct": 10.936
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was noch in unserer Reichweite liegt, was noch von uns abhängt – selbst wenn die Vergangenheit eine Menge Wahrscheinlichkeiten mitbestimmt –, das ist die Zukunft. Sie bietet sich unserer Freiheit an und gestattet ihr, der Angst des Unveränderlichen und des Unvermeidlichen zu entfliehen und auf Verantwortung Anspruch zu erheben. Gerade weil die Vergangenheit eine Zukunft gewesen ist, lastet sie noch auf unserem Gewissen. Und weil in unserer Todesstunde unsere Zukunft schon erschöpft sein wird, ergreift uns die Angst. Aus Mangel an Möglichem erstickt unsere Freiheit, wenn sie daran ist, ins Sein der Vergangenheit zu sinken.",
+      "bbox": {
+        "x_pct": 7.759,
+        "y_pct": 65.579,
+        "w_pct": 81.078,
+        "h_pct": 24.206
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "319",
+      "bbox": {
+        "x_pct": 83.676,
+        "y_pct": 91.558,
+        "w_pct": 4.145,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One missing region for the page number 319 detected."
+  ],
+  "doc_id": "2450",
+  "page": 10,
+  "elapsed_seconds": 5.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

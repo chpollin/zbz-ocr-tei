@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n'inviterait plus à aucun dépassement. Et nous n'obtenons pas davantage une série de points de vue dont l'ensemble, comme dans une exploration autour de la terre, nous livrerait, par le mouvement à travers les divers horizons, l'unité close de l'être, dans un système de l'être. L'être, pour nous, reste béant : il nous tire dans toutes les directions vers l'illimité. Il nous fait sans cesse rencontrer du neuf, en tant qu'être chaque fois déterminé.",
+      "bbox": {
+        "x_pct": 5.556,
+        "y_pct": 5.913,
+        "w_pct": 84.011,
+        "h_pct": 13.736
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text extraction to reflect the actual full content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre connaissance a progressé, de la totalité indéterminée de notre monde (où se déroule immédiatement notre vie), à l'objet déterminé (qui se trouve dans le monde et d'où il vient à nous), et de là à une totalité fermée du monde (Weltgeschlossenheit) consciemment saisie dans les horizons qui la limitent (dans tel ou tel système de l'être). A chacune de ces démarches l'être nous est présent, mais aucune ne nous livre l'être même. Chaque fois, en effet, apparaît la possibilité d'aller au-delà de l'être ainsi manifesté, en s'enfonçant plus loin dans l'être. L'être déterminé, connu, est toujours entouré d'autre chose. Chaque fois que nous saisissons une réalité particulière (et c'est encore une réalité particulière qu'une conception systématique de la totalité de l'être, quelle qu'elle soit), nous éprouvons ce que l'être est, et même temps, ce que l'être n'est pas.",
+      "bbox": {
+        "x_pct": 5.42,
+        "y_pct": 19.195,
+        "w_pct": 84.187,
+        "h_pct": 25.021
+      },
+      "changed": true,
+      "change_reason": "Corrected the text extraction, which was heavily truncated and inaccurate."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ayant conscience de cette expérience, nous nous interrogeons encore une fois sur l'être lui-même, qui s'est dérobé à nous alors que se manifestait à nous tout ce que l'expérience nous livre. Cet être, qui n'est ni un objet (toujours rétrécissant), ni une totalité organisée à l'intérieur d'un horizon (toujours limitatif), nous l'appelons l'englobant.",
+      "bbox": {
+        "x_pct": 5.461,
+        "y_pct": 43.616,
+        "w_pct": 83.659,
+        "h_pct": 11.885
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'englobant est ce qui ne fait jamais que s'annoncer — à travers la présence objective et les horizons — mais qui ne devient jamais ni objet, ni horizon. C'est ce que nous ne rencontrons jamais en fait, mais au sein de quoi nous rencontrons tout le reste. Il n'acquiert qu'une présence indirecte lorsque, plongés en lui, nous allons à chaque fois vers tel ou tel horizon pour le dépasser. A l'intérieur de chaque horizon nous saisissons directement les choses en tant qu'objets déterminés, et pourtant elles ne sont pas seulement ce qu'elles semblent être immédiatement : par l'englobant et grâce à lui elles deviennent transparentes. Nous accomplissons la pensée philosophique fondamentale en dépassant tout être déterminé, tout horizon visible et par là déterminé, vers l'englobant en lequel nous sommes, et que nous sommes nous-mêmes.",
+      "bbox": {
+        "x_pct": 5.556,
+        "y_pct": 55.039,
+        "w_pct": 83.97,
+        "h_pct": 25.107
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate text extraction."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "L'englobant, c'est ce en quoi tout être est pour nous; ou bien, c'est la condition qui lui permet de devenir pour nous l'être véritable. Ce n'est pas le tout, en tant que somme de l'être, mais c'est la totalité, pour nous toujours béante (ungeschlossen), en tant que fondement de l'être. (Von der Wahrheit, p. 37-39)",
+      "bbox": {
+        "x_pct": 5.515,
+        "y_pct": 79.777,
+        "w_pct": 83.875,
+        "h_pct": 9.769
+      },
+      "changed": true,
+      "change_reason": "Labeled as footnote because it contains bibliographic reference and page numbers, corrected text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "89",
+      "bbox": {
+        "x_pct": 86.1,
+        "y_pct": 91.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Isolated page number correctly as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Text extraction was highly inaccurate and heavily truncated in almost every region.",
+    "Bibliographic reference at bottom mislabeled as standard paragraph.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "1520",
+  "page": 95,
+  "elapsed_seconds": 5.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

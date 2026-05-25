@@ -1,0 +1,39 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Arzte Médecins Medici",
+      "bbox": {
+        "x_pct": 6.93,
+        "y_pct": 17.059,
+        "w_pct": 97.945,
+        "h_pct": 42.507
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "veizerische Ärztezeitung Bulletin des médecins suisses Bollettino dei medici svizzeri",
+      "bbox": {
+        "x_pct": 5.957,
+        "y_pct": 94.443,
+        "w_pct": 91.896,
+        "h_pct": 2.513
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer because it is a recurring journal title/footer across issues."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "The journal title at the bottom of the page is a running footer, not a standard paragraph text."
+  ],
+  "doc_id": "2650",
+  "page": 1,
+  "elapsed_seconds": 2.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

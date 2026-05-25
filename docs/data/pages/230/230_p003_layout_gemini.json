@@ -1,0 +1,126 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "14 MONDE NOUVEAU",
+      "bbox": {
+        "x_pct": 8.79,
+        "y_pct": 3.74,
+        "w_pct": 27.58,
+        "h_pct": 1.43
+      },
+      "changed": true,
+      "change_reason": "Header identified as page_header rather than text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "partenaires en toutes les conséquences logiques et naturellement l'égalité absolue de l'Allemagne dans la communauté. »",
+      "bbox": {
+        "x_pct": 8.55,
+        "y_pct": 6.35,
+        "w_pct": 48.57,
+        "h_pct": 4.22
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois cette décision fondamentalement bonne, mais j'aime aussi qu'elle constitue un choix, une réelle prise de position au moment où tant d'indécisions nous font tant de mal.",
+      "bbox": {
+        "x_pct": 8.25,
+        "y_pct": 10.95,
+        "w_pct": 48.39,
+        "h_pct": 5.46
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "A Francfort, nous avons réussi, et je m'en réjouis sans réserve, à lier dans une conception logique notre action pour l'Europe nouvelle à notre action pour les deux grands objectifs socialistes : l'amélioration du sort des masses et la consolidation de la Paix.",
+      "bbox": {
+        "x_pct": 7.98,
+        "y_pct": 16.73,
+        "w_pct": 48.71,
+        "h_pct": 6.96
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons réussi aussi à rajeunir certaines formules, à nous adapter mieux aux nécessités actuelles, à élargir nos horizons.",
+      "bbox": {
+        "x_pct": 7.9,
+        "y_pct": 24.0,
+        "w_pct": 48.28,
+        "h_pct": 3.97
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est-ce que les hésitants ne sont pas convaincus ? Est-ce qu'ils ne croient pas que l'heure de nous rejoindre a sonné ? PAUL-HENRI SPAAK.",
+      "bbox": {
+        "x_pct": 11.51,
+        "y_pct": 28.37,
+        "w_pct": 44.27,
+        "h_pct": 4.47
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après avoir lu l'article de P.-H. Spaak, nul ne pourra plus douter de l'importance du congrès convoqué à Francfort, du 15 au 17 février, par le Mouvement Socialiste pour les Etats-Unis d'Europe, et dont l'atmosphère, après les faux-fuyants des Parlements de Bonn et de Paris, a été si extraordinairement bienfaisante : enfin un esprit vraiment international, à la fois généreux et lucide. Tant par le nombre des participants que par leur qualité représentative, ce congrès a manifesté avec un éclat incontestable la force des idées fédéralistes dans le socialisme européen. Spaak n'a pas pu dire tout ce qu'apportait sa propre présence, sans cesse active et efficace.",
+      "bbox": {
+        "x_pct": 6.88,
+        "y_pct": 34.63,
+        "w_pct": 48.85,
+        "h_pct": 16.43
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Reste à savoir maintenant quelle sera l'influence du congrès sur les dirigeants des partis nationaux, sur les hommes d'Etat et les parlementaires socialistes, ainsi que sur l'Internationale. Je dois avouer que j'en guette les résultats avec passion. On entend dire, en effet, que dans grands pays l'appareil des partis socialistes s'est sclérosé. Les diri-",
+      "bbox": {
+        "x_pct": 6.69,
+        "y_pct": 51.4,
+        "w_pct": 48.52,
+        "h_pct": 7.02
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 2.07,
+        "y_pct": 64.16,
+        "w_pct": 40.94,
+        "h_pct": 1.43
+      },
+      "changed": true,
+      "change_reason": "Artifact/footer identified as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and header were detected as text initially.",
+    "Footer was detected as text initially.",
+    "Author signature in region 6 should be checked, but accepted as paragraph."
+  ],
+  "doc_id": "230",
+  "page": 3,
+  "elapsed_seconds": 5.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

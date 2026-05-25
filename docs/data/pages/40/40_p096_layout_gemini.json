@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "98 TEMPS ALTERNS",
+      "bbox": {
+        "x_pct": 118.89,
+        "y_pct": 71.0,
+        "w_pct": 69.8,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number and header at top of page misclassified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Où sont-elles donc en moi, où dorment-elles leur puissant, leur indestructible sommeil ? Je ne pense plus guère à la mort. Elle qui m'a accompagnée dès mon enfance sans jamais me faire peur, plutôt comme un reflet sacré qui rendait toute réalité plus chère, elle qui était l'asile et le repos de ma détresse, elle est devenue chose négligée et quotidienne. Un peu comme une mère. Une mère, on sait qu'elle est là, comme le meuble le plus stable de la maison. Parfois beaucoup de temps passe sans qu'on la regarde, parce qu'on sait bien qu'un peut la regarder quand on veut. Autrefois je voulais, pour consacrer la mort, la séparer de la vie; la vie, patrie des retouches, de l'à peu près; la mort, sans rémission, règne de l'absolu et du définitif. Je voulais étre brùlée, et qu'on dispersât jusqu'à la trace de mes cendres.",
+      "bbox": {
+        "x_pct": 11.392,
+        "y_pct": 11.692,
+        "w_pct": 81.216,
+        "h_pct": 37.902
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and incomplete in the input JSON; updated to reflect the full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant non. Maintenant, quand je pense à la mort, je revois un petit cimetière de montagne où je suis entrée un moment avec toi, l'an dernier. C'était un enclos de pierre perdu dans un paysage immense, et le vent qui passait dans ses deux cyprès venait de loin. Il ne contenait pas plus de douze tombes. J'avais regardé les dates: des vieillards d'au moins soixante-dix ans. Seule l'une des stèles les plus anciennes portait un simple nom et des dates rapprochées. Claire Renaud était morte à vingt-deux ans. Te souviens-tu ? Sur toute la surface de sa tombe on avait piqué des roses de Noél, et elles étaient là, fraîches, sous une mince couche de neige sèche que le vent éparpillait. Je ne mourrai pas avant d'avoir mon enfant. Je mourrai maman. Peut-ètre que je mourrai maman de",
+      "bbox": {
+        "x_pct": 11.581,
+        "y_pct": 49.367,
+        "w_pct": 81.297,
+        "h_pct": 35.577
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and incomplete in the input JSON; updated to reflect the full paragraph text."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page number and header misclassified as text.",
+    "Text content was incomplete and truncated in JSON regions.",
+    "Bounding boxes contained incorrect text content mapping."
+  ],
+  "doc_id": "40",
+  "page": 96,
+  "elapsed_seconds": 6.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

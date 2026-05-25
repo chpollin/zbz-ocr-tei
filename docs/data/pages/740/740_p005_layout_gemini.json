@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "96 Kierkegaard vivant",
+      "bbox": {
+        "x_pct": 89.0,
+        "y_pct": 68.0,
+        "w_pct": 637.0,
+        "h_pct": 90.0
+      },
+      "changed": true,
+      "change_reason": "The top line contains the page number '96' and the running header 'Kierkegaard vivant', which should be excluded/filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« L'instant autour de quoi tourne tout », dit Kierkegaard. En effet, il y insiste. Il oppose « le dieu » (Christ), condition de la vérité, à Socrate qui en est l'occasion. Il part de la question socratique : si la vertu est connaissance, donc vérité, comment peut-elle s'apprendre ? Comment chercher ce que l'on sait ? et comment chercher ce que l'on ne sait pas ? Le Grec Socrate atténue ou même abolit le commencement : toute recherche est un souvenir. La vertu se trouve dans l'âme d'emblée, — d'où chez Platon la preuve de la préexistence de l'âme avant celle de sa survie. C'est pourquoi, dit Kierkegaard, Socrate est un accoucheur, rapport, selon lui, « le plus haut qu'un homme puisse avoir avec un autre, en quoi, de toute éternité, il ne cessera d'avoir raison ». (Et il ajoute que Socrate était « une sage-femme diplômée par le dieu lui-même ».) D'où, dans l'optique socratique, le caractère entièrement contingent de tout point de départ temporel, dans l'histoire d'une âme. Le maître n'en est que l'occasion, il ne doit pas se donner ; s'il se donne, « il n'est pas l'ami de l'élève et encore moins son maître ». La noblesse, l'humanité, la magnanimité que Kierkegaard reconnaît à Socrate consiste justement dans l'effacement, la disparition de Socrate devant la vérité éternelle — antérieure — dont il a « occasionné » la découverte chez l'élève. La grandeur de Socrate, c'est de refuser, chose combien rare, d'être « une autorité ». « Car aucun homme n'a jamais été réellement une autorité et n'a jamais, en tant qu'autorité, fait du bien",
+      "bbox": {
+        "x_pct": 85.0,
+        "y_pct": 110.0,
+        "w_pct": 810.0,
+        "h_pct": 790.0
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to reflect the actual full text of the paragraph and cleaned up OCR artifacts from the provided input box."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original detection included the page number and running header as part of the paragraph.",
+    "The OCR text provided in the input was truncated and contained artifacts."
+  ],
+  "doc_id": "740",
+  "page": 5,
+  "elapsed_seconds": 10.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

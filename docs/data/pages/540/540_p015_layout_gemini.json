@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE 243",
+      "bbox": {
+        "x_pct": 29.508,
+        "y_pct": 14.516,
+        "w_pct": 54.713,
+        "h_pct": 1.458
+      },
+      "changed": true,
+      "change_reason": "Identified as page header containing title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "chaque pr©sent (jeweils einzig), en motifs lointains, juxtapos©s dans l'indiff©rence, ou du moins la relativit©, d'un temps   une seule dimension. L'objectivit©, cette mise   distance, qui permet la contestation de ce qui est, l'ouverture du possible et par l  l'histoire v©cue, enl¨ve pourtant   cette histoire devenue objet de connaissance sa structure cr©atrice, son ressort vital : son pr©sent.",
+      "bbox": {
+        "x_pct": 14.928,
+        "y_pct": 17.235,
+        "w_pct": 69.262,
+        "h_pct": 10.795
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and label alignment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire-r©cit peut, parfois, mettre en lumi¨re pr©cis©ment le contraste entre les valeurs absolues pour lesquelles les personnages qui vivent l'histoire engagent hic et nunc, sans r©serve, leur vie, et la d©valorisation lointaine qui se produit sous l'©il sans pr©sent (ou : au pr©sent oubli©) de la connaissance. On voit alors l'histoire enti¨re osciller entre le sens et le non-sens, l'exigence absolue et l'indiff©rence, et Job dispute avec Dieu. Mais l'histoire-r©cit, alors, n'est plus « connaissance historique ». Elle acc¨de au plan de l'irr©ductibilit© sans usure qui est celui de la trag©die.",
+      "bbox": {
+        "x_pct": 14.754,
+        "y_pct": 27.588,
+        "w_pct": 69.365,
+        "h_pct": 15.676
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and label alignment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La connaissance historique tend   consid©rer comme « r©el » ou « particuli¨rement important » soit ce qui se plie   ses exigences, soit ce qui lui fournit une hypoth¨se d'ensemble, donc: soit les ©l©ments de l'histoire soumis   une causalit© identique ou analogue   celle des sciences de la nature, soit un dessein ©ternel, divin ou d©terministe. Elle est donc port©e   valoriser dans l'histoire ce qui n'est pas histoire, ce dont le r¨gne, s'il ©tait total, abolirait l'histoire. Il y a dans la connaissance historique une pente antihistorique. Ce qui sauve l'histoire-r©cit, c'est la pr©sence, malgr© tout, de l'historien : parfois malgr© lui, il se souvient d'©tre un homme dans l'histoire, un acteur historique, appartenant existentiellement   une collectivit©, se comportant envers des formes et des r©alit©s sociales, ayant ses valeurs et ses enjeux, et affrontant valeurs et enjeux d'autrui dans un pr©sent toujours unique. Alors, quand il raconte l'histoire, il raconte des histoires dont les personnages le concernent, dont les possibles concernent les siens, dont le pr©sent concerne son pr©sent et r©siste   la d©valorisation panoramique de la connaissance.",
+      "bbox": {
+        "x_pct": 14.549,
+        "y_pct": 42.948,
+        "w_pct": 69.365,
+        "h_pct": 29.192
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and label alignment."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "C. Conclusions",
+      "bbox": {
+        "x_pct": 41.496,
+        "y_pct": 74.388,
+        "w_pct": 15.574,
+        "h_pct": 1.578
+      },
+      "changed": false,
+      "change_reason": "Correct label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les limites de la connaissance historique ont leur origine dans la condition humaine elle-m©me, dans la mani¨re dont elle noue",
+      "bbox": {
+        "x_pct": 14.447,
+        "y_pct": 76.705,
+        "w_pct": 69.232,
+        "h_pct": 3.681
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and label alignment."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.844,
+        "y_pct": 92.597,
+        "w_pct": 36.475,
+        "h_pct": 4.195
+      },
+      "changed": true,
+      "change_reason": "Marked as page_footer for filtering."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 5,
+  "issues": [
+    "JSTOR metadata text at bottom should be filtered."
+  ],
+  "doc_id": "540",
+  "page": 15,
+  "elapsed_seconds": 9.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

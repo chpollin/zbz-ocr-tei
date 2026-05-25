@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mémoire pas assez la rationalité. On oppose imagination et mémoire; comme si la mémoire était une fa",
+      "bbox": {
+        "x_pct": 7.027,
+        "y_pct": 62.626,
+        "w_pct": 28.215,
+        "h_pct": 30.063
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "hommes ont une histoire, alors que les   animaux n'en ont pas.",
+      "bbox": {
+        "x_pct": 36.648,
+        "y_pct": 62.568,
+        "w_pct": 27.973,
+        "h_pct": 2.654
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En général, dans le fonctionnement technique, on ne pense qu'au déterminisme. C'est vrai : il n'y a là que du déterminisme, c'est-à-dire des rapports nécessaires de cause à effet. Mais ce déterminisme ne devient de la technique que lorsqu'il est orienté vers une fin. La technique, c'est le déterminisme de la nature finalisée par l'homme. La technique, c'est le règne des fins humaines, le règne des buts que les hommes se proposent d'atteindre. Elle est tout entière orientée par ces fins, sans lesquelles elle n'existerait pas puisqu'elle n'aurait aucun sens. Une fin n'est jamais donnée par la technique, elle est au contraire une condition de réalité pour la technique, une condition de son développement.",
+      "bbox": {
+        "x_pct": 36.648,
+        "y_pct": 65.188,
+        "w_pct": 28.158,
+        "h_pct": 24.871
+      },
+      "changed": true,
+      "change_reason": "Corrected height to cover the full paragraph block"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sion que l'acrobate est un être si léger qu'il peut ignorer la pesanteur. Mais ce n'est pas vrai réu",
+      "bbox": {
+        "x_pct": 66.373,
+        "y_pct": 62.568,
+        "w_pct": 28.376,
+        "h_pct": 23.716
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "C'est d'ailleurs à cause de ce même manque et de cette visée que les",
+      "bbox": {
+        "x_pct": 7.189,
+        "y_pct": 92.556,
+        "w_pct": 27.787,
+        "h_pct": 2.539
+      },
+      "changed": true,
+      "change_reason": "Part of the paragraph block above"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais alors, déterminisme mécaniste Je voudrais   reprendre ici un \"acrobate. Le spectateur a",
+      "bbox": {
+        "x_pct": 36.729,
+        "y_pct": 90.058,
+        "w_pct": 27.997,
+        "h_pct": 5.17
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un cliché courant aujourd' hui consiste à réduire Ja technique au matérialisme, à satisfaction   d'a",
+      "bbox": {
+        "x_pct": 66.422,
+        "y_pct": 86.209,
+        "w_pct": 28.304,
+        "h_pct": 8.904
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 42.42,
+        "y_pct": 100,
+        "w_pct": 1.4,
+        "h_pct": 1.4
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "One missing page number region",
+    "Minor bounding box misalignment in text blocks"
+  ],
+  "doc_id": "1420",
+  "page": 3,
+  "elapsed_seconds": 7.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected height to cover the full paragraph block": 1,
+    "Part of the paragraph block above": 1,
+    "ADDED": 1
+  }
+}

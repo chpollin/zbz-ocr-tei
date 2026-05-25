@@ -1,0 +1,97 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "incrovable Parlf plus m' qui",
+      "bbox": {
+        "x_pct": 20.341,
+        "y_pct": 15.746,
+        "w_pct": 25.217,
+        "h_pct": 43.718
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Féngir avec pavion 4 qui",
+      "bbox": {
+        "x_pct": 9.365,
+        "y_pct": 73.761,
+        "w_pct": 35.899,
+        "h_pct": 7.817
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Heidegger avait Heidegger Heidegger des jois Merico, le desespera qu'",
+      "bbox": {
+        "x_pct": 55.817,
+        "y_pct": 19.718,
+        "w_pct": 35.37,
+        "h_pct": 28.972
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "erpression Findistinction   onlologique qui qui",
+      "bbox": {
+        "x_pct": 55.734,
+        "y_pct": 52.535,
+        "w_pct": 35.241,
+        "h_pct": 25.169
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "8 JEAN WAHL ET GABRIEL MARCEL",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 10,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "INTRODUCTION 9",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 10,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 6,
+  "issues": [
+    "Original labels were generic 'text'",
+    "Page headers were missing from initial annotation"
+  ],
+  "doc_id": "1350",
+  "page": 3,
+  "elapsed_seconds": 13.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label mapping": 4,
+    "ADDED": 2
+  }
+}

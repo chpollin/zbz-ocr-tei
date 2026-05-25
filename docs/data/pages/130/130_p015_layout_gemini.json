@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LE PROBLÈME DE L'ÉLITE OUVRIÈRE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header title"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "21",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 28.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "s'acharne lui-même, maintenant, à les extirper de son âme; craignant de céder à des faiblesses ou de",
+      "bbox": {
+        "x_pct": 10.683,
+        "y_pct": 14.505,
+        "w_pct": 77.267,
+        "h_pct": 10.567
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ces fronts existent. Nous devons en prendre notre parti. Léducation de lélite ouvrière devra se",
+      "bbox": {
+        "x_pct": 10.683,
+        "y_pct": 24.976,
+        "w_pct": 78.41,
+        "h_pct": 30.768
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pangle des classes, paraît insoluble; cest donc que former lélite ouvrière revient à former des  hom",
+      "bbox": {
+        "x_pct": 11.17,
+        "y_pct": 63.429,
+        "w_pct": 78.357,
+        "h_pct": 28.213
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Added missing header and page number"
+  ],
+  "doc_id": "130",
+  "page": 15,
+  "elapsed_seconds": 6.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

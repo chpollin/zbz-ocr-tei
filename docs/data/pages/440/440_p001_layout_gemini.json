@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA TABLE RONDE",
+      "bbox": {
+        "x_pct": 4.044,
+        "y_pct": 3.375,
+        "w_pct": 87.467,
+        "h_pct": 4.229
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "NOVEMBRE 1958",
+      "bbox": {
+        "x_pct": 31.659,
+        "y_pct": 9.204,
+        "w_pct": 32.978,
+        "h_pct": 2.214
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SOMMAIRE",
+      "bbox": {
+        "x_pct": 31.511,
+        "y_pct": 17.164,
+        "w_pct": 32.83,
+        "h_pct": 2.985
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PRÉFACES POUR LA RADIO",
+      "bbox": {
+        "x_pct": 27.511,
+        "y_pct": 23.275,
+        "w_pct": 40.637,
+        "h_pct": 1.824
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avant-propos, par C. CHAVANON, Directeur-général de la R.T.F.. 9 Textes de : STEFAN ANDRÈS .................................... II Hervé BAZIN .................................... 14 Marc BERNARD .................................... 17 Princesse BIBESCO .................................... 21 HEINRICH BÖLL .................................... 23 ERSKINE CALDWELL .................................... 27 André CHAMSON .................................... 30 Georges DUHAMEL .................................... 33 ALBRECHT GOES .................................... 38 Fernand GREGH .................................... 41 Émile HENRIOT .................................... 46 Jeanne HERSCH .................................... 49 Hans Egon HOLTHAUSEN ............................ 52 Walter JENS .................................... 55 Robert KEMP .................................... 59 Gertrude von LE FORT ............................. 62 Alexandre LERNET-HOLENIA ........................ 67 René-Félix LISSENS ............................... 70 Gabriel MARCEL .................................... 75 André MAUROIS .................................... 80 Alberto MORAVIA .................................... 82 Charles MORGAN .................................... 86 Victoria OCAMPO .................................... 93 Guido PIOVENE .................................... 97 Vasco PRATOLINI .................................... 101 Alan PRYCE-JONES ................................. 106 Jules ROMAINS .................................... 109 Jean ROSTAND .................................... 112 Georges SIMENON .................................. 117 Giuseppe UNGARETTI ............................... 120 Günther WEISENBORN ............................... 122 Textes cités : Ivo ANDRITCH .................................... 128 Alexandre ARNOUX ................................. 129 Bernard BARBEY ................................... 130",
+      "bbox": {
+        "x_pct": 3.333,
+        "y_pct": 25.755,
+        "w_pct": 88.933,
+        "h_pct": 67.977
+      },
+      "changed": true,
+      "change_reason": "Corrected the label from document_index to text, as this is a table of contents, not an index."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "The bounding box for the text region contains the entirety of the table of contents list."
+  ],
+  "doc_id": "440",
+  "page": 1,
+  "elapsed_seconds": 9.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

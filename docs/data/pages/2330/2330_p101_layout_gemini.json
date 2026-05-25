@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Foyer international socialiste a été une espèce de club, si vous voulez, où l'on invitait ces gens de passage à venir traiter tel ou tel problème d'actualité économique, social ou politique. Je pense que la plus grande partie de ma formation, quant à la compréhension des phénomènes sociaux et politiques, vient de là. C'étaient des gens très compétents, économistes, politologues, sociologues, des gens qui savaient de quoi ils parlaient, qui avaient des responsabilités, étaient mêlés à l'action. J'ai compris combien les réalités sociales sont complexes et à quel point il est grotesque de prétendre leur apporter une solution simple, paradisiaque.",
+      "bbox": {
+        "x_pct": 4.359,
+        "y_pct": 3.766,
+        "w_pct": 79.805,
+        "h_pct": 18.145
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text which was heavily hallucinated/misread in the original detection."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "A.D Comment pouvez-vous rendre raison en délinitive de votre foi démocratique ?",
+      "bbox": {
+        "x_pct": 4.518,
+        "y_pct": 23.331,
+        "w_pct": 79.524,
+        "h_pct": 4.331
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it acts as an interview prompt/title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Depuis ma petite enfance, j'ai entendu mon père répéter que le progrès social et les droits démocratiques avaient partie liée. Et je n'ai jamais douté de cette vérité. Pourquoi ? Parce que je suis convaincue — et je crois que c'est chez moi une très ancienne conviction — qu'on ne peut pas fonder la justice sociale sur la bonté des hommes. Non pas que je croie les hommes fondamentalement mauvais, pas du tout. Je pense simplement qu'ils sont essentiellement des êtres qui ont des besoins, qui sont mortels et qui le savent ; qui savent que tous ceux qu'ils aiment sont mortels, et qui sont par conséquent en situation de lutte pour leur existence et pour l'existence de leurs proches. Et je ne me hâterai nullement de mettre le mot égoïsme là-dessus. Il est tout à fait normal qu'un être humain qui se sait mortel et qui aime ses proches lutte pour assurer la sécurité, la survie et le développement de ses proches et de lui-même. Voyez-vous, j'ai toujours été convaincue, et je le suis encore, que le précepte « aime ton prochain comme toi-même » est une formule merveilleuse, mais qui transcende de loin la condition humaine. Cela ne veut pas dire qu'un homme puisse rester homme sans adopter jusqu'à un certain point ce précepte. Mais il l'adopte comme l'expression d'un idéal, en fin de compte inaccessible. Et lorsque je vois des gens qui sont convaincus qu'ils aiment leur prochain comme eux-mêmes, je me dis qu'ils sont peu exigeants envers eux-mêmes. Parce que si on est un peu sévère pour soi-même, on découvre très vite qu'on n'aime pas son prochain comme soi-même. Je vais vous donner un petit exemple, volontairement anodin, que j'ai employé souvent : un père de famille doit inscrire son enfant pour la rentrée scolaire, et il se rend à l'école voisine où il y a deux maîtres, dont on sait que l'un est bien meilleur que l'autre. Eh ! bien, il se précipitera pour inscrire son enfant dans la meilleure classe parce qu'il préfère que son enfant soit dans la meilleure classe plutôt que l'enfant d'un autre. Et c'est tout à fait naturel, et je l'approuve, et je ferais de même. Mais cela veut dire qu'il n'aime pas son prochain comme lui-même. J'ai pris à dessein un exemple qui ne soit pas dramatique du tout, parce que dans les situations dramatiques les excuses sont trop",
+      "bbox": {
+        "x_pct": 4.432,
+        "y_pct": 27.121,
+        "w_pct": 79.976,
+        "h_pct": 63.661
+      },
+      "changed": true,
+      "change_reason": "Corrected hallucinated/truncated text in the paragraph block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "97",
+      "bbox": {
+        "x_pct": 80.89,
+        "y_pct": 93.689,
+        "w_pct": 2.203,
+        "h_pct": 2.278
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and correctly identified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcription was severely incomplete and contained hallucinated words.",
+    "Page number 97 was omitted from the original detections.",
+    "Section header was mislabeled as plain text."
+  ],
+  "doc_id": "2330",
+  "page": 101,
+  "elapsed_seconds": 6.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

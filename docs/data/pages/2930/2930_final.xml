@@ -1,0 +1,649 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Menschenrechte und Menschsein - Warum hat der Mensch besondere Rechte?</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2930</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>Menschenrechte und Menschsein - Warum hat der Mensch besondere Rechte?</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>unknown</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="claude-opus-4-6-quality-screener" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). German, Menschenrechte und Menschsein + Podiumsgespraech. Two-column landscape. Entities: 126p 16o 22l 32w = 196. Validator: 0 errors, 0 warnings</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="824" lry="688">
+      <zone xml:id="facs_1_r_1" ulx="59" uly="82" lrx="368" lry="205" />
+      <zone xml:id="facs_1_r_2" ulx="450" uly="93" lrx="651" lry="110" />
+      <zone xml:id="facs_1_r_3" ulx="450" uly="174" lrx="589" lry="187" />
+      <zone xml:id="facs_1_r_4" ulx="446" uly="206" lrx="720" lry="400" />
+      <zone xml:id="facs_1_r_5" ulx="50" uly="237" lrx="364" lry="545" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="865" lry="698">
+      <zone xml:id="facs_2_r_1" ulx="88" uly="87" lrx="398" lry="216" />
+      <zone xml:id="facs_2_r_2" ulx="480" uly="105" lrx="788" lry="494" />
+      <zone xml:id="facs_2_r_3" ulx="90" uly="221" lrx="397" lry="280" />
+      <zone xml:id="facs_2_r_4" ulx="88" uly="299" lrx="397" lry="542" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="818" lry="677">
+      <zone xml:id="facs_3_r_1" ulx="266" uly="82" lrx="363" lry="136" />
+      <zone xml:id="facs_3_r_2" ulx="445" uly="120" lrx="599" lry="135" />
+      <zone xml:id="facs_3_r_3" ulx="276" uly="242" lrx="364" lry="263" />
+      <zone xml:id="facs_3_r_4" ulx="449" uly="286" lrx="757" lry="519" />
+      <zone xml:id="facs_3_r_5" ulx="57" uly="308" lrx="367" lry="418" />
+      <zone xml:id="facs_3_r_6" ulx="52" uly="453" lrx="305" lry="575" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="811" lry="677">
+      <zone xml:id="facs_4_r_1" ulx="51" uly="82" lrx="357" lry="149" />
+      <zone xml:id="facs_4_r_2" ulx="442" uly="147" lrx="552" lry="190" />
+      <zone xml:id="facs_4_r_3" ulx="54" uly="313" lrx="363" lry="382" />
+      <zone xml:id="facs_4_r_4" ulx="445" uly="315" lrx="748" lry="473" />
+      <zone xml:id="facs_4_r_5" ulx="54" uly="416" lrx="366" lry="563" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="868" lry="697">
+      <zone xml:id="facs_5_r_1" ulx="91" uly="67" lrx="162" lry="76" />
+      <zone xml:id="facs_5_r_2" ulx="91" uly="87" lrx="395" lry="146" />
+      <zone xml:id="facs_5_r_3" ulx="485" uly="87" lrx="789" lry="147" />
+      <zone xml:id="facs_5_r_4" ulx="91" uly="147" lrx="395" lry="224" />
+      <zone xml:id="facs_5_r_5" ulx="485" uly="148" lrx="789" lry="262" />
+      <zone xml:id="facs_5_r_6" ulx="91" uly="225" lrx="395" lry="520" />
+      <zone xml:id="facs_5_r_7" ulx="485" uly="264" lrx="789" lry="571" />
+      <zone xml:id="facs_5_r_8" ulx="91" uly="523" lrx="395" lry="571" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="828" lry="677">
+      <zone xml:id="facs_6_r_1" ulx="444" uly="88" lrx="551" lry="103" />
+      <zone xml:id="facs_6_r_2" ulx="444" uly="123" lrx="534" lry="137" />
+      <zone xml:id="facs_6_r_3" ulx="444" uly="151" lrx="746" lry="245" />
+      <zone xml:id="facs_6_r_4" ulx="444" uly="249" lrx="746" lry="490" />
+      <zone xml:id="facs_6_r_5" ulx="444" uly="492" lrx="746" lry="599" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="827" lry="674">
+      <zone xml:id="facs_7_r_1" ulx="60" uly="75" lrx="371" lry="124" />
+      <zone xml:id="facs_7_r_2" ulx="446" uly="87" lrx="746" lry="149" />
+      <zone xml:id="facs_7_r_3" ulx="59" uly="155" lrx="372" lry="238" />
+      <zone xml:id="facs_7_r_4" ulx="543" uly="314" lrx="727" lry="415" />
+      <zone xml:id="facs_7_r_5" ulx="55" uly="348" lrx="368" lry="478" />
+      <zone xml:id="facs_7_r_6" ulx="445" uly="428" lrx="747" lry="543" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="810" lry="677">
+      <zone xml:id="facs_8_r_1" ulx="50" uly="81" lrx="360" lry="214" />
+      <zone xml:id="facs_8_r_2" ulx="429" uly="85" lrx="533" lry="103" />
+      <zone xml:id="facs_8_r_3" ulx="494" uly="156" lrx="740" lry="322" />
+      <zone xml:id="facs_8_r_4" ulx="54" uly="428" lrx="366" lry="541" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="828" lry="677">
+      <zone xml:id="facs_9_r_1" ulx="59" uly="81" lrx="371" lry="216" />
+      <zone xml:id="facs_9_r_2" ulx="444" uly="213" lrx="744" lry="405" />
+      <zone xml:id="facs_9_r_3" ulx="58" uly="364" lrx="166" lry="381" />
+      <zone xml:id="facs_9_r_4" ulx="55" uly="392" lrx="369" lry="562" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="832" lry="681">
+      <zone xml:id="facs_10_r_1" ulx="443" uly="117" lrx="743" lry="184" />
+      <zone xml:id="facs_10_r_2" ulx="60" uly="122" lrx="374" lry="245" />
+      <zone xml:id="facs_10_r_3" ulx="443" uly="320" lrx="630" lry="361" />
+      <zone xml:id="facs_10_r_4" ulx="58" uly="357" lrx="372" lry="551" />
+      <zone xml:id="facs_10_r_5" ulx="445" uly="421" lrx="746" lry="438" />
+      <zone xml:id="facs_10_r_6" ulx="445" uly="533" lrx="748" lry="575" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="835" lry="684">
+      <zone xml:id="facs_11_r_1" ulx="60" uly="81" lrx="376" lry="177" />
+      <zone xml:id="facs_11_r_2" ulx="446" uly="86" lrx="752" lry="224" />
+      <zone xml:id="facs_11_r_3" ulx="448" uly="242" lrx="552" lry="260" />
+      <zone xml:id="facs_11_r_4" ulx="448" uly="266" lrx="752" lry="437" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="828" lry="680">
+      <zone xml:id="facs_12_r_1" ulx="60" uly="83" lrx="375" lry="138" />
+      <zone xml:id="facs_12_r_2" ulx="442" uly="116" lrx="686" lry="134" />
+      <zone xml:id="facs_12_r_3" ulx="443" uly="163" lrx="548" lry="180" />
+      <zone xml:id="facs_12_r_4" ulx="443" uly="194" lrx="743" lry="287" />
+      <zone xml:id="facs_12_r_5" ulx="60" uly="210" lrx="375" lry="370" />
+      <zone xml:id="facs_12_r_6" ulx="567" uly="345" lrx="745" lry="372" />
+      <zone xml:id="facs_12_r_7" ulx="446" uly="429" lrx="551" lry="446" />
+      <zone xml:id="facs_12_r_8" ulx="612" uly="467" lrx="723" lry="488" />
+    </surface>
+    <surface xml:id="facs_13" ulx="0" uly="0" lrx="831" lry="680">
+      <zone xml:id="facs_13_r_1" ulx="444" uly="102" lrx="595" lry="118" />
+      <zone xml:id="facs_13_r_2" ulx="479" uly="114" lrx="746" lry="234" />
+      <zone xml:id="facs_13_r_3" ulx="62" uly="130" lrx="375" lry="247" />
+      <zone xml:id="facs_13_r_4" ulx="446" uly="294" lrx="648" lry="388" />
+      <zone xml:id="facs_13_r_5" ulx="60" uly="356" lrx="375" lry="528" />
+      <zone xml:id="facs_13_r_6" ulx="445" uly="381" lrx="747" lry="576" />
+    </surface>
+    <surface xml:id="facs_14" ulx="0" uly="0" lrx="834" lry="684">
+      <zone xml:id="facs_14_r_1" ulx="64" uly="80" lrx="195" lry="99" />
+      <zone xml:id="facs_14_r_2" ulx="63" uly="108" lrx="376" lry="268" />
+      <zone xml:id="facs_14_r_3" ulx="445" uly="119" lrx="747" lry="159" />
+      <zone xml:id="facs_14_r_4" ulx="64" uly="268" lrx="375" lry="438" />
+      <zone xml:id="facs_14_r_5" ulx="445" uly="335" lrx="748" lry="390" />
+      <zone xml:id="facs_14_r_6" ulx="64" uly="472" lrx="172" lry="489" />
+      <zone xml:id="facs_14_r_7" ulx="62" uly="502" lrx="375" lry="570" />
+    </surface>
+    <surface xml:id="facs_15" ulx="0" uly="0" lrx="831" lry="677">
+      <zone xml:id="facs_15_r_1" ulx="63" uly="87" lrx="190" lry="96" />
+      <zone xml:id="facs_15_r_2" ulx="63" uly="114" lrx="373" lry="267" />
+      <zone xml:id="facs_15_r_3" ulx="63" uly="293" lrx="170" lry="303" />
+      <zone xml:id="facs_15_r_4" ulx="63" uly="321" lrx="373" lry="350" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <p facs="#facs_1_r_1">
+          Mein Gruß heute abend gilt auch dem Direktor des <orgName ref="#zbz-o.505">Österreichischen Instituts für Menschenrechte</orgName>, Herrn Univ.-Prof. DDr. <persName ref="#zbz-p.1281">Franz Matscher</persName>, sowie den Teilnehmern des Podiumsgespräches, Univ.-Prof. Dr. <persName ref="#zbz-p.1282">Marian Heitger</persName>, Univ.-Prof. Dr. <persName ref="#zbz-p.1283">Peter Oberndorfer</persName> und Univ.-Prof. Dr. <persName ref="#zbz-p.1284">Wolfram Karl</persName>. Ganz besonders freue ich mich, daß Altlandeshauptmann Dipl.-Ing. DDr. <persName ref="#zbz-p.1285">Hans Lechner</persName> heute bei uns ist, ein langjähriger Begleiter unserer Symposien und wissenschaftlichen Veranstaltungen, und besonders begrüßen möchte ich auch den neuen Generalvikar, Univ.-Prof. Dr. <persName ref="#zbz-p.1286">Johann Paarhammer</persName>. Auch allen anderen Teilnehmern und Gästen dieses Abends gilt mein herzlicher Gruß!
+        </p>
+        <p facs="#facs_1_r_2">
+          Der heutige Vortrag reiht sich in die Zahl der Veranstaltungen, welche das <orgName ref="#zbz-o.467">ORF-Landesstudio Salzburg</orgName> seit Jahrzehnten durchführt und unserem Haus, so glaube ich in aller Bescheidenheit behaupten zu können, einen anerkannten wissenschaftlichen Ruf im deutschen Sprachraum eingetragen hat. Gerade in einer <bibl ref="#zbz-w.705">Zeit</bibl>, in der sich die Rundfunklandschaft wesentlich verändert, ist es für einen öffentlichrechtlichen Sender eine wesentliche Aufgabe, Bildung und Wissenschaft zu fördern. Mit den <placeName ref="#zbz-l.357">Salzburger</placeName> Humanismusgesprächen, einem repräsentativen Forum wissenschaftlicher Diskussionen internationaler Kapazitäten, mit den Symposien, die wir gemeinsam mit der <orgName ref="#zbz-o.46">Universität</orgName> und dem Land <placeName ref="#zbz-l.357">Salzburg</placeName> veranstalten, und mit den Fernsehserien »<bibl ref="#zbz-w.532">Feindbilder</bibl>« und »<bibl ref="#zbz-w.533">Zeitzeugen</bibl>« hat der <orgName ref="#zbz-o.49">ORF</orgName> hier bekannte Beispiele geliefert. Immer wieder steht bei diesen Veranstaltungen aber der <persName ref="#zbz-p.1251">Mensch</persName> im Mittelpunkt. So auch heute, wobei die Frage: »Warum hat der <persName ref="#zbz-p.1251">Mensch</persName> besondere Rechte?« von <persName ref="#zbz-p.2">Jeanne Hersch</persName> in ihrem Vortrag und in der anschließenden Diskussion behandelt werden wird. Eine definitive Antwort darauf ist sicher nicht einfach; nur zu leicht könnte diese zynisch ausfallen, wenn man die gesellschaftlichen und politischen Entwicklungen in unserem größeren Umfeld betrachtet. Darüber werden wir aber heute einige wesentliche Aussagen erhalten. Ich danke Ihnen nochmals sehr herzlich für Ihr Kommen und wünsche Ihnen einen angeregten Abend!
+        </p>
+        <p facs="#facs_1_r_3">
+          <bibl ref="#zbz-w.534">Menschenrechte und Menschsein - Warum hat der Mensch besondere Rechte?</bibl>
+        </p>
+        <p facs="#facs_1_r_4">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_1_r_5">
+          Meine Damen und Herren!
+        </p>
+        <p>
+          Das Thema »Menschenrechte« ist ein sehr schwieriges Thema und ich werde Ihnen sagen warum. Wenn man versucht auszusprechen, was die Menschenrechte sind, riskiert man sofort, etwas zu sagen, was jemand anderer aus seinem Menschenrechtsverständnis heraus bestreitet. Alles was man sagt, kann auch wieder als gegen die Menschenrechte gerichtet angegriffen werden. Im Grunde, wenn wir Menschen nicht Menschen wären, sondern etwas anderes, hätte man hoffen können, daß die Menschenrechte nie genannt, sondern schlicht geachtet worden wären - daß es selbstverständlich wäre, daß jeder <persName ref="#zbz-p.1251">Mensch</persName> ein Recht darauf hat, das zu sein, was er eben ist, und daß kein <persName ref="#zbz-p.1251">Mensch</persName> erst einen Anspruch auf Menschenrechte erheben müßte. Im Grunde ist es also schon ein beklagenswerter Zustand, daß man von den Menschenrechten überhaupt sprechen muß und daß man angegriffen wird, wenn man es tut.
+        </p>
+        <p>
+          Als ich 1966 in der <orgName ref="#zbz-o.51">UNESCO</orgName> zu arbeiten begann, in der neugeschaffenen Abteilung für <bibl ref="#zbz-w.1">Philosophie</bibl>, da rüstete man gerade für den 20. Jahrestag der Allgemeinen Erklärung der Menschenrechte (1948). Meine Abteilung wurde damit beauftragt, für diesen Anlaß ein Buch über die Menschenrechte zusammenzustellen - aber wie, hat man uns nicht gesagt. Ich überlegte nun: wenn ich alle Texte aller Länder veröffentliche, in denen ein Nachhall der universellen Erklärung zu vernehmen ist, wird es ein todlangweiliges Buch. Niemand wird es lesen, alle werden sich langweilen, am meisten ich selber. Ich beschloß also, etwas zu tun, was nur in der <orgName ref="#zbz-o.51">UNESCO</orgName> möglich war: Prüfen ob es zutrifft, daß - wie man manchmal hört - die Menschenrechte nur eine westliche Erfindung seien, eine imperialistische Idee
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_2_r_2">
+          Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_2_r_3">
+          sozusagen, die dem <placeName ref="#zbz-l.56">Westen</placeName> hilft, die übrige Welt zu beherrschen. Ich nützte also die Präsenz der <orgName ref="#zbz-o.51">UNESCO</orgName> in den verschiedensten Teilen der Welt und schrieb an die Nationalen Kommissionen aller Mitgliedstaaten und bat sie um Texte, die nach ihrer Meinung (nicht nach meiner!) etwas mit Menschenrechten zu tun haben. Egal ob Rechts texte, Dichtungen oder <bibl ref="#zbz-w.1">Philosophie</bibl> - die Texte sollten aus ihrer eigenen Tradition stammen und vor 1948 bestanden haben, also nicht unter dem Einfluß der <orgName ref="#zbz-o.55">UNO</orgName>-Erklärung stehen.
+        </p>
+        <p facs="#facs_2_r_4">
+          Ich schickte diesen Brief in alle Länder - es waren damals 128 - und wartete. Ich wartete und zitterte, denn ich fürchtete, es käme nichts oder nur Unbrauchbares; es war ein Experiment!
+        </p>
+        <p>
+          Die Texte, die dann eintrafen, waren so zahlreich und es waren derer so viele, daß man in meinem geräumigen Büro nicht mehr gehen konnte. Überall lagen »Stalagmiten« von Texten, woraus es nun galt, ein Buch zu machen, um zu sehen, ob wirklich nur der <placeName ref="#zbz-l.56">Westen</placeName> von Menschenrechten träumt. Das Schöne dabei war, daß während der Lektüre dieser Texte nach und nach alle Aspekte der Menschenrechte zum Vorschein kamen - in dem einen Land der eine Aspekt, in dem anderen ein anderer. Also zur Frage, ob Menschenrechte eine westliche Erfindung oder gar eine imperialistische Waffe sind: Mitnichten! Natürlich findet man nicht in allen Ländern Texte, die juristisch, philosophisch oder in westlicher Form verfaßt sind. In verschiedenen Ländern Afrikas z.B. waren es hauptsächlich Lieder oder Sprichwörter, die aber von den Menschenrechten sprachen und die Sehnsucht danach ausdrückten. So etwa, wenn 2000 v. Chr. die Ägypter auf einem Stein von einem Streik erzählten, mit Hilfe dessen es den Arbeitern schließlich gelang, richtig entlohnt zu werden, hatte das in ihren Augen etwas mit Menschenrechten zu tun! Es gab eine unglaubliche Vielzahl solcher Texte, die sehr verschieden waren und alle Aspekte der Menschenrechte aufzeigten.
+        </p>
+        <p>
+          Aber daß es so ist, macht das Verständnis der Menschenrechte nicht leichter. Ihre Vielfalt bewirkt, daß man ihre
+        </p>
+        <p>
+          Wurzel aus den Augen verliert; und ich glaube fest, daß es eine Wurzel der Menschenrechte gibt! Jeder <persName ref="#zbz-p.1251">Mensch</persName> hat das Gefühl, daß in ihm etwas steckt, das Achtung verdient, das gefördert werden sollte, das wertvoll ist, das man nicht zerstören darf. Dieses Gefühl, dieses Würdegefühl, ist menschlich entscheidend und wir müssen versuchen, den <bibl ref="#zbz-w.43">Ursprung</bibl> davon zu begreifen. Warum haben wir dieses Gefühl? Sind wir denn so edel? Sind wir so wunderbar? Wenn wir unsere Geschichte betrachten, sind wir entsetzt, wenn wir feststellen, wozu die Menschen fähig sind. Und trotzdem besteht dieses Gefühl der Würde jedes Einzelnen.
+        </p>
+        <p>
+          Was bedeutet das? Heutzutage studieren sehr viele Studenten Rechtswissenschaft. Immer mehr Studenten lernen immer mehr Paragraphen kennen und verstehen. Und ich frage Sie: wie ist es zu erklären, daß Menschen, die doch eigentlich gerne tun, was ihnen gerade gefällt, sich selbst so viele gesetzliche Bindungen auferlegt haben? Das ist doch seltsam! Es gibt keine andere zoologische Gattung, die dies täte. Freilich sind die Gesetze nicht immer dieselben, aber Gesetze wollen die Menschen haben - überall und zu jeder <bibl ref="#zbz-w.705">Zeit</bibl>. Warum unterwerfen sie sich diesem Zwang und warum machen sie sich damit das Leben schwer? Welches ist die Wurzel, in der Natur dieser zoologischen Gattung, die sich diesen Zwang auferlegt? Wenn ich Studenten frage, die auf diesem Gebiet arbeiten, können sie mir meistens keine Antwort geben. Sie machen sich darüber kaum Gedanken - mit der Rechtsphilosophie beschäftigt man sich heute leider viel zu wenig! Die Studenten wissen daher nicht, warum der <persName ref="#zbz-p.1251">Mensch</persName> das Recht geschaffen hat, sie tun als wäre dies selbstverständlich. Aber es ist nicht selbstverständlich, und ich habe den Eindruck, je besser man die Paragraphen versteht, desto weniger begreift man, warum man sie geschaffen hat.
+        </p>
+        <p>
+          Was will man damit eigentlich? Es handelt sich natürlich nicht nur um Menschenrechte, sondern um das Recht schlechthin, dem ein Zwang innewohnt. Es ist ein Grundzug der menschlichen Gattung, genauso wie die Sprache, die Arbeit, die <bibl ref="#zbz-w.705">Zeit</bibl>, das Wissen um den Tod, die Geschich-
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_3_r_2">
+          Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_3_r_3">
+          te ... Das alles ist uns eigentümlich. Worum geht es also bei den Rechten? Wir verstehen, daß Rechte nicht nur formuliert wurden, um Menschen zu schützen, um einen Angriff zu verhindern, daß diese nicht nur aus der <bibl ref="#zbz-w.451">Angst</bibl> heraus entstanden sind. Warum hat der <persName ref="#zbz-p.1251">Mensch</persName> also Rechte?
+        </p>
+        <p facs="#facs_3_r_4">
+          Manche spotten darüber. Sie meinen, wir sprechen von den Menschenrechten, weil wir Menschen sind. Wären wir Katzen, würden wir von Katzenrechten sprechen, und wären wir Dreiecke, von den Rechten der Dreiecke. Dem muß ich widersprechen. Denn der <persName ref="#zbz-p.1251">Mensch</persName> ist etwas Besonderes, er führt etwas in die Welt ein, das es ohne ihn nicht gäbe.
+        </p>
+        <p facs="#facs_3_r_5">
+          In unserer Welt herrschen zwei grundlegende Wirklichkeiten: einerseits die Kausalität, also die Verbindung der Phänomene untereinander, wo das eine das andere verursacht. Dieser Zwang der Ursache, dieser Determinismus, beherrscht die ganze Natur und kommt in den Naturgesetzen zum Ausdruck.
+        </p>
+        <p facs="#facs_3_r_6">
+          In der Welt der lebendigen Wesen herrscht aber andererseits auch das Gesetz des Stärkeren. Unsere <bibl ref="#zbz-w.705">Zeit</bibl> schwärmt von der Ökologie und viele Menschen sind in die Natur verliebt. Die Natur ist sehr schön, wenn wir in ihr spazierengehen; sie ist aber auch unglaublich grausam. In der Natur frißt der Stärkere den Schwächeren, und das gilt überall. Hätte die Natur nicht die Fähigkeit, sich selbst immer so schnell zu reinigen, könnten wir vor lauter Leichen gar nicht spazierengehen. In der Natur herrschen also die Gesetze der Kausalität und das Recht des Stärkeren als Gesetz des Lebens.
+        </p>
+        <p>
+          Nun bringt aber der <persName ref="#zbz-p.1251">Mensch</persName> - als <persName ref="#zbz-p.1251">Mensch</persName> - etwas Neues in die Natur, nämlich die Entscheidung. <bibl ref="#zbz-w.657">Der Mensch</bibl> entscheidet dies oder jenes zu tun, und er tut es. Und was er tut, verändert die Natur. Es geschehen Ereignisse, die gewollt, entschieden, gewählt werden, die aus dem Bewußtsein der Menschen entstanden sind. Bewußtsein und <persName ref="#zbz-p.89">Wahl</persName> gibt es aber nur bei den Menschen; und weil es sie gibt, stellt sich die Frage nach »Gut« oder »Schlecht«. Man kann das Schlechte wählen, aber man hat es doch als »schlecht«
+        </p>
+        <p>
+          beurteilt, es ist eine <persName ref="#zbz-p.89">Wahl</persName> und eine Entscheidung. Das ist eine radikale Ausnahme in der Welt. Wir sagen es uns viel zu selten, daß wir Träger dieser Ausnahme sind. Und weil wir das können (und weil wir eigentlich gar nichts anderes können), trägt jeder von uns eine verantwortliche Freiheit in sich. Aus demselben Grund sprechen wir auch - wir sprechen, weil wir diese freie <persName ref="#zbz-p.89">Wahl</persName> haben. Alles was der <persName ref="#zbz-p.1251">Mensch</persName> entwickelte, entstammt dieser einzigartigen Fähigkeit. Und dies ist wohl der Grund, warum die Menschen Rechte haben. Jeder <persName ref="#zbz-p.1251">Mensch</persName> - nicht nur die Menschheit als Ganzes, sondern jeder einzelne <persName ref="#zbz-p.1251">Mensch</persName> - hat wegen dieser Fähigkeit und als Träger dieser Dimension (die ohne ihn nicht existieren würde) Rechte - wo er auch leben mag. Deswegen gibt es »ein Recht des Menschen, ein <persName ref="#zbz-p.1251">Mensch</persName> zu sein«.
+        </p>
+        <p>
+          Das Buch, das ich damals für die <orgName ref="#zbz-o.51">UNESCO</orgName> erstellte, trägt den Titel <bibl ref="#zbz-w.92">»Das Recht, ein Mensch zu sein«</bibl>. <bibl ref="#zbz-w.657">Der Mensch</bibl> hat Rechte, denn er hat einen Anspruch darauf, aus sich einen Menschen machen zu können. Es hängt von seiner Verantwortung ab. Aber das bedeutet keineswegs, daß der <persName ref="#zbz-p.1251">Mensch</persName> deswegen engelhaft wäre. Es bedeutet auch nicht, daß der <persName ref="#zbz-p.1251">Mensch</persName> dadurch seine physische Situation überwindet. Er bleibt notwendigerweise dem Zwang unterworfen. Er muß auch essen. <persName ref="#zbz-p.1287">Mutter Theresa</persName>, die bei ihren hungernden Indern lebt, muß ebenfalls essen, denn würde sie es nicht, könnte sie auch nicht mehr helfen. Wir tragen also die körperliche Wirklichkeit, den körperlichen Zwang, immer mit uns. Das heißt aber: Menschsein ist nie nur freies Bewußtsein und freie Möglichkeit der <persName ref="#zbz-p.89">Wahl</persName>; Menschsein ist auch nie nur physischer Körper mit allen seinen Notwendigkeiten, sondern es ist die Kreuzung beider Wirklichkeiten. Der Dichter <persName ref="#zbz-p.173">Rimbaud</persName> sagte, der <persName ref="#zbz-p.1251">Mensch</persName> sei »une âme et un corps«. Das bedeutet weder Seele noch Körper allein, sondern im »und« ereignet sich der <persName ref="#zbz-p.1251">Mensch</persName>.
+        </p>
+        <p>
+          <bibl ref="#zbz-w.657">Der Mensch</bibl> ist oft versucht, in das eine oder das andere Element des Menschseins zu fliehen, denn es ist gar nicht bequem, ein <persName ref="#zbz-p.1251">Mensch</persName> zu sein. Doch nur in diesem Zusammenhang
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_4_r_2">
+          Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_4_r_3">
+          mentreffen von beidem - da wo die beiden Realitäten sich schneiden - gibt es wirkliches Menschsein. Versucht man, dem einen oder dem anderen zu entfliehen, hört man auf, <persName ref="#zbz-p.1251">Mensch</persName> zu sein. Dann tut der <persName ref="#zbz-p.1251">Mensch</persName>, als wäre er nur ein Tier oder als wäre er nur ein Engel.
+        </p>
+        <p facs="#facs_4_r_4">
+          Wir sind es auch oft leid, <persName ref="#zbz-p.1251">Mensch</persName> zu sein, da man dabei immer wieder schuldig wird. Wir alle suchen aber die Unschuld, sei es die Unschuld der Kuh auf der Wiese oder die Unschuld des <persName ref="#zbz-p.210">Engels</persName> im Himmel. Aber der <persName ref="#zbz-p.1251">Mensch</persName> hat gerade deshalb Rechte, weil er ein <persName ref="#zbz-p.1251">Mensch</persName> ist, also - wenn Sie so wollen - dank der Erbsünde! Die Erbsünde wurde im Mittelalter <hi rendition="#i">felix culpa</hi> genannt. »Felix« nicht nur, weil daraus die Menschheit entstanden ist, sondern auch, weil der <persName ref="#zbz-p.1251">Mensch</persName> daraus entstanden ist. <bibl ref="#zbz-w.657">Der Mensch</bibl> begriff sich also aus der Kreuzung beider Wirklichkeiten, wodurch er erst zum Menschen wurde.
+        </p>
+        <p facs="#facs_4_r_5">
+          Also müssen wir entdecken: wir wollen zwar das Gesetz, aber das Gesetz besteht nicht nur im Geistigen. Mit dem Gesetz muß es auch eine Polizei geben - die Polizei ist gewissermaßen der Körper des Gesetzes. (Es gibt ja keine Polizei ohne Zwang und das heißt, daß man wieder zum »Körper« gelangt.) Die Wurzel der Menschenrechte liegt gerade da, und diese sind gerade wegen dieser Widersprüchlichkeit, die den Menschen ausmacht, so bedroht.
+        </p>
+        <p>
+          <bibl ref="#zbz-w.657">Der Mensch</bibl> hat Rechte als <persName ref="#zbz-p.1251">Mensch</persName>, ob er weiß ist oder schwarz, gescheit oder weniger gescheit, begabt oder unbegabt, also unabhängig von jeder persönlichen Eigenschaft. Viele glauben, daß begabte Menschen mehr Menschenrechte besitzen als andere: Das ist grundfalsch, denn die Menschenrechte hängen weder von der Begabung noch von der Schönheit oder Farbe ab, sondern eben von dieser Grundkonstitution des Menschen - daß er nämlich diese verantwortliche Freiheit besitzt, mit der er sich gegenüber der Kausalität und der Gewalt der übrigen Welt zu behaupten hat. Diese Möglichkeit seiner verantwortlichen Freiheit soll er verteidigen und das ist vielleicht seine grundlegendste Pflicht. Er soll diese Möglichkeit der individuellen Verantwortung verteidigen, daß niemand sie ihm raube. Niemand darf sagen müssen oder können, er sei unschuldig und könne nichts für das, was er tat.
+        </p>
+        <p>
+          <bibl ref="#zbz-w.657">Der Mensch</bibl> muß auch irgendwann im Laufe seiner Erziehung die Erfahrung machen, daß ihn im Grunde niemand zwingen kann. Freilich ist es manchmal sehr schwer zu widerstehen, aber wenn man zu allem bereit ist, ist es immer möglich. Das bedeutet aber, daß die Freiheit immer im Spiel ist - also ist auch die Schuld immer im Spiel. Aber umgekehrt ist auch der Zwang immer im Spiel.
+        </p>
+        <p>
+          Es ist eine faule und zu leichte Illusion zu glauben, ein engelsgleicher <persName ref="#zbz-p.1251">Mensch</persName> zu sein. Wenn man den Zwang nicht mehr sieht, ihn nicht mehr spürt, macht man sich das Menschliche und die Menschenrechte zu leicht. Dann flieht man außerhalb des Menschlichen. Man soll den Menschen auch nicht einreden wollen, die Menschenrechte wären leicht zu verwirklichen. Keineswegs, denn in der Menschheit herrscht immer die Gefahr der Gewalt und des Zwanges.
+        </p>
+        <p>
+          Es besteht die Versuchung, immer mehr Menschenrechte zu formulieren und zu statuieren. Man begann mit den zivilen und politischen Rechten; diese sind noch relativ leicht auszumachen und zu definieren. Dann entdeckte man, daß es Vorbedingungen gibt, damit die zivilen und politischen Rechte wirksam werden können. Um diese auszuüben, müssen die Menschen z.B. die Möglichkeit zum Denken haben. Um aber überhaupt denken zu können, brauchen sie <bibl ref="#zbz-w.705">Zeit</bibl>. Und um <bibl ref="#zbz-w.705">Zeit</bibl> zu haben, müssen bei ihnen erst die natürlichen Grundbedürfnisse befriedigt sein. So kommt man auf eine Reihe anderer Rechte - ökonomische, soziale, Erziehungsrechte usw. - und der Bereich der Menschenrechte wird immer weiter ausgedehnt.
+        </p>
+        <p>
+          Aber je mehr Grundrechte man fordert, desto weniger Kraft bleibt, um die einzelnen Rechte fest und klar durchzusetzen. Auch sind z.B. die ökonomischen und politischen Rechte immer auch von der allgemeinen Situation einer Gesellschaft abhängig. Wir können nicht von einer unterentwickelten Gesellschaft dasselbe verlangen wie von einer entwickelten (obgleich es stimmt, daß die ökonomi-
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_5_l_1_1" n="N001" />Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_5_r_2">
+          schen Rechte für die Ausübung der Freiheit notwendig sind). Die Frage der Menschenrechte wird daher in der Praxis immer schwieriger. Sie hängt von den historischen Bedingungen ab, also davon, in welcher Spanne der Geschichte man lebt. Sie lassen sich nie eindeutig und ein für allemal definieren!
+        </p>
+        <p facs="#facs_5_r_3">
+          Es gibt auch noch ein weiteres Problem, wofür ich die schreckliche Lage im ehemaligen <placeName ref="#zbz-l.15">Jugoslawien</placeName> kurz erwähnen möchte. Der französische Minister Kouchner verkündete unlängst, man habe nicht nur ein Recht, sondern sogar eine Pflicht, sich in bestimmten Situationen in die inneren Angelegenheiten bestimmter Ländern einzumischen, was ansonsten durch die Charta der <orgName ref="#zbz-o.55">Vereinten Nationen</orgName> verboten ist. Man müsse notfalls auch militärische Gewalt anwenden, um die Menschenrechte zu retten. Es bestünde also die Pflicht zur militärischen Intervention, fast eine Pflicht zum Krieg.
+        </p>
+        <p facs="#facs_5_r_4">
+          Dieser Tage begegnete mir ein <orgName ref="#zbz-o.760">Schweizer</orgName> Jurist, der mich flehentlich bat: »Können Sie diesen Kouchner nicht aufhalten? Er hat ja keine Ahnung, wie zerbrechlich das Recht ist. Wenn wir so weitermachen, fallen wir in barbarische Zustände zurück!« Ich erzähle Ihnen dies, um Sie auf die Zweischneidigkeit der Situation hinzuweisen. Immer wenn man menschlich sein will und je mehr man die Menschenrechte durchsetzen will, desto mehr tritt die Gefahr des Zwanges und des Konfliktes auf. Immer stehen wir in der Spannung zwischen Vorsicht und Gerechtigkeit! Und deshalb ist es gar zu leicht, aus der Warte des Tugendhaften die Verantwortungsträger zu kritisieren. Das Richtige zu tun ist leicht in der Vorstellung, aber schwer in einer bestimmten historischen Situation, weil dabei immer auch Gewalt im Spiel ist. Und Gewalt ist selbst bei den Menschenrechten im Spiel – eben beim Kampf um die Menschenrechte. Man kann diese beiden Wirklichkeiten nicht klar und endgültig voneinander trennen.
+        </p>
+        <p facs="#facs_5_r_5">
+          Also müßte man eigentlich nur tolerant sein, nicht wahr? Was aber, wenn der andere nicht die Wahrheit vertritt? – Dazu ist etwas ganz Wesentliches zu sagen: Niemand kann
+        </p>
+        <p facs="#facs_5_r_6">
+          behaupten, daß er die ganze, die integrale, die letzte Wahrheit besitzt. Diese Begrenzung macht ja den Menschen aus. Nicht, daß es uns egal wäre, ob der andere die Wahrheit erkennt, aber wegen der Komplexität des Menschseins kann niemand sicher sein, die Wahrheit zu besitzen. Daher kann man auch keinen universellen Wahrheitsanspruch erheben und andere zwingen, so zu denken wie man selbst denkt.
+        </p>
+        <p facs="#facs_5_r_7">
+          Aber da kommt noch etwas hinzu: Man muß endlich begreifen, daß ein aufgezwungener Gedanke eigentlich kein Gedanke ist. Es ist nicht nur falsch, jemandem die eigene Meinung aufzuzwingen, sondern es ist absolut sinnlos. Man kann nicht zur Wahrheit gezwungen werden. Es ist unmöglich, weil die Wahrheit frei anerkannt werden muß – wegen jener Freiheit, von der wir anfangs gesprochen haben, jener Freiheit, die ein Anspruch jedes Menschen ist. Deswegen ist es weder Güte noch Zurückhaltung, sondern es wäre schlicht sinnlos, jemanden mit Gewalt zur »Wahrheit« bekehren zu wollen.
+        </p>
+        <p facs="#facs_5_r_8">
+          Ein Beispiel: Stellen Sie sich vor, Sie wollen einem Schüler in der Geometrie eine Beweisführung erklären. Sollte es möglich sein, daß Ihnen dieser Schüler antwortet, er verstehe zwar die Beweisführung, sei jedoch damit nicht einverstanden? Das ist schlicht unmöglich. Eine Beweisführung kann man nicht verstehen und gleichzeitig mit ihr nicht einverstanden sein. Sie ist entweder frei oder sie ist keine Beweisführung. Das Denken ist frei oder es ist kein Denken. Wenn Zwang ins Denken eingeführt wird (oder auch in den Glauben, was dasselbe ist), dann ist es sinnlos. Deswegen ist es so wichtig zu verstehen, was der <persName ref="#zbz-p.1251">Mensch</persName> ist. Seine Freiheit, seine verantwortliche Freiheit lebt in einem Körper, der der Natur – also dem Zwang der Natur, der Kausalität – unterworfenen ist. Wegen dieser Doppelnatur des Menschen haben wir diese Schwierigkeiten, aber gerade dadurch sind wir eben Menschen.
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          13
+        </p>
+        <p facs="#facs_6_r_2">
+          Podiumsgespräch
+        </p>
+        <p facs="#facs_6_r_3">
+          Prof. <persName ref="#zbz-p.1284">Wolfram Karl</persName>
+        </p>
+        <p facs="#facs_6_r_4">
+          Frau Professor <persName ref="#zbz-p.2">Hersch</persName>, ich darf Ihnen im Namen der Veranstalter und des Publikums sehr herzlich für diesen Vortrag danken. Wir wollten die Reihe der Hermann und Marianne Straniak Vorlesungen, die mit diesem Abend begann und jährlich eine große Vorlesung zum Thema Menschenrechte nach <placeName ref="#zbz-l.357">Salzburg</placeName> bringen soll, mit einem besonderen Ereignis eröffnen. Dies ist uns dank Ihrer Hilfe gelungen!
+        </p>
+        <p facs="#facs_6_r_5">
+          Meine sehr geehrten Damen und Herren! Lassen Sie mich bei dieser Gelegenheit auch einige Worte zur <orgName ref="#zbz-o.507">Herbert und Marianne Straniak Stiftung</orgName> sagen, die dieser Vorlesungsreihe den Namen gibt. Der Stifter, Diplomkaufmann <persName ref="#zbz-p.1288">Hermann Straniak</persName>, war ein vermögender <placeName ref="#zbz-l.357">Salzburger</placeName> Kaufmann, der sich in den letzten Jahren seines Lebens mit der <bibl ref="#zbz-w.1">Philosophie</bibl> und den Menschenrechten befaßte. Zweck seiner Stiftung ist neben der Unterstützung praktischer humanitärer Ziele auch die Förderung der Ziele und Gedanken, die in der <bibl ref="#zbz-w.535">Europäischen Menschenrechtskonvention</bibl> niedergelegt sind. Ein besonderes Anliegen war für <persName ref="#zbz-p.1288">Hermann Straniak</persName> die Bewahrung der geistigen Freiheit des Einzelnen und das Bemühen um eine Synthese von östlicher und westlicher <bibl ref="#zbz-w.1">Philosophie</bibl>. In dieser Hinsicht hat die <orgName ref="#zbz-o.507">Straniak-Stiftung</orgName> das <orgName ref="#zbz-o.505">Österreichische Institut für Menschenrechte</orgName> bereits mehrfach unterstützt und wir dürfen bei dieser Gelegenheit dem Präsidenten ihres Stiftungsrates, der heute unter uns weilt, Herrn Rechtsanwalt Dr. <persName ref="#zbz-p.1289">Liebscher</persName> aus <placeName ref="#zbz-l.357">Salzburg</placeName>, unseren ganz besonderen Dank ausdrücken.
+        </p>
+        <p>
+          Nun lassen Sie mich kurz die anderen Podiumsteilnehmer vorstellen: Herr Professor <persName ref="#zbz-p.1282">Marian Heitger</persName> ist in <placeName ref="#zbz-l.357">Salzburg</placeName> kein Unbekannter. Er wurde 1927 in <placeName ref="#zbz-l.470">Hamm</placeName>, <placeName ref="#zbz-l.471">Westfalen</placeName>, geboren, lehrt seit 30 Jahren in <placeName ref="#zbz-l.11">Wien</placeName> Pädagogik und leitet neben dem dortigen Universitätsinstitut auch ein Institut für Sonder- und Heilpädagogik. Außerdem betreut er
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_7_r_2">
+          Podiumsgespräch
+        </p>
+        <p facs="#facs_7_r_3">
+          in <placeName ref="#zbz-l.357">Salzburg</placeName> das Institut für Medienpädagogik am Internationalen Forschungszentrum. Herr Professor <persName ref="#zbz-p.1282">Heitger</persName> befasst sich vorwiegend mit philosophischen Fragen im Bereich der Pädagogik.
+        </p>
+        <p facs="#facs_7_r_4">
+          Da die Menschenrechte aber auch in der Rechtswissenschaft einen Schwerpunkt bilden, haben wir weiterhin Herrn Professor <persName ref="#zbz-p.1283">Peter Oberndorfer</persName> um seine Mitwirkung gebeten. Herr Professor Oberndorfer wurde 1942 geboren, er lehrt Öffentliches Recht in <placeName ref="#zbz-l.472">Linz</placeName> und ist seit 1987 Mitglied des Verfassungsgerichtshofes in <placeName ref="#zbz-l.11">Wien</placeName>. Dieser Gerichtshof ist der eigentliche Grundrechtsgerichtshof <placeName ref="#zbz-l.443">Österreichs</placeName> und Sie sehen daher in der Person Professor <persName ref="#zbz-p.1283">Oberndorfers</persName> auch einen hervorragenden Grundrechtspraktiker.
+        </p>
+        <p facs="#facs_7_r_5">
+          Ich darf die Herren nun um ihre Beiträge bzw. Fragen bitten und auch Sie, meine Damen und Herren im Publikum, dazu einladen, Fragen an Frau Professor <persName ref="#zbz-p.2">Hersch</persName> zu richten.
+        </p>
+        <p facs="#facs_7_r_6">
+          Prof. <persName ref="#zbz-p.1282">Marian Heitger</persName>
+        </p>
+        <p>
+          Frau Professor <persName ref="#zbz-p.2">Hersch</persName>, ich möchte meine Frage unter drei Aspekten stellen. Der erste Aspekt ist folgender: Ich stelle natürlich außer Zweifel, daß die Betonung der Menschenrechte unabdingbar und notwendig ist, wie Sie das auch gesagt haben. Aber ist es nicht auch notwendig, den Menschenrechten die Menschenpflichten an die Seite zu stellen? Muß man nicht gerade heute, wo das Pochen auf Rechten so verbreitet ist, auch sagen, daß es neben dem Recht, ein <persName ref="#zbz-p.1251">Mensch</persName> zu sein, auch eine Pflicht gibt, ein <persName ref="#zbz-p.1251">Mensch</persName> zu sein?
+        </p>
+        <p>
+          Der zweite Aspekt ist ein ganz anderer, und obwohl ich Ihre Antwort zu kennen glaube, möchte ich ihn doch formulieren: Es gibt eine merkwürdige »Sprache« heutzutage, die ich eine Unkultur nenne, wenn man in gleicher Weise von den Rechten der Tiere wie von den Rechten der Menschen spricht. Es ist vielleicht unpopulär, aber sollten wir nicht doch eine andere Formulierung wählen? Man möge
+        </p>
+        <p>
+          mir nicht unterstellen, ich sei gegen die Tiere und gegen die Natur. Bei Kätzchen und Häschen und allem, was wir lieben und schön finden, ist es ja nicht so problematisch, aber würden wir den Läusen und den Krebszellen auch jene Rechte zugestehen?
+        </p>
+        <p>
+          Mein dritter Aspekt ist mit dem ersten verbunden: Wie steht es mit dem Recht auf Bildung, wo die ausschließliche Betonung des Rechts - gewissermaßen als Bringschuld des Staates und der Gesellschaft verstanden - zu bildungspolitisch nicht immer den besten Konsequenzen geführt hat? Gibt es nicht gleichzeitig auch die Pflicht, sich zu bilden?
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Zunächst zu den Rechten und Pflichten. Ich glaube, daß es kein Recht gibt, das nicht gleichzeitig auch eine Pflicht beinhaltet. Man braucht eigentlich nicht einmal zwei Listen mit den Rechten und den entsprechenden Pflichten zu schreiben, sondern richtig verstanden und unter den konkreten Bedingungen, unter denen die Menschen leben, ist jedes Recht immer auch eine Pflicht. Es enthält z.B. die Pflicht, den anderen zu achten, ihm seinen Frei- und Lebensraum zu lassen, ihn zu ehren usw. Das geht sehr weit. Die ganze Moral kommt da herein, nicht wahr? Deswegen ist es auch so schwer, die Menschenrechte juristisch zu begrenzen. Ich bin also ganz Ihrer Meinung.
+        </p>
+        <p>
+          Stichwort »Unkultur« und »Rechte der Tiere«: Dazu möchte ich Ihnen etwas erzählen. Der <orgName ref="#zbz-o.760">Schweizer</orgName> Denker <persName ref="#zbz-p.446">Denis de Rougemont</persName> hat die Menschenrechte sehr gut verstanden. Als er alt wurde, geriet er vermutlich unter den Einfluß irgendwelcher Ökologen und gründete eine neue Gesellschaft, die im <placeName ref="#zbz-l.473">Völkerbundpalast</placeName> in <placeName ref="#zbz-l.48">Genf</placeName> tagte. An dieser Tagung nahmen wichtige Menschen teil und über ihnen hing ein großes Plakat, auf dem geschrieben stand: »Les droits des animaux« (Die Rechte der Tiere). Ich war krank vor Empörung, denn es ist klar, daß der Grund, warum die Menschen Rechte haben, bei den Tieren nicht vor-
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_8_r_2">
+          Podiumsgespräch
+        </p>
+        <p facs="#facs_8_r_3">
+          handen ist. Ob Vogel oder Laus - bei den Tieren fehlt dieser Grund! Bei den Haustieren sind mir zwar manchmal Zweifel gekommen, denn manche scheinen vom Menschen angesteckt. (So besaß ich einmal einen sehr lieben großen Hund, den ich sah, als er Gewissensbisse hatte. Er lag flach auf dem Boden wie eine Haut, und da er schwarz war, sah man nur das Weiße der Augen, die sich drehten. Und es war klar warum - er hatte die Hälfte einer Jacke gefressen.) Aber abgesehen von diesem Sonderfall haben die Tiere gerade das nicht, was die Wurzel der Menschenrechte ausmacht, nämlich die bewußte, verantwortliche Freiheit.
+        </p>
+        <p facs="#facs_8_r_4">
+          Nun zu Ihrem dritten Punkt, nämlich zur »Pflicht zur Bildung«. Ich stimme Ihnen mit einer Einschränkung zu: Ich weiß nicht, ob das auf alle Menschen paßt. Es gibt Menschen, die vielleicht in einem tieferen Sinn Menschen sind, obwohl sie das, was wir gewöhnlich Bildung nennen, nicht besitzen. Wahrscheinlich haben sie eine andere, eine besondere Art der Bildung. Ich finde, man müßte deutlicher unterscheiden zwischen dem, was man gewöhnlich für Bildung hält und der wahren Bildung. Wahre Bildung ist die Bildung zur verantwortlichen Freiheit des Menschen. Ohne sie ist es schade um die Bildung im herkömmlichen Sinn, ja es wäre besser ohne sie.
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.1282">Marian Heitger</persName>
+        </p>
+        <p>
+          Als Pädagoge möchte ich doch noch eine Anmerkung dazu machen. Zunächst einmal ist es ja unendlich schwer festzustellen, ob jemand gebildet ist oder nicht. Das läßt sich nicht operationalisieren, wie sich ja auch die Menschenrechte - wie Sie gesagt haben - nicht endgültig operationalisieren lassen. Nun aber: Wenn die Menschenrechte vorweg keinem Menschen abgesprochen werden dürfen, dann dürfte eigentlich auch die Möglichkeit sich zu bilden keinem Menschen vorenthalten werden. Stimmt das?
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Das würde ich annehmen und da fällt mir etwas ein, was Sie vielleicht belustigen wird. Als ich noch in der Schule unterrichtete (ich habe eine Zeitlang in der Sekundarschule unterrichtet), gab ich einmal eine Stunde zur französischen Literatur. Es ging um <persName ref="#zbz-p.186">Racine</persName>. Ich sprach von <bibl ref="#zbz-w.842">Phèdre</bibl> und erzählte, daß in dieser Tragödie <bibl ref="#zbz-w.842">Phèdre</bibl> anscheinend für ihr Glück kämpft, obwohl sie in Wirklichkeit ihrem Tod entgegengeht. Da fragte ein Junge, der vielleicht 15 oder 16 Jahre alt war: »Ich verstehe nicht,« sagte er, »da <bibl ref="#zbz-w.842">Phèdre</bibl> doch weiß, daß es mit <persName ref="#zbz-p.1291">Hippolyte</persName> nichts werden kann, warum liebt sie ihn dann?« Ich war ergriffen und überlegte, ob ich ihn in seiner Naivität doch stören und etwa von <persName ref="#zbz-p.1292">Tristan</persName> und <persName ref="#zbz-p.1293">Isolde</persName> erzählen sollte. Wenn ich ihn in Ruhe ließe, würde er vermutlich ein rechtschaffener <persName ref="#zbz-p.1251">Mensch</persName> und Bürger sein, ohne vom menschlichen Schicksal viel zu verstehen. Aber ich dachte, ich müßte ihn stören, weil Bildung eben eine Störung sein muß!
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.1283">Peter Oberndorfer</persName>
+        </p>
+        <p>
+          Frau Professor <persName ref="#zbz-p.2">Hersch</persName>, die Juristen sind ja nicht allzu gut weggekommen in Ihrem schönen Vortrag und das ist auch verständlich, denn wenn sich <persName ref="#zbz-p.1360">Philosophen</persName> einem so grundsätzlichen Thema wie den Menschenrechten zuwenden, dann können sie natürlich mit dieser »Oberflächenbehandlung«, die die Juristen den Grundrechten zwangsläufig angedeihen lassen, nur wenig anfangen. Sie haben von »Stalagmiten« gesprochen, die sich bei Ihnen in der <orgName ref="#zbz-o.51">UNESCO</orgName> angehäuft hatten, als Sie Ihre Umfrage veranstalteten. Ähnliche Stalagmiten liegen in meinem Zimmer mit Beschwerden von Menschen, die in ihren Grundrechten verletzt zu sein behaupten. Ich bin nur einer von acht oder neun Referenten im Verfassungsgerichtshof und da gibt es etwa die Fälle, wo sich jemand beschwert, daß er -
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_9_r_2">
+          Podiumsgespräch
+        </p>
+        <p facs="#facs_9_r_3">
+          um an die Tiere anzuknüpfen - Hundesteuer zahlen muß und der Besitzer eines Pferdes, das doch ein soviel größeres Tier ist, nicht. Wie das mit dem Gleichheitssatz vereinbar sei? Oder es gibt die Beschwerde jenes, der Schweinehälften importieren möchte und aus dem Kontingent nur 50 Tonnen erhält, obwohl er gerne 100 Tonnen hätte, und fragt, wie das mit der Erwerbsfreiheit zu vereinbaren sei usw. Und da komme ich auch zu Ihrer Frage, warum die Justudenten nicht mehr in den Grundsatzfragen, beispielsweise in den Grundrechten, ausgebildet werden und gewissermaßen zu Technikern des Rechts gemacht werden. Man bemüht sich natürlich schon, den Studenten das Grundsätzliche zu vermitteln, aber man darf auch nicht vergessen, daß hunderte und tausende Fragen in unserer Gesellschaft vom Recht entschieden werden, ohne daß dazu die Grundrechte herangezogen oder aus ihnen endgültige Antworten abgeleitet werden können. Ich glaube also nicht, daß man völlig darauf verzichten kann, eine gewisse Technologie des Rechts zu entwickeln und nur mit Grundsatzfragen leben kann.
+        </p>
+        <p facs="#facs_9_r_4">
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Da ich vom Recht nichts verstehe, habe ich die größte Achtung davor und will es nicht leichtfertig abtun. Ich wollte aber sagen, daß man damit, daß man so viele Paragraphen lernen und studieren muß, nicht dazu kommt, zur Wurzel des Rechts vorzustoßen. Sie sagen, in manchen Ihrer Beschwerdefälle sei diese Wurzel nicht vorhanden. Ich glaube jedoch, die Wurzel des Rechts ist immer da - etwa auch in dem Sinn, daß man in angemessener <bibl ref="#zbz-w.705">Zeit</bibl> zu seinem Recht kommen sollte. Die Frage der <bibl ref="#zbz-w.705">Zeit</bibl> und des Rechts ist schon eine fundamentale Frage und daß dies heute ein großes Problem ist, werden Sie kaum leugnen. Man wartet auf eine Entscheidung und inzwischen verfließt <bibl ref="#zbz-w.705">Zeit</bibl>, Lebenszeit. Dieses Problem begleitet die Arbeit der Juristen immer und überall. Es ist also nicht so, daß ich die Technik
+        </p>
+        <p>
+          des Rechts verachte - ich bewundere sie, im Gegenteil. Aber ich glaube auch, daß es unbedingt nötig ist, die Grundwirklichkeit des Rechts nicht zu vergessen, denn es handelt sich um menschliches Leben.
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.1283">Peter Oberndorfer</persName>
+        </p>
+        <p>
+          Da stimme ich Ihnen gerne zu, darf ich Sie aber noch etwas anderes fragen? Sie haben sehr eindrucksvoll die <placeName ref="#zbz-l.565">Rolle</placeName> der Gewalt beschrieben - dieses Spannungsfeld zwischen Freiheit, Schuld und Gewalt, in dem der <persName ref="#zbz-p.1251">Mensch</persName> sich befindet und in dem er sein Sein entfalten muß. Nun wollen wir doch nicht vergessen - und ich glaube, Sie haben das auch in Ihren Schriften nicht getan -, daß es ja Grundrechte nicht gäbe ohne eine entsprechend zentralisierte Gewalt - eine staatliche Gewalt, die einesteils das Erfordernis der Grundrechte aufstellt, aber gleichzeitig diese erst sicherstellt. Also ohne - beispielsweise - Verfassungsgerichte oder einen Europäischen Gerichtshof, der dann auf einer höheren Ebene die entsprechenden Aussagen trifft und insofern Gewalt entfaltet (mit Zustimmung der Staaten, die sich ihm unterworfen haben), gäbe es auch keine Grundrechte. Diese Grundpositionen erfordern geradezu auch staatliche Gewalt und man kann daher die Grundrechte nicht lediglich als einen glücklichen Naturzustand ansehen, der nach Möglichkeit wiederherzustellen wäre - etwa im Sinne von <persName ref="#zbz-p.554">Rousseau</persName>. Dem stimmen Sie doch sicherlich zu?
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Ganz so, ich bin ganz einverstanden!
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_10_r_2">
+          Frage aus dem Publikum
+        </p>
+        <p facs="#facs_10_r_3">
+          Frau Professor, Ihre Anschauung über die Menschenrechte ist also sehr deutlich anthropozentrisch. Nun neigen aber gerade heute viele Theologen, <persName ref="#zbz-p.1360">Philosophen</persName> und auch Juristen dazu, auch der Natur ein Recht zu geben, und man sucht dafür verschiedene formale Rechtskonstruktionen. Sie halten das aber offenbar weder für notwendig noch für philosophisch begründbar, obwohl die Umweltverschmutzung und die Umweltzerstörung heute ein riesiges Problem darstellt. Liegt es nicht daran, daß wir einfach die Natur zu wenig geachtet haben?
+        </p>
+        <p facs="#facs_10_r_4">
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_10_r_5">
+          Meines Erachtens überträgt man da fälschlich Begriffe von einer Welt auf eine andere; hier gilt das gleiche wie bei der Tierfrage. Ich finde, daß man beides nicht vermengen soll, denn es gibt nichts Gemeinsames. Die Frage, ob man die Natur aus Gründen der Hygiene oder im Interesse unserer Zukunft schützen soll, ist eine praktische Frage und hat mit den Menschenrechten nichts zu tun. Die Menschenrechte beruhen auf einer Fähigkeit des Menschen, der - wie ich versuchte zu zeigen - eine Ausnahme in unserer Wirklichkeit darstellt. Wenn man diese Ausnahme nicht anerkennt, sondern einer technischen, biologischen oder irgendwie rechtlichen Gesamtvorstellung von der Welt huldigt, wo alles miteinander verschmilzt, dann gibt man die Hauptsache des Menschseins preis. Man verliert gerade das, was ich heute betonen wollte: »la condition humaine«. (Man kann das auf deutsch nicht so gut sagen - das »Menschsein«, das Besondere des Menschseins.) Menschsein ist etwas anderes als ein Wald zu sein, ein Baum, ein Gras. Und wenn man den Sinn dafür verliert, dann weiß ich nicht, was auf der Erde geschehen wird - ich wage nicht einmal die Frage zu stellen. Wenn man den inneren
+        </p>
+        <p facs="#facs_10_r_6">
+          Podiumsgespräch
+        </p>
+        <p>
+          Sinn für die Eigentümlichkeit des Menschseins verliert, dann sehe ich nicht, wie der <persName ref="#zbz-p.1251">Mensch</persName> anders leben kann als das Tier. Und wenn der <persName ref="#zbz-p.1251">Mensch</persName> (mit seinen viel gefährlicheren Möglichkeiten) so lebt wie das Tier, dann wird es der Natur noch viel schlechter ergehen als bisher. Diese Übertreibung scheint mir höchst gefährlich und ich lehne sie ab!
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.1282">Marian Heitger</persName>
+        </p>
+        <p>
+          Was würden Sie zu dem Satz sagen: Um der Wahrung der Menschenrechte der zukünftigen Gesellschaft willen müssen wir die Natur pflegen?
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Ich würde sagen, daß mir die Sorge um die schon geborenen Menschen reicht. Ich habe zwar nichts dagegen, doch soll man die Sorge nicht zu weit spannen, denn sonst wird sie schwach.
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.1282">Marian Heitger</persName>
+        </p>
+        <p>
+          Aber ich könnte dem Satz doch einiges abgewinnen, nämlich insofern, als ja die Gefahr besteht, daß der <persName ref="#zbz-p.1251">Mensch</persName> der Gegenwart eben nur an seine Gegenwart denkt.
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Nein, der <persName ref="#zbz-p.1251">Mensch</persName> der Gegenwart hat Kinder und er will doch, daß es weitergeht! Aber es gibt ein anderes Extrem: Manche Menschen empören sich darüber, daß die Erde vielleicht einmal untergehen wird. Sei es, daß sie zu heiß oder zu kalt wird, aber irgendwie kommt einmal ein Ende.
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_11_r_2">
+          Podiumsgespräch
+        </p>
+        <p facs="#facs_11_r_3">
+          Da frage ich, wer hat diesen Menschen denn versprochen, daß die Erde ewig existieren wird? Wir sind in der <bibl ref="#zbz-w.705">Zeit</bibl> und wissen nichts von dem der <bibl ref="#zbz-w.705">Zeit</bibl> fremden Sein - das ist das große Geheimnis. Wir haben kein Recht darauf und können das Nötige tun, um das, was uns anvertraut ist, solange wie möglich zu erhalten. Aber Anspruch haben wir keinen. Es ist möglich, daß es zu Ende geht!
+        </p>
+        <p facs="#facs_11_r_4">
+          Prof. <persName ref="#zbz-p.1283">Peter Oberndorfer</persName>
+        </p>
+        <p>
+          Ich glaube mit Ihnen, <persName ref="#zbz-p.2">Frau Hersch</persName>, daß derartige Positionen, wie sie etwa von dem Diskussionsredner aus dem Publikum vertreten wurden, in Wahrheit nur über den Menschen zu denken sind. Nicht die Natur hat Rechte (und Pflichten daraus), sondern nur der <persName ref="#zbz-p.1251">Mensch</persName> hat Rechte - das ist die Grundaussage. Aber es ist nun natürlich denkbar, daß ein <persName ref="#zbz-p.1251">Mensch</persName> beispielsweise eher auf das Eigentum verzichtet (das ihm ja grundrechtlich gewährleistet und auch in allen Grundrechtskatalogen zurück bis ins 17. Jahrhundert enthalten ist) als auf eine gesunde Natur. Aber die Natur kann als solche nicht als berechtigt angesehen werden.
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Eine solche <persName ref="#zbz-p.89">Wahl</persName> wäre denkbar, sie liegt aber beim Menschen selbst und die Menschenrechte erlauben es nicht, das für ihn zu entscheiden.
+        </p>
+        <p>
+          Frage aus dem Publikum
+        </p>
+        <p>
+          Ich bin von meinem Beruf her Lehrer und habe mit meinen Schülern wiederholt im Philosophieunterricht die Deklaration der Menschenrechte besprochen. Immer wieder habe ich meine Schüler aufgefordert zu überlegen, wie weit wir eigentlich mit der Verwirklichung dieser Deklaration gekommen sind. Das Ergebnis unserer Überlegungen war immer wieder - ob es sich nun um die Religionsfreiheit, die Menschenwürde oder andere Rechte handelte und geographisch um <placeName ref="#zbz-l.474">Mitteleuropa</placeName> oder andere Länder, die wir gerne kritisieren -, daß wir eigentlich nicht sehr weit gekommen sind. Was ist der Grund dafür? Haben wir vielleicht diese Menschenrechte zu idealistisch formuliert, sind unsere Forderungen zu idealistisch? Oder gibt es etwas in unserem menschlichen Wesen, das uns hindert, den gewünschten Fortschritt zu erreichen?
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Ich glaube, daß wir immer weit von der Verwirklichung der Menschenrechte entfernt sein werden. Und je weiter wir dabei gelangen, desto stärker wird das Gefühl sein, die Menschenrechte nicht verwirklicht zu haben. Denn der Anspruch der Menschenrechte ist ein unendlicher Anspruch. Es ist ein Anspruch auf Freiheit, auf gegenseitige Freiheit, die der Wahrheit nicht gleichgültig gegenübersteht, sondern die Wahrheit sucht. Eine Freiheit, die die Wahrheit erreicht hätte, wäre aber das Ende der Welt. So wie ich fragte, wer uns versprochen habe, daß die Welt immer währt, frage ich Sie auch: Wer hat uns versprochen, daß wir dieses Ziel erreichen? Das wäre sozusagen das Paradies auf Erden. Die Menschenrechte zu verwirklichen versuchen ist also unsere ständige Aufgabe.
+        </p>
+        <p>
+          Wenn Sie sagen, wir sind nicht sehr weit gekommen bei der Verwirklichung der Menschenrechte, so ist das nicht schlimm. Die Menschenrechte sind ja eigentlich ein sehr junger Anspruch. Schlimmer ist aber, daß die Menschenrechte in sich Widersprüche bergen; sie sind in ihrem Anspruch nicht - oder nicht ganz - zu vereinen. Daran erkennen wir eigentlich das Menschsein wieder. Wir haben es immer mit Unvollendetem zu tun, wir versuchen es ohne Ende. Ich glaube nicht, daß wir zu einem Ende kommen, man muß sich mit diesem Menschsein abfinden. Denn es
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_12_r_2">
+          kann nicht anders sein, wenn das stimmt, was ich am Anfang geschildert habe. Wenn wir wirklich den Menschen daselbst verwirklichen können, wo sich Körper und Seele kreuzen, dann kann es kein fertiges Ergebnis geben. Ich glaube auch nicht, daß es die Berufung des Menschen ist, die Vollkommenheit in der Geschichte zu erreichen.
+        </p>
+        <p facs="#facs_12_r_3">
+          Prof. <persName ref="#zbz-p.1282">Marian Heitger</persName>
+        </p>
+        <p facs="#facs_12_r_4">
+          Ich würde doch gerne noch eine Anmerkung dazu machen. Ich stimme mit Ihnen ja überein, daß eine Idee wie die der Menschenrechte nicht voll verwirklicht werden kann, sondern immer nur bruchstückhaft. Es ist dasselbe mit der Bildung, mit der Gerechtigkeit und mit ähnlichen Ideen. Denn wenn wir die Vollkommenheit erreicht hätten, müßten wir aufhören, in der Geschichte weiter zu existieren. Wir wären keine Menschen mehr, wir wären vollendet und die Geschichte wäre vorbei, es hätte keinen Sinn weiterzugehen. Das darf aber nicht dazu führen, daß man aufhört sich zu bemühen, und diese Spannung auszuhalten ist dabei das große Problem.
+        </p>
+        <p facs="#facs_12_r_5">
+          Ich möchte aber die Frage aufwerfen, ob es nicht Verletzungen der Menschenrechte auf eine ganz geheime oder von uns häufig gar nicht wahrgenommene Weise gibt, wo man besonders Obacht geben muß. Sie haben z.B. gesagt, daß niemand mich zu einer Überzeugung zwingen kann, aber es gibt doch Tendenzen dazu, Meinungen zu manipulieren. Es gibt sogar Techniken und wissenschaftliche Anstrengungen in dieser Richtung. Und das sind doch alles auch Formen, bei denen der Anspruch der Menschenrechte in Frage gestellt wird, ohne daß wir es wirklich merken.
+        </p>
+        <p facs="#facs_12_r_6">
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_12_r_7">
+          Ja, ich bin einverstanden.
+        </p>
+        <p facs="#facs_12_r_8">
+          24
+        </p>
+        <p>
+          Podiumsgespräch
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.1283">Peter Oberndorfer</persName>
+        </p>
+        <p>
+          Ich würde noch einen Schritt weitergehen und sagen, daß ein Gutteil der Pädagogik doch in diese Richtung zielt.
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Da steckt doch ein wichtiges Problem. Heute fragen sich viele Menschen, ob wir überhaupt ein Recht haben, Kinder zu erziehen. Sie glauben, das Kind sei eben so oder so und man dürfe es nicht beeinflussen. Eigentlich ist die heutige Pädagogik schizophren: Einerseits will sie gar nichts tun, andererseits will sie alles modellieren. Das ist doch schizophren, nicht wahr?
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.1282">Marian Heitger</persName>
+        </p>
+        <p>
+          Im Grunde gehören die beiden Dinge auf geheimnisvolle Weise zusammen. Aber ich muß mich doch dagegen wehren, wenn man von der Pädagogik als solcher spricht. Man kann sagen, viele Pädagogen vertreten so etwas, aber bitte nicht, die Pädagogik. Denn ihrer Idee nach muß die Pädagogik dem widerstehen!
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Ich finde, in Verbindung mit dem, was ich heute versuchte zu sagen, es wäre die Pflicht der Pädagogen, das Kind von klein auf mit seinem Menschsein zu versöhnen. Das Kind muß sich daran gewöhnen, daß man unentwegt versucht, aber nie ankommt.
+        </p>
+        <p>
+          25
+        </p>
+      <pb facs="#facs_13" n="13" />
+        <p facs="#facs_13_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_13_r_2">
+          Prof. <persName ref="#zbz-p.1282">Marian Heitger</persName>
+        </p>
+        <p facs="#facs_13_r_3">
+          Ich halte es auch für falsch, wenn heute etwa die Rechte des Kindes auf eine Weise propagiert werden, daß man dem Kind nicht mehr sagen darf, was gut und was schlecht ist. Daß dem Kind etwa nicht mehr zugemutet werden dürfe, sich in einer bestimmten Kultur zu bilden. Das wird als Zwang, als Angriff auf die Menschenrechte angesehen, doch liegt gerade in dieser Haltung im Grunde ein Verstoß gegen die Menschenrechte. Denn das Kind hat ein Recht darauf, an die ihm mögliche Bildung herangeführt zu werden, und sie darf ihm nicht unterschlagen werden.
+        </p>
+        <p facs="#facs_13_r_4">
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_13_r_5">
+          Einverstanden.
+        </p>
+        <p facs="#facs_13_r_6">
+          Prof. Hannes Pichler
+        </p>
+        <p>
+          Ich würde gerne der Skepsis widersprechen, die in der Diskussion angeklungen ist und wonach in der geschichtlichen Entwicklung nichts weitergegangen sei. Wenn man nämlich die Rechtsentwicklung in längeren Zusammenhängen beobachtet, dann muß man doch sagen, daß wir uns seit 1789 beträchtlich weiterentwickelt haben und im Jahre 1989 mit gutem Grund die 200-Jahr-Feier der Menschenrechte begehen konnten. Es ist seither nämlich ungeheuer viel geschehen. Ich möchte dies damit veranschaulichen, daß es einen großen Unterschied machen würde, wenn wir auch nur einen einzigen Artikel des Staatsgrundgesetzes von 1867 weniger hätten. Jeder dieser Artikel ist unverzichtbar und jeder ist mühevoll und unter großen Opfern errungen worden. Was es für die Länder des ehemaligen <placeName ref="#zbz-l.17">Ostblocks</placeName> bedeutet, sich die Freiheit der Meinung und des Gewissens erworben zu haben, ist nur zu deutlich. Wir
+        </p>
+        <p>
+          Podiumsgespräch
+        </p>
+        <p>
+          sollten das wirklich zu jeder Sekunde schätzen und nicht in Kulturpessimismus verfallen.
+        </p>
+        <p>
+          Sie haben, Frau Professor <persName ref="#zbz-p.2">Hersch</persName>, eine gewisse Skepsis gegenüber einem Zuviel an Menschenrechten anklingen lassen. Ich würde das in dem Sinne akzeptieren, daß man in der Fortentwicklung der Menschenrechte manchmal eine Pause einlegen sollte, um das Bestehende zu sichern – um es gewissermaßen in die Selbstverständlichkeit herüberzuführen. Aber es kann zu keinem Zeitpunkt ein Ende der Menschenrechtsentwicklung geben. Sie wird und muß – auch mit unserem Zutun – analog zur Evolution fortschreiten.
+        </p>
+        <p>
+          Zur Frage des »Rechtes der Tiere« (ein sicherlich mißglücktes Wort): In der Pflichtenlehre des Menschen gibt es den Begriff <hi rendition="#i">officia erga se ipsa</hi> und ich glaube, dorthin gehört der Anspruch des Tieres auf eine »humane« Behandlung. Was anderes ist damit gemeint als eine artgerechte Tierhaltung und die Vermeidung von unnötigen Qualen und Leiden? Und daß wir Juristen an diesem Punkt den Zeitgeist einzufangen suchen, indem wir etwa § 285 ABGB ändern und das Tier aus dem Sachbegriff herausnehmen, dann doch wohl aus Respekt vor jenen Menschen, die an ihrem Tier in besonderer Weise hängen.
+        </p>
+        <p>
+          Wenn vorhin in der Diskussion die Frage anklang, ob man, wenn man ein »Recht der Natur« annimmt, zuvor seine Eigenschaft als Anthropozentriker abgelegt haben muß, würde ich antworten: nein. Es ist schlicht und einfach eine Frage, wie Prof. <persName ref="#zbz-p.1282">Heitger</persName> sie formuliert hat: die Einbeziehung künftiger Generationen. Und wenn man sagt, die Generationen, die ich noch nicht kenne, die sind gewissermaßen auch nicht existent, dann bin ich froh, daß das noch nicht so gesehen wurde, bevor wir hier ankamen. Ich hoffe, daß sich die Menschenrechte in Richtung auf eine Generationensolidarität entwickeln werden und es gelingen wird, mit Hilfe der Menschenrechte langfristig auch die Rechte künftiger Generationen zu sichern, damit diese noch dieselbe Schöpfung vorfinden, die auch wir vorgefunden haben.
+        </p>
+      <pb facs="#facs_14" n="14" />
+        <p facs="#facs_14_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_14_r_2">
+          Prof. <persName ref="#zbz-p.1283">Peter Oberndorfer</persName>
+        </p>
+        <p facs="#facs_14_r_3">
+          An das letzte anknüpfend möchte ich doch den pragmatischen Standpunkt von <persName ref="#zbz-p.2">Frau Hersch</persName> vorziehen, nämlich daß wir schon zufrieden sein sollten, wenn wir für uns die Grundrechte bewahren und durchsetzen und nicht versuchen sollten, Grundrechtspositionen für künftige Geschlechter zu behaupten. Das soll nicht heißen, daß wir die Umwelt nicht bewahren sollen, aber es ist immer die Frage, ob das Grundrechte sein sollen! Grundrechte sind doch eine ganz bestimmte Kategorie mit Durchsetzbarkeitsansprüchen und es wäre schön, wenn wir heute die unseren, also die Grundrechte der jetzt Lebenden in dieser Form bewahren könnten. Da stimme ich <persName ref="#zbz-p.2">Frau Hersch</persName> absolut zu.
+        </p>
+        <p facs="#facs_14_r_4">
+          Eines ist auch in Ihrem Vortrag angeklungen, <persName ref="#zbz-p.2">Frau Hersch</persName>, und wurde nun eben wieder berührt: Sie sehen, so sagten Sie, eine Gefahr darin, daß immer mehr Rechte als Grundrechte formuliert werden, weil dann das wirklich Wichtige zu kurz käme. Sie leiteten dann über zu den Vorbedingungen für die Grundrechte, speziell für die Ausübung der Freiheitsrechte, also auf die ökonomischen und sozialen Positionen, die die Ausübung dieser Freiheiten erst ermöglichen, die man aber nicht unbedingt als Grundrechte denken muß und soll. Wenn ich das recht verstanden habe, dann beziehen Sie damit Standpunkt in einer brennend heißen Diskussion, nämlich dort, wo es um die Verankerung sozialer Grundrechte in nationalen Grundrechtskatalogen geht.
+        </p>
+        <p facs="#facs_14_r_5">
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_14_r_6">
+          Nicht daß ich gegen diese sozialen Rechte wäre! Es gibt sie wirklich, sie spielen eine ganz wesentliche <placeName ref="#zbz-l.565">Rolle</placeName> im Leben der Menschen und deswegen möchte ich nicht, daß man sie weniger wichtig nimmt. Aber ich stelle fest, daß man die Verwirklichung dieser Rechte nicht mit der gleichen Strenge
+        </p>
+        <p facs="#facs_14_r_7">
+          Podiumsgespräch
+        </p>
+        <p>
+          ge einfordern kann, weil die wirtschaftliche Lage der verschiedenen Länder so verschieden ist. Wenn man aber alle Rechte nur approximativ behaupten würde, also z.B. auch die zivilen und politischen Rechte, dann würde man den Menschenrechten insgesamt keinen guten Dienst erweisen.
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.1282">Marian Heitger</persName>
+        </p>
+        <p>
+          Ich möchte gerne noch einen Gedanken anmerken, der mit dem positiven Recht zusammenhängt. Nach meinem Verständnis ist die Frage der Menschenrechte nicht an Mehrheitsentscheidungen irgendwelcher Parlamente gebunden und darf davon nicht abhängig sein. Würden Sie dem zustimmen?
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Ja, mit einer Ergänzung: Die Mehrheit ist natürlich nicht gleichbedeutend mit den Menschenrechten. Aber die Geschichte zeigt, daß die individuellen Menschenrechte in der <bibl ref="#zbz-w.478">Demokratie</bibl> weniger gefährdet sind als in anderen Systemen.
+        </p>
+        <p>
+          Prof. <persName ref="#zbz-p.1282">Marian Heitger</persName>
+        </p>
+        <p>
+          Damit bin ich sehr einverstanden. Ich lege aber deshalb so großen Wert auf die Unterscheidung, weil ich einer Generation angehöre und aus einem Land komme, wo der Nationalsozialismus unter ganz bestimmten Umständen die Mehrheit im Parlament erlangte und hierauf die Menschenrechte abschaffte.
+        </p>
+      <pb facs="#facs_15" n="15" />
+        <p facs="#facs_15_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName> Menschenrechte und Menschsein
+        </p>
+        <p facs="#facs_15_r_2">
+          Prof. <persName ref="#zbz-p.1283">Peter Oberndorfer</persName>
+        </p>
+        <p facs="#facs_15_r_3">
+          Ich stimme Ihnen durchaus zu, Herr <persName ref="#zbz-p.1282">Heitger</persName>, wenn Sie eine präpositive Wurzel der Menschenrechte behaupten und die Auffassung vertreten, daß die vom Staat anerkannten und in seine Rechtsordnung übernommenen Menschenrechte im Hinblick auf diese Vorstellungen auszulegen sind, die also mit dem Menschsein als solchem zusammenhängen. Aber das darf uns nicht vergessen machen, daß Menschenrechte nur durchsetzbar sind mit Hilfe staatlicher Gewalt. Ohne diese wären sie auf verlorenem Posten. Menschenrechte sind auf den Staat und auf die staatliche Rechtsordnung insgesamt angewiesen, damit sie sich durchsetzen können!
+        </p>
+        <p facs="#facs_15_r_4">
+          Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Und die Schwierigkeit ist, daß die Menschenrechte auch wieder von demselben Staat bedroht werden. Deswegen ist es so: Wir sind eben Menschen - und es ist nicht leicht, <persName ref="#zbz-p.1251">Mensch</persName> zu sein.
+        </p>
+      </div>
+      </body></text>
+</TEI>

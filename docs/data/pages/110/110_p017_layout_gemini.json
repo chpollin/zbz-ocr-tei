@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "dexistence considéré (sauf en son suprême; celui de Pacte pur) Dans la présente   étude; comme chez ",
+      "bbox": {
+        "x_pct": 11.047,
+        "y_pct": 13.085,
+        "w_pct": 68.738,
+        "h_pct": 18.88
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "En dehors de ces analogies et de ces différences; on verra sans doute dans les pages suivent que Fin",
+      "bbox": {
+        "x_pct": 11.124,
+        "y_pct": 33.257,
+        "w_pct": 68.661,
+        "h_pct": 14.73
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant à la malière > je tiens à lalaisser plus inconnue qu'elle n'est dans les philosophies dAristot",
+      "bbox": {
+        "x_pct": 11.124,
+        "y_pct": 54.012,
+        "w_pct": 68.738,
+        "h_pct": 20.375
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "INTRODUCTION",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 10.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Header region"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 5.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header",
+    "Missing page footer"
+  ],
+  "doc_id": "110",
+  "page": 17,
+  "elapsed_seconds": 4.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

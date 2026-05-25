@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Contrairement à l'opinion commune, je crois que ce genre d'attitude manque de clarté. A pousser plus loin l'exigence de clarté, on aperçoit ceci, que, si l'histoire doit avoir un sens pour les hommes, ce sens ne peut pas se résorber tout entier dans la succession des faits. Une succession de faits, livrée à elle-même, ne livre jamais un sens. Et d'autre part, l'être humain pour lequel l'histoire doit avoir un sens ne se réduit pas non plus à l'individu empirique qu'on rencontre dans cette histoire. L'histoire humaine ne trouve son sens que si l'être humain est justement cet être dont j'ai parlé au début. Ici je rejoins l'idée de liberté, dont je n'ai presque rien dit, et qui est la condition de toute vérité. Car la vérité n'a aucun sens pour qui n'aurait pas liberté de la préférer à l'erreur ou au mensonge. Il est donc contradictoire de vouloir nier la liberté au nom de la vérité.",
+      "bbox": {
+        "x_pct": 14.883,
+        "y_pct": 8.034,
+        "w_pct": 65.455,
+        "h_pct": 25.282
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from the OCR block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois que la dimension religieuse est présente dans tout vrai combat politique, pour tous les combattants, y compris les athées. Je crois qu'elle intervient toujours, et qu'elle doit intervenir, et que c'est elle qui donne au combat politique sa dimension d'engagement absolu. Mais je crois aussi que le combat des hommes deviendrait réellement monstrueux, non pas à cause de ses conséquences, et de la destruction de l'humanité (c'est un autre chapitre), mais par sa nature même, s'il n'y avait plus, par delà le combat, une dimension religieuse selon laquelle l'adversaire avec lequel on mène un combat, fût-il à mort, reste encore d'une certaine manière un frère. Cela implique que le combat n'absorbe pas l'être humain tout entier et que le religieux persiste par delà le combat. Si cela est perdu, alors tout est perdu.",
+      "bbox": {
+        "x_pct": 14.883,
+        "y_pct": 33.578,
+        "w_pct": 65.375,
+        "h_pct": 25.487
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from the OCR block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'aimerais encore ajouter un dernier point: les problèmes que posent aujourd'hui, d'une part la volonté générale d'œcuménisme et d'unité, et d'autre part l'exclusivisme sans lequel, à l'intérieur d'une religion donnée, les hommes ne sauraient déterminer leurs rapports avec Dieu. Là encore, je ne suis pas pour le choix. Je pense qu'il est inhérent à une religion d'être exclusive, dans la mesure où on tient compte du fait que pour nous, aucun être n'existe réellement sans devenir particulier. Nous ne pouvons pas (c'est une loi de notre esprit) nous passer de la particularité si nous voulons vraiment cristalliser en réalité quelque chose. C'est la raison, je pense, pour laquelle les religions ont toujours particularisé. Et je crois que la particularisation religieuse est d'autant plus valable, religieusement parlant (je m'aventure beaucoup ici), qu'elle est à la fois plus particulière et",
+      "bbox": {
+        "x_pct": 14.803,
+        "y_pct": 59.202,
+        "w_pct": 65.56,
+        "h_pct": 25.983
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from the OCR block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "26",
+      "bbox": {
+        "x_pct": 14.883,
+        "y_pct": 87.1,
+        "w_pct": 2.7,
+        "h_pct": 2.1
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction in regions was incomplete and truncated.",
+    "Page number 26 at the bottom was missing from the original JSON."
+  ],
+  "doc_id": "3100",
+  "page": 27,
+  "elapsed_seconds": 5.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

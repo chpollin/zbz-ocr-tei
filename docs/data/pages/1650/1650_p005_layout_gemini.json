@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "la fojs un juridique, donc empiristricte qui",
+      "bbox": {
+        "x_pct": 8.269,
+        "y_pct": 15.858,
+        "w_pct": 37.821,
+        "h_pct": 11.988
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces oppositions paraissent insolubles, Mais si elles avaient 2st plus saisissant, c'est que unc qui ",
+      "bbox": {
+        "x_pct": 8.306,
+        "y_pct": 27.846,
+        "w_pct": 37.692,
+        "h_pct": 9.349
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'aulfe part, les énoncés traduisent absolue des Drpits de 1a responsabilite d dirait que, cherchant",
+      "bbox": {
+        "x_pct": 8.15,
+        "y_pct": 37.006,
+        "w_pct": 37.665,
+        "h_pct": 16.213
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "YVE de l2 dissoudre dans Virresponpoint",
+      "bbox": {
+        "x_pct": 27.179,
+        "y_pct": 62.012,
+        "w_pct": 18.086,
+        "h_pct": 5.408
+      },
+      "changed": true,
+      "change_reason": "Identified as page footer text/artifact rather than main content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Iui qui donnèes concrètcs; oú cette exigence devicnt action, emprise, L d'acqucrir Paide du droit. c",
+      "bbox": {
+        "x_pct": 41.374,
+        "y_pct": 82.84,
+        "w_pct": 3.315,
+        "h_pct": 1.728
+      },
+      "changed": true,
+      "change_reason": "Small artifact/page footer element."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "absoluc inspirc la plupart des Quzlle vrai qu'elle qui qui qui Eencrale Pieds, des hommes politiques",
+      "bbox": {
+        "x_pct": 51.74,
+        "y_pct": 25.574,
+        "w_pct": 37.39,
+        "h_pct": 23.385
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "avancer quclques dissi paroles proces espoic,",
+      "bbox": {
+        "x_pct": 60.192,
+        "y_pct": 69.941,
+        "w_pct": 28.791,
+        "h_pct": 11.349
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "OCR text quality is poor.",
+    "Multiple artifacts/page elements misidentified as text."
+  ],
+  "doc_id": "1650",
+  "page": 5,
+  "elapsed_seconds": 3.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

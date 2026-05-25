@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mais les jeunes n ont pas besoin de vela. Si une dentre eux s agit d une minorite — est aujourd hui malheureuse, c est qu il lui manque, non pas, comme on l a dit, la libert&eacute;, mais un monde vraiment adulte. Les jeunes ont besoin d avoir autour d eux, dans leur famille, &agrave; l &eacute;cole, des adultes qui leur montrent la dimension possible de l &ecirc;tre humain, qui en soient en quelque sorte la preuve et l incarnation. Il faut qu ils puissent compter sur eux, les aimer et en &ecirc;tre aim&eacute;s. Or nous vivons dans une soci&eacute;t&eacute; permissive o&ugrave; les mod&egrave;les, les r&egrave;gles et les comportements sont instables et changeants, et les jeunes vivent dans une inconsistance que je crois sans pr&eacute;c&eacute;dent dans l histoire. C est tout le contraire de ce qu on dit : non, il ne s agit pas d un exc&egrave;s de contrainte. Les jeunes ont besoin de se r&eacute;volter, c est tout &agrave; fait normal ; encore faut-il qu ils aient quelque chose contre quoi se r&eacute;volter. Quand tout est permis, ils se trouvent dans le n&eacute;ant.",
+      "bbox": {
+        "x_pct": 15.421,
+        "y_pct": 4.089,
+        "w_pct": 80.22,
+        "h_pct": 28.089
+      },
+      "changed": true,
+      "change_reason": "The transcription was heavily OCR-mangled and incomplete. Corrected to represent the actual text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. — Ils se r&eacute;voltent tout de m&ecirc;me. Mais c est une r&eacute;volte qui n arrive pas &agrave; dire son objet, elle se d&eacute;ploie en violence incoherente. En g&eacute;n&eacute;ral ils empruntent un th&egrave;me aux r&eacute;volutionnaires d hier ou d aujourd hui. Ce n est pas leur attitude propre. Il faut reconna&icirc;tre aussi que les perspectives sinistres qu on pr&ecirc;te &agrave; notre soci&eacute;t&eacute; ne sont pas innoncentes ; elles contribuent largement au rejet actuel. Il y a ainsi toute sortes de facteurs qui d&eacute;truisent la vie de certains jeunes ou les incitent &agrave; diverses formes de fuite.",
+      "bbox": {
+        "x_pct": 15.421,
+        "y_pct": 36.073,
+        "w_pct": 80.147,
+        "h_pct": 17.177
+      },
+      "changed": true,
+      "change_reason": "The transcription was heavily OCR-mangled and incomplete. Corrected to represent the actual text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. — Vous savez que certains juristes ou non juristes, aujourd hui, pr&eacute;conisent la d&eacute;p&eacute;nalisation totale de certaines drogues, dites &laquo; douces &raquo. Que pensez-vous de cette tendance ?",
+      "bbox": {
+        "x_pct": 15.543,
+        "y_pct": 55.056,
+        "w_pct": 79.609,
+        "h_pct": 6.339
+      },
+      "changed": true,
+      "change_reason": "The transcription was heavily OCR-mangled. Corrected to reflect full text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je suis de l avis de la plupart des m&eacute;decins sp&eacute;cialistes, qui sont contre la d&eacute;p&eacute;nalisation. La p&eacute;nalisation n a pas que des avantages. La drogue est tr&egrave;s ch&egrave;re, et c est en raison directe de son interdiction, ce qui accule les drogu&eacute;s &agrave; la d&eacute;linquance. Mais je suis convaincue que si la drogue &eacute;tait d&eacute;p&eacute;nalis&eacute;e, on en consommerait davantage. Quand on nous dit que la marijuana n est pas tellement nocive, et qu &laquo; il n y a que &raquo 2 &agrave; 5 % de ceux qui s y adonnent qui passent aux drogues dures, cet argument est absurde : car 2 &agrave; 5 %, c est &eacute;norme. Imaginez que 2 &agrave; 5 % des gens qui boivent un verre de vin par jour deviennent des alcooliques inv&eacute;t&eacute;r&eacute;s, et notre civilisation serait d&eacute;truite. Je suis donc r&eacute;solument contre cette d&eacute;p&eacute;nalisation.",
+      "bbox": {
+        "x_pct": 15.385,
+        "y_pct": 60.992,
+        "w_pct": 80.464,
+        "h_pct": 19.758
+      },
+      "changed": true,
+      "change_reason": "The transcription was heavily OCR-mangled and truncated. Corrected to reflect full text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "174",
+      "bbox": {
+        "x_pct": 15.543,
+        "y_pct": 93.689,
+        "w_pct": 4.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer and removed from text classification."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Heavy OCR errors in all text blocks",
+    "Page number at bottom left not marked as footer",
+    "Missing initial text 'G.D.K. -' in second paragraph block",
+    "Truncated text in last paragraph"
+  ],
+  "doc_id": "2330",
+  "page": 178,
+  "elapsed_seconds": 11.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

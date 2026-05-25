@@ -1,0 +1,129 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le nombre est grand, et plus le facteur de Tintentionalité individuelle trouve noyé; dès lors, les l",
+      "bbox": {
+        "x_pct": 9.054,
+        "y_pct": 8.02,
+        "w_pct": 88.108,
+        "h_pct": 6.169
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une troisième source dembarras, c'est le nombre et la diversité extrême des disciplines considérées,",
+      "bbox": {
+        "x_pct": 8.514,
+        "y_pct": 13.993,
+        "w_pct": 88.878,
+        "h_pct": 10.239
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "lère thèse:",
+      "bbox": {
+        "x_pct": 8.919,
+        "y_pct": 28.131,
+        "w_pct": 12.568,
+        "h_pct": 1.758
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les sciences humaines ont pour objet les divers aspects dune réalité dont Fessence et Pessentiel leu",
+      "bbox": {
+        "x_pct": 8.203,
+        "y_pct": 30.06,
+        "w_pct": 89.0,
+        "h_pct": 8.251
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "I] y a là un paradoxe fondamental: cela même fait que les sciences Jumaines ne sont pas des sciences",
+      "bbox": {
+        "x_pct": 8.014,
+        "y_pct": 40.043,
+        "w_pct": 89.014,
+        "h_pct": 14.283
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sens est une composante sine qua non, à mon de toute discipline appartenant aux sciences humaines",
+      "bbox": {
+        "x_pct": 7.973,
+        "y_pct": 54.01,
+        "w_pct": 88.919,
+        "h_pct": 18.345
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc les sciences exactes devraient être beaucoup plus qu'elles ne le sont des   objets détude",
+      "bbox": {
+        "x_pct": 8.243,
+        "y_pct": 71.928,
+        "w_pct": 88.473,
+        "h_pct": 20.503
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or cet élément irréductible est supposé connu parce que celui même la 218 recherche en sciences huma",
+      "bbox": {
+        "x_pct": 2.703,
+        "y_pct": 92.065,
+        "w_pct": 93.743,
+        "h_pct": 4.096
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "218",
+      "bbox": {
+        "x_pct": 2.703,
+        "y_pct": 94.6,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Fixed label for page number",
+    "Corrected text transcription for heading"
+  ],
+  "doc_id": "1180",
+  "page": 3,
+  "elapsed_seconds": 6.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content": 1,
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LA CARICATURE DE L'EXISTENTIALISME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 74.0,
+        "w_pct": 100,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "354 bien voulu lire ces sept pages, ils se seraient d'écrire certain nombre de monstrueuses Sartre e",
+      "bbox": {
+        "x_pct": 14.416,
+        "y_pct": 8.282,
+        "w_pct": 32.467,
+        "h_pct": 42.419
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sartre ici définitive avec sa mort cher combien il est absurde de vouloir rattaà une attitude   poli",
+      "bbox": {
+        "x_pct": 12.917,
+        "y_pct": 60.911,
+        "w_pct": 33.481,
+        "h_pct": 27.315
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela veut dire que l'essence n'est pas donnée une fois pour toutes ce que l'homme fait ne découle pa",
+      "bbox": {
+        "x_pct": 13.829,
+        "y_pct": 49.355,
+        "w_pct": 32.781,
+        "h_pct": 13.605
+      }
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DE L 'EXISTENTIALISME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 65.0,
+        "w_pct": 100,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Extracted heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais, dira-t-on, nous y voil\u0000e0 ! Plus aucune con...",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 85.0,
+        "w_pct": 100,
+        "h_pct": 100
+      },
+      "changed": true,
+      "change_reason": "Adjusted bbox to exclude header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "355",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 93.0,
+        "w_pct": 25.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "pas que des traits appartenant à Sartre douteux",
+      "bbox": {
+        "x_pct": 54.798,
+        "y_pct": 89.056,
+        "w_pct": 29.687,
+        "h_pct": 3.444
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "I n'",
+      "bbox": {
+        "x_pct": 50.615,
+        "y_pct": 87.444,
+        "w_pct": 2.49,
+        "h_pct": 2.774
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing page numbers",
+    "Missing heading separation",
+    "Missing footnote classification"
+  ],
+  "doc_id": "120",
+  "page": 9,
+  "elapsed_seconds": 6.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to zb_heading": 1,
+    "Extracted heading": 1,
+    "Adjusted bbox to exclude header": 1,
+    "Corrected label to footnote": 2,
+    "ADDED": 1
+  }
+}

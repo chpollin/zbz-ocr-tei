@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "102 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 136,
+        "y_pct": 82,
+        "w_pct": 725,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Header containing page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nuer les risques de conflits. Les structures morales qu'ils dfendent se solidifient de plus en plus sur leur plan absolu, hors de la ralit historique, abandonnant celle-ci  son impuret et la livrant progressivement au rgne de la force.",
+      "bbox": {
+        "x_pct": 133,
+        "y_pct": 111,
+        "w_pct": 851,
+        "h_pct": 93
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and label consistency."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rsumons-nous : les analyses thoriques de Kant et de Machiavel dgagent  l'tat pur les deux composantes essentielles de la ralit politique : la morale et la russite. S'affrontant dans une conscience privilgie, elles peuvent exiger un choix responsable plus radical que les choix ordinaires. En fait, cependant, dans la politique, les deux composantes sont inextricablement mles; et cette donne complexe et confuse, menace  la fois par le purisme nihiliste des cyniques et par le purisme anglique des moralistes, reste indispensable  toute humanisation de la vie sociale.",
+      "bbox": {
+        "x_pct": 134,
+        "y_pct": 192,
+        "w_pct": 850,
+        "h_pct": 194
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DE LA VIE SOCIALE : LA LIBERT GAGNE DPENS DU FAIT",
+      "bbox": {
+        "x_pct": 170,
+        "y_pct": 423,
+        "w_pct": 745,
+        "h_pct": 39
+      },
+      "changed": true,
+      "change_reason": "Heading identified as section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce processus d'humanisation, comment en prciser les fins ?",
+      "bbox": {
+        "x_pct": 139,
+        "y_pct": 481,
+        "w_pct": 843,
+        "h_pct": 43
+      },
+      "changed": true,
+      "change_reason": "Cleaned text string."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'on permette d'abord une remarque : humanisation ne signifie pas ncessairement progrs, au sens absolu de ce terme. Pour parler de progrs, il faut avoir fix au pralable ce qui est le moins bon et ce qui est le meilleur, et admettre entre ces deux termes une continuit univoque. Or nous n'avons fait ici rien de pareil. Tout jugement de valeur port sur l'humanisation impliquerait des critres auxquels rien, pour le moment, ne nous autorise  recourir. Supposons,  titre d'exemple, que nous adoptions comme critre du bien social la plus grande docilit aux desseins divins,  ou bien,  l'autre extrme, le bonheur. Rien ne prouve que, dans une sociale « humanise »  dans laquelle la spcificit de la condition humaine russirait de plus en plus  s'affirmer  l'homme soit docile aux desseins divins, ou, selon le critre oppos, plus heureux.",
+      "bbox": {
+        "x_pct": 132,
+        "y_pct": 526,
+        "w_pct": 851,
+        "h_pct": 291
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-tre apercevrons-nous mieux le sens de cette humanisation en nous tournant vers le pass.",
+      "bbox": {
+        "x_pct": 135,
+        "y_pct": 814,
+        "w_pct": 846,
+        "h_pct": 45
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si nous considrons l'volution de la ralit politique dans ses grandes lignes en ngligeant dlibrment les oscillations, les",
+      "bbox": {
+        "x_pct": 131,
+        "y_pct": 854,
+        "w_pct": 849,
+        "h_pct": 46
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 8,
+  "issues": [
+    "Docling text extraction quality is low; OCR cleanup required for many regions.",
+    "Multiple boxes were mislabeled as paragraph text when they were structural headers.",
+    "Page number and header were not separated from content."
+  ],
+  "doc_id": "330",
+  "page": 136,
+  "elapsed_seconds": 8.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

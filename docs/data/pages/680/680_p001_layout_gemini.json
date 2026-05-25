@@ -1,0 +1,152 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Zeitschrift:",
+      "changed": true,
+      "change_reason": "Labelled as bibliographic field header, should be section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Studia philosophica : Schweizerische Zeitschrift f%fcr Philosophie = Revue suisse de philosophie = Rivista svizzera della filosofia = Swiss journal of philosophy",
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Herausgeber:",
+      "changed": true,
+      "change_reason": "Bibliographic field header, should be section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Schweizerische Philosophische Gesellschaft 24 (1964)",
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Band:",
+      "changed": true,
+      "change_reason": "Bibliographic field header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Artikel:",
+      "changed": true,
+      "change_reason": "Bibliographic field header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La tradition selon Karl Jaspers r%e9pond-elle aux besoins de notre temps?",
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Autor:",
+      "changed": true,
+      "change_reason": "Bibliographic field header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch, Jeanne",
+      "changed": true,
+      "change_reason": "Corrected punctuation (comma instead of semicolon)."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DOI:",
+      "changed": true,
+      "change_reason": "Bibliographic field header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "https://doi.org/10.5169/seals-883336",
+      "changed": true,
+      "change_reason": "Fixed typo in URL."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Nutzungsbedingungen",
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die ETH-Bibliothek ist die Anbieterin der digitalisierten Zeitschriften. Sie besitzt keine Urheberrechte an den Zeitschriften und ist nicht verantwortlich f%fcr deren Inhalte. Die Rechte liegen in der Regel bei den Herausgebern beziehungsweise den externen Rechteinhabern. Siehe Rechtliche Hinweise.",
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Conditions d'utilisation",
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ETH Library est le fournisseur des revues num%e9ris%e9es. Elle ne d%e9tient aucun droit d'auteur sur les revues et n'est pas responsable de leur contenu. En r%e8gle g%e9n%e9rale, les droits sont d%e9tenus par les %e9diteurs ou les d%e9tenteurs de droits externes. Voir Informations l%e9gales.",
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Terms of use",
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The ETH Library is the provider of the digitised journals. It does not own any copyrights to the journals and is not responsible for their content. The rights usually lie with the publishers or the external rights holders. See Legal notice.",
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Download PDF:",
+      "changed": true,
+      "change_reason": "Moved to page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17.02.2025",
+      "changed": true,
+      "change_reason": "Moved to page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "ETH-Bibliothek Z%fcrich, E-Periodica, https://www.e-periodica.ch",
+      "changed": true,
+      "change_reason": "Moved to page_footer and fixed punctuation."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 12,
+  "issues": [
+    "Bibliographic field labels should be marked as headings.",
+    "Truncated text in legal sections.",
+    "Footer elements were mislabeled as text.",
+    "Formatting typos (e.g. lldoi instead of doi)."
+  ],
+  "doc_id": "680",
+  "page": 1,
+  "elapsed_seconds": 6.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

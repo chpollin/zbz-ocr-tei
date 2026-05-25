@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "peut obtenir ainsi, par l'expérience et la statistique, des résultats exacts. Mais on ne peut jamais répondre aux questions que pose la psychologie compréhensive.",
+      "bbox": {
+        "x_pct": 8.808,
+        "y_pct": 4.824,
+        "w_pct": 84.011,
+        "h_pct": 6.341
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les deux orientations sont légitimes. Elles ont des fins toutes différentes. L'erreur commence quand l'une prétend se substituer à l'autre et extrapoler d'un domaine dans l'autre. La psychanalyse présente aux yeux de Jaspers la faute originelle de ne pas les distinguer, de tendre même à les confondre, au point de les rendre indiscernables.",
+      "bbox": {
+        "x_pct": 8.631,
+        "y_pct": 10.737,
+        "w_pct": 84.051,
+        "h_pct": 10.111
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Théories",
+      "bbox": {
+        "x_pct": 9.255,
+        "y_pct": 25.081,
+        "w_pct": 14.77,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Removed noise characters from title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers voulut surtout dénoncer les tentatives où le discours dissimule l'absence de toute véritable connaissance, en particulier les «théories», qui, en psychiatrie, jouent un rôle important et ambigu. Les théories psychologiques, disait-il, sont construites par analogie avec les théories des sciences physiques, mais elles n'ont jamais pu conquérir le même statut. Pourquoi? En psychologie, on ne peut pas parler d'un savoir progressant de façon continue et qui porterait sur des données de fait déterminant les phénomènes mentaux. Jamais on n'a pu réaliser en psychologie une véritable recherche en commun procédant par vérification et réfutation, et recherchant sans cesse des exemples contraires à l'hypothèse pour leur faire jouer le rôle d'expériences cruciales. En fait, la psychologie ne présente avec les sciences de la nature que des analogies, des rapports métaphoriques, permettant certaines vraisemblances, mais laissant le champ libre à d'autres hypothèses, elles-mêmes jamais rigoureuses, jamais réellement vérifiables. La seule attitude honnête, c'est dès lors de préserver l'ouverture de l'esprit et de rechercher dans chaque théorie les chances partielles qu'elle offre à la vérité scientifique.",
+      "bbox": {
+        "x_pct": 8.767,
+        "y_pct": 27.789,
+        "w_pct": 83.916,
+        "h_pct": 36.418
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and missing text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aussi, Jaspers a-t-il tenté, dans sa «Psychopathologie», de recenser et d'exposer systématiquement les théories existantes en les présentant comme autant de tentatives de description plus ou moins métaphorique de ce qui se trouverait comme tel hors de l'horizon du connaissable. Il voulait embrasser du regard l'ensemble des «images» possibles, sans se laisser enfermer en aucune. Il ne voulait exclure aucune méthode, pour peu qu'elle pût servir à manifester un quelconque aspect du réel.",
+      "bbox": {
+        "x_pct": 8.902,
+        "y_pct": 63.813,
+        "w_pct": 83.604,
+        "h_pct": 15.424
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and missing text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chaque théorie s'efforce, par ses méthodes propres, de saisir l'homme dans sa totalité (qu'il s'agisse de constitution, de caractère, de structure physiologique, d'unité morbide). Chacune est plus ou moins féconde, mais jamais l'unité visée n'est objectivement saisie. L'homme reste «inachevable», que ce soit en tant que conscience.",
+      "bbox": {
+        "x_pct": 8.767,
+        "y_pct": 78.775,
+        "w_pct": 83.78,
+        "h_pct": 9.829
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and missing text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing page number region to filters."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Multiple paragraphs contained severely degraded OCR requiring manual correction.",
+    "Section header had surrounding character noise.",
+    "Page number at bottom right was omitted from detected regions."
+  ],
+  "doc_id": "1520",
+  "page": 21,
+  "elapsed_seconds": 5.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

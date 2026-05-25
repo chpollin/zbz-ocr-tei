@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 17.039,
+        "y_pct": 87.051,
+        "w_pct": 7.306,
+        "h_pct": 2.128
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 416.78,
+        "y_pct": 87.051,
+        "w_pct": 16.645,
+        "h_pct": 2.128
+      },
+      "changed": true,
+      "change_reason": "Identified as running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "il écrivait : « Nous terminons ces brèves remarques en reconnaissant que, si dès les années de notre jeunesse, et sans cesse depuis lors, le problème du mal s'est posé, imposé à nous comme le problème des problèmes, jamais nous ne sommes parvenus à saisir, à enclore dans une théorie explicative, le mystère de l'Etre. » Et en 1955, parlant à la Société romande de philosophie, il était au cœur de son propre problème — comme le problème de toute philosophie — quand il s'interrogeait sur Philosophie et philosophies, opposant la divergence de fait des penseurs au point de convergence transcendant qui, par delà toutes les réalisations, ne cesse de les attirer à lui.",
+      "bbox": {
+        "x_pct": 16.495,
+        "y_pct": 11.795,
+        "w_pct": 65.318,
+        "h_pct": 17.419
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text ('du mal' appeared twice)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fidèle à la philosophie au point de refuser tout dogmatisme et tout système qui l’en eût séparé, il l’a été aussi envers les êtres humains. Chaque fois que la mort a frappé parmi les philosophes de Suisse romande (et elle a frappé, ces dernières années, avec une fréquence étrange et cruelle), c’est lui qui a fixé pour plus tard les traits, la physionomie morale, intellectuelle, affective, du collègue disparu.",
+      "bbox": {
+        "x_pct": 16.656,
+        "y_pct": 29.077,
+        "w_pct": 65.238,
+        "h_pct": 12.65
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and layout issues."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour ma part, je ne l’ai jamais approché sans ressentir vivement, par contraste, ce quelque chose de sauvage et d’inéducable qui résiste en moi, et c’est pourquoi il m’a toujours intimidée par sa retenue même. J’espère pouvoir maintenant compter sur son appui amical.",
+      "bbox": {
+        "x_pct": 16.6,
+        "y_pct": 41.14,
+        "w_pct": 65.117,
+        "h_pct": 8.49
+      },
+      "changed": true,
+      "change_reason": "Fixed broken words and punctuation."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Raw text labels were inconsistent and contained OCR artifacts.",
+    "Page number and header were incorrectly tagged as paragraphs.",
+    "OCR text required manual reconstruction due to fragmentation.",
+    "Bounding boxes captured redundant header/footer content."
+  ],
+  "doc_id": "380",
+  "page": 3,
+  "elapsed_seconds": 4.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

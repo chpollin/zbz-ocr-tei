@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "NOUVELLE ENCYCLOPEDIE PHILOSOPHIQUE",
+      "bbox": {
+        "x_pct": 28.268,
+        "y_pct": 9.886,
+        "w_pct": 57.123,
+        "h_pct": 5.777
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Collection publiee sous la direction de M. HENRI DELACROIX",
+      "bbox": {
+        "x_pct": 21.883,
+        "y_pct": 15.825,
+        "w_pct": 70.136,
+        "h_pct": 2.288
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo IIENRI to HENRI and accented characters."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chaque volume",
+      "bbox": {
+        "x_pct": 42.169,
+        "y_pct": 19.857,
+        "w_pct": 18.78,
+        "h_pct": 2.164
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo 'voluumne' to 'volume'."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10 fr.",
+      "bbox": {
+        "x_pct": 63.599,
+        "y_pct": 19.857,
+        "w_pct": 7.033,
+        "h_pct": 1.592
+      },
+      "changed": true,
+      "change_reason": "Labeled as page_footer/filter as it represents pricing information footer component."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bibliographic list of the collection",
+      "bbox": {
+        "x_pct": 19.111,
+        "y_pct": 23.422,
+        "w_pct": 71.31,
+        "h_pct": 68.446
+      },
+      "changed": true,
+      "change_reason": "Document index box had no text content; assigned representative description."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "OCR errors in author name and volume word",
+    "Pricing information mislabeled as part of main text flow",
+    "Main bibliographic block lacks extracted text content"
+  ],
+  "doc_id": "20",
+  "page": 208,
+  "elapsed_seconds": 4.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

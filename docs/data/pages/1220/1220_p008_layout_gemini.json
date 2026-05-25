@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Latholisdie Schurilten, Ordenszeitsdirifien, die sid Verluse n spezitisd Christlichem in diesen Krei",
+      "bbox": {
+        "x_pct": 10.305,
+        "y_pct": 11.017,
+        "w_pct": 38.6,
+        "h_pct": 29.986
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn der Bindung mit dcr totzliraren",
+      "bbox": {
+        "x_pct": 10.722,
+        "y_pct": 48.206,
+        "w_pct": 37.923,
+        "h_pct": 4.718
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Art Bruder-Teind-Beziehung gegenscitig ud1, schr",
+      "bbox": {
+        "x_pct": 10.418,
+        "y_pct": 75.706,
+        "w_pct": 25.587,
+        "h_pct": 2.641
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "80",
+      "bbox": {
+        "x_pct": 10.418,
+        "y_pct": 83.5,
+        "w_pct": 3.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "Eebe",
+      "bbox": {
+        "x_pct": 70.993,
+        "y_pct": 38.206,
+        "w_pct": 3.42,
+        "h_pct": 1.511
+      },
+      "changed": true,
+      "change_reason": "Artifact region"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der der 25 Gesduidte.  Infolgedessen der Zcil. cin Nadher gibt Echt lung gibr",
+      "bbox": {
+        "x_pct": 53.307,
+        "y_pct": 41.949,
+        "w_pct": 37.664,
+        "h_pct": 18.814
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "81",
+      "bbox": {
+        "x_pct": 89.6,
+        "y_pct": 83.5,
+        "w_pct": 3.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page numbers were missing.",
+    "Artifact labeled as paragraph.",
+    "Header content from previous page not analyzed.",
+    "Speaker turns identified as paragraphs."
+  ],
+  "doc_id": "1220",
+  "page": 8,
+  "elapsed_seconds": 6.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Artifact region": 1,
+    "ADDED": 2
+  }
+}

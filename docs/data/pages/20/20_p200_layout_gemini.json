@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "198",
+      "bbox": {
+        "x_pct": 142.0,
+        "y_pct": 82.0,
+        "w_pct": 32.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header and excluded."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONCLUSION",
+      "bbox": {
+        "x_pct": 439.0,
+        "y_pct": 82.0,
+        "w_pct": 122.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "peut-être qu'en s'engageant, ou mieux : une profondeur qui nécessite un acte qui engage. Cela échappe nécessairement à Valéry. Ayant constaté l'échec de la métaphysique à saisir un être objectif, il a vu que le philosophe se servait de chiffres pour exprimer son effort. Mais il n'a pas vu le sens chiffré de l'échec lui-même. Seuls les éléments esthétiques de la philosophie ont résisté à ses yeux. Il n'a pas vu que si le philosophe échoue dans sa tentative de saisir l'être objectif, il s'empare pourtant par son échec de quelque chose qui est : son être. Il s'empare de son être en l'engageant et en le devenant. Il y va de lui-même. Voilà la différence fondamentale qu'il y aura toujours entre un « art des idées » et la philosophie.",
+      "bbox": {
+        "x_pct": 137.5,
+        "y_pct": 126.0,
+        "w_pct": 764.61,
+        "h_pct": 359.71
+      },
+      "changed": true,
+      "change_reason": "Corrected text content as the previous OCR was severely garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Conclusion : Dans la première partie de ce travail, nous avons vu qu'à la base de toute activité philosophique il y a la croyance à un résultat final qui sera un savoir objectif. Cette croyance paraît être une illusion : non seulement la philosophie n'a pas abouti à un savoir objectif, mais encore elle ne le doit pas : ce serait sa mort et la fin de la liberté humaine. D'autre part cette illusion est indispensable à la philosophie. Mais celle-ci à mesure qu'elle se conçoit elle-même plus clairement, détruit pas à pas son illusion fondamentale. Nous avons cherché dans l'histoire de la philosophie, les étapes de cette destruction — et nous avons trouvé enfin que dans la philosophie de Jaspers, l'illusion n'existe plus : à ce moment, le seul objet explicite possible, c'est la destruction même de l'illusion.",
+      "bbox": {
+        "x_pct": 140.06,
+        "y_pct": 482.57,
+        "w_pct": 765.51,
+        "h_pct": 407.9
+      },
+      "changed": true,
+      "change_reason": "Corrected text content as the previous OCR was incomplete and inaccurate."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR output was severely corrupted in the provided snippets.",
+    "Page number at top left was not detected and labeled as text.",
+    "Heading 'CONCLUSION' was not detected in the provided snippet."
+  ],
+  "doc_id": "20",
+  "page": 200,
+  "elapsed_seconds": 4.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

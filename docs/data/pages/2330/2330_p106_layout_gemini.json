@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "recent critique, quelque chose d'illusoire, voire de contradictoire ! Pensez au « libre épanouissement de la personne humaine », qui conduit certains à l'affirmation d'une « liberté sexuelle » qui bafoue le droit à la pudeur, le droit à une certaine intimité !",
+      "bbox": {
+        "x_pct": 16.52,
+        "y_pct": 4.944,
+        "w_pct": 79.487,
+        "h_pct": 8.468
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui, il y a beaucoup à dire à ce sujet. D'abord, vous avez prononcé le mot « libre épanouissement de la personne humaine ». Je vous avouerai que le mot « épanouissement », je ne peux plus l'employer, je ne le supporte plus. Probablement l'ai-je utilisé autrefois, mais actuellement il est devenu tellement à la mode que je ne le supporte plus. Alors je ne parlerai pas d'épanouissement.",
+      "bbox": {
+        "x_pct": 16.691,
+        "y_pct": 13.121,
+        "w_pct": 79.28,
+        "h_pct": 12.226
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il figure pourtant expressément dans la Déclaration universelle des Droits de l'Homme.",
+      "bbox": {
+        "x_pct": 16.935,
+        "y_pct": 26.637,
+        "w_pct": 79.035,
+        "h_pct": 3.871
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je sais, je sais, il y figure. Il est bon qu'il y figure, mais seulement on a tort d'en abuser. Actuellement, le terme « épanouissement de la personne humaine » signifie que cette personne humaine doit pouvoir faire ce qui lui plaît, quand cela lui plaît, comme cela lui plaît, comme celui lui passe par la tête ou par n'importe quelle autre partie du corps. Alors non, ce n'est pas cela « l'épanouissement de la personne humaine ». Il faut savoir avant tout ce qu'on entend par là. « Epanouissement de la personne humaine », pour moi, c'est son approfondissement jusqu'à cette racine essentielle qu'est sa capacité de devenir libre et responsable ; ce n'est pas du tout la volonté arbitraire du moment qui est décisive, pas du tout. Ce n'est pas faire n'importe quoi, au contraire. Pour être libre et responsable, il faut se rendre maître de soi, et pour se rendre maître de soi, il faut respecter les choses qu'on considère comme essentielles. De plus, cette liberté responsable n'est pas seulement à soi, elle appartient aussi à autrui. Cela veut dire que dans le comportement libre et responsable se trouve impliqué le respect de la possible liberté et responsabilité d'autrui. C'est finalement là toute la morale ; ce n'est donc plus la simple libération sexuelle ou autre chose de ce genre qui en découle, puisqu'il s'agit de respecter ce qui dans l'autre peut devenir liberté responsable. Il n'y a donc aucun lien entre les droits de l'homme et un quelconque laxisme.",
+      "bbox": {
+        "x_pct": 16.606,
+        "y_pct": 30.621,
+        "w_pct": 79.609,
+        "h_pct": 37.927
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. Est-ce que ne pensez pas avec Raymond Aron que « le culte des droits de l'homme » répond en quelque sorte à « l'absence d'une idéologie pouvant remplacer le communisme ». Une manière « de ne pas prendre parti, d'un côté comme de l'autre, d'être à la fois contre les gouvernements du monde libre et ceux des pays socialistes » ? J.H. — Là, je ne comprends absolument pas. Il faudrait que je voie le contexte, parce que d'habitude je suis d'accord avec Raymond Aron.",
+      "bbox": {
+        "x_pct": 16.361,
+        "y_pct": 71.798,
+        "w_pct": 79.731,
+        "h_pct": 12.234
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Raymond Aron faisait référence à la conjoncture dans laquelle l'idéologie des droits de l'homme, ou le mouvement militant des droits de l'homme",
+      "bbox": {
+        "x_pct": 19.328,
+        "y_pct": 87.605,
+        "w_pct": 76.85,
+        "h_pct": 2.315
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "zb_paragraph",
+      "text": "102",
+      "bbox": {
+        "x_pct": 17.2,
+        "y_pct": 94.6,
+        "w_pct": 3.6,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer"
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Page number at bottom of page was labeled as text",
+    "OCR text quality is poor/fragmented in some areas, though tagging is correct"
+  ],
+  "doc_id": "2330",
+  "page": 106,
+  "elapsed_seconds": 6.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

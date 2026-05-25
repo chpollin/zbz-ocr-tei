@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dévent. Sans compter que pour financer tout cela, il faudra faire une place considérable à la publicité.",
+      "bbox": {
+        "x_pct": 15.263,
+        "y_pct": 4.032,
+        "w_pct": 80.049,
+        "h_pct": 4.435
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "banalise yeux de la plupart des gens, représentaient des phénomènes tout à fait marginaux. On prétend qu'on peut tout dire, tout montrer, mais c'est une considération très abstraite. Il est évident que chaque fois qu'on montre quelque chose, on exerce une influence. Si, par exemple, l'inceste devient un mot courant à la radio et à la télévision, la chose devient plus courante qu'elle ne l'était. Lorsqu'on diffuse toutes les raisons que peuvent avoir les jeunes de ne pas supporter ce monde et de se précipiter dans la drogue, cela revient à faire de la publicité pour la drogue. Ici encore, le remède consisterait à briser l'homogénéité du petit groupe qui exerce une telle influence et à multiplier et diversifier les tendances.",
+      "bbox": {
+        "x_pct": 15.018,
+        "y_pct": 18.871,
+        "w_pct": 80.379,
+        "h_pct": 22.073
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais citer une déclaration que vous avez faite il y a quelques années, en 1974, lors d'un symposium sur le thème : « La philosophie et les réformes actuelles de la culture ». « Il se produit actuellement, avez-vous dit, un phénomène curieux : la plupart de ceux qui utilisent les mass-media sont entraî9nés vers une sorte d'unanimité sur des clichés. Malgré les différences apparentes et les pseudo-discussions, il y a beaucoup plus d'unité dans les opinions exprimées à la radio, à la télévision et dans la presse que dans l'ensemble de la population. Un élément non négligeable de cette situation me semble être l'intimidation qui règne au niveau des media. Ceux qui s'en servent osent à peine émettre un avis qui ne soit pas conforme à l'opinion dominante ».",
+      "bbox": {
+        "x_pct": 15.226,
+        "y_pct": 41.556,
+        "w_pct": 80.379,
+        "h_pct": 22.21
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois que c'est de plus en plus vrai. Vous savez que tout le monde se plaint de la diminution de la presse d'opinion, mais la raison pour laquelle le nombre des journaux diminue, c'est qu'il y a plus en plus de journaux qui sont à peu près semblables.",
+      "bbox": {
+        "x_pct": 15.421,
+        "y_pct": 63.548,
+        "w_pct": 79.939,
+        "h_pct": 8.226
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est le règne du conformisme",
+      "bbox": {
+        "x_pct": 28.571,
+        "y_pct": 72.363,
+        "w_pct": 34.151,
+        "h_pct": 2.476
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Depuis qu'on est anti-conformiste, il règne un conformisme étonnant. Le remède à ce conformisme, c'est encore le renforcement du pluralisme.",
+      "bbox": {
+        "x_pct": 15.14,
+        "y_pct": 74.355,
+        "w_pct": 80.183,
+        "h_pct": 6.266
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "N'y a-t-il pas une pesanteur constitutive de l'instrument audio-visuel comme tel ? À moins de dire au contraire qu'il y a une disproportion entre l'instrument, merveilleux en soi, et l'usage qui en est fait.",
+      "bbox": {
+        "x_pct": 15.299,
+        "y_pct": 81.21,
+        "w_pct": 80.024,
+        "h_pct": 7.823
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense parfois qu'avec le temps, lorsqu'on se sera habitué à ces",
+      "bbox": {
+        "x_pct": 25.116,
+        "y_pct": 89.056,
+        "w_pct": 70.244,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "180",
+      "bbox": {
+        "x_pct": 14.878,
+        "y_pct": 94.677,
+        "w_pct": 4.146,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 9,
+  "issues": [
+    "Initial OCR was very poor and required full transcription correction.",
+    "Page number 180 was misidentified as text.",
+    "Several text blocks merged multiple lines erroneously in the initial extraction."
+  ],
+  "doc_id": "2330",
+  "page": 184,
+  "elapsed_seconds": 9.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

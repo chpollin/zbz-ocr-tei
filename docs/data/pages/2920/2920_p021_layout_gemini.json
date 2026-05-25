@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Les droits de l'homme 523",
+      "bbox": {
+        "x_pct": 235.0,
+        "y_pct": 89.0,
+        "w_pct": 472.0,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "rester fidèles à leur tradition religieuse. Qu'on pense aussi à ce qu'est encore aujourd'hui, dans certaines cultures, la condition féminine, à propos de laquelle les droits se trouvent violés chaque jour, sans que cette violation soit forcément ressentie comme telle par les femmes qu'il s'agirait de défendre.",
+      "bbox": {
+        "x_pct": 3.137,
+        "y_pct": 12.924,
+        "w_pct": 71.046,
+        "h_pct": 13.7
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On le voit : les tentatives faites pour diversifier et concrétiser les droits de l'homme et pour tenir compte des conditions nécessaires à leur mise en œuvre effective sont indispensables, sous peine d'en réduire l'exigence à une abstraction toute théorique, ou, au mieux, à un vœu inefficace. Mais en même temps, en les multipliant au niveau économique et social, culturel et éducatif, on court un danger croissant de noyer le poisson : les droits deviennent de moins en moins contraignants, de moins en moins exigibles, puisqu'ils dépendent de conditions toujours plus nombreuses, qui leur sont extérieures et souvent défavorables. L'impact absolu de l'exigence se décompose, il devient conditionnel, jusqu'à n'être plus qu'une incitation de plus au développement, à un moment historique donné. Plus encore : certains droits de l'homme peuvent entrer en conflit avec le droit de tout homme d'adhérer à une culture déterminée, sans laquelle il se sent étranger à lui-même.",
+      "bbox": {
+        "x_pct": 2.99,
+        "y_pct": 26.075,
+        "w_pct": 71.193,
+        "h_pct": 42.355
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'exigence absolue de liberté responsable, si simple et si claire au début, en vient à se réfracter en droits comportant des conditions, toujours relatives et de plus en plus nombreuses. Lorsqu'on examine de plus près la multiplication des droits, on se trouve même parfois devant des exigences divergentes, parfois contradictoires, selon qu'on considère avant tout les individus comme tels ou les communautés sociales dont ils font partie. Je voudrais prendre ici un seul exemple, mais particulièrement sensible : celui des langues.",
+      "bbox": {
+        "x_pct": 3.387,
+        "y_pct": 67.39,
+        "w_pct": 70.987,
+        "h_pct": 25.152
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph structure."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original text detection truncated sentences.",
+    "Page header/number misidentified as paragraph text."
+  ],
+  "doc_id": "2920",
+  "page": 21,
+  "elapsed_seconds": 4.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

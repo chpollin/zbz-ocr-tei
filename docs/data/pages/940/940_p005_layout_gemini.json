@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le pluralisme culturel",
+      "bbox": {
+        "x_pct": 2.164,
+        "y_pct": 1.273,
+        "w_pct": 38.751,
+        "h_pct": 4.551
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 2.481,
+        "y_pct": 6.551,
+        "w_pct": 17.562,
+        "h_pct": 2.029
+      },
+      "changed": true,
+      "change_reason": "Author name at the start of a text should be classified as a section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zusammenfassung: Die Genfer Philosophin sprach in diesem Vortrag (gehalten im Fröhling 1972 in Ottawa anläßlich eines Seminars der Unesco) von der Zugehörigkeit zu verschiedenen Kulturgebieten und Sprachregionen. Zwar nennt sie Kanada und Indien, aber ihre Betrachtungen haben wohl auch für die Schweiz besondere Göltigkeit. Wohl macht Mehrsprachigkeit den einzelnen Schwierigkeiten, aber gleichzeitig ist es eine wichtige Chance, sich von der Suprematie der einen Kultur zu lösen¹.",
+      "bbox": {
+        "x_pct": 2.712,
+        "y_pct": 19.396,
+        "w_pct": 80.975,
+        "h_pct": 10.751
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and improved OCR accuracy based on image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pluralisme culturel, à l'intérieur d'un pays, s'il est, par sa diversité même, source de richesse et de mobilité inventive, soulève cependant toujours de grandes difficultés. Celles-ci tiennent aussi bien à la nature de la culture qu'à celle de l'étre humain. Toute culture comporte des données contradictoires et répond à des besoins contradictoires, de sorte que les problèmes qu'elle pose sont d'une extrême complexité. En voici quelques exemples :",
+      "bbox": {
+        "x_pct": 2.652,
+        "y_pct": 32.299,
+        "w_pct": 81.206,
+        "h_pct": 12.293
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une culture donnée est faite de tous les liens constitutifs d'une communauté, et c'est à travers elle que les individus se sentent membres d'une unité commune. Mais en même temps, c'est la culture qui fournit aux individus l'air «transnational» qui les rend indépendants de leur communauté, c'est à travers elle qu'ils ont accès à une source vive autonome, irréductible aux conformismes traditionnels. Il importe de comprendre d'emblée que ces deux fonctions unificatrice et affranchissante de la culture ne sont pas, comme il pourrait sembler, juxtaposées, tel secteur culturel remplissant l'une et tel autre l'autre. En réalité, les deux fonctions n'en font qu'une : il s'agit d'un double aspect d'une même réalité.",
+      "bbox": {
+        "x_pct": 3.02,
+        "y_pct": 45.261,
+        "w_pct": 81.044,
+        "h_pct": 20.411
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'individu a besoin d'appartenir à une collectivité et il en a le droit. Mais il a aussi, et du même coup, le droit de devenir individuellement lui-même. Et il a encore, et du même coup, droit à l'ouverture sur le vaste monde. Ces exigences entraînent souvent des contradictions très concrètes, notamment dans le domaine linguistique. Songeons par exemple à un pays comme l'Inde, aux très nombreuses langues vernaculaires. Il est certes recommandable d'apprendre à lire dans la langue maternelle, donc vernaculaire. Mais ensuite, pour disposer d'un instrument linguistique au niveau national, l'enfant devra apprendre à parler, lire et écrire une seconde langue – qui ne lui ouvre pas encore le vaste monde. Il lui faudra alors en apprendre une troisième. Il est démocratique de",
+      "bbox": {
+        "x_pct": 3.191,
+        "y_pct": 66.962,
+        "w_pct": 81.352,
+        "h_pct": 20.938
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "In der Zeitschrift Unescopresse (Juni 1972) sind breite Teile des vorliegenden Referates in deutscher Übersetzung veröffentlicht. Die Zeitschrift ist gratis erhältlich bei der Nationalen Unesco-Kommission, EigerstraÖe 80, 3003 Bern.",
+      "bbox": {
+        "x_pct": 5.304,
+        "y_pct": 89.46,
+        "w_pct": 79.239,
+        "h_pct": 5.238
+      },
+      "changed": true,
+      "change_reason": "Changed label to footnote as this is bibliographic/reference information at the bottom of the page."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "567",
+      "bbox": {
+        "x_pct": 94.0,
+        "y_pct": 93.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 6,
+  "issues": [
+    "Several paragraphs were truncated in the initial OCR extraction.",
+    "Page number 567 was originally missing a bounding box or mislabeled.",
+    "Author signature/name needs consistent categorization."
+  ],
+  "doc_id": "940",
+  "page": 5,
+  "elapsed_seconds": 11.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

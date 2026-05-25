@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 21.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header text"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "165",
+      "bbox": {
+        "x_pct": 75.8,
+        "y_pct": 100,
+        "w_pct": 3.2,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comme la morale le fait pour le bien, elle essayera,   malgré siluation contradictoire; de détermine",
+      "bbox": {
+        "x_pct": 11.371,
+        "y_pct": 13.885,
+        "w_pct": 68.387,
+        "h_pct": 13.073
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lexistence eslhétique ne être un sous-produit reflétant Fexistence   pralique; contemplalive;   théo",
+      "bbox": {
+        "x_pct": 11.44,
+        "y_pct": 26.654,
+        "w_pct": 68.514,
+        "h_pct": 24.052
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La première condition pour qu'une œuvre ait cette &masse \" ontologique; cest la cohérence . On 4 bea",
+      "bbox": {
+        "x_pct": 11.751,
+        "y_pct": 50.933,
+        "w_pct": 68.353,
+        "h_pct": 24.181
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page_header and page_footer regions in input"
+  ],
+  "doc_id": "110",
+  "page": 167,
+  "elapsed_seconds": 4.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

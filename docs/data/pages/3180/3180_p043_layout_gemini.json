@@ -1,0 +1,141 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "wenn ich das recht verstehe, denn soweit ich sehe, hat jeden falls hier oben niemand behauptet, man könne sich nicht entscheiden. Ich zumindest habe das nicht behauptet.",
+      "bbox": {
+        "x_pct": 8.877,
+        "y_pct": 3.579,
+        "w_pct": 84.925,
+        "h_pct": 7.049
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and did not match the actual image content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Frage aus dem Publikum (A):",
+      "bbox": {
+        "x_pct": 8.832,
+        "y_pct": 36.949,
+        "w_pct": 44.506,
+        "h_pct": 2.605
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Okay. Dann das andere Beispiel: Der Mensch ist determiniert oder frei. Wenn ich nicht entscheiden kann, ob er nun determiniert oder frei ist, wenn ich keine definitive, eindeutige Antwort geben kann: warum sagen Sie, beide Begriffe sind wahr, und warum sagen Sie nicht, beide Begriffe sind untauglich, den Menschen zu beschreiben?",
+      "bbox": {
+        "x_pct": 8.937,
+        "y_pct": 39.189,
+        "w_pct": 85.18,
+        "h_pct": 13.206
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and did not match the actual image content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 9.087,
+        "y_pct": 54.918,
+        "w_pct": 23.099,
+        "h_pct": 2.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie sagen also, daß man sich; wenn beides wahr ist, nicht für eines entscheiden kann. Meinen Sie das?",
+      "bbox": {
+        "x_pct": 9.027,
+        "y_pct": 56.985,
+        "w_pct": 85.18,
+        "h_pct": 4.335
+      },
+      "changed": true,
+      "change_reason": "Text content had incorrect order and missed fragments."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Frage aus dem Publikum (A):",
+      "bbox": {
+        "x_pct": 8.832,
+        "y_pct": 63.689,
+        "w_pct": 44.656,
+        "h_pct": 2.678
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ja, das ist es, man kann sich nicht für eines entscheiden, und damit sind die Begriffe ungeeignet für die Beschreibung.",
+      "bbox": {
+        "x_pct": 8.832,
+        "y_pct": 65.82,
+        "w_pct": 85.18,
+        "h_pct": 4.945
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 9.087,
+        "y_pct": 72.741,
+        "w_pct": 23.099,
+        "h_pct": 2.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Also, wenn man diese Worte in Ihrer Welt, so wie Sie sie verstehen, nicht brauchen kann, dann können Sie sie eben nicht brauchen. Aber das ist doch kein Verbot für die ganze Menschheit! Denn man darf sich doch fragen, ob jemand frei ist oder nicht. Ich glaube auch, daß es ein bestimmtes Interesse gibt zu entscheiden, ob es stimmt oder nicht stimmt, daß jemand frei ist oder nicht. Wieso wollen Sie sich einfach davon enthalten? Ich verstehe nicht, wie Sie das rechtfertigen wollen.",
+      "bbox": {
+        "x_pct": 8.937,
+        "y_pct": 74.8,
+        "w_pct": 85.269,
+        "h_pct": 18.279
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and had incorrect OCR breaks."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "66",
+      "bbox": {
+        "x_pct": 9.356,
+        "y_pct": 94.675,
+        "w_pct": 2.583,
+        "h_pct": 1.745
+      },
+      "changed": true,
+      "change_reason": "Missing region for page number identified and corrected to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Text content for multiple paragraphs was OCR-corrupted or truncated.",
+    "Page number 66 was not labeled in the initial scan."
+  ],
+  "doc_id": "3180",
+  "page": 43,
+  "elapsed_seconds": 5.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

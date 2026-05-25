@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "24 novembre.",
+      "bbox": {
+        "x_pct": 68.243,
+        "y_pct": 25.302,
+        "w_pct": 19.635,
+        "h_pct": 2.013
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header/running head, not a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai marché longtemps, très longtemps, par des chemins qui semblaient s'enfoncer en moi-même, et le jour décrut. Mais la nuit qui vint alors ne fut pas celle, coutumière, subtile, qui monte du sol, se dégage des épaisseurs herbeuses, des arbres creux, des fouillis de branches, du fond des vallées, des recoins des chambres, et se répand et envahit les fines bulles de l'air. La nuit, cette fois, ce fut un durcissement sur tout le pourtour du monde, comme si un gel hâtif l'enfermait dans du roc. La couche de pierre, lente, continue, s'épaissit, resserra son étreinte. Elle dégageait un froid croissant, et l'obscurité n'était qu'un aspect de ce froid. Mais les feuilles, les oiseaux ne pouvaient pas frissonner, raidis, étouffés par l'air que la pierre condensait et rendait soudain trop compact pour permettre même un tremblement. L'anéantissement rigide venait de loin, s'emparait de toutes les créatures, et je vis avec la précision de l'effroi, pris dans la roche universelle, les fossiles de toutes les formes vivantes, des branches telles que le vent de la terre les avait tordues, des animaux tels que l'instinct de la terre les avait jetés dans la chasse. La peur faisait bondir les bêtes encore libres, échevelait les feuillages les plus proches, et c'est",
+      "bbox": {
+        "x_pct": 10.541,
+        "y_pct": 30.274,
+        "w_pct": 81.081,
+        "h_pct": 55.955
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text and label accuracy."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Text transcription in paragraph was truncated and contained errors.",
+    "Page header identified as zb_paragraph."
+  ],
+  "doc_id": "40",
+  "page": 148,
+  "elapsed_seconds": 4.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

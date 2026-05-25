@@ -1,0 +1,129 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 6.375,
+        "y_pct": 8.0,
+        "w_pct": 11.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Menschenrechte und Menschsein",
+      "bbox": {
+        "x_pct": 77.0,
+        "y_pct": 8.0,
+        "w_pct": 20.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "menrreffen von heidem schneiden dem cincn odcr dem andcren zu entflichen, hort Man auf, Engcl Eibt M",
+      "bbox": {
+        "x_pct": 6.375,
+        "y_pct": 12.157,
+        "w_pct": 37.682,
+        "h_pct": 9.956
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gesetz mul es auch einc Polizci keine dicscr WiderEcben da;",
+      "bbox": {
+        "x_pct": 6.745,
+        "y_pct": 46.278,
+        "w_pct": 38.015,
+        "h_pct": 10.192
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Von jeder personlichen Eivenschalt Vicle konstitution des Menschen hal. Dicse   Moglichkei der indiv",
+      "bbox": {
+        "x_pct": 6.695,
+        "y_pct": 61.492,
+        "w_pct": 38.52,
+        "h_pct": 21.713
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 6.695,
+        "y_pct": 88.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "widerstchen, abcr Im Spiel ist engclsgleicher Mensch Wenn Man den Menschliche Menschenrecle in   der",
+      "bbox": {
+        "x_pct": 54.501,
+        "y_pct": 21.817,
+        "w_pct": 13.564,
+        "h_pct": 6.352
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es bcsicll dic vilen und Iechre wirksam werden konnen Um abcr brauchen Erzichungsrcchte dassclbe ver",
+      "bbox": {
+        "x_pct": 54.871,
+        "y_pct": 46.529,
+        "w_pct": 37.398,
+        "h_pct": 23.383
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 96.0,
+        "y_pct": 88.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page numbers not labeled as page_footer",
+    "Running headers not labeled as page_header",
+    "Detection boxes ignore significant text areas at page margins",
+    "OCR quality issues present in extracted text"
+  ],
+  "doc_id": "2930",
+  "page": 4,
+  "elapsed_seconds": 4.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

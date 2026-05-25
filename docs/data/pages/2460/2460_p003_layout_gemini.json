@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les Efforts Oecuméniques des Chrétiens considérés d’un point de vue non chrétien",
+      "bbox": {
+        "x_pct": 17.251,
+        "y_pct": 7.854,
+        "w_pct": 70.708,
+        "h_pct": 5.951
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcription to match the text in the image exactly."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 41.092,
+        "y_pct": 15.873,
+        "w_pct": 23.169,
+        "h_pct": 1.746
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est habituel d’entendre les chrétiens parler du «scandale des frères séparés», à propos des trois Eglises chrétiennes, catholique-romaine, orthodoxe et réformée. Le plus souvent, il s’agit d’ailleurs sous nos latitudes des catholiques et des protestants, comme si la séparation de l’Eglise d’Orient et de l’Eglise d’Occident était maintenant assez ancienne pour que «le scandale» se soit atténué dans la conscience contemporaine.",
+      "bbox": {
+        "x_pct": 13.89,
+        "y_pct": 24.143,
+        "w_pct": 77.431,
+        "h_pct": 14.385
+      },
+      "changed": true,
+      "change_reason": "Replaced garbled OCR text with accurate transcription from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J’ai sans doute tort de me mêler — exceptionnellement — de tels problèmes, étant née juive, ayant été élevée hors de toute confession religieuse, et ayant surtout cherché à approfondir, à la suite de mon maître Karl Jaspers, «la foi philosophique». Mais il y a si longtemps que je cherche à comprendre, de toute ma sympathie et avec tout mon respect, la foi des uns et des autres, qu’on me pardonnera peut-être mon indiscrétion d’aujourd’hui. D’autant plus que c’est justement le professeur Buri, que nous voulons honorer ici, qui a bien voulu me faire — sans doute en souvenir de Karl Jaspers — l’insigne honneur de prononcer la laudatio en m’attribuant le doctorat de théologie honoris causa de l’Université de Bâle.",
+      "bbox": {
+        "x_pct": 13.842,
+        "y_pct": 38.113,
+        "w_pct": 77.311,
+        "h_pct": 21.848
+      },
+      "changed": true,
+      "change_reason": "Replaced garbled OCR text with accurate transcription from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "«Qu’il y ait scandale» dans la séparation des frères chrétiens, je ne l’ai jamais compris. Il y a scandale, certes, lorsque les adeptes d’une religion de l’amour se tuent, se brûlent les uns les autres. Il y a scandale déjà lorsqu’ils mutilent les églises les uns des autres en détruisant à coups de marteaux les têtes des saints et des prophètes qui en ornent les portails ou les chapiteaux. Mais si Dieu est transcendant, comment n’y aurait-il pas séparation entre les voies où s’engage l’approche des hommes? S’il n’y en avait qu’une, cela me paraîtrait inquiétant et me ferait douter de la transcendance du Dieu des croyants. La finitude humaine trouve même, me semble-t-il, dans la pluralité des voies, une sorte de compensation qui pourrait être agréable à Dieu.",
+      "bbox": {
+        "x_pct": 13.649,
+        "y_pct": 60.039,
+        "w_pct": 77.383,
+        "h_pct": 22.287
+      },
+      "changed": true,
+      "change_reason": "Replaced garbled OCR text with accurate transcription from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien plus: elle offre peut-être aux frères séparés l’occasion et l’instrument d’un progrès, d’un approfondissement, à condition qu’au départ",
+      "bbox": {
+        "x_pct": 13.842,
+        "y_pct": 81.966,
+        "w_pct": 77.119,
+        "h_pct": 4.385
+      },
+      "changed": true,
+      "change_reason": "Replaced garbled OCR text with accurate transcription from the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "135",
+      "bbox": {
+        "x_pct": 86.6,
+        "y_pct": 88.0,
+        "w_pct": 3.4,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as a filtered region."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Most text transcriptions were corrupted by OCR errors.",
+    "Page number missing from initial detection.",
+    "Section header transcription had OCR errors."
+  ],
+  "doc_id": "2460",
+  "page": 3,
+  "elapsed_seconds": 6.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

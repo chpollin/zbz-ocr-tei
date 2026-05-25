@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 145",
+      "bbox": {
+        "x_pct": 328.69,
+        "y_pct": 98.7,
+        "w_pct": 566.2,
+        "h_pct": 11.23
+      },
+      "changed": true,
+      "change_reason": "Header identified as running title and page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une valeur aussi dcisive. Celle-ci doit lui venir d'ailleurs, d'une source qui le transcende comme elle transcende n'importe quel plan particulier d'existence. Il ne faut pas la chercher dans une « mystique » politique donne. Au contraire, elle dtruit mme, du seul fait de sa transcendance, les lments de mystique dont l'engagement politique tente de se parer, et elle les rduit  des superstitions.",
+      "bbox": {
+        "x_pct": 5.989,
+        "y_pct": 12.567,
+        "w_pct": 84.582,
+        "h_pct": 14.768
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Condition difficile que celle du « partisan », au sens pur de ce mot. Sa responsabilit individuelle se trouve accrue, alors qu'il a diminu sa libert d'action en vue d'une efficacit plus grande. Il est dsormais responsable d'actes qu'il n'est pas seul  dcider ni  excuter. Il accepte de se soumettre par discipline  des dcisions qui ne sont pas celles qu'il aurait voulues. Soumission, nous l'avons vu, partielle, conditionnelle et rvocable, mais tout parti l'exige et doit l'exiger sous peine de disparatre. Le parti ne confre au partisan aucune innocence puisqu'il n'a pas d'existence substantielle et ne vaut pas par lui-mme : il ne dit pas le bien, il ne consacre rien, il ne purifie rien. Pour le partisan, le parti joue un rle technique, non un rle moral : les problmes moraux des moyens et des fins continuent  peser entirement sur lui seul, aggravs de solidarits nouvelles. Le parti ne l'arrache pas  la solitude, ou du moins il n'y russit que sur un mode d'existence limit, celui o il fait partie d'une quipe attele  une tche dfinie. En mme temps, il est solidaire de son parti d'une manire dcisive puisque c'est  travers lui qu'il insre sa volont dans la forme prise par la vie collective. Il a besoin du parti, il a la charge de le maintenir et de le faire vivre, de lui garder au moins le degr de puret sans lequel il perdrait son sens devant sa propre instance intrieure, absolue et solitaire. Exigences souvent, au moins en apparence, contradictoires. Le partisan joue, dans sa lutte, non seulement son sort, mais celui d'une foule d'tres humains, le sens et la physionomie du pass, la valeur ou le non-sens d'innombrables sacrifices, les possibilits de l'avenir. Et il ne cesse pas d'tre responsable de ce que fait son parti puisqu'il ne cesse de le choisir : le parti n'tant pas pour lui une donne de sa destine (comme, par exemple, son appartenance partielle  telle me collective, familiale ou nationale), ni mme une adhsion substantielle et dfinitive (comme de prononcer des vux dont l'efficacit ternelle).",
+      "bbox": {
+        "x_pct": 5.529,
+        "y_pct": 26.649,
+        "w_pct": 85.0,
+        "h_pct": 63.431
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text content"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Text OCR output was heavily corrupted/hallucinated in original input.",
+    "Page number and header were incorrectly merged into text regions."
+  ],
+  "doc_id": "330",
+  "page": 179,
+  "elapsed_seconds": 9.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

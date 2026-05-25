@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Sexualit&auml;t im Menschsein",
+      "bbox": {
+        "x_pct": 5.168,
+        "y_pct": 55.437,
+        "w_pct": 27.674,
+        "h_pct": 2.224
+      },
+      "changed": true,
+      "change_reason": "Label corrected to section_header/zb_heading as this is the chapter/essay title."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. Jeanne Hersch Pr&auml;sidentin der Karl-Jaspers-Stiftung, Basel",
+      "bbox": {
+        "x_pct": 5.168,
+        "y_pct": 8.707,
+        "w_pct": 48.191,
+        "h_pct": 3.45
+      },
+      "changed": true,
+      "change_reason": "Label corrected to section_header/zb_heading for author identification block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mein Thema heute ist f&uuml;r mich ein ganz unerwartetes, denn ich habe noch nie &uuml;ber Sexualit&auml;t gesprochen. Wenn es das erste Mal ist, mu&szlig; ich Sie um Nachsicht bitten, wenn meine Ausf&uuml;hrungen vielleicht etwas ungeordnet erscheinen.",
+      "bbox": {
+        "x_pct": 5.297,
+        "y_pct": 43.236,
+        "w_pct": 86.085,
+        "h_pct": 6.618
+      },
+      "changed": true,
+      "change_reason": "Text completion for accuracy based on source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich m&ouml;chte &uuml;ber die Sexualit&auml;t im Menschsein sprechen. Ich bin &uuml;berzeugt, da&szlig; die Sexualit&auml;t den gro&szlig;en Bogen der Verbindung des Menschen mit der ganzen lebenden Natur darstellt und im Zentrum dieser Verbindung steht. Sie wird aber andererseits dadurch, da&szlig; es um den Menschen geht, auch vollkommen ver&auml;ndert. Deswegen mu&szlig; man sich zun&auml;chst eine Idee vom menschlichen Wesen machen, vom Menschen als solchem und vom Menschsein, um von der Sexualit&auml;t im Menschsein sprechen zu k&ouml;nnen.",
+      "bbox": {
+        "x_pct": 5.168,
+        "y_pct": 51.481,
+        "w_pct": 86.214,
+        "h_pct": 11.901
+      },
+      "changed": true,
+      "change_reason": "Text completion for accuracy based on source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was ist eigent&uuml;mlich am Menschen? Man spricht heutzutage viel von den Menschenrechten. Warum hat der Mensch Rechte? Es ist nicht, weil wir selber eben Menschen sind und deswegen Rechte f&uuml;r uns beanspruchen. Es gibt wirklich etwas im Menschen, was dies rechtfertigt, und was ist das? Der Mensch ist keine Maschine und kein Tier, obgleich er sich manchmal danach zu sehnen scheint. Ich habe oft das Gef&uuml;hl, da&szlig; die Menschen heutzutage m&uuml;de geworden sind, Mensch zu sein. Es ist erm&uuml;dend, Mensch zu sein, es ist eine schwierige Aufgabe, und man hat manchmal das Gef&uuml;hl, da&szlig; die Menschen viel lieber eine Maschine w&auml;ren oder ein Tier, nur um unschuldig zu sein. Der Mensch ist nicht unschuldig. Es gibt im Menschen Mechanisches, das ist nicht zu leugnen, es gibt Vorg&auml;nge, die zur Physik und zur Chemie geh&ouml;ren, und dank dieser Vorg&auml;nge kann die Medizin Krankheiten heilen. Es gibt auch ein Tier im Menschen - Sie brauchen nur daran zu denken, da&szlig; jeder Mensch t&auml;glich essen mu&szlig;, was ein tierisches Bed&uuml;rfnis ist. Dieses Tier Mensch mu&szlig; jeden Tag essen, und da spricht man viel zu schnell und viel zu leicht von Egoismus, denn der Mensch will und soll &uuml;berleben. Er will, da&szlig; diejenigen, die er liebt, auch &uuml;berleben. Deshalb mu&szlig; er jeden Tag etwas zu essen haben, f&uuml;r sich selbst und f&uuml;r seine lieben n&auml;chsten Menschen. Diese Sorge ist oft der Grund, weshalb der Mensch \"egoistisch\" ist, wie man sagt. Es gibt einen bestimmten Egoismus, der einfach zu den Grundbed&uuml;rfnissen des Lebens geh&ouml;rt.",
+      "bbox": {
+        "x_pct": 5.078,
+        "y_pct": 64.58,
+        "w_pct": 86.525,
+        "h_pct": 33.365
+      },
+      "changed": true,
+      "change_reason": "Text completion for accuracy based on source."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected text fragments were truncated and needed full restoration.",
+    "Section header identified incorrectly.",
+    "Page number missing from OCR recognition.",
+    "Missing Page header (17) in list."
+  ],
+  "doc_id": "2640",
+  "page": 1,
+  "elapsed_seconds": 6.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Machtbeziehungen integriert, negiert sie schon den Wert, den Sinn, die Wirksamkeit, die er für sich in Anspruch nimmt; und da gibt es, im Kern des Marxismus und sozusagen wider seinen Willen, wie eine Klage über die unversöhnliche Scheidung zwischen kausaler Erklärung und Wert. Dann aber, und durch dieselbe Gedankenbewegung, die den Wert des Mythos aufhebt, betont die marxistische Methode dessen Wirksamkeit, und die Notwendigkeit, sie zu bekämpfen, wird für die marxistische Methode zur eigenen Rechtfertigung. Indem sie also den Mythos entlarvt, um dadurch die Wirklichkeit zu ändern, wirft sie ein volles und mächtiges Licht auf eine Grundwahrheit: nämlich, daß beide Begriffe, Mythos und Wirklichkeit, die durch die Entlarvung notwendig scharf entgegengesetzt werden, als bildeten sie einen klaren und durchsichtigen Gegensatz, faktisch untrennbar sind – wenigstens in der Politik. Die »mythische« Unklarheit und Trübung zwischen Werten und faktischen Beziehungen im Bereich der Macht und der Güter ist nicht nur bei dem zu entlarvenden »idealistischen« Gegner vorhanden: sie gehört wesentlich zur Politik als solcher. In der Tat will jede Absicht, angesichts faktischer Gegebenheiten, einem Wert Wirksamkeit verleihen – also einer Nicht-Tatsache Wirklichkeit einspritzen –, also Tatsachen und Werte vermischen, Tatsachen ändern durch etwas, was keine Tatsache ist. Da es sich um ein kollektives Eingreifen handelt, kann dieses Eingreifen den punktuellen Charakter einer persönlichen Entscheidung oder Handlung nicht haben: es verdichtet sich unvermeidlich in Sinngebungen, Deutungen, Urteilen, Plänen, es wird zum Mythos. Die marxistische Entlarvung selbst kann hier keine Ausnahme sein.",
+      "bbox": {
+        "x_pct": 9.771,
+        "y_pct": 3.975,
+        "w_pct": 84.733,
+        "h_pct": 59.23
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated and did not reflect the actual OCR of the provided image paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es kann auf der Ebene reiner Tatsachen keine Politik geben. Es gibt streng genommen keine »realistische« Politik. Jede Politik enthält, neben der Feststellung dessen, was ist, den Mythos dessen, was sein kann. Und freilich ist dieser Mythos nicht »neben« der Feststellung, sondern in deren Kern. Denn die Feststellung einer despotischen Regierung z. B. ist unmöglich, ohne daß der »Mythos« einer Welt des Rechtes und der Freiheit herangezogen würde. Für Menschen, die gar keinen Bezug zu diesem Mythos hätten, wäre Despotismus eben keiner. Der Mythos der Koinzidenz, des Zusammenfallens von Macht und Wert wird im wesentlichen Sinne von den Machthabern aller Zeiten fast ein apriori vorgefunden, das die Verschmelzung von Macht und ethischem Prestige in ihrer Person rechtfertigt, um gleichzeitig Furcht und Ehrfurcht hervorzurufen (in mehreren Sprachen wird",
+      "bbox": {
+        "x_pct": 10.031,
+        "y_pct": 62.589,
+        "w_pct": 84.321,
+        "h_pct": 29.971
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and corrupted text content from the original OCR snippet."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "81",
+      "bbox": {
+        "x_pct": 91.0,
+        "y_pct": 93.3,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter/page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was truncated and contained significant errors in text reproduction.",
+    "Page number at bottom right was missing from the initial region list.",
+    "Labels were mostly correct, but OCR content required complete replacement to reflect the source document."
+  ],
+  "doc_id": "700",
+  "page": 5,
+  "elapsed_seconds": 12.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

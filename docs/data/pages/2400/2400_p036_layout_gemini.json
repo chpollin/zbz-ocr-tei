@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: So weit es sich um den normalen Alltag und um eine normale Lage handelt: Nein. Vielleicht aber in der Krise. Auch ich würde mich dagegen wehren, dass die Schweiz von einem ‹Überpolitiker›, von einem ‹Supermann› geführt würde.",
+      "bbox": {
+        "x_pct": 6.486,
+        "y_pct": 4.905,
+        "w_pct": 65.217,
+        "h_pct": 13.435
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Problem der Autorität in unserer Staatsform ist sehr viel komplexer: Es ist eine Vielzahl von Autoritätsträgern notwendig. Es geht um die Gesamtheit der politischen Elite – ein Wort, das ich, in der Definition von Herrn Schmidheiny, sehr liebe. Die Autorität in der Schweiz wäre multidimensional und pluralistisch. Sie wäre gewissermaßen eine Großzahl von sehr unterschiedlichen Persönlichkeiten mit Verstand und Herz, die alle dialogfähig wären, zwar natürlich personifiziert, aber nicht auf einzelne bestimmte Personen zurückzuführen.",
+      "bbox": {
+        "x_pct": 6.643,
+        "y_pct": 18.654,
+        "w_pct": 64.855,
+        "h_pct": 26.71
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Lassen Sie uns noch einen Augenblick beim Problem der Autorität verweilen. Plädiert wird für Autorität – nicht etwa, um sich festzulegen, sondern um mehr Dynamik entwickeln zu können. Die Autorität hat und gibt eine gewisse Sicherheit. Und hier setzt meine Frage ein: Woher eigentlich hat die Autorität ihre Sicherheit? Wir haben in unserem Gespräch die Welt charakterisiert als eine Welt, in der jedermann nach immer mehr Sicherheit suche. Nun rechnen wir plötzlich mit Autoritäten, die Sicherheit haben. Welcher Art kann denn eigentlich diese Sicherheit sein?",
+      "bbox": {
+        "x_pct": 6.437,
+        "y_pct": 47.766,
+        "w_pct": 65.097,
+        "h_pct": 29.017
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Die Frage scheint mir wichtig, woher die Sicherheit kommt, die innere Sicherheit, die mir die Autorität gibt, beispielsweise ein Unternehmen ins Risiko zu führen. Mir scheint in",
+      "bbox": {
+        "x_pct": 6.558,
+        "y_pct": 79.185,
+        "w_pct": 64.819,
+        "h_pct": 8.93
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Autorität in der Demokratie: multidimensional und pluralistisch",
+      "bbox": {
+        "x_pct": 73.913,
+        "y_pct": 36.266,
+        "w_pct": 19.529,
+        "h_pct": 7.162
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Woher nehmen Autoritäten ihre Sicherheit?",
+      "bbox": {
+        "x_pct": 73.998,
+        "y_pct": 69.651,
+        "w_pct": 16.498,
+        "h_pct": 4.876
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "37",
+      "bbox": {
+        "x_pct": 37.75,
+        "y_pct": 91.13,
+        "w_pct": 3.75,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Transcription significantly truncated in all main paragraphs.",
+    "Page number 37 was not labeled."
+  ],
+  "doc_id": "2400",
+  "page": 36,
+  "elapsed_seconds": 5.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

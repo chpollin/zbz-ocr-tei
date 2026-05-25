@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "en relation du divers. Les deux problèmes vont nous occuper se posent sur le fond de cette situation fondamentale.",
+      "bbox": {
+        "x_pct": 10.203,
+        "y_pct": 5.424,
+        "w_pct": 83.74,
+        "h_pct": 4.233
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header or introductory sentence leading into the main text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'origine de la vie.",
+      "bbox": {
+        "x_pct": 9.892,
+        "y_pct": 11.14,
+        "w_pct": 84.458,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Split the heading from the paragraph body."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'origine de la vie ne peut être comprise, au niveau d'une explication naturelle, que de deux façons : ou bien la vie provient de la matière inanimée, ou bien des germes de vie sont venus sur la terre en provenance des espaces sidéraux, sans être détruits par les températures extrêmes de chaleur et de froid qui y règnent. Dans le premier cas, il serait possible de reproduire les commencements de la vie, sous certaines conditions encore inconnues. Dans le second, la vie pourrait être aussi ancienne que l'univers et n'aurait pas d'origine par dérivation. — Or, dit Jaspers, ces deux hypothèses sont aventureuses au point de devoir être exclues. La première se heurte à l'extrême improbabilité de la rencontre des hasards simultanément indispensables au surgissement de la vie. La seconde implique, chose tout aussi improbable, que les vivants auraient traversé sans périr de prodigieuses distances de temps et des extrêmes de température. En outre, dans la seconde hypothèse, on ne possèderait pas encore une explication de la vie : le mystère du passage de l'inanimé au vivant se trouverait simplement renvoyé à l'origine même de l'univers. L'impossibilité d'un savoir a été voilée par des solutions purement verbales, ou mythiques. On recourt à l'idée de Création divine. Mais cette idée ne résoud pas le problème scientifique de l'origine, ni celui que posent les divers âges de la vie retenus dans les fossiles et dont les étapes intermédiaires font défaut, — de sorte que leur dérivation reste incompréhensible.",
+      "bbox": {
+        "x_pct": 9.892,
+        "y_pct": 13.59,
+        "w_pct": 84.458,
+        "h_pct": 41.68
+      },
+      "changed": true,
+      "change_reason": "Corrected paragraph text extraction."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'origine de l'homme.",
+      "bbox": {
+        "x_pct": 9.526,
+        "y_pct": 58.698,
+        "w_pct": 84.282,
+        "h_pct": 2.85
+      },
+      "changed": true,
+      "change_reason": "Split heading from paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'où vient l'homme ? On dit qu'il doit descendre d'ancêtres semblables aux singes. Mais les restes qu'on a retrouvés ne suffisent pas à surmonter la coupure qui persiste entre toute espèce animale et l'homme. On recourt alors à des représentations fantastiques : l'homme aurait existé depuis le début — comme si toutes les espèces qui se sont succédé étaient déjà l'homme, sous des aspects divers — ; ou encore : c'est le singe qui descendrait de l'homme, comme espèce dénaturée — ; ou même : tout ce qui vit prendrait figure de déchet le long de la marche essentielle vers l'homme. En technicisant l'être humain, peut-être sommes-nous en train de produire une nouvelle espèce-déchet à partir de l'homme, une espèce simplement « vivante » au sens biologique du terme — et le problème qui se poserait alors serait de trouver la voie étroite permettant encore à l'homme proprement dit d'exister en petit nombre, regardant vivre autour de lui la foule déshumanisée des fourmis.",
+      "bbox": {
+        "x_pct": 9.526,
+        "y_pct": 61.548,
+        "w_pct": 84.282,
+        "h_pct": 27.681
+      },
+      "changed": true,
+      "change_reason": "Corrected paragraph text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "50",
+      "bbox": {
+        "x_pct": 95,
+        "y_pct": 91.5,
+        "w_pct": 5,
+        "h_pct": 5
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was mangled in paragraph identification.",
+    "Section headers were concatenated with paragraph text.",
+    "Page number at bottom not identified.",
+    "Bounding boxes for headers were slightly overlapping with text."
+  ],
+  "doc_id": "1520",
+  "page": 56,
+  "elapsed_seconds": 6.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

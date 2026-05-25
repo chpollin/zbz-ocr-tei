@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "72 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 8.758,
+        "y_pct": 6.757,
+        "w_pct": 78.823,
+        "h_pct": 2.235
+      },
+      "changed": true,
+      "change_reason": "Header elements like page number and author name at top of page should be marked as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "observateurs en devenaient membres de droit 1 Mais il m'importe beaucoup plus que les institutions fédérales européennes voient grandir leurs pouvoirs que d'y voir croître la participation suisse. Je souhaite cette participation, mais ce qui m'importe bien plus, c'est la force des institutions fédérales européennes, et la mesure dans laquelle elles peuvent être fédérales. Il importe ici de bien peser les choses dans la balance ; car si nous devions penser que la participation des Suisses à certaines institutions de tendance fédéraliste devait freiner celles-ci et en entraver le développement, je préférerais pour le moment que la Suisse en soit absente.",
+      "bbox": {
+        "x_pct": 8.668,
+        "y_pct": 11.426,
+        "w_pct": 78.823,
+        "h_pct": 31.982
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi je ne souhaite nullement que la Suisse, sur le plan économique, pousse le Marché commun aux concessions. Le Marché commun ne peut pas faire de concessions sans mourir. Pour exister, il doit progresser. Nous ne devons pas souhaiter, à mon avis, une union douanière générale englobant le Marché commun et l'AELE, si cette union douanière générale doit se payer de la perte du peu de supranationalité actuelle ou potentielle du Marché commun d'aujourd'hui.",
+      "bbox": {
+        "x_pct": 8.887,
+        "y_pct": 43.509,
+        "w_pct": 78.693,
+        "h_pct": 26.229
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant, je dois le dire, j'ai l'impression que l'AELE n'est pas très réelle ; il existe tout de même, comme dit le général de Gaulle, une « nature des choses », et je crois que l'AELE n'est pas promise à une longue et glorieuse existence. Nous sommes entrés dans l'AELE pour ne pas subir, nous, petits pays, les pressions des grands pays. Comme si nous ne",
+      "bbox": {
+        "x_pct": 8.758,
+        "y_pct": 69.737,
+        "w_pct": 78.693,
+        "h_pct": 17.594
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Avec droit de vote.",
+      "bbox": {
+        "x_pct": 13.325,
+        "y_pct": 90.829,
+        "w_pct": 21.734,
+        "h_pct": 1.921
+      },
+      "changed": true,
+      "change_reason": "Footnote marker and text should be labeled as footnote."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR text was mangled and did not match image content properly, manual text correction performed.",
+    "Page number and header were not correctly classified in initial scan."
+  ],
+  "doc_id": "530",
+  "page": 13,
+  "elapsed_seconds": 4.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

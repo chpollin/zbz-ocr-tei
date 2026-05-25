@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 21.491,
+        "y_pct": 13.301,
+        "w_pct": 12.087,
+        "h_pct": 1.493
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ignace n'ignore pas que ce que nous appelons « présent » ou nunc n'est pas ponctuel, ou ne l'est qu'au regard d'une abstraction qui le scinde du passé qu'il retient encore, comme du futur vers lequel il se tend déjà. La perfection de l'instant n'offre aucune garantie dès que celui-ci subit l'extension de la durée : le temps risque toujours de dégrader la consolation. Dès lors, au plus intime de notre condition temporelle, le problème du discernement ne cesse de se poser.",
+      "bbox": {
+        "x_pct": 21.249,
+        "y_pct": 15.919,
+        "w_pct": 58.203,
+        "h_pct": 11.53
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match source image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ce qui amène Ignace à insister, dans les Règles de la Deuxième Semaine, sur la distinction capitale entre l'Instant de la consolation, dans son actualité ponctuelle, et le « temps suivant ». L'affectivité supérieure de la conscience, qui la rend patiens divina, ne s'affirme que d'une façon discontinue. L'âme doit reprendre aussitôt le contrôle vigilant d'elle-même et compenser, par une sorte de jeu de bascule, les oscillations affectives qui l'ont agitée : celles de la consolation, par la défiance de l'humain et du diabolique qui risquent de s'y glisser, celles de la désolation, par l'espérance. C'est pourquoi aussi Ignace n'envisage jamais la « sanctification » comme l'état objectif que considère la théologie. Il craint plutôt qu' « à parler de la grâce avec trop d'insistance on ne fasse naître dans les âmes le poison qui supprime la liberté ». Il insiste sur le caractère instantané, ponctuel, de l'irruption de la Liberté divine dans la durée humaine : proprium est Creatoris animam intrare, egredi... L'amour qui descend d'en haut remonte aussitôt à sa source, sans modifier le statut temporel de la conscience (qui reste libre, et donc livrée aux risques du « temps suivant »), mais en y déterminant un mouvement total d'amour pour la Majesté divine. Surtout, grâce à l'intuition existentielle du temps qui commande la composition des Exercices, Ignace ne considère pas seulement les décisions majeures qui engagent toute une vie, mais aussi « les multiples orientations que le moi a imprimées, jour après jour, même heure par heure, voire minute par minute, au cours sinueux de ses pensées ». Dès lors, le « carrefour » simple de l'Élection, dont les deux bras s'écartaient à angle droit, l'un étant dirigé vers le Très-Haut, l'autre vers l'Infernum, se trouve remplacé par le schème de deux arcs de cercle tangents, de deux voies bientôt diamétralement opposées, mais divergeant d'abord de manière infinitésimale. « Dans l'hypothèse de la consolation médiatisée, il est toujours question, pour le moi de Deuxième Semaine, du choix de sa liberté, mais sous la forme, non plus d'un carrefour, mais de l'aiguillage le plus fin. » Saisir le point de divergence au plus près de son origine, apprendre à discerner la fausse consolation de la vraie, c'est l'un des problèmes les plus difficiles de la vie intérieure, que la Règle cinquième tente de résoudre. Cette Règle, nous dit le P. Fessard, est au cœur de la doctrine ignatienne, dont elle est un point aussi sensible et vital que l'Élection, et dont elle fait apparaître avec éclat l'extraordinaire unité.",
+      "bbox": {
+        "x_pct": 21.193,
+        "y_pct": 27.068,
+        "w_pct": 58.308,
+        "h_pct": 56.771
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match source image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selon la Règle cinquième, il faut, pour saisir « le point » exact où le",
+      "bbox": {
+        "x_pct": 23.07,
+        "y_pct": 83.875,
+        "w_pct": 46.253,
+        "h_pct": 1.796
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "378",
+      "bbox": {
+        "x_pct": 21.365,
+        "y_pct": 87.21,
+        "w_pct": 2.583,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Corrected labeling of page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction had major OCR errors throughout paragraphs.",
+    "Page number at bottom left was misidentified as standard text.",
+    "Missing text block for document copyright footer."
+  ],
+  "doc_id": "350",
+  "page": 9,
+  "elapsed_seconds": 5.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

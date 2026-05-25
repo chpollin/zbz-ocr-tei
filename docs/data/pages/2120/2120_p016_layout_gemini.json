@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 152 -",
+      "bbox": {
+        "x_pct": 43.682,
+        "y_pct": 27.567,
+        "w_pct": 12.636,
+        "h_pct": 1.157
+      },
+      "changed": true,
+      "change_reason": "Identified as page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nur das, was getan worden ist. Und auch, wenn man eine schreckliche Vergangenheit hat, ist man nur dadurch wirklich, daß man sich diese Vergangenheit auf die gehörige Weise zu eigen macht - und sei es in Form von Abscheu.",
+      "bbox": {
+        "x_pct": 11.476,
+        "y_pct": 9.657,
+        "w_pct": 71.815,
+        "h_pct": 8.144
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jetzt komme ich endlich zu meinem eigentlichen Thema, der Frage, warum wir nicht vergessen dürfen, und dies ganz besonders vierzig Jahre nach dem Getto-Aufstand im Warschau. Ich glaube, auf diese Frage gibt es eine ganze Reihe von Antworten.",
+      "bbox": {
+        "x_pct": 11.51,
+        "y_pct": 19.471,
+        "w_pct": 75.148,
+        "h_pct": 8.237
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir dürfen nicht vergessen - zunächst einmal ganz einfach aus der Achtung vor den Toten. Die Achtung vor den Toten ist so alt wie die Menschheit. Wer sie nicht mehr hat, gehört eigentlich nicht mehr zur Menschheit. Und die Achtung vor den Toten verlangt, daß wir nicht vergessen, wie sie gestorben sind. Weiter dürfen wir nicht vergessen aus Achtung für die Überlebenden. Denn diejenigen, die das erlebt und überlebt haben, müssen voraussetzen können, daß wir uns daran erinnern. Aber auch für uns selbst, aus Achtung vor uns selbst dürfen wir nicht vergessen, weil Vergessen und Verwerfen der Vergangenheit im Grunde Nihilismus sind und nicht nur die Vergangenheit, sondern auch die Gegenwart und die Zukunft zerstören. Entweder nimmt der Mensch in der erlebten Zeit die drei Dimensionen der Zeit mit, oder keine: Niemand hat eine echte Gegenwart, niemand hat eine echte Zukunft, wenn er nicht auch eine Vergangenheit hat, und umgekehrt. Wenn wir uns nicht erinnern, dann werden wir leer, und welche Gefahr die Leere ist, darauf habe ich bereits hingewiesen.",
+      "bbox": {
+        "x_pct": 11.561,
+        "y_pct": 29.162,
+        "w_pct": 76.48,
+        "h_pct": 34.846
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Weiter dürfen wir nicht vergessen, weil wir durch diese Ereignisse lernen, wozu die Menschen fähig sind. Vorher haben wir nicht geahnt, daß Menschen etwas Derartiges tun könnten. Jetzt wissen wir es. Das geht nicht nur die Deutschen - obwohl natürlich die Deutschen sehr direkt - das geht vielmehr alle Menschen an, es geht uns alle an. Und nicht nur, zu welch Schrecklichem Menschen fähig sind, haben diese Ereignisse gezeigt, sondern auch, zu welchem Widerstand und zu welchem Heldentum. Das gehört auch dazu. Es hat in der Tat Heldentum gegeben, und daraus entsteht ein Anspruch an uns.",
+      "bbox": {
+        "x_pct": 12.154,
+        "y_pct": 65.079,
+        "w_pct": 74.046,
+        "h_pct": 19.488
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aus was schrecklich gewesen ist, entsteht der Anspruch auf die Weisheit, auf die Fähigkeit, vorauszusehen: die Gefahren, die Bedrohungen, die Verkehrungen für jeden von uns. Wir dürfen nicht mehr so dumm sein, wie wir damals waren; wir sind gewarnt. Und auch das ist",
+      "bbox": {
+        "x_pct": 12.443,
+        "y_pct": 85.887,
+        "w_pct": 72.858,
+        "h_pct": 8.197
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR text was heavily garbled in all segments.",
+    "Page number at the top identified as text, should be filtered out as header."
+  ],
+  "doc_id": "2120",
+  "page": 16,
+  "elapsed_seconds": 5.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

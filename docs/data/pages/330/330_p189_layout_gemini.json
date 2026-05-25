@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ 155",
+      "bbox": {
+        "x_pct": 305.0,
+        "y_pct": 92.0,
+        "w_pct": 695.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as running title and page number, corrected from text to section_header and page_footer logic (merged for header line context)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "a été universalisée à tel point qu'elle est devenue une méthode explicative non seulement des faits sociaux, non seulement de tous les événements historiques, mais de toutes les pensées, de toutes les croyances, de toutes les créations scientifiques ou artistiques de l'humanité. Une telle prétention a d'innombrables et lointaines conséquences. D'abord, posséder la clé de l'histoire universelle, c'est faire coïncider la science et l'action, dont le terme commun, c'est désormais cette histoire même où l'action s'insère à coup sûr. C'est avoir l'histoire pour soi. Du moins le marxisme n'a-t-il pas considéré qu'il fût possible de prendre position contre une histoire dont on connaîtrait le cours. Pour lui, ne s'opposent à l'histoire — toujours vainement d'ailleurs — que ceux qui, aveuglés par leur situation dans l'ordre ou le désordre économique, refusent de se rendre à l'évidence. L'opposition est ici aussi absurde qu'en mathématiques, par exemple. Déclarer à la fin de la démonstration correcte d'un théorème qu'on n'est pas d'accord, c'est avouer qu'on n'a rien compris. Dire : « J'ai compris » signifie : « Je suis d'accord ». Il y a bien des raisons pour que les philosophes marxistes aient tenté d'annexer Spinoza, pour qui l'entendement et la volonté coïncident.",
+      "bbox": {
+        "x_pct": 33.621,
+        "y_pct": 118.97,
+        "w_pct": 843.04,
+        "h_pct": 409.09
+      },
+      "changed": true,
+      "change_reason": "OCR content was heavily fragmented and incorrect, updated to full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès qu'on connaît le schéma qui explique l'histoire universelle, celle-ci s'impose de gré ou de force à la volonté. Or il se trouve que dans le marxisme, cette justification par la rigueur scientifique, positive, se trouve doublée par une autre, qui recourt à la justice. L'histoire, dans son déroulement nécessaire, va vers la justice. Le déterminisme matérialiste coïncide — dialectique ou mystère? — avec l'incarnation d'une valeur spirituelle. Ainsi doublement légitimée, l'action politique, fondée à la fois sur une nécessité de fait et sur une justification morale, a tous les caractères d'une technique. Le véritable homme politique ne peut ni se tromper, ni avoir tort. La diversité des opinions n'a plus de sens. On se trouve au seuil de ce que certains, avec optimisme ou complaisance, ont appelé « l'âge de l'humanité épique ».",
+      "bbox": {
+        "x_pct": 36.21,
+        "y_pct": 530.0,
+        "w_pct": 842.62,
+        "h_pct": 270.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and unified paragraph structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle conception doit s'imposer à tous : si elle heurte à des adversaires, les « erreurs » de ceux-ci seront aussitôt expliquées, situées, incorporées au système, résorbées par lui ; elles finissent par le confirmer. Inutile de chercher ce qu'il peut y avoir de valable dans la pensée d'autrui. Il n'y a qu'à rééduquer ou châtier.",
+      "bbox": {
+        "x_pct": 36.21,
+        "y_pct": 792.07,
+        "w_pct": 843.59,
+        "h_pct": 106.33
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR was highly fragmented and contained garbage characters (numbers at start of sentences).",
+    "Missing paragraph structure.",
+    "Section header was misidentified as standard text."
+  ],
+  "doc_id": "330",
+  "page": 189,
+  "elapsed_seconds": 5.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "somme indifférente, sont univoquement communicables. Les convictions, qui engagent l'existence à l'absolu dans la vie et dans la mort ne sont, elles, communicables qu'à travers un échange privé d'objectivité, pour lequel la liberté — et donc la résistance — de l'autre et son irréductible altérité constituent à la fois l'obstacle permanent et la condition indispensable. Cet échange, Jaspers l'appelle «le combat fraternel», — littéralement : le combat aimant (liebender Kampf).",
+      "bbox": {
+        "x_pct": 11.694,
+        "y_pct": 6.058,
+        "w_pct": 84.011,
+        "h_pct": 15.51
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est bien un combat, puisqu'il s'agit de communication d'existence à existence, donc de relation efficace entre deux absolus. Et c'est un combat «aimant» parce que ce que cherche l'existence, ce n'est nullement sa victoire. Elle ne veut pas contraindre l'autre à s'avouer vaincu, mais au contraire le faire exister par ce qui le fait vivre, et exister aussi elle-même par ce qui fait vivre l'autre. Seulement, comme chaque existence n'est elle-même que par l'absolu qui lui est propre, sa résistance à l'autre est aussi absolue que son ouverture à lui. Elle est elle-même l'enjeu du combat.",
+      "bbox": {
+        "x_pct": 11.694,
+        "y_pct": 21.165,
+        "w_pct": 83.699,
+        "h_pct": 17.421
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit que le «combat fraternel» de la communication est très éloigné, chez Jaspers, de ce qu'on a coutume d'appeler «tolérance». L'«ouverture» de l'existence n'est pas «ouverture d'esprit», l'existence ne s'ouvre pas à des «idées» qu'elle va paisiblement juxtaposer aux siennes. Elle s'ouvre à l'autre existence, à l'absolu qui la fait vivre, et elle fait plus que s'ouvrir : elle essaye, elle mime, elle combat, car c'est son absolu à elle qui est en cause lorsqu'elle rencontre l'absolu de l'autre. C'est pourquoi, dit Jaspers, la «communication» existentielle est un combat sans réserve mentale, sans restriction et sans égard, précisément parce qu'il est «aimant», parce qu'il a pour enjeu l'existence de l'autre, qui actualise la mienne.",
+      "bbox": {
+        "x_pct": 11.612,
+        "y_pct": 38.415,
+        "w_pct": 83.821,
+        "h_pct": 22.656
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'agit bien, dans ce combat, de la vérité. Cette vérité a son support dans la transcendance, face à laquelle et vers laquelle se déroule le dombat. En fait, c'est cette vérité, existentielle et transcendante, qui porte et nourrit la vérité contraignante de la science, devant laquelle pourtant elle apparaît si démunie et précaire. C'est la vérité existentielle qui entretient chez le chercheur scientifique la soif d'une évidence impersonnelle et l'ascèse antisubjective. C'est le sens et le besoin d'une vérité absolue qui soutient et valorise la conquête progressive des vérités partielles et relatives du savoir objectif.",
+      "bbox": {
+        "x_pct": 11.612,
+        "y_pct": 60.985,
+        "w_pct": 83.957,
+        "h_pct": 19.135
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Sciences humaines et existence. La communication existentielle ne livre aucun savoir, puisqu'elle vise l'existence dans son rapport à la transcendance, et que ni l'existence, ni la transcendance ne sont des réalités objectives. Aussi",
+      "bbox": {
+        "x_pct": 11.477,
+        "y_pct": 81.637,
+        "w_pct": 83.821,
+        "h_pct": 7.935
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it is a header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 11.237,
+        "y_pct": 91.512,
+        "w_pct": 1.765,
+        "h_pct": 2.502
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "One missing region (page number) identified.",
+    "Section header was mislabeled as paragraph text."
+  ],
+  "doc_id": "1520",
+  "page": 34,
+  "elapsed_seconds": 5.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

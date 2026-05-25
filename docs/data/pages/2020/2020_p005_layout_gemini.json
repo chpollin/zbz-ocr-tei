@@ -1,0 +1,125 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "analogues \u0000 ces r\u0000cits historiques sans cesse pos...",
+      "bbox": {
+        "x_pct": 12.916,
+        "y_pct": 5.075,
+        "w_pct": 74.353,
+        "h_pct": 7.91
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle est lhybris pour radicaliser le pouvoir du d...",
+      "bbox": {
+        "x_pct": 12.982,
+        "y_pct": 13.963,
+        "w_pct": 74.287,
+        "h_pct": 9.615
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On entend dire, d'autre part, que la science, \u0000 tr...",
+      "bbox": {
+        "x_pct": 12.916,
+        "y_pct": 27.283,
+        "w_pct": 74.429,
+        "h_pct": 21.572
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les deux perspectives dont nous venons de parler c...",
+      "bbox": {
+        "x_pct": 12.873,
+        "y_pct": 52.592,
+        "w_pct": 74.472,
+        "h_pct": 9.222
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "I] en r\u0000sulte une situation darbitraire nihiliste ...",
+      "bbox": {
+        "x_pct": 12.731,
+        "y_pct": 63.043,
+        "w_pct": 74.679,
+        "h_pct": 7.717
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y pire: cette science toute-puissante, totale, ...",
+      "bbox": {
+        "x_pct": 12.84,
+        "y_pct": 71.597,
+        "w_pct": 74.461,
+        "h_pct": 7.834
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Meilleur ? Pour Dans quel sens ? qui",
+      "bbox": {
+        "x_pct": 17.193,
+        "y_pct": 80.543,
+        "w_pct": 35.876,
+        "h_pct": 2.04
+      },
+      "changed": true,
+      "change_reason": "Correctly identified as a heading/title of the next section."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le chercheur moderne conscience, dans maint domain...",
+      "bbox": {
+        "x_pct": 12.982,
+        "y_pct": 83.554,
+        "w_pct": 74.472,
+        "h_pct": 5.936
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "85",
+      "bbox": {
+        "x_pct": 84.417,
+        "y_pct": 92.932,
+        "w_pct": 1.765,
+        "h_pct": 2.308
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page number region identification.",
+    "OCR text for section header is jumbled."
+  ],
+  "doc_id": "2020",
+  "page": 5,
+  "elapsed_seconds": 4.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

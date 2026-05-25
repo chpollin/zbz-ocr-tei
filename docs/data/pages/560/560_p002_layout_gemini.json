@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 19.396,
+        "y_pct": 8.99,
+        "w_pct": 12.861,
+        "h_pct": 1.632
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sans elle vide de signification ; elle est achèvement momentané, synthèse du concept et de la valeur. Elle est un symbole, dont la vraie fonction est d'indiquer que la réalité du monde est vectorielle, — « ni immobile, ni devenir » —, « véritable ligne critique, non pas théorique, mais réelle, d'où partent des vecteurs, des significations, vers le représenté et vers le non-représentable, vers le monde et vers le transcendant ».",
+      "bbox": {
+        "x_pct": 19.073,
+        "y_pct": 12.17,
+        "w_pct": 62.877,
+        "h_pct": 10.302
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Passant alors des perspectives de « libération » au problème de la liberté, D. Christoff oppose d'abord la dialectique positive classique, tendant à faire coïncider la plénitude du moi et la cohérence du monde, à la dialectique négative selon laquelle la liberté transcende son intelligence (d'où, dans cette perspective, l'importance donnée à « l'échec intérieur »). Les deux dialectiques, selon l'auteur, s'unissent chez Kant, mais elles échouent toutes deux, elles n'ouvrent pas « la recherche de la liberté ». Et les analyses phénoménologiques modernes, avec leur découverte et leur affirmation d'une liberté fondamentale d'existence, ne réussissent pas mieux. Sartre et même Merleau-Ponty — qui, après son analyse si précise du rapport aux choses, aboutit à l'alternance solipsisme-communauté — parlent d'une liberté qui « reste propriété de l'homme, séparé, isolé ». « Ces doctrines de la liberté concentrent cette conscience en l'homme et l'opposent au monde, comme à son destin, le séparant ainsi des hommes et du monde où pourtant elles veulent qu'il s'accomplisse. »",
+      "bbox": {
+        "x_pct": 18.856,
+        "y_pct": 22.231,
+        "w_pct": 63.07,
+        "h_pct": 27.346
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous voici arrivés à l'intuition centrale de l'ouvrage, celle qui en a certainement été la source, la raison d'étre et le moteur. L'échec des théories de la liberté radicale, comme celles de Nietzsche ou de Sartre, est dû au fait que ces penseurs sont restés prisonniers d'une liberté solitaire, qui ne peut étre qu'une caricature de liberté. La condition nécessaire de la liberté, c'est autrui. Autrui, — tel est le mot-clé de ce livre. « La liberté n'est pas le moi, mais l'ouverture du moi. » Si les doctrines qui affirment soit la responsabilité absolue, soit l'innocence absolue, et le plus souvent l'une et l'autre ensemble, s'enferment dans des impasses, c'est qu'elles se trompent en plaçant la liberté dans un pour-soi isolé. « C'est en autrui qu'il faut chercher la liberté. »",
+      "bbox": {
+        "x_pct": 18.832,
+        "y_pct": 49.395,
+        "w_pct": 62.796,
+        "h_pct": 18.44
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici l'auteur bute sur le problème du temps. Il reproche à Sartre, avec raison, me semble-t-il, d'avoir fait la description phénoménologique de ses dimensions au lieu d'en avoir recherché l'étre. Cet « étre », il le trouve dans la distension orientée et irréversible de l'instant. L'instant réel (c'est-à-dire présent), c'est « la conscience limitée à la fois par des co-présences et par des possibles », à l'infini.",
+      "bbox": {
+        "x_pct": 18.719,
+        "y_pct": 67.775,
+        "w_pct": 62.691,
+        "h_pct": 10.538
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette « limitation par la multitude des possibles » est une idée fort intéressante — fort contestable aussi — qu'il importerait, me semble-t-il, de creuser davantage. « L'obstacle véritable, dit D. Christoff, c'est cette multitude de choix futurs qu'engagent les quelques choix auxquels je dois constamment procéder. » La fin du temps n'est pas la mort; elle",
+      "bbox": {
+        "x_pct": 18.832,
+        "y_pct": 77.993,
+        "w_pct": 62.53,
+        "h_pct": 6.753
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "362",
+      "bbox": {
+        "x_pct": 18.88,
+        "y_pct": 88.15,
+        "w_pct": 3.441,
+        "h_pct": 1.493
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_footer as it is a page number."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 6,
+  "issues": [
+    "Several OCR inaccuracies in original layout detection",
+    "Page number identified as paragraph"
+  ],
+  "doc_id": "560",
+  "page": 2,
+  "elapsed_seconds": 10.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

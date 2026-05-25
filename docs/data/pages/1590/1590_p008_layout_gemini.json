@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'être sanctionné par la réussite ou l'échec. Ces notions mêmes perdent leur sens, puisque l'échec déstabilise ce qui est, et constitue donc une chance de réussite pour l'ébranlement total qu'il s'agit de provoquer.",
+      "bbox": {
+        "x_pct": 15.347,
+        "y_pct": 7.577,
+        "w_pct": 78.689,
+        "h_pct": 6.835
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le flou du projet dispense d'assumer le fardeau des conséquences. L'intellectuel alors peut s'abandonner à ses penchants d'autodélection : seuls comptent les intentions, les sentiments, le vécu subjectif. Quoi qu'il puisse advenir, on s'en sera d'avance moralement purifié.",
+      "bbox": {
+        "x_pct": 15.17,
+        "y_pct": 13.97,
+        "w_pct": 79.117,
+        "h_pct": 9.107
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les intellectuels ayant adhéré au Parti communiste, à ses organisations affiliées, déclarées ou camouflées, ou restés ses fidèles «compagnons de route », ont été beaucoup plus nombreux que ceux qui ont collaboré, de près ou de loin, aux divers mouvements terroristes de l'après-guerre, et surtout des deux dernières décennies. Pourtant il n'est pas douteux que, d'une manière diffuse et assez difficile à saisir, nombreux sont ceux qui ont contribué à affaiblir la résistance ambiante au terrorisme, ce qui a permis à ce terrorisme de prendre dans certains pays, l'ampleur et l'efficacité que nous lui avons connues.",
+      "bbox": {
+        "x_pct": 14.666,
+        "y_pct": 24.819,
+        "w_pct": 79.874,
+        "h_pct": 17.71
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un mouvement terroriste véritablement rejeté par la population au sein de laquelle il développe son action se trouve bientôt condamné. Ses membres, dès qu'ils commettent des attentats et sont poursuivis par la police, ne trouvent ni refuge, ni soutien. Un mouvement terroriste ne peut se développer que si, au minimum, la population ambiante, sans approuver ses actes, éprouve cependant assez de compréhension et de sympathie à son égard, ou assez de mauvaise conscience à l'égard de l'ordre qui la protège, et dont elle bénéficie, pour garder une neutralité passive, s'abstenir de tout acte hostile, et, si l'occasion s'en présente, protéger un fugitif contre ses poursuivants.",
+      "bbox": {
+        "x_pct": 14.161,
+        "y_pct": 44.209,
+        "w_pct": 80.378,
+        "h_pct": 21.954
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tel a bien été l'état d'esprit dans certains de nos pays occidentaux. Il y a à cela, certes, des raisons diverses, mais le rôle des intellectuels ne doit pas être sous-estimé. En effet, leur propre «sensibilité » politique, sociale, morale, qu'ils ont propagée par la parole et l'écriture, présente une parenté incontestable avec celle des terroristes, — même s'ils jugent parfois sévèrement les actes de ceux-ci.",
+      "bbox": {
+        "x_pct": 13.909,
+        "y_pct": 65.721,
+        "w_pct": 80.416,
+        "h_pct": 12.909
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ma thèse est donc que, même sans aucune justification idéologique, le terrorisme en Europe trouve une sorte de terreau propice dans une «sensibilité contemporaine » que les intellectuels ont diffusée largement autour d'eux. « Sensibilité » qui se déploie à partir d'une protestation centrale qui, malgré les apparences et le discours explicite, vise,",
+      "bbox": {
+        "x_pct": 13.745,
+        "y_pct": 78.4,
+        "w_pct": 80.29,
+        "h_pct": 10.902
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "54",
+      "bbox": {
+        "x_pct": 14.111,
+        "y_pct": 91.077,
+        "w_pct": 2.761,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Initial text extraction for all paragraphs was heavily truncated or corrupted.",
+    "Page number 54 was incorrectly labeled as text.",
+    "Overall OCR/text extraction accuracy was very poor, requiring full rewrite of text fields."
+  ],
+  "doc_id": "1590",
+  "page": 8,
+  "elapsed_seconds": 5.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

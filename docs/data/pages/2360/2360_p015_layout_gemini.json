@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 28 -",
+      "bbox": {
+        "x_pct": 29.561,
+        "y_pct": 7.424,
+        "w_pct": 4.148,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Page numbers identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 29 -",
+      "bbox": {
+        "x_pct": 71.077,
+        "y_pct": 7.502,
+        "w_pct": 4.148,
+        "h_pct": 1.181
+      },
+      "changed": true,
+      "change_reason": "Page numbers identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist nun einmal so: Das Leben bedeutet Risiko. Zumindest wenn man aktiv und kreativ leben und die unsere Welt mitgestalten will. Man lag und liegt sich wegen der Energiepreise in den Haaren, wegen der möglichen Schäden für unsere Umwelt und so fort. Gewisse Leute gefallen sich auch darin, alles was irgendwie mit Atom zu tun hat als suspekt hinzustellen. Mit der Angst vor der Nukleartechnik lässt sich bei breiten Bevölkerungskreisen ganz gut Staat machen. Denn: Hat nicht alles, was irgendwie mit Atom zu tun hat, auch mit Atomwaffen und damit mit der möglichen apokalyptischen Zerstörung der Welt durch eben diese Atomtechnik zu tun? Das Energieforum liefert Informationen zu all den Fragen, die ich aufgeführt habe. Und doch glaube ich, dass ein Gebiet in all unseren Ueberlegungen zuwenig Beachtung findet. Ich habe es zu Beginn meiner Ausführungen genannt: jenes der Zielrichtung. Was haben wir Menschen eigentlich vor, was wollen wir schlussendlich erreichen? Und sehen Sie, genau diese Fragen stellen wir uns heute viel zu wenig; hier meine ich nicht nur \"Wie weiter bei der Kernenergie\", sondern bei der industriellen Entwicklung ganz allgemein.",
+      "bbox": {
+        "x_pct": 7.083,
+        "y_pct": 13.691,
+        "w_pct": 44.5,
+        "h_pct": 43.718
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and expanded bbox to match the paragraph block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Vom Sinn des Lebens",
+      "bbox": {
+        "x_pct": 6.883,
+        "y_pct": 61.267,
+        "w_pct": 17.5,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Identified section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Zahl der \"Aussteiger\", die der geschäftigen Welt den Rücken kehren, nimmt immer mehr zu. Nicht selten finden Sie heute aber auch eine ganz spezielle Art von \"Aussteiger\": der Manager. Ich jedenfalls kenne einige bedeutende Wirtschaftskapitäne, die sich - mit vielleicht 45 oder 50 Jahren - die Frage nach dem Sinn des Lebens stellen. Nachdem sie ihren Betrieb aufgebaut und über Jahrzehnte hinweg durch alle wirtschaftlichen Höhen und Tiefen hindurchgeführt und das Unternehmen schliesslich zur Blüte gebracht haben, stellen sie sich ganz ernsthaft die Frage nach dem wahren Sinn des Lebens.",
+      "bbox": {
+        "x_pct": 5.243,
+        "y_pct": 65.195,
+        "w_pct": 44.5,
+        "h_pct": 24.027
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed block boundaries."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich glaube, dass solche Fälle keine Seltenheit mehr sind und zwar in erster Linie deshalb, weil kaum jemand zeitig genug die Frage nach dem Sinn der Existenz des Individuums stellt. Wenn die Lebensumstände des Menschen schwierig sind, wenn die wirtschaftliche Lage des Unternehmens ungenügend ist, wenn es um Sein oder Nichtsein geht, wagt sicherlich niemand lange Sinn oder Unsinn des Lebens gegeneinander ab. Da ist rasches Handeln vonnöten, damit drohende Misserfolge oder Schlimmeres abgewendet werden können. Es kommt nicht von ungefähr, dass sich in Zeiten der Not und des Krieges viel weniger Selbstmorde ereignen als in guten Zeiten. In der Not geht es ums Ueberleben, und Ueberleben hat als solches allein schon seinen Sinn. Und wenn es einer Unternehmung schlecht geht, hat der Kampf um den Weiterbestand dieses Betriebes allein schon seinen Sinn.",
+      "bbox": {
+        "x_pct": 54.433,
+        "y_pct": 30.161,
+        "w_pct": 41.5,
+        "h_pct": 32.752
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed block boundaries."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original bounding boxes were misaligned and truncated.",
+    "Original text extraction contained severe OCR artifacts and noise.",
+    "Section header missed in original detection.",
+    "Page numbers not correctly filtered as page headers."
+  ],
+  "doc_id": "2360",
+  "page": 15,
+  "elapsed_seconds": 7.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

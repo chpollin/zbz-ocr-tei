@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "esiste un centro nel senso che non è possibile definire « l’istante ». Nella fisica e nella storia, ridotta a schema ripetitivo, non c’è l’articolazione dell’« istante ». Sussiste unicamente la distinzione del prima e del dopo.",
+      "bbox": {
+        "x_pct": 10.06,
+        "y_pct": 6.457,
+        "w_pct": 85.566,
+        "h_pct": 9.073
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text artifacts"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Proprio perché, nell’affrontare il problema della simmetria e della storia, prendo in considerazione il termine simmetria secondo il suo secondo schema, vorrei tentare di definirne alcune caratteristiche peculiari, ponendone in risalto la portata e la efficacia.",
+      "bbox": {
+        "x_pct": 10.452,
+        "y_pct": 14.462,
+        "w_pct": 85.023,
+        "h_pct": 10.927
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text artifacts"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il secondo schema, quello del frontone, quello detto anche « architetturale », si impossessa di una pluralità di elementi tra loro differenti, esistenti in numero pari (va qui sottolineata l’importanza del numero pari), per farne una unità, ovvero un numero dispari. Esso tende a fornire una specie di solidarietà organica, direi perfino di solidità, fondata sul duplice, sull’aspetto di unità del duplice, del quadruplo e del sestuplo. Le coppie di zampe rappresentano un solido appoggio per l’unità organica, tuttavia la loro simmetria conferisce ad esse anche una solidità di un altro ordine: quello dell’uno. La solidità dell’indivisibile e dell’indecomponibile. Allorché la simmetria, intesa nel secondo schema, si appropria di una pluralità di elementi, questa pluralità diventa indecomponibile.",
+      "bbox": {
+        "x_pct": 9.91,
+        "y_pct": 24.752,
+        "w_pct": 85.716,
+        "h_pct": 30.96
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text artifacts"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ritengo che, in una simmetria così intesa, vi sia una dialettica tra il medesimo e l’« altro », nel significato platonico dei termini: il medesimo con l’ausilio dell’« altro », ricompone il medesimo rendendolo al tempo stesso industruttibile.",
+      "bbox": {
+        "x_pct": 10.362,
+        "y_pct": 55.157,
+        "w_pct": 85.113,
+        "h_pct": 10.298
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text artifacts"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il secondo schema implica dunque un elemento di stabilità, di staticità, a differenza del primo che implica un processo indefinito nella sua continuità. Nel secondo schema vi è un elemento, prossimo al principio di identità, che ha un valore, e non può che averlo nel diverso.",
+      "bbox": {
+        "x_pct": 10.211,
+        "y_pct": 65.339,
+        "w_pct": 85.264,
+        "h_pct": 12.061
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text artifacts"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Effettivamente, nella tautologia, il principio di identità si annulla: non si può affermare che la perfezione del principio di identità risieda nella totalità. Il principio di identità viene rappresentato mediante la formula A = A, ma non appena viene applicato esso serve ad identificare A e B, annullandosi necessariamente se diventa pura tautologia. In modo analogo la simmetria",
+      "bbox": {
+        "x_pct": 10.151,
+        "y_pct": 77.459,
+        "w_pct": 85.43,
+        "h_pct": 14.76
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text artifacts"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "231",
+      "bbox": {
+        "x_pct": 89.65,
+        "y_pct": 93.99,
+        "w_pct": 4.1,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Identified as page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "OCR text quality was poor due to formatting issues",
+    "Missing bounding box for page number, manually added",
+    "Label corrections required for page footer"
+  ],
+  "doc_id": "990",
+  "page": 3,
+  "elapsed_seconds": 6.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

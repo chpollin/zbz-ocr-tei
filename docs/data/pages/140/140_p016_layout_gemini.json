@@ -1,0 +1,111 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DISCONTINUITÉ DES PERSPECTIVES HUMAINES",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 55.4,
+        "h_pct": 1.6
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing section header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "97",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 2.3,
+        "h_pct": 1.8
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header/footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "réellement dans sens moral ; il sagit de savoir si cette personne a une présence réelle; moralement ",
+      "bbox": {
+        "x_pct": 9.852,
+        "y_pct": 17.168,
+        "w_pct": 75.466,
+        "h_pct": 24.313
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Donc, cette question est ambiguë selon Ia réalité des selon ce su je minter roge quoi cas,",
+      "bbox": {
+        "x_pct": 10.342,
+        "y_pct": 41.578,
+        "w_pct": 74.303,
+        "h_pct": 7.726
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que devient la question est-ce que lunité transcendante existe ?",
+      "bbox": {
+        "x_pct": 10.342,
+        "y_pct": 49.1,
+        "w_pct": 74.303,
+        "h_pct": 4.9
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si je dis est-ce que lunité transcendante existe ? cela ne signife pas 2 est-ce que je la heurte ? o",
+      "bbox": {
+        "x_pct": 10.342,
+        "y_pct": 54.456,
+        "w_pct": 75.189,
+        "h_pct": 31.755
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "7",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 1.2,
+        "h_pct": 1.8
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page footer"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original text transcription was incomplete or slightly corrupted",
+    "Missing page headers and footers",
+    "Missing section header"
+  ],
+  "doc_id": "140",
+  "page": 16,
+  "elapsed_seconds": 6.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content for accuracy": 4,
+    "ADDED": 3
+  }
+}

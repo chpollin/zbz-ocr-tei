@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "78",
+      "bbox": {
+        "x_pct": 98.0,
+        "y_pct": 816.0,
+        "w_pct": 14.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "79",
+      "bbox": {
+        "x_pct": 964.0,
+        "y_pct": 816.0,
+        "w_pct": 14.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nicht genugend hangt und dass sie mehr Vorwand gebraucht oder weniger als und genannt werden.",
+      "bbox": {
+        "x_pct": 112.67,
+        "y_pct": 128.22,
+        "w_pct": 361.87,
+        "h_pct": 53.39
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die grosste Schwlerigkelt nun der jetzigen sophischem und zugleich auf phlloabsoluten politischem Ge",
+      "bbox": {
+        "x_pct": 113.36,
+        "y_pct": 170.54,
+        "w_pct": 363.47,
+        "h_pct": 271.65
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In anderen, leichteren Zeiten konnte man einen keinen ten und was unrecht war. Man konnte lassen, un",
+      "bbox": {
+        "x_pct": 116.78,
+        "y_pct": 444.95,
+        "w_pct": 360.05,
+        "h_pct": 336.93
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "keineswegs preisgegeben; Aber dieses AbInhalt, sein Wesenszug ist 05, hat keinen eindeutigen wird vo",
+      "bbox": {
+        "x_pct": 511.19,
+        "y_pct": 119.36,
+        "w_pct": 370.09,
+        "h_pct": 235.68
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es Ist Regierungsform, jeder Politlk denn die Frelhelt sei eIne reln dle unabhangige nur die Form de",
+      "bbox": {
+        "x_pct": 530.02,
+        "y_pct": 559.75,
+        "w_pct": 364.95,
+        "h_pct": 274.0
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page numbers were incorrectly categorized as text, corrected to page_footer.",
+    "The OCR text content in the boxes appears highly corrupted/hallucinated by the model."
+  ],
+  "doc_id": "220",
+  "page": 5,
+  "elapsed_seconds": 4.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

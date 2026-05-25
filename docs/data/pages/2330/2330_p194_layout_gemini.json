@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "que il répnđait : « Ich arbeite, sonst tue ich nichts », « je travaille, en dehors de ça, je ne fais rien ». Mais cette régularité ne donnait pas l'impression d'un mécanisme astreignant, c'était plutôt comme lors d'une petite fête ou dans une cérémonie. Il y avait quelque chose de festif dans l'atmosphère qui régnait chez les Jaspers. Je ne suis jamais venue à la table du petit déjeuner sans avoir l'impression que c'était un jour de fête. L'accueil était tellement rayonnant, les visages si clairs, on semblait si heureux de ma présence. C'était sans doute parce que ce couple était heureux.",
+      "bbox": {
+        "x_pct": 16.447,
+        "y_pct": 5.75,
+        "w_pct": 79.927,
+        "h_pct": 14.46
+      },
+      "changed": true,
+      "change_reason": "OCR text transcription was fragmented and incomplete; corrected to match source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avez-vous partagé l'un avec l'autre vos préoccupations de philosophes engagés ?",
+      "bbox": {
+        "x_pct": 16.728,
+        "y_pct": 25.75,
+        "w_pct": 24.579,
+        "h_pct": 3.952
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR junk and correctly transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les discussions avec Jaspers ont été limitées par la différence des langues. J'aurais sûrement communiqué davantage avec lui si nous avions eu la même langue. C'est vrai aussi pour la correspondance que nous avons échangée. Et puis, les entretiens avec Jaspers étaient, comme tout le reste, programmés. Vivant dans sa maison, je prenais rendez-vous pour un entretien avec lui.",
+      "bbox": {
+        "x_pct": 16.606,
+        "y_pct": 29.169,
+        "w_pct": 79.939,
+        "h_pct": 11.742
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avez-vous eu avec Jaspers des discussions en rapport avec vos orientations politiques respectives ?",
+      "bbox": {
+        "x_pct": 16.606,
+        "y_pct": 41.992,
+        "w_pct": 79.939,
+        "h_pct": 4.379
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers n'était pas socialiste, mais cette divergence ne m'a jamais intéressée ni préoccupée, parce que je voyais très bien que son attitude était profondément démocratique, liée essentiellement à la liberté.",
+      "bbox": {
+        "x_pct": 16.606,
+        "y_pct": 45.863,
+        "w_pct": 79.817,
+        "h_pct": 6.452
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'était un libéral.",
+      "bbox": {
+        "x_pct": 19.621,
+        "y_pct": 55.185,
+        "w_pct": 30.354,
+        "h_pct": 1.992
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'était un libéral cent pour cent. Fils de banquier, il avait grandi dans un milieu tout à fait différent du mien. Je m'en rendais tellement bien compte que je ne voyais pas d'intérêt à discuter avec lui des problèmes du socialisme. D'ailleurs, dans la mesure où le socialisme se préoccupe de créer les conditions favorables à la liberté d'un plus grand nombre d'individus, il était pleinement d'accord avec moi. Il y avait eu en revanche une question au sujet de laquelle nous avons eu des discussions assez vives : jusqu'à quel point peut-on faire reposer une société sur cette fine pointe de la responsabilité individuelle, qui était pour lui le nœud de toutes choses ? Il n'était pas individualiste au sens fermé du terme, puisque pour lui la communication était essentielle. Mais il me semble qu'il n'a pas fait une place suffisante, réelle, à la dépendance sociale et économique de l'homme. Un autre thème de sa philosophie à propos duquel nous avons parfois discuté, c'est la foi philosophique. Vous m'avez déjà interrogée là-dessus, mais j'aimerais ajouter encore ceci : sa théorie de la foi philosophique me convenait trop bien, c'est pourquoi je l'attaquais sur ce point. Elle me paraissait d'une certaine façon trop",
+      "bbox": {
+        "x_pct": 16.85,
+        "y_pct": 57.282,
+        "w_pct": 79.939,
+        "h_pct": 33.847
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR corruption."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "190",
+      "bbox": {
+        "x_pct": 16.85,
+        "y_pct": 94.4,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 8,
+  "issues": [
+    "Most OCR transcriptions were severely corrupted.",
+    "Page number not identified or correctly labeled in initial layout."
+  ],
+  "doc_id": "2330",
+  "page": 194,
+  "elapsed_seconds": 6.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

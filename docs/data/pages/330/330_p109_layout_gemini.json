@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 75",
+      "bbox": {
+        "x_pct": 326.0,
+        "y_pct": 82.0,
+        "w_pct": 349.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Header elements including title and page number were incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "diction dentreprises rivales et, plus directement, des subventions, Aujourd'hui, on peut dire qu'en fait (et quelque nombreux que puissent être les attardés qui croient encore réellement au libéralisme économique) il n'y a plus de programmes authentiquement libéraux sur le plan de l'économie. Là, les conservateurs n'ont plus de doctrine, et les programmes qu'ils proposent à leurs électeurs, dans la mesure où ils comportent des points précis, tendent soit à défendre les intérêts privés de ceux qui possèdent les instruments de production, avec l'aide et l'intervention de l'État, soit à réaliser certains éléments du programme socialiste, mais au ralenti, afin de faire la part du feu sans sacrifier l'essentiel du régime capitaliste. Et il n'y a nullement lieu, à ce sujet, de crier à la trahison: l'évolution du conservatisme, en ce domaine, s'est faite sous la pression de l'évolution technique, dont les grands producteurs industriels et les grands hommes d'affaires sont les premiers à ressentir et à capter les exigences.",
+      "bbox": {
+        "x_pct": 5.836,
+        "y_pct": 11.141,
+        "w_pct": 84.373,
+        "h_pct": 33.512
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et le mouvement socialiste? Il fut, dans le domaine économique, le soutien et le promoteur de mesures à proprement parler syndicales, en ce sens qu'elles tendaient non à transformer les structures du régime capitaliste, mais à atténuer les effets sur les salariés. Les socialistes usent de leur force politique pour obtenir un plus haut niveau de vie, des salaires plus élevés, des journées de travail moins longues, des vacances moins courtes, un système de sécurité sociale atténuant les méfaits de la maladie, de la vieillesse et de la mort. Les communistes ne les soutiennent pas toujours dans ce combat, préférant souvent, sous des formes camouflées, la politique du pire, celle qui crée des conditions favorables à leur propagande. Souvent on les voit refuser des améliorations possibles sous le prétexte qu'elles sont insuffisantes; ils réclament davantage tout en acceptant de ne rien obtenir, ce qui constitue pour leur propagande un double atout. Néanmoins leur présence, la terreur qu'inspire aux possédants leur volonté de renverser la classe privilégiée au bénéfice d'une autre, a tout de même, dans bien des cas, facilité le progrès social. Il est difficile d'évaluer ici leur efficacité réelle, et elle a sans doute beaucoup varié avec les circonstances et avec les pays. Il ne faut toutefois pas perdre de vue qu'une classe ouvrière unie, démocratique et socialiste, et non tragiquement divisée, aurait sans doute obtenu bien autre chose.",
+      "bbox": {
+        "x_pct": 5.752,
+        "y_pct": 43.85,
+        "w_pct": 84.596,
+        "h_pct": 45.481
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for accuracy."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Page header incorrectly identified as text",
+    "Text was heavily truncated in the initial JSON",
+    "Missing identification of header row containing page number"
+  ],
+  "doc_id": "330",
+  "page": 109,
+  "elapsed_seconds": 5.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

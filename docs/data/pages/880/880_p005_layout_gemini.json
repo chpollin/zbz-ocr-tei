@@ -1,0 +1,164 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "eine kleine Geschichte erzählen, die das illustriert. Ich kenne einen Afrikaner aus Dakar, der dort ",
+      "bbox": {
+        "x_pct": 5.479,
+        "y_pct": 5.601,
+        "w_pct": 40.073,
+        "h_pct": 23.362
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch, Professorin für Philosophie an der Universität Genf, ist Verfasserin mehrerer Bücher ",
+      "bbox": {
+        "x_pct": 7.792,
+        "y_pct": 31.698,
+        "w_pct": 35.536,
+        "h_pct": 25.339
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry / biographical header should be section_header"
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Gekürzt aus UNESCO-Presse. J",
+      "bbox": {
+        "x_pct": 19.96,
+        "y_pct": 56.923,
+        "w_pct": 22.909,
+        "h_pct": 1.214
+      },
+      "changed": true,
+      "change_reason": "Source attribution text is a caption"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber keine hung der Gleichheit ist, dann schliesst dies etwas nämlich dieses oben erwähnte unpersönl",
+      "bbox": {
+        "x_pct": 5.479,
+        "y_pct": 60.359,
+        "w_pct": 39.944,
+        "h_pct": 23.476
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte auch das etwas illustrieren. Eine Schülerin von mir, die ein sehr feinfühliges Mädchen wa",
+      "bbox": {
+        "x_pct": 5.616,
+        "y_pct": 83.949,
+        "w_pct": 39.887,
+        "h_pct": 7.829
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber seltsam; wenn sie am nächsten Morgen in die Schulklasse kommen, dann beobachten wir sie; um zu ",
+      "bbox": {
+        "x_pct": 46.922,
+        "y_pct": 5.567,
+        "w_pct": 39.919,
+        "h_pct": 12.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Schüler brauchen beide Arten von Lehrern Aber die erste ist heute viel mehr in Mode; und deswege",
+      "bbox": {
+        "x_pct": 46.873,
+        "y_pct": 17.624,
+        "w_pct": 39.887,
+        "h_pct": 30.028
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Natürlich vergesse ich dabei gar nicht, dass jeder Lehrer sich weiterbilden; sich erneuern muss, den",
+      "bbox": {
+        "x_pct": 46.873,
+        "y_pct": 47.635,
+        "w_pct": 39.911,
+        "h_pct": 10.712
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Begegnung im Stoff",
+      "bbox": {
+        "x_pct": 46.922,
+        "y_pct": 65.852,
+        "w_pct": 15.608,
+        "h_pct": 1.744
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jetzt  möchte ich diese   Beziehung des Lehrers zum Schüler noch etwas weiter analysieren. Diese Bez",
+      "bbox": {
+        "x_pct": 46.898,
+        "y_pct": 68.051,
+        "w_pct": 39.831,
+        "h_pct": 23.84
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "SLZ 34, 20. August 1970",
+      "bbox": {
+        "x_pct": 5.5,
+        "y_pct": 93.3,
+        "w_pct": 19.5,
+        "h_pct": 1.4
+      },
+      "changed": true,
+      "change_reason": "Page metadata identified as footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1109",
+      "bbox": {
+        "x_pct": 83.2,
+        "y_pct": 93.3,
+        "w_pct": 2.7,
+        "h_pct": 1.4
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer"
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Bibliographic header mistakenly labeled as body text",
+    "Source attribution labeled as body text",
+    "Page number and publication date metadata missing from initial detection"
+  ],
+  "doc_id": "880",
+  "page": 5,
+  "elapsed_seconds": 9.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

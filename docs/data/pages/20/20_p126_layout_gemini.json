@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Limitation. — Kant s'efforce par la raison de définir les droits de la raison et de fixer ses limites. La philosophie commence là où la science rencontre une barrière infranchissable; et pour la philosophie aussi la barrière subsiste. Mais pour la philosophie, la barrière devient limite — c'est-à-dire qu'elle a un au-delà. Cet au-delà, la philosophie ne peut rien en dire dogmatiquement; elle peut dire seulement : il est possible. Elle peut empêcher le dogmatisme d'en faire un domaine de la superstition, et le scepticisme de le condamner à l'inexistence. Elle sauvegarde sa possibilité, et rien de plus. De là la position centrale qu'occupent dans le système de Kant les antinomies. Leur résultat purement négatif signifie : limite et au-delà. La célèbre « chose en soi », le « noumène » qu'on a tant réfuté en lui prêtant un contenu qu'il n'a pas, n'est pas autre chose chez Kant que l'expression d'une limite de la raison humaine.",
+      "bbox": {
+        "x_pct": 15.708,
+        "y_pct": 12.952,
+        "w_pct": 76.461,
+        "h_pct": 48.286
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match content of image, fixed formatting."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Inachèvement. — La philosophie de Kant, qui aboutit à ces notions de « limite et d'au-delà », est en outre caractérisée par le fait qu'elle est de toutes parts inachevée, ouverte. Les formes a priori de la sensibilité, les catégories a priori de l'entendement doivent nous faire prendre conscience du fait que notre monde objectif est un monde phénoménal, et non le monde en soi. — Ce monde en soi, l'a-priorité des formes de la sensibilité et des catégories de l'entendement le rend inaccessible à notre connaissance; nous ne pouvons en dire qu'une seule chose :",
+      "bbox": {
+        "x_pct": 15.919,
+        "y_pct": 61.686,
+        "w_pct": 76.25,
+        "h_pct": 28.219
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match content of image."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "124",
+      "bbox": {
+        "x_pct": 166.0,
+        "y_pct": 89.0,
+        "w_pct": 27.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "INACHÈVEMENT :",
+      "bbox": {
+        "x_pct": 431.0,
+        "y_pct": 86.0,
+        "w_pct": 149.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original transcriptions contained typos and truncations.",
+    "Page number and running header were not tagged as filterable regions.",
+    "Text for region 1 and 2 corrected to reflect full content."
+  ],
+  "doc_id": "20",
+  "page": 126,
+  "elapsed_seconds": 4.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

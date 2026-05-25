@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "64",
+      "bbox": {
+        "x_pct": 14.11,
+        "y_pct": 2.217,
+        "w_pct": 2.209,
+        "h_pct": 2.012
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/_filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 54.896,
+        "y_pct": 2.217,
+        "w_pct": 39.387,
+        "h_pct": 2.012
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Technik wichtig, sondern wegen der bestimmten Art von Einflu, den sie selber auf die Zeitgenossen hat.",
+      "bbox": {
+        "x_pct": 14.11,
+        "y_pct": 5.839,
+        "w_pct": 80.086,
+        "h_pct": 4.416
+      },
+      "changed": true,
+      "change_reason": "Text content completed/corrected based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich habe die Zeit erlebt, in der sich Philosophen, wenn es um Wissenschaft ging, das Vertrauen zu sich verloren hatten. Heute ist es so, daß es ständige Angriffe gegen Wissenschaft und Technik gibt, als ob das ganze Unglück unserer Zeit von ihnen käme und von ihrer Unmenschlichkeit. Ich glaube, daß Jaspers heute den Jungen helfen kann, sich mit unserer Zeit zurechtzufinden, mit ihrer Wissenschaft und ihrer Technik und überhaupt mit unserem alltäglichen Leben, mit unserer Ökonomie, mit dem, was wir mögen und was wir nicht mögen, und sogar mit unserer Kultur.",
+      "bbox": {
+        "x_pct": 13.902,
+        "y_pct": 9.646,
+        "w_pct": 80.417,
+        "h_pct": 16.398
+      },
+      "changed": true,
+      "change_reason": "Text content completed/corrected based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist nötig, den philosophischen Sinn der Wissenschaften in ihrer Strenge wieder unter uns herzustellen. Wir sollten keine wissenschaftliche Philosophie haben, sondern eine Philosophie, die dem Rechenschafft trägt, was man heute an Wissenschaft hat und woran man in diesem Sinne glaubt. Das Thema ,,Wissen und Nichtwissen\" sollte uns dahinföhren, denn wir müssen verstehen, welche verschiedenen Funktionen das Wissen und das Nichtwissen in der Wissenschaft und in der Philosophie heute haben.",
+      "bbox": {
+        "x_pct": 14.025,
+        "y_pct": 25.436,
+        "w_pct": 80.123,
+        "h_pct": 14.013
+      },
+      "changed": true,
+      "change_reason": "Text content completed/corrected based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Menschen fangen, als Kinder, zu leben an in einem Nicht-Ich, indem sie fast nichts unterscheiden, und es geht darum, sich daran zu gewöhnen. Das Erwerben einer Gewohnheit oder vieler Gewohnheiten ist das Erste. Die Frage nach dem Wahren und dem Falschen, nach dem Wirklichen oder der Illusion entsteht gerade aus einem Unterschied zwischen Wesen und zwischen Orten, von denen man feststellt, daß sie ihrer Gegenwart treu bleiben. Sie waren da, sie sind immer noch da und sie werden noch immer da sein. Das ist das erste, was man sucht: Den Unterschied zwischen diesen Wirklichkeiten und den anderen Wirklichkeiten, die sich im Gegensatz dazu in etwas anderes verwandeln. Dann kommt die Schwierigkeit, was echt, was ein Fehler, ein Phantasma, was eine Vorstellung ohne Wirklichkeit ist. Im Menschen findet also ein Versuch statt, das subjektive Erkennen so zu gebrauchen, daß man nicht nur einen Standpunkt in der Welt erwirbt und sie hinnimmt, sondern sich sozusagen gegenüber der Welt stellt. Außerhalb der Welt schaut man zu, was in der Welt geschieht.",
+      "bbox": {
+        "x_pct": 13.828,
+        "y_pct": 39.252,
+        "w_pct": 80.16,
+        "h_pct": 29.803
+      },
+      "changed": true,
+      "change_reason": "Text content completed/corrected based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese imaginäre Sicht, die man in dieser Phase einnehmen möchte, ist der Anfang von etwas sehr Wichtigem, nämlich der Anfang der Leidenschaft, das Wahre wissen zu wollen. Man möchte das Wahre wissen, man möchte wissen, was es empirisch in der Erfahrung wirklich gibt. Es gibt Raum, es gibt Zeit. Man weiß nicht genau, wie man sich das vorstellt, aber das gibt es. Sie sind zunächst einmal einfach um einen, man kann sich darin bewegen, und dann entsteht die objektive Wirklichkeit des Nicht-Ich, des Wirklichen, dessen, was bleibt, was beständig ist, was man empirisch fest-",
+      "bbox": {
+        "x_pct": 13.951,
+        "y_pct": 68.643,
+        "w_pct": 80.037,
+        "h_pct": 16.39
+      },
+      "changed": true,
+      "change_reason": "Text content completed/corrected based on image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Initial text segmentation was incomplete with many cut-off words.",
+    "Page number and header were labeled as text.",
+    "Major spelling and OCR completions required for paragraph content."
+  ],
+  "doc_id": "2990",
+  "page": 57,
+  "elapsed_seconds": 6.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

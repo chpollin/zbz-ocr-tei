@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "que nous sommes amenés à en prendre. Une Constitution est faite pour durer. Et que je sache les industries bâloises ne sont pas en train d'élaborer une Constitution. Nous parlons de la Constitution, et c'est sur ce plan qu'il me semble que nous ne sommes pas encore mûrs pour le faire.",
+      "bbox": {
+        "x_pct": 8.181,
+        "y_pct": 3.739,
+        "w_pct": 84.621,
+        "h_pct": 8.231
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Schmid Ich weiss nicht, ob die Frage ganz richtig verstanden worden ist. - Man hat sich gestossen an Ihrem letzten Wort \"attendre\". Aber Sie haben ja darauf hingewiesen, Sie verlangten auch, dass diskutiert werde. Es wurde nun gesagt, wenn wir warten und diese Bereiche - gerade der Gentechnologie - nicht lösen, entwickle sich in der Gesellschaft etwas, worauf die Verfassung keine Antwort habe.",
+      "bbox": {
+        "x_pct": 8.094,
+        "y_pct": 14.819,
+        "w_pct": 84.83,
+        "h_pct": 10.837
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch. Pour ce qui est des problèmes de la génétique, vous avez tout à fait raison: il se passe déjà beaucoup de choses, que l'on ne pourra pas empêcher de s'être passées. La question est de savoir si nous sommes mûrs pour élaborer une Constitution dans ces domaines-là, si nous avons des intentions suffisamment claires pour pouvoir le faire. Actuellement nous avons des juxtapositions de lois plus ou moins appliquées. Nous sommes dans l'incertitude, et ce n'est pas une situation agréable ni légitime. Mais que pouvons-nous faire? On ne connaît pas encore l'opinion publique à ce sujet, on ne sait pas encore de quoi il s'agit au juste. Même les gens qui travaillent dans ces domaines sont dans la plus grande perplexité. Peut-on, dans ce cas, faire une Constitution qui ne dise rien de ces choses? Ce serait aussi attendre, et ce serait attendre d'une façon encore bien plus définitive, parce qu'il faudrait attendre longtemps pour pouvoir introduire dans la Constitution ce qu'il serait nécessaire d'introduire. Je suis tout à fait d'accord avec vous sur ce point.",
+      "bbox": {
+        "x_pct": 7.807,
+        "y_pct": 28.089,
+        "w_pct": 85.117,
+        "h_pct": 25.994
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hirt. Herr Doktor Saner, Sie haben am Anfang Ihres Referates ausgeführt, zwei Dinge seien mit der Revision zu erreichen. Nämlich erstens die Strukturierung der Komplexität des modernen staatlichen Lebens und zweitens die Schaffung eines höchsten Gesetzes, das weiterhin wirklich Geltung habe. Ich bin mit Ihnen einverstanden, dass die Organisationsstruktur eines Staates in der Verfassung ausgedrückt und festgehalten werden muss. Glauben Sie, dass dies auch für den Bereich der Grundrechte gilt? Oder könnten wir darauf verzichten?",
+      "bbox": {
+        "x_pct": 7.894,
+        "y_pct": 56.736,
+        "w_pct": 84.795,
+        "h_pct": 14.938
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Saner. Vielleicht könnte man insoweit darauf verzichten, als Grundrechte in der Bundesverfassung geregelt sind. Aber ich fände dies nicht gut. Man muss unbedingt an die Grundrechte erinnern und darauf bestehen. Aber ich sehe eine andere Gefahr in den Verfassungen: Sie gehen oft in den Grundrechten eher zu weit. Ich meine damit, sie versprechen Dinge, die sie nicht einhalten können. Und sie untergraben eben damit ihre Glaubwürdigkeit. Besser wäre, nur das zu versprechen, was man wirklich tun kann, und erst dann nach und nach weiteren Grundrechte aufzunehmen, sobald man diese wirklich erfüllen kann. Es muss irgendwo das Gleichgewicht zwischen Versprechen und Realität gewahrt bleiben.",
+      "bbox": {
+        "x_pct": 7.685,
+        "y_pct": 74.54,
+        "w_pct": 84.83,
+        "h_pct": 19.329
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 51 -",
+      "bbox": {
+        "x_pct": 47.953,
+        "y_pct": 96.671,
+        "w_pct": 3.947,
+        "h_pct": 1.786
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Several paragraphs contained inaccurate OCR text compared to the source image.",
+    "Page number at the bottom was incorrectly identified as text."
+  ],
+  "doc_id": "2710",
+  "page": 15,
+  "elapsed_seconds": 8.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

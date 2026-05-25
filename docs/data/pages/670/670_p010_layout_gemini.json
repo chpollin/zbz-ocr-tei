@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE RÉEL ET L'IMAGINAIRE AU FIL DU TEMPS 329",
+      "bbox": {
+        "x_pct": 11.2,
+        "y_pct": 7.398,
+        "w_pct": 68.0,
+        "h_pct": 1.253
+      },
+      "changed": true,
+      "change_reason": "Identified as page header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH : I. J'ai désigné par le mot « imaginaire » tout ce qui existe pour nous à la manière des données réelles de notre expérience, sans en avoir cependant la présence actuelle et positive. C'est le sens que Paul Valéry donnait à ce mot lorsqu'il écrivait : « ... L'avenir et le passé, qui sont des perspectives imaginaires... (Préface aux Lettres persanes).",
+      "bbox": {
+        "x_pct": 10.959,
+        "y_pct": 10.752,
+        "w_pct": 68.195,
+        "h_pct": 7.937
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "2 Le mot sens est entendu ici comme « signification ». Mais il faut remarquer que pour l'action les deux sens (direction et signification) coïncident.",
+      "bbox": {
+        "x_pct": 11.176,
+        "y_pct": 18.387,
+        "w_pct": 67.873,
+        "h_pct": 3.476
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "GABRIEL WIDMER : Selon saint Augustin, dont vous vous réclamez parfois, l'éternité se dévoile comme présence de Dieu à lui-même et à tout ce qu'il fait exister, et se manifeste comme créatrice du temps. Sous sa triple modalité (memoria = passé présent, contuitus = présent présent, expectatio = futur présent), le temps apparaît tantôt comme distensio, résultant d'une « détente » de l'éternité, tantôt comme extensio, condition d'un retour à l'éternité. Augustin met à jour cette structure de la relation éternité-temps à la lumière de l'Incarnation du Verbe, qualifiée par l'Ecriture comme le « kairos » par excellence. Votre concept d'« instant » est-il analogue au « kairos » ? N'est-il qu'une structure de la pensée ? Si oui, la tentative de l'homme d'opérer une percée vers l'éternité est-elle autre chose qu'une rêverie ? Ou le « kairos » est-il constitutif de la liberté créatrice de l'homme, qui lui permet de transcender la facticité ? Si oui, n'est-il pas alors porteur d'une sorte de « grâce », d'un don d'éternité qui supposerait explicitement (chez saint Augustin), implicitement (dans votre pensée) la reconnaissance de la manifestation de l'éternité dans la temporalité (l'Incarnation) ?",
+      "bbox": {
+        "x_pct": 10.983,
+        "y_pct": 23.402,
+        "w_pct": 68.227,
+        "h_pct": 24.934
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH : Il m'est difficile de vous répondre parce que dans la perspective qui est la mienne la question ne peut pas être posée ainsi. Par exemple, vous demandez si l'instant n'est qu'une structure de pensée. Mais une structure de pensée, pour moi, n'est pas peu, elle est constitutive de tout. Ainsi elle n'a rien d'irréel, elle n'engendre pas une simple « rêverie ». (C'est dans un sens analogue que Kant n'est pas, quoi qu'on en dise, un idéaliste.) L'alternative que vous posez ne peut pas être posée dans mes termes. D'ailleurs je ne parlerais pas d'une « tentative » faite pour « opérer une percée vers l'éternité » : il s'agit de reconnaître la manifestation de l'éternité dans la temporalité vécue. Mais je vous accorde trop, et vous m'accuserez de noyer le poisson : pour moi, l'éternité est nécessairement présente dans les structures temporelles. Celles-ci impliquent nécessairement une incarnation de tous les instants. Seulement, étant de chaque instant, celle-ci s'écrit avec un i minuscule.",
+      "bbox": {
+        "x_pct": 11.201,
+        "y_pct": 49.783,
+        "w_pct": 68.114,
+        "h_pct": 20.456
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "F BRUNNER : Pour ma part, j'accepte entièrement la critique que vous adressez à tous ceux qui subordonnent le présent au futur et suppriment la possibilité d'une vérité transcendant l'histoire. En ce sens nous menons le même combat. Mais il me semble qu'en parlant de « l'inaccessible vérité », vous abandonnez quelque chose de la tradition que vous évoquez par les noms de Platon et de Boèce. Vous pensez que si la vérité et la réalité sont à chercher dans l'éternité, la condition humaine, temporelle et historique, est reniée. Mais pourquoi la condition humaine ne serait-elle pas aussi et même éminemment de rejoindre l'éternité ? La liberté, selon vous, est compromise si l'éternité est notre véritable. Mais n'y a-t-il pas là comme un renouvellement de la querelle faite à la doctrine de la prescience et de la providence divines ? De même que l'éternité de Dieu ne supprime pas, mais fonde au contraire l'action",
+      "bbox": {
+        "x_pct": 11.281,
+        "y_pct": 71.322,
+        "w_pct": 68.114,
+        "h_pct": 19.179
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page header and page number incorrectly as text.",
+    "Author signatures (e.g. JEANNE HERSCH) kept as text."
+  ],
+  "doc_id": "670",
+  "page": 10,
+  "elapsed_seconds": 8.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

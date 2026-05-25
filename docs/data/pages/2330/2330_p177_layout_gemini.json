@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les progrès de la médecine ont contribué à forger l'idée d'un pouvoir accru de l'homme sur la vie et la mort. Ils ont conduit nos contemporains à faire preuve d'un certain volontarisme, qui les incite à revendiquer des « droits » en ce domaine — droit à la naissance ou à la non naissance d'un nouvel être humain, droit à une « bonne mort », droit à la santé, etc. Que pensez-vous de telles revendications et de la perspective qui les inspire ?",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 4.516,
+        "w_pct": 79.731,
+        "h_pct": 14.573
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous trouvons là un certain nombre d'absurdités. Vous savez que le « droit à la santé » est inscrit dans les premiers principes de l'OMS. Le texte fondamental de l'Organisation Mondiale de la Santé proclame le droit de tous à la santé et définit celle-ci comme un état de bien-être parfait dans les domaines physiques, psychique et social. Je n'ai jamais compris comment des médecins ont pu accepter un texte pareil. Il est propre à plonger les gens dans le désespoir. Car il n'y a absolument personne qui jouisse de ce bien-être total, ne fût-ce qu'à cause de la condition temporelle. J'ai dit une fois qu'une bonne voiture, ce n'est pas celle qui roule bien sur l'autoroute, mais celle qui résiste aux mauvais chemins. La santé est la capacité de résister. Dans cette hypertrophie de la prétention à la santé parfaite, au bonheur parfait, etc., il y a tous les germes du désespoir et du malheur. Les hommes seraient moins malheureux s'ils n'exigeaient pas le bonheur parfait, qui est impossible.",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 18.524,
+        "w_pct": 79.902,
+        "h_pct": 28.008
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. Devant les multiples possibilités offertes aujourd'hui par la science pour favoriser ou au contraire freiner la reproduction de la vie, l'attitude volontariste ne représente-t-elle pas le plus grand danger, en tant qu'elle méconnaît quelque chose de fondamental : le caractère irréductiblement donné de cette vie, la part d'être en elle, qui transcendera toujours notre liberté et ses pouvoirs, qui échappera toujours à notre volonté précisément ?",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 46.798,
+        "w_pct": 79.817,
+        "h_pct": 14.548
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je suis tout à fait d'accord. Bien qu'on ait rendu possible la naissance d'un être que la nature à elle seule ne permettait pas de faire naître, il reste que cette vie n'est pas une fabrication humaine. L'homme en est à croire qu'il peut tout décréter. C'était le sens de mon livre L'Etre et la Forme : faire la part du donné.",
+      "bbox": {
+        "x_pct": 4.847,
+        "y_pct": 60.782,
+        "w_pct": 79.524,
+        "h_pct": 10.452
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. Un des phénomènes les plus douloureux de notre temps est l'extension de l'usage de la drogue, en particulier parmi les jeunes. Quel est, à votre avis, la cause de ce phénomène et quels remèdes entrevoyez-vous pour en diminuer les effets ?",
+      "bbox": {
+        "x_pct": 4.725,
+        "y_pct": 72.984,
+        "w_pct": 79.805,
+        "h_pct": 8.653
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense que la drogue est le symptôme le plus éclatant et le plus lugubre de ce manque aux jeunes dans notre monde d'aujourd'hui. Quel est ce manque ? Je vous l'ai dit : c'est le manque de sens. Et puis, c'est le manque de reconnaissance pour les hommes du passé, et le manque de devoir envers l'avenir. Tout le monde veut plaire aux jeunes,",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 80.968,
+        "w_pct": 79.695,
+        "h_pct": 10.46
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was highly inaccurate and truncated text.",
+    "Bboxes for paragraphs were generally correct, but text content was wrong."
+  ],
+  "doc_id": "2330",
+  "page": 177,
+  "elapsed_seconds": 7.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

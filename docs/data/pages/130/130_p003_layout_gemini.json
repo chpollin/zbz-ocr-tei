@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LÉCOLE DE NOS PÉRILS",
+      "bbox": {
+        "x_pct": 18.742,
+        "y_pct": 11.723,
+        "w_pct": 53.884,
+        "h_pct": 3.579
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE PROBLÈME DE LÉLITE OUVRIÊRE",
+      "bbox": {
+        "x_pct": 17.793,
+        "y_pct": 26.909,
+        "w_pct": 57.633,
+        "h_pct": 2.726
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y quelques décennics, le   problème des élites ouvrières pouvait encore se poser en termes de mor",
+      "bbox": {
+        "x_pct": 9.741,
+        "y_pct": 34.902,
+        "w_pct": 73.859,
+        "h_pct": 40.79
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aujourdhui le   problème se pose tout autrement. Quon le veuille on assiste à lavènement dune nouvel",
+      "bbox": {
+        "x_pct": 9.827,
+        "y_pct": 75.337,
+        "w_pct": 73.613,
+        "h_pct": 9.893
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Original text transcriptions contained minor OCR errors and abbreviations."
+  ],
+  "doc_id": "130",
+  "page": 3,
+  "elapsed_seconds": 4.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content.": 2
+  }
+}

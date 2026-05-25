@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Worte haben sich sehr lange gehalten, weil sie sehr wichtig sind, und solange Leute diese Begriffe noch wichtig finden, werden sie sie auch immer wieder aussprechen und darüber schreiben, und solange wird man sie auch nicht einfach wegstreichen können. Und mit anderen Begriffen ist das ebenso. Ohne Sprache geht es nicht.",
+      "bbox": {
+        "x_pct": 9.88,
+        "y_pct": 3.616,
+        "w_pct": 85.135,
+        "h_pct": 13.661
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 10.374,
+        "y_pct": 19.335,
+        "w_pct": 33.638,
+        "h_pct": 2.067
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt für wenn ich das kurz dazwischenschieben darf die von Ihnen vorgeschlagene Variante, entweder die Begriffe, über die man noch nicht genug nachgedacht hat, um sagen zu können, ob sie wirklich widersprüchlich, paradox oder wie auch immer sich zueinander verhalten, wegzulassen oder statt ihrer neue einzuführen, ein schönes, schlagendes Beispiel, das ich in meinen Seminaren oder in der Vorlesung immer bringe: Ich lese dann ein Stückchen aus Peter Bichsels „Kindergeschichten“ vor, „Ein Tisch ist ein Tisch“. Daran können Sie sehen, daß Sie vielleicht zwei Sätze weit kommen, wenn Sie versuchen, neue Wörter einzuführen. Von da an ist es nur noch ein absurdes, humorvoll zu rezipierendes, witziges Kunstwerk, was Sie von sich geben. Es hat nichts mehr mit Kommunikation zu tun, es macht nur Spaß, denn es trägt keinerlei semantische Bedeutung mehr. Sobald Sie nur ein bißchen aus dem Gerüst der Begriffe, die historisch gewachsen sind, rausnehmen, bricht alles sofort zusammen.",
+      "bbox": {
+        "x_pct": 9.731,
+        "y_pct": 21.521,
+        "w_pct": 85.284,
+        "h_pct": 37.887
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ja für die Philosophen unter Ihnen in der Erlanger Schule nicht weit von hier den Versuch, alle Begriffe, die unvernünftig sind, einfach durch solche, die vernünftig eingeführt sind, zu ersetzen. Was, wie man sich vorstellen kann, schnell dazu führte, daß alle Begriffe neu eingeführt werden mußten, was wiederum, wie man sich ebenso leicht vorstellen kann, dazu geführt hat, daß sehr wenige von diesen neu eingeführten Begriffen sich gehalten haben, weil man einfach gar nicht die Möglichkeit hat, immer daran zu denken, welche Begriffe nun vernünftig eingeführt sind und welche nicht. Insofern würde ich dringend davon abraten, alle Begriffe, die man nicht genau definieren kann, wegzulassen, dann bleibt in der Tat nur übrig „Worüber man nicht reden kann, darüber muß man schweigen“. Das gilt für alle.",
+      "bbox": {
+        "x_pct": 9.775,
+        "y_pct": 61.475,
+        "w_pct": 85.284,
+        "h_pct": 31.421
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "69",
+      "bbox": {
+        "x_pct": 91.0,
+        "y_pct": 94.5,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified and labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was severely truncated and garbled.",
+    "Page number 69 was missing from detection/labeling."
+  ],
+  "doc_id": "3180",
+  "page": 46,
+  "elapsed_seconds": 4.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

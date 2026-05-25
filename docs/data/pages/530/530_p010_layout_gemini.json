@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA SUISSE DANS L'EUROPE ACTUELLE 69",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header, including page number 69 and running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et personne ne sait exactement où passe celle-ci. D'ailleurs elle n'est pas nette, et il est probable que les choses se détérioreront peu à peu, grâce à cette singulière nourriture. Les risques, en Allemagne, certes sont grands, et je dirais que, d'une certaine manière, la personnalité du général de Gaulle représente pour l'Europe démocratique un danger s'il échoue, et même s'il réussit. Un danger, parce que s'il échoue, il ouvre en France des perspectives chaotiques de dictature militaire suivie de démocratie populaire ; un danger s'il réussit, parce qu'alors il deviendra, pour des pays qui n'ont pas les anciennes traditions démocratiques de la France, un exemple de recours à l'homme providentiel auquel ces pays ne sont déjà que trop enclins.",
+      "bbox": {
+        "x_pct": 12.651,
+        "y_pct": 10.743,
+        "w_pct": 77.337,
+        "h_pct": 33.533
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was garbled by OCR artifacts and removed the artifact 'couleuvrcs'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le plan mondial — pendant que je suis en train de réunir les traits noirs — je crois qu'il y a un autre élément très dangereux. Un séjour que j'ai fait aux Etats-Unis, l'année dernière, m'a montré — et j'en ai été terriblement impressionnée — que notre sentiment de cousinage avec les Américains n'est pas réciproque. Les Américains mènent une politique solidaire de l'Europe parce que cela s'insère dans leur ligne politique, mais non parce qu'ils ont le sentiment d'être liés particulièrement à l'Europe et aux Européens. Je crois que les Européens sur ce point se font des illusions, parce qu'ils connaissent en général l'Amérique périphérique, celle des très grandes villes et des universités célèbres. Mais lorsqu'on prend contact avec l'Amérique intérieure, on s'aperçoit que le sentiment profond des masses n'est nullement un sentiment de cousinage avec l'Europe. Au niveau du sentiment, de l'affectivité, Berlin n'est pas une réalité qui les touche de plus près que moi.",
+      "bbox": {
+        "x_pct": 12.437,
+        "y_pct": 43.986,
+        "w_pct": 77.475,
+        "h_pct": 44.913
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and improved reading accuracy."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "OCR output significantly corrupted text content.",
+    "Page header including page number identified as text.",
+    "Bounding boxes captured multiple paragraphs as single blocks."
+  ],
+  "doc_id": "530",
+  "page": 10,
+  "elapsed_seconds": 3.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

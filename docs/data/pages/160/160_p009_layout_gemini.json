@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "424",
+      "bbox": {
+        "x_pct": 14.771,
+        "y_pct": 74.208,
+        "w_pct": 2.76,
+        "h_pct": 1.109
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÉPREUVE DE L'HUMANISME D'AUJOURD'HUI",
+      "bbox": {
+        "x_pct": 41.724,
+        "y_pct": 72.338,
+        "w_pct": 44.604,
+        "h_pct": 1.05
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et c'est encore par des impulsions de ce genre que s'expliquent sans doute aujourd'hui de nombreuses adhésions d'intellectuels idéalistes à la discipline du communisme soviétique.",
+      "bbox": {
+        "x_pct": 14.954,
+        "y_pct": 10.419,
+        "w_pct": 71.381,
+        "h_pct": 6.479
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seul dans un univers instable, l'homme lit sa propre histoire dans celle de tout homme. Un damné, un misérable, c'est lui ou ce peut être lui. Et comme il reste pauvre de cœur, indifférent, dur, il lui reste cette faute inexpiable que l'autre n'est quand même pas lui. Si tous ne peuvent pas être sauvés, il lui vient une volonté de se perdre lui-même, et le remords que cette volonté reste faible. On distingue en transparence, clairement, à travers ces figures nihilistes et désespérées qu'on se plaît à souligner dans la pensée et la sensibilité de notre temps, des sources chrétiennes: prendre sur soi le péché du monde, qu'est-ce, pour qui resterait sans péché?",
+      "bbox": {
+        "x_pct": 15.034,
+        "y_pct": 16.221,
+        "w_pct": 71.53,
+        "h_pct": 23.82
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "*",
+      "bbox": {
+        "x_pct": 46.233,
+        "y_pct": 42.248,
+        "w_pct": 1.678,
+        "h_pct": 1.023
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Reste à savoir s'il s'agit ici de fraternité ou de veulerie. En effet, avec la disparition d'un ordre incontesté, les défenses de la vertu et de la cohérence sociale se trouvent affaiblies, et la fraternité risque de devenir pure complaisance. Les excuses sont à portée de la main, les lâchetés non moins justifiables que les actes dits moraux. On a vu les arts et même les sciences, abandonner leurs fondements traditionnels pour ne plus chercher que des cohérences inventées. Sur le terrain moral, un mouvement analogue tend à abolir les critères, les normes, et c'est sans doute en partie au sentiment du danger ainsi couru qu'il faut attribuer les violentes réactions de défense, d'ailleurs injustes et souvent stupides, qui se sont produites contre un « existentialisme » forgé en bonne partie tout exprès pour servir de bouc émissaire.",
+      "bbox": {
+        "x_pct": 15.331,
+        "y_pct": 46.358,
+        "w_pct": 71.689,
+        "h_pct": 28.122
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On n'a pourtant pas renoncé à l'humanisme. Ce qu'on refuse, c'est un humanisme de façade, qui ne serait qu'une technique pédagogique pour autrui, les enfants, les masses, un pieux mensonge à base de mépris. Ce qui est ravagé est ravagé. Que ce qui est croulant s'effondre. Il s'agit de voir quel humanisme reste possible, avec ses risques et dans la vérité.",
+      "bbox": {
+        "x_pct": 15.377,
+        "y_pct": 74.134,
+        "w_pct": 71.564,
+        "h_pct": 13.836
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Detected incorrect labels for page header and page title.",
+    "The OCR text for regions was updated for better alignment with the image content."
+  ],
+  "doc_id": "160",
+  "page": 9,
+  "elapsed_seconds": 7.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

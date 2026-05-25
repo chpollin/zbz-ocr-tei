@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "INHALTSVERZEICHNIS",
+      "bbox": {
+        "x_pct": 66.86,
+        "y_pct": 84.7,
+        "w_pct": 29.8,
+        "h_pct": 2.7
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header and tag to zb_heading for the document title."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 883,
+        "y_pct": 898,
+        "w_pct": 14,
+        "h_pct": 22
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer and filtered the page number."
+    },
+    {
+      "label": "table",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vorwort 7\nGeist und Körper\nvon Sir Alfred Ayer 9\nDie Seele im Glauben früher Kulturen\nvon Ernst Zbinden 39\nDie Seele im indischen Denken\nvon Maria Bürgi 59\nDie Seele im (Neo-) Platonismus und in der Gnosis\nvon Andreas Graeser 79\nLa problématique de l'âme dans la réalisation politique\nvon Jeanne Hersch 99\nWahrnehmung, Denken, Gedächtnis - Psychische Funktionen\n\"zwischen\" Geist und Materie\nvon Alfred Lang 107\nLeib, Seele und Geist in der Medizin\nvon Kenower W. Bash 129\nGedanken zum \"Leib-Seele-Problem\" aus naturwissenschaftlicher Sicht\nvon Hoimar von Ditfurth 171\nKreativität beim Tier\nvon Heini Hediger 193\nDas Menschenbild in der heutigen Psychologie\nvon Gion Condrau 217\nDas Menschenbild in der heutigen Theologie\nvon Hermann Ringeling 233",
+      "bbox": {
+        "x_pct": 65,
+        "y_pct": 156,
+        "w_pct": 776,
+        "h_pct": 643
+      },
+      "changed": true,
+      "change_reason": "Detailed contents listed as a single block; the input provided was vague and poorly defined as a single entity."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial JSON provided only one imprecise bounding box for the entire table content.",
+    "Page number missing from initial list.",
+    "Title was not labeled correctly."
+  ],
+  "doc_id": "1640",
+  "page": 4,
+  "elapsed_seconds": 4.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

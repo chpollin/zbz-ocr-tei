@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "72",
+      "bbox": {
+        "x_pct": 22.368,
+        "y_pct": 2.0,
+        "w_pct": 2.536,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region classified as page_header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 69.577,
+        "y_pct": 2.0,
+        "w_pct": 20.781,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header region classified as page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "seulement  affective, il n'y en pas non plus résulle seulement de lois délerminées. La matière sans ",
+      "bbox": {
+        "x_pct": 22.175,
+        "y_pct": 13.083,
+        "w_pct": 68.239,
+        "h_pct": 5.619
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On ne donc   pas   davantage en musique que dans art plastique dire: la malière est ceci, la forme e",
+      "bbox": {
+        "x_pct": 22.014,
+        "y_pct": 18.58,
+        "w_pct": 68.354,
+        "h_pct": 11.283
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2. Conséquences existentielles de Tambiguïté de la forme: la liberté irréfutable et insaisissable et",
+      "bbox": {
+        "x_pct": 23.36,
+        "y_pct": 31.739,
+        "w_pct": 65.742,
+        "h_pct": 5.771
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si la distinclion entre malière et forme était   exempte de toule ambiguité, si la démarcation pouva",
+      "bbox": {
+        "x_pct": 22.014,
+        "y_pct": 38.368,
+        "w_pct": 68.354,
+        "h_pct": 11.139
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du Benbible, imagine une rait jugement par   excellence. Mais Tart pour la Bcience, cette musique ra",
+      "bbox": {
+        "x_pct": 21.749,
+        "y_pct": 52.521,
+        "w_pct": 68.619,
+        "h_pct": 22.043
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page_header",
+    "Missing page_footer (not present in image, skipping as not required if invisible)"
+  ],
+  "doc_id": "110",
+  "page": 74,
+  "elapsed_seconds": 6.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

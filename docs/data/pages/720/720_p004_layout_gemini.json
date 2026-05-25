@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(dépouillé ou soulagé de sa responsabilité essentielle) va ici de pair avec l'humanisation du droit, avec l'indulgence et la bienveillance (la correction psychologique et la resocialisation se substituant à la répression et à la punition). Il y a là une redoutable ambiguïté, risquant de favoriser l'adaptation sociale aux dépens de la véritable personne.",
+      "bbox": {
+        "x_pct": 2.214,
+        "y_pct": 3.4,
+        "w_pct": 46.802,
+        "h_pct": 18.848
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "c) Il semble parfois qu'hygiène et humanisation se liguent avec les sciences contre l'homme responsable. « On cesse de considérer « l'entité » du criminel et du crime pour considérer la réalité de l'individu. » - Est-ce bien celle de l'individu ? - Ce n'est pas celle du sujet engendrant son existence sociale, mais celle de l'objet explicable par ses causes. La psychiatrie, l'anthropologie, la sociologie, étudient l'homme-objet, ébranlent le sens de la responsabilité et de la pénalité. Mais cette connaissance objective en appelle une autre.",
+      "bbox": {
+        "x_pct": 2.064,
+        "y_pct": 27.061,
+        "w_pct": 47.487,
+        "h_pct": 24.226
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "e) M. Graven nous dit que « La transformation décisive... a été accomplie par l'Ecole positiviste italienne... »",
+      "bbox": {
+        "x_pct": 3.455,
+        "y_pct": 88.594,
+        "w_pct": 46.674,
+        "h_pct": 4.211
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3. Conclusions",
+      "bbox": {
+        "x_pct": 51.583,
+        "y_pct": 28.772,
+        "w_pct": 14.053,
+        "h_pct": 1.585
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) Je voudrais me risquer à affirmer que l'homme et la société, et en particulier tout ce qui est « normatif » et « impératif », restent irréductibles aux objets qu'étudient les sciences positives. Ces sciences sont de la plus grande utilité lorsqu'elles éclairent des aspects de l'homme et de la société. Mais elles ne peuvent parler de « droit », par exemple, ou de « responsabilité » qu'en acceptant, souvent à leur insu, l'injection clandestine d'une connaissance d'un autre ordre, existentielle ou mimée. Cela pour la théorie.",
+      "bbox": {
+        "x_pct": 51.337,
+        "y_pct": 31.153,
+        "w_pct": 46.096,
+        "h_pct": 23.408
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Text transcription in almost all boxes was heavily garbled by the OCR engine.",
+    "Bboxes for segments were accurate but content required full manual reconstruction."
+  ],
+  "doc_id": "720",
+  "page": 4,
+  "elapsed_seconds": 7.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

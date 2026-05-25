@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ces effets se propagent à travers la société tout entière, comme des ronds sur l'eau; ils imprègnent l'affectivité générale et même la sensibilité morale, l'idée que les hommes se font d'eux-mêmes et du prix de leur vie. A la limite, la société se trouve exposée à une médicalisation et à une psychiatrisation généralisées, érigeant la santé en fin dernière de l'existence, ce que livrerait la vie à la maladie la plus grave: celle de n'avoir plus de sens.",
+      "bbox": {
+        "x_pct": 6.503,
+        "y_pct": 7.863,
+        "w_pct": 79.718,
+        "h_pct": 16.732
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text to match the original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les médecins se trouvent ainsi aux prises avec quantité de problèmes, qui ne se posaient pas ainsi dans le passé. Cela me paraît très dur à porter et à supporter, et je m'étonne parfois d'entendre certains d'entre eux continuer à revendiquer, malgré tout, la responsabilité exclusive et solitaire de leurs décisions. Je comprends mieux ceux qui appellent de leurs voeux des directives, un minimum de consensus.",
+      "bbox": {
+        "x_pct": 6.551,
+        "y_pct": 50.051,
+        "w_pct": 77.655,
+        "h_pct": 10.803
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in the text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or il faut bien constater que, dans le monde qui les entoure, rien ne facilite une telle recherche, au contraire. Il s'est produit, dans nos sociétés occidentales, un changement d'attitude général, profond, devant la vie, la mort, la maladie, le malheur. Les stupéfiantes conquêtes de la technique ont propagé dans un vaste public des illusions de toute-puissance, la visée ou même l'exigence d'une condition humaine exempte de souffrance, de travail et de mort. Il est alors très difficile pour le patient d'avoir, face au médecin, une attitude raisonnable, lui permettant d'évaluer des chances et des risques et de distinguer entre le possible et l'impossible. Le médecin est pour lui un sorcier tout-puissant, ou bien il n'est rien. C'est que lui-même se croit \"maître de son corps\", capable de faire face à tout et de parler de tout - alors qu'il ne peut ni affronter, ni accepter, ni \"digérer\" la finitude de sa condition.",
+      "bbox": {
+        "x_pct": 6.503,
+        "y_pct": 61.425,
+        "w_pct": 78.163,
+        "h_pct": 22.661
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors and truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "231",
+      "bbox": {
+        "x_pct": 79.4,
+        "y_pct": 93.3,
+        "w_pct": 2.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "High OCR error rate in paragraph text",
+    "Missing page number detection in original prompt",
+    "Text truncation in detected regions"
+  ],
+  "doc_id": "1680",
+  "page": 4,
+  "elapsed_seconds": 4.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

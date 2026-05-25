@@ -1,0 +1,97 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "LA FORME POUR L'HOMME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header corrected to _filter"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "105",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 30.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number corrected to _filter"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "dune orientalion désirante et avoir passé de lentendement à la volonlé.",
+      "bbox": {
+        "x_pct": 27.238,
+        "y_pct": 13.645,
+        "w_pct": 53.165,
+        "h_pct": 3.591
+      }
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour la forme; il en de même. forme celle-ci est toujours forme dune malière; elle n'existe pas par ",
+      "bbox": {
+        "x_pct": 12.163,
+        "y_pct": 17.289,
+        "w_pct": 68.504,
+        "h_pct": 44.518
+      },
+      "changed": true,
+      "change_reason": "Fixed label from text to zb_paragraph and extended text"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vérité justice; forme; trois nolions qui,   prises dans leur achèvement, dans leur intégralilé san5 ",
+      "bbox": {
+        "x_pct": 12.348,
+        "y_pct": 61.427,
+        "w_pct": 68.32,
+        "h_pct": 11.26
+      },
+      "changed": true,
+      "change_reason": "Fixed label from text to zb_paragraph and extended text"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et   peut-être celte confusion se fait si nalurellement el qui",
+      "bbox": {
+        "x_pct": 15.04,
+        "y_pct": 72.764,
+        "w_pct": 65.316,
+        "h_pct": 1.875
+      },
+      "changed": true,
+      "change_reason": "Fixed label from text to zb_paragraph and corrected text"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial labels were incorrect for the document structure",
+    "Missing page header and footer regions",
+    "Text content was truncated or incorrectly escaped"
+  ],
+  "doc_id": "110",
+  "page": 107,
+  "elapsed_seconds": 7.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Fixed label from text to zb_paragraph and extended text": 2,
+    "Fixed label from text to zb_paragraph and corrected text": 1,
+    "ADDED": 2
+  }
+}

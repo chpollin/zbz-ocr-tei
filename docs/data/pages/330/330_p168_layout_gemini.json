@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "134 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 12.855,
+        "y_pct": 8.784,
+        "w_pct": 85.097,
+        "h_pct": 2.219
+      },
+      "changed": true,
+      "change_reason": "Page header identified at the top of the page should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de la patrie. Beaucoup d'autres se sont suicidés spirituellement par fidélité à la conscience de classe. Beaucoup en ont tué ou poussé au suicide quantité d'autres pour ces mêmes entités. Superstition ou foi? Religion ou idolâtrie? Sont-ils morts, ont-ils tué pour quelque chose - ou pour rien?",
+      "bbox": {
+        "x_pct": 12.855,
+        "y_pct": 11.738,
+        "w_pct": 85.097,
+        "h_pct": 11.078
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le problème est si complexe que je ne sais comment l'aborder de front. Qu'on me permette une série de remarques simplement descriptives pour commencer.",
+      "bbox": {
+        "x_pct": 12.911,
+        "y_pct": 22.219,
+        "w_pct": 84.903,
+        "h_pct": 6.863
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the image source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, l'entité collective n'est pas conçue sur le modèle des entités métaphysiques, mathématiques ou logiques, qui sont éternelles ou étrangères au temps. Elle est historique, elle s'est constituée à une certaine époque, elle vit et se développe dans la durée, elle est toujours menacée de mort. C'est même en tant que menacée qu'elle se fait aimer assez pour pouvoir exiger que l'on meure pour elle. Elle apparaît donc comme un être vulnérable et exigeant, soumis à la condition mortelle. Son contenu est riche, diffus, variable d'individu à individu et se situe presque tout entier dans ces dimensions du temps que Valéry appelait imaginaires (par opposition au présent où règne le fait) : le passé ou l'avenir. L'entité « patrie » a surtout pour contenu un legs du passé et des souvenirs personnels ; l'entité « parti », une vision anticipée des promesses et des espoirs ; l'entité « classe » ne repose qu'en apparence sur un état de fait : en réalité elle tend, pour les conservateurs, à s'identifier avec celle de patrie, dont la substance est dans le passé, pour les prolétaires avec celle de parti, s'alimentant dans l'avenir.",
+      "bbox": {
+        "x_pct": 12.535,
+        "y_pct": 28.458,
+        "w_pct": 85.376,
+        "h_pct": 35.561
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the image source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le contenu représentatif imaginaire (passé ou futur) de telles entités collectives ne signifie nullement qu'elles soient détachées de la situation de fait cristallisée dans le présent. Au contraire : l'attachement à de tels souvenirs ou à de telles espérances s'enracine directement dans la réalité actuelle, aux divers niveaux spirituels et matériels qu'elle comporte. Moins cette réalité actuelle est éprouvée comme satisfaisante, et plus les perspectives imaginaires gagnent en force, plus les entités collectives deviennent denses. Ainsi semble s'expliquer dans une certaine mesure le cycle parcouru dans l'histoire humaine, de la tribu primitive, à travers l'État rationalisé et dépouillé de ses prestiges, jusqu'à l'État sauveur et missionnaire des nazis ou des communistes. L'entité",
+      "bbox": {
+        "x_pct": 12.354,
+        "y_pct": 65.357,
+        "w_pct": 85.097,
+        "h_pct": 24.955
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the image source content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "The initial transcription in several blocks was highly inaccurate.",
+    "Page header was labeled as text block.",
+    "Some text transcription needed cleanup due to OCR/initial extraction errors."
+  ],
+  "doc_id": "330",
+  "page": 168,
+  "elapsed_seconds": 6.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

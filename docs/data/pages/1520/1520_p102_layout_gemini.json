@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mettrait une communication croissante entre des développements divers qui se savent reliés dans l'Un, cet Un qui n'appartient à personne et à qui tous appartiennent.",
+      "bbox": {
+        "x_pct": 11.111,
+        "y_pct": 5.51,
+        "w_pct": 84.322,
+        "h_pct": 6.255
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Raison et déraison de notre temps; trad. française, p. 56-57)",
+      "bbox": {
+        "x_pct": 51.125,
+        "y_pct": 11.2,
+        "w_pct": 44.173,
+        "h_pct": 4.199
+      },
+      "changed": true,
+      "change_reason": "Bibliographic reference at the start is a footnote/source citation."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "34 Evidence contraignante et vérité philosophique",
+      "bbox": {
+        "x_pct": 11.382,
+        "y_pct": 18.021,
+        "w_pct": 63.374,
+        "h_pct": 2.142
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous choisissons, à titre d'exemple, d'opposer ces deux termes pour montrer comment le relatif et l'absolu changent de sens tout en continuant à se rapporter l'un à l'autre.",
+      "bbox": {
+        "x_pct": 11.423,
+        "y_pct": 20.711,
+        "w_pct": 84.011,
+        "h_pct": 6.281
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La validité de l'évidence contraignante est sans restriction. Elle est absolue en tant qu'elle s'impose sans réserve et universellement. Mais elle ne s'impose que du point de vue de la connaissance théorique à une conscience en général. Elle est relative, mesurée à l'absolu de la totalité qui englobe tout; dans la totalité il y a bien cette validité, mais celle-ci n'embrassera jamais celle-là. Elle est en outre indifférente pour l'existence, qui ne voit, dans ce genre de vérité exacte, qu'un simple moyen et une condition pour autre chose. Une telle exactitude n'est pas pour l'existence quelque chose de substantiel, qui puisse de soi la combler, lui donner sa présence. Elle est relative parce qu'on ne peut en vivre.",
+      "bbox": {
+        "x_pct": 11.287,
+        "y_pct": 26.392,
+        "w_pct": 84.201,
+        "h_pct": 21.422
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il en va autrement de la vérité philosophique, par exemple celle d'une Idée. Elle est absolue lorsqu'elle remplit une vie, mais elle est relative lorsqu'on la pense objectivement et qu'on l'énonce en lui trouvant des raisons. Ainsi pensée à distance de soi, son objectivité se réduit à la relativité historique d'un phénomène temporel éphémère.",
+      "bbox": {
+        "x_pct": 11.382,
+        "y_pct": 47.446,
+        "w_pct": 84.146,
+        "h_pct": 11.705
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'évidence contraignante ne se laisse vaincre par rien, on peut s'y tenir, elle résiste, mais elle n'appartient qu'à une perspective limitée dans le monde. Quiconque voudrait l'abolir se vouerait au non-sens, mais quiconque voudrait s'en tenir à elle seule comme à l'unique vérité se condamnerait à mort.",
+      "bbox": {
+        "x_pct": 11.07,
+        "y_pct": 58.638,
+        "w_pct": 84.553,
+        "h_pct": 10.231
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La quête philosophique est absolue dans son origine, elle est présente et absolue dans son historicité. Mais l'expression de la vérité philosophique dans une doctrine doit être considérée comme relative; car toute doctrine appartient à l'histoire, à une époque donnée, aucune n'est universellement valable ni intemporelle. Déjà la science, pour garantir la possibilité d'une vérité solide, ayant une validité intemporelle et apodictique, exige que soit rejetée comme relative toute opinion doctrinale objective privée d'une telle apodicticité. Mais c'est une exigence de la philosophie, chaque fois que la réflexion éclairante (erhellendes Denken) se coule dans une doctrine, de faire éclater celle-ci. Il en va certes de même de notre",
+      "bbox": {
+        "x_pct": 11.247,
+        "y_pct": 68.149,
+        "w_pct": 84.377,
+        "h_pct": 21.251
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "96",
+      "bbox": {
+        "x_pct": 11.531,
+        "y_pct": 91.565,
+        "w_pct": 2.254,
+        "h_pct": 2.378
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most text segments were significantly truncated/incomplete.",
+    "Page number 96 was missing from detection.",
+    "Footnote labeled as text."
+  ],
+  "doc_id": "1520",
+  "page": 102,
+  "elapsed_seconds": 6.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

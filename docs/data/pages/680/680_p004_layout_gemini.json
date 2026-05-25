@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une donnée semblable à la naissance, l’époque, ou la nature mortelle. Choisir une tradition, fût-ce celle dans laquelle on a été élevé, c’est au contraire exclure les autres. La tradition une fois nommée, objectivée, rendue à la relativité historique, dit non aux autres; elle ne va plus sans dire, elle se défend, elle attaque, elle réclame l’appui de la force. Elle devient fragile et agressive. Au fur et à mesure qu’elle s’explicite davantage, elle perd progressivement son sens, ce mot étant pris dans son acception vectorielle, dynamique, et indiquant la direction même du temps, qui va du passé vers l’avenir. La tradition, au lieu d’être la simplicité hospitalière du passé-présent à l’égard de l’avenir, une manière de changer en inventant la nouveauté du futur, se replie sur elle-même, se prend elle-même pour objet, refuse le reste. La tradition est morte, elle n’est plus qu’une fleur de rhétorique dans les discours et les idéologies. Elle sert, non à vivre, mais à empêcher de vivre autrui.",
+      "bbox": {
+        "x_pct": 12.595,
+        "y_pct": 9.362,
+        "w_pct": 66.132,
+        "h_pct": 30.125
+      },
+      "changed": true,
+      "change_reason": "The text was truncated and incomplete. Updated to reflect the full paragraph content visible in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès la liberté cherche son salut, non dans la tradition, mais contre elle, dans la révolte. Elle se voit dispensée d’inventer l’avenir: sa lutte contre ce qui est lui suffit. Le passé détruit prend une valeur futuriste. Destruction égale création. Briser les structures et les formes, c’est déjà créer la société, les styles de demain. Etrange foi en la vertu créatrice de la seule négation. La liberté est si absorbée par sa lutte contre la tradition qu’elle se trouve tout entière tournée vers le passé, absorbée par lui, enlisée en lui. Il lui impose ses catégories, ses lois, alors même qu’elle le détruit. Elle ne perd, de la tradition, que sa vie inventive tendue vers le futur.",
+      "bbox": {
+        "x_pct": 12.627,
+        "y_pct": 39.105,
+        "w_pct": 66.124,
+        "h_pct": 20.023
+      },
+      "changed": true,
+      "change_reason": "The text was truncated and contained OCR errors. Updated to reflect the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette situation existait quand Jaspers créa sa philosophie. La tradition avait été nommée, attaquée, justifiée depuis longtemps. Il en parla donc. Mais pour lui, il ne pouvait être question ni de la réduire aux contenus figés qu’elle avait déposés tout au long de l’histoire, ni de s’accomplir par la révolte contre elle. Allant à contre-courant, il entreprit de retrouver, à travers les figures traditionnelles, la vie de la tradition, afin de rendre à la liberté son sol dans l’histoire.",
+      "bbox": {
+        "x_pct": 12.595,
+        "y_pct": 61.1,
+        "w_pct": 66.189,
+        "h_pct": 15.749
+      },
+      "changed": true,
+      "change_reason": "The text was truncated and contained OCR errors. Updated to reflect the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est possible de considérer toute son œuvre comme un ensemble d’«exercices spirituels» en vue du retour, avec l’aide du passé, aux sources vives, à ce trésor perdu sans lequel l’avenir ne s’invente plus, se dessèche et meurt – et qui, de son côté, n’est qu’un tas de sable s’il ne sert plus à inventer l’avenir.",
+      "bbox": {
+        "x_pct": 12.732,
+        "y_pct": 77.054,
+        "w_pct": 66.052,
+        "h_pct": 10.051
+      },
+      "changed": true,
+      "change_reason": "The text was truncated and contained OCR errors. Updated to reflect the full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "120",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 89.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Labelled as page number, corrected from 'text' to 'page_footer'."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Most text paragraphs contained incomplete or truncated OCR strings.",
+    "Page number 120 was misclassified as text.",
+    "OCR quality within the bounding boxes was poor, requiring manual correction of the text field."
+  ],
+  "doc_id": "680",
+  "page": 4,
+  "elapsed_seconds": 5.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

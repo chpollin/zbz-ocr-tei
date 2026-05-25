@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch ist die erste Preisträgerin der Stiftung fur Freiheit und Menschenrechte",
+      "bbox": {
+        "x_pct": 14.086,
+        "y_pct": 11.282,
+        "w_pct": 74.731,
+        "h_pct": 4.179
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie wurde in Genf geboren , studierte in Genf , Heidelberg, und an der Sorbonne in Paris Unter ander",
+      "bbox": {
+        "x_pct": 14.032,
+        "y_pct": 18.386,
+        "w_pct": 73.495,
+        "h_pct": 13.333
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Als Schülerin von Karl Jaspers hat sie dessen Werk zum Teil übersetzt, daneben aber auch eigene Arbe",
+      "bbox": {
+        "x_pct": 14.086,
+        "y_pct": 34.72,
+        "w_pct": 74.839,
+        "h_pct": 17.569
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch ist Ordinairus fur Philosophie an der Universität Genf und Mitglied der Sozialdemokrat",
+      "bbox": {
+        "x_pct": 14.086,
+        "y_pct": 55.081,
+        "w_pct": 75.833,
+        "h_pct": 4.198
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "2001 / 165",
+      "bbox": {
+        "x_pct": 38.602,
+        "y_pct": 66.836,
+        "w_pct": 10.968,
+        "h_pct": 2.29
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page stamp artifact as _filter"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "BIBLIOTHEQUE GENEVE",
+      "bbox": {
+        "x_pct": 41.505,
+        "y_pct": 70.835,
+        "w_pct": 17.527,
+        "h_pct": 5.426
+      },
+      "changed": true,
+      "change_reason": "ADDED: Library stamp as _filter"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "© by Stiftung für Freiheit und Menschenrechte Spitalgasse 9, 3000 Bern, 1974",
+      "bbox": {
+        "x_pct": 21.075,
+        "y_pct": 84.482,
+        "w_pct": 58.387,
+        "h_pct": 4.406
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Footnote label was misidentified as paragraph",
+    "Missing artifacts (stamps) were identified as _filter"
+  ],
+  "doc_id": "1060",
+  "page": 2,
+  "elapsed_seconds": 5.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label to footnote": 1,
+    "ADDED": 2
+  }
+}

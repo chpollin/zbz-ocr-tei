@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de surmonter la distance et change les conditions de la communication. Il en va de même des transpor",
+      "bbox": {
+        "x_pct": 7.838,
+        "y_pct": 7.935,
+        "w_pct": 87.932,
+        "h_pct": 12.261
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette réalité , cette densité   complexe et interpénétrée, il pas la réduire si veut la   comprendre",
+      "bbox": {
+        "x_pct": 7.527,
+        "y_pct": 19.881,
+        "w_pct": 88.243,
+        "h_pct": 12.483
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois que le purisme, dans les sciences humaines, est destructeur de son objet, et au contraire, ",
+      "bbox": {
+        "x_pct": 7.122,
+        "y_pct": 31.997,
+        "w_pct": 88.784,
+        "h_pct": 15.956
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, ce que je viens de dire ne me conduit pas du tout, sur un point, auX mêmes conclusions",
+      "bbox": {
+        "x_pct": 7.203,
+        "y_pct": 47.867,
+        "w_pct": 88.649,
+        "h_pct": 14.309
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand nous étudions des réalités humaines, nous constatons qu'il existe des normes.  Par exemple, un",
+      "bbox": {
+        "x_pct": 6.662,
+        "y_pct": 63.882,
+        "w_pct": 88.608,
+        "h_pct": 28.413
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais constater des  normes, n' est pas du tout les accepter. Le contre220 courant reste toujours pos",
+      "bbox": {
+        "x_pct": 1.176,
+        "y_pct": 92.125,
+        "w_pct": 93.784,
+        "h_pct": 4.121
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "220",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 96.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page number at footer"
+  ],
+  "doc_id": "1180",
+  "page": 5,
+  "elapsed_seconds": 7.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 2 -",
+      "bbox": {
+        "x_pct": 48.065,
+        "y_pct": 9.778,
+        "w_pct": 3.629,
+        "h_pct": 0.887
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "zu bleiben denen, die die Opfer gewesen sind, in der Erinnerung dessen, was nicht mehr gut zu machen ist, nicht mehr auszulöschen ist, was für die Ewigkeit da bleibt. Denn das ist die Vergangenheit. Man sagt immer, die Zeit vergeht. Die Zeit vergeht, und sie vergeht nicht. In einem bestimmten Sinn vergeht keine Zeit. Die Zukunft hängt noch von uns ab. Die Vergangenheit nicht mehr. Sie ist so, wie sie ist. Und ich würde sogar sagen, wenn wir alles vergessen haben, wenn wir alle tot sind, wenn die Erde kalt wird, so wird nie etwas nicht gewesen sein, was eben gewesen ist. Das ist ein für alle Mal in einem geheimnisvollen Sein begraben und aufbewahrt. Und dieses ständige Problem der Versöhnung, der möglichen Versöhnung, hat das radikalste Ausmaß und eine zerreißende Radikalität gewonnen. Nach der nationalsozialistischen Herrschaft, nach diesem Projekt einer Endlösung, das nicht nur Projekt geblieben ist, sondern, mit seinen massiven Vernichtungen, zum großen Teil verwirklicht worden ist.",
+      "bbox": {
+        "x_pct": 9.274,
+        "y_pct": 12.181,
+        "w_pct": 82.153,
+        "h_pct": 34.235
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und ich finde es wirklich sehr, sehr schwer, darüber zu sprechen, denn alle Worte, jede Beredsamkeit, passen hier eigentlich nicht, sind außerhalb des Maßes, und die Tatsache, daß man noch lebt, daß man das Licht des Tages, wie die Griechen immer sagten, noch genießt, einem das Recht wegnimmt, alle diese Worte auszusprechen, Worte, Worte...",
+      "bbox": {
+        "x_pct": 9.274,
+        "y_pct": 46.605,
+        "w_pct": 81.718,
+        "h_pct": 12.601
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und entsteht eine Versuchung des Schweigens. Seltsamerweise auf beiden Seiten. Eine Versuchung des Schweigens bei denen, die sich für die Söhne derer halten, die damals die Folterer waren, und eine Versuchung des Schweigens auf der Seite derer, die zusammenhalten mit den Opfern jener Zeit. Es ist nicht dieselbe Versuchung, es ist nicht dasselbe Schweigen. Und trotzdem muß man sprechen, muß man schreiben, muß man daran wieder erinnern. Zunächst einmal für das Gedächtnis, denn das, was geschehen ist, war so ungeheuerlich, daß es mit der Zeit immer unwahrscheinlicher erscheint, daß es immer schwerer wird, zu glauben, daß es nicht ein Alptraum war, sondern die Wirklichkeit. Also für das Gedächtnis vor allem, und nachher muß man davon sprechen, muß man sich selbst befragen, um in sich selbst, zunächst einmal in sich selbst, die Wurzeln zu finden, dessen, was da geschehen ist, denn schließlich gehören wir alle zur selben Menschheit. Wo sind in jedem von uns die Wurzeln zu entdecken, die so etwas ermöglicht",
+      "bbox": {
+        "x_pct": 9.218,
+        "y_pct": 59.321,
+        "w_pct": 81.371,
+        "h_pct": 34.333
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was previously garbled/truncated."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at the top of the page was incorrectly classified as part of the paragraph.",
+    "OCR text content for the final paragraph was incomplete."
+  ],
+  "doc_id": "2470",
+  "page": 2,
+  "elapsed_seconds": 5.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

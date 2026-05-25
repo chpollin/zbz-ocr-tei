@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA SUISSE DANS L'EUROPE ACTUELLE 71",
+      "bbox": {
+        "x_pct": 273,
+        "y_pct": 82,
+        "w_pct": 659,
+        "h_pct": 10
+      },
+      "changed": true,
+      "change_reason": "Identified page header containing title and page number as _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sont pas spécialement fédéralistes. Cette entrée dans l'AELE est un défi à la géographie, à l'économie, à la plupart de nos intérêts, si je suis bien informée. Elle a été, au fond, une prise de parti idéologique, pour que nous puissions rester la Suisse neutre et complètement indépendante, souveraine absolue, que nous avons été jusqu'à présent. L'AELE n'a, selon moi, aucune chance d'aboutir au fédéralisme, pour la bonne raison qu'elle n'a pas été créée pour cela. Elle comporte en revanche un risque réel : celui de paralyser le Marché commun, avec la complicité de tous ceux qui, à l'intérieur des pays du Marché commun, ne demandent pas mieux que de trouver ce renfort et de s'en servir pour justifier des marches en arrière.",
+      "bbox": {
+        "x_pct": 11.508,
+        "y_pct": 12.142,
+        "w_pct": 81.786,
+        "h_pct": 34.041
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que doit faire la Suisse ? Politiquement, il est bien évident qu'elle ne peut ni ne doit prendre des initiatives en matière de politique mondiale. Elle n'a pas qualité pour cela. Elle n'a ni la force ni le passé nécessaires pour jouer un tel rôle. Il y a un certain prix qu'elle n'a pas payé, et qu'elle est bien décidée à ne pas payer, et il est peut-être bon qu'elle ne le paie pas. Elle ne peut donc pas, elle ne doit pas jouer ce rôle. Tout au plus peut-elle empêcher le moins possible le possible de se faire. Ce n'est pas là une formule bien ambitieuse, mais je la crois assez précise. Je suis contente qu'il y ait des observateurs suisses au Conseil de l'Europe 1. Je serais très contente si ces",
+      "bbox": {
+        "x_pct": 11.376,
+        "y_pct": 46.086,
+        "w_pct": 80.952,
+        "h_pct": 30.906
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Le Conseil de l'Europe a été fondé en 1949. La Suisse n'y a pas encore adhéré, mais elle y envoie six observateurs et six suppléants, pour la première fois à la troisième partie de la 12e session ordinaire de l'Assemblée consultative du 1er au 3 mars 1961. Ces observateurs participent aux débats de l'Assemblée consultative et de certaines de ses Commissions, mais sans droit de vote.",
+      "bbox": {
+        "x_pct": 11.508,
+        "y_pct": 77.926,
+        "w_pct": 81.085,
+        "h_pct": 12.532
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to footnote."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header detected as text initially",
+    "Footnote incorrectly labeled as main paragraph",
+    "OCR text quality in initial JSON was poor/truncated"
+  ],
+  "doc_id": "530",
+  "page": 12,
+  "elapsed_seconds": 4.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

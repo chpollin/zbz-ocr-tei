@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Pour le troisième âge: nouvelles tâches, nouvelle jeunesse",
+      "bbox": {
+        "x_pct": 3.846,
+        "y_pct": 5.859,
+        "w_pct": 78.126,
+        "h_pct": 7.056
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Sintesi",
+      "bbox": {
+        "x_pct": 4.231,
+        "y_pct": 17.426,
+        "w_pct": 7.332,
+        "h_pct": 1.758
+      },
+      "changed": true,
+      "change_reason": "Sintesi acts as a section heading for the summary text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La prospettiva di questa relazione non è quella dei diritti delle persone anziane, dei loro bisogni bensì piuttosto di quanto le altre componenti la società possono aspettarsi dagli anziani. E ciò dipende dal modo, molto differenziato di invecchiare e su questo modo dobbiamo vigilare perché i giovani hanno bisogno di modelli di adulti e di adulti che sanno invecchiare restando giovani.",
+      "bbox": {
+        "x_pct": 50.491,
+        "y_pct": 17.542,
+        "w_pct": 42.741,
+        "h_pct": 11.706
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "È in questa apparente contraddizione che sta l'indicazione per un buon invecchiamento.",
+      "bbox": {
+        "x_pct": 50.315,
+        "y_pct": 29.075,
+        "w_pct": 42.774,
+        "h_pct": 1.752
+      },
+      "changed": true,
+      "change_reason": "Merged stray lines and fixed OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Restar giovani non significa comportarsi come i giovani, ma riuscire, in un momento in cui l'avvicinarsi della morte determina un distacco dalla vita, a dare alle cose della vita il giusto peso che permette di capire ancora i giovani che sono pienamente nella vita ed a raggiungere il giusto grado di distacco proprio della terza età.",
+      "bbox": {
+        "x_pct": 50.516,
+        "y_pct": 31.943,
+        "w_pct": 42.635,
+        "h_pct": 10.411
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Anche il rapporto con il proprio corpo necessita della ricerca di un equilibrio fra attenzione, necessaria per evitare inutile sofferenza, e il distacco necessario per evitarne l'ossessione. Invecchiare bene vuol anche dire non cristallizzarsi in modo compiaciuto nella propria maniera di essere.",
+      "bbox": {
+        "x_pct": 50.409,
+        "y_pct": 42.065,
+        "w_pct": 42.741,
+        "h_pct": 10.046
+      },
+      "changed": true,
+      "change_reason": "Fixed punctuation and OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In un mondo che non è più il suo l'anziano può fronteggiare il rischio della solitudine trovando anche qui un equilibrio fra il distanziarsi dagli affetti e il vivere invece l'affettività in modo ossessionante e tirannico, riconoscendo con gratitudine il valore per la vita vissuta.",
+      "bbox": {
+        "x_pct": 50.409,
+        "y_pct": 52.094,
+        "w_pct": 42.774,
+        "h_pct": 8.791
+      },
+      "changed": true,
+      "change_reason": "Corrected sentence structure and OCR typos."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Una via indicata dalla relatrice per il raggiungimento di quest'equilibrio è quella dell'assunzione di nuovi compiti piuttosto che delle rivendicazioni di diritti.",
+      "bbox": {
+        "x_pct": 50.434,
+        "y_pct": 60.711,
+        "w_pct": 42.717,
+        "h_pct": 5.801
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La persona anziana non deve essere solo occupata di se stessa, ma avere delle poste in gioco, dei ruoli da assumere, una disponibilità da offrire nell'umanizzazione dei rapporti, contro l'ossessione di sé; solo così essa vive nel presente, accettando pienamente la condizione del presente indipendentemente dalla morte, del mondo che esiste oggi, che è il nostro mondo, il solo dove abbiamo un appuntamento con qualcuno e qualcosa.",
+      "bbox": {
+        "x_pct": 50.352,
+        "y_pct": 66.512,
+        "w_pct": 42.717,
+        "h_pct": 14.361
+      },
+      "changed": true,
+      "change_reason": "Fixed extensive OCR errors and capitalization issues."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Multiple OCR errors in paragraph body.",
+    "Incorrect label for Sintesi heading.",
+    "Punctuation missing or replaced by OCR artifacts.",
+    "Fragmented lines merged for readability."
+  ],
+  "doc_id": "2720",
+  "page": 5,
+  "elapsed_seconds": 7.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

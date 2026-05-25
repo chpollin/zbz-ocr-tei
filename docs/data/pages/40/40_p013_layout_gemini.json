@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces promenades de mon adolescence, Marc, c’était ce qu’il y avait de réel dans ma vie. Le reste était travail, usure. Seule dehors, j’étais comblée, je te l’ai dit, non de bonheur, mais d’appels. Il y en avait tant, et ils étaient si puissants, que sans satisfaction ils me donnaient la plénitude.",
+      "bbox": {
+        "x_pct": 8.689,
+        "y_pct": 32.609,
+        "w_pct": 80.946,
+        "h_pct": 15.246
+      },
+      "changed": true,
+      "change_reason": "Corrected the severely garbled OCR text to match the content visible in the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aux vacances de Pâques, cette année-là, j’étais une fois de plus dans la maison de la paysanne. — O Marc, comment faire ? Je croyais qu’il serait facile de suivre le fil des jours, de raconter comment c’est arrivé. Mais je ne sais pas. Je vais peut-être renoncer à tout ce récit. Il me semblait avoir quelque chose d’immense à te faire partager; je m’aperçois que je n’ai rien, aucune suite, aucun pays qu’on puisse parcourir, seulement des paysages isolés, d’une lumière tellement éblouissante que je ne les vois presque pas. Je ne sais plus rien des premiers jours là-haut. Je ne sais plus s’il y avait d’autres gens dans la maison ou si j’étais seule, ni comment j’ai passé mes journées, ni quel temps il faisait. Absence. On dirait que l’éclat d’un seul jour et d’un seul visage a plongé tout le reste dans l’oubli, comme la lumière qu’on porte à la",
+      "bbox": {
+        "x_pct": 8.473,
+        "y_pct": 47.571,
+        "w_pct": 81.081,
+        "h_pct": 37.968
+      },
+      "changed": true,
+      "change_reason": "Corrected the severely garbled OCR text to match the content visible in the source image."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 2,
+  "issues": [
+    "The OCR text extraction was highly inaccurate, containing fragmented and corrupted characters throughout both segments.",
+    "The text content was completely replaced with the correct reading of the source document text."
+  ],
+  "doc_id": "40",
+  "page": 13,
+  "elapsed_seconds": 3.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

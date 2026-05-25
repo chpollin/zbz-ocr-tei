@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 133",
+      "bbox": {
+        "x_pct": 302,
+        "y_pct": 98,
+        "w_pct": 697,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page header components as _filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'ÂME COLLECTIVE",
+      "bbox": {
+        "x_pct": 60,
+        "y_pct": 170,
+        "w_pct": 243,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled text and confirmed label as section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut ici nous défaire de toute une mythologie et nous demander quelle sorte de réalité un parti possède et doit posséder, quelle sorte de réalité il ne possède pas. C'est poser à son propos tout le problème des entités collectives, et on nous pardonnera ici une assez longue digression.",
+      "bbox": {
+        "x_pct": 37,
+        "y_pct": 208,
+        "w_pct": 840,
+        "h_pct": 108
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a l'habitude, depuis Dürkheim, de parler couramment d' « âme collective », de « conscience collective », comme de données sociales incontestables. L'expérience hitlérienne, le spectacle stupéfiant d'un peuple entier, parmi les plus civilisés du monde, à l'avant-garde de la compétence scientifique et technique, ayant donné au genre humain ses plus grands musiciens et ses plus grands philosophes, qui se ralliait à un mythe raciste et à l'exploitation des fours crématoires, n'a fait que confirmer la foi diffuse des hommes de ce temps en une âme collective appartenant à un peuple ou à une nation, distincte de l'âme individuelle, et dont l'éventail de possibles, du meilleur au pire, serait plus large que l'éventail individuel. Les « foules », les « masses » réunies au hasard d'une manifestation ont également été dotées d'une « âme » éphémère, momentanée, mais puissante, dont une certaine psychologie fait son objet. Des écoles sociologiques, des politiciens cherchant à dégager les intentions véritables dissimulées sous la diplomatie de tel ou tel État, recourent à de telles « âmes collectives ». La psychanalyse s'en mêle. Il n'est pas jusqu'au matérialisme dialectique qui, désagrégeant la réalité de l'âme individuelle pour en faire « le produit » de divers facteurs sociaux, ne recoure à des entités collectives telles que les diverses « consciences de classe » pour porter sur elles des jugements sommaires, mais souverains. Je pense cependant à la dent d'or de Fénelon. Qu'est-ce au juste qu'une âme ou une conscience collective? Le problème se pose en termes scolastiques : réalisme ou nominalisme. L'âme collective est-elle réelle, n'est-elle qu'un flatus vocis? Mais qu'on ne s'y trompe pas : la question est actuelle, pratique, elle nous presse et peut nous acculer à des choix impliquant la vie et la mort. Beaucoup de gens, ces dernières années, sont morts pour l'âme collective",
+      "bbox": {
+        "x_pct": 28,
+        "y_pct": 312,
+        "w_pct": 848,
+        "h_pct": 591
+      },
+      "changed": true,
+      "change_reason": "Corrected severely corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 756,
+        "y_pct": 905,
+        "w_pct": 14,
+        "h_pct": 17
+      },
+      "changed": true,
+      "change_reason": "Corrected page footer label."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Severe OCR degradation in the source text.",
+    "Page number mislabeled as text.",
+    "Page header mislabeled as text.",
+    "Section header text corrupted."
+  ],
+  "doc_id": "330",
+  "page": 167,
+  "elapsed_seconds": 5.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

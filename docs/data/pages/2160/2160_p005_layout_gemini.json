@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "den Ruf eines Vogels und konnte damit weder Gefieder noch Farbe verbinden. Die Trennung tat ihm plötzlich weh. Da erinnerte er sich aber jener anderen Trennung, die er zu Hause gekannt hatte, als er noch zwischen seinen eigenen Leuten lebte. Es war nicht dieselbe. Die jetzige war viel präziser und schmerzlicher, die dortige aber unheilbar.",
+      "bbox": {
+        "x_pct": 13.451,
+        "y_pct": 8.1,
+        "w_pct": 77.959,
+        "h_pct": 12.513
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for better accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Er spürte, wie sich ein Keim der Freude in ihm auftat. Jetzt hatte er sich selbst verbannt, wissend, woher. Seine Gedanken und seine Erinnerung konnten dorthin zurückkehren, sich mit dem dortigen Dasein erfüllen, er konnte davon erzählen, und seine Sehnsucht danach war sein Besitz, als fände er in der Abwesenheit selbst seine Heimat. Es galt nur noch, sie zu ergründen. Sie zu ergründen und anzunehmen hieß vielleicht, ein merkwürdiges Schwindelgefühl entdecken. Trennung im Gegenwärtigwerden, das ist keine echte Abwesenheit mehr, sondern der Widerhall der Abwesenheit, der nie aufhören wird.",
+      "bbox": {
+        "x_pct": 13.001,
+        "y_pct": 20.054,
+        "w_pct": 78.372,
+        "h_pct": 22.299
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Auf keinen Fall wollte er die Distanz der Verbannung auf Kosten ihrer Wirklichkeit durch irgendwelche Vergeistigung lindern und verkleinern. Er wollte sie in ihrer grausamen Wortwörtlichkeit erleben. Aber in dieser Wortwörtlichkeit selbst steckte etwas Zufälliges, das, frei von jeder Notwendigkeit, Ort und Möglichkeit einer Hoffnung bewahrte. Eine sehr entfernte Hoffnung, ein karger Lufthauch, der doch eine winzige Flamme leidenschaftlicher Erwartung nährte: eines Tages könnten sich die Umstände ändern; eines Tages würde er dort trotz der zerstörten Häuser und Städte und Sitten seine Sprache wiederfinden, seine Vögel, Wälder und Jahreszeiten.",
+      "bbox": {
+        "x_pct": 12.843,
+        "y_pct": 42.375,
+        "w_pct": 78.372,
+        "h_pct": 22.506
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun erlebte er aber jene andere, unvermeidliche Trennung, die ihn im voraus aus dem Ort verbannte, wo er weilte, die ihn schon damals unbewußt aus der Heimat verbannte, während er noch dort lebte. Und über jede Hoffnung hinaus, jenseits jeder Verzweiflung: nun jene andere menschliche Heimat der Gegenwart, hier und jetzt - ein Ast biegt sich, eine Eidechse huscht vorüber, ein Windhauch streift den Arm, ein Käfer ist auf den Rücken gefallen und ein Vogel frißt seine Eingeweide - du bist da oder du bist nicht da. Erfüllung, doch schon im Zeichen des Abschieds.",
+      "bbox": {
+        "x_pct": 12.6,
+        "y_pct": 64.391,
+        "w_pct": 77.886,
+        "h_pct": 19.847
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Trennung ist Gegenwart: Es genügt eine geschlossene Tür. Sie ist zu, und schon weiß ich nichts mehr von deiner Wirklichkeit.",
+      "bbox": {
+        "x_pct": 12.843,
+        "y_pct": 86.077,
+        "w_pct": 77.157,
+        "h_pct": 4.169
+      },
+      "changed": true,
+      "change_reason": "Corrected typos and spacing in OCR output."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "248",
+      "bbox": {
+        "x_pct": 12.8,
+        "y_pct": 92.5,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR output was significantly truncated in all paragraphs.",
+    "Page number 248 was missing from initial detected regions.",
+    "Typos in the final paragraph corrected."
+  ],
+  "doc_id": "2160",
+  "page": 5,
+  "elapsed_seconds": 6.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

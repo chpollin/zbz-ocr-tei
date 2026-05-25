@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 26.075,
+        "y_pct": 25.74,
+        "w_pct": 40.783,
+        "h_pct": 2.227
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PREMIÈRE PARTIE",
+      "bbox": {
+        "x_pct": 34.025,
+        "y_pct": 31.157,
+        "w_pct": 25.115,
+        "h_pct": 1.873
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Universalité humaine de la forme",
+      "bbox": {
+        "x_pct": 24.424,
+        "y_pct": 34.295,
+        "w_pct": 44.086,
+        "h_pct": 1.949
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1. Prise et matière",
+      "bbox": {
+        "x_pct": 34.639,
+        "y_pct": 39.307,
+        "w_pct": 23.771,
+        "h_pct": 1.746
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lhomme joue toute son existence dans le   rapport entre   deux termes   opposés et inséparables: le ",
+      "bbox": {
+        "x_pct": 12.135,
+        "y_pct": 41.787,
+        "w_pct": 68.587,
+        "h_pct": 3.822
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le moi est connu par sa fonction; à la façon dun organe; à la façon dune scie dont les dents croîtra",
+      "bbox": {
+        "x_pct": 12.135,
+        "y_pct": 45.356,
+        "w_pct": 68.51,
+        "h_pct": 16.932
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le non-moi, de son côté, n'est réel que pour le moi s 'y insère. Cest pourquoi le mode de est différ",
+      "bbox": {
+        "x_pct": 12.135,
+        "y_pct": 62.187,
+        "w_pct": 68.548,
+        "h_pct": 12.933
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "truncated text in original region descriptions"
+  ],
+  "doc_id": "110",
+  "page": 23,
+  "elapsed_seconds": 6.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected truncated text": 3
+  }
+}

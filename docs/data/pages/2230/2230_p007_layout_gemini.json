@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 22 -",
+      "bbox": {
+        "x_pct": 435.0,
+        "y_pct": 60.0,
+        "w_pct": 59.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette condition humaine, avec ses éléments permanents, il s'agit donc de la retrouver. Une composante essentielle, que nous oublions toujours, de cette condition, c'est la nécessité qu'il y ait un manque, ce qui exclut, justement, la possibilité du paradis. L'être humain vit du manque. Quelque chose lui manque, et parce que quelque chose lui manque, il vise ce quelque chose. Si rien ne lui manque, il ne peut pas viser: il ne peut pas être un être libre.",
+      "bbox": {
+        "x_pct": 9.976,
+        "y_pct": 13.284,
+        "w_pct": 78.79,
+        "h_pct": 16.745
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality to match original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces jours-ci j'ai rencontré un spécialiste des computers qui a terminé son intervention dans un colloque en disant: \"Die Menschen werden sich damit abfinden müssen, daß sie es mit Wesen zu tun haben werden, deren Denkleistungen den ihrigen weit überlegen sind.\" Je traduis: L'homme devra accepter d'avoir affaire à des êtres capables d'exploits bien supérieurs aux siens dans le domaine de la pensée. Eh bien, je lui ai dit, et je continue à le penser, que ces exploits peuvent être supérieurs par la rapidité et la complexité des opérations, certes, mais non en tant qu'opérations de pensée, pour une raison fondamentale: c'est que la machine ne pense pas. Et pourquoi? Parce qu'elle ne vise rien. Elle est programmée; elle a des causes, qui sont dans son programme, dans sa construction. Mais elle n'a pas de visée, elle ne tend à rien. L'être humain \"tend à\" - et il cesse d'être un être humain quand il ne \"tend plus à...\" . Cela implique qu'il est, en quelque sorte dans son essence, lié au manque, et par conséquent, dans son essence, inachevé. Il est déjà le plus inachevé des êtres vivants quand il vient au monde. Mais il reste inachevé. Probablement pour la même raison, l'être humain est inachevé dans le temps inachevé. Or la formation permanente découle de cette condition.",
+      "bbox": {
+        "x_pct": 9.677,
+        "y_pct": 31.089,
+        "w_pct": 78.871,
+        "h_pct": 44.949
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est là quelque chose de tout à fait essentiel. C'est pourquoi j'ai intitulé mon exposé: La formation permanente par fidélité à la condition humaine. On ne reste pas soi-même quand on ne consent plus à devenir et à changer - ce qui n'implique nullement",
+      "bbox": {
+        "x_pct": 9.653,
+        "y_pct": 77.195,
+        "w_pct": 78.734,
+        "h_pct": 8.626
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page number at top was incorrectly labeled as paragraph.",
+    "OCR output contained significant transcription errors in the provided text.",
+    "Bbox for page number missing in provided input list, inferred."
+  ],
+  "doc_id": "2230",
+  "page": 7,
+  "elapsed_seconds": 4.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

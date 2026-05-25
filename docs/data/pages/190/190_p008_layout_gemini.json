@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "férence approximative — soit transcendée à la fois vers la généralité et vers l'unicité singulière. Il serait trop long de montrer ici l'in- existence insurmontable, sur le plan de l'art, de ce qui n'est que général ou de ce qui n'est qu'à peu près particulier.",
+      "bbox": {
+        "x_pct": 15.737,
+        "y_pct": 9.897,
+        "w_pct": 65.06,
+        "h_pct": 8.182
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image transcript accurately"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais c'est dans le domaine religieux que cette polarité invincible se fait le plus violemment sentir, peut-étre. C'est à cause d'elle que l'opposition du libéralisme et du dogmatisme ne se détendra jamais: elle est constitutive de la situation de la foi. La foi, en effet, a forcément pour objet un étre singulier, et non l'étre en général, dénué de toute détermination, dont Hegel a bien montré qu'il s'identifiait au néant. Et c'est cette détermination concrète de l'étre singulier que signifient en principe les dogmes, ainsi que les éléments historiques qu'imposent les religions aux croyants. C'est pourquoi les églises chrétiennes insistent pour que les croyants passent par cette porte étroite, par ce récit, qui détermine Dieu.",
+      "bbox": {
+        "x_pct": 15.633,
+        "y_pct": 17.681,
+        "w_pct": 65.189,
+        "h_pct": 23.801
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais aussitôt la détermination d'un Dieu particulier chasse Dieu hors de ce Dieu — qui devient un étre singulier, à transcender doublement.",
+      "bbox": {
+        "x_pct": 15.689,
+        "y_pct": 41.481,
+        "w_pct": 64.996,
+        "h_pct": 5.983
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc on peut dire que la foi dans un Dieu singulier, ultime et sans transcendance, n'est pas la foi en Dieu. Et tel est le piège tendu au croyant par le réalisme, pour lequel Dieu est littéralement réel. Mais la foi dans le Dieu général, la foi qui croit atteindre en lui la transcendance par une visée directe, exempte de toute détermination limitative, n'est pas la foi en Dieu. Et tel est le piège tendu par l'idéalisme, qui propose au croyant une divinité sans étre.",
+      "bbox": {
+        "x_pct": 15.657,
+        "y_pct": 47.464,
+        "w_pct": 65.028,
+        "h_pct": 15.613
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Croire en un Dieu singulier en ayant conscience qu'une détermination est nécessaire, telle est la vraie situation d'un croyant lucide. Mais c'est une situation impossible parce que la nécessité d'une détermination une fois reconnue rend toute détermination à la fois inévitable et relative: inévitable en tant que détermination, et relative en tant qu'elle est telle ou telle. Nous retrouvons ici les paradoxes sans fin dans lesquels se débattait Kierkegaard.",
+      "bbox": {
+        "x_pct": 15.713,
+        "y_pct": 63.345,
+        "w_pct": 65.004,
+        "h_pct": 15.664
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "50",
+      "bbox": {
+        "x_pct": 15.5,
+        "y_pct": 88.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Partout nous voyons s'affirmer le prestige de l'unicité: d'un seul Dieu, d'un seul amour. Ce qui fait le prestige des Idées, chez",
+      "bbox": {
+        "x_pct": 15.608,
+        "y_pct": 83.134,
+        "w_pct": 65.052,
+        "h_pct": 4.063
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Text content was severely misread in almost all segments",
+    "Missing page number region identified",
+    "Punctuation and special characters missing in original extraction"
+  ],
+  "doc_id": "190",
+  "page": 8,
+  "elapsed_seconds": 8.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

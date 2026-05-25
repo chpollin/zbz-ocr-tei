@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "herrscht eine Zusage in der Seele, die sich für alles bereit macht, wie es denn nun weiter tönen mag. Man will nichts aufzwingen, man ist für alles bereit. Die Zeit des Hörens hat fast nichts mehr gemeinsam mit der Zeit vor dem Konzert oder nach dem Konzert. Und ein Zeichen dafür ist — wie jemand unter Ihnen vorher gesagt hat — die Überraschung, wenn die Pause kommt. Das Licht wird angezündet, und man fragt sich: Wo bin ich?",
+      "bbox": {
+        "x_pct": 7.232,
+        "y_pct": 7.765,
+        "w_pct": 87.743,
+        "h_pct": 12.244
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist eben eine andere Zeit. Die Empfänglichkeit des Hörens geschieht weder in der praktisch erlebten Zeit noch in der Naturzeit, oder vielleicht in beiden, so dass durch ihre Versöhnung ein Neues entsteht. Das Hören geschieht in der kleinen Dauer der Gegenwart, in der kleinen Dauer, die wir mit uns nehmen und die nicht vergeht, die also — wie früher gesagt — nicht zerfliesst.",
+      "bbox": {
+        "x_pct": 7.232,
+        "y_pct": 22.464,
+        "w_pct": 87.905,
+        "h_pct": 10.559
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber hier: in der Musik, erweitert sich diese kleine Dauer, diese — ich habe das so manchmal genannt: — Miniatur der Ewigkeit, so dass sie das Ganze des Werks sozusagen als gleichzeitig umfasst, indem sie durch die verschiedenen Komponenten der Musik alle Dimensionen der Zeit in sich zusammenfasst. Jede Note der Melodie ist Erwartung eines nahen Ruhepunktes oder einer drohenden Entfernung. Man sehnt sich nach der Tonika oder der Dominante, oder man vermeidet sie, um länger einen Mangel zu geniessen. Aber auch in der atonalen Musik müssen irgendwelche anderen Mittel erfunden werden, damit die Zeit der Musik trotz der Miniatur der Ewigkeit, in der sie in ihrer Struktur und ihrem Wesen nach ruht, doch ausgerichtet wird und ihren menschlichen Sinn dadurch nicht aufgibt.",
+      "bbox": {
+        "x_pct": 7.319,
+        "y_pct": 35.224,
+        "w_pct": 87.855,
+        "h_pct": 20.999
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Rhythmen lassen die Zeit der Natur und des Körpers durch ihre ich-bezogene Wiederholung nicht vergessen. Die unterschiedlichen, oft unerwarteten, abwechslungsreichen Klänge, die den verschiedenen Instrumenten entlockt werden, lassen in der Musik die Vielfalt der Ebenen erfahren, auf welchen sich Sein, zeitlich und diskontinuierlich, dem Menschen gibt.",
+      "bbox": {
+        "x_pct": 7.319,
+        "y_pct": 58.4,
+        "w_pct": 87.818,
+        "h_pct": 10.584
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "So wird durch die Musik die Versöhnung der nicht zu versöhnenden Widersprüche der erlebten Zeit gelöst, sondern vergegenwärtigt. Weil diese Widersprüche nicht zu versöhnen sind, kann ihre Versöhnung in der Musik nur imaginär sein. In der Zeit der Musik ist sie gar nicht imaginär, sondern wirklich vom Hörenden erlebt. So wird für den Hörenden die Zeit des Konzerts zugleich eine zweistündige Dauer der gegenwartslosen Naturzeit und eine radikale Unterbrechung dieser Naturzeit durch eine von der Musik erweiterte Gegenwart des kleinen, nicht zerfliessenden Jetzt, in dem Ewigkeit irgendwie momentan als gefangen erscheint, wie der Himmel in einer Lache. So wie auch die endgültige, geheimnisvolle Wirklichkeit der schon gehörten, nun entschwundenen Musik, die nun der Vergangenheit angehört und sich immer mehr entfernt. So wie auch die erwarteten und der Erwartung entsprechenden oder gerade nicht entsprechenden Ent-",
+      "bbox": {
+        "x_pct": 7.444,
+        "y_pct": 71.126,
+        "w_pct": 87.731,
+        "h_pct": 23.141
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 80.0,
+        "y_pct": 96.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and assigned as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "The OCR for the paragraphs was highly inaccurate and truncated.",
+    "The page number at the bottom was missing from the initial region list."
+  ],
+  "doc_id": "3210",
+  "page": 9,
+  "elapsed_seconds": 6.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

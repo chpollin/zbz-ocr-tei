@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "scarabées jouaient, sautaient, retombaient. Certains s'attachaient aux bêtes mourantes, asphyxiées par la chaleur, et plongeaient dans leurs artères une sorte de dard. Soudain le Chevalier sentit une brusque douleur, un paquet de piqûres. Il vit sur son corps un scarabée dont les pattes s'étaient incrustées dans sa peau.",
+      "bbox": {
+        "x_pct": 23.871,
+        "y_pct": 11.894,
+        "w_pct": 65.971,
+        "h_pct": 22.702
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content from OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le scarabée riait. «Tu veux traverser le feu?» persifla-t-il. «Oui,» répondit le Chevalier. Le scarabée s'arracha, fit un bond, enfonça ses pattes ailleurs, et le Chevalier tressaillit de douleur. «Veux-tu que nous t'aidions?» rit le scarabée. «Oui,» répondit le Chevalier. Le scarabée ricana: «Veux-tu que mes frères et moi nous nous plantions dans ta chair et que nous soyons ta cuirasse contre le feu?» – «Oui,» répondit le Chevalier. – «Mais sache, dit le scarabée avec une solennité de parodie, sache que nous te protégerons impitoyablement pendant vingt-quatre heures. Tu ne pourras pas nous extraire de ta peau, tu ne pourras pas te débarrasser d'un seul d'entre nous. Tu ne sentiras plus le feu, ni le vent, ni",
+      "bbox": {
+        "x_pct": 23.871,
+        "y_pct": 34.621,
+        "w_pct": 66.141,
+        "h_pct": 45.008
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content from OCR artifacts."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "44",
+      "bbox": {
+        "x_pct": 24.382,
+        "y_pct": 82.915,
+        "w_pct": 3.738,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction contained severe OCR truncation artifacts.",
+    "Page number at bottom left was labeled as text, reclassified to page_footer."
+  ],
+  "doc_id": "2260",
+  "page": 42,
+  "elapsed_seconds": 3.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

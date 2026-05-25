@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "144 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 19.389,
+        "y_pct": 2.0,
+        "w_pct": 68.664,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header extracted from original content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "elles contribuent à ébranler la simplicité apparenle (illusoire et stérile; bien que, je le répèle; ",
+      "bbox": {
+        "x_pct": 19.389,
+        "y_pct": 13.493,
+        "w_pct": 68.594,
+        "h_pct": 7.639
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non plus génétique; mais anthropologique est la portée des remarques brèves, mais   fondamentales , ",
+      "bbox": {
+        "x_pct": 19.32,
+        "y_pct": 20.904,
+        "w_pct": 68.664,
+        "h_pct": 54.138
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header missing from original selection"
+  ],
+  "doc_id": "110",
+  "page": 146,
+  "elapsed_seconds": 7.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART 211",
+      "bbox": {
+        "x_pct": 12.442,
+        "y_pct": 2.0,
+        "w_pct": 68.514,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "exemples Fappui de 54 thèse. Mais; caractéristique, alors quelle peut   assez   facilement; en suiva",
+      "bbox": {
+        "x_pct": 12.442,
+        "y_pct": 13.083,
+        "w_pct": 68.514,
+        "h_pct": 40.645
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Depuis le romanlisme pense à à Horace comme 4 un lyrique. On 4 certainement tort Dans la variété de ",
+      "bbox": {
+        "x_pct": 12.477,
+        "y_pct": 57.957,
+        "w_pct": 68.364,
+        "h_pct": 16.606
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and label"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Transcript errors in existing regions"
+  ],
+  "doc_id": "110",
+  "page": 213,
+  "elapsed_seconds": 5.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected transcript and label": 1,
+    "ADDED": 1
+  }
+}

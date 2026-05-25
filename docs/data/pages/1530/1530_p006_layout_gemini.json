@@ -1,0 +1,136 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "78",
+      "bbox": {
+        "x_pct": 14.12,
+        "y_pct": 60.12,
+        "w_pct": 16.78,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number as page_header/_filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 43.63,
+        "y_pct": 60.12,
+        "w_pct": 20.37,
+        "h_pct": 2.36
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled running header as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il faut ici faire une remarque qui me paraît essentielle: il y a une différence décisive entre un pouvoir qui a quelque chose au-delà de lui, qui est soumis à quelque chose ou à quelqu'un, et un pouvoir qui est ultime parce qu'il ne se doit qu'à lui-même.",
+      "bbox": {
+        "x_pct": 13.576,
+        "y_pct": 10.14,
+        "w_pct": 75.972,
+        "h_pct": 9.256
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pouvoir de droit divin répond de ses actes devant Dieu, sans lequel il retombe dans le néant.",
+      "bbox": {
+        "x_pct": 14.039,
+        "y_pct": 19.033,
+        "w_pct": 75.579,
+        "h_pct": 4.711
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pouvoir légitimé par la volonté populaire répond de ses actes devant le peuple, sans lequel il n'est que violence.",
+      "bbox": {
+        "x_pct": 13.924,
+        "y_pct": 23.364,
+        "w_pct": 75.509,
+        "h_pct": 4.926
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pouvoir qui se fonde sur son seul triomphe est livré à l'arbitraire et reste menacé par les mêmes forces auxquelles il doit sa victoire.",
+      "bbox": {
+        "x_pct": 13.773,
+        "y_pct": 27.959,
+        "w_pct": 75.613,
+        "h_pct": 6.587
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "« DU pouvoir »",
+      "bbox": {
+        "x_pct": 43.322,
+        "y_pct": 35.81,
+        "w_pct": 16.481,
+        "h_pct": 2.347
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais cessons de penser à des rois ou à des tyrans. Nous ne pouvons espérer saisir la nature du pouvoir si nous l'envisageons comme une réalité séparée du reste de la condition humaine, qui surgirait brusquement là où les hommes gouvernent ou sont gouvernés. D'où le pouvoir surgirait-il soudain?",
+      "bbox": {
+        "x_pct": 13.623,
+        "y_pct": 39.174,
+        "w_pct": 76.157,
+        "h_pct": 11.463
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est qu'il y a en fait « du pouvoir » partout, dans la condition humaine, chez tous les àtres humains. Nous devrons saisir le passage entre « du pouvoir », qui se trouve partout où il y a des hommes, et « le pouvoir » proprement dit, politique. Nous devons découvrir les racines de ce pouvoir politique dans la complexité de l'àtre humain et de l'existence sociale.",
+      "bbox": {
+        "x_pct": 13.808,
+        "y_pct": 50.165,
+        "w_pct": 75.81,
+        "h_pct": 13.331
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, il y a du pouvoir partout où il y a des àtres humains qui désirent, qui veulent et qui agissent, c'est-à-dire: qui vivent et respirent sous la menace latente d'àtre privés de vie et d'air, qui tendent à autre chose que ce qui est là, qui imaginent cet « autre chose » et s'efforcent de le rendre réel. Vivre, respirer, manger, désirer, vouloir, agir, c'est, d'une façon ou d'une autre, prendre à autrui son air, son silence, son travail, son succès, son pain, sa place, son logis, son temps. Mais c'est aussi, et en même temps, et par là même, avoir besoin d'autrui, besoin de son aide, de l'aimer, d'en àtre aimé. Et alors, vivre, respirer, désirer, vouloir, c'est assumer la défense de l'air, du silence, du succès, du pain, de la place, du logis, du temps nécessaires à la vie des àtres aimés.",
+      "bbox": {
+        "x_pct": 13.738,
+        "y_pct": 63.554,
+        "w_pct": 75.961,
+        "h_pct": 26.942
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Detected page header and running title as text; corrected to page_header."
+  ],
+  "doc_id": "1530",
+  "page": 6,
+  "elapsed_seconds": 7.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

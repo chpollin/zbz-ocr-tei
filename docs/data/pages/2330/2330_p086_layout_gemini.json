@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ment, qu'ils évaluent les examens : et que si ces deux responsabilités étaient enlevées aux professeurs, ils ne pourraient plus compter sur moi. Mes étudiants se sont alors partagés en deux groupes. Lorsque j'ai repris mon enseignement, je n'ai jamais plus retrouvé le public que j'avais avant 68, qui remplissait l'Aula où je donnais mes cours.",
+      "bbox": {
+        "x_pct": 15.177,
+        "y_pct": 4.169,
+        "w_pct": 80.061,
+        "h_pct": 10.831
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "GDK. Quel a été votre diagnostic sur cette révolte des étudiants ? J.H. — L'esprit de 68 me paraissait infantile, politisé à l'extrême, sophistiqué par une génération de soi-disant penseurs, écrivains et artistes qui cherchaient le succès par des voies faciles, en se souciant très peu de vérité et de réalité. Ce qui était le plus frappant en mai 68, c'était son aspect irréaliste et prétendument novateur. Qu'est-ce qui était fondamental dans les idées de mai 68 ? D'abord, la démocratisation des études. Ce n'était nullement une invention de 68. On avait déjà très efficacement démocratisé les études, par exemple à Genève, en créant le tronc commun du cycle d'orientation et en retardant le plus possible la sélection. Le deuxième point fondamental était l'opposition à l'autorité. On partait de l'idée que les enfants, les jeunes, les adultes sont tous égaux, et que par conséquent les étudiants ont le droit de s'exprimer sur les problèmes de l'enseignement au même titre que leurs professeurs ou que n'importe qui. C'est une sottise, parce que l'histoire repose sur la transmission d'une culture par la génération des aînés à la jeune génération, transmission grâce à laquelle cette dernière forme sa personnalité propre. D'autre part la suppression de tous les rapports d'autorité, qui reposent, soit sur les formes sociales dont j'ai parlé, soit sur l'autorité personnelle acquise par certaines personnes grâce à leur travail, leur maturité, leur savoir — la suppression de toute autorité me paraît relever d'un égalitarisme complètement inhumain. Mon socialisme, que je voudrais revendiquer ici, est aux antipodes de cette sorte d'égalitarisme : je ne veux pas qu'on détruise l'être humain, sous prétexte de rendre tous les hommes égaux. Je souhaite au contraire que le plus d'êtres humains possible accèdent à leur plus haut niveau d'être humain. Et ici je touche à l'idée de sélection. L'idée que les institutions pédagogiques ne doivent pas établir de sélection entre les élèves qui vont faire des études plus courtes ou des études plus longues, me paraît une absurdité. Il est tout à fait évident qu'au niveau des données de fait les hommes sont inégaux ; ils sont inégaux en tout, sauf en une chose : leur dignité d'être humain, c'est-à-dire leur capacité de devenir des êtres libres et responsables. Il suffit d'ouvrir les yeux pour constater qu'ils sont inégaux en tout, sauf sur ce point. Ils sont tellement inégaux qu'ils en deviennent incomparables, de sorte qu'un tel qui est inférieur sous un aspect, peut être supérieur sous un autre aspect. En outre, refuser toute sélection et supprimer toute émulation me semble contraire à que les enfants eux-mêmes souhaitent. Les enfants aiment se situer les uns par rapport aux autres. Ils",
+      "bbox": {
+        "x_pct": 15.226,
+        "y_pct": 15.806,
+        "w_pct": 80.134,
+        "h_pct": 75.46
+      },
+      "changed": true,
+      "change_reason": "The OCR text was corrupted/truncated in the provided JSON snippet; replaced with the full correct text from the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "82",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 94.491,
+        "w_pct": 1.956,
+        "h_pct": 2.278
+      },
+      "changed": true,
+      "change_reason": "Detected page number mislabeled as text; corrected to page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "OCR output in the provided JSON was heavily truncated and garbled.",
+    "Page number at the bottom was not identified as a separate region."
+  ],
+  "doc_id": "2330",
+  "page": 86,
+  "elapsed_seconds": 5.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

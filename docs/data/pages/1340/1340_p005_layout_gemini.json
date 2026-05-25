@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "je ne dis pas qu'il en est en fait exercer une liberté responsable. C'est pourquoi il n'est pas permis de le sacrifier à autre chose. (Lui seul peut choisir son sacrifice). Ainsi donc, par la prévention, l'être humain se refuse à ne sauver que les forts, justement parce qu'il est un être humain, parce qu'il est capable de liberté responsable et de sens, et que pour lui la question du sens se pose toujours. Il ne s'agit pas seulement du sens de sa propre vie, mais de bien plus, du sens en général, du sens du monde. Cette dimension du sens est introduite dans l'univers parce qu'il y a des hommes, et c'est à cause de cela qu'il ne suffit pas de sauver les forts.",
+      "bbox": {
+        "x_pct": 10.454,
+        "y_pct": 7.813,
+        "w_pct": 75.201,
+        "h_pct": 17.109
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and typo-ridden text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais pourquoi ai-je dit tout à l'heure qu'il ne s'agissait pas simplement de bonheur, de santé, pour l'homme, de l'état de non-souffrance et éventuellement de plaisir ? Simplement, parce que le bonheur pour l'homme, ne peut pas être n'importe quel bonheur. Il implique que l'homme trouve un sens à ce qu'il fait, à ce qu'il vit, à ce qu'il est.",
+      "bbox": {
+        "x_pct": 10.495,
+        "y_pct": 25.221,
+        "w_pct": 75.129,
+        "h_pct": 7.835
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous ne pouvez pas, lorsqu'il s'agit de l'homme, séparer le bonheur du sens. Je ne dis pas par moralisme que le bonheur ou le plaisir ne suffisent pas, je le constate : bonheur ou plaisir ne suffisent pas parce que l'homme est ainsi fait qu'il n'a pas de vrai bonheur quand la vie, le monde n'a pas un sens !",
+      "bbox": {
+        "x_pct": 10.557,
+        "y_pct": 34.906,
+        "w_pct": 75.067,
+        "h_pct": 9.341
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text omissions."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a un étrange rapport, chez l'être humain, entre les moyens et les fins. La révolution technique a multiplié les moyens qui permettent d'accroître les biens dans tous les domaines, pour satisfaire les besoins",
+      "bbox": {
+        "x_pct": 10.32,
+        "y_pct": 84.742,
+        "w_pct": 75.335,
+        "h_pct": 6.022
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors including '0 Un'."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "97",
+      "bbox": {
+        "x_pct": 82.52,
+        "y_pct": 92.4,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and assigned to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction had severe OCR degradation and missing text content.",
+    "Page number at bottom right was not captured or labeled.",
+    "Formatting consistency requires full text restoration for readability."
+  ],
+  "doc_id": "1340",
+  "page": 5,
+  "elapsed_seconds": 3.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,74 @@
+{
+  "doc_id": "1230",
+  "page": 3,
+  "image_width": 826,
+  "image_height": 1282,
+  "num_regions": 5,
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 46.3,
+        "y_pct": 1.1,
+        "w_pct": 4.5,
+        "h_pct": 5.3
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 23.8,
+        "y_pct": 11.0,
+        "w_pct": 52.3,
+        "h_pct": 2.8
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 14.4,
+        "y_pct": 33.9,
+        "w_pct": 70.2,
+        "h_pct": 11.4
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 35.3,
+        "y_pct": 78.1,
+        "w_pct": 29.0,
+        "h_pct": 3.4
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 28.1,
+        "y_pct": 82.0,
+        "w_pct": 43.0,
+        "h_pct": 3.2
+      }
+    }
+  ],
+  "elapsed_seconds": 3.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini-detect",
+  "page_orientation": "portrait",
+  "num_columns": 1,
+  "label_counts": {
+    "page_header": 1,
+    "section_header": 3,
+    "text": 1
+  }
+}

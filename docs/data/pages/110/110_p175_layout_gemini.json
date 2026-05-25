@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 9.666,
+        "y_pct": 2.0,
+        "w_pct": 29.8,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "173",
+      "bbox": {
+        "x_pct": 74.0,
+        "y_pct": 93.0,
+        "w_pct": 4.1,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de ce existe (pour Thomme) mais elle est la réalité même, la façon sine qua non dexister  réellement",
+      "bbox": {
+        "x_pct": 9.666,
+        "y_pct": 13.311,
+        "w_pct": 68.47,
+        "h_pct": 61.253
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page footer region"
+  ],
+  "doc_id": "110",
+  "page": 175,
+  "elapsed_seconds": 6.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

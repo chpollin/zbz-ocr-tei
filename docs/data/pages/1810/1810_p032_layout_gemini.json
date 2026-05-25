@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Suggestions",
+      "bbox": {
+        "x_pct": 11.674,
+        "y_pct": 15.342,
+        "w_pct": 34.66,
+        "h_pct": 5.799
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mon diagnostic étant à peu près inverse de celui de la Commission, mes suggestions seront évidemment contraires aux siennes. Elle estime que «le mouvement» des jeunes exprime leurs préoccupations. J’ai tenté de montrer qu’il n’en est rien : il s’agit d’un symptôme, non d’une expression adéquate de ce qu’ils vivent. Elle affirme que «nous pouvons accepter la contestation comme une manifestation politique légitime.» Je dis : non, pas telle qu’elle a lieu jusqu’ici, car elle n’est pas «un processus démocratique», justement. En «l’acceptant» (ou plutôt en ayant des velléités de l’accepter, car il est impossible d’en assumer réellement les conséquences), nous achevons de ruiner, dans l’esprit des jeunes, le sens de ce qu’est «un processus démocratique» et le respect de la rigueur qu’il implique. Or rétablir ce «sens» et ce «respect», c’est, face aux jeunes violents, notre premier devoir.",
+      "bbox": {
+        "x_pct": 11.944,
+        "y_pct": 34.642,
+        "w_pct": 82.354,
+        "h_pct": 23.423
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un processus démocratique se déroule sous le règne des lois, même s’il s’agit de changer les lois. Le bruit, la violence exclut tout «véritable débat», qui ne peut s’engager que lorsque le silence a été rétabli. Sinon, on ne s’entend pas. Bruit et violence sont ce qu’il y a de plus «matérialiste», puisqu’il s’agit d’étouffer le sens de la parole sous la masse matérielle du son.",
+      "bbox": {
+        "x_pct": 11.862,
+        "y_pct": 57.616,
+        "w_pct": 82.201,
+        "h_pct": 9.89
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les provocations désespérées des jeunes à l’encontre de notre permissivité lâche et mensongère appellent la résistance nette, constante, consistante, du respect de la démocratie et de ses formes, même lorsque ce respect comporte des risques. C’est de cette résistance, j’en suis convaincue, que les jeunes ont besoin. Ainsi j’estime qu’engager «le dialogue» avec le «Mouvement des jeunes» un lendemain ou un surlendemain d’émeute, c’est corrompre la jeunesse et ruiner en elle le sens démocratique. Toute concession obtenue par menace ou chantage est corruptrice. Les jeunes doivent faire l’expérience que la violence ne fait pas progresser la cause qu’ils croient ou qu’ils prétendent défendre, même si on la juge en partie justifiée. Rien ne peut étre accordé «pour avoir la paix.»",
+      "bbox": {
+        "x_pct": 11.745,
+        "y_pct": 67.113,
+        "w_pct": 82.4,
+        "h_pct": 21.534
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 60,
+        "y_pct": 900,
+        "w_pct": 5,
+        "h_pct": 2
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il aurait fallu dire aux jeunes du Mouvement, aux lendemains de leurs «manifestations» violentes : «Il se peut qu’il y ait des idées justes dans ce que",
+      "bbox": {
+        "x_pct": 12.143,
+        "y_pct": 88.379,
+        "w_pct": 81.92,
+        "h_pct": 4.044
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Several text blocks were truncated in the provided JSON input.",
+    "Page number 28 was incorrectly labeled as text.",
+    "The bounding box for the page number was missing/estimated based on visual position."
+  ],
+  "doc_id": "1810",
+  "page": 32,
+  "elapsed_seconds": 9.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

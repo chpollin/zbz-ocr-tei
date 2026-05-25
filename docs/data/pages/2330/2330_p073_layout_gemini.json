@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "peu vite fait de dégoïsme. L’être humain est obligé de chercher à survivre et à faire survivre ceux qu’il aime. L’agressivité est l’envers de l’amour, car il n’y a pas d’amour qui n’appelle la défense de ceux qu’on aime. Oublier ce niveau vital, où règne la lutte à mort, c’est faire preuve d’angélisme. Alors, dès qu’on a pris conscience de cette complexité sociale, on ne peut plus s’imaginer que pour socialiser un enfant, il suffise de lui inculquer quelques principes sociaux. D’autre part, la socialisation d’un être humain suppose qu’il soit aussi un individu. Il n’y a pas de société sans individus. Il faut donc élaborer une pédagogie qui favorise le développement de l’individu dans la société dont il fait partie. Lorsqu’il s’agit de l’école, la société est représentée par la classe, la vie sociale par la vie de la classe. Vous savez qu’en Suisse allemande et, partiellement, dans notre canton, on a introduit le système des classes mobiles : l’enfant n’appartient plus à une classe déterminée. Or la classe est pour lui quelque chose d’essentiel aussi bien du point de vue affectif que pédagogique, surtout de nos jours où la famille a perdu de son importance. Lorsque l’enfant doit courir d’une classe à l’autre pour acquérir un savoir, c’est tout le contraire d’une socialisation qui se produit. Dans une classe, l’enfant est reconnu en tant que lui-même, et il y reconnaît les autres, en même temps qu’il en reconnaît l’unité.",
+      "bbox": {
+        "x_pct": 4.066,
+        "y_pct": 4.411,
+        "w_pct": 79.976,
+        "h_pct": 39.782
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "G.D.K. — Ce qu’on entend souvent par le terme de socialisation, c’est l’intégration dans le groupe.",
+      "bbox": {
+        "x_pct": 4.188,
+        "y_pct": 45.46,
+        "w_pct": 31.221,
+        "h_pct": 3.629
+      },
+      "changed": true,
+      "change_reason": "Corrected label and tag to section_header and fixed OCR misinterpretation of the line."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On trouve ici l’influence de la pédagogie américaine, qui, à une certaine époque, plaçait au centre de ses finalités : to ajust. Il fallait que l’enfant fût « ajusté » à son groupe. Ce principe conformiste s’est fondu chez nous, de façon assez paradoxale, avec le soi-disant « sens social » — je dis soi-disant, parce que le véritable sens social, c’est l’exigence d’un développement personnel pour chaque individu, dans une société donnée. Nous avons hérité d’Amérique une certaine morale du bonheur, qui prétend que l’enfant n’est heureux que lorsqu’il est parfaitement adapté à son milieu social. C’est ainsi que la quête du bonheur et celle de la justice sociale ont paru faire bon ménage. Seulement, ce n’est pas ainsi que l’être humain est fait. Il lui faut apprendre avec peine à se subordonner à autre chose ; cette peine est naturelle et nécessaire, c’est par elle qu’il devient une personne.",
+      "bbox": {
+        "x_pct": 4.066,
+        "y_pct": 48.71,
+        "w_pct": 80.012,
+        "h_pct": 26.105
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.J.H. — Dans un opuscule sur l’école auquel vous avez contribué, vous dénoncez la perte du sens de l’autorité dans les nouveaux rapports maître-élève. N’est-ce pas que l’on a perdu ou rejeté les fondements qui justifient l’autorité comme telle ? Quels seraient selon vous ces fondements, capables de redonner un sens à l’autorité ?",
+      "bbox": {
+        "x_pct": 4.188,
+        "y_pct": 75.347,
+        "w_pct": 79.939,
+        "h_pct": 10.46
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in transcribed text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "69",
+      "bbox": {
+        "x_pct": 81.1,
+        "y_pct": 94.6,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction had major OCR errors in several paragraphs",
+    "Section header was mislabeled as paragraph text",
+    "Page number at bottom right was missing from the initial region list"
+  ],
+  "doc_id": "2330",
+  "page": 73,
+  "elapsed_seconds": 5.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

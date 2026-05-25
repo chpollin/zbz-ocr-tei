@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "QUI N'EST PAS D'ORDRE PSYCHOLOGIQUE 71",
+      "bbox": {
+        "x_pct": 218.0,
+        "y_pct": 79.0,
+        "w_pct": 595.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Header text including page number was misclassified as paragraph; changed to section_header and included page number in filtering."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« œuvre d'art » que grâce à autre chose : grâce à une forme qui n'est pas seulement technique, qui vient du contenu et s'empare en même temps de lui au point de le détacher fondamentalement de l'artiste. C'est dans cette direction, et non dans celle de la justesse psychologique ou de l'émotivité qu'il faudrait chercher le profondeur spécifique de l'art. — De même qu'elle diminue l'art, la conception psychologique diminue la philosophie. Elle la libère, il est vrai, de la contrainte exercée par une conception strictement scientifique qui exige une vérité apodictique; mais elle lui fait perdre sa racine, la décision et la liberté. Car ce côté métaphysique ne peut figurer dans le système que comme une pure forme, un vide; la conception psychologique le remplit d'éléments émotifs, particuliers, empiriques; elle étouffe le sujet. Lorsqu'elle est intégrale et ne se connaît pas de limite, elle est la moins respectueuse, la plus sacrilège et la plus mesquine de toutes les conceptions qu'on puisse se faire de la philosophie, car elle masque le plus complètement l'essentiel en ayant l'air d'y pénétrer profondément.",
+      "bbox": {
+        "x_pct": 10.286,
+        "y_pct": 12.219,
+        "w_pct": 76.205,
+        "h_pct": 56.543
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'étudiant qui cherche la vérité métaphysique d'un système ne s'attache pas au sujet empiriquement pourvu de sentiments, d'émotions et de volontés, « sujet » qui n'a gardé que son nom puisqu'on l'étudie bel et bien comme un « objet ». Il s'attache au système donné, tel que l'a voulu le philosophe. Seulement, au contraire de ce qui se passe pour le philosophe, ce ne sont pas les résultats",
+      "bbox": {
+        "x_pct": 10.241,
+        "y_pct": 68.543,
+        "w_pct": 76.16,
+        "h_pct": 20.667
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text extraction."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was severely truncated and garbled.",
+    "Header and page number were identified as paragraph text."
+  ],
+  "doc_id": "20",
+  "page": 73,
+  "elapsed_seconds": 4.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

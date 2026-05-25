@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE PROBLÈME DE L'ÉLITE OUVRIÈRE 19",
+      "bbox": {
+        "x_pct": 28.1,
+        "y_pct": 1.1,
+        "w_pct": 59.5,
+        "h_pct": 3.4
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified page header/numbering region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "toujours les   petites manières, les petites   manies, les tout ce dispense de présence   authentiqu",
+      "bbox": {
+        "x_pct": 11.261,
+        "y_pct": 14.726,
+        "w_pct": 77.963,
+        "h_pct": 33.18
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Symétriquement, il faut éviter que le panorama de la culture bourgeoise, sétalant aux yeux avides du",
+      "bbox": {
+        "x_pct": 11.472,
+        "y_pct": 48.29,
+        "w_pct": 78.187,
+        "h_pct": 14.986
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faut pas faire de Fouvrier un bourgeois oublie son origine et ses compagnons. Il ne faut pas f",
+      "bbox": {
+        "x_pct": 11.301,
+        "y_pct": 63.525,
+        "w_pct": 78.541,
+        "h_pct": 28.473
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/numbering region in initial input.",
+    "Initial paragraph text had minor transcription errors."
+  ],
+  "doc_id": "130",
+  "page": 13,
+  "elapsed_seconds": 5.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content.": 1,
+    "ADDED": 1
+  }
+}

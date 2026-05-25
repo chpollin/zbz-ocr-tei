@@ -1,0 +1,96 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "272",
+      "bbox": {
+        "x_pct": 9.847,
+        "y_pct": 7.375,
+        "w_pct": 2.228,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 378.134,
+        "y_pct": 7.375,
+        "w_pct": 24.513,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nul ne sait jusqu'o. Nul ne sait quelles chances morales ces vnements sans morale vont offrir, ni quelles menaces pour la libert ils impliquent.",
+      "bbox": {
+        "x_pct": 9.847,
+        "y_pct": 9.92,
+        "w_pct": 85.877,
+        "h_pct": 6.809
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour rsister aux menaces, pour faire fructifier les chances, il faudrait pouvoir compter sur les socialistes. Ceux qui nient l'existence d'une lutte de classes, ou qui prtendent que cette lutte est dsormais dpasse, ne peuvent pas rsister efficacement au communisme. Le rel, en effet, leur jette sans cesse  la face des faits qui sont autant de dmentis. (Par exemple : au moment de la catastrophe de Marcinelle, des enfants de quinze ans travaillaient dans la mine. Ou encore : la scurit des mineurs n'y tait certainement pas assure avec autant de vigilance que l'est celle des passagers d'un Constellation.) Ils se refusent  les voir, mais malgr eux leur mauvaise conscience fait d'eux, d'avance, des vaincus. Il n'est d'ailleurs nullement exclu que des alliances nouvelles deviennent possibles entre privilgis de l'Est et de l'Ouest. Les amis des communistes s'attachent aujourd'hui  souligner partout en quoi les sovitiques se mettent  ressembler aux bourgeois occidentaux.",
+      "bbox": {
+        "x_pct": 9.986,
+        "y_pct": 16.462,
+        "w_pct": 86.574,
+        "h_pct": 32.79
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les socialistes savent que la lutte de classe est une ralit. Ils la connaissent et la regardent en face, afin d'y remdier et, s'il se peut, de l'abolir. Ils la connaissent aussi mieux que les autres les communistes, leurs vertus et leurs mensonges. Sachant ce qu'il y a de vrai dans l'idologie adverse, ils gardent  son gard toute leur libert, toute leur aisance. Nul besoin pour eux de raideur artificielle ou pharisienne, ni davantage de complaisance, voire de servilit. C'est ce qui explique que devant l'offensive de la dstalinisation, les socialistes aient montr le mlange le plus efficace de souplesse et d'irrductibilit. Prts  toutes les rencontres,  tous les dialogues, prts  tirer parti de la moindre occasion pour mettre l'adversaire en face de lui-mme et de la ralit qu'il se dissimule dlibrment, prts  s'informer,  comparer,  comprendre - mais conservant leurs critres et leurs exigences, restant tranquillement, ouvertement, eux-mmes. Les sovitiques semblent bien avoir compris tout cela,  en juger d'aprs les critiques trs svres qu'ils viennent d'adresser  la dlgation socialiste qui visita rcemment l'U.R.S.S.",
+      "bbox": {
+        "x_pct": 109.847,
+        "y_pct": 49.337,
+        "w_pct": 86.877,
+        "h_pct": 36.9
+      },
+      "changed": true,
+      "change_reason": "Identified main paragraph previously missing from JSON structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Combien de temps cette conscience socialiste se maintiendra-t-elle ?",
+      "bbox": {
+        "x_pct": 14.164,
+        "y_pct": 86.337,
+        "w_pct": 82.73,
+        "h_pct": 2.522
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Missing body text region in original detection",
+    "Incorrect OCR for title text",
+    "Missing page header identification",
+    "Missing page footer identification",
+    "Significant OCR errors in body text"
+  ],
+  "doc_id": "330",
+  "page": 306,
+  "elapsed_seconds": 9.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

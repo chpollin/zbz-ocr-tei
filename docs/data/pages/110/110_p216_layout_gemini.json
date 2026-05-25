@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "214 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 18.237,
+        "y_pct": 2.0,
+        "w_pct": 68.514,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ruse pour éviter lincarnation, la paresse la conlourne, le lyrisme qui, renoncer subjectivité, s'amp",
+      "bbox": {
+        "x_pct": 18.237,
+        "y_pct": 14.176,
+        "w_pct": 68.514,
+        "h_pct": 3.895
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pour cela qu aucun genre artistique  n'a besoin de de contrainte que la poésie lyrique. Le pei",
+      "bbox": {
+        "x_pct": 18.353,
+        "y_pct": 17.79,
+        "w_pct": 68.71,
+        "h_pct": 54.017
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'incarnation, ce sera justement de transformer ces cohérences hétérogènes en éléments constitutifs de la cohérence formelle. Le roman",
+      "bbox": {
+        "x_pct": 18.237,
+        "y_pct": 72.061,
+        "w_pct": 68.514,
+        "h_pct": 2.502
+      },
+      "changed": true,
+      "change_reason": "ADDED: text block at bottom"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Added missing header and bottom text block."
+  ],
+  "doc_id": "110",
+  "page": 216,
+  "elapsed_seconds": 6.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

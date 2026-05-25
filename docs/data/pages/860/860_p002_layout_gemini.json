@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "jenes amerikanische Ehepaar, Herta und Noel Field; sie wie eine Tochter betreute. Sie mußte die versäumten Schuljahre nachholen. So kam sie zu mir, und ich gab ihr eine Zeitlang Lateinunterricht.",
+      "bbox": {
+        "x_pct": 11.869,
+        "y_pct": 6.941,
+        "w_pct": 80.015,
+        "h_pct": 7.216
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect the actual image content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie war eine fabelhafte Schülerin, denn sie gab sich erst zufrieden, wenn sie vollkommene Klarheit besaß. Als Wissen galt ihr nur, was sie bis ins letzte erlernt und verstanden hatte. Sie war schnell, leicht, leise und ohne jede Nachgiebigkeit sich selbst gegenüber. Ich sah ihren schmalen Kopf vor mir, die klaren Augen, die ausgeprägten Gesichtszüge, die stolze Einfachheit ihrer Haltung. Und ich wußte: Die Zeitungen betrügen, oder sie werden betrogen. Sie kann geirrt haben. Aber verkauft hat sie sich nicht. Wenn ich einen Menschen kenne, der nicht käuflich ist, dann ist es Erica Wallach.",
+      "bbox": {
+        "x_pct": 11.677,
+        "y_pct": 16.312,
+        "w_pct": 80.46,
+        "h_pct": 23.785
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect the actual image content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun sind mehr als zehn Jahre vergangen, seitdem sie wieder ein normales Leben mit ihrer Familie führt, in Virginia. Und endlich liegt ihr Bericht vor uns. Drei Jahre in Gefängnissen der DDR und der Sowjetunion, darunter sechs Monate als zum Tode Verurteilte; danach zwei Jahre Workuta, in der Arktis, beim Eisenbahnbau. Qualen aller Art: Kälte und Hitze, Hunger und Schmutz, das Schweigen der Einsamkeit und der Lärm der Menge, trügerische Hoffnung und Verzweiflung, Zweifel an sich selbst und Sorge um geliebte Menschen und, schlimmer als alles andere, die endlosen, monotonen Verhöre und die Schlaflosigkeit, die in den Wahnsinn treibt.",
+      "bbox": {
+        "x_pct": 11.825,
+        "y_pct": 39.805,
+        "w_pct": 80.415,
+        "h_pct": 26.09
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect the actual image content more accurately."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR extraction was severely truncated or corrupted in all three regions.",
+    "Page number '8' and header 'Vorwort' were missed by the extraction pipeline and not included as bounding boxes."
+  ],
+  "doc_id": "860",
+  "page": 2,
+  "elapsed_seconds": 4.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

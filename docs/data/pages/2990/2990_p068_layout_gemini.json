@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Vom Sinn der Technik 75",
+      "bbox": {
+        "x_pct": 86.1,
+        "y_pct": 3.42,
+        "w_pct": 2.15,
+        "h_pct": 1.25
+      },
+      "changed": true,
+      "change_reason": "Header identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "entdeckt man Wirklichkeiten. Das bedeutet, daß die zwei Seiten des Verh&auml;ltnises des Menschen zur Natur immer weiter ineinander dringen und sich immer weiter gegenseitig steigern zu neuen Differenzierungen. Und das stellt einen Zwang dar, in die Richtung weiterzugehen, in der es angefangen hat.",
+      "bbox": {
+        "x_pct": 8.493,
+        "y_pct": 7.237,
+        "w_pct": 79.743,
+        "h_pct": 10.09
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich habe gesagt, da&szlig; die Technik nicht vom menschlichen Handeln zu trennen ist. Technik ist eine Weise zu handeln. Aber wozu Handeln? Es gibt Menschen in unserer Zeit, die so m&uuml;de vom st&auml;ndigen Handeln werden, da&szlig; sie sich nach dem Fernen Osten sehnen, weil sie glauben, da&szlig; im Osten weniger gehandelt wird. Woher kommt aber dieses Handeln? Es kommt daher, da&szlig; die Menschen eigentlich nicht zufrieden sind mit der Welt so wie sie ist und die Welt anders haben wollen. Wir haben manchmal eine sehr gro&szlig;e, &uuml;berw&auml;ltigende Sehnsucht nach dem Gl&uuml;ck und nach der Freude. Aber f&uuml;r deren Dauer sind wir, wie ich gesagt habe, nicht begabt. Deswegen ist die Lage eigentlich nie so, wie man sie sich w&uuml;nscht. Also greift man zu Mitteln, zur Technik.",
+      "bbox": {
+        "x_pct": 8.578,
+        "y_pct": 16.965,
+        "w_pct": 79.694,
+        "h_pct": 21.661
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Feuer, der Faustkeil und das Rad, das sind bereits Techniken, technische Mittel. Fr&uuml;her haben wir gesehen, da&szlig; der Mensch ein langsames Tier ist, unbewaffnet und leicht verletzbar, das leben und &uuml;berleben will. Wir haben gesehen, da&szlig; sich die Bedingungen, die der Mensch vorfindet, im Laufe der Zeit ver&auml;ndern. Aber eines ist sicher: F&uuml;r den Menschen &ndash; ich glaube f&uuml;r alle Menschen &ndash; bedeutet Leben nie, nur am Leben zu bleiben. Das gen&uuml;gt dem Menschen nicht. Was er verlangt ist, als Mensch zu leben. Gelingt das nicht, hat man daf&uuml;r den Ausdruck, dies sei kein Leben. Das bedeutet nicht, da&szlig; derjenige, der das sagt, tot ist, sondern nur, da&szlig; es f&uuml;r ihn als Mensch kein Leben ist.",
+      "bbox": {
+        "x_pct": 8.493,
+        "y_pct": 38.512,
+        "w_pct": 79.706,
+        "h_pct": 19.655
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "So verstehen wir vielleicht die beiden Aspekte der Beziehung des Menschen zur Welt besser. Diese beiden Aspekte sind unwirklich, wenn sie getrennt voneinander bleiben. Ein Aspekt w&auml;re der Wunsch, ein Paradies vorzufinden, wo die Befriedigung der Bed&uuml;rfnisse stattfinden w&uuml;rde, ohne da&szlig; der Mensch &uuml;berhaupt Gebrauch von seinem Bewu&szlig;tsein und seinen technischen F&auml;higkeiten machen w&uuml;rde. Man h&auml;tte alles ohne Schmerz. Ob das Gl&uuml;ck w&auml;re, ist noch zu fragen. Der zweite Aspekt ist die Welt als hervorgebrachte. Da tr&auml;umt der Mensch von etwas anderem, von einer Welt, in der alle Bed&uuml;rfnisse durch eine ungeheuer gro&szlig;e Maschine befriedigt werden, durch einen Proze&szlig; der Hervorbringens ohne Ende, der so pr&auml;determiniert w&auml;re, da&szlig; es fast keine Freiheit mehr g&auml;be; sie k&ouml;nnte nur st&ouml;ren. Beide Welten, beide Bez&uuml;ge w&auml;ren entwirklich, wenn man so sagen kann. Die einzige Welt, mit der Menschen zu tun haben, ist &ndash; und hier gebrauche ich einen Ausdruck, den man bei Jaspers oft findet &ndash; in der",
+      "bbox": {
+        "x_pct": 8.37,
+        "y_pct": 58.035,
+        "w_pct": 79.828,
+        "h_pct": 28.092
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial layout detection missed the page header at the top right.",
+    "Significant OCR errors in text blocks requiring manual correction.",
+    "Segments were overlapping or improperly split in the input JSON."
+  ],
+  "doc_id": "2990",
+  "page": 68,
+  "elapsed_seconds": 6.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

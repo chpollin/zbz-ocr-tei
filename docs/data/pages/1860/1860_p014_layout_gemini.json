@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 77.58,
+        "y_pct": 62.19,
+        "w_pct": 0.88,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vitaux seront si forts qu'on se trouvera dans le tourbillon d'une guerre civile inimaginable, de tous contre tous.",
+      "bbox": {
+        "x_pct": 10.451,
+        "y_pct": 13.073,
+        "w_pct": 61.322,
+        "h_pct": 3.957
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ou alors, un ou deux pays disposeront encore d'un reste d'énergie, et il faudra accepter n'importe quelles conditions pour en obtenir. L'asservissement le plus total, sans guerre. Les survivants ne seront plus des hommes. Car être des hommes, c'est s'efforcer de prévenir, d'aussi loin que possible, les situations où il ne reste plus d'autre choix qu'entre la mort et la liberté.",
+      "bbox": {
+        "x_pct": 10.29,
+        "y_pct": 19.253,
+        "w_pct": 65.077,
+        "h_pct": 13.375
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces risques, sur l'autre plateau de la balance, n'annulent pas ceux des déchets durablement radio-actifs. Mais il semble bien que le recours à l'énergie nucléaire des centrales atomiques reste, au moins pour le moment, une solution provisoirement nécessaire, tant que les autres sources d'énergie ne sont pas à l'échelle des besoins prévisibles. Elles doivent toutes, néanmoins, être développées au maximum, et les recherches, dans ce domaine comme dans celui des économies, doivent se poursuivre. En attendant, et pour faire face aux exigences prévisibles, il faut recourir à l'énergie nucléaire, avec le maximum de précautions, en construisant le moins possible de centrales, et en poursuivant les recherches tendant à résoudre, de façon définitive et sûre, le problème des radiations des déchets.",
+      "bbox": {
+        "x_pct": 10.073,
+        "y_pct": 38.597,
+        "w_pct": 70.532,
+        "h_pct": 27.577
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle est la situation présente. Il ne s'agit d'aucun choix définitif. Il se situe dans un moment concret, particulier, de notre histoire. Il s'efforce - sans sécurité absolue - de donner le maximum de chances à la fois à notre vie et à notre liberté. Il est à l'échelle des hommes. Et il exige la poursuite de la recherche et des efforts.",
+      "bbox": {
+        "x_pct": 10.21,
+        "y_pct": 68.227,
+        "w_pct": 66.688,
+        "h_pct": 11.363
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 10.45,
+        "y_pct": 95.81,
+        "w_pct": 45.47,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Added page footer/metadata region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text transcriptions were truncated and contained errors.",
+    "Page number not identified as metadata.",
+    "Metadata at the bottom of page not identified."
+  ],
+  "doc_id": "1860",
+  "page": 14,
+  "elapsed_seconds": 6.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "se mette à bouillir, pour que la goutte tombe creuse le rocher, pour que le poussin devienne poule. Il y a donc bien une histoire des phénomènes naturels, dont le devenir \"prend du temps\", avec ou sans observateur. Mais ce temps de la nature est pour nous encore bien plus inconcevable que celui que nous vivons, en tant qu'homme, entre la naissance et la mort. Il est tellement inconcevable qu'après cette courte digression sur les bords du kantisme je renonce à le comprendre ou à l'imaginer, pour m'en tenir à celui de l'histoire humaine, tel que nous le vivons quand nous y vivons.",
+      "bbox": {
+        "x_pct": 14.972,
+        "y_pct": 8.611,
+        "w_pct": 54.378,
+        "h_pct": 13.777
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and merged partial content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps vécu par les hommes, contrairement à celui que les physiciens mesurent dans la nature, est centré sur un présent, autour duquel s'articulent, de part et d'autre, un passé et un avenir. Telles sont les trois dimensions qui lui sont indispensables. Il est donc constitué par le présent - par la présence - d'une conscience, celle d'un sujet à la fois acteur et témoin. Tout moment du temps est un présent - actuel ou virtuel - d'acteur actuel ou virtuel. C'est ce que la langue appelle \"le présent historique\", qui peut se situer en n'importe quel point du passé ou du futur, mais qui se caractérise par la présence du monde à tel sujet donné, permettant à celui-ci d'y inscrire une action.",
+      "bbox": {
+        "x_pct": 14.752,
+        "y_pct": 22.577,
+        "w_pct": 54.548,
+        "h_pct": 15.442
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est étrange de constater combien nous sommes peu conscients du fait que pour agir il faut avoir un monde, et que nous n'avons un monde qu'au présent. Le monde passé est désormais pour nous hors d'atteinte. Le monde à venir n'est pas encore là. Pour qui veut agir, manquer le présent est irréparable. Savoir ce qu'on aurait voulu faire à tel moment du passé, ou ce qu'on rêve de faire à tel moment du futur, ne donne aucune prise sur le réel.",
+      "bbox": {
+        "x_pct": 14.833,
+        "y_pct": 37.985,
+        "w_pct": 54.329,
+        "h_pct": 10.574
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le présent de l'agent historique est donc constitutif de l'histoire, et il se double de celui du témoin historique, pour qui le présent de l'agent devient présent historique. Tous deux sont indispensables pour qu'il y ait histoire.",
+      "bbox": {
+        "x_pct": 14.866,
+        "y_pct": 48.662,
+        "w_pct": 54.434,
+        "h_pct": 6.102
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ils ne suffisent pas. Pour qu'il y ait histoire, il faut encore que la dimension du passé soit vécue pleinement \"au passé\". Il faut que soit reconnu, explicitement ou implicitement, \"l'être du passé\", que l'historien s'efforcera de rejoindre. C'est-à-dire que ce qui s'est passé et ce qui a été fait dans le passé devient, en tant que passé, immuable. Faute de quoi il n'y aurait plus, pour l'historien, de \"vérité\" à rejoindre; du point de vue de la \"vérité historique\", une version des faits et des actions en vaudrait une autre. L'histoire des hommes s'écrirait à la surface de l'eau. La recherche perdrait son sens. Il est à la mode aujourd'hui de nier le critère de cette adéquation du récit à \"ce qui s'est réellement passé\", -",
+      "bbox": {
+        "x_pct": 14.866,
+        "y_pct": 55.011,
+        "w_pct": 54.378,
+        "h_pct": 15.327
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "148",
+      "bbox": {
+        "x_pct": 49.333,
+        "y_pct": 89.288,
+        "w_pct": 2.222,
+        "h_pct": 1.556
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number as footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "_skip",
+      "text": "Artifacts on the right margin",
+      "bbox": {
+        "x_pct": 92.0,
+        "y_pct": 9.5,
+        "w_pct": 8.0,
+        "h_pct": 62.0
+      },
+      "changed": true,
+      "change_reason": "False positives (artifacts/noise) removed from main text flow."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Right margin contains massive OCR noise/hallucinations due to overlay or image artifacts; removed.",
+    "Multiple paragraphs were truncated by the automatic OCR engine; reconstructed text.",
+    "Page number 148 at the bottom was mislabeled as text."
+  ],
+  "doc_id": "2760",
+  "page": 2,
+  "elapsed_seconds": 7.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

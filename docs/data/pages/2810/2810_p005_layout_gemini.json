@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et ce malaise concerne moins Elisabeth Kopp que notre État de droit.",
+      "bbox": {
+        "x_pct": 6.688,
+        "y_pct": 6.315,
+        "w_pct": 74.542,
+        "h_pct": 3.952
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately, removing errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malgré l'énorme machine enquêtrice mise en place, bon nombre de questions, qui me paraissent décisives, n'ont pas été élucidées jusqu'ici. Or bon nombre d'entre elles exigent d'être élucidées avant que l'on puisse porter un jugement sur le comportement de Madame Kopp. En voici quelques-unes:",
+      "bbox": {
+        "x_pct": 6.612,
+        "y_pct": 14.677,
+        "w_pct": 80.552,
+        "h_pct": 11.153
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in the text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par outre, au cours de cette procédure, que dans une affaire concernant la ville de Coire, si je ne m'abuse, le Tribunal fédéral n'a pas admis qu'il y avait eu violation du secret de fonction pour la seule raison que ce secret aurait pu être découvert par une autre voie que la fonction. L'erreur de Madame Kopp sur la source de l'information (milieux bancaires) n'est-elle pas dès lors suffisante pour annuler l'accusation?",
+      "bbox": {
+        "x_pct": 6.612,
+        "y_pct": 57.637,
+        "w_pct": 80.552,
+        "h_pct": 14.944
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR errors in the text content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 3,
+  "issues": [
+    "The OCR engine failed significantly on all detected regions, requiring manual transcription.",
+    "The text box coordinates do not cover the whole paragraphs present on the page.",
+    "The page number 55 was missed by the detection process."
+  ],
+  "doc_id": "2810",
+  "page": 5,
+  "elapsed_seconds": 4.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

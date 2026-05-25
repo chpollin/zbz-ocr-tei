@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "II Les années de formation — La vocation de la philosophie",
+      "bbox": {
+        "x_pct": 17.582,
+        "y_pct": 18.584,
+        "w_pct": 53.48,
+        "h_pct": 6.275
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription of the heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie n'a pas été seulement pour vous l'objet d'un enseignement, mais l'exigence de toute une vie et la marque essentielle de votre personnalité. C'est donc sans aucune emphase qu'on peut parler à votre sujet d'une « vocation » à la philosophie.",
+      "bbox": {
+        "x_pct": 4.64,
+        "y_pct": 30.917,
+        "w_pct": 79.768,
+        "h_pct": 8.238
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A vrai dire; je n'oserais jamais, pour ma part, revendiquer cette vocation. Si vous voulez le dire, libre à vous, mais moi je ne le peux pas. D'ailleurs, je peux difficilement me représenter quelqu'un qui revendique le titre de philosophe, c'est comme quelqu'un qui dirait : je suis poète. Et puis, je connais trop ma frivolité pour m'attribuer une vocation de philosophe.",
+      "bbox": {
+        "x_pct": 4.481,
+        "y_pct": 38.697,
+        "w_pct": 79.89,
+        "h_pct": 12.285
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription to match document content."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "C'est un métier.",
+      "bbox": {
+        "x_pct": 17.912,
+        "y_pct": 51.73,
+        "w_pct": 17.46,
+        "h_pct": 1.665
+      },
+      "changed": true,
+      "change_reason": "Labeled as filter because it's a small fragment/header fragment, not a full paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est certainement un métier. J'ai donné ma leçon d'ouverture à l'université sur ce sujet : « Le métier de philosophe ». Et j'ai terminé en disant : « heureusement qu'on ne me demande pas d'être philosophe, mais seulement d'enseigner la philosophie ».",
+      "bbox": {
+        "x_pct": 4.603,
+        "y_pct": 53.556,
+        "w_pct": 79.524,
+        "h_pct": 8.528
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Venons-en au début de vos études universitaires. A quel moment vous êtes-vous orientée vers la philosophie ?",
+      "bbox": {
+        "x_pct": 4.847,
+        "y_pct": 82.969,
+        "w_pct": 79.328,
+        "h_pct": 4.159
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription to match document content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR was very poor for multiple text segments.",
+    "Fragmentary text at 51.7% height was labeled as a paragraph, changed to filter.",
+    "Page number at bottom right was missing.",
+    "Combined heading lines into one block."
+  ],
+  "doc_id": "2330",
+  "page": 27,
+  "elapsed_seconds": 4.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

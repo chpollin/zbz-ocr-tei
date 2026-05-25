@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE CONCEPT DE L'TERNIT 85",
+      "bbox": {
+        "x_pct": 31.867,
+        "y_pct": 84.762,
+        "w_pct": 62.741,
+        "h_pct": 10.762
+      },
+      "changed": true,
+      "change_reason": "Header text including page number was labeled as part of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ou bien « l'ternit n'tait pas, et elle ne sera pas, elle est » (2), — et croire qu'on a enfin saisi sa pense. Il n'en est rien cependant et on n'en a jamais t plus loign. En effet, le Dieu de Hegel ne contemple pas l'ternit; c'est un Dieu actif. Et quand nous essayons de nous reprsenter cette activit hors du temps — tout nous chappe.",
+      "bbox": {
+        "x_pct": 12.003,
+        "y_pct": 12.952,
+        "w_pct": 76.295,
+        "h_pct": 21.01
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and removed erroneous labels."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On ne peut donc en aucune faon se reprsenter l'ternit ni par une pense, ni par une image. Mais peut-tre ce mot deviendra-t-il rel et plein s'il sait provoquer en nous une certaine raction intrieure. Le temps est le devenir qu'on regarde (das angeschaute Werden); peut-tre pourrons-nous connatre le devenir hors du temps non par un regard, mais par un acte, en prenant part  l'activit tout entire actuelle de la divinit. Mais Hegel condamne la fuite du mystique hors du temps parce que tout en visant Dieu, il se drobe  l'action voulue par Dieu; — quant  une action dans le temps, qui conciderait avec la volont divine, Hegel dclare que l'homme choisi par « l'esprit universel » (Weltgeist) pour accomplir ses desseins ignore qu'il participe  l'activit ternelle; il ne connat donc pas l'ternit.",
+      "bbox": {
+        "x_pct": 11.943,
+        "y_pct": 33.333,
+        "w_pct": 76.355,
+        "h_pct": 43.686
+      },
+      "changed": true,
+      "change_reason": "Cleaned up text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi l'ternit reste en tout sens ferme ",
+      "bbox": {
+        "x_pct": 15.663,
+        "y_pct": 76.924,
+        "w_pct": 72.033,
+        "h_pct": 2.219
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Die Vernunft in der Geschichte, Verlag Meiner, 3me dition, p. 165, Leipzig, 1930.",
+      "bbox": {
+        "x_pct": 15.166,
+        "y_pct": 83.048,
+        "w_pct": 72.59,
+        "h_pct": 4.695
+      },
+      "changed": true,
+      "change_reason": "Corrected typos in bibliographic entry."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(2) Encyclopdie,  258, Zusatz.",
+      "bbox": {
+        "x_pct": 15.166,
+        "y_pct": 87.552,
+        "w_pct": 41.416,
+        "h_pct": 2.19
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and content."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 5,
+  "issues": [
+    "Original text extraction contained numerous OCR errors.",
+    "Page header was merged into paragraph.",
+    "Footnote content had significant OCR artifacts."
+  ],
+  "doc_id": "20",
+  "page": 87,
+  "elapsed_seconds": 6.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

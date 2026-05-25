@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LES ECHOS DE SAINT-MAURICE Edition numérique",
+      "bbox": {
+        "x_pct": 11.487,
+        "y_pct": 11.846,
+        "w_pct": 76.82,
+        "h_pct": 9.438
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne HERSCH",
+      "bbox": {
+        "x_pct": 33.615,
+        "y_pct": 38.669,
+        "w_pct": 32.563,
+        "h_pct": 2.946
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La musique transcende-t-elle le temps ?",
+      "bbox": {
+        "x_pct": 13.265,
+        "y_pct": 45.385,
+        "w_pct": 73.398,
+        "h_pct": 3.769
+      },
+      "changed": true,
+      "change_reason": "This is a title of an article or essay and should be labeled as a section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Dans Echos de Saint-Maurice; 1987 1 tome 83, p. 39-48 Abbaye de Saint-Maurice 2013",
+      "bbox": {
+        "x_pct": 16.167,
+        "y_pct": 80.362,
+        "w_pct": 67.594,
+        "h_pct": 7.2
+      },
+      "changed": true,
+      "change_reason": "Bibliographic information is classified as section_header/zb_heading."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Two regions were incorrectly labeled as text/zb_paragraph when they are clearly section headers or metadata headings."
+  ],
+  "doc_id": "2740",
+  "page": 1,
+  "elapsed_seconds": 3.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

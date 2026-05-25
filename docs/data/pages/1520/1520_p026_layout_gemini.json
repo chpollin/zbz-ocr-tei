@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je dis « confins » parce que, quel que soit le domaine où la pensée s'exerce, elle va jusqu'aux limites où les conditions de son exercice s'abolissent et où son échec l'accule à un bond, soit en retour vers sa source, l'existence du sujet, soit au delà de ses limites, vers la transcendance.",
+      "bbox": {
+        "x_pct": 11.789,
+        "y_pct": 6.23,
+        "w_pct": 84.106,
+        "h_pct": 9.537
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je dis « condition humaine » parce que la pensée ici ne se permet pas un instant d'oublier qu'elle n'est pas pensée absolue d'un sujet absolu, mais pensée d'un être humain situé dans l'espace et le temps, et donc historiquement conditionné et engagé. Elle se découvre ainsi à la fois essentiellement liée à la relativité de son univers et vouée à l'absolu par son origine et sa visée. (3 et 4)",
+      "bbox": {
+        "x_pct": 11.829,
+        "y_pct": 17.541,
+        "w_pct": 83.97,
+        "h_pct": 11.74
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match original image text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Orientation dans le monde",
+      "bbox": {
+        "x_pct": 12.1,
+        "y_pct": 32.734,
+        "w_pct": 33.333,
+        "h_pct": 1.859
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Objectivité. L'homme dont la conscience s'éveille trouve d'abord, partout autour de lui, une réalité donnée qu'il appelle le monde. C'est ce monde, réceptacle inépuisable de données qui s'imposent à lui, de faits qu'il constate en même temps que les autres hommes, — c'est ce monde qui est d'abord pour lui l'ensemble de tout ce qui est, l'être. Il s'efforce d'explorer ce monde, de le connaître, tel qu'il est, dans son objectivité. Il tente d'éliminer de sa connaissance toute particularité liée à son point de vue, à sa situation, à ses intérêts. Le monde est pour lui l'être, justement dans la mesure où il ne dépend pas de lui, où il s'impose à lui comme aux autres. L'objectivité est alors beaucoup plus qu'une exigence scientifique : elle a un caractère ontologique.",
+      "bbox": {
+        "x_pct": 11.924,
+        "y_pct": 36.478,
+        "w_pct": 84.106,
+        "h_pct": 23.136
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match original image text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Totalité . Mais justement pour cette raison, l'homme qui cherche l'être dans la figure du monde a besoin d'y trouver une totalité, embrassant tous les êtres particuliers qui s'y trouvent. Historiquement, la question : « qu'est-ce qui est ? », « qu'est-ce que l'être ? », est ancienne. Tournés vers le monde qui les entourait, les penseurs ont répondu : c'est l'eau, ou le feu, ou l'air ; c'est la matière, ou les atomes, ou la vie, ou l'esprit... Mais chacune de ces réponses impliquait le choix, dans le monde, d'une réalité particulière, d'une certaine donnée objective, pour en faire « l'être ». Le penseur n'échappe pas, et il ne saurait échapper, à ce trait fondamental de la vie pensante : il se trouve, lui sujet pensant, en face de la réalité-objet, qu'il s'efforce d'ériger en totalité. Il n'est donc pas lui-même dans cette prétendue totalité. Bien plus, la manière dont il interroge le monde sur son être, la méthode de pensée à laquelle il a recours pour tenter de trouver une réponse, suscitent dans le monde",
+      "bbox": {
+        "x_pct": 11.287,
+        "y_pct": 61.208,
+        "w_pct": 84.336,
+        "h_pct": 28.912
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match original image text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 11.924,
+        "y_pct": 91.565,
+        "w_pct": 2.5,
+        "h_pct": 2.6
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text content was severely corrupted in multiple paragraphs due to poor OCR/extraction.",
+    "Page number at the bottom was incorrectly labeled as text.",
+    "Manual review needed to ensure consistent quote character encoding (e.g. replacing < > with « »)."
+  ],
+  "doc_id": "1520",
+  "page": 26,
+  "elapsed_seconds": 6.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mensch nicht schwerer, sondern leichter gewor den. Weil die VergAnglichkeit zum Bild des Lebens gehorte, besaßen die Menschen das, was ich ‹Leichtsinn› nennen möchte, jenen Leichtsinn, der es ihnen ermöglicht hat, auf gefährliche Gipfel zu klettern, gefährliche Dinge zu tun, das Leben aufs Spiel zu setzen. Sie konnten dies tun, weil sie das Bewußtsein hatten, daß das Leben, so kostbar es ist, nicht das allerletzte sein kann.",
+      "bbox": {
+        "x_pct": 6.763,
+        "y_pct": 4.949,
+        "w_pct": 65.06,
+        "h_pct": 20.211
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man hat im Mittelalter trotz all den schrecklichen Bedrohungen gelacht und Feste gefeiert, man hat gewiß sehr gelitten, wahrscheinlich aber auch sehr viel Freude genossen. Die Musik vergangener Zeiten war nicht so gebrochen, die Bilder vergangener Zeiten waren nicht so gequält wie unsere heutige Kunst, obwohl man um die Bedrohungen wußte: der Leichtsinn kam zu Hilfe, der metaphysische Leichtsinn, der es erlaubt, menschlich zu leben.",
+      "bbox": {
+        "x_pct": 6.92,
+        "y_pct": 25.277,
+        "w_pct": 64.94,
+        "h_pct": 22.125
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die moderne Zivilisation hat die Bedrohungen nicht aufheben können – und natürlich werden sie nie aufgehoben werden können –, aber es ist gelungen, die Bedrohungen weniger unmittelbar zu machen, sie gewissermaßen auf Distanz zu halten und so ein Geföhl der Sicherheit zu erzeugen. Der Mensch hat so viel Sicherheit gewonnen, daß er auch an anderes denken kann als an die unmittelbare Bedrohung. Weil der Mensch jeden Tag essen muß, steht er grundsätzlich unter Bedrohung, nichts zu essen zu haben; aber wenn er Vorräte hat, rückt die Bedrohung in Distanz, und diese Distanz ist kennzeichnend für die Entwicklung unserer Zivilisation. Die Distanz zur Bedrohung ist eine Chance für die Freiheit, vorausgesetzt, daß im einzelnen Menschen der Drang zur Freiheit noch lebendig ist. Vergessen wir nicht: Es gibt nicht die Freiheit, es gibt nur die Möglichkeit zur Freiheit.",
+      "bbox": {
+        "x_pct": 6.969,
+        "y_pct": 47.38,
+        "w_pct": 65.133,
+        "h_pct": 40.852
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Das Bewußtsein der Sterblichkeit macht leicht-sinnig",
+      "bbox": {
+        "x_pct": 74.312,
+        "y_pct": 17.445,
+        "w_pct": 20.133,
+        "h_pct": 5.408
+      },
+      "changed": true,
+      "change_reason": "Relabeled as caption as it functions as a margin note/side summary."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Menschliches Leben bedarf des Leichtsinns",
+      "bbox": {
+        "x_pct": 74.36,
+        "y_pct": 39.956,
+        "w_pct": 20.447,
+        "h_pct": 4.971
+      },
+      "changed": true,
+      "change_reason": "Relabeled as caption as it functions as a margin note/side summary."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Sicherheit: Chance für die Freiheit",
+      "bbox": {
+        "x_pct": 74.432,
+        "y_pct": 82.751,
+        "w_pct": 14.698,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Relabeled as caption as it functions as a margin note/side summary."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "41",
+      "bbox": {
+        "x_pct": 38.3,
+        "y_pct": 90.9,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number region detected at bottom center."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 7,
+  "issues": [
+    "Transcription for main body paragraphs was heavily truncated.",
+    "Margin notes labeled as paragraph instead of caption.",
+    "Page number missing from detection."
+  ],
+  "doc_id": "2400",
+  "page": 40,
+  "elapsed_seconds": 6.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

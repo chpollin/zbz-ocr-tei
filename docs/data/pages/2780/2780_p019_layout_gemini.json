@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "autrement. Nous sommes certains que les historiens, au cours de leurs difficiles recherches, sont en quête de quelque chose de réel, et que leurs écrits doivent être jugés selon une alternative claire : ou bien ils rejoignent la réalité telle qu'elle fut, ou bien ils sont faux – même si personne ne le sait encore, même si personne ne devait le savoir jamais. Qu'est-ce donc, alors, que cette «réalité historique passée» ? En quoi consiste-t-elle, maintenant ? «Où» se trouve-t-elle ? Ni dans l'espace des possibles expériences, ni dans la mémoire des contemporains – car même ce qui a été oublié reste tel qu'il a été, et non autrement.",
+      "bbox": {
+        "x_pct": 26.801,
+        "y_pct": 13.864,
+        "w_pct": 57.807,
+        "h_pct": 28.399
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici encore, à travers nous entrevoyons la lueur d'une dimension métaphysique du temps, d'une éternité historique.",
+      "bbox": {
+        "x_pct": 26.907,
+        "y_pct": 42.157,
+        "w_pct": 57.521,
+        "h_pct": 6.92
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre vie «normale» se déroule donc dans l'incohérence des divers temps, propres à notre condition humaine et à notre appartenance à la nature.",
+      "bbox": {
+        "x_pct": 26.939,
+        "y_pct": 48.636,
+        "w_pct": 57.489,
+        "h_pct": 8.693
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a souvent parlé de «nature éternelle». La nature est-elle éternelle ? Lorsqu'on la regarde, on constate que tout ce qui vit dans la nature est en proie à la peur devant la mort. Tout être vivant doit, pour ne pas mourir, chercher sa nourriture, au péril de servir de nourriture à d'autres êtres vivants. Mais le printemps revient, et on a parlé d'éternel",
+      "bbox": {
+        "x_pct": 26.801,
+        "y_pct": 57.353,
+        "w_pct": 57.489,
+        "h_pct": 15.58
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 26.8,
+        "y_pct": 75.3,
+        "w_pct": 2.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Text content was heavily corrupted by OCR errors and truncation in the source data.",
+    "Page number at the bottom was missing from the initial region list.",
+    "Paragraphs were split or truncated incorrectly."
+  ],
+  "doc_id": "2780",
+  "page": 19,
+  "elapsed_seconds": 5.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

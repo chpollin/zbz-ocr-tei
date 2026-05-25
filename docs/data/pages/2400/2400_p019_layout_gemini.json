@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeder muß das Risiko mittragen",
+      "bbox": {
+        "x_pct": 5.869,
+        "y_pct": 36.048,
+        "w_pct": 17.217,
+        "h_pct": 3.959
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie kann man Verständnis schaffen für die Notwendigkeit von Risikobereitschaft",
+      "bbox": {
+        "x_pct": 2.272,
+        "y_pct": 69.192,
+        "w_pct": 20.899,
+        "h_pct": 8.559
+      },
+      "changed": true,
+      "change_reason": "Corrected spacing and spelling typos in text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Sie kennen die Regel der Schifffahrt, daß der Kapitän sein sinkendes Schiff als letzer verlassen würde.",
+      "bbox": {
+        "x_pct": 25.48,
+        "y_pct": 6.114,
+        "w_pct": 65.322,
+        "h_pct": 6.528
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text concatenation and added missing end of sentence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: Ich glaube, daß das die Wirklichkeit ist: Wenn man ein Risiko auf sich nimmt, nimmt man auch ein Risiko für andere auf sich. Und das ist das Gefährliche an der Sache, daß nämlich andere Menschen mit ins Risiko gezogen werden, die dieses Risiko nicht gewollt haben. Aber so hat sich, glaube ich, die ganze menschliche Geschichte entwickelt. Der Einzelne muß nur darauf achten, daß er nicht selbst in Sicherheit ist, wenn die anderen in das Risiko geraten, das er gewollt hat. Hier liegt, scheint mir, eine wichtige Grenze.",
+      "bbox": {
+        "x_pct": 25.48,
+        "y_pct": 15.116,
+        "w_pct": 65.322,
+        "h_pct": 25.058
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed missing text from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Als Politiker muß ich in diesem Zusammenhang eine naheliegende Frage aufgreifen, die Frage nämlich, <Wie sag ich's meinem Kinde?> Wie überzeuge ich meine Mitarbeiter, die Gewerkschaften, die Stadtverwaltung, den Regierungsrat, das Volk davon, daß wir Risiken eingehen müssen wenn wir mit der Zeit gehen und damit unser Überleben sichern wollen? Wir leben in einer Zeit, in der Aussagen der Autoritäten nicht mehr wie früher kurzerhand angenommen werden. Angesichts der Demokratisierung nicht nur des Staates, sondern unserer ganzen Gesellschaft stellt sich die Frage: Wie kann man die unternehmerisch richtigen, die risikofreudigen Entscheidungen treffen, ohne mit der gesellschaftlichen Umwelt, die dem Risiko abgeneigt ist, zu brechen?",
+      "bbox": {
+        "x_pct": 25.431,
+        "y_pct": 42.162,
+        "w_pct": 65.699,
+        "h_pct": 36.172
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed full text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Diese Frage ist nicht nur schwer zu beantworten, sie ist vor allem schwer zu leben, und wahrscheinlich läßt sich das Problem im Unternehmen sehr viel einfacher lösen als im Staat.",
+      "bbox": {
+        "x_pct": 25.881,
+        "y_pct": 80.328,
+        "w_pct": 65.286,
+        "h_pct": 8.828
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 57.065,
+        "y_pct": 89.873,
+        "w_pct": 2.124,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Page number identified and re-labeled to page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 6,
+  "issues": [
+    "OCR text extraction was poor, requiring manual correction of sentences.",
+    "Page number at the bottom was missing from the initial detection list.",
+    "Speaker names and colon formatting needed standardizing."
+  ],
+  "doc_id": "2400",
+  "page": 19,
+  "elapsed_seconds": 7.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

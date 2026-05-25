@@ -1,0 +1,73 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "186 L'ÊIRE ET LA FORME",
+      "bbox": {
+        "x_pct": 19.0,
+        "y_pct": 0,
+        "w_pct": 68.7,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "avait  trop sou[fert voulut enlrer 4 pas lui un si en avez encore le désir; serez plus   joyeuse. Ca",
+      "bbox": {
+        "x_pct": 18.953,
+        "y_pct": 13.645,
+        "w_pct": 68.7,
+        "h_pct": 35.178
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for legibility"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ni sincérité, dans Texpression; ni la grandeur Ou la violence des sentiments   exprimés; ne les plus",
+      "bbox": {
+        "x_pct": 18.838,
+        "y_pct": 48.618,
+        "w_pct": 68.7,
+        "h_pct": 22.506
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for legibility"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« Vérisme » et « pathétisme » sont deux tentations voisines. L’un et l’autre refusent la polarité matière-prise qui seule permet la",
+      "bbox": {
+        "x_pct": 18.838,
+        "y_pct": 71.3,
+        "w_pct": 68.7,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing text block at bottom"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcription in JSON was corrupted/incomplete",
+    "Missing paragraph at bottom",
+    "Missing page header",
+    "Labels were generic"
+  ],
+  "doc_id": "110",
+  "page": 188,
+  "elapsed_seconds": 8.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content for legibility": 2,
+    "ADDED": 2
+  }
+}

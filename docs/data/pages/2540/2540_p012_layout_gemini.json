@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "platz haben wird. Und wie ich es vorhin angedeutet habe, wird es vielleicht nicht unbedingt mehr notwendig sein.",
+      "bbox": {
+        "x_pct": 14.903,
+        "y_pct": 8.587,
+        "w_pct": 76.263,
+        "h_pct": 4.917
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Doch stellen sich in diesem Zusammenhang noch eine Reihe weiterer Fragen. Zum Beispiel: Muß jeder Mensch eine bezahlte Arbeit haben, wenn die Produktion im Vergleich mit der menschlichen Arbeitskraft in dem Maße wächst, wie das gegenwärtig der Fall ist? Denken Sie nur an die gewaltigen Produktionshallen großer Industrieunternehmen, in denen kaum mehr ein Mensch arbeitet und wo alle Tätigkeiten von Robotern ausgeführt werden oder computergesteuert ablaufen. Diese Entwicklung führt gewissermaßen zwangsweise zu ganz neuen Vorstellungen im Bereich des Arbeitslebens, und zwar bei Arbeitgebern wie bei Arbeitnehmern. Vor allem rückt die Frage nach dem Sinn der Produktivität in den Vordergrund des Interesses.",
+      "bbox": {
+        "x_pct": 14.929,
+        "y_pct": 12.803,
+        "w_pct": 76.44,
+        "h_pct": 25.259
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content and corrected segmentation overlap."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich hatte in letzter Zeit zu wiederholten Malen Gelegenheit, vor führenden Industriellen zu sprechen. Dabei teilte ich ihnen eine meiner Beobachtungen mit: Mancher Arbeitgeber, der sich von Jugend an für das Überleben seines Unternehmens eingesetzt hat, stellt mit 45 oder 50 Jahren fest, daß seine Firma wirtschaftlich mehr oder weniger gut abgesichert ist und gegenüber der Konkurrenz ihren Platz auf dem Markt behauptet. Und ausgerechnet in diesem Augenblick taucht in ihm die Frage nach dem Sinn so großer Bemühungen auf. Wozu hat er über Jahre und Jahrzehnte gekämpft, um sein Unternehmen zu erhalten und zu stärken? Plötzlich überfällt ihn ein Gefühl tiefer Sinnlosigkeit. Worin liegt der Grund?",
+      "bbox": {
+        "x_pct": 14.726,
+        "y_pct": 37.932,
+        "w_pct": 76.908,
+        "h_pct": 24.615
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hier möchte ich Sie auf ein wesentliches Charakteristikum unserer Gesellschaft aufmerksam machen. Solange es um das reine Überleben geht, ist der Überlebenskampf Sinn genug. Deshalb empfinden auch die Menschen in Zeiten des Krieges oder während schwerer Krisen das Leben keineswegs als sinnlos. Ähnlich verhält es sich beim Unternehmer in bezug auf sein Unternehmen: die Firma überleben zu lassen, ergibt Sinn. Hat sie dann überlebt, fragt der verantwortliche Mensch nach einem anderen, einem tieferen Sinn. Die Tatsache, überlebt zu haben, reicht für die Zukunft als Sinn nicht mehr aus. In der Tat ergibt das Überleben einer Firma in der Konkurrenz mit anderen Firmen keinen tieferen Sinn, es ist vielmehr nur eine Grundbedingung, vergleichbar etwa mit der Gesundheit.",
+      "bbox": {
+        "x_pct": 15.221,
+        "y_pct": 62.222,
+        "w_pct": 76.299,
+        "h_pct": 25.339
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "260",
+      "bbox": {
+        "x_pct": 15.719,
+        "y_pct": 89.655,
+        "w_pct": 3.75,
+        "h_pct": 2.051
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction in JSON was truncated or incorrect in multiple regions.",
+    "Page number 260 was missing from original regions.",
+    "Overlap between region 1 and 2 in original JSON was logically incorrect for paragraph flow."
+  ],
+  "doc_id": "2540",
+  "page": 12,
+  "elapsed_seconds": 6.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

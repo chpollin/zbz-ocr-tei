@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Empirische wird dadurch nicht schwächer, aber etwas anderes, Wichtigeres, kommt hinzu und wird auf einer anderen Ebene entschieden.",
+      "bbox": {
+        "x_pct": 12.466,
+        "y_pct": 4.43,
+        "w_pct": 73.215,
+        "h_pct": 6.745
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Existenz ist selbst keine Tatsache, und Jaspers spricht deswegen, wenn er von ihr theoretisch spricht - in einer Vorlesung oder in einem philosophischen Werk -, fast immer nur von »möglicher Existenz«. Denn man kann nur von der Möglichkeit der Existenz sprechen.",
+      "bbox": {
+        "x_pct": 12.272,
+        "y_pct": 11.117,
+        "w_pct": 73.465,
+        "h_pct": 11.762
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was erroneously truncated and garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das hat wieder etwas mit Kant zu tun. Wenn Kant vom »kategorischen Imperativ« spricht, wirft man ihm oft vor, daß das ein rein formeller Ausdruck sei, der den Menschen niemals helfen kann zu wissen, was sie tun sollen. Der Begriff ist aber nur deswegen so abstrakt, weil er den konkretesten Punkt der Existenz bezeichnet, nämlich den Punkt, wo sich ein Mensch in seiner Situation wirklich entscheidet. »Ethisch entscheiden« bedeutet: nicht unter dem Zwang von Ursachen, nicht in der Reihe einer Kette von Ursachen und Folgen, sondern »quer zur Zeit«, in der Absolutheit dessen, was nicht in der Zeit ist, die eigene Entscheidung treffen. Und es ist so wahr, was Kant selbst gesagt hat: daß wohl kein Mensch je aus rein kategorischem Imperativ gehandelt hätte. Ist also der kategorische Imperativ unwirklich? Der Begriff bedeutet, daß es möglich ist, aus dem kategorischen Imperativ heraus zu handeln. Und diese Möglichkeit ist eine ethische Notwendigkeit, d. h. eine Pflicht. Ob dieser Pflicht empirisch gefolgt wird oder nicht, das bleibt in der Schwebe. In einem bestimmten Sinn inszeniert Jaspers Existenz. Und um sie zu inszenieren, beschreibt er die verschiedenen »Richtungen«, in denen das Subjekt handeln oder suchen oder etwas tun kann. Nennen wir, um schneller vorwärtszukommen, die drei Arten von Perspektiven, die der Mensch in sich selber vorfindet. Diese Begriffe sind hier unentbehrlich, ich muß sie anführen.",
+      "bbox": {
+        "x_pct": 12.305,
+        "y_pct": 22.48,
+        "w_pct": 73.272,
+        "h_pct": 51.277
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was truncated and garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der erste ist das Dasein. Was bedeutet bei Jaspers Dasein? Hier ist etwas Verwirrendes geschehen: Das Wort »Dasein« hat bei Jaspers einen ganz anderen Sinn als bei Heidegger. Bei Jaspers bezeichnet »Dasein« das empirische, vitale Subjekt, die Lebewesen, die nur unter bestimmten Umständen leben können, in einer bestimmten Umwelt fixiert, angenagelt sind, durch die sie bedingt sind und in der sie den »struggle for life« führen müssen, um zu",
+      "bbox": {
+        "x_pct": 12.272,
+        "y_pct": 73.757,
+        "w_pct": 73.441,
+        "h_pct": 14.099
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was truncated and garbled."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 82.269,
+        "y_pct": 91.86,
+        "w_pct": 2.766,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original JSON had highly inaccurate/truncated OCR transcriptions for the main paragraphs.",
+    "Page number 19 was missed/misidentified as general text."
+  ],
+  "doc_id": "2630",
+  "page": 5,
+  "elapsed_seconds": 6.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

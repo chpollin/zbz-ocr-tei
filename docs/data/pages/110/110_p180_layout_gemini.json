@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "178",
+      "bbox": {
+        "x_pct": 18.757,
+        "y_pct": 2.0,
+        "w_pct": 2.766,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region identified as page_header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 72.825,
+        "y_pct": 2.0,
+        "w_pct": 14.596,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header identified as page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du  tableau , Mais plus   indéfinissable du chef-dæuvre  Si pouvait   être  définie, Fart serait mor",
+      "bbox": {
+        "x_pct": 18.757,
+        "y_pct": 13.634,
+        "w_pct": 68.665,
+        "h_pct": 5.311
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être la meilleure façon de se représenter Tintentionalité dunc œuvre est-elle de penser à la qu",
+      "bbox": {
+        "x_pct": 18.838,
+        "y_pct": 19.097,
+        "w_pct": 68.7,
+        "h_pct": 37.299
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si le trompe-lœil ne remplir   les conditions de Fexistence esthétique; c'est n'a pas par  une incar",
+      "bbox": {
+        "x_pct": 18.953,
+        "y_pct": 56.222,
+        "w_pct": 68.734,
+        "h_pct": 18.915
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/footer regions identified."
+  ],
+  "doc_id": "110",
+  "page": 180,
+  "elapsed_seconds": 5.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

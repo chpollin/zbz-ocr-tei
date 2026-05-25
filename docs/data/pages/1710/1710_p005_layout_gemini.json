@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le peuple juif, auquel appartient Aron, est aux yeux du Père Fessard (et cela que l'on croie ou non à son élection) le plus profondément historique qu'il soit, bien plus lié au temps, à l'histoire, au langage, qu'à l'espace, à la vue, aux faits. C'est aussi celui au sein duquel l'affectivité joue le rôle le plus décisif.",
+      "bbox": {
+        "x_pct": 7.952,
+        "y_pct": 7.816,
+        "w_pct": 38.431,
+        "h_pct": 12.113
+      },
+      "changed": true,
+      "change_reason": "OCR text corrected from garbled output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette vision « théorique », rationaliste et uni-4 théorique empêche Aron de comprendre le vrai drame de l'histoire ou d'en admettre les conditions, il se pourrait que « sa pratique », reflétant son « être juif », permette de « faire sauter le verrou » et d'aller ainsi plus profond.",
+      "bbox": {
+        "x_pct": 8.24,
+        "y_pct": 20.0,
+        "w_pct": 38.024,
+        "h_pct": 13.943
+      },
+      "changed": true,
+      "change_reason": "OCR text corrected from garbled output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Père Fessard s'efforce de le réfuter par ses propres écrits ultérieurs sur deux points.",
+      "bbox": {
+        "x_pct": 11.102,
+        "y_pct": 74.511,
+        "w_pct": 15.964,
+        "h_pct": 2.61
+      },
+      "changed": true,
+      "change_reason": "OCR text corrected from garbled output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "spinoziste : L'esprit religieux qui se croit une mission divine manque le plus à l'esprit religieux. La vocation dont la recherche à ses yeux est constitutive de l'histoire est une vocation universelle, une pour tous.",
+      "bbox": {
+        "x_pct": 56.587,
+        "y_pct": 6.95,
+        "w_pct": 35.066,
+        "h_pct": 13.362
+      },
+      "changed": true,
+      "change_reason": "OCR text corrected from garbled output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'en prend à l'hypothèse théorique d'Aron (hypothèse kantienne), selon laquelle le sujet historique serait un moi transcendantal, donc ni croyant, ni incroyant. Or cette hypothèse ne tient pas en pratique, devant un problème concret, où il s'agit nécessairement du sujet vivant. Il souligne ici l'intrication du théorique et du pratique : ne pas décider, c'est encore décider.",
+      "bbox": {
+        "x_pct": 53.772,
+        "y_pct": 27.277,
+        "w_pct": 38.443,
+        "h_pct": 23.461
+      },
+      "changed": true,
+      "change_reason": "OCR text corrected from garbled output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cette participation à telle communauté. Selon lui, une telle pratique corrige et dépasse la théorie.",
+      "bbox": {
+        "x_pct": 54.335,
+        "y_pct": 78.908,
+        "w_pct": 20.192,
+        "h_pct": 7.135
+      },
+      "changed": true,
+      "change_reason": "OCR text corrected from garbled output."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 6,
+  "issues": [
+    "Previous OCR text was severely corrupted/garbled for almost every block.",
+    "The segmentation boxes include large amounts of text content but the original detected text was essentially junk."
+  ],
+  "doc_id": "1710",
+  "page": 5,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

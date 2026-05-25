@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Une culture sans passé et une société sans mœurs..",
+      "bbox": {
+        "x_pct": 6.991,
+        "y_pct": 13.792,
+        "w_pct": 77.752,
+        "h_pct": 8.946
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est dans le domaine de lapprentissage indispensable à lhistoire que notre époque se distingue des ",
+      "bbox": {
+        "x_pct": 7.26,
+        "y_pct": 36.609,
+        "w_pct": 81.815,
+        "h_pct": 11.676
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il en est résulté une extrapolation arrogante des connaissances scientifiques et techniques au domai",
+      "bbox": {
+        "x_pct": 7.026,
+        "y_pct": 63.47,
+        "w_pct": 81.885,
+        "h_pct": 13.69
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous n'avons pas su assimiler et digérer > culturellement la révolution scientifique et technique mé",
+      "bbox": {
+        "x_pct": 6.944,
+        "y_pct": 48.175,
+        "w_pct": 82.014,
+        "h_pct": 15.578
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La Commission touche juste lorsqu'elle souligne que la tolérance et le pluralisme ont une bonne part",
+      "bbox": {
+        "x_pct": 6.827,
+        "y_pct": 76.735,
+        "w_pct": 81.932,
+        "h_pct": 16.05
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "17",
+      "bbox": {
+        "x_pct": 91.0,
+        "y_pct": 88.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region for filtering"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page number region for filtering."
+  ],
+  "doc_id": "1810",
+  "page": 21,
+  "elapsed_seconds": 10.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

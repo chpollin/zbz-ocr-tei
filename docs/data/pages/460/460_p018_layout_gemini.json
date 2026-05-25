@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "16 L'EUROPE AU DÉFI",
+      "bbox": {
+        "x_pct": 118.0,
+        "y_pct": 98.0,
+        "w_pct": 537.0,
+        "h_pct": 113.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La lecture du livre de Michel Debré, cité en exergue, fit que je me ravisai. J'acceptai l'offre qui m'était faite tout en ayant pleinement conscience de l'impossibilité où je me trouverais de traiter au fond en quelques pages un sujet aussi complexe relevant de nombreuses disciplines.",
+      "bbox": {
+        "x_pct": 117.0,
+        "y_pct": 130.0,
+        "w_pct": 798.0,
+        "h_pct": 150.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est donc avec beaucoup d'humilité que je prends la plume. De nombreux auteurs avant moi, ont consacré d'importants ouvrages à l'étude du nationalisme ou du patriotisme, et cette modeste étude leur doit beaucoup. Il m'a semblé cependant que les rapports entre ces deux sentiments et leurs conséquences dans le domaine politique ont été trop souvent négligés.",
+      "bbox": {
+        "x_pct": 111.0,
+        "y_pct": 275.0,
+        "w_pct": 798.0,
+        "h_pct": 173.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mon propos ne sera donc pas de faire une étude approfondie de la Patrie et de la Nation. Je me bornerai à en rappeler brièvement les traits essentiels strictement nécessaires à l'objet que je poursuis.",
+      "bbox": {
+        "x_pct": 112.0,
+        "y_pct": 443.0,
+        "w_pct": 794.0,
+        "h_pct": 101.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne suis ni un historien, ni un sociologue, ni un philosophe, mais un homme auquel son action au service de l'Europe dans les années d'après-guerre a permis de faire maintes observations et d'acquérir une certaine expérience. J'ai maintenant acquis la conviction que la confusion qui règne entre ces mots Patrie et Nation est de loin le principal obstacle dressé sur la route qui doit conduire l'Europe à son unité. C'est donc un problème politique que je voudrais contribuer à résoudre et non une question d'ordre métaphysique. Les pages qui suivent n'ont pas d'autre objet.",
+      "bbox": {
+        "x_pct": 110.0,
+        "y_pct": 536.0,
+        "w_pct": 798.0,
+        "h_pct": 298.0
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page header '16 L'EUROPE AU DÉFI' originally mislabeled as text."
+  ],
+  "doc_id": "460",
+  "page": 18,
+  "elapsed_seconds": 3.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

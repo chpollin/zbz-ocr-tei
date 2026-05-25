@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelle dieser Arbeitsbereitschaft muss zunächst bedacht werden, dass man in den abgelegenen Alpentälern das zum Überleben Nötige der Natur seit jeher nur in harter Arbeit abringen konnte.",
+      "bbox": {
+        "x_pct": 11.031,
+        "y_pct": 14.273,
+        "w_pct": 63.22,
+        "h_pct": 9.833
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Durch den Reformator Huldrych Zwingli erfuhr diese Tradition eine deutliche Verschärfung. Seine Wahl als Leutpriester ans Zürcher Grossmünster erfolgte im Wissen um seine entschiedene Ablehnung der damals in der ganzen Eidgenossenschaft verbreiteten Freude an der Reisläuferei. Die Zürcher Behörden hatten den ungeordneten Kriegsdienst schon seit langem bekämpft, da er zwar Geld, aber auch Krankheiten, Verrohung der Sitten und aggressive Lebensformen mit sich brachte. Eifervoll predigte Zwingli seit Januar 1519 gegen den Solddienst. Auf das Argument seiner Gegner, ein so armes Land wie die Schweiz sei auf die zusätzlichen Einkünfte aus dem Kriegsdienst angewiesen, gab er eine erstaunliche Antwort: Zürich könne durchaus auf die Reisläuferei verzichten, wenn man einfacher lebe und härter arbeite. Und das erstaunliche war: Die Zürcher akzeptierten dieses Gebot. Man sagte der Reisläuferei ab, arbeitete emsig, leistete sich keinen Luxus mehr, lebte sparsam und ging mit allem, was man erarbeitete, sorgfältig um. Damit verwandelte sich Zürich von einer lebenslustigen, korrupten, spätmittelalterlichen Stadt in ein etwas langweiliges, fleissiges, sittenstrenges, puritanisches Gemeinwesen.",
+      "bbox": {
+        "x_pct": 10.818,
+        "y_pct": 24.498,
+        "w_pct": 63.61,
+        "h_pct": 51.171
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Natürlich vertrat Zwingli auch noch manche andere Überzeugung, primär religiös-konfessioneller Natur; doch für unsere Betrachtung war der Schritt zum reformierten Arbeitsethos das wichtigste. Durch die Ausbreitung der zwinglianischen Reform in die meisten Städte der Eidgenossenschaft, namentlich nach Bern, erfuhr Zwinglis Lebenswerk eine erstaunliche Dynamik;",
+      "bbox": {
+        "x_pct": 10.78,
+        "y_pct": 75.811,
+        "w_pct": 63.346,
+        "h_pct": 15.301
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 71.182,
+        "y_pct": 93.301,
+        "w_pct": 2.29,
+        "h_pct": 2.29
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text content was severely truncated and corrupted in all detected paragraphs.",
+    "Page number 17 was incorrectly labeled as text."
+  ],
+  "doc_id": "2940",
+  "page": 21,
+  "elapsed_seconds": 4.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

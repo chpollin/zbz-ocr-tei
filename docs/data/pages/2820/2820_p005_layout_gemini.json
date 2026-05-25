@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Lettre à Peter Sager",
+      "bbox": {
+        "x_pct": 381.0,
+        "y_pct": 72.0,
+        "w_pct": 238.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Identified as the section header/title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous n'en sommes pas là. Que se passe-t-il aujourd'hui? Les Suisses, malgré tant de fêtes et de cérémonies, n'en finissent pas de dénigrer la patrie sept fois centenaire dont ils ont pourtant bel et bien accepté l'héritage. L'Europe occidentale essaye cahin caha de résoudre un à un les problèmes qui entravent son unification économique, mais elle n'existe encore ni politiquement, ni militairement. A l'Est de l'Europe, les nationalités renaissantes se découvrent avant tout ennemies ou rivales, et elles ne s'unissent guère que pour piétiner leurs moeurs d'autrefois. Dans le vide de l'époque, les peuples se cherchent une passion, et ils trouvent la plus immédiate, la plus évidente: celle pour l'Etat-nation.",
+      "bbox": {
+        "x_pct": 8.473,
+        "y_pct": 10.789,
+        "w_pct": 82.428,
+        "h_pct": 22.037
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cet Etat-nation, tellement dénoncé et combattu par Denis de Rougemont, est en train de renaître partout. Il prétend coïncider avec la passion de la liberté et se substituer aux Droits de l'homme, - avec son cortège d'orgueil étroit, de rejet d'autrui, de racisme et d'antisémitisme.",
+      "bbox": {
+        "x_pct": 8.548,
+        "y_pct": 32.424,
+        "w_pct": 82.228,
+        "h_pct": 9.791
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'en pensez-vous? Supporterons-nous, parce que le nationalisme a été combattu par le plus nationaliste des totalitarismes, qu'il renaisse maintenant et que, à l'aube du XXIe siècle, l'histoire se retrouve sur les pistes que nous avons connues au cours du XXe? Alors nous aurons vécus en vain.",
+      "bbox": {
+        "x_pct": 8.636,
+        "y_pct": 42.19,
+        "w_pct": 82.14,
+        "h_pct": 9.928
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'inhumanité du nationalisme tient à ce qu'il est idolâtre. Il se donne une idole terrestre, censée transcender l'histoire. Alors que l'homme est un être à jamais voué au devenir hiérarchisé des valeurs au fil de l'histoire sans fin, qui n'est jamais un tout, et toujours inachevée, toujours une tâche.",
+      "bbox": {
+        "x_pct": 8.423,
+        "y_pct": 51.957,
+        "w_pct": 82.403,
+        "h_pct": 10.121
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "21",
+      "bbox": {
+        "x_pct": 873.0,
+        "y_pct": 912.0,
+        "w_pct": 21.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Title was misidentified as standard paragraph.",
+    "Page number was misidentified as standard paragraph."
+  ],
+  "doc_id": "2820",
+  "page": 5,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

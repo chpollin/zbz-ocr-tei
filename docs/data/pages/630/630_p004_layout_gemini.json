@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "il importe de comprendre de quoi on parle. Il y a beaucoup de gens qui se déclarent amis fervents d'une fédération de l'Europe mais qui entendent par là une confédération, non pas au sens suisse, mais au sens européen, et par là, en réalité, ce sont des gens qui cherchent un alibi parce qu'ils ne veulent pas réellement un pouvoir supranational au-dessus des Etats.",
+      "bbox": {
+        "x_pct": 7.491,
+        "y_pct": 9.901,
+        "w_pct": 86.298,
+        "h_pct": 8.168
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved readability."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après avoir expliqué ce point clairement, j'espère, je voudrais vous faire constater que je ne cherche pas à dissimuler mes intentions. Je vous le déclare d'emblée. Je le dis, parce que beaucoup de gens, dans les problèmes européens, ne sont pas clairs et parlent pour être moins clairs et non pas pour être plus clairs. Or je tâche d'être aussi claire que possible; je ne cherche pas à vous séduire en atténuant ma pensée, je vous la dis tout entière: le fédéralisme européen est un mouvement qui désire des autorités supranationales. Cela, pourtant, ne signifie pas que les fédéralistes européens souhaitent une uniformisation monolithique dans laquelle les Etats européens perdraient leur physionomie propre, leurs compétences propres, etc. Vous savez très bien qu'en Suisse, il y a suffisamment de différences, même entre un Genevois et un Vaudois, pour ne pas parler d'un Genevois et d'un Appenzellois, pour ne pas parler d'un Zuricois et d'un Tessinois, etc. Eh bien! dans ce même sens, je crois qu'il n'est pas difficile pour nous de comprendre qu'il est possible de créer des autorités supranationales à pouvoirs limités mais réels, sans que cela entraîne du tout une uniformisation, une destruction des caractères propres et des compétences propres des autorités des Etats particuliers. Je dirai même davantage, simplement pour terminer mon introduction et mon avertissement; je crois fermement que, de même que certains Suisses, et certains très bons Suisses disent - j'en ai entendu - qu'ils sont Suisses avant tout pour pouvoir rester Bâlois, je crois qu'on peut dire de la même façon que si, aujourd'hui, les Suisses veulent pouvoir rester Suisses, les Français rester Français, les Allemands rester Allemands, les Italiens rester Italiens, la condition pour cela, c'est que soient créés les Etats-Unis d'Europe. J'expliquerai plus loin pourquoi. Je crois que cette fédération européenne n'est pas du tout l'obstacle à la préservation des caractères propres et de l'autonomie des pays européens, mais qu'elle en est, au contraire, la condition.",
+      "bbox": {
+        "x_pct": 7.292,
+        "y_pct": 19.637,
+        "w_pct": 86.957,
+        "h_pct": 41.394
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant, on voit quel est mon sujet et mon titre devient plus clair. En quoi les tentatives faites pour fédérer les Etats européens en vue de créer les Etats-Unis d'Europe dotés de pouvoirs supranationaux limités, mais réels, en quoi est-ce que ces entreprises concernent l'assemblée que nous sommes, c'est-à-dire les coopérateurs européens, et en particulier suisses que nous sommes? Eh bien! je voudrais commencer par avancer une idée. Je crois qu'il y a une parenté fondamentale entre les conceptions qui inspirent le mouvement coopératif, ou qui, en tout cas, devraient l'inspirer et celles qui inspirent le fédéralisme européen. Les conceptions qui devraient inspirer le mouvement coopératif, qui inspirent ceux d'entre vous qui sont les plus conscients de qu'ils font, je crois qu'elles sont les suivantes: c'est une certaine idée, je dirais, de la pédagogie humaine, et voici ce que j'entends par là. Permettez-moi d'illustrer ma pensée en me référant à l'éducation des enfants: il y a des gens qui croient que, pour élever des enfants, il faut les entraîner à faire le plus souvent possible leur devoir, contrairement à ce qu'ils désirent. Ce serait, en somme, un dressage au devoir; l'éducation serait avant tout un entraînement au devoir, contre le plaisir, en quelque sorte. Or, il y a une autre conception de l'éducation des enfants, qui consiste à multiplier au contraire autour d'eux les occasions où faire son devoir est agréable, c'est-à-dire à créer autour de l'enfant un milieu, un monde constitué de telle façon que, pour lui, la con-",
+      "bbox": {
+        "x_pct": 6.671,
+        "y_pct": 62.649,
+        "w_pct": 87.242,
+        "h_pct": 30.421
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "3",
+      "bbox": {
+        "x_pct": 91.868,
+        "y_pct": 95.342,
+        "w_pct": 1.157,
+        "h_pct": 1.776
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction was severely truncated and contained errors.",
+    "Page number at bottom right was incorrectly labeled as text."
+  ],
+  "doc_id": "630",
+  "page": 4,
+  "elapsed_seconds": 6.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

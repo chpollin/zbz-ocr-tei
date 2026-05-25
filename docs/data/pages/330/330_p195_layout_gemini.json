@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 307.726,
+        "y_pct": 82.529,
+        "w_pct": 384.802,
+        "h_pct": 20.316
+      },
+      "changed": true,
+      "change_reason": "Identified running header/section title at the top of the page."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "161",
+      "bbox": {
+        "x_pct": 851.696,
+        "y_pct": 79.526,
+        "w_pct": 28.527,
+        "h_pct": 21.053
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "là où il convient de croire; là où il convient de penser, là où il convient d'agir.",
+      "bbox": {
+        "x_pct": 4.499,
+        "y_pct": 10.579,
+        "w_pct": 84.123,
+        "h_pct": 4.572
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que les positions politiques, les rôles politiques joués par les Eglises aient déterminé des idéologies de défense et des réactions affectives qui ne s'effaceront pas de sitôt, c'est là un des traits tragiques — trop facile à expliquer — du visage de notre époque. Les Églises complices des privilèges de la puissance et de la richesse ont compromis et compromettent encore Dieu lui-même aux yeux des foules, ce qui explique assez, sur le plan psychologique, les méfiances des partis populaires à l'égard de tous les clergés. Il y a plus : les Églises étant politiquement ce qu'elles sont, ces partis ont souvent le devoir politique (même indépendamment de tout souci démagogique ou électoral) de lutter contre une emprise cléricale dont les conséquences seraient politiques.",
+      "bbox": {
+        "x_pct": 4.596,
+        "y_pct": 14.465,
+        "w_pct": 84.359,
+        "h_pct": 25.49
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne s'agit ici ni de condamner toute politique socialiste anti-cléricale pour recommander une politique d'alliance avec les clergés, ni de justifier toute position anticléricale. Mais il importe de voir que si une position anticléricale du socialisme s'explique historiquement, elle n'est pourtant pas liée à son principe, elle n'est pas toujours la seule façon pour lui de rester fidèle à lui-même. Au contraire, ériger en valeur la personne humaine libre et responsable, c'est reconnaître son droit à une adhésion religieuse, à croire, à professer une foi, à faire partie d'une Église. C'est en même temps refuser à la foi, aux Églises, tout droit de restreindre la liberté de cette adhésion, de ce choix, c'est exclure toute exigence armée et toute pression.",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 39.216,
+        "w_pct": 84.345,
+        "h_pct": 24.804
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On il est vrai, que la religion en elle-même, indépendamment de toute politique cléricale, diminuait la force combative du peuple et le détournait de la conquéte de ses droits terrestres en minimisant le prix de cette vie-ci et en canalisant tous ses espoirs vers l'au-delà. Cette théorie, plausible à première vue, tourne court. D'abord, si tel était le cas, le remède serait à chercher dans un approfondissement de la vie religieuse et non dans sa suppression. Abandonner cette terre à son sort pour se tourner vers un autre monde, c'est faire de la transcendance une sorte de compensation commercialisée, c'est la mettre sur une balance tout humaine et la soumettre aux normes de la justice humaine. L'expérience religieuse véritable tourne les hommes avec plus d'ardeur vers",
+      "bbox": {
+        "x_pct": 4.596,
+        "y_pct": 63.52,
+        "w_pct": 84.262,
+        "h_pct": 24.831
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily truncated and garbled.",
+    "Page number and running header were incorrectly labeled as text.",
+    "Transcription quality of the OCR segments required significant manual correction."
+  ],
+  "doc_id": "330",
+  "page": 195,
+  "elapsed_seconds": 7.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

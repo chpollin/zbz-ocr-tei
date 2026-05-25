@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wahl oder Entscheidung beobachten. Wir sehen entweder einen physikalischen, deterministischen Proze sich in einer Kette von Ursachen und Folgen entwickeln – etwa wenn Wasser auf Feuer gew&auml;rmt wird und nach einer Weile kocht. Das ist kausale Notwendigkeit – oder ein biologischer Zwangsproze, unter den das Recht der St&auml;rkeren die Ern&auml;hrung dieser St&auml;rkeren und ihrer Kleinen sichert.",
+      "bbox": {
+        "x_pct": 7.044,
+        "y_pct": 5.951,
+        "w_pct": 85.566,
+        "h_pct": 15.58
+      },
+      "changed": true,
+      "change_reason": "The transcription was heavily truncated and corrupted. Replaced with full readable text from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Gegenwart des Menschen scheint also in seiner Welt eine Ausnahme zu sein, denn er ist der einzige, der tun kann, was er entscheidet, und was er meiden will, auch meiden kann. Er allein wird nicht von einem allgemeinen Gesetz gezwungen. Er allein ist also frei und f&uuml;r seine Entscheidung verantwortlich.",
+      "bbox": {
+        "x_pct": 7.134,
+        "y_pct": 23.85,
+        "w_pct": 85.37,
+        "h_pct": 13.288
+      },
+      "changed": true,
+      "change_reason": "The transcription was truncated and misspelled. Corrected to reflect the full text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man spricht sehr viel von Menschenrechten. Ich glaube, da, wenn der Mensch unter allen Gesch&ouml;pfen besondere Rechte hat, dies nur deswegen so ist: weil er allein f&uuml;r das, was er entscheidet, verantwortlich ist. Und dadurch bekommt diese Erde einen ganz neuen, einzigartigen Sinn. Der Mensch nimmt es ernst, er denkt frei. Was auch kommt, ob es ihm gef&auml;llt oder nicht. Er denkt frei. Und er entscheidet frei.",
+      "bbox": {
+        "x_pct": 6.983,
+        "y_pct": 39.221,
+        "w_pct": 85.52,
+        "h_pct": 15.371
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated and poorly transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dank diesem freien Denken, dank dieser freien Entscheidung, &ouml;ffnen sich ihm die M&ouml;glichkeiten der technischen Entwicklung, und mir scheint, da der Mensch die M&ouml;glichkeiten der Technik viel schneller entwickelt, als er deren Wesen vertieft und versteht. Die Frage der Klarheit und der Spezifit&auml;t des Verstehens der Technik scheint mir besonders wichtig zu sein. F&uuml;r den Menschen h&auml;ngt besonders viel davon ab.",
+      "bbox": {
+        "x_pct": 6.983,
+        "y_pct": 56.612,
+        "w_pct": 85.475,
+        "h_pct": 16.096
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated and poorly transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Betrachten wir zum Beispiel die Wissenschaft. Wenn man sie versteht, versteht man ihren Zwang: und dieser Zwang wird genossen. Man ist froh, da Wissenschaft zwingt. Es ist auch in der Technik m&ouml;glich, ein echtes Zwangswissen zu erleben, dem man nicht ausweichen kann. Wenn man dieses Zwangswissen erwirbt, gewinnt man eine Herrschaft &uuml;ber die Kausalit&auml;t der Natur, die im Laufe der Geschichte die Macht der Menschen &uuml;ber die Natur immer mehr wachsen l&auml;st.",
+      "bbox": {
+        "x_pct": 6.893,
+        "y_pct": 74.547,
+        "w_pct": 85.52,
+        "h_pct": 17.6
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated and poorly transcribed text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 88.583,
+        "y_pct": 94.025,
+        "w_pct": 1.76,
+        "h_pct": 2.52
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most paragraphs had truncated or corrupted text content.",
+    "Page number at bottom right was labeled as paragraph text."
+  ],
+  "doc_id": "3150",
+  "page": 3,
+  "elapsed_seconds": 5.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

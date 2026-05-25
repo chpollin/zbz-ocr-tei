@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 26 -",
+      "bbox": {
+        "x_pct": 44.8,
+        "y_pct": 5.79,
+        "w_pct": 10.4,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des \"Neuen\" abgeschlossene, repetitive Verhaltensweisen hervor, welche die Geschichte und den Fortschritt blockieren.",
+      "bbox": {
+        "x_pct": 11.395,
+        "y_pct": 13.153,
+        "w_pct": 75.726,
+        "h_pct": 4.065
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aus diesem Grund war man zum Beispiel im Laufe der letzten Jahre, als man die wesentlichen Aufgaben der Universitäten aufzeigte, so sehr von ihren Forschungsaufgaben besessen, also von der Entdeckung des Neuen, daß man nicht einmal wagte, die der Weitergabe des Wissens zu erwähnen: man wäre für einen unverbesserlichen Reaktionär gehalten worden. Und doch gibt es keinen Zweifel daran, daß die \"Demokratisierung\" des Zugangs zu den Universitäten die Weitergabe des Wissens, auf allen Gebieten, unerläßlicher als je zuvor gemacht hat. Jedermann hat die Geschichte auf den Lippen. Aber ohne Übertragung gibt es keine Geschichte, es bleibt nur die regelmäßige Wiederholung, wie die Vogelnester im Frühling.",
+      "bbox": {
+        "x_pct": 11.266,
+        "y_pct": 18.301,
+        "w_pct": 81.258,
+        "h_pct": 23.301
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mir scheint, daß alle diese Verhaltensweisen und diese Widersprüche aus einer Unkenntnis oder einem Vergessen der fundamentalen und unveränderlichen Gegebenheiten des Menschseins stammen. Phantastische Veränderungen haben sich ereignet, das ist wahr. Wir werden weiterhin geboren, ohne irgendetwas von unserer Geburt aussuchen zu können: weder den Ort noch die Zeit noch die Eltern, nichts. Wir sind weiterhin sterblich, wir wissen es, ohne den Zeitpunkt zu kennen. Wir leiden weiterhin - weniger, zweifellos, und vielleicht ein bißchen anders, aber wir leiden - körperlich und seelisch, für uns selbst und für die anderen. Wir brauchen noch Ruhe und Nahrung, und auch Arbeit.",
+      "bbox": {
+        "x_pct": 11.315,
+        "y_pct": 42.605,
+        "w_pct": 81.21,
+        "h_pct": 23.432
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber vor allen Dingen: Die grundlegende und ständige Bedingung unseres Daseins ist, daß wir Mängelwesen sind. Wir sind nicht allein zum Mangel verdammt; wir brauchen ihn sogar, wir können ihn nicht entbehren, wir würden sein Fehlen nur ganz kurze Zeit ertragen. Ohne ihn können wir nicht leben, denn ohne ihn gibt es keinen Sinn. Er ist die Triebkraft unseres menschlichen Daseins, die in der Zeit tätig wird. Die Fülle ist für uns nicht anders vorstellbar - aber sie ist es nicht - als in einem zeitlosen Paradies. In",
+      "bbox": {
+        "x_pct": 11.153,
+        "y_pct": 66.95,
+        "w_pct": 80.056,
+        "h_pct": 16.973
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text extraction contained significant errors/truncations.",
+    "Page number at the top identified as separate region for filtering."
+  ],
+  "doc_id": "2230",
+  "page": 11,
+  "elapsed_seconds": 4.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

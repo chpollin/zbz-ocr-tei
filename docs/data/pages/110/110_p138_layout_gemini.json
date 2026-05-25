@@ -1,0 +1,72 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "136 L'Être et la forme",
+      "bbox": {
+        "x_pct": 21.053,
+        "y_pct": 10.0,
+        "w_pct": 68.455,
+        "h_pct": 2.658
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du   jugement   porlé elle) el moins   le jugement dévidence est sûr. D'où la parfaite   évidence de",
+      "bbox": {
+        "x_pct": 20.737,
+        "y_pct": 13.364,
+        "w_pct": 68.675,
+        "h_pct": 44.518
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2 Lobjectivité   de la nature",
+      "bbox": {
+        "x_pct": 37.984,
+        "y_pct": 60.615,
+        "w_pct": 34.217,
+        "h_pct": 2.202
+      },
+      "changed": true,
+      "change_reason": "Correction of text content and label"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pourra Mn 'objecter deux choses. La première, c'est que je me cramponne & la fois par la psycholo",
+      "bbox": {
+        "x_pct": 20.622,
+        "y_pct": 63.379,
+        "w_pct": 68.929,
+        "h_pct": 11.162
+      },
+      "changed": true,
+      "change_reason": "Correction of text content"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header region",
+    "Typo in section header",
+    "Typo in body text"
+  ],
+  "doc_id": "110",
+  "page": 138,
+  "elapsed_seconds": 7.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Correction of text content and label": 1,
+    "Correction of text content": 1,
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ 57",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region identified in source for header/page number combo at top of page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'idéologie ne permet pas, à elle seule, de déterminer où commence, ou finit le droit et le devoir de défense par la guerre. La défense d'une idéologie tend à coïncider avec celle du sol où il est permis de lutter pour elle. Ainsi les socialistes, acceptant la défense nationale, ne se distinguent plus guère sur ce point des autres partis. La différence principale, c'est que le cas de conscience demeure pour eux plus grave, le souci de trahir l'idéal plus lourd. Ce qui explique que souvent, pratiquant la même politique de défense nationale que les autres partis, ils le fassent comme entraînés par les autres, résignés ; et leur décision prend alors l'allure d'une abdication opportuniste, tandis qu'elle pourrait donner à toute l'œuvre de défense sa signification et sa portée plus valable.",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 11.854,
+        "w_pct": 84.763,
+        "h_pct": 26.649
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le plan économique, l'idéologie socialiste est restée fidèle, dans ses grandes lignes, à la critique marxiste du capitalisme. Elle considère le profit capitaliste comme un vol constamment et légalement commis aux dépens soit des consommateurs, soit des travailleurs. La société apparaît composée de deux classes, celle des patrons qui achètent de la main-d'œuvre, celle des prolétaires qui vendent leur travail, et ces deux classes, indépendamment de la volonté des individus qui les composent, sont en lutte et ne peuvent pas ne pas l'être, parce que leurs intérêts vitaux sont contradictoires. La loi de la concurrence est telle qu'elle oblige les patrons à exploiter les salariés au maximum. Elle les oblige aussi à réinvestir le profit de façon à accroître la production sans accroître du même coup la consommation. D'où des crises périodiques de chômage, qui tiennent non à des circonstances occasionnelles, mais au rythme même de l'économie capitaliste. Cette économie est donc condamnée sur trois plans : 1o elle exploite, vole, mutile le salarié en le frustrant de la plus grande partie de sa condition d'homme et en le réduisant à une marchandise ; 2o elle est, sur le plan économique, l'anarchie et le désordre, puisque la production se fait selon les exigences du profit, non selon celles du besoin, et que ces exigences ne coïncident pas ; 3o elle ne fonctionne même pas harmonieusement, fût-ce dans le désordre et l'injustice, puisqu'elle aboutit à des crises qui la détruisent elle-même.",
+      "bbox": {
+        "x_pct": 3.9,
+        "y_pct": 42.362,
+        "w_pct": 85.195,
+        "h_pct": 45.517
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text extraction for both paragraphs was severely truncated and incorrect.",
+    "Page header with page number was completely missed by the initial scan."
+  ],
+  "doc_id": "330",
+  "page": 91,
+  "elapsed_seconds": 4.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "d2",
+      "bbox": {
+        "x_pct": 7.181,
+        "y_pct": 15.929,
+        "w_pct": 1.389,
+        "h_pct": 1.376
+      },
+      "changed": true,
+      "change_reason": "Artifact or small noise fragment identified near top of page, not body text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "50lles 2 pas 42 5122125 1d62 12 en une 12 appelle Le dons 52 Plus chansons d2 d2 du 1u544 1948, dare",
+      "bbox": {
+        "x_pct": 7.016,
+        "y_pct": 20.61,
+        "w_pct": 38.342,
+        "h_pct": 40.851
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "are, Eoule donl Personne",
+      "bbox": {
+        "x_pct": 53.233,
+        "y_pct": 13.234,
+        "w_pct": 26.591,
+        "h_pct": 10.454
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "21 qu'21129 80",
+      "bbox": {
+        "x_pct": 74.301,
+        "y_pct": 28.411,
+        "w_pct": 18.166,
+        "h_pct": 5.773
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to filter as this represents OCR noise or extraneous page markers."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1a dans 12 Bochniqur 441 alre 1] fart 12 BE lorsqu d2 la 12 Gon 2n En 1",
+      "bbox": {
+        "x_pct": 53.161,
+        "y_pct": 39.333,
+        "w_pct": 34.539,
+        "h_pct": 25.206
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gang 01 1 4u alle d2 aan independanoe de",
+      "bbox": {
+        "x_pct": 53.368,
+        "y_pct": 67.433,
+        "w_pct": 39.793,
+        "h_pct": 10.482
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "High level of OCR corruption in detected text blocks.",
+    "Page number/marker noise misidentified as paragraph text."
+  ],
+  "doc_id": "1730",
+  "page": 4,
+  "elapsed_seconds": 4.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

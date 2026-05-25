@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 39",
+      "bbox": {
+        "x_pct": 29.589,
+        "y_pct": 89.15,
+        "w_pct": 58.287,
+        "h_pct": 1.947
+      },
+      "changed": true,
+      "change_reason": "Header containing running title and page number incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "motive ne sont rien, tout reste subjectif: il s'agit du sort du financier, de l'homme d'affaires. L'idéologie cependant s'est longuement efforcée et s'efforce encore de donner un prestige à ces risques, qui permettent d'opposer l'aventure capitaliste à la vie sans risques du fonctionnaire et du salarié en général.",
+      "bbox": {
+        "x_pct": 2.967,
+        "y_pct": 11.738,
+        "w_pct": 84.54,
+        "h_pct": 10.695
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais concurrence est représentée comme le stimulant du progrès, du travail et de la recherche. Sans le harcèlement perpétuel qu'elle implique, dit-on, l'homme s'enliserait dans la routine. Grâce à elle, pour chaque entreprise économique, faire mieux que les autres est affaire de vie ou de mort.",
+      "bbox": {
+        "x_pct": 2.786,
+        "y_pct": 21.863,
+        "w_pct": 84.54,
+        "h_pct": 10.873
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici encore; on le voit. L'idéologie libérale est ambiguë. Le prestige du progrès, qui lui vient de l'Encyclopédie et de la Révolution française, mais qu'elle a depuis lors si souvent et si énergiquement rejeté, lui sert cependant encore de justification. D'autre part, alors qu'idéologiquement elle veut mettre l'accent sur les valeurs morales et religieuses pour combattre mieux l'idéologie « matérialiste » adverse, elle pose cependant comme seul ressort valable du progrès l'intérêt matériel poussé à son suprême degré d'urgence : si les hommes n'étaient pas placés par la libre concurrence devant l'alternative : le couteau de la ruine sur la gorge ou la promesse d'une richesse probable, rien ne se ferait plus.",
+      "bbox": {
+        "x_pct": 2.688,
+        "y_pct": 31.996,
+        "w_pct": 84.596,
+        "h_pct": 23.057
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Naturelle, vivante et entretenant la juste, efficace, la libre concurrence se trouve parée à la fois des prestiges du droit divin, de l'équité morale et du progrès humain.",
+      "bbox": {
+        "x_pct": 2.688,
+        "y_pct": 54.394,
+        "w_pct": 84.638,
+        "h_pct": 6.898
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès lors, l'ennemi, c'est la réglementation, et son agent principal, l'État. L'État se trouve désormais radicalement dissocié de la Patrie : la Patrie, incarnation des idéaux communs, de l'ordre traditionnel et légitime, méritant tous les sacrifices, jusqu'au dernier; l'État, appareil mécanisé, anonyme, constitué par des bureaux et des intrigues, méritant tous les mépris, et qu'il faut réduire à la portion congrue. Nous l'avons vu, l'idée du progrès matériel, technique, est pour les conservateurs libéraux à la fois un moyen de se justifier et un objet de mépris. Cette même ambiguïté se retrouve à propos de l'État : patriotisme et anti-étatisme polarisent des sentiments contraires. Il existe des libéraux conservateurs chez qui le patriotisme prime l'anti-étatisme et qui défendent l'État, tel qu'il existe, parce qu'il est l'une des incarnations actuelles de la Patrie. Il en est d'autres chez qui l'anti-étatisme",
+      "bbox": {
+        "x_pct": 2.187,
+        "y_pct": 62.059,
+        "w_pct": 84.958,
+        "h_pct": 27.219
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Page header/number incorrectly identified as part of text stream or missing context.",
+    "OCR text content was heavily hallucinated/misaligned in the initial input.",
+    "The page header (IDÉOLOGIES ET RÉALITÉ 39) was missing from the box detection."
+  ],
+  "doc_id": "330",
+  "page": 73,
+  "elapsed_seconds": 6.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

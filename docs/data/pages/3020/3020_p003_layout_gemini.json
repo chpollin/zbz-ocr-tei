@@ -1,0 +1,179 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 27.502,
+        "y_pct": 32.709,
+        "w_pct": 8.163,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Rauschgift als Verneinung des eigenen Menschseins",
+      "bbox": {
+        "x_pct": 68.618,
+        "y_pct": 32.709,
+        "w_pct": 21.616,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 56.12,
+        "y_pct": 412.385,
+        "w_pct": 8.03,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": {
+        "x_pct": 27.5,
+        "y_pct": 880.0,
+        "w_pct": 1.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified as page number"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 73.0,
+        "y_pct": 863.0,
+        "w_pct": 1.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified as page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gewichi Aber nur Man hac Ibnen dic Menschen das Recht; Mensch zu den. Wcil wir nie ganz diese Mensch",
+      "bbox": {
+        "x_pct": 9.927,
+        "y_pct": 13.561,
+        "w_pct": 16.943,
+        "h_pct": 21.943
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dann Es kann die indem Droge durch eine andere AbhAngicen den, dic in Menschen Und Jenden ich die G",
+      "bbox": {
+        "x_pct": 10.312,
+        "y_pct": 61.851,
+        "w_pct": 16.943,
+        "h_pct": 12.543
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dic mn crunden als der Tod Dznn Man",
+      "bbox": {
+        "x_pct": 27.502,
+        "y_pct": 9.43,
+        "w_pct": 13.893,
+        "h_pct": 9.156
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Um das Menschscin zu wollen, fnde dicscn Punkt zu Echorchen norwendie fur klcine Kinder Sicherhcir, ",
+      "bbox": {
+        "x_pct": 27.72,
+        "y_pct": 20.956,
+        "w_pct": 17.182,
+        "h_pct": 20.722
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "haben dicse Oder Zcugen? Man soll ihn davon @berzeugen; dass schrecklich, Das los, jeder Gchr",
+      "bbox": {
+        "x_pct": 27.865,
+        "y_pct": 43.886,
+        "w_pct": 17.211,
+        "h_pct": 20.437
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeder Von Es gchorr der Schuld {st Also: Man Yon den anderen verlangen, Pas.",
+      "bbox": {
+        "x_pct": 27.959,
+        "y_pct": 64.323,
+        "w_pct": 17.233,
+        "h_pct": 17.803
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "512 cin Mensch und wichcig vortunk vorzuzichcn das Man Im Gegeneil: Dic cben alles Zusammen Mcinung,",
+      "bbox": {
+        "x_pct": 56.187,
+        "y_pct": 49.573,
+        "w_pct": 14.815,
+        "h_pct": 5.056
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "IIT; schon ich darin nicht ILIT des sondern das danke Ihnen.",
+      "bbox": {
+        "x_pct": 73.588,
+        "y_pct": 43.337,
+        "w_pct": 16.558,
+        "h_pct": 23.499
+      },
+      "changed": false
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Misidentified page headers as text",
+    "Misidentified page numbers as text",
+    "Missing OCR quality for body paragraphs due to layout artifacts",
+    "Overlapping bounding boxes in top section",
+    "Small fragment text region identified as text but is likely noise"
+  ],
+  "doc_id": "3020",
+  "page": 3,
+  "elapsed_seconds": 8.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

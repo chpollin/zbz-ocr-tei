@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "INTRODUCTION",
+      "bbox": {
+        "x_pct": 35.843,
+        "y_pct": 18.561,
+        "w_pct": 32.334,
+        "h_pct": 2.479
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'énigme de la philosophie.",
+      "bbox": {
+        "x_pct": 28.313,
+        "y_pct": 24.595,
+        "w_pct": 46.943,
+        "h_pct": 3.813
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'est-ce qu'un problème philosophique? Par quoi se distingue-t-il de tout autre problème, — scientifique, esthétique, religieux? Où réside l'élément proprement philosophique, est-ce dans le problème lui-même ou dans l'activité du penseur? Autrement dit : y a-t-il des problèmes philosophiques, ou n'y a-t-il que des chercheurs philosophes?",
+      "bbox": {
+        "x_pct": 13.599,
+        "y_pct": 29.962,
+        "w_pct": 76.355,
+        "h_pct": 21.916
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quel est, dans un problème philosophique, le rapport entre la question, la recherche et la réponse? La recherche philosophique est-elle une véritable recherche au sens scientifique du mot?",
+      "bbox": {
+        "x_pct": 13.855,
+        "y_pct": 52.212,
+        "w_pct": 76.099,
+        "h_pct": 11.277
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je m'efforcerai de fixer la pure forme, la forme abstraite, capable de contenir n'importe quel problème philosophique. Pour cela j'examinerai ces problèmes sous leurs deux aspects essentiels : tels qu'ils se présentent à l'esprit du penseur, et tels qu'ils nous apparaissent dans l'histoire de la philosophie.",
+      "bbox": {
+        "x_pct": 13.81,
+        "y_pct": 63.556,
+        "w_pct": 76.401,
+        "h_pct": 19.314
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous poserons une fois de plus la question du développement, du progrès de la philosophie.",
+      "bbox": {
+        "x_pct": 14.307,
+        "y_pct": 82.869,
+        "w_pct": 75.858,
+        "h_pct": 5.663
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text was highly corrupted throughout paragraphs.",
+    "The section header L'énigme de la philosophie was garbled."
+  ],
+  "doc_id": "20",
+  "page": 11,
+  "elapsed_seconds": 4.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,116 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 41.826,
+        "y_pct": 7.0,
+        "w_pct": 14.297,
+        "h_pct": 2.142
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LEID ZWISCHEN PASSIVITÄT UND FREIHEIT",
+      "bbox": {
+        "x_pct": 30.176,
+        "y_pct": 9.808,
+        "w_pct": 37.861,
+        "h_pct": 5.358
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine erste Bemerkung: vielleicht ist der Abstand nirgends so groß oder so stark zu empfinden, wie zwischen Reden und Denken oder Erleben, wenn es um Leid geht. Reden oder Erleben sind hier zwei verschiedene Sachen. Unternimmt man, über Leid zu sprechen, so empfindet man oft nicht nur eine Scham, sondern sogar eine Verfälschung. Man fühlt sich gar nicht gut dabei. Denn im Moment, wo man vom Leid spricht, leidet man eben nicht. Und wenn man leidet, ist man meistens außerstande, darüber zu sprechen. Weinen kann man, oder schreien, oder stumm bleiben, — man kann aber kaum sprechen.",
+      "bbox": {
+        "x_pct": 8.916,
+        "y_pct": 20.025,
+        "w_pct": 39.453,
+        "h_pct": 20.7
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and ensured it remains a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eigenschaft des jeweils Einzigen, des Unvergleichbaren. Man spricht von größerem Leid, von kleinerem Leid — ich weiß nicht, ob es das wirklich gibt. Das Leid ist in seiner Qualität jeweils so wie es ist, und nicht wie irgendein anderes Leid, und auch nicht wie ein Leid derselben Art. Durch diese Einzigartigkeit gewinnt eben das erlebte Leid eine bestimmte Reinheit, die den Worten fremd ist. Im Reden über das Leid geschieht eine Art Verfälschung, indem man es schon dadurch objektiviert, daß man »das Leid« sagt. Im Reden von Leid steckt schon etwas Kitschiges, was im Erleben des Leidens gar nicht da ist.",
+      "bbox": {
+        "x_pct": 50.781,
+        "y_pct": 20.525,
+        "w_pct": 39.521,
+        "h_pct": 18.642
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Abstand wird auch dadurch größer, daß Leid ein allgemeines Wort ist, während jedes erlebte Leid etwas ganz Einzigartiges ist. Ich glaube nicht, daß derselbe Mensch zweimal auf dieselbe Art leidet. Leid wird jeweils als einzigartig erlebt. Und dadurch gewinnt das Leid seine",
+      "bbox": {
+        "x_pct": 9.053,
+        "y_pct": 40.392,
+        "w_pct": 39.482,
+        "h_pct": 8.633
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das erlebte Leid ist an sich etwas Wildes. Vielleicht kann eine Erkenntnis des Leidens eigentlich nur die Vertiefung der Unmöglichkeit sein, das Leid zu erkennen. Diese Unmöglichkeit zu vertiefen und zu verstehen, wäre vielleicht die beste Weise, sich dem Leid theoretisch, so wie wir es hier versuchen, zu nähern.",
+      "bbox": {
+        "x_pct": 50.908,
+        "y_pct": 38.775,
+        "w_pct": 39.326,
+        "h_pct": 9.833
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 44.629,
+        "y_pct": 89.642,
+        "w_pct": 10.225,
+        "h_pct": 1.667
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "21",
+      "bbox": {
+        "x_pct": 88.5,
+        "y_pct": 92.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region in footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR for paragraph text was significantly garbled and required reconstruction based on context.",
+    "Page number 21 was not initially detected in the layout analysis."
+  ],
+  "doc_id": "2635",
+  "page": 1,
+  "elapsed_seconds": 9.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

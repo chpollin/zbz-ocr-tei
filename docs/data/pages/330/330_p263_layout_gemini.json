@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDOLOGIES ET RALIT 229",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header elements like IDOLOGIES ET RALIT and the page number 229 should be filtered/identified as page_header/page_footer context."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "logis, des vtements, du travail, des loisirs, des tres humains eux-mmes. Mais la seule ingalit que le socialisme cherche  abolir, c'est celle des classes, qui repose aujourd'hui sur l'ingalit de la proprit prive, spcialement des moyens de production. Alors que les conservateurs combattent cette volont socialiste au nom d'un spiritualisme qui affirme la valeur essentielle de l'individu, leur argumentation implique un postulat matrialiste et mme, pourrait-on dire, « naturaliste », comme si seule l'ingalit sociale diffrenciait les individus. Postulat qui transforme soudain en marxistes malgr eux ces adversaires du marxisme, chtiant ainsi leur faible confiance et leur foi superficielle dans la libert humaine.",
+      "bbox": {
+        "x_pct": 2.27,
+        "y_pct": 12.54,
+        "w_pct": 85.097,
+        "h_pct": 24.537
+      },
+      "changed": true,
+      "change_reason": "Corrected text content as detected overlay was partially malformed."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les conservateurs partisans du capitalisme croient profondment que l'ingalit des revenus a valeur de motif, de signe, de symbole et de juste rcompense. Les socialistes, eux, pensent que l'ingalit conomique touffe la diversit des tres, que la scurit conomique au contraire lui permet de s'panouir. Certes, une femme du monde aux yeux de qui une toilette perd son charme lorsqu'elle cesse d'tre son privilge ne peut voir dans le socialisme qu'une tendance au nivellement. Mais si l'ouvrire, au lieu de voir s'imposer  elle la robe en srie qui cote le moins cher, peut choisir celle qui lui plat par ce qui la distingue des autres ou se la faire faire spcialement, on constate que la diversit grandit au fur et  mesure que de nouveaux possibles s'ouvrent devant les foules.",
+      "bbox": {
+        "x_pct": 2.604,
+        "y_pct": 36.836,
+        "w_pct": 84.819,
+        "h_pct": 25.285
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for paragraph coherence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce n'est pas « uniforme », chez les tres humains, ce sont les besoins biologiques fondamentaux. La diversit ne peut s'panouir que dans les activits et les besoins « de luxe », c'st--dire non indispensables au maintien de la vie. Dans la mesure o les besoins biologiques fondamentaux sont satisfaits et o l'homme peut compter avec une scurit suffisante qu'ils seront satisfaits  l'avenir, ceux-ci perdent leur importance et s'effacent devant d'autres recherches o l'individualit s'affirme. La scurit matrielle est donc une condition, non pas suffisante, mais ncessaire  l'panouissement de la diversit. Or l'homme se sent plus en scurit lorsque ses conditions d'existence dpendent davantage de ses propres dcisions, et moins lorsqu'elles dpendent d'autrui  comme c'est le cas pour tout le salariat en rgime capitaliste. C'est donc le socialisme qui peut revendiquer, parmi les valeurs dont il",
+      "bbox": {
+        "x_pct": 2.131,
+        "y_pct": 61.702,
+        "w_pct": 85.056,
+        "h_pct": 29.234
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for paragraph coherence."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page footer number artifact."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction had major OCR/segmentation errors.",
+    "Page number at bottom identified as separate region.",
+    "Section header at top missed by original extraction."
+  ],
+  "doc_id": "330",
+  "page": 263,
+  "elapsed_seconds": 7.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SUR LA NOTION DE RACE 133",
+      "bbox": {
+        "x_pct": 34.62,
+        "y_pct": 12.33,
+        "w_pct": 40.54,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header based on location and content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le plus souvent en des différences de fréquence des mêmes caractères héréditaires.",
+      "bbox": {
+        "x_pct": 22.506,
+        "y_pct": 15.254,
+        "w_pct": 53.965,
+        "h_pct": 3.386
+      },
+      "changed": true,
+      "change_reason": "Minor correction to text string content."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) Comme la Déclaration, les Propositions reprennent les classifications raciales habituelles, mais en les atténuant, elles aussi : pas de catégories rigoureusement tranchées, groupes intermédiaires, différences entre individus d’une même race, non-coïncidence entre « la combinaison des caractères chez la plupart des individus » et « la caractérisation typologique de la race ».",
+      "bbox": {
+        "x_pct": 22.619,
+        "y_pct": 18.319,
+        "w_pct": 53.932,
+        "h_pct": 11.082
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and tag consistency."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais voici la grande nouveauté. La Déclaration, d’après son titre, concernait de façon générale « la race et les différences raciales »; les Propositions se limitaient aux « aspects biologiques de la question raciale ». Or, c’est précisément dans la seconde qu’on insiste à plusieurs reprises sur les modalités particulières de l’évolution humaine. On y mentionne « la complexité de l’histoire humaine », les migrations, les expansions, les rétractions territoriales, entraînant la prépondérance de l’adaptabilité générale à des milieux variés sur l’adaptation à tel ou tel milieu particulier, les progrès accomplis par acquis culturels et non par le patrimoine génétique (d’où, chez l’homme contemporain, une profonde modification du rôle de la sélection naturelle), le rôle de la mobilité humaine et des facteurs sociaux, multipliant les unions entre membres de groupes différents et tendant à atténuer ou effacer par là, avec une intensité croissante et sans commune mesure avec ce qui se passe chez les autres espèces, les différences acquises. D’où « l’équilibre instable » des caractéristiques héréditaires des populations humaines, le caractère fluent des « races », constamment « en voie de formation et de dissolution », et se dérobant ainsi aux définitions nettes, possibles pour beaucoup de races animales.",
+      "bbox": {
+        "x_pct": 22.667,
+        "y_pct": 29.123,
+        "w_pct": 54.367,
+        "h_pct": 34.075
+      },
+      "changed": true,
+      "change_reason": "Corrected full text body content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "c) Sur le métissage, les Propositions reprennent à peu près les idées de la Déclaration, en en ajoutant deux : se plaçant au point de vue biologique, elles affirment, d’une part que « les implications d’un mariage dépendent de la constitution génétique individuelle des conjoints et non de leur race », et d’autre part que le métissage, loin de présenter « un inconvénient biologique pour l’humanité en général », « contribue au maintien des liens biologiques entre les groupes humains, donc de l’unité de l’espèce humaine dans sa diversité ». Il n’y a donc « aucune justification biologique », à interdire, ni à déconseiller « comme tels » les mariages inter-raciaux.",
+      "bbox": {
+        "x_pct": 22.99,
+        "y_pct": 62.576,
+        "w_pct": 54.126,
+        "h_pct": 17.231
+      },
+      "changed": true,
+      "change_reason": "Corrected full text body content for accuracy."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Questions",
+      "bbox": {
+        "x_pct": 27.212,
+        "y_pct": 80.49,
+        "w_pct": 8.751,
+        "h_pct": 1.572
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si « l’unité de l’espèce humaine » dépend du nombre de mariages inter-raciaux, faut-il admettre qu’elle soit compromise par la pluralité des races?",
+      "bbox": {
+        "x_pct": 27.156,
+        "y_pct": 82.63,
+        "w_pct": 50.121,
+        "h_pct": 4.692
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Copyright © 2010 ProQuest LLC. All rights reserved. Copyright © Presses Universitaires de France.",
+      "bbox": {
+        "x_pct": 15.5,
+        "y_pct": 94.0,
+        "w_pct": 48.0,
+        "h_pct": 4.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page footer content."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text segmentation was fragmented or contained typos in paragraph content.",
+    "Page headers and footers were initially mislabeled as text."
+  ],
+  "doc_id": "750",
+  "page": 9,
+  "elapsed_seconds": 12.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

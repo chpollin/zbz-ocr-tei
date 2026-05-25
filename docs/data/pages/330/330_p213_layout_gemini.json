@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 341.0,
+        "y_pct": 82.0,
+        "w_pct": 322.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "The text identified is the page header, not a paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "179",
+      "bbox": {
+        "x_pct": 837.0,
+        "y_pct": 82.0,
+        "w_pct": 33.0,
+        "h_pct": 22.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified, must be mapped to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": " vide ou de devenir l'instrument des forces occultes. D'o la mfiance du peuple, son sentiment profond qu'il y a toujours des  dessous , des interventions, des privilges jusque dans l'appareil de la justice, son mpris, sa rvolte contre la justice telle qu'elle fonctionne; mpris, rvolte d'autant plus vifs qu'il conoit la justice de faon plus nave, comme absolument pure. L'ingalit du dveloppement individuel, de la formation, et par l de la comptence, celle des ressources ncessaires  la propagande, l'obstruction au changement pratique en rgime dmocratique par les lments conservateurs, l'action constante de forces politiques incontrlables, empchent videmment le citoyen, dans une dmocratie capitaliste, de ressentir l'tat comme un prolongement direct de sa propre personne, li  sa libert et  sa responsabilit personnelle. La ralit politique s'impose  lui de l'extrieur, ses prises sur elles sont nulles ou trop faibles, la seule diffrence essentielle, lui semble-t-il, avec des rgimes imposs d'en haut, c'est que la dmocratie reste anonyme. Rien d'tonnant ds lors s'il est parfois assez dispos  sortir de cet anonymat,  voir s'incarner en un homme cette force qui, de toute faon, pse sur lui.",
+      "bbox": {
+        "x_pct": 29.0,
+        "y_pct": 110.0,
+        "w_pct": 846.0,
+        "h_pct": 393.0
+      },
+      "changed": true,
+      "change_reason": "Corrected the OCR transcription text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La prpondrance des forces conomiques et des conflits dcoulant de leur ingalit altre aussi profondment la justification que nous avons donne du jeu des partis. Selon l'analyse faite plus haut, le parti, idalement, devrait rester un instrument politique auquel l'individu n'engage qu'une partie de son tre et de sa vie  mme si, sur le plan particulier o cet engagement est pris, il peut arriver qu'il exige l'enjeu de son tre et de sa vie tout entiers. Encore cet engagement reste-t-il conditionnel, subordonn toujours  la libert individuelle aux prises avec les valeurs absolues. Nous avons vu aussi que le parti ne peut gure se maintenir dans cette puret, que les ncessits de la lutte, les expriences affectives, les aspirations au symbole, tendent  le doter d'une  me collective  l'assimilant plus ou moins, et non sans dangers, aux entits sociales vagues auxquelles l'individu se trouve li, non pour des raisons, non par suite d'un choix, mais par les donnes mmes de son destin. Or, en rgime capitaliste, tout parti est menac de  prendre substance , non seulement sur le plan idaux sociaux, mais  l'extrme oppos, celui des intrts. Il ne",
+      "bbox": {
+        "x_pct": 29.0,
+        "y_pct": 521.0,
+        "w_pct": 849.0,
+        "h_pct": 369.0
+      },
+      "changed": true,
+      "change_reason": "Corrected the OCR transcription text content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was heavily garbled and required manual correction.",
+    "Page header was misidentified as part of the paragraph body.",
+    "Page number was missing from the initial region list and needed classification."
+  ],
+  "doc_id": "330",
+  "page": 213,
+  "elapsed_seconds": 7.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

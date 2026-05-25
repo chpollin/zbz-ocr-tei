@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "30 Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 134.0,
+        "y_pct": 39.0,
+        "w_pct": 526.0,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "Header elements detected as paragraphs/text need to be marked as _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "viele Dinge gibt, dass man verzweifelt ist und nicht weiß was da wirklich, was da echt und absolut ist. Ist überhaupt nichts absolut? Kann man irgendetwas wählen, wie man in einem Geschäft irgendetwas wählt, irgendwelche Entscheidungen treffen, oder gibt es absolute Entscheidungen? Ich sage dann Folgendes: Ich glaube, es ist eine ziemlich faule Art, besser werden zu wollen, indem man versucht, sozusagen durch Fortschritte im Modell zu erfahren, wie man im eigenen hic et nunc handeln soll, welche Prinzipien man anwenden soll. Ich glaube, hier geht es um etwas anderes, weil es um Geschichte geht und wir selbst geschichtlich sind.",
+      "bbox": {
+        "x_pct": 13.006,
+        "y_pct": 9.482,
+        "w_pct": 80.123,
+        "h_pct": 18.15
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt ein kleines Buch von Koyré Von der geschlossenen Welt zum unendlichen Universum. In diesem kleinen Buch schildert Koyré, wie verschieden Galilei und Giordano Bruno gehandelt haben, als die Kirche auf sie Druck ausgeübt hat. Galilei wurde angegriffen, weil er sagte, die Erde sei rund und sie drehe sich um die Sonne. Giordano Bruno sagte dasselbe. Doch Galilei hat es später unter dem Druck der Drohungen zurückgenommen, und man erzählt sich, daß er sich dann abgewendet und gesagt hat: „Und sie dreht sich doch.“ Warum hat er das getan? Galilei tat es, weil er dachte, es sei sinnlos, dafür zu sterben, denn sie dreht sich doch weiter. Wenn ich glaubte, sie höre auf, sich zu drehen, dann wäre es nötig, das festzuhalten, denn es ist nötig, daß sie sich dreht. Aber da sie sich sowieso dreht, brauche ich dafür nicht zu sterben. Deswegen ist er nicht der große geopferte Held gewesen; aus Weisheit, würde ich fast sagen. Das bedeutet also, für ihn war die Tatsache, daß die Erde sich dreht, eine empirische Tatsache, und für eine empirische Tatsache lohnt es sich nicht zu sterben. Das war kein tiefer Entschluß. Es war einfach wahr, und es war nicht nötig, dieses Opfer zu bringen.",
+      "bbox": {
+        "x_pct": 12.798,
+        "y_pct": 27.22,
+        "w_pct": 80.368,
+        "h_pct": 34.071
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and fixed content representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "War es anders. Er hat sich gänzlich geweigert, irgendetwas zurückzunehmen, und er ist auf dem Scheiterhaufen verbrannt worden. Für Giordano Bruno war die empirische Tatsache nicht das Wichtige – sie wäre von dem, was er sagte, nicht angetastet worden –, sondern für ihn ging es um den Gelehrten, der Dinge so sagt, wie er sie versteht und nicht anders. Das ist also ein kategorischer Imperativ. Die Erde würde sich natürlich weiterdrehen, aber ich wäre kein Gelehrter mehr, wenn ich so etwas zurücknähme. Das ist also eine Schuld, die er, nicht gegenüber der Erde, sondern gegenüber der wissenschaftlichen Wahrheit empfand, und dadurch hat er etwas anderem dienen wollen als Galilei. Er hat das Recht der Wissenschaft, sich offen auszusprechen, verteidigt. Sie verstehen nun auch, wie eng das Empirische und das Ethische zusammenhängen. Für das Ethische hat es einen Zweck, sich zu opfern, während das Empirische als",
+      "bbox": {
+        "x_pct": 12.724,
+        "y_pct": 60.666,
+        "w_pct": 80.196,
+        "h_pct": 26.151
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and fixed content representation."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Docling OCR output was severely truncated in two regions.",
+    "Page header detected as paragraph text.",
+    "Inconsistent and incomplete OCR content in all text blocks."
+  ],
+  "doc_id": "2990",
+  "page": 23,
+  "elapsed_seconds": 6.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

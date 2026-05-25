@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "102 HEGEL RESTE ENRACINÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Top header containing page number and section title correctly identified as _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Providence. La forme de gouvernement parfaite, c'est la monarchie; la vraie religion, c'est celle de l'Église luthérienne; la vraie philosophie, c'est celle de Hegel - et c'est à cette connaissance que vise toute l'histoire.",
+      "bbox": {
+        "x_pct": 13.554,
+        "y_pct": 12.488,
+        "w_pct": 76.401,
+        "h_pct": 12.488
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-misspelled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais une philosophie comme celle-ci ne pouvait être métaphysiquement vraie qu'à la condition de rester bornée par la situation réelle de l'auteur, et enracinée dans les circonstances contemporaines. On peut imaginer une situation historique idéale, on peut la justifier, en faire le but de son action et de sa vie, la décrire comme possibilité désirée — mais seulement comme possibilité. La philosophie de Hegel ignore les possibilités; elle ne fait jamais d'hypothèses; et si elle imaginait une organisation humaine idéale, celle-ci apparaîtrait aussitôt, dans un tel cadre, comme nécessaire. Or présenter un rêve historique comme devant se réaliser nécessairement, c'est faire violence au présent et formuler une affirmation gratuite. Hegel aurait pu s'affranchir de sa situation empirique et livrer ainsi à son entendement et à son imagination une réalité vide dans laquelle ils auraient construit aisément des situations « nécessaires ». Il ne l'a pas fait, protégé qu'il était, dans ce problème comme dans d'autres, par la consistance, le caractère concret et solide de sa propre réalité dans le monde. Puisqu'il fallait à son histoire un achèvement nécessaire, ce ne pouvait être que son temps. Ce n'est qu'en restant si profondément, si étroitement enracinée dans",
+      "bbox": {
+        "x_pct": 13.81,
+        "y_pct": 25.357,
+        "w_pct": 76.551,
+        "h_pct": 64.156
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match image."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original JSON labels for page header missing.",
+    "Original text content was heavily truncated/corrupted by OCR.",
+    "Header was missing from the regions list."
+  ],
+  "doc_id": "20",
+  "page": 104,
+  "elapsed_seconds": 3.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

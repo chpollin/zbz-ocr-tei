@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE CERCLE VICIEUX 135",
+      "bbox": {
+        "x_pct": 372.0,
+        "y_pct": 74.0,
+        "w_pct": 257.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header and page number need to be filtered as page_header/page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "méthode particulière, pour « transcender » aussitôt celle dont il venait de se servir.",
+      "bbox": {
+        "x_pct": 12.304,
+        "y_pct": 11.81,
+        "w_pct": 75.648,
+        "h_pct": 4.857
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le système et la méthode, dont Kant faisait lui-même des critères scientifiques, sa philosophie ne les a donc pas; non que l’auteur en ait été incapable, mais parce qu’étant ce qu’elle était, elle ne pouvait pas les avoir. Kant se place aux limites de la raison. Là, seule peut être apodictique la limite elle-même, c’est-à-dire la partie exclusivement négative de la critique qui dit à l’entendement : pas plus loin. Encore cette limite n’est-elle pas logiquement démontrée, mais plutôt éprouvée par l’expérience : en suivant Kant, on s’y heurte.",
+      "bbox": {
+        "x_pct": 12.003,
+        "y_pct": 16.829,
+        "w_pct": 76.099,
+        "h_pct": 28.381
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Se plaçant aux limites, Kant se rend coupable de cercles vicieux. Nietzsche en relevait un, en remarquant le rôle que joue dans cette philosophie la notion de possibilité. Kant se demande : comment le monde des objets est-il possible pour nous? Mais qu’est-ce que la possibilité? Il en fait une catégorie. D’autre part il se demande comment les catégories sont possibles. Finalement il reste : la possibilité est possible par la possibilité. — Ou encore : la valeur de l’aperception transcendentale se fonde sur la connaissance; la valeur de la connaissance, sur l’aperception transcendentale.",
+      "bbox": {
+        "x_pct": 11.792,
+        "y_pct": 44.981,
+        "w_pct": 76.31,
+        "h_pct": 30.448
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais le cercle vicieux est une forme inévitable de la pensée philosophique (cf. plus haut la discussion de l’argument ontologique). A la limite, on ne peut plus expliquer l’objet ultime de la pensée par autre chose que par lui-même. On tourne en lui. Il y a des",
+      "bbox": {
+        "x_pct": 11.747,
+        "y_pct": 75.838,
+        "w_pct": 76.31,
+        "h_pct": 12.857
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header were not correctly classified.",
+    "OCR text was heavily truncated in the detected regions."
+  ],
+  "doc_id": "20",
+  "page": 137,
+  "elapsed_seconds": 4.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

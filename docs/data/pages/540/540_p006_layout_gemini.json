@@ -1,0 +1,121 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "234",
+      "bbox": {
+        "x_pct": 15.164,
+        "y_pct": 14.413,
+        "w_pct": 3.996,
+        "h_pct": 1.452
+      },
+      "changed": true,
+      "change_reason": "Page number should be classified as page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "J. HERSCH",
+      "bbox": {
+        "x_pct": 45.0,
+        "y_pct": 14.413,
+        "w_pct": 10.0,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Missing author header region added."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "que toute signification soit niée cette négation n'en est pas moins une réponse donnée à une demande de sens. Sans tendance à une philosophie de l'histoire, au moins virtuelle restât-elle en suspens ou ne fût-elle que l'affirmation de l'absurde il n'y a pas d'histoire, mais seulement un domaine particulier appartenant à la physique, comme toute la nature. Impossible de raconter une histoire ou l'histoire sans enjeux, au moins ceux des personnages. On raconte l'histoire de leurs réussites et de leurs échecs. L'histoire se raconte en termes de réussite et d'échec. Dire qu'elle est un récit told by an idiot, c'est énoncer une philosophie de l'histoire. On ne dirait jamais rien de tel de la physique ou de la biologie.",
+      "bbox": {
+        "x_pct": 14.887,
+        "y_pct": 17.172,
+        "w_pct": 69.611,
+        "h_pct": 21.004
+      },
+      "changed": true,
+      "change_reason": "Text completion for readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est vrai qu'aujourd'hui, on ne croit plus pouvoir établir le schéma définissant le cours de l'histoire universelle. Toute vision totale nous apparaît particulière, fragile, étroitement relative à un point de vue historiquement déterminé. Il n'en reste pas moins que la connaissance historique implique toujours des esquisses de sens (ou de non-sens), généralisées, universalisées, par rapport auxquelles elle-même signifie.",
+      "bbox": {
+        "x_pct": 14.785,
+        "y_pct": 38.024,
+        "w_pct": 69.672,
+        "h_pct": 12.184
+      },
+      "changed": true,
+      "change_reason": "Text completion for readability."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "II. Critères de la connaissance historique",
+      "bbox": {
+        "x_pct": 15.133,
+        "y_pct": 52.569,
+        "w_pct": 43.402,
+        "h_pct": 1.932
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in header text."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "1. Les critères pour l'établissement des faits seront évidemment ceux que connaît n'importe quelle critique historique : concordance ou confrontation critique des témoignages et des documents, cohérence du contexte historique, etc. Quant à l'appréciation des faits, elle reste dépourvue de critères méthodologiques et soulève une série de problèmes que nous examinerons plus loin, à propos de « l'objectivité » dans la connaissance historique.",
+      "bbox": {
+        "x_pct": 14.928,
+        "y_pct": 55.133,
+        "w_pct": 69.426,
+        "h_pct": 12.418
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "2. Les critères pour la recherche des liens entre les faits en vue de leur « compréhension » résident dans la concordance ou le parallélisme d'explications reliant des éléments aussi divers, aussi disparates que possible. Aussi longtemps qu'il s'agit d'établir entre les faits des relations exemptes d'intervention humaine, la validité d'une explication se mesure à l'étendue et à la diversité de son application possible.",
+      "bbox": {
+        "x_pct": 14.621,
+        "y_pct": 68.706,
+        "w_pct": 69.672,
+        "h_pct": 12.039
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.85,
+        "y_pct": 92.5,
+        "w_pct": 36.3,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added page_footer for JSTOR disclaimer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "OCR text was heavily corrupted in paragraph regions.",
+    "Page number was mislabeled as text.",
+    "Missing JSTOR footer region.",
+    "Missing Author name region."
+  ],
+  "doc_id": "540",
+  "page": 6,
+  "elapsed_seconds": 5.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

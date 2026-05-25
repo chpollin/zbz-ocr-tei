@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE MÉTIER DE PHILOSOPHE",
+      "bbox": {
+        "x_pct": 27.26,
+        "y_pct": 26.536,
+        "w_pct": 41.257,
+        "h_pct": 2.222
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'existence du philosophe est très difficile à justifier. D'abord il faut constater qu'il ne pose guère que des problèmes insolubles (si on parvient à les résoudre, ils deviennent des problèmes scientifiques). À quoi bon cela ? Ce terme orgueilleux de philosophia perennis ne désigne-t-il pas justement l'insolubilité de problèmes qui, précisément parce qu'ils sont insolubles, ne cessent de se poser ? On a dit de la philosophie qu'elle était « un savoir désintéressé ». Je n'aime pas cette expression : en fait, c'est le savoir le plus intéressé qui soit. Il s'agit du plus intime du moi, de sa condition, de sa raison d'étre, du sens de ses engagements, de ses liens, de sa liberté. Seulement ce savoir ressemble à un non-savoir.",
+      "bbox": {
+        "x_pct": 15.23,
+        "y_pct": 34.399,
+        "w_pct": 65.189,
+        "h_pct": 18.991
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment le philosophe se justifiera-t-il devant la société ? Il ne peut pas montrer de résultats : il n'est capable ni d'améliorer les conditions de vie, ni de contribuer au progrès technique, il ne procure aucun accroissement de pouvoir, ni même, à dire vrai, de savoir. Le philosophe est un consommateur, comme tout homme vivant en société, il use des biens produits par les autres, et il semble n'en produire aucun. Il ne procure même pas du plaisir : les ouvrages de philosophie sont d'une lecture ardue. Il ne donne pas non plus les certitudes qui assureraient la paix de l'âme, comme peuvent le faire les autorités des Églises. Il ne fournit pas davantage des règles d'action privée ou politique. Là où une telle tentative fut faite, où le pouvoir voulut se fonder sur une doctrine (si bien qu'on put parler de « logocraties populaires »), les résultats ont été peu encourageants.",
+      "bbox": {
+        "x_pct": 15.093,
+        "y_pct": 53.293,
+        "w_pct": 65.431,
+        "h_pct": 23.1
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais surtout, comment le philosophe peut-il se justifier devant lui-même ? Il est impossible de dire de soi : « Je suis philosophe. » Chose curieuse, la situation, ici, se renverse : face à l'objet, face à la société, le métier de philosophe paraissait indéfendable parce",
+      "bbox": {
+        "x_pct": 15.254,
+        "y_pct": 75.897,
+        "w_pct": 65.06,
+        "h_pct": 7.197
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Leçon inaugurale de professeur extraordinaire de philosophie à la Faculté des Lettres de l'Université de Genève, lue le 1er novembre 1956.",
+      "bbox": {
+        "x_pct": 19.178,
+        "y_pct": 84.974,
+        "w_pct": 61.217,
+        "h_pct": 3.02
+      },
+      "changed": true,
+      "change_reason": "Corrected fragmented text transcription"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Transcription of paragraph contents was heavily truncated and corrupted.",
+    "Footer text was incorrectly transcribed as 'N. B. de professeur...' instead of the full leçon inaugurale title."
+  ],
+  "doc_id": "390",
+  "page": 2,
+  "elapsed_seconds": 5.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

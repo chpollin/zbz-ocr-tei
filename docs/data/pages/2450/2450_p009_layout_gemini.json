@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sich gegenseitig nicht mehr ausschlieen. Das ist das Reich der Musik.",
+      "bbox": {
+        "x_pct": 12.83,
+        "y_pct": 6.584,
+        "w_pct": 81.135,
+        "h_pct": 4.172
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Zeit, in der ich lebe, ist nicht das letzte Wort der Zeit, kann es nicht sein. Die Zeit hat eine solche Macht, bt einen so totalen, universellen Griff ber uns aus, da wir unfhig sind, uns irgend etwas auszudenken oder vorzustellen, was ihr nicht unterworfen wre. Aber es gibt eine Lcke: Wir knnen auerhalb der Zeit nichts erleben, nichts denken, nichts  aber sie selbst kann nicht das sein, was sie uns zu sein scheint. Wir haben es ja gesehen: Augustin hat schon gezeigt, wie unsere Vorstellung der Zeit, in der wir leben, ins Nichts des Undenkbaren zusammenbricht. brigens, sobald wir versuchen, die Zeit, in der wir leben, auf die Kontinuitt einer gedchtnis- und erwartungslosen Natur anzuwenden, verstehen wir nichts mehr.",
+      "bbox": {
+        "x_pct": 12.744,
+        "y_pct": 10.815,
+        "w_pct": 81.221,
+        "h_pct": 28.438
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated in the provided initial input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Zeit des Physikers ist nicht die Zeit, in der wir leben: Fr ihn spielen die beiden Perspektiven von Vergangenheit und Zukunft, die der jetzige Augenblick trennt und verbindet, keine Rolle, sondern nur die eindimensionalen Abstnde zwischen einem Vorher und einem Nachher. Er kennt hchstens die Gegenwart des beobachtenden Physikers, die das Moment einer Handlung ist in einer erlebten Zeit. Aber die drei Perspektiven der Zeit, die vom Menschen erlebt werden, der um seinen Tod wei, sind ganz anderer Natur. Sie enthllen schon selbst die Tatsache, da die Zeit das letzte Wort der Zeit nicht sein kann.",
+      "bbox": {
+        "x_pct": 12.888,
+        "y_pct": 39.288,
+        "w_pct": 81.078,
+        "h_pct": 24.232
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated in the provided initial input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Augustin bezeichnete die Vergangenheit als das, was nicht mehr ist, und dies scheint uns zunchst selbstverstndlich. Und doch erlebt niemand die Zeit, indem er die Vergangenheit auf ein Nichts reduziert. Niemand. Im Gegenteil: Nur in der Vergangenheit gibt es etwas, was ist, gibt es endgltiges Sein, Sein, das endgltig so ist, wie es gewesen ist. An dem man nichts mehr ndern kann. Die Vergangenheit ist nunmehr so, wie sie gewesen ist, und tatschlich zweifelt niemand daran. Was wre sonst die historische Wahrheit, um die sich die Historiker so sehr bemhen?",
+      "bbox": {
+        "x_pct": 12.931,
+        "y_pct": 63.605,
+        "w_pct": 81.034,
+        "h_pct": 21.605
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated in the provided initial input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn die Vergangenheit ins Nichts sinken und zu Nichts werden wrde, knnte man dank der Nachgiebigkeit des Nichts",
+      "bbox": {
+        "x_pct": 12.974,
+        "y_pct": 85.468,
+        "w_pct": 80.991,
+        "h_pct": 4.489
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated in the provided initial input."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "318",
+      "bbox": {
+        "x_pct": 12.974,
+        "y_pct": 92.4,
+        "w_pct": 3.7,
+        "h_pct": 3.2
+      },
+      "changed": true,
+      "change_reason": "Labeled incorrectly as text/paragraph, corrected to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Most paragraphs had OCR truncation/errors.",
+    "Page number at the bottom was mislabeled as paragraph text."
+  ],
+  "doc_id": "2450",
+  "page": 9,
+  "elapsed_seconds": 6.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

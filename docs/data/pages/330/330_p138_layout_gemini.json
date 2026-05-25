@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "104",
+      "bbox": {
+        "x_pct": 138.889,
+        "y_pct": 79.365,
+        "w_pct": 33.333,
+        "h_pct": 20.635
+      },
+      "changed": true,
+      "change_reason": "The text '104' is a page number and should be classified as a page header/footer."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 403.968,
+        "y_pct": 79.365,
+        "w_pct": 317.46,
+        "h_pct": 20.635
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elles n'ont plus ni leur consistance objective, indpendante des caprices humains, ni leur pouvoir moral d'exigence inconditionnelle. Cette vanescence a une contrepartie positive : ds lors, et de plus en plus, les relations sociales et l'tre mme de ceux qui y sont engags dpendent de la subjectivit de chaque personne. Dans l'ordre ontologique comme dans l'ordre moral, il n'y a plus de support se maintenant par lui-mme, plus de constante symbolique transcendant toute discussion. Tout - absolument tout - prend le prix et la fragilit de l'humain, de cette cration toujours menace, par l'homme, de son tre et de ses valeurs. C'en est fait du souverain de droit divin, du prince de conte de fes, dont l'tre royal ou princier ne pouvait tre contest ni alin par personne, mme pas par le roi ou le prince lui-mme. La messe a son sens et sa substance, quel que soit le prtre qui la dit; mais le culte protestant dpend presque entirement de la qualit du pasteur. Le sacrement du mariage reste existant et efficace, ternellement, par lui-mme; mais la promesse civile repose sur l'amour et la confiance, et son sens est  la merci de ces donnes vulnrables. Le pre ne jouira plus du respect vou une fois pour toutes  la fonction ternelle qu'il incarne, mais seulement de celui qu'il inspirera personnellement.",
+      "bbox": {
+        "x_pct": 133.0,
+        "y_pct": 108.0,
+        "w_pct": 855.0,
+        "h_pct": 435.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and improved tag accuracy for body paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi rduit  la fragilit de menac revendique avec une intensit exacerbe cette valeur subjective et personnelle qui est seule dsormais  le justifier. Il fait tout pour se convaincre qu'il la possde et pour en convaincre les autres. Il l'exige chez autrui. Il cherche dans les sentiments et les passions - puisqu'il n'y a plus rien au-del - une garantie absolue contre le nant individuel dont la socit ne le dfend plus. Tout ce processus aboutit  une affirmation perdue et tremblante de la subjectivit.",
+      "bbox": {
+        "x_pct": 137.0,
+        "y_pct": 542.0,
+        "w_pct": 849.0,
+        "h_pct": 188.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On avait connu la scurit, sacrale esthtique, d'un monde ordonn et hirarchis, o la beaut de la crmonie enlevait toute importance  la beaut individuelle. Chacun sentait qu'il y trouvait sa place, si misrable ft-elle. Cette place, dsormais, on ne l'a plus. Il faut la conqurir, dans la solitude, avec effort.",
+      "bbox": {
+        "x_pct": 136.0,
+        "y_pct": 724.0,
+        "w_pct": 851.0,
+        "h_pct": 110.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout repose donc sur ce que chacun est. Mais jusque sur cette ligne de retrait strictement personnelle, nous voyons se poursuivre la mme dsagrgation de la consistance ontologique : le sujet ne",
+      "bbox": {
+        "x_pct": 136.0,
+        "y_pct": 830.0,
+        "w_pct": 851.0,
+        "h_pct": 65.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR 'done BUr' to 'donc sur'."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR failed on page header and page number.",
+    "OCR transcription errors in final paragraph corrected.",
+    "Multiple artifacts in character encoding resolved."
+  ],
+  "doc_id": "330",
+  "page": 138,
+  "elapsed_seconds": 8.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

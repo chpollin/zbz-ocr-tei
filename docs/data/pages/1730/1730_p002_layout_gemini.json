@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "für gleiche Arbeit gleichen Lohn, ohne Mogelei. Und natürlich auch die Sicherheit des Arbeitsplatzes bei Mann und Frau gleich sein. Aber es bleibt dabei: Die Frau ist weiterhin eine Frau und damit sie es bleiben kann, muss man ihr helfen, ihr Berufsleben und ihre Mutterschaft entsprechend planen zu können, auch dann, wenn dies schwierig ist.",
+      "bbox": {
+        "x_pct": 8.396,
+        "y_pct": 12.176,
+        "w_pct": 38.859,
+        "h_pct": 8.39
+      },
+      "changed": true,
+      "change_reason": "OCR transcription was completely incorrect, replaced with accurate transcription of German text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La condition féminine aujourd'hui: Vrais problèmes; fausses solutions",
+      "bbox": {
+        "x_pct": 53.068,
+        "y_pct": 8.987,
+        "w_pct": 35.877,
+        "h_pct": 8.256
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prof. Jeanne Hersch, Genève",
+      "bbox": {
+        "x_pct": 65.63,
+        "y_pct": 23.547,
+        "w_pct": 3.94,
+        "h_pct": 1.386
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output to include the author's name and location."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord je voudrais vous dire un certain nombre de choses banales. Parce que je crois que les choses banales sont très souvent oubliées aujourd'hui. La première c'est que la condition féminine est l'une des deux modalités de la condition humaine. Et comme dans toute condition humaine, vous avez dans la condition féminine un niveau qui appartient à la nature, un niveau qui appartient à la société et à l'histoire, et un niveau de liberté personnelle.",
+      "bbox": {
+        "x_pct": 52.713,
+        "y_pct": 30.253,
+        "w_pct": 33.864,
+        "h_pct": 10.626
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to proper French paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces trois niveaux, nature, société/histoire et liberté coexistent en tout être humain et par conséquent aussi dans l'être féminin. Mais ce qu'il faut bien voir d'emblée, c'est qu'aucun de ces termes n'annule les deux autres. On ne peut pas, au nom des données de la nature dans la condition féminine, rejeter ce qui est du domaine de la société et de l'histoire, ou du domaine de la liberté; ou bien, au nom de la dimension qui concerne la société et l'histoire, nier le côté nature et le côté liberté; ou bien, au niveau de la liberté, considérer comme nul et non avenu tout qui est du domaine de la nature et du domaine de la société et de l'histoire. Cela est impossible, ce serait nager en pleine irréalité. Mais je crois qu'il faut comprendre quelque chose de plus. Non seulement ces trois niveaux doivent être reconnus et considérés tous les trois, mais encore ils s'interpénètrent. Il y a ce que les Anglais appellent \"pervasiveness\" entre ces trois niveaux. Ils se pénètrent les uns les autres. Aucun n'existe isolément. Et c'est pourquoi il est absurde de vouloir découper cette triple nature, accepter l'une, exclure l'autre, par exemple en disant \"Mais cela ce n'est qu'un modèle traditionnel\", entendant par là qu'un modèle traditionnel,",
+      "bbox": {
+        "x_pct": 51.378,
+        "y_pct": 48.137,
+        "w_pct": 39.935,
+        "h_pct": 42.474
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to proper French paragraph."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "OCR output was severely degraded by artifacts/misidentification, leading to garbled text in most paragraphs.",
+    "Detected labels are generally correct, but the text content requires total cleanup."
+  ],
+  "doc_id": "1730",
+  "page": 2,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

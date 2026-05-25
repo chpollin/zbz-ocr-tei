@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pas à l'heure de mon rendez-vous avec mon présent, à l'heure zéro.",
+      "bbox": {
+        "x_pct": 22.536,
+        "y_pct": 11.978,
+        "w_pct": 65.449,
+        "h_pct": 5.699
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Minuscule heure zéro, limite conventionnelle résultant de divers compromis entre les calculs imposés par les révolutions de la terre autour du soleil, qui n'est même pas simultanée pour tous les hommes vivant sur notre boule ronde, presque nulle entre ce qui n'est plus et ce qui n'est pas encore, c'est en toi et par toi pourtant que l'an passé et tout le passé, est encore; c'est en toi et par toi que l'an futur est déjà; c'est en toi et par toi que l'éternité, si elle existe, plonge dans notre temps.",
+      "bbox": {
+        "x_pct": 22.403,
+        "y_pct": 19.024,
+        "w_pct": 66.104,
+        "h_pct": 31.061
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete/truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Conventionnelle, mais privilégiée, parce que nous allons la fêter ensemble, en nous fêtant les uns les autres, va être dans quelques minutes l'heure zéro. Laissons cette fête nous gagner tous et nous unir, afin qu'un moment presque nul toute solitude s'abolisse, même pour ceux qui sont seuls, enfermés par l'abandon, la maladie ou la pauvreté. Mais en même temps restons chacun seul jusqu'au cœur de la",
+      "bbox": {
+        "x_pct": 22.536,
+        "y_pct": 51.01,
+        "w_pct": 65.85,
+        "h_pct": 25.758
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete/truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "60",
+      "bbox": {
+        "x_pct": 22.825,
+        "y_pct": 82.529,
+        "w_pct": 3.731,
+        "h_pct": 3.493
+      },
+      "changed": true,
+      "change_reason": "Re-labeled page number from text to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Significant OCR truncation in original provided text fields",
+    "Page number at bottom not initially labeled as page_footer"
+  ],
+  "doc_id": "2260",
+  "page": 58,
+  "elapsed_seconds": 4.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

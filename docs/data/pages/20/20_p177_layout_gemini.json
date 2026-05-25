@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LÉLÉMENT GÉNÉRAL, 175",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page headers and numbers should be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "teindre, qu'il vienne du passé ou du présent, doit être en quelque sens que ce soit général. Mais cet élément général est hétérogène; nous en distinguons trois formes (I) :",
+      "bbox": {
+        "x_pct": 10.542,
+        "y_pct": 11.506,
+        "w_pct": 75.708,
+        "h_pct": 10.448
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1° L’élément général est objectif dans les formes religieuses primitives; la métaphysique y prend l’aspect de la réalité empirique et de l’objectivité; ces formes, on peut les savoir. C’est la mythologie;",
+      "bbox": {
+        "x_pct": 10.346,
+        "y_pct": 21.668,
+        "w_pct": 75.753,
+        "h_pct": 18.265
+      },
+      "changed": true,
+      "change_reason": "Merged mis-segmented paragraphs for correct reading order."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "2° On trouve dans la transcendance On a cette s'assure de sa croyance en la partageant avec d'autres croyants. C’est la théologie.",
+      "bbox": {
+        "x_pct": 10.437,
+        "y_pct": 32.316,
+        "w_pct": 75.361,
+        "h_pct": 15.319
+      },
+      "changed": true,
+      "change_reason": "Merged mis-segmented paragraphs."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "3° La transcendance n’est ni générale comme les objets de la « conscience en général », ni historique comme l’existence qui sans l’historicité n’est plus elle-même. Elle apparaît donc à l’existence comme l’unité inconcevable du général et du particulier qui n’a rien en elle ni hors d’elle pour la distinguer. Là où on la pense au moyen d’une distinction ou d’une image, elle est déjà apparence historique, et non plus universelle. La troisième forme de la généralité est celle où, en transcendant l’unité paradoxale du général et du particulier, et par mon impuissance même à la penser, je pense l’être de la transcendance comme ce qui est soi-même et ne peut m’appartenir. C’est la philosophie.",
+      "bbox": {
+        "x_pct": 9.895,
+        "y_pct": 47.283,
+        "w_pct": 76.145,
+        "h_pct": 36.006
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(I) Philosophie, III, p. 21.",
+      "bbox": {
+        "x_pct": 14.167,
+        "y_pct": 86.397,
+        "w_pct": 28.408,
+        "h_pct": 2.193
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled footnote."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Docling mis-segmented the first few paragraphs causing fragmented OCR text.",
+    "Page headers and page numbers were not correctly identified/filtered.",
+    "Footnote was incorrectly labeled as text.",
+    "OCR text quality is poor/fragmented."
+  ],
+  "doc_id": "20",
+  "page": 177,
+  "elapsed_seconds": 5.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

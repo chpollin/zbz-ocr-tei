@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "132",
+      "bbox": {
+        "x_pct": 108.0,
+        "y_pct": 77.0,
+        "w_pct": 33.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 393.0,
+        "y_pct": 77.0,
+        "w_pct": 213.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lettres la mienne dabord, la sienne ensuite et à leur dire simplement que cette course aurait lieu.",
+      "bbox": {
+        "x_pct": 10.635,
+        "y_pct": 12.164,
+        "w_pct": 80.716,
+        "h_pct": 5.321
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le train arrive. De sa masse, de son bruit, de mes yeux refusent tout ce qui n'est pas mon père et ma mère. Les voici sur le quai, encore loin de moi. Ils approchent. Ils sont venus pour ma fête et ils ont des paquets dans les mains. Ils sont venus exprès. Je cours vers eux, je les embrasse, ensuite seulement je les vois. Et dès que je vois leurs visages, je sais que rien ne sera comme je l'ai rêvé et qu'ils ne ressemblent pas et ne ressembleront jamais au lac et aux montagnes. Ils me sourient, ils m'aiment, et je redeviens volontiers une petite fille. Mais il y a ces lettres qu'il faudra leur montrer, et voici leurs yeux qui se poseront sur les lignes.",
+      "bbox": {
+        "x_pct": 10.581,
+        "y_pct": 17.231,
+        "w_pct": 80.905,
+        "h_pct": 30.879
+      },
+      "changed": true,
+      "change_reason": "Extracted full text from image for better accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Leurs yeux. Ils sont bons, indulgents, aimants, leurs yeux. Mais ils me font peur parce qu'ils sont tellement assurés. Ils regardent une chose, puis une autre, on dirait qu'il n'y a rien entre les deux, et la chose qu'ils regardent, ils la voient tellement bien.",
+      "bbox": {
+        "x_pct": 10.703,
+        "y_pct": 47.76,
+        "w_pct": 80.689,
+        "h_pct": 12.287
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sûrement la chose doit sentir ce regard. Il y a un instant, elle croyait en toutes sortes de possibles; elle s'imaginait parfois avoir une surface mobile selon la lumière ou la chaleur, elle esquissait de tout petits mouvements vers ce qu'elle aurait voulu atteindre. Et puis, voilà ce regard qui sans le faire exprès, simplement parce qu'il est si clair, la réduit strictement à elle-même, exclut tout le reste, la cloue à sa place.",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 60.369,
+        "w_pct": 80.892,
+        "h_pct": 20.378
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est moi surtout, la chose qu'ils regardent. Maman lit tout sur moi. Elle a vu tout de suite que mes mains ont",
+      "bbox": {
+        "x_pct": 10.365,
+        "y_pct": 80.406,
+        "w_pct": 80.811,
+        "h_pct": 5.227
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Page number and header were not correctly labeled.",
+    "Text transcription in OCR was heavily corrupted/hallucinated.",
+    "Multiple paragraphs had incorrect text content compared to source image."
+  ],
+  "doc_id": "40",
+  "page": 130,
+  "elapsed_seconds": 5.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

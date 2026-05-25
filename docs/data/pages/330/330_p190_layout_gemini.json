@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "156",
+      "bbox": {
+        "x_pct": 11.699,
+        "y_pct": 82.264,
+        "w_pct": 3.4,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header / _filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 38.5,
+        "y_pct": 82.264,
+        "w_pct": 30.5,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header / _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le camp de concentration ou la mort. Les deux tendant à se confondre.",
+      "bbox": {
+        "x_pct": 11.699,
+        "y_pct": 11.381,
+        "w_pct": 83.886,
+        "h_pct": 4.394
+      },
+      "changed": true,
+      "change_reason": "Cleaned text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que reste-t-il aujourd'hui de ce marxisme; vive encore réellement dans la conscience des socialistes?",
+      "bbox": {
+        "x_pct": 11.797,
+        "y_pct": 19.608,
+        "w_pct": 84.624,
+        "h_pct": 4.545
+      },
+      "changed": true,
+      "change_reason": "Cleaned text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ensuite la prise de conscience historique ne cesse de s'approfondir, non chez les socialistes ni chez les communistes seuls, mais chez tous nos contemporains. Il s'agit là d'un changement profond qui se produit dans la manière même dont les hommes conçoivent leur situation dans l'univers et nul ne peut encore en prévoir les effets. Quelques remarques peuvent déjà étre faites.",
+      "bbox": {
+        "x_pct": 11.379,
+        "y_pct": 37.968,
+        "w_pct": 85.0,
+        "h_pct": 13.075
+      },
+      "changed": true,
+      "change_reason": "Cleaned text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En premier le peuple tout entier a trouvé dans l'histoire une raison d'espérer et d'agir. L'histoire, c'est son histoire, non seulement parce qu'il la vit et la subit, mais parce que, dans une certains mesure, elle dépend de lui, elle est son affaire. Le sens historique, loin de renforcer en lui le sentiment de la fatalité, lui a imposé la tâche de se rendre libre.",
+      "bbox": {
+        "x_pct": 11.281,
+        "y_pct": 50.481,
+        "w_pct": 85.0,
+        "h_pct": 12.888
+      },
+      "changed": true,
+      "change_reason": "Cleaned text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En revanche, la chute des valeurs dans le temps ne s'est produite jusqu'ici que pour certains philosophes, certains politiciens, certains artistes. Le ciel moral du peuple garde ses étoiles fixes, — non des principes, mais des valeurs. Le relativisme et la jonglerie, dans le domaine moral, restent l'affaire d'une toute petite classe d'esprits frivoles ou joueurs. Le peuple en est à peine touché. Et certes les socialistes pèchent plutôt par excès de solennité que de jeu.",
+      "bbox": {
+        "x_pct": 11.184,
+        "y_pct": 62.834,
+        "w_pct": 85.153,
+        "h_pct": 16.872
+      },
+      "changed": true,
+      "change_reason": "Cleaned text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le souci des facteurs économiques reste prépondérant. La volonté de ne se laisser distraire par aucun rêve, si beau, si noble, si consolant soit-il, du devoir de corriger d'abord l'injustice sur ce plan, est absolument vivante dans le socialisme d'aujourd'hui, tant dans les partis comme tels que dans l'esprit de chaque militan",
+      "bbox": {
+        "x_pct": 11.184,
+        "y_pct": 79.144,
+        "w_pct": 84.916,
+        "h_pct": 11.114
+      },
+      "changed": true,
+      "change_reason": "Cleaned text transcription."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 8,
+  "issues": [
+    "Original OCR text contained significant character errors and garbled sequences.",
+    "Page number and running header were mislabeled as text.",
+    "Multiple layout regions for paragraphs were incorrectly segmented."
+  ],
+  "doc_id": "330",
+  "page": 190,
+  "elapsed_seconds": 6.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

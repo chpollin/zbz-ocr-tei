@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Was ist Geschichte? 27",
+      "bbox": {
+        "x_pct": 8.135,
+        "y_pct": 14.364,
+        "w_pct": 87.892,
+        "h_pct": 2.459
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for document header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Merkw&uuml;rdige aber da&szlig; die Menschen, indem sie auf die Zukunft hin orientiert sind, etwas erz&auml;hlen, was die Vergangenheit bewahrt, damit sie nicht in der gro&szlig;en Vergangenheit der ganzen menschlichen Geschichte ertrinkt. Sie tun etwas, um diese n&auml;here Vergangenheit zu behalten. Diese Vergangenheit, die so zur&uuml;ckbehalten wird, w&uuml;rde keine menschliche Geschichte ausmachen, w&uuml;rde sie nicht schlie&szlig;lich eine Art Gegenwart, eine lebendige Gegenwart unter den Menschen von heute werden.",
+      "bbox": {
+        "x_pct": 8.135,
+        "y_pct": 72.338,
+        "w_pct": 87.892,
+        "h_pct": 16.036
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual paragraph start."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt also damit Geschichte entsteht, eine Art Magie, die komplex und wirksam ist und in der die Freiheit der einzelnen Menschen ihren Ort hat. Die einzelnen Menschen erz&auml;hlen sich Geschichten, die sie vor Wahlen stellen, die ihnen eine andere Welt vor die Seele und vor die Augen bringen als die, die es faktisch gibt. Es entsteht eine imagin&auml;re &Uuml;berlieferung, die gar nicht imagin&auml;r bleibt, sondern wirksam wird und die jetzige Welt gestaltet. Diese &Uuml;berlieferung in ihrer Tiefe ist nicht den praktischen Bed&uuml;rfnissen unterworfen, die das Leben der Menschen vorgibt, sondern sie genie&szlig;t eine Art Freiheit, eine Art Nutzlosigkeit, die es erm&ouml;glicht, tiefer und substantieller zu werden als die Wirklichkeit, die mit dem &Uuml;berleben der Menschen in dieser Zeit zu tun hat. So entsteht Geschichte. Geschichte ist eine Wirklichkeit, die alle sich widersprechenden Ebenen des Menschseins in sich enth&auml;lt, die subjektiven und die objektiven, diejenigen, die etwas zerst&ouml;ren, die etwas wegnehmen, etwas verschwinden lassen, und diejenigen, die die Vergangenheit aufbewahren. Sie erweckt in der menschlichen Gemeinschaft Unruhe, manchmal Inkonsistenz, weil der Mensch nicht mehr genau wei&szlig;, was wirklich ist und was nicht. Oder sie verfestigt im Gegenteil manche Seiten der menschlichen Wirklichkeit, verbindet sie enger und dauerhaft, so da&szlig; sie f&uuml;r immer da sind und keinen Vergleich mit den Ursachen der empirischen Welt vertragen.",
+      "bbox": {
+        "x_pct": 7.816,
+        "y_pct": 23.026,
+        "w_pct": 80.319,
+        "h_pct": 39.72
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to include the full paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "So haben Sie alles zusammen als den Grund, auf dem die Geschichte sich entwickelt. Sie haben eine Art Alibi, das den Menschen die M&ouml;glichkeit und die F&auml;higkeit gibt, sich aus den kausalen Notwendigkeiten zu fl&uuml;chten, die es in der Welt gibt und die sie unter Umst&auml;nden nicht ertragen k&ouml;nnen, und auch aus der Verantwortung, die ganz streng und buchst&auml;blich gegenw&auml;rtig ist. Geschichte hat also diese verschiedenen Ebenen, auf die sie sich gr&uuml;nden und die sie verbreitern kann. Man kann auch sagen, da&szlig; durch dieses Bild der Natur, in der sich das Leben erweitert, und der Geschichte, in der sich durch die Einbildungskraft und das Ged&auml;chtnis der Menschen die Vergangenheit entwickelt, ein Umfeld f&uuml;r verantwortliche Subjekte entsteht, die durch das, was da erz&auml;hlt wird, entdecken, da&szlig; sie nicht nur von Fakten und Gegebenheiten umgeben sind, sondern auch von",
+      "bbox": {
+        "x_pct": 7.853,
+        "y_pct": 62.36,
+        "w_pct": 79.963,
+        "h_pct": 24.095
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match the full paragraph."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original JSON content for paragraphs was truncated/incomplete.",
+    "Page number and header were included as part of the body text region.",
+    "Incorrect parsing of the text regions led to fragmented and inaccurate OCR output in the input JSON.",
+    "Bounding boxes were not tightly aligned with the actual text blocks on the page."
+  ],
+  "doc_id": "2990",
+  "page": 20,
+  "elapsed_seconds": 8.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

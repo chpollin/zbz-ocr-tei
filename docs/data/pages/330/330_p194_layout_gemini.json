@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "160",
+      "bbox": {
+        "x_pct": 113.886,
+        "y_pct": 91.031,
+        "w_pct": 27.228,
+        "h_pct": 11.238
+      },
+      "changed": true,
+      "change_reason": "Corrected page number label from text to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 361.666,
+        "y_pct": 92.518,
+        "w_pct": 275.556,
+        "h_pct": 11.055
+      },
+      "changed": true,
+      "change_reason": "Corrected running header label from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "quelle manire de perdre la matrise et la responsabilit de soi. Ce qui ne signifie pas, certes, que le socialisme, une fois enferm dans ses sobres limites, se suffise  lui-mme. Au contraire : comme toute activit et comme toute doctrine humaine, il a besoin de recevoir d'ailleurs, des sources vives de l'tre humain, ce qui lui donnera la force de s'incarner dans le rel sans s'y puiser. Mais ces sources vives ne jaillissent et ne peuvent jaillir de lui.",
+      "bbox": {
+        "x_pct": 113.611,
+        "y_pct": 128.899,
+        "w_pct": 847.778,
+        "h_pct": 147.156
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'absence de credo philosophique religieux exclut en mme temps toute prtention  imposer le socialisme comme une ncessit logique ou scientifique. Il n'y a aucune absurdite, aucune incoherence  refuser d'tre socialiste, et on ne se met pas ainsi en contradiction avec les donnes de la science. Adhrer au socialisme reste un acte libre. Nous avons vu tout  l'heure qu'il implique la personne humaine rige en valeur parce que libre, responsable de son sort et de celui d'autrui. Mais cette valeur n'est pas un fait. Elle dpend d'un choix. Et le choix pourrait tre diffrent,  par exemple on pourrait riger en valeur une collectivit, une civilisation, ou telles uvres produites par une civilisation, plutt que les personnes elles-mmes.",
+      "bbox": {
+        "x_pct": 113.611,
+        "y_pct": 277.615,
+        "w_pct": 847.222,
+        "h_pct": 223.119
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": " partir de ce choix, rayonnent encore des possibilits d'option diverses : en effet, choisir comme valeur le sujet libre, c'est choisir la libert. Ainsi nous voyons que la seule option commune, dans le socialisme, loin de fonder un credo collectif, ne fait qu'en carter la possibilit et jusqu'au dsir.",
+      "bbox": {
+        "x_pct": 113.611,
+        "y_pct": 516.422,
+        "w_pct": 846.111,
+        "h_pct": 74.312
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dis toute incompatibilit disparat entre le socialisme d'une part, les religions et les glises de l'autre. Aucun credo socialiste ne s'oppose  leur credo. Le socialisme ne fait que dfendre le droit et la possibilit concrte, pour tout homme, de se poser les problmes religieux, les approfondir, d'accorder ou de refuser sa foi. Il protge l'espace o l'appel de la foi peut se faire entendre. contre toute contrainte extrieure, clricale ou anticlricale, et contre tout envahissement impur,  il s'interdit, par exemple, de l'envahir lui-mme.",
+      "bbox": {
+        "x_pct": 111.389,
+        "y_pct": 622.752,
+        "w_pct": 848.333,
+        "h_pct": 191.009
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Compartimentage de l'me humaine, diront certains. Ils auront tort. C'est au contraire grce  des distinctions nettes entre les plans d'existence du sujet, grce au refus de prtendues cohrences objectives et impersonnelles, que peut s'affirmer la prsence vivante de l'tre libre, prsent dans son unit indissoluble  la fois",
+      "bbox": {
+        "x_pct": 111.389,
+        "y_pct": 818.532,
+        "w_pct": 846.667,
+        "h_pct": 102.752
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 7,
+  "issues": [
+    "Detected text blocks had OCR errors which were cleaned for layout verification purposes.",
+    "Page number and header incorrectly detected as text."
+  ],
+  "doc_id": "330",
+  "page": 194,
+  "elapsed_seconds": 9.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

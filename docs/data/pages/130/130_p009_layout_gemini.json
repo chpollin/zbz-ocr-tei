@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE PROBLÈME DE L'ÉLITE OUVRIÈRE 15",
+      "bbox": {
+        "x_pct": 26.666,
+        "y_pct": 2.0,
+        "w_pct": 62.435,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header and number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "eux-mêmes, malgré les difficultés accumulées, acquis la culture nécessaire sont aujourdhui ou bien s",
+      "bbox": {
+        "x_pct": 9.593,
+        "y_pct": 14.218,
+        "w_pct": 78.752,
+        "h_pct": 26.226
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sous quelque aspect qu'on l'examine, le probl\t\tme de la formation de l'\t\tlite ouvri\t\tre nous enferme dans des impasses. Et pourtant il doit \t\ttre r\t\tsolu. Si les voies d'\t\tducation directes, aidant imm\t\tdiatement \t\t mener la lutte sociale, s'av\t\trent sans issue, il nous faudra renoncer \t\t vouloir d'abord, selon la voie la plus courte, un militant bien arm\t\t de connaissances et de comp\t\ttences ; il nous faudra consentir au d\t\ttour par l'homme, par l'homme complet.",
+      "bbox": {
+        "x_pct": 10.428,
+        "y_pct": 40.59,
+        "w_pct": 78.681,
+        "h_pct": 23.498
+      },
+      "changed": true,
+      "change_reason": "ADDED: Middle paragraph of body text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Etant admis que la formation de lélite ouvrière est dintérêt commun, la communauté tout entière doit",
+      "bbox": {
+        "x_pct": 10.512,
+        "y_pct": 68.629,
+        "w_pct": 78.804,
+        "h_pct": 12.674
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, il faut que les besoins physiques soient satis faits. Si Pon veut 'un jeune ouvrier n'a pou",
+      "bbox": {
+        "x_pct": 10.289,
+        "y_pct": 81.593,
+        "w_pct": 78.633,
+        "h_pct": 10.618
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing paragraph block detected between main text sections",
+    "Page header with page number was not tagged"
+  ],
+  "doc_id": "130",
+  "page": 9,
+  "elapsed_seconds": 6.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

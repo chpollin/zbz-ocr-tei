@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mes cours, bien qu'ils noircissent le papier et barbouillent le silence, descendent du refus socratique, de cette œuvre absente, non écrite, qui domine l'Occident à travers les millénaires et le protège contre le fracas des slogans. Là où je parais avoir une doctrine, c'est que mon imperfection personnelle a mis arbitrairement des taches sur la pure transparence de la foi philosophique. Ces taches, c'est l'arbitraire, ou le hasard, ou le produit des divers déterminismes qui s'exercent sur moi. Libre, je serais la présence même de la tradition. Tout est possible, devant elle, depuis Socrate et la Bible - depuis que Dieu est au delà des représentations humaines -; elle est cela même, que tout est possible, que rien n'est interdit. Mais seules sont possibles la vérité et la fidélité. Car qu'est-ce que choisir, sinon choisir ce qui est, et conformément à soi?",
+      "bbox": {
+        "x_pct": 12.627,
+        "y_pct": 9.385,
+        "w_pct": 66.237,
+        "h_pct": 25.983
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and misaligned with actual page text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeux compliqués des arguments et des antinomies, toute cette mythologie rationnelle, alors que l'acte de présence est si simple. Plus difficile, sans doute, et intolérablement refusé à toute possession, puisqu'il est contesté à peine accompli et jamais acquis pour l'instant futur (alors que les livres qu'on écrit, eux, garnissent les rayons de la bibliothèque), et qu'il défie non seulement le langage, mais presque la conscience. La conscience l'étale dans le temps, lui donne un passé, un présent, un avenir, le décompose en tradition, liberté et espérance, alors qu'il s'ancre dans le temps avec une force telle qu'il le transperce et y actualise une sorte de coïncidence ponctuelle d'éternité. Et nous voici ramenés au silence.",
+      "bbox": {
+        "x_pct": 12.627,
+        "y_pct": 35.425,
+        "w_pct": 66.237,
+        "h_pct": 21.937
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La tradition est l'une de ces nombreuses composantes du sort humain qui n'auraient jamais dû être nommées. Non par pudeur, par goût du mystère, par cette crainte lâche ou ce manque de foi qui encourage les hommes à couver sentimentalement leurs adhésions profondes sans oser y porter la lumière de l'esprit. Mais nommer la tradition, c'est l'extraire de soi, la mettre en face, lui conférer l'opacité d'une chose proposée ou imposée. C'est se mettre hors d'elle - fût-ce pour mieux la choisir, de façon plus exemplaire - c'est perdre sa libre présence pour mieux voir ses contenus - mœurs, principes, exemples, valeurs - étalés dans le passé. Dès lors, tout change. Elle apparaît, parmi d'autres, comme une tradition, qui se trouve être la mienne fortuitement.",
+      "bbox": {
+        "x_pct": 12.49,
+        "y_pct": 59.601,
+        "w_pct": 66.293,
+        "h_pct": 23.63
+      },
+      "changed": true,
+      "change_reason": "Text content was missing segments and incorrectly formatted."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Etre dans une tradition, c'est n'en exclure aucune: c'est simplement, pour employer le langage de Jaspers, accepter une situation-limite,",
+      "bbox": {
+        "x_pct": 12.651,
+        "y_pct": 83.516,
+        "w_pct": 66.019,
+        "h_pct": 4.006
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "119",
+      "bbox": {
+        "x_pct": 75.337,
+        "y_pct": 89.286,
+        "w_pct": 3.448,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number, corrected label and tag."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text regions contained truncated or garbled OCR text.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "680",
+  "page": 3,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

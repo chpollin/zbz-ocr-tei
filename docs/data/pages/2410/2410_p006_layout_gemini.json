@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gen&egrave;ve, la loi sur l'universit&eacute; &mdash; en toute h&acirc;te malheureusement &mdash; on a r&eacute;dig&eacute; un pr&eacute;ambule o&ugrave; l'on a &eacute;num&eacute;r&eacute; les finalit&eacute;s de l'universit&eacute;. Parmi celles-ci, on n'a pas os&eacute; inscrire : la transmission des connaissances. Personne n'a os&eacute; dire : l'universit&eacute; doit aussi transmettre des connaissances. Or nier cela, c'est une fa&ccedil;on de d&eacute;truire l'histoire.",
+      "bbox": {
+        "x_pct": 51.322,
+        "y_pct": 8.675,
+        "w_pct": 36.691,
+        "h_pct": 23.475
+      },
+      "changed": true,
+      "change_reason": "Combined fragmented text regions for better coherence."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "PROPOS SUR L'&Eacute;DUCATION",
+      "bbox": {
+        "x_pct": 65.4,
+        "y_pct": 5.4,
+        "w_pct": 22.8,
+        "h_pct": 1.2
+      },
+      "changed": true,
+      "change_reason": "Correctly identified running header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La querelle de la transmission",
+      "bbox": {
+        "x_pct": 11.754,
+        "y_pct": 30.118,
+        "w_pct": 29.496,
+        "h_pct": 2.125
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "G.D.K. C'est une condition de progr&egrave;s.",
+      "bbox": {
+        "x_pct": 53.237,
+        "y_pct": 31.934,
+        "w_pct": 31.448,
+        "h_pct": 1.921
+      },
+      "changed": true,
+      "change_reason": "Labeled as section header/heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les Antith&egrave;ses",
+      "bbox": {
+        "x_pct": 51.529,
+        "y_pct": 68.111,
+        "w_pct": 14.146,
+        "h_pct": 1.836
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "185",
+      "bbox": {
+        "x_pct": 85.5,
+        "y_pct": 88.5,
+        "w_pct": 2.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Several text blocks were fragmented or mislabeled.",
+    "Page number and running header were missing from initial detection."
+  ],
+  "doc_id": "2410",
+  "page": 6,
+  "elapsed_seconds": 4.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LA CARICATURE DE",
+      "bbox": {
+        "x_pct": 30.615,
+        "y_pct": 5.992,
+        "w_pct": 9.709,
+        "h_pct": 2.637
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "356 ont été généralisés et caractéristiques de Fexistentialisme en général, contre tout ce mouvement",
+      "bbox": {
+        "x_pct": 12.821,
+        "y_pct": 6.637,
+        "w_pct": 35.311,
+        "h_pct": 85.113
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "DE L de cette philosophie, les 'elle conditionner efficace avance être le ultime. Jaspers trouver et",
+      "bbox": {
+        "x_pct": 50.348,
+        "y_pct": 4.597,
+        "w_pct": 37.077,
+        "h_pct": 55.669
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "357",
+      "bbox": {
+        "x_pct": 85.938,
+        "y_pct": 2.502,
+        "w_pct": 2.378,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH . JEANNE",
+      "bbox": {
+        "x_pct": 76.142,
+        "y_pct": 84.137,
+        "w_pct": 9.88,
+        "h_pct": 3.339
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header number at top right identified"
+  ],
+  "doc_id": "120",
+  "page": 10,
+  "elapsed_seconds": 8.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

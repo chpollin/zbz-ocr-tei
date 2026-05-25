@@ -1,0 +1,84 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "88 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 12.38,
+        "y_pct": 2.0,
+        "w_pct": 74.03,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pobjct. Lobjet, cest être-ul, dont la réaCOIIfère sa détermnination; cest-à-dire tout ce Texclut dc ",
+      "bbox": {
+        "x_pct": 11.57,
+        "y_pct": 14.889,
+        "w_pct": 73.204,
+        "h_pct": 10.068
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi s'éclaire, par discontides   aspects, la contradiction quimplique toujours pour- nous la notio",
+      "bbox": {
+        "x_pct": 11.607,
+        "y_pct": 24.12,
+        "w_pct": 74.174,
+        "h_pct": 42.906
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest pourquoi la notion de réalité ne cesse de danser ct de scintiller aux yeux de repos.",
+      "bbox": {
+        "x_pct": 12.807,
+        "y_pct": 66.308,
+        "w_pct": 72.696,
+        "h_pct": 7.766
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "9 essayé de diverses manières de rezédier à la   discontinuité des modes. Lune de cCs tentatives, pa",
+      "bbox": {
+        "x_pct": 12.678,
+        "y_pct": 73.316,
+        "w_pct": 72.982,
+        "h_pct": 12.627
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcriptions contained heavy OCR noise/artifacts.",
+    "Label corrections applied to reflect logical layout (page header identification)."
+  ],
+  "doc_id": "140",
+  "page": 7,
+  "elapsed_seconds": 11.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content for better accuracy": 4,
+    "ADDED": 1
+  }
+}

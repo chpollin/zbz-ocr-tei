@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Vom Drang zu den Wissenschaften 53",
+      "bbox": {
+        "x_pct": 8.798,
+        "y_pct": 2.761,
+        "w_pct": 80.086,
+        "h_pct": 1.779
+      },
+      "changed": true,
+      "change_reason": "Identify page header correctly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "können wir sagen; die Vernunft und die Not spielen zusammen und treffen einander. Das kann ich mir als Anfang denken.",
+      "bbox": {
+        "x_pct": 9.043,
+        "y_pct": 6.086,
+        "w_pct": 79.791,
+        "h_pct": 4.301
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Viel sind allmählich die Wissenschaften in ihrer Vielzahl entstanden, und danach war es mit einer Einheit des Widerspruchsvollen, in der wir den Anfang sehen können, vorbei. Denn nun kam jede Wissenschaft mit ihrem eigenen Anspruch. Manchmal können zwei Wissenschaften zusammen eine Wissenschaft ausbilden, was aber eine Ausnahme ist. In der Regel trennen sie sich voneinander, und jede hat ihre spezifischen Erfordernisse. Und weil jede ihre spezifischen Erfordernisse hat, gibt es in jeder spezifische Terminologien, spezifische Methoden, spezifische Probleme. Irgendwie gehört das alles andererseits zu einer vagen Einheit, einer kosmischen Einheit, der sogenannten Welt, dem sogenannten Ganzen.",
+      "bbox": {
+        "x_pct": 8.92,
+        "y_pct": 10.09,
+        "w_pct": 80.074,
+        "h_pct": 19.868
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wiederum viel später, über Jahrtausende, kommt es dann dazu, daß die Menschen, um genauer zu erkennen, angefangen haben, zu messen und Zahlen zu gebrauchen, um etwas Genaueres zu haben, das man dann für das Wissen gebrauchen kann. Aber dabei verändern sich natürlich die Impulse dafür, etwas zu erkennen. Man will jetzt genau wissen, und man will genau wissen, um zu wissen, sehr oft ohne jede unmittelbare praktische Anwendung. Die gibt es auch, doch ist sie nicht unbedingt nötig. Das Theoretische und das Praktische trennen sich voneinander und stärken sich gleichzeitig in der Entwicklung.",
+      "bbox": {
+        "x_pct": 8.798,
+        "y_pct": 29.663,
+        "w_pct": 80.123,
+        "h_pct": 17.977
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dann kann man sagen, daß der Sinn und die Kriterien des Verstehens sich ändern. Sie ändern sich je nach den Zeiten und je nach den besonderen Wissenschaften, die sich ausbilden, und dabei kommt es in den Vorstellungen und im Geist der Menschen zu sehr großen Revolutionen. So änderte sich zum Beispiel zwischen dem 15. und 17. Jahrhundert - Sie sehen, daß wir die frühen Zeiten schon weit hinter uns gelassen haben - das ganze System des Himmels. Man stieß das System von Ptolemäus um, in dem die Welt geschlossen war, die Erde unbeweglich in der Mitte des Himmels stand und die Sonne sich um die Erde drehte. Es kamen dann Kopernikus, Newton, Galilei, Kepler und andere, die das Bild entworfen haben, in dem die Sonne in der Mitte ist und es eine unendliche Welt gibt.",
+      "bbox": {
+        "x_pct": 8.712,
+        "y_pct": 47.393,
+        "w_pct": 80.086,
+        "h_pct": 21.826
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hier haben Sie ein Beispiel für das, was ich sagen will: Abgesehen von dem Praktischen, ob man etwas zu fürchten hat oder nicht, haben die Menschen auf diesen Übergang von einer geschlossenen zu einer offenen Welt ganz unterschiedlich reagiert. Für die einen war diese Vorstellung ein Horror. Warum? Weil die unendliche Welt keine Gestalt hatte. Man hatte kein Bild davon, und war noch irgendwie befangen im Bildlichen, man wollte eine Figur haben und hatte nun keine mehr. Daß dieses Plastische verloren ging, war etwas, wovor es manchem schauderte; sogar großen Wissenschaften",
+      "bbox": {
+        "x_pct": 8.712,
+        "y_pct": 68.972,
+        "w_pct": 80.037,
+        "h_pct": 16.086
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and section title inside the header were not categorized correctly.",
+    "The OCR text extraction was heavily truncated in all paragraph regions.",
+    "Header not identified as filter."
+  ],
+  "doc_id": "2990",
+  "page": 46,
+  "elapsed_seconds": 7.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

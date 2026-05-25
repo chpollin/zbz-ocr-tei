@@ -1,0 +1,87 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "6",
+      "bbox": {
+        "x_pct": 47.785,
+        "y_pct": 44.574,
+        "w_pct": 5.405,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, should be page_footer/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dcs adultes quand est un cnfant. Je pense que chacun, des rations, fait une fois de dont il avait rê",
+      "bbox": {
+        "x_pct": 8.975,
+        "y_pct": 7.775,
+        "w_pct": 79.948,
+        "h_pct": 29.845
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant, ce sont tous les maris, tous les pères, toute la foule des adultes sort à midi des burea",
+      "bbox": {
+        "x_pct": 9.286,
+        "y_pct": 37.961,
+        "w_pct": 79.565,
+        "h_pct": 8.837
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois ccla très important. J'ai différence de situation psychologique entre un apprenti daujourd'",
+      "bbox": {
+        "x_pct": 9.451,
+        "y_pct": 47.155,
+        "w_pct": 79.886,
+        "h_pct": 29.256
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PREPONDERANCE DE LA FICTION",
+      "bbox": {
+        "x_pct": 34.089,
+        "y_pct": 80.465,
+        "w_pct": 31.408,
+        "h_pct": 1.86
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En ville, autour de lenfant, la proportion entre réalité et fiction se trouve extraordinairement cha",
+      "bbox": {
+        "x_pct": 10.631,
+        "y_pct": 83.822,
+        "w_pct": 78.944,
+        "h_pct": 12.403
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One page number incorrectly labeled as paragraph."
+  ],
+  "doc_id": "640",
+  "page": 6,
+  "elapsed_seconds": 3.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

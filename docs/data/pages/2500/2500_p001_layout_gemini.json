@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Contre l'angélisme facile",
+      "bbox": {
+        "x_pct": 31.436,
+        "y_pct": 16.038,
+        "w_pct": 37.76,
+        "h_pct": 3.098
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of title text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ouvrir la revue Commentaire presque à n’importe quelle page, c’est éprouver — chose rare — le sentiment de retrouver une patrie perdue du vouloir et de l’intelligence.",
+      "bbox": {
+        "x_pct": 11.987,
+        "y_pct": 20.547,
+        "w_pct": 75.7,
+        "h_pct": 4.061
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Patrie du vouloir : les auteurs restent fidèles à une hiérarchie commune et cohérente entre les finalités qui commandent leurs options du moment avec les mesures pratiques qui en découlent. Le paysage, les données, les conditions changent ; la revue, vigilante et ultrasensible, reflète les nuances ou les contrastes de ces changements et leur donne leurs justes proportions, avec leur impact raisonnable. Mais elle continue, inébranlable, à poursuivre les mêmes fins essentielles, qui sont sa raison d'être : défendre lucidement les conditions nécessaires, au fil de l'histoire, au maintien et au développement des libertés démocratiques. Donc : il s'agit de renforcer l'Europe occidentale, dans la mesure où elle existe, de la faire exister là où elle n'existe presque pas ou pas du tout : Europe politique, Europe de la défense, Europe où l'Allemagne aurait sa place acceptable, sa sécurité et son avenir — sous peine d'effondrement de l'entreprise Europe tout entière.",
+      "bbox": {
+        "x_pct": 11.807,
+        "y_pct": 26.038,
+        "w_pct": 75.998,
+        "h_pct": 25.728
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En un temps où renaissent, plus dangereux que jamais, les doubles sens, les illusions, le wishful thinking, la revue Commentaire, attentive et réceptive aux idées, mais aussi aux faits et aux données du réel au présent, est plus indispensable que jamais.",
+      "bbox": {
+        "x_pct": 11.951,
+        "y_pct": 51.701,
+        "w_pct": 75.881,
+        "h_pct": 7.759
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Patrie de l'intelligence. Nous vivons une époque complaisante à un angélisme facile, permettant toutes les esquives et irresponsabilités. La revue, par l'information de ses collaborateurs, la sobriété de leur style et la rigueur de leur réflexion, met sans cesse le lecteur devant les choix qu'impose un présent changeant. Aucune complaisance aux modes de la pensée, parisienne ou autre. Les tentations sont dénoncées, avec leurs conséquences et leurs enjeux, dans leur complexité, leur profondeur et leur évidence.",
+      "bbox": {
+        "x_pct": 11.897,
+        "y_pct": 58.912,
+        "w_pct": 76.061,
+        "h_pct": 15.049
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dix ans de résistance aux sirènes de tout genre, grâce à une rectitude aidée d'ironie et d'humour !",
+      "bbox": {
+        "x_pct": 12.042,
+        "y_pct": 73.698,
+        "w_pct": 75.763,
+        "h_pct": 3.889
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH.",
+      "bbox": {
+        "x_pct": 68.952,
+        "y_pct": 78.576,
+        "w_pct": 14.788,
+        "h_pct": 1.628
+      },
+      "changed": false,
+      "change_reason": "Author signature, kept as text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "26",
+      "bbox": {
+        "x_pct": 12.44,
+        "y_pct": 89.47,
+        "w_pct": 2.2,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Missing page number detected; assigned to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR quality was extremely low, requiring full re-transcription of all paragraphs.",
+    "Missing page number 26 was not initially detected in the JSON regions."
+  ],
+  "doc_id": "2500",
+  "page": 1,
+  "elapsed_seconds": 5.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

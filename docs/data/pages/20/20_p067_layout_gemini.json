@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "CHERCHE LA VÉRITÉ SCIENTIFIQUE 65",
+      "bbox": {
+        "x_pct": 242.0,
+        "y_pct": 85.0,
+        "w_pct": 516.0,
+        "h_pct": 26.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et comment le philosophe peut-il se donner tant de mal pour soutenir avec force par des arguments rationnels la solution qu'il propose si en réalité il ne s'agit pas de cette solution et si la solution opposée garde autant de poids comme vérité métaphysique?",
+      "bbox": {
+        "x_pct": 94.0,
+        "y_pct": 128.0,
+        "w_pct": 758.0,
+        "h_pct": 157.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il nous faudra distinguer ici entre l'attitude du philosophe qui cherche la solution d'un problème et l'attitude de celui qui étudie une philosophie.",
+      "bbox": {
+        "x_pct": 93.0,
+        "y_pct": 280.0,
+        "w_pct": 757.0,
+        "h_pct": 80.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord le philosophe. Certaines exigences morales, avons-nous dit plus haut, ne peuvent étre satisfaites qu'en étant oubliées. Ainsi, le devoir d'étre bon n'est rempli que lorsqu'on accomplit par amour telle action concrète, dans l'oubli complet de soi-même et des devoirs moraux. Nous nous demandons si une situation aussi paradoxale ne pouvait pas étre celle de la philosophie.",
+      "bbox": {
+        "x_pct": 98.0,
+        "y_pct": 361.0,
+        "w_pct": 751.0,
+        "h_pct": 194.0
+      },
+      "changed": true,
+      "change_reason": "Missing text block not labeled in original input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme qui, replié maladivement sur lui-même se demande s'il est ou s'il n'est pas sujet, ne résoudra jamais cette question : car il n'y a pas là de constatation à faire, mais une décision à prendre. Pour le philosophe qui se décide réellement, ce n'est pas cette question-là qui se pose. Il faut, au contraire, qu'il soit détourné d'elle, qu'il oublie la liberté fondamentale, mais toute formelle, qui est en jeu pour se servir de cette liberté à propos d'un contenu concret. Dans l'intention du philosophe, il n'y a pas duplicité. Pour lui, c'est bien du problème explicite qu'il s'agit. Dites-lui le contraire, il protestera avec véhémence - et sincérité. Il déclarera qu'il cherche",
+      "bbox": {
+        "x_pct": 93.0,
+        "y_pct": 563.0,
+        "w_pct": 767.0,
+        "h_pct": 333.0
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 836.0,
+        "y_pct": 905.0,
+        "w_pct": 16.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Missing paragraph identified.",
+    "Page number and running header incorrectly labeled as text.",
+    "Text transcription accuracy requires improvement."
+  ],
+  "doc_id": "20",
+  "page": 67,
+  "elapsed_seconds": 6.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

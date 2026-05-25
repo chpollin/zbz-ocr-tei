@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "prix Nobel, est allé trouver au Quartier latin un bon traducteur du polonais en français pour lui demander s'il voudrait traduire certains de ses ouvrages, ce traducteur lui a répondu : « Ecoutez, moi je ne demanderais pas mieux que de vous traduire ; seulement, je serais brûlé, je n'aurais plus de travail ». Parce qu'il aurait alors traduit un « dissident », quelqu'un qui avait quitté l'ambassade de Pologne.",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 4.435,
+        "w_pct": 79.573,
+        "h_pct": 12.363
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text recognition for readability and accuracy based on the provided image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voilà donne une idée de l'intimidation qui régnait. J'ai eu alors l'impression d'un tel désordre — oui, c'était ce qui me frappait le plus — d'un tel désordre dans les idées, dans les critères et les jugements des gens, que j'ai éprouvé le besoin simplement de mettre de l'ordre. J'ai parlé, au début de mon livre, de mon besoin « ménager » de mettre de l'ordre et je me suis mise à écrire.",
+      "bbox": {
+        "x_pct": 4.676,
+        "y_pct": 16.29,
+        "w_pct": 79.658,
+        "h_pct": 11.831
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text recognition for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce livre a trois parties. Une partie dans laquelle j'essaie de faire une espèce de typologie des attitudes politiques en Europe occidentale, de façon assez sommaire, pour ne pas entrer dans la subtilité des cas propres à chaque pays ; une deuxième partie qui traite systématiquement de la politique, de la démocratie, de ses conditions et de sa fonction ; enfin une troisième partie, qui est alors une réflexion spécifique sur le socialisme contemporain.",
+      "bbox": {
+        "x_pct": 4.847,
+        "y_pct": 28.121,
+        "w_pct": 79.524,
+        "h_pct": 14.323
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text recognition for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelles sont les thèses majeures que vous entendiez défendre en écrivant Idéologies et réalité ?",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 43.815,
+        "w_pct": 79.451,
+        "h_pct": 4.306
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — La thèse fondamentale, c'est que la démocratie politique, d'une part, ensemble de droits formels, sans influence sur la vie concrète des gens et les conditions sociales d'un pays, mais qu'elle est une condition réelle du progrès économique et social ; d'autre part, que la démocratie politique est seule à répondre à l'aspiration fondamentale de l'étre humain, qui tient à la fois à étre lui-même libre, c'est-à-dire à penser, s'exprimer et agir comme il choisit de le faire selon sa nécessité la plus profonde, comme aussi à contribuer à la manière de vivre de la collectivité dont il fait partie. Or, le seul régime qui le permette, c'est la démocratie. J'ai essayé de donner de cette démocratie une justification, que j'ai appelée pessimiste. Ce qui est important, parce que je n'ai pas du tout essayé de montrer que dans une démocratie « tout était pour le mieux dans le meilleur des mondes ». Au contraire, j'ai voulu débarrasser cette démocratie reposant sur le suffrage universel de toute superstition favorable, notamment du préjugé selon lequel la majorité a toujours raison, la majorité étant la voix de la raison ou de l'idéal. Je n'y crois pas. Il n'y a pas de raison de le croire. Seulement, c'est le seul système dans lequel on a le moyen d'empêcher les plus forts d'écraser les plus faibles et de les réduire au silence et à l'impuissance. J'ai dit que le critère de la démocratie, c'est qu'en même temps qu'il y a le suffrage universel, il existe une opposition active. Je n'ai jamais pensé qu'il serait idéal que tous les hommes soient d'accord, qu'il y ait une unanimité. Au contraire, le",
+      "bbox": {
+        "x_pct": 4.676,
+        "y_pct": 49.758,
+        "w_pct": 79.609,
+        "h_pct": 41.75
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text recognition for accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "115",
+      "bbox": {
+        "x_pct": 80.25,
+        "y_pct": 94.15,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Detected OCR text was poorly extracted.",
+    "Page number at bottom right was misidentified as part of paragraph.",
+    "Several lines were merged incorrectly by OCR."
+  ],
+  "doc_id": "2330",
+  "page": 119,
+  "elapsed_seconds": 7.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

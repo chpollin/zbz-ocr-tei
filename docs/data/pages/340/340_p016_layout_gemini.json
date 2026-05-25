@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 12.847,
+        "y_pct": 4.153,
+        "w_pct": 20.301,
+        "h_pct": 1.205
+      },
+      "changed": true,
+      "change_reason": "Header name identified as section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il avait été arrêté, condamné et emprisonné. Sa famille, alors, n'avait pas osé s'informer de son sort; elle ne sait ni où, ni quand, ni comment — rien. (Cet accusé, sans doute par amour des uniformes, est devenu pompier. Et c'est en uniforme de pompier qu'il a pris part à l'insurrection, en uniforme de pompier qu'il s'est dressé en criant sur un tank conquis avec ses camarades — si bien que tout le monde l'avait vu et pouvait le reconnaître. Au tribunal, il portait encore cet uniforme bleu marine...) De tels détails permettaient d'imaginer un peu l'atmosphère des années précédentes. Et on sentait, dans les dépositions, combien les petites gens avaient encore peur, combien la libéralisation de la parole était encore, à ce moment-là, un privilège supplémentaire pour une couche sociale déjà privilégiée, et non pour l'ensemble du peuple. Je crois qu'à travers le procès, la libéralisation a gagné en profondeur, que les gens ont été un peu rassurés — en partie grâce à la présence, à leurs yeux protectrice, d'observateurs étrangers. Mais l'espoir était bien fragile, la peur tenace. Certains m'ont dit : « Quand la presse étrangère sera partie, on s'en prendra à nous. » Imaginons ce qu'ils éprouvent maintenant, après l'écrasement de la Hongrie.",
+      "bbox": {
+        "x_pct": 12.847,
+        "y_pct": 6.799,
+        "w_pct": 38.948,
+        "h_pct": 49.43
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les procureurs ont défendu rigoureusement les thèses officielles, jusque dans leurs nuances et leurs hésitations : la manifestation ouvrière était bonne, la grève — sur ce point la doctrine n'était pas encore fermement établie — était peut-être un moyen douteux, mais enfin les intentions de la classe ouvrière étaient pures ; les accusés, eux, étaient de simples chuligans, sans le moindre lien avec elle. Pourtant, les procureurs se comportaient décemment avec les accusés. Jusqu'au jour où l'on trouva à Varsovie, paraît-il, qu'à ce procès on entendait bien les accusés et les avocats, mais non les procureurs. Au premier procès, il y en avait un. Au second, il y en eut deux. C'est pour le troisième procès qu'on dépêcha de Varsovie, en guise de renfort, un troisième procureur qui cristallisa aussitôt l'hostilité de la salle. Cet homme à l'intelligence logique et exercée, aux prises avec de jeunes accusés sans culture et acculés au mensonge, usa et",
+      "bbox": {
+        "x_pct": 12.874,
+        "y_pct": 56.065,
+        "w_pct": 38.921,
+        "h_pct": 35.604
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsqu'on entreprit d'organiser les procès de Poznan, bon nombre de juges se firent porter malades. On comprend facilement qu'ayant assisté à l'insurrection, ils ne voulussent pas juger des insurgés. Ceux qui furent en fonction dans les trois procès étaient jeunes. On peut dire que dans l'ensemble ils ont fait leur mieux. Je dis « dans l'ensemble », car il y a eu tout de même un cas au moins où un témoignage a été sciemment étouffé. On se souvient de l'enfant de treize ans qui avait été parmi les toutes premières victimes de l'insurrection. Son père et sa mère vinrent volontairement déposer comme témoins au procès. On écourta le témoignage du père et on refusa d'entendre la mère. C'est que les circonstances qui accompagnèrent et suivirent cette mort, très troublantes, auraient permis d'établir que les premières balles avaient été tirées de la Maison de la Sécurité, et non par les insurgés. Ce fait devait d'ailleurs être établi au procès, quelques jours plus tard. Au moment dont je parle, on n'osait pas encore aller jusque-là.",
+      "bbox": {
+        "x_pct": 54.642,
+        "y_pct": 18.613,
+        "w_pct": 39.084,
+        "h_pct": 39.375
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "30",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 93.5,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was highly truncated or hallucinated.",
+    "Page number missing from initial detection.",
+    "Section header not correctly identified."
+  ],
+  "doc_id": "340",
+  "page": 16,
+  "elapsed_seconds": 5.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

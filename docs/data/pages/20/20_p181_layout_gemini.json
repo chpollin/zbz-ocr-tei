@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE SILENCE DE LA TRANSCENDANCE 179",
+      "bbox": {
+        "x_pct": 245.0,
+        "y_pct": 82.0,
+        "w_pct": 655.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected page header/number identification from text to filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans un désespoir radical ne laisse le néant. qui",
+      "bbox": {
+        "x_pct": 9.985,
+        "y_pct": 12.488,
+        "w_pct": 55.783,
+        "h_pct": 4.671
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers alors pose une dernière question : l'échec ne montre-t-il pas, au delà de toute explication ou interprétation possible, non le néant, mais l'être de la transcendance ?",
+      "bbox": {
+        "x_pct": 9.834,
+        "y_pct": 17.607,
+        "w_pct": 75.663,
+        "h_pct": 9.819
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On ne peut sortir du fini, sinon par l'échec lui-même. Lorsque je prétends sortir du temps en contemplant l'échec, sans m'emparer de sa réalité, je retombe de plus belle dans la réalité finie. Cependant, celui qui « éteint le temps » (die Zeit tilgt) par un échec véritable aux limites du fini, celui-là ne revient pas en arrière; il exige que la réalité finie laisse intact l'être de la transcendance. Il ne s'agit pas de savoir pourquoi le monde est; peut-être l'éprouve-t-on dans l'échec — mais on ne peut plus le dire. Dans le monde empirique et devant l'être, la parole cesse en même temps que la pensée. Si pourtant le silence essaye de devenir une réponse, on entend des paroles qui ne disent rien :",
+      "bbox": {
+        "x_pct": 9.639,
+        "y_pct": 27.865,
+        "w_pct": 76.054,
+        "h_pct": 37.912
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) Devant la destruction vide de sens, la réponse est peut-être la simple conscience de l'être. « C'est », voilà la réponse intérieurement vide du silence.",
+      "bbox": {
+        "x_pct": 9.94,
+        "y_pct": 66.187,
+        "w_pct": 75.648,
+        "h_pct": 8.008
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) Devant la possibilité détruite en son germe, on aimerait entendre dans le silence l'être d'avant le temps, où est ce qui n'est pas devenu réel.",
+      "bbox": {
+        "x_pct": 9.744,
+        "y_pct": 73.689,
+        "w_pct": 75.753,
+        "h_pct": 7.979
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "c) Devant l'irréparable destruction de l'oubli, celui qui voudrait sauver pour le souvenir ce qui a été perdu sait que ni l'oubli ni la mémoire ne",
+      "bbox": {
+        "x_pct": 10.09,
+        "y_pct": 81.192,
+        "w_pct": 75.602,
+        "h_pct": 8.036
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Misidentified page header/number as text.",
+    "OCR output is significantly degraded for the list items and middle text block compared to source image."
+  ],
+  "doc_id": "20",
+  "page": 181,
+  "elapsed_seconds": 5.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin, bien des questions se posent à propos de l'orchestration de cette campagne de presse, — par exemple, la plus importante: on n’a jamais su comment se sont produites les fuites dont Le Matin et 24 Heures tirèrent parti et qui déclenchèrent le processus de la démission. Ces fuites n’intéressent-elles vraiment personne?",
+      "bbox": {
+        "x_pct": 11.255,
+        "y_pct": 6.105,
+        "w_pct": 80.678,
+        "h_pct": 10.935
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and typos in OCR content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est depuis longtemps que l'on s'interroge sur les rapports, au niveau fédéral, entre économie et politique, et les doutes que soulèvent les intérêts financiers dont se sont chargés la plupart des Conseillers nationaux ne cessent d'inquiéter. La réponse selon laquelle il est bon que ce lien existe, que les représentants du peuple ne soient pas de purs esprits, délestés de tout engagement dans l'économie, n'est pas tout-à-fait sans valeur. Pourtant le problème de ce lien ne cessera désormais de se poser avec une acuité accrue au fur et à mesure que plus de femmes ayant des carrières et des intérêts autonomes assumeront des charges politiques, ou bien seront les épouses d'hommes ayant de telles responsabilités. Je reste convaincue que ce qu'Elisabeth Kopp a dû vivre ne saurait en aucune façon être transposé sur un Conseiller fédéral masculin, dont la femme serait un important avocat d'affaires.",
+      "bbox": {
+        "x_pct": 11.205,
+        "y_pct": 21.105,
+        "w_pct": 80.602,
+        "h_pct": 29.944
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors (5 -> C'est, lèventles -> soulèvent les) and reconstructed full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mes deux dernières remarques sont destinées à souligner le fait que dans deux domaines au moins — la puissance croissante des media et l'avènement des femmes aux plus hautes fonctions politiques — il va certainement falloir adapter, aux données nouvelles, les institutions et le droit.",
+      "bbox": {
+        "x_pct": 11.455,
+        "y_pct": 55.242,
+        "w_pct": 80.351,
+        "h_pct": 10.54
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and typos."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais l'essentiel, sur quoi je voudrais conclure, c'est à quel point le déroulement de ce qu'on a appelé «l'affaire Kopp» laisse un arrière-goût amer concernant la Suisse, Etat de droit. Je ne suis pas seule à avoir appris avec stupeur que le représentant du Procureur fédéral chargé d'une enquête préliminaire sur une Conseillère fédérale, à peine remis son rapport au Conseil fédéral, donnait à la presse une interview aggravante, mentionnant «un soupçon suffisant et pressant de trahison du secret de fonction», d'une possible «entrave à l'action pénale», commise intention-",
+      "bbox": {
+        "x_pct": 11.38,
+        "y_pct": 70.218,
+        "w_pct": 80.552,
+        "h_pct": 19.218
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR formatting and text errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "60",
+      "bbox": {
+        "x_pct": 11.2,
+        "y_pct": 92.5,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Labeled correctly as page footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was heavily corrupted with truncation and character substitution errors.",
+    "Page number at bottom left was not identified as page_footer."
+  ],
+  "doc_id": "2810",
+  "page": 10,
+  "elapsed_seconds": 9.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

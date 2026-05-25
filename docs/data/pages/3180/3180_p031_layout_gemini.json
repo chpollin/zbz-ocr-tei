@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "auch mehr dahinter, selbstverständlich. Ein kluger Kopf steckt dahinter. Ja, darf ich fragen, wer als nächster . . .? Ja, bitte.",
+      "bbox": {
+        "x_pct": 7.74,
+        "y_pct": 4.554,
+        "w_pct": 85.269,
+        "h_pct": 4.982
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Frage aus dem Publikum (B):",
+      "bbox": {
+        "x_pct": 7.44,
+        "y_pct": 11.266,
+        "w_pct": 44.356,
+        "h_pct": 2.55
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Begriff Wahrheit an sich, Lüge und Wahrheit, das ist schon wieder eine so schwierige Begrifflichkeit, wo man schon durch die Begriffe allein ins Schlingern, in die Paradoxie kommt. Das Wort, Wahrheit ist sicherlich in vielen philosophischen und theologischen Abhandlungen immer wieder zu finden, denn die Suche nach Wahrheit auf philosophischem oder theologischem Wege hat die Philosophen und Wissenschaftler schon Jahrhunderte beschäftigt. Das Wort, Lüge an sich kommt nun aber nicht so oft in den Schriften vor, aber die Wahrheit ist an sich schon wieder ein sehr schwieriger Kriterium. Wer könnte einem Dichter sagen, daß er nicht die Wahrheit sagt, weil er was erfindet? Und mancher Dichter meint gerade dadurch, daß er etwas erfindet, also im Realitätsverständnis quasi ,,lügt“, eine größere Wahrheit zu sagen. Also schon bei diesen Begriffen zeigt sich eigentlich, daß es sehr schwierig ist, das Wort,,Wahrheit“ erst einmal so zu bestimmen, daß man damit etwas anfangen kann, denn da setzt man ja schon wieder einen Wertbegriff voraus, insofern nämlich, daß man sagt: zu diesem Wertbegriff verhalte ich mich so oder so, und das ist dann wahr und das ist eine Lüge, oder das ist wahr, und das ist falsch. Ich denke, daß schon das Problem liegt. Deswegen frage ich mich, weil Sie jetzt so selbstverständlich mit Lüge und Wahrheit operiert haben, wie Sie das einordnen. Ich kann Frau Hersch darin sehr gut folgen, was sie vorhin immer wieder betont hat, daß es die Zeit mit sich bringt, daß ein Satz, den ich vielleicht vor einer halben Minute gesagt habe, jetzt schon nicht mehr wahr ist. Ich habe es gesagt, aber die Zeit ist darüber hinweggegangen, und irgendwie stimmt es nicht mehr.",
+      "bbox": {
+        "x_pct": 7.53,
+        "y_pct": 13.388,
+        "w_pct": 85.479,
+        "h_pct": 62.96
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match the provided source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Da fällt mir Aristoteles ein, der schon gesagt hat, daß der Mensch es so schwer hat, praktisch eine Wahrheit zu sagen oder überhaupt etwas zu sagen, weil er eben nie ununterbrochen an einer Sache bleiben kann, weil die Zeit darüber hinweggeht und die Gedanken mal dahin und mal dorthin gehen. Ich kann das recht gut nachvollziehen. Aber wo soll da die Wahrheit herkommen?",
+      "bbox": {
+        "x_pct": 7.575,
+        "y_pct": 78.051,
+        "w_pct": 84.985,
+        "h_pct": 15.209
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match the provided source image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "54",
+      "bbox": {
+        "x_pct": 82.357,
+        "y_pct": 95.348,
+        "w_pct": 4.143,
+        "h_pct": 2.298
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer and assigned _filter tag."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "OCR text was heavily garbled in the provided segments and needed correction.",
+    "Page number at the bottom was missing a label/region."
+  ],
+  "doc_id": "3180",
+  "page": 31,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

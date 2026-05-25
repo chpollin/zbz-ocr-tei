@@ -1,0 +1,141 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nieung des Geschaffenen. Das ist ein sehr umfasselbstverstAnd lich nicht auf eine rein politische D",
+      "bbox": {
+        "x_pct": 7.742,
+        "y_pct": 7.035,
+        "w_pct": 39.218,
+        "h_pct": 24.194
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Fried",
+      "bbox": {
+        "x_pct": 7.847,
+        "y_pct": 33.701,
+        "w_pct": 4.065,
+        "h_pct": 1.556
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir knnen nicht einfach sagen, Herr Behrendt, wir fAnden uns von archaischen Denkformen umgeben. Al",
+      "bbox": {
+        "x_pct": 7.605,
+        "y_pct": 36.458,
+        "w_pct": 39.355,
+        "h_pct": 17.271
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Litten",
+      "bbox": {
+        "x_pct": 7.742,
+        "y_pct": 56.507,
+        "w_pct": 4.355,
+        "h_pct": 1.479
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie sprachen von dem engagierten Professor an der heutigen deutschen UniversitAt, Herr Behrendt. Wen",
+      "bbox": {
+        "x_pct": 7.476,
+        "y_pct": 59.097,
+        "w_pct": 39.355,
+        "h_pct": 22.549
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Menke-Glckert",
+      "bbox": {
+        "x_pct": 7.742,
+        "y_pct": 83.938,
+        "w_pct": 11.879,
+        "h_pct": 1.549
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die OECD hatte im Dezember 1967 in Paris eine Konferenz, bei der es um die Ziele ging, die sich die Gesellschaft für die kommenden zwanzig Jahre auf fünf konkreten Gebieten setzt: Stadtplanung einschließlich der nötig werdenden modernen Transportsysteme, Erziehungstechnologie, Steigerung der Nahrungsmittelproduktion, Anwendung von Computern sowie Informationstechnologie.",
+      "bbox": {
+        "x_pct": 7.637,
+        "y_pct": 86.806,
+        "w_pct": 38.976,
+        "h_pct": 1.687
+      },
+      "changed": true,
+      "change_reason": "The text extracted was incomplete and missed several lines; also merged lines from the first column."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein Ergebnis dieser Konferenz war, daß für eine vernünftige Planung immer auch eine Gegenplanung erstellt muß, eine Art „„Negativ-Planung””, in der ausgeföhrt ist, was nicht getan werden sollte. Jeder Planungsentwurf sollte mit mindestens einem Gegenentwurf dem Parlament vorgelegt werden, wie es etwa in Kalifornien durch Gesetz für die Raumplanung vorgeschrieben ist. Dadurch wird der Öffentlichkeit und den Politikern klar, daß es meistens nicht nur eine Lösung gibt. Statt den einen sozusagen mechanistischen Weges, den uns Frau Hersch als schlechtes Beispiel schilderte, haben wir heute eine Fülle von Alternativen und Gegenmodellen, die in den Planungsvorschlag einbezogen werden kann, um darüber zu diskutieren. Der Experte muß gezwungen werden, sich mit den sozialen und politischen Konsequenzen seiner technologischen Vorschläge auseinanderzusetzen.",
+      "bbox": {
+        "x_pct": 52.637,
+        "y_pct": 20.764,
+        "w_pct": 39.218,
+        "h_pct": 30.715
+      },
+      "changed": true,
+      "change_reason": "The text was heavily truncated; updated to match the full block of text present in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Weiterhin sind solche Planungsalternativen vor eine Öffentlichkeit zu bringen, damit sie in Pro und Kontra ausgetragen werden können. Wer an einer Stadt- oder Schulplanung mitgewirkt hat, weiß, was alles im ersten Planungsentwurf oft vergessen wird. Eine solche Öffentlichkeit besteht in der Bundesrepublik für die Technologie-Planung nicht. Diskussionen über Zukunftsforschung in Fachkreisen – Kybernetiker, Architekten, Computer-Experten – ersetzen eine solche Öffentlichkeit nicht, wie sie jetzt etwa für Fragen der Bildungsplanung besteht.",
+      "bbox": {
+        "x_pct": 52.605,
+        "y_pct": 53.007,
+        "w_pct": 39.145,
+        "h_pct": 18.917
+      },
+      "changed": true,
+      "change_reason": "Text completion updated to reflect the full paragraph in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "46",
+      "bbox": {
+        "x_pct": 7.6,
+        "y_pct": 94.6,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "New region added for the page number at the bottom."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for paragraphs was severely truncated.",
+    "Page number missing from initial region list.",
+    "Some OCR errors in text strings.",
+    "Author signature placeholder not explicitly noted as expected in instructions."
+  ],
+  "doc_id": "810",
+  "page": 48,
+  "elapsed_seconds": 9.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

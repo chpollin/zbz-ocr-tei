@@ -1,0 +1,137 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "54. MONDE NOUVEAU",
+      "bbox": {
+        "x_pct": 25.887,
+        "y_pct": 20.893,
+        "w_pct": 49.395,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Header identified as section_header/page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "moderne, où s'établissent les échanges et les communications qui unifient la terre.",
+      "bbox": {
+        "x_pct": 25.782,
+        "y_pct": 23.177,
+        "w_pct": 49.194,
+        "h_pct": 2.983
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut qu'il sache se situer dans le temps, parmi les éléments constitutifs de son époque que le passé lui a légués et qui sont en constante transformation ; qu'il sache, dans le temps, distinguer ce qu'il constate de ce qu'il veut.",
+      "bbox": {
+        "x_pct": 25.621,
+        "y_pct": 26.452,
+        "w_pct": 49.218,
+        "h_pct": 6.007
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut qu'il sache prendre ses distances par rapport à toute chose enseignée, douter, confronter, raisonner — seule façon humaine de mettre en œuvre une foi fondamentale en la vérité.",
+      "bbox": {
+        "x_pct": 25.54,
+        "y_pct": 32.133,
+        "w_pct": 49.137,
+        "h_pct": 5.784
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut qu'il ait la possibilité et la capacité de jouir de la civilisation à laquelle il appartient, qu'il puisse en éprouver la visée, en penser le mouvement, en rencontrer les œuvres d'art et de réflexion, afin de faire et de refaire l'expérience des valeurs auxquelles il ordonnera sa vie, subordonnera ses désirs et qui donneront son sens au contrôle civique.",
+      "bbox": {
+        "x_pct": 25.403,
+        "y_pct": 38.009,
+        "w_pct": 49.379,
+        "h_pct": 9.036
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lire, écrire, compter ne sont que des moyens.",
+      "bbox": {
+        "x_pct": 29.056,
+        "y_pct": 46.703,
+        "w_pct": 36.645,
+        "h_pct": 1.957
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, voyons où nous en sommes dans une civilisation qui, depuis des siècles, affirme les droits de la personne, de toute personne.",
+      "bbox": {
+        "x_pct": 25.435,
+        "y_pct": 49.572,
+        "w_pct": 49.056,
+        "h_pct": 4.353
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Restons en Europe, pour aujourd'hui, en Europe Occidentale, et ne nous aventurons pas trop vers le Sud. En effet, dès que nous quittons ces terres, et si nous mettons à part les États-Unis et quelques régions « occidentalisées » du globe, nous trouvons presque partout, pour ce qui concerne les problèmes politiques, un niveau d'éducation tel que (et même dans les pays d'antique culture religieuse ou métaphysique) les notions européennes de régimes ou de partis qu'on y emploie ne correspondent à rien. Et qu'on veuille bien voir dans cette constatation, non une justification du système colonial, mais une accusation plus profonde contre lui.",
+      "bbox": {
+        "x_pct": 24.839,
+        "y_pct": 54.005,
+        "w_pct": 49.815,
+        "h_pct": 15.665
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans les pays d'Europe occidentale, la scolarité obligatoire s'arrête aux environs de 14 ans. Dans les campagnes, les classes surchargées d'élèves de tous les degrés rendent souvent impossible le travail du maître. Dans les villes, les classes homogènes, mais également surchargées, permettent d'acquérir certaines connaissances, mais guère d'exercer individuellement l'intelligence.",
+      "bbox": {
+        "x_pct": 24.839,
+        "y_pct": 69.538,
+        "w_pct": 49.355,
+        "h_pct": 8.859
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 19.395,
+        "y_pct": 85.836,
+        "w_pct": 61.169,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Footer identified as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Detected OCR errors/merges in text boxes that were not explicitly corrected to maintain original spatial structure, but noted as issues.",
+    "Footer and header regions correctly identified and re-labeled."
+  ],
+  "doc_id": "240",
+  "page": 6,
+  "elapsed_seconds": 6.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

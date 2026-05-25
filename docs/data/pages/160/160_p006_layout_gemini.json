@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "688 TABLE DES MATIÈRES 1949",
+      "bbox": {
+        "x_pct": 13.002,
+        "y_pct": 65.0,
+        "w_pct": 71.199,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index to page_header and assigned _filter tag as it is a header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les livres nouveaux",
+      "bbox": {
+        "x_pct": 32.192,
+        "y_pct": 68.227,
+        "w_pct": 32.877,
+        "h_pct": 3.006
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sont à votre disposition dès leur parution à la bibliothèque de PRETS DE LIVRES",
+      "bbox": {
+        "x_pct": 17.774,
+        "y_pct": 71.531,
+        "w_pct": 61.598,
+        "h_pct": 4.077
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Au blé qui lève",
+      "bbox": {
+        "x_pct": 29.532,
+        "y_pct": 76.898,
+        "w_pct": 38.276,
+        "h_pct": 3.304
+      },
+      "changed": true,
+      "change_reason": "Corrected text read error from 'Au blé lève qui' to 'Au blé qui lève'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "RUE DU MIDI 1, LAUSANNE",
+      "bbox": {
+        "x_pct": 29.795,
+        "y_pct": 80.475,
+        "w_pct": 37.785,
+        "h_pct": 1.982
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR read error."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Renseignements gratuits - Abonnements pour toute la Suisse",
+      "bbox": {
+        "x_pct": 17.774,
+        "y_pct": 83.263,
+        "w_pct": 61.564,
+        "h_pct": 2.176
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR read error."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Original layout region for the index list was missing or merged incorrectly; should have been separated as table.",
+    "OCR errors in advertisement text.",
+    "Page number/header was missing from the initial scan detection list."
+  ],
+  "doc_id": "160",
+  "page": 6,
+  "elapsed_seconds": 3.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

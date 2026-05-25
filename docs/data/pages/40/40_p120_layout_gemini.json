@@ -1,0 +1,52 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "122 TEMPS ALTERNS",
+      "bbox": {
+        "x_pct": 8.378,
+        "y_pct": 8.273,
+        "w_pct": 81.351,
+        "h_pct": 2.476
+      },
+      "changed": true,
+      "change_reason": "Page header and number identified as content; moved to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "froissements Le sentier traversait le ruisseau gel&eacute; et remontait raide. Attentive &agrave; ne pas glisser, m'accrochant aux troncs et aux tiges, les yeux tout occup&eacute;s du sol, j'ai grimp&eacute; jusqu'&agrave; la limite des broussailles. L&agrave;, j'&eacute;tais encore &agrave; l'ombre, le raide manteau de froid restait sur mes &eacute;paules, l'air dur serrait mon visage. Mais l'espace s'&eacute;tait ouvert et je voyais un champ monter vers le ciel. En haut il &eacute;tait au soleil, et la courbe descendante de sa cr&ecirc;te mettait sur l'azur un mince liser&eacute; d'or. Je regardai longuement cette ligne illumin&eacute;e au del&agrave; de laquelle il n'y avait plus rien. Peu &agrave; peu la beaut&eacute; qu'elle avait pour mes yeux perdit son importance et je sentis passer dans mes membres un mouvement qui n'&eacute;tait pas le mien, qui &eacute;tait celui de la terre. Elle s'&eacute;tirait; de sa vie lente et lourde elle soulevait les surfaces, elle se repliait sur les coul&eacute;es d'ombre. Je me remis &agrave; marcher, et au fur et &agrave; mesure que j'avan&ccedil;ais, le lien n&eacute;cessaire de tous ses gestes me combla.",
+      "bbox": {
+        "x_pct": 8.378,
+        "y_pct": 12.788,
+        "w_pct": 81.351,
+        "h_pct": 45.624
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un sentier descendant m'amena dans les vignes. J'y ai march&eacute; longtemps &agrave; flanc de coteau. Chaque plant figurait une souple corbeille allong&eacute;e, encore vide, avec ses pousses nues relev&eacute;es qu'un brin de raphia nouait &agrave; l'&eacute;chalas. Le coteau avait l'air d'une b&ecirc;te, rousse ou blonde selon la lumi&egrave;re, au poil r&egrave;che &agrave; la main, doux aux yeux. Et plus on regardait loin, apr&egrave;s un creux, apr&egrave;s un autre creux, les renflements ensoleill&eacute;s de la terre, moins c'&eacute;tait r&ecirc;che et plus c'&eacute;tait doux. Le chemin parfois descendait dans le creux; alors la bosse voisine grandissait, cachait les ondulations suivantes, masquait, &agrave; l'horizon, des toits et un",
+      "bbox": {
+        "x_pct": 8.919,
+        "y_pct": 58.195,
+        "w_pct": 81.081,
+        "h_pct": 27.94
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 1,
+  "issues": [
+    "Original detection included page number and header in paragraph block.",
+    "OCR of the paragraph text needs significant cleanup to match the source print quality."
+  ],
+  "doc_id": "40",
+  "page": 120,
+  "elapsed_seconds": 5.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

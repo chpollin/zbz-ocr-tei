@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 34.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "37",
+      "bbox": {
+        "x_pct": 76.5,
+        "y_pct": 100,
+        "w_pct": 3.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La   gamme des théories esthétiques va de celles mettent tout Paccent sur Pexpressivité à celles s'a",
+      "bbox": {
+        "x_pct": 10.868,
+        "y_pct": 17.476,
+        "w_pct": 68.625,
+        "h_pct": 42.792
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chacune de susceptible  dune véritable  grandeur. Celles dépasser les   justifications   humaines   ",
+      "bbox": {
+        "x_pct": 11.022,
+        "y_pct": 60.192,
+        "w_pct": 68.587,
+        "h_pct": 14.972
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page number region"
+  ],
+  "doc_id": "110",
+  "page": 39,
+  "elapsed_seconds": 5.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

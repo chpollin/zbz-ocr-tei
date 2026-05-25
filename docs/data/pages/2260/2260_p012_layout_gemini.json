@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'avait pas de corps, il eut deux mains. La force afflua dans ses mains. Et Dieu redouta, dans ses mains étrangères, cette toute-puissance.",
+      "bbox": {
+        "x_pct": 23.502,
+        "y_pct": 11.17,
+        "w_pct": 65.391,
+        "h_pct": 10.8
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu se tenait là, avec ses deux mains gonflées de toute-puissance, au centre de l'être paisible sans fissure que rien ne distinguait du néant. Ses deux mains gonflées n'en pouvaient plus d'être pleines et étreintes par la plénitude.",
+      "bbox": {
+        "x_pct": 23.189,
+        "y_pct": 22.416,
+        "w_pct": 65.535,
+        "h_pct": 17.231
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu sentit ses paumes rapprochées qui faisaient comme une corbeille débordante. Et il essaya de créer des êtres.",
+      "bbox": {
+        "x_pct": 23.43,
+        "y_pct": 39.082,
+        "w_pct": 65.054,
+        "h_pct": 8.729
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il créa d'abord l'Arbre: mille puissances diffuses nouées en un tronc souverain, épanoui enfin en mille branches créatrices, chargées d'astres, de clameurs, de nids, gorgées de cieux et de vents. L'Arbre serait la forme du monde.",
+      "bbox": {
+        "x_pct": 23.297,
+        "y_pct": 50.253,
+        "w_pct": 65.548,
+        "h_pct": 16.692
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu aima l'Arbre et le fit divin.",
+      "bbox": {
+        "x_pct": 26.955,
+        "y_pct": 67.449,
+        "w_pct": 48.652,
+        "h_pct": 2.584
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais l'Arbre à peine né flotta une seconde seulement sur les bords aisés de la création, avec la légèreté docile des fantômes. Flotta, -",
+      "bbox": {
+        "x_pct": 23.381,
+        "y_pct": 70.202,
+        "w_pct": 65.223,
+        "h_pct": 5.278
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 23.82,
+        "y_pct": 81.65,
+        "w_pct": 2.21,
+        "h_pct": 3.25
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected missing page number in original list.",
+    "OCR text transcription quality in the original detection was poor, though the labels and bounding boxes were mostly correct."
+  ],
+  "doc_id": "2260",
+  "page": 12,
+  "elapsed_seconds": 7.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist schwierig, wenn nicht unmöglich, unseren eigenen Tod zu denken, um dann zu wissen, was wir von ihm halten und welche Gefühle er in uns weckt. Zunächst hüllt er sich in allem ein, was in ihm noch dem Leben angehört. Krankheit, Grauen vor dem endgültigen, unvorstellbaren Ausgang, körperliche Schmerzen, Ersticken oder Angst vor dem Ersticken, Übelkeit, das alles droht uns nur, während wir noch am Leben sind. Eine unerträgliche Trennung, die Angst um die Hinterbliebenen, für die man nicht mehr dasein wird, ein für immer unfertiges Werk, das sind Sorgen des noch Lebenden. Der Abschied von der Sonne, vom Licht, von den Schönheiten und Geheimnissen der Welt, von all dem reißt sich nur der noch Lebende los. Mit dem Tod ist das alles zu Ende.",
+      "bbox": {
+        "x_pct": 6.897,
+        "y_pct": 6.893,
+        "w_pct": 80.704,
+        "h_pct": 28.472
+      },
+      "changed": true,
+      "change_reason": "OCR corrected to match source text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nur denjenigen Tod dürfen wir erleben, der den trifft, den wir lieben. Als Lebende begleiten wir den Geliebten bis zur Schwelle seines Todes - nicht weiter. Sein Tod kann unser Wesen wie ein Schwert entzweien - auch dann wird die Wunde von einem Lebenden erlitten. Die, die glauben, weiter eingedrungen zu sein und davon erzählen zu können, haben in Wirklichkeit nur das Reich der Lebenden erweitert. Verlassen haben sie es nicht.",
+      "bbox": {
+        "x_pct": 6.71,
+        "y_pct": 35.365,
+        "w_pct": 80.934,
+        "h_pct": 17.536
+      },
+      "changed": true,
+      "change_reason": "OCR corrected to match source text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Um sich dem Tode zu nähern, verfügen die Menschen über keine »negative« Sprache im Sinne der negativen Theologie, als sie versuchte, Gott näher zu kommen. Wenn es um den Tod geht, wird selbst das Schweigen stumm.",
+      "bbox": {
+        "x_pct": 6.609,
+        "y_pct": 52.79,
+        "w_pct": 80.991,
+        "h_pct": 9.356
+      },
+      "changed": true,
+      "change_reason": "OCR corrected to match source text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Tod ist jedoch von unseren Gedanken, von unseren Werken, von unserem Alltag nie weit entfernt. Vorausgesetzt, daß man sich ihn nicht als ein zeitliches Leben vorstellt, das sich nach dem Absterben des Körpers fortsetzen würde, kommt ihm eine einzigartige Gegenwart und Wirksamkeit zu. Durch den Tod wird aus einer verstandesmäßigen Einsicht eine Gewißheit; er verwandelt das Gelb einer Blume in Gold; ein Unterschlupf wird zum Heim; Wollust zur Hingabe. Vor allem aber verwandelt er - unsichtbar, unbemerkt - den vorüberziehenden Augenblick in eine einmalige Miniatur von Ewigkeit.",
+      "bbox": {
+        "x_pct": 6.609,
+        "y_pct": 61.631,
+        "w_pct": 80.991,
+        "h_pct": 22.343
+      },
+      "changed": true,
+      "change_reason": "OCR corrected to match source text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Mensch wird sterblich geboren, und er weiß es. Er hat es von jeher gewußt, seit der Urzeit, seitdem er entdeckte, daß er unter den Lebewesen das entwaffnetste war. Er besaß weder",
+      "bbox": {
+        "x_pct": 6.897,
+        "y_pct": 83.631,
+        "w_pct": 80.647,
+        "h_pct": 6.412
+      },
+      "changed": true,
+      "change_reason": "OCR corrected to match source text"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "313",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 91.5,
+        "w_pct": 5,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer"
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was very poor and required full text re-insertion",
+    "Page number at the bottom was incorrectly identified as text"
+  ],
+  "doc_id": "2450",
+  "page": 4,
+  "elapsed_seconds": 5.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

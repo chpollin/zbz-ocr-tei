@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'autant moins ressenti comme «sacré» que la bienheureuse expérience des migrations massives, au moment des vacances, est liée au franchissement d'innombrables frontières et de rapides foulées sur des «sols» aussi lointains que possible. Lors de la dernière guerre, la défense conçue comme «défense du réduit» a bien montré, affectivement et stratégiquement, que ce qu'on était résolu à «tenir» coûte que coûte n'était plus essentiellement «le sol».",
+      "bbox": {
+        "x_pct": 8.005,
+        "y_pct": 14.641,
+        "w_pct": 87.525,
+        "h_pct": 14.045
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant: nous considérons encore – et j'espère que nous considérerons toujours – que notre patrie est «une terre d'asile». Non un pays, mais une terre. Cela confirme qu'en dehors de toute matrice nourricière, «le sol de la patrie» reste un lieu, une étendue concrète, sur laquelle s'étend, jusqu'à ses frontières, un droit: le droit de toute personne humaine à être libre, et donc protégée, défendue, contre ceux qui le violent.",
+      "bbox": {
+        "x_pct": 8.165,
+        "y_pct": 28.662,
+        "w_pct": 86.995,
+        "h_pct": 13.803
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par le détour des Droits de l'homme, «le sol de la patrie» retrouve une nouvelle force, mais celle-ci dépend de nos décisions, de notre volonté. Chaque fois qu'un Droit de l'homme est violé sur ce sol, la défense qui lui est assurée par l'armée s'anémie en sens, en substance, en légitimité, en même temps que s'affaiblit la symbolique qui donne à la hiérarchie sa juste efficacité. Telle est la situation inévitable, dans un pays et pour une armée dont la force est vouée à défendre la liberté.",
+      "bbox": {
+        "x_pct": 8.042,
+        "y_pct": 42.466,
+        "w_pct": 87.155,
+        "h_pct": 13.997
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faut pas faire l'ange. Les Droits de l'homme sont à la fois si absolument exigeants et si contraires au fonctionnement naturel de la force qu'ils ne sont pour ainsi dire jamais intégralement mis en œuvre. Le droit d'asile n'est jamais, et ne peut jamais être, illimité, surtout dans un pays aussi petit que le nôtre. C'est pourtant ce droit qui en légitime le plus lumineusement l'indépendance, comme aussi la force qui la défend; et par conséquent, en lui donnant la plus grande extension possible, on renforce l'armée et on en nourrit le sens.",
+      "bbox": {
+        "x_pct": 8.534,
+        "y_pct": 56.301,
+        "w_pct": 86.995,
+        "h_pct": 16.035
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est en revanche difficile de comprendre ceux qui réclament l'extension du droit d'asile sur une terre qu'ils refusent de défendre. Comment offrir à des réfugiés poursuivis un abri dans sa propre maison, si on est décidé à les livrer sans coup férir à leurs poursuivants?",
+      "bbox": {
+        "x_pct": 8.534,
+        "y_pct": 72.143,
+        "w_pct": 87.069,
+        "h_pct": 8.38
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est un grand privilège d'être citoyen d'un pays dont l'armée n'a, de toute évidence, qu'une fonction défensive. C'en est un autre que cette armée soit une armée de milice, et qu'elle ait réussi à devenir un instrument",
+      "bbox": {
+        "x_pct": 8.411,
+        "y_pct": 87.857,
+        "w_pct": 87.192,
+        "h_pct": 6.398
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 81.33,
+        "y_pct": 95.83,
+        "w_pct": 2.2,
+        "h_pct": 2.1
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Raw OCR text was extremely poor quality, requiring full manual correction.",
+    "Page number 14 was missing from initial detection.",
+    "Logo was skipped."
+  ],
+  "doc_id": "2370",
+  "page": 6,
+  "elapsed_seconds": 8.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,125 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 16 -",
+      "bbox": {
+        "x_pct": 23.573,
+        "y_pct": 94.652,
+        "w_pct": 2.21,
+        "h_pct": 1.43
+      },
+      "changed": true,
+      "change_reason": "Page numbers are identified as page_footer/filter."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 17 -",
+      "bbox": {
+        "x_pct": 74.07,
+        "y_pct": 94.652,
+        "w_pct": 2.27,
+        "h_pct": 1.43
+      },
+      "changed": true,
+      "change_reason": "Page numbers are identified as page_footer/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SInn 1u und und Das hler 90 hulgabrn In",
+      "bbox": {
+        "x_pct": 21.871,
+        "y_pct": 20.013,
+        "w_pct": 21.937,
+        "h_pct": 11.845
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jedun In drr In In Ir n Hn",
+      "bbox": {
+        "x_pct": 24.853,
+        "y_pct": 37.874,
+        "w_pct": 2.849,
+        "h_pct": 2.901
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prol . 'poqun Bchu L 1 Inuden u n pour Eu",
+      "bbox": {
+        "x_pct": 5.48,
+        "y_pct": 54.679,
+        "w_pct": 38.395,
+        "h_pct": 12.393
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Duch",
+      "bbox": {
+        "x_pct": 5.48,
+        "y_pct": 82.353,
+        "w_pct": 2.146,
+        "h_pct": 1.297
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Feichen 50 In 10 Johren",
+      "bbox": {
+        "x_pct": 55.717,
+        "y_pct": 13.864,
+        "w_pct": 38.367,
+        "h_pct": 8.021
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Junqu' de u uqu 1'Indugtrls zuruck Narsch hal dna",
+      "bbox": {
+        "x_pct": 55.651,
+        "y_pct": 35.561,
+        "w_pct": 33.428,
+        "h_pct": 8.824
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ivl hunln Tani qu/ Enn ol",
+      "bbox": {
+        "x_pct": 58.12,
+        "y_pct": 60.829,
+        "w_pct": 24.122,
+        "h_pct": 20.053
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page numbers were incorrectly labeled as paragraphs.",
+    "OCR quality is generally very poor due to image distortion/artifacts."
+  ],
+  "doc_id": "2130",
+  "page": 10,
+  "elapsed_seconds": 4.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

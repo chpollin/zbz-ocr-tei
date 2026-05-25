@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "96",
+      "bbox": {
+        "x_pct": 14.759,
+        "y_pct": 80.0,
+        "w_pct": 2.259,
+        "h_pct": 2.381
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header as it is the page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA MORT",
+      "bbox": {
+        "x_pct": 45.482,
+        "y_pct": 80.0,
+        "w_pct": 8.735,
+        "h_pct": 2.381
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header as it is a running title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "soit son sens de la réalité. En effet, si l'avenir est indéfini, vide, illimité, domaine du possible, la forme du système se perd. Si au contraire la nécessité qui apparaît dans toute l'histoire du passé règne aussi sur l'avenir, Hegel aurait dû jouer au prophète. Or nous l'avons vu, Hegel souligne avec une insistance particulière les différences des époques, leur loi spécifique, défendant ainsi contre le déterminisme la spontanéité de toute décision historique actuelle. Laisser l'avenir de côté, en dehors de la question, était le seul moyen pour réserver dans un tel système l'autonomie de l'action, la liberté pratique.",
+      "bbox": {
+        "x_pct": 14.111,
+        "y_pct": 12.638,
+        "w_pct": 76.506,
+        "h_pct": 33.333
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une philosophie qui reste dans le temps et vise à l'éternité, qui souligne les possibilités et la liberté, ne peut se passer de l'avenir. La philosophie de Hegel, au contraire, considère l'éternité comme donnée et la trouve dans la nécessité historique. Il était inévitable que l'avenir lui demeurât fermé. Car il ne pouvait être pour elle que durée morte, ou temps prophétiquement déterminé.",
+      "bbox": {
+        "x_pct": 14.051,
+        "y_pct": 45.971,
+        "w_pct": 76.265,
+        "h_pct": 20.571
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mieux vaut alors parler.",
+      "bbox": {
+        "x_pct": 17.425,
+        "y_pct": 66.257,
+        "w_pct": 50.994,
+        "h_pct": 2.886
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3. Limite humaine.",
+      "bbox": {
+        "x_pct": 37.907,
+        "y_pct": 72.029,
+        "w_pct": 28.404,
+        "h_pct": 2.476
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps n'est réel pour l'homme que par la mort. C'est la mort qui différencie les instants de la vie et qui donne à chacun d'eux la valeur brûlante de ce qui est unique et irremplaçable. Elle apporte « toute la bénédiction de « une seule fois et plus",
+      "bbox": {
+        "x_pct": 14.157,
+        "y_pct": 76.638,
+        "w_pct": 76.355,
+        "h_pct": 12.6
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Failed to detect page number 96 as its own region initially.",
+    "Failed to detect running header 'LA MORT' as its own region initially."
+  ],
+  "doc_id": "20",
+  "page": 98,
+  "elapsed_seconds": 6.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

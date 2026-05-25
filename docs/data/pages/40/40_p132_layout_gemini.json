@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "134 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 82.0,
+        "w_pct": 79.0,
+        "h_pct": 4.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text, relabeled to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "parfois, en une minute, quand il s'affole, — parfois au contraire il reste immobile, et la minute devient une sorte d'éternité. Mais il aurait beau s'épuiser à rattraper le temps, il aurait beau aussi faire le mort, la règle resterait la même, comme une évidence, absurde, irréductible.",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 12.732,
+        "w_pct": 80.892,
+        "h_pct": 14.991
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute la journée se passa ainsi pour moi sur deux plans. Nous causions. Mes parents étaient calmes, sans inquiétude. C'était étrange de voir leurs yeux clairvoyants qui ignoraient ce qui allait venir, et moi je savais le coup que j'allais porter, et j'en avais honte, parce qu'il est humiliant de connaître le coup d'avance et de savoir mieux que l'autre, en face de soi, ce qui l'attend. Il y eut, au-dessous du chemin, les pierres du bord de l'eau, le clapotis, la cachette des cygnes. Il y eut le pique-nique au soleil, et le chocolat couvert de crème du goûter. Mais quelque part, il y avait deux lettres, et une règle métrique que rien ne raccourcirait, qu'aucune buée de larmes n'empêcherait d'imposer ses mesures.",
+      "bbox": {
+        "x_pct": 10.446,
+        "y_pct": 30.274,
+        "w_pct": 81.135,
+        "h_pct": 33.62
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete/corrupted text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin, juste avant de retourner à la gare, mes parents revinrent dans ma chambre prendre quelques paquets. C'est alors que sans aucun préambule je leur ai remis les deux lettres. Et tandis qu'ils lisaient, l'angoisse envahit tout; le soleil brilla seul au milieu de l'angoisse qui venait de leurs deux fronts. Ils n'eurent pas le temps de me parler, il leur fallait aller prendre le train, — mais quand le train eut disparu, quand la voie fut vide, je restai immobile sur le quai, et une désolation sans remède",
+      "bbox": {
+        "x_pct": 10.635,
+        "y_pct": 63.355,
+        "w_pct": 80.946,
+        "h_pct": 22.94
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header at top were incorrectly grouped with the first paragraph.",
+    "Text transcription quality in all regions was poor/truncated.",
+    "Layout analysis failed to identify the page header separately."
+  ],
+  "doc_id": "40",
+  "page": 132,
+  "elapsed_seconds": 4.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

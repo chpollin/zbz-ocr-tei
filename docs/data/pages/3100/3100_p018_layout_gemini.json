@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Évangile qui, dans sa vie et sa mort, fait corps avec l'humanité, ses défaites, ses espoirs; elle est celle de ses continuateurs et de leurs communautés. En effet, l'homme moderne apprend à connaître ses pouvoirs et leurs limites, à mesurer ses connaissances et leurs possibilités futures; il ressent encore confusément le besoin d'une Bonne Nouvelle au cœur de sa désespérance.",
+      "bbox": {
+        "x_pct": 14.803,
+        "y_pct": 8.302,
+        "w_pct": 65.238,
+        "h_pct": 11.909
+      },
+      "changed": true,
+      "change_reason": "The detected text content was truncated and missing significant portions of the actual paragraph. Updated text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Église fait la critique de sa politique passée, de ses méthodes et de ses pratiques, les théologiens font celle de leur discipline à la lumière des résultats de l'exégèse biblique et de l'histoire des dogmes. Ils s'interrogent sur la nécessité et la légitimité des emprunts faits aux philosophies prédominantes au cours des siècles passés. Dans cette revision, l'examen des diverses façons de poser le problème de Dieu occupe une place importante. A l'effort de démythologisation entrepris sur les textes bibliques par R. Bultmann et son école correspond un effort de «deshellénisation» poursuivi (à la suite de Barth d'une part, et d'autre part de l'ancienne école libérale et moderniste) par des théologiens venus d'horizons très différents. Sommairement, on pourrait dire que la question actuelle est de savoir quels sont historiquement et structuralement les rapports entre ces deux types de questions: «Adam, où es-tu?», «Caïn qu'as-tu fait de ton frère?» et «Dieu, est-il?», «Qui est Dieu?» En d'autres termes, comment a pu se faire le rapprochement entre la thématique biblique et la thématique philosophique de la question de Dieu?",
+      "bbox": {
+        "x_pct": 14.77,
+        "y_pct": 23.647,
+        "w_pct": 65.463,
+        "h_pct": 34.074
+      },
+      "changed": true,
+      "change_reason": "The detected text content was truncated and garbled. Updated text to match the paragraph in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette approche du problème ne vise pas seulement son éclaircissement théorique et doctrinal, mais aussi ses implications pratiques. Tout s'est passé, semble-t-il, comme si la collusion de la thématique biblique et de la thématique philosophique avait favorisé la majoration des attitudes contemplatives et mystiques aux dépens des comportements éthiques. La cause profonde de cette modification serait à chercher dans le demi-effacement de la tension eschatologique provoquée par le message prophétique et évangélique. En effet, la thématique biblique parle de Dieu comme du Dieu de la promesse, du Dieu qui vient pour sauver et qui fait connaître ses promesses, son salut par anticipation en envoyant ses serviteurs. La thématique philosophique par contre avec sa conception plus cosmologique qu'historique de l'univers, de l'homme et de Dieu, ignore cette tension eschatologique et l'apocalyptique qui en découle; elle admet des théophanies et des",
+      "bbox": {
+        "x_pct": 14.803,
+        "y_pct": 57.453,
+        "w_pct": 65.399,
+        "h_pct": 28.017
+      },
+      "changed": true,
+      "change_reason": "The detected text content was truncated. Updated text to match the full paragraph in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 77.29,
+        "y_pct": 87.27,
+        "w_pct": 1.7,
+        "h_pct": 1.8
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, reassigned to page_footer / _filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was highly inaccurate and truncated.",
+    "Page number at bottom right was labeled as text, moved to _filter."
+  ],
+  "doc_id": "3100",
+  "page": 18,
+  "elapsed_seconds": 5.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

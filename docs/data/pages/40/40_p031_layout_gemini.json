@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 33",
+      "bbox": {
+        "x_pct": 39.81,
+        "y_pct": 77.29,
+        "w_pct": 20.35,
+        "h_pct": 1.76
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header based on location and content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "bord d'un rayon de soleil qui mettait sur le parquet un miroitement de rivière. Le bruit du tramway, devant la maison, faisait rouler les eaux des torrents. Je me sentais les yeux fixes, élargis par des perspectives changeantes, comme si des pans de murs, des coins de chambres s'en allaient, reculaient, laissaient la place à des vallées, à des cimes nouvelles, venant à nous au fil de notre marche, dans les hauts sentiers.",
+      "bbox": {
+        "x_pct": 11.12,
+        "y_pct": 12.19,
+        "w_pct": 80.77,
+        "h_pct": 17.65
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Car Pierre était venu. Rien qu'un instant. J'étais seule. Il n'avait pas voulu s'asseoir; il m'avait demandé si je pourrais faire une course de montagne avec lui dimanche, et j'avais promis d'en demander la permission. Et puis il était parti. J'étais rentrée dans la chambre, j'avais refermé la porte, — et aussitôt j'avais oublié même le bouleversement que m'avait donné sa venue, même qu'il était venu. Je rêvais debout, oubliant de faire un pas de plus, devant la journée de vacances soudain ressuscitée, parmi les ruisseaux et les plaques de neige. Elle recommencerait, se répéterait, la même, intacte. Nous sommes bien restés les mêmes, lui et moi; aussi naturels l'un envers l'autre, aussi simples.",
+      "bbox": {
+        "x_pct": 10.91,
+        "y_pct": 32.42,
+        "w_pct": 80.81,
+        "h_pct": 32.77
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un léger vertige me prit, quand j'entendis la clé dans la serrure, d'être restée debout si longtemps. A mes pieds, il n'y avait plus de soleil. Ma mère entra, alluma, s'étonna de me trouver là, dans l'ombre, les mains vides, les yeux éblouis. J'eus soudain l'impression d'une lutte autour de moi. La montagne et la chambre se disputaient le réel, cherchaient à s'approprier des formes qui pouvaient devenir un rocher ou une desserte. La chambre s'établit;",
+      "bbox": {
+        "x_pct": 10.72,
+        "y_pct": 64.81,
+        "w_pct": 80.73,
+        "h_pct": 20.28
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 86.2,
+        "w_pct": 1.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was very poor and required manual transcription.",
+    "Page number and header were incorrectly classified as paragraphs."
+  ],
+  "doc_id": "40",
+  "page": 31,
+  "elapsed_seconds": 4.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

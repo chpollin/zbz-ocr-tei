@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LES PHILOSOPHIES DANS LE MONDE 87",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified running header with page number as heading/metadata region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dautre part, il n 9 'y a pas de continuité, de transition Chacun dentre eux tient sa réalité dune co",
+      "bbox": {
+        "x_pct": 13.112,
+        "y_pct": 15.516,
+        "w_pct": 73.989,
+        "h_pct": 37.892
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seulement voilà du fait n'existe pas de continuité entre les nodes et que chacun dentre eux est vécu",
+      "bbox": {
+        "x_pct": 13.139,
+        "y_pct": 52.895,
+        "w_pct": 73.5,
+        "h_pct": 26.006
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En même temps; chacun dentre eux postule une unité le transcende, une unité indépendante serait la r",
+      "bbox": {
+        "x_pct": 13.546,
+        "y_pct": 78.479,
+        "w_pct": 73.223,
+        "h_pct": 7.373
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing header region to capture page number and title text."
+  ],
+  "doc_id": "140",
+  "page": 6,
+  "elapsed_seconds": 8.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

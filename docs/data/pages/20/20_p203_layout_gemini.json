@@ -1,0 +1,167 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TABLE DES MATIÈRES",
+      "bbox": {
+        "x_pct": 24.654,
+        "y_pct": 21.325,
+        "w_pct": 46.28,
+        "h_pct": 2.822
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "INTRODUCTION",
+      "bbox": {
+        "x_pct": 35.437,
+        "y_pct": 30.095,
+        "w_pct": 24.458,
+        "h_pct": 1.745
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'énigme de la philosophie",
+      "bbox": {
+        "x_pct": 9.789,
+        "y_pct": 33.012,
+        "w_pct": 34.036,
+        "h_pct": 3.051
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PREMIÈRE PARIIE",
+      "bbox": {
+        "x_pct": 30.527,
+        "y_pct": 38.923,
+        "w_pct": 34.789,
+        "h_pct": 2.421
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ambiguïté du problème philosophique.",
+      "bbox": {
+        "x_pct": 19.88,
+        "y_pct": 42.612,
+        "w_pct": 55.527,
+        "h_pct": 2.927
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "CHAPITRE I Les caractères spécifiques du problème philosophique",
+      "bbox": {
+        "x_pct": 10.045,
+        "y_pct": 47.445,
+        "w_pct": 66.506,
+        "h_pct": 4.156
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo from CHAPIIRE to CHAPITRE"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Variabilité de la philosophie, de Ses buts, problèmes et méthodes, 15-17. Son unité? 18. Philosophie et théologie, 20-21. Résultats paradoxaux, 22-23. Philosophie et art : langage symbolique; perfection instantanée de l’art; devenir fidèle de la philosophie; elle comporte toujours une morale; emprise de la morale, qui engage dans la durée, 24-29. Tentations de la philosophie, 30. « La philosophie, » notion obscure, 31.",
+      "bbox": {
+        "x_pct": 13.102,
+        "y_pct": 52.173,
+        "w_pct": 63.75,
+        "h_pct": 17.827
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual evidence"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "CHAPITRE II Le problème philosophique et le philosophe",
+      "bbox": {
+        "x_pct": 12.952,
+        "y_pct": 71.525,
+        "w_pct": 64.006,
+        "h_pct": 4.328
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR and label for chapter heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’alternative être ou ne pas être, 33. Le philosophe ne peut lui échapper, 34. Autres affirmations de l’existence, 35. Perversions du vouloir-être, 36. Duplicité du problème philosophique, 37. Evidence non apodictique, mais fondée sur l’histoire et l’expérience, 38-39; il faut reconnaître les limites des preuves, 40-41.",
+      "bbox": {
+        "x_pct": 12.997,
+        "y_pct": 76.52,
+        "w_pct": 63.855,
+        "h_pct": 12.583
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Page",
+      "bbox": {
+        "x_pct": 79.774,
+        "y_pct": 31.907,
+        "w_pct": 5.663,
+        "h_pct": 1.649
+      },
+      "changed": true,
+      "change_reason": "Re-labeled page header to footer/filter"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 81.732,
+        "y_pct": 49.79,
+        "w_pct": 3.358,
+        "h_pct": 1.563
+      },
+      "changed": true,
+      "change_reason": "Re-labeled page number to page_footer/filter"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "32",
+      "bbox": {
+        "x_pct": 81.822,
+        "y_pct": 74.004,
+        "w_pct": 3.373,
+        "h_pct": 1.659
+      },
+      "changed": true,
+      "change_reason": "Re-labeled page number to page_footer/filter"
+    }
+  ],
+  "score": 75,
+  "num_corrections": 7,
+  "issues": [
+    "Several OCR errors in the paragraph text detected.",
+    "Page numbers and headers misclassified as text.",
+    "Some chapter headers detected as standard text."
+  ],
+  "doc_id": "20",
+  "page": 203,
+  "elapsed_seconds": 7.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

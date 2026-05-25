@@ -1,0 +1,122 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "100",
+      "bbox": {
+        "x_pct": 15.706,
+        "y_pct": 2.0,
+        "w_pct": 5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ENTRETIEN PUBLIC",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 15,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "peuvent nous secourir dans cette tragédie car cette du pouvoir \", dont on toujours, va prendre les a",
+      "bbox": {
+        "x_pct": 15.706,
+        "y_pct": 10.273,
+        "w_pct": 75.845,
+        "h_pct": 14.025
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense qu'il n'y a qu'un moyen d'opposer le pouvoir de liberté all pouvoir de lÉtat devenu extérie",
+      "bbox": {
+        "x_pct": 15.544,
+        "y_pct": 23.719,
+        "w_pct": 75.891,
+        "h_pct": 30.826
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH:",
+      "bbox": {
+        "x_pct": 15.475,
+        "y_pct": 55.479,
+        "w_pct": 16.5,
+        "h_pct": 2
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header for speaker name"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je remercie beaucoup Denis de Rougemont pour ce qu...",
+      "bbox": {
+        "x_pct": 15.475,
+        "y_pct": 57.5,
+        "w_pct": 75.88,
+        "h_pct": 12
+      },
+      "changed": true,
+      "change_reason": "Split body text from speaker label"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jai dit que c'était un mixte \", mais je n'ai jamais prétendu que c'était là une définition_ Dans tou",
+      "bbox": {
+        "x_pct": 15.359,
+        "y_pct": 68.57,
+        "w_pct": 75.961,
+        "h_pct": 19.256
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez aussi et là avez poussé ma pensée vers LIC précision beaucoup plus grande, je crois, que C",
+      "bbox": {
+        "x_pct": 15.428,
+        "y_pct": 87.223,
+        "w_pct": 75.775,
+        "h_pct": 3.959
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number missing from initial detection",
+    "Running header missing from initial detection",
+    "Speaker label not separated from paragraph",
+    "Page number region coordinates implied"
+  ],
+  "doc_id": "1530",
+  "page": 27,
+  "elapsed_seconds": 4.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to section_header for speaker name": 1,
+    "Split body text from speaker label": 1,
+    "ADDED": 2
+  }
+}

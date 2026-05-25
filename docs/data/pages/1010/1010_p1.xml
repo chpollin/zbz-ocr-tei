@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <text>
+    <body><pb facs="#facs_1" n="1" />
+        
+          <div type="text">
+<p facs="#facs_1_r_1">
+            Med Zs 1033<lb facs="#facs_1_l_1_1" n="N001" />Genève XXXIe année N° 1066<lb facs="#facs_1_l_1_2" n="N002" />24 pages (1165-1188) 15 août 1973
+          </p>
+          <p facs="#facs_1_r_2">
+            Médecine &amp; Hygiène
+          </p>
+          <p facs="#facs_1_r_3">
+            JOURNAL SUISSE D'INFORMATIONS MÉDICALES<lb facs="#facs_1_l_3_1" n="N001" />Réservé à la corporation médicale<lb facs="#facs_1_l_3_2" n="N002" />Paraît chaque semaine<lb facs="#facs_1_l_3_3" n="N003" />Dr Léon WEBER-BAULER †<lb facs="#facs_1_l_3_4" n="N004" />Premier rédacteur en chef<lb facs="#facs_1_l_3_5" n="N005" />(1943-1956)<lb facs="#facs_1_l_3_6" n="N006" />Rédacteur en chef : Dr Pierre Rentchnick<lb facs="#facs_1_l_3_7" n="N007" />Président du Conseil d'administration : Dr R. Joris<lb facs="#facs_1_l_3_8" n="N008" />Directeur : J.-P. Balavoine
+          </p>
+          <p facs="#facs_1_r_4">
+            Le philosophe devant les progrès de la science médicale<lb facs="#facs_1_l_4_1" n="N001" />(voir page 1183)
+          </p>
+          <p facs="#facs_1_r_5">
+            Système d'information hospitalier : contraintes
+          </p>
+          <p facs="#facs_1_r_6">
+            Ordinateurs : utilisation dans un service de chirurgie
+          </p>
+          <p facs="#facs_1_r_7">
+            Acupuncture et spécialistes américains
+          </p>
+          <p facs="#facs_1_r_8">
+            Il y a 250 ans mourut A. van Leeuwenhoek qui avait découvert un nouveau monde au microscope. (Voir Page 1177.)
+          </p>
+        
+        </div>
+<div n="2">
+          <div type="text">
+<head>
+            <title type="main">L'ordinateur en chirurgie, anesthésie et soins intensifs</title>
+          </head>
+          <p facs="#facs_1_r_10">
+            Cinq ans d'utilisation en temps réel à la clinique thoracique de l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName> à Stockholm *
+          </p>
+          <p facs="#facs_1_r_11">
+            par R. Bussien¹ (Lausanne), O. Norlandes² (Stockholm) et S. O. Pettersson³ (Järfälla, Suède)
+          </p>
+          <p facs="#facs_1_r_12">
+            La prise rapide de décision est le préalable au fonctionnement rationnel de la médecine intensive moderne. Les multiples données en provenance des équipements qui servent au diagnostic, au traitement ou à la surveillance des malades précaires viennent s'ajouter aux mesures conventionnelles des paramètres physiologiques et aux soins effectués par le personnel infirmier, aux résultats du laboratoire et aux examens physiques médicaux. La consignation manuscrite de ces données et leur consultation traditionnelle ne garantissent plus la prise rapide de décisions optimales concernant les malades.
+          </p>
+          <p facs="#facs_1_r_13">
+            A la clinique thoracique de l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName>, à Stockholm, une application électronique en temps réel a été mise en place pour maîtriser ce flux accru de données et le transformer en information facilitant la prise accélérée de décision. Il s'agit d'un système interactif de communication qui fonctionne depuis cinq ans sans interruption.
+          </p>
+          <p facs="#facs_1_r_14">
+            Environ 9000 opérés thoraciques ont été enregistrés par le système. Les résultats obtenus sont positifs sur le plan de la technologie, des soins aux malades, de l'organisation du travail et de la gestion financière hospitalière.
+          </p>
+          </div>
+<div n="3">
+            <head>Historique</head>
+            <p facs="#facs_1_r_16">
+              En 1967, après quelques mois de pourparlers entre l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName> de Stockholm, le Gouvernement suédois et la firme suédoise d'électronique <orgName ref="GND:unknown">Stansaab</orgName>, l'installation d'un système en temps réel de traitement électronique des données était décidé et se réalisait sans délai à la clinique thoracique (17 lits) de l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName> (1800 lits).
+            </p>
+            <p facs="#facs_1_r_17">
+              Le système, conçu à l'origine pour l'armée de l'air, devait servir une application médicale : — permettre, jour et nuit, l'entrée directe dans
+            </p>
+          </div>
+          <div n="3">
+            <head>Description</head>
+            <p facs="#facs_1_r_19">a) le hardware</p>
+            <p facs="#facs_1_r_20">
+              Le système, essentiellement système de communication, repose sur un hardware constitué principalement (Fig. 1) :
+            </p>
+            <p facs="#facs_1_r_21">
+              - d'un ordinateur <orgName ref="GND:unknown">Stansaab</orgName>, Censor 908, instrument rapide du transit et du traitement en temps réel des données (64 K bytes de
+            </p>
+            <note place="foot" n="*" xml:id="fn1-1">
+              <p facs="#facs_1_r_22">
+                <lb facs="#facs_1_l_22_1" n="N001" />* Communication présentée aux Journées d'informatique médicale à Toulouse, 5-9 mars 1973.<lb facs="#facs_1_l_22_1" n="N002" />¹ Service d'anesthésie, <orgName ref="GND:unknown">Hôpital communal universitaire</orgName>, Lausanne, et clinique thoracique, <orgName ref="GND:unknown">Hôpital Karolinska</orgName>, Stockholm (Suède).<lb facs="#facs_1_l_22_2" n="N003" />² Chef du service d'anesthésie, clinique thoracique, <orgName ref="GND:unknown">Hôpital Karolinska</orgName>, Stockholm (Suède).<lb facs="#facs_1_l_22_3" n="N004" />³ <orgName ref="GND:unknown">Stansaab Elektronik AB</orgName>, Järfälla (Suède).
+              </p>
+            </note>
+            <p facs="#facs_1_r_23">b) la mémoire centrale ; temps d'accès 0,5µsec) ;</p>
+            <p facs="#facs_1_r_24">
+              - d'une mémoire auxiliaire à disque magnétique <orgName ref="GND:unknown">Burroughs</orgName> (2 × 10⁶ bytes de mémoire accessoire ; temps moyen d'accès : 17 µsec.) où sont stockés programmes d'application et données :
+            </p>
+            <p facs="#facs_1_r_25">
+              - de terminaux d'entrée-sortie (8 unités d'affichage <orgName ref="GND:unknown">Stansaab</orgName> Grafoskop, 50 interphones Intercom 411 (fig. 2), 1 lecteur-perforateur de ruban et 2 imprimantes lentes) ;<lb facs="#facs_1_l_25_1" n="N001" />- d'un convertisseur analogique, digital, cinq canaux ;
+            </p>
+            <p facs="#facs_1_r_26">
+              - d'une interface reliant le système par batch à l'<orgName ref="GND:unknown">IBM</orgName>/360-40 de l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName> (KS)
+            </p>
+          </div>
+        </div>
+        <div type="text">
+<figure>
+          <head facs="#facs_1_r_27">Fig. 1. — Configuration générale de l'ordinateur installé à la clinique thoracique de l'Hôpital Karolinska, à Stockholm.</head>
+        </figure>
+        <figure>
+          <head facs="#facs_1_r_29">Fig. 2. — Station Intercom 411 (en haut) et unité d'affichage Grafoskop (en bas). Clinique thoracique de l'Hôpital Karolinska à Stockholm.</head>
+        </figure>
+        
+          <p facs="#facs_1_r_30">Suite page suivante (1166)</p>
+          <p facs="#facs_1_r_31">Nouveau</p>
+          <p facs="#facs_1_r_32">en traumatologie et en phlébologie</p>
+          <p facs="#facs_1_r_33">
+            Tantum<lb facs="#facs_1_l_33_1" n="N001" />Trade Mark<lb facs="#facs_1_l_33_2" n="N002" />Crème
+          </p>
+          <p facs="#facs_1_r_34">
+            un mode d'application plus pratique et plus efficace<lb facs="#facs_1_l_34_1" n="N001" />pénètre jusqu'au foyer de l'inflammation<lb facs="#facs_1_l_34_2" n="N002" />atteint une concentration locale optimale.
+          </p>
+          <p facs="#facs_1_r_35">Tubes de 20 et 100 g à 5 % de benzydiamine</p>
+          <p facs="#facs_1_r_36">Laboratoires Sauter S.A. Vernier-Genève</p>
+        
+      </div>
+</body>
+  </text>
+</TEI>

@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "mort. Jaspers apprit à tenir compte de sa maladie dans toutes les décisions qu'il avait à prendre. I",
+      "bbox": {
+        "x_pct": 11.653,
+        "y_pct": 6.084,
+        "w_pct": 84.377,
+        "h_pct": 17.506
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Mariage",
+      "bbox": {
+        "x_pct": 11.694,
+        "y_pct": 26.05,
+        "w_pct": 11.07,
+        "h_pct": 2.425
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers avait vingt-quatre ans lorsqu'il rencontra Gertrud Mayer devait devenir sa femme et la compa",
+      "bbox": {
+        "x_pct": 11.612,
+        "y_pct": 28.937,
+        "w_pct": 83.916,
+        "h_pct": 13.368
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Rencontre avec la politique et Vhistoire",
+      "bbox": {
+        "x_pct": 12.06,
+        "y_pct": 44.987,
+        "w_pct": 49.051,
+        "h_pct": 2.288
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès avant la première guerre mondiale, Jaspers refusait de à aucune exaltation nationaliste_ Sobre, ",
+      "bbox": {
+        "x_pct": 11.694,
+        "y_pct": 47.704,
+        "w_pct": 84.011,
+        "h_pct": 13.967
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Radicale, bouleversante jusqu'au fond 1 fut pour lui Vexpérience de la patrie allemande devenue nati",
+      "bbox": {
+        "x_pct": 11.612,
+        "y_pct": 61.097,
+        "w_pct": 84.092,
+        "h_pct": 28.766
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 91.0,
+        "w_pct": 2.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "missing page number region"
+  ],
+  "doc_id": "1520",
+  "page": 14,
+  "elapsed_seconds": 6.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

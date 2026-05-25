@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ILLUSION RESTE INTACTE JUSQU'A KANT 117",
+      "bbox": {
+        "x_pct": 206.0,
+        "y_pct": 82.0,
+        "w_pct": 648.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page_header/filter instead of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un cercle vicieux est toujours faux de Vlle logique. Mais cette fois-ci, je dirai qu'au contraire de l'argument ontologique, le cercle vicieux de Descartes n'est pas métaphysique. C'est dire qu'il est menteur. Alors que celui de l'argument ontologique découvrait une limite, faisait sentir comment le mot « existence » a un sens double suivant qu'il s'agit d'existence objective ou d'existence métaphysique, et suggérait tout ce qui reste scientifiquement inaccessible dans le domaine métaphysique, celui de Descartes, partant d'une vérité métaphysique, masque la rupture des deux mondes et fait figure d'un « truc » logique servant à cacher des discontinuités réelles.",
+      "bbox": {
+        "x_pct": 9.834,
+        "y_pct": 12.612,
+        "w_pct": 76.054,
+        "h_pct": 35.434
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match the actual image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les systèmes rationalistes de Spinoza et de Leibnitz sont certainement parmi les plus « chiffrés » qui soient. Il serait intéressant d'étudier d'après ces deux philosophies, d'ailleurs si différentes, ce que c'est qu'un « chiffre » et ce que signifie, en écriture chiffrée, « vérité ». Il faudrait pour cela tenter une traduction métaphysique de ce qui nous est donné comme des évidences logiques — sans perdre de vue tout ce que fausse une telle entreprise, sans s'imaginer qu'on arrivera à la clarté parfaite, et surtout sans faire semblant de l'avoir atteinte. Mais ce n'est pas ici la place d'une telle étude, puisque je n'entreprends même pas d'esquisser l'histoire de la philosophie. C'est uniquement l'histoire de l'illusion philosophique que j'essaye de faire apparaître. Or, celle-ci reste intacte, solidement",
+      "bbox": {
+        "x_pct": 9.383,
+        "y_pct": 48.208,
+        "w_pct": 76.205,
+        "h_pct": 41.115
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match the actual image content."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Initial transcript for paragraph blocks contained garbled text instead of accurate OCR representation.",
+    "Page header 'L'ILLUSION RESTE INTACTE JUSQU'A KANT 117' was incorrectly labeled as text."
+  ],
+  "doc_id": "20",
+  "page": 119,
+  "elapsed_seconds": 4.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

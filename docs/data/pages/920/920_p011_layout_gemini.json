@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "J. Hersch: Nouveaux pouvoirs de l'homme",
+      "bbox": {
+        "x_pct": 9.777,
+        "y_pct": 74.226,
+        "w_pct": 44.205,
+        "h_pct": 14.509
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "349",
+      "bbox": {
+        "x_pct": 81.164,
+        "y_pct": 74.226,
+        "w_pct": 3.498,
+        "h_pct": 14.509
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vent caractriser l'homme et justifier ses privilges. Cette recherche, ce refus, on les retrouve, sous des formes diverses, chez toutes les espces vivantes.",
+      "bbox": {
+        "x_pct": 9.873,
+        "y_pct": 109.124,
+        "w_pct": 74.832,
+        "h_pct": 36.426
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce fait que l'homme est l'homme, c'est qu'il est dou d'une conscience lui permettant de connatre et de dcider, donc de chercher librement la vrit et de choisir sa conduite en saisissant toujours plus clairement le sens, les conditions et les consquences de ses actes. Il peut ne pas chercher  connatre et se drober devant toute dcision. Mais par ce refus, il est encore un homme, car ce refus est un choix. L'homme n'est pas une donne, et l'essentiel de lui-mme n'est pas au niveau des faits, mais de l'ordre du possible et de la libert.",
+      "bbox": {
+        "x_pct": 9.376,
+        "y_pct": 141.176,
+        "w_pct": 75.085,
+        "h_pct": 128.718
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour quelle autre raison, sinon pour celle-ci, aurait-on labor depuis tant de sicles des interdits aussi svres autour de la profession mdicale? Pour quelle autre raison le mdecin devrait-il absolument lutter contre la mort tant que subsiste le moindre souffle de vie? Pour quelle autre raison ne ramnerait-on pas l'obligation mdicale au niveau relatif que les faits semblent imposer -- puisque aprs tout le malade, un peu plus tt, un peu plus tard, finira bien par mourir? Et n'est-ce pas justement parce que nos contemporains, envahis par les faits et leur apparente rigueur, se refusent souvent  rien chercher ni reconnatre au-del d'eux que nombre de mdecins aujourd'hui ne connaissent ou ne reconnaissent plus de distinction nette entre thrapie et exprimentation?",
+      "bbox": {
+        "x_pct": 9.482,
+        "y_pct": 266.757,
+        "w_pct": 75.053,
+        "h_pct": 182.433
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Emmlement de l'ordre des faits et de celui de la libert",
+      "bbox": {
+        "x_pct": 9.777,
+        "y_pct": 483.921,
+        "w_pct": 61.277,
+        "h_pct": 14.509
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout serait simple si l'homme se laissait rduire  un ensemble de faits; simple, mais ennuyeux et vide de sens: la mdecine, la science elle-mme perdraient leur raison d'tre. Tout serait encore assez simple s'il tait possible, en l'homme, de sparer compltement ce qui est de l'ordre des faits et ce qui est de l'ordre de la conscience et de la libert. Mais il n'en est rien. C'est pourquoi tant de problmes concernant l'homme -- et notamment ceux qui se posent aux mdecins -- ne comportent pas de solutions, mais seulement des choix, avec une part considrable de doute et de culpabilit. Par exemple: pourquoi ne pas exposer un patient  certains risques supplmentaires si le savoir ainsi obtenu doit permettre ensuite de soulager ou mme de sauver un grand nombre d'autres malades? Au niveau des faits, et si le patient n'est qu'un ensemble de donnes de faits, l'argumentation est inattaquable, car alors le nombre rgne. Mais si les hommes n'taient qu'un ensemble de faits, pourquoi importerait-il de les soulager ou de les sauver? -- Inversement, s'il y a en chacun cet absolu d'une conscience de vrit et de libert que le fait homme et o le nombre ne peut intervenir, chaque malade reprsente pour le mdecin la fin ultime de son intervention, et il ne peut sous aucun prtexte en faire un moyen servant  une autre fin quelle qu'elle soit (science, gurisons futures sur une grande chelle, etc.). Mais la tentation renat, car l'absolu ressurgit sous le nombre: chacun de ceux qui auraient pu tre guris au prix des risques courus par quelques-uns est, au-del des faits, une conscience humaine.",
+      "bbox": {
+        "x_pct": 9.619,
+        "y_pct": 518.223,
+        "w_pct": 75.116,
+        "h_pct": 378.056
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Detected incorrect labels for section header and page header/footer.",
+    "OCR errors present in text content (e.g., 'cnsemble' instead of 'ensemble').",
+    "Overlapping bounding boxes in the header section."
+  ],
+  "doc_id": "920",
+  "page": 11,
+  "elapsed_seconds": 8.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

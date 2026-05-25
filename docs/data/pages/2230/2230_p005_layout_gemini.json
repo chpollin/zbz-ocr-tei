@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 20 -",
+      "bbox": {
+        "x_pct": 425.0,
+        "y_pct": 59.0,
+        "w_pct": 149.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/page_footer for exclusion."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "\"il n'a pas assez publi\u0000\"",
+      "bbox": {
+        "x_pct": 107.82,
+        "y_pct": 131.79,
+        "w_pct": 305.32,
+        "h_pct": 20.91
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais et ici je touche \u0000 un point qui m'importe \u0000norm\u0000ment - en transmettant des connaissances, on transmet souvent trop de r\u0000sultats, et pas assez le v\u0000cu des d\u0000marches qui ont abouti \u0000 ces r\u0000sultats. Il faudrait pratiquer, au cours de la formation permanente, de nombreux retours en arri\u0000re historiquement v\u0000cus. L'exp\u0000rience historiquement v\u0000cue de la recherche n'est pas suffi-samment transmise, notamment quand il s'agit des sciences de la nature. Nous n'avons pas \"dig\u0000r\u0000\" les sciences et les techniques par notre culture, du fait que la masse des hommes d'aujourd'hui connaissent des r\u0000sultats, \u0000ventuellement les lois, mais non pas le processus de leur d\u0000couverte. Il suffirait de rappeler, \u0000a ou l\u0000, quelques exemples de la recherche qui a conduit \u0000 ces r\u0000sultats, tels qu'ils ont \u0000t\u0000 v\u0000cus par le chercheur. D\u0000s lors, consisterait dans une assez large mesure \u0000 revivre ce qui a \u0000t\u0000 v\u0000cu par ceux qui ont trouv\u0000, invent\u0000, d\u0000couvert quelque chose dans le pass\u0000. Il ne s'agirait donc absolument pas d'une transmission inerte.",
+      "bbox": {
+        "x_pct": 105.4,
+        "y_pct": 161.65,
+        "w_pct": 804.03,
+        "h_pct": 363.3
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, dans cette sur\u0000valuation du nouveau dont je parlais tout \u0000 l'heure, notre \u0000poque est tent\u0000e de perdre de vue ce qui, sous la nouveaut\u0000 et \u0000 travers elle, ne change pas. On nous parle constamment de l'homme nouveau, de la soci\u0000t\u0000 nouvelle, de la nouvelle pens\u0000e, de la nouvelle science etc. On n\u0000glige le fait que les donn\u0000es fondamentales de la condition humaine n'ont pas chang\u0000: l'\u0000tre humain continue \u0000 venir au monde, \u0000 mourir, \u0000 souffrir, m\u0000me si c'est parfois autrement que jadis. On continue \u0000 souffrir, on \u0000prouve encore des amours heureux et malheureux, tout cela existe encore. Les besoins fondamentaux de reconnaissance de soi restent les m\u0000mes et se sont plut\u0000t multipli\u0000s. On retrouve tous les \u0000l\u0000ments permanents de l'\u0000tre humain, qui est mortel et qui le sait.",
+      "bbox": {
+        "x_pct": 103.79,
+        "y_pct": 536.01,
+        "w_pct": 794.6,
+        "h_pct": 276.13
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sait-il vraiment? Quelque fois je me le demande. J'entends",
+      "bbox": {
+        "x_pct": 104.27,
+        "y_pct": 823.76,
+        "w_pct": 741.94,
+        "h_pct": 18.8
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo 'denande' to 'demande'."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Extremely poor initial OCR quality leading to garbled text in paragraph regions.",
+    "Page number not separated into _filter or excluded.",
+    "Incorrect label assignment for page number.",
+    "OCR errors in text blocks (e.g. 'M importe', 'enorn\u0000ment', 'denande')."
+  ],
+  "doc_id": "2230",
+  "page": 5,
+  "elapsed_seconds": 7.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

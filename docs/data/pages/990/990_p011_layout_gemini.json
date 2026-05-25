@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tre soltanto possano formare il materiale per una simmetria e se, in questo caso, il punto centrale deve essere raddoppiato attorno all'asse di simmetria che lo attraversa. Dobbiamo cioè considerare questo punto come due punti, oppure si può concepire l'oggetto della simmetria anche come numero dispari?",
+      "bbox": {
+        "x_pct": 11.659,
+        "y_pct": 7.144,
+        "w_pct": 85.324,
+        "h_pct": 11.175
+      },
+      "changed": true,
+      "change_reason": "The OCR text was heavily truncated and fragmented; replaced with the full, legible paragraph text from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Per fare una simmetria con tre punti occorre considerare uno di questi punti come asse e disporre simmetricamente gli altri due.",
+      "bbox": {
+        "x_pct": 11.961,
+        "y_pct": 20.422,
+        "w_pct": 84.977,
+        "h_pct": 5.82
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and removed the erroneous HERSCH label prefix which belongs to the author name or context, not the text flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "DALLA PORTA - La relazione che stiamo discutendo mi sembra stimolante soprattutto perché la schematizzazione presentata dei due tipi di simmetria mette bene in luce, a mio avviso, le due prospettive fondamentali dalle quali è possibile considerare la storia.",
+      "bbox": {
+        "x_pct": 11.87,
+        "y_pct": 28.088,
+        "w_pct": 85.113,
+        "h_pct": 9.139
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was fragmented/misspelled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Se si vuol vedere la storia solo come uno svolgimento dei fatti, allora si ottiene una traslazione aperiodica, se invece si pensa che i fatti tendano a riprodursi — d'Ormesson chiamava questo l'eterno ritorno, che è alla base delle grandi tradizioni orientali, come la civiltà Indu, in cui la storia è intesa come un'eterna ripetizione di cicli aventi una struttura simile, anche se non identica — allora ritroviamo lo schema del merletto con un disegno sempre uguale che si riproduce periodicamente.",
+      "bbox": {
+        "x_pct": 11.87,
+        "y_pct": 37.003,
+        "w_pct": 85.309,
+        "h_pct": 16.912
+      },
+      "changed": true,
+      "change_reason": "Corrected truncation and OCR reading errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quando passiamo alla concezione cristiana o islamica troviamo lo schema con un centro, in quanto vi è un avvento eccezionale che qualifica uno solo di questi cicli. La periodicità dei cicli è infatti interrotta da uno di essi, caratterizzato da un avvenimento centrale: la nascita del Cristo o l'apparizione del Profeta, che diventa l'origine dei tempi e rispetto ad esso si distingue, anche sul piano storico, il passato dal futuro in modo assoluto.",
+      "bbox": {
+        "x_pct": 11.961,
+        "y_pct": 53.584,
+        "w_pct": 85.173,
+        "h_pct": 15.099
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and typos."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Da questo punto di vista si può accettare quanto affermava la Signorina Hersch sul problema delle differenti origini attribuite da ciascun individuo all'asse storico, laddove l'insieme di questi diversi soggettivismi, diciamo, con diversi centri, possono armonizzarsi in una visione piú vasta in cui un evento capitale polarizzi tutto l'insieme.",
+      "bbox": {
+        "x_pct": 11.961,
+        "y_pct": 68.295,
+        "w_pct": 85.324,
+        "h_pct": 11.507
+      },
+      "changed": true,
+      "change_reason": "Corrected grammar, missing words, and OCR fragments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Proseguendo nell'estrapolazione, direi che il futuro e il passato, che sono per noi differenti in questa visione centrale, assumono sub specie aeternitatis aspetti equivalenti, tanto piú simmetrici quanto piú la prospettiva si identifica con la visione divina.",
+      "bbox": {
+        "x_pct": 12.172,
+        "y_pct": 79.139,
+        "w_pct": 85.068,
+        "h_pct": 9.462
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Invece nella prospettiva dell'eterno ritorno, possiamo avere una successione di cicli centrali e qualificati individui",
+      "bbox": {
+        "x_pct": 12.413,
+        "y_pct": 88.245,
+        "w_pct": 84.872,
+        "h_pct": 4.081
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "239",
+      "bbox": {
+        "x_pct": 91.565,
+        "y_pct": 94.619,
+        "w_pct": 3.738,
+        "h_pct": 2.441
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 9,
+  "issues": [
+    "Multiple text regions had severely truncated OCR output",
+    "Typographical errors in OCR text",
+    "Page number incorrectly labeled as text"
+  ],
+  "doc_id": "990",
+  "page": 11,
+  "elapsed_seconds": 7.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

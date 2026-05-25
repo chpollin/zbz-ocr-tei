@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 326.68,
+        "y_pct": 82.0,
+        "w_pct": 348.66,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header text identified as section title"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "177",
+      "bbox": {
+        "x_pct": 863.0,
+        "y_pct": 82.0,
+        "w_pct": 30.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vorables . Si elles étaient complètement libres, comme le voulait le libéralisme capitaliste à l'état pur qui n'a plus guère de défenseurs aujourd'hui, il ne pourrait y avoir aujourd'hui d'autres gouvernants que des agents de ces forces. Mais elles ne le sont pas. La démocratie politique, pour vivre à peu près, a été forcée de dépasser l'idéologie économique libérale dont elle était pour un certain temps inséparable. La puissance des grandes entités économiques reste cependant assez forte pour altérer en fait ses possibilités, son champ d'action, et pour accroître encore, dans l'opinion publique, le sentiment qu'elle n'est qu'un décor.",
+      "bbox": {
+        "x_pct": 5.669,
+        "y_pct": 10.989,
+        "w_pct": 84.819,
+        "h_pct": 21.007
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La démocratie, disions-nous, n'est pas encore par elle-même la justice ; mais elle est un instrument permettant de faire régner plus de justice dans une société donnée. Mettant l'accent sur la liberté possible de chaque citoyen, elle enlève à la justice le caractère monumental et hiératique qu'elle a par exemple chez Platon, pour qui, loin de s'opposer polairement, comme elle le fait dans la conscience de la « gauche » moderne, à l'idée d'ordre, elle coïncide avec celle-ci : elle est une qualité d'harmonie de l'ensemble, due à la subordination des individus, non un regret des possibles de chacun. Mais en régime capitaliste, il faut avant tout que l'appareil producteur fonctionne, que les usines marchent, non que les individus puissent faire respecter l'égalité de leurs chances. Ici encore, les forces de fait — économiques, échappant en grande partie au contrôle du peuple — sont si considérables qu'elles pèsent contre la justice par les moyens mêmes que la démocratie leur livre et dont nous avons parlé plus haut.",
+      "bbox": {
+        "x_pct": 5.432,
+        "y_pct": 37.522,
+        "w_pct": 85.195,
+        "h_pct": 33.182
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous pouvons saisir ici avec une évidence particulière à quel point sont imbriqués les multiples facteurs qui influent sur la vie humaine. Nous avons dit plus haut que la justice démocratique, c'était l'égalité des chances pour tous, c'est-à-dire la possibilité du libre épanouissement des inégalités naturelles. Mais il est impossible de discerner vraiment chez l'enfant ce qui vient de son hérédité, de sa constitution innée, et ce qui vient du milieu qui agit sur lui dès sa naissance. Une statistique anglaise, il y a quelques années, avait comparé la catégorie intellectuelle des élèves (normales)",
+      "bbox": {
+        "x_pct": 5.669,
+        "y_pct": 69.964,
+        "w_pct": 85.0,
+        "h_pct": 17.228
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Detected page header and footer incorrectly labeled as text.",
+    "OCR text for paragraphs needs manual review as it was truncated in original extraction."
+  ],
+  "doc_id": "330",
+  "page": 211,
+  "elapsed_seconds": 6.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

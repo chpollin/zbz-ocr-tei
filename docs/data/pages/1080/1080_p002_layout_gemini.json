@@ -1,0 +1,84 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "C 'cist sich schon vom Bcginn an als schwierig-",
+      "bbox": {
+        "x_pct": 52.143,
+        "y_pct": 19.453,
+        "w_pct": 36.626,
+        "h_pct": 3.943
+      },
+      "changed": true,
+      "change_reason": "Label corrected to match zbz_tag naming convention"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erstens stellu sicb dic der und bci Marx selbst festgestcllt wurden; welche sich auch im Laufe eincs",
+      "bbox": {
+        "x_pct": 51.872,
+        "y_pct": 22.876,
+        "w_pct": 37.483,
+        "h_pct": 15.662
+      },
+      "changed": true,
+      "change_reason": "Label corrected to match zbz_tag naming convention"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ken von gleichzcitig Soziologic; Wirtschaltslehre, Geschichsphilosophic und sogar Prophetismus Ecwes",
+      "bbox": {
+        "x_pct": 51.511,
+        "y_pct": 49.317,
+        "w_pct": 37.889,
+        "h_pct": 18.034
+      },
+      "changed": true,
+      "change_reason": "Label corrected to match zbz_tag naming convention"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "bci   Marx mic cinem \"Materialismusw zu tun haben? Es hier",
+      "bbox": {
+        "x_pct": 51.421,
+        "y_pct": 69.249,
+        "w_pct": 38.25,
+        "h_pct": 6.881
+      },
+      "changed": true,
+      "change_reason": "Label corrected to match zbz_tag naming convention"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "227",
+      "bbox": {
+        "x_pct": 87.2,
+        "y_pct": 89.0,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 5,
+  "issues": [
+    "Original labels were mapped to generic 'text' instead of valid schema labels.",
+    "Page number missing from initial region list."
+  ],
+  "doc_id": "1080",
+  "page": 2,
+  "elapsed_seconds": 4.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected to match zbz_tag naming convention": 4,
+    "ADDED": 1
+  }
+}

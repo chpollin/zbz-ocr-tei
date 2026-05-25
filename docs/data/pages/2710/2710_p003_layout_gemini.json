@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à tel point que notre existence quotidienne est devenue une tout autre réalité. Mille expériences dont personne n'aurait rêvé sont devenues possibles pour presque tous. Désirs et craintes ont changé de nature. Tentations, vertus, forfaits, ne sont plus les mêmes. Le travail, pour presque tous, est devenu un effort d'une autre sorte, et il faut s'y préparer autrement. La propriété, bien qu'elle garde le même nom, n'a plus le même lien avec le propriétaire, et les rêves de voyage l'emportent de loin sur ceux d'une quelconque possession. Le temps libre, les vacances naguère inconnues de presque tous, sont devenus, pour le plus grand nombre, \"la vraie vie\" et le premier des biens. Et ainsi de suite - on pourrait continuer longtemps.",
+      "bbox": {
+        "x_pct": 6.762,
+        "y_pct": 3.086,
+        "w_pct": 85.492,
+        "h_pct": 17.703
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text at the start."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous n'avons sans doute pas encore - loin de là - pris la mesure, en long, en large, en travers, en profondeur - de la transformation intervenue, qui change même le sens et la portée de la plupart des mots utilisés dans les tentatives faites pour établir des Constitutions nouvelles. Peut-être l'élaboration d'un nouveau texte pour le Canton de Berne serait-elle une occasion, bienvenue, pour approfondir la conscience de cette métamorphose. Mais il ne faudrait pas croire qu'un vocabulaire révolutionnaire suffise à témoigner d'une telle prise de conscience - loin de là. Il s'inspire au contraire du vécu du XIXe siècle.",
+      "bbox": {
+        "x_pct": 6.762,
+        "y_pct": 23.11,
+        "w_pct": 85.379,
+        "h_pct": 15.151
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text at the start."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense que c'est à partir de là, à partir d'une réflexion sur la prodigieuse transformation du monde humain par la technique moderne, qu'il faut s'interroger sur le besoin actuellement ressenti de repenser entièrement une nouvelle Constitution. Il faut commencer par repérer les nouveaux problèmes, les nouvelles possibilités, les nouvelles menaces, les nouveaux espoirs, en vue de mieux servir, par la nouvelle Constitution, \"la dignité humaine\".",
+      "bbox": {
+        "x_pct": 6.728,
+        "y_pct": 40.872,
+        "w_pct": 85.292,
+        "h_pct": 10.742
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text at the start."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Finalités: Droits de l'homme.",
+      "bbox": {
+        "x_pct": 6.789,
+        "y_pct": 56.338,
+        "w_pct": 26.519,
+        "h_pct": 1.585
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in label text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une fois repérés au moins sommairement les changements du monde, dont il vient d'être question, et leurs effets sur les êtres humains qui y vivent aujourd'hui, il faudra déterminer, aussi clairement que possible, les finalités qui seront la raison d'être de la nouvelle Constitution. Il ne suffit plus de dire qu'elle doit être au service de la dignité humaine, car les exigences de cette dignité ont, elles aussi, changé. Et d'abord, il existe un texte par lequel on a tenté d'expliciter ces exigences. C'est la Déclaration universelle des Droits de l'homme de 1948, à laquelle, je pense, tout nouveau texte constitutionnel, devrait, en effet, s'efforcer de rapprocher l'ordre juridique interne qu'il institue, dans le pays ou dans un canton, des intentions dont s'inspire la Déclaration universelle.",
+      "bbox": {
+        "x_pct": 6.527,
+        "y_pct": 60.635,
+        "w_pct": 85.352,
+        "h_pct": 21.662
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text at the start."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La première phrase de la Déclaration universelle énonce non une constatation empirique, mais un article de foi: \"Tous les hommes naissent libres et égaux en dignité et en droit.\"",
+      "bbox": {
+        "x_pct": 6.588,
+        "y_pct": 84.985,
+        "w_pct": 85.205,
+        "h_pct": 4.528
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text at the start."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 30 -",
+      "bbox": {
+        "x_pct": 46.5,
+        "y_pct": 94,
+        "w_pct": 7,
+        "h_pct": 2
+      },
+      "changed": true,
+      "change_reason": "Added page footer region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Several OCR errors were present at the start of paragraphs.",
+    "Page number missing from initial detections.",
+    "Section header punctuation was incorrect.",
+    "OCR failed to capture full text in some paragraphs."
+  ],
+  "doc_id": "2710",
+  "page": 3,
+  "elapsed_seconds": 7.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

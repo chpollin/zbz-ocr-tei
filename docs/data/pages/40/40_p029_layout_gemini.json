@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 31",
+      "bbox": {
+        "x_pct": 393.0,
+        "y_pct": 77.0,
+        "w_pct": 215.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "la neige fondue, à côté d'un chalet bas à toit de tuiles rouges où les bergers montent l'été. La plaine se découvrait devant nous jusqu'au lac, mais, plus que la plaine, la lumière répandue dispensait la joie. Nous marchions tout tranquillement, pionniers las, à quelques pas les uns des autres. Le monde était simple et éclatant.",
+      "bbox": {
+        "x_pct": 10.716,
+        "y_pct": 11.758,
+        "w_pct": 80.73,
+        "h_pct": 15.558
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Etais-je heureuse ? — En tout cas, je ne le savais pas. Souvent, par la suite, je me suis retournée vers ces premiers jours. Je les ai trouvés dans mon souvenir, blancs, baignés d'espace, presque vides. Je voulais en revivre chaque instant, en faire pour toute ma vie un capital de bonheur. Je n'ai pas pu. Car ce qui alors exista le moins, ce fut tout espoir, toute joie pour moi. Peut-être est-ce là le bonheur, quand on n'a pas encore été pauvre, quand on ne réserve rien, quand on ne sait pas, en le vivant, qu'on vit en plein miracle.",
+      "bbox": {
+        "x_pct": 10.716,
+        "y_pct": 27.25,
+        "w_pct": 80.73,
+        "h_pct": 25.236
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le miracle marchait à pas massifs, chaussé de souliers de montagne que la boue faisait lourds. Il répondait avec des réflexes justes aux pierres, à la terre glissante, aux trous de la pente. Le soleil s'est couché, il a fait froid. Le miracle respirait jusqu'au fond du corps, jusqu'au fond du ciel. Puis nous nous sommes mis à chanter à pleins poumons, avec l'essoufflement de la marche. Les enfants chantaient faux et criaient. Cela faisait un grand vacarme discordant, perdu dans un calme plus vaste.",
+      "bbox": {
+        "x_pct": 10.946,
+        "y_pct": 52.268,
+        "w_pct": 80.581,
+        "h_pct": 22.873
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les couleurs du couchant m'avaient éblouie, et maintenant je m'abritais dans le noir de mes yeux fermés. La",
+      "bbox": {
+        "x_pct": 10.986,
+        "y_pct": 80.085,
+        "w_pct": 80.676,
+        "h_pct": 5.076
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily corrupted.",
+    "Page number/header was not segmented as a separate entity."
+  ],
+  "doc_id": "40",
+  "page": 29,
+  "elapsed_seconds": 4.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "factions même totales dans l'instant - ne vaut sans tromperie, illusion, ou oubli. Le bonheur qu'il cherche est en vérité impossible à réaliser, et même à imaginer, parce qu'il est fait d'exigences contradictoires. Par exemple, il devrait concilier le mouvement du désir et la fixité de la plénitude. Il n'est pas de permanence pour le Dasein : il va sans cesse vers autre chose.",
+      "bbox": {
+        "x_pct": 9.038,
+        "y_pct": 5.458,
+        "w_pct": 84.011,
+        "h_pct": 11.482
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text output to match visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nature du Dasein est donc double : il jubile d'être présent au monde, il souffre sans remède du règne de l'éphémère. Par son insatisfaction même, il indique un autre englobant.",
+      "bbox": {
+        "x_pct": 9.038,
+        "y_pct": 16.769,
+        "w_pct": 83.645,
+        "h_pct": 6.221
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que le sujet vital prenne conscience de lui-même et de son univers, c'est, dit Jaspers, l'énigme des énigmes. Ce point de lumière, dans l'obscurité du tout sans fond, se rend manifeste lui-même en même temps qu'il rend manifeste l'univers. L'être ne nous est accessible qu'à la lueur de ce point : je pourrais ne pas être, - mais je suis réellement. L'énigme de cette pensée aux limites révèle en même temps que le sujet vital n'est pas là par lui-même, qu'il n'est pas sa propre création.",
+      "bbox": {
+        "x_pct": 8.943,
+        "y_pct": 22.622,
+        "w_pct": 83.835,
+        "h_pct": 15.51
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers analyse ensuite l'englobant de la « conscience en général », cette conscience commune et impersonnelle qui a pour objet les certitudes rationnelles ou empiriques s'imposant à tous. Il en a déjà été question. Voyons ici seulement ce que Jaspers nous dit du rapport entre conscience en général et sujet vital. Ce rapport est double : d'une part la conscience en général est au service du sujet vital, de l'autre elle le trouble et le dérange. Il n'y a pas entre eux d'accord originel. Certes, la pensée rationnelle et impersonnelle a été utile à l'homme au niveau de ses besoins pratiques, elle lui a permis d'inventer les outils qui l'ont rendu maître de la nature. Mais elle le dérange aussi dans la mesure où elle altère la sûreté de ses instincts, le livre aux illusions, l'amène parfois à des destructions, le rend souvent perplexe et malheureux. La relation entre le savoir (ou la connaissance vraie) et les intérêts vitaux reste problématique.",
+      "bbox": {
+        "x_pct": 8.902,
+        "y_pct": 39.477,
+        "w_pct": 83.78,
+        "h_pct": 28.877
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and restored missing text segments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une problématique analogue se retrouve d'ailleurs entre la conscience en général et tous les autres modes de l'englobant. Elle se nourrit de leur substance, et elle les pousse à un déploiement aussi large que possible. Elle les transforme, les altère. Parfois elle est un stimulant créateur, parfois elle sème le trouble et la destruction. Un flux de conscience vécu dans sa richesse, sa sûreté, sa plénitude, peut se trouver interrompu, violé, appauvri, détruit, par l'intervention de la pensée claire et objectivante. Jaspers évoque le trouble que peut jeter chez celui qui parle ou agit sa soudaine attention objective à ce qu'il est en train de faire. La conscience en général sait l'absurdité, le caractère condamné, de tout ce qui est temporel",
+      "bbox": {
+        "x_pct": 8.767,
+        "y_pct": 68.038,
+        "w_pct": 83.686,
+        "h_pct": 21.191
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and restored missing text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "47",
+      "bbox": {
+        "x_pct": 88.9,
+        "y_pct": 90.7,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer/filter."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR was highly inaccurate, failing to capture full sentences and words.",
+    "Page number at bottom right was initially identified as part of the last paragraph.",
+    "Multiple layout boxes contained severely degraded OCR text."
+  ],
+  "doc_id": "1520",
+  "page": 53,
+  "elapsed_seconds": 6.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

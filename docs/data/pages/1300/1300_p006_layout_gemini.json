@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sans cesse répétée de ces moments inspire auX chirurgiens, plus encore qu'aux autres médecins; une v",
+      "bbox": {
+        "x_pct": 15.134,
+        "y_pct": 6.603,
+        "w_pct": 79.024,
+        "h_pct": 5.998
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela m'amène à eflleurer un problème paraît Il me semble que les sciences et les techniques ont à te",
+      "bbox": {
+        "x_pct": 15.25,
+        "y_pct": 12.165,
+        "w_pct": 79.292,
+        "h_pct": 11.607
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais encore ajouter qu'à mes yeux lc douc ' prestige indispensable dont jai ne se trouve null",
+      "bbox": {
+        "x_pct": 14.901,
+        "y_pct": 25.272,
+        "w_pct": 79.605,
+        "h_pct": 13.313
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais le problème le plus diflicile; cest celui que pose linégalité des soins On nle (miraclesw de la",
+      "bbox": {
+        "x_pct": 14.321,
+        "y_pct": 38.003,
+        "w_pct": 80.139,
+        "h_pct": 20.88
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a sans doute pas de solution. On ne peut que tendre sans fin à plus dhumanité et de justice. ",
+      "bbox": {
+        "x_pct": 14.402,
+        "y_pct": 58.401,
+        "w_pct": 79.942,
+        "h_pct": 16.58
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La chirurgie est peut-êtrc la en ce sens que la compétence spécifique du chirurgien porte sur la str",
+      "bbox": {
+        "x_pct": 14.518,
+        "y_pct": 74.904,
+        "w_pct": 79.71,
+        "h_pct": 11.53
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "424",
+      "bbox": {
+        "x_pct": 14.0,
+        "y_pct": 88.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number identified as page footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One missing page footer region added."
+  ],
+  "doc_id": "1300",
+  "page": 6,
+  "elapsed_seconds": 7.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

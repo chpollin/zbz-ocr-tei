@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'un statut non humain, d'avant ou d'après l'humanité. On n'y perçoit pas la certitude de la mort. Notre musique, elle, est un chant et une danse, malgré la mort et avec elle. Elle semble répondre au besoin diffus d'un monde où tout est mortel, et où quelques-uns le savent. Elle ferme les yeux des morts et abaisse les paupières des vivants, pour qu'ils entrevoient, derrière elles, autre chose.",
+      "bbox": {
+        "x_pct": 15.54,
+        "y_pct": 13.48,
+        "w_pct": 57.521,
+        "h_pct": 18.031
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Arthur Rimbaud disait de l'homme qu'il était « une âme et un corps ». J'ai toujours pensé que le terme essentiel de cette définition était le mot « et ». La musique est aussi l'unité de cette double nature.",
+      "bbox": {
+        "x_pct": 15.572,
+        "y_pct": 37.639,
+        "w_pct": 57.203,
+        "h_pct": 4.575
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les sons chacun en soi-même s'individualisent à l'infini. Chacun dépend de la qualité de son attaque et de la manière dont il s'éteint, de son timbre, de sa hauteur ; il a de l'arête ou de la rondeur, il varie selon ses résonances, selon son « contour » net ou fondu. Entre eux les sons s'attirent ou se repoussent. Ils font partie d'un univers de tonalités et de rythmes, avec ses lois. La musique appartient ainsi non seulement à la cohérence d'un univers affectif, mais aussi, charnellement, à celle d'un univers physique.",
+      "bbox": {
+        "x_pct": 15.434,
+        "y_pct": 44.281,
+        "w_pct": 57.415,
+        "h_pct": 24.183
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant, n'existant qu'à travers des réseaux de contraintes s'exerçant sur elle et qu'elle ne cesse",
+      "bbox": {
+        "x_pct": 15.646,
+        "y_pct": 68.162,
+        "w_pct": 57.203,
+        "h_pct": 4.714
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "33",
+      "bbox": {
+        "x_pct": 69.8,
+        "y_pct": 75.3,
+        "w_pct": 2.3,
+        "h_pct": 2.1
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region labeled as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Text OCR extraction was extremely poor/truncated for all paragraph regions.",
+    "Page number at the bottom was missing from the initial region list.",
+    "Multiple paragraphs were merged incorrectly in OCR output."
+  ],
+  "doc_id": "2780",
+  "page": 32,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'aspect philosophique du problème des rapports entre l'état des structures sociales et la démocratie économique",
+      "bbox": {
+        "x_pct": 7.032,
+        "y_pct": 14.614,
+        "w_pct": 60.555,
+        "h_pct": 11.278
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled and incomplete title text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Professeur à l'Université de Genève.",
+      "bbox": {
+        "x_pct": 8.141,
+        "y_pct": 34.992,
+        "w_pct": 40.86,
+        "h_pct": 1.625
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais d'abord remercier les organisateurs de ce Colloque de m'avoir invitée à parler devant vous.",
+      "bbox": {
+        "x_pct": 8.918,
+        "y_pct": 43.005,
+        "w_pct": 84.702,
+        "h_pct": 4.314
+      },
+      "changed": true,
+      "change_reason": "Corrected mangled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Me voici donc, vilain petit canard philosophe, parmi les sociologues. Cette invitation est d'autant plus généreuse que les relations entre sociologie et philosophie, ou plutôt entre sociologues et philosophes, ne sont pas, à vrai dire, des meilleures. Je crois qu'il règne en général entre eux un assez vif agacement réciproque, non pas personnel, mais qui tient à la nature de ce que font les uns et les autres et à la manière dont chacun conçoit ce qu'il fait et ce que fait l'autre. Cet agacement, qui est réciproque, n'est pourtant pas symétrique. Les sociologues se trouvent devant les philosophes - et je ne savais pas que M. Girod m'en donnerait confirmation, comme il l'a fait tout à l'heure - un peu comme des psychanalystes, en ce sens que pour les sociologues aussi, quoique de manière différente, une philosophie, c'est un objet à réduire. C'est l'occasion de se livrer à une opération de réduction, grâce à laquelle telle philosophie particulière ne sera qu'un produit social, ou un reflet social, ou une expression sociale.",
+      "bbox": {
+        "x_pct": 8.641,
+        "y_pct": 47.815,
+        "w_pct": 85.908,
+        "h_pct": 33.233
+      },
+      "changed": true,
+      "change_reason": "Corrected severely garbled and truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On peut d'ailleurs y mettre toutes les nuances qu'on veut. En effet, comme l'a dit, je crois, M. Gurvitch à votre Colloque de l'année dernière, il n'est pas nécessaire de faire intervenir à ce propos une explication causale. Il suffit, comme il l'a dit, aussi en se servant d'une expression, je crois, volontairement vague, d'opérer une sorte de mise en perspective sociale de cette philosophie.",
+      "bbox": {
+        "x_pct": 9.473,
+        "y_pct": 81.703,
+        "w_pct": 85.437,
+        "h_pct": 13.825
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was severely garbled and needed manual reconstruction.",
+    "Title was missing words.",
+    "Paragraphs were incomplete."
+  ],
+  "doc_id": "550",
+  "page": 2,
+  "elapsed_seconds": 4.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ 29",
+      "bbox": {
+        "x_pct": 284.0,
+        "y_pct": 77.0,
+        "w_pct": 612.0,
+        "h_pct": 32.0
+      },
+      "changed": true,
+      "change_reason": "The top text includes the page number 29 and section title, which should be identified as a page_header or separated, but given the structure, I am labeling this block as a section/header area."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "toute une idéologie sur des faits. Photographies et statistiques parlent d'elles-mêmes. Un chirurgien armé d'un bistouri prouve que la chirurgie soviétique est la première du monde, parce qu'elle est soviétique. Il n'y a pas d'exploiteurs et pas d'exploités, donc tous les citoyens soviétiques sont les mieux soignés du monde.",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 108.0,
+        "w_pct": 845.0,
+        "h_pct": 110.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text and verified label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'entends nullement dire par là que la propagande communiste soit dépourvue de toute base réelle sur le plan économique. Je suis convaincue du contraire. Mais ce qui m'importe ici, c'est de saisir les articulations idéologiques, la façon dont les principes — négatifs — s'appuient sur les faits en leur donnant leur signification. La résultante, la conviction qui vit dans l'esprit des communistes, c'est que l'économie, libérée de la féodalité patronale, de l'anarchie de la concurrence, mise au service de la science et de tous les citoyens, fonctionne de façon à assurer à tous le maximum de santé, de bien-être, de loisirs, de plaisirs et de fraternité.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing paragraph block identified in original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A une idéologie « basée sur les faits », il fallait une patrie terrestre. Cette patrie, c'est l'U. R. S. S. Dès lors, toute idéologie socialiste non communiste se trouve d'emblée dans une situation d'infériorité : elle peut développer un programme, elle ne peut pas montrer un pays. Tout au plus des réformes, des transformations partielles, comme celles que réalisa le travaillisme anglais. Mais on reste dans le compromis. Le régime n'est pas socialiste. L'État n'est pas socialiste. Tandis que le régime « socialiste » de l'U. R. S. S., c'est un fait.",
+      "bbox": {
+        "x_pct": 16.0,
+        "y_pct": 436.0,
+        "w_pct": 844.0,
+        "h_pct": 185.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la patrie terrestre ne représente pas toujours pour l'idéologie une force incomparable, une illustration, une garantie, une réalité à concevoir, à imaginer et à aimer, une promesse concrète. Elle peut aussi devenir dangereuse. A un fait, on peut en opposer un autre. Un idéal qui ne prétend pas s'être incarné reste inattaquable sur le plan des faits. Un idéal incarné se trouve exposé aux critiques en même temps que le corps qui le manifeste. Pour un chrétien, Dieu est risqué tout entier dans chacun des actes de Jésus — mais non, pour un Juif, dans ceux de Moïse. Une idéologie sans patrie, si elle perd de sa force persuasive et suggestive faute d'incarnation, ne s'expose pas à être jugée sur des réalités. Une idéologie incarnée dans une patrie s'appuie sur l'évidence de l'expérience faite, de la constatation objective, mais elle risque",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 619.0,
+        "w_pct": 850.0,
+        "h_pct": 272.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original transcript text was severely malformed/garbled.",
+    "Missing text block in the middle of the page in original JSON.",
+    "Page number 29 was part of a paragraph block in original JSON.",
+    "Label consistency required updates for the page header."
+  ],
+  "doc_id": "330",
+  "page": 63,
+  "elapsed_seconds": 7.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

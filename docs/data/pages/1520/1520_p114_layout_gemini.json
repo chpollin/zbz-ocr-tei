@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "miner aussi eux-mêmes sans cesse à nouveau. Le monde politique, ici est étudié dans sa réalité objective, comme tout autre objet possible d'étude. Les discussions doivent servir la recherche, non une propagande. Dans une libre discussion, la seule norme qui compte, c'est le niveau spirituel, c'est-à-dire l'auto-discipline critique, la capacité d'écouter autrui, la méthode de réflexion, la formation par la continuité de la vie de l'esprit. Dans une discussion scientifique, il ne s'agit pas de couvrir la voix de l'autre, mais de lutter ensemble pour la conquête du vrai en recherchant des évidences contraignantes. La tâche de la science, alors, ce n'est pas d'établir des programmes, mais d'élucider les conditions, dans la pensée et dans les faits, de la politique quelle qu'elle soit.",
+      "bbox": {
+        "x_pct": 9.621,
+        "y_pct": 5.938,
+        "w_pct": 83.97,
+        "h_pct": 23.051
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Volk und Universität dans Hoffnung und Sorge, p. 56)",
+      "bbox": {
+        "x_pct": 66.22,
+        "y_pct": 28.766,
+        "w_pct": 27.371,
+        "h_pct": 1.911
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to footnote as this is a bibliographic reference."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "53. Notre culpabilité",
+      "bbox": {
+        "x_pct": 10.027,
+        "y_pct": 35.364,
+        "w_pct": 26.287,
+        "h_pct": 2.425
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous sommes devenus autres depuis 1933. Nous aurions pu chercher la mort, dans le déshonneur, en 1933, lorsque trahissant la Constitution la dictature s'établit par un simulacre de légalité, et que les opposants furent balayés dans l'ivresse par une grande partie de notre population. Nous aurions pu chercher la mort lorsque les crimes du régime se manifestèrent publiquement: le 30 juin 1934, — ou bien par le pillage, la déportation et l'assassinat des Juifs, nos amis et nos concitoyens, — lorsqu'à notre honte et à notre humiliation inexpiables (zu unserer untilgbaren Schmach und Schande), en 1938, dans toute l'Allemagne, les synagogues — ces demeures de Dieu — flambèrent. Nous aurions pu chercher la mort lorsque, dès le début de la guerre, le régime viola le principe énoncé par le plus grand de nos philosophes, Kant, principe qui était selon lui la condition du droit des gens: en temps de guerre, il faut s'abstenir de commettre des actes qui rendraient absolument impossible une réconciliation ultérieure des belligérants. Des milliers de personnes, en Allemagne, ont cherché ou trouvé la mort dans la résistance au régime, la plupart anonymes. Nous, les survivants, nous n'avons pas cherché la mort. Lorsqu'on emmenait nos amis juifs nous ne sommes pas descendus dans la rue, nous n'avons pas crié jusqu'à ce qu'on nous détruise. Nous avons préféré rester en vie pour le motif faible, que juste, que notre mort n'aurait servi à rien. Que nous soyons en vie, c'est notre culpabilité. Nous savons devant Dieu combien est profonde notre humiliation.",
+      "bbox": {
+        "x_pct": 9.621,
+        "y_pct": 38.218,
+        "w_pct": 84.011,
+        "h_pct": 45.784
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pendant ces douze années il nous est arrivé quelque chose qui entraîne comme une refonte de notre être. En langage mythique: les démons nous ont battu de leurs fléaux et nous ont jeté dans une",
+      "bbox": {
+        "x_pct": 10.027,
+        "y_pct": 83.719,
+        "w_pct": 83.509,
+        "h_pct": 5.827
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "108",
+      "bbox": {
+        "x_pct": 9.621,
+        "y_pct": 91.134,
+        "w_pct": 3.791,
+        "h_pct": 2.721
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Bibliographic reference in text body incorrectly identified as paragraph.",
+    "Page number missing from initial detections."
+  ],
+  "doc_id": "1520",
+  "page": 114,
+  "elapsed_seconds": 5.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

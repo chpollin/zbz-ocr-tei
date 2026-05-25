@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "un chef incontrôlé dont on attend qu'il procure à son peuple, par la grandeur nationale, prestige et bonheur.",
+      "bbox": {
+        "x_pct": 1.852,
+        "y_pct": 12.032,
+        "w_pct": 83.983,
+        "h_pct": 2.38
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and incorrect based on visual scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Communiste sera dite l'idéologie qui réclame l'autorité absolue pour un chef (ou pour une autorité collective) incontrôlé, dont on attend qu'il procure aux travailleurs du monde entier justice et bonheur.",
+      "bbox": {
+        "x_pct": 1.532,
+        "y_pct": 16.016,
+        "w_pct": 84.123,
+        "h_pct": 8.111
+      },
+      "changed": true,
+      "change_reason": "Text was severely OCR-garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Libérale, conservatrice sera dite l'idéologie qui réclame le libre jeu des opinions sur le terrain politique et le libre jeu de l'offre et de la demande sur le terrain économique, donc le maintien de la démocratie politique et de la hiérarchie économique, avec patronat et salariat.",
+      "bbox": {
+        "x_pct": 1.671,
+        "y_pct": 24.127,
+        "w_pct": 84.262,
+        "h_pct": 10.214
+      },
+      "changed": true,
+      "change_reason": "Text was OCR-garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Démocrate progressiste sera dite l'idéologie qui réclame le maintien de la démocratie politique en attendant d'elle des atténuations de la hiérarchie économique au profit des salariés, sans toutefois envisager une suppression du patronat et du salariat.",
+      "bbox": {
+        "x_pct": 1.574,
+        "y_pct": 34.251,
+        "w_pct": 84.178,
+        "h_pct": 8.824
+      },
+      "changed": true,
+      "change_reason": "Text was OCR-garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Socialiste sera dite l'idéologie qui réclame le maintien de la démocratie politique et la suppression de la hiérarchie économique par l'abolition du patronat et du salariat.",
+      "bbox": {
+        "x_pct": 1.671,
+        "y_pct": 42.362,
+        "w_pct": 84.123,
+        "h_pct": 6.631
+      },
+      "changed": true,
+      "change_reason": "Text was OCR-garbled."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1 IDÉOLOGIES TYPIQUES, TELLES QU'ELLES SONT VÉCUES",
+      "bbox": {
+        "x_pct": 1.713,
+        "y_pct": 62.834,
+        "w_pct": 71.031,
+        "h_pct": 2.344
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR error in text header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voyons maintenant quels sont, sur les trois plans que nous avons distingués, les aspects de ces idéologies pour leurs adhérents.",
+      "bbox": {
+        "x_pct": 1.811,
+        "y_pct": 66.783,
+        "w_pct": 83.705,
+        "h_pct": 4.697
+      },
+      "changed": true,
+      "change_reason": "Text was OCR-garbled."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIE FASCISTE",
+      "bbox": {
+        "x_pct": 1.811,
+        "y_pct": 75.16,
+        "w_pct": 26.003,
+        "h_pct": 1.907
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plan philosophique ou religieux. — La légitimité du dictateur repose sur un fondement religieux ou magique. Le dictateur est inspiré. Il a des pouvoirs mystérieux dont on sent la présence quand on l'approche. Les problèmes de l'actualité politique sont trop compliqués pour les hommes ordinaires. Il convient donc",
+      "bbox": {
+        "x_pct": 1.393,
+        "y_pct": 78.939,
+        "w_pct": 84.359,
+        "h_pct": 10.25
+      },
+      "changed": true,
+      "change_reason": "Text was OCR-garbled."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Heavy OCR artifacts throughout the text regions.",
+    "Multiple paragraphs failed to capture full text content correctly.",
+    "Section header corrected for typos."
+  ],
+  "doc_id": "330",
+  "page": 41,
+  "elapsed_seconds": 5.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

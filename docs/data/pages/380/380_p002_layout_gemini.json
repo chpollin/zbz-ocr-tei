@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "HOMMAGE A HENRI REVERDIN",
+      "bbox": {
+        "x_pct": 27.019,
+        "y_pct": 25.396,
+        "w_pct": 44.778,
+        "h_pct": 2.125
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je succède ici à M. le professeur Henri Reverdin. Je sais qu'il n'aime pas qu'on parle de lui. Il me pardonnera pourtant, j'espère, les quelques mots qui vont suivre. Aucune redondance, aucune enflure ni aucune insincérité ne sont permises à son propos. Ce qui m'a toujours frappé, c'est ce mouvement qu'il a envers autrui, qu'il a du moins toujours eu envers moi : un bref élan d'accueil, d'ouverture, suivi aussitôt d'un geste de recul qui n'est pas un refus, mais qui reflète la crainte d'avoir déjà empiété sur l'autre, de l'avoir contraint un tant soit peu, fût-ce à une politesse. J'ai relu ces jours-ci la thèse qu'il a présentée à la Faculté de théologie en 1905, il y a donc 51 ans, sur la Certitude historique. J'y ai retrouvé intacts le son de sa voix, l'exigence de sa pensée et ses réserves. L'épigraphe est de Pascal : « Rien n'est simple de ce qui s'offre à l'âme et l'âme ne s'offre jamais simple à aucun sujet. » Ce sens incorruptible de la complexité des problèmes comme du sujet qui les pose et en cherche la solution empéchait déjà alors Henri Reverdin d'accueillir toute conclusion hâtive ou facile. Il se refusait à barbouiller l'idée de certitude en y introduisant la nuance complaisante de « certitude morale ». Il en maintenait fermement l'intégrité et la rigueur. Si la réponse finale était par lui refusée, c'est justement à cause de cette fixité dans l'exigence. Trop critique pour se laisser enfermer dans n'importe quelle conception exclusive — qu'on relise la critique sévère à laquelle, dans un ouvrage pourtant plein de ferveur et d'admiration, il a soumis l'empirisme radical de W. James ¹ — trop épris de transcendance pour renoncer à l'unité, Henri Reverdin n'a jamais cessé d'étre aux prises avec la pluralité des solutions et l'irréductibilité des problèmes. En 1948, à propos du livre de Charles Werner sur Le problème",
+      "bbox": {
+        "x_pct": 17.083,
+        "y_pct": 33.162,
+        "w_pct": 65.407,
+        "h_pct": 47.197
+      },
+      "changed": true,
+      "change_reason": "The text was poorly transcribed and truncated in the previous OCR result."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La notion d'expérience d'après William James, 1913, Georg, Genève.",
+      "bbox": {
+        "x_pct": 21.354,
+        "y_pct": 81.652,
+        "w_pct": 57.188,
+        "h_pct": 1.954
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/typo-filled transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "N. B. Texte lu à Genève le 1er novembre 1956.",
+      "bbox": {
+        "x_pct": 21.41,
+        "y_pct": 86.04,
+        "w_pct": 42.031,
+        "h_pct": 1.481
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors (Ier -> 1er, I956 -> 1956)."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Previous OCR transcription for the main body text was highly inaccurate and truncated.",
+    "Bibliographic entry and note lines had minor character recognition errors (1 vs I).",
+    "Author signature not present in detected regions, possibly part of previous page content."
+  ],
+  "doc_id": "380",
+  "page": 2,
+  "elapsed_seconds": 6.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

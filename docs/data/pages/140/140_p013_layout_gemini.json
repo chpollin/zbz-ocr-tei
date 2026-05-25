@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "94 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 34.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "y trouver un mettre la main sur la transcendance, pour s'assurer de la (( réalité objective )) de ce",
+      "bbox": {
+        "x_pct": 13.232,
+        "y_pct": 16.695,
+        "w_pct": 72.918,
+        "h_pct": 11.282
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de son acte de présence   synthétique, on ne Je trouve pas, on ne peut que feindre lavoir trouvé à ê",
+      "bbox": {
+        "x_pct": 13.019,
+        "y_pct": 28.49,
+        "w_pct": 73.38,
+        "h_pct": 41.293
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En même temps, lc motif, la source, la le sens de toutes   les visées partielles et indirectes impli",
+      "bbox": {
+        "x_pct": 12.899,
+        "y_pct": 69.726,
+        "w_pct": 73.961,
+        "h_pct": 10.16
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header label/region in input",
+    "Typographical errors in original extracted text (e.g., Je instead of le)"
+  ],
+  "doc_id": "140",
+  "page": 13,
+  "elapsed_seconds": 5.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

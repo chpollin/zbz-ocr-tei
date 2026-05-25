@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nuit se fait vite dans cette vallée. A midi, c'est à peine si on y voit du crépuscule. Pas d'aiguilles. Ils dressent des écharpes de lichens d'un vert-de-gris lépreux, on dirait des squelettes noirs soulevant des linceuls en lambeaux, des morts qui auraient oublié de tomber. Des roches informes, suintantes d'eau glacée, s'entassent, couvertes d'une mousse spongieuse, d'une épaisseur suspecte. Pas un oiseau, mais c'est le nid des cloportes, des mille-pattes, des limaces, de ce qui rampe, glue, frôle, de ce qui vit de moisissure et grouille dans l'ombre humide.",
+      "bbox": {
+        "x_pct": 10.229,
+        "y_pct": 12.359,
+        "w_pct": 37.948,
+        "h_pct": 19.328
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text OCR and improved bounding box scope for content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "112",
+      "bbox": {
+        "x_pct": 10.229,
+        "y_pct": 92.016,
+        "w_pct": 2.365,
+        "h_pct": 1.115
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "113",
+      "bbox": {
+        "x_pct": 94.835,
+        "y_pct": 92.016,
+        "w_pct": 2.365,
+        "h_pct": 1.115
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_footer."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 22.835,
+        "y_pct": 92.016,
+        "w_pct": 8.365,
+        "h_pct": 1.115
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Le combat de dragon",
+      "bbox": {
+        "x_pct": 74.835,
+        "y_pct": 92.016,
+        "w_pct": 9.365,
+        "h_pct": 1.115
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_header."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text segmentation was heavily fragmented and incorrect.",
+    "Page numbers and headers were wrongly labeled as text.",
+    "Multiple artifacts/partial text segments were incorrectly captured as main body text."
+  ],
+  "doc_id": "600",
+  "page": 2,
+  "elapsed_seconds": 5.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

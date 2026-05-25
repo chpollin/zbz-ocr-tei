@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "70 TEMPS ALTERNÉS",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The header '70 TEMPS ALTERNÉS' was missing a bounding box and mislabeled as part of the main text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "moi, m'éloignaient de Pierre, voilà tout. Je m'enfonçais donc dans l'inutile. Si j'avais pu m'en rendre compte, j'aurais sans doute pris peur en m'apercevant que l'amour m'avait dépouillée de toute la terre. La terre, cette source naguère inépuisable, je l'avais asservie. Elle n'était plus qu'un lien avec Pierre, un messager pour Pierre, un rayonnement de Pierre. Et parce qu'elle consentait à tout cela, je croyais qu'elle existait maintenant plus qu'avant. Mais comme un ami dont on fait un esclave peut vous rendre des services d'esclave, mais ne peut plus être un ami, ainsi la terre, tout en me livrant ses ressources magiques, n'était plus en elle-même qu'une chose inerte et ternie. Ainsi, des deux côtés du train, les campagnes ne se déployèrent pas. Il ne m'est rien resté de ce voyage; nous allions dans un espace ni clair, ni sombre, que toutes les brumes et toutes les couleurs avaient abandonné. Le mouvement seul resta réel: il accumulait derrière moi la séparation, comme des masses d'ouate nocturne jetées à chaque instant sur d'autres masses d'ouate; je les sentais épaisses, molles, imperméables aux sons. Puis la distance devint si grande qu'elle déborda mon imagination et que sa masse totale refusa de grandir. Alors je me suis abandonnée à tous les cahots du train, j'étais une chose du compartiment, et il n'y avait plus aucune différence entre mon propre corps et les courroies qui se balançaient docilement au-dessous du filet à bagages.",
+      "bbox": {
+        "x_pct": 16.581,
+        "y_pct": 12.382,
+        "w_pct": 81.122,
+        "h_pct": 69.026
+      },
+      "changed": true,
+      "change_reason": "Text content was OCR-fragmented and incomplete; corrected the transcription to match the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La même inertie me resta en Bretagne, et je laissée balloter au hasard des jours. Je ne sais plus rien",
+      "bbox": {
+        "x_pct": 16.581,
+        "y_pct": 80.69,
+        "w_pct": 80.811,
+        "h_pct": 5.255
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR output to match the image text."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page number/header was not captured in the layout regions.",
+    "OCR transcription of paragraphs was highly inaccurate.",
+    "The header '70 TEMPS ALTERNÉS' should have been identified as a page header."
+  ],
+  "doc_id": "40",
+  "page": 68,
+  "elapsed_seconds": 4.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

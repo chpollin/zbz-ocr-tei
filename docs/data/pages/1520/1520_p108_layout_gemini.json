@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre philosophie est issue de la religion biblique et elle y a puisé une vérité irremplaçable.",
+      "bbox": {
+        "x_pct": 10.583,
+        "y_pct": 5.484,
+        "w_pct": 83.957,
+        "h_pct": 4.284
+      },
+      "changed": true,
+      "change_reason": "Label changed from list_item to text, as it is a standard paragraph continuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(La foi philosophique, trad. française, p. 119)",
+      "bbox": {
+        "x_pct": 65.678,
+        "y_pct": 15.193,
+        "w_pct": 28.808,
+        "h_pct": 4.027
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les deux constatations sont importantes. Elles sont liées à une question vitale aujourd'hui pour nous, Occidentaux: qu'advient-dra-t-il de la religion biblique?",
+      "bbox": {
+        "x_pct": 10.664,
+        "y_pct": 9.426,
+        "w_pct": 83.686,
+        "h_pct": 6.17
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match image content more accurately."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "42. L'exclusive, nécessaire et à combattre",
+      "bbox": {
+        "x_pct": 10.745,
+        "y_pct": 21.851,
+        "w_pct": 51.626,
+        "h_pct": 2.082
+      },
+      "changed": true,
+      "change_reason": "Fixed typo in header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie est poussée à élargir sans cesse son horizon. Son regard va d'une religion confessionnelle définie à la tradition plus vaste de la Bible, et de celle-ci à la vérité contenue dans toutes les religions. En même temps elle laisse échapper précisément ce qui fait la réalité religieuse. Quand, élargissant ses vues à la mesure de l'universel, elle croit pénétrer dans le secret de la religion, elle perd la réalité incarnée des religions. Elle voit que cette présence concrète d'une foi commune, conforme à une tradition définie, est la forme indispensable de la religion ; mais elle en est bien loin parce qu'elle ne peut ni en vivre l'expérience, ni même comprendre vraiment ce qu'elle voit.",
+      "bbox": {
+        "x_pct": 10.298,
+        "y_pct": 24.593,
+        "w_pct": 84.377,
+        "h_pct": 20.848
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors to match source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(La foi philosophique, trad. française, p. 147-148)",
+      "bbox": {
+        "x_pct": 60.61,
+        "y_pct": 45.527,
+        "w_pct": 33.794,
+        "h_pct": 4.002
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR formatting."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "43. Contre la « démythisation »",
+      "bbox": {
+        "x_pct": 10.664,
+        "y_pct": 52.074,
+        "w_pct": 39.241,
+        "h_pct": 2.057
+      },
+      "changed": true,
+      "change_reason": "Fixed typo in header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsqu'un théologien (Bultmann) admet que s'impose une image moderne du monde, désormais définitivement acquise (du fait qu'il ne fait pas la distinction entre science et superstition scientifique), alors il peut lui venir à l'idée de démythiser la foi biblique afin d'écarter les difficultés que l'homme moderne y rencontre. Il est d'avis que, par cette démythisation, il réussira à sauver des restes de la foi, à savoir la foi dans l'histoire sainte « attestée » par le Nouveau Testament. Sa démythisation n'est pas poursuivie jusqu'au bout parce que, par un décret arbitraire de sa foi, l'histoire sainte ne doit pas être un mythe. Mais dans l'ensemble, cette démythisation nous enlève le monde des mythes tout entier, c'est-à-dire le royaume des chiffres en général, et prive notre existence du langage de la transcedance, avec toute sa richesse et son ambivalence.",
+      "bbox": {
+        "x_pct": 10.068,
+        "y_pct": 54.816,
+        "w_pct": 84.688,
+        "h_pct": 26.53
+      },
+      "changed": true,
+      "change_reason": "Fixed significant OCR errors and missing content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "102",
+      "bbox": {
+        "x_pct": 10.6,
+        "y_pct": 91.2,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Initial OCR was poor, resulting in many garbled words.",
+    "Multiple section headers were incorrectly parsed.",
+    "Page number 102 was missing from initial detection.",
+    "List items were incorrectly classified."
+  ],
+  "doc_id": "1520",
+  "page": 108,
+  "elapsed_seconds": 7.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

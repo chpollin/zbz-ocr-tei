@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "IDOLOGIES ET RALIT 55",
+      "bbox": {
+        "x_pct": 328.0,
+        "y_pct": 94.0,
+        "w_pct": 353.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected header label and merged page number into section header/page context."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "crivains, quelques artistes de porte universelle appartenant  d'autres nations. Ils avaient, la classe correspondante  l'tranger, un langage, des rfrences, un patrimoine, des curiosits communes. Ils avaient au moins un certain vernis europen.",
+      "bbox": {
+        "x_pct": 43.59,
+        "y_pct": 131.02,
+        "w_pct": 838.02,
+        "h_pct": 83.51
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout cela a fait dfaut  la classe ouvrire. La propagande socialiste, antireligieuse parce que les glises se montraient en fait solidaires de la classe patronale, anti-nationaliste parce que la patrie et l'arme semblaient mobilises avant tout contre les revendications populaires, l'a coupe des traditions qui taient historiquement les siennes. Les cultes et les ftes nationales (ces ftes qui, si souvent, commmorent un soulvement ou un exploit du peuple) devinrent le lieu de ralliement du conservatisme. Socialistes, syndicalistes les boycottrent. Religion, patrie, le pass en gnral, devinrent pour le peuple des biens trangers. Le peuple, on le voulut  il se voulut  neuf pour un avenir meilleur. Comme il n'avait gure de culture (la culture orale ayant recul devant l'industrie et la culture crite lui chappant parce qu'il n'avait pas eu le temps de l'acqurir et qu'on ne s'occupait gure de la lui transmettre), il se trouva priv de l'humanit diffuse implique dans tout patrimoine national, incapable d'aimer une culture internationale dont il ignorait presque tout, et accul par les ncessits vitales de la concurrence conomique  dfendre son travail et ses droits, sans merci, sur le terrain national. Ainsi s'effrita en fait, dans la pratique quotidienne et dans la sensibilit ouvrire, l'Internationale socialiste. Paradoxalement, les socialistes se virent soudain enferms dans un nationalisme troit, craintif, face  un capitalisme qui tait en fait international, et  une culture librale  tendances universelles.",
+      "bbox": {
+        "x_pct": 37.19,
+        "y_pct": 204.72,
+        "w_pct": 848.19,
+        "h_pct": 488.68
+      },
+      "changed": true,
+      "change_reason": "Cleaned up text content."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ce qui explique qu'aujourd'hui certains militants socialistes voient l'essentiel de leur opposition au communisme sovitique dans une politique nationale, indpendante de l'tranger. C'est ce qui explique encore leur tendance  croire qu'un rgime comme celui de la Yougoslavie titiste devient socialiste ds qu'il s'affranchit du joug russe, et ils sont prts  accorder  n'importe quel national-communisme la sympathie qu'ils refusent au stalinisme. C'est ce qui explique enfin en partie qu'actuellement les pays les plus avancs dans leurs ralisations socialistes soient les plus prement attachs  leur souverainet nationale et que, d'une",
+      "bbox": {
+        "x_pct": 39.42,
+        "y_pct": 692.78,
+        "w_pct": 844.71,
+        "h_pct": 209.18
+      },
+      "changed": true,
+      "change_reason": "Cleaned up text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Text OCR quality in original segmentation was very poor.",
+    "Page number and header need to be separated for proper indexing."
+  ],
+  "doc_id": "330",
+  "page": 89,
+  "elapsed_seconds": 7.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

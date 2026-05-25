@@ -1,0 +1,72 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "266 ID\tOLOGIES ET R\tALIT\t",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page header was missing from regions; added it to filter out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Occidentaux qui l'emploient. Il ne s'agit pas ici d'analyser la situation soviétique, de tenter une fois de plus de comprendre les ressorts et la portée probable des transformations intervenues là-bas. Notre tâche est d'essayer de saisir le sens et la portée que les Occidentaux donnent à ces transformations, ainsi que leurs répercussions sur les idéologies de l'Occident.",
+      "bbox": {
+        "x_pct": 11.741,
+        "y_pct": 10.455,
+        "w_pct": 85.794,
+        "h_pct": 13.253
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La déstalinisation a d'abord un sens moral. Staline était méchant, cruel, tyrannique — ses successeurs reviennent à de meilleurs sentiments. Ils s'humanisent, lèvent le rideau de fer, recherchent les contacts, se préoccupent d'améliorer le niveau de vie du peuple, relâchent la contrainte rigide qui pesait sur tous les modes d'expression, simples paroles ou créations de la culture. Ils reconnaissent le mal qui a été fait. Ils admettent même que le Paradis soviétique n'en est pas un, et qu'il ne pourra pas en être un avant de nombreuses années.",
+      "bbox": {
+        "x_pct": 11.602,
+        "y_pct": 23.351,
+        "w_pct": 85.752,
+        "h_pct": 18.565
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A l'Occident, ce changement d'attitude soviétique a d'abord dérangé beaucoup de gens : on s'était bien installé, qui dans l'admiration inconditionnelle, qui dans la vertueuse opposition au crime ! Il était commode pour les communistes et leurs amis d'avoir une Patrie de bonheur, de justice, de vertu, à célébrer sur cette terre, alors que l'histoire de toutes les autres patries s'écrit dans le sang, la boue, le mensonge et l'exploitation. Il était commode aussi pour les conservateurs de pouvoir, quoi qu'ils fissent, brandir pour se justifier une sorte de menace absolue — le pire du pire — contre laquelle il fallait bien rester unis pour se défendre à n'importe quel prix. Notons-le en passant, communistes et conservateurs se trouvaient d'accord pour admettre qu'un régime socialiste authentique s'édifiait en U. R. S. S. et dans les démocraties populaires — ce qui justifiait la soumission totale des communistes à la ligne moscovite et permettait aux conservateurs de vendre l'idéal socialiste avec le régime soviétique, de condamner et de discréditer le premier en même temps que le second. De grands chefs industriels, d'autre part, revenaient de l'Est séduits, émerveillés des droits quasi illimités dont disposent les employeurs dans un régime « socialiste » où le droit de grève n'existe pas.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Paragraph was completely omitted by detector."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le XXe Congrès du Parti communiste d'U. R. S. S. a donc beaucoup dérangé tout ce monde. Le rapport de Khrouchtchev",
+      "bbox": {
+        "x_pct": 10.404,
+        "y_pct": 85.089,
+        "w_pct": 86.114,
+        "h_pct": 4.599
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Detection missed the entire central body paragraph.",
+    "Detection failed to identify page header.",
+    "OCR quality is poor, requiring extensive manual text correction.",
+    "Bounding boxes were generally inaccurate in representing full text blocks."
+  ],
+  "doc_id": "330",
+  "page": 300,
+  "elapsed_seconds": 5.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

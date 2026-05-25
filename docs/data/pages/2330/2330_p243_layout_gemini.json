@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Table des matières",
+      "bbox": {
+        "x_pct": 28.535,
+        "y_pct": 22.581,
+        "w_pct": 33.529,
+        "h_pct": 2.766
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avant-propos ............................................................................ 7\nI. Les origines et l'enfance ........................................................... 11\nLes origines polonaises et juives — Le milieu familial : une\némigration d'Europe orientale — Le mouvement bundiste —\nVoyage en Pologne en 1939 : le pacte germano-soviétique —\nSouvenirs d'enfance — La patrie suisse.\nII. Les années de formation — La vocation de la philosophie ....... 23\nEtudes de Lettres à l'université de Genève — Rencontre de\nK. Jaspers à Heidelberg (1932-1933) — Printemps 1933 à\nl'université de Fribourg-en-Brisgau : Heidegger et le national-\nsocialisme — Jaspers et Heidegger.\nIII. Une philosophie de la condition humaine — Les premières\nœuvres ....................................................................................... 33\nL'Illusion philosophique — Une soirée chez G. Marcel — La\nphilosophie : un exercice de la liberté — 1936-1942 : la\nGuerre civile espagnole, la IIe Guerre mondiale — Un roman\nsymbolique : Temps alternés — La thèse de doctorat : L'Etre\net la Forme — Consentir à la condition humaine — Vérité et\nliberté — Qu'est-ce que la liberté ? — Une éthique de la\nfinitude — Absolu et transcendance — Foi philosophique et\nreligion — Face au judaïsme — Dialogue avec les chrétiens —\nUne philosophie existentialiste — La philosophie et les\nsciences humaines — La science et la technique : des produits\nde la liberté — La critique jaspersienne de la psychanalyse —\nLa signification de l'œuvre d'art — Une certaine conception\nde l'homme.",
+      "bbox": {
+        "x_pct": 5.446,
+        "y_pct": 31.169,
+        "w_pct": 79.365,
+        "h_pct": 59.395
+      },
+      "changed": true,
+      "change_reason": "Renamed label to reflect content and corrected the zbz_tag to match. Added actual text content for clarity."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "239",
+      "bbox": {
+        "x_pct": 81.25,
+        "y_pct": 93.306,
+        "w_pct": 4.118,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Added page number as a filterable region."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Initial document_index region was labeled incorrectly and lacked extracted text content.",
+    "Page number 239 was missing from the detection."
+  ],
+  "doc_id": "2330",
+  "page": 243,
+  "elapsed_seconds": 5.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "transcendance, dans sa vérité, se dérober au-delà des chiffres dont la lecture tend à la révéler.",
+      "bbox": {
+        "x_pct": 6.057,
+        "y_pct": 5.51,
+        "w_pct": 83.333,
+        "h_pct": 3.83
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée se trouve ainsi comme cernée par l'échec. Elle s'y heurte au bout de tous ses chemins. Dès lors, c'est l'échec lui-même qu'il importe de «déchiffrer» : il est pour l'existence le chiffre nécessaire de la transcendance.",
+      "bbox": {
+        "x_pct": 6.152,
+        "y_pct": 9.254,
+        "w_pct": 83.997,
+        "h_pct": 7.738
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text recognition errors"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers le montre ainsi (op. cit. p. 227) : «Si nous étions capables de penser sans contradiction la vérité de l'être, l'identité régnerait à travers la durée comme l'être même de la mort, auquel nous ne pouvons pas croire. La vérité de l'être ne peut se manifester à moi, même en restant inconnaissable, que si justement la cohérence logique se brise en antinomies. »",
+      "bbox": {
+        "x_pct": 5.962,
+        "y_pct": 16.907,
+        "w_pct": 84.146,
+        "h_pct": 11.688
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text recognition errors"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« Si la vérité de l'être, c'était la permanence sans fin à travers le temps, il n'y aurait à nouveau qu'une durée morte, dans la monotonie toujours identique à elle-même où le temps serait en fait aboli. Que l'être soit, et il prend nécessairement, dans la condition temporelle, la figure d'un mouvement vers l'échec. Chaque fois que nous croyons apercevoir dans la réalité empirique un sommet par lequel l'être se rend manifeste, ce sommet se réduit aussitôt au point qui va disparaître. C'est cette évanescence qui sauve la vérité de l'être, vérité qui, en tant que subsistante, se perdrait... L'impossibilité de durer fait que toute plénitude, tout accomplissement échappe à l'existence, qui tourne autour de ce point évanescent. L'instant comme tel est tout, et pourtant il n'est que l'instant. La vérité au niveau du réel vécu ne réside pas dans l'isolement de ce sommet ponctuel, mais dans son déploiement vers l'avant et l'après. » Cet instant, c'est le nerf vif du sens, contre l'ennui sans fin qu'engendrerait sans lui la permanence inerte d'une validité se perpétuant à travers durée. L'être comme liberté ne peut donc jamais s'actualiser comme consistance et permanence. Il existe au fil de sa conquête et s'éteint quand il veut durer dans son achèvement.",
+      "bbox": {
+        "x_pct": 5.962,
+        "y_pct": 28.252,
+        "w_pct": 84.146,
+        "h_pct": 36.47
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text recognition errors"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Nature et liberté.",
+      "bbox": {
+        "x_pct": 6.376,
+        "y_pct": 68.329,
+        "w_pct": 17.588,
+        "h_pct": 2.213
+      },
+      "changed": true,
+      "change_reason": "Identified as section header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans la condition empirique qui est celle de l'être humain réside, selon Jaspers, un chiffre redoutable : l'être humain est à la fois nature et liberté. Or nature et liberté ne sont pas seulement deux puissances en lutte. Il est tout aussi vrai que la liberté n'est possible que par la nature. Il ne suffit pas que la liberté dompte la nature, ce fond obscur de l'homme, qui peut, sous forme de maladie mentale, submerger et détruire en lui son humanité. Il faut encore que la nature, même domptée, persiste en lui et conserve sa force motrice. Les écarts qu'elle engendre (et que l'existence condamne comme des fautes et assume comme des tâches) proviennent eux aussi du même fond que l'existence. Pour",
+      "bbox": {
+        "x_pct": 6.376,
+        "y_pct": 68.329,
+        "w_pct": 83.504,
+        "h_pct": 18.895
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text recognition errors"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "35",
+      "bbox": {
+        "x_pct": 86.435,
+        "y_pct": 91.285,
+        "w_pct": 2.288,
+        "h_pct": 2.569
+      },
+      "changed": true,
+      "change_reason": "Correctly identified as page number/footer"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Severe OCR errors in almost every paragraph",
+    "Section header was misclassified as paragraph",
+    "Page number was misclassified as paragraph"
+  ],
+  "doc_id": "1520",
+  "page": 41,
+  "elapsed_seconds": 7.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

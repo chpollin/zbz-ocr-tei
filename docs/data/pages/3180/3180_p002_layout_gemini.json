@@ -1,0 +1,141 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Lob für Paradoxien und Widersprüche",
+      "bbox": {
+        "x_pct": 8.383,
+        "y_pct": 3.306,
+        "w_pct": 74.251,
+        "h_pct": 3.434
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Podiumsdiskussion zwischen Prof. Dr. Jeanne Hersch, Prof. Dr. Annemarie Pieper und Prof. Dr. W. Ch. Zimmerli",
+      "bbox": {
+        "x_pct": 8.533,
+        "y_pct": 8.315,
+        "w_pct": 84.536,
+        "h_pct": 5.009
+      },
+      "changed": true,
+      "change_reason": "This is a subtitle/header, not a paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 8.787,
+        "y_pct": 15.638,
+        "w_pct": 33.877,
+        "h_pct": 2.213
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine sehr verehrten Damen und Herren; liebes Hegelwochen publikum!",
+      "bbox": {
+        "x_pct": 8.129,
+        "y_pct": 17.942,
+        "w_pct": 85.135,
+        "h_pct": 4.763
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wer mich kennt, weiß, daß mir Podiumsdiskussionen – ähnlich wie Talk-Shows – eigentlich ein Greuel sind. Immer handelt es sich dabei um mühsam kontrovers gestaltete Schaukämpfe, bei denen das Publikum, wie es dann heißt, „auf seine Rechnung“ kommen muß, soll heißen: bei denen sich Koryphäen, die man nur aus der Literatur kennt, nun einmal ,live‘ streiten sollen. Und zwar, um im ökonomischen Bild zu bleiben, „koste es, was es wolle“. Gewiß, ich scheue keinen Streit, wenn er denn der Sache dient, aber wo der Streit zur Publikumsbelustigung wird, dort bleibt häufig die Sache der Philosophie auf der Strecke. Und bei solchen Veranstaltungen mache ich einfach nicht mehr mit. Bei Podiumsveranstaltungen solcher Art hinge- gen, wie wir sie heute zu erwarten haben, beteilige ich mich gerne, weil Philosophieren ein Stück weit immer auch öffentliches Gespräch sein muß.",
+      "bbox": {
+        "x_pct": 8.278,
+        "y_pct": 24.563,
+        "w_pct": 85.18,
+        "h_pct": 33.661
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dafür, daß das der Fall sein wird, bürgt nicht zuletzt unser neuer Gast: Soeben aus Basel hier eingetroffen ist Annemarie Pieper, Ordinaria für Praktische Philosophie an der Universität Basel. Liebe Frau Pieper, ich begrüße Sie herzlich in Bamberg und danke Ihnen, daß Sie die Strapaze auf sich genommen haben, nach einem anstrengenden Basler Arbeitstag noch hierher zu fliegen! Frau Pieper ist, wie viele von Ihnen wissen, nicht nur eine ausgewiesene Expertin in Sachen Ethik, sondern hat sich auch mit Nietzsche, mit der Existenzphilosophie und",
+      "bbox": {
+        "x_pct": 8.234,
+        "y_pct": 60.046,
+        "w_pct": 85.225,
+        "h_pct": 20.373
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Annemarie Pieper: Ethik und Moral. München, 1985; dies.: Geschichte der neueren Ethik. 2 Bde. Tübingen, 1992.",
+      "bbox": {
+        "x_pct": 10.374,
+        "y_pct": 81.812,
+        "w_pct": 42.575,
+        "h_pct": 3.889
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry / footnote content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "2 dies.: Philosophische Erläuterungen zu Nietzsches erstem ,Zarathustra'. Stuttgart, 1990.",
+      "bbox": {
+        "x_pct": 10.284,
+        "y_pct": 85.128,
+        "w_pct": 82.874,
+        "h_pct": 4.126
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry / footnote content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "3 dies.: Philosophische Erläuterungen zwischen Tier und Übermensch.“ Philosophische Erläuterungen zu Nietzsches erstem ,Zarathustra'. Stuttgart, 1990. [Note: The text box labels in the original XML were overlapping/incorrectly ordered]",
+      "bbox": {
+        "x_pct": 10.329,
+        "y_pct": 88.734,
+        "w_pct": 82.784,
+        "h_pct": 4.226
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry / footnote content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "25",
+      "bbox": {
+        "x_pct": 88.922,
+        "y_pct": 94.62,
+        "w_pct": 2.695,
+        "h_pct": 2.054
+      },
+      "changed": true,
+      "change_reason": "Labeled as footnote in image, but is a page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Footnotes and bibliographic references incorrectly grouped as list items.",
+    "Page number detected as part of text/list item regions by layout engine.",
+    "Poor text extraction for main body and bibliographic notes."
+  ],
+  "doc_id": "3180",
+  "page": 2,
+  "elapsed_seconds": 6.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

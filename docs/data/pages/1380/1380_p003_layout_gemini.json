@@ -1,0 +1,190 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "348",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 2,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 10,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header region"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "WAS KANN ICH WISSEN?",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 10,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header region"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "349",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 2,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1 L'evidence Kanl La science existc quelles en sont donc de bilile ? La moralile existe quelles en s",
+      "bbox": {
+        "x_pct": 10.458,
+        "y_pct": 13.858,
+        "w_pct": 36.2,
+        "h_pct": 17.385
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "donc impliqué qui cherche de {a n 'accomplinit aucune des opéralions Plre . intervenir que les forme",
+      "bbox": {
+        "x_pct": 10.205,
+        "y_pct": 35.03,
+        "w_pct": 36.041,
+        "h_pct": 15.503
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "E commenl lemps. 2l impropre, Espace",
+      "bbox": {
+        "x_pct": 12.073,
+        "y_pct": 50.26,
+        "w_pct": 31.027,
+        "h_pct": 10.284
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eanalytique  transcendantale explique comment I contenu spatial en aclion puisque  la science existe",
+      "bbox": {
+        "x_pct": 11.699,
+        "y_pct": 61.219,
+        "w_pct": 34.146,
+        "h_pct": 3.124
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "éventuclle, des   conditions   instrumcntales. 4 les conditions de pensabilile dc des du virtuel & c",
+      "bbox": {
+        "x_pct": 53.343,
+        "y_pct": 13.29,
+        "w_pct": 36.387,
+        "h_pct": 10.97
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "comme chacun sait, qu'elles sont, conlrairement aux Kant nous dit, mais non constitutives \", une ouv",
+      "bbox": {
+        "x_pct": 53.212,
+        "y_pct": 36.651,
+        "w_pct": 36.303,
+        "h_pct": 12.734
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mondc D pas Cesl Pas Fourquoi pose",
+      "bbox": {
+        "x_pct": 53.408,
+        "y_pct": 48.402,
+        "w_pct": 35.696,
+        "h_pct": 9.183
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par rppor 51 accessible réductible",
+      "bbox": {
+        "x_pct": 53.249,
+        "y_pct": 60.556,
+        "w_pct": 11.951,
+        "h_pct": 10.722
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Novs avons parlé,",
+      "bbox": {
+        "x_pct": 54.809,
+        "y_pct": 71.243,
+        "w_pct": 9.272,
+        "h_pct": 2.13
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jai souli plus   haul,",
+      "bbox": {
+        "x_pct": 54.687,
+        "y_pct": 82.568,
+        "w_pct": 12.325,
+        "h_pct": 1.929
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing page headers and footers",
+    "Needs better OCR cleanup"
+  ],
+  "doc_id": "1380",
+  "page": 3,
+  "elapsed_seconds": 6.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 4
+  }
+}

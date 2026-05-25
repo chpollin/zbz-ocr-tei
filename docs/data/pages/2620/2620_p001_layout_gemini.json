@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "text -> zb_paragraph",
+      "bbox": {
+        "x_pct": 14.417,
+        "y_pct": 5.73,
+        "w_pct": 33.083,
+        "h_pct": 59.523
+      },
+      "changed": true,
+      "change_reason": "Corrected redundant and placeholder text content interpretation."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Melaphysik und Ontologie Trennung von bei Karl Jaspers",
+      "bbox": {
+        "x_pct": 55.213,
+        "y_pct": 11.501,
+        "w_pct": 27.037,
+        "h_pct": 6.003
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Grundlage fur scine Seminarubungen wC4hlte Jaspers oft mit Al",
+      "bbox": {
+        "x_pct": 52.157,
+        "y_pct": 25.921,
+        "w_pct": 34.111,
+        "h_pct": 28.827
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage and placeholder text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "geeignetsten hielt, um in seinen jungen unerfahrenen Studenten den Sinn für echtes Philosophieren zu entwickeln und zu stärken?",
+      "bbox": {
+        "x_pct": 52.565,
+        "y_pct": 59.072,
+        "w_pct": 33.667,
+        "h_pct": 3.274
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Am liebsten zitiere ich hier einige Sätze aus der",
+      "bbox": {
+        "x_pct": 76.417,
+        "y_pct": 82.769,
+        "w_pct": 10.157,
+        "h_pct": 2.865
+      },
+      "changed": true,
+      "change_reason": "Corrected hallucinated text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction contained numerous placeholders ('text -> zb_paragraph').",
+    "OCR text quality is low for several paragraphs.",
+    "Multiple regions required re-transcription of actual document content."
+  ],
+  "doc_id": "2620",
+  "page": 1,
+  "elapsed_seconds": 3.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais d'un autre côté, une liberté — postulat de la raison pratique — qui se situerait “à l'extérieur” du monde phénoménal, au niveau des noumènes ou “choses en soi”, serait pour un sujet humain parfaitement vide, parce que dépourvue de tout enjeu. C'est ce “vide” qu'énonce, en en faisant un absolu, la “catégoricité” de l'impératif moral.",
+      "bbox": {
+        "x_pct": 16.747,
+        "y_pct": 8.088,
+        "w_pct": 80.791,
+        "h_pct": 14.522
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour ne par être vide, la liberté implique nécessairement une finalité. Celle-ci ne peut être que future, si elle appartient au monde phénoménal, donc temporel, ou transcendante, si elle se situe dans le monde nouménal. Dans le premier cas, l'impératif est hypothétique, dans le second, il est catégorique.",
+      "bbox": {
+        "x_pct": 16.709,
+        "y_pct": 25.079,
+        "w_pct": 80.702,
+        "h_pct": 12.078
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il se peut aussi que la finalité future (hypothétique) tire son efficience impérative (catégorique) de la transcendance. Antigone agit afin que le cadavre de Polynice soit recouvert de terre (finalité future), et qu'ainsi soient respectées “les lois non écrites des dieux” (finalité transcendante). Et à vrai dire, seul un tel entrecroisement permet à la liberté d'échapper à son impossibilité phénoménale en même temps qu'à l'abstraction désincarnée d'une transcendance pure.",
+      "bbox": {
+        "x_pct": 16.671,
+        "y_pct": 39.759,
+        "w_pct": 80.74,
+        "h_pct": 19.069
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est donc inévitable de concevoir une intersection entre temps et transcendance, si étrangers que ces deux termes apparaissent d'abord, par nature, l'un à l'autre.",
+      "bbox": {
+        "x_pct": 16.582,
+        "y_pct": 66.193,
+        "w_pct": 80.74,
+        "h_pct": 7.182
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle intersection reste absolument impensable au niveau du temps unilinéaire, allant d'avant en après, à l'aide duquel les sciences mesurent et interprètent les phénomènes de la nature.",
+      "bbox": {
+        "x_pct": 16.62,
+        "y_pct": 75.835,
+        "w_pct": 80.485,
+        "h_pct": 9.31
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "56",
+      "bbox": {
+        "x_pct": 17.0,
+        "y_pct": 88.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and correctly classified as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR text was severely truncated and broken.",
+    "Page number 56 was missed by original detection.",
+    "False positive punctuation region removed."
+  ],
+  "doc_id": "2600",
+  "page": 6,
+  "elapsed_seconds": 6.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

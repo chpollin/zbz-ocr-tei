@@ -1,0 +1,49 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "220 IDOLOGIES ET RALIT",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The top line contains the page number 220 and the running header, which should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On sait qu'il veut supprimer la propriete priveee des moyens de production. Mais ceux-ci peuvent etre saisis par un appareil d'Etat qui echappe a tout controle deemocratique, ce qui donne un fascisme, un stalinisme, en tout cas une forme renforceee de la dictature. Les moyens de production peuvent assurer, aux deepens du peuple entier, les privileges d'une clique de bureaucrates, de geeneraux, d'hommes d'affaires, ou meme d'un petit nombre de producteurs. L'expression-slogan c proprieete collective e avait un sens net lorsqu'elle opposait au patron unique, potentat de l'Occident moderne, seul proprieetaire de l'usine, le nombre des salariees asservis. Aujourd'hui la proprieete, presque toujours anonyme et abstraite dees qu'il s'agit de moyens de production importants, est deeja collective par le systeme des actions et des obligations. Ce systeme, cependant, n'a rien de socialiste. Il ne suffit donc pas que les moyens de production soient possedees collectivement, ni meme qu'ils appartiennent a l'Etat, pour qu'un reegime socialiste soit reealisee.",
+      "bbox": {
+        "x_pct": 10.682,
+        "y_pct": 9.955,
+        "w_pct": 85.836,
+        "h_pct": 35.561
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'agit, dira-t-on, d'abolir le profit, soit au benefice des travailleurs, soit a celui des consommateurs. Cela est vrai, mais la notion de profit est economiquement moins claire qu'il ne semble. A premieere vue, c'est ce que l'entreprise rapporte au patron qui vend les produits plus cher que leur prix de revient. Cependant la technique moderne exige un renouvellement constant du mateeriel, des formules de production et des produits eux-memes. Il faut donc bien incluree dans le prix de vente une plus-value qui servira aux investissements. Entend-on alors par profit ce qui vient s'ajouter, dans le prix de vente patronal, a cette plus-value neecessaire, comparable a la part de blee preeleveee sur la moisson en vue des semailles prochaines? Un suppleement que ni l'economie ni la technique ne justifient et qui permet simplement au patron individuel ou, le plus souvent, aux proprieetaires d'actions, de consommer davantage? Telle est bien la vue courante, et c'est sans aucun doute le spectacle scandaleux de l'ineegalitee des conditions de vie mateerielles entre posseedants et salariees, conjugueee avec l'ineegalitee de l'effort fourni, qui alimente, hors de toute ideeologie et de toute philosophie, la volontee reevolutionnaire des masses. Cette ineegalitee n'a pas cependant, en elle-meme, l'importance spectaculaire, deecisive, qu'on lui preete. Elle n'est qu'un symptome e souvent atroce,",
+      "bbox": {
+        "x_pct": 10.724,
+        "y_pct": 45.428,
+        "w_pct": 85.933,
+        "h_pct": 44.26
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text extraction errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header were included in the text body detection.",
+    "OCR output was severely corrupted with concatenated words and symbols."
+  ],
+  "doc_id": "330",
+  "page": 254,
+  "elapsed_seconds": 7.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

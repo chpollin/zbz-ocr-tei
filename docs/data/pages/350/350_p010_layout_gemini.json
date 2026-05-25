@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Temps et Liberté",
+      "bbox": {
+        "x_pct": 667.6,
+        "y_pct": 128.5,
+        "w_pct": 113.6,
+        "h_pct": 14.5
+      },
+      "changed": true,
+      "change_reason": "Label changed from text to page_header as it is a running title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "((moins bon du meilleur » et discerner la fausseté de Satan transfiguré en ange de lumière », recourir d'abord à un critère intellectuel, et, dans les cas les plus difficiles, à un critère affectif. En effet, le moi qui s'efforce à distinguer, dans le cours de ses pensées, le « meilleur » du « moins bon », ne tarde pas à s'embarrasser dans des finesses dont il ne peut plus se dégager. Sur cette recherche trop poussée risque de se greffer une ruse du Non-Etre qui tente de décourager le moi en poussant les choses à l'extrême, en multipliant les subtilités, en séduisant l'âme par l'excès même de sa délicatesse. Ignace recommande alors de couper court aux débats intérieurs et de demander à l'affectivité la réponse nécessaire. La recherche intellectuelle de la perfection risque en effet de se changer en subtile recherche de soi. Contre une telle perversion, le recours à l'affectivité peut transformer les astuces de Satan en moyens permettant à l'âme d'atteindre la perfection. Que l'âme cesse alors de scruter l'orientation de ses pensées pour considérer plutôt le retentissement intime que produit en elle leur discours. L'action du Non-être, au moment où elle s'y insère, se révélera au moi sous l'une des formes suivantes : affaiblissement de son élan ou de sa tension intérieure, inquiétude, trouble, ou simplement perte de la paix dont il jouissait auparavant.",
+      "bbox": {
+        "x_pct": 21.942,
+        "y_pct": 15.556,
+        "w_pct": 58.421,
+        "h_pct": 37.89
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text and assigned appropriate tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faudrait pas cependant s'en tenir au seul plan psychologique. Si la psychologie d'Ignace a mérité tant d'éloges, c'est qu' « elle est fondée sur l'intuition d'une dialectique de la liberté, qui est la marque spécifique de son génie ». C'est sa dialectique qui détermine, « sur ce point aigu et difficile entre tous, l'étroite liaison entre affectif et intellectuel qui donne à sa doctrine spirituelle sa sûreté et sa précision ».",
+      "bbox": {
+        "x_pct": 21.539,
+        "y_pct": 45.568,
+        "w_pct": 57.566,
+        "h_pct": 9.855
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text and assigned appropriate tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La ruse essentielle du Non-être, en effet, consiste à pousser le moi à un acte d'auto-détermination, contraire à toute l'attitude intérieure recherchée dans l'ensemble des Exercices. La liberté s'érige dans son auto-suffisance, comme si elle pouvait fonder sa décision sur la seule affirmation de sa propre transcendance. Or une telle perversion repose sur une méconnaissance de la condition temporelle : « Le moi ne prend plus pour idéal que sa pure causalité, lui apparaît précisément comme projection du futur « meilleur » et reprise du passé « moins bon », le passage de celui-ci à celui-là assurant la conscience de vaincre la division du temps et de retrouver l'unité. « Le moi aspire à se poser ainsi causa sui. Mais, conséquence de la recherche de « soi » qu'implique un tel effort, dès que s'objective le « meilleur » déterminé tel par cette pure causalité, le reflet d'orgueil qui en rejaillit sur lui le rend « moins bon ». Moins bon que la direction",
+      "bbox": {
+        "x_pct": 20.79,
+        "y_pct": 64.19,
+        "w_pct": 58.259,
+        "h_pct": 20.937
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text and assigned appropriate tag."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "379",
+      "bbox": {
+        "x_pct": 757.0,
+        "y_pct": 866.5,
+        "w_pct": 24.5,
+        "h_pct": 14.5
+      },
+      "changed": true,
+      "change_reason": "Corrected identification of page number."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Copyright © 2009 ProQuest LLC. All rights reserved. Copyright © Presses Universitaires de France.",
+      "bbox": {
+        "x_pct": 145.0,
+        "y_pct": 935.0,
+        "w_pct": 472.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Corrected identification of footer info."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR text contained many typos and misinterpretations.",
+    "Page number and footer information were incorrectly labeled as paragraph text.",
+    "Running header was missing in initial detection."
+  ],
+  "doc_id": "350",
+  "page": 10,
+  "elapsed_seconds": 6.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 10.759,
+        "y_pct": 5.163,
+        "w_pct": 3.735,
+        "h_pct": 3.238
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est qu'il n'y a message, ou information, etc., que lorsqu'il s'agit de transmettre un sens. Il est dangereux de passer, sous le camouflage de certains mots (même dans la recherche de pointe la plus prestigieuse et la plus féconde), du domaine des faits à celui du sens.",
+      "bbox": {
+        "x_pct": 10.566,
+        "y_pct": 10.4,
+        "w_pct": 78.554,
+        "h_pct": 11.535
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output to match actual text in the document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sens implique la possibilité de décoller des faits pour apercevoir autre chose.",
+      "bbox": {
+        "x_pct": 10.687,
+        "y_pct": 23.211,
+        "w_pct": 71.602,
+        "h_pct": 4.671
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output to match actual text in the document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsque JACQUES MONOD parlait de téléonomie, il ne pouvait pas évacuer la finalité.",
+      "bbox": {
+        "x_pct": 10.759,
+        "y_pct": 29.083,
+        "w_pct": 78.482,
+        "h_pct": 4.337
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output to match actual text in the document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faudrait pas faire entrevoir les noces d'un robot et d'une femme, ou l'inverse.",
+      "bbox": {
+        "x_pct": 10.687,
+        "y_pct": 34.946,
+        "w_pct": 78.265,
+        "h_pct": 4.479
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output to match actual text in the document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "- 0 -",
+      "bbox": {
+        "x_pct": 45.783,
+        "y_pct": 41.516,
+        "w_pct": 7.47,
+        "h_pct": 3.19
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR was highly inaccurate.",
+    "Page number 16 was mislabeled as text.",
+    "Formatting artifact '- 0 -' was not initially captured."
+  ],
+  "doc_id": "2140",
+  "page": 7,
+  "elapsed_seconds": 4.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

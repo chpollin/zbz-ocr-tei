@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "50",
+      "bbox": {
+        "x_pct": 14.157,
+        "y_pct": 78.43,
+        "w_pct": 3.313,
+        "h_pct": 2.203
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "UNITÉ ABSOLUE DU PROBLÈME OBJECTIF",
+      "bbox": {
+        "x_pct": 25.0,
+        "y_pct": 78.586,
+        "w_pct": 53.614,
+        "h_pct": 2.203
+      },
+      "changed": true,
+      "change_reason": "Heading identified as section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et devenir objet signifie donc tomber à l'état d'objet possible, être moins qu'un objet, — une chose, confondue dans l'ensemble des choses, et que l'épaisseur indifférente de la matière n'étonne plus parce qu'elle ne s'en distingue pas.",
+      "bbox": {
+        "x_pct": 13.449,
+        "y_pct": 12.269,
+        "w_pct": 76.265,
+        "h_pct": 13.213
+      },
+      "changed": true,
+      "change_reason": "Text content corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi c'est grâce à la vision même de cette épaisseur indifférente que le sujet se crée, qu'il s'en isole et s'oppose à elle. Il est clair que si cette vision n'a duré qu'un instant aussitôt oublié par instinct de préservation et par crainte du vertige, le sujet se perd avec elle.",
+      "bbox": {
+        "x_pct": 13.554,
+        "y_pct": 25.1,
+        "w_pct": 76.31,
+        "h_pct": 14.995
+      },
+      "changed": true,
+      "change_reason": "Text content corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous voyons maintenant que les deux ordres de questions, la question explicite de l'étrangeté de la matière, et la question implicite de l'existence du sujet, constituent une unité absolue. C'est en omettant de voir cette unité lorsqu'on critique le problème philosophique et sa situation paradoxale qu'on est amené à faire de lui un jeu absurde ou de sa duplicité spécifique une hypocrisie du philosophe.",
+      "bbox": {
+        "x_pct": 13.358,
+        "y_pct": 40.448,
+        "w_pct": 76.596,
+        "h_pct": 20.658
+      },
+      "changed": true,
+      "change_reason": "Text content corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On demandera peut-être pourquoi la matière importe tant à l'existence du sujet, pourquoi c'est pour lui une question d'être ou de non-être que d'aller jusqu'au bout du problème. Mais si l'on pose cette question, c'est justement qu'on pense à un sujet devenu chose, objet, qu'on se le représente juxtaposé dans l'espace à l'incompréhensible matière et continuant, à côté d'elle, à durer. On est de nouveau dans le rôle du psychologue contemplateur. En réalité, le sujet n'est sujet qu'en tant qu'une activité part de lui et va vers son objet. Non pas",
+      "bbox": {
+        "x_pct": 13.509,
+        "y_pct": 60.658,
+        "w_pct": 76.747,
+        "h_pct": 28.408
+      },
+      "changed": true,
+      "change_reason": "Text content corrected."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction had poor OCR.",
+    "Page number at top was missing and was instead erroneously merged with title/headings.",
+    "Running header was identified as section header.",
+    "Formatting tags were poorly applied."
+  ],
+  "doc_id": "20",
+  "page": 52,
+  "elapsed_seconds": 4.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

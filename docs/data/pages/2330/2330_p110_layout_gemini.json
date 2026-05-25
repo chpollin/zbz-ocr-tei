@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "la démocratie. Tant que le y est fidèle, même si je suis en désaccord avec lui sur des points secondaires, j'y reste. A partir du moment où ce n'est plus sur des points secondaires, mais sur l'essentiel que porte le désaccord, j'en sors. Mon adhésion est conditionnelle et limitée. On ne peut pas, semble-t-il, adhérer au parti communiste de cette manière. C'est une raison suffisante pour ne jamais y entrer. Je n'entrerais jamais dans un parti qui exigerait de moi une adhésion inconditionnelle, même si j'avais la possibilité matérielle d'en sortir. Parce que de ce fait, il serait déjà l'ennemi de ce qui est pour moi absolument essentiel : le jugement ultime de l'être humain.",
+      "bbox": {
+        "x_pct": 15.592,
+        "y_pct": 3.871,
+        "w_pct": 79.976,
+        "h_pct": 19.758
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR/transcription text to match the original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En ce qui concerne l'Eglise catholique, est-ce que vous n'avez pas le sentiment qu'il y a un certain opportunisme dans son ralliement au discours des droits de l'homme, après son ralliement au tiers-mondisme et à l'internationalisme ? Et est-ce que ce ralliement au discours des droits de l'homme n'introduit pas une tension avec la tradition de l'autorité du Magistère en matière de morale personnelle ?",
+      "bbox": {
+        "x_pct": 15.91,
+        "y_pct": 25.161,
+        "w_pct": 79.731,
+        "h_pct": 12.605
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR/transcription text to match the original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne le crois pas. Alors là, je voudrais me faire l'avocat de ses prises de position, que je crois cohérentes. Certes, il est possible - je n'en sais rien, je ne peux pas sonder les reins et les cœurs - qu'il y ait des intentions opportunistes dans l'accent que l'Eglise catholique met aujourd'hui sur le Tiers-Monde. Mais on peut l'expliquer autrement. Par cette foi, qui est aussi la mienne, selon laquelle tout être humain implique quelque chose d'irréductible, qui tient à sa capacité mystérieuse de se rendre libre et responsable. Tout être humain, et par conséquent tout être humain du Tiers-Monde aussi. D'autre part, l'état actuel du Tiers-Monde apparaît véritablement intolérable, pire que ce qu'on a connu au temps du capitalisme naissant. Il me paraît dès lors tout à fait justifiable que, dans de telles circonstances, l'Eglise mette l'accent sur l'aide au Tiers-Monde et sur l'importance de cette aide. A cause de chaque être humain qui se trouve dans le Tiers-Monde, et de son poids absolu.",
+      "bbox": {
+        "x_pct": 15.836,
+        "y_pct": 37.315,
+        "w_pct": 79.805,
+        "h_pct": 27.766
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR/transcription text to match the original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela ne conduit pas alors à des contradictions, à des tensions internes ?",
+      "bbox": {
+        "x_pct": 15.995,
+        "y_pct": 66.637,
+        "w_pct": 79.487,
+        "h_pct": 4.226
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR/transcription text to match the original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela ne devrait pas conduire à des contradictions et à des tensions internes si l'on reconnaît le même centre essentiel : la créature de Dieu, pour parler le langage catholique, la créature de Dieu faite à son image en tant que capable de liberté. Quant à la morale personnelle, dans la mesure où il y a encore aujourd'hui une morale personnelle catholique, je pense en effet que l'Eglise catholique est prise dans des contradictions, mais dans des contradictions de fait et non pas des contradictions de doctrine. Elle est prise dans des contradictions de fait parce que, d'une part, elle met l'accent sur le prix de chaque personne humaine, dans le Tiers-Monde comme ailleurs, et que, d'autre part, elle interdit la",
+      "bbox": {
+        "x_pct": 15.91,
+        "y_pct": 70.702,
+        "w_pct": 79.731,
+        "h_pct": 19.863
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR/transcription text to match the original document content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "106",
+      "bbox": {
+        "x_pct": 15.6,
+        "y_pct": 94.6,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identifying page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR was very poor and required full transcription correction.",
+    "Page number 106 was missing from initial detection.",
+    "The regions were correctly identified as zb_paragraph but required significant text cleanup."
+  ],
+  "doc_id": "2330",
+  "page": 110,
+  "elapsed_seconds": 7.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

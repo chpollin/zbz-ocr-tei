@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "priori.   Elle n'a pas cristallisé Pédifice de symboles auquel s'adosse volontiers léloquence des",
+      "bbox": {
+        "x_pct": 8.468,
+        "y_pct": 8.628,
+        "w_pct": 78.387,
+        "h_pct": 5.283
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certains, n'y trouvant daffirmations démontrées ou vérifiées (sinon dans une démarche déblaie) relèg",
+      "bbox": {
+        "x_pct": 7.769,
+        "y_pct": 15.165,
+        "w_pct": 79.086,
+        "h_pct": 29.932
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Justement : le sachant, il sait aussi que la philosophie n'en est pas une au sens ordinaire du mot. ",
+      "bbox": {
+        "x_pct": 7.634,
+        "y_pct": 44.527,
+        "w_pct": 78.28,
+        "h_pct": 8.988
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie ayant pour tâche dappeler à Pexistence, n'est pas dispensée pour autant de  rigueur  ",
+      "bbox": {
+        "x_pct": 6.398,
+        "y_pct": 63.303,
+        "w_pct": 79.355,
+        "h_pct": 17.18
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "57",
+      "bbox": {
+        "x_pct": 44.0,
+        "y_pct": 88.0,
+        "w_pct": 10.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page number region"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page footer for page number 57."
+  ],
+  "doc_id": "100",
+  "page": 2,
+  "elapsed_seconds": 5.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

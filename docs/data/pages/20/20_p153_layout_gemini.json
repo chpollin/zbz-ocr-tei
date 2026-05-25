@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "RECHERCHE DE L'ÊTRE DANS LE « MONDE » 151",
+      "bbox": {
+        "x_pct": 204.0,
+        "y_pct": 84.0,
+        "w_pct": 593.0,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Header text misclassified as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'après Jaspers, c'est par l'expérience de la limite et de l'échec que nous arrivons à l'existence et à la transcendance.",
+      "bbox": {
+        "x_pct": 118.0,
+        "y_pct": 128.0,
+        "w_pct": 757.0,
+        "h_pct": 74.0
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors and mis-parsed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie, dit Jaspers, s'est toujours efforcée d'atteindre l'être. Non pas tel être particulier, non pas telle forme de l'être, mais l'être total. On pourrait d'abord l'appeler « monde » (Welt) en désignant ainsi la somme de tout ce qui est ou peut devenir objet pour nous. La recherche du monde total fait le sujet du premier volume de la Philosophie de Jaspers, intitulé Weltorientierung : terme sans équivalent français qui désigne l'effort d'un sujet cherchant à s'orienter dans son monde objectif. Cette « orientation », lorsqu'elle est conçue comme science, prétend atteindre une réalité indépendante du sujet connaissant et apporter un savoir valable pour tous, toujours et partout. Conçue comme unité de toutes les sciences particulières, elle prétend faire connaître un jour le monde dans son unité et dans sa totalité. Or, plus le désir de trouver l'unité du monde sera grand, et plus il deviendra évident pour une conscience claire et qui ne veut pas se tromper elle-même que sa recherche scientifique se heurte à des limites définitives. On s'aperçoit que le monde ne se referme pas sur lui-même, n'arrive pas à constituer une unité complète, que la connaissance du monde ne peut donc pas être la connaissance de l'être. On s'aperçoit aussi que l'évidence, le caractère d'évidence considéré en lui-même, comme pure objectivité, indépendamment de tel résultat évident",
+      "bbox": {
+        "x_pct": 112.0,
+        "y_pct": 205.0,
+        "w_pct": 762.0,
+        "h_pct": 690.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in the paragraph text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Page header misidentified as paragraph.",
+    "OCR errors in paragraph text transcription.",
+    "OCR text content alignment failed."
+  ],
+  "doc_id": "20",
+  "page": 153,
+  "elapsed_seconds": 4.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

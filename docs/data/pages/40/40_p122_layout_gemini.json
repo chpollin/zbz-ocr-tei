@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "124 TEMPS ALTERNS",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 82.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified at the top of the page; should be marked as filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tager des toits dessins par la pluie et la neige, des faades recouvertes de lattes de bois en rponse  la direction du vent, des clochers perant le ciel un peu au-dessus du sommet d'une montagne lointaine, l o le ciel les demandait. Et tout a son ombre; et toutes les ombres tombent dans le mme sens en tmoignage de l'unique soleil. L o le vide s'ouvrait trop vaste, des oiseaux plongrent. Quand le silence sembla dmesur, de quelque part montrent des sons de cloches. Je m'arrtai un moment devant le bassin d'une fontaine. Il avait t verdi par le sulfate de cuivre. L'eau coulait au milieu d'un cirque de glaons d'un cristal tourment. Pendant que je contemplais la fontaine, le chur continua alentour  scander sur place un quilibre inaltrable.",
+      "bbox": {
+        "x_pct": 9.419,
+        "y_pct": 12.382,
+        "w_pct": 81.297,
+        "h_pct": 35.728
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to reflect actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je me suis promene tout le jour. En rentrant, quand le soleil se couchait, j'ai vu un platane dont on avait taill les branches jusqu'aux nuds; de jeunes pousses le hrissaient, striant le fond d'un toit en pente; les pousses taient rouges; le toit, tourn du ct nord, tait encore couvert de neige que l'ombre violaait. Il me sembla n'avoir jamais rien vu d'aussi beau. Je n'tais plus spare. La nature n'tait pas redevenue transparente comme elle l'tait jadis. Elle tait massive, faite de matire, travaille par la vie comme par un sang pais et sans caprice. Elle tait lente. Elle n'avait rien  faire avec ma passion dsespre et j'eus envie de l'en bnir. Je ne la perdrais plus.",
+      "bbox": {
+        "x_pct": 9.73,
+        "y_pct": 47.892,
+        "w_pct": 81.041,
+        "h_pct": 32.599
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to reflect actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ce jour, je crois, Marc, que j'ai appris  t'aimer.",
+      "bbox": {
+        "x_pct": 13.243,
+        "y_pct": 83.204,
+        "w_pct": 77.297,
+        "h_pct": 2.93
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in transcription."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header were not correctly identified and filtered.",
+    "Transcriptions were highly inaccurate and fragmented.",
+    "Bbox for page header was missing entirely in input."
+  ],
+  "doc_id": "40",
+  "page": 122,
+  "elapsed_seconds": 5.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

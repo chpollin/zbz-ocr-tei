@@ -1,0 +1,109 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Publié dans Le langage. Actes du IVe Congrès des Sociétés de philosophie de langue française VI (Lib",
+      "bbox": {
+        "x_pct": 8.517,
+        "y_pct": 4.373,
+        "w_pct": 52.506,
+        "h_pct": 3.871
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header as it is a bibliographic citation/heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LIBERTÉ SANS CHOIX",
+      "bbox": {
+        "x_pct": 26.833,
+        "y_pct": 22.292,
+        "w_pct": 39.565,
+        "h_pct": 3.079
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deux erreurs viennent constamment fausser toute réflexion touchant auX problèmes de la liberté. La p",
+      "bbox": {
+        "x_pct": 8.646,
+        "y_pct": 30.217,
+        "w_pct": 75.907,
+        "h_pct": 10.45
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toutes deux proviennent dun usage où elle n'a que faire La liberté est rigoureusement inimaginable e",
+      "bbox": {
+        "x_pct": 8.598,
+        "y_pct": 40.063,
+        "w_pct": 75.794,
+        "h_pct": 10.867
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(I va de soi que je ici de la liberté philosophique. La liberté politique, économique, sociale, est ",
+      "bbox": {
+        "x_pct": 8.437,
+        "y_pct": 50.382,
+        "w_pct": 76.068,
+        "h_pct": 8.666
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'est-ce que la liberté, dans l'intuition immédiate qui en affirme irréductiblement l'existence ? - C'est faire ce qu'on veut. Mais pour cela, il faut d'abord vouloir. Seul un être qui veut a un rapport avec la liberté. Or un être qui veut n'a plus le choix : il ne veut en blanc. Vouloir, c'est toujours vouloir ceci et non cela. On me dira que s'il n'a plus le choix, c'est qu'il l'a eu, c'est qu'il aurait pu vouloir autre chose et qu'il a librement choisi de vouloir ceci et non cela. - Je veux bien, au lieu de chercher l'évidence de la liberté entre le vouloir et l'acte, tenter de la saisir aux sources mêmes du vouloir. Cela ne change, à ce qu'il me semble, rien d'essentiel. Si le sujet a « librement choisi » de vouloir ceci et non cela, c'est donc qu'il voulait vouloir ceci et non cela. Avant de vouloir vouloir, dans le second",
+      "bbox": {
+        "x_pct": 8.5,
+        "y_pct": 59.0,
+        "w_pct": 76.0,
+        "h_pct": 28.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing main body text block."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "14",
+      "bbox": {
+        "x_pct": 8.0,
+        "y_pct": 89.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Bibliographic entry label was incorrect.",
+    "Multiple regions had incomplete or truncated text content.",
+    "Main body text block was missing.",
+    "Page number was missing."
+  ],
+  "doc_id": "150",
+  "page": 1,
+  "elapsed_seconds": 6.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to section_header as it is a bibliographic citation/heading.": 1,
+    "Corrected text content.": 2,
+    "ADDED": 2
+  }
+}

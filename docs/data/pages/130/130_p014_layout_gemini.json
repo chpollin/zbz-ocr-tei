@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "20 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 13.929,
+        "y_pct": 2.0,
+        "w_pct": 78.541,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header/numbering region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "en lui faisant confiance et en étant prêts, jusqu'au fond de nous-même, à accepter ce qu'elle aura e",
+      "bbox": {
+        "x_pct": 13.929,
+        "y_pct": 14.601,
+        "w_pct": 78.541,
+        "h_pct": 7.522
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jai conscience davoir signalé assez dexigences contradictoires ct assez de risques pour faire paraît",
+      "bbox": {
+        "x_pct": 13.009,
+        "y_pct": 30.0,
+        "w_pct": 78.975,
+        "h_pct": 62.056
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number/header was initially missing from regions."
+  ],
+  "doc_id": "130",
+  "page": 14,
+  "elapsed_seconds": 4.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

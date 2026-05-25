@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "del passato uno del futuro, rispettivamente da una parte e dall'altra del momento presente.",
+      "bbox": {
+        "x_pct": 11.056,
+        "y_pct": 6.929,
+        "w_pct": 85.128,
+        "h_pct": 4.437
+      },
+      "changed": true,
+      "change_reason": "Text content cleanup."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "É quello che sono solita chiamare « la piccola durata ». La piccola durata si forma attraverso una specie di « presentificazione » di un piccolo elemento del passato e di un altro del futuro, per cui l'asse, invece di essere puntuale, acquista un suo spessore. Noi viviamo come se questo piccolo lasso di tempo non trascorresse mai. Esso non scorre verso l'avvenire, cosí come non scorre verso il passato; si può dire che lo trasportiamo con noi, oppure che è costantemente immobile, fissato dalla simmetria attorno all'asse del presente.",
+      "bbox": {
+        "x_pct": 11.056,
+        "y_pct": 10.844,
+        "w_pct": 85.279,
+        "h_pct": 20.861
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Grazie a questa simmetria, schematizzata nel secondo schema, la piccola durata giunge a fornire una specie di rappresentazione miniaturizzata della totalità che si oppone allo svolgimento. Se vi fosse unicamente svolgimento, nulla avrebbe peso e importanza. Ad esempio i tre astronauti, che tentano oggi di raggiungere la terra, sarebbero completamente nullificati nello scorrimento infinito del tempo e, al piú, si congiungerebbero con le innumerevoli vittime della storia dell'uomo. Essi non acquisterebbero consistenza come pure non acquisterebbero la loro unicità.",
+      "bbox": {
+        "x_pct": 10.664,
+        "y_pct": 31.291,
+        "w_pct": 85.671,
+        "h_pct": 22.376
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vi è in ciò ritengo, una specie di funzione esterio-rizzante della simmetria, che rappresenta una eccezione nello svolgimento della storia, nello stesso modo in cui l'asse della simmetria rappresenta una eccezione nella simmetria centrata. Tuttavia nello stesso tempo essa sostiene l'essere della storia e permette a questa di essere ciò che è, cioè qualche cosa che può avere un senso.",
+      "bbox": {
+        "x_pct": 10.513,
+        "y_pct": 53.725,
+        "w_pct": 85.46,
+        "h_pct": 14.594
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ho affermato che la piccola durata miniaturizza in qualche modo la totalità; vorrei aggiungere che sotto un aspetto mitico essa è una sorta di miniatura della totalità del tempo. Essa si sfrangia sia verso il passato, sia verso il futuro, ma sappiamo che avremmo potuto applicare il suo schema di valorizzazione per la simmetria ovunque, nel tempo, sia esistito qualcuno. In qualche modo, dunque, tutto il passato e tutto il futuro sono ripresi da questo tipo di simmetria. Essa rappresenta un contrappunto allo svolgimento, e crea, ritengo, insieme ad esso, per niente affatto abolendolo, la possibilità del senso della storia.",
+      "bbox": {
+        "x_pct": 10.513,
+        "y_pct": 67.881,
+        "w_pct": 85.52,
+        "h_pct": 24.23
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "235",
+      "bbox": {
+        "x_pct": 90.0,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Detected page number, changed from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Transcription of all paragraphs was significantly corrupted.",
+    "Page number 235 was missing from the initial JSON segmentation."
+  ],
+  "doc_id": "990",
+  "page": 7,
+  "elapsed_seconds": 6.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 41",
+      "bbox": {
+        "x_pct": 401,
+        "y_pct": 81,
+        "w_pct": 216,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page_header rather than text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "compliqué n'arrive pas. Je pensais que c'est lourd à porter, un enfant; lourd aussi, un être endormi. Tout ce qui est bon est lourd.",
+      "bbox": {
+        "x_pct": 117.16,
+        "y_pct": 124.76,
+        "w_pct": 805.81,
+        "h_pct": 73.72
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le menton sur la main, je regardais le feu. Il avait brûlé tout le jour, et une épaisseur de cendres et de débris noircis figurait une mer confuse où quelques vagues s'ouraient de braise. Sur ces flots, une bûche balançait sa carène massive entourée d'écume flambante. Au-dessus, le vent creusait, déployait, multipliait une prodigieuse voilure de flammes. Qu'est-ce qui vaut ? demandait Monica. Je ne sais pas. Je n'ai jamais choisi. Je n'ai jamais pris de décision pareille. Toujours l'essentiel se trouvait déjà décidé en moi et demandait obéissance. Je n'ai pas choisi entre l'absolu et la vie. Qu'est-ce qui vaut ? demandait Monica, et cela voulait dire: Que dois-je aimer ? Je ne sais pas. J'ai aimé.",
+      "bbox": {
+        "x_pct": 114.86,
+        "y_pct": 198.2,
+        "w_pct": 808.11,
+        "h_pct": 327.6
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je regardais dormir, puis de nouveau, le feu. Il rongeait la carène par le centre, la déformait. Cela dura longtemps. La voilure se défit, se réduisit à de changeantes flammèches accrochées çà et là le long d'un pont noirci et rougeoyant qui enjambait les braises. Puis le pont lui-même mincit, s'usa. Alors en son milieu, là où il était le plus frêle, s'élança une flamme unique, droite, étroite, presque immobile. On eût dit une flamme rituelle, entretenue pour un culte de fixité et de mémoire. Elle tremblait à peine et s'effila seulement de plus en plus vers le haut, jusqu'au moment enfin où le bois qui la portait s'effondra en deux tronçons, rallumant mille vénules de feu parmi les cendres mal éteintes.",
+      "bbox": {
+        "x_pct": 113.11,
+        "y_pct": 527.13,
+        "w_pct": 809.86,
+        "h_pct": 330.43
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Docling OCR was highly truncated and corrupted.",
+    "Page header was misclassified as text.",
+    "Multiple lines were missing or mangled in the output."
+  ],
+  "doc_id": "40",
+  "page": 39,
+  "elapsed_seconds": 4.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

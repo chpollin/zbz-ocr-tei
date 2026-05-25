@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Menschsein, Grenzen und Widersprüche",
+      "bbox": {
+        "x_pct": 8.227,
+        "y_pct": 6.801,
+        "w_pct": 79.829,
+        "h_pct": 4.194
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine Damen und Herren, Sie haben mir eine große Freude gemacht, indem Sie so zahlreich zu meinem Vortrag in der Geburtsstadt meines Lehrers Karl Jaspers erschienen sind. Ich habe mein Leben lang – und mein Leben war schon sehr lang – gesagt, daß Karl Jaspers mein Lehrer war. Ich werde nie jenen Tag vergessen – ich war 18 Jahre alt, wußte nichts von Philosophie, konnte kaum Deutsch –, an dem ich zufällig in den Hörsaal kam, in dem Jaspers las. Da setzte sich Jaspers an das Pult, hob zwei Finger und fing mit der Vorlesung an. Die Vorlesung ging schon drei Wochen, und ich kam mittenhinein und verstand sehr wenig, aber eines war mir gleich klar: Hier gibt es etwas für dich zu verstehen. Das hat sich mir für ein Leben eingeprägt. Wie Jaspers die Philosophie erlebte und wie er dann dieses Erleben der Philosophie und dieses Selbstwerden durch die Philosophie repräsentierte und darstellte, kann man nicht mehr vergessen. Wenn ich nur einen kleinen Nachhall davon vor dieses Publikum bringen könnte, so daß Sie nach Hause kommen und etwas von Jaspers lesen, dann wäre das das Schönste, was ich mir wünschen kann.",
+      "bbox": {
+        "x_pct": 7.91,
+        "y_pct": 25.683,
+        "w_pct": 79.866,
+        "h_pct": 31.612
+      },
+      "changed": true,
+      "change_reason": "The initial OCR extraction was truncated and incorrect. Replaced with full paragraph text transcribed from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der allgemeine Titel für meine Vorträge lautet Philosophie als Schule des Staunens. Was heißt das? Das bedeutet zunächst einmal, daß Staunen etwas ganz Wesentliches ist. Zu staunen bedeutet, daß etwas, das geschehen ist oder das gesagt wurde, uns so überrascht hat, daß wir nicht so geschlossen bleiben und uns an dem festhalten, wie wir bis jetzt waren. Es ist eine Öffnung des Selbst. Man öffnet sich dem, was einen geöffnet hat. Ich wurde damals, in dem Kolleg der alten Aula in Heidelberg, durch Jaspers geöffnet; der Philosophie geöffnet. Das Wesentliche ist nun, daß die Philosophie eine Schule des Staunens ist und nicht eine Schule des Wissens von etwas, was im Laufe des Lebens immer fester wird; sie ist im Gegenteil eine bestimmte innere Tätigkeit, durch die man immer offener wird. Offener in welchem Sinne? Man könnte glauben, wenn man immer offener wird, dann wird man immer untreuer. Das wäre dann die Schule der Untreue, wenn treu zu sein bedeutet, sich ganz fest an die Dogmatik zu klammern.",
+      "bbox": {
+        "x_pct": 7.824,
+        "y_pct": 58.906,
+        "w_pct": 79.792,
+        "h_pct": 27.961
+      },
+      "changed": true,
+      "change_reason": "The initial OCR extraction was incomplete and cut off mid-sentence. Replaced with full paragraph text transcribed from the image."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text extraction for both main body paragraphs was truncated/incomplete.",
+    "OCR text did not match the visual source content."
+  ],
+  "doc_id": "2990",
+  "page": 6,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

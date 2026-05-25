@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "40 Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 14.025,
+        "y_pct": 34.0,
+        "w_pct": 80.245,
+        "h_pct": 35.493
+      },
+      "changed": true,
+      "change_reason": "The header text was incorrectly grouped with the first paragraph. I have corrected it to 'page_header' and adjusted the content focus."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was können wir daraus schließen? Unsere Freiheit entflieht nicht dem Fließen oder Zerfließen der Zeit, sondern sie durchdringt dieses Fließen oder Zerfließen der in a-priori-Gestalt organisierten phänomenalen Welt. Es ist also, könnte man sagen, die freie Existenz, wenn ich die Freiheit nach Jaspers so nenne. Der freie Akt, der Akt der Freiheit gründet die Dimensionen der Zeit. Der freie Akt ist das Jetzt. Und der freie Akt als Jetzt ist etwas, was sich der Zeit aussetzt. Die Zeit in der Welt des Vorfindlichen ist Vorher-Nachher ohne Jetzt. Aber die Entscheidung des Menschen ist da und bringt in dieses Vorher-Nachher die Trennung des Jetzt wie ein Mehr an Sein; ein Sein, das durch die Freiheit hineinkommt. Der freie Akt gründet die drei Dimensionen der Zeit, über die sich Augustinus so schwierige Gedanken machte, und der freie Akt reißt sich los von dieser Kontinuität, von dieser Kausalität und von diesem Verbundensein in der Aufeinanderfolge des empirischen Nacheinander, und hier bekommt er dann die konsistenten drei Dimensionen der Vergangenheit, der Gegenwart und der Zukunft. Aber die Gegenwart allein ist fast ein Nichts. Sie ist nur punktuell da, wo sie geschieht. Die Gegenwart ist das durch die Freiheit des Menschen Gegebene. Daher kommt also die Zukunft.",
+      "bbox": {
+        "x_pct": 14.025,
+        "y_pct": 10.913,
+        "w_pct": 80.245,
+        "h_pct": 35.493
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match the full paragraph and applied correct paragraph tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erwartung was ist das? Das ist eine Richtung, die aus dem freien Akt kommt, weil der freie Akt etwas in der Zukunft als Ziel hat. Der freie Akt vermag nichts in der Vergangenheit. Das ist ausgeschlossen. Wir können nicht das Ziel haben, etwas in der Vergangenheit zu ändern. Die Zukunft ist eine Dimension, die qualitativ, also ontologisch von einer jetzigen Entscheidung abhängig ist. Was in der Zukunft sein wird, hängt noch davon ab, was ich jetzt entscheide. Es ist also die jetzige Handlung, die jetzige Wahl. Die jetzige Entscheidung hat einen Sinn, der auf einer zukünftigen Zeit beruht. Mein jetziger Akt hängt in seinem Wert noch von dem ab, was ich jetzt entscheide.",
+      "bbox": {
+        "x_pct": 13.988,
+        "y_pct": 46.16,
+        "w_pct": 80.245,
+        "h_pct": 19.852
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text to reflect the complete paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein Fehler ist es und das ist ein Fehler, der sehr oft begangen worden ist und der sehr viel schadet -, diese Zukunft zu totalisieren. Man darf sich diese Zukunft nie als ein Ganzes der Geschichte vorstellen. Das Ganze der Geschichte ist uns keineswegs gegeben, weder als Vorstellung noch als Gedanke. Es ist nicht einmal etwas, das wir denken könnten; es wäre kein falscher Gedanke, sondern überhaupt keiner. Das Ganze kann ich jetzt nicht zeigen; es bleibt offen. Und weil es offen ist, bleibt die freie Entscheidung frei. Bliebe es nicht offen, dann wäre die Entscheidung nicht frei, sie wäre Mittel zum Zweck, sie wäre ein technisches Fortdauern der vergangenen und der vorfindlichen Kausalität. Das ist eine Grundbedingung; und diejenige",
+      "bbox": {
+        "x_pct": 14.025,
+        "y_pct": 65.929,
+        "w_pct": 80.049,
+        "h_pct": 19.984
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was heavily truncated.",
+    "Header was incorrectly included in the first paragraph bounding box.",
+    "Text content was not fully captured in the initial JSON."
+  ],
+  "doc_id": "2990",
+  "page": 33,
+  "elapsed_seconds": 6.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

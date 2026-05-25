@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "his unconditioned state are as necessary to me...",
+      "bbox": {
+        "x_pct": 19.137,
+        "y_pct": 7.412,
+        "w_pct": 70.863,
+        "h_pct": 14.065
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "We are not concerned with winning the argument...",
+      "bbox": {
+        "x_pct": 19.137,
+        "y_pct": 20.849,
+        "w_pct": 70.887,
+        "h_pct": 12.104
+      },
+      "changed": true,
+      "change_reason": "Corrected reading order based on logical flow from previous paragraph"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The liberty must not be stifled or diminished by...",
+      "bbox": {
+        "x_pct": 18.71,
+        "y_pct": 32.457,
+        "w_pct": 71.532,
+        "h_pct": 24.042
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In his anxiety for the preservation of Liberty...",
+      "bbox": {
+        "x_pct": 17.96,
+        "y_pct": 55.872,
+        "w_pct": 72.387,
+        "h_pct": 32.765
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "152",
+      "bbox": {
+        "x_pct": 17.96,
+        "y_pct": 89.97,
+        "w_pct": 4.194,
+        "h_pct": 2.219
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from text to page_footer"
+    }
+  ],
+  "score": 95,
+  "num_corrections": 2,
+  "issues": [
+    "Reading order of second and third regions was inverted in original detection",
+    "Page number 152 was not detected as a separate region"
+  ],
+  "doc_id": "3090",
+  "page": 10,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

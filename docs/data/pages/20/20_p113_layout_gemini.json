@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA PREUVE ONTOLOGIQUE DE SAINT-ANSELME III",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header for the page title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tel est en exemple l'argument ontologique, suivant lequel l'idée de Dieu et de sa perfection le suppose nécessairement existant, et suffit par conséquent à démontrer son existence.",
+      "bbox": {
+        "x_pct": 11.551,
+        "y_pct": 13.089,
+        "w_pct": 75.904,
+        "h_pct": 9.695
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content and updated zbz_tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que bien signifier ce raisonnement? Pour notre esprit moderne, l'argument est d'un rationalisme si formaliste qu'il nous semble un jeu. Non seulement il nous paraît absolument incapable de convaincre qui que ce soit, mais il nous procure une sorte de plaisir entièrement profane, et mêlé de légère ironie, comme le spectacle d'un tour d'acrobatie exécuté avec un maximum d'adresse. Mais il n'y a aucun point de contact, semble-t-il, entre un tel raisonnement et la foi.",
+      "bbox": {
+        "x_pct": 11.25,
+        "y_pct": 23.136,
+        "w_pct": 75.994,
+        "h_pct": 25.386
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'argument ontologique est resté longtemps pour moi un mur lisse, sur lequel je n'avais aucune prise. Cela dura jusqu'au moment où je l'ai envisagé comme chiffre et où il m'a paru exprimer le non-sens radical que contient le problème même de la réalité de Dieu. Je doute que mon explication puisse aider",
+      "bbox": {
+        "x_pct": 10.843,
+        "y_pct": 73.947,
+        "w_pct": 76.25,
+        "h_pct": 15.92
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR content for regions was incorrect/corrupted and needed full replacement.",
+    "Section header was missing from the initial region list.",
+    "Label/tag consistency required updates."
+  ],
+  "doc_id": "20",
+  "page": 113,
+  "elapsed_seconds": 4.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

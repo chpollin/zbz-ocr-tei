@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch 99",
+      "bbox": {
+        "x_pct": 341.0,
+        "y_pct": 71.0,
+        "w_pct": 516.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Header containing author name and page number identified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une pierre. » L’instant, cette « décision de l’éternité », dit encore Kierkegaard.",
+      "bbox": {
+        "x_pct": 63.9,
+        "y_pct": 104.2,
+        "w_pct": 797.4,
+        "h_pct": 60.86
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par discontinuité radicale, l’instant kierkegaardien n’admet évidemment aucune nécessité de type hégélien. Kierkegaard souligne : il n’y a pas plus de nécessité dans le passé que dans l’avenir. S’il y en avait dans le passé, il n’y aurait pas de raison de l’exclure de l’avenir (nous dirions : il n’y aurait pas de raison de ne pas passer de Hegel à Marx). « Si la nécessité pouvait pénétrer en un seul point, il ne serait plus question du passé et de l’avenir. » La nécessité abolirait les dimensions du temps.",
+      "bbox": {
+        "x_pct": 62.93,
+        "y_pct": 158.13,
+        "w_pct": 796.75,
+        "h_pct": 286.04
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais cela n’est pas. Ici apparaît de la façon la plus nette le malentendu qui seul a permis à certains d’imaginer, entre Marx et Kierkegaard, un point de convergence. Ce malentendu découle d’une similitude entre eux, effective mais superficielle, sur un point important : tous deux, particularisant Hegel, font réaction aux philosophies « éternalistes » antérieures qui, de la condition humaine, tendaient à ne retenir que les composantes permanentes, en oubliant que sa composante la plus permanente, c’est la particularité infiniment variable et finalement unique de sa situation. Tous deux, Marx et Kierkegaard, donnent un relief quasi fatal au fait que l’homme est toujours en situation, inéluctablement lié à un contexte concret. Mais « situation » et « concret » ont chez chacun d’eux des significations toutes différentes, irréductibles. Pour Marx, la particularité de toute « situa-",
+      "bbox": {
+        "x_pct": 57.4,
+        "y_pct": 439.66,
+        "w_pct": 802.28,
+        "h_pct": 461.7
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text transcription."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "Detected page header/number was labeled as text.",
+    "OCR transcription was poor and contained truncation/garbage.",
+    "Bounding boxes were disjointed from intended semantic grouping.",
+    "Page number and header were not filtered."
+  ],
+  "doc_id": "740",
+  "page": 8,
+  "elapsed_seconds": 9.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il arrive que le repas de fête coûte à la maîtresse de maison tant de peine et donne aux hôtes tant de plaisir qu'il submerge tout. Il devrait pourtant, pour être festif, rester transparent, afin que le fait de l'avoir pris ensemble soit ressenti comme plus essentiel que ce qui a été ainsi mangé. Car c'est là l'expérience essentielle: chacun vit en commun une fête.",
+      "bbox": {
+        "x_pct": 10.182,
+        "y_pct": 11.581,
+        "w_pct": 65.697,
+        "h_pct": 24.668
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le repas de fête devrait être comme le bois d'olivier, qui brûle d'une flamme plus claire que n'importe quel autre, presque sans laisser de cendre. Dans l'animation des paroles échangées, des visages apparus ou disparus, dans le jeu distrait, presque involontaire, où se propage un plaisir de tous les sens oublieux de lui-même, sa source matérielle n'est plus qu'un prétexte évanescent. La fête est alors purement vécue, – non appréciée, non racontée, non conservée pour quelque retour de mémoire. La flamme brûle clair et tremble.",
+      "bbox": {
+        "x_pct": 10.097,
+        "y_pct": 38.124,
+        "w_pct": 65.794,
+        "h_pct": 33.339
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "71",
+      "bbox": {
+        "x_pct": 72.336,
+        "y_pct": 82.261,
+        "w_pct": 3.737,
+        "h_pct": 2.278
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Transcription of paragraph 1 was truncated.",
+    "Transcription of paragraph 2 was truncated.",
+    "Page number 71 was missing from detection/classification."
+  ],
+  "doc_id": "2260",
+  "page": 71,
+  "elapsed_seconds": 3.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

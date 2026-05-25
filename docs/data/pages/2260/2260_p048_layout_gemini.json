@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "se, gonflait toutes ses rages, mais bougeait à peine. Le Chevalier le tenait, rigide comme la mort. Enfin un soubresaut les sépara: le dragon restait étendu de toute sa longueur. Le Chevalier le voyait haleter, aux spasmes qui sur son flanc hérissaient et laissaient retomber ses écailles. Il ramassait visiblement ce qui lui restait de forces, et l'épuisement de son corps était hideux. Une houle de haine saisit le Chevalier, dévorante comme une soif. Sous les écailles du flanc, le sang du dragon suintait doucement, en une mince trace lie-de-vin. Le Chevalier se jeta sur cette plaie, et en proie à un dégoût impatient et insatiable, fit jaillir le sang et le but à longs traits.",
+      "bbox": {
+        "x_pct": 24.272,
+        "y_pct": 11.338,
+        "w_pct": 65.995,
+        "h_pct": 42.837
+      },
+      "changed": true,
+      "change_reason": "Fixed garbled OCR text and incorrectly merged paragraphs."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le dragon tourna sur lui-même et se relâcha d'une détente, sa plaie contre terre.",
+      "bbox": {
+        "x_pct": 24.43,
+        "y_pct": 53.872,
+        "w_pct": 65.461,
+        "h_pct": 5.581
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text; separated from the subsequent paragraph in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au château, la Princesse se tait. Chaque aurore elle s'installe au sommet de la tour, une tapisserie commencée entre les doigts. Chaque soir, c'est seulement quand l'ombre",
+      "bbox": {
+        "x_pct": 24.272,
+        "y_pct": 68.226,
+        "w_pct": 65.995,
+        "h_pct": 18.665
+      },
+      "changed": true,
+      "change_reason": "Added missing text region that was not captured in the input list."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "50",
+      "bbox": {
+        "x_pct": 24.43,
+        "y_pct": 82.529,
+        "w_pct": 3.708,
+        "h_pct": 3.327
+      },
+      "changed": true,
+      "change_reason": "Correctly categorized page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR output was severely garbled in initial regions.",
+    "Missing text regions in the lower half of the page.",
+    "Page number at bottom not initially identified."
+  ],
+  "doc_id": "2260",
+  "page": 48,
+  "elapsed_seconds": 8.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

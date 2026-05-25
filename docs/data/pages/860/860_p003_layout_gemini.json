@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Vorwort",
+      "bbox": {
+        "x_pct": 7.27,
+        "y_pct": 3.342,
+        "w_pct": 11.276,
+        "h_pct": 2.181
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lieren, selbst er mancmal möchte; nidt irgendein moralisces Prinzip hindert ihn daran; sondern e",
+      "bbox": {
+        "x_pct": 6.573,
+        "y_pct": 6.738,
+        "w_pct": 80.415,
+        "h_pct": 23.431
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erica Wallac ist ohne Haß durch ihre Hölle gegangen und ohne Haß aus ihr aufgestiegen. Ohne Haß, sel",
+      "bbox": {
+        "x_pct": 6.677,
+        "y_pct": 30.257,
+        "w_pct": 80.371,
+        "h_pct": 16.755
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 68.442,
+        "y_pct": 49.406,
+        "w_pct": 18.398,
+        "h_pct": 2.163
+      },
+      "changed": false
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 85.0,
+        "y_pct": 3.4,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number 9 was missing a label/region and needs to be marked as page_header/filter."
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Page number 9 was not detected as a layout region.",
+    "Author signature 'Jeanne Hersch' is correctly labeled as text."
+  ],
+  "doc_id": "860",
+  "page": 3,
+  "elapsed_seconds": 4.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

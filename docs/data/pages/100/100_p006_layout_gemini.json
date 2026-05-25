@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si Yabsolu de la liberté reste condamné, en quant à ses résultats, aux idéaux dégradés, aux compromi",
+      "bbox": {
+        "x_pct": 9.194,
+        "y_pct": 8.553,
+        "w_pct": 71.237,
+        "h_pct": 49.98
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "(( De la conscience de Péchec ne résulte pas nécessairement la passivité de Yindifférence, mais la p",
+      "bbox": {
+        "x_pct": 8.441,
+        "y_pct": 57.906,
+        "w_pct": 72.07,
+        "h_pct": 24.04
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "61",
+      "bbox": {
+        "x_pct": 42.441,
+        "y_pct": 83.906,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page footer region for page number"
+  ],
+  "doc_id": "100",
+  "page": 6,
+  "elapsed_seconds": 5.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

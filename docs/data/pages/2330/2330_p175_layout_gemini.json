@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsqu'il s'agit de manipulations génétiques, les problèmes deviennent extrêmement graves. Lorsque, en cas de stérilité, on décide d'intervenir par tous les moyens pour favoriser la naissance d'un enfant, on soulève des problèmes qui touchent au centre de la condition humaine, à la charnière du corps et de l'âme. L'acte de la reproduction n'est pas chez l'homme un acte purement animal. Seulement il faut reconnaître que, au cours de l'histoire, cette unité, ce nœud que forment le corps et l'âme, est loin d'avoir été respecté. Le fait, par exemple, que la prostitution ait paru une chose naturelle dans toutes les civilisations montre à quel point l'homme est peu conscient de cette unité et l'a peu assimilée à son être. Il n'est donc pas étonnant que, dès qu'un nouveau pouvoir existe en ce domaine, tant de gens veulent y avoir recours. J'entendais l'autre jour, lors d'une émission de télévision, le professeur Jean Bernard se prononcer contre la méthode des mères porteuses. Les femmes stériles qui participaient à l'émission manifestèrent leur indignation, disant qu'il ne comprenait pas le tragique de leur situation. Cette réaction m'a semblé très caractéristique de notre temps. Aujourd'hui, lorsqu'on veut fortement quelque chose et qu'on ne peut pas l'obtenir, c'est une tragédie inadmissible. En d'autres temps, on avait l'habitude d'admettre que tout ne nous est pas dû. On connaissait ce qu'on appelait « résignation », un mot qui a disparu du vocabulaire, parce que ce qu'il désignait a été complètement effacé. La résignation ne supprimait pas la souffrance, elle lui donnait un autre accent. Certes, je trouve merveilleux qu'on cherche à réduire bien des peines auxquelles, autrefois, il fallait se résigner. Mais il faut continuer à savoir que, malgré tout, nous ne sommes pas et ne serons jamais les maîtres absolus de notre sort. Ce qui est nouveau aujourd'hui, c'est que le degré de savoir et de pouvoir auquel nous sommes parvenus nous demande de nous imposer à nous-mêmes des limites. Le refus de fixer ces limites, c'est encore une façon d'oublier la condition humaine, — une façon, en particulier, d'escamoter la mort.",
+      "bbox": {
+        "x_pct": 4.274,
+        "y_pct": 6.073,
+        "w_pct": 79.976,
+        "h_pct": 59.944
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On dénonce souvent, aujourd'hui, l'absence d'une déontologie adaptée à la profession médicale moderne et on la met parfois au compte de la rapidité du progrès technique.",
+      "bbox": {
+        "x_pct": 4.359,
+        "y_pct": 65.944,
+        "w_pct": 79.976,
+        "h_pct": 6.661
+      },
+      "changed": true,
+      "change_reason": "Corrected typo-heavy transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois qu'on a raison: les progrès techniques ont battu de vitesse la réflexion sur les moyens qu'ils mettent à notre disposition. Les médecins et, à plus forte raison, ceux qui ne le sont pas, se trouvent dans une grande perplexité.",
+      "bbox": {
+        "x_pct": 4.396,
+        "y_pct": 71.637,
+        "w_pct": 79.939,
+        "h_pct": 8.661
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans quelle mesure les facultés de médecine et leurs programmes d'étude, très lacunaires en ce domaine, ne portent-elles pas au premier chef la responsabilité de cet état de chose?",
+      "bbox": {
+        "x_pct": 4.518,
+        "y_pct": 80.782,
+        "w_pct": 79.853,
+        "h_pct": 6.452
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous posez là une question très importante. Je suis convaincue que dans toutes sortes de domaines — et pas seulement en médecine — les",
+      "bbox": {
+        "x_pct": 4.725,
+        "y_pct": 86.694,
+        "w_pct": 79.524,
+        "h_pct": 4.274
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "171",
+      "bbox": {
+        "x_pct": 80.3,
+        "y_pct": 94.5,
+        "w_pct": 4.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected classification of page number."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most OCR text was garbage/broken, required full manual transcription.",
+    "Page number 171 was not included in detection but should have been categorized.",
+    "Multiple layout boxes incorrectly merged or OCR hallucinated content."
+  ],
+  "doc_id": "2330",
+  "page": 175,
+  "elapsed_seconds": 8.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

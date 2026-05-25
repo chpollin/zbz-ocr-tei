@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Grau des Eichengebüsches die hellgrünen Sprosse eines Mastixbaumes. Ort und Augenblick überschwemmen das Gemüt mit Realem und Lebendigem. Die Schatten der Zweige spielen auf dem von Sonne überfluteten Boden. Immer mehr Schaum quillt aus den immer blaueren Wellen. Die Gegenwart prahlt mit ihrem Wirklichsein. Der Abschied ist überall spürbar, denn er ist das Wirkliche, das Gegenwärtige. Doch mit jedem Hauch atmet man dem Abschied gegenüber eine absolute Gleichgültigkeit.",
+      "bbox": {
+        "x_pct": 12.316,
+        "y_pct": 7.432,
+        "w_pct": 78.1,
+        "h_pct": 18.449
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Da oder nicht da – Erinnerung, Traum oder Wirklichkeit? Das ist der absolute Unterschied. Und doch: Was macht es aus? Dauern: Wozu?",
+      "bbox": {
+        "x_pct": 12.589,
+        "y_pct": 25.429,
+        "w_pct": 77.399,
+        "h_pct": 6.25
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Für immer: Wo wäre eine Gegenwart?",
+      "bbox": {
+        "x_pct": 15.356,
+        "y_pct": 31.453,
+        "w_pct": 47.981,
+        "h_pct": 2.304
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Abschied ist im Wirklichen überall. Alles ist sterblich, selbst das Ganze.",
+      "bbox": {
+        "x_pct": 12.435,
+        "y_pct": 35.444,
+        "w_pct": 76.401,
+        "h_pct": 3.991
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eines Tages, auf die eine oder andere Weise – durch Hitze oder Kälte, durch Hunger, durch Wirbelstürme, durch Wasser oder Dürre, durch Feuer oder Erdbeben –, eines Tages, so spät wie nur möglich, wird die Erde ohne ihre menschlichen Zeugen sein. Eines Tages wird sie selbst ihre Tiere und Pflanzen verlieren, ihre Farben, so wie sie den Augen der Lebenden erscheinen, und ihre Signale, die für die Lebenden die Zeit rhythmisch aufteilen. Eines Tages, der kein Tag mehr sein wird, für nichts und für niemanden. Das phantastische Zwischenspiel wird in seiner Ganzheit auf »die andere Seite« gefallen sein. Es wird dann zu spät sein, um Abschied zu nehmen.",
+      "bbox": {
+        "x_pct": 12.031,
+        "y_pct": 39.48,
+        "w_pct": 77.72,
+        "h_pct": 22.62
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nichts wird aber hindern können, daß es die Erde gegeben hat. Selbst wenn es niemanden mehr gibt, um sich daran zu erinnern, wird alles, was sie enthalten hat, wirklich gewesen sein; getrennt worden sein; geliebt worden sein – es wird unseren Abschied erhalten haben.",
+      "bbox": {
+        "x_pct": 11.995,
+        "y_pct": 61.747,
+        "w_pct": 77.518,
+        "h_pct": 10.188
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seltsam; dieses Vordenken einer Zukunft, das eine undenkbare absolute Gegenwart zu ersetzen versucht. Undenkbar, weil eine solche Gegenwart keinesfalls die Zeit abschaffen darf, weder deren Gegenwart und ihr Entrinnen, weder Sehnsucht noch Erwartung und auch nicht die verängstigte Eidechse, die, weil ich die Hand ausstrecke, über den grauen Felsen flieht, um weiterzuleben und Angst zu haben, die Wärme zu spüren und sich so lange wie nur möglich vor dem Sterben zu bewahren. Vielleicht weiß sie nicht, was wir wissen.",
+      "bbox": {
+        "x_pct": 11.995,
+        "y_pct": 71.762,
+        "w_pct": 77.233,
+        "h_pct": 18.923
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match content"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "254",
+      "bbox": {
+        "x_pct": 12.32,
+        "y_pct": 92.56,
+        "w_pct": 3.7,
+        "h_pct": 1.6
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Transcription for multiple paragraphs was incomplete/truncated.",
+    "Page number at the bottom was incorrectly identified as text instead of page_footer."
+  ],
+  "doc_id": "2160",
+  "page": 11,
+  "elapsed_seconds": 6.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

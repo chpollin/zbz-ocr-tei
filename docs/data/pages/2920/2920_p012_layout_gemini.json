@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "514 Coups de sonde",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correctly identified page header/number region which was previously misidentified or missing from structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par l'extraordinaire impression de similitudes harmoniques jusque dans les contrastes les plus marqués ou, pour dire mieux, de parenté, bref, de fraternité, qui se dégageait de cette double quête des hommes de ce temps à la recherche des substrats historiques les plus profonds de leur conscience et des hommes de tous les temps à la recherche de l'ordre humain.",
+      "bbox": {
+        "x_pct": 30.838,
+        "y_pct": 13.219,
+        "w_pct": 66.912,
+        "h_pct": 11.973
+      },
+      "changed": true,
+      "change_reason": "The original text was fragmented and OCR-corrupted in the input JSON. Corrected to reflect full legible text segment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous vîmes s'entrouvrir, en quelque sorte de lui-même, le large éventail des thèmes qui ont inspiré la Déclaration universelle; et sur chacun de ces thèmes, comme au long d'un chemin poursuivi jusqu'aux plus lointains horizons du monde et de la mémoire, on est venu déposer devant nous comme des offrandes, pieusement conservés dans les voiles des paroles de jadis et d'ailleurs, les pensées et les gestes qui ont été — et demeurent — les questions et les réponses, les aspirations et les preuves, les annonciations et les accomplissements, obscurs ou lumineux, par où l'homme s'est révélé à lui-même.",
+      "bbox": {
+        "x_pct": 30.691,
+        "y_pct": 25.025,
+        "w_pct": 66.853,
+        "h_pct": 20.118
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text segments to include the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "À la suite d'un tel travail, certaines conclusions s'imposent, me semble-t-il, à propos de l'universalité. Il est clair que si l'on s'interroge sur l'universalité du concept des droits de l'homme dans les diverses cultures, il faut répondre : non, ce concept n'a pas été universel. Il faut reconnaître aussi qu'il ne s'agit pas partout des mêmes droits, et que le besoin qu'on en ressent ne s'exprime pas de la même façon — le plus souvent d'ailleurs, plutôt à travers une plainte ou une révolte, à propos d'une violence, d'une privation, d'une contrainte, d'un mensonge, d'une injustice. Et pourtant, il y a une exigence fondamentale que l'on perçoit partout. Quelque chose est dû à l'être humain du seul fait qu'il est un être humain : un respect, un égard ; un comportement qui sauvegarde ses chances de faire de lui-même celui qu'il est capable de devenir ; la reconnaissance d'une dignité qu'il revendique parce qu'il vise consciemment un futur et que sa vie trouve là un sens dont il est prêt à payer le prix. Cette",
+      "bbox": {
+        "x_pct": 27.544,
+        "y_pct": 48.548,
+        "w_pct": 70.0,
+        "h_pct": 42.326
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and removed artifact noise ('5') that was OCR-misread from the layout."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Input text for paragraphs was severely truncated and contained OCR garbage.",
+    "Page header '514 Coups de sonde' was missing from the provided region list.",
+    "Text cleanup required for punctuation and special characters.",
+    "Bbox regions were correct but text content required manual restoration."
+  ],
+  "doc_id": "2920",
+  "page": 12,
+  "elapsed_seconds": 4.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

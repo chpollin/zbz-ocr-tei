@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "56",
+      "bbox": {
+        "x_pct": 8.71,
+        "y_pct": 90.583,
+        "w_pct": 2.258,
+        "h_pct": 1.292
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prof. Dr. K. K\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+      "bbox": {
+        "x_pct": 8.734,
+        "y_pct": 12.729,
+        "w_pct": 17.903,
+        "h_pct": 1.694
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 1,
+  "issues": [
+    "Most regions are individual author entries and should likely be categorized as lists or bibliographic entries rather than raw paragraphs, but keeping as zb_paragraph per instructions.",
+    "Page number at bottom left was misidentified as text.",
+    "Multiple entries contain typos in transcription (e.g., 'Fronkreich', 'Osterreidh') which might require OCR post-processing."
+  ],
+  "doc_id": "810",
+  "page": 58,
+  "elapsed_seconds": 5.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

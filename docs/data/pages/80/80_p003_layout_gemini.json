@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "laisser mourir un jour sans qu'ils aient connu les biens humains les plus pr  cieux. Nous n'en avons pas le droit.",
+      "bbox": {
+        "x_pct": 12.168,
+        "y_pct": 4.86,
+        "w_pct": 73.086,
+        "h_pct": 3.972
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous voulons donc l'universit  ouvri  re, en pleine conscience des risques qu'elle comporte.",
+      "bbox": {
+        "x_pct": 12.224,
+        "y_pct": 8.735,
+        "w_pct": 73.03,
+        "h_pct": 4.182
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and OCR errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2. Que voulons-nous qu'elle soit?",
+      "bbox": {
+        "x_pct": 30.701,
+        "y_pct": 14.53,
+        "w_pct": 36.156,
+        "h_pct": 2.108
+      },
+      "changed": true,
+      "change_reason": "Fixed typo in the heading text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle doit avant tout aider l'adulte   rester un homme, malgr  une   volution du travail et de l'  conomie qui tend de plus en plus   faire de lui un rouage automatique d'une part, un simple animal de l'autre. Pour rester un homme, il faut d'abord que l'adulte ne cesse pas d'  tre en progr  s, en app  tit de meilleur. Ensuite, il s'efforcera constamment de distinguer le vrai du faux, la pens  e du bavardage, ce qui a du sens de ce qui n'en a pas. Puis il voudra jouir de ce qui d  passe le plaisir purement mat  riel, par l'art, la curiosit   intellectuelle, etc. Enfin, il ne peut se contenter d'  tre un b  n  ficiaire de la culture: il la transmet et la fait exister autour de lui par la mani  re dont il s'habille, dont il meuble son logis, dont il utilise ses loisirs, dont il oriente les discussions avec ses amis. Il faut par exemple faire de l'ouvrier (et de l'ouvri  re) un consommateur difficile, qui pr  f  re ne pas acheter qu'acheter du laid. Il y a les objets indispensables qu'on est oblig   d'acheter m  me laids, faute d'argent pour acheter du plus beau. Mais il y a aussi le laid superflu, la vilaine potiche, le vilain abat-jour, la vilaine fleur artificielle. Le laid superflu doit dispara  tre du monde ouvrier. Sinon, ne l'oublions pas, l'ouvrier continuera      tre exploit   comme consommateur commode, comme d  bouch   s  r pour la camelote    bon march  , autant que comme producteur. C'est du niveau de culture manifest   par l'exigence ouvri  re que d  pend dans une large mesure le niveau du cin  ma, de la radio, de l'ameublement en s  rie, des   toffes    dessins    en somme de la production tout enti  re en tant qu'elle touche    l'ornement de la vie.",
+      "bbox": {
+        "x_pct": 12.063,
+        "y_pct": 17.305,
+        "w_pct": 73.594,
+        "h_pct": 46.496
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR truncation of the main paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour atteindre ces buts, il importe d'exercer l'esprit et le go  t beaucoup plus que d'acqu  rir des connaissances. Celles-ci ne sont utiles que comme moyens, pour fournir des   chelles de grandeur et d'importance justes, des points de rep  re pr  cis, des r  f  rences objectives. On cessera alors de faire de soi, comme un enfant, le centre du monde, on apprendra    se situer et    donner    l'entourage familier,    l'histoire nationale,    la patrie restreinte, leur place proportionn  e dans l'ensemble de la r  alit   humaine.",
+      "bbox": {
+        "x_pct": 12.248,
+        "y_pct": 63.778,
+        "w_pct": 73.352,
+        "h_pct": 14.838
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR truncation of the paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Apr  s avoir d  fini la t  che principale de l'universit   ouvri  re, nous ne pouvons pas encore pr  ciser ce que devrait   tre son enseignement. En effet, toute m  thode p  dagogique d  pend en premier lieu de ce que sont les   l  ves. On n'enseigne pas de la m  me mani  re des enfants et des adultes, des gens repos  s et des gens fatigu  s, des gens qu'on force    apprendre et des gens qui veulent apprendre, etc. Il nous faut donc savoir    qui nous nous adressons.",
+      "bbox": {
+        "x_pct": 12.248,
+        "y_pct": 78.365,
+        "w_pct": 73.384,
+        "h_pct": 13.128
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR truncation of the paragraph text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "367",
+      "bbox": {
+        "x_pct": 81.336,
+        "y_pct": 91.503,
+        "w_pct": 4.195,
+        "h_pct": 2.178
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved from text to page_footer/filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Initial OCR was highly truncated and error-prone.",
+    "Page number incorrectly identified as text."
+  ],
+  "doc_id": "80",
+  "page": 3,
+  "elapsed_seconds": 16.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

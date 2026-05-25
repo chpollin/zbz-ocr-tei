@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 0.0,
+        "y_pct": 92.771,
+        "w_pct": 0.834,
+        "h_pct": 1.079
+      },
+      "changed": true,
+      "change_reason": "Corrected page number label to page_footer / _filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Arzte Mdecins Medici",
+      "bbox": {
+        "x_pct": 0.892,
+        "y_pct": 17.433,
+        "w_pct": 97.465,
+        "h_pct": 42.476
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Biblot k den",
+      "bbox": {
+        "x_pct": 12.202,
+        "y_pct": 75.355,
+        "w_pct": 5.73,
+        "h_pct": 1.38
+      },
+      "changed": true,
+      "change_reason": "False positive/OCR artifact in layout detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "med:z",
+      "bbox": {
+        "x_pct": 10.117,
+        "y_pct": 76.871,
+        "w_pct": 5.204,
+        "h_pct": 1.306
+      },
+      "changed": true,
+      "change_reason": "False positive/OCR artifact in layout detection."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Jweizerische rztezeitung Bulletin des mdecins suisses Bollettino dei medici svizzeri",
+      "bbox": {
+        "x_pct": 5.421,
+        "y_pct": 94.208,
+        "w_pct": 91.827,
+        "h_pct": 2.499
+      },
+      "changed": true,
+      "change_reason": "Identified as a journal name/footer running across the bottom; changed to page_footer / _filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Page number detected as paragraph.",
+    "Footer/Journal title detected as paragraph.",
+    "Multiple false positive regions detected in the whitespace near the institutional logo."
+  ],
+  "doc_id": "2220",
+  "page": 1,
+  "elapsed_seconds": 5.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

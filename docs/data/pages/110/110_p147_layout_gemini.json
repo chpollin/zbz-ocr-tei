@@ -1,0 +1,85 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Individuums Seinen exislenziellen Ort. dass also jederzeit der   funktionelle Raum die & reale Gesta",
+      "bbox": {
+        "x_pct": 11.636,
+        "y_pct": 13.06,
+        "w_pct": 68.629,
+        "h_pct": 55.756
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Paul HïBERLIN, Naturphilosophische Betrachtungen. Schweizer Spiegel Verlag.  Zürich 1939, livre 1, P",
+      "bbox": {
+        "x_pct": 11.601,
+        "y_pct": 71.549,
+        "w_pct": 68.468,
+        "h_pct": 3.295
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header for bibliographic reference."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "10 L'Etre et la Forme.",
+      "bbox": {
+        "x_pct": 14.747,
+        "y_pct": 75.983,
+        "w_pct": 18.744,
+        "h_pct": 1.291
+      },
+      "changed": true,
+      "change_reason": "Label changed to footnote."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "LA FORME ET L'ESPACE",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 1.0,
+        "w_pct": 25.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header filtered."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "145",
+      "bbox": {
+        "x_pct": 76.5,
+        "y_pct": 1.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number filtered."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Bibliographic reference labelled as body text.",
+    "Footnote labelled as body text.",
+    "Missing page header/footer regions in initial JSON."
+  ],
+  "doc_id": "110",
+  "page": 147,
+  "elapsed_seconds": 6.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to section_header for bibliographic reference.": 1,
+    "Label changed to footnote.": 1,
+    "ADDED": 2
+  }
+}

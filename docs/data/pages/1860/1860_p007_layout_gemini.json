@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 77.3,
+        "y_pct": 82.0,
+        "w_pct": 10.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number 2 incorrectly identified as part of a text paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les ruines et les plaies d'Hiroshima persistent à l'arrière plan. Et cela d'autant plus que, même lorsque \"les laïques\" parlent d'atome ou de noyau, ils ne savent pas vraiment ce qu'ils disent, tellement l'univers de la science contemporaine reste pour eux obscur et indéchiffrable. Reste seulement un contexte de violence extrême, à la fois mortelle et sacrilège, violant l'ordre du monde et le secret le plus intime de la matière.",
+      "bbox": {
+        "x_pct": 9.516,
+        "y_pct": 14.963,
+        "w_pct": 68.653,
+        "h_pct": 15.784
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR noise to actual readable text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je reste convaincue que si on les consultait, la majorité des hommes, en Occident, seraient heureux et soulagés si tout le chapitre de la science concernant l'énergie atomique pouvait, soudain et définitivement, sombrer dans l'oubli, afin qu'ils puissent, eux, échapper ainsi à l'apocalypse d'une guerre totale et à la fin du monde.",
+      "bbox": {
+        "x_pct": 9.621,
+        "y_pct": 32.989,
+        "w_pct": 68.016,
+        "h_pct": 11.09
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR noise to actual readable text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce n'est pas là une explication suffisante. Comme toute passion collective, la passion anti-atomique ne se nourrit pas de raisons ou d'associations cohérentes sur un seul plan. Elle s'alimente aussi aux principaux thèmes idéologiques auxquels l'Occident recourt aujourd'hui pour nourrir sa mauvaise conscience.",
+      "bbox": {
+        "x_pct": 9.355,
+        "y_pct": 50.753,
+        "w_pct": 69.25,
+        "h_pct": 11.124
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR noise to actual readable text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, du fait de leurs dimensions et de leur coût, les centrales atomiques vont rejoindre tout naturellement le Grand Capital et les Marchands de Canon d'autrefois. Comme si le Grand Capital était encore, en matière nucléaire, totalement indépendant du gouvernement et de l'opinion publique. Comme si la Russie soviétique s'était abstenue de développer son propre réseau de centrales atomiques. Comme si les Marchands de Canon et leurs familles étaient eux-mêmes à l'abri de la fin du monde.",
+      "bbox": {
+        "x_pct": 9.379,
+        "y_pct": 64.062,
+        "w_pct": 69.226,
+        "h_pct": 15.63
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR noise to actual readable text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 50.0,
+        "y_pct": 96.0,
+        "w_pct": 40.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing footer region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text blocks contained heavy OCR corruption/noise.",
+    "Page number at top right was missing or incorrectly grouped with text.",
+    "Footer imprint was missing from detected regions."
+  ],
+  "doc_id": "1860",
+  "page": 7,
+  "elapsed_seconds": 167.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sere tale solo se le cose avvengono in seguito all'intervento dell'uomo.",
+      "bbox": {
+        "x_pct": 10.709,
+        "y_pct": 6.954,
+        "w_pct": 84.872,
+        "h_pct": 3.808
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "AGAZZI Forse non ho spiegato bene il mio punto di vista. Quando ci si occupa di un periodo passato, che è già morto, trascorso, e si vuol fare la storia di questa epoca è come se si volesse descrivere la storia di un oggetto fisico, poiché sul passato è escluso ogni possibile intervento umano. Si tratta solo di comprendere ciò che è stato, e non ciò che avrebbe potuto essere. Non vedo quindi come si possa proporre una interpretazione del passato senza proporre una qualche ipotesi interpretativa che si accordi con i dati documentari.",
+      "bbox": {
+        "x_pct": 10.151,
+        "y_pct": 12.583,
+        "w_pct": 85.43,
+        "h_pct": 18.212
+      },
+      "changed": true,
+      "change_reason": "Full corrected transcription provided."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH Questa interpretazione può essere proposta benissimo purché si sappia che la natura della realtà da interpretare implica la possibilità di uno sviluppo alternativo; e non a causa della natura inesauribile della realtà, come è, ad esempio, quella fisica, o di un fattore naturale imprevedibile, ma per la natura stessa della storia, che in parte è fatta dagli uomini.",
+      "bbox": {
+        "x_pct": 10.211,
+        "y_pct": 32.641,
+        "w_pct": 85.52,
+        "h_pct": 13.22
+      },
+      "changed": true,
+      "change_reason": "Full corrected transcription provided."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "AGAZZI Non sono d'accordo, ma forse non è opportuno proseguire la discussione su questo punto visto che sarebbe necessario premettere una analisi troppo dettagliata del problema.",
+      "bbox": {
+        "x_pct": 10.362,
+        "y_pct": 47.045,
+        "w_pct": 85.219,
+        "h_pct": 7.566
+      },
+      "changed": true,
+      "change_reason": "Full corrected transcription provided."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ROGER Mi sembra che la Signorina Hersch parlando di storia abbia accentuato soprattutto l'aspetto individuale, soggettivo. È certo che dalla nostra prospettiva, ovvero dall'istante presente, vediamo il passato e l'avvenire rapportati alla nostra collocazione temporale: è cosí che si possono immaginare due frecce simmetriche e di senso opposto. Resta solo da stabilire se vi sia una simmetria esatta. Possiamo affermare con certezza che l'uomo inizia a far storia cercando di interpretare il passato solo perché è preoccupato del futuro e che dal punto di vista psicologico si individua una doppia « direzione »: si può esprimere un giudizio positivo del passato solo se si è fiduciosi nell'avvenire, e viceversa. Quindi la concezione che lo storico ha del passato è influenzata dalla sua visione del futuro. In quanto storici dobbiamo cercare di superare questo punto di vista soggettivo e di non farci vincere dalla tentazione psicologica, quasi naturale, di considerare le cose dalla fine. Se invece vogliamo fare storia intesa, nel significato dato ad essa da Agazzi, come conoscenza e interpretazione del passato, penso che l'atteggiamento della Signorina Hersch sia pericoloso, visto che, se",
+      "bbox": {
+        "x_pct": 10.302,
+        "y_pct": 55.795,
+        "w_pct": 85.37,
+        "h_pct": 36.838
+      },
+      "changed": true,
+      "change_reason": "Full corrected transcription provided."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "243",
+      "bbox": {
+        "x_pct": 89.8,
+        "y_pct": 94.2,
+        "w_pct": 5.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Initial transcripts in the provided JSON were truncated and contained severe OCR errors.",
+    "Page number 243 at the bottom was omitted in original detections."
+  ],
+  "doc_id": "990",
+  "page": 15,
+  "elapsed_seconds": 8.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

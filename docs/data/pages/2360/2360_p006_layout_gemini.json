@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 10 -",
+      "bbox": {
+        "x_pct": 239.387,
+        "y_pct": 74.269,
+        "w_pct": 4.195,
+        "h_pct": 1.701
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/running header component."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 11 -",
+      "bbox": {
+        "x_pct": 724.321,
+        "y_pct": 73.666,
+        "w_pct": 4.195,
+        "h_pct": 1.701
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/running header component."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "en gens 4 vre bonne santé Ce un but, condition tout à falt importante Mais Ce vien",
+      "bbox": {
+        "x_pct": 7.979,
+        "y_pct": 14.269,
+        "w_pct": 35.767,
+        "h_pct": 5.638
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et alors, 1 partir du Moment où la Gurvie parait à peu la guestion de la finalité et du Bt lorgqu' O",
+      "bbox": {
+        "x_pct": 6.797,
+        "y_pct": 23.364,
+        "w_pct": 36.006,
+        "h_pct": 24.867
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne Pas tout en train de défendre la du Club de Rome , ne M'a jamais inepiré grande confiance la t",
+      "bbox": {
+        "x_pct": 54.309,
+        "y_pct": 14.056,
+        "w_pct": 37.655,
+        "h_pct": 72.753
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page numbers misidentified as text regions.",
+    "OCR quality is low causing fragmented text recognition in the bounding boxes."
+  ],
+  "doc_id": "2360",
+  "page": 6,
+  "elapsed_seconds": 4.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

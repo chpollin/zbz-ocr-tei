@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 183",
+      "bbox": {
+        "x_pct": 319.0,
+        "y_pct": 82.0,
+        "w_pct": 546.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected header content and label from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "démocratie vraie présence, concrète des individus et des familles, tout cela lui enlève son sens, compromet ses argumentations, les valeurs qu'elle invoque, et risque finalement de l'étouffer sous sa propre hypocrisie. Et je n'ai rien dit des populations qui vivent hors d'Europe et des États-Unis : elles sont exploitées hors de toute mesure pour une civilisation dont les fruits leur sont refusés, et l'épanouissement possible des individus qui les composent paraît avoir été, et être le plus souvent encore, pour les « démocraties impériales », un souci mineur ou inexistant.",
+      "bbox": {
+        "x_pct": 5.014,
+        "y_pct": 11.23,
+        "w_pct": 84.68,
+        "h_pct": 20.472
+      },
+      "changed": true,
+      "change_reason": "Cleaned up text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il convient donc pas de traiter par le mépris les attaques portées contre la démocratie capitaliste par ses adversaires communistes. Une telle attitude entraînerait un affaiblissement interne et, à la longue, mortel, du sens démocratique même. Certaines attaques, il est vrai, ne méritent qu'ironie. Mais celles qui dénoncent l'altération profonde, par suite de l'inégalité des forces économiques, du jeu de la démocratie jusque sur le plan politique sont si justes qu'il n'est qu'une riposte valable : en tenir compte, en tirer les conséquences et revenir aux valeurs qui fondent le régime — bref, les rendre sans objet. Que ceux qui les portent soient les derniers à avoir le droit d'élever la voix en pareille matière, c'est une autre question. Qu'ils poursuivent d'autres fins que celles qu'ils déclarent, également. Que le régime qu'ils préconisent soit à bien des égards, et jusque sur le plan de la justice sociale, pire que celui qu'ils cherchent à détruire, de même. Les critiques sont valables malgré tout. Ceux qui en méprisent les auteurs n'ont qu'une chose à faire : corriger de leur mieux, au plus vite, le régime auquel ils tiennent, le rendre fidèle à ses postulats idéologiques — en déplorant d'avoir laissé à l'ennemi le soin d'en dénoncer les incohérences, les faiblesses et les trahisons internes.",
+      "bbox": {
+        "x_pct": 4.833,
+        "y_pct": 31.578,
+        "w_pct": 85.139,
+        "h_pct": 41.15
+      },
+      "changed": true,
+      "change_reason": "Cleaned up text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi la démocratie économique et sociale n'est pas seulement pour la démocratie politique un complément naturel, mais la condition de sa réalité, celle qui lui permettra de s'incarner dans la vie concrète des individus et de faire fonctionner correctement ses rouages. A notre époque, vouloir la démocratie politique sans la démocratie économique et sociale, vouloir unir la démocratie politique et le libéralisme économique, c'est malgré l'apparente cohérence des partis « libéraux conservateurs », qui veulent « la liberté",
+      "bbox": {
+        "x_pct": 4.972,
+        "y_pct": 72.371,
+        "w_pct": 84.958,
+        "h_pct": 17.05
+      },
+      "changed": true,
+      "change_reason": "Cleaned up text content."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Detected page header not captured correctly as a single unit or labeled as text",
+    "Missing OCR text refinement"
+  ],
+  "doc_id": "330",
+  "page": 217,
+  "elapsed_seconds": 6.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

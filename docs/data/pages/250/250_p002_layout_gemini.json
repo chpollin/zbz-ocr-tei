@@ -1,0 +1,52 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'ŒUVRE DU VINGTIÈME SIÈCLE",
+      "bbox": {
+        "x_pct": 6.503,
+        "y_pct": 40.154,
+        "w_pct": 49.444,
+        "h_pct": 2.873
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le festival des Arts, patronné par le Congrès pour la Liberté de la Culture, s'est déroulé à Paris, pendant tout le mois de mai. Il avait, dans l'esprit des organisateurs, la portée d'un manifeste. Il s'agissait d'interrompre, pendant un certain temps, la polémique du monde occidental, qui se veut patrie de la liberté créatrice, contre le monde de l'Est européen, considéré comme strictement asservi à une orthodoxie d'Etat, et de remplacer attaques, critiques, dénonciations, par les arguments positifs les plus puissants qui soient : les œuvres témoignant par leur présence même de la vitalité d'une culture et d'une foi au cours du dernier demi-siècle.",
+      "bbox": {
+        "x_pct": 6.632,
+        "y_pct": 47.457,
+        "w_pct": 49.178,
+        "h_pct": 15.924
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour quiconque a senti tomber à maintes reprises, comme des coups sur une plaie sans cesse ouverte, l'accusation de décadence et de pourriture sur l'un des objets de sa plus vigilante tendresse, le seul projet du festival promettait enfin un réconfort. D'emblée aussi, cette initiative soulevait des problèmes inépuisablement complexes et mêlés, mettant une nouvelle fois en alerte notre étrange « conscience occidentale » d'aujourd'hui : cette mauvaise conscience orgueilleuse, susceptible, scindée, prompte à l'attaque et au mépris, encore plus prompte à se condamner, parfois jusqu'au dégoût d'elle-même et à la bassesse. Par exemple, nous sommes-nous demandé, des œuvres d'art sont-elles comme telles des arguments décents? A-t-on le droit de se servir d'elles quand on cherche à affirmer le droit à la vie de tout un régime social — idéologique, politique, économique ? Ne les fera-t-on pas mentir en leur imposant, pour ainsi dire, une alliance de fait avec ce régime tout entier, tel qu'il existe sur tous les plans, sans distinction ni restriction ? Mais, d'une façon plus générale, est-il légitime d'invoquer la fécondité des arts lorsqu'on sent menacé le régime social dans lequel on vit ?",
+      "bbox": {
+        "x_pct": 6.608,
+        "y_pct": 63.529,
+        "w_pct": 49.13,
+        "h_pct": 29.099
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the source image content."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR text was heavily corrupted/garbled in both paragraph regions."
+  ],
+  "doc_id": "250",
+  "page": 2,
+  "elapsed_seconds": 5.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

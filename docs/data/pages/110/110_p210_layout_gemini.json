@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "208",
+      "bbox": {
+        "x_pct": 19.988,
+        "y_pct": 2.0,
+        "w_pct": 2.22,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LÊETRE ET LA FORME",
+      "bbox": {
+        "x_pct": 72.164,
+        "y_pct": 2.0,
+        "w_pct": 16.647,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "si elle utilise les profondeurs   inconscientes, la seule supériorité que donné avoir cesl étant le ",
+      "bbox": {
+        "x_pct": 19.355,
+        "y_pct": 13.235,
+        "w_pct": 68.859,
+        "h_pct": 25.998
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faisant de la forme la de Texistence art; je veuille introduire une discriminalion de goûl, par e",
+      "bbox": {
+        "x_pct": 19.931,
+        "y_pct": 41.458,
+        "w_pct": 68.548,
+        "h_pct": 16.5
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3 Lascèse et la forme",
+      "bbox": {
+        "x_pct": 40.012,
+        "y_pct": 60.516,
+        "w_pct": 28.456,
+        "h_pct": 2.172
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous arrivons ici un   élément   essentiel n'avons fait   qu'effleurer jusqu'ici: nant que sa loi Ta",
+      "bbox": {
+        "x_pct": 20.196,
+        "y_pct": 63.531,
+        "w_pct": 68.479,
+        "h_pct": 11.185
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header regions initially",
+    "Missing page footer (none present, though not required if empty)"
+  ],
+  "doc_id": "110",
+  "page": 210,
+  "elapsed_seconds": 6.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

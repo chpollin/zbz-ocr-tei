@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "16. Liberté",
+      "bbox": {
+        "x_pct": 10.298,
+        "y_pct": 5.866,
+        "w_pct": 13.91,
+        "h_pct": 1.776
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to section_header/zb_heading as it is a chapter title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il reste, au commencement et à la fin de tout éclairement de la liberté, qu'elle ne peut pas être connue, elle ne peut en aucune façon être pensée objectivement. Je m'assure d'elle pour moi, non par la pensée, mais par l'existence; non en la considérant et en m'interrogeant à son sujet, mais en l'actualisant; tous les énoncés sur la liberté restent toujours des moyens de communiquer douteux, qui prêtent à des malentendus, et qui n'indiquent qu'indirectement ce dont il s'agit.",
+      "bbox": {
+        "x_pct": 10.298,
+        "y_pct": 9.34,
+        "w_pct": 83.835,
+        "h_pct": 15.364
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La liberté n'est pas absolue, elle est toujours en même temps liée ; elle n'est pas possession, mais conquête. Comme elle-même, l'idée qu'on s'en fait ne peut être qu'en mouvement. La conscience de la liberté ne se laisse pas énoncer en un seul terme caractéristique. C'est seulement par le mouvement d'un terme à un autre qu'un sens devient manifeste, qu'aucun des termes à lui seul ne permet de voir. Ainsi, dans l'expression « je choisis », la conscience de l'acte de décider atteint bien la liberté ; pourtant cette liberté ne réside pas dans l'arbitraire du choix, mais dans la nécessité qui s'exprime par un « je veux », avec le sens d'un « je suis obligé » (« ich muss »). Dans les deux expressions l'existence s'assure de son être originel en tant qu'il diffère de la réalité empirique, et elle pourrait, à cet instant, dire « je suis », atteignant ainsi un être qui est l'être propre de la liberté. Toutes ces expressions — je suis, je suis obligé, je veux, je choisis — ne se rapportent à la liberté que pris tous ensemble. Car chacun des termes pris pour lui-même, sans être interprété à l'aide des autres, désignerait soit un donné empirique, soit une contrainte des instincts (triebhaftes Müssen), soit un acte psychique arbitraire. Tous ces moments sont étroitement noués dans la conscience de la liberté, et c'est là, dans l'origine, que se trouve la profondeur d'où ces divers moments jaillissent en tant que formes phénoménales: le choix n'est pas sans la décision, la décision n'est pas sans la volonté, la volonté n'est pas sans l'obligation (müssen), l'obligation n'est pas sans l'être.",
+      "bbox": {
+        "x_pct": 10.257,
+        "y_pct": 24.533,
+        "w_pct": 84.051,
+        "h_pct": 43.959
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chaque formule, donc, comprise dans un sens immédiat, désigne une simple réalité empirique, et c'est seulement éclairée par un mouvement transcendant qu'elle se rapporte à l'existence possible. Lorsque, cherchant la liberté, je dis « je deviens », cette expression désigne d'abord ce qui n'est nullement libre, ma simple croissance en tant que développement passif au fil du temps, — et pourtant elle désigne la liberté en tant qu'elle vise la continuité historique d'une volonté substantiellement concrète.",
+      "bbox": {
+        "x_pct": 10.122,
+        "y_pct": 70.009,
+        "w_pct": 84.011,
+        "h_pct": 15.767
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'expression « je peux » ou « je ne peux pas » désigne d'abord — à tort ou à raison selon le cas particulier — un rapport de fait entre",
+      "bbox": {
+        "x_pct": 10.393,
+        "y_pct": 85.15,
+        "w_pct": 83.509,
+        "h_pct": 4.336
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "78",
+      "bbox": {
+        "x_pct": 10.298,
+        "y_pct": 91.246,
+        "w_pct": 2.348,
+        "h_pct": 1.776
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Section header was labeled as text.",
+    "Page number was labeled as text.",
+    "Small artifacts/region breaks may exist in paragraph detection."
+  ],
+  "doc_id": "1520",
+  "page": 84,
+  "elapsed_seconds": 6.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

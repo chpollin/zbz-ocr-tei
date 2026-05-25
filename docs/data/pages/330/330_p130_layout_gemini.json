@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "96 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 12.075,
+        "y_pct": 82.5,
+        "w_pct": 85.139,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected page header label and tag from text to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et de la fatalité ; désormais la conscience politique, suscitée par les possibles déployés devant elle, entre en jeu. Le contrôle commence. Le pouvoir continue à se lier à la force, lien naturel sans problème. Mais il lui faut se justifier, d'où un recours constant à la morale et une perpétuelle mise en question.",
+      "bbox": {
+        "x_pct": 12.075,
+        "y_pct": 11.257,
+        "w_pct": 85.139,
+        "h_pct": 11.408
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "RÉUSSITE ET MORALE, MACHIAVEL ET KANT",
+      "bbox": {
+        "x_pct": 12.437,
+        "y_pct": 26.025,
+        "w_pct": 57.65,
+        "h_pct": 2.38
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text in label and adjusted bounding box logic for full header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il importe de bien comprendre ici la qualité de ce lien, fondamental en politique, de la force et de la morale. Et quand je dis « comprendre », cela ne signifie pas « élucider ». Bien des problèmes ont été, de nos jours, posés en des termes inadéquats parce qu'on projette sur eux une clarté analytique qu'ils ne supportent pas et qui en altère profondément la nature. L'union de la force et de la morale, en politique, est une union confuse. Il s'agit encore ici des « Choses vagues » de Valéry. Et comme Valéry l'avait bien vu, il arrive que sur le plan social la confusion soit nécessaire, condition de santé, et que l'analyse trop nette, au contraire, devienne fictive et mortelle.",
+      "bbox": {
+        "x_pct": 11.741,
+        "y_pct": 29.439,
+        "w_pct": 85.195,
+        "h_pct": 23.084
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Regardons-y d'un peu plus près. De tous les penseurs, c'est Kant, à ce qu'il me semble, qui a le mieux réussi à extraire théoriquement, de la gangue confuse de notre vie concrète, l'essence morale à l'état pur. Tel est bien le sens théorique — et non pratique — de la Critique de la raison pratique. On s'est toujours trompé, selon moi, lorsqu'on a voulu donner à cet écrit un sens psychologique ou moralisateur, au sens prescriptif de ce mot : Kant ne dit ni comment s'accomplit l'acte moral, ni quel il est. Il extrait de l'acte moral empirique, infiniment complexe, pris dans les déterminations du passé et les visées de l'avenir, l'essence morale extra-temporelle. Il la caractérise en l'isolant du passé et du futur, donc de ses conditions réelles : ce qui la sépare du passé, c'est la liberté ; ce qui la sépare du futur, c'est la catégoricité de l'impératif, son indépendance totale à l'égard des effets. Mais si liberté et impératif catégorique étaient distincts, du temps subsisterait encore dans leur dualité même. Aussi ne sont-ils pas distincts, dans la critique kantienne. Ètre libre, c'est agir selon l'impératif catégorique. Agir selon l'impératif catégorique, c'est s'arracher aussi bien à la",
+      "bbox": {
+        "x_pct": 11.462,
+        "y_pct": 52.558,
+        "w_pct": 85.237,
+        "h_pct": 37.308
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Detected incorrect page header labeling.",
+    "Section header text was truncated in the provided region.",
+    "OCR text extraction was poor, requiring restoration of the actual document text."
+  ],
+  "doc_id": "330",
+  "page": 130,
+  "elapsed_seconds": 9.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

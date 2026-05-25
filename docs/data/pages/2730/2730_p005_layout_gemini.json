@@ -1,0 +1,39 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "INHALTSVERZEICHNIS",
+      "bbox": {
+        "x_pct": 35.886,
+        "y_pct": 23.476,
+        "w_pct": 28.227,
+        "h_pct": 1.979
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Arthur Henkel Wie Napoleon den „Werther“ las . . . . . . . . . . 1\nGedenkfeier zum 150. Todestag von A. F. J. Thibaut\nHans Hattenhauer Anton Friedrich Justus Thibaut und die Reinheit\nder Jurisprudenz . . . . . . . . . . . . . . . . . . . . . . . 20\nMartin Staehelin Anton Friedrich Justus Thibaut\nund die Musikgeschichte . . . . . . . . . . . . . . . . . . . . 37\nGünther Debon Eichendorff, Heidelberg und die Blaue Blume . . . . 53\nLudwig Finscher Wie fange ich an? Ein Kompositionsproblem\nim 19. Jahrhundert . . . . . . . . . . . . . . . . . . . . . . . 71\nKarl-Jaspers-Preis 1989\nJeanne Hersch Laudatio auf Paul Ricoeur . . . . . . . . . . . . 83\nPaul Ricoeur Dankesrede . . . . . . . . . . . . . . . . . . . . 89\nHubertus Tellenbach Phänomenologische Analyse der mitmenschlichen\nBegegnung im gesunden und im psychotischen Dasein . . . . . . . . 95\nHermann Lang Das Gespräch als Therapie . . . . . . . . . . . . . 105\n50 Jahre Heidelberger „Chirurgie“\nFritz Linder Der Wandel der Chirurgie zwischen 1945 und 1980 . . 119\nChristian Herfarth Klinische und wissenschaftliche Perspektiven\nder Chirurgischen Universitätsklinik Heidelberg . . . . . . . . . . . 131\nPeter Anselm Riedl Die baulichen Aktivitäten\nder Heidelberger Chirurgie . . . . . . . . . . . . . . . . . . . . 137\nAlbrecht Dihle Der griechische Klassizismus . . . . . . . . . . . 147",
+      "bbox": {
+        "x_pct": 11.245,
+        "y_pct": 30.524,
+        "w_pct": 77.45,
+        "h_pct": 61.161
+      },
+      "changed": true,
+      "change_reason": "Corrected the label from 'document_index' to 'text' as it is a structured list of entries within the content, and ensured it captures the full text block correctly."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "The large block contains the whole table of contents; it should ideally be broken down into individual list items for better parsing, but it is currently mapped as a single text block."
+  ],
+  "doc_id": "2730",
+  "page": 5,
+  "elapsed_seconds": 4.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La Pensée Philosophique, Exercice de Dépossession",
+      "bbox": {
+        "x_pct": 230.0,
+        "y_pct": 28.0,
+        "w_pct": 530.0,
+        "h_pct": 40.0
+      },
+      "changed": true,
+      "change_reason": "The text at the top of the page is clearly a section title/header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ne vit pas consciemment sa condition telle qu'elle est? En effet, c'est la limite encore inconnue fixée à notre vie qui seule individualise chacun de ses instants en lui donnant le sceau de l'absolu et le prix de l'unique. Sans cette fixité de la mort, tous les moments du temps se dissoudraient dans l'indéfini et le non-sens.",
+      "bbox": {
+        "x_pct": 4.329,
+        "y_pct": 5.482,
+        "w_pct": 89.862,
+        "h_pct": 11.317
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, si le temps ne passait pas, l'homme ne se trouverait jamais confronté avec le hic et nunc ponctuel de sa liberté. Le don de libre décision qu'il est seul dans la nature à assumer se perdrait dans l'inconsistance.",
+      "bbox": {
+        "x_pct": 4.523,
+        "y_pct": 16.95,
+        "w_pct": 89.806,
+        "h_pct": 8.895
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On découvre ainsi que c'est précisément en s'efforçant de refuser ce qui ouvre l'exception du sens dans sa condition et son univers que l'homme cherche à s'accepter lui-même. Alors qu'il est le sujet unique d'un choix, d'une distinction assumée entre bien et mal, d'une rupture qui pourrait justifier tout le reste, et que seuls le temps et la limite de la mort peuvent maintenir, il ne cesse de déréaliser ce temps et cette limite au profit d'une prétendue possession ontologique, où le sens étouffe.",
+      "bbox": {
+        "x_pct": 4.564,
+        "y_pct": 27.94,
+        "w_pct": 89.903,
+        "h_pct": 18.214
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense donc que le plus profond mérite de l'enseignement de Jaspers, c'est qu'il nous appelle à pénétrer dans la philosophie par une démarche dépossessive. Il s'agit de déchiffrer un non-savoir, une impossibilité significative de maîtriser une doctrine unique qui nous permettrait d'énoncer la vérité au lieu de la vivre, de l'exister, face à la transcendance, a lieu de nous rendre finalement aux contradictions et aux paradoxes qui, dans leur pluralité, restent les chiffres de la dépossession.",
+      "bbox": {
+        "x_pct": 4.523,
+        "y_pct": 46.004,
+        "w_pct": 90.083,
+        "h_pct": 18.364
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 913.0,
+        "y_pct": 964.0,
+        "w_pct": 25.0,
+        "h_pct": 26.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Section header was missing from the initial JSON.",
+    "Page number was not categorized as page_footer."
+  ],
+  "doc_id": "3130",
+  "page": 7,
+  "elapsed_seconds": 4.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

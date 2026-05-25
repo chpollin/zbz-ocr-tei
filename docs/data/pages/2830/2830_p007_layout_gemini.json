@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "möglich wäre; ein für allemal Konflikte und Kriege den vitalen Zwängen des »Naturgesetzes«, Erfolge und Fortschritte aber dem »menschlichen Gesetz« zuzuordnen. Doch so steht es offensichtlich nicht. Man hat oft betont, daß menschliche Kriege den Schrecken desjenigen bei weitem überbieten, was bei anderen Gattungen im Rahmen des Naturgesetzes geschieht, wo das reine Gesetz des Stärkeren gilt. Nichts ist wahrer – aber warum?",
+      "bbox": {
+        "x_pct": 9.986,
+        "y_pct": 5.348,
+        "w_pct": 82.098,
+        "h_pct": 15.947
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect full paragraph visible in image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Naturgesetz ist bei weitem, für die Menschheit, nicht die einzige Quelle von Konflikten und Kriegen. Das menschliche Gesetz bringt noch neue hinzu. In der Tat: Nach dem Naturgesetz genügt es, zu überleben und daß die Jungen überleben und ernährt werden können. Nach dem menschlichen Gesetz aber genügt dies nicht. Es gilt, zu überleben – aber wie? Um weiterzuleben – aber wie? Es geht darum, als Menschen zu überleben, um als Menschen zu leben – den Forderungen des menschlichen Gesetzes gemäß, mit sämtlichen Forderungen an Respekt und Würde, die es in sich trägt. Sonst würden die Menschen bald sagen: »Das heißt nicht leben. Lieber sterben.« Ein Friede, aus dem das menschliche Gesetz verschwunden ist und der den Kampf dafür aufgibt, wird bald unerträglich.",
+      "bbox": {
+        "x_pct": 9.797,
+        "y_pct": 21.322,
+        "w_pct": 82.2,
+        "h_pct": 29.665
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das menschliche Gesetz, wenn man es in der Praxis anwenden will, kommt in verschiedenen, sogar sich widersprechenden Forderungen zum Ausdruck. Es mischt und vermischt sich mit denjenigen des Naturgesetzes. Das hat zur Folge, daß der unbedingte Imperativ, der in ihm steckt, sich unausweichlich mit den empirischen – physischen, biologischen, soziologischen, geschichtlichen – Bedingungen vermischt, die für sein Inkrafttreten notwendig sind und die, oft mangelhaft verwirklicht, seine Anwendung im konkreten Alltag verhindern.",
+      "bbox": {
+        "x_pct": 9.653,
+        "y_pct": 50.661,
+        "w_pct": 82.287,
+        "h_pct": 20.467
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "So entstehen UmstAnde, wo der Friede, obgleich das höchste Gut und als Bedingung aller anderen Güter anerkannt, nur eine Stufe des »Nicht-Krieges« darstellt, mit Gewalt und nach reinstem »Naturgesetz« angewendet; so zum Beispiel durch Elend, Hunger, Angst vor einem Atomkrieg – ein Zustand des »Nicht-Krieges«, der in vermehrtem Maße Verletzungen des menschlichen Gesetzes zuläßt: Unterdrückung, Terror, Verrat, Lüge, Gefängnis, Konzentrationslager usw.",
+      "bbox": {
+        "x_pct": 9.942,
+        "y_pct": 70.573,
+        "w_pct": 81.91,
+        "h_pct": 18.441
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "190",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 930.0,
+        "w_pct": 50.0,
+        "h_pct": 50.0
+      },
+      "changed": true,
+      "change_reason": "Detected page number at bottom; changed label to page_footer to remove from primary text flow."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR output was heavily truncated for all paragraphs.",
+    "Page number 190 was missing in the provided input regions."
+  ],
+  "doc_id": "2830",
+  "page": 7,
+  "elapsed_seconds": 7.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

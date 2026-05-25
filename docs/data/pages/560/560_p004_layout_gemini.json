@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 19.396,
+        "y_pct": 9.474,
+        "w_pct": 12.732,
+        "h_pct": 1.487
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "accomplissement, la liberté de lindividu devient contemplation de Dieu avec autrui et participe ainsi à la coïncidence divine du « contempler » et de l' « agir ».",
+      "bbox": {
+        "x_pct": 19.234,
+        "y_pct": 12.394,
+        "w_pct": 62.288,
+        "h_pct": 5.399
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ouvrage dense, difficile, qui fait constamment réfléchir. Mais il me paraît manquer d'homogénéité : la rigueur de l'analyse, trop inégalement répartie, impose souvent ses exigences sur des points secondaires, abandonnant l'essentiel à la force de conviction de l'intuition originelle et à la sympathie du lecteur. L'ouvrage embrasse peut-être trop, il n'étreint pas très bien. J'aurais préféré le voir se décomposer en quelques études partielles, mais chacune d'un seul tenant, que se composer en une symphonie s'achevant par une synthèse universelle.",
+      "bbox": {
+        "x_pct": 18.88,
+        "y_pct": 17.352,
+        "w_pct": 62.691,
+        "h_pct": 14.045
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'un point de vue historique, je ne crois pas qu'on puisse accorder à une philosophie de « la liberté par autrui », le statut de nouveauté unique et d'unique solution des apories où se trouvent enfermées les philosophies de la solitude. Il est vrai que l'auteur remonte à Platon. Mais parmi les modernes, et même parmi ces « existentialistes » si fortement mis devant leur impuissance, il y a, par exemple, Karl Jaspers. On est surpris de ne trouver, dans un livre consacré à la liberté par autrui, aucune référence à la notion, pourtant centrale chez Jaspers, de communication, sans laquelle ni existence, ni liberté ne peuvent, selon lui, avoir le moindre sens.",
+      "bbox": {
+        "x_pct": 18.936,
+        "y_pct": 30.816,
+        "w_pct": 62.53,
+        "h_pct": 16.904
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le fond, il y aurait bien des remarques secondaires à faire, bien des points d'interrogation à poser. Par exemple, il paraît de plus en plus difficile d'admettre que le communisme soit une doctrine « imposant à chacun de susciter la liberté d'autrui » et je me demande si l'auteur d'une telle formule, si raffiné que puisse, sous sa plume, en être le sens, assume bien toute sa responsabilité. Mais je voudrais m'en tenir à l'essentiel : ma liberté qui est toujours « en autrui, là-bas ». Qu'est-ce que cela veut dire juste, — une fois le livre lu, et lu avec attention ? Que veut dire surtout ce en ? D. Christoff écrit, page 204, vers la fin de l'ouvrage : « En autrui seulement, non en lui-même, mais sous son regard, l'homme trouve cette liberté réalisée. Plus il regarde, plus il tisse autrui de structures, et plus cet autrui, là-bas, existe vraiment libre. » Mais avec quoi puis-je penser cet « autrui, là-bas », sinon avec ma propre liberté, ici ? N'y a-t-il pas, dans l'énoncé « ma liberté est en autrui », une certaine manière de pousser une intuition essentielle et vraie jusqu'au paradoxe, et de rendre ainsi scintillant et insaisissable un mystère en lui-même bien assez profond ?",
+      "bbox": {
+        "x_pct": 18.67,
+        "y_pct": 47.823,
+        "w_pct": 62.579,
+        "h_pct": 29.039
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH.",
+      "bbox": {
+        "x_pct": 61.781,
+        "y_pct": 76.723,
+        "w_pct": 15.552,
+        "h_pct": 1.632
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Most paragraphs were truncated in the input JSON.",
+    "Author signature is kept as text as requested by instructions."
+  ],
+  "doc_id": "560",
+  "page": 4,
+  "elapsed_seconds": 7.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

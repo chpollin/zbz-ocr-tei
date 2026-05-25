@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "FORME ET « RÉALITÉ »",
+      "bbox": {
+        "x_pct": 10.621,
+        "y_pct": 98.058,
+        "w_pct": 21.058,
+        "h_pct": 1.942
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header element"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "239",
+      "bbox": {
+        "x_pct": 74.88,
+        "y_pct": 98.058,
+        "w_pct": 3.251,
+        "h_pct": 1.942
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header element"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En réalité,  réalisme et idéalisme ne s'affrontent pas. Ils ne disent transition entre le exislentie",
+      "bbox": {
+        "x_pct": 10.437,
+        "y_pct": 12.908,
+        "w_pct": 68.354,
+        "h_pct": 24.07
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour l'idéalisme, il n'y a pas de transition continue entre l'être intellectuellement expérimenté et les représentations, et à plus forte raison les jugements. « L'être est » n'est pas un jugement, mais la suggestion ou le reflet d'un acte, et pour la théorie cet énoncé reste fermé et absolument stérile. L'entendement se trouve aux prises avec une dualité invincible, celle de l'être en soi qu'il expérimente au sein d'une identité d'acte, et de l'être en tant que ceci ou cela qu'il connaît en tant qu'objet. Il ne peut se servir des jugements que pour acculer l'esprit à cette dualité, et par là à l'expérience intellectuelle de l'être en soi.",
+      "bbox": {
+        "x_pct": 10.6,
+        "y_pct": 37.5,
+        "w_pct": 68.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing block of text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y enlre réalisme et idéalisme;   dopposition ralionnelle à proprement parler, mnais une différe",
+      "bbox": {
+        "x_pct": 10.621,
+        "y_pct": 55.049,
+        "w_pct": 68.055,
+        "h_pct": 15.087
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si les   affirmations   réalistes et idéalistes nc qualifient pas être en soi, on ne pourra une  Lie",
+      "bbox": {
+        "x_pct": 10.817,
+        "y_pct": 69.757,
+        "w_pct": 67.699,
+        "h_pct": 3.872
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing region for second paragraph",
+    "Missing region for header",
+    "Missing region for page number"
+  ],
+  "doc_id": "110",
+  "page": 241,
+  "elapsed_seconds": 6.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "298 J. Hersch, De la finitude",
+      "bbox": {
+        "x_pct": 15.818,
+        "y_pct": 7.42,
+        "w_pct": 74.19,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ture sur le sens 'engendre cette visée de la non-finitude, vouée à léchec. Si la finitude existait s",
+      "bbox": {
+        "x_pct": 15.818,
+        "y_pct": 11.396,
+        "w_pct": 74.19,
+        "h_pct": 8.815
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest linadéquation créatrice, condition de sens et de valeur.",
+      "bbox": {
+        "x_pct": 15.85,
+        "y_pct": 20.017,
+        "w_pct": 74.134,
+        "h_pct": 3.59
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "zb_paragraph",
+      "text": "3 .",
+      "bbox": {
+        "x_pct": 51.789,
+        "y_pct": 24.974,
+        "w_pct": 1.692,
+        "h_pct": 1.368
+      },
+      "changed": true,
+      "change_reason": "Artifact or numbering outside paragraph flow"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous  avons VU ci-dessus des exemples où la finitude semblait dévaloriser les principales   perspect",
+      "bbox": {
+        "x_pct": 15.85,
+        "y_pct": 26.724,
+        "w_pct": 74.077,
+        "h_pct": 3.892
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi la mort: cest elle donne à Tinstant sa valeur unique, fait de lui une percée   possible vers l",
+      "bbox": {
+        "x_pct": 15.713,
+        "y_pct": 31.812,
+        "w_pct": 74.295,
+        "h_pct": 10.45
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi le fait que nous n'ayons jamais affaire qu'à des aspects, à des fragments, et non à Têtre, emp",
+      "bbox": {
+        "x_pct": 15.85,
+        "y_pct": 42.068,
+        "w_pct": 74.102,
+        "h_pct": 5.413
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Grâce à la finitude, le moi, dispersé, dérivé, imbriqué, déterminé, être une visée dunité, dappropri",
+      "bbox": {
+        "x_pct": 15.874,
+        "y_pct": 47.048,
+        "w_pct": 73.973,
+        "h_pct": 5.276
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si les conséquences de nos actes se propagent dans le <sans-finv (schlechte Unendlichkeit) du fini, ",
+      "bbox": {
+        "x_pct": 15.85,
+        "y_pct": 51.926,
+        "w_pct": 74.102,
+        "h_pct": 15.84
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut faire intervenir ici une sorte dexpérimentation, par laffectivité métaphysique ou la raison ",
+      "bbox": {
+        "x_pct": 15.657,
+        "y_pct": 67.407,
+        "w_pct": 74.351,
+        "h_pct": 15.556
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 K. Jaspers, Philosophie, 3 Metaphysik, P. 202.",
+      "bbox": {
+        "x_pct": 18.429,
+        "y_pct": 84.86,
+        "w_pct": 37.067,
+        "h_pct": 1.709
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "One missing region added",
+    "One label corrected to footnote"
+  ],
+  "doc_id": "1500",
+  "page": 6,
+  "elapsed_seconds": 7.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Artifact or numbering outside paragraph flow": 1,
+    "Corrected label to footnote": 1,
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "210",
+      "bbox": {
+        "x_pct": 19.0,
+        "y_pct": 10.0,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 74.0,
+        "y_pct": 10.0,
+        "w_pct": 13.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du fond le plus inextricable En  outre; elle ne s'exprime nullement par une surenchère de mols viole",
+      "bbox": {
+        "x_pct": 18.987,
+        "y_pct": 13.126,
+        "w_pct": 68.239,
+        "h_pct": 5.615
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelle importune main, en formant tous ces nœuds, A soin suT mon front dassembler mes cheveux? pris",
+      "bbox": {
+        "x_pct": 26.732,
+        "y_pct": 21.093,
+        "w_pct": 54.476,
+        "h_pct": 3.794
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans quels égarements \"amour jeta ma mère !",
+      "bbox": {
+        "x_pct": 26.697,
+        "y_pct": 27.086,
+        "w_pct": 48.216,
+        "h_pct": 1.874
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ne ascèse; car 1'affectivité   spontanée; ce degré   dintensilé, bouche le   pouvoir   représe",
+      "bbox": {
+        "x_pct": 18.907,
+        "y_pct": 31.085,
+        "w_pct": 68.665,
+        "h_pct": 29.742
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans belle inlitulée Frontière de la Poésie, Raïssa Maritain déclare que toute poésie   existe à la ",
+      "bbox": {
+        "x_pct": 19.022,
+        "y_pct": 65.121,
+        "w_pct": 68.631,
+        "h_pct": 9.461
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing running header and page number annotations in initial input"
+  ],
+  "doc_id": "110",
+  "page": 212,
+  "elapsed_seconds": 6.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

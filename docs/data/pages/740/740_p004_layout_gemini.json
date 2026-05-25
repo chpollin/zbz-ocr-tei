@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch 95",
+      "bbox": {
+        "x_pct": 331.0,
+        "y_pct": 74.0,
+        "w_pct": 444.0,
+        "h_pct": 28.0
+      },
+      "changed": true,
+      "change_reason": "Corrected page header (Jeanne Hersch 95) from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, l'intrépidité kierkegaardienne n'est nullement celle qui explore l'espace, mais celle du resserrement extrême. Elle concentre l'espace et le temps en un seul point, où les termes incompatibles coïncident en s'excluant. C'est le point de l'impossible. L'impossible, pour Kierkegaard, n'est pas signe de néant, mais d'existence, de surgissement, de naissance de vérité. Là où cesse la cohérence pensable, l'existence surgissante remporte sa victoire sur l'universel abstrait.",
+      "bbox": {
+        "x_pct": 52.0,
+        "y_pct": 109.0,
+        "w_pct": 804.0,
+        "h_pct": 259.0
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction to reflect the actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "S'il y a une « philosophie » de Kierkegaard, elle ressemble moins à un système qu'à un dard. C'est une philosophie du point. Ce point, c'est l'instant.",
+      "bbox": {
+        "x_pct": 49.0,
+        "y_pct": 387.0,
+        "w_pct": 803.0,
+        "h_pct": 72.0
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction to reflect the actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'instant, chez Kierkegaard, a au moins trois sens. C'est le point de découverte de la vérité. C'est « le maître » ou « le dieu » qui en est la condition. Enfin il donna ce nom à la feuille agressive qu'il publia dans la dernière année de sa vie pour mener son violent combat contre l'Église, nom qui indique un troisième sens : l'instant, c'est aussi le point où éclate la lutte entre la subjectivité engagée à l'absolu et le monde infidèle des institutions. — Mais ce triple sens se ramène aussi à un sens unique : il indique que le point de découverte de la vérité est un événement et non un savoir, et bien plus, que cet événement est d'un ordre unique puisqu'il est à la fois un acte, une rencontre et une personne. Là où l'incompatibilité bloque la pensée théorique, quelqu'un surgit et fait acte de présence.",
+      "bbox": {
+        "x_pct": 48.0,
+        "y_pct": 488.0,
+        "w_pct": 807.0,
+        "h_pct": 420.0
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction to reflect the actual content."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was heavily corrupted with garbled characters and truncated words.",
+    "Page header 'Jeanne Hersch 95' was incorrectly labeled as paragraph text.",
+    "Bounding boxes were slightly adjusted for logical segment boundaries."
+  ],
+  "doc_id": "740",
+  "page": 4,
+  "elapsed_seconds": 9.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

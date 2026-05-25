@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "comme une ombre portée, qui n'altérait pas le moment présent, mais, d'une certaine manière, lui donnait son prix et son éclat, et surtout son unicité. C'est là pour moi une expérience très ancienne. La mort n'est pas seulement pour nous inévitable, elle nous est indispensable. Un livre comme Tous les hommes sont mortels de Simone de Beauvoir, dans lequel elle imagine une personne douée d'immortalité au milieu des autres hommes condamnés à la mort, c'est pour moi une représentation atroce. Je ne peux imaginer pire torture que de se savoir immortel en étant sûr que chaque être autour de vous mourra. La seule consolation devant la mort des proches, c'est qu'on mourra aussi. S'il n'y avait pas la mort, tous les instants de la vie seraient équivalents ; chaque instant de la vie est unique à cause de ce terme. Dans la vie humaine, c'est la finitude qui engendre l'unicité. En ce sens, la mort m'a toujours paru familière et naturelle. Elle ne m'a jamais fait peur pour moi. J'ai eu peur, et j'ai encore peur, de la souffrance. La mort des autres, c'est une menace perpétuelle, terrible, à côté de soi ; je n'ai jamais pu m'habituer, malgré les expériences répétées, à accompagner un être au cimetière et à l'y laisser, en sachant qu'il n'y a plus d'endroit où on puisse le chercher. C'est une chose absolument épouvantable, qui est là au cœur de notre vie. La mort des autres, c'est la vraie mort. Bien des survivants cherchent à se consoler de la mort d'un proche par des considérations religieuses ; ils se disent que celui qui est mort existe ailleurs, où ils existeront aussi quand ils seront morts. Il me semble que c'est faire un mauvais usage de la religion ou de la métaphysique, parce que de cette manière on ne transcende pas vraiment le temps, on reste dans le temps, et au fond, on triche avec le temps. La religion et la métaphysique ne sont pas là pour qu'on triche avec le temps. Des pensées de ce genre n'ont guère de rapport avec l'éternité. La mort nous incite en revanche à pressentir sans la voir une éternité qui est « le présent », qui est « maintenant ». Cela ne veut pas dire maintenant, c'est l'éternité. Cela veut dire que nous n'en avons aucune représentation quelconque, que c'est un grand mystère, et que ce mystère doit être le plus possible ressemblant à lui-même. La meilleure métaphore de l'éternité, c'est le présent, un présent sans écoulement, inimaginable, dans lequel pourtant, d'une certaine manière, nous vivons parfois.",
+      "bbox": {
+        "x_pct": 16.606,
+        "y_pct": 3.79,
+        "w_pct": 79.731,
+        "h_pct": 69.331
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsque vous aviez 30 ans à travers votre roman Temps alternés, vous cherchiez à saisir « l'unité possible de la vie ». Vous arrive-t-il aujourd'hui, lorsque vous repensez à l'œuvre et à l'expérience qui ont été les vôtres, de vous poser la question de ce qui fait l'unité de votre vie ?",
+      "bbox": {
+        "x_pct": 16.874,
+        "y_pct": 74.226,
+        "w_pct": 79.707,
+        "h_pct": 9.968
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je vous ai dit que, quand je regardais ma vie, elle me paraissait hétéroclite, dispersée, et qu'elle me semblait malgré tout avoir quelque part un centre vivant. Ce centre vivant, c'est peut-être simplement le",
+      "bbox": {
+        "x_pct": 17.216,
+        "y_pct": 83.976,
+        "w_pct": 79.487,
+        "h_pct": 6.565
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "224",
+      "bbox": {
+        "x_pct": 17.3,
+        "y_pct": 94.4,
+        "w_pct": 3.2,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was heavily garbled in paragraphs 2 and 3",
+    "Page number 224 was missing a bounding box and label in initial extraction"
+  ],
+  "doc_id": "2330",
+  "page": 228,
+  "elapsed_seconds": 7.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

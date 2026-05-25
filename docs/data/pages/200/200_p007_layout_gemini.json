@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'EXISTENTIALISME DEVANT L'OPINION PUBLIQUE 53",
+      "bbox": {
+        "x_pct": 31.0,
+        "y_pct": 16.326,
+        "w_pct": 45.141,
+        "h_pct": 0.887
+      },
+      "changed": true,
+      "change_reason": "Identified as page header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "libert existentielle, non au monde des faits. «Pessimisme» signifie tout au plus que la valeur de ce qui n'est pas une donn e, que la vie n'est pas justifi ee du seul fait qu'elle est, et m eme qu'aucune justification n'est acquise une fois pour toutes. Il s'agit d'une exigence sans fin: la vie, le monde ne sont pas justifi es, parce qu'ils sont  a justifier sans fin. Justifie-les, justifie-toi. Quant au «nihilisme», ce terme appliqu e  a la pens ee de Sartre est absurde,  a moins qu'on n'entende par l a que pour lui le prestige du n eant se ram ene au prestige de la libert e oppos ee  a l' etre de fait. C'est alors le «nihilisme» de toute philosophie de la libert e.",
+      "bbox": {
+        "x_pct": 20.282,
+        "y_pct": 19.082,
+        "w_pct": 55.866,
+        "h_pct": 14.401
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed formatting artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment s'expliquer une telle d eformation ? Il importe de comprendre en quoi l' euvre de Sartre en particulier, et la pens ee existentialiste en g en eral, ont pr et e le flanc  a des interpr etations aussi caricaturales. Mais il importe plus encore de comprendre pourquoi le public les a accept ees avec un tel empressement, en quoi elles satisfaisaient ses tendances profondes et servaient ses r eactions de d efense.",
+      "bbox": {
+        "x_pct": 20.169,
+        "y_pct": 35.673,
+        "w_pct": 55.439,
+        "h_pct": 9.196
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour le premier point, il me semble que la responsabilit e d'un tel malentendu incombe d'abord  a Sartre, et  a Sartre romancier et dramaturge bien plus qu' a Sartre philosophe;  a sa curiosit e pour les  etats de semi-morbidit e, de semi-ali enation;  a la violente r epugnance de son intelligence et de son sens esth etique devant la niaiserie facile de la vertu litt eraire. Il y a aussi chez lui une pudeur, certes, et bien profonde, puisqu'elle s'est dissimul ee jusque dans les fondements de sa pens ee philosophique sous la forme d'une th eorie de la «mauvaise foi». Alors que la cruaut e, la perversion, l'hypocrisie sous toutes ses formes s' etalent minutieusement le long des pages, incarn ees en une foule de d etails d'une extr eme pr ecision, la fraternit e humaine, par exemple, ou la vraie tendresse  eclosent sobrement  a travers un langage qui cherche  a les dissimuler sous l'aspect de l'indiff erence ou m eme de la grossi eret e. Or comme le vulgarisateur - journaliste ou femme du monde - manque de patience et  evite l'effort, il a vite fait de consid erer tel personnage comme incarnant «la morale existentialiste» ou m eme toute cette philosophie. Un peu comme si connaissant les sources jans enistes de Ph edre, on tirait du comportement de l'h eroine, sans s'informer davantage, les principes d'une morale jans eniste !",
+      "bbox": {
+        "x_pct": 20.145,
+        "y_pct": 44.869,
+        "w_pct": 55.576,
+        "h_pct": 28.62
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il y a plus : l'existentialisme en g en eral a  et e la victime des malentendus qui ne peuvent manquer de se produire lorsque se propage une pens ee tendant  a  eveiller et non  a instruire. On a vu ce que Nietzsche pouvait devenir pour ceux qui cherchent des pr eceptes l a o u n'y a qu'un appel  a les d epasser tous. Le public, en g en eral, refuse de quitter un auteur les mains vides, sans un bagage de savoir solide et utile.",
+      "bbox": {
+        "x_pct": 20.201,
+        "y_pct": 73.221,
+        "w_pct": 55.761,
+        "h_pct": 9.675
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert f ur Universit at Z urich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 156.0,
+        "y_pct": 884.0,
+        "w_pct": 412.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected page header and page number as separate text regions.",
+    "OCR text quality issues (merged words and misrecognized special characters).",
+    "Missing page footer in initial detection.",
+    "BBox for footer was incorrectly parsed."
+  ],
+  "doc_id": "200",
+  "page": 7,
+  "elapsed_seconds": 8.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

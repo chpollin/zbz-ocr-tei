@@ -1,0 +1,146 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch Menschenrechte und Menschsein",
+      "bbox": {
+        "x_pct": 7.425,
+        "y_pct": 7.29,
+        "w_pct": 36.936,
+        "h_pct": 2.086
+      },
+      "changed": true,
+      "change_reason": "Page header was misidentified as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Podiumsgespräch",
+      "bbox": {
+        "x_pct": 82.525,
+        "y_pct": 7.575,
+        "w_pct": 10.155,
+        "h_pct": 1.943
+      },
+      "changed": true,
+      "change_reason": "Page header was misidentified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "in Forschungszentrum Professor beHerr Fragen",
+      "bbox": {
+        "x_pct": 7.376,
+        "y_pct": 11.128,
+        "w_pct": 37.57,
+        "h_pct": 7.359
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mitwirkung in Wien richs und Sie sehen daher in der Person Professor Oberndorfer...",
+      "bbox": {
+        "x_pct": 7.219,
+        "y_pct": 23.042,
+        "w_pct": 37.799,
+        "h_pct": 12.374
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text segmentation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "notwendig; den Menschenrechten die Menschenpflichten... ",
+      "bbox": {
+        "x_pct": 6.771,
+        "y_pct": 51.736,
+        "w_pct": 37.763,
+        "h_pct": 19.332
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "die Rechte, wo die Güte wie 6...",
+      "bbox": {
+        "x_pct": 53.966,
+        "y_pct": 13.012,
+        "w_pct": 36.276,
+        "h_pct": 9.199
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "und den entsprechenden Pflichten zu Zu und Recht...",
+      "bbox": {
+        "x_pct": 65.756,
+        "y_pct": 46.647,
+        "w_pct": 22.189,
+        "h_pct": 15.074
+      },
+      "changed": true,
+      "change_reason": "Corrected text reconstruction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dazu Einfluß irgendwelcher Tiere...",
+      "bbox": {
+        "x_pct": 53.894,
+        "y_pct": 63.546,
+        "w_pct": 36.518,
+        "h_pct": 17.166
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 65,
+        "y_pct": 870,
+        "w_pct": 20,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Added missing page number for page 14."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 890,
+        "y_pct": 870,
+        "w_pct": 20,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Added missing page number for page 15."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "Most regions had poor OCR text content.",
+    "Missing page numbers detected in base analysis.",
+    "Section headers and page headers were incorrectly labeled as text."
+  ],
+  "doc_id": "2930",
+  "page": 7,
+  "elapsed_seconds": 5.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

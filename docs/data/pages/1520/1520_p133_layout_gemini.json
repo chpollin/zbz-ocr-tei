@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "12. Communication au niveau empirique . . . . . . . . . 75",
+      "bbox": {
+        "x_pct": 69.833,
+        "y_pct": 59.88,
+        "w_pct": 21.053,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Original region was an empty broad container. Splitting into content lines."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "13. Communication existentielle . . . . . . . . . . . . 76",
+      "bbox": {
+        "x_pct": 69.833,
+        "y_pct": 77.294,
+        "w_pct": 21.053,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Correcting segmentation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "14. Combattre par amour . . . . . . . . . . . . . . . 76",
+      "bbox": {
+        "x_pct": 69.833,
+        "y_pct": 98.777,
+        "w_pct": 21.053,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Correcting segmentation."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Métaphysique",
+      "bbox": {
+        "x_pct": 69.833,
+        "y_pct": 190.627,
+        "w_pct": 11.531,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "Section header correctly identified."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "De la Vérité",
+      "bbox": {
+        "x_pct": 69.833,
+        "y_pct": 412.062,
+        "w_pct": 10.191,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "Section header correctly identified."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La foi philosophique",
+      "bbox": {
+        "x_pct": 69.833,
+        "y_pct": 605.947,
+        "w_pct": 18.086,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "Section header correctly identified."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les grands philosophes",
+      "bbox": {
+        "x_pct": 69.833,
+        "y_pct": 811.235,
+        "w_pct": 19.33,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "Section header correctly identified."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "127",
+      "bbox": {
+        "x_pct": 866.5,
+        "y_pct": 914.8,
+        "w_pct": 27.27,
+        "h_pct": 2.27
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "The initial segmentation captured the entire page as one region. This is highly inaccurate for an index page.",
+    "Must be re-segmented line by line for proper OCR/structure.",
+    "Bbox values were guessed as the initial input was one large box, requiring refinement."
+  ],
+  "doc_id": "1520",
+  "page": 133,
+  "elapsed_seconds": 4.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

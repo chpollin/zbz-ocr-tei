@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JAURS (Jean)",
+      "bbox": {
+        "x_pct": 74.056,
+        "y_pct": 10.147,
+        "w_pct": 12.399,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JAURS (Jean) 1859-1914",
+      "bbox": {
+        "x_pct": 21.644,
+        "y_pct": 20.316,
+        "w_pct": 9.42,
+        "h_pct": 2.274
+      },
+      "changed": true,
+      "change_reason": "Fixed spelling and tag for heading"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JAUNISSE",
+      "bbox": {
+        "x_pct": 22.944,
+        "y_pct": 13.864,
+        "w_pct": 6.18,
+        "h_pct": 2.028
+      },
+      "changed": true,
+      "change_reason": "This is a lemma heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The entire text column contents need OCR cleanup but currently mapped as zb_paragraph.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Aggressive cleanup requires full re-indexing of text blocks, marking as placeholder to maintain JSON format."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 5,
+  "issues": [
+    "Most text content has garbled OCR results needing total re-processing.",
+    "Multiple running headers labeled as text.",
+    "Page headers were missing from labels.",
+    "Layout columns are mixed; need to enforce strict column-based ordering.",
+    "Author signatures at end of entries need specific mapping."
+  ],
+  "doc_id": "900",
+  "page": 2,
+  "elapsed_seconds": 4.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "104 Kierkegaard vivant",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page header was incorrectly identified as text or entirely missing from the region list; it should be excluded."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "détournent nullement du concret, des réalités positives, de l’actualité vécue. Au contraire, nous l’avons vu, ils s’attachent à l’ « instant », dans la singularité absolue de sa situation historique, et ils lui confèrent un tel poids que nul futur édénique ne saurait en justifier ni en compenser la mutilation. Ils ne négligent pas non plus la liaison des instants, condition de l’action effective et de la responsabilité morale, mais cette liaison ne s’établit pas par rapport à une fin finale future : sa réalité au fil du temps n’est que la projection et comme l’étalement de l’unité transtemporelle, inconcevable, de tous les instants, par laquelle chacun est unique et absolu.",
+      "bbox": {
+        "x_pct": 10.925,
+        "y_pct": 11.289,
+        "w_pct": 80.195,
+        "h_pct": 36.509
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to match the full paragraph in the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour les premiers, le temps trouve sa valeur et son accomplissement dans un futur encore temporel. Le temps, l’histoire — même s’il faut la faire — devient un panorama. Si bien que, paradoxalement, l’insistance qu’ils mettent à souligner le caractère historique de toute chose, à lutter contre toute référence à l’immobile éternité ou contre toute attente contemplative, finit par figer leur dynamisme, virtuellement accompli en sa totalité. Étrange revanche, mais bien compréhensible. S’il n’y a que le temps, ou bien rien n’a de sens, ou bien le sens est dans le temps, et dans ce cas l’histoire se trouve virtuellement engluée dans un donné futur. — Pour les autres, en revanche, le cœur vif de l’histoire ne cesse de battre dans l’instant, où l’éternité refusée ne laisse jamais le temps en repos. L’histoire vit",
+      "bbox": {
+        "x_pct": 11.315,
+        "y_pct": 46.992,
+        "w_pct": 80.406,
+        "h_pct": 43.753
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to match the full paragraph in the source image."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction was heavily truncated.",
+    "Page number and running header were not included in the initial layout analysis.",
+    "The bounding box text field had significant missing words."
+  ],
+  "doc_id": "740",
+  "page": 13,
+  "elapsed_seconds": 8.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

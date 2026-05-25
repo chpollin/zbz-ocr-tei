@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "64 LE PHILOSOPHE DEVANT SON PROBLÈME",
+      "bbox": {
+        "x_pct": 14.307,
+        "y_pct": 87.276,
+        "w_pct": 75.708,
+        "h_pct": 4.919
+      },
+      "changed": true,
+      "change_reason": "Corrected the page header and page number from 'text' to 'page_header' / _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "même, car un état de fait habituellement voilé étale maintenant tout son désordre.",
+      "bbox": {
+        "x_pct": 14.307,
+        "y_pct": 13.031,
+        "w_pct": 75.708,
+        "h_pct": 4.919
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Car enfin, que signifie le philosophe en étudiant et résolvant un problème, décide de lui-même? C'est donc que la solution d'un problème philosophique est purement subjective au sens péjoratif du mot, qu'elle est arbitraire, c'est-à-dire affaire de caprice et de tempérament individuel, de sentiment et de croyance. Libre au philosophe de décider de lui-même et de chercher « sa vérité métaphysique », comme chacun est libre de tenir un journal intime. Mais les résultats de ses réflexions, même s'ils portent la marque de cette « vérité métaphysique », n'intéressent personne en tant que vérité; ils intéressent à la façon justement d'un journal intime sincère; ils éveillent un intérét romanesque, affectif, tout au plus psychologique. Encore ont-ils l'inconvénient de prétendre, par leur forme logique, traduire des vérités générales et non strictement individuelles. Ils perdent du même coup la spontanéité, la souplesse immédiate et chaude du journal intime.",
+      "bbox": {
+        "x_pct": 13.901,
+        "y_pct": 18.179,
+        "w_pct": 76.416,
+        "h_pct": 51.382
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Apparence raide de vérité générale sans vérité générale.",
+      "bbox": {
+        "x_pct": 13.961,
+        "y_pct": 69.113,
+        "w_pct": 75.994,
+        "h_pct": 5.691
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant notre raison n'exige-t-elle pas que la vérité soit une? Et si deux philosophies qui atteignent toutes deux la vérité métaphysique donnent du même problème deux solutions contradictoires, notre raison n'exige-t-elle pas que nous choisissions entre les deux ou que nous les rejetions toutes deux?",
+      "bbox": {
+        "x_pct": 13.855,
+        "y_pct": 74.738,
+        "w_pct": 76.31,
+        "h_pct": 15.319
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was heavily corrupted/hallucinated in multiple blocks.",
+    "Page number and header were detected as content text.",
+    "Need better segmentation of the block at the top."
+  ],
+  "doc_id": "20",
+  "page": 66,
+  "elapsed_seconds": 5.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

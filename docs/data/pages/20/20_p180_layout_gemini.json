@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "178 L'ÉCHEC COMME CHIFFRE DES CHIFFRES",
+      "bbox": {
+        "x_pct": 152.0,
+        "y_pct": 77.0,
+        "w_pct": 692.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "The header was misclassified as text. Reassigned as page_header / _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand je m'efforce d'éclairer l'existence, j'échoue devant ce qu'est l'existence en soi; là où je suis proprement parler moi-même, je ne suis plus seulement moi-même, mais communication et rapport à la transcendance.",
+      "bbox": {
+        "x_pct": 14.413,
+        "y_pct": 12.393,
+        "w_pct": 76.355,
+        "h_pct": 12.612
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand je m'efforce d'atteindre la transcendance, je ne peux jamais la garder comme un objet; j'échoue devant la fugacité de son apparition dans le monde devenu chiffre, et comme en elle il n'y a pas de possibilité, elle arrête toute pensée qui la viserait directement.",
+      "bbox": {
+        "x_pct": 14.202,
+        "y_pct": 25.071,
+        "w_pct": 76.416,
+        "h_pct": 15.319
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'échec me cerne de toutes parts. La destruction universelle qui m'entoure sans que je puisse lui donner un sens, remet sans trêve en question ce que l'effort philosophique paraissait avoir conquis. Ce n'est pas seulement la réalité empirique qui paraît livrée à la destruction : l'échec n'est plus chiffre de la transcendance, mais l'être même du néant. Il paraît devoir finalement priver tout de son sens, tout détruire, tout ce qu'on a cru voir, imaginer, construire. Dans une telle réalité vivre paraît impossible. L'acte transcendant, par lequel on croyait atteindre l'être et le retenir, paraît maintenant une folie. Par sincérité critique, il faut repousser tous les rêves qui donnent l'illusion d'un savoir de l'être; il faut repousser toutes les constructions qui prétendent donner le Tout de la réalité alors qu'au contraire elles la voilent. Lorsqu'on est ainsi sincère dans un monde dévasté par tous les échecs il ne reste qu'à vivre sans transcendance.",
+      "bbox": {
+        "x_pct": 13.75,
+        "y_pct": 40.639,
+        "w_pct": 76.627,
+        "h_pct": 48.684
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR errors and fragmented text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Header was incorrectly labeled as paragraph.",
+    "OCR of paragraph text was extremely poor and required manual transcription.",
+    "Bbox for header was missing from previous input but required.",
+    "Punctuation and spelling errors were rampant in the original OCR text."
+  ],
+  "doc_id": "20",
+  "page": 180,
+  "elapsed_seconds": 4.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

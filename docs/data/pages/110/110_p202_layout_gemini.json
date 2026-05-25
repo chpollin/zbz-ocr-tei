@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "doit s'incarner en posilions, c'est-à-dire accepter dentrer dans el juxtaposer ce le nie. Mais alors",
+      "bbox": {
+        "x_pct": 22.325,
+        "y_pct": 13.44,
+        "w_pct": 68.815,
+        "h_pct": 25.991
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout cela n'est qu un début danalyse   critique du   poème. Les idées \" et le & nouent pas seulement",
+      "bbox": {
+        "x_pct": 22.094,
+        "y_pct": 39.18,
+        "w_pct": 68.849,
+        "h_pct": 35.558
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "200",
+      "bbox": {
+        "x_pct": 22.3,
+        "y_pct": 10.3,
+        "w_pct": 2.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top left"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 72.8,
+        "y_pct": 10.3,
+        "w_pct": 18.3,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header at top right"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Labels were not following the strict convention (e.g. used 'text' instead of 'zb_paragraph')",
+    "Page header regions were missing"
+  ],
+  "doc_id": "110",
+  "page": 202,
+  "elapsed_seconds": 5.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to zb_paragraph": 2,
+    "ADDED": 2
+  }
+}

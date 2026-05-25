@@ -1,0 +1,116 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "begriff zu ,Lüge' eigentlich nicht der Begriff ,Wahrheit' , sondern der Begriff ,Wahrhaftigkeit' ist. Wir haben ja in den letzten Minuten keinen theoretischen Wahrheitsbegriff diskutiert. Der Lügebegriff gehört in die Moralphilosophie, und da ist er der Gegensatz zu Wahrhaftigkeit, womit eine Einstellung gegenüber den Dingen gemeint ist, z.B. wenn ich jemanden bewußt täusche, dadurch lüge und mich als nicht wahrhaftig erweise. Ich muß aber wissen, was Wahrheit ist, sonst kann ich nämlich auch nicht lügen.",
+      "bbox": {
+        "x_pct": 7.231,
+        "y_pct": 3.852,
+        "w_pct": 85.584,
+        "h_pct": 20.583
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for accuracy."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 7.829,
+        "y_pct": 26.23,
+        "w_pct": 33.892,
+        "h_pct": 2.031
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Herzlichen Dank! Das heißt, um es für die Philosophen unter Ihnen analytisch noch ein bißchen auseinanderzunehmen: Der propositionale Gehalt einer Lüge ist zwar falsch, aber der performative Akt des Lügens ist eine Handlung, und die beruht auf der Charaktereigenschaft der Unwahrhaftigkeit oder jedenfalls auf der Einstellung der Unwahrhaftigkeit.",
+      "bbox": {
+        "x_pct": 7.186,
+        "y_pct": 28.352,
+        "w_pct": 85.734,
+        "h_pct": 13.725
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for accuracy."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Frage aus dem Publikum (C):",
+      "bbox": {
+        "x_pct": 7.186,
+        "y_pct": 43.834,
+        "w_pct": 44.76,
+        "h_pct": 2.678
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte die zumindest für mich unvermeidbare Frage nach dem Standort stellen, von dem aus über Paradoxien gesprochen wird. Nehmen wir meinetwegen das Paradox, daß der Mensch zugleich frei und determiniert ist. Ich möchte gerne wissen, egal eigentlich von wem, von wo aus wir das beurteilen. Wenn ich sage, der Mensch sei frei und determiniert zugleich, kann der Standort dieser Aussage selbst nicht innerhalb dieses Paradoxes liegen, sondern muß wohl, wie ich es sehe, über dem Paradox stehen. Ich denke, daß die Differenz, die hier aufgebaut wird, oder der Widerspruch, im Grunde genommen nur denkbar ist von einer Position aus, die selbst nicht widersprüchlich ist, sondern eine Einheit darstellt. Die Frage also: Wo stehen wir, wenn wir darüber diskutieren?",
+      "bbox": {
+        "x_pct": 7.29,
+        "y_pct": 46.111,
+        "w_pct": 85.569,
+        "h_pct": 29.026
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for accuracy."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 7.38,
+        "y_pct": 77.295,
+        "w_pct": 23.263,
+        "h_pct": 2.186
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich danke Ihnen für diese Erklärung. Ich war eigentlich etwas zu müde, um das zu sagen, was Sie gesagt haben, aber ich hätte das gerne gesagt. Ich hätte es gerne gesagt, denn ich glaube, daß es im Grunde darum geht, daß der betreffende Mensch, der, wie Sie sagten, determiniert und frei ist, dem Satz, daß er determiniert und frei ist, gleichzeitig einen Sinn gibt; daß er",
+      "bbox": {
+        "x_pct": 7.141,
+        "y_pct": 79.299,
+        "w_pct": 85.524,
+        "h_pct": 13.934
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "56",
+      "bbox": {
+        "x_pct": 7.7,
+        "y_pct": 94.6,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Detected page number and moved to _filter category."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcriptions were truncated and incomplete.",
+    "Page number 56 was labeled as text and needed to be filtered."
+  ],
+  "doc_id": "3180",
+  "page": 33,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

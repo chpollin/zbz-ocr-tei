@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "98",
+      "bbox": {
+        "x_pct": 19.355,
+        "y_pct": 9.488,
+        "w_pct": 2.258,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 72.823,
+        "y_pct": 9.488,
+        "w_pct": 8.065,
+        "h_pct": 1.348
+      },
+      "changed": true,
+      "change_reason": "Running header (author name) incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tout entier. La totalité visée par l'histoire ne peut donc être que marquée en pointillé comme achevant le temps — une Idée. Mais étant efficace comme source du sens en chaque moment de l'histoire, elle est contemporaine de tous, elle est donc extra-temporelle au sens où le serait l'éternité. La dialectique, chiffre des contradictions humaines, du temps et de l'histoire, appelle d'elle-même son dépassement : une dialectique de la dialectique, posant la permanence sans laquelle il n'est pas de sens, donc : sans laquelle il n'est ni dialectique ni histoire.",
+      "bbox": {
+        "x_pct": 19.089,
+        "y_pct": 12.405,
+        "w_pct": 70.75,
+        "h_pct": 16.217
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire humaine prendra peut-être fin un jour. La terre pourrait (les théories à ce sujet diffèrent encore, je crois) devenir inhabitable par excès de froid ou par excès de chaleur. Cette fin serait alors physiquement nécessaire, mais historiquement accidentelle. Elle n'aurait aucun rapport avec la nature de l'histoire, avec la structure interne de ses moments, et avec son sens. Elle n'aurait rien d'eschatologique. Elle n'entamerait en rien non plus la permanence sous-jacente du « maintenant éternel ».",
+      "bbox": {
+        "x_pct": 20.105,
+        "y_pct": 28.034,
+        "w_pct": 69.839,
+        "h_pct": 14.399
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4 4",
+      "bbox": {
+        "x_pct": 55.056,
+        "y_pct": 43.818,
+        "w_pct": 2.903,
+        "h_pct": 1.897
+      },
+      "changed": true,
+      "change_reason": "Artifact/page break indicator incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire, pour être, semble avoir besoin d'un paradis inaccessible, mais efficace dans son mouvement quotidien. Je ne veux pas dire qu'elle ait besoin d'un paradis, lequel se trouverait être à jamais inaccessible; je veux dire qu'elle a besoin de cette inaccessibilité même. Grâce à celle-ci, chacune des « petites totalités » construites par l'action au fil de l'histoire n'est pas subordonnée à l'écrasante totalité bouclée par son succès final. Elle est, au contraire, à la fois, enchaînée au fil du temps par son progrès vers le phantasme d'un achèvement futur, et isolée dans son unicité, directement rattachée à la source de sens transhistorique dont le phantasme futur n'est que le déguisement nécessaire à la visée temporelle.",
+      "bbox": {
+        "x_pct": 20.992,
+        "y_pct": 46.912,
+        "w_pct": 69.597,
+        "h_pct": 21.578
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous pouvons maintenant tenter de répondre aux deux questions que nous posions au début. Nous nous demandions si l'unité de direction suffit pour que l'histoire ait un sens. Nous nous demandions encore si l'absence de direction continue à travers l'histoire suffit pour exclure toute possibilité de sens. La réponse ne sera pas tout à fait simple. D'après ce qui précède, il est clair que la direction continue, trace visible d'un processus cohérent, exclut le chaos ou le hasard, mais n'implique pas nécessairement le sens. Il est clair aussi que les « petites totalités » constituées par l'action peuvent, même discontinues (c'est-à-dire vouées à l'échec et ne réussissant",
+      "bbox": {
+        "x_pct": 22.444,
+        "y_pct": 67.333,
+        "w_pct": 68.605,
+        "h_pct": 17.983
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Page number 98 labeled as text.",
+    "Running header 'JEANNE HERSCH' labeled as text.",
+    "Page separator '4 4' labeled as text."
+  ],
+  "doc_id": "910",
+  "page": 8,
+  "elapsed_seconds": 7.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

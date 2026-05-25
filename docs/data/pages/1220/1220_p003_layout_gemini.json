@@ -1,0 +1,189 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "vielleutiges Wort, Man Jonn sid dz u[ begegnet. Wenn ich statt Gort Transzendenz dann 59jede bezieht",
+      "bbox": {
+        "x_pct": 9.402,
+        "y_pct": 9.413,
+        "w_pct": 38.47,
+        "h_pct": 28.517
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "H.:",
+      "bbox": {
+        "x_pct": 9.387,
+        "y_pct": 42.448,
+        "w_pct": 3.42,
+        "h_pct": 1.748
+      },
+      "changed": true,
+      "change_reason": "ADDED: Speaker label"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ideologien dagegen kommen, Im Unterschied zur Transzendenz, aus den Tatsachen?",
+      "bbox": {
+        "x_pct": 13.064,
+        "y_pct": 42.448,
+        "w_pct": 34.618,
+        "h_pct": 3.706
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing text segment"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "cinem Ideolo gien Wenn Ziclvorstellung In   diesem stedt noc die sind Icbl. geben, Anfang",
+      "bbox": {
+        "x_pct": 9.241,
+        "y_pct": 46.531,
+        "w_pct": 38.435,
+        "h_pct": 18.825
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vorstellung cines Sinnes stammt aus der Transzendenz,",
+      "bbox": {
+        "x_pct": 9.241,
+        "y_pct": 73.147,
+        "w_pct": 38.169,
+        "h_pct": 2.797
+      },
+      "changed": true,
+      "change_reason": "Corrected label and adjusted bbox"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "H.:",
+      "bbox": {
+        "x_pct": 9.241,
+        "y_pct": 73.147,
+        "w_pct": 3.65,
+        "h_pct": 2.797
+      },
+      "changed": true,
+      "change_reason": "ADDED: Speaker label"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Transzendenz ist in uns im Mcinen und Entsdi...",
+      "bbox": {
+        "x_pct": 9.241,
+        "y_pct": 77.58,
+        "w_pct": 38.285,
+        "h_pct": 2.559
+      },
+      "changed": true,
+      "change_reason": "Corrected label"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "70",
+      "bbox": {
+        "x_pct": 9.056,
+        "y_pct": 83.357,
+        "w_pct": 1.381,
+        "h_pct": 1.301
+      },
+      "changed": true,
+      "change_reason": "Corrected label to _filter for page number"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "hben, einc Pllicht, kcic haben, ist Es hen haben i...",
+      "bbox": {
+        "x_pct": 52.509,
+        "y_pct": 12.406,
+        "w_pct": 38.838,
+        "h_pct": 16.825
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Anfang sowohl der Religion wie der Ideologic",
+      "bbox": {
+        "x_pct": 62.371,
+        "y_pct": 29.832,
+        "w_pct": 28.734,
+        "h_pct": 3.357
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "HDann ist am ist trznszendente Dimension,",
+      "bbox": {
+        "x_pct": 52.9,
+        "y_pct": 31.189,
+        "w_pct": 9.666,
+        "h_pct": 2.056
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "ibre Wirlungskrafl Aber cs ist Transzendenz in Cbersetzung bar: D1s alles",
+      "bbox": {
+        "x_pct": 52.854,
+        "y_pct": 57.385,
+        "w_pct": 38.55,
+        "h_pct": 19.72
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "71",
+      "bbox": {
+        "x_pct": 90.0,
+        "y_pct": 82.5,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Used list_item instead of zb_paragraph for regular body text",
+    "Speaker labels not identified as zb_heading",
+    "Page number not filtered",
+    "Missing text content",
+    "Incomplete region definitions"
+  ],
+  "doc_id": "1220",
+  "page": 3,
+  "elapsed_seconds": 11.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from list_item to zb_paragraph": 1,
+    "Corrected label and adjusted bbox": 1,
+    "Corrected label": 1,
+    "Corrected label to _filter for page number": 1,
+    "ADDED": 4
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il obéit aux méandres de pierre, et une odeur, inconnue et attendue, inconnue et reconnue, inconnue et née en même temps que lui, éveille en lui une rageuse convoitise: une odeur de rapt, de victime demi-morte, de sang jailli encore chargé de vie, de tendresse broyée, de chair brûlée. Il croit sentir la trace froide et torride du dragon cracheur de feu et de ses proies. Il se hâte. Brusquement, le voilà sur la roche plate, sous les étoiles. Le vide. Le vent. Il se sent nu: pas un serpent, un ver. Il s'enroule sur lui-même, autour de rien, autour d'un terrible rien. Princesse, ô ma Princesse. - Il voulut repartir, mais retomba et s'endormit.",
+      "bbox": {
+        "x_pct": 9.661,
+        "y_pct": 11.17,
+        "w_pct": 66.133,
+        "h_pct": 41.886
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled transcription text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand il s'éveilla, c'était la fin d'un jour. Un reste de lumière flottait sous le ciel vert. La vallée succombait déjà, la nuit sortait de partout. Il se mit à monter. La roche prenait fin, il rampait à travers d'inextricables broussailles, basses et épineuses. Soudain le vent",
+      "bbox": {
+        "x_pct": 9.818,
+        "y_pct": 61.81,
+        "w_pct": 66.061,
+        "h_pct": 17.256
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled/truncated transcription text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "41",
+      "bbox": {
+        "x_pct": 72.18,
+        "y_pct": 82.26,
+        "w_pct": 2.5,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Transcription in original JSON was heavily corrupted/garbled.",
+    "Page number missing from initial JSON detection.",
+    "Bounding boxes contained artifactual 'git' and 'Quand il s'éveilla' prefixes in the raw text fields."
+  ],
+  "doc_id": "2260",
+  "page": 39,
+  "elapsed_seconds": 5.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

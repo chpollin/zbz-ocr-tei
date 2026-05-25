@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "24",
+      "bbox": {
+        "x_pct": 12.255,
+        "y_pct": 3.738,
+        "w_pct": 2.574,
+        "h_pct": 2.378
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 535.539,
+        "y_pct": 3.738,
+        "w_pct": 39.461,
+        "h_pct": 2.238
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Also ist das Erkennen des Subjekts auf eine bestimmte Art und Weise selbst eine Grenze, die es nicht überschreiten kann. Es möchte gar nicht an diese Grenze kommen, aber es ist selbst diese Grenze. Das bedeutet, daß der Mensch selbst – und das ist weder eine Neuigkeit noch ein seltener Gedanke – ein Paradox ist. Ein Paradox ist ein Widerspruch, aber ein besonderer. Ein Widerspruch ist nämlich etwas, das sich nicht denken läßt; aber diese logische Unmöglichkeit schließt auch das Sein, was nicht gedacht werden kann, aus. Ein Paradox dagegen ist ein verwirklichter Widerspruch. Es ist also, weil es ist, nicht etwas, was nicht sein kann. Deswegen sage ich also nicht wie Conrad Ferdinand Meyer: „Ich bin ein Mensch mit seinem Widerspruch“, sondern ich sage: „Der Mensch ist ein Paradox.“",
+      "bbox": {
+        "x_pct": 12.377,
+        "y_pct": 7.566,
+        "w_pct": 80.11,
+        "h_pct": 21.957
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content instead of truncated strings."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Er ist nicht nur ein Paradox auf der Ebene der Erkenntnis, sondern auch auf der Ebene des Handelns, des Ethischen. Hier häufen sich sogar die Widersprüche. Denn wenn der Mensch wirklich frei handeln soll, darf er nicht bedingt sein. Doch seine Handlung gehört zur phänomenalen Welt, ist also bedingt. Also ist sie gleichzeitig bedingt und unbedingt. Ethisch ist sie im Sinne Kants nur, wenn sie unbedingt ist, und das bedeutet absolut unbedingt. Nur das ist bei Kant eine echte Tat, d.h. eine Tat, die durch das Absolute hindurchgegangen ist, die durch den kategorischen Imperativ befohlen wurde. Auch hier gibt es einen Widerspruch: Sie ist eine echte Tat, eine echte Handlung nur als absolute, gleichzeitig ist sie aber bedingt.",
+      "bbox": {
+        "x_pct": 12.132,
+        "y_pct": 29.383,
+        "w_pct": 80.184,
+        "h_pct": 19.901
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers schreibt in diesem Zusammenhang Folgendes: Es scheint, als könnten wir von allem, was wir wissen können, am besten wissen, was wir selbst sind, denn das ist das Nächste. Und doch wissen wir es nie. Hier liegt das Problem. Das ist der Knoten der Sache. Wir gelangen an Grenzen, stehen ständig vor einer Herausforderung, auf die wir nicht durch Wirklichkeit antworten können. Wir sind also eine seltsame Gattung von Tieren, die aus dem Vaterland, das wir uns geben, verbannt sind, und unser Denken ist von Sehnsucht beherrscht.",
+      "bbox": {
+        "x_pct": 12.255,
+        "y_pct": 48.824,
+        "w_pct": 80.061,
+        "h_pct": 15.674
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jemand hat einmal in meiner Gegenwart einen Pfarrer gefragt: „Wie lange hat es das Paradies auf Erden gegeben?“ Wie lange sind Adam und Eva dort geblieben?“ Und der Theologe hat geantwortet: „Man weiß es nicht, aber aller Wahrscheinlichkeit nach ist es sehr kurz gewesen.“ Ich habe oft an diese Antwort gedacht. Ich glaube, es ist eine ganz tiefe Antwort. Warum ist es sehr wahrscheinlich, daß es kurz gewesen ist? Weil das Paradies der Ort des Glücks war. Also sollte nichts fehlen im Paradies; denn wenn etwas fehlt, ist es nicht mehr das Paradies. Wenn nichts fehlte, gab es vollkommenes Glück. Nun denke ich, daß die Menschen für vollkommenes Glück nicht sehr begabt sind. Im vollkommenen Glück streben sie nach nichts mehr, und wenn man nach nichts mehr strebt, dann fehlt",
+      "bbox": {
+        "x_pct": 12.132,
+        "y_pct": 64.696,
+        "w_pct": 79.939,
+        "h_pct": 21.817
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial JSON had truncated text for all paragraph segments.",
+    "Page number and running header missing from JSON array.",
+    "Some text transcription inaccuracies in existing fields."
+  ],
+  "doc_id": "2990",
+  "page": 17,
+  "elapsed_seconds": 8.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

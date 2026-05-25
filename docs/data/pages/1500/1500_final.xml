@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">De la finitude</title>
+        <author>Hersch, Jeanne</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1500</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>De la finitude</title>
+            <author>Hersch, Jeanne</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1977</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). No issues found</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_1_r_1" ulx="352" uly="129" lrx="623" lry="162" />
+      <zone xml:id="facs_1_r_2" ulx="144" uly="130" lrx="279" lry="159" />
+      <zone xml:id="facs_1_r_3" ulx="349" uly="170" lrx="840" lry="242" />
+      <zone xml:id="facs_1_r_4" ulx="145" uly="171" lrx="310" lry="202" />
+      <zone xml:id="facs_1_r_5" ulx="145" uly="213" lrx="221" lry="238" />
+      <zone xml:id="facs_1_r_6" ulx="145" uly="253" lrx="207" lry="278" />
+      <zone xml:id="facs_1_r_7" ulx="352" uly="255" lrx="371" lry="276" />
+      <zone xml:id="facs_1_r_8" ulx="147" uly="333" lrx="236" lry="359" />
+      <zone xml:id="facs_1_r_9" ulx="353" uly="333" lrx="503" lry="359" />
+      <zone xml:id="facs_1_r_10" ulx="352" uly="374" lrx="532" lry="404" />
+      <zone xml:id="facs_1_r_11" ulx="145" uly="375" lrx="225" lry="400" />
+      <zone xml:id="facs_1_r_12" ulx="348" uly="409" lrx="764" lry="447" />
+      <zone xml:id="facs_1_r_13" ulx="145" uly="416" lrx="203" lry="440" />
+      <zone xml:id="facs_1_r_14" ulx="145" uly="1025" lrx="377" lry="1057" />
+      <zone xml:id="facs_1_r_15" ulx="144" uly="1054" lrx="1092" lry="1179" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_2_r_1" ulx="568" uly="209" lrx="774" lry="246" />
+      <zone xml:id="facs_2_r_2" ulx="211" uly="265" lrx="1132" lry="473" />
+      <zone xml:id="facs_2_r_3" ulx="658" uly="502" lrx="684" lry="526" />
+      <zone xml:id="facs_2_r_4" ulx="213" uly="534" lrx="1133" lry="777" />
+      <zone xml:id="facs_2_r_5" ulx="213" uly="772" lrx="1134" lry="952" />
+      <zone xml:id="facs_2_r_6" ulx="214" uly="949" lrx="1134" lry="1038" />
+      <zone xml:id="facs_2_r_7" ulx="215" uly="1036" lrx="1134" lry="1127" />
+      <zone xml:id="facs_2_r_8" ulx="214" uly="1125" lrx="1135" lry="1222" />
+      <zone xml:id="facs_2_r_9" ulx="215" uly="1216" lrx="1135" lry="1340" />
+      <zone xml:id="facs_2_r_10" ulx="215" uly="1337" lrx="1136" lry="1520" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_3_r_1" ulx="87" uly="203" lrx="1009" lry="298" />
+      <zone xml:id="facs_3_r_2" ulx="87" uly="323" lrx="1009" lry="508" />
+      <zone xml:id="facs_3_r_3" ulx="87" uly="505" lrx="1007" lry="567" />
+      <zone xml:id="facs_3_r_4" ulx="84" uly="562" lrx="1009" lry="721" />
+      <zone xml:id="facs_3_r_5" ulx="84" uly="728" lrx="1009" lry="859" />
+      <zone xml:id="facs_3_r_6" ulx="84" uly="861" lrx="1007" lry="1043" />
+      <zone xml:id="facs_3_r_7" ulx="86" uly="1038" lrx="1006" lry="1164" />
+      <zone xml:id="facs_3_r_8" ulx="84" uly="1159" lrx="1006" lry="1283" />
+      <zone xml:id="facs_3_r_9" ulx="531" uly="1304" lrx="556" lry="1330" />
+      <zone xml:id="facs_3_r_10" ulx="83" uly="1337" lrx="1004" lry="1461" />
+      <zone xml:id="facs_3_r_11" ulx="1241" uly="1351" lrx="2482" lry="1597" />
+      <zone xml:id="facs_3_r_12" ulx="82" uly="1454" lrx="1004" lry="1518" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_4_r_1" ulx="212" uly="206" lrx="1132" lry="267" />
+      <zone xml:id="facs_4_r_2" ulx="210" uly="267" lrx="1133" lry="598" />
+      <zone xml:id="facs_4_r_3" ulx="211" uly="593" lrx="1132" lry="866" />
+      <zone xml:id="facs_4_r_4" ulx="212" uly="862" lrx="1132" lry="1250" />
+      <zone xml:id="facs_4_r_5" ulx="213" uly="1242" lrx="1132" lry="1340" />
+      <zone xml:id="facs_4_r_6" ulx="213" uly="1337" lrx="1134" lry="1518" />
+      <zone xml:id="facs_4_r_7" ulx="214" uly="1443" lrx="246" lry="1474" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_5_r_1" ulx="99" uly="202" lrx="1022" lry="272" />
+      <zone xml:id="facs_5_r_2" ulx="100" uly="263" lrx="1021" lry="446" />
+      <zone xml:id="facs_5_r_3" ulx="101" uly="442" lrx="1021" lry="598" />
+      <zone xml:id="facs_5_r_4" ulx="101" uly="594" lrx="1023" lry="1099" />
+      <zone xml:id="facs_5_r_5" ulx="101" uly="1099" lrx="1023" lry="1311" />
+      <zone xml:id="facs_5_r_6" ulx="102" uly="1306" lrx="1022" lry="1369" />
+      <zone xml:id="facs_5_r_7" ulx="101" uly="1367" lrx="1023" lry="1492" />
+      <zone xml:id="facs_5_r_8" ulx="842" uly="1488" lrx="1022" lry="1515" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_6_r_1" ulx="196" uly="130" lrx="1116" lry="174" />
+      <zone xml:id="facs_6_r_2" ulx="196" uly="199" lrx="1116" lry="354" />
+      <zone xml:id="facs_6_r_3" ulx="196" uly="351" lrx="1116" lry="414" />
+      <zone xml:id="facs_6_r_4" ulx="642" uly="438" lrx="663" lry="462" />
+      <zone xml:id="facs_6_r_5" ulx="196" uly="469" lrx="1115" lry="537" />
+      <zone xml:id="facs_6_r_6" ulx="194" uly="558" lrx="1116" lry="741" />
+      <zone xml:id="facs_6_r_7" ulx="196" uly="738" lrx="1116" lry="833" />
+      <zone xml:id="facs_6_r_8" ulx="196" uly="825" lrx="1115" lry="918" />
+      <zone xml:id="facs_6_r_9" ulx="196" uly="911" lrx="1116" lry="1189" />
+      <zone xml:id="facs_6_r_10" ulx="194" uly="1182" lrx="1116" lry="1456" />
+      <zone xml:id="facs_6_r_11" ulx="228" uly="1489" lrx="688" lry="1519" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_7_r_1" ulx="101" uly="204" lrx="1023" lry="448" />
+      <zone xml:id="facs_7_r_2" ulx="101" uly="442" lrx="1023" lry="597" />
+      <zone xml:id="facs_7_r_3" ulx="102" uly="588" lrx="1024" lry="680" />
+      <zone xml:id="facs_7_r_4" ulx="102" uly="682" lrx="1025" lry="1101" />
+      <zone xml:id="facs_7_r_5" ulx="102" uly="1097" lrx="1025" lry="1339" />
+      <zone xml:id="facs_7_r_6" ulx="103" uly="1338" lrx="1025" lry="1489" />
+      <zone xml:id="facs_7_r_7" ulx="762" uly="1486" lrx="1025" lry="1517" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        
+          <div type="text">
+<p facs="#facs_1_r_1">
+            Zeitschrift: Theologische Zeitschrift
+          </p>
+          <p facs="#facs_1_r_2">
+            Herausgeber: <orgName ref="GND:unknown">Theologische Fakultät der Universität Basel</orgName>
+          </p>
+          <p facs="#facs_1_r_3">
+            Band: 33 (1977)
+          </p>
+          <p facs="#facs_1_r_4">
+            Heft: 5
+          </p>
+          <p facs="#facs_1_r_5">
+            Artikel: De la finitude
+          </p>
+          <p facs="#facs_1_r_6">
+            Autor: <persName ref="GND:118815679">Hersch, Jeanne</persName>
+          </p>
+          <p facs="#facs_1_r_7">
+            DOI: https://doi.org/10.5169/seals-878514
+          </p>
+          <p facs="#facs_1_r_8">
+            Nutzungsbedingungen
+          </p>
+          <p facs="#facs_1_r_9">
+            Die <orgName ref="GND:unknown">ETH-Bibliothek</orgName> ist die Anbieterin der digitalisierten Zeitschriften auf <orgName ref="GND:unknown">E-Periodica</orgName>. Sie besitzt keine Urheberrechte an den Zeitschriften und ist nicht verantwortlich für deren Inhalte. Die Rechte liegen in der Regel bei den Herausgebern beziehungsweise den externen Rechteinhabern. Das Veröffentlichen von Bildern in Print- und Online-Publikationen sowie auf Social Media-Kanälen oder Webseiten ist nur mit vorheriger Genehmigung der Rechteinhaber erlaubt. Mehr erfahren
+          </p>
+          <p facs="#facs_1_r_10">
+            Conditions d'utilisation
+          </p>
+          <p facs="#facs_1_r_11">
+            L'<orgName ref="GND:unknown">ETH Library</orgName> est le fournisseur des revues numérisées. Elle ne détient aucun droit d'auteur sur les revues et n'est pas responsable de leur contenu. En règle générale, les droits sont détenus par les éditeurs ou les détenteurs de droits externes. La reproduction d'images dans des publications imprimées ou en ligne ainsi que sur des canaux de médias sociaux ou des sites web n'est autorisée qu'avec l'accord préalable des détenteurs des droits. En savoir plus
+          </p>
+          <p facs="#facs_1_r_12">
+            Terms of use
+          </p>
+          <p facs="#facs_1_r_13">
+            The <orgName ref="GND:unknown">ETH Library</orgName> is the provider of the digitised journals. It does not own any copyrights to the journals and is not responsible for their content. The rights usually lie with the publishers or the external rights holders. Publishing images in print and online publications, as well as on social media channels or websites, is only permitted with the prior consent of the rights holders. Find out more
+          </p>
+          <p facs="#facs_1_r_14">
+            Download PDF: 28.07.2025
+          </p>
+          <p facs="#facs_1_r_15">
+            <orgName ref="GND:unknown">ETH-Bibliothek Zürich</orgName>, <orgName ref="GND:unknown">E-Periodica</orgName>, https://www.e-periodica.ch
+          </p>
+        
+      </div>
+<pb facs="#facs_2" n="2" />
+        <div type="text">
+<head facs="#facs_2_r_1">
+          <title type="main">De la finitude</title>
+        </head>
+        <p facs="#facs_2_r_2">
+          <lb facs="#facs_2_r_2" n="N001" />La finitude caractérise le statut ontologique de l'homme. A première vue, il <lb facs="#facs_2_r_2" n="N002" />s'agit là d'une notion bien claire: elle signifie que l'homme, sur tous les plans, en <lb facs="#facs_2_r_2" n="N003" />tous sens et dans toutes les directions, rencontre inévitablement des limites. Mais <lb facs="#facs_2_r_2" n="N004" />dès qu'on veut réfléchir sur la finitude, les choses se compliquent. La notion se <lb facs="#facs_2_r_2" n="N005" />brise en négations multiples, qui sont en même temps, pour le sujet humain, des <lb facs="#facs_2_r_2" n="N006" />conditions de réalité. Et d'abord: l'esprit découvre sa prison. La réflexion sur la <lb facs="#facs_2_r_2" n="N007" />finitude reste elle-même enfermée dans la finitude.
+        </p>
+        </div>
+<div n="2">
+          <head facs="#facs_2_r_3">
+            <lb facs="#facs_2_r_3" n="N001" />1.
+          </head>
+          <p facs="#facs_2_r_4">
+            <lb facs="#facs_2_r_4" n="N001" />Il suffit de s'interroger sur les contraires du fini pour voir s'ouvrir un éventail <lb facs="#facs_2_r_4" n="N002" />de notions; et chaque fois, par rapport à ce contraire, le mot «fini» prend un sens <lb facs="#facs_2_r_4" n="N003" />différent. Par rapport à «infini», «fini» signifie: borné, fermé. Par rapport à «total», <lb facs="#facs_2_r_4" n="N004" />«fini» signifie: partiel, fragmentaire. Par rapport à «éternel», il signifie «temporel»; <lb facs="#facs_2_r_4" n="N005" />et il signifie «mortel» par rapport à «immortel». Il désigne un manque de puissance <lb facs="#facs_2_r_4" n="N006" />ou une impuissance par rapport à la toute-puissance – une réalité dérivée, <lb facs="#facs_2_r_4" n="N007" />dépendante, contingente, par rapport à la cause de soi – une réalité relative et <lb facs="#facs_2_r_4" n="N008" />conditionnelle par rapport à l'absolu.
+          </p>
+          <p facs="#facs_2_r_5">
+            <lb facs="#facs_2_r_5" n="N001" />Si l'on examine ces termes en cherchant ce qui leur est commun, on découvre <lb facs="#facs_2_r_5" n="N002" />que «l'infini» est peut-être le contraire le moins significatif du fini, d'autant plus <lb facs="#facs_2_r_5" n="N003" />que le statut ontologique du «fini» et de «l'infini» apparaît variable: ainsi pour les <lb facs="#facs_2_r_5" n="N004" />Grecs, la limite, la détermination appartenait à la forme, et de ce fait à l'être. Et si <lb facs="#facs_2_r_5" n="N005" />«omnis determinatio est negatio», la négation retrouve par ce détour sa fonction <lb facs="#facs_2_r_5" n="N006" />actualisatrice, elle est condition d'être.
+          </p>
+          <p facs="#facs_2_r_6">
+            <lb facs="#facs_2_r_6" n="N001" />Mais tous les autres couples de contraires ont en commun une opposition plus <lb facs="#facs_2_r_6" n="N002" />évidente: manque ou non-manque, incomplétude ou complétude, autosuffisance ou <lb facs="#facs_2_r_6" n="N003" />besoin de...
+          </p>
+          <p facs="#facs_2_r_7">
+            <lb facs="#facs_2_r_7" n="N001" />Bien plus clairement qu'à l'infini, la finitude s'oppose à la plénitude condensée <lb facs="#facs_2_r_7" n="N002" />en soi, sans dehors, ni avant, ni après – sans espace ni temps – noumène originel <lb facs="#facs_2_r_7" n="N003" />ou final.
+          </p>
+          <p facs="#facs_2_r_8">
+            <lb facs="#facs_2_r_8" n="N001" />Il suit de là que la finitude n'est pas une caractéristique, parmi beaucoup d'autres, <lb facs="#facs_2_r_8" n="N002" />de la condition humaine. Elle en est la donnée constitutive, <foreign xml:lang="lat"><hi rendition="#i">sine qua non</hi></foreign>. Elle est, <lb facs="#facs_2_r_8" n="N003" />à proprement parler, la condition d'être de l'être humain.
+          </p>
+          <p facs="#facs_2_r_9">
+            <lb facs="#facs_2_r_9" n="N001" />Or cette condition, la finitude, est déjà remplie, elle est déjà là, constitutive de <lb facs="#facs_2_r_9" n="N002" />notre être, de notre pensée qui la pense, quand nous la nommons. Il semble pourtant <lb facs="#facs_2_r_9" n="N003" />qu'on ne devrait pouvoir la constater et parler d'elle qu'en étant soi-même, en <lb facs="#facs_2_r_9" n="N004" />quelque manière, au-delà d'elle.
+          </p>
+          <p facs="#facs_2_r_10">
+            <lb facs="#facs_2_r_10" n="N001" />Rappelons par exemple ce que <persName ref="GND:118594893">Platon</persName> nous dit de l'égalité: nous ne constatons, <lb facs="#facs_2_r_10" n="N002" />dans notre expérience sensible, qu'un à-peu-près d'égalité, jamais l'égalité parfaite. <lb facs="#facs_2_r_10" n="N003" />Mais si nous n'avions aucun accès à cette égalité parfaite, le caractère approximatif <lb facs="#facs_2_r_10" n="N004" />de l'égalité empirique nous échapperait, l'à-peu-près serait pour nous la norme <lb facs="#facs_2_r_10" n="N005" />exacte. Ainsi donc l'à-peu-près saisi comme tel témoigne déjà du recours au parfait, <lb facs="#facs_2_r_10" n="N006" />sans lequel il ne serait pas un à-peu-près. L'idée, irrémédiablement
+          </p>
+        </div>
+      <pb facs="#facs_3" n="3" />
+        <div type="text">
+<p facs="#facs_3_r_1">
+          J. <persName ref="GND:118815679">Hersch</persName>, De la finitude<lb facs="#facs_3_l_1_1" n="N001" />295
+        </p>
+        <p facs="#facs_3_r_2">
+          absente de l'expérience sensible, se révèle par cette absence à travers l'expérience<lb facs="#facs_3_l_2_1" n="N001" />sensible elle-même et appelle le ressouvenir. Nous concevons l'égalité parfaite, en<lb facs="#facs_3_l_2_2" n="N002" />tant qu'absente de notre univers sensible.
+        </p>
+        <p facs="#facs_3_r_3">
+          Concevons-nous la non-finitude, la complétude absolue? Oui, puisque nous la<lb facs="#facs_3_l_3_1" n="N001" />nommons. Mais non à la manière de l'égalité parfaite. L'égalité parfaite, nous la<lb facs="#facs_3_l_3_2" n="N002" />concevons par un passage à la limite, de l'approximation à l'exactitude, ou du<lb facs="#facs_3_l_3_3" n="N003" />semblable à l'identique, du physique au mathématique. Or il n'y a pas de passage<lb facs="#facs_3_l_3_4" n="N004" />vers la complétude absolue, il y a un saut ontologique. Si nous pouvons la nommer,<lb facs="#facs_3_l_3_5" n="N005" />ce n'est pas grâce à une opération de l'entendement, ou de l'imagination rationnelle,<lb facs="#facs_3_l_3_6" n="N006" />mais à travers une visée, à travers le manque du désir, une nostalgie existentielle.
+        </p>
+        <p facs="#facs_3_r_4">
+          Dans son vrai sens, d'ailleurs, et malgré une pédagogie en apparence moins<lb facs="#facs_3_l_4_1" n="N001" />exigeante, l'idée platonicienne aussi exige ce mouvement de l'âme entière.
+        </p>
+        <p facs="#facs_3_r_5">
+          Désir, eros, tel est bien le seul organe capable de « connaître » la non-finitude,<lb facs="#facs_3_l_5_1" n="N001" />de lui donner un « contenu », qui ne peut être qu'existentiel. Et de même que<lb facs="#facs_3_l_5_2" n="N002" />l'approximatif sensible n'est pas saisi comme tel sans référence à l'exactitude<lb facs="#facs_3_l_5_3" n="N003" />parfaite de l'idée, de même la finitude n'a de sens que par référence à l'infinitude<lb facs="#facs_3_l_5_4" n="N004" />comme complétude absolue.
+        </p>
+        <p facs="#facs_3_r_6">
+          Ainsi c'est pour la liberté que l'infinitude et la finitude ont un sens. La liberté<lb facs="#facs_3_l_6_1" n="N001" />n'est pas seulement un agent pratique. Il y a des « choses » qu'elle est seule à<lb facs="#facs_3_l_6_2" n="N002" />« comprendre ». (C'est parce qu'il y a ces « choses », qui n'ont de sens que pour la<lb facs="#facs_3_l_6_3" n="N003" />seule liberté, que la philosophie existe, et continue à exister à travers les millénaires,<lb facs="#facs_3_l_6_4" n="N004" />comme sauvée par sa précarité.)
+        </p>
+        <p facs="#facs_3_r_7">
+          Mais la liberté a une manière bien à elle de « comprendre ». Elle ne comprend<lb facs="#facs_3_l_7_1" n="N001" />pas par l'adéquation (<foreign xml:lang="lat">adaequatio rei et intellectus</foreign>), mais au contraire par l'inadéquation,<lb facs="#facs_3_l_7_2" n="N002" />par sa visée d'une adéquation impossible. L'« objet » de sa visée, la complétude<lb facs="#facs_3_l_7_3" n="N003" />absolue, serait l'abolition de toute distance entre être et valeur, leur coïncidence<lb facs="#facs_3_l_7_4" n="N004" />ontologique. Or la finitude, c'est l'impossibilité de les faire coïncider. Bien plus :<lb facs="#facs_3_l_7_5" n="N005" />c'est ne pas pouvoir même les penser coïncidant.
+        </p>
+        <p facs="#facs_3_r_8">
+          Saisir la nature de la finitude, c'est saisir cette impossibilité comme condition de<lb facs="#facs_3_l_8_1" n="N001" />la liberté de toute pensée, de l'existence même d'un sujet pensant. Si être et valeur<lb facs="#facs_3_l_8_2" n="N002" />coïncident, il n'y a plus pensée, il n'y a plus sujet – il ne peut que se produire une<lb facs="#facs_3_l_8_3" n="N003" />expérience ponctuelle qui éteint le temps.
+        </p>
+        <p facs="#facs_3_r_9">
+          Ainsi, cherchant à saisir la finitude dans son essence, nous nous interrogeons<lb facs="#facs_3_l_9_1" n="N001" />nécessairement sur son inaccessible négation, la complétude absolue. Et nous<lb facs="#facs_3_l_9_2" n="N002" />découvrons que si cette négation (inaccessible) était atteinte, le manque ainsi<lb facs="#facs_3_l_9_3" n="N003" />supprimé abolirait toute visée, toute pensée – la condition humaine.
+        </p>
+        </div>
+<div n="2">
+          <head>2.</head>
+          <p facs="#facs_3_r_11">
+            Nous nous sommes tenus jusqu'ici dans l'abstrait. Je voudrais ici choisir quelques<lb facs="#facs_3_l_11_1" n="N001" />perspectives permettant de concrétiser dans une certaine mesure ce « manque »<lb facs="#facs_3_l_11_2" n="N002" />essentiel, insurmontable, sans lequel il n'y aurait pas de condition humaine. – Mais<lb facs="#facs_3_l_11_3" n="N003" />il n'y en aurait pas non plus si les hommes renonçaient à le surmonter.
+          </p>
+          <p facs="#facs_3_r_12">
+            Examinons brièvement le rôle joué par l'incomplétude de la perception et du<lb facs="#facs_3_l_12_1" n="N001" />savoir ; l'insatisfaction essentielle à l'affectivité ; l'insatisfaction existentielle ; les
+          </p>
+        </div>
+      <pb facs="#facs_4" n="296" />
+        <div type="text">
+<head facs="#facs_4_r_1">
+          <lb facs="#facs_4_r_1" n="N001" />J. <persName ref="GND:118815679">Hersch</persName>, De la finitude
+        </head>
+        <p facs="#facs_4_r_2">
+          <lb facs="#facs_4_r_2" n="N001" />secrets divins; la dispersion et la mort du moi. Nous retrouvons là, certes, de vieilles et banales évidences.
+        </p>
+        <p facs="#facs_4_r_3">
+          <lb facs="#facs_4_r_3" n="N001" />Incomplétude de la perception et du savoir. – Nous ne faisons jamais que l'expérience d'un «fragment» du monde, un fragment de faible étendue dans l'espace et dans le temps. Même si nous parlons de l'univers, qui devient pour nous toujours plus vaste, plus durable, s'étendant vers l'avant, vers l'après, vers le lointain, ce mot «univers» garde en lui, dans toutes les directions, une anticipation purement verbale et comme un chèque théorique resté sans provision. Le tout nous est refusé. En direction de l'infiniment petit, à supposer que la microphysique finisse par atteindre une unité qu'elle déclare ultime, je me demande si pour l'esprit humain un tel résultat prendrait le sens d'une réussite définitive, d'un problème résolu, ou au contraire celui d'un échec définitif, l'évidence d'une impossibilité à poursuivre l'enquête.
+        </p>
+        <p facs="#facs_4_r_4">
+          <lb facs="#facs_4_r_4" n="N001" />Ajoutons à cela le caractère limité de l'appareil qui nous permet de rencontrer le monde extérieur, cet appareil qui comporte arbitrairement cinq sens, et cinq sens discontinus, dont aucune transition ne permet de surmonter la discontinuité. Il est bien évident – même sans recourir ici l'a priori <persName ref="GND:118559796">kantien</persName> – que ces sens ne nous livrent que des aspects toujours partiels du réel, non le réel, toujours refusé. Et si nous savons bien que dans l'espace et dans le temps nous ne rencontrons que du fini, il faut ajouter que l'espace et le temps, partout présents dans notre expérience, nous sont aussi refusés, car (qu'on les considère comme formes a priori ou non) nous n'arrivons pas à concevoir vraiment, de façon cohérente, ce qu'ils sont.
+        </p>
+        <p facs="#facs_4_r_5">
+          <lb facs="#facs_4_r_5" n="N001" />Insatisfaction de l'affectivité. – Tout ce qu'ici-bas nous visons, voulons et aimons se trouve voué à la destruction. Une telle évidence, dans son universalité, peut faire douter du poids des enjeux, et donc du sens de l'affectivité <choice><sic>ell-même</sic><corr>elle-même</corr></choice>. L'affectivité se nourrit de possible et d'absolu, elle s'éteint devant la nécessité et l'accommodement. Si l'on ne sauve jamais rien ni personne, s'il n'est possible que de retarder l'échéance, à quoi bon? Une bonne partie des œuvres littéraires et des arts se débattent dans ce piège. Mais il y a plus. L'affectivité se heurte à la finitude non seulement dans son objet, mais dans sa nature même. Elle se découvre incapable de vivre la coïncidence du désir et de sa satisfaction. Elle se découvre insatisfaite par nature. En outre, vouée à l'absolu inaccessible, elle n'est même pas capable de vivre cette souffrance dans sa radicalité. On la dirait comme épargnée malgré elle par une ruse, à l'abri de l'intégralité, à laquelle pourtant elle tend, de la joie ou du malheur.
+        </p>
+        <p facs="#facs_4_r_6">
+          <lb facs="#facs_4_r_6" n="N001" />Dès lors il ne lui reste plus que des complaisances à l'égard de conditions si contraires à son exigence radicale: cultiver le désir pour le désir – ou encore user, «hébéter» cette exigence, en se contentant de satiétés moyennes et successives.
+        </p>
+        <p facs="#facs_4_r_7">
+          <lb facs="#facs_4_r_7" n="N001" />Insatisfaction existentielle. – Qui suis-je? Quoi suis-je? Je, c'est centralement une possible liberté, celle de poser un acte qui soit mon acte. – Mais je vois <lb facs="#facs_4_r_7" n="N002" break="no" />aussitôt que ce je est le produit d'innombrables données qui s'enchaînent à l'infini – hérédité, société, histoire, nature, culture –, qui s'enchaînent à l'infini et se perdent dans l'indéfini. – Je vois aussi que je continue à être défini par des données qui me constituent et qui ne dépendent nullement de mon choix: ma condition mor
+        </p>
+      </div>
+<pb facs="#facs_5" n="297" />
+        <div type="text">
+<p facs="#facs_5_r_1">
+          J. <persName ref="GND:118815679">Hersch</persName>, De la finitude<lb facs="#facs_5_l_1_1" n="N001" />297
+        </p>
+        <p facs="#facs_5_r_2">
+          <lb facs="#facs_5_l_2_1" n="N001" />telle, corporelle, l'époque où je vis, le passé que j'ai déjà et auquel je ne peux plus<lb facs="#facs_5_l_2_2" n="N002" />rien changer, et tant d'autres.
+        </p>
+        <p facs="#facs_5_r_3">
+          <lb facs="#facs_5_l_3_1" n="N001" />Si j'essaye de me dépouiller par la pensée de toutes ces déterminations données<lb facs="#facs_5_l_3_2" n="N002" />pour obtenir par soustraction, comme un résidu véritable ou authentique, le <hi rendition="#i">je</hi> que<lb facs="#facs_5_l_3_3" n="N003" />je suis en tant que liberté, je ne trouve, à la fin, que rien. La liberté que je suis est<lb facs="#facs_5_l_3_4" n="N004" />inaccessible et comme niée. Il apparaît que mon être est dérivé, non pas d'un tout<lb facs="#facs_5_l_3_5" n="N005" />ou d'un absolu, mais découlant d'une foule indéchiffrable de facteurs et comme<lb facs="#facs_5_l_3_6" n="N006" />infiltré de néant dans sa demicohérence éphémère.
+        </p>
+        <p facs="#facs_5_r_4">
+          <lb facs="#facs_5_l_4_1" n="N001" />Cet être, dérivé de tant de manières, est étudié par les sciences humaines.<lb facs="#facs_5_l_4_2" n="N002" />Chacune part de ses prémisses et de ses postulats propres, et utilise les méthodes<lb facs="#facs_5_l_4_3" n="N003" />qu'elle a pu élaborer. Toutes tendent de façon plus ou moins nette à frapper de<lb facs="#facs_5_l_4_4" n="N004" />nullité l'absolu inaccessible du <hi rendition="#i">je</hi> existentiel en le résorbant dans un système<lb facs="#facs_5_l_4_5" n="N005" />cohérent de dérivation. Une totalité explicative se substitue à la liberté.
+        </p>
+        <p facs="#facs_5_r_5">
+          <lb facs="#facs_5_l_5_1" n="N001" /><hi rendition="#i">Les secrets divins.</hi> – Comme <persName ref="GND:118557106">Jaspers</persName> l'a bien montré, la pensée qui s'attaque<lb facs="#facs_5_l_5_2" n="N002" />aux problèmes du premier commencement, de la fin dernière ou de l'absolu s'effondre<lb facs="#facs_5_l_5_3" n="N003" />en antinomies, en tautologies ou en cercles. Il en va de même lorsqu'elle s'interroge<lb facs="#facs_5_l_5_4" n="N004" />sur les structures les plus simples de ses propres opérations. Elle semble vouée<lb facs="#facs_5_l_5_5" n="N005" />essentiellement à la quête de l'origine, du sens, de l'unité et de la simplicité. Mais<lb facs="#facs_5_l_5_6" n="N006" />on dirait au contraire que seule la complication la sauve, ou du moins sauve les<lb facs="#facs_5_l_5_7" n="N007" />apparences. Dès que la pensée réussit, à force de dépouillement, à poser les questions<lb facs="#facs_5_l_5_8" n="N008" />dans leur exigence nue, elle se heurte à des impossibilités et ne peut plus que percevoir<lb facs="#facs_5_l_5_9" n="N009" />le sens et l'appel de son propre échec. Au centre du principe d'identité, fondement<lb facs="#facs_5_l_5_10" n="N010" />de la logique, on trouve l'opacité de son dilemme : il est violé dès qu'il n'est plus<lb facs="#facs_5_l_5_11" n="N011" />tautologique. Le langage, avec la fixité de ses termes et la structure des jugements,<lb facs="#facs_5_l_5_12" n="N012" />se révèle inadéquat. L'intemporalité reste inaccessible à la succession discursive.<lb facs="#facs_5_l_5_13" n="N013" />La réflexion livre des lambeaux, jamais rien de total ni d'ultime. De toutes parts,<lb facs="#facs_5_l_5_14" n="N014" />en métaphysique, les antinomies nous cernent. Ses termes majeurs sont pour nous<lb facs="#facs_5_l_5_15" n="N015" />à la fois impensables et inévitables. C'est pourquoi, à travers l'échec auquel ils nous<lb facs="#facs_5_l_5_16" n="N016" />condamnent, nous voyons en eux des signes du dieu caché.
+        </p>
+        <p facs="#facs_5_r_6">
+          <lb facs="#facs_5_l_6_1" n="N001" /><hi rendition="#i">Le Moi épars et mortel.</hi> – Le temps de notre vie se resserre entre notre naissance<lb facs="#facs_5_l_6_2" n="N002" />et notre mort. Attachés à de l'éphémère, comme nous l'avons vu, nous sommes<lb facs="#facs_5_l_6_3" n="N003" />nous-mêmes éphémères, ce qui ne nous empêche pas de poser dans l'éphémère des<lb facs="#facs_5_l_6_4" n="N004" />enjeux absolus. Aussi sommes-nous pleins de complaisance à l'égard de tout ce qui<lb facs="#facs_5_l_6_5" n="N005" />semble susceptible de nous prolonger un peu : descendance, œuvres, gloire, etc.<lb facs="#facs_5_l_6_6" n="N006" />Ou encore, nous accueillons des perspectives de résurrection et d'immortalité qui<lb facs="#facs_5_l_6_7" n="N007" />assureraient des lendemains, encore temporels, à notre mort.
+        </p>
+        <p facs="#facs_5_r_7">
+          <lb facs="#facs_5_l_7_1" n="N001" />Mais ce n'est pas en dissimulant la finitude, ou en l'atténuant, ou en trichant<lb facs="#facs_5_l_7_2" n="N002" />avec elle, que nous en recevrons le sens et le fruit.
+        </p>
+        <p facs="#facs_5_r_8">
+          <lb facs="#facs_5_l_8_1" n="N001" />La finitude pleinement consciente nous parle de la non-finitude. Et il n'est pas<lb facs="#facs_5_l_8_2" n="N002" />pour l'homme d'autre langage de la non-finitude que celui que parle la finitude.<lb facs="#facs_5_l_8_3" n="N003" />Sans non-finitude, il n'y aurait pas de finitude. La référence à la non-finitude est<lb facs="#facs_5_l_8_4" n="N004" />omniprésente, aussi impossible à éliminer qu'à actualiser.
+        </p>
+        <p facs="#facs_5_r_9">
+          <lb facs="#facs_5_l_9_1" n="N001" />Si nous parlons, si nous avons un langage, ce n'est possible que grâce à l'<lb break="no" facs="#facs_5_l_9_2" n="N002" />ouver-
+        </p>
+      </div>
+<pb facs="#facs_6" n="298" />
+        <div type="text">
+<p facs="#facs_6_r_1">
+          <lb facs="#facs_6_r_1" n="N001" />J. <persName ref="GND:118815679">Hersch</persName>, De la finitude
+        </p>
+        <p facs="#facs_6_r_2">
+          <lb facs="#facs_6_r_2" n="N001" />ture sur le sens qu'engendre cette visée de la non-finitude, vouée à l'échec. Si la <lb facs="#facs_6_r_2" n="N002" />finitude existait sans l'infinitude, il n'y aurait que «les faits» – ou plutôt l'opacité <lb facs="#facs_6_r_2" n="N003" />absolue de «l'en-soi» <persName ref="GND:118605895">sartrien</persName>. Si l'infinitude pouvait être dite, il y aurait une «formule <lb facs="#facs_6_r_2" n="N004" />définitive ontologique», un inimaginable «sens-réalisé» une fois pour toutes, qui ne <lb facs="#facs_6_r_2" n="N005" />serait plus un sens.
+        </p>
+        <p facs="#facs_6_r_3">
+          <lb facs="#facs_6_r_3" n="N001" />Notre condition, c'est le travail nostalgique dans le fini. C'est l'inadéquation <lb facs="#facs_6_r_3" n="N002" />créatrice, condition de sens et de valeur.
+        </p>
+        <p facs="#facs_6_r_4">
+          <lb facs="#facs_6_r_4" n="N001" />3.
+        </p>
+        <p facs="#facs_6_r_5">
+          <lb facs="#facs_6_r_5" n="N001" />Nous avons vu ci-dessus des exemples où la finitude semblait dévaloriser les <lb facs="#facs_6_r_5" n="N002" />principales perspectives de la condition humaine. Prenons-en quelques-uns, où <lb facs="#facs_6_r_5" n="N003" />nous verrons la finitude devenir au contraire condition de la valeur.
+        </p>
+        <p facs="#facs_6_r_6">
+          <lb facs="#facs_6_r_6" n="N001" />Ainsi la mort : c'est elle qui donne à l'instant sa valeur unique, qui fait de lui une <lb facs="#facs_6_r_6" n="N002" />percée possible vers l'éternité. Sans elle, nous n'aurions affaire qu'à un allonge<lb facs="#facs_6_r_6" n="N003" break="no" />ment toujours fini du temps, qui rejetterait toute transcendance, à l'infini, vers le <lb facs="#facs_6_r_6" n="N004" />lointain. Mais en même temps, grâce à la finitude imposée par la mort et qui nous <lb facs="#facs_6_r_6" n="N005" />refuse la totalité, il reste toujours, au-delà d'elle, encore du temps, encore de l'es<lb facs="#facs_6_r_6" n="N006" break="no" />pace, encore de l'air respirable, pour le sens et la visée.
+        </p>
+        <p facs="#facs_6_r_7">
+          <lb facs="#facs_6_r_7" n="N001" />Ainsi le fait que nous n'ayons jamais affaire qu'à des aspects, à des fragments, <lb facs="#facs_6_r_7" n="N002" />et non à l'être, empêche les phénomènes de «boucher» la dimension du sens et <lb facs="#facs_6_r_7" n="N003" />incite à ouvrir une perspective sur un relais d'un autre ordre.
+        </p>
+        <p facs="#facs_6_r_8">
+          <lb facs="#facs_6_r_8" n="N001" />Grâce à la finitude, le moi, dispersé, dérivé, imbriqué, déterminé, peut être une <lb facs="#facs_6_r_8" n="N002" />visée d'unité, d'appropriation, d'autonomie, parce qu'il peut pratiquer un ancrage <lb facs="#facs_6_r_8" n="N003" />dans l'eros, et non dans le donné.
+        </p>
+        <p facs="#facs_6_r_9">
+          <lb facs="#facs_6_r_9" n="N001" />Si les conséquences de nos actes se propagent dans le «sans-fin» (<foreign xml:lang="deu">schlechte Unendlichkeit</foreign>) <lb facs="#facs_6_r_9" n="N002" />du fini, nos actes appellent le sens et la valeur d'un ailleurs (cf. <persName ref="GND:118557106">Jaspers</persName>: <foreign xml:lang="deu">quer zur Zeit</foreign>). <lb facs="#facs_6_r_9" n="N003" />Mais cet «ailleurs» comporte un double refus: il n'est pas un lieu de fuite permettant <lb facs="#facs_6_r_9" n="N004" />d'échapper au temps, et il ne promet aucun achèvement dans le temps. Il n'existe <lb facs="#facs_6_r_9" n="N005" />qu'au fil de l'effort humain dans le temps, soutenu malgré l'inadéquation temporelle <lb facs="#facs_6_r_9" n="N006" />des résultats aux valeurs, maintenant la présence et le sens dans la finitude «sans <lb facs="#facs_6_r_9" n="N007" />fin». Il exclut toute parousie «dans le temps». Pour cette «historicité» véritable, la <lb facs="#facs_6_r_9" n="N008" />fin des temps n'intervient vraiment qu'«après le temps», dans cet «après-dernier <lb facs="#facs_6_r_9" n="N009" />moment» dont parle <persName ref="GND:118559230">Kafka</persName>.
+        </p>
+        <p facs="#facs_6_r_10">
+          <lb facs="#facs_6_r_10" n="N001" />Il faut faire intervenir ici une sorte d'expérimentation, par l'affectivité métaphysique <lb facs="#facs_6_r_10" n="N002" />ou la raison transcendante, qui cherche à repérer les conditions de possibilité et les <lb facs="#facs_6_r_10" n="N003" />conditions de sens d'opérations que le sujet, grâce à la finitude et en la transcendant, <lb facs="#facs_6_r_10" n="N004" />peut réellement accomplir. <persName ref="GND:118557106">Jaspers</persName> donne un exemple de ce genre, qu'on retrouve à travers <lb facs="#facs_6_r_10" n="N005" />diverses variantes dans l'histoire de la philosophie.<hi rendition="#sup">1</hi> En résumé: Je pense l'infini, <lb facs="#facs_6_r_10" n="N006" />alors que je suis fini et ne rencontre que des réalités finies. Que cette pensée soit en <lb facs="#facs_6_r_10" n="N007" />moi et que je puisse prendre conscience de ma finitude, cela doit avoir une cause, et <lb facs="#facs_6_r_10" n="N008" />une cause infinie. Il faut donc que l'infini que je pense existe, sinon je ne comprendrais <lb facs="#facs_6_r_10" n="N009" />pas que je puisse le penser.
+        </p>
+        <note place="foot" n="1" xml:id="fn6-1" facs="#facs_6_r_11">
+          <lb facs="#facs_6_r_11" n="N001" /><hi rendition="#sup">1</hi> K. <persName ref="GND:118557106">Jaspers</persName>, <bibl corresp="GND:118557106">Philosophie, 3. Metaphysik</bibl>, p. 202.
+        </note>
+      </div>
+<pb facs="#facs_7" n="299" />
+        <div type="text">
+<p facs="#facs_7_r_1">
+          <persName ref="GND:118815679">J. Hersch</persName>, <hi rendition="#i">De la finitude</hi><lb facs="#facs_7_l_1_1" n="N001" />299
+        </p>
+        <p facs="#facs_7_r_2">
+          On voit ici de quelle sorte de «preuve» il s'agit : elle porte sur «la condition de<lb facs="#facs_7_l_2_1" n="N001" />possibilité» d'un fait réel : le fait que je pense l'infini. En son articulation essentielle<lb facs="#facs_7_l_2_2" n="N002" />cette «preuve» implique que c'est la liberté qui parle (non l'entendement), là où<lb facs="#facs_7_l_2_3" n="N003" />l'évidence rationnelle s'effondre parce qu'il s'agit d'un «objet» de pensée logiquement<lb facs="#facs_7_l_2_4" n="N004" />impossible. Une telle «preuve», ni empirique, ni logique, n'exprime pas la «réalité»<lb facs="#facs_7_l_2_5" n="N005" />d'une chose, mais un mouvement de la liberté saisissant, à travers sa finitude, une<lb facs="#facs_7_l_2_6" n="N006" />transcendance dont «l'infinité» a l'efficacité mystérieuse d'un «chiffre» ou d'un<lb facs="#facs_7_l_2_7" n="N007" />symbole.
+        </p>
+        <p facs="#facs_7_r_3">
+          La finitude est condition de sens, d'eros, de liberté. C'est elle qui permet de<lb facs="#facs_7_l_3_1" n="N001" />viser, et de continuer à viser même sans atteindre, en acceptant de ne pas atteindre,<lb facs="#facs_7_l_3_2" n="N002" />parce qu'on «comprend» le sens de cet échec – ce qui permet de viser encore,<lb facs="#facs_7_l_3_3" n="N003" />et d'espérer. C'est en art seulement que s'actualise symboliquement en une œuvre,<lb facs="#facs_7_l_3_4" n="N004" />dans «la finalité sans fin», cette relation proprement humaine du fini-infini.
+        </p>
+        <p facs="#facs_7_r_4">
+          Dans tous les autres domaines où s'exerce ce que j'ai appelé le travail nostalgique<lb facs="#facs_7_l_4_1" n="N001" />des hommes, celui-ci se poursuit, dans leur finitude et grâce à leur finitude,<lb facs="#facs_7_l_4_2" n="N002" />sans achèvement.
+        </p>
+        <p facs="#facs_7_r_5">
+          La science, par exemple, bien que tant de nos contemporains, même parmi les<lb facs="#facs_7_l_5_1" n="N001" />savants, refusent de le reconnaître, est une activité culturelle et historique, à travers<lb facs="#facs_7_l_5_2" n="N002" />laquelle les hommes cherchent non seulement à «comprendre» les phénomènes,<lb facs="#facs_7_l_5_3" n="N003" />mais aussi à élaborer le sens de ce «comprendre», soumis à la finitude et<lb facs="#facs_7_l_5_4" n="N004" />conditionné par elle, dans la finitude des vérifications. – La technique – si calomniée<lb facs="#facs_7_l_5_5" n="N005" />ou du moins méconnue aujourd'hui, et dont on attend d'autre part ce qu'elle ne peut<lb facs="#facs_7_l_5_6" n="N006" />donner – trouve sans sens et sa raison d'être dans la finitude qui est la nôtre et à<lb facs="#facs_7_l_5_7" n="N007" />travers laquelle nous visons une infinitude inaccessible. La peine des hommes, leur<lb facs="#facs_7_l_5_8" n="N008" />temps de vie et les forces qu'ils ont consacrés à la recherche, à l'invention, à la<lb facs="#facs_7_l_5_9" n="N009" />fabrication, sont incarnés dans les réalités techniques dont nous nous servons chaque<lb facs="#facs_7_l_5_10" n="N010" />jour. La perversion n'est pas dans la technique. Elle est dans l'esprit de ceux qui<lb facs="#facs_7_l_5_11" n="N011" />attendent des techniques la solution de tous les problèmes et de tous les maux<lb facs="#facs_7_l_5_12" n="N012" />humains, et même la suppression du manque essentiel : celle de la finitude. Mais<lb facs="#facs_7_l_5_13" n="N013" />ce serait alors la mort du sens et le règne du non-sens.
+        </p>
+        <p facs="#facs_7_r_6">
+          Il en va de même en politique. Si l'on situe la parousie dans le temps, la finitude<lb facs="#facs_7_l_6_1" n="N001" />technique envahit l'histoire entière, qui devient affaire d'ingénieurs ; finitude et<lb facs="#facs_7_l_6_2" n="N002" />infinitude s'effondrent dans le non-sens. Si la fin de l'histoire se situe au-delà du<lb facs="#facs_7_l_6_3" n="N003" />temps, là où nul ne peut la posséder, elle reste source d'absolu pour chaque instant<lb facs="#facs_7_l_6_4" n="N004" />par son efficacité symbolique ou chiffrée. La confrontation et la lutte des volontés<lb facs="#facs_7_l_6_5" n="N005" />et des intérêts se poursuivent dans la finitude, mais elles ne sont pas ultimes : dans<lb facs="#facs_7_l_6_6" n="N006" />le rapport de la finitude à la non-finitude, grâce à la dimension transcendante ainsi<lb facs="#facs_7_l_6_7" n="N007" />ouverte, une fraternité peut survivre même au-delà de la lutte à mort.
+        </p>
+        <note place="foot" n="1" xml:id="fn7-1" facs="#facs_7_r_7">
+          <lb facs="#facs_7_l_7_1" n="N001" />Viser dans la finitude un au-delà de la finitude, refusé, mais source de sens,<lb facs="#facs_7_l_7_2" n="N002" />continuer à viser l'inaccessible et réaliser ainsi la finitude elle-même, telle est la<lb facs="#facs_7_l_7_3" n="N003" />condition humaine, celle d'un être libre, responsable de sa liberté. Douloureuse,<lb facs="#facs_7_l_7_4" n="N004" />mais parfaite imperfection de cette condition libre, qu'il nous faut apprendre, ou<lb facs="#facs_7_l_7_5" n="N005" />réapprendre, à aimer.
+        </note>
+        <p facs="#facs_7_r_8">
+          <lb facs="#facs_7_l_8_1" n="N001" /><persName ref="GND:118815679">Jeanne Hersch</persName>, Genève
+        </p>
+      </div>
+</div>
+</body></text>
+</TEI>

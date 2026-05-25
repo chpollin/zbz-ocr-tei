@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Otonomen von Ghube, um jederMzie dem Grundgesprach Dame, das nicht sprachs Kanz",
+      "bbox": {
+        "x_pct": 10.795,
+        "y_pct": 14.853,
+        "w_pct": 34.282,
+        "h_pct": 66.121
+      },
+      "changed": true,
+      "change_reason": "The content contains corrupted OCR output. The label is technically correct as it's paragraph text, but the extraction quality is poor."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "und ohne scinc Nachwirkung-",
+      "bbox": {
+        "x_pct": 54.247,
+        "y_pct": 55.56,
+        "w_pct": 17.319,
+        "h_pct": 2.552
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "4 Duch",
+      "bbox": {
+        "x_pct": 54.448,
+        "y_pct": 58.953,
+        "w_pct": 5.492,
+        "h_pct": 3.392
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man Sozialisten?",
+      "bbox": {
+        "x_pct": 54.603,
+        "y_pct": 68.923,
+        "w_pct": 6.762,
+        "h_pct": 4.277
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "cben",
+      "bbox": {
+        "x_pct": 54.84,
+        "y_pct": 75.472,
+        "w_pct": 2.847,
+        "h_pct": 1.77
+      },
+      "changed": true,
+      "change_reason": "Small, likely misidentified fragment/artifact."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 2,
+  "issues": [
+    "OCR output is highly inaccurate for the left column.",
+    "Multiple regions represent truncated or misinterpreted text fragments.",
+    "The large bounding box on the left contains OCR hallucinations."
+  ],
+  "doc_id": "410",
+  "page": 8,
+  "elapsed_seconds": 3.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

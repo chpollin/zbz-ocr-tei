@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "étaient différents, branches se déployaient autrement et leur bruissement dans le vent n'était pas le même; on y parlait une langue que les gens d'ici ne comprennent pas. Il avait dû s'enfuir, quitter ses proches et sa maison, pour trouver au loin un refuge.",
+      "bbox": {
+        "x_pct": 9.903,
+        "y_pct": 11.027,
+        "w_pct": 65.976,
+        "h_pct": 17.399
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien qu'il eût l'habitude de vivre au milieu des forêts, le champignon qu'il vit au pied de l'arbre lui était inconnu. Il entendit un cri d'oiseau, et ne sut lui joindre aucun plumage.",
+      "bbox": {
+        "x_pct": 10.061,
+        "y_pct": 28.03,
+        "w_pct": 65.661,
+        "h_pct": 14.082
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'absence soudain lui fit mal.",
+      "bbox": {
+        "x_pct": 13.782,
+        "y_pct": 42.146,
+        "w_pct": 43.515,
+        "h_pct": 2.466
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription error"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais alors il se souvint de l'autre absence; celle qu'il avait connue là-bas, même quand il était au milieu de ceux qu'il aimait. Ce n'était pas la même. Celle de maintenant était bien plus précise et douloureuse, mais celle de là-bas était irrémédiable.",
+      "bbox": {
+        "x_pct": 9.976,
+        "y_pct": 44.84,
+        "w_pct": 65.782,
+        "h_pct": 16.524
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ressentit comme l'éclosion d'un germe de joie. Maintenant, il s'était exilé de quelque part, il savait d'où. Sa pensée, sa mémoire pouvaient s'en aller là-bas, s'imprégner de là-bas, parler de là-bas, en posséder la nostalgie. C'était comme s'il retrouvait dans l'absence",
+      "bbox": {
+        "x_pct": 9.782,
+        "y_pct": 61.726,
+        "w_pct": 65.891,
+        "h_pct": 16.641
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "89",
+      "bbox": {
+        "x_pct": 72.3,
+        "y_pct": 81.7,
+        "w_pct": 2.9,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer"
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Transcription truncation in almost all paragraphs",
+    "Missing page number region"
+  ],
+  "doc_id": "2260",
+  "page": 89,
+  "elapsed_seconds": 6.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 23.056,
+        "y_pct": 59.5,
+        "w_pct": 1.13,
+        "h_pct": 2.27
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/_filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 49.333,
+        "y_pct": 59.5,
+        "w_pct": 5.25,
+        "h_pct": 2.27
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lui-mame, faute de supporter son nom (comme le montrait deja Parmenide) se pulverise en arbitraire illimite.",
+      "bbox": {
+        "x_pct": 23.056,
+        "y_pct": 8.756,
+        "w_pct": 31.456,
+        "h_pct": 4.213
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La crise permanente de la philosophie s'est toujours produite sur fond d'etre. Les negations les plus radicales avaient une densite ontologique qui permettait de les penser. Les philosophes etaient en desaccord, mais ils se reconnaissaient philosophes entre eux. Tel n'est plus le cas aujourd'hui — tout depend du jargon qu'on parle — ou qui parle tout seul — puisque la nostalgie de l'etre, appelee verite, n'est plus qu'une naivete perimee.",
+      "bbox": {
+        "x_pct": 23.037,
+        "y_pct": 13.496,
+        "w_pct": 31.6,
+        "h_pct": 12.594
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE SOCIOLOGUE ET LE THÉOLOGIEN l'impossible rencontre ? par Michel MESLIN",
+      "bbox": {
+        "x_pct": 71.177,
+        "y_pct": 8.69,
+        "w_pct": 15.521,
+        "h_pct": 9.697
+      },
+      "changed": true,
+      "change_reason": "Added missing punctuation in transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le recours de plus en plus frequent aux diverses sciences de l'homme pour tenter de comprendre l'existence meme, et ses causes, des phenomenes religieux, est l'un des faits culturels les plus importants des dernieres decennies, non seulement dans notre monde occidental mais dans tous les regards et jugements qu'il porte sur des types de culture differentes, plus traditionnelles, voire archaiques. Un tel recours est, a premiere vue, tout a fait explicable. En effet, devant le desinteret manifeste et l'absence de reponses donnees par les sciences exactes a tout le champ problematique traverse par une foi et une pratique religieuses, les sciences de l'homme ont paru offrir une reponse apparemment exacte. Leur validite operatoire a semble d'autant plus sere qu'elles offraient un mode d'explication qui permettait de resoudre le mystere entourant les relations de l'homme avec le divin et de satisfaire certaines interrogations a nos esprits modernes. Car, d'un strict point de vue anthropologique, toute religion apparait comme constituant a la fois un facteur de cohesion et de coherence d'un groupe humain : elle est toujours vecue par ses fideles comme une reference a une realite qu'ils estiment superieure et comme un moyen de contrele de l'univers quotidien, dans la mesure ou elle permet la regulation des rapports inter-individuels dans le monde. En expliquant le monde et la place qu'y tient l'homme, une religion est d'abord connaissance d'une sagesse qui sous-tend et determine des actions particulieres et qui maintient, en le justifiant, un certain ordre des choses. Elle est donc percue comme la meilleure reponse possible aux exigences, comme aux interrogations, de la condition humaine, au moins pour ses adeptes.",
+      "bbox": {
+        "x_pct": 62.684,
+        "y_pct": 26.84,
+        "w_pct": 31.688,
+        "h_pct": 45.708
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pour cette raison que toute religion se presente comme un systeme construit par une longue reflexion portant sur les problemes fondamentaux que l'homme doit affronter : la vie, la mort, l'amour, le bien, le mal. Dans sa presentation pedagogique, catechetique en un sens, chaque religion est ainsi constituee en un systeme de croyances, de mythes, de rituels, qui fonctionnent d'une maniere precise, et qui porte, bien evidemment, la marque du",
+      "bbox": {
+        "x_pct": 62.712,
+        "y_pct": 72.725,
+        "w_pct": 31.535,
+        "h_pct": 11.955
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Original text transcription was severely garbled and missing diacritics.",
+    "Page number at top was incorrectly labeled as text.",
+    "Running header at top was incorrectly labeled as text.",
+    "Missing punctuation fixed in headers and paragraph text."
+  ],
+  "doc_id": "2000",
+  "page": 5,
+  "elapsed_seconds": 8.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

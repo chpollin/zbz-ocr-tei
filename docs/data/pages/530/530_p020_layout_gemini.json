@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA SUISSE DANS L'EUROPE ACTUELLE",
+      "bbox": {
+        "x_pct": 277.0,
+        "y_pct": 79.0,
+        "w_pct": 444.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header, should be page_header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "79",
+      "bbox": {
+        "x_pct": 863.0,
+        "y_pct": 86.0,
+        "w_pct": 21.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, should be page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "la jeunesse, parce que sinon, nous allons la perdre et il ne restera en Suisse que les jeunes qui sont nés vieux.",
+      "bbox": {
+        "x_pct": 12.145,
+        "y_pct": 11.949,
+        "w_pct": 76.98,
+        "h_pct": 5.808
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout cela, ce n'est pas du tout un noble dévouement à une cause qui concerne les autres. Je crois qu'il y va du plus élémentaire et du plus égoïste vouloir-vivre de la Suisse, même sur le plan où je me suis placée et qui n'est pas le plan économique où l'enjeu, je crois, serait encore beaucoup plus évident.",
+      "bbox": {
+        "x_pct": 12.018,
+        "y_pct": 17.532,
+        "w_pct": 76.98,
+        "h_pct": 14.594
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant, les Suisses, d'autre part, ont, je crois, une énorme tâche d'information européenne à remplir, et je ne crois pas que notre presse, sur ce point en particulier, remplisse ses devoirs. Nous vivons dans une situation tellement dangereuse que chaque mot tombant de notre bouche ou de notre plume engage aujourd'hui notre responsabilité. Le fléau de la balance historique est, de nos jours, tellement sensible que la nuance des mots compte. Il serait bon, dès lors, que notre presse signale et souligne tout ce qui se fait et tout ce qui est dit dans les pays d'Europe occidentale en vue d'accroître les chances d'une Europe fédérée, au lieu de faire le contraire. Et cela d'autant plus qu'actuellement, dans les pays voisins, la presse met très souvent en lumière tout ce qui risque de rendre très difficile, sinon d'exclure, une Europe fédérée. Je veux vous en donner un exemple : au début de cette année, le Professeur Karl Jaspers, en Allemagne, a été interviewé pour la télévision. Il a pris position contre la conception officielle de la réunification allemande. Il ne s'est pas opposé à la réunification, certes, mais il a dit à peu près ceci : « Ce qui importe le plus, ce n'est pas de reconstituer un Etat national allemand ; c'est de rendre la liberté aux Allemands de l'Est. »",
+      "bbox": {
+        "x_pct": 10.533,
+        "y_pct": 31.704,
+        "w_pct": 77.449,
+        "h_pct": 59.119
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "The bounding boxes in the original JSON were slightly misaligned with the text layout.",
+    "OCR output for text blocks was severely truncated and contained errors.",
+    "Page number and running header were mislabeled as text."
+  ],
+  "doc_id": "530",
+  "page": 20,
+  "elapsed_seconds": 8.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

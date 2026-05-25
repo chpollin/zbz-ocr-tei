@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'ŒUVRE DU VINGTIÈME SIÈCLE 83",
+      "bbox": {
+        "x_pct": 196.0,
+        "y_pct": 342.0,
+        "w_pct": 235.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Header contains both title and page number, needs section_header label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "celle-là même de l'univers : il ne s'isole pas de cette dernière, il la confirme. Combien plus solitaire, bannie hors de l'ordre, condamnée au risque de créer le sien propre, est la musique contemporaine ! Comme si tel avait été le destin de l'homme : renouveler lui-même contre lui-même le geste de Dieu le chassant du Paradis terrestre, aggraver sa séparation, approfondir encore sa distance de Dieu, se faire entendre de plus loin.",
+      "bbox": {
+        "x_pct": 7.067,
+        "y_pct": 36.676,
+        "w_pct": 48.88,
+        "h_pct": 11.539
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais peut-être les peintres ont-ils eu tort de représenter Adam et Eve chassés du Paradis dans des attitudes désespérées. Ce monde humain tout neuf ouvrant tous ses possibles à leur exploration, sans doute commença-t-il par les émerveiller. Plus tard seulement apparut l'exil, ses lois dures, sa douleur. Les musiciens modernes aussi, au début de leur arrachement, jubilent devant les possibilités jaillies de leur audace. Ce sont les inventions de Stravinski, ces harmonies grattées, hachées, arrachées aux cordes d'or innombrables. C'est Ravel. C'est la richesse de Bela Bartok, auquel on consacra en entier un concert qui fut un triomphe. Ce sont Honegger, Hindemith, Martinn, joués par l'orchestre romand que dirigeait Ansermet. Chez tous cependant, on trouve bientôt, sous la diversité luxueuse des ressources, cette blessure caractéristique de l'art moderne, cette solitude excessive hors du cosmos qui a l'air d'exiger un autre cosmos — impossible.",
+      "bbox": {
+        "x_pct": 7.115,
+        "y_pct": 47.908,
+        "w_pct": 48.969,
+        "h_pct": 23.415
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Stravinski dirigea lui-même deux concerts, dont l'un était consacré en entier à sa musique. Je l'ai vu diriger la répétition générale. La plupart des chefs paraissent modeler de la main les surfaces sonores, ils donnent aux œuvres un pourtour plastique. D'autres semblent mimer le mouvement intérieur qui structure le morceau. Mais Stravinski, avec une énergie extraordinaire, jette les sons dans l'espace. On dirait que seul le jaillissement, la naissance compte. La main, fermée, ouverte, fermée, provoque des éclatements précis. Mais la main, c'est le truchement, l'aboutissement visible, non la source de cette force. Celle-ci traverse et durcit le buste entier, elle vient, dirait-on, de ce dos voûté. Aucune routine nulle part, pas de mécanisme monté, pas de mise en conserve. Quelques remarques faites à l'orchestre, entre deux exercices répétés, cernant de façon étroite un passage encore peu satisfait.",
+      "bbox": {
+        "x_pct": 7.067,
+        "y_pct": 71.021,
+        "w_pct": 49.073,
+        "h_pct": 21.95
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR text extraction was highly inaccurate.",
+    "Section header was mislabeled as text.",
+    "The page number 83 was bundled with the header text."
+  ],
+  "doc_id": "250",
+  "page": 6,
+  "elapsed_seconds": 5.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

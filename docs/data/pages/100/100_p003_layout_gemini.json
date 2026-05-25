@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tous les modes et à toutes les voies dapproche, et que Jaspers",
+      "bbox": {
+        "x_pct": 17.016,
+        "y_pct": 9.193,
+        "w_pct": 78.199,
+        "h_pct": 2.735
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pour cette raison transcendance appelle",
+      "bbox": {
+        "x_pct": 16.909,
+        "y_pct": 11.415,
+        "w_pct": 49.866,
+        "h_pct": 2.602
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cependant, malgré la technicité de ses moyens dexpression; Jaspers donne à sa réflexion une eflicaci",
+      "bbox": {
+        "x_pct": 16.64,
+        "y_pct": 13.428,
+        "w_pct": 78.71,
+        "h_pct": 30.066
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aussi   Jaspers oblige-t-il sans lassitude sa philosophie à étouffer ses propres   paroles. Toute ch",
+      "bbox": {
+        "x_pct": 16.425,
+        "y_pct": 42.83,
+        "w_pct": 78.441,
+        "h_pct": 36.182
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "58",
+      "bbox": {
+        "x_pct": 54.347,
+        "y_pct": 83.18,
+        "w_pct": 3.75,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number 58"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missed page footer in initial detection"
+  ],
+  "doc_id": "100",
+  "page": 3,
+  "elapsed_seconds": 6.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

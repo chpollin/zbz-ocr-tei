@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "188 COMMENT FAIRE ENCORE DE LA PHILOSOPHIE?",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page header was misidentified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "objective, apodictique, ne peut être authentique quand il s'agit de l'être —, ne peut par conséquent entraver la réalisation de l'être par la liberté et par la croyance.",
+      "bbox": {
+        "x_pct": 14.202,
+        "y_pct": 12.695,
+        "w_pct": 76.31,
+        "h_pct": 10.667
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Recherche scientifique, action, liberté, croyance, tout nous est laissé, et tout gagne en intensité à se savoir à la fois d'origine existentielle et condamné à l'échec.",
+      "bbox": {
+        "x_pct": 14.202,
+        "y_pct": 22.952,
+        "w_pct": 76.054,
+        "h_pct": 10.286
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une seule chose semble impossible maintenant : c'est de faire de la philosophie. L'illusion qui lui est vitalement nécessaire et qui fait croire qu'elle poursuit et découvre une vérité apodictique comparable à celle de la science, est détruite. La philosophie sait que ce qu'elle poursuit en réalité n'est pas ce dont elle parle et ce qu'elle tâche de démontrer. Elle ne peut donc plus faire cet effort. Son objet dernier, c'est elle-même, son illusion. Tel a été « l'objet » de Jaspers. On dirait qu'après celui-ci, la philosophie n'en peut plus avoir et qu'elle doit mourir pour s'être trop bien connue, après des siècles, — pour s'être vue enfin, comme Narcisse.",
+      "bbox": {
+        "x_pct": 14.111,
+        "y_pct": 33.59,
+        "w_pct": 76.401,
+        "h_pct": 33.295
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sans doute y a-t-il — et y aura-t-il encore — des philosophies dogmatiques et des ontologies. Les grands systèmes dogmatiques post-kantiens sont là pour nous prouver que l'illusion philosophique est assez forte pour passer outre, bien que des esprits dangereusement profonds et clairs se soient attaqués à ses racines. Mais ces ontologies pour nous ne pourront plus être vraies, — et c'est ici que la notion sur laquelle Jaspers insiste, celle de l'histo-",
+      "bbox": {
+        "x_pct": 14.262,
+        "y_pct": 66.829,
+        "w_pct": 76.31,
+        "h_pct": 23.171
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header was detected as part of the text body in raw data.",
+    "Refined OCR text for readability."
+  ],
+  "doc_id": "20",
+  "page": 190,
+  "elapsed_seconds": 4.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

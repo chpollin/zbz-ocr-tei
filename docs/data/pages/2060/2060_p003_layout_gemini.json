@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch Zur Krisen\"-Diskussion in Europa",
+      "bbox": {
+        "x_pct": 9.747,
+        "y_pct": 8.821,
+        "w_pct": 67.646,
+        "h_pct": 6.956
+      },
+      "changed": true,
+      "change_reason": "Corrected the punctuation in the title text, replacing the tilde with a hyphen as shown in the source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine Damen und Herren, es tut mir leid, aber ich habe das Gefühl, daß der Vortrag von Herrn Lobkowicz den Schluß hätte bilden sollen. Und ich komme jetzt hier - auf französisch sagt man „moutarde après dîner“, - wie Senf nach dem Essen. Ich werde nun versuchen, meinen Vortrag im Ton ganz anders zu halten, damit ein Vergleich zum vorigen gar nicht erst aufkommt.",
+      "bbox": {
+        "x_pct": 9.535,
+        "y_pct": 22.39,
+        "w_pct": 73.976,
+        "h_pct": 16.311
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and typos in the OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich muß Sie auch bitten, Nachsicht mit mir zu haben, denn ich habe versucht, dem, was ich im voraus vorbereitet habe, einige Bemerkungen hinzuzufügen, die sich auf das beziehen, was in erster Linie gestern gesagt worden ist. Und deswegen will ich zunächst einmal einige kritische Vorbemerkungen wagen: Für mein Gefühl waren manche der Vorträge, die wir gehört haben und die alle sehr interessant und wichtig gewesen sind, ein bißchen zu geistesgeschichtlich. Geistesgeschichte ist etwas typisch Deutsches. Und ich komme aus der Schweiz, aus der französischen Schweiz. Und ich habe auch das Gefühl, daß das Geistesgeschichtliche es dem einzelnen erlaubt, irgendwie in der Geistesgeschichtlichkeit unterzutauchen. Zum Beispiel spricht man vom Scheitern des Geistes. Aber das ist wessen Geist? Ist es mein Geist, ist es Dein Geist? Ist es der Hegelsche Geist? Das genügt nicht, das ist im Grunde zu leicht. Und meine zweite Kritik ist folgende: Ich habe das Gefühl, daß wir uns alle zu sehr auf das verlassen haben, was heute gesagt wird, und wir haben nicht genügend beobachtet, wie Leute leben. Sie leben gar nicht so, wie sie sprechen. Zum Beispiel haben wir sehr viel von Angst gesprochen, und Herr Lobkowicz hat heute wieder von Angst gesprochen. Ich",
+      "bbox": {
+        "x_pct": 9.574,
+        "y_pct": 37.984,
+        "w_pct": 73.976,
+        "h_pct": 50.438
+      },
+      "changed": true,
+      "change_reason": "Corrected significantly truncated text and transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "281",
+      "bbox": {
+        "x_pct": 78.4,
+        "y_pct": 90.6,
+        "w_pct": 3.7,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region which was detected but not labeled."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly truncated and contained multiple typos.",
+    "Page number region was missing from initial JSON output.",
+    "Text cleanup required for grammatical accuracy against source image."
+  ],
+  "doc_id": "2060",
+  "page": 3,
+  "elapsed_seconds": 4.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

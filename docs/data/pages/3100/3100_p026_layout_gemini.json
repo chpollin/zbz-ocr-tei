@@ -1,0 +1,62 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de près, disaient-ils, ce dont on peut parler en termes vraiment clairs n'est vraiment pas grand-chose. Une exigence de clarté trop poussée réduit ce dont on peut parler à quelques tautologies peu intéressantes. Il reste donc permis, je pense, même après l’Ecole de Vienne, d’utiliser des formules qui, sans être clairement comprises, signifient.",
+      "bbox": {
+        "x_pct": 14.827,
+        "y_pct": 7.823,
+        "w_pct": 64.972,
+        "h_pct": 12.103
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Esayons maintenant de voir ce que le problème permanent de Dieu a de spécifique aujourd'hui. L’un des éléments qui caractérisent la situation actuelle, c’est qu’on se rallie le plus souvent à une interprétation tranchée, massive, du langage, mettant d’un côté le langage clair, seul légitime, et de l’autre le langage «transcendant», qui devrait être muet. De même, on tend à diviser l’homme en deux parties, d’un côté sa partie rationnelle et «objective», de l’autre le personnage combattant, engagé dans l’action, être biologique ou historique, affamé de nourriture, ou de bien-être, ou de culture de consommation. Nous avons ainsi accompli une redoutable dislocation, qui nous a fait perdre le niveau où se posait le problème de Dieu, et où il y avait un langage pour le poser. Je veux parler du langage symbolique, celui où le symbole est au moins aussi réel que les «choses». Je refuse donc de conférer au mot réel un sens au seul niveau du langage de la science. D’ailleurs, les très grands physiciens ont parfaitement conscience que toute science est elle-même un langage symbolique. Il y a divers modes de réalités, et parler de «réalité symbolique», ce n'est pas déréaliser ou démythologiser. Simplement il y a des réalités naturelles, des réalités historiques, des réalités spirituelles, des réalités rationnelles. La désincarnation radicale du religieux me paraît dangereuse pour le problème de Dieu. J’entends par dangereux ce qui fait écran et arrête la recherche. Il y a quelque chose de dangereux à vouloir isoler le religieux pour le mettre à part hors de la vie active, et il y a quelque chose de tout aussi dangereux (c'est la tendance la plus fréquente aujourd'hui) le résorber tout entier dans la réalité empirique la plus positive.",
+      "bbox": {
+        "x_pct": 14.77,
+        "y_pct": 19.755,
+        "w_pct": 65.496,
+        "h_pct": 51.641
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je peux illustrer cela par un exemple qui n'est pas pris au hasard, mais inspiré par l'actualité: il s'agit du rapport de la politique et de la foi. J'ai lu cette nuit quelques passages d'un petit livre qui prétend formuler une foi athéiste en Dieu, en un Dieu qui est mort. Le religieux s'y trouve complètement réduit à la solidarité humaine, au seul niveau où l'élabore le destin commun des hommes dans la dimension historique. Comme si la dimension historique se suffisait à elle-même!",
+      "bbox": {
+        "x_pct": 15.068,
+        "y_pct": 71.265,
+        "w_pct": 65.214,
+        "h_pct": 14.108
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "3 Studia Philosophica XXX/XXXI 25",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing regions for page header and footer content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text transcriptions were severely truncated.",
+    "Page footer content was missing from the initial detection."
+  ],
+  "doc_id": "3100",
+  "page": 26,
+  "elapsed_seconds": 4.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

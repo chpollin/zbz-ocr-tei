@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 11.074,
+        "y_pct": 9.114,
+        "w_pct": 17.89,
+        "h_pct": 2.508
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(zu Marchal) : Der Mensch ist ein kulturelles Wesen, das eine gemeinsame Geschichte braucht. Auch für die Genfer und Waadtländer ist Morgarten Realität geworden. Natürlich ist Tell eine Legende, aber historisch gesehen hat sie in der Schweiz faktische Folgen gehabt. Mythen haben auch geschichtliche Wirkungen.",
+      "bbox": {
+        "x_pct": 11.273,
+        "y_pct": 14.548,
+        "w_pct": 63.171,
+        "h_pct": 15.36
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(zu Gasteyger) : Will man das Gewicht der Neutralität reduzieren, so muss man doch das Wichtige daran bewahren. Die Neutralität geht weit über das juristisch Fassbare hinaus, sie ist Bestandteil der schweizerischen Einstellung und Selbstauffassung. Ein Vereinigtes Europa hätte ein neutrales Mitglied vielleicht sogar nötig.",
+      "bbox": {
+        "x_pct": 11.311,
+        "y_pct": 29.958,
+        "w_pct": 63.184,
+        "h_pct": 15.109
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man redet viel davon, was Europa der Schweiz geben kann. Umgekehrt: Was kann die Schweiz Europa geben? Ohne falschen Stolz dürfen wir eigene Züge vorweisen, die für Europa vielleicht günstig sein könnten.",
+      "bbox": {
+        "x_pct": 11.149,
+        "y_pct": 45.343,
+        "w_pct": 63.171,
+        "h_pct": 10.033
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source content more accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "33",
+      "bbox": {
+        "x_pct": 71.074,
+        "y_pct": 93.385,
+        "w_pct": 2.222,
+        "h_pct": 2.259
+      },
+      "changed": true,
+      "change_reason": "Added page number as a filtered region."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text in regions was highly inaccurate, requiring full manual correction of text.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "2940",
+  "page": 36,
+  "elapsed_seconds": 3.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

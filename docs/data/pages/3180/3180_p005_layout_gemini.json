@@ -1,0 +1,87 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "gelegentlich trotzdem sagen, aber primär möchten Sie natürlich hören, was Jeanne Hersch und Annemarie Pieper zu diesen Fragen zu sagen haben. Deswegen würde ich Ihnen vorschlagen, daß wir es so halten wie immer, daß wir zunächst der Hauptrednerin der diesjährigen Hegelwochen, Jeanne Hersch, Gelegenheit geben, uns in ein oder zwei Gedanken im Hinblick auf Paradoxien und Widersprüche einzuführen, dann Annemarie Pieper, die bisher von uns dreien am wenigsten Gelegenheit hatte zu sprechen, Raum geben dafür, zu demselben Thema ergänzend, reagierend, wie sie es selber möchte, etwas zu sagen, und dann werde ich versuchen, den Diskurs zwischen uns etwas in Gang zu bringen, obwohl ich nicht glaube, daß dies großer technischer Kunstgriffe bedarf.",
+      "bbox": {
+        "x_pct": 7.691,
+        "y_pct": 3.488,
+        "w_pct": 85.367,
+        "h_pct": 29.636
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir wollen dann, wie ebenfalls üblich, in der zweiten Hälfte nach ca. einer Stunde, ins Publikum geben. Es stehen drei Saalmikrophone hier, an den bunten Mikrophonköpfen leicht zu erkennen. Wenn wir mit der Publikumsdiskussion beginnen, möchten wir dann diejenigen von Ihnen, die sprechen möchten, insbesondere aber diejenigen von Ihnen, die sprechen möchten und dabei auch etwas zu sagen haben, bitten, sich an diese Mikrophone zu begeben.",
+      "bbox": {
+        "x_pct": 7.841,
+        "y_pct": 34.909,
+        "w_pct": 85.307,
+        "h_pct": 18.069
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ja, meine Damen und Herren, damit wären wir soweit, daß wir jetzt Frau Hersch bitten können uns zu sagen, wie es zu der Titelwahl für diese dritte Veranstaltung kam: „Lob für Paradoxien und Widersprüche“. Bitte, Frau Hersch:",
+      "bbox": {
+        "x_pct": 7.991,
+        "y_pct": 54.891,
+        "w_pct": 85.157,
+        "h_pct": 9.253
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 7.946,
+        "y_pct": 66.148,
+        "w_pct": 23.043,
+        "h_pct": 2.04
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Danke schön. Meine Damen und Herren, wenn ich diesen Gedanken an meine früheren Vorträge angeknüpft habe, so eigentlich deswegen, um die Gedanken, die ich in meinen beiden Vorträgen entwickelt habe, zu korrigieren. Denn ich glaube, daß fast alle Gedanken, die in einem philosophischen Gespräch erscheinen und klar werden, irgendwie aufgegeben werden müssen. Es ist seltsam zu sagen, daß man sich einerseits Mühe gibt, Gedanken zu haben, die man behalten kann, und gleich nachher zu sagen, daß man sich Mühe geben soll, sie durch Paradoxien oder Widersprüche wieder rückgängig zu machen.",
+      "bbox": {
+        "x_pct": 7.646,
+        "y_pct": 68.279,
+        "w_pct": 85.307,
+        "h_pct": 24.736
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 84.8,
+        "y_pct": 94.7,
+        "w_pct": 3.4,
+        "h_pct": 3.3
+      },
+      "changed": true,
+      "change_reason": "Corrected labeling of page number from text to page_footer"
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "One missing region for page number was detected and corrected."
+  ],
+  "doc_id": "3180",
+  "page": 5,
+  "elapsed_seconds": 4.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

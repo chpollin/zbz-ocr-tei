@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "112",
+      "bbox": {
+        "x_pct": 21.057,
+        "y_pct": 2.0,
+        "w_pct": 2.766,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number as page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ETRE ET LA FORME",
+      "bbox": {
+        "x_pct": 68.324,
+        "y_pct": 2.0,
+        "w_pct": 21.036,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ment il n'exisle pas pour nous dobjet   théoriquement   pur, exempt les   plus   ahstraites; se rélè",
+      "bbox": {
+        "x_pct": 20.657,
+        "y_pct": 13.113,
+        "w_pct": 68.548,
+        "h_pct": 25.763
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois impossible de remonler delà de CC fait que Fêtre est une valeur . Cest là fonde   Tesprit h",
+      "bbox": {
+        "x_pct": 20.737,
+        "y_pct": 39.081,
+        "w_pct": 68.583,
+        "h_pct": 22.118
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous nous trouvons   ainsidevant une série de notions de valeur: être, exislence réelle; forme. Nous",
+      "bbox": {
+        "x_pct": 20.737,
+        "y_pct": 61.276,
+        "w_pct": 68.548,
+        "h_pct": 9.415
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Cf. L'evolution cr\u0000eatrice. Alcan, Paris 1930, p. 301 sqq.",
+      "bbox": {
+        "x_pct": 20.737,
+        "y_pct": 73.056,
+        "w_pct": 55.451,
+        "h_pct": 1.455
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and bbox to cover full footnote line"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Original footnote box was too small",
+    "Missing running header",
+    "Missing page number region"
+  ],
+  "doc_id": "110",
+  "page": 114,
+  "elapsed_seconds": 4.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content and bbox to cover full footnote line": 1,
+    "ADDED": 2
+  }
+}

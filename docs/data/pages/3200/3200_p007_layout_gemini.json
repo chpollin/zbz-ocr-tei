@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und wenn ich die Vorträge meiner Vorredner an diesem Pult lese, dann fällt mir ein, wie sehr sie das Leben dieser Stadt biographisch erlebt haben. Sie haben es gelebt. Nicht nur haben sie es erlebt, aber ihr Gewissen hat es erlebt. Es ist, als gäbe es in ihnen die geschichtlichen Schichten der Geschichte dieser Stadt, die jedesmal ein neues Problem, eine neue Wertung, eine neue Qual und eine neue Reue im Inneren dieser Leute erwecken. Und da frage ich mich, was für einen Grund gibt es dafür, daß ich hier sitze und zu Ihnen spreche. Ich glaube, im Grunde gibt es kaum einen, außer, daß ich mich mein Leben lang, wie man es Ihnen schon gesagt hat, bemüht habe um das Problem der Menschenrechte, das heißt der echten, der wahren Toleranz. Es kommt vielleicht daher, daß die Toleranz für mich keine so selbstverständliche Tugend ist wie für viele Menschen. Ich glaube nicht, daß die Toleranz als menschliche Einstellung geschätzt werden kann, einfach als eine Form der Höflichkeit, wo man gut erzogen die Andersdenkenden zuläßt und sie höflich behandelt. Es geht nicht darum. Die Toleranz hat sehr vieles, meiner Ansicht nach, mit der Wahrheit zu tun. Und da, wo es um die Wahrheit geht, darf man gar nicht tolerant sein. Die Lüge ist nicht eine Einstellung, die Toleranz verlangt. Deswegen ist die ganze Frage viel verwickelter und viel komplizierter, als man es meistens annimmt. Und als ich den Titel dieser Serie gelesen habe – „Berlin – tolerant und weltoffen“ –, so hatte dieser Titel für mich etwas Provozierendes. Denn es dürfte im Grunde nur eine Erwartung, eine Hoffnung sein, die eigentlich aus dem Fehlen geboren ist. Das ist ein Programm. Das ist eine Hoffnung. Dieses Programm und diese Hoffnung haben bis jetzt anscheinend wirklich Erfolg gehabt, da es schon der achte Vortrag ist, und Sie so zahlreich hier sind. Das ist der Beweis. Dieser Titel braucht sich nicht weiter zu rechtfertigen, da er diesen Erfolg gehabt hat. Ich hoffe nur, daß wenig Mißverständnisse drinstecken. Keine, das wäre zu schön.",
+      "bbox": {
+        "x_pct": 9.147,
+        "y_pct": 4.412,
+        "w_pct": 80.105,
+        "h_pct": 47.601
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to reflect the full paragraph present in the image."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Gespräche, die ich gelesen habe, sind mir durch ihren Ernst und ihre Strenge aufgefallen. Man hat das Gefühl, daß die Autoren eigentlich in den verschiedenen Etappen der Geschichte dieser Stadt so sehr in Frage gestellt worden sind, daß sie es mit Schwierigkeit überlebt haben. Sie fühlen sich scheu vor der Wirklichkeit dessen, was sie durchzumachen hatten. Und es entsteht das Gefühl, daß sie jedesmal auf eine andere Weise, in jeder widerspruchsvollen Etappe der Geschichte auf eine andere Weise, jeden Verrat vermeiden wollten und nicht vermeiden konnten. Dieser Zwang der geschichtlichen Verrate, die von ihnen abverlangt wurden, hat etwas wirklich Ergreifendes. Und man fragt sich, wie sind die Menschen geworden, die so viele Probleme, angehäufte, einander widersprechende Probleme, überwunden haben. Ihre Beziehung zu Berlin kommt immer wieder, kommt immer komplizierter zum Vorschein, mit Widersprüchen, als könnten diese Menschen überhaupt keine Ruhe mehr in ihrem Gewissen finden. Es gibt eine solche Komplexität des eigenen Selbst und eine nie endende Infragestellung des Urteils, wie jeder sich selbst beurteilt und die anderen beurteilt, daß man denkt, wie können diese Leute schlafen? Wann hören sie mal auf? Und wir haben wirklich, glaube ich, in vielen Orten Europas, aber vielleicht ganz besonders in Berlin, diese Schlaflosigkeit erlebt. Es ist, als gäbe es überall Fallen. Verschiedene, zweideutige, dreideutige Fallen, die die",
+      "bbox": {
+        "x_pct": 9.03,
+        "y_pct": 55.325,
+        "w_pct": 80.023,
+        "h_pct": 34.922
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to reflect the full paragraph present in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "5",
+      "bbox": {
+        "x_pct": 87.218,
+        "y_pct": 93.307,
+        "w_pct": 1.716,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Identified page number and relabeled to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction was heavily truncated.",
+    "Page number at the bottom was missing and needed to be added as a separate region."
+  ],
+  "doc_id": "3200",
+  "page": 7,
+  "elapsed_seconds": 6.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,129 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "ductible, cette visée du connaître Il le connaît donc en effet, subjective ment; dans sa subjectivit",
+      "bbox": {
+        "x_pct": 4.595,
+        "y_pct": 8.251,
+        "w_pct": 87.568,
+        "h_pct": 4.317
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, il y toujours, pour   ainsi un \"centre   limite où lhomme transcende ce qu'il et même ce qu'i",
+      "bbox": {
+        "x_pct": 4.865,
+        "y_pct": 12.432,
+        "w_pct": 87.432,
+        "h_pct": 5.887
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "2ème thèse:",
+      "bbox": {
+        "x_pct": 4.824,
+        "y_pct": 22.5,
+        "w_pct": 13.824,
+        "h_pct": 1.758
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les champs des diverses sciences humaines ont entre eux une interdépendance et une unité réelles inf",
+      "bbox": {
+        "x_pct": 4.73,
+        "y_pct": 24.206,
+        "w_pct": 87.797,
+        "h_pct": 12.398
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette thèse s oppose à bien des tendances con temporaines. L'interdisciplinarité ne repose pas, à mo",
+      "bbox": {
+        "x_pct": 4.905,
+        "y_pct": 38.311,
+        "w_pct": 88.027,
+        "h_pct": 19.966
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans la réalité est lobjet des   sciences humaines, on a affaire à une interpénétration extraordinai",
+      "bbox": {
+        "x_pct": 5.135,
+        "y_pct": 58.362,
+        "w_pct": 87.973,
+        "h_pct": 14.42
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, par exemple, les   plans d'appartements 'on peut faire dans un immeuble   locatif ont une imp",
+      "bbox": {
+        "x_pct": 5.446,
+        "y_pct": 72.355,
+        "w_pct": 87.797,
+        "h_pct": 16.468
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est aussi à cause de cette pervasiveness, de linterpénétration incarnative, que c'est, à mon techn",
+      "bbox": {
+        "x_pct": 5.405,
+        "y_pct": 88.285,
+        "w_pct": 93.378,
+        "h_pct": 8.447
+      },
+      "changed": true,
+      "change_reason": "Correction of the text cutoff for page number consistency"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "219",
+      "bbox": {
+        "x_pct": 94.6,
+        "y_pct": 93.5,
+        "w_pct": 3.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number to filter"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at bottom right was part of text block",
+    "Text cut off in final paragraph region"
+  ],
+  "doc_id": "1180",
+  "page": 4,
+  "elapsed_seconds": 8.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Correction of the text cutoff for page number consistency": 1,
+    "ADDED": 1
+  }
+}

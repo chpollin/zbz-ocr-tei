@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Laudatio auf Paul Ricoeur 87",
+      "bbox": {
+        "x_pct": 39.467,
+        "y_pct": 59.98,
+        "w_pct": 49.333,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for the running title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vielleicht nicht verstanden haben – und nicht verstanden werden wollten. Ricoeur philosophiert meistens als ein unermüdlicher, leidenschaftlicher Hermeneutiker anderer Werke. Dabei vertieft er sein eigenes reflexives Bewußtsein und weckt dasjenige seiner Leser auf. So wirken, durch mehrschichtige Symbole, die Quellen seiner Freiheit und die Hoffnungen seines Glaubens weiter.",
+      "bbox": {
+        "x_pct": 10.787,
+        "y_pct": 9.14,
+        "w_pct": 77.859,
+        "h_pct": 9.93
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Andere haben für uns vergangene und fast vergessene Zeiten der Philosophie wieder aufleben lassen. Ricoeur ist sozusagen der magische Archäologe der Gegenwart oder der nahen Vergangenheit: er ermöglicht es uns, manche Denker unseres Jahrhunderts zu lesen als gehörten sie, ihnen selber vielleicht zum Trotz, zur ewigen Philosophie.",
+      "bbox": {
+        "x_pct": 10.857,
+        "y_pct": 18.65,
+        "w_pct": 77.918,
+        "h_pct": 9.972
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dafür sagen wir ihm heute großen Dank.",
+      "bbox": {
+        "x_pct": 13.416,
+        "y_pct": 28.112,
+        "w_pct": 41.793,
+        "h_pct": 2.287
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page header/number was not included in the original regions list.",
+    "The OCR text in the input was truncated; reconstructed full text for accuracy."
+  ],
+  "doc_id": "2730",
+  "page": 13,
+  "elapsed_seconds": 3.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

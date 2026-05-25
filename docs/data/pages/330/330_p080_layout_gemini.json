@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nullement un système économique compact, comportant ses dures lois internes, contraint par ses propres structures à évoluer dans un sens donné sous peine d'effondrement, et que l'on peut être contraint, dans certaines circonstances, de sauver ou de condamner en bloc. Ils sont donc en général pour le maintien du capitalisme et pour une politique économique fortement « sociale » dans son orientation. Ce qu'ils ne voient pas, c'est qu'ils tendent ainsi à des fins contradictoires : les charges sociales de l'État vont grandissant, mais ses ressources vont diminuant puisque la structure économique capitaliste doit être maintenue et que seuls doivent être corrigés par les prélèvements de l'impôt les écarts excessifs de fortune. Mais cette contradiction cachée et qu'ils se refusent à découvrir leur impose peu à peu des interventions étatistes hors du domaine de la sécurité sociale, ne fût-ce que pour maintenir les ressources nécessaires à cette sécurité. Si bien qu'à la longue la démocratie politique, l'État et ses instances, et les puissances économiques, finissent par se trouver imbriqués les uns dans les autres d'une façon si étroite que l'État devient bon gré mal gré le défenseur du régime capitaliste lui-même. C'est lui qui en assume les déficiences et les faillites.",
+      "bbox": {
+        "x_pct": 12.535,
+        "y_pct": 11.613,
+        "w_pct": 85.655,
+        "h_pct": 41.266
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and contained OCR errors. Fixed text content to match image content for accurate analysis."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIE SOCIALISTE",
+      "bbox": {
+        "x_pct": 12.813,
+        "y_pct": 57.193,
+        "w_pct": 29.944,
+        "h_pct": 2.255
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo 'SOCIALIBTE' to 'SOCIALISTE' and confirmed section header status."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le socialisme a subi un sort étrange. Lancé dans le monde à une époque où la classe ouvrière connaissait un écrasement et une impuissance apparemment sans issue, il a eu au départ la hardiesse des idées pures. Il s'enracinait dans la matière des nécessités économiques, et, en un arc puissant, s'élançait jusqu'à l'idéal de la fraternité universelle, par-dessus toutes les frontières et toutes les classes — abolissant frontières et classes. Et cet élan, qui correspondait à l'appel le plus puissant du cœur humain, se voyait justifié par une méthode qui se disait scientifique, qui participait donc du prestige de ces sciences de la nature auxquelles le développement industriel venait de donner une confirmation pratique sans précédent. La classe ouvrière, livrée corps et âme au rythme des machines, aux horaires inhumains, à la misère, la maladie, la mort, dénuée de droits, privée du temps nécessaire",
+      "bbox": {
+        "x_pct": 12.214,
+        "y_pct": 61.292,
+        "w_pct": 85.627,
+        "h_pct": 29.287
+      },
+      "changed": true,
+      "change_reason": "The original OCR was truncated and contained artifacts (the '9' character). Fixed text to represent the actual paragraph content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Substantial OCR degradation in both paragraph blocks.",
+    "Truncated text blocks compared to physical document.",
+    "Typo in header detected."
+  ],
+  "doc_id": "330",
+  "page": 80,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

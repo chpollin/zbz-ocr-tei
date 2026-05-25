@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POURQUOI ÉCRIVEZ-VOUS?",
+      "bbox": {
+        "x_pct": 19.152,
+        "y_pct": 24.92,
+        "w_pct": 48.606,
+        "h_pct": 2.944
+      },
+      "changed": false
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "zb_paragraph",
+      "text": "(Réponse une enquête)",
+      "bbox": {
+        "x_pct": 30.218,
+        "y_pct": 30.807,
+        "w_pct": 26.23,
+        "h_pct": 2.414
+      },
+      "changed": true,
+      "change_reason": "Label changed to caption as it describes the document context/type."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il m'est difficile, pour toute une série de raisons, de parler de mes propres livres. D'abord j'entretiens avec eux, une fois qu'ils sont écrits, très peu de rapports et des rapports ambigus. Dans un sens, je les oublie. Quand j'y jette les yeux, ils m'étonnent et le style que j'y trouve me surprend presque autant que ma voix changée par la radio. Pourtant, ils me restent proches et même intérieurs; il suffit que quelqu'un en dise du bien ou du mal, et je sais aussitôt qu'en parlant d'eux on parle de moi. Un moi essentiel, très sensible mais fataliste, capable de joie ou de tristesse, mais non plus d'indignation ni d'au-",
+      "bbox": {
+        "x_pct": 10.461,
+        "y_pct": 39.134,
+        "w_pct": 66.061,
+        "h_pct": 39.781
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "79",
+      "bbox": {
+        "x_pct": 72.822,
+        "y_pct": 82.204,
+        "w_pct": 3.738,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as footer/filter."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was highly inaccurate for the paragraph text.",
+    "Page number missing from initial detection.",
+    "Caption label corrected."
+  ],
+  "doc_id": "2260",
+  "page": 79,
+  "elapsed_seconds": 5.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

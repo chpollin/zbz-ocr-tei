@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH Penso che quest'ottica tipica del buddismo rappresenti, in rapporto a quanto ho sostenuto, uno dei livelli indispensabili perché vi sia storia, nel significato occidentale del termine. È certamente vero che questo livello esiste anche nelle concezioni occidentali, ma se lo isola dagli altri, per considerarlo autonomamente, il concetto di storia perde il significato che noi gli attribuiamo.",
+      "bbox": {
+        "x_pct": 10.106,
+        "y_pct": 7.227,
+        "w_pct": 85.173,
+        "h_pct": 13.162
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "AGAZZI Penso che il problema della storia debba essere considerato da due differenti prospettive a seconda che la si intenda come insieme di res gestae (cioè come totalità di ciò che passa) o piuttosto come historia rerum gestarum (cioè come scienza che si occupa di descrivere le cose che sono accadute). Mi pare che nella relazione della Signorina Hersch la storia sia stata considerata nel suo primo significato e mi trovo perfettamente d'accordo su quanto è stato affermato, eccetto su un punto.",
+      "bbox": {
+        "x_pct": 10.06,
+        "y_pct": 21.217,
+        "w_pct": 85.068,
+        "h_pct": 17.003
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non mi sembra strano che la storia possa presentare delle ripetizioni e non ritengo che ciò tolga ad essa di interesse. Per la vita personale si può affermare: ogni uomo viene al mondo, quindi arriva all'adolescenza, poi alla maturità e alla vecchiaia, per passare infine dalla vecchiaia alla morte. È una ripetizione continua, ma non mi sento di affermare che per questo la vita è priva di significato: sappiamo tutti che dobbiamo percorrere alcune tappe obbligate e che lo sviluppo seguito è esattamente lo stesso, nella sua struttura, per ognuno di noi, ma al tempo stesso sappiamo di avere una storia personale ricchissima di significati, la quale, anche se vi è questa ripetizione, non è mai la ripetizione della storia degli altri. Quindi, pur essendo convinto che la storia non è sottoposta a una ripetizione ciclica, non riesco a formulare una obiezione particolare a questa concezione.",
+      "bbox": {
+        "x_pct": 9.698,
+        "y_pct": 37.889,
+        "w_pct": 85.43,
+        "h_pct": 27.533
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non credo che la storia concepita, in un certo senso, ciclicamente sia necessariamente sprovvista di significato e debba identificarsi tout court con la storia che si ripete; si è solo individuata in essa una struttura. Tuttavia, come il fisico sa bene che se si applica la stessa legge a differenti condizioni iniziali si ottengono sviluppi differenti, cosí possiamo ritenere che una struttura ciclica applicata a eventi distinti (e ciò accade necessariamente poiché il tempo trascorre) propone una certa struttura, che determina lo sviluppo di ogni storia, senza che vi sia perdita di singolarità e di irripetibilità. In tal modo questo tipo di simmetria possibile, di ripetizione, non potrebbe offuscare, a mio avviso, l'idea di storia come storia di ciò che passa.",
+      "bbox": {
+        "x_pct": 9.457,
+        "y_pct": 65.091,
+        "w_pct": 85.219,
+        "h_pct": 23.841
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Credo che a questo punto sia necessario fare qualche considerazione sulla storia intesa come « scienza » di ciò che",
+      "bbox": {
+        "x_pct": 9.91,
+        "y_pct": 88.187,
+        "w_pct": 84.766,
+        "h_pct": 4.222
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "241",
+      "bbox": {
+        "x_pct": 88.9,
+        "y_pct": 94.4,
+        "w_pct": 4.1,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16.",
+      "bbox": {
+        "x_pct": 10.4,
+        "y_pct": 96.5,
+        "w_pct": 3.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number/index"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text transcriptions were severely truncated.",
+    "Page number 241 was mislabeled as text.",
+    "Section number 16. was mislabeled as text."
+  ],
+  "doc_id": "990",
+  "page": 13,
+  "elapsed_seconds": 6.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SCHEURER In questo intervento intendo affrontare tre punti:",
+      "bbox": {
+        "x_pct": 11.373,
+        "y_pct": 6.788,
+        "w_pct": 85.158,
+        "h_pct": 3.634
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as this is a speaker heading/introduction title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si pone allora il problema di ricostruire questo passato in funzione della stessa evoluzione dei dati raccolti. Da questo punto di vista, mi rendo conto di avere una certa libertà nel manipolare il passato.",
+      "bbox": {
+        "x_pct": 11.614,
+        "y_pct": 57.31,
+        "w_pct": 85.113,
+        "h_pct": 7.947
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text completion."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Daltra parte, è lo stesso quando si vuole agire sul futuro. Dal punto di vista relativistico non esistono eventi che accadono: gli eventi sono. Cosí, sfortunatamente per me, la mia morte è, anche se, buon per me, ignoro in quale punto dello spazio esiste questo fenomeno, questo evento. Mi resta soltanto da eliminare, del tutto liberamente, tra tutte le possibilità che mi si presentano, un certo numero, prefiggendomi un certo scopo, una certa direzione. Infatti, rispetto all'istante che vivo ora, constato una diminuzione di informazione nei due sensi. Consideriamo ad esempio l'esplosione verificatasi a bordo dell'Apollo XIII, forse causata dall'urto di una meteora. Si era stabilito che il razzo si muovesse seguendo le due leggi fondamentali dei sistemi chiusi e si era valutato che, rispetto alle meteoriti, l'apertura del sistema fosse molto piccola. La probabilità di in-",
+      "bbox": {
+        "x_pct": 11.569,
+        "y_pct": 64.677,
+        "w_pct": 85.264,
+        "h_pct": 27.649
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text completion."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "247",
+      "bbox": {
+        "x_pct": 91.135,
+        "y_pct": 94.025,
+        "w_pct": 3.693,
+        "h_pct": 2.766
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and labeled as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Original JSON missed the page number region.",
+    "Original JSON had significant text truncation in detected regions.",
+    "First section header was misidentified as text."
+  ],
+  "doc_id": "990",
+  "page": 19,
+  "elapsed_seconds": 6.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

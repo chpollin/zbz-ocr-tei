@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 133.0,
+        "y_pct": 39.0,
+        "w_pct": 12.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "The page number 16 is a page header/footer element and should not be labeled as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 535.0,
+        "y_pct": 39.0,
+        "w_pct": 339.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "The running header text should be labeled as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "zur Geschichte wesentlich zu seinem Sein gehört. Wir sind nicht alle gleich durch die ganze menschliche Geschichte. Das ist unsere Verbindung mit dem Moment der Geschichte. Deshalb dürfen wir nicht zeitlos denken. Es ist natürlich sehr schön, alle Philosophen der Geschichte zu studieren, aber wir müssen sie verstehen, indem wir sie wieder in ihrer Zeit verstehen. Wir müssen herausfinden, was wir aus ihnen in unserer Zeit machen können. Denn der frühere Philosoph gehört zu seiner Geschichtlichkeit, und wir gehören heute auch zur Geschichtlichkeit. Also ist das Wesentliche, das Dauerhafte nicht das Zeitlose, sondern die jeweilige wesentliche Zugehörigkeit zu der gegebenen Zeit, in der man lebt. Das nennt Jaspers Geschichtlichkeit.",
+      "bbox": {
+        "x_pct": 12.677,
+        "y_pct": 6.883,
+        "w_pct": 80.024,
+        "h_pct": 21.76
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wer also heute das Jenseits des Nihilismus erreichen will, der muß es durch seine Zeit hindurch tun. Deswegen stehen diese zwei Figuren am Eingang seines Buches. Dieser Eingang und die vier anderen Kapitel über das Denken zum Sein, und nicht zum nihil, führen zum Sein durch die geschichtliche Zeit hindurch. Es handelt also davon, nicht einfach in der Philosophie zu verweilen, sondern sie dadurch zu erneuern, daß wir die Probleme der jetzigen Zeit und die Probleme nicht einfach beiseite schieben, die sich aus der Entwicklung der Wissenschaften und einer durch die Wissenschaften so veränderten Welt ergeben haben, daraus, daß der Imperialismus der Wissenschaften so stark geworden ist. Es geht darum, zu verstehen, warum die Menschen zu diesem Nihilismus gefunden haben, und dann darum, ein Jenseits davon zu erreichen. Das Staunen ist immer neu und nicht starr in der menschlichen Geschichte. Durch dieses aktive, gegenwärtige Staunen bekommt jeder eine Einführung in die Philosophien am Leitfaden des philosophischen Staunens seiner eigenen Zeit.",
+      "bbox": {
+        "x_pct": 12.677,
+        "y_pct": 28.725,
+        "w_pct": 79.902,
+        "h_pct": 30.074
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Wesentliche, das Jaspers von der Philosophie gezeigt hat, ist nämlich, daß das, was den philosophischen Gedanken charakterisiert, nicht der Gegenstand ist, über den die Philosophie spricht. Sie können über sehr verschiedene Dinge in der Philosophie sprechen und manchmal an ihnen dasselbe mitteilen. Nicht der Gegenstand ist entscheidend und noch nicht einmal die Methode. Die Leute, die nicht selbst in den Wissenschaften arbeiten und dazu neigen, wissenschaftsgläubig zu werden, glauben, daß in den Wissenschaften die Gegenstände das Wesentliche sind. Das ist aber nicht wahr. Das Wesentliche ist die Methode. Was die Wissenschaften sagen, hat nur Sinn in bezug auf gegebene Methoden, die man in diesen Wissenschaften braucht. Deswegen gibt es sehr viel mehr wissenschaftsgläubige Menschen unter denen, die keine Wissenschaft betreiben, als unter denen, die wirklich eine Wissenschaft betreiben. Denn diese wissen, daß",
+      "bbox": {
+        "x_pct": 12.714,
+        "y_pct": 58.224,
+        "w_pct": 79.743,
+        "h_pct": 25.633
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and running header were incorrectly labeled as text.",
+    "OCR text content in regions was incomplete and contained errors compared to the image source."
+  ],
+  "doc_id": "2990",
+  "page": 9,
+  "elapsed_seconds": 6.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

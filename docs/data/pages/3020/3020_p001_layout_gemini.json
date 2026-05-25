@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Rauschgift als Verneinung des eigenen Menschseins",
+      "bbox": {
+        "x_pct": 33.478,
+        "y_pct": 9.938,
+        "w_pct": 28.275,
+        "h_pct": 4.984
+      },
+      "changed": true,
+      "change_reason": "Identified as the main title/section heading of the article."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 41.613,
+        "y_pct": 15.961,
+        "w_pct": 12.006,
+        "h_pct": 1.558
+      },
+      "changed": true,
+      "change_reason": "Identified as the author's name, serving as a section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die meisten Menschen glauben, dass man, wenn man tun kann, was man will, wie man will und wann man will, dass man gerade dann mit der Würde des Menschen sei. Ich meine, das stimmt nicht ganz. Viele Tiere, denen Sie einen Ausschlupf lassen, laufen weg; wenn Sie Tieren etwas zeigen, was sie mögen, stürzen sie sich darauf und fressen es. Die Menschen aber sind nicht so. Das ist es, was wir herausfinden möchten: In welchem Sinne sind die Menschen nicht so? Wie sind die Menschen? Sind die Menschen eine Ausnahme in der Welt des Lebendigen.",
+      "bbox": {
+        "x_pct": 15.989,
+        "y_pct": 38.079,
+        "w_pct": 31.515,
+        "h_pct": 14.808
+      },
+      "changed": true,
+      "change_reason": "Text content contains garbled OCR segments; content is a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Freunde Tiere zu beobachten, ist ein fabelhafter Tierbeobachter. E- hat den grössten Teil seines Lebens in Sümpfen oder auf Bäumen verbracht, um Tiere beim Mondschein beobachten zu können.",
+      "bbox": {
+        "x_pct": 19.734,
+        "y_pct": 54.029,
+        "w_pct": 27.812,
+        "h_pct": 4.849
+      },
+      "changed": true,
+      "change_reason": "Text is clearly a paragraph, despite OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Mensch ist schlecht ist. Das unterscheidet sie von den Tieren. Dieser Unterschied ist wesentlich.",
+      "bbox": {
+        "x_pct": 17.013,
+        "y_pct": 78.536,
+        "w_pct": 31.234,
+        "h_pct": 2.7
+      },
+      "changed": true,
+      "change_reason": "Combined partial words into coherent paragraph fragment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich muss gestehen, dass ich ein einziges Mal in meinem Leben an der Wahrheit dieses Unterschieds gezweifelt habe: Das war einmal, als ich einen schwarzen Hund hatte, der so gross war, dass er mir die Pfoten auf die Schultern legen konnte. Der Hund war sehr jung, und ich war mit seiner Erziehung beschäftigt. Nach einer Übungsstunde, die ich ihm gab, liess ich ihn in einem Hotelzimmer zurück und ging zum Mittagessen. Als ich zurückkam, war es im Zimmer schrecklich ruhig. Ich dachte sofort: Hier stimmt etwas nicht. Ich öffnete die Tür, und was sah ich? Zunächst nichts. Dann entdeckte ich am Ende des Bettes meinen Hund, er lag dort flach am Boden, wie ein Fell. Er bewegte sich nicht; nur am Weissen in seinen Augen bemerkte ich, dass sich etwas dreht. Sonst war er ganz unbeweglich. Mein Hund sah so schuldbeladen aus, dass ich kaum zweifeln konnte, dass er Gewissensbisse hatte. In diesem Moment musste ich an meinen Freund denken, vielleicht hatte er doch recht.",
+      "bbox": {
+        "x_pct": 48.948,
+        "y_pct": 34.403,
+        "w_pct": 31.136,
+        "h_pct": 25.794
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR mess into the actual paragraph text found in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Schliesslich fand ich eine Erklärung. Ich sagte mir, die Haustiere, die die Menschen «angesteckt». Sie haben wie die Menschen auch ein Wesen, und sie unterscheiden wie die Menschen auch zwischen Recht und Unrecht, eben weil sie «angesteckt» sind.",
+      "bbox": {
+        "x_pct": 49.551,
+        "y_pct": 63.79,
+        "w_pct": 14.923,
+        "h_pct": 1.391
+      },
+      "changed": true,
+      "change_reason": "Fixed label and corrected OCR-garbled text into a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Warum wirkte der Hund tatsächlich so schuldbeladen? Erst später habe ich gemerkt, warum: Ich hatte mit ihm Übung gemacht und dafür hatte ich in meiner Jackentasche verschiedene Käsebiskuits. Als ich zum Mittagessen ging, liess ich die Jacke auf dem Stuhl liegen. Der arme Hund wollte nur die Biskuits erreichen und hat dabei einfach die Hälfte eines Ärmels gefressen.",
+      "bbox": {
+        "x_pct": 49.888,
+        "y_pct": 71.132,
+        "w_pct": 23.142,
+        "h_pct": 11.08
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR into actual paragraph content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "Most regions had severe OCR errors requiring manual reconstruction of text.",
+    "Incorrect labels assigned to headers and titles.",
+    "Bounding boxes contained mixed content and needed adjustment of segmentation logic."
+  ],
+  "doc_id": "3020",
+  "page": 1,
+  "elapsed_seconds": 7.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

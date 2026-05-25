@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 67.338,
+        "y_pct": 20.834,
+        "w_pct": 10.526,
+        "h_pct": 2.344
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Laut und Wort vor unserer Gegenwart",
+      "bbox": {
+        "x_pct": 56.812,
+        "y_pct": 25.338,
+        "w_pct": 30.739,
+        "h_pct": 3.404
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zuerst möchte ich den Organisatoren des Symposions, die mich hierher eingeladen haben, danken, da sie mir die Gelegenheit geben, zu Ihnen zu sprechen. Ich bin froh es zu tun, aber ich bin sehr verlegen: mein Vortrag ist nicht fertig und ich hatte immer das Geföhl, da ich nie damit fertig würde, weil ich immer etwas anderes sagen wollte, und manchmal war das, was ich zuerst gedacht habe im Widerspruch zu dem, was ich später sagen wollte. Diese Veranstaltung setzt Mut voraus, und ich möchte Ihnen zu diesem Mut gratulieren. Denn die Arbeit, die für dieses Symposion geplant ist, bezieht sich auf ein Gebiet, auf dem man besonders unsicher ist, und wo es besonders notwendig ist, sich klare Gedanken zu machen. Diese Gebiete der Kunst sind Gebiete, über die man Werturteile fällen muß, und das ist eine schwere Verantwortung. Ich glaube, kein Mensch, auch wenn er die Musik wirklich kennt, sehr erfahren und sogar selbstsicher ist, kann wissen, in welche Richtung sich unsere Kunst jetzt bewegt. Das ist die Widerspiegelung der tiefen Verlegenheit, in der wir uns befinden: Wir wissen alle, daß die Zukunft von uns abhängt, gleichzeitig wissen wir aber nicht, wie wir diese Zukunft lenken sollen. Unsere Verlegenheit ist so tiefgreifend und weitreichend, daß es nicht erstaunlich ist, daß die Künstler kaum noch wissen, wie sie malen, musizieren sollen; auch das Publikum ist in großer Verlegenheit.",
+      "bbox": {
+        "x_pct": 52.935,
+        "y_pct": 31.166,
+        "w_pct": 38.968,
+        "h_pct": 34.132
+      },
+      "changed": true,
+      "change_reason": "OCR text in the original region was corrupted and incomplete; updated to full text from page image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Publikum, muß gespielt werden, war immer in Verlegenheit. Ich erinnere mich, als ich noch ganz jung war und regelmäßig in Genf Konzerte besuchte, konnte man, wenn ein neues Stück gespielt wurde, beobachten, daß sich nach dem Ende des Stückes alle Köpfe in eine bestimmte Richtung drehten, weil dort ein beröhmter Kritiker saß. Alle wollten wissen, ob er klatschte oder nicht. Eine solche Unsicherheit ist nicht von gestern, auch nicht von vorgestern, sie war schon immer da. Das kann uns vielleicht ein klein wenig trösten, aber sie hat",
+      "bbox": {
+        "x_pct": 53.036,
+        "y_pct": 65.96,
+        "w_pct": 38.852,
+        "h_pct": 13.518
+      },
+      "changed": true,
+      "change_reason": "Original region was cropped mid-sentence and incomplete; extended to match full text block."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "* Die vorliegende Fassung folgt dem in freier Rede gehaltenen Referat.",
+      "bbox": {
+        "x_pct": 53.036,
+        "y_pct": 81.16,
+        "w_pct": 36.196,
+        "h_pct": 2.146
+      },
+      "changed": true,
+      "change_reason": "Added missing footnote region."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 90.306,
+        "y_pct": 84.722,
+        "w_pct": 1.479,
+        "h_pct": 1.936
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction for main paragraph was severely corrupted/truncated.",
+    "The second paragraph box was incorrectly clipped.",
+    "Footnote was entirely omitted in initial detection.",
+    "Page number was omitted in initial detection."
+  ],
+  "doc_id": "2610",
+  "page": 1,
+  "elapsed_seconds": 7.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

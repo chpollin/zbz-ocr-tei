@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "adressés aussi, pour certaines cultures lointaines- à quelques experts. Puis j'ai attendu en tremblant le résultat. Les textes sont arrivés peu à peu et ont commencé à s'empiler sur les tables, sur les chaises, par terre, dans tous les coins de mon bureau. Les pays les plus empressés à envoyer des textes ont été ceux qui subissaient une oppression, comme par exemple la Tchécoslovaquie, ou, à cette époque, la Grèce des colonels. C'était comme un couvercle qui s'entrouvrait, laissant sortir la vapeur. Le résultat a été d'une diversité prodigieuse. Nous avons reçu des proverbes africains, des inscriptions égyptiennes gravées sur la pierre, datant du IIIe millénaire avant Jésus-Christ, des fragments de législation, des chants populaires, etc. On voyait apparaître, à travers ces textes, tous les aspects des Droits de l'Homme, tous les problèmes concomitants qu'ils posent, par exemple la nécessité de l'instruction, le droit à la santé, le droit d'être jugé, etc. Comme s'il y avait en l'homme un for intérieur qui exige le respect, et qui a besoin dans ce but que des conditions très diverses soient réalisées. Il a fallu trier, découper, puis classer, selon un plan qui découlait des textes. Ce livre a été traduit en 7 langues. Mais jusqu'ici il n'a pas été traduit en allemand, à mon grand regret. Ni en Allemagne, ni en Autriche, ni en Suisse, il ne s'est trouvé un éditeur pour assumer cette publication.",
+      "bbox": {
+        "x_pct": 15.421,
+        "y_pct": 4.089,
+        "w_pct": 80.098,
+        "h_pct": 37.79
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. : Vous disiez avoir vécu à l'Unesco des alternances d'euphorie et de désespoir. A quelle occasion, par exemple ?",
+      "bbox": {
+        "x_pct": 16.117,
+        "y_pct": 42.984,
+        "w_pct": 79.402,
+        "h_pct": 4.621
+      },
+      "changed": true,
+      "change_reason": "Text completion and error correction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il existe à l'Unesco un certain nombre de clichés sur lesquels on revient sans cesse ; l'un d'entre eux, c'est le racisme et la lutte contre lui. L'Unesco a organisé à plusieurs reprises des conférences de spécialistes sur ce problème, qui ont produit des déclarations antiracistes à peu près stéréotypées. Elles consistent à affirmer comme étant une évidence scientifique qu'il n'y a pas d'inégalité entre les races, surtout dans le domaine intellectuel. A mon avis une telle affirmation ne peut pas être évidente, et elle donne malheureusement à toute la doctrine une grande fragilité. J'ai écrit à l'Unesco un petit texte sur le concept de race, dans lequel je disais entre autres ceci : argumenter en disant que les races sont intellectuellement égales suppose qu'on possède une notion univoque et universelle de l'intelligence, et des critères d'égalité dans le domaine de l'intelligence, ce qui n'est pas le cas. L'intelligence est chose si multiple et complexe qu'il est extrêmement difficile de la comparer, et encore plus difficile de la mesurer. Le fameux « quotient d'intelligence » occidental est lié à une culture particulière. Cette « égalité » ne peut donc pas être une évidence scientifique. Mais, à supposer qu'elle le soit, elle n'aurait encore aucun rapport avec les Droits de l'Homme. En effet, si on admettait un tel rapport entre l'intelligence et les Droits de l'Homme, cela voudrait dire qu'à l'intérieur d'une même race, celui qui aurait un quotient intellectuel supérieur à un autre devrait jouir de ce fait de Droits de l'Homme plus étendus. Or les Droits de l'Homme ne dépendent",
+      "bbox": {
+        "x_pct": 15.788,
+        "y_pct": 46.935,
+        "w_pct": 79.817,
+        "h_pct": 43.605
+      },
+      "changed": true,
+      "change_reason": "Text completion and error correction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "90",
+      "bbox": {
+        "x_pct": 16.155,
+        "y_pct": 94.654,
+        "w_pct": 2.822,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Raw text OCR had numerous missing/scrambled characters.",
+    "Page number 90 was incorrectly labeled as text.",
+    "Reconstructed missing text in paragraphs."
+  ],
+  "doc_id": "2330",
+  "page": 94,
+  "elapsed_seconds": 5.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

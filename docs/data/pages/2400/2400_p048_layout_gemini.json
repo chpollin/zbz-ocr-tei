@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: Aber Optimismus allein genügt nicht, um das zu erreichen, was wir erreichen müssen.",
+      "bbox": {
+        "x_pct": 8.539,
+        "y_pct": 5.0,
+        "w_pct": 64.771,
+        "h_pct": 4.556
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Wenn wir vom Lernen und von der Lernfähigkeit sprechen, so sollten wir bedenken, daß es immer nur eine kleine Gruppe ist, die die Möglichkeit und die Fähigkeit des Lernens hat, und daß, wie in der Schule, eine relativ große Zahl von Menschen sich mit dem Lernen schwertut. Und deshalb führt uns auch dieser Gedankengang wieder zur Frage der Verantwortung.",
+      "bbox": {
+        "x_pct": 8.418,
+        "y_pct": 11.936,
+        "w_pct": 65.097,
+        "h_pct": 18.268
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Ich möchte vorerst einen noch ungeklärten Widerspruch thematisieren. Ihrer Meinung nach, Frau Hersch, schafft die moderne Zivilisation wesentliche Voraussetzungen für mehr individuelle Freiheit. Wenn ich nun aber zum Staat hinüberblende, den ich hier ja sozusagen <vertrete>, so muß ich feststellen, daß die moderne Zivilisation mit ihrer Komplexität die Handlungsfreiheit des Individuums im Staat einengt. Ihre These lautet: Die Zivilisation kann zu mehr persönlicher Freiheit führen. Meine These lautet: Die Zivilisation führt zu staatlicher Einengung der individuellen Freiheit.",
+      "bbox": {
+        "x_pct": 8.297,
+        "y_pct": 32.147,
+        "w_pct": 65.097,
+        "h_pct": 28.988
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die moderne Zivilisation engt uns ein",
+      "bbox": {
+        "x_pct": 75.882,
+        "y_pct": 53.785,
+        "w_pct": 16.594,
+        "h_pct": 5.044
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: Ich verstehe nicht, weshalb die Tatsache, daß der Staat immer mehr Dinge in Angriff nimmt – Sie haben früher darauf hingewiesen –, zu einer Einengung im Staat führen soll.",
+      "bbox": {
+        "x_pct": 8.49,
+        "y_pct": 63.515,
+        "w_pct": 64.94,
+        "h_pct": 9.461
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Nehmen Sie die gegenwärtige Situation: Der Bürger beklagt sich, daß er sich in jedem Augenblick mit dem Staat auseinandersetzen muß, daß er Vorschriften und Maßnahmen zu befolgen hat. Zu denken wäre an das Beispiel im Verkehr, aber auch an heiklere Zusammenhänge. Der Bürger-",
+      "bbox": {
+        "x_pct": 8.213,
+        "y_pct": 74.818,
+        "w_pct": 65.097,
+        "h_pct": 13.734
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "49",
+      "bbox": {
+        "x_pct": 39.467,
+        "y_pct": 91.536,
+        "w_pct": 2.107,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "Labeled as page footer"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction in JSON was heavily truncated compared to image.",
+    "Page number at bottom not labeled as page_footer."
+  ],
+  "doc_id": "2400",
+  "page": 48,
+  "elapsed_seconds": 5.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

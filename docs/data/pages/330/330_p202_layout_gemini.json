@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "168 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 12.159,
+        "y_pct": 86.814,
+        "w_pct": 85.752,
+        "h_pct": 2.474
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number and running header as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "prendre la Bastille, c'était rendre à l'homme sa liberté naturelle. Par-delà le mythe rousseauiste du bon sauvage, flotte chez la plupart de ces temps la vision d'un homme rassasié, reposé, réchauffé, toujours disponible, par conséquent, pour les problèmes de la pensée. L'héritier naturel du bon sauvage, c'est un civilisé si parfait qu'il peut oublier, à force de les satisfaire avec une aisance distraite, les besoins de son corps.",
+      "bbox": {
+        "x_pct": 12.159,
+        "y_pct": 11.613,
+        "w_pct": 85.752,
+        "h_pct": 14.474
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La tyrannie politique et philosophique paraissait donc suffisant. Inutile de s'occuper des besoins. Sur ce plan, il convenait de « laisser faire la nature », c'est-à-dire les forces économiques. Ainsi un régime qui voulait remplacer le règne du tyran par celui des lois, à la fois condition et garantie de liberté, instaura en fait sur le plan économique une anarchie totale, dûment pourvue cependant d'une justification philosophique. Cette anarchie était comme la mise en pratique de la valeur « liberté » elle-même ; elle s'appelait liberté économique, liberté du commerce et de l'industrie, libre concurrence, libéralisme, etc. Elle reflétait à la fois une confiance profonde dans la nature, l'ordre du monde, l'équilibre des forces. Elle permettait de fermer sincèrement les yeux sur un fait capital, de le rejeter par ignorance hors du champ de la liberté humaine : le fait que sous la protection de la démocratie politique, une jungle économique se développait rapidement, où se constituaient des structures capitalistes, antidémocratiques, de plus en plus puissantes.",
+      "bbox": {
+        "x_pct": 12.117,
+        "y_pct": 26.052,
+        "w_pct": 85.613,
+        "h_pct": 35.651
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les marxistes ont tort, sans doute, lorsqu'ils dénigrent la « Révolution bourgeoise » et ses hypocrisies. Mais il n'est peut-être pas possible de trouver un exemple historique où s'illustre mieux, avec plus de netteté, l'analyse marxiste des idéologies dans leurs rapports avec les nécessités économiques et les besoins des classes ascendantes.",
+      "bbox": {
+        "x_pct": 12.159,
+        "y_pct": 61.319,
+        "w_pct": 85.432,
+        "h_pct": 12.451
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il sera loin des structures capitalistes elles-mêmes. Ici je ne désire examiner que leurs effets sur le jeu de la démocratie politique. Contentons-nous pour l'instant d'une caractéristique tout à fait sommaire du capitalisme : c'est un régime économique dans lequel les grands moyens de production industriels appartiennent à un petit nombre de gens qui, pour faire fonctionner leurs machines, achètent le travail de ceux qui n'en possèdent pas. Le rendement en biens de consommation ainsi produits",
+      "bbox": {
+        "x_pct": 12.214,
+        "y_pct": 73.503,
+        "w_pct": 85.279,
+        "h_pct": 17.255
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was very poor.",
+    "Page number and header were not correctly filtered.",
+    "Overlapping boxes merged into single paragraphs incorrectly."
+  ],
+  "doc_id": "330",
+  "page": 202,
+  "elapsed_seconds": 5.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 11.866,
+        "y_pct": 2.0,
+        "w_pct": 24.89,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified as page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "53",
+      "bbox": {
+        "x_pct": 77.892,
+        "y_pct": 2.0,
+        "w_pct": 2.21,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified as page footer/header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "suprême,   théorique et morale; par une sorte de   preuve   pratiquc, comparable à Tacte par   leque",
+      "bbox": {
+        "x_pct": 11.866,
+        "y_pct": 13.604,
+        "w_pct": 68.514,
+        "h_pct": 18.945
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ici OII voit hien que la relalion matière-prise se coM plique. La fait exister la forme el par ",
+      "bbox": {
+        "x_pct": 11.717,
+        "y_pct": 32.42,
+        "w_pct": 68.387,
+        "h_pct": 36.98
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Doù vient donc   que le   noumène; ce simple que la théorie doit poser 4 limites,   devienne  la val",
+      "bbox": {
+        "x_pct": 11.751,
+        "y_pct": 69.423,
+        "w_pct": 68.237,
+        "h_pct": 5.789
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing bounding box for page header title and number",
+    "Typographical error in existing text string for paragraph 2"
+  ],
+  "doc_id": "110",
+  "page": 55,
+  "elapsed_seconds": 6.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

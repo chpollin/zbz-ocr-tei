@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prjugs, postulats, valeurs\nExercice de discernement",
+      "bbox": {
+        "x_pct": 24.601,
+        "y_pct": 17.942,
+        "w_pct": 50.097,
+        "h_pct": 6.859
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 35.641,
+        "y_pct": 27.805,
+        "w_pct": 28.018,
+        "h_pct": 2.223
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le terme de « prjug » est d'un usage  peu prs exclusivement rhtorique et polmique. Il dsigne, dans les jugements ou les comportements d'autrui, des implications qu'il ignore lui-mme, ou encore qu'il admet sans aucun contrle parce qu' ses yeux elles vont sans dire,  alors qu'elles sont, pour celui qui parle de « prjugs », contestables et mmes fausses. Un prjug, c'est quelque chose qu'il importe de combattre chez les autres. Nul ne peut affirmer  sinon dans un sens gnral excluant toute efficacit  que sa propre pense ou sa propre conduite est dicte par des prjugs, car ceux-ci se trouveraient dpasss et dtruits par le fait mme.",
+      "bbox": {
+        "x_pct": 9.831,
+        "y_pct": 43.597,
+        "w_pct": 78.38,
+        "h_pct": 20.16
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text recognition output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce sur quoi porte un prjug varie beaucoup en nature et en extension. Au sens troit, le prjug concerne des faits, ou un tat de fait dont il impose  l'esprit une version diffrente de la ralit,  alors que cette ralit serait pourtant connaissable. (Par exemple : on affirme l'authenticit des Protocoles de Sion ; on conteste l'existence de camps d'extermination en Allemagne nazie ; aujourd'hui encore, celle des camps sovitiques et des internements psychiatriques  des fins politiques.)  Au sens large, le prjug engendre un tat affectif et (ou) une attitude normative qui repousse d'avance tout ce qui risquerait de les modifier, excluant ainsi tout rexamen (ainsi, par exemple, les nombreuses variantes du racisme, du chauvinisme, ou la rduction de l'histoire  la seule lutte de classe).",
+      "bbox": {
+        "x_pct": 9.508,
+        "y_pct": 63.472,
+        "w_pct": 78.163,
+        "h_pct": 23.888
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text recognition output."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 84.18,
+        "y_pct": 89.176,
+        "w_pct": 2.227,
+        "h_pct": 2.223
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Text OCR was severely corrupted for both paragraphs.",
+    "Page number at bottom right was labeled as text, corrected to page_footer.",
+    "Missing structural identification of page number."
+  ],
+  "doc_id": "1850",
+  "page": 4,
+  "elapsed_seconds": 6.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "eingebüsst haben – so hat sich bei den neuen Finanzjongleuren die Tradition des schuldenfreien Wirtschaftens völlig verloren. Dennoch hat die Schweiz als Ganzes, was die Art des Wirtschaftens betrifft, auch heute noch einen besonderen Charakter. Aus der Zeit der Zünfte, der kleinen Handwerker, der Bauern auf ihren abgelegenen Gütern haben sich fast überall in der Schweiz Restbestände einer alten Rechtschaffenheit erhalten. In der Schweiz zieht man den festen Preis dem Feilschen vor. Allgemein herrschen Vorbehalte gegenüber der levantinischen Schlauheit im Handel. Man glaubt bei uns an Qualität, und sie soll auch ihren angemessenen Preis haben.",
+      "bbox": {
+        "x_pct": 13.037,
+        "y_pct": 14.691,
+        "w_pct": 63.175,
+        "h_pct": 28.261
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gerade dieser Qualitätsbegriff muss als Charakteristikum der Schweiz vermerkt werden. Kaum je hat die Schweizer Exportwirtschaft mit Billigprodukten Märkte erobert. Viel häufiger beruhte der Verkaufserfolg auf hoher Qualität, mit der man billigere Konkurrenzprodukte aus dem Feld schlug.",
+      "bbox": {
+        "x_pct": 13.212,
+        "y_pct": 43.085,
+        "w_pct": 62.875,
+        "h_pct": 12.709
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In diesen Zusammenhang gehört der Hinweis auf die natürliche Armut des Landes. Mit Ausnahme von Salz (aber auch dies erst seit dem 19. Jahrhundert) verfügt die Schweiz über keinerlei natürliche Rohstoffe. Das Schweizer Handwerk gewöhnte sich deshalb daran, Rohstoffe aus dem Ausland zu beziehen, hier zu verarbeiten und die so veredelten Produkte wieder ins Ausland zu verkaufen. Voraussetzung dafür waren beständige Handelsbeziehungen, die ihrerseits an langfristige Treue, Sorgfalt und Fairness gebunden waren.",
+      "bbox": {
+        "x_pct": 13.087,
+        "y_pct": 55.686,
+        "w_pct": 63.038,
+        "h_pct": 23.328
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zu dieser Sorgfalt im Umgang mit menschlichen Beziehungen gehört auch der sorgfältige Umgang mit den Dingen, mit der materiellen Umwelt. Besuchern aus dem Ausland fällt immer wieder der gute Unterhalt der Gebäude auf, gleichgültig ob es sich um alte Bürgerhäuser, Bauerngehöfte oder neuere Industriebauten handelt.",
+      "bbox": {
+        "x_pct": 12.875,
+        "y_pct": 78.788,
+        "w_pct": 63.213,
+        "h_pct": 13.018
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 72.875,
+        "y_pct": 93.5,
+        "w_pct": 2.125,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer"
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Page number 19 was missing a label/region in the provided input."
+  ],
+  "doc_id": "2940",
+  "page": 23,
+  "elapsed_seconds": 5.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

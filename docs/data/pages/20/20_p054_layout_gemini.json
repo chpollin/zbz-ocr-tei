@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "52 SENS PHILOSOPHIQUE DU NON-ÊTRE",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correctly identified page number and running header region as _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "psychologique de toutes. Et cest pourquoi, où elle s'arrête, s'arrête l'être-sujet, s'arrête le homo sapiens. Il n'y a pas, à côté de son monde objectif, d'autres mondes objectifs. L'erreur est qu'on se représente le monde objectif qui nous est ouvert comme limité par un contour au-delà duquel s'étendrait le monde objectif inconnu. Cela est vrai pour les explorations géographiques, vrai aussi pour les sciences. Mais la limite de la philosophie est une limite de non-être véritable, et non une région qui est et sur laquelle on écrit seulement non-être. Philosophiquement, une telle région se trouverait déjà du côté positif, c'est-à-dire dans le monde objet de mon activité et pour lequel je suis sujet. Une limite, dès qu'elle est vue, m'appartient comme objet. Elle est même pour moi l'objet par excellence, l'objet grâce auquel je décide si je suis. Toute la négativité objective qu'elle comporte devient pour moi la possibilité d'une positivité subjective. Au contraire, le non-être commence là où je l'ignore, là où il n'est pas pour moi, même en tant que non-être. Telle est, par exemple, la limite de l'impénétrable matière avant que je ne me distingue d'elle et ne m'oppose à elle : elle n'existe pas, à la façon dont n'existe pas pour nous un monde objectif sans sujet : il n'est pas même rien, on ne peut pas le penser; c'est un seuil de nuit où se dérobent toutes les représentations, même les plus négatives.",
+      "bbox": {
+        "x_pct": 13.75,
+        "y_pct": 12.65,
+        "w_pct": 76.611,
+        "h_pct": 74.166
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to reflect full paragraph content visible in the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne suis qu'en tant que s'est fendue l'homogé-",
+      "bbox": {
+        "x_pct": 17.274,
+        "y_pct": 86.94,
+        "w_pct": 57.274,
+        "h_pct": 2.479
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription to match image content."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Detected text was truncated or poorly OCRed in initial bounding box definition.",
+    "Page header/number was not excluded in original JSON.",
+    "Minor transcription error in the final sentence."
+  ],
+  "doc_id": "20",
+  "page": 54,
+  "elapsed_seconds": 3.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

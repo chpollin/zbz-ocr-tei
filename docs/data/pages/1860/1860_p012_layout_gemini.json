@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": {
+        "x_pct": 786.0,
+        "y_pct": 65.0,
+        "w_pct": 11.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais aucun de progrès n'a été possible sans risque. Le chercheur médecin qui est sur la piste d'un nouveau remède, d'une nouvelle thérapie, d'une nouvelle technique opératoire, a beau tester son hypothèse avec la conscience la plus exigente, il a beau avoir expérimenté sa méthode sur des animaux toujours plus proches de l'homme, - le moment viendra nécessairement où il l'appliquera pour la première fois sur un être humain. Il n'est pas de progrès humain qui ne passe par le risque. C'est là un trait essentiel à notre condition. Le refuser, c'est refuser - vainement d'ailleurs - d'être un homme, c'est-à-dire un être mortel, et qui se sait mortel, et qui, malgré cela ou grâce à cela, ne cesse de 's'efforcer'.",
+      "bbox": {
+        "x_pct": 11.144,
+        "y_pct": 13.177,
+        "w_pct": 70.266,
+        "h_pct": 25.06
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to match the actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le risque pour l'homme, est donc, universellement, au coeur de toute sécurité. Il est déjà dans le feu qu'on allume pour se protéger des fauves.",
+      "bbox": {
+        "x_pct": 11.176,
+        "y_pct": 43.6,
+        "w_pct": 55.141,
+        "h_pct": 6.184
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'y a-t-il donc, dans l'énergie nucléaire, dans les centrales électriques, de radicalement nouveau par rapport à ce risque universellement présent et universellement affronté ? Ou est-ce seulement l'attitude des hommes qui a changé, parce que, trompés par le niveau de sécurité générale atteint dans nos civilisations développées, ils se refusent à admettre un risque, quel qu'il soit ?",
+      "bbox": {
+        "x_pct": 11.281,
+        "y_pct": 51.398,
+        "w_pct": 72.176,
+        "h_pct": 13.537
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 70.0,
+        "y_pct": 958.0,
+        "w_pct": 456.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer for institutional identification."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily truncated.",
+    "Page number 7 was missing from the initial detection list.",
+    "Institutional footer was missing from the initial detection list."
+  ],
+  "doc_id": "1860",
+  "page": 12,
+  "elapsed_seconds": 5.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

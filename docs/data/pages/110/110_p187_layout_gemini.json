@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 19.435,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "185",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 3.435,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "musique poésie. Et lorsque Bergson  trouvait la Caractéristique   de Fartiste dans Ia   perfection d",
+      "bbox": {
+        "x_pct": 12.313,
+        "y_pct": 12.951,
+        "w_pct": 68.435,
+        "h_pct": 61.328
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header regions originally",
+    "Label incorrectly inferred from generic input for header/footer"
+  ],
+  "doc_id": "110",
+  "page": 187,
+  "elapsed_seconds": 5.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

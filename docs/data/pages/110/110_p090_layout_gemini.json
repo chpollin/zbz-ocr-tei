@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "88 L'Être et la forme",
+      "bbox": {
+        "x_pct": 18.723,
+        "y_pct": 2.0,
+        "w_pct": 68.585,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "seul un syslème peul signifier une   unité   Mais ils se trompent lors qu'ils   croient épuiser Funi",
+      "bbox": {
+        "x_pct": 18.723,
+        "y_pct": 13.581,
+        "w_pct": 68.585,
+        "h_pct": 16.942
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est de démasquer ces illusions . Il faut surlout remarques ci-dessus restent présentes 4 nolre réf",
+      "bbox": {
+        "x_pct": 18.642,
+        "y_pct": 30.478,
+        "w_pct": 68.665,
+        "h_pct": 16.737
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2 Eléments de la définition",
+      "bbox": {
+        "x_pct": 35.478,
+        "y_pct": 49.924,
+        "w_pct": 34.868,
+        "h_pct": 1.92
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nolion de forme apparaît dabord fourchue; elle implique deux 4 donc polarité interne. Ces notion ",
+      "bbox": {
+        "x_pct": 18.677,
+        "y_pct": 52.504,
+        "w_pct": 68.47,
+        "h_pct": 13.202
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle apparaît ensuile fourchue dans un deuxième sens: dépendant autre chose; et en même temps se sul",
+      "bbox": {
+        "x_pct": 18.573,
+        "y_pct": 65.577,
+        "w_pct": 68.573,
+        "h_pct": 9.385
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing running header in original input"
+  ],
+  "doc_id": "110",
+  "page": 90,
+  "elapsed_seconds": 6.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

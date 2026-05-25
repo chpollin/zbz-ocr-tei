@@ -1,0 +1,98 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "FeWesen",
+      "bbox": {
+        "x_pct": 43.741,
+        "y_pct": 10.579,
+        "w_pct": 3.912,
+        "h_pct": 6.841
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ideologien Mensdien verbinden. Allein in Einer Demolratie politische Handeln und dic politisdie Absi",
+      "bbox": {
+        "x_pct": 9.104,
+        "y_pct": 18.441,
+        "w_pct": 38.741,
+        "h_pct": 23.214
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Menschen am schwerslen zu Versudiung; diese Last loszuwerden.",
+      "bbox": {
+        "x_pct": 9.07,
+        "y_pct": 62.345,
+        "w_pct": 38.356,
+        "h_pct": 8.828
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "mit   Rudolf in Erinnerung Theologe fuF dcr Philosoph Jaspere, hervorgctreten ist, gegen die Entmyth",
+      "bbox": {
+        "x_pct": 52.494,
+        "y_pct": 10.772,
+        "w_pct": 38.243,
+        "h_pct": 33.186
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "74",
+      "bbox": {
+        "x_pct": 9.0,
+        "y_pct": 90.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: footer page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "75",
+      "bbox": {
+        "x_pct": 86.0,
+        "y_pct": 90.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: footer page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Most labels were incorrect as text, changed to zb_paragraph",
+    "Missing page numbers detected as footer regions",
+    "Speaker labels not identified separately in this crop"
+  ],
+  "doc_id": "1220",
+  "page": 5,
+  "elapsed_seconds": 6.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to zb_paragraph": 4,
+    "ADDED": 2
+  }
+}

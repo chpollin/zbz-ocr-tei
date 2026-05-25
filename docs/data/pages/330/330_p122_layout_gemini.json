@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "88 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 99.8,
+        "y_pct": 74.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Header text at top of page mistakenly included in paragraphs or missing."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "liers. Les deux erreurs sont paresseuses. Elles nous dispensent de faire l'effort sans fin qui devrait nous permettre d'agir avec le plus possible de lucidit3, sans esp3rer jamais voir clair tout 3 fait. Elles dispensent aussi de chercher et d'accomplir, malgr3 la confusion, l'acte le plus nettement efficace et de donner de la fa3on la plus r3solue l'adh3sion partielle la plus proche de notre conscience.",
+      "bbox": {
+        "x_pct": 9.61,
+        "y_pct": 10.045,
+        "w_pct": 85.376,
+        "h_pct": 14.706
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En quelque point, on trahit toujours. Quelque part la fraternit3 est feinte, la solitude persiste, pire, m3l3e de mensonge. On porte des responsabilit3s qu'on n'a pas voulues.",
+      "bbox": {
+        "x_pct": 9.889,
+        "y_pct": 24.537,
+        "w_pct": 85.195,
+        "h_pct": 6.836
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On dira que la politique tout enti3re est r3pugnante par nature. On se d3tourne de cette confusion. Les mains pures, on se fait complice de ce qui est, de ce qui se fait. Car la r3alit3 politique est l3 quand m3me ; on en vit, on la fait vivre, qu'on le veuille ou non. Et l'histoire — notre histoire — s'3crit. Nous avons beau nous abstenir : elle s'3crit avec notre complicit3.",
+      "bbox": {
+        "x_pct": 9.708,
+        "y_pct": 30.722,
+        "w_pct": 85.515,
+        "h_pct": 13.066
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ou bien on se jettera corps et 3me dans un parti, de pr3f3rence dans le plus exigeant, celui auquel il est possible d'ob3ir sans d3sormais ouvrir les yeux. Comme s'il ne restait plus qu'une fa3on d'3viter le mensonge et la culpabilit3 : s'arranger 3 tout prix pour croire ce qu'on vous fait dire, pour changer le mensonge en sinc3rit3 ; assumer aveugl3ment une fois pour toutes la t3che impos3e, la vouloir. Alors r3gneront l'enthousiasme, l'innocence et la fraternit3.",
+      "bbox": {
+        "x_pct": 10.125,
+        "y_pct": 42.807,
+        "w_pct": 85.181,
+        "h_pct": 16.791
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La complexit3 des id3ologies, la confusion des fronts politiques ne sont profitables que pour les partis totalitaires. En effet, quand l'adh3sion reste partielle, comment supporter 3 la fois discipline et solitude? Comment accepter, m3me obscur3ment, que la culpabilit3 persiste au c3ur du devoir, la trahison au c3ur de la fid3lit3? Comment ne pas se dire : « Dans le doute, abstiens-toi » (m3me s'il n'y a pas d'abstention possible, si nous sommes, l3 encore, embarqu3s)? D'o3 l'immense abstention politique qui gagne les masses dans les pays o3 les droits politiques paraissent le plus aller de soi, faire partie de l'ordre naturel. On ne prend pas garde que s'abstenir, c'est livrer la r3alit3 politique et sociale 3 ceux qui n'ont que faire de tels scrupules en pareille mati3re, et devenir d'avance les complices consentants des crimes futurs des dictateurs. De l3 aussi la nostalgie de l'autorit3 totale, qui r3pand",
+      "bbox": {
+        "x_pct": 9.986,
+        "y_pct": 59.242,
+        "w_pct": 85.599,
+        "h_pct": 29.643
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction was heavily truncated or garbled in all paragraph segments.",
+    "Page header text not detected correctly.",
+    "OCR quality is poor for the provided transcription."
+  ],
+  "doc_id": "330",
+  "page": 122,
+  "elapsed_seconds": 7.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

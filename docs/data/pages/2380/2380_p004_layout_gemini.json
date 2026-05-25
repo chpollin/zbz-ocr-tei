@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÉCRITURE CHIFFRÉE, FONCTION DE L'HISTORICITÉ 253",
+      "bbox": {
+        "x_pct": 252.0,
+        "y_pct": 74.0,
+        "w_pct": 593.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as text and page number combined in top margin."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "peut être présent à l'existence. Vécu, agi, traduit en décision existentielle et en engagement absolu, il reste le Dieu caché. Fixé dans la validité d'un savoir, d'une validité impersonnelle qui dure, il cesse aussitôt d'être la transcendance et tombe dans l'illusion.",
+      "bbox": {
+        "x_pct": 102.0,
+        "y_pct": 110.0,
+        "w_pct": 791.0,
+        "h_pct": 68.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La transcendance n'est donc ni ce monde, ni de ce monde. Mais elle n'est pas non plus un autre monde, au-delà de celui-ci. Elle n'est pas un monde, elle est trop différente de « ce monde » pour en être « un autre », et d'ailleurs il n'y en a qu'un. Mais d'autre part, comme c'est dans ce monde que l'existence est fidèle, qu'elle s'assume dans sa situation, qu'elle s'actualise dans son absoluité, qu'elle reconnaît et s'approprie ses limites et qu'elle s'engage dans la communication, c'est dans ce monde aussi, et nulle part ailleurs, qu'elle peut rencontrer les chiffres, apprendre à lire l'écriture chiffrée. Et d'abord, ce chiffre essentiel, privilégié entre tous, qu'est le chiffre de l'échec. Comprenons bien : non pas la notion d'échec ; mais l'expérience effective de l'échec, faite par une existence essayant de toutes ses forces d'atteindre ce qui, dans sa finitude, lui est à jamais refusé. L'échec, comme tout autre chiffre, n'a aucune signification, aucune efficience transcendante que l'on puisse séparer, dissocier, de l'historicité vécue à un moment concret par une existence singulière.",
+      "bbox": {
+        "x_pct": 102.0,
+        "y_pct": 186.0,
+        "w_pct": 792.0,
+        "h_pct": 263.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais quelles sont les réalités de ce monde susceptibles d'avoir un moment l'efficience absolue et évanescente des chiffres — ces chiffres qui parlent de la transcendance, ou par lesquels la transcendance parle à l'existence, sans pourtant rompre son silence essentiel ?",
+      "bbox": {
+        "x_pct": 102.0,
+        "y_pct": 450.0,
+        "w_pct": 791.0,
+        "h_pct": 71.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers répond : il n'est rien ne puisse devenir chiffre. Il y a en toute chose une sorte de vibration, de parole indéterminée, un commencement d'expression, sans qu'on sache « expression pour qui », ni « expression de quoi ». Le monde, la nature, l'homme, le ciel étoilé, l'histoire, — mais aussi un raisonnement de la conscience en général, une pensée en quête d'unité : rien de tout cela n'est tout simplement là, tout cela est sur le point de « signifier ». Il semble que la transcendance affleure partout, comme si la réalité n'était que transparence. Pourtant cela n'est vrai que comme l'un des pôles d'une pensée, toujours vouée à un va-et-vient purificateur entre le silence et les chiffres. Trop aisément médiatisée, la transcendance tend à s'abolir comme telle pour s'identifier à ce qui la médiatise. Trop inaccessible, elle se détache de l'existence pour se rapprocher d'une simple abstraction. Accessible-inaccessible, chacun des termes corrige l'autre et leur contradiction est un chiffre efficace. Jaspers écrit : « Il est dur de réduire le Dieu personnel à son être de chiffre. Dieu comme transcendant reste lointain. Lorsqu'il devient pour moi ce chiffre que je crée moi-même dans un langage humain à la deuxième puissance, il me devient plus proche pour un instant. Mais l'abîme de la transcendance est trop profond. Ce chiffre ne résout pas la tension. Il apporte à la fois plénitude et perplexité, il est et il n'est pas. L'amour que je porte à la divinité en tant que personne ne peut s'appeler amour que par métaphore... Il n'est réel que s'il illumine le monde » (Philosophie, III).",
+      "bbox": {
+        "x_pct": 102.0,
+        "y_pct": 523.0,
+        "w_pct": 792.0,
+        "h_pct": 378.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers ne cesse de traquer la perversion qui consiste à prendre le chiffre, ou sa signification, pour la transcendance elle-même. Il lutte sur",
+      "bbox": {
+        "x_pct": 102.0,
+        "y_pct": 905.0,
+        "w_pct": 791.0,
+        "h_pct": 39.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content exactly."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Page number and header were not correctly filtered or assigned.",
+    "OCR text was truncated and contained significant errors compared to source image.",
+    "BBox coordinates were inconsistent/incorrectly scaled in previous JSON.",
+    "Incomplete paragraphs in previous iteration."
+  ],
+  "doc_id": "2380",
+  "page": 4,
+  "elapsed_seconds": 6.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 10.379,
+        "y_pct": 2.505,
+        "w_pct": 30.347,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header corrected to _filter"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "177",
+      "bbox": {
+        "x_pct": 74.928,
+        "y_pct": 2.505,
+        "w_pct": 3.746,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number corrected to _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "s'arrêle quelque Mais elle  aurait pu s'arrêler ailleurs, le cadre aurait pu êlre plus petit. Tout a",
+      "bbox": {
+        "x_pct": 10.242,
+        "y_pct": 13.06,
+        "w_pct": 68.47,
+        "h_pct": 44.366
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les lois  dexislence élant lout autres sur le mnode esthétique que Panier aux lois de 'existence soc",
+      "bbox": {
+        "x_pct": 10.127,
+        "y_pct": 57.35,
+        "w_pct": 68.389,
+        "h_pct": 17.008
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_heading",
+      "text": "12 L'Etre et la Forme.",
+      "bbox": {
+        "x_pct": 13.314,
+        "y_pct": 75.756,
+        "w_pct": 18.677,
+        "h_pct": 1.215
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_heading"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Headings need appropriate zbz_tag",
+    "Page header was mislabeled as text",
+    "Page number was mislabeled as text"
+  ],
+  "doc_id": "110",
+  "page": 179,
+  "elapsed_seconds": 6.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected to zb_heading": 1,
+    "ADDED": 2
+  }
+}

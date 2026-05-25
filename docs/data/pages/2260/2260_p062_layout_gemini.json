@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ment relié de gris, à peine illustré de quelques dessins au trait noir qui rendaient les personnages semblables à des statues, intitulé Contes et légendes de la Grèce héroïque. Il y avait là des histoires de héros et de dieux, sans grande différence entre les uns et les autres. Je les ai lues et relues jusqu’à les savoir par cœur. L’une, en particulier, me fascinait: celle où Alceste, la femme bien-aimée d’Admète, obtenait des dieux la faveur de mourir à la place de son époux. Elle s’éteignait lentement, doucement, entourée de ceux qu’elle aimait, ses enfants et celui qui lui devrait, comme disait le texte, «de voir encore la lumière du jour», et elle ne ferait les yeux, par faiblesse et sans souffrance, qu’après leur avoir dit ce qu’elle voulait encore leur dire. Le texte était tout imprégné de son sacrifice. Moi je trouvais son sort - mourir pour celui qu’elle aimait, et de cette façon - enviable et désirable entre tous, sans le moindre attendrissement.",
+      "bbox": {
+        "x_pct": 24.97,
+        "y_pct": 11.532,
+        "w_pct": 66.145,
+        "h_pct": 58.813
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text to match actual content in the region."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "64",
+      "bbox": {
+        "x_pct": 25.417,
+        "y_pct": 82.528,
+        "w_pct": 2.292,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Labelled as page number."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR was highly inaccurate and truncated.",
+    "Page number missing from initial JSON."
+  ],
+  "doc_id": "2260",
+  "page": 62,
+  "elapsed_seconds": 4.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

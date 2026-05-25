@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de l'échec, tout cela semble suggérer, au-delà du «monde » empirique, un autre «monde », séparé, foncièrement autre, qui serait celui de «l'être transcendant ». Mais ce serait là le plus grave des malentendus. Jaspers aimait répéter dans ses cours, que ce fût à propos des Idées de Platon, des noumènes kantiens ou de sa propre «transcendance », qu'il n'y a pas de deuxième monde, il n'y en a qu'un. En effet, l'opposition de deux mondes, superposant un monde «supérieur » à celui où se joue notre vie empirique, n'est radicale qu'en apparence. Elle confère à «l'autre monde » une réalité analogue à celle du premier : une réalité «de fait », mais séparée du premier par une sorte d'«espace » qui serait commun aux deux.",
+      "bbox": {
+        "x_pct": 7.818,
+        "y_pct": 7.429,
+        "w_pct": 84.092,
+        "h_pct": 21.337
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ecriture chiffrée. Il est impossible de dire quel spectacle de la nature, quelle expérience psychologique, quel comportement humain, quelle œuvre d'art, quelle pensée, quel mot du langage, est chiffre ou ne l'est pas. Aucun ne l'est, chacun peut l'être. Les chiffres, en effet, ne parlent de la transcendance qu'à l'existence, donc à la liberté. Ils ne sauraient imposer à celle-ci tel ou tel sens transcendant. De même que l'existence, au niveau du sujet empirique, n'est encore qu'une virtualité, de même telle ou telle donnée empirique ne reçoit son efficacité d'«écriture chiffrée » que d'une existence qui la «déchiffre » en s'actualisant dans sa liberté par un engagement absolu.",
+      "bbox": {
+        "x_pct": 7.683,
+        "y_pct": 54.816,
+        "w_pct": 84.051,
+        "h_pct": 21.508
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text extraction to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle conception unit la plus grande précarité à la plus grande exigence. Aucun livre, en effet, ne se trouvera consacré comme l'Ecriture, aucun ne disposera d'une autorité objective. Aucune autorité objectivement établie ne saurait non plus consacrer un tel livre, ni prétendre imposer à autrui son déchiffrage d'une écriture chiffrée, quelle qu'elle soit. Les chiffres et leur déchiffrage ne peuvent être que proposés à l'existence.",
+      "bbox": {
+        "x_pct": 7.818,
+        "y_pct": 75.493,
+        "w_pct": 83.957,
+        "h_pct": 14.284
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text extraction to match document content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "31",
+      "bbox": {
+        "x_pct": 88.583,
+        "y_pct": 91.246,
+        "w_pct": 2.145,
+        "h_pct": 2.259
+      },
+      "changed": true,
+      "change_reason": "Identified page number and correctly labeled as _filter."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original extraction was truncated and did not reflect full paragraph text.",
+    "Page number 31 was missing from detection/classification.",
+    "Multiple paragraphs contained OCR reading errors in the provided JSON."
+  ],
+  "doc_id": "1520",
+  "page": 37,
+  "elapsed_seconds": 7.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

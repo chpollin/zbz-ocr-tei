@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 145",
+      "bbox": {
+        "x_pct": 371.0,
+        "y_pct": 80.0,
+        "w_pct": 269.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected header label and merged page number into page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "or il s'agissait de savoir si nous allions nous marier , et j'eus envie de rire. Puis une vague de détresse me vint, en le regardant. Je l'ai aimé, je l'ai tellement aimé, je l'ai crié en moi-même, je l'ai crié à la nuit, j'ai attendu ce moment, je l'ai appelé de tout mon espoir, exactement tel qu'il est maintenant. Et je ne le lui ai pas dit. Mais lui, il est venu, après trois ans; il m'a entendue, il est là. Il a souffert de ne rien savoir — j'entendais tout à coup sa phrase: « J'ai tant souffert cet automne, je ne voudrais pas repasser par là. »",
+      "bbox": {
+        "x_pct": 9.095,
+        "y_pct": 12.164,
+        "w_pct": 80.77,
+        "h_pct": 25.671
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors and corrected text flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est là. Et moi je suis heureuse avec lui, pleinement heureuse. Mais ce sera non. Ce sera non.",
+      "bbox": {
+        "x_pct": 9.23,
+        "y_pct": 37.401,
+        "w_pct": 80.73,
+        "h_pct": 5.416
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors (aveC -> avec, heur -> heureuse)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il me parlait de la Chine, du Japon, de la Société des Nations; je lui répondis en citant un article de journal, et je lui montrai sur le lac une plaque d'or fondu si ardente qu'elle paraissait éclairer jusqu'à nos visages. Mais nos visages ne sont qu'eux-mêmes, et rien de plus. Ce sera non. J'en suis sûre maintenant, et pourtant j'essaye d'attendre un miracle. Nous montons. Le soleil se fait plus chaud, la pente plus raide. Nous ne parlons plus. Ce sera pour là-haut.",
+      "bbox": {
+        "x_pct": 9.189,
+        "y_pct": 42.561,
+        "w_pct": 80.716,
+        "h_pct": 23.006
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voici le dernier pré, s'élevant à découvert jusqu'à la crête découpée sur le ciel. Encore cinq minutes de lente et lourde grimpée. Mon angoisse s'accumule. Ce sera non. Pas à cause de mes parents, ni de son âge, ni de quoi que ce soit qu'on puisse dire, rejeter, réfuter. Et parce qu'il n'y a pas de raison, il n'y a rien à faire.",
+      "bbox": {
+        "x_pct": 9.419,
+        "y_pct": 65.378,
+        "w_pct": 80.716,
+        "h_pct": 15.369
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous arrivons. Nous nous asseyons sur le bord arraché, surplombant, de la crête. Le paysage est immense et 10",
+      "bbox": {
+        "x_pct": 9.554,
+        "y_pct": 80.501,
+        "w_pct": 80.581,
+        "h_pct": 6.928
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and identified footer artifact."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was very poor with many repeated words and typos.",
+    "Page number 145 was captured inside the top text box instead of being handled as a separate header/footer.",
+    "Inconsistent OCR scanning of paragraph breaks."
+  ],
+  "doc_id": "40",
+  "page": 143,
+  "elapsed_seconds": 5.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

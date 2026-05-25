@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non, je ne le pense pas. Je pense que dans des régimes où la démocratie politique est assurée, là où l'économie seule n'est pas démocratisée, et n'a pas été démocratisée pendant des dizaines et des dizaines d'années, il a fallu lutter contre le pouvoir économique ; et ayant à lutter contre ce pouvoir, il a fallu faire des lois politiques. Alors naturellement, l'Etat a reçu de nouvelles compétences. Mais je ne crois pas que cela ait eu pour visée, ni d'ailleurs pour résultat, de diminuer la liberté d'un grand nombre de gens. Je suis convaincue que les conquêtes du système de sécurité sociale protégeant les économiquement faibles a augmenté, et non pas diminué, les chances essentielles d'êtres humains en grand nombre. Je ne regrette donc pas du tout ce qui a été acquis dans le domaine social. Maintenant, il est évident qu'à force de conquêtes obtenues par la lutte syndicale et politique, par suite aussi de l'évolution technique, on est arrivé aujourd'hui, dans bien des domaines, à des situations bien différentes de celles que Marx avait sous les yeux, où l'écart entre le pouvoir du capital et l'impuissance, la pauvreté des travailleurs était énorme. Il se peut qu'entre la nécessité des investissements et de la formation, la part du patronat, celle des salariés, la réduction de la durée du travail, on approche souvent d'une certaine limite au-delà de laquelle la lutte ne peut pas et ne doit pas se poursuivre de la même façon et sous les mêmes formes.",
+      "bbox": {
+        "x_pct": 5.165,
+        "y_pct": 4.089,
+        "w_pct": 79.853,
+        "h_pct": 41.823
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text to match original image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que représente pour vous à cet égard la « lutte des classes », dont vous avez souligné souvent la complexité, sans en nier pour autant la réalité ?",
+      "bbox": {
+        "x_pct": 5.372,
+        "y_pct": 46.371,
+        "w_pct": 79.402,
+        "h_pct": 5.944
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En discutant avec des gens qui se situaient politiquement à droite, j'ai souvent et depuis très longtemps trouvé des points d'accord au niveau de la théorie ; et puis, lorsque se posait au peuple une question concrète et qu'il fallait voter en Suisse par « oui » ou par « non », il se trouvait quand même que l'un votait « oui » et l'autre « non ». Il y a donc plus d'opposition, malgré tout, entre la droite et la gauche qu'il ne semble souvent quand on s'en tient à la théorie. Mais il y a une formidable simplification dans la notion de « lutte des classes », surtout dans nos sociétés modernes. Aujourd'hui, la structure par classes s'est énormément compliquée et différenciée ; selon les secteurs d'activité et de travail, les rapports entre groupes sociaux sont tout autres, les problèmes se posent tout autrement. Le maintien rigide et quasi superstitieux de la notion pure de « lutte des classes » rend souvent ceux qui veulent lutter pour la gauche beaucoup trop conservateurs, souvent inactuels. Ils luttent sur des fronts qui ne correspondent pas au front réel.",
+      "bbox": {
+        "x_pct": 5.092,
+        "y_pct": 52.202,
+        "w_pct": 79.976,
+        "h_pct": 30.298
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est-ce que vous pensez toujours que le régime capitaliste est néfaste et qu'il fait peser des menaces sur le fonctionnement normal de la démocratie ?",
+      "bbox": {
+        "x_pct": 5.372,
+        "y_pct": 82.5,
+        "w_pct": 79.695,
+        "h_pct": 6.234
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "109",
+      "bbox": {
+        "x_pct": 81.0,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Detected and labeled page number correctly as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly inaccurate in multiple paragraphs.",
+    "Page number missing from initial detection.",
+    "Author signature J.H. partially omitted in previous detection."
+  ],
+  "doc_id": "2330",
+  "page": 113,
+  "elapsed_seconds": 5.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

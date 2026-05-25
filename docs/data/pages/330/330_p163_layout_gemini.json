@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 129",
+      "bbox": {
+        "x_pct": 305.5,
+        "y_pct": 89.286,
+        "w_pct": 535.0,
+        "h_pct": 14.286
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page header/number line which was incorrectly merged into the text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce qui arrive souvent dans les vies individuelles : plus la volonté et l'intelligence s'obstinent, par culte du spirituel, à se détourner de la vie physique, et plus le corps devient corps : il se déspiritualise et subit la force tyrannique, obscure, des nécessités naturelles. De même, la lutte des promesses, des interprétations et des mensonges, dans la stratégie électorale, fait passer à l'arrière-plan, jusqu'à les dissimuler parfois tout à fait, les vrais problèmes économiques de la société ; les facteurs économiques, alors, échappent à l'intervention et au contrôle des volontés humaines et sont rendus au déterminisme. Cela résulte d'ailleurs, notons-le bien, non seulement de la propagande des spiritualistes conservateurs, mais aussi, et de façon plus redoutable, de celle des adeptes de « l'économique d'abord ». Parler de primauté de l'économique, de lois économiques, du substrat social, de réalité concrète, prouve aussi peu la lucidité et la volonté d'action réelle de certains partis sur ce plan-là que la « primauté du spirituel », proclamée par d'autres, ne prouve leur propre intensité spirituelle. Les fuites verbales sont innombrables. Proclamer son mépris de la théorie et son amour de l'action, c'est encore faire de la théorie. Depuis quelque temps, tout le monde veut être « concret » : mais on ne voit pas que « le concret » est une catégorie abstraite. Il est très facile, au nom de la « situation individuelle concrète », de négliger les problèmes « abstraits » posés par le rapport de l'index vital et des salaires ; très facile aussi, au nom des « grandes lois économiques qui régissent la vie concrète des hommes », de mépriser leur droit « abstrait » à changer d'employeur ou à défendre publiquement une opinion.",
+      "bbox": {
+        "x_pct": 36.63,
+        "y_pct": 117.38,
+        "w_pct": 843.59,
+        "h_pct": 573.98
+      },
+      "changed": true,
+      "change_reason": "Removed OCR artifacts 'autreg données' at the start and cleaned up content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On le voit, il y a dans le régime démocratique, et particulièrement dans le jeu des partis qui lui est indispensable, un risque — plus qu'un risque : une tendance constante — à mettre en mouvement des cercles vicieux au double sens logique et fonctionnel de ce mot. Précisément parce que le régime démocratique et le jeu des partis tiennent compte sans mensonge de la condition humaine, de l'homme incertain, aux attachements absolus, libre uniquement et par le réel dont il est prisonnier, tendu vers l'unique et captif de la diversité de ses semblables, s'arrachant à eux pour eux en quelque sorte vers eux — précisément pour",
+      "bbox": {
+        "x_pct": 36.63,
+        "y_pct": 690.0,
+        "w_pct": 843.59,
+        "h_pct": 280.0
+      },
+      "changed": true,
+      "change_reason": "Added missing bottom paragraph block which was not captured by the initial erroneous box."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original box included page header in the text block.",
+    "OCR artifact 'autreg données' at the beginning.",
+    "Initial box stopped mid-page, missing the final paragraph.",
+    "Need to distinguish headers and page numbers from body text."
+  ],
+  "doc_id": "330",
+  "page": 163,
+  "elapsed_seconds": 6.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

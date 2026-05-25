@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le peut, cest alors quil ne sagit pas tout à fait de vraie musique, mais seulement du déploiement dune formule ou dune règle. Pourtant, au moment où une musique imprévisible se fait entendre, ce quelle donne à entendre apparaît comme ne pouvant être autrement quil na été. Que se passe-t-il donc? Au fil du déroulement de la musique, de son invention, la mélodie dépose en quelque sorte la loi qui la régit. Il ny a pas de loi externe qui la gouverne (sinon ce serait simplement lapplication dune recette). Certes, il existe des règles de tonalité, de genre, etc., mais elles ne disent pas ce que sera la mélodie. La musique sinvente, et la loi est créée au fur et à mesure de linvention. Ou encore, inventer la loi et inventer la musique constituent une seule et même chose. Voilà ce que perçoit le véritable auditeur.",
+      "bbox": {
+        "x_pct": 16.557,
+        "y_pct": 13.832,
+        "w_pct": 57.595,
+        "h_pct": 37.092
+      },
+      "changed": true,
+      "change_reason": "The raw OCR text was poorly captured and truncated; replaced with the full, legible text content from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans la vie, ce nest que dans des moments exceptionnels et privilégiés que nous faisons lexpérience authentique à laquelle je faisais allusion, où liberté et nécessité coïncident. Par contre, cette coïncidence est l'étoffe même de la musique, ce dont elle est faite. En effet, linvention libre et nécessaire ne se rencontre pas à un moment déterminé de la musique, elle en est le tissu. Mais cela nest possible que parce que la musique se déroule dans le temps.",
+      "bbox": {
+        "x_pct": 16.451,
+        "y_pct": 50.817,
+        "w_pct": 57.564,
+        "h_pct": 22.361
+      },
+      "changed": true,
+      "change_reason": "The raw OCR text was poorly captured and contained repetitive noise; replaced with the full, legible text content from the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "57",
+      "bbox": {
+        "x_pct": 70.825,
+        "y_pct": 75.312,
+        "w_pct": 2.58,
+        "h_pct": 2.376
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer and removed from text classification."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Raw OCR text was extremely poor/corrupted for both paragraph regions.",
+    "Page number at bottom right was missing from detection set and had to be added.",
+    "The OCR cleanup required significant manual transcription correction."
+  ],
+  "doc_id": "2780",
+  "page": 56,
+  "elapsed_seconds": 4.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

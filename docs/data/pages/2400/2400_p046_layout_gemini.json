@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "elementare   Voraussetzung haben, eur Freiheit nachdenken zu konnen.",
+      "bbox": {
+        "x_pct": 6.643,
+        "y_pct": 4.927,
+        "w_pct": 64.819,
+        "h_pct": 4.316
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie haben, Frau Hersch, zu Recht darauf wiesen, daß die Entwicklung unserer Zivilisation primär und oberflächlich zu mehr physischer Sicherheit geföhrt hat. Unser Leben ist physisch sicherer geworden, wir - ich brauche dieses <wir> nun im engeren Sinne - haben genug zu essen, wir können unsere Gesundheit pflegen, wir können uns frei bewegen. Sie haben aber auch darauf hingewiesen, daß wir heute weniger leichtsinnig, weniger leichten Sinnes sind als Menschen früherer Zeiten in größerer materieller Not. Unsere Musik, unsere Bilder sind verkrampft, sind weniger erfüllt. Und nun meine Frage: Handelt es sich hier um eine Kausalität? Ist das eine Folge des anderen? Und wenn es sich um eine Kausalität handelt - ist dann nicht die Frage erlaubt oder geboten nach dem <Zurück zur Natur>, wie es heute von gewissen politischen Kreisen gefordert wird? Oder mit anderen Worten: Könnte uns ein <Zurück zur Natur> nicht mehr Gleichgewicht bringen zwischen physischer Sicherheit und geistiger Entfaltung?",
+      "bbox": {
+        "x_pct": 6.401,
+        "y_pct": 9.316,
+        "w_pct": 65.133,
+        "h_pct": 49.854
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text block which was truncated by the OCR/bounding box logic."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zurück zur Natur?",
+      "bbox": {
+        "x_pct": 73.792,
+        "y_pct": 54.949,
+        "w_pct": 18.563,
+        "h_pct": 1.477
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: Ihre Frage ist, glaube ich, unrealistisch. Es gibt in der Menschheitsgeschichte kein Beispiel dafür, daß man, um zurück zur Natur zu gehen, etwas abgeschafft hat, was man zur Verfügung hatte. Wenn die jungen Leute dazu aufgerufen haben, zurück zur Natur zu gehen, so haben sie die Arbeit und die Kompetenz unterschätzt, die ein solches Zurück verlangt. So sind sie z. B. nach Südfrankreich gefahren, um Schafe zu hüten, aber sie wußten nicht, wie man mit Schafen umgehen muß, und die Schafe wurden krank und mußten tagelang geimpft werden.",
+      "bbox": {
+        "x_pct": 6.437,
+        "y_pct": 61.259,
+        "w_pct": 65.181,
+        "h_pct": 27.147
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt kein Zurück, aber...",
+      "bbox": {
+        "x_pct": 73.829,
+        "y_pct": 82.409,
+        "w_pct": 20.169,
+        "h_pct": 3.231
+      },
+      "changed": true,
+      "change_reason": "Fixed typo/truncation in text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "47",
+      "bbox": {
+        "x_pct": 37.5,
+        "y_pct": 91.2,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified and correctly labeled page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR transcription for body paragraphs was incomplete.",
+    "Page number not identified as page_footer.",
+    "Aggressive manual correction of transcribed text required for both major body paragraphs."
+  ],
+  "doc_id": "2400",
+  "page": 46,
+  "elapsed_seconds": 7.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 20.375,
+        "y_pct": 2.0,
+        "w_pct": 3.738,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number/header at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ETRE ET LA FORME",
+      "bbox": {
+        "x_pct": 77.728,
+        "y_pct": 2.0,
+        "w_pct": 11.23,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "jours; en effet, pour ajouter des déterminations. Mais rien n'empêche dimaginer, puisque de toute fa",
+      "bbox": {
+        "x_pct": 20.084,
+        "y_pct": 13.161,
+        "w_pct": 68.702,
+        "h_pct": 16.983
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je nen sais rien et n'en dirai  rien.  Mon dessein est bien assez ambitieux sans cela : écarter de l",
+      "bbox": {
+        "x_pct": 20.084,
+        "y_pct": 29.967,
+        "w_pct": 68.548,
+        "h_pct": 9.491
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mon intention; pourtant, n'est nullement de condamner toute recherche  métaphysique. Au contraire. M",
+      "bbox": {
+        "x_pct": 19.854,
+        "y_pct": 44.773,
+        "w_pct": 68.817,
+        "h_pct": 29.79
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/footer regions",
+    "Label correction for header items"
+  ],
+  "doc_id": "110",
+  "page": 18,
+  "elapsed_seconds": 7.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

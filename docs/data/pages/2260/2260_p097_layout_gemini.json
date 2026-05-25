@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "adieu est vaincu. Il est vrai, certains aiment ainsi. Une mère a vu un tourbillon lui arracher sa fille de vingt ans sans perdre un instant l'allégresse de sa foi. Mais il me reste un doute, le soupçon d'une tricherie, d'une déréalisation du temps, de l'adieu qu'il exige, et même de la puissance de Dieu.",
+      "bbox": {
+        "x_pct": 10.182,
+        "y_pct": 11.522,
+        "w_pct": 65.661,
+        "h_pct": 19.823
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and garbled in extraction; corrected to match the visible source image text accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre vraie patrie – même si nous y vivons l'exil –, c'est celle, littérale, des choses et des êtres mortels qui nous entourent. L'exilé aussi vit dans cette patrie, qui laisse à Dieu toutes ses armes. Nous n'avons pas à vivre ailleurs. Nous avons à vivre ici.",
+      "bbox": {
+        "x_pct": 10.339,
+        "y_pct": 31.177,
+        "w_pct": 65.576,
+        "h_pct": 16.367
+      },
+      "changed": true,
+      "change_reason": "Text content was garbled in initial scan; corrected to match the visible source image text accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici, dans le don de soi à des êtres périssables, nous ne cessons d'oublier chaque jour la mort et l'adieu. Et aussi, bien sûr, dans l'amour de nous-mêmes.",
+      "bbox": {
+        "x_pct": 10.424,
+        "y_pct": 56.434,
+        "w_pct": 65.37,
+        "h_pct": 10.765
+      },
+      "changed": true,
+      "change_reason": "Text content was garbled in initial scan; corrected to match the visible source image text accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Frivole, notre don. Rêveuse, notre vigilance. Distraite, notre concentration. Mon regard passe sur ton visage presque sans le voir, comme si j'avais la garantie de pouvoir à",
+      "bbox": {
+        "x_pct": 10.242,
+        "y_pct": 67.452,
+        "w_pct": 65.879,
+        "h_pct": 11.606
+      },
+      "changed": true,
+      "change_reason": "Text content was garbled in initial scan; corrected to match the visible source image text accurately."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was heavily garbled and truncated for all paragraphs.",
+    "Page number 97 was missed in the detected regions, indicating an incomplete layout detection."
+  ],
+  "doc_id": "2260",
+  "page": 97,
+  "elapsed_seconds": 4.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

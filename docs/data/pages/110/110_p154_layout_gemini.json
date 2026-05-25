@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "152 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 19.102,
+        "y_pct": 2.0,
+        "w_pct": 68.124,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "remplacement par une référence arbilraire; comme cesl Ie Cas pour le physicien.",
+      "bbox": {
+        "x_pct": 19.102,
+        "y_pct": 14.024,
+        "w_pct": 68.124,
+        "h_pct": 3.971
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) Le lieu . Le   premier   aspect c'est son caraclère Ton appelle & lieu \" la portion   despace   o",
+      "bbox": {
+        "x_pct": 18.953,
+        "y_pct": 19.719,
+        "w_pct": 68.7,
+        "h_pct": 24.169
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut aller   plus loin maintenant el disais dans la loi de Fespace formulée ci-dessus; expression",
+      "bbox": {
+        "x_pct": 18.642,
+        "y_pct": 43.91,
+        "w_pct": 68.78,
+        "h_pct": 27.715
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) La perspective. Mais bien plus, même sans corps, l'esprit se",
+      "bbox": {
+        "x_pct": 19.102,
+        "y_pct": 73.498,
+        "w_pct": 67.974,
+        "h_pct": 2.158
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing text block"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region initially.",
+    "Missing final text line region initially."
+  ],
+  "doc_id": "110",
+  "page": 154,
+  "elapsed_seconds": 6.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Bull. Schweiz. Akad. Med. Wiss. 36, 229-233 (1980)",
+      "bbox": {
+        "x_pct": 40.407,
+        "y_pct": 7.917,
+        "w_pct": 39.117,
+        "h_pct": 1.737
+      },
+      "changed": true,
+      "change_reason": "Identified as journal running header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA LIBERTÉ DU MALADE FACE À LA MÉDECINE D'AUJOURD'HUI",
+      "bbox": {
+        "x_pct": 7.01,
+        "y_pct": 15.709,
+        "w_pct": 72.498,
+        "h_pct": 1.687
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 7.115,
+        "y_pct": 20.496,
+        "w_pct": 15.02,
+        "h_pct": 1.481
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les problèmes et les paradoxes fondamentaux avec lesquels nous sommes aux prises découlent de la condition humaine elle-même: l'être humain existe au croisement de la nature et de la liberté.",
+      "bbox": {
+        "x_pct": 6.849,
+        "y_pct": 24.957,
+        "w_pct": 76.688,
+        "h_pct": 6.325
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selon la nature, il lui faut, avant tout, vivre, car vivre, c'est la condition de tout le reste. Selon la liberté, il lui faut, avant tout, un sens, c'est-à-dire la visée de quelque chose qui vaut. Pour un être libre, une vie dépourvue de sens n'est plus une vie. Il le dit: \"Ce n'est pas une vie\".",
+      "bbox": {
+        "x_pct": 6.986,
+        "y_pct": 32.917,
+        "w_pct": 75.197,
+        "h_pct": 7.823
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and formatting"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'où deux ordres d'exigences, de nécessités, de valeurs, qui s'entrecroisent et souvent entrent en conflit.",
+      "bbox": {
+        "x_pct": 6.906,
+        "y_pct": 41.236,
+        "w_pct": 77.647,
+        "h_pct": 3.949
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces paradoxes prennent, dans la relation entre le patient et son médecin, un relief et un poids particuliers.",
+      "bbox": {
+        "x_pct": 6.93,
+        "y_pct": 46.684,
+        "w_pct": 77.969,
+        "h_pct": 4.296
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'effort du médecin pour soulager et guérir le patient trouve son sens dans le fait que le patient est un être humain, c'est-à-dire capable de liberté responsable. (On ne voit pas quelle autre raison pourrait légitimer le sacrifice d'animaux à la recherche et à la thérapie.) Mais, du même coup, le médecin, en imposant son traitement, tend à soumettre cette liberté du patient, ou du moins à la restreindre, parfois plus que la maladie elle-même. Ce faisant, il se réfère à une seule finalité évidente et indiscutée: rétablir la \"santé\", prolonger la \"vie\". Or, à cause des deux \"ordres\" (nature-liberté) constitutifs de la condition humaine, le terme \"santé\" n'est pas plus univoque de celui de \"vie\". L'Organisation mondiale de la santé parle, il est vrai, d'un \"Droit à la santé\". Qu'est-ce que cela peut bien signifier, alors que nous sommes tous exposés à la maladie et promis à la mort? On peut parler, tout au plus, d'un droit de chacun à des conditions de vie et de travail satisfaisantes pour la santé, et d'un droit de tous aux soins. Encore ce droit n'est-il jamais intégral, ni rigoureux. Tout travail fatigue. Et nous le verrons, plus la médecine fait de progrès, moins il est possible que tous les hommes aient un accès égal à tous les soins. Mais l'Organisation mondiale de la santé va plus loin: elle définit la santé (cette santé qui serait \"un droit\") comme \"bien-être\". Dès lors, un remords, par exemple, étant évidemment contraire au \"bien-être\", doit être le plus",
+      "bbox": {
+        "x_pct": 6.906,
+        "y_pct": 51.282,
+        "w_pct": 77.728,
+        "h_pct": 36.923
+      },
+      "changed": true,
+      "change_reason": "Corrected extensive OCR errors throughout the block"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "229",
+      "bbox": {
+        "x_pct": 80.3,
+        "y_pct": 93.3,
+        "w_pct": 3.3,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Corrected identification of page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "The initial segmentation had severe OCR issues.",
+    "Page number at bottom right was not captured.",
+    "Journal header was incorrectly labeled as text."
+  ],
+  "doc_id": "1680",
+  "page": 2,
+  "elapsed_seconds": 9.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

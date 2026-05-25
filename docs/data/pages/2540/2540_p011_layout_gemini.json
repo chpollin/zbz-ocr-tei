@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "gung gefunden werden. Aber was wir in der Hauptsache brauchen, ist eine ganz andere Auffassung des Verhältnisses von Mensch und Arbeit.",
+      "bbox": {
+        "x_pct": 9.622,
+        "y_pct": 8.564,
+        "w_pct": 76.093,
+        "h_pct": 6.422
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn wir uns die jungen Rebellen gegen die bestehende Gesellschaft anschauen, die sogenannten »Aussteiger«, dann stellen wir fest, daß viele von ihnen sich im Kunstgewerbe oder in der Landwirtschaft versuchen. Darin drückt sich vor allem das menschliche Bedürfnis aus, die Beziehung zwischen der arbeitenden Hand und dem produzierten Gegenstand, die durch die industrielle Massenproduktion verloren gegangen ist, wieder herzustellen. Die Wiederentdeckung des Handwerks oder der landwirtschaftlichen Tätigkeit sind aber nur zwei Möglichkeiten, den Sinn der Produktivität zu erfahren. Vielleicht wird die Großproduktion, die sich durch die Erfindung der Mikroprozessoren ankündigt – wo für Massenprodukte immer weniger Arbeitsstunden erforderlich sind –, einen Teil der Zeit menschlichen Lebens freimachen, um sich den schönen Dingen vermehrt zuwenden zu können. Die Massenproduktion wird es erlauben, auf die eine oder andere Weise, Handwerkskunst wieder aufleben zu lassen – formvollendete Bauelemente zum Beispiel –, und eine größere Zahl Menschen daran zu beteiligen. Es könnte eine neue Renaissance-Epoche anbrechen – dank dem industriellen Fortschritt.",
+      "bbox": {
+        "x_pct": 8.921,
+        "y_pct": 15.1,
+        "w_pct": 76.727,
+        "h_pct": 38.957
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lassen sich in der gegenwärtigen Situation millionenfacher Arbeitslosigkeit überhaupt zukunftsweisende Möglichkeiten erkennen, allen Arbeitssuchenden und Arbeitswilligen eine Arbeitsgelegenheit zu geben?",
+      "bbox": {
+        "x_pct": 8.827,
+        "y_pct": 56.564,
+        "w_pct": 76.509,
+        "h_pct": 7.35
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and removed leading keyword."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Schon vor etwa zwanzig Jahren sagte mir Hannah Arendt, sie befürchte eine Entwicklung auf dem Arbeitsmarkt, die dahin führe, daß am Ende nur noch den Begabten Arbeitsplätze zur Verfügung gestellt würden. Und was geschehe dann mit den anderen? Inzwischen ist diese Entwicklung, die sich damals erst in Umrissen andeutete, voll eingetreten. Die neuen Technologien, insbesondere die Informatik, tragen wesentlich zur Beseitigung mechanischer Arbeiten und damit zum Abbau personalintensiver Arbeitsplätze bei. Angesichts dieser Situation wage ich nicht zu prognostizieren, daß in Zukunft jeder Mensch auch einen Arbeits",
+      "bbox": {
+        "x_pct": 8.515,
+        "y_pct": 66.308,
+        "w_pct": 76.916,
+        "h_pct": 21.328
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and removed leading keyword."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "259",
+      "bbox": {
+        "x_pct": 80.9,
+        "y_pct": 89.6,
+        "w_pct": 4.8,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was heavily truncated.",
+    "Page number not detected as a separate region.",
+    "Leading keywords inside paragraphs were incorrectly identified."
+  ],
+  "doc_id": "2540",
+  "page": 11,
+  "elapsed_seconds": 7.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

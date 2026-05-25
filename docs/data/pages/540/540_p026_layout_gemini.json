@@ -1,0 +1,130 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "254",
+      "bbox": {
+        "x_pct": 15.06,
+        "y_pct": 14.54,
+        "w_pct": 3.73,
+        "h_pct": 1.25
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/_filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DISCUSSION",
+      "bbox": {
+        "x_pct": 44.15,
+        "y_pct": 14.65,
+        "w_pct": 11.66,
+        "h_pct": 1.05
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The second point relates to objectivity and subjectivity of his- torical knowledge. Historical knowledge as subjective is different from the subjectivity of taste, likings, etc. The liking of a picture may be considered as subjective because it does not form a part of the object. But historical subjectivity is interpretation, and there is no historical object without being interpreted.",
+      "bbox": {
+        "x_pct": 14.887,
+        "y_pct": 17.153,
+        "w_pct": 69.365,
+        "h_pct": 10.732
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "MR. PASSMORE :",
+      "bbox": {
+        "x_pct": 14.94,
+        "y_pct": 31.06,
+        "w_pct": 14.99,
+        "h_pct": 1.35
+      },
+      "changed": true,
+      "change_reason": "Section header labeled as section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Philosophers of history tend to swing between two extreme views : the first, that there is a small set of laws from which the whole course of history can be deduced, the second, that all historical events are unique, so that general statements can play no part in history. I agree with Mlle Hersch in rejecting the first view and in denying that history is a natural science. But I deny also that « in history there is no repetition ». If it were so, history would be wholly unintelligible ; we could never offer any general description of a historical event. As in science, events of a particular type recur and can be generally described as e.g. a king, a revolution. Then it is also possible in principle to discover a general kind of relation between these kinds of events. Furthermore, the historian not infrequently explains by the use of general laws e.g. economic laws. But much of the time he is not explaining at all : he is simply telling us about something that happened.",
+      "bbox": {
+        "x_pct": 14.652,
+        "y_pct": 34.324,
+        "w_pct": 69.334,
+        "h_pct": 26.092
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "M. MERCIER :",
+      "bbox": {
+        "x_pct": 14.826,
+        "y_pct": 63.384,
+        "w_pct": 14.17,
+        "h_pct": 1.875
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne suis d'une part personnellement pas persuadé que l'on puisse parler véritablement de connaissance historique. M. Hyppo- lite par exemple s'est exprimé en disant que l'on « comprend » l'his- toire, ce qui est autre chose que de dire qu'il y a connaissance histo- rique.",
+      "bbox": {
+        "x_pct": 14.477,
+        "y_pct": 66.812,
+        "w_pct": 69.334,
+        "h_pct": 8.46
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or Mlle Hersch a en quelque sorte rejeté ma définition de la connaissance (de la connaissance tout court) selon laquelle celle-ci nous libère de la temporalité, la remplaçant par une conception",
+      "bbox": {
+        "x_pct": 14.416,
+        "y_pct": 75.17,
+        "w_pct": 69.16,
+        "h_pct": 5.574
+      },
+      "changed": true,
+      "change_reason": "Converted list_item to zb_paragraph for consistency."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.98,
+        "y_pct": 92.51,
+        "w_pct": 36.57,
+        "h_pct": 3.75
+      },
+      "changed": true,
+      "change_reason": "Added page_footer annotation for JSTOR footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Original list_item tag was unnecessary for standard paragraphs.",
+    "Page number and running header were missed in initial parsing.",
+    "MR. PASSMORE header was missing.",
+    "JSTOR metadata footer was missing."
+  ],
+  "doc_id": "540",
+  "page": 26,
+  "elapsed_seconds": 7.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

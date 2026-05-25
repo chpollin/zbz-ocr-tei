@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’homme tâtonne sans avancer parmi ces contradictions irréductibles, qui seules lui permettent d’être ce qu’il est : un être humain. Sans l’écoulement du temps, sans le devenir de l’histoire, sans l’éphémère, sans la mort, il ne pourrait pas agir. Il ne serait ni innocent, ni coupable. Il n’aurait pas d’être, au sens humain du terme. Il n’aurait pas d’enjeux. Mais vivant l’écoulement, le devenir, l’éphémère et l’imminence de la mort, il lui semble souvent qu’il perd, de ce fait même, les enjeux de ses actes, le poids de sa présence, et qu’il se dilue virtuellement dans un néant plus profond que l’être.",
+      "bbox": {
+        "x_pct": 26.2,
+        "y_pct": 15.781,
+        "w_pct": 57.6,
+        "h_pct": 26.631
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was highly inaccurate in the provided input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plus fondamentaux – plus décisifs et plus profonds – que le caractère, ou l’affectivité, ou les opinions, ou les croyances, sont en chaque personne ses rapports, justement, au temps qui passe ou qui s’arrête, à son surgissement, à son écoulement, à sa durée. Pour l’une, ce qu’elle vient d’inscrire le vivant dans le maintenant de l’heure est déjà en train de s’effacer, et la page, devant elle, retrouve sans cesse sa blancheur. Pour l’autre, rien n’annulera jamais ce vécu qui va la suivre jusque dans sa mort. Et pourtant, ni l’une ni l’autre, sous peine de perdre le bon-sens indispensable à la vie, ne peut faire ce choix dans sa rigueur, vouées qu’elles sont",
+      "bbox": {
+        "x_pct": 26.165,
+        "y_pct": 44.072,
+        "w_pct": 57.532,
+        "h_pct": 28.643
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was inaccurate."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "72",
+      "bbox": {
+        "x_pct": 26.518,
+        "y_pct": 75.312,
+        "w_pct": 3.797,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text provided in the prompt was extremely poor and had to be manually corrected to match the image source.",
+    "Page number 72 was missing from the initial region list.",
+    "Initial text segmentation/labeling was incomplete."
+  ],
+  "doc_id": "2780",
+  "page": 71,
+  "elapsed_seconds": 4.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

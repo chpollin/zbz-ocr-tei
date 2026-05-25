@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils distinguent des moments en tant qu'«avant» ou «après», l'un par rapport à l'autre; mais cette droite ne comporte pas de présent, pas de «maintenant» au sens du temps pratique humain. Et c'est pourquoi ce «temps de la nature», qui est celui de la science, avec son seul rapport «avant-après», n'admet que la seule relation causale, et non une décision libre, situant un présent.",
+      "bbox": {
+        "x_pct": 27.511,
+        "y_pct": 13.807,
+        "w_pct": 57.733,
+        "h_pct": 17.998
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le concert dure donc deux heures du temps de la nature. Mais d'autre part, je vis aussi sa durée dans mon temps pratique. En tant que concert, il dure; en même temps il s'écoule. Il est un présent et il devient un passé.",
+      "bbox": {
+        "x_pct": 27.542,
+        "y_pct": 31.397,
+        "w_pct": 57.733,
+        "h_pct": 11.029
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est là un des traits fondamentaux de la condition humaine : elle se joue « à la fois », de façon indiscernable, dans le temps naturel sans présent de la succession, de l'«avant» et de l'«après» - et dans le présent décisif qui structure le temps d'un être libre.",
+      "bbox": {
+        "x_pct": 27.511,
+        "y_pct": 42.32,
+        "w_pct": 57.797,
+        "h_pct": 13.072
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est de cette superposition, ou plutôt de cette fusion de deux temps d'essence si différente que découlent la complexité infinie et le caractère irréductible problématique de la condition humaine. Le déterminisme, qui règne sur la succession sans présent des «avant» et des «après» dans le temps naturel, reste, pour le sujet humain qui agit librement «maintenant», à la fois une contrainte",
+      "bbox": {
+        "x_pct": 27.542,
+        "y_pct": 55.065,
+        "w_pct": 57.744,
+        "h_pct": 18.08
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 27.511,
+        "y_pct": 75.39,
+        "w_pct": 2.22,
+        "h_pct": 1.9
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text transcriptions were heavily corrupted and OCR errors were present.",
+    "Page number at the bottom was missing from the initial region list and needed to be added and labeled correctly."
+  ],
+  "doc_id": "2780",
+  "page": 15,
+  "elapsed_seconds": 4.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

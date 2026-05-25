@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans un corps social, une tradition qui a de la force s'incarne dans des textes saints, des instances. Elle impose ainsi sur le plan des habitudes ses règles et ses hiérarchies. Elle instaure un ordre, limite ce qui est permis, exige ce qui lui est nécessaire, sans se justifier. C'est parce qu'elle ne se justifie pas qu'elle prend sur les individus une autorité suffisante pour tenir en échec les violences des appétits et des passions, ou du moins pour en limiter les dégâts. Et quand je dis qu'elle prend une autorité sur les individus, je m'exprime mal: elle les constitue, elle fait partie intégrante de leur être. Elle donne à leurs comportements essentiels un air d'évidence impérative. La formule conventionnelle du plus plat conformisme: «cela se fait», «cela ne se fait pas», possède son sens profond. Les justifications viennent ensuite, et à elles seules elles sont faibles. Presque comme si la transparence des arguments ne pouvait se passer d'une densité épaisse, opaque, où s'enracine la conduite. Un ami italien, qui passa dix-sept ans dans diverses prisons mussoliniennes, me racontait son tourment, pendant quelques jours, quand il apprit qu'il lui suffirait de signer une déclaration de soumission au régime pour être libre. «Si je ne l'ai pas fait, disait-il, n'imaginez rien d'héroïque. Simplement je n'ai pas pu.» Ainsi joue la tradition, quand elle est forte et profonde. Et sans doute cet ami, révolutionnaire et violemment non conformiste, serait-il peiné que je considère sa conduite comme un exemple de la tradition la plus pure.",
+      "bbox": {
+        "x_pct": 12.732,
+        "y_pct": 9.932,
+        "w_pct": 66.052,
+        "h_pct": 45.852
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was truncated and incorrect. Updated to reflect full accurate text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rodrigue devait tuer le père de Chimène; cela ne se discutait pas. Pour nous, aujourd'hui, c'est beaucoup moins évident. Mon ami italien le contesterait. Antigone devait jeter de la terre sur le cadavre de Polynice. Mais quelqu'un pourrait juger que c'était un suicide et que ses devoirs envers sa sœur vivante auraient dû primer ceux envers son frère mort. Ce qui fait qu'en Phèdre, la grandeur l'emporte sur l'infamie, c'est le caractère fatal, irrémédiable, de sa passion. Mais un de mes élèves, un jour, à l'école, m'a dit: «Je ne comprends pas. Puisqu'elle sait qu'avec Hippolyte ça ne peut rien donner, pourquoi s'attache-t-elle à lui?» Il se situait ainsi hors d'une tradition peut-être mourante, qui valorisait l'absolu injustifiable de l'amour. Mais peut-être se situait-il hors de toute valorisation traditionnelle. Tout de même, mon ami italien, Rodrigue, Antigone, Phèdre, se comprendraient peut-être entre eux, par delà le jugement d'ab-",
+      "bbox": {
+        "x_pct": 12.893,
+        "y_pct": 57.208,
+        "w_pct": 65.81,
+        "h_pct": 25.738
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was incomplete. Updated to reflect full accurate text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "124",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 88.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction was heavily truncated and garbled.",
+    "Page number at the bottom was missing from the initial JSON.",
+    "Corrected text contents to match source image accurately."
+  ],
+  "doc_id": "680",
+  "page": 8,
+  "elapsed_seconds": 5.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "est toujours relative et provisoire; elle met la menace à distance, rien de plus. Telle qu'elle est, toujours précaire, elle me semble être la condition, non pas suffisante, certes, mais nécessaire, de la liberté des citoyens, et c'est par conséquent le devoir de l'Etat d'y veiller.",
+      "bbox": {
+        "x_pct": 13.376,
+        "y_pct": 9.214,
+        "w_pct": 66.503,
+        "h_pct": 6.017
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les menaces suspendues sur tout être vivant – et par conséquent sur l'homme aussi – sont de deux ordres: celles d'une agression à chaque instant possible, celles d'un besoin vital peut-être impossible à satisfaire. Ainsi, par exemple, celles de l'ennemi et celles de la faim. L'Etat doit donc au citoyen – si la sécurité est bien une condition nécessaire de la liberté – une protection efficace contre une agression de l'extérieur, – et c'est la défense nationale. Il lui doit également, pour la même raison, une protection sûre contre une agression de l'intérieur, agression par des factions de compatriotes ou par l'Etat lui-même, – et ce sont les garanties des droits démocratiques. Il lui doit enfin une protection bien plus complexe contre les besoins vitaux non satisfaits, le délivrant ainsi dans l'immédiat d'une menace aussi lourde de souffrance et de mort que celle de l'agression extérieure ou intérieure, aussi destructrice aussi des possibles de la liberté, – et c'est la justice sociale.",
+      "bbox": {
+        "x_pct": 13.272,
+        "y_pct": 17.168,
+        "w_pct": 66.72,
+        "h_pct": 30.182
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text extraction to reflect the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La sécurité indispensable à la liberté implique donc, au stade actuel de l'histoire, défense nationale, garanties démocratiques, justice sociale. Le malheur est que ces devoirs de l'Etat ne sont pas toujours convergents et peuvent même parfois devenir contradictoires, au point que l'Etat détruise, plus que l'ennemi extérieur, plus que la faction, plus que la misère, la sécurité qu'il doit garantir et qui reste indispensable à la liberté.",
+      "bbox": {
+        "x_pct": 13.159,
+        "y_pct": 47.464,
+        "w_pct": 66.882,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text extraction to reflect the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "14. Les hommes qui assument des responsabilités politiques se trouvent aujourd'hui dans une situation très difficile. Nous l'avons vu, les personnes étant devenues séparables de leur fonction, aucun homme politique n'incarne plus l'autorité comme telle. L'Etat lui-même ne l'incarne plus et reste exposé au contrôle et à la critique tant qu'il ne les étouffe pas par la force. Nous l'avons vu également, l'Etat ne dispose plus d'aucune unanimité dogmatique, il vit comme il peut à l'aide des procédures qui organisent la diversité. Or ces hommes politiques, ces Etats se trouvent désormais alourdis par d'énormes tâches matérielles dont l'économie moderne les rend inévitablement à la fois dépendants et responsables. Ils ont donc à assumer, avec un pouvoir considérablement réduit, des tâches incomparablement plus lourdes que jadis. En même temps, les",
+      "bbox": {
+        "x_pct": 13.11,
+        "y_pct": 61.425,
+        "w_pct": 66.688,
+        "h_pct": 26.513
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text extraction to reflect the full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "121",
+      "bbox": {
+        "x_pct": 75.8,
+        "y_pct": 89.5,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified and labeled page number as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was truncated in multiple regions.",
+    "Page number 121 was missing a label/region."
+  ],
+  "doc_id": "450",
+  "page": 9,
+  "elapsed_seconds": 5.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

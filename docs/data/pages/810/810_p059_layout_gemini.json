@@ -1,0 +1,42 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Dr. K. Ritter",
+      "bbox": {
+        "x_pct": 7.476,
+        "y_pct": 12.868,
+        "w_pct": 7.927,
+        "h_pct": 1.576
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/paragraph to section_header/zb_heading as these are author entries in a directory."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "57",
+      "bbox": {
+        "x_pct": 89.657,
+        "y_pct": 90.575,
+        "w_pct": 2.298,
+        "h_pct": 1.486
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 2,
+  "issues": [
+    "Most list entries were incorrectly labeled as paragraph. Directory entries should be section_header.",
+    "Page number 57 was not included in the original JSON scan and needs to be filtered.",
+    "OCR text contains many typos (e.g., 'Fronkfurt', 'Ing;', '0. M.') which are expected but should be flagged for editorial review."
+  ],
+  "doc_id": "810",
+  "page": 59,
+  "elapsed_seconds": 4.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

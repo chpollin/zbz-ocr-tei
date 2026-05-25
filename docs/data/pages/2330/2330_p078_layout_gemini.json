@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tale de la Commission fédérale pour la jeunesse était que les jeunes ont subi dès l’enfance une répression si lourde qu’on peut la considérer comme une violence qui leur était faite. Ils se trouvaient donc dans une situation de légitime défense lorsqu’ils ont déclenché les émeutes de Zurich. Si je suis intervenue, c’est que j’étais persuadée qu’en déclarant aux jeunes qu’ils vivent dans une société répressive, on les décourage de s’y faire une place utile, et que, par conséquent, on leur bouche l’avenir. En réalité, l’une des sources du malheur d’une certaine jeunesse contemporaine, c’est, à mon avis, l’absence dans notre société de véritables adultes — et non la répression. Le « tout est permis » est une façon de dire qu’il n’y a rien — rien qui contraigne, rien qui vaille, rien qui s’impose. On n’attend rien de personne, puisque tout est permis. C’est ce que j’ai appelé le vide nihiliste. Les jeunes ont besoin avant tout qu’on attende d’eux quelque chose. La Commission a réclamé des « espaces disponibles » où les jeunes pourraient faire ce qu’ils veulent. Ce n’est pas d’espaces disponibles que les jeunes ont besoin, mais de se passionner pour quelque chose. Sinon il ne reste que le suicide ou la drogue.",
+      "bbox": {
+        "x_pct": 16.227,
+        "y_pct": 3.952,
+        "w_pct": 79.902,
+        "h_pct": 34.169
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated/corrupted in input, replaced with actual full text from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "GDK. Au terme de votre analyse, vous résumez votre diagnostic sur les mouvements de jeunes en disant : « Les coupables, ce sont avant tout ceux qui ont fait leur éducation..., ceux qui leur présentent une image intolérable de leur société..., et à vrai dire d’eux-mêmes. Les coupables ce sont ceux qui ont détruit, autour des jeunes, un milieu adulte : nous, les adultes d’hier et d’aujourd’hui. Nostra culpa. » Je me demande si cette culpabilisation générale des adultes de notre société est un remède aux maux que vous dénoncez.",
+      "bbox": {
+        "x_pct": 16.239,
+        "y_pct": 39.194,
+        "w_pct": 79.853,
+        "h_pct": 16.395
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated/corrupted in input, replaced with actual full text from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — Nous devons reconnaître notre culpabilité, qui est d’avoir laissé s’effondrer les valeurs, les formes, les évidences, sans lesquelles aucune société ne peut exister. L’idée selon laquelle la déculpabilisation est un facteur de guérison universelle est une absurdité. Lorsqu’un enfant ne sait plus ce qui est permis et défendu, il perd la sécurité qui lui est indispensable pour vivre et grandir. Et quand il devient grand, il faut qu’il continue à avoir le sentiment qu’il y a une différence entre le bien et le mal. Sinon la vie n’a plus aucune signification. Le « tout est permis », c’est l’abolition du sens.",
+      "bbox": {
+        "x_pct": 16.398,
+        "y_pct": 55.137,
+        "w_pct": 79.731,
+        "h_pct": 17.871
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated/corrupted in input, replaced with actual full text from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parce que les media avaient la même orientation que le rapport de la Commission fédérale. Si on compare les articles de presse, les émissions de radio et de télévision, qui ont critiqué âprement ma brochure, avec les innombrables lettres privées qu’on m’a écrites et qui témoignaient d’un accord profond avec mes Antithèses, on ne peut que",
+      "bbox": {
+        "x_pct": 16.398,
+        "y_pct": 80.831,
+        "w_pct": 79.853,
+        "h_pct": 10.194
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated/corrupted in input, replaced with actual full text from image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Input text extraction was heavily corrupted, required manual correction.",
+    "The page number '74' at the bottom left was not captured in a separate region."
+  ],
+  "doc_id": "2330",
+  "page": 78,
+  "elapsed_seconds": 5.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,49 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 207",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The header contains both the title of the section/work and the page number, which should be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pays s'organise, entre la les marchés surtout. Mais il vrai aussi que le capital n'est nullement une puissance abstraite ; il est investi, il existe matériellement sur la terre sous forme d'installations industrielles devenues géantes, coûteuses et vulnérables, que la guerre expose à la destruction. Il est vrai encore que le capital aujourd'hui, à l'échelon où il peut influencer la paix ou la guerre, est largement international, investi un peu partout par le monde pour les mêmes mains, et que le nationalisme n'a par conséquent plus guère partie liée avec lui. Le capital est certainement aujourd'hui bien plus international que la « IIe Internationale », par exemple. Ce qui ne l'empêche pas nécessairement, bien sùr, de faire jouer, si le besoin s'en fait sentir, les nationalismes à son profit. S'il existe un lien entre capitalisme et guerre, il serait futile, simpliste, d'imaginer que le capital soit dans l'univers humain le seul facteur de guerre, qu'il ne puisse pas y avoir de vraie raison ou plutôt de vraie nécessité de faire la guerre hors de lui. Les moyens de pression littéralement diaboliques que les sciences physiques et psychologiques mettent aujourd'hui à la disposition de n'importe quel oppresseur peuvent donner plus de raisons que jamais à ceux aux yeux de qui vivre, ce n'est pas simplement étre en vie, de dire, non seulement pour eux-mêmes, mais pour les étres qu'ils aiment : « Plutôt la mort ! » Guerre et paix ont cessé de poser devant nous une alternative claire. Qu'il y ait un lien entre le capitalisme et la guerre, que le capitalisme puisse chercher dans les armements un palliatif à l'anarchie de son statut, cela n'autorise pas encore à condamner toute guerre comme intrigue capitaliste, ni toute politique de réarmement comme entreprise de marchands de canons.",
+      "bbox": {
+        "x_pct": 3.524,
+        "y_pct": 11.471,
+        "w_pct": 84.958,
+        "h_pct": 61.881
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match the full paragraph in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le second remède aux crises, ce sont les grands travaux. Les gouvernements pacifiques aux prises avec le chômage recourent, plutôt qu'aux armements, aux grands travaux d'utilité publique. En soi il n'y a rien à dire contre la construction d'une route, d'un pont, d'un bloc d'habitations ou d'une centrale électrique. Ce qui me paraît grave, destructeur à la longue du vrai sens et de la vraie valeur de la vie, c'est le renversement des termes qui substitue le moyen à la fin et la fin au moyen : le travail n'a plus pour raison",
+      "bbox": {
+        "x_pct": 3.858,
+        "y_pct": 73.173,
+        "w_pct": 84.791,
+        "h_pct": 16.756
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match the full paragraph in the image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "The initial layout extraction truncated the full text content of both paragraphs significantly.",
+    "The page header (including the page number) was not properly identified as a non-paragraph element."
+  ],
+  "doc_id": "330",
+  "page": 241,
+  "elapsed_seconds": 5.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

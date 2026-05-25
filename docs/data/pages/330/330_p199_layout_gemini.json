@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 165",
+      "bbox": {
+        "x_pct": 30.7,
+        "y_pct": 7.7,
+        "w_pct": 57.5,
+        "h_pct": 2.4
+      },
+      "changed": true,
+      "change_reason": "Header identified as running page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "comme les appauvris de la plénitude indicible, mais ontologiquement donnée, qui les transcende, et c'est à elle qu'ils doivent leur emprise sur les âmes. Au contraire, la liberté politique est bien, comme l'affirment péjorativement ses détracteurs, formelle, car elle est la forme protectrice et sacrée du vide indispensable à l'autre : la liberté concrète, seule plénitude humaine.",
+      "bbox": {
+        "x_pct": 38.648,
+        "y_pct": 108.973,
+        "w_pct": 84.582,
+        "h_pct": 12.897
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette dernière, que nous pouvons appeler « existentielle » parce qu'elle n'est que dans l'existence même du sujet, et jamais dans le panorama du monde extérieur ou intérieur, ne peut être ni détruite ni défendue, puisqu'on ne l'a jamais devant soi. Elle s'éveille par une sorte d'appel absolu auquel elle ne peut pas ne pas répondre. Elle n'a pas, à la vérité, le caractère d'un choix succédant à une délibération, mais celui d'une nécessité fondant le sens même et la possibilité d'un choix. C'est pourquoi elle se justifie mal, par approximations toujours imparfaites, et ne constitue jamais un argument politique valable. Sise au cœur même de l'homme, de ses rapports avec autrui, de sa situation politique, elle y apparaît toujours comme un corps étranger, comme une valeur à la fois suprême et perturbatrice. Et elle anime elle-même, impérieusement, en l'homme, des volontés de connaissance, de planisme, de rationalité, qui tendent à la détruire ou à la nier.",
+      "bbox": {
+        "x_pct": 36.63,
+        "y_pct": 229.06,
+        "w_pct": 84.916,
+        "h_pct": 310.34
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La liberté politique, elle — mince protection de quelque chose qui, sur son plan, n'existe pas, autel sans idole attendant une présence — peut être détruite et doit être défendue, comme n'importe quelle réalité du monde. Elle est possibilité de choix (ce qui devient, sur la face existentielle, place pour la nécessité). Elle risque toujours de disparaître, car ses justifications apparentes ne sont jamais les dernières et les dernières, étant informulables, s'exposent à tous les sophismes.",
+      "bbox": {
+        "x_pct": 35.79,
+        "y_pct": 537.7,
+        "w_pct": 84.791,
+        "h_pct": 170.86
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un tel rapport entre le plan existentiel et le plan politique comporte, pour la défense de la liberté politique, des difficultés pratiques extraordinaires. En effet, il se trouve que ce n'est pas l'essentiel, ce n'est pas la plénitude essentielle que les hommes sont appelés à défendre, c'est seulement sa possibilité, ce vide sans forme, sans figure, où l'âme respire. Il ne fut pas facile d'enseigner aux hommes à aimer Dieu au-delà des personnages mythiques et des images peintes, et à accepter de vivre et de mourir pour son invisible unité. Combien plus difficile encore de leur",
+      "bbox": {
+        "x_pct": 32.03,
+        "y_pct": 701.43,
+        "w_pct": 85.097,
+        "h_pct": 186.9
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 863.0,
+        "y_pct": 894.0,
+        "w_pct": 21.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page footer"
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Original bounding box coordinates were incorrect in the provided JSON.",
+    "Text content was hallucinated or OCR-corrupted in all regions.",
+    "Header and footer were labeled as text."
+  ],
+  "doc_id": "330",
+  "page": 199,
+  "elapsed_seconds": 6.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

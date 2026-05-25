@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "174 LES CHIFFRES DE LA TRANSCENDANCE",
+      "bbox": {
+        "x_pct": 136.0,
+        "y_pct": 74.0,
+        "w_pct": 586.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "chiffre de la transcendance. Pour la « conscience en général », la notion de « chose en soi », n'était qu'une idée-limite défendant un espace vide — la transcendance. Mais l'existence ne s'arrête pas là; pour elle, les objets peuvent recevoir une signification transcendante. Celle-ci, il est vrai, est toujours fugace (verschwindend) (1), et l'objet métaphysique comme tel est condamné à s'annuler.",
+      "bbox": {
+        "x_pct": 12.907,
+        "y_pct": 11.754,
+        "w_pct": 76.054,
+        "h_pct": 20.467
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'il soit pensée ou image, l'objet métaphysique n'est pas lui-même, mais symbole.",
+      "bbox": {
+        "x_pct": 13.208,
+        "y_pct": 32.097,
+        "w_pct": 65.06,
+        "h_pct": 5.367
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand on pense clairement l'objet métaphysique, il s'écroule devant l'entendement; la pensée se révèle comme étant un cercle, une tautologie ou une contradiction. La contradiction ne ruine pas seulement la preuve, mais aussi l'objet. C'est elle surtout qui peut détruire l'objectivité des pensées métaphysiques. Toute expression profonde de la transcendance, puisqu'elle ne peut pas subsister sans détruire la transcendance elle-même, doit se faire annuler par une contradiction. Celle-ci exprime donc la fugacité empirique de l'être de la transcendance.",
+      "bbox": {
+        "x_pct": 12.997,
+        "y_pct": 37.083,
+        "w_pct": 76.265,
+        "h_pct": 28.475
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'existence saisit par la liberté une réalité absolue dans le champ fini de la réalité empirique. Mais devant l'absolu, la réalité empirique perd sa réalité; et inversement l'absolument réel est irréel au sens de la réalité empirique. L'être et le non-être renversent constamment leur rapport.",
+      "bbox": {
+        "x_pct": 13.057,
+        "y_pct": 65.329,
+        "w_pct": 76.099,
+        "h_pct": 15.729
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le langage de la transcendance, s'il doit m'at-",
+      "bbox": {
+        "x_pct": 16.672,
+        "y_pct": 80.744,
+        "w_pct": 72.229,
+        "h_pct": 2.888
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Philosophie, III. p. 15.",
+      "bbox": {
+        "x_pct": 16.822,
+        "y_pct": 86.273,
+        "w_pct": 34.533,
+        "h_pct": 2.355
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to footnote."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was very poor in multiple regions, requiring manual transcription.",
+    "Running header was incorrectly labeled as text.",
+    "Footnote marker was incorrectly labeled as text.",
+    "Multiple O-character and character-recognition issues fixed in the body text.",
+    "Title of page should be detected separately."
+  ],
+  "doc_id": "20",
+  "page": 176,
+  "elapsed_seconds": 5.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

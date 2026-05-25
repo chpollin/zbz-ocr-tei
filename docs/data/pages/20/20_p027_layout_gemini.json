@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "PERFECTION INSTANTANÉE DE L'ART 25",
+      "bbox": {
+        "x_pct": 27.24,
+        "y_pct": 75.33,
+        "w_pct": 61.27,
+        "h_pct": 2.14
+      },
+      "changed": true,
+      "change_reason": "Page header was erroneously labeled as part of the paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et les raisonnements dont elle se sert sont de la philosophie, autant — et peut-être plus — que le système achevé. Il n'en va pas de même en art. Là, c'est le résultat, c'est l'œuvre une fois terminée qui importe seule. L'intérêt qu'on prend au travail de l'artiste est psychologique, philosophique, — il n'est pas artistique. D'où la sévère nudité de l'art, l'absence de toute explication oiseuse. Excuser tel défaut de l'œuvre d'art par une circonstance défavorable de son exécution est vide de sens. Il n'y a ni faute, ni excuse. L'œuvre d'art doit être muette et ne peut que se montrer. Telle, elle existe, — ou bien elle n'existe pas. Grâce à la dureté de sa loi, l'art est pur, l'art est frais, même dans la passion, isolé dans sa forme, arraché à la fièvre de son créateur, n'étant plus à lui, ne dépendant plus de lui, ni de sa peine, ni de son devenir.",
+      "bbox": {
+        "x_pct": 12.696,
+        "y_pct": 12.135,
+        "w_pct": 75.964,
+        "h_pct": 43.661
+      },
+      "changed": true,
+      "change_reason": "Refining text bounds and separating from page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Puis, si l'on considère le système achevé comme œuvre d'art, on devra reconnaître que c'est une œuvre d'art plus exclusive que les autres : aucun philosophe n'a jamais fait plusieurs systèmes. Tous, naturellement, ne sont pas arrivés directement au leur, et on peut alors diviser leur vie en périodes différentes ou même opposées. Mais tout grand philosophe a fini par atteindre sa philosophie, qui est alors restée la même à travers tous les sujets traités. Tel Hegel tirant tous ses ouvrages de sa Phénoménologie de l'Esprit. Il n'en va pas de même en art. Chaque artiste, à la vérité, a sa « manière » qui se retrouve plus ou moins d'une",
+      "bbox": {
+        "x_pct": 12.5,
+        "y_pct": 55.51,
+        "w_pct": 76.099,
+        "h_pct": 33.499
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and labels."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page header was merged into the text paragraph.",
+    "Text truncation in initial analysis.",
+    "Bounding boxes were inaccurately mapped to the full text content."
+  ],
+  "doc_id": "20",
+  "page": 27,
+  "elapsed_seconds": 4.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME ET L'ESPACE",
+      "bbox": {
+        "x_pct": 14.364,
+        "y_pct": 2.0,
+        "w_pct": 82.529,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header text identified"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "147",
+      "bbox": {
+        "x_pct": 78.435,
+        "y_pct": 100,
+        "w_pct": 2.227,
+        "h_pct": 3.428
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number identified"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "que   tel, par   rapport à moi.  L'espace n'est évidemment pas   pensé ni explicitement, mais voit q",
+      "bbox": {
+        "x_pct": 14.09,
+        "y_pct": 13.895,
+        "w_pct": 68.548,
+        "h_pct": 13.083
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Espace   pratique . Le  sujet est le sujet   empirique; doué dintenlionalité 4 Pégard de réalilé obj",
+      "bbox": {
+        "x_pct": 14.205,
+        "y_pct": 28.573,
+        "w_pct": 68.514,
+        "h_pct": 22.172
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Espace social. Le sujet est le sujet social : il est parmi dautres sujets se trouvant non seulement ",
+      "bbox": {
+        "x_pct": 14.286,
+        "y_pct": 52.521,
+        "w_pct": 68.514,
+        "h_pct": 22.369
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_paragraph"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Labels were incorrectly set to list_item for paragraph blocks",
+    "Missing page header and footer regions identified"
+  ],
+  "doc_id": "110",
+  "page": 149,
+  "elapsed_seconds": 7.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected to zb_paragraph": 2,
+    "ADDED": 2
+  }
+}

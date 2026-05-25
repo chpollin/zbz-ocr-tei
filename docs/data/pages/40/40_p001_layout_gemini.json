@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9589",
+      "bbox": {
+        "x_pct": 0.163,
+        "y_pct": 67.144,
+        "w_pct": 3.141,
+        "h_pct": 10.922
+      },
+      "changed": true,
+      "change_reason": "Identified as page number or shelf mark, not a paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "DBUA",
+      "bbox": {
+        "x_pct": 0.0,
+        "y_pct": 79.884,
+        "w_pct": 3.43,
+        "h_pct": 12.328
+      },
+      "changed": true,
+      "change_reason": "Identified as shelf mark, not a paragraph."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "H.",
+      "bbox": {
+        "x_pct": 17.023,
+        "y_pct": 6.491,
+        "w_pct": 4.07,
+        "h_pct": 12.202
+      },
+      "changed": true,
+      "change_reason": "Fragment of header text at top of page, not a paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 41.96,
+        "y_pct": 10.474,
+        "w_pct": 30.025,
+        "h_pct": 2.686
+      },
+      "changed": true,
+      "change_reason": "Author name on cover is a section heading element."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Temps ALTERNÉS",
+      "bbox": {
+        "x_pct": 21.859,
+        "y_pct": 22.56,
+        "w_pct": 69.384,
+        "h_pct": 21.996
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "roman",
+      "bbox": {
+        "x_pct": 47.613,
+        "y_pct": 49.624,
+        "w_pct": 17.802,
+        "h_pct": 2.748
+      },
+      "changed": true,
+      "change_reason": "Book genre/subtitle is part of the title block, should be heading."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1072348895",
+      "bbox": {
+        "x_pct": 26.922,
+        "y_pct": 71.2,
+        "w_pct": 3.015,
+        "h_pct": 13.733
+      },
+      "changed": true,
+      "change_reason": "Barcode/library identifier, not a paragraph."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most text regions were misidentified as zb_paragraph.",
+    "Shelf marks, barcodes, and author names require specific tagging.",
+    "OCR text for 'Temps' was corrected from 'Cempf'."
+  ],
+  "doc_id": "40",
+  "page": 1,
+  "elapsed_seconds": 3.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

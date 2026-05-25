@@ -1,0 +1,86 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LE PROBLÈME DE L’ÉLITE OUVRIÈRE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_heading"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 22,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number label corrected to _filter"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "dioses personnalités échappant aux contingences matérielles Il sagit de former une vaste élite, et c",
+      "bbox": {
+        "x_pct": 11.038,
+        "y_pct": 15.637,
+        "w_pct": 77.438,
+        "h_pct": 10.299
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin, jen viens au point crucial 2 les loisirs. On ne créera pas délite ouvrière tant que les journ",
+      "bbox": {
+        "x_pct": 10.907,
+        "y_pct": 26.091,
+        "w_pct": 78.804,
+        "h_pct": 67.317
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text recognition"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 11,
+        "h_pct": 16
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number label set to _filter"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 4,
+  "issues": [
+    "Fixed heading label",
+    "Fixed page numbering labels",
+    "Corrected OCR typo in text",
+    "Added missing page footer"
+  ],
+  "doc_id": "130",
+  "page": 11,
+  "elapsed_seconds": 4.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected to zb_heading": 1,
+    "Corrected typo in text recognition": 1,
+    "ADDED": 2
+  }
+}

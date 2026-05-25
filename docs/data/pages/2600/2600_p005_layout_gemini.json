@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 35.969,
+        "y_pct": 8.371,
+        "w_pct": 18.406,
+        "h_pct": 1.829
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA LIBERTE ENTRE LE PARADOXE ET LE CERCLE VICIEUX",
+      "bbox": {
+        "x_pct": 5.191,
+        "y_pct": 12.993,
+        "w_pct": 64.796,
+        "h_pct": 4.572
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mon point de départ, ici comme souvent, sera la philosophie de Kant. Selon Kant, le temps est, comme l'espace, une des deux formes a priori du monde phénoménal, c'est-à-dire une des conditions préalables que chaque sujet pensant impose inévitablement au contenu de son expérience. D'autre part, selon Kant, la liberté est un des postulats de la raison pratique, c'est-à-dire une des conditions préalables de toute réflexion d'un sujet pensant sur son action.",
+      "bbox": {
+        "x_pct": 5.23,
+        "y_pct": 29.9,
+        "w_pct": 80.102,
+        "h_pct": 19.418
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text extraction and removed OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il suit de là que la liberté reste impensable dans le monde phénoménal, nécessairement \"mis en forme\" par le temps, donc aussi par la catégorie causale de l'entendement. Tout phénomène se situe dans le temps et parmi les enchaînements de la causalité. Tout phénomène - qu'il soit physique ou psychique, et par conséquent aussi tout action constatée, objectivée, a des causes antécédentes. A propos d'une action constatée dans le monde phénoménal, on parlera de causalité psychologique.",
+      "bbox": {
+        "x_pct": 5.319,
+        "y_pct": 51.87,
+        "w_pct": 79.923,
+        "h_pct": 19.094
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text extraction and formatting errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La liberté se trouve ainsi exclue du monde phénoménal. Dans le monde phénoménal, il ne peut y avoir aucune liberté, et ce que nous appelons des actes ne sont que des phénomènes dont les causes nous sont encore cachées.",
+      "bbox": {
+        "x_pct": 5.268,
+        "y_pct": 73.175,
+        "w_pct": 80.026,
+        "h_pct": 9.501
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 81.378,
+        "y_pct": 88.666,
+        "w_pct": 3.189,
+        "h_pct": 2.47
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text was heavily corrupted in the provided JSON.",
+    "Page number 55 was missing from the initial region list."
+  ],
+  "doc_id": "2600",
+  "page": 5,
+  "elapsed_seconds": 6.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

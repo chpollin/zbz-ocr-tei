@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch. D'abord, je ne pense pas qu'on puisse mesurer l'indépendance des citoyens à leur niveau d'indignation. C'est un peu ce que vous avez fait lorsque vous avez dit qu'à telle époque il y avait eu tel mouvement d'indignation du peuple, qui voulait absolument obtenir certaines choses. L'indignation est quelquefois légitime, mais elle ne prouve pas l'indépendance. Après tout, si les gens s'indignent un peu moins maintenant, c'est qu'il y a peut-être un peu moins de réalité dont il y a lieu de s'indigner dans l'immédiat. Quand le vieux perdait tout au moment où il cessait de travailler, il y avait vraiment de quoi s'indigner. C'est un sujet d'indignation que l'on n'a plus. Dans ce que M. Saner a dit à propos des inégalités entre citoyens (peut-être ses chiffres sont-ils justes, je ne le sais pas), ce qui me gêne ce n'est pas qu'il y ait des riches, mais qu'il y ait parmi les pauvres des hommes individuels sacrifiés. Il est certain qu'il y en a incomparablement moins aujourd'hui qu'autrefois, que chaque jeune a certainement beaucoup plus de chances de pouvoir faire son chemin. Par conséquent, l'indignation a diminué. Voilà ma réponse à votre toute première question. Quant à la deuxième, on pouvait présumer que l'on oserait faire une Constitution pour l'avenir. Or maintenant, d'après mon propre papier, on n'ose plus. Je crois que notre monde est devenu beaucoup plus imprévisible, beaucoup plus radicalement imprévisible à cause des nouveaux pouvoirs qui nous sont remis. On ne sait pas quelle invention, quelle découverte surgira demain matin qui changera complètement tout notre problème énergétique, par exemple. C'est ainsi dans presque tous les domaines. Il est donc compréhensible que l'on soit un peu intimidé face à cet avenir. Je ne suis pas sûre d'ailleurs que cela se poursuive longtemps à ce tempo; cela ne me paraît pas possible. Nous sommes actuellement dans une phase de transformation ultrarapide. A mon avis cela ne provient pas de ce que nous hésitons à imaginer quelque chose pour l'avenir. Je pense qu'il est beaucoup plus difficile d'imaginer, car ce qui survient est plus imprévisible et que les besoins évidents sont devenus beaucoup moins évidents.",
+      "bbox": {
+        "x_pct": 8.468,
+        "y_pct": 3.84,
+        "w_pct": 84.856,
+        "h_pct": 52.736
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eggimann. Meine letzte Frage betrifft die Zukunft: Frau Hersch, Ihr letztes Wort heisst \"abwarten\". Aber: Wenn Sie einen Frosch in ein Glasgefäss mit Wasser setzen und dieses langsam und kontinuierlich erhitzen, dann wird der Frosch, springt er nicht hinaus, unweigerlich gekocht. - Es ist sehr oft auf die Gefahren hingewiesen worden, die uns namentlich von der Umweltproblematik her drohen. Können wir uns ein weises Abwarten leisten? Nehmen wir einmal an, das Risiko dieses Risikostaates sei nicht ein Restrisiko, sondern ein umfassendes. Gibt es verfassungsmässige, demokratische Möglichkeiten, ihm zu entgehen?",
+      "bbox": {
+        "x_pct": 8.381,
+        "y_pct": 58.991,
+        "w_pct": 84.83,
+        "h_pct": 17.608
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch. Je suis convaincue que des mesures peuvent être prises au niveau des lois. Mais je ne sais pas si l'on doit les prendre au niveau de la Constitution. La chose la plus urgente à faire dans le domaine de l'environnement, c'est savoir exactement ce qui est vrai et ce qui ne l'est pas et c'est étudier objectivement les problèmes sans utiliser la crainte et le tremblement. Ce que je ne peux pas souffrir chez les écologistes, c'est qu'ils s'adressent non pas à notre raison, ni même à notre coeur, mais à notre diaphragme.",
+      "bbox": {
+        "x_pct": 8.381,
+        "y_pct": 78.872,
+        "w_pct": 84.682,
+        "h_pct": 13.056
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 47 -",
+      "bbox": {
+        "x_pct": 47.96,
+        "y_pct": 94.75,
+        "w_pct": 4.1,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer region."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text transcriptions had significant OCR errors.",
+    "Page number not captured in original regions."
+  ],
+  "doc_id": "2710",
+  "page": 11,
+  "elapsed_seconds": 6.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

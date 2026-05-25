@@ -1,0 +1,155 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "350",
+      "bbox": {
+        "x_pct": 92.27,
+        "y_pct": 2.0,
+        "w_pct": 3.42,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 13.91,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "WAS KANN ICH WISSEN?",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 16.51,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "351",
+      "bbox": {
+        "x_pct": 92.05,
+        "y_pct": 96.08,
+        "w_pct": 3.42,
+        "h_pct": 1.77
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at bottom"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n apparlienl en apporle lous les élémcnls hunain, connaissancc bien qui chosc",
+      "bbox": {
+        "x_pct": 10.691,
+        "y_pct": 13.906,
+        "w_pct": 33.94,
+        "h_pct": 10.288
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'acle de connailre, Cn [a PFiori qualitie moralemenl mauvais de la Thomme el histaire, ni de rien d",
+      "bbox": {
+        "x_pct": 10.271,
+        "y_pct": 23.762,
+        "w_pct": 34.416,
+        "h_pct": 8.125
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'entends pas un jugemcnt de valeur acle comnie sculemenl que Il 'importe quel acte implique la r",
+      "bbox": {
+        "x_pct": 9.589,
+        "y_pct": 43.425,
+        "w_pct": 35.444,
+        "h_pct": 9.459
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les postulats dc la Raison pratique Iiberté , immortalile de ]'àme actcs comme la science concerne J",
+      "bbox": {
+        "x_pct": 11.55,
+        "y_pct": 74.075,
+        "w_pct": 33.455,
+        "h_pct": 5.132
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fait qu'expliciter celle premicre 4 la   moralité conslilue les acles en lant que phénomènes) , ils ",
+      "bbox": {
+        "x_pct": 51.008,
+        "y_pct": 12.74,
+        "w_pct": 37.479,
+        "h_pct": 11.202
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "un sujet Pourvu des formes de jugemenl .",
+      "bbox": {
+        "x_pct": 52.073,
+        "y_pct": 53.005,
+        "w_pct": 28.721,
+        "h_pct": 10.613
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cesi vrai Qu Taux. de sen5 que le vrai. La Bonne volonle inlervient En tant que simples la qu'1 pour",
+      "bbox": {
+        "x_pct": 53.716,
+        "y_pct": 63.618,
+        "w_pct": 35.014,
+        "h_pct": 11.178
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing page headers",
+    "Missing page numbers",
+    "Labels were mostly correct as text, but structural elements needed categorization"
+  ],
+  "doc_id": "1380",
+  "page": 4,
+  "elapsed_seconds": 6.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 4
+  }
+}

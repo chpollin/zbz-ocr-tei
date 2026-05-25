@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "224 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified the page header and page number which were incorrectly included in the first paragraph box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans le même sac ». Il semble n'y avoir qu'une nuance entre deux valeurs comme « prospérité » et « bonheur » ; l'histoire peut cependant proposer aux hommes des circonstances où les tenants de la prospérité et ceux du bonheur seront adversaires. Par exemple, on peut élever considérablement le niveau de vie d'une population sans remédier d'aucune façon à l'insoutenable solitude des individus (je pense à la vie américaine) et les livrer ainsi aux psychoses et aux psychiatres. On peut aussi affirmer que par souci du bonheur d'une population indigène, on n'y suscitera pas de besoins nouveaux et on la maintiendra dans son état de pauvreté primitif (je pense aux argumentations de certains adeptes du régime colonial). A plus forte raison, la liberté n'ira-t-elle pas forcément de pair avec la prospérité, ni avec le bonheur. Est-on privé d'elle, elle apparaît, il est vrai, dans un sens absolu, comme la condition première du bonheur. Et cependant, être libre, c'est pouvoir s'exposer à son gré au malheur aussi bien que courir ses propres chances de bonheur ; c'est jouir du droit d'assumer tous les risques et d'éprouver la joie et la peine. Il n'est pas sûr qu'on augmente la somme de bonheur des hommes quand on élève leur degré de conscience, la profondeur et l'étendue de leur regard spirituel ; on n'augmente que leur liberté. La discussion du Grand Inquisiteur avec Jésus — où Jésus ne parle que par son silence — n'est pas finie. Entre les partisans du bonheur et ceux de la liberté le conflit peut devenir mortel.",
+      "bbox": {
+        "x_pct": 10.864,
+        "y_pct": 10.847,
+        "w_pct": 85.696,
+        "h_pct": 50.971
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to reflect the actual paragraph text, removing headers."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La socialisation des moyens de production est une technique économique et politique qui tend à accroître la liberté des hommes. C'est un autre problème de savoir s'ils en seront plus heureux.",
+      "bbox": {
+        "x_pct": 10.864,
+        "y_pct": 61.435,
+        "w_pct": 85.334,
+        "h_pct": 7.014
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Revenons-en à la question du fonctionnement du régime. Il semble qu'on doive distinguer trois secteurs principaux, où la socialisation aurait à s'accomplir de façon diverse : a) le secteur où les consommateurs sont épars et ne constituent pas un groupe social déterminé, alors que les producteurs sont étroitement attachés au matériel de production ; ici, ce sont les travailleurs qui doivent, sous une forme ou une autre, posséder les machines et",
+      "bbox": {
+        "x_pct": 10.766,
+        "y_pct": 74.153,
+        "w_pct": 85.306,
+        "h_pct": 14.947
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and running header were incorrectly merged with the first paragraph.",
+    "OCR text quality in input was very poor, requiring significant manual correction.",
+    "Detected misidentification of paragraph boundaries."
+  ],
+  "doc_id": "330",
+  "page": 258,
+  "elapsed_seconds": 6.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,129 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "348",
+      "bbox": {
+        "x_pct": 13.903,
+        "y_pct": 8.04,
+        "w_pct": 3.426,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_header"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "LA CARICATURE DE lui sont comme des et importe de_comprendre ici, cest que Ce Thomme, une certaine e",
+      "bbox": {
+        "x_pct": 13.749,
+        "y_pct": 6.21,
+        "w_pct": 33.715,
+        "h_pct": 49.25
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jen arrive à celui que j'ai notre causerie \"le plus des   existentialistes \", celui dont   la pensée",
+      "bbox": {
+        "x_pct": 13.179,
+        "y_pct": 57.476,
+        "w_pct": 34.211,
+        "h_pct": 11.903
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a dans sa philosophie trois notions mentales : le négatives la limite et ['échec. limite et de ",
+      "bbox": {
+        "x_pct": 12.917,
+        "y_pct": 68.339,
+        "w_pct": 34.655,
+        "h_pct": 24.379
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "349",
+      "bbox": {
+        "x_pct": 82.529,
+        "y_pct": 2.218,
+        "w_pct": 3.426,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header detected"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "DE 1 le nom de Dieu devrait de dit Jaspers, '1a forme du La le uecherche scientifique  elleemême Or ",
+      "bbox": {
+        "x_pct": 49.915,
+        "y_pct": 4.597,
+        "w_pct": 37.59,
+        "h_pct": 31.613
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "et son aux limites du monde autour de moi que des dans le vide. Il n'y a les autres, Je me trouve le",
+      "bbox": {
+        "x_pct": 50.501,
+        "y_pct": 33.153,
+        "w_pct": 37.664,
+        "h_pct": 20.395
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "du monde, entrer dans une chaîne tout   devenait  relatif  pour on causale ; maintenant s'agit d'écl",
+      "bbox": {
+        "x_pct": 51.037,
+        "y_pct": 53.685,
+        "w_pct": 37.926,
+        "h_pct": 31.016
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "L' ne trouve sa réalité que dans la communication chacune a sa qui autre   existence, et est pour el",
+      "bbox": {
+        "x_pct": 52.137,
+        "y_pct": 83.306,
+        "w_pct": 36.809,
+        "h_pct": 9.25
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Fixed labels for page numbers",
+    "Added missing top page number"
+  ],
+  "doc_id": "120",
+  "page": 6,
+  "elapsed_seconds": 6.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to page_header": 1,
+    "ADDED": 1
+  }
+}

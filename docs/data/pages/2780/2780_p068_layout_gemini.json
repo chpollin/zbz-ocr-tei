@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ENTRE L'ÉPHÉMÈRE ET LE PERMANENT",
+      "bbox": {
+        "x_pct": 18.068,
+        "y_pct": 13.129,
+        "w_pct": 63.858,
+        "h_pct": 4.609
+      },
+      "changed": true,
+      "change_reason": "Merged multiple header lines into a single coherent section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "UNE MÉDITATION SUR LE TEMPS",
+      "bbox": {
+        "x_pct": 17.828,
+        "y_pct": 20.074,
+        "w_pct": 74.56,
+        "h_pct": 2.173
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header and corrected OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "entre le temps et nous, comme un profond désaccord contradictoire : nous ne supportons ni sa fuite, ni sa permanence. Sa fuite nous met l'âme en deuil, sa permanence nous étouffe. Nous ne savons jamais s'il passe trop vite ou trop lentement, et pourtant nous perdons le souffle à force de vouloir le retenir ou le pousser en avant.",
+      "bbox": {
+        "x_pct": 17.405,
+        "y_pct": 24.51,
+        "w_pct": 57.521,
+        "h_pct": 17.239
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match image content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps ne cesse de recréer les possibles de la vie en engloutissant les êtres, les mensonges, les fautes, dans son étrange néant. Le temps arrange tout, dit-on. Il remplace peu à peu – assez vite – le refus du pardon par l'oubli. Il use le deuil, l'espérance perdue. Il efface les pierres tombales. Il étend à la mémoire humaine, par l'oubli, la bienfaisante toilette sans cesse recommencée par laquelle la nature, où «tout mange tout», fait disparaître, à toute heure, les traces de ses cadavres et de ses squelettes. Malgré les épopées, les fables, malgré l'histoire, et même à travers elles, il répand, sur ce qui fut, la distance somnolente de son néant.",
+      "bbox": {
+        "x_pct": 17.447,
+        "y_pct": 41.609,
+        "w_pct": 57.479,
+        "h_pct": 28.864
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match image content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'attente, l'espoir, la confiance redeviennent pos-",
+      "bbox": {
+        "x_pct": 17.897,
+        "y_pct": 70.474,
+        "w_pct": 63.858,
+        "h_pct": 2.173
+      },
+      "changed": true,
+      "change_reason": "Captured trailing text line at bottom of main paragraph area"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "69",
+      "bbox": {
+        "x_pct": 71.493,
+        "y_pct": 74.89,
+        "w_pct": 2.385,
+        "h_pct": 1.739
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original detection failed to capture the full paragraph text correctly",
+    "Section header was fragmented into broken segments",
+    "Page number at bottom was not identified",
+    "OCR output was severely corrupted in the original JSON input"
+  ],
+  "doc_id": "2780",
+  "page": 68,
+  "elapsed_seconds": 5.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

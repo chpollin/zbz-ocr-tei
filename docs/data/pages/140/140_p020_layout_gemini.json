@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DISCONTINUITÉ DES PERSPECTIVES HUMAINES 101",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 28
+      },
+      "changed": true,
+      "change_reason": "Label changed to zb_heading for page header."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "des sens de largument ontologique, cest justement montrer que pour lhomme il est impossible de mettr",
+      "bbox": {
+        "x_pct": 15.049,
+        "y_pct": 15.442,
+        "w_pct": 73.742,
+        "h_pct": 9.419
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est impossible de la mettre en question cela ne veut pas dire que ce soit une preuve. évidence tr",
+      "bbox": {
+        "x_pct": 14.967,
+        "y_pct": 24.484,
+        "w_pct": 73.873,
+        "h_pct": 37.664
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest une situation inconfortable que celle de Pesprit placé devant cette immanence, cette présence, ",
+      "bbox": {
+        "x_pct": 15.074,
+        "y_pct": 61.595,
+        "w_pct": 73.824,
+        "h_pct": 24.274
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "The page header containing the title and page number was originally incorrectly labeled as a text paragraph."
+  ],
+  "doc_id": "140",
+  "page": 20,
+  "elapsed_seconds": 5.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to zb_heading for page header.": 1
+  }
+}

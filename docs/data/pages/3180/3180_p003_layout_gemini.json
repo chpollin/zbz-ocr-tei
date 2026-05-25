@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mit der feministischen Philosophie' kenntnisreich befaßt. Außerdem ist sie mit dem Denken von Jeanne Hersch vertraut, hat sie doch 1990 die Festschrift „Die Macht der Freiheit“ für Jeanne Hersch herausgegeben.",
+      "bbox": {
+        "x_pct": 7.889,
+        "y_pct": 3.215,
+        "w_pct": 85.225,
+        "h_pct": 9.235
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich habe bereits zu Beginn dieser Hegelwochen darauf hingewiesen, daß Philosophieren, so wie wir es in diesem Jahr in den Bamberger Hegelwochen vorgeführt bekommen und wie wir es vielleicht oder hoffentlich auch ein Stück weit selber mittun können - wir hatten heute wieder das Glück, Frau Hersch im Seminar erleben zu dürfen -, darin bestehe, die Welt zum zweiten, dritten oder vierten Mal zu sehen, so, als ob wir sie zum ersten Mal sähen, mit dem Ziel, die Welt mit diesem unverstellten Blick zu sehen als etwas, was uns Staunen abringt.",
+      "bbox": {
+        "x_pct": 7.934,
+        "y_pct": 14.271,
+        "w_pct": 85.434,
+        "h_pct": 22.732
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In zwei Vorträgen von Frau Hersch durften wir erleben, wie sie in einer solch unverstellten, auf dem Fragen und dem Hinschauen insistierenden, philosophischen Betrachtungsweise Probleme identifiziert und bis zu dem Punkt hinführt, an dem deutlich wird, daß eine weitere begriffliche Analyse diese Probleme nicht weiter auflösen, sondern, ganz im Gegenteil, dafür sorgen würde, daß man sich noch mehr verstrickt in dem, was man so an eigenen klugen oder analytischen Argumenten oder Geistesblitzen investiert, konnten zweimal mitverfolgen, daß wir, wenn wir tief über die Frage nach dem Verhältnis von Mensch und Welt nachdenken - tief, das heißt auch, durchaus von beiden Seiten her, von der Frage der Unwahrscheinlichkeit des Menschen in der Welt und von der Seite der Unwahrscheinlichkeit der Welt für den Menschen her -, uns in die Situation paradoxer, widersprüchlicher, sich nicht auflösender, gegensätzlicher Auffassungen geführt werden.",
+      "bbox": {
+        "x_pct": 8.039,
+        "y_pct": 38.552,
+        "w_pct": 85.329,
+        "h_pct": 36.311
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Da liegt es natürlich nahe, wieder an den Namenspatron unserer Veranstaltung zu appellieren. Es gibt wohl keinen Denker, der so intensiv, wenn auch nicht über Paradoxien, so doch",
+      "bbox": {
+        "x_pct": 8.234,
+        "y_pct": 76.53,
+        "w_pct": 85.135,
+        "h_pct": 6.867
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "4 Annemarie Pieper (Hg.): Aufstand des stillgelegten Geschlechts. Einführung in die feministische Ethik. Freiburg/Breisgau, 1993.",
+      "bbox": {
+        "x_pct": 10.973,
+        "y_pct": 84.517,
+        "w_pct": 82.74,
+        "h_pct": 2.459
+      },
+      "changed": true,
+      "change_reason": "Relabeled as footnote and corrected text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "5 dies.: Die Macht der Freiheit. Jeanne Hersch zum 80. Geburtstag. Zürich, 1990",
+      "bbox": {
+        "x_pct": 10.823,
+        "y_pct": 90.255,
+        "w_pct": 6.198,
+        "h_pct": 1.639
+      },
+      "changed": true,
+      "change_reason": "Relabeled as footnote and corrected text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "26",
+      "bbox": {
+        "x_pct": 83.0,
+        "y_pct": 93.0,
+        "w_pct": 5.0,
+        "h_pct": 4.0
+      },
+      "changed": true,
+      "change_reason": "Identified and relabeled page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction had significant errors.",
+    "Footnote labels were incorrect.",
+    "Page number at bottom was not identified."
+  ],
+  "doc_id": "3180",
+  "page": 3,
+  "elapsed_seconds": 5.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

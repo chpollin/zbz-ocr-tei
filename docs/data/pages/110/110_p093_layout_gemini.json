@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "forme. En conséquence; rentre   plutôt dans la notion de partie que dans celle du lout. Linfini n'es",
+      "bbox": {
+        "x_pct": 11.473,
+        "y_pct": 12.974,
+        "w_pct": 68.308,
+        "h_pct": 15.25
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph and text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette   unité de la forme constitue le pivot cenlral lequel elle que les polarités constatées plus h",
+      "bbox": {
+        "x_pct": 11.197,
+        "y_pct": 27.898,
+        "w_pct": 68.55,
+        "h_pct": 20.334
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph and text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lunité en tant que modalité   logique n'admet pas dappropriation ni dexclusion. Elle n'admet pas la ",
+      "bbox": {
+        "x_pct": 11.197,
+        "y_pct": 48.331,
+        "w_pct": 68.47,
+        "h_pct": 14.871
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph and text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Physique; III, 6 Physique; III, 7. 'Linfini comme   la   matière est choge et Fenveloppe, comne mati",
+      "bbox": {
+        "x_pct": 11.243,
+        "y_pct": 67.124,
+        "w_pct": 68.504,
+        "h_pct": 5.842
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to zb_paragraph and text content"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME 91",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 67.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page running header"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Cf. encore Physique, III, 7.",
+      "bbox": {
+        "x_pct": 11.0,
+        "y_pct": 72.0,
+        "w_pct": 40.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Footnote 1"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "2 Métaphysique, livre V, 6.",
+      "bbox": {
+        "x_pct": 11.0,
+        "y_pct": 75.0,
+        "w_pct": 30.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Footnote 2"
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Original regions had incorrect labeling (list_item/text instead of zb_paragraph).",
+    "Missing bibliographic footnotes at the bottom of the page.",
+    "Missing page header region.",
+    "Text content was inaccurate or incomplete in original JSON."
+  ],
+  "doc_id": "110",
+  "page": 93,
+  "elapsed_seconds": 7.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to zb_paragraph and text content": 3,
+    "Corrected label from list_item to zb_paragraph and text content": 1,
+    "ADDED": 3
+  }
+}

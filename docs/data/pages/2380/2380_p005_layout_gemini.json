@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "254",
+      "bbox": {
+        "x_pct": 15.901,
+        "y_pct": 62.15,
+        "w_pct": 3.738,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 47.781,
+        "y_pct": 65.578,
+        "w_pct": 14.869,
+        "h_pct": 1.259
+      },
+      "changed": true,
+      "change_reason": "Author name at top of page marked as section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tous les fronts contre toutes les formes d'idolâtrie et de superstition. « Afin que l'homme ne porte pas la main sur la divinité et qu'il puisse être lui-même ce qu'il a à être, il faut qu'il laisse la transcendance, intacte, à son secret, son lointain et son étrangeté » (Philosophie, III).",
+      "bbox": {
+        "x_pct": 15.901,
+        "y_pct": 10.072,
+        "w_pct": 79.25,
+        "h_pct": 6.992
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rien n'est chiffre par nature ou par définition. N'importe quoi peut le devenir. Tout donné empirique, toute expérience, sensible, affective, intellectuelle, implique, semble-t-il, pour Jaspers, une virtualité de parole transcendante, ou de transparence sur la transcendance, du seul fait que cela « est ». Mais cette virtualité n'a tendance à s'actualiser que pour une existence faisant acte de présence à sa situation dans l'historicité.",
+      "bbox": {
+        "x_pct": 15.868,
+        "y_pct": 17.968,
+        "w_pct": 79.283,
+        "h_pct": 10.294
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si rien n'est chiffre et si tout peut l'être, l'écriture chiffrée reste privée de toute objectivité permettant d'en généraliser la portée et la signification. On comprend dès lors pourquoi Jaspers a rejeté sans relâche les langages de la transcendance consolidés en dogmes, en institutions, en autorités. Certains ont cru trouver là des arguments pour faire de lui un incroyant rationaliste du style « Aufklärung ». Mais c'est un profond malentendu : il était si profondément convaincu de la nature existentielle (donc non généralisable et non objectivable) de la foi, comme aussi du rapport indissociable entre la transcendance et la foi, que toute objectivation, toute projection dans la permanence des institutions et des doctrines, lui apparaissait idolâtre et donc sacrilège. Ce qui ne l'empêchait nullement de reconnaître la possibilité d'une foi authentique, liée à l'historicité, chez les fidèles d'une confession institutionnalisée. Mais c'était alors, à ses yeux, que l'institution était devenue pour eux un ensemble de chiffres existentiellement vécus, dont ils objectivaient et généralisaient l'usage, à tort.",
+      "bbox": {
+        "x_pct": 15.566,
+        "y_pct": 29.167,
+        "w_pct": 79.462,
+        "h_pct": 26.468
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La transcendance ne parle à travers les chiffres qu'à l'existence qui s'actualise hic et nunc, dans l'historicité concrète, par un engagement absolu. Elle ne parle jamais un langage valable « en général ». Un spectacle de la nature, un être vivant, une œuvre d'art, un acte d'humanité, une parole, un geste, une pensée, une joie, une douleur, bien d'autres choses encore peuvent devenir écriture chiffrée prête à parler de la transcendance. Cette virtualité des chiffres correspond à une disponibilité aux chiffres de l'existence, qui peut, en s'engageant elle-même, les « déchiffrer ».",
+      "bbox": {
+        "x_pct": 15.711,
+        "y_pct": 56.045,
+        "w_pct": 79.216,
+        "h_pct": 14.616
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On comprend dès lors quelles sont, poussées à l'extrême, à la fois la précarité et l'exigence des chiffres. Aucune autorité objective établie ne les soutient ni ne les impose. Aucun livre n'est le Livre, garant de la vérité par sa dérivation immédiate de la transcendance. Et pourtant, devenus chiffres pour l'existence dans son historicité concrète, les signes transcendante lui imposent une exigence si absolue qu'elle coïncide avec sa propre liberté. La liberté n'est plus alors vécue comme un choix — plus ou moins arbitraire — entre plusieurs possibles, mais comme une nécessité, ou une obéissance bien plus essentielle que n'importe quel choix, parce qu'elle est obéissance à la transcendance sans laquelle l'existence perd son origine et son être. La responsabilité ainsi engagée par la lecture des chiffres est, au-delà de la morale, la traversant, une responsabilité métaphysique. D'une certaine manière, elle met en cause",
+      "bbox": {
+        "x_pct": 15.711,
+        "y_pct": 71.45,
+        "w_pct": 79.171,
+        "h_pct": 21.608
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at the top of the page was mislabeled as text.",
+    "Running header 'JEANNE HERSCH' was mislabeled as text.",
+    "The OCR text provided in the source regions was heavily corrupted; fixed text contents for accuracy in JSON."
+  ],
+  "doc_id": "2380",
+  "page": 5,
+  "elapsed_seconds": 10.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

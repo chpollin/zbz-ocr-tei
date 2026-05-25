@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jahrbuch der Österreichischen Karl-Jaspers-Gesellschaft",
+      "bbox": {
+        "x_pct": 19.152,
+        "y_pct": 15.063,
+        "w_pct": 54.624,
+        "h_pct": 17.274
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Herausgegeben von Elisabeth Salamun-Hybašek und Kurt Salamun",
+      "bbox": {
+        "x_pct": 12.175,
+        "y_pct": 51.54,
+        "w_pct": 70.137,
+        "h_pct": 7.246
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header as this is the editor information block, which is standard for title pages."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jahrgang 3/4 (1990/91)",
+      "bbox": {
+        "x_pct": 30.78,
+        "y_pct": 80.525,
+        "w_pct": 34.473,
+        "h_pct": 3.143
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header as this constitutes publication metadata/periodical volume identification."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "VWGÖ-Wien",
+      "bbox": {
+        "x_pct": 38.399,
+        "y_pct": 91.304,
+        "w_pct": 20.602,
+        "h_pct": 2.962
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header as this is the publisher identification."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Three instances of editorial/publisher information and publication metadata mislabeled as generic text instead of section_header."
+  ],
+  "doc_id": "3120",
+  "page": 1,
+  "elapsed_seconds": 3.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "revient souvent au même la démonstralion consistant alors en une mise en forme de la recherche de fa",
+      "bbox": {
+        "x_pct": 12.275,
+        "y_pct": 12.883,
+        "w_pct": 68.623,
+        "h_pct": 35.282
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il va de fait la marche de la science est influencée par une foule de facteurs extrascientifiques co",
+      "bbox": {
+        "x_pct": 12.351,
+        "y_pct": 48.14,
+        "w_pct": 68.7,
+        "h_pct": 20.602
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "se de Panayis   PAPALIGOURAS, intitulée Théorie de la",
+      "bbox": {
+        "x_pct": 12.658,
+        "y_pct": 72.387,
+        "w_pct": 48.101,
+        "h_pct": 1.645
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "société   internationale,",
+      "bbox": {
+        "x_pct": 61.488,
+        "y_pct": 72.134,
+        "w_pct": 19.601,
+        "h_pct": 1.746
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 20.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "43",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 98.0,
+        "w_pct": 5.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Sur la sp\u0000ecificit\u0000e irr\u0000eductible des diverses attitudes humaines, cf. la th\u0000e-",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Footnote start"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header/footer regions",
+    "Footnote numbering line missing from existing boxes"
+  ],
+  "doc_id": "110",
+  "page": 45,
+  "elapsed_seconds": 5.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

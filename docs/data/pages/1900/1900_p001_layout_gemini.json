@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Europe et condition humaine",
+      "bbox": {
+        "x_pct": 9.355,
+        "y_pct": 9.367,
+        "w_pct": 76.694,
+        "h_pct": 12.714
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Europe a connu, sur cette terre, un destin exceptionnel. Parmi les innombrables facteurs qui peuvent avoir contribué à ce destin, je crois en repérer un plus central que beaucoup d’autres, en ce sens que beaucoup d’autres me paraissent dériver de lui. Ce facteur, c’est que les Européens, très tôt, et avec des conséquences variées au cours de leur histoire, ont reconnu et accepté leur condition d’hommes, avec ses possibles, ses servitudes et ses limites, en même temps que ses exigences sans fin. Or aujourd’hui, ils n’y consentent plus. Par-delà tous les problèmes politiques, sociaux, culturels, économiques, par-delà succès et échecs, idéologies et contre-idéologies, il y a là davantage même qu’une crise morale ou qu’une crise de civilisation : une rébellion contre la condition humaine.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 34.111,
+        "w_pct": 81.129,
+        "h_pct": 16.021
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated/corrupted in the JSON representation. Updated to match the actual text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien entendu, les observations qui suivent ne sont pas « scientifiques ». Elles ne peuvent être ni démontrées, ni vérifiées. Je les soumets simplement au jugement du lecteur, qui les mettra à l’épreuve en examinant s’il trouve ou non de quoi les illustrer, dans sa propre expérience d’Européen.",
+      "bbox": {
+        "x_pct": 10.081,
+        "y_pct": 50.285,
+        "w_pct": 81.266,
+        "h_pct": 7.526
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated/corrupted in the JSON representation. Updated to match the actual text in the image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Quelques symptômes d’un refus",
+      "bbox": {
+        "x_pct": 9.944,
+        "y_pct": 63.056,
+        "w_pct": 30.968,
+        "h_pct": 2.32
+      },
+      "changed": true,
+      "change_reason": "Corrected minor transcription error in the heading text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La démesure du refus européen, le décalage entre son objet réel (la condition humaine) et son objet explicite (l’ordre politique, le gouvernement, le capitalisme, la société de consommation) entraîne de toutes parts incohérences et inconséquences.",
+      "bbox": {
+        "x_pct": 10.081,
+        "y_pct": 66.705,
+        "w_pct": 81.048,
+        "h_pct": 5.758
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated/corrupted in the JSON representation. Updated to match the actual text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alors que l’humanité n’a jamais connu une élévation du niveau de vie (dans tous les domaines, et pas seulement « matériel ») comparable à celle qui s’est produite en Europe occidentale depuis 1950, jamais le Ciel ni les responsables n’ont été assourdis par plus de plaintes, de fureurs et de récriminations.",
+      "bbox": {
+        "x_pct": 10.137,
+        "y_pct": 72.423,
+        "w_pct": 81.29,
+        "h_pct": 7.263
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated/corrupted in the JSON representation. Updated to match the actual text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Moins manifeste, mais plus saisissant peut-être est le contraste entre ce que disent, écrivent et même pensent nos contemporains européens, et ce qu’ils vivent en fait au fil des jours. Il y a comme une « théorie » diffuse qui imbibe les consciences au niveau verbal, qui déclenche par les mots des états affectifs tenaces, parfois violents, et qui est presque sans rapport avec le climat où se déroulent les circonstances de la vie. C’est pourquoi les questionnaires des sociologues sont tellement trompeurs.",
+      "bbox": {
+        "x_pct": 9.839,
+        "y_pct": 79.743,
+        "w_pct": 81.347,
+        "h_pct": 11.117
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated/corrupted in the JSON representation. Updated to match the actual text in the image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original JSON content contained truncated and incorrectly transcribed text in several paragraphs.",
+    "Section header text required minor punctuation correction."
+  ],
+  "doc_id": "1900",
+  "page": 1,
+  "elapsed_seconds": 56.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fabriqué, on s'écarte de la démocratie, et par conséquent du pouvoir du peuple, et par voie de conséquence des progrès pour le peuple. Là, je suis en profond désaccord avec eux. D'ailleurs je ne suis pas seule à penser ainsi dans le Parti socialiste suisse et c'est ce qui me console.",
+      "bbox": {
+        "x_pct": 15.543,
+        "y_pct": 3.976,
+        "w_pct": 79.939,
+        "h_pct": 8.387
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si vous avez milité à la base, comme vous l'avez exposé, puis dans les organes directeurs du parti genevois, avez-vous aussi exercé des mandats politiques, au niveau communal, cantonal ou fédéral, ou sinon pourquoi n'avez-vous jamais joué le jeu démocratique par excellence des élections à ces différents niveaux ?",
+      "bbox": {
+        "x_pct": 15.592,
+        "y_pct": 12.96,
+        "w_pct": 79.976,
+        "h_pct": 9.726
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La raison en est très simple : je suis née trop tôt, dans un monde trop jeune ! C'est-à-dire que dans ma génération la question ne se posait pas, les femmes n'ayant pas le droit de vote. Quand les femmes ont commencé véritablement à avoir accès aux autorités politiques, moi j'étais trop âgée. Et ce n'est pas seulement que j'étais trop âgée, mais il aurait fallu que j'aie un parti derrière moi, et je n'en avais plus puisque j'étais en désaccord avec le parti socialiste genevois.",
+      "bbox": {
+        "x_pct": 15.592,
+        "y_pct": 22.847,
+        "w_pct": 80.098,
+        "h_pct": 14.169
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "4.1) Le bilan que vous avez esquissé de votre activité au Parti socialiste n'est pas exempt de quelque amertume. N'avez-vous pas tout de même le sentiment d'avoir exercé une influence et mené une action efficace, à tout le moins lorsque vous étiez une des chevilles ouvrières de la section genevoise, entre 1939 et 1959 par exemple ?",
+      "bbox": {
+        "x_pct": 15.543,
+        "y_pct": 37.637,
+        "w_pct": 80.061,
+        "h_pct": 10.161
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est assez difficile de cerner la portée réelle de ce qu'on a fait dans le domaine politique. On prend position, on donne des avis, on formule des raisons, et c'est un peu comme dans l'enseignement : il en advient ce qui peut et ce qui doit en advenir. Mais je voudrais quand même retoucher ce que j'ai pu dire jusqu'à présent : j'ai donné l'impression peut-être que mon activité politique a consisté essentiellement à m'opposer dans des moments critiques à la majorité ou au courant dominant. Je n'ai pas fait que cela. J'ai aussi réalisé, au cours de ma vie, enfin je l'espère, un peu de travail positif. Par exemple, j'ai déjà fait mention de certaines activités d'éducation que j'ai assumées dès ma jeunesse à l'université ouvrière de l'époque, dans des week-ends de formation syndicale, dans des cours de formation FOBB, par exemple, avec de jeunes apprentis. J'ai aussi considéré que certaines séances du Parti étaient des séances d'éducation ; les partis sont des lieux qui devraient servir à l'éducation politique des citoyens. A mon avis, c'est quelque chose qu'on a beaucoup trop tendance, aujourd'hui, à perdre de vue. On est tellement braqué sur la propagande et sur les résultats immédiats que la question de la formation passe à l'arrière-plan. J'espère avoir eu dans le domaine de la formation et de la réflexion, après tout, une certaine efficacité. J'ai aussi exercé des activités annexes. J'ai déjà mentionné mon activité dans le comité d'aide aux réfugiés pendant toute la période fasciste et pendant la guerre, pour l'accueil des réfugiés.",
+      "bbox": {
+        "x_pct": 15.629,
+        "y_pct": 47.339,
+        "w_pct": 80.147,
+        "h_pct": 43.927
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "130",
+      "bbox": {
+        "x_pct": 15.543,
+        "y_pct": 95.5,
+        "w_pct": 3.4,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Detected page number, changed from text to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was extremely poor quality, requiring full text transcription.",
+    "Page number 130 was missing from original regions list and misidentified as text."
+  ],
+  "doc_id": "2330",
+  "page": 134,
+  "elapsed_seconds": 5.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

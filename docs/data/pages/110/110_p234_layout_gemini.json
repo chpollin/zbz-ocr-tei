@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "232",
+      "bbox": {
+        "x_pct": 21.139,
+        "y_pct": 10.428,
+        "w_pct": 3.738,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header region"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 10.428,
+        "w_pct": 20.654,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "jugements   adéquats à lêtre. elle   pourrait se rappor ter à une connaissance mystique de lêtre; pl",
+      "bbox": {
+        "x_pct": 21.404,
+        "y_pct": 13.667,
+        "w_pct": 68.55,
+        "h_pct": 9.696
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "est lêlre? En dautres termes : le jugement est-il une forme adéquute   lorsque le sujet",
+      "bbox": {
+        "x_pct": 21.369,
+        "y_pct": 23.409,
+        "w_pct": 68.389,
+        "h_pct": 3.797
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un réalisme intégral répondrait oui aux trois questions. En répondent oui aux questions b) et c) mil",
+      "bbox": {
+        "x_pct": 21.208,
+        "y_pct": 29.157,
+        "w_pct": 68.585,
+        "h_pct": 11.086
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici une remarque est nécessaire ; c'est qu'à propos de   questions aussi   fondamentales, aucune arg",
+      "bbox": {
+        "x_pct": 21.139,
+        "y_pct": 40.797,
+        "w_pct": 68.654,
+        "h_pct": 33.994
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header regions defined as _filter"
+  ],
+  "doc_id": "110",
+  "page": 234,
+  "elapsed_seconds": 5.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÉPREUVE DE L'HUMANISME D'AUJOURD'HUI 425",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected label for page header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or il se pourrait que les hommes se laissent aller tous ensemble à une condition animale ou mécanique. Ils consentaient à n'être plus que les rouages bien réglés de l'industrie, ou les dociles habitants d'une étable modèle régie par un bon tyran, ou des brutes asservies sans frein à quelque fanatisme totalitaire. Ils auraient beau alors déchoir fraternellement, cette fraternité ne sauverait aucune parcelle d'humanisme. Ce ne serait même pas une fraternité : ne peuvent être frères que des êtres libres qui veulent leur mutuelle liberté.",
+      "bbox": {
+        "x_pct": 12.443,
+        "y_pct": 10.902,
+        "w_pct": 71.461,
+        "h_pct": 20.016
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the content accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La liberté, telle est l'épreuve cruciale pour l'humanisme moderne. Et pourtant la liberté n'est pas une valeur qui puisse se fermer sur elle-même. Il n'y a pas d'autre façon d'être libre que de donner sa liberté, de la mettre au service d'une valeur, et par là d'y renoncer à chaque instant par l'acte même qui l'accomplit. Mais justement, le terme d'« humanisme » désigne toujours un dressage de l'homme par l'homme, un dépassement, la visée, à travers l'homme donné, de ce qu'il est capable de devenir. Dans l'humanisme traditionnel, cet idéal était assuré, prescriptible, commun. L'humanisme moderne ne peut qu'appeler chacun à l'inventer et à le préciser sans fin. Ce droit d'inventer l'homme que l'on va être, saura-t-on l'incarner dans la réalité sociale en assurant à chacun le temps, la sécurité, la culture, la maîtrise de son travail, de façon qu'il puisse assumer une vie d'homme libre, en jouir et en souffrir? Cette incarnation libératrice est aujourd'hui possible. Si l'humanisme moderne travaille à l'accomplir, c'est qu'une fraternité authentique l'inspire. S'il consent, par contre, à l'asservissement de fait des multitudes aux nécessités vitales immédiates et aux besoins économiques, il n'est qu'un thème littéraire. S'il devait contribuer à soumettre les esprits au despotisme incontrôlable d'un ingénieur totalitaire prétendant dresser les plans du bonheur humain, il dissimulerait d'une part un piège, de l'autre une veule abdication.",
+      "bbox": {
+        "x_pct": 12.557,
+        "y_pct": 30.54,
+        "w_pct": 71.724,
+        "h_pct": 49.694
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image content accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH.",
+      "bbox": {
+        "x_pct": 60.731,
+        "y_pct": 80.282,
+        "w_pct": 19.486,
+        "h_pct": 2.127
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page header/number missing from original detection.",
+    "Text transcription for paragraphs was incomplete/erroneous.",
+    "Author signature handled as text per instructions."
+  ],
+  "doc_id": "160",
+  "page": 10,
+  "elapsed_seconds": 4.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "AUTO-CRITIQUE DE JASPERS 181",
+      "bbox": {
+        "x_pct": 31.424,
+        "y_pct": 89.288,
+        "w_pct": 55.459,
+        "h_pct": 10.422
+      },
+      "changed": true,
+      "change_reason": "Corrected the top header (page title and number) which was misidentified or missing in the previous regions list."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je regrette de n'avoir pas réussi à faire plus courte cette esquisse de la philosophie de Jaspers. Je le regrette d'autant plus que si longue qu'elle soit, elle ne réussit nullement à en transmettre l'essentiel. D'une façon générale, le résumé d'une philosophie ne peut être qu'un cadre, et celle de Jaspers plus qu'une autre perd sa substance lorsqu'on la ramène à un schéma. C'est que chaque phrase reflète l'effort transcendant; elle est donc essentielle et ne peut être omise. Ce résumé était pourtant nécessaire si nous voulons examiner la conception que Jaspers s'est faite de sa propre philosophie.",
+      "bbox": {
+        "x_pct": 11.145,
+        "y_pct": 13.251,
+        "w_pct": 75.949,
+        "h_pct": 30.82
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match the original document accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voyons d'abord ce que Jaspers dit de sa méthode (I, p. 277 et sqq.). Nous avons vu qu'il répartit l'effort transcendant suivant trois directions : Weltorientierung, Existenzerhellung, et Metaphysik. Cette forme systématique prétend-elle, ne fût-ce que comme forme, à être apodictique? Jaspers répond lui-même que non (I, p. 277 et sqq.). L'acte transcendant n'est obligatoire que dans la Weltorientierung, et uniquement comme découverte des limites. Aucun acte transcendant ne peut être exprimé de façon démonstrative. On sait que l'être est « déchiré » (zerrissen), qu'il n'y a pas de principe d'ordre universel, et cette ignorance consciente devient elle-même le principe d'ordre fondamental de la philosophie; c'est elle qui permet de distinguer les chemins pouvant conduire à la transcendance. Dire de l'être qu'il est disloqué en monde, liberté et transcendance, c'est dire que dans",
+      "bbox": {
+        "x_pct": 10.949,
+        "y_pct": 43.975,
+        "w_pct": 75.994,
+        "h_pct": 45.949
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match the original document accurately."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original detection missed the header line.",
+    "Original text transcription was highly corrupted/abbreviated.",
+    "Bbox coordinates were inherited from the previous low-quality scan identification."
+  ],
+  "doc_id": "20",
+  "page": 183,
+  "elapsed_seconds": 4.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

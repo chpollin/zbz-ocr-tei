@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NIETZSCHE 139",
+      "bbox": {
+        "x_pct": 427.0,
+        "y_pct": 74.0,
+        "w_pct": 558.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header text mislabeled as paragraph"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par Kant, mais restée à lui-même voilée, est devenue peu à peu manifeste.",
+      "bbox": {
+        "x_pct": 118.0,
+        "y_pct": 117.0,
+        "w_pct": 762.0,
+        "h_pct": 54.0
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "*",
+      "bbox": {
+        "x_pct": 467.0,
+        "y_pct": 188.0,
+        "w_pct": 36.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Footnote marker mislabeled as paragraph"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nietzsche joué à ce point de vue un rôle singulier. Il a tiré de l'impuissance de la raison à résoudre les problèmes derniers une joie tragique, une exaltation triomphante. Il a transporté la philosophie du monde de la connaissance théorique dans celui des forces fondamentales. Kant aussi posait le primat du pratique sur le théorique, puisque la raison pratique seule atteint la chose en soi. Mais de la raison pratique il a parlé avec la raison pure. Il l’a volontairement vidée de son contenu et n’en a gardé que la forme. Nietzsche fait parler les forces elles-mêmes. Il les exalte. Ce sont elles qui importent, et non ce qu’elles obtiennent. Si Kant a connu l’échec inévitable de la raison, c’est à force de s’attacher à la poursuite scientifique des vérités dernières. Son échec, il le représente sous une forme scientifique, et il veut purifier le savoir et le fortifier en lui fixant des limites. Nietzsche, lui, rejette le chiffre philosophique habituel. Il ne fait pas de système, il condamne même toute forme systématique. L’illusion chez lui n’existe plus, non parce qu’il l’a rationnellement découverte, mais parce qu’il renonce d’emblée à découvrir un principe universel apodictique. Il cherche, non à enseigner la vérité objective, mais à exalter des forces. Aussi quelques-unes de ses œuvres n’appartiennent-",
+      "bbox": {
+        "x_pct": 113.0,
+        "y_pct": 222.0,
+        "w_pct": 767.0,
+        "h_pct": 667.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text from OCR errors"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Header detected as text",
+    "Footnote marker detected as text",
+    "OCR text quality is poor with hallucinations"
+  ],
+  "doc_id": "20",
+  "page": 141,
+  "elapsed_seconds": 4.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

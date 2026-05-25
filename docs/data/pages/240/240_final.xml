@@ -1,0 +1,369 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Sources humaines de la démocratie</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">240</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Sources humaines de la démocratie</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1952</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screening-agent" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Overlay S.1/6/11: Layout-Regionen korrekt erkannt, single-column Fliesstext; OCR-Text liest sich fluessig, kohaerenter franzoesischer Essay ueber Demokratie und Erziehung; Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings (+4 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_1_r_1" ulx="134" uly="609" lrx="325" lry="637" />
+      <zone xml:id="facs_1_r_2" ulx="136" uly="687" lrx="500" lry="716" />
+      <zone xml:id="facs_1_r_3" ulx="136" uly="759" lrx="234" lry="792" />
+      <zone xml:id="facs_1_r_4" ulx="134" uly="799" lrx="1066" lry="835" />
+      <zone xml:id="facs_1_r_5" ulx="362" uly="894" lrx="871" lry="916" />
+      <zone xml:id="facs_1_r_6" ulx="134" uly="896" lrx="236" lry="924" />
+      <zone xml:id="facs_1_r_7" ulx="134" uly="920" lrx="240" lry="944" />
+      <zone xml:id="facs_1_r_8" ulx="362" uly="943" lrx="414" lry="967" />
+      <zone xml:id="facs_1_r_9" ulx="133" uly="945" lrx="188" lry="967" />
+      <zone xml:id="facs_1_r_10" ulx="134" uly="967" lrx="227" lry="995" />
+      <zone xml:id="facs_1_r_11" ulx="361" uly="990" lrx="514" lry="1061" />
+      <zone xml:id="facs_1_r_12" ulx="135" uly="992" lrx="349" lry="1015" />
+      <zone xml:id="facs_1_r_13" ulx="135" uly="1016" lrx="301" lry="1038" />
+      <zone xml:id="facs_1_r_14" ulx="135" uly="1039" lrx="205" lry="1061" />
+      <zone xml:id="facs_1_r_15" ulx="134" uly="1061" lrx="256" lry="1090" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_2_r_1" ulx="220" uly="355" lrx="982" lry="480" />
+      <zone xml:id="facs_2_r_2" ulx="491" uly="510" lrx="713" lry="587" />
+      <zone xml:id="facs_2_r_3" ulx="497" uly="683" lrx="688" lry="713" />
+      <zone xml:id="facs_2_r_4" ulx="306" uly="738" lrx="860" lry="769" />
+      <zone xml:id="facs_2_r_5" ulx="306" uly="780" lrx="833" lry="808" />
+      <zone xml:id="facs_2_r_6" ulx="306" uly="808" lrx="830" lry="836" />
+      <zone xml:id="facs_2_r_7" ulx="306" uly="837" lrx="839" lry="862" />
+      <zone xml:id="facs_2_r_8" ulx="306" uly="869" lrx="837" lry="899" />
+      <zone xml:id="facs_2_r_9" ulx="306" uly="899" lrx="824" lry="925" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_3_r_1" ulx="403" uly="455" lrx="797" lry="567" />
+      <zone xml:id="facs_3_r_2" ulx="296" uly="626" lrx="901" lry="1120" />
+      <zone xml:id="facs_3_r_3" ulx="291" uly="1120" lrx="899" lry="1348" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_4_r_1" ulx="317" uly="384" lrx="915" lry="482" />
+      <zone xml:id="facs_4_r_2" ulx="317" uly="492" lrx="915" lry="587" />
+      <zone xml:id="facs_4_r_3" ulx="317" uly="620" lrx="915" lry="738" />
+      <zone xml:id="facs_4_r_4" ulx="317" uly="752" lrx="915" lry="1140" />
+      <zone xml:id="facs_4_r_5" ulx="317" uly="1173" lrx="915" lry="1343" />
+      <zone xml:id="facs_4_r_6" ulx="238" uly="1501" lrx="748" lry="1518" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_5_r_1" ulx="280" uly="406" lrx="895" lry="535" />
+      <zone xml:id="facs_5_r_2" ulx="277" uly="531" lrx="894" lry="877" />
+      <zone xml:id="facs_5_r_3" ulx="282" uly="879" lrx="894" lry="1109" />
+      <zone xml:id="facs_5_r_4" ulx="275" uly="1129" lrx="891" lry="1210" />
+      <zone xml:id="facs_5_r_5" ulx="275" uly="1207" lrx="889" lry="1285" />
+      <zone xml:id="facs_5_r_6" ulx="277" uly="1285" lrx="724" lry="1340" />
+      <zone xml:id="facs_5_r_7" ulx="324" uly="1337" lrx="891" lry="1369" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_6_r_1" ulx="319" uly="406" lrx="929" lry="458" />
+      <zone xml:id="facs_6_r_2" ulx="317" uly="463" lrx="928" lry="569" />
+      <zone xml:id="facs_6_r_3" ulx="316" uly="563" lrx="925" lry="664" />
+      <zone xml:id="facs_6_r_4" ulx="314" uly="666" lrx="927" lry="824" />
+      <zone xml:id="facs_6_r_5" ulx="360" uly="818" lrx="814" lry="853" />
+      <zone xml:id="facs_6_r_6" ulx="315" uly="868" lrx="923" lry="945" />
+      <zone xml:id="facs_6_r_7" ulx="308" uly="946" lrx="925" lry="1221" />
+      <zone xml:id="facs_6_r_8" ulx="308" uly="1219" lrx="920" lry="1374" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_7_r_1" ulx="300" uly="398" lrx="904" lry="551" />
+      <zone xml:id="facs_7_r_2" ulx="305" uly="578" lrx="904" lry="777" />
+      <zone xml:id="facs_7_r_3" ulx="299" uly="782" lrx="906" lry="1103" />
+      <zone xml:id="facs_7_r_4" ulx="299" uly="1105" lrx="907" lry="1358" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_8_r_1" ulx="309" uly="469" lrx="925" lry="1094" />
+      <zone xml:id="facs_8_r_2" ulx="308" uly="1087" lrx="922" lry="1364" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_9_r_1" ulx="288" uly="405" lrx="898" lry="557" />
+      <zone xml:id="facs_9_r_2" ulx="293" uly="568" lrx="896" lry="770" />
+      <zone xml:id="facs_9_r_3" ulx="337" uly="775" lrx="760" lry="805" />
+      <zone xml:id="facs_9_r_4" ulx="289" uly="823" lrx="894" lry="1051" />
+      <zone xml:id="facs_9_r_5" ulx="285" uly="1069" lrx="894" lry="1369" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_10_r_1" ulx="322" uly="398" lrx="930" lry="480" />
+      <zone xml:id="facs_10_r_2" ulx="320" uly="483" lrx="932" lry="804" />
+      <zone xml:id="facs_10_r_3" ulx="316" uly="808" lrx="933" lry="1087" />
+      <zone xml:id="facs_10_r_4" ulx="315" uly="1090" lrx="932" lry="1368" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_11_r_1" ulx="285" uly="406" lrx="885" lry="527" />
+      <zone xml:id="facs_11_r_2" ulx="285" uly="557" lrx="885" lry="823" />
+      <zone xml:id="facs_11_r_3" ulx="659" uly="836" lrx="885" lry="862" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <p facs="#facs_1_r_1">
+          ZB <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName>
+        </p>
+        <p facs="#facs_1_r_2">
+          <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> | Zähringerplatz 6 | CH-8001 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_1_r_3">
+          <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName>, Dienstkonto<lb facs="#facs_1_l_3_1" n="N001" />Digitalisierungsprojekte<lb facs="#facs_1_l_3_2" n="N002" />Zähringerplatz 6<lb facs="#facs_1_l_3_3" n="N003" />8001 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_1_r_4">
+          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName><lb facs="#facs_1_l_4_1" n="N001" /><orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_4_2" n="N002" />Fernleihe / Document Delivery<lb facs="#facs_1_l_4_3" n="N003" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_4_4" n="N004" />Zähringerplatz 6<lb facs="#facs_1_l_4_5" n="N005" />CH-8001 <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_1_l_4_6" n="N006" />Tel. +41 44 268 31 00<lb facs="#facs_1_l_4_7" n="N007" />Web www.zb.uzh.ch<lb facs="#facs_1_l_4_8" n="N008" />www.ub.uzh.ch
+        </p>
+        <p facs="#facs_1_r_5">
+          <placeName ref="#zbz-l.45">Zürich</placeName>, 06.05.2025
+        </p>
+        <p facs="#facs_1_r_6">
+          Kopienbestellung ZBZ-ME-250430-09
+        </p>
+        <p facs="#facs_1_r_7">
+          Guten Tag
+        </p>
+        <p facs="#facs_1_r_8">
+          Vielen Dank für Ihre Bestellung vom 30.04.2025. Die gewünschten Kopien finden Sie in der Beilage.
+        </p>
+        <p facs="#facs_1_r_9">
+          Haupttitel: <bibl ref="#zbz-w.440">Monde Nouveau</bibl> Paru : revue mensuelle internationale<lb facs="#facs_1_l_9_1" n="N001" />Band/Heft:<lb facs="#facs_1_l_9_2" n="N002" />Jahr: 1952<lb facs="#facs_1_l_9_3" n="N003" />Signatur:<lb facs="#facs_1_l_9_4" n="N004" />Verfasser des Artikels: <persName ref="#zbz-p.2">Hersch, Jeanne</persName><lb facs="#facs_1_l_9_5" n="N005" />Titel des Artikels: «<bibl ref="#zbz-w.444">Sources humaines de la démocratie</bibl>»<lb facs="#facs_1_l_9_6" n="N006" />Seiten: 51–59<lb facs="#facs_1_l_9_7" n="N007" />Bemerkung: bitte nicht verrechnen, dienstlich, für Herschprojekt https://swisscovery.slsp.ch/permalink/415LSP_UZB/bmqo95/alma991141909149705501
+        </p>
+        <p facs="#facs_1_r_10">
+          Mit der Bestellung haben Sie zudem die Urheberrechtsbestimmungen akzeptiert.
+        </p>
+        <p facs="#facs_1_r_11">
+          Sind die Kopien fehlerhaft? Es tut uns leid, dass etwas nicht nach Wunsch funktioniert hat. Bitte geben Sie uns via fernleihe@zb.uzh.ch eine Rückmeldung.
+        </p>
+        <p facs="#facs_1_r_12">
+          Für die Kosten (CHF 8.00) erhalten Sie innert den nächsten 6–8 Wochen eine Rechnung per E-Mail. Für UZH-Angehörige gelten Sonderkonditionen.
+        </p>
+        <p facs="#facs_1_r_13">
+          Wir wünschen Ihnen einen schönen Tag.
+        </p>
+        <p facs="#facs_1_r_14">
+          Freundliche Grüsse<lb facs="#facs_1_l_14_1" n="N001" />Fernleihe / Dokumentlieferdienst
+        </p>
+        <p facs="#facs_1_r_15">
+          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName> &amp;amp; <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_15_1" n="N001" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_15_2" n="N002" />www.ub.uzh.ch<lb facs="#facs_1_l_15_3" n="N003" />www.zb.uzh.ch
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          8ᵉ Année<lb facs="#facs_2_l_1_1" n="N001" />I, 88<lb facs="#facs_2_l_1_2" n="N002" />19. 4. 1952<lb facs="#facs_2_l_1_3" n="N003" />56
+        </p>
+        <p facs="#facs_2_r_2">
+          <bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p facs="#facs_2_r_3">
+          PARU
+        </p>
+        <p facs="#facs_2_r_4">
+          SOMMAIRE
+        </p>
+        <p facs="#facs_2_r_5">
+          <bibl ref="#zbz-w.440">Monde Nouveau</bibl> continue . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <persName ref="#zbz-p.196">H. FRENAY</persName><lb facs="#facs_2_l_5_1" n="N001" />Pour ou contre l'armée européenne . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <persName ref="#zbz-p.196">H. FRENAY</persName><lb facs="#facs_2_l_5_2" n="N002" />Conférence des pays de l'<placeName ref="#zbz-l.13">Est</placeName> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <persName ref="#zbz-p.1060">R. MANGIN</persName><lb facs="#facs_2_l_5_3" n="N003" /><orgName ref="#zbz-o.385">Confédération</orgName> ou Fédération . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <persName ref="#zbz-p.1000">A. SPINELLI</persName><lb facs="#facs_2_l_5_4" n="N004" /><persName ref="#zbz-p.389">Victor Hugo</persName>, visionnaire de l'<placeName ref="#zbz-l.29">Europe</placeName> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <persName ref="#zbz-p.1061">G. ALTMAN</persName><lb facs="#facs_2_l_5_5" n="N005" /><bibl ref="#zbz-w.444">Sources humaines de la démocratie</bibl> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <persName ref="#zbz-p.2">J. HERSCH</persName><lb facs="#facs_2_l_5_6" n="N006" /><placeName ref="#zbz-l.29">L'Europe</placeName> dans le monde . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <persName ref="#zbz-p.1062">J. C. DEMACHY</persName>
+        </p>
+        <p facs="#facs_2_r_6">
+          L'ACTUALITÉ LITTÉRAIRE, INTELLECTUELLE ET ARTISTIQUE
+        </p>
+        <p facs="#facs_2_r_7">
+          ROMANS FRANÇAIS ET ÉTRANGERS - THÉATRE<lb facs="#facs_2_l_7_1" n="N001" />POÉSIE - CRITIQUE ET HISTOIRE LITTÉRAIRE<lb facs="#facs_2_l_7_2" n="N002" />ESSAIS - HISTOIRE - MÉMOIRES ET CHRONIQUES<lb facs="#facs_2_l_7_3" n="N003" />POLITIQUE ET HISTOIRE CONTEMPORAINE<lb facs="#facs_2_l_7_4" n="N004" />SCIENCES ET TECHNIQUES — ARTS<lb facs="#facs_2_l_7_5" n="N005" />PSYCHOLOGIE — SOCIOLOGIE<lb facs="#facs_2_l_7_6" n="N006" /><bibl ref="#zbz-w.1">PHILOSOPHIE</bibl> — RELIGION ET RELIGIONS
+        </p>
+        <p facs="#facs_2_r_8">
+          REVUE MENSUELLE INTERNATIONALE
+        </p>
+        <p facs="#facs_2_r_9">
+          185, RUE DE LA POMPE, <placeName ref="#zbz-l.1">PARIS</placeName> 16ᵉ<lb facs="#facs_2_l_9_1" n="N001" />LE NUMÉRO : <placeName ref="#zbz-l.2">FRANCE</placeName> 175 FR.
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          SOURCES HUMAINES<lb facs="#facs_3_l_1_1" n="N001" />DE LA DÉMOCRATIE
+        </p>
+        <p facs="#facs_3_r_2">
+          Les visions d'apocalypse séduisent nos contemporains. Au siècle dernier, de grands solitaires essayèrent en vain de démasquer une époque apparemment heureuse, secrètement tragique ; ils avaient le sentiment que leur monde était près de sa fin et qu'une ère nouvelle allait s'ouvrir pour un homme nouveau. Vulgarisés aujourd'hui, ces thèmes ne servent plus guère qu'à une fuite générale. L'apocalypse permet d'échapper aux exigences de l'histoire. C'est à qui, dès lors, inventera de la façon la plus sensationnelle les exigences ou les menaces excessives qui réduiront le mieux les hommes à l'impuissance. Les doctrines positivistes et marxistes avaient lancé l'histoire et son apparent relativisme à l'assaut de l'absolu éternel. Actuellement, c'est l'inverse qui se produit. L'absolu sert à écraser l'histoire et ses possibles, avec l'effort de ceux qui tentent d'y œuvrer. Les différences de degrés n'ont plus d'intérêt, du moment que rien n'est absolu, tout se vaut. Ces transformations possibles deviennent mesquines à côté de celles que l'on exigerait si elles n'étaient pas exclues. Les esprits et les volontés connaissent les grandes vacances de la catastrophe imminente.
+        </p>
+        <p facs="#facs_3_r_3">
+          De tous côtés s'éveillent soudain de « grandes âmes », que le possible ne contente plus. L'exigence de justice sociale, maintenue dans la banalité quotidienne de la lutte syndicale ou politique leur paraît futile à côté de l'élan gratuit mais religieusement révolutionnaire qui les exalte. Ayant perdu la bonne conscience du libéralisme conservateur et individualiste, elles éprouvent la nostalgie d'un communisme radical, bien différent du communisme réel, mais qui rend celui-ci néanmoins attrayant en tant qu'il piétine leurs propres
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          52<lb facs="#facs_4_l_1_1" n="N001" /><bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p facs="#facs_4_r_2">
+          valeurs, et dans la mesure où elles l'imaginent très lointain. Le possible est terre-à-terre, il n'intéresse pas. L'impossible maximaliste a tous les prestiges de la grande aventure — imaginée imaginaire. La vérité ? Platitude.
+        </p>
+        <p facs="#facs_4_r_3">
+          Si cette nouvelle forme de cynisme sublime et conformiste continue à se propager, le Vrai redeviendra rare, vraiment révolutionnaire, et ceux qui l'aiment se retrouveront enfin.
+        </p>
+        <p facs="#facs_4_r_4">
+          Ainsi, on feint de croire que notre civilisation meurt parce que ses principes ont épuisé leurs vertus. Selon qu'on est plus ou moins attaché au passé, on dit que ces principes ont fait faillite ou qu'ils ont produit tous leurs fruits. On s'accorde pour déclarer qu'il faut désormais en chercher de tout neufs.
+        </p>
+        <p facs="#facs_4_r_5">
+          L'une des notions ainsi discréditées dans la pensée à la mode aujourd'hui, bien qu'elle continue, par une sorte de superstition, à figurer comme étiquette indispensable sur les régimes politiques les plus imprévus, c'est celle de démocratie. On admet qu'elle fut liée à l'âge révolu du positivisme individualiste. Le droit de chacun à penser selon son bon sens, loin d'aboutir à une unanimité rationnelle, fit s'épanouir la diversité des opinions. Maintenant, il s'agit de fonder sur une affectivité collective une adhésion générale de qualité religieuse. « La liberté, ce fardeau intolérable », disait <persName ref="#zbz-p.1063">Ivan Karamazov</persName>. Las de la liberté, de la solitude et, de la communication difficile qu'elle entraîne, des conflits absolus auxquels elle expose, une foule d'hommes espèrent maintenant sortir d'une ère qu'ils disent médiocre, faite du tiraillement des conceptions diverses, pour entrer dans ce qu'on appelle « un nouvel âge épique » — Entendez : l'âge de l'unanimité.
+        </p>
+        <note place="foot" n="1" xml:id="fn4-1" facs="#facs_4_r_6">
+          Il est exact que la démocratie n'a de sens que lorsque les opinions sont diverses et même opposées, une opinion publique unanime la rendrait superflue. Mais il est faux de la dire périmée, discréditée par ses fruits, car elle n'a jamais existé pleinement. Son sens profond, nous n'avons su, ni l'éclairer, ni l'incarner vraiment par des institutions dans la vie concrète de la société. Le mépris que beaucoup lui témoignent.
+        </note>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          SOURCES HUMAINES DE LA DÉMOCRATIE
+        </p>
+        <p facs="#facs_5_r_2">
+          gnent n'est souvent qu'une revanche assez basse de cette carence. Nous n'avons été dignes d'elle, ni par notre réflexion, ni par nos actes. Elle imposait clairement, dans le possible où rien ne permet à la volonté humaine de se dérober, des devoirs difficiles, mais concrets.
+        </p>
+        <p facs="#facs_5_r_3">
+          On a dit de la démocratie qu'elle est le gouvernement par le peuple et on l'a justifiée par l'excellence de la volonté populaire (vox populi, vox Dei). Mais cela est aussi faux que de justifier le régime monarchique par un bon roi ou une bonne dynastie. Une fois postulée l'excellence des hommes qui portent un régime, tout le problème politique s'évanouit, et la politique elle-même. Dans une société d'anges, il n'y aurait pas de politique ; dans une société gouvernée par une élite incontestable, pas davantage. La politique, comme le droit, se fonde sur la claire reconnaissance du mal que sont portés à faire les hommes, et ici, particulièrement, les hommes au pouvoir. Elle doit être une technique permettant à la fois l'exercice du pouvoir et un contrôle de ce pouvoir destiné à limiter le mal.
+        </p>
+        <p facs="#facs_5_r_4">
+          S'il y avait un signe objectif permettant de discerner l'élite véritable (par exemple un sang bleu), la politique se réduirait à la recherche de techniques administratives efficaces. Ce signe n'existant pas, il faut bien consentir à ce que les gouvernants soient contrôlés par tous les gouvernés. Il faut même le vouloir et le vouloir à tout prix, car si le mal existe, si l'élite reste indiscernable, ce régime démocratique — ce pis-aller — est la seule garantie de ce qui fait le prix de l'être humain : sa possible liberté.
+        </p>
+        <p facs="#facs_5_r_5">
+          Quelles que soient les formes constitutionnelles de ce contrôle, il faut avant tout qu'il y ait des hommes en grand nombre qui veuillent l'exercer et en soient capables.
+        </p>
+        <p facs="#facs_5_r_6">
+          Ce qui nous amène à poser que la condition sine qua non d'une démocratie réelle, c'est une éducation suffisante du peuple.
+        </p>
+        <p facs="#facs_5_r_7">
+          Que faut-il pour qu'un citoyen soit capable d'exercer réellement son contrôle sur les gouvernants ?
+        </p>
+        <p>
+          Il faut qu'il sache se situer dans l'espace réel de la vie
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          54.<lb facs="#facs_6_l_1_1" n="N001" /><bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p facs="#facs_6_r_2">
+          moderne, où s'établissent les échanges et les communications qui unifient la terre.
+        </p>
+        <p facs="#facs_6_r_3">
+          Il faut qu'il sache se situer dans le temps, parmi les éléments constitutifs de son époque que le passé lui a légués et qui sont en constante transformation ; qu'il sache, dans le temps, distinguer ce qu'il constate de ce qu'il veut.
+        </p>
+        <p facs="#facs_6_r_4">
+          Il faut qu'il sache prendre ses distances par rapport à toute chose enseignée, douter, confronter, raisonner — seule façon humaine de mettre en œuvre une foi fondamentale en la vérité.
+        </p>
+        <p facs="#facs_6_r_5">
+          Il faut qu'il ait la possibilité et la capacité de jouir de la civilisation à laquelle il appartient, qu'il puisse en éprouver la visée, en penser le mouvement, en rencontrer les œuvres d'art et de réflexion, afin de faire et de refaire l'expérience des valeurs auxquelles il ordonnera sa vie, subordonnera ses désirs et qui donneront son sens au contrôle civique.
+        </p>
+        <p facs="#facs_6_r_6">
+          Lire, écrire, compter ne sont que des moyens.
+        </p>
+        <p facs="#facs_6_r_7">
+          Or, voyons où nous en sommes dans une civilisation qui, depuis des siècles, affirme les droits de la personne, de toute personne.
+        </p>
+        <p facs="#facs_6_r_8">
+          Restons en <placeName ref="#zbz-l.29">Europe</placeName>, pour aujourd'hui, en <placeName ref="#zbz-l.60">Europe Occidentale</placeName>, et ne nous aventurons pas trop vers le Sud. En effet, dès que nous quittons ces terres, et si nous mettons à part les <placeName ref="#zbz-l.703">États-Unis</placeName> et quelques régions « occidentalisées » du globe, nous trouvons presque partout, pour ce qui concerne les problèmes politiques, un niveau d'éducation tel que (et même dans les pays d'antique culture religieuse ou métaphysique) les notions européennes de régimes ou de partis qu'on y emploie ne correspondent à rien. Et qu'on veuille bien voir dans cette constatation, non une justification du système colonial, mais une accusation plus profonde contre lui.
+        </p>
+        <p>
+          Dans les pays d'<placeName ref="#zbz-l.60">Europe occidentale</placeName>, la scolarité obligatoire s'arrête aux environs de 14 ans. Dans les campagnes, les classes surchargées d'élèves de tous les degrés rendent souvent impossible le travail du maître. Dans les villes, les classes homogènes, mais également surchargées, permettent d'acquérir certaines connaissances, mais guère d'exercer indi
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          SOURCES HUMAINES DE LA DÉMOCRATIE
+        </p>
+        <p facs="#facs_7_r_2">
+          55
+        </p>
+        <p facs="#facs_7_r_3">
+          viduellement les esprits. C'est une des hypocrisies de notre temps que la victoire théorique remportée par les méthodes d'éducation nouvelle, introduites dans la plupart des écoles normales, alors que les conditions réelles de l'enseignement ramènent bon gré mal gré le maître, dans bien des écoles publiques, au « par cœur » traditionnel.
+        </p>
+        <p facs="#facs_7_r_4">
+          L'espace économique, dans l'enseignement primaire, est à peu près inconnu. Le terme « économie » figure rarement dans les manuels, n'est guère prononcé, sinon au sens de l'argent mis de côté. La géographie reste statique, étrangère à l'évolution humaine. Et si la terre s'est extraordinairement rétrécie dans le réseau des échanges de biens de tous genres, on n'en continue pas moins à n'étudier vraiment que son pays, isolé sur une carte à une échelle trompeuse, aussi fictif dans son abstraction qu'une figure imaginaire.
+        </p>
+        <p>
+          L'histoire est restée à peu près celle que <persName ref="#zbz-p.525">Voltaire</persName> déjà condamnait. On ne révèle ni les vastes perspectives qui l'organisent, donnant à l'homme une juste mesure de son rôle, limitant ses espoirs et ses désespoirs, ni les détails concrets la rattachant à la vie quotidienne d'hommes réels, grandeur nature. Elle se tient à un niveau moyen de généralités abstraites, le plus souvent verbales, sans lien avec les idées ni avec la chair, ne mettant en jeu ni l'intelligence synthétique, ni l'imagination qui mime et fait sienne l'expérience d'autrui. Coupée du présent par son irréalité à la fois mécanique et imprécise, elle ne lègue aux enfants que des réactions affectives à des mots ou des êtres stéréotypés, liées à un sentiment de fatalité qui paralyse d'avance toute invention.
+        </p>
+        <p>
+          L'histoire nationale tient une place démesurée — parfois toute la place. Or, comment se situer dans un monde comme le nôtre, comment comprendre les problèmes politiques qu'il pose si l'on ne connaît — et de la manière qui vient d'être esquissée — que l'histoire de son pays ? La clarté même qu'on donne à l'enseignement historique, l'univocité des faits, de leur enchaînement, des jugements que l'on porte sur les décisions humaines, tout cela arrache l'histoire au temps vécu et aux interdépendances internationales, sans l'élever à une signification transcendante, toujours inachevée, dont l'exi
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          56<lb facs="#facs_8_l_1_1" n="N001" /><bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p facs="#facs_8_r_2">
+          gence actuelle nous concernerait, nous les vivants. Clarté fallacieuse qui, loin de stimuler le sens politique, l'engourdit.
+        </p>
+        <p>
+          Douter, confronter, raisonner prend trop de temps. Les programmes — en un sens si pauvres — sont en un autre trop chargés et sottement tyranniques. Mais surtout : on est craintif. Au nom de la neutralité politique et religieuse de l'école, on évitera de parler de ce qui est contestable ou contesté, car on risquerait de prendre parti ou de susciter des doutes. Mais dans un monde comme le nôtre, c'est à peu près tout ce qui vit en même temps que nous vivons nous-mêmes qui est contesté. On finit par exclure de l'enseignement la part de notre réalité dont nous dépendons le plus et qui dépend directement de nous. On installe l'enfant dans un monde sans problèmes, le trompant ainsi sur ce qui l'attend. Deux et deux font quatre... le carré de l'hypoténuse... le parti-cipe passé employé avec avoir... un corps tombe à la vitesse de... D'affreux barbares ravagèrent la Gaule... Je pense au petit garçon que j'ai plongé dans un abîme de perplexité en lui faisant observer que les Gaulois étaient aussi des barbares. On apprend par cœur. Quoi d'étonnant dès lors que, débouchant sur la vie, des êtres humains ainsi formés soient scandalisés par la complexité des problèmes et qu'ils n'aient qu'un désir : non les résoudre, ni les trancher par une décision dont ils se déclarent responsables, mais chercher et imposer une autorité qui les simplifie et les annule, comme le faisait le maître de leur enfance ? Et malheur à ceux qui, contestant cette autorité, remettraient tout en question !
+        </p>
+        <p>
+          Quant à ces fruits de civilisation, qui ne sont pas des machines dont on puisse se servir sans les comprendre, sans aller jusqu'à l'inspiration qui permit de les inventer, ces fruits qui sont des pensées, des œuvres, des tentatives créatrices, c'est pour l'école primaire, dans l'ensemble, un luxe. Le peuple, dans son immense majorité, produit les biens indispensables à la fécondité culturelle, mais il n'en connaît pas les fruits. Je n'oublierai jamais l'émerveillement d'un groupe d'apprentis du bois et du bâtiment, le soir où ils découvrivert qu'un poème est fait de rythmes et de sons. A l'école, à côté de quelques chansons souvent mal choisies, la musique n'existe
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          SOURCES HUMAINES DE LA DÉMOCRATIE
+        </p>
+        <p facs="#facs_9_r_2">
+          pas. La peinture n'existe guère ; aucun rapport ne s'établit entre le vase ou le cube que l'on dessine et la nature morte d'un grand peintre. La littérature, à travers les « textes choisis » n'existe pas davantage ; la poésie, malgré les strophes apprises par cœur, non plus. Ne parlons pas de danse, ni d'architecture.
+        </p>
+        <p facs="#facs_9_r_3">
+          La joie que donnent les arts est toute imprégnée de valeurs humaines. Ces valeurs qui devraient habiter l'âme presque à son insu, à l'ombre de l'amour des œuvres concrètes et des hommes qui les créent ou les contemplent ; on tente de les imposer directement, par un moralisme abstrait qui n'engendre que des conformistes ou des révoltés. L'amour, le plaisir qui donnent à l'homme quelque chose à défendre, il n'en est pas question.
+        </p>
+        <p facs="#facs_9_r_4">
+          Dès lors, rien à aimer, que des « vertus ».
+        </p>
+        <p facs="#facs_9_r_5">
+          Ce mince bagage sans joie s'amenuise par la suite, quand l'école a pris fin. Lorsque l'adulte (et cela est vrai d'ailleurs à quelque classe qu'il appartienne) est « en mesure de gagner sa vie », il considère, de même que la société, qu'il a « fini ses études ». Après, il gagne et il dépense. Selon le niveau social atteint, la proportion du temps consacré à l'une ou à l'autre de ces deux occupations varie, c'est tout. On ne sort plus de là. Et les problèmes changeants du monde, il est de moins en moins capable de les saisir.
+        </p>
+        <p>
+          Les quelques principes sur lesquels repose la démocratie occidentale sont actuellement, dans une large mesure, des fictions. Je laisse ici de côté tout ce qui concerne l'altération de la démocratie politique par la féodalité économique à laquelle elle reste inextricablement liée et tout le problème de ses institutions. On voit du moins, d'après ce qui précède, combien se trouve compromis et menacé à tout instant le prétendu contrôle des gouvernants par le peuple, du seul fait que les citoyens n'ont pas reçu l'éducation nécessaire. Les éléments indispensables leur manquent, et d'abord, simplement, un vocabulaire. Que signifie « savoir lire », liberté de la presse et de l'information, libre défense contradictoire des
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          58<lb facs="#facs_10_l_1_1" n="N001" /><bibl ref="#zbz-w.440">MONDE NOUVEAU</bibl>
+        </p>
+        <p facs="#facs_10_r_2">
+          idées, lorsque ceux qui doivent s'orienter dans le débat ne comprennent pas ou comprennent mal trois mots sur cinq dans les articles qu'on publie pour les convaincre?
+        </p>
+        <p facs="#facs_10_r_3">
+          De même quand le peuple ne jouit pas des fruits de la culture, il se trouve appelé à défendre des valeurs pour lui vides de sens, comme, par exemple, la liberté intangible du savant ou de l'artiste. Et ce beau cri de ralliement lancé aujourd'hui, « <placeName ref="#zbz-l.29">L'Europe</placeName> » ! Qu'est-ce que l'<placeName ref="#zbz-l.29">Europe</placeName> pour qui n'en connaît guère la géographie réelle, à peine l'histoire, pas du tout l'esprit, du moins dans ce qui le distingue de celui des autres continents ? Dans un discours d'ouverture, un jour, <persName ref="#zbz-p.1064">S. de Madariaga</persName>, parlant de la nécessité et de la fragilité de l'<placeName ref="#zbz-l.29">Europe</placeName>, enfilait comme des perles des noms d'artistes, de penseurs et de chefs-d'œuvre. Mais quel est le nombre des privilégiés en qui ces noms font monter une tendresse alarmée ?
+        </p>
+        <p facs="#facs_10_r_4">
+          La démocratie politique occidentale a été un puissant instrument pour les conquêtes populaires. Son rôle est de les garantir et de préserver les chances de l'avenir. Elle nous protège encore contre une rechute — que nous savons désormais toujours possible — dans la barbarie et l'esclavage au sens littéral et rigoureux de ce mot. Mais elle convient si bien à la respiration humaine qu'on cesse vite de la percevoir, elle n'est plus qu'un peu d'air qui passe inaperçu, et bientôt les fictions qu'elle implique la compromettent tout entière. On ne sent plus l'esclavage passé ni l'esclavage futur, mais seulement les manques de la liberté actuelle.
+        </p>
+        <p>
+          Sans l'éducation du peuple entier, le manque de compétence et surtout d'orientation générale continuera à entraver la démocratisation économique indispensable. Sans elle, le vide formel que préserve la démocratie politique ne se remplira pas d'expériences concrètes, vécues par des hommes libres. Sans elle, pas de contrôle réel des gouvernants ni de véritable exercice des droits civiques. Il faut donc reprendre toute l'éducation scolaire, créer celle des adultes. Il ne s'agit pas de vulgariser l'enseignement universitaire, mais d'inventer des méthodes permettant de partir de l'homme réel, de son expérience propre, de son métier.
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          SOURCES HUMAINES DE LA DÉMOCRATIE 59
+        </p>
+        <p facs="#facs_11_r_2">
+          Encore n'avons-nous parlé que d'une face de l'éducation : la formation individuelle. Mais l'individu n'est lui-même qu'en se tournant vers les autres, en s'insérant dans les groupes auxquels il appartient. Là aussi, c'est un apprentissage à faire, et qui commence dès l'enfance. Nous y reviendrons bientôt.
+        </p>
+        <p facs="#facs_11_r_3">
+          Mais il y a urgence, dira-t-on. Pour l'éducation, il faut beaucoup de temps. Puisse l'urgence ne pas nous détourner trop longtemps de l'essentiel : nous risquerions d'échafauder fièvreusement des façades inconsistantes. L'heure est venue, non de changer de principes, mais de les appliquer. Ou bien ils s'inscriront dans les faits, ou bien le feu de joie totalitaire, brûlant nos idoles de papier, condamnera pour longtemps non les principes, non les valeurs de notre civilisation, mais nous, qui n'auront pas su les incarner dans le réel. Telle est notre épreuve et l'histoire nous l'impose aujourd'hui en des termes d'une cruelle nudité.
+        </p>
+        <p>
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>.
+        </p>
+      </div>
+      </body></text>
+</TEI>

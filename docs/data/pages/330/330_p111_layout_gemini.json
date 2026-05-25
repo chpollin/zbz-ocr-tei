@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 77",
+      "bbox": {
+        "x_pct": 28.537,
+        "y_pct": 89.282,
+        "w_pct": 57.514,
+        "h_pct": 10.638
+      },
+      "changed": true,
+      "change_reason": "Header elements were mislabeled as paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ne changerait pas grand'chose. Les problèmes actuels appellent des solutions créatrices. D'abord, il importe beaucoup moins de répartir les biens de façon plus juste que d'en produire davantage. C'est la productivité qui est la tâche véritable. Ensuite, il s'agit moins de supprimer les exploiteurs que de faire participer réellement les travailleurs à la gestion de leur entreprise, de façon à leur rendre dignité et responsabilité et à rétablir des liens normaux entre le travail et la vie. Enfin il faut établir un rapport juste entre gouvernement et parlement, trouver le point d'équilibre où le contrôle démocratique s'exerce sans paralyser absurdement l'action gouvernementale. Ce dernier problème en implique un autre, celui du rapport entre les techniciens du monde moderne et ses organes politiques. Or, chacune des tâches énumérées fait intervenir des facteurs qui débordent en Europe le cadre national — si bien qu'elles impliquent la mise en question de la souveraineté nationale telle qu'elle a été conçue jusqu'ici.",
+      "bbox": {
+        "x_pct": 21.848,
+        "y_pct": 118.812,
+        "w_pct": 841.232,
+        "h_pct": 332.175
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content and mapped to correct zbz_tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comme les partis traditionnels ne se sont pas constitués en fonction des tâches d'aujourd'hui, il n'est pas étonnant que désormais, chaque fois qu'un vrai problème se pose, il divise les adhérents des partis et que les menaces de scission soient partout constantes. On peut aller jusqu'à dire que c'est là un signe qui ne trompe guère : si les partis se divisent, c'est qu'un problème réel leur a été soumis.",
+      "bbox": {
+        "x_pct": 23.265,
+        "y_pct": 445.632,
+        "w_pct": 841.232,
+        "h_pct": 128.071
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Detected text was severely truncated in the input.",
+    "Page header/number was mislabeled as paragraph text.",
+    "Bounding boxes in the input data were interpreted incorrectly due to coordinate scaling."
+  ],
+  "doc_id": "330",
+  "page": 111,
+  "elapsed_seconds": 4.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

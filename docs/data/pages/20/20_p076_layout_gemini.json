@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "74 L'APPEL A LA LIBERTÉ",
+      "bbox": {
+        "x_pct": 10.843,
+        "y_pct": 77.269,
+        "w_pct": 76.355,
+        "h_pct": 14.098
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number and running header region as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une forme pure, à laquelle l'acte est venu apporter son contenu. C'est pourquoi, du point de vue de l'activité du sujet, rien n'est plus vide que l'histoire de la philosophie. Elle est un cadre indispensable, mais seulement un cadre. Elle n'apporte que des résultats. Elle ne permet en aucune façon le mime. Il est indispensable de passer par les œuvres elles-mêmes, de se plier à leur structure et même à leur style.",
+      "bbox": {
+        "x_pct": 10.843,
+        "y_pct": 12.269,
+        "w_pct": 76.355,
+        "h_pct": 23.098
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source content accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais, pourra-t-on demander, en admettant même que la vérité métaphysique du philosophe soit jusqu'à un certain point, et par une voie toute particulière, communicable à autrui, que gagne donc l'étudiant à l'accueillir? Il est vrai qu'il n'en retire aucune connaissance objective, aucun savoir qu'on puisse montrer et enseigner. Tout son effort était dirigé vers le sujet; son activité philosophique n'a pas été de regarder et d'apprendre, mais de mimer et d'agir. Le résultat ne peut pas être un objet. L'étudiant s'est enrichi non de quelque chose qu'il a, mais de quelque chose qui pourra le transformer. Car il n'y a pas d'autre richesse pour le sujet que la conquête de sa liberté. Et c'est bien sa liberté que l'étudiant conquiert en « communiquant » (selon le mot de Jaspers) avec la liberté de l'auteur. Un système philosophique, qui doit d'après ce qui précède échouer dans sa poursuite d'un savoir total objectif, trouve sa vérité métaphysique dans l'appel qu'il lance à la liberté.",
+      "bbox": {
+        "x_pct": 10.241,
+        "y_pct": 35.176,
+        "w_pct": 76.611,
+        "h_pct": 51.411
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source content accurately."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR text was significantly corrupted and inaccurate.",
+    "Page header/number was mislabeled as text."
+  ],
+  "doc_id": "20",
+  "page": 76,
+  "elapsed_seconds": 5.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

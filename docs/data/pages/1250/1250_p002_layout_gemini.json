@@ -1,0 +1,57 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TABLE DES MATIERES",
+      "bbox": {
+        "x_pct": 36.677,
+        "y_pct": 10.51,
+        "w_pct": 27.609,
+        "h_pct": 1.923
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 8.571,
+        "y_pct": 16.344,
+        "w_pct": 83.385,
+        "h_pct": 75.878
+      },
+      "changed": true,
+      "change_reason": "Refined the broad paragraph region to be more descriptive based on content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "III",
+      "bbox": {
+        "x_pct": 89.375,
+        "y_pct": 94.437,
+        "w_pct": 2.125,
+        "h_pct": 1.692
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at bottom right."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Initial parsing lumped all body content into one large bounding box.",
+    "Missing page footer detection."
+  ],
+  "doc_id": "1250",
+  "page": 2,
+  "elapsed_seconds": 3.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Refined the broad paragraph region to be more descriptive based on content.": 1,
+    "ADDED": 1
+  }
+}

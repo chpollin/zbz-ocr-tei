@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 35.861,
+        "y_pct": 74.347,
+        "w_pct": 28.232,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Identified running header at top of page."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "143",
+      "bbox": {
+        "x_pct": 83.183,
+        "y_pct": 72.841,
+        "w_pct": 4.533,
+        "h_pct": 2.259
+      },
+      "changed": true,
+      "change_reason": "Identified page number at top right."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Merveilleux. Nous partons ?",
+      "bbox": {
+        "x_pct": 15.676,
+        "y_pct": 11.815,
+        "w_pct": 40.635,
+        "h_pct": 2.552
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout de suite, nous nous sommes mis en route, par un sentier qui montait. Je regardais son visage et le reconnaissais bien, mais en même temps c'était un autre que jadis, parce que maintenant je le voyais. Je le trouvais beau, les traits nets, la peau tendue sur les pommettes étroites, le nez mince à peine arqué, des rides humaines et sensibles entre le nez et la bouche ferme; et ces yeux trop bleus, d'un éclat tremblant qui paraissait s'échapper d'eux par éclairs, comme malgré eux. Mais cette beauté reconnue et enfin sue n'était pas pour moi une réponse. Il ne parla pas d'abord, moi non plus, nous avions l'air d'écouter attentivement le crissement de nos semelles cloutées sur les cailloux. Je pensais à l'unique course d'autrefois, à l'ardeur avec laquelle j'en avais rêvé une nouvelle; j'essayais de sentir la réalisation de ce vœu, d'éprouver que vraiment je marchais à côté de lui vers la montagne, avec une immense journée qui nous était donnée, à nous deux; je tâtais ma joie, et je ne savais pas si elle était là. Lui non plus, sans doute, ne savait pas. Au bout d'un moment, il me demanda ce que j'avais fait depuis notre séparation, et je lui ai esquissé les étapes extérieures de ma vie. Un mot nous amena à parler de politique. J'approuvais les idées qu'il exprimait. Nous étions toujours d'accord, mais cet accord ne me bouleversa pas; il me semblait que beaucoup de gens devaient partager les mêmes espoirs et les mêmes craintes, et j'enregistrais notre entente sur ce point comme j'avais enregistré que son visage était beau.",
+      "bbox": {
+        "x_pct": 7.527,
+        "y_pct": 14.272,
+        "w_pct": 81.162,
+        "h_pct": 71.011
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content to reflect actual paragraph content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was heavily corrupted.",
+    "Page number and running header were incorrectly labeled as text.",
+    "Bounding boxes for page number and header were not correctly segmented in the original input."
+  ],
+  "doc_id": "40",
+  "page": 141,
+  "elapsed_seconds": 5.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

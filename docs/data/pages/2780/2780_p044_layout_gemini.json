@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette perplexité, ce sentiment d'impasse, reconnu ou dissimulé souvent sous n'importe quelle outrance fracassante, nous les rencontrons partout aujourd'hui, dans tous les arts et dans tous les domaines de la pensée. Ceux qui réussissent à créer quand même, et il y en a, semblent accomplir un miracle.",
+      "bbox": {
+        "x_pct": 16.494,
+        "y_pct": 13.725,
+        "w_pct": 57.553,
+        "h_pct": 13.995
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être la cause en est-elle assez simple : l'hybris, la démesure arrogante de l'homme, qui veut désormais créer ex nihilo. Peut-être faut-il, au milieu de notre océan de paradoxes et de perplexités, accrocher notre regard à un point transcendant. Sinon, comment se tenir en équilibre au milieu de cette modernité où l'homme se trouve dans la situation que Kafka décrit ainsi :",
+      "bbox": {
+        "x_pct": 16.525,
+        "y_pct": 26.985,
+        "w_pct": 57.383,
+        "h_pct": 17.647
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tâche délicate, façon de marcher sur la pointe des pieds sur une poutre vermoulue qui sert de passerelle, ne rien avoir sous les pieds ; de ses pieds tasser ce qui sera la poutre sur laquelle on marchera ; ne marcher sur rien d'autre que sur son propre reflet aperçu sous ses pieds dans l'eau ; de ses pieds maintenir le monde, ne crisper les poings que levés en l'air pour pouvoir surmonter cet effort.",
+      "bbox": {
+        "x_pct": 19.735,
+        "y_pct": 48.554,
+        "w_pct": 50.953,
+        "h_pct": 19.886
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match original document content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "45",
+      "bbox": {
+        "x_pct": 70.833,
+        "y_pct": 75.39,
+        "w_pct": 3.195,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and categorized as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text transcriptions contained significant OCR errors.",
+    "Page number 45 was missing from original extraction."
+  ],
+  "doc_id": "2780",
+  "page": 44,
+  "elapsed_seconds": 4.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "262",
+      "bbox": {
+        "x_pct": 7.418,
+        "y_pct": 82.523,
+        "w_pct": 3.748,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le problème de la vieillesse et de la mort est indissociable de la question de la finitude. Il s'agit de retrouver ce que j'appellerais que J'appellerais pelle\" qu'il qu'il historiens que Jusqu'à ce que les gens croient que le temps en passant arrange tout parce qu'il efface tout. \"Les serments se ramassent à la pelle\", etc., etc. Le passé est passé, c'est vrai, mais rien ne peut faire qu'il n'ait pas été et qu'il n'ait pas été tel qu'il a été. Réfléchissez au travail des historiens. Pourquoi les historiens s'acharnent-ils à trouver exactement si les choses se sont passées d'une manière A ou d'une manière B, s'il y a deux hypothèses historiques concernant un évènement du passé? Vous pourriez dire: Puisque plus personne ne le sait, qu'est-ce que cela peut faire? Cela n'existe plus! Eh bien si! Les historiens étudient le passé tel qu'il a été, parce que jusqu'à la fin du monde, il aura été tel qu'il a été, et l'hypothèse A sera vraie alors que la théorie B sera fausse, ou l'inverse, jusqu'à la fin du monde.",
+      "bbox": {
+        "x_pct": 7.671,
+        "y_pct": 13.163,
+        "w_pct": 36.46,
+        "h_pct": 25.359
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph and recognized the block as paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne parle pas \"souvenir\". Je dis qu'il en est ainsi même si personne ne se le souvient. Supposez : vous avez toujours appris que Brutus a tué César. Et jusqu'à la fin de l'humanité probablement, on répétera que Brutus a tué César. Mais peut-être que dans la mêlée autour de César, c'est un autre qui a donné le coup à César et qu'on n'en a jamais rien su, qu'on ne l'a jamais écrit dans un livre d'histoire, qu'il n'y a aucune trace. Eh bien malgré tout, dans ce cas, dire que Brutus a tué César, ce serait une erreur. Et nous en sommes tous convaincus. Ce serait une erreur, une erreur par rapport à quoi? Par rapport à ce qui a été, et dont rien ne peut supprimer l'être passé. Ce qui a été, d'une certaine manière est pour nous, même quand nous ne le savons pas, même quand nous n'y pensons pas, et cela pas seulement pour la mémoire. Je crois que ce chemin est à creuser pour chacun d'entre nous, mais notamment pour les gens du grand âge. C'est l'un des chemins à travers lesquels on devient capable de se réconcilier avec sa propre mort et avec ceux qui meurent autour de soi. Maintenant, après avoir dit cela, je voudrais quand même parler des chances du grand âge. Les chances du grand âge elles se préparent. Icl dang l'idée d'un nouveau paradoxe de la condition humaine. Ce paradoxe c'est que les choses essentielles, les choses les plus importantes dans la vie humaine se préparent indirectement, et pour ainsi dire, sans y penser. Je me rappelle qu'une fois on m'a demandé de faire une conférence sur \"la préparation à la retraite\", et j'avais intitulé mon intervention: \"Pourquoi faire tout cela si l'on ne peut pas y penser\". En effet, il serait catastrophique que les hommes depuis la naissance se préparent à la retraite. Je trouve catastrophique qu'on achète d'avance une chambre de vieux dans un asile de vieillards pour un nouveau-né. La vie n'est pas destinée à préparer le grand âge, à préparer la mort. Et pourtant, on s'y prépare longtemps à l'avance sans y penser. Comment fait-on cela? Certainement pas en cherchant à jouir le long de sa vie de ce \"parfait bien-être physique, psychique et social\" qui, selon l'OMS (Organisation Mondiale de la Santé), est la définition de la santé, ce qui m'a toujours paru une absurdité monumentale. Au contraire, il s'agit de trouver ce qui donne un sens à la vie. Par conséquent, on se prépare au grand âge et on lui donne des chances dans la mesure où, alors qu'on n'est pas encore dans le grand âge, on tient à certaines choses plus qu'à sa vie, et ces choses donnent à la vie son sens. Dans la mesure où on a visé quelque chose dans l'avenir, où on a fait effort pour quelque chose ou pour quelqu'un, alors la vie, même dans le grand âge et jusqu'à la mort, a un avenir. L'avenir pour l'homme, c'est la visée. L'avenir, ce n'est pas une très, très longue durée, ce n'est pas une durée aussi longue que possible. L'avenir, c'est ma visée, c'est ce que j'ai devant moi et que je veux encore atteindre. C'est la visée humaine. Et la capacité d'avoir une visée jusqu'à la mort, cela se prépare, de tout temps, mais indirectement, parce qu'on n'y pense pas, on est tout absorbé par l'objet de cette visée, par ce qui est visé, et c'est cela qui fait que, dans le grand âge et au seuil de la mort, on a encore un avenir.",
+      "bbox": {
+        "x_pct": 7.7,
+        "y_pct": 45.791,
+        "w_pct": 82.525,
+        "h_pct": 43.137
+      },
+      "changed": true,
+      "change_reason": "Merged multiple fragmented text boxes into a cohesive paragraph."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "263",
+      "bbox": {
+        "x_pct": 90.753,
+        "y_pct": 82.523,
+        "w_pct": 3.748,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Fragmented text blocks due to OCR errors in original regions.",
+    "Page numbers were incorrectly labeled as text.",
+    "Text content required manual cleaning and reconstruction."
+  ],
+  "doc_id": "3220",
+  "page": 4,
+  "elapsed_seconds": 7.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

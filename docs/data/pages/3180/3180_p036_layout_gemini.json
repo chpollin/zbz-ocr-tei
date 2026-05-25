@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sondern es existieren Polaritäten, und alles, was wir als Widersprüche bezeichnen, wird dort ganz einfach als Einheit hingenommen. Diese diskreten Ausformungen, die wir als Widerspruch bezeichnen, sind dann einfach Polaritäten des einen Ganzen, also vielleicht einfach gegensätzliche Attribute eines Objekts oder einer Vorstellung, eines Gedankens, einer Idee. Da kann ich Frau Hersch nur beipflichten. Das ist für mich ein unheimlich übergeordneter Gedankengang.",
+      "bbox": {
+        "x_pct": 8.683,
+        "y_pct": 3.188,
+        "w_pct": 85.284,
+        "h_pct": 18.333
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to reflect full text rather than a truncated string."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und noch mal Frage von gerade eben; WO soll man stehen?: Ich glaube, die Frage ist nicht die, wo man stehen soll, sondern die, ob man akzeptieren kann, mit diesem Widerspruch zu leben oder nicht? „Widerspruch“ in Anführungsstrichen.",
+      "bbox": {
+        "x_pct": 8.832,
+        "y_pct": 23.133,
+        "w_pct": 84.731,
+        "h_pct": 9.29
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to reflect full text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 9.386,
+        "y_pct": 34.399,
+        "w_pct": 33.578,
+        "h_pct": 2.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Herzlichen Dank! Frau Pieper wollte sich noch zur Frage von vorhin kurz äußern.",
+      "bbox": {
+        "x_pct": 8.728,
+        "y_pct": 36.585,
+        "w_pct": 84.94,
+        "h_pct": 4.335
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Annemarie Pieper:",
+      "bbox": {
+        "x_pct": 8.832,
+        "y_pct": 43.169,
+        "w_pct": 28.443,
+        "h_pct": 3.005
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es wurde nach dem Standort gefragt, von woher man diese Widersprüchlichkeit überhaupt feststellen kann. Sicher ist es kein archimedischer Standort außerhalb. Ich würde sagen: Formulieren kann man die Widersprüchlichkeit nur aus der Selbsterfahrung. Man erlebt sich als frei, man hat Wünsche und man kann sich selbst bestimmen, das ist das eine Erlebnis, und man stellt fest, daß man bei der Erfüllung von bestimmten Wünschen oder bei der Erreichung von Zielen gegen Widerstände stößt. Das ist die andere Form der Erfahrung. Diese beiden Formen von Erfahrung machen wir täglich. Daß wir uns einmal gezwungen sehen zu sagen, hier bin ich jetzt eingeengt, determiniert, und wir uns in einem anderen Fall als frei erfahren - diese widersprüchliche Erfahrung ist es, die ich in meinem Leben irgendwie zusammenbringen muß. Man kann nur vom eigenen Erleben ausgehen. Das ist der einzige Standpunkt, den man einnehmen kann, und nicht einen, der irgendwie allem übergeordnet ist. Natürlich universalisiert man das und sagt dann, der Mensch sei frei und determiniert zugleich. Aber der Standort, von wo aus man das formulieren kann, scheint mir eben doch nur vom Individuum her gesehen, wie es sich selbst erfährt.",
+      "bbox": {
+        "x_pct": 8.638,
+        "y_pct": 45.565,
+        "w_pct": 85.03,
+        "h_pct": 46.603
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to reflect full paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "59",
+      "bbox": {
+        "x_pct": 89.5,
+        "y_pct": 94.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Detected page number, changed from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text content was severely truncated in several paragraphs.",
+    "Page number 59 was missing from initial detection."
+  ],
+  "doc_id": "3180",
+  "page": 36,
+  "elapsed_seconds": 5.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

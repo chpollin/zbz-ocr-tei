@@ -1,0 +1,122 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "238",
+      "bbox": {
+        "x_pct": 15.203,
+        "y_pct": 14.542,
+        "w_pct": 2.455,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as paragraph text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "J. HERSCH",
+      "bbox": {
+        "x_pct": 44.824,
+        "y_pct": 14.542,
+        "w_pct": 10.352,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Running header incorrectly labeled as paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sociale leur semble aussi permanente et incontestable que l'ordre naturel, tant que les guerres ne se distinguent pas pour eux des calamités naturelles, ils ne vivent pas historiquement, ils se débattent seulement contre les circonstances dans le cadre immuable et allant sans dire des formes sociales. L'histoire vécue ne commence qu'avec une prise de distance, l'ouverture de possibles autres que ce qui est ou ce qui s'est passé, qu'avec un allongement aussi du temps embrassé par la conscience immédiate - allongement vers le passé, et ouvrant d'autant l'attente et l'inquiétude en direction de l'avenir - autrement dit, l'histoire vécue en tant qu'histoire commence avec le possible, le choix, l'hypothèse, la décision - avec le récit.",
+      "bbox": {
+        "x_pct": 14.959,
+        "y_pct": 17.506,
+        "w_pct": 69.57,
+        "h_pct": 20.246
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le récit, à son tour, n'est pas simple reflet du vécu ; il devient facteur historique, il intervient non seulement sur le plan où les hommes pensent et se représentent leur passé, mais encore sur celui où ils agissent, influençant ainsi le présent et l'avenir. Il conditionne la naissance de l'histoire vécue et en influence le cours. Tout récit historique est, qu'il le veuille ou non, un facteur dans l'histoire. Si fidèle et impartial qu'il se veuille à l'égard du passé, il change le présent, car le seul fait d'être racontés donne aux faits passés une présence et une efficacité nouvelles.",
+      "bbox": {
+        "x_pct": 15.164,
+        "y_pct": 37.879,
+        "w_pct": 69.293,
+        "h_pct": 15.676
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Réciproquement, le récit est toujours historiquement situé, daté, il subit l'emprise de l'histoire vécue. On voit ici combien en histoire, subjectivité et objectivité se trouvent inextricablement mêlées.",
+      "bbox": {
+        "x_pct": 15.195,
+        "y_pct": 53.346,
+        "w_pct": 69.303,
+        "h_pct": 5.158
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "2. Emmelement de l'objectivité et de la subjectivité. Certes, il ne s'agit pas de renoncer à toute objectivité de la connaissance historique, bien au contraire. Celle-ci apparaît d'autant plus indispensable que l'enchevêtrement objectivité-subjectivité est plus clairement décelé. Mais cette objectivité n'est peut-être pas celle qu'on imagine le plus souvent et dont l'agent idéal serait un historien sans aucun engagement vécu, écrivant un récit impersonnel comme un exposé de physique, et n'exerçant par là aucune influence sur cette histoire en train de se faire, dans le présent, qu'on appelle politique.",
+      "bbox": {
+        "x_pct": 15.266,
+        "y_pct": 60.082,
+        "w_pct": 69.293,
+        "h_pct": 17.21
+      },
+      "changed": true,
+      "change_reason": "Corrected list item formatting and truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un tel historien n'existe pas. Libre de tout engagement délibéré, il resterait d'autant plus obscurément prisonnier des formes et des",
+      "bbox": {
+        "x_pct": 15.297,
+        "y_pct": 76.938,
+        "w_pct": 69.262,
+        "h_pct": 3.636
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.523,
+        "y_pct": 92.578,
+        "w_pct": 36.953,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Identified footer content not previously categorized."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Page number at top was labeled as text",
+    "Running header J. HERSCH was labeled as text",
+    "JSTOR footer was missing from detected regions",
+    "Multiple paragraphs were severely truncated in text content",
+    "List item label '2.' was poorly parsed"
+  ],
+  "doc_id": "540",
+  "page": 10,
+  "elapsed_seconds": 7.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

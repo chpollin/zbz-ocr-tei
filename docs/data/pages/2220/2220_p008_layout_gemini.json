@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Objektivit&auml;t in dieser Richtung zu erreichen, mindestens innerhalb des psychiatrischen Berufs.",
+      "bbox": {
+        "x_pct": 5.925,
+        "y_pct": 6.187,
+        "w_pct": 41.396,
+        "h_pct": 3.432
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun habe ich alles verwickelt und sage trotzdem: Die Merkmale sind da und die m&uuml;ssen festgelegt und vertieft werden. Behandlung, psychiatrische Behandlung kann nur nat&uuml;rlich, nicht im Dienste der m&ouml;glichen Freiheit des Patienten sein, unter einer Beschr&auml;nkung selbstverst&auml;ndlich, dass nicht andere Menschen bedroht. Und da ist die Grenze. Da ist wieder eine faktische Grenze, da sind die Grenzen, von denen ich am Anfang sprach, wir sind eben nicht in der absoluten, reinen Freiheit. Das gibt es nicht. Wenn Bedrohungen da sind f&uuml;r andere, besonders f&uuml;r Kinder usw., dann geht es nicht. Und wenn man sagt, der Patient muss einverstanden sein, dann finde ich ganz klar, wenn der Patient die F&auml;higkeit hat, einverstanden zu sein, die Behandlung nat&uuml;rlich gerechtfertigt ist. Aber sie hat weniger Berechtigung, als wenn er unf&auml;hig ist, denn dann ist er viel kr&auml;nker. Da, wo er am meisten krank ist, kann er doch gar nicht &laquo;ja&raquo; sagen. Denn er ist eben nicht mehr frei. Wenn es darum geht, jemanden zu behandeln, damit er nach M&ouml;glichkeit wieder die Freiheit erwirbt, dann kann man sich nat&uuml;rlich nicht auf diese Zusage verlassen. Das sind also schreckliche Probleme. Ich finde, die Psychiater haben einen schrecklichen Beruf. Aber das m&uuml;ssen sie eben, weil sie ihn gew&auml;hlt haben, auf sich nehmen. Was mich erstaunt, ist, dass manche trotz aller Schwierigkeiten, trotz aller Unl&ouml;sbarkeit im Grunde allein entscheiden wollen. Dieses Alleinentscheiden-Wollen verstehe ich nicht. Mir scheint, ich m&ouml;chte nach M&ouml;glichkeit in solchen F&auml;llen nie allein entscheiden, sondern mit einem oder zwei Kollegen. Denn es ist zu schwierig, als dass man es f&uuml;r sich selbst nimmt, genau wie mit den andern Fortschritten der Medizin und allen Problemen, die sich heute stellen. Ich kann mir nicht einen Menschen, einen ernsthaften Menschen vorstellen, der den Anspruch erhebt, allein - seul apr&egrave;s Dieu - &uuml;ber diese Sachen zu entscheiden. Aber auf der andern Seite m&ouml;chte ich doch an das franz&ouml;sische Proverbe erinnern, das sagt: &laquo;Qui veut faire l'ange fait la b&ecirc;te.&raquo; Es gibt in unserer Zeit eine Tendenz zur Engelhaftigkeit. Et qui veut faire l'ange fait la b&ecirc;te. Diejenigen, die keine Zwangsmassnahmen",
+      "bbox": {
+        "x_pct": 5.763,
+        "y_pct": 10.797,
+        "w_pct": 41.534,
+        "h_pct": 68.486
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated in the previous OCR interpretation. Corrected to reflect the full paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das ist wesentlich und vielleicht ist das einer der Gr&uuml;nde, weshalb ich glaube, dass, je mehr Probleme, schreckliche Probleme, sich dem &Auml;rtek&ouml;rper stellen, desto mehr sie im Grunde eigentlich auch etwas Philosophie studieren sollten. Ich mache keine Propaganda f&uuml;r mein Fach, aber ich glaube, dass es wirklich bei sehr vielen Problemen hilfreich w&auml;re.",
+      "bbox": {
+        "x_pct": 48.458,
+        "y_pct": 68.469,
+        "w_pct": 41.372,
+        "h_pct": 10.489
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text extraction was heavily truncated for the large paragraph and the closing paragraph.",
+    "Special characters (umlauts/accents) require correct encoding."
+  ],
+  "doc_id": "2220",
+  "page": 8,
+  "elapsed_seconds": 7.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

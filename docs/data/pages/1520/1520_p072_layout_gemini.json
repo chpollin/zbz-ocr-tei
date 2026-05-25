@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "causales, il est vrai, jouent un rôle lorsque des données physiques auxquelles se rattache un ensemble de relations compréhensibles sont considérées comme causes, par exemple de la paralysie d'un bras, d'un trouble de la conscience, etc.",
+      "bbox": {
+        "x_pct": 11.423,
+        "y_pct": 5.681,
+        "w_pct": 84.201,
+        "h_pct": 7.858
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Freud nous fait connaître de façon convaincante de nombreuses relations compréhensibles isolées. Nous comprenons comment les complexes refoulés hors de la conscience claire réapparaissent à travers des symboles. Nous comprenons que les instincts refoulés entraînent des processus de réaction, et la distinction des processus primaires, authentiques, et des processus secondaires, qui n'existent qu'en tant que symboles ou sublimations. En partie, Freud développe ici en détail l'enseignement de Nietzsche. Il pénètre profondément dans le psychisme oublié (unbemerkt), qu'il ramène à la conscience.",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 15.193,
+        "w_pct": 84.241,
+        "h_pct": 18.997
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR extraction accuracy."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "La confusion entre relations compréhensibles et relations causales est responsable de l'erreur que Freud commet en proclamant que tout, dans la vie psychique, chaque processus, est compréhensible (c'est-à-dire, chez lui, déterminé par un sens). Seule l'exigence d'une causalité illimitée peut être posée à bon droit, — non celle d'une «compréhensibilité» illimitée. Cette erreur en entraîne une autre. Partant de relations compréhensibles, Freud développe des théories sur les causes du processus psychique tout entier. Or la compréhension ne peut jamais, de par son essence, conduire à des théories, — alors que les explications causales conduisent toujours nécessairement à des théories (l'interprétation supposée d'un seul processus psychique — et il ne peut y avoir que des interprétations isolées de ce genre — n'est évidemment pas une théorie).",
+      "bbox": {
+        "x_pct": 11.247,
+        "y_pct": 35.904,
+        "w_pct": 84.241,
+        "h_pct": 27.078
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR extraction accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d)",
+      "bbox": {
+        "x_pct": 15.989,
+        "y_pct": 62.836,
+        "w_pct": 2.846,
+        "h_pct": 1.628
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a une autre faute dans l'enseignement freudien : la simplification croissante de la compréhension, du fait que les processus compréhensibles se transforment en théorie. Les théories poussent à la simplification, alors que la compréhension découvre une diversité infinie. Freud finit par croire que le psychisme presque tout entier peut être compris comme un dérivé de la sexualité au sens large, en tant que force primitive unique. En particulier, maints écrits de ses élèves sont d'une simplicité qui les rend d'un ennui insupportable. On sait d'avance que dans chacun de leurs travaux on trouvera la même chose. Ici la psychologie compréhensive ne progresse plus.",
+      "bbox": {
+        "x_pct": 11.477,
+        "y_pct": 64.67,
+        "w_pct": 84.187,
+        "h_pct": 19.16
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR extraction accuracy."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Gesammelte Schriften zur Psychopathologie, p. 337-338)",
+      "bbox": {
+        "x_pct": 57.764,
+        "y_pct": 85.373,
+        "w_pct": 37.724,
+        "h_pct": 4.087
+      },
+      "changed": true,
+      "change_reason": "Relabeled as footnote as it refers to a bibliographical citation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "66",
+      "bbox": {
+        "x_pct": 12.33,
+        "y_pct": 91.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identifying page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR extraction was heavily truncated.",
+    "Page number missing from initial extraction.",
+    "Footnote label was misidentified as text.",
+    "Several text blocks were cut off mid-sentence."
+  ],
+  "doc_id": "1520",
+  "page": 72,
+  "elapsed_seconds": 5.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ré La cendre, ensuite retombe, ne nous concerne Elle tombe dans un autre monde, un autre temps. qui",
+      "bbox": {
+        "x_pct": 23.067,
+        "y_pct": 11.211,
+        "w_pct": 65.382,
+        "h_pct": 8.722
+      },
+      "changed": true,
+      "change_reason": "Cleaned up text transcriptions to reflect actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "année, les mêmes membres de la famille se réunissent autour de la même table pour fêter l'anniversaire. On compte alors dans le gâteau une bougie de plus, et peut-être, autour de la table, un siège de moins. La fête se répète, mais elle ne devient pas ennuyeuse. Au contraire. La répétition lui convient et n'exclut nullement la surprise. Une répétition surprenante? Une surprise qui se répète? Qu'est-ce à dire? La fête ne se répète qu'en apparence. En réalité c'est toujours la même fête.",
+      "bbox": {
+        "x_pct": 22.873,
+        "y_pct": 21.001,
+        "w_pct": 65.939,
+        "h_pct": 33.524
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais pour vivre cette fête unique à travers la répétition, pour éprouver chaque année à nouveau la surprise dans sa fraîcheur, il faut un don. La fête n'est pas là pour n'importe qui.",
+      "bbox": {
+        "x_pct": 22.945,
+        "y_pct": 56.207,
+        "w_pct": 65.745,
+        "h_pct": 13.818
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved transcription accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "70",
+      "bbox": {
+        "x_pct": 23.3,
+        "y_pct": 82.35,
+        "w_pct": 2.4,
+        "h_pct": 2.4
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original transcriptions were heavily truncated.",
+    "Page number missing from extraction.",
+    "Region labeling could be refined."
+  ],
+  "doc_id": "2260",
+  "page": 70,
+  "elapsed_seconds": 4.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

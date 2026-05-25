@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vérité comme idée creuse ou idéologique : savants déclarant que la recherche scientifique n'a rien à voir avec la vérité, linguistes renonçant à faire intervenir la vérité du sens dans leur théorie du langage, politiciens proclamant que la vérité n'est que ce qui sert tel peuple, telle classe, telle cause. Sans doute banalisation et rejet proviennent-ils d'une même perte de profondeur.",
+      "bbox": {
+        "x_pct": 9.038,
+        "y_pct": 6.024,
+        "w_pct": 83.821,
+        "h_pct": 11.911
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers s'interroge sur ce que « le vrai » signifie pour des êtres qui vivent dans le temps. Nous ne vivons pas immédiatement dans l'être, et c'est pourquoi nous ne possédons pas la vérité. Nous vivons dans le temps et la vérité ne peut être que notre chemin. Elle ne concerne pas seulement les processus de connaissance, la recherche, l'intelligence. Quand nous agissons, quand nous saisissons un fondement, quand nous aimons, c'est d'elle toujours que vient le sens, et c'est parce que nous la cherchons que le doute et la certitude, le désespoir et l'espérance ne cessent de s'engendrer réciproquement.",
+      "bbox": {
+        "x_pct": 8.808,
+        "y_pct": 17.455,
+        "w_pct": 84.106,
+        "h_pct": 19.366
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il importe de s'interroger sur ce qui fait vivre en nous le sens de la vérité. Il n'est pas une donnée naturelle ou vitale immédiate. Il dépend d'une tradition, que chaque génération a la tâche de réassimiler et de transmettre. Il ne s'identifie pas aux découvertes « utiles » que fait l'enfant au cours de son apprentissage de l'environnement. Pour nous, en Occident, sa clarté vient des Grecs, mêlée aux profondeurs riches et obscures qui nous lient encore à l'Asie et à la préhistoire. Le sens du vrai, dit Jaspers, vient d'une source plus profonde que l'entendement, bien qu'il incombe à l'entendement de l'élucider. Il n'est pas donné non plus par le sentiment. Il met en jeu l'homme tout entier, y compris le sentiment. La vérité naît justement de l'emmêlement de la pensée et de la vie; son sens s'altère lorsque pensée et vie veulent se séparer, et il ne reste alors, d'une part, que le vide de l'entendement, de l'autre, que l'aveugle impulsion vitale. L'homme est sur le chemin de la vérité lorsqu'il consolide et resserre sa propre cohérence, ici et maintenant, dans l'histoire, et non dans l'intemporalité.",
+      "bbox": {
+        "x_pct": 8.902,
+        "y_pct": 36.59,
+        "w_pct": 83.916,
+        "h_pct": 32.536
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée philosophique ne saurait à elle seule produire la vérité dans sa plénitude substantielle. Mais elle peut contribuer à en éclairer la nature. Tel est le sens de la logique philosophique. Sa tâche, c'est de traduire la conscience immédiate de la vérité en un savoir réflexif, de sorte que ma conscience « s'assure » de la vérité.",
+      "bbox": {
+        "x_pct": 8.984,
+        "y_pct": 68.663,
+        "w_pct": 83.97,
+        "h_pct": 9.854
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Visée du Tout",
+      "bbox": {
+        "x_pct": 8.537,
+        "y_pct": 79.923,
+        "w_pct": 16.4,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Promoted to section header as it introduces a new conceptual section."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un premier trait de la logique philosophique, c'est qu'elle doit tout embrasser. Elle ne peut s'en tenir à aucune réalité particulière. Elle est la conscience de soi qui s'empare de tout, puisqu'il y a en tout de la pensée. Elle s'enracine dans ce qui est en-deça et au-delà des catégories, et bien qu'elle s'exprime...",
+      "bbox": {
+        "x_pct": 8.537,
+        "y_pct": 82.423,
+        "w_pct": 84.011,
+        "h_pct": 7.611
+      },
+      "changed": true,
+      "change_reason": "Separated from heading, corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "40",
+      "bbox": {
+        "x_pct": 8.537,
+        "y_pct": 93.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified as page number and filtered."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR text was heavily truncated and corrupted.",
+    "Section header 'Visée du Tout' was merged with paragraph text.",
+    "Page number 40 was labeled as text."
+  ],
+  "doc_id": "1520",
+  "page": 46,
+  "elapsed_seconds": 10.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "viendra jamais un présent. Ce qui est futur va devenir le présent du sujet actif.",
+      "bbox": {
+        "x_pct": 17.181,
+        "y_pct": 7.814,
+        "w_pct": 80.651,
+        "h_pct": 4.763
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Présent insaisissable? Dans sens, c'est vrai. Saint Augustin disait déjà n'y rien comprendre, puisque le présent n'est même pas un instant entre le passé qui n'est plus et l'avenir qui n'est pas encore, — donc: une limite fictive entre deux néants.",
+      "bbox": {
+        "x_pct": 17.092,
+        "y_pct": 15.27,
+        "w_pct": 80.702,
+        "h_pct": 9.526
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant: toute notre vie se vit et se joue au présent. C'est au présent qu'il y a de l'être pour nous et que nous-mêmes nous sommes. Le cogito de Descartes n'a de sens qu'au présent. Il faut donc bien que le présent ait une “épaisseur”.",
+      "bbox": {
+        "x_pct": 17.181,
+        "y_pct": 27.182,
+        "w_pct": 80.561,
+        "h_pct": 7.34
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est cette épaisseur qui permet la présence d'une phrase, d'un sens, d'une mélodie, d'une volonté.",
+      "bbox": {
+        "x_pct": 17.309,
+        "y_pct": 39.293,
+        "w_pct": 80.434,
+        "h_pct": 4.904
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si le présent s'épaissit, c'est que la conscience active “retient” en se l'appropriant une certaine marge de passé “donné”, comme une potentialité qu'elle finalise vers le futur. C'est aussi que la conscience active s'ouvre à elle-même une certaine marge de futur, que sa visée tente déjà d'actualiser.",
+      "bbox": {
+        "x_pct": 17.054,
+        "y_pct": 56.442,
+        "w_pct": 80.689,
+        "h_pct": 12.161
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le présent est donc un instant dure, un passé-futur, un futur-passé. Il est, dans le temps, ce qui passe le plus vite, et ce qui ne passe pas. Il est une contradiction qui, loin d'exclure, est, et à travers laquelle est tout ce qui est pour nous. Il est la synthèse ontologique de ce qui s'exclut. Il est l'essence du.",
+      "bbox": {
+        "x_pct": 16.964,
+        "y_pct": 70.881,
+        "w_pct": 80.829,
+        "h_pct": 12.244
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "58",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing page footer region."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Severe OCR degradation in all paragraph regions.",
+    "Page number missing from initial detection.",
+    "Text content heavily hallucinated or garbled in original JSON."
+  ],
+  "doc_id": "2600",
+  "page": 8,
+  "elapsed_seconds": 4.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

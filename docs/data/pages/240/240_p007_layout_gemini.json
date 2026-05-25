@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SOURCES HUMAINES DE LA DÉMOCRATIE 55",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header identified containing page number and section source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "viduellement les esprits. C'est une des hypocrisies de notre temps que la victoire théorique remportée par les méthodes d'éducation nouvelle, introduites dans la plupart des écoles normales, alors que les conditions réelles de l'enseignement ramènent bon gré mal gré le maître, dans bien des écoles publiques, au « par cœur » traditionnel.",
+      "bbox": {
+        "x_pct": 24.218,
+        "y_pct": 22.721,
+        "w_pct": 48.742,
+        "h_pct": 8.728
+      },
+      "changed": true,
+      "change_reason": "Refined text content to match actual paragraph start."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'espace économique, dans l'enseignement primaire, est à peu près inconnu. Le terme « économie » figure rarement dans les manuels, n'est guère prononcé, sinon au sens de l'argent mis de côté. La géographie reste statique, étrangère à l'évolution humaine. Et si la terre s'est extraordinairement rétrécie dans le réseau des échanges de biens de tous genres, on n'en continue pas moins à n'étudier vraiment que son pays, isolé sur une carte à une échelle trompeuse, aussi fictif dans son abstraction qu'une figure imaginaire.",
+      "bbox": {
+        "x_pct": 24.653,
+        "y_pct": 33.012,
+        "w_pct": 48.306,
+        "h_pct": 11.329
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and incorporated title line as part of the paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire est restée à peu près celle que Voltaire déjà condamnait. On ne révèle ni les vastes perspectives qui l'organisent, donnant à l'homme une juste mesure de son rôle, limitant ses espoirs et ses désespoirs, ni les détails concrets la rattachant à la vie quotidienne d'hommes réels, grandeur nature. Elle se tient à un niveau moyen de généralités abstraites, le plus souvent verbales, sans lien avec les idées ni avec la chair, ne mettant en jeu ni l'intelligence synthétique, ni l'imagination qui mime et fait sienne l'expérience d'autrui. Coupée du présent par son irréalité à la fois mécanique et imprécise, elle ne lègue aux enfants que des réactions affectives à des mots ou des êtres stéréotypés, liées à un sentiment de fatalité qui paralyse d'avance toute invention.",
+      "bbox": {
+        "x_pct": 24.169,
+        "y_pct": 44.626,
+        "w_pct": 48.952,
+        "h_pct": 18.311
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and improved OCR accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire nationale tient une place démesurée — parfois toute la place. Or, comment se situer dans un monde comme le nôtre, comment comprendre les problèmes politiques qu'il pose si l'on ne connaît — et de la manière qui vient d'être esquissée — que l'histoire de son pays ? La clarté même qu'on donne à l'enseignement historique, l'univocité des faits, de leur enchaînement, des jugements que l'on porte sur les décisions humaines, tout cela arrache l'histoire au temps vécu et aux interdépendances internationales, sans l'élever à une signification transcendante, toujours inachevée, dont l'exi-",
+      "bbox": {
+        "x_pct": 24.113,
+        "y_pct": 63.052,
+        "w_pct": 49.056,
+        "h_pct": 14.432
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and improved OCR accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 18.71,
+        "y_pct": 85.054,
+        "w_pct": 41.637,
+        "h_pct": 1.483
+      },
+      "changed": true,
+      "change_reason": "Relabeled from text to page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text detection was heavily truncated.",
+    "Page header was split and misidentified as text.",
+    "OCR text required manual reconstruction."
+  ],
+  "doc_id": "240",
+  "page": 7,
+  "elapsed_seconds": 5.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

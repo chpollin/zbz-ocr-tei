@@ -1,0 +1,112 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Discussion sur les communications 77",
+      "bbox": {
+        "x_pct": 505.0,
+        "y_pct": 69.0,
+        "w_pct": 328.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'on parle de l'évolution du travail, il est nécessaire, je crois, de présenter un secteur évolutif, non pas simple, chronologique, immédiatement repérable, mais un secteur qui repose sur le progrès de la mécanisation. Je pense aussitôt qu'une certaine analyse de la transformation et attitude ouvrières est possible à ce niveau et dans ce cadre.",
+      "bbox": {
+        "x_pct": 7.864,
+        "y_pct": 13.924,
+        "w_pct": 85.201,
+        "h_pct": 11.631
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il en va tout autrement lorsque l'on analyse le mouvement ouvrier. Et cette différence provient de la nature même de celui-ci, telle que je l'ai rappelée en commençant : c'est un mouvement dont l'agent est une catégorie ou une classe sociale et qui vise la société globale.",
+      "bbox": {
+        "x_pct": 7.947,
+        "y_pct": 26.501,
+        "w_pct": 85.492,
+        "h_pct": 10.142
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On ne peut donc le réduire à une psychologie ouvrière. C'est une action collective organisée dont les formes et les voies dépendent des conditions de la société nationale autant que des caractères internes de la classe et de la conscience ouvrières.",
+      "bbox": {
+        "x_pct": 7.947,
+        "y_pct": 37.533,
+        "w_pct": 85.576,
+        "h_pct": 7.991
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est même possible de dire que l'autonomie de ce niveau de l'analyse provient des décalages constants qui existent entre la conscience et l'action ouvrières, car la conscience ouvrière se définit en elle-même et l'action ouvrière se définit par une situation stratégique dont elle n'est qu'un des éléments. Il peut se faire que les possibilités d'action soient en avance sur l'état de la conscience ouvrière - n'est-ce pas la situation où s'est placée l'action de l'Union ? - ; il peut se faire aussi, dans une économie capitaliste vigoureuse, progressive, que l'action soit plus limitée que ne le permettait l'état de la conscience ouvrière - n'est-ce pas la situation des Cercles syndicaux américains du type Reuther, Dalienskes ou même Crompers ?",
+      "bbox": {
+        "x_pct": 8.28,
+        "y_pct": 46.414,
+        "w_pct": 85.479,
+        "h_pct": 23.459
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ce rôle initial des décalages historiques qui fait que cette analyse ne peut garder la forme d'une évolution unique et continue.",
+      "bbox": {
+        "x_pct": 9.112,
+        "y_pct": 70.764,
+        "w_pct": 84.882,
+        "h_pct": 5.91
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ceci ne doit pas conduire à penser que les types ainsi définis ne sont pas des types historiques ; aussi préférerais-je qu'on ne parle pas ici de types idéaux, car l'ensemble de ces types constitue un système d'analyse qui doit avoir pour but de rendre compte de l'ensemble des faits historiques observables en ce domaine.",
+      "bbox": {
+        "x_pct": 8.877,
+        "y_pct": 77.723,
+        "w_pct": 85.34,
+        "h_pct": 11.584
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "M. Goriely a donc tout à fait raison d'attirer l'attention sur cette liaison entre la méthode typologique et l'analyse historique.",
+      "bbox": {
+        "x_pct": 9.015,
+        "y_pct": 90.252,
+        "w_pct": 85.576,
+        "h_pct": 4.255
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page header and page number incorrectly labeled as text.",
+    "OCR text for paragraphs significantly degraded in raw input; repaired text in JSON for accuracy."
+  ],
+  "doc_id": "550",
+  "page": 18,
+  "elapsed_seconds": 6.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

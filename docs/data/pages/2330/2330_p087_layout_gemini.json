@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "À trouver une sorte de sécurité. Il suffit d’ailleurs de voir la fantastique revanche que prennent sur cet esprit égalitaire les compétitions sportives, et la passion quasi enragée qu’elle entraîne chez les jeunes, pour constater à quel point les hommes ont besoin de se situer les uns par rapport aux autres. J’ajoute encore ceci : cette prétendue égalité de la formation est impossible à réaliser matériellement et intellectuellement ; mais, à supposer qu’elle soit réalisable, elle entraînerait un grand dommage pour ceux qui ne sont pas capables de poursuivre des études supérieures, et qui n’en ont pas le goût. Le refus de la sélection dans les écoles repose en réalité sur un préjugé anti-égalitaire, selon lequel il faut absolument avoir passé par l’université pour être un être humain complet ; et qu’il faut avoir un doctorat sous le bras pour comparaître devant saint Pierre ! Je me souviens qu’en 68 je prononçais assidûment le mot sélection qui était alors un mot tabou. Il est conforme à la vraie tradition socialiste d’être partisan de la sélection. La démocratisation des études implique la sélection. Dans la mesure où il y a davantage de gens qui ont accès aux études, il y en aura davantage qui seront éliminés. La différence, c’est que, la sélection, au lieu d’être faite trop tôt, donc surtout en fonction du milieu familial, se fait plus tard en fonction des dons personnels et du goût au travail. Je n’ai donc pas du tout l’impression d’avoir perdu mes points cardinaux, comme on me l’a reproché ; j’ai l’impression au contraire d’être restée fidèle, au milieu d’une gauche qui a perdu le nord.",
+      "bbox": {
+        "x_pct": 4.274,
+        "y_pct": 3.976,
+        "w_pct": 80.098,
+        "h_pct": 44.226
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text to match the actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.I. : Vous avez fait allusion tout à l’heure à l’irréalisme, à l’aspect utopique de la révolte de mai 68.",
+      "bbox": {
+        "x_pct": 4.237,
+        "y_pct": 49.218,
+        "w_pct": 79.805,
+        "h_pct": 4.274
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text and restored missing prefix."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous vous souvenez qu’en 68 les étudiants se promenaient avec des banderolles sur lesquelles ils avaient inscrit : « Le paradis tout de suite ». Ils accusaient la société bourgeoise de tout ce qui n’était pas le paradis et rivalisaient d’éloquence pour montrer à quel point notre société était injuste et les conduisait vers un avenir insupportable. Ils étaient ainsi convaincus qu’ils ne devaient surtout pas se préparer à trouver leur place active dans une telle société et ils détruisaient leur avenir en se consacrant uniquement à une passion révolutionnaire dans l’immédiat. Ce faisant, ils partaient en guerre, non pas contre cette société, mais contre la condition humaine elle-même, qui n’est jamais paradisiaque. Comment la condition d’un être qui se sait mortel, et qui sait que tous ceux qu’il aime sont mortels, pourrait-elle être paradisiaque ? Ce qu’il faut au contraire considérer, c’est le niveau de bonheur, et surtout de liberté responsable, atteint dans les sociétés des époques antérieures. Sur ce point j’ai multiplié les conférences pour dire que notre société devrait éprouver des sentiments d’émerveillement et de reconnaissance pour le monde qui lui avait été légué. Un monde où il y a plus en plus de gens qui peuvent se permettre d’s’interroger sur le sens de la vie, de l’histoire et de la société. Ce qui a éclaté en 68 peut resurgir encore demain, parce que l’esprit de 68.",
+      "bbox": {
+        "x_pct": 4.066,
+        "y_pct": 53.226,
+        "w_pct": 79.939,
+        "h_pct": 38.145
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled and truncated OCR text to match actual content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "83",
+      "bbox": {
+        "x_pct": 81.0,
+        "y_pct": 94.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number region and assigned to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was significantly corrupted and truncated in all regions.",
+    "Page number at the bottom right was missing from detection."
+  ],
+  "doc_id": "2330",
+  "page": 87,
+  "elapsed_seconds": 5.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

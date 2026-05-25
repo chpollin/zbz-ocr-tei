@@ -1,0 +1,51 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA DEUXIÈME DIVISION",
+      "bbox": {
+        "x_pct": 16.721,
+        "y_pct": 18.525,
+        "w_pct": 68.876,
+        "h_pct": 15.029
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "RACINES ET CONTINUITÉ",
+      "bbox": {
+        "x_pct": 36.072,
+        "y_pct": 71.5,
+        "w_pct": 32.144,
+        "h_pct": 12.682
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1803 1961 1986",
+      "bbox": {
+        "x_pct": 36.304,
+        "y_pct": 88.072,
+        "w_pct": 31.715,
+        "h_pct": 2.766
+      },
+      "changed": true,
+      "change_reason": "This is a date/chronological range subtitle related to the division history and should be categorized as a heading rather than a body paragraph."
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "One region needed to be reclassified from paragraph to heading."
+  ],
+  "doc_id": "2370",
+  "page": 2,
+  "elapsed_seconds": 3.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

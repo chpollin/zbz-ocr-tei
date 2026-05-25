@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 169",
+      "bbox": {
+        "x_pct": 313.0,
+        "y_pct": 74.0,
+        "w_pct": 374.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header text detected as paragraph. Corrected label to page_header and tag to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n'est pas réparti intégralement entre tous ceux qui ont fait marcher les machines. La part qui revient à ceux qui vendent leur travail, aux salariés, doit être, en principe, suffisante pour leur permettre de vivre une vie « décente ». Mais le capitalisme a développé une sorte de morale du minimum vital : il est bon d’être propre, mais « vivre de peu » est une vertu. Le reste appartient à ceux qui possèdent les usines et achètent le travail, aux patrons, et doit servir, en théorie, plutôt qu’à agrémenter la vie de ceux-ci, à l'entretien, à la modernisation, à la multiplication des machines, bref, à de nouveaux investissements. Ainsi le travail permet juste de vivre, quand tout va bien, mais le capital rapporte du capital. La puissance économique tend à faire boule de neige, la richesse s'accroître d'autant plus et plus sûrement qu'elle est plus considérable au départ. L’individu non possédant, bien que théoriquement l’égal en liberté de l’individu possédant, est obligé de demander à ce dernier du travail pour vivre, pour satisfaire ces besoins que les Droits de l’homme négligent ou considèrent comme satisfaits d’office. Et ce travail peut lui être refusé. Ainsi se crée, sur le plan économique, une féodalité de fait où règne, non la loi, mais le droit du plus fort.",
+      "bbox": {
+        "x_pct": 25.49,
+        "y_pct": 100.09,
+        "w_pct": 845.4,
+        "h_pct": 414.8
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and aligned with the actual paragraph content on the page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il serait faux de croire qu'alors le système politique, lui, reste pur, incarnation réelle et honnête des principes démocratiques. Non : la démocratie politique elle-même se trouve altérée, déformée, et cela de plusieurs façons.",
+      "bbox": {
+        "x_pct": 26.88,
+        "y_pct": 510.7,
+        "w_pct": 842.2,
+        "h_pct": 89.39
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord il est clair que le salarié isolé dont le gagne-pain dépend d'un patron qui peut, sans contrevenir à aucune loi, le congédier, n'est pas libre dans son action politique. Il a fallu la longue histoire des héros ouvriers qui risquèrent plus que la mort : la misère de leur foyer, pour constituer ces forces économiques légales et malgré tout politiquement protectrices, que sont les syndicats d'aujourd'hui. Il est vrai que si le salarié a besoin du patron pour vivre, le patron a besoin du salarié. Mais ce n'est là qu'une symétrie factice sur laquelle on fonde une solidarité trompeuse. En effet, les salariés sont le nombre. Chacun d'eux a besoin de l'un des quelques patrons possibles sur la place. Pour le patron, si ce n'est pas ce salarié-ci, c'en sera un autre. C'est seulement l'ensemble des salariés qui peut, dans une certaine mesure, opposer son refus de travail au refus de salaire du patron. Les salariés sont sans armes",
+      "bbox": {
+        "x_pct": 19.92,
+        "y_pct": 593.85,
+        "w_pct": 848.19,
+        "h_pct": 290.55
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was severely truncated and broken.",
+    "Page header was misidentified as paragraph."
+  ],
+  "doc_id": "330",
+  "page": 203,
+  "elapsed_seconds": 7.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

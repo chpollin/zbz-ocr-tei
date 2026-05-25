@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "[Texte offert \u0000 Carlo Schmid]",
+      "bbox": {
+        "x_pct": 29.091,
+        "y_pct": 25.53,
+        "w_pct": 27.067,
+        "h_pct": 2.441
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it is a bibliographic/introductory title."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE COMBAT DE DRAGON",
+      "bbox": {
+        "x_pct": 20.158,
+        "y_pct": 30.64,
+        "w_pct": 45.261,
+        "h_pct": 2.525
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au sommet de la tour, une main sur les créneaux, la Princesse agitait une écharpe blanche. Les larmes, les derniers rayons rouges du soleil, la poussière soulevée par les sabots des chevaux, au-delà du pont-levis, l’empêchaient presque de distinguer le Chevalier s’en allant sur la route.",
+      "bbox": {
+        "x_pct": 9.661,
+        "y_pct": 36.843,
+        "w_pct": 65.818,
+        "h_pct": 19.158
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match the document image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voyait un cortège confus. Le jeu excessif et défaillant du couchant allumait de brusques étincelles au harnachement des chevaux et aux armes des hommes, modelait çà et là une croupe blanche, ou alezane, ou tachetée, de cheval bien nourri, découpait une encolure, arquée sous la crinière, mélait les reflets des satins, des velours, des aciers.",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 56.313,
+        "w_pct": 66.303,
+        "h_pct": 22.534
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match the document image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "33",
+      "bbox": {
+        "x_pct": 72.182,
+        "y_pct": 82.521,
+        "w_pct": 2.424,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR for paragraphs was severely truncated and contained garbled text.",
+    "Page number at the bottom was missing from the initial detection list.",
+    "Title label incorrect."
+  ],
+  "doc_id": "2260",
+  "page": 31,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

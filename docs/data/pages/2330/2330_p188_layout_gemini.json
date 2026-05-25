@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "que. faute de traductions, nous ne sommes pas des contemporains. Un livre capital comme la Phénoménologie de l'Esprit de Hegel, qui a eu des effets à perte de vue sur la pensée des Européens, a été traduit de l'allemand en français cent cinquante ans après sa parution. Comme le travail de traduction demande un esprit de service, de l'exactitude, un certain renoncement à soi, et que, contrairement à la plupart des autres travaux intellectuels, il peut se faire à plusieurs, j'ai pensé qu'il faudrait créer un ordre de traducteurs, religieux ou laïc. Celui qui aurait le plus de facilité pour faire cela, c'est le Pape. Pensez au service que les copistes du Moyen Age, dans les monastères, ont rendu autrefois en copiant et transmettant les textes de l'Antiquité. Eh bien ! les traducteurs pourraient aujourd'hui succéder aux copistes d'hier. Ils rendraient un service de premier ordre, en permettant, pour commencer, aux Européens de devenir contemporains. J'en ai parlé souvent à des catholiques. Ils m'ont dit : « C'est une excellente idée », mais je ne vois rien venir. Je doute d'ailleurs qu'il en sorte quelque chose, et savez-vous pourquoi ? Parce que les prêtres de notre temps sont des hommes de notre temps : quand ils sont capables de traduire des œuvres très difficiles, ils préfèrent écrire leurs œuvres propres.",
+      "bbox": {
+        "x_pct": 16.606,
+        "y_pct": 4.008,
+        "w_pct": 80.342,
+        "h_pct": 38.008
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez traduit La Foi philosophique, ainsi que Bilan et Perspectives et Liberté et Réunification de Jaspers, en collaboration avec Hélène Naef.",
+      "bbox": {
+        "x_pct": 16.935,
+        "y_pct": 43.71,
+        "w_pct": 79.976,
+        "h_pct": 5.782
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mon travail avec Hélène Naef pour les traductions de Jaspers compte parmi mes meilleurs souvenirs. Madame Naef était une femme merveilleusement cultivée et intelligente, mais qui, au départ, ne connaissait pas Jaspers. Je l'ai initiée à sa pensée. Au début je traduisais avec elle, puis, peu à peu, elle s'est mise à traduire seule.",
+      "bbox": {
+        "x_pct": 16.813,
+        "y_pct": 49.621,
+        "w_pct": 80.134,
+        "h_pct": 10.379
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelles sont les difficultés inhérentes à la traduction d'un texte philosophique ?",
+      "bbox": {
+        "x_pct": 16.972,
+        "y_pct": 61.613,
+        "w_pct": 79.768,
+        "h_pct": 4.274
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les difficultés sont énormes. Je suis convaincue de la vérité du proverbe traduttore, traditore. Il y a dans l'esprit d'une langue quelque chose d'irréductible, qui ne passe pas dans celui d'une autre. Il est aussi beaucoup plus facile d'être un bon traducteur quand on traduit un petit ouvrage que lorsqu'on traduit un volume de 1000 pages. Hippolyte, qui a traduit la Phénoménologie de l'Esprit de Hegel, a eu l'immense mérite de l'avoir fait, mais sa traduction contient beaucoup de fautes. C'est inévitable, sur un tel nombre de pages ; et je tremble en pensant à ma traduction de la Philosophie de Jaspers, qui en compte un millier. Mais j'en reviens aux difficultés principales d'une telle traduction. D'abord, l'étendue du sens des mots ne coïncide pas d'une langue à l'autre. Même quand on dispose d'un mot soi-disant équivalent, les frontières de son sens ne sont pas les mêmes. Un exemple : il y a tout un chapitre, dans la",
+      "bbox": {
+        "x_pct": 16.691,
+        "y_pct": 65.54,
+        "w_pct": 80.256,
+        "h_pct": 26.21
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "184",
+      "bbox": {
+        "x_pct": 16.5,
+        "y_pct": 95.5,
+        "w_pct": 5.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR was very poor and truncated.",
+    "Multiple paragraphs contained broken/hallucinated text.",
+    "Page number missing from initial JSON.",
+    "Labeling was consistent but OCR quality prevented high score."
+  ],
+  "doc_id": "2330",
+  "page": 188,
+  "elapsed_seconds": 8.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

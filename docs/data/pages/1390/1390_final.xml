@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Die Mittelschule: Vom Kind zum Erwachsenen</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1390</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Die Mittelschule: Vom Kind zum Erwachsenen</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1976</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Fehler, 0 Warnings; 4 Seiten; S.1 Zeitschriften-Titelblatt (Schule & Elternhaus), S.2-4 Hersch-Rede + Folgetext; figure-Elemente fuer Illustrationen; ab-redactional fuer Zeitschrifteninfo; Zweispalten-Text ab S.2 (+3 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="585" lry="861">
+      <zone xml:id="facs_1_r_1" ulx="104" uly="48" lrx="159" lry="74" />
+      <zone xml:id="facs_1_r_2" ulx="0" uly="64" lrx="31" lry="200" />
+      <zone xml:id="facs_1_r_3" ulx="366" uly="665" lrx="546" lry="831" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1152" lry="841">
+      <zone xml:id="facs_2_r_1" ulx="86" uly="218" lrx="390" lry="242" />
+      <zone xml:id="facs_2_r_2" ulx="85" uly="241" lrx="594" lry="278" />
+      <zone xml:id="facs_2_r_3" ulx="85" uly="253" lrx="594" lry="347" />
+      <zone xml:id="facs_2_r_4" ulx="604" uly="254" lrx="1113" lry="313" />
+      <zone xml:id="facs_2_r_5" ulx="603" uly="337" lrx="1112" lry="577" />
+      <zone xml:id="facs_2_r_6" ulx="81" uly="452" lrx="594" lry="625" />
+      <zone xml:id="facs_2_r_7" ulx="599" uly="584" lrx="1111" lry="654" />
+      <zone xml:id="facs_2_r_8" ulx="82" uly="659" lrx="595" lry="753" />
+      <zone xml:id="facs_2_r_9" ulx="599" uly="690" lrx="1111" lry="785" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1167" lry="841">
+      <zone xml:id="facs_3_r_1" ulx="86" uly="252" lrx="603" lry="311" />
+      <zone xml:id="facs_3_r_2" ulx="619" uly="258" lrx="1130" lry="300" />
+      <zone xml:id="facs_3_r_3" ulx="615" uly="410" lrx="1068" lry="529" />
+      <zone xml:id="facs_3_r_4" ulx="83" uly="448" lrx="601" lry="492" />
+      <zone xml:id="facs_3_r_5" ulx="83" uly="549" lrx="598" lry="640" />
+      <zone xml:id="facs_3_r_6" ulx="615" uly="618" lrx="1129" lry="637" />
+      <zone xml:id="facs_3_r_7" ulx="81" uly="707" lrx="598" lry="728" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1171" lry="847">
+      <zone xml:id="facs_4_r_1" ulx="609" uly="224" lrx="922" lry="256" />
+      <zone xml:id="facs_4_r_2" ulx="80" uly="255" lrx="599" lry="292" />
+      <zone xml:id="facs_4_r_3" ulx="82" uly="281" lrx="600" lry="345" />
+      <zone xml:id="facs_4_r_4" ulx="81" uly="345" lrx="603" lry="611" />
+      <zone xml:id="facs_4_r_5" ulx="82" uly="664" lrx="604" lry="716" />
+      <zone xml:id="facs_4_r_6" ulx="610" uly="693" lrx="1131" lry="759" />
+      <zone xml:id="facs_4_r_7" ulx="84" uly="695" lrx="334" lry="737" />
+      <zone xml:id="facs_4_r_8" ulx="83" uly="728" lrx="603" lry="778" />
+      <zone xml:id="facs_4_r_9" ulx="610" uly="761" lrx="1131" lry="789" />
+      <zone xml:id="facs_4_r_10" ulx="458" uly="780" lrx="605" lry="799" />
+      <zone xml:id="facs_4_r_11" ulx="1122" uly="796" lrx="1136" lry="817" />
+      <zone xml:id="facs_4_r_12" ulx="84" uly="807" lrx="108" lry="829" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+  <pb facs="#facs_1" n="1" />
+  <div type="text">
+<ab type="redactional" hand="unknown">
+    <lb facs="#facs_1_r_1" n="N001" />XG 406
+  </ab>
+  <figure>
+    <head>
+      <lb facs="#facs_1_r_2" n="N001" />Schule &amp; Elternhaus
+    </head>
+  </figure>
+  <ab type="redactional" hand="unknown">
+    <lb facs="#facs_1_r_3" n="N001" />Schule und Elternhaus
+    <lb facs="#facs_1_r_4" n="N002" />Herausgegeben vom <orgName ref="GND:unknown">Schulamt der Stadt Zürich</orgName>
+    <lb facs="#facs_1_r_5" n="N003" />46. Jahrgang, Heft 2, 1976
+  </ab>
+  <figure>
+    <head>Thema dieser Nummer:
+    <lb facs="#facs_1_r_6" n="N001" />VOM KIND ZUM ERWACHSENEN</head>
+  </figure>
+</div>
+<pb facs="#facs_2" n="2" />
+        <div type="text">
+<head facs="#facs_2_r_1">
+          <lb facs="#facs_2_l_1_1" n="N001" />4<lb facs="#facs_2_l_1_2" n="N002" />5
+        </head>
+        <p facs="#facs_2_r_2">
+          <title type="main">Die Mittelschule: Vom Kind zum Erwachsenen</title>
+        </p>
+        <p facs="#facs_2_r_3">
+          <lb facs="#facs_2_r_3_1" n="N001" />Zunächst möchte ich für die Ehre danken, an diesem feierlichen Tag das Wort ergreifen zu dürfen. Das hundertste Jubiläum der Töchterschule lässt den Weg ermessen, der in der Mädchenerziehung durchlaufen wurde, so dass ihnen von nun an die größte Berufswahl offen steht, mit der ökonomischen Unabhängigkeit, welche die berufliche Tätigkeit mit sich bringt. Für die Frauen, die in Zukunft das Schicksal der Ehefrau und Mutter, unter voller Hingabe ihres Wesens und ihrer Zeit an ihre Familie wählen, wird es nie mehr eine aufgezwungene Lösung sein, sondern eine freie Entscheidung der Liebe.
+        </p>
+        <p facs="#facs_2_r_4">
+          <lb facs="#facs_2_r_4_1" n="N001" />Ich freue mich zu hören, dass die Schule demnächst koedukativ wird; nicht damit die Mädchen von den Knaben nicht mehr zu unterscheiden wären, sondern damit Knaben und Mädchen einander besser kennenlernen, so dass sie auf natürlichere und einfachere Art zusammen sind und gleichzeitig als menschliche Wesen mehr Respekt füreinander empfinden.
+        </p>
+        <p facs="#facs_2_r_5">
+          <lb facs="#facs_2_r_5_1" n="N001" />Die Mittelschule, das ist die Zeit des Übergangs von der Kindheit zum Erwachsensein. Dieser Übergang wird nicht leicht richtig aufgefasst. Lange hat man die Zeit der Kindheit als ein reines Mittel betrachtet, um einen Erwachsenen hervorzubringen, als sei die Kindheit an sich nichts. Denken Sie an die alte Malerei, wo das Jesuskind wie ein kleiner Erwachsener dargestellt wird, – oder an die Vorstellung des idealen Kindes als winziger Greis. Umgekehrt hat man oft in den letzten Jahrzehnten die Kindheit als Zweck an sich betrachtet, als eine Zeit des Glücks, der Sorglosigkeit, der «Kreativität», der «Spontaneität», so dass der ideale Erwachsene als ein fortbestehendes Kind aufgefasst und dargestellt wird. So entwickeln oft unsere Zeitgenossen eine kindische Vorstellung der Freiheit: Freiheit wäre, das zu tun, was man will, wenn man will, wie man will. Manche fragen, warum jeder nicht frei ist zu tun, was ihm Spass macht, und empören sich dann gegen die Gesellschaft, – ohne zu merken, dass ihre Empörung faktisch gar nicht dieser oder jener Gesellschaftsordnung gilt, sondern dem vielfältigen Zwang des Menschseins als solchem.
+        </p>
+        <p facs="#facs_2_r_6">
+          <lb facs="#facs_2_r_6_1" n="N001" />In dieser Haltung steckt die falsche Überzeugung, dass die Freiheit sozusagen von der Natur aus am Anfang gegeben ist. Sie ist es aber ebensowenig in der Geschichte des einzelnen Menschen wie in der Geschichte der Gesellschaften. Es ist nicht so, dass freie Menschen oder freie Menschengruppen sich zusammenschließen und dann ihre Freiheit einbüßen. Im Gegenteil: Die primitiven Gemeinschaften weisen sich durch die Starrheit und Steifheit ihrer Sitten aus, das kollektive Leben ist so genau geregelt, dass das Individuum zunächst sich gar nicht als solches behaupten oder gar erleben kann. Erst allmählich, sehr spät, gewinnt es Distanz zum Kollektiven, löst sich davon ab und kommt endlich zu sich selbst. Und wenn wir an die Individuen denken, – wie abhängig, ohnmächtig, nichtwissend ist das kleine Menschenwesen! Es ist von allen Tiergattungen das Unfertigste, das Unbeholfenste.
+        </p>
+        <p facs="#facs_2_r_7">
+          <lb facs="#facs_2_r_7_1" n="N001" />Die Freiheit ist eine langsame und mühsame Eroberung, und diese Eroberung wird immer länger wegen der kulturellen Güter, die eine entwickelte Gesellschaft sich angeeignet hat. Heute scheinen in unseren fortgeschrittenen Gesellschaften die jungen Menschen von einer tiefen Ungeduld ergriffen.
+        </p>
+        <p facs="#facs_2_r_8">
+          <lb facs="#facs_2_r_8_1" n="N001" />Schauen wir etwas näher. Ich erwähnte eben die erste Phase des Kindseins, eine Zeit der völligen Unbeholfenheit und Abhängigkeit. Dann lebt das kleine Kind ganz durch die Eltern, in der Fraglosigkeit des Vertrauens und des Anvertrauens. Dann kommt die Zeit der Nachahmung, des Versuchens, der vielen Fragen, des Annehmens. Das Kind erlernt die Umwelt, indem es durch die Eltern seine Sprache lernt. Die Muttersprache ist etwas sehr Geheimnisvolles. Sie ist gleichzeitig vorgegeben und erfinderisch, sie wird aber nicht erfunden. Erst wenn sie als gegeben, und so wie sie gegeben ist, anerkannt und angenommen wird, kann es dem Menschen gelingen, in ihr und durch sie schöpferisch zu werden. Man kann diese Beziehung zur Sprache mit dem vergleichen, was in der Kunst des Akrobaten vor sich geht. Die Leichtigkeit seiner Sprünge, seine anscheinende Gewichtlosigkeit, leugnet die Schwere keineswegs. Im Gegenteil: der Akrobat kann nur dank der Schwere sein leichtes Spiel entfalten. Niemand kennt – und anerkennt – die Schwere so wie er es tut, und erst diese Kenntnis und Anerkennung ermöglicht die Leichtigkeit seiner Kunst. Denken Sie an die Astronauten auf dem Mond, wie mühsam und verlangsamt waren ihre Bewegungen in der Schwerelosigkeit! – Mit der Sprache geht es genau so: erst die Anerkennung und Aneignung ihres So-gegeben-seins ermöglicht den schöpferischen Ausdruck.
+        </p>
+        <p facs="#facs_2_r_9">
+          <lb facs="#facs_2_r_9_1" n="N001" />In der Schule lernt das Kind, und später der Jugendliche, durch die Erfahrung der vielen Menschengruppen und Zugehörigkeiten, Kritik zu üben. Die Selbstverständlichkeit der ersten Lebensjahre zieht sich zurück, die Notwendigkeit des Urteils, der Wahl, manchmal der Revolte oder Konflikte wächst mit der komplexen Verantwortung. Das alles aber geschieht keineswegs aus dem Nichts eines leeren ursprünglichen Gewissens, sondern immer im lebendigen Bezug auf vorgegebene, herkömmliche Werte.
+        </p>
+        <p facs="#facs_2_r_10">
+          <lb facs="#facs_2_r_10_1" n="N001" />Gerade diese Entwicklung findet in den Jahren statt, wo die Jungen die Mittelschule besuchen. Es sind schwierige und entscheidende Jahre des Übergangs, und jedes Versäumnis der liebenden Wachsamkeit kann gefährlich sein. Das Kind soll da ein Erwachsener werden. Was ist das, ein Erwachsener? Es genügt sicher nicht, ein bestimmtes Alter erreicht zu haben, um ein Erwachsener im echten Sinne zu sein. Ich fürchte, dass es heute vielleicht zu wenig Erwachsene gibt, – und das ist wohl die Quelle, oder eine der Quellen des latenten Unglücks der jungen Leute. Ein Erwachsener hat etwas von der Festigkeit eines Baums. Er denkt nicht daran, die Gunst der Jungen zu erbetteln oder ihnen den Hof zu machen, um sich zu ihnen zu gesellen. Ein
+        </p>
+      </div>
+<pb facs="#facs_3" n="3" />
+        <div type="text">
+<p facs="#facs_3_r_1">
+          <lb facs="#facs_3_r_1" n="N001" />Erwachsener verkörpert Freiheit, Konsequenz, Halt, klares festes Sehen und Verantwortung. Was er tut, unterschreibt er, und er nimmt die Folgen auf sich. Und weil er fähig ist, in seinem Selbst wie in einer Substanz zu ruhen, ist er auch fähig, den anderen Menschen voll gelten zu lassen. Er ist fähig, echt und stark zu lieben und zu wollen.
+        </p>
+        <p facs="#facs_3_r_3">
+          <lb facs="#facs_3_r_3" n="N001" />Die Mittelschule ist eine wahre Kreuzung verschiedener Funktionen: dem Schüler, der Gesellschaft, dem Staat, der Menschheit gegenüber. Sie übernimmt drei sehr verschiedene Pflichten: die persönliche, kulturelle und menschliche Entwicklung der Schüler, ihre grundlegende Vorbereitung zum Erlernen eines Berufs, und die Auswahl derer, die Lust und die Fähigkeit haben, ein langes, oder gar lebenslängliches Studium auf sich zu nehmen. Die Mittelschule soll also die menschlichen Möglichkeiten jedes Einzelnen so weit wie es nur geht entwickeln und entfalten, und gleichzeitig für die vernünftige Auswahl und Orientierung sorgen, die der Gesellschaft als Ganzes nottut.
+        </p>
+        <p facs="#facs_3_r_4">
+          <lb facs="#facs_3_r_4" n="N001" />Von der Mittelschule wird also verlangt, dass sie sich realistisch der faktischen sozialen Lage anpasst, und dass sie gleichzeitig auf etwas Besseres, Gerechteres und Gleicheres hinzielt. Sie soll auch die Kenntnis und das Erleben der reichen Vergangenheit vermitteln, und den Schülern doch Sinn und Verstehen für die problematische Gegenwart geben. Die Schüler sollen sich ihres eigenen Soseins fest bewusst werden, und sich auch am Anderssein in Raum oder Zeit entfernter Menschen freuen. Der Unterricht muss sich breit öffnen, einen weiten Rahmen schaffen, damit die Jungen sich orientieren können, in der Welt und in der Geschichte, – und trotzdem muss er ihren Sinn erwecken für genaue spezifische Methoden und ganz konkrete Erlebnisse, zum Beispiel in der Dichtung und der Kunst.
+        </p>
+        <p facs="#facs_3_r_5">
+          <lb facs="#facs_3_r_5" n="N001" />Das klingt wie die Quadratur des Kreises, und ist es auch. Und trotzdem: in diesen Widersprüchen lebt die Mittelschule Tag für Tag.
+        </p>
+        <p facs="#facs_3_r_6">
+          <lb facs="#facs_3_r_6" n="N001" />Manche sagen, die Unterrichtsprogramme seien unsinnig. Das ist aber nur Schein: es kommt viel mehr auf die Lehrer an als auf die Programme. Meiner Ansicht nach sind alle Programme zugleich grenzenlos und elastisch. Man sollte den Schülern in der Mittelschule ganz grosse, vereinfachte Umrisse geben, und daneben etwa zwei sehr genau begrenzte, erlebte Erfahrungen provozieren oder nachahmen. Zum Beispiel, im Gebiet der Wissenschaft: nicht nur Gesetze und Resultate lernen, sondern ein konkretes Experiment des suchenden Gelehrten wiederholen, so wie er es seinerzeit, unter zeitgenössischen Auffassungen, erleben und durchdenken musste. Im Literatur-Unterricht ist die Aufgabe ähnlich: die Schüler sollen den grossen Rahmen der Literaturgeschichte kennenlernen und verstehen, – sehr vereinfacht, in weiten Zügen. Dann aber werden sie viel Zeit für das Lesen, Verstehen und Geniessen kleiner konkreter Werke haben, etwa eines kurzen Gedichts oder einiger Zeilen Prosa, damit sie der eigentlichen literarischen Erfahrung mit ganzer Seele näher kommen.
+        </p>
+        <p facs="#facs_3_r_7">
+          <lb facs="#facs_3_r_7" n="N001" />Was zwischen dem Lernen des vereinfachten Rahmens und dem konkreten Erleben einer einzigen wissenschaftlichen oder dichterischen Erfahrung liegt, scheint mir meistens ziemlich leer und nutzlos zu sein.
+        </p>
+        <p facs="#facs_3_r_8">
+          <lb facs="#facs_3_r_8" n="N001" />Aus dem vorher Gesagten sieht man schon, wie unentbehrlich, in meinen Augen, die Kenntnis und Erfahrung der Vergangenheit ist, und auch die Übung der wunderbaren, kostbaren, heute so verleumdeten und verworfenen menschlichen Fähigkeit, die Gedächtnis heisst. Es stimmt wohl, dass Gedächtnis ohne logisches Denken nichts taugt. Aber Denken ohne Gedächtnis ist unmöglich, denn man denkt nicht «nichts», sondern Dinge, die man im Kopf, also im Gedächtnis hat. Heute wollen viele Schüler und Studenten nichts von der Vergangenheit wissen, sie wollen nur Zeitgenossen lesen und studieren. Aber diese Zeitgenossen können sie meistens gar nicht verstehen, wenn sie nichts von den Autoren kennen, durch die die Zeitgenossen ausgebildet wurden. Ausserdem sind dieselben Schüler und Studenten von der «Geschichte» besessen, – als ob es ohne Vergangenheit eine Geschichte geben könnte! Ohne Vergangenheit gibt es auch keine Gegenwart und keine Zukunft – und das Menschsein schwindet.
+        </p>
+        <p facs="#facs_3_r_9">
+          <lb facs="#facs_3_r_9" n="N001" />Erlebte Kultur ist kein Schrank, wo das Erlernte nebeneinander gereiht ist, sondern Nahrung durch das Nacherleben vergangenen Schaffens und Schöpfens, sei es in der Kunst, in der Literatur, in der Forschung, im Gestalten der menschlichen Geschichte, im Erdenken letzter Gehalte. Diese Nahrung zu geben und, noch mehr, das Bedürfnis danach zu wecken, ist wohl die wichtigste Pflicht der Mittelschule.
+        </p>
+        <p facs="#facs_3_r_10">
+          <lb facs="#facs_3_r_10" n="N001" />Das Wichtigste: denn der Feind des Menschen, der Feind, dem die Gewalt, die Droge, die Pornographie, usw. ihre Verführungsmacht verdanken, ist in erster Linie die Leere, die Langeweile. Deswegen sollte sich die Mittelschule, wie ich glaube, mehr als sie es oft tut, um die Freizeit der Schüler kümmern. Nicht in dem Sinne, dass sie diese Freizeit selbst gestalten oder vollstopfen sollte. Im Gegenteil: sie muss Wege finden, damit die Schüler sich auf ihre Freizeit freuen, weil sie von sich aus immer etwas damit anfangen können, weil sie irgend etwas – ein Buch, eine Zeichnung, ein Spiel, eine Forschung – angefangen haben und sich auf die Freizeit freuen, um diese Tätigkeit fortsetzen zu können. Es soll von innen kommen, was es auch sei. Das Schlimm
+        </p>
+      </div>
+<pb facs="#facs_4" n="4" />
+        <div n="2">
+          <p facs="#facs_4_r_1">
+            <lb facs="#facs_4_r_1" n="N001" />ste und Gefährlichste ist die innere Leere, wo der Schüler alles nur von äusseren Impulsen <lb facs="#facs_4_r_1" n="N002" />erwartet, und sonst nichts mit der Freizeit anzufangen weiss.
+          </p>
+          <p facs="#facs_4_r_2">
+            <lb facs="#facs_4_r_2" n="N001" />Der Schüler soll also nicht satt werden in der Mittelschule. Die innere Quelle des Hungers, der <lb facs="#facs_4_r_2" n="N002" />Neugier, soll wachsen, indem der Sinn für die Qualität des Gesuchten ausgebildet wird. Der <lb facs="#facs_4_r_2" n="N003" />Schüler entdeckt, wie wenig er weiss. Ein «Erwachsener» ist kein «fertiger» Mensch, sondern <lb facs="#facs_4_r_2" n="N004" />im Gegenteil jemand, der fähig ist, sein Werden fortzusetzen.
+          </p>
+          <p facs="#facs_4_r_3">
+            <lb facs="#facs_4_r_3" n="N001" />Zum Schluss möchte ich noch eine letzte Aufgabe erwähnen, die auf der Mittelschule lastet, – <lb facs="#facs_4_r_3" n="N002" />eine sehr schwierige, eigentlich unlösbare Aufgabe: die Wahl der Schüler, die ein langes Stu<lb facs="#facs_4_r_3" n="N003" break="no" />dium absolvieren werden, und derer, die nach einer Lehrzeit eine physische Arbeit leisten wer<lb facs="#facs_4_r_3" n="N004" break="no" />den. Trotz all dem, was in der Propaganda gesagt wird, bleibt eine solche Auslese unvermeidlich. <lb facs="#facs_4_r_3" n="N005" />Man kann sie nur – man soll sie – gerechter durchführen, so dass nicht der Stand der Familie, <lb facs="#facs_4_r_3" n="N006" />sondern wirklich die Gaben, Fähigkeiten, und die Lust zu studieren entscheidend wirken. Ausser<lb facs="#facs_4_r_3" n="N007" break="no" />dem soll man die Würde der physischen Arbeit anerkennen, sie nach Möglichkeit durch die Tech<lb facs="#facs_4_r_3" n="N008" break="no" />nik erleichtern, sie durch Verantwortung und bessere äussere Arbeitsbedingungen vermenschli<lb facs="#facs_4_r_3" n="N009" break="no" />chen. Da, wo es nicht möglich ist (Lärm, schlechte Luft, usw.), soll die Arbeitszeit gekürzt werden, <lb facs="#facs_4_r_3" n="N010" />und der Lohn muss der Mühsal oder Langeweile entsprechend höher sein. Auch könnte manche <lb facs="#facs_4_r_3" n="N011" />körperliche Arbeit mit einer ihr verwandten kulturellen Tätigkeit verbunden werden, etwa im <lb facs="#facs_4_r_3" n="N012" />Bereich des Handwerklichen und seiner Geschichte. Es gilt auch, die Intelligenz und Kompetenz <lb facs="#facs_4_r_3" n="N013" />der Hände anzuerkennen, – und nicht nur des verbalen Gehirns.
+          </p>
+          <p facs="#facs_4_r_4">
+            <lb facs="#facs_4_r_4" n="N001" />Und schliesslich kommt es darauf an, in den Schülern den Sinn für jede Dienstleistung und die <lb facs="#facs_4_r_4" n="N002" />Freude daran zu entwickeln. Jede Gesellschaft beruht auf einem – mehr oder weniger gerechten – <lb facs="#facs_4_r_4" n="N003" />Austausch von Dienstleistungen. Unsere ganze technische Welt bietet uns verdinglichte, kristal<lb facs="#facs_4_r_4" n="N004" break="no" />lisierte menschliche Arbeit an, und das müssen die Schüler in den Erzeugnissen der Technik mit <lb facs="#facs_4_r_4" n="N005" />Dankbarkeit wieder sehen und schätzen lernen. Dann werden sie Lust haben, selbst auch dazu <lb facs="#facs_4_r_4" n="N006" />beizutragen, und so den Sinn und die Freude an nützlicher Arbeit wiedergewinnen.
+          </p>
+          <p facs="#facs_4_r_6">
+            <lb facs="#facs_4_r_6" n="N001" />Zuletzt möchte ich den Lehrerinnen und den Lehrern, die hier sind, für ihre Hingabe danken. <lb facs="#facs_4_r_6" n="N002" />Ich habe viele Jahre an der Mittelschule unterrichtet und kenne das intensive Spiel der Arbeit <lb facs="#facs_4_r_6" n="N003" />in einer Klasse gut. Ich weiss, wie selbstvergessen der Lehrer dabei ist; er ist so hingegeben, <lb facs="#facs_4_r_6" n="N004" />dass er es nicht einmal weiss. Erst nachher kommt er wieder zu sich und merkt seine Müdigkeit. <lb facs="#facs_4_r_6" n="N005" />Und so schwinden Jahre seines Lebens dahin.
+          </p>
+          <p facs="#facs_4_r_7">
+            <lb facs="#facs_4_r_7" n="N001" />Aber dann bringen die Schüler und Schülerinnen Freude, wenn sie erwachsen, wirklich er<lb facs="#facs_4_r_7" n="N002" break="no" />wachsen werden, und ganz besonders wenn sie das verwirklichen, wovon jeder echte Lehrer <lb facs="#facs_4_r_7" n="N003" />jede echte Lehrerin träumt: dass die Schüler sich noch weiter entwickeln als sie selbst.
+          </p>
+          <p facs="#facs_4_r_8">
+            <lb facs="#facs_4_r_8" n="N001" />Prof. <persName ref="GND:118815679">Jeanne Hersch</persName>, Genf
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_4_r_9">
+            <lb facs="#facs_4_r_9" n="N001" />100 Jahre Töchterschule der Stadt Zürich
+          </head>
+          <p facs="#facs_4_r_11">
+            <lb facs="#facs_4_r_11" n="N001" />Es war seit Jahrhunderten die Überzeugung der Bevölkerung unserer Stadt, dass Schulung, <lb facs="#facs_4_r_11" n="N002" />Ausbildung und Erziehung zu den wichtigsten Aufgaben des Gemeinwesens gehören. So gab <lb facs="#facs_4_r_11" n="N003" />es in der Stadt Zürich schon im 16. Jahrhundert neben den Knabenschulen auch eine von Lehr<lb facs="#facs_4_r_11" n="N004" break="no" />schwestern geleitete «Meitlinschule». Das waren Volksschulen.
+          </p>
+          <p facs="#facs_4_r_12">
+            <lb facs="#facs_4_r_12" n="N001" />Mit dem Beschluss der Schulgemeinde Zürich vom 20. Dezember 1874, eine «Höhere Töchter<lb facs="#facs_4_r_12" n="N002" break="no" />schule» zu errichten, wurde im Kanton Zürich die erste Mittelschule für Mädchen ge
+          </p>
+        </div>
+      </div>
+</body></text>
+</TEI>

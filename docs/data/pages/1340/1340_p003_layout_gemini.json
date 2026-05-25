@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "IMPLICATIONS   PHILOSOPHIQUES DU DEVELOPPEMENT DE LA MEDECINE PREVENTIVE",
+      "bbox": {
+        "x_pct": 16.068,
+        "y_pct": 7.755,
+        "w_pct": 64.149,
+        "h_pct": 4.114
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "par Jeanne Hersch *",
+      "bbox": {
+        "x_pct": 37.74,
+        "y_pct": 13.095,
+        "w_pct": 20.464,
+        "h_pct": 2.068
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je suis si convaincue de limportance de la médecine préventive et du travail de tous ceux s'y vouent",
+      "bbox": {
+        "x_pct": 10.557,
+        "y_pct": 17.703,
+        "w_pct": 75.067,
+        "h_pct": 7.925
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "1 Ce nest pas tellement de limplication philosophique de la médecine préventive que je voudrais vous",
+      "bbox": {
+        "x_pct": 10.258,
+        "y_pct": 25.901,
+        "w_pct": 75.294,
+        "h_pct": 22.496
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord la prévision. Pourquoi la prévision est-elle si importante ? Cest 'elle permet à Phomme de  ",
+      "bbox": {
+        "x_pct": 10.413,
+        "y_pct": 59.97,
+        "w_pct": 75.449,
+        "h_pct": 26.196
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Professeur à la Faculté des lettres, Université, 1, rue de Candolle, 1205 Genève.",
+      "bbox": {
+        "x_pct": 12.074,
+        "y_pct": 88.035,
+        "w_pct": 59.825,
+        "h_pct": 1.869
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "95",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 91.5,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page footer number"
+  ],
+  "doc_id": "1340",
+  "page": 3,
+  "elapsed_seconds": 6.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label mapping": 1,
+    "ADDED": 1
+  }
+}

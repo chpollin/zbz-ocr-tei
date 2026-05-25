@@ -1,0 +1,87 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA NATURE DU POUVOIR 93",
+      "bbox": {
+        "x_pct": 377.0,
+        "y_pct": 65.0,
+        "w_pct": 427.0,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "Header contains running title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Des choix lisibles, manifestes: en effet, lorsque le Pouvoir a été « reconnu », dans le sens où nous avons employé ce mot, il est évident qu'il doit être non seulement réparti, diversifié, apprivoisé, infiltré dans les tissus sociaux, mais encore constamment pensé, jugé, soumis au contrôle de ceux sur lesquels il s'exerce. C'est ce que nous appelons, en Occident, démocratie.",
+      "bbox": {
+        "x_pct": 12.132,
+        "y_pct": 10.19,
+        "w_pct": 75.898,
+        "h_pct": 13.752
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'on me permette ici une brève parenthèse. Il est à la mode de dire que cette démocratie, avec ses institutions, ses lois et ses contrats, est purement formelle et asservie en fait à la toute-puissance de l'argent capitaliste. On affirme en même temps qu'une lutte à mort se déroule entre les deux classes de la société et que rien ne peut être arraché aux privilèges du capital sinon par la force. Mais alors, comment expliquer la transformation extraordinaire de la condition ouvrière elle-même? Si le capitalisme est tout-puissant, elle ne peut être due qu'à son bon vouloir. Si ce bon vouloir n'existe pas, c'est alors que le capitalisme n'est pas tout-puissant et que les institutions démocratiques sont efficaces pour réaliser contre lui plus de justice. Ce qui signifie donc qu'elles détiennent, malgré toutes les influences indéniables, un pouvoir indépendant de lui.",
+      "bbox": {
+        "x_pct": 11.935,
+        "y_pct": 23.636,
+        "w_pct": 75.933,
+        "h_pct": 31.43
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Pouvoir, ce n'est plus un homme, fût-il providentiel. C'est un ensemble de moyens confiés provisoirement à un groupe d'hommes chargés de certaines tâches et qui acceptent sous contrôle de les exécuter. Par cette acceptation, non seulement ils se soumettent d'avance à ce contrôle, mais ils s'enchaînent aussi au Droit et se mettent à son service, car il est indispensable à leur légitimité.",
+      "bbox": {
+        "x_pct": 12.051,
+        "y_pct": 54.57,
+        "w_pct": 75.585,
+        "h_pct": 13.777
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un tel régime semble à certains manquer de panache. On parle de « médiocratie ». Quant à moi, je ne connais pas de plus grand dessein que celui de faire au Pouvoir sa juste place dans la finitude de la condition humaine. Cette finitude, il faut savoir y consentir.",
+      "bbox": {
+        "x_pct": 11.935,
+        "y_pct": 68.099,
+        "w_pct": 75.516,
+        "h_pct": 9.116
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On l'a compris: le Pouvoir étant par nature un mixte, unité où convergent et se renforcent des efficacités multiples, hétérogènes, correspondant aux multiples niveaux où l'être humain lui-même existe, ce qui risque le plus de le déshumaniser, c'est l'abstraction. Le Pouvoir abstrait, c'est une composante du pouvoir, isolée et érigée en totalité: un matérialiste le réduit à la propriété matérielle,",
+      "bbox": {
+        "x_pct": 11.784,
+        "y_pct": 77.0,
+        "w_pct": 75.55,
+        "h_pct": 13.884
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Header line was identified as regular text instead of page_header."
+  ],
+  "doc_id": "1530",
+  "page": 21,
+  "elapsed_seconds": 6.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

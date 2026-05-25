@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1. Fégard du peuple pro 1967 et ComM 2 n temoignent dautant plus signilicative enveia si importe de sui",
+      "bbox": {
+        "x_pct": 9.354,
+        "y_pct": 13.367,
+        "w_pct": 38.451,
+        "h_pct": 26.576
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text for accuracy based on the provided image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "juive. pour lui, est un éternel dialogue entre le natio- nal (ou le judaïsme religieux 2 Thistoire non Thistoire Mem- élue du judaïsme est nationale) et l'universalisme du Dieu uni- que pour toute l'humanité (représenté par la diaspora, pour laquelle l'essence du judaïsme est religieuse ou culturelle). La création d'Israël appartient à l'histoire humaine, non à l'histoire sacrée. Même pour les croyants, pour « les bons juifs », c'est l'obéissance aux commandements, selon la lettre et selon l'esprit, et non Israël, qui importe avant tout.",
+      "bbox": {
+        "x_pct": 54.232,
+        "y_pct": 9.743,
+        "w_pct": 38.415,
+        "h_pct": 21.598
+      },
+      "changed": true,
+      "change_reason": "Corrected severely malformed OCR text to reflect the actual content in the paragraph region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le principe qui permet de comprendre pourquoi l'évolution de nombre de mouvements s'accomplit pas selon une ligne droite, mais à travers de nombreuses oscillations, chaque affirmation exigeant un correctif en sens inverse, ce qui permet au Père Fessard d'évoquer à nouveau « le fléau de la balance » ignatienne, cet élément mobile et sensible figurant, dans les Exercices spirituels, les mouvements de « l'affectivité existentielle » de part et d'autre de l'horizontale — suspens, docile au vrai, de l'impartialité. Israël, dit Aron, reste aussi « paradoxal » que le judaïsme lui-même. Aron maintient contre Israël l'exigence d'universalisme. Donner à Israël une signification religieuse serait selon lui de l'idolâtrie, mais il exprime devant cette réalisation historique son « admiration profane ». Il continue à penser qu'accepter « l'élection » du peuple juif serait « manquer le plus à l'esprit religieux » (et le Père Fessard ne manque pas de souligner que ce refus ne constitue donc nullement, chez Aron, une attaque contre la religion, mais au contraire une défense de sa pureté). Mais il fait une profession de foi juive,",
+      "bbox": {
+        "x_pct": 54.549,
+        "y_pct": 41.84,
+        "w_pct": 39.476,
+        "h_pct": 46.89
+      },
+      "changed": true,
+      "change_reason": "Fixed catastrophic OCR failures to reflect the actual text paragraph present in the image."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was severely corrupted and unrecognizable in all regions.",
+    "Bboxes captured text accurately but the transcription was of extremely poor quality.",
+    "Page numbers 14 and 15 were missing from the layout analysis entirely."
+  ],
+  "doc_id": "1710",
+  "page": 6,
+  "elapsed_seconds": 4.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,70 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "change   d'échelon; mais la   structure dualiste comme lelle suhsiste partout, jusqu'au   bout, 4 la",
+      "bbox": {
+        "x_pct": 18.353,
+        "y_pct": 13.462,
+        "w_pct": 68.825,
+        "h_pct": 55.961
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Cf. Jeanne HERSCH, L'Illusion philosophique. Alcan 1936.",
+      "bbox": {
+        "x_pct": 20.898,
+        "y_pct": 73.303,
+        "w_pct": 67.237,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "ADDED: Full footnote text including original citation"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": {
+        "x_pct": 18.665,
+        "y_pct": 10.354,
+        "w_pct": 2.21,
+        "h_pct": 1.259
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "L'&Ecirc;TRE ET LA FORME",
+      "bbox": {
+        "x_pct": 66.032,
+        "y_pct": 10.354,
+        "w_pct": 21.142,
+        "h_pct": 1.259
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Footnote text was incomplete",
+    "Missing header and footer regions",
+    "BBox adjusted to cover complete footnote line"
+  ],
+  "doc_id": "110",
+  "page": 54,
+  "elapsed_seconds": 7.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

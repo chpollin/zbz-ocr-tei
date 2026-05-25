@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "40",
+      "bbox": {
+        "x_pct": 92.0,
+        "y_pct": 77.0,
+        "w_pct": 14.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to _filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 371.0,
+        "y_pct": 77.0,
+        "w_pct": 212.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle me lacha les mains, comme épuisée, et laissa tomber, en une prière qu'on sait vaine:",
+      "bbox": {
+        "x_pct": 9.284,
+        "y_pct": 12.098,
+        "w_pct": 80.081,
+        "h_pct": 5.198
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled/garbled text OCR."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Qu'est-ce qui vaut ? Dis ?",
+      "bbox": {
+        "x_pct": 17.068,
+        "y_pct": 17.202,
+        "w_pct": 37.122,
+        "h_pct": 2.297
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled/garbled text OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'était moment où j'étais d'une stupidité complète et comme organique devant toute complication. J'ai fait ce que je pouvais pour entendre vraiment ce qu'elle disait. J'ai cherché à me rappeler les déchirements et les partages de l'âme que j'avais connus. Peine perdue. Même cette crispation intérieure que j'avais éprouvée en écrivant et que j'avais dû fuir dans la cuisine m'était maintenant étrangère et incompréhensible. J'ai mis la pâte dans le four et me suis assise sur un tabouret recouvert de linoléum. Elle attendait quelque chose de moi. Et moi, je ne parvenais pas à comprendre vraiment quoi. J'avais envie de lui dire des bouts de phrases comme: Il pleut... La nuit est tombée tôt... Dans vingt minutes il faudra sortir le biscuit du four... Tu es là... Mais je savais bien que je ne pouvais pas lui dire cela. Et elle, comme je me taisais, elle a cru que je la blâmais et s'est mise à pleurer. Alors je l'ai emmenée dans la chambre et l'ai installée confortablement devant le feu, tout en lui répétant: « Ne pense pas, ne pense pas, ce n'est compliqué qu'en pensée, il n'y a rien du tout de compliqué. » Elle se laissait faire, elle ne pleurait plus. On entendait les bruits mêlés de la pluie et du feu. — Et puis elle a glissé à terre et s'est accroupie, la tête dans ses bras sur le siège du fauteuil. Au bout d'un moment, elle dormait. C'était bon de la voir dormir; j'en étais soulagée. Il n'y a rien de compliqué, même pas un enfant qui naît, et ce qui est",
+      "bbox": {
+        "x_pct": 8.378,
+        "y_pct": 19.537,
+        "w_pct": 81.351,
+        "h_pct": 66.03
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text OCR."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and running header were mislabeled as text.",
+    "OCR output for paragraph text was highly inaccurate and fragmented.",
+    "OCR output for section header was garbled."
+  ],
+  "doc_id": "40",
+  "page": 38,
+  "elapsed_seconds": 4.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

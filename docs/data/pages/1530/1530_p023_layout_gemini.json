@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA NATURE DU POUVOIR 95",
+      "bbox": {
+        "x_pct": 369.0,
+        "y_pct": 72.0,
+        "w_pct": 218.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Header contains both document title and page number; marked as filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "surgissement d'une liberté humaine aussi totale que vide de substance. Et ils s'imaginent ainsi échapper au Pouvoir, alors que par le vide qu'ils créent ils lui livrent son champ déshumanisé — celui de la force nue et de la violence.",
+      "bbox": {
+        "x_pct": 11.437,
+        "y_pct": 10.636,
+        "w_pct": 75.852,
+        "h_pct": 9.058
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, la force nue et la violence, en dernier ressort, sont partout. La raison humaine construit, dans cet océan, des îles sociales de droit et de respect. Iles fragiles, toujours menacées, du dehors, mais aussi du dedans, car pour qu'elles durent il faut du pouvoir, et le Pouvoir comporte en lui la composante de la force nue et de la violence, toujours tentée de s'asservir le reste. Situation définitivement sans issue, où les « solutions » ne sont jamais que provisoires, historiques, mais d'autant plus précieuses dans leur fragilité. Jaspers y voit l'une des situations limites de la condition humaine, c'est-à-dire une situation constitutive de l'homme, au même titre que la mort. C'est pourquoi, selon lui, « je ne peux pas vouloir transformer le monde dans sa totalité à partir de son propre fond; ce que je peux, c'est à partir de mon origine propre, réaliser quelque chose en lui ».",
+      "bbox": {
+        "x_pct": 11.669,
+        "y_pct": 19.752,
+        "w_pct": 75.817,
+        "h_pct": 29.281
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce Pouvoir-là, je crois, on l'appelle liberté. Mais la liberté n'est pas donnée. Elle se conquiert, grâce à l'ordre social, sur cet ordre social, grâce au Pouvoir et aussi contre lui. Elle se saisit elle-même à la fois comme pouvoir, et comme non-pouvoir, et comme antipouvoir. Et elle saisit le Pouvoir qui assure cet ordre à la fois comme indispensable, et comme l'autre, l'ennemi. Selon sa loi la plus intime, il ne devrait pas y avoir de Pouvoir. Mais sans Pouvoir, elle ne serait que jeu d'ombre. Et elle le sait. Ou elle devrait le savoir.",
+      "bbox": {
+        "x_pct": 11.669,
+        "y_pct": 50.744,
+        "w_pct": 75.585,
+        "h_pct": 20.107
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number/header was included in the main text flow initially.",
+    "OCR output for block text needs verification against original scan text quality."
+  ],
+  "doc_id": "1530",
+  "page": 23,
+  "elapsed_seconds": 5.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

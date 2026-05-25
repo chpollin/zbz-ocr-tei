@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "232 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 12.019,
+        "y_pct": 77.0,
+        "w_pct": 85.71,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page header/numbering artifact that was merged into the text body."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "xiste (et sans doute chez Marx lui-même) une tendance spiritualiste abstraite, qui porte à croire que « comprendre » certains processus matériels diminue la pesanteur de la matière et suffit en quelque sorte à l'abolir. Faire apparaître la dépendance profonde des volontés et des conceptions humaines, telles qu'elles se sont affirmées au cours de l'histoire, à l'égard des structures économiques, du soubassement matériel des sociétés, ce serait déjà, selon certains, délivrer les hommes de leurs servitudes corporelles, leur rendre une sorte de légéreté de pures intelligences. J'exagère évidemment, mais dans la pensée socialiste, ou plutôt dans l'affectivité socialiste, cette tendance existe. On suppose que dans la société sans classes, rationnellement organisée pour une production de biens aussi abondante que possible, obtenus avec le moins d'effort possible et distribués selon la justice, on n'aura même plus besoin de bonté, de vertu, de sacrifices quelconques : la compétition entre les hommes ayant disparu, le malheur des uns cessant de faire le bonheur des autres, tous les efforts seront désormais convergents.",
+      "bbox": {
+        "x_pct": 12.019,
+        "y_pct": 10.989,
+        "w_pct": 85.71,
+        "h_pct": 37.879
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On conçoit que les communistes, pour fonder un tel rêve, aient vu la nécessité d'une volonté unanime, et par conséquent d'une doctrine totale imposée à tous comme la Doctrine, la seule. Mais les socialistes optimistes dont je viens de parler, s'ils rejettent une telle Doctrine, restent simplement dans le vague : ils comptent sur une unanimité qui, un jour, se fera toute seule. Ce faisant, ils méconnaissent encore plus que les communistes la condition humaine réelle. Il est toujours dangereux, pour un groupe social, de songer sans cesse à un idéal futur. La malléabilité de l'irréel le rend alors d'autant plus rigoureux dans ses exigences que l'action concrète apparaît plus lointaine, et ses exigences absolues le dispensent d'autant mieux de faire ce qu'il serait possible de faire dans l'immédiat. A cet égard, certains mouvements socialistes ont acquis les défauts qui sont traditionnellement ceux des groupements politiques en exil, occupés du passé et du futur, jamais du présent.",
+      "bbox": {
+        "x_pct": 11.838,
+        "y_pct": 48.191,
+        "w_pct": 85.696,
+        "h_pct": 33.627
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En fait, tant que l'homme sera l'homme, il se heurtera à son prochain. Sinon, il ne pourrait même pas l'aimer et rien n'aurait plus de sens. Nous ne connaîtrons pas le Paradis sur cette planète qui restera le pays des amours et des luttes entre les hommes —",
+      "bbox": {
+        "x_pct": 11.88,
+        "y_pct": 81.845,
+        "w_pct": 85.515,
+        "h_pct": 8.262
+      },
+      "changed": true,
+      "change_reason": "Fixed critical OCR errors that destroyed the sentence structure."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Page number and running header merged into paragraph text",
+    "Extreme OCR corruption in the final paragraph",
+    "Significant typos throughout paragraphs"
+  ],
+  "doc_id": "330",
+  "page": 266,
+  "elapsed_seconds": 6.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

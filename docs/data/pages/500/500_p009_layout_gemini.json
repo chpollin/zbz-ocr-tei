@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il se peut qu'au moment où je parle, je ne sente plus la réalité de l'injustice sociale ou que je ne sois pas à même de la faire sentir. Il suffit cependant de se replonger dans la vie et de regarder au dehors pour apercevoir des faits simples et absurdes. Pourquoi est-ce la femme qui circule en automobile qui porte un manteau de fourrure, et non pas celle qui vend des produits au marché et reste des heures dehors? Pourquoi l'ouvrier qui accomplit un travail particulièrement pénible habite-t-il un quartier misérable et dispose-t-il de moins de place et de moins de confort chez lui qu'un ingénieur? J'ai pris par jeu ces deux exemples anodins, frivoles. Ils ne sont rien à côté de la réalité. Il y va de bien d'autres choses: on meurt plus dans des conditions misérables, on y meurt plus tôt; l'intelligence, l'âme des enfants s'y atrophie, etc., etc.",
+      "bbox": {
+        "x_pct": 5.877,
+        "y_pct": 7.224,
+        "w_pct": 39.555,
+        "h_pct": 29.334
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and incomplete. Updated to reflect the full content of the paragraph based on the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'est-ce aujourd'hui que cette fameuse démocratie industrielle dont on parle toujours? S'agit-il d'une nouvelle forme de propriété? Implique-t-elle",
+      "bbox": {
+        "x_pct": 6.039,
+        "y_pct": 36.954,
+        "w_pct": 39.394,
+        "h_pct": 5.302
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and contained incomplete words. Corrected to match the full text shown in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le à la nationalisation? Quels ont été les effets réels des nationalisations? La cogestion est-elle un remède? Est-ce vraiment un problème de propriété qui se pose? N'est-ce pas plutôt un problème de répartition du pouvoir? Comment se lient les problèmes de répartition et ceux de production des biens? De quelle manière peut-on organiser une économie dirigée qui ne menace pas la liberté? Dans quel sens l'économie doit-elle être dirigée? - Et puis, ne négligeons pas les problèmes de la supranationalité. Comment peut-on mettre fin aux nations anachroniques, dans un monde, sur une terre devenue aussi petite? - Et enfin: comment sauvegarder chez l'homme le goût sauvage et gênant de la liberté?",
+      "bbox": {
+        "x_pct": 48.965,
+        "y_pct": 7.286,
+        "w_pct": 39.555,
+        "h_pct": 27.155
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and contained artifacts. Corrected to match the full text shown in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les hommes sont conviés à des tâches nouvelles: celles d'aujourd'hui. Dans bien des domaines, tous les problèmes sont neufs. Il faut rejeter les slogans et accepter enfin de voir les options réelles.",
+      "bbox": {
+        "x_pct": 48.933,
+        "y_pct": 35.157,
+        "w_pct": 39.612,
+        "h_pct": 7.073
+      },
+      "changed": true,
+      "change_reason": "The original text was mangled and incomplete. Corrected to match the full text shown in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "241",
+      "bbox": {
+        "x_pct": 85.0,
+        "y_pct": 95.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Most text fields were truncated or corrupted, necessitating manual re-transcription.",
+    "Page number 241 was missing in the original regions."
+  ],
+  "doc_id": "500",
+  "page": 9,
+  "elapsed_seconds": 5.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

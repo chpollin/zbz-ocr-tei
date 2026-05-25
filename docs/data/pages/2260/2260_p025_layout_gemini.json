@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lèvres serrées, yeux trop larges, joues durcies, le visage, absent à lui-même à force d'attention, écoute. Eve écoute quoi?",
+      "bbox": {
+        "x_pct": 10.061,
+        "y_pct": 11.002,
+        "w_pct": 65.818,
+        "h_pct": 8.443
+      },
+      "changed": true,
+      "change_reason": "The text was fragmented and contained reading errors. Corrected text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle écoute la naissance d’une écoute. Alors que sa main gauche s’en va loin d’elle cueillir à son insu – elle veut l’ignorer – le fruit défendu, sa main droite, au-dessus de ce coude encore pris dans la glaise éternelle, vient effleurer sa propre joue pour la première fois. D’une main Eve cueille la pomme, de l’autre elle se touche elle-même. Geste étrange: surprise, effroi, pitié d’Eve qui se découvre avant d’avoir dit «moi». Comme après un rêve, une infinie absence, cette main droite qui la touche sent qu’elle touche. Cette joue touchée se sent touchée. Eve se sait. Elle écoute et sait qu’elle écoute.",
+      "bbox": {
+        "x_pct": 10.097,
+        "y_pct": 19.638,
+        "w_pct": 65.939,
+        "h_pct": 39.31
+      },
+      "changed": true,
+      "change_reason": "The text was severely fragmented and included reading errors. Corrected to reflect the full paragraph structure visible."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ecoute-t-elle au-dehors? Ecoute-t-elle au-dedans? La main qui touche sa joue, la tête entière s’inscrivent au creux d’une forte tige tordue. On dirait qu’elle s’y appuie, qu’elle écoute dans cette tige, avec son oreille cachée, son propre commencement. Dans un instant,",
+      "bbox": {
+        "x_pct": 10.097,
+        "y_pct": 61.81,
+        "w_pct": 65.939,
+        "h_pct": 16.919
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and reading errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 72.18,
+        "y_pct": 81.65,
+        "w_pct": 2.76,
+        "h_pct": 2.37
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction was highly fragmented and contained OCR errors.",
+    "Page number 27 was not included in the original regions.",
+    "Text content was not fully captured in the provided regions."
+  ],
+  "doc_id": "2260",
+  "page": 25,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

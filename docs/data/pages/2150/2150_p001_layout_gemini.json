@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH, GENÈVE",
+      "bbox": {
+        "x_pct": 33.722,
+        "y_pct": 69.579,
+        "w_pct": 32.556,
+        "h_pct": 1.583
+      },
+      "changed": true,
+      "change_reason": "Identified running header incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "À la veille de mon voyage en Grèce. Pour Dino Larese, avec mon amicale reconnaissance . C'est vrai: je ne suis encore jamais allée en Grèce. Moi qui ai tant voyagé dans les divers continents, qui ai entrepris seule un très long voyage à travers l'Amérique latine à une époque où cela ne se faisait pas et où rien n'était préparé pour cela, je ne suis jamais allée en Grèce. C'est le dernier moment pour le dire: demain il sera trop tard, j'y serai, je la verrai, l'entendrai, je le respirerai.",
+      "bbox": {
+        "x_pct": 10.245,
+        "y_pct": 15.826,
+        "w_pct": 36.386,
+        "h_pct": 31.784
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment se fait-il que je n'y sois jamais allée? La vraie raison, je crois, est en moi-même: je ne voulais pas y aller. Dans mon enfance, j'ai possédé un petit livre, modestement relié de gris, à peine illustré de quelques dessins au trait noir qui rendaient les personnages semblables à des statues, intitulé «Contes et légendes de la Grèce héroïque». Il y avait là des histoires de héros et de dieux, sans grande différence entre les uns et les autres. Je les ai lues et relues jusqu'à les savoir par cœur. L'une, en particulier, me fascinait: celle où Alceste, la femme bien-aimée d'Admète, obtenait des dieux la faveur de mourir à la place de son époux. Elle",
+      "bbox": {
+        "x_pct": 9.863,
+        "y_pct": 46.883,
+        "w_pct": 36.717,
+        "h_pct": 41.696
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "36",
+      "bbox": {
+        "x_pct": 10.245,
+        "y_pct": 91.557,
+        "w_pct": 1.93,
+        "h_pct": 1.768
+      },
+      "changed": true,
+      "change_reason": "Corrected labeling of page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "s'éteignait lentement, doucement, entourée de ceux qu'elle aimait, ses enfants et celui qui lui devrait, comme disait le texte, «de voir encore la lumière du jour», et elle ne fermait les yeux, par faiblesse et sans souffrance, qu'après leur avoir dit ce qu'elle voulait encore leur dire. Le texte était tout imprégné de son sacrifice. Moi je trouvais son sort - mourir pour celui qu'elle aimait, et de cette façon - enviable et désirable entre tous, sans le moindre attendrissement. Peut-être est-ce en somme à cause d'Alceste que je ne suis jamais allée en Grèce. La Grèce, pour moi, n'était pas en un lieu déterminé de la terre, où en pouvait se rendre au cours d'un voyage, par un moyen de locomotion ordinaire: train, voiture, bateau ou avion. Il n'y avait aucune continuité possible entre la Suisse où je vivais et la Grèce où s'aimaient et s'entretuaient un peuple de dieux, de statues, de nymphes et de héros. La Grèce était dans l'Olympe. L'Olympe, c'était l'ailleurs, radicalement. Là-bas, même les cariatides, immobiles sous la masse de pierre qu'elles supportent, regardent la mer et vivent les souffrances et les triomphes des hommes.",
+      "bbox": {
+        "x_pct": 55.241,
+        "y_pct": 78.117,
+        "w_pct": 35.709,
+        "h_pct": 10.793
+      },
+      "changed": true,
+      "change_reason": "Region was missing from original json scan and text was incorrect."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On me parle du bruit et de la pollution à Athènes, et ça je le crois, je le sais, je l'ai vu, puisque, malgré tout, il m'est arrivé de changer d'avion à Athènes.",
+      "bbox": {
+        "x_pct": 55.241,
+        "y_pct": 78.117,
+        "w_pct": 35.709,
+        "h_pct": 10.793
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "37",
+      "bbox": {
+        "x_pct": 89.47,
+        "y_pct": 91.557,
+        "w_pct": 1.93,
+        "h_pct": 1.768
+      },
+      "changed": true,
+      "change_reason": "Corrected labeling of page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original JSON failed to detect large text block on right page.",
+    "Page headers and footers were incorrectly labeled as text.",
+    "OCR transcription was poor in the provided text fields."
+  ],
+  "doc_id": "2150",
+  "page": 1,
+  "elapsed_seconds": 7.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

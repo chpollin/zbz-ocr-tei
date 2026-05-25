@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fessard disait qu'ils se corrompaient eux-mêmes à travers ce qu'ils disaient. C'est à ce genre de critique qu'il s'est livré dans un de ses derniers ouvrages, qui s'intitule Eglise de France, prends garde de perdre ta foi, dans lequel il analyse certains textes des évêques de France.",
+      "bbox": {
+        "x_pct": 3.333,
+        "y_pct": 3.895,
+        "w_pct": 79.487,
+        "h_pct": 8.468
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Sa situation dans l'Eglise a été difficile.",
+      "bbox": {
+        "x_pct": 16.203,
+        "y_pct": 12.5,
+        "w_pct": 43.834,
+        "h_pct": 2.661
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header as it functions as a sub-heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle a toujours été difficile; d'abord parce qu'il appartenait à la génération de Teilhard de Chardin dont il était l'ami, mais dont il critique d'ailleurs certains points de doctrine. Tout ce groupe a été condamné par Rome, ils n'ont pas pu enseigner, etc. Plusieurs écrits du Père Fessard ont dû attendre vingt ans pour être publiés. Il a donc été d'abord en mauvais termes avec l'Eglise parce qu'il était à l'avant-garde, et ensuite à nouveau, parce qu'il s'opposait à ceux qui s'estimaient à l'avant-garde, les chrétiens qui tentaient de concilier christianisme et marxisme.",
+      "bbox": {
+        "x_pct": 3.175,
+        "y_pct": 14.492,
+        "w_pct": 79.524,
+        "h_pct": 15.855
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour en revenir à votre question, nous avons pu avoir des discussions sans fin parce que nous avions des points communs ; mais il y avait aussi des obstacles, des résistances, la discussion vivait et se réalimentait constamment. — Je me suis souvent demandé pourquoi l'Eglise qui, pour autant que je sache, ne brille pas aujourd'hui par l'éclat et l'actualité de son argumentation, ne tire-t-elle pas parti d'une œuvre comme celle-là, qui est ancrée au cœur de sa tradition et qui, en même temps, traverse la pensée moderne et contemporaine avec une compétence rare ?",
+      "bbox": {
+        "x_pct": 3.053,
+        "y_pct": 30.54,
+        "w_pct": 79.487,
+        "h_pct": 16.234
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans les Mélanges qui vous ont été offerts (Penser dans le temps, 1977), le Père Fessard vous a consacré un long article qu'il conclut par ces lignes, à vous directement adressées : « Sans doute ne suis-je qu'un païen idolâtre qui tâche péniblement de se convertir pour devenir chrétien ; tandis que vous restez membre du peuple à la nuque raide et farouchement incrédule. Pourtant, je n'en suis pas moins persuadé que vous êtes aussi, volens nolens, une Juive élue. » Que pensez-vous de cette affirmation ?",
+      "bbox": {
+        "x_pct": 3.211,
+        "y_pct": 46.855,
+        "w_pct": 79.487,
+        "h_pct": 16.129
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Père Fessard reprend ici des catégories fondamentales du système de sa philosophie de l'histoire, qui sont assez difficiles à interpréter isolément à cause de l'unité de sa pensée. D'un côté, quand il dit païen, quand il dit juif et quand il dit chrétien, on doit l'entendre au pied de la lettre. Mais d'un autre côté, à l'autre extrême, ce sont des catégories métaphysiques et symboliques. Et là, il est hégélien. La philosophie de l'histoire de Hegel, qui s'appuie sur d'innombrables données concrètes, est en même temps une histoire symbolique du devenir de la liberté dans le monde. De même, chez le Père Fessard, les catégories du païen du juif, comme celles de l'homme et de la femme, sont symboliques et métaphysiques. Je vous donnerai un petit exemple : on demandait l'autre jour à un évêque, à la télévision, pourquoi l'Eglise catholique n'accepte pas des femmes prêtres, et il n'a absolument pas su répondre. Eh bien ! le Père Fessard avait ses raisons. Selon lui, la",
+      "bbox": {
+        "x_pct": 2.93,
+        "y_pct": 62.847,
+        "w_pct": 79.695,
+        "h_pct": 28.065
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "199",
+      "bbox": {
+        "x_pct": 79.243,
+        "y_pct": 96.089,
+        "w_pct": 2.808,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Labeled as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most OCR text was highly garbled and required manual correction.",
+    "Page number at the bottom was mislabeled as text.",
+    "Section heading was mislabeled as text."
+  ],
+  "doc_id": "2330",
+  "page": 203,
+  "elapsed_seconds": 7.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

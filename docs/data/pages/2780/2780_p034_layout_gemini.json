@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "la continuité et le changement de l'histoire.",
+      "bbox": {
+        "x_pct": 17.373,
+        "y_pct": 13.491,
+        "w_pct": 48.729,
+        "h_pct": 2.968
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header rather than a standard paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De quelle musique va-t-il s'agir désormais ? Et surtout : quel est dès maintenant le rapport entre la musique et la liberté? Ce qu'on aime aujourd'hui dans la musique, est-ce bien la liberté - ou un lieu de fuite, un peu comme une secte, permettant l'abandon à l'irresponsabilité d'autrui? Certaines formes, certaines fêtes musicales contemporaines renforcent de tels soupçons. Il faudrait encore demander, plus précisément, si c'est avec sa propre liberté qu'on reçoit la musique, ou si on ne demande à celle-ci qu'une ivresse confuse, dispensant de toute liberté.",
+      "bbox": {
+        "x_pct": 17.373,
+        "y_pct": 15.536,
+        "w_pct": 57.521,
+        "h_pct": 26.795
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and label alignment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour bien comprendre ce que cela peut vouloir dire : «recevoir la musique avec sa liberté», peut-être est-il nécessaire aujourd'hui de revenir au sens même de la liberté comme telle. La liberté, ce n'est pas la possibilité, tout extérieure, offerte à une volonté capricieuse, de faire ce qu'elle veut, comme elle veut, quand elle veut. Une telle «liberté», outre qu'elle n'aurait aucun intérêt, ne résulterait que d'une lacune apparente dans les séries causales ; elle ne serait qu'un caprice arbitraire, issu d'un enchaînement souterrain de la même causalité naturelle se prolongeant dans l'intériorité psychique d'un animal humain. Non, la vraie liberté n'est pas",
+      "bbox": {
+        "x_pct": 17.511,
+        "y_pct": 43.966,
+        "w_pct": 57.278,
+        "h_pct": 28.7
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and label alignment."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "35",
+      "bbox": {
+        "x_pct": 71.368,
+        "y_pct": 75.143,
+        "w_pct": 2.45,
+        "h_pct": 2.162
+      },
+      "changed": true,
+      "change_reason": "Isolated page number and reclassified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was poor, requiring significant text reconstruction.",
+    "Section header misclassified as text.",
+    "Page number at the bottom was entirely missed by the original detection.",
+    "Text fragments were incomplete or incorrect."
+  ],
+  "doc_id": "2780",
+  "page": 34,
+  "elapsed_seconds": 4.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

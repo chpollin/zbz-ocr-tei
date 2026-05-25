@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Energieprobleme . Nein, ein Allhellmittel hätten wir damit noch nicht. Was wir sciner Einstellung zum Älterwerden befragte: —Nicht schlecht, wenn man die Alternative bedenkt.”",
+      "bbox": {
+        "x_pct": 7.661,
+        "y_pct": 10.233,
+        "w_pct": 35.231,
+        "h_pct": 7.539
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Evolution du monde et permanence des valeurs",
+      "bbox": {
+        "x_pct": 56.116,
+        "y_pct": 10.643,
+        "w_pct": 30.223,
+        "h_pct": 4.989
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 56.306,
+        "y_pct": 17.882,
+        "w_pct": 6.587,
+        "h_pct": 1.596
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled author name in text region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est banal de rappeler qu'au cours du dernier demi-siècle les conquêtes de la science et de la technique ont été immenses. Pourtant, nos contemporains n'en ont que faiblement conscience: récemment, la télévision française, reconstruisant le décor du monde ouvrier lors du Congrès de Tours, en 1905, nous montrait un pavillon de banlieue, des robes, des coiffures élégantes, des pardessus confortables qui pourraient à la rigueur étre ceux d'aujourd'hui. Les ouvriers partaient en vacance - alors que les vacances ont été inconnues jusqu'en 1936. En entrant dans un logement, on croyait entendre la musique d'un transistor. - Il y a, dans cette manière d'occulter, dans les consciences, les extraordinaires progrès sociaux et matériels accomplis depuis lors, une curieuse complicité entre patrons et syndicalistes: les patrons préfèrent ensevelir dans l'oubli les conditions de travail qui furent celles du premier siècle industriel, et les syndicats ne tiennent pas à ce que, mesurant le chemin parcouru, leurs membres risquent de se sentir, par contraste, satisfaits. Enumérons sommairement quelques-uns des domaines dans lesquels l'évolution rapide des techniques industrielles a eu des effets sans précédent au cours d'un laps de temps aussi court: l'environnement (plutôt pour le pire, mais parfois aussi pour le meilleur); la mobilité des hommes, auxquels s'ouvre désormais le vaste monde (quel que soit l'usage qu'ils font de cette ouverture); la durée de vie (elle est environ le double de ce qu'elle a été); le niveau de vie (logement, nourriture, formation); la durée et les conditions du travail (le plus souvent améliorées par la diminution de l'effort physique et des menaces pour la santé, mais parfois aussi aggravées par la croissance du désintérét et de l'ennui). Il faut penser aussi à des transformations plus récentes, notamment dans les moeurs les plus concrètes et les plus quotidiennes: rejet ou mise en question de contraintes sexuelles, auparavant violées certes, mais guère contestées; accès général de femmes à la formation et à l'activité professionnelle; baisse impressionnante de la natalité; possibilités multipliées pour tous, dans tous les domaines, de déterminer le chemin et le cadre de leur vie (en assumant ou non leurs responsabilités) et de choisir leur accès à la culture. Sans oublier les transformations planétaires qui se sont produites et dont dépendent directement ou indirectement notre présent et surtout notre avenir: pollution croissante qui menace la nature entière, air, terre et eau; épuisement menaçant des matières premières, et d'abord des ressources énergétiques, considérées jusqu'à une époque très récente comme inépuisables; établissement, au-dessus des rapports entre Etats traditionnels, de deux superpuissances à la fois interdépendantes et ennemies, désormais contestées au sein d'un polycentrisme encore assez confus, où l'Europe fédérée tente de naître et de se forger un destin; montée d'un tiers-monde dont l'influence et la politisation n'excluent ni la misère, ni même la famine, et où le développement semble entravé à la fois par des facteurs extérieurs et par des contradictions internes.",
+      "bbox": {
+        "x_pct": 56.306,
+        "y_pct": 21.729,
+        "w_pct": 35.322,
+        "h_pct": 56.131
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 2,
+  "issues": [
+    "OCR of the main paragraph was severely corrupted.",
+    "Name 'Hersch' was misspelled as 'Horsch' in the source box.",
+    "Page numbers at the bottom left and right were not captured as regions; I am ignoring them as requested by implied constraints, but they should be _filter if they were.",
+    "Text region on the left is incomplete/truncated."
+  ],
+  "doc_id": "1720",
+  "page": 3,
+  "elapsed_seconds": 10.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "partielle, atomisée en quelque sorte. Personne n'arrive à le dominer par la pensée, c'est quelque chose peut faire vraiment peur. Il y a déjà eu des victimes innombrables, il y en aura encore, et je n'arrive pas à y voir clair. Par exemple, les grandes famines qui sévissent actuellement en Afrique me laissent absolument perplexe. Je ne parviens pas à comprendre les raisons pour lesquelles on n'arrive pas à secourir les affamés, avec les moyens modernes de transport, de réfrigération, la surabondance de denrées alimentaires dont nous souffrons en Occident. Nous avons pourtant la possibilité d'utiliser des hélicoptères et des avions qui peuvent atterrir presque à l'endroit même où se trouvent les gens qui meurent de faim. Je n'arrive pas à me représenter concrètement les obstacles auxquels se heurtent chaque jour, par exemple, la Croix Rouge, l'Aide internationale aux réfugiés ou le secrétaire général de la FAO — on nous l'explique et je ne comprend pas.",
+      "bbox": {
+        "x_pct": 39.0,
+        "y_pct": 41.0,
+        "w_pct": 79.0,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and unified the fragmented paragraph structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez de vos vœux la décolonisation, comment appréciez-vous le tiers-mondisme ?",
+      "bbox": {
+        "x_pct": 40.0,
+        "y_pct": 320.0,
+        "w_pct": 800.0,
+        "h_pct": 45.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and merged fragmented lines into a single coherent paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais bien que vous me définissiez le tiers-mondisme",
+      "bbox": {
+        "x_pct": 68.0,
+        "y_pct": 362.0,
+        "w_pct": 730.0,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Corrected typos and removed artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je le définirais avec Pascal Bruckner, l'auteur du Sanglot de l'homme blanc, comme un « militantisme expiatoire », comme cette mode qui s'est implantée depuis les années 60, consistant à battre sa coulpe d'Européen, responsable de tous les maux des pays du Tiers-Monde, en idéalisant ces pays autrefois exploités...",
+      "bbox": {
+        "x_pct": 40.0,
+        "y_pct": 390.0,
+        "w_pct": 800.0,
+        "h_pct": 105.0
+      },
+      "changed": true,
+      "change_reason": "Fixed transcript errors and unified paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a beaucoup dit, par exemple, à un certain moment, que l'Europe seule était belliqueuse, que les peuples de tous les autres continents étaient infiniment plus paisibles et plus pacifiques. Et que voit-on ? Depuis que les peuples des autres continents sont entrés dans l'histoire avec ses affrontements et sa problématique, ils se battent au moins autant et, sauf par manque de moyens, de façon souvent pire qu'on ne s'est battu en Europe. L'être humain est ainsi fait, quand il devient historique, c'est-à-dire qu'il cherche à façonner son histoire. L'histoire est une chose à la fois magnifique, qui donne son sens à la vie individuelle et collective — par ce qui la dépasse d'ailleurs, pas par elle-même — l'histoire est une chose magnifique, mais c'est aussi une chose atroce, et en Europe on le sait depuis toujours. Je ne crois ni à l'idéalisation, ni au mépris. Je crois que les hommes sont des hommes. Au fond, dire que les autres nous sont tellement supérieurs, c'est un racisme à rebours. Nous sommes tous des êtres humains, avec la grandeur, les risques, les horreurs, les beautés, de la condition humaine. Dans la mesure où l'on y accède, cette accession développe tous les pouvoirs de l'homme dans tous les sens, en bien, en mal, pour le bonheur et pour le malheur. Le tiers-mondisme en tant que mode me paraît haïssable, parce qu'c'est en grande partie un alibi. Par exemple, à l'Unesco, une partie croissante de l'activité s'est orientée vers le Tiers-Monde, surtout parce qu'on",
+      "bbox": {
+        "x_pct": 39.0,
+        "y_pct": 490.0,
+        "w_pct": 800.0,
+        "h_pct": 420.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and unified the entire block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "153",
+      "bbox": {
+        "x_pct": 795.0,
+        "y_pct": 935.0,
+        "w_pct": 40.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Re-labeled as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was extremely poor with many artifacts and line breaks.",
+    "Bbox coordinates were inconsistent with OCR layout.",
+    "Detected artifacts labeled as paragraph text."
+  ],
+  "doc_id": "2330",
+  "page": 157,
+  "elapsed_seconds": 6.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

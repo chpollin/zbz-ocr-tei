@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ENSEIGNEMENT DE LA PHILOSOPHIE",
+      "bbox": {
+        "x_pct": 312.333,
+        "y_pct": 74.0,
+        "w_pct": 37.666,
+        "h_pct": 1.666
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "39",
+      "bbox": {
+        "x_pct": 776.0,
+        "y_pct": 73.0,
+        "w_pct": 21.0,
+        "h_pct": 2.333
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, les études spécialisées qu'impose le monde moderne finissent souvent par donner aux individus l'impression que leur branche constitue le couronnement de la science et par là de la culture. Cela se produit tout particulièrement chez ceux qui mettent à leurs études spécialisées le plus de gravité — jusqu'au moment où les plus grands d'entre eux se heurtent quelque part aux limites de leur science et retrouvent ainsi l'humain. La philosophie au degré secondaire devrait permettre aux élèves de prendre une vue assez générale de la culture humaine pour que chaque discipline scientifique y trouve sa place justement proportionnée, celle qui lui donnera à elle, et en même temps à tout l'ensemble, le maximum de vie et de vérité.",
+      "bbox": {
+        "x_pct": 10.693,
+        "y_pct": 10.028,
+        "w_pct": 70.234,
+        "h_pct": 22.792
+      },
+      "changed": true,
+      "change_reason": "Expanded text to match actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En résumé, les tâches d'un enseignement philosophique secondaire me paraissent être les suivantes : éveiller l'esprit de l'élève aux problèmes philosophiques ; l'amener à prendre conscience de ses propres opérations (éléments de psychologie, de logique, de méthodologie) ; faire connaître quelques-unes des grandes doctrines critiques, morales et métaphysiques ; rendre l'élève capable d'utiliser de façon claire le langage philosophique forgé par la tradition et l'histoire de la pensée ; enfin lui donner une idée juste des proportions de chaque discipline scientifique au sein d'un humanisme harmonieux.",
+      "bbox": {
+        "x_pct": 10.661,
+        "y_pct": 32.325,
+        "w_pct": 70.403,
+        "h_pct": 18.427
+      },
+      "changed": true,
+      "change_reason": "Expanded text to match actual content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "III. Les objections.",
+      "bbox": {
+        "x_pct": 35.052,
+        "y_pct": 53.521,
+        "w_pct": 21.757,
+        "h_pct": 2.108
+      },
+      "changed": true,
+      "change_reason": "Corrected Roman numeral transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je viens de faire un plaidoyer en faveur de l'enseignement de la philosophie au degré secondaire. Il me faut maintenant avouer que bien des gens s'y opposent. Evidemment, il y a ceux qui sont contre toute philosophie, soit parce qu'ils la considèrent comme un pur verbalisme, un jeu de l'esprit qui se crée artificiellement des difficultés à l'aide desquelles il fera ensuite le malin, un effort stérile pour couper en quatre des idées simples ou pour bavarder autour de questions que rien n'entame et qui restent insolubles après comme avant. Il y a tous ceux qui méprisent la philosophie parce qu'ils y ont toujours été sourds, comme on peut être sourd à la musique, ou parce qu'ils la jugent du haut de leur bon sens (« elle ne rapporte rien »), ou du haut du progrès scientifique (« elle n'aboutit à aucune évidence commune »), ou du haut de leur foi dogmatique (« elle ne donne aucune certitude définitive »). Au mieux, tous ceux-là se contenteront de dire : « C'est du temps perdu. Et vous parlez de charger encore les programmes secondaires ? »",
+      "bbox": {
+        "x_pct": 10.902,
+        "y_pct": 56.353,
+        "w_pct": 70.218,
+        "h_pct": 31.949
+      },
+      "changed": true,
+      "change_reason": "Expanded text to match actual content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected missing page header in original json",
+    "Detected missing page footer in original json",
+    "Incomplete text capture in paragraph blocks",
+    "Minor OCR typo in section header"
+  ],
+  "doc_id": "180",
+  "page": 7,
+  "elapsed_seconds": 5.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

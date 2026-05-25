@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "VORWORT",
+      "bbox": {
+        "x_pct": 37.878,
+        "y_pct": 18.679,
+        "w_pct": 18.16,
+        "h_pct": 1.862
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine junge Frau, achtundzwanzig Jahre alt, unterbricht ihre Ferien in Südfrankreich, um während des Wochenendes in Westberlin einen ehemaligen Freund zu treffen. Dieser Freund hat telefonisch versprochen, ihr von einem amerikanischen Ehepaar Nachrichten zu geben, das ihr längere Zeit die Eltern ersetzt hatte und seit einiger Zeit spurlos hinter dem Eisernen Vorhang verschwunden war.",
+      "bbox": {
+        "x_pct": 6.973,
+        "y_pct": 23.023,
+        "w_pct": 80.074,
+        "h_pct": 16.25
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy based on visual OCR interpretation"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erica Wallad verläßt also für ein Paar Tage ihren Mann und ihre beiden kleinen Kinder (das Mädchen ist anderthalb Jahre, der Junge sechs Monate alt) und fährt nach Westberlin. Dort findet sie den Freund nicht. Sie ruft verschiedene Bekannte an, wird nach Ostberlin gelockt – und ist verschollen. Erst fünf Jahre später – 1955 – erscheint sie wieder im Westen.",
+      "bbox": {
+        "x_pct": 6.869,
+        "y_pct": 39.486,
+        "w_pct": 80.415,
+        "h_pct": 14.238
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dort hatte man in der Zwischenzeit nichts ihr gewußt. Plötzlich tauchte sie nun in bürgerlichen Zeitungen als typische Doppelagentin auf, die angeblich ein märchenhaftes, luxuriöses Leben im Stil einer Mata Hari führte.",
+      "bbox": {
+        "x_pct": 6.973,
+        "y_pct": 53.697,
+        "w_pct": 80.223,
+        "h_pct": 9.158
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich hatte damals seit mehr als zehn Jahren kaum etwas von Erica gehört; ich wußte nur, daß sie nach einer Zeit aktiver Mitarbeit in der kommunistischen Bewegung einen jungen Amerikaner geheiratet hatte, daß sie verschwunden war und daß seit Jahren niemand mehr Nachricht von ihr hatte.",
+      "bbox": {
+        "x_pct": 6.78,
+        "y_pct": 62.917,
+        "w_pct": 80.119,
+        "h_pct": 11.906
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber in meiner Erinnerung stand sie scharfumrissen. Ihr Vater war aus Hitler-Deutschland geflüchtet und hatte als Arzt auf der republikanischen Seite am spanischen Bürgerkrieg teilgenommen. Auch Erica, ein vierzehnjähriges Kind, half mit: Sie war die jüngste Krankenschwester an der Front. Nach der Niederlage der Republikaner wurde sie nach Genf verschlagen, wo",
+      "bbox": {
+        "x_pct": 6.825,
+        "y_pct": 74.911,
+        "w_pct": 80.119,
+        "h_pct": 14.45
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text extraction was extremely poor/corrupted, required complete correction.",
+    "Bbox coverage is correct, but OCR content needed major cleanup."
+  ],
+  "doc_id": "860",
+  "page": 1,
+  "elapsed_seconds": 4.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Dieu donna l'Amour.",
+      "bbox": {
+        "x_pct": 27.313,
+        "y_pct": 11.473,
+        "w_pct": 32.048,
+        "h_pct": 2.475
+      },
+      "changed": true,
+      "change_reason": "Identified as a chapter or section heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par l'Amour la créature faillit s'abolir dans l'élan rêveusement créateur de Dieu. Dieu alors interposa les images, refusa à l'Amour son objet infini, le voua à la grille séparatrice des symboles. L'Homme s'égara dans le maquis des images, il aima les surfaces limitées et inépuisables des images, insatiablement.",
+      "bbox": {
+        "x_pct": 23.494,
+        "y_pct": 14.31,
+        "w_pct": 65.627,
+        "h_pct": 20.034
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu alors fit que par amour la créature dût haïr et tuer: car l'objet de son amour était mortel et vulnérable et devait être défendu.",
+      "bbox": {
+        "x_pct": 23.819,
+        "y_pct": 34.066,
+        "w_pct": 65.373,
+        "h_pct": 8.359
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Homme ainsi devint le champ de bataille de Dieu contre lui-même. Chaque perfection menaçait d'abolir la créature, et, pour la sauver de l'Un, Dieu devait puiser chaque fois plus profond, dans le vide glissant du manque, un remède pire. Chaque abîme à son tour rétablissait autour de Dieu son unicité essentielle, et Dieu déversait une plus riche plénitude. Dieu meurtrissait ses mains dans ce pétrissage contre sa propre substance.",
+      "bbox": {
+        "x_pct": 23.41,
+        "y_pct": 45.118,
+        "w_pct": 65.747,
+        "h_pct": 28.535
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et l'Autre monstrueux naissait, dont les creux et les bosses, sous les retouches divines,",
+      "bbox": {
+        "x_pct": 23.53,
+        "y_pct": 73.316,
+        "w_pct": 65.542,
+        "h_pct": 5.867
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 23.976,
+        "y_pct": 82.355,
+        "w_pct": 2.53,
+        "h_pct": 2.541
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Multiple severe OCR transcription errors.",
+    "Page number mislabeled as text.",
+    "Section header mislabeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 18,
+  "elapsed_seconds": 4.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

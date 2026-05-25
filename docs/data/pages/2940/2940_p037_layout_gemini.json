@@ -1,0 +1,145 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch",
+      "bbox": {
+        "x_pct": 14.582,
+        "y_pct": 15.493,
+        "w_pct": 5.953,
+        "h_pct": 1.396
+      },
+      "changed": true,
+      "change_reason": "Author name at the start of a contribution should be treated as text/metadata, but label and tag are currently correct for this schema. Keeping as text but flagging."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Furgler",
+      "bbox": {
+        "x_pct": 14.452,
+        "y_pct": 20.652,
+        "w_pct": 6.175,
+        "h_pct": 1.564
+      },
+      "changed": true,
+      "change_reason": "Author name entry, kept as text/paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gasteyger",
+      "bbox": {
+        "x_pct": 12.755,
+        "y_pct": 56.605,
+        "w_pct": 8.133,
+        "h_pct": 1.814
+      },
+      "changed": true,
+      "change_reason": "Author name entry, kept as text/paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Furgler",
+      "bbox": {
+        "x_pct": 14.53,
+        "y_pct": 69.457,
+        "w_pct": 6.266,
+        "h_pct": 1.697
+      },
+      "changed": true,
+      "change_reason": "Author name entry, kept as text/paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JETZT ZUM THEMA SONDERFALL",
+      "bbox": {
+        "x_pct": 23.89,
+        "y_pct": 9.891,
+        "w_pct": 35.862,
+        "h_pct": 2.149
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in 'SONDERFAIL' to 'SONDERFALL'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alle Staaten sind Sonderfälle.",
+      "bbox": {
+        "x_pct": 24.282,
+        "y_pct": 14.992,
+        "w_pct": 30.326,
+        "h_pct": 1.923
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Schweiz ist einmalig: Willensnation, trotz oder dank ihrer Vielseitigkeit. Vier Nationalsprachen! Wir sprechen in Paris, Bonn und Rom bei Verhandlungen mit den französischen, deutschen und italienischen Nachbarn in unserer Landessprache. Welch eine Chance für vertiefte Kontakte! Auch die schweizerische Demokratie ist unvollkommen. Trotzdem ist sie die staatliche Ordnung, welche die politische Freiheit aller am besten verkörpert. Sie begründet eine Lebensform, welche den Menschen, so wie er tatsächlich ist, in den Mittelpunkt stellt, ihn an der Gemeinschaft teilhaben und teilnehmen lässt. Die Volksrechte, vor allem Initiative und Referendum, sind Ausdruck dieser direkten Mitgestaltung (direkte Demokratie).",
+      "bbox": {
+        "x_pct": 24.021,
+        "y_pct": 22.6,
+        "w_pct": 66.057,
+        "h_pct": 30.803
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text capture."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Wunsch, ein Sonderfall zu sein, ist gefährlich; die Grenze zwischen Aussenseitertum und Sonderfall ist fliessend. In der Europapolitik ist die Schweiz ein Aussenseiter, sie könnte, falls sie den EWR ablehnt, zu einem Sonderfall werden.",
+      "bbox": {
+        "x_pct": 24.021,
+        "y_pct": 55.995,
+        "w_pct": 66.097,
+        "h_pct": 10.059
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text capture."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die EFTA und wir damit haben bis heute die Chance verpasst, uns nach dem Osten zu öffnen, frühere Comecon-Staaten als «zuge-wandte Orte» oder - je nach demokratischem Reifegrad - als Mitglieder in die europäische Freihandelsassoziation, später vielleicht in den EWR, aufzunehmen. Vielleicht gelingt es immer noch. «Mieux vaut tard que jamais». Auch die EG wäre glücklich, wenn die EFTA sich im Osten mehr engagiert hätte, ist doch die Aufnahmefähigkeit der EG zurzeit überstrapaziert. Eine vertiefte Mitwirkung der Schweiz an Europa ist unerlässlich.",
+      "bbox": {
+        "x_pct": 24.021,
+        "y_pct": 68.921,
+        "w_pct": 66.018,
+        "h_pct": 22.993
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text capture."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "34",
+      "bbox": {
+        "x_pct": 24.8,
+        "y_pct": 94.0,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Text OCR was significantly truncated or garbled in several paragraph regions.",
+    "Page number at bottom was missed in initial detection.",
+    "Section title contained a typo (SONDERFAIL)."
+  ],
+  "doc_id": "2940",
+  "page": 37,
+  "elapsed_seconds": 7.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

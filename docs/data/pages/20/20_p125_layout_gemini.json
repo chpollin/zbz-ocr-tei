@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LIMITATION : LE NOUMÈNE",
+      "bbox": {
+        "x_pct": 298.0,
+        "y_pct": 77.0,
+        "w_pct": 404.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as section header at the top of the page."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "123",
+      "bbox": {
+        "x_pct": 803.0,
+        "y_pct": 77.0,
+        "w_pct": 43.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et de même, la science moderne aura beau détruire l'espace euclidien pour lui en substituer un autre, et Einstein aura beau démontrer que le monde est fini : Kant n'en est pas davantage « dépassé ». Car il entend par « espace » la représentation que nous avons nécessairement de lui et qui seule permet ensuite de le concevoir d'une autre façon. Ce n'est que si tout « a priori » devait être rejeté que l'enseignement de Kant serait « dépassé ». Quelle est cette forme a priori, — pour nous, grâce à la science, c'est une question; pour Kant ce n'en était pas une. Mais cela n'est pas du tout essentiel. L'essentiel, c'est la nécessité d'une représentation a priori de l'espace. J'ajoute au sujet des conceptions d'Einstein : l'idée que nous avons de l'espace nous pousse à chercher toujours ce qu'il y a « au-delà », à l'infini. Que la science conclue à l'étendue limitée du monde, et nous demanderons forcément ce qu'il y a au-delà du monde. La thèse de Kant, dans ce qu'elle a d'essentiel, ne peut en être atteinte.",
+      "bbox": {
+        "x_pct": 98.0,
+        "y_pct": 120.0,
+        "w_pct": 753.0,
+        "h_pct": 511.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to reflect the actual image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "unsere Erkenntnis mit der Erfahrung anhebt, so entspringt sie darum doch nicht eben aus der Erfahrung. » Kritik der reinen Vernunft, éd. Meiner, p. 38.",
+      "bbox": {
+        "x_pct": 98.0,
+        "y_pct": 675.0,
+        "w_pct": 753.0,
+        "h_pct": 60.0
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph content before the German block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Indessen kann man von diesen (transzendentalen) Begriffen, wie von allen Erkenntnissen, wo nicht das Prinzipium ihrer Möglichkeit, doch die Gelegenheitsursache ihrer Erzeugung in der Erfahrung aufsuchen... Ein solches Nachspüren der ersten Bestrebungen unserer Erkenntniskraft... hat ohne Zweifel seinen grossen Nutzen... »",
+      "bbox": {
+        "x_pct": 98.0,
+        "y_pct": 738.0,
+        "w_pct": 753.0,
+        "h_pct": 147.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors in the German text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction was heavily corrupted by OCR errors.",
+    "Section header not detected.",
+    "Page number not filtered.",
+    "German text segment was incorrectly parsed and fragmented."
+  ],
+  "doc_id": "20",
+  "page": 125,
+  "elapsed_seconds": 4.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

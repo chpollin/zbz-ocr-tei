@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "GHAPITRE PREMIER",
+      "bbox": {
+        "x_pct": 34.22,
+        "y_pct": 26.979,
+        "w_pct": 24.791,
+        "h_pct": 1.569
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text extraction from GHAPITRE FREMIER to GHAPITRE PREMIER."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FONDEMENT PHILOSOPHIQUE OU RELIGIEUX DU SOCIALISME",
+      "bbox": {
+        "x_pct": 20.515,
+        "y_pct": 30.303,
+        "w_pct": 51.448,
+        "h_pct": 4.813
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "MARXISME VIVANT MARXISME MORT",
+      "bbox": {
+        "x_pct": 4.638,
+        "y_pct": 38.743,
+        "w_pct": 51.072,
+        "h_pct": 1.925
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Laissons ici délibérément de côté Marx et sa doctrine. Il appartient aux historiens de la philosophie d'établir quel fut son apport à la pensée de l'Occident. Il appartient à la communauté des philosophes qui, solitaires, dialoguent entre eux par-dessus les années, les siècles et les millénaires, d'établir, d'écouter et d'éprouver, dans cet échange, sa voix et sa présence. Nous l'avons dit, ce qui nous intéresse pour le présent travail, c'est le marxisme diffus dans la conscience des hommes qui veulent s'inspirer de lui pour agir sur les réalités sociales. Non le marxisme de tel professeur ou interprète illustre, ni même de tel chef ouvrier, mais celui des militants moyens ou des sympathisants, celui est devenu comme le signe et la condition sine qua non, apparemment de la fidélité à la cause de la classe ouvrière. Que recouvre ce mot, dont la prétendue intangibilité fait pressentir la faiblesse? Son contenu est-il vivant ou mort dans les consciences?",
+      "bbox": {
+        "x_pct": 4.136,
+        "y_pct": 42.398,
+        "w_pct": 84.54,
+        "h_pct": 30.713
+      },
+      "changed": true,
+      "change_reason": "Updated full text transcription to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une chose d'abord me paraît claire: le marxisme philosophique répandu dans les masses n'a jamais consisté en un système d'idées nettes, mais en une sorte d'atmosphère assez confuse et en une série de « thèmes », au sens où l'on emploie ce mot en musique. C'est la rigueur avec laquelle le marxisme analysait les mécanismes économiques du régime capitaliste et la lutte des classes qui fit croire à sa rigueur générale, — si bien que le mot « marxisme »",
+      "bbox": {
+        "x_pct": 3.719,
+        "y_pct": 72.879,
+        "w_pct": 84.624,
+        "h_pct": 15.241
+      },
+      "changed": true,
+      "change_reason": "Updated full text transcription to fix typos ('dabord', 'marrisme', 'philogophique', 'consisté')."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "151",
+      "bbox": {
+        "x_pct": 11.421,
+        "y_pct": 88.565,
+        "w_pct": 3.203,
+        "h_pct": 1.275
+      },
+      "changed": true,
+      "change_reason": "Changed label to page_footer and tag to _filter as it is a page number."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Transcription errors in paragraph texts.",
+    "Page number incorrectly labeled as text.",
+    "Small typo in chapter heading title in original extraction."
+  ],
+  "doc_id": "330",
+  "page": 185,
+  "elapsed_seconds": 5.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "116 L'Ê TRE ET LA FORME",
+      "bbox": {
+        "x_pct": 21.059,
+        "y_pct": 10.457,
+        "w_pct": 68.665,
+        "h_pct": 2.223
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing running header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "porte   laquelle; mais celle est   voulue), au moyen de c'esl-à-dirc de la causalité impliquée par l",
+      "bbox": {
+        "x_pct": 21.059,
+        "y_pct": 13.645,
+        "w_pct": 68.665,
+        "h_pct": 44.442
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il aura donc deux sortes dirréalismes   politiques , et j'entends   évidemment par non pas une condu",
+      "bbox": {
+        "x_pct": 21.128,
+        "y_pct": 58.109,
+        "w_pct": 68.435,
+        "h_pct": 11.063
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "étude BuI Monteequieu, dang Tableau   de la Littéra ture française.",
+      "bbox": {
+        "x_pct": 21.289,
+        "y_pct": 71.982,
+        "w_pct": 68.435,
+        "h_pct": 3.113
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region in original input."
+  ],
+  "doc_id": "110",
+  "page": 118,
+  "elapsed_seconds": 3.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

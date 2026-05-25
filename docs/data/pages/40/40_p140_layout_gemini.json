@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est l'hiver tout à fait. Les jours se suivent et ressemblent. Il ne pleut pas, il n'y a pas de vent, les arbres ont des silhouettes précises et constantes, le ciel uniforme est presque blanc, il fait froid. Je me lève tard, je lis peu, je tricote et je crochète, j'attends. La fin de ce récit. L'enfant. Toi. Ton paquet de vêtements arrivé hier a ressuscité, par des plis et des poches aux manches et aux pantalons, tes attitudes que je connais. Je ne souffre pas d'attendre, dans cette immobilité. Le feu met toujours la même chaleur visible sur le cuir du soufflet, le métal des pincettes, le bois ciré du parquet, et sur mes mains. Tout est su.",
+      "bbox": {
+        "x_pct": 11.622,
+        "y_pct": 32.164,
+        "w_pct": 81.081,
+        "h_pct": 27.854
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Combien autre ce dimanche de juillet de mes vingt ans. A force de m'interdire de penser, de prévoir, de vouloir, à force de désirer la détente et le naturel, je n'avais pas dormi de la nuit. Le matin vint enfin, ensoleillé. Je mis une robe de toile et j'allai chercher Pierre à la station. Le train était déjà reparti quand je suis arrivée; Pierre avançait sur le quai, je le vis de loin.",
+      "bbox": {
+        "x_pct": 11.581,
+        "y_pct": 65.057,
+        "w_pct": 81.216,
+        "h_pct": 18.053
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Bonjour. Quel beau temps !",
+      "bbox": {
+        "x_pct": 20.0,
+        "y_pct": 82.892,
+        "w_pct": 39.824,
+        "h_pct": 2.647
+      },
+      "changed": true,
+      "change_reason": "Added missing dialogue em-dash to reflect original text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original text layer for the first paragraph contained significant OCR gibberish (e.g., 'Fhiver', 'Be suivent', 'ressemblent .')",
+    "Original text layer for the second paragraph contained significant OCR gibberish (e.g., 'Combien autre ce dimanche de juillet de vingt ans. A force de m'interdire de penser, de prévoir, d')",
+    "The text extraction missed the em-dash punctuation in the final paragraph."
+  ],
+  "doc_id": "40",
+  "page": 140,
+  "elapsed_seconds": 4.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

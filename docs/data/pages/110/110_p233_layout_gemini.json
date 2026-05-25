@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "FORME ET « RÉALITÉ » 231",
+      "bbox": {
+        "x_pct": 11.197,
+        "y_pct": 10.373,
+        "w_pct": 68.239,
+        "h_pct": 2.27
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header and page number region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "seconde question)  il serait encore concevable que être fût accessible à la pensée, nol mais par   d",
+      "bbox": {
+        "x_pct": 11.197,
+        "y_pct": 13.614,
+        "w_pct": 68.239,
+        "h_pct": 5.27
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Essayons   encore senS, ou les   sens, que la question avoir. Lêtre, ici; est un terme désignant un ",
+      "bbox": {
+        "x_pct": 11.312,
+        "y_pct": 19.058,
+        "w_pct": 67.975,
+        "h_pct": 20.372
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais est ici Ie sens d \" intelligible \"? Ce mot ne me paraît   pas   univoque, Selon la   façon dont",
+      "bbox": {
+        "x_pct": 11.507,
+        "y_pct": 39.355,
+        "w_pct": 67.86,
+        "h_pct": 5.672
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'être en tant   qu'évidence dêtre est-il accessible 4 Fesprit? En dautres   termes, puis-je en prêt",
+      "bbox": {
+        "x_pct": 11.588,
+        "y_pct": 44.776,
+        "w_pct": 68.009,
+        "h_pct": 16.978
+      },
+      "changed": true,
+      "change_reason": "Label corrected from list_item to text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) L'être tel qu'il est en soi est-il accessible à l'esprit? — En d'autres termes: l'être est-il tel que je le saisis? — Ou, si l'on veut: y a-t-il une représentation intellectuelle adéquate à l'être? — Une réponse affirmative impliquerait qu'on sait de l'être davantage le fait qu'il est, qu'on sait comment il est, ou ce qu'il est. Il va sans dire qu'elle suppose une réponse affirmative à la question a). Mais elle ne fonde pas non plus la possibilité de",
+      "bbox": {
+        "x_pct": 11.588,
+        "y_pct": 61.986,
+        "w_pct": 79.56,
+        "h_pct": 13.91
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing paragraph at bottom"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Fixed incorrect list_item label",
+    "Missing paragraph block at bottom of page",
+    "Running header incorrectly labeled as text"
+  ],
+  "doc_id": "110",
+  "page": 233,
+  "elapsed_seconds": 9.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected from list_item to text": 1,
+    "ADDED": 2
+  }
+}

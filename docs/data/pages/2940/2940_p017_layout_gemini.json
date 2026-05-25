@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Als weiteres Kennzeichen der Schweiz ist die Kleinstaatlichkeit zu nennen. Auch hier handelt es sich nicht um ein von Anfang an gesetztes Ziel. Vielmehr machte man aus der Not eine Tugend. Erstmals wohl in den Burgunderkriegen stiess die Schweiz an die Grenzen ihrer expansiven Pläne.",
+      "bbox": {
+        "x_pct": 11.074,
+        "y_pct": 15.159,
+        "w_pct": 62.959,
+        "h_pct": 12.625
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bedenkt man die Möglichkeiten der Schweiz im ausgehenden 15. Jahrhundert, so wäre das Herzogtum Burgund, das langgezogene Band reicher, kulturell interessanter, mehrsprachiger Länder, das sich von der Nordsee bis nach Savoyen durch Europa zog, ein natürlicher Partner der mehrsprachigen Schweiz gewesen. Die Eidgenossenschaft hätte durch ein Bündnis mit Burgund in grössere und doch verwandte Verhältnisse hineinreifen können. Statt dessen zerstörte sie im Dienst und Auftrag des französischen Königtums diesen für Frankreich lästig und zu stark gewordenen Nachbarn.",
+      "bbox": {
+        "x_pct": 11.074,
+        "y_pct": 27.617,
+        "w_pct": 63.046,
+        "h_pct": 25.92
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Noch signifikanter für kommende Entwicklungen war das Verhalten der Eidgenossen am Ende der Burgunderkriege. Die Interessen der verschiedenen eidgenössischen Kleinstaaten strebten so sehr auseinander, dass man sich über die Verteilung der Beute, soweit es die eroberten Ländereien betraf, nicht einigen konnte; so trat man schliesslich weite Gebiete gegen eine grosszügige Bezahlung an Frankreich ab.",
+      "bbox": {
+        "x_pct": 11.074,
+        "y_pct": 53.344,
+        "w_pct": 62.996,
+        "h_pct": 18.169
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Noch folgenschwerer wurde die Divergenz der Interessen am Thema der eidgenössischen Politik in Norditalien. Im Kampf um Mailand zogen die Berner 1515 desinteressiert vorzeitig heimwärts. Der Rest der Eidgenossenschaft erlitt bei Marignano eine vernichtende Niederlage. Im allgemeinen lässt man den Willen der Schweiz zur Kleinstaatlichkeit mit diesem Ereignis beginnen. Der Wille zur Lockerheit des Bundes, die Freude an der föderalistischen Eigenständigkeit erlaubten eine weitergehende macht-",
+      "bbox": {
+        "x_pct": 10.986,
+        "y_pct": 71.656,
+        "w_pct": 62.959,
+        "h_pct": 20.343
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 71.21,
+        "y_pct": 93.9,
+        "w_pct": 2.2,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Labelled page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text blocks had truncated/corrupted content.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "2940",
+  "page": 17,
+  "elapsed_seconds": 5.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

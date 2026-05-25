@@ -1,0 +1,129 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "UNE NOUVELLE CONSTITUTION CANTONALE A LA VEILLE DU XXIe SIECLE ?",
+      "bbox": {
+        "x_pct": 26.606,
+        "y_pct": 5.519,
+        "w_pct": 47.137,
+        "h_pct": 3.976
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch, Genève",
+      "bbox": {
+        "x_pct": 39.426,
+        "y_pct": 14.38,
+        "w_pct": 21.123,
+        "h_pct": 2.018
+      },
+      "changed": true,
+      "change_reason": "Author name acting as a byline is a heading/signature element."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La Constitution du Canton de Beme a cent ans.",
+      "bbox": {
+        "x_pct": 8.816,
+        "y_pct": 23.365,
+        "w_pct": 41.427,
+        "h_pct": 1.798
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est-ce le moment de la remplacer par un texte entièrement nouveau?",
+      "bbox": {
+        "x_pct": 8.79,
+        "y_pct": 25.442,
+        "w_pct": 60.052,
+        "h_pct": 2.291
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En répondant oui à cette question, certains tirent argument du désordre formel résultant d'une vingtaine de révisions partielles devenues nécessaires au cours des ans. Mais l'argument n'est pas très convaincant: le monde où nous vivons change si vite et de tant de manières que, si beau qu'il puisse être, le système d'une Constitution neuve ne se maintiendra pas non plus longtemps: il subira bientôt, à son tour, de nouvelles retouches.",
+      "bbox": {
+        "x_pct": 8.468,
+        "y_pct": 32.107,
+        "w_pct": 84.891,
+        "h_pct": 8.783
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les partisans d'une révision totale se fondent aussi sur le fait, incontestable, que l'attitude des citoyens à l'égard de nombreux problèmes impliqués dans le texte constitutionnel s'est profondément modifiée. Il faut pourtant reconnaître que de nos jours, sous l'influence souvent de campagnes publicitaires de toute espèce, l'attitude des citoyens dépend de tant de modes et de slogans qu'il est difficile de deviner son évolution durable. Nous vivons dans un monde discontinu, où des menaces réelles ou imaginaires se succèdent souvent sans se ressembler, engendrant des réactions éphémères par lesquelles l'urgent éclipse sans cesse l'essentiel.",
+      "bbox": {
+        "x_pct": 8.468,
+        "y_pct": 43.045,
+        "w_pct": 84.682,
+        "h_pct": 15.573
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsqu'on met en relief la Constitution en vigueur, vieille de cent ans, une constatation s'impose pourtant à l'esprit. Alors que les Constituants de jadis se contentaient d'énoncer des principes démocratiques dans l'abstrait, les citoyens d'aujourd'hui ont pris conscience - définitivement, je crois - des conditions matérielles nécessaires à leur mise en oeuvre concrète, dans la vie effectivement vécue des individus. C'est ainsi, par exemple, que le principe de l'égale dignité de tous les êtres humains impose aujourd'hui la reconnaissance de nouveaux droits, les droits sociaux, concernant l'égalité des chances, le sort des familles, les conditions de logement, etc. Une telle prise de conscience apparaît clairement si l'on compare à l'ancienne Constitution bernoise les constitutions récemment adoptées par certains Cantons.",
+      "bbox": {
+        "x_pct": 8.381,
+        "y_pct": 60.89,
+        "w_pct": 84.717,
+        "h_pct": 19.602
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Un autre monde.",
+      "bbox": {
+        "x_pct": 8.642,
+        "y_pct": 85.264,
+        "w_pct": 15.03,
+        "h_pct": 1.579
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais surtout: nous vivons aujourd'hui dans un autre monde que celui d'il y a cent ans. La technique a transformé l'univers tant proche que lointain où se déroulent les jours et les années.",
+      "bbox": {
+        "x_pct": 8.207,
+        "y_pct": 89.792,
+        "w_pct": 84.917,
+        "h_pct": 4.136
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Several text blocks had severely truncated OCR text that did not match the visual content.",
+    "Author byline was incorrectly labeled as simple text instead of header.",
+    "Multiple layout boxes had missing or cut-off text content which I corrected manually based on image inspection."
+  ],
+  "doc_id": "2710",
+  "page": 2,
+  "elapsed_seconds": 8.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

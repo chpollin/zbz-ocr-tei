@@ -1,0 +1,99 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "80 Discussion sur les communications",
+      "bbox": {
+        "x_pct": 6.144,
+        "y_pct": 5.438,
+        "w_pct": 49.336,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "Identified page number and running header at the top of the page; should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sociologie a toujours eu comme hypothèse fondamentale de travail que son objet d'étude était l'association des très grands ensembles sociaux, de la taille des sphères de civilisation, par exemple, des systèmes tels que le système capitaliste, ou le système soviétique, etc.",
+      "bbox": {
+        "x_pct": 6.144,
+        "y_pct": 12.642,
+        "w_pct": 84.84,
+        "h_pct": 10.229
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est certain qu'il y a place pour d'autres disciplines entre cette science des structures globales et l'étude du comportement individuel. Nous pourrions discuter abondamment leurs relations avec la sociologie. Dans l'exposé que j'avais à faire cet après-midi, il m'est apparu nécessaire simplement d'examiner l'objection qui est souvent faite aux « relations humaines », à savoir que l'étude de la dynamique des petits groupes fait perdre de vue au sociologue son véritable objet. Je crois que cette objection est sérieuse, car il y a évidemment toute une part de la sociologie moderne qui ne traite pas réellement de problèmes sociologiques mais d'autres phénomènes qui, pour être du ressort du sociologue, doivent être considérés dans leurs rapports avec les structures de la société globale.",
+      "bbox": {
+        "x_pct": 6.103,
+        "y_pct": 24.109,
+        "w_pct": 85.201,
+        "h_pct": 25.394
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Réponse de Me Hersch",
+      "bbox": {
+        "x_pct": 6.422,
+        "y_pct": 52.737,
+        "w_pct": 34.591,
+        "h_pct": 2.681
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il me semble que les questions de M. Werner touchent à des questions politiques, peut-être plus que sociologiques. Mais il a dit des choses que je ne voudrais pas laisser tout simplement passer, et sur lesquelles je ne serais pas prête à lui concéder autant qu'on lui a concédé. Il n'est pas là, mais je tiens à le dire.",
+      "bbox": {
+        "x_pct": 6.796,
+        "y_pct": 57.121,
+        "w_pct": 84.605,
+        "h_pct": 11.546
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, je n'ai pas bien compris ce qu'il entendait lorsqu'il a parlé des avantages politiques de la démocratie qui ont été conservés, alors que l'essentiel avait été perdu. Je crois que quand on perd l'essentiel de la démocratie, on en perd aussi les avantages et qu'il est très important de rester au clair sur ce point.",
+      "bbox": {
+        "x_pct": 6.893,
+        "y_pct": 70.426,
+        "w_pct": 84.549,
+        "h_pct": 9.937
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, il a demandé si l'homo economicus est apte à être un démocrate. Sur ce point, je crois qu'aucun homo particulier, ni politicus, ni œconomicus, n'est apte à quoi que ce soit. C'est l'homo comme tel, l'homo concret qui est apte à être quelque chose sur le plan politique, économique, etc.; du même coup je crois que je pourrai répondre à sa question au sujet de la démo-",
+      "bbox": {
+        "x_pct": 7.171,
+        "y_pct": 81.759,
+        "w_pct": 84.23,
+        "h_pct": 11.909
+      },
+      "changed": false
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page header and number as text in original, corrected to page_header/filter."
+  ],
+  "doc_id": "550",
+  "page": 21,
+  "elapsed_seconds": 5.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

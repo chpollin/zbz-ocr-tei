@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "séparer vraiment ce est matériel de ce est spirituel? Est-il purement matériel, le plaisir d'être propre après un bon bain? Est-elle purement matérielle, la saveur d'une bonne cuisine où se palpe, entre langue, palais et narines, le raffinement d'une civilisation, la vigilance attentive de quelqu'un qui vous aime, ou la fière compétence d'un chef cuisinier? Est-elle purement matérielle, cette route sur laquelle vous roulez sans y penser, et qui, conçue, planifiée et construite par des hommes mortels, comme vous, qui ne vous connaissaient pas, au prix d'un temps de vie que vous ne leur rendrez jamais, vous conduit maintenant sans erreur vers votre amour ou votre travail? Sont-ils purement matériels, ces produits chimiques et ces appareils chirurgicaux qui soulagent ou suppriment la douleur et l'infirmité, et qui prolongent la vie de ceux qui vous sont chers? Purement matériels encore, ces téléphones et ces avions qui réduisent l'angoisse de l'absence, de l'éloignement, des longues séparations, et dont beaucoup d'entre vous se sont servis ou vont se servir",
+      "bbox": {
+        "x_pct": 10.145,
+        "y_pct": 10.918,
+        "w_pct": 66.133,
+        "h_pct": 67.256
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription to match the full block of text present in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "57",
+      "bbox": {
+        "x_pct": 72.464,
+        "y_pct": 81.332,
+        "w_pct": 2.296,
+        "h_pct": 2.296
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer/filter instead of standard text."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original text transcription was severely truncated and contained OCR errors.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 55,
+  "elapsed_seconds": 3.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

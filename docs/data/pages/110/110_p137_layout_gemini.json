@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME ET L'ESPACE 135",
+      "bbox": {
+        "x_pct": 11.555,
+        "y_pct": 2.0,
+        "w_pct": 68.283,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header corrected to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "rencontre fortuite. Que le mécanisme de la vue soit & loriginc du mécanisme rationnel, commne  le vo",
+      "bbox": {
+        "x_pct": 11.44,
+        "y_pct": 13.493,
+        "w_pct": 68.548,
+        "h_pct": 33.333
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lexistence objective à laquelle se réfère le  jugement dévidence n'est pas toujours la même. Elle es",
+      "bbox": {
+        "x_pct": 11.44,
+        "y_pct": 46.697,
+        "w_pct": 68.548,
+        "h_pct": 12.855
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le jugement dévidence est dautant intégral   que lexistence objective à laquelle il se réfère est pl",
+      "bbox": {
+        "x_pct": 11.555,
+        "y_pct": 59.605,
+        "w_pct": 68.283,
+        "h_pct": 11.086
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 C. Frank GRANDJEAN, La Raison et la Vue. Genève, 1919.",
+      "bbox": {
+        "x_pct": 13.435,
+        "y_pct": 73.088,
+        "w_pct": 66.868,
+        "h_pct": 2.226
+      },
+      "changed": true,
+      "change_reason": "Label corrected to footnote."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing label for running header.",
+    "Footnote label incorrectly identified as text."
+  ],
+  "doc_id": "110",
+  "page": 137,
+  "elapsed_seconds": 6.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected to footnote.": 1,
+    "ADDED": 1
+  }
+}

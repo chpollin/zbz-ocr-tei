@@ -1,0 +1,416 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Théorie et pratique du socialisme</title>
+        <author>Jeanne HERSCH</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">500</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Théorie et pratique du socialisme</title>
+            <author>Jeanne HERSCH</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1959</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-manual" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). TEI-Validator: VALID (0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings); Overlay p1/p5/p9: Zweispaltiges Layout korrekt erkannt, Leserichtung stimmt; S.9: placeName ref zbz-l.13 auf 'Est' in 'Est-ce vraiment' -- falsch-positiv. Franzoesische Fragekonstruktion 'Est-ce que', kein Ortsname Ost/Osteuropa. (+3 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1232" lry="1593">
+      <zone xml:id="facs_1_r_1" ulx="236" uly="184" lrx="910" lry="250" />
+      <zone xml:id="facs_1_r_2" ulx="236" uly="268" lrx="571" lry="324" />
+      <zone xml:id="facs_1_r_3" ulx="62" uly="414" lrx="550" lry="629" />
+      <zone xml:id="facs_1_r_4" ulx="593" uly="535" lrx="1081" lry="700" />
+      <zone xml:id="facs_1_r_5" ulx="59" uly="644" lrx="550" lry="889" />
+      <zone xml:id="facs_1_r_6" ulx="591" uly="715" lrx="1082" lry="1114" />
+      <zone xml:id="facs_1_r_7" ulx="59" uly="902" lrx="547" lry="1383" />
+      <zone xml:id="facs_1_r_8" ulx="590" uly="1129" lrx="1080" lry="1293" />
+      <zone xml:id="facs_1_r_9" ulx="590" uly="1307" lrx="1078" lry="1413" />
+      <zone xml:id="facs_1_r_10" ulx="57" uly="1401" lrx="545" lry="1482" />
+      <zone xml:id="facs_1_r_11" ulx="608" uly="1462" lrx="943" lry="1480" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1232" lry="1593">
+      <zone xml:id="facs_2_r_1" ulx="148" uly="117" lrx="635" lry="383" />
+      <zone xml:id="facs_2_r_2" ulx="149" uly="399" lrx="637" lry="533" />
+      <zone xml:id="facs_2_r_3" ulx="683" uly="531" lrx="1172" lry="675" />
+      <zone xml:id="facs_2_r_4" ulx="149" uly="547" lrx="640" lry="817" />
+      <zone xml:id="facs_2_r_5" ulx="683" uly="690" lrx="1171" lry="858" />
+      <zone xml:id="facs_2_r_6" ulx="150" uly="828" lrx="642" lry="1336" />
+      <zone xml:id="facs_2_r_7" ulx="683" uly="875" lrx="1173" lry="1337" />
+      <zone xml:id="facs_2_r_8" ulx="687" uly="1347" lrx="1173" lry="1486" />
+      <zone xml:id="facs_2_r_9" ulx="153" uly="1351" lrx="643" lry="1492" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1232" lry="1595">
+      <zone xml:id="facs_3_r_1" ulx="68" uly="113" lrx="558" lry="600" />
+      <zone xml:id="facs_3_r_2" ulx="601" uly="178" lrx="1091" lry="556" />
+      <zone xml:id="facs_3_r_3" ulx="598" uly="567" lrx="1089" lry="891" />
+      <zone xml:id="facs_3_r_4" ulx="69" uly="620" lrx="556" lry="780" />
+      <zone xml:id="facs_3_r_5" ulx="65" uly="798" lrx="557" lry="1126" />
+      <zone xml:id="facs_3_r_6" ulx="599" uly="903" lrx="1086" lry="987" />
+      <zone xml:id="facs_3_r_7" ulx="598" uly="997" lrx="1089" lry="1377" />
+      <zone xml:id="facs_3_r_8" ulx="64" uly="1140" lrx="555" lry="1493" />
+      <zone xml:id="facs_3_r_9" ulx="598" uly="1382" lrx="1085" lry="1489" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1232" lry="1595">
+      <zone xml:id="facs_4_r_1" ulx="682" uly="113" lrx="1173" lry="598" />
+      <zone xml:id="facs_4_r_2" ulx="152" uly="114" lrx="639" lry="248" />
+      <zone xml:id="facs_4_r_3" ulx="149" uly="263" lrx="638" lry="643" />
+      <zone xml:id="facs_4_r_4" ulx="681" uly="613" lrx="1171" lry="776" />
+      <zone xml:id="facs_4_r_5" ulx="148" uly="655" lrx="638" lry="951" />
+      <zone xml:id="facs_4_r_6" ulx="682" uly="784" lrx="1168" lry="868" />
+      <zone xml:id="facs_4_r_7" ulx="148" uly="960" lrx="637" lry="1018" />
+      <zone xml:id="facs_4_r_8" ulx="146" uly="1029" lrx="635" lry="1484" />
+      <zone xml:id="facs_4_r_9" ulx="679" uly="1208" lrx="1169" lry="1422" />
+      <zone xml:id="facs_4_r_10" ulx="703" uly="1434" lrx="1165" lry="1474" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1233" lry="1593">
+      <zone xml:id="facs_5_r_1" ulx="57" uly="113" lrx="547" lry="493" />
+      <zone xml:id="facs_5_r_2" ulx="592" uly="114" lrx="1081" lry="440" />
+      <zone xml:id="facs_5_r_3" ulx="591" uly="493" lrx="1081" lry="821" />
+      <zone xml:id="facs_5_r_4" ulx="592" uly="495" lrx="1082" lry="823" />
+      <zone xml:id="facs_5_r_5" ulx="593" uly="833" lrx="1083" lry="1133" />
+      <zone xml:id="facs_5_r_6" ulx="59" uly="854" lrx="549" lry="1237" />
+      <zone xml:id="facs_5_r_7" ulx="593" uly="1144" lrx="1085" lry="1496" />
+      <zone xml:id="facs_5_r_8" ulx="59" uly="1252" lrx="550" lry="1494" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1233" lry="1593">
+      <zone xml:id="facs_6_r_1" ulx="147" uly="111" lrx="639" lry="676" />
+      <zone xml:id="facs_6_r_2" ulx="681" uly="111" lrx="1172" lry="356" />
+      <zone xml:id="facs_6_r_3" ulx="682" uly="369" lrx="1169" lry="481" />
+      <zone xml:id="facs_6_r_4" ulx="680" uly="495" lrx="1170" lry="790" />
+      <zone xml:id="facs_6_r_5" ulx="146" uly="689" lrx="637" lry="1095" />
+      <zone xml:id="facs_6_r_6" ulx="680" uly="808" lrx="1171" lry="1076" />
+      <zone xml:id="facs_6_r_7" ulx="680" uly="1092" lrx="1170" lry="1205" />
+      <zone xml:id="facs_6_r_8" ulx="146" uly="1102" lrx="635" lry="1316" />
+      <zone xml:id="facs_6_r_9" ulx="679" uly="1221" lrx="1170" lry="1493" />
+      <zone xml:id="facs_6_r_10" ulx="145" uly="1328" lrx="635" lry="1491" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1237" lry="1593">
+      <zone xml:id="facs_7_r_1" ulx="58" uly="108" lrx="549" lry="330" />
+      <zone xml:id="facs_7_r_2" ulx="60" uly="339" lrx="549" lry="499" />
+      <zone xml:id="facs_7_r_3" ulx="597" uly="417" lrx="1085" lry="744" />
+      <zone xml:id="facs_7_r_4" ulx="61" uly="516" lrx="551" lry="949" />
+      <zone xml:id="facs_7_r_5" ulx="597" uly="752" lrx="1087" lry="1323" />
+      <zone xml:id="facs_7_r_6" ulx="62" uly="1329" lrx="553" lry="1490" />
+      <zone xml:id="facs_7_r_7" ulx="598" uly="1330" lrx="1087" lry="1494" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1237" lry="1593">
+      <zone xml:id="facs_8_r_1" ulx="153" uly="114" lrx="643" lry="412" />
+      <zone xml:id="facs_8_r_2" ulx="687" uly="180" lrx="1178" lry="480" />
+      <zone xml:id="facs_8_r_3" ulx="149" uly="433" lrx="642" lry="975" />
+      <zone xml:id="facs_8_r_4" ulx="687" uly="492" lrx="1177" lry="842" />
+      <zone xml:id="facs_8_r_5" ulx="687" uly="858" lrx="1174" lry="966" />
+      <zone xml:id="facs_8_r_6" ulx="683" uly="980" lrx="1175" lry="1492" />
+      <zone xml:id="facs_8_r_7" ulx="150" uly="992" lrx="639" lry="1262" />
+      <zone xml:id="facs_8_r_8" ulx="148" uly="1278" lrx="639" lry="1498" />
+      <zone xml:id="facs_8_r_9" ulx="150" uly="1529" lrx="187" lry="1577" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1237" lry="1592">
+      <zone xml:id="facs_9_r_1" ulx="72" uly="115" lrx="561" lry="582" />
+      <zone xml:id="facs_9_r_2" ulx="605" uly="115" lrx="1094" lry="548" />
+      <zone xml:id="facs_9_r_3" ulx="605" uly="559" lrx="1095" lry="672" />
+      <zone xml:id="facs_9_r_4" ulx="74" uly="588" lrx="562" lry="672" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          Théorie et pratique du socialisme
+        </head>
+        <p facs="#facs_1_r_2">
+          par <persName ref="#zbz-p.2">Jeanne HERSCH</persName>,<lb facs="#facs_1_l_2_1" n="N001" />Professeur à l'<orgName ref="#zbz-o.6">Université de Genève</orgName> (*).
+        </p>
+        <p facs="#facs_1_r_3">
+          *
+        </p>
+        <p facs="#facs_1_r_4">
+          Il me faut commencer par quelques considérations générales sur la condition de l'homme dans la société. D'abord, je pense que le plan de la vie politique ne se suffit pas à lui-même. Pour comprendre ce qui s'y passe, il faut tenir à quelque chose au-delà de lui. La seule observation des faits politiques ne permet pas de saisir ce qu'il y a de concret dans une situation donnée.
+        </p>
+        <p facs="#facs_1_r_5">
+          D'autre part, la réalité sociale n'est pas quelque chose qui s'ajoute accidentellement à une condition humaine asociale où l'homme existerait déjà. Le fait d'être un être social est pour l'homme une donnée essentielle, un élément constitutif. Ceux qui essayent d'oublier cette condition fondamentale de la vie humaine ferment simplement les yeux sur tout un côté de leur propre vie et se condamnent par là à ne jamais la concevoir dans sa vérité.
+        </p>
+        <p facs="#facs_1_r_6">
+          L'observation qui précède est dirigée contre un individualisme qui se considérerait comme suffisant. Mais cette mise au point faite, il me semble que je dois affirmer presque le contraire. Il faut retenir de l'individualisme quelque chose d'essentiel. L'individu reste, dans un certain sens, irréductible à la société. Par réaction contre l'extraordinaire solitude que comporte le monde moderne, les hommes d'aujourd'hui se laissent peut-être séduire par la nostalgie d'une sorte de « magma » humain que serait l'être social collectif. Ce « nous » dont chaque être est issu, qui ne cesse de l'enlacer et de le contraindre sans pourtant l'aider comme un ami, le pousse à penser qu'il n'est qu'une onde de la mer, un reflet de la lumière, la simple vibration d'un ensemble avec lequel, comme on aime à le dire aujourd'hui, il reste « en communion ».
+        </p>
+        <p facs="#facs_1_r_7">
+          A force de réagir contre l'individualisme, n'abuse-t-on pas du mot « communion »? Pour être en « communion », ou plus sobrement, en communication avec autrui ou autre chose, il faut être soi-même. Cette sorte de paresse, de nostalgie d'un tout où le moi puisse se dissoudre me paraît exiger un contrepoids.
+        </p>
+        <p facs="#facs_1_r_8">
+          C'est la personne humaine, et non le groupe social, qui doit être considérée comme un sujet de libre invention. Elle invente ses actes, son comportement, ses œuvres, etc. C'est donc elle qui est capable de dépasser les faits et d'assumer les risques de ce dépassement.
+        </p>
+        <p facs="#facs_1_r_9">
+          Or pour dépasser les faits, elle doit forcément s'enraciner ailleurs que dans les faits, dans quelque chose qui est « trans-social » et par conséquent « trans-politique ». D'autre part, au moment où elle invente un comportement sur le plan des faits, elle vise quelque chose au-delà d'eux, un résultat qui n'est pas encore, mais qui n'a son sens et sa réalité future qu'à travers les faits qui sont déjà. Ainsi l'enracinement trans-social exige des données concrètes par le truchement desquelles la personne humaine est à même de faire invention. Il en résulte qu'elle ne possède jamais comme tel l'absolu, que pourtant ses inventions impliquent. Elle ne peut prétendre posséder une vérité exclusive de toutes les autres.
+        </p>
+        <p facs="#facs_1_r_10">
+          Cette impossibilité consacre la valeur, le prix, l'importance de la diversité humaine. Celle-ci n'est pas une donnée de fait à laquelle il faille se résigner à contre-cœur. Elle est constitutive de cette vérité que chacun cherche sans pouvoir jamais prétendre l'avoir en poche.
+        </p>
+        <note place="foot" n="1" xml:id="fn1-1" facs="#facs_1_r_11">
+          Ainsi, les quelques éléments que je viens de distinguer nous mettent sur la voie d'une philosophie assez compliquée, pour laquelle la vérité est partout à l'œuvre et, en même temps, très lointaine.
+        </note>
+        <p>
+          (*)<lb facs="#facs_1_l_12_1" n="N001" />Communication faite le 7 janvier 1959.
+        </p>
+        <p>
+          233
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          234
+        </p>
+        <p facs="#facs_2_r_2">
+          Le seul fait d'être un sujet agissant, donc inventant sa destinée, semble donc impliquer à la fois le sens de l'absolu et celui du relatif, le sens du relatif par rapport à l'absolu et le sens de l'absolu lié au relatif. Il ne s'agira plus, dès lors, d'établir dogmatiquement les seuls comportements valables, la seule vérité valable, mais de concevoir ou de créer des voies possibles pour l'action humaine, des voies possibles, des voies ouvertes, des chances d'invention et de création.
+        </p>
+        <p facs="#facs_2_r_3">
+          Cela veut dire que sur le plan social et politique, il importe de prévoir des institutions destinées non seulement à assurer la stabilité d'un ordre de choses donné, mais à permettre l'incarnation du « possible » et les inventions humaines.
+        </p>
+        <p facs="#facs_2_r_4">
+          La politique, dès lors, n'est réductible à aucune technique. Elle le serait si l'on connaissait exactement d'avance le résultat à obtenir. L'homme politiquement actif se trouverait alors dans la même situation que l'ingénieur voulant construire un pont. Il en va tout autrement si, au lieu d'être une technique, la politique est invention. Elle fait partie d'un processus de création sans fin, entretenu à la fois par l'impossibilité où se trouve l'homme de renoncer à la vérité absolue et de la posséder.
+        </p>
+        <p facs="#facs_2_r_5">
+          Je soutiendrai maintenant qu'aucune réalité collective ne peut prétendre avoir une âme au sens où le peut la personne humaine. Aucune réalité collective — famille, nation, classe, parti, église — ne peut prétendre posséder cette valeur absolue qui interdirait de la subordonner à quoi que ce soit. Quiconque croit à quelque chose d'absolu peut se trouver dans la nécessité de sacrifier à cet absolu ce qui ne l'est pas, et notamment une réalité collective. Cette subordination virtuelle de n'importe quelle réalité collective à quelque chose d'absolu, cette non-coïncidence d'aucune réalité collective avec l'absolu, est à mes yeux une conviction essentielle. Si on ne l'admet pas — et beaucoup de gens ne l'admettent pas — on retombe fatalement dans la superstition, dans une immanence où une réalité de fait érigée en absolu réduit à une technique dont le terme est donné ce qui devrait être invention sans fin.
+        </p>
+        <p facs="#facs_2_r_6">
+          Aucune réalité collective, donc, ne doit être érigée en valeur suprême. Mais disant cela avec le maximum d'insistance, je ne dis pas que les réalités collectives soient sans valeur, ou doivent peser d'un poids léger parmi les devoirs des personnes qui en font partie. Au contraire : la personne humaine est précisément cette créature qui appartient à la fois à plusieurs groupes humains et qui doit fidélité à chacun d'eux. La condition humaine me paraît être celle d'une fidélité multiple, multiplicité où il n'est pas possible d'établir une hiérarchie définitive. Si l'on pouvait établir entre ces diverses fidélités une hiérarchie objectivement valable en toute circonstance, il n'y aurait plus qu'à s'y reporter pour savoir comment agir. Mais il n'en est pas ainsi, et l'invention de l'acte est toujours liée à son moment. Le groupe qui exige la fidélité la plus immédiate, la moins conditionnelle, c'est en général celui qui est le plus menacé, au moment où pèse sur lui cette menace.
+        </p>
+        <p facs="#facs_2_r_7">
+          Les groupes sociaux ne sont pas simplement indépendants les uns par rapport aux autres. Ils s'affrontent, bien sûr. Mais ils ne s'affrontent pas hors de nous, dans un espace objectif, anonyme et impersonnel.
+        </p>
+        <p facs="#facs_2_r_8">
+          Ils le font dans la personne, dans chaque personne. C'est pourquoi nous ne sommes jamais dispensés de faire acte de présence à notre vie. Il ne suffit pas de l'avoir fait une fois. La charnière des fidélités multiples qui sont les nôtres, c'est notre liberté personnelle continuée.
+        </p>
+        <p facs="#facs_2_r_9">
+          J'ai parlé tout à l'heure de l'âme. Je n'oublie pas que l'homme a aussi un corps. Ce côté charnel de l'homme entraîne, surtout lorsqu'il s'agit de problèmes sociaux, une liaison étroite avec les réalités économiques. La réalité économique est, pour ainsi dire, la chair de la société. La chair compte dans la condition humaine. Elle est à la fois donnée de fait et condition de liberté. La réalité économique doit satisfaire à certaines exigences pour que la liberté de l'homme devienne possible. En même temps, elle est la matière dans laquelle s'incarne la liberté humaine. Elle est pour l'acte libre à la fois une condition et un objet. L'homme n'accomplit pas d'actes libres dans l'esprit pur ; il les accomplit ici-bas, dans la réalité incarnée où ils prennent corps. Il a lui-même un corps. Son incarnation est la mise à l'épreuve de son esprit.
+        </p>
+        <p>
+          Ainsi, d'une part, l'homme est dans une condition incarnée ; de l'autre, il a une volonté, une vocation incarnatrice. Ce double état de sa condition le lie très étroitement à la réalité économique de la société dans laquelle il vit.
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          Enfin, et ce sera ma dernière remarque générale, il est indispensable, pour que les hommes puissent vivre ensemble, qu'un véritable pouvoir politique existe au-dessus d'eux. Ce pouvoir politique serait peut-être superflu si nous étions tous des anges, ou si nous étions des hommes aimant leur prochain comme eux-mêmes. Mais nous ne sommes pas ainsi. Il arrive quelquefois que certains d'entre nous aiment quelqu'un autant, ou peut-être plus, qu'eux-mêmes. Mais non leur prochain comme tel. A cause de ce manque d'amour le mal existe, et à cause du mal, le pouvoir politique est indispensable à la vie en commun. Mais d'autre part, le pouvoir politique est exercé par des hommes chez qui le même mal existe. Et ce mal risque d'être décuplé par l'efficacité que le pouvoir donne à l'action des dirigeants. Aussi est-il nécessaire que ce pouvoir soit limité par un contrôle.
+        </p>
+        <p facs="#facs_3_r_2">
+          A mes yeux, la justification de la démocratie, ce n'est pas d'être le meilleur régime possible, parce que la voix du peuple serait en quelque sorte la voix de Dieu. Il n'y a pas de raison particulière pour que la voix de la majorité, et non celle de la minorité, soit celle de Dieu.
+        </p>
+        <p facs="#facs_3_r_3">
+          Faut-il croire à l'égalité de tous les hommes ? S'il s'agit d'une égalité de fait, non, — les hommes sont profondément inégaux, en beauté, en intelligence, en force physique, en force intellectuelle, en force morale. Leur seule égalité, mais décisive, irréductible, sacrée, réside dans leur mystère de sujet libre. Nous ignorons ce que quiconque va faire de lui-même dans l'instant à venir, parce qu'il est libre. En ce point de mystère seulement réside l'égalité des hommes. Une vraie démocratie n'aboutit pas au nivellement de tous, mais au libre épanouissement des inégalités naturelles.
+        </p>
+        <p facs="#facs_3_r_4">
+          La démocratie est un régime qui instaure à la fois un pouvoir et une technique de contrôle du pouvoir. C'est, d'une part, un système qui donne, lorsqu'il fonctionne bien, une parcelle de pouvoir d'initiative à la base, à la masse des citoyens. C'est, d'autre part, un système organisé pour donner du prix à la diversité des opinions des hommes. Si l'on est d'accord, comme je le disais tout à l'heure, pour reconnaître que la diversité des opinions n'est pas un malheur auquel il faille se résigner, mais au contraire, une valeur à laquelle il faut tenir, alors il semble bon d'avoir un système politique élaborant une technique mise au service de cette diversité,
+        </p>
+        <p facs="#facs_3_r_5">
+          organisant la vie en commun en raison de la diversité et grâce à elle.
+        </p>
+        <p facs="#facs_3_r_6">
+          J'ai dit tout à l'heure que les divergences entre les opinions étaient un bien. Mais si nous voulons véritablement que cette divergence s'affirme dans le concret et s'incarne dans la réalité sociale, il faut, bien sûr, que les individus ayant des opinions suffisamment semblables puissent se grouper ; un individu isolé ne peut pas se faire entendre dans la masse des hommes. Il faut donc des partis. Telle est la raison d'être des partis, ces fameux partis tant décriés de nos jours. On ne peut concevoir une démocratie sans pluralisme des partis. C'est lui qui consacre le droit des hommes à être divers, à vouloir des choses diverses et à se grouper diversement pour les réaliser.
+        </p>
+        <p facs="#facs_3_r_7">
+          Mais il importe de savoir quels sont les droits et les devoirs de ces partis, le sens de l'adhésion qu'on leur donne, et ses limites. Les partis ont tendance à se cléricaliser, c'est-à-dire, à devenir des églises et à se prendre eux-mêmes pour tels. Lorsqu'ils s'engagent dans cette voie, ils ne reconnaissent plus rien au-dessus ni au-delà d'eux-mêmes. Ils refusent de reconnaître la multiplicité des engagements humains, ou bien ils s'attribuent une fois pour toutes, parmi ceux-ci, la place suprême. Or l'adhésion à un parti doit toujours rester, à mon sens, limitée et conditionnelle.
+        </p>
+        <p facs="#facs_3_r_8">
+          Après ces remarques préliminaires, j'en viens au socialisme, pour en caractériser d'abord le plus simplement possible la conception traditionnelle.
+        </p>
+        <p facs="#facs_3_r_9">
+          Pour la masse de ceux qui militent dans les partis se déclarant socialistes (et cela malgré les sources non marxistes très importantes que le socialisme a eues dans divers pays), c'est la référence au marxisme qui l'emporte de loin sur les autres. Le marxisme est devenu pour les socialistes une sorte de drapeau, à tel point que, dans certains partis, dans certains pays, il suffit de prendre ses distances à l'égard du marxisme pour devenir « un socialiste de droite », sur le point de trahir la cause commune. Il est vrai cependant que, par la force des choses, la critique du marxisme, en ce monde changé, se développe, malgré les tabous, chaque jour davantage.
+        </p>
+        <p>
+          Mais si le terme « marxisme » garde un si grand prestige, demandons-nous ce qu'il signifie dans l'esprit de ceux qui l'emploient. Je crois qu'on se trouve devant un cercle vicieux. Etre vraiment
+        </p>
+        <p>
+          235
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          236
+        </p>
+        <p facs="#facs_4_r_2">
+          socialiste, c'est être marxiste. Être marxiste, cela veut dire « être énergiquement socialiste ». En disant la même chose de deux façons, on croit donner plus de consistance à une seule et même conviction. Quel en est donc le contenu ?
+        </p>
+        <p facs="#facs_4_r_3">
+          Le marxiste croit que l'histoire a un sens, dans la double acception du mot « sens ». L'histoire va dans une certaine direction. En outre, cette direction est celle que l'on souhaite, par ce qu'on la considère comme juste. L'histoire a donc une direction et une signification que l'on peut exposer, résumer et préciser. Il y règne dès lors un déterminisme analogue à celui qu'on trouve dans la nature ; peut-être pas identique, mais pour le moins analogue. De même que le déterminisme de la nature nous donne prise sur la nature et nous permet de développer la technique, de même le déterminisme connu et déchiffré de l'histoire nous donne prise sur la réalité sociale et nous permet de la façonner.
+        </p>
+        <p facs="#facs_4_r_4">
+          Il y a ainsi dans le marxisme un effort pour arracher l'homme à la fatalité qui l'a dominé pendant de nombreux siècles. Le déterminisme historique s'oppose à cette fatalité et à la résignation qui en découle. Il n'est rien dans la société qui doive être subi sans recours. Il n'est pas vrai qu'il faille subir la société telle qu'elle est, comme on subit un climat chaud, froid ou pluvieux. Loin d'engendrer la passivité, le déterminisme suscite les desseins, le planisme, l'intervention. La société, comme la nature, peut être soumise à l'homme.
+        </p>
+        <p facs="#facs_4_r_5">
+          Le marxisme souligne également l'importance décisive de la réalité économique dans la société.
+        </p>
+        <p facs="#facs_4_r_6">
+          Remarquez que, soit sous l'influence du marxisme, soit sous d'autres influences, les deux conceptions que je viens de résumer (sens de l'histoire et prépondérance de la réalité économique) sont, dans une large mesure, généralement admises aujourd'hui, et non par les seuls marxistes. Tous nos contemporains sont frappés aujourd'hui par la réalité de l'histoire, l'emprise et la rapidité du devenir. On « est » dans cette histoire. Elle a une « direction ». Tous nos contemporains, il est vrai, ne pensent pas que l'histoire aille nécessairement dans un sens déterminé, et que ce sens soit celui qu'ils souhaitent. Cet optimisme-là est propre aux marxistes. De même, l'importance décisive de l'économique est reconnue aujourd'hui, on peut le dire, par tous ceux qui étudient sérieusement les réalités sociales.
+        </p>
+        <p facs="#facs_4_r_7">
+          D'autre part, lorsqu'on est marxiste, on dispose d'une clef unique permettant d'ouvrir toutes les serrures de l'histoire. Cette clef, c'est la lutte des classes. Toute l'histoire humaine s'y ramène. Il y a quelquefois des bavures. Mais quand les choses sont nettes, il n'y a que deux classes : une classe possédante et une classe exploitée. La classe exploitée est dénommée par le marxisme : prolétariat. On ne s'interroge pas beaucoup sur les formes que peut prendre concrètement l'existence prolétarienne. Dans toute la mesure du possible, on traite le prolétariat dans son unité, en bloc, on le personnifie. Le prolétariat devient une espèce de sauveur collectif. Etant le plus malheureux, dénué de tout, il va sauver le genre humain en abolissant cette lutte des classes dans laquelle tous les hommes se trouvent engagés et qui les prive d'une condition saine et normale, qui les « aliène », en un mot.
+        </p>
+        <p facs="#facs_4_r_8">
+          Comme, en principe, selon l'orthodoxie marxiste, le prolétariat ne possède rien, n'a rien à défendre, il n'a aucun lien avec les structures qui existent dans la société pour sauvegarder les droits de ceux qui possèdent quelque chose. Par conséquent, le prolétaire n'a pas de patrie.
+        </p>
+        <p facs="#facs_4_r_9">
+          Le marxisme donc, en tant qu'idéologie, est internationaliste. D'où le slogan bien connu : « Prolétaires de tous les pays, unissez-vous ».
+        </p>
+        <p facs="#facs_4_r_10">
+          Nous l'avons vu, le marxisme croit à la possibilité d'une connaissance scientifique de l'histoire. Il en possède même grosso modo la clef ; il ne lui reste plus qu'à en étudier les détails, guidé par sa foi dans une science exhaustive, au moins virtuelle, qui ramènera tout à son schéma. Il considère donc les religions comme mystificatrices et pratique un athéisme scientiste, comportant en théorie une rigueur propre : la rigueur scientifique. En effet, si l'on est authentiquement un athée scientiste, on ne peut admettre que des affirmations scientifiquement vérifiables.
+        </p>
+        <p>
+          Telle est brièvement esquissée, la théorie marxiste traditionnelle. Elle se donne l'apparence d'être purement intellectuelle. En fait, il ne faut jamais oublier qu'il y a dans le socialisme vécu et militant un mélange extraordinairement puissant d'idées, de faits et d'émotions. Il est impossible de dissocier les éléments purement intellectuels de ceux dont la force est affective et morale.
+        </p>
+        <p>
+          Ce qui sous-tend le marxisme, c'est le sentiment vif de l'homme sacrifié, de la misère intolérable, de
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          l'urgence avec laquelle il faut un remède. Le socialiste qui se déclare marxiste, et qui croit par conséquent à la bonne direction de l'histoire, pourrait, semble-t-il, se dire : « eh bien, attendons ; les remèdes viendront ». Non, il faut qu'ils viennent vite. L'attente, ce sont des vies humaines sacrifiées. C'est à ce propos, je crois, que se différencient le mieux les tempéraments qu'on pourrait appeler de gauche et ceux qu'on pourrait appeler de droite. Les tempéraments de droite, ce sont les gens qui ont le temps. Les tempéraments de gauche, ce sont ceux qui sentent l'urgence. Pour eux, le temps compte. On ne peut pas sacrifier des vies humaines ou les laisser aller à la dérive. Il faut agir, vite.
+        </p>
+        <p facs="#facs_5_r_2">
+          J'ai dit tout à l'heure que le marxisme, à travers sa théorie de l'histoire et de la société, mettait en action de puissants mobiles affectifs. Une remarque à ce propos : si l'on admet que l'histoire a une direction donnée, qu'il existe un déterminisme historique (rigoureux ou approximatif, peu importe), il y a alors un sentiment humain qui, sur le plan historique et politique, perd son sens, c'est l'indignation. Or le marxisme cultive à la fois la croyance au déterminisme et l'indignation. Il se produit là un amalgame d'autant plus fort peut-être qu'il est, du point de vue intellectuel, moins cohérent.
+        </p>
+        <p facs="#facs_5_r_3">
+          Voyons maintenant quelle a été la fonction du marxisme dans la jeunesse du mouvement ouvrier. C'est lui qui a permis de mobiliser simultanément la science de l'histoire et l'indignation révolutionnaire. L'indignation, à elle seule, n'aurait pas suffi. Il faut en effet se reporter à l'impuissance extrême de la classe ouvrière à l'époque où ces idées ont été lancées, pour comprendre à quel point l'indignation serait retombée sur elle-même, dans l'abattement et le désespoir, si on ne lui avait pas donné des alliés aussi puissants que l'histoire elle-même et la science elle-même. Cette combinaison d'histoire, de science et d'indignation ont permis à un espoir agissant de naître.
+        </p>
+        <p facs="#facs_5_r_4">
+          En somme, le marxisme a pris force entre deux pôles. L'un, c'est l'analyse critique précise du présent, mettant en lumière les ressorts cachés et réels d'un mécanisme social donné ; l'autre, c'est l'ouverture, grâce à l'utilisation conjointe de la science et de l'histoire dans sa tonalité, de perspectives encourageantes et optimistes, laissant entrevoir, de façon toutefois assez vague et incertaine, le paradis promis.
+        </p>
+        <p facs="#facs_5_r_5">
+          Il faut remarquer que, selon la conception marxiste, il suffit de supprimer ce qui est mauvais dans la société actuellement donnée pour obtenir une société bonne. On ne nous dit pas, ou à peine, ce qu'il faut mettre à la place. La pensée marxiste a très peu élaboré la conception de ce qu'on mettrait à la place des structures condamnées. En revanche, elle a étudié de très près la nocivité des structures condamnées. Elle part de l'idée selon laquelle, entre l'homme et le bonheur, entre l'homme et la justice, entre l'homme et la fraternité, il n'y a que des structures mauvaises, qu'il suffit dès lors d'abolir.
+        </p>
+        <p facs="#facs_5_r_6">
+          Que s'est-il passé en fait depuis la naissance du marxisme traditionnel ? La situation s'est profondément modifiée sans que les adhérents, sans que les mouvements socialistes eux-mêmes, aient au fil du temps révisé leurs conceptions, compte tenu de ce qui se passait. On en est arrivé ainsi au paradoxe d'une conception censée être la plus proche de la réalité, des faits, et qui, précisément parce qu'elle se croyait dogmatiquement, une fois pour toutes, la plus proche des faits, s'est figée, en devenant incapable de suivre l'évolution ultra-rapide de notre époque.
+        </p>
+        <p facs="#facs_5_r_7">
+          Enumérons quelques-uns des changements fondamentaux survenus. Selon la conception marxiste, il n'y a que deux classes, il ne peut y en avoir que deux. Tout ce qui pourrait apparaître comme intermédiaire entre elles est censé disparaître progressivement. L'opposition des deux classes doit s'accentuer de plus en plus : la classe possédante doit posséder de plus en plus et devenir de moins en moins nombreuse ; la classe exploitée doit devenir de plus en plus nombreuse et être de plus en plus exploitée.
+        </p>
+        <p facs="#facs_5_r_8">
+          Or, on a assisté, en fait, au développement d'une complexité toujours plus grande des structures sociales. La diversification croissante des classes, des catégories et des groupes humains a eu pour conséquence que le prolétariat, les salariés, se sont eux-mêmes de plus en plus différenciés entre eux. On a vu les possédants se subdiviser de plus en plus en gens qui possèdent, en gens qui dirigent effectivement, en cadres, en toutes sortes de travailleurs privilégiés qui, d'une certaine manière, devenaient à leur tour des salariés, et ainsi de suite. Cette multiplication des couches sociales est tout à fait contraire aux prévisions faites et de moins en
+        </p>
+        <p>
+          237
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          moins conforme au schéma marxiste préconçu. Les classes moyennes se sont développées. Dans les classes dirigeantes, les « managers », c'est-à-dire les administrateurs, ont pris dans une large mesure la place des propriétaires. On a vu à l'intérieur du régime capitaliste se développer des coopératives qui, dans certains pays, ont envahi un secteur absolument déterminant et majoritaire de l'économie, et qui ont modifié autour d'elles les conditions de concurrence du capitalisme lui-même. On a vu se réaliser des formes mixtes et complexes de propriété. On a vu enfin se développer et croître les possibilités de contrôle des syndicats et de l'<orgName ref="#zbz-o.754">État</orgName>. Des nationalisations d'industries ont été opérées et on s'est aperçu, à leur propos, avec stupeur, qu'elles n'avaient pas changé grand-chose à la condition ouvrière, ni sur le plan matériel, ni sur le plan psychologique. Il est ainsi apparu que, par conséquent, la forme juridique de la propriété n'était peut-être pas décisive pour les conditions sociales et les rapports sociaux.
+        </p>
+        <p facs="#facs_6_r_2">
+          Autre transformation profonde : les mouvements ouvriers se sentent liés à l'<orgName ref="#zbz-o.754">État</orgName>. Partis et syndicats ont conquis progressivement des droits, qui leur sont à présent garantis par l'<orgName ref="#zbz-o.754">État</orgName>. Les structures étatiques leur permettent de défendre des conquêtes difficiles, chèrement payées au cours de luttes après où l'on risquait sans cesse de perdre à nouveau ce qu'on avait conquis. Cette dure leçon n'est pas oubliée. C'est pourquoi les organisations ouvrières sentent qu'elles ont maintenant partie liée avec l'<orgName ref="#zbz-o.754">État</orgName>. Elles sont devenues nationales, parfois nationalistes. Ainsi, par exemple, les syndicats d'un pays en viennent à se défendre, avec âpreté souvent, contre la pénétration de toute main-d'œuvre étrangère.
+        </p>
+        <p facs="#facs_6_r_3">
+          Peu à peu également, c'est tout le caractère de la lutte ouvrière qui s'est modifié. L'héroïsme du début s'est évanoui ; il est devenu relativement facile d'être un militant. Les risques courus aujourd'hui ne se comparent pas à ceux qu'affrontaient les premiers grévistes, avant la reconnaissance du droit d'association, du droit de grève, avant la consécration des droits du travail.
+        </p>
+        <p facs="#facs_6_r_4">
+          Malheureusement l'attitude héroïque n'a pas toujours disparu avec les temps héroïques. On a pris l'habitude d'employer en maintes circonstances un ton gonflé que rien ne justifie plus. Personnellement, je ne crois pas que ce soit là une preuve de force ni de conviction. Ce n'est pas un élément
+        </p>
+        <p facs="#facs_6_r_5">
+          d'efficacité. Il faut avoir la franchise de constater ces choses-là si on veut que le mouvement ouvrier continue à se développer et à poursuivre ses conquêtes. Le mouvement ouvrier n'a pas achevé sa mission. Son évolution est loin d'être achevée. Mais il ne pourra faire face aux vrais problèmes que s'il considère la situation d'aujourd'hui telle qu'elle est, sans déformation, et surtout sans l'auréole héroïque du passé.
+        </p>
+        <p facs="#facs_6_r_6">
+          Il y a, d'autre part, dans la civilisation d'aujourd'hui, des facteurs généraux dangereux pour la démocratie et pour la liberté, et dont les mouvements ouvriers sont obligés de tenir compte.
+        </p>
+        <p facs="#facs_6_r_7">
+          Je les énumère rapidement : dans notre civilisation, les valeurs qu'on proclame ne sont guère incarnées dans les faits. On se paie trop souvent de mots. Les valeurs proclamées et non incarnées ou si vous le voulez, les droits qui restent purement formels, rendent la démocratie extrêmement vulnérable. Les critiques dont la démocratie formelle fait l'objet, notamment celles que lui font les communistes, sont malheureusement légitimes en soi, et il vaudrait mieux ne pas leur laisser à eux le soin de les formuler.
+        </p>
+        <p facs="#facs_6_r_8">
+          Il est parfaitement vrai qu'il ne suffit pas d'avoir le droit de publier un journal, qu'il faut encore avoir l'argent nécessaire pour le faire. Il est parfaitement vrai qu'il ne suffit pas d'avoir le droit théorique de recevoir une certaine éducation ; il faut encore en avoir les moyens. Il est heureux que chacun ait le droit de défendre ses idées ; encore faut-il savoir le faire, et pour cela avoir appris un certain vocabulaire et un certain maniement des idées.
+        </p>
+        <p facs="#facs_6_r_9">
+          Le caractère formel des droits démocratiques n'enlève pas toute valeur à ceux-ci, comme les communistes le prétendent. Il constitue cependant un lourd handicap pour leur défense.
+        </p>
+        <p facs="#facs_6_r_10">
+          D'autre part, non seulement les conditions du travail industriel laissent énormément à désirer, mais encore l'industrialisation moderne impose à tous un mode de vie contraire, dans une large mesure, à l'esprit démocratique. Nous vivons dans un monde techniquement de plus en plus compliqué, quasi magique, et c'est ce qui nous rend tous, je crois, plus ou moins semblables aux populations de l'an mille, accessibles à toutes les superstitions. Actuellement, la plupart des gens sont prêts à attri
+        </p>
+        <p>
+          238
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          buer n'importe quoi (le cancer, ou un été pluvieux, ou trop sec) aux explosions atomiques. Nous sommes prêts à croire n'importe quoi dans n'importe quel domaine, parce qu'il nous semble avoir vu que tout est possible, même l'impossible, et notre sens critique est tenté de démissionner. Or, cette démission est absolument contraire à l'esprit démocratique.
+        </p>
+        <p facs="#facs_7_r_2">
+          Ce n'est donc pas seulement le travail à la chaîne qui présente des risques d'abrutissement et de passivité, mais la consommation même des biens produits, l'habitude que nous prenons de nous servir chaque jour d'objets dont nous ne comprenons pas le fonctionnement.
+        </p>
+        <p facs="#facs_7_r_3">
+          D'une façon générale, la facilité avec laquelle nous ouvrons tous les robinets de la culture, les albums de reproduction, les radios, les gramophones, etc..., la façon dont nous subissons ce qui en sort sans l'avoir choisi, — par exemple, nous allons au cinéma voir un film d'une heure (n'oublions pas que nous sommes des gens occupés) et nous acceptons de subir une heure et demie de réclames ou de dessins animés que nous n'avons pas demandé à voir, — la façon dont nous faisons bon marché de notre temps, que personne ne nous rendra jamais parce que nous sommes tous mortels, tout cela est un gaspillage passif de notre vie, tout cela témoigne d'une docilité contraire à l'esprit de la démocratie et d'un manque d'impulsion et de sélection intérieures.
+        </p>
+        <p facs="#facs_7_r_4">
+          Mais surtout, l'extrême complexité de tous les problèmes auxquels nous avons à faire face, la nécessité d'être présents partout dans le monde parce que, partout, il se passe quelque chose qui désormais nous concerne, parce que, partout, notre sort se joue, tout cela, loin de multiplier notre liberté, nous invite plutôt à une abdication croissante. C'est trop, trop difficile, trop compliqué. Aussi y a-t-il de plus en plus d'hommes et même de plus en plus de pays, qui attendent, guettant à l'horizon la montée de l'homme providentiel qui voudra bien les décharger de leurs innombrables problèmes.
+        </p>
+        <p facs="#facs_7_r_5">
+          Notre sentiment d'impuissance s'accroît du fait que l'histoire nous impose nombre de problèmes insolubles sur le plan où nous avons des autorités démocratiquement élues, à savoir sur le plan national. Dans nos pays démocratiques, nous élisons des autorités et nous leur donnons la tâche et le pouvoir de résoudre nos problèmes sur le plan national. Or, la plupart d'entre eux se posent désormais sur un plan supra-national, où les autorités que nous élisons n'ont plus de pouvoirs et sont réduites à l'impuissance. Cette impuissance, nous l'attribuons à leur incapacité intellectuelle et morale et nous cherchons le surhomme. Mais, le fait réel, c'est que les structures étant ce qu'elles sont, il n'y a personne sur le plan où se posent vraiment les problèmes d'aujourd'hui, à savoir au-dessus des nations.
+        </p>
+        <p facs="#facs_7_r_6">
+          Cet ensemble de circonstances entraîne un grand découragement et une forte tendance à la démission. Il s'y ajoute que l'éducation ne fournit pas aux citoyens les moyens de penser le présent ; elle ne procure pas au grand nombre les connaissances culturelles qui leur feraient aimer concrètement les valeurs à défendre. Comment voulez-vous demander à des masses humaines qu'on n'a pas familiarisées avec la culture, de mettre leur vie en jeu pour défendre la liberté de la culture ? Nous demandons aux masses des pays occidentaux des choses impossibles.
+        </p>
+        <p facs="#facs_7_r_7">
+          D'autre part, le socialisme, — le socialisme démocratique — se trouve dans une situation très difficile entre deux adversaires : d'un côté, il subit les attaques de ses adversaires conservateurs, de l'autre, ses adversaires communistes le harcèlent. Quand je dis « d'un côté et de l'autre côté », c'est une manière de parler ; je n'insinue pas que les communistes sont « à gauche » et que tous les autres sont « à droite ». Je dis seulement que les socialistes ont deux sortes d'ennemis. Cette situation les oblige à être toujours sur la défensive, alors qu'il importerait pour eux, au plus haut point, de renouveler leur pensée, de repenser leur doctrine en fonction du monde changé auquel ils ont affaire. La défensive entraîne la sclérose. On se cramponne aux conceptions et surtout aux étiquettes passées pour bien montrer qu'on reste soi. Or des problèmes neufs se posent. On voit monter un autre prolétariat, un vrai prolétariat au sens marxiste du terme, celui des pays économiquement sous-développés.
+        </p>
+        <p>
+          L'être humain a toujours envie d'être l'aristocrate de quelqu'un. C'est une des raisons, je crois, pour lesquelles, en <placeName ref="#zbz-l.705">Suisse</placeName>, les ouvriers répugnent le plus à donner le droit de vote aux femmes : ils veulent au moins être les aristocrates de leurs femmes. De même, l'ancien prolétariat européen,
+        </p>
+        <p>
+          239
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          qui ne sait plus très bien dans quel sens et de quelle manière il est encore « prolétariat », veut être l'aristocrate de ce nouveau prolétariat qui monte dans les pays neufs. Il préconise, certes, théoriquement l'aide aux pays économiquement sous-développés. Mais la question se pose de savoir jusqu'à quel point il est prêt à contribuer à cette aide. Personnellement, je doute que, pour le moment, les anciens prolétariats, les anciennes classes ouvrières des vieux pays, soient disposés à faire le nécessaire.
+        </p>
+        <p facs="#facs_8_r_2">
+          Les conditions étant celles que je viens d'esquisser, quelles sont donc les perspectives du socialisme ? Le <orgName ref="#zbz-o.53">parti socialiste</orgName> doit avant tout exister. Or, il est attaqué de deux côtés et il lui est très difficile de faire son autocritique. En effet, dès qu'un socialiste entreprend, comme je l'ai fait ce soir ou dans mon livre, un examen critique de ses propres conceptions, immédiatement ses adversaires veulent en tirer profit et l'exploitent sur le plan politique. J'en ai fait l'expérience. Ainsi la critique socialiste se trouve paralysée. Forcé d'exister sur la scène politique pour défendre dans l'immédiat ce qui est à défendre, le socialisme se sclérose, se cramponne à des mots, à des slogans, et se ferme de plus en plus à la mise en question par les faits. Le parti doit exister, il doit donc avoir des membres et remporter des succès électoraux. Le souci immédiat de la propagande et des thèmes qui la favorisent, tend à l'emporter sur celui des vrais problèmes.
+        </p>
+        <p facs="#facs_8_r_3">
+          Ensuite, comme il s'agit de démontrer en quoi la démocratie telle qu'elle existe n'est pas suffisante, on en montrera, à juste titre, les défauts. Or, en même temps, on veut, non la discréditer, mais la défendre. Dans une telle situation il est assez difficile de faire comprendre que l'alternative « justice sociale ou démocratie politique » est un sophisme, que la justice sociale grandit grâce aux armes données par la démocratie politique, et qu'elle n'existe pas là où la démocratie politique est abolie.
+        </p>
+        <p facs="#facs_8_r_4">
+          Enfin, la répartition des tâches entre les syndicats et les partis rend les choses encore plus difficiles. On a parfois l'impression que les syndicats sont là pour s'occuper du côté concret des choses, repoussant ainsi les partis vers le verbalisme et l'irresponsabilité. Il me semble que dans cette séparation fondamentale et radicale entre partis et syndicats, il y a un élément corrupteur ; non pas seulement un facteur de faiblesse, mais un élément corrupteur de la vie des partis eux-mêmes.
+        </p>
+        <p facs="#facs_8_r_5">
+          Enfin, le manque de clarté dans les conceptions entraîne le durcissement des esprits. Moins on est certain de ce qu'on veut sur le plan économique et politique, plus on se durcit sur les points où il est facile de maintenir verbalement une position claire. On en vient ainsi à compenser par le dogmatisme ou la violence du langage la recherche insuffisante des solutions aux vrais problèmes actuels. Sous l'angle politique, on prend des positions radicales sur les problèmes d'hier et on laisse sans réponse ceux d'aujourd'hui.
+        </p>
+        <p facs="#facs_8_r_6">
+          Le matérialisme anti-religieux, par exemple, qui a été professé par le marxisme, comportait une exigence, celle de la rigueur scientifique dont je vous parlais tout à l'heure. Elle lui donnait sa tenue, son style. Or, il ne peut plus se réclamer d'elle aujourd'hui. Ses prévisions sociales ne se sont pas réalisées. Les <orgName ref="#zbz-o.71">Eglises</orgName>, les sciences, les sociétés ont évolué comme il était impossible de le prévoir, et elles évolueront encore. L'anticléricalisme dogmatique ne peut plus se maintenir, sinon dans un socialisme cléricalisé, c'est-à-dire prenant ses institutions non pour des moyens, mais pour des fins.
+        </p>
+        <p facs="#facs_8_r_7">
+          Aussi suis-je portée à croire que ce qui importe essentiellement aujourd'hui, c'est de revenir aux faits, aux faits actuels et, en même temps, aux fondements permanents de la condition humaine.
+        </p>
+        <p facs="#facs_8_r_8">
+          D'une part, les faits, de l'autre, l'homme tel qu'il est. Abandonnons les slogans qui masquent la réalité. Il nous faut nous demander ce que représentent aujourd'hui les classes sociales. Qu'est-ce aujourd'hui que la lutte des classes ? L'un des grands dangers d'un exposé comme celui-ci, c'est qu'il nous incite à croire que toute l'attaque socialiste est dépassée, que tout va très bien et que, désormais, tous les hommes sont réconciliés entre eux. Il n'en est rien. Il suffit d'entrer dans une usine, par exemple une usine d'aluminium, et de voir dans quelles conditions les hommes y travaillent. Il suffit d'aller faire une promenade dans un quartier ouvrier, autour d'une usine, pour se rendre compte que les classes existent encore, que leur lutte continue. Seulement, elle présente un profil différent. Elle se dessine et se structure autrement et c'est cela qu'il faut essayer de comprendre pour découvrir ce qu'il convient de faire maintenant.
+        </p>
+        <p facs="#facs_8_r_9">
+          240
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          Il se peut qu'au moment où je parle, je ne sente plus la réalité de l'injustice sociale ou que je ne sois pas à même de la faire sentir. Il suffit cependant de se replonger dans la vie et de regarder au dehors pour apercevoir des faits simples et absurdes. Pourquoi est-ce la femme qui circule en automobile qui porte un manteau de fourrure, et non pas celle qui vend des produits au marché et reste des heures dehors ? Pourquoi l'ouvrier qui accomplit un travail particulièrement pénible habite-t-il un quartier misérable et dispose-t-il de moins de place et de moins de confort chez lui qu'un ingénieur ? J'ai pris par jeu ces deux exemples anodins, frivoles. Ils ne sont rien à côté de la réalité. Il y va de bien d'autres choses : on meurt plus dans des conditions misérables, on y meurt plus tôt ; l'intelligence, l'âme des enfants s'y atrophie, etc., etc.
+        </p>
+        <p facs="#facs_9_r_2">
+          Qu'est-ce aujourd'hui que cette fameuse démocratie industrielle dont on parle toujours ? S'agit-il d'une nouvelle forme de propriété ? Implique-t-elle
+        </p>
+        <p facs="#facs_9_r_3">
+          le recours à la nationalisation ? Quels ont été les effets réels des nationalisations ? La cogestion est-elle un remède ? <placeName ref="#zbz-l.13">Est</placeName>-ce vraiment un problème de propriété qui se pose ? N'est-ce pas plutôt un problème de répartition du pouvoir ? Comment se lient les problèmes de répartition et ceux de production des biens ? De quelle manière peut-on organiser une économie dirigée qui ne menace pas la liberté ? Dans quel sens l'économie doit-elle être dirigée ? Quel degré de décentralisation peut-elle supporter ? — Et puis, ne négligeons pas les problèmes de la supranationalité. Comment peut-on mettre fin aux nations anachroniques, dans un monde, sur une terre devenue aussi petite ? — Et enfin : comment sauvegarder chez l'homme le goût sauvage et gênant de la liberté ?
+        </p>
+        <p facs="#facs_9_r_4">
+          Les hommes sont conviés à des tâches nouvelles : celles d'aujourd'hui. Dans bien des domaines, tous les problèmes sont neufs. Il faut rejeter les slogans et accepter enfin de voir les options réelles.
+        </p>
+        <p>
+          241
+        </p>
+      </div>
+      </body></text>
+</TEI>

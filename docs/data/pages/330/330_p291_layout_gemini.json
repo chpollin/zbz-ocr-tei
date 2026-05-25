@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "REMARQUES EN MARGE DE L'ACTUALITÉ",
+      "bbox": {
+        "x_pct": 10.265,
+        "y_pct": 25.018,
+        "w_pct": 67.549,
+        "h_pct": 2.549
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling from 'LACTUALITÉ' to 'L'ACTUALITÉ'"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Depuis que ce livre a été achevé, certains événements se sont produits dont je voudrais traiter ici dans la mesure où ils ont servi de réactifs et permettent d'illustrer les analyses qui précèdent. Sous la pression de faits nouveaux, de développements inattendus, les idéologies, plus efficaces que les théories et les doctrines stéréotypées des partis, suscitent des prises de position et des attitudes révélatrices. Face à l'urgence ou à l'imprévu, que les hommes croient réellement l'emporte sur ce qu'ils font profession de croire, et même sur ce qu'ils croient croire. Les faits nouveaux ont été principalement : la « déstalinisation »; l'aggravation de la guerre en Algérie ; l'affaire de Suez. Nous traiterons de la déstalinisation en troisième lieu.",
+      "bbox": {
+        "x_pct": 3.44,
+        "y_pct": 30.811,
+        "w_pct": 85.042,
+        "h_pct": 24.688
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and missing text content to match the original document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La guerre d'Algérie a été idéologiquement un « réactif » particulièrement efficace parce que tout le débat, en France, a été porté, au moins théoriquement, sur le plan moral. Presque tout le monde dans ce pays voulait savoir s'il s'agissait ou non d'une « guerre juste ». La question ainsi posée devait nécessairement faire apparaître ce que sont, pour tels individus ou tels groupes, les critères d'une « guerre juste ». Elle devait aussi mettre en évidence la nature des forces idéologiques — leur « être » ambigu, à la fois tyrannique et inconsistant, entre la libre conscience personnelle et les mille nécessités inconscientes où s'englue toute vie, entre le jugement de l'individu et les contraintes sociales.",
+      "bbox": {
+        "x_pct": 3.301,
+        "y_pct": 57.487,
+        "w_pct": 85.181,
+        "h_pct": 23.057
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR garbage text to reflect actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les fascistes n'ont vu, dans l'affaire d'Algérie, qu'une occasion de reprendre en chœur leurs refrains nationalistes, communautaires, mystiques, telluriques, raciaux. Plutôt que de se demander",
+      "bbox": {
+        "x_pct": 3.482,
+        "y_pct": 82.059,
+        "w_pct": 85.139,
+        "h_pct": 6.827
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "257",
+      "bbox": {
+        "x_pct": 113.0,
+        "y_pct": 895.0,
+        "w_pct": 21.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Extremely poor initial OCR performance in the text blocks.",
+    "Missing bounding box for the page number.",
+    "Section header spelling mistake."
+  ],
+  "doc_id": "330",
+  "page": 291,
+  "elapsed_seconds": 4.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "519",
+      "bbox": {
+        "x_pct": 696.0,
+        "y_pct": 92.0,
+        "w_pct": 43.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les droits de l'homme",
+      "bbox": {
+        "x_pct": 242.0,
+        "y_pct": 92.0,
+        "w_pct": 286.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Added missing bounding box for running head which is a section header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les trois sortes de droits et l'exigibilité",
+      "bbox": {
+        "x_pct": 35,
+        "y_pct": 158,
+        "w_pct": 487,
+        "h_pct": 26
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or ces chances dépendent fondamentalement de trois sortes de facteurs, auxquels correspondront trois sortes de droits : elles sont considérablement réduites quand l'être humain subit des contraintes ou des menaces physiques; ou quand sa vie (ou celle de ses proches) est menacée par le besoin, par le danger de ne pas pouvoir réaliser les conditions physiques de sa survie; ou quand il n'a pas accès à la formation et au temps libre indispensables à sa conscience, à sa pensée et à son orientation.",
+      "bbox": {
+        "x_pct": 35,
+        "y_pct": 201,
+        "w_pct": 712,
+        "h_pct": 221
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'où les trois sortes de droits, dont l'exigence revient à revendiquer pour tous et pour chacun les chances de devenir des hommes, libres et égaux devant l'exigence sans fin qui leur est propre.",
+      "bbox": {
+        "x_pct": 36,
+        "y_pct": 421,
+        "w_pct": 711,
+        "h_pct": 93
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a d'abord les droits élémentaires, civils et politiques, qui sont le plus facilement exigibles parce que ce qu'ils condamnent, ce sont toutes les contraintes physiques exercées par la force ou par la menace de la force contre la vie, les choix, les déplacements, l'action, l'expression d'un être humain, lui rendant ainsi impossible l'exercice de sa liberté responsable.",
+      "bbox": {
+        "x_pct": 39,
+        "y_pct": 510,
+        "w_pct": 708,
+        "h_pct": 158
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A ces contraintes évidentes, il faudrait en associer d'autres, moins flagrantes, moins directes. Les risques peuvent n'être pas mortels, concerner plutôt des avantages économiques, des perspectives de carrière, le bonheur, le succès ou la vie des proches. Ici peuvent s'exercer toutes les formes de l'intimidation ou du chantage.",
+      "bbox": {
+        "x_pct": 40,
+        "y_pct": 664,
+        "w_pct": 710,
+        "h_pct": 158
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le chantage est à mes yeux la plus terrible des violations des droits de l'homme : elle passe par le centre même de la possible liberté d'un sujet humain. S'il cède, il en trahit l'essence. C'est une liberté qui se suicide.",
+      "bbox": {
+        "x_pct": 45,
+        "y_pct": 815,
+        "w_pct": 704,
+        "h_pct": 111
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header block in initial detection",
+    "Missing page number block in initial detection"
+  ],
+  "doc_id": "2920",
+  "page": 17,
+  "elapsed_seconds": 5.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

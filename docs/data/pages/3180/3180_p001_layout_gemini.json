@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "DA 38639",
+      "bbox": {
+        "x_pct": 35.4,
+        "y_pct": 2.111,
+        "w_pct": 22.323,
+        "h_pct": 3.08
+      },
+      "changed": true,
+      "change_reason": "This is an inventory number/cataloging data, not part of the primary text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch Annemarie Pieper Walther Ch. Zimmerli",
+      "bbox": {
+        "x_pct": 35.551,
+        "y_pct": 5.19,
+        "w_pct": 51.373,
+        "h_pct": 9.755
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mensch - Welt Widerspruch",
+      "bbox": {
+        "x_pct": 35.038,
+        "y_pct": 45.924,
+        "w_pct": 58.582,
+        "h_pct": 14.611
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in text content to match image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "VERLAG FRÄNKISCHER TAG",
+      "bbox": {
+        "x_pct": 35.701,
+        "y_pct": 88.524,
+        "w_pct": 56.456,
+        "h_pct": 3.388
+      },
+      "changed": true,
+      "change_reason": "Publisher information at the bottom of a book cover/title page is considered part of the bibliographic/heading metadata, not a narrative paragraph."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Inventory number mislabeled as text.",
+    "Publisher name mislabeled as paragraph.",
+    "Minor transcription correction in title."
+  ],
+  "doc_id": "3180",
+  "page": 1,
+  "elapsed_seconds": 2.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

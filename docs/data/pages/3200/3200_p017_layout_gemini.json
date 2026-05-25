@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zentrales Anliegen der Genfer Philosophin ist die Erhaltung beziehungsweise Wiedererrichtung der Menschenrechte. Als Vorsteherin der Abteilung für Philosophie der UNESCO bot sich ihr in den Jahren 1966 bis 1968 die Gelegenheit, dieses Problem auf weltweiter Ebene zu untersuchen, und 1968 erschien – als Ergebnis dieser Studien – die unter ihrer Leitung zusammengestellte Anthologie „Le Droit d’être un Homme“, die Schriften und Überlieferungen zu diesem Thema aus den verschiedensten Kulturen und Epochen wiedergibt. Von 1970 bis Ende 1972 vertrat Frau Prof. Hersch die Schweiz im Exekutivrat der UNESCO und nahm als Mitglied der schweizerischen Delegation an mehreren Generalkonferenzen dieser internationalen Organisation teil. Außerdem gehört sie seit vielen Jahren der Nationalen Schweizerischen UNESCO-Kommission an.",
+      "bbox": {
+        "x_pct": 8.6,
+        "y_pct": 5.119,
+        "w_pct": 80.315,
+        "h_pct": 20.189
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and improved accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie ihr Lehrer Karl Jaspers sieht Jeanne Hersch die heutige Aufgabe der Philosophie nicht im Aufbau eines festen Systems, sondern in der Untersuchung der Grundprobleme des Philosophierens überhaupt. Dies führt zur ständigen geistigen Auseinandersetzung mit dem Zeitgeschehen in allen Bereichen und namentlich in jenen der Politik und der Erziehung, wo sie als Diskussionsteilnehmerin und Autorin immer wieder an die Öffentlichkeit tritt.",
+      "bbox": {
+        "x_pct": 8.6,
+        "y_pct": 28.184,
+        "w_pct": 80.198,
+        "h_pct": 10.986
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and improved accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Neben den bereits erwähnten Werken veröffentlichte Frau Prof. Hersch zahlreiche weitere philosophische, pädagogische und soziologische Schriften, darunter „L’Obstacle du Langage“ (in Henri Bergson, Essais et Témoignages inédits, Neuenburg 1949), „Défense de la Technisité en Philosophie“ (in „L’Homme“, Neuenburg 1943), „La Liberté sans Choix“ (Neuenburg 1949), „Tragweite und Grenzen des politischen Handelns / Jaspers als Lehrer“ (Festschrift für Karl Jaspers, 1953), „Idéologies et Réalités“ (1956, deutsch im Piper-Verlag), „Société et Etat“ (in „Studia philosophica“, Basel 1958), „Sur la nation de race“ (Diogène, Paris 1967), „Sur le sens de l’historie“ (Mélanges Raymond Aron, 1971), „Der Lehrer in der heutigen Krise“ (Schweizer Lehrerzeitung, 1970), „La drogue contre l’humain“ (Médecine et Hygiène, 1972), „Le philosophe devant les progrès de la science médicale“ (Soc. médicale de Genève, 1973).",
+      "bbox": {
+        "x_pct": 8.436,
+        "y_pct": 43.878,
+        "w_pct": 80.327,
+        "h_pct": 20.46
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and improved accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine Sonderstellung in diesem Werk nimmt der von der Büchergilde ausgezeichnete Roman „Temps alternés“ (Friborg, 1942) ein. Jeanne Hersch ist auch als Übersetzerin verschiedener Werke von Karl Jaspers und des polnischen Autors Czeslaw Milosz hervorgetreten.",
+      "bbox": {
+        "x_pct": 8.635,
+        "y_pct": 66.746,
+        "w_pct": 79.965,
+        "h_pct": 7.617
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and improved accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In Würdigung ihrer Verdienste erhielt Jeanne Hersch 1970 den Ida-Somazzi-Preis, 1972 den Titel einer Dr. h. c. der Theologischen Fakultät der Universität Basel und 1973 den erstmals verliehenen Preis für Freiheit und Menschenrechte, 1992 den Karl-Jaspers-Preis in Heidelberg und 1993 den Titel einer Dr. h. c. der Fakultät für Kommunikation und Ästhetik der Universität Oldenburg.",
+      "bbox": {
+        "x_pct": 8.67,
+        "y_pct": 76.935,
+        "w_pct": 79.977,
+        "h_pct": 9.532
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and improved accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 85.833,
+        "y_pct": 93.684,
+        "w_pct": 2.5,
+        "h_pct": 2.105
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 6,
+  "issues": [
+    "Text regions had truncated content and required manual transcription correction.",
+    "Page number at bottom right was labeled as text, reclassified as page_footer."
+  ],
+  "doc_id": "3200",
+  "page": 17,
+  "elapsed_seconds": 5.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

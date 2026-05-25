@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 9.5,
+        "w_pct": 26.5,
+        "h_pct": 1.2
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "41",
+      "bbox": {
+        "x_pct": 78.5,
+        "y_pct": 93.0,
+        "w_pct": 2.0,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "corps même; à cette réalité matérielle; à ce nouveau donné que que l'homme créa.",
+      "bbox": {
+        "x_pct": 13.272,
+        "y_pct": 12.291,
+        "w_pct": 63.291,
+        "h_pct": 3.692
+      },
+      "changed": true,
+      "change_reason": "Corrected text overlap and merged content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lart est donc avant   tout création dans le donné. Avant   dêtre expression. Avant dêtre   leçon. Av",
+      "bbox": {
+        "x_pct": 13.042,
+        "y_pct": 16.262,
+        "w_pct": 68.588,
+        "h_pct": 25.974
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Expression et   forme; au sens profond, dérivent dêtre au sens où nous prenons ce mot   ici, soit: e",
+      "bbox": {
+        "x_pct": 12.697,
+        "y_pct": 42.236,
+        "w_pct": 68.661,
+        "h_pct": 26.277
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seulement, n'oublions   jamais   qu'aucune forme n'arrive à lêlre sans s'emparer dune matière; dun d",
+      "bbox": {
+        "x_pct": 12.85,
+        "y_pct": 68.058,
+        "w_pct": 68.201,
+        "h_pct": 5.867
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Overlapping boxes in original segment",
+    "Missing running header and page footer"
+  ],
+  "doc_id": "110",
+  "page": 43,
+  "elapsed_seconds": 6.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text overlap and merged content": 1,
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SOMMAIRE",
+      "bbox": {
+        "x_pct": 10.374,
+        "y_pct": 7.256,
+        "w_pct": 11.182,
+        "h_pct": 1.81
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONTENTS",
+      "bbox": {
+        "x_pct": 77.527,
+        "y_pct": 7.506,
+        "w_pct": 11.255,
+        "h_pct": 1.668
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to section_header as it is a parallel heading to SOMMAIRE."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": {
+        "x_pct": 87.112,
+        "y_pct": 27.241,
+        "w_pct": 0.866,
+        "h_pct": 1.547
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, moved to _filter."
+    },
+    {
+      "label": "table",
+      "zbz_tag": "zb_paragraph",
+      "text": "MAX BLACK, Introduction 5 Thèses présentées par JEANNE HERSCH 13 MAJID FAKHRY 17 ALEXANDRU TÄNASE 21 GERHARD HUBER 31 Commentaires préparés par HÅKAN TÖRNEBOHM 39 MIHAILO MARKOVIC 45 Contributions à la discussion par MAX BLACK 55 FRANCIS JACQUES 57 RAYMUNDO PANIKKAR 61 E. W. F. TOMLIN 73 Conclusions par ANDRÉ MERCIER 77 Auteurs - Contributors 89",
+      "bbox": {
+        "x_pct": 10.446,
+        "y_pct": 12.202,
+        "w_pct": 78.299,
+        "h_pct": 51.393
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Detected page number 3 which was missing from initial detection.",
+    "CONTENTS label needed to be elevated to section_header."
+  ],
+  "doc_id": "2140",
+  "page": 3,
+  "elapsed_seconds": 3.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

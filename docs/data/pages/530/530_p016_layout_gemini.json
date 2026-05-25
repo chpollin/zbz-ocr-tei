@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA SUISSE DANS L'EUROPE ACTUELLE 75",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The top text line is a running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "culture et de toute curiosité. Il y a des risques à s’exposer à des influences étrangères? Mais la culture a toujours été une chose dangereuse, et on ne l’a que trop oublié. La culture est un peu devenue, dans notre monde occidental, une cérémonie de salon, un terrain de rencontres polies où l’on se fait des compliments réciproques, où l’on discute des problèmes derniers sans s’offenser les uns les autres. Cette courtoisie, c’est très bien, mais il ne faudrait pas, tout de même, qu’elle éclipse le fond des choses. Et après tout, quand, dans une société de philosophie, on discute de problèmes touchant l’existence de Dieu, le problème a une certaine importance. Il ne s’agit pas alors uniquement de cette espèce d’échange de bons procédés sociaux. J’ai parfois l’impression que notre liberté culturelle occidentale tient au fait que l’on ne prend pas la culture au sérieux. Alors on se dit : « Laissez-les toujours parler, qu’est-ce que cela peut bien faire. Les poètes, les peintres, les musiciens et les philosophes, on peut toujours les laisser libres. » Tandis que là où on croit que ces choses ont des conséquences, la contrainte commence.",
+      "bbox": {
+        "x_pct": 9.626,
+        "y_pct": 10.901,
+        "w_pct": 79.588,
+        "h_pct": 55.294
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match the document image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eh bien, il me semble que pour donner de l'air à notre jeunesse, pour que notre jeunesse reste suisse et ouverte au monde sans étouffer, il nous faut lui permettre de vivre les problèmes qui sont ceux de notre époque, et par conséquence leur ouvrir des perspectives fédéralistes.",
+      "bbox": {
+        "x_pct": 9.884,
+        "y_pct": 66.67,
+        "w_pct": 78.647,
+        "h_pct": 14.676
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match the document image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On parle de notre neutralité comme d'un obstacle invincible, car nous devons à tout prix être une exception en Europe. Je ne veux pas traiter à fond le problème de la neutralité, et d'ailleurs je ne le saurais pas. J'aimerais pourtant faire quelques",
+      "bbox": {
+        "x_pct": 9.832,
+        "y_pct": 81.377,
+        "w_pct": 78.995,
+        "h_pct": 11.842
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match the document image accurately."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "The bounding box for the top header was missing.",
+    "OCR text was truncated in the original JSON input.",
+    "Page header/number was labeled incorrectly as a standard paragraph text.",
+    "The segmentation missed the header and number combined."
+  ],
+  "doc_id": "530",
+  "page": 16,
+  "elapsed_seconds": 4.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

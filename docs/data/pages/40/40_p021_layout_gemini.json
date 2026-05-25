@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 23",
+      "bbox": {
+        "x_pct": 393.0,
+        "y_pct": 77.0,
+        "w_pct": 213.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sonnet, toute droite. Les arc9 du ciel nocturne,   jaillis serrés, selon une courbe parfaite, du cercle de l’horizon, enfermaient la plaine lisse et l’espace, et se nouaient souverainement, juste au-dessus de sa tête. Des étoiles brillaient, où le voulaient leurs lois, sans un scintillement.",
+      "bbox": {
+        "x_pct": 10.986,
+        "y_pct": 12.316,
+        "w_pct": 80.676,
+        "h_pct": 10.208
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors for text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle tenait toute droite parce qu'elle fixait une étoile, et plus que le sol sous ses pieds, l'étoile la portait. Elle était le centre oublié des circonférences. Elle s'ignorait, elle n'était que le pivot immobile des révolutions. Du regard, elle se suspendait à l'étoile, et cela devait durer éternellement.",
+      "bbox": {
+        "x_pct": 10.851,
+        "y_pct": 24.924,
+        "w_pct": 80.635,
+        "h_pct": 15.085
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors for text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Soudain et doucement, l'étoile glisse. Cela fait une fêlure dans la voûte du monde, mais sans le bruit d'un cristal brisé. Elle, elle est tombée sur l'herbe de la colline. Des brises y passent, en tirent des froissements. Ses mains fouillent l'herbe de la colline, car l'étoile a dû y tomber. Sûrement elle a dû tomber tout près d'elle, puisqu'elle était au centre du monde, — peut-être même dans ses cheveux. Mais ses cheveux sont mêlés de feuilles grasses, et l'herbe est pleine de colchiques dont les tiges laissent un jus dans ses doigts. Dans l'espace confus, les brises qui se sont levées traînent des brumes. Elle n'est plus au centre du monde; l'étoile l'a emporté ailleurs. Il se cache quelque part, il n'est plus éternel, il vit, il est tendre, fragile, il est au milieu de broussailles, de feuilles et de vers. Elle cherche l'étoile. Quelqu'un lui parle, elle le sent, mais elle ne peut pas l'entendre parce qu'elle rampe sur le sol en fouillant dans l'herbe et qu'elle a les oreilles pleines de vent. Quelqu'un essaye de lui dire qu'une",
+      "bbox": {
+        "x_pct": 10.581,
+        "y_pct": 39.792,
+        "w_pct": 80.946,
+        "h_pct": 45.813
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors for text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was very poor with many garbled characters.",
+    "Header and page number were included in the text region block.",
+    "Bbox for header not correctly identified in the input."
+  ],
+  "doc_id": "40",
+  "page": 21,
+  "elapsed_seconds": 5.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

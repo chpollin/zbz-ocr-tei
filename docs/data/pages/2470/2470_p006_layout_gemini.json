@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 6 -",
+      "bbox": {
+        "x_pct": 472.0,
+        "y_pct": 98.0,
+        "w_pct": 55.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number/header region as _filter instead of paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Niemand hat mich angegriffen. Ich habe nicht einmal Angst gehabt, aber ich hatte das Gefühl, als sei mir ein Heer von Pferden über den Körper gelaufen. So stark kann der physische Eindruck der Einstimmigkeit der Menge sein, auch wenn man nicht eine Spur von Versuchung verspürt, mitzumachen. Ich war froh, diese Erfahrung gemacht zu haben, denn damit versteht man, glaube ich, etwas sehr Wichtiges von der totalitären Versuchung. Das Ungeheure, was nachher geschehen ist, hat sich, wie ich glaube, nicht als Folge einer ungeheuren Wahl der Menge machen lassen, sondern daß dieses Ungeheuerliche ermöglicht war, das war die Abdankung. Die Absage an die Freiheit jedes einzelnen unter vielen. Die Absage, Mensch zu sein. Das Einverstandensein, nicht mehr Mensch zu sein. Und je mehr man darüber nachdenkt, über diesen Prozeß, desto mehr erscheinen die Opfer als menschliche Wesen, den sie danken nicht ab, sondern sie ertragen nur. Sie ertragen physisch, was sie ertragen. Und gerade das ist für Menschen sehr unerträglich. Nicht mehr Mensch zu sein vor Menschen, die noch Menschen sind, und deswegen glaube ich, ist es dazu gekommen, daß man die Opfer nicht nur getötet hat, sondern gefoltert und erniedrigt. Das war die Folge dieser entmenschlichenden Feigheit. Man wollte diese Menschen, die noch Menschen waren, erniedrigen. Und dann, erst dann, glaube ich, nicht von Anfang an, sondern erst dann, wenn man sie braucht, erinnert man sich an alle antisemitischen Klischees, die von der Geschichte her übertragen wurden. Denn die kann man dann benützen, um sich zu rechtfertigen. Ich glaube, die Klischees des Antisemitismus in Deutschland waren kaum Ursachen oder Motive, sondern fehlende Mittel für die Henker, ihre Entmenschlichung zu rächen, an Menschen, die noch Menschen waren. Es ist also furchtbar schwer, ein Mensch zu sein, und es ist gleichzeitig unmöglich, darauf, wirklich offen, ganz zu verzichten. Und deswegen soll, wenn man sich nicht mehr stolz als Mensch fühlen kann, dann der andere kein Mensch mehr sein. Also ist der letzte Grund, wie ich glaube, nicht die Bosheit, nicht die Ideologie, nicht das Klischee, nicht die Unmenschlichkeit, sondern im Grunde die ganz schlimme Feigheit. Und die Feigheit erfindet sich Rechtfertigung. Entweder Verachtung für den anderen, oder dann, was noch schöner aussieht, die Verabsolutierung und die Totalisierung angeblich sehr erhabener Ziele. Man gibt sich absolute Ziele, die man formulieren kann,",
+      "bbox": {
+        "x_pct": 91.0,
+        "y_pct": 122.0,
+        "w_pct": 822.0,
+        "h_pct": 815.0
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR transcription artifacts from previous text fragment and corrected label mapping."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "The bounding box provided in the original input was a singular block covering the header and the body text; it was split logically for correction.",
+    "OCR output in the original JSON had hallucinated characters and incorrect spacing."
+  ],
+  "doc_id": "2470",
+  "page": 6,
+  "elapsed_seconds": 4.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

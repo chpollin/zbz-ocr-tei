@@ -1,0 +1,138 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "De la finitude",
+      "bbox": {
+        "x_pct": 45.85,
+        "y_pct": 11.949,
+        "w_pct": 16.575,
+        "h_pct": 2.085
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A première vue, il 'agit là dune notion bien claire: elle signifie que lhomme, sur tous les plans, e",
+      "bbox": {
+        "x_pct": 17.059,
+        "y_pct": 15.14,
+        "w_pct": 74.214,
+        "h_pct": 11.829
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1.",
+      "bbox": {
+        "x_pct": 53.078,
+        "y_pct": 28.621,
+        "w_pct": 2.095,
+        "h_pct": 1.407
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to footnote"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il suffit de s'interroger sur les contraires du fini pour voir s'ouvrir un éventail de notions; et c",
+      "bbox": {
+        "x_pct": 17.188,
+        "y_pct": 30.444,
+        "w_pct": 74.11,
+        "h_pct": 13.869
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si Pon examine ces termes en cherchant ce leur est commun, on découvre que le statut ontologique du ",
+      "bbox": {
+        "x_pct": 17.188,
+        "y_pct": 44.028,
+        "w_pct": 74.19,
+        "h_pct": 10.256
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais tous les autres couples de contraires ont en commun une opposition évidente: manque ou non-manq",
+      "bbox": {
+        "x_pct": 17.268,
+        "y_pct": 54.091,
+        "w_pct": 74.11,
+        "h_pct": 5.071
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien plus clairement quà Pinfini, la finitude s'oppose à la plénitude condensée en soi, sans dehors,",
+      "bbox": {
+        "x_pct": 17.381,
+        "y_pct": 59.048,
+        "w_pct": 74.021,
+        "h_pct": 5.208
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il suit de là que la finitude n'est pas une caractéristique; parmi beaucoup dautres, de la condition",
+      "bbox": {
+        "x_pct": 17.301,
+        "y_pct": 64.103,
+        "w_pct": 74.214,
+        "h_pct": 5.567
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or cette condition; la finitude, est déjà remplie; elle déjà là, constitutive de notre de notre pens",
+      "bbox": {
+        "x_pct": 17.349,
+        "y_pct": 69.328,
+        "w_pct": 74.19,
+        "h_pct": 7.066
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rappelons par exemple ce que Platon nous dit de légalité: nous ne constatons; dans  notre   expérien",
+      "bbox": {
+        "x_pct": 17.325,
+        "y_pct": 76.222,
+        "w_pct": 74.271,
+        "h_pct": 10.427
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One text region was actually a footnote and needed to be relabeled."
+  ],
+  "doc_id": "1500",
+  "page": 2,
+  "elapsed_seconds": 5.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to footnote": 1
+  }
+}

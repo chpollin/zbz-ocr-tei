@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "134 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 18.377,
+        "y_pct": 2.0,
+        "w_pct": 68.734,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header detected"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "rêves (prenez le début des Méditations de Descartes) Ies aspects divers   dun objet unique (le morce",
+      "bbox": {
+        "x_pct": 18.493,
+        "y_pct": 13.657,
+        "w_pct": 68.734,
+        "h_pct": 27.769
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une valeur aussi générale accordée au témoignage sensible mérite attention . Concevoir une vérité   ",
+      "bbox": {
+        "x_pct": 18.377,
+        "y_pct": 41.222,
+        "w_pct": 68.734,
+        "h_pct": 30.076
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nolion dévidence implique aussilôt vis-à-vis; est comme évident. La racine visuelle de ce mot   n",
+      "bbox": {
+        "x_pct": 21.024,
+        "y_pct": 70.941,
+        "w_pct": 65.857,
+        "h_pct": 3.771
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region in original input.",
+    "Small text extraction error in final paragraph."
+  ],
+  "doc_id": "110",
+  "page": 136,
+  "elapsed_seconds": 6.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content.": 1,
+    "ADDED": 1
+  }
+}

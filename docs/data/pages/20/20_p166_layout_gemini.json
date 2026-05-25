@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "164 SITUATIONS-LIMITES",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page headers were missed in the input JSON; need to capture the header at the top and correctly identify it."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pour éclairer que ma pensée suive différentes directions :",
+      "bbox": {
+        "x_pct": 15.105,
+        "y_pct": 12.135,
+        "w_pct": 75.964,
+        "h_pct": 4.805
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors from 'pOur Teclairer que In2 pensee' to 'pour éclairer que ma pensée'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) La rupture (Durchbruch) s'accomplit aux limites du monde objectif. La pensée les cherche pour en faire l'expérience et en tirer un appel. A travers les situations empiriquement données, elle cherche les « situations-limites » (Grenzsituationen), par exemple : je me trouve toujours dans une certaine situation particulière; je ne peux pas vivre sans lutter et souffrir; je dois inévitablement prendre la faute sur moi; je dois mourir. Ces situations ne changent pas — seule leur apparence change. Elles sont pour nous définitives. Elles ne sont pas compréhensibles : nous ne voyons rien derrière elles. Elles sont comme un mur auquel nous nous heurtons, contre lequel nous échouons. Nous ne pouvons pas les changer, mais seulement les éclairer, sans pouvoir jamais les expliquer par autre chose ou les déduire d'ailleurs. En face d'elles, une seule réaction reste sensée : non la révolte, mais « le devenir de l'existence possible en nous » (1). Car elles ne sont réelles que pour l'existence, et nous devenons nous-mêmes pour autant que nous les affrontons les yeux ouverts. « Faire l'expérience des situations-limites et exister, c'est une seule et même chose. » En elles, le Moi peut saisir l'être par un bond : la conscience, qui d'habitude ne fait que savoir qu'il y a des situations-limites, sera comblée, d'une façon",
+      "bbox": {
+        "x_pct": 15.015,
+        "y_pct": 17.092,
+        "w_pct": 76.551,
+        "h_pct": 66.892
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR text errors and formatting issues within the main body text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Philosophie, II, p. 204.",
+      "bbox": {
+        "x_pct": 18.569,
+        "y_pct": 86.721,
+        "w_pct": 34.639,
+        "h_pct": 2.316
+      },
+      "changed": true,
+      "change_reason": "Changed label to footnote as it is a reference at the bottom of the page."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing page header region in input.",
+    "Significant OCR errors in main text block.",
+    "Incorrect label for footnote.",
+    "Input text was truncated or poorly transcribed."
+  ],
+  "doc_id": "20",
+  "page": 166,
+  "elapsed_seconds": 4.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

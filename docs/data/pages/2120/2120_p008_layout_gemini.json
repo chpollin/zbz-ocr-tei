@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Warum wir nicht vergessen dürfen - 40 JAHRE NACH DEM AUFSTAND IM WARSCHAUER GETTO -",
+      "bbox": {
+        "x_pct": 12.483,
+        "y_pct": 11.605,
+        "w_pct": 69.407,
+        "h_pct": 3.562
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it is a title/heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zunächst einmal möchte ich den Organisatoren dieser Tagung danken und ihnen dazu gratulieren, daß es ihnen gelungen ist, uns alle hier um dieses Thema zusammenzubringen. Ich glaube, dazu gehört sehr viel Mut, denn jeder weiß, daß man es bei diesen Fragen nicht nur mit Fakten, sondern auch mit sehr vielen Gefühlen und Erinnerungen zu tun hat, denen gegenüber viele unter uns - wahrscheinlich die meisten - irgendwie \"ohne Haut\" sind. Daß man trotzdem ein solches Gespräch gehabt hat und jetzt noch fortführen wird, finde ich bewundernswert - es gibt Hoffnung für die Zukunft.",
+      "bbox": {
+        "x_pct": 12.347,
+        "y_pct": 22.65,
+        "w_pct": 78.271,
+        "h_pct": 18.845
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn ich jetzt zu der Frage, warum wir nicht vergessen dürfen, zu Ihnen spreche, beginne ich mit meinem Vater. Mein Vater war ein polnischer Bundist; er gehörte - wie übrigens auch meine Mutter - dem \"Bund\" an. Beide waren aus Polen, und beide waren Bundisten, und wenn ich hier mit einigen Sätzen auf den \"Bund\" eingehe, so deshalb, weil über ihn auch in diesem Kreis bisher kaum gesprochen worden ist. Der \"Bund\", die Mitglieder des \"Bundes\" sind vor dem Kriege und während des Krieges nicht nur - jeder von ihnen ein Mensch für sich - vernichtet worden, sondern man hat sie auch, was vielleicht noch schlimmer ist, sozusagen aus der Geschichte hinausgejagt. Sie sind - und das gilt für weite Teile des westlichen Bewußtseins wie überhaupt für das Bewußtsein der meisten Menschen, es sei denn, sie hätten direkt dazu gehört - einfach vom Horizont verschwunden. Wenn man heute davon spricht, daß sechs Millionen Menschen getötet worden sind, so besagt das im Grunde sehr wenig, denn sechs Millionen Menschen - das ist in der Vorstellung von wohl niemandem sechsmillionenmal ein Mensch. Und der Bund - das waren nicht nur Menschen, sondern das war auch eine Kultur. Ich habe davon erfahren, als ich als junges Mädchen bei mehreren Besuchen in Polen die bundistischen Schöpfungen besichtigen konnte, und auch als ich zu Hause, in meinem Elternhaus in der Schweiz, die vielen Bundisten erlebte, die in den schlimmen Jahren der Verfolgung immer wieder zu uns kamen.",
+      "bbox": {
+        "x_pct": 12.568,
+        "y_pct": 43.147,
+        "w_pct": 76.186,
+        "h_pct": 45.289
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der \"Bund\" war eine sozialistische Bewegung, die in Polen und außerhalb",
+      "bbox": {
+        "x_pct": 13.28,
+        "y_pct": 89.665,
+        "w_pct": 75.847,
+        "h_pct": 1.634
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text extraction for paragraph 2 and 3 was severely truncated.",
+    "Title was misidentified as standard paragraph text."
+  ],
+  "doc_id": "2120",
+  "page": 8,
+  "elapsed_seconds": 5.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

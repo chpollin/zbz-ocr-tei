@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDEOLOGIES ET REALITE",
+      "bbox": {
+        "x_pct": 312.383,
+        "y_pct": 77.295,
+        "w_pct": 218.068,
+        "h_pct": 14.869
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "219",
+      "bbox": {
+        "x_pct": 847.407,
+        "y_pct": 77.295,
+        "w_pct": 29.589,
+        "h_pct": 14.869
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "soit possible, et que les contradictions insolubles auxquelles se heurte la pensée de l'homme sont, non des défauts, mais les éléments constitutifs et nécessaires de sa liberté.",
+      "bbox": {
+        "x_pct": 42.668,
+        "y_pct": 105.772,
+        "w_pct": 841.97,
+        "h_pct": 65.064
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce est doute vrai, en revanche; c'est que les obstacles métaphysiquement permanents à la liberté, ceux qui, en même temps, la constituent, prennent au cours de l'histoire des formes temporellement conditionnées. La liberté triomphante, la liberté absolument libre - les marxistes l'ont bien vu, et sur ce point ils tentent de mettre à leur service la puissante pensée spinoziste - ne se distinguerait plus de la nécessité; elle s'abolirait dans sa propre gloire, comme le feraient toutes les valeurs humaines portées à leur point d'absolue perfection. La liberté doit être conquête d'elle-même sur des obstacles, et ces obstacles dépendent de l'histoire et changent avec elle. L'obstacle inscrit dans l'histoire de notre temps, celui contre lequel la liberté doit se conquérir sous peine de mort par enlisement, c'est la lutte des classes, l'exploitation de l'une par l'autre, la première vendant son travail à la seconde qui veut l'acheter le meilleur marché possible. Lutte des classes aggravée par les intérêts divergents des vendeurs et des consommateurs, comme nous l'avons vu plus haut.",
+      "bbox": {
+        "x_pct": 43.18,
+        "y_pct": 168.721,
+        "w_pct": 848.617,
+        "h_pct": 349.999
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le désir de dénoncer l'existence et les effets de cette lutte constitue un appel à la révolte; En effet, elle fausse les structures de la démocratie politique. Elle sacrifie la vie humaine, les vies humaines. Elle rend hypocrites les principes mêmes dont la société se réclame. Elle contraint patrons et salariés à mener sans frein le combat pour l'existence et pour la conquête du même ordre de biens. Elle substitue au libre rapport des hommes la contrainte de l'appareil social. Pour la liberté, le capitalisme qui implique cette lutte est certes un ennemi.",
+      "bbox": {
+        "x_pct": 44.156,
+        "y_pct": 513.996,
+        "w_pct": 847.632,
+        "h_pct": 184.493
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text content and merging regions."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CARACTÉRISTIQUES D'UN RÉGIME SOCIALISTE",
+      "bbox": {
+        "x_pct": 44.156,
+        "y_pct": 739.13,
+        "w_pct": 576.602,
+        "h_pct": 23.805
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après l'expérience du national-socialisme allemand, après celle du communisme soviétique d'une part et de l'autre celle des monopoles et des trusts capitalistes, on est aujourd'hui contraint de donner, d'un régime socialiste, des critères plus précis qu'autrefois. Il ne suffit plus de caractériser le socialisme par ce qu'il",
+      "bbox": {
+        "x_pct": 43.18,
+        "y_pct": 782.802,
+        "w_pct": 846.38,
+        "h_pct": 103.118
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text content."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 7,
+  "issues": [
+    "Docling text extraction was highly inaccurate in OCR content.",
+    "Multiple regions were fragmented or mislabeled.",
+    "Header and page number were labeled as text."
+  ],
+  "doc_id": "330",
+  "page": 253,
+  "elapsed_seconds": 6.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

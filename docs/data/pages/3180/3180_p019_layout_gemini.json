@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese Differenz zwischen den Handlungen, von denen wir sagen, sie seien moralisch gut oder empfehlenswert, und den Handlungen, von denen wir sagen, sie seien nicht gut oder moralisch nicht empfehlenswert, will ich irgendwie in den Griff bekommen, und die bekomme ich nicht in den Griff, wenn ich sage: Alle unsere Handlungen führen irgendwie ins Paradox. Vielleicht gibt es sozusagen moralisch gute Paradoxa und moralisch schlechte Paradoxa?",
+      "bbox": {
+        "x_pct": 8.084,
+        "y_pct": 3.461,
+        "w_pct": 85.479,
+        "h_pct": 17.851
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text OCR errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 8.428,
+        "y_pct": 23.834,
+        "w_pct": 23.009,
+        "h_pct": 2.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gute und schlechte Paradoxa? Ich kann mir nicht gut vorstellen, was das bedeutet.",
+      "bbox": {
+        "x_pct": 8.488,
+        "y_pct": 25.747,
+        "w_pct": 84.177,
+        "h_pct": 4.791
+      },
+      "changed": true,
+      "change_reason": "Corrected reading flow and character encoding."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Annemarie Pieper:",
+      "bbox": {
+        "x_pct": 8.578,
+        "y_pct": 32.149,
+        "w_pct": 28.293,
+        "h_pct": 2.914
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ja, aber das größte Paradox ist doch eigentlich das, was man immer auch an sich selbst feststellen kann. Man hat eingesehen, daß etwas gut ist, und handelt trotzdem nicht danach. Da fragt man sich: Was fehlt da eigentlich? An Verstand fehlt es nicht, denn man hat ja eingesehen, was man sollte. Es gibt verschiedene Gründe. Man kann zu bequem sein oder es ist einem lästig, wie auch immer, aber man weiß eigentlich, was man tun sollte. Es ist keine zusätzliche Aufklärung nötig, und das setzt doch voraus, daß wir in einer Interaktionsgemeinschaft eine Art Vorverständnis teilen über das, was wir gut nennen wollen. In der Regel sagen wir, es sei der Moralkodex oder es seien irgendwelche Regeln oder Regelsysteme, von denen wir ausgehen, worüber - sagen wir mal in westlichen demokratischen Gesellschaften - ein Konsens besteht. Zu allem, was davon abweicht, sind wir geneigt zu sagen: Das ist nicht gut. Ich denke aber, daß wir in beiden Fällen immer begründen müssen, warum es gut ist. Wir können sagen: in unserer Gesellschaft gilt die Norm, du sollst nicht lügen, und wenn du gelogen hast, dann ist das falsch. Dann kann aber jemand wie Nietzsche kommen und sagen: Wieso muß ich immer die Wahrheit sagen? Vielleicht ist es hin und wieder ganz nützlich, wenn man lügt und damit niemandem schadet. Oder selbst wenn man jemandem schadet, hat es vielleicht doch Folgen, die unter Umständen wünschenswert sind. Das zeigt auch: die Norm, die man als gültig anerkannt hat, muß man auch wieder problematisieren.",
+      "bbox": {
+        "x_pct": 8.383,
+        "y_pct": 34.362,
+        "w_pct": 85.329,
+        "h_pct": 58.352
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match original paragraph structure."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "zb_paragraph",
+      "text": "42",
+      "bbox": {
+        "x_pct": 92.5,
+        "y_pct": 94.5,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR for paragraphs was severely fragmented.",
+    "Page number missing from initial detection.",
+    "Section headers were identified correctly but required verification against standard format.",
+    "Bounding boxes for text regions were slightly misaligned with line breaks."
+  ],
+  "doc_id": "3180",
+  "page": 19,
+  "elapsed_seconds": 6.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

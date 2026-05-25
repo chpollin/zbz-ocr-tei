@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IMPOSSIBLE DE NGLIGER LE PASS 189",
+      "bbox": {
+        "x_pct": 247.0,
+        "y_pct": 74.0,
+        "w_pct": 501.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "The header containing the book title and page number was misidentified as part of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une expression de la v'erite metaphisique autrefois authentique reste authentique pour moi et me transmet l'appel d'une existence veritable; mais creee a une autre epoque, elle ne serait pas vraie. Pendant longtemps les ontologies dogmatiques ont pu etre l'ecriture chiffree de la v'erite metaphisique. Maintenant, elles ne le peuvent plus. Car entre temps, il y a des choses qui ont ete decouvertes, dites, vecues. On ne peut pas faire « comme si » elles n'etaient pas. Philosopher maintenant comme si Kant n'avait jamais existe, c'est se fermer au passe et a l'histoire, c'est se refuser a la communication, et condamner par cela meme l'existence. C'est enfin mentir — car Kant a existe. Tant qu'on n'aura pas refute sa critique, tant qu'on n'aura pas veritablement detruit la conscience qu'il nous donne de la phenomenalite du monde, nous ne pouvons, si nous voulons etre vrais, que nous efforcer de depasser cette conscience — ne fut-ce que par l'experience de la limite et de l'echec, comme Jaspers. Mais nous ne pouvons pas philosopher « a cote », « en dehors », comme on evite un obstacle dans l'espace. L'histoire de la philosophie n'est pas une juxtaposition de systemes, elle est notre histoire d'etre humain, elle est, selon l'expression de Jaspers, das Geschehen des Menschseins, elle est inseparable de notre condition humaine. Mentir envers elle, ne fut-ce que par omission, c'est nous mentir a nous-memes. Et puisque la philosophie n'existe que comme le tout",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 118.0,
+        "w_pct": 745.0,
+        "h_pct": 770.0
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR artifacts from the header and identified the main body text correctly."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original detection included header in text region.",
+    "OCR errors in text content due to noisy initial scan."
+  ],
+  "doc_id": "20",
+  "page": 191,
+  "elapsed_seconds": 5.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des discontinuités insurmontables, par exemple : entre l'inerte et le vivant, entre le vivant et l'esprit.",
+      "bbox": {
+        "x_pct": 8.306,
+        "y_pct": 5.887,
+        "w_pct": 84.146,
+        "h_pct": 4.25
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Scission sujet-objet",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 11.371,
+        "w_pct": 28.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée humaine, toujours prisonnière de la scission sujet-objet, qu'elle engendre d'ailleurs elle-même et qui est du même coup sa condition essentielle, ne peut ni renoncer à la totalité, ni l'atteindre. La totalité, qui ne serait ni sujet, ni objet, qui engloberait les deux termes et seule mériterait le nom d'être, lui échappe. C'est du fond de cet englobant inaccessible que surgit la scission humainement créatrice du sujet et de l'objet. Mais cette scission, pour la pensée, reste irrémédiable.",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 11.371,
+        "w_pct": 84.146,
+        "h_pct": 15.818
+      },
+      "changed": true,
+      "change_reason": "Fixed label from text to paragraph and updated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'objectivité",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 26.795,
+        "w_pct": 18.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— dont le sujet rêve lorsqu'il cherche dans le monde la totalité de l'être — reste irrémédiablement liée à la subjectivité et séparée d'elle, si le monde en tant que totalité se trouve ainsi refusé, la pensée est rejetée vers une tout autre tâche. Perdant l'espoir d'atteindre « le monde en soi » qui serait l'être, il lui faut élucider sa propre situation, par rapport à laquelle l'objectivité du monde se constitue. Or cette situation s'éclaire par l'expérience même des limites auxquelles se heurte la recherche de la totalité du monde en tant que prétendue totalité de l'être.",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 26.795,
+        "w_pct": 84.146,
+        "h_pct": 17.395
+      },
+      "changed": true,
+      "change_reason": "Fixed label and updated text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Échec d'une ontologie",
+      "bbox": {
+        "x_pct": 8.537,
+        "y_pct": 45.733,
+        "w_pct": 25.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée ne rencontre jamais l'englobant de l'être. Il ne fait que s'annoncer, à travers les échecs, aux limites. On peut dire que la philosophie de Jaspers est une tentative pour expliciter ce que nous apprend sur l'être — et sur notre rapport à l'être — l'échec d'une ontologie.",
+      "bbox": {
+        "x_pct": 8.537,
+        "y_pct": 45.733,
+        "w_pct": 83.97,
+        "h_pct": 9.94
+      },
+      "changed": true,
+      "change_reason": "Fixed label and updated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sujet se trouve donc engagé non dans l'exploration d'un monde unifiable dont la totalité lui serait promise, mais dans celle de perspectives discontinues, irrémédiablement inachevées et multiples. Comment, dès lors, saisir ce qu'il est lui-même, et où il est lui-même, par rapport à ce monde ainsi déchiré ? Dans un certain sens, il est lui-même situé quelque part dans le monde qu'il explore, il peut faire de lui-même — de son corps et de sa conscience — l'objet d'une étude selon l'une ou l'autre perspective adoptée pour son exploration du monde. Sa date de naissance figure dans la chronologie générale de l'humanité, de la terre, de l'univers ; son corps occupe un lieu de l'espace commun, il est fait de matières chimiques, il a un poids comme tous les autres corps, sa conscience obéit à des conditions psychologiques et sociologiques générales. Dans un autre sens, c'est par rapport à lui comme sujet que s'articulent et se structurent les multiples perspectives du monde. C'est le point d'où il regarde et le moment où il pense qui confèrent aux perspectives la cohérence grâce à laquelle le mot « monde » garde un sens.",
+      "bbox": {
+        "x_pct": 8.306,
+        "y_pct": 57.155,
+        "w_pct": 84.282,
+        "h_pct": 32.502
+      },
+      "changed": true,
+      "change_reason": "Updated text content to match image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "21",
+      "bbox": {
+        "x_pct": 89.0,
+        "y_pct": 91.5,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Labels were incorrectly assigned as text for headings.",
+    "Page number at bottom right was missing.",
+    "Text OCR in regions was fragmented and incomplete."
+  ],
+  "doc_id": "1520",
+  "page": 27,
+  "elapsed_seconds": 6.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

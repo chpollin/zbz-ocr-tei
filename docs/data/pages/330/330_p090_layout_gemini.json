@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "56 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 12.007,
+        "y_pct": 89.288,
+        "w_pct": 85.599,
+        "h_pct": 3.428
+      },
+      "changed": true,
+      "change_reason": "Page header and number identified as content text, corrected to page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "facon generale, les socialistes aient ete, toutes dernieres annees, a la remorque, cahin-caha, des tentatives federalistes en Europe, alors que toute leur ideologie primitive aurait dû faire d'eux, dans ce domaine, des pionniers.",
+      "bbox": {
+        "x_pct": 12.396,
+        "y_pct": 12.059,
+        "w_pct": 85.515,
+        "h_pct": 8.913
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Neanmoins, si l'internationalisme socialiste s'est dans une large mesure perdu (sous l'influence aussi de divergences nationales de plus en plus difficiles a surmonter), il reste que l'ideologie socialiste demeure profondement, fondamentalement pacifiste. Ce pacifisme a d'ailleurs change de caractere. Il ne repose plus sur une argumentation « marxiste » considerant toute guerre comme liee au capitalisme dont elle resoud les problemes en dupant et asservissant le proletariat. Le pacifisme socialiste est avant tout affaire de sentiment et de bon sens : les socialistes ont horreur de la guerre comme le peuple en a horreur, parce qu'elle est horrible, qu'elle mutile et qu'elle tue, et le peuple connaet trop intimement la vie et la mort, la sante et la maladie, dans leur realite et leurs effets quotidiens, pour consentir a vetir la guerre d'oripeaux litteraires. Les socialistes ont encore horreur de la guerre parce qu'elle detruit des biens; et le peuple sait trop ce que coûte toute chose materielle pour consentir a gaiete de cœur a des destructions. Pour la meme raison, l'ideologie est antimilitariste : les armements sont un gaspillage, et celui a qui manque le necessaire comprend mal qu'il doive contribuer a un budget militaire.",
+      "bbox": {
+        "x_pct": 12.214,
+        "y_pct": 20.232,
+        "w_pct": 85.599,
+        "h_pct": 39.777
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ideologiquement, le pacifisme socialiste n'est donc pas conditionnel, au sens où l'est celui des conservateurs. Et lorsqu'il arrive a des chefs socialistes de se mettre a la tete de ceux qui elevent des revendications nationalistes belliqueuses, on peut dire que, pour des raisons electorales et de pure propagande, ils vont jusqu'a trahir l'ideologie dont ils se reclament.",
+      "bbox": {
+        "x_pct": 12.354,
+        "y_pct": 59.242,
+        "w_pct": 85.279,
+        "h_pct": 13.039
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant les socialistes ne sont pas pacifistes absolument et a tout prix. Fut-ce ideologiquement, ils ne se rallient pas a la doctrine de la non-violence. Leur ideologie meme exige d'eux qu'ils soient prets a defendre — et qu'ils se mettent en mesure de defendre — non des possessions nationales, non des biens, des terres, des ressources naturelles, mais les droits cherement conquis par le peuple.",
+      "bbox": {
+        "x_pct": 12.075,
+        "y_pct": 71.747,
+        "w_pct": 85.279,
+        "h_pct": 14.768
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or la capacite de defendre des droits, une maniere de vivre, depend aussi des biens, des terres que l'on occupe, et on voit que",
+      "bbox": {
+        "x_pct": 12.159,
+        "y_pct": 86.007,
+        "w_pct": 85.056,
+        "h_pct": 4.786
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR output for French accents and special characters was highly degraded",
+    "Page number at the top of the page was incorrectly categorized as standard text",
+    "Text flow was broken by multiple OCR errors"
+  ],
+  "doc_id": "330",
+  "page": 90,
+  "elapsed_seconds": 6.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

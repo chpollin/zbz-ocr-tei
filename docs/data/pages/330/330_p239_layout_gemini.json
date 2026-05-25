@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 205",
+      "bbox": {
+        "x_pct": 303.49,
+        "y_pct": 82.353,
+        "w_pct": 393.75,
+        "h_pct": 10.784
+      },
+      "changed": true,
+      "change_reason": "Header and page number correctly identified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais seul le travail, dans la vie concrètement vécue, peut payer le travail, car entre le travail et l'argent, il n'existe pas de commune mesure. Celui qui accomplit un travail donne les forces d'un corps et d'un esprit mortels, un temps qui est pris sur une vie limitée, brève, un temps que personne ne lui rendra jamais. Le don qu'il fait, même payé, reste dans un sens essentiel gratuit, sans compensation ni retour en arrière. Celui qui achète ce travail ne peut que dire merci et sentir l'impuissance de sa politesse.",
+      "bbox": {
+        "x_pct": 3.76,
+        "y_pct": 11.408,
+        "w_pct": 84.359,
+        "h_pct": 17.05
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'a qu'un moyen ; s'il veut s'acquitter : travailler à son tour. Non pas pour cet homme directement, sans doute, mais pour d'autres, en inscrivant son travail dans le cycle où s'échangent les services humains. L'argent payé pour le travail d'autrui ne paie véritablement ce travail que s'il représente lui-même un travail productif du payeur, et non n'importe quelle activité lucrative, n'importe quel mouvement à vide dans un bon job. Sinon, le travail d'autrui, son temps, sa vie, sont volés.",
+      "bbox": {
+        "x_pct": 3.719,
+        "y_pct": 27.629,
+        "w_pct": 84.485,
+        "h_pct": 17.291
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'argent que le capital rapporte sans travail est donc volé. Il appartient en réalité, soit aux producteurs qui n'ont pas reçu leur dû, soit aux consommateurs qui ont payé les produits trop cher.",
+      "bbox": {
+        "x_pct": 3.524,
+        "y_pct": 44.412,
+        "w_pct": 84.401,
+        "h_pct": 6.747
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je sais bien qu'on alléguera ici qu'il y a différentes sortes de travail, que le grand homme d'affaires, en investissant un capital, court un risque et que ce risque doit étre compensé, qu'il faut payer l'initiative, l'esprit d'entreprise, etc. Étrange matérialisme des anti-matérialistes, d'une société qui se prétend spiritualiste et refuse de concevoir, pour le risque et l'initiative, d'autre récompense que l'argent. En fait, le risque, plus encore que n'importe quel travail, est sans commune mesure avec l'argent. Comme n'importe quel travail, il doit étre payé. Mais l'instinct de faire, de créer, le désir de voir exister et fonctionner hors de soi quelque chose qui auparavant n'existait pas, est sans doute plus primitif en l'homme, plus général, que le désir même du profit. C'est parce qu'on a refusé, par faux réalisme, de voir cette vérité, que l'essor fabuleux de la technique, à l'Occident, s'est accompli dans la désaffection, le discrédit, dans la tristesse anonyme du salariat, alors que les Soviets ont réussi à donner à l'essor retardataire qui s'accomplit chez eux le prestige d'une épopée nationale.",
+      "bbox": {
+        "x_pct": 3.343,
+        "y_pct": 50.535,
+        "w_pct": 84.777,
+        "h_pct": 35.321
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR text errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'argent que le capital rapporte indépendamment de tout travail repose sur une conception économique dans laquelle le travail",
+      "bbox": {
+        "x_pct": 3.621,
+        "y_pct": 85.294,
+        "w_pct": 84.304,
+        "h_pct": 4.902
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 5,
+  "issues": [
+    "Heavy OCR text transcription errors detected throughout all paragraph blocks.",
+    "Page header and number erroneously tagged as text."
+  ],
+  "doc_id": "330",
+  "page": 239,
+  "elapsed_seconds": 7.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

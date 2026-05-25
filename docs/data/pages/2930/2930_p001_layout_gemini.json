@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Osterreichischen Instiluis des Podiumsgespriches, Univ.-Prol . Dr, Marian deshauptmann bci uns Bcglc",
+      "bbox": {
+        "x_pct": 7.245,
+        "y_pct": 11.933,
+        "w_pct": 37.536,
+        "h_pct": 17.907
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der lichrechlichcn Sendcr cine wesentlichc Aufgabe, Worum har der Mensch bcson der anschliclenden Di",
+      "bbox": {
+        "x_pct": 6.153,
+        "y_pct": 34.549,
+        "w_pct": 38.143,
+        "h_pct": 44.767
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Menschenrechte und Menschscin",
+      "bbox": {
+        "x_pct": 54.697,
+        "y_pct": 13.561,
+        "w_pct": 24.345,
+        "h_pct": 2.529
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it is a title/heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mcic Dunen und Herrcnl",
+      "bbox": {
+        "x_pct": 54.612,
+        "y_pct": 25.291,
+        "w_pct": 16.954,
+        "h_pct": 1.991
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Thena und ich werde Ihnen Alles nan sPrechun bcgann, in der Gcrade fur den 20. Jahrestag der Allgerc",
+      "bbox": {
+        "x_pct": 54.211,
+        "y_pct": 29.985,
+        "w_pct": 33.204,
+        "h_pct": 28.256
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One section heading was incorrectly identified as regular text."
+  ],
+  "doc_id": "2930",
+  "page": 1,
+  "elapsed_seconds": 3.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

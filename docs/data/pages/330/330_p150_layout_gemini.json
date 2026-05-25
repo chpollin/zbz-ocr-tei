@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "116 ID\tOLOGIES ET R\tALIT\t",
+      "bbox": {
+        "x_pct": 110.0,
+        "y_pct": 82.0,
+        "w_pct": 780.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page_header instead of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "democratique. Nous sommes loin des justifications optimistes donnees par les « lumieres ».",
+      "bbox": {
+        "x_pct": 110.0,
+        "y_pct": 108.0,
+        "w_pct": 855.0,
+        "h_pct": 53.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and content description."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a pourtant aussi des justifications positives, mais elles reviennent a montrer seulement que la structure democratique preserve des possibilites. A cause de l'indetermination de ses fins, a cause de son caractere non substantiel, formel, c'est elle qui est, de tous les regimes politiques, le plus ouvert aux changements possibles. On peut meme dire que les institutions democratiques sont faites en premiere ligne pour assurer la procedure du changement, pour que n'importe quel changement encore imprevu y trouve ses instruments, sa voie, son ordre d'insertion dans le reel. La democratie n'est pas monumentale. Elle n'est pas faite pour ce qui voudrait seulement, ou surtout, durer. Elle est, ou en tout cas, elle voudrait etre, un instrument de souplesse bien adapte a l'histoire, coulant avec elle. Un grand nombre de ses lois et de ses institutions sont la, non pour dire ce qui doit se passer maintenant, mais ce qui devra se passer lorsqu'une volonte aujourd'hui inconnue, laissee en blanc, de changer la realite politique commencera a s'affirmer. Loin d'exclure d'avance cette volonte, on lui prepare ses prises sur le donne. Il est facile de m'objecter, je le vois bien, la lenteur de fait avec laquelle evoluent nos democraties occidentales. Et il est bien vrai que le regime democratique, dont l'une des tbches consiste a preparer des formes pour des changements imprevisibles, evitant ainsi a la fois l'enlisement dans le deja fait et l'anarchie ou la violence dans l'invention du futur, fonctionne avec lenteur et freine souvent le progres social. Laissons de cdte les circonstances exceptionnelles (guerres, coups d'\ttat, etc.) ou des decisions immediates s'imposent. Meme dans des conditions normales, tous les impatients du monde — c'est-a-dire, en pratique, tous ceux qui ne sont pas les plus privilegies — peuvent etre decourages par les delais qu'impose la necessite de convaincre, et seduits par la rapidite des decrets. Bien plus, on dirait que plus une democratie est democratique — en d'autres termes : plus le peuple y decide reellement lui-meme de son sort — et plus le progres social s'y trouve ralenti. Ainsi la decentralisation federaliste, qui permet a chaque citoyen de gerer concretement et en connaissance de cause la chose publique a l'echelon ou elle lui est accessible, constitue une entrave serieuse : souvent des mesures importantes",
+      "bbox": {
+        "x_pct": 110.0,
+        "y_pct": 160.0,
+        "w_pct": 855.0,
+        "h_pct": 740.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR and bounding box to capture the full paragraph body."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original JSON had fragmented paragraph text and poorly assigned bounding boxes.",
+    "Original JSON failed to identify the page header."
+  ],
+  "doc_id": "330",
+  "page": 150,
+  "elapsed_seconds": 7.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

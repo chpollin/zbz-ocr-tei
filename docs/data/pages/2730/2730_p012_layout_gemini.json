@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "86",
+      "bbox": {
+        "x_pct": 113.0,
+        "y_pct": 60.0,
+        "w_pct": 15.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 441.0,
+        "y_pct": 60.0,
+        "w_pct": 118.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "verbindet. Und er schreibt: 1) Die reflexive Philosophie soll wieder in Angriff genommen, der Umweg durch die Strukturen, den objektiven Sinn, die anonyme Welt der Kultur verlAngert, das abstrakte und unpersAnliche Moment der Sprache dem Akt des Wortes und seiner reflexiven Macht einverleibt werden. Es ist wohl dieselbe Forderung, die ihn dazu bewegt hat, die Probleme des logischen Positivismus auch noch grAndlich zu studieren.",
+      "bbox": {
+        "x_pct": 10.956,
+        "y_pct": 9.091,
+        "w_pct": 78.088,
+        "h_pct": 11.678
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und doch, in seiner Arbeit Aber Freud, hat Ricoeur geschrieben: \"Es ist nicht meine Absicht, Freud zu vervollstAndigen. Ich will ihn verstehen, indem ich mich selbst verstehe.\" Er bekennt damit, daß er dieses Werk als ein philosophisches, und auf philosophische Weise, liest. Genauso hat auch Jaspers jedes echte Lesen derer, die er \"die Großen Philosophen\" nannte, aufgefaßt. Die Frage stellt sich jedoch: gehArt wirklich das Werk von Freud zur philosophia perennis, und eignet es sich also fAr solches Lesen? Oder hat nicht vielleicht Ricoeur dieses Werk irgendwie neu geschaffen und dessen WiderstAnde tief verAndert, die es nun ermAglichen, es mit seinem Glauben zu versAhnen? - Vielleicht ist das Werk von Freud, wie auch das von Marx, nicht einer jener großen \"philosophischen Chiffren\" der europAischen Tradition, mit deren Hilfe Jaspers immer wieder, durch die Enteignung des Nichtwissens, die Transzendenz suchte. Wenn es aber so wAre, dann mAßten wir zugeben, daß Ricoeur selbst, durch das eigene Denken, aus diesen ihm fremden Werken, wirksame \"philosophische Chiffren\" gemacht hat. Dank ihm haben ihre Begriffe eine neue Dichte gewonnen, ein wirksames Geheimnis, einen stArkeren ethischen Imperativ. Dank ihm kAnnen sie die religiAse Symbolik in Richtung des Dunklen und des Klaren bereichern.",
+      "bbox": {
+        "x_pct": 10.787,
+        "y_pct": 20.301,
+        "w_pct": 78.327,
+        "h_pct": 33.944
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph length."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Er hat sicher recht, wenn er behauptet, daß wir \"durch die vieldeutigen Bedeutungen der Selbsterkenntnis die Problematik des Cogito grAndlich verAndern\". Er sagt mit Recht, daß die Reflexion dann zur Kritik werden kann, nicht, im Sinne Kants, einer Rechtfertigung der Wissenschaft und der Pflicht, sondern weil das Cogito nur Aber den Umweg einer Entzifferung der Lebensdokumente wiedergewonnen werden kann (Dokumente, anscheinend in erster Linie diejenigen der \"maAtres du soupAon\", wie gezeigt haben, daß das unmittelbare Bewußtsein zunAchst \"falsches Bewußtsein\" ist). Eine reflexive Philosophie - etwas ganz anderes, sagt Ricoeur, als eine Philosophie des Bewußtseins - grAndet in einer Logik \"des Doppelsinnes\", die der Hermeneutik eigen ist, gerade der Doppelsinn, durch den \"die Symbole zu denken geben\".",
+      "bbox": {
+        "x_pct": 10.827,
+        "y_pct": 54.147,
+        "w_pct": 78.187,
+        "h_pct": 21.287
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph length."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vielleicht vereinfacht Ricoeur etwas das Cogito von Descartes, vielleicht sogar dasjenige von Husserl, wie auch die \"Philosophie des Bewußtseins\" von Kant. Diese letztere insbesondere scheint mir in ihrer Sprache und auf ihre Weise gleichzeitig auch eine reflexive Philosophie zu sein, vor allem, wenn man es vermeidet, die Kritik der Urteilskraft von den beiden anderen zu trennen. Aber indem Ricoeur sich bemAht, die philosophische Reflexion gerade bei denjenigen unserer Fast-Zeitgenossen zu verstehen, die mit Hilfe des Verdachts versuchten, das Menschsein bloßzustellen, hat er einen fruchtbaren Umweg gewAhlt. Er lehrt uns, sie so zu lesen und zu verstehen, wie sie sich selber.",
+      "bbox": {
+        "x_pct": 10.926,
+        "y_pct": 75.014,
+        "w_pct": 78.088,
+        "h_pct": 17.203
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph length."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Detected text regions were clipped; content expanded to match original source image.",
+    "Page number and running head identified as metadata to be excluded from extraction."
+  ],
+  "doc_id": "2730",
+  "page": 12,
+  "elapsed_seconds": 6.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

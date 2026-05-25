@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 43.832,
+        "y_pct": 8.016,
+        "w_pct": 19.349,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Identified as author section header at top of page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vivants, les examens, les bibliographies données dans les cours, les moments privilégiés dans certains séminaires. Mais les fameux « plans d'études » devenus indispensables n'y peuvent pas grand'chose, et je les ai toujours considérés, quant à l'essentiel, comme fictifs. Il y a ainsi, en Lettres, une façade administrative indispensable qui n'a que peu de rapport avec la substance de ce qui s'y fait, et qu'il faut respecter scrupuleusement sans la prendre au sérieux.",
+      "bbox": {
+        "x_pct": 15.767,
+        "y_pct": 11.111,
+        "w_pct": 71.608,
+        "h_pct": 13.392
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voici que nous approchons du centre de la question. L'enseignement, en Lettres, offre des occasions de rencontres aux étudiants. Il s'adresse à leur liberté. Il ne peut pas savoir d'avance que ceux-ci feront de ce qui leur est offert. C'est pourquoi l'interprétation y tient plus de place que le savoir. C'est pourquoi on y multiplie et on y diversifie autant qu'on le peut les contacts avec des réalités de pensée et de style, éloignées les unes des autres dans l'espace et plus encore dans le temps. C'est pourquoi on y nourrit, par l'expérience vécue des actes et des œuvres, ce « sens de l'histoire » dont tout le monde parle aujourd'hui en ne lui donnant guère un substrat concret.",
+      "bbox": {
+        "x_pct": 15.905,
+        "y_pct": 23.915,
+        "w_pct": 71.503,
+        "h_pct": 16.755
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certes, il faut emmagasiner des connaissances, car sur quoi pourrait bien s'exercer une tête bien faite, mais vide ? Mais ces connaissances sont là pour que chacun vive avec elles, vive d'elles, dans ce qu'il pense, dans ce qu'il fait, dans ce qu'il est. Rilke termine abruptement sa description du torse d'Apollon par ce vers : « Du musst dein Leben ändern ».",
+      "bbox": {
+        "x_pct": 15.947,
+        "y_pct": 40.522,
+        "w_pct": 71.429,
+        "h_pct": 8.727
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Périmée, la Faculté des Lettres ? Et si c'était le contraire ? Dans un ouvrage sur l'éducation, publié récemment sous les auspices de l'Unesco et sous la signature de sept éminents ministres des divers continents, il est dit que tout acte pédagogique doit être désormais scientifique et technique. On peut se demander ce que cela veut dire et si cela est vrai. A une époque où le problème des loisirs et celui de la vie après la retraite professionnelle se posent avec force, qui sait si les hommes, libérés de plus en plus des besoins vitaux immédiats grâce à la technique, ne vont pas progressivement se tourner vers autre chose qu'elle, vers ces biens de culture que la Faculté des Lettres essaye de sauver dans l'arche, pendant le grand déluge industriel ? Qui sait s'ils ne voudront pas apprendre le latin, le grec, le sanscrit, le chinois, et s'ils ne chercheront pas des maîtres qui les aident à déchiffrer leur histoire passée, à scander des poèmes ou à creuser un raisonnement philosophique, afin de nourrir et d'éclairer le sens de leur vie et de leur présence au monde ? Qui sait si ce ne seront pas là les plus beaux fruits non techniques de la technique, qui trouveront ainsi son sens (il n'est pas en elle), et sa justification ?",
+      "bbox": {
+        "x_pct": 15.799,
+        "y_pct": 50.353,
+        "w_pct": 71.577,
+        "h_pct": 29.095
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi se trouve posée la question du sens. Le titre de ce texte la posait pour la Faculté des Lettres... ? J'ai fait croire, au début, qu'il était facile de justifier l'existence des autres Facultés. Si cela semblait facile, c'est qu'on pouvait leur assi-",
+      "bbox": {
+        "x_pct": 15.693,
+        "y_pct": 79.102,
+        "w_pct": 71.608,
+        "h_pct": 7.285
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "292",
+      "bbox": {
+        "x_pct": 15.693,
+        "y_pct": 87.5,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Detected page number as text",
+    "Missing author header in initial parsing",
+    "Multiple OCR errors in paragraph content"
+  ],
+  "doc_id": "960",
+  "page": 10,
+  "elapsed_seconds": 9.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

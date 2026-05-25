@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "38",
+      "bbox": {
+        "x_pct": 20.238,
+        "y_pct": 2.0,
+        "w_pct": 2.593,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number/header at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊIRE ET LA FORME",
+      "bbox": {
+        "x_pct": 68.125,
+        "y_pct": 2.0,
+        "w_pct": 20.847,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header at top"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "transcendance elle-même. La réalité sociale devient alors un chiffre; un langage  secret de Dieu;  q",
+      "bbox": {
+        "x_pct": 20.238,
+        "y_pct": 14.022,
+        "w_pct": 68.74,
+        "h_pct": 16.705
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Essayons maintenant de les rattacher à la condition humaine dont nous venons de voir les aspects pri",
+      "bbox": {
+        "x_pct": 20.161,
+        "y_pct": 30.701,
+        "w_pct": 68.971,
+        "h_pct": 44.723
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/footer elements added."
+  ],
+  "doc_id": "110",
+  "page": 40,
+  "elapsed_seconds": 7.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

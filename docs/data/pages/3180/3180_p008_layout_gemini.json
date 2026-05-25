@@ -1,0 +1,129 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Punkt das Subjekt in dem Wesentlichen; nämlich in der Existenz, erreicht. Die Existenz ist gerade das, was nicht für immer statisch bleibt, das nicht für immer erreicht ist, das nicht eine endgültige Wahrheit ist, sondern eine endgültige Wahrheit als Situation angesichts von sachlich Gegebenem. Vorläufig bleibe ich dabei.",
+      "bbox": {
+        "x_pct": 7.934,
+        "y_pct": 2.978,
+        "w_pct": 85.329,
+        "h_pct": 13.324
+      },
+      "changed": true,
+      "change_reason": "Updated text to match the full content in the scanned image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 8.578,
+        "y_pct": 18.825,
+        "w_pct": 33.638,
+        "h_pct": 2.004
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ganz herzlichen Dank.",
+      "bbox": {
+        "x_pct": 8.039,
+        "y_pct": 20.974,
+        "w_pct": 31.527,
+        "h_pct": 2.25
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Liebe Frau Pieper, Sie können jetzt diesen Ball sozusagen aufnehmen.",
+      "bbox": {
+        "x_pct": 7.979,
+        "y_pct": 23.106,
+        "w_pct": 85.03,
+        "h_pct": 4.463
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Annemarie Pieper:",
+      "bbox": {
+        "x_pct": 8.338,
+        "y_pct": 29.599,
+        "w_pct": 27.5,
+        "h_pct": 3.124
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich fürchte, es ist etwas unredlich, daß ich mich hier in eine Diskussion einmische, ohne die beiden Vorträge von Frau Hersch gehört zu haben. Andererseits kenne ich Ihre Schriften recht gut und kann das, was Sie jetzt ausgeführt haben, auch sehr gut nachvollziehen.",
+      "bbox": {
+        "x_pct": 7.934,
+        "y_pct": 31.967,
+        "w_pct": 85.135,
+        "h_pct": 11.63
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte zuerst eine etwas provokante These aufstellen und sagen: Paradoxien und Widersprüche sind eigentlich Erfindungen der Philosophen. Wenn wir unsere Alltagserfahrung betrachten, dann empfinden wir uns eigentlich nicht als gespalten. Man hat den Menschen in der Regel dualistisch definiert: auf der einen Seite Geist, auf der anderen Seite Körper, oder als ein Leib-Seele-Wesen, wie immer man möchte. Das sind zwei völlig verschiedene, getrennte Aspekte des Menschlichen, und wenn man sie einmal getrennt hat, tut man sich sehr schwer, sie wieder zusammenzubringen.",
+      "bbox": {
+        "x_pct": 7.889,
+        "y_pct": 45.355,
+        "w_pct": 85.269,
+        "h_pct": 22.523
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber wir erleben uns doch gar nicht so! Wir erleben uns als eine Ganzheit, als ein Wesen, das mit Bewußtsein ausgestattet ist und auch den Verstand zu Hilfe nimmt, um sich selbst zu verstehen, und insofern tauchen die Paradoxien, von denen die Rede war, immer dort auf, wo das Denken zugreift auf das, was der Mensch ist, tut, fühlt und will. Dann bewegen wir uns plötzlich in Trennungen. Ein ganz extremes Beispiel: etwa wenn Descartes sagt, wir seien eine Maschine, und die Maschine wird in uns von ganz anderen Prinzipien bewegt als der Geist, und die Frage von einer Kooperation kann es gar nicht",
+      "bbox": {
+        "x_pct": 7.784,
+        "y_pct": 69.827,
+        "w_pct": 85.329,
+        "h_pct": 22.404
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "_filter",
+      "text": "31",
+      "bbox": {
+        "x_pct": 89.28,
+        "y_pct": 93.635,
+        "w_pct": 2.6,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Re-labeled page number from text to _filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original JSON content for paragraphs was truncated/incomplete.",
+    "Page number 31 was mislabeled as text."
+  ],
+  "doc_id": "3180",
+  "page": 8,
+  "elapsed_seconds": 5.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

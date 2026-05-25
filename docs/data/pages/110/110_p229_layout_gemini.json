@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "FORME ET « RÉALITÉ » 227",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 68.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header/running header at top of page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pralique. dit le réalisme matérialiste   dit : perci pi est ce revient au même. Cest que lous deux r",
+      "bbox": {
+        "x_pct": 13.94,
+        "y_pct": 13.766,
+        "w_pct": 68.122,
+        "h_pct": 9.263
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La différence entre ces deux types de philosophie n'est pas dordre  intellectuel, mais dordre   exis",
+      "bbox": {
+        "x_pct": 12.823,
+        "y_pct": 23.03,
+        "w_pct": 69.09,
+        "h_pct": 37.16
+      },
+      "changed": true,
+      "change_reason": "Correction of text field to reflect actual start of segment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Outre les   réponses idéaliste et   réaliste; une troisième   réponse peul être donnée & la   questi",
+      "bbox": {
+        "x_pct": 12.558,
+        "y_pct": 61.557,
+        "w_pct": 68.468,
+        "h_pct": 12.832
+      },
+      "changed": true,
+      "change_reason": "Correction of text field to reflect actual start of segment."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text fields contained artifacts/truncated words.",
+    "Missing page header region.",
+    "Labeling refined."
+  ],
+  "doc_id": "110",
+  "page": 229,
+  "elapsed_seconds": 4.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Correction of text field to reflect actual start of segment.": 2,
+    "ADDED": 1
+  }
+}

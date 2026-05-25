@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "38 ÉVIDENCE NON APODICTIQUE",
+      "bbox": {
+        "x_pct": 13.568,
+        "y_pct": 8.016,
+        "w_pct": 76.11,
+        "h_pct": 3.791
+      },
+      "changed": true,
+      "change_reason": "Page header and number identified and relabeled from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "malgré l'échec de toute son histoire, à considérer la philosophie comme une science, posant de véritables problèmes scientifiques, dans lesquels il s'agit de questions entièrement explicites, et d'elles seules.",
+      "bbox": {
+        "x_pct": 13.404,
+        "y_pct": 12.679,
+        "w_pct": 76.009,
+        "h_pct": 12.65
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne dis pas que toute philosophie doive, à travers le problème explicitement traité, trancher un autre problème; je dis qu'il en est ainsi : toute vraie philosophie se trouve, du fait qu'elle est philosophie, le plus souvent à son insu et malgré elle, prise dans le paradoxe.",
+      "bbox": {
+        "x_pct": 13.358,
+        "y_pct": 25.577,
+        "w_pct": 76.205,
+        "h_pct": 15.539
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On m'objectera que cette duplicité de la philosophie, je n'ai fait que l'affirmer, que je n'en ai pas donné la moindre preuve, et qu'on reste libre, par conséquent, de l'admettre ou de ne l'admettre pas. On m'objectera l'apparente absurdité de mon affirmation. On m'objectera enfin les déclarations non équivoques des plus grands philosophes; selon eux la philosophie doit être précisément ce que j'affirme qu'elle ne peut pas être; on dira qu'il ne m'appartient pas, à moi, de leur expliquer ce qu'ils ont fait, alors qu'ils l'expliquent eux-mêmes de façon opposée.",
+      "bbox": {
+        "x_pct": 13.253,
+        "y_pct": 40.991,
+        "w_pct": 76.461,
+        "h_pct": 31.239
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A quoi je réponds : en effet, je n'ai pas de preuve. Mais chercher l'essence des problèmes philosophiques, c'est se poser un problème philosophique. Or j'ai dit justement qu'un tel problème n'est pas susceptible de recevoir une solution scientifiquement démontrée. Non qu'on ne doive chercher l'évidence — et je la cherche! — mais on ne peut",
+      "bbox": {
+        "x_pct": 13.404,
+        "y_pct": 71.659,
+        "w_pct": 76.31,
+        "h_pct": 18.236
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated text transcription."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Docling text OCR was highly inaccurate, failing on almost every paragraph by truncating or hallucinating characters.",
+    "Page header/number was labeled as text.",
+    "Significant manual transcription correction required for all identified regions."
+  ],
+  "doc_id": "20",
+  "page": 40,
+  "elapsed_seconds": 4.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

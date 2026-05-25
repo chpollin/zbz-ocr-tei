@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Littérature Histoire Linguistique",
+      "bbox": {
+        "x_pct": 25.005,
+        "y_pct": 17.283,
+        "w_pct": 45.926,
+        "h_pct": 23.535
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "RECUEIL D’ÉTUDES OFFERT A BERNARD GAGNEBIN",
+      "bbox": {
+        "x_pct": 16.476,
+        "y_pct": 47.253,
+        "w_pct": 62.751,
+        "h_pct": 6.406
+      },
+      "changed": true,
+      "change_reason": "This is a bibliographic title/subtitle block, which constitutes a section heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LAGE D'HOMME",
+      "bbox": {
+        "x_pct": 31.323,
+        "y_pct": 84.462,
+        "w_pct": 33.09,
+        "h_pct": 2.703
+      },
+      "changed": true,
+      "change_reason": "This is a publisher name, which functions as a section header at the bottom of a title page."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Two blocks incorrectly labeled as paragraph text instead of section headings.",
+    "OCR missed the apostrophe in L'AGE D'HOMME."
+  ],
+  "doc_id": "960",
+  "page": 1,
+  "elapsed_seconds": 2.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

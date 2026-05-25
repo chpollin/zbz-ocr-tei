@@ -1,0 +1,139 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "savoir devient actif en présence de l'être en tant que source de toute authentique conscience d'être, à travers la richesse inépuisable de l'expérience du monde et l'actualisation de l'existence.",
+      "bbox": {
+        "x_pct": 7.493,
+        "y_pct": 5.681,
+        "w_pct": 84.106,
+        "h_pct": 6.204
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Philosophie, III, p. 234)",
+      "bbox": {
+        "x_pct": 60.122,
+        "y_pct": 17.224,
+        "w_pct": 31.301,
+        "h_pct": 2.142
+      },
+      "changed": true,
+      "change_reason": "Identified as a citation/footnote."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais l'injustifiable, ce chiffre ultime, n'est plus un chiffre qu'on puisse déterminer. Il reste ouvert, d'où son silence. Il peut devenir aussi bien le vide absolu que la plénitude à jamais.",
+      "bbox": {
+        "x_pct": 7.276,
+        "y_pct": 11.542,
+        "w_pct": 84.011,
+        "h_pct": 6.024
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "26 Silence",
+      "bbox": {
+        "x_pct": 7.547,
+        "y_pct": 22.022,
+        "w_pct": 14.309,
+        "h_pct": 1.885
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'interprétation trouve sa limite là où s'arrête le langage. Elle s'achève dans le silence. Mais cette limite elle-même n'est réelle que grâce au langage. Au cours de la communication parlée le silence devient une manière de parler. Ce n'est pas un silence qui serve à taire quelque chose que je sais et que je pourrais dire. C'est au contraire, pour ceux qui pensent ensemble, face à eux-mêmes et face à la transcendance, la plénitude du silence à la limite du dicible. Ce n'est pas le silence muet qui tient simplement à l'absence du langage : celle-ci ne dit rien, elle ne peut donc pas non plus se taire.",
+      "bbox": {
+        "x_pct": 7.412,
+        "y_pct": 24.739,
+        "w_pct": 84.051,
+        "h_pct": 17.532
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Der philosophische Glaube angesichts der Offenbarung, p. 195)",
+      "bbox": {
+        "x_pct": 55.65,
+        "y_pct": 57.069,
+        "w_pct": 35.718,
+        "h_pct": 5.973
+      },
+      "changed": true,
+      "change_reason": "Identified as a citation/footnote."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De même pour les chiffres. Nous les entendons comme s'ils venaient de sphères diverses qui entourent la transcendance. Ou bien nous recourons à eux pour nous adresser à elle. Mais les chiffres ne sont jamais ce que nous cherchons en eux, ou ce que nous pressentons ou éprouvons. C'est pourquoi nous nous efforçons d'aller plus loin, plus profond ou plus haut, là où tout langage chiffré cesse et où, dans le savoir du non-savoir, et ainsi dans la plénitude de ce silence, nous effleurons la transcendance.",
+      "bbox": {
+        "x_pct": 7.453,
+        "y_pct": 42.014,
+        "w_pct": 83.97,
+        "h_pct": 15.253
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "27 Dieu est, c'est assez",
+      "bbox": {
+        "x_pct": 7.547,
+        "y_pct": 65.613,
+        "w_pct": 30.163,
+        "h_pct": 2.057
+      },
+      "changed": true,
+      "change_reason": "Cleaned OCR noise '4 27' to '27' and fixed header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jérémie vit la ruine de tout ce qu'il avait poursuivi sa vie durant ; son pays, son peuple étaient perdus ; en Egypte, ce qui en restait encore devint infidèle à la loi de Jéhovah et sacrifia à Isis. Son disciple Baruch désespéra: «Je m'épuise en soupirant et ne trouve point de repos.» Jérémie répondit alors: «Ainsi parle l'Eternel. Voici en vérité: ce que j'ai bâti, je le détruirai, et ce que j'ai planté, je l'arracherai, et toi, rechercherais-tu de grandes choses? Ne les recherche pas!»",
+      "bbox": {
+        "x_pct": 7.182,
+        "y_pct": 68.32,
+        "w_pct": 84.187,
+        "h_pct": 15.51
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans ces mots, ces mots signifient : Dieu est, c'est assez. Qu'il y ait ou non une «immortalité», on ne le demande pas; que Dieu «pardonne» ou non, ce n'est plus une question de première importance.",
+      "bbox": {
+        "x_pct": 7.358,
+        "y_pct": 83.633,
+        "w_pct": 83.659,
+        "h_pct": 6.11
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Footnote citations mislabeled as text.",
+    "Section header text contained OCR artifacts.",
+    "Page number 87 ignored by text box extraction but noted in context."
+  ],
+  "doc_id": "1520",
+  "page": 93,
+  "elapsed_seconds": 8.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

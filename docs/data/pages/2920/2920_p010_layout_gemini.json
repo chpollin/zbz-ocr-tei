@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "512",
+      "bbox": {
+        "x_pct": 27.25,
+        "y_pct": 86.87,
+        "w_pct": 3.75,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Coups de sonde",
+      "bbox": {
+        "x_pct": 53.25,
+        "y_pct": 86.87,
+        "w_pct": 14.25,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce que jessaie de dire ici, c'est que l'exigence des droits de l'homme ne s'enracine pas dans les zones, ou les niveaux, que peuvent décrire ou analyser les sciences humaines. Leur respect ou leur violation, bien que toujours lié à un contexte concret qui peut, lui, faire l'objet d'une étude psychologique ou sociologique, n'est pas du ressort de ces recherches, précisément parce que leur racine est absolue. Sinon, ce n'est pas d'eux qu'il s'agit. Il s'agit ici de la possibilité d'une décision absolue, et cette possibilité existe en tout homme. Ce « point », le plus enraciné, le plus concret, est seul à permettre l'exigence générale des droits de l'homme, parce qu'il peut arriver à tout homme de décider : je ne ferai pas cela — plutôt mourir. Telle est la source de leur universalité.",
+      "bbox": {
+        "x_pct": 27.25,
+        "y_pct": 12.493,
+        "w_pct": 70.25,
+        "h_pct": 33.238
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce possible absolu, seul généralisable, ne permet guère la preuve ni la réfutation, et encore moins la suspension neutre du jugement. Il ne se prête guère à une défense du « droit au bonheur » ou du « droit à la santé » — ou du moins, seulement indirectement, par ricochet. Il ne peut servir ni à nier la réalité des races ni celle d'inégalités empiriques, naturelles. Plus grave encore : il ne peut guère servir de fondement à une éventuelle unanimité doctrinale universelle — et il pourrait même y faire irréductiblement obstacle —, à moins qu'on ne le cherche à une très grande profondeur, là où il se scinde en deux expériences mystérieuses : à travers la possibilité de la décision absolue, celle d'une transcendance non possédée, comme aussi celle de la décision absolue d'autrui. Toutes deux sont d'ailleurs intimement liées.",
+      "bbox": {
+        "x_pct": 27.162,
+        "y_pct": 45.535,
+        "w_pct": 70.147,
+        "h_pct": 35.329
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "« Le droit d'être un homme »",
+      "bbox": {
+        "x_pct": 29.603,
+        "y_pct": 83.876,
+        "w_pct": 33.485,
+        "h_pct": 2.188
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A propos de l'universalité des droits de l'homme, je voudrais rappeler ici une expérience et un livre.",
+      "bbox": {
+        "x_pct": 27.353,
+        "y_pct": 86.82,
+        "w_pct": 70.103,
+        "h_pct": 5.947
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and running header were incorrectly labeled as paragraph text.",
+    "The section header text needed minor quote mark cleanup for accuracy."
+  ],
+  "doc_id": "2920",
+  "page": 10,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

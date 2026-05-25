@@ -1,0 +1,62 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "262 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for top running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "un million et demi d'ames; impossible d'abandonner totalement a elle-meme c'est-a-dire de livrer a n'importe quelle autre puissance une Algerie encore incapable de sauvegarder son independance; enfin, impossibilite de laisser la metropole perdre l'Algerie sans un certain nombre de garanties economiques, politiques et militaires. D'autres soucis, particulierement lourds pour des socialistes, s'y ajoutent : la defense de l'Occident, a leurs yeux d'autant plus necessaire qu'ils connaissent et comprennent mieux que d'autres la menace communiste, ses detours et ses enjeux; le souci du regime politique et social d'une Algerie livree a elle-meme, regime qui risquerait d'etre, sous un pouvoir islamique feodal, imperialiste et retrograde, bien pire pour les travailleurs algeriens que celui des colons francais, nocif a la fois pour la cause internationale de la classe ouvriere et pour celle de la paix; enfin, le souci des repercussions economiques que la perte de l'Algerie et du marche algerien risqueraient d'avoir sur le marche du travail en France et sur le niveau de vie des travailleurs francais.",
+      "bbox": {
+        "x_pct": 11.379,
+        "y_pct": 9.358,
+        "w_pct": 86.072,
+        "h_pct": 34.697
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les ministres socialistes ont donc mene les operations militaires d'Algerie. Refusant le mot « guerre », ils les ont appelees « pacification », et il est permis de croire que sous un autre gouvernement, cette « guerre » aurait ete pire, avec des instructions assez differentes donnees aux soldats. Ce ne sont la pourtant que des hypotheses, et l'écart entre ce qui se passe en realite et ce qui se serait passe si... est difficile a apprecier. Il reste que le gouvernement a presence socialiste que la France s'est donne mene en Algerie une guerre coloniale.",
+      "bbox": {
+        "x_pct": 11.323,
+        "y_pct": 43.52,
+        "w_pct": 85.752,
+        "h_pct": 19.403
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deux faits pourtant viennent corriger en partie l'impression produite par une telle constatation : d'abord, le gouvernement francais annonce que des elections libres et des negociations seront organisees des qu'un « cessez le feu » sera intervenu; ensuite, il fait entrer en vigueur, parallelement aux operations militaires, un certain nombre de reformes sociales (repartition des emplois dans l'administration, distribution de terres, etc.). Reste a savoir si une guerre peut veritablement preparer des elections libres, et si les reformes realisees ont en fait une importance et une envergure suffisantes pour renverser la situation psychologique et changer en confiance une mefiance tant de fois justifiee. En pleine guerre, un tel renversement est de toute facon bien difficile.",
+      "bbox": {
+        "x_pct": 11.003,
+        "y_pct": 62.184,
+        "w_pct": 85.836,
+        "h_pct": 25.606
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match actual content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original transcription was heavily corrupted/hallucinated.",
+    "Page number and header were not separated from body text."
+  ],
+  "doc_id": "330",
+  "page": 296,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

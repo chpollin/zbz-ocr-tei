@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "78",
+      "bbox": {
+        "x_pct": 121.75,
+        "y_pct": 89.26,
+        "w_pct": 21.0,
+        "h_pct": 32.73
+      },
+      "changed": true,
+      "change_reason": "Page number 78 was mislabeled as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 398.88,
+        "y_pct": 89.26,
+        "w_pct": 199.71,
+        "h_pct": 32.73
+      },
+      "changed": true,
+      "change_reason": "Running header was mislabeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "techniques de la neutralité. Il faut réinventer notre neutralité, dans le monde qui va être le nôtre et qui doit être le nôtre — du moins nous espérons qu'il le sera, nous croyons qu'il devrait l'être. Peut-être aurions-nous, du fait de ce rodage et de ces vertus acquises, à remplir certaines fonctions propres qui nous conviendraient particulièrement : fonctions d'arbitrage, fonctions de secours, fonctions de service civil. On pourrait peut-être charger la Suisse d'accomplir dans l'Europe fédérée un service civil à la place du service militaire européen, donner à la Suisse un statut d'objecteur de conscience. Ce n'est pas inconcevable.",
+      "bbox": {
+        "x_pct": 118.84,
+        "y_pct": 128.65,
+        "w_pct": 761.59,
+        "h_pct": 314.79
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR to match source content exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a des fonctions à trouver, il y a une situation à inventer, et cette invention demande un effort d'imagination, de courage et de renouveau. Elle ne peut se produire qu'au fil des questions concrètes qui se posent. Et, bien entendu, il faudrait alors admettre, dans le cadre de l'organisation fédérale, un droit d'immixtion dans les affaires intérieures des Etats. Nous nous opposerions donc à un principe qu'on prétend sacro-saint et intangible. Mais il ne me semble pas que nous ayons intérêt à laisser, par exemple, se reproduire la période de 1933 à 1939 où, sous prétexte de non-immixtion dans les affaires intérieures d'un Etat, on a laissé se développer les événements que vous savez. Il me semble qu'une leçon de ce genre devrait tout de même être suffisante. Il s'agit donc de chercher et d'imaginer, de ne pas s'enfermer, d'ouvrir le plus possible les portes pour notre propre vie, pour que nous ayons de l'air à respirer. Il faut que nous cherchions une voie vers les autres, qui puisse faire vivre",
+      "bbox": {
+        "x_pct": 120.22,
+        "y_pct": 444.66,
+        "w_pct": 760.8,
+        "h_pct": 484.52
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR to match source content exactly."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and running header incorrectly identified as paragraph text.",
+    "OCR for paragraph text was severely degraded/incorrect."
+  ],
+  "doc_id": "530",
+  "page": 19,
+  "elapsed_seconds": 4.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

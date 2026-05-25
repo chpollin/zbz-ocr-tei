@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Karl Jaspers zum 80. Geburtstag</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">610</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Karl Jaspers zum 80. Geburtstag</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1963</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:warning L7:warning). Fremde Texte im selben div: Gedicht Eva Springer, Gotthelf-Artikel Karl Walter; Philosophie, Zeit, Vernunft als bibl getaggt -- Allgemeinbegriffe; figure-Element mit langem Text im head (+2 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1893" lry="2188">
+      <zone xml:id="facs_1_r_1" ulx="336" uly="349" lrx="957" lry="419" />
+      <zone xml:id="facs_1_r_2" ulx="572" uly="414" lrx="733" lry="440" />
+      <zone xml:id="facs_1_r_3" ulx="46" uly="458" lrx="640" lry="719" />
+      <zone xml:id="facs_1_r_4" ulx="662" uly="462" lrx="1253" lry="741" />
+      <zone xml:id="facs_1_r_5" ulx="47" uly="716" lrx="638" lry="819" />
+      <zone xml:id="facs_1_r_6" ulx="662" uly="743" lrx="1255" lry="927" />
+      <zone xml:id="facs_1_r_7" ulx="45" uly="835" lrx="638" lry="957" />
+      <zone xml:id="facs_1_r_8" ulx="660" uly="923" lrx="1254" lry="1355" />
+      <zone xml:id="facs_1_r_9" ulx="44" uly="956" lrx="637" lry="1121" />
+      <zone xml:id="facs_1_r_10" ulx="1774" uly="1061" lrx="1866" lry="1079" />
+      <zone xml:id="facs_1_r_11" ulx="1277" uly="1104" lrx="1867" lry="1206" />
+      <zone xml:id="facs_1_r_12" ulx="45" uly="1116" lrx="638" lry="1479" />
+      <zone xml:id="facs_1_r_13" ulx="1276" uly="1201" lrx="1868" lry="1343" />
+      <zone xml:id="facs_1_r_14" ulx="1275" uly="1339" lrx="1872" lry="1754" />
+      <zone xml:id="facs_1_r_15" ulx="662" uly="1351" lrx="1255" lry="1674" />
+      <zone xml:id="facs_1_r_16" ulx="45" uly="1468" lrx="637" lry="1693" />
+      <zone xml:id="facs_1_r_17" ulx="664" uly="1670" lrx="1253" lry="1714" />
+      <zone xml:id="facs_1_r_18" ulx="45" uly="1692" lrx="637" lry="1813" />
+      <zone xml:id="facs_1_r_19" ulx="660" uly="1710" lrx="1254" lry="2068" />
+      <zone xml:id="facs_1_r_20" ulx="1275" uly="1751" lrx="1866" lry="2049" />
+      <zone xml:id="facs_1_r_21" ulx="46" uly="1809" lrx="638" lry="2132" />
+      <zone xml:id="facs_1_r_22" ulx="1277" uly="2045" lrx="1863" lry="2132" />
+      <zone xml:id="facs_1_r_23" ulx="662" uly="2064" lrx="1253" lry="2129" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1969" lry="2203">
+      <zone xml:id="facs_2_r_1" ulx="1562" uly="175" lrx="1726" lry="216" />
+      <zone xml:id="facs_2_r_2" ulx="730" uly="180" lrx="1322" lry="230" />
+      <zone xml:id="facs_2_r_3" ulx="118" uly="185" lrx="708" lry="368" />
+      <zone xml:id="facs_2_r_4" ulx="1446" uly="223" lrx="1883" lry="431" />
+      <zone xml:id="facs_2_r_5" ulx="730" uly="224" lrx="1327" lry="945" />
+      <zone xml:id="facs_2_r_6" ulx="119" uly="363" lrx="708" lry="512" />
+      <zone xml:id="facs_2_r_7" ulx="1773" uly="420" lrx="1894" lry="450" />
+      <zone xml:id="facs_2_r_8" ulx="122" uly="505" lrx="707" lry="608" />
+      <zone xml:id="facs_2_r_9" ulx="121" uly="603" lrx="710" lry="904" />
+      <zone xml:id="facs_2_r_10" ulx="1348" uly="649" lrx="1940" lry="858" />
+      <zone xml:id="facs_2_r_11" ulx="1789" uly="850" lrx="1922" lry="870" />
+      <zone xml:id="facs_2_r_12" ulx="1386" uly="878" lrx="1940" lry="943" />
+      <zone xml:id="facs_2_r_13" ulx="123" uly="899" lrx="710" lry="1005" />
+      <zone xml:id="facs_2_r_14" ulx="875" uly="993" lrx="1810" lry="1071" />
+      <zone xml:id="facs_2_r_15" ulx="124" uly="998" lrx="711" lry="1356" />
+      <zone xml:id="facs_2_r_16" ulx="734" uly="1081" lrx="1328" lry="2030" />
+      <zone xml:id="facs_2_r_17" ulx="125" uly="1350" lrx="713" lry="1612" />
+      <zone xml:id="facs_2_r_18" ulx="130" uly="1608" lrx="714" lry="1867" />
+      <zone xml:id="facs_2_r_19" ulx="132" uly="1863" lrx="717" lry="2086" />
+      <zone xml:id="facs_2_r_20" ulx="742" uly="2020" lrx="1330" lry="2092" />
+      <zone xml:id="facs_2_r_21" ulx="1816" uly="2071" lrx="1925" lry="2097" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          SONNTAGSBLATT
+        </head>
+        <p facs="#facs_1_r_2">
+          Samstag/Sonntag, 23./24. Februar 1963, Nr. 83
+        </p>
+        <p facs="#facs_1_r_3">
+          «<bibl ref="#zbz-w.609">Basler Nachrichten</bibl>» Seite 19
+        </p>
+        <p facs="#facs_1_r_4">
+          <persName ref="#zbz-p.1">Karl Jaspers</persName> zum 80. Geburtstag
+        </p>
+        <p facs="#facs_1_r_5">
+          (23. Februar 1963)
+        </p>
+        <p facs="#facs_1_r_6">
+          Als ich achtzehn Jahre alt war, kam ich durch Zufall nach <placeName ref="#zbz-l.21">Heidelberg</placeName>, um Deutsch zu lernen. Es war mein erstes Semester ausserhalb des Elternhauses. Da ich damals in <placeName ref="#zbz-l.48">Genf</placeName> Latein als Hauptfach hatte, nahm ich in <placeName ref="#zbz-l.21">Heidelberg</placeName> an einem Lateinseminar teil. Virgils Georgica wurden da gelesen, und ich kann mich erinnern, wie stundenlang folgende Frage erörtert wurde: am Anfang des ersten Buches werden eine Reihe Götter beim Namen ange- rufen, und dann kommt: «... und Sie alle, Götter und Göttinnen»; da fragte man sich, ob der Ausdruck «Sie alle» die früher erwähnten Gottheiten auch noch mit einschloss, oder ob es nur auf die anderen, noch nicht erwähnten, zu beziehen war. Dabei zählte ich die Wolken, die ich durch das Fenster am Himmel vorbeiziehen sah.
+        </p>
+        <p facs="#facs_1_r_7">
+          Eines Tages begegnete ich in der schönen, alten Mensa, wo früher der Stall gewesen war, einem Mädchen, das mich fragte: «Haben Sie <persName ref="#zbz-p.1">Jaspers</persName> schon gehört?» Sie selbst ging von <bibl ref="#zbz-w.705">Zeit</bibl> zu <bibl ref="#zbz-w.705">Zeit</bibl> hin. Ich antwortete: «Nein, wer ist er?» Sie sagte leicht: «Gehen Sie mal hin, es ist interessant.»
+        </p>
+        <p facs="#facs_1_r_8">
+          Ich ging. Die Vorlesung fand in der alten Aula statt. Da hörte ich zum erstenmal diese mir unbekannte deutsche Sprache des Nordens, mit den durchsichtig klarer s-p, s-t, s-prechen, s-tehen. Da sah ich zum erstenmal sich diese Hand erheben, diese lange Hand, zwei Finger gestreckt, zwei Finger gefaltet, die für immer für mich zum Zeichen wurde, dass in der <bibl ref="#zbz-w.1">Philosophie</bibl> das Gesagte noch nicht das Gesagte sei.
+        </p>
+        <p facs="#facs_1_r_9">
+          Von <bibl ref="#zbz-w.1">Philosophie</bibl> hatte ich damals kaum eine Ahnung. Deutsch konnte ich schlecht. Ich verstand von der Vorlesung fast nichts. Nur eines war mir klar; es gab hier etwas zu verstehen. Ich tat einen Studenten, mir den Anfang der Vorlesung, den ich in den ersten Wochen versäumt hatte, zusammenzufassen. Er konnte zufällig französisch. Und er wunderte sich, zu sehen, dass ich die Sätze, die er auszusprechen begann, beendigen konnte. «Haben Sie schon etwas darüber gelesen?» fragte er.
+        </p>
+        <figure facs="#facs_1_r_10">
+          <head>Nach einigen Tagen war <persName ref="#zbz-p.1">Jaspers'</persName> Vorlesung so sehr ins Zentrum meines Lebens und meiner Freude gerückt, dass ich beschloss, den Versuch zu machen, auch im Seminar dabei zu sein. <persName ref="#zbz-p.1">Jaspers</persName> las damals mit den Studenten <persName ref="#zbz-p.16">Hegels</persName> Aesthetik. Alle behaupteten, es sei ungemein schwierig, sie selbst kämen kaum mit dem Lesen von einer Sitzung zur nächsten nach. Aber ich wollte es versuchen. Mit grössster Mühe fand ich jemanden, der willig war; mir <persName ref="#zbz-p.16">Hegels</persName> Band nur für eine Nacht zu leihen, damit ich sehen könne, ob seine Sprache für mich überhaupt verständlich war. Ich erinnere mich noch, wie ich mich abends unter der Lampe in meinem Zimmer niedersetzte und versuchte, mit grössster Anspannung zu lesen. Es war mühsam. Nach einer halben Stunde war ich aber eher optimistisch: mühsam, aber es geht. Als ich mich dann aber mit geschlossenen Buch erinnern wollte, was ich gelesen hatte, merkte ich verzweifelt, dass ich davon keine Ahnung hatte. Ich versuchte wieder; diesmal zwang ich mich, den Inhalt jedes Abschnittes auf französisch schriftlich zusammenzufassen. Und so setzte ich die Arbeit bis zu späten Stunden fort.</head>
+        </figure>
+        <p facs="#facs_1_r_11">
+          Am nächsten Tag klopfte ich vor dem Seminar an die Tür des Dozentenzimmers. Als die Tür sich aufmachte, musste ich höher und höher blicken, bis ich <persName ref="#zbz-p.1">Jaspers'</persName> Kopf erreichte. Und ich erklärte: ich sei französischer Sprache, verstehe wenig, könne im Seminar auf keinen Fall eine Arbeit abgeben oder mitsprechen, ich hatte nur den Wunsch, still dabeisitzen zu dürfen. <persName ref="#zbz-p.1">Jaspers</persName> riet ab: es sei zu spät im Semester, ich würde nicht viel davon haben, es lohne sich nicht. Ich nahm Abschied, entschuldigte mich und ging zur Tür. Da muss meine Enttäuschung sichtbar gewesen sein, denn <persName ref="#zbz-p.1">Jaspers</persName> sagte im letzten Augenblick: «Aber wenn Sie trotzdem wollen, können Sie kommen». Ich ging und blieb dort.
+        </p>
+        <p facs="#facs_1_r_12">
+          Ein Drittel eines Jahrhunderts ist seitdem verflossen. Ich bleibe noch. Ich kann mir nicht einmal vorstellen, was ich wäre, wenn ich <persName ref="#zbz-p.1">Jaspers'</persName> <bibl ref="#zbz-w.1">Philosophie</bibl> nicht begegnet wäre. Und die Tatsache, dass wir, <persName ref="#zbz-p.1">Jaspers'</persName> Schüler und Freunde, heute seinen achtzigsten Geburtstag feiern dürfen, erfüllt uns mit einer unendlichen Dankbarkeit.
+        </p>
+        <p facs="#facs_1_r_13">
+          Es handelt sich nicht nur um die Freude, seine Gegenwart in unserer Mitte so lange beibehalten zu haben, so dass man auch, wenn man ihn längere <bibl ref="#zbz-w.705">Zeit</bibl> nicht sieht und mit ihm nicht spricht, doch weiss: irgendwo ist der klare, tiefe Blick; irgendwo ist Festigkeit, Treue; irgendwo wird die Gegenwart empfunden, verstanden, und in überlegener Ergriffsheit erlebt. Aber es bedeutet noch mehr: für die Art und Weise, wie sein Werk spätere Zeiten ansprechen wird, ist es nicht gleichgültig, dass er es fertiggebracht hat, der Voraussage der Aerzte, die ihm, als er zwanzig Jahre alt war, keine Zukunft gönnten, zu trotzen; dass er die Kunst des Zusammenlebens mit der Krankheit so vollkommen lernte und es trotzdem verstand, eines der grössten und wichtigsten Werke unserer <bibl ref="#zbz-w.705">Zeit</bibl> zu schreiben, und alle Krisen, die sein Vaterland, <placeName ref="#zbz-l.14">Europa</placeName>, die Welt, und die ganze Epoche bis auf den Grund erschütterten, zu erleben, indem er in jeder neuen Lage die unbeugsame Klarheit des Blickes und die Festigkeit der Entscheidung bewahrte.
+        </p>
+        <p facs="#facs_1_r_14">
+          Für andere Denker wäre das nicht so wichtig. Ich denke jetzt nicht an die, deren Leben man am liebsten vergessen möchte, da dieses so wenig dem Stil und der Forderung ihres Werkes entspricht, da ihr Genie sozusagen ausschliesslich eine Eingebung, eine Frucht der Gnade und nicht der Freiheit, zu sein scheint, als ob ein anderer, während sie schreiben, ihre Hand gelenkt hätte. Aber selbst bei denen, deren Unterschrift so sehr Bestandteil des Werkes ist, dass dieses Werk hauptsächlich die Funktion erfüllt, uns ihre Gegenwart weiter zu bewahren, geschieht es, dass es die kurze Glut einer Flamme, eines gefolterten Ausdrucks oder einer Exstase blosslegt. Es fixiert dann für die Ewigkeit, wie eine Maske, den schärfsten Augenblick einer tragischen Krise oder einer Offenbarung —, und dann ist es unwichtig, ob der Autor dauert oder nicht.
+        </p>
+        <p facs="#facs_1_r_15">
+          Ganz anders steht es mit <persName ref="#zbz-p.1">Karl Jaspers</persName>. Seine <bibl ref="#zbz-w.1">Philosophie</bibl>, wie die eines <persName ref="#zbz-p.18">Sokrates</persName>, <persName ref="#zbz-p.142">Spinoza</persName>, <persName ref="#zbz-p.6">Kant</persName>, lehnt sich nicht an einen erlebten Augenblick an, sondern an die Anstrengung eines Lebens und an den Stil, der sich daraus ergibt. Hier ist die <bibl ref="#zbz-w.705">Zeit</bibl>, mit der nagen den Wiederholung, die alles auf die Probe setzt, und ihrer Gefahr der Abnutzung, ein entscheidender Bestandteil der Qualität: nicht das Ueberraschende und Unerwartete schützt hier den Stil gegen Verflachung, sondern die Treue. Den Stil, jene Monotonie, die vom Sein spricht.
+        </p>
+        <p facs="#facs_1_r_16">
+          Bei keinem Denker übernimmt wohl die <bibl ref="#zbz-w.1">Philosophie</bibl> eine so grossartige — beinahe möchte man sagen eine so heilige — und gleichzeitig eine so wenig sich selbst genügende Bedeutung. <bibl ref="#zbz-w.1">Philosophie</bibl> ist für <persName ref="#zbz-p.1">Jaspers</persName> letzter Ernst. In ihr wird das ganze Wesen verbindlich. Sie ist diese Verbindlichkeit selbst, und zugleich das klarer und klarer werdende Bewusstsein, das wir uns von ihr und von ihrem absoluten Charakter erwerben. Es ist aber eine Verbindlichkeit ohne Glaubensbekenntnis, da einer der entscheidenden Schritte des Philosophierens gerade darin besteht, dass dessen Unmöglichkeit bewiesen wird. Und es ist eine Verbindlichkeit, die jede blinde Unterwerfung an irgendwelche faktische, atheistische oder religiöse Autorität ausschliesst, selbst die eines Buches oder einer Schrift. Wozu verbindet man sich denn? So klingt die Frage, die so viele Gläubige schon ironisch stellten. Verpflichtet man sich, jede Verpflichtung abzuweisen, und nur die Toleranz zu wahren, die es Menschen und Völkern verschiedener Auffassungen ermöglicht, nebeneinander ohne Gewalt zu bestehen, also etwa den Agnostizismus der Aufklärung? Das würde nur bedeuten, den Frieden der Wahrheit vorzuziehen, und sogar dem Frieden die Wahrheit zu opfern. Für <persName ref="#zbz-p.1">Jaspers</persName> aber gibt es keinen wahren Frieden, der nicht von der Leidenschaft für die Wahrheit immer wieder genährt wurde.
+        </p>
+        <p facs="#facs_1_r_17">
+          Die philosophische Verpflichtung ist eine «gegenstandslose» Verpflichtung, gerade weil sie Verpflichtung zur Wahrheit ist. Wahrheit, wenn man wirklich sie will, und nicht irgendeinen Ersatz für sie, kann keiner je besitzen, nicht wegen unseres mangelnden Wissens — denn je weiter unser Wissen reicht, desto tiefer öffnen sich vor uns neue unbekannte Wege, ins Endlose —, sondern wegen des Wesens der Wahrheit selbst. Denn wir kennen nur Objekte. Die Wahrheit aber ist kein Objekt. Sie ist auch nicht Subjekt. Sie ist der Horizont des Seins, in dem jedes bestimmte, erreichte, formulierte Wissen, das innerhalb der Spaltung des Seins in ein Subjekt, das ein Objekt kennt, erworben wird. Jedes objektive Wissen meint eigentlich diesen Horizont der Wahrheit und möchte ihn erreichen. Nur eine Lähmung des Willens zur Wahrheit kann sich mit besonderem, allgemeingültigem, aber nur in bezug auf einen bestimmten Standpunkt und bestimmte Methoden sinnvollem Wissen zufrieden geben, und dieses für die Wahrheit selbst halten.
+        </p>
+        <p facs="#facs_1_r_18">
+          So ist die philosophische Verbindlichkeit ohne Objekt, weil die Wahrheit kein Objekt sein kann.
+        </p>
+        <p facs="#facs_1_r_19">
+          Wenn sie aber ohne Objekt ist, so doch nicht ohne Einsatz, und der Einsatz ist jeweils absolut. Denn Wahrheit wird eins mit dem Sein. Die philosophische Verbindlichkeit, dadurch, dass sie das ihr angemessene Objekt nicht erreichen kann, weil dieses «Objekt» kein Objekt sein kann, findet sich sozusagen zu einem Einsatz verurteilt, der das Sein ist. Nicht das der Subjekt-Objekt-Spaltung transzendente Sein — wo die Verbindlichkeit den letzten Grund ihrer selbst ahnt, das aber ihrer keineswegs bedarf, um zu sein —, sondern das Sein dessen selbst, der sich durch sie verpflichtet — der sich zu existieren verpflichtet. Was heisst das? Existenz heisst, für den, der sich durch die philosophische Verbindlichkeit verpflichtet, im konkreten, besonderen, begrenzten Tun die Möglichkeit zu verwirklichen, die seinem Wesen geschenkt wurden: Möglichkeiten des Wissens, Verstehens und Verstehenlassens. Möglichkeiten der Entscheidung, der Handlung, der Liebe und des Kampfes, Möglichkeiten des Schaffens, der Schöpfung, der Anbetung. Alle Möglichkeiten der Freiheit, die Chancen möglicher Existenz bieten.
+        </p>
+        <p facs="#facs_1_r_20">
+          So sieht man hier, wie die <bibl ref="#zbz-w.1">Philosophie</bibl> sich selbst nicht genügt. Sie verlangt vielmehr als unentbehrlich für die eigene Echtheit, dass der philosophierende <persName ref="#zbz-p.1251">Mensch</persName> auch durch Suchen und Ver-
+        </p>
+        <p facs="#facs_1_r_21">
+          stehen im Gebiete der Wissenschaft, im Mitwirken und Mitverantworten am öffentlichen Leben, in verlässlicher Bindung an die ihm nächsten Menschen, im Suchen einer existentiellen Auseinandersetzung mit den Anhängern einer ausschliesslichen Religion, sich bewährt.
+        </p>
+        <p facs="#facs_1_r_22">
+          Es genügt also keineswegs, jeden Dogmatismus aufzugeben, indem man bloss die Weisheit der für immer geschlossenen, uns die Wahrheit verweigernden Hände <persName ref="#zbz-p.50">Gottes</persName> anbietet. Dem sich uns entziehenden und dadurch irgendwie sprechenden Sein müssen wir handelnd antworten, und statt des unmöglichen Wissens das uns aufgegebene, abgeleitete, endliche Sein vergegenwärtigen — durch Freiheit.
+        </p>
+        <p facs="#facs_1_r_23">
+          <bibl ref="#zbz-w.1">Philosophie</bibl> ist also für <persName ref="#zbz-p.1">Jaspers</persName> keine Wissenschaft, und die Wissenschaft wird ihrer eigenen strengen Forderung untreu, wenn sie den Anspruch erlebt, entweder die Probleme der <bibl ref="#zbz-w.1">Philosophie</bibl> zu lösen, oder ihnen zwingend jede Bedeutung abzusprechen. Nichtstestoweniger hält <persName ref="#zbz-p.1">Jaspers</persName> die Wissenschaft nicht nur für eine in sich selbst notwendige Tätigkeit, sondern auch eine der für die Existenz und für echtes Philosophieren unentbehrlichen Bedingungen. Zunächst negativ ist es die Wissenschaft selbst, die, durch die strengen Bedingungen ihrer Allgemeingültigkeit, die notwendig relative und begrenzte Tragweite ihrer Ergebnisse klar einsehen lässt. Positiv findet in ihr das philosophische Bewusstsein die sich mit jeder <bibl ref="#zbz-w.705">Zeit</bibl> verändernde Sprache, deren es sich bedient, um indirekt vom transzendenten Sein zu sprechen. Aber es gibt mehr: durch ihre rationale und empirische Allgemeingültigkeit hält die Wissenschaft für die Existenz sozusagen eine Norm zwingender Einsicht aufrecht, die die Existenz auch dort verfolgt, wo sie nicht erreichbar ist, wo an deren Stelle sich die Einigkeit der existentiellen Verbindlichkeit verwirklicht. Das Absolute dieser Verbindlichkeit ist selbst so klar sein wie nur möglich, und auch hier wirkt die zwingende, wissenschaftliche Einsicht wie ein unerreichbares, aber unentbehrliches Ideal, das nie aufhört, Klarheit zu fordern.
+        </p>
+        <p>
+          <persName ref="#zbz-p.1">Jaspers</persName> Begeisterung für das wissenschaftliche Forschen (man darf nie vergessen, dass er Medizin studierte, Arzt gewesen ist und viele Jahre in Laboratorien gearbeitet hat) ist den grossen zeitgenössischen Synthesen, die bei den heutigen Menschen so viel Beifall finden, entschieden entgegengesetzt. Jene Synthesen versuchen, eine kontinuierliche objektive Einheit herzustellen, in der dann die verschiedensten Aspekte der Welt wie auch der menschlichen Geschichte ihren Platz finden, so dass sie es wagen, das totale und höchste Sein der Kenntnis und der Anbetung der Menschen für morgen zu versprechen. Ganz anders bei <persName ref="#zbz-p.1">Jaspers</persName>. Kein Denken widersteht energischer jeder Versuchung einer gegebenen Synthese oder einer unvermeidlichen Eschatologie. Im Gegenteil: je mehr die Wissenschaften fortschreiten, desto klarer kommen die Heterogenität ihrer Methoden und Standpunkte, und infolgedessen ihre Diskontinuität und wesentliche Pluralität hervor.
+        </p>
+        <p>
+          Diskontinuität, Pluralität sind für die Existenz Zeichen der Unmöglichkeit einer wissenschaftlich total erkannten Welt, in der die Freiheit ersticken würde, weil die Existenz in jener Welt wie ein Objekt in einem größeren Objekt wäre, und dadurch den konsti
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          Samstag/Sonntag, 23./24. Februar 1963, Nr. 83
+        </p>
+        <p facs="#facs_2_r_2">
+          <bibl ref="#zbz-w.609">Basler Nachrichten</bibl>
+        </p>
+        <p facs="#facs_2_r_3">
+          «<bibl ref="#zbz-w.609">Basler Nachrichten</bibl>», Seite 20
+        </p>
+        <p facs="#facs_2_r_4">
+          tutiven Gesetzen der Objektivität unterworfen. «Einheit» und «Totalität» gewinnen bei <persName ref="#zbz-p.1">Jaspers</persName> ihre wahre Funktion wieder, die kantische Funktion der Ideen: regulativ und nicht konstitutiv, aufgegeben und nie gegeben. Dadurch wird der Existenz für immer die Trägheit und Verantwortungslosigkeit verweigert, die jede universelle Synthese — sei sie noch so dynamisch aufgefasst — durch ihre objektive Ordnung oder ihren Fortschritt mit sich bringen würden. Was die Welt ist und sein wird, hängt noch immer auch von der Freiheit ab, die sich in dieser Welt verwirklichen kann.
+        </p>
+        <p facs="#facs_2_r_5">
+          Je weniger menschliche Entscheidungen sich auf eine unpersönliche, deduktive oder technische Notwendigkeit wissenschaftlicher Art berufen können, desto klarer wird ihre absolute Verbindlichkeit, in jeder konkreten Lage, für denjenigen, der sie trifft. Wille, <persName ref="#zbz-p.89">Wahl</persName>, Glaube sind wie Eide der Existenz vor der Transzendenz, und dadurch wie metaphysische Chiffren des Seins, das sie, als einzige Wurzel jeder Unbedingtheit, erst ermöglichte.
+        </p>
+        <p facs="#facs_2_r_6">
+          So sind freie Akte bei <persName ref="#zbz-p.1">Jaspers</persName> in der äussersten Spannung zwischen der Transzendenz, der sie die Absolutheit ihrer Entscheidung schulden, und den konkreten Umständen, unter denen diese sich geschichtlich verwirklichen. Keine begriffliche oder technische Brücke kann diese beiden Ebenen verbinden.
+        </p>
+        <p facs="#facs_2_r_7">
+          Auf der Ebene der Umstände verlangt der freie Akt die größtmögliche Klarheit, Kenntnis und Kritik faktischer Tatsachen und Auskünfte, Gebrauch aller vorhandenen Methoden, die es erlauben, den Blick zu erweitern, Ursachen und mögliche oder wahrscheinliche Folgen zu denken, damit die wahren Möglichkeiten im richtigen Licht gesehen werden. Dieselbe Verbindlichkeit, die Existenz an Transzendenz bindet, verlangt das genaueste Lesen, im unerbittlichsten Licht, der geschichtlichen Umgebung eines Entschlusses. Daher bei <persName ref="#zbz-p.1">Jaspers</persName> die Abwehr gegen jede Verschleierung, jedes Monopol des Wissens, das ein Privileg einiger grosser Eingeweihten wäre, denen die Vielen nur zu glauben und zu trauen hätten, jeder Propaganda oder Lüge, wie wohlwollend auch und mitleidbindend sie sein könnten. Daher auch die Abwehr gegen jedes «salto mortale», durch den die <bibl ref="#zbz-w.68">Vernunft</bibl> auf ihre Rechte und Pflichten verzichten würde.
+        </p>
+        <p facs="#facs_2_r_8">
+          Die absolute Forderung aber, mit der schärfsten Abklärung, verspricht noch nicht den Erfolg. Der beste Entschluss ergibt sich noch nicht aus der sorgfältigsten Prüfung. Deswegen bleibt er an die Transzendenz gebunden und bekommt von ihr sein absolutes Gewicht existentieller Verantwortung.
+        </p>
+        <p facs="#facs_2_r_9">
+          Deswegen ist die Konfrontierung von Existenz mit Existenz von einer ganz anderen Art, als die der Gelehrten untereinander. Existenz spricht wohl mit der anderen Existenz die Sprache der <bibl ref="#zbz-w.68">Vernunft</bibl>, denn sie ist in die einzige gemeinsame Sprache, über die die Menschen verfügen. Hier aber entwickelt diese Sprache nicht ein System von Argumenten, die allen Gesprächspartnern eine unpersönliche eindeutige Wahrheit aufzwingen sollte. Auf dieser Ebene würde ein anscheinend rationeller Sieg der Wahrheit bedeuten. Denn es geht nicht um objektive, sondern um existentielle Wahrheit — die also weder von der Sprache, in der sie ausgesprochen wird, noch von dem Mund, der sie ausspricht, unabhängig sein kann. Sie ist nicht einmal von dem unabhängig, was während der Konfrontierung unter den Partnern und in jedem einzelnen vor sich geht, und die Worte, die sie brauchen, werden von ihrer Wirksamkeit selbst verändert. So dass die Auseinandersetzung zu einer Art existentieller Umgang wird, durch die die Existenz sich ihrer selbst vergewissert, so wie der Art von Wahrheit, die sie zu erreichen hat.
+        </p>
+        <p facs="#facs_2_r_10">
+          Wenn es aber um eine Wahrheit geht, die nicht als Ergebnis aufgenommen werden soll, sondern die sich in der Art der Auseinandersetzung selbst verwirklicht, dann würde jede Niederlage des Einzelnen das existentielle Suchen des anderen lähmen und die Bedingungen der Wahrheit vernichten. Die Gegenwart des Gegners, seine Freiheit, seine Unbedingtheit sind mir so notwendig wie die meinen. Der Kampf unter uns lässt nicht die höfliche Schwächungstheorie eines mundänen Gespräches zu. Er ist, wie <persName ref="#zbz-p.1">Jaspers</persName> sagt, radikal und rücksichtslos. Aber er ist — nicht trotzdem, sondern eben dadurch — ein liebender Kampf, denn was ich will, ist nicht der Sieg, nicht die Vernichtung des Gegners, sondern für ihn und für mich jene Wahrheit, die weder er noch ich in rationaler apodiktischer Sprache einfangen könnte.
+        </p>
+        <p facs="#facs_2_r_11">
+          Es geht ja gar nicht darum, recht zu behalten. Es geht darum, nie auf den Gebrauch der <bibl ref="#zbz-w.68">Vernunft</bibl> zu verzichten, um die reicheren Möglichkeiten dessen zu gewinnen, was jenseits jeder <bibl ref="#zbz-w.68">Vernunft</bibl> ist. <persName ref="#zbz-p.1">Jaspers</persName> hat immer wieder gezeigt, wie Transzendenz der <bibl ref="#zbz-w.68">Vernunft</bibl> entfällt — indem sie diese nämlich in die oberflächliche Ausweglosigkeit der Kreise, Widersprüche und Tautologien einsperrt —, und sich dadurch selbst uns meldet. Vielleicht ergibt dieses Scheitern des vernünftigen Philosophierens — vorausgesetzt, dass die Suche sich und verbindlich ist — die besten und wirksamsten Chiffren der Transzendenz, jene Chiffren, die zu uns sprechen nur, wenn wir sie hören wollen, die nie gewalttätig aus irgendeiner Unterwelt uns überfallen, sondern durch unsere Freiheit selbst und für sie Sprache werden.
+        </p>
+        <p facs="#facs_2_r_12">
+          Diese Freiheit darf durch keine Institution, keine politische oder religiöse Institution erstickt oder vermindert werden. Im Gegenteil: jede Institution findet erst ihre Rechtfertigung in den Möglichkeiten, die sie für diese Freiheit sichert. Hier liegt bei <persName ref="#zbz-p.1">Jaspers</persName> das ständige Kriterium seiner politischen Stellungnahmen, hier die tiefste, absolute Wurzel seines Widerstandes gegen jeden totalitären Versuch. Und wenn er nichts von einem Anarchisten in sich hat, wenn er die Notwendigkeit der Autorität so stark betont, so ist es, weil er die metaphysische Freiheit nicht im Bereich der Worte oder der Literatur, sondern in dem der konkreten, in der Geschichte zu treffenden Entschlüsse verteidigt; und da hat er gesehen, dass
+        </p>
+        <p facs="#facs_2_r_13">
+          Freiheit ohne Autorität in menschlichen Gesellschaften Selbstvernichtung der Freiheit bedeutet.
+        </p>
+        <p facs="#facs_2_r_14">
+          Aus Sorge für die Freiheit hat <persName ref="#zbz-p.1">Jaspers</persName>, kurz vor <persName ref="#zbz-p.64">Hitlers</persName> Machtübernahme, die dringendste Warnung gegeben: er sah, dass eine entleerte, substanzlose, abstrakte Freiheit keinem Angriff der Gewalt, keiner Versuchung der folgloser Abdankung widerstehen konnte. Nach den Jahren des Schweigens und der Gefahr unter <persName ref="#zbz-p.64">Hitlers</persName> Herrschaft hielt er gleich nach der Niederlage jene erstaunliche Vorlesung über die <bibl ref="#zbz-w.47">Schuldfrage</bibl>. Mitten in den Ruinen des Reiches und der Städte machte er sich geradeaus an die dringendste Arbeit: das klare Sehen, ohne Wohlgefallen und ohne Masochismus, dessen, was getan worden war, damit dann wahre Freiheit wieder möglich werde. Nirgends sieht man vielleicht eindrucksvoller, welche Art von Beziehungen zwischen dem existentiellen Drang zur Transzendenz und dem unerbittlichen Suchen nach Klarheit besteht. Ein Drang, bei dem jede Verschleierung, jede Lüge, jede politische oder ethische Strategie verweigert wird, um nur das gelten zu lassen, was wahr ist. Unter demselben Gesichtspunkt der Freiheit hat auch <persName ref="#zbz-p.1">Jaspers</persName> in den letzten Jahren mutig und gegen den Strom die nationale Wiedervereinigung des geteilten <placeName ref="#zbz-l.26">Deutschlands</placeName> der gewichtigsten Sorge um die Freiheit der Menschen unterstellt. Der nationale Staat ist als solcher unwichtig. Was zählt, ist die echte Tradition der Freiheit für konkrete menschliche Wesen. Man wird bei <persName ref="#zbz-p.1">Jaspers</persName> kein Programm einer politischen Strategie finden. Was so aussieht, macht nur anschaulicher, was Grundbedeutung und Grundnorm jeder Politik und jeder Strategie sein sollte: der absolute Wert der Möglichkeiten der Freiheit. Manche haben in <placeName ref="#zbz-l.241">Deutschland</placeName> geglaubt, <persName ref="#zbz-p.1">Jaspers</persName> habe dadurch sein Vaterland verleugnet. Im Gegenteil: niemand hat eine tiefere Treue als er für ein bestimmtes <placeName ref="#zbz-l.241">Deutschland</placeName> gehegt, von dem er etwas im kleinen <orgName ref="#zbz-o.760">Schweizer</orgName> <placeName ref="#zbz-l.9">Basel</placeName> wiederzuerkennen glaubte: ein vielfaches, unterschiedenes <placeName ref="#zbz-l.241">Deutschland</placeName>, mit kleinen, begrenzten politischen Einheiten, das seine Verschiedenheit, seine lokalen und alltäglichen Verwurzelungen zu schätzen wusste, als den für die menschliche Freiheit und ihre Möglichkeiten fruchtbarsten Boden. Immer tapfer gegen den Strom, immer das lügenhafte Pathos der Ritter des ewigen Friedens verachtend, weigerte sich <persName ref="#zbz-p.1">Jaspers</persName>, zur einseitigen Abschaffung der Atomrüstung und zum Frieden um jeden Preis
+        </p>
+        <p facs="#facs_2_r_15">
+          Am Abend
+        </p>
+        <p facs="#facs_2_r_16">
+          Der Himmel hat sich langsam ganz geschlossen,<lb facs="#facs_2_l_16_1" n="N001" />sein grauer Vorhang sieht bis auf die Wiesen.<lb facs="#facs_2_l_16_2" n="N002" />Kein Windhauch geht, die Bäume stehn verdrossen.<lb facs="#facs_2_l_16_3" n="N003" />Das Gras verliert zu gelblichbraunen Fliesen.<lb facs="#facs_2_l_16_4" n="N004" />Die Stätter fallen still und ohne Kraft,<lb facs="#facs_2_l_16_5" n="N005" />eins folgt dem andern, eine müde Herde.<lb facs="#facs_2_l_16_6" n="N006" />Bevor das Licht von neuem aufsteigt und der Saft<lb facs="#facs_2_l_16_7" n="N007" />die Knospen grünt, muss Laub und Gras<lb facs="#facs_2_l_16_8" n="N008" />und Du und ich zurück zur Erde.
+        </p>
+        <p facs="#facs_2_r_17">
+          <persName ref="#zbz-p.168">Eva</persName> <orgName ref="#zbz-o.3">Springer</orgName>
+        </p>
+        <p facs="#facs_2_r_18">
+          aufzurufen. Im Gegenteil: er sprach nicht, wie seine Gegner behauptet haben, für die Bombe, sondern für den wahren Frieden, der nur ein supranationaler Rechtszustand sein kann. Und er sprach für die Freiheit, die sich weigert, aus Furcht vor einer künftigen Apokalypse sich selbst jetzt schon aufzugeben, und heute wie immer ihren Anspruch erhebt, jeweils in der gegebenen Lage ihre Entschlüsse zu fassen.
+        </p>
+        <p facs="#facs_2_r_19">
+          Nicht nur so hat <persName ref="#zbz-p.1">Karl Jaspers</persName> seine <bibl ref="#zbz-w.1">Philosophie</bibl> ins Konkrete des Lebens übertragen und verwirklicht. Er hat unter den grossen <persName ref="#zbz-p.1360">Philosophen</persName> der Vergangenheit, verstehend, deutend, aneignend, wie mit existentiellen Freunden, in Ehrfurcht und Auseinandersetzung gelebt, und er hat sie uns alle grosszügig geschenkt. Er ist für die Lebenden ein lebenslänglicher Freund gewesen. Und schliesslich gipfelt seine Treue in seiner Ehe. <persName ref="#zbz-p.1">Frau Professor Jaspers</persName> ist heute wie immer an seiner Seite, restlos hingegeben und ganz sie selbst, wie immer. Wir erleben einen schönen, grossen, freudigen Tag.
+        </p>
+        <p facs="#facs_2_r_20">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_2_r_21">
+          (Die oben abgedruckte Würdigung <persName ref="#zbz-p.1">Karl Jaspers'</persName> von Frau Professor <persName ref="#zbz-p.2">Jeanne Hersch</persName>, <placeName ref="#zbz-l.48">Genf</placeName>. wird vom <orgName ref="#zbz-o.49">Süddeutschen Rundfunk</orgName> am 22. Februar gesendet werden, Redaktion.)
+        </p>
+        <p>
+          Gotthelfs Beziehungen zu deutschen Flüchtlingen
+        </p>
+        <p>
+          Zur bernischen Regenerationszeit im vorigen Jahrhundert gehört auch die Verflechtung mit einer Reihe politischer Flüchtlinge aus <placeName ref="#zbz-l.241">Deutschland</placeName>, die im geistigen und politischen Leben der <placeName ref="#zbz-l.10">Schweiz</placeName> eine nicht unwesentliche <placeName ref="#zbz-l.565">Rolle</placeName> gespielt und auch in die Auseinandersetzungen der dreissiger Jahre eingegriffen haben. Zu ihnen zählt der aus <placeName ref="#zbz-l.46">Stuttgart</placeName> gebürtige Mörike-Freund <persName ref="#zbz-p.1687">Rudolf Lohbauer</persName> (1803 bis 1873), ein vielseitig talentierter, auch musisch sehr begabter <persName ref="#zbz-p.1251">Mensch</persName>, der für den württembergischen Generalstab vorgesehen war, aber im Aufbruch der dreissiger Jahre ein wackerer Kämpfer für liberale Politik und demokratische Freiheit wurde und in <placeName ref="#zbz-l.46">Stuttgart</placeName> die erste demokratische Zeitung «Der Hochwächter» begründet und redigiert hat. Seine angriffslustigen Beiträge zogen ihm bald den Hass der Zensor und der Regierung zu, er sollte verhaftet werden, konnte aber nach der <placeName ref="#zbz-l.10">Schweiz</placeName> flüchten und fand seit Frühjahr 1833 Aufnahme bei seinem schwäbischen Landsmann, dem schon länger in <placeName ref="#zbz-l.168">Burgdorf</placeName> zu hohen Ansehen gelangten Bauinspektor Roller. In <placeName ref="#zbz-l.168">Burgdorf</placeName> wurde Lohbauer Mitbegründer und hauptsächlicher Mitarbeiter der «Helvetischen Militärzeitschrift», aus der sich später die «Allgemeine Schweizerische Militärzeitung» entwickelte. Dann berief man ihn als Professor der Militärwissenschaft an die neugegründete Hochschule in <placeName ref="#zbz-l.6">Bern</placeName>, wo er noch schweizerischen Urteil «durch seine kriegsgeschichtlichen und militärwissenschaftlichen Vorträge erfolgreich zur Bildung unserer Offiziere beigetragen» hat. Später war er zwei Jahrzehnte Generalstabsinstruktor in <placeName ref="#zbz-l.437">Thun</placeName>, wo er nach der Schlacht von Sadowa vor hundert Offizieren unter grossem Beifall das Wort prägte: «Die Preussen haben als Schweizerhunde an ihren deutschen Brüdern gehandelt.» Lohbauer, der übrigens auch schon mit Vorliebe Leser der «<bibl ref="#zbz-w.609">Basler Nachrichten</bibl>» gewesen ist, starb, nachdem er auf die Amnestie durch den württembergischen König längst verzichtet hatte, in <placeName ref="#zbz-l.543">Solothurn</placeName>. Während seiner Burgdorfer Jahre war Lohbauer vor allem literarisch tätig gewesen und hielt gerne Vorlesungen aus deutscher Dichtung, von denen, wie ein zeitgenössischer Bericht überliefert, die Frauen so beeindruckt waren, dass sie «heulend und flennend zum Nachbessen kamen». Zu jener <bibl ref="#zbz-w.705">Zeit</bibl> kam er auch mit dem Pfarrherrn <persName ref="#zbz-p.1688">Albert Bitzius</persName> im benachbarten <placeName ref="#zbz-l.544">Lützelfühl</placeName> in Verbindung, der die Talente dieses vielseitigen Schwaben wohl zu schätzen wusste, sonst hätte er nicht daraus gedacht, im Herbst 1840 Lohbauer, der damals schon Professor in <placeName ref="#zbz-l.6">Bern</placeName> war, als Mitarbeiter am Neuen Berner Kalender zu gewinnen, dessen Herausgabe Gotthelf übernommen hatte. «Wie wäre es», lässt Gotthelf sich vernehmen, «wenn etwas Tüchtiges zustandezukommen könnte mit Zeichnungen von Lohbauer? Oder auch mit Beigaben von ihm?» Für spätere Jahrgänge gewann Gotthelf allerdings den Berner Illustrator <persName ref="#zbz-p.1689">Heinrich von Arz</persName>. (Vgl. <persName ref="#zbz-p.1690">Karl Walter</persName>: «<persName ref="#zbz-p.1687">Rudolf Lohbauer</persName> in seinen <orgName ref="#zbz-o.760">Schweizer</orgName> und Berliner Jahren» in «Zeitschrift für Württembergische Landesgeschichte», XX. Jahrgang, <placeName ref="#zbz-l.46">Stuttgart</placeName>).
+        </p>
+        <p>
+          Zur selben <bibl ref="#zbz-w.705">Zeit</bibl>, als der schwäbische Flüchtling Lohbauer in <placeName ref="#zbz-l.168">Burgdorf</placeName> auftauchte, kam ein Emigrant aus Oberhessen in die <placeName ref="#zbz-l.10">Schweiz</placeName>, der den Glessener Burschenschaftlern angehört und sich
+        </p>
+        <p>
+          ebenfalls wegen seines Eintretens für das republikanische Prinzip in <placeName ref="#zbz-l.241">Deutschland</placeName> missliebig gemacht hatte: <persName ref="#zbz-p.1691">Carl Friedrich Borberg</persName> (1800 bis 1830) aus <placeName ref="#zbz-l.545">Nidda</placeName>. Während Lohbauer seinen politischen Eifer in der <placeName ref="#zbz-l.10">Schweiz</placeName> zurückbremste und mit den Jahren auch ganz verbürgerlichte — abgesehen von dem vergeblichen Versuch, in den 48er Jahren noch einmal eine politische <placeName ref="#zbz-l.565">Rolle</placeName> in <placeName ref="#zbz-l.16">Berlin</placeName> zu spielen —, beharrte Borberg auf seiner radikalen Gesinnung und zog sich als Deutscher in dem Gastland naturgemäß überall Feinde zu. Jedenfalls gehörte er zu den berüchtigtsten radikalen Ausländern in den dreissiger und vierziger Jahren, indem er sich auch schriftstellerisch und publizistisch in die Kämpfe zwischen <orgName ref="#zbz-o.71">Kirche</orgName> und Staat, zwischen Katholizismus und Protestantismus, zwischen Kleinbalen und Radikalen einschaltete, obgleich er nach kurzer Lehrtätigkeit an der berühmten Erziehungsanstalt Fellenbergs in Hofzell als reformierter Professor an der katholischen Kantonsstadt in <placeName ref="#zbz-l.184">St. Gallen</placeName> und später an der Burgerlichen Realschule in <placeName ref="#zbz-l.6">Bern</placeName> zu einer gewissen Zurückhaltung verpflichtet gewesen wäre. Es bleibt das Verdienst des inzwischen leider verstorbenen Gotthelf-Forschers und gründlichen Kenners der Regenerationszeit <persName ref="#zbz-p.1692">Fritz-Huber-Benfer</persName>, in einem zweibändigen Werk «Dr. <persName ref="#zbz-p.1691">Carl Friedrich Borberg</persName>: Archiv des Historischen Vereins des Kantons <placeName ref="#zbz-l.6">Bern</placeName>) mit bemerkenswerten Spürsinn und unter Berücksichtigung aller erreichbaren Quellen in jahrelangen Nachforschungen den Spuren dieses längst vergessenen Kämpfers und seinem Wirken als Lehrer, Journalist und Schriftsteller in der <placeName ref="#zbz-l.10">Schweiz</placeName> nachgegangen zu sein. Borberg, der der Schwager des Dichters und Journalisten <persName ref="#zbz-p.1693">J. J. Reinhard</persName> und des Landammanns <persName ref="#zbz-p.1694">Baumgartner</persName> des Kantons <placeName ref="#zbz-l.184">St. Gallen</placeName> wurde, war zweifellos ein kluger Kopf und ein eminent politischer Streiter, der in seinem Heimatland die demokratische Idee und der Kampf für Pressefreiheit hätte vorantreiben können, in der <placeName ref="#zbz-l.10">Schweiz</placeName> als Ausländer mit seinen rücksichtslosen Angriffen nach allen Seiten sich jedoch unmöglich machen musste. Kein Wunder, dass er finanziell sich dauernd in bedrängten Verhältnissen sah und schliesslich wieder nach <placeName ref="#zbz-l.241">Deutschland</placeName> zurück musste, wo dieser unruhige <bibl ref="#zbz-w.15">Geist</bibl> in <placeName ref="#zbz-l.546">Mainz</placeName> sich schon mit fünfzig Jahren an seinem inneren Feuer verzehrte. <persName ref="#zbz-p.1692">Fritz-Huber-Benfer</persName> weist Borberg seiner verdienten Platz in der schweizerischen Literaturgeschichte und in der Geschichte der schweizerischen Presse zu, so dass jeder, der sich mit den dreissiger und vierziger Jahren befasst, auf sein gut fundiertes Werk zurückgreifen muss. Vor allem identifizierte er ihn mit grossem Scharfsinn als das Urteil von Gotthelfs Erzählung «Dr. Dorbach der Wühler». Unter dem Eindruck des radikalen Regimes und der ununterbrochenen Hetze gegen Andersdenkende auf der früher liberale Lützelfühler Pfarrherr nämlich immer mehr in das konservative Lager abgeschwenkt und entwarf in den vierzigerjahren diese Erzählung als das Zerrbild des ihm persönlich bekannten deutschen Agitators Borberg. Gotthelf nannte seine Novelle «einen politischen Seeliger, begleitet von zornigem Laubel». Immerhin hat er damit diesem deutschen Politikus Eingang in die Gotthelf-Literatur verschafft.
+        </p>
+        <p>
+          <persName ref="#zbz-p.1690">Karl Walter</persName>
+        </p>
+      </div>
+      </body></text>
+</TEI>

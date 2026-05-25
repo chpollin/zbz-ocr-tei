@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nourri la philosophie au cours des siècles passés. La philosophie de Kant est née dune réflexion critique sur la Physique. Or je vois peu de tentatives de cette sorte dans la pensée contemporaine.",
+      "bbox": {
+        "x_pct": 4.359,
+        "y_pct": 4.32,
+        "w_pct": 79.609,
+        "h_pct": 6.484
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La science — son langage, ses méthodes — ne constitue pas un modèle pour le philosophe, mais occupe un secteur spécifique dans le champ du savoir.",
+      "bbox": {
+        "x_pct": 3.944,
+        "y_pct": 13.17,
+        "w_pct": 79.939,
+        "h_pct": 6.219
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Néanmoins, au cours des dernières années j'ai constaté que les ouvrages les plus profonds sur la science ont été écrits par des savants, de ceux dont l'esprit déborde la science et qui ont les yeux plus larges que leur savoir. Parmi les philosophes contemporains, aucun n'a tenu sur les sciences des propos plus éclairants que Heisenberg, par exemple, ou von Weiszäcker. L'interrogation philosophique sur la science fait surgir immédiatement un au-delà de la science. Les très grands savants qui ont réfléchi sur les sciences se sont montrés capables de ce regard nu dont j'ai parlé, et dont les philosophes sont devenus progressivement incapables.",
+      "bbox": {
+        "x_pct": 4.115,
+        "y_pct": 18.962,
+        "w_pct": 79.853,
+        "h_pct": 18.206
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous-même vous n'avez jamais cessé de réfléchir sur la science.",
+      "bbox": {
+        "x_pct": 4.274,
+        "y_pct": 39.26,
+        "w_pct": 79.487,
+        "h_pct": 3.837
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est vrai, et aujourd'hui j'aimerais comprendre mieux la sorte d'évidence dont se sert, par exemple, la Physique contemporaine, dans les cas où l'évidence empirique immédiate n'est plus accessible.",
+      "bbox": {
+        "x_pct": 4.151,
+        "y_pct": 43.226,
+        "w_pct": 79.573,
+        "h_pct": 6.171
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pensez-vous que le progrès technique issu de la science moderne pose, comme le croyait Heidegger, des questions essentielles aux philosophes — des questions qui iraient beaucoup plus loin que les problèmes d'éthique sociale généralement débattus sur ce thème ? J.H. — Je pense qu'on peut considérer la technique sous cet angle, parce qu'elle est un prolongement de l'homme, de son corps et de son intelligence. Elle est le résultat, extérieur à l'homme, de sa volonté de façonner la nature qui l'environne et le monde où il vit. En ce sens elle se rattache directement à la liberté. Les instruments que l'homme se donne prolongent et multiplient sa présence et le pouvoir de son corps dans le monde.",
+      "bbox": {
+        "x_pct": 3.748,
+        "y_pct": 51.247,
+        "w_pct": 79.89,
+        "h_pct": 21.858
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme est modifié, ou plutôt son regard est modifié par l'environnement technologique qu'il a créé.",
+      "bbox": {
+        "x_pct": 4.029,
+        "y_pct": 75.141,
+        "w_pct": 79.817,
+        "h_pct": 4.32
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je dirais qu'en tout cas l'homme a conscience d'une dimension de pouvoir dont aux époques passées, il n'avait aucune idée. Lorsque l'homme découvre un déploiement pareil des pouvoirs qui étaient à l'origine les siens, il doit lui venir un nouveau sentiment de sa liberté, de sa responsabilité, de sa finitude et de l'élargissement de cette finitude. Songez aux nouveaux modes de communication actuels, ils",
+      "bbox": {
+        "x_pct": 4.066,
+        "y_pct": 79.187,
+        "w_pct": 79.744,
+        "h_pct": 12.285
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on original image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 80.5,
+        "y_pct": 94,
+        "w_pct": 4,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer and added missing bbox based on visual evidence."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 9,
+  "issues": [
+    "Initial text extraction was highly inaccurate and contained multiple OCR errors.",
+    "Page number at bottom right was ignored by initial detection.",
+    "Text regions had incorrect content extracted due to poor segmentation of lines."
+  ],
+  "doc_id": "2330",
+  "page": 59,
+  "elapsed_seconds": 7.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

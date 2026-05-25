@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "84",
+      "bbox": {
+        "x_pct": 154.0,
+        "y_pct": 62.0,
+        "w_pct": 21.0,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 450.0,
+        "y_pct": 63.0,
+        "w_pct": 169.0,
+        "h_pct": 22.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as text, changed to section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'exigences , de prescriptions , d'interdits — autant de termes qui n'ont de sens que pour des êtres libres.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 100.0,
+        "w_pct": 760.0,
+        "h_pct": 49.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je renvoie ici à (( formalisme social » se trouve dans une thèse soutenue ici même pendant la dernière guerre, intitulée Théorie de la Société internationale de Papaligouras, une analyse dont je pense qu'elle devrait devenir un classique. Je renvoie surtout au livre de B. de Jouvenel, Du Pouvoir, qui est tout inspiré par le sens du symbolisme.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 148.0,
+        "w_pct": 760.0,
+        "h_pct": 140.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le symbolisme qui imprègne la force devenue pouvoir rassemble en lui des données complexes et contradictoires de la condition humaine, et il implique la liberté humaine, même lorsqu'il tend à l'écraser. Telle est l'ambiguïté la plus profonde du pouvoir.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 280.0,
+        "w_pct": 760.0,
+        "h_pct": 95.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord il représente l'unité sociale, à la fois en tant qu'elle est et qu'elle doit être, à la fois en tant que chacun en fait partie et qu'il doit en faire partie. Il valorise donc la nécessité, pour chacun, de vivre en société, et dans cette société, c'est-à-dire qu'il transforme une donnée de fait en une intention, en une sorte de volonté d'avant la volonté, et comme en un serment prêté d'avance.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 372.0,
+        "w_pct": 760.0,
+        "h_pct": 139.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'on me comprenne bien : ce que je dis là n'exclut nulle rébellion. Mais justement, le symbolisme constitutif du pouvoir fait qu'on ne peut s'y dérober autrement, ou à meilleur compte, que par une rébellion. Il y a là quelque chose d'analogue au fait que chacun naît de parents déterminés, qui sont les siens et qu'il n'a pas choisis. Ce n'est pas là un simple fait naturel; une autorité y est en quelque sorte anticipée, à laquelle nul n'échappera sans révolte.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 510.0,
+        "w_pct": 760.0,
+        "h_pct": 178.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce qui est remarquable, c'est que ce symbolisme impliqué dans le pouvoir, et qui à partir de la force le fait « pouvoir », ne lui assure aucune sécurité. Il le rattache à la nécessité ontologique d'une société, il impose celle-ci par une sorte de serment implicite de chacun de ses membres. Mais malgré cette double assurance, métaphysique et existentielle, il ne confère au pouvoir aucune sécurité. Au contraire: tout pouvoir est par nature, dans son essence, menacé. Menacé du dedans, par sa complexité interne. Menacé du dehors, par d'autres pouvoirs, ou par des forces qui pourraient devenir le pouvoir. Aucun pouvoir n'est jamais assez",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 690.0,
+        "w_pct": 760.0,
+        "h_pct": 230.0
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number 84 was wrongly categorized as text.",
+    "Running header 'JEANNE HERSCH' was wrongly categorized as text."
+  ],
+  "doc_id": "1530",
+  "page": 12,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

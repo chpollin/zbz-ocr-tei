@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "1064 17",
+      "bbox": {
+        "x_pct": 3.405,
+        "y_pct": 3.333,
+        "w_pct": 7.033,
+        "h_pct": 4.561
+      },
+      "changed": true,
+      "change_reason": "Page numbering identified as header content, reclassified to _filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Aus Forschung und Lehre an der Universit@t Trier",
+      "bbox": {
+        "x_pct": 7.178,
+        "y_pct": 18.889,
+        "w_pct": 87.075,
+        "h_pct": 4.52
+      },
+      "changed": true,
+      "change_reason": "This is a journal series header, reclassified as section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Der Generationenkonflikt",
+      "bbox": {
+        "x_pct": 23.988,
+        "y_pct": 29.649,
+        "w_pct": 50.343,
+        "h_pct": 18.187
+      },
+      "changed": true,
+      "change_reason": "Main title reclassified as section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Öffentliche Ringvorlesung Wintersemester 1983/84",
+      "bbox": {
+        "x_pct": 24.7,
+        "y_pct": 60.427,
+        "w_pct": 32.273,
+        "h_pct": 5.614
+      },
+      "changed": true,
+      "change_reason": "Subheading/event description reclassified as section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Herausgegeben von Norbert Hinske/ Meinhard Schröder",
+      "bbox": {
+        "x_pct": 25.017,
+        "y_pct": 73.86,
+        "w_pct": 68.525,
+        "h_pct": 2.415
+      },
+      "changed": true,
+      "change_reason": "Editor information reclassified as section_header."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "All labels were incorrectly classified as text/paragraph.",
+    "Page number at top left incorrectly included.",
+    "Hierarchical elements of title page misidentified as standard paragraph text."
+  ],
+  "doc_id": "2480",
+  "page": 1,
+  "elapsed_seconds": 3.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,37 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "102 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "ADDED: Missing page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par exemple par le flou de lirréel, dc la visée directe vers le transcendant. Il y a des esprits avi",
+      "bbox": {
+        "x_pct": 11.514,
+        "y_pct": 15.14,
+        "w_pct": 74.266,
+        "h_pct": 70.689
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header was initially missing."
+  ],
+  "doc_id": "140",
+  "page": 21,
+  "elapsed_seconds": 4.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le lendemain, un coup de téléphone me rappela d’urgence à la maison pour la nuit.",
+      "bbox": {
+        "x_pct": 9.865,
+        "y_pct": 32.543,
+        "w_pct": 80.446,
+        "h_pct": 5.265
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors: 'unl' to 'un', 'durgence' to 'd’urgence'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le trajet en train servit à s’engourdir. La peine pesait sur moi comme une cuirasse. Aucune question, aucun doute, aucune attente. Il suffisait d’être là et de subir ce qui viendrait.",
+      "bbox": {
+        "x_pct": 9.77,
+        "y_pct": 37.741,
+        "w_pct": 80.595,
+        "h_pct": 9.735
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors: 'engourdir' to 's’engourdir', 'pesait moi' to 'pesait sur moi', and reconstructed missing sentence parts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au dîner on affecta une légèreté indifférente. On attendit encore que les enfants fussent couchés. Je sentais sur moi une réprobation générale, anonyme, incarnée seulement en mes parents, mais qui venait de partout, de tout ce que j’avais jusqu’alors respecté. Enfin, vers dix heures, il y eut dans une chambre ma mère, mon père et moi, et cela commença.",
+      "bbox": {
+        "x_pct": 9.689,
+        "y_pct": 47.826,
+        "w_pct": 80.581,
+        "h_pct": 17.675
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and reconstructed missing text fragments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne saurais pas te raconter ce qui fut dit, Marc. Mon corps était sur une chaise et écoutait, et moi, pour faire quelque chose, je voletais contre le plafond, avec les papillons de nuit que la lampe attirait par la fenêtre ouverte. J’avais peine à suivre les mots et les silences inutiles. Ou bien je devenais mon père qui parlait, ou ma mère qui parlait.",
+      "bbox": {
+        "x_pct": 9.554,
+        "y_pct": 65.501,
+        "w_pct": 80.716,
+        "h_pct": 17.892
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors: 'pag' to 'pas', added missing words."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Quand tu auras trente ans il en aura cinquante.",
+      "bbox": {
+        "x_pct": 17.703,
+        "y_pct": 83.299,
+        "w_pct": 65.986,
+        "h_pct": 2.495
+      },
+      "changed": true,
+      "change_reason": "Added missing em-dash."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Heavy OCR errors in the provided text blocks needing significant reconstruction.",
+    "Bbox for last paragraph includes extra whitespace, but fits the content."
+  ],
+  "doc_id": "40",
+  "page": 135,
+  "elapsed_seconds": 4.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

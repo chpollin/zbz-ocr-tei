@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 765,
+        "y_pct": 79,
+        "w_pct": 10,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin, certaine opinion publique croit - ou essaye de faire croire - que l'énergie atomique aurait partie liée avec un régime de dictature et constituerait par son existence même une menace pour la démocratie. L'argumentation est double. D'une part, on affirme que la dimension de l'installation énergétique met à la disposition de l'Etat un moyen de pression exclusif et absolu. D'autre part, on avance que les mesures de sécurité indispensables au bon fonctionnement de toute centrale atomique entraîneraient fatalement la mise en place d'un système de surveillance et d'espionnage mortel pour les libertés démocratiques. Il me semble qu'il s'agit là de risques réels, mais non de fatalité. Il faudrait, pour y faire face - comme à bien d'autres risques que la démocratie est obligée d'affronter - une vigilance constante.",
+      "bbox": {
+        "x_pct": 8.71,
+        "y_pct": 14.318,
+        "w_pct": 70.105,
+        "h_pct": 27.513
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ne perdons pas de vue la situation réelle où nous nous trouvons actuellement. Ce n'est pas par plaisir qu'on s'est mis, en Europe, avec un retard important sur les USA et l'URSS, à construire des centrales nucléaires, contre les vents et les marées d'une opinion publique alarmiste. Tout le monde sait qu'on s'y est mis contraint et forcé par la perspective d'un manque d'énergie à bref délai, soit que les ressources pétrolières s'épuisent, soit que les pays propriétaires élèvent leurs prix au-delà du supportable, soit qu'ils mettent à la livraison de leur pétrole des conditions politiques contraires à l'indépendance des pays occidentaux, - soit encore que ces trois facteurs prohibitifs se mettent à jouer simultanément.",
+      "bbox": {
+        "x_pct": 8.306,
+        "y_pct": 47.901,
+        "w_pct": 66.774,
+        "h_pct": 24.986
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment l'opinion publique réagit-elle, face à ces menaces ? - D'abord, elle s'efforce d'en nier la réalité ou même la probabilité. Ensuite, elle recourt à un mythe, assez répandu aujourd'hui pour se prétendre réaliste, - un mythe que j'appellerai \"passéiste-futuriste\" :",
+      "bbox": {
+        "x_pct": 8.25,
+        "y_pct": 75.014,
+        "w_pct": 67.855,
+        "h_pct": 9.03
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 50,
+        "y_pct": 970,
+        "w_pct": 400,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Footer metadata identified and labeled accordingly."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at top right was missing from detection.",
+    "Footer metadata was missing from detection."
+  ],
+  "doc_id": "1860",
+  "page": 9,
+  "elapsed_seconds": 17.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

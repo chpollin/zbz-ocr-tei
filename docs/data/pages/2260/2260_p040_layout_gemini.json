@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dit: «Alerte!» et mille voix, perçantes ou sourdes, légères ou grondantes, répétèrent: «Alerte!» Plus haut, sur le flanc de la vallée, une fumée, puis une flamme s’éleva. Puis une autre, un peu plus loin. Puis une autre. L’air se remplit d’insectes, sur le sol toutes les bêtes refluèrent vers le bas. Mais le Chevalier, poussé par son cœur d’homme, montait plus vite, traînait plus rageusement son corps. Lorsqu’il arriva près du feu, les flammes formaient déjà, en travers de la vallée, un barrage presque continu. Il comprit alors comment elles avaient pu se propager si vite: des scarabées, gros comme des tortues, vêtus de dures ailes invulnérables, incandescentes comme le feu lui-même, transportaient des brindilles enflammées tout le long d’une ligne allant d’un bord de la vallée à l’autre. C’était comme une danse sacrée, les gestes se faisaient en mesure, et le Chevalier comprit que cette cadence parlait. «Un danger menace – le Dragon notre maître – Un homme approche – A l’aide le feu! – Mort à l’homme! – Vive le feu! – Vive la mort! –»",
+      "bbox": {
+        "x_pct": 24.57,
+        "y_pct": 11.675,
+        "w_pct": 66.061,
+        "h_pct": 67.34
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and corrupted OCR text output to match the source image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "42",
+      "bbox": {
+        "x_pct": 24.225,
+        "y_pct": 82.684,
+        "w_pct": 2.766,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Identified page number erroneously labeled as text; moved to page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Original text detection was severely corrupted by OCR.",
+    "Page number at bottom was not identified as a separate region."
+  ],
+  "doc_id": "2260",
+  "page": 40,
+  "elapsed_seconds": 8.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

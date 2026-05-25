@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "16",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 27,
+        "h_pct": 18
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header/zb_heading as it is a page number/identifier at the top."
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 18
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header/zb_heading as it is a running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "temps si précieux que travail payé n'absorbe pas, il faut en tout cas ait assez et mangé. Jinsiste s",
+      "bbox": {
+        "x_pct": 11.472,
+        "y_pct": 14.064,
+        "w_pct": 79.198,
+        "h_pct": 36.969
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ensuite, il faut des conditions de logement permettent au jeune de s'isoler. Il est extrêmement rare",
+      "bbox": {
+        "x_pct": 11.17,
+        "y_pct": 50.743,
+        "w_pct": 79.501,
+        "h_pct": 41.631
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Misidentified page number as text",
+    "Misidentified running header as text"
+  ],
+  "doc_id": "130",
+  "page": 10,
+  "elapsed_seconds": 4.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to section_header/zb_heading as it is a page number/identifier at the top.": 1,
+    "Label changed to section_header/zb_heading as it is a running header.": 1
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 89.176,
+        "y_pct": 14.801,
+        "w_pct": 8.017,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ohne Folge; ohne Wurzel, ohne Bedeutung für das Wesen des Menschen. Ich behaupte, daß das menschliche Wesen an sich, gar nicht existiert, denn wenn Sie von dem Menschen diese Eigentümlichkeit und andere Eigentümlichkeiten wegnehmen, um zuletzt den Kern des \"Menschen\" zu erreichen, dann erreichen Sie eben nichts, dann ist niemand mehr da.",
+      "bbox": {
+        "x_pct": 5.517,
+        "y_pct": 5.197,
+        "w_pct": 86.214,
+        "h_pct": 8.562
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Mensch ist gerade dieser konkrete Mensch, und nur als solcher ist er Mensch. Der abstrakte Begriff \"Mensch\" ist keine Person, das ist nur die Virtualität, die intellektuelle Möglichkeit, einen konkreten Menschen als Menschen anzuerkennen. Der konkrete Mensch ist ein Einzelmensch, Mann oder Frau, mit dieser oder jener Eigenschaft, in einem bestimmten Kontext von Raum und Geschichtlichkeit, und nicht irgend jemand in seiner Allgemeinheit. Das einzig wirklich Allgemeine im Menschen ist, daß er nie allgemein ist, sondern konkret, so daß die einzige Allgemeinheit, die man behaupten kann, darin liegt, daß jeder Mensch eine konkrete Person mit allen ihren konkreten Eigenschaften - Mann oder Frau - ist. Es gibt also etwas, was gegeben ist, was der Mensch sich zu eigen machen und \"verdauen\" muß: Seiner Freiheit, seiner möglichen, seiner verantwortlichen Freiheit ist unter anderem etwas ganz Wesentliches anvertraut, nämlich sein Mannsein oder sein Frausein.",
+      "bbox": {
+        "x_pct": 5.388,
+        "y_pct": 15.18,
+        "w_pct": 86.473,
+        "h_pct": 21.695
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das ist das Konkreteste, Individuellste des konkreten Menschen, und gleichzeitig gehört es zu diesem großen Bogen, der ihn mit dem ganzen Leben in der Natur verbindet. Das hat also einen substantiellen und keineswegs abstrakten Sinn. Ich glaube, daß in unserer Erziehung hier einiges fehlt. Wir sollten eigentlich schon in den kleinen Kindern ganz unmerklich das Bewußtsein üben für das Wunderbare, das in einem Menschenkind gegeben ist. Man staunt nicht genug vor diesem Wunder, selbst ein konkreter Mensch zu sein, fähig zu sehen, fähig zu hören, fähig zu atmen. Man entwickelt nicht genug in den Kindern und jungen Leuten ein Gefühl für die Schönheit z.B. der zarten und empfindlichen Struktur der Lunge, die ihnen anvertraut ist und die sie später mit Nikotin verschmutzen, wenn sie rauchen. Wenn man im Kind ein Gefühl dafür erwecken würde, dann wäre es viel schwieriger für den Erwachsenen sich selbst mit Drogen, Alkohol oder Nikotin zu verschmutzen und zu zerstören. Ein Kunstwerk ist uns anvertraut, und alle Organe verdienen diese Bewunderung und Achtung; natürlich auch die Sexualorgane.",
+      "bbox": {
+        "x_pct": 5.336,
+        "y_pct": 37.988,
+        "w_pct": 86.525,
+        "h_pct": 25.368
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man spricht oft von \"respect de soi\", Selbstachtung. Aber Selbstachtung ist nicht Achtung vor einer Abstraktheit, sondern Achtung vor all dem, woraus das Selbst besteht. Und diese Selbstachtung, wenn sie konkret wird, wird zur Bedingung für die Achtung vor dem Anderen. Ich sage vor dem Anderen im Singular, denn es geht wieder nicht um Achtung vor der Allgemeinheit. Die Allgemeinheit kann man immer sehr leicht achten, aber den Einzelnen achten, die einzelne Person, so wie ich eine einzelne Person bin, das ist etwas anderes.",
+      "bbox": {
+        "x_pct": 5.388,
+        "y_pct": 64.58,
+        "w_pct": 86.382,
+        "h_pct": 11.875
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein befreundeter Dichter fragte mich einmal im Scherz: Warum gibt es eigentlich zwei Geschlechter, gerade zwei, warum nicht drei oder vier? Ich habe ihn gefragt: Ist es so nicht kompliziert genug? Aber Spaß beiseite: Ich glaube, daß darin etwas Symbolisches, sehr Tiefes liegt. Es gibt zwei Grundzüge des Menschen: daß er sich als unvollständig erlebt - er genügt sich nicht, er ist nicht vollständig, ihm fehlt etwas; und dann die zweite Erfahrung: das Gegenübersein, ich und du, du und ich. Das ist die entscheidende Feststellung - es gibt kein Ohne ein Du, kein Du ohne Ich. Nicht weil sie gleich sind, nicht weil sie beide Menschen sind, sondern dank ihres Unterschiedes, dank des Unterschiedes, der bei jedem von ihnen alles durchdringt.",
+      "bbox": {
+        "x_pct": 5.556,
+        "y_pct": 77.765,
+        "w_pct": 86.214,
+        "h_pct": 16.755
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number 19 was missing from detection."
+  ],
+  "doc_id": "2640",
+  "page": 3,
+  "elapsed_seconds": 7.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

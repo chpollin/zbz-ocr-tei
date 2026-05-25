@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Die Mensaenredte",
+      "bbox": {
+        "x_pct": 4.456,
+        "y_pct": 6.991,
+        "w_pct": 27.72,
+        "h_pct": 2.336
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled text"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "GEGEN DEN RASSISMUS , FUR DIE FREIHEIT UND DIE VERSCHIEDENHEIT",
+      "bbox": {
+        "x_pct": 4.488,
+        "y_pct": 9.84,
+        "w_pct": 58.687,
+        "h_pct": 3.533
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Von Frau Prof. Jeanne Hersch",
+      "bbox": {
+        "x_pct": 4.891,
+        "y_pct": 13.43,
+        "w_pct": 30.54,
+        "h_pct": 1.613
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zuerst muss man sich die Frage nach der Wurzel des Rassismus stellen. Diese Wurzel liegt nicht in ei",
+      "bbox": {
+        "x_pct": 4.408,
+        "y_pct": 15.783,
+        "w_pct": 71.66,
+        "h_pct": 22.564
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aus diesem Grund ist es nicht nur unwissenschaftlich und gekünstelt, den Rassismus damit   bekämpfen",
+      "bbox": {
+        "x_pct": 4.488,
+        "y_pct": 37.761,
+        "w_pct": 71.499,
+        "h_pct": 13.937
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Wurzel des Rassismus ist eine andere, die tiefer und vefsteckter liegt. Sie gründet im Verhältni",
+      "bbox": {
+        "x_pct": 4.432,
+        "y_pct": 51.698,
+        "w_pct": 71.612,
+        "h_pct": 17.305
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Auch wir in den hochentwickelten Ländern haben uns noch nicht aus dieser Lage befreit; trotz Industr",
+      "bbox": {
+        "x_pct": 4.617,
+        "y_pct": 68.929,
+        "w_pct": 71.475,
+        "h_pct": 17.339
+      }
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "57",
+      "bbox": {
+        "x_pct": 73.1,
+        "y_pct": 90.1,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number region"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial label 'text' for section headers was incorrect.",
+    "Page number at bottom of page was missing.",
+    "Typo in title correction."
+  ],
+  "doc_id": "1120",
+  "page": 2,
+  "elapsed_seconds": 6.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected misspelled text": 1,
+    "Corrected label from text to section_header": 2,
+    "ADDED": 1
+  }
+}

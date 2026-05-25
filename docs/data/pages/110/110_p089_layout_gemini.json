@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME 87",
+      "bbox": {
+        "x_pct": 12.198,
+        "y_pct": 2.0,
+        "w_pct": 68.389,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header detected and classified as filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "créer; en donnant une forme au contenu de la notion. Pour expliciter la notion de forme, il me faut ",
+      "bbox": {
+        "x_pct": 12.198,
+        "y_pct": 13.667,
+        "w_pct": 68.389,
+        "h_pct": 9.362
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les meilleurs   esprits   anti-métaphysiciens, cherchent  délibéré ment par souci de pureté objectiv",
+      "bbox": {
+        "x_pct": 12.198,
+        "y_pct": 22.984,
+        "w_pct": 68.435,
+        "h_pct": 42.847
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De leur còté les métaphysiciens prétendent expliciter le en ul système déléments s'illusionnent ce q",
+      "bbox": {
+        "x_pct": 12.348,
+        "y_pct": 65.399,
+        "w_pct": 68.285,
+        "h_pct": 9.598
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header was missing from the provided labels."
+  ],
+  "doc_id": "110",
+  "page": 89,
+  "elapsed_seconds": 7.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

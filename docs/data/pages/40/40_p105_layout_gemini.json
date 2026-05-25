@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "11 novembre.",
+      "bbox": {
+        "x_pct": 66.581,
+        "y_pct": 28.516,
+        "w_pct": 19.541,
+        "h_pct": 2.013
+      },
+      "changed": true,
+      "change_reason": "Label changed from text to section_header as it serves as a section heading for the journal entry."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il fait tellement froid aujourd'hui, Marc; j'ose à penser à toi, quelque part dehors, dans le vent perçant. Les nuages se bousculent vers l'horizon sans issue, l'air siffle dans le vide des arbres, la lumière est méchamment blanche. Dès que je regarde par la fenêtre j'ai grand froid pour toi. Ici il fait bon, entre le radiateur et le feu de la cheminée. Ida a cueilli pour les sauver du gel les tout derniers boutons de roses, ceux dont on voit à peine les pétales et qui ont ainsi résisté à la neige, l'autre jour. Je ne crois pas qu'ils s'ouvriront; ils sont maigres dans leur vase, efflanqués, mais ils ont l'air de se détendre à la chaleur. Ce matin, j'ai terminé enfin ton chandail gris, j'ai cousu les morceaux ensemble; et puis j'ai cherché ce qu'il pouvait y avoir à la maison de chaud et de mince pour te l'envoyer. Il a fallu aérer tous ces lainages qui sentaient le camphre et le tabac. J'espère qu'ils t'arriveront avant que tu ne prennes froid.",
+      "bbox": {
+        "x_pct": 8.784,
+        "y_pct": 33.242,
+        "w_pct": 81.041,
+        "h_pct": 43.157
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tous mes gestes maintenant sont ainsi, utiles, tendant à une fin particulière, vue et voulue d'avance. Je me lève, je me penche, je touche des objets, je parle, j'écris, je sors, — c'est toujours pour qu'une personne réelle ou un objet",
+      "bbox": {
+        "x_pct": 9.284,
+        "y_pct": 76.21,
+        "w_pct": 80.892,
+        "h_pct": 10.369
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction was severely truncated and incomplete in the JSON regions.",
+    "Section header was mislabeled as paragraph text."
+  ],
+  "doc_id": "40",
+  "page": 105,
+  "elapsed_seconds": 3.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

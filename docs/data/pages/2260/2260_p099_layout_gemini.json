@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La séparation de ce qui s'efface, de ce qui va disparaître. L'adieu qui ne s'adresse plus à personne.",
+      "bbox": {
+        "x_pct": 11.309,
+        "y_pct": 11.111,
+        "w_pct": 65.988,
+        "h_pct": 8.729
+      },
+      "changed": true,
+      "change_reason": "Corrected the severely garbled OCR text to match the actual image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dailleurs, vit la séparation ? Qui dit adieu ? Moi, ce passant distrait, ce galvaudeur, éphémère et exigeant?",
+      "bbox": {
+        "x_pct": 11.273,
+        "y_pct": 19.301,
+        "w_pct": 65.903,
+        "h_pct": 9.066
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'évanescence universelle pourrait être parfaite comme une page vainement écrite, puis rendue à sa blancheur originelle. Mais quelque chose reste et ne s'efface pas. Quelque chose qui n'était pas avant la séparation et que pourtant aucun oubli n'efface: la culpabilité.",
+      "bbox": {
+        "x_pct": 11.03,
+        "y_pct": 36.591,
+        "w_pct": 66.145,
+        "h_pct": 20.034
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La culpabilité : ce qui a été fait - et ce qui n'a pas été fait; ce qui a été dit - et ce qui n'a pas été dit, ce qui a attendu si longtemps d'être dit que la séparation ou la mort est venue avant: ce qui a été pensé ou senti, un instant, fugitivement, et pour toujours. Le regard, qui était ailleurs, peut-être sur la barque qui passait.",
+      "bbox": {
+        "x_pct": 11.115,
+        "y_pct": 56.145,
+        "w_pct": 65.988,
+        "h_pct": 22.87
+      },
+      "changed": true,
+      "change_reason": "Corrected significantly broken and inaccurate OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "99",
+      "bbox": {
+        "x_pct": 73.1,
+        "y_pct": 82.2,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region which was detected but ignored by initial prompt."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR quality was extremely poor, resulting in nearly every paragraph text being wrong.",
+    "Page footer '99' was entirely omitted from the initial segmentation list."
+  ],
+  "doc_id": "2260",
+  "page": 99,
+  "elapsed_seconds": 4.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cela, il était triste, ou bien qu'il essayait de jeter une ombre sur notre joie – non. Car la joie de la fête jaillit de la valeur unique de son instant, non pour braver la mort, non contre elle, mais par elle.",
+      "bbox": {
+        "x_pct": 10.422,
+        "y_pct": 11.319,
+        "w_pct": 66.273,
+        "h_pct": 14.343
+      },
+      "changed": true,
+      "change_reason": "Updated text to reflect the full content visible in the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La fête, c'est l'heure de la prodigalité. Non pas celle des achats méthodiques et des lourds repas, des soucis d'argent et des digestions difficiles. On y est prodigue, tout simplement parce qu'elle n'a pas de lendemain. Un temps captif dans le filet d'une œuvre d'art n'appartient plus au temps. On rencontre ici le lien profond, originel, de la fête avec la tragédie: le temps ne vient plus à notre aide, il n'arrange ni ne répare plus rien, il n'appelle plus aucune prudence. Maintenant joue tout et perd tout. Maintenant brûle et se consume. La prodigalité, alors, n'est rien d'autre que le vœu ivre de transformer la durée en nourriture pour cette flamme, jusqu'à ce que plus rien ne garde son poids ancien, jusqu'à ce que tout soit en elle, par elle, soulevé, emporté et dévoré.",
+      "bbox": {
+        "x_pct": 10.422,
+        "y_pct": 31.066,
+        "w_pct": 66.273,
+        "h_pct": 48.016
+      },
+      "changed": true,
+      "change_reason": "Updated text to reflect the full content visible in the bounding box."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "69",
+      "bbox": {
+        "x_pct": 72.813,
+        "y_pct": 82.362,
+        "w_pct": 2.188,
+        "h_pct": 1.749
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original text transcriptions were truncated.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 69,
+  "elapsed_seconds": 3.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

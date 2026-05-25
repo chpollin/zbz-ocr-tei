@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SALUT A JEANNE HERSCH Écrit en français, inédit.",
+      "bbox": {
+        "x_pct": 17.235,
+        "y_pct": 21.871,
+        "w_pct": 57.415,
+        "h_pct": 2.639
+      },
+      "changed": true,
+      "change_reason": "Identified as bibliographic heading entry"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "MUSIQUE ET TEMPS VÉCU. Traduction de Erlebte Zeit und Musik, conférence prononcée le 29 mai 1981 à la Tonhalle pour l'ouverture des Zürcher Juni-Festwochen. Inédit en français.",
+      "bbox": {
+        "x_pct": 17.405,
+        "y_pct": 25.956,
+        "w_pct": 57.203,
+        "h_pct": 8.415
+      },
+      "changed": true,
+      "change_reason": "Identified as bibliographic heading entry"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA CONTRADICTION DANS LA MUSIQUE.",
+      "bbox": {
+        "x_pct": 17.373,
+        "y_pct": 36.054,
+        "w_pct": 51.133,
+        "h_pct": 2.32
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Conférence prononcée en juillet 1985, en allemand, pour l'ouverture du Festival de Salzbourg. Inédit en français. Rede zur Eröffnung der Salzburger Festspiele 1985. Der Widerspruch in der Musik. In Salzburger Festspiele 1985. Offizielles Programm. Salzbourg et Vienne, Residenz-Verlag. Repris in Quer zur Zeit. Essays. 1989, Zurich, Benziger Verlag.",
+      "bbox": {
+        "x_pct": 19.46,
+        "y_pct": 38.072,
+        "w_pct": 55.328,
+        "h_pct": 14.461
+      },
+      "changed": true,
+      "change_reason": "Bibliographic detail for the previous heading, should be section_header/heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(La citation de Kafka est tirée du Journal intime, traduction de Pierre Klossowski. 1945, Bernard Grasset éditeur).",
+      "bbox": {
+        "x_pct": 19.597,
+        "y_pct": 53.946,
+        "w_pct": 55.159,
+        "h_pct": 4.199
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POUR BERNARD DUCRET. Novembre 1986. Inédit.",
+      "bbox": {
+        "x_pct": 17.161,
+        "y_pct": 59.747,
+        "w_pct": 56.218,
+        "h_pct": 2.533
+      },
+      "changed": true,
+      "change_reason": "Identified as bibliographic heading entry"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA MUSIQUE TRANSCENDE-T-ELLE LE TEMPS? Conférence prononcée lors de la 2e Journée valaisanne de philosophie à Saint-Maurice, le 3 mai 1986. Les Échos de Saint-Maurice. 83e année, nº 1, 1987.",
+      "bbox": {
+        "x_pct": 17.373,
+        "y_pct": 63.807,
+        "w_pct": 57.309,
+        "h_pct": 8.358
+      },
+      "changed": true,
+      "change_reason": "Identified as bibliographic heading entry"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "99",
+      "bbox": {
+        "x_pct": 71.321,
+        "y_pct": 74.453,
+        "w_pct": 3.125,
+        "h_pct": 2.215
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, moved to filter"
+    }
+  ],
+  "score": 65,
+  "num_corrections": 7,
+  "issues": [
+    "Several bibliographic headers mislabeled as regular text paragraphs",
+    "Page number missing from initial detection",
+    "OCR text truncated in initial parsing"
+  ],
+  "doc_id": "2780",
+  "page": 98,
+  "elapsed_seconds": 5.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

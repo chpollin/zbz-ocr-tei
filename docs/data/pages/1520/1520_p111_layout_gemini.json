@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "époque à Taide de ses pensées , mais encore touche par là Féternité . Ainsi, ce que son œuvre et sa ",
+      "bbox": {
+        "x_pct": 6.463,
+        "y_pct": 5.681,
+        "w_pct": 83.78,
+        "h_pct": 8.055
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deuxièmement : Tout penseur authentique est originel , comme tout homme grand il est naturel et vrai. Mais le grand penseur est original au sein de son caractère originel. C'est-à-dire qu'il apporte au monde une communicabilité qui avant lui n'existait pas. L'originalité réside dans l'œuvre, dans la réalisation créatrice, qui ne saurait se répéter identiquement, mais qui peut engendrer un successeur à partir de sa propre origine.",
+      "bbox": {
+        "x_pct": 6.734,
+        "y_pct": 15.253,
+        "w_pct": 83.916,
+        "h_pct": 13.77
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and expanded content based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'originalité marque un bond dans l'histoire. Elle est le miracle du Nouveau, que même après coup l'on ne peut pas dériver de ses antécédents et des conditions d'existence où il a surgi.",
+      "bbox": {
+        "x_pct": 6.816,
+        "y_pct": 28.303,
+        "w_pct": 83.564,
+        "h_pct": 6.658
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'originalité ne réside pas dans une proposition déterminée, mais dans l'esprit dont elle procède et qui la relie à d'autres propositions. Souvent l'historien découvre que des idées essentielles du créateur avaient déjà été formulées avant lui. Mais elles étaient alors ensevelies dans leur contexte, elles y semblaient subites et momentanées, susceptibles de retomber dans l'oubli, sans la conscience de leur sens total et de ses conséquences.",
+      "bbox": {
+        "x_pct": 6.87,
+        "y_pct": 34.079,
+        "w_pct": 83.374,
+        "h_pct": 13.993
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Troisièmement : Le grand philosophe a acquis une indépendance intérieure dépourvue de rigidité. Ce n'est pas l'indépendance de l'amour-propre, du défi, de la doctrine fanatiquement soutenue, mais celle qui permet d'affronter la constante inquiétude temporelle et de conquérir le repos absolu. L'indépendance du philosophe est ouverture permanente. Il supporte d'être autre que les autres, sans en avoir le désir. Il fait face à la solitude.",
+      "bbox": {
+        "x_pct": 6.68,
+        "y_pct": 49.469,
+        "w_pct": 83.794,
+        "h_pct": 13.402
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Les grands philosophes, trad. française, p. 19-20)",
+      "bbox": {
+        "x_pct": 28.144,
+        "y_pct": 62.871,
+        "w_pct": 62.141,
+        "h_pct": 2.314
+      },
+      "changed": true,
+      "change_reason": "Re-labeled from text to footnote."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "48. La fréquentation des philosophes",
+      "bbox": {
+        "x_pct": 6.911,
+        "y_pct": 67.464,
+        "w_pct": 45.976,
+        "h_pct": 2.142
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le commerce avec les morts est source de vérité pour notre propre nature, car il s'agit de ne pas perdre ce que nous avons déjà clairement saisi, de ne pas sombrer dans des fantasmagories dès longtemps percées à jour, — de ne pas nous appauvrir en laissant disparaître les puissances qui, combattant dans le temps, dirigent l'homme vers ses plus hautes possibilités, — il s'agit d'accomplir tout notre devoir à l'égard des Grands en leur donnant à nouveau la parole, dans la mesure de nos forces, — de nous réaliser nous-mêmes dans le champ clair de la pensée déjà pensée, de nous former nous-mêmes grâce aux acquisitions de l'histoire.",
+      "bbox": {
+        "x_pct": 6.463,
+        "y_pct": 70.291,
+        "w_pct": 84.092,
+        "h_pct": 19.254
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "105",
+      "bbox": {
+        "x_pct": 85.839,
+        "y_pct": 91.077,
+        "w_pct": 3.738,
+        "h_pct": 2.142
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region labeled as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Several paragraphs contained truncated text.",
+    "Footnote was incorrectly labeled as text.",
+    "Page number 105 was missing a label.",
+    "OCR text needs significant cleanup for readability."
+  ],
+  "doc_id": "1520",
+  "page": 111,
+  "elapsed_seconds": 8.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

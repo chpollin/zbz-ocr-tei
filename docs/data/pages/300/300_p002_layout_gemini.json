@@ -1,0 +1,196 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Janvier 1953",
+      "bbox": {
+        "x_pct": 40.604,
+        "y_pct": 1.894,
+        "w_pct": 22.272,
+        "h_pct": 2.766
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "R E V U E PREUVES",
+      "bbox": {
+        "x_pct": 7.369,
+        "y_pct": 7.993,
+        "w_pct": 88.506,
+        "h_pct": 15.39
+      },
+      "changed": false
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "A N N É E",
+      "bbox": {
+        "x_pct": 60.42,
+        "y_pct": 26.525,
+        "w_pct": 13.408,
+        "h_pct": 1.773
+      },
+      "changed": true,
+      "change_reason": "Identified as page header / journal metadata"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": {
+        "x_pct": 44.35,
+        "y_pct": 31.773,
+        "w_pct": 14.299,
+        "h_pct": 7.234
+      },
+      "changed": true,
+      "change_reason": "Identified as issue number"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La Birmanie, une Yougoslavie dOrient La crise tunisienne",
+      "bbox": {
+        "x_pct": 8.628,
+        "y_pct": 46.007,
+        "w_pct": 48.352,
+        "h_pct": 4.894
+      },
+      "changed": true,
+      "change_reason": "Article title entry"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FRANÇOIS BONDY JM. HERTRICH",
+      "bbox": {
+        "x_pct": 67.584,
+        "y_pct": 46.05,
+        "w_pct": 23.787,
+        "h_pct": 4.709
+      },
+      "changed": true,
+      "change_reason": "Author names entry"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jean Follain Au jour le jour Essenine poète de la campagne Poèmes inédits Silone et lespérance du c",
+      "bbox": {
+        "x_pct": 8.495,
+        "y_pct": 53.546,
+        "w_pct": 42.712,
+        "h_pct": 15.887
+      },
+      "changed": true,
+      "change_reason": "Article bibliography entry"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ANDRÉ DHOTEL JEAN FOLLAIN PIERRE PASCAL ESSENINE N. CHIAROMONTE IGNAZIO SILONE",
+      "bbox": {
+        "x_pct": 67.728,
+        "y_pct": 53.312,
+        "w_pct": 24.012,
+        "h_pct": 15.645
+      },
+      "changed": true,
+      "change_reason": "Author names list"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "russe",
+      "bbox": {
+        "x_pct": 50.051,
+        "y_pct": 59.34,
+        "w_pct": 6.755,
+        "h_pct": 1.603
+      },
+      "changed": true,
+      "change_reason": "Part of previous section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La politique américaine des visas Le Grand Guignol judiciaire de Prague \"Cléricalisme 1l et anticlér",
+      "bbox": {
+        "x_pct": 8.567,
+        "y_pct": 72.908,
+        "w_pct": 54.923,
+        "h_pct": 17.851
+      },
+      "changed": true,
+      "change_reason": "Article bibliography entry"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "RAYMOND ARON P. BARTON",
+      "bbox": {
+        "x_pct": 67.994,
+        "y_pct": 72.979,
+        "w_pct": 22.282,
+        "h_pct": 4.56
+      },
+      "changed": true,
+      "change_reason": "Author names entry"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "GUSTAVE MERSU LÉON DEGAND MICHEL CARROUGES RENÉ LALOU",
+      "bbox": {
+        "x_pct": 68.035,
+        "y_pct": 80.163,
+        "w_pct": 27.84,
+        "h_pct": 10.142
+      },
+      "changed": true,
+      "change_reason": "Author names entry"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Le numéro : |20",
+      "bbox": {
+        "x_pct": 71.105,
+        "y_pct": 96.617,
+        "w_pct": 20.573,
+        "h_pct": 2.085
+      },
+      "changed": true,
+      "change_reason": "Page price footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "fr.",
+      "bbox": {
+        "x_pct": 92.528,
+        "y_pct": 96.688,
+        "w_pct": 3.306,
+        "h_pct": 2.057
+      },
+      "changed": true,
+      "change_reason": "Page price footer"
+    }
+  ],
+  "score": 30,
+  "num_corrections": 11,
+  "issues": [
+    "Nearly all text blocks were incorrectly labeled as generic text, failing to distinguish between section headers/metadata and actual paragraph content.",
+    "Page numbers and price info were not identified as footer/filter items.",
+    "Author list and article titles were incorrectly tagged as generic text."
+  ],
+  "doc_id": "300",
+  "page": 2,
+  "elapsed_seconds": 6.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

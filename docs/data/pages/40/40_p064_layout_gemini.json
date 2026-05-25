@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "66",
+      "bbox": {
+        "x_pct": 133.0,
+        "y_pct": 80.0,
+        "w_pct": 20.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 413.0,
+        "y_pct": 80.0,
+        "w_pct": 178.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "Running header incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "en face de moi, avec une tendresse que je vois, que je connais, qui n'est pas celle de l'amour, — plutôt celle, anxieuse et très attentive, de l'être assuré, devant le tremblement d'une angoisse toute terrestre, toute nerveuse, — et tu me dirais: « De quoi doutes-tu ? » Parce que tu sais bien que le besoin de témoignage vient forcément d'un doute, et parce que tu me connais, tu sais que ma paix est profonde, mais fragile, et toujours suspendue, comme une feuille sensible, à autre chose qu'à moi-même. O toi, arbre, arbre, de tes racines à la dernière de tes pensées, au dernier de tes gestes, toi ! Et je ne saurais plus te répondre, car devant toi je ne comprends plus mon doute, aussitôt chassé parmi les rêves. Mais tu n'es pas là. Et c'est vrai que je lutte maintenant contre le doute, contre des secondes de doute jamais vraiment vaincues, mais seulement refusées, reniées, ensevelies sous des soucis plus pressants. Il y a trop longtemps que tu n'es pas là. Va-t-on te garder encore aux frontières ? Je ne doute jamais de toi. Mais je m'use contre la durée, contre l'espace, ces non-sens...",
+      "bbox": {
+        "x_pct": 12.527,
+        "y_pct": 12.665,
+        "w_pct": 81.122,
+        "h_pct": 51.011
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne dois pas écrire cela ; c'est donner force et réalité à de faibles révoltes. Il ne faut pas. Il faut accepter la leçon et le secours des choses quotidiennes. Je vais aller au jardin cueillir enfin ces dernières pommes tardives que je voulais laisser mûrir le plus longtemps possible.",
+      "bbox": {
+        "x_pct": 12.527,
+        "y_pct": 63.233,
+        "w_pct": 80.851,
+        "h_pct": 12.921
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Finalement, je ne les ai pas cueillies. Il faisait encore clair au jardin, une de ces clartés intenses et diffuses",
+      "bbox": {
+        "x_pct": 12.608,
+        "y_pct": 80.784,
+        "w_pct": 80.541,
+        "h_pct": 5.161
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Page number not detected as separate region initially",
+    "Running header not detected as separate region initially",
+    "Severe OCR degradation in original box text content",
+    "Inaccurate box segmentation for header/footer elements",
+    "Formatting artifacts in text blocks"
+  ],
+  "doc_id": "40",
+  "page": 64,
+  "elapsed_seconds": 5.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "un autre, et un décor de théâtre qui sera moins bien planté que le premier étant donné la nature même de l'homo economicus ?",
+      "bbox": {
+        "x_pct": 8.225,
+        "y_pct": 13.226,
+        "w_pct": 85.118,
+        "h_pct": 4.148
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je tiens ici à rendre hommage à l'exposé remarquable que M. Rens a fait ce matin, exposé qui était précisément animé par ce souffle du trans-social dont a parlé Mme Hersch, et par lequel nous avons très bien compris que l'intention des sociologues qui parlent de démocratie économique est de libérer l'homme par le travail, et d'associer chacun aux décisions et aux objectifs qui gouvernent son activité, économique, non pas simplement aux profits éventuels de l'entreprise où il l'exerce. Pourtant, la notion de démocratie économique me paraît demeurer contradictoire, en tous cas paradoxale. A supposer qu'elle s'accrédite dans les esprits comme s'il s'agissait d'un complément à retardement de la démocratie politique que nous avons héritée du romantisme de Jean-Jacques Rousseau, je me demande si cette notion ne nous réserve pas des déconvenues plus graves encore que celles qu'a pu nous valoir la démocratie dans le domaine politique.",
+      "bbox": {
+        "x_pct": 8.141,
+        "y_pct": 18.194,
+        "w_pct": 85.298,
+        "h_pct": 31.278
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "M. Goriely (Bruxelles)",
+      "bbox": {
+        "x_pct": 8.502,
+        "y_pct": 53.312,
+        "w_pct": 31.678,
+        "h_pct": 2.342
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "M. Goriely pose à M. Touraine quelques questions relatives à la typologie des syndicats qu'il a développée au cours de son exposé.",
+      "bbox": {
+        "x_pct": 8.558,
+        "y_pct": 56.175,
+        "w_pct": 84.924,
+        "h_pct": 6.341
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Réponse de M. Janne",
+      "bbox": {
+        "x_pct": 8.599,
+        "y_pct": 65.008,
+        "w_pct": 31.581,
+        "h_pct": 2.681
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription and removed trailing punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord il y a les objections présentées fort lucidement et d'une manière fort piquante souvent, par Mme Hersch. « La définition que donne Lincoln de la démocratie, n'est pas scientifique ». Mais bien sûr, elle n'est pas scientifique ! Et je ne prétends pas qu'elle le soit. Elle est, en effet fondée sur une valeur sous-jacente. C'est une définition de politique seulement. Mais je ne crois pas qu'il puisse y avoir de définition de la démocratie qui soit scientifique. On peut certes, donner une définition scientifique de tel régime démocratique existant, c'est alors une définition descriptive, analytique, explicative. On peut donner aussi une définition scientifique d'un certain type théorique de démocratie sans, donc, recourir à des jugements de valeur. Mais dès que vous voulez définir la démocratie comme telle, vous ne",
+      "bbox": {
+        "x_pct": 8.641,
+        "y_pct": 69.062,
+        "w_pct": 84.938,
+        "h_pct": 25.103
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 6,
+  "issues": [
+    "Original text transcriptions were severely truncated.",
+    "Section headers were not fully captured correctly in text.",
+    "Missing punctuation and formatting in OCR."
+  ],
+  "doc_id": "550",
+  "page": 15,
+  "elapsed_seconds": 8.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

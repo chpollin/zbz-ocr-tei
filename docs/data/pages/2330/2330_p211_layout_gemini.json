@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "communication avec Fautre et le respect de ce qu'il croit à partir de notre propre engagement.",
+      "bbox": {
+        "x_pct": 4.884,
+        "y_pct": 4.218,
+        "w_pct": 79.487,
+        "h_pct": 4.226
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ansermet était un des êtres les plus brillants, les plus intelligents, les plus multiples et profonds que j'aie rencontrés. Je trouve que la plupart des critiques qu'on lui a adressées ne sont pas à la hauteur de l'être qu'elles visent. On l'a souvent traité de cérébral et d'intellectuel, on lui a reproché longtemps de ne savoir jouer que la musique moderne ; et plus tard quand il est parti en guerre contre la musique dodécaphonique et qu'il s'est attaché davantage à la musique classique, on le lui a reproché également.",
+      "bbox": {
+        "x_pct": 4.64,
+        "y_pct": 8.145,
+        "w_pct": 79.817,
+        "h_pct": 15.992
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.k. Dans plusieurs pièces de votre maison, on peut voir des tableaux signés Joseph Czapski, un des peintres marquants de notre temps et qui est un de vos plus grands amis.",
+      "bbox": {
+        "x_pct": 4.969,
+        "y_pct": 25.782,
+        "w_pct": 79.316,
+        "h_pct": 6.258
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR truncation and artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsque j'ai fait sa connaissance en 1948, j'ai vu tout de suite quel homme c'était. Peintre, dessinateur, écrivain, Czapski est aussi un être exceptionnel. J'ai jamais connu personne qui ait travaillé en profondeur son propre être comme il l'a fait. Il y a chez lui une espèce d'humanisation par la perméabilité, une façon de laisser pensées et expériences, quelles qu'elles soient, pénétrer jusqu'au tréfonds de lui-même et le tranformer. Il y a un poème de Rilke, dans le Buch der Bilder, Le livre d'images, qui s'appelle « Le torse d'Apollon ». Le poète y décrit le torse antique de façon tout à fait plastique, et il conclut brusquement son poème par ce vers : « Du sollst dein Leben ändern », « tu dois changer ta vie ». Toutes les impressions culturelles, chez Czapski, semblent aboutir à cet impératif. Il possède une qualité d'attention et de réceptivité unique. Sans parler de son comportement envers autrui, ni de sa capacité de souffrir pour les autres, qui est, je crois, beaucoup plus vive que celle de la plupart des gens. Or, avec ce genre de sensibilité, il a eu une vie incroyablement mouvementée par les événements de ce siècle. Il appartient à une des familles de l'aristocratie polonaise, il a grandi dans des châteaux, il a des parents dans toutes les grandes maisons d'Europe ; il a vécu les deux guerres ; il a été de ceux qui se sont rendus à Katyn pour enquêter sur l'extermination des officiers polonais ; il a fait la campagne d'Italie, il a combattu au Monte Cassino. Après la guerre, il s'est trouvé en France, à Maison-Lafitte, où il habite encore aujourd'hui, dans la maison qui est le siège de la revue polonaise d'émigration Kultura. Avant la guerre il avait déjà vécu plusieurs années à Paris, où il faisait de la peinture à l'époque de Bonnard, de Vuillard, de Soutine, il faisait partie du groupe de peintres polonais qu'on appelait les capistes. Quand il est revenu à Paris après la guerre, il n'avait pas pu peindre depuis dix ans. Il s'y est remis, et je suis très fière de lui avoir organisé sa première exposition à Genève, à la Galerie Motte. Mais toute son œuvre antérieure était perdue. On peut distinguer dans la peinture de",
+      "bbox": {
+        "x_pct": 4.481,
+        "y_pct": 31.589,
+        "w_pct": 79.89,
+        "h_pct": 59.863
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR truncation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "207",
+      "bbox": {
+        "x_pct": 79.756,
+        "y_pct": 94.043,
+        "w_pct": 4.086,
+        "h_pct": 2.246
+      },
+      "changed": true,
+      "change_reason": "Marked page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Severe OCR truncation in multiple paragraphs.",
+    "Page number misclassified as text.",
+    "Author signature not present but check paragraph flow.",
+    "Low quality OCR output requires manual correction of text content."
+  ],
+  "doc_id": "2330",
+  "page": 211,
+  "elapsed_seconds": 6.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

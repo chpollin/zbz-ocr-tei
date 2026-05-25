@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "GGN {650",
+      "bbox": {
+        "x_pct": 36.735,
+        "y_pct": 1.388,
+        "w_pct": 31.671,
+        "h_pct": 4.206
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "R©flexions sur la libert© humaine Gedanken zur menschlichen Freiheit Concepts of Human Freedom",
+      "bbox": {
+        "x_pct": 5.867,
+        "y_pct": 7.257,
+        "w_pct": 91.327,
+        "h_pct": 18.263
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "M©langes offerts   Andr© Mercier   Poccasion de son 75e anniversaire",
+      "bbox": {
+        "x_pct": 10.88,
+        "y_pct": 30.59,
+        "w_pct": 80.446,
+        "h_pct": 5.927
+      },
+      "changed": true,
+      "change_reason": "Bibliographic title information should be labeled as section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Festschrift zum 75. Geburtstag von Andr© Mercier",
+      "bbox": {
+        "x_pct": 20.319,
+        "y_pct": 38.379,
+        "w_pct": 61.441,
+        "h_pct": 6.035
+      },
+      "changed": true,
+      "change_reason": "Bibliographic title information should be labeled as section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Festschrift in Honour of Andr© Mercier on the Occasion of His 75th Birthday",
+      "bbox": {
+        "x_pct": 16.416,
+        "y_pct": 46.076,
+        "w_pct": 69.592,
+        "h_pct": 6.185
+      },
+      "changed": true,
+      "change_reason": "Bibliographic title information should be labeled as section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Edit©s par / Herausgegeben von Maja Svilar",
+      "bbox": {
+        "x_pct": 25.548,
+        "y_pct": 60.075,
+        "w_pct": 50.893,
+        "h_pct": 6.284
+      },
+      "changed": true,
+      "change_reason": "Editor names and titles should be labeled as section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PETER LANG",
+      "bbox": {
+        "x_pct": 41.365,
+        "y_pct": 86.559,
+        "w_pct": 19.133,
+        "h_pct": 1.912
+      },
+      "changed": true,
+      "change_reason": "Publisher name should be labeled as section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Berne Frankfurt am Main New York Paris",
+      "bbox": {
+        "x_pct": 22.321,
+        "y_pct": 88.944,
+        "w_pct": 57.36,
+        "h_pct": 2.103
+      },
+      "changed": true,
+      "change_reason": "Publisher location information should be labeled as section_header/zb_heading."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most bibliographic header elements were incorrectly labeled as paragraphs.",
+    "Multiple section elements need elevation to section_header to reflect layout hierarchy."
+  ],
+  "doc_id": "2600",
+  "page": 3,
+  "elapsed_seconds": 7.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

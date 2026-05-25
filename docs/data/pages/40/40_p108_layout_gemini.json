@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "110",
+      "bbox": {
+        "x_pct": 100.0,
+        "y_pct": 77.0,
+        "w_pct": 27.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 381.0,
+        "y_pct": 77.0,
+        "w_pct": 242.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans un espace abstrait aveugle où le silence clamait une seule question d'une impénétrable densité. Il me sembla tout à coup que je nageais au fond de l'océan, que jamais, jamais je ne pourrais faire entendre ma voix. Et peut-être n'est-ce pas ma voix qui, sourde et sèche, articula:",
+      "bbox": {
+        "x_pct": 9.635,
+        "y_pct": 12.316,
+        "w_pct": 81.041,
+        "h_pct": 15.161
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voulais demander pourquoi vous êtes fâché contre moi.",
+      "bbox": {
+        "x_pct": 10.041,
+        "y_pct": 27.439,
+        "w_pct": 80.541,
+        "h_pct": 4.764
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans le silence de nouveau, je n'entendais que le bruit de nos pas. C'était fait, l'effort était fait, je n'étais plus qu'attente, d'un son, d'un souffle. Alors il se mit à parler d'une voix basse, monotone, et qui fut pour moi comme le bruit d'une litanie de plus en plus lointaine. Il parlait sans ponctuer ses phrases, sans baisser la voix, comme si chaque parole était à peine un soupir ne terminant rien. On aurait dit qu'il se plaignait à lui-même, comme font parfois les tout petits enfants avant de s'endormir. Il disait:",
+      "bbox": {
+        "x_pct": 9.554,
+        "y_pct": 32.448,
+        "w_pct": 81.351,
+        "h_pct": 24.991
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a eu trop de mal de fait. Je n'ai pas pu vous connaître. Nous n'avons eu qu'un seul tête-à-tête. Il fallait nous connaître mieux pour pouvoir penser à l'avenir. Vous auriez pu au moins me permettre de vous parler dans la rue. En automne j'ai commencé à vous croire indifférente. J'ai passé un automne affreux. Je ne voudrais pas repasser par là. Vous ne m'avez pas fait un signe. Nous nous regardions comme des chiens de faïence. Trop de mal de fait.",
+      "bbox": {
+        "x_pct": 9.77,
+        "y_pct": 57.779,
+        "w_pct": 80.946,
+        "h_pct": 22.873
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« Comme des chiens de faïence... » Je n'entendis plus les mots qu'il prononça. Je me représentai vivement deux",
+      "bbox": {
+        "x_pct": 9.865,
+        "y_pct": 80.529,
+        "w_pct": 81.041,
+        "h_pct": 5.198
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text content in regions was highly inaccurate and required full transcription replacement.",
+    "Page number and header were detected as part of body text.",
+    "OCR errors caused significant degradation of text fidelity."
+  ],
+  "doc_id": "40",
+  "page": 108,
+  "elapsed_seconds": 5.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

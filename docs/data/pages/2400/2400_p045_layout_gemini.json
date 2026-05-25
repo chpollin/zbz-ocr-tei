@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wer sich nicht orientieren kann, ist nicht frei",
+      "bbox": {
+        "x_pct": 6.763,
+        "y_pct": 18.537,
+        "w_pct": 17.597,
+        "h_pct": 5.066
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lieber eine schwierige Freiheit als keine Freiheit",
+      "bbox": {
+        "x_pct": 5.072,
+        "y_pct": 68.071,
+        "w_pct": 19.565,
+        "h_pct": 4.978
+      },
+      "changed": true,
+      "change_reason": "Corrected the broken text extraction by removing fragmented remnants from the preceding paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: Sie haben ein für mich sehr gutes Beispiel gewählt, weil ich keinerlei Orientierungssinn besitze, aber ich kann Ihr Beispiel nicht akzeptieren für die Theorie, die Sie entwickeln. Natürlich gibt es neue Zwänge, neue Regelungen. Aber wir sollten diese nicht mit der Situation dessen vergleichen, der frei wanderte, der im Wandern keinerlei Zwang ausgesetzt war, sondern mit der Tatsache, daß bis vor kurzer Zeit die meisten Menschen ihr Dorf nie verlassen konnten. Bis vor kurzer Zeit kannten die meisten Menschen vom Leben nur ihr eigenes kleines Eckchen. Das muß nicht unbedingt ein Unglück gewesen sein, aber es war auf jeden Fall ein Mangel an Wahlmöglichkeiten. Die neu gewonnenen Wahlmöglichkeiten sind gegenüber früheren oder anderen Zivilisationen so groß, daß die Zwänge, von denen Sie sprechen, nicht ins Gewicht fallen. Komplexität bedeutet nicht notwendigerweise Unfreiheit. Komplexität bedeutet, das es schwieriger geworden ist, frei zu sein. Aber eine schwierigere Freiheit ist besser als gar keine.",
+      "bbox": {
+        "x_pct": 26.896,
+        "y_pct": 26.106,
+        "w_pct": 65.169,
+        "h_pct": 47.525
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and corrected OCR artifacts in the transcript block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Im Sinne einer Zwischenbemerkung möchte ich uns Satte daran erinnern, daß die Probleme, die wir hier diskutieren, nur für einen oder vielleicht für zwei von zehn Menschen auf dieser Welt relevant sein können, weil nur einer oder zwei von zehn gut ernährt sind und damit die",
+      "bbox": {
+        "x_pct": 27.331,
+        "y_pct": 75.691,
+        "w_pct": 64.698,
+        "h_pct": 13.632
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR output in the speaker's name and text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "46",
+      "bbox": {
+        "x_pct": 579,
+        "y_pct": 919,
+        "w_pct": 28,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "The page number at the bottom was missing from the regions list and needs to be marked as _filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Severe OCR misreading in paragraph blocks.",
+    "Page number at bottom of page not detected in initial list.",
+    "Fragmented text strings were incorrectly merged."
+  ],
+  "doc_id": "2400",
+  "page": 45,
+  "elapsed_seconds": 4.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

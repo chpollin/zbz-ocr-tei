@@ -1,0 +1,70 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "226 L'Être et la forme",
+      "bbox": {
+        "x_pct": 18.527,
+        "y_pct": 9.554,
+        "w_pct": 68.7,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header detected"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "prise dans le monde empirique; inextricablement mêlée à ce est conçu commne une matière pure; si ine",
+      "bbox": {
+        "x_pct": 18.527,
+        "y_pct": 13.083,
+        "w_pct": 68.7,
+        "h_pct": 20.456
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la démarche de Fidéalisme absolu est   conlradictoire; Car, s'il n'y a pas dêtre ayant plus dêt",
+      "bbox": {
+        "x_pct": 18.493,
+        "y_pct": 33.409,
+        "w_pct": 68.849,
+        "h_pct": 31.564
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better transcription"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Je rappelle que cette formule n ebt pas une allusion lier   de Berkeley. Il 'agit ici de positiong",
+      "bbox": {
+        "x_pct": 18.562,
+        "y_pct": 68.618,
+        "w_pct": 68.861,
+        "h_pct": 4.275
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better transcription"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text transcriptions had missing characters and typos",
+    "Missing page header"
+  ],
+  "doc_id": "110",
+  "page": 228,
+  "elapsed_seconds": 8.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content for better transcription": 2,
+    "ADDED": 1
+  }
+}

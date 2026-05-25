@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Exigence morale (L') aux prises avec le temps Hersch, J Revue de MÃ©taphysique et de Morale; Jan 1, 1955; 60, ProQuest pg. 413",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing bibliographic header detected in OCR/Layout, should be marked as page_header/_filter if present"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'exigence morale aux prises avec le temps",
+      "bbox": {
+        "x_pct": 24.553,
+        "y_pct": 22.548,
+        "w_pct": 50.363,
+        "h_pct": 6.686
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'exigence morale apparait d'emblée comme essentiellement liée à l'existence dans le temps. Elle n'a de sens qu'au sein d'une situation temporelle engendrée par le passé et se développant vers l'avenir, et pour un étre qui dure à travers ce passé, ce présent et ce futur. Elle concerne la manière même dont l'existence vit le temps et reste inséparable des dimensions du temps. - D'autre part, cependant, l'exigence morale se trouve sans cesse contestée par les conditions temporelles de l'existence. Il semble qu'elle ne saurait trouver son intégralité, ce caractère absolu qui la caractérise et la distingue de tout autre impératif, qu'en s'arrachant à la relativité temporelle, en s'érigeant dans l'éternité. Le temps, ses vagues, son écoulement, semble battre en brèche le sens, la valeur, la portée de l'exigence morale et, en quelque sorte, la vider de son essence. Je me propose ici, non de trouver une solution à cette antinomie, mais d'en approfondir le sens. Que devient, aux prises avec le temps à la fois indispensable et rongeur d'absolu, la valeur des valeurs ?",
+      "bbox": {
+        "x_pct": 20.089,
+        "y_pct": 34.044,
+        "w_pct": 59.468,
+        "h_pct": 24.21
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents which were truncated/garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je me place ici, évidemment, en pleine morale appliquée (il ne s'agit pas de dégager « la forme de la moralité »). Le problème moral ne se pose jamais, en fait, en termes de valeur, mais en termes temporels concrets : circonstances léguées par le passé, conséquences probables, possibilités d'interventions efficaces. Ces termes temporels concrets ne prennent une signification morale qu'en assumant pour nous une portée symbolique qui les fait apparaitre comme le prétexte, l'occasion, d'un autre débat, celui du bien et du mal. Le prétexte peut étre futile pourvu que la « symbolisation » s'accomplisse. L'enjeu peut étre au contraire matériellement considérable sans engager cependant en profondeur le débat moral. Seule une sorte d'activité « poétique » peut conférer son poids moral à une situation temporelle donnée. Il vaut la peine, à ce sujet, de remarquer la minceur des prétextes tragiques - par exemple : la terre dont Antigone",
+      "bbox": {
+        "x_pct": 20.121,
+        "y_pct": 58.177,
+        "w_pct": 59.492,
+        "h_pct": 20.802
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents which were truncated/garbled."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "413",
+      "bbox": {
+        "x_pct": 76.548,
+        "y_pct": 80.203,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer for page number."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Copyright © 2009 ProQuest LLC. All rights reserved. Copyright © Presses Universitaires de France.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing footer region."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR for paragraph text was highly garbled.",
+    "Page number 413 was missing a bounding box in original input.",
+    "Bibliographic header and footer were missing from original layout segmentation."
+  ],
+  "doc_id": "310",
+  "page": 1,
+  "elapsed_seconds": 6.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

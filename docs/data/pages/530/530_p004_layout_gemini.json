@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 36.816,
+        "y_pct": 9.66,
+        "w_pct": 33.669,
+        "h_pct": 2.236
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA SUISSE DANS L'EUROPE ACTUELLE",
+      "bbox": {
+        "x_pct": 23.221,
+        "y_pct": 21.04,
+        "w_pct": 60.609,
+        "h_pct": 6.072
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in transcription (L'EUROPE instead of LEUROPE)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous m'avez chargée de traiter le sujet suivant : La Suisse face au problème européen à l'heure actuelle. Je me suis demandé, d'abord, s'il y a bien, à l'heure actuelle, un problème européen. J'entends un vrai bon problème, dont les termes seraient honnêtement posés devant nous, de sorte qu'on pourrait les mettre en relation les uns avec les autres et qu'ensuite, le problème une fois correctement posé, on pourrait peut-être le résoudre. J'ai un peu l'impression que les problèmes européens tels qu'on nous les présente aujourd'hui ont quelque chose de fantomatique. De la querelle de l'AELE avec le Marché commun, M. Lüthy nous a dit hier qu'on nous avait cassé les oreilles ; et moi, je crois que la raison pour laquelle cela nous casse les oreilles, c'est que la querelle telle qu'elle nous est présentée a quelque chose de fictif. On a sommairement présenté les choses de la manière suivante : le Marché commun grouperait ceux qui veulent l'unification de la « Petite Europe », et dans l'AELE on trouverait ceux qui veulent arriver à une",
+      "bbox": {
+        "x_pct": 15.174,
+        "y_pct": 38.795,
+        "w_pct": 76.654,
+        "h_pct": 45.29
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in transcription to match the image source text accurately."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR for the main paragraph was highly inaccurate and contained character truncation errors.",
+    "Small typo in section header transcription."
+  ],
+  "doc_id": "530",
+  "page": 4,
+  "elapsed_seconds": 2.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

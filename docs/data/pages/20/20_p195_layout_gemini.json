@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DANS LA FOI 193",
+      "bbox": {
+        "x_pct": 404,
+        "y_pct": 74,
+        "w_pct": 456,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Identified running header (DANS LA FOI) and page number (193) as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "est évident qu'un chrétien met tout autre contenu dans les termes de Barth qu'un « hétérodoxe » (selon l'expression de Gabriel Marcel) dans ceux de Jaspers. Il n'en reste pas moins vrai que lorsque les notions se vident suffisamment de leur contenu particulier, tout alourdi de nécessité empirique, pour atteindre à une certaine profondeur, elles permettent entre elles une communication. On s'approche en effet de la langue existentielle où, on s'en souvient, les termes de liberté et de dépendance ne trouveraient leur sens que l'un par l'autre. C'est ce vide central qui me paraît donner aux écrits de Barth leur force, leur clarté, leur propreté : l'acte religieux n'y est ni exploité, ni habillé, et tout l'effort apparemment dogmatique de l'auteur me paraît être en réalité un effort de dépouillement. — Mais d'autre part, faute d'avoir à côté d'elle cet élément d'inquiétude et de vie qu'a toujours été la philosophie, la théologie court le risque de se pétrifier en un dogmatisme confus qui masque l'abîme entre l'exigence religieuse et les exigences quotidiennes, qui affadit les conflits vrais et prend les formes d'une fausse tolérance alors que toute liberté véritable y est perdue pour tous; la religion ne représente plus qu'un élément de confort, une sécurité devant la mort et le péché.",
+      "bbox": {
+        "x_pct": 11.039,
+        "y_pct": 11.63,
+        "w_pct": 76.054,
+        "h_pct": 66.702
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and missing punctuation in the original suggestion; corrected for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin dans l'art, l'élément philosophique sera partout présent où l'œuvre dépassera la seule reproduction, soit physique, soit psychique, de la réalité objective. C'est lui qui permet de transcender le",
+      "bbox": {
+        "x_pct": 11.145,
+        "y_pct": 78.17,
+        "w_pct": 76.009,
+        "h_pct": 10.553
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and missing characters; corrected for full text accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 834,
+        "y_pct": 894,
+        "w_pct": 22,
+        "h_pct": 13
+      },
+      "changed": true,
+      "change_reason": "Identified page number at the bottom as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original JSON labels were too generic/incomplete.",
+    "Page numbers and running headers were misclassified as text.",
+    "Extracted text content was severely truncated.",
+    "Bounding boxes for page headers/footers were missing in original input."
+  ],
+  "doc_id": "20",
+  "page": 195,
+  "elapsed_seconds": 6.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

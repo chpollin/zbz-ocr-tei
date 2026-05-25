@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "connaissable pour chacun de façon contraignante. La question se pose alors de savoir si l'être du monde épuise tout l'être et si la pensée qui veut connaître s'arrête en même temps que l'orientation dans le monde. Ce qui s'appelle, en langage mythique, l'âme et Dieu, en langage philosophique existence et transcendance, n'appartient pas au monde. L'âme, Dieu, ne sont pas choses connaissables au sens où le sont les choses du monde; elles pourraient être pourtant d'une manière différente. Sans faire l'objet d'un savoir, elles ne seraient pourtant pas rien; sans être connues, elles seraient néanmoins pensées.",
+      "bbox": {
+        "x_pct": 10.664,
+        "y_pct": 5.167,
+        "w_pct": 84.146,
+        "h_pct": 19.486
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A la question : En face de l'être-au-monde dans sa totalité, qu'y a-t-il encore ? — la réponse à travers laquelle s'accomplit la décision philosophique fondamentale est la suivante :",
+      "bbox": {
+        "x_pct": 10.705,
+        "y_pct": 24.19,
+        "w_pct": 84.106,
+        "h_pct": 6.118
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a encore l'être qui — au niveau phénoménal de la réalité empirique — n'est pas, mais peut être et doit être (sein soll), et décide par là dans le temps de son être éternel.",
+      "bbox": {
+        "x_pct": 10.474,
+        "y_pct": 30.051,
+        "w_pct": 83.93,
+        "h_pct": 6.084
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cet être, je le suis moi-même en tant qu'existence. Je suis existence dans la mesure où je ne deviens pas objet pour moi. En elle je me sais indépendant, sans pouvoir pour autant regarder ce que je nomme mon moi (mein Selbst). Je vis de sa possibilité; seule son actualisation me fait être moi. Si je tente de la saisir, elle m'échappe, car elle n'est pas un sujet psychologique. Je me sens plus profondément enraciné dans sa possibilité que dans ce que je peux saisir de moi en fait de prédispositions ou de caractéristiques, lorsque je me considère objectivement. Elle s'apparaît à elle-même au niveau empirique, dans la polarité de la subjectivité et de l'objectivité; mais elle n'est pas apparence de quelque chose qui serait donné quelque part, comme un objet dont certaines considérations pourraient révéler le caractère fondamental. Elle n'apparaît qu'à elle-même et à d'autres existences.",
+      "bbox": {
+        "x_pct": 10.393,
+        "y_pct": 35.793,
+        "w_pct": 84.417,
+        "h_pct": 27.044
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sujet empirique n'est donc pas existence, mais l'être humain est, dans le sujet empirique, existence possible. Le sujet empirique est donné ou non, mais l'existence, parce qu'elle est possible, s'achemine vers son être, ou bien s'en éloigne vers le néant, par choix et décision. Le sujet empirique, si on le compare à d'autres, diffère par l'étroitesse ou l'ampleur de la partie du monde qu'il embrasse, mais l'existence diffère essentiellement de toute autre existence du fond de sa liberté. Le sujet empirique, en tant qu'il est, vit et meurt; l'existence ne connaît pas la mort, mais elle s'élance vers son être ou retombe loin de lui. Le sujet empirique est donné là, dans l'expérience, l'existence n'est que liberté. Le sujet empirique est tout entier temporel, l'existence est dans le temps plus que le temps. Le sujet empirique est fini en tant qu'il n'est pas tout le donné empirique, et pourtant il se ferme sur lui-même; l'existence aussi.",
+      "bbox": {
+        "x_pct": 10.434,
+        "y_pct": 62.579,
+        "w_pct": 84.106,
+        "h_pct": 26.992
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "72",
+      "bbox": {
+        "x_pct": 10.767,
+        "y_pct": 91.246,
+        "w_pct": 2.213,
+        "h_pct": 2.155
+      },
+      "changed": true,
+      "change_reason": "Re-labeled page number from text to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Most text fields contained truncated content.",
+    "Page number at bottom left was mislabeled as text."
+  ],
+  "doc_id": "1520",
+  "page": 78,
+  "elapsed_seconds": 5.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

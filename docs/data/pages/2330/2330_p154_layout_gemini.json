@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malgré URSS aussi les générations el les générations nouvelles une autre formation que les générations plus anciennes. Il est inévitable, me semble-t-il, étant donné les progrès de la science et de la technologie, que les nouvelles générations reçoivent une formation scientifique, une formation technologique, et aussi une formation dans le domaine des sciences humaines. Je ne peux pas croire que la formation intellectuelle reste absolument sans influence sur le besoin de liberté des être humains. On peut donc espérer que grâce à la succession des générations et à la formation scientifique des générations nouvelles, mais pas dans l'immédiat, quelque chose vienne à changer d'une façon ou d'une autre à l'Est, et même éventuellement qu'un jour quelque chose craque - mais sûrement pas dans l'immédiat - c'est une perspective historique possible. Comment cela peut se passer, quelles sortes de répercussions cela aurait ? ces questions relèvent de l'inimaginable et de la musique d'avenir, mais je crois que notre tâche à nous, à l'Ouest, est double : premièrement, nourrir chez nous le vrai sens en profondeur de la liberté, sous toutes ses formes et jusqu'à sa racine ; et, deuxièmement, nourrir chez nous une volonté tenace de « tenir le coup ». Il nous faut durer. Je ne crois pas du tout qu'il faille partir en guerre, mais il faut durer, tenir le coup, aussi longtemps qu'il le faudra.",
+      "bbox": {
+        "x_pct": 16.569,
+        "y_pct": 3.605,
+        "w_pct": 80.049,
+        "h_pct": 40.427
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par rapport à cet enjeu fondamental, que pensez-vous de la fonction des organisations internationales depuis un quart de siècle ?",
+      "bbox": {
+        "x_pct": 16.813,
+        "y_pct": 44.516,
+        "w_pct": 74.432,
+        "h_pct": 4.25
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les organisations internationales me paraissent indispensables. Mais il est évident qu'elles ont énormément de peine à fonctionner compte tenu de cette division du monde en deux. Il faut ajouter une chose, c'est qu'il ne s'agit pas seulement d'une division de fait ; c'est aussi une division de pensée, et par conséquent de langage. C'est Lénine qui a dit en 1917 qu'il existait deux langues, et qui n'étaient pas traduisibles l'une dans l'autre. L'une des sources des malheurs de l'Unesco, c'est qu'étant chargée de l'éducation, de la science, de la culture et de la communication, elle travaille dans quatre domaines dans lesquels la fidélité à la vérité est absolument centrale et qui exigent un langage univoque. Or, dès qu'on se met à faire de grandes déclarations sur la paix, par exemple, ou bien les Occidentaux mettent leur doctrine, leur croyance et leur foi dans leur poche et cèdent à la pression de l'Est, ou bien on arrive à une formule acceptable pour tout le monde grâce à l'ambiguïté et au double sens des mots, ce qui est une autre forme de mensonge.",
+      "bbox": {
+        "x_pct": 16.728,
+        "y_pct": 47.984,
+        "w_pct": 79.768,
+        "h_pct": 29.806
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "44. /) En plus spécifiquement l'organisation politique des Nations Unies, quelle portée attribuez-vous au ralliement spectaculaire opéré par la Papauté à cette organisation en 1965 ? Partagez-vous l'opinion émise alors par le Pape à New York selon laquelle l'ONU serait « le chemin obligé de la paix mondiale » ?",
+      "bbox": {
+        "x_pct": 16.52,
+        "y_pct": 78.766,
+        "w_pct": 79.976,
+        "h_pct": 9.911
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je trouve d'abord un peu téméraire de parler du « chemin obligé »",
+      "bbox": {
+        "x_pct": 26.581,
+        "y_pct": 88.605,
+        "w_pct": 69.915,
+        "h_pct": 2.419
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "150",
+      "bbox": {
+        "x_pct": 17.2,
+        "y_pct": 94.6,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR quality was very poor, requiring substantial correction of the extracted text.",
+    "Page number at the bottom left was initially not identified."
+  ],
+  "doc_id": "2330",
+  "page": 154,
+  "elapsed_seconds": 7.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

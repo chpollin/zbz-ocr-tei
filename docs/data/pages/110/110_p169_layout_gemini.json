@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 11.21,
+        "y_pct": 2.0,
+        "w_pct": 21.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "167",
+      "bbox": {
+        "x_pct": 75.8,
+        "y_pct": 100,
+        "w_pct": 3.7,
+        "h_pct": 3.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "entreprise   impossible, comme celle demprunler telle   quelle   pour rique est virtuellement inépui",
+      "bbox": {
+        "x_pct": 11.21,
+        "y_pct": 13.538,
+        "w_pct": 68.399,
+        "h_pct": 12.908
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre   part; telle   limitation ne pas êlre un simple élément négalif, extérieur éléments choisis",
+      "bbox": {
+        "x_pct": 11.141,
+        "y_pct": 26.477,
+        "w_pct": 68.387,
+        "h_pct": 31.686
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une   légalité autonome; tour; exige une existence sub que pourrait   signilier  lautonomie? Qui OL ",
+      "bbox": {
+        "x_pct": 11.21,
+        "y_pct": 57.957,
+        "w_pct": 68.249,
+        "h_pct": 16.705
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page footer region"
+  ],
+  "doc_id": "110",
+  "page": 169,
+  "elapsed_seconds": 4.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "comme transcendance reste lointain. Lorsqu'il devient pour moi ce chiffre que je crée moi-même dans un langage humain à la deuxième puissance, il me devient plus proche pour un instant. Mais l'abîme de la transcendance est trop profond. Ce chiffre ne résoud pas la tension. Il apporte à la fois plénitude et perplexité, il est et il n'est pas. L'amour que je porte à la divinité en tant que personne ne peut s'appeler amour que par métaphore. Il ne s'actualise que dans le monde en tant qu'amour pour un être humain singulier et en tant qu'enthousiasme pour la beauté de la vie. Un amour hors du monde est un amour sans objet, une béatitude sans cause. L'amour pour la transcendance n'est réel que s'il illumine le monde. » Jaspers ne cesse de traquer la perversion qui consiste à prendre le chiffre, ou même sa signification, son expression, pour la transcendance elle-même. Il lutte sur tous les fronts contre toutes les formes d'idolâtrie et de superstition. « Afin que l'homme ne porte pas la main sur la divinité et qu'il puisse être lui-même ce qu'il a à être, il faut qu'il laisse la transcendance, intacte, à son secret, son lointain et son étrangeté. La vraie paix auprès de l'être, il la recherche dans la lecture des chiffres qu'il a écrits lui-même ou qu'il a reçus, et non dans le repos que lui offrirait, à côté du monde, un être fait d'illusion. »",
+      "bbox": {
+        "x_pct": 10.799,
+        "y_pct": 5.424,
+        "w_pct": 83.821,
+        "h_pct": 39.846
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated and incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Echec. Nous sommes donc voués au monde, non seulement en fait, mais aussi par nécessité métaphysique, parce qu'il est le lieu où la lecture des chiffres trouve son efficacité authentique. Mais le monde, et l'existence qui s'y cherche, sont évanescents. Il ne s'y trouve rien qui ne soit périssable. Dans la quatrième et dernière partie de sa Métaphysique (3e volume de la Philosophie), Jaspers montre que cette évanescence elle-même est le chiffre par excellence de la transcendance, — et nous rejoignons ainsi le chiffre de l'échec.",
+      "bbox": {
+        "x_pct": 10.881,
+        "y_pct": 47.155,
+        "w_pct": 83.875,
+        "h_pct": 16.967
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated and incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les modes de l'échec sont d'ailleurs multiples, — il n'y a pas que le caractère périssable de tout ce que nous rencontrons lorsque nous nous orientons dans le monde. Ainsi la pensée logique paraît à première vue se mouvoir parmi les parfaites cohérences éternelles. Mais lorsqu'on la pousse jusqu'à ses limites, elle se trouve acculée à des antinomies irréductibles qui font sombrer son principe essentiel : celui de non-contradiction, — au-delà duquel surgit alors l'englobant de la vérité qui n'est plus rationnelle. Le monde, Kant l'a bien montré, ne se constitue pas en une totalité devant les progrès du savoir. Et le savoir lui-même ne saurait s'achever en une totalité. Lorsque nous tentons d'éclairer l'existence, nous rencontrons cette autre limite irréductible : l'existence, là où elle est le plus elle-même, n'est plus elle-même seulement. Et nous avons vu là",
+      "bbox": {
+        "x_pct": 11.07,
+        "y_pct": 64.353,
+        "w_pct": 83.55,
+        "h_pct": 24.876
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated and incomplete."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "34",
+      "bbox": {
+        "x_pct": 11.0,
+        "y_pct": 91.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for paragraphs was severely truncated.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "1520",
+  "page": 40,
+  "elapsed_seconds": 7.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

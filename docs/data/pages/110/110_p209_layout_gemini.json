@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 10.62,
+        "y_pct": 2.0,
+        "w_pct": 30.7,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header region"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "207",
+      "bbox": {
+        "x_pct": 75.33,
+        "y_pct": 100,
+        "w_pct": 3.6,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_footer region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mouvement; elle essaye seulement de le recomposer avec des positions; saisir ce se passe enlre elles",
+      "bbox": {
+        "x_pct": 10.621,
+        "y_pct": 13.212,
+        "w_pct": 68.47,
+        "h_pct": 33.03
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si   lépanchement affectif pur et simple n'a pas le   pouvoir de conférer l'existence esthétique fau",
+      "bbox": {
+        "x_pct": 10.621,
+        "y_pct": 46.393,
+        "w_pct": 68.32,
+        "h_pct": 27.79
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Added missing header and footer regions to satisfy full page coverage requirements."
+  ],
+  "doc_id": "110",
+  "page": 209,
+  "elapsed_seconds": 5.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

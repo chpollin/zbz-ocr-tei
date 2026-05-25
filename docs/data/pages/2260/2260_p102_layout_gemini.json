@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès lors nous ne disposons d'aucune ni d'aucune image. plus parole ni d'aucune image.",
+      "bbox": {
+        "x_pct": 22.33,
+        "y_pct": 11.389,
+        "w_pct": 65.692,
+        "h_pct": 5.951
+      },
+      "changed": true,
+      "change_reason": "Text content extraction was garbled and incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« Otez tout, que j'y voie. » - Mais on ne voit même pas rien, parce que voir n'a plus de sens. Au-delà de la séparation, au-delà de l'adieu, il n'y a que l'adieu à tout. Même pas l'adieu.",
+      "bbox": {
+        "x_pct": 22.087,
+        "y_pct": 17.113,
+        "w_pct": 65.934,
+        "h_pct": 13.586
+      },
+      "changed": true,
+      "change_reason": "Text content extraction was heavily garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est un matin de mistral. L'écume blanche court sur le bleu dur de la mer. Le vent tourmente les pins et les chênes-liège, bruyamment, par brusques rafales. Un goéland essaye d'avancer, à contre-courant, dans le ciel. A côté du gris d'un bosquet de chênes, les jeunes pousses d'un lentisque éclatent en un vert de fifre.",
+      "bbox": {
+        "x_pct": 22.087,
+        "y_pct": 39.621,
+        "w_pct": 65.983,
+        "h_pct": 22.079
+      },
+      "changed": true,
+      "change_reason": "Text content extraction was cut off and garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le lieu et le moment débordent de réalité et de vie. Les ombres des branches s'agitent sur le sol ensoleillé. L'écume se multiplie et court sur un bleu de plus en plus dense. C'est l'éclatante présence du présent. L'adieu est partout, parce que c'est le réel, parce que c'est le pré-",
+      "bbox": {
+        "x_pct": 22.124,
+        "y_pct": 62.121,
+        "w_pct": 65.898,
+        "h_pct": 16.978
+      },
+      "changed": true,
+      "change_reason": "Text content extraction was incomplete."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "102",
+      "bbox": {
+        "x_pct": 22.124,
+        "y_pct": 82.2,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added page number region detected at bottom."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction for all paragraphs was severely corrupted.",
+    "Page number '102' was completely missed by initial detection."
+  ],
+  "doc_id": "2260",
+  "page": 102,
+  "elapsed_seconds": 3.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

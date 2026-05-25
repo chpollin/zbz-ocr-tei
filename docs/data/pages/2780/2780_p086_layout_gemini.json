@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'autre consiste à le dissoudre entièrement dans les données changeantes et relatives de l'histoire concrète, réduisant ainsi ses actes à des phénomènes, simples chaînons dans les chaînes continues des causes et des effets. Dans le premier cas, rien, dans l'essentiel, ne change ni ne s'écoule. Dans le second, il n'y a que changement et écoulement.",
+      "bbox": {
+        "x_pct": 17.659,
+        "y_pct": 13.328,
+        "w_pct": 57.479,
+        "h_pct": 17.359
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la liberté humaine ne s'actualise que dans le contexte réel du temps qui passe, et à l'intersection de ce temps avec une perpendiculaire absolue où rien ne passe, où tout persiste pour toujours. Sans cette intersection, ou bien rien ne s'écoule et il ne se passe rien, ou bien tout s'écoule et rien de ce qui s'écoule ne pèse dans la balance de la liberté. C'est soit un néant de réalité, soit un néant de sens.",
+      "bbox": {
+        "x_pct": 17.617,
+        "y_pct": 30.744,
+        "w_pct": 57.489,
+        "h_pct": 17.637
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle intersection, où le permanent affronte l'écoulement et où l'éphémère met en jeu l'absolu, c'est ce que les philosophes appellent «l'historicité» de l'homme, c'est-à-dire son lien irrémédiable avec l'écoulement, et la percée qu'il opère au-delà de lui.",
+      "bbox": {
+        "x_pct": 17.691,
+        "y_pct": 48.021,
+        "w_pct": 57.309,
+        "h_pct": 13.058
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un des conférenciers qui m'ont précédée a parlé du triomphe et du tragique de l'homme. Il avait certes raison. Et pourtant, le plus souvent, ce n'est pas sur le mode du triomphe, ni sur celui du tragique que l'homme vit, de la naissance à la mort, sa",
+      "bbox": {
+        "x_pct": 17.479,
+        "y_pct": 60.834,
+        "w_pct": 57.521,
+        "h_pct": 11.611
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "87",
+      "bbox": {
+        "x_pct": 71.4,
+        "y_pct": 74.4,
+        "w_pct": 4.1,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing bounding box for page number and assigned to footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text was extremely garbled and truncated.",
+    "Page number at bottom right was not detected."
+  ],
+  "doc_id": "2780",
+  "page": 86,
+  "elapsed_seconds": 5.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

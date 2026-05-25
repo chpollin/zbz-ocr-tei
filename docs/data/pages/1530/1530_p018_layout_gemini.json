@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais le Pouvoir n'a pu nulle part disparaître. Il reste, quoi qu'on en pense, quoi qu'on en dise, inévitable, présent et agissant, même affaibli, même mutilé dans sa nature. Pourquoi? Nous l'avons vu: parce que persiste à la fois la vulnérabilité humaine et le vouloir-vivre, parce que s'exerce la pression jamais très lointaine des besoins vitaux qui imposent l'interdépendance des travaux et des ressources. Parce que tous les hommes s'orientent par des visées et des projets divers, contraires, souvent exclusifs les uns des autres, jamais unanimes. Parce que ces projets, ces visées, sont commandés par des valeurs dont certains hommes font des absolus, ce qui leur fait dire parfois: « plutôt mourir ». Parce qu'ils sont engagés dans une histoire qui pour eux possède, ou doit recevoir, un sens, et qui comporte donc des enjeux. Supprimer tout pouvoir, ce serait réaliser une étable plus ou moins hygiénique, mais exclure la condition d'homme. Le purisme antipouvoir — comme tout purisme — va à fin contraire: il renforce, dans ce qui devrait être le Pouvoir, et aussi dans ce qui y a de pouvoir diffus partout, la force nue, la pure contrainte. De même qu'un certain purisme spirituel, refusant de reconnaître au corps sa place, rejette celui-ci à l'animalité et à ses servitudes, de même le purisme libertaire qui rejette ou ignore le pouvoir, rejoint le plus primitif affrontement de la force, et conduit à la dictature totalitaire, à l'idolâtrie d'un Pouvoir qui n'a plus rien au-delà de lui. Je voudrais citer ici quelques lignes de B. H. Lévy (p. 162 de La Barbarie à Visage humain): « Chaque fois qu'une Religion s'incarne et que le Sacré se rive à la Terre, chaque fois qu'on en fait le sol du Politique au lieu de son ciel et de son lointain, la barbarie n'est pas loin, ni la démence meurtrière. L'Etat totalitaire, ce n'est pas l'Etat sans religion, c'est la religion de l'Etat. Ce n'est pas l'athéisme, mais à la lettre l'idolâtrie. »",
+      "bbox": {
+        "x_pct": 14.005,
+        "y_pct": 10.0,
+        "w_pct": 76.157,
+        "h_pct": 64.355
+      },
+      "changed": true,
+      "change_reason": "The original text content was severely truncated and incorrect relative to the image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Aménager le Pouvoir",
+      "bbox": {
+        "x_pct": 40.475,
+        "y_pct": 77.463,
+        "w_pct": 23.611,
+        "h_pct": 2.645
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il semble donc qu'on ne puisse vivre ni avec le Pouvoir, ni sans lui. Et telle est bien la condition des hommes, entrés par la Chute dans la Connaissance, la Liberté et l'Histoire. Cette condition, on ne la saisit pas une fois pour toutes. Il faut y revenir",
+      "bbox": {
+        "x_pct": 14.549,
+        "y_pct": 81.099,
+        "w_pct": 75.845,
+        "h_pct": 9.124
+      },
+      "changed": true,
+      "change_reason": "The original text content was truncated and garbled."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 2,
+  "issues": [
+    "Original text content for paragraphs was severely truncated and incomplete.",
+    "Bbox for the first paragraph is quite large but encompasses the whole content block correctly."
+  ],
+  "doc_id": "1530",
+  "page": 18,
+  "elapsed_seconds": 4.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

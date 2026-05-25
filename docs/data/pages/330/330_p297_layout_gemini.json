@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 296.0,
+        "y_pct": 73.0,
+        "w_pct": 204.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "263",
+      "bbox": {
+        "x_pct": 832.0,
+        "y_pct": 73.0,
+        "w_pct": 27.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour qu'il soit possible, trois conditions au moins devraient être remplies :",
+      "bbox": {
+        "x_pct": 24.0,
+        "y_pct": 105.0,
+        "w_pct": 834.0,
+        "h_pct": 36.0
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "— 1) La métropole devrait apparaître comme un arbitre valable entre Arabes et Français d'Algérie — donc : se montrer capable de prendre les mesures nécessaires, de quelque ordre qu'elles soient, aussi bien contre les uns que contre les autres, sans exclure à l'égard des uns le recours à la force admis à l'égard des autres. L'autorité ainsi conquise lui permettrait de favoriser les tendances démocratiques et occidentales algériennes, contre celles du panislamisme féodal. Or il est évident qu'on n'envisage rien de tel. La métropole n'est donc pas arbitre, mais partie dans le conflit. Elle ne peut pas valablement promettre de faire elle-même régner l'équité et garantir des élections libres.",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 145.0,
+        "w_pct": 838.0,
+        "h_pct": 224.0
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "— 2) La première condition n'étant remplie; la seconde — des réformes réellement importantes, sacrifiant manifestement certains intérêts français au bénéfice des Arabes — se trouve exclue ipso facto : il n'est pas possible de réaliser, au milieu d'un conflit où l'on est en fait l'allié des uns contre les autres, des réformes aux dépens des premiers en faveur des seconds. D'où le refus, logique, du ministre résidant de se battre sur deux fronts. Mais d'où, aussi, une situation sans issue : les Arabes ne peuvent pas croire aux promesses du gouvernement français, concernant les élections et les négociations.",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 371.0,
+        "w_pct": 838.0,
+        "h_pct": 204.0
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "— 3) Pour avoir une certaine emprise idéologique sur le nationalisme algérien, la France devrait avoir réussi à vaincre son propre nationalisme monolithique. Si la métropole abandonnait le mythe rigide de la « nation une et indivisible », si la « décentralisation » cessait d'être un simple vœu, s'exprimant çà et là dans une colonne de journal, pour devenir réalité vivante, goût de la diversité, des initiatives multiples, des autonomies locales, — bref, si l'on s'efforçait, selon une conception fédéraliste, de remettre aux mains des hommes le souci ménager de collectivités à leur mesure, il deviendrait possible de croire à la création d'une Fédération française dans laquelle les régions d'Afrique trouveraient à la fois l'autonomie et les liens qui leur sont indispensables.",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 579.0,
+        "w_pct": 838.0,
+        "h_pct": 242.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais si cela était, toute la politique étrangère française se trouverait transformée. L'idée fédéraliste, permettant aux diverses entités de l'Union française de trouver leur place et de jouer leur",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 822.0,
+        "w_pct": 838.0,
+        "h_pct": 42.0
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Fixed labels for page header and page number.",
+    "The bounding box groupings in source were slightly offset but mostly acceptable; text content corrected for transcription accuracy."
+  ],
+  "doc_id": "330",
+  "page": 297,
+  "elapsed_seconds": 6.05,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

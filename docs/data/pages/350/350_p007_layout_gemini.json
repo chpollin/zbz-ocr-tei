@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(( le mot de la fin \". Renversement illustré par la tentative de Hegel, qui croyait avoir atteint le Savoir absolu et prétendait se placer d'abord en Dieu « tel qu'il est dans son essence divine, avant la création de la Nature et d'un esprit fini ».",
+      "bbox": {
+        "x_pct": 21.007,
+        "y_pct": 15.459,
+        "w_pct": 58.525,
+        "h_pct": 6.729
+      },
+      "changed": true,
+      "change_reason": "The text was truncated; corrected the content to match the full OCR text in the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est par là que la mystique ignatienne reste distincte des mystiques intellectualistes, même orthodoxes : impossible en elle de tendre ad majorem gloriam Dei sans rechercher la majorem humilitatem, requise de la liberté humaine. Elle impose à l'âme un double mouvement d'expansion et de contraction que spécifie la circularité de cette « géométrie spirituelle ». Pulsation sans limites, aperçue par l'auteur de l'Elogium sepulcrale de Saint-Ignace, dont la formule : Non coerceri maximo, contineri tamen a minimo, divinum est a inspiré au P. Fessard une méditation (p. 173 et suiv.) qu'il faudrait pouvoir citer ici en entier ¹.",
+      "bbox": {
+        "x_pct": 20.894,
+        "y_pct": 56.227,
+        "w_pct": 58.485,
+        "h_pct": 14.492
+      },
+      "changed": true,
+      "change_reason": "The text was truncated in the initial input; corrected to reflect the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce double mouvement, étroitement lié aux Quatre Semaines, confère donc son originalité au cercle de la mystique ignatienne. Des flèches, aux extrémités des axes, indiqueront qu'il s'agit d'un cercle infini. Le cercle lui-même sera figuré par des traits interrompus, « comme s'il n'était",
+      "bbox": {
+        "x_pct": 21.088,
+        "y_pct": 70.375,
+        "w_pct": 58.227,
+        "h_pct": 5.242
+      },
+      "changed": true,
+      "change_reason": "Text content was cut off in previous extraction, corrected to complete the sentence."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1. L'auteur montre que le rapprochement entre dialectique ignatienne et dialectique hégélienne trouve un fondement historique, étroit mais solide, grâce à cette formule que Hölderlin a citée en exergue de son roman Hyperion comme « gravée au tombeau de Loyola ». L'énigme de cette prétendue épitaphe n'a été résolue qu'en 1947, parle P. Hugo Rahner qui en découvrit l'origine dans l'Imago Primi Saeculi S. J. (1640). Cf. Die Grabschrift des Loyola, in Stimmen der Zeit, février 1947, pp. 321-339.",
+      "bbox": {
+        "x_pct": 21.056,
+        "y_pct": 77.648,
+        "w_pct": 58.235,
+        "h_pct": 6.372
+      },
+      "changed": true,
+      "change_reason": "Labeled as footnote because it refers to the footnote marker in the text body."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was heavily truncated in all blocks.",
+    "Footnote was incorrectly labeled as paragraph."
+  ],
+  "doc_id": "350",
+  "page": 7,
+  "elapsed_seconds": 8.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

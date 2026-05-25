@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "denn er wie jedes andere Lebewesen; sterblich und bedroht; aber er weiß es. Daher kommt es auch, daß ein normaler Mensch, in der Sorge zu überleben, Sicherheit auf längere Sicht anstrebt, als dies bei Tiergattungen der Fall sein kann. Deswegen häuft er Vorräte an, und sei es auf Kosten anderer. Aus Elternliebe zeigt er sich auch erpichter als andere Lebewesen, immer besorgt, oft getrieben von einer grenzenlosen Gier.",
+      "bbox": {
+        "x_pct": 4.631,
+        "y_pct": 4.819,
+        "w_pct": 81.867,
+        "h_pct": 16.088
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated and incomplete. Updated to reflect the full paragraph text present in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Darf man wirklich solche Grundgegebenheiten einfach dem menschlichen »Egoismus« zuschreiben? Teilweise bleiben sie durch ihre Alltäglichkeit, die Primitivität und Selbstverständlichkeit der Taten, die sie hervorbringen, verborgen. Die Menschen haben die Erinnerung an wunderbare Geschichten gewisser Helden, die, unter Ausnahmebedingungen, einzigartige Opfer vollbracht haben; aber dies ist keine natürliche Grundlage menschlichen Lebens. Um letztere richtig einzuschätzen, ist es am besten, in unserer relativ verschonten Welt an Umstände zu denken, die eher banal sind, von der Einbildungskraft oder der Fabel nicht berührt, und in denen, was auf dem Spiel steht, nicht einmal mittelbar Leben oder Sterben ist. Etwa wenn es darum geht, sein eigenes Kind in einer Klasse einzuschreiben, deren Lehrer als der beste gilt und wo die Schülerzahl begrenzt ist; oder: viele möchten eine ruhige Wohnung haben; oder: man möchte den besten Platz in einem selten aufgeführten Schauspiel haben; man stürzt hin, um dieses Privileg für sich zu ergattern und es den anderen wegzunehmen. Wie man sieht, was auf dem Spiel steht, muß nicht etwas rein »Materielles« sein; sehr oft ist es etwas Kulturelles oder Geistiges. Hier trifft man alle möglichen Formen von »Privilegien«. Aber solche Rivalitäten – welche es auch immer sein mögen – haben doch ihre Wurzeln im »Lebenskampf«. Wenn es dabei nur um die Bosheit von Egoisten, von brutalen Materialisten ginge, wären Leben und Frieden viel einfacher.",
+      "bbox": {
+        "x_pct": 4.443,
+        "y_pct": 20.678,
+        "w_pct": 81.997,
+        "h_pct": 56.441
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated and contained OCR errors ('vEgoismus<'). Updated to reflect full, corrected paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun ist es gerade die eigene Sehnsucht nach dem Guten; nach Großzügigkeit den anderen gegenüber, die die Menschen davon überzeugt, daß sie selber sich vom Gesetz der Natur distanzieren und die Verantwortung daraus entstehender Konflikte auf andere zurückwerfen können. Sie gestatten sich dann den Luxus, beredsam zu werden und sich für »schöne Seelen«",
+      "bbox": {
+        "x_pct": 4.342,
+        "y_pct": 76.828,
+        "w_pct": 82.012,
+        "h_pct": 13.595
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated. Updated to reflect the full paragraph text present in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "187",
+      "bbox": {
+        "x_pct": 807.0,
+        "y_pct": 928.0,
+        "w_pct": 40.0,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer/filter instead of text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for paragraphs was severely truncated.",
+    "OCR errors in paragraph 2.",
+    "Page number at bottom right was misclassified as text.",
+    "Incomplete transcriptions in all paragraph regions."
+  ],
+  "doc_id": "2830",
+  "page": 4,
+  "elapsed_seconds": 6.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

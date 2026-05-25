@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La perte de sa patrie politique le jeta dans un abîme sans fond, auquel il n'échappa, avec sa femme, que grâce à l'origine commune de toute condition humaine, à l'amitié aussi de quelques étres aimés, en Allemagne ou bien dispersés à la surface du globe, grâce enfin au rêve d'une citoyenneté mondiale à venir.",
+      "bbox": {
+        "x_pct": 12.195,
+        "y_pct": 5.656,
+        "w_pct": 84.106,
+        "h_pct": 9.829
+      },
+      "changed": true,
+      "change_reason": "The text was truncated; corrected to full content as shown in image."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Basler Universitätsreden, cahier 60, p. 3 et s.)",
+      "bbox": {
+        "x_pct": 63.726,
+        "y_pct": 32.074,
+        "w_pct": 32.344,
+        "h_pct": 2.434
+      },
+      "changed": true,
+      "change_reason": "This is a bibliographic footnote reference, not a standard paragraph. Adjusted label to footnote."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Accueilli à Bâle, dans la tradition européenne, dans la liberté, il y trouva un asile paisible, et ce fut là le dernier cadeau qu'il reçut. Au cours de ces années il consacra toutes ses forces à poursuivre son travail philosophique, en soi impossible à achever. Par ce travail, qu'inspirait une anticipation tâtonnante plutôt qu'un savoir déjà acquis, essayant les pensées sans posséder de certitude, il voulait faire sa part dans la tâche qui est celle de ce siècle : trouver le chemin conduisant, de la fin de la philosophie européenne, vers une future philosophie universelle.",
+      "bbox": {
+        "x_pct": 12.195,
+        "y_pct": 15.081,
+        "w_pct": 84.146,
+        "h_pct": 17.506
+      },
+      "changed": true,
+      "change_reason": "The text was severely truncated; corrected to full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "118",
+      "bbox": {
+        "x_pct": 12.195,
+        "y_pct": 91.365,
+        "w_pct": 3.73,
+        "h_pct": 2.37
+      },
+      "changed": true,
+      "change_reason": "Page number identified and categorized as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Paragraphs were severely truncated in initial OCR/extraction.",
+    "Footnote was labeled as paragraph.",
+    "Page number missing from detected regions."
+  ],
+  "doc_id": "1520",
+  "page": 124,
+  "elapsed_seconds": 4.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

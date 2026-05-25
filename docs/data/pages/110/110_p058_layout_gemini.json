@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "56",
+      "bbox": {
+        "x_pct": 19.344,
+        "y_pct": 2.0,
+        "w_pct": 1.776,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number/header at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊIRE ET LA FORME",
+      "bbox": {
+        "x_pct": 66.257,
+        "y_pct": 2.0,
+        "w_pct": 21.053,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lit en renonçant entièrement au dynamisme insufllé par Aristote à la notion de forme )",
+      "bbox": {
+        "x_pct": 18.792,
+        "y_pct": 13.505,
+        "w_pct": 68.205,
+        "h_pct": 3.718
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telles sont les deux   positions extrêmes, enlre   lesquelles bien daulres sont possibles . Aucun cr",
+      "bbox": {
+        "x_pct": 18.838,
+        "y_pct": 17.223,
+        "w_pct": 68.7,
+        "h_pct": 37.102
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) Par action j'entends ici: l'intervention d&eacute;lib&eacute;r&eacute;e d'un sujet, qui modifie l'encha&icirc;nement causal des faits. Donc un &laquo; acte purement int&eacute;rieur &raquo;, comme par exemple &laquo; l'acte connaissant &raquo; lui-m&ecirc;me dont il a &eacute;t&eacute; question plus haut, n'appartiendra pas &agrave; la rubrique &laquo; action &raquo. En effet, si la connaissance change, comme nous l'avons vu, la modalit&eacute; de sa mati&egrave;re propre, elle ne change pas la succession des faits.",
+      "bbox": {
+        "x_pct": 19.16,
+        "y_pct": 56.126,
+        "w_pct": 68.32,
+        "h_pct": 12.016
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing paragraph"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et celui agit,  la démar calion entre matière et prise   paraît   univoque et   simple: lhomme est &",
+      "bbox": {
+        "x_pct": 19.022,
+        "y_pct": 68.968,
+        "w_pct": 68.55,
+        "h_pct": 5.592
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Missing paragraph block identified",
+    "Missing page header/footer identified",
+    "Label corrected for page number"
+  ],
+  "doc_id": "110",
+  "page": 58,
+  "elapsed_seconds": 5.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

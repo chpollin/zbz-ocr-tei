@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "70 L'ÉTUDIANT CHERCHE LA VÉRITÉ MÉTAPHYSIQUE",
+      "bbox": {
+        "x_pct": 140.0,
+        "y_pct": 90.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Header text misclassified as paragraph, and area definition corrected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "décision métaphysique — mais il ne pense pas à cette dernière et se laisse absorber par le problème. Pour l'étudiant au contraire, le système est chiffre. Pour l'auteur, l'activité va de la volonté d'être, en se dépliant et s'épanouissant, en prenant possession du monde des objets, jusqu'au système complètement formulé. Pour l'étudiant, le système est donné, et l'activité consiste à le pénétrer en vrille, à resserrer ce qui est là développé et extériorisé, pour atteindre le noyau, un, simple, volontaire et libre qui lui révèlera un sujet.",
+      "bbox": {
+        "x_pct": 13.253,
+        "y_pct": 13.346,
+        "w_pct": 76.31,
+        "h_pct": 28.093
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'on s'y trompe pas. Il ne s'agit pas ici de faire l'étude psychologique d'un système philosophique. Celle-ci peut avoir son intérêt pour le psychologue, pour le romancier, pour tout homme désireux d'enrichir sa connaissance des ressorts et des types humains. Mais il faut se garder de laisser la psychologie remplacer la philosophie ou se l'assimiler. On croit parfois qu'il suffit à un roman d'être « psychologique » pour appartenir aux sommets de l'art, et que le fond de la musique est d'exprimer des émotions. Mais c'est ravaler l'art et méconnaître la consécration qu'il n'obtient que grâce à la pureté de la forme; et je n'entends pas par là : forme techniquement parfaite. On oscille généralement entre deux conceptions de l'art : l'une met tout l'accent sur l'expressivité, l'autre sur la forme comprise comme réalisation technique. Or, s'il est vrai que ces deux éléments sont nécessaires, l'œuvre d'art ne devient véritablement",
+      "bbox": {
+        "x_pct": 13.253,
+        "y_pct": 41.659,
+        "w_pct": 76.355,
+        "h_pct": 48.494
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR output."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "The page header (70 L'ÉTUDIANT...) was missing in the original region list but needs to be filtered out.",
+    "OCR transcription of the text was significantly corrupted.",
+    "Bbox for header was not provided in input; corrected structure."
+  ],
+  "doc_id": "20",
+  "page": 72,
+  "elapsed_seconds": 4.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

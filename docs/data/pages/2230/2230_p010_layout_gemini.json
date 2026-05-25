@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 25 -",
+      "bbox": {
+        "x_pct": 44.577,
+        "y_pct": 5.765,
+        "w_pct": 10.963,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LEBENS LANGE FORTBILDUNG AUS TREUE ZUM MENSCH-SEIN",
+      "bbox": {
+        "x_pct": 11.458,
+        "y_pct": 17.15,
+        "w_pct": 70.612,
+        "h_pct": 0.881
+      },
+      "changed": true,
+      "change_reason": "Added missing title region."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "J. Hersch",
+      "bbox": {
+        "x_pct": 11.556,
+        "y_pct": 21.266,
+        "w_pct": 10.484,
+        "h_pct": 1.499
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir leben in einer Zeit, in der das Hauptaugenmerk auf die Ver&auml;nderung und das Neue gerichtet wird. Das ist verst&auml;ndlich: Die Umwelt, der Lebensrhythmus, die &auml;u&szlig;eren und sogar die inneren Gegebenheiten unseres Lebens haben sich ver&auml;ndert und ver&auml;ndern sich zusehends mit einer Geschwindigkeit und so radikal, wie es die menschliche Geschichte niemals gekannt hat. Daraus entstehen, glaube ich, viele Verzerrungen dessen, wie wir uns selbst sowie unsere Bedingungen in der Zeit sehen, und das erkl&auml;rt die merkw&uuml;rdige Ambivalenz der Urteile, die wir oft &uuml;ber unsere Zivilisation und unsere Epoche f&auml;llen, und die bis zum Widerspruch reicht.",
+      "bbox": {
+        "x_pct": 11.29,
+        "y_pct": 27.463,
+        "w_pct": 81.476,
+        "h_pct": 21.323
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "So scheint es, da&szlig; in den meisten F&auml;llen der Ausdruck \"neu\" nicht mehr das bezeichnet, was einer Sache zeitlich folgt, sondern - aufgrund dieser einzigen Tatsache - auch einen Wert und eine fast indiskutable &Uuml;berlegenheit. Was nachher kommt, ist besser als das, was vorher war. Aber gleichzeitig ist man, ganz allgemein, versucht, unsere wissenschaftliche Zivilisation und die gesamte Technik \"materialistisch\" zu nennen und ihres Sinns zu berauben und zugleich revolution&auml;re wie r&uuml;ckst&auml;ndige Tr&auml;ume von der R&uuml;ckkehr in das kleine, idyllische, in Gr&uuml;n gebettete Dorf, das zweifellos niemals existiert hat, zu n&auml;hren. Das zuk&uuml;nftige goldene Zeitalter wird das Paradies vor der Vertreibung sein.",
+      "bbox": {
+        "x_pct": 11.29,
+        "y_pct": 49.789,
+        "w_pct": 80.137,
+        "h_pct": 23.341
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Solche widerspr&uuml;chlichen Einstellungen bewirken eine gef&auml;hrliche Starrheit des kritischen Sinnes, der sich nur noch auf die andere Seite auswirkt und den oft anma&szlig;enden Dogmatismus verst&auml;rkt, mit dem die \"neuen\" Werte verk&uuml;ndet werden. Durch eine paradoxe, aber v&ouml;llig verst&auml;ndliche Umkehr ruft die bedingungslose Aufwertung",
+      "bbox": {
+        "x_pct": 11.185,
+        "y_pct": 73.871,
+        "w_pct": 78.919,
+        "h_pct": 10.832
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction for paragraphs was heavily truncated or incomplete.",
+    "Page number header was misidentified as text.",
+    "Main section title was missing from detection."
+  ],
+  "doc_id": "2230",
+  "page": 10,
+  "elapsed_seconds": 5.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

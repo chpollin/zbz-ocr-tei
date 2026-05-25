@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — Evidemment. D'autant plus que je suis socialiste de naissance, membre du parti socialiste depuis 1939, et que la plupart de mes amis et de mes relations étaient et sont orientés plutôt dans cette direction. On a jugé parfois que j'optais pour des positions de droite — à tort, selon moi. On y a vu un effet de mon grand âge, ou d'un conservatisme et d'un conformisme. A mes yeux, en revanche, ce sont les positions dites de gauche qui sont devenues conformistes, et j'ai conscience de résister très fort à un courant général, entretenu par les media. Vous savez qu'au moment de la publication de mes Antithèses, on a dit et écrit partout que je disposais du soutien des media. C'était exactement l'inverse de la vérité. Ce sont mes adversaires qui ont disposé d'émissions à la télévision, alors que je n'ai jamais été invitée à la télévision pour défendre mes idées, sauf 3 minutes de parole lors de l'émission Agora. A propos des Antithèses, il y a eu beaucoup de chocs en retour : lettres anonymes, lettres de menace, etc. Quand je suis allée donner une conférence à Schaffhouse, où se trouve l'éditeur de l'édition allemande des Antithèses, on a lancé des pavés dans la vitrine de sa librairie, et des jeunes ont envahi la salle pour m'empêcher de parler. A plusieurs reprises, lors de mes conférences en Suisse allemande, la présence de la police a été nécessaire.",
+      "bbox": {
+        "x_pct": 4.481,
+        "y_pct": 4.355,
+        "w_pct": 80.256,
+        "h_pct": 41.879
+      },
+      "changed": true,
+      "change_reason": "The original OCR text was incomplete and heavily fragmented. The bounding box contains a full paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2. Les media",
+      "bbox": {
+        "x_pct": 4.884,
+        "y_pct": 50.726,
+        "w_pct": 15.348,
+        "h_pct": 1.831
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for section heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il vous est arrivé d'intervenir, d'une façon ou d'une autre — nous y reviendrons — à la radio, à la télévision et dans la presse. Ce mode d'expression à travers les media a-t-il pour vous un caractère et un sens particuliers ?",
+      "bbox": {
+        "x_pct": 4.432,
+        "y_pct": 54.621,
+        "w_pct": 80.098,
+        "h_pct": 8.202
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. : Je voudrais tout de suite distinguer entre les media électroniques et la presse écrite. Les problèmes de la presse écrite se posent de façon tout à fait différente, en ce qui concerne l'influence qu'elle exerce et les conditions dans lesquelles cette influence s'exerce. Sur le plan législatif aussi, on devrait les distinguer très nettement.",
+      "bbox": {
+        "x_pct": 4.64,
+        "y_pct": 62.202,
+        "w_pct": 79.976,
+        "h_pct": 10.887
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour ce qui est des media électroniques, ce mode de communication a-t-il, selon vous, un caractère particulier ?",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 72.984,
+        "w_pct": 79.646,
+        "h_pct": 4.677
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text layer for paragraph 1 was severely corrupted/hallucinated by OCR.",
+    "Multiple paragraphs had incorrect/mangled text content needing manual restoration.",
+    "Page number at bottom not processed."
+  ],
+  "doc_id": "2330",
+  "page": 179,
+  "elapsed_seconds": 7.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

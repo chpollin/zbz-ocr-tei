@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "heit, einer Kultur sowohl wie eines Rechtes, das ein Zwischenglied zwischen Naturzwängen und Selbstbeherrschung sein soll. Es gilt, unter Menschen jene gegenseitige Anerkennung zu üben, die jegliche Gleichgültigkeit ausschließt, weil sie sich nach einer gemeinsamen, nie besessenen Wahrheit, einem tiefen, aber nie genügenden Verstehen sehnt, nach einem Frieden, der, obschon nie endgültig gesichert, nie aufgegeben werden soll.",
+      "bbox": {
+        "x_pct": 6.035,
+        "y_pct": 5.374,
+        "w_pct": 82.142,
+        "h_pct": 17.797
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Friede ist kein Gut, das man billiger kaufen könnte. Er muß auf allen Ebenen, auf denen der Mensch existiert, allmählich wachsen und sich aus der Tiefe der eigenen Unvollendung, aus den Widersprüchen und sogar aus dem Scheitern nähren. Ein triumphierender Friede kann nur Lüge bedeuten, die dazu dient, einen Sieg der Gewalt über echtes Menschsein zu vertuschen. Denn es gibt keine absolute Verpflichtung, die nicht gleichzeitig Mangel und Enteignung mit sich brächte.",
+      "bbox": {
+        "x_pct": 6.122,
+        "y_pct": 23.145,
+        "w_pct": 82.113,
+        "h_pct": 18.793
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erziehung zum Frieden hat kein Ende; sie beginnt mit der Höflichkeit und setzt sich fort durch Treue; sie müht sich um Gerechtigkeit, lehrt Achtung vor den Gesetzen und bejaht die strengen Übungen, die das Recht verlangt. Dabei bemüht sie sich, legitime Aufstände und Forderungen zu verstehen. Sie möchte mit Hilfe des internationalen Rechts und der Menschenrechte die ganze Erde umfassen. Sie sucht unermüdlich nach gemeinsam anerkannten Wahrheiten, und doch bestreitet sie dieselben immer wieder, um neue, echtere zu finden, deren Geltung sie wiederum durch ein klareres Nicht-Wissen begrenzt.",
+      "bbox": {
+        "x_pct": 6.078,
+        "y_pct": 41.26,
+        "w_pct": 82.012,
+        "h_pct": 25.11
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zwischen den beiden Weltkriegen habe ich viele Jahre an einer internationalen Schule unterrichtet, in der sich Schüler aller Rassen, aus allen Kontinenten und vielen verschiedenen Staaten zusammenfanden. An dieser Schule galt es als das größte, unentschuldbare Vergehen, einen Kameraden wegen seiner nationalen Zugehörigkeit zu beleidigen. Nach Ausbruch des Zweiten Weltkrieges sahen sich viele gezwungen, gegen ehemalige Freunde zu kämpfen. Sie haben den Krieg nicht verhindern können. Sie konnten ihn auch nicht verkürzen. Sicher ist er aber für sie nie einfach ein berechtigter, unvermeidlicher Ausbruch von Gewalt und Zerstörung gewesen und auch nie",
+      "bbox": {
+        "x_pct": 6.122,
+        "y_pct": 65.965,
+        "w_pct": 81.91,
+        "h_pct": 25.048
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "193",
+      "bbox": {
+        "x_pct": 827,
+        "y_pct": 932,
+        "w_pct": 36,
+        "h_pct": 27
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Text content for all paragraphs was severely misread/truncated.",
+    "Page number at the bottom was missing a bounding box or classification."
+  ],
+  "doc_id": "2830",
+  "page": 10,
+  "elapsed_seconds": 5.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

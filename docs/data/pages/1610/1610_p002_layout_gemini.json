@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gedruckt mit Unterstützung der Förderungs- und Beihilfefonds Wissenschaft der VG Wort GmbH, Goethest",
+      "bbox": {
+        "x_pct": 18.547,
+        "y_pct": 10.042,
+        "w_pct": 26.781,
+        "h_pct": 3.063
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "CIP-Kurztitelaufnahme der Deutschen Bibliothek",
+      "bbox": {
+        "x_pct": 22.485,
+        "y_pct": 23.077,
+        "w_pct": 19.148,
+        "h_pct": 1.503
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Reason, Action, and Experience: essays in honor of Raymond Klibansky/ed. by Helmut Kohlenberger , Ha",
+      "bbox": {
+        "x_pct": 22.521,
+        "y_pct": 25.215,
+        "w_pct": 17.639,
+        "h_pct": 6.987
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "@ Felix Meiner Verlag; Hamburg 1979",
+      "bbox": {
+        "x_pct": 24.964,
+        "y_pct": 76.147,
+        "w_pct": 14.974,
+        "h_pct": 1.814
+      },
+      "changed": true,
+      "change_reason": "Label changed from section_header to zb_paragraph to match content type"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Allc Rechte, auch die des auszugsweisen Nachdrucks, der photomechanischen Wiedergabe und dcr Überset",
+      "bbox": {
+        "x_pct": 19.661,
+        "y_pct": 78.193,
+        "w_pct": 25.734,
+        "h_pct": 5.928
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "INHALT",
+      "bbox": {
+        "x_pct": 72.793,
+        "y_pct": 14.587,
+        "w_pct": 4.466,
+        "h_pct": 1.623
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 57.284,
+        "y_pct": 22.766,
+        "w_pct": 35.051,
+        "h_pct": 61.764
+      },
+      "changed": true,
+      "change_reason": "Label corrected from document_index to zb_paragraph for correct cataloging"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "One label correction made for consistency",
+    "One region label changed from document_index to zb_paragraph"
+  ],
+  "doc_id": "1610",
+  "page": 2,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed from section_header to zb_paragraph to match content type": 1,
+    "Label corrected from document_index to zb_paragraph for correct cataloging": 1
+  }
+}

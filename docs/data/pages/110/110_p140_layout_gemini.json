@@ -1,0 +1,99 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "de [orce une force de vie ou de mort une existence objective elle   offre un non seulement immédiat,",
+      "bbox": {
+        "x_pct": 17.146,
+        "y_pct": 13.288,
+        "w_pct": 68.665,
+        "h_pct": 27.92
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voilà   quelle est la   lorte place occupée par la nature dans les idées de réalité et dévidence; n'",
+      "bbox": {
+        "x_pct": 17.227,
+        "y_pct": 41.025,
+        "w_pct": 68.308,
+        "h_pct": 9.317
+      },
+      "changed": true,
+      "change_reason": "Correction of text label label and content mapping"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "3. Lhomme  incarnateur",
+      "bbox": {
+        "x_pct": 36.743,
+        "y_pct": 53.052,
+        "w_pct": 28.849,
+        "h_pct": 1.868
+      },
+      "changed": true,
+      "change_reason": "Refined label and text"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce lien entre l'évidence et la nature 9 une signification toute culière pour lhomme; plus précisémen",
+      "bbox": {
+        "x_pct": 16.881,
+        "y_pct": 55.809,
+        "w_pct": 68.619,
+        "h_pct": 18.702
+      },
+      "changed": true,
+      "change_reason": "Refined text transcription"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "138",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 34,
+        "h_pct": 16
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "L'Être et la forme",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 16
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page running header"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction had OCR noise",
+    "Missing page headers and footers",
+    "Heading label was inaccurate"
+  ],
+  "doc_id": "110",
+  "page": 140,
+  "elapsed_seconds": 8.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Correction of text label label and content mapping": 1,
+    "Refined label and text": 1,
+    "Refined text transcription": 1,
+    "ADDED": 2
+  }
+}

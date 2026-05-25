@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "106 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 125.0,
+        "y_pct": 77.0,
+        "w_pct": 583.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header based on content and position."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne peut donc plus étre question aujourd'hui, en politique, de réaliser sur la terre une communauté humaine conforme à des conceptions unanimes et où des qualités essentielles soient préservées à tous les degrés de la hiérarchie. Il s'agit de créer une technique de la vie commune capable de préserver et d'accroître les possibles de la liberté devant chaque ètre humain.",
+      "bbox": {
+        "x_pct": 12.5,
+        "y_pct": 17.154,
+        "w_pct": 85.139,
+        "h_pct": 13.024
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La politique se voit ainsi privée de toute sûreté dogmatique et de toute autorité incarnée. Sa situation est extrêmement difficile et même dangereuse : d'une part, elle est vidée de sa substance par suite de la liberté individuelle et de la diversité d'opinions qui en résulte ; de l'autre, elle se trouve alourdie par d'énormes charges matérielles dont l'économie moderne, la grande industrie, la rendent inévitablement dépendante et responsable.",
+      "bbox": {
+        "x_pct": 12.73,
+        "y_pct": 29.438,
+        "w_pct": 84.944,
+        "h_pct": 15.049
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Compte tenu de cette situation de l'homme dans la société moderne, il nous faut maintenant nous demander si l'idéologie démocratique est actuellement dépassée, ou au contraire plus justifiée que jamais.",
+      "bbox": {
+        "x_pct": 12.674,
+        "y_pct": 43.889,
+        "w_pct": 84.861,
+        "h_pct": 8.653
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match document content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Transcription of text was highly inaccurate.",
+    "Page number and running header were incorrectly grouped as text and not identified as a header.",
+    "BBox for header was missing in initial provided list."
+  ],
+  "doc_id": "330",
+  "page": 140,
+  "elapsed_seconds": 5.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

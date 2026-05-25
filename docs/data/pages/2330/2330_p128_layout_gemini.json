@@ -1,0 +1,124 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'appréciation est donc très difficile, bien sûr. Mais il y a tout de même des faits qui sont parfaitement clairs ; s'il faut être très scrupuleux dans ce domaine, il ne faut cependant pas noyer le poisson. Lorsqu'on vous dit que tel dissident, un homme par ailleurs extrêmement intelligent et doué pour toutes sortes de disciplines intellectuelles, est un malade mental atteint d'une « schizophrénie sans symptômes », cela paraît un peu suspect.",
+      "bbox": {
+        "x_pct": 15.873,
+        "y_pct": 3.734,
+        "w_pct": 79.646,
+        "h_pct": 14.492
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous faites allusion à quelqu'un ?",
+      "bbox": {
+        "x_pct": 26.899,
+        "y_pct": 18.71,
+        "w_pct": 37.289,
+        "h_pct": 2.339
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A série de cas qui ont été traités dernièrement en psychiatrie en URSS et dont on a vu les attestations signées de psychiatres (dont on ne devrait jamais serrer la main), qui déclarent que ces gens sont atteints d'une schizophrénie atypique, nommée « schizophrénie sans symptômes » ! S'il n'y a pas de symptômes, qu'on les laisse donc être schizophrènes en paix !",
+      "bbox": {
+        "x_pct": 15.665,
+        "y_pct": 20.782,
+        "w_pct": 79.817,
+        "h_pct": 12.097
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour en revenir au nazisme dont vous avez vécu et relaté la montée, vous avez parfois critiqué ce qu'on a appelé le « silence de Pie XII » face à l'extermination des Juifs par le IIIe Reich. Vous estimez que le Pape n'avait pas les mêmes raisons de se taire que les puissances alliées ?",
+      "bbox": {
+        "x_pct": 15.995,
+        "y_pct": 33.444,
+        "w_pct": 79.609,
+        "h_pct": 9.806
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout de même, j'ai trop de respect pour le christianisme pour considérer le Pape exactement comme n'importe quelle autorité politique ! Et d'ailleurs de la part des Alliés aussi je refuse de l'accepter. Mais à plus forte raison de la part du Pape. Voyez-vous, je pense qu'on en arrive parfois à pousser le raisonnable au-delà de la folie : quand quelque chose s'impose absolument, on est devenu tellement civilisé, tellement « raisonnable », qu'on réussit à s'en abstenir.",
+      "bbox": {
+        "x_pct": 15.751,
+        "y_pct": 43.306,
+        "w_pct": 79.853,
+        "h_pct": 14.113
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et que pensez-vous, sinon des réticences, en tout cas de la timidité des Juifs en Occident, à cet égard, dans le monde libre ? Raymond Aron s'en fait le reproche en partie.",
+      "bbox": {
+        "x_pct": 15.873,
+        "y_pct": 58.169,
+        "w_pct": 79.402,
+        "h_pct": 6.323
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne crois pas que les Juifs en Occident se soient tus sur les faits. Certains ont peut-être été réduits au silence parce qu'ils avaient peur pour eux-mêmes. Il ne faut pas oublier que tous les pays européens se trouvaient soit dominés, soit menacés ; la plupart étaient dominés, la Suisse était menacée. A cet égard, les Juifs avaient une certaine compréhension pour la prudence d'un petit pays, entouré de tous les côtés par la puissance hitlérienne, et ils n'osaient pas trop en exiger, parce qu'ils avaient peur que le bateau sombre. Mais dans les autres pays, ils étaient tous exposés au maximum, cela depuis le début de la guerre.",
+      "bbox": {
+        "x_pct": 15.543,
+        "y_pct": 63.976,
+        "w_pct": 80.061,
+        "h_pct": 17.774
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "124",
+      "bbox": {
+        "x_pct": 15.441,
+        "y_pct": 94.758,
+        "w_pct": 3.491,
+        "h_pct": 2.218
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui. Une fois, après avoir parlé de la Suisse d'une façon positive, j'ai reçu une lettre indignee : « Que dites-vous de ces gens que l'on a... »",
+      "bbox": {
+        "x_pct": 15.629,
+        "y_pct": 86.669,
+        "w_pct": 79.768,
+        "h_pct": 4.323
+      },
+      "changed": false
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Text transcription quality in the last paragraph was poor/garbled in the source detection.",
+    "Corrected page number label."
+  ],
+  "doc_id": "2330",
+  "page": 128,
+  "elapsed_seconds": 7.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

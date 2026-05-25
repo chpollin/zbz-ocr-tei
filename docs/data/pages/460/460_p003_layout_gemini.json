@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'EUROPE AU DÉFI par Jeanne Hersch",
+      "bbox": {
+        "x_pct": 19.019,
+        "y_pct": 3.422,
+        "w_pct": 32.811,
+        "h_pct": 8.088
+      },
+      "changed": true,
+      "change_reason": "Corrected title extraction to include full heading text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne s'agit ici ni d'un ouvrage de propagande, ni d'un ensemble de recettes politiques. Il s'agit de faire le point.",
+      "bbox": {
+        "x_pct": 19.019,
+        "y_pct": 38.304,
+        "w_pct": 70.371,
+        "h_pct": 8.767
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Autour de nous, l'espace et le temps ont changé. Tous deux, à la fois, se rétrécissent, se creusent et se boursouflent vertigineusement. L'espace : pays naguère grands, devenus minuscules, subissant de tous côtés l'assaut d'événements survenus ailleurs ; présence de tous les ailleurs sur les écrans, dans les bruits et les voix perçus jusque dans le sommeil ; notre continent, réduit à presque rien sur cette mappemonde où faim et richesse hurlent jusqu'à nous leurs appels à l'aide et leurs slogans publicitaires ; et la planète, plus petite que la mappemonde parmi les pistes entrouvertes de l'étendue sidérale. Ni les fauves, ni les silences éternels n'effraient plus personne. Ni Dieu, semble-t-il. Il ne rassure plus, non plus. Les hommes, pourtant, continuent à avoir peur — d'un seul être encore : de l'homme. — Le temps : n'importe qui survole du regard plusieurs dizaines de milliers d'années d'histoire",
+      "bbox": {
+        "x_pct": 19.055,
+        "y_pct": 46.588,
+        "w_pct": 71.579,
+        "h_pct": 47.009
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors and incomplete text content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Significant OCR errors in original text blocks",
+    "Missing text content in paragraph box",
+    "Heading incomplete in initial extraction"
+  ],
+  "doc_id": "460",
+  "page": 3,
+  "elapsed_seconds": 4.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

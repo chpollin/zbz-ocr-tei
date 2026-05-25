@@ -1,0 +1,96 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Recherche de la libert\u0000, d'apr\u0000\u0000s Daniel Christoff Hersch, J Revue de M\u0000\u0000taphysique et de Morale; Jul 1, 1961; 66, 3; ProQuest pg. 361",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Top text is a running header and bibliographic info, should be filtered."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ETUDES CRITIQUES",
+      "bbox": {
+        "x_pct": 37.172,
+        "y_pct": 25.849,
+        "w_pct": 24.448,
+        "h_pct": 2.536
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Recherche de la libert\u0000 1",
+      "bbox": {
+        "x_pct": 27.26,
+        "y_pct": 33.45,
+        "w_pct": 43.731,
+        "h_pct": 2.773
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual image scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'ambigu\u0000t\u0000 du titre, entre le th\u0000orique et le pratique, est voulue et significative : on n'approfondit pas la connaissance de la libert\u0000 sans travailler \u0000 devenir libre, et inversement. La r\u0000flexion de l'auteur se situe ainsi d'embl\u0000e dans l'horizon existentiel. Pourtant, la lecture achev\u0000e, on ne peut se d\u0000fendre d'une certaine g\u0000ne : l'effort philosophique, dans toute r\u0000flexion existentielle, exige une sorte de transparence refl\u0000t\u0000e, contrapunctique, entre le th\u0000orique et le pratique. Ici, selon les parties de l'ouvrage, l'un ou l'autre aspect s'isole et l'emporte, et seuls des \u0000 n\u0000euds \u0000, d\u0000cisifs il est vrai, rattachent encore les divers d\u0000veloppements \u0000 leur centre commun.",
+      "bbox": {
+        "x_pct": 18.372,
+        "y_pct": 39.489,
+        "w_pct": 62.506,
+        "h_pct": 17.144
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'ouvrage, au d\u0000but, est difficile, d'une difficult\u0000 qui ne se laisse gu\u0000re serrer de pr\u0000s et risque d'arr\u0000ter le lecteur. L'auteur y recherche le sens ontologique des lib\u0000rations que l'homme demande soit \u0000 la conceptualit\u0000 (par la connaissance), soit aux valeurs (dans l'attitude pratique), soit aux \u0000 formes \u0000 (dans l'\u0000uvre cr\u0000atrice). Il veut montrer, en d\u0000veloppant une th\u0000orie ontologique de la conceptualit\u0000 et de la valeur, pourquoi ces efforts de lib\u0000ration \u0000chouent dans une dialectique ind\u0000finie. La conceptualit\u0000 appara\u0000t comme un appauvrissement de l'\u0000tre et comme ayant, de ce fait, besoin d'\u0000tre anim\u0000e par la valeur, qui \u0000 repr\u0000sente, de mani\u0000re immanente, la transcendance du Dieu des philosophes \u0000. \u0000 Elle est la diff\u0000rence qui s\u0000pare nos intuitions rationnelles, soit notre discours logique, de l'\u0000tre qu'ils affirment implicitement et qui les contient. \u0000 La valeur, condition de la pens\u0000e et de la libert\u0000, se rattache \u0000 l'existence \u0000 du sujet, c'est-\u0000-dire, selon la d\u0000finition de D. Christoff, \u0000 \u0000 sa possibilit\u0000 de pr\u0000sence \u0000 quelque chose... et \u0000 la possibilit\u0000 de quelque chose de lui \u0000tre pr\u0000sent \u0000. A ces termes : conceptualit\u0000, valeur, s'ajoute alors celui de forme : celle-ci est rupture du continu, qui serait",
+      "bbox": {
+        "x_pct": 18.211,
+        "y_pct": 56.235,
+        "w_pct": 62.667,
+        "h_pct": 28.622
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1. Par Daniel Christoff, un vol. in-8\u0000, Paris, P.U.F., 1960.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing footnote text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "361",
+      "bbox": {
+        "x_pct": 77.5,
+        "y_pct": 88.0,
+        "w_pct": 2.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Labeled as page footer to be filtered."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was very poor and required manual reconstruction of text.",
+    "Footnote was missed by detection.",
+    "Page number 361 was not detected as a separate region."
+  ],
+  "doc_id": "560",
+  "page": 1,
+  "elapsed_seconds": 7.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

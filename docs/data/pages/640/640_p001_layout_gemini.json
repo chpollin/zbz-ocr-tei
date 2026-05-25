@@ -1,0 +1,113 @@
+{
+  "doc_id": "640",
+  "page": 1,
+  "image_width": 945,
+  "image_height": 1338,
+  "num_regions": 9,
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 27.4,
+        "y_pct": 46.7,
+        "w_pct": 49.9,
+        "h_pct": 8.3
+      }
+    },
+    {
+      "label": "picture",
+      "zbz_tag": "_skip",
+      "text": "",
+      "bbox": {
+        "x_pct": 45.2,
+        "y_pct": 18.5,
+        "w_pct": 17.4,
+        "h_pct": 11.3
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 38.1,
+        "y_pct": 31.7,
+        "w_pct": 47.5,
+        "h_pct": 15.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 45.3,
+        "y_pct": 54.1,
+        "w_pct": 32.0,
+        "h_pct": 2.6
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 8.7,
+        "y_pct": 71.1,
+        "w_pct": 14.3,
+        "h_pct": 9.3
+      }
+    },
+    {
+      "label": "picture",
+      "zbz_tag": "_skip",
+      "text": "",
+      "bbox": {
+        "x_pct": 8.9,
+        "y_pct": 36.3,
+        "w_pct": 13.3,
+        "h_pct": 8.8
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 8.6,
+        "y_pct": 85.7,
+        "w_pct": 87.4,
+        "h_pct": 6.4
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 8.9,
+        "y_pct": 93.0,
+        "w_pct": 87.1,
+        "h_pct": 2.5
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 68.6,
+        "y_pct": 10.7,
+        "w_pct": 20.9,
+        "h_pct": 8.5
+      }
+    }
+  ],
+  "elapsed_seconds": 2.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini-detect",
+  "page_orientation": "portrait",
+  "num_columns": 1
+}

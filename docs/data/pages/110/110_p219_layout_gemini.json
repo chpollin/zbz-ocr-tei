@@ -1,0 +1,73 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 12.293,
+        "y_pct": 2.0,
+        "w_pct": 33.333,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "217",
+      "bbox": {
+        "x_pct": 76.711,
+        "y_pct": 2.0,
+        "w_pct": 4.195,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cèse formelle; Tincarnalion confère & la créalure esthétique existence   objective. Y est si dense q",
+      "bbox": {
+        "x_pct": 12.293,
+        "y_pct": 13.083,
+        "w_pct": 68.618,
+        "h_pct": 50.243
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and punctuation errors"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il san5 dire que malgré loule théorie esthétique;  la forme dart navons pu mnontrer que sa nécessilé",
+      "bbox": {
+        "x_pct": 12.247,
+        "y_pct": 66.689,
+        "w_pct": 68.249,
+        "h_pct": 7.699
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original text transcription contained several typos.",
+    "Missing page header/footer regions.",
+    "Corrected incorrect transcription of French text."
+  ],
+  "doc_id": "110",
+  "page": 219,
+  "elapsed_seconds": 6.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content and punctuation errors": 1,
+    "Corrected text content": 1,
+    "ADDED": 2
+  }
+}

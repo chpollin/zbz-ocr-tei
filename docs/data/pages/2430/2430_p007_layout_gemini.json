@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "stAndigen Wandels befindet, durch die sich ihre Moglichkeiten permanent vervielfachen, und es schwierig ist, sich vorzustellen, was sich abspielen wird, sobal einmal all die Satellitenprogramme das Land überfluten. Welche Bedeutung besitt dann noch die Streitfrage des Monopols? In Anbetracht der heutigen Situation und der bestehenden Zukunftsaussichten hat eine Gruppe engagierter Bürger die Initiative ergriffen und 1982 eine Studie veröffentlicht, die einige Vorschläge zu dieser Thematik entwickelt («Die Voraussetzungen der freiheitlichen Medien», Cosmos-Verlag, Bern 1982). Einen davon möchte ich hier aufgreifen: Man müsste eine staatsunabhängige Institution damit beauftragen, eine Aufgabe von öffentlichem Interesse zu erfüllen. So wäre dann ein sogenannter Schweizer Radio- und Fernsehrat dafür verantwortlich, «im Interesse der gesamten Gemeinschaft des Schweizervolks die Freiheit der Medien und ihrer Vertreter zu gewährleisten. Er würde die Bundesregierung weitgehend von ihrer Funktion als Aufsichtsbehörde entlasten und gegenüber den Sendeanstalten die Aufgaben einer Leitungs- und Koordinationsstelle einer Leitungs- und Koordinationsstelle einer Leitungs- und Koordinationsstelle einer Leitungs- und Koordinationsstelle. Der Bundesrat würde zwar genau konzessionnserteinde Behörde bleiben, die Überwachung der Konzessionnseinhaltung aber dem Schweizer Radio- und Fernsehrat übertragen, dessen Autonomie des Bundesgerichts entspräche, ohne jedoch genausweit zu gehen. Dieser Rat müsste eine relativ beschränkte Mitgliederzahl (z.B. 24) umfassen und sämtliche",
+      "bbox": {
+        "x_pct": 7.34,
+        "y_pct": 5.233,
+        "w_pct": 42.009,
+        "h_pct": 84.058
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was heavily fragmented and incomplete in OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bevölkerungsgruppen miteinbezie hen, die allerdings nicht proportional vertreten wären, sondern gemäss der Kompetenz der von den wichtigsten Gruppen der Gemeinschaft delegierten Persönlichkeiten. Gewählt würden die Ratsmitglieder von der Bundesversammlung, und zwar aufgrund entsprechender, von einer Ad-hoc-Kommission aus Vertretern beider Kammern vorbereiteter Dossiers, wobei dem Bundesrat ein Vorschlagsrecht zustehen würde. Wie man sieht, handelt es sich hierbei also um die Schaffung eines Organs, das die elektronischen Medien dem Ursprung der allgemeinen Wahl durch das Volk näherbrächte.",
+      "bbox": {
+        "x_pct": 52.021,
+        "y_pct": 5.395,
+        "w_pct": 41.553,
+        "h_pct": 34.243
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and text completion."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aus den oben dargelegten Gründen fällt es mir schwer, an ein effektives Wirkungsvermögen eines solchen Rates in Bezug auf eine kritische Beurteilung bereits gestellter Sendungen zu glauben. Hingegen scheint es mir prädestiniert, beim Entstehungsprozess der Sendungen eine beträchtliche Verantwortung wahrzunehmen, indem er zuerst die Ausbildung und später die Auswahl der Programmschaffenden überwacht, um schliesslich auch für ihre Diversität innerhalb der Produktionsequipen zu sorgen. Hier muss die Einflussnahme ansetzen, denn hier spielt sich alles ab. Kein System von Regeln, Prinzipien und Verboten eignet sich dazu, die elektronischen Medien in die Demokratie einzugliedern. Es liegt in der Natur der Sache, dass das Aussergewöhnliche, das Anomale ihnen immer mehr als den ihm geböhrenden Platz einnehmen wird, und das in allen",
+      "bbox": {
+        "x_pct": 52.055,
+        "y_pct": 41.546,
+        "w_pct": 41.815,
+        "h_pct": 47.746
+      },
+      "changed": true,
+      "change_reason": "Removed noise characters like '8' at start, fixed OCR words."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 91.5,
+        "y_pct": 91.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was very poor and fragmented.",
+    "Page number at bottom right was not captured initially.",
+    "Author signature not present, but text needs careful proofreading."
+  ],
+  "doc_id": "2430",
+  "page": 7,
+  "elapsed_seconds": 24.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pour dépasser l'histoire vers son unité reste lui-même une tâche au fil de l'histoire. Nous ne possédons pas la connaissance de l'unité ; mais dans la mesure où nous en vivons, nous vivons, dans l'histoire, transhistoriquement.",
+      "bbox": {
+        "x_pct": 7.588,
+        "y_pct": 6.17,
+        "w_pct": 83.645,
+        "h_pct": 7.995
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout élan pour dépasser l'histoire devient illusoire si nous abandonnons son terrain propre. Le paradoxe fondamental de notre existence, ne pouvoir dépasser le monde qu'en vivant en lui, se répète dans la conscience historique qui s'élève vers un au-delà de l'histoire. Aucun chemin ne permet de contourner le monde, il faut toujours passer par lui ; aucun chemin ne permet de contourner l'histoire, tous passent en elle.",
+      "bbox": {
+        "x_pct": 7.764,
+        "y_pct": 13.65,
+        "w_pct": 83.835,
+        "h_pct": 13.573
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "(Vom Ursprung und Ziel der Geschichte, p. 262-263)",
+      "bbox": {
+        "x_pct": 41.775,
+        "y_pct": 26.821,
+        "w_pct": 49.512,
+        "h_pct": 2.511
+      },
+      "changed": true,
+      "change_reason": "Relabeled as caption as it functions as a source citation."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "61 TEXTE NECROLOGIQUE DE LA PLUME DE KARL JASPERS",
+      "bbox": {
+        "x_pct": 7.764,
+        "y_pct": 32.708,
+        "w_pct": 61.07,
+        "h_pct": 3.736
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Karl Jaspers est né à Oldenburg le 23 février 1883. Il doit à ses parents une éducation sérieuse et un amour qui l'a enveloppé pour toujours ; au lycée une formation humaniste ; à l'Université l'accès à l'universalité de la recherche scientifique. Il a joui du noble privilège de pouvoir vivre dans la liberté, en professeur qui s'assigne lui-même ses devoirs. Par son enseignement il a pu contribuer pour sa part à la continuation de la tradition, en prenant appui avec confiance sur le sens de l'Université en Occident. La merveilleuse ville de Heidelberg, la vénérable cité de Bâle, tels furent les lieux où il s'efforça, dans la faible mesure de ses forces, de s'acquitter de sa tâche.",
+      "bbox": {
+        "x_pct": 7.412,
+        "y_pct": 38.158,
+        "w_pct": 84.011,
+        "h_pct": 21.028
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout ce qu'il lui a été donné de réaliser, il n'aurait pu le faire sans sa femme, Gertrud Mayer. Dès le temps de ses études, elle l'a accompagné d'un amour sans borne, ne souffrant aucune insincérité, impitoyable dans son exigence. Comme s'ils s'étaient rencontrés en ce monde en venant d'un autre, inconcevable, comme s'ils se souvenaient sans pourtant savoir, ils vécurent, avec une gratitude infinie, la réalité quotidienne de leur vie, au fil des années changeantes, pendant plus d'un demi-siècle. C'est dans cette existence commune que grandit la quête philosophique, dont le germe était là dès les années d'école, mais qui s'épanouit alors et devint leur vocation à tous deux.",
+      "bbox": {
+        "x_pct": 7.182,
+        "y_pct": 59.1,
+        "w_pct": 84.106,
+        "h_pct": 20.96
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Intimement unis, ils avaient porté ensemble la peine de la maladie, dont depuis sa jeunesse il n'avait jamais cessé de souffrir. Puis vinrent les douze années d'angoisse sous le national-socialisme. Miraculeusement protégés ils passèrent à travers les forces menaçantes.",
+      "bbox": {
+        "x_pct": 7.141,
+        "y_pct": 79.803,
+        "w_pct": 83.821,
+        "h_pct": 9.914
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "117",
+      "bbox": {
+        "x_pct": 86.58,
+        "y_pct": 91.86,
+        "w_pct": 3.75,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer for the page number."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 5,
+  "issues": [
+    "Page number at bottom right was labeled as text",
+    "Source attribution caption was labeled as text",
+    "Extensive typos in transcriptions for most paragraphs"
+  ],
+  "doc_id": "1520",
+  "page": 123,
+  "elapsed_seconds": 6.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

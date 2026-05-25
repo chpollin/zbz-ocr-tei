@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "150 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 17.5,
+        "y_pct": 10.3,
+        "w_pct": 68.3,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header and page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fattestation du tiers social   innombrable; de tous les pourraient  chacun avoir sur lui comE de Vue",
+      "bbox": {
+        "x_pct": 17.131,
+        "y_pct": 13.189,
+        "w_pct": 68.468,
+        "h_pct": 7.821
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Espace physique . Le sujet est physicien . Lespace étant pour un rapporl enlre des phénomènes, e phy",
+      "bbox": {
+        "x_pct": 17.166,
+        "y_pct": 23.485,
+        "w_pct": 68.583,
+        "h_pct": 39.058
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Espace mathématique. Le sujet est mathémalicien . ne cherche que cohérence, non Tadéquation que ce s",
+      "bbox": {
+        "x_pct": 17.477,
+        "y_pct": 63.197,
+        "w_pct": 68.353,
+        "h_pct": 11.488
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to text"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "List items were incorrectly labeled as list_item instead of text",
+    "Missing page header region",
+    "Label mappings did not follow the requested scheme"
+  ],
+  "doc_id": "110",
+  "page": 152,
+  "elapsed_seconds": 6.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from list_item to text": 2,
+    "ADDED": 1
+  }
+}

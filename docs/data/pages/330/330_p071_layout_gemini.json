@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 37",
+      "bbox": {
+        "x_pct": 28.756,
+        "y_pct": 7.947,
+        "w_pct": 58.74,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Identified running header incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par confusion), une valeur absolue et souveraine. rattach\u0000e au fondement religieux, voulue par Dieu au m\u0000eme titre que l\u0000ordre social avec ses privil\u0000eges. On avait d\u0000es lors le devoir de la d\u0000efendre, par la guerre s\u0000il le fallait.",
+      "bbox": {
+        "x_pct": 2.27,
+        "y_pct": 10.873,
+        "w_pct": 84.735,
+        "h_pct": 8.797
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On le voit, le go\u0000ut de l\u0000ordre, ou plut\u0000ot le respect de la hi\u0000erarchie des privil\u0000eges d\u0000une part, et, de l\u0000autre, la Patrie incarnant de fa\u0000con quasi religieuse ce respect, cet attachement \u0000a ce qui est, \u0000a ce que le pass\u0000e a l\u0000egu\u0000e, se refl\u0000etent exactement dans la conception qui fut celle de la Soci\u0000et\u0000e des Nations, et qui est encore celle des Nations Unies : une volont\u0000e, en soi absurde d\u0000embl\u0000ee, d\u0000instaurer un droit entre nations absolument souveraines.",
+      "bbox": {
+        "x_pct": 2.27,
+        "y_pct": 19.011,
+        "w_pct": 84.68,
+        "h_pct": 14.679
+      },
+      "changed": true,
+      "change_reason": "Corrected text content alignment and structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans ces conditions, on a beau la mettre hors la loi, la guerre a sa place dans le monde. Id\u0000eologiquement elle est un malheur, mais non un crime. Ou plut\u0000ot, en tant que malheur, l\u0000id\u0000eologie l\u0000ignore. C\u0000est pourquoi ce sont, ici encore, les courants r\u0000evolutionnaires qui ont fait appara\u0000itre peu \u0000a peu, dans la litt\u0000erature en particulier, la r\u0000ealit\u0000e charnelle de la guerre. L\u0000id\u0000eologie lib\u0000erale conservatrice, disions-nous, a voulu ignorer les r\u0000ealit\u0000es \u0000economiques, cette chair de la vie sociale, comme aussi la chair voluptueuse ou difficile de l\u0000amour. Elle s\u0000est de m\u0000eme efforc\u0000ee de donner \u0000a la guerre une figure abstraite et spirituelle, faite de g\u0000eom\u0000etrie et d\u0000id\u0000eal, de strat\u0000egie et d\u0000h\u0000ero\u0000isme. Le sang et le souffle, la boue, le feu, le froid, la pourriture, tout cela appartenait au domaine de l\u0000ind\u0000ecence, et donc au silence. Remarquons la place que tient la mort dans les exhortations officielles, la mort du h\u0000eros, \u0000 non sa mutilation et sa lente d\u0000ech\u0000eance. La mort, si commod\u0000ement splendide et abstraite.",
+      "bbox": {
+        "x_pct": 2.465,
+        "y_pct": 33.36,
+        "w_pct": 84.861,
+        "h_pct": 33.333
+      },
+      "changed": true,
+      "change_reason": "Corrected text content alignment and structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le plan \u0000economique, l\u0000id\u0000eologie lib\u0000erale conservatrice se r\u0000eclame avant tout de la libert\u0000e et du droit d\u0000initiative. L\u0000\u0000egaliste sur le plan politique, o\u0000u elle voit dans la loi la condition, la protection et l\u0000instrument de la libert\u0000e, elle refuse la loi sur le terrain \u0000economique. En apparence, elle r\u0000eclame la libert\u0000e partout : par la d\u0000emocratie dans la politique int\u0000erieure, par la souverainet\u0000e nationale dans la politique internationale, par la libre concurrence dans le domaine \u0000economique. Cette libert\u0000e est li\u0000ee \u0000a une conception profond\u0000ement individualiste : la d\u0000emocratie et la libre concurrence permettent \u0000a l\u0000individu de s\u0000\u0000epanouir sans entraves, la",
+      "bbox": {
+        "x_pct": 2.368,
+        "y_pct": 68.119,
+        "w_pct": 84.916,
+        "h_pct": 21.096
+      },
+      "changed": true,
+      "change_reason": "Corrected text content alignment and structure."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 76.5,
+        "y_pct": 89.5,
+        "w_pct": 2.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number incorrectly labeled as text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Running header was incorrectly labeled as text",
+    "Page number at bottom was incorrectly labeled as text",
+    "OCR text content for main paragraphs was fragmented or misidentified in initial regions"
+  ],
+  "doc_id": "330",
+  "page": 71,
+  "elapsed_seconds": 7.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

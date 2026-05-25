@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "126",
+      "bbox": {
+        "x_pct": 109.05,
+        "y_pct": 80.8,
+        "w_pct": 5.4,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 393.0,
+        "y_pct": 81.3,
+        "w_pct": 21.4,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Running header incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "contemplation n'est jamais finie; que le corps contemplé est à recommencer sans trêve parce qu'il n'a ni fin, ni fond. L'éternité changea de visage. Jusqu'alors son aspect sensible était d'effacement, d'écoulement, de fuite, et ce qui me ramenait à elle, c'était cet univers plus fluide que l'eau. Echos et regrets, absences, espaces, oiseaux qui disparaissent en plongeant dans le bleu, nuages qui se défont, amour. Maintenant l'éternité, c'était la plasticité même du présent, la richesse que contiennent les formes à la surface d'elles-mêmes et que jamais je ne pourrais boire jusqu'à la dernière goutte. Et parce que l'éternité m'échappait avec son nouveau visage, maintenant qu'elle était dans les choses, plus douloureusement, d'une façon plus urgente et plus indéniable que lorsqu'elle était dans une rêverie autour des choses, un amour d'elle me vint, plus fort et plus profond qu'avant, car l'amour est fils de pauvreté.",
+      "bbox": {
+        "x_pct": 10.905,
+        "y_pct": 12.476,
+        "w_pct": 80.986,
+        "h_pct": 43.072
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui, pauvreté. Pauvreté encore dans la plénitude actuelle, dans la sécurité actuelle. Je regarde autour de moi, au delà du cercle éclairé par la lampe, je regarde la fenêtre; je n'y vois que le reflet de la chambre pleine de nuit, et, en m'approchant, celui de mon visage, du haut de mon visage seulement, avec des yeux étrangers. Il faut que j'appuie mon front contre la vitre et que je fasse un écran de mes deux mains pour arriver à voir dehors un balancement de branches nues, dégingandées, sous une lune transparente en train de fuir parmi les",
+      "bbox": {
+        "x_pct": 10.635,
+        "y_pct": 60.274,
+        "w_pct": 81.257,
+        "h_pct": 25.737
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page number at top left incorrectly identified as text.",
+    "Running header incorrectly identified as text.",
+    "Transcriptions for both paragraphs were severely truncated in the input."
+  ],
+  "doc_id": "40",
+  "page": 124,
+  "elapsed_seconds": 4.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

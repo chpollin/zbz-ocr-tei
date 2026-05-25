@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "196",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 77.0,
+        "w_pct": 43.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "The page number 196 is a page header/footer component, not a paragraph."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "UN ART DES IDÉES",
+      "bbox": {
+        "x_pct": 399.0,
+        "y_pct": 77.0,
+        "w_pct": 213.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "The text 'UN ART DES IDÉES' is a running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "blèmes, des entités aux êtres, des symboles nouveaux; des formes et des formules de développement au trésor des jeux de l'esprit et de ses constructions arbitraires? » Le philosophe voulait absorber l'artiste; c'est le contraire qui s'est produit. La philosophie « ne trouve plus sa justification, l'apaisement de sa conscience et sa véritable « profondeur » que dans sa puissance constructive et dans sa liberté de poésie abstraite. Seule, une interprétation esthétique peut soustraire à la ruine de leurs postulats plus ou moins cachés, aux effets destructeurs de l'analyse du langage et de l'esprit, les vénérables monuments de la métaphysique. Les Vérités philosophiques se feront belles comme se sont faites belles, à mesure qu'on cessait d'y croire, les idoles primitives. » La métaphysique deviendra « un art des idées » et le philosophe sera un artiste qui « donnera vie et mouvement aux choses abstraites, ce qui « permettrait de sauver les Noumènes par le seul goût de leurs harmonies intrinsèques ». Et ce n'est pas là seulement une possibilité, poursuit Valéry; examinons ce que sont pour nous les systèmes du passé; nous verrons qu'il n'en reste absolument rien, s'il n'en reste des œuvres d'art. Rien n'est plus personnel sous l'apparence de l'universel que l'activité du philosophe. On a l'habitude de lier les notions de « philosophie et de langage ». Or la nature du langage est contraire à l'entreprise des philosophes. « Les plus puissants se sont consumés dans la tentative de faire parler leur",
+      "bbox": {
+        "x_pct": 136.0,
+        "y_pct": 120.0,
+        "w_pct": 767.0,
+        "h_pct": 773.0
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text and unified the paragraph."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Page number and running header incorrectly identified as paragraph.",
+    "OCR text was heavily corrupted (e.g., '1l01veaux')."
+  ],
+  "doc_id": "20",
+  "page": 198,
+  "elapsed_seconds": 4.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

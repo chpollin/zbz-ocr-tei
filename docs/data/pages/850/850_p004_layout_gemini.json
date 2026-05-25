@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 100.0,
+        "y_pct": 866.0,
+        "w_pct": 14.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page number 12 detected as paragraph text; reclassified to page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 877.0,
+        "y_pct": 846.0,
+        "w_pct": 17.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number 13 detected as paragraph text; reclassified to page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "où chacun se trouvant plus ou moins la place correspondant à ses capacités, l'excuse de la malchance perdrait sa vertu consolatrice.",
+      "bbox": {
+        "x_pct": 10.37,
+        "y_pct": 12.615,
+        "w_pct": 35.713,
+        "h_pct": 7.096
+      },
+      "changed": true,
+      "change_reason": "Text corrupted in OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais sélectionner et orienter ne signifie pas rejeter dans le néant. Ceux ne sont retenus pas pour les études les plus difficiles. Je vois au contraire, dans notre société contemporaine, naître de toutes parts des besoins d'hommes formés de façons très diverses, et bien différents de ceux qui sortent de nos écoles et de nos universités actuelles. Par exemple, on a besoin d'un grand nombre d'animateurs dans les maisons de la jeunesse ; pour les masses d'enfants qui vont faire des études après avoir été culturellement sous-alimentés dans leur milieu familial ; pour l'éducation permanente après la fin de la scolarité ; on a besoin de moniteurs de divers types, en très grand nombre, pour l'aide aux pays en développement ; on a besoin de scientifiques et de techniciens ayant des formations diverses et de niveaux inégaux ; etc. C'est pourquoi je pense que l'Université devrait comporter des types de programmes d'études beaucoup plus variés, de durée inégale, combinant des enseignements de diverses facultés, couronnés par des diplômes différents. Cela lui permettrait de répondre d'une façon beaucoup plus souple aux besoins très variés et changeants de nos sociétés. Et cela permettrait peut-ètre aussi de vaincre un certain nombre d'idées absurdes sur la prétendue hiérarchie de professions, qui exigent pourtant chacune, pour étre dignement exercées, des ensembles de qualités si différentes qu'elles sont proprement incommensurables. Il est par exemple absurde d'établir un rapport d'infériorité ou de supériorité entre une jardinière d'enfants, un maître secondaire ou un professeur d'Université.",
+      "bbox": {
+        "x_pct": 9.972,
+        "y_pct": 21.813,
+        "w_pct": 35.889,
+        "h_pct": 61.669
+      },
+      "changed": true,
+      "change_reason": "Text corrupted in OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Université doit encore à la société la garantie de compétence de ceux auxquels elle décerne ses grades. Quand un candidat a reçu son titre de docteur en médecine, on doit pouvoir lui confier son corps, et ses professeurs en sont garants. Cela est évident en médecine. Hélas, cela l'est moins quand il s'agit de culture, ou de sciences sociales et humaines, parce que nous ne croyons guère, dans notre civilisation actuelle, aux conséquences réelles des activités de culture ou de sciences humaines. Mais elles en ont. Elles en ont de lointaines et de formidables. Là aussi, la responsabilité des professeurs est engagée, en particulier lorsqu'il s'agit de lâcher un maître qui, grâce à son diplôme, formera ou déformera, stimulera ou étouffera, année après année, trente à quarante volées d'enfants.",
+      "bbox": {
+        "x_pct": 56.269,
+        "y_pct": 12.97,
+        "w_pct": 34.407,
+        "h_pct": 32.983
+      },
+      "changed": true,
+      "change_reason": "Text corrupted in OCR extraction."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text extraction is heavily garbled.",
+    "Page numbers 12 and 13 were misidentified as paragraph text.",
+    "Bbox contents need manual re-transcription."
+  ],
+  "doc_id": "850",
+  "page": 4,
+  "elapsed_seconds": 8.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

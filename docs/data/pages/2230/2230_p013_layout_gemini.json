@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 28 -",
+      "bbox": {
+        "x_pct": 45.403,
+        "y_pct": 59,
+        "w_pct": 9.113,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text and needs to be marked as _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "druck auf die Tatsache, da die technischen Veränderungen so schnell sind, da sie ganz neue Kompetenzen erfordern und die in Gefahr sind, sich im Laufe eines einzigen Lebens mehrmals zu verändern. Das erfordert in der Bildung vielfältige Zugänge, eine Plurivalenz der Basiselemente und der Empfänglichkeit der Intelligenz sowie, demzufolge, auch Zeiten der Wiederaufbereitung in allen Gebieten, wenn man Wert auf Vollbeschäftigung und darauf legt, Arbeitslosigkeit aufgrund der Unfähigkeit der Kompetenzen zur Anpassung zu vermeiden.",
+      "bbox": {
+        "x_pct": 12.419,
+        "y_pct": 13.472,
+        "w_pct": 78.79,
+        "h_pct": 19.139
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das alles ist wahr und legitim und - erlauben Sie mir, dies nebenbei zu bemerken - schließt ein ganz anderes und sogar entgegengesetztes Verhalten mit ein als dasjenige, von dem ich eingangs gesprochen habe und welches das Dogma von der Überlegenheit des Neuen entstehen ließ. Je weniger die anfängliche Einstellung dogmatisch an das Neue gebunden ist, umso mehr bleibt der Geist offen für Anpassungen, neue Methoden und neue Fähigkeiten, die notwendig geworden sind.",
+      "bbox": {
+        "x_pct": 12.282,
+        "y_pct": 33.563,
+        "w_pct": 79.089,
+        "h_pct": 17.024
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber über diese sozialen und praktischen Betrachtungen hinaus gibt es noch etwas viel tiefergehendes. Das menschliche Wesen, in welchem Beruf auch immer es stehe, das sich zufriedengibt mit dem, was es ist, was es weiß und was es kann, beweist so, daß es seinen Sinn für den Mangel, das ständige Ungenügen, das Mehr-Sein-Müssen als man ist, verloren hat. Von daher geht für ihn der Sinn des Lebens verloren. Es wird sich selbst als menschliches Wesen untreu, weil es sich nicht mehr verändert. In unserer Zeit genügt es nicht mehr, eine bestimmte Menge an Wissen anzuhäufen und sich dann neuen Techniken anzupassen. Man muß sich auch noch selbst als menschliches Wesen treu bleiben, und im Gegensatz zu dem, was man sich manchmal vorstellt, gibt es keine Treue ohne Veränderung - dasselbe gilt übrigens für das Umgekehrte, es gibt keine permanente Fortbildung ohne Treue.",
+      "bbox": {
+        "x_pct": 12.097,
+        "y_pct": 51.465,
+        "w_pct": 79.194,
+        "h_pct": 30.063
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vielleicht heiÙt wirklich alt werden: sich nicht mehr in Treue",
+      "bbox": {
+        "x_pct": 12.153,
+        "y_pct": 82.44,
+        "w_pct": 75.403,
+        "h_pct": 1.75
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 1,
+  "issues": [
+    "Page number at top was missing from provided list and required addition as page_header.",
+    "OCR text content for paragraphs was truncated or incorrect in the original input, fixed to match image content."
+  ],
+  "doc_id": "2230",
+  "page": 13,
+  "elapsed_seconds": 6.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

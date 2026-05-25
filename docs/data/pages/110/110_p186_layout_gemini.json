@@ -1,0 +1,57 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "184 L'Être et la forme",
+      "bbox": {
+        "x_pct": 20.472,
+        "y_pct": 2.0,
+        "w_pct": 68.502,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "se contenlent de   s'épancher. Le moyen dexpression de ce genre le plus primitif; ce sont les les en",
+      "bbox": {
+        "x_pct": 20.472,
+        "y_pct": 14.48,
+        "w_pct": 68.502,
+        "h_pct": 21.739
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est de prime abord évident que l'affectivité joue un rôle dans la conception de l'œuvre, ou plus justement dans l'impulsion à la créer. On ne fait jamais un effort sans un mouvement affectif. Mais ce n'est pas n'importe quel mouvement affectif qui peut déclencher un effort artistique créateur, capable de faire exister une œuvre d'art. Par exemple, la jouissance donnée par l'agrément ou la beauté du modèle et le désir de perpétuer cette jouissance, dont on a cru souvent qu'ils étaient les motifs normaux de la création artistique, me paraissent ambigus, et en soi tout à fait insuffisants. Insuffisant aussi le besoin d'exhaler sa douleur, d'épancher sa plainte. Car alors le trompe-l'œil ou la photographie suffiraient dans le premier cas, et les pleurs dans le second. Non, - je crois que la première impulsion affective à une création d'art doit déjà étre envisagée par rapport à la création. Elle est joie créatrice. Elle est la joie de celui qui, voyant, entendant, recevant une impression, s'aperçoit qu'il peut faire quelque chose de cette impression, - qu'il va en faire quelque chose. Il découvre une occasion de créer, il esquisse déjà sa créature. C'est à cause de la spécificité de cette joie que la perméabilité à la beauté de la nature ne suffit pas à la création de vraie peinture, et qu'on ne saurait passer directement de l'authenticité et de la profondeur de l'expérience intime",
+      "bbox": {
+        "x_pct": 19.931,
+        "y_pct": 36.319,
+        "w_pct": 69.041,
+        "h_pct": 39.043
+      },
+      "changed": true,
+      "change_reason": "FIX: Corrected bbox and merge split text block"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original bbox for paragraph 2 was incorrect/split incorrectly",
+    "Missing page header"
+  ],
+  "doc_id": "110",
+  "page": 186,
+  "elapsed_seconds": 7.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "FIX: Corrected bbox and merge split text block": 1,
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La sensibilité actuelle à la dimension eschatologique du message biblique condamne-t-elle la sensibilité de l’âge classique à la présence de l’éternel dans les instants privilégiés? La préférence accordée à l’éthique annonce-t-elle le déclin de la «theôria» et l’avènement de la «praxis»? La question de Dieu serait-elle en définitive une question relative plus à une pratique de vie qu’à une connaissance spéculative? On pressent combien l’influence de Kant est sous-jacente à cette manière de poser le problème de Dieu: que puis-je espérer? Dieu, la liberté, l’immortalité de l’âme, postulats de la fonction pratique de la raison, la croyance comme ce qui permet de tenir pour vrai ce qui est indévident... Mais pareille influence qui se fait d’ailleurs sentir à travers celle de Hegel, de Marx, de Nietzsche chez les théologiens contemporains, abolit-elle d’autres influences, plus lointaines ou bien les véhicule-t-elle ce qu’elles ont de vivant? Le débat est ouvert; les avis s’affrontent.",
+      "bbox": {
+        "x_pct": 14.722,
+        "y_pct": 8.758,
+        "w_pct": 65.512,
+        "h_pct": 29.231
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated. Corrected to include the full text within the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais faire à ce sujet deux remarques pour terminer: certains théologiens résolvent ces questions de manière radicale; ils refusent les acquis de la tradition au nom d’une démythologisation et d’une deshellénisation poussées à l’extrême; ils procèdent ainsi à une sorte de déracinement dont les conséquences seront funestes pour la théologie. Qui les fascine? Ne seraient-ce pas les sciences humaines et leurs résultats spectaculaires dont ils sont incapables de faire une critique? Ils se laissent entraîner par le courant et montent dans le dernier bateau au risque d’oublier la spécificité de la théologie et la manière rigoureuse de poser le problème de Dieu. Au cours de ces quelques remarques, j’ai tenté de remonter ce courant et d’approcher le foyer originaire de la théologie, sans me laisser séduire par les sirènes des sciences humaines, mais sans récuser les droits de la critique. Il faut encore méditer la leçon des Pères et des docteurs de l’Eglise, même si les instruments philosophiques dont ils usaient, les éloignaient de la thématique biblique. Car il n’y a de vraie recherche théologique qu’enracinée dans la tradition qui porte en elle à sa manière la question de Dieu et la fait vivre et revivre.",
+      "bbox": {
+        "x_pct": 14.666,
+        "y_pct": 38.422,
+        "w_pct": 65.697,
+        "h_pct": 35.709
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated. Corrected to include the full text within the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une seconde remarque inséparable de la première: dans la clarté de la tradition, pour peu qu’on veuille se laisser éclairer par elle, on s’aperçoit que Dieu adresse sa question et son appel à l’homme de manière de plus en plus universelle, en tenant compte toujours moins des distinctions de races, de culture, de nation. Dans cette ouverture vers l’universalité que pratique de plus en plus la tradition au",
+      "bbox": {
+        "x_pct": 14.988,
+        "y_pct": 74.017,
+        "w_pct": 65.27,
+        "h_pct": 11.909
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated. Corrected to include the full text within the bounding box."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "19",
+      "bbox": {
+        "x_pct": 77.926,
+        "y_pct": 88.082,
+        "w_pct": 2.21,
+        "h_pct": 2.063
+      },
+      "changed": true,
+      "change_reason": "Identified page number and relabeled to page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction was incomplete for all paragraph blocks.",
+    "Page number at the bottom was missing a label."
+  ],
+  "doc_id": "3100",
+  "page": 20,
+  "elapsed_seconds": 5.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

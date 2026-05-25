@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 39.122,
+        "y_pct": 84.708,
+        "w_pct": 21.757,
+        "h_pct": 1.708
+      },
+      "changed": true,
+      "change_reason": "Identified as running header, not main text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "95",
+      "bbox": {
+        "x_pct": 87.77,
+        "y_pct": 84.708,
+        "w_pct": 2.297,
+        "h_pct": 1.508
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, not main text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pas sans cesse, toujours les mêmes, toujours le même pas, sans fatigue, et les mêmes sauges se balançaient toujours au bord du chemin. Je me rappelle encore mes mains pendantes, ouvertes, enveloppées de vent.",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 12.694,
+        "w_pct": 80.986,
+        "h_pct": 10.34
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y avait une île qui n'existait qu'un instant après le coucher du soleil. Jamais la vibration de la lumière n'y atténuait l'impérieux contour de chaque feuille et de chaque pétale. Jamais l'ombre ni la brume n'en estompaient les lointains. Le silence y était tellement absolu qu'il n'avait plus la paix du silence et ressemblait à un cri sans fin. Sur la côte, on voyait des vagues sculpturales, des vagues de marbre toujours semblables se briser sans cesse contre la même grève sans un bruissement. Des fleurs de velours nocturne à la corolle large tendaient sous les feuillages de longues tiges flexibles. Elles n'avaient aucun parfum et je n'ai pas osé les cueillir. D'ailleurs je n'en avais pas envie parce qu'elles ne se fanaient jamais. Quelque part il y avait de l'eau. Eau brillante à force d'être calme et à force d'être noire. Eau sacrée. Un jour j'y ai plongé un doigt. Des cercles tranquilles se propagèrent à sa surface, et ne disparurent plus.",
+      "bbox": {
+        "x_pct": 10.446,
+        "y_pct": 25.454,
+        "w_pct": 80.946,
+        "h_pct": 42.949
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parfois ces rêves ressemblaient à un sommeil, mais lucide, transparent, sans aucun épaississement de la respiration et du corps. Parfois ils ressemblaient au sentiment que j'avais de la mort par leur éternité définitive. Puis la vie venait me reprendre par une horrible angoisse. Vivante, je me mettais à attendre, à attendre dans la",
+      "bbox": {
+        "x_pct": 10.405,
+        "y_pct": 70.633,
+        "w_pct": 80.905,
+        "h_pct": 15.35
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Text OCR was severely corrupted and needs transcription correction.",
+    "Header and page number were incorrectly labeled as text.",
+    "The bounding box for the middle paragraph was too large, encompassing blank space."
+  ],
+  "doc_id": "40",
+  "page": 93,
+  "elapsed_seconds": 4.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 23 -",
+      "bbox": {
+        "x_pct": 45.459,
+        "y_pct": 5.864,
+        "w_pct": 9.176,
+        "h_pct": 1.766
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une surévaluation permanente de tout ce vient après par rapport à ce qui était avant. Il est dès lors évident, si cela est vrai, si la formation permanente est une nécessité pour les hommes en tant qu'hommes, et pour les hommes d'aujourd'hui à bien plus forte raison, que les techniciens de l'information prennent une importance d'autant plus grande. C'est pourquoi on parle tant aujourd'hui de didactique. Une remarque à ce sujet: la didactique, qui a une importance décisive pour tous les métiers, toutes les professions, doit être déterminée dans tous les métiers, toutes les professions par une certaine idée qu'on se fait de l'être humain.",
+      "bbox": {
+        "x_pct": 10.403,
+        "y_pct": 13.153,
+        "w_pct": 80.54,
+        "h_pct": 23.204
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le but est pas, j'espère, de faire de l'être humain un rival du computer, si développé qu'il soit. On veut qu'il soit un être humain. C'est à dire, comme je le disais, un être libre, avec une visée, et par conséquent une responsabilité. Même si les opérations logiques du computer sont plus rapides, même si le cerveau peut être considéré comme un computer supérieur, il reste entre eux une différence fondamentale: l'être humain, à l'aide de son cerveau, accomplit des opérations logiques, il le fait parce qu'il veut que le résultat de ces opérations soit vrai.",
+      "bbox": {
+        "x_pct": 10.427,
+        "y_pct": 37.588,
+        "w_pct": 79.274,
+        "h_pct": 19.31
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or la machine, le computer ne veut rien du tout. Il ne veut pas être vrai, il ne vise pas le vrai. Il a été programmé par quelqu'un qui voulait, peut-être par l'intermédiaire du computer, atteindre le vrai, mais lui-même ne veut rien. Je suis souvent terrifiée en découvrant à quel point le sens de l'être humain dans sa spécificité est fragile chez nos contemporains; à quel point aussi, face aux problèmes terribles auxquels se trouve confrontée la profession médicale, par exemple, la considération de l'être humain dans sa spécificité joue peu de rôle. On se pose toute sorte de questions quant au fonctionnement de l'individu, du droit, de la société etc. Mais à la spécificité de l'être humain, on n'y réfléchit pas assez.",
+      "bbox": {
+        "x_pct": 10.056,
+        "y_pct": 57.851,
+        "w_pct": 79.242,
+        "h_pct": 25.707
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or il me semble que, dans la formation continue et précisément",
+      "bbox": {
+        "x_pct": 10.218,
+        "y_pct": 84.076,
+        "w_pct": 75.589,
+        "h_pct": 2.109
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial transcriptions were severely corrupted.",
+    "Page header was incorrectly labeled as paragraph text."
+  ],
+  "doc_id": "2230",
+  "page": 8,
+  "elapsed_seconds": 5.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

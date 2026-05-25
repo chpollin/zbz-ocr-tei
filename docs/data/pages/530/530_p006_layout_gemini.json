@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA SUISSE DANS L'EUROPE ACTUELLE 65",
+      "bbox": {
+        "x_pct": 263.0,
+        "y_pct": 66.0,
+        "w_pct": 625.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header including page number as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si bien qu'on se trouve dans cette situation paradoxale qu'au fond, ce qui sauve l'Europe en ce moment, semble-t-il, c'est une lancée récente, mais déjà conservatrice, qui continue, alors que les efforts vraiment actuels sont en fait antieuro-péens. Je regrette que le tableau ainsi tracé soit sombre, mais je le crois vrai. Et je crois qu'il y a, dans la vérité, une espèce de solidité sur laquelle on peut prendre appui.",
+      "bbox": {
+        "x_pct": 11.181,
+        "y_pct": 10.618,
+        "w_pct": 77.977,
+        "h_pct": 19.981
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in the transcription text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais pourtant, sur ce point, m'écarter un peu de ce que M. Lüthy a dit hier ². Je crois qu'on a fait, déjà malgré tout, un énorme chemin vers l'Europe. D'abord — et M. Lüthy le sait bien — l'économique n'est pas aussi séparé du politique qu'il l'a dit. Mais surtout les réalités économiques mordant immédiatement sur les conditions de vie des populations, obligent les empiristes à s'occuper d'elles. Les empiristes, qui peuvent ignorer les idées, les théories et même les pactes politiques, ne peuvent pas ignorer les réalités économiques. Ainsi ce qui a été fait sur le plan économique, et même ce qui n'a pas été fait, mais seulement projeté, a obligé, par exemple, notre presse européenne à se remplir du mot « Europe ». La place du mot « Europe », la surface qu'il couvre dans les pages de nos journaux, me paraît un phénomène capital. Le fait que tout le monde, même sans être fédéraliste, soit actuellement obligé d'employer constamment ce mot, et de le lire à tout bout de champ, c'est quelque chose d'énorme. Je me souviens des temps héroïques où nous faisions des efforts extraordinaires pour faire passer dans les journaux un tout petit communiqué où se trouvait le mot « Europe ». Maintenant",
+      "bbox": {
+        "x_pct": 10.842,
+        "y_pct": 30.309,
+        "w_pct": 77.387,
+        "h_pct": 55.473
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors and misidentified segments."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "² Voir pp. 45 sq.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 860.0,
+        "w_pct": 113.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Identified footnote text at the bottom of the page."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 128.0,
+        "y_pct": 894.0,
+        "w_pct": 12.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Identified bottom page numbering as page_footer/filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR for the body text was severely degraded.",
+    "Page header and footnote were mislabeled as paragraph text.",
+    "Page number at the bottom was mislabeled as paragraph text."
+  ],
+  "doc_id": "530",
+  "page": 6,
+  "elapsed_seconds": 4.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

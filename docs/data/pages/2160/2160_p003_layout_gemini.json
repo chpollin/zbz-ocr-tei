@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch Am Rande der Zeit",
+      "bbox": {
+        "x_pct": 18.107,
+        "y_pct": 10.458,
+        "w_pct": 64.533,
+        "h_pct": 9.901
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 66.237,
+        "y_pct": 47.229,
+        "w_pct": 17.467,
+        "h_pct": 2.061
+      },
+      "changed": true,
+      "change_reason": "This is a sub-heading or name identifier for the biography, better as section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1956-77 Professorin für Philosophie an der Universität Genf. Geboren 1910 in Genf. Schülerin und Übersetzerin von Karl Jaspers. 1966-68 Vorsteherin der Abteilung Philosophie der UNESCO. 1970-72 Vertreterin der Schweiz im Exekutivrat der UNESCO, Teilnahme an mehreren Konferenzen. Mitglied der Nationalen Schweizerischen UNESCO-Kommission. Mitglied der Sozialdemokratischen Partei der Schweiz sowie verschiedener europäischer föderalistischer Organisationen.",
+      "bbox": {
+        "x_pct": 22.805,
+        "y_pct": 49.031,
+        "w_pct": 63.266,
+        "h_pct": 36.489
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text OCR reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1970 Ida Somazzi-Preis, 1972 Dr. h.c. der Theologischen Fakultät der Universität Basel; 1973 Preis für Freiheit und Menschenrechte, der erstmals verliehen wurde. 1979 Montaigne-Preis der Stiftung F.V.S. Hamburg; 1980 Max-Schmidheiny-Preis. Sie veröffentlichte zahlreiche Schriften über Philosophie und Gegenwartsfragen.",
+      "bbox": {
+        "x_pct": 28.675,
+        "y_pct": 76.466,
+        "w_pct": 57.479,
+        "h_pct": 12.618
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text OCR reading and merged with orphaned bottom lines."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "246",
+      "bbox": {
+        "x_pct": 136,
+        "y_pct": 930,
+        "w_pct": 40,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "OCR for paragraph text was heavily truncated and disjointed.",
+    "Page number 246 was missing from initial detection.",
+    "Jeanne Hersch name header was labeled simply as text, missing context.",
+    "Bottom paragraph was split into two separate boxes."
+  ],
+  "doc_id": "2160",
+  "page": 3,
+  "elapsed_seconds": 4.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

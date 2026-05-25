@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Iittérale des objets eux-mêmes; couteaux, de chambre et autres marchandises. pots",
+      "bbox": {
+        "x_pct": 6.921,
+        "y_pct": 4.341,
+        "w_pct": 83.029,
+        "h_pct": 3.915
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc; ni Tordre de succession du futur n 'est véritablement connu au moment présent; ni la val",
+      "bbox": {
+        "x_pct": 7.171,
+        "y_pct": 8.336,
+        "w_pct": 83.154,
+        "h_pct": 15.916
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les optimistes et les pessimistes",
+      "bbox": {
+        "x_pct": 7.672,
+        "y_pct": 28.722,
+        "w_pct": 35.382,
+        "h_pct": 2.444
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre époque est très ambiguë: on peut tout en dire et le contraire. On dire que cest la meilleure d",
+      "bbox": {
+        "x_pct": 7.672,
+        "y_pct": 33.143,
+        "w_pct": 83.317,
+        "h_pct": 21.359
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cc est incontesté, dans notre époque; cest la croissance prodigieuse et multiple des pouvoirs humain",
+      "bbox": {
+        "x_pct": 8.298,
+        "y_pct": 54.341,
+        "w_pct": 83.066,
+        "h_pct": 9.566
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces pouvoirs extraordinaires, on s'y habitue. On en use comme s'ils étaient donnés naturellement. Et",
+      "bbox": {
+        "x_pct": 8.385,
+        "y_pct": 63.802,
+        "w_pct": 83.267,
+        "h_pct": 27.058
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "125",
+      "bbox": {
+        "x_pct": 87.72,
+        "y_pct": 92.41,
+        "w_pct": 3.24,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 100,
+  "num_corrections": 1,
+  "issues": [],
+  "doc_id": "1290",
+  "page": 4,
+  "elapsed_seconds": 5.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

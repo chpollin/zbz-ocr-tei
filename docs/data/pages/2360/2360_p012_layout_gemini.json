@@ -1,0 +1,116 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 22 -",
+      "bbox": {
+        "x_pct": 26.059,
+        "y_pct": 79.528,
+        "w_pct": 2.583,
+        "h_pct": 0.887
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/header, should be excluded."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 23 -",
+      "bbox": {
+        "x_pct": 72.483,
+        "y_pct": 82.528,
+        "w_pct": 2.583,
+        "h_pct": 0.887
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/header, should be excluded."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "technique gu On réalise cing Bix dix Ou C'est une Perspective ouverte ment c'est un de comporte dans",
+      "bbox": {
+        "x_pct": 8.309,
+        "y_pct": 14.608,
+        "w_pct": 36.589,
+        "h_pct": 15.046
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par exemple, Vovs dire une chose Je convaincue qu'à 1 heure actuelle on peut faire beauCoup, beaucou",
+      "bbox": {
+        "x_pct": 5.604,
+        "y_pct": 33.24,
+        "w_pct": 38.908,
+        "h_pct": 55.91
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Arnold Koller, Conseiller national",
+      "bbox": {
+        "x_pct": 55.527,
+        "y_pct": 29.575,
+        "w_pct": 23.7,
+        "h_pct": 2.205
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling in text field."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1'économie de marché actuelle, le finalites produits indugtriela en donnant 1a préférence_ parfois p",
+      "bbox": {
+        "x_pct": 55.391,
+        "y_pct": 33.201,
+        "w_pct": 36.657,
+        "h_pct": 13.373
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 55.187,
+        "y_pct": 50.457,
+        "w_pct": 10.37,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Missed author heading block identified."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai Parlé de la manipulation 51 étaient comune Voug dites Vous avier une confiance purfaite dang le",
+      "bbox": {
+        "x_pct": 54.715,
+        "y_pct": 53.878,
+        "w_pct": 37.556,
+        "h_pct": 31.288
+      },
+      "changed": false
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Page numbers not labeled as filter",
+    "Missing author heading region in initial detection",
+    "Typo in OCR of section heading"
+  ],
+  "doc_id": "2360",
+  "page": 12,
+  "elapsed_seconds": 6.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "unendlich und die gegebene Zeit, die gegebene Aufmerksamkeit werden nicht wieder eingeholt. Die investierte Zeit und Arbeit erwecken das Gefühl des Voneinander-abhängig-Seins und der Dankbarkeit.",
+      "bbox": {
+        "x_pct": 11.827,
+        "y_pct": 8.363,
+        "w_pct": 70.828,
+        "h_pct": 9.315
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich sage immer: Dankbarkeit tut nicht weh. Aber statt Dankbarkeit lernen die meisten Kinder in der Schule, und oft sogar in der Familie, Empörung.",
+      "bbox": {
+        "x_pct": 11.787,
+        "y_pct": 18.387,
+        "w_pct": 70.565,
+        "h_pct": 6.577
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man hat sehr viel von Angst gesprochen, nicht aber von Empörung. Empörung ist viel leichter als irgend etwas anderes. Durch Empörung fühlt man sich über die anderen erhaben, auch wenn man nicht geholfen hat, nichts selbst getan hat, einfach weil man empört ist. Dadurch ist man schon edel. Dankbarkeit aber müßte unterrichtet werden.",
+      "bbox": {
+        "x_pct": 11.432,
+        "y_pct": 25.389,
+        "w_pct": 71.13,
+        "h_pct": 15.232
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dann die Geschichte. Geschichte haben wir kaum noch, und in erster Linie, würde ich sagen, nahe Geschichte: was im letzten Jahrhundert alles geschehen ist, mit welcher Mühe und unter welchen Bedingungen. Diese Vergangenheit ist den Jungen nicht gegenwärtig. Daher wissen sie gar nicht, womit sie die Gegenwart vergleichen sollen. Und die Erwachsenen wissen es auch nicht mehr. – Dann vergleicht man die Gegenwart mit dem Paradies. Im Vergleich mit dem Paradies ist jede Wirklichkeit empörend. Und wenn die Gegenwart empörend ist und man keine Vergangenheit hat, dann wird die Zukunft nichts mehr als notwendiger Raum für das Schwärmen. Dazu kommt, daß die jungen Leute heute sehr oft mit eingeschüchterten Eltern und eingeschüchterten Lehrern leben, so daß sie keine erwachsene Gesellschaft um sich herum haben. Ich habe von „alten Jünglingen“ in einer Schrift gesprochen. Alte Jünglinge, die den Jungen den Hof machen, die unsicher, keine Überzeugung mehr zu haben wagen, weder ethische noch religiöse, noch irgendwelche. Es gibt eben – wie Herr Lobkowicz sagte – keine Selbstverständlichkeiten mehr und auch keinen Sinn.",
+      "bbox": {
+        "x_pct": 10.473,
+        "y_pct": 41.44,
+        "w_pct": 72.352,
+        "h_pct": 45.995
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "287",
+      "bbox": {
+        "x_pct": 78.0,
+        "y_pct": 90.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction was heavily corrupted by OCR errors.",
+    "Page number 287 was missing from the initial region list."
+  ],
+  "doc_id": "2060",
+  "page": 9,
+  "elapsed_seconds": 4.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

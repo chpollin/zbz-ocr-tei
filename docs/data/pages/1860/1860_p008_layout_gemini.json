@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": {
+        "x_pct": 80.4,
+        "y_pct": 73.1,
+        "w_pct": 1.25,
+        "h_pct": 1.55
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur un autre plan, l'énergie atomique, pense-t-on , ne fera qu'accentuer encore l'écart inacceptable entre les pays développés, capables de se la procurer par leurs propres efforts, et les pays pauvres, privés aussi bien de la technologie nécessaire à sa production que des ressources permettant d'acquérir les installations nécessaires à l'étranger. Comme si une pénurie énergétique chez les pays développés pouvait être favorable à une collaboration nord-sud et à la mise en place d'un nouvel ordre économique.",
+      "bbox": {
+        "x_pct": 13.03,
+        "y_pct": 13.968,
+        "w_pct": 69.38,
+        "h_pct": 18.033
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and messy OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur un autre plan encore, l'énergie atomique est considérée à la fois comme l'emblème et le couronnement de la toute-puissante - et toute-honnie - technologie, - elle qui a, dans notre civilisation, transformé les conditions et la durée de la vie, ouvert au grand nombre des possibilités dont nul n'aurait jamais rêvé, remplacé par des machines la peine physique indigne d'êtres humains, mis la culture, sous toutes ses formes, à la portée de tous. Or les Occidentaux de notre temps répètent à l'envi que la civilisation industrielle n'a aucune justification, qu'elle ne tend qu'au profit, qu'elle n'est que \"matérialiste\", qu'elle pollue l'univers, détruit la nature et prive la vie de son sens . Il semble que pour eux une certaine pénurie d'énergie pourrait être bénéfique dans la mesure où elle aurait pour conséquence, justement, de freiner le progrès technique, ou même - qui sait ? - de provoquer une régression. Comme si une vie humaine avait plus de sens lorsque, pressée par les besoins vitaux immédiats, elle ne dispose pas des loisirs permettant de s'interroger sur son sens. Comme si, pour résoudre les nouveaux problèmes que n'importe quel progrès ne manque pas de poser, et notamment ceux de la pollution, on n'était pas obligé de recourir à nouveau à la science et à la technologie.",
+      "bbox": {
+        "x_pct": 12.788,
+        "y_pct": 38.181,
+        "w_pct": 72.28,
+        "h_pct": 43.82
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and messy OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 65.5,
+        "y_pct": 95.8,
+        "w_pct": 30.5,
+        "h_pct": 1.2
+      },
+      "changed": true,
+      "change_reason": "Administrative footer identified and marked as filter."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR was highly truncated and corrupted.",
+    "Page number at the top right was labeled as text.",
+    "Footer metadata at the bottom was labeled as text."
+  ],
+  "doc_id": "1860",
+  "page": 8,
+  "elapsed_seconds": 35.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

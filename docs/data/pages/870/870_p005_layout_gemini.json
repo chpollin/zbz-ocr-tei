@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "330",
+      "bbox": {
+        "x_pct": 10.32,
+        "y_pct": 11.23,
+        "w_pct": 2.26,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ETHICS AND SOCIAL JUSTICE",
+      "bbox": {
+        "x_pct": 22.38,
+        "y_pct": 11.23,
+        "w_pct": 14.11,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IS THE DECLARATION OF HUMAN RIGHTS A SYNTHESIS",
+      "bbox": {
+        "x_pct": 54.12,
+        "y_pct": 9.17,
+        "w_pct": 36.96,
+        "h_pct": 1.55
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "331",
+      "bbox": {
+        "x_pct": 89.28,
+        "y_pct": 9.17,
+        "w_pct": 2.26,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "common Father or the common Creator, others refer to nature as common to all people. In all cases the justifications for human rights are very different, though the source from which all justifications of rights spring.",
+      "bbox": {
+        "x_pct": 10.151,
+        "y_pct": 15.556,
+        "w_pct": 37.8,
+        "h_pct": 5.345
+      },
+      "changed": true,
+      "change_reason": "Corrected bounding box and text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "They have no place in contradictory aspects of human nature. For instance, there are texts which demand unwritten laws, while others state that those people who speak of demands for unwritten laws are mad: they are burying laws, burying rights and recreating a situation of force. And neither view is wholely wrong.",
+      "bbox": {
+        "x_pct": 54.068,
+        "y_pct": 12.363,
+        "w_pct": 37.01,
+        "h_pct": 11.731
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "What strikes one when reading these texts is seeing that most cultures contain something of the Kantian idea, that the human being should never be used only as a means, but always taken also as an end. And this is proposed not because he is such a perfect being, but because he can change, he has the ability of becoming. That is why he deserves and he requires respect, why he has rights. In very different ways, the necessity for this respect is recognized everywhere, even when it is violated, and even if its only expression is a cry of despair. The sense for this respect, in one way or another, is both more common and more different than one would think before looking into it. It seems to me, then, that in order to understand this, we must make use of a faculty other than reason. We need imagination, the kind of sympathetic imagination which enables us to understand different cultures and what it means to be respected and treated like a human being in all of them.",
+      "bbox": {
+        "x_pct": 9.584,
+        "y_pct": 43.275,
+        "w_pct": 37.531,
+        "h_pct": 26.819
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The Universal Declaration of Human Rights 15 ideas when he is working on the level of an international organization. But the Universal Declaration of Human Rights provides the base upon which international organizations may flourish and develop. It is also the point of departure for more precise juridical conventions, i.e., it provides the clear possibility of applying the pressure of international opinion upon absolute sovereign states. When states have signed and ratified a convention, for example the convention against discrimination in education, the international organization asks the member states to give a report every second year saying what is done in their country towards the implementation of the conventions they have ratified. They are required to report and the report is read and discussed in public, on the international scene. Here we have the pressure of international opinion, which, though not juridical, is still somehow above national absolute sovereignty.",
+      "bbox": {
+        "x_pct": 53.614,
+        "y_pct": 32.982,
+        "w_pct": 36.897,
+        "h_pct": 31.918
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Then there is a more important fact: we must take into account, i.e., the present situation about offenses to human rights, that is that most of those that are not the worst victims, for the worst victims are silent. Those people who have been most severely smashed historically have",
+      "bbox": {
+        "x_pct": 9.272,
+        "y_pct": 80.035,
+        "w_pct": 37.855,
+        "h_pct": 6.901
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 9,
+  "issues": [
+    "Severe OCR errors throughout.",
+    "Incorrect label usage for headers and page numbers.",
+    "Bounding box inaccuracies."
+  ],
+  "doc_id": "870",
+  "page": 5,
+  "elapsed_seconds": 7.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

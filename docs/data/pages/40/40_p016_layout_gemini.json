@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 98.4,
+        "y_pct": 74.5,
+        "w_pct": 1.6,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 375.0,
+        "y_pct": 74.5,
+        "w_pct": 218.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "passion jaillie de la terre seule. Une seconde après, tout fut éteint. De subtiles figures de cendre bleutée bordaient le sentier.",
+      "bbox": {
+        "x_pct": 94.6,
+        "y_pct": 118.7,
+        "w_pct": 809.8,
+        "h_pct": 73.2
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors in segment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une détresse m'envahit. La maison était loin encore. Brusquement, je n'eus plus rien de commun avec ce qui m'entourait. Il faisait froid, il allait faire noir, partout de la même façon, car il n'y avait que des choses autour de moi, et les choses sont opaques et lourdes, elles ignorent la vie qui s'use contre elles et ne lui font pas signe. Les ruisseaux sonnaient clair, n'importe où, pour rien, parce que l'ombre est creuse. Je désirais un abri, quatre murs construits par la main de l'homme, des visages, une voix. Je me mis à courir, mais je perdais ma force contre la pente, les pierres roulaient au hasard, chacun de mes pas m'apparut ridiculement petit dans la distance à parcourir. La brume éloignait la façade, fondue dans le bleu nocturne. C'était si facile d'y être déjà en imagination, d'entendre cliqueter le collier du chien qui s'approche sans aboyer, de sentir contre sa paume la poignée de la porte et l'effort qu'il faut pour l'ouvrir, de secouer la boue de ses souliers en frappant du pied sur la dalle de pierre, avec un grand crissement de clous. Dès qu'on a refermé la porte il fait chaud et clair, on voit par la porte de la chambre à manger un coin de nappe mate et un bout du large poêle brillant. Comment était-ce à mon départ? La paysanne desservait, elle traversait le corridor. Elle m'avait parlé et cette fois encore je n'avais pas entendu. Mais je retrouve sa voix, impérative et généreuse, celle des femmes qui ont gourmandé et nourri",
+      "bbox": {
+        "x_pct": 86.4,
+        "y_pct": 195.9,
+        "w_pct": 813.9,
+        "h_pct": 659.4
+      },
+      "changed": true,
+      "change_reason": "Corrected fragmented and incorrect OCR text output to match source image content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was extremely poor quality, requiring full re-transcription.",
+    "Page number and running header were incorrectly included in the text segmentation.",
+    "The segmentation boxes in the provided original JSON for header/footer were missing/wrongly defined based on image coordinates."
+  ],
+  "doc_id": "40",
+  "page": 16,
+  "elapsed_seconds": 5.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

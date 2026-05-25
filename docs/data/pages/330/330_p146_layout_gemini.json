@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "112",
+      "bbox": {
+        "x_pct": 95.0,
+        "y_pct": 77.0,
+        "w_pct": 2.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer/header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 361.0,
+        "y_pct": 77.0,
+        "w_pct": 272.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "leurs propres desseins. Nous arrivons ainsi au second critère de tout régime démocratique : l'existence légale d'une minorité dont les droits sont garantis.",
+      "bbox": {
+        "x_pct": 9.095,
+        "y_pct": 10.579,
+        "w_pct": 85.195,
+        "h_pct": 7.005
+      },
+      "changed": true,
+      "change_reason": "Text OCR correction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toutes les structures légales du régime, quelles qu'elles soient, me paraissent donc se justifier, non par un caractère de justice immédiatement évident (comme le supposent, par exemple, ceux qui voient dans l'institution du suffrage universel la transposition même dans le monde social de l'égalité entre les hommes), mais par la plus ou moins grande efficacité avec laquelle elles garantissent ces deux critères essentiels de la démocratie : droits individuels et droits de la minorité, ces droits assurant à leur tour un contrôle effectif des gouvernants par les gouvernés et devant exclure — idéalement toujours — les abus du pouvoir.",
+      "bbox": {
+        "x_pct": 9.192,
+        "y_pct": 16.64,
+        "w_pct": 85.334,
+        "h_pct": 21.266
+      },
+      "changed": true,
+      "change_reason": "Text OCR correction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc, à mon sens, les lois, les élections, le suffrage universel, les constitutions, la séparation des pouvoirs, l'instruction primaire, toutes ces conquêtes nées du siècle des lumières ne peuvent pas aujourd'hui s'imposer à l'attachement, au dévouement et peut-ètre à la volonté de sacrifice des citoyens pour les mêmes raisons qui leur ont donné naissance. Peut-ètre les hommes d'aujourd'hui se montrent-ils souvent peu disposés à défendre ces conquêtes qui coûtèrent si cher dans un passé en somme assez récent parce qu'on leur a mal appris les aimer. Les lois politiques et sociales ne sont pas le reflet, dans la société humaine, de l'ordre universel — et qu'on emploie à leur propos le même mot qui désigne une relation constante dans le monde physique constitue déjà en soi un abus, d'où découle facilement une dangereuse philosophie. Les élections ne signifient pas que les électeurs, par leur bulletin de vote, se rendent présents jusque dans les organismes gouvernementaux eux-mêmes en la personne de leur élu. Elles n'impliquent pas davantage que tout homme puisse valablement en remplacer un autre, ce qui réduirait l'individu à l'anonymat d'un rouage. Le suffrage universel n'a pas à consacrer la croyance — fausse — que les hommes sont égaux. S'ils le sont, c'est dans leur mystère et dans les possibles inconnaissables de leur liberté, non dans leur intelligence, leurs qualités et leurs jugements. Les libertés ne sont pas la reconnaissance par la société du droit de l'individu à agir comme bon lui semble, sous prétexte que ce qui lui semble bon ne peut que.",
+      "bbox": {
+        "x_pct": 9.234,
+        "y_pct": 37.549,
+        "w_pct": 85.71,
+        "h_pct": 51.845
+      },
+      "changed": true,
+      "change_reason": "Text OCR correction."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Failed to identify page header correctly.",
+    "Failed to identify page number.",
+    "OCR quality was very poor for main paragraph blocks.",
+    "Merging fragmented text blocks into single paragraphs.",
+    "Need to distinguish between header/page content."
+  ],
+  "doc_id": "330",
+  "page": 146,
+  "elapsed_seconds": 6.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

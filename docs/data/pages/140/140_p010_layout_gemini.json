@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DISCONTINUITÉ DES PERSPECTIVES HUMAINES",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 30
+      },
+      "changed": true,
+      "change_reason": "Correcting label from text to heading"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "91",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 34,
+        "h_pct": 32
+      },
+      "changed": true,
+      "change_reason": "Correcting label to filter for page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "non pas que la cohérence de lêtre dépendc de lui. La discontinuité de lêtre entraînerait Pinefficaci",
+      "bbox": {
+        "x_pct": 14.1,
+        "y_pct": 15.174,
+        "w_pct": 73.804,
+        "h_pct": 21.846
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfn, le sujet ne pouvant exister qu'en fonction de l ( en-face )) avec lequel il est aux prises; la",
+      "bbox": {
+        "x_pct": 14.035,
+        "y_pct": 35.954,
+        "w_pct": 73.749,
+        "h_pct": 16.963
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il faut souligner que paradoxalement; la continuité   totale elle aussi, exclurait toute connai",
+      "bbox": {
+        "x_pct": 13.915,
+        "y_pct": 52.234,
+        "w_pct": 73.5,
+        "h_pct": 33.561
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Fixed missing page number label",
+    "Fixed section header label"
+  ],
+  "doc_id": "140",
+  "page": 10,
+  "elapsed_seconds": 7.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Correcting label from text to heading": 1,
+    "Correcting label to filter for page number": 1
+  }
+}

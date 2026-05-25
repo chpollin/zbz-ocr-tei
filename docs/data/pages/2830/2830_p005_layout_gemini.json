@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "zu halten; was ihnen weiter erlaubt, ihren Körper zu vergessen, durch den sie in der Welt gegenwärtig sind und der sie dem Naturgesetz weiterhin unterstellt. Daraus ergeben sich Bequemlichkeiten, die, wie alle Bequemlichkeiten, korrumpierend wirken und viel tiefergreifende Folgen haben als bloß psychische Schwierigkeiten, die man ärztlich heilen könnte.",
+      "bbox": {
+        "x_pct": 12.692,
+        "y_pct": 5.551,
+        "w_pct": 82.098,
+        "h_pct": 13.744
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Mensch, der sein echtes Menschsein anerkennen will, ist dazu verpflichtet, unentwegt die Hindernisse neu aufzudecken, die das Naturgesetz - dem er nie entfliehen kann - seinem Willen und seiner Friedensliebe entgegenstellt. Er hört nie auf, dem Naturgesetz das menschliche Gesetz entgegenzuhalten, von dem er doch weiß, daß es nie den endgültigen Sieg erringen kann.",
+      "bbox": {
+        "x_pct": 12.735,
+        "y_pct": 19.269,
+        "w_pct": 82.012,
+        "h_pct": 15.471
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das menschliche Gesetz wurzelt im Selbstbewußtsein des Ich-Subjekts, das es jedem menschlichen Wesen ermöglicht, Willensakte zu vollziehen, für die es die Verantwortung zu übernehmen fähig ist. Dieses Bewußtsein, diese Anerkennung der Privilegien und der Last der eigenen Freiheit bringt sogleich für das Ich eine andere Anerkennung mit sich: die des gleichen-ungleichen Nächsten, dem er sich gegenüber sieht und zu dem er spricht, also die des »Du«, und bald schon des »Er«, wodurch das Privileg und die Last der Freiheit verallgemeinert bis zu deren Anerkennung in allen Mitmenschen; damit kommt einem jeden Glied eine Würde zu, die im ganzen Gebiet der Natur nicht ihresgleichen hat. Diese Würde, mit den Forderungen, die sich daraus ergeben, begründet das »menschliche Gesetz«, das nach und nach in Form der Menschenrechte formuliert und konkretisiert worden ist.",
+      "bbox": {
+        "x_pct": 12.692,
+        "y_pct": 34.978,
+        "w_pct": 82.055,
+        "h_pct": 33.568
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Naturgesetz ist sozusagen beschreibend. Es beschreibt einen Tatbestand und beruht auf Feststellungen; es nimmt die in der Welt der Lebenden gegebenen Notwendigkeiten zur Kenntnis.",
+      "bbox": {
+        "x_pct": 12.692,
+        "y_pct": 68.661,
+        "w_pct": 82.055,
+        "h_pct": 8.722
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das menschliche Gesetz ist imperativ. Es wendet sich an die verantwortliche Freiheit, deren die Menschen fähig sind, anerkennt deren hohe Würde und zieht daraus Forderungen, die im Prinzip unbedingt und weltweit gelten. Infolgedessen können diese Forderungen, obgleich sie vom Naturgesetz nie befreit sind, nie mit den gleichen Maßen gewogen werden, und sei es",
+      "bbox": {
+        "x_pct": 12.779,
+        "y_pct": 77.559,
+        "w_pct": 81.968,
+        "h_pct": 13.692
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "188",
+      "bbox": {
+        "x_pct": 13.25,
+        "y_pct": 93.68,
+        "w_pct": 4.1,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and correctly identified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original text extraction was truncated in every paragraph.",
+    "Page number 188 was not captured in the original JSON.",
+    "Labeling text as zb_paragraph is consistent, but truncated content needs correction."
+  ],
+  "doc_id": "2830",
+  "page": 5,
+  "elapsed_seconds": 6.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

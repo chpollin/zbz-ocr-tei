@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 249",
+      "bbox": {
+        "x_pct": 296.0,
+        "y_pct": 82.0,
+        "w_pct": 535.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header and page number as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "entre les États fédérés, du contrôle qu'il permet d'exercer sur eux, et de la force qu'il représente à l'extérieur, entre deux blocs hostiles.",
+      "bbox": {
+        "x_pct": 3.162,
+        "y_pct": 10.989,
+        "w_pct": 84.109,
+        "h_pct": 3.093
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text readout to match the content of the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est un des nombreux malheurs de l'après-guerre que les partis socialistes d'Europe n'aient pas reconnu dans le fédéralisme européen leur propre tradition de toujours et, sans doute, leur unique voie de salut. L'histoire des rapports du socialisme et du fédéralisme montre une triste succession d'occasions manquées.",
+      "bbox": {
+        "x_pct": 3.162,
+        "y_pct": 17.442,
+        "w_pct": 84.721,
+        "h_pct": 11.078
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text readout."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant au principe de « non-immixtion dans les affaires intérieures d'un pays étranger », on en voit bien les raisons morales, formelles et pratiques. On voit comment il se lie au « droit des peuples à disposer d'eux-mêmes ». L'État étant censé représenter la volonté des citoyens, c'est respecter les citoyens étrangers, leur liberté, que de s'abstenir de toute intervention touchant la politique de leur gouvernement. Telle est la justification morale. L'État étant souverain, c'est saper le fondement du droit international que d'intervenir dans ses décisions. Telle est la justification juridique et formelle. Enfin, s'il appartenait à tout État de juger ce qui se passe à l'intérieur d'un autre, les motifs « éthiques » pouvant servir de prétexte à une action de force seraient si fréquents que la paix deviendrait encore plus précaire qu'elle ne l'est. Telle est la justification pratique, utilitaire. Mais la première, en tout cas, de ces justifications, n'a de sens que lorsqu'il s'agit des relations entre États à régime homogène, démocratique au sens que nous avons rendu ici à ce mot. Dans un régime fondé sur la terreur, fùt-elle ornée, comme elle l'est toujours, d'une idéologie, l'État ne représente pas les citoyens et ils doivent étre défendus contre lui. La défense des personnes contre l'État devrait constituer l'un des fondements de tout droit international véritable, c'est-à-dire résolument supérieur à l'État national enfin déchu de son abusive souveraineté. Voilà qui répond à la seconde « justification ». Pour ce qui est des risques de guerre, ils existeront toujours en fait et dans tous les régimes. Mais ils continueront à exister en droit, la guerre fùt-elle mille fois proclamée hors la loi, tant qu'aucune instance ne s'érigera au-dessus des États. Bien des vérités ont usé leur vertu à force d'étre énoncées sans que les hommes en aient tiré les conséquences qui s'imposent, mais elles",
+      "bbox": {
+        "x_pct": 2.967,
+        "y_pct": 29.795,
+        "w_pct": 85.237,
+        "h_pct": 59.955
+      },
+      "changed": true,
+      "change_reason": "Corrected substantial OCR readout errors to match the source text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and running header incorrectly identified as paragraph text.",
+    "OCR readout for paragraph 1 was highly corrupted.",
+    "OCR readout for paragraph 2 was highly corrupted.",
+    "OCR readout for paragraph 3 was highly corrupted."
+  ],
+  "doc_id": "330",
+  "page": 283,
+  "elapsed_seconds": 6.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

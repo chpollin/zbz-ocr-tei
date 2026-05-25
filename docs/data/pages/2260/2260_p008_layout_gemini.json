@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'exister; le sentiment d'être proche et séparé, jusqu'à trouver les mots qui savent nommer «l'exil et l'adieu».",
+      "bbox": {
+        "x_pct": 23.699,
+        "y_pct": 11.557,
+        "w_pct": 65.928,
+        "h_pct": 8.586
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled OCR text to match the source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette libre manière d'écrire échappe à la contrainte formelle qui lie les disciplines intellectuelles au genre obligé de l'exposé discursif: l'étude, l'article, le livre méthodique. L'invention reçoit carte blanche. Mais l'exigence de la forme reste éveillée, et le désir de vérité n'est pas moins vivace: d'autres approches du but philosophique deviennent possibles, d'autres rapports avec le vrai peuvent se tracer, par des voies plus directes ou par des biais inattendus. Quand la parole réfléchissante se risque ainsi hors du type de discours qui lui est assigné d'institution, quand elle prend pour objet la présence simple, bordée d'absence, cernée par ce qui la rend «particulière», - elle a chance d'accéder à un espace plus ouvert, à l'espace même où la «généralité» devient respirante. Un accent qui tient de la poésie peut alors se faire entendre: signe de la proximité enfin rejointe d'un secret depuis longtemps poursuivi.",
+      "bbox": {
+        "x_pct": 23.217,
+        "y_pct": 21.692,
+        "w_pct": 66.024,
+        "h_pct": 48.283
+      },
+      "changed": true,
+      "change_reason": "Corrected the severely truncated and garbled OCR text to represent the full paragraph shown in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch a constamment réclamé la justesse conceptuelle; elle n'a cessé d'être en garde (et de mettre en garde) contre l'excès ou le flou de l'expression; mais",
+      "bbox": {
+        "x_pct": 23.458,
+        "y_pct": 71.069,
+        "w_pct": 65.422,
+        "h_pct": 7.862
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled OCR text to match the source image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": {
+        "x_pct": 24.096,
+        "y_pct": 82.528,
+        "w_pct": 2.41,
+        "h_pct": 2.43
+      },
+      "changed": true,
+      "change_reason": "Identified and reclassified page number as page_footer/filter."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly inaccurate and fragmented across all text blocks.",
+    "Page number at bottom was incorrectly labeled as text.",
+    "OCR output missed large portions of the text in the second paragraph."
+  ],
+  "doc_id": "2260",
+  "page": 8,
+  "elapsed_seconds": 4.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

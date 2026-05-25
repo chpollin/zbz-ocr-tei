@@ -1,0 +1,110 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE III L'illusion philosophique",
+      "bbox": {
+        "x_pct": 13.298,
+        "y_pct": 11.316,
+        "w_pct": 54.021,
+        "h_pct": 2.383
+      },
+      "changed": true,
+      "change_reason": "Corrected label to zb_heading"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie doit chercher ce qu'elle est; elle entrevoit sa duplicité, la refuse et veut être une",
+      "bbox": {
+        "x_pct": 16.009,
+        "y_pct": 13.375,
+        "w_pct": 64.157,
+        "h_pct": 42.011
+      }
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE IV. Un exemple 2 le problème du temps et de léternité chez Hegel",
+      "bbox": {
+        "x_pct": 12.846,
+        "y_pct": 55.577,
+        "w_pct": 67.229,
+        "h_pct": 4.099
+      },
+      "changed": true,
+      "change_reason": "Corrected label to zb_heading"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Echec du mime, 78 La tentation Jégélienne, 89 Temps éternité, 80. Rôle du temps dans la dialectique;",
+      "bbox": {
+        "x_pct": 15.617,
+        "y_pct": 59.609,
+        "w_pct": 64.202,
+        "h_pct": 29.714
+      }
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "42",
+      "bbox": {
+        "x_pct": 85.286,
+        "y_pct": 11.983,
+        "w_pct": 3.373,
+        "h_pct": 1.554
+      },
+      "changed": true,
+      "change_reason": "Corrected label to _filter"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "77",
+      "bbox": {
+        "x_pct": 84.789,
+        "y_pct": 57.989,
+        "w_pct": 3.358,
+        "h_pct": 1.659
+      },
+      "changed": true,
+      "change_reason": "Corrected label to _filter"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "202 TABLE DES MATIRES",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 72.85,
+        "w_pct": 40.5,
+        "h_pct": 3.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header text"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Page numbers were incorrectly labeled as text.",
+    "Table of contents entries should be paragraphs or headings, not arbitrary text.",
+    "Running header at top was missing.",
+    "Labels did not adhere to the requested mapping scheme.",
+    "Typos in existing text data (e.g. 2 instead of le)."
+  ],
+  "doc_id": "20",
+  "page": 204,
+  "elapsed_seconds": 4.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label to zb_heading": 2,
+    "Corrected label to _filter": 2,
+    "ADDED": 1
+  }
+}

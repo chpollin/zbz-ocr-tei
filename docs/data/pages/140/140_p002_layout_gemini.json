@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DISCONTINUITE DES PERSPECTIVES HUMAINES",
+      "bbox": {
+        "x_pct": 23.348,
+        "y_pct": 42.507,
+        "w_pct": 51.625,
+        "h_pct": 5.698
+      },
+      "changed": true,
+      "change_reason": "Updated label to zb_heading"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "PAR JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 33.746,
+        "y_pct": 50.581,
+        "w_pct": 30.716,
+        "h_pct": 2.165
+      },
+      "changed": true,
+      "change_reason": "Updated label to zb_heading as it is a subtitle/author line"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "I",
+      "bbox": {
+        "x_pct": 48.057,
+        "y_pct": 58.33,
+        "w_pct": 1.855,
+        "h_pct": 1.766
+      },
+      "changed": true,
+      "change_reason": "Updated label to zb_heading for section marker"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "ESCARTES, assis au coin de son le morceau de cire en train de fondre au bout des doigts, poursuivait",
+      "bbox": {
+        "x_pct": 12.253,
+        "y_pct": 62.98,
+        "w_pct": 74.117,
+        "h_pct": 23.704
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial label for section header and author was set to incorrect general text type.",
+    "Initial label for section marker was set to paragraph instead of heading."
+  ],
+  "doc_id": "140",
+  "page": 2,
+  "elapsed_seconds": 10.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Updated label to zb_heading": 1,
+    "Updated label to zb_heading as it is a subtitle/author line": 1,
+    "Updated label to zb_heading for section marker": 1
+  }
+}

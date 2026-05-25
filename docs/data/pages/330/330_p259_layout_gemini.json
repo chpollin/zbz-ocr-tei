@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 225",
+      "bbox": {
+        "x_pct": 298.0,
+        "y_pct": 92.0,
+        "w_pct": 593.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header text misidentified as paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "s'organiser en coopérative de production; b) le secteur où les consommateurs constituent en fait intéressé au premier chef au fonctionnement de l'entreprise ; il s'agit alors avant tout d'organes distributeurs, qui doivent appartenir à l'ensemble des consommateurs organisé en coopérative de consommation; c) le secteur qui intéresse la population tout entière (eau, gaz, électricité, chemins de fer, etc.) et qui doit être nationalisé, c'est-à-dire administré, géré et contrôlé par l'État.",
+      "bbox": {
+        "x_pct": 3.022,
+        "y_pct": 14.144,
+        "w_pct": 84.345,
+        "h_pct": 14.733
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR artifact text which was improperly cut."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ajouterai que la persistance d'un secteur libre où la propriété individuelle serait maintenue, mais seulement dans des proportions restreintes, me paraît nécessaire. C'est lui qui sauvegarderait dans l'ensemble l'élément de souplesse, d'adaptation, d'initiative minutieuse indispensable à la vie. C'est lui qui assurerait l'infiltration des résultats obtenus par le planisme, d'en haut jusque dans la vie concrète des individus. Il entretiendrait en même temps une sorte d'interrogation, de contestation, autour des appareils forcément alourdis de la propriété collective. Enfin il laisserait la possibilité de vivre aux hommes qui refusent d'être incorporés à un tout économique collectif organisé, et qui tiennent à ne dépendre que d'eux-mêmes. Autant que faire se peut, toute société respectueuse des possibles humains doit préserver une marge où peuvent vivre les exceptions qu'elle compte en son sein. Elle n'a ni le devoir ni le droit de les réduire à la norme — mais seulement le droit et le devoir de les empêcher de devenir, aux dépens des autres, des bêtes de proie.",
+      "bbox": {
+        "x_pct": 2.883,
+        "y_pct": 28.342,
+        "w_pct": 84.763,
+        "h_pct": 35.499
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR artifact text which was improperly cut."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est évident qu'une économie ainsi conçue ne peut se passer d'organes de coordination et de direction. Ce sera une économie planifiée. Il faudra bien que les libéraux que ce terme épouvante admettent enfin la réalité d'aujourd'hui telle qu'elle est : l'économie capitaliste actuelle n'est pas libérale, elle non plus. Elle est planifiée grâce à tout un réseau de contraintes massives, politiques, administratives, financières, douanières, fiscales. Seulement, si on veut me permettre une telle expression, elle est planifiée anarchiquement, c'est-à-dire : non pour le plus grand bien de l'ensemble, mais pour celui des uns ou des autres, qui se font la guerre. Ce qui contraint l'économie, aujourd'hui, c'est un chaos de mesures prises pour la protection de certains producteurs contre certains autres. La libre concurrence est, certes, contestable; encore a-t-elle en",
+      "bbox": {
+        "x_pct": 2.604,
+        "y_pct": 63.253,
+        "w_pct": 85.042,
+        "h_pct": 26.791
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR artifact text which was improperly cut."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Header line detected as part of body text.",
+    "OCR errors in paragraph segments.",
+    "Page number 225 not properly excluded.",
+    "Multiple layout boxes incorrectly fragmented."
+  ],
+  "doc_id": "330",
+  "page": 259,
+  "elapsed_seconds": 5.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "146 BERGSON",
+      "bbox": {
+        "x_pct": 149.0,
+        "y_pct": 77.0,
+        "w_pct": 692.0,
+        "h_pct": 89.0
+      },
+      "changed": true,
+      "change_reason": "Page header and number detected as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tout le vide qu'impose son œuvre ne peut trouver, selon lui, aucun contenu véritable qui ne serait pas celui de la foi.",
+      "bbox": {
+        "x_pct": 142.02,
+        "y_pct": 120.11,
+        "w_pct": 763.1,
+        "h_pct": 72.74
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie française moderne ne joue pas un grand rôle dans la destruction de l'illusion philosophique. Bergson l'a encore. Il croit que l'Evolution créatrice fournit une base scientifique nouvelle tant à la biologie qu'à la philosophie. Il affirme maintes fois avoir fait œuvre de savant. Or je crois bien que, de toutes ses œuvres, celle qui philosophiquement vivra le plus longtemps sera la première, ce court et compact Essai sur les données immédiates de la conscience. C'est là qu'il faut chercher l'origine philosophique de ses autres ouvrages, là que par le chiffre de la « durée pure » il a retrouvé le chemin de la profondeur métaphysique, là aussi que dans la profondeur il s'est heurté à une limite. Elle est bien kantienne, sa solution du problème de la liberté : elle consiste à déclarer finalement que lorsqu'on fait de la liberté un problème théorique, il ne reste plus qu'à la nier. Le chiffre est différent de celui de Kant, mais l'expérience est singulièrement proche. Quant à ses autres ouvrages, ce qu'ils contiennent de purement scientifique est à la merci de la science. Ce qu'ils garderont malgré tout, c'est l'acte philosophiquement simple, la décision une dont ils sont le chiffre.",
+      "bbox": {
+        "x_pct": 136.6,
+        "y_pct": 247.19,
+        "w_pct": 767.02,
+        "h_pct": 610.49
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors in the paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bergson mis à part, les philosophes français",
+      "bbox": {
+        "x_pct": 167.62,
+        "y_pct": 862.44,
+        "w_pct": 729.97,
+        "h_pct": 28.22
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Page header incorrectly included in text.",
+    "Significant OCR errors in paragraph text.",
+    "OCR failed to capture page header and number as a separate entity initially."
+  ],
+  "doc_id": "20",
+  "page": 148,
+  "elapsed_seconds": 3.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

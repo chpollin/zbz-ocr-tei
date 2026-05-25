@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Les droits de l'homme",
+      "bbox": {
+        "x_pct": 242.0,
+        "y_pct": 84.0,
+        "w_pct": 286.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "535",
+      "bbox": {
+        "x_pct": 698.0,
+        "y_pct": 84.0,
+        "w_pct": 45.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "politique, par contagion avec l'approximation inévitable des droits sociaux et culturels. Ces derniers ne sont pas moins importants, mais ils s'inscrivent peu à peu dans la réalité. Les droits qui protègent directement l'intégrité de la conscience ne souffrent, en principe, pas de degrés. Leur violation devrait se heurter à un non absolu. La rhétorique de la « belle âme » (schöne Seele), arrogante et vaine, s'élance vers une perfection imaginaire ; elle méprise les distinctions et les limites de l'incarnation réelle dans le monde humain.",
+      "bbox": {
+        "x_pct": 3.49,
+        "y_pct": 12.395,
+        "w_pct": 71.429,
+        "h_pct": 22.12
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Droits et paix",
+      "bbox": {
+        "x_pct": 3.682,
+        "y_pct": 38.763,
+        "w_pct": 16.878,
+        "h_pct": 2.12
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La même rhétorique de la « belle âme » a tendance à poser comme identiques, ou au moins comme convergents, tous les « liens » que nous espérons réaliser au fil de l'histoire. Par exemple, nous aimons penser que les efforts faits pour mettre en œuvre les droits de l'homme se trouvent aussi, du même coup, au service de la paix, et qu'inversement, préserver la paix, c'est aussi mettre en œuvre les droits de l'homme. Mais il n'en est pas nécessairement ainsi. Il est vrai que la guerre comme telle les piétine. Mais je rappelle ici ce qui a été dit plus haut : la vie, certes, est la condition de tout le reste, mais elle n'est pas, malgré cela, le droit de l'homme primordial. De même la paix : la paix est la condition de tout le reste — et pourtant, subordonner la défense des droits de l'homme au maintien de la paix reviendrait à laisser le champ libre, en toute sécurité, au règne de la force. Telle est notre condition de sujet agissant dans l'histoire : la paix est bien une condition pour le respect des droits de l'homme, mais ce sont les droits de l'homme qui donnent son sens à la paix. Sans eux, elle se réduit à un rapport de forces figé. La guerre rendue",
+      "bbox": {
+        "x_pct": 3.343,
+        "y_pct": 43.052,
+        "w_pct": 71.325,
+        "h_pct": 49.293
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate text recognition in the OCR content."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original OCR for the main paragraph was significantly corrupted/cut off.",
+    "Page number and header were initially classified as standard text."
+  ],
+  "doc_id": "2920",
+  "page": 33,
+  "elapsed_seconds": 4.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

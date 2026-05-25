@@ -1,0 +1,169 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1",
+      "bbox": {
+        "x_pct": 0.831,
+        "y_pct": 18.797,
+        "w_pct": 1.726,
+        "h_pct": 1.368
+      },
+      "changed": true,
+      "change_reason": "Labelled as text, is clearly page/column indexing."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 0.75,
+        "y_pct": 20.941,
+        "w_pct": 1.75,
+        "h_pct": 3.079
+      },
+      "changed": true,
+      "change_reason": "Labelled as text, is page/column indexing."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 0.726,
+        "y_pct": 26.226,
+        "w_pct": 1.613,
+        "h_pct": 4.008
+      },
+      "changed": true,
+      "change_reason": "Labelled as text, is page/column indexing."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1",
+      "bbox": {
+        "x_pct": 0.863,
+        "y_pct": 30.063,
+        "w_pct": 1.339,
+        "h_pct": 4.926
+      },
+      "changed": true,
+      "change_reason": "Labelled as text, is page/column indexing."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "UNIVERSITAS",
+      "bbox": {
+        "x_pct": 12.524,
+        "y_pct": 5.49,
+        "w_pct": 74.71,
+        "h_pct": 8.917
+      },
+      "changed": false
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "German Review of the Arts And Scienceb Quarterly E...",
+      "bbox": {
+        "x_pct": 26.879,
+        "y_pct": 14.578,
+        "w_pct": 47.823,
+        "h_pct": 4.675
+      },
+      "changed": true,
+      "change_reason": "Journal running header, should be _filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONTENTS",
+      "bbox": {
+        "x_pct": 25.54,
+        "y_pct": 23.757,
+        "w_pct": 11.097,
+        "h_pct": 1.596
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dr. Albert Schweitzer, Lambarene...",
+      "bbox": {
+        "x_pct": 23.298,
+        "y_pct": 26.881,
+        "w_pct": 62.266,
+        "h_pct": 57.634
+      },
+      "changed": true,
+      "change_reason": "Document index/table of contents entries are text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Survey of Current Research",
+      "bbox": {
+        "x_pct": 35.46,
+        "y_pct": 85.365,
+        "w_pct": 29.274,
+        "h_pct": 2.377
+      },
+      "changed": true,
+      "change_reason": "This is a section heading."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1963/61",
+      "bbox": {
+        "x_pct": 46.508,
+        "y_pct": 89.664,
+        "w_pct": 7.202,
+        "h_pct": 1.67
+      },
+      "changed": true,
+      "change_reason": "Page footer metadata."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "No. 2",
+      "bbox": {
+        "x_pct": 79.944,
+        "y_pct": 89.966,
+        "w_pct": 4.871,
+        "h_pct": 1.67
+      },
+      "changed": true,
+      "change_reason": "Page footer metadata."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Vol. 6",
+      "bbox": {
+        "x_pct": 13.306,
+        "y_pct": 89.795,
+        "w_pct": 5.508,
+        "h_pct": 1.482
+      },
+      "changed": true,
+      "change_reason": "Page footer metadata."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "Most regions labeled as text needed to be identified as headers or footers.",
+    "Table of contents/index was misidentified."
+  ],
+  "doc_id": "3090",
+  "page": 1,
+  "elapsed_seconds": 7.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

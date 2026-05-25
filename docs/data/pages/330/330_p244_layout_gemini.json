@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "210 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 127.0,
+        "y_pct": 77.0,
+        "w_pct": 73.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut cependant constater que l'habitude quotidienne de la défense syndicale contre des prolétaires étrangers n'est pas restée, dans la sensibilité morale des travailleurs, ce qu'elle n'aurait jamais dû cesser d'être : un pis-aller auquel on se résigne avec peine, que l'on ressent comme une trahison à l'égard d'une solidarité essentielle, trahison dont la responsabilité retombe sur la structure capitaliste et nationale du monde actuel, ce qui accroît la véhémence avec laquelle on veut changer celle-ci. Au contraire : dans les milieux syndicaux, on s'est trop souvent servi de la peur du chômage ou de la baisse des salaires pour susciter et entretenir une crainte méprisante à l'égard des étrangers, en même temps qu'un violent sentiment de la légitimité indiscutable des droits du travailleur indigène. Je compte au nombre de mes expériences amères celles qui m'ont permis de constater que des réfugiés politiques de gauche, dans les années noires de la guerre et de l'après-guerre, n'ont souvent pas eu d'ennemis plus tenaces, plus inflexibles, lorsqu'ils cherchaient à gagner leur vie, que les secrétaires syndicaux protégeant la main-d'œuvre locale.",
+      "bbox": {
+        "x_pct": 12.354,
+        "y_pct": 10.455,
+        "w_pct": 85.557,
+        "h_pct": 37.914
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peu à peu, cet esprit a gagné la gauche tout entière. Il a ruiné son élan, ses capacités inventives, son audace. Nourri de petites peurs auxquelles il cherche à remédier grâce à ce qui existe déjà, il craint le changement. Il rend en fait la classe prolétarienne solidaire du statu quo et tend à faire d'elle la couche la plus craintivement conservatrice de toute la population.",
+      "bbox": {
+        "x_pct": 12.716,
+        "y_pct": 48.066,
+        "w_pct": 85.153,
+        "h_pct": 15.009
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En dernier ressort cependant, il faut le dire, ce ne sont pas les dirigeants syndicaux qui sont responsables de cette évolution (bien qu'il soit de leur devoir de remonter sans cesse le courant et de rétablir, dans la mesure de leurs forces, la solidarité internationale des travailleurs). C'est le système capitaliste de la libre concurrence anarchique. Une société est mal faite si elle doit exiger d'une importante catégorie d'hommes qu'ils sachent toujours résister aux pressions de la peur. Individuellement, certes, chaque homme reste à chaque moment responsable de la manière dont il réagit à la peur. Mais sociologiquement, c'est le régime, en tolérant ou en imposant cette peur, qui a tort. Un ouvrier",
+      "bbox": {
+        "x_pct": 12.632,
+        "y_pct": 66.613,
+        "w_pct": 85.32,
+        "h_pct": 23.164
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was severely garbled and fragmented",
+    "Missing page header in initial detection",
+    "Bounding boxes contained redundant repeated fragments from poor OCR"
+  ],
+  "doc_id": "330",
+  "page": 244,
+  "elapsed_seconds": 6.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ses lourdes mains dispensaient massivement l'être.",
+      "bbox": {
+        "x_pct": 24.308,
+        "y_pct": 11.111,
+        "w_pct": 64.705,
+        "h_pct": 5.051
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR typo in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et Dieu souffrit.",
+      "bbox": {
+        "x_pct": 27.714,
+        "y_pct": 16.81,
+        "w_pct": 24.717,
+        "h_pct": 2.357
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Terrible efficacité de Dieu! Dès qu'il souffrit, le manque fut. Le manque, la fissure, l'absence.",
+      "bbox": {
+        "x_pct": 24.428,
+        "y_pct": 22.332,
+        "w_pct": 64.946,
+        "h_pct": 5.699
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR split words and typos."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le manque permit à Dieu de créer hors de lui. Le manque lui donna l'espace et le contour. Le manque secourut Dieu contre Son irrépressible plénitude.",
+      "bbox": {
+        "x_pct": 23.983,
+        "y_pct": 30.665,
+        "w_pct": 65.391,
+        "h_pct": 11.616
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le manque d'abord étonna Dieu. Il éprouva pour la première fois comme étrangère cette matière du manque qui glissait entre ses doigts: si légère, plus fluide que la plus lointaine de Ses pensées, et qui était n'importe quoi. Elle s'infiltrait dans la matière divine, la traversait de fins filets d'inconséquence et d'ironie. Et il n'y avait plus de matière divine.",
+      "bbox": {
+        "x_pct": 23.815,
+        "y_pct": 42.172,
+        "w_pct": 65.921,
+        "h_pct": 24.773
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR content to match full paragraph structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La main de Dieu écrivait en vain le Verbe dans le manque sans trace. Le manque cédait trop vite sous son doigt et se refermait sans un sillage.",
+      "bbox": {
+        "x_pct": 23.911,
+        "y_pct": 67.365,
+        "w_pct": 65.535,
+        "h_pct": 11.65
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 24.238,
+        "y_pct": 82.261,
+        "w_pct": 3.796,
+        "h_pct": 2.273
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text detection contained significant OCR errors (broken words, missing punctuation).",
+    "Page number 16 misclassified as 'text' paragraph."
+  ],
+  "doc_id": "2260",
+  "page": 14,
+  "elapsed_seconds": 4.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

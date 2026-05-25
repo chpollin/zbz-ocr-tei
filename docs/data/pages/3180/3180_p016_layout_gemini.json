@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "man es perspektivisch betrachtet. Das heißt, wir dürfen also nicht einfach nur Gegensätze konstatieren – hier ja, hier nein – und uns dann abmühen, das Ja und Nein irgendwie zusammenzubringen, sondern wir müssen immer die Position wechseln, schauen, von woher sich ein Ja und von woher sich ein Nein ergibt. Diese Perspektiven haben aber selber keine übergeordnete Superperspektive, von welcher aus ich dann sämtliche Perspektiven beurteilen könnte. Eben das aber macht es so schwierig, weil wir uns dann doch in einer Pluralität, vielleicht sogar in einem Pluralismus befinden.",
+      "bbox": {
+        "x_pct": 8.488,
+        "y_pct": 3.916,
+        "w_pct": 85.374,
+        "h_pct": 22.741
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn man das auf das Freiheitsprinzip wendet, das Sie eben ins Spiel gebracht haben, dann zeigt sich hier, daß wir zwar alle einen Konsens über das haben, was Freiheit ist – dieser Konsens zeigt sich z. B. in den Menschenrechten –, wie aber diese Freiheit individuell von den einzelnen Menschen gelebt wird, ist sie eine je verschiedene. Aus der je verschiedenen, individualistischen Perspektive zeigt sich Freiheit als etwas anderes. Ich habe also ein Konstrukt von Freiheit auf der Begriffsebene, das so etwas wie eine Valenz hat, die nun allgemeingültig ist. Wie sich diese Valenz aber umsetzt im konkreten einzelnen Leben, das ist etwas, das sich nicht mehr auf der Begriffsebene lösen läßt, etwas, das in der Existenz geschieht. Und die ist je meine. Ich kann nicht stellvertretend für jemand anderen existieren und umgekehrt.",
+      "bbox": {
+        "x_pct": 8.488,
+        "y_pct": 28.597,
+        "w_pct": 85.524,
+        "h_pct": 31.721
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 9.087,
+        "y_pct": 62.022,
+        "w_pct": 33.623,
+        "h_pct": 2.031
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Perspektivismus ist eine Alternative zur Verstrickung in diese vielleicht hausgemachten Paradoxien und Widersprüche. Das heißt, bei genauerer Betrachtung zeigt sich, daß die Betrachtungsstandpunkte oder, wie wir das aus der theoretischen Physik, der Wissenschaftstheorie und der Naturphilosophie unserer Tage wissen, die Beobachterrolle mitreflektiert werden muß. Wenn wir diesen Beobachter naturphilosophisch oder à la Nietzsche einbeziehen, ergibt sich eine ganze andere Möglichkeit, mit Paradoxien und Widersprüchen umzugehen. Dann zeigt sich nämlich, daß es nicht nur zwei Positionen sind, sondern daß wir im Prinzip eine beliebig große Anzahl von Positionen haben, die wir paarweise jeweils antagonistisch als Widersprüche interpretieren können. Ist deswegen der Perspek-",
+      "bbox": {
+        "x_pct": 8.428,
+        "y_pct": 63.907,
+        "w_pct": 85.284,
+        "h_pct": 29.472
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "39",
+      "bbox": {
+        "x_pct": 89.658,
+        "y_pct": 94.697,
+        "w_pct": 3.447,
+        "h_pct": 2.507
+      },
+      "changed": true,
+      "change_reason": "Identified page number erroneously included in text or missing from processing."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number at the bottom was missing a label/region."
+  ],
+  "doc_id": "3180",
+  "page": 16,
+  "elapsed_seconds": 5.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

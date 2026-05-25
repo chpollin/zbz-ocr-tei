@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "48",
+      "bbox": {
+        "x_pct": 10.749,
+        "y_pct": 6.131,
+        "w_pct": 2.227,
+        "h_pct": 2.164
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 67.876,
+        "y_pct": 6.131,
+        "w_pct": 22.18,
+        "h_pct": 2.274
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de maison, et s'il n'est pas décidé à la défendre...",
+      "bbox": {
+        "x_pct": 10.304,
+        "y_pct": 9.936,
+        "w_pct": 80.094,
+        "h_pct": 4.867
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pouvoir est partout. Il n'est pas de liberté...",
+      "bbox": {
+        "x_pct": 10.386,
+        "y_pct": 16.253,
+        "w_pct": 80.281,
+        "h_pct": 9.049
+      },
+      "changed": true,
+      "change_reason": "Fixed typo in transcribed text from 'II' to 'Il'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce lien indépassable entre les deux pouvoirs...",
+      "bbox": {
+        "x_pct": 10.152,
+        "y_pct": 25.117,
+        "w_pct": 80.48,
+        "h_pct": 8.622
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle est l'histoire. Et elle ne peut ni s'arrê...",
+      "bbox": {
+        "x_pct": 10.808,
+        "y_pct": 33.763,
+        "w_pct": 80.023,
+        "h_pct": 4.94
+      },
+      "changed": true,
+      "change_reason": "Fixed typo in text: corrected 'Thistoire' to 'l'histoire'."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and running header incorrectly labeled as text.",
+    "Small transcription errors in auto-generated text content."
+  ],
+  "doc_id": "2900",
+  "page": 4,
+  "elapsed_seconds": 5.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

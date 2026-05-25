@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "112 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 36.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header region"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "si vous voulez y changer la moindre chose cela ne tient plus. Dans un roman la cohérence de la vie d",
+      "bbox": {
+        "x_pct": 10.037,
+        "y_pct": 16.427,
+        "w_pct": 74.728,
+        "h_pct": 35.197
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois que la critique littéraire pourrait s'attaquer à débrouiller ce na pas été un travail de mo",
+      "bbox": {
+        "x_pct": 10.092,
+        "y_pct": 51.299,
+        "w_pct": 74.645,
+        "h_pct": 18.786
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si je dis que lœuvre dart obtient sa hérence propre cest-à-dire son existence elle lobtient par le f",
+      "bbox": {
+        "x_pct": 10.314,
+        "y_pct": 70.046,
+        "w_pct": 73.961,
+        "h_pct": 17.02
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region"
+  ],
+  "doc_id": "140",
+  "page": 31,
+  "elapsed_seconds": 5.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

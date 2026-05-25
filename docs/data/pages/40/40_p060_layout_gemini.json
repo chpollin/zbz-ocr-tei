@@ -1,0 +1,70 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "62",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non. Il faut simplement lui dire C'est tout. Ce monsieur bientôt quarante ans, il a vécu...",
+      "bbox": {
+        "x_pct": 10.581,
+        "y_pct": 12.694,
+        "w_pct": 80.365,
+        "h_pct": 5.047
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Déjà j'étais dans ma chambre, fermée. Sans allumer, respirant à la fenêtre, je sentis s'apaiser très vite les effets du choc reçu. Il avait donc parlé. Mais inutile de chercher à en savoir davantage. Je savais tout, tout ce qui comptait: mes parents étaient absolument opposés; il m'aimait; il fallait attendre, et il le savait aussi. Le reste n'était qu'usure vaine. N'importe lequel de nos absurdes rendez-vous sans paroles mettait en jeu ma confiance entière. A côté de ces épreuves dont la réussite impliquait la complicité et la bénédiction de tout un univers, les démarches limitées comptaient peu. Qu'est-ce que l'opposition d'un père et d'une mère quand la nature, ses vents, ses moments, ses nuits, acceptent les messages ? C'est cette toute-puissance sans doute qui alimenta si longtemps mon invraisemblable passivité. Il venait vers moi, et c'était un langage. Jamais je n'ai réfléchi qu'il ne me voyait pas venir vers lui, que je ne lui parlais pas, même pas ce langage-là. Jamais je n'ai imaginé que le cristal de notre univers commun pût être pour lui moins transparent, moins sûr. Je vivais en pleine foi, sans aucune velléité, sans aucun besoin d'avoir recours aux pauvres moyens d'approche des hommes, — le téléphone, les rendez-vous, les lettres, les mots. On n'exprime guère l'évidence, et les preuves viennent de peu de foi.",
+      "bbox": {
+        "x_pct": 10.311,
+        "y_pct": 17.609,
+        "w_pct": 80.905,
+        "h_pct": 60.681
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text extraction to reflect the full paragraph visible in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le jour de ma fête arriva : j'avais dix-sept ans. Ce qu'il y a de blanc, d'or, d'azur au monde, les bateaux, les écumes,",
+      "bbox": {
+        "x_pct": 10.365,
+        "y_pct": 80.907,
+        "w_pct": 80.811,
+        "h_pct": 5.227
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text extraction to reflect the full paragraph visible in the image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and running header not categorized as _filter.",
+    "Text extraction for paragraphs was truncated/incomplete.",
+    "OCR errors in the third paragraph text."
+  ],
+  "doc_id": "40",
+  "page": 60,
+  "elapsed_seconds": 4.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

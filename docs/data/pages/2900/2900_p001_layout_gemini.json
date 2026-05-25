@@ -1,0 +1,87 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Philosophica 52 (1993, 2) pp. 45-48",
+      "bbox": {
+        "x_pct": 95.0,
+        "y_pct": 71.0,
+        "w_pct": 305.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header based on content (journal citation)."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE POIDS DU POUVOIR ET LA LIBERTE",
+      "bbox": {
+        "x_pct": 22.482,
+        "y_pct": 17.405,
+        "w_pct": 53.712,
+        "h_pct": 2.039
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 40.785,
+        "y_pct": 24.069,
+        "w_pct": 17.061,
+        "h_pct": 1.821
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les problèmes moraux de la vie publique et de la v...",
+      "bbox": {
+        "x_pct": 8.782,
+        "y_pct": 34.593,
+        "w_pct": 81.581,
+        "h_pct": 13.513
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les problèmes semblent se poser en termes propreme...",
+      "bbox": {
+        "x_pct": 8.934,
+        "y_pct": 47.647,
+        "w_pct": 81.429,
+        "h_pct": 29.041
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "existe pourtant entre les deux une opposition imp...",
+      "bbox": {
+        "x_pct": 9.016,
+        "y_pct": 76.092,
+        "w_pct": 81.581,
+        "h_pct": 17.921
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Bibliographic header at the top was missed by detector initially."
+  ],
+  "doc_id": "2900",
+  "page": 1,
+  "elapsed_seconds": 4.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "156 LA PHILOSOPHIE RESTE ENRACINÉE",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header elements like page number and running title should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "réelle, elle est tout entière présente, et non pas perspective sur un accomplissement futur.",
+      "bbox": {
+        "x_pct": 12.5,
+        "y_pct": 12.886,
+        "w_pct": 76.054,
+        "h_pct": 5.752
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR artifacts '1l01l' to 'non' based on context."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette pensée existentielle, c’est la philosophie.",
+      "bbox": {
+        "x_pct": 16.31,
+        "y_pct": 18.0,
+        "w_pct": 62.952,
+        "h_pct": 2.886
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie est l'effort par lequel je m'assure de moi-même (Selbstvergewisserung). Elle devient discursive, et par là se soumet à la rationalité. Mais sous sa forme rationnelle, elle est générale et n'est donc plus ou n'est pas encore elle-même. Car elle est la vérité absolument unique de celui qui par l'existence s'assure de son être. « Lorsqu'on demande ce qu'est la philosophie, on ne trouve dans les nombreuses réponses aucun critère objectif. Car la philosophie crée chaque fois son concept; elle n'a pas de norme au-dessus d'elle. Si je sais ce qu'est la philosophie, c'est parce que je vis en elle, par une définition je ne le sais pas encore (1). » « La réalité de l'acte philosophique n'est pas dans résultat objectif, mais dans une tenue de la conscience (2). » Puisque ce n'est pas le résultat qui importe, le contrôle de ce qui est vrai ne peut pas se faire en philosophie comme il se fait en science. Au contraire du savant, « le philosophe se risque à parler là où aucune distinction ne peut être objectivement faite entre un parler authentique (echt) dérivant d'une source philosophique (aus philosophischem Ursprung) et une vide intellectualité. Voilà pourquoi c'est une",
+      "bbox": {
+        "x_pct": 12.801,
+        "y_pct": 20.6,
+        "w_pct": 76.702,
+        "h_pct": 59.181
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and OCR errors in main paragraph."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Philosophie, Verlag Springer, Berlin, 1932, I p. 240.",
+      "bbox": {
+        "x_pct": 13.75,
+        "y_pct": 82.952,
+        "w_pct": 75.06,
+        "h_pct": 4.667
+      },
+      "changed": true,
+      "change_reason": "Bibliographic footnote incorrectly labeled as paragraph."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(2) Loc. cit., p. 264.",
+      "bbox": {
+        "x_pct": 16.913,
+        "y_pct": 87.495,
+        "w_pct": 19.488,
+        "h_pct": 2.219
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR errors throughout the text blocks",
+    "Incorrect label for bibliographic footnote",
+    "Missing bounding box for page header",
+    "Page header should be excluded from content flow"
+  ],
+  "doc_id": "20",
+  "page": 158,
+  "elapsed_seconds": 4.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

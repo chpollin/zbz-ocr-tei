@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Société et Etat",
+      "bbox": {
+        "x_pct": 37.526,
+        "y_pct": 16.94,
+        "w_pct": 17.808,
+        "h_pct": 1.994
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par Jeanne Hersch *",
+      "bbox": {
+        "x_pct": 37.446,
+        "y_pct": 20.228,
+        "w_pct": 17.889,
+        "h_pct": 1.863
+      },
+      "changed": true,
+      "change_reason": "Author name byline under title should be marked as section_header/zb_heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comme jai traité dans un livre ( Idéologies et réalité ) un certain nombres des problèmes que soulèv",
+      "bbox": {
+        "x_pct": 13.062,
+        "y_pct": 24.689,
+        "w_pct": 66.954,
+        "h_pct": 34.587
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour introduire notre discussion, je me contenterai de formuler un certain nombre de thèses, chacune",
+      "bbox": {
+        "x_pct": 13.11,
+        "y_pct": 58.9,
+        "w_pct": 66.801,
+        "h_pct": 15.897
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "1 Seule la personne humaine a une âme, en ce sens qu'elle est seule capable de liberté. «L'âme collective» n'est qu'une métaphore.",
+      "bbox": {
+        "x_pct": 12.949,
+        "y_pct": 75.174,
+        "w_pct": 66.745,
+        "h_pct": 4.239
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous personnifions couramment les réalités collectives. C'est d'abord une manière de dire, mais cela devient vite une manière",
+      "bbox": {
+        "x_pct": 13.078,
+        "y_pct": 79.259,
+        "w_pct": 66.672,
+        "h_pct": 4.023
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Résumé d'une conférence prononcée au Symposium de la S.S.P. le 24 février 1958.",
+      "bbox": {
+        "x_pct": 12.836,
+        "y_pct": 84.558,
+        "w_pct": 66.857,
+        "h_pct": 3.231
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "114",
+      "bbox": {
+        "x_pct": 13.05,
+        "y_pct": 90.0,
+        "w_pct": 3.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number missing in original extraction, added as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing bounding box for page number 114",
+    "Author signature byline incorrectly labeled as paragraph text"
+  ],
+  "doc_id": "450",
+  "page": 2,
+  "elapsed_seconds": 4.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

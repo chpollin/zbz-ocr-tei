@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "deve far intervenire l'eterogeneità dei « bordi » della serie; in tal modo però è resa imperfetta e alla fine viene annullata la simmetria cosi come viene considerata in questo schema.",
+      "bbox": {
+        "x_pct": 5.234,
+        "y_pct": 7.094,
+        "w_pct": 85.611,
+        "h_pct": 8.444
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text which was garbled/incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Al contrario mi sembra che il secondo schema, quello della simmetria centrata, non tenda in linea di principio all'infinito, ma all'unità. All'unità delle due ‘parti’ di cui si compone la simmetria, e di tutti i loro elementi. Questo schema tende a comporre una unità e direi perfino una unicità. Esso esclude la possibilità di un processo ripetitivo continuo che tenda all'infinito; al contrario, tende alla costituzione di una unità, una unicità talmente autosufficiente, da divenire una specie di totalità.",
+      "bbox": {
+        "x_pct": 5.279,
+        "y_pct": 15.149,
+        "w_pct": 85.716,
+        "h_pct": 18.626
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sembra che il secondo schema rappresenti una sorta di difesa contro la relativizzazione e l'instabilità del primo, preservandoci dallo scorrimento indefinito e prospettandoci una struttura unificata, chiusa e unica che, come ho già detto, può essere illustrata con l'esempio del frontone.",
+      "bbox": {
+        "x_pct": 5.385,
+        "y_pct": 33.526,
+        "w_pct": 85.37,
+        "h_pct": 12.111
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Devo confessare che prima di ascoltare le precedenti relazioni il secondo schema rappresentava il mio unico punto di riferimento; tuttavia fin dalla prima relazione sono stata obbligata ad estendere il mio orizzonte, il mio senso della simmetria, e ad affiancare la ‘simmetria di merletto’ a quella del frontone.",
+      "bbox": {
+        "x_pct": 5.385,
+        "y_pct": 45.422,
+        "w_pct": 85.611,
+        "h_pct": 12.831
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "È proprio per una sorta di adesione immediata, spontanea, vorrei dire ingenua, del mio pensiero al secondo schema, che avevo deciso di parlare in questa relazione di simmetria e storia. Mi sembrava in tal modo di aver scelto il campo piú lontano dal secondo schema della simmetria, quello in cui la sua presenza è meno evidente e nel quale prevale soprattutto la tendenza ad ignorarne l'esistenza. Oggi, infatti, nelle ricerche storiche si tende piuttosto a trovare la ripetizione di analogie approssimative, che permettano di cogliere quelle che talvolta vengono chiamate le « leggi della storia » e di considerare perciò la storia alla stregua della natura, applicando ad essa il primo schema ripetitivo continuo e non centrato. Lo storico si comporta allora come il fisico: egli confronta due momenti di uno stesso processo, l'uno precedente e l'altro seguente; tuttavia in questo processo, che va dal prima verso il dopo, non",
+      "bbox": {
+        "x_pct": 5.279,
+        "y_pct": 57.641,
+        "w_pct": 85.671,
+        "h_pct": 35.24
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in transcribed text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "230",
+      "bbox": {
+        "x_pct": 56.621,
+        "y_pct": 96.697,
+        "w_pct": 2.585,
+        "h_pct": 1.778
+      },
+      "changed": true,
+      "change_reason": "Corrected misidentified page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Most OCR text was highly inaccurate and required full replacement.",
+    "Page number at bottom left was misidentified as text."
+  ],
+  "doc_id": "990",
+  "page": 2,
+  "elapsed_seconds": 6.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

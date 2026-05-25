@@ -1,0 +1,58 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "10 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected label and tag for page header content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "intérieure; comme aussi par le déploiement de force indispensable à une politique étrangère nationaliste et menaçante, se satisfont à l'aide de mesures « populaires » prises aux dépens des « possédants », affaiblissant ou détruisant le capital. C'est pourquoi on a eu raison de rapprocher les dictatures modernes du césarisme, populacier et révolutionnaire, plutôt que de n'importe quelle monarchie d'ancien régime. La puissance de l'État apparaît comme une revanche des exploités sur les exploiteurs, le parti s'appelle, par exemple, national-socialiste.",
+      "bbox": {
+        "x_pct": 13.607,
+        "y_pct": 11.052,
+        "w_pct": 85.655,
+        "h_pct": 19.635
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part la discipline du travail, à l'intérieur des entreprises, tout en devenant plus rude, cesse en apparence d'être le résultat d'un asservissement économique pour devenir une contrainte presque militaire. L'ouvrier est un mobilisé. L'ordre qu'on lui impose prend quelque chose de rituel et de décoratif. Au lieu d'être ressenti comme une humiliation, il confère au contraire une dignité nouvelle. Le pain se fait rare (car le pays concentre son effort sur sa force militaire), mais c'est un pain sacré. Les jeux, en revanche, augmentent. Des jeux parfois militaires, mais pas toujours. On organise les loisirs, les vacances, les voyages. Il y a beaucoup de mots dans les régimes fascistes, mais non des mots seulement. Où les réalités sont le plus pauvres, c'est sur le plan sans éclat de la vie quotidienne : les journées de travail sont longues, les salaires bas, les retenues diverses -- obligatoires ou obligatoirement facultatives -- lourdes. Mais on ne compte pas tant, on ne se demande pas qui paie, si l'on paie soi-même. Le fait est là, marquant et vécu : on part, on va voir du pays. On est quelqu'un dont une réalité puissante -- l'État -- s'occupe. C'est donc que cet État est juste. Et la propagande anticapitaliste, à laquelle les démocraties libérales offrent un flanc vraiment sans défense et sans justification possible, avec des plaies honteuses qui sont autant de démentis à tous leurs slogans idéologiques, discrédite d'un coup le libéralisme économique et les libertés politiques.",
+      "bbox": {
+        "x_pct": 13.928,
+        "y_pct": 29.768,
+        "w_pct": 85.641,
+        "h_pct": 48.28
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un mot encore sur un élément important de la propagande fasciste : je n'ai pas parlé des victimes, des boucs émissaires, des parias, grâce auxquels il devient possible de donner au peuple qu'il s'agit de fanatiser la conviction qu'il est l'aristocrate de quelqu'un. Ce rôle, le peuple allemand l'a fait jouer aux juifs, on sait",
+      "bbox": {
+        "x_pct": 14.109,
+        "y_pct": 79.385,
+        "w_pct": 85.376,
+        "h_pct": 10.811
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header was initially included in a text region block."
+  ],
+  "doc_id": "330",
+  "page": 44,
+  "elapsed_seconds": 4.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ou l'année dernière, ou encore ce qu'ils voudraient faire demain ou dans un an. Mais cela ne change absolument rien au monde aussi longtemps qu'ils laissent passer le présent sans agir.",
+      "bbox": {
+        "x_pct": 25.18,
+        "y_pct": 13.562,
+        "w_pct": 57.903,
+        "h_pct": 9.289
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, c'est autour de ce présent décisif que se structure notre temps pratique, tel que nous le vivons affectivement : le temps passé s'éloigne toujours plus de notre présent, il s'en va en quelque sorte vers l'arrière, glissant loin de nous, et il tend à se fondre peu à peu avec les époques les plus anciennes de la mémoire humaine. Ce même temps nous emporte, en sens inverse, à la rencontre de notre avenir, si bien que nous nous rapprochons sans cesse de ce que nous attendons ou redoutons dans le futur, qu'il s'agisse d'une joie, d'un succès, d'un deuil, de notre mort.",
+      "bbox": {
+        "x_pct": 25.424,
+        "y_pct": 22.328,
+        "w_pct": 57.553,
+        "h_pct": 26.528
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il faut remarquer que, contrairement à ce que l'on dit souvent, nous ne vivons pas le présent sous la forme d'un instant ponctuel. Nous savons que notre temps coule et s'écoule parce qu'à tout moment nous avons déjà un passé, en tant que ce que nous n'avons plus. Malgré cela, nous ne vivons pas le présent comme un écoulement ponctuel : s'il en était ainsi, nous n'aurions plus aucune possibilité de comprendre, de penser, d'exprimer, de réaliser quoi que ce soit. Je serais hors d'état d'énoncer aucune de mes phrases, et vous seriez hors d'état",
+      "bbox": {
+        "x_pct": 25.498,
+        "y_pct": 48.554,
+        "w_pct": 57.553,
+        "h_pct": 24.485
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 25.823,
+        "y_pct": 75.39,
+        "w_pct": 2.227,
+        "h_pct": 1.776
+      },
+      "changed": true,
+      "change_reason": "Page number identified and corrected from 'text' to 'page_footer'."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text in all paragraphs was severely truncated and contained errors.",
+    "Page number at the bottom left was mislabeled as text."
+  ],
+  "doc_id": "2780",
+  "page": 13,
+  "elapsed_seconds": 4.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

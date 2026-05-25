@@ -1,0 +1,27 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les moments de détresse, pourtant, étaient rares. Extérieurement il n'y avait presque rien de nouveau dans ma vie. Presque rien à cacher — raconte-t-on qui on croise dans la rue ? Aucune initiative à prendre, aucune réponse à donner. Dans une si parfaite passivité, dans un si long silence, la moindre rencontre était un don pur. Ni préparée, ni même cherchée, elle semblait bénie, voulue par une force plus grande que lui et que moi. Ce lien qui nous unissait devenait sacré, et je le sentais vibrer dans un milieu de cristal sensible, où tout, et même la distance, et même l'absence, et même le silence se faisaient signes de communion. Je vivais en plein miracle, et le plus beau était que j'osais jamais y croire et qu'il ne manquait jamais. Pas une fois j'ai fixé dans mon âme un rendez-vous à Pierre, auquel il ne soit venu. Mais pas un instant j'ai érigé cela en règle, je n'en ai retiré de la sécurité. Peut-être savais-je instinctivement que le miracle est instantané, toujours hors la loi et hors de prise; peut-être savais-je aussi, par une sorte de crainte superstitieuse, qu'il suffisait de tendre la main vers lui et de vouloir le posséder pour le faire s'évanouir.",
+      "bbox": {
+        "x_pct": 9.73,
+        "y_pct": 32.202,
+        "w_pct": 81.216,
+        "h_pct": 53.147
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled word 'rareg' to 'rares' and completed the truncated text content from the OCR output to match the image accurately."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 1,
+  "issues": [
+    "The OCR output was incomplete and contained a typo in the word 'rares'."
+  ],
+  "doc_id": "40",
+  "page": 54,
+  "elapsed_seconds": 3.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

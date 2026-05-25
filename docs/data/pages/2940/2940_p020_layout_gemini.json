@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "es namentlich im 18.Jahrhundert den absolutistischen Tendenzen in ganz Europa entsprechend eine herrschende Schicht, die auf Untertanen herabsah. Aber auch in jenen Jahren erhielt sich der republikanische Geist, der sich im 19. Jahrhundert erneut mit betontem Selbstbewusstsein belebte. Für die Freude am oft etwas kauzigen Individualismus gibt es mancherlei Beweise. Gottfried Keller hat ihn vielfach geschildert. Doch gilt dies auch für die Gegenwart. Der Schweizer liest lieber für sich allein seine Zeitung, als dass er sich der Masseninformation des Fernsehens anvertraut. (Der Schweizer sitzt durchschnittlich weniger lang vor dem Fernsehaparat als der europäische Durchschnitt.) Der Schweizer empfindet eine instinktive Scheu vor grossen Massenveranstaltungen. Es ist fast unmöglich, grosse Sportstadien zu füllen, und in keinem Land der Welt kamen so bescheidene Massen zusammen wie in der Schweiz, als Papst Johannes Paul II. dem Land die Ehre seines Besuches erwies.",
+      "bbox": {
+        "x_pct": 25.104,
+        "y_pct": 14.883,
+        "w_pct": 66.24,
+        "h_pct": 43.453
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was truncated and did not match the actual content of the block in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Als weiteres Kennzeichen der Schweiz wird man die enorme politische Stabilität bezeichnen müssen. Der äussere Friede als Folge der Neutralitätspolitik wird ergänzt durch einen fast permanenten inneren Frieden. Die letzte allgemeine Streikbewegung (1918) liegt nun 75 Jahre zurück. Als sich in den Jahren der Wirtschaftskrise neue Streiktendenzen zeigten, setzten sich Arbeitnehmer und Arbeitgeber an einen Tisch und einigten sich auf eine Vereinbarung, die man «Friedensabkommen» nannte. Diese Kompromissbereitschaft auf dem Gebiet des Arbeitsrechts hat wesentlich zur Wirtschaftskraft des Landes und damit zum materiellen Wohlstand beigetragen. Das Stichwort «Arbeit» leitet über zu einer weiteren Besonderheit der Schweiz, ihrem Arbeitswillen. Auf der Suche nach der",
+      "bbox": {
+        "x_pct": 25.157,
+        "y_pct": 58.804,
+        "w_pct": 66.005,
+        "h_pct": 28.462
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was incomplete and cut off content prematurely."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 25.418,
+        "y_pct": 94.048,
+        "w_pct": 2.5,
+        "h_pct": 2.366
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer and adjusted scope to reflect only the page number. The previous region included incorrect text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extractions were heavily truncated and incomplete.",
+    "Page number at the bottom was mislabeled as text.",
+    "BBox for the page number included incorrect text from the paragraph above."
+  ],
+  "doc_id": "2940",
+  "page": 20,
+  "elapsed_seconds": 5.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

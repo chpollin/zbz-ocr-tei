@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "30",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 13,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 100,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cette  vision isolée peuvent s'enchaîner Tinfini; et s'en vont dans la   poésie. Qu'on n'imagine sur",
+      "bbox": {
+        "x_pct": 19.486,
+        "y_pct": 13.328,
+        "w_pct": 69.467,
+        "h_pct": 48.533
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous voyons donc que même dans létat   contemplatif le moi ne laisse pas le donné perceptif   (qui e",
+      "bbox": {
+        "x_pct": 19.371,
+        "y_pct": 61.887,
+        "w_pct": 68.776,
+        "h_pct": 13.177
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header regions detected and added."
+  ],
+  "doc_id": "110",
+  "page": 32,
+  "elapsed_seconds": 7.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

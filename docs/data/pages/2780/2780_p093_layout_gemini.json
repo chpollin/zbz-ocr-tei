@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le futur, tout différent, n'est pas symétrique-ment inverse. Le témoin ou l'agent historique n'est pas dans le futur. Il est dans le présent, avec une imminence de futur : la futur va être. Il implique à la fois une certitude et une indétermination. Il est la dimension du possible, de la visée, de la liberté. Il s'ouvre au présent de l'agent, qui est le futur de son passé historique. Ce qui est possible maintenant pour l'agent devient, comme passé, immuable pour l'historien.",
+      "bbox": {
+        "x_pct": 26.133,
+        "y_pct": 13.832,
+        "w_pct": 57.585,
+        "h_pct": 22.279
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute la condition humaine se joue dans ce glissement, cette substitution, et cette irréductible incompatibilité. Causalité, finalité, liberté. Causalité, grâce à l'immuabilité du passé. Finalité, grâce à la disponibilité partielle de l'avenir. Liberté, grâce à la «petite durée» du présent, qui ne s'écoule pas, mais s'effiloche vers le passé et le futur. Responsabilité, à cause du glissement, de la continuité inconcevable des dimensions contradictoires et réciproquement indispensables.",
+      "bbox": {
+        "x_pct": 26.303,
+        "y_pct": 35.678,
+        "w_pct": 57.415,
+        "h_pct": 22.353
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'où : l'historité de chaque sujet humain. D'où : l'histoire.",
+      "bbox": {
+        "x_pct": 30.053,
+        "y_pct": 57.492,
+        "w_pct": 48.941,
+        "h_pct": 2.753
+      },
+      "changed": true,
+      "change_reason": "Combined two fragmented boxes into one logical paragraph region as they form a continuous thought."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire du monde physique, réduite au seul temps unidimensionnel des intervalles entre causes et effets, ne nous ramène pas, comme on a souvent tendance à le croire, à un positivisme simpliste.",
+      "bbox": {
+        "x_pct": 26.377,
+        "y_pct": 63.864,
+        "w_pct": 57.447,
+        "h_pct": 9.199
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "94",
+      "bbox": {
+        "x_pct": 26.757,
+        "y_pct": 75.334,
+        "w_pct": 2.477,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Added page number region and labeled as page_footer/filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was corrupted.",
+    "Multiple regions were fragmented unnecessarily.",
+    "Page number was missing from initial detection.",
+    "Bbox for D'où line was fragmented and incomplete."
+  ],
+  "doc_id": "2780",
+  "page": 93,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

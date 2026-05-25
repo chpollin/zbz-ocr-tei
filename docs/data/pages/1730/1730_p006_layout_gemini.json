@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1 E dc 1 12n dG 1 Bont 4 Frgarder 2 94 10",
+      "bbox": {
+        "x_pct": 7.645,
+        "y_pct": 13.846,
+        "w_pct": 38.667,
+        "h_pct": 16.685
+      },
+      "changed": true,
+      "change_reason": "Artifact or garbled text region incorrectly identified as paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9 6an ng 2941124 Quand 12 92 double de 12 bogucoup d2 1",
+      "bbox": {
+        "x_pct": 7.955,
+        "y_pct": 38.084,
+        "w_pct": 34.06,
+        "h_pct": 31.147
+      },
+      "changed": true,
+      "change_reason": "Artifact or garbled text region incorrectly identified as paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Wne 1 ]",
+      "bbox": {
+        "x_pct": 31.229,
+        "y_pct": 82.895,
+        "w_pct": 6.24,
+        "h_pct": 3.259
+      },
+      "changed": true,
+      "change_reason": "Artifact region incorrectly identified as paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 53.378,
+        "y_pct": 17.161,
+        "w_pct": 1.24,
+        "h_pct": 0.923
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly identified as paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2 Tue 12 2l2 Prce EL llo Pag 12",
+      "bbox": {
+        "x_pct": 53.202,
+        "y_pct": 20.797,
+        "w_pct": 35.3,
+        "h_pct": 18.783
+      },
+      "changed": true,
+      "change_reason": "Artifact or garbled text region incorrectly identified as paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "plur EE q12 EE on on du E 7 41",
+      "bbox": {
+        "x_pct": 62.634,
+        "y_pct": 41.958,
+        "w_pct": 29.618,
+        "h_pct": 33.804
+      },
+      "changed": true,
+      "change_reason": "Artifact or garbled text region incorrectly identified as paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Don e",
+      "bbox": {
+        "x_pct": 69.143,
+        "y_pct": 79.119,
+        "w_pct": 20.909,
+        "h_pct": 3.357
+      },
+      "changed": true,
+      "change_reason": "Artifact region incorrectly identified as paragraph."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Most regions detected by OCR/Docling on this page represent visual noise or artifacts and were incorrectly classified as text/paragraph.",
+    "No actual document text regions were correctly identified in this bounding box set."
+  ],
+  "doc_id": "1730",
+  "page": 6,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

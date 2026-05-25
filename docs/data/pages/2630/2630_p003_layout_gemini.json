@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "scheidung kommt, sie weiß – wie Jaspers sagt –, daß sie nicht von irgendwo draußen verursacht wurde. Sie weiß auch, daß sie sich nicht selbst geschaffen hat: so etwas wie Existenz hat kein Mensch je geschaffen. Sondern: Existenz als Fähigkeit, eine echte Entscheidung in den gegebenen Umständen zu fassen, wird erlebt, sagt Jaspers, als Geschenk. Das bedeutet: sie kommt von woanders her; aber »woanders« ist weder Raum noch Empirie, z. B. Gott da oben. Irgendwie muß jede Vorstellung, sobald sie auftaucht, wieder weggeschafft werden – wie stets bei Jaspers. Denn solche Bilder tauchen immer wieder auf, und sie müssen weg. Sie sind nicht falsch, aber sie sind nur als vorübergehend, als verschwindend richtig.",
+      "bbox": {
+        "x_pct": 13.135,
+        "y_pct": 4.772,
+        "w_pct": 73.489,
+        "h_pct": 27.514
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine Entscheidung der Existenz wird nicht einfach dadurch charakterisiert, daß man hartnäckig sagt: »Ich tue das, und nichts anderes. Du kannst sagen, was du willst, tue das.« Hartnäckigkeit ist nicht Existenz. Eine existentielle Entscheidung schöpft ihre Kraft daraus, daß sie nicht willkürlich, sondern gerade notwendig angesichts eines Gegenübers vollzogen wird, das absolut ist. Man ist dann versucht, von absoluten Werten oder von einem absoluten Wert zu sprechen. Das ist genauso richtig oder so falsch, wie zu sagen: »Gott«. Es bedeutet einfach: die existentielle Entscheidung hat es mit einer Ebene zu tun, die nicht mehr zum Relativen, Bedingten der Tatsachen gehört, sondern wo ein Bezug zum Absoluten möglich ist. Und weil er möglich ist, ist er für Existenz notwendig. Denn wenn ein Bezug zum Absoluten möglich ist, dann will man diesen Bezug unbedingt haben.",
+      "bbox": {
+        "x_pct": 13.078,
+        "y_pct": 31.716,
+        "w_pct": 73.409,
+        "h_pct": 31.756
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hier berühren wir einen der tiefgründigsten Punkte der Philosophie überhaupt. Das ist, meiner Ansicht nach, die Tiefe des Spinozismus. Jaspers sagt also von diesem Auftauchen von Existenz zur Entscheidung in bezug auf Transzendenz und von der Transzendenz her, es sei quer zur Zeit. Diesen Ausdruck »quer zur Zeit« halte ich für wesentlich. Er bedeutet, daß Existenz der Zeit nicht fremd ist, sie verwirklicht sich nicht in der Zeitlosigkeit, sondern in der Zeit. Sie ist aber »quer zur Zeit«, weil sie die Zeit kreuzt oder durchbohrt. Sie bleibt nicht da, wo es Ursachen und Wirkungen gibt, sondern sie entspringt quer zur Zeit. Existenz ist ganz eng an das »Jetzt« gebunden, sie ist in der empirischen Wirklichkeit situiert. Sie hat ihren Ort in Zeit und Raum. Entstanden ist",
+      "bbox": {
+        "x_pct": 12.998,
+        "y_pct": 63.227,
+        "w_pct": 73.247,
+        "h_pct": 26.836
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 92.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kiesov Subjekt/Wissenschaft der Existenz",
+      "bbox": {
+        "x_pct": 14.8,
+        "y_pct": 96.9,
+        "w_pct": 70.8,
+        "h_pct": 1.1
+      },
+      "changed": true,
+      "change_reason": "Correctly identified running footer as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and running footer at bottom were not correctly tagged initially.",
+    "The OCR text for the main body paragraphs needs refinement for accuracy against the source image."
+  ],
+  "doc_id": "2630",
+  "page": 3,
+  "elapsed_seconds": 7.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

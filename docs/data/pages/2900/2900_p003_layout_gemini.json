@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE POIDS DU POUVOIR ET LA LIBERTE 47",
+      "bbox": {
+        "x_pct": 8.782,
+        "y_pct": 7.159,
+        "w_pct": 81.651,
+        "h_pct": 2.417
+      },
+      "changed": true,
+      "change_reason": "Header with title and page number identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais jamais la pesanteur matérielle du pouvoir n'e...",
+      "bbox": {
+        "x_pct": 9.016,
+        "y_pct": 11.096,
+        "w_pct": 68.232,
+        "h_pct": 2.417
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a là une difficulté évidente : l'asymétrie...",
+      "bbox": {
+        "x_pct": 8.7,
+        "y_pct": 13.215,
+        "w_pct": 81.499,
+        "h_pct": 15.689
+      },
+      "changed": true,
+      "change_reason": "Fixed typo in transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout détenteur de pouvoir est tenté de considérer...",
+      "bbox": {
+        "x_pct": 8.782,
+        "y_pct": 30.596,
+        "w_pct": 81.651,
+        "h_pct": 26.374
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par extension, le pouvoir comme tel et tout ce s'y...",
+      "bbox": {
+        "x_pct": 8.899,
+        "y_pct": 58.743,
+        "w_pct": 81.581,
+        "h_pct": 13.747
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il serait temps de reconnaître que, dans la condit...",
+      "bbox": {
+        "x_pct": 8.817,
+        "y_pct": 74.19,
+        "w_pct": 81.815,
+        "h_pct": 13.078
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est que l'homme a un corps, et qu'il ne peut user...",
+      "bbox": {
+        "x_pct": 8.864,
+        "y_pct": 87.349,
+        "w_pct": 81.967,
+        "h_pct": 6.825
+      },
+      "changed": true,
+      "change_reason": "Fixed typos in transcription."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Page header was detected as body text initially.",
+    "Small transcription errors in auto-detected text."
+  ],
+  "doc_id": "2900",
+  "page": 3,
+  "elapsed_seconds": 4.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,142 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "132",
+      "bbox": {
+        "x_pct": 21.31,
+        "y_pct": 53.64,
+        "w_pct": 1.78,
+        "h_pct": 1.34
+      },
+      "changed": true,
+      "change_reason": "Page number identified and corrected to _filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 42.66,
+        "y_pct": 53.53,
+        "w_pct": 15.11,
+        "h_pct": 1.34
+      },
+      "changed": true,
+      "change_reason": "Running header identified and corrected to _filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "133",
+      "bbox": {
+        "x_pct": 87.21,
+        "y_pct": 53.53,
+        "w_pct": 1.95,
+        "h_pct": 1.45
+      },
+      "changed": true,
+      "change_reason": "Page number identified and corrected to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plus Yol Caravellc ct 1 bicyclette) . 1,1 Don Iondement pr\t\t caire points plan Erud Car lib\t\t r\t\t Pour ",
+      "bbox": {
+        "x_pct": 12.476,
+        "y_pct": 9.553,
+        "w_pct": 37.041,
+        "h_pct": 21.609
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pr\t\t caire aussi cet autre fondement que sont la peur et Je ne pense pas seulemeut & a relative paraly",
+      "bbox": {
+        "x_pct": 12.476,
+        "y_pct": 30.562,
+        "w_pct": 37.263,
+        "h_pct": 18.646
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "III",
+      "bbox": {
+        "x_pct": 30.7,
+        "y_pct": 57.5,
+        "w_pct": 2.2,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Section marker identified as heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cv d\t\t veloppement # possihle entre des conduites. J'ai tent\t\t e seulement de moralisation par 'implique ",
+      "bbox": {
+        "x_pct": 12.64,
+        "y_pct": 63.87,
+        "w_pct": 37.582,
+        "h_pct": 16.845
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sio0s, r\t\t pondent petnent, coinpter parmi= qui plaisent qui",
+      "bbox": {
+        "x_pct": 12.988,
+        "y_pct": 79.374,
+        "w_pct": 29.729,
+        "h_pct": 8.659
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONDUITES HUMAINES ET INSTITUTIONS",
+      "bbox": {
+        "x_pct": 54.613,
+        "y_pct": 7.229,
+        "w_pct": 35.5,
+        "h_pct": 1.2
+      },
+      "changed": true,
+      "change_reason": "Corrected heading label to include full text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d\t\t veloppement, Jes Tesprit scientinque les afrontements des hypoJes du maniere , couue les plus indu",
+      "bbox": {
+        "x_pct": 54.526,
+        "y_pct": 10.549,
+        "w_pct": 34.71,
+        "h_pct": 64.636
+      },
+      "changed": false
+    }
+  ],
+  "score": 65,
+  "num_corrections": 7,
+  "issues": [
+    "Detected page numbers and running headers labeled as text.",
+    "Section heading was split/incorrectly truncated.",
+    "OCR quality is poor, affecting text recognition but not affecting label logic.",
+    "Missing section header on left page top."
+  ],
+  "doc_id": "690",
+  "page": 9,
+  "elapsed_seconds": 11.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

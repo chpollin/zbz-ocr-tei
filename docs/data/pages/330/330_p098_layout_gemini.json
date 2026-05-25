@@ -1,0 +1,72 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected label from text/paragraph to section_header/zb_heading as it is the page header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "64",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected label to page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "complicité n'a rien de fortuit. Ennemi commun, technique commune pour l'abattre - bon gré, mal gré, communistes et fascistes ont partie liée. Mais lorsqu'ils ont renversé le régime démocratique, fascistes et communistes se voient encore contraints d'imposer des régimes politiques analogues. Les uns et les autres ne peuvent tolérer d'opposition véritable (tout au plus peuvent-ils admettre une opposition limitée, portant sur certains modes de faire particuliers, et encore à titre plutôt décoratif que réel). Ils sont donc obligés de faire régner la terreur ; cette terreur, à son tour, suscite l'opposition et doit recourir à des mesures de répression de plus en plus sommaires et inhumaines. Et c'est le cercle infernal d'où l'on n'a jamais vu un peuple s'échapper autrement que par la guerre et la défaite.",
+      "bbox": {
+        "x_pct": 12.493,
+        "y_pct": 10.16,
+        "w_pct": 85.557,
+        "h_pct": 27.834
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, toute politique de force doit pouvoir s'appuyer sur une classe de privilégiés, et les privilèges doivent étre d'autant plus grands que la terreur est plus difficile à justifier et à subir. Ainsi, les communistes, comme les fascistes, tendent à constituer sous une forme ou une autre une classe dont les privilèges sont supérieurs à ceux qu'une démocratie accorde à sa classe dirigeante. Cela non pas tant à cause des appétits déchaïnés des dirigeants et de leurs clients, mais par nécessité politique, pour la stabilité même du régime.",
+      "bbox": {
+        "x_pct": 12.437,
+        "y_pct": 37.317,
+        "w_pct": 85.195,
+        "h_pct": 19.162
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le règne de la terreur fait redouter non seulement le regard, non seulement la critique d'autrui, mais son existence. Un seul homme libre suffit à défier, et par là à ébranler, tout système esclavagiste. La tyrannie ne verrait s'apaiser ses craintes que si la liberté n'existait plus nulle part. Et cela est d'autant plus vrai que la terre devient plus petite, les relations entre ses parties plus directes et plus étroites. La coexistence du régime soviétique et du régime démocratique occidental ne pose pas essentiellement un problème de bonne volonté et de tolérance réciproques, ni un problème économique : un régime de liberté politique (même relative et altérée en fait) met par sa seule réalité le régime tyrannique en accusation. La tyrannie ne peut se justifier que si la liberté n'est pas possible. D'où forcément (et indépendamment de tout nationalisme traditionnel), chez les États totalitaires, une politique de force et d'agression, inspirée par la peur, et davantage par la peur d'un effondrement interne que d'une attaque de l'extérieur.",
+      "bbox": {
+        "x_pct": 12.159,
+        "y_pct": 55.856,
+        "w_pct": 85.432,
+        "h_pct": 33.627
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing page header/footer in initial detection",
+    "Extensive OCR errors in paragraph contents",
+    "False positive labeling of page number and header",
+    "Bounding box coordinates were not modified but labels were fixed"
+  ],
+  "doc_id": "330",
+  "page": 98,
+  "elapsed_seconds": 7.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

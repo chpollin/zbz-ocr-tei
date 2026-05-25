@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "80 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 125,
+        "y_pct": 77,
+        "w_pct": 643,
+        "h_pct": 17
+      },
+      "changed": true,
+      "change_reason": "Corrected page header and page number region from text to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "manières, ils tracent mille chemins dans l'espace qui reste intact, dans le silence qui reste intact. Neige, gris sur gris, silence sur silence, patience. Ta lettre est là comme chaque jour. Le déjeuner est là. L'enfant est là. Qu'est-ce que j'avais donc hier ? Les jours naissent inépuisablement, l'éternité ne se lassera pas, et rien ne meurt.",
+      "bbox": {
+        "x_pct": 121,
+        "y_pct": 123,
+        "w_pct": 805,
+        "h_pct": 147
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR content to match the image source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne veux plus écrire aujourd'hui, surtout pas raconter des choses tristes. Je veux tricoter, faire de l'ordre, compter les pots de confiture qui nous restent, faire une promenade dans la neige.",
+      "bbox": {
+        "x_pct": 121,
+        "y_pct": 277,
+        "w_pct": 805,
+        "h_pct": 103
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR content to match the image source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le reste, demain.",
+      "bbox": {
+        "x_pct": 148,
+        "y_pct": 376,
+        "w_pct": 260,
+        "h_pct": 25
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was highly inaccurate.",
+    "Page number and header were not filtered out by the initial detection."
+  ],
+  "doc_id": "40",
+  "page": 78,
+  "elapsed_seconds": 3.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

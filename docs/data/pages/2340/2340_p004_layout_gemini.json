@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "90",
+      "bbox": {
+        "x_pct": 22.385,
+        "y_pct": 20.899,
+        "w_pct": 1.767,
+        "h_pct": 1.636
+      },
+      "changed": true,
+      "change_reason": "Corrected page number label from text to page_header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 67.438,
+        "y_pct": 20.899,
+        "w_pct": 11.837,
+        "h_pct": 1.636
+      },
+      "changed": true,
+      "change_reason": "Corrected running header label from text to page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In der Erziehung keine \"pädagogische Technik\", die als Mittel zum Zweck angewendet werden könnte. Deswegen hat mir in dem einleitenden Vorwort Ihrer Arbeitswoche der Ausdruck \"begleiten\" so gut gefallen: es geht wirklich darum, daß ein erwachsener Mensch einen jüngeren Menschen auf dem Weg zu seiner eigenen, persönlichen, verantwortlichen Freiheit begleitet.",
+      "bbox": {
+        "x_pct": 22.135,
+        "y_pct": 23.546,
+        "w_pct": 57.099,
+        "h_pct": 8.609
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Keine Zukunft ohne Vergangenheit. Das Vergangene ist bereits nicht mehr da, und doch ist sein Sein unentbehrlich, denn es bestimmt unsere Gegenwart. Konkret gesprochen soll die Erziehung den Jungen ihre Vergangenheit vermitteln. Eben erwähnte ich die Geschichte der Wissenschaften und der Technik. Die Jungen sollen erfahren, wie frühere Menschen sich bemüht und gelebt haben, um selber dankbar zu werden, um ihre Schulden dieser Vergangenheit gegenüber anzuerkennen, und sich auf ihre Rolle in dieser Kette vorzubereiten – statt, wie so oft heute, sich einer billigen, blinden Empörung hinzugeben. Die Geschichte wartet auf sie, sie haben in ihr Pflichten, weil sie eine Vergangenheit haben. Dann werden sie es nicht mehr wagen zu sagen, was ich von manchen Studenten oft hörte: \"Der Gesellschaft schulde ich nichts!\" – Denn dann können sie in allen Unterrichtsfächern die Vorbedingung eines Sinnes finden.",
+      "bbox": {
+        "x_pct": 22.619,
+        "y_pct": 38.997,
+        "w_pct": 57.156,
+        "h_pct": 18.113
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt auch keine Zukunft ohne Gegenwart. Jeder junge Mensch muß die Erfahrung machen, daß seine einzige tätige Verabredung mit der Wirklichkeit, mit der Welt, wie sie ist, im Jetzt liegt, – im Jetzt, wo die Welt so ist, wie sie eben ist. Menschen können nicht in Zukunft handeln, wo alle Möglichkeiten noch offen sind, oder den Träumen nachgeben, sondern nur in der faktischen Gegebenheit der Gegenwart.",
+      "bbox": {
+        "x_pct": 23.102,
+        "y_pct": 56.973,
+        "w_pct": 56.833,
+        "h_pct": 8.609
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Zukunft ist für die Freiheit des Menschen die unentbehrliche Dimension des Möglichen, im Raume dessen der Mensch auf etwas hinzielen kann. Sie soll aber nie mit der Transzendenz des Ewigen verwechselt werden, wie es z. B. manche religiöse Marxisten zu tun versuchen, wenn sie vom \"Ende der Geschichte\" sprechen, als gäbe es eine religiöse Eschatologie in der Zeit selbst, die sie mit einer Eschatologie \"nach der Zeit\" oder \"jenseits der Zeit\" identifizieren. Die Zukunft kann für jede Zeit zur Versuchung und zum Zufluchtsort werden, – statt für die gegenwärtige Tat Luft des Möglichen zu sein, in der diese erst atmen kann.",
+      "bbox": {
+        "x_pct": 23.183,
+        "y_pct": 65.41,
+        "w_pct": 57.051,
+        "h_pct": 12.395
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zukunft ist nicht Paradies; sie bleibt zeitlich, sie gehört zum Menschsein in der Zeit. Auch diese Erfahrung des Zeitdaseins gehört zur Erziehung.",
+      "bbox": {
+        "x_pct": 23.288,
+        "y_pct": 77.765,
+        "w_pct": 56.89,
+        "h_pct": 3.29
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction"
+    }
+  ],
+  "score": 45,
+  "num_corrections": 7,
+  "issues": [
+    "Initial text extractions were heavily corrupted/garbled",
+    "Failed to identify page header/footer components initially",
+    "Missing text content in all segments due to bad OCR/segmentation"
+  ],
+  "doc_id": "2340",
+  "page": 4,
+  "elapsed_seconds": 7.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'Est et l'Ouest, dans lequel se jouait tout ce qui m'est le plus précieux, la démocratie et la liberté. J'ai donc écrit un article pour défendre mon point de vue. Cela n'a pas été particulièrement bien vu. Je l'ai d'ailleurs écrit dans un journal de gauche, je ne me souviens plus lequel.",
+      "bbox": {
+        "x_pct": 4.237,
+        "y_pct": 3.629,
+        "w_pct": 79.89,
+        "h_pct": 10.024
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription from OCR overlay."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "N'était-ce pas dans « Coopération » ?",
+      "bbox": {
+        "x_pct": 69.878,
+        "y_pct": 14.331,
+        "w_pct": 37.729,
+        "h_pct": 2.339
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header and fixed text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui, probablement. Mais le conflit a été le plus grave pour moi quant à ses conséquences est survenu au moment où, à Genève, le parti socialiste a décidé pour la première fois un apparemment avec le parti communiste pour les élections. Or si une chose était bien claire dans ma tête et s'imposait comme une règle absolue, tout aussi absolue que s'il s'était agi d'un parti fasciste ou nazi, c'est que je ne m'associerais jamais un apparemment avec les communistes. A cet égard je ne suis pas « mitterrandiste », vous le voyez... Je me suis prononcée naturellement contre cette option; j'ai dit qu'elle semait la confusion dans les esprits, qu'elle les égarait, qu'elle leur faisait perdre de vue l'adhésion capitale à la démocratie, comme moyen normal de réalisation de la justice sociale; que cela faisait des communistes des frères de combat, ce que je n'admettais en aucune façon. Et j'ai prévenu que si cet apparemment avait lieu effectivement, je m'en irais. Le Parti socialiste suisse a demandé au parti socialiste genevois de ne pas procéder à cet apparemment, mais le parti genevois a décidé de passer outre. Alors, évidemment, j'ai démissionné. Ensuite, j'ai écrit une lettre aux responsables du Parti socialiste suisse, leur disant en substance : « Vous avez demandé au parti genevois de ne pas procéder à cet apparemment; il l'a fait tout de même. Je m'y suis opposée et je me trouve maintenant dehors. Cela ne me paraît pas être une raison pour ne pas être membre du Parti socialiste suisse; alors trouvez-moi une solution ! » Et ils ont trouvé une solution, qui tourne un peu la lettre des statuts : je suis devenue membre de la section romande du parti socialiste bernois ! Je le suis encore aujourd'hui. Seulement, bien entendu, cela implique un militantisme extrêmement réduit. Il m'est très difficile de participer aux séances.",
+      "bbox": {
+        "x_pct": 4.115,
+        "y_pct": 16.21,
+        "w_pct": 80.012,
+        "h_pct": 51.855
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription from OCR overlay."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. Alors que signifie aujourd'hui pour vous votre appartenance au Parti socialiste, que ce soit à la section romande du parti socialiste bernois ou au Parti socialiste suisse ?",
+      "bbox": {
+        "x_pct": 4.31,
+        "y_pct": 68.573,
+        "w_pct": 79.695,
+        "h_pct": 6.081
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. Et au socialisme en général ! C'est une bonne question. Quand je dis que je suis socialiste, je veux dire par là que je suis démocrate, qu'à mes yeux la justice sociale n'est pas du tout encore suffisamment réalisée dans nos pays, et qu'il faut encore lutter pour améliorer les conditions de travail et de vie d'une grande partie de la population, dans notre pays en particulier, dans l'Europe occidentale en général, sans parler pour le moment de tous les problèmes du Tiers-Monde et du reste du monde. Cette appartenance socialiste, je crois, s'accorde parfaitement avec ce que",
+      "bbox": {
+        "x_pct": 4.359,
+        "y_pct": 74.573,
+        "w_pct": 79.768,
+        "h_pct": 16.21
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "127",
+      "bbox": {
+        "x_pct": 80.244,
+        "y_pct": 93.687,
+        "w_pct": 3.78,
+        "h_pct": 2.213
+      },
+      "changed": true,
+      "change_reason": "Identified and labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text extraction was poor, requiring manual correction.",
+    "Page number at bottom right was labeled as text.",
+    "Section header was mislabeled as paragraph.",
+    "Author signature/initials (A.D.) should be carefully monitored."
+  ],
+  "doc_id": "2330",
+  "page": 131,
+  "elapsed_seconds": 5.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

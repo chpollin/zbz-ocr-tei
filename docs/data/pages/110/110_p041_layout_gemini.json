@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 11.239,
+        "y_pct": 10.027,
+        "w_pct": 34.348,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header(_filter)"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "39",
+      "bbox": {
+        "x_pct": 76.671,
+        "y_pct": 10.027,
+        "w_pct": 2.87,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer(_filter)"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tel, ils font dun objet donné un objet donné   différent, mais ils ne changent pas son mode de donné",
+      "bbox": {
+        "x_pct": 11.431,
+        "y_pct": 13.212,
+        "w_pct": 68.278,
+        "h_pct": 6.96
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Où le privilège de caractère   propre de lactivité   artistique? C'est que lart est création; et non",
+      "bbox": {
+        "x_pct": 11.277,
+        "y_pct": 20.476,
+        "w_pct": 68.431,
+        "h_pct": 11.238
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La connaissance aussi mais elle   déploie sa réalité hors du donné social; le théorème de Pythagore ",
+      "bbox": {
+        "x_pct": 11.239,
+        "y_pct": 31.638,
+        "w_pct": 68.623,
+        "h_pct": 42.875
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Fixed labels for page header and page number",
+    "Labels were incorrectly set to text for non-paragraph elements"
+  ],
+  "doc_id": "110",
+  "page": 41,
+  "elapsed_seconds": 6.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to page_header(_filter)": 1,
+    "Corrected label from text to page_footer(_filter)": 1
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Warum ist es s0? Nur aus einem Grund. Es ist, weil dieser Mensch, der so spricht, in sich selbst die Ruhe des endgültigen Wissens diesbezüglich nicht anerkennen kann. Wenn er diese Ruhe anerkennen würde, endgültig anerkennen würde, und das endgültig aufschriebe, wäre er nicht mehr jemand, der das Recht hat, so etwas zu behaupten. Er würde mehr behaupten, als er behaupten kann, denn er kann es nicht, weil er die Unbeweglichkeit, die Standhaftigkeit nicht hat, die einer solchen Äußerung gebührt, die für eine solche Aussage unentbehrlich ist. Das bedeutet, daß man sich nicht nur auf den Satz beziehen soll, sondern daß man sich in sehr vielen Fragen auf den Autor des Satzes beziehen muß, und daß man in Betracht ziehen muß, welche Festigkeit, welche Unbeweglichkeit, welche Standhaftigkeit der Betreffende in seine Äußerungen hineinbringen kann.",
+      "bbox": {
+        "x_pct": 7.38,
+        "y_pct": 3.251,
+        "w_pct": 85.24,
+        "h_pct": 33.843
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual image scan for higher accuracy."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich glaube, ein Philosoph; der ein sehr scharfes und sehr standhaftes Gefühl für diese Äußerungen hatte, war Hegel. Hegel ist nach Auffassung der meisten Leute ein Panlogiker, er hat diesen Ruf. Ein Panlogiker, das heißt jemand, der die Logik aufrechterhalten kann und erhalten will, jedes Mal, wenn er von der Logik spricht. Vielleicht gerade deswegen, weil ihn das Gewicht der Logik in ihrem Bezug zum Sein gezwungen hat, an die Paradoxien zu denken, und gerade diesbezüglich immer wieder in Sorge zu sein ob dieser Möglichkeit der unruhigen Aussage.",
+      "bbox": {
+        "x_pct": 7.44,
+        "y_pct": 38.825,
+        "w_pct": 85.075,
+        "h_pct": 22.832
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for improved accuracy."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deswegen dachte ich, daß ich Ihnen am Ende meiner zwei Vorträge eigentlich zeigen wollte, wieso diese paradoxen Ausdrucksweisen oder diese Widersprüche notwendigerweise der – nicht ein – richtige Ausdruck der philosophischen Situation ist. Gerade wenn man die philosophische Situation in Betracht zieht, muß man das anerkennen, muß man das betonen, und muß man die Folgen daraus ziehen und daran festhalten, damit man versteht, welche Äußerung das ist. Nebenbei bemerkt, glaube ich, daß man sich, wenn man von Existenzphilosophie spricht, gerade darauf bezieht. Die Existenzphilosophie ist eine Philosophie, in der man alles anerkennen muß, was dem Statischen im Gedanken widerspricht, nicht entspricht, nicht entsprechen kann; dann findet man, daß man gerade in diesem",
+      "bbox": {
+        "x_pct": 7.335,
+        "y_pct": 63.233,
+        "w_pct": 85.329,
+        "h_pct": 29.326
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for improved accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "30",
+      "bbox": {
+        "x_pct": 85.0,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 4.0
+      },
+      "changed": true,
+      "change_reason": "Detected page number and assigned correct label."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction contained significant truncation/OCR errors.",
+    "Page number missing from initial JSON."
+  ],
+  "doc_id": "3180",
+  "page": 7,
+  "elapsed_seconds": 4.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DANS L'ARGUMENT ONTOLOGIQUE 113",
+      "bbox": {
+        "x_pct": 248.0,
+        "y_pct": 86.0,
+        "w_pct": 516.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page header information."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le fait, elle repose sur un raisonnement circulaire. Il y a des cercles vrais, il y en a de faux. Nous verrons dans quel sens. L'argument ontologique me paraît être un « cercle vicieux vrai », si absurde que puisse paraître l'expression, parce qu'il s'accomplit aux limites extrêmes de notre connaissance, parce qu'il délimite notre impuissance à connaître (au sens scientifique du mot) et à formuler le domaine métaphysique. Il force l'esprit à échouer violemment contre sa propre incapacité à concevoir le sens de « réalité », d' « existence » quand ces termes se rapportent à l'être métaphysique. Son échec même lui en fera sentir l'inexprimable profondeur. Les mots « existence de Dieu » ne sont qu'une expression-limite, une expression-prison, comme le noumène de Kant, rien d'autre. L'argument ontologique fait, lui aussi, rationnellement place à la foi. En somme, il fait exactement le contraire de ce qu'il paraît faire, puisqu'il semble substituer à la foi une nécessité rationnelle.",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 133.0,
+        "w_pct": 765.0,
+        "h_pct": 508.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and merged fragments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'interprétation que j'ai essayé de donner de l'argument ontologique devait rendre sensible à quel point la position de la philosophie à l'égard de son paradoxe fondamental est dès le moyen âge différente de ce qu'elle était chez les Grecs. Comparez l'expression mythique de l'inconnaissable, et celle, en apparence purement rationnelle, d'un raisonnement tel que l'argument ontologique. L'impuissance de l'esprit scientifique n'est plus acceptée et reconnue grâce à un mode d'expression spécial.",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 643.0,
+        "w_pct": 765.0,
+        "h_pct": 258.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 782.0,
+        "y_pct": 907.0,
+        "w_pct": 14.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and assigned to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was fragmented and incorrect.",
+    "Page header and page footer were not correctly classified.",
+    "BBox for header was inferred based on document structure."
+  ],
+  "doc_id": "20",
+  "page": 115,
+  "elapsed_seconds": 4.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

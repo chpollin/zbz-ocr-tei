@@ -1,0 +1,144 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Zeitschrift:",
+      "changed": true,
+      "change_reason": "Labelled as bibliographic metadata header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Studia philosophica : Schweizerische Zeitschrift für Philosophie = Revue suisse de philosophie = Rivista svizzera della filosofia = Swiss journal of philosophy",
+      "changed": true,
+      "change_reason": "Bibliographic content"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Herausgeber:",
+      "changed": true,
+      "change_reason": "Labelled as bibliographic metadata header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Schweizerische Philosophische Gesellschaft 30-31 (1970-1971)",
+      "changed": true,
+      "change_reason": "Bibliographic content"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Band:",
+      "changed": true,
+      "change_reason": "Labelled as bibliographic metadata header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Artikel:",
+      "changed": true,
+      "change_reason": "Labelled as bibliographic metadata header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La question de Dieu et la philosophie aujourd'hui = Die philosophische Gottesfrage heute",
+      "changed": true,
+      "change_reason": "Bibliographic content"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Autor:",
+      "changed": true,
+      "change_reason": "Labelled as bibliographic metadata header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mende, Georg / Widmer, Gabriel / Hersch, Jeanne",
+      "changed": true,
+      "change_reason": "Bibliographic content"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DOI:",
+      "changed": true,
+      "change_reason": "Labelled as bibliographic metadata header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "https://doi.org/10.5169/seals-883255",
+      "changed": true,
+      "change_reason": "Bibliographic content"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Nutzungsbedingungen"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die ETH-Bibliothek ist die Anbieterin der digitalisierten Zeitschriften. Sie besitzt keine Urheberrechte an den Zeitschriften und ist nicht verantwortlich für deren Inhalte. Die Rechte liegen in der Regel bei den Herausgebern beziehungsweise den externen Rechteinhabern. Siehe Rechtliche Hinweise."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Conditions d'utilisation"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'ETH Library est le fournisseur des revues numérisées. Elle ne détient aucun droit d'auteur sur les revues et n'est pas responsable de leur contenu. En règle générale, les droits sont détenus par les éditeurs ou les détenteurs de droits externes. Voir Informations légales."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Terms of use"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The ETH Library is the provider of the digitised journals. It does not own any copyrights to the journals and is not responsible for their content. The rights usually lie with the publishers or the external rights holders. See Legal notice."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Download PDF:",
+      "changed": true,
+      "change_reason": "Metadata footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27.02.2025",
+      "changed": true,
+      "change_reason": "Metadata footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "ETH-Bibliothek Zürich, E-Periodica; https://www.e-periodica.ch",
+      "changed": true,
+      "change_reason": "Metadata footer"
+    }
+  ],
+  "score": 40,
+  "num_corrections": 12,
+  "issues": [
+    "Bibliographic entries labelled as text",
+    "Metadata footer elements labelled as text",
+    "Character misrecognition in DOI and footer strings"
+  ],
+  "doc_id": "3100",
+  "page": 1,
+  "elapsed_seconds": 4.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

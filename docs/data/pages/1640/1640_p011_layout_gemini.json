@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA PROBLEMATIQUE DE L'AME ET DU CORPS DANS LA REALISATION POLITIQUE",
+      "bbox": {
+        "x_pct": 63.194,
+        "y_pct": 68.359,
+        "w_pct": 72.847,
+        "h_pct": 69.453
+      },
+      "changed": true,
+      "change_reason": "Header identified at top of page, labeled as page_header to ignore."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi la politique assume les besoins du \"corps social\". Pour les satisfaire, elle cherche à aménager l'économie, sachant bien que si elle échoue en cela, elle expose l'entité sociale tout entière au chantage et à la menace de mort.",
+      "bbox": {
+        "x_pct": 59.8,
+        "y_pct": 112.5,
+        "w_pct": 811.3,
+        "h_pct": 87.7
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "En même temps, et par là même, elle s'efforce de suivre un dessein cohérent, de sauvegarder un sens qui lui vient des valeurs, et parmi celles-ci, avant tout, celles qui sont sa raison d'être, les Droits de l'homme, conditions de la liberté.",
+      "bbox": {
+        "x_pct": 59.0,
+        "y_pct": 215.8,
+        "w_pct": 811.7,
+        "h_pct": 86.7
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Problématique",
+      "bbox": {
+        "x_pct": 58.2,
+        "y_pct": 353.9,
+        "w_pct": 174.8,
+        "h_pct": 20.9
+      },
+      "changed": false
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est pas de politique de ce nom sans référence au moins implicite de l'action aux Droits de l'homme, qui lui donnent son sens en explicitant l'exigence absolue d'une liberté personnelle étrangère au pouvoir. Il n'en est pas non plus quand ne sont pas sauvegardées ou conquises ses conditions d'action, l'indépendance collective garantie par la maîtrise de la force et des ressources.",
+      "bbox": {
+        "x_pct": 57.9,
+        "y_pct": 385.7,
+        "w_pct": 819.1,
+        "h_pct": 137.5
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi l'anarchisme, en tant qu'angélisme refusant d'assumer le corps et ses nécessités, et entraînant bientôt une rechute dans le règne pur de la force - et le totalitarisme, en tant que règne cynique de la force seule sur l'homme et la société, ne cessent de s'entrecroiser, et leur affrontement ne comporte, dans l'histoire, aucune solution définitive. Le totalitarisme déploie, dans un temps horizontal, une planification technicienne du futur élaborée par des ingénieurs de l'histoire. L'anarchisme espère dans l'instant le miracle édénique d'une harmonie intemporelle.",
+      "bbox": {
+        "x_pct": 56.7,
+        "y_pct": 535.9,
+        "w_pct": 822.1,
+        "h_pct": 183.4
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les deux dimensions ensemble permettent au fil de l'histoire les réalisations fragmentaires de la politique. Elles ne sont ni techniques en vue d'un futur totalisé, ni fuite hors de l'actualité vers une intemporalité imaginaire, mais des efforts limités à l'intersection de l'inconciliable. C'est là seulement que l'homme peut \"apprivoiser\" \"le corps\" de la politique.",
+      "bbox": {
+        "x_pct": 57.5,
+        "y_pct": 731.5,
+        "w_pct": 822.5,
+        "h_pct": 112.8
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "105",
+      "bbox": {
+        "x_pct": 850.0,
+        "y_pct": 880.0,
+        "w_pct": 30.0,
+        "h_pct": 50.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number, correctly labeled as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "High level of OCR noise due to scan quality",
+    "Incorrect paragraph fragmentation and broken words",
+    "Header and footer were not initially classified as filters"
+  ],
+  "doc_id": "1640",
+  "page": 11,
+  "elapsed_seconds": 5.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "2 L'EUROPE AU DÉFI",
+      "bbox": {
+        "x_pct": 86.829,
+        "y_pct": 98.423,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Header identified at top of page, incorrect label and bbox coordinates provided were just content fragments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "humaine et voit cette durée se réduire à presque rien sur le fond des périodes astronomiques. Une immensité de passé s'est ouverte, où l'homme n'était pas. Une immensité d'avenir s'ouvre, où l'homme, peut-être, ne sera plus. Un certain regard, trop vaste, dévalorise tout. Guerres passées, massacres, bonheurs, morts — en somme qu'importe? Le réel a la même présence que l'imaginaire, l'actualité se vit comme une reconstitution. Sur l'écran de la télévision les Trois Mousquetaires, la guerre d'Algérie, l'arrivée sur la Lune, ont tout juste la même densité. De plus en plus, vivre, c'est se raconter ou se laisser raconter des histoires. Ainsi l'ouvrier, le mercredi, à son poste de travail, se raconte son dimanche précédent ou son dimanche suivant, qu'il a passé et passera à se faire raconter les jours de quelqu'un d'autre. « Maintenant » n'est nulle part. Ou alors c'est le point même où l'on a peur, et où l'on étouffe la peur en se racontant des histoires d'avant et d'après.",
+      "bbox": {
+        "x_pct": 8.527,
+        "y_pct": 12.766,
+        "w_pct": 79.96,
+        "h_pct": 45.874
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a bien, pourtant, quelque part, le loyer à payer, le gosse à conduire au Zoo, les haricots à cuire, et l'examen, et la séance, et le malade, et le dentiste. Mais entre cela et les histoires racontées il n'y a rien. Cela ne s'articule pas. Les histoires se racontent, on les raconte — et l'histoire aussi, fleuve géant et nul. Toi, moi, nous n'y sommes pour rien.",
+      "bbox": {
+        "x_pct": 9.063,
+        "y_pct": 65.586,
+        "w_pct": 79.692,
+        "h_pct": 17.45
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce n'est pas une plainte que j'exhale là, pas du tout. Nous sommes bien contents de n'y être pour rien.",
+      "bbox": {
+        "x_pct": 9.371,
+        "y_pct": 82.523,
+        "w_pct": 79.384,
+        "h_pct": 5.162
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction was fragmented and incomplete.",
+    "Page header '2 L'EUROPE AU DÉFI' was omitted from extraction.",
+    "Incorrectly labeled regions as just text fragments instead of the full paragraph blocks."
+  ],
+  "doc_id": "460",
+  "page": 4,
+  "elapsed_seconds": 4.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

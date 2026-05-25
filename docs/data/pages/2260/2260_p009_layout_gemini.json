@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "elle connaît également les limites où s'arrêtent les pouvoirs de la démonstration. Qui veut passer outre doit se confier à la métaphore, attendre les instants de grâce où se libère sous notre plume ce qui, précisément, met en lumière la liberté de l'homme.",
+      "bbox": {
+        "x_pct": 115.3,
+        "y_pct": 108.59,
+        "w_pct": 653.73,
+        "h_pct": 117.85
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content and updated bounding box values to be relative to 0-100 scale."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De l'originel en l'homme, du manque qui le dérobe à lui-même, de l'impermanence qui rend si précieuse toute forme constituée, on peut parler aussi bien, sinon mieux, par le moyen du mythe et de la fable. Dans les textes que Jeanne Hersch a offerts à Karl Jaspers et à Carlo Schmid - et pour de tels destinataires, quel autre projet concevoir que d'éclairer les tréfonds de la condition humaine, ou la nature du combat politique? - elle s'est exprimée en figures, dans des récits qui font penser à la fois aux mythes platoniciens et aux légendes hassidiques. Au vrai, les textes que l'on donne à un maître doivent constituer une œuvre en raccourci; et quand on s'adresse à ceux que l'on fête, il faut savoir susciter (Jeanne Hersch en propose ici l'exemple) tout un jeu de lumières, qui transforme la scène des concepts en dramaturgie, sans oublier que tout peut se jouer dans le plus simple échange de regards.",
+      "bbox": {
+        "x_pct": 109.64,
+        "y_pct": 267.09,
+        "w_pct": 664.94,
+        "h_pct": 504.21
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full document content and updated bounding box values."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 732.5,
+        "y_pct": 821.5,
+        "w_pct": 16.5,
+        "h_pct": 21.3
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original text transcription was highly fragmented and incorrect.",
+    "BBox coordinates in original JSON were scaled incorrectly (>100).",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "2260",
+  "page": 9,
+  "elapsed_seconds": 4.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

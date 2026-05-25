@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "26 DEVENIR FIDÈLE DE LA PHILOSOPHIE",
+      "bbox": {
+        "x_pct": 10.97,
+        "y_pct": 8.0,
+        "w_pct": 76.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Header identified as page number and title, categorized as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à l'autre. Mais l'accent, en art, est quand même mis sur la diversité. On demande à l'artiste de se renouveler. Quand il est vraiment grand, l'œuvre achevée se détache de lui. Il ne reste pas là, hypnotisé par elle, à la contempler. L'homme doit devenir sans cesse; l'œuvre doit être définitive.",
+      "bbox": {
+        "x_pct": 10.889,
+        "y_pct": 12.65,
+        "w_pct": 76.355,
+        "h_pct": 15.119
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous nous heurtons de nouveau à des résultats contradictoires : l'art, avons-nous dit, est immobile, la philosophie est en route; mais une diversité d'œuvres est possible en une vie d'artiste alors que chaque philosophe n'a qu'une philosophie.",
+      "bbox": {
+        "x_pct": 10.949,
+        "y_pct": 27.96,
+        "w_pct": 76.054,
+        "h_pct": 13.06
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or si l'homme est sans cesse en devenir, et si le philosophe reste attaché toute sa vie à une philosophie qui est la sienne, sa philosophie ne peut pas être autre chose que la forme même de son devenir. Il faut donc qu'il y ait en elle - nous l'avons déjà signalé - autre chose que ce qu'elle prétend donner, autre chose qu'un ensemble de résultats acquis. Sinon chaque philosophe serait un homme à jamais hypnotisé par son œuvre.",
+      "bbox": {
+        "x_pct": 10.8,
+        "y_pct": 41.5,
+        "w_pct": 76.5,
+        "h_pct": 22.0
+      },
+      "changed": true,
+      "change_reason": "Identified paragraph missing from original detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chose qui n'est pas impossible en soi. Mais en considérant les œuvres du passé, nous pouvons constater que les philosophes dont les œuvres apportent successivement des solutions ingénieuses et inattendues à des problèmes toujours nouveaux ne sont pas les plus grands, - ni surtout les plus vrais. Non qu'ils aient « truqué » leurs réponses de façon malhonnête; mais quelque chose en eux nous paraît manquer, faute de quoi tout le reste n'est que virtuosité intellectuelle. Au contraire, nous",
+      "bbox": {
+        "x_pct": 10.738,
+        "y_pct": 63.746,
+        "w_pct": 76.31,
+        "h_pct": 25.577
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial detection missed the central paragraph.",
+    "OCR output for detected regions was low quality.",
+    "Page number and running title were mislabeled as paragraph text."
+  ],
+  "doc_id": "20",
+  "page": 28,
+  "elapsed_seconds": 4.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

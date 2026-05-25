@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "112",
+      "bbox": {
+        "x_pct": 160.0,
+        "y_pct": 59.0,
+        "w_pct": 28.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ENTRETIEN PUBLIC",
+      "bbox": {
+        "x_pct": 418.0,
+        "y_pct": 61.0,
+        "w_pct": 163.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "contre-pouvoirs plus ou moins institutionnalisés, s’inscrivait toujours dans l’ordre supérieur du cosmos, et s’imposait avec la même nécessité que le cours des astres ou la succession des saisons. C’est, peut-être, la maison du calendrier, rêve éveillé du mandarin chinois, qui exprime avec le plus de vigueur cette parfaite insertion du microcosme humain dans le macrocosme divin.",
+      "bbox": {
+        "x_pct": 15.66,
+        "y_pct": 9.504,
+        "w_pct": 76.088,
+        "h_pct": 10.306
+      },
+      "changed": true,
+      "change_reason": "Corrected extracted text from garbled OCR snippet."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La situation est tout à fait différente dans notre monde désacralisé, où tout doit naître sur terre. Le pouvoir doit, lui aussi, naître sur terre et se légitimer par quelques raisons immanentes à la conscience des citoyens. Solution idéale imaginée par les démocraties pluralistes modernes. Mais, aussi, immanentes à la nature de l’Etat en tant qu’être terrestre — et c’est la raison d’Etat — ou immanentes à quelque chose de nouveau, à l’histoire conçue comme combat eschatologique, et unique voie de salut, forme de légitimation propre à l’une des créations les plus originales de la modernité. Il s’agit, vous l’avez compris, des régimes totalitaires de gauche.",
+      "bbox": {
+        "x_pct": 15.706,
+        "y_pct": 19.562,
+        "w_pct": 75.926,
+        "h_pct": 17.355
+      },
+      "changed": true,
+      "change_reason": "Corrected extracted text from garbled OCR snippet."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Reprenons les images de Besançon et de Starobinski. Sarastro est devenu philosophe de l’histoire et, même, coryphée des sciences et des arts. La flûte, de toute manière, a été brisée et remplacée par un instrument plus martial. Les amoureux ne sont amoureux qu’à condition de former un couple de héros positifs, et l’un plus positif que l’autre, si possible. Papageno, pour lequel j’ai une compassion particulière parce que je m’appelle Papaioannou, et parce que Papageno me fait penser à « Paganos » a, de toute façon, tout perdu pour revêtir un bleu de travail ! Et les chœurs d’initiés forment un parti unique, monolithique, monomaniaque, monostatique !",
+      "bbox": {
+        "x_pct": 15.59,
+        "y_pct": 36.388,
+        "w_pct": 75.961,
+        "h_pct": 17.331
+      },
+      "changed": true,
+      "change_reason": "Corrected extracted text from garbled OCR snippet."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Disons, pour parler plus prosaïquement, qu’au moment où Max Weber formulait sa théorie classique des trois types de pouvoir traditionnel, légal et charismatique — les fondateurs du totalitarisme moderne étaient en train d’inventer un autre type de pouvoir, absolument nouveau. C’est pourquoi il ne figure pas dans la typologie weberienne, bien que Max Weber connaisse parfaitement l’histoire universelle. Pour la première fois, un pouvoir était créé et légitimé par l’idéologie, pouvoir totalitaire qui, par définition, niait toute forme de pouvoir traditionnel. L’idéologie, en effet, considère tout ce qui est comme nul et fait table rase, mais non d’une manière absolument cartésienne.",
+      "bbox": {
+        "x_pct": 15.625,
+        "y_pct": 52.975,
+        "w_pct": 75.891,
+        "h_pct": 17.107
+      },
+      "changed": true,
+      "change_reason": "Corrected extracted text from garbled OCR snippet."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Inutile de Vous dire, par ailleurs, que le pouvoir idéologique totalitaire est en opposition absolue avec toute forme de pouvoir légal. La légalité et le système idéologique sont en contradiction absolue. Hitler, comme vous le savez, a maintenu la Constitution de Weimar, tout en affichant son mépris pour le droit. Staline, lui, a conçu et fait voter, à une majorité écrasante, la constitution la plus démocratique du monde, tandis que la Chine, trente ans après le triomphe de la Révolution, n’a pas encore de code, et vit en deçà du droit, dans le même état que les Grecs au VIIe siècle. Le monde en question, monde fondamentalement orienté vers l’avenir utopique, ignore, avec une égale violence, et la tradition et le droit. Il y aurait, aussi, beaucoup de choses à dire — ce qui serait tout à fait de l’ordre anecdotique — sur le pouvoir charismatique.",
+      "bbox": {
+        "x_pct": 15.509,
+        "y_pct": 69.694,
+        "w_pct": 75.926,
+        "h_pct": 20.802
+      },
+      "changed": true,
+      "change_reason": "Corrected extracted text from garbled OCR snippet."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR was highly fragmented and garbled.",
+    "Multiple layout regions were incorrectly merged/separated in initial parsing.",
+    "Page number and header were labeled as text."
+  ],
+  "doc_id": "1530",
+  "page": 39,
+  "elapsed_seconds": 6.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "\"Neuorientierung zwischen West und Ost\"",
+      "bbox": {
+        "x_pct": 8.179,
+        "y_pct": 7.764,
+        "w_pct": 31.794,
+        "h_pct": 2.195
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it is a title/heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "11 GLASNOST PERESTROJKA\"",
+      "bbox": {
+        "x_pct": 29.035,
+        "y_pct": 17.881,
+        "w_pct": 38.683,
+        "h_pct": 1.896
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it acts as a chapter or section title."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ein ideologischer Eingriff",
+      "bbox": {
+        "x_pct": 33.634,
+        "y_pct": 20.716,
+        "w_pct": 29.937,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to section_header as it is a sub-title/heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "im Westen stellen sich die meisten Leute seit einiger Zeit die Frage nach der Aufrichtigkeit von Gorbatschow. Die Optimisten halten ihn für aufrichtig, die Pessimisten dagegen nicht. Meiner Ansicht nach ist dies aber nicht die richtige Fragestellung. Zunächst muss man sich bewusst sein, dass \"Aufrichtigkeit\" im Westen und im Osten nicht dasselbe bedeutet, sodass die gestellte Frage sich in einer unerschöpflichen Komplexität verliert. - Ausserdem ist es nicht Gorbatschows Aufrichtigkeit, die über die faktischen Wirkungen der jetzigen Reformen entscheiden wird, sondern viel eher die Machtverhältnisse, die diese Reformen zur Folge haben werden, - zunächst im Osten, dann im Westen, und zuletzt zwischen Ost und West.",
+      "bbox": {
+        "x_pct": 8.296,
+        "y_pct": 28.21,
+        "w_pct": 86.925,
+        "h_pct": 26.972
+      },
+      "changed": true,
+      "change_reason": "Text fixed for readability and grammar from original OCR garbled output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gehen wir deshalb das Problem unter diesem dreifachen Aspekt an.",
+      "bbox": {
+        "x_pct": 8.566,
+        "y_pct": 57.729,
+        "w_pct": 78.179,
+        "h_pct": 1.819
+      },
+      "changed": true,
+      "change_reason": "Minor punctuation correction."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Im Osten: Da kann man drei Hypothesen in Betracht ziehen:",
+      "bbox": {
+        "x_pct": 8.629,
+        "y_pct": 60.992,
+        "w_pct": 74.626,
+        "h_pct": 1.86
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gelingt Gorbatschow, wie es anscheinend seine Absicht ist, die wirtschaftlichen und kulturellen Strukturen des Sowjetregimes genügend aufzulockern, damit es mit einer Forschung, einer Produktivität und einem kritischen Sinn vereinbar wird, wie sie die zeitgenössische, technisch entwickelte Welt verlangt und trotzdem die kommunistische Ordnung auf allen Gebieten aufrecht zu erhalten. Das scheint eigentlich ausgeschlossen. Zunächst einmal, weil es widersprüchlich ist; weiter, weil Gorbatschow dann den grössten Teil der Privilegierten gegen sich hätte und noch dazu einen grossen Teil der Massen, um nicht von den immer zahlreicheren Dissidenten zu sprechen, die ihrer Hoffnung beraubt wären.",
+      "bbox": {
+        "x_pct": 13.616,
+        "y_pct": 64.278,
+        "w_pct": 83.859,
+        "h_pct": 29.343
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch, Genf Zusammenfassung",
+      "bbox": {
+        "x_pct": 72.02,
+        "y_pct": 11.168,
+        "w_pct": 24.761,
+        "h_pct": 3.697
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it is a bibliographic entry/author header."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR was very poor for the main body text.",
+    "Multiple layout tags required re-classification from generic text to headers.",
+    "Author signature and location header are logically part of section identification."
+  ],
+  "doc_id": "2570",
+  "page": 1,
+  "elapsed_seconds": 8.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

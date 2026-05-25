@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les droits de l'homme",
+      "bbox": {
+        "x_pct": 22.931,
+        "y_pct": 9.912,
+        "w_pct": 33.27,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to remove page number and fixed segment boundaries."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "511",
+      "bbox": {
+        "x_pct": 691.0,
+        "y_pct": 9.912,
+        "w_pct": 4.982,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Extracted page number from section header to page_footer/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "toujours une personne concrète, située dans une époque donnée, dans un pays donné. Elle a un héritage historique, social, traditionnel. Elle dépend d'une société qui a atteint tel niveau de développement, d'une tradition qui lui a appris à reconnaître telle hiérarchie des valeurs, d'une famille liée à telle croyance religieuse ou à aucune, et ainsi de suite. L'homme en elle, dont il s'agit de respecter et de faire respecter les droits, n'est pas « un reste » qui subsiste après qu'on l'aurait dépouillée de toutes ses particularités et toutes ses adhésions historiquement conditionnées. Au contraire : c'est l'homme qui en a réalisé en lui-même la synthèse, qui en a forgé l'unité irréductible, et qui vit, même sans le dire, cette synthèse sur le mode : « C'est moi ; je suis celui-là ; voici ce que je veux : voici ce que je crois; voici à qui et à quoi j'appartiens ; voici ce que je défends. » Certes, c'est un droit de l'homme que de pouvoir adhérer à tel contexte social ou traditionnel, ou au contraire s'en libérer jusqu'à le combattre, jusqu'à s'en affranchir. Pourtant, la représentation abstraite et libérale d'un être humain, vide et équitable au départ, pourvu de son seul « jugement », qui filtre lucidement ses adhésions et ses refus, est commode mais fictive et finalement fausse. Au niveau profond où s'enracine l'exigence absolue du respect des droits de l'homme, aucun homme n'est un arbitre impartial à force d'être vide. Il est déjà fait du passé des autres et son passé, de ses choix plus anciens, des données qui déterminent sa vie quotidienne, de ses fidélités et de ses abandons, il est fait de tout cela, et il en fait ce qu'il devient. C'est pourquoi, contrairement à ce que font croire certaines modes, on viole aussi bien les droits d'un être humain en l'empêchant d'adhérer au contexte et aux données de sa vie qu'en lui refusant le droit de s'en affranchir.",
+      "bbox": {
+        "x_pct": 2.798,
+        "y_pct": 14.2,
+        "w_pct": 71.325,
+        "h_pct": 79.421
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output to reflect actual text content of the paragraph."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original JSON had garbled OCR text in paragraph",
+    "Page number 511 was merged with section header",
+    "Section header text was incomplete/incorrect"
+  ],
+  "doc_id": "2920",
+  "page": 9,
+  "elapsed_seconds": 5.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

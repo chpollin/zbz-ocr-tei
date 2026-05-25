@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "approfondir cette irr©ductibilit© dont nous parlions. En nous inondant de choses, elle nous empªche de lui reconnaître son propre sens et sa propre finalit©. Sa raison d'être n'est pas de rendre les hommes prisonniers de la masse des choses qu'elle produit, mais, à travers sa productivit© croissante, de les libérer par le temps qu'elle leur gagne, et de leur permettre ainsi de s'adonner à leur vocation d'hommes : la recherche du sens de ce qui est spécifiquement humain.",
+      "bbox": {
+        "x_pct": 3.333,
+        "y_pct": 5.968,
+        "w_pct": 80.098,
+        "h_pct": 14.331
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.DK Vous avez vous-mªme relevé l'une des causes du malaise contemporain lorsque vous avez dénoncé notre incapacité à assimiler la civilisation technique que nous avons créée, et qui nous est devenue comme étrangère. « Nous vivons, avez-vous dit un jour, dans un monde technique devenu pour nous illisible ». Pourriez-vous commenter cette remarque ? J.H. — C'est un problème qui me préoccupe beaucoup. J'ai depuis toujours entendu des personnes spécialisées dans les branches dites « humanistes » rejeter ou mépriser la science et la technique.",
+      "bbox": {
+        "x_pct": 3.504,
+        "y_pct": 21.073,
+        "w_pct": 79.976,
+        "h_pct": 16.323
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les choses ont bien changé, surtout en ce qui concerne ces personnes-là, précisément.",
+      "bbox": {
+        "x_pct": 3.541,
+        "y_pct": 37.742,
+        "w_pct": 65.043,
+        "h_pct": 4.298
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — Pas complètement. Cette attitude était et reste fausse. Nous n'avons toujours pas compris ce que sont science et technique. Nous avons vécu, avec un certain émerveillement, le prodigieux développement de la science et de la technique, mais la nature de l'effort fourni par les hommes, la qualité de la recherche investie, nous ne les avons pas comprises. Il faudrait lire les quelques grands savants qui se sont exprimés à ce sujet — je pense au livre d'Oppenheimer, Science and common sense, par exemple, ou La partie et le tout, de Heisenberg, ou encore de von Weizäcker, The relevance of science. De façon générale, beaucoup de demi-savants déterminent la physionomie de la science dans notre société sans comprendre eux-mªmes ce qu'est réellement l'effort de recherche scientifique. Comme je vous le disais, la science a une histoire et c'est une histoire vécue par des hommes. Elle s'est développée parce que des hommes ont voulu comprendre la nature, c'ét-dire trouver dans cette nature qui s'imposait à leurs sens et à leur vie quelque chose qui corresponde aux exigences de leur esprit : la régularité, les relations constantes, un devenir qu'on puisse se représenter et figurer par des symboles — quelque chose qu'on puisse dire. La science est un langage, un langage profondément humain, puisqu'il a été inventé par des hommes. — La technique, c'est autre chose, elle répond à un besoin de pouvoir, alors que la science répond à un besoin de savoir. Mais ce besoin de pouvoir s'explique par l'impulsion d'agir librement, d'obtenir un résultat, par exemple de s'assurer une sécurité pour demain, de conserver vivant quelqu'un qui est menacé, etc. La science et la technique sont faites de ces finalités. Si l'on parvenait à comprendre combien étroitement",
+      "bbox": {
+        "x_pct": 3.455,
+        "y_pct": 41.315,
+        "w_pct": 79.902,
+        "h_pct": 48.5
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the source image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "169",
+      "bbox": {
+        "x_pct": 79.0,
+        "y_pct": 94.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Detected page number, changed from text to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR was severely truncated/corrupted in all segments.",
+    "Page number at the bottom was missing from the initial detection list.",
+    "The OCR text for paragraph 4 was mostly garbled and needed full reconstruction from the image.",
+    "Author signature (J.H.) mixed into the text stream, kept for flow but noted."
+  ],
+  "doc_id": "2330",
+  "page": 173,
+  "elapsed_seconds": 8.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

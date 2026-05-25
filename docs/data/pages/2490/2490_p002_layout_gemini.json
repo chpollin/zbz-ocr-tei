@@ -1,0 +1,136 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "E",
+      "bbox": {
+        "x_pct": 2.655,
+        "y_pct": 0.0,
+        "w_pct": 3.189,
+        "h_pct": 3.348
+      },
+      "changed": true,
+      "change_reason": "Small fragment at the top margin is a page header/artifact."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POURQUOI LHOMME A-T-IL DES DROITS ?",
+      "bbox": {
+        "x_pct": 0.844,
+        "y_pct": 16.124,
+        "w_pct": 24.981,
+        "h_pct": 23.511
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "comprendre les raisons fondamentales justifient les droits de Thomme, il faut commencer par saisir c",
+      "bbox": {
+        "x_pct": 1.435,
+        "y_pct": 56.702,
+        "w_pct": 60.507,
+        "h_pct": 15.785
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Du fait que Fhomme est mortel et qu'il le sait, et que tout ce qu'il aime tous ceux qu'il aime sont ",
+      "bbox": {
+        "x_pct": 1.435,
+        "y_pct": 75.735,
+        "w_pct": 28.274,
+        "h_pct": 19.491
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la nature, ses besoins et ses menaces, ne s'effacent pas autant. Les droits humains ne seront d",
+      "bbox": {
+        "x_pct": 64.231,
+        "y_pct": 16.583,
+        "w_pct": 30.019,
+        "h_pct": 22.048
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Etre priv\u0000\u0000e de cette capacit\u0000\u0000e, c'est un terrible malheur; et pourtant elle ne promet pas le bonheur. ",
+      "bbox": {
+        "x_pct": 64.137,
+        "y_pct": 38.819,
+        "w_pct": 29.925,
+        "h_pct": 17.82
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'agit l\u0000\u0000 de la racine et de la fina lit\u0000\u0000 des droits de l'homme. Sans cette racine et cette final",
+      "bbox": {
+        "x_pct": 64.231,
+        "y_pct": 56.74,
+        "w_pct": 29.831,
+        "h_pct": 13.317
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le d\u0000\u0000veloppement de la civilisation technique trouve ici son sens, nullement mat\u0000\u0000rialiste . Il ",
+      "bbox": {
+        "x_pct": 64.099,
+        "y_pct": 70.144,
+        "w_pct": 29.925,
+        "h_pct": 20.559
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 82.43,
+        "y_pct": 90.892,
+        "w_pct": 11.501,
+        "h_pct": 1.319
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Professeur honoraire de Gen\u0000\u0000ve",
+      "bbox": {
+        "x_pct": 64.099,
+        "y_pct": 92.274,
+        "w_pct": 17.608,
+        "h_pct": 2.827
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One region identified as text at the top was a page header fragment",
+    "Author signature and title at the bottom kept as text per instructions"
+  ],
+  "doc_id": "2490",
+  "page": 2,
+  "elapsed_seconds": 6.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

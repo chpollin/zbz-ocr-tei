@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Cahiers trimestriels de l'Institut Universitaire d'Etudes Européennes de Genève et du Centre Européen de la Culture",
+      "bbox": {
+        "x_pct": 2.675,
+        "y_pct": 17.545,
+        "w_pct": 95.796,
+        "h_pct": 6.05
+      },
+      "changed": true,
+      "change_reason": "Identified as a journal title/running header, should be classified as page_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Textes de : Constantin Tsatsos Denis de Rougemont Julian Marias Henri Schwamm Jeanne Hersch Matei Calinescu André Reszler Zdzislaw Najder Luis Diez del Corral André Volkonsky Milko Kelemen Alison Browning Isabelle Dumaret Ely El Manzalawiy Ural Ayberk",
+      "bbox": {
+        "x_pct": 3.096,
+        "y_pct": 30.83,
+        "w_pct": 26.624,
+        "h_pct": 39.205
+      },
+      "changed": true,
+      "change_reason": "This is a list of authors/contributors, functioning as a section heading/introductory block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2e année Automne 1979",
+      "bbox": {
+        "x_pct": 3.35,
+        "y_pct": 89.257,
+        "w_pct": 19.287,
+        "h_pct": 4.978
+      },
+      "changed": true,
+      "change_reason": "Date and issue identification at bottom of page is a page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'EUROPE ET LES",
+      "bbox": {
+        "x_pct": 36.777,
+        "y_pct": 30.657,
+        "w_pct": 37.07,
+        "h_pct": 9.274
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "INTELLECTUELS",
+      "bbox": {
+        "x_pct": 37.07,
+        "y_pct": 40.13,
+        "w_pct": 59.873,
+        "h_pct": 4.702
+      },
+      "changed": true,
+      "change_reason": "This is part of the main title, must be a section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Une conversation avec Milko Kelemen",
+      "bbox": {
+        "x_pct": 37.363,
+        "y_pct": 48.66,
+        "w_pct": 61.07,
+        "h_pct": 9.481
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Initial classification of journal header as paragraph text was incorrect.",
+    "Initial classification of list of authors as paragraph text was incorrect.",
+    "Initial classification of second half of title as paragraph text was incorrect.",
+    "Initial classification of date/year block as paragraph text was incorrect."
+  ],
+  "doc_id": "1590",
+  "page": 1,
+  "elapsed_seconds": 4.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,49 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "192 DANS LA FOI (BARTH)",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page header identified as page_header/page_footer for exclusion."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "même juste et humain se donner pour absolu, un crédo épuisant à lui seul toute la liberté et révélant à chacun d'une façon apodictique ce qu'il doit faire; le prétendre, c'est supprimer d'avance le véritable ressort de l'action.",
+      "bbox": {
+        "x_pct": 15.211,
+        "y_pct": 12.107,
+        "w_pct": 76.25,
+        "h_pct": 12.583
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions and verified zb_paragraph label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans la foi, l'élément philosophique ménage jusqu'au cœur des affirmations théologiques les plus dogmatiques ce vide dont il a été question plus haut à propos de Kierkegaard, et dont les écrits de Barth me paraissent donner un exemple frappant. Ce n'est pas toujours la formule dont l'apparence est la plus dogmatique qui viole la liberté, et il est de fausses tolérances qui paralysent bien davantage. L'apparence dogmatique peut n'être qu'une plus grande acuité dans la distinction, dans la dislocation des possibles, un appel plus impérieux à la liberté — en théologie, à la liberté de croire. Il y aurait par exemple toute une étude à faire, et qui, je crois, ferait pénétrer profondément au cœur du problème, en comparant ce que Jaspers dit de l' « existence » et ce que Barth dit de la « décision ». Tous deux éliminent (l'un pour la libre existence, l'autre pour la libre décision) la notion de choix. On ne peut parler d'un choix de l'existence que lorsqu'on s'imagine la regarder choisir. Mais pour elle, sa décision est absolue, toute autre était pour elle impossible. Barth dit de la décision qu'elle supprime toute possibilité de choix. Si ressemblantes pourtant que soient ces formules, ce serait masquer un abîme que de vouloir les concilier. Il",
+      "bbox": {
+        "x_pct": 15.06,
+        "y_pct": 24.881,
+        "w_pct": 76.205,
+        "h_pct": 64.128
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions and verified zb_paragraph label."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was severely corrupted and did not match the source image content.",
+    "Top header '192 DANS LA FOI (BARTH)' was missing a bounding box in the original input and needed categorization."
+  ],
+  "doc_id": "20",
+  "page": 194,
+  "elapsed_seconds": 3.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

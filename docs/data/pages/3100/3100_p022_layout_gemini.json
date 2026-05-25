@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "prends de parler de Dieu en public. Je n'aime pas parler de Dieu. Je crois, comme Gabriel Marcel, que la plupart du temps, lorsqu'on parle de Dieu, ce n'est pas de Dieu qu'on parle. Et c'est l'une des raisons pour lesquelles je refuse ce genre de discussion. Si vous me demandiez pourquoi je suis ici, je donnerais deux motivations: faire plaisir à M. J.-Claude Piguet, et d'autre part, un instinct de chien de garde en moi, qui me pousse à ne pas négliger les occasions d'aider un tout petit peu à éclaircir certaines questions qui s'embrouillent, ou à sauver certaines choses essentielles qui me paraissent aujourd'hui profondément menacées.",
+      "bbox": {
+        "x_pct": 15.044,
+        "y_pct": 7.561,
+        "w_pct": 65.214,
+        "h_pct": 18.023
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match original source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais d'abord souligner une différence entre ce que M. Widmer a fait et ce que je vais tenter de faire. Je traduis «die Gottesfrage heute» par «le problème de Dieu aujourd'hui». M. G. Widmer, qui est théologien, a traduit par «la question de Dieu». Il a tout de suite articulé son exposé dans le sens de la question que je pose à Dieu, ou que Dieu me pose. Ce qui entraîne que dans le premier cas la question de l'existence de Dieu est mal formulée grammaticalement: elle devrait être à la deuxième personne, et signifier: «Dieu, es-tu?» En la posant, M. Widmer se place en face de Dieu. Il rend ainsi manifeste un caractère permanent du problème de Dieu. C'est qu'il est en vérité impossible de poser ce problème. Ou bien on prononce vraiment dans sa plénitude le nom de Dieu, et alors Dieu est déjà là; par conséquent la question concerne le sens du rapport qui s'établit entre lui et moi (la nature de ce rapport, la manière de le signifier, etc.) et ne concerne pas son existence. Ou bien alors je pose une question qui ne concerne pas Dieu, mais par exemple ce vieux bonhomme à grande barbe que Gagarine s'attendait, semble-t-il, à trouver par delà les nuages; et puis, quand il est monté là-haut, il n'a trouvé personne. Dans ce cas, ce n'est pas de Dieu qu'il s'agit. Une telle négation de Dieu est aussi tautologique que l'affirmation de Dieu dans le cas précédent. Je crois donc que le problème fondamental et permanent de Dieu, c'est l'impossibilité où est l'homme de le poser vraiment: ou bien Dieu est toujours là avant la question, ou bien il n'est pas du tout là dans la question, ou bien enfin celui qui parle ignore que Dieu est dans la question.",
+      "bbox": {
+        "x_pct": 14.932,
+        "y_pct": 27.311,
+        "w_pct": 65.415,
+        "h_pct": 49.595
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match original source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Personnellement, j'ai toujours ressenti l'impossibilité de poser le problème de Dieu, non pas à cause de son absence, mais à cause d'une énorme surabondance de présence, qui fait qu'à partir du premier mot, Dieu est déjà là. On n'en extirpe pas, et je crois que",
+      "bbox": {
+        "x_pct": 15.093,
+        "y_pct": 76.883,
+        "w_pct": 65.27,
+        "h_pct": 8.148
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match original source image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "21",
+      "bbox": {
+        "x_pct": 77.29,
+        "y_pct": 86.81,
+        "w_pct": 2.45,
+        "h_pct": 2.65
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction was heavily truncated and garbled.",
+    "Page number 21 was missing from detection and labeling."
+  ],
+  "doc_id": "3100",
+  "page": 22,
+  "elapsed_seconds": 6.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

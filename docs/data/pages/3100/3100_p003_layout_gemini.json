@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese Worte des Dichters, als er sie niederschrieb, noch keine Beziehung zum Marxismus-Leninismus besaß, wurzeln in einem historischen Gelände, dessen Verfertigung sich Jahrhunderte zurückverfolgen läßt. Dieser Prozeß, der in Europa etwa vom 16. bis in das 19. Jahrhundert vor sich gegangen ist, kann jetzt nicht in seiner Gesamtheit und Komplexität dargestellt werden. Selbst auf seine philosophischen Markierungen kann im einzelnen kaum eingegangen werden. Einige, mehr oder weniger beliebig herausgegriffene Namen sollen zunächst einmal lediglich den Umkreis andeuten, in dem der Stoff drinsteckt, der philosophiehistorisch aufzubereiten wäre. Ich nenne Giordano Bruno; Spinoza; den französischen Materialismus; Lessing, Jacobi und Goethe; Kant, Fichte, Hegel und Feuerbach; die russischen revolutionären Demokraten Belinski, Herzen, Dobroljubow und Tschernyschewski. Alle diese Philosophen sind verbunden mit der Herausbildung der bürgerlichen Gesellschaftsordnung und begaben sich ideologisch in eine Auseinandersetzung mit dem aus der Zeit des Feudalismus überlieferten Gedankengut. Das Menschenbild, das ihnen vorschwebte, war ein in seinen wesentlichen Zügen individualistisch akzentuiertes – das bürgerliche Individuum, wie es sich uns etwa repräsentiert in der bekannten Definition der Aufklärung bei Kant: «Aufklärung ist der Ausgang des Menschen aus seiner selbstverschuldeten Unmündigkeit». In diesem individualistischen Prinzip, in diesem bürgerlichen Ich verfestigte sich der philosophische Ausgangspunkt für die ideologische Ingangsetzung und das Verständnis zweier Prozesse von allgemein gesellschaftlichem Range, nämlich dem Loslösungsprozeß der Philosophie von der Theologie und dem Verschmelzungsprozeß der Philosophie mit der Wissenschaft.",
+      "bbox": {
+        "x_pct": 14.666,
+        "y_pct": 7.92,
+        "w_pct": 65.697,
+        "h_pct": 53.464
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was truncated and incomplete. Updated to reflect the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir müssen uns auf ein einziges, und noch dazu knapp zu fassendes Beispiel beschränken. Wir beziehen uns auf Spinoza, weil er eine ganze Strömung auslöste und weil es sich überdies um ein lehrreiches Kapitel zur Geschichte der Gewissensfreiheit handelt. Gemeint ist Spinozas «Theologisch-politischer Traktat», der in lateinischer Sprache erstmals anonym 1670 in den Niederlanden erschien und alsbald verboten wurde. Dieses Jahr 1670 war um 70 Jahre getrennt von der Verbrennung Giordano Brunos, um 37 Jahre von der Verurteilung Galileis, und um ebenfalls 37 Jahre von der Vernichtung des Werkes «Über die Welt» durch seinen Autor Descartes selbst, nachdem dieser von der Verurteilung Galileis erfahren hatte, es war um 28 Jahre getrennt von der beabsichtigten Verhaftung Descartes’,",
+      "bbox": {
+        "x_pct": 14.964,
+        "y_pct": 61.39,
+        "w_pct": 65.56,
+        "h_pct": 23.835
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was truncated and incomplete. Updated to reflect the full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 87.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number and correctly classified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction for both paragraphs was significantly truncated.",
+    "Page number at bottom left was missing from original regions.",
+    "BBox for paragraph 2 includes some white space at the bottom; however, per instructions, I did not change coordinates."
+  ],
+  "doc_id": "3100",
+  "page": 3,
+  "elapsed_seconds": 4.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME 99",
+      "bbox": {
+        "x_pct": 10.437,
+        "y_pct": 10.591,
+        "w_pct": 78.308,
+        "h_pct": 2.464
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header because it contains the document title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sible; ni une expérience affective; ni expérience pralique; ni une expérience intellectuelle; ni une expérience esthétique, ni rien. Ce qui n'a pas de forme ne saurait être ni perçu, ni conçu. La forme s'étend donc sur toute la réalité humaine.",
+      "bbox": {
+        "x_pct": 10.437,
+        "y_pct": 13.591,
+        "w_pct": 68.308,
+        "h_pct": 7.464
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous allons voir maintenant que la portée ontologique de la forme se limite cependant à la réalité humaine.",
+      "bbox": {
+        "x_pct": 10.702,
+        "y_pct": 21.26,
+        "w_pct": 68.044,
+        "h_pct": 3.743
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De ce qui est hors de la réalité humaine nous ne pouvons, cela va de soi, rien dire en nous servant de la raison naturelle, — même pas que « cela n'a pas de forme ». Mais ce que nous pouvons essayer de voir, c'est si la notion de forme a encore un sens au sein de notre pensée quand nous l'appliquons à une autre réalité qu'à la réalité humaine. Pour examiner ce problème, nous restons donc délibérément dans les conditions de notre esprit. Ce faisant, nous ne nous livrons pas à une étude psychologique, mais logique et critique. Est-ce à dire qu'elle n'aura aucun résultat ontologique? Bien au contraire: si nous arrivons à voir clairement que la notion de forme perd toute signification actuellement possédée par la pensée lorsque nous l'appliquons hors de la condition humaine, cet échec aura la portée ontologique suivante: à supposer même que la réalité extra-humaine ait une forme, celle-ci est à tel point rebelle à toute conception humaine que le mot n'a plus de sens. Tel serait le sens limitatif, négatif de notre démonstration. Le sens positif en serait la dualité même qu'elle pose, les limitations et les exclusions de la forme laissant inentamée la réalité extra-humaine, si bien que la raison même nous invite à lui conférer une substantialité transcendante.",
+      "bbox": {
+        "x_pct": 10.702,
+        "y_pct": 25.004,
+        "w_pct": 68.585,
+        "h_pct": 36.902
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons vu, la réalité humaine implique une combinaison de matière et de prise, qui est la forme. La matière (un donné pur) ne saurait être conçu réellement par l'esprit humain, sinon comme une notion limite signifiant la direction d'une recherche, et l'effort d'une élimination radicale de l'emprise humaine, mais jamais le produit intégral de cette recherche et de cette élimination. De même, la notion de prise à l'état pur (de forme sans matière, d'acte",
+      "bbox": {
+        "x_pct": 10.783,
+        "y_pct": 62.088,
+        "w_pct": 68.619,
+        "h_pct": 13.136
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR output for paragraphs contained significant garbled text.",
+    "Page header with page number was incorrectly classified as text."
+  ],
+  "doc_id": "110",
+  "page": 101,
+  "elapsed_seconds": 5.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

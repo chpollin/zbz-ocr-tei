@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 193",
+      "bbox": {
+        "x_pct": 301,
+        "y_pct": 82,
+        "w_pct": 398,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Page header was misidentified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tation. L'imagination humaine. Les vnements n'y restent plus localiss : tout tient  tout; une solidarit non plus idale, mais inscrite dans les faits, lie entre elles toutes les rgions du globe que l'homme habite. La guerre qui clate quelque part clate partout. La misre qui dtruit une population indigne de l'autre ct de la terre pourrit matriellement le rgime o nous vivons. Les dangers qui menacent clatent soudain en catastrophe et en crasements, d'une heure  l'autre. La scurit la plus lmentaire, celle des distances, n'existe presque plus. Il n'y a mme plus o fuir. C'est comme si l'espace avait perdu une de ses dimensions : celle du refuge.",
+      "bbox": {
+        "x_pct": 30,
+        "y_pct": 113,
+        "w_pct": 846,
+        "h_pct": 226
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and combined misparsed paragraphs into one coherent text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un tel monde impose des dcisions rapides. Mais ce n'est pas tout. Si les consquences, les rpercussions des actes, en particulier des actes politiques, dbordent toujours la volont de l'agent, on pouvait cependant nagure considrer ces consquences comme se perdant dans la confusion d'un avenir assez lointain. Avec le resserrement de l'espace et l'acclration du temps historique, on ne peut pour ainsi dire plus prendre de mesure isole, mme dans l'immdiat. Adopter telle ou telle politique douanire, c'est agir sur les prix, les salaires, le prix de l'or, le crdit, la scolarit, la sant publique, la guerre et la paix, la culture et le got. Il s'ensuit que pour avoir les rsultats escompts, et non des rsultats diffrents ou mme contraires, une mesure politique, conomique, sociale, doit faire partie de tout un ensemble de mesures formant, pour ainsi dire, un circuit cohrent ayant des chances de lui donner l'efficacit voulue. Cela veut dire que les pays modernes ont besoin d'tre gouverns, et non simplement administrs au jour le jour,  coup de rglements isols, de palliatifs locaux, et que le temps est pass o Anatole France pouvait rver d'un gouvernement gouvernant mal pourvu qu'il gouvernt peu.",
+      "bbox": {
+        "x_pct": 30,
+        "y_pct": 339,
+        "w_pct": 846,
+        "h_pct": 372
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph block that was skipped in initial detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne suffit donc pas, en dmocratie; que le gouvernement soit contrl ; il faut qu'il soit efficace. Le pouvoir excutif doit tre capable, d'une part de prendre des dcisions rapides, immdiates, rpondant  une situation actuelle (et non prime depuis un temps dj apprciable), d'autre part, d'appliquer des plans d'ensemble dont le droulement intgral pendant une priode suffisante permette d'apprcier les rsultats. Le parlement, trop nombreux, tiraill par les tendances diverses et opposes des partis, o les",
+      "bbox": {
+        "x_pct": 29,
+        "y_pct": 718,
+        "w_pct": 847,
+        "h_pct": 165
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in the final paragraph."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page header misidentified as text.",
+    "Multiple paragraphs misidentified or missing.",
+    "OCR errors in text blocks requiring correction.",
+    "Bboxes for full paragraphs were incorrectly split."
+  ],
+  "doc_id": "330",
+  "page": 227,
+  "elapsed_seconds": 6.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

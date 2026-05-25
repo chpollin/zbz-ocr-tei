@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 21.581,
+        "y_pct": 0.0,
+        "w_pct": 6.235,
+        "h_pct": 1.171
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 32.078,
+        "y_pct": 10.762,
+        "w_pct": 35.738,
+        "h_pct": 2.19
+      },
+      "changed": true,
+      "change_reason": "Author name at top of title page should be section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LILLUSION PHILOSOPHIQUE",
+      "bbox": {
+        "x_pct": 11.039,
+        "y_pct": 27.524,
+        "w_pct": 78.675,
+        "h_pct": 13.781
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "G puscule d'une philogophie",
+      "bbox": {
+        "x_pct": 47.892,
+        "y_pct": 49.362,
+        "w_pct": 28.509,
+        "h_pct": 4.286
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PARIS",
+      "bbox": {
+        "x_pct": 45.331,
+        "y_pct": 77.648,
+        "w_pct": 10.843,
+        "h_pct": 2.19
+      },
+      "changed": true,
+      "change_reason": "Publisher city is part of bibliographic block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LIBRAIRIE FÉLIX ALCAN",
+      "bbox": {
+        "x_pct": 28.87,
+        "y_pct": 80.41,
+        "w_pct": 43.268,
+        "h_pct": 2.419
+      },
+      "changed": true,
+      "change_reason": "Publisher name is part of bibliographic block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "108, BOU LEVARD SAINT-GERMAIN, 108",
+      "bbox": {
+        "x_pct": 24.699,
+        "y_pct": 83.59,
+        "w_pct": 51.657,
+        "h_pct": 1.905
+      },
+      "changed": true,
+      "change_reason": "Publisher address is part of bibliographic block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1936",
+      "bbox": {
+        "x_pct": 47.59,
+        "y_pct": 87.524,
+        "w_pct": 6.325,
+        "h_pct": 1.648
+      },
+      "changed": true,
+      "change_reason": "Year is part of bibliographic block."
+    }
+  ],
+  "score": 45,
+  "num_corrections": 6,
+  "issues": [
+    "Most labels were incorrectly assigned as simple text rather than section headers.",
+    "Page number at top was incorrectly identified as text."
+  ],
+  "doc_id": "20",
+  "page": 5,
+  "elapsed_seconds": 5.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

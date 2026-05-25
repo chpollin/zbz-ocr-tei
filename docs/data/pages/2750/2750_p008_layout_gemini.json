@@ -1,0 +1,130 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "schen Lehren der abendländischen Tradition wollen rational verstanden werden, aber was an ihnen wese",
+      "bbox": {
+        "x_pct": 6.774,
+        "y_pct": 9.39,
+        "w_pct": 41.29,
+        "h_pct": 23.945
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mit der Musik verhält es sich wohl nicht anders. Die wunderbare Vielfalt der westlichen Musik hat ve",
+      "bbox": {
+        "x_pct": 6.589,
+        "y_pct": 34.55,
+        "w_pct": 41.234,
+        "h_pct": 25.2
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der in der Musik wie im Menschsein ist nicht einfach ein Fehler oder eine Unmöglichkeit. Er ist ein ",
+      "bbox": {
+        "x_pct": 6.395,
+        "y_pct": 63.723,
+        "w_pct": 41.21,
+        "h_pct": 14.156
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nach Rimbaud ist der Mensch eine Seele und ein Ein französisches Sprichwort lautet: Wer den Engel spielen will, wird leicht zum Tier. Das heißt, daß der Mensch, der sein Mensch",
+      "bbox": {
+        "x_pct": 6.371,
+        "y_pct": 78.888,
+        "w_pct": 41.153,
+        "h_pct": 8.495
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled transcription in OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sein in dieser Welt nicht auf sich nehmen, sondern reiner Geist sein will, unter das Menschsein sinkt und in das rein Tierische verfällt. Ins Tierische, aber ohne die Unschuld der Tiere, da er sein Menschsein bewußt verraten hat. - Umgekehrt jedoch gilt, der Mensch, der nicht auch den Engel spielen will, verfehlt eo ipso das eigentlich Menschliche; denn es ist auch der Wille, sich selbst zu übertreffen, der das Wesen des Menschen ausmacht. Er kann sein faktisches Menschsein weder ablehnen noch annehmen, und dieses Paradox im Knoten aller anderen macht den Menschen zur Ausnahme in der Welt.",
+      "bbox": {
+        "x_pct": 50.347,
+        "y_pct": 9.236,
+        "w_pct": 41.887,
+        "h_pct": 22.503
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Daß die europäische Musik im Laufe der Jahrhunderte und von Land zu Land eine so reiche Vielfalt aufweist, ist für uns ein unschätzbares Gut. Über die Freude hinaus, die sie uns schenkt, ist sie für uns der vielleicht letzte Schutz gegen endgültige Versklavung. Daß wir ständig Gefahr laufen, wieder zu Bestien und Sklaven zu werden, hat uns die Geschichte gelehrt. Aber wir haben den gregorianischen Gesang gehört; die Psalmen Palestrinas; die Messen, die Chaconne, das Wohltemperierte Klavier Bachs; die Sonaten, Così fan tutte, das Requiem Mozarts; das Concerto und die Quatuors Beethovens; die Lieder Schuberts und Pelleas, Bartók, Debussy, Wozzeck – und viele andere. Danach scheint es unmöglich zu sein, die Freiheit je zu vergessen, den Menschen in uns und im Mitmenschen endgültig zu verleugnen. Diese Stimmen aus allen Heimatländern würden uns wachrütteln, uns zurufen, wer wir sind und sein müssen, und uns an unsere Verpflichtung Europa gegenüber erinnern, wo sie sich entfaltet haben; sie würden uns zur gegenwärtigen Wachsamkeit rufen, ohne die Freiheit keine Zukunft hat. Noch radikaler als Rilke vor dem Torso Apollos würde uns diese Musik sagen: „Du mußt dein Leben ändern.“",
+      "bbox": {
+        "x_pct": 49.863,
+        "y_pct": 35.365,
+        "w_pct": 42.073,
+        "h_pct": 46.351
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR output for the paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gabriel Marcel, mein Freund wählte für die Festrede, die er 1965 hier gehalten hat, den Titel: „Die Musik als",
+      "bbox": {
+        "x_pct": 49.976,
+        "y_pct": 82.611,
+        "w_pct": 41.742,
+        "h_pct": 5.49
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors in author name and title."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "48",
+      "bbox": {
+        "x_pct": 6.5,
+        "y_pct": 89.2,
+        "w_pct": 2.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Zentralbibliothek Zürich (SLS21X00135)",
+      "bbox": {
+        "x_pct": 80.0,
+        "y_pct": 94.5,
+        "w_pct": 60.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for footer/system notice."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR output was severely garbled in several regions.",
+    "Page number and system notice were mislabeled as text.",
+    "Paragraphs were cut off or contained non-text artifact noise."
+  ],
+  "doc_id": "2750",
+  "page": 8,
+  "elapsed_seconds": 7.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une façon de regarder une toile que de découvrir cette intériorité, cette interdépendance de tous les points du tableau. Il en va de même dans la musique. Le temps dans lequel elle se déroule est en quelque sorte quer zur Zeit, pour reprendre l'expression de mon maître Jaspers, c'est-à-dire un temps qui coupe le temps ordinaire, qui le perce, le traverse, le surmonte, et tout cela sans l'abolir.",
+      "bbox": {
+        "x_pct": 8.863,
+        "y_pct": 8.285,
+        "w_pct": 81.499,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete text extraction based on image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous voilà à nouveau acculés à la contradiction : une sorte de temps intemporel. Quel sens donner à cette expression ? Notre expérience de la musique peut ici nous aider. La musique, en tous ses éléments, est à la fois successive et simultanée, comme la toile est extériorité spatiale, juxtaposition, et en même temps unification. Les notes et les rythmes se suivent, se succèdent, s'effacent, permettant ainsi à de nouveaux sons de toucher notre oreille. Mais au moment où je dis qu'ils s'effacent, je suis obligée de dire qu'ils ne s'effacent pas. Et pourtant, je n'en ai pas la mémoire. Si l'interprète en a peut-être une espèce de mémoire panoramique, chez l'auditeur il n'y a qu'une présence actuelle des sons passés dans le son présent. En d'autres mots, ce que j'entends au présent, en ce moment, serait tout différent si d'autres sons et d'autres rythmes l'avaient précédé. C'est que les sons et les rythmes produits avant qualifient ceux que je reçois maintenant. Ainsi les notes et les rythmes passés ne s'effacent pas. J'ajouterai que l'éducation à la musique, c'est-à-dire à cette réceptivité active dont je parlais, c'est justement l'éducation à ce quelque chose qui passe et qui ne passe pas, comme la flèche d'Elée chez Valéry. Mais, répétons-le, il ne s'agit pas ici d'une mémoire au sens psychologique du terme, ni d'une succession filmée, mais d'un tout, présent en chacun de ses éléments.",
+      "bbox": {
+        "x_pct": 8.827,
+        "y_pct": 21.638,
+        "w_pct": 81.378,
+        "h_pct": 38.669
+      },
+      "changed": true,
+      "change_reason": "Corrected the severely truncated and incomplete text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A ce point, on peut faire une remarque. Précisément parce que la musique est ce tout à la fois temporel et intemporel, successif et non successif, la plupart des morceaux de musique n'attachent pas une très grande importance à leur début et à leur fin. Pour moi, d'ordinaire, ce qui vient à la fin d'une œuvre est important. Depuis ma petite enfance, j'ai pris l'habitude, lorsque je me demandais si je voulais lire tel ou tel livre, de m'arrêter non pas au titre, mais à la dernière phrase. Je la lisais, et d'après elle, je décidais si j'allais me plonger ou non dans cet ouvrage. Je le fais encore, et, je crois, avec raison, car la dernière phrase d'un livre est toujours soignée par l'auteur. Elle n'est pas écrite fortuitement ; elle est, par conséquent, révélatrice de ce qu'aime l'écrivain, de ce qu'il apprécie, bref, de son goût littéraire. En musique, par contre, ce n'est pas du tout le cas. Une œuvre se termine souvent par de grands accords qui marquent la fin et qui sont quasiment donnés par les",
+      "bbox": {
+        "x_pct": 8.948,
+        "y_pct": 61.131,
+        "w_pct": 81.463,
+        "h_pct": 26.692
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "44",
+      "bbox": {
+        "x_pct": 92.4,
+        "y_pct": 90.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and assigned correct filter label."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original extraction was severely truncated and incomplete for all text blocks.",
+    "Page number at bottom left was ignored by original extraction."
+  ],
+  "doc_id": "2740",
+  "page": 7,
+  "elapsed_seconds": 4.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

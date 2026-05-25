@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "64 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 9.773,
+        "y_pct": 10.0,
+        "w_pct": 33.729,
+        "h_pct": 8.057
+      },
+      "changed": true,
+      "change_reason": "Corrected page header information identified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le texte est une partie d'un paragraphe et non un header.",
+      "bbox": {
+        "x_pct": 11.314,
+        "y_pct": 20.408,
+        "w_pct": 32.729,
+        "h_pct": 37.251
+      },
+      "changed": true,
+      "change_reason": "Expanded box to encompass the correct paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Suite du paragraphe concernant la réflexion sur l'être.",
+      "bbox": {
+        "x_pct": 9.581,
+        "y_pct": 60.393,
+        "w_pct": 37.531,
+        "h_pct": 18.323
+      },
+      "changed": true,
+      "change_reason": "Validated paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Suite du texte sur la technicité en philosophie.",
+      "bbox": {
+        "x_pct": 54.779,
+        "y_pct": 39.23,
+        "w_pct": 35.515,
+        "h_pct": 24.063
+      },
+      "changed": true,
+      "change_reason": "Validated paragraph block."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TECHNICITE EN PHILOSOPHIE 65",
+      "bbox": {
+        "x_pct": 54.779,
+        "y_pct": 9.8,
+        "w_pct": 35.515,
+        "h_pct": 4.0
+      },
+      "changed": true,
+      "change_reason": "Added missing header region for the right page."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial layout analysis failed to correctly classify page headers.",
+    "Bboxes provided were inconsistent with document text blocks.",
+    "The OCR text extraction quality for identified regions is low/hallucinated."
+  ],
+  "doc_id": "50",
+  "page": 7,
+  "elapsed_seconds": 7.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

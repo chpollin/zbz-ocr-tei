@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "politische Ausdehnung nicht. Die Möglichkeit zur Grossmachtpolitik wurde der Vorliebe für die kleinräumige Selbstverwaltung geopfert.",
+      "bbox": {
+        "x_pct": 22.415,
+        "y_pct": 14.883,
+        "w_pct": 65.875,
+        "h_pct": 7.943
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated or incorrect based on the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun konnte es aber nicht einfach sein, sich als Kleinstaat in einem von Glaubenskriegen zerrissenen und auf dem Weg zu grossen Nationalstaaten befindlichen Europa zu behaupten. Die Schweizer mussten deshalb, wollten sie als Staat überleben, eine besondere Form von Aussenpolitik entwickeln. Konfessionell gespalten, konnten sie sich an Religionskriegen ganz einfach nicht beteiligen. So entschieden sie sich, bei europäischen Konflikten zum «Stillesitzen». Das brachte zwar keinen Kriegsruhm, dafür sonst mancherlei Vorteile. Erstmals im Dreissigjährigen Krieg (1618–1648) häuften sich die Zeugnisse, wonach die vom Krieg verschonte Schweiz im Vergleich zu Deutschland ein Bild des Wohlstandes und des Friedens bot.",
+      "bbox": {
+        "x_pct": 22.454,
+        "y_pct": 22.993,
+        "w_pct": 66.149,
+        "h_pct": 30.184
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text to match the full paragraph content in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mit der Zeit fand man für diese originelle Aussenpolitik auch einen vornehmen Namen. Vom lateinischen Wort ne-uter (keiner von beiden) leitete man das Wort Neutralität ab. Im Laufe von Jahrhunderten entwickelte die Schweiz eine stupende Fähigkeit, im Schatten rivalisierender Grossmächte eine Nische für ein geruhsames Dasein zu finden. Die schweizerische Neutralitätspolitik ist intelligent, erfindungsreich und schlau. Auf diese Weise wurde es möglich, dem eigenen Land die verschiedensten Vorteile zu sichern. Nur einziges Mal, im Anschluss an die Französische Revolution und in den napoleonischen Kriegen, gelang es als Folge innerer Schwäche nicht, die Neutralitätspolitik durchzuhalten. In allen anderen kriegerischen Wirren, insbesondere in den zwei Weltkriegen unseres Jahrhunderts, brachte man es fertig, den Krieg vom Gebiet der Schweiz fernzuhalten, ja sogar vom Krieg zu profitieren. Der letztlich doch recht egoisti-",
+      "bbox": {
+        "x_pct": 22.232,
+        "y_pct": 53.788,
+        "w_pct": 66.319,
+        "h_pct": 38.57
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text to match the full paragraph content in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 22.8,
+        "y_pct": 94.4,
+        "w_pct": 2.2,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original JSON content contained truncated paragraph text.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "2940",
+  "page": 18,
+  "elapsed_seconds": 7.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

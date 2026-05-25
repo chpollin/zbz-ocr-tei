@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'écriture chiffrée, fonction de l'historicité",
+      "bbox": {
+        "x_pct": 9.552,
+        "y_pct": 18.428,
+        "w_pct": 79.283,
+        "h_pct": 3.805
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in the title text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers n'a cessé de répéter, à propos du dualisme de Platon ou de celui de Kant, que même pour ces deux penseurs il n'y a jamais qu'un monde, il n'y a pas deux. Seulement ce monde unique se livre de deux façons différentes, ou même opposées, selon la visée du sujet qui y cherche la connaissance.",
+      "bbox": {
+        "x_pct": 9.854,
+        "y_pct": 31.608,
+        "w_pct": 79.171,
+        "h_pct": 8.234
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsque le sujet, pour s'y orienter, veut le saisir dans sa réalité objective, recourant aux méthodes de la science pour y découvrir, par exemple, des relations causales qui deviendront des lois dont la signification univoque, impersonnellement valable pour chacun et pour tous, est rigoureusement vérifiable, il opère en tant que conscience en général, et il voudrait finalement embrasser dans son savoir « le monde » dans sa totalité. Mais plus son exigence de validité universelle et de totalité est rigoureuse, et plus clairement lui apparaît son échec : les aspects du monde, les points de vue, les méthodes de la recherche, les critères d'évidence des diverses sciences restent discontinus ; le monde ne se ferme pas en une totalité ; il n'est pas l'être qu'il espérait trouver.",
+      "bbox": {
+        "x_pct": 9.776,
+        "y_pct": 40.725,
+        "w_pct": 79.283,
+        "h_pct": 18.335
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cet échec renvoie le sujet à lui-même et à la découverte d'une tout autre visée. Il n'est pas seulement le représentant anonyme de n'importe quel sujet qui, face au monde, constate ce qui s'y passe et établit entre les faits des relations constantes s'imposant à tous. Il est aussi celui qui veut connaître le monde en tant que totalité et se heurte à l'échec ; celui qui prend des décisions, hic et nunc ; celui qui existe en assumant ce qu'il est dans la situation qui est la sienne. Il est cette existence unique (jeweils einzig), si exclusive de toute généralité qu'il n'est pour elle d'expression indirecte, compréhensible seulement pour un autre sujet existentiel avec lequel il s'engage dans la communication : un combat sans fin livré en quête de la vérité, par amour et sans concession. Ce qui vient remplacer ici la rigueur des méthodes objectives au service d'une vérité générale, c'est l'absolu d'un engagement que ne soutient aucune évidence commune, aucun critère permettant la vérification, aucune validité impersonnelle, — un absolu qui n'a réalité et sens dans le rapport de cette existence unique, en situation, à la transcendance.",
+      "bbox": {
+        "x_pct": 9.709,
+        "y_pct": 59.462,
+        "w_pct": 79.462,
+        "h_pct": 26.561
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais face à l'absolu de l'être, l'existence située à un moment historique concret se trouve à nouveau, à sa manière, vouée à l'échec, par la pluralité des existences, la mortalité de l'unique, les limites de la communication. Elle ne se contente pas alors de constater sa localisation dans le déroulement du temps : elle assume la situation donnée et la fait",
+      "bbox": {
+        "x_pct": 9.664,
+        "y_pct": 86.238,
+        "w_pct": 79.216,
+        "h_pct": 8.593
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content from OCR."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original text was severely truncated/corrupted by OCR.",
+    "Title punctuation corrected."
+  ],
+  "doc_id": "2380",
+  "page": 2,
+  "elapsed_seconds": 6.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

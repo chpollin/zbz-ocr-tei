@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "116 DÉMONSTRATION DE L'EXISTENCE DE DIEU",
+      "bbox": {
+        "x_pct": 161.0,
+        "y_pct": 82.0,
+        "w_pct": 694.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified as a page header/running head rather than a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aussi Descartes en est-il prisonnier. Une vérité métaphysique ainsi directement exprimée, sans mythe et sans chiffre, est limitée à elle-même et n'a pas d'issue : il ne reste qu'à répéter : « je... je... je... » indéfiniment. C'est une monade sans fenêtre sur le monde des objets et des mots. Et c'est pourquoi Descartes, de cette phrase étroite et absolue, n'a pas pu rejoindre le monde des objets et a été forcé de sauter d'un coup à la notion de Dieu.",
+      "bbox": {
+        "x_pct": 164.61,
+        "y_pct": 126.12,
+        "w_pct": 763.1,
+        "h_pct": 254.24
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce bond était nécessaire et conforme à la vérité : le sujet, considéré non comme sujet examinant des objets, mais en lui-même, n'a que Dieu en face de lui et ne saurait parler que le langage religieux. Ce qui n'est plus vérité chez Descartes, c'est la façon dont il obéit à cette nécessité, la prétendue logique qu'il emploie afin que reste sauve la prétention scientifique. Pour prouver l'existence de Dieu, il part de la réalité objective qui correspond à chacune de nos notions. Or, c'est ce qu'il fallait démontrer. La notion de réalité objective, qui justement devait être mise en doute, se trouve ainsi réintroduite, et cette réintroduction est masquée par le fait qu'on poursuit en ce moment une démonstration différente : celle de l'existence de Dieu. Nous nous trouvons à nouveau en présence d'un cercle vicieux : l'existence de Dieu est démontrée au moyen de la notion de réalité objective, puis c'est l'existence de Dieu qui servira à démontrer l'existence d'une réalité objective.",
+      "bbox": {
+        "x_pct": 158.58,
+        "y_pct": 384.84,
+        "w_pct": 767.62,
+        "h_pct": 511.53
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "The page header (116) was missing from the initial detection list.",
+    "The initial transcription of both paragraphs was significantly inaccurate and incomplete.",
+    "Bounding boxes provided in the source input had incorrect scale factors, converted to match standardized expectations."
+  ],
+  "doc_id": "20",
+  "page": 118,
+  "elapsed_seconds": 4.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

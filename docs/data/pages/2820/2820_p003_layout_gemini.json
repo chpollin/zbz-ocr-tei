@@ -1,0 +1,72 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Lettre à Peter Sager",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header identified correctly but was missing from input regions. Adding here for completeness."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais sans vous avoir parlé, je suis sûre que vous avez vu très vite – parce que vous avez toujours détesté le refuge des illusions – que nous vivions maintenant au coeur de l'incertitude, et que d'une telle situation tout pouvait sortir: le meilleur et le pire.",
+      "bbox": {
+        "x_pct": 8.385,
+        "y_pct": 11.836,
+        "w_pct": 82.103,
+        "h_pct": 8.237
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pire: car nul ne sait de sont capables de très grandes masses humaines sous la menace, sur soi-même et ses proches, de la faim, du froid, du vide, de l'anarchie, des guerres civiles, et de toutes les formes de la mort. Surtout quand, quelque part, dans ces masses, la puissance la plus grande dispose de l'armement atomique. Cette conjonction de l'arme atomique avec les menaces vitales les plus élémentaires du froid et de la faim n'a encore jamais existé dans l'histoire. Nous ne la connaissons pas. Elle s'ouvre sur une aventure illimitée et inimaginable, où ceux qui n'ont plus rien à perdre disposent de l'énormité des armes. Mais bien sûr, le pire n'est pas certain. Le meilleur: il n'est pas interdit d'espérer que les efforts vers l'unification de l'Europe occidentale vont se poursuivre de façon toujours plus fédéraliste, selon le principe de subsidiarité. Cela impliquerait que l'Europe fédérée devienne une réalité politique et militaire dans ses rapports avec l'extérieur (ce qu'elle n'est malheureusement pas encore); cela impliquerait d'autre part qu'à l'intérieur, chacun des anciens «pays» qui la composent garde, dans toute la mesure du possible, son être propre, ses traditions, sa culture – bref sa manière d'être libre.",
+      "bbox": {
+        "x_pct": 8.26,
+        "y_pct": 19.541,
+        "w_pct": 82.353,
+        "h_pct": 37.383
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and consolidated text flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois, par exemple, que la volonté démocratique, en Suisse, répond en profondeur à un besoin assez différent de celui des pays qui nous entourent. Chez nous, l'exigence d'indépendance signifie avant tout que les personnes, les familles, les groupes humains, veulent vivre leur vie quotidienne à leur propre manière, sans que rien ni personne ne vienne du dehors les contraindre à vivre autrement. Les citoyens veulent être seuls juges et n'avoir pas d'explications à fournir. Il s'agit là de quelque chose de bien plus profond et élémentaire que la démocratie proprement politique, et le refus du salut au chapeau de Gessler l'exprime fort bien. L'attachement à la démocratie politique est certes profond, mais il dérive de là. Tel n'est pas le cas dans l'Europe qui nous entoure: on y garde la mémoire vécue de siècles traversés sous le règne de monarques, de conquêtes et de dominations diverses. C'est pourquoi l'exigence de démocratie y est vivante surtout au niveau de la politique et du droit. Ainsi s'explique, je pense, un sentiment différent de la légitimité du suffrage universel. En France, par exemple, un vote acquis",
+      "bbox": {
+        "x_pct": 8.135,
+        "y_pct": 56.683,
+        "w_pct": 82.39,
+        "h_pct": 34.034
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and consolidated text flow."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text was heavily garbled and truncated in the initial selection.",
+    "Page header missing from original selection.",
+    "Page number missing from original selection.",
+    "Labels were generic 'text' for header and footer segments."
+  ],
+  "doc_id": "2820",
+  "page": 3,
+  "elapsed_seconds": 11.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

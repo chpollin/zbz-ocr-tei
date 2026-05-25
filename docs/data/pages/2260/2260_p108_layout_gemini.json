@@ -1,0 +1,182 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE POIDS DE L'HEURE ZÉRO",
+      "bbox": {
+        "x_pct": 22.124,
+        "y_pct": 11.364,
+        "w_pct": 43.689,
+        "h_pct": 2.416
+      },
+      "changed": true,
+      "change_reason": "Typo correction in title."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "inédit en français, décembre 1971.",
+      "bbox": {
+        "x_pct": 22.002,
+        "y_pct": 13.948,
+        "w_pct": 43.532,
+        "h_pct": 2.407
+      },
+      "changed": true,
+      "change_reason": "Bibliographic metadata associated with a section is treated as part of the header block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Traduction allemande: <Das Gewicht der Stunde Null>, in Die Hoffnung, Mensch zu sein. Zurich, Benziger Verlag, 1976; pages 172-176.",
+      "bbox": {
+        "x_pct": 22.209,
+        "y_pct": 16.524,
+        "w_pct": 65.376,
+        "h_pct": 7.551
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry correctly identified as a section header block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "À LA VEILLE DE MON PREMIER VOYAGE EN GRÈCE",
+      "bbox": {
+        "x_pct": 22.051,
+        "y_pct": 26.204,
+        "w_pct": 63.228,
+        "h_pct": 4.604
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "in Dino Larese zum siebzigsten Geburtstag",
+      "bbox": {
+        "x_pct": 21.845,
+        "y_pct": 30.951,
+        "w_pct": 47.209,
+        "h_pct": 2.778
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry identified as section header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Amriswil, Scheiwiler Druck, 1984; pages 36-38.",
+      "bbox": {
+        "x_pct": 22.087,
+        "y_pct": 33.249,
+        "w_pct": 65.449,
+        "h_pct": 4.689
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry identified as section header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FÊTES",
+      "bbox": {
+        "x_pct": 21.881,
+        "y_pct": 40.572,
+        "w_pct": 10.036,
+        "h_pct": 2.357
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "inédit en français, mars 1973. Traduction allemande: <Feste im menschlichen Leben>, in Die Unfähigkeit, Freiheit zu ertragen. Zurich, Benziger Verlag, 1975; pages 186-192.",
+      "bbox": {
+        "x_pct": 21.93,
+        "y_pct": 43.35,
+        "w_pct": 65.449,
+        "h_pct": 10.043
+      },
+      "changed": true,
+      "change_reason": "Combined bibliographic entry into one section header block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POURQUOI ÉCRIVEZ-VOUS?",
+      "bbox": {
+        "x_pct": 21.881,
+        "y_pct": 55.244,
+        "w_pct": 41.917,
+        "h_pct": 2.584
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "(Réponse à une enquête de la R.T.F.) Paris, La Table ronde n° 131, novembre 1958; pages 49-52.",
+      "bbox": {
+        "x_pct": 21.845,
+        "y_pct": 57.744,
+        "w_pct": 65.692,
+        "h_pct": 7.071
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry identified as section header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "À L'ADIEU",
+      "bbox": {
+        "x_pct": 38.592,
+        "y_pct": 67.567,
+        "w_pct": 16.141,
+        "h_pct": 2.13
+      },
+      "changed": true,
+      "change_reason": "Typo correction."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Paris, Commentaire n° 26, 1984; pages 284-288.",
+      "bbox": {
+        "x_pct": 21.76,
+        "y_pct": 69.924,
+        "w_pct": 58.252,
+        "h_pct": 2.694
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry identified as section header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "108",
+      "bbox": {
+        "x_pct": 21.9,
+        "y_pct": 82.2,
+        "w_pct": 5.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Several bibliographic blocks were incorrectly labeled as 'text' instead of 'section_header'.",
+    "Typographical errors in detected text content.",
+    "Page number missing from initial labeling."
+  ],
+  "doc_id": "2260",
+  "page": 108,
+  "elapsed_seconds": 7.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

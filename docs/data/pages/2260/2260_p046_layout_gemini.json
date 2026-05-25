@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "toi-même Retourne sur tes pas. Entre dans le mur des flammes. Avale du feu à longs traits. Il ne te fera plus de mal, maintenant, il ne brûlera que ton âme. Tu seras flamme et rage, le meurtre sera ta soif, ton ennemi sera tout ton désir. De loin déjà le feu jaillira de tes naseaux pour le détruire. Va. Mais souviens-toi: dès que le dragon sera mort, tu retrouveras ton âme, ton cœur, ton corps d'homme. - A moins qu'avant sa mort tu n'aies bu de son sang. Car alors, malheur à toi, malheur à toi! »",
+      "bbox": {
+        "x_pct": 23.944,
+        "y_pct": 11.221,
+        "w_pct": 65.825,
+        "h_pct": 33.308
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to match the visible text in the image correctly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Déjà le Chevalier s'en allait, rampant à longues foulées vers le mur de feu, armer sa poitrine. Déjà les flammes englouties grondaient dans sa gorge. Il remonta la pente, ivre de sa force, dévoré, dévorant. Quand il passa, crissant et sifflant sous l'arolle, le nain avait disparu.",
+      "bbox": {
+        "x_pct": 23.944,
+        "y_pct": 44.924,
+        "w_pct": 66.141,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to match the visible text in the image correctly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nuit s'entrouvrait à l'aube naissante quand il flaira dans le vent une odeur de roussi et les fades relents d'un carnage. Presque aussitôt il aperçut au-dessus de lui l'ouverture noire d'une grotte, et dans l'ouverture",
+      "bbox": {
+        "x_pct": 23.871,
+        "y_pct": 64.874,
+        "w_pct": 65.692,
+        "h_pct": 14.108
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to match the visible text in the image correctly."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "48",
+      "bbox": {
+        "x_pct": 23.871,
+        "y_pct": 82.203,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text transcription in regions 1, 2, and 3 was inaccurate compared to the image.",
+    "Page number at the bottom was missing from the original JSON."
+  ],
+  "doc_id": "2260",
+  "page": 46,
+  "elapsed_seconds": 4.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

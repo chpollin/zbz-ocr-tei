@@ -1,0 +1,958 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Ingénieurs et architectes suisses",
+      "bbox": {
+        "x_pct": 7.575,
+        "y_pct": 3.875,
+        "w_pct": 20.363,
+        "h_pct": 7.504
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Société des éditions des associations techniques universitaires (SEATU)",
+      "bbox": {
+        "x_pct": 29.895,
+        "y_pct": 3.875,
+        "w_pct": 16.277,
+        "h_pct": 3.174
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it serves as a header."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "Bulletin technique de la Suisse romande",
+      "bbox": {
+        "x_pct": 8.139,
+        "y_pct": 12.08,
+        "w_pct": 12.893,
+        "h_pct": 2.165
+      },
+      "changed": true,
+      "change_reason": "Running journal title identified as page_header (_filter)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Paraît tous les 15 jours",
+      "bbox": {
+        "x_pct": 8.163,
+        "y_pct": 15.157,
+        "w_pct": 14.021,
+        "h_pct": 1.083
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "I3* année",
+      "bbox": {
+        "x_pct": 8.139,
+        "y_pct": 17.134,
+        "w_pct": 6.712,
+        "h_pct": 1.174
+      },
+      "changed": true,
+      "change_reason": "Publication metadata marked as page_header/page_footer info."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "18 juin 1987",
+      "bbox": {
+        "x_pct": 30.032,
+        "y_pct": 17.191,
+        "w_pct": 7.413,
+        "h_pct": 1.083
+      },
+      "changed": true,
+      "change_reason": "Publication date marked as page_header/page_footer info."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Rédaction",
+      "bbox": {
+        "x_pct": 9.267,
+        "y_pct": 20.302,
+        "w_pct": 10.822,
+        "h_pct": 1.96
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rédaction de Ingénieurs el architectes suissesv, tirés à parl, renseignements En Bassenges, 1024 Ecu",
+      "bbox": {
+        "x_pct": 8.139,
+        "y_pct": 22.809,
+        "w_pct": 20.04,
+        "h_pct": 5.339
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jean-Pierre Weibel, ing. EPFZ-SIA, redacteur en chef François Neyroud, arch. SIA,",
+      "bbox": {
+        "x_pct": 8.139,
+        "y_pct": 29.345,
+        "w_pct": 18.268,
+        "h_pct": 4.575
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tédacteur",
+      "bbox": {
+        "x_pct": 8.163,
+        "y_pct": 33.749,
+        "w_pct": 6.18,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Abonnements",
+      "bbox": {
+        "x_pct": 9.726,
+        "y_pct": 38.12,
+        "w_pct": 14.553,
+        "h_pct": 1.863
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un an, Suisse",
+      "bbox": {
+        "x_pct": 8.461,
+        "y_pct": 40.684,
+        "w_pct": 8.678,
+        "h_pct": 1.197
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fr. 109.",
+      "bbox": {
+        "x_pct": 19.444,
+        "y_pct": 40.701,
+        "w_pct": 4.625,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un an, étranger",
+      "bbox": {
+        "x_pct": 8.461,
+        "y_pct": 41.766,
+        "w_pct": 9.887,
+        "h_pct": 1.14
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fr. 118",
+      "bbox": {
+        "x_pct": 19.444,
+        "y_pct": 41.709,
+        "w_pct": 4.625,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prix du numéro, Suisse Fr 6.50 Prix du numéro,étranger Fr; 7.50",
+      "bbox": {
+        "x_pct": 8.461,
+        "y_pct": 42.889,
+        "w_pct": 19.927,
+        "h_pct": 2.239
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Impression : Imprimerie Bron SA 1001 Lausanne",
+      "bbox": {
+        "x_pct": 30.0,
+        "y_pct": 22.889,
+        "w_pct": 12.764,
+        "h_pct": 3.111
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Photolitho :",
+      "bbox": {
+        "x_pct": 30.161,
+        "y_pct": 26.251,
+        "w_pct": 6.93,
+        "h_pct": 1.003
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Polygravia, Borde 28 bis 1018 Lausanne",
+      "bbox": {
+        "x_pct": 30.032,
+        "y_pct": 27.14,
+        "w_pct": 14.746,
+        "h_pct": 2.222
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les manuscrits seront rendus selon accord avec la rédaction",
+      "bbox": {
+        "x_pct": 30.0,
+        "y_pct": 30.695,
+        "w_pct": 19.936,
+        "h_pct": 2.125
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toule reproduction du texte el des illustrations n'est aulorisée qu 'avec Faccord de la rédaction et",
+      "bbox": {
+        "x_pct": 30.032,
+        "y_pct": 32.952,
+        "w_pct": 19.927,
+        "h_pct": 4.142
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "CCP Ingénieurs et architecles suisses (Bulletin technique de la Suisse romande) ,",
+      "bbox": {
+        "x_pct": 30.242,
+        "y_pct": 40.496,
+        "w_pct": 19.823,
+        "h_pct": 3.339
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nv 10-5775, Lausanne",
+      "bbox": {
+        "x_pct": 30.355,
+        "y_pct": 43.949,
+        "w_pct": 13.642,
+        "h_pct": 1.219
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Abonnement à prix réduil pour éludiants et membres A'EPL, GEP ASIC, FAS et UTS",
+      "bbox": {
+        "x_pct": 8.461,
+        "y_pct": 45.356,
+        "w_pct": 19.927,
+        "h_pct": 3.248
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Adresser toules communications concernanl abonnement, vente au numéro, changement d'adresse expéditi",
+      "bbox": {
+        "x_pct": 30.161,
+        "y_pct": 45.47,
+        "w_pct": 20.016,
+        "h_pct": 7.276
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Membres SIA toutes communications concernant les abonnements sont à adresser eXclusivement au Secrét",
+      "bbox": {
+        "x_pct": 8.405,
+        "y_pct": 48.433,
+        "w_pct": 20.016,
+        "h_pct": 6.268
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Régie des annonces",
+      "bbox": {
+        "x_pct": 9.807,
+        "y_pct": 55.14,
+        "w_pct": 21.136,
+        "h_pct": 2.051
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "IVA SA de publicilé internationale 23 , rue du Pré-du-Marché 1004 Lausanne Tél. (021) 3772 72/73 / 7",
+      "bbox": {
+        "x_pct": 8.678,
+        "y_pct": 57.647,
+        "w_pct": 15.979,
+        "h_pct": 5.413
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Siège central Mühlebachstr. 43, 8032 Zurich Tél. (01) 25124 50",
+      "bbox": {
+        "x_pct": 30.379,
+        "y_pct": 57.624,
+        "w_pct": 18.453,
+        "h_pct": 3.328
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Schweizer Ingenieur und Architekt",
+      "bbox": {
+        "x_pct": 8.324,
+        "y_pct": 63.744,
+        "w_pct": 22.055,
+        "h_pct": 7.481
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Schweizerische Bauzeitung",
+      "bbox": {
+        "x_pct": 8.807,
+        "y_pct": 71.55,
+        "w_pct": 16.092,
+        "h_pct": 1.197
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Adresse case poslale 6J0 CH-8021 Zürich Tel. (01) 2015536",
+      "bbox": {
+        "x_pct": 30.677,
+        "y_pct": 71.453,
+        "w_pct": 15.737,
+        "h_pct": 3.322
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Numéro 23/87",
+      "bbox": {
+        "x_pct": 8.703,
+        "y_pct": 76.222,
+        "w_pct": 8.646,
+        "h_pct": 1.14
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Numéro 24/87",
+      "bbox": {
+        "x_pct": 30.701,
+        "y_pct": 76.165,
+        "w_pct": 8.727,
+        "h_pct": 1.003
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ingenieure und Architekten im Aargau 633 Brücken im Aargau. Von J. Killer, Baden 634 Moderne Brücken",
+      "bbox": {
+        "x_pct": 8.566,
+        "y_pct": 77.647,
+        "w_pct": 20.387,
+        "h_pct": 15.345
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Atelier und Bauplatz. Zur Ausstellung des SIA im Aarauer Kunsthaus_ 1 Noseda und M. Steinmann; Züric",
+      "bbox": {
+        "x_pct": 30.677,
+        "y_pct": 77.624,
+        "w_pct": 20.145,
+        "h_pct": 16.205
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Organe ofliciel",
+      "bbox": {
+        "x_pct": 52.192,
+        "y_pct": 3.801,
+        "w_pct": 9.13,
+        "h_pct": 1.271
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de la Société suisse des ingénieurs et des architectes (SIA), de l'Association amicale des anciens é",
+      "bbox": {
+        "x_pct": 52.192,
+        "y_pct": 5.282,
+        "w_pct": 21.031,
+        "h_pct": 2.279
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Sommaire",
+      "bbox": {
+        "x_pct": 53.723,
+        "y_pct": 20.245,
+        "w_pct": 10.983,
+        "h_pct": 1.749
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tableau des concours",
+      "bbox": {
+        "x_pct": 52.353,
+        "y_pct": 22.889,
+        "w_pct": 12.917,
+        "h_pct": 1.003
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B 93",
+      "bbox": {
+        "x_pct": 69.033,
+        "y_pct": 22.809,
+        "w_pct": 3.086,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Carnet des concours",
+      "bbox": {
+        "x_pct": 52.353,
+        "y_pct": 24.917,
+        "w_pct": 12.168,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B 94",
+      "bbox": {
+        "x_pct": 69.162,
+        "y_pct": 24.843,
+        "w_pct": 3.062,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Industrie et technique",
+      "bbox": {
+        "x_pct": 52.353,
+        "y_pct": 26.952,
+        "w_pct": 12.917,
+        "h_pct": 1.083
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B 94",
+      "bbox": {
+        "x_pct": 69.162,
+        "y_pct": 26.877,
+        "w_pct": 3.062,
+        "h_pct": 1.003
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Actualité",
+      "bbox": {
+        "x_pct": 52.458,
+        "y_pct": 28.986,
+        "w_pct": 5.423,
+        "h_pct": 1.003
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B 94, 222",
+      "bbox": {
+        "x_pct": 66.293,
+        "y_pct": 28.906,
+        "w_pct": 6.068,
+        "h_pct": 1.083
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "EPFL",
+      "bbox": {
+        "x_pct": 52.458,
+        "y_pct": 31.014,
+        "w_pct": 3.65,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B 95",
+      "bbox": {
+        "x_pct": 69.162,
+        "y_pct": 30.923,
+        "w_pct": 3.062,
+        "h_pct": 1.026
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vie de la SIA",
+      "bbox": {
+        "x_pct": 52.458,
+        "y_pct": 32.952,
+        "w_pct": 8.058,
+        "h_pct": 1.026
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B 95, 223",
+      "bbox": {
+        "x_pct": 66.374,
+        "y_pct": 32.86,
+        "w_pct": 5.882,
+        "h_pct": 1.14
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bibliographie",
+      "bbox": {
+        "x_pct": 52.434,
+        "y_pct": 34.969,
+        "w_pct": 8.106,
+        "h_pct": 1.214
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B 96",
+      "bbox": {
+        "x_pct": 69.243,
+        "y_pct": 34.889,
+        "w_pct": 3.143,
+        "h_pct": 1.14
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Editorial",
+      "bbox": {
+        "x_pct": 52.458,
+        "y_pct": 37.02,
+        "w_pct": 5.423,
+        "h_pct": 1.026
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pouvoir de limposture ou la science de Verreur, par Jean-Pierre Weibel",
+      "bbox": {
+        "x_pct": 52.377,
+        "y_pct": 38.444,
+        "w_pct": 16.253,
+        "h_pct": 3.322
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Construction métallique",
+      "bbox": {
+        "x_pct": 52.562,
+        "y_pct": 42.467,
+        "w_pct": 14.214,
+        "h_pct": 1.254
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dimensionnement au feu des charpentes métalliques simulation numériques. par Jean Baptiste Scheich",
+      "bbox": {
+        "x_pct": 52.377,
+        "y_pct": 44.063,
+        "w_pct": 16.898,
+        "h_pct": 4.274
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Constructions publiques",
+      "bbox": {
+        "x_pct": 52.595,
+        "y_pct": 49.134,
+        "w_pct": 14.343,
+        "h_pct": 1.083
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nouveau centre technique el administratif des Transports publics gencvois, par Michel Buffo",
+      "bbox": {
+        "x_pct": 52.482,
+        "y_pct": 50.524,
+        "w_pct": 16.495,
+        "h_pct": 5.373
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "205",
+      "bbox": {
+        "x_pct": 69.887,
+        "y_pct": 40.439,
+        "w_pct": 2.498,
+        "h_pct": 1.214
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "206",
+      "bbox": {
+        "x_pct": 69.919,
+        "y_pct": 47.026,
+        "w_pct": 2.442,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "214",
+      "bbox": {
+        "x_pct": 69.919,
+        "y_pct": 54.604,
+        "w_pct": 2.442,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Gestion énergétique",
+      "bbox": {
+        "x_pct": 52.595,
+        "y_pct": 56.712,
+        "w_pct": 12.031,
+        "h_pct": 1.083
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'énergie au service de Fhumanité, par Jeanne Hersch",
+      "bbox": {
+        "x_pct": 52.514,
+        "y_pct": 58.137,
+        "w_pct": 12.571,
+        "h_pct": 3.174
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "220",
+      "bbox": {
+        "x_pct": 70.0,
+        "y_pct": 60.131,
+        "w_pct": 2.603,
+        "h_pct": 1.197
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Produits nouveavx",
+      "bbox": {
+        "x_pct": 52.699,
+        "y_pct": 62.262,
+        "w_pct": 11.12,
+        "h_pct": 1.003
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B 97",
+      "bbox": {
+        "x_pct": 69.38,
+        "y_pct": 62.182,
+        "w_pct": 3.086,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Manifestations",
+      "bbox": {
+        "x_pct": 52.699,
+        "y_pct": 64.291,
+        "w_pct": 8.807,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "B 99",
+      "bbox": {
+        "x_pct": 69.38,
+        "y_pct": 64.217,
+        "w_pct": 3.086,
+        "h_pct": 1.009
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Dans le prochain numéro :",
+      "bbox": {
+        "x_pct": 52.724,
+        "y_pct": 87.538,
+        "w_pct": 20.121,
+        "h_pct": 1.692
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une nouvelle approche du dimensionnement des slructures en béton à la fissuration des Groupes romand",
+      "bbox": {
+        "x_pct": 52.699,
+        "y_pct": 90.068,
+        "w_pct": 14.746,
+        "h_pct": 4.137
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ingénieurs-conseils (ASIC)",
+      "bbox": {
+        "x_pct": 73.973,
+        "y_pct": 9.499,
+        "w_pct": 16.737,
+        "h_pct": 1.311
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Couverture",
+      "bbox": {
+        "x_pct": 74.053,
+        "y_pct": 19.869,
+        "w_pct": 11.741,
+        "h_pct": 1.744
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La rohotique chez Geilinger",
+      "bbox": {
+        "x_pct": 74.319,
+        "y_pct": 37.607,
+        "w_pct": 16.761,
+        "h_pct": 1.271
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lentreprise Geilinger SA à Yvonand vient d'investir un montant important dans Vachat d'un robot de s",
+      "bbox": {
+        "x_pct": 74.271,
+        "y_pct": 39.316,
+        "w_pct": 20.032,
+        "h_pct": 11.299
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'usine et les bureaux vaudois de Geilinger sont à votre disposi-",
+      "bbox": {
+        "x_pct": 74.432,
+        "y_pct": 64.655,
+        "w_pct": 19.927,
+        "h_pct": 2.279
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plus grand producteur suisse dans sa   branche, Geilinger SA base sa politique d'entreprise sur la c",
+      "bbox": {
+        "x_pct": 74.319,
+        "y_pct": 50.524,
+        "w_pct": 20.04,
+        "h_pct": 14.302
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Entreprise dingénierie el des constructions mélalliques Ch. des Cerisiers 1462 Yvonand Tél 024/32113",
+      "bbox": {
+        "x_pct": 74.432,
+        "y_pct": 68.775,
+        "w_pct": 19.927,
+        "h_pct": 6.285
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 5,
+  "issues": [
+    "Corrected labels for page headers and metadata.",
+    "Confirmed section headers for consistency.",
+    "Potential OCR errors in text extraction for some lines.",
+    "Jeanne Hersch's signature text is present but not explicitly labeled as an author signature in the schema."
+  ],
+  "doc_id": "2420",
+  "page": 3,
+  "elapsed_seconds": 24.05,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

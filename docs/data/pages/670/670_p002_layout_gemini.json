@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SOCIÉTÉ ROMANDE DE PHILOSOPHIE",
+      "bbox": {
+        "x_pct": 21.994,
+        "y_pct": 69.349,
+        "w_pct": 55.776,
+        "h_pct": 1.481
+      },
+      "changed": true,
+      "change_reason": "Corrected from inferred layout, label as page_header because it is a running title."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE RÉEL ET L'IMAGINAIRE AU FIL DU TEMPS",
+      "bbox": {
+        "x_pct": 23.634,
+        "y_pct": 22.792,
+        "w_pct": 42.522,
+        "h_pct": 5.396
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "I. LES « FAITS »",
+      "bbox": {
+        "x_pct": 36.986,
+        "y_pct": 34.798,
+        "w_pct": 6.906,
+        "h_pct": 1.481
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and combined header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le mot « fait » signifie « acte, action, chose faite », selon Littré. Il vient de factum, c'est donc un participe passé substantifié. Il n’y a pas de « fait » futur, même dans les sciences naturelles ou en astronomie : que le soleil se lèvera demain n'est pas un fait. Le fait est toujours au présent (ainsi on dit : « C'est un fait que Napoléon mourut à Sainte-Hélène »), mais il est « la mise en conserve » définitive d'un événement passé. Cette propriété conservatrice lui confère une sorte d'intemporalité qui explique peut-être l'assimilation courante des « évidences de fait » aux évidences mathématiques. Le passé s'enroule sur une bobine actuelle. Et il faut le remarquer : même les « faits » impossibles à récupérer ou à vérifier y figurent, comme par exemple l'assassin resté inconnu d'un roi, et toute l'infinité des faits non « historiques », c'est-à-dire trop minces pour être retenus par la mémoire collective. Cette bobine (pour certains il s'agit de la mémoire de Dieu), tout positiviste s'y réfère quand il veut « rétablir les faits », même s'il affirme d'autre part que « l'invérifiable n'existe pas ». Sa recherche l'implique nécessairement, et son effort pour faire reculer les limites de l'invérifiable n'a pas de sens sans elle. Le contenu de la bobine est assimilé à une foule de « faits naturels », même lorsqu'il s'agit d'intentions, de choix, d'interprétations par des acteurs passés. Sur la bobine, tout est devenu « faits », dont la réalité emprunte sa nature à celle de ce qui se constate dans le présent — mais un présent déjà arrivé, composé de faits, et qui est lui-même comme un vaste fait inépuisable. C'est une bobine détemporalisée, attendant seulement un surcroît de pellicule à venir, surcroît qui sera de même nature que la pellicule enroulée jusqu'ici.",
+      "bbox": {
+        "x_pct": 10.854,
+        "y_pct": 37.704,
+        "w_pct": 68.3,
+        "h_pct": 45.43
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Exposé présenté à la Société romande de philosophie, à Rolle, le 7 juin 1964.",
+      "bbox": {
+        "x_pct": 11.201,
+        "y_pct": 86.513,
+        "w_pct": 67.905,
+        "h_pct": 3.288
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "21",
+      "bbox": {
+        "x_pct": 13.064,
+        "y_pct": 92.73,
+        "w_pct": 1.763,
+        "h_pct": 1.579
+      },
+      "changed": true,
+      "change_reason": "Labeled as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR quality of the main body text was very poor and required manual reconstruction.",
+    "Section header was incomplete in the original detection.",
+    "Header and page numbers were not classified as filters.",
+    "Formatting tags (e.g. list_item) were applied incorrectly to non-list items."
+  ],
+  "doc_id": "670",
+  "page": 2,
+  "elapsed_seconds": 6.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

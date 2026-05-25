@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "34",
+      "bbox": {
+        "x_pct": 14.615,
+        "y_pct": 2.766,
+        "w_pct": 2.457,
+        "h_pct": 1.748
+      },
+      "changed": true,
+      "change_reason": "Page number identified as paragraph."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 55.776,
+        "y_pct": 2.766,
+        "w_pct": 39.224,
+        "h_pct": 1.748
+      },
+      "changed": true,
+      "change_reason": "Running header identified as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "der Natur oder im Studium der Natur da ist, die Zeit, die die Physiker messen, ist nicht dieselbe. Wir meinen, es sei dieselbe Zeit, aber das ist nicht so. Denn die Zeit, die die Physiker in der Natur ablesen, wenn sie versuchen, die Wirklichkeit der Welt, also die verschiedenen Phänomene der Welt und die Ursachen und Wirkungen in der Welt, zu studieren, kennt nur eine Dimension. Das ist eine Zeit, die vom Vorher zum Nachher kommt. Die Zeit des Experiments in der Physik ist eine gemessene Zeit zwischen einem Vorher und einem Nachher. Die Distanz, die zwischen dem Anfang des Experiments und seinem Ende liegt, wird gemessen. Sie haben dann ein t in der Gleichung, und dieses t repräsentiert eine bestimmte Menge Zeit. Aber es gibt da keine Umkehr der Richtung der Natur, auch keine ontologische Betrachtung über die Zeit, die es nicht mehr gibt, über die Zeit, die es noch nicht gibt, und Zeit, die die Grenze zwischen beiden ist. Das existiert nicht in dieser nicht erlebten „Naturzeit“.",
+      "bbox": {
+        "x_pct": 14.724,
+        "y_pct": 6.554,
+        "w_pct": 80.282,
+        "h_pct": 27.516
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was fragmented/incomplete in original detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie ist es möglich, daß zwei Zeiten – aber das ist falsch, ich müßte das en bei Zeiten in eine Klammer setzen – irgendwie zusammenkommen? Wir leben vom Morgen zum Abend, vom Abend bis in die Früh. Wir kennen die Stunden, wir messen sie, wir finden uns zurecht, und jene Zeiten sind doch so verschieden, daß man sie eigentlich gar nicht eine mit der anderen messen kann. Die Zeit, die wir in der Natur messen, und die Zeit, in der wir leben, also die dreidimensionale erlebte Zeit und die eindimensionale quantitative Zeit, kann man nicht zusammenbringen. Wenn etwas Vergleichbares zur dreidimensionalen Zeit in der Natur zu finden ist, dann es in Wirklichkeit nicht die Natur, sondern das Experiment, mit dem Menschen, der die Natur studiert und ihr Fragen stellt. Dieses Fragen hat den Stempel der menschlichen Zeit, der Zeit, die es nicht mehr gibt, der Zeit, die es noch nicht gibt und gleichzeitig der Grenze zwischen beiden. Aber danach, in der Antwort, in der Messung, hat man nur diese Bedeutung von Vorher und von Nachher. Also ist das Erlebte im Grunde wieder menschlich, soweit der Physiker ein Mensch ist und eine Handlung vollzieht, wenn er experimentiert. Das ist eine Handlung, die zum Ziel hat, etwas zu verstehen, etwas zu erkennen; aber es ist immerhin ein menschlicher Akt. Der Akt des Physikers begrenzt die Erfahrung, wenn er anfängt und wenn er fertig ist, aber vor dem Hintergrund eines a-priori-Gefühls der Zeit in der Welt, die eine homogene Zeit und nicht dreidimensional ist.",
+      "bbox": {
+        "x_pct": 14.515,
+        "y_pct": 34.046,
+        "w_pct": 80.294,
+        "h_pct": 41.637
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was truncated in original detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bergson hat einen sehr starken Gegensatz beschrieben zwischen der Zeit, die wir in der Natur messen, die er die homogene Zeit nannte, und der menschlich erlebten Zeit, in der, wie er sagte, kein Nebeneinander ist, sondern nur ein Ineinander. Das heißt, im menschlichen Leben schmilzt",
+      "bbox": {
+        "x_pct": 14.515,
+        "y_pct": 77.292,
+        "w_pct": 80.294,
+        "h_pct": 8.006
+      },
+      "changed": true,
+      "change_reason": "Detected new paragraph at bottom of page not originally captured."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Page number and running header were mislabeled as text.",
+    "The OCR text content for the two main paragraphs was severely truncated and contained errors.",
+    "A third paragraph at the bottom of the page was completely missed by the initial scan."
+  ],
+  "doc_id": "2990",
+  "page": 27,
+  "elapsed_seconds": 6.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

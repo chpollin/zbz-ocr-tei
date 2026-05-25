@@ -1,0 +1,141 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Une «culture» sans passé",
+      "bbox": {
+        "x_pct": 12.8,
+        "y_pct": 6.381,
+        "w_pct": 34.037,
+        "h_pct": 1.511
+      },
+      "changed": true,
+      "change_reason": "Corrected heading text to capture full title"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est absurde dattribuer, comme le fait la Commission; cette de substance à un filet de lordre léga",
+      "bbox": {
+        "x_pct": 12.611,
+        "y_pct": 8.261,
+        "w_pct": 82.471,
+        "h_pct": 13.847
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La de substance historique a pour conséquence une < culture > se veut sans continuité, sans passé, s",
+      "bbox": {
+        "x_pct": 12.646,
+        "y_pct": 21.849,
+        "w_pct": 82.471,
+        "h_pct": 17.884
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle ment de bien des manières encore. Dans ce milieu social amorphe, dépouillé de ses formes, où l'",
+      "bbox": {
+        "x_pct": 12.646,
+        "y_pct": 39.182,
+        "w_pct": 82.283,
+        "h_pct": 8.002
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous ne sommes pourtant et la vie manifeste à lévidence que si chacun est unique en son mystère d'êt",
+      "bbox": {
+        "x_pct": 12.611,
+        "y_pct": 46.947,
+        "w_pct": 82.389,
+        "h_pct": 11.802
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Une société sans mœurs",
+      "bbox": {
+        "x_pct": 12.763,
+        "y_pct": 59.976,
+        "w_pct": 31.733,
+        "h_pct": 2.046
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les mœurs, bien reflètent étroitement la   culture, sa sincérité, sa cohérence; ou son mensonge. Les",
+      "bbox": {
+        "x_pct": 12.447,
+        "y_pct": 62.494,
+        "w_pct": 82.482,
+        "h_pct": 17.545
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Partout, sauf aujourdhui, en théorie; dans nos sociétés occidentales. Selon la théorie de tout le mo",
+      "bbox": {
+        "x_pct": 12.494,
+        "y_pct": 79.78,
+        "w_pct": 82.319,
+        "h_pct": 7.734
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mœurs signifie < préjugés que tout libre se doit de rejeter, afin de <s'épanouir > dans esprit",
+      "bbox": {
+        "x_pct": 12.646,
+        "y_pct": 87.388,
+        "w_pct": 82.084,
+        "h_pct": 4.217
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 74.0,
+        "y_pct": 89.2,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Initial header label did not include full text",
+    "Missing page number region"
+  ],
+  "doc_id": "1810",
+  "page": 22,
+  "elapsed_seconds": 6.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected heading text to capture full title": 1,
+    "ADDED": 1
+  }
+}

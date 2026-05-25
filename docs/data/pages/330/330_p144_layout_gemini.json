@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "110 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 108.435,
+        "y_pct": 77.069,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and running header components incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'ordinaire, que le suffrage universel tait l une comdie pure puisque le secret du vote n'tait pas assur et que l'on votait sous l'empire de la peur. La suggestion, l'assaut affectif que les totalitaires savent livrer  l'indpendance du jugement individuel jouent ici un rle au moins gal  celui de la peur. Et les limites entre cet assaut et celui de la propagande dmocratique sont loin d'tre nettes. - Non, le suffrage universel ne suffit pas. Il nous faut chercher d'autres critres.",
+      "bbox": {
+        "x_pct": 10.487,
+        "y_pct": 10.526,
+        "w_pct": 85.376,
+        "h_pct": 16.798
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils ne se trouvent pas, dans le domaine qui nous occupe,  la surface des choses. Il s'agit, non d'tablir un signe permettant de distinguer avec certitude un rgime dmocratique de celui qui ne l'est pas, car il est vident qu'on se trouve ici dans un monde approximatif o rgne le « plus ou moins », o le « plus ou moins » peut et doit avoir une importance vitale, o la passion des distinctions nettes sur le plan de l'analyse, loin de soutenir la puret de la conduite, risque de la faire glisser sur une pente de compromis illimits. Non, ce qu'il s'agit de dgager, ce sont les tendances qui doivent tre celles d'un rgime dmocratique rest fidle  ses valeurs profondes. C'est donc de celles-ci qu'il faut partir.",
+      "bbox": {
+        "x_pct": 10.209,
+        "y_pct": 27.119,
+        "w_pct": 85.529,
+        "h_pct": 23.167
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La valeur fondamentale; c'est celle, irrductible et insubordonnable, de la personne humaine - tant bien entendu que celle-ci n'est pas conue comme un fait, une donne positive, mais comme un centre de possibles, une libert - autrement dit : sur le plan philosophique, une ncessit intrieure imprvisible, et sur le plan politique, une indtermination  prserver.",
+      "bbox": {
+        "x_pct": 10.306,
+        "y_pct": 49.625,
+        "w_pct": 85.139,
+        "h_pct": 13.06
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette dernire expression n'a pas, comme on pourrait le croire, un sens ngatif seulement. Prserver un tre vivant, et  plus forte raison un tre libre, c'est non seulement le dfendre contre l'emprise toujours menaante du mal inhrent au pouvoir, mais aussi lui donner son champ d'action, le monde o il se fait exister par l'action qu'il y insre. C'est donc, politiquement,  la fois le protger contre le pouvoir et lui permettre d'y participer.",
+      "bbox": {
+        "x_pct": 10.265,
+        "y_pct": 62.087,
+        "w_pct": 85.32,
+        "h_pct": 14.897
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En rgime dmocratique, la protection contre le pouvoir, ce sont des lois garantissant les droits individuels. Mais il est bien vident que les lois ne protgent rien ni personne si le pouvoir qui les soutient - et qu'elles instituent - n'est pas, d'une certaine manire, rparti entre les gouvernants et les gouverns. Ce cercle de la loi porte par la force qu'elle institue est le mystre vital de la dmocratie.",
+      "bbox": {
+        "x_pct": 10.209,
+        "y_pct": 76.155,
+        "w_pct": 85.334,
+        "h_pct": 13.202
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Detected header/page number incorrectly tagged as text.",
+    "OCR text quality is poor/fragmented due to scanning artifacts."
+  ],
+  "doc_id": "330",
+  "page": 144,
+  "elapsed_seconds": 7.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

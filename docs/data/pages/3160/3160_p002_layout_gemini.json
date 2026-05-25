@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 8.08,
+        "y_pct": 3.67,
+        "w_pct": 20.982,
+        "h_pct": 2.368
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Die Unwahrscheinlichkeit der Welt für den Menschen",
+      "bbox": {
+        "x_pct": 7.991,
+        "y_pct": 9.991,
+        "w_pct": 67.798,
+        "h_pct": 5.856
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Vortrag (2)",
+      "bbox": {
+        "x_pct": 8.185,
+        "y_pct": 18.06,
+        "w_pct": 16.116,
+        "h_pct": 2.587
+      },
+      "changed": true,
+      "change_reason": "Vortrag title belongs to section header styling"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In meinem letzten Vortrag habe ich versucht, mein erstes Problem zu lösen, nämlich: wie kann man verstehen, wie der freie Mensch in einer deterministischen Welt gegenwärtig sein und in dieser Welt eine freie Geschichte entwickeln kann, die trotzdem für seine Freiheit immer mehr Sinn und Möglichkeiten gewinnen kann? Es bleibt vielleicht für uns unterwegs der unvergleichliche Wert dieser Freiheit des nicht determinierten Menschen in seiner werdenden Geschichte.",
+      "bbox": {
+        "x_pct": 7.887,
+        "y_pct": 26.075,
+        "w_pct": 84.926,
+        "h_pct": 17.641
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Heute habe ich das Problem umgewälzt. Ich möchte versuchen zu reflektieren, ob es für den Menschen möglich ist, eine einheitliche Welt um sich zu besitzen, in der er das einzige freie, verantwortliche Wesen wäre, während überall sonst der Determinismus – im physischen Bereich – und das Gesetz des Stärkeren – im biologischen – allein herrschen würde. Es ist eigentlich unwahrscheinlich, daß eine offene, schöpferische Freiheit in einer Ganzheit überleben würde, die den Menschen in ihrer Welt nicht sichtbar wäre. Was würde es für einen Menschen bedeuten, eine freie Handlung zu vollziehen, durch er alles, was sich daraus ergibt, auf sich nimmt und sich als Autor dessen fühlt, was alles darauf folgt; der sich das zuschreibt. Ist das eine freie Handlung?",
+      "bbox": {
+        "x_pct": 7.842,
+        "y_pct": 46.02,
+        "w_pct": 85.015,
+        "h_pct": 29.18
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine freie Tat des Menschen, der eine solche Folge von Ereignissen auf sich nimmt, schafft Geschichte. Der Mensch schafft eine Geschichte, die sich entwickelt, in dem er durch die Umstände hindurch die Folge der Umstände hervorbringt. Es wird ein Sinn geboren. Der freie Mensch, der das verursacht, schafft Geschichte, und zwar verantwortlich. Es gibt auch andere Geschichte, andere Folgen, eine andere Gegenwart und eine andere-",
+      "bbox": {
+        "x_pct": 7.887,
+        "y_pct": 76.721,
+        "w_pct": 84.866,
+        "h_pct": 16.33
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text for accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 88.0,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as filterable metadata."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 4,
+  "issues": [
+    "Transcription inaccuracies in paragraph blocks.",
+    "Section header tagged as regular text.",
+    "Page number not tagged as footer."
+  ],
+  "doc_id": "3160",
+  "page": 2,
+  "elapsed_seconds": 5.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

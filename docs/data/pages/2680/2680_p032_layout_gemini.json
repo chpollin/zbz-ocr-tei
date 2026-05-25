@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le présent. Le temps des hommes deviendrait aussi impensable que celui de la nature, celui du sucre fondant dans la tasse de thé, celui de la goutte qui use le rocher. Ce temps n'aurait plus qu'une seule dimension dépourvue de centre. Ce serait celui où fonctionne un ordinateur. Avec la disparition de l'être humain, l'opposition du changement et de la permanence perdrait son sens.",
+      "bbox": {
+        "x_pct": 4.44,
+        "y_pct": 7.778,
+        "w_pct": 86.393,
+        "h_pct": 9.185
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match full document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai entendu un jour un illustre informaticien conclure son exposé par la phrase suivante: «Wir werden uns daran gewöhnen müssen, es mit Wesen zu tun zu haben, deren Denkvollzüge den unseren weit überlegen sein werden.» Je lui ai fait une objection: «Je veux bien croire, lui ai-je dit, que les machines informatiques vont accomplir bien plus vite que nous des opérations bien plus compliquées que les nôtres. Mais ce ne seront jamais des opérations de pensée («Denkvollzüge»).» Il s'est fâché. «Woher wissen Sie das?» Moi: «Du fait qu'il m'est arrivé parfois de penser. Je sais par expérience que penser, c'est vouloir arriver à quelque chose de vrai et éviter quelque chose de faux. Cela, votre machine ne le fera jamais. Elle ne veut rien, elle ne vise rien. Elle est programmée. Mais elle ne pense pas.»",
+      "bbox": {
+        "x_pct": 4.321,
+        "y_pct": 18.496,
+        "w_pct": 86.548,
+        "h_pct": 18.244
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content and cleaned up OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, l'homme est situé dans l'histoire et dans le monde par la date de sa naissance et le lieu où il vit. L'époque et le lieu sont des facteurs constitutifs de ce qu'il est, et par rapport auxquels il continue à se faire être par sa liberté. Comme toutes les données constitutives de sa condition, celles-ci ne peuvent être niées ou négligées sans que soient détruites du même coup les possibilités réelles qui lui sont ouvertes. Il y a deux manières extrêmes d'accomplir cette destruction: l'une consiste à concevoir l'être humain par rapport à une permanence éternelle, seule figure pour lui de l'absolu; l'autre consiste à le dissoudre entièrement dans les données changeantes et relatives de l'histoire concrète, réduisant ainsi ses actes à des phénomènes, simples chaînons dans les chaînes continues des causes et des effets. Dans le premier cas, rien, dans l'essentiel, ne change ni ne s'écoule. Dans le second, il n'y a que changement et écoulement.",
+      "bbox": {
+        "x_pct": 4.405,
+        "y_pct": 57.978,
+        "w_pct": 86.393,
+        "h_pct": 21.333
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content and fixed OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la liberté humaine ne s'actualise que dans le contexte réel du temps qui passe, et à l'intersection de ce temps avec une perpendiculaire absolue où rien ne passe.",
+      "bbox": {
+        "x_pct": 4.524,
+        "y_pct": 81.281,
+        "w_pct": 85.869,
+        "h_pct": 3.659
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content and cleaned up OCR artifacts."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "29",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page number and assigned to filter."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 5,
+  "issues": [
+    "Original text extraction was highly truncated.",
+    "OCR quality was poor for German and French sequences.",
+    "Page number 29 at bottom right was missed by detector."
+  ],
+  "doc_id": "2680",
+  "page": 32,
+  "elapsed_seconds": 6.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,121 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "170",
+      "bbox": {
+        "x_pct": 141.0,
+        "y_pct": 82.0,
+        "w_pct": 27.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SIGNES EXISTENTIELS",
+      "bbox": {
+        "x_pct": 377.0,
+        "y_pct": 82.0,
+        "w_pct": 249.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "éternité, solitude communication, liberté dance; objectivement on doit toujours choisir l'un des deux termes; « existentiellement », ils ne sont vrais qu'accouplés.",
+      "bbox": {
+        "x_pct": 13.404,
+        "y_pct": 12.393,
+        "w_pct": 76.099,
+        "h_pct": 10.801
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR re-reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "c) On peut aussi se servir d'objets métaphysiques. Ils peuvent éclairer derrière eux l'existence, quoique eux-mêmes ne puissent être saisis que par elle.",
+      "bbox": {
+        "x_pct": 13.057,
+        "y_pct": 22.5,
+        "w_pct": 75.0,
+        "h_pct": 7.0
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph region for c)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais un langage psychologique, logique, métaphysique, court toujours un risque; sa face de généralité peut se détacher de sa face existentielle, et alors, au lieu, d'éclairer l'existence, il la masque.",
+      "bbox": {
+        "x_pct": 13.208,
+        "y_pct": 30.41,
+        "w_pct": 76.145,
+        "h_pct": 12.898
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR re-reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La troisième méthode, spécifique cette fois, se sert d'un élément général qui n'existe pas du tout dans la Weltorientierung. Ses catégories ne peuvent pas s'appliquer à des objets, elles ne sont que des signes (signa). Détachée de l'existence, cette généralité-là ne subsiste pas du tout. Ainsi dans le monde objectif il n'y a pas d'existence, pas de Moi (Selbstsein), pas de liberté, pas de communication existentielle, pas d'actes inconditionnés, pas de conscience absolue. Par ces signes, on parle pour l'existence seule; on lui parle de l'existence véritable, non de ce qui est objectivement, mais de ce que je peux concevoir qu'en le voulant, parce qu'en puissance je le suis.",
+      "bbox": {
+        "x_pct": 13.057,
+        "y_pct": 43.089,
+        "w_pct": 76.551,
+        "h_pct": 36.063
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR re-reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'existence ne prétend pas à l'évidence apodictique (1). Elle est l'être dans son absoluité, et",
+      "bbox": {
+        "x_pct": 13.599,
+        "y_pct": 78.904,
+        "w_pct": 75.708,
+        "h_pct": 5.806
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR re-reading."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Philosophie II, p. 19.",
+      "bbox": {
+        "x_pct": 16.37,
+        "y_pct": 87.255,
+        "w_pct": 32.982,
+        "h_pct": 2.193
+      },
+      "changed": true,
+      "change_reason": "Label changed to footnote."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text detection was garbled.",
+    "Footnote label was incorrectly identified as generic text.",
+    "Page header and number missing from detection.",
+    "One paragraph was completely ignored by original detection."
+  ],
+  "doc_id": "20",
+  "page": 172,
+  "elapsed_seconds": 5.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

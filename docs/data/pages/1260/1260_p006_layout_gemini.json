@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "338",
+      "bbox": {
+        "x_pct": 17.202,
+        "y_pct": 7.915,
+        "w_pct": 2.181,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "Label correction: page number is page_header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "RES PUBLICA",
+      "bbox": {
+        "x_pct": 75.381,
+        "y_pct": 7.915,
+        "w_pct": 7.747,
+        "h_pct": 1.626
+      },
+      "changed": true,
+      "change_reason": "Label correction: page header is page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "techniques daction politique, et des < ingénieurs > de lhistoire, possè dent la clé de son devenir ,",
+      "bbox": {
+        "x_pct": 16.703,
+        "y_pct": 11.145,
+        "w_pct": 73.876,
+        "h_pct": 7.956
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Entre la fin de lhistoire religieuse, en revanche, et notre présent hisil y a la rupture radicale de",
+      "bbox": {
+        "x_pct": 16.561,
+        "y_pct": 19.382,
+        "w_pct": 73.941,
+        "h_pct": 13.223
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est à propos de cette fin de [histoire que se produisent aujourd'hui, me semble-t-il, les malenten",
+      "bbox": {
+        "x_pct": 16.452,
+        "y_pct": 33.097,
+        "w_pct": 73.974,
+        "h_pct": 11.496
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin, il faut signaler encore une conséquence de la confusion entre idéologie et religion, est part",
+      "bbox": {
+        "x_pct": 16.408,
+        "y_pct": 49.909,
+        "w_pct": 73.952,
+        "h_pct": 15.562
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les idéologies comportent donc des conflits. Les religions aussi, bien sûr, comme la prouvé lhistoire. Mais cest quelles se sont souvent muées en idéologies. Le point crucial, cest de savoir sil y a ou sil ny a pas recours à la transcendance.",
+      "bbox": {
+        "x_pct": 16.408,
+        "y_pct": 66.27,
+        "w_pct": 73.744,
+        "h_pct": 7.319
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph content detected"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce recours, fût-il vivant et profond, n'abolit pas le conflit et ne supprime pas le combat. Mais mêm",
+      "bbox": {
+        "x_pct": 16.234,
+        "y_pct": 73.876,
+        "w_pct": 74.05,
+        "h_pct": 13.462
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais si la transcendance est niée ou abolie, si une pseudo-religion Ou une idéologie 5 'absolutise e",
+      "bbox": {
+        "x_pct": 16.376,
+        "y_pct": 87.662,
+        "w_pct": 73.614,
+        "h_pct": 4.122
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page number at top was labeled as text instead of filter",
+    "Running header at top was labeled as text instead of filter",
+    "Missing paragraph block detected between two text regions"
+  ],
+  "doc_id": "1260",
+  "page": 6,
+  "elapsed_seconds": 7.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label correction: page number is page_header": 1,
+    "Label correction: page header is page_header": 1,
+    "ADDED": 1
+  }
+}

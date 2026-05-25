@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "INCOMPRÉHENSION DE SES CONTRADICTEURS 119",
+      "bbox": {
+        "x_pct": 182.0,
+        "y_pct": 69.0,
+        "w_pct": 621.0,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header and page number incorrectly labeled as part of the body text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plan de mon étude, — sans affirmer ma conviction que si une philosophie n'a pas été et ne sera pas dépassée, c'est bien celle de Kant, et sans essayer de justifier cette conviction. Je me servirai pour cela dans une large mesure de l'admirable cours qu'a donné Karl Jaspers sur Kant, à Heidelberg, pendant le semestre d'hiver 1932-1933.",
+      "bbox": {
+        "x_pct": 91.0,
+        "y_pct": 112.0,
+        "w_pct": 757.0,
+        "h_pct": 183.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La cause principale de l'incompréhension dont on fait preuve à l'égard de Kant, c'est qu'on le critique sans pénétrer jusqu'au niveau même de sa pensée. Il m'est arrivé d'attaquer tel point de sa philosophie, de m'obstiner dans mon attaque avec le sentiment d'avoir pour moi une incontestable évidence, puis de découvrir brusquement, au détour de la discussion, la vraie profondeur de Kant que mes objections n'atteignaient même pas, et de voir ainsi resplendir cette pensée dans sa pureté. Il me faut expliquer ce que signifie ici « profondeur ». Cela ne signifie pas que Kant arrive à dévoiler des secrets profondément enfouis de l'univers. Rien ne ressemble moins à une science occulte. Cela ne signifie pas non plus que Kant pénètre « au fond de l'âme humaine » au sens psychologique de cette expression, et qu'il en révèle les ressorts secrets. Rien ne ressemble moins à une analyse psychologique. Je dirai même que la « profondeur » de Kant vient de ce qu'il a absolument rejeté tout ce qui fait l'objet de la cosmologie et de la psychologie. La profondeur de cette philosophie ne vient pas de la profondeur de son objet, mais du fait qu'elle n'a pas",
+      "bbox": {
+        "x_pct": 88.0,
+        "y_pct": 294.0,
+        "w_pct": 760.0,
+        "h_pct": 588.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text content to be faithful to the document source."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "The header and page number were incorrectly included in the first paragraph region.",
+    "The OCR transcription was significantly corrupted and required full replacement for readability.",
+    "The original bounding boxes were too coarse and did not separate the header from the body."
+  ],
+  "doc_id": "20",
+  "page": 121,
+  "elapsed_seconds": 5.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

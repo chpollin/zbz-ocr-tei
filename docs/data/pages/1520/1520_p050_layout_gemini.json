@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ronnement, connaît le succès, la défaite, la fatigue, le plaisir et la douleur, l'angoisse et l'espoir.",
+      "bbox": {
+        "x_pct": 11.423,
+        "y_pct": 6.058,
+        "w_pct": 83.875,
+        "h_pct": 4.482
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais en tant que réel, je ne suis pas « vital » seulement, je suis encore « esprit » (Geist). En effet, tout ce que ma conscience pense et tout ce que j'éprouve au niveau vital se trouve en quelque sorte repris et situé par la réflexion dans des ensembles construits, culturellement structurés, tels que par exemple la société, l'œuvre, la profession, etc.",
+      "bbox": {
+        "x_pct": 11.558,
+        "y_pct": 10.171,
+        "w_pct": 83.699,
+        "h_pct": 11.705
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Troisième démarche : Les modalités que venons de rencontrer embrassent toutes ensemble ce dont la réalité n'est contestée par personne, l'immanence: celle que je suis (sujet vital, conscience en général, esprit), — et celle de ce qui devient objet pour moi (monde). La question se pose maintenant de savoir si l'immanence se suffit à elle-même, ou si elle « indique » (aufweisen) autre chose.",
+      "bbox": {
+        "x_pct": 11.612,
+        "y_pct": 22.562,
+        "w_pct": 83.645,
+        "h_pct": 13.342
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien des hommes ont affirmé que l'immanence seule existe, qu'elle suffit, et qu'en dehors d'elle il n'y a rien. Pour d'autres, et cela à toutes les époques, il était évident qu'elle ne suffisait pas. Ces derniers savaient que s'il n'y avait qu'elle, ils se trouvaient perdus, avec l'humanité entière, dans un vide dénué de tout sens. Reconnaissant que l'immanence n'existe ni ne se comprend par elle seule, ils ont alors accompli le saut vers la transcendance, dans deux directions : à partir du monde vers la divinité, et à partir de la réalité de l'esprit conscient vers l'existence. L'existence, dit Jaspers, reprenant certains termes de Kierkegaard, est le sujet libre qui se rapporte à lui-même, et par là même à la transcendance, dont il sait qu'il lui doit le cadeau de son être, et en qui il cherche son fondement.",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 35.647,
+        "w_pct": 83.916,
+        "h_pct": 23.136
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quatrième démarche : Il n'y a pas seulement plusieurs englobants. Chaque modalité de l'englobant fait surgir une pluralité. Tout semble se désagréger dans la multiplicité, ou même dans les contradictions et les exclusives.",
+      "bbox": {
+        "x_pct": 11.748,
+        "y_pct": 59.246,
+        "w_pct": 83.509,
+        "h_pct": 7.849
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est certes possible, dit Jaspers, de vivre dans le pluriel et la dispersion sans s'en inquiéter. Mais pour qui en ressent l'insuffisance, l'infirmité, un saut décisif devient possible, qui, dès que la possibilité en est devenue consciente, s'impose comme nécessaire : impossible d'en rester à la juxtaposition du divers, il faut que tout soit mis en relation avec tout, et qu'ainsi l'unité soit saisie, ou instaurée.",
+      "bbox": {
+        "x_pct": 11.558,
+        "y_pct": 66.984,
+        "w_pct": 83.699,
+        "h_pct": 13.308
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selon Jaspers, un tel saut conduit à « la raison » (Vernunft). C'est elle qui exige l'unité et qui l'instaure en reliant entre elles toutes les modalités de l'englobant, comme aussi les phénomènes qui s'y produisent. Il s'agit d'une nécessité dont l'exigence s'élève du fond de l'origine même de la raison. L'unité exigée par la raison.",
+      "bbox": {
+        "x_pct": 11.558,
+        "y_pct": 80.206,
+        "w_pct": 83.659,
+        "h_pct": 9.966
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "44",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 92.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing footer region."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "OCR text was extremely garbled and required manual reconstruction based on the image content.",
+    "Page number 44 was missing from the detection list."
+  ],
+  "doc_id": "1520",
+  "page": 50,
+  "elapsed_seconds": 5.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

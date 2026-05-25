@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "die Jungen, die sie dazu verführt, in Drogen oder Selbstmord zu fliehen – mangels einer Zukunft, mangels des Möglichen, mangels des Sinnes.",
+      "bbox": {
+        "x_pct": 6.652,
+        "y_pct": 6.584,
+        "w_pct": 80.848,
+        "h_pct": 7.236
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn das Leben zum höchsten Wert wird, wenn es nichts mehr jenseits der Zeit gibt, in der es sich entfaltet, dann triumphiert der Tod. Nicht mein Tod. Nicht mein Tod, der mir vielleicht noch eine Gelegenheit zur Bewährung geben würde, auch nicht derjenige eines geliebten Wesens, sondern ein ganz allgemeiner Tod, der genauso undenkbar wäre wie das Nichts. Der Tod jeglicher Hoffnung. Denn alles ist sterblich. Auch ohne Atomwaffen, auch ohne Umweltverschmutzung wird eines Tages, durch Kälte oder Hitze, das Leben auf unserem Planeten auslöschen.",
+      "bbox": {
+        "x_pct": 6.796,
+        "y_pct": 13.107,
+        "w_pct": 80.948,
+        "h_pct": 21.803
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber ich nicht, nicht ich. Weder ich noch meine Lieben. Sie, ich, wir werden trotz des Todes weiterleben, nach dem Tod, ohne den Tod. Irgendwo, an einem unbekannten Ort, mit einer ungekannten Zeit, werden wir ein Leben fortsetzen, das für uns unvorstellbar ist, das nicht mehr Ziel sein wird, sondern Fülle.",
+      "bbox": {
+        "x_pct": 6.71,
+        "y_pct": 34.884,
+        "w_pct": 80.833,
+        "h_pct": 11.064
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ist hier tatsächlich das Futurum angezeigt? Was wäre eigentlich ein Futurum in jener Zeit der Fülle, aus der der Tod sich zurückgezogen hätte? Was würden dann ein »Vorher« und ein »Nachher« bedeuten? Diese unbekannte Zeit ist für uns keine Zeit mehr. Mangels des Todes gibt es keine Zeit mehr. Wir ersticken in der Angst eines zeitlosen, endlosen Lebens. Keine Vergangenheit mehr. Keine Zukunft.",
+      "bbox": {
+        "x_pct": 6.71,
+        "y_pct": 46.009,
+        "w_pct": 80.891,
+        "h_pct": 15.562
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Noch unerträglicher: keine Gegenwart mehr. Ohne den Tod würde der jetzige Augenblick zu irgendeinem. Jede Einmaligkeit wäre ihm fremd. Für uns, die wir heute als Zeitliche und Sterbliche leben, entstünde dann eine grenzenlose Sehnsucht nach dem Nichts: Nur sterben können!",
+      "bbox": {
+        "x_pct": 6.753,
+        "y_pct": 61.373,
+        "w_pct": 80.79,
+        "h_pct": 10.704
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir könnten weder atmen noch denken ohne die Zeit. Und doch können wir sie weder denken noch uns vorstellen, noch in ihr leben, ohne sie zu transzendieren. Sie scheint manchmal sogar nur in eben diesem Zustand allgegenwärtig zu sein, um transzendiert zu werden. Schon Augustin sagte, als er unter den noch unberührten Problemen, die ihm die Zeit stellte, seinen Weg suchte und Gott um Erhellung bat: »Die Vergangenheit ist nicht mehr, die Zukunft ist noch nicht, die Gegenwart ist ...«",
+      "bbox": {
+        "x_pct": 6.609,
+        "y_pct": 72.335,
+        "w_pct": 80.891,
+        "h_pct": 17.794
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "315",
+      "bbox": {
+        "x_pct": 826.0,
+        "y_pct": 919.0,
+        "w_pct": 32.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Text transcriptions were incomplete/truncated in the provided JSON input.",
+    "Page number 315 was mislabeled as text."
+  ],
+  "doc_id": "2450",
+  "page": 6,
+  "elapsed_seconds": 5.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

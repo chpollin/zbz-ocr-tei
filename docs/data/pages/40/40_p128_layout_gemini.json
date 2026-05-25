@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "130 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 118.0,
+        "y_pct": 76.0,
+        "w_pct": 476.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "The top text line contains page number and section title, which should be marked as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mais me soumettre à une nécessité. Et je ne suis pas sans méfiance, quand j'y réfléchis, à l'égard de cette docilité presque pieuse et presque héroïque qui nous porte parfois. Car elle peut cacher tous les pièges; et comme elle s'affirme d'un coup définitivement, sautant toute délibération, elle finit par donner un sentiment étrange d'irresponsabilité, qui peut étre plus, qui peut aussi étre moins qu'une bonne conscience.",
+      "bbox": {
+        "x_pct": 11.986,
+        "y_pct": 12.221,
+        "w_pct": 80.946,
+        "h_pct": 20.038
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual evidence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je suis donc, paisiblement, que je verrais Pierre. Et puisque tout était net en moi, je voulus que tout fût net aussi au dehors, sans l'ombre d'un mensonge, et je n'avais pas peur. La veille de mon anniversaire, après que le lac se fùt immobilisé dans la nuit, j'écrivis une lettre non à Pierre, mais à mes parents. Je ne leur demandais rien, je les informais seulement de la nécessité qui m'était apparue. Tandis que j'écrivais, je me mettais par l'imagination au plus près de leur cœur, et ils ne se distinguaient plus essentiellement des montagnes et du lac, de tout ce paysage sensible. J'étais sùre qu'ils comprendraient, et je sentais leurs visages près de moi, plus calmes que je ne les avais jamais vus, reflétant l'apaisement de cette lumière qui allait résoudre le passé. Sous leurs yeux, un nénuphar à longue tige tâtonnait à travers les épaisseurs confuses de trois ans de silence, et dressait enfin sa fleur jusqu'à la surface pour éclore au jour voulu dans la clarté.",
+      "bbox": {
+        "x_pct": 12.203,
+        "y_pct": 32.231,
+        "w_pct": 80.946,
+        "h_pct": 45.274
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual evidence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mes parents devaient venir me voir le lendemain; je leur donnerais ma lettre juste avant leur départ, en leur demandant de ne la lire qu'à la maison. Ainsi leur visite de",
+      "bbox": {
+        "x_pct": 12.392,
+        "y_pct": 77.788,
+        "w_pct": 80.851,
+        "h_pct": 7.467
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual evidence."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was severely truncated and contained reading errors in all blocks.",
+    "Page number and header were not correctly labeled as page_header/filter."
+  ],
+  "doc_id": "40",
+  "page": 128,
+  "elapsed_seconds": 5.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lintervention chirurgicale; brève et discontinue, impose au chirurgien chaque jour et plusieurs fois",
+      "bbox": {
+        "x_pct": 14.785,
+        "y_pct": 7.062,
+        "w_pct": 79.524,
+        "h_pct": 20.505
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or le chirurgien a devant lui un patient qui; subjectivement; joue non pas seulement son organe, mai",
+      "bbox": {
+        "x_pct": 14.437,
+        "y_pct": 27.261,
+        "w_pct": 79.837,
+        "h_pct": 20.559
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faudrait, bien sûr, que le chirurgien prenne le temps, avant et après l’opération, d’être médecin, de «mimer» l’état subjectif du malade, avec tout ce qu’il a d’inverse aux exigences chirurgicales. Il faudrait que le chirurgien-médecin puisse être présent à son malade, sans accepter le secours de l’usure humaine par la répétition. Comme un artiste-interprète ne doit jamais se laisser aller à jouer une œuvre dans une interprétation mémorisée, mais qu’il doit toujours la réactualiser par sa présence. Le chirurgien devrait prendre le temps de parler, d’expliquer, de dire ce qu’il va faire, ce qu’il a fait, en s’adressant à ce qu’il y a d’unique et de total dans chaque malade, quel qu’il soit.",
+      "bbox": {
+        "x_pct": 14.204,
+        "y_pct": 48.0,
+        "w_pct": 79.8,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing intermediate paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest peut-être, dans la médecine actuelle du nombre; une exigence surhu maine. Tant dopérations réus",
+      "bbox": {
+        "x_pct": 14.17,
+        "y_pct": 64.139,
+        "w_pct": 79.803,
+        "h_pct": 16.863
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce problème de la présence du chirurgien (ou d'un très proche assistant) à tance nerveuse et dhumani",
+      "bbox": {
+        "x_pct": 14.204,
+        "y_pct": 80.643,
+        "w_pct": 79.408,
+        "h_pct": 5.968
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "422",
+      "bbox": {
+        "x_pct": 14.204,
+        "y_pct": 88.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing middle paragraph text not originally included in JSON.",
+    "Missing page footer (page number)."
+  ],
+  "doc_id": "1300",
+  "page": 4,
+  "elapsed_seconds": 7.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

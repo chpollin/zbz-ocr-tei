@@ -1,0 +1,232 @@
+---
+type: knowledge
+created: 2026-03-09
+updated: 2026-05-25
+tags: [zbz-ocr-tei, viewer, frontend, editor]
+status: active
+---
+
+# Pipeline-Viewer
+
+Interne Web-UI zur Inspektion und Kuration der Pipeline-Ergebnisse (OCR, Layout, TEI).
+Ersetzt seit E56 (2026-04-27) die zuvor vorhandene oeffentliche Edition und die separaten
+Diagnostik-/CER-Dashboards.
+
+**Zweck:** Inspektion und Korrektur der Pipeline-Ergebnisse. Vier konkrete Funktionen:
+QA der OCR-/Layout-/TEI-Ergebnisse, manuelle Korrektur durch Human-in-the-Loop,
+Engine-Vergleich (Mistral/Gemini/DeepSeek), Demonstration gegenueber ZBZ. Nicht
+gedacht als oeffentliche Edition oder Lese-Frontend — das macht ZBZ ueber Oxygen/Alma.
+
+**Eine Seite, sechs Module:** Faksimile + Layout-Overlay (links) und Transkription/TEI (rechts),
+plus Sidebar mit Doc-Liste. Drei Modi: *Anzeigen*, *Layout bearbeiten*, *Transkription bearbeiten*.
+Persistenz erfolgt ausschliesslich via Datei-Download (kein Server).
+
+---
+
+## Architektur
+
+```
+docs/
+├── viewer.html                  # 1 Seite, single-page App
+├── css/
+│   ├── tokens.css               # Hersch Design Tokens (--h-*)
+│   ├── base.css                 # Reset, Typography, Buttons, Badges, Tabs
+│   └── viewer.css               # App-Shell, Sidebar, Faksimile-Overlay, TEI-Render, Editor-UI
+├── js/
+│   ├── core.js                  # DOM, URL, Fetch, Format, Cache, Toast, EventBus
+│   ├── viewer.js                # Orchestrator: Sidebar + Doc-Selektion + Mode-Switching
+│   ├── tei-render.js            # TEI-XML → DOM (mit Entity-Highlighting)
+│   ├── layout-editor.js         # BBox Drag/Resize/Add/Delete + Reading-Order
+│   ├── transcription-editor.js  # OCR/TEI/XML mit contenteditable
+│   └── download.js              # Datei-Download (JSON/MD/XML)
+└── data/                        # generiert via scripts/generate_edition_data.py
+    ├── catalog.json             # 285 Docs (id, title, author, lang, type, page_count, screening)
+    ├── entity_index.json        # 4504 Entities mit GND/Wikidata
+    ├── entity_register.json     # Cross-Doc-Aggregation
+    ├── search_index.json        # Volltext fuer Doc-Suche
+    ├── tei/                     # 285 finale TEIs (*_final.xml + *_review.json)
+    ├── pages/                   # alle 285 Docs: Layout-JSONs + Mistral-OCR + per-Seiten-TEI
+    └── examples/                # Legacy: 4 DEMO-Docs (Backward-Kompatibilitaet)
+```
+
+**Volumen:** 1 HTML (148 Z.), 3 CSS (806 Z.), 6 JS (1.420 Z.). Reduktion gegenueber Vorversion:
+−89% HTML, −84% CSS, −81% JS.
+
+---
+
+## Drei Modi
+
+| Modus | Editierbar | Zweck | Persistenz |
+|---|---|---|---|
+| **Anzeigen** | nein | reine Inspektion (read-only) | — |
+| **Layout** | Layout-Overlay | Regionen (BBox, Typ, Reihenfolge) korrigieren | Download `{doc}_p{N}_layout_curated.json` |
+| **Transkription** | Text-Panel | OCR-Text oder TEI-Text/XML korrigieren | Download `{doc}_p{N}_curated.md` oder `{doc}_curated.xml` |
+
+Edit-Toggle in der Toolbar oben rechts. Im Layout-Modus erscheint eine zweite Toolbar mit
+Regions-Tools (`+ Region`, `Loeschen`, Typ-Dropdown).
+
+---
+
+## Layout-Editor
+
+| Operation | Bedienung |
+|---|---|
+| Region selektieren | Klick |
+| Region verschieben | Drag |
+| Region skalieren | Eckpunkt ziehen (NW/NE/SW/SE) |
+| Region-Typ aendern | Dropdown in Toolbar (Heading/Paragraph/Footnote/Caption/Filter/Skip) |
+| Region hinzufuegen | Toolbar `+ Region` → auf leere Faksimile-Flaeche ziehen |
+| Region loeschen | `Delete`-Taste oder Toolbar-Button |
+| Reading-Order aendern | Drag-and-Drop in der Region-Liste unter dem Faksimile |
+
+Koordinaten sind in Prozent (0-100) relativ zum Bild — kompatibel mit dem bestehenden
+Layout-JSON-Format (`bbox.x_pct/y_pct/w_pct/h_pct`).
+
+### Region-Typen
+
+Aus `tokens.css`-Status-Farben, kompatibel mit `zbz_tag` aus der Pipeline:
+
+| `zbz_tag` | Label | Farbe |
+|---|---|---|
+| `zb_heading` | Heading | Ziegelrot |
+| `zb_paragraph` | Paragraph | Anthrazit |
+| `footnote` | Fussnote | Preussischblau |
+| `caption` | Caption | Olivgruen |
+| `_filter` | Filter (entfernen) | grau, gestrichelt |
+| `_skip` | Skip | hellgrau, gepunktet |
+
+---
+
+## Transcription-Editor
+
+Editiert das aktive Text-Panel via `contenteditable`. Drei Quellen waehlbar:
+
+| Quelle | Format | Editiert man… |
+|---|---|---|
+| **OCR** | Markdown | rohen OCR-Text aus Mistral/DeepSeek/Gemini/Haiku |
+| **TEI** | gerendertes TEI | nur Text-Inhalte (keine Struktur — fuer Tags den XML-Modus nutzen) |
+| **XML** | TEI-XML mit Syntax-Highlighting | rohes XML inklusive Tags und Attribute |
+
+Aenderungen werden debounced eingesammelt. Speichern ueber den `Text ↓` / `TEI ↓` Button im Header
+loest den Download aus.
+
+---
+
+## Persistenz
+
+Kein FastAPI-Server. Alle Aenderungen muessen explizit als Datei heruntergeladen werden.
+Der Nutzer legt die Dateien dann manuell im Repo ab — z.B.:
+
+- Layout: `output/layout/{doc}/{doc}_p{N}_layout_curated.json` (manuell anlegen)
+- OCR: `output/{source}_curated/{doc}_p{N}.md`
+- TEI: `data/tei_curated/{doc}/{doc}_curated.xml`
+
+Hintergrund-Verzeichnisse `data/tei_curated/` und der Curation-Server (`scripts/server/curation_server.py`)
+bleiben im Repo, werden aktuell aber nicht vom Frontend angesteuert.
+
+---
+
+## Datenquellen
+
+`viewer.html` laedt ausschliesslich statische Daten — keine API-Calls.
+
+| Daten | Pfad (primaer) | Fallback | Quelle |
+|---|---|---|---|
+| Korpus-Liste | `data/catalog.json` | — | `scripts/generate_edition_data.py` |
+| Faksimile | `images/{doc}/{doc}_pNNN.png` | — | Pipeline (`scripts/extract_pages.py`) |
+| Layout (Gemini) | `data/pages/{doc}/{doc}_pNNN_layout_gemini.json` | `examples/`, `../output/layout/` | `scripts/layout_qa_gemini.py` |
+| Layout (Docling) | `data/pages/{doc}/{doc}_pNNN_layout.json` | `examples/`, `../output/layout/` | Pipeline |
+| OCR Mistral | `data/pages/{doc}/{doc}_pN.md` | `examples/`, `../output/mistral_results/` | Pipeline |
+| OCR (andere) | — | `../output/{source}/...` | nur lokal: Gemini A/B, LLM, DeepSeek |
+| TEI pro Seite | `data/pages/{doc}/{doc}_pN.xml` | `examples/`, `../output/tei_unified/` | aus `_final.xml` extrahiert |
+| TEI final | `data/tei/{doc}_final.xml` | `pages/`, `examples/`, `../output/tei_final/` | `output/tei_final/` |
+
+Alle 285 Docs haben jetzt vollstaendige Per-Seiten-Daten in `docs/data/pages/` (Layout, Mistral-OCR,
+TEI). Damit funktioniert der Viewer ohne lokalen Server fuer das gesamte Korpus. Die alternativen
+OCR-Engines (Gemini A/B, LLM, DeepSeek) bleiben unter `output/` und sind nur lokal abrufbar.
+
+---
+
+## Hersch Design-System
+
+Die Edition-Designhaltung bleibt erhalten — nur die "Edition als Lese-Web"-Komponenten sind weg.
+Tokens und Komponenten sind in `tokens.css`, `base.css`, `viewer.css`.
+
+### Kernprinzipien
+
+| Entscheidung | Begruendung |
+|---|---|
+| EB Garamond (Serif) als Grundschrift | humanistische Tradition des frankophonen Raums |
+| Jost (geometrische Sans) fuer Headings | formale Klarheit als Kontrapunkt |
+| Kleine Terz (1.2) als Typoskala | feine Differenzierung |
+| kein reines Schwarz/Weiss | Denken im Gebrochenen |
+| Ziegelrot `#8B3A3A` als Primaer-Akzent | existenzielle Leiblichkeit |
+| Preussischblau `#2B4C7E` als Sekundaer-Akzent | Universalitaetsanspruch |
+| Olivgruen `#6B7B5E` als Tertiaer-Akzent | natuerliche Gelassenheit |
+| warmer Anthrazit `#2C2825` statt Navy | Materialitaet von Druckerschwarz auf Papier |
+
+### Token-Schicht
+
+`tokens.css` definiert die Hersch-Werte (`--h-*`). `base.css` baut die Komponenten-Layer
+darauf auf (`.btn`, `.badge`, `.card`, `.input`, `.tabs`, `.toast`). `viewer.css` enthaelt
+den App-spezifischen Layout-Code (Sidebar, Faksimile-Overlay, TEI-Renderer-Klassen, Editor-UI).
+
+### Imperative Designprinzipien
+
+- ausschliesslich `--h-*`-Tokens, niemals Hex-Werte direkt im Komponenten-CSS
+- Akzentfarben (Ziegelrot, Preussischblau, Olivgruen) fuer Akzente und Status-Indikatoren, nicht fuer Flaechen
+- kein reines Schwarz/Weiss
+- bei neuen Komponenten zuerst pruefen, ob ein bestehender Token traegt
+
+---
+
+## Deployment
+
+Der Viewer ist eine reine Static-Site und kann ohne Backend ueber GitHub Pages
+ausgeliefert werden. Quellverzeichnis ist `docs/`.
+
+### Lokaler Server (volle Funktionalitaet inklusive aller OCR-Engines)
+
+```bash
+cd c:/Users/Chrisi/Documents/GitHub/DHCraft/zbz-ocr-tei
+python -m http.server 8000 -d docs
+# oder fuer ../output/ Fallback (Gemini A/B, LLM, DeepSeek):
+python -m http.server 8000
+```
+
+Im zweiten Fall ist der Viewer unter `http://localhost:8000/docs/viewer.html` erreichbar
+und kann auf alle OCR-Engines im `output/`-Tree zugreifen.
+
+### GitHub Pages
+
+In den Repo-Einstellungen unter Settings → Pages: Source auf "Deploy from a branch",
+Branch `main`, Folder `/docs`. Die `.nojekyll`-Datei im Verzeichnis verhindert, dass Pages
+die Inhalte als Jekyll-Site interpretiert.
+
+**Wichtige Einschraenkung:** `docs/images/` ist via `.gitignore` ausgenommen
+(4 GB PNG-Daten zu gross fuer Git), bis auf die vier DEMO-Docs (1000, 1330, 1540, 2310).
+Auf GitHub Pages sieht man fuer alle anderen Docs OCR/Layout/TEI-Texte, aber kein Faksimile.
+Fuer eine vollstaendige Online-Inspektion brauchen die Bilder einen externen Host (IIIF-Server,
+S3, CDN) und einen anpassbaren `ZBZ.path.image()` mit `BASE_URL`-Variable.
+
+### Daten regenerieren
+
+Wenn sich Pipeline-Output oder Screening-Status aendert:
+
+```bash
+python -m scripts.generate_edition_data                  # voller Lauf inkl. Per-Seiten-Mirror
+python -m scripts.generate_edition_data --mirror-only    # nur pages/ neu aufbauen
+python -m scripts.generate_edition_data --no-mirror      # nur Katalog + Indices
+```
+
+Der Per-Seiten-Mirror (`docs/data/pages/`) ist ~99 MB, ca. 16.500 Dateien. Bei jeder
+Aenderung am `output/tei_final/` sollte er neu erzeugt werden.
+
+---
+
+## Verweise
+
+- [pipeline.md](pipeline.md) — Pipeline-Output, der vom Viewer angezeigt wird
+- [entities.md](entities.md) — Entity-Highlighting im TEI-Renderer
+- [quality.md](quality.md) — Diagnostik-Daten in `docs/data/` (CER, TEI-Quality)
+- [decisions.md](decisions.md) — E56 (Frontend-Reduktion auf Viewer-only), E57 (Per-Seiten-Mirror + Pages-Deploy)

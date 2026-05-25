@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zukunft; die eine Verpflichtung bedeutet. Es ist nicht alles, aber es gehört dazu. Auf diese Weise wird der freie Mensch zu einem Mitarbeiter der Geschichte, denn er trägt dazu bei, daß andere Ursachen aufeinanderfolgen und die Geschichte herstellen.",
+      "bbox": {
+        "x_pct": 8.884,
+        "y_pct": 3.734,
+        "w_pct": 84.762,
+        "h_pct": 11.321
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn wir daran denken, sind die Begriffe eigentlich fließend. Zum Beispiel „Geschichte“ und „Welt“. Ich habe als Titel meines Vortrages gewählt „Die Unwahrscheinlichkeit der Welt für den Menschen“. Warum der Welt für den Menschen? Das kommt daher, daß diese Welt die ganze Zeit irgendwie zerfließt, in etwas anderes als das, was man in ihr zunächst sieht. Warum? Es ist nicht fest, es bleibt nicht unbeweglich. Wir sagen „Geschichte“ und „Welt“, aber was ist die Welt? Ist die Welt geschlossen? Ist die Welt begrenzt? Haben wir einen klaren Begriff davon, worin die Welt für uns in einer solchen Beschreibung fest bleibt? Wir sagen, „es gibt die Geschichte“, „es gibt die Welt“. Und was ist diese Idee der Welt? Die Idee der Welt, das ist im Grunde das unendliche Werden eines Ganzen. Wenn wir aber sagen „eines Ganzen“, wissen wir eigentlich nicht, was wir da sagen. Es ist etwas sehr Ergreifendes, wenn man – da wir in den Hegelwochen sind – zum Beispiel Hegel studiert, zu sehen, wie Hegel dieses Geheimnis des Ganzen immer wieder herstellt. Das Geheimnisvolle des Ganzen ist bei Hegel immer wieder da, und zwar deswegen, weil es für den Menschen immer dieses Zerfließen des einen ins andere und des anderen ins eine gibt. Die Idee einer Idee ohne Ende, das ist die Idee der Geschichte. Die Geschichte ist ein Werden ohne Ende, nicht begrenzbar, und die Idee der Welt ist die Idee eines Ganzen, – es ist auch ohne Ende, aber es ist die Idee einer totalen Welt, die man nicht begrenzen kann. Wenn Hegel etwas beschreibt, so kommt es immer wieder zu einem Entgedringen der Bilder der einen Wirklichkeit zu denen der anderen, und dann von denen der anderen in die erste. Es ist eine Durchkreuzung der Bilder, wobei man in nichts anderem eine Stütze finden kann, und in dieses Durcheinanderdringen immer wieder anfängt. In der man eigentlich nicht weiß, ob man anfängt oder ob man am Ende ist, denn Anfang und Ende sind sehr verwandt. Und man kann sich nicht auf etwas anderes stützen, eine andere Stütze finden und etwa sagen: hier",
+      "bbox": {
+        "x_pct": 8.586,
+        "y_pct": 16.967,
+        "w_pct": 84.673,
+        "h_pct": 76.02
+      },
+      "changed": true,
+      "change_reason": "Corrected heavily garbled OCR transcription text to accurately represent the image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 91.56,
+        "y_pct": 94.75,
+        "w_pct": 2.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer to follow schema rules for page numbers."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original transcription was severely inaccurate, containing mostly hallucinated or garbled text characters.",
+    "Page number '20' was incorrectly labeled as generic text instead of page_footer."
+  ],
+  "doc_id": "3160",
+  "page": 3,
+  "elapsed_seconds": 4.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

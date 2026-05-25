@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "scientifiquement plausible, la date de naissance de cet univers, et même de décrire celle-ci. A un moment donné du temps, un noyau d'une extrême densité a fait explosion; ce fut le commencement du monde et le point initial du temps. Je ne mets ici en doute ni les calculs, ni la probabilité. Je mets en doute \"la nature\" du récit qu'on nous fait. Que veut dire \"commencement du temps\" ? En quoi cette naissance du monde ex nihilo se distingue-t-elle de la Création peinte par Michel-Ange, puisqu'elle n'a pas de cause et pas d' \"avant\" ? Il semble qu'ici la science rationnelle ait poursuivi sa route, dans un splendide isolement, jusqu'au point où, perdant ses conditions de possibilité, elle se nie elle-même.",
+      "bbox": {
+        "x_pct": 4.555,
+        "y_pct": 3.17,
+        "w_pct": 89.932,
+        "h_pct": 23.125
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela me ramène à Jaspers, et plus particulièrement à la critique qu'il a faite de la science du savoir, quand elle prétend s'isoler, \"s'absolutiser\", perdre son lien avec l'existence et avec l'être, au point de faire naître deux malentendus opposés; en se prenant d'une part pour une logique pure, d'autre part pour un savoir absolu. Il écrit dans Vernunft und Existenz, en conclusion à son quatrième chapitre: \"Il faut se garder d'absolutiser les connaissances limitées que peut livrer la recherche empirique, et se maintenir libre pour la transcendance; il faut se garder aussi du vide de l'entendement et des formalisations sans fin permettant de parler sans comprendre. Il importe d'affirmer la priorité de la pensée claire, à conquérir sans fin à travers un savoir du savoir toujours déterminé, et d'actualiser sans cesse la raison, afin de prendre conscience de ce qui est plus que la raison.\"",
+      "bbox": {
+        "x_pct": 4.61,
+        "y_pct": 27.627,
+        "w_pct": 89.685,
+        "h_pct": 29.828
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi selon Jaspers, les sources de la science vraie sont doubles: dans l'objet, toujours particulier, auquel le chercheur s'attache, la science est conscience de l'être, à travers tous les modes de l'englobant; et par l'existence du chercheur, ce savoir particulier devient davantage qu'un simple savoir de quelque chose: il devient un acte existentiel.",
+      "bbox": {
+        "x_pct": 4.419,
+        "y_pct": 57.038,
+        "w_pct": 89.425,
+        "h_pct": 13.161
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme se trouve d'emblée dans un monde inconnu, où il lui faut trouver de quoi satisfaire ses besoins vitaux, et qui contient en même temps tout ce qui peut menacer sa vie. Il s'établit ainsi, entre lui et ce qui l'entoure, une relation intense, faite de désir et de peur, et encore d'autre chose. Il éprouve une double impulsion: l'une, de se dérober, d'échapper au monde, par un mouvement de retrait et de défense; il veut se suffire à lui-même, être inaccessible, trouver un refuge clos; - l'autre impulsion, c'est d'embrasser le monde dans sa totalité, le soumettre, le connaître, et maîtriser ce qui peut s'y passer. Auto-suffisance et domination sont deux besoins qui précèdent sans doute toute",
+      "bbox": {
+        "x_pct": 4.104,
+        "y_pct": 70.408,
+        "w_pct": 89.781,
+        "h_pct": 22.772
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": {
+        "x_pct": 44.57,
+        "y_pct": 95.312,
+        "w_pct": 2.227,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text layer was highly corrupted by poor OCR, causing misinterpretation.",
+    "Page number at bottom of page was mislabeled as text."
+  ],
+  "doc_id": "3120",
+  "page": 5,
+  "elapsed_seconds": 5.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

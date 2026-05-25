@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "grosse Ungerechtigkeiten auch bei einer intakten Verfassung möglich werden. Jetzt, wo sich die technische Entwicklung und auch die internationale Entwicklung so rasch verändern, müssen wir eine Möglichkeit haben, menschlich zu handeln, obschon dies überhaupt noch nicht vorgesehen ist.",
+      "bbox": {
+        "x_pct": 8.242,
+        "y_pct": 3.543,
+        "w_pct": 84.769,
+        "h_pct": 8.623
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in the original JSON extraction."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Schmid: Möchten Sie diese These unterstützen, Herr Saner?",
+      "bbox": {
+        "x_pct": 8.355,
+        "y_pct": 14.599,
+        "w_pct": 52.594,
+        "h_pct": 1.899
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and OCR reading of the speaker tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Saner: Ich weiss nicht ganz, wie dann ein Widerstandsrecht aussehen müsste. Es wäre eine Widerstandspraxis im Verhältnis zu einer geübten Rechtspraxis. Diese Widerstandspraxis würde wieder weitgehend darin bestehen, dass man aufmerksam macht auf die Verletzung von Menschenrechten. Dies ist nicht Widerstandsrecht. Dies ist Widerstandspraxis!",
+      "bbox": {
+        "x_pct": 8.355,
+        "y_pct": 19.033,
+        "w_pct": 84.508,
+        "h_pct": 8.522
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and full text representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hirt: Hat sich diese Widerstandspraxis nicht an die geltende Rechtsordnung zu halten?",
+      "bbox": {
+        "x_pct": 8.355,
+        "y_pct": 30.03,
+        "w_pct": 75.544,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing colon for speaker tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Saner: Sie wissen, wie lange Verfahren dauern können. Manchmal kommt man vielleicht in die Lage, dass etwas sofort geändert werden muss. Dann sind vielleicht Verfahren, je demokratischer sie sind, auch umso langwieriger, so dass ich wieder an das Praktische denke. Es könnte Fälle geben, wo die Geduld zu geduldig ist. Das Zweite aber - und das ist Ihre berühmte Fangfrage -, nämlich: Wieweit darf man im Gebrauch der Rechte gehen, und darf man sie eventuell ein wenig verletzen? Ich würde sagen, das hängt wieder von der Auslegung der Rechte ab. Wenn jemand mit Spitzfindigkeiten spielt und etwa sagt, eine Strassenblockade sei Gewalt, dann würde ich sagen, dass dies eine Form von Gewalt ist, die man in Anspruch nehmen darf. Wenn mich in der Literatur umsehe über diese Frage, so kann man zwar nicht von einem Konsens sprechen, der erreicht worden ist, aber jedenfalls wird kaum je bestritten, dass man zumindest den zivilen Ungehorsam zulassen muss, als Möglichkeit des praktischen Widerstandes. Es gibt aber Rechtsdogmatiker, die sagen, auch das sei nicht möglich, man müsse dem Gesetz gehorchen bis ans Ende. Aber das Gesetz kann auch Unrecht schützen.",
+      "bbox": {
+        "x_pct": 8.12,
+        "y_pct": 34.499,
+        "w_pct": 84.656,
+        "h_pct": 28.332
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed missing text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 55 -",
+      "bbox": {
+        "x_pct": 47.4,
+        "y_pct": 94.2,
+        "w_pct": 5.2,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "OCR truncated significant amounts of text",
+    "Missing punctuation after speaker names",
+    "Page number not captured in the original JSON"
+  ],
+  "doc_id": "2710",
+  "page": 19,
+  "elapsed_seconds": 5.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

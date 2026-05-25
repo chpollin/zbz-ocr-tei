@@ -1,0 +1,70 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "FORME ET « RÉALITÉ »",
+      "bbox": {
+        "x_pct": 10.173,
+        "y_pct": 98.67,
+        "w_pct": 21.0,
+        "h_pct": 1.2
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing section header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "225",
+      "bbox": {
+        "x_pct": 74.5,
+        "y_pct": 2.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing page number as header"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Têtre modal propre. Au fond, pourrail dire s'agit ici dune   transposition de   largument   onlologi",
+      "bbox": {
+        "x_pct": 10.173,
+        "y_pct": 12.855,
+        "w_pct": 68.318,
+        "h_pct": 61.154
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "15 L'Etre et la Forme.",
+      "bbox": {
+        "x_pct": 13.445,
+        "y_pct": 75.399,
+        "w_pct": 19.009,
+        "h_pct": 1.42
+      },
+      "changed": true,
+      "change_reason": "Corrected label to zb_heading"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Incorrect label for section heading"
+  ],
+  "doc_id": "110",
+  "page": 227,
+  "elapsed_seconds": 6.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label to zb_heading": 1,
+    "ADDED": 2
+  }
+}

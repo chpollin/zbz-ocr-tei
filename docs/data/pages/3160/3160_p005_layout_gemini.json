@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "schließt. Der Mensch achtet auf die Welt, weil sie für die Geschichte bereit ist und auf sie wartet. Wir wissen ja nie, bis zu welchem Grad diese Welt vermenschlicht ist und von uns abhängig sein kann. Sie kann eine geschichtliche Welt werden. Der Mensch kann aber auch seine geschichtliche Pflicht versäumen. Im Grunde ist er im Dunkeln, er weiß nicht, was von ihm erwartet wird. Die Menschen wollen im voraus Verschiedenes, und sie wissen nicht im voraus, was verwirklicht sein soll.",
+      "bbox": {
+        "x_pct": 7.143,
+        "y_pct": 4.891,
+        "w_pct": 84.673,
+        "h_pct": 17.942
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Beängstigender aber ist es, wenn die Welt nicht erreichbar erscheint. Die Menschen sind irgendwie in dieser Welt, aber sie ist für sie nicht gründlich bekannt. Irgendwie arbeiten die Menschen für die Geschichte, in der Geschichte, und ohne Welt. Selten genießen sie eine Welt, die ihnen gegeben ist. Welt ist ein so schwieriger Begriff, sie wissen nicht, was das eigentlich ist. Es ist seltsam, daß ein Mensch „ein Mensch ist“ und eine Welt hat.",
+      "bbox": {
+        "x_pct": 7.143,
+        "y_pct": 25.046,
+        "w_pct": 84.628,
+        "h_pct": 17.514
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Noch beängstigender ist es aber, wenn die Welt nicht erreichbar erscheint. Diese Welt ist doch die einzige, die Menschen haben. Sie ist für sie fließend, sie wird etwas Beängstigendes, ein Suchen nach dem, was sie nicht besitzen. Ein Arbeiten für die Geschichte in der Geschichte und ohne Welt. Welt ist ein so schwieriger Begriff, daß sie wissen nicht, was das ist. Wo sind ihre Grenzen? Gibt es Grenzen?",
+      "bbox": {
+        "x_pct": 7.143,
+        "y_pct": 44.964,
+        "w_pct": 84.524,
+        "h_pct": 15.483
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bei Jaspers findet man am Anfang seiner Philosophie einen ausführlichen Versuch der Analyse des Begriffs „Welt“, weil dieser Begriff eben so wichtig und entscheidend ist für den Menschen. Unser Sein ist abhängig davon, welches Bild wir uns von unserer Welt machen und umgekehrt. Ein doppeltes Geheimnis verschließt sich vor uns. Die Idee der Welt, unweigerlich und unentbehrlich, aber zugleich unmöglich und unhaltbar, verändert sich ständig. Wir können sie nicht behalten. Haben wir eine Welt? Ist diese Idee schließlich klar? Können wir uns das vorstellen? Es entzieht sich uns. Aber eben das ist das Philosophische daran, daß wir weitersuchen, weil wir eine klare Welt haben möchten. Wir selbst werden unverständlich, wenn wir keine Welt haben. Wir müssen ein Bild haben, eine Umwelt haben, und so kommt es, daß wir unweigerlich diese",
+      "bbox": {
+        "x_pct": 6.741,
+        "y_pct": 62.413,
+        "w_pct": 84.926,
+        "h_pct": 31.758
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "22",
+      "bbox": {
+        "x_pct": 77.294,
+        "y_pct": 95.83,
+        "w_pct": 3.731,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Text transcriptions were heavily truncated in the provided initial JSON.",
+    "Page number at bottom of page incorrectly identified as text."
+  ],
+  "doc_id": "3160",
+  "page": 5,
+  "elapsed_seconds": 5.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

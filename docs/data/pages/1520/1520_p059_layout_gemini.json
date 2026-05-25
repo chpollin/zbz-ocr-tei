@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au lieu de l'être, on a affaire à des niveaux et à des modalités de l'être.",
+      "bbox": {
+        "x_pct": 7.547,
+        "y_pct": 5.853,
+        "w_pct": 84.011,
+        "h_pct": 4.027
+      },
+      "changed": true,
+      "change_reason": "Corrected typographical errors in the text OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'existe aucun cadre définitif du savoir, mais une ouverture radicale, une disponibilité à l'égard de toute expérience nouvelle, selon chacun des modes de l'englobant.",
+      "bbox": {
+        "x_pct": 7.358,
+        "y_pct": 11.765,
+        "w_pct": 83.794,
+        "h_pct": 6.058
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les querelles vides de sens où se heurtent des affirmations opposées concernant la totalité, ou le premier commencement, ou la fin ultime, sont éliminées. Aux limites du savoir, ce n'est plus l'alternative théorique radicale qui règne (« ou bien..., ou bien... »), mais au contraire la compréhension des antinomies — et Jaspers souligne que c'est le contraire de ce qui se passe aux limites de l'action, où règne l'alternative absolue de la liberté.",
+      "bbox": {
+        "x_pct": 7.493,
+        "y_pct": 19.34,
+        "w_pct": 83.835,
+        "h_pct": 13.479
+      },
+      "changed": true,
+      "change_reason": "Corrected fragmented and inaccurate OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais Jaspers met le lecteur en garde. L'homme qui, par l'entendement seul (Verstand), a découvert son impuissance à maîtriser un savoir total, et qui est ainsi revenu à lui-même, risque de ne faire ainsi qu'une expérience chaotique. Il peut devenir plus, ou moins, que l'entendement. Perdant confiance même dans l'unité accessible, il risque de s'abandonner aux simples pulsions vitales de l'instinct, ou à une obéissance aveugle et inconditionnelle. En revanche, il peut recourir à la raison (Vernunft) pour rechercher, au delà d'un impossible savoir de la totalité, la vérité qui, à travers la raison, vient à lui du fond de l'englobant.",
+      "bbox": {
+        "x_pct": 7.453,
+        "y_pct": 34.302,
+        "w_pct": 83.645,
+        "h_pct": 19.366
+      },
+      "changed": true,
+      "change_reason": "Corrected fragmented and inaccurate OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être ces quelques pensées extraites du gros livre « De la vérité » permettent-elles d'entrevoir comment cet ouvrage multiplie les dimensions, les perspectives, la nature de ce que désigne le terme « vérité ». Il en résulte que la notion même de vérité est irrémédiablement et indissociablement philosophique; qu'elle est toujours et partout (et qu'elle ne peut pas ne pas être) philosophiquement en question, et qu'elle dépend nécessairement du sens et de la portée que sait et veut lui donner, existentiellement, celui qui la cherche. Plus clairement seront distingués les modes de l'englobant, plus fortement apparaîtra leur commune racine dans l'existence, sans laquelle la vérité devient mensonge, illusion et superstition. (28 à 35).",
+      "bbox": {
+        "x_pct": 7.222,
+        "y_pct": 55.244,
+        "w_pct": 83.97,
+        "h_pct": 19.537
+      },
+      "changed": true,
+      "change_reason": "Corrected fragmented and inaccurate OCR extraction."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA FOI PHILOSOPHIQUE",
+      "bbox": {
+        "x_pct": 7.764,
+        "y_pct": 79.837,
+        "w_pct": 36.043,
+        "h_pct": 1.937
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La foi philosophique, telle qu'elle s'exprime dans toute l'œuvre de Jaspers, est en même temps ce qu'il peut y avoir de plus fragile et de plus invulnérable, mais dans deux sens différents. Elle ne se résout pas dans la démonstration.",
+      "bbox": {
+        "x_pct": 7.588,
+        "y_pct": 83.436,
+        "w_pct": 83.604,
+        "h_pct": 6.17
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "53",
+      "bbox": {
+        "x_pct": 87.97,
+        "y_pct": 91.56,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region in footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 6,
+  "issues": [
+    "OCR text extraction was heavily corrupted, requiring full manual correction for almost all paragraphs.",
+    "Page number at the bottom right was missing from detection."
+  ],
+  "doc_id": "1520",
+  "page": 59,
+  "elapsed_seconds": 6.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

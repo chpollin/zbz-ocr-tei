@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "III. Beiträge",
+      "bbox": {
+        "x_pct": 16.5,
+        "y_pct": 10.294,
+        "w_pct": 14.458,
+        "h_pct": 1.928
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IV. Zuschriften",
+      "bbox": {
+        "x_pct": 18.559,
+        "y_pct": 55.387,
+        "w_pct": 16.666,
+        "h_pct": 1.08
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header as it denotes a new section of the document. Text fixed from just IV. to IV. Zuschriften to match content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Willi Kessler\nAuschwitz, warum? 159\nLeon Harari\nZum Problem der Schuld 169\nBenjamin Armon\nWarum wir nicht vergessen dürfen 174\nBela Vago\nHistoriographische und methodologische Bemerkungen\nzum jüdischen Widerstand 180\nCzeslaw Pilichowski\nDen Dialog fortsetzen 186\nGerhard Schoenberner\nMit Würde sterben\nDie Geschichte des Warschauer Gettos 1940-1943 188\nSusanne Miller\nSchlußwort 194\nMax Diamant\nEin Beispiel solidarischen Zusammenstehens 197\nHelmut Eschwege\nStellungnahme eines in Deutschland beheimateten\nJuden 201\nBarbara Distel\nDachau - Anfang und Ende des Weges 209\nBodo Hager\nDas Bewußtsein der geschichtlichen Vergangenheit\ngestaltet unsere Gegenwart und Zukunft 211\nKlaus Frank\nEine Forderung an uns selbst 215\nV. Gerhard Schoenberner\nSchlußbemerkungen 219",
+      "bbox": {
+        "x_pct": 19.814,
+        "y_pct": 12.777,
+        "w_pct": 64.958,
+        "h_pct": 77.592
+      },
+      "changed": true,
+      "change_reason": "Corrected the label from document_index (which is not a standard layout label) to text/zb_paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 2 -",
+      "bbox": {
+        "x_pct": 46.883,
+        "y_pct": 2.456,
+        "w_pct": 6.223,
+        "h_pct": 1.583
+      },
+      "changed": true,
+      "change_reason": "Page number identified and categorized as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "The document_index region was mislabeled and too broad.",
+    "The section header IV was partially captured and incorrectly identified as just IV.",
+    "Page number at top was missing a region."
+  ],
+  "doc_id": "2120",
+  "page": 5,
+  "elapsed_seconds": 5.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

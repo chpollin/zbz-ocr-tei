@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "reflète une situation réelle de notre société développée : jamais autant d'hommes, dans les pays occidentaux, n'ont été relativement aussi assurés du lendemain qu'aujourd'hui. Songez au prolongement de la durée moyenne de la vie, à l'élimination des grandes épidémies, à la sécurité qui est la nôtre grâce aux progrès de l'hygiène, de la médecine, des conditions de travail, etc. Certes, on connaît aujourd'hui des problèmes très graves, comme celui du chômage. Mais la situation du chômeur actuel n'est pas comparable à celle d'autrefois. De tous ces avantages il est résulté une grande habitude de sécurité et de survie quotidienne. Quand la survie immédiate n'est pas assurée, alors survivre donne déjà un sens à la vie. C'est pourquoi il y a moins de suicides en temps de guerre par exemple. Survivre est un effort qui est par lui-même plein de sens. Mais lorsque la survie paraît assurée, l'homme est ainsi fait — et c'est digne de l'homme — qu'il se met à chercher un autre sens. C'est pourquoi cette recherche d'un sens par-delà la survie est aujourd'hui quelque chose de tout à fait fondamental et positif, qui explique un peu, par des voies détournées, les événements de 68. Il est parfaitement vrai que notre monde industriel, qui cherche presque uniquement la survie des entreprises à travers l'épreuve de la concurrence, ne trouve pas son sens. Ce peut être un sens suffisant quand la survie des entreprises est menacée. Mais justement, dans les années 68, elle ne l'était pas. La survie d'une entreprise par le profit, dans le système concurrentiel du libre marché, ne constitue pas à elle seule un sens, elle est une condition de réalité. Cette question du sens se pose de façon de plus en plus pressante au fur et à mesure que la productivité augmente.",
+      "bbox": {
+        "x_pct": 15.263,
+        "y_pct": 4.782,
+        "w_pct": 79.853,
+        "h_pct": 49.597
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "GDK: Dans quelle mesure, selon vous, les événements de 68 ont-ils pesé sur l'évolution des structures universitaires, en particulier à Genève ? J.H. — Je pense qu'on a pris un certain nombre de mesures en suivant la mode, en partie parce qu'on était séduit par les soi-disant idées nouvelles, et en partie par intimidation. Je suis convaincue que ces mesures, on va être amené peu à peu à les supprimer. Par exemple la participation, qui a été installée partout comme un immense progrès social, et qui en réalité, à ce qu'il me semble, n'a fonctionné réellement nulle part.",
+      "bbox": {
+        "x_pct": 15.336,
+        "y_pct": 54.863,
+        "w_pct": 79.744,
+        "h_pct": 16.29
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "GD.k. Passons à une autre question, souvent débattue ces dernières années à l'université : la question de l'interdisciplinarité. Avez-vous eu l'occasion de prendre position à ce sujet ?",
+      "bbox": {
+        "x_pct": 15.385,
+        "y_pct": 71.613,
+        "w_pct": 79.609,
+        "h_pct": 6.395
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui, je suis souvent intervenue dans des discussions et j'ai participé aussi à des débats interdisciplinaires. Mes idées à ce sujet sont claires, je crois. La plupart des gens, lorsqu'ils parlent d'interdisciplinarité, ont surtout en tête la spécificité fermée de l'enseignement par branche et le caractère étanche des chaires et des départements. Cette étanchéité leur paraît contraire aux intérêts des études et de la recherche, alors qu'il arrive qu'un résultat obtenu dans un domaine ait immédiatement des",
+      "bbox": {
+        "x_pct": 15.385,
+        "y_pct": 77.581,
+        "w_pct": 79.695,
+        "h_pct": 13.71
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "84",
+      "bbox": {
+        "x_pct": 15.82,
+        "y_pct": 94.677,
+        "w_pct": 2.378,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Identified page number and relabeled as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text transcriptions contained significant OCR errors.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "2330",
+  "page": 88,
+  "elapsed_seconds": 5.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

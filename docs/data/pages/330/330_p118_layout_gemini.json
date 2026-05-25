@@ -1,0 +1,72 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "84 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The header 84 IDÉOLOGIES ET RÉALITÉ was missing a bounding box and mislabeled as content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vérité se défait tout seul, il n'a même pas à être combattu. La solidité d'une idéologie criminelle lui vient toujours de la part de fidélité qu'elle manifeste à un amour ou à une justice. Le mal absolu est une chimère, parce qu'il mourrait de sa propre faiblesse.",
+      "bbox": {
+        "x_pct": 12.716,
+        "y_pct": 9.964,
+        "w_pct": 84.819,
+        "h_pct": 8.885
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved extraction accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les démocrates progressistes ignorent les victimes quotidiennes que font ou que tolèrent leur justice, leur amour, sous la forme inoffensive et patiente que ces valeurs prennent pour eux. Ils préfèrent leur bonne conscience à la vue du réel. Ils ne voient pas leurs adversaires puiser leur volonté farouche, leur violence, aux sources mêmes où s'alimente leur propre tolérance. On met en péril la cause que l'on défend en sous-estimant les forces de l'ennemi; mais aussi en sous-estimant sa valeur morale.",
+      "bbox": {
+        "x_pct": 12.577,
+        "y_pct": 18.082,
+        "w_pct": 85.292,
+        "h_pct": 16.824
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text to match the source document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La justice, l'amour, peuvent inciter des hommes à renverser un légalisme démocratique où des vies concrètes sont atrophiées et mutilées. La légalité démocratique est un moyen terrestre, non une valeur absolue. Justice, amour, sont des valeurs absolues, non des conduites littéralement dictées. A partir d'elles, les interprétations et les actes divergent. C'est pourquoi le bien impliqué partiellement dans une idéologie n'est jamais une raison suffisante d'y adhérer, ni même de la tolérer. C'est pourquoi aussi l'homme qui la défend n'est jamais tout à fait — commodément — un ennemi.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing paragraph block that was skipped by initial detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La tradition philosophique positiviste et matérialiste du socialisme n'impose pas non plus, à elle seule, une volonté révolutionnaire dans le domaine de l'économie. Aucune constatation ne suffit à susciter la révolte; il y faut encore un esprit attaché d'autre part à des valeurs avec lesquelles les réalités constatées sont incompatibles. L'exploitation de l'homme par l'homme, même dévoilée dans toute son ampleur, n'est pas révoltante en elle-même. Elle ne le devient qu'aux yeux d'une conscience pour laquelle tout être humain est érigé en valeur et possède des droits imprescriptibles. Mais la valeur n'est pas dans les faits, ni dans les droits. A supposer qu'il existe une clé unique de l'histoire universelle, permettant d'interpréter son développement selon une nécessité rigoureuse et donc de prévoir l'avenir, même dans ce cas valeurs et droits ne seraient pas dans cette histoire. On aurait beau nous démontrer que l'histoire va nécessairement vers une libération",
+      "bbox": {
+        "x_pct": 13.092,
+        "y_pct": 57.333,
+        "w_pct": 85.0,
+        "h_pct": 31.338
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and typos in extracted text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing page header from initial extraction.",
+    "Text OCR in paragraphs contains multiple misreadings and hallucinations.",
+    "One entire paragraph block was missed by the initial extraction.",
+    "Coordinates for new text regions inferred based on layout structure."
+  ],
+  "doc_id": "330",
+  "page": 118,
+  "elapsed_seconds": 5.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

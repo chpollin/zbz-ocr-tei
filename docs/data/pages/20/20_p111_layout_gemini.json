@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "PLOTIN 109",
+      "bbox": {
+        "x_pct": 427.68,
+        "y_pct": 82.35,
+        "w_pct": 142.14,
+        "h_pct": 21.36
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page_header instead of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à mes yeux, lorsqu'il s'agit de certains problèmes, infiniment plus pure de superstition que telle notation scientifique affirmant dogmatiquement ses droits dans un domaine où ses preuves sont dépourvues de base. Avec le mythe, les Grecs sont arrivés à un langage qui, grâce à sa complexité même, donne une solution très pure du paradoxe philosophique; solution très pure parce que le mythe ne prétend pas être ce qu'il n'est pas : une vérité démontrée, et parce qu'il s'abstient en même temps de devenir ce que la philosophie ne peut pas devenir : un article de foi ou un dogme. Par sa mystérieuse transparence, il empêche que ne s'établisse la distinction destructrice, qui aujourd'hui disloque la philosophie, entre vérité métaphysique et vérité objective. Nulle part je ne retrouve comme chez les Grecs cette capacité de rendre limpide un mystère sans pour cela le détruire et le nier. De même, leurs statues sont claires, calmes et nues, et insondables.",
+      "bbox": {
+        "x_pct": 98.42,
+        "y_pct": 125.55,
+        "w_pct": 760.09,
+        "h_pct": 485.8
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content and bounding box interpretation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Absolu de Plotin, ineffable et transcendant à toute pensée parce que toute pensée est brisée en sujet-objet, est, lui aussi, une de ces profondeurs grecques qui n'empêchent pas, à la surface, les paroles claires. Plotin savait qu'on n'arrive pas à atteindre le fond de l'être, et il le disait. Cela ne l'empêchait pas de s'acheminer philosophiquement, et de divers côtés, vers cette région. On ne peut même pas dire d'elle qu'elle soit obscure, puisque c'est elle qui éclaire tout le reste. L'inconnaissable n'est pas une barrière autour des choses visibles,",
+      "bbox": {
+        "x_pct": 89.91,
+        "y_pct": 611.73,
+        "w_pct": 761.45,
+        "h_pct": 282.75
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original labels were inaccurate regarding page headers.",
+    "OCR output for text blocks was severely malformed.",
+    "BBox coordinates were initially incorrectly parsed."
+  ],
+  "doc_id": "20",
+  "page": 111,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

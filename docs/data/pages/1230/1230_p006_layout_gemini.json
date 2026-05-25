@@ -1,0 +1,85 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "prête à spéciales au sein des organismes internalionaux ont été créés pour défendre Ia Je ne crois p",
+      "bbox": {
+        "x_pct": 15.856,
+        "y_pct": 9.561,
+        "w_pct": 68.13,
+        "h_pct": 12.594
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un arhitre cloit être Or,   précisément, la neutralité suisse implique dimpartialité, elle finirait ",
+      "bbox": {
+        "x_pct": 15.685,
+        "y_pct": 22.727,
+        "w_pct": 67.848,
+        "h_pct": 21.63
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cc rôle, il n'est d'aillcurs pas nécessairc qu'elle le jouc seule. Ellc pourrait fort hien s'associe",
+      "bbox": {
+        "x_pct": 15.318,
+        "y_pct": 44.459,
+        "w_pct": 68.093,
+        "h_pct": 12.774
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre pays deviendra capahle d'assumer un tel rôle. lorsqu'il acceptera de le jouer même s'il lui en",
+      "bbox": {
+        "x_pct": 15.159,
+        "y_pct": 57.657,
+        "w_pct": 68.863,
+        "h_pct": 27.766
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "— 43 —",
+      "bbox": {
+        "x_pct": 44.1,
+        "y_pct": 87.0,
+        "w_pct": 11.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 5,
+  "issues": [
+    "Text content in JSON was largely garbled/OCR-incorrect",
+    "Missing page footer label"
+  ],
+  "doc_id": "1230",
+  "page": 6,
+  "elapsed_seconds": 7.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content and label": 1,
+    "Corrected text content": 3,
+    "ADDED": 1
+  }
+}

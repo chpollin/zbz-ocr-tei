@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun ist die Entwicklung der Wissenschaft und der Technik zugunsten der Entwicklung der Macht auf Seite des Menschen keineswegs evident. Es ist im Gegenteil, als sei die Verflechtung der Natur – als Unfreiheit der physischen und biologischen Natur – noch enger als vorher. Im durchdringenden Bereich der kausalen Zusammenhänge durch die Vermittlung der Wissenschaften und der von ihnen bedingten technischen, phantastischen Möglichkeiten. Dadurch verfügen dann die Menschen über ein echtes Wissen, ein Zwangswissen, etwas, dem man nicht ausweichen kann.",
+      "bbox": {
+        "x_pct": 6.229,
+        "y_pct": 4.194,
+        "w_pct": 86.033,
+        "h_pct": 22.373
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Mensch, der wirklich im Königreich der technischen Möglichkeiten zu Hause ist, wird etwas Neues erwirken, dem er sich unterwerfen kann. Indem er etwas Neues in einem bestimmten Bereich gewinnt, erwirbt er eine Überlegenheit, ein Reich der Möglichkeiten, in dem er herrscht und woraus er etwas machen kann.",
+      "bbox": {
+        "x_pct": 6.486,
+        "y_pct": 28.442,
+        "w_pct": 85.626,
+        "h_pct": 13.56
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie fühlt sich der Mensch in dieser Welt? Einerseits fühlt er sich geknechtet, abhängig. Oder er kann selbst entscheiden, frei zu sein. Aber um frei zu sein, muß er beobachten und verstehen können, was das heißt, geschichtlich als einziges freies Wesen in der veränderten Natur zu leben, – dieser Natur, die er mit seiner Technik immer weiter verändert, ohne sie je als Ganzes sich vorstellen zu können.",
+      "bbox": {
+        "x_pct": 6.591,
+        "y_pct": 44.176,
+        "w_pct": 85.611,
+        "h_pct": 15.58
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 74.0,
+        "y_pct": 94.6,
+        "w_pct": 28.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page number was missing from original regions list."
+  ],
+  "doc_id": "3150",
+  "page": 4,
+  "elapsed_seconds": 4.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

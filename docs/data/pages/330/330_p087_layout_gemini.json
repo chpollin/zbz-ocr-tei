@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 53",
+      "bbox": {
+        "x_pct": 30.686,
+        "y_pct": 9.429,
+        "w_pct": 65.503,
+        "h_pct": 2.378
+      },
+      "changed": true,
+      "change_reason": "Header identified as text and corrected to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "longues hésitations à l'égard des communistes, cette tentation prolongée qu'ils ont subie d'accepter le choix dans les termes mêmes que les communistes avaient fallacieusement posés, et, entre démocratie politique et justice sociale, d'opter pour la justice sociale. Ils ont fini par voir à l'évidence que sans démocratie politique il n'y a pas de justice sociale et que renoncer à la première, c'est consentir à l'exploitation en même temps qu'à la servitude.",
+      "bbox": {
+        "x_pct": 34.82,
+        "y_pct": 12.362,
+        "w_pct": 84.721,
+        "h_pct": 14.884
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors and truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le plan de la politique internationale, l'idéologie socialiste s'est profondément altérée. Elle a été primitivement une tentative pour fonder une solidarité de classe plus forte que les diverses solidarités nationales et capable de s'opposer à elles. Il reste encore quelque chose de cette attitude primitive dans l'élément affectif qu'impliquent des slogans tels que : « Travailleurs de tous les pays, unissez-vous ! », ou les paroles de l'Internationale, ou encore le terme de « camarade » employé pour s'adresser aux socialistes étrangers. Mais ce ne sont plus là que des traces. Il y en a d'autres : par exemple, sur le plan de la propagande, la politique des gouvernements étrangers joue chez les socialistes un rôle beaucoup plus grand que dans les autres partis. La presse socialiste d'un pays se montre solidaire des mesures prises par tel gouvernement étranger, socialiste ou à majorité socialiste, elle monte en épingle ses succès, elle se pare de ses mérites, elle en tire argument pour les élections, etc. Elle se montre également solidaire de la minorité lorsqu'un pays étranger a un gouvernement conservateur ; elle combat ce dernier, elle épouse la cause de la minorité et fait siennes ses revendications. Mais là encore, ce ne sont que des traces, et qui vont en s'atténuant, de la conception du sentiment internationaliste primitif.",
+      "bbox": {
+        "x_pct": 38.58,
+        "y_pct": 28.369,
+        "w_pct": 84.819,
+        "h_pct": 43.556
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors and truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En fait, au fur et à mesure que se sont étendues les conquêtes sociales, au fur et à mesure que le prolétariat a vu grandir des conquêtes qu'il tenait désormais à défendre, c'est d'un nouveau nationalisme que les mouvements ouvriers se sont de plus en plus inspirés, tant sur le plan syndical que sur le plan politique. La lutte quotidienne pour un niveau de vie plus élevé et pour plus de sécurité a eu pour effet que les syndicats, en particulier, se mirent à défendre à n'importe quel prix la main-d'œuvre nationale, ses salaires et ses occasions de travail. La peur du chômage donne",
+      "bbox": {
+        "x_pct": 41.36,
+        "y_pct": 71.275,
+        "w_pct": 84.819,
+        "h_pct": 18.806
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors and truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "6",
+      "bbox": {
+        "x_pct": 77.838,
+        "y_pct": 90.589,
+        "w_pct": 1.298,
+        "h_pct": 2.193
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text and corrected to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was very poor and incomplete.",
+    "Page number and header were incorrectly tagged as paragraph text.",
+    "Bounding boxes were generally accurate but labels were misapplied."
+  ],
+  "doc_id": "330",
+  "page": 87,
+  "elapsed_seconds": 8.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

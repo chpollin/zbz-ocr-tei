@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 65.997,
+        "y_pct": 19.702,
+        "w_pct": 18.783,
+        "h_pct": 1.831
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "COMPLICATION CONTRE VÉRITÉ OU L'INTROUVABLE VÉRITÉ TOUTE NUE",
+      "bbox": {
+        "x_pct": 21.079,
+        "y_pct": 25.726,
+        "w_pct": 55.295,
+        "h_pct": 6.589
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y aura bientôt deux ans qu'Elisabeth Kopp a quitté le Conseil fédéral. Pour qui a, comme moi, suivi cette histoire vécue au jour le jour, à travers presse écrite et media, il devrait être possible aujourd'hui de se faire une idée relativement claire de ce qui s'est passé. Eh bien non, je n'y arrive pas encore; et à vrai dire, j'y arrive moins que naguère. C'est comme si chaque résultat des multiples enquêtes ne faisait qu'ajouter à la confusion. Comme si la pluralité des investigations entraînait un papillotement des problèmes excluant toute certitude.",
+      "bbox": {
+        "x_pct": 8.444,
+        "y_pct": 38.734,
+        "w_pct": 80.728,
+        "h_pct": 19.25
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality to match original document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De quoi s'agissait-il, en somme ? D'une femme, élue Conseillère fédérale vers la fin de 1984, placée à la tête du Département fédéral de Justice et Police, élue vice-présidente du Gouvernement vers la fin 1988, et qui, pendant ces quatre ans, bien que combattue parfois, certes, n'en a pas moins recueilli, dans presque tous les horizons politiques, éloge, respect et admiration. Soudain, elle s'est effondrée dans l'opprobre. L'immunité lui a été retirée. Elle a été acculée à la démission, et elle a passé en jugement. Tout cela en quelques semaines.",
+      "bbox": {
+        "x_pct": 8.444,
+        "y_pct": 60.024,
+        "w_pct": 80.678,
+        "h_pct": 19.411
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality to match original document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quel crime a-t-elle donc commis ? — Son mari était vice-président d'un certain conseil d'administration. Un jour, sa plus proche collaboratrice lui a révélé que l'entreprise en question était suspectée du blanchîment d'argent sale, provenant du commerce",
+      "bbox": {
+        "x_pct": 8.444,
+        "y_pct": 81.508,
+        "w_pct": 80.552,
+        "h_pct": 8.758
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality to match original document."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "51",
+      "bbox": {
+        "x_pct": 85.833,
+        "y_pct": 92.756,
+        "w_pct": 2.45,
+        "h_pct": 2.145
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was significantly degraded/incorrect.",
+    "Page number not detected initially.",
+    "Page header not categorized correctly."
+  ],
+  "doc_id": "2810",
+  "page": 1,
+  "elapsed_seconds": 5.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

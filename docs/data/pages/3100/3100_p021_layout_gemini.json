@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cours des siècles, Dieu se manifeste comme le Dieu de tous; car depuis la mort et la résurrection de son envoyé, il n'y a plus ni Juif, ni Grec, ni esclave, ni libre, ni homme, ni femme, mais tous sont un en Jésus-Christ (Gal. 3.28), là où chacun répond à la question de Dieu et à son appel.",
+      "bbox": {
+        "x_pct": 15.068,
+        "y_pct": 8.644,
+        "w_pct": 65.085,
+        "h_pct": 9.812
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans certains milieux, il est de bon ton de dénigrer toute tradition comme si on pouvait poser le problème de Dieu sans en tenir compte, et de le traiter de façon partisane comme si on devait réfuter son universalité. Je m'inscris en faux contre ce dénigrement et ce traitement. Suivre cette mode facile, c'est, me semble-t-il, se fermer à la question de Dieu, à son intelligibilité. L'engouement pour l'athéisme vulgaire ne vaut guère mieux, comme si l'athéisme allait de soi dans un monde en voie de sécularisation. Faire comme tout le monde en partageant son incroyance, c'est aussi se rendre sourd à la question de Dieu. Les deux attitudes que dénoncent les quelques considérations précédentes conduisent à de graves conséquences pour l'avenir de l'humanité. Elles ne sont pas, comme on pourrait l'imaginer et comme on cherche à nous le faire croire, progressistes, mais rétrogrades; elles témoignent d'une régression mentale. En effet, en escamotant la question de Dieu qui est aussi la question de l'homme et de sa destinée, elles retardent la libération de la conscience de ses angoisses, elles l'empêchent de se trouver elle-même dans sa liberté constitutive. Le dénigrement de la tradition et l'engouement pour l'athéisme vulgaire favorisent en fait la prolifération des idoles dans une humanité qui, devenue étrangère à son vis-à-vis divin, cessera de s'interroger sur elle-même et sur sa destinée.",
+      "bbox": {
+        "x_pct": 14.883,
+        "y_pct": 18.308,
+        "w_pct": 65.375,
+        "h_pct": 41.863
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On le voit, la question de Dieu est aujourd'hui comme hier vitale pour l'avenir de l'humanité. Elle est indirectement la raison d'être de ses recherches dans le domaine théorique et dans le domaine pratique; elle le motif de ses espoirs et de son attente. C'est elle qui fait, en dernière analyse, de l'humanité une société des esprits pensants, croyants et espérants.",
+      "bbox": {
+        "x_pct": 14.907,
+        "y_pct": 59.96,
+        "w_pct": 65.407,
+        "h_pct": 12.16
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 39.968,
+        "y_pct": 75.84,
+        "w_pct": 15.173,
+        "h_pct": 2.125
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout à l'heure on m'a posé une question, mais j'aimerais remettre la réponse à plus tard. Permettez-moi tout d'abord de marquer mon étonnement à me trouver ici. C'est bien la première fois que j'entre-",
+      "bbox": {
+        "x_pct": 14.964,
+        "y_pct": 79.715,
+        "w_pct": 65.133,
+        "h_pct": 6.137
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 14.883,
+        "y_pct": 87.58,
+        "w_pct": 2.45,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, moved to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text content in original regions was severely truncated/incorrect.",
+    "Page number 20 was misclassified as text.",
+    "Author signature at bottom is kept as text per prompt instructions but noted."
+  ],
+  "doc_id": "3100",
+  "page": 21,
+  "elapsed_seconds": 5.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

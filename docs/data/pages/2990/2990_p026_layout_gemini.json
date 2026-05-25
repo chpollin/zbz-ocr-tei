@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Menschlich erlebte Zeit",
+      "bbox": {
+        "x_pct": 72.843,
+        "y_pct": 74.529,
+        "w_pct": 82.598,
+        "h_pct": 86.877
+      },
+      "changed": true,
+      "change_reason": "Corrected the label and zbz_tag for the section header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "33",
+      "bbox": {
+        "x_pct": 82.598,
+        "y_pct": 74.529,
+        "w_pct": 86.877,
+        "h_pct": 98.775
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieses Thema gehört zu den zahlreichen in der Philosophie, über die man spricht, nicht weil man verstanden hat, sondern um zu verstehen. Warum sage ich menschlich „erlebte Zeit“? Gibt es eine andere Zeit? Ich denke ganz einfach an zwei Arten von Zeit, die wir in der Erfahrung kennen. Wir kennen einerseits die äußere Zeit, die wir für die Zeit der Natur halten, die Zeit der Welt, die Zeit, die in der Wissenschaft gemessen wird, und andererseits die erlebte Zeit, das heißt die Zeit, wie sie eben jeder von uns erlebt. Ich glaube, daß es zwischen diesen beiden Arten von Zeit - ich sage nicht von Zeiten - Unterschiede gibt, die gar nicht erlauben, die eine auf die andere zurückzuführen.",
+      "bbox": {
+        "x_pct": 6.949,
+        "y_pct": 25.247,
+        "w_pct": 80.098,
+        "h_pct": 19.712
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Vergangenheit ist die Zeit, die es nicht mehr gibt; die Zukunft ist die Zeit, die es noch nicht gibt; und die Gegenwart ist eine punktuelle Grenze zwischen der Zeit, die es noch nicht gibt, und der Zeit, die es nicht mehr gibt. Also gibt es überhaupt keine Zeit. Und er staunt. Und er fleht Gott an: Lieber Gott, erkläre mir, was das heißt, denn ich verstehe nichts. Ich weiß, daß ich bis über die Ohren in der Zeit bin, und die Zeit gibt es nicht. Wie ist das? Ich verstehe nichts.",
+      "bbox": {
+        "x_pct": 6.985,
+        "y_pct": 62.664,
+        "w_pct": 79.779,
+        "h_pct": 13.791
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich muß sagen, ich verstehe nicht mehr, als er damals verstanden hat. Ich habe sehr viel darüber nachgedacht, und ich verstehe es wirklich nicht. Im Grunde ist diese Zeit - Vergangenheit, Gegenwart, Zukunft - gegenwärtige Zeit, wie er dann sagte. Das ist das, was ich menschlich erlebte Zeit nenne, denn die Zeit, die wir in der Natur vermuten, die Zeit, die in",
+      "bbox": {
+        "x_pct": 6.949,
+        "y_pct": 76.562,
+        "w_pct": 79.657,
+        "h_pct": 9.893
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction was heavily truncated/corrupted.",
+    "Page number missing from initial detection.",
+    "Section header was mislabeled as paragraph.",
+    "Text content required manual correction for readability."
+  ],
+  "doc_id": "2990",
+  "page": 26,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,84 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "enlicr s'abîmer dans la   matière, nom dune  forme   supérieure dont le mode dincarnation est différ",
+      "bbox": {
+        "x_pct": 9.666,
+        "y_pct": 13.113,
+        "w_pct": 69.01,
+        "h_pct": 49.985
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pouvons-nous   espérer; après tant dambiguïté irréductible, que sur le moins, pourrons mnettre nelte",
+      "bbox": {
+        "x_pct": 10.242,
+        "y_pct": 64.996,
+        "w_pct": 68.47,
+        "h_pct": 7.54
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Laissons pour l'instant la musique de c\bot\be; \ba son sujet, chacun",
+      "bbox": {
+        "x_pct": 98.0,
+        "y_pct": 72.5,
+        "w_pct": 69.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Full text line for clarity and corrected bbox"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 98.0,
+        "y_pct": 0,
+        "w_pct": 20.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "63",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 89.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "List item label was incorrect",
+    "Missing page header and footer",
+    "Incomplete text detection at paragraph end"
+  ],
+  "doc_id": "110",
+  "page": 65,
+  "elapsed_seconds": 7.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from list_item to text": 1,
+    "ADDED": 3
+  }
+}

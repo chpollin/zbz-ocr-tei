@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine Damen und Herren, ich weise darüber hinaus noch darauf hin, daß am 24. Juli, also in der letzten Semesterwoche, der letzte Vortrag, dazwischen kommt noch mal der vorletzte Vortrag, der letzte Vortrag im Rahmen des Hegelwochenprogramms stattfinden wird. Es wird dort Prof. Dr. Peter Janich von der Universität Marburg einen Vortrag zur Zeitphilosophie halten, einer der ausgewiesensten Experten in der Bundesrepublik zum Thema Zeit, und das wird nicht nur die Teilnehmer der Zeitvorlesung, sondern auch, wie ich annehme, viele andere interessieren. Dort wird noch Genaueres über den Ort bekanntgegeben, die Zeit steht schon fest. Es ist am 24. Juli 1996, 19 Uhr.",
+      "bbox": {
+        "x_pct": 8.234,
+        "y_pct": 4.49,
+        "w_pct": 85.329,
+        "h_pct": 26.594
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate transcription of the paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine Damen und Herren, auch heute abend wollen wir uns im Anschluß an die Veranstaltung wieder zu einem Gespräch zusammensetzen, und zwar in Hans Rockenbachs Garten in der Sandstraße, dort ist für uns reserviert. Diejenigen von Ihnen, die kommen wollen, sind herzlich – und ich mache erneut auf die semantische Differenz aufmerksam –, sind herzlich aufgefordert zu kommen. Aufgefordert ist nicht eingeladen.",
+      "bbox": {
+        "x_pct": 8.338,
+        "y_pct": 35.492,
+        "w_pct": 85.329,
+        "h_pct": 13.871
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate transcription of the paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine Damen und Herren, es hat mir viel Freude gemacht, diese Hegelwochen sieben Jahre lang begleiten zu dürfen, und ich hoffe, daß, wer auch immer sie in Zukunft veranstalten wird, ebenso viel Freude hat! Ich hoffe, daß es Ihnen ebenso viel Freude gemacht hat wie mir, an diesen Hegelwochen teilzunehmen, und daß Sie den Hegelwochen weiterhin treu bleiben. Herzlichen Dank!",
+      "bbox": {
+        "x_pct": 8.338,
+        "y_pct": 51.275,
+        "w_pct": 85.374,
+        "h_pct": 15.483
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate transcription of the paragraph text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "76",
+      "bbox": {
+        "x_pct": 91.0,
+        "y_pct": 95.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer region for page number 76."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was severely truncated in all three paragraphs.",
+    "Page number 76 was missing from the initial detection list."
+  ],
+  "doc_id": "3180",
+  "page": 53,
+  "elapsed_seconds": 4.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

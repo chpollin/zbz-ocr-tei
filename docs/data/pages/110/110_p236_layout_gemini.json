@@ -1,0 +1,42 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "234 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 18.262,
+        "y_pct": 2.0,
+        "w_pct": 68.654,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Extracted page header and number as filter region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par contre, la vérification intellectuelle dont il s'agit ici ne permet pas, à ce qu'il me semble, de donner une réponse affirmative à la question de l'intelligibilité de l'être, sous sa deuxième forme b) — l'être tel qu'il est en soi est-il accessible à l'esprit? — Tout dépend, naturellement, du sens qu'on donne à l'« en soi ». Si on entend par être en soi l'être qui est, sans être ceci ou cela, selon un mode particulier, sur un plan particulier des modalités de l'être, la réponse est négative. En effet, il est légitime (c'est une légitimité expérimentale, existentielle, non démonstrative) de dire qu'en saisissant le « je » sujet de la pensée on saisit non seulement un sujet de pensée, mais un sujet de verbe être; il est légitime aussi (et c'est ici une légitimité qui même si elle peut être existentielle, est en même temps démonstrative) de dire que si un sujet est, c'est que l'être est. On appuie ainsi sur une vérification expérimentale et un argument logique la tautologie fondamentale de toute pensée, que cesse ici d'être tautologie pour désigner une expérience existentielle et intuitive, pour signifier ainsi l'accès réel que le sujet possède à l'être; mais il importe cependant de distinguer l'une de l'autre ces deux opérations fondues et de ne pas leur accorder une efficacité égale et de même nature. En effet, l'accès réel à l'être n'a été donné que dans l'expérience intellectuelle de l'être en tant que sujet. Celle-ci a imposé du même coup, c'est vrai, l'évidence de l'être, — mais alors, de deux choses l'une: ou bien cette évidence de l'être résulte d'une élimination raisonnée du caractère de sujet, l'être sujet étant considéré comme un cas d'espèce par rapport à l'être comme tel, — ou bien cette évidence de l'être résulte d'une intuition allant au delà des données existentielles qui étaient un être-sujet-pensant. Dans le second cas, il ne s'agit plus d'une expérience intellectuelle, d'une vérification intellectuelle: car il est impossible à une expérience intellectuelle de rencontrer dans son objet davantage que lui-même, de rencontrer dans l'être-sujet-pensant l'être en soi, à moins de prendre pour un être en soi la réalité de l'être-sujet-pensant une fois",
+      "bbox": {
+        "x_pct": 18.262,
+        "y_pct": 13.591,
+        "w_pct": 68.654,
+        "h_pct": 74.962
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number and header were missing as a separate region"
+  ],
+  "doc_id": "110",
+  "page": 236,
+  "elapsed_seconds": 6.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

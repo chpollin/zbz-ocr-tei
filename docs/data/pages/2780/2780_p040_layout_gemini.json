@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de chaque grande philosophie; c'est finalement la liberté propre du penseur, telle qu'elle s'exerce dans l'œuvre pour revenir plus fermement à elle-même.",
+      "bbox": {
+        "x_pct": 16.388,
+        "y_pct": 13.41,
+        "w_pct": 57.309,
+        "h_pct": 8.855
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'en va sans doute pas autrement de la musique. La prodigieuse diversité de la musique occidentale a probablement la même origine que celle de la philosophie : la liberté s'est engagée individuellement et collectivement dans le monde pour le faire advenir et lui donner forme, tout au long de cette aventure magnifique et terrible qu'on appelle l'histoire. C'est l'incarnation des pensées et des rêves dans les possibles ouverts par le passé et l'avenir, à des hommes qui ne peuvent créer que maintenant, au présent, dans cette miniature fugitive d'éternité où ils ont leur seul rendez-vous avec le monde, et où les musiciens élargissent leur mélodie par le souvenir et le projet.",
+      "bbox": {
+        "x_pct": 16.282,
+        "y_pct": 22.216,
+        "w_pct": 57.521,
+        "h_pct": 30.957
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete/corrupted text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La contradiction, en musique comme dans la condition humaine, n'est pas simple erreur ou impossibilité : elle constitue un paradoxe, elle est un signe, l'instrument d'un exercice spirituel, dont naissent des actions, des pensées, des musiques. La contradiction, lorsqu'elle est essentielle, constitue elle-même (paradoxalement) une unité. Elle est un",
+      "bbox": {
+        "x_pct": 16.282,
+        "y_pct": 56.77,
+        "w_pct": 57.447,
+        "h_pct": 15.944
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/mis-transcribed text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "41",
+      "bbox": {
+        "x_pct": 70.479,
+        "y_pct": 74.965,
+        "w_pct": 2.457,
+        "h_pct": 2.219
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number and re-labeled to page_footer/filter to be excluded from main body text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcriptions were severely truncated and contained character artifacts.",
+    "Page number at the bottom was incorrectly labeled as text.",
+    "Overall OCR content for paragraphs needed significant reconstruction."
+  ],
+  "doc_id": "2780",
+  "page": 40,
+  "elapsed_seconds": 4.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

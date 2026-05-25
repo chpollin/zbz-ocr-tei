@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Vom Sinn der Technik",
+      "bbox": {
+        "x_pct": 8.456,
+        "y_pct": 3.0,
+        "w_pct": 22.549,
+        "h_pct": 1.472
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "77",
+      "bbox": {
+        "x_pct": 85.343,
+        "y_pct": 3.0,
+        "w_pct": 2.819,
+        "h_pct": 1.472
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_header/footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nicht heißen denn Glück ist es nicht, aber es ist wahrscheinlich etwas viel Wichtigeres als Glück und etwas Klareres und viel leichter zu verstehen. Entscheidend ist hier das Anti-Ganze, das Anti-Totale, das man im Widerspruch erlebt. Was man da erlebt, wird inkarniert, wird unter anderem in der Technik etwas Materielles. Die Resultate davon sind unendlich zahlreich und nehmen sehr große Ausmaße an.",
+      "bbox": {
+        "x_pct": 8.456,
+        "y_pct": 6.472,
+        "w_pct": 79.694,
+        "h_pct": 12.113
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist meiner Ansicht nach blind, zu glauben, daß die Technik einfach Materialismus ist. Denn einen Materialismus als solchen gibt es in den menschlichen Möglichkeiten nicht, nicht einmal als Möglichkeit. Selbst wenn man materialistisch sein wollte, könnte man es nicht. Es gibt im Gegenteil in diesen Widerständen kulturelle Möglichkeiten, die die Technik entwickelt, z.B. die Möglichkeit, die anderen Menschen zu entdecken. Die technische Welt sollte man entziffern lernen, und wir sollten dabei Dankbarkeit empfinden - ein Gefühl, das heute ganz aus der Mode ist -, eine Dankbarkeit gegenüber allen Menschen, die etwas in dieser Richtung getan haben, unter schweren Verhältnissen, mit schwieriger Arbeit, in der Vergangenheit, in der Gegenwart, und die es weiter tun werden.",
+      "bbox": {
+        "x_pct": 8.333,
+        "y_pct": 18.15,
+        "w_pct": 79.902,
+        "h_pct": 22.171
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Neue Probleme sind dadurch entstanden; sehr schwierige, sehr gefährliche Probleme; aber Probleme haben die Menschen immer gehabt. Gerade aus dieser widersprüchlichen Natur, von der ich sprach. Neue Probleme erwarten die jungen Leute, denen man so sehr zu wiederholen liebt, daß alles verkehrt laufe, daß die Zivilisation die falsche Richtung gewählt habe. Dies sind neue Probleme, die ihrem Leben Sinn geben werden, solange die Welt in der Schwebe zwischen dem Vorfindlichen und dem Hervorzubringenden ist - und nur das ist unsere Existenz. Welchen Sinn kann ein Leben haben, wenn es nicht dieses Suchen im Entgegengesetzten kennt, in dem Widerspruch durch das Handeln, durch das Erfinden, durch die Möglichkeit, mehr Mensch zu werden?",
+      "bbox": {
+        "x_pct": 8.174,
+        "y_pct": 39.778,
+        "w_pct": 80.025,
+        "h_pct": 21.875
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt viele Kategorien neuer Probleme. So gibt es Probleme, die nach Lösungen erfordern, die selbst auch technisch sein werden, z.B. Umweltverschmutzung, Lärm, Krankheiten usw. Dann gibt es die, die verlangen, daß man sich selbst begrenzt, z.B. die Umwelt-Probleme. Und schließlich gibt es Probleme, die nach Änderungen in den Faktoren der Kausalzusammenhänge verlangen, die man in der Technik selbst entwickelt. Das ist gerade das, worauf ich angespielt habe, das sind der ökonomische und soziale Determinismus und die Überschneidung all dieser Elemente und die Effekte dieses Zusammenwirkens auf die menschlichen Einstellungen. Die menschlichen Einstellungen, die darauf folgen, sind gerade Kultur, die man von der Technik aus weiter schaffen könnte.",
+      "bbox": {
+        "x_pct": 8.211,
+        "y_pct": 61.62,
+        "w_pct": 79.657,
+        "h_pct": 21.464
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR in JSON was severely corrupted.",
+    "Page header was missing from regions list.",
+    "Page number 77 was missing from regions list."
+  ],
+  "doc_id": "2990",
+  "page": 70,
+  "elapsed_seconds": 5.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

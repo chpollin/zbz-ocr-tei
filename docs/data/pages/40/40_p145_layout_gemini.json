@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 147",
+      "bbox": {
+        "x_pct": 366.0,
+        "y_pct": 82.0,
+        "w_pct": 526.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header elements including page number identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout avait été dit, et mon angoisse tomba. Il faisait calme et désolé. Il me semblait que nous avions plié la tête ensemble sous la même nécessité et qu'un rituel avait été observé qui nous donnait sa paix.",
+      "bbox": {
+        "x_pct": 11.486,
+        "y_pct": 12.571,
+        "w_pct": 80.635,
+        "h_pct": 10.009
+      },
+      "changed": true,
+      "change_reason": "Text content cleaned to match actual document text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant, il faut manger.",
+      "bbox": {
+        "x_pct": 19.5,
+        "y_pct": 22.713,
+        "w_pct": 39.419,
+        "h_pct": 2.713
+      },
+      "changed": true,
+      "change_reason": "Added missing punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je tirai de mon sac les sandwichs, les œufs durs, les abricots. Comme elles le font toujours, les choses nous aidèrent et nous pûmes parler d'elles, simplement. Il ramassa les papiers, y mit le feu, ils flambèrent en quelques instants. Au moment de redescendre, debout, j'ai regardé autour de moi, cherchant à retenir tout l'horizon, toute la douceur, toute la détresse de sa présence et de cette dernière expérience commune. Un immense regret, une appréhension et presque un effroi de la solitude qui serait là dès ce soir, désormais sans le moindre rêve, me renversèrent presque, me jetèrent presque à ses pieds pour le supplier de ne pas me quitter. Au lieu de cela, je dis:",
+      "bbox": {
+        "x_pct": 11.527,
+        "y_pct": 25.113,
+        "w_pct": 80.905,
+        "h_pct": 30.87
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match original OCR segment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous voyez, ce sont mes parents qui avaient raison.",
+      "bbox": {
+        "x_pct": 11.662,
+        "y_pct": 55.643,
+        "w_pct": 80.595,
+        "h_pct": 4.688
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'est-ce que cela prouve ? s'écria-t-il dans un sursaut de révolte. Ils l'ont emporté, voilà tout.",
+      "bbox": {
+        "x_pct": 11.932,
+        "y_pct": 60.681,
+        "w_pct": 74.649,
+        "h_pct": 4.792
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous voici encore une fois devant l'espace vaste, face au couchant, accordant nos pas au rythme de la pente. Trop de souvenirs, trop d'espoirs perdus sont là, — nous ne pouvons plus parler. Au milieu d'un pâturage, soudain, il me passa le bras autour du cou et le laissa peser lourdement sur mon épaule. Me maintenant ainsi contre lui il se tourna avec moi vers le haut de la montagne; je l'entendis respirer fortement, profondément, l'air du soir",
+      "bbox": {
+        "x_pct": 11.392,
+        "y_pct": 65.756,
+        "w_pct": 81.405,
+        "h_pct": 20.539
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and removed OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Docling text extraction contained high error rate, requiring manual rewrite of paragraph text.",
+    "Page header/number 147 was incorrectly captured as text block.",
+    "Some paragraphs were mis-segmented due to text noise."
+  ],
+  "doc_id": "40",
+  "page": 145,
+  "elapsed_seconds": 6.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

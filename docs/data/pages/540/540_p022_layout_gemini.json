@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "250",
+      "bbox": {
+        "x_pct": 14.959,
+        "y_pct": 14.773,
+        "w_pct": 2.256,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_footer/filter"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "J. MARIAS",
+      "bbox": {
+        "x_pct": 45.174,
+        "y_pct": 14.773,
+        "w_pct": 9.426,
+        "h_pct": 1.251
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to section_header/zb_heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si on symbolisait la continuité historique comme un ensemble de fils qui s'entrelacent dans la trame de la vie, on trouverait que ces fils sont « longs », c'est-à-dire viennent de loin et s'éloignent vers un futur. La situation en est le nœud. Les fils se nouent, mais ne finissent pas; ils se prolongent en avant et en arrière. La situation est quelque chose qui se « dénoue », un nœud qu'on délie ou que l'on coupe — ou qui parfois étrangle. Le dénouement est la forme de solution — solution, déliement — du drame. A la condition dramatique de la vie et de l'histoire correspond leur structure « noueuse ».",
+      "bbox": {
+        "x_pct": 14.959,
+        "y_pct": 17.298,
+        "w_pct": 69.232,
+        "h_pct": 15.909
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alors, si l'histoire est une continuité discontinue — des fils noués — quelle en est l'articulation ? Quelle est la succession concrète des situations historiques ?",
+      "bbox": {
+        "x_pct": 15.164,
+        "y_pct": 34.489,
+        "w_pct": 69.129,
+        "h_pct": 5.429
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3. La structure de l'histoire : générations et époques historiques",
+      "bbox": {
+        "x_pct": 18.473,
+        "y_pct": 41.9,
+        "w_pct": 63.934,
+        "h_pct": 2.399
+      },
+      "changed": true,
+      "change_reason": "Corrected typos in header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps historique n'est pas un continu homogène, mais qualifié et articulé. Or, les articulations de l'histoire, les « périodes », pourraient être soit de vraies périodes régulières qui se répètent automatiquement, soit n'importe quelle division du temps historique. Le premier cas n'est possible que s'il y a dans l'histoire quelque élément fixe et invariable. On n'a jamais trouvé cet élément dans la macrostructure de l'histoire, et pour le remplacer, on a imposé par force à la réalité des structures arbitraires et injustifiées. En revanche la microstructure est fondée sur quelque chose de très précis et — dans certaines limites — d'invariable : c'est la trajectoire temporelle de la vie humaine, sa durée moyenne et le rythme de ses âges. Il y a donc une structure périodique rigoureuse et nécessaire, celle des générations, qui ne sont pas, bien entendu, des générations biologiques ou généalogiques, mais des générations sociales et par conséquent historiques.",
+      "bbox": {
+        "x_pct": 15.092,
+        "y_pct": 44.508,
+        "w_pct": 69.436,
+        "h_pct": 26.155
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En m'appuyant sur la théorie d'Ortega, j'ai étudié en détail ce thème (dans El método histórico de las generaciones, 1949, et La estructura social, 1955), qui n'est pas simple. Je ne puis tenter de résumer ici cette étude, mais seulement d'en indiquer le sens général. Le système de pressions sociales communes conserve une certaine stabilité pendant quinze ans à peu près. Tous les quinze ans, le",
+      "bbox": {
+        "x_pct": 15.297,
+        "y_pct": 70.183,
+        "w_pct": 69.262,
+        "h_pct": 10.354
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text content"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.967,
+        "y_pct": 92.684,
+        "w_pct": 36.373,
+        "h_pct": 2.738
+      },
+      "changed": true,
+      "change_reason": "Added missing footer content as page_footer/filter"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Several text blocks contained corrupted OCR data",
+    "Missing page header/footer in initial detection",
+    "Header line was mislabeled as text"
+  ],
+  "doc_id": "540",
+  "page": 22,
+  "elapsed_seconds": 6.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

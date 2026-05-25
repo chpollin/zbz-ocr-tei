@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 151 -",
+      "bbox": {
+        "x_pct": 43.1,
+        "y_pct": 2.2,
+        "w_pct": 13.8,
+        "h_pct": 1.4
+      },
+      "changed": true,
+      "change_reason": "Identified as page number header and reclassified accordingly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "immer Konflikte haben. Meistens wollen sie nicht dasselbe; und auch dann, wenn sie dasselbe wollen, haben sie dennoch Konflikte, denn dann streiten sie um dasselbe. Trotzdem haben sie einiges erfunden, um zusammenzuleben, zum Beispiel: die Gesetze, das Recht. Deswegen darf das Recht nicht im Namen eines absolut gerechten Rechtes verachtet, sondern es muß so, wie es ist, muß als solches geachtet und rechtlich verbessert werden.",
+      "bbox": {
+        "x_pct": 9.398,
+        "y_pct": 9.034,
+        "w_pct": 78.075,
+        "h_pct": 12.589
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Den Sinn für das Recht hat man jetzt nicht nur in Deutschland, sondern überhaupt weitgehend verloren. Ich halte aber diesen Sinn für die Menschheit unentbehrlich.",
+      "bbox": {
+        "x_pct": 9.415,
+        "y_pct": 25.247,
+        "w_pct": 78.176,
+        "h_pct": 5.701
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ähnlich ist es mit dem Frieden. Wenn gesagt wird: \"Niemals mehr Krieg!\", so ist das in der Absicht sehr gut, aber niemand kann wirklich sagen \"Niemals mehr Krieg!\" Oder meinen Sie, man hätte den Krieg gegen Deutschland im Jahre 1939 nicht führen, hätte die Krematorien weiterbrennen lassen sollen, bis das Geplante vollendet gewesen wäre? Sie werden jetzt sagen, die Lage damals sei nicht dieselbe gewesen wie heute. Aber die Lagen sind nie dieselben, und wir können wieder nicht über die ganze Zukunft entscheiden. Was wir können und sollen, ist hier und jetzt das Mögliche tun, um die Chancen des Friedens zu vergrößern. Und dazu gehören Weisheit und Hellsichtigkeit,- viel mehr als Rhetorik.",
+      "bbox": {
+        "x_pct": 9.304,
+        "y_pct": 32.519,
+        "w_pct": 78.312,
+        "h_pct": 21.565
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun noch ein Drittes, das ich betonen möchte: Das ist die Gefahr der inneren Leere. Wenn die Menschen innerlich leer sind, wenn sie an nichts hängen, wenn sie nichts wirklich wollen, wenn sie nichts wirklich lieben, dann ist diese Leere bereit für den Totalitarismus. Und deswegen glaube ich nicht, daß man - wie es hier heute einmal angeklungen ist - dem Frieden dadurch dienen zu können, daß man sich an nichts bindet. Wenn man sich selbst an nichts bände, wäre man irgendwie massiv an äußere Zwänge gebunden. Nein, man muß sich selbst vielfach binden; man muß ertragen, an Verschiedenes gebunden zu sein; und man muß sich durch Treue gebunden fühlen. Das bedeutet auch: man muß es annehmen, eine Vergangenheit zu haben. Denn - so frage ich Sie - wo wollen Sie den Inhalt ihres Selbst finden - wenn nicht in der Vergangenheit? Die Zukunft gibt es noch nicht. Es gibt Lehrer, die auf dem Standpunkt stehen, man solle die Vergangenheit aus dem Unterricht herauslassen, die Schüler wollten davon nichts mehr wissen. Welche Bücher aber werden sie dann mit ihren Schülern lesen? Diejenigen, die im nächsten Jahr geschrieben werden?? Wir haben in Wirklichkeit doch",
+      "bbox": {
+        "x_pct": 9.245,
+        "y_pct": 55.497,
+        "w_pct": 74.614,
+        "h_pct": 36.864
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text content was heavily truncated/corrupted.",
+    "Page number at top was labeled as text region."
+  ],
+  "doc_id": "2120",
+  "page": 15,
+  "elapsed_seconds": 6.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

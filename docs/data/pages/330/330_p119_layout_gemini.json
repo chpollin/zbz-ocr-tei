@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 85",
+      "bbox": {
+        "x_pct": 300.0,
+        "y_pct": 85.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Header elements were missing from the initial detection list and should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "universelle des individus, cette nécessité ne s'imposerait jamais que comme un fait, nullement comme une valeur exigeant notre adhésion. Une valeur peut exiger que l'on nage contre le courant historique, presque sans espoir.",
+      "bbox": {
+        "x_pct": 33.0,
+        "y_pct": 110.0,
+        "w_pct": 841.0,
+        "h_pct": 90.0
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le matérialisme dialectique ne mène donc pas nécessairement aux exigences révolutionnaires. Celles-ci, réciproquement, n'impliquent pas à tout prix le matérialisme dialectique. La transcendance sous n'importe quelle forme, les religions qui la rappellent à l'humanité, peuvent parfaitement, au lieu d'être l'opium du peuple, le maintenir éveillé, lutter sans relâche contre sa tendance à s'engourdir sous l'accablement des faits. L'appétit à lui seul ne suffit pas. La lente amélioration de la condition ouvrière pourrait arriver au niveau où la faim cesse, où elle laisse dormir, où le contentement commence, moyennant quelques jeux offerts. L'appétit, en somme, se satisfait d'assez peu. Bien plus redoutable, parce qu'insatiable, braquée sur l'infini et l'absolu, est l'exigence de liberté, de dignité, de responsabilité (trois aspects d'une même chose), telle que la maintient béante l'irréductible perspective de la transcendance. A condition, bien entendu, que celle-ci ne devienne pas un moyen de fuite : cette transcendance, on ne la vise, sur le plan des communautés humaines, qu'en termes de vie terrestre, à travers la lourde masse des possibilités matérielles, là où liberté, dignité, responsabilité, sont des exigences concrètes et précises — bien qu'elles ne s'épuisent pas là.",
+      "bbox": {
+        "x_pct": 30.0,
+        "y_pct": 414.0,
+        "w_pct": 848.0,
+        "h_pct": 415.0
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to reflect actual page text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La transcendance, loin d'être une raison d'accepter en dormant la nécessité sociale, alimente au contraire une exigence sans fin.",
+      "bbox": {
+        "x_pct": 32.0,
+        "y_pct": 823.0,
+        "w_pct": 843.0,
+        "h_pct": 48.0
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 776.0,
+        "y_pct": 894.0,
+        "w_pct": 14.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer for number 8."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Garbled text in all paragraphs needing manual transcription correction.",
+    "Missing page header and footer in initial detection.",
+    "Detected bounding boxes cover text accurately but labels and OCR values were poor."
+  ],
+  "doc_id": "330",
+  "page": 119,
+  "elapsed_seconds": 4.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

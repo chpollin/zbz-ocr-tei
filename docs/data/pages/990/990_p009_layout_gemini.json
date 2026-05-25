@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DISCUSSIONE",
+      "bbox": {
+        "x_pct": 43.149,
+        "y_pct": 77.291,
+        "w_pct": 14.156,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Header identified as section title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'ORMESSON - Ho ascoltato con molto interesse la relazione della Signorina Hersch, e mi sembra che in essa il concetto di tempo sia stato offuscato a tal punto da farci credere che il tempo la infastidisca, spingendola a soffermarsi soprattutto sull'idea di piccola durata che non trascorre mai. Non vorrei riprendere la concezione bergsoniana del tempo sostituito dallo spazio, ma credo che sia possibile affermare che il tempo possiede due caratteristiche fondamentali: da una parte, infatti, il tempo trascorre, dall'altra, invece, dura; la Signorina Hersch naturalmente ha privilegiato il tempo che dura rispetto al tempo che trascorre. Non può che essere cosí in quanto il tempo presentatoci e che possiede una simmetria è un tempo-spazio, ovvero il tempo del calendario. Ovviamente nel calendario vi è una simmetria attorno all'istante presente, visualizzata da due frecce rivolte nei due sensi: domani è simmetrico a ieri e dopodomani è simmetrico a l'altro ieri.",
+      "bbox": {
+        "x_pct": 11.056,
+        "y_pct": 23.286,
+        "w_pct": 85.581,
+        "h_pct": 30.993
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tuttavia le due caratteristiche del calendario sono che, per un verso, il tempo è del tutto immobile, statico, in quanto il tempo che dura annulla il tempo che passa; per l'altro verso - e ciò può essere piú grave - non solo in esso vi è simmetria, ma addirittura tutto è simmetrico, essendoci dati quanti centri e piani di simmetria desideriamo: si può infatti cambiare l'istante presente e spostarlo nel luogo desiderato facendoci ritrovare una nuova configurazione di simmetria. Si tratta di considerare domani come centro di simmetria e scalare l'altro ieri e dopo domani. È possibile scalare di una o due settimane, di tre o di sei giorni ma la simmetria resterà sempre fissata e arbitraria.",
+      "bbox": {
+        "x_pct": 11.508,
+        "y_pct": 54.031,
+        "w_pct": 85.43,
+        "h_pct": 22.268
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Allora contrapposto al tempo che dura, al tempo del calendario, o al tempo della piccola durata della Signorina Hersch, trasformato in una idea di grande durata, vi è il tempo vero, quello in cui la freccia non è orientata in due sensi diversi a partire dall'istante presente, ma solo nell'unica direzione che va dall'inizio alla fine.",
+      "bbox": {
+        "x_pct": 12.021,
+        "y_pct": 75.886,
+        "w_pct": 85.008,
+        "h_pct": 11.225
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Naturalmente in questa storia che trascorre non può esserci simmetria; al piú vi può essere ciò che Caillois chiama la simmetria di merletto, ovvero una simmetria di ripetizione,",
+      "bbox": {
+        "x_pct": 12.323,
+        "y_pct": 86.813,
+        "w_pct": 84.917,
+        "h_pct": 5.795
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "237",
+      "bbox": {
+        "x_pct": 91.808,
+        "y_pct": 94.636,
+        "w_pct": 4.141,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "One missing region for the title DISCUSSIONE was not initially detected.",
+    "Page number 237 not tagged as page_footer.",
+    "Initial text detection had some OCR errors and fragmented reading order logic."
+  ],
+  "doc_id": "990",
+  "page": 9,
+  "elapsed_seconds": 5.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

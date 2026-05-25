@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nützlich noch kreativ sind, und es gibt andere, die sowohl nützlich wie kreativ sind.",
+      "bbox": {
+        "x_pct": 14.311,
+        "y_pct": 8.364,
+        "w_pct": 74.532,
+        "h_pct": 4.253
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Unsere Strukturen, unsere Denkart sind durch den fortwährenden Gebrauch vieler überkommener Begriffe in gefährlicher Weise verkrustet. Dabei handelt es sich um Begriffe, die zu einer bestimmten Zeit durchaus nützlich waren. Ich denke an die Zeit des Klassenkampfes, als es sich darum handelte, die himmelschreienden Unterschiede zwischen Kapital und Arbeit, zwischen Ausbeutern und Ausgebeuteten zu überwinden. Und es war gut, daß dieser Kampf geführt wurde. Aber heute – und ganz besonders in den westlichen Industrieländern mit ihren Wohlstandsgesellschaften – ist es einfach grotesk, wenn Funktionäre von bestimmten Parteien und Gewerkschaften diesen Klassenkampf neu entfachen wollen, denn es ist ein Kampf außerhalb der Wirklichkeit. Solange es diese gewaltige Diskrepanz zwischen dem Verdienst und den Lebenskosten der Arbeiterklasse gab, wie wir sie aus der Geschichte kennen, war es ein Recht der Arbeiterschaft, immer und immer wieder ihre Forderungen zu stellen und ihnen zum Durchbruch zu verhelfen. Inzwischen haben wir aber eine Grenze erreicht, wo die Fragen sich ganz anders stellen.",
+      "bbox": {
+        "x_pct": 13.454,
+        "y_pct": 12.64,
+        "w_pct": 75.592,
+        "h_pct": 37.605
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Conturen: An welche Fragen denken Sie?",
+      "bbox": {
+        "x_pct": 13.869,
+        "y_pct": 52.583,
+        "w_pct": 47.323,
+        "h_pct": 2.645
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Ich denke zum Beispiel an das Problem der scharfen Trennung von Arbeitszeit und Freizeit. Diese Trennung ist nur in solchen Fällen legitim, wo die Arbeit wirklich unmenschliche Züge trägt, weil sie zu hart, zu mechanisch oder zu ermüdend ist. Doch dank der technischen Entwicklung werden diese Arbeiten ohnehin immer seltener. Viele andere Arbeiten können für den einzelnen über die Zeit seiner eigentlichen Tätigkeit hinaus von großem Interesse sein, so daß er sich mit ihnen identifiziert. Es kommt nur darauf an, dieses Interesse zu wecken und zu erhalten. Auch in unserer Gesellschaft üben viele Menschen Berufe aus, mit denen sie sich bis in ihre Freizeit hinein identifizieren.",
+      "bbox": {
+        "x_pct": 13.454,
+        "y_pct": 57.737,
+        "w_pct": 75.504,
+        "h_pct": 22.782
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription (Herscb -> Hersch, etc.)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Conturen: Wenn ich Sie richtig verstehe, plädieren Sie für eine Art Einheit von Arbeit und Freizeit...",
+      "bbox": {
+        "x_pct": 13.631,
+        "y_pct": 82.423,
+        "w_pct": 75.477,
+        "h_pct": 4.538
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "252",
+      "bbox": {
+        "x_pct": 14.1,
+        "y_pct": 89.2,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and labeled as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text transcriptions were significantly truncated and garbled in original JSON.",
+    "Page number at bottom left was missing from initial detection."
+  ],
+  "doc_id": "2540",
+  "page": 4,
+  "elapsed_seconds": 7.05,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

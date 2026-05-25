@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "serrées. Je n'ai pas eu peur, personne lorsque le a été donné, je suis restée sur place, paralysée, comme si une troupe de cavalerie m'était passée sur le corps. Rompue, et par rien du tout, je tiens à le dire. Simplement : être seule contre l'humanité, c'est quelque chose de physiquement quasi intolérable. La puissance de la masse sociale, je ne l'avais jamais imaginée. Je ne regrette pas d'avoir vécu cela. Ce sont là des facteurs de l'histoire qu'on ne comprend pas ou dont on se refuse orgueilleusement à reconnaître la force, ou qu'ils peuvent s'appliquer à vous, tant qu'on ne les a pas vécus.",
+      "bbox": {
+        "x_pct": 16.728,
+        "y_pct": 3.435,
+        "w_pct": 80.061,
+        "h_pct": 18.182
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans quelle mesure le climat intellectuel de l'université de Fribourg-en-Brisgau était-il affecté par le national-socialisme ?",
+      "bbox": {
+        "x_pct": 16.764,
+        "y_pct": 22.1,
+        "w_pct": 79.976,
+        "h_pct": 4.312
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne connaissais personne en arrivant à Fribourg et au bout de trois ou quatre semaines j'avais déjà des contacts, je recevais des tracts qui dénonçaient ce qui se passait et que je brûlais dans un seau. Dès la première heure il y a eu une activité contre le régime. Dès la première heure, ceux qui voulaient savoir, pouvaient savoir. Alors, quand certains Allemands vous disent qu'au bout de dix ans ils n'ont jamais su ce qui se passait, c'est qu'ils ne voulaient pas savoir.",
+      "bbox": {
+        "x_pct": 16.679,
+        "y_pct": 25.8,
+        "w_pct": 80.183,
+        "h_pct": 14.481
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'avais des amis qui n'étaient pas nazis. Je me souviens d'un jeune étudiant en médecine, qui était SA, parce que c'était une des conditions pour faire des études de médecine. Il ôtait soigneusement son uniforme avant de se présenter à ma vue. J'avais des amis qui étaient violemment contre le régime. On entendait le Horst Wessel-Lied du matin au soir, à toutes les radios, dans toutes les rues, on baignait, on marinait dans cette ambiance.",
+      "bbox": {
+        "x_pct": 16.813,
+        "y_pct": 39.96,
+        "w_pct": 79.976,
+        "h_pct": 13.677
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "G.D.K. — Et Heidegger",
+      "bbox": {
+        "x_pct": 16.679,
+        "y_pct": 54.328,
+        "w_pct": 28.049,
+        "h_pct": 3.057
+      },
+      "changed": true,
+      "change_reason": "Labeled as section header; corrected text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'était extraordinaire de le voir dans ce contexte. Je vous donnerai un exemple. Un jour, il a donné un cours sur la notion de savoir chez les Grecs. Il voulait montrer que la conception de la vérité chez les philosophes grecs était beaucoup plus profonde que la nôtre, qu'il ne s'agissait pas d'une opération purement intellectuelle, mais d'une activité à la fois théorique et pratique. Il disait qu'on avait perdu la profondeur de cette notion — ce qui d'ailleurs est vrai —, qu'on l'avait perdue pendant des siècles, et qu'on l'avait tout juste retrouvée dans la nuit du 27 au 28 janvier, quand Hitler a pris le pouvoir. Depuis cette date, selon lui, on commence à retrouver la profondeur de la notion de vérité. Les professeurs qui aujourd'hui, poursuivait-il, protestent parce que le sport de défense est devenu obligatoire pour tous les étudiants une fois par semaine, prouvent qu'ils n'ont encore rien compris du tout, parce que, précisément, le sport de défense, comme élément de formation des étudiants, se greffe en droite ligne sur cette profondeur de la notion de vérité chez les Grecs. Voilà ce que disait Heidegger à l'un de ses cours. Chez un esprit comme celui-là, c'était incroyable, on en restait pantois.",
+      "bbox": {
+        "x_pct": 16.728,
+        "y_pct": 56.718,
+        "w_pct": 80.256,
+        "h_pct": 33.701
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 17.683,
+        "y_pct": 95.14,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified and categorized as filter."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most text paragraphs were incorrectly transcribed/truncated.",
+    "Page number at the bottom was missing a bounding box in original detection.",
+    "Heading 'G.D.K. - Et Heidegger' was labeled as text and partially parsed."
+  ],
+  "doc_id": "2330",
+  "page": 32,
+  "elapsed_seconds": 7.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

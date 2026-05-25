@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "78 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 18.032,
+        "y_pct": 2.0,
+        "w_pct": 69.31,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified running header at top."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pas que Thomme ne puisse pas être assez impartial pour découvrir Ce jugement   équitable et  caché, ",
+      "bbox": {
+        "x_pct": 18.032,
+        "y_pct": 13.645,
+        "w_pct": 69.31,
+        "h_pct": 48.413
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cetle condition morale apparaît avec plus dévidence dans lc grossissement de laction politique. tel ",
+      "bbox": {
+        "x_pct": 17.952,
+        "y_pct": 61.883,
+        "w_pct": 68.389,
+        "h_pct": 11.139
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page_header region."
+  ],
+  "doc_id": "110",
+  "page": 80,
+  "elapsed_seconds": 7.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

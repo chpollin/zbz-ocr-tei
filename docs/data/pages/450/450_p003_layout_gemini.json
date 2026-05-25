@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de penser et une manière de sentir. Il nous arrive de doter d'une âme une nation, un peuple, une classe, et même d'une âme supérieure, intermédiaire entre celle de la personne et celle de Dieu, ce qui sert à légitimer ensuite le sacrifice des personnes, et de chaque âme de chaque personne, à l'âme collective. Mais c'est de l'idolâtrie. - Il nous arrive aussi d'expliquer les décisions politiques d'un gouvernement par la psychologie ou même par la psychanalyse de la nation qu'il représente. Mais c'est de la superstition.",
+      "bbox": {
+        "x_pct": 12.917,
+        "y_pct": 9.385,
+        "w_pct": 66.857,
+        "h_pct": 16.239
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne s'ensuit pas que les personnes ne doivent jamais accepter de sacrifice pour la communauté à laquelle elles appartiennent. Il ne s'ensuit pas non plus que des mobiles psychologiques ne jouent pas au niveau collectif. Mais il importe de faire toujours, lucidement, la part de la métaphore.",
+      "bbox": {
+        "x_pct": 13.03,
+        "y_pct": 25.453,
+        "w_pct": 66.745,
+        "h_pct": 10.142
+      },
+      "changed": true,
+      "change_reason": "Combined fragmented text region, text updated to match document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les groupes humains n'ont donc pas d'âme, pour parler littéralement. Il est vrai pourtant que la personne humaine ne s'actualise que dans le groupe humain, dans la relation qui l'insère dans un nous, face au tu, avec les ils et le on.",
+      "bbox": {
+        "x_pct": 13.11,
+        "y_pct": 35.442,
+        "w_pct": 66.559,
+        "h_pct": 8.296
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2. Chaque personne humaine appartient à plusieurs sociétés, non à une seule. Elle doit fidélité à chacune d'entre elles.",
+      "bbox": {
+        "x_pct": 13.352,
+        "y_pct": 43.379,
+        "w_pct": 66.366,
+        "h_pct": 4.011
+      },
+      "changed": true,
+      "change_reason": "Labeled as section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La personne n'appartient pas seulement à des groupes concentriques, allant du plus étroit au plus large, de la famille à l'humanité, par exemple, en passant par le village, le canton, le pays, le continent. En fait, elle appartient à des groupes divers qui se recoupent et s'entrecroisent de façon complexe: famille, profession, classe, parti, Etat, Eglise, etc. C'est pourquoi des conflits de fidélité sont toujours possibles - probables - entre les exigences de ces groupes. La personne se trouve alors devant des cas de conscience, qu'elle est seule à pouvoir arbitrer, et non pas une fois pour toutes, mais hic et nunc. L'exigence de l'Etat, par exemple, est une exigence parmi d'autres. Il n'existe pas - et ne peut pas exister - de hiérarchie généralement valable entre les exigences des divers groupes, et la personne elle-même ne peut établir pour elle-même une telle hiérarchie comme constante et définitive. Aucune de ces exigences collectives ne peut légitimement s'ériger en valeur suprême, - d'où la responsabilité permanente de la personne, face au concret changeant.",
+      "bbox": {
+        "x_pct": 13.11,
+        "y_pct": 47.578,
+        "w_pct": 67.01,
+        "h_pct": 32.536
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "3 Le mal, c'est de ne pas aimer son prochain comme soi-même. L'homme n'aime pas son prochain comme lui-même et il a donc le mal en lui (c'est pourquoi il n'est pas un ange). Mais ce mal en lui, le connaît (c'est pourquoi il n'est pas une bête),",
+      "bbox": {
+        "x_pct": 13.296,
+        "y_pct": 79.96,
+        "w_pct": 66.72,
+        "h_pct": 8.399
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "115",
+      "bbox": {
+        "x_pct": 76.222,
+        "y_pct": 90.177,
+        "w_pct": 3.738,
+        "h_pct": 2.261
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Fragmented paragraphs detected.",
+    "Multiple incorrect text labels (page number, section heading).",
+    "Transcribed text in regions contained errors."
+  ],
+  "doc_id": "450",
+  "page": 3,
+  "elapsed_seconds": 10.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 163",
+      "bbox": {
+        "x_pct": 333.3,
+        "y_pct": 77.0,
+        "w_pct": 526.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as part of the page structure, not paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "échapper à cette solitude à laquelle nous n'offrons, en somme, aucun remède?",
+      "bbox": {
+        "x_pct": 5.237,
+        "y_pct": 10.579,
+        "w_pct": 84.359,
+        "h_pct": 4.367
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle situation idéologique est sans doute politiquement inconfortable, pauvre en thèmes de propagande. Mais il s'agit de ne pas mentir. La liberté de la personne comme unique valeur commune ne se défend pas à coups de mensonges - et cela non à cause de scrupules moraux, mais parce que ce serait absurde : on détruirait la fin par les moyens. Au lieu donc de recourir à des thèmes factices allumant un enthousiasme plus factice encore - et donc éphémère, friable - il faut bien tâcher de découvrir si la pauvreté à laquelle notre unique valeur commune nous condamne n'a pas à nous offrir sa valeur propre, son lyrisme et sa communion.",
+      "bbox": {
+        "x_pct": 5.153,
+        "y_pct": 14.733,
+        "w_pct": 84.401,
+        "h_pct": 19.162
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quel être le seul dogmatisme d'une telle pauvreté? L'antidogmatisme. Et son seul enthousiasme? La liberté.",
+      "bbox": {
+        "x_pct": 5.292,
+        "y_pct": 35.205,
+        "w_pct": 84.304,
+        "h_pct": 4.367
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous n'allons pas nous engager ici dans le problème, insoluble en théorie, mais constamment - quoique jamais définitivement - résolu en pratique par la foi vivante, de l'adhésion et de la tolérance religieuse. Ce qu'il nous importe d'élucider, c'est la portée et le sens du plein et du vide, lorsqu'il s'agit de doctrine politique, c'est le sens politique du mot «liberté» confronté avec son sens philosophique. Car il se produit là une confusion dangereuse, dont les conséquences, sophistiquées exploitées, peuvent être incalculables.",
+      "bbox": {
+        "x_pct": 5.195,
+        "y_pct": 39.216,
+        "w_pct": 84.401,
+        "h_pct": 18.298
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsqu'on dit que Socrate, portant la ciguë à ses lèvres était l'homme le plus libre qu'on put imaginer, on dit vrai. Lorsque Kant définit la liberté par l'obéissance à l'impératif catégorique et qu'il déclare celui-ci absolument indépendant des circonstances, il dit vrai encore. Mais lorsqu'on se sert de ces deux affirmations pour conclure que la liberté ne pouvant être entamée par aucune contrainte extérieure, la liberté politique n'a pas de sens, on ment pour justifier et renforcer la tyrannie.",
+      "bbox": {
+        "x_pct": 4.972,
+        "y_pct": 57.487,
+        "w_pct": 84.68,
+        "h_pct": 16.783
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Inversement, lorsqu'on dit que la liberté absolue n'est pas de ce monde, que dans le régime le plus libre et le plus juste l'homme est encore incapable de choisir les données décisives de son existence (ne fût-ce que le lieu de sa naissance, son temps, son hérédité, etc.), on dit vrai. Mais lorsqu'on en conclut que, toute liberté politique étant relative, tous les régimes à cet égard se valent, on ment à nouveau au profit de la tyrannie.",
+      "bbox": {
+        "x_pct": 4.972,
+        "y_pct": 73.824,
+        "w_pct": 84.582,
+        "h_pct": 14.59
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription to match image content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR text extraction was highly inaccurate.",
+    "Page header was labeled as standard text."
+  ],
+  "doc_id": "330",
+  "page": 197,
+  "elapsed_seconds": 6.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

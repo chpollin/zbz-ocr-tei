@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "164 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 19.068,
+        "y_pct": 9.771,
+        "w_pct": 68.884,
+        "h_pct": 2.292
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing page header"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "bien celui des arts auquel on est le plus   porté 4 conférer une signification   extrinsèque; une ef",
+      "bbox": {
+        "x_pct": 19.068,
+        "y_pct": 13.136,
+        "w_pct": 68.884,
+        "h_pct": 12.984
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "1. La forme esthétique",
+      "bbox": {
+        "x_pct": 39.356,
+        "y_pct": 28.375,
+        "w_pct": 28.504,
+        "h_pct": 2.604
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que êlre cette forme esthétique, cette forme absolue; capable de conférer une existence dérivée Tœuv",
+      "bbox": {
+        "x_pct": 19.333,
+        "y_pct": 31.458,
+        "w_pct": 69.079,
+        "h_pct": 43.083
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page header at the top of the page."
+  ],
+  "doc_id": "110",
+  "page": 166,
+  "elapsed_seconds": 7.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "686 TABLE DES MATIÈRES 1949",
+      "bbox": {
+        "x_pct": 128.5,
+        "y_pct": 65.0,
+        "w_pct": 718.5,
+        "h_pct": 36.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index to page_header as it contains page number and section title."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "HERBERT, JEAN Paul Masson-Oursel . . . . 461",
+      "bbox": {
+        "x_pct": 127.37,
+        "y_pct": 98.71,
+        "w_pct": 717.22,
+        "h_pct": 15.524
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index to section_header as it is an index entry."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Most list entries were incorrectly grouped into a single document_index block instead of individual lines.",
+    "Page number and running header were mislabeled as document_index."
+  ],
+  "doc_id": "160",
+  "page": 4,
+  "elapsed_seconds": 3.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

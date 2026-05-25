@@ -1,0 +1,128 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "I LA VIE",
+      "bbox": {
+        "x_pct": 45.45,
+        "y_pct": 100,
+        "w_pct": 9.4,
+        "h_pct": 3.2
+      },
+      "changed": true,
+      "change_reason": "ADDED: Title section at top"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LES DATES PRINCIPALES",
+      "bbox": {
+        "x_pct": 9.39,
+        "y_pct": 26.881,
+        "w_pct": 37.127,
+        "h_pct": 1.851
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Karl Jaspers est né le 23 février 1883 à Oldenburg, non loin des côtes de la mer du Nord, d'un père ",
+      "bbox": {
+        "x_pct": 9.214,
+        "y_pct": 29.477,
+        "w_pct": 83.97,
+        "h_pct": 23.136
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LES GRANDS THÈMES",
+      "bbox": {
+        "x_pct": 9.214,
+        "y_pct": 55.87,
+        "w_pct": 32.344,
+        "h_pct": 2.288
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Etudes de psychiatrie",
+      "bbox": {
+        "x_pct": 9.309,
+        "y_pct": 60.351,
+        "w_pct": 27.005,
+        "h_pct": 2.434
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si Jaspers, étudiant, abandonna le droit, c'est qu'il n'en voyait alors formalisme abstrait. La réal",
+      "bbox": {
+        "x_pct": 9.079,
+        "y_pct": 63.642,
+        "w_pct": 84.187,
+        "h_pct": 15.51
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Maladie",
+      "bbox": {
+        "x_pct": 9.39,
+        "y_pct": 81.859,
+        "w_pct": 10.434,
+        "h_pct": 1.859
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers a été dès lenfance et durant toute sa vie un homme malade. Le diagnostic fut établi lorsqu'i",
+      "bbox": {
+        "x_pct": 9.079,
+        "y_pct": 84.602,
+        "w_pct": 83.509,
+        "h_pct": 6.144
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "7",
+      "bbox": {
+        "x_pct": 90.5,
+        "y_pct": 92.5,
+        "w_pct": 2.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at bottom"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/title section",
+    "Missing page number region"
+  ],
+  "doc_id": "1520",
+  "page": 13,
+  "elapsed_seconds": 8.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

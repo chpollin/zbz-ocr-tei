@@ -1,0 +1,97 @@
+{
+  "regions": [
+    {
+      "label": "title/section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La Pensée Philosophique, Exercice de Dépossession",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified as the page header/title, should be zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "achoppe la pensée: contradictions, cercles vicieux, tautologies. Tels sont les signes même de son authenticité.",
+      "bbox": {
+        "x_pct": 4.744,
+        "y_pct": 4.951,
+        "w_pct": 89.959,
+        "h_pct": 5.155
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La tolérance n'apparaît plus, dès lors, comme une mollesse face à autrui dans notre exigence du vrai, mais au contraire comme la recherche nécessaire des failles persistant dans la cohérence de l'être pour nous. Toute possession totale serait la fin de l'homme, perdu dans le monisme de l'être. Philosopher, c'est donc explorer la condition humaine et le monde où elle se déroule dans son irréductibilité à un savoir continu.",
+      "bbox": {
+        "x_pct": 4.841,
+        "y_pct": 9.576,
+        "w_pct": 90.0,
+        "h_pct": 15.738
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela est vrai non seulement de la philosophie, mais même des diverses disciplines scientifiques. En effet, chaque science se constitue à partir de la cohérence de ses méthodes propres et de ses notions fondamentales, si bien que chacune n'est sûre de sa portée que si elle passe par la continuité temporelle de son devenir, et qu'elle consent à son propre inachèvement, - condition de la liberté et de l'exigence absolue du chercheur.",
+      "bbox": {
+        "x_pct": 4.979,
+        "y_pct": 25.526,
+        "w_pct": 90.18,
+        "h_pct": 15.473
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il suffit d'essayer d'approfondir la nature de la connaissance pour vérifier dans la texture même des sciences l'inévitable dépossession humaine. Ainsi, considérons l'évidence méthodologique devant laquelle nous nous inclinons, sans qu'aucun doute puisse se maintenir. La clarté qui nous contraint ainsi ne devient pas transparence à nos yeux. Ou encore, la causalité que assure a priori la succession cohérente des phénomènes physiques ne nous livre pas sans résidu le secret de la contrainte qu'elle exerce. L'intention même de saisir l'unité des sciences de l'univers ne réussit guère à expliciter sa question initiale. S'agit-il d'accroître le pouvoir de la raison? de répondre à une vocation ultime de la liberté? de maîtriser l'impulsion scientifique? - Ou s'agit-il d'une dépossession qui reste elle-même une exigence essentielle de notre condition?",
+      "bbox": {
+        "x_pct": 5.076,
+        "y_pct": 40.822,
+        "w_pct": 90.318,
+        "h_pct": 29.938
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Karl Jaspers et l'un des rares penseurs de ce temps dont la pensée et l'oeuvre s'efforcent de rendre compatibles la civilisation scientifique et technique avec la condition humaine dans son rapport à la transcendance, grâce à une sens fondamentalement dépossessif impliqué dans le concept de situation-limite. Ce n'est jamais la totalité, la continuité de l'être qui est donnée; au contraire: le sujet humain est toujours dans les failles et les ruptures, dans des situations-limites, où la totalité refusée exige de lui qu'il existe par des actes de présence, autour desquels se construit l'unité du monde. Dans l'oeuvre de Jaspers",
+      "bbox": {
+        "x_pct": 5.574,
+        "y_pct": 72.679,
+        "w_pct": 90.0,
+        "h_pct": 18.859
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 92.5,
+        "y_pct": 95.8,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified and relabeled as page_footer for filtering."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at bottom right was missing from detection.",
+    "Section header at top was missing from detection.",
+    "Text content for paragraphs was truncated in original metadata, corrected."
+  ],
+  "doc_id": "3130",
+  "page": 5,
+  "elapsed_seconds": 5.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 290.0,
+        "y_pct": 82.0,
+        "w_pct": 194.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "31",
+      "bbox": {
+        "x_pct": 836.0,
+        "y_pct": 82.0,
+        "w_pct": 19.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number/footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIE CONSERVATRICE LIBÉRALE",
+      "bbox": {
+        "x_pct": 25.49,
+        "y_pct": 156.86,
+        "w_pct": 481.48,
+        "h_pct": 18.45
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and confirmed label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les conservateurs libéraux d'aujourd'hui ne veulent plus que maintenir le régime politiquement démocratique, économiquement libéral, issu de la Révolution française. En fait, ils sont bien plus conservateurs que libéraux : ils redoutent ce qui est neuf, l'expérience précédent, l'avenir. Ils enlisent ainsi une idéologie héritée des libéraux aventure du jeune capitalisme, de ces « chefs d'entreprise » dont les initiatives efficaces transformèrent l'Occident.",
+      "bbox": {
+        "x_pct": 21.31,
+        "y_pct": 196.35,
+        "w_pct": 845.96,
+        "h_pct": 162.83
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text truncation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le plan philosophique ou religieux, le contenu de l'idéologie est variable car il dépend de traditions locales ou nationales, et c'est à cause d'elles qu'on professe ici ou là tel ou tel credo. Certains s'en tiennent aux « lumières » laïques et progressistes de l'Encyclopédie. Le plus souvent cependant, la volonté de conserver des mécanismes économiques existants et, du même coup, la morale prescriptive liée à ces mécanismes, mais sapée par des courants nouveaux, a ramené ces conservateurs vers un passé plus ancien, jusqu'à la religion, à l'Église, au culte qui étaient traditionnels dans leur pays avant la Révolution.",
+      "bbox": {
+        "x_pct": 21.31,
+        "y_pct": 378.79,
+        "w_pct": 845.96,
+        "h_pct": 209.18
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text truncation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malgré des divergences qui tiennent au passé historique, la tendance générale est ici la suivante : on adhère à l'ordre social tel qu'il est, en le rattachant à des valeurs et à des principes qui transcendent l'histoire, qui sont au-dessus du temps, éternels. L'optimisme, qui poussait les libéraux de jadis à assumer leurs risques, coïncide maintenant avec la résignation pieuse. On ne dit pas forcément que « tout est pour le mieux dans le meilleur des mondes », ni même « dans le meilleur des mondes possibles », mais on dit que « ce qui est doit être ». L'être justifie l'être. Si les communistes font de l'histoire à venir une sorte de « Jugement de Dieu » (dont ils se servent d'ailleurs dans leur propagande en prétendant savoir d'avance qu'il sera nécessairement favorable à leur cause), les conservateurs font de même pour le présent tel que le passé nous l'a légué. Mais il s'agit moins pour eux d'une histoire arrêtée au moment présent que d'un fondement éternel.",
+      "bbox": {
+        "x_pct": 21.87,
+        "y_pct": 580.21,
+        "w_pct": 846.24,
+        "h_pct": 314.88
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text truncation."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was truncated and contained many OCR errors.",
+    "Page number and header were labeled as text.",
+    "Section header was misspelled in text.",
+    "Text region content was incomplete in the provided JSON."
+  ],
+  "doc_id": "330",
+  "page": 65,
+  "elapsed_seconds": 6.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

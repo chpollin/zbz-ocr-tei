@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "entre l'état des structures sociales et la démocratie économique 63",
+      "bbox": {
+        "x_pct": 188,
+        "y_pct": 60,
+        "w_pct": 743,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Header containing running title and page number mislabeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Puis j'ai trouvé, dans le texte imprimé, le titre que M. Girod a bien voulu en mon absence donner à mon exposé, et j'ai cherché à le comprendre. Ce titre m'a plongée dans un abîme de perplexité. Je me suis dit qu'évidemment, dans l'esprit des sociologues, un titre mystérieux doit bien convenir à un philosophe et que celui-ci m'était attribué par pure gentillesse.",
+      "bbox": {
+        "x_pct": 72,
+        "y_pct": 149,
+        "w_pct": 861,
+        "h_pct": 101
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed casing."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« Le problème des rapports entre les structures sociales et la démocratie économique. » Dans ma candeur naïve, il me semblait que le problème de la démocratie économique était celui-là même des structures sociales. Et je n'arrivais pas à découvrir un problème de rapports entre deux choses qui me semblaient les mêmes, les structures sociales posant le problème de la réalisation de la démocratie économique, et démocratie économique signifiant forcément démocratie incarnée dans des structures sociales. Je ne savais pas. Et devant ce titre, j'ai senti encore bien plus vivement le risque que comportait pour moi une telle entreprise.",
+      "bbox": {
+        "x_pct": 75,
+        "y_pct": 256,
+        "w_pct": 860,
+        "h_pct": 218
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi, si vous me le permettez, je vais parler plutôt à propos de mon titre que traiter véritablement mon sujet. Je vais essayer de soulever un problème, pour moi fondamental, de méthode, et essayer ensuite d'appliquer ce que j'en aurai tiré aux termes du titre de votre Colloque.",
+      "bbox": {
+        "x_pct": 86,
+        "y_pct": 477,
+        "w_pct": 848,
+        "h_pct": 102
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour ce qui est des méthodes, M. Girod a eu la grande gentillesse, afin de me mettre un peu dans le bain, de me prêter les Actes de votre Congrès de l'année dernière, et je les ai parcourus ces jours derniers. J'ai été frappée d'abord de voir l'extrême scrupule avec lequel vous aviez, l'année dernière, examiné les méthodes utilisées en sociologie et, méthodologiquement, le rôle joué par la situation sociologique du sociologue ; cette préoccupation, sur laquelle vous vous êtes longuement arrêtés, d'une sociologie de la sociologie ou, si vous le voulez, d'une sorte de sociologie réflexive ou critique, m'a paru extrêmement intéressante. Mais j'ai été frappée alors de constater, d'autre part, un contraste et en quelque sorte une discontinuité radicale entre cette préoccupation de l'année dernière et la manière dont on a commencé à parler aujourd'hui.",
+      "bbox": {
+        "x_pct": 83,
+        "y_pct": 580,
+        "w_pct": 853,
+        "h_pct": 273
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il m'a semblé, ce matin, que les orateurs, ne se posant plus cette fois un problème de méthode, mais entreprenant l'étude de certaines réalités sociologiques, oubliaient soudain tout souci de méthode et se servaient d'un langage où toutes sortes de valeurs",
+      "bbox": {
+        "x_pct": 85,
+        "y_pct": 857,
+        "w_pct": 853,
+        "h_pct": 81
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed transcription errors."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text extraction had significant transcription errors (typos, misread characters).",
+    "Page header mislabeled as text.",
+    "Bbox for top header was missing from previous input."
+  ],
+  "doc_id": "550",
+  "page": 4,
+  "elapsed_seconds": 5.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

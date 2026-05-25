@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nung – daß sich mit der wachsenden Zahl junger Leute mit wissenschaftlicher Ausbildung auch in der Sowjetunion zunehmend ein kritischer Sinn entwickelt und damit verbunden mehr Möglichkeit für Freiheit, mehr Drang zur Freiheit. Hier wie dort ist mir die Hoffnung wichtiger als alle anderen Argumente.",
+      "bbox": {
+        "x_pct": 9.094,
+        "y_pct": 5.146,
+        "w_pct": 65.024,
+        "h_pct": 16.346
+      },
+      "changed": true,
+      "change_reason": "The original OCR text was incomplete/corrupted. Corrected based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Frei ist, wer von der Freiheit Gebrauch macht",
+      "bbox": {
+        "x_pct": 76.655,
+        "y_pct": 13.341,
+        "w_pct": 20.121,
+        "h_pct": 5.022
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Lassen Sie uns an dieser Stelle einhalten, damit wir in den letzten Minuten einige schriftlich eingereichte Fragen aus der Zuhörerschaft beantworten können.",
+      "bbox": {
+        "x_pct": 9.179,
+        "y_pct": 23.311,
+        "w_pct": 64.819,
+        "h_pct": 8.785
+      },
+      "changed": true,
+      "change_reason": "The original OCR text was fragmented. Corrected based on visual content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "51",
+      "bbox": {
+        "x_pct": 40.793,
+        "y_pct": 91.226,
+        "w_pct": 3.033,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Page numbers must be labeled as page_footer and filtered."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR for paragraph 1 and 2 was severely truncated and erroneous.",
+    "Page number 51 was missing from the initial detection list.",
+    "Corrected text to reflect the actual content on the page."
+  ],
+  "doc_id": "2400",
+  "page": 50,
+  "elapsed_seconds": 4.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

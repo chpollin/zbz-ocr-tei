@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA NATURE DU POUVOIR 79",
+      "bbox": {
+        "x_pct": 372.0,
+        "y_pct": 65.0,
+        "w_pct": 373.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Page header and number should be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Impossible, dans une condition semblable, de dissocier égoïsme et altruisme, amour et agressivité.",
+      "bbox": {
+        "x_pct": 11.97,
+        "y_pct": 10.14,
+        "w_pct": 75.435,
+        "h_pct": 4.736
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and OCR errors in text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'hostilité, l'agressivité entre les hommes naît au moins autant de leur amour que de leur égoïsme. Et elle naît autant de leurs ressemblances que de leurs divergences. Elle naît aussi bien du fait qu'ils visent les mêmes biens que du fait qu'ils veulent réaliser des desseins différents ou même opposés, parfois attirés par des valeurs identiques. S'ils n'ont aucun pouvoir, ils ne réalisent rien, ils ne font que rêver. Le rêve, par son irréalité, exclut l'exclusive. Parfois on s'en délecte, sous le nom de fraternité.",
+      "bbox": {
+        "x_pct": 11.935,
+        "y_pct": 14.711,
+        "w_pct": 75.469,
+        "h_pct": 17.711
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais l'homme qui exerce sa liberté d'action veut réaliser. Il use donc d'un certain pouvoir. Il se trouve alors d'emblée dans une situation vitale conflictuelle, chargée d'exclusive, inégalitaire, qui ne dérive pas d'autre chose, qui est première. Il est puéril — ou paresseux — d'imaginer que l'abondance des biens l'exclurait. C'est concevoir un homme satisfait, enlisée dans le donné, sans au-delà et sans ailleurs. Une absurdité. Au contraire: si l'abondance des biens a un sens, c'est qu'elle accroît, intensifie et libère les visées de la liberté.",
+      "bbox": {
+        "x_pct": 11.889,
+        "y_pct": 32.669,
+        "w_pct": 75.4,
+        "h_pct": 19.645
+      },
+      "changed": true,
+      "change_reason": "Full text correction for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est vrai que l'abondance peut enlever au conflit — et donc au besoin de pouvoir — son immédiateté, le camoufler. Mais même en situation d'abondance nous profitons de la peine d'autrui. Toute culture, que cela nous plaise ou non, n'a été rendue possible que du fait que certains s'acquittaient pour d'autres de tâches indispensables à la vie.",
+      "bbox": {
+        "x_pct": 11.669,
+        "y_pct": 52.537,
+        "w_pct": 75.55,
+        "h_pct": 13.636
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La vulnérabilité de l'être humain, sa condition mortelle, son attachement à des êtres mortels, à des réalités à créer ou à défendre, font de lui irrémédiablement un être en lutte qui a, et qui veut avoir, du pouvoir.",
+      "bbox": {
+        "x_pct": 11.622,
+        "y_pct": 65.785,
+        "w_pct": 75.481,
+        "h_pct": 9.116
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce pouvoir, inséparable de la condition d'homme, n'est pas dû simplement, comme on semble souvent l'admettre, à la part animale de sa nature. Il y a ici, selon moi, une parenté avec la condition animale, mais avec une différence radicale. L'animal n'a pas de pouvoir: il use de sa force. Le lion ou le cobra qui dévore sa proie n'a pas du pouvoir sur elle. Il la digère. L'homme, lui, assume sa vie et celle de ses proches. Dès lors la force à laquelle il",
+      "bbox": {
+        "x_pct": 11.703,
+        "y_pct": 74.711,
+        "w_pct": 75.319,
+        "h_pct": 15.893
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Page number and running header combined in top region",
+    "Extreme OCR inaccuracy in all paragraph blocks",
+    "Text truncation at paragraph boundaries",
+    "Missing punctuation throughout all segments"
+  ],
+  "doc_id": "1530",
+  "page": 7,
+  "elapsed_seconds": 7.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

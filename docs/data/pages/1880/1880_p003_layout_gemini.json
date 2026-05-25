@@ -1,0 +1,130 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Les cahiers médico-sociaux, Genève, 1982, 26ème année, Nos 3-4, pp. 301-304",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header identified as text, moved to page_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "REFLEXIONS SUR LA MEDICALISATION DE LA VIE",
+      "bbox": {
+        "x_pct": 14.269,
+        "y_pct": 11.196,
+        "w_pct": 70.775,
+        "h_pct": 2.145
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par Jeanne Hersch*",
+      "bbox": {
+        "x_pct": 37.23,
+        "y_pct": 14.851,
+        "w_pct": 24.562,
+        "h_pct": 2.45
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avant d'aborder mon sujet, je voudrais dire ma gratitude toute particulière aux personnes soignantes qui se sont exprimées ici et qui ont participé à ces Journées. En vérité, en les écoutant, j'ai presque ressenti un remords à l'idée que pendant qu'elles étaient ici, les malades devaient se passer d'elles, alors qu'elles sont, chacune à sa manière, irremplaçables, par la compétence qui leur permet de faire le geste efficace, de dire la parole secourable, juste au moment où il le faut.",
+      "bbox": {
+        "x_pct": 5.375,
+        "y_pct": 20.322,
+        "w_pct": 89.034,
+        "h_pct": 15.017
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin, je veux exprimer ma gratitude à ceux qui ont su mener avec succès la lutte pour une sécurité sociale toujours plus étendue pour un nombre d'êtres humains toujours plus grand. C'est grâce à eux que nous pouvons aujourd'hui débattre les problèmes qui nous occupent ici avec des chances de déboucher sur des améliorations réelles. N'oublions pas ce qui a été fait. Comparons l'état de choses actuel, non pas à un paradis fictif, mais à la réalité d'il y a encore un demi-siècle.",
+      "bbox": {
+        "x_pct": 5.934,
+        "y_pct": 48.903,
+        "w_pct": 88.564,
+        "h_pct": 14.794
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela dit, il va de soi que tous les progrès humains engendrent de nouveaux problèmes et qu'il devient indispensable de remédier à des maux nouveaux.",
+      "bbox": {
+        "x_pct": 6.264,
+        "y_pct": 63.152,
+        "w_pct": 88.145,
+        "h_pct": 6.295
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous nous interrogeons sur «la médicalisation de la vie»",
+      "bbox": {
+        "x_pct": 9.403,
+        "y_pct": 77.583,
+        "w_pct": 68.742,
+        "h_pct": 2.698
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand il s'agit des êtres humains, «la vie» est un terme à double sens : il désigne d'une part la vie biologique, la qualité d'un être qui est vivant – et d'autre part, la vie «humaine», c'est-à-dire, qui est «digne d'un homme». Ce double sens entraîne, face à la «médicalisation», une",
+      "bbox": {
+        "x_pct": 6.442,
+        "y_pct": 79.703,
+        "w_pct": 88.132,
+        "h_pct": 8.358
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Professeur de philosophie, 14, avenue Pierre Odier, 1208 Genève.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added footnote at bottom."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "301",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "OCR text extraction was poor/garbled in the initial input.",
+    "Multiple paragraphs were misidentified or truncated.",
+    "Page number and metadata header were missing from source JSON.",
+    "Added footnote entry."
+  ],
+  "doc_id": "1880",
+  "page": 3,
+  "elapsed_seconds": 7.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

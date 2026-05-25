@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "48 LES EXPLICATIONS DU PSYCHOLOGUE",
+      "bbox": {
+        "x_pct": 142.62,
+        "y_pct": 80.11,
+        "w_pct": 76.355,
+        "h_pct": 5.591
+      },
+      "changed": true,
+      "change_reason": "Header identified as running title and page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une digestion difficile, bien la fatigue intellectuelle accumulée pendant les dernières semaines. D'où résulteraient selon lui une rupture pathologique du lien qu'a l'homme normal avec les choses, un détachement de moi-même qu'il serait urgent de guérir par un repos complet. Il trouverait peut-être des explications psychologiques basées sur le fonctionnement seul de mon esprit.",
+      "bbox": {
+        "x_pct": 142.62,
+        "y_pct": 120.11,
+        "w_pct": 76.355,
+        "h_pct": 20.591
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le psychologue a peut-être, et même sans doute, raison. Et il se peut que ses paroles, me ramenant au souci de ma santé physique ou mentale, me détournent de l'abîme qui un instant avait rompu la familière continuité du réel. D'autant plus que ma santé mentale présente un intérêt absorbant et qu'au fond de moi-même je ne cherchais peut-être qu'une occasion pour oublier ce que je venais de voir.",
+      "bbox": {
+        "x_pct": 145.03,
+        "y_pct": 326.98,
+        "w_pct": 76.355,
+        "h_pct": 22.784
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il se peut aussi que tout en admettant la justesse de l'explication psychologique sur le plan où elle est donnée, je n'en continue pas moins à voir mon univers disloqué, à percevoir comme une question qui exige une réponse. Et il n'y a entre cette question et la réponse du psychologue aucun rapport. Le psychologue, en me parlant, me regarde comme je regardais la cascade. Son explication a beau être judicieuse pour quelqu'un qui me voit regarder, elle ne me satisfait pas, moi, qui suis celui qui regarde. Pour lui, je suis un sujet qui fait une expérience singulière, mais un sujet qu'on regarde, et donc un objet. La vieille opposition",
+      "bbox": {
+        "x_pct": 145.63,
+        "y_pct": 559.29,
+        "w_pct": 76.506,
+        "h_pct": 33.422
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcriptions"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction was extremely poor/corrupted.",
+    "Page header was missing from the initial region list.",
+    "Bounding boxes in provided JSON were not aligned with actual image content."
+  ],
+  "doc_id": "20",
+  "page": 50,
+  "elapsed_seconds": 5.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

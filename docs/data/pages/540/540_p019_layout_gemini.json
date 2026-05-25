@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE",
+      "bbox": {
+        "x_pct": 29.279,
+        "y_pct": 14.654,
+        "w_pct": 41.52,
+        "h_pct": 0.812
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and should be filtered."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "247",
+      "bbox": {
+        "x_pct": 80.203,
+        "y_pct": 14.398,
+        "w_pct": 3.489,
+        "h_pct": 1.517
+      },
+      "changed": true,
+      "change_reason": "Identified as page number and should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "développant cette idée centrale dans la théorie de la vie collective chez Ortega.",
+      "bbox": {
+        "x_pct": 14.928,
+        "y_pct": 17.443,
+        "w_pct": 69.088,
+        "h_pct": 3.788
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut éliminer d'abord les « sociétés » abstraites, qui sont le résultat de la considération isolée d'une dimension ou d'une activité des hommes : les sémites, les peintres, les jeunes gens, les veufs, les prolétaires, les femmes, les socialistes, les aristocrates, les prêtres, ne sont pas des sociétés réelles. Il faut également exclure les unités où, même s'il y a une coexistence, celle-ci les déborde : par exemple, la famille, et pour des raisons opposées, exclure l'humanité, dont l'unité n'est pas faite de coexistence et qui manque — jusqu'à présent — d'un système commun en vigueur.",
+      "bbox": {
+        "x_pct": 14.723,
+        "y_pct": 20.789,
+        "w_pct": 69.324,
+        "h_pct": 15.556
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the content accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il y a des difficultés plus graves. Si nous définissons les sociétés comme des unités de coexistence soumises à l'empire du même système de pressions sociales, nous trouvons dans la plupart des situations historiques une coexistence de second degré : celle de ces unités entre elles : les cités grecques au-dedans de la « société » hellénique, ou celle-ci avec la Perse, l'Egypte ou Rome ; ou les nations au sein de l'Europe ; ou l'Europe avec l'Amérique, etc. Toute « coexistence » historique suppose-t-elle un système, même partiel, de pressions sociales communes, et par conséquent une nouvelle « société »? Ou bien les produit-elle ? Peut-on comparer le rapport de plusieurs unités en présence avec leur coexistence dans une unité supérieure? Enfin, comme toute société est historique, chaque société provient d'autres plus anciennes. Dans certaines limites, on peut admettre que cette série de sociétés chronologiquement successives sont la même société, les situations historiques diverses d'une société unique, la France ou l'Espagne. Mais si on recule suffisamment, on arrive à un point où on ne pourra plus parler de « la même » société : de la France d'aujourd'hui on peut remonter à la France de Napoléon, de Louis XIII, de Saint-Louis ; de Charlemagne aussi ? c'est un problème ; de Vercingétorix ? il serait bien difficile de l'affirmer. En partant de notre temps, nous sommes sûrs d'être dans la « même » société espagnole au XVIe siècle, au XIIIe siècle, au Xe siècle ; mais si nous posons la question pour la Séville de saint Isidore ou la Cordoue de Sénèque, notre réponse n'est pas aisée. Voilà quelques problèmes décisifs qui affectent les limites et les critères de la connaissance historique.",
+      "bbox": {
+        "x_pct": 14.826,
+        "y_pct": 36.004,
+        "w_pct": 69.529,
+        "h_pct": 44.217
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the content accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.84,
+        "y_pct": 92.51,
+        "w_pct": 36.32,
+        "h_pct": 1.76
+      },
+      "changed": true,
+      "change_reason": "JSTOR footer identified and marked for removal."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was highly inaccurate in paragraphs 2 and 3.",
+    "Header and page number needed to be filtered out.",
+    "JSTOR footer at the bottom was not previously labeled."
+  ],
+  "doc_id": "540",
+  "page": 19,
+  "elapsed_seconds": 5.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

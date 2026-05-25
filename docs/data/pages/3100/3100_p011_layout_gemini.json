@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jacob lui demande: «Fais-moi connaître ton nom» (Gn. 32.29). Appelé par Dieu à devenir le libérateur de son peuple, Moïse encore ébloui par la clarté du buisson ardent, questionne Dieu: «Si les enfants de ton peuple me demandent quel est ton nom, que leur répondrai-je?» (Ex. 3.13). Ici la question porte sur le nom de Dieu et par conséquent sur sa puissance efficace et sur la confiance qu'on peut mettre en lui. Ailleurs, elle porte sur son existence et ses manifestations; l'insensé la met en doute: «Il dit en son cœur: il n'y a point de Dieu» (Ps. 14.1, cf. Ps. 53.2, Hb. 11.6) et manifeste ainsi sa surdité et son endurcissement aux appels de Dieu.",
+      "bbox": {
+        "x_pct": 14.988,
+        "y_pct": 7.96,
+        "w_pct": 65.246,
+        "h_pct": 19.613
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On sait le retentissement que ces questions ont eu dans la philosophie médiévale: St. Thomas, par exemple, élaborera ce que E. Gilson définit comme la «métaphysique de l'Exode», une ontologie où les noms de Dieu jouent un rôle prépondérant; il pouvait se réclamer de l'autorité du Pseudo-Denys et de son De divinis nominibus. De même, St. Anselme échafaudera son argument sur l'existence de Dieu pour réfuter la négation de l'insensé.",
+      "bbox": {
+        "x_pct": 15.012,
+        "y_pct": 27.635,
+        "w_pct": 65.06,
+        "h_pct": 11.983
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for OCR accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais voilà qui fait problème. La théologie biblique souligne le fait que Dieu est l'auteur de toute question, l'homme n'étant que son partenaire en second. La théologie ecclésiastique, celle d'un Anselme, celle d'un Thomas par exemple, fait de plus en plus une place importante aux questions de l'homme: Dieu est-il? Qui est-il? Le passage de l'audition de l'appel divin à l'interrogation sur l'existence de Dieu et ses attributs est significatif d'un déplacement d'accent. Pour la théologie biblique, tout part de Dieu, de sa révélation; tout y est suspendu, même les questions de Jacob, de Moïse, même le doute de l'insensé; on n'en sort pas, car Dieu se donne à connaître dans son appel, ses promesses, son salut. Peu à peu, sous l'influence de la métaphysique, la théologie ecclésiastique fait une place toujours plus grande à l'homme, à son univers, qu'elle situe sinon en dehors du moins en face du Créateur; son cadre de référence n'est plus seulement et d'abord l'appel de Dieu et son audition par l'homme, l'audition qui vient de la foi et de l'espérance, mais aussi et surtout, la question, le doute de l'homme et sa soif d'évidence, de preuve. Du Dieu qui donne à l'homme la possibilité de mettre sa confiance en Lui, on est passé insensiblement, à travers les rencontres du message chrétien et des philosophies grecques, à un homme qui cherche à fonder, à justifier sa croyance en Dieu.",
+      "bbox": {
+        "x_pct": 14.827,
+        "y_pct": 41.271,
+        "w_pct": 65.189,
+        "h_pct": 41.789
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for OCR accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y aurait beaucoup de choses à dire sur ce passage d'un de point",
+      "bbox": {
+        "x_pct": 17.002,
+        "y_pct": 83.151,
+        "w_pct": 62.909,
+        "h_pct": 1.96
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 87.0,
+        "w_pct": 2.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was heavily garbled in regions 2 and 3 and required manual transcription.",
+    "Page number 10 at the bottom left was not detected in original JSON.",
+    "The label for the page number has been set to page_footer."
+  ],
+  "doc_id": "3100",
+  "page": 11,
+  "elapsed_seconds": 5.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

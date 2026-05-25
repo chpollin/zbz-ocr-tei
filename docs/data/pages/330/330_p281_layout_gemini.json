@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 296.0,
+        "y_pct": 82.0,
+        "w_pct": 405.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Missing header region identified and corrected from page header content"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "247",
+      "bbox": {
+        "x_pct": 833.0,
+        "y_pct": 82.0,
+        "w_pct": 24.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "possibilit de rsoudre les problmes poss. Les barrires nationales entravent le dveloppement industriel au lieu de le favoriser, elles font obstacle  la productivit et  l'lvation du niveau de vie, elles empchent les personnes d'accder aux conditions o leur libert deviendrait possible. Il ne saurait tre question, sans prjudice intolrable port  la classe ouvrire, de supprimer purement et simplement du jour au lendemain toutes les faveurs dont la production jouit au niveau national. Mais le problme est pos; il convient donc d'accepter de voir qu'il est pos et de chercher  le rsoudre en mnageant les tapes ncessaires. Sinon, comme tous les problmes poss en fait et que l'esprit se refuse  considrer, celui-ci, hors de tout contrle, minera la ralit conomique dans son ensemble. Il finira par produire toutes les consquences incohrentes impliques dans ses donnes, jusqu'au dsastre.",
+      "bbox": {
+        "x_pct": 25.0,
+        "y_pct": 111.0,
+        "w_pct": 849.0,
+        "h_pct": 286.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au lieu de regarder l'vidence en face, les partis socialistes et les syndicats ont trop souvent prfr l'ignorer et, vaquant  leurs occupations immdiates, parer au plus press. Le plus press, c'est l'lecteur ou l'adhrent. On dfendra donc les mesures protectionnistes. On protgera la main-d'uvre nationale contre les  trangers . Excluant toute proccupation fdraliste europenne, les travaillistes britanniques ont veill  maintenir leurs conqutes sociales britanniques; ils cartaient le fdralisme europen en invoquant le Common Wealth  sans tenir compte du fait que l'unit du Common Wealth, si menace en plusieurs de ses plus minces articulations gographiques, a besoin d'une Europe forte pour survivre. Les socialistes allemands ont men une campagne violente contre le fdralisme europen au nom de l'unit nationale, songeant qu'une Allemagne runifie leur donnerait la majorit lectorale; ils ont nglig compltement, dans cette politique de suicide dont l'aveuglement parat l'uvre de quelque fatalit, le fait qu'une runification sans Europe fdre entranerait la sovitisation de l'Allemagne entire et qu'aucune  majorit lectorale , alors, ne les sauverait du pire. Les socialistes franais se sont partags. Quelques-uns ont obi tout de suite, d'instinct,  la tradition internationaliste la plus profonde du socialisme. D'autres ont hsit, attendu  pour voir , et se sont finalement rallis  l'ide fdraliste avec plus de rsignation que d'enthousiasme. D'autres enfin continuent  rivaliser avec les communistes : c'est",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 403.0,
+        "w_pct": 855.0,
+        "h_pct": 490.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original layout had severely truncated text content",
+    "Header and page number were missing from original extraction",
+    "OCR quality is low causing word fragmentation"
+  ],
+  "doc_id": "330",
+  "page": 281,
+  "elapsed_seconds": 8.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

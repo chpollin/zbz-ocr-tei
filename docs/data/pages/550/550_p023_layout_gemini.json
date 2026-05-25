@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "82 Discussion sur les communications",
+      "bbox": {
+        "x_pct": 6.283,
+        "y_pct": 4.678,
+        "w_pct": 49.347,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Header identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "la transmissibilité, et il y a transmissibilité dans la mesure où c'est scientifique !",
+      "bbox": {
+        "x_pct": 6.006,
+        "y_pct": 12.011,
+        "w_pct": 84.563,
+        "h_pct": 4.211
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Président : J'ai voulu dire ceci : la sociologie n'est que prise de conscience par le sociologue de phénomènes sociaux. Cela n'est pas scientifique fondamentalement, mais le devient si l'on respecte les trois conditions que je me suis efforcé de définir. Cette opération est scientifique dans la mesure où la rend objective, non pas objective par références aux faits, mais objective comme prise de conscience. Le critère essentiel est la transmissibilité.",
+      "bbox": {
+        "x_pct": 6.283,
+        "y_pct": 16.798,
+        "w_pct": 84.605,
+        "h_pct": 15.67
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Me Hersch : Si vous dites que cela tend à l'objectivité, alors je suis complètement d'accord. Je crois que, par exemple, M. Touraine voudrait quelque chose de plus rigoureux sur ce point.",
+      "bbox": {
+        "x_pct": 6.422,
+        "y_pct": 33.336,
+        "w_pct": 84.84,
+        "h_pct": 8.068
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour M. Touraine, je voudrais répondre ceci : Vous avez dit que vous ne considériez, en sociologie, la démocratie comme valeur que dans les sociétés où cette valeur existe, et que là où elle n'existe pas, elle n'a aucun sens. Je me demande si vous pensez qu'il est impossible et absurde d'entreprendre une étude sociologique orientée vers les potentialités démocratiques d'une société où la démocratie n'existe pas encore. Je dois dire que le problème est là et nous presse. Vous me direz peut-être que le sociologue amène cette valeur avec lui, de la société d'où il sort, mais il l'applique tout de même à cette autre société ; il interroge l'autre société sous cet angle. Je voudrais savoir comment vous pourriez répondre à cette question-là.",
+      "bbox": {
+        "x_pct": 6.519,
+        "y_pct": 41.719,
+        "w_pct": 84.743,
+        "h_pct": 23.557
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez dit également que vous n'aimiez pas mon trans social. Moi, je ne vais pas vous rendre la pareille : j'aime beaucoup votre étude du bienheureux cercle vicieux social ! Je l'aime beaucoup parce que j'ai abondamment défendu beaucoup de bien-heureux cercles vicieux philosophiques. Et, curieusement, je crois que la condition humaine est à beaucoup d'égards et sur toutes sortes de plans, un bienheureux cercle vicieux. Je suis très heureuse de la formule que vous avez employée. Seulement, je voudrais ajouter ceci : si vous n'étudiez qu'un cercle vicieux, pour lui-même, sans lui trouver une signification qui le dépasse, malgré tout il n'en sortirait rien ; si votre étude donne quelque chose, ce qui différencie un bienheureux cercle vicieux d'un cercle vicieux tout court, c'est qu'il y a, dans le premier, quelque chose d'autre.",
+      "bbox": {
+        "x_pct": 6.796,
+        "y_pct": 65.402,
+        "w_pct": 84.702,
+        "h_pct": 26.893
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction was very poor/noisy for all paragraphs.",
+    "Running header was incorrectly labeled as text."
+  ],
+  "doc_id": "550",
+  "page": 23,
+  "elapsed_seconds": 5.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

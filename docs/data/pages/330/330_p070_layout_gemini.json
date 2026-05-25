@@ -1,0 +1,45 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "36",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Section header incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le plan de la politique internationale, les conservateurs libéraux ont pour la paix la même préférence conditionnelle que pour la démocratie politique. Idéologiquement, l'ordre international est, ou devrait être, à leurs yeux, un ordre juridique correct, analogue à celui de l'ordre légal interne. La paix, c'est, comme l'ordre, le maintien du statu quo. Mais il y a ici, dans l'idéologie, une ambiguïté : d'une part l'attachement au passé, et aussi l'optimisme qui inspire toute l'interprétation conservatrice libérale (« le système est bon et il suffit de le laisser fonctionner pour que tout aille bien ») s'opposent aux violences, au tragique, à l'héroïsme, et par là à la guerre. Les échanges aussi, signes et moyens de prospérité, tendent à créer une solidarité internationale, à instaurer entre nations des mœurs juridiquement réglées. De l'autre, les tendances substantialistes, ontologiques de la pensée conservatrice ont pour résultat d'incarner et de personnaliser les données politiques, si bien que la Nation, par exemple, acquiert la vie, la durée, le prestige, la sensibilité morale d'un être humain, parfois grandi, sans perdre sa nature, jusqu'à devenir un être surhumain qui mérite qu'on meure pour lui. Patriotisme, nationalisme, raison d'État, qui passaient encore jusqu'à la dernière guerre, dans des couches de la population plus étendues qu'on ne le pense, pour l'ossature indispensable à toute tenue morale, hors de quoi il n'y aurait que nihilisme ou anarchie, n'ont eu ce prestige dans la conscience humaine que pendant une brève période — un peu plus d'un siècle — dominée justement par l'idéologie libérale. On sait bien que le nationalisme romain, par exemple, ou celui de l'ancien régime, celui de Corneille, diffèrent profondément de celui des peuples modernes après la Révolution française. Ce dernier, malgré certains sursauts, est d'ailleurs en voie d'effacement. Et c'est ce qui explique qu'il soit devenu possible depuis un certain temps, même à l'échelon des hommes d'État responsables, d'envisager, face aux menaces de guerre, une unification des nationalités et une autorité supra-nationale. La guerre de religion renaît aux dépens de la guerre nationale, on le sait, on l'a dit. Ce renversement des perspectives entame profondément l'idéologie libérale conservatrice. Lorsqu'elle existait dans son intégrité, elle faisait de la Patrie, incarnation de l'idéal et des intérêts communs (les deux étant solidement et impurement liés, conformément à la loi de la force sociale obtenue",
+      "bbox": {
+        "x_pct": 11.936,
+        "y_pct": 11.435,
+        "w_pct": 86.156,
+        "h_pct": 78.342
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text and ensured mapping aligns with the full paragraph."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was severely corrupted and truncated.",
+    "Page number at top was incorrectly included in the text block.",
+    "Section header was missing from previous extraction."
+  ],
+  "doc_id": "330",
+  "page": 70,
+  "elapsed_seconds": 5.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

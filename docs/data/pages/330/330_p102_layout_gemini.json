@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "68",
+      "bbox": {
+        "x_pct": 137.0,
+        "y_pct": 81.0,
+        "w_pct": 11.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/running header component."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 401.0,
+        "y_pct": 81.0,
+        "w_pct": 315.0,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'attachement (dont nous avons dit qu'il tait hypothtique)  la dmocratie. Nous voyons ici s'inscrire dans les faits une volution paradoxale : la politique trangre des gouvernements conservateurs devient plus sensible aux affinits ou aux oppositions idologiques que celle des gouvernements socialistes.",
+      "bbox": {
+        "x_pct": 12.911,
+        "y_pct": 11.141,
+        "w_pct": 84.958,
+        "h_pct": 11.114
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and merged fragment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les dmocrates progressistes n'ont gure de ligne ferme dans leur politique internationale effective. Ils sont plutt, sur ce plan, l'enjeu des propagandes adverses.",
+      "bbox": {
+        "x_pct": 12.953,
+        "y_pct": 21.301,
+        "w_pct": 84.958,
+        "h_pct": 7.103
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le terrain politique, seuls les socialistes se trouvent obligs de lutter  la fois pour le maintien des structures politiques dmocratiques et pour une transformation radicale, rvolutionnaire, des structures conomiques. Plus les structures dmocratiques sont menaces, et plus ils sont contraints de concentrer leur effort pour les dfendre, aux dpens de leur action rvolutionnaire. Ce double effort n'est cependant nullement contradictoire, il est au contraire d'une cohrence parfaite, si l'on admet que, d'une part, les structures politiques ne peuvent jouer de faon vraiment dmocratique qu'avec des structures conomiques elles aussi dmocratises,  et d'autre part, que la dmocratie conomique ne peut tre assure sans un contrle populaire auquel seule la dmocratie politique permet de s'exercer. Mais dans la pratique, ni les ressources engages dans la lutte, ni le temps, la vigilance, la concentration, la prsence efficace des militants ne sont inpuisables. La ncessit de dfendre les liberts menaces affaiblit la lutte pour la conqute de la justice sociale. Et ds lors, c'est le cercle vicieux fondamental, celui o vont ensuite s'inscrire tous les autres : l'affaiblissement de la lutte rvolutionnaire devient dans la propagande une arme contre le socialisme, elle va affaiblir la confiance en lui de ceux qu'il veut dfendre, affaiblissement qui entranera  son tour un moindre mordant dans la lutte rvolutionnaire, et ainsi de suite.",
+      "bbox": {
+        "x_pct": 12.855,
+        "y_pct": 29.563,
+        "w_pct": 85.097,
+        "h_pct": 47.683
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tel est le cercle vicieux dans lequel ses adversaires tentent d'enfermer le socialisme ; il s'y dbat aujourd'hui et c'est pourquoi il parat parfois la proie d'une sorte de fatalit.",
+      "bbox": {
+        "x_pct": 12.953,
+        "y_pct": 76.916,
+        "w_pct": 84.819,
+        "h_pct": 6.595
+      },
+      "changed": true,
+      "change_reason": "Corrected text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il est encore victime d'un second cercle vicieux qu'il s'est impos lui-mme, ou, si l'on veut, qui s'est impos  lui de l'intrieur. Le mouvement socialiste, n  une poque de total crasement.",
+      "bbox": {
+        "x_pct": 12.953,
+        "y_pct": 83.093,
+        "w_pct": 84.721,
+        "h_pct": 6.863
+      },
+      "changed": true,
+      "change_reason": "Corrected text."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR contained significant character substitution errors.",
+    "Page number and running header incorrectly labeled as text.",
+    "Multiple paragraphs were truncated in the provided initial detection."
+  ],
+  "doc_id": "330",
+  "page": 102,
+  "elapsed_seconds": 7.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

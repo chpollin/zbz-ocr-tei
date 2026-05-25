@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai choisi dans l'histoire de la philosophie européenne — en commençant par les origines, depuis l'Ecole de Thalès et jusqu'à l'époque contemporaine — les penseurs les plus typiques, ceux qui offrent un modèle de prise de position fondamentale envers le monde. Et j'ai essayé de susciter chez les auditeurs un « mime » subjectif assez profond pour être comme un exercice de gymnastique spirituel. Je ne vais pas les nommer tous ici, mais j'ai parlé, par exemple, de Socrate et de sa fermeté dans le non savoir, qui est le contraire de cette crispation dogmatique dont je parlais. J'ai commenté saint Augustin, surtout à propos de la problématique du temps, qu'il a été le premier à explorer. J'ai fait un cours sur saint Anselme et l'argument ontologique, essayant de montrer ce qu'est, ce que peut être, ce que ne peut pas être une preuve de l'existence de Dieu. J'ai parlé de Leibniz à cause de l'extraordinaire modernité de certaines de ses conceptions. Et j'ai fait une grande place à Kant, parce que je considère que Kant représente le tournant décisif de la pensée européenne.",
+      "bbox": {
+        "x_pct": 16.484,
+        "y_pct": 3.847,
+        "w_pct": 80.256,
+        "h_pct": 32.419
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le philosophe par excellence », comme vous l'avez dit une fois.",
+      "bbox": {
+        "x_pct": 16.691,
+        "y_pct": 37.234,
+        "w_pct": 79.976,
+        "h_pct": 3.815
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui, le philosophe par excellence. Ce cours ne prétendait pas être complet. Ce que je voulais, c'est faire comprendre les articulations de pensée décisives et encore actuelles. — Mon deuxième but, c'était de transmettre à ceux qui m'écoutaient un outillage de pensée, un certain vocabulaire et, avec le vocabulaire, un certain nombre de notions, qui leur permettraient de poser de façon plus adéquate les problèmes contemporains. Mon troisième but enfin, c'était d'allumer éventuellement une curiosité en profondeur, en espérant que quelques-uns peut-être s'attacheraient à la réflexion philosophique.",
+      "bbox": {
+        "x_pct": 16.447,
+        "y_pct": 41.073,
+        "w_pct": 80.293,
+        "h_pct": 18.282
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quel écho ces émissions ont-elles rencontré dans le public ? J.H. — Je crois que les auditeurs s'y sont réellement intéressés, puisque beaucoup ont acheté la série des 40 cassettes. On les écoute encore dans certains collèges. Et puis j'en ai tiré un livre, qui a paru en allemand sous le titre Das philosophische Staunen, et dont je suis en train de mettre en forme l'édition française.",
+      "bbox": {
+        "x_pct": 16.361,
+        "y_pct": 60.379,
+        "w_pct": 80.183,
+        "h_pct": 10.185
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avez-vous été obligée de faire un grand effort d'adaptation pour ces cours de philosophie à la radio ?",
+      "bbox": {
+        "x_pct": 16.606,
+        "y_pct": 73.226,
+        "w_pct": 79.939,
+        "h_pct": 4.298
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai essayé d'être aussi simple que possible, je n'ai utilisé des termes techniques que là où ils sont essentiels, mais le plus rarement possible, et en les expliquant. Mais je les expliquais, moins par la définition que par l'usage que j'en faisais immédiatement. Si j'ai mené à chef cette longue série d'émissions, eh bien ! c'est parce que je suis social-démocrate ! L'inégalité la plus grave entre les êtres humains, c'est l'inégalité de culture. Tout le reste est moyen, par rapport à la culture.",
+      "bbox": {
+        "x_pct": 16.239,
+        "y_pct": 77.282,
+        "w_pct": 80.342,
+        "h_pct": 14.194
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "182",
+      "bbox": {
+        "x_pct": 16.6,
+        "y_pct": 94.6,
+        "w_pct": 3.7,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR was highly inaccurate, required full text replacement.",
+    "Page number 182 was not detected as a separate region.",
+    "Multiple fragments were combined incorrectly in initial detection."
+  ],
+  "doc_id": "2330",
+  "page": 186,
+  "elapsed_seconds": 7.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

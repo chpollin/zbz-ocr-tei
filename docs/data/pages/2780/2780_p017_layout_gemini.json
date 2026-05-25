@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sont intemporels.",
+      "bbox": {
+        "x_pct": 27.119,
+        "y_pct": 13.783,
+        "w_pct": 20.021,
+        "h_pct": 2.418
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce dont parlons ici, n'est cependant pas l'éternité en tant qu'intemporalité. C'est pourquoi j'ai utilisé le terme d'«éternité historique». Cercle ou triangle n'ont pas d'histoire. Il n'y a d'histoire que du développement de la science dont ils sont l'objet, justement parce que cette science constitue une activité humaine, et que c'est dans le temps que les hommes se consacrent à la recherche, pour connaître le monde où ils vivent, malgré la menace certaine de leur mort.",
+      "bbox": {
+        "x_pct": 27.087,
+        "y_pct": 15.686,
+        "w_pct": 57.733,
+        "h_pct": 21.977
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La tradition judéo-chrétienne raconte une «histoire surnaturelle». On s'imagine souvent que le caractère surnaturel de cette histoire tient à ce que l'on y rapporte bien des «faits» non conformes à l'ordre normal de la nature. Je crois, pour ma part, que, plus profondément, il s'agit d'autre chose: se situant à la limite de ce qui est humainement possible, ou, mieux encore, au-delà de cette limite, le récit s'efforce de concilier les concepts, d'abord exclusifs l'un de l'autre, d'«histoire» et d'«éternité». Il s'y efforce même là où le langage lui-même se refuse à une telle pensée. Ainsi par exemple, «la Genèse» nous raconte ce que Dieu fit le premier jour, puis le second, puis le troisième, — alors qu'il n'y avait pas encore de soleil, ni par conséquent de jours, et en général pas de temps. Des hommes",
+      "bbox": {
+        "x_pct": 27.362,
+        "y_pct": 37.525,
+        "w_pct": 57.669,
+        "h_pct": 35.515
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 28.093,
+        "y_pct": 75.319,
+        "w_pct": 2.296,
+        "h_pct": 1.637
+      },
+      "changed": true,
+      "change_reason": "Relabeled page number from text to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text transcription was inaccurate in multiple paragraphs.",
+    "Page number at bottom of page was incorrectly labeled as text."
+  ],
+  "doc_id": "2780",
+  "page": 17,
+  "elapsed_seconds": 4.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

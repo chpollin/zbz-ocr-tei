@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "186 L'APPEL",
+      "bbox": {
+        "x_pct": 149,
+        "y_pct": 82,
+        "w_pct": 405,
+        "h_pct": 105
+      },
+      "changed": true,
+      "change_reason": "Corrected page header/number from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "même de ce qu'elle peut être. Tout autre objet est pour elle impossible, puisqu'elle ne croirait plus réellement à lui. Le chiffre de l'expression philosophique une fois dévoilé dans sa duplicité nécessaire, une fois éclairci et conscient, devient impossible; il se réduit en objet ultime et devient l'analyse de lui-même.",
+      "bbox": {
+        "x_pct": 150.6,
+        "y_pct": 127.9,
+        "w_pct": 762.5,
+        "h_pct": 176.57
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and updated label accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Historiquement (c'est-à-dire comme expression d'un moi qui cherche l'être en plongeant ses racines dans une situation temporelle donnée), cette philosophie est pour notre temps, par l'impitoyable loyauté avec laquelle elle éclaire ses limites, par le caractère quotidien et terrestre de son exigence, et par la piété qu'elle garde dans sa profondeur, un appel authentique et d'une exceptionnelle puissance.",
+      "bbox": {
+        "x_pct": 150.6,
+        "y_pct": 307.9,
+        "w_pct": 762.5,
+        "h_pct": 227.62
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR was extremely poor for the first paragraph.",
+    "Page number and header were not correctly labeled as page_header.",
+    "Bounding boxes for the main text were slightly misaligned in the original detection."
+  ],
+  "doc_id": "20",
+  "page": 188,
+  "elapsed_seconds": 3.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

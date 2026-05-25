@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "158 ELLE DOIT ÊTRE UN TOUT",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header identified as text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« Même si l’on arrive à une perfection idéale de réminiscence historique, d’actuelle communication (I), même si l’on arrive à arpenter tous les horizons possibles de l’univers, — cela ne ferait qu’amener le moi (Selbstsein) à lui-même, et non le résoudre dans la totalité d’un Etre général (2). »",
+      "bbox": {
+        "x_pct": 13.705,
+        "y_pct": 12.0,
+        "w_pct": 76.506,
+        "h_pct": 18.381
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to match actual content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que la philosophie ait forcément ses racines dans la vie limitée de l’homme n’empêche pas qu’elle doive être un tout. Mais elle n’est pas la totalité des systèmes entiers (Ganzheit der Ganzheiten), telle qu’on pourrait tenter de la construire d’après l’histoire de la philosophie. Un système, de même qu’une existence, n’est pas un membre d’un tout. Chaque philosophe construit son tout, qui est le tout, pour lui, et qui sera accessible à autrui, c’est-à-dire à son existence possible, par la communication.",
+      "bbox": {
+        "x_pct": 13.705,
+        "y_pct": 30.286,
+        "w_pct": 76.401,
+        "h_pct": 27.686
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to match actual content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le caractère total d’une philosophie se traduit dans le système par la simplicité. Mais « simplicité » ne signifie pas ici : philosophie facile à enseigner et à apprendre. Une philosophie pédagogiquement simplifiée n’est plus qu’un schéma, un cadre. Une",
+      "bbox": {
+        "x_pct": 13.554,
+        "y_pct": 58.381,
+        "w_pct": 76.401,
+        "h_pct": 12.981
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to match actual content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Kommunikation : notion qui joue un grand rôle chez Jaspers et qui désigne le rapport entre êtres humains existants, l’amour et la lutte révélatrice entre existence possible et existence possible, entre absolu et absolu, rapport par lequel l’existence se réalise, s’éclaire et s’assure d’elle-même.",
+      "bbox": {
+        "x_pct": 13.253,
+        "y_pct": 74.095,
+        "w_pct": 76.355,
+        "h_pct": 12.667
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to match actual content"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(2) Philosophie, I, p. 265.",
+      "bbox": {
+        "x_pct": 16.521,
+        "y_pct": 86.8,
+        "w_pct": 32.485,
+        "h_pct": 2.495
+      },
+      "changed": true,
+      "change_reason": "Changed label to footnote as it is a reference"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was heavily garbled and required manual correction.",
+    "Page number at top was merged into text region.",
+    "Footnote was labeled as list_item.",
+    "Running header was missing from the initial detection and needs to be filtered."
+  ],
+  "doc_id": "20",
+  "page": 160,
+  "elapsed_seconds": 5.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

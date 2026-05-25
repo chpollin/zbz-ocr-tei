@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA PROBLEMATIQUE DE L'AME ET DU CORPS DANS LA REALISATION POLITIQUE",
+      "bbox": {
+        "x_pct": 6.4,
+        "y_pct": 6.508,
+        "w_pct": 73.542,
+        "h_pct": 1.75
+      },
+      "changed": true,
+      "change_reason": "Label changed from text to section_header because it is a chapter or section title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'aimer et de défendre les êtres aimés.",
+      "bbox": {
+        "x_pct": 6.516,
+        "y_pct": 11.273,
+        "w_pct": 11.389,
+        "h_pct": 1.672
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Encore est-il possible, au niveau individuel, de faire intervenir le sacrifice, la mort à soi. Lorsqu'il s'agit de l'âme seule, la formule célèbre \"Stirb und werde!\" (\"meurs et deviens!\"), qui résume de nombreux rites d'initiation, garde tout son sens, et même tous ses sens.",
+      "bbox": {
+        "x_pct": 6.285,
+        "y_pct": 14.375,
+        "w_pct": 82.222,
+        "h_pct": 9.039
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais non en politique. L'extrême rigueur de l'exigence, au niveau individuel, peut imposer le devenir par la mort, le sacrifice comme absolu. L'extrême rigueur politique, en revanche, maintient nécessairement jusqu'au bout (et il n'y a pas de \"bout\") la double exigence: celle de la visée, et celle d'être, et d'être fort, pour pouvoir viser et réussir. En politique, jamais aucun devoir de sacrifice ne dispense du devoir de réussir. L'homme de parti, l'homme d'Etat promet de réussir et doit tenir sa promesse. Il ne peut sacrifier que sa propre personne, s'il quitte le niveau où règne la dure loi politique de l'épreuve des faits, l'exigence d'incarnation réussie.",
+      "bbox": {
+        "x_pct": 6.343,
+        "y_pct": 24.609,
+        "w_pct": 80.081,
+        "h_pct": 22.867
+      },
+      "changed": true,
+      "change_reason": "Corrected substantial OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi, en politique, plus tragiquement qu'au niveau individuel, s'affrontent les deux sagesses des nations: \"Fais ce que dois, advienne que pourra\", dit l'une; - mais l'autre: \"La fin justifie les moyens\". La première retient la pure visée de l'âme; la seconde, l'exigence d'incarnation, jusqu'au cynisme. Se rallier à l'une ou à l'autre, c'est relativement facile, c'est abolir le problème. Le politique assume les deux: la visée, mais aussi le devoir d'être et de réussir.",
+      "bbox": {
+        "x_pct": 6.215,
+        "y_pct": 48.727,
+        "w_pct": 79.12,
+        "h_pct": 16.062
+      },
+      "changed": true,
+      "change_reason": "Corrected substantial OCR errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Pouvoir",
+      "bbox": {
+        "x_pct": 6.169,
+        "y_pct": 69.867,
+        "w_pct": 9.838,
+        "h_pct": 1.875
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Etre en politique, c'est avoir la possibilité d'agir, et donc, avoir du pouvoir. Aussitôt on voit le dualisme essentiel du pouvoir constituer une polarité dont chaque pôle considéré seul l'exclut, mais dont l'opposition le conditionne.",
+      "bbox": {
+        "x_pct": 6.25,
+        "y_pct": 72.945,
+        "w_pct": 80.208,
+        "h_pct": 8.906
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le premier pôle, c'est celui où le pouvoir, n'étant jamais suffisant pour",
+      "bbox": {
+        "x_pct": 6.25,
+        "y_pct": 83.203,
+        "w_pct": 80.44,
+        "h_pct": 2.086
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "103",
+      "bbox": {
+        "x_pct": 86.08,
+        "y_pct": 88.67,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Most text blocks had significant OCR errors.",
+    "Section header was mislabeled as text.",
+    "Page number missing from initial extraction.",
+    "Bounding box for page number manually estimated based on position."
+  ],
+  "doc_id": "1640",
+  "page": 9,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

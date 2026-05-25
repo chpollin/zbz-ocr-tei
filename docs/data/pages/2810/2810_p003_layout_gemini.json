@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "juridique, mais aussi morale, psychologique et même sociologique, — une machine sans précédent dans l'histoire suisse, mais la situation où l'on se trouvait n'avait pas, elle non plus, de précédent. Une double Commission d'enquête parlementaire fut mise sur pied, l'une du Conseil national, l'autre du Conseil des Etats, avec chacune un Président. (Finalement elles se décidèrent à travailler ensemble et à ne présenter qu'un seul rapport.) On s'en prit au Procureur général de la Confédération Gerber. On nomma un suppléant spécial de ce Procureur, chargé d'enquêter sur les indiscrétions commises, le Procureur bâlois Hans Hungerbühler. L'ancien Juge fédéral Arthur Häfliger fut, lui, chargé d'une enquête administrative. Bientôt le Juge Koeferli et le Procureur Piller entrèrent en action pour diriger l'enquête judiciaire devant aboutir au Tribunal fédéral.",
+      "bbox": {
+        "x_pct": 8.695,
+        "y_pct": 7.073,
+        "w_pct": 80.928,
+        "h_pct": 29.863
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text to match actual document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut ajouter que, tout au long des recherches de ces Commissions et de ces Juges, la « presse d'investigation » va continuer à « faire son devoir ». Les « media électroniques » aussi. Pendant une période assez longue, le peuple suisse a vécu un feuilleton sensationnel, abondamment alimenté par des sources diverses, qui l'a arraché à son célèbre «ennui».",
+      "bbox": {
+        "x_pct": 8.908,
+        "y_pct": 39.274,
+        "w_pct": 80.678,
+        "h_pct": 12.984
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne suis pas juriste. Mais après tout, l'immense majorité des citoyens et des citoyennes sont dans le même cas. Je me demande s'ils ont mieux compris que moi la délimitation des compétences attribuées à chacun de ces organes. Il me faut avouer qu'elles ne me sont jamais apparues avec une suffisante clarté.",
+      "bbox": {
+        "x_pct": 8.821,
+        "y_pct": 56.29,
+        "w_pct": 80.891,
+        "h_pct": 10.831
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En tout cas, un postulat fut admis partout d'emblée: Monsieur Hans W. Kopp, époux de la Conseillère fédérale, était un personnage louche par définition et qui, vraisemblablement, fricotait dans la drogue, à travers la Shakarchi Trading AG, où il était vice-président du Conseil d'administration. On rappela, dans les divers organes de presse, les vieilles histoires ayant couru sur son compte, et qui avaient pourtant déjà été publiées et jaugées à l'époque où la candidature de sa femme au Conseil fédéral était en discussion (cf. notamment Züri Woche du 27 septembre 1984). On avait passé outre. Pourquoi y revenait-on en 1988?",
+      "bbox": {
+        "x_pct": 9.034,
+        "y_pct": 69.194,
+        "w_pct": 80.765,
+        "h_pct": 21.452
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "53",
+      "bbox": {
+        "x_pct": 86.4,
+        "y_pct": 93.3,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR text was heavily truncated and garbled.",
+    "Page number 53 was not labeled in original JSON."
+  ],
+  "doc_id": "2810",
+  "page": 3,
+  "elapsed_seconds": 5.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

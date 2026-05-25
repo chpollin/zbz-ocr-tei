@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour Dino Larese; avec mon amicale reconnaissance",
+      "bbox": {
+        "x_pct": 20.388,
+        "y_pct": 26.263,
+        "w_pct": 44.745,
+        "h_pct": 1.852
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "A LA VEILLE DE MON PREMIER VOYAGE EN GRÈCE",
+      "bbox": {
+        "x_pct": 17.961,
+        "y_pct": 30.724,
+        "w_pct": 49.551,
+        "h_pct": 7.997
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest vrai: je ne suis encore jamais allée en Grèce. Moi qui ai tant voyagé dans les divers continents, qui ai entrepris seule un très long voyage à travers l’Amérique latine à une époque où cela ne se faisait pas et où rien n’était préparé pour cela, je ne suis jamais allée en Grèce. C’est le dernier moment pour le dire: demain il sera trop tard, j’y serai, je la verrai, l’entendrai, je la respirerai.",
+      "bbox": {
+        "x_pct": 9.709,
+        "y_pct": 42.593,
+        "w_pct": 65.862,
+        "h_pct": 24.848
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment se fait-il que je n’y sois jamais allée? La vraie raison, je crois, est en moi-même: je ne voulais pas y aller. Dans mon enfance, j’ai possédé un petit livre, modeste-",
+      "bbox": {
+        "x_pct": 9.83,
+        "y_pct": 67.929,
+        "w_pct": 65.619,
+        "h_pct": 11.254
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "63",
+      "bbox": {
+        "x_pct": 71.966,
+        "y_pct": 82.525,
+        "w_pct": 3.277,
+        "h_pct": 2.273
+      },
+      "changed": true,
+      "change_reason": "Corrected missing region and label for page number."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction for paragraphs was incomplete/erroneous.",
+    "Missing bounding box for the page number at the bottom."
+  ],
+  "doc_id": "2260",
+  "page": 61,
+  "elapsed_seconds": 4.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

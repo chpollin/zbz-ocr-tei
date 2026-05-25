@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tout entière «de l'autre côté». Il sera trop tard pour lui dire adieu.",
+      "bbox": {
+        "x_pct": 22.145,
+        "y_pct": 11.548,
+        "w_pct": 65.818,
+        "h_pct": 5.803
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ait l'été. Même s'il n'y a personne pour s'en souvenir, tout ce qu'elle aura contenu aura été réel; aura été séparé; aura été aimé; aura reçu notre adieu.",
+      "bbox": {
+        "x_pct": 22.097,
+        "y_pct": 17.325,
+        "w_pct": 65.818,
+        "h_pct": 13.457
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR transcription errors to match image text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Étranges, ces futurs antérieurs, substitués à un impensable présent éternel.",
+      "bbox": {
+        "x_pct": 22.545,
+        "y_pct": 31.228,
+        "w_pct": 65.248,
+        "h_pct": 5.921
+      },
+      "changed": true,
+      "change_reason": "Correction of transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Impensable, parce qu'il ne faut pas qu'il abolisse le temps ni sa présence, ni sa fuite, ni le regret, ni l'attente, ni le lézard affolé qui, parce que j'ai approché ma main, s'enfuit sur le rocher gris pour continuer à vivre, à vivre et à avoir peur, et à sentir la chaleur, et à refuser le plus longtemps possible de mourir.",
+      "bbox": {
+        "x_pct": 22.061,
+        "y_pct": 36.922,
+        "w_pct": 66.024,
+        "h_pct": 20.185
+      },
+      "changed": true,
+      "change_reason": "Correction of transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être ne sait-il pas ce que nous savons: qu'il finira par mourir. Mais pour nous qui le savons, sa fuite reçoit un bien autre sens. Pour nous qui savons que nous allons mourir, vivre maintenant prend un prix à la fois absolu et non ultime. Dire adieu, c'est vivre l'instant dans son unicité. Mais pour dire adieu, il faut être vivant. Les yeux, les oreilles, les mains, le",
+      "bbox": {
+        "x_pct": 22.145,
+        "y_pct": 56.627,
+        "w_pct": 66.012,
+        "h_pct": 22.54
+      },
+      "changed": true,
+      "change_reason": "Correction of transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "104",
+      "bbox": {
+        "x_pct": 22.606,
+        "y_pct": 82.493,
+        "w_pct": 3.758,
+        "h_pct": 2.257
+      },
+      "changed": true,
+      "change_reason": "Changed label to page_footer to comply with instructions regarding page numbers."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Several OCR errors in text fields.",
+    "Page number at bottom not initially labeled as page_footer."
+  ],
+  "doc_id": "2260",
+  "page": 104,
+  "elapsed_seconds": 4.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

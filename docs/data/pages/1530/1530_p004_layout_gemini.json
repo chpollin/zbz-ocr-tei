@@ -1,0 +1,87 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "76 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 12.35,
+        "y_pct": 6.81,
+        "w_pct": 76.076,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected page header classification from text/paragraph to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'une délégation de la toute-puissance divine, d'une mission à remplir. Le pouvoir ne couronne pas des actions d'éclat, il n'est pas à proprement parler « mérité » par des qualités exceptionnelles ou même, à la limite, uniques, il est le révélateur de ces qualités. Parfois même il les engendre, par son essence charismatique. Un homme ordinaire soudain marqué par le pouvoir devient un autre, il sera digne du pouvoir parce qu'il l'a reçu. Mais justement du fait que le pouvoir n'est pas mérité, son charisme, bien que personnalisé à l'extrême (à tel point que dans certaines cultures il faut un vocabulaire différent pour désigner chaque partie du corps du souverain), garde quelque chose de radicalement impersonnel, de symbolique. (Nous y reviendrons.)",
+      "bbox": {
+        "x_pct": 12.35,
+        "y_pct": 11.099,
+        "w_pct": 76.076,
+        "h_pct": 27.025
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vécu ainsi le pouvoir est reconnu par ceux qui s'y plient comme une valeur, plus métaphysique que morale. Elle découle de la source transcendante du pouvoir. La capacité de commander et d'obtenir obéissance, la force de menacer et de punir n'en est que le signe ou l'effet.",
+      "bbox": {
+        "x_pct": 12.35,
+        "y_pct": 37.876,
+        "w_pct": 75.926,
+        "h_pct": 11.653
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selon une perspective opposée à l'extrême, le pouvoir est de nature matérielle. Le pouvoir appartient à celui qui détient soit la force physique permettant la menace, soit des ressources indispensables aux autres ou des biens qu'ils désirent ardemment. Dans ce cas il s'exerce sur les êtres humains à travers leur vouloir-vivre. C'est le Maître hégélien s'imposant à l'Esclave.",
+      "bbox": {
+        "x_pct": 12.303,
+        "y_pct": 48.926,
+        "w_pct": 75.891,
+        "h_pct": 13.661
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si le pouvoir charismatique multiple les signes et les rappels de sa source divine, le pouvoir matériel au contraire déguise et masque la contrainte qu'il exerce afin d'orner la soumission qu'il impose, aux yeux de ceux auxquels il l'impose comme aux siens propres. Il se trouve dans une situation ambiguë: il règne grâce à une force qui doit à la fois rester manifeste pour contraindre — et se laisser oublier.",
+      "bbox": {
+        "x_pct": 12.153,
+        "y_pct": 62.008,
+        "w_pct": 76.042,
+        "h_pct": 15.62
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vécu ainsi, le pouvoir est rejeté du côté du mal par ceux qui le subissent. Il est même souvent éprouvé comme le Mal en soi, le « gros animal », comme disait Simone Weil. Mais ici encore, il s'agit non d'un mal moral, mais d'un mal existentiel: le pouvoir est un mal, non parce que son exercice viole des principes moraux, mais parce qu'il est par nature contrainte de fait, non-liberté.",
+      "bbox": {
+        "x_pct": 12.234,
+        "y_pct": 77.934,
+        "w_pct": 75.775,
+        "h_pct": 13.471
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One region identified as page header incorrectly labeled as text initially."
+  ],
+  "doc_id": "1530",
+  "page": 4,
+  "elapsed_seconds": 5.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

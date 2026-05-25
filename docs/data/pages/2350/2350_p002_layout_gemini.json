@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ersteren nehmen nur die Kritik reinen Vernunfte Men; ist ohn",
+      "bbox": {
+        "x_pct": 11.125,
+        "y_pct": 6.337,
+        "w_pct": 37.689,
+        "h_pct": 15.703
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "verstehen, Jvpers da Wort Exialle sophischen Existenz nicht",
+      "bbox": {
+        "x_pct": 8.435,
+        "y_pct": 70.062,
+        "w_pct": 38.509,
+        "h_pct": 18.037
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vorstcllung sobald Ubung d1, Eotscheidung Jaspers, Denn nchtig.",
+      "bbox": {
+        "x_pct": 50.367,
+        "y_pct": 50.696,
+        "w_pct": 36.308,
+        "h_pct": 37.496
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "der Existenz wird nicht cinfach dadurch Eine",
+      "bbox": {
+        "x_pct": 50.856,
+        "y_pct": 85.997,
+        "w_pct": 35.66,
+        "h_pct": 4.467
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer as it contains page content at the bottom of the page."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One text region was identified as a page_footer segment."
+  ],
+  "doc_id": "2350",
+  "page": 2,
+  "elapsed_seconds": 4.05,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

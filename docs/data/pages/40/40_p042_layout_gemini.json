@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "44 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 68.176,
+        "y_pct": 82.543,
+        "w_pct": 19.392,
+        "h_pct": 12.543
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number and running header as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelque part, un soir, — c'était à une conférence ou à un spectacle, — je l'ai vu à quelques rangs de moi. La salle était sombre, mais je l'ai reconnu aussitôt à une impression déjà familière de clarté venue de lui, et d'éblouissement. Pour la première fois de ma vie, je sentis une volonté étrangère à la mienne m'habiter, et il m'était impossible de ne pas le regarder de temps en temps, vite, vite, comme on prend une gorgée d'eau. Chaque fois, je rencontrais une seconde son regard, fixé sur moi, brillant. Jusqu'alors, j'avais ignoré totalement la force du regard. Cela me fit ivresse et peur. Peut-être fut-ce cette peur, peut-être aussi un instinct de netteté, de fixité, qui me fit soudain tourner franchement la tête vers lui. J'eus le sentiment de m'abandonner sans réserve à une force toute-puissante, de me livrer totalement, follement. Mon regard se noua au sien. La distance se trouva abolie. Ce fut aveugle et serré. Cela se défit, avec un arrachement et une sorte de vertige. Un cri, comme un éclat blanc, me traversait, malgré moi qui n'osais pas: « Il m'aime, il m'aime, c'est moi, moi... », et je ne pouvais pas le croire.",
+      "bbox": {
+        "x_pct": 63.92,
+        "y_pct": 125.43,
+        "w_pct": 81.176,
+        "h_pct": 528.64
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A la sortie, Maman le rencontra et lui dit quelques mots. Il demanda pour moi la permission d'écouter le lendemain un beau concert chez lui à la radio. Maman, surprise et sans excuse prête, l'accorda. Moi, je n'osais déjà plus me souvenir de ce qui s'était passé. Je ne savais plus où j'étais, qui j'étais, de quoi mon corps était fait. Il nous accompagna jusqu'à notre porte, mais je n'avais pas l'impression de marcher à côté de lui, tellement la",
+      "bbox": {
+        "x_pct": 65.27,
+        "y_pct": 656.24,
+        "w_pct": 80.946,
+        "h_pct": 203.88
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Detected page header/number was mislabeled as text.",
+    "OCR text content was severely corrupted and required full replacement to match the source image.",
+    "Bbox coordinates in original input were interpreted incorrectly by the system, but maintained as per instructions."
+  ],
+  "doc_id": "40",
+  "page": 42,
+  "elapsed_seconds": 4.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

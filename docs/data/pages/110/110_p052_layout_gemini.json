@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "50",
+      "bbox": {
+        "x_pct": 20.0,
+        "y_pct": 2.0,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region correctly identified as header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 75.33,
+        "y_pct": 2.0,
+        "w_pct": 13.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header correctly identified."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "il n'acquerra réalité   que lorsque lexpérience sera jour, des psychologues   débaltaient la queslio",
+      "bbox": {
+        "x_pct": 19.62,
+        "y_pct": 13.364,
+        "w_pct": 68.825,
+        "h_pct": 61.405
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at top left labeled as text in original",
+    "Running header at top right missing from original"
+  ],
+  "doc_id": "110",
+  "page": 52,
+  "elapsed_seconds": 7.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

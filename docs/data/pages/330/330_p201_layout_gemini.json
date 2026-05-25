@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE II",
+      "bbox": {
+        "x_pct": 36.866,
+        "y_pct": 26.916,
+        "w_pct": 15.877,
+        "h_pct": 1.604
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling from CHAPITIE to CHAPITRE."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA DÉMOCRATIE POLITIQUE",
+      "bbox": {
+        "x_pct": 21.825,
+        "y_pct": 30.125,
+        "w_pct": 45.961,
+        "h_pct": 2.611
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ALTÉRATION DE LA DÉMOCRATIE EN RÉGIME CAPITALISTE",
+      "bbox": {
+        "x_pct": 3.064,
+        "y_pct": 36.096,
+        "w_pct": 74.889,
+        "h_pct": 2.255
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header as this is a chapter subtitle/section title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La démocratie politique a pris, dans l'histoire de l'Occident moderne, une physionomie ambiguë. Elle possède un prestige d'ordre spirituel : elle est immédiatement et affectivement liée à la liberté de l'esprit. Sa charte, ce sont les Droits de l'homme. Mais en même temps, elle a été instaurée grâce à l'avènement de la classe bourgeoise, par la victoire de celle-ci sur la noblesse. Elle répondait aux besoins économiques du moment : la révolution technique avait besoin du libéralisme pour prendre toute son ampleur. Le machinisme et le capitalisme exigeaient une liberté entière pour le commerce et l'industrie. La libre concurrence des forces économiques paraissait faire jouer sur le plan du travail, de l'invention, de la réalisation, de l'exploitation, à la fois la liberté individuelle, les lois mêmes de la nature et les meilleures chances de progrès.",
+      "bbox": {
+        "x_pct": 2.744,
+        "y_pct": 39.955,
+        "w_pct": 84.763,
+        "h_pct": 29.234
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in extracted text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De ces deux aspects de la démocratie politique, ses défenseurs actuels retiennent le premier, ses adversaires le second. En fait, tous deux sont réels, tous deux se mêlent, ils reflètent une ambiguïté qui n'est pas propre à un régime politique, mais qui appartient à la condition entière de l'homme, fait d'une âme et d'un corps, ou plutôt de l'inconcevable unité des deux.",
+      "bbox": {
+        "x_pct": 2.744,
+        "y_pct": 68.476,
+        "w_pct": 84.763,
+        "h_pct": 12.718
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in extracted text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La démocratie des Droits de l'homme partait d'une conception optimiste selon laquelle l'homme est libre quand on ne l'empêche pas d'être. Il suffit donc de supprimer ce qui l'asservit et d'en empêcher le retour. Abolir la royauté, les privilèges de la noblesse.",
+      "bbox": {
+        "x_pct": 2.368,
+        "y_pct": 80.597,
+        "w_pct": 85.139,
+        "h_pct": 9.153
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in extracted text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "167",
+      "bbox": {
+        "x_pct": 100.0,
+        "y_pct": 100.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region which was detected but missing from list."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was extremely poor for the paragraphs.",
+    "Section headers were identified as text paragraphs.",
+    "Page number missing from initial JSON input.",
+    "Typos in section header text."
+  ],
+  "doc_id": "330",
+  "page": 201,
+  "elapsed_seconds": 5.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

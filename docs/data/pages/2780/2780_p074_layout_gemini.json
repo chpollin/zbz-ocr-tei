@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous ne pouvons vivre ni avec le temps, ni sans lui, ni contre lui. Pour nous, dans l'immuable, dans l'écoulement, dans la vitesse, se perdent l'être et le sens. Nous ne savons pas ce que c'est que le temps. Celui que nous vivons subjectivement se confond avec nos regrets, nos attentes, nos efforts. Celui de la nature – celui qu'il faut à une cascade pour creuser une roche, à un morceau de sucre pour fondre dans une tasse, à une fleur pour devenir graine, en dehors de tout témoin humain –, nous ne pouvons même pas le concevoir.",
+      "bbox": {
+        "x_pct": 18.57,
+        "y_pct": 13.573,
+        "w_pct": 57.383,
+        "h_pct": 24.309
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant ce temps – le nôtre, et l'autre – il est dans chaque atome de notre vie, par notre corps, par notre conscience, par l'époque où nous vivons. L'histoire est au cœur de notre liberté. Nous sommes faits de ce qui passe. Nous passons. Mais vivons-nous vraiment comme quelque chose qui passe et qui est fait de ce qui passe? Pas vraiment. Non, – pas vraiment.",
+      "bbox": {
+        "x_pct": 18.464,
+        "y_pct": 37.555,
+        "w_pct": 57.309,
+        "h_pct": 17.612
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est vrai, née à un autre moment de l'histoire, je ne serais pas ce que je suis. C'est vrai, je ne cesse de passer. Et pourtant : je continue à croire vraies les pensées très anciennes, et ceux qui vécurent dans les cultures défuntes peuvent rester mes frères. Quelque chose persiste à travers ce qui passe, sans quoi je ne pourrais pas être un être humain. Tout passe à chaque instant, et pourtant le poème",
+      "bbox": {
+        "x_pct": 18.4,
+        "y_pct": 54.595,
+        "w_pct": 57.415,
+        "h_pct": 18.258
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "75",
+      "bbox": {
+        "x_pct": 72.48,
+        "y_pct": 74.88,
+        "w_pct": 2.2,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was severely truncated in all paragraphs.",
+    "Page number 75 was not detected or labeled correctly."
+  ],
+  "doc_id": "2780",
+  "page": 74,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

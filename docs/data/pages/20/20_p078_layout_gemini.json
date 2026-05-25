@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "76 CHOIX D'UN EXEMPLE",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header text wrongly identified as paragraph, should be page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "problème, ce que j'ai appelé l'illusion philosophique nécessaire de l'auteur. Nous verrons en même temps comment on peut étudier un problème philosophique et comment se confrontent les points de vue de l'auteur et de l'étudiant. Ainsi apparaîtra plus nettement, je l'espère, le décalage qui se produit nécessairement entre les deux : la recherche de la vérité théorique par laquelle se crée la vérité métaphysique, et la recherche de la vérité métaphysique à travers les résultats théoriques. Ce n'est qu'en serrant d'aussi près que possible l'inévitable décalage que nous saurons comment et sur quel plan s'accomplit ou échoue la « communication ».",
+      "bbox": {
+        "x_pct": 13.358,
+        "y_pct": 12.381,
+        "w_pct": 76.446,
+        "h_pct": 33.838
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed label/tag inconsistency."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai choisi pour exemple le système de Hegel parce qu'il est le dernier grand système dogmatique, celui où l'illusion d'avoir atteint une vérité universelle apodictique est le plus vigoureuse et se développe avec le plus d'ampleur. Et comme il nous faudra creuser en profondeur sans pourtant que l'exemple déborde le cadre de cette étude, j'ai choisi dans ce système un seul problème, celui qui, comme nous l'avons vu plus haut à propos de Bergson, touche directement à la liberté, celui du temps. — Le choix du problème n'est d'ailleurs pas essentiel : comme je l'ai dit, une étude vraiment approfondie atteint toujours le même centre du système, quel que soit le point de la surface dont elle est partie. — Ce problème du temps, je l'étudierai surtout dans la Philosophie de l'Histoire, car c'est là qu'apparaît le mieux son lien avec celui de la liberté humaine.",
+      "bbox": {
+        "x_pct": 13.66,
+        "y_pct": 45.838,
+        "w_pct": 76.657,
+        "h_pct": 43.495
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed label/tag inconsistency."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction was incomplete and contained garbled characters.",
+    "Header line was missing from original extraction.",
+    "Bbox for header was not provided in original input."
+  ],
+  "doc_id": "20",
+  "page": 78,
+  "elapsed_seconds": 5.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

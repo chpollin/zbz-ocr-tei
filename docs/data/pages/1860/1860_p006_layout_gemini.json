@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'OPINION PUBLIQUE FACE A L'ENERGIE NUCLEAIRE",
+      "bbox": {
+        "x_pct": 19.581,
+        "y_pct": 12.144,
+        "w_pct": 56.189,
+        "h_pct": 1.482
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "problèmes psychologiques, idéologiques, sociaux et politiques",
+      "bbox": {
+        "x_pct": 27.663,
+        "y_pct": 14.31,
+        "w_pct": 39.863,
+        "h_pct": 3.404
+      },
+      "changed": true,
+      "change_reason": "Subtitle/Header line, should be section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch, Genève professeur de philosophie",
+      "bbox": {
+        "x_pct": 34.545,
+        "y_pct": 20.696,
+        "w_pct": 25.488,
+        "h_pct": 3.25
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les hommes, de tout temps, ont eu à la fois envie et peur du nouveau. Envie parce qu'ils sont par nature mécontents de ce qui est, nostalgiques d'une plénitude intemporelle, d'un paradis perdu où leurs désirs les plus contradictoires seraient à la fois satisfaits. Peur parce qu'ils se sentent mortels et vulnérables, toujours menacés par quelque chose qui pourrait être pire que ce qui est. La formidable puissance de l'énergie nucléaire élève l'espoir et la terreur à la énième puissance. Et, bien sûr, la terreur incomparablement plus que l'espoir.",
+      "bbox": {
+        "x_pct": 12.546,
+        "y_pct": 27.748,
+        "w_pct": 70.21,
+        "h_pct": 18.033
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for full accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire a fait que l'énergie nucléaire se trouve, dans la conscience collective contemporaine, à l'intersection et comme au lieu géométrique d'une série de faits et de mythes hétérogènes, de dimension planétaire, autour desquels se construisent des idéologies virulentes.",
+      "bbox": {
+        "x_pct": 12.675,
+        "y_pct": 47.246,
+        "w_pct": 70.508,
+        "h_pct": 8.723
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for full accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, évidemment, Hiroshima, la bombe atomique et tous les armements atomiques ultérieurs. La situation de guerre qui existait quand la première bombe fut lâchée, les années d'extermination massive et de ruines qui l'avaient précédée, les menaces d'une résistance prolongée parmi les Iles japonaises et l'urgence de parvenir à une paix générale, se sont effacées des esprits. Il ne reste que l'insoutenable souvenir d'une ville détruite, de morts innombrables, de survivants lentement consumés par les radiations.",
+      "bbox": {
+        "x_pct": 12.595,
+        "y_pct": 58.022,
+        "w_pct": 70.669,
+        "h_pct": 18.221
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for full accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On aura beau répéter que l'énergie nucléaire pacifique n'a aucun rapport avec la bombe atomique ni avec aucune des armes qui en sont dérivées. Pour les peuples, le péché originel de l'atome ne saurait",
+      "bbox": {
+        "x_pct": 12.707,
+        "y_pct": 78.375,
+        "w_pct": 67.333,
+        "h_pct": 6.442
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for full accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 66,
+        "y_pct": 952,
+        "w_pct": 440,
+        "h_pct": 18
+      },
+      "changed": true,
+      "change_reason": "Added page footer region."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 5,
+  "issues": [
+    "Sub-header label was incorrect.",
+    "Multiple text paragraphs had truncated or inaccurate OCR content.",
+    "Footer was missing from initial detection."
+  ],
+  "doc_id": "1860",
+  "page": 6,
+  "elapsed_seconds": 6.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

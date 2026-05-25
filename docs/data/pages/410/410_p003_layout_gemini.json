@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Züge, Denkelemente und schlichen zur Entdeckung dem Schlag",
+      "bbox": {
+        "x_pct": 10.468,
+        "y_pct": 17.76,
+        "w_pct": 34.58,
+        "h_pct": 33.457
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content to reflect actual source text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "62",
+      "bbox": {
+        "x_pct": 9.47,
+        "y_pct": 82.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "v. SCHENCK",
+      "bbox": {
+        "x_pct": 10.072,
+        "y_pct": 59.496,
+        "w_pct": 7.074,
+        "h_pct": 1.78
+      },
+      "changed": true,
+      "change_reason": "Corrected speaker attribution label; fixed OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bewegung ... bindet sich ein recht schwieriges Denken",
+      "bbox": {
+        "x_pct": 9.388,
+        "y_pct": 68.353,
+        "w_pct": 28.225,
+        "h_pct": 12.849
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "v. SCHENCK. ... glücklicherweise falsche Prophezeiung",
+      "bbox": {
+        "x_pct": 53.561,
+        "y_pct": 36.988,
+        "w_pct": 34.568,
+        "h_pct": 26.81
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Schichten auch die geistigen bürgerlichen",
+      "bbox": {
+        "x_pct": 54.233,
+        "y_pct": 69.777,
+        "w_pct": 34.053,
+        "h_pct": 5.045
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "63",
+      "bbox": {
+        "x_pct": 87.0,
+        "y_pct": 82.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Severe OCR degradation in original annotations",
+    "Missing bounding boxes for page numbers",
+    "Incorrect labels for speaker attributions",
+    "Incorrect labels for page numbers"
+  ],
+  "doc_id": "410",
+  "page": 3,
+  "elapsed_seconds": 4.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 63",
+      "bbox": {
+        "x_pct": 293.0,
+        "y_pct": 82.0,
+        "w_pct": 412.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header elements like page number and running title were labeled as text paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "s'émoussent aussi sur le plan de l'action politique et économique, elles se satisfont d'un simple effort d'amélioration au jour le jour. Il perd de vue les réformes de structure qui étaient auparavant son but essentiel, au point que lorsque les circonstances mêmes les réclament, lorsque les adversaires s'y résignent, il en paraît le plus effrayé. C'est ainsi que souvent les partis socialistes s'amenuisent ou perdent leur force vive, déchirés entre une tendance extrémiste et une tendance conservatrice qui ne gardent l'une et l'autre de socialiste que le nom.",
+      "bbox": {
+        "x_pct": 25.0,
+        "y_pct": 113.0,
+        "w_pct": 842.0,
+        "h_pct": 169.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Politiquement, en fait, on peut de nouveau grouper fascistes et communistes, surtout en ce qui concerne le régime interne. Les uns et les autres, tant qu'ils vivent en régime démocratique, dénigrent celui-ci tout en y réclamant des droits égaux à ceux des démocrates. Les uns et les autres usent sans mesure des droits garantis par une constitution qu'ils méprisent et qu'ils s'efforcent de discréditer et d'abolir. On l'a dit depuis longtemps, une démocratie ne vit que grâce à certaines vertus. Il est toujours possible de la rendre absurde, tant qu'on profite d'elle. Le mensonge et l'obstruction sont contre elle les armes les plus efficaces, et elles ont de multiples tranchants. Dans un régime où règne la propagande destinée au grand nombre, un mensonge est toujours profitable pour les adversaires de la démocratie. D'abord, il en reste toujours quelque chose. Ensuite, même s'il finit par être mis au grand jour, la discussion aura servi à faire douter de toute information. Or, par cette méfiance, la démocratie est compromise : non du fait qu'on met en doute telle information (ce qui serait au contraire la manifestation d'un esprit critique parfaitement sain dont aucune vraie démocratie ne saurait se passer) mais du fait qu'on met en doute l'information en bloc, au point de renoncer une fois pour toutes à chercher la vérité. Le mensonge sape donc la démocratie dans la mesure où il est cru, mais aussi dans la mesure où il n'est pas cru, ce qui ébranle la confiance. Mais il y a plus : il est contagieux. Il gagne les démocrates. La méfiance se trouve quotidiennement justifiée. Vérité et mensonge se mêlent inextricablement. Pour les adversaires de la démocratie, dès lors, la partie, sur ce plan, est presque gagnée.",
+      "bbox": {
+        "x_pct": 24.0,
+        "y_pct": 315.0,
+        "w_pct": 846.0,
+        "h_pct": 556.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text truncation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il se crée ainsi, entre fascistes et communistes, une profonde...",
+      "bbox": {
+        "x_pct": 55.0,
+        "y_pct": 861.0,
+        "w_pct": 814.0,
+        "h_pct": 28.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Header line detected as part of paragraph region.",
+    "OCR output significantly truncated in all detected regions.",
+    "Misidentified page number as text paragraph.",
+    "OCR read errors (e.g. 'B' instead of 'se', missing words)."
+  ],
+  "doc_id": "330",
+  "page": 97,
+  "elapsed_seconds": 5.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

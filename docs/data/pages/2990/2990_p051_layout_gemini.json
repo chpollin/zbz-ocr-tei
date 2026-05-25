@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "58",
+      "bbox": {
+        "x_pct": 133.5,
+        "y_pct": 21.0,
+        "w_pct": 14.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 535.0,
+        "y_pct": 21.0,
+        "w_pct": 338.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "einen sagten nichts geschehe ohne Ursache, und die anderen, da es im Gegenteil etwas gebe, das ohne Ursache geschehe. Es gibt zum Beispiel Menschen, die glauben, da es Freiheit nicht mehr geben kann, weil in der wissenschaftlichen Welt alles durch Ursachen geregelt ist. Die anderen sagen: Im Gegenteil, wenn es keine Freiheit gegeben htte, dann gbe es keine Wissenschaft. Warum gbe es keine Wissenschaft? Damit es Wissenschaft geben kann, mu natrlich der Wissenschaftler, wenn er ein Experiment macht, die Fhigkeit haben, der Wahrheit vor der Nicht-Wahrheit den Vorzug zu geben. Ohne diese Entscheidung htte es nie eine Wissenschaft gegeben. Ich habe oft gesagt, da die Wissenschaft das schnste Denkmal dafr ist, da sich die Freiheit selbst errichtet hat.",
+      "bbox": {
+        "x_pct": 12.953,
+        "y_pct": 5.452,
+        "w_pct": 80.098,
+        "h_pct": 21.9
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich frage jetzt: Was ist eine Ursache? Dieser Begriff war so lange grundlegend in der Wissenschaft. Worin besteht ihre Wirksamkeit? Wie wirkt die Ursache? Man sagt oft, die Ursache sei ein Phnomen, das immer vor einem anderen Phnomen geschieht. Dieses stndige Vorher-Sein sei ein Zeichen des Ursache-Seins. Aber das stimmt nicht. Sie knnen sehr gut an zwei Phnomene denken, die immer stattfinden, und von denen das erste nicht die Ursache des zweiten ist. Wenn Sie das denken knnen, was wrden Sie sagen, worin der Unterschied zwischen dem Phnomen A, das immer vor einem Phnomen B kommt, zu einem Phnomen A, das wirklich eine Ursache ist, besteht? Wenn beide vorher geschehen, was ist dann der Unterschied, der erlaubt zu sagen, es ist eine Ursache? Ich wei, was Sie denken. Sie denken an eine Wirkung der Ursache, sonst wre die Ursache ohne Wirkung, sie ist einfach vorher. Aber fr was fr eine Wirkung? Haben wir eine Vorstellung von dieser Wirkung? Knnen wir das auffassen? Und noch eine andere Frage: Worin besteht die Verbindung zwischen einem mathematischen Gesetz, das einen physikalischen Proze darstellt, und den Phnomenen, die es darstellt? Wie hngt das zusammen? Worin besteht die Verbindung zwischen dem mathematischen Ausdruck und dem tatschlichen Geschehen? Wei man das? Versteht man das?",
+      "bbox": {
+        "x_pct": 12.868,
+        "y_pct": 27.245,
+        "w_pct": 80.233,
+        "h_pct": 37.286
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dann es die berhmten Begriffe von denen wir nicht wissen, was sie sind. Raum  im praktischen Leben wissen wir sehr gut, was das ist. Aber was ist Raum? Was ist Zeit? Sie kommen in den mathematischen Formeln der Wissenschaft vor, aber was sind sie? Und was ist Geschwindigkeit? Das alles kann man messen, aber was ist es? Man kann auch fragen, welche Rolle der Wissenschaftler spielt, der da beobachtet, und die Art, wie er etwas heranzieht, wie er die Dinge empfindet, und welche Vorstellungen er hat. Wie ist das zu verstehen? Vielleicht hilft es uns zu verstehen, wie sehr wir nicht verstehen, wenn wir sehen, da Einstein selbst in seinen Formeln, im Herz seiner Messungen, entdeckt hat: Ich",
+      "bbox": {
+        "x_pct": 12.904,
+        "y_pct": 64.581,
+        "w_pct": 79.902,
+        "h_pct": 19.959
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and running header not separated into page_header/page_footer roles in original extraction.",
+    "Text content extraction contains broken words/characters (e.g. '50 lange' vs 'so lange', 'Wissenscha' vs 'Wissenschaft')."
+  ],
+  "doc_id": "2990",
+  "page": 51,
+  "elapsed_seconds": 9.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

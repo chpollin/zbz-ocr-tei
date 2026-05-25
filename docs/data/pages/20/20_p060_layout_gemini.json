@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "58 L'AUTRE VÉRITÉ",
+      "bbox": {
+        "x_pct": 121.22,
+        "y_pct": 82.35,
+        "w_pct": 622.3,
+        "h_pct": 21.05
+      },
+      "changed": true,
+      "change_reason": "Corrected page header/title from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "étaient apodictiques — autrement dit si, étant donné certaines prémisses communes à toutes les intelligences, les résultats des problèmes philosophiques existaient d'avance quelque part, tout en nous restant cachés, comme les lois scientifiques qui ne sont pas moins agissantes avant leur découverte qu'après — il n'y aurait plus place dans la philosophie pour la liberté. Si la philosophie implique décision et liberté, les défauts scientifiques que révèle effectivement son histoire sont des défauts nécessaires.",
+      "bbox": {
+        "x_pct": 11.551,
+        "y_pct": 12.898,
+        "w_pct": 76.25,
+        "h_pct": 27.874
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et il ne faudrait pas croire que je défende ici une conception particulière de ce que devrait être la philosophie; au contraire, je m'efforce de décrire la philosophie telle qu'elle se fait en réalité.",
+      "bbox": {
+        "x_pct": 11.446,
+        "y_pct": 41.182,
+        "w_pct": 76.16,
+        "h_pct": 10.458
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous pouvons comprendre maintenant de quelle nature est l'intérêt que gardent pour nous les théories philosophiques du passé, même quand elles se sont révélées fausses aux yeux de la science. Ce n'est pas une valeur de vérité théorique que nous y cherchons, puisque celle-ci n'y est pas et que nous le savons. Or, nous avons vu que la philosophie a deux faces dont l'une est théorie et l'autre est décision. Puisque la vérité cherchée ne se trouve pas du côté théorie, il faut supposer qu'elle est du côté décision. On la reconnaît à la cohésion qu'elle maintient autour du centre d'un système, à un caractère indémontrable de fidélité, d'authenticité, de « ça-va-sans-dire ». Ici encore, rien ne sert d'objecter qu'il est commode de renoncer à une",
+      "bbox": {
+        "x_pct": 11.295,
+        "y_pct": 51.22,
+        "w_pct": 76.401,
+        "h_pct": 38.742
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number and title '58 L'AUTRE VÉRITÉ' were missing from the provided input JSON.",
+    "The OCR text content was incomplete and truncated in the provided initial detection."
+  ],
+  "doc_id": "20",
+  "page": 60,
+  "elapsed_seconds": 4.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

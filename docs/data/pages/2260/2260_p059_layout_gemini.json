@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "chacun avec sa propre présence à son un et à son avenir. fête, unique passé et à son avenir.",
+      "bbox": {
+        "x_pct": 10.582,
+        "y_pct": 11.329,
+        "w_pct": 65.139,
+        "h_pct": 6.384
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est qu'en vérité, avant et après l'heure zéro, toute heure a été et sera l'heure zéro. Toute heure mérite d'être fêtée, même dans le travail, même par le travail, par tous ensemble et par chacun seul, en tant qu'elle est dernière et première, en tant qu'elle est la seule où chacun de nous a un rendez-vous réel avec les autres et avec le monde, la seule réelle pour sa liberté.",
+      "bbox": {
+        "x_pct": 10.218,
+        "y_pct": 18.587,
+        "w_pct": 65.867,
+        "h_pct": 25.399
+      },
+      "changed": true,
+      "change_reason": "Corrected heavily garbled OCR content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'heure zéro, presque nulle et totale, comme la liberté elle-même. Recueillons-la, entre le passé usé et l'avenir inconnu, fêtons-la, jurons-lui et jurons-nous de la retrouver, et de la multiplier en 1972, au fil du temps qu'on prétend banal, qu'on prétend ordinaire, et dont chaque heure pourtant n'attend que notre libre présence pour être, elle aussi, une heure zéro.",
+      "bbox": {
+        "x_pct": 10.388,
+        "y_pct": 45.139,
+        "w_pct": 65.733,
+        "h_pct": 25.029
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bonne année!",
+      "bbox": {
+        "x_pct": 14.339,
+        "y_pct": 72.22,
+        "w_pct": 20.812,
+        "h_pct": 2.489
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "61",
+      "bbox": {
+        "x_pct": 72.6,
+        "y_pct": 82.5,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text quality in input was poor and required significant manual correction.",
+    "Page number 61 was missing from the initial region list."
+  ],
+  "doc_id": "2260",
+  "page": 59,
+  "elapsed_seconds": 4.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

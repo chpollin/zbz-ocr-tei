@@ -1,0 +1,108 @@
+{
+  "doc_id": "110",
+  "page": 143,
+  "image_width": 868,
+  "image_height": 1317,
+  "num_regions": 8,
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 12.2,
+        "y_pct": 10.3,
+        "w_pct": 22.2,
+        "h_pct": 1.2
+      }
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 76.1,
+        "y_pct": 10.3,
+        "w_pct": 3.3,
+        "h_pct": 1.2
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 33.5,
+        "y_pct": 15.5,
+        "w_pct": 24.6,
+        "h_pct": 1.4
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 33.6,
+        "y_pct": 18.5,
+        "w_pct": 24.5,
+        "h_pct": 1.4
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 30.0,
+        "y_pct": 23.0,
+        "w_pct": 31.7,
+        "h_pct": 1.3
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 12.2,
+        "y_pct": 25.8,
+        "w_pct": 67.7,
+        "h_pct": 16.7
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 12.2,
+        "y_pct": 42.7,
+        "w_pct": 67.8,
+        "h_pct": 27.0
+      }
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "",
+      "bbox": {
+        "x_pct": 12.2,
+        "y_pct": 76.8,
+        "w_pct": 67.7,
+        "h_pct": 2.8
+      }
+    }
+  ],
+  "elapsed_seconds": 3.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini-detect",
+  "page_orientation": "portrait",
+  "num_columns": 1,
+  "label_counts": {
+    "page_header": 2,
+    "section_header": 3,
+    "text": 2,
+    "footnote": 1
+  }
+}

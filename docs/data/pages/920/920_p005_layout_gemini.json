@@ -1,0 +1,196 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Concluding Session: A Synopsis",
+      "bbox": {
+        "x_pct": 17.304,
+        "y_pct": 8.36,
+        "w_pct": 30.55,
+        "h_pct": 2.332
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "184",
+      "bbox": {
+        "x_pct": 12.051,
+        "y_pct": 11.348,
+        "w_pct": 3.837,
+        "h_pct": 1.574
+      },
+      "changed": true,
+      "change_reason": "Page number identified as paragraph"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Introduction: The Lord ToDD",
+      "bbox": {
+        "x_pct": 17.474,
+        "y_pct": 11.516,
+        "w_pct": 29.249,
+        "h_pct": 1.552
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Speakers:",
+      "bbox": {
+        "x_pct": 17.685,
+        "y_pct": 14.213,
+        "w_pct": 9.693,
+        "h_pct": 1.771
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SALVADOR E. LURIA",
+      "bbox": {
+        "x_pct": 28.679,
+        "y_pct": 14.162,
+        "w_pct": 19.63,
+        "h_pct": 1.968
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Lord RosENHEIM",
+      "bbox": {
+        "x_pct": 28.541,
+        "y_pct": 16.523,
+        "w_pct": 16.67,
+        "h_pct": 1.793
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FRANZ BÖCKLE",
+      "bbox": {
+        "x_pct": 28.573,
+        "y_pct": 18.754,
+        "w_pct": 15.116,
+        "h_pct": 1.822
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TALCOTT PARSONS",
+      "bbox": {
+        "x_pct": 28.679,
+        "y_pct": 21.013,
+        "w_pct": 17.59,
+        "h_pct": 1.633
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "194 Discussion",
+      "bbox": {
+        "x_pct": 12.505,
+        "y_pct": 23.615,
+        "w_pct": 15.793,
+        "h_pct": 1.749
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "215 Concluding remarks by Lord ToDD",
+      "bbox": {
+        "x_pct": 12.368,
+        "y_pct": 26.166,
+        "w_pct": 39.535,
+        "h_pct": 2.238
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "219 ADOLF WALTER JANN: Farewell address",
+      "bbox": {
+        "x_pct": 12.368,
+        "y_pct": 29.206,
+        "w_pct": 43.446,
+        "h_pct": 1.844
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SECOND PART: PAPERS AND CURRICULA OF THE ACTIVE PARTICIPANTS",
+      "bbox": {
+        "x_pct": 17.336,
+        "y_pct": 37.609,
+        "w_pct": 67.262,
+        "h_pct": 3.55
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Papers",
+      "bbox": {
+        "x_pct": 17.516,
+        "y_pct": 46.086,
+        "w_pct": 7.04,
+        "h_pct": 2.114
+      },
+      "changed": false
+    },
+    {
+      "label": "table",
+      "zbz_tag": "zb_paragraph",
+      "text": "TABLE_OF_CONTENTS_ENTRIES",
+      "bbox": {
+        "x_pct": 12.357,
+        "y_pct": 48.673,
+        "w_pct": 74.419,
+        "h_pct": 38.644
+      },
+      "changed": true,
+      "change_reason": "Updated description text"
+    }
+  ],
+  "score": 30,
+  "num_corrections": 11,
+  "issues": [
+    "Most list entries in the top half were incorrectly labeled as paragraph.",
+    "Page number 184 was labeled as paragraph.",
+    "Section headers were all mislabeled as paragraph/text.",
+    "Table content missing OCR text placeholder."
+  ],
+  "doc_id": "920",
+  "page": 5,
+  "elapsed_seconds": 6.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

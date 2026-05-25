@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "et  celle-ci étant fin et les autres en vue   de cette celle-ci une cause, la cause finale. fin,",
+      "bbox": {
+        "x_pct": 17.857,
+        "y_pct": 13.166,
+        "w_pct": 63.018,
+        "h_pct": 3.743
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle n'est pas du fait   pur mais de Tordre de ce réussir échouer . Cest   dire   qu'elle  implique ",
+      "bbox": {
+        "x_pct": 17.823,
+        "y_pct": 17.031,
+        "w_pct": 68.387,
+        "h_pct": 18.352
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malgré toutes les pluralités internes et externes   que la forme comporte, nous avons qu'elle se suf",
+      "bbox": {
+        "x_pct": 17.857,
+        "y_pct": 35.285,
+        "w_pct": 68.468,
+        "h_pct": 29.863
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "ARISTOTE;   Physique; livre II. aubsi Métaphysique, livre V, II. En la et le   modele des  chobes, à",
+      "bbox": {
+        "x_pct": 17.823,
+        "y_pct": 68.337,
+        "w_pct": 68.502,
+        "h_pct": 4.457
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Physique; II, I",
+      "bbox": {
+        "x_pct": 21.578,
+        "y_pct": 72.916,
+        "w_pct": 13.79,
+        "h_pct": 1.572
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "90 L'ÊIRE ET LA FORME",
+      "bbox": {
+        "x_pct": 17.9,
+        "y_pct": 9.5,
+        "w_pct": 68.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "missing page_header region in input"
+  ],
+  "doc_id": "110",
+  "page": 92,
+  "elapsed_seconds": 5.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

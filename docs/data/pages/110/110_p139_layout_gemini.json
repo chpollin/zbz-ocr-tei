@@ -1,0 +1,85 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME ET L'ESPACE",
+      "bbox": {
+        "x_pct": 14.12,
+        "y_pct": 2.0,
+        "w_pct": 21.05,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified as running header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "137",
+      "bbox": {
+        "x_pct": 78.58,
+        "y_pct": 93.0,
+        "w_pct": 4.14,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified as page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "renciées n'est pas le même, philosophiquement, de yue criti que où nous devons placer   ici (hien qu",
+      "bbox": {
+        "x_pct": 14.005,
+        "y_pct": 13.538,
+        "w_pct": 68.654,
+        "h_pct": 37.206
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pourrait objecter encore Faction de Fhomme Ja nature. Civilisation   matérielle;  technique, conq",
+      "bbox": {
+        "x_pct": 14.074,
+        "y_pct": 52.544,
+        "w_pct": 68.631,
+        "h_pct": 20.372
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc la nature esl bien mode impose avec le plus qui",
+      "bbox": {
+        "x_pct": 16.881,
+        "y_pct": 73.022,
+        "w_pct": 65.593,
+        "h_pct": 1.898
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Missing page header region",
+    "Missing page number region",
+    "Text content inaccuracies in existing regions",
+    "Needs verification of French hyphenation"
+  ],
+  "doc_id": "110",
+  "page": 139,
+  "elapsed_seconds": 8.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content for accuracy": 2,
+    "ADDED": 2
+  }
+}

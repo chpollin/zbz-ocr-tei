@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du ((même) sans tude étale pléni- tude étale.",
+      "bbox": {
+        "x_pct": 15.858,
+        "y_pct": 13.818,
+        "w_pct": 56.917,
+        "h_pct": 4.227
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais alors l'homme étouffe, faute de possible. il lui manque le manque, et donc le sens, l'air respirable de la pensée et de la vie. Il étouffe dans l'ennui.",
+      "bbox": {
+        "x_pct": 15.71,
+        "y_pct": 17.882,
+        "w_pct": 57.172,
+        "h_pct": 8.831
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors to match source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne lui reste plus alors qu'à se réfugier dans ce temps qui est le sien, auquel il ne comprend rien et qui seul lui permet de vivre ses contradictions : ce temps avec son passé qui persiste ; avec son futur qui lui permet d'être un sujet libre avant de devenir un passé ; avec son présent, cœur du temps qui s'écoule, mais qui lui-même ne s'écoule pas. Ce temps, cette opacité qu'il vit au long de ses jours dans son évidence, dans son impossibilité, avec son immanence transparente qui exclut et implique une inconcevable éternité.",
+      "bbox": {
+        "x_pct": 15.604,
+        "y_pct": 28.839,
+        "w_pct": 57.352,
+        "h_pct": 24.448
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/hallucinated OCR text to match actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Y vivre et y faire l'histoire, dans ce présent seul réel et aussi inconcevable que l'éternité même. Dans la petite durée où se joue sa peine, son bonheur, sa liberté, son être, et qui l'accompagne jusqu'à la mort.",
+      "bbox": {
+        "x_pct": 15.498,
+        "y_pct": 52.878,
+        "w_pct": 57.383,
+        "h_pct": 11.284
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai parlé jusqu'ici que des rapports que l'homme comme tel entretient, consciemment ou inconsciemment, avec le temps tel qu'il le vit, - même s'il",
+      "bbox": {
+        "x_pct": 15.646,
+        "y_pct": 65.797,
+        "w_pct": 57.235,
+        "h_pct": 7.032
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "79",
+      "bbox": {
+        "x_pct": 677.0,
+        "y_pct": 776.0,
+        "w_pct": 25.0,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was highly inaccurate.",
+    "Page number missing from initial detection.",
+    "Several text blocks were merged or misread by the OCR engine."
+  ],
+  "doc_id": "2780",
+  "page": 78,
+  "elapsed_seconds": 4.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

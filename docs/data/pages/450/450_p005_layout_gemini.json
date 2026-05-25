@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "riquement> parce 'en ralit une telle rduction n'est pour ainsi dire jamais radicale. Le sociologue ou le rvolutionnaire, mme s'ils viennent d'un autre Etat, restent trop essentiellement des citoyens pour ne pas participer dans une certaine mesure  l'existence civique constitutive de l'Etat pour ses propres citoyens.)  Du dedans, pour le citoyen, l'Etat est davantage ce qu'il reprsente que ce qu'il a ralis, davantage projection vers l'avenir que donne de fait.",
+      "bbox": {
+        "x_pct": 12.973,
+        "y_pct": 9.573,
+        "w_pct": 66.664,
+        "h_pct": 15.687
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "6 Les socits et les Etats sont, tout comme l'homme lui-mme, indissolublement charnels et spirituels, donnes de fait et transcendance  l'uvre dans le prsent. D'o leur ambiguit essentielle, pour qui essaye d'y voir clair. D'o aussi les ambiguits de la politique.",
+      "bbox": {
+        "x_pct": 13.03,
+        "y_pct": 25.601,
+        "w_pct": 66.608,
+        "h_pct": 8.188
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit se dvelopper,  la faveur de cette ambiguit, des thmes de propagande, progressistes ou conservateurs. Ainsi les progressistes argumentent souvent comme si ce qui vient aprs tait ncessairement meilleur que ce qui vient avant, alors que les conservateurs tentent souvent de justifier ce qui est comme tant de par la volont de Dieu. Les premiers veulent ainsi emporter l'adhsion du grand nombre dans la lutte qu'ils mnent contre ce qui est, les seconds dans celle qu'ils mnent contre ce qui sera peut-tre. Les premiers semblent s'opposer  l'Etat, les seconds s'identifier  lui. Or si la ralit charnelle d'une socit, d'un Etat, est en fait donne, les tendances au changement, qui transcendent cette ralit, ne le sont pas moins. Il n'y a aucune raison pour que les conservateurs refusent d'admettre que ces tendances au changement sont elles aussi, comme le reste, de par la volont de Dieu.  Inversement, rien ne permet aux progressistes de valoriser un futur totalement indtermin. Ils ne font que projeter dans l'avenir l'adhsion immobiliste que les conservateurs donnent au prsent. Les uns et les autres confondent donn et transcendance, les conservateurs en rduisant la transcendance au donn prsent, abolissant ainsi les possibles, les progressistes en transformant la transcendance en un donn futur, dont ils liminent l'indtermination en supprimant le risque.",
+      "bbox": {
+        "x_pct": 13.135,
+        "y_pct": 33.487,
+        "w_pct": 66.64,
+        "h_pct": 42.843
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Paul Valry remarquait dj que l'ordre social repose sur les Choses Vagues. Il dsignait ainsi tout ce qu'une socit impose  ses membres, non par la force seule, ni pour la seule morale, mais par un indissociable mlange des deux. La force des impratifs sociaux rside ainsi le plus souvent dans leur nature mle: chacun des facteurs qui la constituent serait trop faible,  lui seul, et mme,",
+      "bbox": {
+        "x_pct": 13.272,
+        "y_pct": 75.783,
+        "w_pct": 66.583,
+        "h_pct": 12.405
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "117",
+      "bbox": {
+        "x_pct": 76.12,
+        "y_pct": 89.965,
+        "w_pct": 3.49,
+        "h_pct": 1.767
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Severe text truncation in all paragraph regions.",
+    "Page number 117 was not labeled.",
+    "OCR errors in French special characters."
+  ],
+  "doc_id": "450",
+  "page": 5,
+  "elapsed_seconds": 6.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "80",
+      "bbox": {
+        "x_pct": 156,
+        "y_pct": 60,
+        "w_pct": 19,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Identified as page number"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 448,
+        "y_pct": 62,
+        "w_pct": 105,
+        "h_pct": 19
+      },
+      "changed": true,
+      "change_reason": "Identified as page header / author name"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "peut recourir perd son innocence. Il la justifie à la fois par sa source et par sa visée, sa finalité. Il en fait par là du pouvoir.",
+      "bbox": {
+        "x_pct": 15.012,
+        "y_pct": 9.81,
+        "w_pct": 76.042,
+        "h_pct": 4.736
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, il est bien trop simple et trop facile d'opposer radicalement liberté et pouvoir, et de jeter l'anathème, au nom de la liberté, sur toute espèce de pouvoir, classé du côté de la tyrannie. Il y a une relation étroite, et indissoluble, entre pouvoir et liberté. Pas de pouvoir sans liberté, car il n'y a pouvoir que d'un ètre capable de liberté s'exerçant sur d'autres ètres, également capables de liberté. Mais pas de liberté sans pouvoir, car il n'y a de liberté que d'un ètre capable d'agir, d'imprimer sa marque volontaire dans l'unique réalité donnée à tous. Même le refus de tout pouvoir (par exemple sur le modèle chrétien pur) ne prend son sens que s'il y a du pouvoir.",
+      "bbox": {
+        "x_pct": 14.931,
+        "y_pct": 14.24,
+        "w_pct": 76.192,
+        "h_pct": 24.744
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit donc qu'avoir du pouvoir, ce n'est pas seulement une nécessité pour tout homme du fait qu'il doit mener sa « lutte pour la vie », son « struggle for life », mais aussi une nécessité pour qu'il puisse protéger autrui, lui garantir sa protection (le contraire serait le fameux « Je n'y peux rien », où la liberté abdique dans l'irresponsabilité), et même assurer, garantir le fonctionnement de l'ensemble social où il vit. Pensons à la situation du petit enfant, son misonéisme, son attachement éperdu à la répétition des rites quotidiens et même des histoires qu'on lui raconte et où il refuse toute variante. Pensons à ses peurs, à ce qu'on perçoit dans ses cris de l'imminence toujours possible d'une menace, d'un abandon, ou simplement d'une interruption. Les parents tutélaires ont le pouvoir d'assurer que « ça continue ». --- Il est proprement absurde et barbare de traduire une telle constatation en idéologie conservatrice. Le père, la mère ont du pouvoir parce que l'enfant --- plus inachevé que n'importe quel petit d'une autre espèce animale, impuissant, livré --- « reconnaît » par son cri qu'il est, comme disait Heidegger, « jeté » dans un monde dont il n'est maître en aucune façon, où il n'a aucun pouvoir.",
+      "bbox": {
+        "x_pct": 14.931,
+        "y_pct": 38.868,
+        "w_pct": 76.076,
+        "h_pct": 42.62
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Du temps où les hommes n'étaient pas assurés du retour du jour ou de celui des saisons, ils attribuaient à une divinité tutélaire, ou à un sorcier, le pouvoir de veiller à ce retour. Maintenant nous comptons que le monde physique fonctionne par lui-même, et il",
+      "bbox": {
+        "x_pct": 15.046,
+        "y_pct": 81.215,
+        "w_pct": 75.613,
+        "h_pct": 9.14
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content"
+    }
+  ],
+  "score": 65,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was poor, requiring significant manual correction.",
+    "Page number and running header were incorrectly labeled as paragraphs."
+  ],
+  "doc_id": "1530",
+  "page": 8,
+  "elapsed_seconds": 6.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

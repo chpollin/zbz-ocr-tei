@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "252 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page number and running header incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "impuissance de sa silencieuse misère, offerte en holocauste à un avenir lointain. Et pendant que j'écrivais ce livre, des radiations atomiques se sont multipliées autour de notre boule ronde et la bombe H a fait de grands progrès. On parle même d'une « bombe absolue ».",
+      "bbox": {
+        "x_pct": 11.56,
+        "y_pct": 10.784,
+        "w_pct": 85.613,
+        "h_pct": 10.606
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'aurais sans doute dû l'écrire, ce livre, plus vite, en quelques jours ou en une nuit, d'un seul élan de la réflexion. C'est qu'il n'est pas, certes, un livre d'expert. Maintenant que tant bien que mal je l'ai fini, je vois tout ce que j'aurais dû apprendre pour pouvoir vraiment l'écrire comme il aurait fallu. Il m'a semblé maintes fois que je travaillais comme un ver dans le bois, forant de minces conduits à travers les planches qui séparent des tiroirs superposés, montant, descendant, de l'économique au philosophique, du philosophique à l'économique. Mais chaque fois que je retrouvais l'économique ou même le juridique, les connaissances professionnelles du savant, du juriste, de l'homme d'affaires me faisaient défaut et ma pensée restait désespérément générale, limitée aux principes et aux grandes lignes directrices par sa propre ignorance. D'une autre manière, chaque fois que j'ai écrit les mots « prolétariat », « condition ouvrière », ce fut avec remords. Non pas, comme on le dit si souvent aujourd'hui, par « mauvaise conscience devant Moscou », — celle-là ne m'éffleure pas. Mais ici encore il s'agit d'ignorance : je ne connais pas, pour ne l'avoir pas éprouvée corps et âme à travers la durée, la condition de ceux qui, toutes les vingt-quatre heures, en trois équipes alternées, brisent la croûte des fours d'aluminium, descendent dans les mines, répètent un tout petit geste, toujours le même, près de la machine à tisser; ni même la condition de celles qui se disputent, dans les ateliers de confection, l'embauche qui leur permettra de faire des boutonnières pendant quarante ou cinquante heures par semaine — peut-étre même, avec de la chance, pendant la morte-saison, mais alors à salaire réduit.",
+      "bbox": {
+        "x_pct": 11.24,
+        "y_pct": 21.096,
+        "w_pct": 86.017,
+        "h_pct": 55.936
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR truncation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a dans tous les problèmes théoriques soulevés ici une lourde chair de vie humaine, à travers laquelle la réflexion se meut trop vite, avec une aisance suspecte. Mais que faire dans un monde comme le nôtre où les idées, malgré tout, vraies ou fausses, tendent à s'incarner et à modifier les rapports des choses au point de donner ou d'enlever son prix à la vie, à la vie de chacun et à celle de tous.",
+      "bbox": {
+        "x_pct": 11.602,
+        "y_pct": 76.622,
+        "w_pct": 85.891,
+        "h_pct": 13.217
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page header with page number was captured as text region.",
+    "Major OCR failure in body paragraphs requiring manual reconstruction of text.",
+    "Overlapping and fragmented bounding boxes for paragraph content.",
+    "Extremely low initial quality of extracted text."
+  ],
+  "doc_id": "330",
+  "page": 286,
+  "elapsed_seconds": 6.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,115 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "94",
+      "bbox": {
+        "x_pct": 20.0,
+        "y_pct": 10.0,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top left"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "L'ETRE ET LA FORME",
+      "bbox": {
+        "x_pct": 77.0,
+        "y_pct": 10.0,
+        "w_pct": 11.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header at top right"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dune   partie dun espace est   Tintelligibilité; la forme   scientifique s'empare dune partie dun es",
+      "bbox": {
+        "x_pct": 19.931,
+        "y_pct": 13.113,
+        "w_pct": 68.583,
+        "h_pct": 10.957
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit donc que Ia renciation spatiale elle suppose; mais une différenciation spaliale   radicale; ",
+      "bbox": {
+        "x_pct": 19.896,
+        "y_pct": 24.32,
+        "w_pct": 68.583,
+        "h_pct": 9.339
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De même; la forme implique Tunilé non malgré Texclusion qu'elle impose; mais 4 une exclusion   si ra",
+      "bbox": {
+        "x_pct": 19.85,
+        "y_pct": 33.508,
+        "w_pct": 68.548,
+        "h_pct": 7.547
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "4 une limitalion si emprisonnante; si   dépourvue de   faille; qu'elle supprime toute rélérence à se",
+      "bbox": {
+        "x_pct": 19.85,
+        "y_pct": 41.154,
+        "w_pct": 68.548,
+        "h_pct": 9.241
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La forme non malgré la détermination; mais 4 une délerminalion si   pénétrante   qu'elle est sans ré",
+      "bbox": {
+        "x_pct": 19.781,
+        "y_pct": 50.19,
+        "w_pct": 68.548,
+        "h_pct": 18.55
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La forme   implique Funilé non malgré la   finitude; mais au caractère intégral de cette finitude. E",
+      "bbox": {
+        "x_pct": 19.585,
+        "y_pct": 68.618,
+        "w_pct": 68.583,
+        "h_pct": 5.718
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Added missing running headers and page number which were incorrectly ignored."
+  ],
+  "doc_id": "110",
+  "page": 96,
+  "elapsed_seconds": 6.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

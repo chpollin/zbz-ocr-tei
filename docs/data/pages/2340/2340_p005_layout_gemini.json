@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Erziehung zwischen Resignation und Hoffnung",
+      "bbox": {
+        "x_pct": 17.325,
+        "y_pct": 20.897,
+        "w_pct": 57.268,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/zb_paragraph to page_header as it is the running header of the page."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "91",
+      "bbox": {
+        "x_pct": 72.164,
+        "y_pct": 20.897,
+        "w_pct": 2.21,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header as it is the page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des jungen Menschen, der die Grenzen des Menschseins entdecken, erfahren und anerkennen soll.",
+      "bbox": {
+        "x_pct": 17.325,
+        "y_pct": 23.073,
+        "w_pct": 57.268,
+        "h_pct": 3.022
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and removed redundant fragments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine solche Anerkennung bringt Sinn für Maß und Selbstbescheidung mit sich. Das Wort \"sich bescheiden\", das mein Lehrer Karl Jaspers so oft ausgesprochen hat, ist heute nicht mehr Mode. Man geht allzu gern auf das unerreichbare, zukünftige Ganze los, und verpaßt dabei die wirklichen, jetzigen, begrenzten Möglichkeiten des Erkennens und der Tat.",
+      "bbox": {
+        "x_pct": 17.22,
+        "y_pct": 26.055,
+        "w_pct": 57.583,
+        "h_pct": 7.372
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gehört also zur Erziehung, in jungen Menschen das Bewußtsein der Sterblichkeit zu steigern, wobei er erfährt, daß echte Freiheit im Menschsein nie einen allmächtigen Beschluß erlassen kann und in ihrer Begrenztheit anerkannt werden muß. Eine solche Anerkennung bedeutet jedoch keineswegs Abdankung oder passive Unterwerfung vor einem gegebenen Tatbestand; sie ist im Gegenteil eine Grundbedingung echter Wirkung in der Geschichte, ohne jede empörte Verzweiflung. Gerade sie kann die Hoffnung retten. Durch sie übt man sich im Menschsein.",
+      "bbox": {
+        "x_pct": 17.349,
+        "y_pct": 33.238,
+        "w_pct": 57.405,
+        "h_pct": 7.258
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hoffnung kann sich also nie auf ein eschatologisches Versprechen in der Zeit stützen. Was sie nährt, ist nicht die Feststellung, daß das Schlimmste nicht unausweichlich ist, daß Glück und Erfolg immer noch Chancen haben, usw. Es geht einfach darum, vor den faktischen Gegebenheiten der Gegenwart das zu tun, was man tun kann, um die künftigen Möglichkeiten zu beeinflussen, weil man an einen Sinn glaubt, – an einen Sinn, der die Zeit nicht beherrscht, sondern transzendiert, weil er dem Reich der Freiheit angehört.",
+      "bbox": {
+        "x_pct": 17.462,
+        "y_pct": 45.724,
+        "w_pct": 57.236,
+        "h_pct": 9.92
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erziehen bedeutet dann, stärker und stärker an die für Menschen mögliche Freiheit zu appellieren, und dazu soll alles beitragen: Studium und Leben, exakte und Geisteswissenschaften, Wissen, Vorbild und Begleitung. Gegen jede systematische Schwarzmalerei der zeitgenössischen, vergangenen und zukünftigen Welt. Gegen Abdankung und Ohnmacht. Gegen eschatologische totale Versprechen. Aus Liebe für das, was ist, und in Anstrengung für das, was sein kann. In Anerkennung dessen, was es heißt, einen Mensch zu sein, und in Freude darüber, als Mensch einer der Zeugen und der Tätigen zu sein des unglaublichen Abenteuers, das \"menschliche Geschichte\" heißt, und in dem auf dem Spiel steht, was uns unbegreiflich bleibt.",
+      "bbox": {
+        "x_pct": 17.542,
+        "y_pct": 56.5,
+        "w_pct": 57.18,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Captured additional paragraph text missing from the original scan detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "So groß wie das alles sein mag – Erziehung vollzieht sich im Alltag. Das Kind lernt kennen, bewundern, lieben, tun, ändern, ausdrücken. Es erfährt Erfolg und Scheitern, Widerstand und Tod, Grenzen und Hoffnung. Es lernt, seinen Platz zu finden in der Geschichte der Menschen.",
+      "bbox": {
+        "x_pct": 17.542,
+        "y_pct": 70.45,
+        "w_pct": 57.18,
+        "h_pct": 5.872
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Running header and page number were identified as paragraph text.",
+    "Significant OCR errors in original text extraction.",
+    "One major paragraph was missing from the initial detection, requiring manual insertion."
+  ],
+  "doc_id": "2340",
+  "page": 5,
+  "elapsed_seconds": 7.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

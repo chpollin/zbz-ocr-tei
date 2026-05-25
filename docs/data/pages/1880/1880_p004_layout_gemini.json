@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "double attitude : Chacun plaidera en faveur de la médicalisation en tant qu'elle protège la vie biologique contre la mort biologique, — mais en même temps, on multipliera les mises en garde contre une médicalisation qui empièterait sur la dignité d'une vie humaine.",
+      "bbox": {
+        "x_pct": 7.116,
+        "y_pct": 4.068,
+        "w_pct": 89.072,
+        "h_pct": 9.274
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts to match source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or la dignité de l'être humain réside dans le fait qu'il est capable de liberté responsable, ce qui implique qu'il ne saurait se démettre en soumettant cette liberté à des techniques psychologiques, sociologiques ou pharmaceutiques. Les plus alléchantes promesses de succès ne sauraient l'inciter à se soumettre à des “modes d'emploi”. C'est dans sa capacité de liberté responsable que réside le vrai noyau de sa “créativité” personnelle, dont on parle trop, sans doute. Comme toute vraie créativité, celle-ci n'a rien de commun avec l'arbitraire ; elle correspond au contraire à une nécessité plus profonde — comme celle qui poussait Antigone à braver l'interdiction du roi pour “obéir aux lois non écrites des dieux”. Une telle liberté créatrice, appuyée sur une nécessité profonde, est aussi étrangère que possible aux techniques apprises du plaisir ou du bonheur.",
+      "bbox": {
+        "x_pct": 6.861,
+        "y_pct": 12.764,
+        "w_pct": 89.288,
+        "h_pct": 26.898
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from truncated/corrupted state to full accurate text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De ce point de vue, tout homme a droit à la souffrance qu'il s'est choisie, comme aussi à sa propre mort.",
+      "bbox": {
+        "x_pct": 6.861,
+        "y_pct": 39.167,
+        "w_pct": 88.729,
+        "h_pct": 4.505
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la clarté de ce qui précède n'est qu'apparente. L'homme, en effet, n'est pas liberté seulement : il est l'intersection même de la nature biologique et de sa possible liberté. Il se situe dans l'embrouillamini des deux, de sorte que l'exigence absolue (inconditionnelle) de sa liberté se trouve, dans son exercice concret, soumise à de nombreuses conditions, biologiques, psychologiques, sociales, économiques, politiques. Ici interviennent, à juste titre, médecins, psychologues, sociologues, etc. Ici intervient en effet, légitimement, la médicalisation, destinée à donner le maximum de chances à la liberté responsable en créant les conditions qui lui sont favorables : santé physique et mentale, mise à distance des besoins naturels élémentaires grâce à une certaine sécurité, protection contre toute violence arbitraire, etc.",
+      "bbox": {
+        "x_pct": 6.734,
+        "y_pct": 50.223,
+        "w_pct": 89.034,
+        "h_pct": 24.86
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text layout."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La médicalisation de la vie trouve donc son sens et sa justification au service d'une possible liberté, dont elle s'efforce de réaliser les conditions, mais qui reste au-delà de son champ d'action, et qui dépend toujours de chaque homme lui-même.",
+      "bbox": {
+        "x_pct": 6.353,
+        "y_pct": 84.901,
+        "w_pct": 88.983,
+        "h_pct": 8.795
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "302",
+      "bbox": {
+        "x_pct": 66.861,
+        "y_pct": 94.6,
+        "w_pct": 4.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "OCR output was severely corrupted across all paragraph blocks.",
+    "Page number at bottom left/center was missing in initial detection.",
+    "Paragraphs were fractured by poor OCR processing."
+  ],
+  "doc_id": "1880",
+  "page": 4,
+  "elapsed_seconds": 5.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

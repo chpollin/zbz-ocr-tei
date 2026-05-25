@@ -1,0 +1,87 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Les droits de l'homme 539",
+      "bbox": {
+        "x_pct": 23.314,
+        "y_pct": 8.312,
+        "w_pct": 50.515,
+        "h_pct": 2.218
+      },
+      "changed": true,
+      "change_reason": "The header contains the running title and page number, which should be filtered out as a page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "m&ecirc;me partout. Cela ne signifie nullement que les traditions doivent &ecirc;tre partout d&eacute;truites et que les efforts de l&rsquo;Unesco, par exemple, pour sauver les cultures les plus expos&eacute;es soient vains &mdash; au contraire. Mais il serait illusoire d&rsquo;imaginer que science et technique se d&eacute;veloppent &agrave; c&ocirc;t&eacute; de ces traditions sans rien y changer.",
+      "bbox": {
+        "x_pct": 2.548,
+        "y_pct": 12.365,
+        "w_pct": 71.237,
+        "h_pct": 16.065
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est d&egrave;s lors permis d&rsquo;esp&eacute;rer, &agrave; travers cet apport commun, que les cultures diverses (celle de l&rsquo;Europe comme les autres) sauront &eacute;laborer, chacune &agrave; sa mani&egrave;re, un sens renouvel&eacute; et substantiel de leur libert&eacute; propre et de la libert&eacute; de tous. Ce n&rsquo;est pas l&agrave; t&acirc;che facile, mais elle s&rsquo;impose, d&rsquo;urgence et en profondeur.",
+      "bbox": {
+        "x_pct": 2.607,
+        "y_pct": 27.841,
+        "w_pct": 71.325,
+        "h_pct": 15.505
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Absolu et modestie",
+      "bbox": {
+        "x_pct": 2.651,
+        "y_pct": 47.468,
+        "w_pct": 23.667,
+        "h_pct": 2.385
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Car ce qui nous menace tous, c'est la table rase, la ti&eacute;deur, le vide d'hommes qui ne savent plus qui ils sont. Pour eux, les droits de l'homme ne signifieraient pas libert&eacute;. L'histoire s'enliserait dans les rapports de forces, la mis&egrave;re et l'oppression. Nous l'avons vu : le recours &agrave; l'absolu peut constituer une menace pour les droits de l'homme; mais on ne peut r&eacute;sister &agrave; ce qui menace les droits de l'homme sans recourir &agrave; l'absolu. Et pour que l'absolu ne constitue pas une menace pour les droits, il faut que chacun reconnaisse qu'il ne poss&egrave;de pas l'absolu auquel il se r&eacute;f&egrave;re, et que l'autre aussi se r&eacute;f&egrave;re &agrave; l'absolu.",
+      "bbox": {
+        "x_pct": 2.754,
+        "y_pct": 51.943,
+        "w_pct": 71.134,
+        "h_pct": 26.595
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chacun r&ecirc;ve d'une autorit&eacute; qui serait au-dessus des autorit&eacute;s et ind&eacute;pendante &agrave; l'&eacute;gard de la force, quelle qu'elle soit; d'une Cour de juristes et de sages, lib&eacute;r&eacute;s de toute d&eacute;pendance, dont la seule force serait celle que l'&eacute;ducation universelle aux droits de l'homme lui conf&eacute;rerait dans l'opinion publique. Une &eacute;ducation",
+      "bbox": {
+        "x_pct": 2.99,
+        "y_pct": 77.988,
+        "w_pct": 70.943,
+        "h_pct": 14.19
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "The page header was originally misidentified as section_header."
+  ],
+  "doc_id": "2920",
+  "page": 37,
+  "elapsed_seconds": 5.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

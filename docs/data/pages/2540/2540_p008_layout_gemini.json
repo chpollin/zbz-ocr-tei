@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "schen unwürdig angegriffen worden. Aber die Fließbänder bedeuteten einen großen Fortschritt in der Menge und in der Preisreduzierung der Produkte. Heute sind die Gewerkschaften sicher froh darüber, daß so gut wie jeder Arbeiter in den westlichen Industrieländern ein Auto besitzt. Die Arbeiter wären aber noch lange nicht in den Besitz eines Autos gelangt, wenn es nicht Fließbänder gegeben hätte. Heute sind auch die Fließbänder von der technischen Entwicklung schon weitgehend überholt, und wir freuen uns mit Recht darüber.",
+      "bbox": {
+        "x_pct": 14.948,
+        "y_pct": 7.994,
+        "w_pct": 75.307,
+        "h_pct": 18.786
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte Ihnen noch ein anderes Beispiel geben. In der Vergangenheit traten die Gewerkschaften sowohl gegen die Halbtagsarbeit wie auch gegen die Heimarbeit der Frauen auf: sie verlangten deren Vollbeschäftigung in den Unternehmen, um sie vor physischer und materieller Ausbeutung zu schützen. Heute hingegen stellen sich die Probleme der Kindererziehung und viele andere Aufgaben immer dringlicher, und viele Frauen sind zufriedener, wenn sich ihnen eine Möglichkeit bietet, zu Hause zu sein und trotzdem zu arbeiten. Von daher meine ich, daß die Fakten und die neuen Lebensmöglichkeiten stärker sein werden, als die versteiften Schemata des historischen Klassenkampfes.",
+      "bbox": {
+        "x_pct": 14.57,
+        "y_pct": 26.724,
+        "w_pct": 75.714,
+        "h_pct": 23.094
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Conturen: Wie beurteilen Sie die von den Gewerkschaften erhobene Forderung nach Einführung der 35-Stundenwoche und in welchem sozialen oder soziokulturellen Kontext muß diese Forderung gesehen werden?",
+      "bbox": {
+        "x_pct": 14.541,
+        "y_pct": 50.923,
+        "w_pct": 75.743,
+        "h_pct": 7.254
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Ich bin fest davon überzeugt, daß man im Verlauf der nächsten Jahre die Arbeitszeit kürzen wird. Man wird sie sogar sehr drastisch kürzen, auf längere Sicht unter die 35-Stundenwoche. Aber die entscheidende Frage ist eben, ob und inwieweit man diese in Aussicht stehende beträchtliche Reduzierung der Arbeitszeit unter soziostrukturellen Aspekten vorbereiten soll, damit die Menschen, die in den Genuß dieser gekürzten Arbeitszeit gelangen, mehr menschliche Einheit in sich tragen und nicht außerhalb des Arbeitsprozesses in die unsinnigste und gegenüber sich selbst verantwortungsloseste Konsumation von Zerstreuungsangeboten verfallen.",
+      "bbox": {
+        "x_pct": 14.664,
+        "y_pct": 59.675,
+        "w_pct": 75.809,
+        "h_pct": 22.792
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete OCR text extraction and author name typo (Hersch instead of Herscb)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir kommen jetzt in eine Zeit, wo sehr viele Menschen in den entwickelten Ländern die Möglichkeit haben werden, viel mehr als",
+      "bbox": {
+        "x_pct": 14.636,
+        "y_pct": 82.296,
+        "w_pct": 75.837,
+        "h_pct": 4.541
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete OCR text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "256",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified missing page number region and added to filters."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR output for all paragraphs was severely truncated.",
+    "Typo in author name 'Hersch'.",
+    "Missing bounding box for page number '256' in the provided JSON input.",
+    "OCR text needs complete verification against the source image."
+  ],
+  "doc_id": "2540",
+  "page": 8,
+  "elapsed_seconds": 5.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

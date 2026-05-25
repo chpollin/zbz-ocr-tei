@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est de démocratie que dans la mesure où tout se passe ouvertement, sous les yeux des citoyens. Il faut donc que la presse jouisse d'une indépendance réelle, et se reconnaisse responsable, mais uniquement devant la vérité. Les auteurs qui s'y expriment assument leurs paroles non en tant que représentants d'organisations ou de groupes, mais à titre personnel.",
+      "bbox": {
+        "x_pct": 7.547,
+        "y_pct": 6.084,
+        "w_pct": 83.821,
+        "h_pct": 11.68
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La démocratie exige que soit garanti un domaine où l'esprit vit librement, conserve son indépendance et conquiert son efficacité.",
+      "bbox": {
+        "x_pct": 7.683,
+        "y_pct": 17.258,
+        "w_pct": 82.832,
+        "h_pct": 4.482
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La règle du droit. Jaspers a affronté dans sa réflexion la situation sans précédent créée par la présence de la bombe atomique. Ce qui est sans précédent, c'est la dimension quasi absolue de la menace que la bombe fait peser sur l'homme et sur la vie, menace qui pourrait être à la fois totale et définitive. Tous ceux qui réfléchissent un tant soit peu voudraient que la bombe soit supprimée. Mais cette suppression exigerait un contrôle réciproque entre les Puissances. Comme on ne voit guère comment instaurer ce contrôle dans les conditions actuelles, on se rassure comme on peut : personne n'osera se servir de la bombe ; on n'osera plus faire la guerre; la menace suprême apporte le salut. En attendant, on continue à se faire la guerre, entre petits Etats.",
+      "bbox": {
+        "x_pct": 7.547,
+        "y_pct": 24.824,
+        "w_pct": 83.78,
+        "h_pct": 25.5
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and merged fragmented paragraph structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le point décisif, pour Jaspers, c'est l'instauration d'un contrôle réciproque, non seulement parce qu'on aurait alors le maximum de chances d'exclure le recours à la bombe, mais surtout parce qu'un tel contrôle pourrait préluder au règne du droit sur les nations. En effet, selon Jaspers, seul le règne du droit peut assurer, non une trêve précaire, mais une véritable paix.",
+      "bbox": {
+        "x_pct": 7.276,
+        "y_pct": 47.669,
+        "w_pct": 83.957,
+        "h_pct": 11.714
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il énumère donc les sévères exigences de la paix — et on verra qu'elles sont bien différentes des principes qui inspirent aujourd'hui encore les Organisations internationales chargées de sa sauvegarde — : respect des traités ; renoncement à la souveraineté absolue des Etats (et donc au droit de veto) ; circulation illimitée de l'information, sans aucune censure; chaque Etat est concerné par les affaires intérieures de tous les autres, de sorte que les offenses aux Droits de l'homme puissent être soumises à une autorité juridique supranationale; possibilité de révision de traités et de frontières injustes du passé par une autorité supranationale; consultations au vote secret, garantissant aux peuples la libre disposition d'eux-mêmes.",
+      "bbox": {
+        "x_pct": 7.358,
+        "y_pct": 59.1,
+        "w_pct": 83.97,
+        "h_pct": 22.759
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aujourd'hui, presque tous ces principes sont en fait rejetés. Or on n'aura pas la paix à meilleur compte. Ce que les « politiques » appellent aujourd'hui « paix », ce ne sont que des tentatives pour allonger le répit.",
+      "bbox": {
+        "x_pct": 7.453,
+        "y_pct": 81.774,
+        "w_pct": 83.699,
+        "h_pct": 7.969
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match source image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "59",
+      "bbox": {
+        "x_pct": 87.7,
+        "y_pct": 91.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 6,
+  "issues": [
+    "OCR errors throughout the document",
+    "Missing paragraph consolidation",
+    "Page number not categorized correctly"
+  ],
+  "doc_id": "1520",
+  "page": 65,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

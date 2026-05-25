@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sinnvoll tätig sein heisst auch:",
+      "bbox": {
+        "x_pct": 8.246,
+        "y_pct": 5.313,
+        "w_pct": 18.794,
+        "h_pct": 3.297
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vorwärtsblicken",
+      "bbox": {
+        "x_pct": 10.633,
+        "y_pct": 14.389,
+        "w_pct": 16.37,
+        "h_pct": 1.499
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Verantwortung heisst um sich blicken",
+      "bbox": {
+        "x_pct": 5.688,
+        "y_pct": 57.547,
+        "w_pct": 21.596,
+        "h_pct": 3.246
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription error."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Letztlich geht es um eine Grundhaltung zum Leben. Es geht um die Frage, ob man vorwärts oder rückwärts blicken will. Und letztlich geht es auch um den Optimismus, um den Glauben daran, daß wir im Vorwärtsschreiten – und nur im Vorwärtsschreiten – die Probleme lösen können, die sich in jeder Entwicklung ergeben.",
+      "bbox": {
+        "x_pct": 29.756,
+        "y_pct": 11.376,
+        "w_pct": 65.408,
+        "h_pct": 16.477
+      },
+      "changed": true,
+      "change_reason": "Corrected inaccurate and truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Wobei wir vielleicht nicht vergessen dürfen, dass die Verantwortung beim Vorwärtsschreiten auch etwas mit dem Um-sich-Blicken und dem Zurückblicken zu tun hat. Vielleicht haben wir den Aspekt der Verantwortung in unserem Gespräch etwas schnell ad acta gelegt. Ich bin nicht sicher, daß es ausreicht zu sagen: Ich bin vom Risiko, das ich eingehe, selbst betroffen. Muß man die Verantwortung beim notwendigen Eingehen von Risiken nicht in grösseren Zusammenhängen sehen, im gesellschaftlichen, im staatlichen Rahmen? Vielleicht finden wir in unserer zweiten Runde, die Herr Muheim einleitet, auch darauf einige Antworten.",
+      "bbox": {
+        "x_pct": 29.683,
+        "y_pct": 29.672,
+        "w_pct": 65.408,
+        "h_pct": 31.849
+      },
+      "changed": true,
+      "change_reason": "Corrected inaccurate and truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "26",
+      "bbox": {
+        "x_pct": 60.165,
+        "y_pct": 91.077,
+        "w_pct": 3.123,
+        "h_pct": 2.213
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Transcription of paragraph text was highly inaccurate and truncated.",
+    "Page number was not correctly classified.",
+    "Bboxes for paragraphs included artifacts like noise/fragmented text from surrounding layout."
+  ],
+  "doc_id": "2400",
+  "page": 25,
+  "elapsed_seconds": 6.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

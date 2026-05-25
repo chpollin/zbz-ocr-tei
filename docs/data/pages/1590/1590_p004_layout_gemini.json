@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tions près, dont l'obstination solitaire dans la lucidité et l'indépendance suscite l'admiration et le respect. Elle contribue aussi à expliquer la fulgurante généralisation des modes et la rapide succession des vedettes de la pensée.",
+      "bbox": {
+        "x_pct": 14.918,
+        "y_pct": 4.978,
+        "w_pct": 79.193,
+        "h_pct": 8.877
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents which were mangled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un continent qui s'adonne à l'histoire vit dans le devenir, le changement, la visée. La contestation de ce qui est déjà réalisé y est toujours vigilante. Sous cet angle, le trait commun à l'immense majorité des intellectuels d'aujourd'hui, qui s'affirment contre ce qui est, rejoint une tradition constante de l'Europe. Pourtant ce « contre » actuel semble avoir certains caractères propres. On dirait qu'« être contre » se trouve être désormais la seule forme d'indépendance concevable, la seule voie vers la profondeur, comme s'il n'existait pour réfléchir aucun autre ressort que l'indignation. En outre, on n'est pas contre des réalités déterminées, à abolir ou à transformer : on est contre quelque chose d'indéterminé, de global, de total, qu'on n'arrive même pas à désigner, sinon par un terme signifiant « la globalité » comme telle : on est contre « le système ». A première vue, « le système » désigne un système social. Mais à mieux regarder, on découvre que « le système » englobe tout ce qui n'est pas comme au Jardin d'Eden : l'inégalité, le travail, la contrainte. Finalement : la condition humaine elle-même.",
+      "bbox": {
+        "x_pct": 14.464,
+        "y_pct": 15.915,
+        "w_pct": 79.773,
+        "h_pct": 36.578
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents which were mangled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être verrons-nous mieux le sens, la racine et la portée de ce « contre » global à propos de deux tentations, de portée d'ailleurs bien inégale, auxquelles les intellectuels européens ont été exposés au cours de l'après-guerre : le communisme et le terrorisme.",
+      "bbox": {
+        "x_pct": 14.212,
+        "y_pct": 52.546,
+        "w_pct": 80.076,
+        "h_pct": 8.7
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents which were mangled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans les années qui ont suivi la guerre mondiale, la scène intellectuelle, en Europe occidentale, était aux mains des communistes, entourés de compagnons de route et de sympathisants. C'étaient les pires années du stalinisme, et les informations sur ce qui s'était passé et se passait encore en Europe de l'Est affluaient de tous côtés. Ceux qui refusaient de croire les Allemands lorsqu'ils prétendaient avoir tout ignoré des camps hitlériens de la mort refusaient eux-mêmes de croire aux camps de la mort sibériens. Ils alimentaient la presse « neutraliste », condamnant « l'anticommunisme primaire et viscéral », adhéraient à des sociétés en quête de contacts et de dialogues avec l'Est communiste. Ils rejetaient, bien sûr, sous toutes ses formes, l'Europe",
+      "bbox": {
+        "x_pct": 13.531,
+        "y_pct": 63.192,
+        "w_pct": 80.504,
+        "h_pct": 23.634
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text contents which were mangled."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "50",
+      "bbox": {
+        "x_pct": 13.8,
+        "y_pct": 88.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR extraction for paragraphs was extremely poor and required full replacement.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "1590",
+  "page": 4,
+  "elapsed_seconds": 4.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

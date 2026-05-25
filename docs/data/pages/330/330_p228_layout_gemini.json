@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "194",
+      "bbox": {
+        "x_pct": 12.632,
+        "y_pct": 7.995,
+        "w_pct": 4.123,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 39.5,
+        "y_pct": 8.0,
+        "w_pct": 30.0,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Missing region identified as section header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dépités sont chargés par leurs électeurs de défendre des intérêts locaux, ne s'acquitter de cette tâche. Il ne peut pas gouverner à la place du gouvernement. Là encore la démocratie risque d'être mise en terre par des zélateurs par trop angéliques. Le parlement ne peut pas non plus, sans réduire n'importe quelle politique à l'absurde, se mêler d'accepter ou de refuser isolément telle mesure particulière du plan gouvernemental, mesure qui fait partie de l'exécution du plan et qui est donc du ressort et de la responsabilité de l'exécutif. S'il entre dans cette voie, il en vient forcément à en accepter une, à en refuser une autre, indispensable pourtant à l'efficacité de la première. La prolifération législative risque d'ensevelir tout le prestige de la loi. C'est le plan dans son ensemble, avec ses vastes directives que le parlement peut et doit savoir accepter ou refuser. C'est sa réussite ou son échec que le parlement doit, plus tard, constater, et dont il doit alors tirer les conséquences. Autrement, il sape, il paralyse le pouvoir de l'exécutif, tout en détruisant ses propres compétences essentielles.",
+      "bbox": {
+        "x_pct": 12.159,
+        "y_pct": 10.873,
+        "w_pct": 85.655,
+        "h_pct": 35.945
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il va de soi que le plan gouvernemental doit être soumis au parlement en termes clairs, concrets, soulignant les arêtes et les choix faits parmi les positions adverses. L'exposé nègre-blanc, qui s'enfle autour de valeurs et de thèmes que nul ne conteste, est ici absurde et pourrit tout le fonctionnement démocratique. Malheureusement, une solide tradition enlise gouvernement et parlement dans ces absurdités. Les ministres, à quelque parti qu'ils appartiennent, jouent au plus fin avec le parlement, comme du reste les députés avec leurs électeurs. Les exposés devant le parlement sont en général si vagues — essayant d'endormir l'opposition — que même le « oui » des députés reste plein de réticence et de méfiance. Le résultat est que le parlement tient de plus en plus à contrôler pas à pas le comportement de l'exécutif, et celui-ci ne réussit guère, dès lors, à réaliser le plan d'ensemble qui aurait donné son sens et son efficacité à chacune des mesures envisagées.",
+      "bbox": {
+        "x_pct": 12.354,
+        "y_pct": 46.141,
+        "w_pct": 85.515,
+        "h_pct": 31.283
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, le contrôle au nom duquel l'exécutif se trouve ainsi paralysé s'exerce le plus souvent à faux, précisément parce qu'il exagère son rôle. Les problèmes que l'exécutif doit trancher sont trop complexes, les mesures qu'il doit prendre ont trop de conséquences indirectes, pour que le ministre puisse faire devant les parlementaires un exposé véritablement honnête — j'entends, qui",
+      "bbox": {
+        "x_pct": 12.577,
+        "y_pct": 77.068,
+        "w_pct": 85.501,
+        "h_pct": 12.923
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR artifacts"
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Page number at top left mislabeled",
+    "Section header IDÉOLOGIES ET RÉALITÉ was missing from layout detection",
+    "OCR text content was severely corrupted",
+    "Missing bounding box for header region",
+    "Multiple layout segments overlapping incorrectly or missing due to poor OCR"
+  ],
+  "doc_id": "330",
+  "page": 228,
+  "elapsed_seconds": 8.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

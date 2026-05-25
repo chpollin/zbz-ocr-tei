@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "124",
+      "bbox": {
+        "x_pct": 121.72,
+        "y_pct": 74.0,
+        "w_pct": 34.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 395.0,
+        "y_pct": 74.0,
+        "w_pct": 286.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "soit et qu'il reste Le sens latin du mot partes demande à étre médité. L'expression « parti unique », dont se servent tranquillement de nos jours même des démocrates convaincus, est une absurdité, une contradiction dans les termes. Partes signifie rôle, et il vient du mot qui veut dire partie. Un rôle, dans une pièce de théâtre, n'existe que parmi d'autres ; lorsqu'il n'y a plus qu'un rôle, le jeu cesse. Comme la démocratie, les partis puisent leur légitimité dans une constatation fondamentale concernant les communautés humaines : les hommes ne sont pas d'accord entre eux. Et plus ils pensent de façon autonome, moins ils sont d'accord. On dirait que le vrai ou l'idéal humaine- ment inaccessible de la vie collective, manifeste sa perfection même, l'unité absolue de son exigence, par la multiplicité des formes réfractées, limitées qu'il prend dans les consciences individuelles. C'est bien ici que l'unité exige incarnation, mais du fond d'un infini.",
+      "bbox": {
+        "x_pct": 12.075,
+        "y_pct": 10.401,
+        "w_pct": 85.376,
+        "h_pct": 32.852
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce ne sont donc pas les partis qui, par nature; produisent les divisions, les conflits. Ils les reflètent et les incarnent, en ramenant chacune des prétentions particulières, qui se prétend unique et totale, à une double relativité qui est celle de la condition humaine : relativité par rapport à la prétention du prochain, relativité par rapport à l'unique inaccessible. Un parti ne peut remplir sa fonc- tion qu'à condition de ne représenter, à côté d'autres tendances, qu'une partie de l'opinion publique.",
+      "bbox": {
+        "x_pct": 11.797,
+        "y_pct": 42.959,
+        "w_pct": 85.376,
+        "h_pct": 17.317
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En outre, rappelons-nous, partes signifie rôle. C'est dire qu'un parti ne va pas et ne doit pas aller au fond des choses. Il a une réalité fonctionnelle, non substantielle. Il n'est ni l'ètre du citoyen, ni l'ètre de la société, il permet seulement à l'un d'agir sur l'autre.",
+      "bbox": {
+        "x_pct": 11.602,
+        "y_pct": 59.777,
+        "w_pct": 85.292,
+        "h_pct": 4.51
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les partis se justifient donc de la même manière que la démocratie. Dans la mesure où la démocratie est justifiée, ils le sont aussi. Ils perdent leur raison d'étre dans la mesure où elle disparaît ou perd sa raison d'étre. Ils lui sont indispensables (bien qu'ils paraissent souvent la menacer dans son existence même) car sans eux elle se trouve dépourvue à la fois des divergences qui la rendent nécessaire et des formes qui lui permettent de fonctionner. Comme la démocratie, les partis ne sont pas des institutions idéales ; mais ils ont comme elle cette qualité essentielle de tenir compte, sans en altérer les données génantes, de la condition humaine, et de",
+      "bbox": {
+        "x_pct": 11.462,
+        "y_pct": 67.914,
+        "w_pct": 85.432,
+        "h_pct": 21.123
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Severe OCR degradation in original text segmentation",
+    "Missing running header and page number in detection list"
+  ],
+  "doc_id": "330",
+  "page": 158,
+  "elapsed_seconds": 8.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

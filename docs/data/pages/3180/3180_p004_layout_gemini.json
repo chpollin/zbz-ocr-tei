@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "über Widersprüche nachgedacht hätte wie Hegel. Trotzdem gibt es wahrscheinlich keinen Denker, dem so wenig daran gelegen war, als Resultat einer philosophischen Untersuchung eine Paradoxie oder einen Widerspruch stehen zu lassen. Die Stoßrichtung der Hegelschen Philosophie war, die Paradoxien und Widersprüche in der systematischen Versöhnung, in der Einheit des Begriffs aufzuheben. Heute müssen wir sozusagen gegen die Intention unseres Namenspatrons versuchen, den umgekehrten Weg zu gehen und zu zeigen, inwiefern Paradoxien und Widersprüche letztlich nicht nur ein Ausgangspunkt, sondern auch ein Resultat des philosophischen Bemühens sein können, dürfen, ja – vielleicht müssen.",
+      "bbox": {
+        "x_pct": 9.19,
+        "y_pct": 3.98,
+        "w_pct": 85.412,
+        "h_pct": 26.922
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hegel hat sich insbesondere mit einer Form des Widerspruchs intensiv beschäftigt, nämlich mit der Antinomie, mit jenem Widerspruch also, der nicht nur ein Wider-Spruch zwischen zwei Sätzen oder Aussagen ist, wie wir heute sagen würden, sondern bei dem zugleich gezeigt werden kann, daß beide Sätze oder Aussagen, die sich widersprechen, gleich gut begründet werden können. Das war für ihn der höchstmögliche Ausdruck der Vernunft. Ich zitiere wörtlich aus einer Schrift, die er schon geschrieben hatte, als er hier nach Bamberg kam, nämlich aus der „Differenzschrift“: Dort ist für ihn ist die Antinomie „der höchstmögliche Ausdruck der Vernunft durch den Verstand“, oder anders gesagt: der höchstmögliche Ausdruck der Einheit durch unser intellektuelles Vermögen der Differenzierung, also der Vielheit oder des Unterschiedes. Vielleicht ist es so, daß wir uns deswegen in Paradoxien, Antinomien und Widersprüche verstricken müssen, weil es unser eigener begrifflicher Zugriff ist, der gleichsam wie ein Echo aus dem Resultat dieses Zugreifens heraus widerspiegelt, was wir selber tun, wenn wir Zusammenhänge begrifflicher Art untersuchen und analysieren, nämlich eben: sie in Widersprüche zertrennen und aufgliedern.",
+      "bbox": {
+        "x_pct": 9.25,
+        "y_pct": 32.905,
+        "w_pct": 85.352,
+        "h_pct": 46.785
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun wollen Sie aber – und da haben Sie vollkommen recht – nicht primär hören, was ich dazu zu sagen habe. Ich werde das",
+      "bbox": {
+        "x_pct": 9.49,
+        "y_pct": 81.694,
+        "w_pct": 85.067,
+        "h_pct": 4.645
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "6 G.W.F. Hegel: Differenz des Fichteschen und Schellingschen Systems der Philosophie. In: Werke in 20 Bänden. Bd. 2. Frankfurt a. M., 1986. S. 39.",
+      "bbox": {
+        "x_pct": 12.039,
+        "y_pct": 89.007,
+        "w_pct": 82.909,
+        "h_pct": 2.404
+      },
+      "changed": true,
+      "change_reason": "Added missing footnote number and full text citation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 90.96,
+        "y_pct": 92.51,
+        "w_pct": 2.45,
+        "h_pct": 2.21
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Footnote text was truncated in original detection.",
+    "Page number 27 was not detected initially.",
+    "Paragraph 3 text was inaccurate."
+  ],
+  "doc_id": "3180",
+  "page": 4,
+  "elapsed_seconds": 4.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

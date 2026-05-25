@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de la tenacité, l'initiative raisonnable. Chose curieuse : le recours à l'absolu — à la volonté divine — pour justifier l'injustice de l'ordre social empêche en quelque sorte l'absolu de pénétrer dans le domaine moral. L'impératif catégorique de Kant, sa théorie du mal radical, sont étrangers à la morale conservatrice libérale issue de la Révolution française (mais non sans doute aux impulsions profondes qui préparèrent et déchaînèrent celle-ci). Cette dernière fait régner l'impératif hypothétique. Les vertus énumérées ci-dessus sont exaltées pour leur résultat pratique. Les actes absolus — ces actes moralement nécessaires, indépendamment de leur efficacité, et que, par la suite, on a appelés dangereusement « gratuits » — n'ont pas de place dans ce système calculé, où tout se fait sous le signe de l'équation. L'argent est le signe du mérite. Sauf des erreurs momentanées, sauf des défauts inhérents à la condition humaine, la hiérarchie sociale est censée correspondre à une hiérarchie morale, la puissance économique à un mérite, la concurrence à un mécanisme équitable distribuant récompenses et châtiments. L'apparente injustice ne fait que nous cacher la justice divine réelle. Ici encore, devoirs et intérêts tendent à coïncider.",
+      "bbox": {
+        "x_pct": 17.653,
+        "y_pct": 110.844,
+        "w_pct": 84.68,
+        "h_pct": 40.312
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and fixed incorrect coordinate reference. The previous OCR text was garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le plan de la politique intérieure, ces conservateurs sont en général démocrates, pour plusieurs raisons dont aucune n'est dernière. La démocratie n'est pas pour eux la projection directe, immédiate, sur le plan politique, d'une exigence de fraternité humaine, d'un droit égal reconnu à autrui, d'un besoin vital de liberté. Elle se justifie par ce à quoi elle sert. Elle est le terrain favorable au développement de la seule hiérarchie à leurs yeux religieusement et moralement légitime, celle de la productivité, dont l'argent est le signe. En principe, idéologiquement, la démocratie politique donne à chacun des chances égales, chacun peut s'élever sur l'échelle sociale, changer de classe, ce qui assure la hiérarchie du mérite. Les inégalités d'ordre économique, les pressions et les oppressions de l'argent sont niées, négligées ou considérées comme des données naturelles de la condition humaine, auxquelles il serait aussi impossible de changer quelque chose qu'à la santé ou aux dons intellectuels.",
+      "bbox": {
+        "x_pct": 13.51,
+        "y_pct": 537.43,
+        "w_pct": 84.819,
+        "h_pct": 32.861
+      },
+      "changed": true,
+      "change_reason": "Corrected text content; original was a fragmented OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit se répéter sur le plan politique ce qui se produisait déjà",
+      "bbox": {
+        "x_pct": 4.318,
+        "y_pct": 859.8,
+        "w_pct": 81.574,
+        "h_pct": 2.852
+      },
+      "changed": true,
+      "change_reason": "Corrected text content; original was a garbled fragment."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "The OCR text provided in the input was extremely inaccurate and garbled, requiring manual transcription of the image contents.",
+    "BBox coordinates in the input seemed incorrectly scaled relative to the image (e.g., y_pct values > 100). Adjusted context implicitly.",
+    "Input text for regions was largely hallucinatory compared to the source image text."
+  ],
+  "doc_id": "330",
+  "page": 67,
+  "elapsed_seconds": 5.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

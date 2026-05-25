@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PROPOS SUR L'ÉDUCATION",
+      "bbox": {
+        "x_pct": 62.668,
+        "y_pct": 6.13,
+        "w_pct": 27.653,
+        "h_pct": 1.401
+      },
+      "changed": true,
+      "change_reason": "Header identified as section title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tr¨s occup¨, on ne doit pas laisser s'¨tablir des moments de rel¨che. Lorsque tout le monde est occup¨, on n'y a pas de probl¨mes de discipline. Je n'ai presque jamais eu de probl¨mes de discipline. Il faut dire que l'enseignement ¨tait beaucoup plus facile que de nos jours. Les ¨l¨ves ¨taient diff¨rents. Quand j'entends aujourd'hui une jeune ma¨tresse me raconter que, lorsqu'elle dit ¨ une petite ¨l¨ve : « C¨cile, tu vas ¨tre punie », l'¨l¨ve la regarde d'un air sid¨r¨, met son index sur sa tempe et r¨pond : « non mais, ¨a va pas la t¨te », je dois avouer que ce sont des choses que je n'ai pas v¨cues. Le m¨tier est beaucoup plus difficile aujourd'hui que dans le temps.",
+      "bbox": {
+        "x_pct": 11.538,
+        "y_pct": 9.069,
+        "w_pct": 36.906,
+        "h_pct": 22.098
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. Vous avez souvent affirm¨ que l'enseignement doit ¨viter « l'encyclop¨disme encombrant et viser ¨ d¨velopper les capacit¨s et non le savoir ». Est-ce l¨ un des principes de votre p¨dagogie ?",
+      "bbox": {
+        "x_pct": 11.808,
+        "y_pct": 31.062,
+        "w_pct": 36.691,
+        "h_pct": 7.495
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce sont des choses que je ne dirais pas aujourd'hui, parce qu'elles vont trop dans le sens des clich¨s actuels. Tout le monde est persuad¨ aujourd'hui qu'une t¨te bien faite vaut mieux qu'une t¨te bien pleine. A tel point qu'il semble inutile de mettre quoi que ce soit dans la t¨te. Alors maintenant, je dis le contraire. ¨videmment je reste convaincue qu'il est plus important d'avoir une t¨te bien faite qu'une t¨te pleine. Mais je suis convaincue qu'il n'y a pas de t¨te bien faite dans laquelle il n'y a rien. Les instruments de pens¨e, les exemples, les v¨rifications, etc., on ne peut les mettre en œuvre qu'avec ce qu'on a fait entrer dans sa propre t¨te. Il ne faut rien enseigner sans en faire un objet de pens¨e pour t¨te bien faite, n'importe quel contenu de pens¨e s'y pr¨te. Je dirai la m¨me chose en ce qui concerne le fameux sens critique, dont on parle tant. On ne peut pas le d¨velopper dans le vide. En quoi consiste en effet le sens critique ? A examiner ce qui vous est propos¨ en fonction de certains crit¨res de validit¨ pr¨alables. Pour que le sens critique fonctionne, il faut qu'il se r¨f¨re lui-m¨me ¨ quelque chose. L'opinion selon laquelle il ne faut pas influencer l'enfant, comme si, au d¨part, il ¨tait constitu¨ en personne achev¨e, est absurde. C'est la diversit¨ et le pluralisme des influences qui finissent par cr¨er une personnalit¨. Il y a beaucoup d'absurdit¨s dans les th¨ories p¨dagogiques actuelles.",
+      "bbox": {
+        "x_pct": 11.808,
+        "y_pct": 38.295,
+        "w_pct": 36.906,
+        "h_pct": 44.085
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. Quels principes opposeriez-vous à ces théories ?",
+      "bbox": {
+        "x_pct": 12.167,
+        "y_pct": 81.948,
+        "w_pct": 36.187,
+        "h_pct": 3.082
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JA. On dit maintenant, et dans une certaine mesure on a raison, que tous les enseignants doivent recevoir une formation pédagogique générale.",
+      "bbox": {
+        "x_pct": 12.05,
+        "y_pct": 85.095,
+        "w_pct": 36.601,
+        "h_pct": 2.97
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "181",
+      "bbox": {
+        "x_pct": 85.761,
+        "y_pct": 89.176,
+        "w_pct": 2.215,
+        "h_pct": 1.289
+      },
+      "changed": true,
+      "change_reason": "Marked as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Several instances of poor OCR conversion detected.",
+    "Page number misclassified as text.",
+    "Section header PROPOS SUR L'ÉDUCATION misclassified as text."
+  ],
+  "doc_id": "2410",
+  "page": 2,
+  "elapsed_seconds": 8.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

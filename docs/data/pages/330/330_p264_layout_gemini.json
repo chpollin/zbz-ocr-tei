@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "230",
+      "bbox": {
+        "x_pct": 126.0,
+        "y_pct": 79.0,
+        "w_pct": 33.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as header/footer, not text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 398.0,
+        "y_pct": 77.0,
+        "w_pct": 213.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Se rclame,  la fois l'panouissement des ingalits naturelles entre les hommes et celui de leur diversit la plus riche.",
+      "bbox": {
+        "x_pct": 12.354,
+        "y_pct": 10.873,
+        "w_pct": 85.418,
+        "h_pct": 4.84
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pouvoirs si tendus que l'individu ne peut que s'atrophier sous son crasante tutelle. La rponse se trouve dj dans ce qui prcde. Je ne pense pas, pour ma part, que la seule manire, ni mme la meilleure, de remettre les moyens de production aux mains de la collectivit soit l'tatisation ou la nationalisation. Le systme mixte dont il a t question plus haut me parat, pour une srie de raisons, indispensable. Il est mauvais que l'tat, mme dmocratiquement contrl, dispose de tous les ressorts de la vie collective, car il appelle alors la poigne du dictateur. Il est mauvais que l'organisme conomique devienne norme, monolithique, au point de dfier par ses dimensions et son abstraction le contrle des individus qui s'y trouvent insrs. Il est mauvais que la bureaucratie tatique devienne trop lourde. Il est mauvais que, libre de son patron individuel visible, l'entreprise en vienne  dpendre de dcisions prises encore plus loin de l'ouvrier qui risque alors, mme s'il est mieux pay et rassur par des lois de prvoyance sociale, de se sentir encore plus alin  lui-mme. Certes, un secteur tatis est ncessaire. Mais tout ce qui peut tre organis de faon cooprative doit l'tre, et de la faon la plus dcentralise possible. Collectivisation des moyens de production n'est pas synonyme d'tatisation ou de nationalisation. Au contraire, les grandes coopratives peuvent reprsenter dans un pays des forces capables d'quilibrer, et par l de maintenir en vie, la puissance des organes d'tat.",
+      "bbox": {
+        "x_pct": 12.298,
+        "y_pct": 21.569,
+        "w_pct": 85.474,
+        "h_pct": 49.706
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'en arrive  la troisime accusation : le socialisme, dit-on, veut instaurer un rgime de planification totale, o une scurit collective, gnralise, mettrait fin  tout got du risque,  toute initiative,  toute vie enfin. Bref, les bourgeois reprochent au socialisme de vouloir trop bien raliser leur propre idal,  non celui de la bourgeoisie conqurante du premier capitalisme, mais celui de la bourgeoisie conservatrice, assise sur des positions hrites et ne demandant qu' durer.",
+      "bbox": {
+        "x_pct": 12.298,
+        "y_pct": 70.677,
+        "w_pct": 85.195,
+        "h_pct": 16.604
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text to match image content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR for paragraphs was severely truncated.",
+    "Page number and header were incorrectly tagged as text.",
+    "Punctuation and special characters were malformed in input."
+  ],
+  "doc_id": "330",
+  "page": 264,
+  "elapsed_seconds": 9.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

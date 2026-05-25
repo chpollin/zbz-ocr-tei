@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et il lutte contre lui (c'est ce qui fait de lui un homme). Cette lutte fait de l'homme un animal juridique et politique. C'est à cause du mal et pour en limiter les dégâts qu'existent les contraintes du droit et de la cité, - choses spécifiquement humaines.",
+      "bbox": {
+        "x_pct": 13.239,
+        "y_pct": 9.761,
+        "w_pct": 66.398,
+        "h_pct": 8.034
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/broken text extraction to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ceux qui refusent la politique par besoin d'une plus grande pureté choisissent en fait l'innocence de la bête, pour avoir voulu faire l'ange. Mais bon gré mal gré, ils restent des hommes, et donc coupables.",
+      "bbox": {
+        "x_pct": 13.215,
+        "y_pct": 17.761,
+        "w_pct": 66.454,
+        "h_pct": 8.148
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/broken text extraction to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les anarchistes, lorsqu'ils comptent sur l'excellence de la nature humaine pour abolir le droit et l'Etat, sont logiques avec eux-mêmes. Sans le mal, il n'y aurait ni droit, ni Etat, ni politique.",
+      "bbox": {
+        "x_pct": 13.215,
+        "y_pct": 25.812,
+        "w_pct": 66.342,
+        "h_pct": 6.154
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/broken text extraction to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "4. Tout régime politique, quel qu'il soit, est excellent si l'on postule l'excellence des dirigeants. Mais, nous l'avons vu, le mal existe dans l'homme, en tant qu'amour insuffisant du prochain. Le pouvoir est, d'une part, favorable à la croissance du mal chez le gouvernant; il risque, d'autre part, d'en accroître démesurément les effets. C'est pourquoi le problème politique se pose aussitôt en ces termes: comment assurer à la fois l'efficacité du pouvoir et la rigueur du contrôle auquel il doit rester soumis?",
+      "bbox": {
+        "x_pct": 13.11,
+        "y_pct": 31.818,
+        "w_pct": 66.664,
+        "h_pct": 16.313
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/broken text extraction to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le problème du contrôle du pouvoir se pose dès que la force dont il dispose n'apparaît plus comme le prolongement naturel ou providentiel de la personne du gouvernant. A partir de ce moment, le gouvernant est contraint de justifier l'emploi qu'il fait de la force: il invoque des raisons morales, il revendique l'autorité, et pour la fonder il en appelle lui-même au contrôle des gouvernés, à leur approbation.",
+      "bbox": {
+        "x_pct": 13.135,
+        "y_pct": 47.88,
+        "w_pct": 66.583,
+        "h_pct": 14.325
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/broken text extraction to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est alors que naît, à proprement parler, la «politique intérieure» d'un Etat.",
+      "bbox": {
+        "x_pct": 13.376,
+        "y_pct": 61.977,
+        "w_pct": 66.293,
+        "h_pct": 3.852
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/broken text extraction to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "5. L'Etat fait figure tantôt de Personne sacrée (lorsqu'on l'identifie à la Patrie), tantôt de machine bureaucratique anonyme (lorsqu'on l'identifie à l'administration). Il ne mérite ni cet excès d'honneur, ni cette indignité. Etant un «corps social», il est comme tous les corps sociaux une réalité hybride, emmêlant confusément un ordre de faits et un ordre de valeurs.",
+      "bbox": {
+        "x_pct": 13.191,
+        "y_pct": 66.12,
+        "w_pct": 66.503,
+        "h_pct": 11.829
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/broken text extraction to match document content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "116",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 90.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified missing page number region as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "Most text regions had broken, truncated, or incomplete text extraction results.",
+    "Page number 116 was missed by the initial scan."
+  ],
+  "doc_id": "450",
+  "page": 4,
+  "elapsed_seconds": 6.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 43.6,
+        "y_pct": 5.4,
+        "w_pct": 12.8,
+        "h_pct": 1.4
+      },
+      "changed": true,
+      "change_reason": "Page number identified as header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA FORMATION PERMANENTE PAR FIDELITE A LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 8.524,
+        "y_pct": 15.889,
+        "w_pct": 43.226,
+        "h_pct": 3.741
+      },
+      "changed": true,
+      "change_reason": "Grouped multi-line title into single section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Hersch",
+      "bbox": {
+        "x_pct": 11.185,
+        "y_pct": 22.446,
+        "w_pct": 7.661,
+        "h_pct": 1.499
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mesdames et Messieurs,",
+      "bbox": {
+        "x_pct": 8.387,
+        "y_pct": 28.067,
+        "w_pct": 26.185,
+        "h_pct": 1.693
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "je voudrais d'abord vous remercier pour l'invitation à vous parler aujourd'hui. Je commence à prendre l'habitude d'être invitée à parler des choses que je connais pas à des gens qui les connaissent. C'est une situation un peu paradoxe.",
+      "bbox": {
+        "x_pct": 8.492,
+        "y_pct": 30.274,
+        "w_pct": 78.5,
+        "h_pct": 8.25
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aujourd'hui, je dois avouer, que ce qu'on me demande n'est pas tout à fait clair dans mon esprit. Il s'agit avant tout - si je comprends bien - de défendre la formation permanente, la nécessité de continuer à se former pendant toute sa vie, et cela non pas spécifiquement en médecine, mais en général. Or, cela me paraît si évident que je n'ai pas grand' chose à dire à ce sujet.",
+      "bbox": {
+        "x_pct": 8.411,
+        "y_pct": 39.47,
+        "w_pct": 78.71,
+        "h_pct": 12.754
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, l'être humain est ainsi fait qu'il y a en lui quelque chose qui veut continuer à se développer aussi longtemps qu'il vit. Ceux qui s'arrêtent en route, par paresse ou parce qu'ils s'engourdissent, ne savent pas qu'ils font leur propre malheur, parce qu'ils se condamnent à l'ennui. Quand on cesse de se développer, on s'ennuie. L'être humain a besoin d'aller plus loin. Bien entendu, à une époque comme la nôtre, c'est particulièrement évident, puisque le monde ne cesse de changer sous tous ses aspects, dans tous les domaines, et que, par conséquent, celui qui cesse de se développer dort en quelque sorte hors du présent. Il n'affronte plus un monde réel, il végète dans le monde de son souvenir, il n'est plus présent à un monde actuel.",
+      "bbox": {
+        "x_pct": 8.121,
+        "y_pct": 53.136,
+        "w_pct": 78.952,
+        "h_pct": 25.673
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, une vraie formation permanente se réalise nécessairement dans certains domaines donnés. Non pas qu'on ne puisse",
+      "bbox": {
+        "x_pct": 7.823,
+        "y_pct": 79.721,
+        "w_pct": 77.524,
+        "h_pct": 4.048
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 5,
+  "issues": [
+    "Initial parsing fragmented the main title into individual words.",
+    "OCR text contained several errors that required manual correction.",
+    "Page number at the top identified as text.",
+    "Section header identification was inconsistent."
+  ],
+  "doc_id": "2230",
+  "page": 1,
+  "elapsed_seconds": 5.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

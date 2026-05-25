@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "je dis cela avec beaucoup de précaution. Et c'est peut-être ce présent épaissi d'un certain passé et d'un certain avenir, doué d'une certaine durée, qui peut le mieux, dans le vécu des hommes, figurer une miniature d'éternité.",
+      "bbox": {
+        "x_pct": 27.405,
+        "y_pct": 13.63,
+        "w_pct": 57.627,
+        "h_pct": 11.169
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a tendance à imaginer l'éternité comme un très, très long temps, un temps que l'on prolonge dans le passé et dans l'avenir aussi loin qu'on le peut, et même au-delà. Cette image n'est pas adéquate. Elle ne suggère pas l'éternité, mais plutôt le temps... et encore le temps... Tandis que ce présent qui dure devient pour ainsi dire une une espèce de miniature d'éternité.",
+      "bbox": {
+        "x_pct": 27.405,
+        "y_pct": 24.718,
+        "w_pct": 57.479,
+        "h_pct": 17.498
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est sans doute grâce à cette miniature que les hommes ont pu inventer, dans la musique, une mélodie. La mélodie, en effet, exige la durée. Il faut que le passé se retrouve dans le présent, et que le futur y soit attendu. C'est même en cela que consiste la mélodie, et elle n'est possible que parce que nous avons l'extraordinaire capacité d'imaginer, et même, d'une certaine manière, de vivre cette espèce de miniature dont je viens de parler. C'est ce qui permet à la musique d'être à la fois libre et nécessaire, à la fois imprévisible et ne pouvant être que telle qu'elle est. En cela la musique s'apparente à la catharsis de la tragédie grecque, à cette fin de tragédie qui résout, non pas au sens",
+      "bbox": {
+        "x_pct": 27.405,
+        "y_pct": 42.028,
+        "w_pct": 57.627,
+        "h_pct": 31.235
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "62",
+      "bbox": {
+        "x_pct": 27.405,
+        "y_pct": 74.8,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Extracted page number and assigned correct filter label."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was significantly truncated in two paragraphs.",
+    "Page number at bottom left was missing from original annotation and should be filtered."
+  ],
+  "doc_id": "2780",
+  "page": 61,
+  "elapsed_seconds": 3.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

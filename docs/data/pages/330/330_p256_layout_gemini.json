@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "222 ID\u0000\u0000LOGIES ET R\u0000\u0000ALIT\u0000\u0000",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The page header 222 ID\u0000\u0000LOGIES ET R\u0000\u0000ALIT\u0000\u0000 was missing from the extraction and must be marked as _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tivit\u0000, parfois un fanatisme allant jusqu'\u0000 l'hyst\u0000rie et o\u0000 les faits n'ont plus de droits. De l\u0000, en grande partie, en Occident, le succ\u0000s de la propagande communiste, succ\u0000s dont, dans ce sens, les mouvements socialistes sont en partie responsables. Pour avoir manqu\u0000 du courage et de l'esprit d'invention qui auraient permis au prol\u0000tariat d'int\u0000grer dans sa lutte \u0000mancipatrice l'am\u0000lioration de son sort et l'accroissement de ses droits, ils ont trop souvent maintenu une phras\u0000ologie d\u0000su\u0000te, sans contact avec la situation r\u0000elle, pr\u0000tendant \u0000 une coh\u0000rence et exigeant une fid\u0000lit\u0000 ind\u0000pendantes des faits. Or pour le path\u0000tique et la coh\u0000rence, la doctrine communiste l'emportait. Il n'y a pas lieu de s'\u0000tonner si tant de \u0000 for\u0000ats de la faim \u0000 lui ont donn\u0000 leur pr\u0000f\u0000rence. Reconnaissons-le : la volont\u0000 r\u0000volutionnaire d'aujourd'hui ne tend plus en premi\u0000re ligne \u0000 am\u0000liorer les conditions de vie mat\u0000rielles de l'ouvrier. Elle tend \u0000 la suppression du salariat. Il y a l\u0000 une solution de continuit\u0000 \u0000vidente dans l'histoire du mouvement ouvrier : les organismes qui, par leur lutte, ont obtenu en plein r\u0000gime capitaliste des r\u0000sultats consid\u0000rables se trouvent souvent d\u0000sormais du c\u0000t\u0000 conservateur. Supprimer le salariat, c'est d'abord pour eux, dans l'imm\u0000diat, perdre ou risquer de perdre certains avantages acquis. Les conqu\u0000tes ouvri\u0000res, en r\u0000gime capitaliste, c'est d'abord une augmentation des salaires ou des heures de repos. N\u0000gligeant le fait que le niveau de vie mat\u0000riel et la dur\u0000e du travail conditionnent dans une large mesure les possibilit\u0000s spirituelles des hommes, on a pu, profitant d'un malentendu philosophique et d'une volont\u0000 bourgeoise de d\u0000nigrement, qualifier tout cet effort de \u0000 mat\u0000rialiste \u0000. Son sens appara\u0000t cependant sans \u0000quivoque lorsqu'on en arrive \u0000 la phase d\u0000cisive. Supprimer le salariat, donc supprimer le patronat, ce n'est pas simplement supprimer le profit du patron en le distribuant \u0000 tous les travailleurs. La n\u0000cessit\u0000 des r\u0000investissements subsiste et, le luxe patronal une fois aboli, cette \u0000pargne n'enrichirait pas de fa\u0000on appr\u0000ciable la masse prol\u0000tarienne. Supprimer le salariat, c'est avant tout remettre entre les mains des travailleurs le sort de l'entreprise, leur faire porter \u0000 eux les chances et les risques qu'elle comporte et la responsabilit\u0000 des d\u0000cisions \u0000 prendre.",
+      "bbox": {
+        "x_pct": 11.045,
+        "y_pct": 10.365,
+        "w_pct": 85.655,
+        "h_pct": 74.929
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual document image, fixing garbled characters."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici encore, il nous faut prendre garde. Une foule de formules toutes faites risquent de nous imposer une sorte de mythologie l\u0000",
+      "bbox": {
+        "x_pct": 11.462,
+        "y_pct": 84.608,
+        "w_pct": 85.056,
+        "h_pct": 4.813
+      },
+      "changed": true,
+      "change_reason": "Fixed spelling and text truncation to accurately represent the source content."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Page header missing in initial extraction.",
+    "OCR errors throughout paragraph text.",
+    "Text truncation in final paragraph."
+  ],
+  "doc_id": "330",
+  "page": 256,
+  "elapsed_seconds": 6.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et à mesure sur les circonstances changeantes. Tandis que moi, je ne suis pas grand-chose à moi tout seule.",
+      "bbox": {
+        "x_pct": 4.603,
+        "y_pct": 3.605,
+        "w_pct": 79.805,
+        "h_pct": 4.516
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "4./) Vous n'estimez pas que votre plume vaut celle d'un parti ? J.H. — Ah non ! Je fais ce que je peux avec ma plume, mais on ne peut pas la comparer à celle de Raymond Aron, voyons !",
+      "bbox": {
+        "x_pct": 4.518,
+        "y_pct": 8.331,
+        "w_pct": 79.976,
+        "h_pct": 6.589
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. — Même, toutes proportions gardées, par rapport à notre pays ? J.H. — Non, même toutes proportions gardées. Politiquement, en ce moment, je suis quasiment inefficace. Alors, au moins, je paie ma cotisation au Parti socialiste et à travers cette cotisation je participe à la défense du grand nombre des défavorisés qui existent encore malgré tout dans notre pays. Je me console comme cela.",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 15.944,
+        "w_pct": 79.78,
+        "h_pct": 12.258
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and restored missing dialogue prefixes."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. — N'avez-vous pas le sentiment d'une profonde évolution du Parti socialiste, en tout cas sur le plan romand, et peut-être aussi sur le plan suisse ? Vous avez rappelé certaines de vos prises de position minoritaires depuis trente ans. Est-ce que vous ne pensez pas que ce qui a contribué à vous en éloigner, ce sont aussi vos prises de position en mai 1968, votre attachement aux institutions, votre hostilité aux contestataires ? Ou quel diagnostic posez-vous quant à vos rapports avec le Parti socialiste ? J.H. — Vous pourriez ajouter le fait que je me suis exprimée plusieurs fois pour la défense nationale, et que j'ai pris la parole devant de grandes assemblées d'officiers, à plusieurs reprises, ce qui n'est pas tout à fait dans la ligne. Pourtant le Parti socialiste suisse est, théoriquement, toujours pour la défense nationale ; mais c'est là un des aspects de sa politique qui m'a toujours gênée : tout en s'affirmant pour la défense nationale, presque chaque fois qu'il s'agit de prendre une mesure déterminée, il s'exprime contre elle. Il veut bien être pour la défense nationale, mais le moins possible et comme à rebrousse-cœur, si je puis m'exprimer ainsi. Je ne comprends pas cela quand il s'agit d'un pays comme la Suisse.",
+      "bbox": {
+        "x_pct": 4.396,
+        "y_pct": 29.113,
+        "w_pct": 80.012,
+        "h_pct": 34.516
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and restored missing text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "129",
+      "bbox": {
+        "x_pct": 80.3,
+        "y_pct": 94.0,
+        "w_pct": 4.2,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR was very poor with significant truncation and character substitution errors.",
+    "Multiple lines of text in dialogue sections were missing from transcription.",
+    "Page number at bottom right was not captured."
+  ],
+  "doc_id": "2330",
+  "page": 133,
+  "elapsed_seconds": 6.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

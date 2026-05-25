@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LA FORME POUR L'HOMME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header at the top"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, établir une hiérarchie des valeurs, ce n'est pas créer le mode moral une forme   achevée; se ",
+      "bbox": {
+        "x_pct": 11.901,
+        "y_pct": 13.645,
+        "w_pct": 68.433,
+        "h_pct": 34.799
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'il s'agisse de science; 5 de   morale; formes humainement   accessibles   poussent   Fesprit & ch",
+      "bbox": {
+        "x_pct": 11.947,
+        "y_pct": 48.573,
+        "w_pct": 68.514,
+        "h_pct": 24.32
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "131",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 28.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at the top"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/footer components originally, corrected labels for consistency."
+  ],
+  "doc_id": "110",
+  "page": 133,
+  "elapsed_seconds": 5.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lorsqu'il agissait en rival de de Gaulle ; et avec le général de Gaulle lui-même, symbole pourtant à ses yeux de l'unité. Je me sens débordée et coupable au moment de poser la plume.",
+      "bbox": {
+        "x_pct": 10.917,
+        "y_pct": 9.281,
+        "w_pct": 37.404,
+        "h_pct": 5.976
+      },
+      "changed": true,
+      "change_reason": "Combined fragmented text lines into a coherent paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Heureusement, il reste ses livres, dont il faut absolument assurer la présence, indispensable à qui veut comprendre ce que fut la Résistance.",
+      "bbox": {
+        "x_pct": 11.083,
+        "y_pct": 15.152,
+        "w_pct": 36.991,
+        "h_pct": 4.683
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was fragmented/misread by OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "reste aussi, pour ceux qui l'ont connu, le souvenir d'un homme qui, tout en bravant la mort,",
+      "bbox": {
+        "x_pct": 10.982,
+        "y_pct": 19.637,
+        "w_pct": 37.339,
+        "h_pct": 3.034
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 73.394,
+        "y_pct": 21.042,
+        "w_pct": 15.413,
+        "h_pct": 1.319
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "HENRI FRENAY ET LES COMMUNISTES",
+      "bbox": {
+        "x_pct": 30.339,
+        "y_pct": 41.273,
+        "w_pct": 39.266,
+        "h_pct": 1.583
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parce qu'il fut un résistant de la première heure et qu'il n'éprouvait pas en 1944 le besoin de se dédouaner, parce qu'il n'a jamais transigé sur ses principes ni sur la vérité, parce qu'il a traité l'accord avec les communistes pendant la guerre, quand ceux-ci rejoignirent la Résistance, seulement après l'invasion de l'Union soviétique par l'Allemagne, comme une simple alliance tactique qui n'impliquait pas qu'on prenne le P.C. pour plus vertueux qu'il n'était, Henri Frenay n'a jamais au cours de sa vie séparé son combat contre le nazisme de son combat contre le communisme. François Mitterrand a bien connu Henri Frenay. Il lui a rendu un juste et bel hommage le 20 septembre dernier. Il a oublié de rappeler dans son discours que Frenay n'avait jamais pactisé avec les totalitaires. Sans doute le Président de la République se souvenait-il des reproches que son ami Frenay lui avait faits en d'autres temps.",
+      "bbox": {
+        "x_pct": 15.073,
+        "y_pct": 44.479,
+        "w_pct": 69.486,
+        "h_pct": 18.978
+      },
+      "changed": true,
+      "change_reason": "Replaced OCR text with full, corrected paragraph content from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On trouvera page suivante un extrait d'une brochure que Frenay, qui, avec Aron, Souvarine, Branko Lazitch et Jeanne Hersch, comptait des amis nombreux et fidèles à Commentaire, a publiée en 1945, quand les communistes siégeaient encore au gouvernement de la France.",
+      "bbox": {
+        "x_pct": 15.165,
+        "y_pct": 63.08,
+        "w_pct": 69.45,
+        "h_pct": 6.53
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "COMMENTAIRE.",
+      "bbox": {
+        "x_pct": 66.972,
+        "y_pct": 70.336,
+        "w_pct": 13.789,
+        "h_pct": 1.319
+      },
+      "changed": true,
+      "change_reason": "Added missing period to label."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1030",
+      "bbox": {
+        "x_pct": 11.239,
+        "y_pct": 90.355,
+        "w_pct": 3.67,
+        "h_pct": 1.455
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Extensive OCR errors in paragraph body text.",
+    "Fragmented lines needing merge.",
+    "Page number missing from initial detection.",
+    "Author signature correctly identified but kept as text."
+  ],
+  "doc_id": "2520",
+  "page": 4,
+  "elapsed_seconds": 6.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

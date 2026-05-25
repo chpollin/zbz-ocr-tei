@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "98 Kierkegaard vivant",
+      "bbox": {
+        "x_pct": 16.071,
+        "y_pct": 59.839,
+        "w_pct": 80.633,
+        "h_pct": 5.482
+      },
+      "changed": true,
+      "change_reason": "Corrected page number and running header from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’instant est donc événement subsistant. Le disciple a dû être d’abord dépouillé de la condition, non par le dieu, ni par hasard, mais par lui-même. Le disciple est non-vérité par sa propre faute. Cette faute n’est pas de sa part liberté, — il est lié hors de la vérité, exclu. Il ne peut se libérer lui-même, « il se sert de la force de la liberté au profit de la non-liberté, et la force de sa non-liberté grandit par sa liberté en elle ». Aussi le maître qui le sauve de lui-même ne saurait-il être oublié, disparaître socratiquement. L’ « instant » où la condition est donnée est « bref et temporel comme tout instant, passant comme tout autre dans l’instant d’après ; et pourtant décisif, plein d’éternité. Un tel instant doit vraiment avoir un nom à lui ; appelons-le : plénitude des temps ».",
+      "bbox": {
+        "x_pct": 15.86,
+        "y_pct": 15.304,
+        "w_pct": 80.942,
+        "h_pct": 41.373
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR error text extraction to reflect original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’instant a un caractère absolument décisif, au sens d’une irréversibilité, d’une « re-naissance », d’un « passage du non-être à l’être », et il échappe à toute pensée objective. La question « Cela se laisse-t-il penser ? » n’a en effet de sens que pour celui qui est ainsi re-né, de même que seul celui qui est né peut s’interroger sur la naissance. L’instant est œuvre, il est à l’œuvre, il est la décision du dieu se réalisant. Il n’a rien d’une unité abstraite. A propos des preuves de l’existence du dieu, Kierkegaard dit : « Ma conclusion n’aboutit jamais à l’existence, mais elle en vient. » « Je ne prouve pas qu’une pierre existe, mais que cette chose, qui existe, est",
+      "bbox": {
+        "x_pct": 15.26,
+        "y_pct": 55.975,
+        "w_pct": 80.844,
+        "h_pct": 33.648
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR error text extraction to reflect original document content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text blocks were poorly segmented and OCR quality was low.",
+    "Page number and header were incorrectly identified as standard text blocks.",
+    "Merged inconsistent paragraph chunks into correct text entities."
+  ],
+  "doc_id": "740",
+  "page": 7,
+  "elapsed_seconds": 9.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

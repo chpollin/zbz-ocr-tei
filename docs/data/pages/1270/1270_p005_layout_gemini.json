@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "128",
+      "bbox": {
+        "x_pct": 17.2,
+        "y_pct": 1.1,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 41.5,
+        "y_pct": 1.1,
+        "w_pct": 16.9,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "M. Delsol peut bien être, comme il la proclamé, le plus mécaniste des mécanistes dans son laboratoir",
+      "bbox": {
+        "x_pct": 16.898,
+        "y_pct": 14.245,
+        "w_pct": 64.005,
+        "h_pct": 29.134
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "M. Jauch a montré que, quant au mécanicisme, la biologie était plus conservatrice que la physique. C",
+      "bbox": {
+        "x_pct": 16.865,
+        "y_pct": 42.923,
+        "w_pct": 63.981,
+        "h_pct": 23.954
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A la lecture du livre de Jacques   Monod ({ Le hasard et la nécessité \" on est émerveillé par les co",
+      "bbox": {
+        "x_pct": 16.841,
+        "y_pct": 71.795,
+        "w_pct": 63.763,
+        "h_pct": 16.849
+      },
+      "changed": false
+    }
+  ],
+  "score": 100,
+  "num_corrections": 2,
+  "issues": [],
+  "doc_id": "1270",
+  "page": 5,
+  "elapsed_seconds": 6.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

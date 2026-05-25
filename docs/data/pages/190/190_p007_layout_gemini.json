@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pas de décrire celui de n'importe quelle souris. Il faudra que j'en étudie un grand nombre. Cependant il ne s'agira pas pour moi d'aligner ces comportements singuliers, mais de savoir finalement comment se comporte la souris. Lorsque les comportements diffèrent, on voit comment la science a pu être amenée à créer ce mythe moderne d'un «être statistique» représenté par quelques pourcentages de probabilités.",
+      "bbox": {
+        "x_pct": 15.576,
+        "y_pct": 10.103,
+        "w_pct": 65.189,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR extraction for the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout ce symbolisme, donc, ne s'ajoute pas à quelque «expérience nue» qui lui serait antérieure. Il est essentiel, consubstantiel à la présence de toute représentation.",
+      "bbox": {
+        "x_pct": 15.737,
+        "y_pct": 23.989,
+        "w_pct": 65.085,
+        "h_pct": 6.171
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On le voit, d'autre part, ce symbolisme est double. Le singulier implique à la fois le général, c'est-à-dire l'unicité logique, et l'être, c'est-à-dire l'unicité ontologique. Par rapport au général, le singulier est un représentant, un échantillon. Par rapport à l'être, le singulier est présence inépuisable.",
+      "bbox": {
+        "x_pct": 15.552,
+        "y_pct": 33.692,
+        "w_pct": 65.351,
+        "h_pct": 10.296
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi l'idée de «dépasser le singulier» reste dans tous les domaines extrêmement ambiguë.",
+      "bbox": {
+        "x_pct": 15.657,
+        "y_pct": 43.761,
+        "w_pct": 65.141,
+        "h_pct": 4.142
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Considérons les liens qui peuvent se créer entre les hommes. Il existe entre eux — bien que jamais à l'état pur — des associations techniques: ils conjuguent leurs efforts en vue d'un but commun. Ils sont tous tournés vers ce but, et non les uns vers les autres. Le singulier n'est pas alors dépassé, il est seulement ignoré. Au contraire, le singulier surgit à l'instant où un homme, tourné vers son prochain, ne le voit plus comme un individu parmi d'autres, auxquels il ressemble à peu près, mais le transcende à la fois en direction de l'homme comme tel et en direction de cet homme unique. Un tel rapport se manifeste avec l'éclat le plus pur dans l'amour, à cause de l'exclusivisme qu'il implique: on n'aimerait pas un homme ou une femme dont on saurait qu'il ou elle a été tiré à plusieurs exemplaires. Le prestige du singulier est ici poussé radicalement jusqu'à l'unique. Mais cela est vrai aussi de l'amitié, car ce terme vague, paresseux, ne recouvre qu'en apparence une multiplicité de liens approximativement semblables: chaque amitié est singulière, par l'unicité de l'ami.",
+      "bbox": {
+        "x_pct": 15.608,
+        "y_pct": 47.806,
+        "w_pct": 65.294,
+        "h_pct": 33.732
+      },
+      "changed": true,
+      "change_reason": "Corrected missing text and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans le domaine de l'art, aucune création, au sens fort de ce mot, n'est possible sans que la donnée, quelle qu'elle soit, objective ou subjective, offerte par le monde de la ressemblance — dif-",
+      "bbox": {
+        "x_pct": 15.85,
+        "y_pct": 81.385,
+        "w_pct": 64.915,
+        "h_pct": 6.08
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 16.0,
+        "y_pct": 88.0,
+        "w_pct": 1.0,
+        "h_pct": 1.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "49",
+      "bbox": {
+        "x_pct": 79.0,
+        "y_pct": 88.0,
+        "w_pct": 2.0,
+        "h_pct": 1.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 8,
+  "issues": [
+    "Original layout detection had truncated text in multiple paragraphs.",
+    "Page numbers were incorrectly classified as text.",
+    "OCR errors throughout the text fields."
+  ],
+  "doc_id": "190",
+  "page": 7,
+  "elapsed_seconds": 6.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

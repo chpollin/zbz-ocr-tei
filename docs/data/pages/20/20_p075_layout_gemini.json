@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE MIME : SES LIMITES ET SON ÉCHEC 73",
+      "bbox": {
+        "x_pct": 27.914,
+        "y_pct": 74.83,
+        "w_pct": 63.344,
+        "h_pct": 7.424
+      },
+      "changed": true,
+      "change_reason": "The header text 'LE MIME... 73' was incorrectly captured as part of the paragraph region and not filtered, and the box coordinates for the text blocks were also slightly malformed in the original input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "m©taphysique du syst¨me la subit. Vue de ce côt© (en admettant qu'il s'agit d'une vraie philosophie), l'attaque ne marque qu'une impuissance dans l'identification, une limite de cette compr©hension subjective que je voudrais appeler mime. Comprendre v©ritablement un philosophe, c'est r©ussir   le mimer int©rieurement tandis qu'il composait son œuvre. Et c'est pourquoi Leibniz ©non§ait l'une des plus profondes lois de la philosophie lorsqu'il disait que toute doctrine est vraie en ce qu'elle affirme (v©rit© m©taphysique) et fausse en ce qu'elle nie (attaque contre la v©rit© m©taphysique en la traitant comme un objet). Ceux qui se contentent de comparer deux th©ories, comme deux objets, en mesurant la solidit© de leurs preuves et en d©cr©tant celle-ci juste, celle-l  fausse, ignorent tout de la v©ritable compr©hension philosophique.",
+      "bbox": {
+        "x_pct": 15.407,
+        "y_pct": 11.725,
+        "w_pct": 75.858,
+        "h_pct": 43.88
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text extraction to reflect the full content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Du fait que l'auteur philosophe poursuit r©ellement la solution d'un probl¨me et que l'©tudiant philosophe vise la d©cision m©taphysique, il se produit entre les deux attitudes un perp©tuel d©calage, un insurmontable malentendu. La solution du probl¨me, l'auteur la veut universelle. L'©tudiant, pour atteindre la v©rit© m©taphysique, doit mimer l'auteur, faire comme si,   son tour, il trouvait la m©me solution. Mais cette solution, il se peut qu'il la repousse, ce qui ne l'emp©cherait pas de la reconnaître vraie, m©taphysiquement vraie comme d©cision de l'auteur. Alors que l'auteur veut imposer le contenu explicite du syst¨me, l'©tudiant cherche",
+      "bbox": {
+        "x_pct": 15.316,
+        "y_pct": 55.195,
+        "w_pct": 75.949,
+        "h_pct": 33.746
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text extraction to reflect the full content of the paragraph."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original extraction was truncated and contained OCR errors.",
+    "Page header 'LE MIME: SES LIMITES ET SON ÉCHEC 73' was misidentified as part of a paragraph block.",
+    "General OCR quality for special characters (accents) needs manual verification."
+  ],
+  "doc_id": "20",
+  "page": 75,
+  "elapsed_seconds": 7.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

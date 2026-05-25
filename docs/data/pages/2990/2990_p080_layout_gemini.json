@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Von der philosophischen Klarheit als Pflicht",
+      "bbox": {
+        "x_pct": 6.84,
+        "y_pct": 2.527,
+        "w_pct": 43.197,
+        "h_pct": 1.745
+      },
+      "changed": true,
+      "change_reason": "Identified as page header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "87",
+      "bbox": {
+        "x_pct": 83.565,
+        "y_pct": 2.527,
+        "w_pct": 3.197,
+        "h_pct": 1.542
+      },
+      "changed": true,
+      "change_reason": "Identified as page number/footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers sagt immer „zwingend“. Zwingend ist die Wahrheit, die wir gar nicht diskutieren können. Aber das Wunderschöne ist, daß es, wenn man dieses Zwingende anerkennt und versteht, gleichzeitig eine frei Tat ist, weil wir das annehmen. Wir wollen es, weil es stimmt. In der Geometrie ist das weniger als eine freie Entscheidung; man besiegt. Da man nichts anderes als „Ja“ sagen kann, stimmt der Ausdruck von Jaspers, daß es zwingend ist. Aber es ist als gleichzeitig freie Tat zwingend, weil ich gerade das verstehen will, was ich unbedingt anerkennen muß. Dieses Zusammenfallen von Zwingen durch das Sein und von Verstehen und Hingabe daran, die eben frei sind, ist das, was ich wunderbar finde. Man versteht da, worum es in all diesen Anstrengungen geht. Es gibt also Grundbedingungen für eine innere Übereinstimmung von Wahrheit und Freiheit, etwas, was im Grunde dieselbe Tat ist.",
+      "bbox": {
+        "x_pct": 6.785,
+        "y_pct": 6.414,
+        "w_pct": 86.626,
+        "h_pct": 25.436
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction to reflect full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Welche Beziehung besteht zwischen Klarheit und Wahrheit? Sie ist komplex, und weil wir so spontan das klar gewordene annehmen, denken wir, glaube ich, nicht genug daran. Aber es ist etwas so Schönes, daß es sich lohnt, das wirklich zu bemerken. Es ist komplex, weil es polarisiert ist, weil es eine vielschichtige Einstellung voraussetzt der Wahrheit und der Klarheit gegenüber. Wenn aber das Element der Klarheit fehlt, dann kommt etwas Zweifelhaftes hinein.",
+      "bbox": {
+        "x_pct": 6.663,
+        "y_pct": 31.85,
+        "w_pct": 86.626,
+        "h_pct": 13.734
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers unterscheidet verschiedene Stufen. Er unterscheidet Klarheit, zwingende Gewißheit und Überzeugung. Sie sehen die Unterschiede; in den drei Fällen gibt es ein klares Ja. Aber in der Klarheit geschieht es sozusagen ohne Wahl. Deswegen kann man sagen, daß es zwingend ist, zwingende Gewißheit. Man kann auch sagen, da es zwingend ist, ist es auch ohne Wahl, aber er meint mit zwingender Gewißheit eine empirische Gewißheit, die nicht in ihrem Wesen zwingend ist wie die Wahrheit des geometrischen Beweises. Man ist gewiß, daß etwas so gewesen ist, man hat Quellen dafür, man hat es beobachtet, man weiß wie das geschehen ist usw. Das ist eine empirische Gewißheit.",
+      "bbox": {
+        "x_pct": 6.54,
+        "y_pct": 45.559,
+        "w_pct": 86.626,
+        "h_pct": 20.206
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun zur Überzeugung. Da ist man sich vielleicht sicherer oder weniger sicher. Sie hören, man ist sich weniger sicher, weil das nicht zwingend ist, und man ist sich sicherer, weil man nicht darauf verzichten würde. Man will es, man kann sogar für eine Überzeugung sterben. Aber sie ist viel weniger gewiß als die Gewißheit, von der wir zuvor gesprochen haben. In der Philosophie gibt es alle diese Möglichkeiten, und es ist wichtig, wenn man Philosophie liest, zu verstehen, in welchem Sinne etwas von uns anerkannt wird, in welchem Sinne, auf welcher Stufe, welchem Stil des Ja es von uns aufgenommen wird. Im Grunde nennen wir Klarheit das, wo-",
+      "bbox": {
+        "x_pct": 6.663,
+        "y_pct": 65.107,
+        "w_pct": 86.626,
+        "h_pct": 18.446
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extractions were truncated and had broken OCR.",
+    "Header and page number were identified as standard text regions."
+  ],
+  "doc_id": "2990",
+  "page": 80,
+  "elapsed_seconds": 6.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

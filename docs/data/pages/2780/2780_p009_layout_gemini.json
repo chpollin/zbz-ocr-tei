@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "P©poque de Jeanne Hersch a beaucoup compt© dans cette ©preuve.",
+      "bbox": {
+        "x_pct": 25.032,
+        "y_pct": 13.456,
+        "w_pct": 57.733,
+        "h_pct": 4.82
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_heading as this acts as a section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une longue amitié abonde en désaccords et même en querelles acharnées. Et si elle survit, cela prouve qu’elle était solide. Maintes fois j’attaquais Jeanne en lui reprochant en premier lieu sa passion éthique exagérée, l’ardeur de quelqu’un qui ne supporte pas le mal, ce qui lui a valu d’étre nommée, par notre ami commun Stanislaw Vincenz, «fille du désert», donc apparentée aux prophètes de la Bible. Cette ardeur la protégeait des compromis, mais elle en payait le prix. Un trait principal de son caractère, sa pureté, l’exposait aux reproches de la rigueur excessive.",
+      "bbox": {
+        "x_pct": 24.905,
+        "y_pct": 17.974,
+        "w_pct": 57.754,
+        "h_pct": 24.404
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality to match original image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce la distingue spécialement, et ce que j’admire en elle est une qualité non commune parmi les intellectuels : c’est une personne pieuse. Je suis enclin à séparer ce terme «pieux» de la croyance religieuse et de l’appliquer à tous ceux qui s’inclinent devant le mystère même de l’univers et de la condition humaine. La piété de Jeanne s’exprime dans sa méditation sur l’énigme de notre existence, foncièrement contradictoire, car elle est vécue dans le temps, et pourtant appelée à transcender le temps. Cette méditation l’amène à choisir une attitude opposée à celle par exemple de Samuel Beckett pour qui le temps, grand destructeur, justifie notre désespoir et notre révolte contre la structure insensée et immuable du",
+      "bbox": {
+        "x_pct": 24.682,
+        "y_pct": 41.609,
+        "w_pct": 58.051,
+        "h_pct": 30.719
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality to match original image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": {
+        "x_pct": 25.5,
+        "y_pct": 75.3,
+        "w_pct": 2.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number and moved to filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Severe OCR issues in the provided input JSON.",
+    "Page number 10 was missed and needed extraction.",
+    "Heading misidentified as text paragraph."
+  ],
+  "doc_id": "2780",
+  "page": 9,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

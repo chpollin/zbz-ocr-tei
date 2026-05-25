@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Car il est bien vrai que si le sujet est quelque chose, sa liberté, en quelque sorte, s'annule et ne fait que découler de sa substance (on retrouve d'ailleurs, ici encore, appliquée à l'homme, la mise en question théologique des déterminations de Dieu); mais si le sujet est rien – on ne peut concevoir, dans cette vacuité, qu'un fonctionnement, non une liberté. La liberté d'une substance est une possibilité mystérieuse, mais la liberté d'un rien n'est qu'une absurdité. Elle se réduit au fonctionnement éventuel d'un cerveau électronique.",
+      "bbox": {
+        "x_pct": 12.949,
+        "y_pct": 9.402,
+        "w_pct": 65.915,
+        "h_pct": 16.068
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et précisément, ce n'est pas un hasard si l'autre expression philosophique extrême de notre temps fut la stalinienne – avec laquelle la première d'ailleurs se chercha des affinités et essaya, mais en vain jusqu'ici, d'échanger des signes d'intelligence. Elle érige le système du fonctionnement total. Pour Sartre, sur le plan de la liberté, il n'y a que des possibles – pas d'être. Pour le stalinisme, il n'y a pas d'être non plus, et les possibles sont une bonne fois résorbés dans l'unique nécessité de la machine universelle et historique. Des possibles pour un sujet qui «est rien», ou l'ordre mécanique pour un tout où il n'y a personne, telle est l'alternative que nous proposent ces humanistes contemporains. Mais si le sujet pour qui, dans la première hypothèse, les possibles existent, est rien, pourquoi ne pas lui préférer l'ordre sans lacune d'un ingénieur compétent?",
+      "bbox": {
+        "x_pct": 12.756,
+        "y_pct": 25.299,
+        "w_pct": 66.027,
+        "h_pct": 26.137
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, sans trop de détours, la tradition perdue laisse le sujet et sa rigoureuse liberté dans l'impasse stalinienne de la fermeture totale.",
+      "bbox": {
+        "x_pct": 12.675,
+        "y_pct": 51.111,
+        "w_pct": 65.834,
+        "h_pct": 4.387
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au fond, comment situer Jaspers? Question absurde. Il ne se situe pas. Il est, à travers les pièges et les tentations de l'époque, le libre mouvement qui les approche, les affronte, les épouse, les connaît, et avec une sorte de sûreté incorruptible, les dépasse sans les rejeter ni les perdre jamais. Un seul refus, mais celui-là catégorique et sans aucun compromis possible: celui de la fermeture justement, qui, pour Jaspers, détruit à la fois le rapport de l'homme à son prochain, à la vérité, à l'histoire, à lui-même et à la transcendance. Devant la fermeture – dogmatisme, fanatisme, superstition magique ou scientifique – le sujet libre est encore appelé à un dernier effort de compréhension humaine, à une dernière tentative en faveur de la plus profonde des traditions, celle qui nous apprend que pour l'homme l'autre homme contient quelque chose de précieux – mieux que précieux: de nécessaire. Ce dernier effort, c'est d'essayer de découvrir le sens chiffré du système dans lequel l'autre s'enferme.",
+      "bbox": {
+        "x_pct": 12.546,
+        "y_pct": 57.208,
+        "w_pct": 66.044,
+        "h_pct": 25.886
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "134",
+      "bbox": {
+        "x_pct": 12.8,
+        "y_pct": 89.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction was heavily truncated/corrupted.",
+    "Page number at the bottom was incorrectly labeled as text."
+  ],
+  "doc_id": "680",
+  "page": 18,
+  "elapsed_seconds": 7.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

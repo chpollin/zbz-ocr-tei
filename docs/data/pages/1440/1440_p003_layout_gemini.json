@@ -1,0 +1,175 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Anpussung. Friedrich Durrenmalts Besuch der allen Daprophetische Darstellung dieses scelischen Vorga",
+      "bbox": {
+        "x_pct": 9.219,
+        "y_pct": 9.039,
+        "w_pct": 40.423,
+        "h_pct": 6.921
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label assignment"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich beobachtete vor allem noch nie eine derart breite und tiefe Kluft zwischen denjenigen, die reden, schreiben, die öffentliche Meinung machen, und den anderen Leuten. Unter den Meinungsmachern herrscht weitgehende Übereinstimmung, wie ich",
+      "bbox": {
+        "x_pct": 9.685,
+        "y_pct": 21.05,
+        "w_pct": 39.772,
+        "h_pct": 7.5
+      },
+      "changed": true,
+      "change_reason": "Added missing region for left column"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "das in der Vergangenheit noch nic crlebl habe. Von Ausnahmen sind dic dieser mislisch Leute Dber mic",
+      "bbox": {
+        "x_pct": 9.685,
+        "y_pct": 30.355,
+        "w_pct": 39.772,
+        "h_pct": 14.908
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Indem sie sich der bestehenden Ordnung einfügen?",
+      "bbox": {
+        "x_pct": 9.685,
+        "y_pct": 48.0,
+        "w_pct": 39.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing region"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nein, dieser Konformismus spielt zum Nachteil der demokratischen Einrichtungen. Ich beschuldige ihn, Propaganda für das östliche System zu treiben. Der ist völlig falsch. Die politische Freiheit ist vielmehr unentbehrlich, um soziale Gerechtigkeit herzustellen.",
+      "bbox": {
+        "x_pct": 9.685,
+        "y_pct": 52.0,
+        "w_pct": 39.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Added missing region"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Di",
+      "bbox": {
+        "x_pct": 46.67,
+        "y_pct": 66.75,
+        "w_pct": 2.495,
+        "h_pct": 1.579
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "Znn",
+      "bbox": {
+        "x_pct": 10.488,
+        "y_pct": 87.5,
+        "w_pct": 2.278,
+        "h_pct": 1.618
+      },
+      "changed": true,
+      "change_reason": "Corrected label to _filter"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rechte hin Wer die bekampll. ist ein kein konservaliveres Regume als das sowjelische. slisch  slehl",
+      "bbox": {
+        "x_pct": 52.278,
+        "y_pct": 9.671,
+        "w_pct": 38.612,
+        "h_pct": 16.605
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ist der «Euro-Kommunismus» eine grundlegend neue Entwicklung?",
+      "bbox": {
+        "x_pct": 52.57,
+        "y_pct": 27.5,
+        "w_pct": 38.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Added missing region"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wandlung der Kommunusten Ieh meine damit nichu die einzelnen Menschen; sondern Jie parleipoluischc E",
+      "bbox": {
+        "x_pct": 52.495,
+        "y_pct": 35.526,
+        "w_pct": 38.102,
+        "h_pct": 5.132
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ja, gewiß, aber ich glaube, das duer-ste unglücklich mit den Sozialisten.",
+      "bbox": {
+        "x_pct": 52.495,
+        "y_pct": 45.0,
+        "w_pct": 38.102,
+        "h_pct": 8.0
+      },
+      "changed": true,
+      "change_reason": "Added missing region"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "267",
+      "bbox": {
+        "x_pct": 88.0,
+        "y_pct": 87.5,
+        "w_pct": 2.278,
+        "h_pct": 1.618
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Initial labels were mostly wrong, missing text regions throughout, page numbers were mislabeled as text"
+  ],
+  "doc_id": "1440",
+  "page": 3,
+  "elapsed_seconds": 7.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content and label assignment": 1,
+    "Added missing region for left column": 1,
+    "Added missing region": 4,
+    "Corrected label to _filter": 1,
+    "Corrected text content": 1,
+    "Added missing page footer": 1
+  }
+}

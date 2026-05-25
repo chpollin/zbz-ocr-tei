@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "CHEZ LES GRECS 107",
+      "bbox": {
+        "x_pct": 372.0,
+        "y_pct": 80.0,
+        "w_pct": 257.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header containing running title and page number should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "philosophique en saisissant les tapes de sa destruction. Ce\ntion. Ce qui me servira moins  rsoudre le pro-\nblme de l'avenir de la philosophie qu' la poser\navec plus d'acuit.",
+      "bbox": {
+        "x_pct": 100.0,
+        "y_pct": 122.0,
+        "w_pct": 762.0,
+        "h_pct": 102.0
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le mythe grec",
+      "bbox": {
+        "x_pct": 103.0,
+        "y_pct": 243.0,
+        "w_pct": 135.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected heading text and ensured tag usage."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce n'est pas le scepticisme qui a formul contre la\nphilosophie les attaques les plus dangereuses. Pro-\ntagoras, en dclarant inaccessible « pour nous »\ntoute vrit objective et en refusant mme de poser\nla question du « hors de nous » parce qu'il la consi-\ndre comme absurde, rend hasardeuse l'entreprise\nphilosophique, mais, du mme coup, il la provoque.\nLa philosophie a toujours rpondu au mot « impos-\nsible » en tentant cet impossible. La dmonstration\navait beau ne pas russir aussi bien que celle du\nmouvement par la marche  cela n'empchait pas\nde marcher. On rpondait qu'impossible n'est pas un\nmot philosophique. Et l'attaque ne servait qu'\nposer plus profondment le premier problme, \nfonder plus solidement le dogmatisme du tout.\nL'illusion philosophique sortait renforce de\nl'preuve et l'ardeur  la dfendre tait d'autant\nplus grande, justement, qu'on avait vaguement\nfrl le danger de la perdre.",
+      "bbox": {
+        "x_pct": 99.0,
+        "y_pct": 272.0,
+        "w_pct": 764.0,
+        "h_pct": 491.0
+      },
+      "changed": true,
+      "change_reason": "Corrected textual content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Encore ce danger, dans l'antiquit grecque, n'tait-il pas trs grand. L'illusion en effet, bien\nqu'existante, ne s'en tenait pas exclusivement  une\nexpression scientifique et chappait par l  une\nattaque directe. La vrit objective n'tait pas",
+      "bbox": {
+        "x_pct": 100.0,
+        "y_pct": 761.0,
+        "w_pct": 760.0,
+        "h_pct": 131.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Running header was initially misidentified as text.",
+    "Section header text was incomplete/incorrectly captured.",
+    "Several text blocks required significant transcription correction for accuracy."
+  ],
+  "doc_id": "20",
+  "page": 109,
+  "elapsed_seconds": 9.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

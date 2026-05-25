@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais c'est une beauté d'exil, ceinte d'inexistence. Elle ne se suffit pas à elle-même. Cela même qui la fait réelle la sépare de l'être. L'arbre voudrait absorber la brise où il respire ou se laisser absorber par elle jusqu'à rejoindre l'unité sans séparation d'avant le réel. L'arbre respire, par nostalgie d'être ou de n'être pas. L'arbre lie les mouvements de ses branches et rêve d'être à la fois non-séparé, et non aboli par la fin de son exil.",
+      "bbox": {
+        "x_pct": 23.786,
+        "y_pct": 11.279,
+        "w_pct": 66.104,
+        "h_pct": 28.224
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text for accuracy compared to the image source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est rattaché à la terre et à Dieu, comme toutes les autres créatures, par cette nostalgie sans issue.",
+      "bbox": {
+        "x_pct": 23.993,
+        "y_pct": 39.31,
+        "w_pct": 65.777,
+        "h_pct": 8.67
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avoir la séparation dans son être, c'est la condition de la créature. C'est pourquoi elle naît et c'est pourquoi elle meurt. C'est pourquoi, sans doute, il est dans la nature du vivant que tout mange tout. C'est aussi pour cela que les hommes aiment et tuent, et qu'ils vivent en racontant de terribles histoires qui se déploient dans l'espace et le temps.",
+      "bbox": {
+        "x_pct": 23.944,
+        "y_pct": 47.837,
+        "w_pct": 65.862,
+        "h_pct": 22.896
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un homme était venu de très loin, après un long et difficile voyage, s'asseoir un jour sous un arbre d'ici. Là d'où il venait, les arbres",
+      "bbox": {
+        "x_pct": 24.235,
+        "y_pct": 70.152,
+        "w_pct": 65.328,
+        "h_pct": 8.636
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text for accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "88",
+      "bbox": {
+        "x_pct": 24.08,
+        "y_pct": 82.25,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer and added missing region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original transcriptions were highly inaccurate and incomplete.",
+    "Page number 88 was missing from the initial region list."
+  ],
+  "doc_id": "2260",
+  "page": 88,
+  "elapsed_seconds": 5.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

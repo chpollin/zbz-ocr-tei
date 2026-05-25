@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH 49",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected page header classification including page number 49."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "critiquer, dans mon rôle de passerelle à double voie, entre l'écrivain et le lecteur, et vice versa. Voilà mon métier dévorant de critique, en face de trois à quatre mille livres annuels ; et métier littéraire tout de même, de critique qui tâche encore de faire des livres en rassemblant ces écrits du jour en volumes peut-être durables... Je dis bien peut-être; car encore une fois, pour finir comme j'ai commencé, on ne sait ce qu'on est et ce qu'on a fait. Mais je sais bien ce que j'aurais voulu faire : être le meilleur artisan possible dans cet art d'écrire; et de tout mon cœur, à travers la littérature, témoin et expression de la vie, n'aimer qu'elle et que la vérité, conformément à ce que me disait Barrès dans ma jeunesse : « Écrivez des choses qui vous plaisent, et tâchez que ces choses soient belles. »",
+      "bbox": {
+        "x_pct": 3.666,
+        "y_pct": 6.711,
+        "w_pct": 87.977,
+        "h_pct": 25.186
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 31.129,
+        "y_pct": 39.246,
+        "w_pct": 32.947,
+        "h_pct": 2.734
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Née Genève le 13 juillet 1910, Jeanne Hersch fit des études secondaires classiques à Genève puis à l'Université de cette ville où elle obtint son doctorat, et aux Universités de Heidelberg, Fribourg en Brisgau et Paris. Depuis 1947, Privat-docent de philosophie à l'Université de Genève. Elle a publié de nombreux ouvrages, parmi lesquels les Images dans l'œuvre de Bergson, l'Illusion philosophique, Temps alternés (roman), l'Etre et la Forme. Lauréate du Prix Amiel.",
+      "bbox": {
+        "x_pct": 19.355,
+        "y_pct": 43.911,
+        "w_pct": 72.038,
+        "h_pct": 15.634
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il m'est difficile, pour toute une série de raisons, de parler de mes propres livres. D'abord j'entretiens avec eux, une fois qu'ils sont écrits, très peu de rapports et des rapports ambigus. Dans un sens, je les oublie. Quand j'y jette les yeux, ils m'étonnent et le style que j'y trouve me surprend presque autant que ma voix changée par la radio. Pourtant, ils me restent proches et même intérieurs; il suffit que quelqu'un en dise du bien ou du mal, et je sais aussitôt qu'en parlant d'eux on parle de moi. Un moi essentiel, très sensible mais fataliste, capable de joie ou de tristesse, mais non plus d'indignation ni d'aucune attitude combative : livré à ce qui ne dépend plus de lui.",
+      "bbox": {
+        "x_pct": 3.182,
+        "y_pct": 62.527,
+        "w_pct": 88.211,
+        "h_pct": 22.618
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une autre difficulté vient de ce que je n'ai pas su m'installer clairement dans un seul genre d'écrits. Mon premier livre, l'Illusion philosophique, est un petit essai de réflexion sur la philosophie pure. Le second, Temps alternés, me paraît",
+      "bbox": {
+        "x_pct": 3.328,
+        "y_pct": 85.112,
+        "w_pct": 88.167,
+        "h_pct": 8.036
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page footer number at the bottom."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page header 'JEANNE HERSCH 49' was not detected in original regions.",
+    "Page footer '4' was not detected in original regions."
+  ],
+  "doc_id": "440",
+  "page": 3,
+  "elapsed_seconds": 6.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "100",
+      "bbox": {
+        "x_pct": 102.5,
+        "y_pct": 74.5,
+        "w_pct": 27.5,
+        "h_pct": 21.3
+      },
+      "changed": true,
+      "change_reason": "The number 100 at the top left is a page number, not body text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ID\tOLOGIES ET R\tALIT\t",
+      "bbox": {
+        "x_pct": 372.5,
+        "y_pct": 71.5,
+        "w_pct": 255.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "The text ID\tOLOGIES ET R\tALIT\t at the top is a page running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lâche, est sans doute nécessaire cependant à la santé du corps social.",
+      "bbox": {
+        "x_pct": 104.87,
+        "y_pct": 98.31,
+        "w_pct": 851.53,
+        "h_pct": 46.08
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons rapproché au début de ce chapitre, la politique et le droit. Tous deux, disions-nous, se justifient de façon pessimiste, par la constatation que le mal existe et par la nécessité de l'endiguer. De là, chez tous deux, le recours à la force. Le droit s'appuie sur la Justice et sur la Police. Une analyse un peu nette de ces deux composantes principales laisse apercevoir sans peine qu'en faisant intervenir la Police, le droit perd le prestige moral de la Justice : le droit peut en effet exiger tel comportement parce qu'il est juste, ou sous peine de prison, mais non les deux à la fois. Quand la peur intervient, et la docilité à la menace, le sens moral est mis hors du jeu, à moins qu'il ne brave peur et menace et ne s'exerce en sens contraire. Théoriquement, donc, la présence d'une police devrait enlever toute force morale à l'exigence des lois. En fait, les choses se passent autrement. La main de l'agent de police, que sent déjà à son collet l'homme sur le point de commettre un délit, est comme la présence symbolique d'une condamnation sociale qui s'identifie à la condamnation morale. La force menaçante — qui en toute rigueur, et selon l'analyse radicale de Kant, devrait faire s'évanouir le sens moral comme la chaleur fait reculer la neige dans l'analyse que Platon a faite des concepts exclusifs l'un de l'autre, — la force menaçante apparaît comme l'incarnation même de l'exigence morale, sa présence terrestre. Un droit sans instance armée, dans les sociétés humaines, revient à l'évanouissement des lois, au règne pur de la force. L'ange, le faux ange humain, ramène la brûte. Mais réciproquement, une police sans autorité morale ramènerait, elle aussi, l'affrontement des forces dans sa nudité. Seul le mélange impur de la morale et de la force préserve dans une certaine mesure les possibilités humaines, une présence efficace de la morale dans la société. Plus ce mélange est confus, inanalysé, plus le règne des Choses vagues est assuré, plus le lien symbolique de la force et de la morale est étroit, — et plus la morale peut, à travers le droit, dans la confusion, accroître son efficacité et réduire les interventions policières. Il en va de même en politique. Les analyses de Kant et de Machiavel, valables dans leur pureté en tant qu'exigences sans contexte, utiles aussi dans telle situation-limite où une responsabilité cru-",
+      "bbox": {
+        "x_pct": 100.7,
+        "y_pct": 142.6,
+        "w_pct": 854.74,
+        "h_pct": 746.61
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription to match the full block content provided in image."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Page number and running header were mislabeled as text.",
+    "Full text content for the main paragraph was significantly truncated in the initial detection.",
+    "Bbox for the main paragraph was miscalculated in the initial attempt."
+  ],
+  "doc_id": "330",
+  "page": 134,
+  "elapsed_seconds": 6.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

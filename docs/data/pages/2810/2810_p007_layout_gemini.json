@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pangoisse d'Elisabeth Kopp ne concernait pas directement son mari, au sujet duquel elle n'avait aucun doute, — elle concernait sa fonction, qu'il s'agissait de préserver de toute éclaboussure. Non pas surtout elle-même, mais sa fonction.",
+      "bbox": {
+        "x_pct": 7.817,
+        "y_pct": 5.911,
+        "w_pct": 80.853,
+        "h_pct": 8.605
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to match the visible source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et voici qu'un beau matin, sa plus proche collaboratrice lui apprend que la Shakarchi Trading AG, dont son mari est vice-président du Conseil d'administration, se trouve suspectée de participation à un trafic de drogue! Alors qu'elle-même vient de déclencher, de façon accélérée, le processus qui doit fournir à la Suisse, un an plus tôt que prévu, la norme juridique qui lui manque pour qu'elle puisse faire efficacement obstacle au blanchîment d'argent sale. Cela, s'ajoutant à tout le reste, c'est trop. Elle ne peut pas supporter un seul moment que ce nouveau doute s'approche en rampant de sa fonction. Il faut le mettre à distance, immédiatement, sans attendre. Il faut que son mari quitte cette société. Elle téléphone. Elle recommande la démission. Et comme elle doit se rendre à une séance, elle demande à sa collaboratrice de donner plus d'informations à son mari.",
+      "bbox": {
+        "x_pct": 7.817,
+        "y_pct": 16.669,
+        "w_pct": 80.803,
+        "h_pct": 29.968
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to match the visible source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'agit, selon moi, non d'un acte de sollicitude conjugale, mais du réflexe d'une femme dont l'honneur s'est complètement identifié à sa fonction. Et cela non pas, comme certains seront tentés de le penser, dans le souci de la conserver à tout prix, cette fonction, mais bien de la garder intacte tant qu'elle en avait la charge.",
+      "bbox": {
+        "x_pct": 7.992,
+        "y_pct": 48.815,
+        "w_pct": 80.59,
+        "h_pct": 12.823
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to match the visible source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par la suite, la double Commission parlementaire devait déclarer dans son rapport (sur lequel j'ai écrit un article critique, publié dans le Journal de Genève (du 29. 01. 1990), le Bund (du 12. 02. 1990) et la Libera Stampa (du 15. 02. 1990), que la faute d'Elisabeth Kopp résidait moins dans sa communication téléphonique que dans le silence qui l'a suivie. Elle aurait dû en parler. Il est vrai que pendant plusieurs semaines elle a évité de reconnaître formellement cet appel. Il semble vrai aussi que lorsque son mari a nié, devant un journaliste, avoir reçu un signe de son Département, elle n'a pas protesté. On a dit qu'elle avait donc menti. Mais n'est-il pas concevable qu'une conversation entre eux n'ait",
+      "bbox": {
+        "x_pct": 7.905,
+        "y_pct": 65.831,
+        "w_pct": 80.678,
+        "h_pct": 23.629
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to match the visible source image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "57",
+      "bbox": {
+        "x_pct": 85.347,
+        "y_pct": 92.427,
+        "w_pct": 2.459,
+        "h_pct": 2.661
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_footer to correctly categorize the page number artifact."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Text content was severely truncated in original detections.",
+    "Page number at bottom was incorrectly labeled as text paragraph."
+  ],
+  "doc_id": "2810",
+  "page": 7,
+  "elapsed_seconds": 6.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

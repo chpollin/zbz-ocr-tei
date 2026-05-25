@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Discussion sur les communications",
+      "bbox": {
+        "x_pct": 8.086,
+        "y_pct": 13.541,
+        "w_pct": 59.501,
+        "h_pct": 2.413
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "M. Moreau-Reibel (Strasbourg)",
+      "bbox": {
+        "x_pct": 8.419,
+        "y_pct": 28.785,
+        "w_pct": 43.592,
+        "h_pct": 2.445
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and spacing in text transcription."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais présenter quelques remarques sur deux points précis, mis en question par M. Girod, d'abord la définition de la sociologie en général, en second lieu la situation de la sociologie politique.",
+      "bbox": {
+        "x_pct": 8.225,
+        "y_pct": 32.256,
+        "w_pct": 85.395,
+        "h_pct": 8.044
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction accuracy."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle que la présentée M. Girod, la sociologie concernerait de préférence l'organisation des grands ensembles sociaux. Je sais bien qu'il y a des questions de frontière. La psychologie sociale étudie la dynamique des petits groupes. Dans ces conditions, on peut se demander à partir de quel moment commence l'étude de la sociologie.",
+      "bbox": {
+        "x_pct": 8.558,
+        "y_pct": 40.852,
+        "w_pct": 85.243,
+        "h_pct": 12.224
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR and transcription errors."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une très ancienne tradition juridique — car l'esprit juridique n'est pas complètement inutile à l'étude de la sociologie, quoi qu'en pensent certains, affirme que : « tres collegium faciunt » : pour faire une corporation, un collège, il faut trois membres au minimum. Dans ces conditions, on peut estimer que dès qu'il y a, même dans un très petit groupe, un minimum d'organisation, par exemple dès qu'il y a possibilité de voter, ou simplement l'intervention d'un tiers comme arbitre ou comme médiateur, reconnu par les deux parties, nous sommes déjà dans le domaine de la sociologie. Ceci est plus saisissant en droit international et en sociologie des relations internationales, qui est une sorte de miroir grossissant pour l'étude des formations sociales. Sans doute, ce sont là des critères juridiques, mais directement issus d'une pratique coutumière très ancienne, et possédant ipso facto une valeur sociologique, valeur éprouvée par des efforts humains séculaires pour aboutir à un modus vivendi.",
+      "bbox": {
+        "x_pct": 8.974,
+        "y_pct": 53.628,
+        "w_pct": 85.34,
+        "h_pct": 30.938
+      },
+      "changed": true,
+      "change_reason": "Extensively corrected transcription and OCR artifacts."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par conséquent, il semble que réduire la sociologie à l'étude de l'organisation des grands groupes sociaux serait une limitation.",
+      "bbox": {
+        "x_pct": 9.528,
+        "y_pct": 85.355,
+        "w_pct": 84.882,
+        "h_pct": 4.314
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of text."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "La Conférence inaugurale de M. Rens, Directeur adjoint du Bureau international du Travail n'était naturellement pas soumise à la discussion.",
+      "bbox": {
+        "x_pct": 9.667,
+        "y_pct": 90.852,
+        "w_pct": 84.882,
+        "h_pct": 3.368
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR and capitalization."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 6,
+  "issues": [
+    "Severe OCR issues in paragraph text extraction.",
+    "Formatting of section headers needed adjustment."
+  ],
+  "doc_id": "550",
+  "page": 12,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

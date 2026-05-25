@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "heit eines Menschen, um weiterwirken zu können. Auch in der Gesundheit liegt nicht der Sinn des Lebens.",
+      "bbox": {
+        "x_pct": 9.426,
+        "y_pct": 8.587,
+        "w_pct": 76.29,
+        "h_pct": 4.821
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Damit will ich sagen, daß wir in der Ökonomie wie in unserem persönlichen Leben in eine Zeit hineingekommen sind, wo immer mehr Menschen jenseits des materiellen oder physischen Überlebens nach einem anderen Sinn suchen. Dieses Sinnverlangen beweist, daß wir im Grunde bis heute unsere wissenschaftlich-technische Welt weder intellektuell noch psychisch verarbeitet haben: wir haben ihren Sinn nicht erkannt.",
+      "bbox": {
+        "x_pct": 9.099,
+        "y_pct": 12.536,
+        "w_pct": 76.74,
+        "h_pct": 14.889
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was also ist der Sinn? Ich habe eine Antwort auf diese Frage, die zwar sehr theoretisch und philosophisch scheinen mag, aber auch erlebt werden kann. Ich behaupte nämlich, daß es einfach nicht der Wahrheit entspricht, daß der Sinn unserer Zivilisation rein materialistisch ist. Gewiß, unsere Zivilisation produziert Dinge, aber das beweist nichts. Ihr Sinn liegt darin, immer mehr Menschen immer mehr Zugang zu kulturellen Gütern zu verschaffen, so daß eine immer größere Anzahl von ihnen die Möglichkeit haben - ich sage: die Möglichkeit, denn entscheiden müssen sie selber - freie, verantwortliche Wesen zu werden. Das ist nicht materialistisch.",
+      "bbox": {
+        "x_pct": 9.276,
+        "y_pct": 27.162,
+        "w_pct": 76.564,
+        "h_pct": 20.815
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Einen mir ganz wesentlich erscheinenden Punkt bei der Erörterung des Problems der Arbeitslosigkeit und der Arbeitsplatzbeschaffung sollte ich vielleicht an dieser Stelle noch erwähnen. Wenn sich in unserer Gesellschaft, wie es der Fall ist, die Ausführung spezifischer Arbeiten auf der bisherigen Grundlage als von der wissenschaftlich-technischen Entwicklung überholt und damit als ökonomisch untragbar erweist, dann müssen eben andere Arbeitsstrukturen geschaffen werden, um den Menschen jenen Sinn der Produktivität erkennen und erleben zu lassen, von dem ich gesprochen habe. Es ist doch ganz unsinnig, wenn ein Unternehmen den 50 von ihm produzierten Modellen eines Gegenstandes, etwa eines Feuerzeugs, weitere 20 Modelle hinzufügt, nur damit mehr Menschen beschäftigt werden können. Hier also müssen neue Überlegungen einsetzen.",
+      "bbox": {
+        "x_pct": 9.214,
+        "y_pct": 47.766,
+        "w_pct": 76.714,
+        "h_pct": 28.57
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Probleme, vor denen wir heute stehen, sind aber nicht allein darauf zurückzuführen, daß wir augenblicklich in einer schweren Krise stecken. Vor der Krise waren die Probleme auch schon vorhanden, nur haben sich wenige um sie gekümmert. Wenn es uns ökonomisch wieder besser gehen sollte, dann ist es ein Gebot für",
+      "bbox": {
+        "x_pct": 9.541,
+        "y_pct": 76.313,
+        "w_pct": 76.387,
+        "h_pct": 10.712
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "261",
+      "bbox": {
+        "x_pct": 81.365,
+        "y_pct": 89.263,
+        "w_pct": 2.766,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Text content was heavily truncated in the initial JSON.",
+    "Page number at the bottom was missing from the regions and needed to be added as page_footer."
+  ],
+  "doc_id": "2540",
+  "page": 13,
+  "elapsed_seconds": 7.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

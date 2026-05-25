@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "origine d'un autre ordre, à partir de laquelle finalement toutes se-raient nécessaires. En séparant radicalement chaque origine des autres on rend d'autant plus pressante l'exigence de leur interdépendance dans l'unité.",
+      "bbox": {
+        "x_pct": 8.577,
+        "y_pct": 6.598,
+        "w_pct": 83.794,
+        "h_pct": 7.909
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers souligne ce qui fait la difficulté essentielle d'un tel exposé : il recourt nécessairement à des termes objectifs, à des données empiriques, et pourtant ce n'est pas d'elles qu'il s'agit : en elles et à travers elles on vise quelque chose qui est au-delà d'elles. La pensée doit en quelque sorte s'engager dans l'objectivité, mais en se reconvertissant sans cesse, en évacuant au fur et à mesure ce qui est objectif pour retrouver ce en quoi et par quoi la réalité objective est.",
+      "bbox": {
+        "x_pct": 8.631,
+        "y_pct": 14.284,
+        "w_pct": 83.875,
+        "h_pct": 13.625
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les modes de l'englobant figurent dans le tableau ci-dessus, Jaspers les illustre en résumant quelques démarches fondamentales que je veux rapidement indiquer :",
+      "bbox": {
+        "x_pct": 8.401,
+        "y_pct": 29.503,
+        "w_pct": 84.106,
+        "h_pct": 7.943
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Première « démarche » (Schritt) : Nous vivons dans le monde, mais nous n'avons jamais le monde en face de nous, comme si nous pouvions le considérer du dehors. Tout ce que nous pouvons connaître est dans le monde, ce n'est jamais le monde. Le monde n'est jamais objet pour nous. Kant exprimait cela en disant que « le monde est une Idée ». Le monde est l'englobant de toute objectivité particulière.",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 38.732,
+        "w_pct": 83.916,
+        "h_pct": 13.822
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute connaissance objective est conditionnée pour nous par la structure de notre pensée consciente (par exemple : l'unité de n'importe quel objet est conditionnée par la propriété constitutive de notre « conscience en général », qui est d'instaurer l'unité de tout ce dont elle se saisit). Tel est le sens fondamental de la pensée kantienne : l'être en soi ne nous apparaît que traduit en « être pour nous », sous la forme que lui donne la conscience en général. On reconnaît la phénoménalité du monde empirique en saisissant le caractère englobant de la conscience en général.",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 52.159,
+        "w_pct": 84.146,
+        "h_pct": 17.446
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi l'englobant s'est ici déjà scindé : l'englobant au sein duquel l'être en soi apparaît s'appelle le monde. L'englobant que je suis, que nous sommes, s'appelle dans ce cas conscience en général.",
+      "bbox": {
+        "x_pct": 8.442,
+        "y_pct": 69.177,
+        "w_pct": 83.93,
+        "h_pct": 6.23
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deuxième démarche : Je ne suis pas seulement conscience en général. Je suis aussi un « sujet vital » (Dasein), — c'est-à-dire chez Jaspers un sujet qui vit, qui est né, qui mourra, qui lutte pour vivre — et c'est cette vitalité empirique, que je suis aussi, qui sous-tend ma conscience. Pour me saisir moi-même comme sujet vital, il me faut passer de la seule conscience à l'existence de fait, à ce qui a un commencement et une fin, qui lutte et peine au milieu de son environnement.",
+      "bbox": {
+        "x_pct": 8.089,
+        "y_pct": 76.607,
+        "w_pct": 83.916,
+        "h_pct": 13.822
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "43",
+      "bbox": {
+        "x_pct": 88.58,
+        "y_pct": 92.35,
+        "w_pct": 3.42,
+        "h_pct": 2.21
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Original text transcription was severely garbled by OCR, all text paragraphs corrected.",
+    "Page number 43 was missed and required manual creation/labeling."
+  ],
+  "doc_id": "1520",
+  "page": 49,
+  "elapsed_seconds": 6.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

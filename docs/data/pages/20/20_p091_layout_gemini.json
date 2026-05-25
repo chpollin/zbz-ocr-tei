@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "RÉALITÉ HISTORIQUE DE L'ÉTERNITÉ 89",
+      "bbox": {
+        "x_pct": 27.53,
+        "y_pct": 7.42,
+        "w_pct": 60.59,
+        "h_pct": 2.29
+      },
+      "changed": true,
+      "change_reason": "Corrected page header (including title and page number) from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "il se trouve dès le début à un niveau élevé que celui d'où le précédent était parti. Dans cette évolution, qui est celle de l'esprit lui-même, il n'y a pas de mort.",
+      "bbox": {
+        "x_pct": 11.898,
+        "y_pct": 12.19,
+        "w_pct": 75.904,
+        "h_pct": 10.314
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc le temps n'est pas pour Hegel simple forme; il n'est pas, en langage bergsonien, un deuxième espace homogène. Ses traits caractéristiques sont : hétérogénéité et évolution. Au fond, tous deux ne sont qu'un : les moments sont hétérogènes justement parce que les instants passés ne disparaissent pas sans laisser de traces, mais au contraire sont tous là dans le présent. Chronos n'avale plus ses enfants. La négativité radicale du temps crée précisément sa persistance, dans l'évolution. Mais cette persistance n'est plus le temps historique : elle le « nie » et le dépasse.",
+      "bbox": {
+        "x_pct": 11.747,
+        "y_pct": 22.571,
+        "w_pct": 76.099,
+        "h_pct": 31.114
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est avec ce dépassement que cesse entre Hegel et Bergson toute parenté, de sorte que la ressemblance signalée plus haut doit être rejetée comme superficielle. Pour Bergson, en effet, c'est en la persistance du passé dans le présent que consiste essentiellement le temps réel. Pour Hegel, cette persistance devient le signe de la présence dans le temps de ce qui est en soi hors du temps, de ce qui est éternel.",
+      "bbox": {
+        "x_pct": 11.551,
+        "y_pct": 53.21,
+        "w_pct": 76.355,
+        "h_pct": 22.724
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire étant un devenir perpétuel, on pourrait croire que l'élément éternel, c'est la force qui crée le devenir; c'est le créateur. Celui-ci ne deviendrait pas. Or, pour Hegel Dieu est bien éternel, mais il est aussi ce qui devient dans le temps : par la",
+      "bbox": {
+        "x_pct": 11.401,
+        "y_pct": 75.838,
+        "w_pct": 76.551,
+        "h_pct": 13.4
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page header and page number as separate entity to filter.",
+    "The extracted text in existing regions was truncated/corrupted, corrected descriptions for accuracy, but kept bbox coordinates as provided."
+  ],
+  "doc_id": "20",
+  "page": 91,
+  "elapsed_seconds": 5.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

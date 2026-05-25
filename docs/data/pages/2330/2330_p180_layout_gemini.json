@@ -1,0 +1,127 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "el les",
+      "bbox": {
+        "x_pct": 89.341,
+        "y_pct": 4.194,
+        "w_pct": 6.752,
+        "h_pct": 1.831
+      },
+      "changed": true,
+      "change_reason": "Identified as running header fragment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce pouvoir dactualisa tion me para\u0001et 1/1 \u0001egard. m\u0001eame si les gens trichent, supprimer; mais insupport",
+      "bbox": {
+        "x_pct": 15.714,
+        "y_pct": 11.935,
+        "w_pct": 80.464,
+        "h_pct": 42.282
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les possibilit\u0001es p\u0001edagogiques de la t\u0001el\u0001evision ne sont pas assez exploit\u0001ees.",
+      "bbox": {
+        "x_pct": 15.836,
+        "y_pct": 54.54,
+        "w_pct": 80.293,
+        "h_pct": 4.839
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certainement. pas assez. De plus; un nomnbre de films de genre sont plac\u0001es \u0001a des heures o\u0001u les jeune",
+      "bbox": {
+        "x_pct": 18.926,
+        "y_pct": 58.847,
+        "w_pct": 77.167,
+        "h_pct": 4.46
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les programmaleurs \" 'ont pas conscience de cette finalit\u0001e p\u0001edagogique ?",
+      "bbox": {
+        "x_pct": 15.995,
+        "y_pct": 64.331,
+        "w_pct": 80.183,
+        "h_pct": 4.379
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "I.ll On ne lui fait pas assez sa plave; parmi les dilf\u0001erentes rubriques de la t\u0001el\u0001evision. Une de fin",
+      "bbox": {
+        "x_pct": 16.203,
+        "y_pct": 68.065,
+        "w_pct": 80.134,
+        "h_pct": 12.073
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Pourquoi cette lacune ?",
+      "bbox": {
+        "x_pct": 29.304,
+        "y_pct": 81.613,
+        "w_pct": 26.41,
+        "h_pct": 2.121
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header/question."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1.11. D'abord parce dit   qu'on taux d\u0001ecoute suffisamment \u0001elev\u0001e. Et la publicit\u0001e joue aussi r\u0001ole, pu",
+      "bbox": {
+        "x_pct": 16.081,
+        "y_pct": 83.548,
+        "w_pct": 80.256,
+        "h_pct": 8.282
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "176",
+      "bbox": {
+        "x_pct": 16.485,
+        "y_pct": 94.677,
+        "w_pct": 3.784,
+        "h_pct": 2.419
+      },
+      "changed": true,
+      "change_reason": "Page number identified at bottom left."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Missing initial page footer tag for 176",
+    "Running header at top right needed reclassification",
+    "Section heading 'Pourquoi cette lacune' was incorrectly labeled as paragraph"
+  ],
+  "doc_id": "2330",
+  "page": 180,
+  "elapsed_seconds": 6.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

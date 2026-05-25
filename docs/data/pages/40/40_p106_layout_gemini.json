@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "108 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 98.0,
+        "y_pct": 77.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "The header 108 TEMPS ALTERNÉS was missed as a region and should be marked for filtering."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Réel viennent remplacer la personne ou l'objet imaginé; c'est pour qu'il y ait du feu, des œufs à la coque, pour que le trou des chaussettes disparaisse, que l'assiette fendue soit remplacée, que Monica soit en face de moi à table. Depuis quand n'ai-je plus fait ce geste tout autre, absurde, de lancer les dés ? Je pense à mon effort de jadis pour réaliser ce rendez-vous. Ce n'était pas parce que je voulais parler à Pierre et renouer notre lien. C'était seulement pour voir. On jette les dés, ce n'est pas pour que deux six apparaissent à la fois, même si ce coup est le plus désiré; c'est pour voir comment les dés seront tombés. On jette les dés, on jette une question à un être inconnu qui fait d'habitude comme s'il n'existait pas, qui se tait, — et voilà le hasard ou le destin pris au piège, obligé d'exister, obligé de répondre, car on ne sait pas comment les dés retomberont, mais on sait qu'ils retomberont, et ce sera une réponse.",
+      "bbox": {
+        "x_pct": 9.284,
+        "y_pct": 12.259,
+        "w_pct": 80.946,
+        "h_pct": 43.346
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and improved OCR accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi j'attendais la rencontre avec Pierre, et la question que je voulais lui poser s'adressait au delà de lui-même. Lui, il représentait plutôt l'intermédiaire, la voix de la pythie, l'oiseau qui vole vers la gauche. Car l'oiseau volerait vers la gauche, je le savais. L'espoir qui m'avait poussée tout d'abord était vite retombé. Je n'attendais de mon rendez-vous qu'un malheur enfin net, enfin certain; et parce qu'il allait être certain il ne me menaçait pas; il était en suspens, isolé dans le calme, presque comme un asile auquel on arrive et où l'on sait qu'on va mourir. C'était un triomphe que de provoquer l'informe qui m'étouffait en silence, de l'obliger à entrer dans le jeu,",
+      "bbox": {
+        "x_pct": 9.284,
+        "y_pct": 55.227,
+        "w_pct": 81.027,
+        "h_pct": 30.756
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and improved OCR accuracy."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header/number 108 region in original detection.",
+    "OCR of existing text blocks contained significant errors.",
+    "Section header '108 TEMPS ALTERNÉS' was incorrectly identified as part of the paragraph body or missing."
+  ],
+  "doc_id": "40",
+  "page": 106,
+  "elapsed_seconds": 6.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

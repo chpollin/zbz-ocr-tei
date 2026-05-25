@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "12",
+      "bbox": {
+        "x_pct": 89.373,
+        "y_pct": 100,
+        "w_pct": 1.705,
+        "h_pct": 1.189
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 37.498,
+        "y_pct": 100,
+        "w_pct": 25.107,
+        "h_pct": 1.189
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du révolutionnaire croissent souvent à mesure qu'il se débarrasse du lest des traditions, des attach",
+      "bbox": {
+        "x_pct": 8.581,
+        "y_pct": 14.961,
+        "w_pct": 78.896,
+        "h_pct": 23.263
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais après, lorsqu'il s'agit de maintenir > le misme délesté ne sullìt plus. Un ordre devient très v",
+      "bbox": {
+        "x_pct": 8.712,
+        "y_pct": 38.098,
+        "w_pct": 78.581,
+        "h_pct": 18.369
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit  aussitôt que de réaliser Yordre plus juste de Yavenir doit avoir de tout autres vertus et d",
+      "bbox": {
+        "x_pct": 8.371,
+        "y_pct": 56.342,
+        "w_pct": 78.752,
+        "h_pct": 35.936
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and header were not labeled",
+    "Missing header/footer region definitions"
+  ],
+  "doc_id": "130",
+  "page": 6,
+  "elapsed_seconds": 5.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

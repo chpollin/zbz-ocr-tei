@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieses «keep what you have» wird zu recht als Grundlage des langfristigen Wohlstandes betrachtet. Zwar weist die Schweiz keine grosszügigen Paläste, keine weiten Plätze, keine repräsentativen Strassen auf, dafür wirkt alles fein säuberlich renoviert, gut unterhalten, nicht selten auch philisterhaft herausgeputzt. Zu dieser Sorgfalt im Umgang mit allem Materiellen gehört natürlich auch die Tatsache, dass die Gebote des Umweltschutzes in keinem anderen Land so streng beachtet werden wie in der Schweiz. Wie sehr dieser Vorsprung auf das ganze übrige Europa ein Hindernis zu einer formellen Integration in der Europäischen Gemeinschaft bildet, sei nur am Rande vermerkt.",
+      "bbox": {
+        "x_pct": 23.238,
+        "y_pct": 16.087,
+        "w_pct": 66.018,
+        "h_pct": 30.46
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn soeben geschildert wurde, dass die Wirtschaft eines rohstoffarmen Landes nur durch Veredelung importierter Güter (Uhren, Instrumente, Luxuswaren verschiedenster Art) überleben konnte, so muss nun der Begriff der Innovation fallen. Immer wieder beweisen die Schweizer Ideenreichtum, Erfindungsgeist, aber auch - dosierten - Wagemut und Unternehmungskraft. Als Beispiel sei an den Zürcher Hans Kaspar Escher zum Felsenhof (1775-1859) erinnert. Zusammen mit dem finanzkräftigen Partner Salomon Wyss gründete er 1805 die Firma Escher Wyss. Ursprünglich auf Textilmaschinen spezialisiert, war man beweglich genug, auf die als Folge von Napoleons Aufstieg und Sturz rasch wechselnden europäischen Machtverhältnisse zu reagieren. Dabei ergab sich eine Marktlücke für Schiffsmotoren. So kam es zur sensationellen Tatsache, dass im Binnenland Schweiz Motoren für Hochseeschiffe hergestellt wurden, die auf dem Weltmarkt durchaus konkurrenzfähig waren; das Hauptproblem bestand darin, die Ungetüme flussabwärts bis ans Meer zu bringen. Der stürmische Aufschwung der schwei-",
+      "bbox": {
+        "x_pct": 23.198,
+        "y_pct": 47.266,
+        "w_pct": 66.057,
+        "h_pct": 46.212
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content to match image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 23.82,
+        "y_pct": 95.305,
+        "w_pct": 2.583,
+        "h_pct": 1.936
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR text extraction was severely garbled.",
+    "Page number at the bottom was misidentified as part of the text body."
+  ],
+  "doc_id": "2940",
+  "page": 24,
+  "elapsed_seconds": 5.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

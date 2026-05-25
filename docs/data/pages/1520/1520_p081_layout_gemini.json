@@ -1,0 +1,144 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "profondit jusqu'à la conscience en général tel qu'il manifeste historiquement.",
+      "bbox": {
+        "x_pct": 7.087,
+        "y_pct": 5.938,
+        "w_pct": 79.593,
+        "h_pct": 4.456
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Philosophie, II, p. 209)",
+      "bbox": {
+        "x_pct": 60.745,
+        "y_pct": 10.051,
+        "w_pct": 30.041,
+        "h_pct": 2.142
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to footnote for bibliographic reference."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "11",
+      "bbox": {
+        "x_pct": 7.412,
+        "y_pct": 14.91,
+        "w_pct": 3.428,
+        "h_pct": 1.714
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A première vue, toute détermination semble n'être qu'obstacle et limitation. Pourtant, saisie en tant que situation-limite, elle prend la profondeur insondable de l'acte même d'exister lorsqu'il se manifeste parmi les phénomènes.",
+      "bbox": {
+        "x_pct": 7.087,
+        "y_pct": 17.455,
+        "w_pct": 83.699,
+        "h_pct": 8.055
+      },
+      "changed": true,
+      "change_reason": "Extracted full text from OCR-like output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette profondeur vécue de l'existence n'est pas simplement donnée avec la conscience de l'historicité comme telle. Elle ne s'actualise qu'à travers l'éclairement existentiel de la situation en tant que situation-limite. Cet éclairement n'est pas transmissible : il comporte une origine où chacun, irremplaçable et unique, répond devant lui-même de ce qu'il est.",
+      "bbox": {
+        "x_pct": 7.182,
+        "y_pct": 24.936,
+        "w_pct": 83.645,
+        "h_pct": 11.799
+      },
+      "changed": true,
+      "change_reason": "Extracted full text from OCR-like output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand j'agis, ce n'est pas dans un monde en général, et pourtant c'est en lui que je m'oriente pour saisir ce qu'il y a de général dans ma situation. Ainsi le fait de vivre dans une situation toujours déterminée implique que mon existence sera d'autant plus résolue que mon action répondra davantage à l'unicité de ma situation. Agissant ainsi je ne suis certes pas libre au sens où les données matérielles, complètement maîtrisées, ne m'opposeraient plus aucune résistance, ni au sens où toute trace d'incompréhension aurait disparu, engendrant un accord total ; mais je suis libre au sens transcendant où mon existence manifeste son historicité originelle dans la réalité empirique : en tant que sujet autonome (Selbstsein) j'assume, dans l'inquiétude de ma liberté de choix, la certitude possible d'une vérité qui, par delà toute clarté et toute justification, réside en cette unique situation et en elle seule.",
+      "bbox": {
+        "x_pct": 7.046,
+        "y_pct": 36.53,
+        "w_pct": 83.916,
+        "h_pct": 26.855
+      },
+      "changed": true,
+      "change_reason": "Extracted full text from OCR-like output."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Philosophie, II, p. 213-214)",
+      "bbox": {
+        "x_pct": 55.556,
+        "y_pct": 63.008,
+        "w_pct": 35.23,
+        "h_pct": 2.142
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to footnote for bibliographic reference."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "12. Communication au niveau empirique",
+      "bbox": {
+        "x_pct": 7.412,
+        "y_pct": 67.695,
+        "w_pct": 50.813,
+        "h_pct": 2.314
+      },
+      "changed": true,
+      "change_reason": "Added period after 12."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La communication au sens de la vie avec autrui, telle qu'elle se réalise de diverses manières dans la vie empirique, comporte des relations communautaires qu'il importe d'observer, dont les particularités doivent être distinguées, dont les motivations et les effets doivent devenir transparents. Chaque espèce de communauté, si nécessaire qu'elle soit pour la vie, et donc pour l'existence possible dans cette vie, n'est cependant jamais d'emblée celle qu'en tant qu'existence possible je veux véritablement. Celle-ci, je dois la chercher au contraire à la limite où s'arrête la communication observatrice. Les relations que connaissent la psychologie et la",
+      "bbox": {
+        "x_pct": 7.141,
+        "y_pct": 70.523,
+        "w_pct": 83.821,
+        "h_pct": 19.169
+      },
+      "changed": true,
+      "change_reason": "Extracted full text from OCR-like output."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "75",
+      "bbox": {
+        "x_pct": 87.52,
+        "y_pct": 91.55,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer/filter."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Bibliographic references at the end of paragraphs are footnotes, not text.",
+    "Page number 75 was not detected or labeled previously.",
+    "OCR text for body paragraphs was incomplete/erroneous in original detection."
+  ],
+  "doc_id": "1520",
+  "page": 81,
+  "elapsed_seconds": 7.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ET DE L'INSÉCURITÉ RELIGIEUSE",
+      "bbox": {
+        "x_pct": 273,
+        "y_pct": 82,
+        "w_pct": 454,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "61",
+      "bbox": {
+        "x_pct": 828,
+        "y_pct": 82,
+        "w_pct": 21,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ne lui appartient et ne lui appartiendra jamais. Elle y tend, mais elle ne peut qu'y tendre. Elle reste effort vers quelque chose d'inaccessible. C'est pourquoi il est intéressant d'étudier, comme nous le ferons plus bas pour illustrer notre distinction jusqu'ici vide et abstraite des deux faces de la philosophie, le rapport des notions de temps et d'éternité dans le système de Hegel, qui est le plus achevé, le plus fermé de tous, celui qui se rapproche le plus du caractère définitif de l'art et s'arrache le plus complètement au devenir. Il s'éloigne d'ailleurs d'autant, nous le verrons, de la philosophie véritable.",
+      "bbox": {
+        "x_pct": 10.392,
+        "y_pct": 12.707,
+        "w_pct": 76.205,
+        "h_pct": 33.022
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin, une philosophie qui ne serait que l'expression de la foi et l'appel à la foi ne serait plus non plus philosophie. La décision qu'elle oblige à prendre sans cesse serait déjà irrévocablement prise. L'alternative « être ou n'être pas » ne peut plus être radicale pour le sujet et l'objet à la fois puisque le monde objectif est rempli pour l'éternité par la présence de l'être existant absolument en tant que créateur. La foi, comme l'art, quoique d'une manière différente, se place hors du temps, dans l'éternité. La philosophie, qui implique l'effort humain, ne peut que tendre à l'éternité, dans le temps.",
+      "bbox": {
+        "x_pct": 10.136,
+        "y_pct": 48.141,
+        "w_pct": 76.205,
+        "h_pct": 31.049
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce signifie nullement qu'il n'y ait aucune foi dans la philosophie, ni que l'inspiration religieuse suffise à supprimer le caractère philosophique d'un système. Au contraire, il y a une foi philo-",
+      "bbox": {
+        "x_pct": 10.392,
+        "y_pct": 78.866,
+        "w_pct": 75.798,
+        "h_pct": 10.334
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction was corrupted and required full transcription correction.",
+    "Running header and page number were identified as text regions in original detection.",
+    "Bboxes for header and page number were missing in original JSON input, added for complete layout representation."
+  ],
+  "doc_id": "20",
+  "page": 63,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

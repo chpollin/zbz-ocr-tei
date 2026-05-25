@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "glissaic e Il imou- corps, Lorsqu'i] arriva une allan: d'un Un homme ATaide danger fin, Puis plus pr",
+      "bbox": {
+        "x_pct": 11.844,
+        "y_pct": 8.544,
+        "w_pct": 35.793,
+        "h_pct": 13.264
+      },
+      "changed": true,
+      "change_reason": "The text content is clearly mangled/mis-scanned. Maintaining as paragraph as it contains body text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "\u0000lan; c dc tout son prir",
+      "bbox": {
+        "x_pct": 12.613,
+        "y_pct": 77.776,
+        "w_pct": 31.758,
+        "h_pct": 4.629
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pall2s Jeveux Pisser fracas, petsiflani: qu'\u0000 qu' nu les",
+      "bbox": {
+        "x_pct": 54.87,
+        "y_pct": 8.986,
+        "w_pct": 33.055,
+        "h_pct": 20.481
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "~Oui, Fr au bour Je depenvinpt-",
+      "bbox": {
+        "x_pct": 70.826,
+        "y_pct": 50.416,
+        "w_pct": 18.895,
+        "h_pct": 19.324
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 1,
+  "issues": [
+    "Optical Character Recognition (OCR) quality is extremely poor, leading to corrupted text strings in all regions.",
+    "Multiple regions suffer from severe garbled text output that does not match the visual representation of the book source."
+  ],
+  "doc_id": "600",
+  "page": 3,
+  "elapsed_seconds": 6.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

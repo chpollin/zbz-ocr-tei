@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "188 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 74.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "The page number and header text should be classified as page_header/filter, not as a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par suite de cette conséquence, le fait de vivre paraît naturel, souvent négligeable. On pense à autre chose. Il arrive souvent, de cette manière, qu'on ne pense à rien. L'étre qu'on aime sort dans la rue. On est à peu près sùr qu'il reviendra. Lorsqu'il revient, c'est à peine une joie, tellement c'est simple et prévu. Peut-étre le regarde-t-on moins, peut-étre devient-il moins pleinement réel que lorsque l'acte d'aller à la poste peut s'achever dans un wagon à bestiaux en route pour la Sibérie. On pense à autre chose, — peut-étre à la montre qu'on voudrait lui acheter, au vétement dont il pourrait avoir besoin. Ou peut-étre aux problèmes qu'il se pose et qui n'ont pas de solution.",
+      "bbox": {
+        "x_pct": 9.791,
+        "y_pct": 10.339,
+        "w_pct": 85.891,
+        "h_pct": 23.262
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR re-reading and fixed labels."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faudrait qu'un poète écrivit un hymne à la gloire de la sécurité, de ses possibles, de ses jeux, de ses petitesses et de sa grandeur. Sécurité qui a permis au monde d'étre par instants, dans un regard humain, autre chose qu'un champ de carnage. Sécurité, mère des couleurs, des sons et des idées.",
+      "bbox": {
+        "x_pct": 9.93,
+        "y_pct": 33.128,
+        "w_pct": 85.794,
+        "h_pct": 10.722
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR re-reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette sécurité à l'égard de la force matérielle, policière, de l'État, la démocratie politique l'assure. Nul homme ne peut purement et simplement disparaître. Ses proches le réclameraient à grands cris, ils le pourraient sans mettre leur propre vie en danger. Le droit existe, avec son appareil qui fonctionne, ses lois écrites qui lient le pouvoir comme les autres citoyens. Malgré tous les forfaits commis sous le couvert de ces lois, elles conservent un certain nombre de garanties essentielles que seule l'habitude peut faire prendre à la légère. Bien plus : la morale des citoyens n'existe que grâce à ces lois et aux garanties qu'elles leur donnent. Car nul étre humain ne peut étre tenu de faire ce qu'il doit et de ne pas faire ce qu'il ne doit pas lorsque ce devoir le condamne à mort. La situation élémentaire du danger de mort perpétuel, chaque fois qu'elle se recrée au cours de l'histoire, par la terreur, détruit les conditions mêmes de toute moralité.",
+      "bbox": {
+        "x_pct": 9.93,
+        "y_pct": 43.137,
+        "w_pct": 85.752,
+        "h_pct": 31.132
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR re-reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette sécurité élémentaire — l'impossibilité pour un homme de disparaître purement et simplement sans que soit faite au grand jour la preuve de sa culpabilité criminelle — conditionne toutes les autres. Le pouvoir ne peut pas décréter selon son bon plaisir que telle activité qui le gêne est, de ce fait, criminelle. La menace immédiate écartée, il devient possible de faire des plans, de s'unir, de coordonner les actes, — bref, de constituer une force. Les",
+      "bbox": {
+        "x_pct": 10.167,
+        "y_pct": 74.421,
+        "w_pct": 85.696,
+        "h_pct": 14.733
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR re-reading."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Page number and header were incorrectly merged with the first paragraph.",
+    "OCR text was heavily garbled, required manual correction of almost every paragraph.",
+    "Missing line between segments in the JSON layout versus document structure."
+  ],
+  "doc_id": "330",
+  "page": 222,
+  "elapsed_seconds": 7.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

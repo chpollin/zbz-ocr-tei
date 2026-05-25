@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "est plus aclive encore. En dans son principe; au   momentlimitc; abstrailement conçu et   fictif, où",
+      "bbox": {
+        "x_pct": 24.804,
+        "y_pct": 13.265,
+        "w_pct": 68.94,
+        "h_pct": 24.115
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "2. La liberté comme coïncidence de nécessitéa",
+      "bbox": {
+        "x_pct": 32.373,
+        "y_pct": 39.841,
+        "w_pct": 53.306,
+        "h_pct": 1.822
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous relrouvons ici celle nolion de   légalité autonome, de nécessilé 4 déjà été ellleurée plus haut",
+      "bbox": {
+        "x_pct": 24.735,
+        "y_pct": 42.544,
+        "w_pct": 68.548,
+        "h_pct": 7.267
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chacun sail distinguer enlre a nécessité   physique et la nécessité   logique. La nécessité   physiq",
+      "bbox": {
+        "x_pct": 24.343,
+        "y_pct": 49.863,
+        "w_pct": 68.859,
+        "h_pct": 16.932
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "L nécessité   eslhétique se raltache-t-elle de deux nécessilés Ou est-elle   spécilique?",
+      "bbox": {
+        "x_pct": 24.343,
+        "y_pct": 66.416,
+        "w_pct": 68.479,
+        "h_pct": 3.994
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Cf. 167.",
+      "bbox": {
+        "x_pct": 24.3,
+        "y_pct": 72.5,
+        "w_pct": 15.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match source."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "194",
+      "bbox": {
+        "x_pct": 24.7,
+        "y_pct": 10.0,
+        "w_pct": 5.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "L'ETRE ET LA FORME",
+      "bbox": {
+        "x_pct": 72.8,
+        "y_pct": 10.0,
+        "w_pct": 21.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Footnote text was inaccurate",
+    "Missing page number region",
+    "Missing page header region"
+  ],
+  "doc_id": "110",
+  "page": 196,
+  "elapsed_seconds": 5.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content to match source.": 1,
+    "ADDED": 2
+  }
+}

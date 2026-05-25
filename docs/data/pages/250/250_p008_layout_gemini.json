@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ŒUVRE DU VINGTIÈME SIÈCLE 85",
+      "bbox": {
+        "x_pct": 194.0,
+        "y_pct": 336.0,
+        "w_pct": 218.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label and tag for page header/footer content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'avance. A 9 heures un quart, déjà, on murmurait que c'était long. Au premier entr'acte, des jeunes gens très compétents déclaraient la musique « bien faite, mais n'apportant rien de nouveau ». Je n'ai pas de compétence en musique, je parle simplement comme auditrice. Mais j'ai peine à croire que l'hostilité décidée du public contre Billy Budd ait été spontanée — et cette impression de réaction pré-déterminée me fait douter, par extension, des applaudissements délirants qui saluèrent telle autre musique, apparemment peu faite pour charmer un parterre rempli de somptueuses toilettes du soir. Il y a eu malgré tout quelque chose de factice dans ces triomphes de l'art moderne, — quelque chose de factice qui allait jusqu'à répandre le malaise d'un insaisissable mensonge.",
+      "bbox": {
+        "x_pct": 69.54,
+        "y_pct": 361.63,
+        "w_pct": 488.32,
+        "h_pct": 188.94
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and cleaned content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour en revenir à Billy Budd, j'y ai retrouvé ce climat particulier de Britten, qui m'avait saisie quand j'ai entendu sa musique pour la première fois et d'où me venait l'écho d'un lieu, inconnu l'instant précédent, et pourtant familier depuis toujours. Des feuillages, des bruissements, nets, mais sans limites, une façon d'admettre l'infini, non par le mystère ou l'enveloppement, mais par une sorte de limpidité où rien ne s'efface. Et après tous ces concerts où les sons étaient durcis par mille formes de staccato, voici que se déroulait un chant. Un vaste chant liait la mer, la fraternité, la servitude, la haine et la mort. Mais pourquoi donc cette hostilité du public ? Parce que le snobisme désormais interdit le chant — ou parce que les raffinements de l'art abstrait et de la musique pure excluent le thème d'un navire de guerre, camp de concentration flottant où gronde la révolte sous la dormante et séculaire résignation ?",
+      "bbox": {
+        "x_pct": 72.28,
+        "y_pct": 554.0,
+        "w_pct": 487.99,
+        "h_pct": 210.0
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph content detected in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'allais oublier le dernier opéra, venu d'Amérique; Quatre Saints en trois actes, de Virgil Thomson, sur un livret de Gertrud Stein, mais j'aurais peut être mieux fait de l'oublier. Décidément, la pauvreté musicale et poétique, même soulignée avec humour, ne devient pour autant ni candeur, ni naturel, ni rien.",
+      "bbox": {
+        "x_pct": 72.28,
+        "y_pct": 784.32,
+        "w_pct": 487.99,
+        "h_pct": 87.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je parlerai peu des ballets, sinon pour exprimer mon regret de la place prépondérante qu'ils prirent dans l'ensemble du festival. Il y eut, certes, de belles choses, et le corps de",
+      "bbox": {
+        "x_pct": 71.72,
+        "y_pct": 880.44,
+        "w_pct": 488.07,
+        "h_pct": 43.9
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text blocks were heavily truncated and contained significant OCR errors.",
+    "Page number and header were not correctly filtered.",
+    "Major missing text block identified between main paragraphs."
+  ],
+  "doc_id": "250",
+  "page": 8,
+  "elapsed_seconds": 6.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

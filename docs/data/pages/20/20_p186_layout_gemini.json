@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "184 L'ULTIME OBJET DE LA PHILOSOPHIE :",
+      "bbox": {
+        "x_pct": 137.0,
+        "y_pct": 81.0,
+        "w_pct": 621.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Header elements identified as text should be tagged as page_header to follow instructions."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "intérieure \" De là l'emploi si spécial que fait Jaspers du verbe philosophiquement peu usité erhellen, éclairer : il ne s'agit pas de démontrer, mais de montrer. Il s'agit d'éclairer ce qui peut devenir, et voilà pourquoi toute ontologie est impossible. Mais la philosophie de Jaspers n'est pas seulement descriptive; elle est avant tout, au moyen de la description, appel. Elle est active. Elle accomplit un acte et demande un acte au lecteur. Car c'est par l'acte seul que se réalise l'existence, et le philosophe ne peut parler que de sa possibilité.",
+      "bbox": {
+        "x_pct": 13.208,
+        "y_pct": 12.326,
+        "w_pct": 76.099,
+        "h_pct": 28.313
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un autre de ses caractères, c'est d'être inachevée, inachevable, et par là ouverte de toutes parts. A l'intérieur d'elle-même, la Weltorientierung ouvre des échappées sur l'Existenzerhellung, celle-ci sur la Métaphysique; la Métaphysique reste ouverte par son échec et son silence final. Et la philosophie entière reste ouverte et exige, comme l'accomplissement indispensable qui seul lui donnera sa réalité, la recherche scientifique dans le monde, pas à pas, à l'infini, et l'action existentielle, libre.",
+      "bbox": {
+        "x_pct": 13.148,
+        "y_pct": 40.353,
+        "w_pct": 76.31,
+        "h_pct": 25.615
+      },
+      "changed": true,
+      "change_reason": "Cleaned up text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aucune philosophie, je crois qu'on peut l'affirmer, n'a été pour elle-même d'une telle transparence. Aucune n'a su aussi clairement ce qu'elle était, ce qu'elle faisait, ce qu'elle voulait donner, — et ce qu'elle ne pouvait pas donner. L'illusion philoso- phique, dont j'ai essayé plus haut de montrer qu'elle est indispensable à toute philosophie, me paraît ici complètement détruite, par une impitoyable clarté de l'esprit envers lui-même.",
+      "bbox": {
+        "x_pct": 13.057,
+        "y_pct": 65.968,
+        "w_pct": 76.401,
+        "h_pct": 22.784
+      },
+      "changed": true,
+      "change_reason": "Cleaned up text transcription."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "The OCR in the provided JSON regions was very poor and required manual reconstruction from the image.",
+    "The page header (184 L'ULTIME...) was initially missing from the region list.",
+    "The layout regions for text blocks were identified, but the text content was significantly garbled."
+  ],
+  "doc_id": "20",
+  "page": 186,
+  "elapsed_seconds": 4.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

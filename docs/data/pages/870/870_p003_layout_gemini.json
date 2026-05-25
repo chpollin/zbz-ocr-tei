@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "326 ETHICS AND SOCIAL JUSTICE",
+      "bbox": {
+        "x_pct": 11.405,
+        "y_pct": 10.655,
+        "w_pct": 35.468,
+        "h_pct": 5.435
+      },
+      "changed": true,
+      "change_reason": "Page header labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "beginning",
+      "bbox": {
+        "x_pct": 38.346,
+        "y_pct": 35.197,
+        "w_pct": 8.403,
+        "h_pct": 2.431
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "When these texts arrived, I noted the themes that were touched on. By this completely empirical method we discovered an unbelievable richness of many themes implied in these texts.",
+      "bbox": {
+        "x_pct": 9.627,
+        "y_pct": 39.774,
+        "w_pct": 37.189,
+        "h_pct": 13.027
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "basis of human rights which I believe is at",
+      "bbox": {
+        "x_pct": 23.518,
+        "y_pct": 78.308,
+        "w_pct": 22.82,
+        "h_pct": 5.244
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IS THE DECLARATION OF HUMAN RIGHTS A WESTERN CONCEPT? 327",
+      "bbox": {
+        "x_pct": 56.023,
+        "y_pct": 9.654,
+        "w_pct": 34.924,
+        "h_pct": 2.026
+      },
+      "changed": true,
+      "change_reason": "Page header/title labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "of words which I now am using... for instance in the ritual words which an African king must pronounce when he is taking power, words which show that the power is of a conditional rather than an unconditional sort.",
+      "bbox": {
+        "x_pct": 53.948,
+        "y_pct": 26.853,
+        "w_pct": 36.587,
+        "h_pct": 16.448
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "power. It is not rights—it is applied duty.",
+      "bbox": {
+        "x_pct": 53.7,
+        "y_pct": 55.542,
+        "w_pct": 8.442,
+        "h_pct": 17.759
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Multiple transcriptions were incorrect or garbled.",
+    "Page headers were labeled as text.",
+    "Section content in text regions requires better OCR calibration."
+  ],
+  "doc_id": "870",
+  "page": 3,
+  "elapsed_seconds": 4.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

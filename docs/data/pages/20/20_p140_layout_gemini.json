@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "138 NIETZSCHE",
+      "bbox": {
+        "x_pct": 11.852,
+        "y_pct": 74.551,
+        "w_pct": 76.446,
+        "h_pct": 2.457
+      },
+      "changed": true,
+      "change_reason": "Corrected header/page number to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tellement est grande la force des Idées. La raison apparaissait donc finalement emprisonnée dans des limites infranchissables, et en même temps obligée d'en sortir. Cela dit, l'illusion, implicitement, était détruite. Dès que la notion d'erreurs essentiellement inévitables fut posée, c'en était fait du vieux rêve d'une philosophie apodictique. Et ce n'est pas pour rien que Kant lui-même, malgré son illusion intacte, était amené à déclarer qu'on ne peut pas apprendre la philosophie, qu'on ne peut apprendre qu'à philosopher.",
+      "bbox": {
+        "x_pct": 11.852,
+        "y_pct": 11.888,
+        "w_pct": 76.446,
+        "h_pct": 28.275
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a eu naturellement après lui des systèmes à prétentions apodictiques qui ont enchaîné des démonstrations là où il avait cru imposer pour toujours le silence. On s'est hâté de violer l'inconnu de la « chose en soi » et d'en parler comme d'un objet. Ce faisant, on confirmait encore sa critique qui avait montré l'incapacité fondamentale de la raison à respecter ses propres limites. Le système le plus vaste, aux prétentions universelles, a été celui de Hegel dont j'ai étudié plus haut un problème central. Sa foi en la certitude apodictique de la solution qu'il donne à l'énigme universelle est absolue. Je ne m'attacherai pas ici aux philosophes qui, sans entendre Kant, et par conséquent sans le réfuter, ont continué à construire des systèmes « totalitaires », universalistes et soi-disant apodictiques. Je ne fais pas ici l'histoire de la philosophie, mais celle de la destruction d'une illusion. Il s'agit de voir comment l'illusion, révélée implicitement",
+      "bbox": {
+        "x_pct": 11.506,
+        "y_pct": 40.105,
+        "w_pct": 76.551,
+        "h_pct": 48.236
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match visual content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original labels missed page header.",
+    "OCR text was extremely corrupt and did not represent the document content.",
+    "Bbox for page header was missing in initial capture."
+  ],
+  "doc_id": "20",
+  "page": 140,
+  "elapsed_seconds": 4.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

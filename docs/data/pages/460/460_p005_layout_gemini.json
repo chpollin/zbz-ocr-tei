@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'EUROPE AU DÉFI 3",
+      "bbox": {
+        "x_pct": 369.0,
+        "y_pct": 102.0,
+        "w_pct": 264.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header and page number as page_header/page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous craignons plutôt d'y être pour quelque chose, ou alors d'être pris à partie trop violemment, interpellés. Si seulement nous pouvions ne plus être dans le coup du tout, sortir une bonne foi de l'histoire, nous déclarer définitivement neutres et contre toute guerre, et nous boucher les oreilles ; écouter des histoires, bon, mais assumer l'histoire, jamais plus.",
+      "bbox": {
+        "x_pct": 106.0,
+        "y_pct": 137.0,
+        "w_pct": 796.0,
+        "h_pct": 178.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Car, après tout, ce temps qui n'a plus de maintenant, il est encore assez agréable à vivre, chez nous, en Europe. Et ces cris de famine — famine de pain, famine de dignité — qui sont poussés par des multitudes ailleurs, pourquoi n'en pas faire une histoire de plus, émouvante et douloureuse comme toutes les belles histoires, — pourquoi ne pas les mettre au passé et les ajouter aux plaintes poussées longtemps, longtemps, par ces multitudes de morts dont chacun de nos pas foule la poussière et pour lesquels, en toute conscience, nous ne pouvons plus rien?",
+      "bbox": {
+        "x_pct": 106.0,
+        "y_pct": 315.0,
+        "w_pct": 796.0,
+        "h_pct": 273.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le livre que voici dit que c'est impossible. Le livre que voici avertit. Il ne raconte aucune histoire. Il décrit un moment qui est notre maintenant. Il tente de nous acculer à notre hic et nunc, c'est-à-dire au point où, entre le passé et l'avenir, royaumes des histoires, nous choisissons notre sort réel. Et ne pas choisir, c'est encore choisir. Car on n'est jamais sûr, c'est vrai, en agissant, d'obtenir exactement ce qu'on a choisi. Mais si nous ne nous en mêlons pas, un avenir à peu près",
+      "bbox": {
+        "x_pct": 110.0,
+        "y_pct": 662.0,
+        "w_pct": 796.0,
+        "h_pct": 218.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match document content exactly."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and running header not categorized correctly.",
+    "OCR text transcription was highly inaccurate.",
+    "Bbox for page_header was missing or incorrectly grouped with text in the input.",
+    "The input bounding box list was truncated or incorrectly merged."
+  ],
+  "doc_id": "460",
+  "page": 5,
+  "elapsed_seconds": 7.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

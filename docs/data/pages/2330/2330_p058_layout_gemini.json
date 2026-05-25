@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Depuis le temps où vous écriviez vos premiers ouvrages ? Pensez-vous qu'on puisse parler aujourd'hui d'une « crise » de la philosophie, au sens d'une mise en question, voire d'un rejet de la réflexion traditionnelle sur les grands problèmes de l'existence et leurs présupposés métaphysiques ?",
+      "bbox": {
+        "x_pct": 15.714,
+        "y_pct": 4.562,
+        "w_pct": 79.805,
+        "h_pct": 10.217
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text to accurately reflect source text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment expliquez-vous cette fascination par les sciences exactes et les sciences humaines chez les philosophes de notre temps ?",
+      "bbox": {
+        "x_pct": 15.836,
+        "y_pct": 63.934,
+        "w_pct": 79.646,
+        "h_pct": 4.232
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to fix typos and formatting artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1.11. Il fut temps où les philosophes, lorsqu'ils se trouvaient avec des scientifiques, louchaient toujours de leur côté en essayant de deviner comment ceux-ci jugeaient ce qu'ils étaient en train de dire. Les scientifiques détenaient les critères de la vérité, et la philosophie était toute timide devant eux. Et à juste titre, si on considère la sorte d'ascèse qui a permis le développement de la science, son exigence d'évidence, de vérification et de langage commun. La philosophie, en comparaison, paraît étonnamment relâchée et vulnérable. Or précisément, ce que les philosophes auraient dû faire, c'est devenir plus rigoureux dans leur domaine, au lieu de s'en retirer. Et pour devenir plus rigoureux dans le domaine de la philosophie, il faut aussi élaborer une réflexion critique sur les sciences et leurs fondements philosophiques. Une telle réflexion a",
+      "bbox": {
+        "x_pct": 15.592,
+        "y_pct": 67.844,
+        "w_pct": 79.927,
+        "h_pct": 23.894
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match the provided source image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "54",
+      "bbox": {
+        "x_pct": 15.347,
+        "y_pct": 94.619,
+        "w_pct": 2.748,
+        "h_pct": 2.655
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR output for initial paragraphs was significantly garbled and truncated.",
+    "Page number not labeled as filter component.",
+    "Multiple regions required re-transcription to match image source accurately."
+  ],
+  "doc_id": "2330",
+  "page": 58,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

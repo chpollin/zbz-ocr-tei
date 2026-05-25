@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On retrouve un genre de communication analogue dans la science. Là aussi elle se réalise à un niveau impersonnel, mais le terrain commun est différent : c'est celui de la conscience en général (Bewusstsein überhaupt). L'universalité, l'apodicticité, l'évidence, dans les sciences, ont une validité générale, et non une valeur absolue. Jaspers oppose la validité générale (Allgemeingültigkeit) à l'absolu (das Unbedingte). En effet, la validité des énoncés scientifiques s'impose à tous les esprits normaux, mais sans aucun impératif absolu. Au contraire : cette validité est toujours relative à un point de vue, un découpage du réel, une approche méthodologique, des postulats implicites ou antérieurement choisis.",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 6.255,
+        "w_pct": 83.875,
+        "h_pct": 21.362
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ni dans la communication « pratique » de la vie quotidienne, ni dans la communication scientifique, les sujets qui échangent des paroles ne sont personnellement engagés. Ils ne se communiquent pas ce qu'ils sont eux-mêmes, mais seulement des données objectives, valables en dehors d'eux. A vrai dire, il s'agit de transmettre une connaissance plutôt que de communiquer réellement (Mitteilung plutôt que Kommunikation).",
+      "bbox": {
+        "x_pct": 8.496,
+        "y_pct": 27.249,
+        "w_pct": 83.957,
+        "h_pct": 13.71
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match content of image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La vraie communication, c'est autre chose. C'est la communication existentielle, celle d'une existence cherchant à communiquer avec une autre. Ici, ce n'est plus la réalité empirique ni la validité générale qui compte, c'est l'existence, ses possibles, sa vérité, sa situation, son enracinement, son absolu. Même si en apparence le discours se sert de données objectives, celles-ci ne sont que des moyens d'expression, une sorte d'épreuve à laquelle une existence en soumet une autre, et à travers laquelle elle se met elle-même en question.",
+      "bbox": {
+        "x_pct": 8.537,
+        "y_pct": 40.42,
+        "w_pct": 83.835,
+        "h_pct": 17.506
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match content of image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La communication existentielle est aussi éloignée de l'objectivité impersonnelle, empirique ou rationnelle, que d'une volonté de puissance explosive par laquelle le sujet chercherait à s'asservir autrui. La conscience en général se meut parmi les évidences alors que l'existence n'a que des convictions. La conscience en général s'adresse à la rationalité impersonnelle de l'autre, elle prouve, démontre, vérifie, imposant ainsi la validité universelle de ce qu'elle sait. L'existence, elle, vit pour ses convictions et parfois elle meurt pour elles. Elle se confond avec elles, elle cesserait d'être elle-même en les perdant. Mais ces convictions sont d'une nature telle qu'à supposer que l'existence pût les imposer par l'exercice d'une rationalité contraignante, elles perdraient par le fait même leur sens et leur vérité. Car ce sens, cette vérité, elles ne les ont que pour l'existence en tant que libre, et toute contrainte, fût-elle physique ou logique, suffirait à les dénaturer.",
+      "bbox": {
+        "x_pct": 8.537,
+        "y_pct": 57.524,
+        "w_pct": 83.74,
+        "h_pct": 28.706
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match content of image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc, seules les évidences générales, qui n'engagent pas l'existence, qui subsistent indépendamment d'elle et la laissent en",
+      "bbox": {
+        "x_pct": 13.049,
+        "y_pct": 85.921,
+        "w_pct": 78.997,
+        "h_pct": 4.079
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match content of image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 88.948,
+        "y_pct": 91.802,
+        "w_pct": 2.227,
+        "h_pct": 2.871
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer and zbz_tag to _filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR for paragraph text was highly fragmented and incorrect.",
+    "Page number at bottom right was misidentified as text."
+  ],
+  "doc_id": "1520",
+  "page": 33,
+  "elapsed_seconds": 6.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

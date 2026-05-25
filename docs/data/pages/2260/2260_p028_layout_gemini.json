@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tes, sens-tu le courant? T'entraîne-t-il vers ce futur à peine né, déjà multiple, sur lequel tu ouvres ces yeux de crainte et d'attente, et vers lequel, oubliant la pomme, déjà tu vas, avec l'élan de ce corps raide en train de devenir un corps de femme? Ou nages-tu à contre-courant, contre un temps qui s'en va, fuyant derrière toi, entraînant loin de toi vers le passé pour l'y ensevelir dans l'oubli ou la légende cette pomme, et ta main qui la cueille, cette histoire désormais immuable, mais emportée au loin parmi les contes, à la merci de l'incrédulité?",
+      "bbox": {
+        "x_pct": 23.022,
+        "y_pct": 11.389,
+        "w_pct": 66.092,
+        "h_pct": 36.338
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and incomplete OCR transcription to match the full text visible in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tu viens des algues éternelles dont le bas de ton corps est encore prisonnier, mais ton buste, ta tête déjà s'en dégagent. Eve désobéissante, créée pour cette désobéissance qui devait fendre l'éternité et en faire saigner ce flot de sève ambigu grâce auquel tout a commencé d'un seul coup: la conscience et le temps, et le nom du commencement, le choix de vivre et le savoir de la mort. Et même: la possibilité d'obéir. Désobéissance instrumentale, geste d'Eve par lequel Dieu accomplit sa deuxième",
+      "bbox": {
+        "x_pct": 22.852,
+        "y_pct": 47.98,
+        "w_pct": 66.311,
+        "h_pct": 31.54
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and incomplete OCR transcription to match the full text visible in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "30",
+      "bbox": {
+        "x_pct": 23.0,
+        "y_pct": 82.2,
+        "w_pct": 3.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was severely truncated in both paragraphs.",
+    "Page number at the bottom was not identified or labeled."
+  ],
+  "doc_id": "2260",
+  "page": 28,
+  "elapsed_seconds": 4.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

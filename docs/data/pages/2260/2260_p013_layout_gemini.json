@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "attiré déjà par le vertige absolu du centre de l’être. Trouva dans les doigts de Dieu ses racines et ses branches, et dans l’être de Dieu son tronc affirmatif. Trouva, coïncida, sombra. S’abolit.",
+      "bbox": {
+        "x_pct": 10.825,
+        "y_pct": 10.741,
+        "w_pct": 65.656,
+        "h_pct": 14.167
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match original image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu se retrouva seul et entier.",
+      "bbox": {
+        "x_pct": 14.614,
+        "y_pct": 28.224,
+        "w_pct": 45.711,
+        "h_pct": 2.584
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu avait aimé l’Arbre et lui avait donné tant d’être que l’Arbre s’était perdu en Lui. Il avait voulu un autre divin, – et voilà qu’il n’y avait pas d’autre divin que Lui-même.",
+      "bbox": {
+        "x_pct": 10.825,
+        "y_pct": 33.784,
+        "w_pct": 65.656,
+        "h_pct": 8.519
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match original image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu voulut alléger ses mains et diminuer leur puissance. Donner moins.",
+      "bbox": {
+        "x_pct": 10.825,
+        "y_pct": 44.815,
+        "w_pct": 65.656,
+        "h_pct": 6.111
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match original image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il essaya de créer la Riviere, le Ciel, le Corps vivant, le Fruit, mais la Riviere s’écoula dans l’unique lit majestueux de Sa durée, le Ciel s’arrondissait sur l’unique voûte plastique de Son infini, le Vivant ne vivait que des battements de Son propre cœur, et Son unique plénitude gonflait le Fruit au sein de l’identité.",
+      "bbox": {
+        "x_pct": 10.825,
+        "y_pct": 50.741,
+        "w_pct": 65.656,
+        "h_pct": 22.315
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match original image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 72.886,
+        "y_pct": 82.315,
+        "w_pct": 1.75,
+        "h_pct": 1.852
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR text was heavily corrupted.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 13,
+  "elapsed_seconds": 5.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

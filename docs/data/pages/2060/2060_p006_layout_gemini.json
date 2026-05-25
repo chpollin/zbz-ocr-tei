@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "reiner Materialismus? Was haben wir wohl versäumt, warum sind wir nicht mehr fähig, dieser Tradition Europas treu zu bleiben?",
+      "bbox": {
+        "x_pct": 17.881,
+        "y_pct": 8.318,
+        "w_pct": 72.358,
+        "h_pct": 6.769
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein Grund dafür ist, daß wir seit einiger Zeit die Notwendigkeit der Erziehung, der Übertragung, vernachlässigt haben, daß wir immer wieder von Kreativität gesprochen haben, als könnte die Kreativität aus der Leere entstehen, als sei nicht jede Kreativität ein Fortsetzen aus etwas heraus. Das haben wir vernachlässigt. Daß wir viele Schulen, viele Klassen usw. haben und ein so groß entwickeltes Unterrichtswesen, beweist nichts gegen das, was ich sage. Vor einigen Jahren hat man natürlich an meiner Universität ein neues Gesetz geschaffen. Und da waren am Anfang die Prinzipien. Da sprach man vom Zweck der Universität. Und niemand wagte zu sagen, daß die Universität auch - ich sage nicht nur, sondern auch - Wissen vermitteln muß. Einfach vermitteln, Wissen, das es schon gibt. Die ganze Welt will lauter Bücher schreiben. Das ist sehr schön. Niemand wird Professor werden, wenn er nichts veröffentlicht. Aber wir brauchen gute Professoren und Lehrer, die vermitteln, denn ohne Vermittlung gibt es auch keine Geschichte. Ohne Vermittlung gäbe es kein Europa.",
+      "bbox": {
+        "x_pct": 17.841,
+        "y_pct": 14.589,
+        "w_pct": 73.775,
+        "h_pct": 44.55
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text and refined boundaries to match content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich halte das für ein großes Unglück. Es hängt damit zusammen, daß wir ein unendlich großes Vertrauen gesetzt haben in eine angeborene Spontaneität. Man nimmt an, das kleine Kind komme frei auf die Welt. Ein Kalb, wenn es fünf Minuten nach der Geburt neben der Mutterkuh steht, ist schon fast fertig entwickelt. Aber das kleine menschliche Wesen, das wird unendlich langsam selbständig, es kommt ganz unfertig auf die Welt. Vielleicht ist es das Wesen, welches am unfertigsten zur Welt kommt, und dafür gibt es sogar biologische Gründe.",
+      "bbox": {
+        "x_pct": 18.45,
+        "y_pct": 58.428,
+        "w_pct": 73.96,
+        "h_pct": 22.457
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist also nicht so, daß der Mensch frei und vollständig auf die Welt kommt, sondern es ist gerade das Typische beim Menschen, daß sich über eine lange Zeit noch das",
+      "bbox": {
+        "x_pct": 18.636,
+        "y_pct": 80.671,
+        "w_pct": 73.642,
+        "h_pct": 7.085
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "284",
+      "bbox": {
+        "x_pct": 18.841,
+        "y_pct": 90.311,
+        "w_pct": 3.775,
+        "h_pct": 2.24
+      },
+      "changed": true,
+      "change_reason": "Marked page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text was heavily truncated in the provided initial regions.",
+    "Page number at bottom was labeled as text, corrected to page_footer."
+  ],
+  "doc_id": "2060",
+  "page": 6,
+  "elapsed_seconds": 5.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fédérée que s'efforçaient de faire naître quelques résistants, obstinés à défendre des libertés à nouveau menacées.",
+      "bbox": {
+        "x_pct": 2.552,
+        "y_pct": 4.571,
+        "w_pct": 82.902,
+        "h_pct": 4.385
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and corrupted in the initial metadata."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il fallut attendre le XXe Congrès et le discours de Khrouchtchev, ou l'entrée des tanks à Budapest. Mais alors, l'effondrement de la foi dont ils avaient vécu contre vents et marées pendant des dizaines d'années, la découverte de leur longue et efficace complicité avec un régime dont les victimes se comptaient par dizaines de millions, prirent des formes aussi surprenantes que l'avait été leur foi elle-même. Certains dirent « Je me suis trompé ». Mais tous, à ma connaissance, restèrent des « intellectuels », ce qui signifie qu'ils continuèrent à penser, à juger et à interpréter pour les autres, par la parole et l'écrit, une réalité au sujet de laquelle ils venaient de s'être tragiquement trompés. Ils continuèrent, souvent sur le ton le plus péremptoire, à être les « enseignants » du commun des mortels. Nul d'ailleurs ne s'en étonna. Au contraire: on apprécia le courage de leur arrachement, on reconnut leur loyauté, et leur parole devint plus crédible que jamais. Il est vrai d'ailleurs que leur expérience, après une crise aussi douloureuse, pouvait donner du communisme une connaissance plus profonde.",
+      "bbox": {
+        "x_pct": 2.85,
+        "y_pct": 9.08,
+        "w_pct": 83.588,
+        "h_pct": 36.808
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and corrupted in the initial metadata."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais comment cela s'est-il passé en eux-mêmes ? Qui voyaient-ils dans leur miroir ? Qu'est-ce donc qu'un intellectuel, si on veut comprendre, non pas sa fonction, mais son for intérieur ? Comment assume-t-il sa fonction ? Comment s'en sent-il digne ? Quel est pour lui le sens de son engagement dans ce qu'il dit ? Quelle sorte d'inébranlable confiance garde-t-il en lui-même ?",
+      "bbox": {
+        "x_pct": 4.016,
+        "y_pct": 45.535,
+        "w_pct": 82.642,
+        "h_pct": 13.289
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and corrupted in the initial metadata."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'avoue que je me heurte là à une sorte de mystère que la succession des événements et des modes ne fait qu'épaissir. Lorsqu'on a causé un accident, on se voit retirer son permis de conduire, mais j'imagine que la plupart du temps le coupable lui-même n'a pas envie de reprendre aussitôt le volant. Comment un intellectuel, après avoir si longuement et obstinément fermé les yeux, peut-il, découvrant les monstrueux enjeux de son erreur, s'autoriser aussitôt à parler, à écrire ?",
+      "bbox": {
+        "x_pct": 4.404,
+        "y_pct": 58.506,
+        "w_pct": 82.422,
+        "h_pct": 15.234
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and corrupted in the initial metadata."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce serait une étude à faire, bien difficile et saturée de tristesse. Je pense que l'explication la plus profonde devrait être cherchée dans le quant-à-soi de l'intellectuel. Celui-ci est absorbé avant tout par sa propre pensée, ses propres attitudes. Il en savoure l'originalité, l'éclat, la générosité. Il pratique une sorte d'autodélectation spirituelle et affective, qui fait pâlir ce qui se passe en fait, dans la réalité incarnée.",
+      "bbox": {
+        "x_pct": 4.883,
+        "y_pct": 73.501,
+        "w_pct": 82.163,
+        "h_pct": 13.033
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and corrupted in the initial metadata."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "51",
+      "bbox": {
+        "x_pct": 84.342,
+        "y_pct": 88.857,
+        "w_pct": 2.536,
+        "h_pct": 2.871
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Original metadata contained severely truncated and corrupted text strings.",
+    "Page number at the bottom was not identified as a footer/filter."
+  ],
+  "doc_id": "1590",
+  "page": 5,
+  "elapsed_seconds": 6.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

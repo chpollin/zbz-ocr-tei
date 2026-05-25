@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "irrévocablement Allemands. Qu'était-ce donc que 'Allemagne Lorsque Jaspers son enseignement, en 1945",
+      "bbox": {
+        "x_pct": 9.661,
+        "y_pct": 6.17,
+        "w_pct": 83.97,
+        "h_pct": 23.136
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Philosophie face aux sciences",
+      "bbox": {
+        "x_pct": 9.986,
+        "y_pct": 31.937,
+        "w_pct": 36.721,
+        "h_pct": 2.142
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès ses années d'étude, de travaux en laboratoire et de pratique de la psychiatrie clinique, Jaspers",
+      "bbox": {
+        "x_pct": 9.526,
+        "y_pct": 34.507,
+        "w_pct": 84.201,
+        "h_pct": 40.497
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Philosophie face à la religion",
+      "bbox": {
+        "x_pct": 9.851,
+        "y_pct": 77.404,
+        "w_pct": 36.585,
+        "h_pct": 2.117
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elevé hors de toute foi confessionnelle, Jaspers devait trouver, par la philosophie, et à travers le",
+      "bbox": {
+        "x_pct": 9.715,
+        "y_pct": 80.034,
+        "w_pct": 83.686,
+        "h_pct": 9.966
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "9",
+      "bbox": {
+        "x_pct": 91.0,
+        "y_pct": 92.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Original text excerpts were incomplete or truncated",
+    "Missing page number region"
+  ],
+  "doc_id": "1520",
+  "page": 15,
+  "elapsed_seconds": 4.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content": 2,
+    "ADDED": 1
+  }
+}

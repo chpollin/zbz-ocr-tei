@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces exercices spirituels, en consistent-ils? Il s'agit d'étudier les éléments objectifs de la tradition, non pour eux-mêmes, mais afin de retrouver, à travers eux, l'inspiration qui les apporta. Textes sacrés, mythes, rites, dogmes, principes, valeurs, se trouveraient assimilés par une sorte de débat en profondeur qui permet de dépasser leurs particularités historiques et de rejoindre ce qu'ils révèlent de la condition humaine comme telle. Qu'on y prenne garde: il ne s'agit pas de les rationaliser, de remplacer leur langage, considéré comme un vêtement «symbolique», par une interprétation abstraite plus générale, plus digne de l'attention de l'homme moderne; il ne s'agit pas de leur enlever leur tranchant pour les rendre plus libéraux et par là plus acceptables pour le simple bon sens. Au contraire: ce sont leurs points «réfractaires» qui sont le plus souvent leurs foyers d'énergie, ceux qui donnent à tout le reste sa vraie portée, sa vie. Il faut, bien sûr, distinguer ceux-ci de ce qui n'est que bizarrerie historiquement conditionnée, superstition, vulgarisation, magie. Un critère souvent valable, c'est que les points de profondeur véritables, lorsqu'ils sont déchiffrés, ne promettent aucun résultat empirique, aucune réussite, aucune victoire, aucun gain - nul pouvoir sur les choses terrestres, mais tournent le travail de l'âme contre elle-même, ses arbitraires et frivoles désirs.",
+      "bbox": {
+        "x_pct": 12.514,
+        "y_pct": 9.271,
+        "w_pct": 66.156,
+        "h_pct": 41.652
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "«Ecriture chiffrée»: c'est le mot de Jaspers. Celui qui «déchiffre» le contenu de la tradition va jusqu'au bout des particularités, et c'est au point de leur resserrement extrême qu'il les dépasse sans les perdre, qu'elles prennent pour lui véritable sens ou plutôt leur véritable efficacité. Cette méthode diffère à la fois de l'interprétation libérale et de la littéralité dogmatique. Elle serre la lettre de près pour en faire jaillir la présence humaine, et le résultat est une attitude d'accueil plus réceptive que n'importe quelle tolérance universaliste. En même temps, à travers le résultat, la lettre subsiste, comme subsiste le corps verbal d'un poème par delà l'expérience poétique, car la lettre de la tradition, comme celle du poème, est plus riche que n'importe quelle conquête spirituelle et maintient en vie des virtualités inépuisables. En effet, lorsqu'il «déchiffre» la tradition, le sujet vivant ne se trouve pas devant une chose et son inertie définitive; il écoute un langage qui varie avec l'histoire, tout en transcendait celle-ci. Les variations de ce langage ne proviennent pas de la vision déformante du sujet, mais du fait que réellement, selon la manière dont le sujet l'écoute, selon le moment historique où il se",
+      "bbox": {
+        "x_pct": 12.627,
+        "y_pct": 51.151,
+        "w_pct": 66.18,
+        "h_pct": 36.217
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text truncation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9 Studia Philosophica XXIV",
+      "bbox": {
+        "x_pct": 12.514,
+        "y_pct": 89.288,
+        "w_pct": 34.335,
+        "h_pct": 1.259
+      },
+      "changed": true,
+      "change_reason": "Identified page information at the footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "121",
+      "bbox": {
+        "x_pct": 74.52,
+        "y_pct": 89.288,
+        "w_pct": 4.12,
+        "h_pct": 1.259
+      },
+      "changed": true,
+      "change_reason": "Identified page number at the footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Detected page footer components were previously incorrectly identified as text or omitted.",
+    "OCR text for paragraphs was heavily corrupted; manual correction applied for readability."
+  ],
+  "doc_id": "680",
+  "page": 5,
+  "elapsed_seconds": 5.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

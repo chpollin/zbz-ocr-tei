@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "14 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 73.0,
+        "y_pct": 78.431,
+        "w_pct": 14.189,
+        "h_pct": 9.412
+      },
+      "changed": true,
+      "change_reason": "Corrected page number and header region identification."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lité en suspens, et jusque par une respiration plus profonde.",
+      "bbox": {
+        "x_pct": 7.392,
+        "y_pct": 12.353,
+        "w_pct": 80.986,
+        "h_pct": 5.227
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text readout errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parfois aussi, on me laissait passer les vacances de Noël ou de Pâques seule à la montagne. Il m'est arrivé d'être l'unique pensionnaire d'une vieille paysanne et de passer chez elle plusieurs semaines, par pluie, brouillard, vent. Je pataugeais toute la journée dans des chemins glissants où les souliers enfonçaient. Les buts de ces promenades étaient tantôt un lointain lacet de route, tantôt une bosse de la crête, tantôt un arbre isolé, hors de la lisière de la forêt. Chemin faisant, le lacet de route disparaissait, la crête prenait une forme méconnaissable dans la brume, l'arbre isolé se multipliait sans fin. Des sentiers me tentaient, allant n'importe où, souvent nulle part. Je rentrais couverte de boue, mais détendue, comblée.",
+      "bbox": {
+        "x_pct": 7.432,
+        "y_pct": 17.647,
+        "w_pct": 81.257,
+        "h_pct": 34.905
+      },
+      "changed": true,
+      "change_reason": "Corrected major OCR errors to reflect actual text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il se fait tard. L'horloge de l'école a sonné un ou deux coups, je ne sais plus. En tout cas, il y a longtemps que j'ai entendu les douze coups de minuit. J'ai éteint un moment la lampe pour voir la nuit au dehors. Aucune lumière dans les maisons. Le vent s'est calmé. Une torpeur odorante, plus fraîche, flotte sur les jardins et la campagne. Peut-être y aura-t-il encore du soleil demain pour mûrir un peu les dernières pommes. Quelque chose m'engourdit, fatigue, paix, patience. J'attends notre enfant. Je t'attends; dans une telle sécurité que tout est bonheur.",
+      "bbox": {
+        "x_pct": 7.703,
+        "y_pct": 55.293,
+        "w_pct": 81.041,
+        "h_pct": 27.76
+      },
+      "changed": true,
+      "change_reason": "Corrected major OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly inaccurate for all blocks.",
+    "Page header/number was misidentified as text block.",
+    "Significant typos corrected in paragraph text."
+  ],
+  "doc_id": "40",
+  "page": 12,
+  "elapsed_seconds": 3.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

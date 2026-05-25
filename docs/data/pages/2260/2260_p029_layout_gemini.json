@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Création en livrant la première à quelqu'un – à toi d'abord, ô Eve – qui l'aimera autrement que lui: sous la menace de la mort.",
+      "bbox": {
+        "x_pct": 10.667,
+        "y_pct": 11.354,
+        "w_pct": 65.661,
+        "h_pct": 8.688
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nageuse nostalgique qui, dès ton premier éloignement, rêves de revenir à ton point de départ et d'échapper au temps que ton geste initial dispersa et noua pour toujours. Eve clouée par l'arbre éternel, Eve tendue vers son écoute, Eve dont toutes les lignes s'enchaînent et se reprennent et se ramènent l'une à l'autre sans fin et sans se répéter jamais comme les dimensions mêmes du temps, Eve emmêlée dégagée, centrée fuyante, attentive absente dans l'enlacement vigoureux des tiges.",
+      "bbox": {
+        "x_pct": 10.424,
+        "y_pct": 22.54,
+        "w_pct": 65.976,
+        "h_pct": 34.651
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Sans elle, rien n'aurait jamais commencé. Nul ne serait mort, n'aurait vécu, n'aurait choisi ni aimé. Sans elle, jamais la verticale éternité ne serait devenue l'événement présent qui départage le poids du passé et les possibles futurs.",
+      "bbox": {
+        "x_pct": 10.509,
+        "y_pct": 59.235,
+        "w_pct": 65.733,
+        "h_pct": 17.073
+      },
+      "changed": true,
+      "change_reason": "Changed label to footnote because the paragraph starts with a footnote marker '1' and is physically separated from the main text block above."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "31",
+      "bbox": {
+        "x_pct": 72.848,
+        "y_pct": 82.357,
+        "w_pct": 2.246,
+        "h_pct": 2.508
+      },
+      "changed": true,
+      "change_reason": "Identified page number and labeled as page_footer for filtering."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was truncated and incorrect.",
+    "Footnote was mislabeled as paragraph.",
+    "Page number at bottom right was not detected by Docling.",
+    "Corrected OCR errors in text fields."
+  ],
+  "doc_id": "2260",
+  "page": 29,
+  "elapsed_seconds": 4.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

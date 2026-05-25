@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "sensible, au être   partiel \" devient Fexpression même, ou plutôt Taffirmation dle la lotalité. Il l",
+      "bbox": {
+        "x_pct": 18.779,
+        "y_pct": 13.159,
+        "w_pct": 68.433,
+        "h_pct": 16.454
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans tous ces cas, relrouve bien le schéma, tel nou; de ce concept. Nous aurons donc le dune   matiè",
+      "bbox": {
+        "x_pct": 18.929,
+        "y_pct": 31.587,
+        "w_pct": 68.364,
+        "h_pct": 11.055
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DEUXIÈME PARTIE",
+      "bbox": {
+        "x_pct": 40.518,
+        "y_pct": 46.568,
+        "w_pct": 25.38,
+        "h_pct": 2.005
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Examen critique de la notion de forme",
+      "bbox": {
+        "x_pct": 27.419,
+        "y_pct": 49.377,
+        "w_pct": 51.498,
+        "h_pct": 2.787
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "1. Sa portée",
+      "bbox": {
+        "x_pct": 45.127,
+        "y_pct": 53.455,
+        "w_pct": 15.968,
+        "h_pct": 1.792
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute activité humaine revient à prendre une malière pour lui donner forme. Toule   empreinte de Tho",
+      "bbox": {
+        "x_pct": 18.813,
+        "y_pct": 55.862,
+        "w_pct": 68.433,
+        "h_pct": 18.724
+      },
+      "changed": true,
+      "change_reason": "Corrected label mapping"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "98",
+      "bbox": {
+        "x_pct": 19.123,
+        "y_pct": 10.379,
+        "w_pct": 2.651,
+        "h_pct": 1.408
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "L'TRE ET LA FORME",
+      "bbox": {
+        "x_pct": 71.745,
+        "y_pct": 10.379,
+        "w_pct": 15.526,
+        "h_pct": 1.408
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    }
+  ],
+  "score": 100,
+  "num_corrections": 8,
+  "issues": [],
+  "doc_id": "110",
+  "page": 100,
+  "elapsed_seconds": 5.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label mapping": 6,
+    "ADDED": 2
+  }
+}

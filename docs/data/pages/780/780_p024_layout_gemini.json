@@ -1,0 +1,97 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DISCUSSION 49",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header elements detected as paragraphs/text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans le passé, dans le futur j'entends comme on vit habituellement. J'appelle « temps vécu » le temps qui structure la manière dont on vit habituellement : en étant dans un présent, c'est-à-dire lié par un certain rendez-vous avec le monde (comme j'ai essayé de le dire tout à l'heure), avec un certain passé et avec un certain futur. Et ces dimensions me paraissent absolument inséparables : si vous voulez les séparer, moi je ne sais plus de quoi on parle, parce que je ne sais pas ce que c'est que d'être au présent sans avoir la présence, en quelque sorte constante, d'un certain passé, variable d'ailleurs, d'un certain futur, variable aussi. Tout cela ensemble constitue le temps vécu, celui que nous vivons maintenant, quand nous ne faisons rien d'extraordinaire. Proust au contraire, en revivant son passé, décrit une expérience privilégiée, il perce des trous soudains dans le temps vécu, au sens où je l'entends.",
+      "bbox": {
+        "x_pct": 8.52,
+        "y_pct": 9.865,
+        "w_pct": 75.897,
+        "h_pct": 20.038
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and OCR errors"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gabriel MARCEL. — Pourrait-on employer le terme d'horizon?",
+      "bbox": {
+        "x_pct": 8.666,
+        "y_pct": 31.18,
+        "w_pct": 64.462,
+        "h_pct": 1.675
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and OCR errors in speaker name"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne HERSCH. — Horizon passé, horizon futur? Si vous voulez.",
+      "bbox": {
+        "x_pct": 8.666,
+        "y_pct": 34.057,
+        "w_pct": 67.982,
+        "h_pct": 1.856
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and OCR errors"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Marina SCRIABINE. — Ne croyez-vous pas que, ici encore, l'image de la comparaison musicale peut nous venir en aide? Quand vous écoutez une œuvre musicale, vous êtes dans le présent en ce sens que vous écoutez, mais justement, si vous entendez vraiment l'œuvre, le passé qui amène ce présent est dans ce présent, et le futur y est aussi. Ce n'est qu'une image, bien sûr, mais qui peut nous éclairer.",
+      "bbox": {
+        "x_pct": 8.52,
+        "y_pct": 37.092,
+        "w_pct": 75.897,
+        "h_pct": 9.391
+      },
+      "changed": true,
+      "change_reason": "Corrected speaker identification and OCR errors in text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne HERSCH. — Je suis tout à fait d'accord avec vous.",
+      "bbox": {
+        "x_pct": 8.632,
+        "y_pct": 47.761,
+        "w_pct": 48.879,
+        "h_pct": 1.826
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and OCR errors"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number identified at bottom right"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text layer was heavily corrupted by poor OCR",
+    "Speaker names were incorrectly captured as plain text or malformed",
+    "Page number and header were not filtered"
+  ],
+  "doc_id": "780",
+  "page": 24,
+  "elapsed_seconds": 9.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

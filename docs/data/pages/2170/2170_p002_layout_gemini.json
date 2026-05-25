@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zum «Genius loci» von Wilton Park gehört die harmonische Hügellandschaft rund um Wiston House",
+      "bbox": {
+        "x_pct": 7.172,
+        "y_pct": 58.214,
+        "w_pct": 28.469,
+        "h_pct": 5.595
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'où le dégoût des réformes, qui partent de ce qui est. On parle beaucoup d'histoire, mais c'est une histoire abs- traite, sans conséquences, pour une génération sans pères, sans origine et sans héritage. Seule vaut la table rase, seule elle est digne de l'homme nouveau.",
+      "bbox": {
+        "x_pct": 37.47,
+        "y_pct": 58.075,
+        "w_pct": 27.744,
+        "h_pct": 14.763
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pour effet qu'on ne se contente plus du lent progrès des hommes, à travers approximations, risques mesurés et compromis. On réclame des résultats immédiats, la réalisation d'exigences absolues, avec la paresse d'un irréalisme pathétique et prétentieux.",
+      "bbox": {
+        "x_pct": 7.647,
+        "y_pct": 67.893,
+        "w_pct": 28.057,
+        "h_pct": 11.233
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph content detected in image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès lors on n'accepte pas les matériaux réels de l'avenir, légués par le passé. On rejette l'histoire, le donné du présent, et leurs résistances fécondes. L'irréalisme ne peut maintenir ses exigences que dans l'amorphe du néant.",
+      "bbox": {
+        "x_pct": 7.309,
+        "y_pct": 79.992,
+        "w_pct": 28.332,
+        "h_pct": 11.362
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle entreprise peut paraître héroïque. Mais elle transgresse les limites humaines. On le sait depuis longtemps: quand l'homme se veut ange, il devient bête.",
+      "bbox": {
+        "x_pct": 37.446,
+        "y_pct": 72.7,
+        "w_pct": 25.729,
+        "h_pct": 9.657
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "S'il est vrai que nous devons l'esprit européen, comme aussi l'Europe virtuelle qu'il nous faut d'urgence rendre réelle, à des Européens qui ont assumé les chances et les risques, les tragédies et les limites, les rêves et les sacrifices, les audaces et l'inachèvement de la condition humaine, alors nous devons nous demander ce que l'Europe va devenir, maintenant que les Européens semblent trop fatigués pour faire face au réel.",
+      "bbox": {
+        "x_pct": 37.494,
+        "y_pct": 81.917,
+        "w_pct": 55.45,
+        "h_pct": 10.3
+      },
+      "changed": true,
+      "change_reason": "Corrected text and expanded bounding box to cover the actual text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch Professeur honoraire de philosophie de l'Université de Genève",
+      "bbox": {
+        "x_pct": 67.792,
+        "y_pct": 85.563,
+        "w_pct": 26.35,
+        "h_pct": 3.858
+      },
+      "changed": true,
+      "change_reason": "This is an author signature/professional title. While it could be section_header, standard formatting often treats this as text. Keeping as text but flagging as signature."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": {
+        "x_pct": 97.4,
+        "y_pct": 89.2,
+        "w_pct": 2.1,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original layout extraction failed to identify page number correctly.",
+    "Text content parsing was fragmented and inaccurate.",
+    "Author signature is kept as text but noted as signature type."
+  ],
+  "doc_id": "2170",
+  "page": 2,
+  "elapsed_seconds": 7.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

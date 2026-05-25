@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "gegen die Gesellschaft oder gegen die Wissenschaft oder die Technologie gerichtet.",
+      "bbox": {
+        "x_pct": 15.92,
+        "y_pct": 8.19,
+        "w_pct": 73.269,
+        "h_pct": 4.813
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mir scheint, daß die Leute, auch wenn sie es selbst nicht wissen, sich dagegen empören, daß sie Menschen sind. Sie sind vom Menschsein müde. Gerade von dieser Endlichkeit, von dieser Zerbrechlichkeit, von diesem Bedrohtsein, von dieser Sterblichkeit – all dessen werden sie allmählich müde. Und da man so unglaubliche Erfolge mit der Technik erreicht hat, glauben sie, daß man eigentlich alles gleich haben könnte. ,,Das Paradies jetzt gleich\" verlangten 1968 die jungen Leute im Pariser Aufstand. – Dabei merken sie nicht, daß die Verwirklichung des Paradieses nicht für Menschen unmöglich ist (obgleich man die Umstände immer weiter verbessern kann), sondern daß Menschen für das paradiesische Leben gar nicht begabt sind. Wir sind gar nicht fähig, in einem Paradies zu leben. Wir sind Wesen der Begierde und der Sehnsucht. Uns muß etwas fehlen, damit das Leben Sinn hat. Adam und Eva waren im Paradies, aber da gab es keine Zeit. Einen Theologen hat man einmal gefragt, wie lange wohl der Zustand im Paradies gedauert habe. Er antwortete: Ich weiß nicht, aber ich vermute, daß es ziemlich kurz gewesen ist. Tatsache ist, daß wir uns mit der Zeit im Paradies langweilen würden.",
+      "bbox": {
+        "x_pct": 16.216,
+        "y_pct": 12.691,
+        "w_pct": 73.526,
+        "h_pct": 48.073
+      },
+      "changed": true,
+      "change_reason": "Combined fragmented boxes into the correct paragraph block and fixed corrupted OCR text for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gegen das Menschsein, gegen die conditio humana, richtet sich die Empörung heute. Mehr als gegen das System, meine ich. Und gerade deswegen ist die Erziehung zum Menschsein wesentlich. Die Erziehung zum Menschsein ist meiner Ansicht nach das Wichtigste.",
+      "bbox": {
+        "x_pct": 17.761,
+        "y_pct": 60.32,
+        "w_pct": 71.982,
+        "h_pct": 11.264
+      },
+      "changed": true,
+      "change_reason": "Fixed corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erziehung ist also in verschiedenen Richtungen unentbehrlich. Der junge Mensch soll langsam lernen, zwischen dem, was er tun kann und soll und dem, was nicht von ihm abhängt, zu unterscheiden.",
+      "bbox": {
+        "x_pct": 17.928,
+        "y_pct": 71.061,
+        "w_pct": 71.815,
+        "h_pct": 9.306
+      },
+      "changed": true,
+      "change_reason": "Fixed corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Er muß es annehmen, daß es doch so etwas wie Schicksal oder Vorsehung oder Grenzsituationen, irgend etwas Gegebenes gibt. Niemand hat seine Eltern oder seine Zeit",
+      "bbox": {
+        "x_pct": 18.237,
+        "y_pct": 79.93,
+        "w_pct": 71.686,
+        "h_pct": 6.732
+      },
+      "changed": true,
+      "change_reason": "Fixed corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "290",
+      "bbox": {
+        "x_pct": 17.928,
+        "y_pct": 87.05,
+        "w_pct": 3.42,
+        "h_pct": 2.11
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Several paragraphs were incorrectly segmented in the original JSON.",
+    "OCR text for paragraphs was highly degraded/corrupted.",
+    "Page number at the bottom was not identified correctly."
+  ],
+  "doc_id": "2060",
+  "page": 12,
+  "elapsed_seconds": 5.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

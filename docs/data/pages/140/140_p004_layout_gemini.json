@@ -1,0 +1,57 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DE LA PHÉNOMÉNOLOGIE A L'EXISTENTIALISME 85",
+      "bbox": {
+        "x_pct": 12.281,
+        "y_pct": 3.75,
+        "w_pct": 74.238,
+        "h_pct": 3.4
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des objets voisins; le fond sur lequel il se détache ne qualité  plus Oll moins bien adaptée à une f",
+      "bbox": {
+        "x_pct": 12.281,
+        "y_pct": 15.328,
+        "w_pct": 74.238,
+        "h_pct": 26.04
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest tine vieille moquerie que celle visant le philosophe idéaliste mangeant son bifteck, certes en ",
+      "bbox": {
+        "x_pct": 12.281,
+        "y_pct": 41.026,
+        "w_pct": 73.841,
+        "h_pct": 44.541
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text extraction"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Typo in existing text block"
+  ],
+  "doc_id": "140",
+  "page": 4,
+  "elapsed_seconds": 7.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected typo in text extraction": 1,
+    "ADDED": 1
+  }
+}

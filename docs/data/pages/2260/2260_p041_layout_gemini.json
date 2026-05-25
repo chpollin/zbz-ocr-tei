@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Chevalier voulut se jeter sur les esclaves du dragon, il prit un grand élan, et de tout son long corps mou et vulnérable il essaya d’écraser les flammes naissantes en même temps que les scarabées incendiaires. Mais il ne réussit qu’à attiser le feu où tombaient des brindilles mortes, et lui, brûlé, retomba sur lui-même. Alors il vit tout autour de lui un cercle de scarabées, bizarrement dressés sur leur pointe arrière, agitant les pattes et claquant des élytres, avec un bruit qui disait clairement: «Qu’est-ce que tu veux, toi, qu’est-ce que tu veux?» – «Je veux passer», répondit le Chevalier, «je veux traverser le feu.» – «Traverser le feu!» dansèrent moqueusement les scarabées, «traverser le feu! Tu es un ver, tu es mou, tu es long, tu es nu, traverser le feu!» Et pour bien montrer leur supériorité, ils se mirent à se heurter les uns aux autres avec fracas, à sauter dans le feu et à en ressortir en cadence, tout en le persiflant: «Tu es un ver, tu es mou, tu es long, tu es nu...»",
+      "bbox": {
+        "x_pct": 10.339,
+        "y_pct": 11.557,
+        "w_pct": 66.024,
+        "h_pct": 62.146
+      },
+      "changed": true,
+      "change_reason": "The initial text was truncated and contained OCR garbage/incomplete words. Corrected text to match the full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y avait maintenant en travers de la vallée une haute muraille de flammes. Partout les",
+      "bbox": {
+        "x_pct": 10.703,
+        "y_pct": 73.342,
+        "w_pct": 65.624,
+        "h_pct": 5.278
+      },
+      "changed": true,
+      "change_reason": "Corrected minor transcription error (removed duplicate word)."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "43",
+      "bbox": {
+        "x_pct": 72.825,
+        "y_pct": 82.26,
+        "w_pct": 2.247,
+        "h_pct": 1.777
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter tag."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original text transcription was incomplete and contained errors.",
+    "Page number at the bottom right was incorrectly categorized as main text.",
+    "Minor transcription error in the second paragraph."
+  ],
+  "doc_id": "2260",
+  "page": 41,
+  "elapsed_seconds": 4.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

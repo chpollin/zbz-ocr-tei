@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE PROBLÈME DE L’ÉLITE OUVRIÈRE",
+      "bbox": {
+        "x_pct": 28.283,
+        "y_pct": 2.0,
+        "w_pct": 43.434,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header region"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 85.354,
+        "y_pct": 2.0,
+        "w_pct": 2.828,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page number region"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce n'est pas tout. Le problème se présente de toute différente à la classe ouvrière dune part, et de",
+      "bbox": {
+        "x_pct": 11.656,
+        "y_pct": 21.303,
+        "w_pct": 79.014,
+        "h_pct": 70.077
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header label",
+    "Missing page number label"
+  ],
+  "doc_id": "130",
+  "page": 7,
+  "elapsed_seconds": 3.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

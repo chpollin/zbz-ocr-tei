@@ -1,0 +1,127 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "CRITIQUE : LA DIALECTIQUE DU TEMPS EST FICTIVE 93",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header elements including page numbers should be filtered."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "B. OBSTACLES AU MIME",
+      "bbox": {
+        "x_pct": 28.358,
+        "y_pct": 14.042,
+        "w_pct": 41.175,
+        "h_pct": 2.355
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "I. Limite de la pensée dialectique.",
+      "bbox": {
+        "x_pct": 23.75,
+        "y_pct": 18.275,
+        "w_pct": 50.196,
+        "h_pct": 2.726
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'éternité devenant réelle par son déploiement dans le temps; le temps trouvant sa « vérité » dans l'éternité; le caractère éphémère des réalités historiques reconnu et accepté comme étant l'instrument indispensable de l'éternité; le temps et l'éternité connus tous deux, si bien que le chrétien peut parler du point de vue de Dieu : telle est la synthèse définitive.",
+      "bbox": {
+        "x_pct": 10.497,
+        "y_pct": 22.526,
+        "w_pct": 76.25,
+        "h_pct": 20.496
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant!",
+      "bbox": {
+        "x_pct": 14.307,
+        "y_pct": 42.993,
+        "w_pct": 20.136,
+        "h_pct": 2.669
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous pensons : « Être ». — Nous pensons : « Non-être ». — Nous pouvons penser les deux termes antithétiques parce que nous les pensons l'un après l'autre.",
+      "bbox": {
+        "x_pct": 10.798,
+        "y_pct": 45.729,
+        "w_pct": 76.099,
+        "h_pct": 7.969
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hegel s'empare de cette succession elle-même et la fait entrer de force dans le moule dialectique. D'où les pôles : Temps-Éternité.",
+      "bbox": {
+        "x_pct": 10.949,
+        "y_pct": 55.863,
+        "w_pct": 75.949,
+        "h_pct": 7.693
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hegel pouvait tenter un tour de force plus audacieux. En s'emparant du temps, il s'empare de l'étoffe même de sa dialectique, et la détruit.",
+      "bbox": {
+        "x_pct": 10.949,
+        "y_pct": 63.394,
+        "w_pct": 75.949,
+        "h_pct": 7.941
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous pensons : « Temps ». — Nous pensons : « Éternité ». — Évidemment : le mouvement dialectique aboutit à la synthèse des contraires. — Mais le mouvement dialectique réel ne consistait pas auparavant à penser séparément l'un, puis l'autre contraire : il était le mouvement allant de l'un à l'autre. La succession de la pensée de l'être",
+      "bbox": {
+        "x_pct": 10.843,
+        "y_pct": 71.087,
+        "w_pct": 76.355,
+        "h_pct": 18.112
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Header line detected as text",
+    "Multiple OCR transcription errors",
+    "Text fragments improperly merged"
+  ],
+  "doc_id": "20",
+  "page": 95,
+  "elapsed_seconds": 5.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'EUROPE AU DÉFI 7",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected label for page header and page number which were missing or incorrectly categorized."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De cette Europe activement incarnatrice, jamais cependant la mystique et la soumission religieuse n'ont disparu. Parfois, rationalisme et mystique s'y croisent ; les certitudes logiques peuvent prendre alors l'éclat de « vérités éternelles », par lesquelles on rejoint la pensée même du Créateur ; ou, plus directement encore, elles sont des « visions en Dieu ».",
+      "bbox": {
+        "x_pct": 10.442,
+        "y_pct": 19.162,
+        "w_pct": 79.786,
+        "h_pct": 17.081
+      },
+      "changed": true,
+      "change_reason": "Refined text content to match image text exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce sont là des points de croisement de voies distinctes, non un emmêlement confus. L'Europe a multiplié séparations et distinctions, jusqu'au cœur du sacré, jusqu'au cœur aussi de l'inextricable cohésion sociale. Par exemple, douloureusement, à travers crises et guerres, elle a séparé l'Église et l'État. Elle a cherché à remplacer partout l'unité confuse et forte du donné social par un pluralisme articulé, suscitant l'affrontement, la contestation, les confrontations, non les synthèses. Engendrant problèmes et conflits, attisant choix et exclusives, aussi peu monolithique que tolérante, aiguisant les crêtes séparatrices, précisant, durcissant les alternatives, l'Europe s'est jetée, corps et âme, dans cette source de plus en plus intense de diversités créatrices et de monotones horreurs qu'on appelle l'histoire.",
+      "bbox": {
+        "x_pct": 10.803,
+        "y_pct": 36.009,
+        "w_pct": 80.402,
+        "h_pct": 38.523
+      },
+      "changed": true,
+      "change_reason": "Refined text content to match image text exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nulle part dans l'univers, à ce qu'il semble, l'histoire n'a proliféré comme elle l'a fait en Europe. Nulle part elle n'a multiplié ainsi, dans des laps de temps relativement brefs, les empires et les effondrements, les révolutions et les guerres, les tentatives héroïques",
+      "bbox": {
+        "x_pct": 11.245,
+        "y_pct": 74.261,
+        "w_pct": 79.88,
+        "h_pct": 13.063
+      },
+      "changed": true,
+      "change_reason": "Refined text content to match image text exactly."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was corrupted by OCR errors.",
+    "Header (L'EUROPE AU DÉFI 7) was not detected.",
+    "Bounding boxes were generally correct but labels needed refinement."
+  ],
+  "doc_id": "460",
+  "page": 9,
+  "elapsed_seconds": 4.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

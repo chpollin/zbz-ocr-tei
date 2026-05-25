@@ -1,0 +1,86 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "abri des tanks passaient; laissant des mnorts derrire qui",
+      "bbox": {
+        "x_pct": 8.552,
+        "y_pct": 7.629,
+        "w_pct": 41.817,
+        "h_pct": 3.498
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les procs, dans lintention de leurs instigadu polonais  ger,  entreprise de pillage et de bandit",
+      "bbox": {
+        "x_pct": 8.844,
+        "y_pct": 11.147,
+        "w_pct": 41.856,
+        "h_pct": 65.139
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chose inusite pour un tmoin occidental les manifestants en grve, rclamant une hausse de salaires",
+      "bbox": {
+        "x_pct": 9.232,
+        "y_pct": 76.356,
+        "w_pct": 41.331,
+        "h_pct": 17.524
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si je rapporte ce fait, c'est montre combien s'carte de la ralit et de la vrit toute interpr",
+      "bbox": {
+        "x_pct": 53.741,
+        "y_pct": 14.485,
+        "w_pct": 41.594,
+        "h_pct": 30.925
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE PRETETTE TRAGIQUE",
+      "bbox": {
+        "x_pct": 70.554,
+        "y_pct": 49.882,
+        "w_pct": 24.363,
+        "h_pct": 1.391
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "UR fond, essayons maintenant de prendre ce que fut le procs. Je rappelais plus haut les interprta",
+      "bbox": {
+        "x_pct": 53.741,
+        "y_pct": 52.483,
+        "w_pct": 41.788,
+        "h_pct": 41.307
+      },
+      "changed": false
+    }
+  ],
+  "score": 100,
+  "num_corrections": 0,
+  "issues": [
+    "Text region bbox includes text that belongs to the same column logically but was split by layout engine, text is mostly intact but contains typos from OCR."
+  ],
+  "doc_id": "340",
+  "page": 6,
+  "elapsed_seconds": 3.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

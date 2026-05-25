@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 203",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified running header and page number which should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "bliées, songe-t-il avec une louable volonté de justice, il doit y avoir du vrai. L'obstruction, elle aussi, sert un double objectif : l'un, particulier, qui est d'entraver telle action, de renvoyer à plus tard une décision dont la valeur est liée au moment présent ; l'autre, permanent, qui est de discréditer pratiquement le régime parlementaire, d'en prouver l'impuissance en le rendant impuissant et d'en dégoûter les citoyens.",
+      "bbox": {
+        "x_pct": 4.916,
+        "y_pct": 11.078,
+        "w_pct": 84.68,
+        "h_pct": 15.187
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les antidémocrates gagnent dès lors sur tous les tableaux. Leurs mensonges leur profitent dans la mesure où ils sont crus, mais aussi dans celle où ils ne le sont pas. Leurs manœuvres leur profitent lorsqu'elles réussissent, mais aussi lorsqu'elles échouent. Et ce n'est pas le moindre de leurs succès que de parvenir à acculer leurs adversaires à des méthodes semblables aux leurs, mensonges, ruses envers la volonté populaire, stratagèmes qui altèrent le prestige de la démocratie, en ruinent la moralité et le fonctionnement.",
+      "bbox": {
+        "x_pct": 4.972,
+        "y_pct": 25.579,
+        "w_pct": 84.861,
+        "h_pct": 16.818
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les droits démocratiques des fascistes, des communistes, ne sont pas tabous et la démocratie ne disparaît pas avec leur contestation. Ceux qui chaque jour, par tous les moyens en leur pouvoir, dénigrent et sapent ouvertement le régime n'ont aucun droit de se plaindre ni de se présenter comme des martyrs s'ils cessent partiellement d'en être les bénéficiaires.",
+      "bbox": {
+        "x_pct": 5.195,
+        "y_pct": 41.8,
+        "w_pct": 84.777,
+        "h_pct": 12.656
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En pratique cependant, lorsque les adversaires des droits démocratiques jouissent eux-mêmes largement de ces droits, c'est généralement à la fois un signe et un facteur de santé. Le plus souvent, il vaut mieux pour le régime courir ses risques, en laissant ses ennemis jouer leur jeu en public et montrer qui ils sont.",
+      "bbox": {
+        "x_pct": 5.195,
+        "y_pct": 54.305,
+        "w_pct": 84.735,
+        "h_pct": 10.936
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La clandestinité, l'atmosphère de scandale, d'indignation, d'attendrissement, de tension extrême et de veille d'apocalypse, est presque toujours celle de la presse extrémiste antidémocratique, use la sensibilité du public et finit par le lasser. Les antidémocrates déclarés n'ont pas droit aux privilèges démocratiques, mais les démocrates ont cependant pour principe de les leur accorder dans toute la mesure du possible. A eux de faire preuve de sagesse et de se souvenir qu'il est plus facile de quitter le terrain démocratique que de le retrouver ; que toutes les interdictions sont dangereuses, contagieuses, et qu'il vaut mieux, le plus souvent, voir son adversaire au grand jour de la vie publique.",
+      "bbox": {
+        "x_pct": 5.292,
+        "y_pct": 64.795,
+        "w_pct": 84.958,
+        "h_pct": 24.777
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Page header and number not categorized as filter",
+    "Extremely poor OCR text quality for all paragraph regions",
+    "Bounding boxes contained incorrect text content"
+  ],
+  "doc_id": "330",
+  "page": 237,
+  "elapsed_seconds": 7.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

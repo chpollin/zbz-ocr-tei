@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "78",
+      "bbox": {
+        "x_pct": 14.615,
+        "y_pct": 79.916,
+        "w_pct": 21.054,
+        "h_pct": 15.659
+      },
+      "changed": true,
+      "change_reason": "Page number 78 incorrectly identified as text paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ÉCHEC DU MIME",
+      "bbox": {
+        "x_pct": 41.52,
+        "y_pct": 79.623,
+        "w_pct": 22.952,
+        "h_pct": 14.887
+      },
+      "changed": true,
+      "change_reason": "Running header/section title incorrectly identified as text paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "peut-être formellement juste, mais, à coup sûr, morte Car la philosophie vivante est activité subjective (ce qui signifie : activité du sujet poussé par la nécessité de sa liberté) et jamais constatation objective. Dans les deux cas, je cours le risque de fausser la pensée de l'autre pour la rapprocher de la mienne et masquer les divergences, ou au contraire, par une défense passionnée, d'élargir le fossé.",
+      "bbox": {
+        "x_pct": 14.006,
+        "y_pct": 12.173,
+        "w_pct": 76.355,
+        "h_pct": 20.715
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi il est loyal, quand l'acceptation fondamentale du système étudié n'a pas réussi, de le dire d'avance. Tel est ici mon cas. Je n'ai jamais pu, même en imagination, accepter Hegel. Je ne me suis jamais soumise à sa profondeur, je ne l'ai jamais « éprouvée » autrement que comme une tentation, en luttant et me défendant contre elle. Je crois d'ailleurs que grâce à cet échec je pourrai garder nette la distinction entre l'activité de l'auteur et celle de l'étudiant, et montrer ainsi leur opposition fondamentale et leur interaction semblable à une lutte.",
+      "bbox": {
+        "x_pct": 14.157,
+        "y_pct": 32.726,
+        "w_pct": 76.611,
+        "h_pct": 30.477
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De cet échec découle le plan de cette analyse; il me fallait d'abord tâcher de comprendre, mimer aussi longtemps que possible, me laisser conduire aussi loin que possible — m'arrêter quand ce n'était plus possible, voir où je m'arrêtais et ce qui barrait le chemin. Une première partie marque donc l'effort vers le mime — qui échoue; une deuxième partie précise l'obstacle : cet obstacle subsiste aussi longtemps que l'étudiant reste sujet, c'est-à-dire libre; enfin une troisième partie (comment n'y",
+      "bbox": {
+        "x_pct": 14.307,
+        "y_pct": 63.27,
+        "w_pct": 76.717,
+        "h_pct": 25.796
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 5,
+  "issues": [
+    "Page number and section title were misidentified as part of the body text paragraphs.",
+    "OCR text content was highly inaccurate and required full replacement.",
+    "Bboxes for header elements were misaligned in source."
+  ],
+  "doc_id": "20",
+  "page": 80,
+  "elapsed_seconds": 4.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

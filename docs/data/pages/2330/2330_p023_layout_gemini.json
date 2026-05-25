@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De journaux s'agissait-il ?",
+      "bbox": {
+        "x_pct": 18.156,
+        "y_pct": 4.747,
+        "w_pct": 35.324,
+        "h_pct": 2.116
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un quotidien socialiste, Franc-Tireur, et l'hebdomadaire Demain. J'ai écrit aussi un article d'ensemble sur le procès pour la Revue anti-communiste Preuves.",
+      "bbox": {
+        "x_pct": 5.165,
+        "y_pct": 6.516,
+        "w_pct": 79.536,
+        "h_pct": 6.331
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce procès fut une expérience passionnante. On sentait chaque jour la situation politique tourner, les avocats des jeunes insurgés prenaient de plus en plus d'influence, on se rendait compte que le régime allait changer. C'est juste après mon retour à Paris que Gomulka est venu au pouvoir. J'ai vécu ce tournant.",
+      "bbox": {
+        "x_pct": 4.921,
+        "y_pct": 12.285,
+        "w_pct": 79.902,
+        "h_pct": 10.539
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. - Revenons maintenant à vos premières années en Suisse. Vous avez fait vos classes à Genève. Quels souvenirs gardez-vous de cette première formation scolaire ?",
+      "bbox": {
+        "x_pct": 4.921,
+        "y_pct": 23.194,
+        "w_pct": 79.658,
+        "h_pct": 6.412
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C.D.K. - Dans quel quartier de Genève était-ce ?",
+      "bbox": {
+        "x_pct": 18.278,
+        "y_pct": 47.763,
+        "w_pct": 43.626,
+        "h_pct": 2.301
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plainpalais, naturellement. Tous les étudiants de l'Est habitaient Plainpalais. Je lisais donc beaucoup ; quand je ne lisais pas, je jouais à la marelle sur le trottoir, et quand je ne jouais pas, je pleurais, parce que je lisais des livres qui me faisaient pleurer et qui étaient mes préférés.",
+      "bbox": {
+        "x_pct": 5.006,
+        "y_pct": 49.743,
+        "w_pct": 79.573,
+        "h_pct": 8.319
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand mes parents ont déménagé dans le quartier de la Gare des Eaux-Vives, nous avons eu pour la première fois un petit jardin, qui a transformé mon existence. Jusqu'aujourd'hui je ne peux me passer d'un jardin.",
+      "bbox": {
+        "x_pct": 4.847,
+        "y_pct": 57.627,
+        "w_pct": 79.731,
+        "h_pct": 8.077
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'étais interloquée de ne pouvoir embrasser cet infini. Je me suis dit : si je ne peux pas comprendre le ciel, le figurer, le dessiner, il faut au moins",
+      "bbox": {
+        "x_pct": 5.043,
+        "y_pct": 87.128,
+        "w_pct": 79.451,
+        "h_pct": 4.425
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 81.338,
+        "y_pct": 94.757,
+        "w_pct": 2.686,
+        "h_pct": 2.051
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to filter."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 9,
+  "issues": [
+    "Severe OCR degradation in original regions.",
+    "Page number missing from initial detection labels."
+  ],
+  "doc_id": "2330",
+  "page": 23,
+  "elapsed_seconds": 5.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

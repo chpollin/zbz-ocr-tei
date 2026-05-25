@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "indispensable que ceux qui en disposent développent dès leur prime jeunesse leurs facultés de réflexion philosophique. Je trouve catastrophique que, précisément au moment où la philosophie serait nécessaire dans le plus grand nombre de spécialités, on ait appauvri en France les études de philosophie. Il ne s'agit pas d'acquérir une formation philosophique « professionnelle », mais d'apprendre à réfléchir à l'aide des notions fondamentales de la philosophie, par exemple sur les implications du fait que les hommes sont mortels, sur la nécessité et la permanence de cette condition.",
+      "bbox": {
+        "x_pct": 15.751,
+        "y_pct": 6.556,
+        "w_pct": 79.976,
+        "h_pct": 14.573
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted and incomplete; updated to full text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelles sont les caractéristiques de la médecine actuelle et l'extension de son action à toutes les sphères de l'existence, ce que vous avez appelé, je crois, la « médicalisation de la vie ». Quels sont, selon vous, les dangers que comporte ce phénomène ?",
+      "bbox": {
+        "x_pct": 21.734,
+        "y_pct": 27.5,
+        "w_pct": 73.956,
+        "h_pct": 5.992
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted and incomplete; updated to reflect actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela s'enchaîne très bien avec ce que je viens de dire. Je vous disais qu'on a oublié qu'on était mortel, et donc à vouloir supprimer toute espèce de risque. La santé est certes nécessaire pour pouvoir agir, mais elle n'est pas une fin. Lorsque la médecine prend dans la vie des êtres humains une place prépondérante, lorsqu'ils ne veulent plus faire que ce qui est bon pour la santé et prohiber ce qui peut lui nuire, en pensant sans cesse à ce qui est bon à boire, à manger, à respirer, ils perdent leur vie pour la gagner. La santé est une condition d'action, mais pas un sens. D'ailleurs, une certaine frivolité est nécessaire à la vie.",
+      "bbox": {
+        "x_pct": 15.751,
+        "y_pct": 36.024,
+        "w_pct": 80.098,
+        "h_pct": 15.645
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted and incomplete; updated to reflect actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lors d'un symposium sur le « respect du malade face aux progrès de la médecine », vous avez déclaré : « Il s'est produit, dans nos sociétés occidentales, un changement d'attitude général, profond, devant la vie, la mort, la maladie, le malheur. Les stupéfiantes conquêtes de la technique ont propagé dans un vaste public des illusions de toute-puissance, la visée ou même l'exigence d'une condition humaine exempte de souffrance, de travail et de mort ». Vous décrivez ici la technique comme une source d'illusions extrêmement graves. Comment, à votre avis, combattre cet effet du progrès technique ?",
+      "bbox": {
+        "x_pct": 15.751,
+        "y_pct": 54.056,
+        "w_pct": 80.183,
+        "h_pct": 18.468
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted and incomplete; updated to reflect actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a qu'une façon à mon avis, c'est de faire prendre conscience du caractère à la fois miraculeux et vulnérable du corps humain. Par exemple, tant de gens fument, malgré les mises en garde contre les méfaits du tabac. C'est qu'on ne leur a pas montré, par exemple à la télévision, la merveille qu'est un poumon, et combien ce poumon est indispensable à sa vie d'être humain. S'il l'avait vu, il serait pris d'un tel respect pour son corps qu'il ne pourrait plus encrasser, jour après jour, ses poumons. Le combat contre l'habitude du tabac n'est pas une affaire de vertu, il devrait susciter le respect imaginatif de ce qui constitue un corps humain. C'est cela aussi, une pédagogie de la vie.",
+      "bbox": {
+        "x_pct": 15.995,
+        "y_pct": 71.935,
+        "w_pct": 79.89,
+        "h_pct": 20.081
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted and incomplete; updated to reflect actual paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "172",
+      "bbox": {
+        "x_pct": 16.326,
+        "y_pct": 95.121,
+        "w_pct": 3.78,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, corrected label and tag."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "OCR text was extremely poor quality, requiring full transcription in json.",
+    "Page number 172 was misidentified as text."
+  ],
+  "doc_id": "2330",
+  "page": 176,
+  "elapsed_seconds": 8.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

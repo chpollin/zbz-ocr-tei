@@ -1,0 +1,130 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Podiumsdiskussion",
+      "bbox": {
+        "x_pct": 9.893,
+        "y_pct": 8.613,
+        "w_pct": 36.405,
+        "h_pct": 2.679
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Teilnehmer:",
+      "bbox": {
+        "x_pct": 10.253,
+        "y_pct": 18.022,
+        "w_pct": 16.778,
+        "h_pct": 1.97
+      },
+      "changed": true,
+      "change_reason": "Labelled as paragraph but serves as a section heading for the participant list."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. JEANNE HERSCH, Universit&auml;t Genf",
+      "bbox": {
+        "x_pct": 10.08,
+        "y_pct": 22.459,
+        "w_pct": 60.719,
+        "h_pct": 2.364
+      },
+      "changed": true,
+      "change_reason": "Participant entries in this list format should be classified as section_headers/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. HANS JONAS, New School for Social Research, New York",
+      "bbox": {
+        "x_pct": 10.16,
+        "y_pct": 26.659,
+        "w_pct": 72.663,
+        "h_pct": 4.523
+      },
+      "changed": true,
+      "change_reason": "Participant entry, should be section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "MELVIN J. LASKY, Herausgeber des ,Encounter' 1 London",
+      "bbox": {
+        "x_pct": 10.253,
+        "y_pct": 33.357,
+        "w_pct": 65.952,
+        "h_pct": 4.255
+      },
+      "changed": true,
+      "change_reason": "Participant entry, should be section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. NIKOLAUS LOBKOWICZ, Universit&auml;t M&uuml;nchen",
+      "bbox": {
+        "x_pct": 10.293,
+        "y_pct": 40.008,
+        "w_pct": 72.836,
+        "h_pct": 2.624
+      },
+      "changed": true,
+      "change_reason": "Participant entry, should be section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. GUNTER SCHMOLDERS; M&uuml;nchen",
+      "bbox": {
+        "x_pct": 10.479,
+        "y_pct": 44.704,
+        "w_pct": 58.589,
+        "h_pct": 2.364
+      },
+      "changed": true,
+      "change_reason": "Participant entry, should be section_header/zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Leitung:",
+      "bbox": {
+        "x_pct": 10.426,
+        "y_pct": 50.883,
+        "w_pct": 12.743,
+        "h_pct": 2.727
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Dr. GUNTHER VON LOJEWSKI, Bayerischer Rundfunk, M&uuml;nchen",
+      "bbox": {
+        "x_pct": 10.519,
+        "y_pct": 53.01,
+        "w_pct": 72.344,
+        "h_pct": 4.413
+      },
+      "changed": true,
+      "change_reason": "Participant entry, should be section_header/zb_heading."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Most participant names were incorrectly classified as standard paragraphs instead of section headers.",
+    "Participant list header 'Teilnehmer:' was incorrectly classified as a paragraph."
+  ],
+  "doc_id": "2060",
+  "page": 15,
+  "elapsed_seconds": 5.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

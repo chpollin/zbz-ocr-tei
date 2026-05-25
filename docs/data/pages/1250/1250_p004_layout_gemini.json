@@ -1,0 +1,153 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Quelques réflexions sur le problème de l'avortement",
+      "bbox": {
+        "x_pct": 7.196,
+        "y_pct": 10.044,
+        "w_pct": 46.002,
+        "h_pct": 6.283
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par Jeanne HERSCH Professeur de philosophie à la Faculté des Lettres de \"Université de Genève",
+      "bbox": {
+        "x_pct": 40.81,
+        "y_pct": 19.743,
+        "w_pct": 50.363,
+        "h_pct": 5.528
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header for author/title header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'il me soit permis de présenter deux observations préliminaires, sembleront dabord étrangères au s",
+      "bbox": {
+        "x_pct": 7.508,
+        "y_pct": 29.714,
+        "w_pct": 83.489,
+        "h_pct": 3.864
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La première le nouveau-né humain, si on le compare aux nouveau-nés des autres espèces, est le plus i",
+      "bbox": {
+        "x_pct": 7.3,
+        "y_pct": 34.069,
+        "w_pct": 83.873,
+        "h_pct": 14.853
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La deuxième dans toutes les cultures on découvre, à une place centrale, le rôle joué par le sacré , ",
+      "bbox": {
+        "x_pct": 7.165,
+        "y_pct": 49.391,
+        "w_pct": 83.904,
+        "h_pct": 7.698
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce est sacré se trouve en général à la fois valorisé et frappé dinterdit, qu'en lui quelque chose in",
+      "bbox": {
+        "x_pct": 7.342,
+        "y_pct": 57.309,
+        "w_pct": 83.759,
+        "h_pct": 5.447
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On peut se demander si l'aménagement désacralisateur de la sexualité auquel nous assistons ne un sim",
+      "bbox": {
+        "x_pct": 7.373,
+        "y_pct": 64.348,
+        "w_pct": 83.936,
+        "h_pct": 5.645
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce danger me paraît beaucoup plus grave que lérotisme. La victoire de lennui peut détruire le sens m",
+      "bbox": {
+        "x_pct": 7.238,
+        "y_pct": 71.136,
+        "w_pct": 83.936,
+        "h_pct": 3.592
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La libéralisation   de lavortement s'inscrit dans ce processus. Il me paraîtrait plus facile dy reco",
+      "bbox": {
+        "x_pct": 7.165,
+        "y_pct": 74.707,
+        "w_pct": 84.008,
+        "h_pct": 5.74
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On me une raison ou une autre, elles sont convaincues de ne pas pouvoir assumer. Tout a été dit sur ",
+      "bbox": {
+        "x_pct": 6.957,
+        "y_pct": 81.745,
+        "w_pct": 84.32,
+        "h_pct": 11.092
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "67",
+      "bbox": {
+        "x_pct": 88.375,
+        "y_pct": 94.618,
+        "w_pct": 3.251,
+        "h_pct": 2.215
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number to footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Author block label corrected",
+    "Missing page footer added"
+  ],
+  "doc_id": "1250",
+  "page": 4,
+  "elapsed_seconds": 8.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label to section_header for author/title header": 1,
+    "ADDED": 1
+  }
+}

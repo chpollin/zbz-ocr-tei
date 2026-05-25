@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "antihitlerien il a été un antipétainiste de la première heure, il a écrit le premier cahier clandestin de Témoignage chrétien en 1941, il a prononcé le premier sermon de la Résistance ; et tout cela pour des raisons, non pas directement politiques, mais théologiques et philosophiques, des raisons tirées de sa méthode engendrée par la qualité de sa foi. Et il en est de même pour ses prises de positions anticonformistes à l'époque du terrorisme communisant au Quartier latin, ou, plus tard, lorsqu'il s'est opposé aux tenants de la théologie de la libération. Il est intéressant de noter que ses options ont chaque fois coïncidé avec celles de Raymond Aron.",
+      "bbox": {
+        "x_pct": 15.995,
+        "y_pct": 3.226,
+        "w_pct": 80.012,
+        "h_pct": 20.024
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest ce caractère existentiel de sa pensée, de sa personnalité, qui était caractéristique auquel j ai été très sensible. Il s'explique par ce qu'il a vécu dans sa jeunesse et par sa formation. La première expérience fondamentale a été sa vocation religieuse, il avait 16 ans lorsqu'il a été pris, comme il le disait, « par la peau du cou » et jeté dans la vie religieuse. Ensuite, ce fut l'expérience de la guerre. A l'âge de 17 ans, il était au chemin des Dames, il a connu le pire. Cette épreuve, alors qu'il était encore presque un enfant, l'a profondément marqué et lui a donné le style de sensibilité qui était le sien, tout en acte, dénué de toute sentimentalité. Il avait puisé dans l'expérience de la guerre ce sens premier de l'histoire et du destin humain, qui devait caractériser sa pensée. Ensuite il y a eu l'expérience du séminaire, qui a été très pénible, une formation pour lui presque insupportable, il se sentait intellectuellement sous-alimenté. Il reprochait à l'Eglise de se borner à la tradition thomiste. Il admirait saint Thomas, mais il disait qu'au xiii e siècle on n'avait pas le sens de l'histoire. Or, le sens de l'histoire était pour lui fondamental, il pensait qu'il fallait l'incorporer à la foi. Il s'est donné lui-même une formation différente, moderne, il a travaillé tout particulièrement Hegel et, à partir de Hegel, Marx. Raymond Aron disait qu'il n'y avait sans doute en France aucun meilleur connaisseur de Marx que le Père Fessard. Il a d'ailleurs toujours mieux connu ses adversaires que ses adeptes. Il a développé une méthode d'interprétation objective, consistant à prendre en considération, dans la pensée d'autrui, ce qui est effectivement dit. Il y avait là chez lui une confiance, imprégnée de réalisme catholique, dans le langage, en tant qu'il exprime ce qu'on lui fait exprimer. Cette méthode, il l'a appliquée à Hegel, à Marx, comme aussi à certains de nos contemporains, qui n'étaient pas toujours conscients de ce qu'ils disaient en fait, et que le langage, plus honnête, transmettait comme malgré eux. Par exemple, les chrétiens qui usaient quasi à leur insu d'un langage marxiste.",
+      "bbox": {
+        "x_pct": 15.91,
+        "y_pct": 23.169,
+        "w_pct": 80.183,
+        "h_pct": 59.871
+      },
+      "changed": true,
+      "change_reason": "OCR transcription was heavily garbled and truncated."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "G.K. Les chrétiens progressistes ?",
+      "bbox": {
+        "x_pct": 19.011,
+        "y_pct": 83.976,
+        "w_pct": 41.636,
+        "h_pct": 2.581
+      },
+      "changed": true,
+      "change_reason": "Identified as section header instead of paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais n'était pas leur progressisme le gênait, c'était l'altération intellectuelle et affective de la doctrine chrétienne. Le Père",
+      "bbox": {
+        "x_pct": 16.203,
+        "y_pct": 85.968,
+        "w_pct": 79.683,
+        "h_pct": 3.927
+      },
+      "changed": true,
+      "change_reason": "OCR transcription corrected."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "198",
+      "bbox": {
+        "x_pct": 16.666,
+        "y_pct": 93.333,
+        "w_pct": 3.333,
+        "h_pct": 3.333
+      },
+      "changed": true,
+      "change_reason": "Labeled as page footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR output was severely corrupted in the middle paragraph.",
+    "Page number missing from initial detection.",
+    "Section header identified as paragraph."
+  ],
+  "doc_id": "2330",
+  "page": 202,
+  "elapsed_seconds": 8.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

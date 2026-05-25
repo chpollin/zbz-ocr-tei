@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les intellectuels contre l’Europe ?",
+      "bbox": {
+        "x_pct": 23.493,
+        "y_pct": 15.004,
+        "w_pct": 60.908,
+        "h_pct": 3.74
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in title: 'PEurope' to 'l’Europe'."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 40.265,
+        "y_pct": 23.254,
+        "w_pct": 27.831,
+        "h_pct": 2.21
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plus un continent est travaillé par l’histoire, soumis à des changements partiellement produits par le vouloir des hommes, et plus le rôle qu’y jouent les intellectuels devient important. Sans prendre eux-mêmes les décisions publiques, ils influencent non seulement ceux qui les prennent, mais la manière de penser, de juger et de sentir de tous. Or le continent de l’histoire, celui qui finit par contaminer d’histoire tous les autres, ce fut l’Europe, c’est encore l’Europe. D’où l’importance — et, qu’ils le sachent ou non, la responsabilité — des intellectuels européens.",
+      "bbox": {
+        "x_pct": 13.279,
+        "y_pct": 31.715,
+        "w_pct": 79.609,
+        "h_pct": 19.92
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text truncation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La catégorie des « intellectuels » manque de netteté et s’effiloche sur les bords. Disons assez sommairement que nous parlerons ici de ceux qui font métier d’observer, d’interpréter, de penser et de juger, comme aussi de s’exprimer publiquement en vue d’aider les autres à voir plus clair.",
+      "bbox": {
+        "x_pct": 13.026,
+        "y_pct": 51.194,
+        "w_pct": 79.786,
+        "h_pct": 9.019
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text truncation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Normalement, les intellectuels présentent entre eux une extrême diversité et même des divergences et des incompatibilités radicales. Ils se situent à des niveaux si différents qu’il est souvent difficile ou même vide de sens de vouloir les rapprocher ou les comparer. Si j’ose, dans cet article, parler « des intellectuels » en général, ou même de « l’Intellectuel » comme s’il existait en soi, c’est que je suis frappée par un étrange processus d’« homogénéisation » qui a gagné, en Europe occidentale, la grande majorité de ceux qui influencent l’opinion publique. Il n’est question ici que de cette majorité, alors que continuent à vivre, à travailler et à produire, un peu partout et dans tous les domaines, ceux qui pensent et créent selon leur exigence personnelle et à contre-courant.",
+      "bbox": {
+        "x_pct": 12.27,
+        "y_pct": 61.866,
+        "w_pct": 80.378,
+        "h_pct": 25.464
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text truncation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "48",
+      "bbox": {
+        "x_pct": 12.115,
+        "y_pct": 89.873,
+        "w_pct": 2.766,
+        "h_pct": 1.554
+      },
+      "changed": true,
+      "change_reason": "Identified page number, reclassified from text to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR for paragraph text was significantly truncated/corrupted.",
+    "Page number at bottom left was misidentified as text."
+  ],
+  "doc_id": "1590",
+  "page": 2,
+  "elapsed_seconds": 3.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

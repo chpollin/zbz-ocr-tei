@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "56 MONDE NOUVEAU",
+      "bbox": {
+        "x_pct": 25.242,
+        "y_pct": 20.457,
+        "w_pct": 49.137,
+        "h_pct": 5.288
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header because it contains page number and running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Douter, confronter, raisonner prend trop de temps. Les programmes — en un sens si pauvres — sont en un autre trop chargés et sottement tyranniques. Mais surtout : on est craintif. Au nom de la neutralité politique et religieuse de l’école, on évitera de parler de ce qui est contestable ou contesté, car on risquerait de prendre parti ou de susciter des doutes. Mais dans un monde comme le nôtre, c’est à peu près tout ce qui vit en même temps que nous vivons nous-mêmes qui est contesté. On finit par exclure de l’enseignement la part de notre réalité dont nous dépendons le plus et qui dépend directement de nous. On installe l’enfant dans un monde sans problèmes, le trompant ainsi sur ce qui l’attend. Deux et deux font quatre... le carré de l’hypoténuse... le parti-cipe passé employé avec avoir... un corps tombe à la vitesse de... D’affreux barbares ravagèrent la Gaule... Je pense au petit garçon que j’ai plongé dans un abîme de perplexité en lui faisant observer que les Gaulois étaient aussi des barbares. On apprend par cœur. Quoi d’étonnant dès lors que, débouchant sur la vie, des êtres humains ainsi formés soient scandalisés par la complexité des problèmes et qu’ils n’aient qu’un désir : non les résoudre, ni les trancher par une décision dont ils se déclarent responsables, mais chercher et imposer une autorité qui les simplifie et les annule, comme le faisait le maître de leur enfance ? Et malheur à ceux qui, contestant cette autorité, remettraient tout en question !",
+      "bbox": {
+        "x_pct": 24.944,
+        "y_pct": 26.811,
+        "w_pct": 49.71,
+        "h_pct": 35.613
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant à ces fruits de civilisation, qui ne sont pas des machines dont on puisse se servir sans les comprendre, sans aller jusqu’à l’inspiration qui permit de les inventer, ces fruits qui sont des pensées, des œuvres, des tentatives créatrices, c’est pour l’école primaire, dans l’ensemble, un luxe. Le peuple, dans son immense majorité, produit les biens indispensables à la fécondité culturelle, mais il n’en connait pas les fruits. Je n’oublierai jamais l’émerveillement d’un groupe d’apprentis du bois et du bâtiment, le soir où ils découvrirent qu’un poème est fait de rythmes et de sons. A l’école, à côté de quelques chansons souvent mal choisies, la musique n’existe",
+      "bbox": {
+        "x_pct": 24.839,
+        "y_pct": 62.065,
+        "w_pct": 49.573,
+        "h_pct": 15.784
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 19.411,
+        "y_pct": 85.357,
+        "w_pct": 41.694,
+        "h_pct": 1.54
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer as it is a distribution/archive footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial parsing lumped section header and page number into one box, missing context.",
+    "The first paragraph segment was incorrectly broken off from the main text block.",
+    "Footer metadata should be explicitly marked as _filter/page_footer."
+  ],
+  "doc_id": "240",
+  "page": 8,
+  "elapsed_seconds": 4.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

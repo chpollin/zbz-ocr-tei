@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment expliquer que ce grand philosophe ait pu être séduit par une idéologie comme celle du national-socialisme ? J.11. — Je crois qu'il y a dans la philosophie de Heidegger des éléments qui se prêtent à toutes sortes de compromis. Elle comporte un élément pathétique, plus ou moins magique, qui est un facteur d'irresponsabilité. C'est ce que Jaspers a toujours senti, même quand ils étaient amis. L'aspect poético-magique de la pensée de Heidegger était manifeste aussi dans sa façon d'enseigner. Les idées qu'il développait devant nous, il ne les soumettait pas à notre libre jugement, ce qui est l'attitude libérale d'un philosophe ; il les imposait. Il y a dans sa philosophie un aspect incantatoire, comme une formule de conjuration, qui fait monter les esprits telluriques et vous demande de les accueillir.",
+      "bbox": {
+        "x_pct": 3.785,
+        "y_pct": 3.298,
+        "w_pct": 79.976,
+        "h_pct": 24.135
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Heidegger a démissionné de son poste de recteur au bout d'une année.",
+      "bbox": {
+        "x_pct": 4.151,
+        "y_pct": 40.249,
+        "w_pct": 79.451,
+        "h_pct": 4.24
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une année et demie. On n'a jamais su exactement pourquoi. Mais il ne s'est jamais non plus dédit. On n'a jamais tiré au clair ce silence.",
+      "bbox": {
+        "x_pct": 15.055,
+        "y_pct": 44.65,
+        "w_pct": 56.777,
+        "h_pct": 2.148
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quels ont été vos rapports avec sa philosophie ? Je n'y ai jamais adhéré.",
+      "bbox": {
+        "x_pct": 14.286,
+        "y_pct": 49.477,
+        "w_pct": 55.922,
+        "h_pct": 4.208
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers a-t-il eu des rapports personnels avec Heidegger ? J.11. — Jaspers et Heidegger se sont connus pendant de nombreuses années. Quand Heidegger venait à Heidelberg, il habitait chez Jaspers. Jaspers n'a jamais eu une confiance intégrale en Heidegger — la sorte de confiance qu'il décrit dans son œuvre sous le nom de communication. On a publié après sa mort tout un volume de Notizen, de notes qu'il a prises sur Heidegger au cours des années. Ce volume a été publié par les soins de la Fondation Jaspers. La position de Jaspers était très nette. Il ne trouvait pas chez Heidegger le fondement sûr qu'un vrai philosophe devrait avoir à l'intérieur de lui-même. Pour Jaspers, toute activité philosophique véritable est enracinée dans une attitude éthique, presque méta-éthique, dans une attitude existentielle, c'est-à-dire dans ce qui fonde l'éthique elle-même. Si cette attitude de fond n'existe pas chez un philosophe, celui-ci sera peut-être très intéressant et vous pourrez en tirer grand profit, mais vous n'aurez pas un ami philosophe, vous ne communiquerez pas avec lui. Dans la communication votre propre liberté compte sur celle de l'autre, vous voulez la liberté de l'autre pour que votre liberté vous revienne plus libre. Eh bien, ce n'était pas le cas avec Heidegger. Je vous",
+      "bbox": {
+        "x_pct": 3.822,
+        "y_pct": 53.902,
+        "w_pct": 80.22,
+        "h_pct": 33.95
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR artifacts."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "zb_paragraph",
+      "text": "29",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Original text was badly truncated by OCR.",
+    "Page number 29 was missing from detection.",
+    "Multiple OCR transcription errors."
+  ],
+  "doc_id": "2330",
+  "page": 33,
+  "elapsed_seconds": 5.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ville. Je crois, de g n rale que les Am ricains sont tr¨s diff¨rents de la caricature qu'on fait d'eux en Europe. Ils sont beaucoup moins bon enfant, beaucoup plus solitaires, beaucoup moins dou©s pour ©tre heureux ; ils sont passablement tourment©s, parce qu'ils sont en qu©te de leur identit©. Pour eux, elle va rarement de soi.",
+      "bbox": {
+        "x_pct": 15.263,
+        "y_pct": 4.089,
+        "w_pct": 79.817,
+        "h_pct": 11.96
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual content in image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "G.D.K. — Et vos rapports avec vos collègues ?",
+      "bbox": {
+        "x_pct": 28.571,
+        "y_pct": 16.774,
+        "w_pct": 38.376,
+        "h_pct": 2.984
+      },
+      "changed": true,
+      "change_reason": "This is an interviewer question (section header/interlocutor marker), not a regular body paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'université où j'ai eu les meilleurs rapports avec les collègues, ce fut Penn State à State College. Là-bas, j'ai eu trois collègues avec lesquels je discutais philosophie autour de glaces au chocolat. Mais c'est un privilège assez rare.",
+      "bbox": {
+        "x_pct": 15.421,
+        "y_pct": 18.653,
+        "w_pct": 79.695,
+        "h_pct": 8.629
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text based on visual content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "86",
+      "bbox": {
+        "x_pct": 16.326,
+        "y_pct": 94.24,
+        "w_pct": 2.82,
+        "h_pct": 2.052
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text regions contained severe OCR truncation and garbled characters.",
+    "Interviewer label was incorrectly identified as a paragraph.",
+    "Page number at bottom of page was missed by the initial pass."
+  ],
+  "doc_id": "2330",
+  "page": 90,
+  "elapsed_seconds": 3.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

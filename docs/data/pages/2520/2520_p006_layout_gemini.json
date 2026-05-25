@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE RACISME HITLÉRIEN EN 1937 UN STATUT NOUVEAU DE L'HUMANITÉ SE PRÉPARE",
+      "bbox": {
+        "x_pct": 26.394,
+        "y_pct": 28.978,
+        "w_pct": 51.284,
+        "h_pct": 3.43
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Ier janvier 1934, une certaine loi sur la stérilisation est entrée en vigueur ; si elle joue contre l'Indigène du Reich, croit-on que l'Étranger vaincu s'en défendra facilement ?",
+      "bbox": {
+        "x_pct": 17.339,
+        "y_pct": 33.991,
+        "w_pct": 69.239,
+        "h_pct": 4.908
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy based on the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous n'avons pas le droit de glisser sur de tels faits. Parce qu'ils gouverneront la conduite de l'ennemi, nous devons les savoir par cœur.",
+      "bbox": {
+        "x_pct": 17.339,
+        "y_pct": 38.674,
+        "w_pct": 69.266,
+        "h_pct": 3.325
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy based on the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'après leur type bien connu, les volontés et les passions germaniques n'auront pas peur d'être ce qu'elles sont, les Allemands ne craindront pas de se satisfaire. Nous pouvons nous tenir pour exposés à subir des conditions pires que la mort. Fort de sa mission de Messie humain, ce peuple de Seigneurs, cette race de Maîtres, s'entraîne déjà à compter quelles légitimes violences devront être imposées aux mâles des peuples vaincus et quelles hontes pèseront sur leurs femmes et sur leurs enfants. Ces femmes que vous croyez à vous, jeunes Français, ne vous appartiennent plus dans le songe de l'Allemand. Ni vos fils, ni vos filles, jeunes pères de familles françaises ! Un statut nouveau de l'humanité se prépare, un droit particulier est élaboré : un code de nouveaux devoirs, auprès desquels les pauvres petites corvées et translations pangermanistes de 1918 feront l'effet de jeux d'enfants. Le racisme hitlérien nous fera assister au règne tout-puissant de sa Horde, et dernier gémissement de nos populations ahuries, il sera contesté que d'aussi révoltantes iniquités puissent être éclairées par notre soleil :",
+      "bbox": {
+        "x_pct": 17.037,
+        "y_pct": 41.735,
+        "w_pct": 69.661,
+        "h_pct": 21.9
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy based on the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le soleil du vingtième siècle !",
+      "bbox": {
+        "x_pct": 22.633,
+        "y_pct": 63.305,
+        "w_pct": 25.138,
+        "h_pct": 1.735
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Charles MAURRAS,",
+      "bbox": {
+        "x_pct": 69.055,
+        "y_pct": 65.877,
+        "w_pct": 14.037,
+        "h_pct": 1.491
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1032",
+      "bbox": {
+        "x_pct": 133,
+        "y_pct": 898,
+        "w_pct": 34,
+        "h_pct": 15
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and categorized as page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Devant l'Allemagne éternelle, 1937, préface pp. 6-7.",
+      "bbox": {
+        "x_pct": 448,
+        "y_pct": 674,
+        "w_pct": 386,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Added missing bibliographical line and categorized as section_header."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Several text blocks had OCR errors and needed content correction.",
+    "Page number 1032 was missed in the original JSON.",
+    "Bibliographical line at the bottom was missed in the original JSON."
+  ],
+  "doc_id": "2520",
+  "page": 6,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

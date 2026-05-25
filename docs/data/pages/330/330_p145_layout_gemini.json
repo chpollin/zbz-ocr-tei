@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 111",
+      "bbox": {
+        "x_pct": 329.0,
+        "y_pct": 84.0,
+        "w_pct": 535.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Header was misidentified as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "prétations rationalistes nous sont le plus souvent proposées, tant par ses défenseurs que par ses adversaires. On a reproché souvent à la démocratie son anonymat, le fait que le responsable c'est toujours « personne ». Mais la contrepartie, c'est, justement, cette façon qu'a le pouvoir d'y circuler comme un sang, partout, sans qu'aucun membre puisse — idéalement — l'accaparer. Dans la mesure où elle est substantiellement vivante, la démocratie se représente, sur le plan logique, par un cercle vicieux : il semble qu'il n'y ait rien nulle part.",
+      "bbox": {
+        "x_pct": 6.17,
+        "y_pct": 13.164,
+        "w_pct": 84.457,
+        "h_pct": 18.948
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted in the input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pouvoir appartient aux gouvernés — et qui confère le leur aux gouvernants — c'est celui de fixer des tâches aux gouvernants et d'en contrôler l'accomplissement. Peu importe ici pour l'instant de quelle manière, par quel procédé technique ces tâches peuvent être imposées et ce contrôle exercé — l'élection, simplement, sur la base de tel ou tel programme, avec la sanction ou la condamnation de l'élection suivante, le droit plus ou moins étendu des assemblées législatives d'approuver ou de rejeter telle action du gouvernement, ou l'intervention directe du peuple, par le référendum, dans l'élaboration des lois.",
+      "bbox": {
+        "x_pct": 6.086,
+        "y_pct": 31.667,
+        "w_pct": 84.401,
+        "h_pct": 18.895
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted in the input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce qu'il nous faut retenir d'abord, c'est qu'ici apparaît comme garantie des droits individuels, indispensables à un régime fondé sur la valeur irréductible de la personne humaine, le contrôle des gouvernants par les gouvernés. Sous une forme ou sous une autre, par tel mécanisme législatif ou par tel autre, les gouvernants tiennent leur pouvoir des gouvernés et ils ont à leur rendre compte de leurs actes.",
+      "bbox": {
+        "x_pct": 66.0,
+        "y_pct": 505.0,
+        "w_pct": 840.0,
+        "h_pct": 150.0
+      },
+      "changed": true,
+      "change_reason": "Paragraph was missing from the initial selection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais nous avons parlé jusqu'ici comme si les gouvernés étaient une réalité homogène qu'on pourrait personnifier en un seul citoyen, face aux gouvernants. En fait la démocratie n'a de raison d'être que par la diversité des gouvernés. Ce sont leurs volontés opposées qui lui donnent son sens, en même temps qu'elles rendent difficile son fonctionnement. On peut dire que plus la démocratie est nécessaire, et plus elle est menacée de l'intérieur.",
+      "bbox": {
+        "x_pct": 6.031,
+        "y_pct": 66.426,
+        "w_pct": 84.457,
+        "h_pct": 14.768
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted in the input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si les volontés sont diverses et même opposées; et si la valeur irréductible de chaque personne humaine fonde le régime, il s'en suit que tous les citoyens et tous les groupes de citoyens doivent avoir le droit de lutter, à l'intérieur de la démocratie, pour réaliser",
+      "bbox": {
+        "x_pct": 5.989,
+        "y_pct": 80.597,
+        "w_pct": 84.443,
+        "h_pct": 8.645
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted in the input."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text quality is very poor in original input.",
+    "Missing paragraph block identified.",
+    "Running header was included as text."
+  ],
+  "doc_id": "330",
+  "page": 145,
+  "elapsed_seconds": 5.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

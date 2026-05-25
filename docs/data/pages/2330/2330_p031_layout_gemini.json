@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ordonnances ont été promulguées en Allemagne dont certaines interdisant l'inscription des étudiants juifs dans les universités. J'ai alors écrit une lettre à Heidegger, lui disant que j'avais eu l'intention de suivre ses cours, mais qu'étant donné la législation nouvelle, ce n'était pas possible. Mais peu après, on a appris que ces ordonnances ne s'appliquaient pas aux étudiants étrangers. Un beau jour je suis donc partie. Je me souviens de mes parents en larmes tandis que je m'en allais vers la gare. J'ai passé tout le semestre d'été à Freiburg-im-Breisgau. Et j'ai compris alors, de façon viscérale, comment s'installe un régime totalitaire, et à quel point il ne s'agit pas d'un processus intellectuel.",
+      "bbox": {
+        "x_pct": 4.799,
+        "y_pct": 3.805,
+        "w_pct": 79.902,
+        "h_pct": 19.984
+      },
+      "changed": true,
+      "change_reason": "OCR text was incomplete and mangled, updated to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous voulez dire qu'il n'y aurait pas de rapport avec l'idéologie ?",
+      "bbox": {
+        "x_pct": 4.64,
+        "y_pct": 24.377,
+        "w_pct": 73.59,
+        "h_pct": 4.288
+      },
+      "changed": true,
+      "change_reason": "OCR error correction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.11. — Si, mais les idéologies sont comme diffusées physiquement dans l'atmosphère qu'on respire du matin au soir et qui, littéralement, vous empoisonne avec chaque souffle. C'est un phénomène quasi physiologique.",
+      "bbox": {
+        "x_pct": 4.884,
+        "y_pct": 30.434,
+        "w_pct": 79.939,
+        "h_pct": 6.146
+      },
+      "changed": true,
+      "change_reason": "OCR error correction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. — Le fait que Heidegger venait d'être nommé recteur par le nouveau régime ne vous a pas dissuadée d'aller l'entendre ?",
+      "bbox": {
+        "x_pct": 4.756,
+        "y_pct": 36.71,
+        "w_pct": 79.99,
+        "h_pct": 4.666
+      },
+      "changed": true,
+      "change_reason": "OCR error correction and merged split boxes."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au contraire. étant donné la raison la plus cachée pour laquelle j'avais voulu aller en Allemagne, je me trouvais ainsi au nœud du problème ; c'est justement ce que je voulais. Je regardais cet homme, qui était un grand philosophe, qui savait être profond et rigoureux, et qui était là devant moi, avec ses yeux fiévreux, injectés de sang, et donnait parfois des cours invraisemblables. Or, un jour, tous les recteurs d'université ont reçu l'ordre d'en haut de célébrer la mort d'un certain « héros » nazi qui s'appelait Schlageter et qui avait été tué dans une émeute avant que le mouvement nazi ne prenne le pouvoir. Il était devenu un martyr de la cause. Donc on annonce que Heidegger allait célébrer cet anniversaire devant l'université à 11 heures du matin. Devant l'université, à Freiburg, il y a un escalier majestueux, flanqué à droite et à gauche de deux statues de bronze représentant, l'une Homère, l'autre Aristote. Quand je suis sortie de l'université avec l'intention de m'éloigner au plus vite, il était trop tard. Tous les étudiants étaient massés devant l'escalier, en demi-cercle, de sorte que je ne pouvais plus traverser cette barrière humaine. Il ne me restait qu'à me perdre dans la masse. Je me tenais au deuxième rang. Arrive Heidegger. Entre Aristote et Homère, en haut de l'escalier, il paraissait encore plus petit que d'habitude. C'était un homme de petite taille, carré. La cérémonie commence. Ce fut une toute petite cérémonie, d'un quart d'heure environ. Le bras droit levé, pour le salut hitlérien, la foule a chanté la première strophe du Horst Wessel-Lied (avec le couplet « noyer les rues dans le sang des juifs », etc.) ; puis Heidegger a prononcé un discours, après quoi ils ont encore chanté la dernière strophe, et ce fut tout. J'étais là, sans bouger, les bras le long du corps, les lèvres",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 41.134,
+        "w_pct": 80.098,
+        "h_pct": 49.936
+      },
+      "changed": true,
+      "change_reason": "OCR error correction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 81.3,
+        "y_pct": 94.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number classification."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text layer was extremely noisy and inaccurate.",
+    "BBox for section head and start of paragraph needed careful cleanup."
+  ],
+  "doc_id": "2330",
+  "page": 31,
+  "elapsed_seconds": 6.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

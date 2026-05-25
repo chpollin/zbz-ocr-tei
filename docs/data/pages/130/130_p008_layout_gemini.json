@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 92.4,
+        "y_pct": 2.0,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number in header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 38.3,
+        "y_pct": 2.0,
+        "w_pct": 23.4,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "deux soirs par semaine, pendant les mois dhiver, c'est déjà énorme pour passe sa journée entière à f",
+      "bbox": {
+        "x_pct": 8.41,
+        "y_pct": 13.774,
+        "w_pct": 79.33,
+        "h_pct": 61.931
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin il faut se demander formera lélite ouvrière. La classe ouvrière   possède-t-elle dans ses rang",
+      "bbox": {
+        "x_pct": 8.502,
+        "y_pct": 81.274,
+        "w_pct": 78.449,
+        "h_pct": 10.425
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header regions",
+    "Missing page number region"
+  ],
+  "doc_id": "130",
+  "page": 8,
+  "elapsed_seconds": 4.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

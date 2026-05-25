@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "monde ou, si on veut, contre le silence de Dieu. Rien de cela chez Jeanne Hersch accepte notre sort, précisément parce qu'il est la contradiction même, parce que l'ange et la bête en nous ne peuvent pas être séparés et que sans être voués au temps, donc à la destruction graduelle et à la mort, nous ne serions pas humains. Elle s'installe dans le provisoire, car l'impossibilité d'atteindre le définitif fait notre misère et notre grandeur, elle dit oui à la vie sur cette terre.",
+      "bbox": {
+        "x_pct": 17.722,
+        "y_pct": 142.0,
+        "w_pct": 57.807,
+        "h_pct": 194.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to match original source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En apprenant il y a quelques années qu'elle avait été invitée à un colloque dans l'abbaye de Nemi, près de Castel Gandolfo, quoiqu'elle ne soit pas chrétienne, je n'en ai pas été surpris. Elle partage avec les théologiens l'attention qu'ils portent à la complexité infinie de notre condition d'êtres conscients et mortels - contre toutes les tentatives du réductionnisme. Dans nos conversations, le silence qu'elle garda sur les questions strictement religieuses me paraissait significatif au plus haut degré, car ce n'était pas le silence de l'indifférence ou de l'incompréhension, au contraire, il témoignait de sa connaissance des limites en dehors desquelles les paroles sont dangereuses.",
+      "bbox": {
+        "x_pct": 17.373,
+        "y_pct": 339.0,
+        "w_pct": 57.945,
+        "h_pct": 321.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to match original source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En écrivant ceci en Californie, non pas en polonais qui est ma langue de poète, ni en anglais qui est ma langue de tous les jours, je sens un certain malaise, car il m'est difficile de capter mon émerveillement à la pensée d'avoir rencontré une personne aussi extra-",
+      "bbox": {
+        "x_pct": 17.511,
+        "y_pct": 622.0,
+        "w_pct": 57.701,
+        "h_pct": 113.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to match original source image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "II",
+      "bbox": {
+        "x_pct": 718.0,
+        "y_pct": 753.0,
+        "w_pct": 21.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was severely truncated or misaligned with the visual content.",
+    "Page number 'II' was mislabeled as 'text'.",
+    "OCR output did not accurately represent the French source text shown in the image."
+  ],
+  "doc_id": "2780",
+  "page": 10,
+  "elapsed_seconds": 5.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

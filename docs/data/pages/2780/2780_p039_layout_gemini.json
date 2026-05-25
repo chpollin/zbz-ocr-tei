@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cause de cette contradiction, qu'il ne s'agit pas de constater mais de vivre, l'expérience musicale qu'on en fait transcende succession et simultanéité, sans qu'on puisse savoir comment, et sans que soient perdus un seul instant les sons, les rythmes, le corps sonore qui la porte, - sans que retombe non plus l'activité du sentiment qui en reste indissociable. C'est sans doute ce qu'Ansermet appelait «la musique présente en chair et en os», par laquelle, dit-il, «un sentiment en acte communique avec un sentiment en acte». L'important, ici, c'est «en acte», c'est-à-dire une signification de la liberté.",
+      "bbox": {
+        "x_pct": 26.621,
+        "y_pct": 13.75,
+        "w_pct": 57.733,
+        "h_pct": 26.748
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR errors to match source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voici que je rejoins ainsi un des thèmes essentiels de mon enseignement universitaire : les grandes philosophies de la tradition occidentale exigent que l'on travaille à les comprendre rationnellement, mais ne se livrent pourtant pas, dans ce qu'elles ont d'essentiel, par cette seule rationalité. Il y faut un autre «organe», et cet organe, c'est la liberté. La liberté ne nous permet pas seulement de prendre des décisions autonomes, mais aussi de comprendre, par un mouvement transcendant, ce qui, contradictoire dans la condition temporelle dont nous sommes bien incapables de sortir, est comme le signe de ce que celle-ci n'est pas. L'organe à l'aide duquel on «entend» l'essentiel, reconnaissable en toutes ses parties et presque monotone,",
+      "bbox": {
+        "x_pct": 26.695,
+        "y_pct": 40.196,
+        "w_pct": 57.659,
+        "h_pct": 33.064
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR errors to match source text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "40",
+      "bbox": {
+        "x_pct": 27.23,
+        "y_pct": 75.87,
+        "w_pct": 2.45,
+        "h_pct": 1.95
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "OCR content was heavily malformed in provided JSON compared to the image.",
+    "Page number at bottom left was not captured in the original JSON regions."
+  ],
+  "doc_id": "2780",
+  "page": 39,
+  "elapsed_seconds": 4.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

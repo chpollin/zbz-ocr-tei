@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DE L'ÊTRE TRANSCENDANT 173",
+      "bbox": {
+        "x_pct": 315,
+        "y_pct": 74,
+        "w_pct": 556,
+        "h_pct": 11
+      },
+      "changed": true,
+      "change_reason": "Header containing section title and page number mislabeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais je peux, en restant dans la réalité empirique et existentielle, rencontrer des limites qui me la rendront présente.",
+      "bbox": {
+        "x_pct": 107,
+        "y_pct": 116,
+        "w_pct": 759,
+        "h_pct": 78
+      },
+      "changed": true,
+      "change_reason": "Text completion fixed."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En étudiant la transcendance, c'est-à-dire la réalité cherchée par l'existence, on ne peut pas obtenir des résultats apodictiques. Car elle est réalité sans possibilité, réalité absolue, au-delà de laquelle il n'y a rien. Je me tiens muet devant elle. Ce sont les possibles qui me donnent prise sur la réalité empirique et me permettent de la connaître; mais la transcendance n'a pas de possibilité d'où elle puisse tirer sa réalité; non que la possibilité lui manque; au contraire la distinction entre « possibilité » et « réalité » représente un manque de la réalité empirique qui a toujours quelque chose en dehors d'elle. C'est grâce aux possibles aussi que l'existence peut être libre; mais la transcendance, elle, n'a pas la possibilité de décider; non parce que celle-ci lui manque, au contraire la possibilité d'un choix exprime un manque de l'existence dans la réalité temporelle.",
+      "bbox": {
+        "x_pct": 109,
+        "y_pct": 193,
+        "w_pct": 761,
+        "h_pct": 464
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc, là ou je me heurte à la réalité qui ne se change pas en possibilité, je rencontre la transcendance.",
+      "bbox": {
+        "x_pct": 149,
+        "y_pct": 655,
+        "w_pct": 647,
+        "h_pct": 25
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La recherche s'accomplit entre la présence absolument actuelle de la transcendance et la réalité empirique de la métaphysique historiquement transmise. Elle ne révèle pas la transcendance; elle ne se tient pas devant la réalité de la transcendance; elle n'étudie pas ce que d'autres croient. Elle montre comment toute réalité peut devenir",
+      "bbox": {
+        "x_pct": 114,
+        "y_pct": 703,
+        "w_pct": 758,
+        "h_pct": 183
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and removed artifact."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 5,
+  "issues": [
+    "Page header misidentified as text",
+    "OCR errors in paragraphs",
+    "Truncated text in paragraph regions"
+  ],
+  "doc_id": "20",
+  "page": 175,
+  "elapsed_seconds": 4.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

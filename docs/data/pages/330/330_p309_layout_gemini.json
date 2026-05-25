@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TABLE DES MATIÈRES",
+      "bbox": {
+        "x_pct": 24.053,
+        "y_pct": 22.79,
+        "w_pct": 45.682,
+        "h_pct": 3.03
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "AVANT-PROPOS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . I\nPRÉFACE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . IX\nLes circonstances, p. ix. — Besoin de clarté, p. xi. — L’impartialité, p. xii. —\nLe découpage idéologique, p. xiii. — Les types idéologiques, p. xv. — Impor-\ntance actuelle des idéologies, p. xvii. — Recherche d’une idéologie socialiste,\np. xviii. — Limites de l’adhésion idéologique, p. xix.\nPREMIÈRE PARTIE\nChapitre Ier. — DESCRIPTION DE LA SITUATION IDÉOLOGIQUE ACTUELLE..\nConsidérations préalables, p. 3. — Géographie de la situation idéologique\ncontemporaine, p. 5. — Idéologies typiques, telles qu’elles sont vécues :\nIdéologie fasciste, p. 7; Idéologie communiste, p. 11; Idéologie conserva-\ntrice libérale, p. 31; Idéologie démocratique progressiste, p. 41; Idéologie\nsocialiste, p. 46. — Remarques critiques sur ces idéologies, p. 58.\nChapitre II. — AMBIGUÏTÉS . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 78\nCohérence des idéologies totalitaires, p. 79. — Non-cohérence des autres\nidéologies, p. 80. — Non-coïncidence des fronts idéologiques réels avec\nle découpage des partis politiques, p. 86.\nDEUXIÈME PARTIE\nChapitre Ier. — DE LA POLITIQUE EN GÉNÉRAL . . . . . . . . . . . . . . . . . . . . . . . . 93\nRaison d’être et postulats, p. 93. — Réussite et morale, Machiavel et Kant,\np. 96. — Humanisation de la vie sociale : la liberté gagne aux dépens du\nfait, p. 102.\nChapitre II. — DE LA DÉMOCRATIE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 197\nJustification pessimiste de la démocratie, p. 107. — Contrôle des gouver-\nnants par les gouvernés, p. 111. — Droits individuels et droits de la mino-\nrité, p. 112. — Histoire et absolu, p. 114. — Lenteurs et chances de la dé-\nmocratie, p. 116. — Justice et existence historique, p. 119.\nChapitre III. — DES PARTIS POLITIQUES . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 123\nLeur pluralité indispensable, p. 123. — Leur rôle, p. 124. — Propagande et\nmensonge, p. 127. — « L’âme collective », p. 133. — Le parti a-t-il une\n« âme collective »? p. 141. — L’engagement partiel, p. 144.",
+      "bbox": {
+        "x_pct": 3.747,
+        "y_pct": 31.702,
+        "w_pct": 85.71,
+        "h_pct": 58.235
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index to text, and filled in content text missing from previous extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "276",
+      "bbox": {
+        "x_pct": 11.421,
+        "y_pct": 89.421,
+        "w_pct": 3.482,
+        "h_pct": 1.283
+      },
+      "changed": true,
+      "change_reason": "Changed label to page_footer because it is a page number."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Initial label document_index was inappropriate for content text.",
+    "Page number at bottom of page should be labeled as page_footer."
+  ],
+  "doc_id": "330",
+  "page": 309,
+  "elapsed_seconds": 6.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Temps et Liberté",
+      "bbox": {
+        "x_pct": 655.0,
+        "y_pct": 125.0,
+        "w_pct": 133.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header, should be labeled _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "aller pour autant 1) . Ce qui revient à un acte de soumission anticipé, déjà accompli hic et nunc, devant l'autorité hiérarchique, sur un point qui tient pourtant au cœur de l'œuvre et de la pensée d'Ignace et du P. Fessard : cette précieuse sentence qui risque d'être aplatie au point de perdre sa signification — et le P. Fessard le sait bien, qui consacre près de soixante pages minutieuses à sa défense et écrit : « Si la formule du Thesaurus de Santander paraît plus facile à saisir, elle n'obtient cet avantage qu'en sacrifiant le nerf de cette dialectique ignatienne dont nous avons essayé de montrer la richesse et la puissance. » Soumission anticipée sans doute extérieure : l'auteur n'en continuera pas moins à garder en lui comme seule vraie la sentence traditionnelle ; mais il promet au moins, si le Père Général parle « officiellement », la docilité de son silence. Or, dans l'éthique d'une pure philosophie — excluant tout vœu d'obéissance —, un tel sacrifice apparaîtrait, déjà dans l'intention, comme péché contre l'esprit. Malgré cela, malgré ce qui reste pour « nous » qui sommes « dehors » une faille sans remède pour la communication, le P. Fessard a écrit aussi pour nous un grand livre, profond, nouveau et efficace. Il y met en œuvre, et il illustre du même coup, un mode de penser qui lui est propre, simultanément intellectuel et intuitif, dont les figures de géométrie symboliques sont l'instrument naturel. Ces figures, indispensables à une compréhension attentive du texte, permettent de surmonter dans une large mesure l'obstacle que représente la succession très distendue du discours : elles permettent la vision synthétique d'aspects, de mouvements, de plans divers, et, par là, de leur interaction, de leur vie ; elles suggèrent la saisie contemplative, plus objective que par le mime, mais peut-être aussi plus intérieure par le dépassement des éléments psychologiques, de l'événement humano-divin qu'est la liberté. Chose curieuse, cette « géométrie spirituelle », lorsqu'elle est déchiffrée comme elle doit l'être, abolit mieux l'espace que ne peut le faire le discours et acquiert ainsi une efficacité métaphysique remarquablement pure.",
+      "bbox": {
+        "x_pct": 20.411,
+        "y_pct": 15.073,
+        "w_pct": 58.743,
+        "h_pct": 49.256
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hegel et Kierkegaard : le P. Fessard a en quelque sorte réussi à faire vivre un schème hégélien, englobant, embrassant à la fois l'instant de liberté, la vie entière d'un être humain, celle de l'humanité dans son ensemble, celle même de Dieu avec ses relations trinitaires — autour d'un centre kierkegaardien resserré au maximum sur son unicité paradoxale. S'il a pu tenir cette gageure, c'est grâce au caractère foncièrement dynamique et dialectique de sa pensée. A vrai dire, les termes mêmes que son esprit manie sont, non des mobiles (des choses mues), mais des mouvements. Et non pas des déplacements spatiaux vus de l'extérieur, mais des gestes, et il faudrait presque dire des actes. Si bien que les figures géométriques auxquelles il recourt, loin de condamner l'esprit, comme il pourrait sembler à première vue, à l'immobile juxtaposition spatiale, le jettent tout entier au cœur du temps.",
+      "bbox": {
+        "x_pct": 20.226,
+        "y_pct": 63.561,
+        "w_pct": 58.284,
+        "h_pct": 21.064
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "383",
+      "bbox": {
+        "x_pct": 751.0,
+        "y_pct": 857.0,
+        "w_pct": 24.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, should be labeled _filter."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Copyright © 2009 ProQuest LLC. All rights reserved. Copyright © Presses Universitaires de France.",
+      "bbox": {
+        "x_pct": 145.0,
+        "y_pct": 938.0,
+        "w_pct": 472.0,
+        "h_pct": 28.0
+      },
+      "changed": true,
+      "change_reason": "Identified as copyright footer, should be labeled _filter."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original JSON had truncated text for paragraph 2.",
+    "Running header and footer elements were incorrectly tagged as text/zb_paragraph.",
+    "Missing identification of running header and copyright notice."
+  ],
+  "doc_id": "350",
+  "page": 14,
+  "elapsed_seconds": 6.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

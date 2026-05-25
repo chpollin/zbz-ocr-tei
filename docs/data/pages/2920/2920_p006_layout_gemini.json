@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "508",
+      "bbox": {
+        "x_pct": 27.103,
+        "y_pct": 8.018,
+        "w_pct": 5.441,
+        "h_pct": 2.12
+      },
+      "changed": true,
+      "change_reason": "Page number identified as paragraph text, changed to page_footer (_filter)."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Coups de sonde",
+      "bbox": {
+        "x_pct": 52.25,
+        "y_pct": 7.851,
+        "w_pct": 21.235,
+        "h_pct": 2.777
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "exclut toute idée de dignité ou d'égard. Il s'accomplit dans l'événement nu, dans la victoire remportée par le plus fort — et la fuite ou la consommation du plus faible, qui s'ensuit. Toute dimension virtuelle — devoir être, vouloir être, tâche, exigence, vocation — en est exclue. Une dimension virtuelle n'a de sens que pour une liberté. Si l'on admet que la « nature humaine » implique la liberté, non comme une donnée naturelle, mais comme tâche, comme exigence ou comme vocation, il faudra dire que les droits de l'homme sont des droits « naturels » au sens de « conformes à la vocation de la nature humaine », mais qu'ils vont à l'encontre de la nature telle qu'elle nous est donnée, où seule règne la loi de la force.",
+      "bbox": {
+        "x_pct": 26.662,
+        "y_pct": 12.336,
+        "w_pct": 71.235,
+        "h_pct": 31.462
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and character recognition errors."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Page number 508 was incorrectly classified as paragraph text.",
+    "OCR text for the paragraph was truncated and contained errors."
+  ],
+  "doc_id": "2920",
+  "page": 6,
+  "elapsed_seconds": 3.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

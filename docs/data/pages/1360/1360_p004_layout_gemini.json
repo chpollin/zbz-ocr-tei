@@ -1,0 +1,140 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tesclave du fait les puissants comme les faibles. qu1 qu'/",
+      "bbox": {
+        "x_pct": 7.902,
+        "y_pct": 13.19,
+        "w_pct": 37.37,
+        "h_pct": 9.866
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SuI Telle qu'clle vicieux: chercher   necessairement place un absolu desespoir, 1u sens dune impossi",
+      "bbox": {
+        "x_pct": 7.965,
+        "y_pct": 23.954,
+        "w_pct": 37.307,
+        "h_pct": 17.466
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Soljenirsyne.",
+      "bbox": {
+        "x_pct": 8.319,
+        "y_pct": 67.56,
+        "w_pct": 7.474,
+        "h_pct": 2.373
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lhomme puissance et Mensonge (Parcc que ]a qu1 puisqui qui qu pour",
+      "bbox": {
+        "x_pct": 9.812,
+        "y_pct": 69.745,
+        "w_pct": 35.313,
+        "h_pct": 7.761
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jc s'arroger ]e Mais Jussi",
+      "bbox": {
+        "x_pct": 55.397,
+        "y_pct": 13.539,
+        "w_pct": 36.597,
+        "h_pct": 2.855
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre dans Je qu'i] qu'i7 qu1si",
+      "bbox": {
+        "x_pct": 56.754,
+        "y_pct": 20.912,
+        "w_pct": 3.58,
+        "h_pct": 1.783
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Limpuissance internationale des entreprises de plus proche, Je paix qu' Petit puissance que de s2 no",
+      "bbox": {
+        "x_pct": 55.637,
+        "y_pct": 40.483,
+        "w_pct": 29.666,
+        "h_pct": 8.271
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nacfe, elle ne cesse de donz un individu damcnuale de domiqui qu' qu'i] qui Jong qui",
+      "bbox": {
+        "x_pct": 55.772,
+        "y_pct": 54.598,
+        "w_pct": 35.637,
+        "h_pct": 28.686
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "72",
+      "bbox": {
+        "x_pct": 83.2,
+        "y_pct": 85.3,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "73",
+      "bbox": {
+        "x_pct": 92.5,
+        "y_pct": 85.3,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page numbers were missing from detection.",
+    "Bbox accuracy for existing text labels should be reviewed."
+  ],
+  "doc_id": "1360",
+  "page": 4,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

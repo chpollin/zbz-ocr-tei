@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "13 novembre.",
+      "bbox": {
+        "x_pct": 67.878,
+        "y_pct": 28.043,
+        "w_pct": 19.784,
+        "h_pct": 2.079
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to section_header as it is a date/heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est pas ais&eacute; d'exister quand le corps est un cercueil et qu'on n'a plus d'autre espoir que la mort. Ce n'est pas impossible sur le moment. Les exigences des autres, le travail, aident &agrave; venir &agrave; bout des heures. La difficult&eacute; vient de la dur&eacute;e. Lorsqu'on se r&eacute;veille le matin, les membres battus comme les galets d'une gr&egrave;ve, las d'avance de la journ&eacute;e dress&eacute;e devant soi, on peut encore gravir cette journ&eacute;e en attendant le soir. Le soir est loin, mais pas tellement loin qu'on ne puisse se tra&icirc;ner jusqu&egrave; l&agrave;, et on sait quand il viendra. Mais la pens&eacute;e la plus dangereuse lors d'un tel r&eacute;veil, c'est celle des r&eacute;veils suivants. Surmonter la journ&eacute;e, bien, mais demain ? De m&ecirc;me. Apr&egrave;s-demain ? De m&ecirc;me. La mort est s&ucirc;re, c'est bien, mais quand viendra-t-elle ? Lorsqu'on n'a pas vingt ans, la dur&eacute;e possible de la vie peut devenir effrayante.",
+      "bbox": {
+        "x_pct": 10.27,
+        "y_pct": 32.864,
+        "w_pct": 80.905,
+        "h_pct": 38.185
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match actual text in the bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne pouvais m&ecirc;me plus retrouver mes souvenirs. Il me semblait que je les avais tous invent&eacute;s. La v&eacute;rit&eacute;, c'&eacute;taient deux bouledogues de porcelaine. Laissons.",
+      "bbox": {
+        "x_pct": 10.581,
+        "y_pct": 70.86,
+        "w_pct": 80.27,
+        "h_pct": 7.902
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match actual text in the bounding box."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR content was truncated and incorrect.",
+    "Section header was mislabeled as generic text."
+  ],
+  "doc_id": "40",
+  "page": 115,
+  "elapsed_seconds": 4.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

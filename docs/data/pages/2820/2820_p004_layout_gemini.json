@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Lettre à Peter Sager",
+      "bbox": {
+        "x_pct": 39.513,
+        "y_pct": 77.295,
+        "w_pct": 20.974,
+        "h_pct": 1.256
+      },
+      "changed": true,
+      "change_reason": "Corrected label and tag from text to section_header/zb_heading as this is the title of the article."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à une majorité de 51 ou 52 % donne un parfait sentiment de légitimité au vainqueur, qui triomphe et va aussitôt de l'avant. En Suisse, même si la majorité est bien plus confortable, on voit au soir du vote un conseiller fédéral apparaître sur le petit écran et l'entend dire: «Mes chers concitoyens, merci d'avoir accepté cette loi, qui nous est tout-à-fait nécessaire. Mais comme malgré tout la minorité opposante est considérable, nous veillerons à appliquer la loi avec modération...» C'est que la minorité opposante est composée de citoyens, d'être humains ayant des droits irréductibles, et dont chacun pèse son poids d'indépendance, que la victoire du nombre ne peut effacer.",
+      "bbox": {
+        "x_pct": 102.0,
+        "y_pct": 113.29,
+        "w_pct": 822.65,
+        "h_pct": 221.42
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and bounding box values based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fondamentalement, c'est cela qui explique l'anxiété défensive de tant de citoyens suisses à l'égard de l'Europe fédérée, même s'ils cherchent d'autres raisons; c'est cela, plus encore que la crainte de perdre les droits de la démocratie directe, qui eux en dérivent. Mais il n'est pas certain qu'au niveau de l'Europe fédérale le centralisme majoritaire de nos voisins l'emporte finalement sur notre démocratie individualiste. Les Droits de l'homme jouent en notre faveur, la diversité des membres à fédérer solidement au sein de l'Europe politique aussi. Ce serait, je crois, une erreur pernicieuse que de considérer la Suisse comme moins liée par son fédéralisme personnaliste que par un système partant de la nation dans sa totalité. Au contraire: le lien personnaliste, plus profond et plus souple, est sans doute plus résistant que n'importe quel centralisme plus ou moins abstrait.",
+      "bbox": {
+        "x_pct": 98.87,
+        "y_pct": 328.5,
+        "w_pct": 825.16,
+        "h_pct": 275.93
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and incorrect coordinates."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne s'agit pas, d'ailleurs, seulement de la Suisse: partout en Europe renaissent les petites nationalités, longtemps étouffées en même temps que les personnes. Elles diffèrent par leur histoire, leurs traditions, leurs griefs, leur orgueil, leurs moeurs. Ne peut-on espérer établir entre elles des fédérations fondées sur leurs diversités mêmes, et sur leur commun besoin de sécurité? Des fédérations pas trop grandes, justement, pour qu'elles ne soient ni abstraites ni figées, quitte à fédérer ensuite ces fédérations entre elles, toujours selon le principe de subsidiarité? Il y aurait une Fédération de l'Europe occidentale, une Fédération de l'Europe centrale et orientale, une Fédération des Etats baltes, une Fédération de l'ancienne Russie d'Europe, dont je ne sais pas comment il conviendrait de la nommer -, et toutes ces Fédérations resteraient liées avec les Etats-Unis d'Amérique, avec lesquels elles assumeraient la tâche immense d'aider partout les hommes à mener une vie digne d'eux.",
+      "bbox": {
+        "x_pct": 96.75,
+        "y_pct": 603.86,
+        "w_pct": 825.66,
+        "h_pct": 298.15
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 102.775,
+        "y_pct": 918.59,
+        "w_pct": 22.84,
+        "h_pct": 2.759
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter / page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial parsing truncated nearly all text content.",
+    "BBox coordinates were incorrect for text regions.",
+    "Page number at bottom was incorrectly labeled as text.",
+    "Document title was missing/incorrectly labeled.",
+    "Bounding boxes contained nonsense values (percentage overflow)."
+  ],
+  "doc_id": "2820",
+  "page": 4,
+  "elapsed_seconds": 9.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

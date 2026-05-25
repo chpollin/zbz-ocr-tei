@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "confusion telle que nous en avons perdu la faculté de voir et d'entendre. Nous avons eu des aperçus sur les réalités du monde et des hommes et de nous-mêmes, que nous ne sommes pas près d'oublier. Ce qu'il en résultera dans notre pensée, nous ne pouvons l'imaginer. Que nous ayons survécu jusqu'ici, c'est comme un miracle. Mais par delà, que nous soyons en vie découle de notre propre décision. Celle-ci exige que nous assumions les conséquences d'une vie maintenue dans de telles conditions. Dans ce déshonneur, le seul honneur qui nous reste est la volonté de vérité, puis le travail infiniment patient, malgré tous les obstacles intérieurs, tous les échecs — aussi longtemps que la possibilité nous en sera donnée. Notre vie sauve, nous voulons la mériter.",
+      "bbox": {
+        "x_pct": 7.317,
+        "y_pct": 5.827,
+        "w_pct": 84.187,
+        "h_pct": 23.076
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(Erneuerung der Universität, dans Hoffnung und Sorge, p. 32-33)",
+      "bbox": {
+        "x_pct": 10.257,
+        "y_pct": 28.56,
+        "w_pct": 80.799,
+        "h_pct": 2.631
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR junk/hallucinations in the text field."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "54. Quatre modes de culpabilité",
+      "bbox": {
+        "x_pct": 7.764,
+        "y_pct": 33.188,
+        "w_pct": 40.515,
+        "h_pct": 2.399
+      },
+      "changed": true,
+      "change_reason": "Added period after number for proper formatting."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Distinguons",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 36.015,
+        "w_pct": 15.854,
+        "h_pct": 2.742
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1) La culpabilité criminelle. Les crimes sont constitués par des actes objectivement établis qui contreviennent à des lois univoques. L'instance compétente, c'est le tribunal, qui établit les faits selon une procédure formelle et leur applique les lois.",
+      "bbox": {
+        "x_pct": 7.629,
+        "y_pct": 38.021,
+        "w_pct": 83.388,
+        "h_pct": 8.021
+      },
+      "changed": true,
+      "change_reason": "Corrected the label from list_item to text as it functions as a paragraph here and fixed missing text in OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "2) La culpabilité politique. Elle réside dans les actes des hommes d'Etat et dans le fait que, citoyen d'un Etat, je dois assumer les conséquences des actes accomplis par cet Etat, à la puissance duquel je suis subordonné et dont l'ordre me permet de vivre. Chaque individu porte une part de responsabilité dans la manière dont l'Etat est gouverné. L'instance compétente, c'est la force et la volonté du vainqueur, en politique intérieure comme en politique extérieure. C'est le succès qui décide. On mettra un frein à l'arbitraire et à la violence par sagesse politique, parce qu'on pense aux conséquences plus lointaines, et parce qu'on reconnaît la validité des normes s'imposant sous le nom de droit naturel et de droit des gens.",
+      "bbox": {
+        "x_pct": 7.317,
+        "y_pct": 45.698,
+        "w_pct": 83.875,
+        "h_pct": 23.111
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to text and fixed corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "3) La culpabilité morale. Les actes que j'accomplis sont toujours, en dernier ressort, individuels, et j'en suis moralement responsable; cela est vrai de tous mes actes, même politiques et militaires. La formule « un ordre est un ordre » (Befehl ist Befehl) ne peut jamais avoir de valeur décisive. Un crime reste un crime même s'il a été ordonné (bien que, selon le degré de danger, de coercition tyrannique et de terreur, on puisse admettre des circonstances atténuantes) ; et de même tout acte reste soumis également au jugement moral. L'instance compétente, c'est la conscience individuelle, c'est la communication avec l'ami et le prochain, avec le frère humain de s'intéresser à mon âme.",
+      "bbox": {
+        "x_pct": 7.358,
+        "y_pct": 68.32,
+        "w_pct": 83.659,
+        "h_pct": 21.422
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to text and fixed corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "109",
+      "bbox": {
+        "x_pct": 86.4,
+        "y_pct": 91.5,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to filter."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR for list items was severely fragmented and corrupted.",
+    "Page number at bottom right was not identified as a filter region.",
+    "Some list items were labeled as text or list_items inconsistently.",
+    "Text region bbox coordinates were loose in some areas."
+  ],
+  "doc_id": "1520",
+  "page": 115,
+  "elapsed_seconds": 6.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

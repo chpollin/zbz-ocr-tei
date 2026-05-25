@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "226 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 11.281,
+        "y_pct": 7.6,
+        "w_pct": 85.752,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified as page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "partie de se justifier. Mais elle n'existe plus. Les adversaires de l'économie planifiée me font penser à ceux de l'Europe fédérée, qui combattent celle-ci au nom d'une souveraineté nationale absolue, dont ils savent bien, pourtant, qu'en fait elle n'existe plus. Les réalités économiques, aujourd'hui, sont devenues si énormes que, sous peine d'écraser l'humanité sous leur poids, elles doivent de toute façon être dirigées, à la manière dont on dirige, selon leurs lois et en leur obéissant, les forces de la nature. Il s'agit seulement de savoir par quels moyens et au bénéfice de qui. Jusqu'ici les moyens employés ont été essentiellement, dans les démocraties capitalistes, les subventions, les monopoles, le crédit, les impôts, les douanes. Souvent les producteurs intéressés ont fait adopter eux-mêmes, grâce aux déviations que les pressions économiques font subir à la démocratie politique, les mesures dont ils pouvaient tirer profit. En régime totalitaire, les moyens sont analogues, mais c'est le pouvoir qui les décrète, appuyé sur la force nue de la police et de l'armée. Il s'y ajoute la réquisition. Dans un régime socialiste, l'instrument le plus souple et le plus efficace pour orienter l'économie (plutôt que la diriger de façon rigide), c'est le crédit. A condition, certes, que cet instrument soit manié par des hommes qui tiennent du peuple leur pouvoir et en usent sous son contrôle.",
+      "bbox": {
+        "x_pct": 11.281,
+        "y_pct": 10.579,
+        "w_pct": 85.752,
+        "h_pct": 45.419
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un tel régime socialiste répond-il à la caricature que la bourgeoisie a cherché à en répandre — caricature à laquelle l'action socialiste elle-même a été parfois tentée de se conformer?",
+      "bbox": {
+        "x_pct": 11.1,
+        "y_pct": 60.187,
+        "w_pct": 85.279,
+        "h_pct": 6.275
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On lui reproche avant tout d'être égalitaire, de vouloir niveler les hommes naturellement inégaux et divers, et d'appauvrir ainsi les possibilités du genre humain dans son ensemble.",
+      "bbox": {
+        "x_pct": 11.142,
+        "y_pct": 66.31,
+        "w_pct": 85.376,
+        "h_pct": 6.747
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deux sophismes se dissimulent sous cette accusation. Le premier confond l'inégalité naturelle et l'inégalité sociale. L'inégalité naturelle, c'est celle des dons innés du corps, de l'intelligence et de la volonté. L'inégalité sociale, c'est celle des conditions matérielles et spirituelles dans lesquelles l'enfant se trouve placé pendant les années de sa formation. L'inégalité sociale, loin de coïncider avec l'inégalité naturelle, la fausse, l'altère, l'empêche de porter ses fruits. En fait, et si paradoxal que cela puisse paraître, c'est l'iné-",
+      "bbox": {
+        "x_pct": 10.864,
+        "y_pct": 72.282,
+        "w_pct": 85.655,
+        "h_pct": 17.291
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page header as separate text block initially."
+  ],
+  "doc_id": "330",
+  "page": 260,
+  "elapsed_seconds": 6.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

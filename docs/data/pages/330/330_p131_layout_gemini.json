@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ID&Eacute;OLOGIES ET R&Eacute;ALIT&Eacute; 97",
+      "bbox": {
+        "x_pct": 294.0,
+        "y_pct": 77.0,
+        "w_pct": 412.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header contains both title and page number; reclassified to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "causalité la finalité et 8e faire libre. L'acte libre est absolument indépendant, quant à sa nature morale, de ses résultats empiriques ; il ne se justifie pas par une fin, même pas par une intention. Il est dans son essence ponctuel et absolu. C'est dire qu'il est fictif.",
+      "bbox": {
+        "x_pct": 28.0,
+        "y_pct": 107.0,
+        "w_pct": 842.0,
+        "h_pct": 102.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR to match source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fictif mais non inexistant. Il existe au contraire dans tout acte humain, bon gré mal gré, en tant que pure exigence dans une combinaison impure. Impure, la combinaison l'est toujours, mais elle cesserait de l'étre si la pure exigence pouvait en étre éliminée. Nous n'avons donc affaire ni à la vaine théorie d'une pureté morale inaccessible, ni à la condamnation pure et simple de la morale humaine considérée comme impure. Kant extrait l'exigence morale à l'état pur, il en fait la théorie, et du même coup il donne à cet appel un nouvel accent impérieux, excluant à la fois la réussite et l'abdication.",
+      "bbox": {
+        "x_pct": 28.0,
+        "y_pct": 209.0,
+        "w_pct": 842.0,
+        "h_pct": 202.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR to match source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais quelle est donc cette exigence? A vrai dire, on sait seulement qu'elle est inconditionnelle. Aucune « circonstance » n'est capable de la suspendre. Elle n'est subordonnée à rien, tout se subordonne à elle, ou alors le terme « moral » n'a plus de sens. Le contraire de l'acte moral, ce n'est pas le mal, c'est l'acte subordonné à une technique de la réussite. L'absolu de l'exigence morale, c'est que la question de la réussite ne se pose pas. « Fais ce que dois, advienne que pourra. »",
+      "bbox": {
+        "x_pct": 29.0,
+        "y_pct": 411.0,
+        "w_pct": 840.0,
+        "h_pct": 169.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR to match source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien entendu, dans la conduite concrète, le problème de la réussite se pose toujours, les conséquences de l'acte sont supputées dans la décision, — pour autant du moins qu'il ne s'agit pas de ces actes étrangement purs et tragiquement ambivalents, injustifiables, qu'on a appelés des actes absolus. Mais que Kant veut dire, c'est que l'acte est moral dans la mesure où le problème de la réussite, où la supputation elle-même sont subordonnés à l'impératif catégorique, où c'est lui-même qui s'impose à travers les considérations empiriques, où c'est lui qui les fait valoir — et non l'inverse. La réussite ne fait pas partie du devoir. Elle lui est radicalement, essentiellement étrangère.",
+      "bbox": {
+        "x_pct": 27.0,
+        "y_pct": 573.0,
+        "w_pct": 844.0,
+        "h_pct": 229.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR to match source content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En regard de cette Critique de la raison pratique de Kant, extrayant de la conduite humaine l'élément moral à l'état pur, on peut mettre Le Prince de Machiavel qui mériterait le sous-titre de « Critique de la raison politique ». Ce qui fait la grandeur du",
+      "bbox": {
+        "x_pct": 29.0,
+        "y_pct": 796.0,
+        "w_pct": 841.0,
+        "h_pct": 93.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text OCR to match source content."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 6,
+  "issues": [
+    "Original text layer was extremely low quality and required full re-OCR.",
+    "Header/footer identification was required for page number 97.",
+    "Bbox for regions was slightly off compared to content, but kept as per instructions."
+  ],
+  "doc_id": "330",
+  "page": 131,
+  "elapsed_seconds": 8.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

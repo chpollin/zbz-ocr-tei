@@ -1,0 +1,126 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA PROBLEMATIQUE DE L'AME ET DU CORPS DANS LA REALISATION POLITIQUE",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing header text region detected."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POLITIQUE",
+      "bbox": {
+        "x_pct": 5.405,
+        "y_pct": 10.445,
+        "w_pct": 12.454,
+        "h_pct": 2.234
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Gek'urzte Fassung des frei in deutscher Sprache gehaltenen Vortrags 'uber DIE LEIB-SEELE-PROBLEMATIK IN DER POLITISCHEN VERWIRKLICHUNG",
+      "bbox": {
+        "x_pct": 5.44,
+        "y_pct": 13.648,
+        "w_pct": 78.125,
+        "h_pct": 4.219
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header as this is the bibliographic title."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 5.324,
+        "y_pct": 20.781,
+        "w_pct": 15.012,
+        "h_pct": 1.695
+      },
+      "changed": true,
+      "change_reason": "Author name in caps is a section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Corps-'ame",
+      "bbox": {
+        "x_pct": 5.59,
+        "y_pct": 27.914,
+        "w_pct": 12.083,
+        "h_pct": 1.75
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le th'eme trait'e dans cette s'erie de conf'erences nous renvoie n'ecessairement au jardin d'Eden et 'a cette pomme o'u Eve n'a pu s'emp'echer de mordre. Le p'ech'e originel, cette felix culpa, comme l'ont qualifi'e les th'eologiens, m'erite doublement l''epith'ete de \"felix\", dans les deux sens du mot: faute heureuse, mais surtout faute f'econde, faute cr'eatrice, parce que c'est elle qui a vraiment fait surgir l'humain dans la Cr'eation, entre le bien et le mal. Le corps n'est pas encore corps, l''ame pas encore 'ame, avant. Le corps n'est corps, l''ame n'est 'ame, qu'a partir du moment o'u s'instaure leur probl'ematique r'eciproque. C'est alors la naissance du sens, du faire, du manque et de la vis'ee, la naissance du mort et du temps, du devenir et de l'histoire. Le \"monde\" m'eme, avant, n''etait pas tel qu'il existe en face d'une conscience; il n'avait que l''etre insaisissable de ce qu'aucune conscience ne per'coit, celle du dessus des nuages d'avant l'avion, quand nul ne l'avait vu.",
+      "bbox": {
+        "x_pct": 5.475,
+        "y_pct": 31.039,
+        "w_pct": 81.134,
+        "h_pct": 31.984
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was poorly OCR'd in the initial proposal."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Probl'ematique r'eciproque de l''ame et du corps, cr'eatrice, instauratrice, constitutive: l''ame est le sens du corps, mais le corps (incarnation, mise-en-mati'ere) est l''epreuve de l''ame, 'a travers laquelle celle-ci se prouve et s''eprouve \"'ame\" justement, - et non pas force, 'energie, 'electricit'e, ou Dieu sait quoi.",
+      "bbox": {
+        "x_pct": 5.59,
+        "y_pct": 64.32,
+        "w_pct": 81.1,
+        "h_pct": 11.484
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'o'u l'ambigu'it'e des 'etiquettes trop faciles, telles que \"valeurs spirituelles\", par exemple, ou \"civilisation mat'erialiste\". Car des valeurs ne sont pas \"spirituelles\" sans \"entrer en mati'ere\", et une civilisation qui asservit la mati'ere n'est pas \"mat'erialiste\" pour autant.",
+      "bbox": {
+        "x_pct": 5.671,
+        "y_pct": 76.898,
+        "w_pct": 79.745,
+        "h_pct": 9.039
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "99",
+      "bbox": {
+        "x_pct": 86.2,
+        "y_pct": 87.8,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Initial OCR was very poor for main body text.",
+    "Multiple layout tags were incorrect (e.g., bibliographical header as text).",
+    "Missing page footer in initial detection."
+  ],
+  "doc_id": "1640",
+  "page": 5,
+  "elapsed_seconds": 9.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

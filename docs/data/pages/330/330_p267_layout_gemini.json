@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "deviendra leur cimetièreLe planismo doit leur assurer le minimnm de sécurité indispensable ne justifie que parce qu'il sert leur liberté. C'est dire qu'il ne peut abolir celle-ci sans perdre son sens. Servir la liberté, c'est donner à l'homme ses chances et lui faire courir ses risques. Le planisme ne peut ni ne doit abolir ceux-ci. Il tend à assurer la sécurité qui seule permet de les affronter. Il s'efforce aussi, par des mesures économiques appropriées (en se servant surtout du gouvernail que devrait être le crédit), d'orienter l'ensemble, de façon que les échecs particuliers n'entraînent pas son naufrage. Mais la compétition, la concurrence, les risques subsistent. Sur le plan économique, ils diffèrent de ce qu'ils sont en régime capitaliste : la concurrence s'établit entre organismes collectifs, entre coopératives, et les risques, au lieu de renforcer l'angoisse de l'homme livré à la solitude et ne pouvant compter que sur lui-même, le rattachent aux autres, à la communauté de ceux qui travaillent dans la même entreprise, poursuivent le même effort, et dont le salut est lié au sien. Un socialisme vivant ne peut être que celui d'équipes concurrentes affrontant des risques collectifs et orientées vers le bien commun. Aux économistes de définir les formes d'une telle orientation, nécessaire, mais maintenue dans des limites permettant la vie, la lutte, la lutte pour la vie.",
+      "bbox": {
+        "x_pct": 2.368,
+        "y_pct": 11.57,
+        "w_pct": 84.777,
+        "h_pct": 43.586
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and typos in OCR content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PROBLÈMES ET DIFFICULTÉS",
+      "bbox": {
+        "x_pct": 2.465,
+        "y_pct": 58.76,
+        "w_pct": 36.114,
+        "h_pct": 2.284
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La mise en accusation du socialisme par ses adversaires conservateurs ne concerne guère que sa caricature. Est-ce à dire que le socialisme véritable soit une conception sans défaut, qui ne se heurterait à aucun obstacle du moment où ses ennemis seraient vaincus? Loin de là. Il reste à jamais incapable de résoudre les problèmes humains et sociaux essentiels, ceux-ci qui tiennent à la condition humaine. Sur le plan même où il doit se réaliser, il se heurte encore à des obstacles plus particuliers, qui tiennent à la nature des hommes, de leurs sociétés, de la production moderne, et qui ne seront jamais définitivement surmontés. A mon sens, ils doivent être saisis de la manière la plus claire possible, exposés, déclarés et assumés. J'en signalerai ici quelques-uns, de façon tout à fait sommaire.",
+      "bbox": {
+        "x_pct": 2.089,
+        "y_pct": 62.917,
+        "w_pct": 84.819,
+        "h_pct": 26.53
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and OCR typos."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Significant OCR errors in original text fields.",
+    "Section header text was incorrectly transcribed.",
+    "Text regions contained significant artifacts in the provided initial transcription."
+  ],
+  "doc_id": "330",
+  "page": 267,
+  "elapsed_seconds": 4.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

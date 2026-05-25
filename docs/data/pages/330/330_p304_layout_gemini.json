@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "270 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 8.0,
+        "y_pct": 7.0,
+        "w_pct": 86.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as body text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du système politique, tendant à établir des garanties et un contrôle démocratiques. Or, rien de tel ne se produit : le système reste le même, la disparition de la « personnalité » dénoncée suffit à l'assainir et à le rendre plus libéral. Peu après, on condamne à mort Baguirov et ses deux compagnons pour avoir, entre autres, extorqué des aveux des accusés par les méthodes de Béria; et on ajoute, dans le plus pur style stalinien : « Les inculpés ont avoué leurs crimes. »",
+      "bbox": {
+        "x_pct": 7.981,
+        "y_pct": 9.831,
+        "w_pct": 85.891,
+        "h_pct": 17.326
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment les intellectuels communistes ou communisants d'Europe occidentale prennent-ils cela? S'il se trouvait parmi eux un homme honnête, certaines paroles simples viendraient, semble-t-il, sous sa plume. Il dirait : « Ce Khrouchtchev est vendu aux Américains. Un de plus ! Car ce qu'il dit ne peut pas être vrai. Il parle exactement comme ces traîtres que nous avons entendus ces dernières années. » Ou bien il dirait : « Mais alors, ce que les réfugiés disaient toutes ces années, c'était donc vrai? Ces écrivains que nous traînions dans la boue, Koestler, Rousset, Sperber, Camus, ils disaient donc tout simplement la vérité? » Car enfin, il faut s'en souvenir : il n'y a qu'un an et demi, les Mandarins de Simone de Beauvoir, ce roman, prix Goncourt, acheté à des centaines de milliers d'exemplaires, affirmait sans discussion que quiconque dénonce les camps de concentration soviétiques est un salaud, quiconque prend position contre ce qui se fait en U. R. S. S. agit contre le prolétariat. Alors, Khrouchtchev?",
+      "bbox": {
+        "x_pct": 7.897,
+        "y_pct": 26.676,
+        "w_pct": 86.435,
+        "h_pct": 33.636
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'ai lu nulle de telles remarques. Mme Vaillant-Couturier qui, lors du procès de David Rousset, niait catégoriquement l'existence des camps en U. R. S. S., y croit-elle maintenant que Khrouchtchev promet de les vider? S'écrie-t-elle, cette ancienne déportée : « David Rousset, vous aviez raison ! »",
+      "bbox": {
+        "x_pct": 8.259,
+        "y_pct": 59.866,
+        "w_pct": 86.031,
+        "h_pct": 10.695
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non. Nul communiste ne dit aux adversaires qui dénonçaient ces mêmes faits depuis plus de vingt ans : « Vous disiez vrai. » Nul ne dit à Khrouchtchev : « Vous êtes un trop grand criminel qui déshonorez notre cause. » Nul ne dit non plus : « Je me suis trop gravement trompé pour aider les autres à penser et à comprendre. Je me tais. »",
+      "bbox": {
+        "x_pct": 8.175,
+        "y_pct": 70.258,
+        "w_pct": 86.017,
+        "h_pct": 12.781
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils écrivent, s'indignent, moralisent. Ils se prétendent plus que jamais la conscience de l'humanité, sensible à toutes les souffrances.",
+      "bbox": {
+        "x_pct": 8.175,
+        "y_pct": 83.2,
+        "w_pct": 86.0,
+        "h_pct": 8.0
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph text at the bottom."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Header line detected as body text",
+    "Extreme OCR errors throughout text fields",
+    "Missing final paragraph region"
+  ],
+  "doc_id": "330",
+  "page": 304,
+  "elapsed_seconds": 6.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

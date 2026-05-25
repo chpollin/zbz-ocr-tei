@@ -1,0 +1,177 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Widmer",
+      "bbox": {
+        "x_pct": 13.446,
+        "y_pct": 26.446,
+        "w_pct": 6.567,
+        "h_pct": 1.396
+      },
+      "changed": true,
+      "change_reason": "Identified as author/speaker name initiating a section."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Marchal",
+      "bbox": {
+        "x_pct": 13.225,
+        "y_pct": 34.089,
+        "w_pct": 6.789,
+        "h_pct": 1.388
+      },
+      "changed": true,
+      "change_reason": "Identified as author/speaker name initiating a section."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Furgler",
+      "bbox": {
+        "x_pct": 13.799,
+        "y_pct": 46.965,
+        "w_pct": 6.266,
+        "h_pct": 1.672
+      },
+      "changed": true,
+      "change_reason": "Identified as author/speaker name initiating a section."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Hersch",
+      "bbox": {
+        "x_pct": 14.06,
+        "y_pct": 59.866,
+        "w_pct": 5.875,
+        "h_pct": 1.396
+      },
+      "changed": true,
+      "change_reason": "Identified as author/speaker name initiating a section."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Glarner",
+      "bbox": {
+        "x_pct": 13.708,
+        "y_pct": 75.276,
+        "w_pct": 6.305,
+        "h_pct": 1.396
+      },
+      "changed": true,
+      "change_reason": "Identified as author/speaker name initiating a section."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Furgler",
+      "bbox": {
+        "x_pct": 13.799,
+        "y_pct": 85.56,
+        "w_pct": 6.266,
+        "h_pct": 1.672
+      },
+      "changed": true,
+      "change_reason": "Identified as author/speaker name initiating a section."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1945 geschehen ist; als wir. Neutralität, das heisst: Abseitsstehen von den grossen gesamteuropäisch",
+      "bbox": {
+        "x_pct": 23.46,
+        "y_pct": 15.36,
+        "w_pct": 66.057,
+        "h_pct": 7.717
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zu unserem Thema: Kann unsere Neutralität für andere Staaten ein Vorbild sein, oder ist sie nur opp",
+      "bbox": {
+        "x_pct": 23.46,
+        "y_pct": 25.92,
+        "w_pct": 65.966,
+        "h_pct": 4.958
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Unsere Neutralitätspolitik ist nur übertragbar; wenn auch die Umstände vergleichbar sind. Neutralitä",
+      "bbox": {
+        "x_pct": 23.538,
+        "y_pct": 33.587,
+        "w_pct": 65.927,
+        "h_pct": 10.251
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir müssen uns nicht entschuldigen. Neutralität ist auch eine lange Zeit im Interesse der Mächte tra",
+      "bbox": {
+        "x_pct": 23.46,
+        "y_pct": 46.129,
+        "w_pct": 65.927,
+        "h_pct": 10.452
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Neutralität der Schweiz ist ein Sonderfall Als sich seit 1789 Volksheere gegenüberstanden; kam",
+      "bbox": {
+        "x_pct": 23.59,
+        "y_pct": 59.339,
+        "w_pct": 65.796,
+        "h_pct": 12.458
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Carl Spitteler 1914 die Neutralität als innenpolitische Krisengebiet ist dies eine sinnvolle Überleb",
+      "bbox": {
+        "x_pct": 23.499,
+        "y_pct": 74.724,
+        "w_pct": 65.966,
+        "h_pct": 7.55
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Neutralität stellt ein Vertrauenskapital für die Schweiz dar; Schweiz als Standort für Friedensv",
+      "bbox": {
+        "x_pct": 23.59,
+        "y_pct": 85.033,
+        "w_pct": 65.614,
+        "h_pct": 5.017
+      },
+      "changed": false
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Multiple section headers were incorrectly labeled as text.",
+    "The page number 38 at the bottom was not detected by Docling but should be ignored if present in OCR."
+  ],
+  "doc_id": "2940",
+  "page": 41,
+  "elapsed_seconds": 5.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

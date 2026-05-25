@@ -1,0 +1,121 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CARICATURE DE L'EXISTENTIALISME",
+      "bbox": {
+        "x_pct": 31.322,
+        "y_pct": 6.637,
+        "w_pct": 14.155,
+        "h_pct": 2.656
+      },
+      "changed": true,
+      "change_reason": "Label corrected to page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "344 est bien mince et bien indigne, mais comme dans mille autres, selon que vous son   sujet ou que,",
+      "bbox": {
+        "x_pct": 17.191,
+        "y_pct": 7.202,
+        "w_pct": 30.724,
+        "h_pct": 13.444
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'EXISTENTIALISME EN ALLEMAGNE.",
+      "bbox": {
+        "x_pct": 24.348,
+        "y_pct": 24.976,
+        "w_pct": 19.185,
+        "h_pct": 2.927
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous   avons Vu que lexistentialisme n'a été défini par Sartre ce ne tend d'ailleurs ni crée, ni min",
+      "bbox": {
+        "x_pct": 15.271,
+        "y_pct": 29.46,
+        "w_pct": 32.877,
+        "h_pct": 59.355
+      },
+      "changed": false
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DE L'EXISTENTIALISME",
+      "bbox": {
+        "x_pct": 52.8,
+        "y_pct": 7.403,
+        "w_pct": 7.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Label corrected to page_header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "qui est légèreté,",
+      "bbox": {
+        "x_pct": 74.638,
+        "y_pct": 7.508,
+        "w_pct": 2.575,
+        "h_pct": 1.516
+      },
+      "changed": true,
+      "change_reason": "Label corrected to page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du fait, dans du joie. dont surtout chrétien danois du siècle dernier; le de sa philosophie elle éta",
+      "bbox": {
+        "x_pct": 50.308,
+        "y_pct": 8.871,
+        "w_pct": 35.658,
+        "h_pct": 79.734
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "345",
+      "bbox": {
+        "x_pct": 85.5,
+        "y_pct": 93.0,
+        "w_pct": 2.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial label for running headers was incorrect",
+    "Missing page number region",
+    "Overlapping and redundant header regions",
+    "Text cleanup for paragraph content"
+  ],
+  "doc_id": "120",
+  "page": 4,
+  "elapsed_seconds": 7.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected to page_header": 3,
+    "ADDED": 1
+  }
+}

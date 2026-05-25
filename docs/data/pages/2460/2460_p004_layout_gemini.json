@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "toute résistance de lautre à leur propre approche ne soit pas à leurs yeux le symptôme dun refus douverture ou dune volonté de puissance.",
+      "bbox": {
+        "x_pct": 12.245,
+        "y_pct": 7.909,
+        "w_pct": 77.275,
+        "h_pct": 4.487
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visible text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La diversité des grandes philosophies m'a appris que, dans chacune d'elles, les points qui résistent le plus, qui soulèvent en apparence les objections les plus évidentes, coïncident précisément avec les intuitions les plus profondes. Il est probable qu'il en va de même pour les religions.",
+      "bbox": {
+        "x_pct": 12.041,
+        "y_pct": 11.825,
+        "w_pct": 77.551,
+        "h_pct": 8.324
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visible text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certaines divergences sont subalternes et ont leurs causes dans des circonstances historiques, des conditions sociales, ou même dans le langage. Il est alors mesquin de les maintenir. Mais il en est d'autres - et les distinguer n'est pas toujours facile - qui opposent des prises de position réellement incompatibles entre elles. Au nom même de la transcendance de Dieu, il ne convient pas alors de chercher avant tout à faire plier l'autre, ni même à plier soi-même par gain de paix et d'unité. S'il s'agit d'une incompatibilité importante, il importe d'en chercher le sens, la portée, l'impact.",
+      "bbox": {
+        "x_pct": 11.921,
+        "y_pct": 19.89,
+        "w_pct": 77.551,
+        "h_pct": 18.348
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visible text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais essayer de donner ici un ou deux exemples d'incompatibilités de cet ordre, entre catholiques et protestants.",
+      "bbox": {
+        "x_pct": 11.969,
+        "y_pct": 37.847,
+        "w_pct": 77.431,
+        "h_pct": 4.44
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visible text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Commençons par l'une des plus éclatantes - qui n'en sont sans doute pas pour autant les plus profondes. Pour les catholiques le pape, lorsqu'il s'exprime en certaines circonstances solennelles et bien définies, dispose de l'infaillibilité, et les fidèles doivent se soumettre à l'autorité de sa parole. Pour les réformés, «tout protestant est pape, une Bible à la main».",
+      "bbox": {
+        "x_pct": 11.885,
+        "y_pct": 41.84,
+        "w_pct": 77.515,
+        "h_pct": 11.723
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visible text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour les catholiques, le dogme de l'infaillibilité n'est pas survenu comme un événement isolé dans l'histoire de leur Eglise. Leur Eglise",
+      "bbox": {
+        "x_pct": 11.921,
+        "y_pct": 81.809,
+        "w_pct": 77.275,
+        "h_pct": 4.041
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visible text in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "136",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 87.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Most text regions were truncated or inaccurately transcribed.",
+    "Page number at the bottom was missing a label."
+  ],
+  "doc_id": "2460",
+  "page": 4,
+  "elapsed_seconds": 5.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

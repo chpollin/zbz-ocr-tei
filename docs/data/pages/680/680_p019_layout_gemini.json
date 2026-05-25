@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de vaincre sa littéralité apparente pour lui rendre, si possible, sa perspective sur la transcendance. Mais on ne peut pas aller plus loin.",
+      "bbox": {
+        "x_pct": 12.571,
+        "y_pct": 9.345,
+        "w_pct": 65.858,
+        "h_pct": 4.348
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text segmentation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est pas, pour les constructions totalitaires de n'importe quelle tendance, d'ennemi plus irréductible que cette pensée disponible et substantielle à la fois, assurée contre le vide par une tradition où la foi en la vérité est si inaliénable qu'elle refuse toute illusion et s'expose à tous les risques. Les mythes totalitaires, elle ne les ignore ni ne les méprise (elle sait la part inévitable et nécessaire du mythe dans l'horizon humain) - elle les déchiffre, leur rend la part de transparence qu'ils comportent, les replace dans l'histoire et la tradition, et, leur donnant leur signification chiffrée, leur enlève leur force de contrainte et les désarme. Le somnambule maniaque de l'idéologie exclusive, si elle réussit à le toucher, se réveille, passe la main sur son front et retrouve la vraie confusion des choses humaines.",
+      "bbox": {
+        "x_pct": 12.571,
+        "y_pct": 13.373,
+        "w_pct": 66.1,
+        "h_pct": 23.624
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors to match source text accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais quelle peut être, dans un monde aussi massivement menacé et tenté que le nôtre, l'efficacité sociale d'une tradition comme celle que Jaspers cherche à faire revivre, une tradition non particulière ouverte à toutes les particularités? Si la pensée stalinienne accule les esprits à l'impasse de la fermeture totale, ne peut-on pas craindre que Jaspers ne nous abandonne, face aux dangers mortels, dans l'impasse d'une ouverture totale où peuvent respirer, certes, des esprits que rien désormais ne séduira - mais non de vastes cités humaines?",
+      "bbox": {
+        "x_pct": 12.514,
+        "y_pct": 39.242,
+        "w_pct": 66.108,
+        "h_pct": 17.584
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors to match source text accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "135",
+      "bbox": {
+        "x_pct": 74.966,
+        "y_pct": 88.583,
+        "w_pct": 3.429,
+        "h_pct": 1.776
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily corrupted.",
+    "Page number at bottom not identified initially.",
+    "Multiple text blocks merged/fragmented incorrectly in original pass."
+  ],
+  "doc_id": "680",
+  "page": 19,
+  "elapsed_seconds": 5.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

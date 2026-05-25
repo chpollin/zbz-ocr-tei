@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Die zweite Gespr&auml;chsrunde",
+      "bbox": {
+        "x_pct": 26.11,
+        "y_pct": 5.08,
+        "w_pct": 35.53,
+        "h_pct": 2.27
+      },
+      "changed": true,
+      "change_reason": "Missing header text detected from image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Über Gefährdungen der Demokratie und über die Autorität",
+      "bbox": {
+        "x_pct": 13.043,
+        "y_pct": 8.297,
+        "w_pct": 55.556,
+        "h_pct": 5.408
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: In unserer zweiten Gesprächsrunde wollen wir das Thema Sicherheit und Risiko im Bereich von Staat und Politik diskutieren. Herr Muheim, als Politiker haben Sie das erste Wort.",
+      "bbox": {
+        "x_pct": 8.297,
+        "y_pct": 16.208,
+        "w_pct": 64.771,
+        "h_pct": 8.879
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Lassen Sie mich vorweg festhalten: Es gilt zu unterscheiden zwischen dem Handeln und der damit verbundenen Verantwortung in der Wirtschaft, im Unternehmen einerseits und dem Handeln und der Verantwortung im Staat andererseits. Aber auch wenn im folgenden von Risiko und Sicherheit im Staat die Rede sein soll, kann ich Grundsätzliches von Herrn Schmidheiny übernehmen: Auch aus meiner Sicht gehören Risiko und Veränderung aufs Engste zusammen.",
+      "bbox": {
+        "x_pct": 8.213,
+        "y_pct": 27.438,
+        "w_pct": 64.734,
+        "h_pct": 22.831
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jede Veränderung bringt Risiken",
+      "bbox": {
+        "x_pct": 75.036,
+        "y_pct": 43.886,
+        "w_pct": 18.768,
+        "h_pct": 3.952
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hat sich die Schweiz verändert? Hat diese Veränderung Risiken gebracht? Natürlich ist jedermann der Meinung, die Schweiz habe sich gewandelt, aber es ist nicht leicht zu sagen, worin dieser Wandel – sagen wir: seit dem Zweiten Weltkrieg – denn eigentlich besteht. Lassen Sie mich zwei Aspekte nennen.",
+      "bbox": {
+        "x_pct": 8.007,
+        "y_pct": 49.949,
+        "w_pct": 64.903,
+        "h_pct": 16.135
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erstens die Globalisierung: Was heute auch immer geschieht, ist in weltweite Zusammenhänge eingebettet und wird von weltweiten Zusammenhängen beeinflußt. Die Globalisierung zeigt sich auch darin, daß wir per Radio und Television an fernen Ereignissen teilnehmen, nicht nur intellektuell, sondern persönlich engagiert und parteinehmend. Ich denke dabei etwa an unsere Meinungsbildung zu den Geschehnissen in Nicaragua oder an die Reaktionen zu Reykjavik, wo sich ganz un-",
+      "bbox": {
+        "x_pct": 8.128,
+        "y_pct": 65.48,
+        "w_pct": 65.145,
+        "h_pct": 22.824
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 39.3,
+        "y_pct": 91.1,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text was significantly truncated in OCR",
+    "Missing section header 'Die zweite Gesprächsrunde' in original list",
+    "Page number at bottom of page not captured"
+  ],
+  "doc_id": "2400",
+  "page": 26,
+  "elapsed_seconds": 7.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

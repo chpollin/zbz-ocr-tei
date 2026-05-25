@@ -1,0 +1,42 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "196 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 21.924,
+        "y_pct": 9.9,
+        "w_pct": 68.94,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "considérés comme  exlérieurs aux concepts, comme les dominant dont domine les phénomènes. Ces tence ",
+      "bbox": {
+        "x_pct": 21.924,
+        "y_pct": 12.908,
+        "w_pct": 68.94,
+        "h_pct": 61.503
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header initially labeled as part of text block"
+  ],
+  "doc_id": "110",
+  "page": 198,
+  "elapsed_seconds": 7.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

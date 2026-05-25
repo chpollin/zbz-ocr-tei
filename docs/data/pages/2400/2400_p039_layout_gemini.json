@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Unser Grundrisiko: die Sterblichkeit",
+      "bbox": {
+        "x_pct": 6.8,
+        "y_pct": 42.7,
+        "w_pct": 19.565,
+        "h_pct": 3.202
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header based on document hierarchy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir sind ins Leben verliebt müssen wir das akzeptieren, was zum Menschsein gehört.",
+      "bbox": {
+        "x_pct": 7.693,
+        "y_pct": 69.629,
+        "w_pct": 18.841,
+        "h_pct": 3.297
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist nicht erst die Atomwaffe, die die Menschheit bedroht; in der menschlichen Geschichte war die Bedrohung immer da, und sie war unmittelbarer da, als dies heute der Fall ist. Wenn beispielsweise eine Krankheit über eine Stadt kam, so wurde die Bevölkerung auf einen Zehntel reduziert. Aber das Bewußtsein solcher Tatsachen, die gar nicht so weit zurückliegen, ist heute geschwunden. Wir haben das Gefñhl für das Vergängliche, für die Vergänglichkeit, für die ständige, menschliche Bedrohung verloren, und das nenne ich: sich verlieben in sein Leben.",
+      "bbox": {
+        "x_pct": 28.829,
+        "y_pct": 46.07,
+        "w_pct": 64.928,
+        "h_pct": 26.929
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Bewußtsein für die Vergänglichkeit ist deshalb so grundlegend, weil es den Menschen davon befreit, etwas als absolut zu nehmen, sich an etwas Irdisches absolut zu binden. Aus dem Bewußtsein der Vergänglichkeit hat der Mensch in seiner Geschichte eine gewisse Leichtigkeit gewonnen. Dadurch, daß der Tod zum Bild gehörte, ist der",
+      "bbox": {
+        "x_pct": 29.106,
+        "y_pct": 73.217,
+        "w_pct": 64.819,
+        "h_pct": 15.888
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual image content."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "40",
+      "bbox": {
+        "x_pct": 60.145,
+        "y_pct": 91.566,
+        "w_pct": 3.079,
+        "h_pct": 2.453
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer for number 40."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was highly inaccurate and truncated.",
+    "Section header was labeled as plain text.",
+    "Page number 40 was missing from the extraction list."
+  ],
+  "doc_id": "2400",
+  "page": 39,
+  "elapsed_seconds": 12.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

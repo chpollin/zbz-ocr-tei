@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "NATIONALISME ET PATRIOTISME par Henri Frenay",
+      "bbox": {
+        "x_pct": 5.489,
+        "y_pct": 9.396,
+        "w_pct": 61.004,
+        "h_pct": 8.802
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo in 'NATIONALISMC' and 'PATRIOTISHE'"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La souveraineté nationale est le principe du pouvoir dans tout régime de démocratie libérale... Elle définit la source de l'autorité, l'origine du droit de commander.",
+      "bbox": {
+        "x_pct": 31.767,
+        "y_pct": 37.883,
+        "w_pct": 47.363,
+        "h_pct": 6.324
+      },
+      "changed": true,
+      "change_reason": "Merged fragmented lines and corrected OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment admettre que l'on sert son pays en transférant les droits fondamentaux de décision à une autorité supérieure...",
+      "bbox": {
+        "x_pct": 33.199,
+        "y_pct": 50.027,
+        "w_pct": 46.988,
+        "h_pct": 4.45
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La véritable équipe de la supranationalité est consciente de ce qu'elle souhaite : qu'il n'y ait plus de France...",
+      "bbox": {
+        "x_pct": 34.444,
+        "y_pct": 55.883,
+        "w_pct": 46.319,
+        "h_pct": 6.793
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Michel DEBRÉ, Ces princes qui nous gouvernent (Plon - Tribune Libre)",
+      "bbox": {
+        "x_pct": 41.901,
+        "y_pct": 62.82,
+        "w_pct": 36.238,
+        "h_pct": 6.748
+      },
+      "changed": true,
+      "change_reason": "Grouped biblographic metadata correctly"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsqu'il me fut demandé de collaborer à cet ouvrage, j'avais depuis quelques années déjà l'intention d'entreprendre une sérieuse étude sur le sujet « Nationalisme et Patriotisme ». Mon ambition était même d'en faire un livre dont, faute de temps, j'avais reporté la rédaction au moment où je jouirais du calme de la retraite.",
+      "bbox": {
+        "x_pct": 10.535,
+        "y_pct": 72.676,
+        "w_pct": 74.511,
+        "h_pct": 17.207
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "15",
+      "bbox": {
+        "x_pct": 17.9,
+        "y_pct": 91.2,
+        "w_pct": 1.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Heavy OCR errors in original extraction",
+    "Missing page number detection",
+    "Fragmented sentence structure in list items"
+  ],
+  "doc_id": "460",
+  "page": 17,
+  "elapsed_seconds": 4.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

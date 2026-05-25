@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Des couteurs pour ne pas s'entendre les uns les autres.",
+      "bbox": {
+        "x_pct": 6.241,
+        "y_pct": 44.587,
+        "w_pct": 59.684,
+        "h_pct": 1.935
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dont la soit sans mensonge, l'exigence amicale et sans colre, l'engagement envers eux vident et sans faille. D'une faon plus gnrale, ils ont besoin d'adultes, d'hommes dont la seule prsence montre que la vie peut tre assume et avoir un sens.",
+      "bbox": {
+        "x_pct": 6.089,
+        "y_pct": 49.072,
+        "w_pct": 82.084,
+        "h_pct": 7.522
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text segmentation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plus ce pre, cette mre, ces matres se font rares, et plus pressant se fait le besoin d'un encadrement par des formes sociales constantes, des rgles claires, des institutions assures, afin qu'ils puissent se situer, avoir des points de repre, sentir qu'ils sont quelque part, qu'ils ont leur place dans un monde, qu'ils ne sont pas jets n'importe o. Cela n'implique nulle soumission superstitieuse, nul conservatisme. La scurit premire que donne un ordre vcu et admis est au contraire la condition d'une pense critique ultrieure et de toute libert effectivement vcue.",
+      "bbox": {
+        "x_pct": 5.972,
+        "y_pct": 56.751,
+        "w_pct": 82.002,
+        "h_pct": 15.657
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed truncated text segments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si tout cela manque, alors en effet, comme dit la Commission, les jeunes ne peuvent que « crier leur dsespoir, par la violence, le barbouillage, le bruit ». Comme elle, je pense « qu'il faut s'interroger sereinement sur ce qui cloche dans l'ordre en vigueur. » Mais je ne crois pas que cet « ordre public soit synonyme de sclrose et d'oppression. » Au contraire : je crois qu'il n'y a plus d'ordre, plus personne pour l'assurer et l'incarner. Il n'y a plus que des mots, des comportements incohrents, des lchets. Quand on a peur, on cde, ou on feint d'engager « le dialogue ». Il y a bien de quoi dsesprer.",
+      "bbox": {
+        "x_pct": 5.972,
+        "y_pct": 71.967,
+        "w_pct": 81.85,
+        "h_pct": 15.185
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed missing text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dialogue ! Mot magique. Il sert  tous usages. Mais il n'y a de dialogue que soumis  une rgle commune, dans la dignit et le respect. Non dans la peur.",
+      "bbox": {
+        "x_pct": 5.972,
+        "y_pct": 87.042,
+        "w_pct": 81.885,
+        "h_pct": 4.406
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 90.0,
+        "y_pct": 87.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and re-labeled accordingly."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Several text blocks were severely truncated in the original OCR output.",
+    "Multiple OCR character errors present.",
+    "Page number '27' was incorrectly captured within the final paragraph text block instead of being a separate page_footer."
+  ],
+  "doc_id": "1810",
+  "page": 31,
+  "elapsed_seconds": 7.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

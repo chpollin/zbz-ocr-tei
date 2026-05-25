@@ -1,0 +1,380 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">LA FORMATION PERMANENTE PAR FIDELITE A LA CONDITION HUMAINE</title>
+        <author>J. Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2230</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>LA FORMATION PERMANENTE PAR FIDELITE A LA CONDITION HUMAINE</title>
+          <author>J. Hersch</author>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). No issues found</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_1_r_1" ulx="105" uly="278" lrx="641" lry="344" />
+      <zone xml:id="facs_1_r_2" ulx="138" uly="393" lrx="233" lry="419" />
+      <zone xml:id="facs_1_r_3" ulx="103" uly="492" lrx="428" lry="521" />
+      <zone xml:id="facs_1_r_4" ulx="105" uly="531" lrx="1078" lry="675" />
+      <zone xml:id="facs_1_r_5" ulx="104" uly="692" lrx="1080" lry="916" />
+      <zone xml:id="facs_1_r_6" ulx="100" uly="932" lrx="1079" lry="1382" />
+      <zone xml:id="facs_1_r_7" ulx="97" uly="1398" lrx="1058" lry="1469" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_2_r_1" ulx="111" uly="237" lrx="1078" lry="462" />
+      <zone xml:id="facs_2_r_2" ulx="110" uly="482" lrx="1045" lry="666" />
+      <zone xml:id="facs_2_r_3" ulx="108" uly="773" lrx="1107" lry="1491" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_3_r_1" ulx="114" uly="230" lrx="1107" lry="870" />
+      <zone xml:id="facs_3_r_2" ulx="111" uly="884" lrx="1104" lry="1492" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_4_r_1" ulx="123" uly="239" lrx="531" lry="273" />
+      <zone xml:id="facs_4_r_2" ulx="120" uly="289" lrx="1103" lry="811" />
+      <zone xml:id="facs_4_r_3" ulx="122" uly="833" lrx="1100" lry="1018" />
+      <zone xml:id="facs_4_r_4" ulx="119" uly="1035" lrx="1120" lry="1522" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_5_r_1" ulx="1336" uly="2312" lrx="5122" lry="2679" />
+      <zone xml:id="facs_5_r_2" ulx="1306" uly="2836" lrx="11276" lry="9212" />
+      <zone xml:id="facs_5_r_3" ulx="1286" uly="9406" lrx="11140" lry="14253" />
+      <zone xml:id="facs_5_r_4" ulx="1292" uly="14456" lrx="10493" lry="14786" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_6_r_1" ulx="122" uly="233" lrx="1103" lry="644" />
+      <zone xml:id="facs_6_r_2" ulx="121" uly="663" lrx="1130" lry="961" />
+      <zone xml:id="facs_6_r_3" ulx="117" uly="978" lrx="1085" lry="1500" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_7_r_1" ulx="123" uly="233" lrx="1100" lry="526" />
+      <zone xml:id="facs_7_r_2" ulx="119" uly="545" lrx="1097" lry="1333" />
+      <zone xml:id="facs_7_r_3" ulx="119" uly="1354" lrx="1095" lry="1505" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_8_r_1" ulx="128" uly="230" lrx="1127" lry="637" />
+      <zone xml:id="facs_8_r_2" ulx="129" uly="659" lrx="1112" lry="997" />
+      <zone xml:id="facs_8_r_3" ulx="124" uly="1014" lrx="1107" lry="1465" />
+      <zone xml:id="facs_8_r_4" ulx="126" uly="1474" lrx="1064" lry="1511" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_9_r_1" ulx="120" uly="239" lrx="1129" lry="953" />
+      <zone xml:id="facs_9_r_2" ulx="119" uly="969" lrx="1113" lry="1302" />
+      <zone xml:id="facs_9_r_3" ulx="118" uly="1320" lrx="1081" lry="1470" />
+      <zone xml:id="facs_9_r_4" ulx="117" uly="1485" lrx="194" lry="1514" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_10_r_1" ulx="142" uly="300" lrx="1017" lry="316" />
+      <zone xml:id="facs_10_r_2" ulx="143" uly="373" lrx="273" lry="399" />
+      <zone xml:id="facs_10_r_3" ulx="139" uly="481" lrx="1150" lry="855" />
+      <zone xml:id="facs_10_r_4" ulx="139" uly="873" lrx="1133" lry="1282" />
+      <zone xml:id="facs_10_r_5" ulx="138" uly="1295" lrx="1117" lry="1485" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_11_r_1" ulx="141" uly="230" lrx="1080" lry="302" />
+      <zone xml:id="facs_11_r_2" ulx="139" uly="320" lrx="1147" lry="729" />
+      <zone xml:id="facs_11_r_3" ulx="140" uly="747" lrx="1147" lry="1158" />
+      <zone xml:id="facs_11_r_4" ulx="138" uly="1174" lrx="1130" lry="1472" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_12_r_1" ulx="136" uly="233" lrx="1137" lry="458" />
+      <zone xml:id="facs_12_r_2" ulx="135" uly="475" lrx="1139" lry="845" />
+      <zone xml:id="facs_12_r_3" ulx="133" uly="864" lrx="1108" lry="1126" />
+      <zone xml:id="facs_12_r_4" ulx="130" uly="1143" lrx="1123" lry="1482" />
+    </surface>
+    <surface xml:id="facs_13" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_13_r_1" ulx="153" uly="236" lrx="1130" lry="571" />
+      <zone xml:id="facs_13_r_2" ulx="152" uly="588" lrx="1133" lry="887" />
+      <zone xml:id="facs_13_r_3" ulx="150" uly="902" lrx="1132" lry="1430" />
+      <zone xml:id="facs_13_r_4" ulx="150" uly="1445" lrx="1085" lry="1476" />
+    </surface>
+    <surface xml:id="facs_14" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_14_r_1" ulx="151" uly="242" lrx="1122" lry="503" />
+    </surface>
+    <surface xml:id="facs_15" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_15_r_1" ulx="127" uly="373" lrx="1134" lry="406" />
+      <zone xml:id="facs_15_r_2" ulx="169" uly="632" lrx="608" lry="661" />
+      <zone xml:id="facs_15_r_3" ulx="123" uly="1520" lrx="920" lry="1588" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="speech">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          - 16 -<lb facs="#facs_1_l_1_1" n="N001" />LA FORMATION PERMANENTE PAR FIDELITE<lb facs="#facs_1_l_1_2" n="N002" />A LA CONDITION HUMAINE
+        </head>
+        <p facs="#facs_1_r_2">
+          <persName ref="#zbz-p.2">J. Hersch</persName>
+        </p>
+        <p facs="#facs_1_r_3">
+          Mesdames et Messieurs,
+        </p>
+        <p facs="#facs_1_r_4">
+          je voudrais d'abord vous remercier pour l'invitation à vous parler aujourd'hui. Je commence à prendre l'habitude d'être invitée à parler des choses que je ne connais pas à des gens qui les connaissent. C'est une situation un peu paradoxe.
+        </p>
+        <p facs="#facs_1_r_5">
+          Aujourd'hui, je dois avouer, que ce qu'on me demande n'est pas tout à fait clair dans mon esprit. Il s'agit avant tout - si je comprends bien - de défendre la formation permanente, la nécessité de continuer à se former pendant toute sa vie, et cela non pas spécifiquement en médecine, mais en général. Or, cela me paraît si évident que je n'ai pas grand' chose à dire à ce sujet.
+        </p>
+        <p facs="#facs_1_r_6">
+          D'abord, l'être humain est ainsi fait qu'il y a en lui quelque chose qui veut continuer à se développer aussi longtemps qu'il vit. Ceux qui s'arrêtent en route, par paresse ou parce qu'ils s'engourdissent, ne savent pas qu'ils font leur propre malheur, parce qu'ils se condamnent à l'ennui. Quand on cesse de se développer, on s'ennuie. L'être humain a besoin d'aller plus loin. Bien entendu, à une époque comme la nôtre, c'est particulièrement évident, puisque le monde ne cesse pas de changer sous tous ses aspects, dans tous les domaines, et que, par conséquent, celui qui cesse de se développer dort en quelque sorte hors du présent. Il n'affronte plus un monde réel, il végète dans le monde de son souvenir, il n'est plus présent à un monde actuel.
+        </p>
+        <p facs="#facs_1_r_7">
+          D'autre part, une vraie formation permanente se réalise nécessairement dans certains domaines donnés. Non pas qu'on ne puisse
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          - 17 -
+        </p>
+        <p facs="#facs_2_r_2">
+          se développer que dans l'étroitesse d'un seul domaine professionnel, ce n'est pas ce que je veux dire. Mais on ne se développe qu'à propos de quelque chose, et non à propos de rien. Quand on s'en tient à la généralité, "se développer", "se donner une formation permanente" reste extrêmement abstrait, et, à force d'abstraction, un peu vide.
+        </p>
+        <p facs="#facs_2_r_3">
+          J'ai donc été embarrassée par ce thème. Et je me suis dit que j'allais essayer de traiter quelques problèmes spécifiques qui se posent à nous dans le monde qui est le nôtre, lors de notre rendez-vous actuel avec notre monde d'aujourd'hui, tellement changeant.
+        </p>
+        <p>
+          <hi rendition="#i">*</hi>
+        </p>
+        <p>
+          Nous vivons dans un temps où l'accent est mis partout sur le changement. Si une chose est dite "permanente", ou bien si elle a déjà existé depuis un certain temps, il y a des chances pour qu'elle soit de ce fait déjà dévaluée. Ce qui a été transmis n'est plus valable. Cela nous contraint à interpréter la formation selon un idéal de création, d'invention constante, au sens où <persName ref="#zbz-p.179">Descartes</persName> concevait la création continue de Dieu. Un tel idéal au niveau des hommes crée une situation extrêmement dangereuse, comme on le voit dans le développement des arts. Bien des jeunes artistes, dans les domaines de la peinture, de la sculpture, de la musique aussi, se plaignent de ne plus savoir comment créer, parce qu'ils doivent partir de rien, faire du tout neuf, et qu'ils sentent bien qu'il y a là une impossibilité humaine. Cette radicalité dans l'appréciation du nouveau et dans l'exigence du nouveau peut entraîner une paralysie qui va vers la catastrophe finale. D'autre part, selon certains, nous vivons une époque sans précédent. Ce monde-ci, selon eux, est déjà devenu d'une laideur et d'un étouffement insupportables. Tous les hommes qui ont vécu avant nous étaient bien plus heureux. Nos contemporains nourissent une in-
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          - 18 -
+        </p>
+        <p facs="#facs_3_r_2">
+          tense nostalgie pour une "réalité" dont ils ne savent plus très bien si elle est future ou passée, mais en tout cas elle n'est pas présente. Cela se voit très clairement, par exemple, dans les livres d'<persName ref="#zbz-p.25">Illich</persName>, qui passe pour futuriste: si vous lisez attentivement ce qu'il a écrit, vous percevrez entre les lignes la nostalgie du petit village primitif de son enfance où tout le monde connaissait tout le monde et vivait dans un nid de verdure. Nous portons ainsi des jugements de valeur extrêmement ambigus. Il importe donc d'élucider les jugements de valeur que nous portons sur les choses, selon lesquels il semble souvent que ce qui vient après est nécessairement meilleur. Ou bien faut-il - au contraire - admettre que ce qui vient après est nécessairement plus mauvais? Devons-nous vraiment vivre de nostalgie, tourner le dos à notre présent? On nous dit alors qu'il nous faut user de notre sens critique, dans cette situation de profonde perplexité. Mais ce qu'il y a de curieux, c'est que je n'ai entendu presque personne soumettre le sens critique à un examen critique.
+        </p>
+        <p>
+          Or il est bien évident que pour faire usage de son sens critique, dans quelque domaine que ce soit, il faut se référer à quelque chose. On ne peut pas user de son sens critique à partir du vide. Il faut, par conséquent, qu'il y ait quelque chose, une valeur de référence admise, dans l'esprit de celui qui use de son sens critique. Il faut donc que ce quelque chose à quoi l'on se réfère, que cette valeur préexiste déjà, pour la bonne raison qu'on ne peut pas se référer à ce qui n'est pas. Elle préexiste déjà, ne fusse qu'au niveau où elle est conçue. Le plus souvent, quand on vous parle de diffuser non pas une culture du passé, mais une culture du futur, on néglige le fait qu'il n'y a pas moyen de lire un livre futur, pour la bonne raison qu'il n'est pas encore écrit et que, par conséquent, si l'on veut se cultiver par la lecture, on est bien obligé de lire des livres qui existent déjà. C'est là une situation évidente, mais un peu curieuse par rapport à l'affectivité de l'époque et aux jugements qu'elle porte, souvent inspirés
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          - 19 -
+        </p>
+        <p facs="#facs_4_r_2">
+          par un dogmatisme futuriste.
+        </p>
+        <p facs="#facs_4_r_3">
+          Dans les années soixante-dix, alors qu'on élaborait dans mon université, comme partout, une nouvelle loi, on n'osait pas mettre dans le préambule, parmi les tâches de l'enseignement, la transmission des connaissances. Il s'agissait d'encourager, de stimuler la recherche. Mais la transmission des connaissances, c'était déjà passéiste, c'était bon pour les incapables. Or, il me paraît évident que si l'on ne transmet pas les connaissances, il n'y a plus d'histoire. L'histoire humaine tient au fait que les hommes transmettent leurs connaissances, et que la formation permanente ne s'étend pas seulement de la naissance à la mort d'une génération. C'est ce qui constitue la formation permanente de l'humanité. Si l'on voulait interrompre cette chaîne, et si chacun devait recommencer à zéro, il n'y aurait plus d'histoire et plus d'humanité.
+        </p>
+        <p facs="#facs_4_r_4">
+          Selon certains, on ne devrait pas enseigner la langue maternelle, parce qu'elle nous est donnée, déjà toute faite, par le passé. Mais il est évident que si chacun inventait sa propre langue personne ne comprendrait personne, il n'y aurait plus de langue, et nous serions des bêtes poussant des cris inarticulés.
+        </p>
+        <p>
+          Il nous faut donc transmettre des connaissances. En particulier, au moment où se produit la démocratisation des études, cette transmission des connaissances prend une importance accrue, et nous avons plus besoin que jamais de très bons enseignants, qui sachent les transmettre. On pousse beaucoup trop les enseignants à publier à tout prix, à justifier leur travail par de longues bibliographies: souvent les nouveaux ouvrages sont fait avec trois autres et n'apportent rien de nouveau, et les publications trop abondantes nous séparent des grandes œuvres, vraiment importantes, qu'il nous faudrait connaître et méditer. Un très bon transmetteur de connaissances est quelqu'un de première importance dans notre société; il ne devrait jamais être, comme il arrive, victime d'un ostracisme dans nos carrières universitaires, sous prétexte qu'
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          - 20 -
+        </p>
+        <p facs="#facs_5_r_2">
+          "il n'a pas assez publié".
+        </p>
+        <p facs="#facs_5_r_3">
+          Mais - et ici je touche à un point qui m'importe énormément - en transmettant des connaissances, on transmet souvent trop de résultats, et pas assez le vécu des démarches qui ont abouti à ces résultats. Il faudrait pratiquer, au cours de la formation permanente, de nombreux retours en arrière historiquement vécus. L'expérience historiquement vécue de la recherche n'est pas suffisamment transmise, notamment quand il s'agit des sciences de la nature. Nous n'avons pas "digéré" les sciences et les techniques par notre culture, du fait que la masse des hommes d'aujourd'hui connaissent des résultats, éventuellement les lois, mais non pas le processus de leur découverte. Il suffirait de rappeler, ça ou là, quelques exemples de la recherche qui a conduit à ces résultats, tels qu'ils ont été vécus par le chercheur. Dès lors, consisterait dans une assez large mesure à revivre ce qui a été vécu par ceux qui ont trouvé, inventé, découvert quelque chose dans le passé. Il ne s'agirait donc absolument pas d'une transmission inerte.
+        </p>
+        <p facs="#facs_5_r_4">
+          D'autre part, dans cette surévaluation du nouveau dont je parlais tout à l'heure, notre époque est tentée de perdre de vue ce qui, sous la nouveauté et à travers elle, ne change pas. On nous parle constamment de l'homme nouveau, de la société nouvelle, de la nouvelle pensée, de la nouvelle science etc. On néglige le fait que les données fondamentales de la condition humaine n'ont pas changé: l'être humain continue à venir au monde, à mourir, à souffrir, même si c'est parfois autrement que jadis. On continue à souffrir, on éprouve encore des amours heureux et malheureux, tout cela existe encore. Les besoins fondamentaux de reconnaissances de soi restent les mêmes et se sont plutôt multipliés. On retrouve tous les éléments permanents de l'être humain, qui est mortel et qui le sait.
+        </p>
+        <p>
+          Le sait-il vraiment? Quelque fois je me le demande. J'entends
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          - 21 -
+        </p>
+        <p facs="#facs_6_r_2">
+          très souvent les gens de notre époque parler comme si le moindre risque était déjà une condamnation de l'essai, comme si on ne devait jamais rien risquer du tout. Si on ne risque rien, on n'avance absolument pas. Il n'y a pas d'avance sans risque. Mais nous sommes tous mortels: cette dimension de la mortalité donne aux hommes, et leur a toujours donné - je parle du passé - une certaine légèreté, une certaine frivolité par rapport à leur propre vie, qui les a rendus capables de la risquer. Et c'est ce qui a permis le développement de la civilisation actuelle, parce que les risques ont été assumés. Ce sont là des données fondamentales, quant aux rapports de l'homme avec sa condition.
+        </p>
+        <p facs="#facs_6_r_3">
+          L'homme d'aujourd'hui doit en redevenir conscient. Or aujourd'hui, du fait que grâce aux progrès de la science et de la technique, le travail indispensable à la vie nous asservit d'une façon tellement moins inhumaine et moins universelle, ne doit pas nous faire perdre conscience du fait fondamental que, sans aucun travail, nous ne pouvons plus ni manger, ni nous protéger du froid, ni vivre. On peut diminuer la durée du travail, Dieu merci!, mais on ne peut pas le supprimer.
+        </p>
+        <p>
+          Je me rappelle les jeunes étudiants de 1968 à <placeName ref="#zbz-l.1">Paris</placeName>: ils circulaient avec leurs banderoles: "Le paradis, tout de suite!". Mais - "le paradis, tout de suite!" - c'est une absurdité. C'est d'abord une absurdité parce que les exigences élémentaires et constantes de la condition humaine sont toujours là. Mais c'est encore une absurdité pour une autre raison: au paradis, des êtres qui vivent dans la durée s'ennuient. <persName ref="#zbz-p.390">Adam</persName> et <persName ref="#zbz-p.168">Eve</persName> au paradis vivaient hors du temps et de l'histoire. Mais pour ce qui est de nous, qui sommes dans le temps et dans l'histoire - je nous mets au défi: nous ne resterions pas longtemps au paradis terrestre. Quelqu'un demanda un jour à un théologien combien de temps <persName ref="#zbz-p.390">Adam</persName> et <persName ref="#zbz-p.168">Eve</persName> avaient passé au paradis. Le théologien répondit: "On ne sait pas, mais tout porte à croire que ce fut bref." Je crois qu'il avait raison.
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          - 22 -
+        </p>
+        <p facs="#facs_7_r_2">
+          Cette condition humaine, avec ses éléments permanents, il s'agit donc de la retrouver. Une composante essentielle, que nous oublions toujours, de cette condition, c'est la nécessité qu'il y ait un manque, ce qui exclut, justement, la possibilité du paradis. L'être humain vit du manque. Quelque chose lui manque, et parce que quelque chose lui manque, il vise ce quelque chose. Si rien ne lui manque, il ne peut pas viser: il ne peut pas être un être libre.
+        </p>
+        <p facs="#facs_7_r_3">
+          Ces jours-ci j'ai rencontré un spécialiste des computers qui a terminé son intervention dans un colloque en disant: "Die Menschen werden sich damit abfinden müssen, daß sie es mit Wesen zu tun haben werden, deren Denkleistungen den ihrigen weit überlegen sind." Je traduis: L'homme devra accepter d'avoir affaire à des êtres capables d'exploits bien supérieurs aux siens dans le domaine de la pensée. Eh bien, je lui ai dit, et je continue à le penser, que ces exploits peuvent être supérieurs par la rapidité et la complexité des opérations, certes, mais non en tant qu'opérations de pensée, pour une raison fondamentale: c'est que la machine ne pense pas. Et pourquoi? Parce qu'elle ne vise rien. Elle est programmée; elle a des causes, qui sont dans son programme, dans sa construction. Mais elle n'a pas de visée, elle ne tend à rien. L'être humain "tend à" - et il cesse d'être un être humain quand il ne "tend plus à...". Cela implique qu'il est, en quelque sorte dans son essence, lié au manque, et par conséquent, dans son essence, inachevé. Il est déjà le plus inachevé des êtres vivants quand il vient au monde. Mais il reste inachevé. Probablement pour la même raison, l'être humain est inachevé dans le temps inachevé. Or la formation permanente découle de cette condition.
+        </p>
+        <p>
+          C'est là quelque chose de tout à fait essentiel. C'est pourquoi j'ai intitulé mon exposé: <bibl ref="#zbz-w.380">La formation permanente par fidélité à la condition humaine</bibl>. On ne reste pas soi-même quand on ne consent plus à devenir et à changer - ce qui n'implique nullement
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          - 23 -
+        </p>
+        <p facs="#facs_8_r_2">
+          une surévaluation permanente de tout ce qui vient après par rapport à ce qui était avant. Il est dès lors évident, si cela est vrai, si la formation permanente est une nécessité pour les hommes en tant qu'hommes, et pour les hommes d'aujourd'hui à bien plus forte raison, que les techniciens de l'information prennent une importance d'autant plus grande. C'est pourquoi on parle tant aujourd'hui de didactique. Une remarque à ce sujet : la didactique, qui a une importance décisive pour tous les métiers, toutes les professions, doit être déterminée dans tous les métiers, toutes les professions par une certaine idée qu'on se fait de l'être humain.
+        </p>
+        <p facs="#facs_8_r_3">
+          Le but n'est pas, j'espère, de faire de l'être humain un rival du computer, si développé qu'il soit. On veut qu'il soit un être humain. C'est à dire, comme je le disais, un être libre, avec une visée, et par conséquent une responsabilité. Même si les opérations logiques du computer sont plus rapides, même si le cerveau peut être considéré comme un computer supérieur, il reste entre eux une différence fondamentale : quand l'être humain, à l'aide de son cerveau, accomplit des opérations logiques, il le fait parce qu'il veut que le résultat de ces opérations soit vrai.
+        </p>
+        <p facs="#facs_8_r_4">
+          Or la machine, le computer ne veut rien du tout. Il ne veut pas être vrai, il ne vise pas le vrai. Il a été programmé par quelqu'un qui voulait, peut-être par l'intermédiaire du computer, atteindre le vrai, mais lui-même ne veut rien. Je suis souvent terrifiée en découvrant à quel point le sens de l'être humain dans sa spécificité est fragile chez nos contemporains ; à quel point aussi, face aux problèmes terribles auxquels se trouve confrontée la profession médicale, par exemple, la considération de l'être humain dans sa spécificité joue peu de rôle. On se pose toute sorte de questions quant au fonctionnement de l'individu, du droit, de la société etc. Mais à la spécificité de l'être humain, on n'y réfléchit pas assez.
+        </p>
+        <p>
+          Or il me semble que, dans la formation continue et précisément
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          - 24 -
+        </p>
+        <p facs="#facs_9_r_2">
+          à cause de ces menaces et de ces tentations qui incitent l'homme à renoncer à être un homme, la didactique doit s'inspirer toujours de cette spécificité de l'être humain. Malheureusement, la didactique a tendance à devenir une discipline parmi d'autres. Si on se réfère au vécu du développement scientifique, dont je parlais tout à l'heure, il n'y a pas, ou très peu, de didactique générale. La didactique fait corps avec ceux qui ont enseigné, avec ceux qui ont transmis, elle est tout à fait différente selon celui qui la met en œuvre. J'ai moi-même donné des cours de didactique, mais je suis d'avis, expérience faite et après beaucoup d'années d'enseignement, que les principes généraux de la didactique sont en très petit nombre. Dès qu'on veut les développer il faut entrer dans les matières, dans les domaines particuliers, dans les choses à enseigner. Parce que "le vécu" est différent selon ce dont il s'agit. On ne pratique pas une formation permanente en général, on pratique telle formation permanente déterminée. Cela me paraît tout à fait essentiel. Cela tient au fait que l'homme a besoin de son cerveau et de sa finalité, de son cerveau et de son manque, pour sa visée spirituelle.
+        </p>
+        <p facs="#facs_9_r_3">
+          <persName ref="#zbz-p.173">Rimbaud</persName> disait à propos de l'homme qu'il est une âme et un corps. Le mot spécifiquement humain ici c'est "et": une âme et un corps. À ce croisement l'homme s'engage tout entier, mais il s'agit alors de réalités spécifiques, de braches concrètes, où la recherche se vit d'une manière propre. Dans sa généralité, on tombe très vite dans une activité mécanique, ou alors dans une illusion verbale de totalité, on se contente de rêver les choses, on se complaît dans les états de l'âme, et il ne s'agit plus d'une véritable formation.
+        </p>
+        <p facs="#facs_9_r_4">
+          La pensée, la vraie pensée est un acte. Elle est aux prises avec les corps, avec les choses. Entre ces deux objectivités il y a la présence responsable et libre de l'homme, tel qu'il change et tel qu'il ne change pas.
+        </p>
+        <p>
+          Merci.
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          - 25 -<lb facs="#facs_10_l_1_1" n="N001" />LEBENSLANGE FORTBILDUNG AUS TREUE ZUM MENSCH-SEIN
+        </p>
+        <p facs="#facs_10_r_2">
+          <persName ref="#zbz-p.2">J. Hersch</persName>
+        </p>
+        <p facs="#facs_10_r_3">
+          Wir leben in einer <bibl ref="#zbz-w.705">Zeit</bibl>, in der überall das Hauptaugenmerk auf die Veränderung und das Neue gerichtet wird. Das ist verständlich: Die Umwelt, der Lebensrhythmus, die äußeren und sogar die inneren Gegebenheiten unseres Lebens haben sich verändert und verändern sich zusehends mit einer Geschwindigkeit und so radikal, wie es die menschliche Geschichte niemals gekannt hat. Daraus entstehen, glaube ich, viele Verzerrungen dessen, wie wir uns selbst sowie unsere Bedingungen in der <bibl ref="#zbz-w.705">Zeit</bibl> sehen, und das erklärt die merkwürdige Ambivalenz der Urteile, die wir oft über unsere Zivilisation und unsere Epoche fällen, und die bis zum Widerspruch reicht.
+        </p>
+        <p facs="#facs_10_r_4">
+          So scheint es, daß in den meisten Fällen der Ausdruck "neu" nicht mehr das bezeichnet, was einer Sache zeitlich folgt, sondern - aufgrund dieser einzigen Tatsache - auch einen Wert und eine fast indiskutable Überlegenheit. Was nachher kommt, ist besser als das, was vorher war. Aber gleichzeitig ist man, ganz allgemein, versucht, unsere wissenschaftliche Zivilisation und die gesamte Technik "materialistisch" zu nennen und ihres Sinns zu berauben und zugleich revolutionäre wie rückständige Träume von der Rückkehr in das kleine, idyllische, in Grün gebettete Dorf, das zweifellos niemals existiert hat, zu nähren. Das zukünftige goldene Zeitalter wird das Paradies vor der Vertreibung sein.
+        </p>
+        <p facs="#facs_10_r_5">
+          Solche widersprüchlichen Einstellungen bewirken eine gefährliche Starrheit des kritischen Sinnes, der sich nur noch auf die andere Seite auswirkt und den oft anmaßenden Dogmatismus verstärkt, mit dem die "neuen" Werte verkündet werden. Durch eine paradoxe, aber völlig verständliche Umkehr ruft die bedingungslose Aufwertung
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          - 26 -
+        </p>
+        <p facs="#facs_11_r_2">
+          des "Neuen" abgeschlossene, repetitive Verhaltensweisen hervor, welche die Geschichte und den Fortschritt blockieren.
+        </p>
+        <p facs="#facs_11_r_3">
+          Aus diesem Grund war man zum Beispiel im Laufe der letzten Jahre, als man die wesentlichen Aufgaben der Universitäten aufzeigte, so sehr von ihren Forschungsaufgaben besessen, also von der Entdeckung des Neuen, daß man nicht einmal wagte, die der Weitergabe des Wissens zu erwähnen: man wäre für einen unverbesserlichen Reaktionär gehalten worden. Und doch gibt es keinen Zweifel daran, daß die "Demokratisierung" des Zugangs zu den Universitäten die Weitergabe des Wissens, auf allen Gebieten, unerläßlicher als je zuvor gemacht hat. Jedermann hat die Geschichte auf den Lippen. Aber ohne Übertragung gibt es keine Geschichte, es bleibt nur die regelmäßige Wiederholung, wie die Vogelnester im Frühling.
+        </p>
+        <p facs="#facs_11_r_4">
+          Mir scheint, daß alle diese Verhaltensweisen und diese Widersprüche aus einer Unkenntnis oder einem Vergessen der fundamentalen und unveränderlichen Gegebenheiten des Menschseins stammen. Phantastische Veränderungen haben sich ereignet, das ist wahr. Wir werden weiterhin geboren, ohne irgendetwas von unserer Geburt aussuchen zu können: weder den Ort noch die <bibl ref="#zbz-w.705">Zeit</bibl> noch die Eltern, nichts. Wir sind weiterhin sterblich, wir wissen es, ohne den Zeitpunkt zu kennen. Wir leiden weiterhin – weniger, zweifellos, und vielleicht ein bißchen anders, aber wir leiden – körperlich und seelisch, für uns selbst und für die anderen. Wir brauchen noch Ruhe und Nahrung, und auch Arbeit.
+        </p>
+        <p>
+          Aber vor allen Dingen: Die grundlegende und ständige Bedingung unseres Daseins ist, daß wir Mängelwesen sind. Wir sind nicht allein zum Mangel verdammt; wir brauchen ihn sogar, wir können ihn nicht entbehren, wir würden sein Fehlen nur ganz kurze <bibl ref="#zbz-w.705">Zeit</bibl> ertragen. Ohne ihn können wir nicht leben, denn ohne ihn gibt es keinen Sinn. Er ist die Triebkraft unseres menschlichen Daseins, die in der <bibl ref="#zbz-w.705">Zeit</bibl> tätig wird. Die Fülle ist für uns nicht anders vorstellbar – aber sie ist es nicht – als in einem zeitlosen Paradies. In
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          - 27 -
+        </p>
+        <p facs="#facs_12_r_2">
+          der <bibl ref="#zbz-w.705">Zeit</bibl> würde sie uns vor Langeweile sterben lassen, weil sie für uns die Zeitstruktur zerstören würde, wie wir sie leben: mit der Vergangenheit, von der wir gemacht sind, angehalten von unserer Gegenwart, mit dem Mangel, der dieser Gegenwart innewohnt und der unseren Zukunftsplänen, die noch von unserer gegenwärtigen Entscheidung abhängen, ihren Sinn gibt.
+        </p>
+        <p facs="#facs_12_r_3">
+          Diese Struktur der <bibl ref="#zbz-w.705">Zeit</bibl>, bestimmt durch den Mangel, ist die Voraussetzung für den Sinn, und sie sorgt dafür, daß wir in der Geschichte leben, daß wir darin verantwortliche Entscheidungen fällen und daß Erziehung und Bildung darin unverzichtbar sind. Erziehung und Bildung sorgen dafür, daß die zeitlichen Dimensionen, so wie wir sie erleben und so unterschiedlich und sogar gegensätzlich, wie sie sind, sich gegenseitig durchdringen, um unser "geschichtliches Sein", das die <persName ref="#zbz-p.1">deutschen Denker</persName> "Geschichtlichkeit" genannt haben und was man ins Französische mit "historicité" übersetzt, zu schaffen.
+        </p>
+        <p facs="#facs_12_r_4">
+          Wenn das, was ich gerade ausgeführt habe, gut mit dem Menschsein in seiner wesentlichen und dauernden Struktur übereinstimmt, und damit alle historischen Veränderungen, die dazwischenkommen können, dann ist klar, daß man die Bildung nicht, ohne ernsten Schaden an sich selbst zu nehmen, auf die Kinder- und Jugendzeit beschränken darf oder gar auf die Jahre in der Jugend, in denen man eine gewisse Meisterschaft im Beruf erwirbt.
+        </p>
+        <p>
+          Man spricht heute viel über die Fortbildung, und man fordert die Einhaltung und die Weiterentwicklung in den verschiedensten Formen und Gebieten. Aber gewöhnlich rechtfertigt man diese Forderung auf zweierlei Weise. Einerseits fordert man unentwegt neue Beiträge aus Wissenschaft und Forschung, die neuen technischen Mittel, über die man künftig verfügt und die zu ignorieren oder zu vernachlässigen niemand in seinem Beruf das Recht hat – so wie auch in den verschiedenen Berufen die bei den Aufgaben eingetretenen Veränderungen zu erfüllen sind. Andererseits legt man Nach –
+        </p>
+      <pb facs="#facs_13" n="13" />
+        <p facs="#facs_13_r_1">
+          - 28 -
+        </p>
+        <p facs="#facs_13_r_2">
+          druck auf die Tatsache, daß die technischen Veränderungen so schnell sind, daß sie ganz neue Kompetenzen erfordern und die in Gefahr sind, sich im Laufe eines einzigen Lebens mehrmals zu verändern. Das erfordert in der Bildung vielfältige Zugänge, eine Plurivalenz der Basiselemente und der Empfänglichkeit der Intelligenz sowie, demzufolge, auch Zeiten der Wiederaufbereitung in allen Gebieten, wenn man Wert auf Vollbeschäftigung und darauf legt, Arbeitslosigkeit aufgrund der Unfähigkeit der Kompetenzen zur Anpassung zu vermeiden.
+        </p>
+        <p facs="#facs_13_r_3">
+          Das alles ist wahr und legitim und - erlauben Sie mir, dies nebenbei zu bemerken - schließt ein ganz anderes und sogar entgegengesetztes Verhalten mit ein als dasjenige, von dem ich eingangs gesprochen habe und welches das Dogma von der Überlegenheit des Neuen entstehen ließ. Je weniger die anfängliche Einstellung dogmatisch an das Neue gebunden ist, umso mehr bleibt der <bibl ref="#zbz-w.15">Geist</bibl> offen für Anpassungen, neue Methoden und neue Fähigkeiten, die notwendig geworden sind.
+        </p>
+        <p facs="#facs_13_r_4">
+          Aber über diese sozialen und praktischen Betrachtungen hinaus gibt es noch etwas viel tiefergehendes. Das menschliche Wesen, in welchem Beruf auch immer es stehe, das sich zufriedengibt mit dem, was es ist, was es weiß und was es kann, beweist so, daß es seinen Sinn für den Mangel, das ständige Ungenügen, das Mehr-Sein-Müssen als man ist, verloren hat. Von daher geht für ihn der Sinn des Lebens verloren. Es wird sich selbst als menschliches Wesen untreu, weil es sich nicht mehr verändert. In unserer <bibl ref="#zbz-w.705">Zeit</bibl> genügt es nicht mehr, eine bestimmte Menge an Wissen anzuhäufen und sich dann neuen Techniken anzupassen. Man muß sich auch noch selbst als menschliches Wesen treu bleiben, und im Gegensatz zu dem, was man sich manchmal vorstellt, gibt es keine Treue ohne Veränderung - dasselbe gilt übrigens für das Umgekehrte, es gibt keine permanente Fortbildung ohne Treue.
+        </p>
+        <p>
+          Vielleicht heißt wirklich alt werden: sich nicht mehr in Treue
+        </p>
+      <pb facs="#facs_14" n="14" />
+        <p facs="#facs_14_r_1">
+          - 29 -
+        </p>
+        <p>
+          zu sich selbst verändern können, sich mit dem zufriedengeben, was man ist. Denn man bleibt nicht, was man ist, der lebendige Gesichtsausdruck höhlt sich aus, gräbt sich ein und wird runzlig.
+        </p>
+        <p>
+          Das ist der Vorteil einiger Berufe - insbesondere des Ihren - daß sich die Persönlichkeitsentwicklung des Einzelnen darin ein Leben lang vollzieht, so wie die Treue zu seiner Aufgabe und die Treue zu sich selbst ein und dasselbe bedeuten.
+        </p>
+      <pb facs="#facs_15" n="15" />
+        <p facs="#facs_15_r_1">
+          EAMF
+        </p>
+        <p facs="#facs_15_r_2">
+          MEDICUS EUROPAEUS
+        </p>
+        <p facs="#facs_15_r_3">
+          BULLETIN OF THE <orgName ref="#zbz-o.360">EUROPEAN ACADEMY FOR CONTINUING MEDICAL EDUCATION</orgName>
+        </p>
+        <p>
+          Editorial Staff:<lb facs="#facs_15_l_4_1" n="N001" /><persName ref="#zbz-p.917">H. Kerger</persName> (<placeName ref="#zbz-l.26">West Germany</placeName>)<lb facs="#facs_15_l_4_2" n="N002" /><persName ref="#zbz-p.918">A. Mazer</persName> (<placeName ref="#zbz-l.2">France</placeName>)<lb facs="#facs_15_l_4_3" n="N003" /><persName ref="#zbz-p.147">A. P. Naef</persName> (<placeName ref="#zbz-l.10">Switzerland</placeName>)<lb facs="#facs_15_l_4_4" n="N004" /><persName ref="#zbz-p.919">E. Odenbach</persName> (<placeName ref="#zbz-l.26">West Germany</placeName>)<lb facs="#facs_15_l_4_5" n="N005" /><persName ref="#zbz-p.920">G. Scharf</persName> †
+        </p>
+        <p>
+          Vol. 5 n 2
+        </p>
+        <p>
+          SOMMAIRE - INHALTSVERZEICHNIS
+        </p>
+        <p>
+          Editorial<lb facs="#facs_15_l_7_1" n="N001" /><persName ref="#zbz-p.917">H. Kerger</persName><lb facs="#facs_15_l_7_2" n="N002" />Seite 1<lb facs="#facs_15_l_7_3" n="N003" />page 2
+        </p>
+        <p>
+          Einführung in das Thema des V. Europäischen<lb facs="#facs_15_l_8_1" n="N001" />Kongresses für ärztliche Fortbildung<lb facs="#facs_15_l_8_2" n="N002" />Seite 3
+        </p>
+        <p>
+          Introduction à la thématique du Vème Congrès<lb facs="#facs_15_l_9_1" n="N001" /><persName ref="#zbz-p.733">Européen</persName> sur la f.m.c.<lb facs="#facs_15_l_9_2" n="N002" /><persName ref="#zbz-p.917">H. Kerger</persName><lb facs="#facs_15_l_9_3" n="N003" />page 10
+        </p>
+        <p>
+          La formation permanente par fidélité<lb facs="#facs_15_l_10_1" n="N001" />à la condition humaine<lb facs="#facs_15_l_10_2" n="N002" />page 16
+        </p>
+        <p>
+          Lebenslange Fortbildung aus Treue zum <persName ref="#zbz-p.1251">Mensch</persName>-Sein<lb facs="#facs_15_l_11_1" n="N001" /><persName ref="#zbz-p.2">J. Hersch</persName><lb facs="#facs_15_l_11_2" n="N002" />Seite 25
+        </p>
+        <p>
+          Synthèse et conclusion du point<lb facs="#facs_15_l_12_1" n="N001" />de vue professionnel<lb facs="#facs_15_l_12_2" n="N002" />page 30
+        </p>
+        <p>
+          Zusammenfassung und Schlußfolgerungen<lb facs="#facs_15_l_13_1" n="N001" />aus berufspolitischer Sicht<lb facs="#facs_15_l_13_2" n="N002" /><persName ref="#zbz-p.921">A. Wynen</persName><lb facs="#facs_15_l_13_3" n="N003" />Seite 40
+        </p>
+        <p>
+          Prévision - Vorschau<lb facs="#facs_15_l_14_1" n="N001" />page 50
+        </p>
+        <p>
+          <orgName ref="#zbz-o.360">EUROPEAN ACADEMY FOR CONTINUING MEDICAL EDUCATION</orgName><lb facs="#facs_15_l_15_1" n="N001" />Carl-Oelemann-Weg 7, D-6350 <placeName ref="#zbz-l.343">Bad Nauheim</placeName>, Telefon: 06032/6095
+        </p>
+      </div>
+      </body></text>
+</TEI>

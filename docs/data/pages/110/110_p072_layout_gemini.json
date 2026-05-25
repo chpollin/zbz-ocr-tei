@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "70 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 19.102,
+        "y_pct": 10.655,
+        "w_pct": 68.435,
+        "h_pct": 2.458
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified page header text at top of page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de ce contenu est une matière aussi   susceptible qu'une autre de prendre forme; c'est que le presli",
+      "bbox": {
+        "x_pct": 19.102,
+        "y_pct": 13.786,
+        "w_pct": 68.435,
+        "h_pct": 11.153
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous voyons ainsi que dans le apparemment le plus lim pide et le plus concrèlement saisissable; celu",
+      "bbox": {
+        "x_pct": 18.872,
+        "y_pct": 25.015,
+        "w_pct": 68.619,
+        "h_pct": 20.531
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il en de même Pour les arls choisissent   explicitement matière la   psychologie humaine: roman. La ",
+      "bbox": {
+        "x_pct": 18.757,
+        "y_pct": 45.091,
+        "w_pct": 68.665,
+        "h_pct": 24.385
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prenons encore où crois que presque tout ce sera dit delle conviendra également à la poésie ) Elle n",
+      "bbox": {
+        "x_pct": 18.907,
+        "y_pct": 69.575,
+        "w_pct": 68.205,
+        "h_pct": 5.516
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region originally."
+  ],
+  "doc_id": "110",
+  "page": 72,
+  "elapsed_seconds": 6.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

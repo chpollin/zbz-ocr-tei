@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tualität (obgleich man davon in jeder Ideologie spricht, ist die Wurzel doch jenseits in ihr) - aus diesem lebendigen Nerv hat die Französische Revolution das Zentrum ihres gesellschaftlichen Systems, ihrer Institutionen und ihrer Erziehung gemacht.",
+      "bbox": {
+        "x_pct": 7.692,
+        "y_pct": 8.908,
+        "w_pct": 82.85,
+        "h_pct": 7.874
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated in the provided initial detection. Updated to match the actual image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das ist es, wie ich glaube, was die vorherrschende, traditionell oder göttlich gegebene Ordnung ersetzt hat.",
+      "bbox": {
+        "x_pct": 7.781,
+        "y_pct": 16.496,
+        "w_pct": 82.762,
+        "h_pct": 4.118
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist dies wahrscheinlich eine große Vereinfachung. Aber gerade diese Vereinfachung ist für die Zukunft entscheidend gewesen. Deswegen hat man das allgemeine, das universelle Stimmrecht eingeführt. Deswegen hat man die verschiedenen Gewalten – pouvoir executif, pouvoir legislatif, pouvoir judiciaire – getrennt. Deswegen hat man Systeme gesucht, in denen da, wo die Macht war, auch Kontrolle sein mußte. Niemals eine Macht ohne Kontrolle oder Gegenmacht. Eine Nebenbemerkung: wenn man jenem Grundmythos der Französischen Revolution treu ist und sich weigert, je die autonome innere Instanz des einzelnen zu zwingen, dann steht man oft vor einem gewichtigen Problem: 51% der Stimmen können die 49% der anderen zwingen. Deswegen gibt es eine gute Sitte in der Schweiz, wo man wirklich einen großen Sinn für Minderheiten hat (die Schweizer rühmen sich wegen vielem, aber sie rühmen sich nicht, wessen sie sich rühmen könnten): Wenn zum Beispiel die Regierung ein Gesetz vorschlägt und dieses Gesetz angenommen wird, dann kommt der Bundesrat ins Fernsehen und sagt: Liebe Mitbürger, wir danken für das Vertrauen, das Sie uns gezeigt haben. Wir sind froh darüber. Aber die Minderheit ist sehr stark gewesen, und infolgedessen werden wir das Gesetz mit Maß anwenden, denn wir müssen dieser Minderheit Rechnung tragen.",
+      "bbox": {
+        "x_pct": 7.654,
+        "y_pct": 20.109,
+        "w_pct": 82.888,
+        "h_pct": 37.79
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated in the initial detection; replaced with full paragraph text from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Gesetze und Institutionen müssen herrschen, damit die Menschenrechte, von denen heute soviel die Rede ist, in Geltung bleiben. Die Menschenrechte haben im Grunde keine andere zentrale Kraft in sich als jene letzte autonome innere Instanz, von der ich sprach. Sie sind eben darauf gegründet, davon ernährt, dadurch gerechtfertigt und dadurch getragen. Man muß noch hinzufügen – damit Sie die Zerbrechlichkeit des Ganzen scharf empfinden –, daß diese autonome innere Instanz niemals und in keinem Menschen ein fester Besitz sein kann. Sie ist keine Tatsache, die man [empirisch] feststellen kann: Ich habe es, Du hast es nicht usw. Das wäre Unsinn. Diese autonome innere Instanz ist immer nur für jeden Menschen eine Möglichkeit, die wichtigste Möglichkeit, nie eine Tatsache. Frei und verantwortlich sich binden und unterzeichnen, was er tut, ist immer nur eine dem Menschen aufgegebene Möglichkeit – kein endgültiger Besitz.",
+      "bbox": {
+        "x_pct": 7.781,
+        "y_pct": 57.731,
+        "w_pct": 82.598,
+        "h_pct": 26.387
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated; updated to full text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun, wie verhält sich diese Möglichkeit der inneren Autonomie zu den Gesetzen und Institutionen? Für diese innere Instanz sind Gesetze und",
+      "bbox": {
+        "x_pct": 7.982,
+        "y_pct": 83.95,
+        "w_pct": 82.093,
+        "h_pct": 3.95
+      },
+      "changed": true,
+      "change_reason": "Updated to match full text segment."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "67",
+      "bbox": {
+        "x_pct": 87.067,
+        "y_pct": 89.244,
+        "w_pct": 2.879,
+        "h_pct": 2.521
+      },
+      "changed": true,
+      "change_reason": "Identified page number and corrected label/tag."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Most paragraph segments were severely truncated in original detection.",
+    "Page number 67 was labeled as text, re-classified as page_footer."
+  ],
+  "doc_id": "2660",
+  "page": 8,
+  "elapsed_seconds": 6.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

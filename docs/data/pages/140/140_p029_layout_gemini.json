@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "110 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 25.1
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_heading for page title/header content."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'une justification fondamentale, théorique, et consente à tirer finalement sa valeur, sa justification, de son existence toute nue, de sa cohérence même.",
+      "bbox": {
+        "x_pct": 14.404,
+        "y_pct": 100,
+        "w_pct": 73.841,
+        "h_pct": 7.179
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais on arrive ainsi à un résultat dans un certain sens encore flottant que la dernière fois. La der",
+      "bbox": {
+        "x_pct": 13.85,
+        "y_pct": 25.926,
+        "w_pct": 74.635,
+        "h_pct": 32.803
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois cran darrêt à la connaissance, un cran darrêt très grave à la certitude et à la connaissanc",
+      "bbox": {
+        "x_pct": 13.73,
+        "y_pct": 58.729,
+        "w_pct": 74.543,
+        "h_pct": 14.336
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "On ne peut pas; je crois; admettre lun sans admettre lautre On ne peut pas-vouloir à la fois posséde",
+      "bbox": {
+        "x_pct": 13.666,
+        "y_pct": 72.382,
+        "w_pct": 73.961,
+        "h_pct": 14.701
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Initial label for page header was incorrect."
+  ],
+  "doc_id": "140",
+  "page": 29,
+  "elapsed_seconds": 9.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to zb_heading for page title/header content.": 1
+  }
+}

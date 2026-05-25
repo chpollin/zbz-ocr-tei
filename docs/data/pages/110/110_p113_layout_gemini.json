@@ -1,0 +1,98 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME",
+      "bbox": {
+        "x_pct": 10.74,
+        "y_pct": 10.0,
+        "w_pct": 35.34,
+        "h_pct": 1.15
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header identified at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "111",
+      "bbox": {
+        "x_pct": 74.52,
+        "y_pct": 10.0,
+        "w_pct": 2.58,
+        "h_pct": 1.15
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number identified as page_header"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "forme surfaces . mnais les surfaces ne constiluent pas la forme: elles n'en sont que Tapparence. La ",
+      "bbox": {
+        "x_pct": 10.242,
+        "y_pct": 13.136,
+        "w_pct": 68.274,
+        "h_pct": 11.033
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "2. Forme et  existence, existence et valeur",
+      "bbox": {
+        "x_pct": 18.838,
+        "y_pct": 27.995,
+        "w_pct": 51.093,
+        "h_pct": 2.02
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons vu qu'exister selon les modes de la forme est le propre de Thomme. il le sail, Nous avons",
+      "bbox": {
+        "x_pct": 10.046,
+        "y_pct": 31.488,
+        "w_pct": 68.435,
+        "h_pct": 20.091
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La forme est une condilion dexistence réelle. Mais On voit bien existence réelle \" est ici terme val",
+      "bbox": {
+        "x_pct": 9.632,
+        "y_pct": 51.913,
+        "w_pct": 68.504,
+        "h_pct": 22.346
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text was garbled or truncated",
+    "Missing page header regions",
+    "Missing page number region"
+  ],
+  "doc_id": "110",
+  "page": 113,
+  "elapsed_seconds": 7.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content and label": 1,
+    "Corrected text content": 2,
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TABLE DES MATIÈRES",
+      "bbox": {
+        "x_pct": 27.854,
+        "y_pct": 23.449,
+        "w_pct": 41.815,
+        "h_pct": 2.716
+      },
+      "changed": false
+    },
+    {
+      "label": "table",
+      "zbz_tag": "zb_paragraph",
+      "text": "ALEXANDRE, PAUL Virages dangereux de la Critique dramatique suisse romande . . . 47 Editorial . . . 417 AMIEL, H.-F. Journal intime (pages inédites). . . . 20 - Paysages vaudois (fragments) . . . 379 ANSERMOZ, VIOLETTE Guilledou (poème) . . . 274 ARCIS, MAX D' D'une Economie de producteurs à une Economie de consommateurs . . . 102 - Démocratie conditionnelle . . . 236 - De la Solution transitoire des finances fédérales à l'Esotérisme administratif . . 599 AUBERT, CLAUDE Arpèges de la Nuit . . . 635 BABEL, ANTONY René Grousset . . . 447 BARRELET, PIERRE De Voltaire à Léon Savary . . . 605 BARTH, KARL Le Problème éthique à l'heure actuelle. . . 457 BAYLE, PIERRE Considérations sur l'Information. . . . 135 BEAUJON, EDMOND Aristophane et le Féminisme . . . 80 BEAUSIRE, PIERRE Ensex. . . . 405 - Avant-propos . . . 503 BERCHTOLD, ALFRED L'Œuvre de Max Frisch . . . 281 - Un Anniversaire . . . 674 BERNARD, MARC Vacances . . . 155 BONNARD, ANDRÉ Propos sur l'Humanisme . . . 431 - La République communiste des Guaranis (C. Lugon). . . . 602 BOPP, LÉON Fragments inédits du « Journal intime » d'Amiel . . . 20 BOREL, ALFRED Bilan 1948 et Lignes d'avenir. . . 37 - La Réforme des Finances fédérales . . . 96 - Le Suffrage féminin. . . 169",
+      "bbox": {
+        "x_pct": 12.854,
+        "y_pct": 33.828,
+        "w_pct": 71.438,
+        "h_pct": 54.69
+      },
+      "changed": true,
+      "change_reason": "Changed label from 'document_index' to 'table' as it is structured content formatted as a table of contents index."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Original label 'document_index' is not a standard tag in the provided taxonomy, replaced with 'table'."
+  ],
+  "doc_id": "160",
+  "page": 2,
+  "elapsed_seconds": 3.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

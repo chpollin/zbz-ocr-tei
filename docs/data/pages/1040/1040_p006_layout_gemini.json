@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1 lles'nouvelles de",
+      "bbox": {
+        "x_pct": 6.527,
+        "y_pct": 13.462,
+        "w_pct": 38.228,
+        "h_pct": 6.547
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais ajouter encor un a combinaison de pnx, soumission au de plus inoble chez qui cede au cha",
+      "bbox": {
+        "x_pct": 5.994,
+        "y_pct": 22.499,
+        "w_pct": 38.761,
+        "h_pct": 10.696
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais qu ilne nous sorte pas le Droit et la Morale.",
+      "bbox": {
+        "x_pct": 5.994,
+        "y_pct": 37.621,
+        "w_pct": 27.073,
+        "h_pct": 2.858
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ne faudrait choisir entre la l''achet''e et la violence, il choisirait la violence. Ceder au chantage; c",
+      "bbox": {
+        "x_pct": 6.027,
+        "y_pct": 43.983,
+        "w_pct": 38.695,
+        "h_pct": 13.601
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La diff''erence entre le chantage et la contrainte pure et simple, c''est pure et rend victime Finnoc",
+      "bbox": {
+        "x_pct": 6.161,
+        "y_pct": 58.737,
+        "w_pct": 38.528,
+        "h_pct": 17.566
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Achev''e dimprimer le 15 mars 1974 CI 1207 Geneve",
+      "bbox": {
+        "x_pct": 65.268,
+        "y_pct": 43.107,
+        "w_pct": 17.949,
+        "h_pct": 5.256
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "|",
+      "bbox": {
+        "x_pct": 68.531,
+        "y_pct": 57.492,
+        "w_pct": 1.598,
+        "h_pct": 12.264
+      },
+      "changed": true,
+      "change_reason": "Artifact labeled as page_footer for exclusion."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 1,
+  "issues": [
+    "One false positive artifact found in the right column.",
+    "OCR text quality is poor/fragmented."
+  ],
+  "doc_id": "1040",
+  "page": 6,
+  "elapsed_seconds": 4.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

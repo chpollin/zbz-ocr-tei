@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART 169",
+      "bbox": {
+        "x_pct": 11.094,
+        "y_pct": 2.0,
+        "w_pct": 68.399,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified page header/footer elements"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "défauts les plus techniques finiront  par apparaîlre comme de réelles impuissances   spirituelles, c",
+      "bbox": {
+        "x_pct": 11.094,
+        "y_pct": 13.202,
+        "w_pct": 68.399,
+        "h_pct": 5.971
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lincarnation artistique elre manquée de plusieurs   façons. première; dont il été question plus haul",
+      "bbox": {
+        "x_pct": 11.175,
+        "y_pct": 18.794,
+        "w_pct": 68.698,
+        "h_pct": 52.094
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne saurait 5 dentreprendre ici une telle élude du laid Essayons   pourtant de comparer un trompe-",
+      "bbox": {
+        "x_pct": 11.601,
+        "y_pct": 70.789,
+        "w_pct": 68.237,
+        "h_pct": 3.998
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header/footer labels identified."
+  ],
+  "doc_id": "110",
+  "page": 171,
+  "elapsed_seconds": 5.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

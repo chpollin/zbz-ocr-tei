@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "corps et tel qu'il est. Le recueillant tel qu'il est, tel ne cessera jamais d'avoir été pour moi, même quand je serai mort.",
+      "bbox": {
+        "x_pct": 9.855,
+        "y_pct": 11.953,
+        "w_pct": 65.503,
+        "h_pct": 10.749
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match actual text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps, c'est notre finitude. Séparation et adieu ne sont pas seulement inévitables pour nous, plus tôt ou plus tard, comme pour ce lézard, ou même pour cette écume qui sous notre regard court sur la mer. Séparation et mort sont dans le temps indispensables. Elles signifient et corrigent l'impossible unité. Elles font de chaque être réel le signe de l'unité refusée par le temps, et comme l'appel d'un adieu.",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 22.702,
+        "w_pct": 66.109,
+        "h_pct": 27.719
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match full text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Même si par grâce un être, quelque part, dans notre vie temporelle, nous était donné avec la certitude que jamais nous n'aurions à nous en séparer, que jamais il ne changerait ni ne mourrait, que jamais nous n'aurions à lui dire adieu, nous ne saurions pas vivre une plénitude aussi immuable. Elle nous conduirait sans doute au seuil de la mort. Le temps ne peut pas devenir pour nous l'éternité.",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 50.926,
+        "w_pct": 65.903,
+        "h_pct": 25.362
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match full text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "105",
+      "bbox": {
+        "x_pct": 70.366,
+        "y_pct": 82.502,
+        "w_pct": 4.502,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from text to page_footer/filter."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Original transcript was severely truncated.",
+    "Page number '105' was not identified as a separate region."
+  ],
+  "doc_id": "2260",
+  "page": 105,
+  "elapsed_seconds": 3.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 30.796,
+        "y_pct": 29.264,
+        "w_pct": 36.584,
+        "h_pct": 4.239
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Philosophe",
+      "bbox": {
+        "x_pct": 36.761,
+        "y_pct": 35.536,
+        "w_pct": 25.062,
+        "h_pct": 2.781
+      },
+      "changed": true,
+      "change_reason": "The text was poorly OCR'd and truncated, corrected to actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« P ARMII LES FORFAITS Permis 4, notre Pays de survivte guerre dans une relative indépendance, le pire fut sans doute l'exigence de ce J imprimé dans les passeports des juifs allemands, et qui relevait à les envoyer à la mort. Après cela, il n’y a plus qu’à tirer l’échelle. Si je n’ai pas protesté alors, j’éprouve devant la force de l’histoire une humilité qui m’enlève le droit de m’indigner aujourd’hui pour une affaire de fonds en déshérence. »",
+      "bbox": {
+        "x_pct": 14.637,
+        "y_pct": 46.92,
+        "w_pct": 68.496,
+        "h_pct": 16.509
+      },
+      "changed": true,
+      "change_reason": "OCR correction required to match document text accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "elle a participé activement aux combats de ce siècle: le soutien aux combattants pour la liberté, l’accueil des réfugiés durant la Seconde Guerre mondiale, le féminisme, le socialisme, le nucléaire et l’armée, la jeunesse et la drogue. Jeanne Hersch ne s’est pas contentée de philosopher.",
+      "bbox": {
+        "x_pct": 15.398,
+        "y_pct": 81.01,
+        "w_pct": 67.257,
+        "h_pct": 5.15
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/broken OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "113",
+      "bbox": {
+        "x_pct": 47.124,
+        "y_pct": 92.518,
+        "w_pct": 5.752,
+        "h_pct": 2.226
+      },
+      "changed": true,
+      "change_reason": "Identified and classified page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Heavy OCR artifacts in initial text regions",
+    "Missing page footer region in original detection",
+    "Original text transcription was highly inaccurate"
+  ],
+  "doc_id": "3070",
+  "page": 1,
+  "elapsed_seconds": 3.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

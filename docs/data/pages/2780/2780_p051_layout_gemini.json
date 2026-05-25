@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fort explicite ce poème décrit en quelques vers un torse d’Apollon, d’une façon parfaitement plastique, objective. Et puis soudain, d’une manière très abrupte, surgit un vers : « Du musst dein Leben ändern. » « Tu dois changer ta vie. » Ce n’est ni amené, ni préparé ; cela vient abruptement après la description objective du torse d’Apollon. Et bien, c’est exactement de cela qu’il s’agit. Le poème ne dit pas ce qu’il s’agit de devenir, ce qu’il convient de faire ; mais le torse d’Apollon, dans sa plasticité objective, provoque une espèce de secousse de la liberté intérieure. Cette réceptivité active, dont j’ai parlé, c’est une réceptivité de la liberté, c’est une réceptivité par la liberté. Ainsi, beaucoup de gens font de la musique sans se destiner du tout à se produire en public. Ils jouent pour pouvoir mieux écouter, pour apprendre à laisser la musique agir en eux à travers leur liberté.",
+      "bbox": {
+        "x_pct": 28.316,
+        "y_pct": 13.423,
+        "w_pct": 57.775,
+        "h_pct": 39.542
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and OCR-garbled text content to match the visible source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'insiste sur ce point, parce que l'on a souvent tendance, notamment dans les théories pédagogiques contemporaines, à concevoir toute intervention dans l'intérieur d'un être et dans sa liberté comme une « manipulation ». Or, c'est le propre de la liberté de consentir à être « manipulée » de cette manière. La liberté est réceptive, elle permet à autre chose d'entrer en elle et, comme disait le garçon, « de faire quelque chose dans soi ».",
+      "bbox": {
+        "x_pct": 28.496,
+        "y_pct": 52.941,
+        "w_pct": 57.415,
+        "h_pct": 20.074
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and OCR-garbled text content to match the visible source image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": {
+        "x_pct": 28.95,
+        "y_pct": 75.39,
+        "w_pct": 2.45,
+        "h_pct": 1.76
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number from text to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR for paragraphs was severely truncated and incorrect.",
+    "Page number 52 was incorrectly labeled as text."
+  ],
+  "doc_id": "2780",
+  "page": 51,
+  "elapsed_seconds": 3.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

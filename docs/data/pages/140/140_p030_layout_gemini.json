@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DISCONTINUITE DES PERSPECTIVES HUMAINES 111",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page header containing title and page number"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "un domaine que je crois particulièrement intéressant à cet égard à confronter avec ce que je viens d",
+      "bbox": {
+        "x_pct": 14.155,
+        "y_pct": 16.507,
+        "w_pct": 75.199,
+        "h_pct": 39.806
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lart réalise ainsi, à force de limitation el de   détermination, et je dirais, de précimême là où il",
+      "bbox": {
+        "x_pct": 14.404,
+        "y_pct": 58.217,
+        "w_pct": 74.358,
+        "h_pct": 14.547
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling in text label content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je vais donner un exemple. Prenez par exemple un roman. Dans un roman, VOIS avez une histoire; dans ",
+      "bbox": {
+        "x_pct": 14.524,
+        "y_pct": 72.348,
+        "w_pct": 73.906,
+        "h_pct": 14.661
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling in text label content"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Header line was missing a region",
+    "Body text contained OCR artifacts",
+    "Missing pagination metadata detection"
+  ],
+  "doc_id": "140",
+  "page": 30,
+  "elapsed_seconds": 6.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label for page header containing title and page number": 1,
+    "Corrected spelling in text label content": 2
+  }
+}

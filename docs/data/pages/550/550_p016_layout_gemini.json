@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Discussion sur les communications 75",
+      "bbox": {
+        "x_pct": 510.0,
+        "y_pct": 69.0,
+        "w_pct": 393.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header as it contains a running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pouvez absolument pas échapper au jugement de valeur. Pourquoi ? Parce que, nécessairement, dès lors même que vous prenez le concept de démocratie comme tel, vous devez le définir dans sa perfection. Or, cette perfection même postule le jugement de valeur sur la démocratie. C'est une valeur et on n'y échappe pas dans le domaine politique, dès qu'il s'agit d'assertions universelles.",
+      "bbox": {
+        "x_pct": 8.558,
+        "y_pct": 13.88,
+        "w_pct": 85.34,
+        "h_pct": 13.667
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais, à présent, vous faire une objection de même nature sur un point de votre exposé : quand vous dites qu'il faut reconnaître un espace vital de l'individu et le respecter, réserver une sorte de disponibilité de l'individu en dehors du social, vous portez là un jugement de valeur. En effet, ce postulat se fonde sur une certaine conception de la personne humaine, qui ne serait pas totalement sociale. Notez que je partage personnellement votre jugement de valeur sur ce point ; mais c'est un jugement de valeur...",
+      "bbox": {
+        "x_pct": 8.779,
+        "y_pct": 28.943,
+        "w_pct": 85.631,
+        "h_pct": 17.689
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais aussi répondre à M. Moreau-Reibel qui estime que le sociologue politique ne saurait être objectif et se trouve nécessairement engagé. Je crois que nous touchons là, comme M. Moreau-Reibel l'a très bien senti, à la question de la définition même de la sociologie.",
+      "bbox": {
+        "x_pct": 9.667,
+        "y_pct": 47.263,
+        "w_pct": 84.965,
+        "h_pct": 10.252
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On doit toujours remonter à cette définition pour résoudre le problème de la subjectivité. La sociologie, ce n'est que la prise de conscience, par des sociologues, de certains phénomènes. Mais cette prise de conscience pour être scientifique doit avoir des caractéristiques. D'abord, elle doit être transmissible. Je prends conscience d'un certain phénomène par des méthodes analytiques, concrètes ou dialectiques. Le produit de cette recherche ou de cette démarche n'est scientifique que dans la mesure où il est transmissible, c'est-à-dire où d'autres sociologues rompus à ces méthodes assimilent exactement cette prise de conscience. C'est en cela que la subjectivité peut être évitée.",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 58.438,
+        "w_pct": 85.714,
+        "h_pct": 21.632
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La deuxième condition, c'est que cette prise de conscience n'a de sens sociologique que par référence au social total. Cette référence au total est nécessaire et inévitable si on veut une prise de conscience transmissible et lucide ; en effet ce total exprime un système de valeur qui se traduit lui-même par des systèmes de signification. Toutes les parties sont imprégnées et ne prennent un sens intelligible par cette référence.",
+      "bbox": {
+        "x_pct": 10.541,
+        "y_pct": 80.86,
+        "w_pct": 85.576,
+        "h_pct": 14.069
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Initial OCR text extraction for paragraphs was extremely poor and required manual correction to reflect the image content.",
+    "Page header with page number was wrongly classified as text."
+  ],
+  "doc_id": "550",
+  "page": 16,
+  "elapsed_seconds": 5.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

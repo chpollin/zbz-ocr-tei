@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ID\tOLOGIES ET R\tALIT\t 11",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correctly identifying page header and number which were missing or improperly labeled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "aveG succès contagieux; avec écho dans les autres pays. Mais le fascisme italien s'en est passé. De telles victimes ne sont pas essentielles à un régime de type fasciste. Il suffit qu'un peuple en arrive à étre convaincu de sa propre splendeur, convaincu dès lors que l'homme — n'importe quel homme — puisse légitimement lui étre sacrifié. Peut-ètre les persécutions juives étaient-elles nécessaires au peuple allemand pour vaincre le nœud informe de ses complexes d'infériorité et de supériorité. Peut-ètre le peuple italien, appuyé sur la grandeur romaine, la prestigieuse Renaissance et le bel canto, pouvait-il s'en passer.",
+      "bbox": {
+        "x_pct": 39.0,
+        "y_pct": 111.14,
+        "w_pct": 847.77,
+        "h_pct": 210.34
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIE COMMUNISTE",
+      "bbox": {
+        "x_pct": 4.457,
+        "y_pct": 35.891,
+        "w_pct": 31.1,
+        "h_pct": 1.898
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plan philosophique ou religieux. — Si le prestige du chef fasciste est de nature magique, celui du chef communiste repose sur une conception superstitieuse de la science et de la technique. La « méthode marxiste » d'interprétation de l'histoire, méthode « rigoureusement scientifique », s'appuie sur un « déterminisme » qui descend de la « nécessité » hégélienne. Seulement Hegel se contentait de déchiffrer la présence de cette nécessité dans l'histoire passée; l'avenir, à vrai dire, il ne le réservait pas, il l'annulait. Marx, lui, applique la méthode à l'avenir. Dès lors on sait où va l'histoire, ou du moins on peut le savoir. Le commandement suprême devient affaire de compétence : le chef est « l'ingénieur de l'histoire », le mieux, le seul qualifié — on ira jusqu'à dire : absolument qualifié, car, d'un savoir rigoureux, les fautes de calcul sont exclues.",
+      "bbox": {
+        "x_pct": 4.136,
+        "y_pct": 39.902,
+        "w_pct": 84.624,
+        "h_pct": 28.815
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chose curieuse — et qui montre bien, une fois de plus, combien tous les modes d'existence de l'homme sont mélés, combien il reste primitif, vulnérable, saignant et incohérent jusque dans ses prétentions intellectuelles les plus froides et les plus pures — cette conception déterministe de l'histoire, cette connaissance scientifique fondant la sûre technique dictatoriale, n'entraãnent ni le rejet de la liberté et des valeurs, ni celui du prestige inspiré et quasi religieux du chef, ni la dissolution définitive de l'absolu dans le relatif. La distinction du bien et du mal règne, avec une simplicité et une autorité inconnues ailleurs. Le chef, lui, sait. On",
+      "bbox": {
+        "x_pct": 4.318,
+        "y_pct": 68.654,
+        "w_pct": 84.401,
+        "h_pct": 20.677
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text segments contained significant OCR errors (truncated words, corrupted character strings).",
+    "Missing identification of running header and page number region.",
+    "Bbox coordinates provided in original list were inconsistent/malformed for some items."
+  ],
+  "doc_id": "330",
+  "page": 45,
+  "elapsed_seconds": 6.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

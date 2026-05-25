@@ -1,0 +1,136 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'administration de la coop%9rative est soumise au contr%f4le de ses membres.",
+      "bbox": {
+        "x_pct": 3.343,
+        "y_pct": 2.347,
+        "w_pct": 14.527,
+        "h_pct": 5.628
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'%e9conomie coop%9rative est une %e9conomie d%e9mocratique.",
+      "bbox": {
+        "x_pct": 3.062,
+        "y_pct": 8.541,
+        "w_pct": 15.088,
+        "h_pct": 3.083
+      },
+      "changed": true,
+      "change_reason": "Corrected text content extraction."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Lire dans ce num%e9ro: En page 2 : Notre commentaire sur le scrutin de dimanche En page 3: Une %e9cole buissonni%e8re par Maurice Zermatten Un reportage: L'Autriche revit",
+      "bbox": {
+        "x_pct": 82.572,
+        "y_pct": 2.59,
+        "w_pct": 14.975,
+        "h_pct": 9.812
+      },
+      "changed": true,
+      "change_reason": "Grouped page headers into a single logical block, relabeled from text to page_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SIGNAUX ET FEUX-CROIS%c9S",
+      "bbox": {
+        "x_pct": 2.383,
+        "y_pct": 15.184,
+        "w_pct": 35.648,
+        "h_pct": 7.047
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "aux Rencontres internationales de Gen%e8ve",
+      "bbox": {
+        "x_pct": 1.801,
+        "y_pct": 22.365,
+        "w_pct": 36.692,
+        "h_pct": 1.975
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est sur le compte rendu que fait Marcel Raymond ce sont les Rencontres...",
+      "bbox": {
+        "x_pct": 2.383,
+        "y_pct": 24.762,
+        "w_pct": 35.648,
+        "h_pct": 3.411
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par Jeanne Hersch",
+      "bbox": {
+        "x_pct": 12.032,
+        "y_pct": 28.95,
+        "w_pct": 15.718,
+        "h_pct": 1.288
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vues sur le monde",
+      "bbox": {
+        "x_pct": 74.982,
+        "y_pct": 15.678,
+        "w_pct": 12.123,
+        "h_pct": 1.198
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Divergences en Chine",
+      "bbox": {
+        "x_pct": 74.373,
+        "y_pct": 17.581,
+        "w_pct": 24.877,
+        "h_pct": 3.155
+      }
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "159",
+      "bbox": {
+        "x_pct": 95.536,
+        "y_pct": 96.275,
+        "w_pct": 1.381,
+        "h_pct": 0.552
+      },
+      "changed": true,
+      "change_reason": "Relabeled page number to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR output is heavily corrupted in several paragraphs.",
+    "Running headers were fragmented into multiple incorrect boxes.",
+    "Author signature needs to be verified in full text context."
+  ],
+  "doc_id": "3140",
+  "page": 1,
+  "elapsed_seconds": 7.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

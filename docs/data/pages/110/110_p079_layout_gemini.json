@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE 77",
+      "bbox": {
+        "x_pct": 11.521,
+        "y_pct": 2.0,
+        "w_pct": 68.283,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "delà de nolre analyse.  Lorsque je dis norale \" jfentends hien morale ayant conlenu prescriptif déte",
+      "bbox": {
+        "x_pct": 11.521,
+        "y_pct": 13.721,
+        "w_pct": 68.283,
+        "h_pct": 7.183
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La morale; prescrit ce que doit etre la conduite humaine tendre à objeclivité   univoque. En effet, ",
+      "bbox": {
+        "x_pct": 11.256,
+        "y_pct": 21.033,
+        "w_pct": 68.641,
+        "h_pct": 50.44
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il résulte de ce qui précède qu'aucun jugement moral objectivement valable n'est possible sur le plan humain. Et cela ne signifie",
+      "bbox": {
+        "x_pct": 11.521,
+        "y_pct": 71.474,
+        "w_pct": 68.283,
+        "h_pct": 2.456
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing text fragment at bottom"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing text region at bottom"
+  ],
+  "doc_id": "110",
+  "page": 79,
+  "elapsed_seconds": 8.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

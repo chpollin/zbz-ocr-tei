@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "N'ATTEIGNENT PAS LE SUJET",
+      "bbox": {
+        "x_pct": 29.367,
+        "y_pct": 8.441,
+        "w_pct": 41.265,
+        "h_pct": 1.956
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "49",
+      "bbox": {
+        "x_pct": 82.53,
+        "y_pct": 8.878,
+        "w_pct": 3.494,
+        "h_pct": 1.738
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "philosophique du sujet et de l'objet, tant de fois démontrée et tant de fois surmontée en de grandioses synthèses, se dresse ici à nouveau avec une irréfutable évidence.",
+      "bbox": {
+        "x_pct": 10.045,
+        "y_pct": 13.06,
+        "w_pct": 75.949,
+        "h_pct": 9.819
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Supposez que le psychologue ne soit pas un autre qui m'accompagne, imaginez que je sois moi-même le psychologue qui m'observe et que je me donne à moi-même les raisonnables explications et les précieux conseils cités plus haut. L'opposition n'en est pas moins là. J'aurai beau m'observer et m'expliquer pourquoi mon regard sur les choses est devenu si étrange. Le « je » qui a ce regard ne cherche pas pourquoi il l'a, mais ce qu'est en réalité l'abîme qu'il a vu. Il s'étonnera plutôt de son aveuglement antérieur et de la convention de ça-va-sans-dire qui lui avait masqué le réel. Pourquoi il l'a découvert, c'est une question en effet pour le psychologue qui fait de lui un objet. Mais lui, le sujet, voit. C'est un fait. Il doit voir jusqu'au bout. Détourner la tête maintenant, ce serait devenir tout entier l'objet du psychologue, une chose à observer parmi toutes les autres choses. Ce serait cesser d'être sujet, c'est-à-dire d'être homme. Et pour un homme, cesser d'être homme, c'est cesser d'être, simplement.",
+      "bbox": {
+        "x_pct": 9.744,
+        "y_pct": 23.289,
+        "w_pct": 76.446,
+        "h_pct": 53.708
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous pouvons donc maintenant préciser l'alternative que nous avions trouvée au fond de tout problème philosophique : celle d'être ou de ne pas être. Elle signifie : être sujet, ou devenir entièrement objet. Mais on ne devient objet que pour un sujet,",
+      "bbox": {
+        "x_pct": 9.533,
+        "y_pct": 76.74,
+        "w_pct": 76.566,
+        "h_pct": 13.089
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 80.12,
+        "y_pct": 90.724,
+        "w_pct": 1.747,
+        "h_pct": 1.956
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was extremely poor quality, requiring full re-transcription.",
+    "Page number and header were incorrectly tagged as text."
+  ],
+  "doc_id": "20",
+  "page": 51,
+  "elapsed_seconds": 6.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

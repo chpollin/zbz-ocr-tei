@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De générale, l'expérience que j'ai faite à l'Unesco a été passionnante. J'ai connu des hauts et des bas, des moments d'exaltation et des gouffres de désespoirs - et Jean d'Ormesson m'emmenait alors déjeuner pour m'empêcher de démissionner. L'Unesco est d'ailleurs une maison passionnante et passionnelle.",
+      "bbox": {
+        "x_pct": 5.372,
+        "y_pct": 4.331,
+        "w_pct": 79.487,
+        "h_pct": 10.371
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. : Pourquoi passionnelle ?",
+      "bbox": {
+        "x_pct": 8.144,
+        "y_pct": 14.944,
+        "w_pct": 36.63,
+        "h_pct": 2.637
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Unesco ne s'occupe pas des problèmes de la faim ou de la santé, qui sont des réalités univoques et objectives, elle s'occupe de science, de culture, d'éducation et de communication ; dans chacun de ces domaines l'être humain s'investit personnellement. Il y avait ainsi à l'Unesco une proportion de gens non indifférents qui est relativement considérable.",
+      "bbox": {
+        "x_pct": 5.458,
+        "y_pct": 16.992,
+        "w_pct": 79.28,
+        "h_pct": 11.96
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. : De votre premier passage à l'Unesco un témoin demeure, c'est l'ouvrage monumental Le Droit d'être un homme, destiné à commémorer le XXe anniversaire de la Déclaration universelle des Droits de l'Homme de 1948, et dont vous avez dirigé la réalisation. Quel était le but de cette entreprise ?",
+      "bbox": {
+        "x_pct": 5.25,
+        "y_pct": 29.895,
+        "w_pct": 79.695,
+        "h_pct": 10.484
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. : Lorsque j'ai entrepris ce travail, je me suis dit : je dois faire quelque chose que je ne peux faire qu'à l'Unesco, quelque chose qui mette en œuvre les tentacules de l'Unesco dans le monde entier. Comme toujours, je suis partie d'un problème, qui était le suivant : il y a des gens qui disent que les Droits de l'Homme reflètent une conception purement occidentale, et que c'est par impérialisme qu'on les a universalisés. Si je pouvais montrer, par des textes de toutes les traditions, que les hommes ont aspiré à ce qui est exigé par les Droits de l'Homme, à la reconnaissance de ce qui est dû à chaque être humain comme tel, si je pouvais montrer qu'il y a des traces de cette aspiration dans toutes les cultures, alors on verrait bien qu'il s'agit, dans la Déclaration des Droits de l'Homme, d'une exigence généralement humaine.",
+      "bbox": {
+        "x_pct": 5.25,
+        "y_pct": 41.694,
+        "w_pct": 79.695,
+        "h_pct": 22.419
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. : Vous vouliez montrer l'universalité des Droits de l'Homme.",
+      "bbox": {
+        "x_pct": 8.144,
+        "y_pct": 64.331,
+        "w_pct": 75.372,
+        "h_pct": 2.097
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment a-t-on procédé pour réaliser cet ouvrage ?",
+      "bbox": {
+        "x_pct": 18.437,
+        "y_pct": 75.0,
+        "w_pct": 56.129,
+        "h_pct": 2.419
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. : Nous avons écrit à toutes les Commissions nationales pour l'Unesco, dans tous les pays membres, pour leur demander des textes de n'importe quel genre littéraire, exprimant un besoin ou une attente dans le domaine des Droits de l'Homme, sous n'importe quelle forme. La seule restriction, c'était que ces textes fussent antérieurs à la Déclaration universelle de 1948 : je ne voulais pas recevoir de simples échos de cette Déclaration. Nous avons donc envoyé ces lettres, et nous nous sommes",
+      "bbox": {
+        "x_pct": 5.336,
+        "y_pct": 77.073,
+        "w_pct": 79.768,
+        "h_pct": 14.323
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "89",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected classification of page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Several paragraphs contained garbled text due to OCR errors.",
+    "Page number at the bottom was misclassified as text.",
+    "Speaker indicators (J.H., G.D.K.) were missing or malformed."
+  ],
+  "doc_id": "2330",
+  "page": 93,
+  "elapsed_seconds": 7.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

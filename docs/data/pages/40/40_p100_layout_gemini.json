@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "102",
+      "bbox": {
+        "x_pct": 107.7,
+        "y_pct": 84.1,
+        "w_pct": 36.6,
+        "h_pct": 19.3
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 393.2,
+        "y_pct": 84.8,
+        "w_pct": 213.9,
+        "h_pct": 19.3
+      },
+      "changed": true,
+      "change_reason": "Running header identified as section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les mois passèrent. C'est vite écrit. Je me souviens pourtant de cette période interminable et inutile. Chaque jour retombait exactement sur le dessin du précédent. La durée était aussi morte qu'un de ces mauvais papiers peints où un oiseau soi-disant plein de vie répète son cri tous les trente centimètres. Pourtant l'année suivit son cours, le soleil se leva chaque jour un peu plus tôt, il fit clair pour aller à l'école, puis pour sortir du lit, il fit tiède à midi, le crépuscule s'allongea jusqu'au début de mes promenades du soir. La neige fondit sur les montagnes, les oiseaux se mirent à chanter, les fleurs du printemps, une à une, distinguant les semaines, sortirent de la terre. Et avec tout cela un réveil de mon corps qui ne se souciait plus de moi ni de mes peines, qui de lui-même s'étirait, s'ouvrait, humait, aspirait jusqu'au fond des bouffées mêlées qui avaient passé sur de la neige fondue, des feuilles pourries, des violettes. Le long d'un trottoir mordoré d'essence, devant un garage énorme qui sentait le cambouis, voilà que le vent étalait fugitivement un pâturage, le fumier dégelé pénétrait dans les craquelures amollies de la terre. Le ciel était bleu, léger, inépuisable au regard, et l'air soyeux flottait et s'enroulait.",
+      "bbox": {
+        "x_pct": 107.7,
+        "y_pct": 127.32,
+        "w_pct": 808.92,
+        "h_pct": 558.6
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je devins bien vivante, alors. Jeus faim. Je me sentis forte et saine de la plante des pieds au bout de mes cheveux, avec une puissance illimitée de marche, de souffle, de bonheur. Tous les chemins du vaste monde me parurent possibles, mes genoux plieraient juste sur n'importe quel pierrier, et de longs pas vigoureux s'esquissaient dans mon corps. Et il n'y aurait pas de",
+      "bbox": {
+        "x_pct": 107.7,
+        "y_pct": 683.36,
+        "w_pct": 810.81,
+        "h_pct": 178.36
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial JSON missed the page number and running header components.",
+    "OCR transcription was significantly truncated or hallucinated in the second paragraph.",
+    "The page number 102 was incorrectly included as a paragraph in the initial model pass."
+  ],
+  "doc_id": "40",
+  "page": 100,
+  "elapsed_seconds": 5.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

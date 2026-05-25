@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 29.5,
+        "y_pct": 8.7,
+        "w_pct": 41.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text/zb_paragraph to section_header/zb_heading as it is a page header/section title."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "XI",
+      "bbox": {
+        "x_pct": 83.5,
+        "y_pct": 8.7,
+        "w_pct": 3.4,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "chanalyse; l'art non figuratif le théâtre noir d'avant-garde; deviennent autant d'arguments.",
+      "bbox": {
+        "x_pct": 2.744,
+        "y_pct": 11.408,
+        "w_pct": 84.164,
+        "h_pct": 4.697
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Des arguments en faveur de quoi? Contre quoi? Chose curieuse, il n'est pas facile de le préciser. Tant de virtuosité paraît avoir surtout pour objet d'effriter certaines notions claires, certaines exigences morales jusqu'alors irréductibles, en les reléguant dans une sorte de préhistoire « statique » de la pensée, et d'apprivoiser ainsi les consciences en les rendant perméables à d'imprévisibles changements — à n'importe quoi. Les attraits de la complication, de la difficulté, du snobisme, les jeux intellectuels tarabiscotés et prestigieux, la mauvaise conscience sociale, la juste révolte contre l'éloquence pharisienne de la vertu, tout cela se trouve mobilisé en vue de plier à la complaisance des esprits de jour en jour moins défendus par des traditions mal transmises, compromises, usées.",
+      "bbox": {
+        "x_pct": 2.646,
+        "y_pct": 15.597,
+        "w_pct": 84.68,
+        "h_pct": 24.804
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "BESOIN DE CLARTÉ",
+      "bbox": {
+        "x_pct": 3.301,
+        "y_pct": 44.207,
+        "w_pct": 24.93,
+        "h_pct": 1.872
+      },
+      "changed": true,
+      "change_reason": "Corrected title text string."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans cette confusion grandissante qui exclut toute confrontation claire, il m'est venu le besoin pressant de « faire de l'ordre ». Faire de l'ordre à la manière la moins brillante qui soit, selon les méthodes ménagères qui permettent de s'y retrouver dans armoires et tiroirs. Je me suis efforcée de fixer ce qui est le plus simplement banal, lorsque ce qui est banal est vrai. J'ai tenté d'écrire un livre au niveau de la vie de tous les jours, avec le moins d'ingéniosité et le plus de fidélité possible. Ce qui importe en effet aujourd'hui, ce n'est pas le brillant des essais qui fleurissent de toutes parts, c'est l'élucidation honnête des choix qui sont réellement les nôtres. Le plus grand danger pour nous, c'est moins de mal choisir que de choisir sans nous en douter, sans le vouloir, autre chose que ce que nous aurions voulu. Il importe aussi de délimiter la portée du choix que nous avons à faire afin d'empêcher qu'il ne dévore, en nous et en autrui, le respect pour la pluralité des plans de l'existence humaine et pour ce qui, en elle, les transcende tous.",
+      "bbox": {
+        "x_pct": 3.245,
+        "y_pct": 48.28,
+        "w_pct": 84.68,
+        "h_pct": 34.34
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, définir les choix qui sont les nôtres aujourd'hui, les élucider, les simplifier sans les fausser, n'est pas chose facile. Je me suis trouvée d'emblée aux prises avec trois sortes de difficultés.",
+      "bbox": {
+        "x_pct": 3.245,
+        "y_pct": 82.6,
+        "w_pct": 84.68,
+        "h_pct": 6.5
+      },
+      "changed": true,
+      "change_reason": "Included missed paragraph at the bottom."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR output was heavily fragmented and garbled in several regions",
+    "Section headers were incomplete",
+    "Page number not labeled as filter",
+    "Missing text block at the bottom of the page"
+  ],
+  "doc_id": "330",
+  "page": 25,
+  "elapsed_seconds": 6.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

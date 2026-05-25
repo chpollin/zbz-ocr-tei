@@ -1,0 +1,166 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Es sprachen:",
+      "bbox": {
+        "x_pct": 10.54,
+        "y_pct": 7.451,
+        "w_pct": 37.339,
+        "h_pct": 2.667
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Diskussionsbeiträge Nr.",
+      "bbox": {
+        "x_pct": 49.218,
+        "y_pct": 7.41,
+        "w_pct": 34.032,
+        "h_pct": 2.868
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Dr. Hans von der Groeben",
+      "bbox": {
+        "x_pct": 10.75,
+        "y_pct": 12.063,
+        "w_pct": 18.121,
+        "h_pct": 1.41
+      },
+      "changed": true,
+      "change_reason": "Corrected colon in name and recognized as section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "84, 161",
+      "bbox": {
+        "x_pct": 49.298,
+        "y_pct": 12.222,
+        "w_pct": 4.976,
+        "h_pct": 1.549
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Dr. Alexander Haidekker",
+      "bbox": {
+        "x_pct": 10.75,
+        "y_pct": 28.5,
+        "w_pct": 20.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing header region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "89, 100",
+      "bbox": {
+        "x_pct": 49.298,
+        "y_pct": 28.868,
+        "w_pct": 5.161,
+        "h_pct": 1.549
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Bernhard Hanssler",
+      "bbox": {
+        "x_pct": 10.75,
+        "y_pct": 44.0,
+        "w_pct": 20.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing header region."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. Otto Walter Haseloff",
+      "bbox": {
+        "x_pct": 10.645,
+        "y_pct": 56.875,
+        "w_pct": 20.992,
+        "h_pct": 1.576
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "10, 13, 16, 25, 27, 31, 48, 87, 110, 131 , 152, 155",
+      "bbox": {
+        "x_pct": 49.274,
+        "y_pct": 57.014,
+        "w_pct": 30.347,
+        "h_pct": 1.757
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Frau Prof. Dr. Jeanne Hersch",
+      "bbox": {
+        "x_pct": 10.75,
+        "y_pct": 78.0,
+        "w_pct": 25.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing header region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "2, 4, 6 8, 71, 19 23, 34, 36, 39, 42, 44, 46, 50, 99, 21 , 29 , 101, 129, 132, 144, 162",
+      "bbox": {
+        "x_pct": 49.298,
+        "y_pct": 78.174,
+        "w_pct": 38.952,
+        "h_pct": 1.806
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "51",
+      "bbox": {
+        "x_pct": 88.35,
+        "y_pct": 90.9,
+        "w_pct": 2.2,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 6,
+  "issues": [
+    "Several author headings were missing header tags.",
+    "Page number 51 was not correctly identified.",
+    "Truncated list of page numbers in the right column."
+  ],
+  "doc_id": "810",
+  "page": 53,
+  "elapsed_seconds": 8.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

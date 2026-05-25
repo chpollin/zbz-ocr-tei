@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cet entretien philosophie serait incomplet si l'on négligeait de rappeler le profond intéret que vous avez porté à cette autre forme d'activité humaine qu'est l'art. Vous avez consacré de nombreuses pages à l'œuvre d'art, depuis votre thèse de 1946 jusqu'à l'essai sur L'Eve d'Autun, paru en 1969, en passant par votre étude sur Chagall de 1967. Pourquoi cet intérêt pour l'art, et plus précisément pour l'œuvre d'art ? J.11. — Vous avez déjà répondu vous-même à cette question quand vous avez dit que l'œuvre d'art est la seule réalité dans laquelle s'accomplit, en une chose devant nous, l'un. L'Etre un réalisé dans une œuvre d'art m'a toujours fascinée. J'ai toujours été frappée par le fait qu'une toile n'est pas la continuation de l'espace qui est autour de nous. L'espace qu'elle occupe est un autre espace, arraché à l'espace où elle est située. L'espace est extériorité constante, alors que la toile ramène l'espace à l'intériorité. Elle se referme en quelque sorte sur de l'être, elle capture de l'être. Au lieu de rester béante sur tout le reste, elle se réalise en une unité auto-suffisante, et même si elle s'ouvre par un mouvement infini, c'est un mouvement infini dans un espace intérieur. De même pour un morceau de musique. Il implique un tout autre temps que le temps ordinaire, un temps dans lequel tous les éléments sont solidaires les uns des autres. C'est pourquoi l'œuvre d'art exige un effort, et la fatigue qu'on y prend est un signe de cette autre nature que l'on y déchiffre, que l'on reçoit et que l'on vit. Le plaisir que procure une œuvre d'art n'a rien de passif. On oublie trop souvent que la réceptivité est aussi une activité. L'artiste n'est pas le seul à être actif, le spectateur l'est également. Mais l'opération, dans l'un et l'autre cas, est complètement différente, et c'est pourquoi il y a un divorce fondamental entre l'artiste et son public. Quand on regarde une toile, on la reçoit comme une chose achevée et son achèvement est constitutif de son être pour celui qui la regarde. Mais pour le peintre, quand la toile est achevée, elle n'est plus. Elle n'existe pour lui qu'en tant que chose à faire.",
+      "bbox": {
+        "x_pct": 4.432,
+        "y_pct": 10.619,
+        "w_pct": 79.939,
+        "h_pct": 55.591
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match the actual source text which was significantly garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "GD.k. C'est aussi la raison pour laquelle le dialogue est si rare, ou si plein de malentendus, entre les artistes, qui sont des artisans, et les philosophes, qui spéculent sur l'art.",
+      "bbox": {
+        "x_pct": 4.31,
+        "y_pct": 70.129,
+        "w_pct": 79.451,
+        "h_pct": 6.46
+      },
+      "changed": true,
+      "change_reason": "Improved transcript accuracy and cleaned up artifact character errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Exactement. Mais la philosophie de l'art peut aider à recevoir l'œuvre, elle peut servir de guide à celui qui s'aventure dans ces mille chemins possibles que l'œuvre d'art lui offre. Pourvu que l'œuvre se reconstitue chaque fois entièrement.",
+      "bbox": {
+        "x_pct": 4.518,
+        "y_pct": 76.291,
+        "w_pct": 79.487,
+        "h_pct": 8.262
+      },
+      "changed": true,
+      "change_reason": "Improved transcript accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Votre réflexion sur l'art fait partie intégrante de votre philosophie de la condition humaine. Dans L'Etre et la Forme vous écrivez : « L'œuvre d'art est incarnation achevée, parfaite..., l'œuvre",
+      "bbox": {
+        "x_pct": 4.31,
+        "y_pct": 84.932,
+        "w_pct": 79.695,
+        "h_pct": 6.138
+      },
+      "changed": true,
+      "change_reason": "Improved transcript accuracy and corrected typos."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "57",
+      "bbox": {
+        "x_pct": 80.8,
+        "y_pct": 94.1,
+        "w_pct": 2.2,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "New region for page number correctly identified as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Original transcript for the long paragraph was heavily garbled.",
+    "Page number at the bottom was missing and needed to be added as a filtered region."
+  ],
+  "doc_id": "2330",
+  "page": 61,
+  "elapsed_seconds": 5.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

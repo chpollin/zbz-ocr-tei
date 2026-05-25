@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dimensions négligées, notamment le sens du temps, le sens de l'histoire qui est le nôtre aujourd'hui, et qui ne pouvait être celui de saint Thomas, au XIIIe siècle. Bien des théologiens catholiques s'aperçoivent aujourd'hui de ces nécessités.",
+      "bbox": {
+        "x_pct": 12.315,
+        "y_pct": 8.205,
+        "w_pct": 63.919,
+        "h_pct": 7.254
+      },
+      "changed": true,
+      "change_reason": "The text was fragmented and incomplete. Corrected to reflect the full content visible in the block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'une façon générale, les démocrates, au sens occidental du terme, se trouvent devant la nécessité de rechercher les raisons pour lesquelles ils tiennent au régime démocratique, de justifier leur préférence par des valeurs suffisamment décisives pour compenser les défauts du régime et le fonder plus solidement.",
+      "bbox": {
+        "x_pct": 12.395,
+        "y_pct": 15.174,
+        "w_pct": 63.839,
+        "h_pct": 8.684
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated; corrected to reflect the full text in the image block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On peut dire que les expériences communistes contraignent à rattacher la politique à une perspective métaphysique, à la situer dans une dimension qui la dépasse.",
+      "bbox": {
+        "x_pct": 12.476,
+        "y_pct": 23.573,
+        "w_pct": 63.653,
+        "h_pct": 5.675
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated; corrected to reflect the full text in the image block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais, en même temps que les expériences communistes obligent à cette revision des fondements, il se produit quelque chose d'exactement inverse. Les autres doctrines, repoussées par les expériences communistes et par la propagande communiste sur des positions défensives, tendent alors à « cléricaliser », selon le mot d'André Philip. Il définit cette « cléricalisation » comme le phénomène par lequel, à un moment donné, on se met à préférer une institution, quelle qu'elle soit, aux raisons pour lesquelles elle a été créée. Cette cléricalisation résulte souvent de la position défensive à laquelle on a été réduit. On a peur et, parce qu'on a peur, on veut être puriste. Etre puriste, c'est garder le même drapeau, le même vocabulaire, les mêmes slogans, et les répéter le plus souvent possible pour empêcher toute brèche. A partir de ce moment, on se cramponne aux institutions, au vocabulaire. On garde des fétiches, dont plus personne ne sait exactement le sens. Mais il faut les garder à tout prix, d'abord pour montrer qu'on est encore révolutionnaire, qu'on est encore de gauche, qu'on est toujours marxiste. On ne connaît plus le sens du mot, mais il faut garder le mot, sinon la chose.",
+      "bbox": {
+        "x_pct": 12.202,
+        "y_pct": 30.501,
+        "w_pct": 64.194,
+        "h_pct": 31.362
+      },
+      "changed": true,
+      "change_reason": "Text content was heavily fragmented; corrected to reflect the full readable text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette évolution est un effet, non voulu, des expériences communistes sur les autres doctrines. A mes yeux, elle est catastrophique.",
+      "bbox": {
+        "x_pct": 12.637,
+        "y_pct": 61.652,
+        "w_pct": 63.79,
+        "h_pct": 5.185
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated; corrected to reflect the full text in the image block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, les expériences communistes ont provoqué dans les autres doctrines à la fois une sclérose et un besoin de renouveau; à la fois un ferment d'approfondissement et un engourdissement. C'est là une des causes des profondes scissions qui se sont produites, non sur le plan des doctrines, mais sur le plan pratique de la vie des partis, dans tel sens ou tel autre selon que la sclérose ou le réexamen l'a emporté.",
+      "bbox": {
+        "x_pct": 12.556,
+        "y_pct": 66.838,
+        "w_pct": 64.113,
+        "h_pct": 11.755
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated; corrected to reflect the full text in the image block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En somme, l'optimisme éclairé, dans les expériences communistes proprement dites, n'est que préalable. C'est une conception superficielle et sans racines, qui crée une sorte de vacuité, le vide et l'insatisfaction qui rendent les hommes réceptifs et accessibles à une propagande prétendant les prendre tout entiers.",
+      "bbox": {
+        "x_pct": 12.524,
+        "y_pct": 78.501,
+        "w_pct": 64.226,
+        "h_pct": 9.818
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated; corrected to reflect the full text in the image block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "33",
+      "bbox": {
+        "x_pct": 74.0,
+        "y_pct": 90.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from text to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "Most text segments were improperly truncated/fragmented in the original OCR JSON.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "400",
+  "page": 7,
+  "elapsed_seconds": 8.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

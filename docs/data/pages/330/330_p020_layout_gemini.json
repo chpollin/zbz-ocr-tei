@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "VI IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 7.9,
+        "w_pct": 71.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "libérer les échanges, créer un marché commun; elle peut se diviser en partisans d'une méthode universaliste ou d'une méthode régionale (création de l'Europe). La Droite, elle, cherche avant tout à préserver ce qui est, en réalisant une économie autarcique au nom de l'autonomie nationale.",
+      "bbox": {
+        "x_pct": 11.978,
+        "y_pct": 10.963,
+        "w_pct": 85.418,
+        "h_pct": 10.339
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur les problèmes de l'Union française, la Gauche reconnaît que le mouvement moderne d'émancipation des anciennes colonies est inévitable et s'efforce d'associer partout les autochtones aux responsabilités, de développer leurs institutions locales et de les orienter vers les autonomies administratives et régionales qui seules permettront de sauvegarder avec la métropole les liens nécessaires d'interdépendance. La Droite s'accroche au statu quo au nom de traditions sacrées, cherche à maintenir les apparences d'une domination dépassée, retarde trop souvent les réformes.",
+      "bbox": {
+        "x_pct": 11.978,
+        "y_pct": 21.239,
+        "w_pct": 85.515,
+        "h_pct": 18.984
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans le domaine de l'entreprise, la Gauche affirme la nécessité de la promotion ouvrière et de la participation croissante des travailleurs aux responsabilités de la gestion. Elle insiste sur le rôle des syndicats et des coopératives. La Droite, elle, affirme la nécessité de maintenir, contre les risques d'anarchie, l'autorité exclusive de l'entrepreneur.",
+      "bbox": {
+        "x_pct": 11.978,
+        "y_pct": 39.5,
+        "w_pct": 85.5,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Missing region identified in layout."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur ces quatre essentiels, une de démarcation, semble-t-il, pourrait progressivement être tirée. Progressivement, car certains sont conservateurs en matière économique tout en reconnaissant la nécessité des réformes de l'Union française; pour d'autres, c'est l'inverse qui est vrai; d'autres encore admettent que notre économie doit être réorganisée, mais sous la forme d'un strict dirigisme d'État, les décisions appartenant aux techniciens, sans démocratisation économique et sociale. La France a besoin qu'un immense effort de confrontation honnête soit fait sur l'ensemble de ces problèmes afin de réaliser les rapprochements possibles et d'établir pour le reste, dans le respect réciproque, l'alternance au pouvoir d'un parti travailliste et d'un parti conservateur.",
+      "bbox": {
+        "x_pct": 11.741,
+        "y_pct": 51.872,
+        "w_pct": 85.752,
+        "h_pct": 24.866
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais cette alternance, de règle en Grande-Bretagne et dans les pays scandinaves, est difficile en France : conservateurs et travaillistes réunis ne représenteraient ici qu'une faible majorité et aucune des deux tendances ne peut espérer devenir majoritaire à elle seule. C'est que deux partis rassemblent des adversaires irréductibles du régime, qui ne songent qu'à saboter les institutions. Ce sont, d'une",
+      "bbox": {
+        "x_pct": 11.838,
+        "y_pct": 76.711,
+        "w_pct": 85.474,
+        "h_pct": 12.772
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Missing paragraph block for the middle section on enterprise.",
+    "Running header was included as text.",
+    "Incomplete OCR text content in some regions."
+  ],
+  "doc_id": "330",
+  "page": 20,
+  "elapsed_seconds": 5.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

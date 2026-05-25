@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sont des êtres humains. Ce qui risque de resulter de la diffusion de la contraception, combinée avec la sorte d'éducation sexuelle qu'on pratique dans nos écoles, ce n'est pas du tout, à mon avis, une obsession sexuelle généralisée – comme on a l'air de le croire. Je crains bien plutôt une banalisation de la sexualité telle qu'elle ne puisse plus guère jouer un rôle important dans la vie des individus. Et comme elle était un des ressorts vitaux, vivants, spirituels de l'âme et de toute la personne, les êtres humains risquent alors de sombrer dans l'ennui. Il y a là déjà, me semble-t-il, une des causes du malheur des jeunes, actuellement: une banalisation sexuelle qui risque d'avoir ou de continuer d'avoir des effets en profondeur – je l'ai dit – incalculables.",
+      "bbox": {
+        "x_pct": 13.91,
+        "y_pct": 13.68,
+        "w_pct": 46.54,
+        "h_pct": 39.06
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je disais que les mesures prises dans le domaine médical propagent leurs effets dans l'ensemble de la société. Si, par exemple, les médecins en venaient, dans tel et tel hôpital ou dans tel ou tel secteur, à pratiquer pour ainsi dire banalement, sous certaines conditions, l'euthanasie, cela risquerait, là aussi, de faire des ronds sur l'eau, détruisant un certain sens diffus du respect des vivants. Ce qui est diffus est le plus important dans les sociétés, beaucoup plus important que les règles cristalisées dans les lois. On verrait se répandre, dans la société, de façon diffuse, une bagatellisation de la vie humaine, dont on ne sait pas non plus quelles sortes de conséquences, à la longue, elle pourrait avoir.",
+      "bbox": {
+        "x_pct": 21.36,
+        "y_pct": 52.61,
+        "w_pct": 46.61,
+        "h_pct": 36.96
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and bounding box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fais simplement quelques remarques préliminaires. Je ne suis pas médecin. Je ne suis pas parent d'handicapé. Je n'ai aucune espèce de contact vécu avec ces problèmes. Et par conséquent, devant vous, je suis un peu ridicule quand je parle de ces problèmes, pour vous réels et quotidiens. C'est pourquoi je préfère m'en tenir à ces quelques remarques, que je crois valables.",
+      "bbox": {
+        "x_pct": 48.91,
+        "y_pct": 13.3,
+        "w_pct": 46.54,
+        "h_pct": 33.39
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph from top right."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On réclame aujourd'hui, d'un côté, le droit à disposer de soi, on parle du droit à la vie. Remarquez qu'il y a quelque chose de commun dans ces deux expressions, c'est en tout cas le droit à... L'OMS, l'Organisation mondiale de la santé, parle du droit à la santé. Pour ma part, je crois qu'il y a ni droit à la vie, ni droit à disposer de soi, ni droit à la santé. C'est pas moi qui refuse de nous reconnaître ces droits: ils ne nous sont pas reconnus en fait. Si nous avons droit à la vie, pourquoi mourons-nous tous? Si nous avons droit à disposer de nous-mêmes, pourquoi dépendons-nous des autres? Est-ce que nous nous sommes faits nous-mêmes? Est-ce que nous sommes nos propres auteurs? Est-ce que nous pouvons vivre par nous-mêmes? Un étudiant disait, un jour: «Moi, je ne dois rien à personne». «Ah, tiens,» j'ai dit, et je me suis mise à lui poser une série de questions.» Mais vous devez tout aux autres. Je ne parle même pas de Dieu, je vous parle «des autres».",
+      "bbox": {
+        "x_pct": 48.74,
+        "y_pct": 35.15,
+        "w_pct": 46.92,
+        "h_pct": 50.86
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Droit à la santé. Mais nous passons notre temps à faire des choses qui sont contraires à notre santé. Nous nous fatiguons. Comme disait Sacha Guitry: «Le...",
+      "bbox": {
+        "x_pct": 48.96,
+        "y_pct": 86.4,
+        "w_pct": 46.56,
+        "h_pct": 7.42
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "309",
+      "bbox": {
+        "x_pct": 92.17,
+        "y_pct": 95.8,
+        "w_pct": 3.75,
+        "h_pct": 2.76
+      },
+      "changed": true,
+      "change_reason": "Marked page number as filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text detection was heavily truncated and fragmented across all paragraphs.",
+    "Page number at bottom right was misidentified as text.",
+    "Bounding boxes were inaccurately cropped for the paragraph text."
+  ],
+  "doc_id": "1820",
+  "page": 6,
+  "elapsed_seconds": 5.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

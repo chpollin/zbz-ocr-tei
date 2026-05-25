@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "sich die Menschen von der übrigen Natur unterscheiden von diesem gemeinsamen Geheimnis aus erhält di",
+      "bbox": {
+        "x_pct": 5.101,
+        "y_pct": 6.667,
+        "w_pct": 71.773,
+        "h_pct": 26.268
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber der Kampf um die Menschenrechte beschränkt sich nicht allein auf den Kampf gegen den Rassismus ",
+      "bbox": {
+        "x_pct": 4.915,
+        "y_pct": 37.02,
+        "w_pct": 71.902,
+        "h_pct": 20.775
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn es s0 ist, dass die Achtung der Menschenrechte dazu verpflichtet, bei jedem menschlichen Wesen,",
+      "bbox": {
+        "x_pct": 4.915,
+        "y_pct": 58.177,
+        "w_pct": 71.934,
+        "h_pct": 22.678
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in start word"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es stimmt, dass die tatsächliche Ausübung dieser Rechte an eine Anzahl Bedingungen geknüpft ist, die",
+      "bbox": {
+        "x_pct": 5.02,
+        "y_pct": 81.197,
+        "w_pct": 71.692,
+        "h_pct": 7.464
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "59",
+      "bbox": {
+        "x_pct": 73.91,
+        "y_pct": 90.28,
+        "w_pct": 3.12,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Typo in initial text region for paragraph 3",
+    "Missing page number region"
+  ],
+  "doc_id": "1120",
+  "page": 4,
+  "elapsed_seconds": 4.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected typo in start word": 1,
+    "ADDED": 1
+  }
+}

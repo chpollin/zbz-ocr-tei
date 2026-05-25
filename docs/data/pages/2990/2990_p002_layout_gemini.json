@@ -1,0 +1,39 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Inhalt",
+      "bbox": {
+        "x_pct": 8.191,
+        "y_pct": 6.686,
+        "w_pct": 12.262,
+        "h_pct": 2.993
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vorwort . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7\n\nPhilosophie als Schule des Staunens\n\nMenschsein, Grenzen und Widersprüche . . . . . . . . . . . . . . . . 13\nWas ist Geschichte? Vorbedingungen, Zwang und Sinn . . . . . . . . . 23\nMenschlich erlebte Zeit . . . . . . . . . . . . . . . . . . . . . . . . . . 33\nWelt und Geschichte . . . . . . . . . . . . . . . . . . . . . . . . . . . 43\nVom Drang zu den Wissenschaften . . . . . . . . . . . . . . . . . . . 51\nVom Wissen und Nicht-Wissen . . . . . . . . . . . . . . . . . . . . . 61\nVom Sinn der Technik . . . . . . . . . . . . . . . . . . . . . . . . . . . 71\nVon der philosophischen Klarheit als Pflicht . . . . . . . . . . . . . . 81\n\nRudolf zur Lippe\nAm Leitfaden des Denkens . . . . . . . . . . . . . . . . . . . . . . . . . 91",
+      "bbox": {
+        "x_pct": 8.399,
+        "y_pct": 20.099,
+        "w_pct": 80.073,
+        "h_pct": 54.531
+      },
+      "changed": true,
+      "change_reason": "Corrected the label from document_index to text, as this is a table of contents, not an index."
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "The bounding box for the contents text region covers the whole table, which is acceptable but could have been broken down per line."
+  ],
+  "doc_id": "2990",
+  "page": 2,
+  "elapsed_seconds": 4.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

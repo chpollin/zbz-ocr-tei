@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Herz muß mitreden !",
+      "bbox": {
+        "x_pct": 10.39,
+        "y_pct": 26.201,
+        "w_pct": 15.03,
+        "h_pct": 3.253
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zur der Kernenergie: risikoreiche Entzweiung über dem Risiko",
+      "bbox": {
+        "x_pct": 4.836,
+        "y_pct": 74.36,
+        "w_pct": 20.78,
+        "h_pct": 6.812
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Darf ich das Stichwort Kernenergie aufnehmen – und zwar nicht als Sachfrage, sondern als Phänomen?",
+      "bbox": {
+        "x_pct": 28.015,
+        "y_pct": 32.023,
+        "w_pct": 65.323,
+        "h_pct": 6.354
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Ich hatte gehofft, Sie würden das Stichwort Herz aufnehmen.",
+      "bbox": {
+        "x_pct": 28.343,
+        "y_pct": 40.83,
+        "w_pct": 64.836,
+        "h_pct": 4.534
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Dazu komme ich noch. – Je länger ich darüber nachdenke, um so mehr fasziniert mich die Tatsache, daß zwei benachbarte Staaten, Frankreich und die Schweiz, die zum Teil eine gemeinsame Sprache haben, so völlig unterschiedlich auf die Frage der Kernenergie reagieren. Wir sollten daraus etwas lernen können. Wie können wir es schaffen, daß man nicht mit einer vereinfachenden Schlußfolgerung für dieses oder gegen jenes Risiko optiert? Wie können wir nicht nur den Verstand, sondern die Herzen bewegen, daß wir in dieser Frage wieder einen minimalen nationalen Konsens finden? Wie gesagt, es geht mir nicht um die Sachfrage der Kernenergie, sondern um das gesellschaftliche Phänomen.",
+      "bbox": {
+        "x_pct": 27.808,
+        "y_pct": 47.868,
+        "w_pct": 65.53,
+        "h_pct": 33.865
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Wenn ich auf Ihre Frage eine Antwort wüßte, so wäre ich wahrscheinlich in der Schweiz",
+      "bbox": {
+        "x_pct": 28.222,
+        "y_pct": 83.77,
+        "w_pct": 65.079,
+        "h_pct": 4.461
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "32",
+      "bbox": {
+        "x_pct": 59.2,
+        "y_pct": 91.2,
+        "w_pct": 2.1,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Transcription for almost all text blocks was truncated or erroneous.",
+    "Page number at bottom was missing a label/region.",
+    "The region containing 'Zur der Kernenergie...' had extraneous text from the previous page column included."
+  ],
+  "doc_id": "2400",
+  "page": 31,
+  "elapsed_seconds": 7.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

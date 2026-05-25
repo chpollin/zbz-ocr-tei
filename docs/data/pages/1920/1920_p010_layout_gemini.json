@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "constituent l'épreuve toujours décisive de nos plus beaux rêves. Les décisions prises en tenant compte d'aspects aussi divers et multiples que possible qui constituent notre condition, ces aspects tous relatifs et où tout est relatif, — et pourtant ces décisions sont prises par rapport à un absolu présent et exclu, inaccessible, efficace et passé sous silence.",
+      "bbox": {
+        "x_pct": 13.655,
+        "y_pct": 9.265,
+        "w_pct": 75.984,
+        "h_pct": 9.556
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visible image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour qui incarne ainsi, toujours et tous les jours, l'historicité humaine, en un temps comme le nôtre, un style s'impose. C'est celui d'Aron. Certains le trouvent glacé, dépourvu de «sentiment», de «coeur». Il me semble qu'il faudrait avoir le coeur peu exigeant et assez consentant au mensonge pour oser l'afficher dans le monde d'aujourd'hui. Le style d'Aron, limpide et sec, témoigne de beaucoup plus que de la pudeur. C'est le style d'un homme pour qui vérité et liberté ne vont pas l'une sans l'autre et qui ne respire qu'à leur intersection.",
+      "bbox": {
+        "x_pct": 13.702,
+        "y_pct": 20.355,
+        "w_pct": 75.972,
+        "h_pct": 14.297
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visible image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La vie de Raymond Aron est en elle-même, je crois, ce grand livre de philosophie de l'histoire qu'il voulait écrire.",
+      "bbox": {
+        "x_pct": 13.702,
+        "y_pct": 36.244,
+        "w_pct": 75.902,
+        "h_pct": 3.901
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 14.406,
+        "y_pct": 88.082,
+        "w_pct": 2.219,
+        "h_pct": 1.934
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, reassigned to filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text transcriptions were truncated or incorrect.",
+    "Page number at bottom left was misidentified as text.",
+    "Bounding box for paragraph 4 in original JSON was incorrect (referred to a stray asterisk, ignored)."
+  ],
+  "doc_id": "1920",
+  "page": 10,
+  "elapsed_seconds": 4.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

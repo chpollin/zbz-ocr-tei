@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le Stil, une amie très proche d'Henri et de sa femme, pendant toutes ces années. Cela n'a pas tenu seulement à nos idées communes, nos intérêts, notre débat politique. Il se trouvait que la femme d'Henri est corse. Ils ont acheté en Corse un terrain pour y passer leurs vieux jours. Quand j'ai vu les diapositives de ce terrain, j'ai reconnu un pays imaginaire dont j'avais toujours rêvé : la chaleur, la mer, les rochers, les plages, la montagne, les forêts, les vieux villages de granit. Ils m'ont trouvé un petit coin tout près de chez eux. Ainsi, depuis vingt cinq ans, je passe tous mes étés là-bas.",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 4.677,
+        "w_pct": 79.529,
+        "h_pct": 20.645
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C.D.K. — Vous avez eu un autre ami, je crois, André Philip, qui a aussi fait partie du premier gouvernement de Gaulle ?",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 25.968,
+        "w_pct": 79.529,
+        "h_pct": 25.645
+      },
+      "changed": true,
+      "change_reason": "Included missed dialogue header in the text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui, il a été un ardent militant socialiste et un grand Européen. Chez André Philip l'exigence de justice sociale, le besoin d'aider les plus défavorisés l'emportait sur toute autre considération. Mais surtout, il ne supportait sous aucune forme le viol des consciences. Il s'est élevé de toutes ses forces contre la guerre d'Algérie et les méthodes de torture et de lavage de cerveaux pratiquées sous le gouvernement pourtant socialiste, dont les membres appartenaient à la SFIO. André Philip fut alors exclu de la SFIO, et j'ai publié un article dont la dernière phrase disait que nous étions nombreux à nous sentir exclus en même temps que lui.",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 29.597,
+        "w_pct": 79.529,
+        "h_pct": 20.056
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Y avait-il des contacts entre ces milieux européens et le cercle de Denis de Rougemont en Suisse ?",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 50.161,
+        "w_pct": 79.529,
+        "h_pct": 4.411
+      },
+      "changed": true,
+      "change_reason": "Fixed spelling errors in OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Denis de Rougemont a surtout mené le combat pour l'Europe au niveau culturel. A cause sans doute de ses origines suisses, il avait une conception avant tout fédéraliste et culturelle de l'Europe. Un exemple de cette différence : jamais ni Philip, ni Frenay n'auraient fondé leur fédéralisme sur une doctrine des régions opposée à l'Etat-nation, comme l'a fait Denis de Rougemont. Pour eux, la suppression de l'Etat-nation était quasi impensable. Mais ils étaient tout à fait capables de souhaiter une limitation de la souveraineté de chaque Etat, permettant de créer une autorité supranationale.",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 54.008,
+        "w_pct": 79.529,
+        "h_pct": 18.226
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C.D.K. — Vous avez bien connu Jean Laloy, qui, lui, ne fait pas partie des milieux politiques proprement dits, puisqu'il a été diplomate.",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 73.661,
+        "w_pct": 79.529,
+        "h_pct": 2.734
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and included dialogue identifier."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il était diplomate de métier. Il a longtemps représenté la France à Moscou. Il a appris le russe et acquis une profonde connaissance de la littérature russe. Il a traduit des textes de russe en français, il a écrit sur la Russie, il a essayé de faire comprendre à l'Ouest ce qu'est que la Russie, d'une part, et le communisme, d'autre part, et il a montré qu'on ne peut identifier l'un et l'autre, comme beaucoup d'hommes politiques occidentaux le font. Je dois dire, à ce propos, que je suis souvent étonnée de voir",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 77.798,
+        "w_pct": 79.529,
+        "h_pct": 14.137
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "214",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 94.677,
+        "w_pct": 3.75,
+        "h_pct": 2.218
+      },
+      "changed": true,
+      "change_reason": "Re-labeled page number from text to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "Most regions required significant text correction due to OCR errors.",
+    "Dialogue headers (C.D.K. —) were separated from the main text blocks incorrectly.",
+    "Page number at bottom left was mislabeled as text."
+  ],
+  "doc_id": "2330",
+  "page": 218,
+  "elapsed_seconds": 8.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

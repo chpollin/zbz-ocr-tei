@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "44",
+      "bbox": {
+        "x_pct": 14.196,
+        "y_pct": 3.961,
+        "w_pct": 1.777,
+        "h_pct": 1.946
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 55.457,
+        "y_pct": 3.961,
+        "w_pct": 38.741,
+        "h_pct": 1.946
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Widerstand. Nur das Konkrete leistet Widerstand. Welt und Geschichte kommen da sozusagen ineinander, sie vermischen sich.",
+      "bbox": {
+        "x_pct": 14.196,
+        "y_pct": 7.73,
+        "w_pct": 80.037,
+        "h_pct": 5.946
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Geschichte von heute kann man manchmal ansehen, als wäre sie eine Geographie, die Beschreibung einer Umwelt in der Zeit. Und die Menschen suchen auch eine Geschichte der Welt wie z.B. die Geologen und die Physiker. Aber was ist der Unterschied zwischen der Geschichte der Welt und einer Geschichte im menschlichen Sinn? In der Geschichte der Welt liest man keine Absicht, man verbindet sie nicht mit den drei Momenten der Zeit. Denn die Welt beschreibt man nicht, als würde sie auf eine Zukunft hin zielen; den Menschen wohl.",
+      "bbox": {
+        "x_pct": 14.196,
+        "y_pct": 13.512,
+        "w_pct": 80.074,
+        "h_pct": 15.789
+      },
+      "changed": true,
+      "change_reason": "Corrected broken/incomplete transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Mensch staunt, daß es so, und nicht anders, ist. Und es ist seltsam, man kann keine klare Sicht davon bekommen. Aber es kann anders werden. Der Mensch ist also nie ganz allein in der Leere, er ist immer mit einer Welt und mit einer Geschichte, von der er abhängt, und von der er nicht nur abhängt, sondern für die er sich zugleich auch mitverantwortlich fühlt. Er kann etwas dafür; er kann etwas tun, damit diese Welt und diese Geschichte nicht so, sondern anders werden. Diese Verantwortung, diese Mitverantwortung, nimmt er auf sich, indem er versucht, zunächst einmal diese Mitwelt, diese Mitgeschichte zu erkennen und zu verstehen. Und um die Geschichte zu verstehen, versucht er seine eigene Geschichte zu verstehen. Hätte der Mensch keine eigene Geschichte, könnte er sich die Welt nicht geschichtlich vorstellen. Um die Welt zu erkennen, will er also die Geschichte der Welt bis in die letzte Vergangenheit erforschen. Er möchte soweit zurückgreifen wie nur möglich, und wenn möglich, bis zum ersten Anfang.",
+      "bbox": {
+        "x_pct": 14.074,
+        "y_pct": 29.276,
+        "w_pct": 80.074,
+        "h_pct": 29.712
+      },
+      "changed": true,
+      "change_reason": "Corrected broken/incomplete transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun hat man in unserer Zeit versucht, mit dem big bang den ersten Augenblick der Zeit zu verstehen, sich wissenschaftlich vorzustellen, was da geschehen ist, und das quantitativ, durch mathematische Physik, zu erklären. Vielleicht stimmt es, daß dies in der mathematischen Physik evident ist und daß man diese Wahrheit wissenschaftlich quantitativ feststellen kann. Aber was sollen wir denken, wenn wir feststellen müssen, daß es nicht denkbar ist? Man kann vielleicht messen, aber denken kann man es nicht. Wieso wage ich zu sagen, daß man das denken kann, wenn es berühmte Gelehrte gibt, die Bücher darüber schreiben? Weil dieser Ausdruck keinen phänomenalen Sinn hat. Wir können es nicht denken, denn es gibt - und glaube ich, daß Kant vollkommen recht hat - die a priori Form der Zeit. Da es ohne die a priori Form der Zeit nicht denkbar ist, weiß ich nicht, was \"der erste Augenblick\" bedeuten soll. Der erste Augenblick ist also ein Noumenon oder er ist nichts. Wenn man behauptet, es",
+      "bbox": {
+        "x_pct": 14.025,
+        "y_pct": 58.66,
+        "w_pct": 80.049,
+        "h_pct": 27.993
+      },
+      "changed": true,
+      "change_reason": "Corrected broken/incomplete transcription."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text was extremely fragmented and poor, requiring full re-transcription.",
+    "Page number and running header were incorrectly labeled as text.",
+    "Multiple regions merged or misidentified during initial layout analysis."
+  ],
+  "doc_id": "2990",
+  "page": 37,
+  "elapsed_seconds": 6.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "88",
+      "bbox": {
+        "x_pct": 14.123,
+        "y_pct": 59.805,
+        "w_pct": 19.344,
+        "h_pct": 28.516
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/_filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 43.684,
+        "y_pct": 65.508,
+        "w_pct": 13.067,
+        "h_pct": 27.539
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ainsi que le Pouvoir s'infiltre dans tout le corps social sans s'identifier à la Société. Il est subi, mais rarement reconnu par ceux qui le subissent; il est exercé, mais non assumé par ceux qui l'exercent, et qui, presque tous, le subissent à leur tour.",
+      "bbox": {
+        "x_pct": 14.005,
+        "y_pct": 10.165,
+        "w_pct": 75.729,
+        "h_pct": 10.719
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parce que ce n'est pas la vie et la mort sont en jeu, mais un gain, un avancement, le jeu du pouvoir ne peut être que mesquin et en quelque sorte nivellateur. Les alternatives cornéliennes ne se présentent jamais. On accepte peu à peu n'importe quoi, par un curieux sentiment où se mélangent impuissance et sagesse. Chacun dépend d'un quelqu'un provisoire, et à travers ce quelqu'un, d'un corps dont la raison d'être paraît suffisante. Ainsi s'exerce le Pouvoir de Personne.",
+      "bbox": {
+        "x_pct": 13.738,
+        "y_pct": 21.38,
+        "w_pct": 75.926,
+        "h_pct": 17.488
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est surtout grâce à cette paralysie raisonnable que Hitler a pu détenir le Pouvoir. C'est, malgré certaines différences, grâce à cette même paralysie que les despotes de l'Est peuvent faire fonctionner le régime du goulag. Le Pouvoir de Personne, infiltré partout, annihile les résistances au Pouvoir politique saisi par Quelqu'un. Un des principaux éléments constitutifs par nature du Pouvoir tyrannique, c'est le Pouvoir diffus et anonyme qui garantit et institutionnalise la lâcheté des hommes.",
+      "bbox": {
+        "x_pct": 13.773,
+        "y_pct": 38.818,
+        "w_pct": 75.891,
+        "h_pct": 17.736
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pouvoir tyrannique alors s'isole et s'absolutise au nom d'une visée abstraite de la Totalité. Corrompu, il réalise la destruction radicale du mixte symbolique nécessaire à sa nature. Il s'arrache au terreau humain complexe qui devrait être le sien. Il tend à le détruire et à régner sans obstacle dans le vide où rien ne résiste.",
+      "bbox": {
+        "x_pct": 13.738,
+        "y_pct": 56.719,
+        "w_pct": 75.81,
+        "h_pct": 13.281
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les événements de notre siècle, par leur énormité, semblent avoir ainsi détruit le mixte symbolique du Pouvoir. Ce n'est pas impunément qu'un Pouvoir totalitaire incarne pendant une longue période le Mal absolu, si bien que toute légitimité se trouve rejetée dans l'opposition clandestine jusqu'à justifier inconditionnellement ses actes quels qu'ils soient.",
+      "bbox": {
+        "x_pct": 13.542,
+        "y_pct": 70.058,
+        "w_pct": 75.961,
+        "h_pct": 13.438
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La conséquence durable; c'est le mépris du Pouvoir, le rejet du Pouvoir quel qu'il puisse être, puisque le Symbole, indispensable à sa nature, est mort.",
+      "bbox": {
+        "x_pct": 13.924,
+        "y_pct": 83.281,
+        "w_pct": 75.544,
+        "h_pct": 6.826
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Detected page number and header were not correctly labeled.",
+    "The OCR text content needed refinement for accuracy."
+  ],
+  "doc_id": "1530",
+  "page": 16,
+  "elapsed_seconds": 7.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

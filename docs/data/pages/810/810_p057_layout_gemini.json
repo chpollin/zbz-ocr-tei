@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. D. Gabor",
+      "bbox": {
+        "x_pct": 7.661,
+        "y_pct": 12.847,
+        "w_pct": 12.234,
+        "h_pct": 1.479
+      },
+      "changed": true,
+      "change_reason": "Person name in directory list should be section_header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 89.677,
+        "y_pct": 90.729,
+        "w_pct": 2.258,
+        "h_pct": 1.25
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. G GAFGEN",
+      "bbox": {
+        "x_pct": 7.661,
+        "y_pct": 15.028,
+        "w_pct": 12.96,
+        "h_pct": 2.146
+      },
+      "changed": true,
+      "change_reason": "Directory entry, should be section_header"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Detected many labels as text when they should be section_header/zb_heading in the directory",
+    "Missing detection of page number 55 in the bottom right corner",
+    "Many names like 'Peter Galliner' and 'Dr. G. Gambke' should be marked as section_header"
+  ],
+  "doc_id": "810",
+  "page": 57,
+  "elapsed_seconds": 5.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

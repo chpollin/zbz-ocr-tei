@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dualmente, luno succedente all'altro e integrantisi in una visione di traslazione.",
+      "bbox": {
+        "x_pct": 6.983,
+        "y_pct": 7.285,
+        "w_pct": 85.219,
+        "h_pct": 3.833
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In questo senso mi sembra che le concezioni di dOr messon e della Signorina Hersch non siano contraddittorie, ma in qualche modo complementari, come due visioni alternative e sovrapponibili secondo il punto di vista adottato.",
+      "bbox": {
+        "x_pct": 7.345,
+        "y_pct": 10.927,
+        "w_pct": 84.962,
+        "h_pct": 8.113
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text output to match document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mi sembra che nel secondo caso, considerato da Dalla Porta, senza l'occhio di Dio le due prospettive divengono identiche invece che simmetriche. Mentre in S. Agostino credo vi sia una simmetria parziale.",
+      "bbox": {
+        "x_pct": 7.195,
+        "y_pct": 19.975,
+        "w_pct": 85.415,
+        "h_pct": 7.864
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and removed artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'Ormesson ha individuato correttamente che, qualora si operi una distinzione tra una storia rettilinea e una storia circolare, quella dell'eterno ritorno, la simmetria speculare cercata nella storia non può essere in nessun caso la seconda, in quanto occorrerebbe che il nuovo ciclo fosse invertito rispetto al precedente.",
+      "bbox": {
+        "x_pct": 7.285,
+        "y_pct": 28.808,
+        "w_pct": 85.52,
+        "h_pct": 11.614
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and removed artifact prefixes."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Esiste tuttavia una concezione buddista della storia, di per sé aberrante, che si differenzia da quella dei cicli, ricordata precedentemente. Questa si fonda sul concetto di totalità simmetrica della storia; il tempo inizia con la nascita di Budda, fissata a qualche migliaio di anni fa quando l'uomo si trovava allo stato selvaggio. Egli riusciva tuttavia a svilupparsi gradualmente tendendo a raggiungere l'età dell'oro in cui regna la virtù e l'armonia. Questo processo si realizza per fasi di 50.000 anni. In seguito, sempre con fasi identiche, il mondo ridiscende, per cosí dire, la scala: dapprima scompare la carità, quindi cominciano ad alterarsi le relazioni umane e a prendere il sopravvento la violenza. 50.000 anni piú tardi sopraggiunge nell'uomo la perdita della favella e le parole non hanno piú un significato stringente. La decadenza è esattamente simmetrica allo sviluppo, e finalmente al termine della « parabola » il mondo ritorna allo stesso stato selvaggio da cui era partito. In questo modo, si ha veramente una concezione della storia ispirata dalla simmetria speculare. Questa stessa concezione sussiste, in forma piú elaborata, in parte degli storici moderni che immaginano cicli storici in cui l'umanità, muovendo da una situazione di barbarie, tende verso un secolo d'oro, un punto di equilibrio e di perfezione, inizio una decadenza che riporta la cultura alla sua primitiva condizione selvaggia.",
+      "bbox": {
+        "x_pct": 7.285,
+        "y_pct": 39.677,
+        "w_pct": 85.777,
+        "h_pct": 44.123
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Questa stessa concezione si ritrova d'altra parte espressa con chiarezza nella storia dell'arte. Ritengo tuttavia che la simmetria speculare della storia non sia una sua intrinseca caratteristica, ma derivi soltanto dalla nostra concezione della storia stessa.",
+      "bbox": {
+        "x_pct": 8.039,
+        "y_pct": 83.419,
+        "w_pct": 84.872,
+        "h_pct": 9.131
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "240",
+      "bbox": {
+        "x_pct": 7.9,
+        "y_pct": 95.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Several paragraphs had severe OCR corruption/truncation.",
+    "Page number at the bottom was mislabeled as text.",
+    "Redundant/artifact text at start of paragraphs removed."
+  ],
+  "doc_id": "990",
+  "page": 12,
+  "elapsed_seconds": 7.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

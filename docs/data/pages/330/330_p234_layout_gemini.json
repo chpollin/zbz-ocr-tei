@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "page_header",
+      "text": "200",
+      "bbox": {
+        "x_pct": 92.234,
+        "y_pct": 82.936,
+        "w_pct": 2.432,
+        "h_pct": 1.827
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "page_header",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 36.334,
+        "y_pct": 80.936,
+        "w_pct": 27.432,
+        "h_pct": 1.827
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dimensions continentales le pouvoir politique de chaque citoyen en f©d©rant les nations aujourd'hui soi-disant souveraines sous une autorit© politique commune, d©mocratiquement ©lue.",
+      "bbox": {
+        "x_pct": 9.234,
+        "y_pct": 10.936,
+        "w_pct": 85.432,
+        "h_pct": 6.827
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais là, semble-t-il, le vice d'abstraction de la démocratie se trouverait porté à son comble. La distance entre les autorités et le peuple ne ferait que croître. Suivre au jour le jour la politique gouvernementale deviendrait de plus en plus difficile et vain. Les élections elles-mêmes seraient presque aveugles, tellement la personnalité des candidats resterait lointaine et inconnue.",
+      "bbox": {
+        "x_pct": 9.053,
+        "y_pct": 17.264,
+        "w_pct": 85.613,
+        "h_pct": 12.888
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certains ont espéré remédier à cette difficulté par un système d'élections indirectes à plusieurs degrés, le citoyen élisant un homme qu'il connaît dans sa petite circonscription, ces délégués, qui se connaissent les uns les autres, élisant à leur tour l'autorité supérieure, et ainsi de suite. Mais l'expérience montre que, lorsque l'élection repose sur la personnalité familière du candidat, ce sont les intérêts locaux et privés qui l'emportent, noyant l'intérét général et les vastes perspectives du bien commun. Il faut chercher autre chose.",
+      "bbox": {
+        "x_pct": 9.053,
+        "y_pct": 29.528,
+        "w_pct": 85.836,
+        "h_pct": 18.717
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici s'affirme encore plus fortement au niveau national le rôle indispensable qu'ont à jouer les partis. Ce sont eux qui doivent étudier les programmes, utiliser les compétences techniques, exercer leur contrôle, former une catégorie importante de citoyens (leurs militants), informés, entraénés, vigilants, formuler pour la masse entière les opinions simplifiées, claires et vastes, qui permettent à chacun de faire enfin son choix.",
+      "bbox": {
+        "x_pct": 8.955,
+        "y_pct": 48.369,
+        "w_pct": 85.891,
+        "h_pct": 14.822
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'intégration du citoyen dans l'édifice démocratique est une tâche décisive pour la démocratie d'aujourd'hui. Et sans doute cette tâche exige-t-elle encore un certain retour aux formes visibles. Les rites du parlementarisme doivent retrouver leur rigueur et leur signification manifeste. Rien, en effet, ne discrédite davantage aux yeux du public les institutions républicaines que le spectacle offert par les séances des parlements ou les grands congrès des partis. Le non-initié n'y voit qu'un vaste brouhaha où la parole humaine, galvaudée, n'est qu'un bruit ; où les participants entrent et sortent, s'occupent d'autre chose ; où rien ne se décide ; où les jeux sont faits. Que les couloirs soient des lieux où s'accomplit un travail démocratique réel, que le jeu des commissions permette de confronter les diverses opinions du pays, que le résultat, en fait,",
+      "bbox": {
+        "x_pct": 8.872,
+        "y_pct": 62.273,
+        "w_pct": 85.696,
+        "h_pct": 27.923
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Page number and running header incorrectly identified as text.",
+    "The initial segmentation had incorrectly merged content blocks.",
+    "OCR text extraction contains artifacts/spelling errors requiring cleanup."
+  ],
+  "doc_id": "330",
+  "page": 234,
+  "elapsed_seconds": 9.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

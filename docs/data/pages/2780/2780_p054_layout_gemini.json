@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dure le Paradis terrestre avant la chute. Et le théologien de répondre que l'on ne savait pas, mais que tout portait à croire que cela avait été bref. ... Il avait sûrement raison. Ce fut très bref, car on ne peut guère parler de durée à propos du Paradis. Parce qu'il est dans le temps, l'homme a besoin du désir, donc du manque, pour ne pas s'ennuyer. Pourtant il ne rêve que d'échapper au manque et de parvenir à la plénitude définitive. Faire coïncider le désir et la plénitude, voilà en quoi consiste le «transcender».",
+      "bbox": {
+        "x_pct": 15.784,
+        "y_pct": 13.562,
+        "w_pct": 57.553,
+        "h_pct": 23.856
+      },
+      "changed": true,
+      "change_reason": "OCR correction for better accuracy of the paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La «réceptivité active» dont j'ai parlé tout à l'heure est un terme contradictoire ; mais j'ai depuis longtemps renoncé - surtout lorsqu'il s'agit de réalités philosophiques - à considérer la contradiction comme un vice rédhibitoire. Au contraire, chaque fois que l'on touche à un nœud de la condition humaine - et en philosophie on les cherche - une figure contradictoire surgit devant nous. Et la contradiction est peut-être un des instruments privilégiés qui nous permet ou qui nous aide à transcender.",
+      "bbox": {
+        "x_pct": 15.89,
+        "y_pct": 37.443,
+        "w_pct": 57.415,
+        "h_pct": 23.971
+      },
+      "changed": true,
+      "change_reason": "OCR correction for better accuracy of the paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est certain que «réceptivité active» constitue une expression contradictoire, mais c'est la contradiction même de la liberté. Dans son acception superficielle de libre arbitre ou d'arbitraire, la liberté est le pouvoir de faire n'importe quoi, n'im-",
+      "bbox": {
+        "x_pct": 15.89,
+        "y_pct": 61.332,
+        "w_pct": 57.447,
+        "h_pct": 11.544
+      },
+      "changed": true,
+      "change_reason": "OCR correction for better accuracy of the paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 70.364,
+        "y_pct": 75.056,
+        "w_pct": 2.975,
+        "h_pct": 2.383
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was very low quality with several mangled words.",
+    "Page number 55 was initially missing from detection, added now."
+  ],
+  "doc_id": "2780",
+  "page": 54,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

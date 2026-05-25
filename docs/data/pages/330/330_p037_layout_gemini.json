@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PREMIER",
+      "bbox": {
+        "x_pct": 45.822,
+        "y_pct": 26.025,
+        "w_pct": 11.379,
+        "h_pct": 1.426
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DESCRIPTION DE LA SITUATION IDÉOLOGIQUE ACTUELLE",
+      "bbox": {
+        "x_pct": 9.429,
+        "y_pct": 29.439,
+        "w_pct": 70.975,
+        "h_pct": 4.813
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONSIDÉRATIONS PRÉALABLES",
+      "bbox": {
+        "x_pct": 2.925,
+        "y_pct": 37.585,
+        "w_pct": 38.162,
+        "h_pct": 1.925
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo 'CoNSID' to 'CONSID' in text field."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le politique et social, les catégories usuelles du vrai et du faux, du réel et de l'imaginaire perdent leur netteté et doivent étre utilisées avec une grande prudence. En effet, si je dis qu'hier à cinq heures de l'après-midi, j'ai pris le thé avec Michel, alors qu'en réalité j'étais occupée à brûler des papiers compromettants, il s'agit d'un mensonge pur et simple (qui, bien entendu, comme tout mensonge, pourra avoir des conséquences réelles), et ce thé avec Michel restera inexistant, sinon à l'état de représentation dans l'esprit de celui auquel le mensonge aura été dit. En revanche, si je propage avec suffisamment d'insistance la nouvelle que le parti communiste international défend la liberté des peuples, il se trouvera des gens pour adhérer à ce parti afin de mieux défendre cette liberté; et même si le parti communiste se moque en fait de la liberté des peuples et asservit au contraire peuples et cultures à un mode de vivre et de pensée unique, ceux qui y auront adhéré pour défendre la liberté des peuples la défendront en effet dans une certaine mesure et en certaines circonstances. Par exemple, ils défendront réellement les droits du peuple indochinois contre l'emprise française, aussi longtemps que la possibilité leur en sera laissée par la ligne générale du parti. De même, des mouvements conservateurs peuvent attirer des adhérents en prétendant défendre la civilisation occidentale et la valeur de la personne humaine, même si en fait ils se moquent de la civilisation occiden-",
+      "bbox": {
+        "x_pct": 2.758,
+        "y_pct": 41.328,
+        "w_pct": 84.568,
+        "h_pct": 47.326
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misread text in the paragraph block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 895.0,
+        "w_pct": 20.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and tagged as filter."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text for the main paragraph was significantly truncated and contained reading errors.",
+    "Page number at the bottom was missing from the initial detection list.",
+    "Minor typo in section header 'CONSIDÉRATIONS'."
+  ],
+  "doc_id": "330",
+  "page": 37,
+  "elapsed_seconds": 5.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

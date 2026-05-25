@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Bernard van Leer-Stiftung führte vor einiger Zeit ein Symposium zur Frage durch, wieso es gerade der Schweiz gelang, über so lange Zeit hinweg vom Krieg verschont zu bleiben und trotz fehlender Rohstoffe einen beachtlichen Wohlstand aufzubauen. In Beantwortung dieser Frage wurden folgende Persönlichkeiten eingeladen: Frau Prof. Jeanne Hersch, a. Bundesrat Dr. Kurt Furgler, Dr. Curt Gasteyger, Prof. am Graduate Institute of International Studies Genf, Dr. Guy Marchal, Prof. für Geschichte an der theologischen Fakultät Luzern sowie Hans Ulrich Glarner, Leiter des Stapferhauses Schloss Lenzburg. Moderiert wurde diese Diskussion über Sinn und Aufgabe der Schweiz durch den früheren Stadtpräsidenten von Zürich, Dr. Sigmund Widmer. Durch die Zusammensetzung der Gesprächsrunde ergibt sich ein interessantes Gespräch nicht nur zwischen Welsch und Deutsch, sondern auch zwischen den Generationen.",
+      "bbox": {
+        "x_pct": 19.388,
+        "y_pct": 7.879,
+        "w_pct": 64.962,
+        "h_pct": 39.87
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein Buch, das in leicht verständlicher Form jedem an der Schweiz Interessierten wertvolle Antworten gibt. Das Buch ist dreisprachig (deutsch, französisch und englisch) konzipiert, eignet sich deshalb ausgezeichnet als Geschenk für ausländische Besucher.",
+      "bbox": {
+        "x_pct": 19.349,
+        "y_pct": 48.283,
+        "w_pct": 64.872,
+        "h_pct": 10.664
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/truncated text content to match image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "ISBN 3-906740-02-1",
+      "bbox": {
+        "x_pct": 4.103,
+        "y_pct": 82.383,
+        "w_pct": 6.302,
+        "h_pct": 9.697
+      },
+      "changed": true,
+      "change_reason": "Identified page footer element incorrectly labeled as text."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR text was corrupted/truncated.",
+    "ISBN line was missed in initial detection.",
+    "Text bounding boxes were slightly misaligned with actual paragraphs."
+  ],
+  "doc_id": "2940",
+  "page": 51,
+  "elapsed_seconds": 4.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "96",
+      "bbox": {
+        "x_pct": 11.588,
+        "y_pct": 11.365,
+        "w_pct": 2.228,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "te Versuchungen, die beide echtes Menschsein unmöglich machen. Entweder wird das Recht als der endgültige Ausdruck der Gerechtigkeit betrachtet, sodaß es keine menschliche Deutung mehr braucht, und es genügt, es der sozialen Realität mit Gewalt aufzuzwingen – was ziemlich schnell dazu führt, die faktische Gewalt und ihre Willkür mit dem Recht zu verwechseln. Oder es wird das positive Recht, verglichen mit der absoluten Gerechtigkeit so streng gedemütigt und verworfen, daß es in der Gesellschaft keine Rolle mehr spielen kann. In beiden Fällen herrscht ein eigentlicher Aberglaube, der die echte geschichtliche Ebene menschlicher Geschichte verpaßt. Hier ist wieder das französische Sprichwort am Platz: Qui veut faire l'ange fait la bête.",
+      "bbox": {
+        "x_pct": 11.588,
+        "y_pct": 49.324,
+        "w_pct": 79.883,
+        "h_pct": 13.442
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label assignment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die umwälzenden Ereignisse, deren Zeugen wir in den letzten Monaten sind, können uns viele Beispiele liefern von dem, was dem Menschen droht, wenn er abergläubig ins Schwelgen verfällt, die für ihn immer unvollkommene Ebene der Endlichkeit verläßt und wähnt, die absolute Versöhnung zu erreichen. Gerade diese Beispiele öffnen aber, in der menschlichen Begrenzung, die endlosen Wege menschlicher Hoffnung. Es sieht aus, als wäre nun alles möglich – das Beste, das Schlimmste, aber auch das vernünftige menschliche Maß.",
+      "bbox": {
+        "x_pct": 11.695,
+        "y_pct": 182.253,
+        "w_pct": 79.808,
+        "h_pct": 10.192
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label assignment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Da denken wir ganz besonders, in Freundschaft und Dankbarkeit, an den Menschen Rudolf Kirchschläger, an seine Güte und seine weise Bescheidenheit.",
+      "bbox": {
+        "x_pct": 11.727,
+        "y_pct": 279.747,
+        "w_pct": 79.851,
+        "h_pct": 3.863
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label assignment."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text detection was corrupted/incomplete",
+    "Missing page number region",
+    "Incorrect bounding box sequence relative to content",
+    "Misinterpretation of content hierarchy"
+  ],
+  "doc_id": "2790",
+  "page": 4,
+  "elapsed_seconds": 5.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

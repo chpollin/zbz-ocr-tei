@@ -1,0 +1,99 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tore cellule Yiventes d' Me semb]e qu'",
+      "bbox": {
+        "x_pct": 7.595,
+        "y_pct": 26.413,
+        "w_pct": 31.243,
+        "h_pct": 3.901
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "reduiraft encha inelient des Par contraste, [1 teriniste. qui dans cette",
+      "bbox": {
+        "x_pct": 7.623,
+        "y_pct": 36.679,
+        "w_pct": 37.477,
+        "h_pct": 10.217
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "non une qvestion une seule explication, Pour",
+      "bbox": {
+        "x_pct": 35.481,
+        "y_pct": 70.93,
+        "w_pct": 1.842,
+        "h_pct": 1.171
+      },
+      "changed": true,
+      "change_reason": "False positive/artifact, too small to be a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qu'elle provient d'une certafne conceptualisation, devenue coomode Jes chercheurs actuels, parce qu'",
+      "bbox": {
+        "x_pct": 53.784,
+        "y_pct": 14.771,
+        "w_pct": 36.624,
+        "h_pct": 17.512
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or , en winiens , de traduire, Grice noyee , ter des problemes genants.",
+      "bbox": {
+        "x_pct": 53.929,
+        "y_pct": 35.507,
+        "w_pct": 30.036,
+        "h_pct": 19.408
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "\"message\" nels ils pas",
+      "bbox": {
+        "x_pct": 54.02,
+        "y_pct": 58.092,
+        "w_pct": 4.9,
+        "h_pct": 8.249
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Son Jours relablve Un poInt de Yue @E polnt de Yve,",
+      "bbox": {
+        "x_pct": 54.02,
+        "y_pct": 72.186,
+        "w_pct": 18.512,
+        "h_pct": 5.87
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One false positive artifact correctly reassigned to _filter."
+  ],
+  "doc_id": "2180",
+  "page": 2,
+  "elapsed_seconds": 4.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

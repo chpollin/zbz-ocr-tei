@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "240 ID\u0000\u0000OLOGIES ET R\u0000\u0000ALIT\u0000\u0000",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header identified at top of page, should be excluded."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par l'idéologie socialiste. Elles tendent à abolir les obstacles matériels, à rendre la liberté matériellement possible. Mais leur réalisation même, comme aussi celle des fins qui sont les leurs, exige encore quelque chose d'essentiel : une éducation des masses, de tous les individus qui les constituent, enfants et adultes. L'importance décisive de l'éducation pour la réalisation du socialisme a toujours été reconnue et soulignée par celui-ci.",
+      "bbox": {
+        "x_pct": 8.816,
+        "y_pct": 10.339,
+        "w_pct": 85.655,
+        "h_pct": 14.911
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'éducation assume ou devrait assumer aujourd'hui envers l'individu trois tâches : l'une concerne en lui le producteur ; une autre, le citoyen ; une troisième, l'homme lui-même. Elles sont d'ailleurs étroitement liées. En tant qu'homme, l'individu doit acquérir les moyens qui lui permettront de se situer dans son univers, d'élucider sa propre échelle des valeurs, de participer à la vie de son époque en insérant ses efforts parmi ceux de ses contemporains, de comprendre les œuvres que cette époque engendre dans les divers domaines de la culture et, si possible, de contribuer en quelque manière à cette production. En tant que citoyen, il doit apprendre à connaître de son mieux les ressorts, visibles ou cachés, de la réalité politique et économique au sein de laquelle il vit, de manière à assumer les responsabilités qui sont les siennes et à discerner où et comment ses contemporains et lui peuvent influencer le cours de l'histoire. Enfin il doit apprendre la technique d'un métier pour étre capable de rendre à la société, sous forme de travail, ce qu'il ne cesse de recevoir d'elle et qui est le fruit du travail d'autrui. Or il se trouve qu'actuellement cette troisième tâche, la formation professionnelle immédiatement utilitaire, l'emporte de loin sur toutes les autres. L'école primaire enseigne aux enfants à lire, à écrire et à compter, car ce savoir est indispensable pour presque n'importe quel travail. Elle leur donne encore quelques notions de géographie et d'histoire, en général strictement nationales. Souvent les élèves n'acquièrent pas la moindre notion d'économie politique ni d'instruction civique, aucune perspective mondiale, aucune culture artistique. L'école une fois quittée, à quinze ou seize ans si tout va bien, les années qui suivent effacent le peu qui fut appris. Comment veut-on que les masses ouvrières d'aujourd'hui soient capables de s'orienter parmi les problèmes politiques et économiques que la démocratie prétend soumettre à leur jugement? Comment veut-on qu'elles",
+      "bbox": {
+        "x_pct": 8.774,
+        "y_pct": 24.688,
+        "w_pct": 86.031,
+        "h_pct": 64.554
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR was very poor quality.",
+    "Page header text (240 and title) was missed in initial detection.",
+    "Need to manually add the page header as a new region."
+  ],
+  "doc_id": "330",
+  "page": 274,
+  "elapsed_seconds": 6.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

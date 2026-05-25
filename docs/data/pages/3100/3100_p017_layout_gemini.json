@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "aristotélisme scolaires. Des problèmes insolubles, parce que Dieu n’est pas le Tout-puissant et l’homme un jouet entre ses mains, Dieu n’est pas l’auteur du mal et l’homme sa victime. Au contraire, la mise en œuvre du concept de théandrie permet de poser avec rigueur les problèmes de la liberté souveraine de Dieu et de la responsabilité de l’homme, du mal et de ses conséquences mortelles.",
+      "bbox": {
+        "x_pct": 15.093,
+        "y_pct": 8.302,
+        "w_pct": 65.351,
+        "h_pct": 12.097
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La notion de théandrie telle que les Pères la dégagèrent de l’enseignement et de l’œuvre de Jésus-Christ leur permit de critiquer ce qu’il y avait de faux dans l’opposition entre extériorité (objectivité) et intériorité (subjectivité). La théanthropologie cherche à corriger les schèmes spatialisants: l’appel, la question de Dieu à l’homme, ne vient pas de l’extérieur, ni de son intériorité, elle surgit de la parole, ce mixte d’extériorité et d’intériorité, d’une parole qui est inséparable du langage qui l’objective. La question de Dieu qui est aussi la question de l’homme est suspendue à la parole qui retentit dans la prédication de l’Homme-Dieu et s’illustre dans son destin. Il n’y a pas de question sans communication; la parole revêt un rôle primordial. Mais dans la perspective théanthropologique, la communication devient communion entre des personnes unies dans une même foi, une même espérance, un même amour.",
+      "bbox": {
+        "x_pct": 14.883,
+        "y_pct": 20.114,
+        "w_pct": 65.463,
+        "h_pct": 27.635
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour la théologie contemporaine, le problème de la communication et celui de la communion sont décisifs. Dieu ne communique pas directement avec l’homme, ni l’homme ne communie immédiatement avec Dieu. Cependant, des relations existent entre eux, mais elles passent par le détour obligé de l’échec, de la souffrance, du sacrifice, par les conditions onéreuses de tout renouveau. Ces conditions médiatisent la connaissance que l’homme peut prendre de l’appel et de la question de Dieu; elles se situent au niveau de l’intersubjectivité; ni l’échec, ni la souffrance, ni le sacrifice ne sont solitaires, ni exclusivement humains, ni strictement divins. Dieu est solidaire des hommes et réciproquement.",
+      "bbox": {
+        "x_pct": 14.827,
+        "y_pct": 47.618,
+        "w_pct": 65.375,
+        "h_pct": 22.165
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour cette raison, il est périlleux de prendre la question de Dieu, surtout aujourd’hui, à la légère. Elle touche à l’avenir de l’humanité. Il n’est plus temps de la traiter spéculativement, mais de s’y engager pratiquement. On peut parler de la commune épreuve de Dieu et de l’homme comme épreuve de leurs libertés menacées dans leur solidarité. C’est pourquoi la question de Dieu aujourd’hui n’est plus celle d’un tyran à l’égard d’un esclave - elle ne l’a jamais été - de l’omniscient face à un ignorant; mais elle est celle du héraut de la parole.",
+      "bbox": {
+        "x_pct": 14.722,
+        "y_pct": 69.214,
+        "w_pct": 65.351,
+        "h_pct": 16.068
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR output."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 14.8,
+        "y_pct": 87.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was highly degraded.",
+    "Page number at bottom not initially labeled.",
+    "Missing text content in the fourth paragraph."
+  ],
+  "doc_id": "3100",
+  "page": 17,
+  "elapsed_seconds": 5.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "130 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 18.032,
+        "y_pct": 10.0,
+        "w_pct": 68.884,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: PAGE HEADER"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lobjectivité en soi c'est un cercle carré. Lobjectivité n'est que pour un sujel, et en tant   qu'obj",
+      "bbox": {
+        "x_pct": 18.032,
+        "y_pct": 13.113,
+        "w_pct": 68.884,
+        "h_pct": 29.962
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En morale, toutes les formes s'effacent devant Tunité de la conscience, elle-même sans forme; et par",
+      "bbox": {
+        "x_pct": 17.227,
+        "y_pct": 42.673,
+        "w_pct": 68.999,
+        "h_pct": 31.815
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region fixed."
+  ],
+  "doc_id": "110",
+  "page": 132,
+  "elapsed_seconds": 5.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

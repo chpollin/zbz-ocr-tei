@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "alle Freuden und Lust, die es in dieser Welt im Überfluß gibt für die Lebenden, dank denen, die gestorben sind.",
+      "bbox": {
+        "x_pct": 10.242,
+        "y_pct": 8.83,
+        "w_pct": 75.82,
+        "h_pct": 4.29
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and punctuation for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir haben uns daran gewöhnt, unsere Lieben zum Friedhof zu begleiten und sie dort zu begraben; wir kommen zurück und nehmen das Leben da wieder auf, wo es unterbrochen wurde. Für die Schuld im Abschied gibt es keinen Abschied.",
+      "bbox": {
+        "x_pct": 10.242,
+        "y_pct": 12.634,
+        "w_pct": 75.901,
+        "h_pct": 8.315
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors to match source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oder eigentlich doch: Dies zu schreiben bedeutet wiederum mich an mich selbst klammern, als müßte ich für immer die Rechnung meiner Schuld selbst führen, als würde sich die Trennung zwischen mir und mir selbst nie einstellen, als müßte ich nicht eines Tages auch sterben. Wenn ich von mir selber Abschied nehmen werde, wird meine Schuld noch in diesem Abschied sein; aber ich werde auch von ihr Abschied nehmen, ohne daß sie dadurch auch nur einen Deut ihrer Wirklichkeit einbüßen wird.",
+      "bbox": {
+        "x_pct": 9.965,
+        "y_pct": 22.274,
+        "w_pct": 76.097,
+        "h_pct": 18.05
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn man alt wird, gibt es mehr Trennung seitens des Lebens als seitens des Todes. Man braucht nicht einem bestimmten Credo zuzustimmen, um dem Gefühl nachzugeben, daß unsere Toten uns »auf der anderen Seite« erwarten und daß wir sie dort bald wiedertreffen werden. So ist der natürliche Hang des Verlangens auch bei dem, der das Leben leidenschaftlich liebt und auf tausend Arten in seiner Umwelt verwurzelt ist. Nur wissen nicht, was das wohl bedeuten kann. Denn um es zu wissen, müßten wir uns von Ort und Zeit losmachen.",
+      "bbox": {
+        "x_pct": 9.619,
+        "y_pct": 42.288,
+        "w_pct": 76.143,
+        "h_pct": 19.765
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and paragraph coherence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "»Das Jenseits«: Weder blasses unterirdisches Reich noch ruhmvolle, himmlisch leuchtende Stätte der Anbetung. Kein Ort. Weder ursprüngliches goldenes Zeitalter noch Zeit am Ende der Zeiten. Weder Vergangenheit noch Zukunft. Keine Zeit. Wir verfügen über kein Wort und kein Bild mehr.",
+      "bbox": {
+        "x_pct": 9.503,
+        "y_pct": 62.23,
+        "w_pct": 75.947,
+        "h_pct": 10.397
+      },
+      "changed": true,
+      "change_reason": "Corrected segmenting of paragraph and removed OCR noise."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "»Nehmt alles weg, damit ich sehe.« – Aber man sieht nicht einmal das Nichts, denn Sehen hat keinen Sinn mehr. Jenseits der Trennung, jenseits des Abschieds, bleibt nur der Abschied von allem – und nicht einmal der Abschied.",
+      "bbox": {
+        "x_pct": 9.503,
+        "y_pct": 72.237,
+        "w_pct": 75.947,
+        "h_pct": 7.822
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text continuity."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Heute früh bläst der Mistral. Weißer Schaum läuft über das harte Blau des Meeres. Der Wind quält die Fichten und Korkeichen mit lautem Tosen und heftigen Stößen. Eine Seemöwe am Himmel versucht, gegen den Wind zu fliegen. Neben dem",
+      "bbox": {
+        "x_pct": 9.319,
+        "y_pct": 82.171,
+        "w_pct": 76.132,
+        "h_pct": 8.58
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR artifacts."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "253",
+      "bbox": {
+        "x_pct": 80.0,
+        "y_pct": 92.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer for page number."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 8,
+  "issues": [
+    "OCR text was heavily corrupted/truncated in initial input.",
+    "Page number at bottom right was misidentified as text.",
+    "Multiple paragraph breaks were missed or incorrectly merged."
+  ],
+  "doc_id": "2160",
+  "page": 10,
+  "elapsed_seconds": 6.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

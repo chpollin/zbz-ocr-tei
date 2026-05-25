@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "10 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 74.5,
+        "w_pct": 42.0,
+        "h_pct": 8.0
+      },
+      "changed": true,
+      "change_reason": "Page header and number identified as filterable content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "écoutais sans rien dire. J'entendais en même temps leurs deux voix qui pourtant étaient étrangement la même, celle de naguère, celle du présent. Jamais je ne leur ai rien demandé sur le sort de la ferveur ancienne. J'étais certaine qu'elles n'en savaient rien, qu'elles ne me cachaient rien, qu'elles ne reniaient rien, que le reniement venait de beaucoup plus loin qu'elles; leur âme était candide. Je trouvais beau cet oubli. J'admirais en lui le signe d'une négligence, d'une prodigalité comme divines, en même temps que d'une santé docile aux saisons de la terre. Il m'inspirait une sorte de respect incompréhensif, à la façon d'un miracle, à la façon d'un renouvellement de la nature non entaché d'humanité. Ainsi le silence se referme intact sur les paroles et les cris des hommes. Ainsi l'eau, dans ce monde vieux, se refait pure comme au premier jour. Souvent j'ai entendu ces paroles d'innocence au cours d'une promenade, le soir, au bord du lac noir où trempaient les longs reflets des quais. L'air nocturne devenait alors plus froid et plus sauvage à mes narines, il m'ouvrait les espaces des astres, et ma solitude, malgré le bruit double de nos pas, devenait une ivresse de liberté.",
+      "bbox": {
+        "x_pct": 7.662,
+        "y_pct": 11.843,
+        "w_pct": 81.162,
+        "h_pct": 55.359
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais, Marc aime, je ne suis pas ainsi. Je ne sais admirer ce beau geste qui délaisse, qui permet à l'âme de faire le bond des fauves. Bien avant d'être lourde de notre amour, jamais je n'ai su l'imiter. Et alors, puisque je ne guéris pas du passé, si tu veux m'aimer, il faut que tu le connaisses aussi et que tu l'aimes.",
+      "bbox": {
+        "x_pct": 7.743,
+        "y_pct": 67.231,
+        "w_pct": 81.0,
+        "h_pct": 15.284
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est étrange. Tout le monde parle des désaveux",
+      "bbox": {
+        "x_pct": 11.257,
+        "y_pct": 82.58,
+        "w_pct": 77.486,
+        "h_pct": 2.703
+      },
+      "changed": true,
+      "change_reason": "Corrected text content via OCR transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header at top were missing or mislabeled.",
+    "OCR transcription was poor in initial regions.",
+    "Bbox for page header was missing or improperly defined in original JSON input."
+  ],
+  "doc_id": "40",
+  "page": 8,
+  "elapsed_seconds": 5.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

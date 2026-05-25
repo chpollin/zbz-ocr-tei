@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "facile. J’ai essayé de définir devant lui une position qui n’était pas la mienne, la position de ceux qui ont un credo déterminé. Lui-même n’admettait aucun credo déterminé parce qu’il y voyait une mise en forme indue de la transcendance. Mais il admettait parfaitement que, pour le croyant de telle ou telle religion, le credo, le rituel, l’institution étaient inévitables. A cet égard, les discussions les plus remarquables n’ont pas été celles que j’ai eues moi-même avec lui, mais celles qu’il a eues avec un prêtre catholique et auxquelles j’ai assisté. Il était saisissant de voir, au cours de ce débat, se réduire peu à peu la distance entre eux et, au fur et à mesure qu’elle se réduisait, de la voir se durcir et devenir diamantine, impossible à traverser — transparente et invisible. Chacun d’eux reconnaissait mieux la conception de l’autre, et même temps, le caractère insurmontable de leur différence.",
+      "bbox": {
+        "x_pct": 3.297,
+        "y_pct": 3.411,
+        "w_pct": 79.695,
+        "h_pct": 25.782
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G: De nombreux ouvrages sur Jaspers ont paru en France depuis la guerre Avez-vous contribué à cette diffusion de sa pensée par les relations que vous aviez avec les auteurs de ces ouvrages, tels que Gabriel Marcel, Jean Wahl, Paul Ricoeur, Xavier Tilliette, etc. ?",
+      "bbox": {
+        "x_pct": 3.419,
+        "y_pct": 30.185,
+        "w_pct": 79.524,
+        "h_pct": 7.96
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription and removed speaker label from text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JH: Je n’étais pour rien dans ces publications. Le premier article qui a paru sur Jaspers en France était de Gabriel Marcel, il a paru dans les Recherches philosophiques avant la guerre. Mais il est vrai que mon livre L’Illusion philosophique a été un des premiers ouvrages en français qui parlait de Jaspers (tout le dernier chapitre lui est consacré). Quant au livre de Ricoeur, qu’il a écrit en collaboration avec Mikel Dufrenne, il a paru en 1947. Vous savez qu’il a été conçu dans un camp de prisonniers en Allemagne, où Ricoeur et Dufrenne se trouvaient ensemble. C’est une chose assez remarquable : écrire dans un camp de prisonniers en Allemagne un livre sur un philosophe allemand, qui était lui-même en disgrâce.",
+      "bbox": {
+        "x_pct": 3.333,
+        "y_pct": 37.879,
+        "w_pct": 79.536,
+        "h_pct": 22.306
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription and speaker identification"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "GDK: Comment Jaspers a-t-il vécu les années de la guerre en Allemagne et pourquoi ne s’est-il pas expatrié plus tôt dès lors qu’il avait une femme juive ?",
+      "bbox": {
+        "x_pct": 3.297,
+        "y_pct": 60.75,
+        "w_pct": 79.573,
+        "h_pct": 6.185
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription and cleaned speaker label"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JH: Jaspers a perdu sa chaire en 1937; je suis allée à Heidelberg pour assister à son dernier cours. Il est resté en effet en Allemagne durant toute la période nazie. Il a été plusieurs fois menacé de déportation pour avoir commis la Rassenschande, le crime contre la race, en ayant épousé une juive. Le seul salut aurait été de divorcer, mais la question pour lui ne s’est jamais posée. Plusieurs fois les Jaspers ont été sur le point d’être déportés et ils ont été sauvés au dernier moment par quelqu’un qui tenait à eux et qui était suffisamment haut placé pour pouvoir intervenir en leur faveur. Jaspers et sa femme ont passé toute la guerre en ayant sous la main de quoi se suicider en cas de nécessité, et Jaspers avait écrit une lettre dans laquelle il expliquait que, s’il en arrivait au pire, c’est qu’il n’y avait plus d’issue, et il demandait de ne pas le maintenir en vie. Il n’était",
+      "bbox": {
+        "x_pct": 3.419,
+        "y_pct": 66.29,
+        "w_pct": 79.609,
+        "h_pct": 24.355
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription and added speaker label"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "191",
+      "bbox": {
+        "x_pct": 793,
+        "y_pct": 932,
+        "w_pct": 35,
+        "h_pct": 30
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text was significantly truncated/corrupted in transcription.",
+    "Speaker IDs (G, JH, GDK) were improperly merged into the text or omitted.",
+    "Page number at bottom right was labeled as text instead of page_footer.",
+    "BBox coordinates for page number are inferred as they were not in the source list."
+  ],
+  "doc_id": "2330",
+  "page": 195,
+  "elapsed_seconds": 6.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

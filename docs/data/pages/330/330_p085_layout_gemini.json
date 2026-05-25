@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 51",
+      "bbox": {
+        "x_pct": 305.0,
+        "y_pct": 82.0,
+        "w_pct": 427.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header elements identified as text should be classified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu est donc une invention et une arme des riches. La liberté intérieure considérée comme une réalité absolue, indépendante des circonstances, en est une autre. Toutes deux appartiennent à un monde social périmé. Pour renouveler radicalement celui-ci, il faut le voir dans sa réalité positive et le considérer comme la seule réalité.",
+      "bbox": {
+        "x_pct": 3.76,
+        "y_pct": 11.408,
+        "w_pct": 84.304,
+        "h_pct": 12.326
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On se tourne donc vers les faits, seuls réels. Ce sont les conditions matérielles qui donnent ou refusent aux hommes leur épanouissement possible. Il faut s'occuper des conditions matérielles d'abord.",
+      "bbox": {
+        "x_pct": 3.76,
+        "y_pct": 23.592,
+        "w_pct": 84.262,
+        "h_pct": 8.2
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors: 'verg' to 'vers', fixed broken text completion."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord. Ici réside le « matérialisme » socialiste. Il faut bien reconnaître tout de suite qu'il manque de rigueur (et peu importe comment tel ou tel théoricien, ou Marx lui-même, s'en est tiré). Dans l'esprit des militants, le hiatus subsiste, le plus souvent inaperçu, sans soulever de vrai problème. Un régime d'exploitation, Dieu, la liberté, l'esprit, prennent figure d'attrape-nigauds, et seuls sont réels les faits matériels. Mais s'il convient de transformer ce régime, c'est justement que lorsque les hommes seront libérés de l'exploitation, l'esprit, la liberté, Dieu même peut-être leur seront permis. Si certaines religions ont fait briller aux yeux des croyants un monde de délices matérielles dans l'au-delà, récompense de leur ascèse terrestre, le socialisme fait plutôt l'inverse : il promet aux hommes qu'ils accéderont au royaume de l'esprit lorsqu'ils seront affranchis de la servitude matérielle.",
+      "bbox": {
+        "x_pct": 3.022,
+        "y_pct": 31.845,
+        "w_pct": 84.68,
+        "h_pct": 29.029
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text segmentation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un reste à souligner : la valorisation de l'homme. Il est vrai que cette valorisation, accompagnée de la négation, fût-elle provisoire, de toute réalité transcendante, se justifie difficilement. Peu importe : d'emblée, l'homme se trouve valorisé, même si on ne sait guère pourquoi ni comment. Pour les fascistes, c'était l'État qui comptait, l'entité collective; pour les communistes, c'était la technique scientifique, fondée sur les lois de l'histoire; pour les conservateurs libéraux, c'était la tradition et l'ordre de droit divin; pour les démocrates progressistes, c'étaient les valeurs morales. Bien entendu, aucune des idéologies précédentes ne se détourne de l'homme, et même lorsqu'elles le sacrifient, c'est encore à sa grandeur, à celle de son passé ou de son avenir. L'homme reste dépendant du sort de l'État, de la technique gouvernementale, de la tradition, des valeurs morales. Mais les socialistes, eux, ne",
+      "bbox": {
+        "x_pct": 2.786,
+        "y_pct": 60.071,
+        "w_pct": 84.777,
+        "h_pct": 29.207
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text segmentation."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was very poor with many typos.",
+    "Top header line incorrectly merged with first paragraph.",
+    "Page number 51 missed in header detection."
+  ],
+  "doc_id": "330",
+  "page": 85,
+  "elapsed_seconds": 6.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "658",
+      "bbox": {
+        "x_pct": 476.0,
+        "y_pct": 52.0,
+        "w_pct": 36.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number, should be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "denn wirklich ist eigentlich nur der einsame Umkreis, den jeder je durch eigenes Sehnen zusammenhält —.",
+      "bbox": {
+        "x_pct": 60.57,
+        "y_pct": 152.54,
+        "w_pct": 868.51,
+        "h_pct": 51.09
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Stil der Monique Saint-H lier ist nicht gerade einfach; — bisweilen ist er sogar ziemlich beladen, und dann werden zu viele, zu gesuchte Bilder beschworen. Und doch macht das Ganze den Eindruck einer erschütternden Nacktheit: alle Ausdrucksmittel werden von einem inneren Fieber verbrannt. Es werden nie vollständige Bilder gemalt: die Schriftstellerin erwähnt präzise Einzelheiten, die nicht zusammenhalten; und doch entsteht daraus der Eindruck eines Ganzen mit seiner dunklen undurchsichtigen Dichtheit. „Elle prit la boîte de café sur la planche, au-dessus de la cheminée, et, le moulin dans ses jupes, se mit à moudre — le bruit râclait la nuit, l'odeur tournait, tournait, et la main de Madame Vauthier dans les bouilloires et les louches, es son coude noir et rapide dans le reflet des vitres.“ So wird jeder Mensch von der ganzen undeutlichen Menge konturierter, beweglicher Einzelheiten seiner Gegenwart begleitet. Und nicht nur seiner Gegenwart: auch seine Vergangenheit rauscht überall mit, schenkt ihm eine ihm eigene Perspektive, und schließt ihn in eine Art monadischer Einsamkeit ein. Gleich nach der zitierten Stelle geht es so weiter: „Et puis, elle versa l'eau — il lui semblait qu'elle redevenait jeune, qu'elle était au début de son mariage, quand Louis Vauthier rentrait ivre et qu'elle préparait la cuvette, l'ammoniaque et le café.“",
+      "bbox": {
+        "x_pct": 61.72,
+        "y_pct": 197.18,
+        "w_pct": 871.95,
+        "h_pct": 407.1
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Im Gegensatz zu so vielen Schriftstellern, die sich offensichtlich quälen, um aus ihrer Einbildungskraft künstlich etwas abzugewinnen, und die womöglich mittels einer Steigerung ins Phantastische den Schein echter Phantasie zu erwecken versuchen, kämpft offensichtlich Monique Saint-H lier um Ordnung, Maß und Zusammenhang im Strom einer alles überwuchern wollenden Imagination. Alle ihre Geschöpfe, seien es die unvergeßlichen Hauptfiguren, seien es sogar Tiere, Blumen oder Möbelstücke, besitzen einen unerhörten Drang zu sein, sich zu behaupten, zu entfalten, ein Schicksal zu gewinnen. Jedes verlangt gleich Raum, Vergangenheit, Wirkung. Ein paar Zeilen genügen: sie haben ein Gesicht und eine Leidenschaft. Keines verschwindet endgóltig: sie kommen wieder, sie wirken und leiden weiter, in dieser allzu dichten, scheinbar chaotischen, und doch tief folgerichtigen Welt. Im „Cavalier de Paille“, einem Roman von etwa 430 Seiten, wird vom Geschehen einer einzigen Nacht erzählt, ohne daß irgendeine Lücke in der Spannung entstehen kann. Eine Nacht freilich, die wie der Baum eines vielfach verzweigten Schicksals",
+      "bbox": {
+        "x_pct": 61.72,
+        "y_pct": 614.77,
+        "w_pct": 871.61,
+        "h_pct": 352.38
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page number at top was incorrectly labeled as text.",
+    "The OCR text for paragraphs was truncated/corrupted and required full reconstruction based on source image.",
+    "One region was missing from the initial scan of the page structure."
+  ],
+  "doc_id": "90",
+  "page": 4,
+  "elapsed_seconds": 6.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

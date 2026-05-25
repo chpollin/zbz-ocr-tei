@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quanto alla storia come scienza obiettiva, non so cosa Scheurer intende per storia, né, a dire il vero, per scienza obiettiva. Scheurer si è soffermato successivamente sulla possibilità di cambiare il passato manipolandolo, in base alla scelta dei dati; mi pare che vi sia una contraddizione tra « scienza obiettiva » e questa possibilità di manipolare il passato. Vorrei tener fermo il fatto che l'intenzione di essere oggettivo implica la profonda convinzione relativistica che i fatti del passato si sono svolti in una certa maniera e non in un'altra.",
+      "bbox": {
+        "x_pct": 11.765,
+        "y_pct": 7.31,
+        "w_pct": 85.113,
+        "h_pct": 18.295
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'errore commesso o il reperimento sempre parziale di questi fatti, non modifica in nulla questa « realtà » del passato. A noi è dato, certamente, di scegliere i dati, ma per la capacità che questi hanno di farci cogliere quel passato di cui supponiamo l'esistenza reale.",
+      "bbox": {
+        "x_pct": 11.659,
+        "y_pct": 25.414,
+        "w_pct": 84.827,
+        "h_pct": 9.71
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mi rifiuto di rinunciare a questa intenzione. So bene che non possiamo raggiungere il passato così come esso è stato, e che il passato non può esaurirsi nelle nostre conoscenze storiche; so bene, inoltre, che la conoscenza può essere modificata con il tempo, con i dati in nostro possesso, con la nostra struttura interpretativa, ma non potrei mai affermare, come ha fatto Scheurer, che abbiamo la libertà di manipolare e la possibilità di cambiare.",
+      "bbox": {
+        "x_pct": 11.418,
+        "y_pct": 34.578,
+        "w_pct": 85.264,
+        "h_pct": 14.925
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Scheurer ha affermato, tra l'altro, che per il fisico relativista non esistono eventi e non esiste storia. Certamente la storia fa parte della natura e, da una certa angolazione, è possibile inglobarla nella natura senza attribuire ad essa uno status privilegiato. Ma, se non si accetta questa possibilità, allora la sua specificità è soltanto negata e non esiste più. Non si tratta più di considerare la storia in un certo modo, ma di abolirla dal suo contesto di natura. Allora non vi sarà più storia, né, d'altronde, umanità.",
+      "bbox": {
+        "x_pct": 10.965,
+        "y_pct": 49.089,
+        "w_pct": 85.309,
+        "h_pct": 16.78
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Penso che la stessa annotazione possa essere rivolta al capovolgimento della storia: la storia invertita non sarebbe più storia ma qualche cosa d'altro.",
+      "bbox": {
+        "x_pct": 10.709,
+        "y_pct": 65.48,
+        "w_pct": 85.023,
+        "h_pct": 5.853
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHEURER La risposta data dalla Signorina Hersch sul primo punto mi ha soddisfatto totalmente; meno quelle sugli altri. Ho sollevato brevemente, nel precedente intervento, il problema della oggettività della storia, anche se non sono sicuro che la storia possa essere considerata come una scienza e avere lo stesso status della fisica. Io conosco i criteri di obiettività della fisica, desidererei che gli storici mi definissero il loro.",
+      "bbox": {
+        "x_pct": 10.513,
+        "y_pct": 72.21,
+        "w_pct": 85.068,
+        "h_pct": 14.735
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Per quanto riguarda poi il problema dello sviluppo, non vedo perché si debba privilegiare la storia, ovvero gli eventi che riguardano gli esseri umani rispetto agli eventi del mondo.",
+      "bbox": {
+        "x_pct": 10.452,
+        "y_pct": 86.366,
+        "w_pct": 84.827,
+        "h_pct": 6.349
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled text output."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "249",
+      "bbox": {
+        "x_pct": 89.378,
+        "y_pct": 94.49,
+        "w_pct": 4.195,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Changed label to page_footer and zbz_tag to _filter."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 8,
+  "issues": [
+    "Original text extraction contained significant OCR errors/gibberish.",
+    "Page number at bottom right was misidentified as text paragraph."
+  ],
+  "doc_id": "990",
+  "page": 21,
+  "elapsed_seconds": 7.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

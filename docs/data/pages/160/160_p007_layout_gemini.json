@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'ÉPREUVE DE L'HUMANISME AUJOURD'HUI",
+      "bbox": {
+        "x_pct": 19.977,
+        "y_pct": 20.766,
+        "w_pct": 63.813,
+        "h_pct": 6.39
+      },
+      "changed": true,
+      "change_reason": "Corrected typographical errors in the transcription of the section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'humanisme traditionnel opposait le règne de l'homme, c'est-à-dire de l'ordre, à celui de l'animalité où se heurtent les instincts et les forces. Platon définissait la justice comme une harmonie des vertus, un équilibre que l'homme réalise en lui-même tout en s'y insérant. Thomas d'Aquin situait l'homme à sa juste place dans la hiérarchie des êtres. L'« honnête homme » de l'ancien régime était un modèle dont la valeur ne dépendait pas de l'adhésion individuelle, un idéal de maîtrise et de mesure. En multipliant les références on verrait partout l'humanisme constater un ordre, qui est par définition celui où l'homme s'accomplit. D'où, chez ces penseurs, un profond sentiment de légitimité. Dans les peintures du moyen âge et de la Renaissance, les élus, rassemblés au haut du tableau autour du Seigneur, ignorent, de toute la sérénité de leurs purs visages, de leurs pures draperies, les damnés qui, à leurs pieds, tombent et se recroquevillent parmi les monstres et les flammes de l'enfer. Dans la hiérarchie sociale aussi, les nobles, leurs penseurs, leurs poètes, ignorent le peuple croupissant, innombrable, au milieu des pillages, des famines. L'enfer, l'esclavage, nécessités abstraites de l'ordre, échappaient miséricordieusement à l'imagination affective. Cet ordre, d'autre part, soutenait une forte discipline morale : il permettait d'exiger un certain visage de l'homme, un certain style de vie ; il permettait aussi, quand le le fallait, de condamner sans appel.",
+      "bbox": {
+        "x_pct": 15.639,
+        "y_pct": 30.62,
+        "w_pct": 71.689,
+        "h_pct": 49.823
+      },
+      "changed": true,
+      "change_reason": "Fixed incomplete and garbled transcription content within the main paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout autre apparaît l'humanisme moderne — à supposer que ce terme ait encore un sens, malgré les conflits sans aucune référence commune qui disloquent l'histoire contemporaine. Ceux qui, aujourd'hui, dressent l'humanisme comme un",
+      "bbox": {
+        "x_pct": 15.788,
+        "y_pct": 80.201,
+        "w_pct": 71.427,
+        "h_pct": 8.356
+      },
+      "changed": true,
+      "change_reason": "Fixed incomplete and garbled transcription content within the bottom paragraph block."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Transcription of text regions was significantly degraded or incomplete in the input JSON.",
+    "Corrected text contents to match the source image exactly."
+  ],
+  "doc_id": "160",
+  "page": 7,
+  "elapsed_seconds": 4.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

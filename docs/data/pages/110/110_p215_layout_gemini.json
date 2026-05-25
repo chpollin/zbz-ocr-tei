@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 17.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "213",
+      "bbox": {
+        "x_pct": 76.1,
+        "y_pct": 100,
+        "w_pct": 3.7,
+        "h_pct": 2.3
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "naît dun espoir: réussir à hisser un moule rigide jusqu'à lexistence artislique; ceslà-dire libre; r",
+      "bbox": {
+        "x_pct": 11.588,
+        "y_pct": 13.569,
+        "w_pct": 68.619,
+        "h_pct": 18.497
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On aura deux   exemples, choisis au hasard, précèdent, chaque fois Tascèse formelle   apparaît anti-",
+      "bbox": {
+        "x_pct": 11.507,
+        "y_pct": 34.07,
+        "w_pct": 68.435,
+        "h_pct": 14.905
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le   lyrisme esl indispensable 4 Fart. Il est surahondance ne veul aucune forme, veut seulement s'ép",
+      "bbox": {
+        "x_pct": 11.473,
+        "y_pct": 48.77,
+        "w_pct": 68.539,
+        "h_pct": 26.12
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header and page footer regions"
+  ],
+  "doc_id": "110",
+  "page": 215,
+  "elapsed_seconds": 7.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

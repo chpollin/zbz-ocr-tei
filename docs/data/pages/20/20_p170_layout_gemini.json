@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "168 L'ÉLÉMENT GÉNÉRAL : LIMITES DES OBJETS",
+      "bbox": {
+        "x_pct": 14.54,
+        "y_pct": 82.5,
+        "w_pct": 71.05,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified at the top of the content area."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'on ne s'agit ni d'objet, ni de généralité, il n'est plus possible de rien découvrir, savoir, éclairer. Lorsqu'un penser doit être à la fois un penser et un « non penser » (ein Nichtdenken) qui le remplit sans avoir d'objet, il semble qu'on demande l'impossible; mais on peut se servir de l'élément général pour éclairer l'existence, et cela de trois manières :",
+      "bbox": {
+        "x_pct": 14.458,
+        "y_pct": 12.297,
+        "w_pct": 76.31,
+        "h_pct": 15.758
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La première consiste à conduire aux limites. C'est une méthode négative. On parle de certains objets (élément général) pour les rejeter ensuite parce qu'ils ne sont pas l'existence. On s'achemine pas à pas vers la limite où aucun objet ne surgit plus, où il ne reste que le vide, tant qu'il n'aura pas été rempli par quelque chose venant d'ailleurs (existence). Là, à la limite, peut se faire entendre l'appel à la transcendance. L'objet n'avait été pensé que pour pouvoir être exclu.",
+      "bbox": {
+        "x_pct": 14.759,
+        "y_pct": 30.343,
+        "w_pct": 76.054,
+        "h_pct": 25.806
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La seconde consiste à objectiver l'existence (la rendre générale); sous sa forme objective, et sans s'identifier à elle, l'existence se reconnaîtra.",
+      "bbox": {
+        "x_pct": 15.105,
+        "y_pct": 56.053,
+        "w_pct": 75.663,
+        "h_pct": 7.312
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) On peut se servir de la compréhension psychologique. L'existence est le processus de l'auto-compréhension, mais c'est à la limite du compréhensible qu'elle revient à elle-même. Étant elle-même incompréhensible, c'est en comprenant avec un maximum de clarté tout ce qui n'est pas elle qu'elle prendra conscience de sa propre incompréhensibilité (1). La méthode psychologique peut aussi projeter, comme",
+      "bbox": {
+        "x_pct": 14.955,
+        "y_pct": 63.422,
+        "w_pct": 76.054,
+        "h_pct": 20.944
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Philosophie, II, p. 12.",
+      "bbox": {
+        "x_pct": 18.223,
+        "y_pct": 87.255,
+        "w_pct": 32.937,
+        "h_pct": 2.097
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was highly corrupted in the provided text fields.",
+    "Page header missing from original detection.",
+    "Footnote not tagged as footnote."
+  ],
+  "doc_id": "20",
+  "page": 170,
+  "elapsed_seconds": 4.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

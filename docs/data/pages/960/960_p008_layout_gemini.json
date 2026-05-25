@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 42.664,
+        "y_pct": 8.441,
+        "w_pct": 14.802,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to section_header as this is an author name/heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "rateurs et de quelles installations techniques il prévoit le besoin ; comment il compte conjuguer ses recherches et son enseignement ; etc.",
+      "bbox": {
+        "x_pct": 15.238,
+        "y_pct": 10.942,
+        "w_pct": 66.455,
+        "h_pct": 4.018
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment répondre alors aux questionnaires ? Certains, désireux d’obtenir un budget pour acheter des livres indispensables, se procurer quelques moyens audio-visuels, ou pour pouvoir emmener leurs étudiants jusqu’à un musée, un monument, une fouille, essayent de répondre en termes « scientifiques », comme s’ils étaient des physiciens ou des biochimistes. Mais bien sûr, tirant de leur mieux sur le sens des mots, ils n’arrivent, malgré d’audacieux efforts, à justifier qu’une demande de budget minime, en comparaison de ceux des laboratoires de science ou de médecine — même s’ils se mettent à appeler « laboratoires » leurs bibliothèques et leurs salles d’exercices pratiques. Un budget minime, et qu’ils n’obtiendront pas, puisque ce budget même les classe bien loin derrière les « vrais » scientifiques, au nombre desquels ils essayent de se compter.",
+      "bbox": {
+        "x_pct": 15.101,
+        "y_pct": 45.644,
+        "w_pct": 71.386,
+        "h_pct": 20.383
+      },
+      "changed": true,
+      "change_reason": "Text content updated for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D’autres professeurs, lassés d’avance par les difficiles transpositions de sens des mots que leur imposent des questionnaires, nullement faits pour eux, les envoient simplement à la corbeille à papier. Le Doyen se débrouillera. Il s’est toujours débrouillé.",
+      "bbox": {
+        "x_pct": 15.27,
+        "y_pct": 67.182,
+        "w_pct": 71.185,
+        "h_pct": 5.151
+      },
+      "changed": true,
+      "change_reason": "Text content updated for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Donc, la Faculté des Lettres est surtout un lieu d’interprétation. On y interprète des textes de toutes les époques, en diverses langues, en divers domaines. On y interprète des faits et des théories. On y interprète même les méthodes des sciences et la portée de leurs conquêtes — et on devrait le faire davantage. On y interprète des problèmes, anciens ou actuels, momentanés ou éternels, ainsi que les solutions qui ont été proposées. On y interprète l’interprétation, ses conditions, ses intentions, le langage dont elle se sert.",
+      "bbox": {
+        "x_pct": 15.206,
+        "y_pct": 72.87,
+        "w_pct": 71.566,
+        "h_pct": 13.348
+      },
+      "changed": true,
+      "change_reason": "Text content updated for accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "290",
+      "bbox": {
+        "x_pct": 15.428,
+        "y_pct": 87.725,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text detection was extremely poor/corrupted (OCR errors).",
+    "Missing page number region identified and labeled.",
+    "Section header missing initial label."
+  ],
+  "doc_id": "960",
+  "page": 8,
+  "elapsed_seconds": 5.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

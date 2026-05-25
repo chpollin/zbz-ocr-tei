@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sence de la belle est là. Charlot danse avec cette absence. C'est la valse des petits pains.",
+      "bbox": {
+        "x_pct": 11.067,
+        "y_pct": 11.591,
+        "w_pct": 65.455,
+        "h_pct": 5.21
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En un sens, rien ne distingue cette valse de celle qu'il aurait dansée avec la belle, puisque Charlot l'imagine plus présente que nature. Peut-étre même est-ce mieux ainsi, car telle qu'il l'imagine, rien ne peut altérer la perfection de cette valse. Seulement voilà: la belle n'est pas là. Si elle était là, ce serait la plénitude du bonheur dans le rêve réalisé. Mais elle n'est pas là, et c'est l'abîme de la tristesse. Différence radicale, parfaitement banale, - insaisissable.",
+      "bbox": {
+        "x_pct": 10.897,
+        "y_pct": 16.751,
+        "w_pct": 65.745,
+        "h_pct": 30.892
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors in transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Présence de l'absence. Séparation de la présence. Et pourtant : littéralité aiguë de l'enjeu : elle n'est pas venue.",
+      "bbox": {
+        "x_pct": 10.873,
+        "y_pct": 48.039,
+        "w_pct": 65.406,
+        "h_pct": 8.552
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous vivons rarement l'arbitrage impitoyable de notre présent parce que nous nous faisons une sorte de nid de nos souvenirs et de nos rêves. Chose surprenante, toute notre vie affective s'articule autour du oui ou du non que le réel présent impose à nos désirs, et malgré cela - ou peut-étre à cause de cela - notre sens du présent est faible. Sauf si les",
+      "bbox": {
+        "x_pct": 10.873,
+        "y_pct": 56.54,
+        "w_pct": 65.491,
+        "h_pct": 22.727
+      },
+      "changed": true,
+      "change_reason": "Corrected major OCR transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "93",
+      "bbox": {
+        "x_pct": 72.844,
+        "y_pct": 82.26,
+        "w_pct": 2.213,
+        "h_pct": 2.459
+      },
+      "changed": true,
+      "change_reason": "Added missing region for page number and assigned to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was very poor requiring full text re-transcription.",
+    "Page number not detected by original model."
+  ],
+  "doc_id": "2260",
+  "page": 93,
+  "elapsed_seconds": 4.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

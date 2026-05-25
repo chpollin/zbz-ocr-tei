@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps vécu prend ici une étrange unité. Le présent est plus présent que jamais, mais sans action; le passé est nostalgie, mais sans objet ; l'avenir est attente absolue, mais sans espoir d'un bien déterminé. En même temps, un oui règne, un consentement de l'âme à tout ce qui va se faire entendre.",
+      "bbox": {
+        "x_pct": 26.028,
+        "y_pct": 13.761,
+        "w_pct": 57.659,
+        "h_pct": 13.164
+      },
+      "changed": true,
+      "change_reason": "Corrected transcriptions to match original text accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps de cette écoute n'a presque plus rien de commun avec le temps d'avant ou d'après le concert. C'est un autre temps. La réceptivité de l'écoute ne s'accomplit ni dans le temps pratique, ni dans le temps naturel, ou peut-étre dans les deux, dont la réconciliation engendrerait quelque chose de nouveau. L'écoute se produit dans la «petite durée» du présent, telle qu'elle est vécue au présent pratique, – dans cette «petite durée» qui, comme je l'ai dit plus haut, ne s'écoule pas. Mais ici, dans la musique, cette «petite durée», cette miniature d'éternité, se dilate jusqu'à embrasser en quelque sorte le tout de l'œuvre, comme si elle était simultanée, embrassant en elle, à travers les divers éléments de la musique, toutes les dimensions du temps. Chaque note de la mélodie fait attendre un prochain repos ou une séparation menaçante. On désire la tonique ou la dominante, ou bien on les évite pour jouir plus longtemps de ce qui manque. Même dans la musique atonale il faut trouver d'autres moyens pour que le temps de la musique,",
+      "bbox": {
+        "x_pct": 26.165,
+        "y_pct": 26.795,
+        "w_pct": 57.659,
+        "h_pct": 46.198
+      },
+      "changed": true,
+      "change_reason": "Corrected transcriptions to match original text accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "22",
+      "bbox": {
+        "x_pct": 26.467,
+        "y_pct": 75.335,
+        "w_pct": 2.115,
+        "h_pct": 1.777
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer for filtration."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original transcriptions were heavily truncated and contained errors.",
+    "Page number at bottom was incorrectly labeled as text."
+  ],
+  "doc_id": "2780",
+  "page": 21,
+  "elapsed_seconds": 6.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

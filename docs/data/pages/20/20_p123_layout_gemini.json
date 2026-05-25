@@ -1,0 +1,49 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "SENS DE L'A PRIORI 121",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correctly identified header/page number as section header/page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "placer, à permettre de raisonner, pour ainsi dire, par-dessus eux. Il n'étudie aucun objet, mais bien la possibilité, pour un sujet, d'avoir un objet quel qu'il soit. Il examine les conditions de cette possibilité, la possibilité elle-même étant un fait donné. Et s'il examine les conditions de cette possibilité, c'est qu'il peut atteindre ainsi l'extrême limite où l'esprit humain puisse s'aventurer. Alors, lorsqu'il se heurte à cette limite, surgissent certaines conséquences possibles, c'est-à-dire ici : dont l'impossibilité ne peut et ne pourra jamais être démontrée, révélant ce que serait l'objet non objectivé (chose en soi), ou le sujet. Car la vérité du sujet est métaphysique et non objective. Vérité immédiate, mais non connue, dans l'acte — vérité réfractée, et seulement possible, protégée seulement par d'infranchissables limites contre toute réfutation, pour la recherche théorique.",
+      "bbox": {
+        "x_pct": 9.985,
+        "y_pct": 11.63,
+        "w_pct": 75.964,
+        "h_pct": 46.454
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was garbled in initial detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De là vient que la philosophie de Kant communique moins que toute autre des connaissances effectives, du savoir. Elle est bien plutôt, et elle exige, un acte vers la profondeur. Les schèmes dont elle se sert (par exemple les trois facultés de la raison : théorique, active, esthétique) ne sont pas justifiés; ils ne servent qu'à faire abstraction des objets; ils ne trouvent leur sens que comme moyen servant à philosopher; ils ne sont pas en eux-mêmes décisifs. De là aussi l'insistance que met Kant à rechercher toute la raison. C'est qu'elle n'est pas, comme un objet des sciences naturelles, composée",
+      "bbox": {
+        "x_pct": 9.94,
+        "y_pct": 57.674,
+        "w_pct": 75.949,
+        "h_pct": 31.173
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was garbled in initial detection."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text detection was highly garbled.",
+    "Page number and running header were not separated or labeled correctly in original extraction."
+  ],
+  "doc_id": "20",
+  "page": 123,
+  "elapsed_seconds": 6.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

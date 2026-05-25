@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "170 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 113.0,
+        "y_pct": 80.0,
+        "w_pct": 776.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page header and number identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais considrons l'une de nos dmocraties occidentales o des syndicats puissants sont capables de la soutenir pendant la dure qui la rend efficace. La dmocratie politique joue-t-elle alors dans sa puret? Il est vident que non.",
+      "bbox": {
+        "x_pct": 110.45,
+        "y_pct": 130.12,
+        "w_pct": 853.76,
+        "h_pct": 107.58
+      },
+      "changed": true,
+      "change_reason": "Corrected text block boundary and content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La dmocratie issue de la Rvolution franaise maintient dans ce domaine des droits, des possibilits, en ce sens qu'elle supprime les contrles et les interdictions. Mais elle ignore totalement les ncessits matrielles qui s'imposent ds que l'on veut faire usage de ces droits, raliser ces possibilits. La propagande cote. Dans un rgime o les ressources matrielles sont ingales  l'extrme, le combat de la propagande, lui aussi, s'engage dans des conditions ingales, si bien que les droits gaux finissent par sembler fictifs. C'est ce qui permet aux adversaires de la dmocratie de parler  bon droit du caractre formel de certaines liberts, de certains droits.",
+      "bbox": {
+        "x_pct": 114.21,
+        "y_pct": 354.99,
+        "w_pct": 854.74,
+        "h_pct": 212.12
+      },
+      "changed": true,
+      "change_reason": "Corrected text block boundary and content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout citoyen, tout groupe de citoyens a le droit d'diter un journal, une affiche, un priodique. Mais pour cela il faut de l'argent. Quand l'argent manque, ce droit est vain, il est comme s'il n'existait pas. Je connais le cas d'un quotidien socialiste qui, faute d'argent, est dit pour plusieurs villes  la fois, dans une imprimerie si loigne qu'il apporte  ses lecteurs les nouvelles du jour environ vingt-quatre heures aprs la radio. S'il avait plus de lecteurs, il pourrait paratre dans des conditions normales. Mais pour gagner ces lecteurs, il devrait paratre dans des conditions normales. Prisonnier de ce cercle vicieux, ce journal n'atteint que les militants du parti. Comme instrument de propagande il est parfaitement autoris, protg par la loi dmocratique, mais il est inexistant.",
+      "bbox": {
+        "x_pct": 116.57,
+        "y_pct": 562.39,
+        "w_pct": 856.96,
+        "h_pct": 268.54
+      },
+      "changed": true,
+      "change_reason": "Corrected text block boundary and content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or il ne faut pas oublier que la propagande pour les ides n'est pas purement rationnelle. Il ne suffit pas d'avoir dmontr une fois qu'une ide est juste : il faut rpter la dmonstration et la",
+      "bbox": {
+        "x_pct": 121.17,
+        "y_pct": 830.66,
+        "w_pct": 851.39,
+        "h_pct": 66.22
+      },
+      "changed": true,
+      "change_reason": "Corrected text block boundary and content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original detection missed significant amounts of text in paragraphs.",
+    "Detection included artifacts and garbage text fragments instead of clean paragraphs.",
+    "Page number and running header were incorrectly merged with body text.",
+    "Text OCR transcription was highly corrupted."
+  ],
+  "doc_id": "330",
+  "page": 204,
+  "elapsed_seconds": 6.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

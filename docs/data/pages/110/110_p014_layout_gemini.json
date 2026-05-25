@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 17.58,
+        "y_pct": 9.54,
+        "w_pct": 1.76,
+        "h_pct": 1.6
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number as page_header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 65.17,
+        "y_pct": 9.54,
+        "w_pct": 17.55,
+        "h_pct": 1.6
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header as page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sil a une réalité dans la  pensée   conceptuelle; ce n'est que comme impossibilité, comme absence de",
+      "bbox": {
+        "x_pct": 17.32,
+        "y_pct": 12.782,
+        "w_pct": 68.74,
+        "h_pct": 7.72
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand donc nous nous   demandons il est clair  que nous entendons de Pêtre comme une Nous nous inter",
+      "bbox": {
+        "x_pct": 17.358,
+        "y_pct": 20.299,
+        "w_pct": 68.74,
+        "h_pct": 14.806
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment éliminer cet   anthropomorphisme? Il n'y a pas dautre moyen, sans doute; que Pexplorer lui-m",
+      "bbox": {
+        "x_pct": 17.127,
+        "y_pct": 35.13,
+        "w_pct": 68.894,
+        "h_pct": 15.034
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Explorer   Panthropomorphisme de la conscience humaine; c'est étudie: les conditions doivent   être ",
+      "bbox": {
+        "x_pct": 16.897,
+        "y_pct": 49.937,
+        "w_pct": 69.009,
+        "h_pct": 24.323
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page_header/page_footer detection on original input"
+  ],
+  "doc_id": "110",
+  "page": 14,
+  "elapsed_seconds": 5.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

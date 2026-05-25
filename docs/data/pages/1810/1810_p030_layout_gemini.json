@@ -1,0 +1,104 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "solitudes noyées, submergées par le bruit. Ils se mettent des écouteurs pour ne pas s'entendre les uns les autres. Pour les plus sensibles, qui sont aussi les plus perdus, cela débouche sur les drogues et leurs infernales impasses. Et aussi, sur la violence.",
+      "bbox": {
+        "x_pct": 12.26,
+        "y_pct": 6.373,
+        "w_pct": 82.272,
+        "h_pct": 7.766
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comme les membres de la Commission, je crois qu'il y a, la plupart du temps, dans la violence des jeunes, une provocation et un appel au secours. La société où ils vivent est molle, amorphe. Ils tentent de se heurter à une consistance, à une résistance, à des institutions, et surtout à des adultes, enfin. S'ils pouvaient ainsi susciter des adultes, qui sauraient résister et sévir, et ainsi les protéger du néant!",
+      "bbox": {
+        "x_pct": 12.213,
+        "y_pct": 13.926,
+        "w_pct": 82.201,
+        "h_pct": 11.778
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La réaction est lâche, inconsistante, frivole, chaotique. On les arrête, on les relâche, on les libère, on les arrête, on recommence, jusqu'à épuisement. On refuse un Centre autonome, on l'accorde un lendemain d'émeute, on le finance, on y fait une descente de police, on le ferme, on le rouvre. Il n'y a pas d'adultes, pas de monde adulte. Il y a la violence, la menace, les velléités, les complaisances, les explications, la psychologie, les clichés, les mots. Il n'y a personne. Nulle part. Ils sont seuls dans le non-sens.",
+      "bbox": {
+        "x_pct": 12.061,
+        "y_pct": 25.437,
+        "w_pct": 82.283,
+        "h_pct": 15.24
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On le voit: mon diagnostic est très éloigné de celui de la Commission. Il s'ensuit évidemment que les véritables besoins de cette partie (relativement petite en Suisse) de la jeunesse dont nous parlons ici m'apparaissent très différents.",
+      "bbox": {
+        "x_pct": 12.26,
+        "y_pct": 40.834,
+        "w_pct": 82.155,
+        "h_pct": 7.474
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Leur besoin le plus fondamental, et sans doute le plus largement répandu, c'est celui d'un vrai père, d'une vraie mère. Pas des parents-copains : un vrai père, une vraie mère, dont l'amour et la protection soient inconditionnels et l'autorité inébranlable. Ils ont besoin de maîtres, ou au moins d'un maître,",
+      "bbox": {
+        "x_pct": 12.178,
+        "y_pct": 48.466,
+        "w_pct": 82.201,
+        "h_pct": 7.789
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "26",
+      "bbox": {
+        "x_pct": 70.0,
+        "y_pct": 898.0,
+        "w_pct": 30.0,
+        "h_pct": 30.0
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as filter."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Les drogues et leurs infernales impasses.",
+      "bbox": {
+        "x_pct": 12.529,
+        "y_pct": 87.828,
+        "w_pct": 43.759,
+        "h_pct": 2.077
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for paragraphs was severely truncated and incorrect.",
+    "Page number at bottom left was missing from original annotation list."
+  ],
+  "doc_id": "1810",
+  "page": 30,
+  "elapsed_seconds": 6.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

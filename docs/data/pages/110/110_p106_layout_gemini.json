@@ -1,0 +1,57 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "104 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 23.237,
+        "y_pct": 2.0,
+        "w_pct": 68.664,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pensée   suppose un état   premier   indifférencié, ni juste, ni injuste, où les   parties ne reçoiv",
+      "bbox": {
+        "x_pct": 23.237,
+        "y_pct": 13.645,
+        "w_pct": 68.664,
+        "h_pct": 35.482
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous vojons donc des nolions telles que celles de vérilé ou de justice sont des concepts acluels \" c",
+      "bbox": {
+        "x_pct": 23.122,
+        "y_pct": 49.028,
+        "w_pct": 68.779,
+        "h_pct": 26.241
+      },
+      "changed": true,
+      "change_reason": "FIXED: OCR errors in text"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region in original input.",
+    "OCR errors in paragraph text, specifically 'vojons' -> 'voyons' and 'nolions' -> 'notions'."
+  ],
+  "doc_id": "110",
+  "page": 106,
+  "elapsed_seconds": 5.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "FIXED: OCR errors in text": 1,
+    "ADDED": 1
+  }
+}

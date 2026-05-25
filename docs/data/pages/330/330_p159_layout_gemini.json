@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 125",
+      "bbox": {
+        "x_pct": 30.222,
+        "y_pct": 8.019,
+        "w_pct": 69.778,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Page header identified and separated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ses effets contradictoires sur le plan politique. J'irai jusqu'\u0000\u0000 dire qu'accepter les partis, c'est accepter la condition de l'homme telle qu'elle est dans sa v\u0000rit\u0000, aux prises avec ses valeurs absolues qui demandent incarnation dans la r\u0000alit\u0000 sociale, et avec les volont\u0000s d'incarnation du prochain.",
+      "bbox": {
+        "x_pct": 3.384,
+        "y_pct": 11.471,
+        "w_pct": 84.039,
+        "h_pct": 12.299
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les corps politique ; ils doivent permettre une circulation active entre les volont\u0000s individuelles et la politique effective de l'\u0000tat. Cette circulation entre le sujet personnel et l'objectivit\u0000 collective, pour \u0000tre vraiment une \u0000 circulation \u0000, doit aller dans les deux sens. Par le truchement des partis, l'individu doit avoir prise sur l'objectivit\u0000 collective, contribuer \u0000 lui donner ses organes et son orientation ; par le truchement des partis, l'objectivit\u0000 collective doit cesser de s'imposer comme un fait univoque semblable \u0000 une tyrannie naturelle ; livr\u0000e aux interpr\u0000tations diverses, aux appr\u0000ciations contradictoires, elle retrouve sa mall\u0000abilit\u0000, ses possibles futurs, elle se trouve ramen\u0000e dans le circuit humain o\u0000 le sujet constate, imagine, juge et transforme.",
+      "bbox": {
+        "x_pct": 3.064,
+        "y_pct": 23.44,
+        "w_pct": 84.54,
+        "h_pct": 24.626
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a donc nullement lieu de d\u0000plorer les divergences des partis. Les lamentations d'une grande partie de la presse d\u0000mocrate (surtout lib\u0000rale) sur ce th\u0000me, ses appels constants \u0000 l'union (pas toujours sinc\u0000res d'ailleurs et dissimulant d'autres d\u0000sirs), ne manifestent qu'une incompr\u0000hension profonde de la nature des partis, de la d\u0000mocratie et de la soci\u0000t\u0000 humaine tout enti\u0000re. Les hommes ne sont pas faits pour l'unanimit\u0000, bien qu'elle satisfasse certains de leurs besoins les plus profonds, les plus primitifs et les plus paresseux. Si les d\u0000mocrates avaient mieux compris la d\u0000mocratie, les citoyens se seraient laiss\u0000 moins facilement impressionner et m\u0000me s\u0000duire par les 98% ou les unanimit\u0000s des pl\u0000biscites totalitaires ; mais ils en avaient eux-m\u0000mes, le plus souvent, nourri d'avance la nostalgie ; ils \u0000taient eux-m\u0000mes s\u0000duits d'avance sans le savoir ; car ce qu'ils aimaient dans la d\u0000mocratie, ce n'\u0000tait pas la d\u0000mocratie ; la d\u0000mocratie, malgr\u0000 l'\u0000tymologie, bien plus que le r\u0000gne du peuple, c'est le respect et l'amour de la diversit\u0000 humaine. Et les partis sont l\u0000 pour cristalliser des possibles \u0000 pour que chaque citoyen ait le choix.",
+      "bbox": {
+        "x_pct": 2.326,
+        "y_pct": 49.617,
+        "w_pct": 84.763,
+        "h_pct": 37.193
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce choix ne garde son sens qu'\u0000 deux conditions : il doit",
+      "bbox": {
+        "x_pct": 5.334,
+        "y_pct": 86.159,
+        "w_pct": 81.393,
+        "h_pct": 2.255
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 1,
+  "issues": [
+    "The page header containing the page number 125 was not correctly identified and included in the previous text region.",
+    "OCR text quality is low."
+  ],
+  "doc_id": "330",
+  "page": 159,
+  "elapsed_seconds": 9.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

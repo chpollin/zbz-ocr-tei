@@ -1,0 +1,42 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME 123",
+      "bbox": {
+        "x_pct": 9.551,
+        "y_pct": 2.0,
+        "w_pct": 69.735,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "il s'ensuit que ce qui est r&eacute;el pour un mode peut ne pas l'&ecirc;tre pour l'autre. D'o&ugrave;, dans l'esprit humain, une sorte de pr&eacute;sence substantielle des notions de non-&ecirc;tre, d'inexistence, une distinction fondamentale entre « la chose » et « sa r&eacute;alit&eacute; », entre l'essence et l'existence. La question m&ecirc;me de l'existence d&eacute;finie, de « l'existence-de-ceci » ou de « l'existence-de-cela » est li&eacute;e aux conditions de pens&eacute;e sp&eacute;cifiquement humaines. C'est pourquoi on pourrait traduire ici l'objection faite &agrave; l'argument ontologique en interpr&eacute;tant l'existence logique comme &eacute;tant l'existence humainement pens&eacute;e, et l'existence ontologique comme &eacute;tant l'existence en soi, &mdash; avec toute l'impensabilit&eacute; que comporte une telle expression. D&egrave;s lors, l'argument de saint Anselme ne se trouverait pas r&eacute;fut&eacute; pour autant, mais sa port&eacute;e &mdash; sa signification &mdash; serait limit&eacute;e au plan humain. Et c'est bien ce qui r&eacute;sulte de tout ce qui pr&eacute;c&egrave;de: on ne peut penser Dieu comme existant, car l'&ecirc;tre est bien une valeur, et m&ecirc;me la valeur sans laquelle les autres se perdent. S'ensuit-il que Dieu existe? &mdash; Ni que Dieu existe, ni que Dieu n'existe pas, parce que la question de l'existence de Dieu pos&eacute;e hors des conditions de la forme, donc hors de ce qui est pensable pour nous, ne peut avoir pour nous aucun sens, et que cette existence ne peut donc &ecirc;tre ni ni&eacute;e ni affirm&eacute;e. Et cela d'autant moins que la pens&eacute;e de Dieu comme existant (telle que la pose l'argument ontologique) empi&egrave;te d&eacute;j&agrave; par nature, et non par abus, d&eacute;j&agrave; pour pouvoir &ecirc;tre une pens&eacute;e, sur le plan ontologique o&ugrave;, pour pouvoir penser Dieu, elle le pose existant. Il est impossible &agrave; la pens&eacute;e humaine de ne pas empi&eacute;ter ainsi sur le plan ontologique. C'est une condition de forme et par l&agrave; de pensabilit&eacute;. Mais &eacute;tant une condition de pensabilit&eacute;, cet empi&eacute;tement prend une valeur de constante de l'esprit humain, non de l'&ecirc;tre de Dieu. Il acquiert ainsi, lui aussi, une « r&eacute;alit&eacute; empirique » (empirique se rapportant ici au fait de la pens&eacute;e) et une « id&eacute;alit&eacute; transcendantale ». La port&eacute;e objective accord&eacute;e &agrave; une telle id&eacute;alit&eacute; transcendantale est",
+      "bbox": {
+        "x_pct": 9.551,
+        "y_pct": 13.493,
+        "w_pct": 69.735,
+        "h_pct": 75.326
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header/footer regions in initial JSON"
+  ],
+  "doc_id": "110",
+  "page": 125,
+  "elapsed_seconds": 6.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "532",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to _filter"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Coups de sonde",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "éliminé, comme si l'être humain avait le droit de n'être menacé par rien afin de ne jamais mourir. Son dérivé, le « droit à la santé », n'a de sens que s'il proclame le « droit à des conditions de vie saines » et, en cas de maladie, le « droit à des soins médicaux ». Encore la notion de « conditions de vie saines » est-elle toute relative à l'époque et au lieu, très vague, impossible à satisfaire adéquatement. Non seulement les possibilités matérielles, même dans une société d'abondance, ne sont jamais illimitées pour tous, mais encore parce que, pour des êtres humains, des conditions de vie « parfaitement saines » sont impensables : excluant toute menace, tout effort, toute privation, toute douleur, elles deviendraient, par le fait même, malsaines et insupportables. Quant au « droit aux soins médicaux », dont l'exigence centrale du droit à la vie et à la santé implique manifestement l'égalité pour n'importe quel malade, chacun sait qu'il ne peut être mis en œuvre au même degré pour tous. Ce sont même les énormes progrès de la médecine, la complication et le coût des traitements de pointe qui rendent leur totale démocratisation impraticable - bien qu'il n'en reste pas moins monstrueux et inacceptable d'avoir à décider qui pourra en bénéficier. Mais si même cette démocratisation pouvait matériellement s'accomplir, elle exigerait un tel nombre de médecins, une pratique médicale si rapide et si constante, et surtout une telle submersion de la vie individuelle et sociale par le souci médical, que la santé perdrait son sens.",
+      "bbox": {
+        "x_pct": 25.691,
+        "y_pct": 11.609,
+        "w_pct": 71.471,
+        "h_pct": 66.477
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and identified as paragraph"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Races et racisme",
+      "bbox": {
+        "x_pct": 25.838,
+        "y_pct": 82.169,
+        "w_pct": 22.397,
+        "h_pct": 2.257
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faut pas que la lutte pour une mise en œuvre toujours concrète et plus sincère des droits de l'homme...",
+      "bbox": {
+        "x_pct": 25.838,
+        "y_pct": 86.33,
+        "w_pct": 70.824,
+        "h_pct": 4.907
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page number 532 missing in initial extraction",
+    "Running header 'Coups de sonde' missing in initial extraction",
+    "OCR errors in main paragraph text"
+  ],
+  "doc_id": "2920",
+  "page": 30,
+  "elapsed_seconds": 5.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

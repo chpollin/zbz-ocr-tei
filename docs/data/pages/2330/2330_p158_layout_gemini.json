@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "réussissait ainsi à éviter dans certaines activités les contradictions Est-Ouest.",
+      "bbox": {
+        "x_pct": 17.424,
+        "y_pct": 4.056,
+        "w_pct": 79.524,
+        "h_pct": 3.71
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3.2 L'Europe dans le monde",
+      "bbox": {
+        "x_pct": 20.72,
+        "y_pct": 13.573,
+        "w_pct": 33.248,
+        "h_pct": 2.452
+      },
+      "changed": true,
+      "change_reason": "Fixed missing apostrophe and typo in heading text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Vous le confirmez maintenant, vous n'avez en fait jamais renié l'héritage de l'Europe ; vous l'avez même conçue cette Europe, expressis verbis, comme une « patrie ». Alors, inversement, que pensez-vous de ceux qui considèrent « l'identité européenne » aujourd'hui comme menacée de fait par la forte immigration de travailleurs ou de réfugiés d'Afrique ou d'Asie ?",
+      "bbox": {
+        "x_pct": 17.057,
+        "y_pct": 17.605,
+        "w_pct": 80.22,
+        "h_pct": 12.315
+      },
+      "changed": true,
+      "change_reason": "Substantially corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Je ne crois pas. L'identité européenne est menacée par cette pénétration, en tout cas dans les proportions qu'elle prend actuellement. On ne peut pas préjuger. J'ai lu, par exemple, l'autre jour, un article d'Alfred Sauvy, dans lequel il évoquait le moment où par suite de l'évolution démographique et de la répartition des richesses, il y aurait de nouvelles migrations modernes : les populations des autres continents pourraient déferler sur l'Occident.",
+      "bbox": {
+        "x_pct": 17.46,
+        "y_pct": 29.169,
+        "w_pct": 79.731,
+        "h_pct": 14.484
+      },
+      "changed": true,
+      "change_reason": "Substantially corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est le thème du récit de Jean Raspail, Le Camp des Saints, paru en 1973 déjà.",
+      "bbox": {
+        "x_pct": 17.546,
+        "y_pct": 44.089,
+        "w_pct": 79.646,
+        "h_pct": 4.379
+      },
+      "changed": true,
+      "change_reason": "Substantially corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Je ne l'ai pas lu. Mais c'est tout à fait possible et même vraisemblable, si l'on continue à avoir un tel écart entre l'Europe occidentale, d'une part, et les autres continents, d'autre part, aussi bien quant à la natalité que quant aux ressources. Les cataclysmes qui risquent de se produire dépassent toutes nos représentations. Mais, actuellement, je ne trouve pas que la civilisation européenne soit menacée de ce côté-là ; elle est plutôt menacée par ceux qui la croient menacée, et qui prennent alors, à l'égard de l'imigration actuelle, une attitude xénophobe contraire à l'esprit européen et aux droits de l'homme. En revanche, je voudrais ajouter un mot : je trouve un peu facile, parfois, que certains qui ont très peu de contacts avec les immigrés jugent de haut et de loin les réactions de ceux qui travaillent dans les usines et qui vivent dans les maisons où cette immigration est très sensible, où tous les détails concrets de mœurs étrangères les assaillent nuit et jour chez eux et au travail. Cette proximité exige, à la longue, qu'on prenne certaines précautions.",
+      "bbox": {
+        "x_pct": 17.338,
+        "y_pct": 47.903,
+        "w_pct": 79.853,
+        "h_pct": 30.589
+      },
+      "changed": true,
+      "change_reason": "Substantially corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— A.D. — Puisque nous parlons de l'Europe, qu'est-ce au fond que l'Europe pour vous ? Dans un certain sens, elle est un énorme agrandissement de la Suisse : elle est extrêmement diverse, bien plus diverse que la Suisse évidemment, dans ses composantes ; elle a appris, par habitude, à vivre la cohabitation de la diversité, à travers son",
+      "bbox": {
+        "x_pct": 17.46,
+        "y_pct": 82.605,
+        "w_pct": 79.817,
+        "h_pct": 8.177
+      },
+      "changed": true,
+      "change_reason": "Substantially corrected corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "zb_paragraph",
+      "text": "154",
+      "bbox": {
+        "x_pct": 17.46,
+        "y_pct": 96.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and correctly identified as page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Severe OCR degradation in original file",
+    "Missing bounding box for page number in original detection",
+    "Numerous misread characters leading to incoherent text"
+  ],
+  "doc_id": "2330",
+  "page": 158,
+  "elapsed_seconds": 7.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

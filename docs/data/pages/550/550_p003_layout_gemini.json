@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "62 L'aspect philosophique du problme des rapports",
+      "bbox": {
+        "x_pct": 89.251,
+        "y_pct": 68.825,
+        "w_pct": 70.924,
+        "h_pct": 7.183
+      },
+      "changed": true,
+      "change_reason": "Page number and header were detected as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais cette mise en perspective tend \u0000 la m\u0000me r\u0000duction. Et c'est dans la mesure o\u0000 elle l'accomplit qu'elle est, sociologiquement parlant, satisfaisante.",
+      "bbox": {
+        "x_pct": 9.251,
+        "y_pct": 13.825,
+        "w_pct": 84.924,
+        "h_pct": 6.183
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'agit donc tout de m\u0000me de transformer une philosophie en un objet d'\u0000tude sociale ; et dans la mesure o\u0000 cette op\u0000ration r\u0000ussit, elle \u0000limine en quelque sorte, de la philosophie consid\u0000r\u0000e, l'int\u0000r\u0000t sp\u0000cifiquement philosophique que l'auteur philosophe avait esp\u0000r\u0000 y mettre. L'autonomie de pens\u0000e \u0000 laquelle le philosophe pr\u0000tend et qui est la raison d'\u0000tre de son effort se trouve, dans la mesure du possible, grignot\u0000e, r\u0000duite, et, finalement dans l'hypoth\u0000se d'une sociologie devenue v\u0000ritablement une science adulte, annul\u0000e, au moins dans l'esprit des sociologues.",
+      "bbox": {
+        "x_pct": 9.196,
+        "y_pct": 20.528,
+        "w_pct": 85.118,
+        "h_pct": 18.013
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les philosophes, eux, lisant les sociologues, ont toujours le sentiment que ceux-ci sont des philosophes malgr\u0000 eux. Il leur semble qu'au moment o\u0000 le sociologue nie \u0000prement devant eux avoir m\u0000l\u0000 \u0000 son travail aucune implication philosophique, il s'abandonne \u0000 une telle implication dans la phrase m\u0000me par laquelle il la nie.",
+      "bbox": {
+        "x_pct": 9.334,
+        "y_pct": 38.644,
+        "w_pct": 84.743,
+        "h_pct": 11.806
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi le philosophe, lorsqu'il lit un sociologue, se trouve \u0000prouver un besoin constant et irritant - le sociologue \u0000tant absent - d'\u0000lucider des implications qu'il ne peut \u0000lucider tout seul, qu'il voudrait faire reconna\u0000tre par le sociologue absent ; et il finit par \u0000prouver un sentiment de malentendu si radical, si fondamental, que m\u0000me en pr\u0000sence de l'auteur un dialogue ne semble pas possible.",
+      "bbox": {
+        "x_pct": 9.57,
+        "y_pct": 50.923,
+        "w_pct": 84.743,
+        "h_pct": 13.486
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsque les organisateurs de ce Colloque m'ont propos\u0000 de prendre la parole ici, j'ai beaucoup h\u0000sit\u0000 \u0000 accepter, \u0000 cause de deux mouvements psychologiques contraires que les sociologues, cette fois-ci pr\u0000sents dans cette salle, pourront s\u0000rement expliquer sociologiquement ; l'un \u0000tait le d\u0000sir de sauter sur l'occasion pour exprimer enfin mon irritation ancienne en ayant devant moi de vrais sociologues, en chair et en os ; l'autre, un mouvement de recul, le sentiment d'une inf\u0000riorit\u0000 manifeste, puisque je n'\u0000tais pas du m\u0000tier, que je ne connaissais gu\u0000re la bibliographie \u0000l\u0000mentaire, ni les travaux accomplis, ni les m\u0000thodes, et qu'en somme j'allais me trouver dans une situation vraiment tr\u0000s d\u0000savantageuse.",
+      "bbox": {
+        "x_pct": 9.431,
+        "y_pct": 65.118,
+        "w_pct": 84.785,
+        "h_pct": 23.58
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Incomp\u0000tence et irritation agressive, ce ne sont pas des sentiments excellents pour prendre la parole en public ; c'est pourquoi je demande toute votre indulgence.",
+      "bbox": {
+        "x_pct": 9.612,
+        "y_pct": 88.746,
+        "w_pct": 84.424,
+        "h_pct": 6.104
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "OCR text was heavily corrupted.",
+    "Page number and header were incorrectly tagged as paragraphs.",
+    "Bounding boxes contained corrupted text from source detection."
+  ],
+  "doc_id": "550",
+  "page": 3,
+  "elapsed_seconds": 6.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

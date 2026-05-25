@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dingungen; die Forderungen der zu leistenden Arbeit und die Zwangsmaßnahmen eine bestimmte Art des Überlebens zulassen, bleibt für menschliche Wesen unannehmbar. Dann verlangt nicht das Naturgesetz in erster Linie, daß der »Friede« gestört werde, sondern das menschliche Gesetz selbst, dessen Forderung unbedingt ist. Es gibt also im Menschsein dem Frieden entgegengesetzte Faktoren, die zu denen des Naturgesetzes hinzukommen und die damit unseren Ausgangspunkt bestätigen: Der Mensch ist nicht von Natur aus friedlich. Er ist es nicht, zunächst weil er auch zum Reich des Stärkeren gehört und dessen Gesetz erleidet; er ist es weiter nicht, weil er die Anerkennung des menschlichen Gesetzes unbedingt fordert, den Respekt, in ihm und im anderen, seiner verantwortlichen Freiheit und seines Rechts auf Wahrheit.",
+      "bbox": {
+        "x_pct": 5.21,
+        "y_pct": 4.432,
+        "w_pct": 82.344,
+        "h_pct": 31.577
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein Friede ohne Respekt vor dem menschlichen Gesetz – das nicht von der Natur her kommt, sondern von der menschlichen Berufung –, ein solcher Friede, der nur ein »Nicht-Krieg« wäre, wäre nur für Menschen annehmbar, die nichts und niemanden lieben, die an nichts hängen, weder für sich noch für ihre Kinder, und die eigentlich das Menschsein selber aufgegeben haben. Was sie »Friede« nennen, ist bloße Unterwerfung unter das Naturgesetz, das durch die Gier eines bewußten Wesens verbessert und erweitert wird, so daß es fähig ist, eine bestimmte zukünftige Dauer vorauszuplanen und die eigene Grausamkeit und List zu mehren. Alles wird gleichgültig. Nur überleben! Geschehe, was wolle.",
+      "bbox": {
+        "x_pct": 5.166,
+        "y_pct": 36.062,
+        "w_pct": 82.2,
+        "h_pct": 24.996
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated in the source JSON. Updated it to reflect the full paragraph visible in the region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das sind Versuchungen eines falschen Friedens. Es gibt aber noch andere, die dem Schein nach aus der Verpflichtung zur Freiheit – dem menschlichen Gesetz gemäß –, zur Wahrheit und Gerechtigkeit hervorgehen. Wenn Menschen sich einbilden, die Grundlagen der tiefsten Wahrheit zu besitzen oder die sichersten Methoden, um Gerechtigkeit und Frieden endgültig einzusetzen, sind sie versucht, den anderen zugunsten ihrer zukünftigen Geschichte mit Gewalt den dauerhaften Triumph ihrer eigenen Überzeugungen aufzuzwingen; sie neigen dazu, dieselbe Gewalt, die im Naturgesetz herrscht, für eigene Zwecke anzuwenden. Die Größe ihres Vorhabens täuscht über die Sinnlosigkeit hinweg, die in jedem Versuch",
+      "bbox": {
+        "x_pct": 5.21,
+        "y_pct": 62.705,
+        "w_pct": 81.954,
+        "h_pct": 27.489
+      },
+      "changed": true,
+      "change_reason": "The text content was truncated in the source JSON. Updated it to reflect the full paragraph visible in the region."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "191",
+      "bbox": {
+        "x_pct": 818,
+        "y_pct": 925,
+        "w_pct": 40,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Source JSON contained truncated paragraph text.",
+    "Page number 191 was incorrectly excluded from the regions list."
+  ],
+  "doc_id": "2830",
+  "page": 8,
+  "elapsed_seconds": 4.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

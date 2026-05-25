@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Von der philosophischen Klarheit als Pflicht",
+      "bbox": {
+        "x_pct": 71.494,
+        "y_pct": 27.652,
+        "w_pct": 3.738,
+        "h_pct": 2.502
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header based on content and position."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "85",
+      "bbox": {
+        "x_pct": 83.257,
+        "y_pct": 27.652,
+        "w_pct": 2.378,
+        "h_pct": 2.502
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, moved to filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nicht mehr auf dieselbe Weise. Es wird existentiell, so daß die Theorie des Systems, die auf philosophische Weise entwickelt wird, mit der individuellen Freiheit zusammenfällt. Das ist der Ausdruck der Freiheit des Philosophen als Menschen, die im theoretischen Ausdruck des Systems mitschwingt. Ich spreche nicht von Psychologie oder Gefühlsartigem, sondern wirklich von Philosophie. Ich glaube, dadurch wird es klar, daß diese Sprache, diese Ausdrucksweise wirklich philosophisch wirkt. Sie hat die Resultate, die man von ihr erwartet.",
+      "bbox": {
+        "x_pct": 6.422,
+        "y_pct": 6.579,
+        "w_pct": 79.939,
+        "h_pct": 15.65
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist wahr, daß man beim Lesen eines Philosophen, den man verstehen möchte, versuchen sollte, ihn zunächst einmal nicht von außen zu verstehen, sondern erst einmal das anzunehmen, was er sagt. Man sollte es so annehmen, daß man die Bewegungen, das Gestische des Gedankens dieses Philosophen mitvollzieht. Das ist eine Mimesis, ein Nachvollziehen. Womit vollzieht man das? Mit der Freiheit. Die eigene Freiheit vollzieht nach, was der Philosoph gedacht und getan hat. Das ist meines Erachtens der wahre Sinn von „einen Philosophen verstehen“. Einen Philosophen verstehen heißt nicht, ihn einfach blind zu bewundern oder ihn zu tadeln, zu verwerfen, zu urteilen oder Widersprüche in seinen Gedanken zu entdecken, sondern zunächst einmal zu versuchen, seine Gedanken nachzuvollziehen, ihm sein Denken nachzutun.",
+      "bbox": {
+        "x_pct": 6.458,
+        "y_pct": 22.344,
+        "w_pct": 79.853,
+        "h_pct": 23.52
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt etwas sehr Merkwürdiges, das man meistens nicht sagt; bei den großen Philosophen gibt es eine eigenartige Eintönigkeit. Wenn Sie in einer Bibliothek Bücher von diesem Philosophen herausnehmen und irgendwo hineinlesen, und Sie haben früher andere von ihm gelesen, haben frei mit ihnen gedacht, dann merken Sie gleich, das ist immer derselbe. Es ist nicht unerwartet, es ist eher eintönig. Manche Menschen haben es schnell satt, und sie denken: Diesen Philosophen kenne ich jetzt genug, von dem weiß ich fast im voraus, was er sagen wird. Interessante Philosophen sind nicht so, denn die bringen immer wieder Unerwartetes, neue Lösungen, an die man nicht gedacht hat, und man hat diese schöne Freude der Überraschung dabei. Das ist etwas ganz anderes. Sie werden merken, daß man bei den großen Philosophen meistens gerade nicht diese Erfahrung macht, sondern im Gegenteil immer wieder die charakteristische Eintönigkeit der Großen erfährt.",
+      "bbox": {
+        "x_pct": 6.287,
+        "y_pct": 45.477,
+        "w_pct": 79.951,
+        "h_pct": 27.771
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aus dieser Eintönigkeit, aus dieser ständigen Gegenwart desselben Denkens, entsteht in diesen Philosophien eine besondere Art von Klarheit, die daher kommt, daß der betreffende Denker das, was er sagt, ganz auf sich nimmt. Er trägt es. Es ist wichtiger, zu verstehen, zu spüren und zu wissen, wer spricht, als wovon er spricht. Das Kostbarste ist nicht das, wovon er spricht, obgleich das sehr interessant und sogar entscheidend sein kann,",
+      "bbox": {
+        "x_pct": 6.373,
+        "y_pct": 73.051,
+        "w_pct": 79.816,
+        "h_pct": 12.5
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR text was severely truncated in all regions.",
+    "Page number and running header were mislabeled as paragraph text."
+  ],
+  "doc_id": "2990",
+  "page": 78,
+  "elapsed_seconds": 5.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

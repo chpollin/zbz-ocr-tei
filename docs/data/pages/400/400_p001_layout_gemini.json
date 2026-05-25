@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les exp&eacute;riences communistes et l'optimisme &eacute;clair&eacute;",
+      "bbox": {
+        "x_pct": 24.54,
+        "y_pct": 20.553,
+        "w_pct": 37.903,
+        "h_pct": 5.641
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Professeur Jeanne HERSCH Gen&egrave;ve",
+      "bbox": {
+        "x_pct": 51.024,
+        "y_pct": 26.684,
+        "w_pct": 25.427,
+        "h_pct": 3.248
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and identified author line."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Premi&egrave;re difficult&eacute; : quelles sont les exp&eacute;riences qui m&eacute;ritent d'&ecirc;tre appel&eacute;es &laquo; communistes &raquo; ? Quels sont ici les crit&egrave;res ? Il ne suffit pas qu'une exp&eacute;rience se situe dans une r&eacute;gion g&eacute;ographique d&eacute;termin&eacute;e pour qu'elle m&eacute;rite de s'appeler communiste.",
+      "bbox": {
+        "x_pct": 12.637,
+        "y_pct": 55.368,
+        "w_pct": 64.0,
+        "h_pct": 8.564
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text with proper French typography."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or il a une ambigu&iuml;t&eacute; peut-&ecirc;tre insurmontable entre au moins trois aspects de ce que l'on a coutume aujourd'hui d'appeler &laquo; exp&eacute;rience communiste &raquo;.",
+      "bbox": {
+        "x_pct": 12.879,
+        "y_pct": 63.607,
+        "w_pct": 63.976,
+        "h_pct": 5.413
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certains ont tendance &agrave; appeler communiste ce qui se trouve &ecirc;tre li&eacute; &agrave; une r&eacute;volution accomplie contre un ordre de choses ant&eacute;rieur, f&eacute;odal ou quasi f&eacute;odal. Pour d'autres, une exp&eacute;rience communiste est indissolublement li&eacute;e &agrave; un capitalisme d'Etat. Or, notre coll&egrave;gue yougoslave nous a bien dit que dans les analyses marxistes, on avait davantage d&eacute;velopp&eacute; la critique du r&eacute;gime &agrave; abolir que l'esquisse du r&eacute;gime &agrave; instituer. Cela revient &agrave; constater que la seconde d&eacute;finition est n&eacute;gative, comme la premi&egrave;re. En effet, dans le cas du capitalisme d'Etat, c'est bien son c&ocirc;t&eacute; n&eacute;gatif &mdash; &agrave; savoir la suppression de la propri&eacute;t&eacute; priv&eacute;e &mdash; qui s'identifie au communisme. C'est parce que &laquo; capitalisme d'Etat &raquo; signifie ici &laquo; suppression de la propri&eacute;t&eacute; priv&eacute;e &raquo; que nous avons tendance &agrave; le consid&eacute;rer comme une &laquo; exp&eacute;rience communiste &raquo;.",
+      "bbox": {
+        "x_pct": 13.065,
+        "y_pct": 68.49,
+        "w_pct": 64.298,
+        "h_pct": 21.464
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors and improved text fidelity."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 74.8,
+        "y_pct": 91.5,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Heavy OCR errors in paragraph text",
+    "Missing page number in initial JSON",
+    "Incorrect author line processing",
+    "French typography (guillemets/spaces) needed correction"
+  ],
+  "doc_id": "400",
+  "page": 1,
+  "elapsed_seconds": 7.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

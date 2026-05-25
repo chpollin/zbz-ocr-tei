@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "80 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 109.0,
+        "y_pct": 86.0,
+        "w_pct": 779.0,
+        "h_pct": 105.0
+      },
+      "changed": true,
+      "change_reason": "Header elements identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "quelque bout qu'on les prenne, une adhésion appelle toutes les autres, moins par l'effet d'un lien logique, déductif, permettant de passer de l'une à l'autre, que par celui d'une foi impliquée tout entière en chaque point, si bien qu'à la lettre « tout y est dans tout et réciproquement ».",
+      "bbox": {
+        "x_pct": 108.0,
+        "y_pct": 113.0,
+        "w_pct": 857.0,
+        "h_pct": 107.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prenons deux exemples. Il est parfaitement possible, sans adhérer à la doctrine communiste, d'accepter sa partie négative, la critique qu'elle fait du régime capitaliste. Mais, contrairement à ce que beaucoup imaginent, il n'est pas possible d'accepter les solutions qu'elle propose sur le plan économique sans l'accepter du même coup tout entière. En effet, remplacer les employeurs du régime capitaliste par un seul et unique employeur, l'État, c'est donner à celui-ci une telle puissance, et en même temps une telle vulnérabilité à la critique et à la révolte, qu'il faut bien dès lors lui accorder aussi la force des polices, des armées et des prisons. Telle est la nécessité des faits. Mais il en existe une autre, plus subjective et idéologiquement plus essentielle : consentir à ce que l'État soit le seul employeur, c'est lui accorder une confiance sans limites, c'est donc renoncer à le contrôler et l'ériger en juge absolu. Toute l'adhésion philosophique qu'implique la doctrine communiste, avec ses conséquences politiques, la croyance foncière que l'État est et ne peut être, en régime communiste, que l'organe de la nécessité historique représentant la volonté unanime des masses, tout cela est impliqué dans le consentement à faire de l'État l'employeur unique. Refuser de voir ces implications, c'est simplement, je crois, préserver en soi à bon compte une pureté d'intention entièrement inefficace.",
+      "bbox": {
+        "x_pct": 103.0,
+        "y_pct": 215.0,
+        "w_pct": 858.0,
+        "h_pct": 458.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and merged block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Beaucoup de gens, à l'époque du fascisme italien, ont été portés à lui témoigner de la sympathie parce que les trains arrivaient à l'heure. Et certes il est possible de souhaiter voir les trains arriver à l'heure sans consentir aux tribunaux d'exception, aux prisons et aux déportations. Mais en régime fasciste, ce qui faisait arriver les trains à l'heure (comme ce qui avait fait disparaître la mendicité) appartenait indissolublement au système politique fasciste, et dire qu' « il y avait du bon » en écartant de sa pensée toute complicité avec l'écrasement de la liberté n'avait pas de sens. Il y a toujours « du bon » dans un régime politique, quel qu'il soit. Mais il faut voir si ce « bon » est ou n'est pas lié à un « mal » auquel",
+      "bbox": {
+        "x_pct": 103.0,
+        "y_pct": 671.0,
+        "w_pct": 857.0,
+        "h_pct": 232.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page header was misclassified as text.",
+    "Text extraction was truncated and riddled with OCR errors.",
+    "BBox boundaries were loose/inaccurate for the identified content.",
+    "Page number 80 included in running header should be separated or correctly filtered."
+  ],
+  "doc_id": "330",
+  "page": 114,
+  "elapsed_seconds": 5.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

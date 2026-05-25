@@ -1,0 +1,145 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "pulation>, elles sont inséparables de la condition humaine. Sans elles, il ny aurait pas dhommes et,",
+      "bbox": {
+        "x_pct": 13.86,
+        "y_pct": 9.459,
+        "w_pct": 65.109,
+        "h_pct": 8.108
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces vérités ont été oubliées, notamment par nos humaines; ne sont pas proprement des sciences, même ",
+      "bbox": {
+        "x_pct": 13.916,
+        "y_pct": 17.453,
+        "w_pct": 65.052,
+        "h_pct": 21.903
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il importe que les philosophes rappellent ces vérités élémentaires oubliées de nos jours. Elles ont ",
+      "bbox": {
+        "x_pct": 14.021,
+        "y_pct": 39.088,
+        "w_pct": 65.004,
+        "h_pct": 9.687
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "En conclusion; jaflirme que la réflexion philosophique est sable dans le monde daujourdhui. Elle doi",
+      "bbox": {
+        "x_pct": 14.045,
+        "y_pct": 48.889,
+        "w_pct": 64.923,
+        "h_pct": 7.789
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "ZUR PHILOSOPHIE DER AKTUELLEN REVOLUTION DES ERZIEHUNGSWESENS",
+      "bbox": {
+        "x_pct": 15.955,
+        "y_pct": 61.823,
+        "w_pct": 61.241,
+        "h_pct": 3.761
+      },
+      "changed": true,
+      "change_reason": "Label updated to match hierarchy"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "von Hermann Lübbe",
+      "bbox": {
+        "x_pct": 37.953,
+        "y_pct": 67.066,
+        "w_pct": 17.325,
+        "h_pct": 1.481
+      },
+      "changed": true,
+      "change_reason": "Label updated to match hierarchy"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "I",
+      "bbox": {
+        "x_pct": 45.504,
+        "y_pct": 72.023,
+        "w_pct": 1.45,
+        "h_pct": 1.328
+      },
+      "changed": true,
+      "change_reason": "Label updated to match hierarchy"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Bedarf an Philosophie wächst mit dem Tempo des sozialen Wandels und des ihn heute primär bedinge",
+      "bbox": {
+        "x_pct": 13.997,
+        "y_pct": 74.684,
+        "w_pct": 65.157,
+        "h_pct": 12.114
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "9",
+      "bbox": {
+        "x_pct": 77.4,
+        "y_pct": 88.0,
+        "w_pct": 2.2,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "2 Studia Philosophica XXXIV",
+      "bbox": {
+        "x_pct": 14.0,
+        "y_pct": 90.0,
+        "w_pct": 25.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page footer"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Headings incorrectly labeled as paragraph",
+    "Missing page footer regions",
+    "Missing page number region"
+  ],
+  "doc_id": "1140",
+  "page": 10,
+  "elapsed_seconds": 5.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label updated to match hierarchy": 3,
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE",
+      "bbox": {
+        "x_pct": 296.0,
+        "y_pct": 149.0,
+        "w_pct": 427.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "231",
+      "bbox": {
+        "x_pct": 809.0,
+        "y_pct": 146.0,
+        "w_pct": 39.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "MIle HERSCH :",
+      "bbox": {
+        "x_pct": 155.02,
+        "y_pct": 178.22,
+        "w_pct": 147.23,
+        "h_pct": 15.15
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "A. Tentatives de réponse aux questions posées",
+      "bbox": {
+        "x_pct": 266.0,
+        "y_pct": 211.0,
+        "w_pct": 475.0,
+        "h_pct": 35.0
+      },
+      "changed": true,
+      "change_reason": "Label corrected to include the 'A.' prefix and capture correct bounding box for section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le titre général de nos entretiens est Limites et critères de la connaissance. Il semble impliquer que la fin ou les fins de la connaissance sont claires d'emblée, et aussi que cette fin ou ces fins sont communes à tous les genres de connaissance. Tel ne me paraît pas être le cas, en particulier lorsqu'il s'agit de connaissance historique. Ici moins encore qu'ailleurs je souscrirais à la première phrase du résumé de M. Mercier, affirmant que l'acte de connaissance « libère des liens qui nous attachent au temps présent ». Je voudrais donc m'interroger d'abord sur les fins de la connaissance historique, puis, en fonction de ces fins, sur ses critères et ses limites.",
+      "bbox": {
+        "x_pct": 149.0,
+        "y_pct": 242.0,
+        "w_pct": 696.0,
+        "h_pct": 176.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription errors in paragraph text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "I. Fins de la connaissance historique",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 445.0,
+        "w_pct": 443.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'agit d'abord d'établir ce qui s'est réellement passé. Cette recherche des faits, avec l'indication précise de leurs coordonnées spatiales et temporelles, semble à première vue sinon facile, du moins peu problématique. Mais c'est qu'on imagine un passé historique déployé dans la continuité d'un temps homogène, univoque, dont il suffirait de recenser le contenu à l'aide des méthodes perfectionnées d'investigation et de critique modernes. On serait ainsi en mesure d'établir un catalogue non pas complet, certes, des faits historiques, mais du moins un catalogue de plus en plus complet, dont on éliminerait progressivement les altérations résultant de toilettes collectives du souvenir, de légendes et de mensonges. Ne subsisteraient alors que des divergences d'interprétation. Or, ici déjà la connaissance historique, bien qu'elle progresse sans cesse, est tenue en échec : légendes et mensonges sont en histoire des faits efficaces, qui se mêlent inextricablement à la réalité ; les « faits » se produisent dans des perspectives temporelles essentiellement hétérogènes, discontinues, irréductibles l'une à l'autre, donc dépourvues d'unité objective et ne s'articulant ensemble que dans l'existence vécue des personnages du passé ; enfin, si la cohésion est nécessaire à la solidité objective des faits, on souffrira toujours",
+      "bbox": {
+        "x_pct": 146.0,
+        "y_pct": 482.0,
+        "w_pct": 700.0,
+        "h_pct": 323.0
+      },
+      "changed": true,
+      "change_reason": "Merged content into a single accurate paragraph and corrected transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 320.0,
+        "y_pct": 927.0,
+        "w_pct": 360.0,
+        "h_pct": 57.0
+      },
+      "changed": true,
+      "change_reason": "Identified as footer metadata."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Original detection failed to recognize page header and footer.",
+    "Section heading was split incorrectly.",
+    "Transcription of paragraph text contained hallucinations and severe OCR errors.",
+    "The list item was not a list item, but part of a paragraph."
+  ],
+  "doc_id": "540",
+  "page": 3,
+  "elapsed_seconds": 7.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "242",
+      "bbox": {
+        "x_pct": 18.36,
+        "y_pct": 9.94,
+        "w_pct": 2.55,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 65.5,
+        "y_pct": 9.94,
+        "w_pct": 16.5,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tion se renversenl: au lieu que Ia compréhension n'ait plus qu'un seul terme et que lextension soit ",
+      "bbox": {
+        "x_pct": 17.952,
+        "y_pct": 12.582,
+        "w_pct": 68.47,
+        "h_pct": 22.551
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'être nous est caché, non par la forme au traire; le manifeste et Pactualise, mais par sa constance",
+      "bbox": {
+        "x_pct": 17.871,
+        "y_pct": 35.156,
+        "w_pct": 68.47,
+        "h_pct": 14.753
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La [orme fait exister pour Thomme une réalité spécifiée; la seule lui soit  accessible. a  elle-même",
+      "bbox": {
+        "x_pct": 17.837,
+        "y_pct": 50.015,
+        "w_pct": 68.47,
+        "h_pct": 13.288
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le comble de séparalion correspond un comble de délermination, donc 4 comble dêtre à de forme. C'est",
+      "bbox": {
+        "x_pct": 17.722,
+        "y_pct": 64.943,
+        "w_pct": 68.504,
+        "h_pct": 9.522
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page number region"
+  ],
+  "doc_id": "110",
+  "page": 244,
+  "elapsed_seconds": 6.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

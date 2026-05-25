@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "das in der Vergangenheit je der Fall gewesen ist, sich menschlich zu entwickeln. Das heißt, die entstehende Freizeit muß eine zutiefst menschliche Freizeit werden. Infolgedessen ist es notwendig, alle Kräfte einzusetzen, die Menschen auf diesen neuen Zustand vorzubereiten.",
+      "bbox": {
+        "x_pct": 9.514,
+        "y_pct": 8.416,
+        "w_pct": 76.555,
+        "h_pct": 10.712
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Conturen: Erforderlich wäre also ein Bildungs- oder Ausbildungskonzept für die Sinnfindung, Sinngestaltung, Sinnübung...",
+      "bbox": {
+        "x_pct": 9.541,
+        "y_pct": 19.601,
+        "w_pct": 76.652,
+        "h_pct": 4.86
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Ja, das wäre erforderlich. Wir haben die Wissenschaft und die Technik, mit denen wir jeden Tag umgehen, kulturell nicht verarbeitet. Ich meine damit, daß wir eine Fülle von Dingen um uns herum als selbstverständlich hinnehmen, sie gebrauchen und mißbrauchen, aber in Wirklichkeit überhaupt nicht in der Lage sind, sie in ihrem Kontext zu begreifen. Zum Beispiel empfinden wir keinerlei Dankbarkeit gegenüber jenen Menschen, die uns diese wissenschaftlich-technische Welt, in der wir leben, geschaffen haben. Welche Eltern sagen schon zu ihren Kindern, wenn sie auf einer schönen Autobahn in die Ferien fahren: diese Straße ist kein Stück der Natur, sie wurde in harter Arbeit von Menschen gebaut, und wir müssen ihnen gegenüber ein Gefühl der Dankbarkeit entwickeln. Tatsächlich ist alles, was wir berühren, durch menschliche Anstrengung entstanden. Aber wir haben verlernt, diese Mühe, die in den Dingen steckt, zu erkennen, und deshalb ist uns auch die Empfindung von Dankbarkeit fremd.",
+      "bbox": {
+        "x_pct": 9.691,
+        "y_pct": 25.088,
+        "w_pct": 76.59,
+        "h_pct": 33.299
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed missing text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lassen Sie mich diesen Punkt noch etwas vertiefen. Ich hatte Studenten, die plötzlich erklärten, sie schuldeten der Gesellschaft nichts. Das ist ein verhängnisvoller Trugschluß. Wer nämlich der Auffassung ist, er schulde der Gesellschaft nichts, befindet sich bereits in der Sinnlosigkeit, denn für ihn gilt als ausgemacht, daß er für diese Gesellschaft nichts, aber auch gar nichts zu tun braucht. Versteht jemand aber, was alles an Menschenleben und Menschenmühe in die Dinge investiert worden ist, dann empfindet er auch eine Schuld gegenüber der Gesellschaft und den Mitmenschen und ist bestrebt, mit seinem Leben etwas anzufangen. Ich habe immer ein tragisches Gefühl, wenn ich sehe, wie viele junge Menschen mit ihrer Zeit offensichtlich nichts beginnen können. Wer mit seiner Zeit nichts anzufangen weiß, der tötet sie, und das ist Selbstmord, denn das Leben ist Zeit.",
+      "bbox": {
+        "x_pct": 9.629,
+        "y_pct": 58.08,
+        "w_pct": 76.943,
+        "h_pct": 28.627
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed missing text"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "257",
+      "bbox": {
+        "x_pct": 82.1,
+        "y_pct": 89.1,
+        "w_pct": 3.4,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was highly inaccurate and truncated content.",
+    "Page number at the bottom right was incorrectly labeled as text.",
+    "Multiple paragraphs contained truncated text due to OCR alignment issues."
+  ],
+  "doc_id": "2540",
+  "page": 9,
+  "elapsed_seconds": 6.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

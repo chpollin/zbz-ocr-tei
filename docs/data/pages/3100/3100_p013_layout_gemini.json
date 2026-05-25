@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "positive rend ces mêmes philosophies responsables d'avoir corrompu le message biblique. D'un côté, Feuerbach, Marx, Nietzsche, Freud dénoncent les complicités des philosophies «spiritualistes» et du christianisme, le mensonge, l'illusion et la vanité des arrière-mondes, celui des idées comme celui des dieux; d'un autre côté, Kant, Hegel, Schelling et leurs successeurs tentent de situer la croyance par rapport au savoir positif, pour enrayer l'athéisme en revenant aux sources des religions.",
+      "bbox": {
+        "x_pct": 15.012,
+        "y_pct": 7.635,
+        "w_pct": 65.351,
+        "h_pct": 15.937
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le glissement, qui va de la reconnaissance de la révélation à sa négation par les emprunts aux métaphysiques, modifie la question de Dieu dans le sens d'une question que l'homme s'adresse à lui-même. L'athéisme méthodique émousse les interrogations de l'homme sur Dieu, sur son existence et ses attributs et finit par les évacuer. La perte d'un Dieu caché entraînerait-elle pour l'homme l'oubli de son humanité?",
+      "bbox": {
+        "x_pct": 15.012,
+        "y_pct": 23.59,
+        "w_pct": 65.27,
+        "h_pct": 13.464
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sans entrer dans les dédales de ce problème, je note seulement que sa profondeur ouvre peut-être une possibilité à l'audition de la question adressée par Dieu à l'homme. Au bord du gouffre, Caïn est poursuivi par la question de Dieu à l'homme: «Où est ton frère... qu'en as-tu fait?» (Gn. 4.9–10). De même Adam en révolte est arrêté par l'interpellation de son Créateur: «Adam, où es-tu?» (Gn 3.9). Ici, le moment n'est plus de savoir comment Dieu s'adresse à l'homme, dans quel langage et selon quel moyen de communication; mais c'est l'heure de la foi ou de l'incrédulité; c'est l'instant de la décision. En l'interrogeant au cœur d'une situation conflictuelle, Dieu donne à l'homme de prendre conscience de lui-même, de se comprendre en se déterminant pour ou contre sa libération, de trouver un remède à son angoisse, une issue à cette profondeur qui l'engloutit pour l'anéantir. En lui adressant un appel, une vocation, Dieu offre à sa créature le pouvoir de s'autodéterminer, d'accéder à une liberté qui ne soit plus seulement ratificatrice, mais créatrice. En effet, en rompant le silence dans lequel s'enferment l'homme et ses propos illusoires, Dieu permet au croyant de déceler la vanité des idoles, des idéaux et des valeurs, que l'homme s'est forgés pour tromper l'exigence d'absolu qui le travaille.",
+      "bbox": {
+        "x_pct": 14.69,
+        "y_pct": 37.436,
+        "w_pct": 65.512,
+        "h_pct": 39.242
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La question de Dieu à l'homme oblige Adam à scruter sa fragilité, sa précarité et sa finitude, à l'instant où il veut s'égaler à Dieu lui-même, pour étancher cette soif d'absolu qui le brûle, sans vouloir recevoir de Dieu l'eau vive. Le Dieu qui appelle n'est pas n'importe",
+      "bbox": {
+        "x_pct": 14.803,
+        "y_pct": 76.752,
+        "w_pct": 65.238,
+        "h_pct": 8.376
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "12",
+      "bbox": {
+        "x_pct": 14.9,
+        "y_pct": 87.2,
+        "w_pct": 1.6,
+        "h_pct": 1.9
+      },
+      "changed": true,
+      "change_reason": "Marked page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was severely truncated in original detection, requiring full rewrite of text content.",
+    "Page number at the bottom was labeled as text, changed to page_footer."
+  ],
+  "doc_id": "3100",
+  "page": 13,
+  "elapsed_seconds": 5.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

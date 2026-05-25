@@ -1,0 +1,84 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "236",
+      "bbox": {
+        "x_pct": 19.355,
+        "y_pct": 2.0,
+        "w_pct": 3.226,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 66.855,
+        "y_pct": 2.0,
+        "w_pct": 21.21,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fût-ce le principe de non-contradiction : Car le non-être est une notion totalement   étrangère inte",
+      "bbox": {
+        "x_pct": 19.435,
+        "y_pct": 13.288,
+        "w_pct": 68.664,
+        "h_pct": 16.781
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi Fexpression bien qu'elle ne soit là   nullement tautologique; mais la plus riche soit",
+      "bbox": {
+        "x_pct": 19.435,
+        "y_pct": 29.787,
+        "w_pct": 68.548,
+        "h_pct": 16.887
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée en soi San5 tervention   séparatrice dune forme   (qui aussilòl fait de Têlre en soi en la",
+      "bbox": {
+        "x_pct": 19.355,
+        "y_pct": 50.137,
+        "w_pct": 68.629,
+        "h_pct": 24.298
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original text transcription had significant OCR errors",
+    "Missing page headers in original JSON",
+    "Some text content needed manual alignment with visual scan"
+  ],
+  "doc_id": "110",
+  "page": 238,
+  "elapsed_seconds": 8.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content to match image content": 2,
+    "ADDED": 2
+  }
+}

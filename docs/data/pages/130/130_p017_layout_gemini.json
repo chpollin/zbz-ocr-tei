@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LE PROBL&E8ME DE L'&E9LITE OUVRI&E8RE",
+      "bbox": {
+        "x_pct": 30.59,
+        "y_pct": 10.02,
+        "w_pct": 53.64,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header heading region."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": {
+        "x_pct": 86.32,
+        "y_pct": 10.02,
+        "w_pct": 2.92,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page number region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "loi sur la réforme linstruction   publique présentée au Grand Conseil de Genève par le groupe social",
+      "bbox": {
+        "x_pct": 13.758,
+        "y_pct": 13.228,
+        "w_pct": 78.226,
+        "h_pct": 41.652
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin il faut que Université ouvrière devienne une véritable institution dutilité commune. Son impor",
+      "bbox": {
+        "x_pct": 13.89,
+        "y_pct": 54.755,
+        "w_pct": 78.489,
+        "h_pct": 28.53
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un mot pour terminer. Qu'on le veuille ou non, la puissance du film et de la radio grandissant. Et l",
+      "bbox": {
+        "x_pct": 13.89,
+        "y_pct": 82.872,
+        "w_pct": 78.449,
+        "h_pct": 8.319
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header title.",
+    "Missing page number region."
+  ],
+  "doc_id": "130",
+  "page": 17,
+  "elapsed_seconds": 9.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "334",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 0.5,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number in header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "RES PUBLICA",
+      "bbox": {
+        "x_pct": 75.0,
+        "y_pct": 0.5,
+        "w_pct": 14.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header title"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La première difficulté vient de ce qu'on est  facilement amené à confondre absolu > (au sens   trans",
+      "bbox": {
+        "x_pct": 14.956,
+        "y_pct": 11.246,
+        "w_pct": 73.961,
+        "h_pct": 32.442
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une remarque, ici, me paraît   importante. Divers courants de   pensée contemporains font de la tota",
+      "bbox": {
+        "x_pct": 14.803,
+        "y_pct": 44.416,
+        "w_pct": 74.07,
+        "h_pct": 22.673
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Situation  actuelle.",
+      "bbox": {
+        "x_pct": 14.912,
+        "y_pct": 70.168,
+        "w_pct": 18.315,
+        "h_pct": 1.77
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La révolution technique 9 transformé non  seulement notre environne ment et les conditions de notre ",
+      "bbox": {
+        "x_pct": 14.77,
+        "y_pct": 73.499,
+        "w_pct": 73.928,
+        "h_pct": 11.805
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En efet, à la technique on 4 assisté à une extension et à une multiplication prodigieuses des pouvoi",
+      "bbox": {
+        "x_pct": 14.88,
+        "y_pct": 85.423,
+        "w_pct": 73.632,
+        "h_pct": 6.06
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing header regions for page number and journal title."
+  ],
+  "doc_id": "1260",
+  "page": 2,
+  "elapsed_seconds": 9.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

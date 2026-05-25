@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "gues robes, et la cathédrale dont il imagina un instant les cloches graves, à la sortie de la messe Insultés. Seule la vermine est immortelle. Elle siffle.",
+      "bbox": {
+        "x_pct": 10.085,
+        "y_pct": 14.298,
+        "w_pct": 65.636,
+        "h_pct": 8.015
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Siffle-t-elle du dehors ou du dedans? Voici qu'elle siffle du dedans, elle donne des ordres, et le Chevalier les comprend. Elle siffle comme jamais il n'a entendu siffler, ni les grillons des soirs d'été, ni les vipères, ni rien. «Le dragon passe par là parce qu'il est un serpent. Le dragon passe, passe, passe - pff il passe, pff il glisse, pff il se froisse comme une soie - il caresse le rocher tout le tour, tout le tour de son corps visqueux - il rampe, il avance, il glisse, il se froisse, sans accroc, mince, aplati, pattes pliées, pattes rentrées - Mais celui-là, ha, ha, ha, avec sa grosse tête dure, ses os, ses angles, sa lance, droite, droite, droite, ah! ah! ah! il veut passer dans le boyau tordu, ah! ah! ah!»",
+      "bbox": {
+        "x_pct": 9.818,
+        "y_pct": 22.624,
+        "w_pct": 66.145,
+        "h_pct": 44.971
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Chevalier crispe sa main sur sa lance. Des jours de tournois, sous le franc soleil, éclatent dans sa mémoire. Sa lance alors était un trait de feu, une barre de colère incandes-",
+      "bbox": {
+        "x_pct": 10.097,
+        "y_pct": 67.368,
+        "w_pct": 65.697,
+        "h_pct": 11.632
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "39",
+      "bbox": {
+        "x_pct": 724.0,
+        "y_pct": 822.0,
+        "w_pct": 17.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Identified and correctly labeled missing page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily truncated for all paragraphs.",
+    "Page number at the bottom was missing from the initial region list."
+  ],
+  "doc_id": "2260",
+  "page": 37,
+  "elapsed_seconds": 4.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

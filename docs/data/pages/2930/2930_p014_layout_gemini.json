@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Peter Oberndorfer",
+      "bbox": {
+        "x_pct": 7.758,
+        "y_pct": 11.842,
+        "w_pct": 15.624,
+        "h_pct": 2.675
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text to match source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "An das letzte anknüpfend möchte ich doch den pragmatischen Standpunkt von Frau Hersch vorziehen, nämlich daß wir schon zufrieden sein sollten, wenn wir für uns die Grundrechte bewahren und durchsetzen und nicht versuchen, für Uns die chen sollen. Grundrechtspositionen Gc-schlechter zu behaupten. Das soll nicht heißen, daß wir die Umwelt nicht bewahren sollen, aber es ist immer die Frage, ob das Grundrechte sein sollen! Grundrechte sind doch eine ganz bestimmte Kategorie mit Durchsetzbarkeitsansprüchen und es wäre schön, wenn wir heute die unseren, also die Grundrechte der jetzt Lebenden in dieser Form bewahren könnten. Da stimme ich Frau Hersch absolut zu.",
+      "bbox": {
+        "x_pct": 7.638,
+        "y_pct": 15.824,
+        "w_pct": 37.482,
+        "h_pct": 23.44
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for full block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eines auch in Ihrem Vortrag Sic schen, s0 ermoglichen, die sagten Sie, eine Gefahr darin, daß immer mehr Rechte als Grundrechte formuliert werden, weil dann das wirklich Wichtige zu kurz käme. Sie leiteten dann über zu den Vor-bedingungen für die Grundrechte, speziell für die Aus-übung der Freiheitsrechte, also auf die ökonomischen und sozialen Positionen, die die Ausübung dieser Freiheiten erst ermöglichen, die man aber nicht unbedingt als Grund-rechte denken muß und soll. Wenn ich das recht verstanden habe, dann beziehen Sie damit Standpunkt in einer brennend heißen Diskussion, nämlich dort, wo es um die Verankerung sozialer Grundrechte in nationalen Grund-rechtskatalogen.",
+      "bbox": {
+        "x_pct": 7.758,
+        "y_pct": 39.284,
+        "w_pct": 37.242,
+        "h_pct": 24.795
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text inaccuracies."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Jeanne Hersch",
+      "bbox": {
+        "x_pct": 7.674,
+        "y_pct": 69.108,
+        "w_pct": 12.986,
+        "h_pct": 2.427
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in name."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nicht daß ich gegen diese sozialen Rechte wäre! Es gibt sie wirklich, sie spielen eine ganz wesentliche Rolle im Leben der Menschen und deswegen möchte ich nicht, daß man sie weniger wichtig nimmt. Aber ich stelle fest, daß man die Verwirklichung dieser Rechte nicht mit der gleichen Strenge beurteilen kann, wie man das bei den Freiheitsrechten tun muß.",
+      "bbox": {
+        "x_pct": 7.47,
+        "y_pct": 73.406,
+        "w_pct": 37.578,
+        "h_pct": 10.073
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rechte nur approximativ behaupten würde, also z.B. auch die zivilen und politischen Rechte, dann würde man den Menschenrechten insgesamt keinen guten Dienst erweisen.",
+      "bbox": {
+        "x_pct": 53.441,
+        "y_pct": 17.5,
+        "w_pct": 36.211,
+        "h_pct": 5.775
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text segment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ja, mit einer Ergänzung. Die Mehrheit ist natürlich nicht gleichbedeutend mit den Menschenrechten. Aber die Geschichte zeigt, daß die individuellen Menschenrechte in der Demokratie weniger gefährdet sind als in anderen Systemen.",
+      "bbox": {
+        "x_pct": 53.441,
+        "y_pct": 48.977,
+        "w_pct": 36.27,
+        "h_pct": 8.041
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and corrected text block scope."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 7.47,
+        "y_pct": 87.2,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page number label."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "29",
+      "bbox": {
+        "x_pct": 88.5,
+        "y_pct": 87.2,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page number label."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Several text blocks were badly corrupted by poor OCR.",
+    "Page numbers were missing from detection.",
+    "Section headers had typos."
+  ],
+  "doc_id": "2930",
+  "page": 14,
+  "elapsed_seconds": 7.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

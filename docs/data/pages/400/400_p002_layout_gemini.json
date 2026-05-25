@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le troisième aspect des « expériences communistes », c'est l'accumulation forcée, accélérée, douloureuse - douloureuse sous n'importe quel régime - du capital primitif indispensable, dans des pays non encore industrialisés.",
+      "bbox": {
+        "x_pct": 26.105,
+        "y_pct": 8.889,
+        "w_pct": 58.629,
+        "h_pct": 7.123
+      },
+      "changed": true,
+      "change_reason": "Corrected broken transcription of quoted phrase."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces trois aspects sont très différents. Nous pouvons adopter chacun d'entre eux comme décisif. Ce choix, qui ne dépend que de nous, donne à la notion de communisme cet espèce de scintillement, de chatoiement, qui engendre de grandes difficultés de méthode. Encore ces aspects sont-ils emmêlés et ne concernent-ils que la pratique, les faits de la réalité dite communiste.",
+      "bbox": {
+        "x_pct": 26.129,
+        "y_pct": 15.573,
+        "w_pct": 58.605,
+        "h_pct": 10.296
+      },
+      "changed": true,
+      "change_reason": "Corrected broken transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, il s'y ajoute une doctrine et une idéologie. Et le lien de cette doctrine avec la pratique n'est pas simple. Il est quelquefois contestable, presque toujours problématique, et constamment variable au cours de l'histoire. Mais le facteur idéologique fait inextricablement partie de ces expériences, et on ne peut les considérer indépendamment de la doctrine qui les porte, ne serait-ce qu'en tant qu'instrument du pouvoir.",
+      "bbox": {
+        "x_pct": 26.185,
+        "y_pct": 25.601,
+        "w_pct": 58.226,
+        "h_pct": 11.681
+      },
+      "changed": true,
+      "change_reason": "Corrected broken transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "S'il est difficile de séparer l'aspect fait de l'aspect doctrine, il est difficile aussi de les unir. Il est donc presque impossible de démêler ce qui a eu une influence sur les autres idéologies : si c'est la doctrine, ou si ce sont les expériences elles-mêmes. Par exemple, on peut dire que ce qu'on a appelé le christianisme communisant de l'Occident s'est beaucoup plus occupé des idéologies que des expériences concrètes. Certains aspects doctrinaux ont été beaucoup plus influents que la pratique. Si l'on étudie attentivement la sympathie des chrétiens communisants pour le régime communiste, on y trouvera, paradoxalement, moins le souci du sort concret des hommes que la fascination d'une perspective idéologique. Tout cela demanderait évidemment un plus long développement.",
+      "bbox": {
+        "x_pct": 26.048,
+        "y_pct": 37.168,
+        "w_pct": 58.202,
+        "h_pct": 21.595
+      },
+      "changed": true,
+      "change_reason": "Corrected broken transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, ce que l'Occident conçoit ou imagine sous le titre d'expériences communistes ressemble, je crois, assez peu à ce que, en réalité, vivent ou croient vivre les hommes de l'Est. En général, l'Occident est séduit par une interprétation qui peut être celle d'un petit groupe d'intellectuels de l'Est, mais qui n'est certainement pas celle des masses. C'est ainsi qu'il se représente ces masses elles-mêmes comme homogènes et ayant en quelque sorte perdu le sens démocratique de la liberté. Dans sa générosité, il essaie d'entrer en contact avec elles afin de leur rendre ce sens de la liberté, ou du moins d'en semer les germes. Les gens qui viennent de l'Est, eux, éprouvent, parfois jusqu'au désespoir, l'impossibilité de se faire comprendre, parce qu'ils constatent la faiblesse incroyable de notre sens démocratique et de notre sens de la liberté. Ils découvrent que l'Occident ignore tout de ce qui est pour eux la souffrance de chaque jour, tout des conséquences concrètes qu'entraîne pour eux la perte de la liberté. Ils sont alors, sans doute, infiniment plus qualifiés pour donner des leçons de liberté que les Occidentaux, parce qu'ils savent ce qui leur manque. Ils cherchent souvent en vain à faire",
+      "bbox": {
+        "x_pct": 25.992,
+        "y_pct": 58.194,
+        "w_pct": 57.823,
+        "h_pct": 31.225
+      },
+      "changed": true,
+      "change_reason": "Corrected broken transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 26.371,
+        "y_pct": 91.077,
+        "w_pct": 1.774,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Labeled as page footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text extraction was heavily corrupted by OCR/segmentation errors.",
+    "Page number at the bottom was incorrectly identified as part of the paragraph body."
+  ],
+  "doc_id": "400",
+  "page": 2,
+  "elapsed_seconds": 6.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

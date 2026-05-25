@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est évident que lénoncé < Fhomme est mort > n 1 'appelle nullement Fexamen littéral 'expriment le",
+      "bbox": {
+        "x_pct": 5.256,
+        "y_pct": 4.399,
+        "w_pct": 88.617,
+        "h_pct": 10.958
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En réalité les hommes faits , connus, la propagent, n 1 y croient pas eux-mêmes. Ce sont des hypocri",
+      "bbox": {
+        "x_pct": 5.671,
+        "y_pct": 15.474,
+        "w_pct": 88.34,
+        "h_pct": 13.369
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais les jeunes , parfois, se laissent tromper par <la mort de Phomme > Il leur arrive den mourir , ",
+      "bbox": {
+        "x_pct": 5.809,
+        "y_pct": 28.609,
+        "w_pct": 88.202,
+        "h_pct": 4.571
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout en me méfiant de lamour 'en tant qu'Européenne je porte à FEurope, je ne peux m'empêcher de pen",
+      "bbox": {
+        "x_pct": 5.906,
+        "y_pct": 33.902,
+        "w_pct": 88.658,
+        "h_pct": 37.01
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est cette   acceptation, à ce que je crois, que toute autre condition favorable, a permis , en Eur",
+      "bbox": {
+        "x_pct": 6.957,
+        "y_pct": 71.843,
+        "w_pct": 87.69,
+        "h_pct": 6.992
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Accepter sa condition dhomme, c'est consentir à des déterminations limitatives , spécifient des disc",
+      "bbox": {
+        "x_pct": 7.095,
+        "y_pct": 78.528,
+        "w_pct": 87.69,
+        "h_pct": 8.889
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "37",
+      "bbox": {
+        "x_pct": 91.8,
+        "y_pct": 89.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 100,
+  "num_corrections": 1,
+  "issues": [],
+  "doc_id": "1510",
+  "page": 4,
+  "elapsed_seconds": 7.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "einem Erziehungsproblem zu tun, und ich könnte mir sehr gut eine Erziehung vorstellen, die im jungen Menschen genügend Interessen weckt, so daß er später keine extreme Anspruchsmentalität entwickelt, sondern sich einigen Dingen zuwendet, die ihm Freude bereiten und zu seiner Zufriedenheit beitragen. Das müssen keine produktiven Tätigkeiten sein: dem einen oder anderen genügt schon das stille Betrachten der Natur. Natürlich sollte ein Mensch auch das Bedürfnis verspüren, eine konkrete Leistung für seine Mitmenschen zu erbringen. Von der großen Mehrheit würden solche Dienste am Nächsten oder der Gemeinschaft gegenüber wohl auch erbracht werden.",
+      "bbox": {
+        "x_pct": 14.161,
+        "y_pct": 8.478,
+        "w_pct": 75.592,
+        "h_pct": 22.919
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to match the full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eine ganz andere Frage stellt sich im rechnerischen Sinne: Was soll bezahlt werden? Wenn »Grundeinkommen ohne Arbeit« bedeutet, daß der einzelne jeden Komfort genießen kann – daß er Auto, Fernseher, Videokassetten etc. gewissermaßen als Grundstandard besitzen soll –, dann ist das schlicht unvorstellbar. Solche Ideen würden die korrupte Seite des zeitgenössischen Denkens dokumentieren. Es wären Vorstellungen, wie sie im Jahre 1968 die Studenten in Paris hatten, als sie Transparente durch die Straßen trugen, auf denen geschrieben stand: »Das Paradies, jetzt gleich«. Der Anspruch auf ein Paradies, als sei das Paradies jederzeit möglich und wünschbar, ist eine derart unmenschliche Vorstellung und auf eine Weise schädlich, daß die Menschen in den Selbstmord getrieben werden. Wir sind immer sehr weit vom Paradies entfernt, und vor allem: wir sind für das Paradies nicht begabt. Wären wir in einem Paradies, so sollte es sein, wie mit Adam und Eva, als es noch keine Zeit gab. Aber in der Dauer, in der Zeit würden wir uns im Paradies zu Tode langweilen.",
+      "bbox": {
+        "x_pct": 14.373,
+        "y_pct": 31.414,
+        "w_pct": 75.645,
+        "h_pct": 35.251
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content to match the full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Halten Sie die kürzlich in der Studie »Wohin führt der Weg?« veröffentlichten Grundvorstellungen des Club of Rome für zutreffend, die sich etwa folgendermaßen zusammenfassen lassen: Wir wissen, daß es körperliche Arbeit als Erwerbsarbeit in den Industriestaaten in wenigen Jahren nicht mehr geben wird. Viele heute noch für unersetzlich gehaltene intellektuelle Leistungen werden ersetzbar sein. Eine zwangsläufige Arbeitslosigkeit ist die Folge, deren Ausmaß wir uns kaum vorzustellen vermögen. Das wird zu Konsequenzen führen, die direkt in alle Lebensbereiche revolutionierend eingreifen...",
+      "bbox": {
+        "x_pct": 14.753,
+        "y_pct": 68.945,
+        "w_pct": 75.177,
+        "h_pct": 18.341
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text content and removed redundant header artifact 'Conturen:'."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "264",
+      "bbox": {
+        "x_pct": 14.479,
+        "y_pct": 89.215,
+        "w_pct": 4.148,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, relabeled from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text truncated in all paragraph regions.",
+    "Page number 264 was missing from original annotation.",
+    "Heading artifact 'Conturen:' merged into paragraph text."
+  ],
+  "doc_id": "2540",
+  "page": 16,
+  "elapsed_seconds": 5.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

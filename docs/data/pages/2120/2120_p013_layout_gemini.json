@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 149 -",
+      "bbox": {
+        "x_pct": 41.314,
+        "y_pct": 2.052,
+        "w_pct": 14.548,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn ich vorhin von zwei Zeitabschnitten meiner persönlichen Erfahrung im Hinblick auf unser Thema gesprochen habe, so begann der zweite im Jahre 1939. Ich war damals während der Ferien mit meiner Schwester zu Besuch bei Verwandten in Polen. Ich erinnere mich noch genau daran, wie eines Tages - wir waren gerade beim Essen - ein Herr aus der Bekanntschaft unserer Verwandten quasi \"so nebenbei\" sagte, daß ein deutsch-sowjetischer Vertrag abgeschlossen sei. \"Noch ein Stück Papier mehr\", meinte er. Ich aber sprang auf und sagte sehr laut: \"Das ist der Krieg!\" Denn ich wußte sofort, daß dieser Pakt nichts anderes bedeuten konnte. Noch am selben Tag wurden wir von unserem Vater telephonisch in die Schweiz zurückgerufen, und wir fuhren dann mit dem vorletzten Zug durch Deutschland - sonst wäre ich heute hier nicht bei Ihnen. Aber die Familie meiner Mutter war dort, in Polen, und die Familie meiner Mutter war eine sehr große Familie, die vollkommen vernichtet worden ist, bis auf eine Ausnahme. Diese Erfahrung habe ich damals auch gemacht.",
+      "bbox": {
+        "x_pct": 10.169,
+        "y_pct": 8.487,
+        "w_pct": 77.203,
+        "h_pct": 32.2
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich habe mir oft gesagt, es könne wohl nicht anders sein, als daß junge Menschen heute glaubten, alles das sei Vergangenheit, sei Geschichte, und wenn man sich damit beschäftige, lerne man Geschichte. Aber dann denke ich auch an meine jüngeren Cousinen, die heute wahrscheinlich noch am Leben wären, und an ihre Kinder, die jetzt in der Mitte des Lebens stünden. So nahe ist alles - so unglaublich nahe. Man muß sich immer wieder selbst anfassen, um zu spüren, daß es nicht eine \"Vorgeschichte\" ist - so unmöglich scheint das alles. Aber jetzt hier ist es ganz nahe.",
+      "bbox": {
+        "x_pct": 10.229,
+        "y_pct": 42.107,
+        "w_pct": 76.153,
+        "h_pct": 18.978
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zu einigen Problemen, über die hier schon gesprochen worden ist, muß ich ganz einfach und schnell noch etwas sagen, weil ich mich sonst wegen mangelnder Zivilcourage selbst anklagen müßte. Man hat gefragt, ob alles das, was damals geschehen ist, ein einzigartiges Ereignis sei oder ob man es mit anderen Vorgängen, zum Beispiel in den Kolonien, vergleichen könne. Ich glaube erstens, daß man sich diese Frage für jedes geschichtliche Ereignis stellen kann und stellen muß. Jedes Ereignis in der Geschichte ist, wenn es menschlich ist, gleichzeitig in der Geschichte \"draußen\" da, und als menschliches Ereignis einzigartig. Ob seiner Ungeheuerlichkeit steht das, worüber wir hier sprechen, in einer noch weit größeren Spannung zwischen diesen beiden Polen als andere geschichtliche Ereignisse: Beides ist wahr - und beides muß ertragen werden.",
+      "bbox": {
+        "x_pct": 10.424,
+        "y_pct": 62.454,
+        "w_pct": 76.017,
+        "h_pct": 27.771
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number at top was labeled as text",
+    "OCR text was heavily truncated in original JSON",
+    "Label consistency maintained",
+    "Aggressive text correction performed"
+  ],
+  "doc_id": "2120",
+  "page": 13,
+  "elapsed_seconds": 5.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

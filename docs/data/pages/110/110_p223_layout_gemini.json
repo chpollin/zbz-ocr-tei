@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "FORME ET « RÉALITÉ »",
+      "bbox": {
+        "x_pct": 11.06,
+        "y_pct": 10.428,
+        "w_pct": 32.55,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header text region"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "221",
+      "bbox": {
+        "x_pct": 75.319,
+        "y_pct": 93.0,
+        "w_pct": 4.137,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number region"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "ment en acte propre de Tesprit.",
+      "bbox": {
+        "x_pct": 11.06,
+        "y_pct": 13.604,
+        "w_pct": 17.938,
+        "h_pct": 3.543
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous   retrouvons Kant   ici, Sous autre   aspect: c'est que chez lui la législalion transcendantale",
+      "bbox": {
+        "x_pct": 10.829,
+        "y_pct": 17.223,
+        "w_pct": 68.468,
+        "h_pct": 35.152
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être   pourra-ton   s'expliquer; de   là, soi surprenant que   réalisme et idéalisme étant deux",
+      "bbox": {
+        "x_pct": 10.829,
+        "y_pct": 52.375,
+        "w_pct": 68.433,
+        "h_pct": 22.458
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page number region"
+  ],
+  "doc_id": "110",
+  "page": 223,
+  "elapsed_seconds": 6.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

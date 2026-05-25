@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une ancienne, était à lui depuis toujours. Il n’y avait rien à faire, sinon l’approfondir et l’accepter.",
+      "bbox": {
+        "x_pct": 23.479,
+        "y_pct": 11.17,
+        "w_pct": 66.012,
+        "h_pct": 8.889
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’approfondir, l’accepter, c’était peut-être découvrir un étrange vertige. La séparation dans la présence, la séparation sans adieu, ce n’est pas vraiment l’absence, c’est comme une ouverture aux échos présents de l’absence, à l’infini.",
+      "bbox": {
+        "x_pct": 23.6,
+        "y_pct": 19.444,
+        "w_pct": 65.891,
+        "h_pct": 16.641
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and full text restoration."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne voulait à aucun prix atténuer, en la déréalisant, la distance imposée par l’exil. Il tenait à la vivre dans sa cruelle littéralité. Mais il y avait, dans cette littéralité, un élément fortuit, un élément non nécessaire, qui laissait sa place et son rôle à l’espoir. Espoir très lointain, mince filet d’air dont se nourrissait malgré tout une petite flamme d’attente passionnée: un jour, peut-être, les choses changeraient; un jour, peut-être, il retrouverait là-bas, parmi les maisons et les villes et les mœurs détruites, sa langue, ses oiseaux, ses forêts, ses marécages, ses saisons.",
+      "bbox": {
+        "x_pct": 23.515,
+        "y_pct": 36.507,
+        "w_pct": 65.976,
+        "h_pct": 36.894
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR text extraction failures."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il y avait cet autre exil inévitable qui l’exilait à l’avance du lieu où il était, qui l’exi-",
+      "bbox": {
+        "x_pct": 27.43,
+        "y_pct": 73.039,
+        "w_pct": 61.952,
+        "h_pct": 5.32
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text extraction errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "90",
+      "bbox": {
+        "x_pct": 23.778,
+        "y_pct": 81.76,
+        "w_pct": 2.872,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction in regions was heavily corrupted by OCR errors.",
+    "Page number '90' was missing from the initial region list.",
+    "Need to improve character recognition for French accents and special characters."
+  ],
+  "doc_id": "2260",
+  "page": 90,
+  "elapsed_seconds": 4.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

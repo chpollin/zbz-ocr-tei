@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "26 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 7.068,
+        "y_pct": 7.788,
+        "w_pct": 595.0,
+        "h_pct": 2.253
+      },
+      "changed": true,
+      "change_reason": "Identified running header (page number and section title) erroneously labeled as paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "elle nous isole chacun dans sa pure solitude, — tu te souviens ? Après, nous nous retrouvons, avec des yeux mal habitués aux choses du dehors, nocturnes et tâtonnants, comme sur deux rives d’un fleuve d’oubli, comme si un miracle nous avait rendus l’un à l’autre dans une vie inconnue. Tu me prends la main, alors, parfois, et tu ne bouges plus, et tu attends que la parfaite géométrie cède aux choses approximatives, que les objets s’épaississent et se recollent malgré l’infini.",
+      "bbox": {
+        "x_pct": 7.068,
+        "y_pct": 12.127,
+        "w_pct": 80.905,
+        "h_pct": 23.006
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text extraction and aligned text content with the visual region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais cette fois, tu n’étais pas là à mon retour, tu ne savais pas mon voyage, et aucune richesse n’est valable à la fois dans tous les univers. J’ai senti approcher en rampant une vieille dépression d’autrefois, émerger en moi un rivage connu, un désert de sable où une vague me jetait comme une algue flétrie. Ce n’est plus permis. Ce serait sacrilège contre notre amour, contre notre enfant. Je me suis levée, et comme mes doigts tremblaient encore de désirs confus, j’ai disposé les bûches dans la cheminée, j’ai allumé le feu à genoux, j’ai tendu les mains. La chaleur était vraie et simple, avec toute une longue histoire humaine tissée de besoins et d’actes, de nourriture, de sommeil. Le feu sortant du bois, le feu de toujours. O Marc, quel secours et quelle protection il y a dans les choses faites par l’homme qui entourent l’homme ! J’en ai senti doucement le sens, tous ces objets attendant chacun de mes mouvements, préparés pour mes gestes, adaptés à la grandeur de mes mains et à la disposition de mes doigts. Toute notre chambre, toute notre maison. Sous le couvercle d’osier de ma corbeille à ouvrage, j’ai",
+      "bbox": {
+        "x_pct": 6.892,
+        "y_pct": 34.849,
+        "w_pct": 81.081,
+        "h_pct": 50.851
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/corrupted OCR text extraction."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was highly corrupted (hallucinated text characters).",
+    "Running header/page info at top was not separated from the first paragraph block.",
+    "BBox for header was approximated as it was missing from original input list."
+  ],
+  "doc_id": "40",
+  "page": 24,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

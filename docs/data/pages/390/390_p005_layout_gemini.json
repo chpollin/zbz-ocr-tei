@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "6",
+      "bbox": {
+        "x_pct": 17.389,
+        "y_pct": 9.208,
+        "w_pct": 1.107,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Corrected page number to page_header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 43.155,
+        "y_pct": 9.385,
+        "w_pct": 14.197,
+        "h_pct": 1.496
+      },
+      "changed": true,
+      "change_reason": "Corrected running header to page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à chaque instant de se jeter dans la première unanimité venue. Ce que Karl Jaspers, mon maître, a appelé « foi philosophique » n'est peut-être — n'est probablement — pas suffisant pour fonder un ordre social : la transcendance est sans doute un dieu par trop caché. En un temps comme le nôtre, elle reste cependant plus nécessaire que jamais pour préserver au moins le « vide » indispensable à la plénitude de la liberté.",
+      "bbox": {
+        "x_pct": 16.946,
+        "y_pct": 12.291,
+        "w_pct": 65.302,
+        "h_pct": 12.456
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le métier de philosophe, malgré tout ce qui précède, n'est pas suffisamment justifié, et tout ce que j'ai pu en dire reste trop vague, trop incertain. Sa valeur n'apparaît qu'avec l'expérience philosophique — elle-même toujours individuelle, évanescente, s'actualisant çà et là. Il reste contesté, et il doit le rester.",
+      "bbox": {
+        "x_pct": 17.002,
+        "y_pct": 26.097,
+        "w_pct": 65.133,
+        "h_pct": 8.815
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais surtout, le philosophe n'a guère de justification devant lui-même. Il semble parfois que la philosophie vous chasse par elle-même hors d'elle-même, vers la vie, vers l'action, ou vers la science, ou l'art, ou la religion. Il semble parfois que l'expérience essentielle — la décision libre, l'instant de Kierkegaard, le hic et nunc chrétien — n'est possible que hors de la philosophie, quand on cesse d'en parler.",
+      "bbox": {
+        "x_pct": 17.083,
+        "y_pct": 34.661,
+        "w_pct": 65.189,
+        "h_pct": 10.809
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Heureusement, le métier de professeur de philosophie allège un peu le fardeau du « métier de philosophe ». Car le professeur a une tâche plus précise : transmettre le patrimoine philosophique, c'est-à-dire le revivre et le faire revivre par le dialogue des vivants avec les vivants et des vivants avec les grands morts.",
+      "bbox": {
+        "x_pct": 17.027,
+        "y_pct": 46.496,
+        "w_pct": 64.98,
+        "h_pct": 9.345
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH.",
+      "bbox": {
+        "x_pct": 61.886,
+        "y_pct": 56.678,
+        "w_pct": 16.922,
+        "h_pct": 1.801
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at top left detected as text",
+    "Running header detected as text",
+    "OCR of paragraph text was heavily truncated and garbled in original JSON, manually corrected the text field to match the visual content"
+  ],
+  "doc_id": "390",
+  "page": 5,
+  "elapsed_seconds": 4.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

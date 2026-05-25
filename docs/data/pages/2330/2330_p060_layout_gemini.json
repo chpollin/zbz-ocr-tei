@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "représentent une victoire remportée sur le temps et l'espace, qui entraîne une transformation considérable des conditions dans lesquelles se déroule la vie humaine. Ce progrès ne change absolument rien, à mon avis, aux problèmes fondamentaux de la liberté. Mais il décuple, il centuple les responsabilités. Je ne crois pas que la technique moderne entraîne un changement en profondeur de notre nature, pas plus que l'invention de la roue qui est un prolongement de la marche, ou l'invention de la pince qui est un prolongement de la main. La technique est aussi ancienne que l'homme, elle relève de l'homo faber. D'une certaine manière l'homme se déchiffrera dans sa technique, mais la technique obligera l'homme à prendre aussi une conscience plus précise de ce qui est spécifiquement humain.",
+      "bbox": {
+        "x_pct": 15.629,
+        "y_pct": 4.586,
+        "w_pct": 80.012,
+        "h_pct": 23.652
+      },
+      "changed": true,
+      "change_reason": "The text was badly OCRed and truncated in the previous JSON; updated with the full content from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez fait allusion tout à l'heure à l'influence négative des sciences humaines sur la réflexion philosophique. Que pensez-vous du rôle prépondérant, parmi ces sciences, de la psychanalyse, surtout freudienne, qui a servi de modèle d'explication quasi universel, utilisé indifféremment par le sociologue, par l'historien, par le critique littéraire, etc. ?",
+      "bbox": {
+        "x_pct": 15.873,
+        "y_pct": 29.179,
+        "w_pct": 79.646,
+        "h_pct": 11.826
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne m'en suis jamais particulièrement occupée. Mais je vous dirai ce qu'en pensait Jaspers. Jaspers était psychiatre et il a pratiqué, entre autres, les méthodes psychanalytiques. Mais il a toujours refusé de reconnaître à la psychanalyse un privilège exclusif.",
+      "bbox": {
+        "x_pct": 15.995,
+        "y_pct": 40.845,
+        "w_pct": 79.609,
+        "h_pct": 8.471
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il a reconnu l'efficacité de la thérapie psychanalytique ?\nJ.H. — Il a reconnu à la psychanalyse une certaine efficacité thérapeutique, en ajoutant d'ailleurs immédiatement qu'il est presque impossible qu'une méthode consistant à s'occuper de quelqu'un, à le faire parler et à lui parler, n'aboutisse pas à un certain résultat positif. Ce qu'il objectait à la psychanalyse, c'est d'une part, comme je l'ai dit, sa prétention à l'exclusivité, et d'autre part son caractère monolithique et réducteur.",
+      "bbox": {
+        "x_pct": 15.788,
+        "y_pct": 49.775,
+        "w_pct": 79.695,
+        "h_pct": 15.897
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and restored dialogue structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cependant Jaspers a surtout formulé à l'égard de la psychanalyse des critiques d'ordre méthodologique. Il distinguait en psychologie deux méthodes. La première, qu'il appelle « explicative », est une méthode d'explication par les causes. La seconde, qu'il appelle « compréhensive », consiste à épouser le processus psychique qu'on étudie pour le comprendre de l'intérieur. La psychanalyse freudienne, qui est née dans une époque positiviste, se prétend une théorie explicative, par la cause. Elle considère, par exemple, certains actes ou certains comportements comme des phénomènes qui s'expliquent causalement par telle ou telle expérience vécue dans la petite enfance. Or Jaspers a montré que cette prétendue explication causale met en œuvre, en réalité, la méthode compréhensive, dans la mesure où elle implique une certaine compréhension intérieure, subjective, du processus psychique en question. Jaspers a",
+      "bbox": {
+        "x_pct": 15.629,
+        "y_pct": 65.567,
+        "w_pct": 79.89,
+        "h_pct": 26.09
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and restored missing text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "56",
+      "bbox": {
+        "x_pct": 16.788,
+        "y_pct": 94.34,
+        "w_pct": 2.44,
+        "h_pct": 2.25
+      },
+      "changed": true,
+      "change_reason": "Labeled as page_footer per guidelines."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original JSON text content contained significant OCR errors and truncation.",
+    "Page number at bottom of page not labeled as page_footer."
+  ],
+  "doc_id": "2330",
+  "page": 60,
+  "elapsed_seconds": 6.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

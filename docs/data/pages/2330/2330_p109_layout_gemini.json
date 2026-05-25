@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seulement c'était une autre présence. comme celle de la tradition sociale d'aide, d'entr'aide, de secours, qui avait un caractère sacré. Ce qu'il y a d'épouvantable, mais cela c'est la réalité humaine elle-même, c'est qu'au moment par exemple où l'on ramassait un bébé abandonné devant l'église comme étant une créature de Dieu, en même temps on supportait que des masses humaines fussent sacrifiées à l'essor initial du capitalisme sans que personne ne proteste à ce sujet ou presque. Il est après coup stupéfiant de constater l'insensibilité des hommes au fil de l'histoire. Mais la nôtre aujourd'hui n'est pas moins stupéfiante et ce que nous devons prendre en compte, c'est cette condition même. Alors, pour en revenir à votre question, je vois une pureté, une radicalité, une expérience nue dans l'attitude réformée et je vois une substantialité et une insertion dans la condition historique dans l'attitude catholique, et elles représentent chacune un pôle, à mon sens, des droits de l'homme. Et lorsque j'ai composé à l'Unesco le recueil Le Droit d'être un homme avec ces textes qui venaient de partout, ce qui m'a le plus frappée, c'est à quel point, à travers ces textes hétéroclites, les éléments fondamentaux qui s'affrontent à l'intérieur de la doctrine des droits de l'homme sont devenus visibles partout. C'est que les droits de l'homme, d'un côté, c'est une exigence absolue, et là où elle s'énonce absolument, elle est abstraite, elle est en quelque sorte dans l'éternité, hors du temps. Et puis, là où elle s'exprime dans ses conditions, dans sa réalité, dans son incarnation, elle aboutit à des exigences constamment contradictoires, parce que telle est la condition humaine.",
+      "bbox": {
+        "x_pct": 5.409,
+        "y_pct": 4.169,
+        "w_pct": 79.817,
+        "h_pct": 47.363
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text recognition output to match actual source text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.0) Maintenant, l'adhésion à un parti est-elle compatible, à votre sens, avec l'exigence absolue de liberté de jugement personnel ?",
+      "bbox": {
+        "x_pct": 5.495,
+        "y_pct": 52.444,
+        "w_pct": 79.206,
+        "h_pct": 4.492
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text recognition output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est une problématique tout à fait fondamentale, parce que, si l'on veut un système politique démocratique, il est inévitable que se constituent des groupements d'action. Il n'est pas possible à l'individu d'agir sur ce plan en restant isolé ou alors son action politique est extrêmement réduite. J'ai mis beaucoup de temps à découvrir cela. J'ai assisté à l'avènement de Hitler et je me suis rendu compte que si je continuais à refuser d'entrer dans un parti, j'aurais aucune efficacité politique et c'est la politique qui disposerait de moi. Notre époque est engagée de façon bien trop décisive au niveau politique pour qu'on puisse, à mon sens, être à la fois pour la démocratie et se tenir hors de n'importe quelle institution politiquement agissante dans cette démocratie.",
+      "bbox": {
+        "x_pct": 5.043,
+        "y_pct": 56.508,
+        "w_pct": 79.731,
+        "h_pct": 22.177
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text recognition output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La question que vous me posez concerne les partis. Au niveau des partis, j'ai toujours dit qu'à mes yeux l'adhésion à un parti est une adhésion conditionnelle. C'est une adhésion qui a ses limites. Ce n'est pas une adhésion absolue, je ne considérerais pas que je renonce à mon être si j'en sortais. Mon adhésion à un parti est conditionnée par la défense de ce qui me paraît le plus important et le plus sacré avant tout : la défense de",
+      "bbox": {
+        "x_pct": 5.006,
+        "y_pct": 78.25,
+        "w_pct": 79.609,
+        "h_pct": 12.129
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text recognition output."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "105",
+      "bbox": {
+        "x_pct": 80.627,
+        "y_pct": 93.597,
+        "w_pct": 4.502,
+        "h_pct": 2.259
+      },
+      "changed": true,
+      "change_reason": "Re-identified as page footer based on position and content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text recognition was highly inaccurate and required full manual transcription correction.",
+    "Page number at bottom right was misidentified as text paragraph."
+  ],
+  "doc_id": "2330",
+  "page": 109,
+  "elapsed_seconds": 6.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

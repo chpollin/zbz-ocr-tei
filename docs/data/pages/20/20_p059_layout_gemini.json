@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DÉCISION ET LIBERTÉ",
+      "bbox": {
+        "x_pct": 361.0,
+        "y_pct": 74.0,
+        "w_pct": 278.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "57",
+      "bbox": {
+        "x_pct": 841.0,
+        "y_pct": 76.0,
+        "w_pct": 24.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "en faire l’histoire, c’est (à moins qu’il soit prétexte servant à opposer, pour les pénétrer mieux, quelques grands systèmes), prendre à chaque philosophie ce qu’elle a de plus extérieur et de moins organique. En réalité, un problème est fondamentalement différent dans chaque philosophie, même quand il paraît être identique et que le philosophe prétend l’avoir repris à un de ses prédécesseurs pour en donner une nouvelle solution. Rappelons-nous ce qui a été dit plus haut du caractère identiquement total de chaque point d’une philosophie; l’identité vient du sujet, et non de l’objet traité.",
+      "bbox": {
+        "x_pct": 12.003,
+        "y_pct": 11.849,
+        "w_pct": 76.039,
+        "h_pct": 33.651
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was truncated and garbled"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C’est pour la même raison que la philosophie a échoué fatalement quand elle cherchait à fixer les bases d’une évolution constructrice où les résultats enchaînés formeraient un progrès. On peut aussi peu enfiler les systèmes à la façon des perles d’un collier que les existences des hommes à travers l’histoire. Chaque homme se sert et se nourrit du passé, mais chacun recommence, et jamais la connaissance du passé ne permettra de deviner l’homme futur. C’est cette impossibilité seule qui peut ménager à l’homme l’espace de sa liberté; et c’est pourquoi Bergson a pu fonder la liberté sur le temps. Qu’on ne puisse pas prévoir l’homme ne prouve pas encore qu’il décide de lui-même, qu’il contribue à se créer; mais c’est la condition indispensable pour que cette liberté, sans être prouvée, soit possible. Il en va de même de la philosophie : si ses résultats",
+      "bbox": {
+        "x_pct": 12.199,
+        "y_pct": 45.214,
+        "w_pct": 76.461,
+        "h_pct": 43.565
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was truncated and garbled"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Running header and page number were included in text analysis and needed filtering",
+    "OCR text content was highly inaccurate and truncated"
+  ],
+  "doc_id": "20",
+  "page": 59,
+  "elapsed_seconds": 4.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

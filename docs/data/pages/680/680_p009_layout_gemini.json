@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "surdit&eacute; qu&#39;ils peuvent chacun sur tous les autres. Ils ont quelque chose de fraternel. Ils sont ancr&eacute;s dans l&#39;exigence absolue d&#39;une tradition. Peut-&ecirc;tre s&#39;entre-tueraient-ils en poursuivant, chacun, aveugle, son &eacute;vidence aveuglante. Mon &eacute;l&egrave;ve, s&#39;il est vraiment sorti de la grotte tragique o&ugrave; r&eacute;sonnent les exigences absolues pour adopter uniquement la technique des moyens les plus propres &agrave; servir des fins vitales, ne comprend plus aucun d&#39;eux, ni la trag&eacute;die en g&eacute;n&eacute;ral. Jaspers, lui, les comprendrait tous. Chacun comme s&#39;il &eacute;tait le seul. Chacun comme il se comprend lui-m&ecirc;me.",
+      "bbox": {
+        "x_pct": 12.917,
+        "y_pct": 10.16,
+        "w_pct": 65.971,
+        "h_pct": 18.006
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais que ferait-il? Et surtout qu&#39;enseignerait-il, s&#39;il avait devant lui non des &eacute;tudiants d&eacute;j&agrave; impr&eacute;gn&eacute;s de telle tradition ou de telle autre &ndash; ou perdus pour toute tradition &ndash;, mais des enfants, des enfants les yeux immens&eacute;ment ouverts, attendant tout de lui? La r&eacute;ponse para&icirc;t claire: il les &eacute;l&egrave;verait dans la tradition qui est &agrave; ses yeux fondamentale pour l&#39;Occident: la tradition biblique. Celle qui pose l&#39;existence d&#39;un Dieu unique, transcendant, pr&eacute;sent et refus&eacute; dans ce monde, envers qui l&#39;homme est, bon gr&eacute; mal gr&eacute;, engag&eacute;, par qui l&#39;absolu, qu&#39;on le veuille ou non, est dans le jeu humain. Et cet absolu, quel serait son visage particulier, son exigence pr&eacute;cise? &ndash; L&#39;un des visages, l&#39;une des exigences de la tradition biblique, &ndash; car cette tradition est multiple, et chacune aide l&#39;autre &agrave; d&eacute;passer l&#39;exclusivisme qui la rendrait opaque &agrave; la transcendance. Pourtant, l&#39;exclusivisme comme tel doit &ecirc;tre accept&eacute;. Ici intervient ce petit mot allemand intraduisible: &laquo;jeweils&raquo;. L&#39;objet de la foi (le visage de l&#39;absolu) est &laquo;jeweils einzig&raquo;, c&#39;est-&agrave;-dire &laquo;chaque fois unique&raquo;. Mais comment &eacute;viter qu&#39;en fait une telle pens&eacute;e ne surplombe ces diverses unicit&eacute;s et n&#39;&eacute;chappe &agrave; la juste perspective qui part toujours de l&#39;une d&#39;elles? Bien plus: qu&#39;elle n&#39;&eacute;chappe sans rem&egrave;de, puisqu&#39;elle reconna&icirc;t le sens chiffr&eacute;, la n&eacute;cessit&eacute; ontologique de l&#39;unicit&eacute; et que nul ne peut rien lui apprendre &agrave; cet &eacute;gard? &ndash; &laquo;Je ne suis rien. De l&#39;air.&raquo;",
+      "bbox": {
+        "x_pct": 12.973,
+        "y_pct": 29.954,
+        "w_pct": 65.89,
+        "h_pct": 41.766
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L&#39;enfant demande si la Bible est un livre unique, si Dieu n&#39;a parl&eacute; &agrave; l&#39;homme que l&agrave;; si J&eacute;sus-Christ a &eacute;t&eacute; Dieu sur la terre, pr&eacute;sent une seule fois. Pour lui, qu&#39;il n&#39;y ait qu&#39;un seul Dieu, c&#39;est la m&ecirc;me chose que de croire &agrave; ce seul Dieu. Les formes du culte, les textes des pri&egrave;res, pourraient-ils &ecirc;tre diff&eacute;rents? Et sur le terrain moral, quand on lui enseigne ce qui est permis, ce qui est d&eacute;fendu et ce qui est exig&eacute; &ndash; peut-on lui donner une formation morale en lui faisant comprendre",
+      "bbox": {
+        "x_pct": 12.973,
+        "y_pct": 73.259,
+        "w_pct": 65.858,
+        "h_pct": 14.222
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "125",
+      "bbox": {
+        "x_pct": 74.844,
+        "y_pct": 89.474,
+        "w_pct": 2.766,
+        "h_pct": 1.766
+      },
+      "changed": true,
+      "change_reason": "Corrected misidentified page number."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction contained significant OCR truncation/garbling.",
+    "Page number at bottom right was misidentified as text."
+  ],
+  "doc_id": "680",
+  "page": 9,
+  "elapsed_seconds": 8.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

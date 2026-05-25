@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "keit. Und wenn die Gesellschaft den Einzelnen absolut und vor jedem Risiko schützen will, begibt sie sich als Ganzes in Gefahr.",
+      "bbox": {
+        "x_pct": 8.418,
+        "y_pct": 5.553,
+        "w_pct": 65.048,
+        "h_pct": 6.383
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese Überlegungen führen aus der Sicht des Unternehmers zur zentralen Frage: Wie kann ein gesundes Maß gefunden werden zwischen der Erhaltung und der Festigung der sozialen Sicherheit, ihrer Errungenschaften und ihrer Institutionen einerseits und der Erhaltung einer für das Überleben und die Entwicklung notwendigen Risikobereitschaft andererseits? Es geht um die Risikobereitschaft jedes einzelnen, des Unternehmers insbesondere, aber auch um die Risikobereitschaft der ganzen Gesellschaft. Und für den Menschen in der Wirtschaft lautet die Fragestellung noch konkreter: Wie lassen sich in der auf Sicherheit bedachten Organisation des Unternehmens Risikofreude und Risikobereitschaft wecken, fördern, unterstützen und allenfalls auch in Schranken halten? Und wie läßt sich angesichts der Pflicht zur gesellschaftlichen Solidarität legitimieren, daß ein Unternehmen zur Sicherung seiner Zukunft in ein Risiko geführt wird, welches von allen Beteiligten Opfer erfordert?",
+      "bbox": {
+        "x_pct": 8.539,
+        "y_pct": 12.06,
+        "w_pct": 65.133,
+        "h_pct": 47.132
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Sie haben, Herr Schmidheiny, an den Schluß Ihrer Ausführungen die Frage nach dem gesunden Maß von Sicherheit und Risiko gestellt, Sie haben aber auch deutlich gemacht, daß dieses gesunde Maß Ihrer Meinung nach nicht gegeben ist, daß es durch ein Mehr an Risikofreude erst herzustellen ist. Vielleicht sollten wir bei dieser grundsätzlichen These einsetzen.",
+      "bbox": {
+        "x_pct": 8.732,
+        "y_pct": 61.426,
+        "w_pct": 64.734,
+        "h_pct": 18.508
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Wesentlich scheint mir, daß Herr Schmidheiny die beiden Begriffe Risiko und Wandel zusammenbringt. Der Begriff des Risikos ist",
+      "bbox": {
+        "x_pct": 8.659,
+        "y_pct": 82.023,
+        "w_pct": 64.976,
+        "h_pct": 6.914
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Zu viel Sicherheit führt zur Erstarrung",
+      "bbox": {
+        "x_pct": 75.761,
+        "y_pct": 5.822,
+        "w_pct": 20.338,
+        "h_pct": 3.639
+      },
+      "changed": true,
+      "change_reason": "Recognized as section header/sidebar heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Die Grundfrage für Unternehmer: Das richtige Maß von Sicherheit und Risiko",
+      "bbox": {
+        "x_pct": 76.051,
+        "y_pct": 49.782,
+        "w_pct": 21.208,
+        "h_pct": 7.111
+      },
+      "changed": true,
+      "change_reason": "Recognized as section header/sidebar heading."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 47.947,
+        "y_pct": 91.248,
+        "w_pct": 2.295,
+        "h_pct": 2.054
+      },
+      "changed": true,
+      "change_reason": "Page number identified."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Labels for sidebars were set as paragraph text instead of headers.",
+    "Page number at bottom was not captured initially.",
+    "The model had difficulty with text extraction quality for the main paragraphs."
+  ],
+  "doc_id": "2400",
+  "page": 16,
+  "elapsed_seconds": 7.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

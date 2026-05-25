@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDOLOGIES ET RALIT V",
+      "bbox": {
+        "x_pct": 331.0,
+        "y_pct": 86.0,
+        "w_pct": 343.0,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cette œuvre doit tre accompli par le Service public de l'enseignement, qu'il importerait d'ailleurs de dcentraliser, de faon  encourager une ncessaire adaptation rgionale, en laissant aux chefs d'tablissements la possibilit de prendre les initiatives ncessaires.",
+      "bbox": {
+        "x_pct": 37.0,
+        "y_pct": 114.0,
+        "w_pct": 849.0,
+        "h_pct": 88.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A ct de l'enseignement public, il est normal qu'existent des tablissements privs,  condition qu'ils s'intgrent dans le plan ducatif gnral de la nation et qu'ils subissent le contrle de l'tat en matire d'hygine, de comptence, de programmes et de manuels. Parmi ces tablissements privs, certains atteignent une qualit exceptionnelle. Leurs expriences et leurs initiatives peuvent tre tendues par la suite  l'ensemble de l'enseignement public. Dbordant le cadre national traditionnel, certains prennent ds maintenant un caractre europen ou international.",
+      "bbox": {
+        "x_pct": 40.0,
+        "y_pct": 204.0,
+        "w_pct": 847.0,
+        "h_pct": 182.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une subvention publique  des institutions prives, laques ou confessionnelles, qui n'est jamais un droit, doit pouvoir tre accorde sans aucun sectarisme lorsqu'on constate qu'en fait ces institutions apportent, par leur qualit, une aide relle  la fonction publique de l'enseignement. Un accord sur ce plan liminerait un problme qui ne devrait plus, aujourd'hui, diviser les citoyens.",
+      "bbox": {
+        "x_pct": 40.0,
+        "y_pct": 386.0,
+        "w_pct": 847.0,
+        "h_pct": 115.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pourrait alors tenter de reconstruire, avec les partisans du rgime rpublicain, un systme de deux partis qui s'opposeraient en fonction des vrais problmes de l'heure : parti travailliste et parti conservateur, ou, pour reprendre nos vieilles habitudes de pense : parti du mouvement et parti de l'ordre.",
+      "bbox": {
+        "x_pct": 40.0,
+        "y_pct": 505.0,
+        "w_pct": 846.0,
+        "h_pct": 98.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Premire opposition profonde : ceux qui veulent maintenir le statu quo et ceux qui veulent transformer profondment le pays. Les seconds sentent que la France est  la veille d'une nouvelle industrialisation, qu'elle peut devenir un grand pays en plein essor. Cela suppose une concentration accrue, un progrs trs pouss des techniques industrielles, l'limination ou l'adaptation des entreprises aujourd'hui marginales. Telle est la position de la Gauche moderne. La Droite, ce sont ceux qui veulent viter les changements, dfendre les intrts professionnels aujourd'hui organiss, sauvegarder la structure actuelle de notre artisanat, de notre commerce, de notre petite industrie. Sur ce point, les gens de droite sont lgion au sein mme des partis dits de gauche, et mme du parti socialiste.",
+      "bbox": {
+        "x_pct": 40.0,
+        "y_pct": 605.0,
+        "w_pct": 848.0,
+        "h_pct": 242.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La mme opposition se retrouve en matire de politique extrieure. La Gauche, techniquement progressive, veut ouvrir les frontires,",
+      "bbox": {
+        "x_pct": 73.0,
+        "y_pct": 851.0,
+        "w_pct": 813.0,
+        "h_pct": 40.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR failed to recognize French characters and split lines incorrectly.",
+    "Section header was misidentified as text.",
+    "Reconstructed text segments for semantic completeness."
+  ],
+  "doc_id": "330",
+  "page": 19,
+  "elapsed_seconds": 6.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

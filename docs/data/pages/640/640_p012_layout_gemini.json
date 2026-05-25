@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 41.956,
+        "y_pct": 4.417,
+        "w_pct": 16.121,
+        "h_pct": 1.547
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SUGGESTIONS ET PERSPECTIVES",
+      "bbox": {
+        "x_pct": 27.936,
+        "y_pct": 7.823,
+        "w_pct": 30.571,
+        "h_pct": 1.738
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Devant cette situation, il est vain d'aller chercher les remèdes dans une nostalgie du passé, dans le désir du retour en arrière, de quitter la ville, etc. Je crois qu'il faut chercher dans un tout autre sens. Il n'y a pas de recettes, mais peut-être une attitude de l'esprit à laquelle on pourrait réfléchir.",
+      "bbox": {
+        "x_pct": 3.911,
+        "y_pct": 11.669,
+        "w_pct": 79.419,
+        "h_pct": 7.177
+      },
+      "changed": true,
+      "change_reason": "OCR text truncated, provided full corrected text from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'activisme pédagogique, que l'on a beaucoup cultivé, l'école dite active, où l'on essaie de stimuler l'initiative et l'activité des enfants, était juste lorsqu'il s'agissait avant tout de lutter contre la passivité, la docilité inerte, la mémorisation excessive de l'école traditionnelle. Je crois qu'actuellement les besoins de l'éducation ne vont plus exactement dans ce sens. Cela ne veut pas dire que les méthodes actives soient à rejeter, mais il faut les revoir en liaison avec la nécessité de réagir contre les caractères de l'expérience enfantine dans la ville, que je viens d'essayer de mettre en lumière. Il y faut ajouter à cette éducation active d'autres chapitres et d'autres intentions. Aujourd'hui, les pédagogues et ceux qui organisent l'éducation ont tendance à partir des nécessités professionnelles. Ils disent : « Il nous faut des cadres, il nous faut des hommes comme ceci, donc nous allons les façonner ». Ou bien ils partent de la masse des connaissances à acquérir et ils disent : « Comment allons-nous faire pour que cette masse de connaissances soit acquise avec le minimum de peine ? ». Et ils inventent des méthodes, des manuels, dont certains sont excellents. Mais ce qu'il ne faut pas perdre de vue, ce sont les besoins de l'enfant.",
+      "bbox": {
+        "x_pct": 3.911,
+        "y_pct": 19.077,
+        "w_pct": 79.564,
+        "h_pct": 27.9
+      },
+      "changed": true,
+      "change_reason": "OCR text truncated, provided full corrected text from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour nous, les perspectives sont tout à fait imprévisible parce que nous ne savons pas ce que sera la ville de demain. C'est la technique elle-même qui va encore transformer nos conditions de vie. L'alternative ville et non-ville risque de disparaître, et peut-être non parce que la campagne disparaîtra et qu'on n'aura qu'une ville du Lac Léman au Lac de Constance, mais parce qu'on inventera des types d'ensembles et des types de campagnes encore inconnus.",
+      "bbox": {
+        "x_pct": 5.01,
+        "y_pct": 83.438,
+        "w_pct": 78.911,
+        "h_pct": 10.585
+      },
+      "changed": true,
+      "change_reason": "OCR text truncated, provided full corrected text from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 64.639,
+        "y_pct": 94.025,
+        "w_pct": 19.648,
+        "h_pct": 1.616
+      },
+      "changed": true,
+      "change_reason": "Identified author signature as text block."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number missing from initial detection",
+    "OCR text for paragraphs was heavily truncated",
+    "Author signature at end was not labeled",
+    "Header line detected as text initially"
+  ],
+  "doc_id": "640",
+  "page": 12,
+  "elapsed_seconds": 6.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

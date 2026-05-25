@@ -1,0 +1,141 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "La pix par le règne du droit",
+      "bbox": {
+        "x_pct": 6.568,
+        "y_pct": 6.944,
+        "w_pct": 22.574,
+        "h_pct": 1.303
+      },
+      "changed": true,
+      "change_reason": "Label corrected from section_header to zb_heading"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers affronte dans sa réflexion la situation sans cédent créée par la présence de la bombe atomiq",
+      "bbox": {
+        "x_pct": 6.364,
+        "y_pct": 8.446,
+        "w_pct": 43.555,
+        "h_pct": 19.588
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "A la limite se pose une question étrange = unc action il de notre devoir de la bombe  atomique, inco",
+      "bbox": {
+        "x_pct": 6.466,
+        "y_pct": 27.784,
+        "w_pct": 43.453,
+        "h_pct": 15.096
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text and label"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers revient à Jérémie, répondait à son diset même la foi en Dieu des derniers Juifs s'étaient pe",
+      "bbox": {
+        "x_pct": 6.568,
+        "y_pct": 42.658,
+        "w_pct": 43.453,
+        "h_pct": 17.747
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le mouvement fondamental, c'est celui du sujet exisFatteignant jamais, ce qu 'illustrent, par exempl",
+      "bbox": {
+        "x_pct": 6.537,
+        "y_pct": 61.951,
+        "w_pct": 43.647,
+        "h_pct": 25.088
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "und   Psychologen, Berlin; 1913 diveises remaniées ; Ber lin Heidelberg / New York,   Springer; A Be",
+      "bbox": {
+        "x_pct": 6.874,
+        "y_pct": 89.816,
+        "w_pct": 43.177,
+        "h_pct": 8.321
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "1977 (trad. fr. Strindberg et Van Gogh, Paris; Minuit, 1953) Die geustige   Situation 1931  (Sammlun",
+      "bbox": {
+        "x_pct": 53.657,
+        "y_pct": 6.878,
+        "w_pct": 42.697,
+        "h_pct": 52.865
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "philosophie   de Neuchâtcl, 1952 CARACCIOLO Studi Jaspersiani, Milan, 1958. & RIcŒUR 1947. Philosoph",
+      "bbox": {
+        "x_pct": 53.902,
+        "y_pct": 62.32,
+        "w_pct": 42.288,
+        "h_pct": 35.42
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to zb_paragraph"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "JASPERS",
+      "bbox": {
+        "x_pct": 6.568,
+        "y_pct": 0.8,
+        "w_pct": 7.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "758",
+      "bbox": {
+        "x_pct": 94.0,
+        "y_pct": 94.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 5,
+  "issues": [
+    "Initial labels for bibliographic items and headings were inconsistent with schema",
+    "Missing page header/footer detection"
+  ],
+  "doc_id": "3040",
+  "page": 8,
+  "elapsed_seconds": 5.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,171 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mehr abgeholfen werden kann, in sehr vielen F&auml;llen die Wirkung, das Menschliche ZU d&auml;mpfen und schli",
+      "bbox": {
+        "x_pct": 5.968,
+        "y_pct": 6.924,
+        "w_pct": 39.169,
+        "h_pct": 8.771
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich m&ouml;chte jetzt   Herrn Mitscherlich bitten, grunds&auml;tzliche Ausf&uuml;hrungen &uuml;ber die anthropologischen",
+      "bbox": {
+        "x_pct": 5.831,
+        "y_pct": 16.972,
+        "w_pct": 39.274,
+        "h_pct": 6.917
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mitscherlich",
+      "bbox": {
+        "x_pct": 6.29,
+        "y_pct": 27.618,
+        "w_pct": 8.895,
+        "h_pct": 1.549
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hier ist offensichtlich die Rede von der menschlichen Aggression als einer M&ouml;glichkeit, Freiheit ode",
+      "bbox": {
+        "x_pct": 5.863,
+        "y_pct": 30.951,
+        "w_pct": 39.242,
+        "h_pct": 24.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Beim Menschen sind diese beiden Urformen der aggressiven Verhaltensweise nicht streng voneinander ge",
+      "bbox": {
+        "x_pct": 5.887,
+        "y_pct": 56.25,
+        "w_pct": 39.218,
+        "h_pct": 22.271
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die   Aufkl&auml;rung sollte dahin tendieren; aggressives Verhalten gegen&uuml;ber dem Artgenossen durch inner",
+      "bbox": {
+        "x_pct": 5.887,
+        "y_pct": 79.91,
+        "w_pct": 39.25,
+        "h_pct": 8.792
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "der zeigt. Diese Aufkl&auml;rung m&uuml;Bte dazu f&uuml;hren, da&df der Mensch durch ein reflexives Bewu&dftsein gegen ",
+      "bbox": {
+        "x_pct": 50.968,
+        "y_pct": 7.063,
+        "w_pct": 39.113,
+        "h_pct": 5.319
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "F&uuml;r die Gesellschaft ist trotz vieler Aggressions experimente die noch nicht untersucht worden, ob F",
+      "bbox": {
+        "x_pct": 50.782,
+        "y_pct": 14.097,
+        "w_pct": 39.46,
+        "h_pct": 23.521
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Solange die Zahl der   Menschen noch gering war, konnten sie ihre destruktiven Aggressionstriebe auf",
+      "bbox": {
+        "x_pct": 50.75,
+        "y_pct": 39.285,
+        "w_pct": 39.435,
+        "h_pct": 25.715
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieses Grundph&auml;nomen unserer Gesellschaft l&auml&dft sich historischen Vorl&auml;ufer   vergleichen, denn eine ",
+      "bbox": {
+        "x_pct": 50.944,
+        "y_pct": 66.438,
+        "w_pct": 39.113,
+        "h_pct": 5.437
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Warum setzen sich die Studenten zuM Beispiel 50 stark f&uuml;r Vietnam ein? Es ist einmal die Identifikat",
+      "bbox": {
+        "x_pct": 50.887,
+        "y_pct": 73.125,
+        "w_pct": 39.194,
+        "h_pct": 8.799
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zum anderen wird zum Beispiel im Fernsehen durch Berichte vom Vietnam-Krieg eine Identifizierung mit",
+      "bbox": {
+        "x_pct": 50.831,
+        "y_pct": 83.354,
+        "w_pct": 39.169,
+        "h_pct": 5.417
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "33",
+      "bbox": {
+        "x_pct": 88.0,
+        "y_pct": 92.5,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as paragraph, changed to page_footer."
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "One page number was misidentified as text/paragraph."
+  ],
+  "doc_id": "810",
+  "page": 35,
+  "elapsed_seconds": 11.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

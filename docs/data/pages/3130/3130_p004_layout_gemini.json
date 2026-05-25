@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 44.08,
+        "y_pct": 2.007,
+        "w_pct": 16.321,
+        "h_pct": 2.149
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le négatif et la dépossession, à travers le déchiffrage de l'échec, et des fautes de logique inévitables, - de l'existence, sans laquelle tout peut \"être\", sauf \"l'être\".",
+      "bbox": {
+        "x_pct": 7.054,
+        "y_pct": 4.748,
+        "w_pct": 90.498,
+        "h_pct": 7.277
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'éducation et la culture devenaient, dans l'oeuvre de Jaspers, non pas la quête d'une philosophie, mais une doctrine, celle-ci nous livrerait des recette, avec les techniques propre à en assurer la transmission. Mais ces recette ne seraient qu'une tradition répétitive, excluant l'existence et sa lecture de l'écriture chiffrée. Toutes les notions fondamentales de la pensée jaspersienne perdraient à la fois leur raison d'être et leur efficacité négative, et l'homme ne serait plus qu'un fait dans l'énorme Univers des Faits, pour personne.",
+      "bbox": {
+        "x_pct": 7.054,
+        "y_pct": 11.848,
+        "w_pct": 90.512,
+        "h_pct": 18.453
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute la pensée, toute l'oeuvre de Jaspers tend à empêcher une telle réduction, qui exclurait l'existence. Lorsqu'il souligne l'importance décisive des \"situations-limites\", de l'échec et de son efficacité pour la lecture des chiffres, ce qu'il protège contre les tentations de la pensée possessive totalisante, c'est l'acte de présence au monde qui fait exister le sujet humain. Il en va de même des chiffres, de l'écriture chiffrée, et de l'efficacité qu'elle acquiert pour l'existence (=la liberté) de celui qui la dé-chiffre. D'où le privilège de l'échec, chiffre par excellence, son sens et sa portée, pour l'existence qui le lit.",
+      "bbox": {
+        "x_pct": 7.054,
+        "y_pct": 29.416,
+        "w_pct": 90.636,
+        "h_pct": 20.981
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers n'a cessé de le souligner: le sens de la vérité, et l'existence même du sujet qui la cherche, changent avec la découverte et l'approfondissement de l'échec de sa possession, lié à son efficacité d'écriture chiffrée.",
+      "bbox": {
+        "x_pct": 7.054,
+        "y_pct": 49.841,
+        "w_pct": 90.595,
+        "h_pct": 9.045
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la pensée dépossession n'est pas seulement nécessaire à l'éveil de l'existence et à la lecture qu'elle permet de l'écriture chiffrée. Elle seule ouvre aux hommes la possibilité de communiquer au sens fort, avec une passion pour le vrai qui exclue les illusions totalisantes de l'objectivité. La \"communication\" jaspersienne, pour laquelle la liberté est inséparable de la vérité, ne permet ni contrainte, ni complaisance. Ses deux exigences ne sont compatibles que si elle implique, justement, comme condition de la vérité, en même temps son exigence absolue et sa dépossession existentielle. La manière dont l'existence se découvre dépossédée de la vérité totale eclaire cette vérité même et explique que, comme l'écrit plusieurs fois Jaspers, la transcendance du vrai prend le plus souvent, au fond des plus grandes philosophies, les figures des ultimes fautes de logique auxquelles",
+      "bbox": {
+        "x_pct": 6.874,
+        "y_pct": 61.096,
+        "w_pct": 91.093,
+        "h_pct": 30.212
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 86.87,
+        "y_pct": 95.39,
+        "w_pct": 1.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and assigned to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Several paragraphs had incomplete or corrupted OCR transcriptions.",
+    "Page number 4 was missing from the initial region list.",
+    "Need to be more careful with text extraction accuracy."
+  ],
+  "doc_id": "3130",
+  "page": 4,
+  "elapsed_seconds": 5.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

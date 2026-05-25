@@ -1,0 +1,115 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "contraire rapportée à la transcendance, c’est ce qui ouvre la voie à ce en nous veut se mettre à la recherche de l’être. Cette recherche aura dès lors trois buts, qui, si indéterminés qu’ils soient, s’engendrent l’un l’autre : elle pénètre dans le monde pour s’y orienter, elle le dépasse pour en appeler à elle-même en tant qu’existence possible, et elle s’ouvre à la transcendance. Cheminant dans le monde elle saisit ce qui est connaissable, pour prendre ensuite ses distances et devenir orientation dans le monde; s’arrachant à la seule réalité «du monde» elle suscite l’activité par laquelle le moi s’actualise lui-même et elle devient ainsi éclairement de l’existence; elle conjure l’être et devient métaphysique.",
+      "bbox": {
+        "x_pct": 11.883,
+        "y_pct": 5.998,
+        "w_pct": 84.092,
+        "h_pct": 21.277
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Philosophie, I, p. 27-28)",
+      "bbox": {
+        "x_pct": 64.322,
+        "y_pct": 27.078,
+        "w_pct": 31.301,
+        "h_pct": 2.142
+      },
+      "changed": true,
+      "change_reason": "Bibliographic reference at the end of a paragraph is a footnote."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "4. Quête philosophique en situation",
+      "bbox": {
+        "x_pct": 12.1,
+        "y_pct": 35.587,
+        "w_pct": 44.851,
+        "h_pct": 2.142
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand je pose des questions comme : Qu'est-ce que l'être ? Pourquoi y a-t-il quelque chose et non pas rien ? — Qui suis-je ? — Qu'est-ce au juste que je veux ? — ces questions ne sont jamais posées au commencement. Je les pose à partir d'une situation dans laquelle, par suite d'un certain passé, je me trouve déjà.",
+      "bbox": {
+        "x_pct": 11.748,
+        "y_pct": 38.329,
+        "w_pct": 83.74,
+        "h_pct": 9.889
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Méveillant à la conscience de moi-même, je me découvre dans un monde où je m'oriente; j'avais saisi des choses, puis je les ai laissées tomber; tout allait de soi et simplement tout était là. Mais maintenant, saisi par l'étonnement, je me demande ce qui est à proprement parler; car tout, absolument, est éphémère; je n'étais pas au commencement et je ne suis pas à la fin. Me trouvant moi-même entre le commencement et la fin, je m'interroge sur le commencement et sur la fin.",
+      "bbox": {
+        "x_pct": 11.653,
+        "y_pct": 47.926,
+        "w_pct": 83.97,
+        "h_pct": 15.056
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Philosophie, I, p. 1-2)",
+      "bbox": {
+        "x_pct": 66.802,
+        "y_pct": 63.179,
+        "w_pct": 28.591,
+        "h_pct": 2.142
+      },
+      "changed": true,
+      "change_reason": "Bibliographic reference at the end of a paragraph is a footnote."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A partir d'une réalité historique et de données connaissables, à partir du monde, aucune compréhension satisfaisante de moi-même en situation n'est possible; mais davantage une compréhension du monde à partir de ma situation. La quête philosophique qui commence par éclairer la situation reste mouvante parce que la situation elle-même n'est que mouvement sans repos puisqu'elle dépend à la fois du devenir universel et des décisions de la liberté. C'est pourquoi, malgré toute la précision du détail, la situation reste, comme la quête philosophique, inachevée en tant que totalité.",
+      "bbox": {
+        "x_pct": 11.748,
+        "y_pct": 68.552,
+        "w_pct": 83.916,
+        "h_pct": 17.626
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Philosophie, I, p. 4)",
+      "bbox": {
+        "x_pct": 69.377,
+        "y_pct": 87.601,
+        "w_pct": 26.111,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Bibliographic reference at the end of a paragraph is a footnote."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Footnotes were labeled as text.",
+    "No page numbers identified as page_footer yet to be corrected in the source annotations if they were present.",
+    "The OCR text extraction in the provided JSON was incomplete compared to the source text, but I maintained the region labels."
+  ],
+  "doc_id": "1520",
+  "page": 74,
+  "elapsed_seconds": 6.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

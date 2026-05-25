@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Der Widerspruch in der Musik</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2750</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="bookSection">
+          <analytic>
+            <title>Der Widerspruch in der Musik</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1985</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="claude-opus-4-6-quality-screener" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Salzburger Festspiele 1985 Festrede. Two-column layout linearized. 2 Fussnoten. Entities: 40p 33o 33l 37w = 143. W6 acceptable. Validator: 0 errors</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_1_r_1" ulx="289" uly="184" lrx="965" lry="359" />
+      <zone xml:id="facs_1_r_2" ulx="354" uly="352" lrx="893" lry="547" />
+      <zone xml:id="facs_1_r_3" ulx="388" uly="1531" lrx="902" lry="1554" />
+      <zone xml:id="facs_1_r_4" ulx="461" uly="1587" lrx="822" lry="1611" />
+      <zone xml:id="facs_1_r_5" ulx="95" uly="1629" lrx="776" lry="1652" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_2_r_1" ulx="499" uly="1005" lrx="732" lry="1069" />
+      <zone xml:id="facs_2_r_2" ulx="69" uly="1141" lrx="710" lry="1196" />
+      <zone xml:id="facs_2_r_3" ulx="69" uly="1282" lrx="974" lry="1408" />
+      <zone xml:id="facs_2_r_4" ulx="69" uly="1440" lrx="781" lry="1462" />
+      <zone xml:id="facs_2_r_5" ulx="69" uly="1490" lrx="388" lry="1513" />
+      <zone xml:id="facs_2_r_6" ulx="69" uly="1529" lrx="280" lry="1548" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_3_r_1" ulx="132" uly="962" lrx="543" lry="989" />
+      <zone xml:id="facs_3_r_2" ulx="132" uly="1112" lrx="725" lry="1162" />
+      <zone xml:id="facs_3_r_3" ulx="132" uly="1190" lrx="596" lry="1219" />
+      <zone xml:id="facs_3_r_4" ulx="132" uly="1276" lrx="625" lry="1525" />
+      <zone xml:id="facs_3_r_5" ulx="660" uly="1276" lrx="1151" lry="1411" />
+      <zone xml:id="facs_3_r_6" ulx="660" uly="1422" lrx="1151" lry="1529" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_4_r_1" ulx="62" uly="197" lrx="573" lry="1037" />
+      <zone xml:id="facs_4_r_2" ulx="601" uly="843" lrx="1125" lry="1207" />
+      <zone xml:id="facs_4_r_3" ulx="60" uly="1055" lrx="572" lry="1538" />
+      <zone xml:id="facs_4_r_4" ulx="601" uly="1269" lrx="1124" lry="1465" />
+      <zone xml:id="facs_4_r_5" ulx="602" uly="1480" lrx="1125" lry="1551" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_5_r_1" ulx="109" uly="166" lrx="616" lry="512" />
+      <zone xml:id="facs_5_r_2" ulx="642" uly="515" lrx="1141" lry="903" />
+      <zone xml:id="facs_5_r_3" ulx="110" uly="526" lrx="613" lry="725" />
+      <zone xml:id="facs_5_r_4" ulx="107" uly="765" lrx="615" lry="1292" />
+      <zone xml:id="facs_5_r_5" ulx="641" uly="960" lrx="1141" lry="1107" />
+      <zone xml:id="facs_5_r_6" ulx="641" uly="1116" lrx="1141" lry="1534" />
+      <zone xml:id="facs_5_r_7" ulx="109" uly="1307" lrx="613" lry="1392" />
+      <zone xml:id="facs_5_r_8" ulx="109" uly="1451" lrx="613" lry="1536" />
+      <zone xml:id="facs_5_r_9" ulx="1106" uly="1560" lrx="1138" lry="1591" />
+      <zone xml:id="facs_5_r_10" ulx="109" uly="1657" lrx="915" lry="1688" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_6_r_1" ulx="70" uly="164" lrx="580" lry="395" />
+      <zone xml:id="facs_6_r_2" ulx="72" uly="460" lrx="584" lry="940" />
+      <zone xml:id="facs_6_r_3" ulx="611" uly="542" lrx="1137" lry="1196" />
+      <zone xml:id="facs_6_r_4" ulx="75" uly="956" lrx="586" lry="1294" />
+      <zone xml:id="facs_6_r_5" ulx="618" uly="1209" lrx="1141" lry="1467" />
+      <zone xml:id="facs_6_r_6" ulx="78" uly="1307" lrx="589" lry="1533" />
+      <zone xml:id="facs_6_r_7" ulx="619" uly="1476" lrx="1142" lry="1539" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_7_r_1" ulx="105" uly="173" lrx="608" lry="264" />
+      <zone xml:id="facs_7_r_2" ulx="637" uly="176" lrx="1135" lry="350" />
+      <zone xml:id="facs_7_r_3" ulx="103" uly="328" lrx="611" lry="691" />
+      <zone xml:id="facs_7_r_4" ulx="638" uly="362" lrx="1135" lry="562" />
+      <zone xml:id="facs_7_r_5" ulx="639" uly="573" lrx="1135" lry="765" />
+      <zone xml:id="facs_7_r_6" ulx="106" uly="711" lrx="611" lry="1272" />
+      <zone xml:id="facs_7_r_7" ulx="637" uly="824" lrx="1138" lry="1461" />
+      <zone xml:id="facs_7_r_8" ulx="108" uly="1286" lrx="612" lry="1542" />
+      <zone xml:id="facs_7_r_9" ulx="641" uly="1474" lrx="1136" lry="1535" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1240" lry="1754">
+      <zone xml:id="facs_8_r_1" ulx="624" uly="161" lrx="1143" lry="556" />
+      <zone xml:id="facs_8_r_2" ulx="83" uly="164" lrx="595" lry="584" />
+      <zone xml:id="facs_8_r_3" ulx="81" uly="606" lrx="593" lry="1048" />
+      <zone xml:id="facs_8_r_4" ulx="618" uly="620" lrx="1140" lry="1433" />
+      <zone xml:id="facs_8_r_5" ulx="79" uly="1117" lrx="590" lry="1365" />
+      <zone xml:id="facs_8_r_6" ulx="79" uly="1383" lrx="589" lry="1532" />
+      <zone xml:id="facs_8_r_7" ulx="619" uly="1448" lrx="1137" lry="1545" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_9_r_1" ulx="110" uly="167" lrx="616" lry="708" />
+      <zone xml:id="facs_9_r_2" ulx="644" uly="322" lrx="1142" lry="601" />
+      <zone xml:id="facs_9_r_3" ulx="644" uly="613" lrx="1142" lry="892" />
+      <zone xml:id="facs_9_r_4" ulx="108" uly="764" lrx="615" lry="1024" />
+      <zone xml:id="facs_9_r_5" ulx="110" uly="1052" lrx="721" lry="1109" />
+      <zone xml:id="facs_9_r_6" ulx="108" uly="1122" lrx="1141" lry="1347" />
+      <zone xml:id="facs_9_r_7" ulx="109" uly="1356" lrx="1139" lry="1532" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="speech">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <placeName ref="#zbz-l.357">Salzburger</placeName> Festspiele 1985
+        </head>
+        <p facs="#facs_1_r_2">
+          
+        </p>
+        <p facs="#facs_1_r_3">
+          SCHRIFTENREIHE DES LANDESPRESSEBÜROS
+        </p>
+        <p facs="#facs_1_r_4">
+          Herausgegeben von <persName ref="#zbz-p.1224">Eberhard Zwink</persName>
+        </p>
+        <note place="foot" n="1" xml:id="fn1-1" facs="#facs_1_r_5">
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> (SLS21X00135)
+        </note>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          
+        </p>
+        <p facs="#facs_2_r_2">
+          WA 8886
+        </p>
+        <p facs="#facs_2_r_3">
+          SCHRIFTENREIHE DES LANDESPRESSEBÜROS
+        </p>
+        <p facs="#facs_2_r_4">
+          Serie „Sonderpublikationen“, Nr. 61
+        </p>
+        <p facs="#facs_2_r_5">
+          Verleger: <orgName ref="#zbz-o.468">Amt der Salzburger Landesregierung</orgName>, <orgName ref="#zbz-o.484">Landespressebüro</orgName> (Presse- und Informationszentrum des Bundeslandes <placeName ref="#zbz-l.357">Salzburg</placeName>); Herausgeber: Prof. <persName ref="#zbz-p.1224">Eberhard Zwink</persName>, Pressesprecher der Landesregierung; Redaktion: Elfi Salzer; alle Chiemseehof, 5010 <placeName ref="#zbz-l.357">Salzburg</placeName>. – Umschlag-Graphik: Renate Glaser, 5061 Elsbethen; Hersteller: <orgName ref="#zbz-o.469">Salzburger Druckerei</orgName>, Bergstraße 12, 5020 <placeName ref="#zbz-l.357">Salzburg</placeName>.
+        </p>
+        <p facs="#facs_2_r_6">
+          Bilder: Oskar Anrather, Peter Schlager, <placeName ref="#zbz-l.357">Salzburger</placeName> Festspiele/<persName ref="#zbz-p.345">Weber</persName>.
+        </p>
+        <p>
+          Erschienen im November 1985
+        </p>
+        <p>
+          ISBN 3-85015-043-7
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> (SLS21X00135)
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <figure facs="#facs_3_r_1">
+          <head>Die Festrednerin 1985: <persName ref="#zbz-p.2">Jeanne Hersch</persName>.</head>
+        </figure>
+        <p facs="#facs_3_r_2">
+          Der Widerspruch in der Musik
+        </p>
+        <p facs="#facs_3_r_3">
+          Festrede von Univ.-Prof. Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_3_r_4">
+          Eine Rede über Musik zu halten, und das in <placeName ref="#zbz-l.357">Salzburg</placeName>, wo jeder Stein, jeder Luftzug durchdrungen ist von Klängen und Namen, die leeres Geschwätz verbieten und überall auf der Welt andächtiges Schweigen bewirken, vor einer solchen Aufgabe kann man nur zittern. Trotzdem möchte ich für die vertrauensvolle Einladung, die mich freut und ehrt, herzlich danken. Bald werden statt meiner verwegenen
+        </p>
+        <p facs="#facs_3_r_5">
+          Worte Stimmen und Instrumente erklingen. <bibl ref="#zbz-w.705">Die Zeit</bibl> des Wartens wird vorbei sein, und wir werden den Atem anhalten in der zeitlosen <bibl ref="#zbz-w.705">Zeit</bibl> der Musik.
+        </p>
+        <p facs="#facs_3_r_6">
+          Was heißt „zeitlose <bibl ref="#zbz-w.705">Zeit</bibl>“? Ganz offensichtlich entfaltet sich die Musik in der <bibl ref="#zbz-w.705">Zeit</bibl>. Wie kann man denn sagen, sie sei zeitlos? – Lange haben wir auf ein bestimmtes Konzert gewartet. Jetzt sitzen wir im Saal. Noch ein paar
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> (SLS21X00135)
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          Minuten. Die Musiker stimmen ihre Instrumente. Meine Gedanken sind noch bei der Arbeit, die auf meinem Schreibtisch liegt und die ich nachher wieder aufnehmen werde. Und plötzlich: Ruhe. Der Dirigent hebt den Stab. Die erste Note erklingt wie ein Kräuseln auf dem Wasser oder auf dem Grund der Seele. <bibl ref="#zbz-w.705">Die Zeit</bibl> ist verschwunden. Eine andere, ganz anders geartete <bibl ref="#zbz-w.705">Zeit</bibl> ist angebrochen. Sich entwickelnd, wickelt sich die Musik ein. Sie ist auf eigenartige Weise Abfolge und Gleichzeitigkeit auf einmal. Töne und Takte folgen einander und lösen sich auf, folgen einander, indem sie einander auflösen, und doch lösen sie sich nicht auf, weil jeder die vorangegangenen und die nachfolgenden irgendwie enthält und aus ihnen seinen Sinn bekommt. Sie lassen sich in ihrem Nacheinander nicht festhalten wie eine Reihe von Bildern auf einem Film. Nein, sie bilden vielmehr ein Ganzes, dessen Anfang und Ende wie zufällig wirkt, eher störend. Natürlich muß es einen Anfang und ein Ende geben, aber das ist nur ein Zugeständnis an das Leben. Schließlich muß man in der <bibl ref="#zbz-w.705">Zeit</bibl> danach zur <bibl ref="#zbz-w.705">Zeit</bibl> davor zurückkehren, zur <bibl ref="#zbz-w.705">Zeit</bibl> der liegengelassenen Aufgaben. Einmal zu Hause, hat im Gedächtnis die „<bibl ref="#zbz-w.705">Zeit</bibl> des Konzerts“ überhaupt keine Dauer mehr. Irgendwo in mir lebe ich aus ihr auf eine Weise, wie ich sonst nicht zu leben vermag.
+        </p>
+        <p facs="#facs_4_r_2">
+          Und doch habe ich verfolgt, wie sich die Musik entfaltet in einer <bibl ref="#zbz-w.705">Zeit</bibl>, in der ich selbst nicht war, die ich von außerhalb sah, von einem ruhenden Punkt aus, während die Musik an mir vorbeizog wie eine Landschaft am fahrenden <placeName ref="#zbz-l.229">Zug</placeName>. Raum gewordene <bibl ref="#zbz-w.705">Zeit</bibl>, die <bibl ref="#zbz-w.705">Zeit</bibl> der subjektlosen Natur, die der Physiker beobachtet, indem er verschiedene Zustände vergleicht; einen Zustand davor mit einem Zustand danach; aber für ihn gibt es kein „Jetzt“ außer dem Akt seiner Beobachtung. Gleichzeitig jedoch habe ich die Musik existentiell erlebt als eine Gegenwart, in der sich in jedem Augenblick eine bereits gegebene und empfangene Vergangenheit und eine mögliche Zukunft verwirklichten, erwartet, erwünscht, gefürchtet. Jede Note, jeder Akkord und jeder Rhythmus verdankten Natur und Wirkung dem Vorangegangenen, so daß sie als Kontinuität oder Bruch, Ruhe oder Beklemmung, Lösung oder Spannung empfunden wurden. Wenn der Satz nicht mehr betrachtet oder verstanden, sondern fühlend mitvollzogen wird, dann konzentriert sich in einer gelebten Gegenwart die zeitliche Ausdehnung des Affektiven, die aus der Unabänderlichkeit des Vergangenen und der offenen Möglichkeit des Zukünftigen besteht, von der sich Hoffnung und Furcht nähren. Diese in der Musik gelebte Gegenwart, dieses ausgedehnte Jetzt, das erst der Melodie ihre Dichte möglich macht – und das also nicht die punktuelle Gegenwart der absoluten Entscheidung sein kann, von der <bibl ref="#zbz-w.529">Kierkegaard</bibl> spricht –, dieses Jetzt, das auf geheimnisvolle Weise dauert, ohne den Kontrast zwischen Vergangenheit und Zukunft aufzuheben, ist im Erleben des Menschen das, was einer miniaturisierten Ewigkeit am nächsten kommt.
+        </p>
+        <p facs="#facs_4_r_3">
+          ★
+        </p>
+        <p facs="#facs_4_r_4">
+          Die Musik ist zugleich frei und notwendig. Sie ist Musik nur, wenn man in keinem Augenblick ihr Werden voraussagen kann; erwartet man eine vertraute Wendung, so kann sie diese Erwartung erfüllen oder durch einen Überraschungseffekt enttäuschen. Und doch: sobald sie gehört wird, wird sie aufgenommen wie sie ist, jenseits jeglicher Frage, jeglichen Zweifels. Selbst der Gewalt kann ihre Notwendigkeit den Stempel des Friedens aufdrücken. So gleicht sie der Katharsis am Ende einer Tragödie oder dem Schweigen nach dem Tod.
+        </p>
+        <p facs="#facs_4_r_5">
+          ★
+        </p>
+        <p>
+          Die Musik ist zugleich subjektiv und objektiv: sie ruft im Gemüt eine ständig neue Erwartung hervor, Begierde oder Sehnsucht; diese Erwartung gilt aber auch der formalen Struktur des Werkes, die sich nach schon vorhandenen und nach eben in ihr entstehenden Regeln entwickelt.
+        </p>
+        <p>
+          Eine weitverbreitete romantische Auffassung will, daß sich das Erleben der Musik in ge
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> (SLS21X00135)
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          fühlsmäßiger Betroffenheit erschöpft. Aber auch in dieser Beziehung ist das Wesen der Musik widersprüchlich. Es weckt zwar Gefühle, hebt sie aber gleich wieder auf oder entkräftet sie durch ein Jenseits des Gefühlsmäßigen, das wie dessen Schatten wäre, nicht dunkel jedoch, sondern leuchtend und transzendent. Die triumphalste wie die heiterste Musik ist von einem Schimmer der Verzweiflung begleitet; auch ein jedem Heil abholder Totenmarsch läßt, weil er Musik ist, einen Frieden jenseits der <bibl ref="#zbz-w.705">Zeit</bibl> erahnen.
+        </p>
+        <p facs="#facs_5_r_2">
+          Während der Zuhörer sich dieser seltsamen „Dauer“ des Konzerts öffnet, sucht er nicht eine Oase des Glücks und schreckt nicht vor einem schmerzlichen Augenblick zurück. Er steht an der Schwelle einer dauerlosen Gleichzeitigkeit, in der er sozusagen den unmöglichen Einklang von Wunsch und Fülle ahnt.
+        </p>
+        <p facs="#facs_5_r_3">
+          Wenn die Musik sich so entfaltet und in der Zerrissenheit der Gegenwart an der Schwelle einer dauerlosen Gleichzeitigkeit erlebt wird, ist sie mehr als das Knäuel der Widersprüche, die auch das Menschsein ausmachen. Sie ist nicht nur „zugleich“ das eine und das andere, sondern: je mehr sie das eine ist, desto mehr ist sie das andere. Sie vollbringt und vermittelt durch ein in Tönen verkörpertes Paradox etwas Unmögliches: eine „geballte Ausdehnung“. Sie erreicht den Höhepunkt der schmerzhaften Lust am Menschsein: dieses offene Gefängnis, das vor dem Unzugänglichen gähnt. Sie ergreift den ganzen Körper, der doch ruhig in seinem Sessel sitzt. Sie erregt Gefühle und Leidenschaften, ohne etwas aufs Spiel zu setzen. Sie regt das Denken an, ohne ihm Probleme aufzugeben. Sie bewirkt Auflehnung gegen <persName ref="#zbz-p.50">Gott</persName> oder Ergebung, ohne seinen Namen nennen zu müssen.
+        </p>
+        <p facs="#facs_5_r_4">
+          Entgegen dem, was viele wähnen, ist die Musik nicht die bevorzugte Sprache unter Liebenden.
+        </p>
+        <p facs="#facs_5_r_5">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p facs="#facs_5_r_6">
+          Wenn die Musik Tod oder Leid verströmt, ist ihre Wirkung wiederum widersprüchlich. Sie läßt uns tiefer darin versinken als die Wirklichkeit, weil wir ihr mit Leib und Seele ausgeliefert und jeglicher Sorge enthoben sind, die uns ablenken könnte, während uns die Wirklichkeit immer vor irgendeine dringende Aufgabe stellt, die uns an das Leben bindet. Durch die Musik identifizieren wir uns mit Leid und Tod. Aber gleichzeitig werden wir davon erlöst, weil es eben Musik ist und in ihr Leiden und Tod eine Vollkommenheit erreichen, die jedes „Ungefähr“ ausschließt.
+        </p>
+        <p facs="#facs_5_r_7">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p facs="#facs_5_r_8">
+          Das Rauschen des Baches, des Regens oder der Wellen, das Getöse des Wasserfalls oder das Gezwitscher der Vögel im Morgengrauen, das ist, da unschuldig, nicht Musik, sondern die Verheißung einer noch nicht, oder nicht mehr, vom Menschen berührten Welt. Darin ist die Gewißheit des Todes nicht zu spüren. Unsere Musik hingegen singt und tanzt trotz des Todes und mit ihm. Sie scheint dem diffusen Bedürfnis einer Welt zu entsprechen, in der alles sterblich ist und einige darum wissen. Sie schließt die Augen der Toten und senkt die Lider der Lebenden, damit sie dahinter etwas anderes sehen.
+        </p>
+        <p facs="#facs_5_r_9">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p facs="#facs_5_r_10">
+          <persName ref="#zbz-p.620">Arthur Rimbaud</persName> sagte vom Menschen, er sei „eine Seele und ein Körper“. Am wichtigsten an dieser Definition schien mir immer schon das Wort „und“. Die Musik ist auch die Einheit dieser doppelten Natur.
+        </p>
+        <p>
+          Die Töne sind – jeder für sich genommen – unendlich vielfältig, nach Anschlag und Ausklingen, nach Farbe und Höhe, je nach dem Nachklang, rund oder kantig, klar oder verschwommen. Sie ziehen einander an oder stoßen einander ab. Sie gehören zu einer Welt der Klangfarben und Rhythmen, die ihre eigenen Gesetze hat. Demnach gehört die Musik nicht nur – wie bereits gesagt – einer kohärenten Gefühlswelt an, sondern auch einer ebenso kohärenten sinnlichen und physischen Welt. Und doch: Obwohl sie nur im Netz dieser Zwänge leben kann und sich stets neue schafft, ist sie frei. Diese Freiheit ist es, die wir mit der unseren hören; sie schenkt uns unsere
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> (SLS21X00135)
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          Freiheit von neuem, wenn wir ihren Klängen und Rhythmen lauschen. Wir haben nicht die <bibl ref="#zbz-w.705">Zeit</bibl>, zu bewahren, was sie uns gibt. Aber etwas in uns schwingt mit in ihrem Rhythmus, zum unsrigen geworden, in ihrer Tonalität und damit im Sinn, den sie in uns, raum- und zeitlos, entfaltet. Sie ist frei und nährt unsere Freiheit.
+        </p>
+        <p facs="#facs_6_r_2">
+          ☆
+        </p>
+        <p facs="#facs_6_r_3">
+          Die Musik ist heute – in dieser Beziehung ähnlich wie der Sport – eine riesige Industrie. Das ist erfreulich, denn so ist die europäische Musik der vergangenen Jahrhunderte allen zugänglich und vertraut geworden, was eindeutig für den geistigen Sinn spricht, den unsere technische Zivilisation haben kann, wenn wir es wollen. Es kann aber auch Anlaß zu begründeter Sorge sein, namentlich in einer <bibl ref="#zbz-w.705">Zeit</bibl>, in der kein Kriterium mehr als selbstverständlich gilt, in der das Urteil der Kritiker – und vieler Musiker – durch Fehleinschätzungen des Neuen in der Vergangenheit gelähmt wurde und in der die Erwachsenen an ihrer erzieherischen Aufgabe zweifeln, für Kontinuität und Veränderung der Geschichte zu sorgen.
+        </p>
+        <p facs="#facs_6_r_4">
+          Was für eine Musik werden wir in Zukunft haben? Und vor allem: wie steht es heute um die Beziehung zwischen Musik und Freiheit? Lieben wir heute die Musik, weil sie Freiheit ist, oder sehen wir sie als Zufluchtsort, einer Sekte vergleichbar, wo man sich der Verantwortungslosigkeit eines andern überlassen kann? Manche musikalischen Auswüchse unserer Tage lassen Verdacht schöpfen. Die Frage ist, ob der <persName ref="#zbz-p.1251">Mensch</persName> die Musik mit der eigenen Freiheit aufnimmt, oder ob er von ihr nur eine Berauschung erwartet.
+        </p>
+        <p facs="#facs_6_r_5">
+          Wenn heute verstanden werden soll, was es heißt, „Musik mit der eigenen Freiheit aufnehmen“, dann ist es wohl angemessen, an den eigentlichen Sinn der Freiheit zu erinnern. Freiheit ist nicht die rein äußere Möglichkeit, für einen launischen Willen zu tun, was er will, wann er will und wo er will. Eine derartige „Freiheit“ wäre banal; sie würde sich nur
+        </p>
+        <p facs="#facs_6_r_6">
+          aus einer scheinbaren Lücke in den Kausalketten ergeben; sie wäre nur Willkür und untergründig der gleichen natürlichen Kausalität entsprungen, die sich nun im Inneren des Tieres <persName ref="#zbz-p.1251">Mensch</persName> fortsetzt. Nein, wahre Freiheit ist nicht willkürliche <persName ref="#zbz-p.89">Wahl</persName>. Sie begnügt sich meistens nicht damit, zwischen zwei Möglichkeiten zu wählen, sondern erfindet die ethische Qualität ihrer Entscheidung und erschafft sie aus eigener Substanz, natürlich nicht aus dem Nichts, sondern aus einer vorgegebenen Welt, aus präexistenten Werten, die sie neu belebt.
+        </p>
+        <p facs="#facs_6_r_7">
+          Diese Freiheit ist mit der des Musikers wie des Musikhörenden eng verwandt. In seinem großen Werk über „<bibl ref="#zbz-w.390">Die Grundlagen der Musik im menschlichen Bewußtsein</bibl>“ erwähnt <persName ref="#zbz-p.933">Ernest Ansermet</persName>, man rede wegen der formalen Strenge seines tonalen Stils gerne von <persName ref="#zbz-p.777">Bachs</persName> Objektivität, während doch, gäbe es überhaupt eine subjektive Musik, dann die seine: die Regeln, denen er sich scheinbar beugt, schafft er oder belebt er durch seine Freiheit (die man nicht sieht). Freiheit kann man also verstehen als „absoluten Gehorsam selbsterschaffenen Regeln gegenüber“. Auf dieser Ebene und in diesem Sinne ist die freieste Freiheit, die allen Zwängen am radikalsten entgeht, jene, die mit der Notwendigkeit übereinstimmt – sie könnte gar nicht anders sein – oder mit dem Gehorsam gegenüber dem Gesetz, das sie neu schafft. Das ist die unbeugsame Freiheit einer <bibl ref="#zbz-w.838">Antigone</bibl>, die sich trotz Todesdrohung dem Befehl <persName ref="#zbz-p.1225">König Kreons</persName> widersetzt, um „den ungeschriebenen Gesetzen der Götter zu gehorchen“.
+        </p>
+        <p>
+          Eine Freiheit dieser Art, die nicht nur im Komponisten wirkt, sondern auch im Publikum und in den Musikanten und Dirigenten, setzt eine Gesellschaft voraus, die eine Vergangenheit besitzt, ihren Ort in der Geschichte hat und bereit ist für den Wandel; die sich bemüht, die Möglichkeiten des Menschseins entsprechend den gegebenen Strukturen und den möglichen Entwürfen auszuschöpfen.
+        </p>
+        <p>
+          Dies dürfte die unvergleichliche Vielfalt der abendländischen Musik erklären. Diese Viel-
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> (SLS21X00135)
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          falt hat sich nicht aus dem Willen, etwas Neues zu machen, ergeben, sondern aus geschichtlicher Notwendigkeit.
+        </p>
+        <p facs="#facs_7_r_2">
+          ☆
+        </p>
+        <p facs="#facs_7_r_3">
+          Nach <persName ref="#zbz-p.933">Ansermet</persName> sind im Laufe dieser vielfältigen Entwicklung alle musikalischen Möglichkeiten in allen bekannten Tonalitäten so gründlich ausprobiert worden, daß für <placeName ref="#zbz-l.14">Europa</placeName> der historische Augenblick gekommen ist, da – in seinen Worten –, „die Musik schon gemacht war“. Ob <persName ref="#zbz-p.933">Ansermet</persName> damit recht hat, kann ich nicht beurteilen. Für ihn sind die einzelnen tonalen Strukturen, wenn man sie in ihrer Gesamtheit objektiv vor sich hat, nicht mehr Voraussetzung für Sinn, sondern nur mehr Ausdrucksmittel. Somit ist alles erlaubt.
+        </p>
+        <p facs="#facs_7_r_4">
+          Nach <persName ref="#zbz-p.933">Ansermet</persName> stellt sich dieses Problem zum ersten Mal in der Geschichte. Früher waren die tonalen Strukturen selbstverständlich, und die Musiker schufen die Sprache der Musik, indem sie sie sprachen. Heute erscheinen sie als objektive Gegebenheiten, deren gelebter Sinn verlorengegangen ist. Die Musiker bewegen sich in der Polytonalität; sie arbeiten mit verschiedenen tonalen Relationen, ohne sich für eine zu entscheiden, und verfügen damit über eine Art „allgemeine Tonalität“. Folglich kann, da der Sinn von der Differenzierung der Noten innerhalb der Tonalität getragen wird, ein abstrakter <bibl ref="#zbz-w.15">Geist</bibl> sagen, daß die Musik nichts ausdrückt und nur auf sich selbst und auf ihre allgemeine Struktur verweist. Dann aber stellt sich nach <persName ref="#zbz-p.933">Ansermet</persName> die Frage: Was ist die Musik? Diese Frage, die sich vordem erübrigte, drängt sich laut <persName ref="#zbz-p.933">Ansermet</persName> seit rund vierzig Jahren auf.
+        </p>
+        <p facs="#facs_7_r_5">
+          Dies gilt, so würde ich meinen, nicht nur für die Musik. Sinnverlust und Suche nach Sinn, Zerfall des sinntragenden Selbstverständlichen, Verlust alles Zwingenden und stattdessen eine unbegrenzte Anzahl von Möglichkeiten, ein „Alles ist erlaubt“, bis schließlich Strukturen an die Stelle von Sinn treten. All dies kennzeichnet eine Situation oder, besser gesagt, einen vielleicht noch nie dagewesenen
+        </p>
+        <p facs="#facs_7_r_6">
+          Situationsverlust, der in seinen Auswirkungen das individuelle und kollektive Leben unserer <bibl ref="#zbz-w.705">Zeit</bibl> durchzieht. Das verfolgt uns, lähmt uns, läßt uns zuweilen an der Zukunft verzweifeln. Junge Menschen sind daran zugrunde gegangen.
+        </p>
+        <p facs="#facs_7_r_7">
+          Das Modewort dafür heißt Modernität. Bezeichnet dieser Ausdruck, der gewiß rasch veralten wird, von neuen Wogen der Geschichte überdeckt wie so viele „neue“ und rasch veraltete Dinge unserer Tage, nichts anderes als „das Neue“ in seiner allgemeinsten und deshalb brüchigsten Form?
+        </p>
+        <p facs="#facs_7_r_8">
+          Ich glaube nicht. Gewiß schwingt im Ausdruck Modernität eine Spur Triumphalismus mit. Dennoch spürt man dabei, anders als bei den arroganten „Neuheiten“, eine Sehnsucht, eine Erwartung, fast eine Art Verheißung. Etwas Wesentliches fehlt uns, das von unserer Liebe noch nicht erkannt wurde.
+        </p>
+        <p facs="#facs_7_r_9">
+          ☆
+        </p>
+        <p>
+          Wenn wirklich Musik gemacht wird, dann hat sie einen Sinn. Der Mißkredit, in dem der Sinn heute vielfach steht, beruht auf einem Mißverständnis. Man denkt an einen verbalen Sinn, der sich mit Gewinn in Worte fassen ließe. Der musikalische Sinn eines Werkes jedoch entsteht durch die Entfaltung seiner Form in der <bibl ref="#zbz-w.705">Zeit</bibl>, Abfolge und Gleichzeitigkeit in einem. Die musikalische Erfahrung dieses Widerspruchs, der nicht nur aufgedeckt, sondern gelebt werden will, transzendiert Abfolge und Gleichzeitigkeit, ohne daß man wüßte wie und ohne daß Töne und Rhythmen, der Klangkörper, der sie trägt, auch nur einen Augenblick verlorengingen – ohne daß die unabdingbare Beteiligung des Gefühls nachläßt. Das verstand wohl <persName ref="#zbz-p.933">Ansermet</persName> unter „Musik, die mit Fleisch und Blut präsent ist“, durch die, wie er sagt, „ein wirkendes Gefühl („un sentiment en acte“) sich einem wirkenden Gefühl mitteilt“. Wichtig ist hier das Wort „wirkend“ („en acte“), das Freiheit bedeutet.
+        </p>
+        <p>
+          Damit sind wir bei einem der Hauptthemen meiner Lehrtätigkeit. Die großen philosophi
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> (SLS21X00135)
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          schen Lehren der abendländischen Tradition wollen rational, verstanden werden, aber was an ihnen wesentlich ist, erschließt sich reiner Rationalität nicht. Es braucht ein weiteres „Organ“, und dieses Organ ist die Freiheit. Die Freiheit ermöglicht uns nicht nur, autonome Entscheidungen zu treffen. Sie ist auch das Organ, mit dem wir aus jeder großen <bibl ref="#zbz-w.1">Philosophie</bibl> das Wesentliche „hören“, das in allen ihren Teilen und fast eintönig zu vernehmen ist: Die eigene Freiheit des Denkenden, die sich im Werk übt, um besser zu sich zu kommen. Für die Freiheit des Lesers ist dann oft der Widerspruch wie ein Werkzeug transzendierenden Verstehens.
+        </p>
+        <p facs="#facs_8_r_2">
+          Mit der Musik verhält es sich wohl nicht anders. Die wunderbare Vielfalt der westlichen Musik hat vermutlich die gleiche Wurzel wie die Vielfalt der <bibl ref="#zbz-w.1">Philosophie</bibl>. Die Freiheit hat sich individuell und kollektiv ins Werk gesetzt, im Lauf des herrlichen und furchtbaren Abenteuers, das man Geschichte nennt. Es hieß, Gedanken und Träume zu verwirklichen dank den Möglichkeiten, die sich aus der Vergangenheit in die Zukunft dem Menschen öffnen. Und nur jetzt, in der Gegenwart, kann er etwas gestalten, in dieser flüchtigen Ewigkeit en miniature, die seine einzige Verabredung mit der Welt ist und wo der Musiker seine Melodie durch Erinnerung und Entwurf entfaltet.
+        </p>
+        <p facs="#facs_8_r_3">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p facs="#facs_8_r_4">
+          Der Widerspruch in der Musik wie im Menschsein ist nicht einfach ein Fehler oder eine Unmöglichkeit. Er ist ein Paradox, ein Zeichen, das Instrument einer geistigen Übung, die Gedanken, Handlungen und Musik hervorbringt. Der wesenhafte Widerspruch bildet (paradoxerweise) eine Einheit. Er ist, wie mein Lehrer <persName ref="#zbz-p.1">Karl Jaspers</persName> sagte, eine Chiffre.
+        </p>
+        <p facs="#facs_8_r_5">
+          Nach <persName ref="#zbz-p.173">Rimbaud</persName> ist der <persName ref="#zbz-p.1251">Mensch</persName> eine Seele und ein Körper. Ein französisches Sprichwort lautet: „qui veut faire l'ange fait la bête“ / „Wer den Engel spielen will, wird leicht zum Tier.“ Das heißt, daß der <persName ref="#zbz-p.1251">Mensch</persName>, der sein <persName ref="#zbz-p.1251">Mensch</persName>-
+        </p>
+        <p facs="#facs_8_r_6">
+          sein in dieser Welt nicht auf sich nehmen, sondern reiner <bibl ref="#zbz-w.15">Geist</bibl> sein will, unter das Menschsein sinkt und in das rein Tierische verfällt. Ins Tierische, aber ohne die Unschuld der Tiere, da er sein Menschsein bewußt verraten hat. – Umgekehrt jedoch gilt, der <persName ref="#zbz-p.1251">Mensch</persName>, der nicht auch den Engel spielen will, verfehlt eo ipso das eigentlich Menschliche; denn es ist auch der Wille, sich selbst zu übertreffen, der das Wesen des Menschen ausmacht. Er kann sein faktisches Menschsein weder ablehnen noch annehmen, und dieses Paradox im Knoten aller anderen macht den Menschen zur Ausnahme in der Welt.
+        </p>
+        <p facs="#facs_8_r_7">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p>
+          Daß die europäische Musik im Laufe der Jahrhunderte und von Land zu Land eine so reiche Vielfalt aufweist, ist für uns ein unschätzbares Gut. Über die Freude hinaus, die sie uns schenkt, ist sie für uns der vielleicht letzte Schutz gegen endgültige Versklavung. Daß wir ständig Gefahr laufen, wieder zu Bestien und Sklaven zu werden, hat uns die Geschichte gelehrt. Aber wir haben den gregorianischen Gesang gehört; die Psalmen <persName ref="#zbz-p.934">Palestrinas</persName>; die Messen, die Chaconne, das <bibl ref="#zbz-w.506">Wohltemperierte Klavier</bibl> <persName ref="#zbz-p.777">Bachs</persName>; die Sonaten, <bibl ref="#zbz-w.507">Cosi fan tutte</bibl>, das <bibl ref="#zbz-w.508">Requiem</bibl> <persName ref="#zbz-p.457">Mozarts</persName>; das Concerto und die Quatuors <persName ref="#zbz-p.164">Beethovens</persName>; die Lieder <persName ref="#zbz-p.935">Schuberts</persName> und Pelleas, <persName ref="#zbz-p.936">Bartók</persName>, <persName ref="#zbz-p.268">Debussy</persName>, <bibl ref="#zbz-w.457">Wozzeck</bibl> – und viele andere. Danach scheint es unmöglich zu sein, die Freiheit je zu vergessen, den Menschen in uns und im Mitmenschen endgültig zu verleugnen. Diese Stimmen aus allen Heimatländern würden uns wachrütteln, uns zurufen, wer wir sind und sein müssen, und uns an unsere Verpflichtung <placeName ref="#zbz-l.14">Europa</placeName> gegenüber erinnern, wo sie sich entfaltet haben; sie würden uns zur gegenwärtigen Wachsamkeit rufen, ohne die Freiheit keine Zukunft hat. Noch radikaler als <persName ref="#zbz-p.182">Rilke</persName> vor dem Torso Apollos würde uns diese Musik sagen: „Du mußt dein Leben ändern.“
+        </p>
+        <p>
+          <persName ref="#zbz-p.88">Gabriel Marcel</persName>, mein hochgeachteter Freund, wählte für die Festrede, die er 1965 hier gehalten hat, den Titel: „Die Musik als
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> (SLS21X00135)
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          Heimat der Seele.“ Zunächst habe ich ihn um diesen Titel beneidet. Dann drängte es mich, ihn abzuwandeln in: „Die Musik als Heimatlosigkeit“, weil die Musik, wie ich es hier zu zeigen versucht habe, die Widersprüche ausdrückt und enthält, die es dem Menschen verbieten, sich in seiner Heimat einzurichten, und sei es in der Musik. Die Musik ist zu menschlich, zu stark an die widersprüchlichen Ansprüche der Freiheit gebunden, als daß sie uns wirklich Asyl gewähren könnte. Sie erfüllt uns und wirft uns doch auf uns selbst zurück. Wohl gerade deshalb, weil der <persName ref="#zbz-p.1251">Mensch</persName>, obschon gebunden an einen Ort und eine <bibl ref="#zbz-w.705">Zeit</bibl> der Geschichte, eingewoben in einer Heimat, dennoch ein Verbannter ist, der eine andere Heimat sucht, anders und unerreichbar – wohl gerade deshalb macht er Musik und braucht er die Musik, um weiterzuleben.
+        </p>
+        <p facs="#facs_9_r_2">
+          <hi rendition="#i">*</hi>
+        </p>
+        <note place="foot" n="1" xml:id="fn9-1" facs="#facs_9_r_3">
+          Mit dem Wort „Modernität“ drückt man eine allseitige Unsicherheit aus. Noch habe ich die Worte eines jungen Komponisten im Ohr, der unlängst seiner Verlegenheit Ausdruck gab. Er habe das Gefühl, mit der polytonalen Musik nichts mehr anfangen zu können. Aber, so sagte er, ebensowenig könne man heute klassische Musik komponieren. Diese Ratlosigkeit, die manche eingestehen und andere mit irgendwelchen Exzessen übertünchen, findet sich heute überall, in allen Bereichen der Kunst und des Denkens. Wer es schafft, trotzdem schöpferisch zu sein – das gibt es –, scheint ein Wunder zu vollbringen.
+        </note>
+        <p facs="#facs_9_r_4">
+          Vielleicht ist die Erklärung ziemlich einfach: die Hybris, die maßlose Arroganz des Menschen, der ex nihilo kreativ sein will. Vielleicht sollten wir im Ozean unserer Widersprüche und Zweifel unseren Blick auf einen transzendenten Fixpunkt richten. Wie sonst könnten wir das Gleichgewicht halten inmitten der Modernität, in der sich der <persName ref="#zbz-p.1251">Mensch</persName> in einer Lage befindet, die <persName ref="#zbz-p.938">Kafka</persName> wie folgt beschreibt:
+        </p>
+        <p facs="#facs_9_r_5">
+          „Eine heikle Aufgabe, ein Auf-den-Fußspitzen-Gehn über einen brüchigen Balken, der als Brücke dient, nichts unter den Füßen zu haben, mit den Füßen erst den Balken zusammenscharren, auf dem man gehn wird, auf nichts gehn als auf seinem Spiegelbild, das man unter sich im Wasser sieht, mit den Füßen die Welt zusammenhalten, die Hände nur oben in der Luft verkrampfen, um diese Mühe bestehen zu können.“
+        </p>
+        <p facs="#facs_9_r_6">
+          Möge uns die Musik aller Zeiten und auch die, die vielleicht da und dort jetzt von jungen Musikern komponiert wird, helfen, „diese Mühe bestehen zu können“.
+        </p>
+        <p facs="#facs_9_r_7">
+          Kurzbiographie <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Geboren 1910 in <placeName ref="#zbz-l.48">Genf</placeName>. Studium der <bibl ref="#zbz-w.1">Philosophie</bibl> in <placeName ref="#zbz-l.48">Genf</placeName>, <placeName ref="#zbz-l.1">Paris</placeName> (<placeName ref="#zbz-l.700">Sorbonne</placeName>), <placeName ref="#zbz-l.21">Heidelberg</placeName> und <placeName ref="#zbz-l.87">Freiburg im Breisgau</placeName>. 1931 Promotion. Bis 1955 Lehrtätigkeit an der <orgName ref="#zbz-o.402">Ecole Internationale</orgName> in <placeName ref="#zbz-l.48">Genf</placeName>, Studienaufenthalte in <placeName ref="#zbz-l.155">Chile</placeName> und <placeName ref="#zbz-l.156">Thailand</placeName>. 1947 bis 1956 Privatdozentin, 1956 außerordentliche Professur für <bibl ref="#zbz-w.1">Philosophie</bibl> in <placeName ref="#zbz-l.48">Genf</placeName>, 1962 bis 1977 Ordinariat für <bibl ref="#zbz-w.1">Philosophie</bibl> der <orgName ref="#zbz-o.6">Universität Genf</orgName>. Mehrere Gastprofessuren in den <placeName ref="#zbz-l.285">USA</placeName> und <placeName ref="#zbz-l.269">Kanada</placeName>. 1966 bis 1968 Leiterin der Abteilung für <bibl ref="#zbz-w.1">Philosophie</bibl> der <orgName ref="#zbz-o.51">UNESCO</orgName> in <placeName ref="#zbz-l.1">Paris</placeName>, 1970 bis 1972 Vertreterin der <placeName ref="#zbz-l.10">Schweiz</placeName> im Exekutivrat der <orgName ref="#zbz-o.51">UNESCO</orgName>, seit 1976 Mitglied der nationalen schweizerischen <orgName ref="#zbz-o.51">UNESCO</orgName>-Kommission. Die Schülerin von <persName ref="#zbz-p.1">Karl Jaspers</persName> erhielt zahlreiche Preise, untersucht in ihrem Werk wichtige Grundprobleme des Philosophierens und setzt sich besonders für die Einhaltung der Menschenrechte ein.
+        </p>
+        <p>
+          Auf deutsch sind von ihr unter anderem folgende Werke lieferbar: „Die Ideen und die Wirklichkeit. Versuch einer politischen Orientierung“, <orgName ref="#zbz-o.25">Piper Verlag</orgName>, <placeName ref="#zbz-l.22">München</placeName> 1957; „<bibl ref="#zbz-w.91">Die Unfähigkeit, Freiheit zu ertragen</bibl>“, <orgName ref="#zbz-o.485">Benziger Verlag</orgName>, <placeName ref="#zbz-l.45">Zürich</placeName> – <placeName ref="#zbz-l.318">Köln</placeName> 1974; „<bibl ref="#zbz-w.92">Die Hoffnung, Mensch zu sein</bibl>“, <orgName ref="#zbz-o.485">Benziger Verlag</orgName>, <placeName ref="#zbz-l.45">Zürich</placeName> – <placeName ref="#zbz-l.318">Köln</placeName> 1976; „Von der Einheit des Menschen“, <orgName ref="#zbz-o.485">Benziger Verlag</orgName>, <placeName ref="#zbz-l.45">Zürich</placeName> – <placeName ref="#zbz-l.318">Köln</placeName> 1978; „<persName ref="#zbz-p.1">Karl Jaspers</persName>. Eine Einführung in sein Werk“, <orgName ref="#zbz-o.25">Piper Verlag</orgName>, <placeName ref="#zbz-l.22">München</placeName> 1980; „<bibl ref="#zbz-w.422">Das philosophische Staunen</bibl>. Einblicke in die Geschichte des Denkens“, <orgName ref="#zbz-o.25">Piper Verlag</orgName>, <placeName ref="#zbz-l.22">München</placeName> 1981; „Der Feind heißt Nihilismus. Antithesen zu den Thesen zu den Jugendunruhen 1980“, <orgName ref="#zbz-o.486">Verlag Peter Meili</orgName>, <placeName ref="#zbz-l.198">Schaffhausen</placeName> 1982.
+        </p>
+        <p>
+          Kopie von <orgName ref="#zbz-o.274">subito e.V.</orgName>, geliefert für <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> (SLS21X00135)
+        </p>
+      </div>
+      </body></text>
+</TEI>

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "134 KANT TRANSCENDE SYSTÈME ET MÉTHODE",
+      "bbox": {
+        "x_pct": 142.0,
+        "y_pct": 74.0,
+        "w_pct": 724.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "système, nous trouvons chez lui des couches de profondeur dont aucune n'est la plus profonde et ne pourrait livrer le schéma simple d'un système. C'est une philosophie qui n'a pas de fond.",
+      "bbox": {
+        "x_pct": 137.0,
+        "y_pct": 118.0,
+        "w_pct": 757.0,
+        "h_pct": 98.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match actual image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Examinons maintenant ce qu'il en est de la méthode. Kant l'appelle « méthode transcendentale », c'est-à-dire : qui recherche les conditions a priori rendant possible toute connaissance. Mais cette définition ne définit que le champ de la recherche et ne fixe pas une méthode claire. En fait, dans sa marche vers les bornes du savoir, Kant prend des chemins divers, et qui s'entre-croisent de façon parfois saisissante. Par exemple, dans la « Déduction transcendentale » qui, de son propre aveu, lui a coûté le plus de peine et constitue une partie essentielle de son œuvre (cf. la première préface), il examine comment des concepts a priori peuvent se rapporter à des objets et dans quelles limites; pour atteindre ces limites, il enchevêtre les démonstrations psychologique, logique, méthodologique et métaphysique (c'est-à-dire, pour Kant, de l'a priori). C'est qu'aucune de ces voies ne doit subsister, aucune ne peut s'isoler et paraître trouver en elle-même son sens. C'est que toutes tendent à une limite qui n'est plus ni psychologique, ni logique, ni méthodologique, ni métaphysique au sens kantien du mot. Il n'y a donc pas de méthode nette chez Kant. Et cela, non parce qu'il n'a pas su en trouver une, mais parce que sa méthode ne pouvait être autre chose qu'un effort pour dépasser toute",
+      "bbox": {
+        "x_pct": 137.0,
+        "y_pct": 222.0,
+        "w_pct": 759.0,
+        "h_pct": 639.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content and removed erroneous leading digit."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Page header identified as text and corrected.",
+    "OCR text content for paragraphs was severely corrupted and missing text.",
+    "Page number at start of text was erroneously included in paragraph content."
+  ],
+  "doc_id": "20",
+  "page": 136,
+  "elapsed_seconds": 4.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

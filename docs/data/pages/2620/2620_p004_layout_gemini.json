@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Geslallung Philosophie -",
+      "bbox": {
+        "x_pct": 14.14,
+        "y_pct": 10.478,
+        "w_pct": 32.616,
+        "h_pct": 4.686
+      },
+      "changed": true,
+      "change_reason": "Identified as a section header based on positioning and content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wiederholung nach Moglichkeiten entscheidente Artikulation, U\n... undifferenziertheit keine existentiell er",
+      "bbox": {
+        "x_pct": 14.205,
+        "y_pct": 16.626,
+        "w_pct": 32.745,
+        "h_pct": 21.844
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wirkungsvolle der Zeit auf und",
+      "bbox": {
+        "x_pct": 31.128,
+        "y_pct": 39.385,
+        "w_pct": 15.702,
+        "h_pct": 2.596
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bei Jaspers ist die Methode und die Absicht des Denkens umgekehrt.",
+      "bbox": {
+        "x_pct": 14.048,
+        "y_pct": 44.986,
+        "w_pct": 32.782,
+        "h_pct": 15.082
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Weder Nihilismus noch Ontologie sondern durch beide hindurch...",
+      "bbox": {
+        "x_pct": 13.743,
+        "y_pct": 61.612,
+        "w_pct": 33.087,
+        "h_pct": 22.773
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Text transcription contains OCR artifacts that should be cleaned post-process.",
+    "Section header identified."
+  ],
+  "doc_id": "2620",
+  "page": 4,
+  "elapsed_seconds": 4.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

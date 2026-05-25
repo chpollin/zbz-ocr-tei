@@ -1,0 +1,87 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 154 -",
+      "bbox": {
+        "x_pct": 420.0,
+        "y_pct": 27.0,
+        "w_pct": 46.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page header / page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "einfach in einem physischen Vorgang unterzugehen, einem Vorgang, in dem das Schwache dem Stärkeren unterliegt, in dem das Stärkere das Schwache zerstört, so, wie es zur physischen Natur einfach dazugehört. Das wollten sie nicht, denn das ist sinnlos. Sie haben sich um Sinn bemüht, und sie haben gekämpft, damit es nicht eine einfache Zerstörung durch den Hunger und die Niederlage wäre, sondern einen menschlichen, also einen gewollten Sinn erhielte; damit es Zeichen eines Willens, einer Absicht sei. Statt nur Tatsachen wollten sie einen Sinn und einen Willen. Deswegen ist die Geschichte des Gettos von Warschau nicht einfach die Geschichte einer Zerstörung, sondern die Geschichte einer Tragödie, die über die Zeit hinweg eine religiöse oder - wenn Sie so wollen - eine menschliche Dimension bekommt. Wir müssen verstehen, was das bedeutet. Wenn ich vorhin davon gesprochen habe, wir müßten vernünftig werden, wir müßten wachsam sein, so ist das alles richtig. Aber jenseits davon dürfen wir nicht den Anspruch vergessen: Irgendwo lohnt es sich, auch Dinge zu tun, wo sie hoffnungslos sind. Irgendwo lohnt es sich, den Sinn zu suchen und für den Sinn zu kämpfen, um den Sinn herzustellen - damit es \"menschlich\" wird. So haben diese Menschen gekämpft, und weil sie so gekämpft haben, zwingen sie uns und alle anderen - auch diejenigen, denen sie damals gegenüberstanden -, ihre Vergangenheit auf sich zu nehmen als Menschen.",
+      "bbox": {
+        "x_pct": 11.561,
+        "y_pct": 8.534,
+        "w_pct": 76.251,
+        "h_pct": 46.015
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nach furchtbaren Erfahrungen müssen wir uns gegen jede angeblich endgültige Lösung der Geschichte wehren - nicht nur gegen jede Art \"Endlösung\", wie man damals sagte, sondern gegen jeden Anspruch auf eine totale Lösung der menschlichen Geschichte. Denn solcher Anspruch widerspricht dem Menschsein und bringt Unheil mit sich.",
+      "bbox": {
+        "x_pct": 11.815,
+        "y_pct": 55.887,
+        "w_pct": 72.129,
+        "h_pct": 10.547
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir sollten uns auch jede massive, totale Empörung versagen und die menschlichen Möglichkeiten weder versäumen noch überschreiten. \"Den Edengarten, jetzt gleich!\" oder \"die absolute Gerechtigkeit\", die die französischen Studenten 1968 forderten, sind uns nie versprochen.",
+      "bbox": {
+        "x_pct": 11.985,
+        "y_pct": 67.848,
+        "w_pct": 74.249,
+        "h_pct": 8.086
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was wir zu lernen haben ist, das gemeinsame Leben gestalten und die begrenzten Aufgaben von heute nicht versäumen.",
+      "bbox": {
+        "x_pct": 12.103,
+        "y_pct": 77.272,
+        "w_pct": 72.095,
+        "h_pct": 3.863
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wichtig ist zu wissen, nicht welcher Entschluß etwa am Ende des geschichtlichen Vorganges zu treffen sein wird, wenn wir vor einer absoluten Wahl stehen werden, sondern was heute notwendig ist. Die Demokratie, zum Beispiel, diese Herrschaft des selbstgewählten Gesetzes über die Bürger, muß heute geübt, gelehrt, verteidigt werden, und dazu",
+      "bbox": {
+        "x_pct": 12.214,
+        "y_pct": 82.182,
+        "w_pct": 75.148,
+        "h_pct": 10.954
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number at top center was not identified by the original process."
+  ],
+  "doc_id": "2120",
+  "page": 18,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

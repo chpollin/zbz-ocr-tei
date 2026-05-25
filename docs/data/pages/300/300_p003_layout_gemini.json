@@ -1,0 +1,143 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "C u lt u r e e t Li b e r t ",
+      "bbox": {
+        "x_pct": 24.385,
+        "y_pct": 8.044,
+        "w_pct": 47.52,
+        "h_pct": 3.026
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jaspers; mon matre",
+      "bbox": {
+        "x_pct": 29.004,
+        "y_pct": 20.429,
+        "w_pct": 37.529,
+        "h_pct": 3.8
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "P A R",
+      "bbox": {
+        "x_pct": 32.715,
+        "y_pct": 26.298,
+        "w_pct": 5.889,
+        "h_pct": 1.288
+      },
+      "changed": true,
+      "change_reason": "Author's name and affiliation header should be filtered out as per guidelines for secondary headers/artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "EIDELBERG n'tait encore pour moi un chateau rose dmantel au-dessus d'un Neckar compromis par les chansons et les cartes postales. J'avais 18 ans. Jtais venue l, au hasard, apprendre l'allemand mieux que je ne l'avais fait  l'cole. A ct de cours de langue et de littrature allemande, je suivais ceux qui correspondaient aux examens prvus dans ma ville natale. Il",
+      "bbox": {
+        "x_pct": 6.611,
+        "y_pct": 77.291,
+        "w_pct": 40.068,
+        "h_pct": 13.983
+      },
+      "changed": true,
+      "change_reason": "OCR text was highly corrupted, manually corrected to represent the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un jour, une jeune fille me dit :",
+      "bbox": {
+        "x_pct": 50.068,
+        "y_pct": 44.243,
+        "w_pct": 31.348,
+        "h_pct": 3.118
+      },
+      "changed": true,
+      "change_reason": "OCR text was corrupted, corrected."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Connaissez-vous Jaspers ?",
+      "bbox": {
+        "x_pct": 54.326,
+        "y_pct": 47.34,
+        "w_pct": 22.266,
+        "h_pct": 1.731
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Allez-y une fois, me dit la jeune fille. C'est intressant.",
+      "bbox": {
+        "x_pct": 54.395,
+        "y_pct": 50.345,
+        "w_pct": 36.162,
+        "h_pct": 3.35
+      },
+      "changed": true,
+      "change_reason": "Fixed corrupted text structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ainsi, parfois, que l'essentiel entre dans une vie.",
+      "bbox": {
+        "x_pct": 50.166,
+        "y_pct": 53.645,
+        "w_pct": 40.264,
+        "h_pct": 3.005
+      },
+      "changed": true,
+      "change_reason": "Fixed corrupted text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'y allai donc. C'tait dans l'aula de la vieille universit. J'tais assise de ct, dans l'embrasure d'une fentre. Jaspers, quand il commena  parler, leva la main. Je n'oublierai jamais ce moment, cette voix, cette main, sans doute justement parce que je les ai alors si ardemment oublis. La main leve, avec les trois premiers doigts tendus, les autres replis, n'tait alors que la pointe visible d'une recherche  laquelle quelque chose en moi, qu'aucun enseignement n'avait pu auparavant atteindre, essayait en vain de participer.",
+      "bbox": {
+        "x_pct": 50.127,
+        "y_pct": 56.812,
+        "w_pct": 40.566,
+        "h_pct": 18.888
+      },
+      "changed": true,
+      "change_reason": "Full reconstruction of corrupted OCR text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne comprenais rien. Je tombais au milieu d'un cours, je connaissais mal la langue, je n'avais  peu prs aucune prparation philosophique. J'tais pourtant pleine de joie, car je comprenais qu'il y avait l quelque chose  comprendre. A cette vidence clatante, Jaspers n'avait presque pas de part, isol qu'il tait dans son prestige d'instrument parfait. Aucune \"communication\", entre lui et moi,  cette poque. Il tait ncessaire, mais tout",
+      "bbox": {
+        "x_pct": 50.264,
+        "y_pct": 75.32,
+        "w_pct": 40.557,
+        "h_pct": 15.792
+      },
+      "changed": true,
+      "change_reason": "Full reconstruction of corrupted OCR text block."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 7,
+  "issues": [
+    "Severe OCR corruption in paragraphs",
+    "Missing punctuation and hyphenation fixes",
+    "Labeling inaccuracies in headers"
+  ],
+  "doc_id": "300",
+  "page": 3,
+  "elapsed_seconds": 7.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

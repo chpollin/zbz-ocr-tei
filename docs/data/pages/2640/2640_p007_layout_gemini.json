@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": {
+        "x_pct": 878.0,
+        "y_pct": 5.0,
+        "w_pct": 19.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as paragraph text incorrectly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nicht, daß ich ein Philosoph bin, sondern nur, daß ich Philosophie unterrichte\". Ich wollte damit ausdrücken, daß dieses Nicht-Besitzen, dieses Aus-der-Sehnsucht-Sprechen im Grunde in allen Philosophien vorhanden ist, selbst wenn sie sich als großartige Systeme oder Denkmäler geben. Wenn Sie gut hinhorchen, nehmen Sie auch dort die Sehnsucht wahr.",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 45.0,
+        "w_pct": 86.382,
+        "h_pct": 84.76
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and misaligned with actual image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die jetzigen Bequemlichkeiten im Bereich der Sexualität haben zur Folge, daß viele eine Hypertrophie der Sexualität vor allem unter jungen Leuten befürchten. Ich muß sagen, daß ich eher das Gegenteil fürchte. Ich fürchte, daß die Sexualität für die jungen Leute ihren Sinn verliert und langweilig wird. Irgendwie möchten Mann und Frau zu nahe sein, zu ähnlich - \"unisex\" -, und daraus entsteht Langeweile. Und die Langeweile ist das Schlimmste für die Sexualität und für die Liebe. Es gibt Symptome dafür. Ich glaube, daß die Zeit, in der man den Drachen töten mußte, um die ferne Prinzessin zu erwerben, einen bestimmten Sinn hatte. Viele Leute glauben, daß man erst heute Sexualerziehung betreibt. Das glaube ich nicht, man hat schon immer Sexualerziehung betrieben. Aber diese Erziehung war etwas einseitig, sie ging über die Dichter, über die Mythen, über die Musik. Sie war unvollständig, aber sie betraf das Wesentliche. Die von heute, die viel positivistischer vor sich geht, bietet ein falsches Bild vom Menschen und ist vielleicht noch viel unvollständiger. Vielleicht werden die jungen Menschen, die mich hören, die Einheit selbst wieder herstellen.",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 144.43,
+        "w_pct": 86.473,
+        "h_pct": 263.7
+      },
+      "changed": true,
+      "change_reason": "Text content was corrupted and incomplete; updated to reflect actual image text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 3,
+  "issues": [
+    "Page number 23 incorrectly captured as part of paragraph",
+    "Text content for first paragraph severely truncated and jumbled",
+    "Text content for second paragraph severely truncated and jumbled"
+  ],
+  "doc_id": "2640",
+  "page": 7,
+  "elapsed_seconds": 5.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

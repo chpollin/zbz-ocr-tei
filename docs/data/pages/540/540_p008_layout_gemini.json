@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "236",
+      "bbox": {
+        "x_pct": 15.164,
+        "y_pct": 14.501,
+        "w_pct": 3.893,
+        "h_pct": 1.364
+      },
+      "changed": true,
+      "change_reason": "Corrected page number label from text to page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "J. HERSCH",
+      "bbox": {
+        "x_pct": 44.821,
+        "y_pct": 14.453,
+        "w_pct": 10.364,
+        "h_pct": 1.487
+      },
+      "changed": true,
+      "change_reason": "Identified author name as section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "même se constituant comme ensemble isolé à d'un certain nombre de critères conventionnels. Elle ne se spécifie que pour des hommes (nous y reviendrons plus loin) capables de vivre ou de mimer la condition politique de l'homme et de la retrouver dans le passé.",
+      "bbox": {
+        "x_pct": 15.133,
+        "y_pct": 17.424,
+        "w_pct": 69.365,
+        "h_pct": 7.216
+      },
+      "changed": true,
+      "change_reason": "Corrected extracted text from truncated version to full text."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "2. Nous avons déjà parlé en passant de l'emmêlement méthodologique qui se produit en histoire entre l'explication causale et la compréhension mimée. Faut-il en parler sous la rubrique « limites » ? Si l'explication causale suffisait, l'histoire serait une science naturelle. Si la compréhension mimée était seule possible, elle serait dans le meilleur des cas non pas science, mais communication philosophique — ce qui lui ferait perdre son aspect collectif, social. Ce qui est sûr, c'est que la « connaissance » exige l'objectivité, nous rencontrons ici une limite où l'objectivité est non seulement inaccessible, mais encore peu souhaitable dans l'intérêt même du vrai. M. James Joll, s'interrogeant sur les possibilités d'une histoire vraiment contemporaine et sur les exigences qu'il convient d'avoir envers elle, écrivait récemment : « Certains aspects de l'histoire contemporaine sont en réalité si lourds d'émotion qu'ils sont falsifiés si on les traite avec trop de froideur et d'érudition... » Nous reviendrons sur cette question plus loin.",
+      "bbox": {
+        "x_pct": 15.092,
+        "y_pct": 25.991,
+        "w_pct": 69.611,
+        "h_pct": 27.797
+      },
+      "changed": true,
+      "change_reason": "Corrected extracted text from truncated version to full text."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "3. Quant à la recherche d'un sens, à travers la connaissance historique, elle est à la fois inévitable et vouée à l'échec. Une histoire dépourvue de tout sens ne serait plus histoire ; mais si on découvrait son sens, c'est qu'elle aurait pris fin, c'est que « le mot de la fin » aurait été prononcé. L'élaboration du sens de l'histoire est elle-même historique. Elle s'accomplit à la fois dans l'existence historique et dans le déchiffrage de l'histoire ; elle les façonne et elle en dépend. Aussi la connaissance de l'histoire — elle-même historique — oscille-t-elle au fil des époques entre des tentatives — des tentations — diverses, cherchant tantôt à imposer à l'histoire une signification éternelle, mais sue d'avance, et dont seul le mystère transcendant vient corriger le dogmatisme, tantôt à faire apparaître son non-sens absolu, son « absurdité » (« told by an idiot »), ce qui revient forcément à en juger le cours à l'aide d'exigences humaines universalisées — tantôt à abolir la question même du",
+      "bbox": {
+        "x_pct": 15.164,
+        "y_pct": 55.24,
+        "w_pct": 69.744,
+        "h_pct": 25.461
+      },
+      "changed": true,
+      "change_reason": "Corrected extracted text from truncated version to full text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for main paragraphs was heavily truncated or corrupted.",
+    "Page number 236 was incorrectly labeled as text.",
+    "Author signature line 'J. HERSCH' was missing from initial detection.",
+    "Some text characters in extraction were garbled (e.g., '1emmêlement')."
+  ],
+  "doc_id": "540",
+  "page": 8,
+  "elapsed_seconds": 5.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

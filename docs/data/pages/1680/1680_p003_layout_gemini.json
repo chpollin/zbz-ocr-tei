@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "maladie plus grave que le remords.",
+      "bbox": {
+        "x_pct": 16.14,
+        "y_pct": 14.775,
+        "w_pct": 29.009,
+        "h_pct": 1.749
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aujourd'hui par suite des extraordinaires progrés de la médecine et des nouveaux pouvoirs qui sont les siens, les conséquences du paradoxe humain \"nature-liberté\" apparaissent plus manifestes, parfois plus aiguës, que naguère. Des problémes neufs et cruciaux se posent à la conscience des médecins.",
+      "bbox": {
+        "x_pct": 16.092,
+        "y_pct": 17.795,
+        "w_pct": 74.698,
+        "h_pct": 8.57
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from severe OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les nouveaux pouvoirs acquis par la médecine lui permettent d'intervenir dans la conception et la naissance. A cause d'elle un enfant vient ou ne vient pas au monde, soit qu'on l'empêche de venir alors qu'il pourrait venir, soit qu'on le fasse venir alors que la nature à elle seule ne le permettrait pas. On parle même d'une possibilité de choisir le sexe d'un enfant désiré ou d'agir sur certaines de ses qualités. La médecine peut désormais intervenir dans la mort, soit en brouillant sa distinction d'avec la vie au point de la faire durer quasi indéfiniment, soit au contraire en en avançant l'heure de façon à atténuer la douleur du passage. La médecine peut désormais agir sur le psychisme, par des techniques verbales, par la médication ou par des méthodes plus chirurgicales. A travers les traitements prolongés (souvent préventifs) qu'elle propose, à travers le système de pensée qui les sous-tend et qu'ils finissent par imposer, elle modifie, pour le patient, la qualité de la vie et jusqu'à son sens. En même temps, la pratique médicale, naguère très limitée, connaît une extension et une intensification sans précédent. Elle atteint désormais, dans nos pays occidentaux, la population tout entière et, très souvent, elle accompagne les hommes tout au long de leur vie. Les conséquences de cette évolution sont nombreuses et profondes, même si nous laissons complétement de côté le problème des charges économiques pour ne considérer que notre thème d'aujourd'hui: la liberté du malade face à la médecine. Ainsi, il y a toujours eu un écart entre la multiplicité des malades pour le médecin et, dans \"le vécu\" de chaque malade, l'unicité de sa vie pour lui-même et pour ses proches, - mais cette disproportion devient écrasante quand le nombre des malades pris en charge par chaque médecin s'accroît dans la mesure que nous connaissons aujourd'hui. Ce n'est pas seulement le temps, alors, qui risque de manquer au médecin, mais la substance même qui nourrit sa présence, sa vigilance, son attention. Du même coup, le nombre des médecins, évidemment, s'accroît, mais on peut douter que la proportion de ceux qu'anime une authentique \"mission\" médicale reste la même. Enfin, lorsqu'on se pose des problèmes d'éthique médicale il faut désormais tenir compte du fait que les actes médicaux n'ont pas que des effets limités au seul rapport d'un médecin avec",
+      "bbox": {
+        "x_pct": 15.818,
+        "y_pct": 29.459,
+        "w_pct": 78.082,
+        "h_pct": 55.288
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from massive OCR failure and line fragmentation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "230",
+      "bbox": {
+        "x_pct": 15.9,
+        "y_pct": 92.5,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added page number region erroneously omitted."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 4,
+  "issues": [
+    "Severe OCR degradation in the original JSON output.",
+    "Missing page number region.",
+    "Multiple text blocks incorrectly segmented or merged."
+  ],
+  "doc_id": "1680",
+  "page": 3,
+  "elapsed_seconds": 5.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

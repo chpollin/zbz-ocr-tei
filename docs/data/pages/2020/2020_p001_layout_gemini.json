@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "D'OU LA SCIENCE TIRE-T-ELLE SON SENS?",
+      "bbox": {
+        "x_pct": 26.91,
+        "y_pct": 7.416,
+        "w_pct": 44.396,
+        "h_pct": 2.14
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans une de ses conference, Carl-Friedrich von Weiz...",
+      "bbox": {
+        "x_pct": 11.861,
+        "y_pct": 12.651,
+        "w_pct": 74.538,
+        "h_pct": 17.952
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Réfléchissons d'abord à la notion de sens. La double...",
+      "bbox": {
+        "x_pct": 12.111,
+        "y_pct": 31.129,
+        "w_pct": 74.908,
+        "h_pct": 15.635
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and spacing in text representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce qui est plein au point de se suffire...",
+      "bbox": {
+        "x_pct": 12.405,
+        "y_pct": 47.634,
+        "w_pct": 74.353,
+        "h_pct": 9.532
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misread initial text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant, qu'est-ce que la science...",
+      "bbox": {
+        "x_pct": 12.274,
+        "y_pct": 58.219,
+        "w_pct": 74.483,
+        "h_pct": 11.706
+      },
+      "changed": true,
+      "change_reason": "Improved text representation for clarity."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La science a joui d'un prestige souverain...",
+      "bbox": {
+        "x_pct": 12.155,
+        "y_pct": 70.761,
+        "w_pct": 74.712,
+        "h_pct": 13.771
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle reste aujourd'hui la tâche essentielle...",
+      "bbox": {
+        "x_pct": 12.372,
+        "y_pct": 85.426,
+        "w_pct": 74.603,
+        "h_pct": 4.097
+      },
+      "changed": true,
+      "change_reason": "Fixed missing apostrophe in today's date."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "81",
+      "bbox": {
+        "x_pct": 84.156,
+        "y_pct": 92.515,
+        "w_pct": 2.222,
+        "h_pct": 2.21
+      },
+      "changed": true,
+      "change_reason": "Labeled page number correctly as filter."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 4,
+  "issues": [
+    "Page number not previously classified.",
+    "Minor OCR errors in text representation.",
+    "Author signature J. Hersch (Genf) missing a region/label."
+  ],
+  "doc_id": "2020",
+  "page": 1,
+  "elapsed_seconds": 5.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

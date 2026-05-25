@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "que je lis est ma conscience non dans mon souvenir et la mélodie que j'entends forme un tout complet pour mon oreille intérieure. Le début ne s'est pas effacé avant la fin.",
+      "bbox": {
+        "x_pct": 25.212,
+        "y_pct": 13.598,
+        "w_pct": 57.383,
+        "h_pct": 9.076
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De même que l'éternité n'est pas une durée sans fin permettant à l'âme immortelle de survivre en un autre lieu, de même l'instant présent n'est pas un point insaisissable, une limite abstraite entre le passé et le futur.",
+      "bbox": {
+        "x_pct": 25.286,
+        "y_pct": 22.347,
+        "w_pct": 57.373,
+        "h_pct": 11.153
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a pas moyen de vivre en être humain sans impliquer un passé et un futur. Mais notre vraie vie se vit dans un présent qui n'a rien de ponctuel.",
+      "bbox": {
+        "x_pct": 25.138,
+        "y_pct": 33.254,
+        "w_pct": 57.352,
+        "h_pct": 9.019
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce présent a une épaisseur. Il a de l'être. Il n'est pas, comme on l'a dit le plus souvent, un «instant». Et surtout : son être est de telle nature que, situé au cœur du temps qui passe, et comme à sa source, lui, en un sens, ne passe pas.",
+      "bbox": {
+        "x_pct": 25.212,
+        "y_pct": 41.643,
+        "w_pct": 57.172,
+        "h_pct": 11.504
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pour cela que nous pouvons vivre «au présent». Notre présent reste avec nous, tandis que le temps s'en va en deux directions contraires, se hâtant à la rencontre du futur, et entraînant toujours plus loin de nous le passé, comme pour le laisser s'abîmer peu à peu dans le néant.",
+      "bbox": {
+        "x_pct": 24.926,
+        "y_pct": 52.739,
+        "w_pct": 57.521,
+        "h_pct": 11.226
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous vivons au présent dans cette petite durée à travers laquelle, malgré le temps, l'être nous accompagne, l'être reste avec nous au cœur de la",
+      "bbox": {
+        "x_pct": 25.106,
+        "y_pct": 65.552,
+        "w_pct": 57.172,
+        "h_pct": 7.163
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "76",
+      "bbox": {
+        "x_pct": 24.8,
+        "y_pct": 74.8,
+        "w_pct": 4.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and tagged as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Initial OCR was highly fragmented and truncated across multiple regions.",
+    "Page number 76 was missing from detection.",
+    "Multiple paragraphs had broken sentences due to incorrect layout extraction."
+  ],
+  "doc_id": "2780",
+  "page": 75,
+  "elapsed_seconds": 5.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

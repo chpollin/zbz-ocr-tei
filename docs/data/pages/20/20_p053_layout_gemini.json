@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ET DE L'ALTERNATIVE SUBJECTIVE 51",
+      "bbox": {
+        "x_pct": 257.0,
+        "y_pct": 74.0,
+        "w_pct": 486.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "The header text including the page number 51 was misidentified as part of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vers tel objet, capricieusement isolé de son entourage, mais vers tout ce qui s'offre à lui, tout ce qui peut subir son action. L'alternative est pour le sujet : être ou ne pas être, et non pas : vivre ou mourir. Car il ne peut ni vivre ni mourir : s'il cesse d'être, on ne pourra jamais dire qu'il est mort, puisqu'on ne pourra pas dire qu'il a été; pour cela, il faudrait pouvoir le regarder dans le passé, ce qui est impossible : on ne peut regarder qu'un objet. On ne peut pas non plus dire qu'il vit, car il est ce qui agit dans son activité et ce qui devient dans son devenir, — et jamais ce qu'on regarde de son activité ou de son devenir. Le sujet est donc activité totale, ce terme ne signifiant pas du tout action efficace, mais étant pris dans son sens le plus formel, le plus vide, qui s'oppose polairement à la passivité des objets.",
+      "bbox": {
+        "x_pct": 10.542,
+        "y_pct": 11.619,
+        "w_pct": 76.551,
+        "h_pct": 43.781
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content which was missing words."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, l'activité totale du sujet implique à la fois sa propre indivisibilité et l'impossibilité de limiter son monde objectif. En effet, là où le monde cesserait d'être pour lui objet, il cesserait lui-même d'être sujet, c'est-à-dire tout simplement d'être. Car il n'en va pas en philosophie comme en science. On peut avoir étudié scientifiquement tel domaine de la nature et s'en tenir à cette spécialité sans que le reste de la nature cesse pour cela d' « être » pour nous et nous pour elle. Mais la philosophie cherche la forme par laquelle le sujet est sujet envers tout objet; si on voulait absolument voir en elle une science, elle serait ainsi la plus formelle et la moins",
+      "bbox": {
+        "x_pct": 10.738,
+        "y_pct": 55.457,
+        "w_pct": 76.355,
+        "h_pct": 33.114
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original detection missed the page header.",
+    "Original OCR for paragraph text was highly truncated and incomplete."
+  ],
+  "doc_id": "20",
+  "page": 53,
+  "elapsed_seconds": 4.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

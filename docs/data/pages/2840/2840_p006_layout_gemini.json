@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 11.479,
+        "y_pct": 5.653,
+        "w_pct": 15.644,
+        "h_pct": 1.649
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fisamment homogènes, susceptibles dadhérer par la suite à une Fédération européenne de plusieurs Fédérations. Pourvu que les haines trouvent enfin leur tombe dans l'histoire passée, que tous apprennent l'art de vivre fédéralement, selon le principe de subsidiarité, et que les pays riches n'oublient pas que, chez les pauvres, le minimum vital nécessaire à la survie est une exigence qui n'attend pas.",
+      "bbox": {
+        "x_pct": 11.388,
+        "y_pct": 8.529,
+        "w_pct": 83.196,
+        "h_pct": 13.169
+      },
+      "changed": true,
+      "change_reason": "The box previously split the paragraph incorrectly and missed content. Fixed the text content to match the document's actual reading flow."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 72.42,
+        "y_pct": 13.786,
+        "w_pct": 16.192,
+        "h_pct": 1.471
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header as it is an author signature/name identifying the block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IL N'EXISTE PAS TOUJOURS DE REMÈDE",
+      "bbox": {
+        "x_pct": 29.744,
+        "y_pct": 31.247,
+        "w_pct": 40.639,
+        "h_pct": 1.867
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selon une conception optimiste de la politique, on suppose que toute maladie politique comporte un remède, et plutôt que de ne pas le trouver, on préfère provoquer deux maux pour en soigner un. Si tous les remèdes raisonnables ont échoué, les hommes qui les ont préconisés considèrent comme avéré que les traitements injustifiables, les seuls qu'on n'ait pas essayés, doivent nécessairement réussir. Mais n'est-il pas possible de défendre un autre point de vue? N'est-il pas concevable qu'il n'existe pas de remède applicable à la haine que les Irlandais nourrissent à notre égard? que, peut-être, un jour, d'autres amours ou d'autres haines chasseront celle-ci de l'esprit des paysans irlandais? et que rien de ce que nous pouvons faire, par aucun moyen, n'accélérera l'avènement de ce jour-là? Ne se pourrait-il pas, au contraire, que nos soins perpétuels et notre ingérence incessante, qui attisent les passions tantôt d'un parti, tantôt de l'autre, et font lever à chaque fois une nouvelle moisson de ressentiments à côté des vieilles rancœurs, ne se pourrait-il pas que ces comportements-là éloignent le jour où ces mauvais sentiments déclineront peu à peu et tomberont dans l'oubli? Il est une chose, nous le savons, que nous pouvons faire en Irlande, car nous l'avons faite en Inde et ailleurs, avec des populations plus difficiles à administrer et plus amères : nous pouvons maintenir la paix et éliminer le crime organisé. Mais il n'y a pas de précédent, dans notre histoire ni dans aucune autre, qui nous enseigne que des mesures politiques puissent conjurer et faire disparaître les antipathies héréditaires nourries par une agitation continuelle. Les institutions libres qui maintiennent l'existence d'un peuple libre et uni entretiennent aussi les haines d'un peuple divisé.",
+      "bbox": {
+        "x_pct": 15.461,
+        "y_pct": 34.697,
+        "w_pct": 69.014,
+        "h_pct": 34.518
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated text to match the full paragraph content in the scan."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Lord SALISBURY (sur la question irlandaise), en 1872, cité par Lady Gwendolen Cecil, Salisbury, 1921, t. II, pp. 38-39, trad. de Commentaire.",
+      "bbox": {
+        "x_pct": 39.607,
+        "y_pct": 69.413,
+        "w_pct": 40.913,
+        "h_pct": 4.288
+      },
+      "changed": true,
+      "change_reason": "Bibliographic reference at the end of a text section acting as a footnote/source citation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "580",
+      "bbox": {
+        "x_pct": 119.0,
+        "y_pct": 890.0,
+        "w_pct": 28.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as a page_footer region."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for the top paragraph was incomplete and broken.",
+    "Bibliographic reference was misidentified as standard paragraph text.",
+    "Main paragraph text was truncated in the extraction.",
+    "Page number missing from initial detections."
+  ],
+  "doc_id": "2840",
+  "page": 6,
+  "elapsed_seconds": 5.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

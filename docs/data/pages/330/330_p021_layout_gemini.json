@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "part, les trois quatre millions d’électeurs qui ont successivement vote pour les Croix-de-Feu, pour le R. P. F., aujourd’hui pour Poujade, demain pour un autre aventurier. Ce sont, d’autre part, les 25 pour 100 d’électeurs qui se massent derrière le parti communiste. Cette opposition antiparlementaire a souvent obligé tous les autres à s’unir autour d’un gouvernement condamné à l’immobilisme, immobilisme qui, à son tour, renforce l’opposition au régime. Jeanne Hersch me semble ici s’orienter vers des moyens un peu trop radicaux, dans la mesure où elle nie, pour les adversaires de la liberté, leur droit à revendiquer pour eux-mêmes le respect de cette même liberté. Je ne suis pas de son avis : avant d’être des totalitaires, ces adversaires sont des hommes, et tant que leurs actes ne mettent pas effectivement en danger l’ordre social, leur qualité d’homme exige que, pour eux aussi, les libertés démocratiques fondamentales soient respectées. En renversant le mot de Veuillot : « Nous sommes obligés, en vertu de nos principes, d’accorder à nos ennemis les libertés que, s’ils étaient au pouvoir, ils nous dénieraient au nom des leurs. »",
+      "bbox": {
+        "x_pct": 1.992,
+        "y_pct": 11.497,
+        "w_pct": 84.819,
+        "h_pct": 36.515
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and incorrect. Updated to reflect full accurate text from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si d’ailleurs Jeanne Hersch a raison de situer l’idéologie communiste, juste après l’idéologie fasciste, il faut tenir compte du fait que la masse des électeurs qui votent communiste sont des mécontents, des gens de gauche égarés, que seul un gouvernement travailliste vraiment capable de gouverner pourrait ramener à leur place, dans le groupe politique auquel ils appartiennent réellement.",
+      "bbox": {
+        "x_pct": 2.228,
+        "y_pct": 50.205,
+        "w_pct": 84.401,
+        "h_pct": 12.032
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and incorrect. Updated to reflect full accurate text from the image."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "OCR output for the regions was significantly truncated and contained hallucinations/errors in the provided JSON.",
+    "The OCR text did not match the actual text displayed in the image."
+  ],
+  "doc_id": "330",
+  "page": 21,
+  "elapsed_seconds": 3.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

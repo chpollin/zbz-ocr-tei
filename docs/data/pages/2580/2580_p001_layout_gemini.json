@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 12.004,
+        "y_pct": 58.984,
+        "w_pct": 14.087,
+        "h_pct": 2.981
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1910, Dr. phil , Dr. theol hc Prolessorin für Philosophic, Univcrsiläl Genl Taligkcit bci der UNESCO",
+      "bbox": {
+        "x_pct": 12.004,
+        "y_pct": 64.593,
+        "w_pct": 29.99,
+        "h_pct": 8.211
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Im Hinblick auf 1991",
+      "bbox": {
+        "x_pct": 55.655,
+        "y_pct": 11.382,
+        "w_pct": 29.038,
+        "h_pct": 4.743
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bewahren oder opfern?",
+      "bbox": {
+        "x_pct": 55.952,
+        "y_pct": 21.314,
+        "w_pct": 15.149,
+        "h_pct": 2.805
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dic Schweiz als Land geht nicht aus irgendeiner die Schweiz gibt begrenzlc Gcmeinschaften (dic künlt",
+      "bbox": {
+        "x_pct": 55.853,
+        "y_pct": 25.203,
+        "w_pct": 32.51,
+        "h_pct": 29.404
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Verschicdenhcil, nichl Was dic Sprache angeht: es gibt unlerschiedlichc Konfessionomischer Ebene us",
+      "bbox": {
+        "x_pct": 55.923,
+        "y_pct": 55.827,
+        "w_pct": 32.5,
+        "h_pct": 20.054
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "106",
+      "bbox": {
+        "x_pct": 11.954,
+        "y_pct": 82.859,
+        "w_pct": 3.125,
+        "h_pct": 2.114
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "107",
+      "bbox": {
+        "x_pct": 86.414,
+        "y_pct": 82.683,
+        "w_pct": 3.125,
+        "h_pct": 2.114
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page numbers were incorrectly labeled as text.",
+    "OCR text quality is poor/fragmented."
+  ],
+  "doc_id": "2580",
+  "page": 1,
+  "elapsed_seconds": 6.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "76 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 89.2,
+        "y_pct": 77.0,
+        "w_pct": 7.3,
+        "h_pct": 2.1
+      },
+      "changed": true,
+      "change_reason": "Identified running header and page number at top."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "certitude: il n'était pas malade, il aurait pu venir, il n'est pas venu, il dit non, il dit « fini ». Peut-être aussi celui avec qui je dansais n'avait-il rien de commun avec celui que j'aimais et qui allumait des feux dans la montagne. Il me sembla tout à coup que ce bal avait duré éternellement, que moi seule je venais d'y arriver; lui, il y avait toujours été, il s'y était toujours amusé, il s'y amusait pendant que mon angoisse le cherchait, en rentrant de l'école, à midi. Les petites filles rentrent de l'école, la serviette sous le bras; mais les grandes personnes s'amusent au bal, bien sûr, au bal, et toutes les dames ont des perruques blanches.",
+      "bbox": {
+        "x_pct": 8.378,
+        "y_pct": 12.164,
+        "w_pct": 81.122,
+        "h_pct": 30.624
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to reflect actual document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être aussi une sorte d'effroi m'a-t-elle empêchée de saisir ce qui se passait: l'effroi d'être dans ses bras. Celui que j'aimais répandait une lumière ardente qui écartait jusqu'en rêve le moindre contact. Qu'on pût ainsi s'approcher de lui, mettre la main sur l'épaule de son habit sans que quelque chose explosât dans l'univers dut rester pour moi inexplicable et irréel, un peu comme si un mannequin copie de moi dansait avec un mannequin copie de lui, du vrai Pierre qu'on regarde seulement passer, depuis des mois, chaque jour, de loin.",
+      "bbox": {
+        "x_pct": 8.514,
+        "y_pct": 42.41,
+        "w_pct": 81.081,
+        "h_pct": 25.926
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to reflect actual document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il avait d'ailleurs autre chose qu'un enfantillage dans cette crainte, et tu sais bien, toi mon Marc proche, mon Marc si souvent confondu avec moi-même, que je l'éprouve encore. L'amour n'est pas seulement ce qui jette les êtres l'un vers l'autre, c'est aussi ce qui sépare, ce qui écarte. Je retrouve dans mes paumes cette incompréhensible peur de l'approche, quand le désir s'y répand",
+      "bbox": {
+        "x_pct": 7.973,
+        "y_pct": 67.675,
+        "w_pct": 81.486,
+        "h_pct": 18.214
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to reflect actual document content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "The initial OCR transcriptions were significantly corrupted and did not match the provided image text.",
+    "Page number and running header at the top were incorrectly categorized as paragraph text."
+  ],
+  "doc_id": "40",
+  "page": 74,
+  "elapsed_seconds": 5.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

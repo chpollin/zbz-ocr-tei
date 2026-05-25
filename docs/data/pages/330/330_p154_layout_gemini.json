@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "120",
+      "bbox": {
+        "x_pct": 122.0,
+        "y_pct": 82.0,
+        "w_pct": 28.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 393.0,
+        "y_pct": 82.0,
+        "w_pct": 234.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-pas être au nom de la justice — si malléables, si déformables que soient les valeurs dans les interprétations idéologiques — qu'une autocratie ou une aristocratie défendent leurs prérogatives. Au contraire, c'est toujours au nom de la justice que le nombre élève ses revendications. Et cette justice dont il se réclame, ce n'est pas celle qui règne dans la République platonicienne et qui tend à s'y confondre avec l'ordre ou l'harmonie, ce qui revient à dire qu'elle désigne une figure du tout, et non un droit des individus. Non, c'est une justice égalitaire qui, au fond, de façon plus ou moins lucide, réclame pour tous des chances égales, des possibilités égales ; de ce fait, elle met le possible au-dessus du donné, l'amélioration au-dessus de la stabilité, le tout au service de la liberté imprévisible de chacun. Il est donc compréhensible que la démocratie, conquise surtout par la bourgeoisie contre la féodalité, c'est-à-dire par le dynamisme capitaliste et technicien du monde moderne contre les hiérarchies immobiles de l'ordre patriarcal, ait cependant permis à la classe ouvrière de s'organiser, de créer contre la bourgeoisie des syndicats puissants, de modifier progressivement, à l'aide de son arme la plus efficace : la grève, son niveau de vie et son statut professionnel et social. Mais c'est peu dire que de reconnaître que la démocratie a garanti la possibilité de cette évolution. Elle a fait davantage. Elle n'est pas la justice, c'est vrai, mais elle stimule l'exigence de justice. Basée sur la valeur première de la liberté individuelle, des possibles de la personne, elle ne peut se faire aimer du citoyen sans susciter en lui une tendance à faire usage de cette liberté, à choisir entre ces possibles, et donc à supprimer tout ce qui l'asservit ou asservit les autres, de la police d'État, en passant par la censure, jusqu'aux besoins matériels élémentaires. La démocratie peut être, pour la justice, un bon instrument ; mais elle a besoin de la justice pour exister, pour fonctionner. C'est pourquoi, entre autres raisons, la démocratie bourgeoise n'a jamais pu regarder en face et justifier l'asservissement et la mutilation des masses par le régime du profit et du salariat. Le cynisme ou la mystique, possibles dans des régimes théocratiques, stabilistes, esthétiques, où priment les valeurs d'ordre et de durée, lui sont également interdits. Elle n'a jamais pu, dans sa belle époque, que fermer les yeux, ignorer, nier. L'hypocrisie était son seul refuge. La plaie démasquée, elle s'est",
+      "bbox": {
+        "x_pct": 12.354,
+        "y_pct": 11.319,
+        "w_pct": 85.32,
+        "h_pct": 78.904
+      },
+      "changed": true,
+      "change_reason": "Corrected the broken/corrupted text OCR output."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was heavily corrupted.",
+    "Page number at top was incorrectly included in text block.",
+    "Running header was incorrectly included in text block."
+  ],
+  "doc_id": "330",
+  "page": 154,
+  "elapsed_seconds": 7.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

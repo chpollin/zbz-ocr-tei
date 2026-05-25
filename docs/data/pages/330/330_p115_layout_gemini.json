@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 344.0,
+        "y_pct": 80.0,
+        "w_pct": 218.0,
+        "h_pct": 9.0
+      },
+      "changed": true,
+      "change_reason": "Label changed from text to page_header as it is a running header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "81",
+      "bbox": {
+        "x_pct": 855.0,
+        "y_pct": 80.0,
+        "w_pct": 19.0,
+        "h_pct": 9.0
+      },
+      "changed": true,
+      "change_reason": "Label changed from text to page_header (page number)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne se résignerait à aucun prix. Or un régime totalitaire est si peu fait de pièces détachables que tel est bien toujours le cas, du moins pour quiconque pense encore qu’il n’existe pas de compensation à la perte de la liberté.",
+      "bbox": {
+        "x_pct": 40.81,
+        "y_pct": 111.41,
+        "w_pct": 842.62,
+        "h_pct": 86.72
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un régime totalitaire exige donc, non seulement en fait, par ses polices, mais idéologiquement déjà, un oui ou un non sans limites ni réserves. Toute atténuation, ici, est bon gré mal gré une duperie, contraire à la nature même de l’enjeu. Ni la multiplication des écoles en U. R. S. S., ni la résorption du chômage en Allemagne hitlérienne, ni les mesures de sécurité sociale adoptées en Italie ou ailleurs, rien de tout cela ne peut être apprécié isolément — les résultats, dans de tels régimes, restent inséparables des moyens employés pour les obtenir. Il faut tout accepter — ou tout combattre.",
+      "bbox": {
+        "x_pct": 42.2,
+        "y_pct": 189.84,
+        "w_pct": 843.18,
+        "h_pct": 205.26
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le principe fondamental d’un régime totalitaire quel qu’il soit, c’est la prétention à connaître, dominer, maîtriser le réel dans sa totalité. Que ce soit l’autorité de Dieu, celle du mage ou celle de la science que l’on ait impliquée dans le jeu, le tout est dominé. Il y a, certes, parmi les adeptes mêmes, des timides qui n’osent pas tirer les conséquences ultimes de leur adhésion et qui réservent dans leur for intérieur un au-delà aussi mystérieux qu’inefficace. Mais ce ne sont là que des inconséquences, un reste d’arrangement confortable avec le passé. En fait, le savoir total, la maîtrise totale, unique justification des exigences totalitaires, comportent un immanentisme total. Religion inspiratrice du pouvoir, mission surnaturelle attribuée au chef, évidence empirique, scientifique, du chemin à suivre et de son terme, dans tous ces cas le totalitarisme ne vit que par une mainmise sur l’absolu, excluant désormais toute transcendance.",
+      "bbox": {
+        "x_pct": 41.78,
+        "y_pct": 393.67,
+        "w_pct": 844.01,
+        "h_pct": 306.86
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu’il y ait là une sorte de grandeur, une force d’attraction et même de fascination, un appel extraordinaire au dévouement et au sacrifice, c’est incontestable. Mais on ne peut pas voir sans tristesse la facilité avec laquelle les hommes de ce temps ont appelé « mystiques » des succédanés de cet ordre, où le sacrilège et la superstition sont aussi évidents. Ceux-là mêmes qui luttent contre les totalitaires déplorent souvent de n’avoir pas à opposer une « mystique » à ces « mystiques » ; ils en cherchent une, ils l’attendent. Les idéologies anti-totalitaires tentent, elles aussi, de se",
+      "bbox": {
+        "x_pct": 40.81,
+        "y_pct": 699.91,
+        "w_pct": 847.77,
+        "h_pct": 187.79
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Failed to identify page header and page number",
+    "Extremely poor text transcription quality in the detected regions"
+  ],
+  "doc_id": "330",
+  "page": 115,
+  "elapsed_seconds": 8.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

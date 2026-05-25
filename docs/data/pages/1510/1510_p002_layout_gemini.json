@@ -1,0 +1,125 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "< Lhomme est mort > le DIT ? qui",
+      "bbox": {
+        "x_pct": 27.109,
+        "y_pct": 11.771,
+        "w_pct": 44.537,
+        "h_pct": 6.269
+      },
+      "changed": true,
+      "change_reason": "Correcting labels to match specification"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "par JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 34.62,
+        "y_pct": 21.527,
+        "w_pct": 30.484,
+        "h_pct": 2.322
+      },
+      "changed": true,
+      "change_reason": "Correcting labels to match specification"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "c'est prétendre constater un fait . Un en tant que tel, n'a pas besoin dêtre dit. Il possède, à son ",
+      "bbox": {
+        "x_pct": 5.989,
+        "y_pct": 27.94,
+        "w_pct": 87.746,
+        "h_pct": 9.25
+      },
+      "changed": true,
+      "change_reason": "Correcting label and text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La mort de l’homme, est-ce, dans ce sens, un fait, que l’on puisse constater et sur lequel on puisse prendre appui — pour dispenser les autres, et se dispenser soi-même, de « vivre en homme », de façon que l’homme soit encore vivant ?",
+      "bbox": {
+        "x_pct": 6.266,
+        "y_pct": 37.19,
+        "w_pct": 88.16,
+        "h_pct": 8.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing region"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "1 Nous traversons une époque étrange. D'un côté, nous prétendons refuser toutes les données naturell",
+      "bbox": {
+        "x_pct": 6.266,
+        "y_pct": 45.438,
+        "w_pct": 88.16,
+        "h_pct": 28.79
+      },
+      "changed": true,
+      "change_reason": "Correcting labels to match specification"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour Socrate, à travers Platon, <le meilleur > ne s'élucidait que pour lhomme acharné à descendre et",
+      "bbox": {
+        "x_pct": 7.054,
+        "y_pct": 73.921,
+        "w_pct": 87.317,
+        "h_pct": 10.876
+      },
+      "changed": true,
+      "change_reason": "Correcting labels to match specification"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant, à Pinverse, nous ne sommes pas des empiristes réalistes, croiraient à qui",
+      "bbox": {
+        "x_pct": 7.206,
+        "y_pct": 84.706,
+        "w_pct": 86.985,
+        "h_pct": 4.336
+      },
+      "changed": true,
+      "change_reason": "Correcting labels to match specification"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "35",
+      "bbox": {
+        "x_pct": 91.36,
+        "y_pct": 91.53,
+        "w_pct": 4.31,
+        "h_pct": 3.42
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Labels were incorrect (text vs heading)",
+    "Missing region for bridge text detected",
+    "Missing page number region detected"
+  ],
+  "doc_id": "1510",
+  "page": 2,
+  "elapsed_seconds": 6.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Correcting labels to match specification": 5,
+    "Correcting label and text content": 1,
+    "ADDED": 2
+  }
+}

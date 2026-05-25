@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 7 -",
+      "bbox": {
+        "x_pct": 49.333,
+        "y_pct": 98.706,
+        "w_pct": 2.29,
+        "h_pct": 1.471
+      },
+      "changed": true,
+      "change_reason": "Identified page number/header artifact."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "die man totalisieren kann, und in deren Namen man seiner Feigheit nachgeben kann. Merken Sie: Es ist sehr schwer, sich selbst in einer absoluten Forderung zu verankern, ohne aus dieser absoluten Forderung ein ständiges Dogma für alle zu machen. Es ist sehr schwer, wenn man etwas für absolute Norm annimmt, nicht zu behaupten, daß diese Norm für immer und für alle gültig ist. Und das ist auch unsere Faulheit. Wir ziehen es vor, Prinzipien zu haben, schöne Prinzipien, und es genügt, diese dann anständig anzuwenden, und dann ist alles recht. Aber wenn es einen Menschen gegeben hat, der Prinzipien hatte, so war es Gandhi. Und Gandhi selbst hat geschrieben, daß es kein einziges Prinzip gibt, das buchstäblich allgemeingültig sein kann und jederzeit von jedem anständig angewendet werden kann. Sondern, wie er sagte, man muß jedes Mal mit seinem eigenen Selbstsein prüfen, ob hier und jetzt, hic et nunc, dieses Prinzip dem Menschsein entspricht. Und er hat sogar gesagt, wenn ich die Wahl habe, zwischen Gewaltlosigkeit und Feigheit - und er war so sehr für das Prinzip der Gewaltlosigkeit - wenn also die Gewaltlosigkeit in einem gegebenen Moment der Geschichte als Feigheit erscheint, dann werde ich Gewalt wählen. Das sagte Gandhi. Das bedeutet also, daß man im Namen des Schönsten und des Friedlichen den Krieg führen kann, daß Pazifisten sehr leicht aggressiv werden können, das bedeutet, daß kein Prinzip uns von allein der Pflicht enthebt, selbst, hic et nunc, unsere Prinzipien zu prüfen, und zu prüfen, was sie hier und da bedeuten. Das bedeutet also, daß alles, was wir theoretisch besitzen, um uns zu helfen, im Grunde zu begrenzen ist. Und daß wir das auf uns zu nehmen haben, was jetzt zu tun ist, ohne diese Rettung zu erhoffen, die in einer unpersönlichen Totalisierung diejenige der Menschheit überhaupt wäre.",
+      "bbox": {
+        "x_pct": 9.758,
+        "y_pct": 12.411,
+        "w_pct": 81.96,
+        "h_pct": 62.002
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text contents."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich habe heute manchmal das Gefühl, daß die Bedrohung, die heutige Bedrohung davon kommt, daß die Menschen diese Obersetzung nicht mehr wollen, daß sie nicht mehr selbst gegenwärtig sein wollen, und selbst urteilen wollen, sondern daß sie sich aus Anspruch auf Engelhaftigkeit auf fertige Absolutheiten beziehen wollen. Ich fürchte jetzt eine maßlose Engelhaftigkeit.",
+      "bbox": {
+        "x_pct": 9.411,
+        "y_pct": 74.471,
+        "w_pct": 82.177,
+        "h_pct": 12.929
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun gibt es ohne Vergessen irgendeinen Trost? Vielleicht liegt dieser Trost in unserer gemeinsamen Bescheidenheit. Wir wollen alle Menschen sein, aber nun sollten wir wirklich einmal verstehen,",
+      "bbox": {
+        "x_pct": 9.677,
+        "y_pct": 87.382,
+        "w_pct": 82.605,
+        "h_pct": 6.174
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Detected page number was missing/misplaced in original detection",
+    "Transcription quality of original OCR was low",
+    "Overlapping boxes merged into single paragraphs"
+  ],
+  "doc_id": "2470",
+  "page": 7,
+  "elapsed_seconds": 5.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

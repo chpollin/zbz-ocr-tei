@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "152 LIMITES DE CETTE RECHERCHE",
+      "bbox": {
+        "x_pct": 14.307,
+        "y_pct": 7.424,
+        "w_pct": 75.753,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "The top text line contains the page number '152' and the section header, so it should be categorized as a header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qu'off-vient d'atteindre, perd son absoluité; l'évidence de l'évidence, pourrait-on dire, a des racines qui échappent à la science.",
+      "bbox": {
+        "x_pct": 14.307,
+        "y_pct": 11.725,
+        "w_pct": 75.753,
+        "h_pct": 8.074
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription and label classification."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comme savant, je ne me soucie des limites du savoir que pour les dépasser. Si je m'aperçois que certaines sont définitives, que le terme du chemin dans lequel je m'engage reste inconnu, c'est sans importance, puisqu'en fait j'avance pas à pas, je poursuis ma recherche et j'obtiens des résultats. — Comme philosophe, je cherche à prendre conscience de ces limites. Je m'aperçois qu'aucun savoir ne s'achève par lui-même et ne se suffit à lui-même. Partout je me heurte à une limite, qui est l'impossibilité de fixer un terme ultime aux séries établies par la science. Ma pensée, mon savoir se trouvent enfermés dans certaines catégories qui ne sont pas absolues. Rien n'est le commencement et rien n'est la fin. Tout ce qu'il y a au monde se trouve en suspens entre des pôles imaginaires. Tout ce que je saisis dans le monde est particulier et ne repose pas en soi-même. Quand je veux dire quelque chose du monde en sa totalité, je prononce des jugements sur le Tout ou l'Infini comme sur une réalité objective. Mais celle-ci n'existe pas pour moi car elle ne peut jamais devenir un objet, une « présence pleinement réalisée » (erfüllte Gegenwart) : je suis toujours dans le monde, jamais hors de lui, le regardant comme un objet. Ce que je dis de lui s'enchevètre en d'insolubles contradictions. (Cf. les antinomies de Kant.) A travers toute recherche",
+      "bbox": {
+        "x_pct": 13.855,
+        "y_pct": 19.638,
+        "w_pct": 76.461,
+        "h_pct": 68.99
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Detected text contained severe OCR artifacts and truncated text.",
+    "Page number 152 was included as paragraph text.",
+    "The header 'LIMITES DE CETTE RECHERCHE' was included as part of the paragraph."
+  ],
+  "doc_id": "20",
+  "page": 154,
+  "elapsed_seconds": 4.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

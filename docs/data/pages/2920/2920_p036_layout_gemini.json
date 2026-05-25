@@ -1,0 +1,95 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "538",
+      "bbox": {
+        "x_pct": 27.536,
+        "y_pct": 89.273,
+        "w_pct": 4.156,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Page number misidentified as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Coups de sonde",
+      "bbox": {
+        "x_pct": 53.076,
+        "y_pct": 88.924,
+        "w_pct": 20.351,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Running header misidentified as text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Universaliser les normes ?",
+      "bbox": {
+        "x_pct": 26.866,
+        "y_pct": 15.211,
+        "w_pct": 33.779,
+        "h_pct": 2.061
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce que je viens d'écrire concerne spécialement les démocraties européennes, et certes l'universalité des normes continue à poser des problèmes, particulièrement dans certains domaines, par exemple, lorsqu'il s'agit de la condition des femmes, des traditions de polygamie ou de monogamie, d'accès à telle ou telle vie professionnelle, etc. Néanmoins, ceux qui croient possible de recourir à des normes universelles sans détruire des traditions anciennes et vivantes disposent, me semble-t-il, de deux atouts pour nourrir leur espoir.",
+      "bbox": {
+        "x_pct": 26.574,
+        "y_pct": 19.235,
+        "w_pct": 70.779,
+        "h_pct": 24.858
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le premier, c'est l'universelle attente des droits de l'homme, à travers toutes les cultures et toutes les traditions, dont j'ai parlé à propos du recueil Le droit d'être un homme. Par-delà des comportements différents, elle implique une dignité, un respect, un égard qui les transcendent. Cet homme agit, pense, sent, autrement que moi, mais c'est un homme au même titre que moi puisqu'il agit, qu'il pense, qu'il sent, qu'il croit. Il ne m'appartient pas de décider pour qui, pour quoi il use de sa liberté, mais sa liberté doit avoir ses chances et rencontrer mon respect.",
+      "bbox": {
+        "x_pct": 26.426,
+        "y_pct": 43.503,
+        "w_pct": 70.382,
+        "h_pct": 24.671
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le second, c'est l'universalisation de la science et de la technique à travers le développement. Qu'on le veuille ou non, cette universalisation est en train de s'accomplir, en dehors de toute intention néocolonialiste, et je ne connais aucun peuple, aucun pays qui fasse des efforts pour échapper à cette évolution. Or le mode de penser de la science, la pratique des techniques, les conditions de vie et de travail qu'impose l'industrialisation influencent profondément les mentalités comme aussi les manières de penser individuelles. Nous en savons quelque chose en Europe, et il en va de",
+      "bbox": {
+        "x_pct": 26.221,
+        "y_pct": 67.252,
+        "w_pct": 70.691,
+        "h_pct": 25.093
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Page number at top left labeled as text.",
+    "Running header at top right labeled as text.",
+    "Extracted text content for the three main paragraphs was truncated/corrupted by the OCR tool.",
+    "Need to ensure page numbers and headers are assigned to correct filters.",
+    "Bbox coordinates were mostly correct but labels needed significant correction."
+  ],
+  "doc_id": "2920",
+  "page": 36,
+  "elapsed_seconds": 5.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

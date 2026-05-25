@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "caniques, si parfaites soient-elles, qu'elle organise des hommes, et que les hommes, tout en s'accomplissant aussi par elle, la débordent et lui échappent de toute part. Approfondir l'humanisme pour lui faire retrouver, au fond de son individualisme traditionnel, la solidarité humaine et la vivante présence des autres.",
+      "bbox": {
+        "x_pct": 17.164,
+        "y_pct": 10.313,
+        "w_pct": 70.38,
+        "h_pct": 11.664
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne crois pas que jamais une harmonie définitive puisse être trouvée entre ces deux termes : humanisme et politique. Et c'est très bien ainsi : opposés et solidaires, ils assurent par leur tension le rythme de la vie humaine. Mais le danger sera toujours là : on risquera toujours de perdre l'homme au profit d'une machine collective ou d'un individualisme abstrait et mort. La liberté, parce qu'elle est la liberté, est et sera toujours menacée. C'est pourquoi il faut être vigilant, toujours, et ne s'en remettre jamais à personne de la défense de ce bien le plus précieux. Il n'y a pas de vraie liberté sans véritable contrôle exercé par les divers pouvoirs entre eux et surtout par le peuple sur l'Etat. Il n'y a pas de vraie liberté là où l'argent rapporte de l'argent, où le travail - ce temps de vie d'êtres libres et qui vivent peu - est une marchandise comme les autres, où l'argent fausse la libre concurrence des idées, où les hommes travaillent trop tôt et trop pour acquérir les instruments nécessaires à bien penser. Il n'y a de liberté ni dans les prisons, ni dans la misère, ni dans l'insécurité. C'est à l'humanisme qu'il appartient d'inspirer la politique ; à la politique qu'il appartient, non de dicter quelque nouvel humanisme, mais de ménager pour les hommes assez de temps, de sécurité matérielle et de tolérance spirituelle pour qu'un nouvel humanisme puisse s'épanouir.",
+      "bbox": {
+        "x_pct": 17.288,
+        "y_pct": 22.034,
+        "w_pct": 70.283,
+        "h_pct": 41.88
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 18.257,
+        "y_pct": 84.77,
+        "w_pct": 2.14,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR was highly corrupted by text detection artifacts.",
+    "Page number 18 was incorrectly labeled as text."
+  ],
+  "doc_id": "170",
+  "page": 5,
+  "elapsed_seconds": 3.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

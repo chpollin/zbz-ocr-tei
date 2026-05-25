@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "conséquences de leurs actes apparaissent parfois si démesurées que certains les font déjà – à tort – maîtres de l’apocalypse. Tout cela fait que le mépris puritain que certains moralistes témoignent aux hommes politiques ressemble souvent à de la lâcheté.",
+      "bbox": {
+        "x_pct": 13.078,
+        "y_pct": 9.533,
+        "w_pct": 66.616,
+        "h_pct": 8.188
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained artifacts. Corrected to match the document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "15. Il faudrait reconnaître cependant que les Etats – non seulement les petits Etats que sont aujourd’hui les «Grandes Puissances» européennes, mais même les grands Etats continentaux – ne sont plus aujourd’hui en mesure d’assurer à leurs citoyens les trois sécurités fondamentales dont nous avons parlé plus haut.",
+      "bbox": {
+        "x_pct": 13.191,
+        "y_pct": 17.567,
+        "w_pct": 66.479,
+        "h_pct": 9.897
+      },
+      "changed": true,
+      "change_reason": "Text content was missing segments and contained parsing errors. Restored full text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le dogme intangible et quasi sacré de la «souveraineté absolue des Etats» reflétait naguère encore un état de fait et une conception morale. L’état de fait, c’était l’indépendance réelle de chaque Etat, sa capacité de prendre seul des décisions capitales, soit en matière de politique intérieure, soit en matière internationale. La conception morale, c’était la personnification mythique de l’Etat, grâce à laquelle sa «souveraineté absolue» devenait la transposition, sur un plan supérieur, de l’inviolabilité sacrée de la personne. Aujourd’hui, ce dogme se trouve dépassé, matériellement et moralement. Il est dépassé matériellement du fait que la terre est devenue petite et que toutes ses parties vivent désormais dans une interdépendance économique étroite qu’il n’est presque aucune décision importante de l’une qui n’atteigne vitalement les autres, et facilement jusqu’à l’embolie, ne fût-ce qu’en empêchant la circulation du pétrole. Elle est dépassée moralement du fait que les Etats ne sont plus des personnes ni des unanimités, mais des structures au service de la liberté des hommes. Il est impossible en outre de ne pas rappeler que la souveraineté absolue des Etats, c’est l’anarchie et la jungle et la loi du plus fort, – luxe que l’humanité ne peut plus assumer à l’ère des armements atomiques.",
+      "bbox": {
+        "x_pct": 13.191,
+        "y_pct": 27.806,
+        "w_pct": 66.72,
+        "h_pct": 40.513
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and included errors. Replaced with accurate full transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’alternative est désormais la création d’un ordre de droit au-dessus des Etats, seule «société des Etats» concevable sans angélisme, – ou des risques démesurés.",
+      "bbox": {
+        "x_pct": 13.352,
+        "y_pct": 68.051,
+        "w_pct": 66.342,
+        "h_pct": 6.137
+      },
+      "changed": true,
+      "change_reason": "Fixed missing characters and formatting in transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "122",
+      "bbox": {
+        "x_pct": 13.352,
+        "y_pct": 90.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction for all paragraphs was severely truncated and contained broken characters.",
+    "Page number 122 was missing in the original extraction list."
+  ],
+  "doc_id": "450",
+  "page": 10,
+  "elapsed_seconds": 5.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

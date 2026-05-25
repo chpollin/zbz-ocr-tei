@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "34",
+      "bbox": {
+        "x_pct": 124.0,
+        "y_pct": 74.0,
+        "w_pct": 27.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'INSTRUCTION PUBLIQUE EN SUISSE",
+      "bbox": {
+        "x_pct": 274.0,
+        "y_pct": 74.0,
+        "w_pct": 403.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered out."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'enseignement de la philosophie dans les écoles secondaires de la Suisse",
+      "bbox": {
+        "x_pct": 172.0,
+        "y_pct": 190.0,
+        "w_pct": 599.0,
+        "h_pct": 54.0
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling in text and label consistency."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "I. Les faits.",
+      "bbox": {
+        "x_pct": 408.0,
+        "y_pct": 345.0,
+        "w_pct": 127.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to include the section number marker I."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le problème de l'enseignement de la philosophie dans les écoles secondaires de la Suisse a été soulevé il y a quelques années, lors d'une séance de la Société suisse de philosophie. On me chargea alors de faire une enquête dans les principales écoles de tous les cantons afin d'établir le plus précisément possible ce qui se fait actuellement dans ce domaine. Les résultats de cette enquête ont été publiés, sous une forme très condensée, dans l'Annuaire suisse de philosophie de l'année 1946; je ne les rappellerai ici que d'une façon très succincte.",
+      "bbox": {
+        "x_pct": 121.0,
+        "y_pct": 377.0,
+        "w_pct": 700.0,
+        "h_pct": 174.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misrecognized OCR text to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans la Suisse catholique, on fait beaucoup de philosophie pendant la dernière année ou même les deux dernières années du gymnase (environ 8 heures par semaine). C'est à ce degré l'une des branches principales, sans doute même la principale. Elle est matière d'examen. L'enseignement est centré sur la doctrine de saint Thomas d'Aquin, mais on étudie l'histoire de la philosophie dans son ensemble, on enseigne la logique, la morale, la métaphysique, des éléments de psychologie.",
+      "bbox": {
+        "x_pct": 120.0,
+        "y_pct": 543.0,
+        "w_pct": 701.0,
+        "h_pct": 153.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misrecognized OCR text to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans la Suisse protestante, les choses varient selon les cantons et surtout les régions linguistiques. En Suisse romande, la philosophie est fréquemment enseignée pendant un an, rarement deux ans, le plus souvent une heure chaque semaine. Certaines écoles font exception et vont jusqu'à deux ou trois heures. Le cours est presque toujours obligatoire, mais il n'est pas matière d'examen. Le programme paraît dépendre largement du maître : ici on met l'accent sur l'histoire des doctrines, ailleurs sur la méthodologie des sciences, ailleurs encore sur la psychologie. On paraît avoir tendance à préférer, parmi les",
+      "bbox": {
+        "x_pct": 120.0,
+        "y_pct": 691.0,
+        "w_pct": 703.0,
+        "h_pct": 190.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misrecognized OCR text to match image content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR was highly truncated or hallucinated characters.",
+    "Section header 'I. Les faits.' was missing the 'I.' component.",
+    "Page number 34 was incorrectly identified as text.",
+    "Running header L'INSTRUCTION PUBLIQUE EN SUISSE was incorrectly identified as text."
+  ],
+  "doc_id": "180",
+  "page": 2,
+  "elapsed_seconds": 5.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

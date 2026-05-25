@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "zb_paragraph",
+      "text": "107",
+      "bbox": {
+        "x_pct": 845.0,
+        "y_pct": 836.0,
+        "w_pct": 27.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number as page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "UNITÉ DE LA CULTURE EUROPÉENNE",
+      "bbox": {
+        "x_pct": 432.0,
+        "y_pct": 717.0,
+        "w_pct": 439.0,
+        "h_pct": 22.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne HERSCH,",
+      "bbox": {
+        "x_pct": 433.0,
+        "y_pct": 742.0,
+        "w_pct": 144.0,
+        "h_pct": 18.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Docteur ès Lettres, Professeur à l'Université de Genève.",
+      "bbox": {
+        "x_pct": 434.0,
+        "y_pct": 760.0,
+        "w_pct": 530.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Combined fragmented author title lines."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais dabord remercier la Présidente pour les paroles qu'elle vient de prononcer. Je voudrais remercier aussi les organisateurs de ce",
+      "bbox": {
+        "x_pct": 325.0,
+        "y_pct": 793.0,
+        "w_pct": 546.0,
+        "h_pct": 28.0
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Dr L. REHLING",
+      "bbox": {
+        "x_pct": 698.0,
+        "y_pct": 689.0,
+        "w_pct": 121.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a footnote/attribution marker."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Many fragmented text regions in the left column were mislabeled or broken.",
+    "Author signature and academic titles need to be clearly demarcated.",
+    "Page number at the bottom was missing a dedicated footer tag."
+  ],
+  "doc_id": "590",
+  "page": 2,
+  "elapsed_seconds": 9.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

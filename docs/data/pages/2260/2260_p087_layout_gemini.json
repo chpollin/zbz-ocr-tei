@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DE L'EXIL À L'ADIEU",
+      "bbox": {
+        "x_pct": 23.786,
+        "y_pct": 25.168,
+        "w_pct": 38.192,
+        "h_pct": 2.441
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in title text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand Dieu créa le monde, il se sépara de lui-même, il sépara de lui le monde, il sépara les éléments les uns des autres. Quand Dieu créa l’homme, il se sépara de l’homme et il sépara l’homme de lui.",
+      "bbox": {
+        "x_pct": 9.915,
+        "y_pct": 33.359,
+        "w_pct": 65.813,
+        "h_pct": 14.764
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in paragraph text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C’est ainsi qu’il rendit réels le monde, les éléments, l’homme.",
+      "bbox": {
+        "x_pct": 10.109,
+        "y_pct": 47.449,
+        "w_pct": 65.461,
+        "h_pct": 5.724
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous ne comprenons pas, d’ailleurs, comment Dieu, qui est l’être, a pu séparer ainsi les êtres divers pour les rendre réels. Qu’est-ce donc que la séparation? Nous n’en savons rien. Mais pour nous, c’est une condition de réalité. Tout ce qui est réel est séparé, et la séparation donne à chaque réel son pourtour et sa forme, sa détermination, son sens et sa beauté.",
+      "bbox": {
+        "x_pct": 9.867,
+        "y_pct": 53.199,
+        "w_pct": 65.862,
+        "h_pct": 25.025
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors in the body text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "87",
+      "bbox": {
+        "x_pct": 72.164,
+        "y_pct": 81.332,
+        "w_pct": 2.723,
+        "h_pct": 2.476
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR for paragraph 1 was highly corrupted",
+    "Original OCR for paragraph 3 was highly corrupted",
+    "Page number at bottom right was labeled as text",
+    "Title had typos in OCR"
+  ],
+  "doc_id": "2260",
+  "page": 87,
+  "elapsed_seconds": 4.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

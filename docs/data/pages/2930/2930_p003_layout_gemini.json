@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Top-left page header identified as page_header rather than text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Menschenrechte und Menschsein",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Top-right page header identified as page_header rather than text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "6",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "25 der Angst heraus Eche wir Dreiecke, von dcn Rechicn Jcr Drciccke. Dem",
+      "bbox": {
+        "x_pct": 32.555,
+        "y_pct": 12.23,
+        "w_pct": 11.822,
+        "h_pct": 7.903
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vcrbindung der",
+      "bbox": {
+        "x_pct": 33.863,
+        "y_pct": 35.849,
+        "w_pct": 10.758,
+        "h_pct": 3.146
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In der Wlu der Icbcndigen Wesen herrschr aber andercrvon der Okologic und vicle Menschen sind in dic",
+      "bbox": {
+        "x_pct": 7.09,
+        "y_pct": 45.495,
+        "w_pct": 37.812,
+        "h_pct": 16.248
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun bringu aber der Mensch als Mensch 25 aber nur bei den Menschen; und weil das Schlcclte gib:",
+      "bbox": {
+        "x_pct": 6.479,
+        "y_pct": 66.957,
+        "w_pct": 30.844,
+        "h_pct": 18.021
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "wir das konnen (und wcil wif",
+      "bbox": {
+        "x_pct": 54.487,
+        "y_pct": 17.829,
+        "w_pct": 18.741,
+        "h_pct": 2.112
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ticl Menschi Der Es bedcuIc auch nichy daß dcr Mensch dadurch scine physische SiruaWahl; Der Dichler",
+      "bbox": {
+        "x_pct": 54.927,
+        "y_pct": 42.29,
+        "w_pct": 37.702,
+        "h_pct": 34.476
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page headers were missing from initial detection.",
+    "Page numbers were missing from initial detection.",
+    "The OCR text content appears to contain significant hallucinations and errors due to poor scan quality."
+  ],
+  "doc_id": "2930",
+  "page": 3,
+  "elapsed_seconds": 4.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

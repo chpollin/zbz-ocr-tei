@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Vom Wissen und Nicht-Wissen",
+      "bbox": {
+        "x_pct": 73.15,
+        "y_pct": 3.0,
+        "w_pct": 14.1,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Page header labeled as text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "67",
+      "bbox": {
+        "x_pct": 83.7,
+        "y_pct": 3.0,
+        "w_pct": 3.6,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Page number labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "als Wille, wirklich zu wissen, gerade die Freiheit betonen und schützen muß, aber nicht nur in der ethischen Entscheidung über die Ergebnisse, sondern in der Forschung selbst, d.h. in der Handlung, die versucht, dazu zu gelangen. Die Philosophie folgt der Leidenschaft zu wissen in dem tätigen Bewußtsein des wahrhaften Nichtwissens, eben einer Grenze, die sie zu erkennen sucht.",
+      "bbox": {
+        "x_pct": 7.145,
+        "y_pct": 6.472,
+        "w_pct": 79.951,
+        "h_pct": 11.867
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sonst entsteht die Forschung, die das Trennende der nichtkontinuierlichen Methode vergißt. Sie vergißt ethisch den Sinn für die echte Wahrheit und für das, was wirklich zwingend in jeder Wissenschaft gezeigt wurde. Also hat die Philosophie eine kritische Funktion. Sie hat die Ur-Funktion, daß sie wirklich wissen will. Sie will wissen, und sie will sogar - das liegt im Wesen der Philosophie - die absolute Wahrheit wissen. Sie möchte die absolute Wahrheit erreichen, aber gerade keine zwingende Wahrheit. Denn die philosophische Wahrheit ist nicht in dem Sinne zwingend wie es die Resultate jeder einzelnen Wissenschaft in bezug auf ihre Methoden sind. Die Philosophie ist nicht zwingend, und es ist für sie nicht spezifisch, daß sie sich zwischen Methode und Ergebnis befindet: In der Philosophie sind Methode und Ergebnis philosophisch.",
+      "bbox": {
+        "x_pct": 7.145,
+        "y_pct": 18.174,
+        "w_pct": 79.951,
+        "h_pct": 24.038
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie spricht also die Wahrheit anders aus. Sie spricht die Wahrheit durch einander entgegengesetzte Feststellungen aus. Warum durch solche Entgegensetzungen? Weil die Philosophie viel energischer, viel radikaler fragt und fragen darf, gerade weil sie nicht die Hilfe der Methoden hat. Sie fragt so radikal, weil ein Fragender hinter der Frage ist. Jemand - und nicht eine Methode - beantwortet die philosophische Frage. Jemand nimmt es auf sich, scharf entgegengesetzte Gedanken auszusprechen, denn er nimmt das Entgegengesetzte auf sich, er steht selbst auf dem Spiel. Die Frage, die er stellt, birgt also eine Gefahr in sich, aber nicht für die zwingende Wahrheit, sondern für denjenigen, der so fragt. Es ist in Jaspers' Auffassung der Philosophie sehr klar, daß eine philosophische Frage, hinter der niemand stünde, die sich sozusagen allein oder durch eine kleine fragende Maschine stellte, eine sinnleere Frage wäre. Sie hätte keinen Sinn, weil der Sinn davon abhängt, daß der betreffende Mensch eben da ist und die Frage verantwortet. Er steht selbst auf dem Spiel, und das ersetzt das, was an Zwingendem fehlt: die Schwere, die doch im Fragen da sein muß, wenn es kein leichtes Spiel sein soll. Ohne sie ist es sinnlos. Es muß also eine effektive Wirklichkeit der Existenz im Sinne von Jaspers geben.",
+      "bbox": {
+        "x_pct": 6.863,
+        "y_pct": 41.719,
+        "w_pct": 79.988,
+        "h_pct": 33.668
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Existenz ist ein Grundwort von Jaspers. Viele Philosophen sind Existenz-Philosophen genannt worden, aber der Sinn von Existenz ist ein Jaspers'scher Sinn und nicht irgendeiner. Sehr oft hat man solche Philosophen Existenz-Philosophen genannt - und das bringt sie in der Tat in die",
+      "bbox": {
+        "x_pct": 6.654,
+        "y_pct": 77.278,
+        "w_pct": 79.902,
+        "h_pct": 8.298
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected text was heavily truncated by Docling.",
+    "Page number and header were labeled as text."
+  ],
+  "doc_id": "2990",
+  "page": 60,
+  "elapsed_seconds": 6.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

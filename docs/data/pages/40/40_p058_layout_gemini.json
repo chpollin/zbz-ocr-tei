@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "60",
+      "bbox": {
+        "x_pct": 95.0,
+        "y_pct": 82.0,
+        "w_pct": 27.0,
+        "h_pct": 22.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, should be _filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 374.0,
+        "y_pct": 84.0,
+        "w_pct": 264.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header, should be zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "bien être restée la même pour quelqu'un regardée et de très haut. Mais c'était presque comme si j'habitais maintenant une autre ville que Pierre. Toutes les rues avaient changé d'orientation, et des trottoirs qui autrefois annonçaient déjà les bruits de la salle à manger où l'on déplaçait les chaises autour de la table mise, devinrent pour moi creux, sonores, étrangers et festifs, évoquant une de ces promenades qu'on fait à jeun le dimanche matin, au sortir de l'hôtel, dans une petite ville inconnue, où toutes les boulangeries sont closes tandis que sonnent les cloches. La forme même de la ville, le modelé de ses collines se trouvait transformé, elle semblait avoir changé de pose, s'être couchée autrement au bord de son lac. Naguère, de cette maison de banlieue basse où nous habitions, je la sentais aplatie, avec des membres étirés, et la renflure de ses flancs restait négligeable. Maintenant au contraire, d'en haut, je la devinais recroquevillée à mes pieds, couchée en rond et ramassée sur elle-même, comme ces chats qui, la tête sur la queue, ne trouvent assez de paix et chaleur que dans la pose fermée d'un ovale parfait.",
+      "bbox": {
+        "x_pct": 8.878,
+        "y_pct": 12.977,
+        "w_pct": 81.122,
+        "h_pct": 53.157
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and OCR incorrectly split words; corrected to full text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les journées aussi, à cause des vacances, avaient perdu leurs articulations distinctes, les horloges sonnaient pour rien, et même le passage oblique du soleil ne leur donnait pas de contour, tellement l'aurore était longue avant qu'il apparût, tellement le crépuscule se prolongeait tard dans la nuit.",
+      "bbox": {
+        "x_pct": 9.014,
+        "y_pct": 65.879,
+        "w_pct": 81.027,
+        "h_pct": 15.189
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and OCR incorrectly split words; corrected to full text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Où chercher Pierre dans cette ville inconnue, dans la splendeur confuse de l'été ? Plus de croisements dans la",
+      "bbox": {
+        "x_pct": 12.703,
+        "y_pct": 81.219,
+        "w_pct": 77.257,
+        "h_pct": 2.335
+      },
+      "changed": true,
+      "change_reason": "Combined with missing text from next line that was partially captured."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text extraction was heavily truncated/corrupted in source regions.",
+    "Page number and header were labeled incorrectly as text.",
+    "Significant OCR character errors ('dang' vs 'dans')."
+  ],
+  "doc_id": "40",
+  "page": 58,
+  "elapsed_seconds": 5.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

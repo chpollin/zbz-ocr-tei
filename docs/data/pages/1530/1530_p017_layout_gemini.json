@@ -1,0 +1,114 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA NATURE DU POUVOIR 89",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header text including page number identified and reclassified from missing/erroneous regions to page_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Déception",
+      "bbox": {
+        "x_pct": 43.835,
+        "y_pct": 10.934,
+        "w_pct": 11.205,
+        "h_pct": 2.372
+      },
+      "changed": false
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est mort sous l'horreur. Mais pas seulement sous l'horreur. Il est mort aussi à cause d'une déception inverse: parce qu'on s'est mis à attendre ce qu'il ne peut donner, ce que de tout temps on avait demandé en vain aux dieux.",
+      "bbox": {
+        "x_pct": 11.587,
+        "y_pct": 14.876,
+        "w_pct": 75.747,
+        "h_pct": 9.033
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription and updated label to paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "En effet, alors même que le Pouvoir fait horreur, on s'est mis à exiger de lui des remèdes, non seulement aux maux que les progrès d'une civilisation scientifique et technique ne cessent d'atténuer, mais aussi à ceux qui sont impliqués dans la condition humaine et sociale comme telle. Le Pouvoir doit écarter toutes les menaces, satisfaire tous les besoins, assurer une sécurité définitive, faire disparaître inégalités et rivalités, asseoir la paix perpétuelle, éliminer les travaux malsains, ennuyeux, indignes d'un être humain libre et responsable, fournir à chacun les biens et les loisirs qui lui permettront de devenir un créateur. C'est tout juste si on ne lui demande pas d'arrêter le temps, de supprimer l'histoire, d'exclure toute souffrance, d'éliminer la mort. Et on lui demande bel et bien à la fois d'imposer les règles universelles de l'accord entre tous les hommes, de respecter l'unicité de chaque exception, de chaque être singulier, de chaque comportement marginal.",
+      "bbox": {
+        "x_pct": 11.506,
+        "y_pct": 23.636,
+        "w_pct": 75.979,
+        "h_pct": 33.909
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription and updated label to paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rien ne doit s'imposer à lui: ni le donné naturel, ni le donné historique, ni la nature humaine, ni celle de la société. On attend de lui qu'il change la vie, la société, l'être humain. Il y aurait sur terre « une autre vie », un « choix de société », un « homme nouveau ».",
+      "bbox": {
+        "x_pct": 11.553,
+        "y_pct": 57.132,
+        "w_pct": 75.898,
+        "h_pct": 7.0
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription and updated label to paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et comme le Pouvoir se montre incapable de combler une telle attente, le symbole nécessaire à son essence meurt une seconde fois.",
+      "bbox": {
+        "x_pct": 11.622,
+        "y_pct": 66.033,
+        "w_pct": 75.713,
+        "h_pct": 4.686
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription and updated label to paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dépouillé de la nature symbolique qui donnait à la force, sa composante indispensable, une autorité compatible avec la liberté de chaque citoyen, il apparaît comme pure puissance contraignante, violence, asservissement. Comme le Mal à l'état pur. Il ne reste plus qu'à rêver d'un monde sans Pouvoir. Et aussi sans pouvoir, au sens diffus du terme.",
+      "bbox": {
+        "x_pct": 11.587,
+        "y_pct": 70.413,
+        "w_pct": 75.782,
+        "h_pct": 13.165
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription and updated label to paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'où le retour en masse à l'idéal de Thélème, dont André Glucksmann, dans ses Maîtres penseurs, a dégagé les implications, le sens et les effets.",
+      "bbox": {
+        "x_pct": 11.587,
+        "y_pct": 83.636,
+        "w_pct": 75.666,
+        "h_pct": 6.587
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text transcription and updated label to paragraph."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Initial text extractions were heavily fragmented and garbled.",
+    "Page number and header were not correctly segmented.",
+    "Labels were generic 'text' instead of 'paragraph' or 'section_header'."
+  ],
+  "doc_id": "1530",
+  "page": 17,
+  "elapsed_seconds": 6.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

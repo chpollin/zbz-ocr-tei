@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "seulement en Amérique latine, hélas ! Eh, je pense que ces menaces ne disparaissent jamais complètement. Mais à l'époque où j'ai écrit Idéologies et réalité, je vous le répète, ce qui dominait dans l'idéologie parisienne et française, et de façon plus large en Occident, à la suite de la guerre et de l'alliance avec l'URSS pendant la guerre, c'était la tentation communiste. Et cette tentation était épaulée par une formidable puissance en train de se reconstituer, qui était l'URSS. Or, il n'existait rien de comparable du côté du fascisme. C'est la raison pour laquelle, dans mon livre, le fascisme a pris moins d'importance. Maintenant, aujourd'hui, il faudrait naturellement lui refaire une place plus grande, l'analyser davantage en profondeur ; mais je crois tout de même que le fascisme est loin d'avoir ou d'avoir jamais eu la rigueur doctrinale qu'a eue le communisme. Aux yeux de certaines personnes, cela représente pour le communisme une circonstance atténuante. Elles vous disent que le communisme part d'une idéologie positive avec un idéal de justice, un idéal humaniste. Mais je ne suis pas de ceux qui pensent qu'un écart monstrueux entre la doctrine et les faits soit une justification ; et je ne crois pas non plus que la rigidité et le caractère totalitaire de la doctrine communiste puissent servir d'argument positif. Le fascisme présente au contraire au niveau doctrinal quantité d'éléments approximatifs qui demanderaient à être étudiés sur un tout autre registre et d'une tout autre manière. La tentation fasciste me paraît beaucoup moins intellectuelle que la tentation communiste. Elle ne tient pas à une doctrine totale qui séduit par sa totalité et par sa rigueur, elle saisit certaines classes de la société, certaines catégories d'hommes aux tripes.",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 3.653,
+        "w_pct": 79.695,
+        "h_pct": 50.435
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors for better readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. : Est-ce qu'elle ne menace pas d'autant plus la démocratie ?",
+      "bbox": {
+        "x_pct": 7.656,
+        "y_pct": 54.169,
+        "w_pct": 72.93,
+        "h_pct": 2.387
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si elle menace très directement la démocratie et selon les moments, c'est certainement cette menace qui mériterait le plus de vigilance. Mais je crois toujours qu'il faut combattre ce qui est le plus fort au moment où l'on combat.",
+      "bbox": {
+        "x_pct": 4.884,
+        "y_pct": 56.266,
+        "w_pct": 79.402,
+        "h_pct": 7.685
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to text and fixed OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. Est-ce qu'à votre sens fascisme et communisme sont deux aspects différents d'un phénomène de même nature — le totalitarisme — ou bien constituent-ils deux phénomènes de nature différente ?",
+      "bbox": {
+        "x_pct": 5.092,
+        "y_pct": 65.056,
+        "w_pct": 79.243,
+        "h_pct": 6.21
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to text and fixed OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est difficile de répondre à cette question. C'est une question qu'on pose souvent et pourtant il est difficile d'y répondre. C'est qu'il y a plusieurs aspects à considérer. S'agit-il du fascisme et du communisme à l'état doctrinal, ou s'agit-il du phénomène social qu'ils représentent quand ils s'établissent dans tel ou tel pays ? Si je compare, par exemple, le régime hitlérien et le régime bolchévique, la manière dont ils se sont établis est totalement opposée. Le régime bolchévique s'est établi en Russie après une guerre, par un coup d'Etat contre un gouvernement social-démocrate, et il s'est immédiatement imposé par la force dans un pays immense comme un continent. On voit bien que",
+      "bbox": {
+        "x_pct": 4.969,
+        "y_pct": 70.726,
+        "w_pct": 79.402,
+        "h_pct": 20.185
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "121",
+      "bbox": {
+        "x_pct": 79.7,
+        "y_pct": 94.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Fixed label for page number."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 6,
+  "issues": [
+    "Extensive OCR errors in original extraction",
+    "List items incorrectly identified for normal paragraphs",
+    "Page number at bottom not identified initially"
+  ],
+  "doc_id": "2330",
+  "page": 125,
+  "elapsed_seconds": 6.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

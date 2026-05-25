@@ -1,0 +1,112 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "während diejenigen; die arbeiten und schaffen, ruhig in einem Eck chen vergessen werden. Man kommt z",
+      "bbox": {
+        "x_pct": 7.6,
+        "y_pct": 6.906,
+        "w_pct": 35.405,
+        "h_pct": 15.141
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun möchte ich einiges zu dem sagen; was überhaupt nicht planmäßig geschehen kann. Ich habe am gesag",
+      "bbox": {
+        "x_pct": 7.315,
+        "y_pct": 22.055,
+        "w_pct": 35.656,
+        "h_pct": 58.122
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "46",
+      "bbox": {
+        "x_pct": 7.315,
+        "y_pct": 82.9,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich komme jetzt zu einer letzten Bemerkung.",
+      "bbox": {
+        "x_pct": 58.552,
+        "y_pct": 7.172,
+        "w_pct": 21.893,
+        "h_pct": 1.958
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Für die Verteidigung der Freiheit und der Kultur im Westen haben wir lelder nicht sehr viel Zeit. Au",
+      "bbox": {
+        "x_pct": 58.478,
+        "y_pct": 9.186,
+        "w_pct": 35.519,
+        "h_pct": 25.463
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JOACHIM TIBURTIUS",
+      "bbox": {
+        "x_pct": 58.438,
+        "y_pct": 37.309,
+        "w_pct": 8.592,
+        "h_pct": 1.426
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Verehrte Frau Professor, meine Damen und Herren! Soeben wurden wir an das Zeitproblem herangeführt. ",
+      "bbox": {
+        "x_pct": 58.307,
+        "y_pct": 39.38,
+        "w_pct": 35.519,
+        "h_pct": 41.064
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "47",
+      "bbox": {
+        "x_pct": 58.307,
+        "y_pct": 82.9,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Detected page numbers missing in initial detection; added as page_footer/filter."
+  ],
+  "doc_id": "520",
+  "page": 11,
+  "elapsed_seconds": 4.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

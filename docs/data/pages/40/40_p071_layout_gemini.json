@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Des yeux agrandis pour que rien ne leur échappe, prêts à aspirer, à tirer par leur propre ardeur du néant de la rue l'être absent, deux yeux que le reste laissait vide, et qui semblaient s'en aller tout seuls, adressant aux choses leur détresse étonnée, — je n'étais plus que cela.",
+      "bbox": {
+        "x_pct": 10.27,
+        "y_pct": 32.42,
+        "w_pct": 81.041,
+        "h_pct": 12.949
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to accurately reflect the full paragraph visible in the region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La première fois, un trou s'est creusé au cœur de la journée. Les heures de l'après-midi, celles du soir, au lieu de se refermer comme elles le faisaient toujours sur le précieux trésor, se dispersèrent en désordre, se lancèrent en toute hâte vers le lendemain. Le lendemain, quand j'ai ouvert les yeux, ils étaient déjà fixés sur le bout de la rue telle qu'elle est à midi, et ne s'en détachèrent plus. Cette rigidité me fit peur. Mon angoisse compacte allait peut-être obstruer l'avenir au point que l'image essentielle ne pourrait plus passer. J'ai essayé de laisser le sort tranquille ; — les choses retomberaient alors à leur pente naturelle, qui est la bonté. Mais à midi, tout le long de la rue, je n'ai pas cillé une seule fois, et dans mon regard immobile l'absence s'inscrivit avec la netteté d'une empreinte. Je me rappelle être rentrée ainsi, avec ce vide trop large entre mes paupières qui ne savaient plus bouger.",
+      "bbox": {
+        "x_pct": 10.27,
+        "y_pct": 45.151,
+        "w_pct": 80.851,
+        "h_pct": 41.115
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to accurately reflect the full paragraph visible in the region."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "2 novembre.",
+      "bbox": {
+        "x_pct": 696.0,
+        "y_pct": 279.0,
+        "w_pct": 178.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Identified date as a page_header element to be filtered."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction was incomplete for both paragraphs.",
+    "The date was missing from the initial region detection.",
+    "Bbox coordinates provided for the date were outside normalized percentage range or incorrectly scaled."
+  ],
+  "doc_id": "40",
+  "page": 71,
+  "elapsed_seconds": 3.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

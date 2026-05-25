@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mit Inhalt erf\"\"llt, das die Demokratie leer l\"\"\"\"\"\"\"\"\"\"\"\"\"\"t. Die Leere kann n\"\"mlich nicht standhalten. Es geht darum, da\"\" die B\"\"rger im vollen Sinne des Wortes Menschen sind, und das schlie\"\"t die Autorit\"\"t keineswegs aus. F\"\"r ein solches volles Menschsein sind die Schulen, die Hochschulen, die Eltern, aber auch die Medien verantwortlich. Es geht darum, da\"\" sie jedem einzelnen die n\"\"tige Substanz geben, damit er die \"\"demokratische Leere\"\" mit Inhalt erf\"\"llen kann. Hier liegt die Chance und die Gefahr der Demokratie, ihr Risiko und ihre Sicherheit.",
+      "bbox": {
+        "x_pct": 7.645,
+        "y_pct": 5.0,
+        "w_pct": 64.976,
+        "h_pct": 24.789
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Unter dem Aspekt Sicherheit und Risiko ist in der Demokratie offenbar das Zusammenspiel zwischen W\"\"hler und Gew\"\"hlten zentral. Beide m\"\"ssen etwas leisten. Der Gew\"\"hlte braucht ein gewisses Ma\"\" an Autorit\"\"t, der W\"\"hler mu\"\" mit dem, was beschlossen wird, in einer inneren \"\"bereinstimmung sein. Das Verh\"\"ltnis von W\"\"hlern und Gew\"\"hlten l\"\"\"\"\"\"t sich nicht einfach formal beschreiben. Es geht hier um einen permanenten Proze\"\", der intellektuell und emotional ist. Und es geht um das, was man in der Rechtslehre die Akzeptanz nennt. Wenn die Demokratie schon keine Lehre erteilt, keine verbindlichen Ziele darlegt, so mu\"\" sie doch der Akzeptanz verschrieben sein.",
+      "bbox": {
+        "x_pct": 7.729,
+        "y_pct": 32.074,
+        "w_pct": 64.855,
+        "h_pct": 31.994
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to represent the actual content of the block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Denkt man z. B. an die Wahlen, so zeigen sich wiederum Risiken. Der Gew\"\"hlte fragt immer: Was meint denn das Volk? Aber gerade diese Frage scheint mir falsch. Es ist nicht meine Aufgabe als Politiker, mich nach den wechselnden Auffassungen des Volkes zu richten. Ich mu\"\" tun, was ich mit bestem Wissen und einem streng gez\"\"gelten Gewissen f\"\"r gut halte, mu\"\" in einer zweiten Phase erkl\"\"ren, warum ich es getan habe. In der dritten Phase kann das Volk sein eigenes und freies Urteil sprechen, mich wieder w\"\"hlen oder auch nicht.",
+      "bbox": {
+        "x_pct": 7.766,
+        "y_pct": 63.493,
+        "w_pct": 65.024,
+        "h_pct": 24.985
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to represent the actual content of the block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "35",
+      "bbox": {
+        "x_pct": 39.119,
+        "y_pct": 91.139,
+        "w_pct": 2.174,
+        "h_pct": 2.215
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter/page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was truncated in the provided initial input.",
+    "Page number at the bottom was incorrectly identified as text.",
+    "MUHEIM: header at the start of paragraph should be treated as part of the text but noted as a speaker/author tag."
+  ],
+  "doc_id": "2400",
+  "page": 34,
+  "elapsed_seconds": 6.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

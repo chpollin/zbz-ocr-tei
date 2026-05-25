@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Ich empfinde die Teilung von Arbeitszeit und Freizeit im Prinzip als unmenschlich. Die Fragestellung, wieviel Arbeit und wieviel Freizeit braucht der Mensch, geht doch am eigentlichen Problem unserer Zeit vorbei. Der Mensch braucht Arbeit, wenn er als wacher Mensch lebt. Entscheidender stellt sich die Frage, ob es eine Arbeit ist, die für ihn einen Sinn hat oder nicht.",
+      "bbox": {
+        "x_pct": 11.811,
+        "y_pct": 8.359,
+        "w_pct": 76.025,
+        "h_pct": 13.083
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text to match the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn man vom Leben eines sterblichen Wesens Tag für Tag sieben oder acht Stunden wegnimmt, dann ist das einfach zuviel. Da der Mensch sterblich ist, ist für ihn die Zeit unersetzbar. Zeit läßt sich nicht durch eine Belohnung oder Entlohnung ersetzen. Arbeitszeit des anderen kann eigentlich nur durch eine Spanne eigener Zeit aufgewogen werden. - Vom menschlichen Standpunkt wäre es ideal, wenn sich die Arbeit mit dem Arbeitenden so eng wie möglich verbinden ließe, so daß, wenn man arbeitet, diese Arbeit einen solidarischen Sinn bekommt, statt sie als Last zu empfinden.",
+      "bbox": {
+        "x_pct": 11.396,
+        "y_pct": 20.895,
+        "w_pct": 76.502,
+        "h_pct": 19.373
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text to match the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Conturen: Würden Sie nicht sagen, daß diese Entwicklung bereits eingesetzt hat?",
+      "bbox": {
+        "x_pct": 11.661,
+        "y_pct": 40.302,
+        "w_pct": 75.972,
+        "h_pct": 4.444
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo 'eingeseczt' to 'eingesetzt'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Ich bin in diesem Punkt sehr skeptisch. Nicht zuletzt deshalb, weil der Arbeit als solcher etwas Zweideutiges anhaftet: einerseits ist sie ein Fluch und wird als Last empfunden, andererseits ist sie eine Pflicht und ein Recht. Oft wird nicht einmal im strengen Sinne auf den Lohn geachtet, sondern auf das Recht, Arbeit zu vollziehen. Doch unabhängig davon höre ich immer wieder, daß die arbeitspolitischen Auseinandersetzungen sich im wesentlichen auf eine Verkürzung der Arbeitszeit in ihren verschiedenen Formen - als Wochen-, Monats- oder Lebensarbeitszeit - konzentrieren, wo es sich doch in Wirklichkeit darum handelt, beide Lebensbereiche zu verbinden: Arbeit und Freizeit. Doch um dahin zu gelangen, müßte man in allen Berufen versuchen, den jungen, noch in der Lehre befindlichen Menschen eine Ausbildung angedeihen zu lassen, die nicht allein ihre fachliche Qualifikation zum Ziel hat, vielmehr wäre darüber hinaus ein weitgehendes kulturelles Wissen vonnöten, das sie darauf vorbereitet, in der Arbeit und in der Freizeit ganze Menschen zu werden. Es klingt vielleicht wie eine Utopie, aber ich denke, man kann sich diesem Ziel nähern.",
+      "bbox": {
+        "x_pct": 11.334,
+        "y_pct": 45.43,
+        "w_pct": 76.325,
+        "h_pct": 37.06
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text to match the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Conturen: Würde das nicht einen umfassenden Strukturwandel im gesamten Bildungswesen voraussetzen?",
+      "bbox": {
+        "x_pct": 11.334,
+        "y_pct": 82.735,
+        "w_pct": 76.034,
+        "h_pct": 4.769
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "253",
+      "bbox": {
+        "x_pct": 83.2,
+        "y_pct": 89.2,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified missing page number region and correctly classified as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR was highly inaccurate/truncated.",
+    "Page number at the bottom was missing from the initial region list."
+  ],
+  "doc_id": "2540",
+  "page": 5,
+  "elapsed_seconds": 6.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

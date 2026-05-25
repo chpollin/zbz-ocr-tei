@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "204 L'Être et la forme",
+      "bbox": {
+        "x_pct": 20.737,
+        "y_pct": 10.5,
+        "w_pct": 68.629,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "5'agit; mais ce n'esl pas essentiel, et On aurait pu 1015 laisser Tignorer. La nécessilé de Fabeille",
+      "bbox": {
+        "x_pct": 20.737,
+        "y_pct": 13.918,
+        "w_pct": 68.629,
+        "h_pct": 12.604
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On   pourrait continuer longtemps. On pourrait   signaler que ce meme glissement produit encore aulr",
+      "bbox": {
+        "x_pct": 20.311,
+        "y_pct": 26.803,
+        "w_pct": 68.894,
+        "h_pct": 20.554
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Ce toil tranquille où   picoraient des   focs.",
+      "bbox": {
+        "x_pct": 33.641,
+        "y_pct": 49.104,
+        "w_pct": 42.627,
+        "h_pct": 1.868
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Agitation de la mer (pour que les focs picorent) couleur rouille des voiles   (crêles dc   poules), ",
+      "bbox": {
+        "x_pct": 20.426,
+        "y_pct": 52.794,
+        "w_pct": 68.71,
+        "h_pct": 7.062
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce nest pas le lieu de dévclopper davantage ces esquisses d'anaIyse poélique. Il m 'importait seulem",
+      "bbox": {
+        "x_pct": 20.276,
+        "y_pct": 60.061,
+        "w_pct": 68.859,
+        "h_pct": 15.133
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region in original input."
+  ],
+  "doc_id": "110",
+  "page": 206,
+  "elapsed_seconds": 8.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

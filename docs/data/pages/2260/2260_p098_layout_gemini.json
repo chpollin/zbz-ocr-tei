@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "jamais le retrouver n'importe quand. Un tronc de pin à l'écorce lie-de-vin, devant une découpure verte de la mer où glisse une voile, retient à peine mon attention. Le chien qui dort sur le carreau frais, pattes étirées comme dessinées sur la roche de Lascaux, je l'enjambe sans le voir. Sans séparation, sans adieu. Dans un présent que rien ne menace. Et c'est très bien ainsi.",
+      "bbox": {
+        "x_pct": 23.337,
+        "y_pct": 11.473,
+        "w_pct": 66.104,
+        "h_pct": 24.916
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcript text to match source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais un jour, désespérément, nous chercherons en vain le lisse de ce front dans notre main, la nuance de cette soie marine derrière l'écorce, le frisson qui ondulait sous la barque, la course immobile dans le sommeil du chien et le souffle qui soulève ses flancs. En vain. Plus nous les avons aimés, moins nous les avons retenus. Ou peut-être les avons-nous usés, après, à force de les approcher dans le souvenir, - usés comme les marches d'un sanctuaire sous les pas innombrables des fidèles, ou comme une idole qui sous les lèvres a perdu ses traits.",
+      "bbox": {
+        "x_pct": 23.422,
+        "y_pct": 36.928,
+        "w_pct": 66.019,
+        "h_pct": 36.162
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR transcript text to match source image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "98",
+      "bbox": {
+        "x_pct": 23.955,
+        "y_pct": 82.529,
+        "w_pct": 3.759,
+        "h_pct": 2.261
+      },
+      "changed": true,
+      "change_reason": "Identified as page number and categorized as page_footer for exclusion."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was highly inaccurate in both text regions.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "2260",
+  "page": 98,
+  "elapsed_seconds": 3.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "90 C'EST UNE LOI",
+      "bbox": {
+        "x_pct": 13.599,
+        "y_pct": 82.5,
+        "w_pct": 75.753,
+        "h_pct": 5.148
+      },
+      "changed": true,
+      "change_reason": "Identified page number and running header components incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "création il enrichit sa conscience de lui-même (Selbstbewusstsein).",
+      "bbox": {
+        "x_pct": 13.599,
+        "y_pct": 12.679,
+        "w_pct": 75.753,
+        "h_pct": 5.148
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce en lui est éternel, c'est la loi que se donne à elle-même son activité. Hegel s'exprime une fois ainsi : Die Idee hat in ihr selbst die Bestimmung des Sichwissens, die Tätigkeit. So ist sie als das ewige Leben Gottes in sich selbst, gleichsam vor Erschaffung der Welt, der logische Zusammenhang (1).",
+      "bbox": {
+        "x_pct": 13.554,
+        "y_pct": 17.855,
+        "w_pct": 75.798,
+        "h_pct": 18.046
+      },
+      "changed": true,
+      "change_reason": "Corrected substantial OCR errors in the transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'unité de chaque période historique, de chaque peuple, est constituée chaque fois par un principe auquel l'histoire doit obéir. De même, il y a dans l'ensemble de l'histoire universelle une loi, qui se trouve éternellement (en dehors de tout temps : zeitlos) en Dieu, et qui reçoit son contenu et sa réalité de son activité et son devenir. L'éternité pourrait donc s'appeler nécessité. Mais celle-ci coïncide pour l'esprit avec la liberté, puisque l'esprit est « éternellement en lui-même » (ewig bei sich selbst); s'il y a pour lui une nécessité, ce ne peut être que sa propre loi. C'est donc une liberté nécessaire. Pourtant, si l'activité de l'esprit est libre pour celui qui agit, c'est-à-dire quand elle est vue de l'intérieur — ou plutôt quand elle n'est pas regardée du tout, mais accomplie seulement — libre comme action et dans l'action, elle doit, dès qu'elle est contemplée, apparaître comme nécessité. C'est pourquoi Hegel dit : « L'histoire du monde, c'est",
+      "bbox": {
+        "x_pct": 12.801,
+        "y_pct": 35.3,
+        "w_pct": 76.611,
+        "h_pct": 49.447
+      },
+      "changed": true,
+      "change_reason": "Corrected extensive OCR errors."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Die Vernunft in der Geschichte, p. 69.",
+      "bbox": {
+        "x_pct": 20.633,
+        "y_pct": 87.131,
+        "w_pct": 47.786,
+        "h_pct": 2.536
+      },
+      "changed": true,
+      "change_reason": "Relabeled as footnote and corrected OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was very poor requiring significant manual text correction.",
+    "Page header '90 C'EST UNE LOI' was missing in detection but should have been separated.",
+    "Footnote was mislabeled as paragraph.",
+    "Running header was missing labels."
+  ],
+  "doc_id": "20",
+  "page": 92,
+  "elapsed_seconds": 4.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

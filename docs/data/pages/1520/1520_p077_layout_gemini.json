@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "celle porte spécifiquement ce nom . Si je vise le Tout, je me perds dans son ouverture infinie et me trouve rejeté à moi-même ; dans cette chute en retour l'accent n'est pas mis sur le milieu vital vers lequel je glisse à partir du Tout, mais sur moi-même dans ma liberté. Si j'ai fait en métaphysique l'expérience qu'aucune de ses formes objectives ne sont valables pour tout le monde, cet échec encore une fois m'atteint moi-même, de sorte que dans ma liberté mon être s'éclaire, voué à la transcendance.",
+      "bbox": {
+        "x_pct": 7.276,
+        "y_pct": 5.767,
+        "w_pct": 84.228,
+        "h_pct": 15.741
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais bien qu'il n'y ait aucune quête philosophique qui n'éclaire l'existence, il faut pourtant parler ici de cet éclairement dans un sens spécial : c'est un langage qui utilise les signes de l'origine et mes propres possibilités pour rendre sensible l'inconditionnel contre le relatif, la liberté contre la simple généralité, l'infini de l'existence possible contre la finitude de la réalité empirique. Mais l'objectivité qui se constitue ainsi dans la pensée doit de nouveau me rejeter loin d'elle, vers moi-même. Pourtant ce rejet a un caractère différent de celui expérimenté par le Tout ou la transcendance : là-bas, l'existence se rapportait à quelque chose d'autre, ici elle se rapporte à la pensée de sa propre possibilité. La pensée qui voudrait éclairer l'existence se trouve rejetée d'elle-même ; l'éclairement de l'existence se trouve ici tourner autour de lui-même.",
+      "bbox": {
+        "x_pct": 7.547,
+        "y_pct": 21.14,
+        "w_pct": 84.187,
+        "h_pct": 24.901
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée éclaire l'existence, incapable de fournir une connaissance de l'être, engendre en revanche la certitude de l'être, lorsqu'elle est agissante dans la vie même ; elle rend possible la certitude de l'être lorsque, recourant au langage de la philosophie pour se transmettre, elle lance son appel à autrui. Elle accepte sans réserve le risque de se trouver « en suspens » à la suite de l'orientation dans le monde. Mais la clarté qui, dans toutes les dimensions accessibles à la quête philosophique, imprègne la liberté de l'existence rend sa transcendance d'autant plus manifeste. Chacune de ses voies mène à la métaphysique.",
+      "bbox": {
+        "x_pct": 7.547,
+        "y_pct": 45.904,
+        "w_pct": 84.092,
+        "h_pct": 19.246
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tant que l'homme reste capable de s'élever au-dessus de sa condition empirique, la quête philosophique le pousse à prendre son élan vers la métaphysique. La métaphysique éclaire pour le sujet existentiel le lieu où — à partir du monde, dans la communication entre les existences — la transcendance parle. C'est là que l'homme trouve ce qui est pour lui vraiment important. C'est là qu'il peut se tromper lui-même avec le plus de profondeur, là aussi qu'il peut par sa pensée trouver la certitude de lui-même la plus profonde.",
+      "bbox": {
+        "x_pct": 7.493,
+        "y_pct": 64.67,
+        "w_pct": 84.106,
+        "h_pct": 15.793
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Philosophie, I, p. 32-33)",
+      "bbox": {
+        "x_pct": 59.892,
+        "y_pct": 80.12,
+        "w_pct": 31.396,
+        "h_pct": 2.142
+      },
+      "changed": true,
+      "change_reason": "Changed label to footnote as it is a bibliographic reference at the bottom of the main text block."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "8. Existence possible",
+      "bbox": {
+        "x_pct": 7.859,
+        "y_pct": 82.776,
+        "w_pct": 25.881,
+        "h_pct": 2.459
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Appelons « monde » l'ensemble de tout ce qui peut s'offrir à moi, lorsque je m'oriente par le savoir, en tant que contenu qu",
+      "bbox": {
+        "x_pct": 7.724,
+        "y_pct": 85.69,
+        "w_pct": 83.333,
+        "h_pct": 4.225
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "71",
+      "bbox": {
+        "x_pct": 88.08,
+        "y_pct": 91.56,
+        "w_pct": 3.02,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and assigned to filter."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Footnote was initially labeled as text.",
+    "Page number 71 was missing from detection."
+  ],
+  "doc_id": "1520",
+  "page": 77,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

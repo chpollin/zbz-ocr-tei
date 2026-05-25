@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "je crois que la politique internationale aurait cessé dêtre la jungle   qu'elle est. lés,",
+      "bbox": {
+        "x_pct": 16.293,
+        "y_pct": 10.086,
+        "w_pct": 67.735,
+        "h_pct": 4.168
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est de mode aujourdhui décraser n 'importe quelle situation politique sociale réelle, en la compa",
+      "bbox": {
+        "x_pct": 15.769,
+        "y_pct": 14.075,
+        "w_pct": 68.176,
+        "h_pct": 38.958
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les mass media   posent à cet égard un problème particulier. Beaucoup de citoyens les subissent avec",
+      "bbox": {
+        "x_pct": 15.137,
+        "y_pct": 52.776,
+        "w_pct": 68.689,
+        "h_pct": 32.504
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "— 44 —",
+      "bbox": {
+        "x_pct": 43.682,
+        "y_pct": 87.279,
+        "w_pct": 12.576,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page footer region"
+  ],
+  "doc_id": "1230",
+  "page": 7,
+  "elapsed_seconds": 7.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

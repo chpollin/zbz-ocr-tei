@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lich für Tag und passen sie an die Realitäten an; denn sonst nutzen sie uns nichts mehr. Auf der Konzeptebene haben wir schon etwas die Zeit Übergreifendes, eine Projektion in die Zukunft hinein. Utopien z.B. waren ja solche Projektionen, die uns etwas vorspiegeln sollten, das Gültigkeit hat über die Zeit hinweg. Und die brauchen wir, solche Konzeptionen, um uns in der Zeit orientieren zu können.",
+      "bbox": {
+        "x_pct": 7.751,
+        "y_pct": 4.071,
+        "w_pct": 85.307,
+        "h_pct": 15.601
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content which was missing lines from the source image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 8.201,
+        "y_pct": 22.013,
+        "w_pct": 33.823,
+        "h_pct": 2.031
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir sollten diesen Gedanken der Zeit als letzten Gedanken, den wir hier weiter vertiefen. Die Zeit ist eines der Standardbeispiele für eine paradoxe Erfahrung. Wenn wir an Augustin denken: die Erfahrung, daß wir so lange wissen, was Zeit ist, wie wir nicht versuchen zu sagen, was sie ist; genau dann, wenn wir versuchen zu sagen, was sie ist, aber zugleich wissen, daß wir es nicht können. Wir haben in meiner Vorlesung über die Zeitphilosophie gerade heute darüber diskutiert, daß wir normalerweise die Gegenwart als den infinitesimalen Punkt betrachten, der Vergangenheit von Zukunft trennt; infolgedessen ist die Zeit weder Vergangenheit, denn die Vergangenheit ist nicht mehr, noch sie Zukunft, denn die Zukunft ist noch nicht, noch ist sie Gegenwart, weil die Gegenwart nichts als der infinitesimale Punkt ist. Insofern ist die Zeit nicht. So können wir uns leicht über unsere eigenen Argumentationen stringent in paradoxe Konsequenzen verstricken, die wir nicht behaupten wollten, als wir fragten, was Zeit sei.",
+      "bbox": {
+        "x_pct": 7.646,
+        "y_pct": 26.566,
+        "w_pct": 85.262,
+        "h_pct": 38.124
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content which was missing significant portions of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Möglichkeit, diesem Problem näherzukommen, ist – zumindest in der Zeittheorie des ausgehenden 19. und beginnenden 20. Jahrhunderts – die gewesen, zu sagen: Wir irren uns, wenn wir meinen, Gegenwart sei ein infinitesimaler Punkt, sondern Gegenwart ist in sich ausgedehnt, sie hat in sich eine intentionale Ausdehnung in Protention und Retention, um mit Husserl zu sprechen. Das heißt, das, was eben war, und das, was jetzt gleich sein wird, gehören mit zu meiner Gegenwart. Zeit wäre dann also in der Tat immerwährende Gegenwart. Aber, so sagt Frau Pieper mit Recht, sie wäre nichts für uns, wenn sie nicht auf dem Hintergrund des Entwurfs einer Zukunft wäre. Wir würden uns gleichsam immer bloß von Mo-",
+      "bbox": {
+        "x_pct": 7.691,
+        "y_pct": 66.366,
+        "w_pct": 85.007,
+        "h_pct": 27.077
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content which was missing significant portions of the paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "49",
+      "bbox": {
+        "x_pct": 88.5,
+        "y_pct": 95.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as a filterable element."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text content in blocks was heavily truncated and did not match the full visible text.",
+    "Page number at bottom right was not captured initially.",
+    "Some OCR artifacts in the text blocks."
+  ],
+  "doc_id": "3180",
+  "page": 26,
+  "elapsed_seconds": 4.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n'auraient pas pu se passer de cette manière, et par conséquent, nous ne nous trouverions pas, au point de vue européen, dans la crise très aiguë et très grave où nous sommes actuellement et où on se demande jusqu'à quel point le caractère irréversible de ce qui a été accompli dans le domaine économique tiendra le coup pendant suffisamment longtemps pour attendre qu'après tout l'Europe survive à de Gaulle, ce qui serait bien naturel. Voilà où nous en sommes aujourd'hui.",
+      "bbox": {
+        "x_pct": 8.441,
+        "y_pct": 9.678,
+        "w_pct": 84.214,
+        "h_pct": 10.206
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant, je voudrais souligner quelques ambiguïtés dans les positions qui sont actuellement adoptées devant le problème de l'intégration européenne. Tout le monde, tous ceux qui sont plus ou moins pour l'Europe fédérée, et même tous ceux qui sont réellement pour un pouvoir supranational, n'ont pas du tout pour cette Europe fédérée le même idéal. Par exemple, il y a des gens qui souhaitent que l'Europe fédérée soit avant tout une Union douanière, c'est-à-dire un vaste espace où l'on supprime les barrières douanières pour rétablir le laisser-faire, laisser-passer libéral. Il y a des gens qui sont pour la fédération européenne parce qu'ils sont, au niveau économique, des partisans du libéralisme économique. Il y en a d'autres, au contraire, qui le sont parce qu'ils pensent que l'Europe fédérée permettrait une organisation planifiée de l'économie européenne, et partant, une discussion avec d'autres régions du monde, notamment et en tout premier lieu, les Etats-Unis, une discussion d'égal à égal où on arriverait à une conception, élaborée en commun, d'une économie dirigée, planifiée, qui ne livrerait pas simplement l'Europe à l'invasion des techniques, des moyens, des firmes, des gadgets et du way of life américain. Autre ambiguïté: il y a ceux qui, en disant qu'ils sont pour l'Europe, sont pour l'Europe des patries, ou bien réellement pour la supranationalité. Vous trouvez par exemple, dans des organisations fédéralistes européennes, donc soit-disant l'avant-garde des constructeurs de l'Europe fédérée, des gens - j'ai souvent affaire à eux - qui tâchent toujours de freiner au maximum tout ce qui pourrait être supranational. Parce que l'attachement aux nations est quelque chose de si invétéré qu'il est extrêmement difficile de mettre la supranationalité en mouvement. Il y a ceux qui conçoivent la fédération de l'Europe vraiment comme un fédéralisme, c'est-à-dire, comme je l'ai expliqué au début, décentralisé par en bas et à pouvoirs limités par en haut, avec des conseils élus démocratiquement, et il y a ceux au contraire qui cherchent à en faire un élément d'hégémonie. Vous avez par exemple des gens, dans l'entourage du général de Gaulle, qui se prétendent des partisans de l'Europe. Ce qui rend le tableau extrêmement difficile et confus et la propagande difficile, parce qu'on a toujours peur d'apporter peut-être de l'eau à un moulin qui n'est pas le bon. Enfin, au point de vue de la politique mondiale, il y a une ambiguïté extrêmement importante; c'est que certains conçoivent la fédération européenne comme une incorporation presque pure et simple de l'Europe au système américain - ceux-ci sont relativement peu nombreux en Europe, je crois -; il y a ceux qui conçoivent l'association de l'Europe fédérée avec l'Amérique comme un rapport d'égalité entre partenaires; et il y a ceux au contraire qui veulent se servir de l'idée d'une Europe fédérée pour faire sauter l'alliance atlantique et pour faire retomber l'Europe dans un neutralisme indépendant, et, du moins à mes yeux, extrêmement dangereux.",
+      "bbox": {
+        "x_pct": 7.759,
+        "y_pct": 21.18,
+        "w_pct": 85.505,
+        "h_pct": 60.198
+      },
+      "changed": true,
+      "change_reason": "Corrected the corrupted/incomplete transcription to match the full text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous voyez toutes ces ambiguïtés autour du problème de la fédération européenne. Est-ce que c'est une raison pour se tenir à l'écart? Je crois que c'est exactement le contraire: c'est parce qu'il y a toutes ces ambiguïtés qu'il importe d'y être, d'en être le plus vite possible, de façon à pouvoir encore donner, si faible qu'elle soit, la chiquenaude dans le sens que l'on souhaite, pendant qu'il en est temps. Je voudrais maintenant dire encore, si vous me permettez, quelques mots de la Suisse et de l'Europe.",
+      "bbox": {
+        "x_pct": 8.076,
+        "y_pct": 82.236,
+        "w_pct": 85.469,
+        "h_pct": 10.528
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete/erroneous transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": {
+        "x_pct": 81.339,
+        "y_pct": 95.39,
+        "w_pct": 2.227,
+        "h_pct": 1.637
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 4,
+  "issues": [
+    "Transcription in regions was highly inaccurate/truncated.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "630",
+  "page": 11,
+  "elapsed_seconds": 8.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

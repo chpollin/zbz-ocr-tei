@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DIEU CONTRE DIEU",
+      "bbox": {
+        "x_pct": 26.831,
+        "y_pct": 25.614,
+        "w_pct": 35.614,
+        "h_pct": 2.475
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Hommage \u0000 Karl Jaspers pour Son Soixanti\u0000me anniversaire",
+      "bbox": {
+        "x_pct": 29.964,
+        "y_pct": 30.53,
+        "w_pct": 29.157,
+        "h_pct": 4.04
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it describes the title of the work."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu sentit durer l\u0000ternit\u0000",
+      "bbox": {
+        "x_pct": 15.699,
+        "y_pct": 37.062,
+        "w_pct": 40.12,
+        "h_pct": 2.559
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Terrible efficacit\u0000 de Dieu! D\u0000s qu'il sentit durer l\u0000ternit\u0000, elle cessa d\u0000tre et tomba dans le temps.",
+      "bbox": {
+        "x_pct": 11.807,
+        "y_pct": 39.84,
+        "w_pct": 65.542,
+        "h_pct": 8.645
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better OCR accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et Dieu s'ennuya de n'avoir en face de Lui, \u0000 tous les instants du temps, infiniment, que Lui-m\u0000me.",
+      "bbox": {
+        "x_pct": 12.133,
+        "y_pct": 48.291,
+        "w_pct": 65.133,
+        "h_pct": 7.963
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for punctuation and accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu sentit qu'il avait dormi sa force. Qu'est-ce qu'une force endormie? Il avait \u0000t\u0000 le corps immense et dormant de la force, et d\u0000j\u0000 il ne le comprenait plus. Il voulut se servir de la force comme d'un outil.",
+      "bbox": {
+        "x_pct": 11.843,
+        "y_pct": 59.68,
+        "w_pct": 65.542,
+        "h_pct": 13.527
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better OCR accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Terrible efficacit\u0000 de Dieu! D\u0000s qu'il voulut se servir d'elle, elle fut hors de Lui. Lui",
+      "bbox": {
+        "x_pct": 12.012,
+        "y_pct": 73.712,
+        "w_pct": 65.253,
+        "h_pct": 5.556
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better OCR accuracy."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 73.614,
+        "y_pct": 82.261,
+        "w_pct": 2.771,
+        "h_pct": 2.217
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to _filter for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "OCR output needed significant cleanup for punctuation and accurate word representation.",
+    "Page number 13 was incorrectly labeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 11,
+  "elapsed_seconds": 5.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

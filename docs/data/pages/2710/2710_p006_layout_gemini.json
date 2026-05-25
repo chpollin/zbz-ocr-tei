@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais nous n'en avons pas encore fini. Quiconque se risque à préparer, en un temps de transformation accélérée comme le nôtre, le projet d'une nouvelle Constitution travaille pour une longue période à venir. Il lui faut donc, au minimum, tenir compte non seulement de données et de courants de pensée et de sensibilité récents, mais encore percevoir ce qui se prépare, ce qui s'annonce, ce qui menace. Or, aujourd'hui, les mises en garde pleuvent de toutes parts.",
+      "bbox": {
+        "x_pct": 9.252,
+        "y_pct": 3.958,
+        "w_pct": 84.63,
+        "h_pct": 13.015
+      },
+      "changed": true,
+      "change_reason": "Updated truncated text to reflect full original content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Science et technique ne cessent d'offrir aux hommes de notre temps de nouveaux pouvoirs, mettant en jeu le monde qui nous entoure, les espèces qui le peuplent, l'humanité même des hommes qui en disposent. On découvre qu'il n'est sans doute plus permis de faire tout ce qu'on serait capable de faire. On découvre en même temps que les contemporains sont profondément divisés quant à ce qu'il est permis de faire ou non. Dans les domaines de la biologie, par exemple, ou de la génétique, on ne sait pas toujours de quelle nature sont les enjeux de la recherche ou de l'application de ses résultats. On interroge de tous côtés des Comités d'éthique. La perplexité devient encore plus grande lorsque, dans divers domaines, certains succès scientifiques ou techniques permettent des démarches qui semblent d'une part violer l'intégrité d'un être humain, et d'autre part, en même temps, promettre des résultats médicalement salvateurs face à de terribles fléaux. On se débat entre le bien et le mal, inextricablement mêlés.",
+      "bbox": {
+        "x_pct": 9.051,
+        "y_pct": 19.187,
+        "w_pct": 84.883,
+        "h_pct": 26.154
+      },
+      "changed": true,
+      "change_reason": "Updated truncated text to reflect full original content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est pas possible, me semble-t-il, qu'une nouvelle Constitution, entièrement repensée pour notre temps, ignore ces points d'interrogation. Quels organes mettra-t-elle en place pour qu'ils aient autorité en pareille matière?",
+      "bbox": {
+        "x_pct": 9.112,
+        "y_pct": 47.893,
+        "w_pct": 84.682,
+        "h_pct": 6.629
+      },
+      "changed": true,
+      "change_reason": "Updated truncated text to reflect full original content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour en revenir à des problèmes en apparence moins redoutables: la future Constitution cherchera-t-elle à freiner ou maîtriser la croissance démesurée des pouvoirs économiques, dont presque chaque citoyen finit par devenir, d'une manière ou d'une autre, dépendant - alors qu'il se croit plus libre parce que sa vie est plus facile? Cherchera-t-elle, tout en sauvegardant la liberté du marché, à créer des lois ou des organes capables d'orienter celui-ci de façon à corriger, par des impulsions humaines volontaires, les effets aveugles des mécanismes concurrentiels? Deviendra-t-il possible, grâce à elle, de freiner l'invasion de notre culture et de nos media par une publicité nullement informative, qui manipule la société et sa culture? Saura-t-elle susciter des lois protégeant l'environnement, le silence et l'espace, - les ressources indispensables à la vie (eau, air, énergie) sans condamner les hommes, à force de catastrophisme, à la pénurie et à la paralysie? Et enfin, poussera-t-elle le \"modernisme\" et le \"libéralisme\" jusqu'à susciter cette réalité sans précédent, je crois, dans l'histoire humaine: une société sans moeurs?",
+      "bbox": {
+        "x_pct": 9.025,
+        "y_pct": 56.777,
+        "w_pct": 84.708,
+        "h_pct": 28.605
+      },
+      "changed": true,
+      "change_reason": "Updated truncated text to reflect full original content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'en ai certes pas fini avec les problèmes qui n'ont aujourd'hui aucune solution, mais je vais me contenter d'en poser encore trois.",
+      "bbox": {
+        "x_pct": 9.138,
+        "y_pct": 87.614,
+        "w_pct": 84.447,
+        "h_pct": 4.451
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 33 -",
+      "bbox": {
+        "x_pct": 47.969,
+        "y_pct": 94.671,
+        "w_pct": 4.062,
+        "h_pct": 2.597
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most text segments were truncated in initial JSON.",
+    "Page number not identified as page_footer."
+  ],
+  "doc_id": "2710",
+  "page": 6,
+  "elapsed_seconds": 7.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

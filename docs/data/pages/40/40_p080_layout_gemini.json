@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "82",
+      "bbox": {
+        "x_pct": 119.5,
+        "y_pct": 82.0,
+        "w_pct": 20.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number 82 identified as page_header to be filtered out."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 405.0,
+        "y_pct": 82.0,
+        "w_pct": 190.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header/zb_heading for chapter title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "quand même m'endormir, sa seule parole d'amour: « Ce n'est pas la même chose... » Qui avait dit cela ? Où était la bouche qui avait dit cela ? Réveillée de nouveau, je cherchais dans l'angoisse cet être qui pourtant n'était pas mort — je revoyais un visage sur le fond d'une robe bleu ciel. « Ce n'est pas la même chose... » Parole trop simple, trop nue pour ne pas être vraie, trop retenue pour un mensonge. Et on ne ment pas quand on a le regard bleu et un visage fait de clarté. Et on ne ment pas à une enfant qu'on a rencontrée rouge et essoufflée dans un sentier, en gros souliers cloutés alourdis de boue, en bonnet de laine. On ne ment pas avec des porte-bébé et des rhododendrons, mais avec des roses, des œillets, des colliers. Je n'ai jamais porté de perruque blanche... Et puis tous les signes ne se seraient pas rendus complices d'un mensonge pour faire réussir, miraculeusement et sans paroles, pendant des mois, d'invraisemblables rendez-vous. Je le revoyais, le matin de ma course d'école. J'avais dû en parler à sa mère, un des jours précédents. Nous partions pour deux jours, toute la classe, il fallait être à la gare à six heures et demie. C'était en juin, un matin clair et frissonnant. J'ai pris le tram avec une amie. Il était là, à bicyclette. A la gare il était encore là. Et le lendemain soir, rentrant sans voix pour avoir trop chanté, traînant les pieds, couverte de poussière, je l'avais vu, il était là. J'imagine que maintenant cela me semblerait idiot et anormal. Cela te semble peut-être ainsi, Marc. Mais pense: c'était notre seul langage, notre seule promesse. C'était tellement autre chose que « se voir ».",
+      "bbox": {
+        "x_pct": 118.51,
+        "y_pct": 124.76,
+        "w_pct": 812.57,
+        "h_pct": 734.12
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was jumbled and misaligned in the previous extraction."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial label was overly broad",
+    "Page number and header were not separated from main text",
+    "OCR text was heavily corrupted in the initial input"
+  ],
+  "doc_id": "40",
+  "page": 80,
+  "elapsed_seconds": 4.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

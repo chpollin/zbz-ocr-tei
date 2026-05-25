@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "62 FONCTION DU VIDE PHILOSOPHIQUE",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The header 62 FONCTION DU VIDE PHILOSOPHIQUE was missing from the regions list and must be labeled as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sophique, mais elle n'est et ne peut être, si on l'abstrait de tout système particulier et qu'on ne la considère pas en action, que la foi la plus formelle, la plus nue, que l'homme puisse concevoir. Elle est, à l'origine de la pensée philosophique, un vide qui rend possible la liberté, la décision. Rien de plus. — mais c'est énorme. Croire à un vide où l'homme a la place de décider de lui-même, c'est là « le point de foi » de toute philosophie. Même celles qui nient la liberté ou paraissent dériver de la plénitude d'une foi religieuse réservent en réalité ce vide où pourra s'accomplir la soumission du sujet au destin ou à Dieu. Que le philosophe parte tout seul pour décider de lui en décidant de son univers ou qu'il parte avec la foi pour décider de ce qu'il sera envers Dieu, il part toujours du vide, il part toujours sans avoir Dieu. Dieu peut être impliqué dans son univers, mais lui est seul, en face. En ce sens le philosophe s'oppose à l'extrême au mystique qui se perd dans la divinité. La philosophie distend le plus possible le rapport du sujet et de l'objet, elle porte la tension sujet-objet à un paroxysme de conscience. On comprend qu'ainsi isolé et réduit à lui seul, l'homme se serve de ce qui, tout en lui appartenant en propre comme sujet, lui donne prise sur le monde objectif auquel il s'oppose : de sa raison.",
+      "bbox": {
+        "x_pct": 13.509,
+        "y_pct": 12.202,
+        "w_pct": 76.657,
+        "h_pct": 68.732
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text within the paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc les échecs de l'histoire de la philosophie ainsi que son infériorité en regard de l'évidence scientifique, de la perfection artistique, de la",
+      "bbox": {
+        "x_pct": 14.202,
+        "y_pct": 81.287,
+        "w_pct": 76.009,
+        "h_pct": 8.008
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text in the paragraph block."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Header 62 FONCTION DU VIDE PHILOSOPHIQUE was completely missing from the provided region JSON list.",
+    "OCR for the first paragraph was heavily corrupted and hallucinated.",
+    "OCR for the second paragraph was slightly corrupted."
+  ],
+  "doc_id": "20",
+  "page": 64,
+  "elapsed_seconds": 9.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

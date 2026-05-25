@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "190 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 11.699,
+        "y_pct": 74.456,
+        "w_pct": 85.515,
+        "h_pct": 2.215
+      },
+      "changed": true,
+      "change_reason": "Corrected page header/ID label from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "une plus grande participation a la gestion des entreprises; a la repartition du credit, pour une plus grande securite materielle surtout, cette securite liberatrice qui permet de lever la tete et de penser a autre chose.",
+      "bbox": {
+        "x_pct": 11.699,
+        "y_pct": 10.811,
+        "w_pct": 85.515,
+        "h_pct": 10.339
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR content and validated tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'alternative : justice sociale ou democratie formelle n'est qu'un sophisme. La democratie formelle est la seule garantie de justice sociale croissante que la classe ouvriere possede, la seule arme qui lui permette de sauvegarder ses conquetes passees et d'esperer des conquetes futures. Des que les droits democratiques « formels » disparaissent, elle se trouve livree, pieds et poings lies, au pouvoir exploiteur, quel que soit le titre dont celui-ci s'affuble, Etat ou Dictature du proletariat. Les salaires, le bifteck, le logis, la salle de bains de la famille ouvriere (tous ces biens materiels dont les intellectuels d'aujourd'hui, en Occident, neophytes des questions sociales, se preoccupent enfin, tentant d'expier ainsi leur splendide isolement de naguere et leur long exil dans l'abstrait) dependent dans une large mesure des droits democratiques formels. La ou ceux-ci disparaissent, disparaissent avec eux les bienfaits materiels, car ceux-ci ne dependent plus que de la bonte du pouvoir. L'esclavage et la misere consolident reciproquement leurs chaines. Car, dans l'esclavage, on ne peut meme pas commencer de lutter contre la misere : il s'agit constamment de survivre, tout effort contre la misere est trop dangereux. Et dans la misere aussi, il s'agit seulement de survivre : on ne pense pas a la liberte. Ainsi le regime dure. Ce peut etre la stabilite, l'ordre, et meme une assez virile rigueur.",
+      "bbox": {
+        "x_pct": 11.56,
+        "y_pct": 21.034,
+        "w_pct": 85.836,
+        "h_pct": 45.784
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR content for paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais non l'esperance. L'esperance vit du possible et de longues perspectives. Quand la terreur primitive revient, l'homme reste le nez colle a l'instant present, pour survivre. Que l'ideologie repose sur l'image d'un Paradis futur n'a pour lui aucun rapport avec sa vie actuelle. En mettant les choses au mieux, le Paradis futur peut etre un sujet de reve, mais il n'y a pas place pour lui entre l'homme et sa tache et la menace immediate qu'elle implique toujours. La democratie politique, elle, meme en regime capitaliste, est ouverte sur l'avenir, orientee par les reves des citoyens, se pretant aux efforts qu'ils tentent pour les incarner, faite pour des possibles imprvus.",
+      "bbox": {
+        "x_pct": 11.699,
+        "y_pct": 66.865,
+        "w_pct": 85.515,
+        "h_pct": 28.508
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph region detected at bottom of image."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was garbled/incomplete in original detection.",
+    "Page header was labeled as text.",
+    "Bottom paragraph block was missing from detection."
+  ],
+  "doc_id": "330",
+  "page": 224,
+  "elapsed_seconds": 5.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

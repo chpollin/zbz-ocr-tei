@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'EUROPE AU DÉFI 5",
+      "bbox": {
+        "x_pct": 358.0,
+        "y_pct": 82.0,
+        "w_pct": 517.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected page header information which was not captured or was incorrectly tagged."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais les hommes qui ont écrit ce livre aiment autre chose et luttent pour autre chose encore : une certaine manière, sur terre, d’être un homme, qui a été celle des Européens. Ce qui la caractérise à mes yeux, c’est un constant effort d’incarnation. Les Européens ne cultivent guère l’expérience intérieure pour elle-même, solitaire, ponctuelle, absolue. Même les mystiques parmi eux recherchent une efficacité. Ils n’ont pratiqué qu’exceptionnellement le retrait ascétique, individuel ou collectif, qui abandonne le monde à ce qu’il est dans l’espoir d’une grâce libérée de toute pesanteur. Ils restent sans cesse dans la tension qui lie et oppose la pensée à la chose, la chose à la pensée, s’obstinant à un va-et-vient où chacune est éprouvée par l’autre. Toute hypothèse veut être vérifiée, les expériences et les usages suscitent les hypothèses, les actes demandent leur sens aux valeurs, et toutes les valeurs recherchent l’épreuve des faits. Mis à distance par le regard de la conscience, ce qui est ne bouche plus les perspectives, temporelles et spatiales, où s’engendre ce qui peut être ou ce qui devrait être. L’éventail des possibles s’ouvre devant le choix actif.",
+      "bbox": {
+        "x_pct": 10.937,
+        "y_pct": 18.712,
+        "w_pct": 79.866,
+        "h_pct": 53.423
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to be accurate to the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès qu’il y a choix, il y a lutte. C’en est fait de l’unanimité. Les volontés diverses entrent en conflit. D’autant plus qu’il ne s’agit pas de vouloir seulement, ni d’imaginer, ni de rêver, mais d’incarner ceci ou cela, hic et nunc, dans cet univers de matière où chaque",
+      "bbox": {
+        "x_pct": 11.647,
+        "y_pct": 73.721,
+        "w_pct": 80.054,
+        "h_pct": 12.919
+      },
+      "changed": true,
+      "change_reason": "Refined OCR text to be accurate to the image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 815.0,
+        "y_pct": 866.0,
+        "w_pct": 12.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and tagged as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header regions in initial detection.",
+    "Incorrect OCR transcriptions for paragraph content.",
+    "Page number at bottom not initially identified as footer."
+  ],
+  "doc_id": "460",
+  "page": 7,
+  "elapsed_seconds": 4.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

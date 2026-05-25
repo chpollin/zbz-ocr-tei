@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PRÉFACE",
+      "bbox": {
+        "x_pct": 36.671,
+        "y_pct": 27.299,
+        "w_pct": 15.0,
+        "h_pct": 2.228
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LES CIRCONSTANCES",
+      "bbox": {
+        "x_pct": 2.089,
+        "y_pct": 33.601,
+        "w_pct": 26.281,
+        "h_pct": 2.05
+      },
+      "changed": true,
+      "change_reason": "Corrected typographical error in detected text 'CIRCONSTANGES' to 'CIRCONSTANCES'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce livre a été écrit à Paris, plus précisément au Quartier Latin. Si je le dis pour commencer, bien qu'il ne s'agisse pas ici particulièrement de Paris, mais de la situation idéologique de l'Occident européen en général, c'est que nulle part ailleurs, sans doute, le besoin de l'écrire n'aurait été en moi aussi fort. En ce point du monde, la denrée la plus courante, c'est l'intelligence. On rencontre à chaque pas des esprits déliés, ingénieux et brillants, que tout intéresse et qui rendent tout intéressant. Dans le café corse, au bas de ma maison, les cris et les coups de poing sur la table se rapportent, par exemple, à la politique de l'Autriche au XIXe siècle. Au restaurant, la patronne et sa servante discutent âprement les lignes et les proportions d'une chaise alsacienne. La vie matérielle tient peu de place et n'est presque jamais réduite à elle-même. Les repas sont des rencontres d'amis, des occasions d'échange, et l'on mange sans trop s'en apercevoir des nourritures faites pour surprendre la fantaisie plutôt que pour alimenter le corps, spécialités exotiques de tous les coins de l'univers. Les spectacles les plus parfaits s'y donnent dans des locaux minables. Le plus exact, le plus subtil des traducteurs loge avec sa famille dans deux mansardes encombrées — mais l'encombrement reste sans poids. Des boutiques vendent des légumes tout préparés, cuits — il ne reste à leur donner que ce qui dépend du goût personnel de chacun, et la cuisine, rapide, se réduit à l'art d'un assaisonnement. Bien entendu, je généralise. Mais le nombre des gens qui vivent ainsi, ou à peu près, est ici considérable.",
+      "bbox": {
+        "x_pct": 15.826,
+        "y_pct": 37.954,
+        "w_pct": 70.366,
+        "h_pct": 49.339
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and poorly transcribed text block to match the full paragraph present in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "IX",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 893.0,
+        "w_pct": 18.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Identified page markers as footer content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 757.0,
+        "y_pct": 894.0,
+        "w_pct": 12.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified page markers as footer content."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original text detection was severely truncated and contained OCR errors.",
+    "Page numbers were missing from initial detection.",
+    "Heading text 'CIRCONSTANGES' contained OCR typo."
+  ],
+  "doc_id": "330",
+  "page": 23,
+  "elapsed_seconds": 4.93,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

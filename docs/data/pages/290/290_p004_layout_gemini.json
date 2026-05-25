@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "COMPTES RENDUS 127",
+      "bbox": {
+        "x_pct": 41.229,
+        "y_pct": 17.067,
+        "w_pct": 34.621,
+        "h_pct": 0.884
+      },
+      "changed": true,
+      "change_reason": "Identified as page header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fond&eacute;ment commun malgr&eacute; leur diversit&eacute;, par lesquels l'homme prend conscience des donn&eacute;es fondamentales de sa condition et de ses libres possibilit&eacute;s. En m&ecirc;me temps que l'histoire, la philosophie aussi, au cr&eacute;puscule de l'h&eacute;g&eacute;monie europ&eacute;enne, devient universelle. Elle r&eacute;clame un &eacute;change entre les esprits, par-dessus toutes les distances du temps et de l'espace. D'o&ugrave; la passion avec laquelle Jaspers s'est attach&eacute; &agrave; approfondir la pens&eacute;e de la Chine et celle de l'Inde.",
+      "bbox": {
+        "x_pct": 24.198,
+        "y_pct": 19.268,
+        "w_pct": 51.604,
+        "h_pct": 10.036
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce n'est pas seulement &agrave; travers les continents que s'accomplit aujourd'hui l'universalisation de la pens&eacute;e : c'est aussi &agrave; travers les classes sociales. Des hommes de plus en plus nombreux, vivant dans des cercles de plus en plus &eacute;tendus, sont appel&eacute;s &agrave; prendre conscience d'eux-m&ecirc;mes en contribuant &agrave; forger l'avenir. Jaspers s'est donc efforc&eacute;, dans une s&eacute;rie de conf&eacute;rences faites &agrave; la radio et r&eacute;unies en un volume sous le titre d'Introduction &agrave; la Philosophie 1, de communiquer &agrave; un large public, sous une forme simple, et pourtant sans sacrifier aucune complexit&eacute; essentielle, les lignes directrices de sa r&eacute;flexion et la signification que peut avoir pour tout homme son message.",
+      "bbox": {
+        "x_pct": 24.198,
+        "y_pct": 32.062,
+        "w_pct": 51.652,
+        "h_pct": 14.129
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le philosophe, d&eacute;sormais, doit intervenir dans les d&eacute;bats de ses contemporains, les ramener inlassablement au souci essentiel de la condition humaine, des exigences et des possibilit&eacute;s dans lesquelles elle se perd. Jaspers a &eacute;t&eacute; amen&eacute;, &agrave; diverses reprises, &agrave; prendre position devant tel ou tel probl&egrave;me 2. Quelques titres permettront de se faire une id&eacute;e des th&egrave;mes qui y sont trait&eacute;s : Notre avenir et Goethe (1947), Le mal radical chez Kant (1935), Kierkegaard (1951), De l'esprit vivant de l'Universit&eacute; (1946), La science dans l'Etat hitl&eacute;rien (1946), Le peuple et l'Universit&eacute; (1947), Critique de la psychanalyse (1950), De l'esprit europ&eacute;en (1946), Conditions et chances d'un nouvel humanisme (1949), etc. On y trouve &eacute;galement une br&egrave;ve analyse du d&eacute;veloppement philosophique de l'auteur et de son attitude &agrave; l'&eacute;gard de la tradition. Aucune pens&eacute;e, en effet, ne peut plus aujourd'hui s'isoler de ses conditions. Le penseur doit se pr&eacute;senter. Jaspers affirme que son attitude spirituelle n'a gu&egrave;re chang&eacute;, en fait, depuis qu'il a quitt&eacute; l'&eacute;cole, malgr&eacute; son passage de la m&eacute;decine, par la psychiatrie, &agrave; la philosophie. D'embl&eacute;e, d&egrave;s le premier livre o&ugrave; s'esquisse l'essentiel de sa pens&eacute;e (Psychologie der Weltanschauungen, 1919), il a reconnu l'importance de Marx, l'&eacute;tude et le combat. Et il lui oppose ceux qui, &agrave; ses yeux, sont les &laquo; exceptions &raquo; d&eacute;cisives,",
+      "bbox": {
+        "x_pct": 24.037,
+        "y_pct": 49.172,
+        "w_pct": 51.684,
+        "h_pct": 29.323
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Einf&uuml;hrung in die Philosophie, Artemis Verlag, Zurich, 1949. &mdash; Introduction &agrave; la Philosophie, traduction fran&ccedil;aise par J. Hersch, Plon, Paris, 1951.",
+      "bbox": {
+        "x_pct": 24.198,
+        "y_pct": 79.547,
+        "w_pct": 44.456,
+        "h_pct": 3.204
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "2 Rechenschaft und Ausblick, Piper Verlag, M&uuml;nich, 1951.",
+      "bbox": {
+        "x_pct": 25.705,
+        "y_pct": 82.485,
+        "w_pct": 42.28,
+        "h_pct": 1.173
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Detected artifacts or partial text in header region.",
+    "Footnote markers were mislabeled as list items or text blocks."
+  ],
+  "doc_id": "290",
+  "page": 4,
+  "elapsed_seconds": 9.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

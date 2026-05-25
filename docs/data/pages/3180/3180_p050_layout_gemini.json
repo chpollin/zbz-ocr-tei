@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Teil von Frau und zum Teil von mir vertreten worden dann si ist, dann sind Paradoxien Zustände, die man, wo man kann, beseitigen soll, und wo man nicht kann, stehenlassen muß. Auch wäre noch kein Grund, sie zu loben. Der Grund, sie zu loben, ist uns vorgeführt worden in den Vorträgen von Frau Hersch. Das heißt, daß diese Paradoxien dazu führen können, daß wir uns genötigt sehen, immer neu anzusetzen. Das Lob der Paradoxien bezieht sich also nicht auf die Paradoxie als solche, sondern es bezieht sich darauf, wozu sie uns nötigt. Daß wir Paradoxien erkennen oder zu erkennen meinen, nötigt uns dazu, eben nicht die Hände in den Schoß zu legen und nichts mehr zu tun, sondern neu anzusetzen. Und das finde ich lobenswert.",
+      "bbox": {
+        "x_pct": 7.081,
+        "y_pct": 3.707,
+        "w_pct": 85.284,
+        "h_pct": 29.199
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine Damen und Herren, am Schluß einer solchen Veranstaltung sollten nicht Versuche stehen, die Inhalte dieser Veranstaltung zusammenzufassen. Das wäre erstens unergiebig, zweitens dem Inhalt von Gesprächen nicht angemessen, weil die Gespräche in der Performanz beruhen und nicht allein in dem Ergebnis, und drittens wäre es auch kaum möglich, weil uns das, was wir gehört haben, in den Formen, in denen es von den einzelnen vorgetragen worden ist, sehr viel eindringlicher hat vorgetragen werden können, als ich es in einer Zusammenfassung tun könnte.",
+      "bbox": {
+        "x_pct": 7.036,
+        "y_pct": 35.091,
+        "w_pct": 84.985,
+        "h_pct": 22.404
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "es bleibt mir an dieser Stelle zunächst einmal nur das Angenehme, nämlich der Dank. Ich danke ganz explizit und mit weitem Abstand an erster Stelle Frau Hersch. Liebe Frau Hersch, was Sie uns haben miterleben lassen, ist nicht nur ein Stück Philosophie gewesen, es ist nicht nur ein Stück Philosophieren gewesen, sondern Sie haben uns auch ein Stück Existieren vorgeführt.",
+      "bbox": {
+        "x_pct": 6.886,
+        "y_pct": 59.444,
+        "w_pct": 85.03,
+        "h_pct": 16.056
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie haben nicht nur darüber geredet, sondern gezeigt, wie man das, was man denkt, dadurch glaubwürdig macht, daß man es selbst existiert, daß man es ist. Dafür danke ich Ihnen ganz besonders. Außerdem wünsche ich mir, daß ich, wenn ich mal 86 bin, so gut Französisch kann, wie Sie Deutsch können, und ich hoffe, daß es Ihnen hier in Bamberg in dieser philosophischen, oder soll ich sagen philosophisch gewordenen Stadt",
+      "bbox": {
+        "x_pct": 6.991,
+        "y_pct": 77.077,
+        "w_pct": 84.97,
+        "h_pct": 16.029
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "73",
+      "bbox": {
+        "x_pct": 88.5,
+        "y_pct": 94.6,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was truncated in the original input.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "3180",
+  "page": 50,
+  "elapsed_seconds": 5.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

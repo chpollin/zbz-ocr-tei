@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Glarner",
+      "bbox": {
+        "x_pct": 14.713,
+        "y_pct": 16.304,
+        "w_pct": 6.397,
+        "h_pct": 1.254
+      },
+      "changed": true,
+      "change_reason": "Identified as author/speaker name serving as a section heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Hersch",
+      "bbox": {
+        "x_pct": 15.104,
+        "y_pct": 29.206,
+        "w_pct": 5.744,
+        "h_pct": 1.254
+      },
+      "changed": true,
+      "change_reason": "Identified as author/speaker name serving as a section heading. Corrected text from Ilersch to Hersch."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Furgler",
+      "bbox": {
+        "x_pct": 14.752,
+        "y_pct": 41.948,
+        "w_pct": 6.305,
+        "h_pct": 1.697
+      },
+      "changed": true,
+      "change_reason": "Identified as author/speaker name serving as a section heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JETZT ZUM THEMA NEUTRALITÄT.",
+      "bbox": {
+        "x_pct": 24.151,
+        "y_pct": 10.393,
+        "w_pct": 37.376,
+        "h_pct": 2.425
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Neutralität es nur zwischen zwei gegnerischen Parteien in Europa. Wenn Europa einig ist, kann es keine Neutralität geben. Wir sind heute von Demokratien umgeben; von Freunden, nicht mehr von Feinden.",
+      "bbox": {
+        "x_pct": 24.634,
+        "y_pct": 15.661,
+        "w_pct": 65.836,
+        "h_pct": 9.783
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from the OCR block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es leider immer noch Konflikte in Europa. Neutrale sind immer noch nötig. Sie stehen ausserhalb von allen Gruppierungen. Und so lange die Schweiz keine eigenen Ansprüche stellt, ist sie glaubwürdig.",
+      "bbox": {
+        "x_pct": 24.543,
+        "y_pct": 28.487,
+        "w_pct": 65.757,
+        "h_pct": 10.226
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from the OCR block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man muss zwischen Neutralitätsrecht und Neutralitätspolitik unterscheiden. Das war schon immer eine schwierige Aufgabe. Die Neutralitätspolitik der Schweiz geht auf 1515 nach Marignano zurück. 1815 wurde am Wiener Kongress die schweizerische Neutralität als im Interesse aller liegend anerkannt. Im Gegensatz zu andern Ländern wie Belgien, Luxemburg, Niederlande hatte die Schweiz mit ihrer Neutralitätspolitik Erfolg. Neutralität war nie Selbstzweck. Sie muss von jeder Generation neu überdacht werden, entsprechend der sicherheitspolitischen Lage, in der wir uns befinden. Die Neutralität ist ein politisches Instrument; pragmatisch einzusetzen, zur Wahrung nationaler Interessen (Unabhängigkeit).",
+      "bbox": {
+        "x_pct": 24.321,
+        "y_pct": 41.446,
+        "w_pct": 66.149,
+        "h_pct": 30.602
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from the OCR block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "36",
+      "bbox": {
+        "x_pct": 24.7,
+        "y_pct": 94.6,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified at bottom, changed to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR for author names was incorrect (Ilersch vs Hersch).",
+    "Extracted text was incomplete/truncated in some blocks.",
+    "Page number at bottom was missing a label.",
+    "Author headings should be classified as section_header for indexing."
+  ],
+  "doc_id": "2940",
+  "page": 39,
+  "elapsed_seconds": 7.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

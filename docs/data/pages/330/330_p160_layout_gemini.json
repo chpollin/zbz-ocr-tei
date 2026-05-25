@@ -1,0 +1,58 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "126 IDOLOGIES ET RALIT",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The header containing the page number 126 and title was missing a region and incorrectly labeled or omitted."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "être proposé en termes clairs, et il ne doit pas avoir pour fin de renforcer seulement les organes mêmes qui le proposent, c'est-à-dire les partis. Or nous nous trouvons ici, une fois de plus, aux prises avec une difficulté fondamentale, constante, inhérente à la condition humaine. Pour que n'importe quelle réalité accomplisse ce à quoi elle est destinée, il faut qu'elle se subordonne à cette fin et ne s'enlise pas dans le seul maintien de sa propre existence. Pourtant il faut qu'elle existe pour accomplir ce à quoi elle est destinée, et elle doit donc prendre soin d'elle-même. Telle est l'ambiguïté de la condition charnelle, que l'homme communique à tout ce qu'il touche, à tout ce qu'il produit. Son corps n'est pas sa raison d'être, mais sans son corps il ne peut plus servir aucune raison d'être. Le don de soi a ses limites ; sont-elles transgressées, on abandonne tout et tous en mourant; et les limites du suicide sont imprécises. La sainteté, au sens rigoureux, n'est pas possible. Non propter vitam vitæ perdere causas. Certes, mais où s'opère la séparation des eaux? Et il ne s'agit pas seulement de vivre ou de mourir. Il s'agit de sommeil, de nourriture, d'hygiène. La pauvreté prêchée par le christianisme aurait sans doute attiré plus d'êtres humains si elle pouvait être un dépouillement absolu. Mais le corps est toujours là et la pauvreté le rend encombrant. Elle ne peut être que médiocre.",
+      "bbox": {
+        "x_pct": 12.159,
+        "y_pct": 10.784,
+        "w_pct": 85.195,
+        "h_pct": 45.66
+      },
+      "changed": true,
+      "change_reason": "The text content in the region was fragmented and truncated in the previous OCR interpretation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pourrait suivre ces paradoxes bien loin. Ils règnent sur la révolution industrielle moderne — cette brusque multiplication par l'homme de sa présence physique au monde. Nul ne sait si un tel surcroît de corps le libère ou l'asservit. Les partis appartiennent au corps social. Comme tout corps, ils ont à aménager une réalité matérielle à des fins spirituelles. Ils tendent à accroître les possibles de la liberté. Comme tout corps, ils ne sont pas leur propre fin, mais ils cessent de pouvoir servir leur fin s'ils disparaissent ou même s'affaiblissent. Comme tout corps, ils ont besoin de santé — ici, sur le plan politique, de force; les fins mêmes auxquelles ils se subordonnent les consacrent, leur confèrent une valeur spirituelle, leur commandent de se maintenir, d'être forts, de croître.",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "This paragraph was completely missed in the initial detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès lors, la tentation constante des partis — et elle prend souvent les apparences d'un devoir — c'est de présenter le choix aux citoyens non dans ses termes les plus clairs, mais dans ceux qui",
+      "bbox": {
+        "x_pct": 12.354,
+        "y_pct": 82.62,
+        "w_pct": 85.209,
+        "h_pct": 6.774
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly inaccurate in the provided JSON regions",
+    "Missing text paragraph between major blocks",
+    "Missing header/page number in regions"
+  ],
+  "doc_id": "330",
+  "page": 160,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais on respire, à chaque souffle une indifférence absolue à l’adieu.",
+      "bbox": {
+        "x_pct": 10.218,
+        "y_pct": 11.522,
+        "w_pct": 65.576,
+        "h_pct": 5.324
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Présence absence, souvenir-rêve ou réalité, différence absolue. Et pourtant, quelle importance?",
+      "bbox": {
+        "x_pct": 10.218,
+        "y_pct": 17.241,
+        "w_pct": 65.539,
+        "h_pct": 8.856
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Durer: importance? Et durer toujours : présence ? quelle importance?",
+      "bbox": {
+        "x_pct": 13.818,
+        "y_pct": 25.761,
+        "w_pct": 52.642,
+        "h_pct": 5.837
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ladieu, dans le réel, est partout. Tout est mortel, même le tout.",
+      "bbox": {
+        "x_pct": 10.424,
+        "y_pct": 42.414,
+        "w_pct": 65.455,
+        "h_pct": 5.442
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un jour, d’une façon ou d’une autre, par le chaud ou le froid, par la famine, ou l’explosion, ou la tornade, ou l’eau, ou la sécheresse, ou le feu, – un jour, le plus tard possible, la Terre n’aura plus ses témoins humains. Un jour elle perdra même ses animaux et ses plantes et ses couleurs telles qu’elles se forment dans les yeux des vivants, et ses signaux qui pour les vivants rythment le temps. Un jour, qui ne sera plus un jour, pour rien, ni personne. La prodigieuse parenthèse sera tombée.",
+      "bbox": {
+        "x_pct": 9.939,
+        "y_pct": 48.141,
+        "w_pct": 65.939,
+        "h_pct": 31.253
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "103",
+      "bbox": {
+        "x_pct": 71.03,
+        "y_pct": 82.261,
+        "w_pct": 3.758,
+        "h_pct": 2.296
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and assigned as page_footer/filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original transcriptions for paragraphs were fragmented or hallucinated punctuation/content.",
+    "Page number 103 was not identified by the detector."
+  ],
+  "doc_id": "2260",
+  "page": 103,
+  "elapsed_seconds": 4.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

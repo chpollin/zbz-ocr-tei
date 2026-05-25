@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "68 L'Être ET LA FORME",
+      "bbox": {
+        "x_pct": 18.237,
+        "y_pct": 100,
+        "w_pct": 68.514,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header corrected"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dès lors la part de prise dépend dun acte du sujet, la démarcation représente plus connaissance; nai",
+      "bbox": {
+        "x_pct": 18.353,
+        "y_pct": 13.645,
+        "w_pct": 68.514,
+        "h_pct": 7.259
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rapport dinterprétation indifférent rapport de décret, dans les deux cas il ne saurait   s'agir dun ",
+      "bbox": {
+        "x_pct": 18.237,
+        "y_pct": 21.131,
+        "w_pct": 68.629,
+        "h_pct": 15.034
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il en aulrement en art Ici la forme esl, soi. Elle   n est pas   distinguée   dialectiquement sein d",
+      "bbox": {
+        "x_pct": 18.237,
+        "y_pct": 36.067,
+        "w_pct": 68.859,
+        "h_pct": 27.866
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, si pour l'art un poisson et des citrons n'existent pas, si des montagnes, une rivière, un soleil couchant n'existent pas, si tous les antécédents représentatifs de l'œuvre n'existent pas, ses antécédents affectifs n'existent pas davantage. La foule, avec son idéalisme facile, son spiritualisme émotif, croit, en vertu d'un postulat moral, que la sensation vaut moins que l'émotion, la copie de la",
+      "bbox": {
+        "x_pct": 18.237,
+        "y_pct": 64.212,
+        "w_pct": 68.859,
+        "h_pct": 7.425
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph content"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing body paragraph at the bottom of the page",
+    "Page header was not labeled in input"
+  ],
+  "doc_id": "110",
+  "page": 70,
+  "elapsed_seconds": 8.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

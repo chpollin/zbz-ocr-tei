@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Félément de propagande ou de progression dans l’opinion a été quasi inexistant. D’ailleurs, à ma connaissance, on ne s’est guère interrogé à ce sujet : je ne connais pas d’ouvrage qui se soit interrogé sur la diffusion idéologique du communisme en 1917. En revanche, la façon dont s’est établi le régime hitlérien en 1933 — je ne parle pas des années préalables déjà marquées par une progression et une conquête de l’opinion — mais la façon dont il s’est propagé en 1933, je l’ai vécue moi-même, comme je l’ai raconté. Il y avait là quelque chose de tout à fait spécifique, ou alors qui correspond peut-être à ce qui se produit quand le pouvoir totalitaire communiste est déjà établi. C’est-à-dire l’intimidation de chaque individu par la masse, la réduction au silence, l’investissement de la conscience individuelle par la conscience incarnée dans la force ; le fait que la peur devient la forme même de la conscience, qu’elle en tient lieu, qu’elle empêche même tout sentiment opposé de surgir.",
+      "bbox": {
+        "x_pct": 15.263,
+        "y_pct": 3.927,
+        "w_pct": 79.89,
+        "h_pct": 28.306
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est-ce que vous pensez que cette analyse est valable encore pour certains régimes actuels que l’on qualifie de fascistes, que l’on a connus ou qui existent encore, je pense à l’Europe d’il y a une dizaine ou une quinzaine d’années ou à l’Amérique latine ?",
+      "bbox": {
+        "x_pct": 15.458,
+        "y_pct": 32.371,
+        "w_pct": 79.536,
+        "h_pct": 8.516
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela ne me paraît pas valable pour les régimes d’Amérique latine, parce que là j’ai l’impression que l’opposition consciente y est très claire et qu’il y règne un pur régime de force, d’ailleurs dans l’ensemble moins rigoureux que ne l’est le régime communiste.",
+      "bbox": {
+        "x_pct": 15.507,
+        "y_pct": 40.565,
+        "w_pct": 79.451,
+        "h_pct": 8.387
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR, fixed label from list_item to text as it is a paragraph response."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "A.D. — Et la manière dont le régime se maintient est analogue ?",
+      "bbox": {
+        "x_pct": 15.458,
+        "y_pct": 48.976,
+        "w_pct": 73.136,
+        "h_pct": 2.903
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header because it identifies the speaker (A.D.)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans une certaine mesure. Mais le régime bolchévique, le régime communiste actuel, a un réseau d’espionnage personnel incomparable ment plus développé qu’il ne l’a jamais été dans l’Allemagne hitlérienne. Le régime d’espionnage personnel, dans chaque maison, dans chaque foyer d’étudiants, dans chaque famille, se caractérise par un perfectionnement du contrôle de chacun qui empêche quoi que ce soit de naître, plus encore que dans l’Allemagne hitlérienne. Je dirais qu’en Allemagne, ce qui empêchait la révolte, c’était la peur, directement la peur, la peur devant la force, devant la brutalité, la menace de mort partout flottante. Tandis qu’en URSS, c’est plus subtil, chacun risque à tout moment de perdre un avantage ou son gagne-pain ou sa demeure. Il y a une espèce d’interdépendance, que Zinoviev a essayé de décrire, une espèce d’adaptation de chacun à son intérêt personnel, qui le paralyse complètement.",
+      "bbox": {
+        "x_pct": 15.348,
+        "y_pct": 50.831,
+        "w_pct": 79.695,
+        "h_pct": 28.444
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois par ailleurs que fascisme et communisme diffèrent fondamentalement sur le plan doctrinal. L’idéologie qui sert de fondement au totalitarisme communiste est en effet une doctrine ; j’ai dit que c’était une doctrine totalitaire, c’est une doctrine cohérente. C’est justement ce qu’elle a de pire. Elle est issue d’Engels et de Marx ; elle propage une conception de l’homme, de sa vie et de sa condition, elle enferme l’homme",
+      "bbox": {
+        "x_pct": 15.543,
+        "y_pct": 78.895,
+        "w_pct": 79.487,
+        "h_pct": 12.339
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "122",
+      "bbox": {
+        "x_pct": 15.11,
+        "y_pct": 93.306,
+        "w_pct": 3.75,
+        "h_pct": 2.258
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer as it contains page number."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 7,
+  "issues": [
+    "Initial OCR was very poor and needed complete text restoration.",
+    "Incorrect label for page number.",
+    "Incorrect label for speaker identification (section header).",
+    "List item label was inappropriate for standard paragraph text."
+  ],
+  "doc_id": "2330",
+  "page": 126,
+  "elapsed_seconds": 8.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'un d'eux, le célèbre physicien Robert Oppenheimer, est devenu un de vos amis.",
+      "bbox": {
+        "x_pct": 15.873,
+        "y_pct": 4.298,
+        "w_pct": 79.89,
+        "h_pct": 2.661
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je l'ai rencontré pour la première fois après la guerre en 49 ou 50. C'était lors d'un congrès, organisé par le Congrès pour la liberté de la culture, qui s'est tenu en Suisse orientale, près du lac de Constance. Il réunissait différentes personnalités du monde de la science, de la philosophie et de la politique. Mais bien avant ce congrès, j'avais dit une fois à un ami que, s'il y avait encore une personne au monde que je voulais connaître, c'était Oppenheimer. Cet ami m'a proposé de le rencontrer chez une tierce personne. Mais je n'ai pas voulu. J'ai toujours pensé que si quelqu'un est célèbre et intéressant, tout le monde n'a pas pour autant le droit de l'accaparer pour lui-même et de lui dévorer son temps. Bien plus tard, donc, j'arrive à ce congrès, quelques jours après son début. Quelqu'un vient me chercher à la gare et me dit : « Vous avez ici un admirateur, c'est Oppenheimer. » Que s'était-il passé ? J'avais envoyé d'avance, comme on nous l'avait demandé, un petit texte de deux ou trois pages, qui s'appelait Nous, aujourd'hui et qui traitait de notre rapport actuel à la science. Ce texte avait plu à Oppenheimer, qui le montrait aux autres participants. C'est ainsi que j'ai fait sa connaissance. Par la suite, je l'ai rencontré à Genève, à l'occasion des Rencontres Internationales de 1964, auxquelles participait également Victor Weisskopf. Nous avons beaucoup parlé tous les trois, à cette occasion. Plus tard, Oppenheimer a organisé une semaine d'étude chez une amie à lui, qui avait une grande propriété au nord de l'Etat de New York. Il avait organisé ce colloque strictement privé de la manière suivante : il avait fait une liste des domaines qui lui paraissaient essentiels aujourd'hui et il avait invité un spécialiste pour chaque domaine. Pour l'architecture, par exemple, il avait invité W.-K. Harrison, l'architecte qui a construit le bâtiment de l'ONU à New York ; pour les problèmes politiques, Georges Kennan ; pour les problèmes de l'armement, un technicien spécialisé dans ce domaine. Et il m'avait invitée pour la philosophie. Nous étions une douzaine. Et là, j'ai vu comment Oppenheimer dirigeait les débats. Il était, bien sûr, un grand physicien, mais il était aussi un homme qui avait un sens poétique et métaphysique de la vie. Lorsqu'il dirigeait un débat, son effort ne tendait pas à faire s'affronter en un point précis les opinions énoncées, mais plutôt à ouvrir, autour de ce qui avait été dit, un espace plus vaste et plus profond. Il vous élargissait constamment l'esprit, non pas dans le flou, mais selon une nouvelle dimension, qui s'ajoutait à ce qui avait été pensé jusque-là. Sa saisie spirituelle allait toujours plus loin que ce qui avait été compris et exprimé.",
+      "bbox": {
+        "x_pct": 15.751,
+        "y_pct": 8.387,
+        "w_pct": 80.256,
+        "h_pct": 75.782
+      },
+      "changed": true,
+      "change_reason": "OCR correction required to match document text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez eu l'occasion de prendre la défense d'Oppenheimer à propos d'une pièce sur son procès écrite par Jean Vilar.",
+      "bbox": {
+        "x_pct": 18.23,
+        "y_pct": 84.274,
+        "w_pct": 77.778,
+        "h_pct": 4.516
+      },
+      "changed": true,
+      "change_reason": "OCR correction required to match document text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.11. — Jean Vilar, un donnant, composait des pièces qu'il",
+      "bbox": {
+        "x_pct": 40.781,
+        "y_pct": 88.468,
+        "w_pct": 55.031,
+        "h_pct": 2.419
+      },
+      "changed": true,
+      "change_reason": "OCR correction required to match document text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "204",
+      "bbox": {
+        "x_pct": 16.712,
+        "y_pct": 95.323,
+        "w_pct": 2.872,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR quality was poor, requiring manual correction of text content.",
+    "Page number at bottom left was misclassified as text.",
+    "Multiple layout regions had significant spelling/tokenization errors."
+  ],
+  "doc_id": "2330",
+  "page": 208,
+  "elapsed_seconds": 9.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

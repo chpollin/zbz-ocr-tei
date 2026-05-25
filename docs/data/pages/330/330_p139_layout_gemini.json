@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 105",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header elements like IDOLOGIES ET RALIT 105 were missing in regions and should be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lui-même comme symboliquement consistant. Il n'a plus de qualités essentielles, plus d'essence. Par exemple, la famille, la tradition auxquelles il appartenait, il ne les éprouvait naguère ni comme « déterminisme historique » (donc comme un ensemble de facteurs le déterminant du dehors), ni comme intervention providentielle, ni comme hasard. Ce n'étaient pas là des éléments venant s'ajouter à son étre; ils lui paraissaient constitutifs de son essence, comme aussi l'appartenance à une classe, à une profession. Ses passions même le constituaient essentiellement. Le roi Lear est le Roi — s'il cesse de l'étre, il ne devient pas un roi détrôné, il cesse d'étre. Et Phèdre est sa passion. Ni elle ni personne ne pourra les séparer l'une de l'autre, non parce que sa passion est une force extérieure invincible, mais parce qu'elle est Phèdre même.",
+      "bbox": {
+        "x_pct": 2.549,
+        "y_pct": 11.346,
+        "w_pct": 84.22,
+        "h_pct": 28.824
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated; corrected to include full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au contraire; le sujet moderne n'est ni ceci, ni cela, ni cela... Il échappe à toutes les qualités, il les souffle hors de soi, il est cet échappement même. Il refuse toutes les images de soi. Il n'accepte finalement qu'un verbe étre, qui, au lieu de jouer le rôle d'une copule entre lui et ses attributs (copule faite pour passer inaperçue en signifiant une identité), le sépare de ses qualités et lui permet finalement de s'en passer. Le verbe étre une fois devenu absolu, on aboutit à la formule de Sartre. A la question : « Qu'est-ce que je suis? » posée par un sujet dont l'étre consiste à s'échapper des qualités, on ne peut en effet donner que la réponse de Sartre : « Je suis rien. »",
+      "bbox": {
+        "x_pct": 2.326,
+        "y_pct": 40.045,
+        "w_pct": 84.401,
+        "h_pct": 23.262
+      },
+      "changed": true,
+      "change_reason": "Text content was severely truncated in initial detection; corrected to represent the full block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous l'avons vu, les fonctions et les rapports sociaux une fois vidés de leur substance symbolique, toute densité ontologique et toute force impérative des valeurs ne reposait plus que sur l'étre de chaque sujet humain. Mais ce sujet lui-même paraît se vider de toute substance jusqu'à étre seulement rien. L'homme qui « est rien » peut-il soutenir par sa seule présence le système social?",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing text block detected between main paragraphs."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faudrait pas ici céder au malentendu exploité trop souvent, plus ou moins consciemment, contre Sartre. « Je suis rien » ne signifie pas « je ne suis rien », mais bien « je suis libre », « je suis conscience et liberté ». On entrevoit ici un ordre de l'étre (et non du néant) qui n'est ni quelque chose, ni rien, — auquel tout notre pouvoir représentatif reste inadéquat : celui de la liberté.",
+      "bbox": {
+        "x_pct": 2.549,
+        "y_pct": 74.75,
+        "w_pct": 84.318,
+        "h_pct": 12.888
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated; corrected to include full paragraph text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text detection truncated significantly in all paragraph blocks.",
+    "Page header was ignored by the system.",
+    "A paragraph block between the second and third paragraphs was completely missed."
+  ],
+  "doc_id": "330",
+  "page": 139,
+  "elapsed_seconds": 6.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

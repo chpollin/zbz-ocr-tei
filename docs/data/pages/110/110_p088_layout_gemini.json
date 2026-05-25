@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "86 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 17.146,
+        "y_pct": 2.0,
+        "w_pct": 69.01,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "garanties   dobjectivité: dahord se faire selon un ordre nécessaire (imposé par le terme même & expl",
+      "bbox": {
+        "x_pct": 17.146,
+        "y_pct": 13.948,
+        "w_pct": 69.01,
+        "h_pct": 53.478
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La définition de tout  concept   doué dune véritable résistance # logique (c'est-à-dire dune existen",
+      "bbox": {
+        "x_pct": 16.951,
+        "y_pct": 67.631,
+        "w_pct": 68.516,
+        "h_pct": 7.593
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header"
+  ],
+  "doc_id": "110",
+  "page": 88,
+  "elapsed_seconds": 5.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

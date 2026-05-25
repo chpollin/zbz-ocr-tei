@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "der maßgebendste Mann. Ich kann nur beim Nach denken mithelfen. Für mich ist in diesem Zusammenhang der Begriff der Autorität besonders wichtig. In dieser schwierigen, komplexen Umwelt wird es uns nicht gelingen, unsere Heimat unter Aufrechterhaltung der <Demokratie à la Suisse> an die nächste Generation weiterzugeben, wenn nicht wieder die <Autorität> in dieses Land einzieht und demokratisch gewählte Autoritäten als solche auftreten, die Kraft und Mut dazu haben. Mit chaotischer Gleichmacherei kann man kein Land führen. Aber was heißt Autorität? Ich meine nicht die erzwungene Autorität, sondern diejenige, die ausströmt von der Persönlichkeit, von den Persönlichkeiten, denen man Vertrauen entgegenbringen kann. Es geht, wie wir dies schon beim Unternehmer gesehen haben, um Glaubwürdigkeit. Vielleicht ist es in der Politik noch schwieriger, diese Glaubwürdigkeit zu entwickeln oder zu halten, denn im Gegensatz zur Urdemokratie und abgesehen von einem kleinen Kanton wie beispielsweise Uri sind die Beziehungen zwischen dem Bürger und gewählten Politikern sehr lose geworden. Zwischen dem Bürger und dem Politiker haben sich unterschiedliche Kräfte eingefügt. Der Bürger hat kaum mehr die Möglichkeit, die Ideen, die Überzeugungen eines gewählten Vertreters persönlich zu erfassen, auch wenn die Massenmedien, wie man glaubt, diese dem Volk vermitteln. Autorität kann wohl nur entstehen, wenn der Autoritätsträger und der Bürger sich im weitesten Sinne des Wortes menschlich nahestehen.",
+      "bbox": {
+        "x_pct": 7.729,
+        "y_pct": 4.825,
+        "w_pct": 65.181,
+        "h_pct": 71.79
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and did not match the actual full paragraph content in the image."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "und eine mögliche Antwort: mehr Autorität",
+      "bbox": {
+        "x_pct": 75.362,
+        "y_pct": 69.58,
+        "w_pct": 14.976,
+        "h_pct": 6.788
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to caption as this appears to be a sidebar/marginal note."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG. Wir sind hier, scheint mir, an einem sehr wichtigen Punkt angelangt. Wir haben vorher von der Totalität gesprochen. Im Geistigen wie im Politischen hat Totalität etwas mit Absicherung zu",
+      "bbox": {
+        "x_pct": 8.176,
+        "y_pct": 79.112,
+        "w_pct": 64.686,
+        "h_pct": 9.367
+      },
+      "changed": true,
+      "change_reason": "Text content corrected to match the image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "33",
+      "bbox": {
+        "x_pct": 39.061,
+        "y_pct": 91.077,
+        "w_pct": 1.767,
+        "h_pct": 1.956
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer and reclassified."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text blocks did not match visual content accurately.",
+    "Page number at the bottom was mislabeled as text.",
+    "Marginal note was mislabeled as text."
+  ],
+  "doc_id": "2400",
+  "page": 32,
+  "elapsed_seconds": 5.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

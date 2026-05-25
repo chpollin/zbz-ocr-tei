@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 109",
+      "bbox": {
+        "x_pct": 322.0,
+        "y_pct": 89.0,
+        "w_pct": 530.0,
+        "h_pct": 9.0
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page header/page number region as _filter instead of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme peut s'offrir le luxe d'une souffrance plus parfaite, plus intégrale, plus adéquate à de mystérieux critères, que celle d'un insatisfait. Et il y a aussi, en lui, des appétits négatifs, des appétits de privation, de distance et d'absence. On voit dès lors l'ambiguïté irrémédiable de notions aussi sommaires que celle des « intérêts ». Et qu'on ne dise pas que j'introduis là une complication spécifiquement bourgeoise destinée à masquer la simplicité fondamentale du schéma marxiste, selon lequel, certes, la classe exploitée sait bien, à l'unanimité, quels sont ses intérêts. Il est vrai que les besoins fondamentaux sont en général simples et communs. Mais dès que ceux-ci sont satisfaits au niveau minimum qui permet de vivre au sens strictement biologique du terme, la diversité commence. En fin de compte, par ce mot dont la coquetterie est de se tenir terre à terre, ce mot d' « intérêts » qui sert de formule magique à tout un secteur de la sociologie contemporaine, se trouve réintroduite, subrepticement et sans élucidation, une philosophie des valeurs et par là une métaphysique — fussent des valeurs matérialistes et une métaphysique qui se nie elle-même. Qui définira les intérêts des moines, des indigènes asiatiques engourdis au bord de leurs fleuves, des esclaves bien nourris dans une étable modèle, du loup et du chien de La Fontaine?",
+      "bbox": {
+        "x_pct": 4.833,
+        "y_pct": 118.838,
+        "w_pct": 84.624,
+        "h_pct": 40.936
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction from OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais admettons même des intérêts communs, dûment reconnus par la majorité. La démocratie se justifie-t-elle par le soutien du grand nombre et n'est-elle en rien compromise par l'écrasement des intérêts d'une minorité? Chacun sentira bien qu'il n'en est pas ainsi. C'est sur le prestige inaliénable conféré à chaque individu que s'appuie en nous la légitimité démocratique, et nullement sur celui du nombre. Assez curieusement, c'est chaque suffrage individuel qui nous paraît consacrer la valeur du suffrage universel, et nullement la masse des suffrages victorieux, qui s'impose pourtant au système entier. La soumission à cette masse a quelque chose de résigné. Ce n'est pas elle qui entretient la flamme, qui alimente l'adhésion.",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 568.774,
+        "w_pct": 84.485,
+        "h_pct": 228.816
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction from OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le suffrage universel ne paraît donc pas être le critère essentiel d'un système démocratique. On l'a vu d'ailleurs par le rôle corrompu qu'il a pu jouer lors des plébiscites quasi unanimes des régimes totalitaires. Il est trop simple de dire, comme on le fait",
+      "bbox": {
+        "x_pct": 4.415,
+        "y_pct": 810.078,
+        "w_pct": 84.345,
+        "h_pct": 88.61
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text extraction from OCR output."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily corrupted/garbled in the detection layer.",
+    "Page number 109 and header text need to be separated from main body text region.",
+    "Bounding boxes appear to be misaligned with the actual text lines due to scan perspective."
+  ],
+  "doc_id": "330",
+  "page": 143,
+  "elapsed_seconds": 9.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

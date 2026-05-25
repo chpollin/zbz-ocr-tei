@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">PHILOSOPHIE ET TECHNIQUE / PHILOSOPHY AND TECHNOLOGY</title>
+        <author>André Mercier</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2140</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>PHILOSOPHIE ET TECHNIQUE / PHILOSOPHY AND TECHNOLOGY</title>
+          <author>André Mercier</author>
+          <date>1984</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-pass-auto" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 7p 4o 1l 5w = 17</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="829" lry="1199">
+      <zone xml:id="facs_1_r_1" ulx="128" uly="100" lrx="756" lry="158" />
+      <zone xml:id="facs_1_r_2" ulx="126" uly="342" lrx="756" lry="509" />
+      <zone xml:id="facs_1_r_3" ulx="453" uly="627" lrx="756" lry="769" />
+      <zone xml:id="facs_1_r_4" ulx="126" uly="739" lrx="425" lry="769" />
+      <zone xml:id="facs_1_r_5" ulx="545" uly="1049" lrx="716" lry="1155" />
+      <zone xml:id="facs_1_r_6" ulx="130" uly="1057" lrx="489" lry="1157" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="830" lry="1199">
+      <zone xml:id="facs_2_r_1" ulx="29" uly="1093" lrx="713" lry="1124" />
+      <zone xml:id="facs_2_r_2" ulx="370" uly="1141" lrx="406" lry="1153" />
+      <zone xml:id="facs_2_r_3" ulx="66" uly="1159" lrx="247" lry="1172" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="829" lry="1199">
+      <zone xml:id="facs_3_r_1" ulx="86" uly="86" lrx="178" lry="108" />
+      <zone xml:id="facs_3_r_2" ulx="642" uly="89" lrx="736" lry="109" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="829" lry="1199">
+      <zone xml:id="facs_4_r_1" ulx="84" uly="99" lrx="239" lry="119" />
+      <zone xml:id="facs_4_r_2" ulx="83" uly="154" lrx="144" lry="178" />
+      <zone xml:id="facs_4_r_3" ulx="83" uly="193" lrx="733" lry="278" />
+      <zone xml:id="facs_4_r_4" ulx="83" uly="291" lrx="734" lry="575" />
+      <zone xml:id="facs_4_r_5" ulx="86" uly="595" lrx="218" lry="615" />
+      <zone xml:id="facs_4_r_6" ulx="83" uly="628" lrx="733" lry="715" />
+      <zone xml:id="facs_4_r_7" ulx="84" uly="759" lrx="733" lry="837" />
+      <zone xml:id="facs_4_r_8" ulx="84" uly="855" lrx="732" lry="937" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="830" lry="1199">
+      <zone xml:id="facs_5_r_1" ulx="876" uly="1230" lrx="1473" lry="1450" />
+      <zone xml:id="facs_5_r_2" ulx="883" uly="1616" lrx="7387" lry="2722" />
+      <zone xml:id="facs_5_r_3" ulx="879" uly="2867" lrx="7389" lry="6620" />
+      <zone xml:id="facs_5_r_4" ulx="892" uly="6773" lrx="7403" lry="8213" />
+      <zone xml:id="facs_5_r_5" ulx="890" uly="8346" lrx="7392" lry="11469" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="829" lry="1199">
+      <zone xml:id="facs_6_r_1" ulx="86" uly="83" lrx="723" lry="137" />
+      <zone xml:id="facs_6_r_2" ulx="413" uly="171" lrx="427" lry="184" />
+      <zone xml:id="facs_6_r_3" ulx="83" uly="211" lrx="192" lry="235" />
+      <zone xml:id="facs_6_r_4" ulx="85" uly="251" lrx="723" lry="390" />
+      <zone xml:id="facs_6_r_5" ulx="84" uly="406" lrx="722" lry="696" />
+      <zone xml:id="facs_6_r_6" ulx="84" uly="706" lrx="722" lry="852" />
+      <zone xml:id="facs_6_r_7" ulx="84" uly="864" lrx="722" lry="1035" />
+      <zone xml:id="facs_6_r_8" ulx="84" uly="1048" lrx="721" lry="1160" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="830" lry="1199">
+      <zone xml:id="facs_7_r_1" ulx="87" uly="124" lrx="739" lry="263" />
+      <zone xml:id="facs_7_r_2" ulx="88" uly="278" lrx="682" lry="334" />
+      <zone xml:id="facs_7_r_3" ulx="89" uly="348" lrx="740" lry="400" />
+      <zone xml:id="facs_7_r_4" ulx="88" uly="419" lrx="738" lry="472" />
+      <zone xml:id="facs_7_r_5" ulx="379" uly="497" lrx="441" lry="536" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div type="text">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          DA 19876
+        </head>
+        <p facs="#facs_1_r_2">
+          <orgName ref="#zbz-o.342">INSTITUT INTERNATIONAL DE PHILOSOPHIE</orgName><lb facs="#facs_1_l_2_1" n="N001" /><orgName ref="#zbz-o.342">international institute of philosophy</orgName>
+        </p>
+        <p facs="#facs_1_r_3">
+          <bibl ref="#zbz-w.1">PHILOSOPHIE</bibl><lb facs="#facs_1_l_3_1" n="N001" />ET<lb facs="#facs_1_l_3_2" n="N002" />TECHNIQUE
+        </p>
+        <p facs="#facs_1_r_4">
+          PHILOSOPHY<lb facs="#facs_1_l_4_1" n="N001" />AND<lb facs="#facs_1_l_4_2" n="N002" />TECHNOLOGY
+        </p>
+        <p facs="#facs_1_r_5">
+          edited by <persName ref="#zbz-p.869">andrê mercier</persName><lb facs="#facs_1_l_5_1" n="N001" />berne &amp;amp; paris<lb facs="#facs_1_l_5_2" n="N002" /><bibl ref="#zbz-w.327">1984</bibl>
+        </p>
+        <p facs="#facs_1_r_6">
+          984-33823-0<lb facs="#facs_1_l_6_1" n="N001" />/1g
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          
+        </p>
+        <p facs="#facs_2_r_2">
+          (c) <orgName ref="#zbz-o.343">INSTITUT DES SCIENCES EXACTES DE L'UNIVERSITE DE BERNE</orgName><lb facs="#facs_2_l_2_1" n="N001" />à <orgName ref="#zbz-o.342">INSTITUT INTERNATIONAL DE PHILOSOPHIE</orgName> <placeName ref="#zbz-l.1">PARIS</placeName>
+        </p>
+        <p facs="#facs_2_r_3">
+          tous droits réservés<lb facs="#facs_2_l_3_1" n="N001" /><bibl ref="#zbz-w.327">1984</bibl><lb facs="#facs_2_l_3_2" n="N002" />reproduction interdite
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          3
+        </p>
+        <p facs="#facs_3_r_2">
+          |  SOMMAIRE | CONTENTS  |<lb facs="#facs_3_l_2_1" n="N001" />| --- | --- |<lb facs="#facs_3_l_2_2" n="N002" />|  <persName ref="#zbz-p.594">MAX BLACK</persName>, Introduction | 5  |<lb facs="#facs_3_l_2_3" n="N003" />|  <bibl ref="#zbz-w.290">Thèses</bibl> présentées par |   |<lb facs="#facs_3_l_2_4" n="N004" />|  <persName ref="#zbz-p.2">JEANNE HERSCH</persName> | 13  |<lb facs="#facs_3_l_2_5" n="N005" />|  MAJID FAKHRY | 17  |<lb facs="#facs_3_l_2_6" n="N006" />|  ALEXANDRU TĂNASE | 21  |<lb facs="#facs_3_l_2_7" n="N007" />|  GERHARD HUBER | 31  |<lb facs="#facs_3_l_2_8" n="N008" />|  Commentaires préparés par |   |<lb facs="#facs_3_l_2_9" n="N009" />|  HĂKAN TÖRNEBOHM | 39  |<lb facs="#facs_3_l_2_10" n="N010" />|  MIHAILO MARKOVIĆ | 45  |<lb facs="#facs_3_l_2_11" n="N011" />|  Contributions à la discussion par |   |<lb facs="#facs_3_l_2_12" n="N012" />|  <persName ref="#zbz-p.594">MAX BLACK</persName> | 55  |<lb facs="#facs_3_l_2_13" n="N013" />|  FRANCIS JACQUES | 57  |<lb facs="#facs_3_l_2_14" n="N014" />|  RAYMUNDO PANIKKAR | 61  |<lb facs="#facs_3_l_2_15" n="N015" />|  E. W. F. TOMLIN | 73  |<lb facs="#facs_3_l_2_16" n="N016" />|  Conclusions par |   |<lb facs="#facs_3_l_2_17" n="N017" />|  <persName ref="#zbz-p.869">ANDRÉ MERCIER</persName> | 77  |<lb facs="#facs_3_l_2_18" n="N018" />|  Auteurs - Contributors | 89  |
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          13
+        </p>
+        <p facs="#facs_4_r_2">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>:
+        </p>
+        <p rendition="#b">Thèse I</p>
+        <p facs="#facs_4_r_3">
+            Thèse I:
+          </p>
+        <p facs="#facs_4_r_4">
+          Les succès de la technologie ont occulté le SENS de la technique. La technique consiste à plier les déterminismes physiques à des finalités humaines.
+        </p>
+        <p facs="#facs_4_r_5">
+          Elle n'est donc pas "matérialiste" par nature. Elle est au service de la liberté humaine, et tout dépend des fins auxquelles celle-ci la fait servir. Elle accroît le nombre, l'impact et la portée des choix possibles, et augmente ainsi la responsabilité des hommes. En diminuant la peine physique, en mettant à distance, jusqu'à un certain point, la pression des besoins naturels immédiats et celle des menaces extérieures, en réduisant le temps de travail nécessaire à la survie, elle permet à plus d'hommes l'accès à cette responsabilité et à leur véritable "condition humaine".
+        </p>
+        <p rendition="#b">Inversement</p>
+        <p facs="#facs_4_r_6">
+            Inversement:
+          </p>
+        <p facs="#facs_4_r_7">
+          Le développement de la technique a engendré au sein de la réalité sociale une sorte de "seconde nature" économique, comportant ses déterminismes propres, apparemment plus difficiles à plier à des finalités humaines que ceux de la "première".
+        </p>
+        <p facs="#facs_4_r_8">
+          D'où l'impression générale d'avoir été non pas libéré, mais asservi, d'être victime d'un apprenti sorcier, etc., - alors qu'il s'agit de tout autre chose.
+        </p>
+        <p>
+          C'est d'autant plus grave qu'un certain langage, une certaine manière de penser, imités de la technologie, tendent à s'immiscer jusque dans la liberté elle-même.
+        </p>
+        <p>
+          Il y a là pour les philosophes une tâche urgente d'élucidation et de discernement, dont peuvent dépendre dans une grande mesure l'éducation, la culture, et la re-création du "sens pour le sens" de la condition humaine, avec sa fonction incarnative et sa finitude.
+        </p>
+        <p>
+          - o -
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          14
+        </p>
+        <p rendition="#b">Thèse II</p>
+        <p facs="#facs_5_r_2">
+            Thèse II:
+          </p>
+        <p facs="#facs_5_r_3">
+          La technologie, comme d'ailleurs, dans une moindre mesure la science elle-même, n'a pas été assimilée CULTURELLEMENT par l'ensemble des gens dont elle façonne les conditions de vie, faute d'être saisie dans son DEVENIR HISTORIQUE.
+        </p>
+        <p facs="#facs_5_r_4">
+          Le public ne saisit que ses produits actuels, et quelque peu ses promesses pour un futur proche. Il n'a presque aucune conscience des étapes parcourues, des efforts accomplis, des recherches et des tentatives des savants et des inventeurs, du travail des ouvriers, investi dans chaque objet dont il se sert. Il ne compare guère la situation actuelle à celle de cinquante ans ou d'un siècle en arrière, mais plutôt à un état paradisiaque, où des exigences contradictoires seraient composables. Il ne comprend, dans l'ensemble, ni le processus de création, ni le processus de production, ni même celui d'échange, des objets techniques, et encore moins les ressorts de la recherche et le fonctionnement ainsi obtenu. Il vit dans un monde devenu illisible.
+        </p>
+        <p facs="#facs_5_r_5">
+          Il appartiendrait aux philosophes de replacer le développement technique dans le processus incarnatif et historique des êtres humains, dans le contexte de ce qu'on peut changer et de ce qu'il faut subir, - et de ce qu'on ne peut changer qu'en acceptant ce qu'il faut subir.
+        </p>
+        <p rendition="#b">En particulier</p>
+        <p>
+            En particulier: on considère presque toujours la science comme ayant eu le mérite, ou la culpabilité, d'avoir engendré le développement technique. Tout au plus admet-on que développement scientifique et développement technique sont interdépendants, dans la mesure où certaines conquêtes technologiques conditionnent souvent des progrès scientifiques décisifs. Mais on méconnaît une finalité inverse: grâce à la libération que permet la technique, des sujets de plus en plus nombreux peuvent s'adonner à l'une des activités fondamentales de l'être humain, qui n'a besoin d'aucune autre légitimation: celle de chercher à comprendre l'univers.
+          </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          15
+        </p>
+        <p facs="#facs_6_r_2">
+          La technique accroît les possibilités de liberté, donc aussi la liberté de connaître.
+        </p>
+        <p facs="#facs_6_r_3">
+          - o -
+        </p>
+        <p rendition="#b">Thèse III</p>
+        <p facs="#facs_6_r_4">
+            Thèse III:
+          </p>
+        <p facs="#facs_6_r_5">
+          L'informatique, comme la biologie moléculaire - ces deux domaines où la technique connaît aujourd'hui un développement fabuleux - utilisent conjointement un vocabulaire anthropomorphique dont les effets sur le public me paraissent redoutables.
+        </p>
+        <p facs="#facs_6_r_6">
+          On y parle de messages, de codes à décoder, d'alphabets, de lettres, de mots, et ainsi de suite. Le mot-clé, c'est l'information. Cette terminologie semble remarquablement adaptée au stade actuel des connaissances: elle permet d'éviter - ou, disons, de contourner - le problème classique du finalisme ou de la causalité: l'information, ce n'est ni l'un, ni l'autre, ou les deux à la fois. Il est sans doute bon que, dans les deux domaines, ce problème aujourd'hui ne se pose pas. Et tout est bien tant que ceux qui utilisent ces termes sont conscients de se servir de métaphores.
+        </p>
+        <p facs="#facs_6_r_7">
+          Mais le public ne le sait pas. Il prend les mots tels qu'on les lui livre. Comme les chercheurs embellissent encore les choses en parlant de "machines qui pensent" et qui sont plus ou moins "intelligentes" ou parfois "stupides", le malentendu s'aggrave.
+        </p>
+        <p facs="#facs_6_r_8">
+          Ce qui s'efface, dans la conscience du public, c'est le sens de ce qui est spécifique du vivant, et surtout, de ce qui est spécifique de la conscience humaine. Peut-être est-ce justement ce que l'on veut effacer, comme étant une vieille superstition dépassée? Mais alors il faut que les philosophes s'en mêlent et qu'ils interrogent:
+        </p>
+        <p>
+          Quel sens donner au terme "message" quand il s'agit de quelque chose qui est adressé 1° par personne, 2° à personne? La même question doit être posée à propos de chacun des autres termes en question.
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          16
+        </p>
+        <p facs="#facs_7_r_2">
+          C'est qu'il n'y a message, ou information, etc., que lorsqu'il s'agit de transmettre un sens. Il est dangereux de passer, sous le camouflage de certains mots (même dans la recherche de pointe la pus prestigieuse et la plus féconde), du domaine des faits à celui du sens.
+        </p>
+        <p facs="#facs_7_r_3">
+          Le sens implique la possibilité de décoller des faits pour apercevoir autre chose.
+        </p>
+        <p facs="#facs_7_r_4">
+          Lorsque <persName ref="#zbz-p.31">JACQUES MONOD</persName> parlait de téléonomie, il ne pouvait évacuer la finalité.
+        </p>
+        <p facs="#facs_7_r_5">
+          Il ne faudrait pas faire entrevoir les noces d'un robot et d'une femme, ou l'inverse.
+        </p>
+        <p>
+          - o -
+        </p>
+      </div>
+      </body></text>
+</TEI>

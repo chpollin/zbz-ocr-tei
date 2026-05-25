@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PREMIERE PARTIE",
+      "bbox": {
+        "x_pct": 29.111,
+        "y_pct": 22.974,
+        "w_pct": 39.97,
+        "h_pct": 2.86
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ambiguïté du problème philosophique.",
+      "bbox": {
+        "x_pct": 17.922,
+        "y_pct": 27.998,
+        "w_pct": 61.642,
+        "h_pct": 3.622
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE PREMIER",
+      "bbox": {
+        "x_pct": 30.678,
+        "y_pct": 40.896,
+        "w_pct": 36.837,
+        "h_pct": 2.412
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "I. Les caractères spécifiques du problème philosophique",
+      "bbox": {
+        "x_pct": 15.813,
+        "y_pct": 45.663,
+        "w_pct": 66.717,
+        "h_pct": 4.48
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La question de l'origine du monde a été de tout temps une question philosophique. Mais plusieurs sciences voient en elle, à tort ou à raison, une question scientifique ultime. C'est en outre une question théologique. On voit par cet exemple que le caractère philosophique d'un problème ne réside pas nécessairement dans la question posée, mais ailleurs: soit dans l'intention de celui qui questionne, soit dans la méthode dont procède sa réponse, soit dans la réponse elle-même. La question est théologique quand la réponse, sans être démontrée, est reconnue comme un dogme, qu'on ne la critique plus, qu'elle devient article de foi. La question est scientifique quand s'efforce d'y trouver une",
+      "bbox": {
+        "x_pct": 10.949,
+        "y_pct": 53.07,
+        "w_pct": 76.295,
+        "h_pct": 36.254
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text content."
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Original text extraction for the final paragraph was incomplete and garbled."
+  ],
+  "doc_id": "20",
+  "page": 17,
+  "elapsed_seconds": 3.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

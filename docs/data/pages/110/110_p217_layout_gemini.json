@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 11.601,
+        "y_pct": 100,
+        "w_pct": 16.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "215",
+      "bbox": {
+        "x_pct": 76.0,
+        "y_pct": 100,
+        "w_pct": 4.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page number in header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "devra tenir de   laction; sur le plan   descriptif, SUT le psychologique (cohérence de   chaque pers",
+      "bbox": {
+        "x_pct": 11.601,
+        "y_pct": 13.733,
+        "w_pct": 68.433,
+        "h_pct": 44.234
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il même des cas extrêmes où le dynamisme indépendamment des conlraintes techniques;  se trouve assez",
+      "bbox": {
+        "x_pct": 11.671,
+        "y_pct": 58.445,
+        "w_pct": 68.283,
+        "h_pct": 13.103
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header regions added",
+    "Labels were incorrectly defined as text"
+  ],
+  "doc_id": "110",
+  "page": 217,
+  "elapsed_seconds": 6.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ID\u0000\u0000OLOGIES ET R\u0000\u0000ALIT\u0000\u0000 21",
+      "bbox": {
+        "x_pct": 296,
+        "y_pct": 74,
+        "w_pct": 634,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "etroite relation se trouve un ouvrier avec son usine, dans l'horlogerie, par exemple, lorsqu'il n'y a, dans la vallee où il loge avec sa famile, que deux usines ou trois, deux patrons ou trois. Le chômage, alors, s'il survient, paralyse toute la vie d'un coup. Or, en régime soviétique, il n'y a qu'un patron. Dès lors, de l'immense unité économique qu'est l'État, dépendent les possibilités de vie quotidienne pour chacun. Une solidarité de fait lie tous les citoyens à l'État, si bien qu'un saboteur sabote réellement la vie même de tous, - ce n'est pas là une hyperbole de la propagande. La délation devient un devoir national, familial, individuel.",
+      "bbox": {
+        "x_pct": 25,
+        "y_pct": 107,
+        "w_pct": 849,
+        "h_pct": 223
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up OCR characters."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Politique ext\u0000\u0000rieure.",
+      "bbox": {
+        "x_pct": 26,
+        "y_pct": 350,
+        "w_pct": 232,
+        "h_pct": 15
+      },
+      "changed": true,
+      "change_reason": "Identified section header previously mislabeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'id\u0000\u0000ologie communiste oscille entre une propagande internationaliste et une propagande nationaliste, et elle joue presque toujours gagnant sur les deux tableaux. Sa propagande internationaliste repose sur l'ancienne opposition marxiste des classes, rempla\u0000\u0000ant celle des nations. Le prol\u0000\u0000tariat est fondamentalement le m\u0000\u0000me partout, ayant partout les m\u0000\u0000mes servitudes, la m\u0000\u0000me mission, les m\u0000\u0000mes ennemis, les m\u0000\u0000mes probl\u0000\u0000mes. Remarquons ici que, selon la conception communiste, les \u0000\u0000tres humains se d\u0000\u0000finissent par le groupe auquel ils appartiennent, et celui-ci par l'obstacle qu'il a \u0000\u0000 vaincre. Les hommes du prol\u0000\u0000tariat auront donc forc\u0000\u0000ment dans tous les pays les m\u0000\u0000mes opinions, les m\u0000\u0000mes positions politiques, fond\u0000\u0000es sur leur int\u0000\u0000r\u0000\u0000t commun. Or s'il arrive en fait - et il arrive constamment - que des partis ouvriers ou des syndicats de divers pays prennent devant un probl\u0000\u0000me des attitudes oppos\u0000\u0000es, cela ne peut avoir que l'un des trois motifs suivants : 1\u0000\u0000 certains d'entre eux ne sont pas de v\u0000\u0000ritables partis ouvriers, de v\u0000\u0000ritables syndicats, mais des organisations patronales camoufl\u0000\u0000es ; 2\u0000\u0000 ces partis, ces syndicats sont \u0000\u0000gar\u0000\u0000s par des \u0000\u0000tra\u0000\u0000tres\u0000\u0000 \u0000\u0000 la sold\u0000\u0000 du capitalisme ; 3\u0000\u0000 leurs dirigeants sont ignorants et ils ont besoin d'\u0000\u0000tre \u0000\u0000instruits\u0000\u0000 par le noyautage communiste.",
+      "bbox": {
+        "x_pct": 26,
+        "y_pct": 365,
+        "w_pct": 848,
+        "h_pct": 416
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors and split the section header out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est \u0000\u0000vident que si tout le r\u0000\u0000gime politique interne de l'U.R.S.S. et de ses satellites repose id\u0000\u0000ologiquement sur la connaissance scientifique de l'unique v\u0000\u0000rit\u0000\u0000, cette pr\u0000\u0000tention ne peut pas s'arr\u0000\u0000ter aux fronti\u0000\u0000res g\u0000\u0000ographiques des pays communistes (ou alors il faudrait admettre ailleurs l'existence d'une structure).",
+      "bbox": {
+        "x_pct": 27,
+        "y_pct": 780,
+        "w_pct": 845,
+        "h_pct": 105
+      },
+      "changed": true,
+      "change_reason": "Fixed corrupted OCR text segments."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 771,
+        "y_pct": 892,
+        "w_pct": 10,
+        "h_pct": 15
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original detection had significant OCR reading errors in paragraphs.",
+    "Section header was merged with paragraph text.",
+    "Page number and header were labeled as general text."
+  ],
+  "doc_id": "330",
+  "page": 55,
+  "elapsed_seconds": 19.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

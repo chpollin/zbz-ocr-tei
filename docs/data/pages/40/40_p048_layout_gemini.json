@@ -1,0 +1,37 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "50 TEMPS ALTERNÉS",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number and header were part of the main text detection but should be filtered out as metadata."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "plates-bandes ; mais à côté, bousculant la barrière lâche, il y en avait un autre, immense et sauvage. Des buissons s'y serraient en désordre sous de grands arbres anciens, et toutes sortes de bêtes y rôdaient. J'ai passé là des heures, à regarder la nuit monter de dessous les feuillages. La moindre brise prenait dans ce chaos de verdure une ampleur orchestrale. Les branchettes mortes, les plantes entrelacées bruissaient sourdement quand passait un chat, un hérisson, une fouine. De lourdes chauves-souris traçaient très bas, silencieusement, leurs cercles aveugles. Dans des profondeurs d'ombre, les sureaux balançaient vaguement leurs fleurs, épanchaient leur parfum. Maintenant, je savais à qui rapporter la beauté du monde. Maintenant, elle ne me noyait plus dans son infinité. Chaque mélodie avait trouvé son plan et sa résolution. Parfois la lune répandait sur un ciel uni des rayons calmes. Je regardais s'incliner les branches, et les iris émerger vaguement. Je recueillais le silence, la paix mêlée d'émoi. J'essayais de les partager avec lui. J'imaginais que contempler la nature avec lui serait un bonheur écrasant, mortel. L'obstacle qui l'empêchait d'être là m'apparaissait absurde au point d'être négligeable. Il me semblait qu'il m'aimait. J'aurais donné des années d'existence pour vivre quelques-unes de ces minutes à côté de lui, en sachant qu'il m'aimait. Mais je n'aurais rien fait pour cela, rien. C'était bien trop grand, tellement au delà de ce que peut produire l'effort. On ne prépare pas un miracle, on l'attend à peine. Je rendais grâce à Dieu de l'avoir connu, de l'aimer, même si je devais souffrir",
+      "bbox": {
+        "x_pct": 100.0,
+        "y_pct": 122.0,
+        "w_pct": 818.0,
+        "h_pct": 737.0
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated and contained artifacts/wrong segmentation; expanded to cover the full body text block."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original detection failed to capture the full paragraph correctly.",
+    "Page number and header were not separated from the main content in the initial scan.",
+    "OCR output in the provided prompt was incomplete and distorted."
+  ],
+  "doc_id": "40",
+  "page": 48,
+  "elapsed_seconds": 5.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

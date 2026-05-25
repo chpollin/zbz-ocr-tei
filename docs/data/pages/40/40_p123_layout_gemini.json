@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "15 novembre.",
+      "bbox": {
+        "x_pct": 659.0,
+        "y_pct": 285.0,
+        "w_pct": 257.0,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page header/date, not part of the main paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'étais plus séparée, mais tout était hors de moi, et je me mis à vivre hors de moi, dans l'amour et la recherche patiente de la piété sans miracle des choses. Le printemps qui naquit cette année-là ne vint pas du fond de l'infini sur des brises. Il sortit du sein de la terre et grandit suivant l'ordre nécessaire des éléments, des tiges, des feuilles, des fleurs. La mélancolie de l'éphémère et de ses retours n'avait plus de place dans l'espace rempli. Les fleurs d'iris, quand elles s'ouvrirent, ne me touchèrent plus comme naguère par la matière périssable et comme empoisonnée que délie leur trop subtile et trop savante architecture, — en quelques secondes la plus belle peut s'affaisser, devenir une loque violette, visqueuse à la main. Qu'elle contînt en elle un aussi violent élément de mort contribuait jusqu'alors à faire d'elle un signe et comme la pointe de présence d'autre chose. Mais j'appris à regarder les lignes de ses pétales, à enchaîner leurs courbes, à rapprocher leurs accords et leurs écarts, à contempler à part, puis plusieurs à la fois, puis toutes ensemble, leurs nuances et leurs ombres; je m'aperçus que mon regard n'épuisait jamais le corps de la fleur, qu'une vraie",
+      "bbox": {
+        "x_pct": 84.73,
+        "y_pct": 330.81,
+        "w_pct": 810.81,
+        "h_pct": 529.58
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text and ensured it reflects the full paragraph block."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "The header '15 novembre.' was incorrectly included as part of the paragraph block.",
+    "The OCR text for the paragraph was truncated and contained typos."
+  ],
+  "doc_id": "40",
+  "page": 123,
+  "elapsed_seconds": 4.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZBZ Pipeline-Viewer — Jeanne Hersch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/viewer.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- ============================================================ Header ============================================================ -->
+    <header class="app-header">
+      <h1><strong>Hersch</strong> Pipeline-Viewer</h1>
+      <div class="app-header__doc">
+        <div class="app-header__doc-meta" id="doc-meta" aria-live="polite"></div>
+        <div class="app-header__actions">
+          <button class="btn btn--sm" id="btn-download-layout"  title="Layout-JSON herunterladen" disabled>Layout ↓</button>
+          <button class="btn btn--sm" id="btn-download-text"    title="Transkription herunterladen" disabled>Text ↓</button>
+          <button class="btn btn--sm" id="btn-download-tei"     title="TEI-XML herunterladen" disabled>TEI ↓</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================ Body ============================================================ -->
+    <div class="app-body">
+
+      <!-- ---------------- Sidebar: Doc-Liste ---------------- -->
+      <aside class="sidebar" aria-label="Dokumenten-Liste">
+        <div class="sidebar__header">
+          <h2 class="sidebar__title">Korpus</h2>
+          <input class="input sidebar__search" id="doc-search" type="search" placeholder="Suchen (Titel, Autor, ID)…" aria-label="Dokumente suchen">
+          <div class="sidebar__filters" role="group" aria-label="Filter">
+            <button class="filter-chip" data-type="A" aria-pressed="false" title="Einspaltig">A</button>
+            <button class="filter-chip" data-type="B" aria-pressed="false" title="Zweispaltig">B</button>
+            <button class="filter-chip" data-type="C" aria-pressed="false" title="Monografie">C</button>
+            <button class="filter-chip" data-type="D" aria-pressed="false" title="Spezial">D</button>
+            <button class="filter-chip" data-demo="true" aria-pressed="false" title="Nur DEMO-Docs (4)">DEMO</button>
+          </div>
+        </div>
+        <div class="sidebar__list" id="doc-list" role="listbox" aria-label="Dokumente">
+          <div class="empty">Lade…</div>
+        </div>
+        <div class="sidebar__count" id="doc-count">—</div>
+      </aside>
+
+      <!-- ---------------- Main: Toolbar + Panels ---------------- -->
+      <main class="main" id="main">
+
+        <!-- Toolbar: Seitennav + Modus -->
+        <div class="toolbar">
+          <div class="toolbar__group" role="group" aria-label="Seitennavigation">
+            <button class="btn btn--sm btn--icon" id="btn-prev" title="Vorherige Seite" disabled>◀</button>
+            <span class="page-info" id="page-info">— / —</span>
+            <button class="btn btn--sm btn--icon" id="btn-next" title="Naechste Seite" disabled>▶</button>
+          </div>
+
+          <div class="toolbar__divider"></div>
+
+          <div class="toolbar__group" role="group" aria-label="OCR-Quelle">
+            <span style="font-size:var(--h-xs);color:var(--h-text-muted);">OCR:</span>
+            <select class="input" id="ocr-source" style="width:auto;font-size:var(--h-xs);padding:2px 6px;">
+              <option value="mistral">Mistral</option>
+              <option value="gemini_corrected_a">Gemini A</option>
+              <option value="gemini_corrected_b">Gemini B</option>
+              <option value="llm_corrected">LLM (Haiku)</option>
+              <option value="deepseek">DeepSeek</option>
+            </select>
+          </div>
+
+          <div class="toolbar__mode" role="group" aria-label="Ansichts-Modus">
+            <button class="mode-btn" data-mode="view"   aria-pressed="true"  title="Nur ansehen (read-only)">Anzeigen</button>
+            <button class="mode-btn" data-mode="layout" aria-pressed="false" title="Layout-Regionen bearbeiten">Layout</button>
+            <button class="mode-btn" data-mode="text"   aria-pressed="false" title="Transkription bearbeiten">Transkription</button>
+          </div>
+        </div>
+
+        <!-- Layout-Editor-Toolbar (nur sichtbar im Layout-Modus) -->
+        <div class="editor-toolbar hidden" id="layout-toolbar" aria-label="Layout-Editor-Werkzeuge">
+          <div class="editor-toolbar__group">
+            <button class="btn btn--sm" id="btn-region-add"    title="Region hinzufuegen (Drag auf Faksimile)">+ Region</button>
+            <button class="btn btn--sm" id="btn-region-delete" title="Selektierte Region loeschen" disabled>Loeschen</button>
+          </div>
+          <div class="toolbar__divider"></div>
+          <div class="editor-toolbar__group" id="region-type-selector">
+            <span style="font-size:var(--h-xs);color:var(--h-text-muted);">Typ:</span>
+            <select class="input" id="region-type" style="width:auto;font-size:var(--h-xs);padding:2px 6px;" disabled>
+              <option value="zb_heading">Heading</option>
+              <option value="zb_paragraph">Paragraph</option>
+              <option value="footnote">Fussnote</option>
+              <option value="caption">Caption</option>
+              <option value="_filter">Filter (entfernen)</option>
+              <option value="_skip">Skip</option>
+            </select>
+          </div>
+          <span class="editor-toolbar__hint">Region anklicken zum Selektieren · Eckpunkt ziehen zum Skalieren · Rechte Spalte = Reading-Order (drag &amp; drop)</span>
+        </div>
+
+        <!-- Panels: Faksimile (links) + Text/TEI (rechts) -->
+        <div class="panels" id="panels">
+
+          <!-- Faksimile-Panel -->
+          <section class="panel" id="panel-image" aria-label="Faksimile mit Layout-Overlay">
+            <div class="panel__header">
+              <span class="panel__title">Faksimile · Layout</span>
+              <span style="font-size:var(--h-xs);color:var(--h-text-muted);" id="region-count"></span>
+            </div>
+            <div class="panel__body" id="image-body">
+              <div class="empty">Kein Dokument ausgewaehlt</div>
+            </div>
+          </section>
+
+          <div class="panel__divider" id="divider" aria-hidden="true"></div>
+
+          <!-- Text/TEI-Panel -->
+          <section class="panel" id="panel-text" aria-label="Transkription + TEI">
+            <div class="panel__header">
+              <span class="panel__title" id="text-panel-title">Transkription</span>
+              <div role="group" aria-label="Text-Quelle" class="toolbar__mode" style="margin:0;">
+                <button class="mode-btn" data-text-source="ocr" aria-pressed="true"  title="OCR-Text">OCR</button>
+                <button class="mode-btn" data-text-source="tei" aria-pressed="false" title="Finales TEI">TEI</button>
+                <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI-Rohformat (XML)">XML</button>
+              </div>
+            </div>
+            <div class="panel__body" id="text-body">
+              <div class="empty">Kein Dokument ausgewaehlt</div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/core.js"></script>
+  <script src="js/tei-render.js"></script>
+  <script src="js/download.js"></script>
+  <script src="js/layout-editor.js"></script>
+  <script src="js/transcription-editor.js"></script>
+  <script src="js/viewer.js"></script>
+</body>
+</html>

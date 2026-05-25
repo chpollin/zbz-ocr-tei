@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "auxquelles elle a répondu précisément, moins par la plume, que par sa parole vive. Alors, cette parole, il fallait la prendre sur le vif, la recueillir avec l'essentiel de ce qu'elle a dit durant tant d'années, ramassé en un petit volume dont les pages ne sont pas des « pages d'écriture ».",
+      "bbox": {
+        "x_pct": 16.081,
+        "y_pct": 4.529,
+        "w_pct": 79.768,
+        "h_pct": 8.399
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faut pas demander : qui est J. Hersch ? Mais : d'où vient-elle ? Et sa vie, qu'elle raconte depuis les années de l'enfance, remplit de substance ses idées, ses convictions, ses intérêts — les justifie, les éclaire et les explique.",
+      "bbox": {
+        "x_pct": 15.995,
+        "y_pct": 47.924,
+        "w_pct": 79.768,
+        "h_pct": 8.367
+      },
+      "changed": true,
+      "change_reason": "Corrected severely garbled OCR text to match the original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La fidélité de J. Hersch est une fidélité sans concession, sans compromis, sans préjugés — ou presque, car qui a jamais réussi à s'en défaire complètement ? C'est une fidélité qui se permet, qui se doit de penser et de dire la vérité toute nue, même si elle est ou paraît infidèle. Et cette infidélité, apparente ou pas, c'est, chez J. Hersch, la part de la philosophie, pour laquelle aucun respect des origines ne vaut l'amour de l'origine première, de la vérité.",
+      "bbox": {
+        "x_pct": 16.081,
+        "y_pct": 55.857,
+        "w_pct": 79.646,
+        "h_pct": 12.204
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les Mélanges 1977, « Penser dans le temps » qui lui ont été offerts en 1977, ont été intitulés : « Penser dans le temps ». J. Hersch a reconnu elle-même : « Je suis davantage une présence à mon temps que l'auteur d'une œuvre. » Elle qui, le plus souvent, a préféré parler et, comme elle le dit, répondre, plutôt qu'écrire, a été en effet, peut-on affirmer, une grande contemporaine, à condition de préciser immédiatement : une contemporaine à contre-courant. Contemporaine, elle n'a cessé de l'être par ses convictions et ses intérêts, comme en témoigne, par exemple, son accord profond avec le courant créateur que a produit la science et la technique, cette « grande aventure humaine » de notre temps ; comme en témoignent encore ses engagements dans les combats pour la liberté qui ont été les nôtres. Mais à",
+      "bbox": {
+        "x_pct": 16.081,
+        "y_pct": 69.453,
+        "w_pct": 79.609,
+        "h_pct": 22.18
+      },
+      "changed": true,
+      "change_reason": "Corrected significantly garbled OCR text to match the original document content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "zb_paragraph",
+      "text": "8",
+      "bbox": {
+        "x_pct": 16.707,
+        "y_pct": 94.618,
+        "w_pct": 1.22,
+        "h_pct": 1.956
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number from text to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was very poor quality requiring significant manual reconstruction.",
+    "Page number not detected as page_footer."
+  ],
+  "doc_id": "2330",
+  "page": 12,
+  "elapsed_seconds": 5.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

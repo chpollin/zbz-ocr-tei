@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce qu'une opinion publique se fait entendre. Partout, tout le monde proteste, déclare la bombe criminelle. Mais les associations pacifistes n'ont rien construit contre la guerre qu'une façade d'opinions et de sentiments.",
+      "bbox": {
+        "x_pct": 10.027,
+        "y_pct": 5.938,
+        "w_pct": 83.916,
+        "h_pct": 7.832
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text based on visual content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Conversion éthico-politique. Jaspers va plus loin.",
+      "bbox": {
+        "x_pct": 10.203,
+        "y_pct": 15.278,
+        "w_pct": 61.07,
+        "h_pct": 2.288
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header as it is a sub-heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce qu'on a appelé longtemps « devoir », et qui ne concernait guère que la conscience individuelle, est devenu condition de survie pour l'humanité. « Sans conversion, la vie des hommes est perdue ».",
+      "bbox": {
+        "x_pct": 9.851,
+        "y_pct": 43.787,
+        "w_pct": 84.146,
+        "h_pct": 6.084
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais une conversion ne se laisse pas planifier. A la question « Que devons-nous faire ? », aucune réponse prescriptive ne peut être donnée. On ne peut que faire appel à des possibilités dormantes en montrant la situation actuelle telle qu'elle est, et en faisant entendre les voix exigeantes des siècles passés. Une conversion ne s'obtient pas par la force, elle n'est pas affaire d'opinion, mais de manière de vivre, dont chacun décide, dans sa liberté.",
+      "bbox": {
+        "x_pct": 9.892,
+        "y_pct": 49.383,
+        "w_pct": 84.106,
+        "h_pct": 13.659
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour le réaliste, la nature humaine reste ce qu'elle a toujours été. Absolument pessimiste, sans espérance, il pratique une politique au jour le jour. Le moraliste, lui, s'en tient à l'Idée d'un homme futur, re-né, et négligeant la réalité actuelle lui adresse des exhortations que personne n'entend.",
+      "bbox": {
+        "x_pct": 9.986,
+        "y_pct": 62.665,
+        "w_pct": 84.011,
+        "h_pct": 9.829
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tous deux oublient, pense Jaspers, ce que signifie « donner sa vie », « mourir », « sacrifier ». Il y a dans ces conduites quelque chose que « la raison empirique » ne suffit pas à expliquer. Quelque chose d'autre.",
+      "bbox": {
+        "x_pct": 10.027,
+        "y_pct": 72.091,
+        "w_pct": 83.916,
+        "h_pct": 7.943
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'alternative ultime. A la limite, la bombe atomique nous amène à poser à notre conscience une question étrange : une action humaine qui peut conduire à l'anéantissement total de l'humanité est-elle de ce fait absolument mauvaise ? Existe-t-il",
+      "bbox": {
+        "x_pct": 9.892,
+        "y_pct": 81.465,
+        "w_pct": 83.875,
+        "h_pct": 7.738
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "60",
+      "bbox": {
+        "x_pct": 10.203,
+        "y_pct": 91.531,
+        "w_pct": 2.228,
+        "h_pct": 2.288
+      },
+      "changed": true,
+      "change_reason": "Corrected identification of page number."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 8,
+  "issues": [
+    "Most text blocks were poorly transcribed with major omissions and errors.",
+    "Section header was identified as generic text.",
+    "Page number at the bottom was missing from the initial JSON regions."
+  ],
+  "doc_id": "1520",
+  "page": 66,
+  "elapsed_seconds": 8.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

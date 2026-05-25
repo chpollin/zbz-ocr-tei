@@ -3,19 +3,30 @@ Generiert Edition-Daten: catalog.json, entity_index.json, entity_register.json.
 
 Liest docs/data/dashboard.json + data/doc_metadata.json und erzeugt
 einen kompakten Katalog mit allen Dokumenten + Edition-Metadaten.
-Kopiert fehlende TEI-XMLs fuer Demo-Docs nach docs/data/examples/.
+
+Kopiert per-Seiten-Daten (Layout, OCR, TEI) nach docs/data/pages/{doc}/,
+damit der Viewer fuer alle 285 Docs ohne lokalen Server funktioniert
+(GitHub Pages tauglich).
 
 Usage:
-    python scripts/generate_edition_data.py
+    python scripts/generate_edition_data.py                  # voller Lauf inkl. Mirror
+    python scripts/generate_edition_data.py --no-mirror      # ohne per-Seiten-Mirror
+    python scripts/generate_edition_data.py --mirror-only    # nur Mirror, kein Katalog
 """
 
+import argparse
 import json
+import re
 import shutil
 from datetime import datetime
 from pathlib import Path
 
 from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_DIR, TEI_FINAL_DIR, TEI_CURATED_DIR, DOC_METADATA_PATH, ENTITIES_DIR
 from scripts.utils import load_json
+
+LAYOUT_DIR = PROJECT_ROOT / "output" / "layout"
+MISTRAL_DIR = PROJECT_ROOT / "output" / "mistral_results"
+PAGES_DIR = DOCS_DIR / "data" / "pages"
 
 
 FEATURED_DOCS = ["2310", "1000", "1330", "1540"]
@@ -75,6 +86,131 @@ def copy_demo_tei_files():
                     copied += 1
 
     return copied
+
+
+# ---------------------------------------------------------------------------
+# Per-Seiten-Mirror: macht den Viewer ohne lokalen Server fuer alle 285 Docs
+# ---------------------------------------------------------------------------
+
+_PB_RE = re.compile(r'<pb\s[^>]*/?>')
+_NS_RE = re.compile(r'\s+xmlns\s*=\s*"[^"]*"')
+_REVISION_RE = re.compile(r"<revisionDesc.*?</revisionDesc>", re.DOTALL)
+
+
+def _extract_pages_from_final(final_path: Path) -> dict:
+    """Splittet ein assembliertes TEI-Dokument in einzelne Seiten-Bodies.
+
+    Seitenzahl = sequenzielle Position der <pb>-Elemente (1-basiert), NICHT
+    das n-Attribut — denn etliche Docs (z. B. 100) tragen die originale
+    Journal-Pagination im n-Attribut (n="56"), wir brauchen aber 1,2,3...
+    passend zu den Bilddateinamen.
+
+    Returns: {page_number: xml_string} (mit minimalem TEI-Envelope).
+    """
+    try:
+        raw = final_path.read_text(encoding="utf-8")
+    except (IOError, OSError):
+        return {}
+
+    clean = _NS_RE.sub("", raw)
+
+    # Body extrahieren
+    body_match = re.search(r"<body[^>]*>(.*?)</body>", clean, re.DOTALL)
+    if not body_match:
+        return {}
+    body_inner = body_match.group(1)
+
+    matches = list(_PB_RE.finditer(body_inner))
+    if not matches:
+        return {1: _wrap_page(f"<body>{body_inner}</body>")}
+
+    pages = {}
+    for i, m in enumerate(matches):
+        page_num = i + 1
+        start = m.start()
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(body_inner)
+        chunk = body_inner[start:end]
+        pages[page_num] = _wrap_page(f"<body>{chunk}</body>")
+    return pages
+
+
+def _wrap_page(body_xml: str) -> str:
+    """Umschliesst einen Seiten-Body mit minimalem TEI-Envelope."""
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<TEI xmlns="http://www.tei-c.org/ns/1.0">\n'
+        '  <text>\n'
+        f'    {body_xml}\n'
+        '  </text>\n'
+        '</TEI>\n'
+    )
+
+
+def mirror_per_page_data(verbose: bool = False) -> dict:
+    """Spiegelt per-Seiten-Daten (Layout, Mistral-OCR, TEI) fuer alle 285 Docs
+    nach docs/data/pages/{doc}/.
+
+    Damit funktioniert der Viewer ohne lokalen Server (GitHub Pages tauglich)
+    fuer das gesamte Korpus, nicht nur die 4 Demo-Docs.
+
+    Returns: Statistik-Dict {layout, ocr, tei, docs}.
+    """
+    stats = {"docs": 0, "layout": 0, "ocr": 0, "tei": 0, "skipped": 0}
+
+    if not TEI_FINAL_DIR.exists():
+        print("  Mirror: tei_final/ nicht gefunden, ueberspringe")
+        return stats
+
+    PAGES_DIR.mkdir(parents=True, exist_ok=True)
+    final_files = sorted(TEI_FINAL_DIR.glob("*_final.xml"))
+
+    for final_path in final_files:
+        doc_id = final_path.stem.replace("_final", "")
+        doc_dir = PAGES_DIR / doc_id
+        doc_dir.mkdir(parents=True, exist_ok=True)
+
+        # 1. Layout-JSONs (Docling + Gemini)
+        layout_src = LAYOUT_DIR / doc_id
+        layout_n = 0
+        if layout_src.exists():
+            for src in layout_src.glob(f"{doc_id}_p*_layout*.json"):
+                dst = doc_dir / src.name
+                if not dst.exists() or src.stat().st_mtime > dst.stat().st_mtime:
+                    shutil.copy2(src, dst)
+                    layout_n += 1
+        stats["layout"] += layout_n
+
+        # 2. Mistral-OCR (Markdown, unpadded)
+        ocr_n = 0
+        for src in MISTRAL_DIR.glob(f"{doc_id}_p*.md"):
+            dst = doc_dir / src.name
+            if not dst.exists() or src.stat().st_mtime > dst.stat().st_mtime:
+                shutil.copy2(src, dst)
+                ocr_n += 1
+        stats["ocr"] += ocr_n
+
+        # 3. Per-Seiten-TEI aus tei_final extrahieren
+        pages = _extract_pages_from_final(final_path)
+        tei_n = 0
+        for page_num, xml in pages.items():
+            dst = doc_dir / f"{doc_id}_p{page_num}.xml"
+            try:
+                dst.write_text(xml, encoding="utf-8")
+                tei_n += 1
+            except (IOError, OSError):
+                pass
+        stats["tei"] += tei_n
+
+        # 4. Finales TEI auch nach pages/ kopieren (fuer Download-Fallback)
+        dst_final = doc_dir / f"{doc_id}_final.xml"
+        if not dst_final.exists() or final_path.stat().st_mtime > dst_final.stat().st_mtime:
+            shutil.copy2(final_path, dst_final)
+
+        stats["docs"] += 1
+        if verbose:
+            print(f"  {doc_id}: {layout_n} layout, {ocr_n} ocr, {tei_n} tei")
+
+    return stats
 
 
 def build_catalog():
@@ -414,11 +550,27 @@ def build_search_index():
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Edition-Daten fuer den Viewer generieren")
+    parser.add_argument("--no-mirror", action="store_true",
+                        help="Per-Seiten-Mirror ueberspringen (schneller, aber Viewer broken fuer 281 Docs)")
+    parser.add_argument("--mirror-only", action="store_true",
+                        help="Nur per-Seiten-Mirror laufen lassen, Katalog/Index unveraendert")
+    parser.add_argument("--verbose", "-v", action="store_true",
+                        help="Pro Doc Output")
+    args = parser.parse_args()
+
     print("Edition-Daten generieren...")
+
+    if args.mirror_only:
+        print("Per-Seiten-Mirror nach docs/data/pages/...")
+        stats = mirror_per_page_data(verbose=args.verbose)
+        print(f"\n  Mirror fertig: {stats['docs']} Docs, "
+              f"{stats['layout']} Layout, {stats['ocr']} OCR, {stats['tei']} TEI-Seiten")
+        return
 
     # 1. TEI-XMLs fuer Demo-Docs kopieren
     copied = copy_demo_tei_files()
-    print(f"  TEI-XMLs kopiert: {copied}")
+    print(f"  TEI-XMLs (Demo) kopiert: {copied}")
 
     # 2. Katalog bauen
     catalog = build_catalog()
@@ -441,6 +593,13 @@ def main():
         json.dumps(catalog, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
+
+    # 7. Per-Seiten-Mirror fuer alle 285 Docs (kann mit --no-mirror uebersprungen werden)
+    if not args.no_mirror:
+        print("\nPer-Seiten-Mirror nach docs/data/pages/...")
+        stats = mirror_per_page_data(verbose=args.verbose)
+        print(f"  Mirror fertig: {stats['docs']} Docs, "
+              f"{stats['layout']} Layout, {stats['ocr']} OCR, {stats['tei']} TEI-Seiten")
 
     print(f"\nEdition-Katalog geschrieben: {output_path}")
     print(f"  Dokumente: {catalog['edition']['total_docs']}")

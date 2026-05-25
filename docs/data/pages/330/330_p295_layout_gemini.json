@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 261",
+      "bbox": {
+        "x_pct": 293.0,
+        "y_pct": 65.0,
+        "w_pct": 435.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected header content and label from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "prendre une situation dans laquelle intervient comme facteur décisif l'exigence absolue et sauvage du moi, individuel et national; trop raisonnables donc pour y faire face avec la radicalité nécessaire. Ils croient bien aux Droits de l'Homme - mais, en quelque sorte, sous leur aspect extérieur de justice distributive, non à leur racine absolue, plongeant dans l'irréductibilité subjective de chacun.",
+      "bbox": {
+        "x_pct": 2.409,
+        "y_pct": 8.983,
+        "w_pct": 85.153,
+        "h_pct": 12.935
+      },
+      "changed": true,
+      "change_reason": "Cleaned up garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rien d'étonnant donc, si fascistes et communistes ont repris en chœur à propos de l'Algérie, sans aucune intention de résoudre les problèmes multiples, redoutables et urgents qu'elle pose sur tous les plans de l'existence collective, leurs slogans de propagande, profitant de l'occasion pour faire vibrer en leur faveur les cordes affectives du peuple : grandeur et intégrité de la nation française d'une part, sympathie avec les malheureux déshérités de l'autre. Rien d'étonnant non plus si conservateurs libéraux et démocrates progressistes n'ont pas eu à temps le sursaut d'imagination qui aurait été indispensable pour qu'une solution neuve, inédite, pût être proposée à ce conflit lui-même sans précédent : de tels sursauts ne se produisent que dans l'urgence, sous la pression d'une menace extrême - et cela, à travers le lent pourrissement de la situation, ni les uns ni les autres ne l'ont ressenti.",
+      "bbox": {
+        "x_pct": 1.992,
+        "y_pct": 23.461,
+        "w_pct": 85.474,
+        "h_pct": 28.93
+      },
+      "changed": true,
+      "change_reason": "Cleaned up garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On aurait pu, en revanche, espérer les socialistes mieux préparés à l'événement. Ils sont, par tradition et par sentiment, anticolonialistes et antiracistes. Nul doute que tous - sans excepter ceux qui ont pris le pouvoir - auraient été sincèrement heureux d'agir en accord avec leurs principes et leur sensibilité. Nul doute qu'en assumant la direction et la responsabilité des opérations militaires en Algérie, ils aient été moralement déchirés. Mais politiquement, cela n'a pas d'intérêt. Aussi peu d'intérêt que les trémolos de solidarité avec les Algériens que l'on a pu entendre à Paris, ces derniers mois, sans que personne, ou presque, propose un plan d'action suffisamment net pour remplacer celui que l'on tente d'appliquer. Mais applique-t-on vraiment un plan? Qu'ont fait les ministres socialistes? - Comme l'auraient fait à leur place des ministres français de n'importe quel parti, ils ont constaté un certain nombre d'impossibilités : impossibilité d'abandonner sans plus la population proprement française d'Algérie",
+      "bbox": {
+        "x_pct": 1.713,
+        "y_pct": 54.032,
+        "w_pct": 85.571,
+        "h_pct": 33.274
+      },
+      "changed": true,
+      "change_reason": "Cleaned up garbled OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 753.0,
+        "y_pct": 875.0,
+        "w_pct": 21.0,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Identified page footer number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily corrupted",
+    "Missing identification of running header",
+    "Missing identification of page number"
+  ],
+  "doc_id": "330",
+  "page": 295,
+  "elapsed_seconds": 5.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

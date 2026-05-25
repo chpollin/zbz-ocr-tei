@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "162",
+      "bbox": {
+        "x_pct": 19.09,
+        "y_pct": 2.0,
+        "w_pct": 3.7,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at bottom as page_footer/filter"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 66.86,
+        "y_pct": 2.0,
+        "w_pct": 17.55,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header as page_header/filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "réel de la science de nouvelles non pas   seulement   chérir en soi la vérité absolue, mais se   ser",
+      "bbox": {
+        "x_pct": 19.09,
+        "y_pct": 13.136,
+        "w_pct": 68.618,
+        "h_pct": 58.216
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number missing from initial labeling",
+    "Running header missing from initial labeling"
+  ],
+  "doc_id": "110",
+  "page": 164,
+  "elapsed_seconds": 6.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

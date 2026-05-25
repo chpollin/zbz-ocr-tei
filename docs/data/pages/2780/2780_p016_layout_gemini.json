@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "limitative et la condition de toute décision efficace. L'homme n'est jamais totalement libre, jamais il ne commence absolument le jeu ; il ne connaît pas de premier commencement, car le temps de l'«a- vant» et de l'«après» est toujours déjà là, avec sa causalité contraignante. Mais sans cette causalité l'homme ne pourrait prendre aucune décision car il serait incapable d'en prévoir les conséquences.",
+      "bbox": {
+        "x_pct": 14.756,
+        "y_pct": 13.737,
+        "w_pct": 57.458,
+        "h_pct": 18.07
+      },
+      "changed": true,
+      "change_reason": "Text was severely OCR-mangled and fragmented; corrected full content from visual transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a encore un troisième temps, que je voudrais appeler «éternité historique». Il me faut avouer tout de suite que je ne sais pas très bien ce que j'entends par là. Le terme ancien d'«éternité» transcende absolument notre capacité de penser et d'imaginer. Et pourtant la condition humaine comporte trop de choses qu'il est impossible de penser sans recourir à une telle notion, alors qu'il n'est pas possible non plus de ne pas les penser. Voici quelques exemples qui nous aideront peut-être.",
+      "bbox": {
+        "x_pct": 14.693,
+        "y_pct": 31.292,
+        "w_pct": 57.521,
+        "h_pct": 23.843
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/mangled text to accurately reflect the source paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Considérons d'abord une sorte d'éternité que nous connaissons : c'est l'éternité en tant qu'intemporalité, celle que nous rencontrons dans les figures et les rapports de la géométrie et des mathématiques. Un triangle isocèle, un cercle, «existent» hors du temps, ils n'ont rien à faire avec le temps ; et de même, toutes leurs propriétés et les théorèmes qui en dérivent sont absolument étrangers au temps, ils",
+      "bbox": {
+        "x_pct": 14.65,
+        "y_pct": 55.135,
+        "w_pct": 57.564,
+        "h_pct": 17.858
+      },
+      "changed": true,
+      "change_reason": "Corrected mangled OCR text to match original paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 68.796,
+        "y_pct": 74.887,
+        "w_pct": 1.707,
+        "h_pct": 1.839
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer and removed from text block processing."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was extremely poor, requiring full manual correction of text content.",
+    "Page number at the bottom was missing from the extraction list and needed to be labeled as page_footer."
+  ],
+  "doc_id": "2780",
+  "page": 16,
+  "elapsed_seconds": 5.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

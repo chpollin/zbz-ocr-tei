@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "afin de vivre l'heure zéro en regardant un visage ou en écoutant une voix? Imaginons un peu les séparations d'autrefois, qui duraient des mois et des années sans qu'on pût savoir si l'autre était mort ou vivant!",
+      "bbox": {
+        "x_pct": 23.152,
+        "y_pct": 11.379,
+        "w_pct": 66.085,
+        "h_pct": 14.272
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text content to match the visual source accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certes, chacune de ces conquêtes a engendré une nouvelle série de problèmes et de menaces. Mais si quelqu'un, à l'heure zéro, disposait du pouvoir magique d'annuler d'un seul coup ces conquêtes, avec la civilisation qui les a remportées, nul, j'en suis sûre, ne ferait usage de ce pouvoir. Cette civilisation, on ne l'a pas choisie pour nous. Nous ne cessons de la choisir, nous la choisirons encore à l'heure zéro. Et il n'est aucun peuple au monde qui puisse ne pas la choisir et en rejeter les bienfaits. Nul ne peut choisir pour ses proches la faim, la peste, la mort prématurée, quand les remèdes existent. Nous choisirons donc doublement cette civilisation, à l'heure zéro: pour nous-mêmes, et pour les autres, pour tous ceux qui attendent encore d'elle la fin de maux millénaires et écrasants.",
+      "bbox": {
+        "x_pct": 23.067,
+        "y_pct": 27.166,
+        "w_pct": 65.939,
+        "h_pct": 50.353
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text content to reflect the complete paragraph as it appears in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "58",
+      "bbox": {
+        "x_pct": 23.327,
+        "y_pct": 82.535,
+        "w_pct": 3.755,
+        "h_pct": 2.213
+      },
+      "changed": true,
+      "change_reason": "Corrected label from 'text' to 'page_footer' for the page number."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text transcription in region 1 was incomplete and contained typos.",
+    "Initial text transcription in region 2 was incomplete.",
+    "Page number at the bottom was mislabeled as 'text'."
+  ],
+  "doc_id": "2260",
+  "page": 56,
+  "elapsed_seconds": 3.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

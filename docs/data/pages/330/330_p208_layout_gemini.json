@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "174 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected page header classification from text/zb_paragraph to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fonctionnent en fait. Elle enseigne et invoque les valeurs mêmes qui la condamnent. Cette contradiction interne, ce dangereux paradoxe, lui donne à la fois sa fragilité, son incohérence, son allure incertaine — et ses possibilités futures. Rien n'est tout à fait perdu tant que l'exigence des valeurs humaines reste vivante.",
+      "bbox": {
+        "x_pct": 10.905,
+        "y_pct": 10.936,
+        "w_pct": 85.613,
+        "h_pct": 11.319
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cependant l'inégalité des structures économiques enlève au régime une grande part de son mérite essentiel : le contrôle maximum qu'il devrait permettre d'exercer sur les gouvernants. L'inégalité des ressources, des compétences et de la puissance économique le restreint singulièrement. Les ressorts cachés des décisions politiques, souvent enfoncés profondément dans des réalités d'ordre économique et commercial, échappent à la compréhension, et par conséquent au jugement, de la majorité des citoyens. Comme il faut bien, pourtant, s'expliquer, donner des raisons, comme les séances des parlements ne peuvent pas être muettes, on se résoud à donner les raisons les plus simples, les plus éloquentes possible. Les séances parlementaires deviennent des sortes de digest de la réalité politique et économique. Je ne parle pas ici, bien sûr, des mensonges, des falsifications ou des dissimulations volontaires qui s'y glissent. Ne considérons pour l'instant qu'une honnête séance de parlement, où chacun, admettons-le, fait de son mieux pour éclairer le problème et la solution qu'il préconise. Les discours tendent forcément à vulgariser le problème réel; comme toutes les vulgarisations, celle-ci entraîne non seulement que l'on simplifie, mais encore que l'on altère les choses : il faut que l'argumentation se tienne, que le public ait l'impression de comprendre clairement de quoi il s'agit; là où l'exposé exact deviendrait trop compliqué, on lui substitue un chaînon de pensée plus facile à saisir, et surtout, qui se rattache plus facilement à des « schèmes politiques » antérieurement élaborés. A la fin, ce que comprennent les journalistes, les députés et le public qui n'a pas étudié spécialement la question ressemble à la réalité complexe à peu près autant que l'univers non-euclidien dont débattent les artistes et les métaphysiciens ressemble à celui d'Einstein.",
+      "bbox": {
+        "x_pct": 10.543,
+        "y_pct": 21.185,
+        "w_pct": 85.877,
+        "h_pct": 61.141
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le public a de plus en plus l'impression que des séances de ce genre sont des spectacles ; que les vraies décisions sont prises ailleurs ; que les problèmes réels se posent en de tout autres termes. La technique parlementaire, destinée à rapprocher le gouverne-",
+      "bbox": {
+        "x_pct": 10.446,
+        "y_pct": 81.578,
+        "w_pct": 85.515,
+        "h_pct": 9.18
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page header was misclassified as text.",
+    "Transcriptions in all paragraphs contained significant OCR artifacts and typos.",
+    "Bbox for header was missing in original JSON input.",
+    "Text cleanup required to restore readability."
+  ],
+  "doc_id": "330",
+  "page": 208,
+  "elapsed_seconds": 7.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

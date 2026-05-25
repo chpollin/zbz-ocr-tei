@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'analyse, chez lui, loin d'être une discipline imposée en quelque sorte à l'affectivité de l'extérieur, est elle-même portée par un engagement passionné qui commande la recherche du vrai. Si elle s'avère parfois impitoyable pour les illusions les plus généreuses, pour celles que Aron lui-même voudrait nourrir, ce n'est pas, comme on l'affirme souvent, à cause de sa froideur, mais au contraire parce que ce qui est si souvent froid chez les autres, l'examen critique des données et des probabilités, s'enflamme en lui par sa finalité: la quête limpide, multiple, inlassable, du vrai. Et plus ce qui est en cause lui est cher, plus impitoyable devient l'examen. Raymond Aron a le sens critique passionné.",
+      "bbox": {
+        "x_pct": 11.865,
+        "y_pct": 9.409,
+        "w_pct": 74.485,
+        "h_pct": 20.178
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il en va ainsi lorsqu'il s'agit, en particulier après mai 68, de l'Université; ou encore, des Droits de l'homme, dans leurs rapports avec la politique; ou encore de notre Europe décadente, pour laquelle il écrivit son fameux «Plaidoyer». On pourrait donner bien d'autres exemples. De même, s'il refuse de vibrer à l'unisson des rhétoriques de la gauche, ce n'est pas que le sort de ceux qu'on appelle «les travailleurs» lui soit indifférent, mais tout au contraire, parce que l'enjeu étant réel et lourd, il refuse de se payer de mots, d'arborer de nobles sentiments, de recourir à des solutions qui n'en sont pas — ou à certains plans économiques actuels qui sont, à ses yeux, des «cercles carrés».",
+      "bbox": {
+        "x_pct": 11.625,
+        "y_pct": 30.639,
+        "w_pct": 74.645,
+        "h_pct": 18.495
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce discours est déjà bien trop long. Mais comment parler de Raymond Aron sans évoquer toutes les crises de ce siècle, et sa manière de répondre, chaque fois, «présent». Comment parler de lui sans mentionner au moins ce qu'il est, un extraordinaire journaliste, un professeur incomparable, un économiste, un philosophe, un écrivain, un historien. Je n'ai rien dit de son gros livre, «Penser la guerre, Clausewitz», pour lequel, je crois, il nourrit une certaine prédilection; rien non plus de «Paix et guerre entre les nations». J'ai l'impression de n'avoir rien dit.",
+      "bbox": {
+        "x_pct": 11.899,
+        "y_pct": 50.485,
+        "w_pct": 74.256,
+        "h_pct": 14.725
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avant de terminer, je voudrais pourtant préciser ce que Raymond Aron est pour moi de tout-à-fait unique: il incarne comme personne l'historicité humaine, avec l'entrecroisement de ses dimensions et de ses exigences contradictoires. L'impersonnalité et la distance, l'objectivité intemporelle, en même temps que l'enracinement dans les données concrètes d'un lieu, d'un temps, d'un passé, avec les attachements et les fidélités sans lesquels la liberté n'est qu'une abstraction. Le regard qui embrasse la longue durée d'où vient aux événements leur juste dimension, et la brûlure du présent vécu sans lequel l'ensemble sombrerait dans l'indifférence. Les contraintes économiques et les rapports de force par lesquels ne cesse de s'imposer notre appartenance à la nature et qui",
+      "bbox": {
+        "x_pct": 11.865,
+        "y_pct": 66.367,
+        "w_pct": 74.325,
+        "h_pct": 20.502
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 83.1,
+        "y_pct": 87.8,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "The initial OCR extraction truncated many words significantly.",
+    "Page number at bottom right was labeled as text, updated to page_footer."
+  ],
+  "doc_id": "1920",
+  "page": 9,
+  "elapsed_seconds": 7.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,88 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais dans sa pensée à lui, il n'y a jamais eu qu'amour de la liberté et volonté de justice pour les exploités de l'Occident, — lesquels d'ailleurs sont pour lui à peine plus concrets que les victimes lointaines et ignorées. C'est pourquoi un réformisme social-démocrate, qui cherche à améliorer chances de formation, logement, droits, conditions et durée du travail, sécurité sociale, etc., lui paraît avoir la tiédeur que le ciel vomit.",
+      "bbox": {
+        "x_pct": 15.599,
+        "y_pct": 6.631,
+        "w_pct": 79.269,
+        "h_pct": 15.146
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a souvent chez l'intellectuel un amour-propre, une jouissance de soi (y compris de sa révolte, de son angoisse et même de son remords) qui risque de pervertir son sens du réel, ou du moins d'altérer le poids de ce réel : ses attitudes morales comptent davantage. Il en résulte, chez un homme dont la lucidité est le premier devoir, une sorte de non-lucidité qui n'est pas fortuite, mais essentielle.",
+      "bbox": {
+        "x_pct": 15.385,
+        "y_pct": 21.927,
+        "w_pct": 79.407,
+        "h_pct": 13.148
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette « non-lucidité », qui néglige les conditions réelles de l'existence, comme aussi les besoins vitaux des hommes, se trouve être aujourd'hui à la source d'une propagande doublement aberrante, affirmant, avec un optimisme débridé, la possibilité d'une harmonie spontanée régnant sans contrainte aucune dans une société d'hommes nouveaux, tout en dénonçant, par une sinistrose systématique, la civilisation où nous vivons comme étant la pire possible. Optimisme et sinistrose qui excluent absolument toute amélioration réaliste en même temps que tout sens pour un tragique véritable, et qui ne peuvent prospérer que grâce à un idéalisme pervers, nourri par l'amour de soi.",
+      "bbox": {
+        "x_pct": 14.414,
+        "y_pct": 34.925,
+        "w_pct": 80.378,
+        "h_pct": 23.846
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Idéalisme pervers, et foncièrement anti-européen. Nombre d'intellectuels sont contre l'Europe unie pour des raisons idéologiques et politiques : parce qu'ils sont des nationalistes, ou (et) parce que l'URSS a toujours manifesté la plus fidèle hostilité aux tentatives faites pour fédérer notre continent, sans doute parce qu'elle en a mieux que d'autres compris la portée. Mais l'essentiel n'est pas là. L'hostilité des intellectuels d'aujourd'hui est plus profonde, si profonde même que souvent elle les inspire à leur insu. Elle concerne l'esprit européen.",
+      "bbox": {
+        "x_pct": 14.288,
+        "y_pct": 60.654,
+        "w_pct": 80.252,
+        "h_pct": 17.533
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Europe est le continent qui, dans tous les domaines et de toutes les manières, a vécu le plus intensément et le plus étroitement le va-et-vient entre l'esprit et les choses données. Elle est le continent de l'incarnation, c'est-à-dire celui où les idées, les conceptions, les",
+      "bbox": {
+        "x_pct": 13.96,
+        "y_pct": 77.745,
+        "w_pct": 80.277,
+        "h_pct": 8.612
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page number as page_footer"
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text transcriptions were highly truncated and inaccurate.",
+    "Page number 52 at bottom left was not identified and needs to be filtered."
+  ],
+  "doc_id": "1590",
+  "page": 6,
+  "elapsed_seconds": 6.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

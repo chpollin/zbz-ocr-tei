@@ -1,0 +1,120 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "158",
+      "bbox": {
+        "x_pct": 10.989,
+        "y_pct": 89.261,
+        "w_pct": 3.064,
+        "h_pct": 1.155
+      },
+      "changed": true,
+      "change_reason": "Page number misidentified as text paragraph."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ID\u0000OLOGIES ET R\u0000ALIT\u0000",
+      "bbox": {
+        "x_pct": 352.0,
+        "y_pct": 89.261,
+        "w_pct": 32.59,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Running header identified incorrectly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ou le soutiennent. Que pensent-ils? Que croient-ils? Par quoi sont-ils inspir\u0000s lorsqu'ils agissent et luttent de leur mieux?",
+      "bbox": {
+        "x_pct": 113.0,
+        "y_pct": 115.0,
+        "w_pct": 79.944,
+        "h_pct": 4.189
+      },
+      "changed": true,
+      "change_reason": "Text content cleanup and alignment."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DIVERSIT\u0000 TOTALE AVEC UNE SEULE CONSTANTE",
+      "bbox": {
+        "x_pct": 113.0,
+        "y_pct": 204.0,
+        "w_pct": 79.944,
+        "h_pct": 1.631
+      },
+      "changed": true,
+      "change_reason": "Corrected label for section heading and fixed text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En fait, on trouve parmi les socialistes et leurs sympathisants \u0000 peu pr\u0000s toutes les croyances religieuses et philosophiques. Il en est de chr\u0000tiens (catholiques ou protestants), avec toute la diversit\u0000 que ce terme englobe. Il en est qui adh\u0000rent \u0000 la religion juive, dans le monde arabe \u0000 la religion musulmane, et sans doute, en Asie, au bouddhisme. Il en est de positivistes ou d'agnostiques. Beaucoup sont r\u0000solument ath\u0000es, \u0000 avec toute la diversit\u0000 de n\u0000gation que ce mot, \u0000 son tour, recouvre. Il en est d'existentialistes, il en est de rationalistes. Il en est auxquel importants avant tout les \u0000uvres des cr\u0000ateurs, d'autres pour qui l'essentiel c'est le bonheur de tous, d'autres encore qui veulent la pl\u0000nitude de la vie humaine, avec ses possibilit\u0000s illimit\u0000es de joie et de souffrance. Selon les uns, le monde trouve son sens dans le destin de l'humanit\u0000, selon d'autres, l'homme ne fait que se d\u0000battre contre un monde hostile et indiff\u0000rent. Il en est qui croient \u0000 l'immortalit\u0000 de l'\u0000me et d'autres qui la nient. Il en est qui ne croient rien du tout parce que ces probl\u0000mes ne les int\u0000ressent pas. Il en est qui se moquent parce qu'ils ne veulent pas que ces probl\u0000mes les int\u0000ressent. Et ainsi de suite.",
+      "bbox": {
+        "x_pct": 107.0,
+        "y_pct": 239.0,
+        "w_pct": 84.97,
+        "h_pct": 37.7
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text errors and formatting issues."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans cette diversit\u0000, je ne trouve qu'une seule constante : explicitement ou implicitement tous croient \u0000 la valeur de la personne humaine, libre, responsable de son sort et de celui d'autrui, et capable d'une certaine prise sur la r\u0000alit\u0000 de l'histoire.",
+      "bbox": {
+        "x_pct": 106.0,
+        "y_pct": 631.0,
+        "w_pct": 85.01,
+        "h_pct": 6.08
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tel est le seul fondement commun que j'aie r\u0000ussi \u0000 trouver, sur le plan de l'adh\u0000sion philosophique ou religieuse, implicite ou explicite, dans l'esprit des socialistes d'aujourd'hui. Je ne crois pas qu'on puisse \u0000tre socialiste sans cette croyance fondamentale. Mais je ne crois pas que cette croyance fondamentale entra\u0000ne n\u0000cessairement une adh\u0000sion au socialisme. C'est la condition n\u0000cessaire, mais non suffisante, d'une telle adh\u0000sion.",
+      "bbox": {
+        "x_pct": 104.0,
+        "y_pct": 713.0,
+        "w_pct": 85.0,
+        "h_pct": 14.61
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text recovery."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est-ce beaucoup? La pauvret\u0000, la limitation m\u0000me d'un tel principe fondamental entra\u0000ne des cons\u0000quences nommables.",
+      "bbox": {
+        "x_pct": 107.0,
+        "y_pct": 856.0,
+        "w_pct": 84.68,
+        "h_pct": 4.87
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Severe OCR errors throughout document.",
+    "Running header and page number mislabeled as text.",
+    "Section title split and misidentified."
+  ],
+  "doc_id": "330",
+  "page": 192,
+  "elapsed_seconds": 7.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

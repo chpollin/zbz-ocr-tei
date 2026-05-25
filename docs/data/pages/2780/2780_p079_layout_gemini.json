@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n'y pense jamais. J'ai tenté d'apercevoir cette présence du temps dans la condition des êtres humains, même sans les prendre à témoin, sans tenir compte du contexte historique, matériel et culturel, qui est le leur, en tel lieu et à telle époque de l'histoire. Mais il faut bien constater que, de nos jours et en Occident, ces rapports ont pris un relief, un mordant sur nos vies, pour lesquels nous ne trouvons aucun précédent. Le vieux sage grec qui, le premier, s'est avisé de dire pantha rhei, a pu le faire dans un contexte incomparablement plus calme que le nôtre.",
+      "bbox": {
+        "x_pct": 28.602,
+        "y_pct": 13.712,
+        "w_pct": 57.595,
+        "h_pct": 26.214
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text transcription to match source material."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dabord, il se contentait de constater l'écoulement universel ; il ne l'imputait aucunement à lui-même et à ses contemporains.",
+      "bbox": {
+        "x_pct": 28.602,
+        "y_pct": 39.681,
+        "w_pct": 57.278,
+        "h_pct": 7.416
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or l'accélération prodigieuse des changements que les humains eux-mêmes ont introduits dans le monde où ils vivent, et dont ils sont responsables, - comme aussi les changements ultérieurs qui découleront de ces changements et qu'ils cherchent en vain à embrasser par leur science prospective - donnent au pantha rhei une toute autre dimension, un tout autre impact, et surtout une tout autre nature, - justement parce qu'ils s'en sentent responsables.",
+      "bbox": {
+        "x_pct": 28.464,
+        "y_pct": 46.361,
+        "w_pct": 57.627,
+        "h_pct": 21.832
+      },
+      "changed": true,
+      "change_reason": "Corrected major OCR misinterpretations in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est une étrange évolution, contradictoire elle aussi comme le temps lui-même. A notre époque,",
+      "bbox": {
+        "x_pct": 28.528,
+        "y_pct": 68.111,
+        "w_pct": 57.521,
+        "h_pct": 5.339
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "80",
+      "bbox": {
+        "x_pct": 28.8,
+        "y_pct": 74.8,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to correct label/tag."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was extremely low quality/hallucinated.",
+    "Page number missing from initial detection.",
+    "Multiple text blocks were poorly segmented and transcribed."
+  ],
+  "doc_id": "2780",
+  "page": 79,
+  "elapsed_seconds": 5.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

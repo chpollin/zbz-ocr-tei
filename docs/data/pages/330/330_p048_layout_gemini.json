@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 139.0,
+        "y_pct": 84.0,
+        "w_pct": 14.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 405.0,
+        "y_pct": 82.0,
+        "w_pct": 317.0,
+        "h_pct": 22.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header/zb_heading as this is the page title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "trationnaires sont, soit justifiees, soit niees. Nous allons voir comment.",
+      "bbox": {
+        "x_pct": 136.49,
+        "y_pct": 111.68,
+        "w_pct": 848.19,
+        "h_pct": 44.03
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text errors in transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La dictature communiste ne se pretend pas democratique au sens ou nous avons defini ce mot, c'est-a-dire au sens qu'on lui donne a l'Occident. Quelques plebiscites, quelques elections servent tout juste a brouiller les cartes, mais ne font pas doctrine. Selon l'ideologie communiste, la democratie a la mode occidentale serait a la fois (et une fois de plus, la contradiction, loin d'empecher l'adhesion, contribuera a la renforcer) inutile et dangereuse. Inutile, parce qu'elle n'a de sens que dans la diversite anarchique des opinions qu'engendre et que maintient en Occident la lutte des classes. Dans un regime communiste, ou a peu pres communiste et en voie de le devenir tout a fait, l'unanimite est une donnee fondamentale qui ne saurait etre mise en question. Sur ce point l'ideologie communiste ressemble a ce que nous avons vu pour le fascisme, mais avec une justification bien differente : dans le fascisme, l'unanimite resultait de l'abdication des opinions individuelles devant le prestige inspire du chef; dans le communisme, elle resulte de l'identite rationnelle dans l'interpretation des interets, desormais communs a tous, et de la realite historique. Dans le fascisme, on s'en remet au chef : il saura bien. Dans le communisme, en principe, ideologiquement, tout le monde devrait reflechir, et si la reflexion etait bien menee, elle coinciderait avec celle du dictateur. Il y a bien l'autocritique. Mais l'autocritique ressemble a la liberte de discussion qui existe entre des physiciens et des techniciens se referant a des fondements communs, postules ou verifies une fois pour toutes. Ces fondements etant impliques dans toute mise en question sans etre jamais mis en question eux-memes, ne peuvent que sortir renforces de la discussion. Et grbce a eux, il est evident que, dans la discussion, l'un des adversaires se trompe, et on va le lui demontrer. Il se trompe dans les limites permises - il est humain de se tromper - et il est bon de constituer une equipe qui tirera les consequences vraies des principes communs. Mais nulle part il n'y a de choix. Nulle part le choix n'affronte le choix. A quoi serviraient donc les formes democratiques occidentales dans ce monde unanime? A quoi proposer plusieurs listes aux electeurs puisqu'il n'y a qu'une qui soit bonne pour tous, et qu'il existe des techniciens de l'histoire, dans",
+      "bbox": {
+        "x_pct": 135.52,
+        "y_pct": 149.11,
+        "w_pct": 854.74,
+        "h_pct": 755.53
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors in the body text block."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was highly inaccurate, containing many phantom characters and garbled words.",
+    "Page number and section title were misidentified as main body text."
+  ],
+  "doc_id": "330",
+  "page": 48,
+  "elapsed_seconds": 7.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

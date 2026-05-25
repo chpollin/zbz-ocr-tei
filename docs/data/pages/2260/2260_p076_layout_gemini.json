@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "place pour lui là-bas. Peut-être est-ce l'essentiel: que la fête engendre une ordonnance solennelle où chacun se sente confirmé; dans l'ensemble, il a son rôle et sa juste place. C'est là, je crois, ce qui manque le plus aux hommes de notre temps: la certitude d'avoir une place bien à eux dans la fête, exubérante et tragique, du monde et de l'histoire. Plus encore que d'égalité, c'est de cette sécurité-là que les hommes ont besoin, parce que sans elle ils se prennent à mettre en doute le sens de leur propre vie. Vivre dans l'immensité de l'amorphe est insupportable car tout s'y dissout faute de sens.",
+      "bbox": {
+        "x_pct": 23.261,
+        "y_pct": 11.522,
+        "w_pct": 65.915,
+        "h_pct": 38.94
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content to match the visual source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est alors le règne du grand ennui de l'homme, du contraire de la fête: le règne de l'ennui.",
+      "bbox": {
+        "x_pct": 23.273,
+        "y_pct": 52.338,
+        "w_pct": 65.903,
+        "h_pct": 5.921
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content to match the visual source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Célébrons la fête, celle de chaque enfant, celle de chaque événement qui compte dans notre histoire.",
+      "bbox": {
+        "x_pct": 23.479,
+        "y_pct": 62.01,
+        "w_pct": 65.77,
+        "h_pct": 8.133
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content to match the visual source text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "76",
+      "bbox": {
+        "x_pct": 23.5,
+        "y_pct": 82.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and assigned correct filter label."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was significantly corrupted and did not match the document content.",
+    "Page number at bottom left was not detected by the initial pass."
+  ],
+  "doc_id": "2260",
+  "page": 76,
+  "elapsed_seconds": 3.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

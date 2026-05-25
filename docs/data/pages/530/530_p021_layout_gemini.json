@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "80",
+      "bbox": {
+        "x_pct": 99.0,
+        "y_pct": 82.0,
+        "w_pct": 27.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Page number 80 should be labeled as page_header / _filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 384.0,
+        "y_pct": 82.0,
+        "w_pct": 234.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle a été sa thèse fondamentale. Or elle a soulevé un tel tollé que, selon un journaliste suisse, jamais Khrouchtchev n’avait réussi à réaliser contre lui une telle unanimité des parties et de toutes les organisations politiques d’Allemagne. Ce tollé, on peut l’interpréter : je crois qu’il était plus apparent que réel et que Jaspers a exprimé une opinion qui est en fait celle de beaucoup de gens, seulement il ne faut pas le dire. Mais peu importe, — l’interview n’en a pas moins été retenue jusqu’au mois d’août, c’est alors seulement qu’elle a été diffusée. Alors, la presse de presque tous les pays en a parlé abondamment. La Gazette de Lausanne lui a consacré une page entière, la presse italienne, la presse américaine l’ont commentée. Mais pendant un mois à peu près, il n’y a rien eu, à ma connaissance, dans la presse française. Et tous les Français que j’ai rencontrés alors ignoraient tout de cette prise de position. Au bout d’un mois, un article a fini par paraître dans Le Monde. Je pense que la presse de langue française de Suisse romande a eu parfaitement raison de publier cette interview et de lui donner le relief qu’elle lui a donné : ainsi du fait de nos langues, nous avons malgré tout la possibilité de faire passer des nouvelles qui donnent des chances à l’Europe, dans les pays voisins lorsqu’ils ne les publient pas d’eux-mêmes, pour des raisons nationalistes. Et c’est là à mon avis, une de nos tâches capitales. Autre exemple : j’ai lu dans un tout petit entrefilet, je ne sais plus dans quel journal, que l’Allemagne diffuse actuellement à la télévision, deux fois par semaine, depuis le mois d’octobre dernier jusqu’au mois de mai prochain, quantité de documents",
+      "bbox": {
+        "x_pct": 97.0,
+        "y_pct": 130.0,
+        "w_pct": 788.0,
+        "h_pct": 791.0
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text extraction and aligned box."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original layout region was severely misaligned and text content was corrupted.",
+    "Page number and running header were incorrectly grouped into the main text paragraph."
+  ],
+  "doc_id": "530",
+  "page": 21,
+  "elapsed_seconds": 4.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

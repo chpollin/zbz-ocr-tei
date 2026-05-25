@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pêchent l'homme de s'installer dans une patrie, fût-elle la musique elle-même. La musique est trop humaine, trop liée aux exigences contradictoires de la liberté, pour nous offrir un véritable asile. Elle nous comble - et nous renvoie à nous-mêmes. C'est sans doute justement parce que l'homme, étroitement situé dans un lieu et en un moment de l'histoire, tissé dans les fils d'une patrie, reste cependant un banni à la recherche d'une autre patrie, différente et inaccessible, qu'il fait de la musique, et qu'il a besoin d'écouter de la musique pour continuer à vivre.",
+      "bbox": {
+        "x_pct": 26.165,
+        "y_pct": 13.434,
+        "w_pct": 57.701,
+        "h_pct": 26.819
+      },
+      "changed": true,
+      "change_reason": "The text was poorly OCRed, corrected to reflect actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous aussi, nous sommes étroitement situés dans ce moment appelé aujourd'hui, nous l'avons dit, «modernité». Ce qui la caractérise, me semble-t-il, c'est un prodigieux contraste : il semble que s'ouvrent d'une part des chances immenses, presque infinies, et qu'on atteigne de l'autre le fond d'une impasse. L'un et l'autre font peur.",
+      "bbox": {
+        "x_pct": 26.165,
+        "y_pct": 44.235,
+        "w_pct": 57.627,
+        "h_pct": 15.863
+      },
+      "changed": true,
+      "change_reason": "The text was poorly OCRed, corrected to reflect actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour nous en tenir à la musique, j'entends encore la voix d'un jeune compositeur qui exprimait récemment son embarras. Il avait le sentiment de ne plus rien pouvoir faire dans la musique polytonale ; mais il était impossible, disait-il aussi, de composer aujourd'hui de la musique classique.",
+      "bbox": {
+        "x_pct": 26.271,
+        "y_pct": 59.199,
+        "w_pct": 57.659,
+        "h_pct": 13.843
+      },
+      "changed": true,
+      "change_reason": "The text was poorly OCRed, corrected to reflect actual content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "44",
+      "bbox": {
+        "x_pct": 26.5,
+        "y_pct": 75.337,
+        "w_pct": 2.55,
+        "h_pct": 2.22
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer and re-labeled."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR for paragraph text was significantly corrupted.",
+    "Page number 44 was initially mislabeled as text."
+  ],
+  "doc_id": "2780",
+  "page": 43,
+  "elapsed_seconds": 4.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

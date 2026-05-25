@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sur eau ou Le temps a dis paru. Un autre temps vient de naître, tout différent.",
+      "bbox": {
+        "x_pct": 25.424,
+        "y_pct": 14.156,
+        "w_pct": 57.514,
+        "h_pct": 3.733
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La musique se déroule et s'enroule du même mouvement. Sans qu'on comprenne comment, elle est à la fois successive et simultanée. Ses notes et ses rythmes se suivent et s'effacent, se suivent en s'effaçant, mais en même temps ils ne s'effacent pas, chacun implique les précédents et les suivants et leur doit d'avoir un sens. Ils ne se conservent pas dans une mémoire qui serait comme l'espace filmé de leur succession, - non, ils constituent un tout dont le début et la fin sont inessentiels, plutôt encombrants. Il faut qu'il y ait un début et une fin, - mais ce n'est qu'une concession faite à la vie, parce qu'il faudra bien, dans le temps d'après, rejoindre le temps d'avant, celui des tâches interrompues. «Le temps du concert», qu'on emporte à la maison, n'a plus aucune étendue. Quelque part en moi, je vis de lui comme je ne sais pas vivre.",
+      "bbox": {
+        "x_pct": 25.424,
+        "y_pct": 18.067,
+        "w_pct": 57.514,
+        "h_pct": 36.333
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image content and refined bounding box identification."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette musique, j'en ai pourtant suivi le déroulement, je l'ai contemplé tel qu'il se faisait dans un temps dont j'étais absent, que je regardais du dehors, d'un point immobile, alors que lui passait comme un paysage vu d'un train. Un temps spatialisé, celui de la nature où il n'y a personne, que le physicien observe, dont il compare l'état à des moments différents, l'un avant, l'autre après, sans",
+      "bbox": {
+        "x_pct": 25.424,
+        "y_pct": 55.433,
+        "w_pct": 57.514,
+        "h_pct": 18.8
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors caused by OCR misalignment in the original detection."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 25.35,
+        "y_pct": 77.2,
+        "w_pct": 3.2,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected classification of page number from text to page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original detection split paragraphs incorrectly or missed content.",
+    "OCR text extraction was poor/corrupted in the original detection.",
+    "Page number at the bottom was misclassified as text."
+  ],
+  "doc_id": "2780",
+  "page": 27,
+  "elapsed_seconds": 4.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

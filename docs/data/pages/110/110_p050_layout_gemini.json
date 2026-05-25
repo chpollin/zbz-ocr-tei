@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "48",
+      "bbox": {
+        "x_pct": 20.359,
+        "y_pct": 2.0,
+        "w_pct": 2.946,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ETRE ET LA FORME",
+      "bbox": {
+        "x_pct": 67.757,
+        "y_pct": 2.0,
+        "w_pct": 21.674,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DEUXIÈME PARTIE",
+      "bbox": {
+        "x_pct": 41.657,
+        "y_pct": 15.771,
+        "w_pct": 25.466,
+        "h_pct": 1.997
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Ambiguïté de la forme",
+      "bbox": {
+        "x_pct": 39.39,
+        "y_pct": 18.96,
+        "w_pct": 29.885,
+        "h_pct": 2.225
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1. Diversité  des plans possibles et des coupures possibles entre et matière prise",
+      "bbox": {
+        "x_pct": 21.484,
+        "y_pct": 22.323,
+        "w_pct": 65.892,
+        "h_pct": 3.926
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lopposition du moi et du non-moi, de la et de la malière, simple, évidente et hanale. Le fait aussi ",
+      "bbox": {
+        "x_pct": 19.643,
+        "y_pct": 27.107,
+        "w_pct": 68.884,
+        "h_pct": 13.037
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais cette évidence négligeable se désagrégera  dès essavera de dire où se place la limite; où cesse",
+      "bbox": {
+        "x_pct": 19.597,
+        "y_pct": 39.939,
+        "w_pct": 68.815,
+        "h_pct": 16.932
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) Dans la connaissance tout d'abord: il suffit de concevoir la vérité constitutive de la science comme un rapport entre une formulation et une réalité positive, et ce rapport n'a pas besoin d'être élucidé davantage pour permettre la recherche des savants. Néanmoins, si l'on interrogeait ceux-ci sur l'endroit où ils font passer la limite entre res et intellectus, entre leur matière et leur prise, on obtiendrait des réponses souvent incertaines, et dans la mesure où elles seraient nettes, contradictoires. Certains pensent que la matière (au sens où ce mot est pris tout le long du présent",
+      "bbox": {
+        "x_pct": 19.643,
+        "y_pct": 58.74,
+        "w_pct": 68.815,
+        "h_pct": 25.441
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing paragraph"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page numbers and header regions detected and added.",
+    "Missing bottom text paragraph detected and added.",
+    "Score reduced for missing regions in original input."
+  ],
+  "doc_id": "110",
+  "page": 50,
+  "elapsed_seconds": 6.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

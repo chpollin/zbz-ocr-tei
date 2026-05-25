@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 89.288,
+        "y_pct": 3.791,
+        "w_pct": 4.148,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header as it is a page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "'Mauer der Schande' genannt wurde. Diese Mauer teilt auch die frühere Hauptstadt Berlin. Als die letzten Besprechungen zwischen den zwei Grossen stattgefunden haben, hat man sie anscheinend vergessen. Und doch sind viele junge Leute gestorben beim Versuch, sie zu überklettern.",
+      "bbox": {
+        "x_pct": 17.674,
+        "y_pct": 9.448,
+        "w_pct": 80.135,
+        "h_pct": 11.837
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match source."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "- Es gibt noch kein politisches Europa, das die Abwehr des Westens an der Ostgrenze auf sich nehmen könnte. Die neuen Vereinbarungen zwischen Reagan und Gorbatschow schwächen oder löschen die Dissuasion aus, die Westeuropa schützte, Berlin inbegriffen. Die Deutschen, die keine Nuklearverteidigung besitzen, müssen sich ausgesetzt fühlen.",
+      "bbox": {
+        "x_pct": 17.61,
+        "y_pct": 22.829,
+        "w_pct": 76.592,
+        "h_pct": 14.73
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match source."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "- Ausser diesen faktischen Gegebenheiten spielen auch mächtige psychologische Faktoren eine Rolle. Die Erinnerung an den Hitlerismus und an den letzten Weltkrieg nährt in Deutschland einen tiefgreifenden Pazifismus. Die ökologische Bewegung knüpft an die Ueberlieferungen der früheren \"Jugendbewegung\" an und wirkt in dieselbe Richtung. Schliesslich ist da noch die Sehnsucht nach Einheit, deren Wirkungskraft schwer abgeschätzt werden kann, und die heute nur von immer engeren Kontakten mit dem Osten etwas zu erwarten hat - also von der USSR.",
+      "bbox": {
+        "x_pct": 17.52,
+        "y_pct": 38.95,
+        "w_pct": 76.348,
+        "h_pct": 21.866
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match source."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Ideologie Gorbatschows passt nach Mass auf diese verschiedenen Sehnsüchte. Manche Initiativen, die relativ leicht durchzuführen wären, hätten die Möglichkeit, demnächst diese Verführungskraft noch zu stärken. Es wäre wohl nicht erst nötig, zu den Waffen zu greifen: jene Lage der Nicht-Abwehr genügt vollkommen, um die jungen Deutschen zur Neutralität hin abgleiten zu lassen.",
+      "bbox": {
+        "x_pct": 8.81,
+        "y_pct": 63.48,
+        "w_pct": 86.862,
+        "h_pct": 14.454
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match source."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "3 Und dann wird es zu spät sein, damit die französische und britische atomare Dissuasion noch eine Rolle spielen könnte, um den Rest eines politischen Europas zu schaffen.",
+      "bbox": {
+        "x_pct": 4.175,
+        "y_pct": 80.164,
+        "w_pct": 76.592,
+        "h_pct": 7.201
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match source."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "(14. Januar 1988)",
+      "bbox": {
+        "x_pct": 40.835,
+        "y_pct": 93.385,
+        "w_pct": 24.329,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text extraction was corrupted by OCR errors.",
+    "Page number missing from initial labels.",
+    "Page date at bottom misidentified as paragraph text."
+  ],
+  "doc_id": "2570",
+  "page": 3,
+  "elapsed_seconds": 7.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

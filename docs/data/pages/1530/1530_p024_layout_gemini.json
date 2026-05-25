@@ -1,0 +1,140 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA NATURE DU POUVOIR 1",
+      "bbox": {
+        "x_pct": 31.286,
+        "y_pct": 21.405,
+        "w_pct": 35.689,
+        "h_pct": 2.066
+      },
+      "changed": true,
+      "change_reason": "Correction of label to section_header and tag to zb_heading for document title."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Entretien public 2",
+      "bbox": {
+        "x_pct": 39.015,
+        "y_pct": 26.86,
+        "w_pct": 20.429,
+        "h_pct": 2.645
+      },
+      "changed": true,
+      "change_reason": "Designated as footnote due to indicator 2."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "professeur à la Faculté des lettres de l'Université de Genève et président des RIG",
+      "bbox": {
+        "x_pct": 17.149,
+        "y_pct": 33.612,
+        "w_pct": 64.392,
+        "h_pct": 4.76
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "PRÉSIDENT: Je me trouve dans une position assez différente de mes occupations habituelles; je joue le rôle d'impresario pendant la semaine des Rencontres Internationales de Genève; or, dans le métier d'impresario, il y a des imprévus, des coups durs, par exemple lorsqu'une vedette, un soprano illustre annonce, par télégramme, que la grippe a soudain sévi. Nous avons reçu, ce matin, un télégramme de Bernard-Henri Lévy déclarant qu'il était dans l'impossibilité de venir à Genève pour raison de force majeure. Nous souhaitons que cette force majeure ne soit pas un malheur, ou quelque grave désagrément; nous regrettons beaucoup de ne pouvoir écouter Bernard-Henri Lévy ce soir. Les impresarios, d'habitude, téléphonent à l'étranger, ou cherchent à la ronde une autre vedette qui puisse remplacer le personnage qui fait défaut, mais nous n'avons pas voulu faire cela, et les participants à la discussion qui devait faire suite à la conférence de Bernard-Henri Lévy ont accepté de tenir une table ronde, à laquelle se joindront d'autres personnages également, sur un certain nombre de thèmes relatifs au pouvoir. Ce ne sera peut-être pas tout à fait le sujet de Bernard-Henri Lévy, mais j'espère que le public apprendra quelque chose, ce soir, malgré tout. Je vous présente toutes mes excuses; depuis cette année",
+      "bbox": {
+        "x_pct": 11.437,
+        "y_pct": 42.231,
+        "w_pct": 75.782,
+        "h_pct": 32.017
+      },
+      "changed": true,
+      "change_reason": "Merged multiple text fragments into one logical paragraph block."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Le 5 octobre 1977.",
+      "bbox": {
+        "x_pct": 14.716,
+        "y_pct": 77.579,
+        "w_pct": 16.419,
+        "h_pct": 1.537
+      },
+      "changed": true,
+      "change_reason": "Marked as footnote."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "2 Participaient à cet entretien:",
+      "bbox": {
+        "x_pct": 14.832,
+        "y_pct": 79.198,
+        "w_pct": 25.226,
+        "h_pct": 1.769
+      },
+      "changed": true,
+      "change_reason": "Marked as footnote."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Luisa Paronetto Valier, secrétaire générale de la Commission nationale italienne pour l'UNESCO",
+      "bbox": {
+        "x_pct": 24.484,
+        "y_pct": 80.802,
+        "w_pct": 62.619,
+        "h_pct": 1.868
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Denis de Rougemont, écrivain, directeur du Centre européen de la culture",
+      "bbox": {
+        "x_pct": 18.691,
+        "y_pct": 85.479,
+        "w_pct": 61.808,
+        "h_pct": 2.017
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Kostas Papaioannou, professeur, Université de Paris",
+      "bbox": {
+        "x_pct": 18.772,
+        "y_pct": 87.132,
+        "w_pct": 43.998,
+        "h_pct": 2.041
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Michel Sales, professeur au Centre d'études et de recherches philosophiques, Paris.",
+      "bbox": {
+        "x_pct": 18.691,
+        "y_pct": 88.785,
+        "w_pct": 68.447,
+        "h_pct": 1.901
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Fragmented paragraph blocks merged for logical reading order.",
+    "Footnote labels applied correctly to bottom markers."
+  ],
+  "doc_id": "1530",
+  "page": 24,
+  "elapsed_seconds": 5.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

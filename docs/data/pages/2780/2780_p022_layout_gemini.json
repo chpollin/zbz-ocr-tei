@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "malgré la miniature d’éternité en laquelle elle repose selon sa strucure et son essence, soit encore orienté et ne perde pas du même coup son sens humain. Les rythmes, par leur répétition, ne permettent pas d’oublier le temps de la nature et du corps. Les sonorités différentes, souvent inattendues et contrastées, tirées des divers instruments font vivre, à travers la musique, la pluralité des niveaux discontinus à partir desquels l’être se révèle à l’homme.",
+      "bbox": {
+        "x_pct": 16.557,
+        "y_pct": 13.505,
+        "w_pct": 57.458,
+        "h_pct": 18.17
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi la musique actualise et concilie les contradictions inconciliables du temps vécu. Ces contradictions étant inconciliables, leur conciliation dans la musique ne peut être qu’imaginaire. Mais elle n’est nullement imaginaire dans le temps de la musique : elle est réellement vécue par les auditeurs. Ainsi, pour les auditeurs, le temps du concert se trouve être à la fois une durée de deux heures d’un temps naturel sans présent, – et une interruption radicale de ce temps naturel par un présent que dilate la musique. Petit «maintenant» qui ne s’écoule pas, et dans lequel l’éternité reste un moment captive, comme le ciel dans une flaque, – tandis que la phrase entendue déjà s’en va dans le proche passé, – et que, venus de l’avenir, les développements sonores apaisent ou relancent notre attente.",
+      "bbox": {
+        "x_pct": 16.663,
+        "y_pct": 32.949,
+        "w_pct": 57.458,
+        "h_pct": 37.255
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match full text block content visible in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, à la musique; et sans nous séparer grâce",
+      "bbox": {
+        "x_pct": 20.519,
+        "y_pct": 69.91,
+        "w_pct": 53.739,
+        "h_pct": 3.211
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": {
+        "x_pct": 70.835,
+        "y_pct": 75.33,
+        "w_pct": 3.167,
+        "h_pct": 2.768
+      },
+      "changed": true,
+      "change_reason": "Detected page number mislabeled as text, changed to page_footer/filter."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Page number at bottom right was labeled as text, corrected to page_footer.",
+    "The OCR transcript provided in the input JSON for the second paragraph was incomplete/incorrect."
+  ],
+  "doc_id": "2780",
+  "page": 22,
+  "elapsed_seconds": 4.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 58.672,
+        "y_pct": 22.315,
+        "w_pct": 6.952,
+        "h_pct": 1.452
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Meine Damen und Herren!",
+      "bbox": {
+        "x_pct": 58.746,
+        "y_pct": 24.758,
+        "w_pct": 13.276,
+        "h_pct": 1.532
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte zuerst dem Deutschen Gewerkschaftsbund und den Leitern des Europäischen Gesprächs für die ehrenvolle Einladung danken, der ich es verdanke, daß ich jetzt das Wort hier habe. Als ich gestern abend erfuhr, wie die Ruhrfestspiele entstanden sind, hat das Gefühl der Dankbarkeit und der Ehre sich bei mir in Demut verwandelt. Denn eigentlich ist alles, was ich sagen werde von den Schwierigkeiten, die für die Kultur zwischen Organisation und Politik bestehen, ohne viele Worte aber praktisch in der Schaffung der Ruhrfestspiele überwunden worden. Es ist immer leicht zu reden; etwas zu schaffen, ist etwas anderes. Ich rede, und die Ruhrfestspiele hat man fertiggebracht, und die existieren nun. Sie sind eine praktische Antwort auf alle Schwierigkeiten, die ich nun erwähnen werde. Deswegen bin ich besonders beladen mit dem Gefühl der Verantwortung vor diesem großen Werk, das diese Ruhrfestspiele darstellen.",
+      "bbox": {
+        "x_pct": 58.593,
+        "y_pct": 26.935,
+        "w_pct": 35.442,
+        "h_pct": 29.976
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text extraction to full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt zunächst mehr als einen Sinn des Wortes Kultur. In erster Linie sind es zwei: Kultur bezeichnet den ganzen Schatz dessen, was von Menschen in der ganzen Menschengeschichte geschaffen und gedacht wurde. Das alles bildet sozusagen eine beständige Kultur, die Kultur, die es gibt, die in den Büchern, den Werken, den Erfindungen usw. aufbewahrt ist. Aber es gibt auch einen anderen Sinn. Das ist Kultur in dem Sinne, in dem jeder einzelne Mensch in seiner Zeit Kultur hat oder nicht hat, und ich werde jetzt hier nur den Begriff Kultur im zweiten Sinne verwenden. Es geht also nicht um den Bestandteil der menschlichen Geschichte, den man Kultur nennt, sondern um die persönliche Kultur, um die Frage, was es für den einzelnen Menschen von heute",
+      "bbox": {
+        "x_pct": 58.519,
+        "y_pct": 57.202,
+        "w_pct": 35.516,
+        "h_pct": 23.661
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text extraction to full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 58.625,
+        "y_pct": 83.71,
+        "w_pct": 1.25,
+        "h_pct": 1.129
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to filter."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original extraction had truncated text content in paragraphs.",
+    "Page number 27 was not identified and categorized as paragraph."
+  ],
+  "doc_id": "520",
+  "page": 1,
+  "elapsed_seconds": 5.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

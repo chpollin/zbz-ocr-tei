@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "III Une philosophie de la condition humaine — Les premières œuvres",
+      "bbox": {
+        "x_pct": 19.328,
+        "y_pct": 14.135,
+        "w_pct": 43.468,
+        "h_pct": 9.059
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match image content more accurately, including the dash."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les années de formation que vous venez d’évoquer ont abouti à un livre, L’illusion philosophique, qui paraît en 1936. Mais votre premier texte philosophique date de 1931, c’est votre mémoire de licence, consacré, curieusement, à Henri Bergson.",
+      "bbox": {
+        "x_pct": 3.626,
+        "y_pct": 29.525,
+        "w_pct": 79.805,
+        "h_pct": 8.632
+      },
+      "changed": true,
+      "change_reason": "Full text correction to match the actual paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela s’explique. Je devais présenter pour la licence un mémoire de littérature française. J’ai cherché une voie qui me permette de faire un mémoire de littérature française, qui soit aussi proche que possible de la philosophie. Je pourrais faire, me suis-je dit, une étude de style sur Bergson. J’étais alors déjà convaincue que la forme dans laquelle s’exprime un philosophe est très importante — beaucoup plus tard, dans ma thèse, j’ai écrit : « Le fond du fond, c’est la forme. » Je me suis donc attachée à la forme, et même à un aspect particulièrement saisissable de la forme, dans l’œuvre de Bergson, et j’ai fait un mémoire sur son style. Et pour que mon enquête soit encore plus serrée, je me suis concentrée sur les images, dans son œuvre. Ces images n’étaient pas une forme d’expression accidentelle, mais la seule manière d’exprimer l’essentiel de ce qu’il voulait dire. J’ai fait une recherche systématique : j’ai établi, à travers toute l’œuvre de Bergson, une liste des images, que j’ai ensuite classées, et j’ai examiné leur évolution le long des ouvrages successifs. Ce mémoire a beaucoup plu à François Grandjean, qui connaissait bien Bergson, et il lui a montré mon travail. Bergson était à ce moment-là très âgé, malade, immobilisé sur son fauteuil par des rhumatismes très douloureux. Mais il a demandé à me voir. Je me souviens que le jour où je me suis rendue chez lui, avenue Beauséjour, j’avais l’impression, moi venant de province, avec mes vingt ans, d’entrer dans la Mecque de la philosophie. Dans mon mémoire, j’avais fait une observation : j’avais noté que presque toutes les images qui, au niveau conscient et délibéré, expriment un mouvement ascendant, sont en fait des images retombantes. J’ai rattaché cette caractéristique au mouvement profond de sa philosophie, ce mouvement caché dans le discours, qui se trouve au-dessous du dire. Et j’ai pensé que",
+      "bbox": {
+        "x_pct": 3.419,
+        "y_pct": 37.273,
+        "w_pct": 80.098,
+        "h_pct": 51.891
+      },
+      "changed": true,
+      "change_reason": "Full text correction to match the actual paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "33",
+      "bbox": {
+        "x_pct": 79.913,
+        "y_pct": 92.481,
+        "w_pct": 3.018,
+        "h_pct": 2.455
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from text to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR in JSON was severely truncated and inaccurate.",
+    "Page number 33 was missed in the initial bounding box detection."
+  ],
+  "doc_id": "2330",
+  "page": 37,
+  "elapsed_seconds": 4.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« les hommes sont égaux ». Je dirai la même chose en ce qui concerne l'autorité du père ou de la mère. Pourquoi le père doit-il être respecté ? Ce n'est pas pour ses qualités exceptionnelles, c'est parce qu'il est pour ses enfants leur unique père. J'ai souvent cité cette phrase d'un ami, juge noir en Afrique, et qui avait un fils de 9 ans, auquel il avait refusé quelque chose. L'enfant se plaignait, disant : « Mais enfin, ce n'est pas juste ! Pierre, lui, a un père qui est un copain », etc. Son père lui a répondu : « Ah ! tu voudrais que ton père soit un copain, eh bien ! tu peux faire une croix là-dessus. Je ne serai jamais ton copain, parce que des copains, tu peux t'en faire chaque jour, tant que tu voudras ; mais de père, tu en as un, et je te le garde ». Pour tout enfant, son père est le père, le seul, jeweils einzig, comme on dirait en allemand. La société repose, à son niveau le plus intime, sur des rapports symboliques de cet ordre ; ce sont eux qui lui permettent de se maintenir et de limiter l'affrontement des intérêts qui tend à la détruire. N'oublions pas ce niveau crucial des conflits vitaux, que j'ai distingué dans la structure de la société. C'est face à la lutte à mort que s'affirme l'être symbolique. Naturellement, il existe tous les niveaux intermédiaires que la civilisation a développés, toute cette épaisseur du tissu social dans lequel nous sommes pris, et qu'il faut traiter aussi avec beaucoup de délicatesse, parce qu'il est extrêmement fragile. Mais si on ne tient pas compte des deux niveaux extrêmes dont j'ai parlé, on se leurre dangereusement sur la réalité sociale.",
+      "bbox": {
+        "x_pct": 39.5,
+        "y_pct": 49.0,
+        "w_pct": 801.0,
+        "h_pct": 438.0
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and inaccurate bounding box dimensions detected by OCR/Docling."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La brochure citée plus haut reproduit un passage du rapport de la commission de l'enseignement du parti socialiste vaudois. Voici ce passage : « (L'école traditionnelle) perpétue les inégalités sociales, favorise l'apprentissage de la soumission à l'autorité, néglige d'apprendre aux jeunes à être responsables, les prépare à être docilement absorbés dans le circuit économique... » Que vous inspire cette phraséologie, en ce qui concerne notamment sa portée effective et celle de l'idéologie marxisante et gauchiste qu'elle reflète ?",
+      "bbox": {
+        "x_pct": 37.0,
+        "y_pct": 494.35,
+        "w_pct": 797.8,
+        "h_pct": 164.52
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was garbled in the initial detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne dirais pas qu'elle reflète une idéologie marxiste, parce qu'on ne peut pas mettre dans le même sac marxisme et gauchisme..",
+      "bbox": {
+        "x_pct": 38.22,
+        "y_pct": 654.6,
+        "w_pct": 797.31,
+        "h_pct": 44.03
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. - Evidemment, c'est dit dans une optique de lutte des classes. Je vous répondrai ceci : bien que l'école active - dont les principes d'ailleurs sont tout à fait à l'inverse de ces clichés-là - soit quelque chose d'ancien, il est vrai que les méthodes qu'elle préconise n'ont pas encore suffisamment pénétré tous les enseignements. De ce point de vue, je ne dirai pas que je suis satisfaite que l'école actuelle pratique un enseignement qui stimule assez l'initiative des élèves, leur jugement, leur sens critique. Ce n'est pas pour les raisons idéologiques exposées ci-dessus qu'il en est ainsi, mais parce que, tout simplement, il est plus facile",
+      "bbox": {
+        "x_pct": 62.0,
+        "y_pct": 735.0,
+        "w_pct": 768.0,
+        "h_pct": 210.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and box position for the final main paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "71",
+      "bbox": {
+        "x_pct": 810.0,
+        "y_pct": 945.0,
+        "w_pct": 25.0,
+        "h_pct": 30.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text detection was highly garbled.",
+    "Page number 71 was labeled as text.",
+    "Main body text boxes were incorrectly split/sized.",
+    "OCR output required extensive manual correction for legibility."
+  ],
+  "doc_id": "2330",
+  "page": 75,
+  "elapsed_seconds": 6.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

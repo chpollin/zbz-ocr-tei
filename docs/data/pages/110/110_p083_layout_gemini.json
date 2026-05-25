@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "elle   peut aussi refléter une altitude transcendant le abandon par excès damour & donné transfiguré",
+      "bbox": {
+        "x_pct": 11.141,
+        "y_pct": 12.961,
+        "w_pct": 68.387,
+        "h_pct": 5.664
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais de toute façon; le sujet renonce à son aclivité [ormatrice délaissc la tâche   proprement humai",
+      "bbox": {
+        "x_pct": 11.175,
+        "y_pct": 18.58,
+        "w_pct": 68.433,
+        "h_pct": 3.766
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lart non plus ne saurait acquérir  la certitude  de lui-même, les critères   objectifs de Tauthentic",
+      "bbox": {
+        "x_pct": 10.565,
+        "y_pct": 23.994,
+        "w_pct": 69.009,
+        "h_pct": 50.289
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "6 L'Etre et la Forme.",
+      "bbox": {
+        "x_pct": 13.79,
+        "y_pct": 75.756,
+        "w_pct": 18.007,
+        "h_pct": 1.291
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 11.0,
+        "y_pct": 0,
+        "w_pct": 20.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "81",
+      "bbox": {
+        "x_pct": 76.0,
+        "y_pct": 90.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 100,
+  "num_corrections": 2,
+  "issues": [],
+  "doc_id": "110",
+  "page": 83,
+  "elapsed_seconds": 6.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

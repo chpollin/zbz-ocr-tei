@@ -1,0 +1,122 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE",
+      "bbox": {
+        "x_pct": 328.0,
+        "y_pct": 147.0,
+        "w_pct": 302.0,
+        "h_pct": 9.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header, should be page_header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "255",
+      "bbox": {
+        "x_pct": 807.0,
+        "y_pct": 147.0,
+        "w_pct": 23.0,
+        "h_pct": 9.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, should be page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans Jaquelle, par la connaissance, al contraire li©s au pr©sent. Mais nous n'©crivons dans les livres jamais que l'histoire du pass©, tandis qu'en faisant l'histoire nous faisons passer l'avenir   l'©tat de pr©sent. Il y a donc dans le pr©sent une coupure et ce n'est pourtant que dans cette coupure que nous sommes   chaque instant. Il est assez clair que cet «  étre dans la coupure » rend impossible l'étalement pur et simple que serait la totalit© historique. C'est plus qu'une limite, c'est une impossibilit©.",
+      "bbox": {
+        "x_pct": 15.061,
+        "y_pct": 17.468,
+        "w_pct": 69.498,
+        "h_pct": 13.63
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and preserved structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La psychiatrie a montré qu'il y a des malades mentaux pour qui le temps ne passe pas, ce sont les mélancoliques, d'autres pour qui le futur est déjà présent, ce sont les frénétiques. Chacun de nous est une fluctuation entre ces deux maladies mentales. Est-ce là ce qui rend l'histoire possible et qui la limite en même temps?",
+      "bbox": {
+        "x_pct": 15.031,
+        "y_pct": 30.953,
+        "w_pct": 69.457,
+        "h_pct": 8.946
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je suis heureux d'autre part que M. Marias ait rappelé l'irréversibilité de l'histoire. Je me demande si la dialectique dont ont parlé plusieurs orateurs ce matin est une forme d'explication de cette irréversibilité. Cette question me tient à cœur parce qu'en physique déjà, le problème de l'explication de l'irréversibilité non seulement se pose mais présente les difficultés les plus grandes. Il n'est à mon avis pas vrai de dire qu'on l'ait résolu par la thermodynamique. Or, l'irréversibilité est une catégorie aussi importante que la causalité, qui est généralement proposée comme catégorie temporelle. La soi-disant connaissance historique prétend-elle maîtriser toutes les catégories temporelles?",
+      "bbox": {
+        "x_pct": 15.133,
+        "y_pct": 39.331,
+        "w_pct": 69.365,
+        "h_pct": 19.362
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "MR. RUSSELL :",
+      "bbox": {
+        "x_pct": 15.0,
+        "y_pct": 625.0,
+        "w_pct": 175.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Identified as speaker name, should be section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "I wish to touch on the account the historian gives of the course of events and I think it is instructive to compare and contrast the attitude of the historian and of the scientist to « what happened ». The experimental scientist, as the result of an experiment wants to be able to say, « I took such and such materials, used such and such apparatus, and did so and so; and I observed such and such results » in order that other experimenters may repeat what he did, and confirm or deny his results. Statements of this sort are the basis of the generalisations and hypotheses of science. But his",
+      "bbox": {
+        "x_pct": 15.441,
+        "y_pct": 65.006,
+        "w_pct": 69.119,
+        "h_pct": 15.404
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 319.0,
+        "y_pct": 929.0,
+        "w_pct": 365.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Identified as platform footer, should be page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial layout detection missed footer and header elements.",
+    "Text extraction contained significant OCR errors in all paragraphs.",
+    "Section header for speaker 'MR. RUSSELL' was mislabeled as text.",
+    "Page number at top right was mislabeled as text.",
+    "Platform footer at bottom was not captured."
+  ],
+  "doc_id": "540",
+  "page": 27,
+  "elapsed_seconds": 8.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

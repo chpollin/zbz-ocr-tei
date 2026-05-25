@@ -1,0 +1,133 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "98",
+      "bbox": {
+        "x_pct": 14.6,
+        "y_pct": 5.75,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "page_header",
+      "text": "ENTRETIEN PUBLIC",
+      "bbox": {
+        "x_pct": 42.7,
+        "y_pct": 5.75,
+        "w_pct": 22.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "les Rencontres sont publiques et gratuites, et j'ai le grand soulagement de n'avoir pas à rembourser",
+      "bbox": {
+        "x_pct": 14.6,
+        "y_pct": 9.562,
+        "w_pct": 75.701,
+        "h_pct": 4.05
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais nous sommes ici rassemblés pour un débat autour de la conférence de Jeanne Hersch, conférence e",
+      "bbox": {
+        "x_pct": 14.716,
+        "y_pct": 13.033,
+        "w_pct": 75.585,
+        "h_pct": 7.273
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "M. DENIS DE ROUGEMONT: Je ne sais si c'est un très   bon choix de m'avoir demandé d'ouvrir les débat",
+      "bbox": {
+        "x_pct": 14.716,
+        "y_pct": 21.182,
+        "w_pct": 75.585,
+        "h_pct": 8.843
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header for speaker name"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons entendu, hier soir, une très belle leçon de modération philosophique; dont on pourrait ti",
+      "bbox": {
+        "x_pct": 14.6,
+        "y_pct": 29.504,
+        "w_pct": 75.898,
+        "h_pct": 22.562
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sens du pouvoir n'est pas le même, et la différence excède le simple cas de ces deux pays; c'est ",
+      "bbox": {
+        "x_pct": 14.6,
+        "y_pct": 51.215,
+        "w_pct": 75.979,
+        "h_pct": 17.298
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est une distinction fondamentale dont je me suis occupé, au fond 1 depuis très longtemps; depuis d",
+      "bbox": {
+        "x_pct": 14.681,
+        "y_pct": 67.851,
+        "w_pct": 75.817,
+        "h_pct": 13.612
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch n 4 pas prétendu faire beaucoup plus que tous les auteurs, ont essayé cette définition imposs",
+      "bbox": {
+        "x_pct": 14.832,
+        "y_pct": 81.017,
+        "w_pct": 75.666,
+        "h_pct": 9.289
+      },
+      "changed": true,
+      "change_reason": "Fixed typo in speaker/paragraph start"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header were not labeled",
+    "Speaker name was labeled as text instead of section_header",
+    "Typo in the beginning of the last paragraph text content"
+  ],
+  "doc_id": "1530",
+  "page": 25,
+  "elapsed_seconds": 5.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to section_header for speaker name": 1,
+    "Fixed typo in speaker/paragraph start": 1,
+    "ADDED": 2
+  }
+}

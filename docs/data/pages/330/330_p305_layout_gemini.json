@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 271",
+      "bbox": {
+        "x_pct": 313.333,
+        "y_pct": 80.0,
+        "w_pct": 578.333,
+        "h_pct": 28.0
+      },
+      "changed": true,
+      "change_reason": "Top line contains section title and page number; should be page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais éclate l'insurrection de Poznan, que l'on fasse avancer les tanks sur la foule misérable des ouvriers, en grève sans droit de grève, que des enfants tombent sous les balles du pouvoir communiste, l'Humanité sait tout de suite que ces grévistes, ces enfants sont des bandits, agents de l'impérialisme occidental. Elle le sait même d'une certitude bien plus assurée que les autorités de Varsovie, se décidant, elles, à reconnaître, après quelques jours de réflexion, le bien-fondé des exigences ouvrières...",
+      "bbox": {
+        "x_pct": 4.178,
+        "y_pct": 10.989,
+        "w_pct": 84.916,
+        "h_pct": 17.291
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il serait absurde, stérile et faux de prétendre que rien n'a changé à l'Est. Tant de choses ont changé, sous la pression de nécessités diverses qu'il ne nous appartient pas d'analyser ici, que nul ne sait jusqu'à quel point ces changements dépendent encore de volontés dirigeantes, s'ils ne sont déjà devenus des forces sociales et historiques objectives, dotées d'une efficacité propre, comportant des effets en chaîne, imprévisibles et, dans une large mesure, incontrôlables.",
+      "bbox": {
+        "x_pct": 4.22,
+        "y_pct": 27.184,
+        "w_pct": 85.014,
+        "h_pct": 17.086
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Moralement, il ne s'est rien passé. La « confession » de Khrouchtchev n'a rien de sublime et la morale n'a rien à voir là-dedans, aussi longtemps qu'il reste au pouvoir avec ses complices, sans se soumettre à aucun contrôle démocratique. L'atmosphère morale de l'U. R. S. S. n'est en rien purifiée du fait que chacun déchire aujourd'hui le cadavre de son dictateur défunt. Que nul ne se lève pour le défendre, c'est du stalinisme pur.",
+      "bbox": {
+        "x_pct": 3.9,
+        "y_pct": 43.913,
+        "w_pct": 85.334,
+        "h_pct": 14.617
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chez les intellectuels et les dirigeants communistes ou militants d'Europe occidentale — à l'exception peut-âtre de quelques Italiens — rien non plus ne s'est passé. Ils emboîtent le pas, comme ils l'ont toujours fait. Ils revendiquent avec une liberté soudaine, mais à l'unanimité, leur droit à « un chemin national vers le communisme ». Leur indépendance — limitée — est de commande, leur indignation antistalinienne, prête à changer d'objet, leur pathétique, un fard du mensonge. Leur mauvaise foi se trouve aggravée par un prétendu repentir dont la portée, comme par hasard, coïncide avec celle de l'indignation de Khrouchtchev. Repentir qui, devenu thème oratoire et littéraire, accroît encore chez eux l'arrogance moralisatrice du ton.",
+      "bbox": {
+        "x_pct": 3.942,
+        "y_pct": 58.084,
+        "w_pct": 85.292,
+        "h_pct": 25.187
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais si, moralement, il ne s'est rien passé, cela n'empêchera pas le fameux rapport d'avoir des conséquences, à perte de vue,",
+      "bbox": {
+        "x_pct": 4.276,
+        "y_pct": 84.198,
+        "w_pct": 85.139,
+        "h_pct": 5.312
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text recognition."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text was severely truncated in all paragraphs.",
+    "Section header including page number was mislabeled as text.",
+    "Bboxes are tight but OCR content was poor."
+  ],
+  "doc_id": "330",
+  "page": 305,
+  "elapsed_seconds": 8.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

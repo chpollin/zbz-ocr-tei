@@ -1,0 +1,97 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "affairc de foi. Dire Dieu s'abolit la distinction sence c'esl dire encore fois que Dieu ne 5a115 son",
+      "bbox": {
+        "x_pct": 19.965,
+        "y_pct": 13.06,
+        "w_pct": 68.479,
+        "h_pct": 25.816
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "3 Les rêves et linauthenticité",
+      "bbox": {
+        "x_pct": 36.325,
+        "y_pct": 41.708,
+        "w_pct": 35.876,
+        "h_pct": 1.898
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and OCR typos in header text."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Letre comme fondement de la   pensée scarté et non absolument. Le nier, c'est, en aflirmant absence ",
+      "bbox": {
+        "x_pct": 19.896,
+        "y_pct": 44.518,
+        "w_pct": 68.618,
+        "h_pct": 14.579
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text inaccuracies."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais   alors, Favons déja plusieurs plans 2 réalisme; a4 sens où prenons ce mot ici, c'est-à-dire co",
+      "bbox": {
+        "x_pct": 19.896,
+        "y_pct": 59.355,
+        "w_pct": 68.468,
+        "h_pct": 14.905
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text inaccuracies."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "124",
+      "bbox": {
+        "x_pct": 20.0,
+        "y_pct": 98.0,
+        "w_pct": 5.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at footer."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 75.0,
+        "y_pct": 98.0,
+        "w_pct": 20.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header at top."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR for text and headings contained significant typos.",
+    "Missing page header/footer regions in initial input."
+  ],
+  "doc_id": "110",
+  "page": 126,
+  "elapsed_seconds": 4.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected punctuation and OCR typos in header text.": 1,
+    "Corrected OCR text inaccuracies.": 2,
+    "ADDED": 2
+  }
+}

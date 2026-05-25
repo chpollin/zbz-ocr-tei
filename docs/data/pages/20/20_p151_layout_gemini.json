@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "VALEUR ACTUELLE DE CETTE PHILOSOPHIE 149",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header content including page number misidentified as paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'illusion philosophique, je ne parle pas d'elle comme si elle était définitive ou éternelle, — mais seulement comme d'une philosophie de notre temps. C'est qu'elle n'aurait pas pu être pensée à une époque quelconque du passé; et même en supposant qu'elle l'eût été, elle n'y aurait pas été vraie. C'est parce qu'elle est nourrie de tout le passé, parce qu'elle n'est sourde à rien, qu'elle représente aujourd'hui l'expression absolument vraie d'une conscience philosophique. J'ai dit « absolument vraie » parce que le lien indestructible qui fait dépendre la vérité d'un système de sa réalité contemporaine n'est pas un relativisme historique; sa vérité reste, au sens métaphysique, vraie absolument et pour toujours, justement parce que cette philosophie donnée a répondu avec vérité à cette donnée historique.",
+      "bbox": {
+        "x_pct": 11.596,
+        "y_pct": 12.952,
+        "w_pct": 76.16,
+        "h_pct": 41.076
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je me contenterai d'envisager la pensée de Jaspers du point de vue où je me suis placée jusqu'ici : la destruction de l'illusion philosophique. Je serai néanmoins obligée de m'attarder ici plus longtemps : Jaspers étant encore assez peu connu du public de langue française (1), je ne pourrai pas tabler,",
+      "bbox": {
+        "x_pct": 11.702,
+        "y_pct": 53.619,
+        "w_pct": 76.25,
+        "h_pct": 15.781
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text errors and formatting."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) On la connaît peut-être mieux depuis qu'a paru dans le deuxième volume des Recherches philosophiques, 1932-33, le bel article de Gabriel MARCEL, intitulé : « Situation fondamentale et situations limites chez Karl Jaspers. » Cf. aussi l'article de Lavelle paru dans le Temps du 7 avril 1935, l'article de Jean Wahl dans la Revue de métaphysique et de morale (juillet 1934) et celui de Masson-Oursel dans les Mélanges Lichtenberger.",
+      "bbox": {
+        "x_pct": 12.048,
+        "y_pct": 72.381,
+        "w_pct": 75.753,
+        "h_pct": 17.4
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote and fixed OCR text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 4,
+  "issues": [
+    "Header was misidentified as body text.",
+    "Page number at top was merged into text.",
+    "OCR for paragraph text was significantly corrupted.",
+    "Footnote was mislabeled as paragraph text."
+  ],
+  "doc_id": "20",
+  "page": 151,
+  "elapsed_seconds": 4.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

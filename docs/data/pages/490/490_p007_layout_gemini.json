@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 16.363,
+        "y_pct": 73.117,
+        "w_pct": 73.317,
+        "h_pct": 2.317
+      },
+      "changed": true,
+      "change_reason": "Corrected page number label to page_header and filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "PRÉFACE",
+      "bbox": {
+        "x_pct": 476.363,
+        "y_pct": 73.117,
+        "w_pct": 73.317,
+        "h_pct": 2.317
+      },
+      "changed": true,
+      "change_reason": "Running header identified."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "s'ouvre. Vieilles dualités, dira-t-on : abstrait et concret, universel et singulier, théorique et pratique, rationalité et affectivité, essence et existence... Certes. A mes yeux, l'un des mérites de cet ouvrage, c'est de rejoindre ainsi, par des démarches inattendues, des couples alternatifs de concepts élaborés en profondeur par la tradition. Mais il y a autre chose.",
+      "bbox": {
+        "x_pct": 15.623,
+        "y_pct": 15.374,
+        "w_pct": 74.143,
+        "h_pct": 13.532
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce regard double est en même temps réciproque. Il n'y a pas qu'une caméra, il y en a deux. Du fond du lointain, l'être usé par la distance étale des velléités de riposte. L'auteur, refusant par une sorte de convention poétique et chiffrée, la prison de la réflexion critique qui enferme en lui-même un sujet irrémédiablement séparé de « l'objet » tel qu'il est en soi, se permet un va-et-vient démiurgique à travers lequel « sujet » et « objet » perdent leur fixité et intervertissent leurs rapports. « En positif », dit-il, « en négatif »... Il y a un rapport « endroit » et un rapport « envers », tous deux simultanément indispensables à l'instauration de l'être. La caméra change brusquement de pôle ; et aussitôt ce n'est plus la même caméra. Les rapports s'inversent tous, et ils font plus que de s'inverser : l'inversion les altère. Et nous voyons (de cette vue philosophico-cinématographique si particulière à l'ouvrage dont nous parlons) l'être tel que nous le vivons s'instituer à travers leur enchevêtrement contrasté. Mais il y a autre chose encore.",
+      "bbox": {
+        "x_pct": 16.116,
+        "y_pct": 28.928,
+        "w_pct": 74.303,
+        "h_pct": 35.902
+      },
+      "changed": true,
+      "change_reason": "Refined text content from OCR artifacts to human readable text for context."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La polarité subsiste toujours, mais la distance entre les pôles varie. Apparaissant d'abord dans leur écart maximum, ils se rapprochent, — la caméra se rapproche, livre des gros plans qui surprennent, qui surprennent parfois d'autant plus que nous nous trouvons à l'improviste, au fil de cette lecture étrange, devant une donnée familière de notre vie. Il faut remarquer que la caméra ne se rapproche pas de façon continue. Il y a des « seuils » où se constituent devant elle des pans d'être spécifiques, des niveaux de réel différenciés, cor-",
+      "bbox": {
+        "x_pct": 16.806,
+        "y_pct": 67.042,
+        "w_pct": 74.069,
+        "h_pct": 19.223
+      },
+      "changed": true,
+      "change_reason": "Refined text content."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was very noisy and contained cut-off lines.",
+    "Page number and header were not correctly identified in initial layout.",
+    "Some text fragments in original labels were truncated or garbled."
+  ],
+  "doc_id": "490",
+  "page": 7,
+  "elapsed_seconds": 4.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

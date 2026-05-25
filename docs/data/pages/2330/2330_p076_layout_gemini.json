@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'enseigner des élèves passifs. Cette pente paresseuse est une tentation permanente de l'école et il faut lutter contre elle. Mais les personnes que vous citez ont tout autre chose en tête, et je leur répondrai ceci : Que l'école soit, en un sens, un facteur de continuité, c'est incontestable. Elle doit l'être. Peu après 68, au début des années 70, quand on a commencé à élaborer, à Genève, la loi sur l'université — en toute hâte malheureusement — on a rédigé un préambule où l'on a énuméré les finalités de l'université. Parmi celles-ci, on n'a pas osé inscrire : la transmission des connaissances. Personne n'a osé dire : l'université doit aussi transmettre des connaissances. Or nier cela, c'est une façon de détruire l'histoire. Les hommes ont une histoire parce qu'ils ont transmis un savoir de génération en génération. Sans cette transmission, ils seraient comme les oiseaux qui font chaque année le même nid ; ils seraient purement répétitifs. Il faut être complètement aveugle pour ne pas voir que l'élément constitutif de l'histoire, c'est d'abord la transmission. Seule, elle permet d'aller plus loin.",
+      "bbox": {
+        "x_pct": 17.094,
+        "y_pct": 4.702,
+        "w_pct": 79.768,
+        "h_pct": 31.508
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est une condition de progrès.",
+      "bbox": {
+        "x_pct": 19.817,
+        "y_pct": 38.089,
+        "w_pct": 44.615,
+        "h_pct": 2.452
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors (G.Dk. removed as artifact)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est la condition fondamentale sans laquelle il n'y a pas de progrès. L'école, bien évidemment, est le lieu de la transmission des connaissances, de la transmission des mœurs et de la structure symbolique de la société (en même temps que la famille et d'autres groupes sociaux). L'école ne peut pas être le lieu d'un commencement absolu. Mais il est vrai que l'école, par le savoir même qu'elle transmet, doit susciter chez les individus des capacités novatrices. Il ne faut pas séparer savoir transmis et réflexion critique. La réflexion sur le savoir transmis est déjà novatrice, c'est à travers elle que l'esprit des hommes change et évolue normalement. L'évolution se fait au fil de la continuité. Vouloir faire de l'école l'instrument d'un fixisme social, c'est figer l'histoire ; mais c'est aussi détruire l'histoire que de vouloir inventer l'école comme un pur commencement. Il y a, dans les deux cas, une méconnaissance primaire de la nature du devenir historique. Il faut que l'école vive, et vivre, c'est à la fois continuer et changer.",
+      "bbox": {
+        "x_pct": 16.886,
+        "y_pct": 40.105,
+        "w_pct": 79.817,
+        "h_pct": 30.113
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Finalement, la question fondamentale qui se trouve impliquée dans l'idée même d'une réforme de l'institution scolaire, n'est-ce pas celle du rôle et de la place de l'école dans la société ? On en revient au problème de la finalité de l'école.",
+      "bbox": {
+        "x_pct": 16.886,
+        "y_pct": 70.992,
+        "w_pct": 79.78,
+        "h_pct": 8.419
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est inadmissible de faire de l'école — et je dirais la même chose des media — l'agent de tel ou tel devenir historique, politique ou social. Elle fait partie de la société ; elle est soumise, comme tous les autres agents, aux obligations de continuité et de renouvellement, et elle doit vivre dans cet ensemble de façon naturelle. Personne n'a le droit de faire de l'école un instrument de conservatisme, pas plus qu'un instrument de",
+      "bbox": {
+        "x_pct": 17.009,
+        "y_pct": 79.032,
+        "w_pct": 79.78,
+        "h_pct": 12.153
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "72",
+      "bbox": {
+        "x_pct": 17.0,
+        "y_pct": 94.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer and added missing entry."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR for all paragraphs was severely garbled and required full transcription.",
+    "Page number 72 was completely omitted from detection.",
+    "False artifacts like 'G.Dk.' detected in the middle of text blocks."
+  ],
+  "doc_id": "2330",
+  "page": 76,
+  "elapsed_seconds": 6.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

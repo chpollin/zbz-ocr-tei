@@ -1,0 +1,129 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "128",
+      "bbox": {
+        "x_pct": 13.385,
+        "y_pct": 6.223,
+        "w_pct": 1.765,
+        "h_pct": 1.139
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 41.503,
+        "y_pct": 5.922,
+        "w_pct": 17.062,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "CONDUITES HUMAINES ET INSTITUTIONS",
+      "bbox": {
+        "x_pct": 53.649,
+        "y_pct": 6.223,
+        "w_pct": 32.738,
+        "h_pct": 1.139
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "129",
+      "bbox": {
+        "x_pct": 86.852,
+        "y_pct": 6.223,
+        "w_pct": 1.765,
+        "h_pct": 1.139
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aucune des deux IE de juger la T\u0000ussite technique 2 'impos c'esl Coinme T\u0000ussite, satisfaction et da",
+      "bbox": {
+        "x_pct": 13.435,
+        "y_pct": 8.784,
+        "w_pct": 35.327,
+        "h_pct": 21.034
+      },
+      "changed": true,
+      "change_reason": "Bounding box updated to reflect actual paragraph span."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qui deut. Je demande si, patadoxalement, civilisation, dire du vrai sigue valeur 'u'en dans Cetu qui",
+      "bbox": {
+        "x_pct": 13.094,
+        "y_pct": 31.775,
+        "w_pct": 35.887,
+        "h_pct": 25.535
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quaut verile devient de plus qui est_ qui mode 1 de 'il poduit ,",
+      "bbox": {
+        "x_pct": 13.259,
+        "y_pct": 57.272,
+        "w_pct": 12.609,
+        "h_pct": 9.269
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il semble quc la scicnce tende desornais & 1' qui Iestent credulite EL la v\u0000rit\u0000, produit biologique",
+      "bbox": {
+        "x_pct": 53.249,
+        "y_pct": 18.838,
+        "w_pct": 35.112,
+        "h_pct": 18.068
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d\u0000veloppes 4 qui en jovissent d\u0000veloppement qui perdu",
+      "bbox": {
+        "x_pct": 54.093,
+        "y_pct": 71.932,
+        "w_pct": 30.407,
+        "h_pct": 14.439
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page numbers and running headers were incorrectly labeled as paragraphs.",
+    "OCR text quality in detected regions is low.",
+    "Bounding boxes for paragraphs do not cover the full column width."
+  ],
+  "doc_id": "690",
+  "page": 7,
+  "elapsed_seconds": 13.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

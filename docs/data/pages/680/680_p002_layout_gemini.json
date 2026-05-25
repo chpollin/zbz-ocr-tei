@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La tradition selon Karl Jaspers répond-elle aux besoins de notre temps ?*",
+      "bbox": {
+        "x_pct": 22.458,
+        "y_pct": 17.362,
+        "w_pct": 46.898,
+        "h_pct": 4.957
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par Jeanne Hersch",
+      "bbox": {
+        "x_pct": 37.446,
+        "y_pct": 22.963,
+        "w_pct": 16.463,
+        "h_pct": 1.863
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un jour, parlant de mes propres engagements politiques, Karl Jaspers me dit: «Vous êtes quelque chose, vous. Moi, je ne suis rien. Je suis de l'air. Comme la raison.» Un geste de la main accompagnait ces mots, rendant plus fluide l'espace.",
+      "bbox": {
+        "x_pct": 12.595,
+        "y_pct": 26.877,
+        "w_pct": 66.35,
+        "h_pct": 7.994
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C’était dans sa maison de Bâle. Mais ç’aurait pu aussi bien être dans sa maison de Heidelberg, avant la guerre. Quand je suis chez lui, je ne sais plus: Bâle ou Heidelberg? Cela commence dans la rue, devant la porte: la même entrée, étroite et haute, alignée sur les autres, adaptée sans la moindre recherche au ton ambiant, et pourtant avec je ne sais quoi de plus silencieux, de retiré. A l’intérieur, la même présence d’une règle, d’un rituel quotidien, les mêmes livres, partout, jusqu’au plafond, séparant la lumière de celle qui, dehors, derrière les longues fenêtres, éclaire des tramways, des oiseaux, des charcuteries, les mêmes chaises, autour de la table, dans la salle à manger, imposant une manière de s’asseoir et de vivre le repas comme une petite cérémonie amicale – l’exigence du même passé.",
+      "bbox": {
+        "x_pct": 12.732,
+        "y_pct": 34.969,
+        "w_pct": 66.237,
+        "h_pct": 24.274
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "«Moi, je ne suis rien.» Cela veut dire: disponible, disponible infiniment pour la vérité infiniment inaccessible. Sartre dit quelque chose de bien proche: «Je suis rien.» Il est rien, parce qu’un rien le sépare de son passé, parce qu’il est son passé sur le mode de ne l’être pas. Jaspers n’est pas séparé de son passé. Il n’est rien parce que son passé est si parfaitement lui qu’il ne l’alourdit pas, ne le limite pas, qu’il est sa disponibilité même. Une saturation disponible – tradition, en mot.",
+      "bbox": {
+        "x_pct": 12.627,
+        "y_pct": 58.957,
+        "w_pct": 66.342,
+        "h_pct": 15.67
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "«Je ne suis rien. Je suis de l’air.» C’est-à-dire: je suis cette tradition que sa plénitude dispense de toute tyrannie. Je n’enseigne rien. Mes",
+      "bbox": {
+        "x_pct": 12.973,
+        "y_pct": 74.912,
+        "w_pct": 66.18,
+        "h_pct": 4.462
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "On trouvera la réponse de Karl Jaspers à ces pages, en allemand, dans le volume consacré à Karl Jaspers, et publié dans la série «Philosophen des 20. Jahrhunderts», dirigée par Paul Arthur Schilpp. Kohlhammer Verlag, Stuttgart, 1957, p. 768–775.",
+      "bbox": {
+        "x_pct": 12.707,
+        "y_pct": 80.684,
+        "w_pct": 66.446,
+        "h_pct": 7.197
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "118",
+      "bbox": {
+        "x_pct": 12.8,
+        "y_pct": 89.6,
+        "w_pct": 3.3,
+        "h_pct": 2.1
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text content was severely fragmented and contained garbled characters in original input.",
+    "Page number 118 was missing from input labels and needed to be created.",
+    "Multiple paragraphs were truncated in original OCR."
+  ],
+  "doc_id": "680",
+  "page": 2,
+  "elapsed_seconds": 7.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

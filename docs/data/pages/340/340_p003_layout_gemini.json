@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les procès de Poznan",
+      "bbox": {
+        "x_pct": 25.164,
+        "y_pct": 22.603,
+        "w_pct": 51.796,
+        "h_pct": 3.747
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled/garbled OCR text extraction."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PAR JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 34.172,
+        "y_pct": 31.918,
+        "w_pct": 33.863,
+        "h_pct": 2.075
+      },
+      "changed": true,
+      "change_reason": "Author name line should be labeled as section_header/zb_heading as it is a bibliographic entry."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les procès de Poznan sont déjà dans l'histoire. Ils ont joué leur rôle, porté leurs fruits. Quand j'étais là-bas, c'était autre chose. Je revois les deux salles de tribunal où les procès se déroulaient simultanément, l'une un peu plus grande, l'autre très petite, où l'on s'entassait. Je revois ces accusés, tous âgés de dix-huit à vingt et un ans, encadrés par leurs policiers, avec leur visage de gosses mal nourris, leur nez de telle ou telle forme, et cette manière intimidée qu'ils avaient de se courber, de disparaître dans le groupe lorsqu'il était question d'eux. Pour moi, il y a ces salles, ces visages, ces voix, les paroles qui furent prononcées — et d'autre part l'événement « procès de Poznan » qui a pris sa place dans l'histoire. Impossible de faire coïncider ces deux réalités. Elles restent discontinues. Il y a les moments où je vois ces procès dans l'histoire, puis ceux où je les vois dans la salle et, d'une vision à l'autre, aucun passage.",
+      "bbox": {
+        "x_pct": 9.888,
+        "y_pct": 39.384,
+        "w_pct": 39.944,
+        "h_pct": 37.212
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour comprendre les procès, il faut d'abord considérer l'insurrection du 28 juin. On s'est demandé : a-t-elle été spontanée, ou plus ou moins préparée ? Une organisation souterraine est-elle entrée en jeu à ce moment, ou n'existait-il aucune organisation ? Pour ma part, je suis convaincue que l'insurrection a été spontanée. Seulement, la spontanéité, dans ces pays-là, n'est pas la même que celle d'ici. Ici,",
+      "bbox": {
+        "x_pct": 10.037,
+        "y_pct": 76.459,
+        "w_pct": 39.663,
+        "h_pct": 15.459
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "21",
+      "bbox": {
+        "x_pct": 89.873,
+        "y_pct": 93.63,
+        "w_pct": 1.481,
+        "h_pct": 2.295
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction was highly garbled.",
+    "Author name should be marked as heading.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "340",
+  "page": 3,
+  "elapsed_seconds": 3.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

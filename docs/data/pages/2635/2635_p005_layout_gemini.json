@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "wollen; und für die wir manchmal bereit sind, zu leiden und sogar den anderen Leid zuzufügen. Wir wären keine Menschen, wenn wir nur gute Menschen in dem Sinn wären, daß wir das Leid lindern würden.",
+      "bbox": {
+        "x_pct": 12.08,
+        "y_pct": 7.75,
+        "w_pct": 39.385,
+        "h_pct": 6.75
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to reflect original scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Leid ist eigentlich im Herzen des Menschseins. Die Freiheit bringt es mit sich, daß wir einen Sinn suchen, daß wir immer einen Sinn suchen müssen; uns fehlt immer etwas an Sinn. Das bedeutet, daß uns überhaupt etwas fehlt. Der Mangel ist wichtig. Wir leiden, weil uns etwas fehlt. Aber wir sind seltsame Wesen. Wir träumen vom Glück, und das ist ganz richtig, aber wenn wir mal das Glück erreicht haben, da fehlt uns etwas. Was eigentlich? Es fehlt uns wieder der Sinn. Und der Sinn geht nicht ohne Mangel; Sinn bedeutet, daß man auf etwas hinzielt, man ist auf dem Wege zu etwas. Wir sind eben diese seltsamen Wesen, die die Fülle genießen möchten, aber die den Sinn nur mit Sehnsucht verbinden können. Es muß uns etwas fehlen, wir müssen also leiden.",
+      "bbox": {
+        "x_pct": 12.139,
+        "y_pct": 14.308,
+        "w_pct": 39.688,
+        "h_pct": 20.3
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist menschlich, gegen das Leid zu kämpfen, Schritt für Schritt sich zu bemühen, manchmal Opfer zu bringen, um das Leid zu besiegen, Fortschritte zu machen durch die Geschichte hindurch. Es ist aber auch menschlich, in diesem Kampf selbst weiter zu leiden, denn die Freiheit in einem bestimmten Sinn nimmt es an, daß es Scheitern und Schmerz gibt. Wir kämpfen dagegen, aber wir erkennen es an, und es ist eine seltsame Vermischung in unserem Menschsein, eine seltsame Kombination von Kampf und auch Ja-sagen.",
+      "bbox": {
+        "x_pct": 12.373,
+        "y_pct": 37.583,
+        "w_pct": 39.678,
+        "h_pct": 16.917
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn man aber den über das Leid als ein Recht auffaßt, dann wird alles falsch. Denn Rechte haben wir in dieser Richtung keine. Niemand hat uns versprochen, daß wir ein Recht auf Euphorie haben. Und ich fürchte, daß viele Leute heute gegen das Leid rebellieren. Dann wird man steif dem Leiden gegenüber, und wenn man steif wird, leidet man noch viel mehr. Das Leid wird in einem bestimmten Sinn wild.",
+      "bbox": {
+        "x_pct": 54.004,
+        "y_pct": 7.283,
+        "w_pct": 39.482,
+        "h_pct": 15.108
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es gibt eine enge Beziehung zwischen Leid und Wert des Lebens. Und ich glaube, es gibt im Menschsein jetzt werde ich vielleicht etwas sehr Unvernünftiges sagen - eine bestimmte Verbindung zwischen jenem Absoluten, das Koriagin und Solschenizyn jenseits der Furcht erlebt haben, und andererseits einem bestimmten Leicht-Sinn. Vielleicht gehört es zur richtigen Einstellung zum Leid, daß man fähig wird, einen bestimmten Leicht-Sinn zu pflegen. Ich sage absichtlich Leicht-Sinn und nicht Leicht-Sinn. Es ist eine bestimmte Leichtigkeit. Die Leute, die am schwersten sterben, sind vielleicht nicht die, die das Leben am meisten lieben, sondern die, die sich an das »Gewicht« angeklammert haben, an das Schwere. Es gehört zu einem entschlossenen Sinn für das Absolute, daß eine bestimmte Leichtigkeit ins Leben hineinkommt. Viele Dinge werden dann leicht genommen, und man wird fähig, das Leid besser zu ertragen und zu bekämpfen.",
+      "bbox": {
+        "x_pct": 54.102,
+        "y_pct": 22.275,
+        "w_pct": 39.873,
+        "h_pct": 29.975
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "26",
+      "bbox": {
+        "x_pct": 13.438,
+        "y_pct": 94.417,
+        "w_pct": 1.758,
+        "h_pct": 1.583
+      },
+      "changed": true,
+      "change_reason": "Relabeled page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most regions had truncated or improperly scanned text content.",
+    "Page number at bottom left was misclassified as text."
+  ],
+  "doc_id": "2635",
+  "page": 5,
+  "elapsed_seconds": 7.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

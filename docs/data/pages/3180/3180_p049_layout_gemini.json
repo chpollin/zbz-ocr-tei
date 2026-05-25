@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ob sich noch irgendwo ein unwiderstehliches Fragebedürfnis regt? Jawohl, der Frager E möchte von mir noch die Paradoxie hören, die ich nicht auflösen kann? Ist das richtig, wollten Sie das noch anmahnen?",
+      "bbox": {
+        "x_pct": 7.29,
+        "y_pct": 4.344,
+        "w_pct": 85.225,
+        "h_pct": 8.679
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and incomplete transcription of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich kann Ihnen dazu folgendes sagen: Eine Paradoxie ist definiert als etwas, was kein vernünftiger Mensch auflösen kann. Aber das meiste, was wir als Paradoxien bezeichnen, sind gar keine, sondern wir sind nur zu faul, den Anschein von Paradoxie aufzulösen. Oder zu untrainiert. Das war meine These. Wenn ich auf irgendeine echte Paradoxie komme, z. B. auf eine der ältesten, auf die Paradoxie des Zenon vom fliegenden Pfeil, der steht, dann stelle ich fest, daß wir bis heute zwar einen Haufen mathematischer Modelle haben, die versuchen, das aufzulösen, daß es aber nicht klappt. Wir haben bis heute keine funktionierende Auflösung. Wir haben Formen gefunden, es anders zu formulieren, aber wir haben keine Auflösung dieser spezifischen Paradoxien gefunden, und dabei – würde ich mal vermuten –, handelt es sich dann wahrscheinlich um ,echte‘ Paradoxien. Während ich, um es noch mal zu sagen, nicht der Auffassung bin, daß diese, Menschen seien frei und determiniert zugleich, eine echte, unauflösbare Paradoxie, sondern einfach eine nicht ausformulierte Behauptung ist, weil Menschen nicht zugleich und in derselben Hinsicht frei und determiniert sind. Wenn Sie, statt die Treppe zu nehmen, aus dem Fenster springen, sind Sie beim Rausspringen aus dem Fenster frei, sobald Sie sich aber draußen in der Luft befinden, sind Sie determiniert und können nur noch bereuen, daß Sie nun in Ihrer Freiheit den Übergang zum Determinismus gemacht haben. Ich meine, wem sage ich das? Wir als Kantianer wissen das.",
+      "bbox": {
+        "x_pct": 7.141,
+        "y_pct": 15.364,
+        "w_pct": 85.569,
+        "h_pct": 57.923
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription to match complete paragraph text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Wir kommen zum Ende",
+      "bbox": {
+        "x_pct": 7.53,
+        "y_pct": 75.619,
+        "w_pct": 33.383,
+        "h_pct": 2.004
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine Damen und Herren, wir haben den Titel „Lob von Paradoxien und Widersprüchen“ diskutieren wollen, wir haben sie allerdings nur am Anfang ein bißchen gelobt und nachher festgestellt, daß wir sie, wenn wir der Analyse von Frau Hersch folgen, nicht vermeiden können und uns daher in ihre Anerkennung fügen müssen. Das wäre, glaube ich, aber noch kein Grund, sie zu loben. Oder, wenn Sie der These folgen, die zum",
+      "bbox": {
+        "x_pct": 6.931,
+        "y_pct": 77.659,
+        "w_pct": 85.389,
+        "h_pct": 15.902
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription and quotation marks."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "72",
+      "bbox": {
+        "x_pct": 78,
+        "y_pct": 95,
+        "w_pct": 5,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region for better layout filtering."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for paragraphs was severely truncated.",
+    "Page number at bottom was missing a bounding box."
+  ],
+  "doc_id": "3180",
+  "page": 49,
+  "elapsed_seconds": 5.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

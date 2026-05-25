@@ -1,0 +1,72 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "140 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 17.546,
+        "y_pct": 10.3,
+        "w_pct": 68.514,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header corrected to _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de Fêtre de Dieu, en même temps qu'une conquête de Dieu par Iuimeme Cest cette extériorisation; trav",
+      "bbox": {
+        "x_pct": 17.546,
+        "y_pct": 13.265,
+        "w_pct": 68.514,
+        "h_pct": 22.02
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Laulhenticité, pour tout acle spirituel, c'est de la réalilé modale aclualisée   par Vatlitude du su",
+      "bbox": {
+        "x_pct": 17.512,
+        "y_pct": 35.361,
+        "w_pct": 68.583,
+        "h_pct": 26.166
+      },
+      "changed": true,
+      "change_reason": "Corrected text content: Laulhenticité -> L'authenticité, acle -> acte, de la réalile -> de la réalité"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais dit 4 malière %, 4 exlériorilé dit espace. Il s'agit donc maintenant déludier es rapports de Te",
+      "bbox": {
+        "x_pct": 17.316,
+        "y_pct": 61.632,
+        "w_pct": 68.548,
+        "h_pct": 7.487
+      },
+      "changed": true,
+      "change_reason": "Corrected text content: Mais dit 4 malière %, 4 exlériorilé dit espace. Il s'agit do... -> Mais à cette « matière », « extériorité de la matière », dit espace. Il s'agit donc maintenant d'étudier les rapports de l'esprit avec l'espace dans lequel il se déploie, afin de découvrir en quoi, justement, l'espace éprouve l'esprit."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Running header was mislabeled as text",
+    "Text region 2 had OCR errors in initial provided string",
+    "Text region 3 had significant OCR errors in initial provided string"
+  ],
+  "doc_id": "110",
+  "page": 142,
+  "elapsed_seconds": 6.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content: Laulhenticité -> L'authenticité, acle -> acte, de la réalile -> de la réalité": 1,
+    "Corrected text content: Mais dit 4 malière %, 4 exlériorilé dit espace. Il s'agit do... -> Mais à cette « matière », « extériorité de la matière », dit espace. Il s'agit donc maintenant d'étudier les rapports de l'esprit avec l'espace dans lequel il se déploie, afin de découvrir en quoi, justement, l'espace éprouve l'esprit.": 1,
+    "ADDED": 1
+  }
+}

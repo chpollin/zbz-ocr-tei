@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais à l’heure zéro, ce n’est ni dans la salle de bains, ni dans la bonne cuisine, ni dans la route, ni même dans la diminution de la souf france et le retard de la mort, que nous irons puiser le sens de l’année qui finit et de l’année qui commence. Ce n’est ni dans le confort, ni même dans le bonheur, car confort et bonheur, si précieux soient-ils, doivent parfois être subordonnés ou sacrifiés à l’essentiel: au sens du présent vécu, entre passé et avenir, avec le passé et l’avenir, par les hommes que nous sommes et qui restent, malgré tous les changements, les mêmes pour l’essentiel: des êtres conscients, mortels et libres.",
+      "bbox": {
+        "x_pct": 10.667,
+        "y_pct": 118.841,
+        "w_pct": 65.939,
+        "h_pct": 395.787
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to match the full paragraph text as shown in the image, as the previous extraction was truncated and incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "À l’heure zéro, certains accuseront les cieux et les hommes, disant que le monde est atroce et intolérable. D’autres loueront la splendeur de la terre et les progrès de l’histoire. Les uns et les autres auront raison, les uns et les autres auront tort. Le monde est à la fois atroce et splendide, et qu’il devienne plus atroce ou plus splendide, cela dépend encore dans une certaine mesure de ce que je ferai ou ne ferai",
+      "bbox": {
+        "x_pct": 10.703,
+        "y_pct": 524.225,
+        "w_pct": 65.903,
+        "h_pct": 253.743
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to match the full paragraph text as shown in the image, as the previous extraction was truncated and incomplete."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "59",
+      "bbox": {
+        "x_pct": 728.0,
+        "y_pct": 826.0,
+        "w_pct": 20.0,
+        "h_pct": 30.0
+      },
+      "changed": true,
+      "change_reason": "Identified and classified the page number as a page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Previous OCR extraction was truncated.",
+    "Page number missing from initial list of regions.",
+    "The bounding box coordinates in the original JSON were mathematically illogical relative to standard image normalized coordinate systems."
+  ],
+  "doc_id": "2260",
+  "page": 57,
+  "elapsed_seconds": 4.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

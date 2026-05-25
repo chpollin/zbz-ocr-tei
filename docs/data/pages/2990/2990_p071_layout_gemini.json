@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "78 Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 14.11,
+        "y_pct": 2.21,
+        "w_pct": 80.123,
+        "h_pct": 3.73
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text, corrected to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "An der Abwesenheit der Kultur sagt man, sei die Technik schuld. Ich sage: Keineswegs! Die Technik ist nicht daran schuld, genausowenig wie die Demokratie daran schuld ist, wenn die Menschen in einer Demokratie vom Staat oder von der Regierung nicht einen Inhalt des Glaubens bekommen, sondern ihn selbst finden sollen. Natürlich ist der demokratische Raum ärmer, wenn man einen freien Raum um jeden Menschen schützt, damit er sich findet. Aber dieser Anspruch ist gerade das Schöpferische und nicht das Zerstörende. Das ist gerade das, was entstehen soll. Die Leere enthält in sich die Möglichkeit, etwas Volles zu schaffen. Die Demokratie ist nicht die Leere, aber es ist wahr, daß man es in der Demokratie viel mehr sieht, wenn die Menschen leer sind. Es wird sichtbar. Genau so, würde ich sagen, ist es mit der Technik. Wenn die Menschen mehr Technik haben, haben sie mehr Zeit. Aber das ist keine Selbstverständlichkeit und muß immer wieder geprüft werden. Man wird in ihrem Gebrauch der Zeit besser sehen, ob sie leer sind oder ob sie etwas tun im starken Sinne des Wortes. Die Folgen für den Menschen sind immer so komplex, daß man sich immer auch fragen muß, welche Impulse davon ausgehen usw. Es ist also nicht so, daß die Technik die freie Zweckmäßigkeit zerstört. Der homo faber, von dem man immer gesprochen hat, ist ein technischer homo faber geworden.",
+      "bbox": {
+        "x_pct": 14.27,
+        "y_pct": 5.814,
+        "w_pct": 80.123,
+        "h_pct": 39.523
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man kann sich auch fragen, worin die Verbindung zwischen dem Geist, der entdeckt, und dem Gegenstand, der erfunden wird, besteht. Worin besteht die Beziehung zwischen dem Erfindenden und dem Erfundenen? Die Beziehung ist gerade die Möglichkeit, die Anspruch auf jeden Menschen erhebt, so daß es schwieriger sein wird - in einem Sinne bequemer, aber in der Tiefe schwieriger - ein homo faber zu sein, weil man das Faber'sche, wenn ich so sagen darf, in einer technischen Welt tiefer herholen muß, als es bei Menschen der Fall ist, die von physischen Bedürfnissen getrieben werden, so daß sie nur - wie man in Frankreich sagt, „metro, boulo, dodo“ - arbeiten und schlafen können. Aber in erster Linie besteht das Hauptproblem darin, sich zu fragen, was aus dem Menschen wird. Oder vielmehr: Wie wird sich der Mensch fühlen und sich in einer Welt erfahren, in der die Technik als etwas betrachtet wird, das vom Menschlichen im Menschen entfernt?",
+      "bbox": {
+        "x_pct": 14.11,
+        "y_pct": 44.926,
+        "w_pct": 80.123,
+        "h_pct": 27.607
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zum Beispiel die Einbildungskraft. Sie wissen, daß man heutzutage die Gewohnheit hat, die verschiedenen Fähigkeiten, die der Mensch hat, irgendwie hierarchisch zu ordnen. Es gibt Fähigkeiten des Menschen, die es Mode ist zu verachten, und andere, die man schätzt. So schätzt man zum Beispiel das Gedächtnis heutzutage sehr wenig, doch die Einbildungskraft schätzt man sehr. Ich frage mich, ob man darüber nachgedacht hat, wie",
+      "bbox": {
+        "x_pct": 14.025,
+        "y_pct": 72.508,
+        "w_pct": 80.123,
+        "h_pct": 12.245
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header was misclassified as text/zb_paragraph."
+  ],
+  "doc_id": "2990",
+  "page": 71,
+  "elapsed_seconds": 5.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

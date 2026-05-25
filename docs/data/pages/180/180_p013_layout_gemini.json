@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ENSEIGNEMENT DE LA PHILOSOPHIE 45",
+      "bbox": {
+        "x_pct": 236.0,
+        "y_pct": 65.0,
+        "w_pct": 558.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text and page number included, should be _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "clairs ce qui les tourmente. C'est un âge de profondeur possible, qui risque d'avorter et qu'il faut stimuler au bon moment. La grande majorité des élèves se souviennent de leur « année de philo » comme d'une expérience unique, qui compte dans leur vie. Elle leur donne souvent la faculté de dresser la tête au-dessus du flot des événements et des circons- tances et de les dominer par l'esprit. Elle entretient par le souvenir un besoin de cohérence et de sincérité. Beaucoup qui, par la suite, firent des études de droit ou de sciences pures, m'ont dit l'aide qu'elle continuait à leur apporter. Et je ne parle pas de ceux qui, même par un tout petit cours de philosophie donné aux candidats à la maturité suisse (où la philosophie n'est pas branche d'examen), ont été suffisamment saisis par les problèmes pour poursuivre ensuite des recherches philosophiques sérieuses et approfondies — alors que sans ce cours, la philo- sophie serait restée pour eux lettre morte puisqu'ils n'auraient pas su ce que c'était. Je suis convaincue que dans notre pays bien des esprits philosophiques se perdent, faute d'avoir eu jamais l'occasion de se découvrir eux-mêmes.",
+      "bbox": {
+        "x_pct": 8.864,
+        "y_pct": 9.248,
+        "w_pct": 70.185,
+        "h_pct": 35.385
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'ai voulu ici que défendre la cause de l'enseignement de la philosophie au degré secondaire et examiner les objections qu'on élève contre lui. Restent tous les problèmes des pro- grammes, des horaires, des examens, et celui de la formation des maîtres. Il n'est pas question de les traiter ici. Voici seule- ment quelques remarques.",
+      "bbox": {
+        "x_pct": 8.888,
+        "y_pct": 51.926,
+        "w_pct": 70.081,
+        "h_pct": 11.362
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est sans doute impossible d'envisager en Suisse une « année de philosophie » égale en importance à celle du baccalauréat français (environ 9 heures de philosophie par semaine). A mon sens cependant, programmes et horaires devraient être remaniés de façon à réserver 3 heures par semaine au moins de la dernière année du gymnase à la philosophie. Cela permettrait déjà un travail sérieux. Certains refusent, d'autre part, de « ravaler » la philosophie, libre exercice de l'esprit, au rang d'une matière d'examen. Je crois qu'il faut voir les choses comme elles sont. Si toutes les branches s'enseignaient pour elles-mêmes, la philosophie, certainement, ferait très bonne figure parmi les préoccupations des élèves. Si, par contre, les autres sont matière d'examen sans qu'elle le soit, elle devient parente pauvre, c'est",
+      "bbox": {
+        "x_pct": 8.759,
+        "y_pct": 62.809,
+        "w_pct": 70.314,
+        "h_pct": 24.427
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header identified as text.",
+    "OCR text for first paragraph was heavily corrupted."
+  ],
+  "doc_id": "180",
+  "page": 13,
+  "elapsed_seconds": 4.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

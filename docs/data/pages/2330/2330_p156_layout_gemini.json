@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "général bien il n’y a pas craindre. affaire à être de lui plutôt puisse",
+      "bbox": {
+        "x_pct": 47.009,
+        "y_pct": 5.266,
+        "w_pct": 49.084,
+        "h_pct": 14.081
+      },
+      "changed": true,
+      "change_reason": "OCR transcription corrected for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous 1970, lors du détournement par des Palestiniens d'un avion de Swissair dans le désert de Jordanie ?",
+      "bbox": {
+        "x_pct": 16.642,
+        "y_pct": 25.589,
+        "w_pct": 79.902,
+        "h_pct": 5.677
+      },
+      "changed": true,
+      "change_reason": "OCR corrected for readability and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1. Je peux pas, aujourd'hui surtout, et d'ailleurs d'aucune manière, me mettre à la place de la personne qui assumait les responsabilités principales à ce moment. Je n'ai ni les informations, ni la responsabilité permettant de le faire, et il est trop facile de porter ainsi des jugements après coup.",
+      "bbox": {
+        "x_pct": 16.484,
+        "y_pct": 31.073,
+        "w_pct": 79.731,
+        "h_pct": 6.613
+      },
+      "changed": true,
+      "change_reason": "OCR corrected to match the source text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est vrai que les autorités suisses paraissent avoir été alors prises au dépourvu.",
+      "bbox": {
+        "x_pct": 16.691,
+        "y_pct": 41.992,
+        "w_pct": 79.609,
+        "h_pct": 4.242
+      },
+      "changed": true,
+      "change_reason": "OCR corrected to remove typos and fix spacing."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au sujet de ce « pris au dépourvu », je crois qu'il est tout à fait essentiel que les gouvernements, d'une part, les mouvements politiques, d'autre part, et les individus eux-mêmes enfin, élaborent en quelque sorte des conditions préventives. Il faut que chacun d'entre nous ait en somme décidé, quelque part dans une zone de son esprit et de son âme, où sont les limites de sa flexibilité, où il est absolument décidé à ne pas céder ; parce que si nous n'élaborons pas cela d'avance, au niveau de nos convictions, de notre volonté, de nos lignes de conduite, nous serons toujours pris au dépourvu. Bien des faiblesses ont eu leurs conséquences dans l'histoire parce qu'on ne s'était pas livré à ce travail préparatoire.",
+      "bbox": {
+        "x_pct": 16.764,
+        "y_pct": 46.153,
+        "w_pct": 79.695,
+        "h_pct": 18.306
+      },
+      "changed": true,
+      "change_reason": "Reconstructed text from paragraph blocks."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un autre facteur d'importance n'a-t-il pas bouleversé aussi l'organisation de la société internationale : je veux parler de l'émergence du Tiers-Monde comme force politique. Qu'en pensez-vous et quelle expérience en avez-vous faite dans les organisations internationales ?",
+      "bbox": {
+        "x_pct": 16.569,
+        "y_pct": 66.718,
+        "w_pct": 79.976,
+        "h_pct": 8.363
+      },
+      "changed": true,
+      "change_reason": "Fixed garbled OCR output."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Heavy OCR degradation in source bounding boxes.",
+    "Bboxes for paragraph text were fragmented or improperly cut."
+  ],
+  "doc_id": "2330",
+  "page": 156,
+  "elapsed_seconds": 5.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA NATURE DU POUVOIR 87",
+      "bbox": {
+        "x_pct": 372,
+        "y_pct": 60,
+        "w_pct": 257,
+        "h_pct": 22
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ni les explications économiques, ni les analyses psychologiques, ni la Terreur, ici, ne suffisent. C'est pourquoi il se mêle chez beaucoup, à ces souvenirs, le sentiment vague d'une puissance démoniaque à l'œuvre, d'un Mal absolu déchaîné.",
+      "bbox": {
+        "x_pct": 11.784,
+        "y_pct": 9.694,
+        "w_pct": 75.62,
+        "h_pct": 9.562
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il me semble qu'on néglige alors un aspect des choses: le Pouvoir terroriste absolu ne règne pas seulement par l'effroi que répand l'usage qu'il fait de la force nue. Il tient aussi à un manque, une absence, une paralysie des terrorisés.",
+      "bbox": {
+        "x_pct": 12.016,
+        "y_pct": 19.008,
+        "w_pct": 75.435,
+        "h_pct": 8.95
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Simone Weil se demandait comment la physique sociale pouvait permettre la domination de quelques-uns sur le grand nombre, et elle répondait que l'organisation des quelques-uns l'emportait sur l'éparpillement du grand nombre, de sorte qu'en réalité c'était le nombre des « quelques-uns » qui tenait en respect les unités du « grand nombre », ce dernier n'étant jamais que un + un + un...",
+      "bbox": {
+        "x_pct": 11.9,
+        "y_pct": 27.851,
+        "w_pct": 75.55,
+        "h_pct": 13.554
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais dans nos sociétés actuelles, il y a quelque chose de plus: le Pouvoir s'est infiltré partout, si bien qu'il y a partout des petits chefs qui dépendent d'autres chefs un peu moins petits, et dont dépendent d'autres petits chefs, jusqu'à celui dont seule dépend encore sa propre femme. Il ne faut pas confondre! Je ne parle pas ici de ce pouvoir diffus, dont je disais qu'il est partout où des hommes vivent et désirent et veulent, et que nous appelions « du pouvoir ». Je parle de ce Pouvoir miniaturisé et hiérarchisé qui empoisonne aujourd'hui la vie dans les entreprises, les usines, les administrations, les organisations nationales et internationales, les centres de recherches, les sociétés commerciales, et même les Facultés universitaires où naguère encore tous les enseignants étaient des égaux. Jamais le sentiment public n'a exigé l'égalité avec autant d'ardeur. Mais jamais la hiérarchie, minutieuse et miniaturisée, n'a pareillement envahi la vie quotidienne du grand nombre.",
+      "bbox": {
+        "x_pct": 11.97,
+        "y_pct": 41.24,
+        "w_pct": 75.597,
+        "h_pct": 35.231
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A l'intérieur de ces textures, le pouvoir est à peu près anonyme, abstrait, il découle d'un organigramme, il ne possède ni ne recherche aucune légitimité transcendante, originelle ou finalisée. Ses armes, ce sont le gagne-pain, l'espoir d'une promotion, la crainte d'une sanction ou d'un congé, parfois simplement une décence routinière.",
+      "bbox": {
+        "x_pct": 12.051,
+        "y_pct": 76.636,
+        "w_pct": 75.632,
+        "h_pct": 13.223
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Page header/number misidentified as paragraph",
+    "Paragraphs were severely truncated in previous text extraction"
+  ],
+  "doc_id": "1530",
+  "page": 15,
+  "elapsed_seconds": 6.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

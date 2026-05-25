@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "DA 38639",
+      "bbox": {
+        "x_pct": 35.4,
+        "y_pct": 2.111,
+        "w_pct": 22.323,
+        "h_pct": 3.08
+      },
+      "changed": true,
+      "change_reason": "Identified as bibliographic reference code/archive number, belongs to _filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch Annemarie Pieper Walther Ch. Zimmerli",
+      "bbox": {
+        "x_pct": 35.551,
+        "y_pct": 5.19,
+        "w_pct": 51.373,
+        "h_pct": 9.755
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mensch-Welt Widerspruch",
+      "bbox": {
+        "x_pct": 35.038,
+        "y_pct": 45.924,
+        "w_pct": 58.582,
+        "h_pct": 14.611
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "VERLAG FRÄNKISCHER TAG",
+      "bbox": {
+        "x_pct": 35.701,
+        "y_pct": 88.524,
+        "w_pct": 56.456,
+        "h_pct": 3.388
+      },
+      "changed": true,
+      "change_reason": "Publisher name is part of the bibliographic metadata/heading, should be marked as zb_heading."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "DA 38639 was incorrectly labeled as paragraph text.",
+    "Publisher name was incorrectly labeled as paragraph text."
+  ],
+  "doc_id": "3160",
+  "page": 1,
+  "elapsed_seconds": 3.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

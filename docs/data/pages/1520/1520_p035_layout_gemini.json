@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers parle-t-il, nous l'avons vu, d'« éclairer » l'existence, de son « éclairement » (Existenzerhellung). Encore faut-il comprendre que cet « éclairement » n'a rien de réductif : il ne consiste nullement à réduire à l'objectivité telle zone ou tel aspect de l'existence. Au contraire : il en révèle l'irréductible profondeur, à la manière dont un rayon de lumière fait apparaître la profondeur noire d'un puits.",
+      "bbox": {
+        "x_pct": 8.358,
+        "y_pct": 6.024,
+        "w_pct": 83.875,
+        "h_pct": 13.911
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and merged fragmented boxes for better readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De même que l'échec d'une ontologie dit quelque chose de la transcendance, l'insuffisance de toute science de l'homme dit quelque chose de son existence. L'homme peut faire l'objet de nombre de recherches diverses, et ces recherches peuvent accumuler un savoir considérable. Pourtant l'homme est toujours davantage que ce qu'on peut savoir de lui, davantage que ce qu'il croit savoir de lui-même. Dès qu'il est objet d'un certain savoir, il n'est plus lui-même en tant qu'existence, en tant que liberté existentielle. Irréductible par essence à la somme des disciplines qui le prennent pour objet d'étude, de même que « le monde » est irréductible à la somme des sciences de la nature, il est, comme le monde, ce que Jaspers appelle « un englobant » (ein Umgreifendes). (7 à 17)",
+      "bbox": {
+        "x_pct": 8.358,
+        "y_pct": 14.394,
+        "w_pct": 83.875,
+        "h_pct": 25.568
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and adjusted bounding box to cover the full paragraph properly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au niveau de la connaissance, chaque objet doit avoir une cause. On cherchera donc, dans les diverses sciences humaines, les causes des phénomènes physiques, psychiques, sociaux, qui composent la vie des êtres humains. Cependant la liberté existentielle n'a pas de cause. Elle ne vient pas non plus du néant. Elle n'est pas davantage une auto-création de l'homme. Au contraire, nous l'avons vu, il est de l'essence de l'existence possible, donc de la possible liberté existentielle, de se saisir comme ne s'étant pas produite elle-même, mais comme étant à elle-même donnée, à la manière d'un cadeau. Elle n'a pas de cause, mais elle a une origine (Ursprung). Cette origine, c'est la transcendance.",
+      "bbox": {
+        "x_pct": 8.358,
+        "y_pct": 40.518,
+        "w_pct": 83.875,
+        "h_pct": 21.326
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Métaphysique",
+      "bbox": {
+        "x_pct": 8.225,
+        "y_pct": 63.693,
+        "w_pct": 18.103,
+        "h_pct": 2.262
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eclairant l'existence, la pensée s'efforce de connaître l'origine de celle-ci : la transcendance. Cette tentative, chez Jaspers, s'appelle « métaphysique ». Le « penser » métaphysique est un étrange penser.",
+      "bbox": {
+        "x_pct": 8.36,
+        "y_pct": 66.838,
+        "w_pct": 83.686,
+        "h_pct": 6.11
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comme ce penser vise la transcendance, et comme la transcendance, étant l'englobant du sujet et de l'objet, ne saurait être prise pour objet, Jaspers se trouve ici dans une situation analogue à celle de Kant essayant de concevoir le noumène, dont il ne peut rien savoir, sinon qu'il est impensable. Impensable par essence, par définition constitutive, et j'aimerais ajouter, par fonction. Pour comprendre Kant ici, il faut consentir à le suivre, fût-ce au fil des phrases qui semblent contredire sa démarche essentielle, fût-ce à travers des mots qui désignent tantôt une chose, tantôt une autre, et parfois",
+      "bbox": {
+        "x_pct": 8.266,
+        "y_pct": 72.639,
+        "w_pct": 83.875,
+        "h_pct": 17.249
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "29",
+      "bbox": {
+        "x_pct": 88.5,
+        "y_pct": 91.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Fragmented paragraphs in original OCR output",
+    "Incorrect text transcription in multiple regions",
+    "Page number at bottom not identified correctly"
+  ],
+  "doc_id": "1520",
+  "page": 35,
+  "elapsed_seconds": 6.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

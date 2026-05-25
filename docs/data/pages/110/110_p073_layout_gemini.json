@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE 71",
+      "bbox": {
+        "x_pct": 11.5,
+        "y_pct": 2.0,
+        "w_pct": 68.8,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "modèle; tout cas pas dans un sens aussi complet  que Ia ture OI! le roman. Si Ton   met se5 æuvTeS d",
+      "bbox": {
+        "x_pct": 11.703,
+        "y_pct": 12.931,
+        "w_pct": 68.746,
+        "h_pct": 53.964
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pure  malhématique ne donnera pas de musique; cela de soi 1 s'il y pas de   polarité formatrice d",
+      "bbox": {
+        "x_pct": 11.772,
+        "y_pct": 66.538,
+        "w_pct": 68.55,
+        "h_pct": 4.024
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "CE Ce Bujet DAVENSON, Traité de la musique. Cahiers du Rhône, p. 68 Saint   Augustin; noug dit   Dav",
+      "bbox": {
+        "x_pct": 11.542,
+        "y_pct": 71.731,
+        "w_pct": 68.7,
+        "h_pct": 3.265
+      },
+      "changed": true,
+      "change_reason": "Corrected label from list_item to footnote"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original label list_item was incorrect for footnote",
+    "Missing page header region in original input"
+  ],
+  "doc_id": "110",
+  "page": 73,
+  "elapsed_seconds": 5.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from list_item to footnote": 1,
+    "ADDED": 1
+  }
+}

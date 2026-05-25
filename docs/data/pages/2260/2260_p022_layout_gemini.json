@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur ce support, elle ne pèse pas, bien qu'elle y reste prise par un coude et par les deux genoux. C'est qu'elle n'a pas fini de surgir. Quand je dis «elle surgit», j'ai l'air d'employer un faux présent, pour raconter une histoire passée. Or ce surgissement ne se laisse pas dire, car il est au présent absolu.",
+      "bbox": {
+        "x_pct": 24.242,
+        "y_pct": 11.591,
+        "w_pct": 66.424,
+        "h_pct": 20.311
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and punctuation in the text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Ève d'Autun se soulève à peine, sur le coude et sur les genoux. Elle n'a pas eu le temps encore de se mettre debout, comme le sont toutes les autres Eves, coupables et chassées. Tout son corps surgissant garde la raideur de son éternité originelle. Les jambes surtout, pliées, ne sont qu'un rigide angle de pierre. Le torse, droit, n'a pas de taille. Pourtant voici qu'elle émerge de cette raideur sacrée. Le charme s'éveille et croît, au fur et à mesure qu'on remonte le long de son corps, que les seins, les bras se dévêtent de leur éternité, que le visage, déjà vulnérable, se met à désirer et à craindre.",
+      "bbox": {
+        "x_pct": 24.327,
+        "y_pct": 34.487,
+        "w_pct": 66.012,
+        "h_pct": 39.057
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR errors, removed artifacts like the digit '9' which was a false positive, and fixed text formatting."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "24",
+      "bbox": {
+        "x_pct": 24.786,
+        "y_pct": 82.909,
+        "w_pct": 3.738,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from 'text' to 'page_footer'."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction contained significant OCR junk characters.",
+    "Page number '24' was misidentified as text.",
+    "OCR errors in paragraph 1 and 2 needed manual correction to reflect the source document."
+  ],
+  "doc_id": "2260",
+  "page": 22,
+  "elapsed_seconds": 3.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

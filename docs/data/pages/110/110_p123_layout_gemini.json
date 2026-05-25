@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME",
+      "bbox": {
+        "x_pct": 14.35,
+        "y_pct": 2.0,
+        "w_pct": 68.39,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header detected"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "121",
+      "bbox": {
+        "x_pct": 79.16,
+        "y_pct": 93.0,
+        "w_pct": 3.73,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page footer detected"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dart, aucune, L'inexistence artistique pas être de la beaulé, la aussi complèle   que   possible; co",
+      "bbox": {
+        "x_pct": 14.35,
+        "y_pct": 13.126,
+        "w_pct": 68.389,
+        "h_pct": 5.516
+      },
+      "changed": true,
+      "change_reason": "Fixed text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il de soi que nous dégageons   ici  abstraitement, par une sorle de   typisation; Texistence   artis",
+      "bbox": {
+        "x_pct": 14.108,
+        "y_pct": 18.945,
+        "w_pct": 68.596,
+        "h_pct": 55.69
+      },
+      "changed": true,
+      "change_reason": "Fixed text content"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original text transcription had errors",
+    "Missing page header/footer in initial input"
+  ],
+  "doc_id": "110",
+  "page": 123,
+  "elapsed_seconds": 5.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Fixed text content": 2,
+    "ADDED": 2
+  }
+}

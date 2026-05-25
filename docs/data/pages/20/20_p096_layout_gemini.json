@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "94 LA DIALECTIQUE DU TEMPS EST FICTIVE",
+      "bbox": {
+        "x_pct": 128.01,
+        "y_pct": 74.571,
+        "w_pct": 612.349,
+        "h_pct": 9.524
+      },
+      "changed": true,
+      "change_reason": "Header identified as text and needs to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et de celle du non-être n'était pas formelle et indifférente, elle n'était pas conçue comme une insuffisance subjective de notre entendement : elle avait une raison profonde, elle coïncidait avec le véritable passage de l'Être au Non-Être. Elle était le devenir — dans le temps.",
+      "bbox": {
+        "x_pct": 128.01,
+        "y_pct": 118.381,
+        "w_pct": 763.554,
+        "h_pct": 154.286
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text significantly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lorsque nous pensons « temps » — et « éternité », il y a entre les deux — « rien ». Il est seulement possible de les penser l'un après l'autre, et d'oublier alors arbitrairement l'instant intermédiaire. Si le terme « éternité » ne signifie pas, comme il le fait chez Kant, une limite, mais une réalité connue, nous avons le vertige, car nous faisons comme si nous avions franchi une limite en réalité infranchissable. Nous marchons sur le vide. Ici le mouvement dialectique est « truqué » et la pensée ne peut réellement l'accomplir : car il a besoin, pour s'accomplir, du temps, et ici on ne peut justement pas s'en servir : l'éternité n'est ni avant, ni après la temporalité.",
+      "bbox": {
+        "x_pct": 126.958,
+        "y_pct": 272.095,
+        "w_pct": 764.608,
+        "h_pct": 360.286
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text significantly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi une « mystique pour l'entendement » (Mystik für den Verstand), telle que Hegel la voulait, est peut-être impossible. L'entendement reste nécessairement dans le temps, et l'état mystique est un instant d'éternité. On peut en tous deux pénétrer en profondeur, mais pas en tous deux à la fois. Il suffit que l'éternité soit donnée, de quelque façon que ce soit, pour que le temps apparaisse comme le déploiement de choses données, elles aussi, depuis toujours. Il devient alors indifférent.",
+      "bbox": {
+        "x_pct": 126.506,
+        "y_pct": 629.238,
+        "w_pct": 765.06,
+        "h_pct": 258.381
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text significantly."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header were not correctly labeled.",
+    "OCR output was extremely poor and required manual reconstruction from image content.",
+    "Overlapping boxes were merged logically in the text content."
+  ],
+  "doc_id": "20",
+  "page": 96,
+  "elapsed_seconds": 6.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

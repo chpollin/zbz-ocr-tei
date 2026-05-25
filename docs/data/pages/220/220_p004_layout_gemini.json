@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "76",
+      "bbox": {
+        "x_pct": 8.494,
+        "y_pct": 80.95,
+        "w_pct": 1.393,
+        "h_pct": 1.419
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "War aber dieses Materielle vorher gar nicht da? in den 3000 Jahren der Herrlichkeit Glanzlen des hum Menschen nur reine Seelen im Lichte der Freiheit? - Jener Dritte Mensch besass meistens die Fähigkeit, die geknechteten Massen einfach nicht zu sehen. Es war keine Heuchelei: diese Massen gehörten wirklich so sehr zu der Weltordnung, dass man sie gar nicht bemerkte. Vielleicht merkten sie selbst kaum, was sie waren und wie sie lebten - jedenfalls wissen wir es nicht, denn sie haben, mit seltenen Ausnahmen, die Jahrhunderte hindurch geschwiegen - wie in einem Schlaf. Aber nun sehen sie sich selbst, und sie werden von allen gesehen und gehört. Und somit wird ihre Freiheit die Bedingung jeder Freiheit; denn keine Freiheit begnügt sich mit sich selbst.",
+      "bbox": {
+        "x_pct": 10.498,
+        "y_pct": 12.81,
+        "w_pct": 36.353,
+        "h_pct": 30.537
+      },
+      "changed": true,
+      "change_reason": "Text content was corrupted, corrected based on visual content for label classification."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jetzige Pflicht der Verkörperung der grossen Probe der Ehrlichkeit",
+      "bbox": {
+        "x_pct": 11.212,
+        "y_pct": 77.727,
+        "w_pct": 35.108,
+        "h_pct": 5.427
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text corruption."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gerade aber Liebe, Natur und Unmenschen für die Echtheit der Menschen helfen könne, ist es wieder eine Probe für die absolute menschliche Werte, ob sie alles, aber auch alles tun, damit diese Hilfe den Massen nicht verlorengeht. Man muss ihnen Zeit lassen, Liebe, Alltag, Kunstwerke zu geniessen und ihnen diesen Genuss durch entsprechende Bildung ermöglichen und erleichtern. Tut man es nicht, so beweist man damit, dass man an jenen Werten nicht oder wenigstens nicht an den Werten der Wahrheit oder der Freiheit glaubt.",
+      "bbox": {
+        "x_pct": 52.854,
+        "y_pct": 63.085,
+        "w_pct": 36.501,
+        "h_pct": 20.937
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text corruption."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun ist aber die Frage nicht: Gott abstrakt in Wirklichkeit, sondern die Frage: Dank, die Frage nach den Dritten Menschen in Wirklichkeit ist aber, Gott abstrakt in Wirklichkeit in der konkreten Fülle des alltäglichen, vielschichtigen Lebens. Dieses Leben wirkt ständig gegen die Gefahr, in der schweren Regelung des Materiellen dem Vierten Menschen - also dem Unmenschen - zu verfallen, weil jeder darin so vieles zu lieben hat. Von den geliebten Gesichtern, die den Raum oder die Erinnerung bevölkern, ist jedes einzig und unerschöpflich und hat mit der Welt des Vierten Menschen nichts zu tun. Noch mehr - die Maschine, diese Herrschergestalt jener Welt, ist meistens nur in den Theorien der Intellektuellen so abstrakt und tot. Wer sich ihrer bedient, hat oft zu ihr ein lebendiges Verhältnis, ein Gefühl der Hand, der Finger für ihren Rhythmus, ihre Gestalt, ihren Stoff, ihre Kälte. Am Himmel gleiten immer unerwartete Wolken. Die Welt, die unsere Sinne füllt, kämpft ständig in uns gegen den fremden Vierten Menschen, kämpft für das Eigengefühl und die Freiheit. Und genau so sehr auch die Kunstwerke.",
+      "bbox": {
+        "x_pct": 50.623,
+        "y_pct": 23.512,
+        "w_pct": 37.746,
+        "h_pct": 41.267
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text corruption."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Heavy OCR corruption in provided text fields.",
+    "Page number at bottom left was mislabeled as text.",
+    "Provided text descriptions were significantly degraded."
+  ],
+  "doc_id": "220",
+  "page": 4,
+  "elapsed_seconds": 5.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

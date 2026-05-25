@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Laudatio",
+      "bbox": {
+        "x_pct": 36.808,
+        "y_pct": 13.801,
+        "w_pct": 19.451,
+        "h_pct": 3.136
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On fréquemment, dans la voix ou sous la plume de Raymond Aron, un regret et presque un remords: celui de n'avoir pas été un pur philosophe de l'histoire, de n'avoir pas rejeté l'éphémère du journalisme quotidien, de n'avoir pas écrit le grand livre philosophique qui hante les marges de tous ses ouvrages. Un peu comme si, ayant présenté cette extraordinaire thèse de doctorat qu'est «L'Introduction à la philosophie de l'histoire» (sans doute le plus directement et le plus exclusivement «philosophique» de ses livres), il avait été sans cesse banni du domaine élu de sa pensée par l'urgence de l'actualité. Peut-être se trompe-t-il. Peut-être la fidélité à cette première synthèse brisée entraînait-elle précisément l'impossibilité existentielle d'une pure «philosophie de l'histoire» et exigeait-elle, au moins en un temps comme le nôtre, la présence inflexible du «spectateur engagé» qu'il n'a cessé d'être. Peut-être n'y a-t-il rien à regretter.",
+      "bbox": {
+        "x_pct": 11.751,
+        "y_pct": 18.663,
+        "w_pct": 74.519,
+        "h_pct": 25.397
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR accuracy for accuracy of internal database."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je viens de prononcer le mot «fidélité». Nombreux sont ceux qui demanderont: Fidélité à quoi? puisque pour eux Raymond Aron est sans conteste un sceptique à l'état pur, qui ne s'est jamais vraiment engagé pour aucune cause, en un temps où la véhémence de l'engagement passe pour un critère d'humanité. Mais il nous est possible maintenant d'embrasser du regard l'ensemble de la vie de Raymond Aron, comme aussi de ses contemporains apparemment plus passionnés. Chez la plupart des autres nous constatons des engagements obstinés, volontairement aveugles aux faits, et pourtant successifs, opposés ou même contradictoires. Chez lui, une attitude constante, faite de limpidité intellectuelle, d'ouverture totale à l'information, de mise à distance de soi, — un enracinement, à la fois imposé et choisi, dans les donnés particulières de sa vie, — et en même temps une fidélité inflexible aux exigences qui transcendent ces données, et qui doivent les transcender sans jamais les réduire. Attachement sans l'ombre d'une complaisance, qui s'affirme dominant dans les heures sombres, lorsqu'il s'agit de partager malheur ou culpabilité, mais aussitôt transcendé lorsque, dans le succès ou la victoire, les autres jouissent de leur unanimité: Aron alors se retrouve seul pour rappeler les menaces et les devoirs imposés par l'histoire, qui continue.",
+      "bbox": {
+        "x_pct": 11.59,
+        "y_pct": 45.486,
+        "w_pct": 74.6,
+        "h_pct": 35.77
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and artifacts for accuracy of internal database."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fidèle à la France en tant que citoyen français; fidèle face à son grand-père, à sa naissance juive, mais ni sioniste, ni religieux; fidèle à ses",
+      "bbox": {
+        "x_pct": 11.785,
+        "y_pct": 83.006,
+        "w_pct": 74.291,
+        "h_pct": 4.214
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 84.148,
+        "y_pct": 88.544,
+        "w_pct": 1.258,
+        "h_pct": 2.146
+      },
+      "changed": true,
+      "change_reason": "Page number identified and moved to _filter/page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text truncation in initial OCR scan",
+    "Page number 5 was labeled as paragraph text instead of page_footer",
+    "Formatting artifacts in text blocks",
+    "Missing text content in final paragraph block"
+  ],
+  "doc_id": "1920",
+  "page": 3,
+  "elapsed_seconds": 7.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

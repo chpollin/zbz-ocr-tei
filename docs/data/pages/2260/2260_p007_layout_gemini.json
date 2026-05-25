@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PRÉFACE",
+      "bbox": {
+        "x_pct": 34.621,
+        "y_pct": 30.699,
+        "w_pct": 16.727,
+        "h_pct": 2.803
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les textes ici réunis sont divers, et pourtant semblants. Ce sont des textes où la philosophie quitte ses voies habituelles – pour n'en devenir que plus philosophique.",
+      "bbox": {
+        "x_pct": 10.349,
+        "y_pct": 38.241,
+        "w_pct": 65.235,
+        "h_pct": 11.338
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment atteindre la plus grande liberté d'écriture? Parfois, paradoxalement, en répondant à l'appel d'une occasion fugitive, en s'attachant à l'image d'un être déterminé, d'un instant exceptionnel, d'une œuvre d'art porteuse de sens et de rêve. Parfois, au contraire, en ne s'adressant qu'à soi-même – pour autant qu'on puisse se limiter à soi – et en se laissant guider par la nécessité d'une méditation suscitée par la présence de l'arbre, de la mer, du vent, et du temps silencieusement actif. L'on parle alors à partir d'une inquiétude pre-",
+      "bbox": {
+        "x_pct": 10.144,
+        "y_pct": 50.783,
+        "w_pct": 65.909,
+        "h_pct": 28.316
+      },
+      "changed": true,
+      "change_reason": "Corrected heavily corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 73.535,
+        "y_pct": 82.359,
+        "w_pct": 1.633,
+        "h_pct": 2.651
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was highly inaccurate in the paragraphs.",
+    "Page number '9' was missing from initial detection.",
+    "OCR requires manual validation for hyphenated words at the end of lines."
+  ],
+  "doc_id": "2260",
+  "page": 7,
+  "elapsed_seconds": 5.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

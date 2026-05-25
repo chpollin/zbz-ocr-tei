@@ -1,0 +1,121 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute la technique, toute la productivité, sont au service de la culture parce que c'est là que résident les virtualités de la liberté. C'est pourquoi, quand j'entreprends une chose comme celle-là, je veux être vraiment comprise. De façon générale, lorsque je parle en public, que ce soit à la radio, à la télévision, à l'école ou à l'université, mon intention la plus forte, c'est vraiment de communiquer avec les autres. C'est pourquoi je me sers d'un langage très simple.",
+      "bbox": {
+        "x_pct": 4.481,
+        "y_pct": 4.008,
+        "w_pct": 80.012,
+        "h_pct": 14.645
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "G.D.K. - Presque trivial; parfois.",
+      "bbox": {
+        "x_pct": 76.5,
+        "y_pct": 18.815,
+        "w_pct": 26.618,
+        "h_pct": 2.637
+      },
+      "changed": true,
+      "change_reason": "Included author/initials and title marker as section header/metadata."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Trivial. Je ne parle pas pour moi et la preuve, c'est que je ne m'entends pas parler. Je suis uniquement occupée de ce que je suis en train de transmettre à ceux qui sont devant moi. Je le dis souvent : je suis une vieille maîtresse d'école.",
+      "bbox": {
+        "x_pct": 4.921,
+        "y_pct": 21.024,
+        "w_pct": 79.414,
+        "h_pct": 7.847
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3. Les traductions",
+      "bbox": {
+        "x_pct": 4.676,
+        "y_pct": 32.04,
+        "w_pct": 21.05,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "Added missing number to the section header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A plusieurs reprises, au cours de votre existence, vous avez consacré beaucoup de temps à la traduction. Je vous demanderai d'abord : que représente pour vous cette tâche au service de la pensée d'autrui dans le domaine philosophique et littéraire ?",
+      "bbox": {
+        "x_pct": 4.432,
+        "y_pct": 35.911,
+        "w_pct": 79.817,
+        "h_pct": 8.177
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il se trouve que je suis de langue française et que mon maître à penser a été un philosophe allemand. Je n'aime pas particulièrement l'allemand, qui me demande beaucoup d'effort. D'autre part mes amis, mes collègues, la plupart de mes connaissances parlent tous français. Pour leur communiquer l'essentiel de ce que je trouvais dans l'œuvre de Jaspers, je me heurtais à l'obstacle de la langue. C'est ce qui m'a amenée tout naturellement à le traduire. Mais comme je suis paresseuse, j'ai traduit de préférence, pour commencer, de petits ouvrages comme L'Introduction à la philosophie, La Foi philosophique. D'autres ont fait comme moi. Ce qui a eu pour résultat que, mis à part un certain nombre de philosophes comme Jean Wahl, Gabriel Marcel, Paul Ricœur, le Père Tilliette, qui ont lu Jaspers en allemand, on a encore aujourd'hui, en France, une conception assez anodine de sa pensée. Je bats ma coulpe, car c'est en grande partie ma faute. Le seul gros ouvrage qui ait été traduit sous ma direction, c'est celui qui s'intitule Les Grands Philosophes. Dans ce volume, j'ai traduit le chapitre sur Kant, qui est le plus difficile et qui ne compte pas moins de 200 pages. — Mais les deux ouvrages capitaux de Jaspers, Philosophie et Von der Wahrheit, n'étaient pas traduits. Alors, un beau jour, j'en ai eu assez de faire mon mea culpa et j'ai entrepris la traduction de la Philosophie avec la collaboration de deux jeunes traductrices. Ce travail m'a pris un an et demi de vie.",
+      "bbox": {
+        "x_pct": 4.237,
+        "y_pct": 43.815,
+        "w_pct": 80.049,
+        "h_pct": 41.613
+      },
+      "changed": true,
+      "change_reason": "Corrected extensive OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le travail de traduction demande un dévouement et une grande humilité, une profonde subordination de soi à la pensée d'autrui. J'aime ce travail, pourvu qu'il ne dure pas trop longtemps. J'ai pensé très souvent",
+      "bbox": {
+        "x_pct": 4.432,
+        "y_pct": 85.347,
+        "w_pct": 79.939,
+        "h_pct": 6.589
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "183",
+      "bbox": {
+        "x_pct": 80.2,
+        "y_pct": 94.5,
+        "w_pct": 5.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Severe OCR errors throughout text blocks.",
+    "Section header was missing index digit.",
+    "Page number at bottom right was labeled as text.",
+    "Author initials at top right was missing or incorrectly labeled."
+  ],
+  "doc_id": "2330",
+  "page": 187,
+  "elapsed_seconds": 8.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

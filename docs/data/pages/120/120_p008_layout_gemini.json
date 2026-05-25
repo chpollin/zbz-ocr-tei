@@ -1,0 +1,137 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LA CARICATURE DE L'EXISTENTIALISME",
+      "bbox": {
+        "x_pct": 16.581,
+        "y_pct": 9.46,
+        "w_pct": 31.094,
+        "h_pct": 4.113
+      },
+      "changed": true,
+      "change_reason": "Label updated to zb_heading"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y avait eu Sartre, Camus, Simone de Beauvoir. On n'entendait presque plus parler des existentialistes d'avant la guerre.",
+      "bbox": {
+        "x_pct": 16.581,
+        "y_pct": 13.573,
+        "w_pct": 31.094,
+        "h_pct": 30.968
+      },
+      "changed": true,
+      "change_reason": "Refined bbox and text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'où,   naturellement, égoisme, érotisme,   sadisme, etc; Ainsi sest faite une gloire, ainsi s'est v",
+      "bbox": {
+        "x_pct": 16.239,
+        "y_pct": 44.056,
+        "w_pct": 31.151,
+        "h_pct": 6.532
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Laissons même Camus   hors du jeu, D'abord il déclare luile nom de n'est pas existentialiste, et il ",
+      "bbox": {
+        "x_pct": 15.043,
+        "y_pct": 50.218,
+        "w_pct": 32.308,
+        "h_pct": 39.702
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DE L 'EXISTENTIALISME",
+      "bbox": {
+        "x_pct": 49.977,
+        "y_pct": 8.282,
+        "w_pct": 35.134,
+        "h_pct": 4.839
+      },
+      "changed": true,
+      "change_reason": "Label updated to zb_heading"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je demandais à quoi l'on avait vu cela, on me répondit que tout finissait par une catastrophe.",
+      "bbox": {
+        "x_pct": 49.977,
+        "y_pct": 13.121,
+        "w_pct": 35.134,
+        "h_pct": 45.081
+      },
+      "changed": true,
+      "change_reason": "Refined text content"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par si je ne connais qu'une petite partie des romans Bédes pièces de Sartre, je suis persuadée que L",
+      "bbox": {
+        "x_pct": 50.085,
+        "y_pct": 60.298,
+        "w_pct": 34.889,
+        "h_pct": 23.411
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "4 de et Yexistentialisme, mise au point par J-P. Sartre. Article reproduit Lettres, premier cahier d",
+      "bbox": {
+        "x_pct": 50.644,
+        "y_pct": 86.153,
+        "w_pct": 31.732,
+        "h_pct": 5.806
+      },
+      "changed": true,
+      "change_reason": "Label updated to footnote"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "352",
+      "bbox": {
+        "x_pct": 82.264,
+        "y_pct": 7.46,
+        "w_pct": 2.766,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number filter"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Labels were incorrectly set as text for headings and footnotes",
+    "Missing page number region",
+    "Overlapping bbox issues on main text blocks"
+  ],
+  "doc_id": "120",
+  "page": 8,
+  "elapsed_seconds": 8.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label updated to zb_heading": 2,
+    "Refined bbox and text content": 1,
+    "Refined text content": 1,
+    "Label updated to footnote": 1,
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les systèmes de coordonnées correspondant à divers plans hiérarchisés sont mobiles, déplaçables, et permettent à Bergson d'opérer constamment des transpositions et des oppositions d'un plan à l'autre. — Quant à l'abstraction, elle règne tout au long dans la philosophie bergsonienne, malgré ses apparences concrètes et même poétiques. Le concret, chez Bergson, est essentiellement « analogique », au sens scolastique de ce mot. En effet, tout concret n'y exprime qu'un rapport, transposable sur d'autres plans et qui peut — et doit être dépouillé de sa charge de « choses », de termes inertes mis en relation. Bergson paraît avoir pensé que l'esprit abandonne plus facilement les termes du rapport lorsque ceux-ci sont concrets et se présentent aisément à la conscience, que lorsqu'ils sont abstraits et que leur existence pensée tient à l'effort seul de leur garder un sens, effort qui les durcit, les raidit et les fixe. Mais c'est justement cette technique analogique du concret qui enlève aux images de Bergson le caractère de véritables comparaisons, de véritables métaphores. La vraie métaphore est séparée du sens propre.",
+      "bbox": {
+        "x_pct": 9.245,
+        "y_pct": 34.296,
+        "w_pct": 38.713,
+        "h_pct": 43.926
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction for a large paragraph of body text."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "quel",
+      "bbox": {
+        "x_pct": 83.807,
+        "y_pct": 27.378,
+        "w_pct": 2.752,
+        "h_pct": 1.437
+      },
+      "changed": true,
+      "change_reason": "This is a fragment of header text/page metadata, not a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai parlé exprès un peu longtemps de Bergson, parce qu'il est le grand exemple moderne qu'on pourrait invoquer pour la défense d'une philosophie dépouillée de termes techniques. Et tout langage technique en général, écrite et pensée dans la langue des honnêtes gens. Or la philosophie de Bergson est technique et doit être déchiffrée comme telle, mais l'usage qui y est fait du concret présente un danger : c'est qu'intérieurement y est possible sans que la pensée philosophique ait été repensée (lecture romantique). Peut-être que toute expérience contribuera-t-elle à ramener le lecteur à l'authenticité vécue, mais elle n'est pas de soi philosophique.",
+      "bbox": {
+        "x_pct": 83.796,
+        "y_pct": 31.304,
+        "w_pct": 7.958,
+        "h_pct": 12.696
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text extraction."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction contained severe OCR artifacts and garbled characters.",
+    "Small artifacts incorrectly labeled as paragraphs.",
+    "Bounding boxes captured only parts of existing text segments."
+  ],
+  "doc_id": "50",
+  "page": 8,
+  "elapsed_seconds": 4.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

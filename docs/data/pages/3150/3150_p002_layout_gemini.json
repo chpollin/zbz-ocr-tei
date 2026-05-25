@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 6.983,
+        "y_pct": 4.502,
+        "w_pct": 20.965,
+        "h_pct": 2.047
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Die Unwahrscheinlichkeit des Menschen in der Welt",
+      "bbox": {
+        "x_pct": 6.591,
+        "y_pct": 9.629,
+        "w_pct": 78.824,
+        "h_pct": 5.861
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Vortrag (1)",
+      "bbox": {
+        "x_pct": 6.938,
+        "y_pct": 22.165,
+        "w_pct": 16.094,
+        "h_pct": 2.446
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diesen Titel formuliere ich, um ein wesentliches Staunen auszudr%fccken: einmal das Staunen dar%fcber, da%df wir in dieser Welt, in der wir leben, ein Wesen finden, das so ist wie der Mensch, das hei%dft frei und verantwortlich f%fcr das, was er darin tut; und dann zweitens das Staunen dar%fcber, da%df, obgleich der Mensch die Welt nie als Ganzes vor sich haben kann, er sie doch nur als Gesamtgegenstand auffassen und sich vorstellen kann.",
+      "bbox": {
+        "x_pct": 6.833,
+        "y_pct": 28.714,
+        "w_pct": 85.279,
+        "h_pct": 15.489
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR errors and missing text content to reflect the visual source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun mein erster Titel: Warum sieht es so aus, als w%e4re es unwahrscheinlich, ein freies und verantwortliches Wesen in unserer Welt zu finden, das eben ein Mensch w%e4re?",
+      "bbox": {
+        "x_pct": 6.893,
+        "y_pct": 48.487,
+        "w_pct": 85.113,
+        "h_pct": 4.71
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR errors and missing text content to reflect the visual source."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ziehen wir die verschiedenen –Gegenden– des Wesens in Betracht, aus dem die Wirklichkeit f%fcr uns besteht: Da finden wir einerseits die Ebene des Leblosen, der rein physikalischen und chemischen leblosen Materie, und andererseits der biologischen, organischen Wirklichkeit des Lebendigen. In dem Bereich der leblosen Physico-Chemie stellt sich keine Frage nach Freiheit oder ethischer Beurteilung. Aber im rein biologischen Bereich herrscht auch ein Gesetz: das Gesetz der Herrschaft des St%e4rkeren. Die Zuschauer, die beobachten, wie Tiger etwa gro%dfe B%fcffel in der W%fcste lebendig mit ihren Z%e4hnen zerrei%dfen und fressen, staunen %fcber deren Grausamkeit. Aber zu Unrecht. Sie verstehen nicht, was vor sich geht: es ist keine Grausamkeit, sondern ganz schlicht ein Ern%e4hrungsvorgang. Ein Tiergesetz herrscht %fcber das Lebendige: die Tiere sind dem Gesetz der St%e4rkeren unterworfen, das hei%dft, sie m%fcssen sich den St%e4rkeren unterwerfen, um sich und ihre Kleinen mit deren Fleisch zu ern%e4hren. Von Grausamkeit kann keine Rede sein.",
+      "bbox": {
+        "x_pct": 6.591,
+        "y_pct": 55.19,
+        "w_pct": 85.566,
+        "h_pct": 37.292
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR errors and missing text content to reflect the visual source."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 69,
+        "y_pct": 945,
+        "w_pct": 30,
+        "h_pct": 30
+      },
+      "changed": true,
+      "change_reason": "Missing region for page number identified and labeled as page_footer/filter."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text content was heavily truncated/corrupted in input",
+    "Missing bounding box for page number '16' detected"
+  ],
+  "doc_id": "3150",
+  "page": 2,
+  "elapsed_seconds": 5.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

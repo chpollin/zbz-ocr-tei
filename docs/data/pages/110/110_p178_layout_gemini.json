@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "176 LÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 100,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "entre elles. Au   contraire; dans le Panier  de prunes,  chaque teinte résulte nécessairement de tou",
+      "bbox": {
+        "x_pct": 20.679,
+        "y_pct": 12.756,
+        "w_pct": 68.815,
+        "h_pct": 26.044
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le peintre du trompe-læil n'a   peint qu une loute pelite  partie de Tunivers. Chardin; en ne représ",
+      "bbox": {
+        "x_pct": 20.679,
+        "y_pct": 38.474,
+        "w_pct": 68.815,
+        "h_pct": 24.472
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled words in text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant, bien que trompe-lœil soil limité à Fobjet el que la   toile de Chardin renlerme tout Fe",
+      "bbox": {
+        "x_pct": 20.679,
+        "y_pct": 64.617,
+        "w_pct": 68.654,
+        "h_pct": 9.514
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled words in text"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header region",
+    "Typos in existing paragraph 2",
+    "Typos in existing paragraph 3"
+  ],
+  "doc_id": "110",
+  "page": 178,
+  "elapsed_seconds": 6.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected misspelled words in text": 2,
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Menschsein, Grenzen und Widersprüche",
+      "bbox": {
+        "x_pct": 82.52,
+        "y_pct": 36.4,
+        "w_pct": 4.1,
+        "h_pct": 2.1
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number/header area"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie sind alle Menschen des 20. Jahrhunderts , des Endes des 20. Jahrhunderts. Sie kennen alle die modernen Wissenschaften, mehr oder weniger, und Sie glauben alle, daß Sie keine abergläubischen Geister mehr sind, sondern natürlich modern und aufgeschlossen. Wenn das so ist, dann gibt es meiner Ansicht nach zwei Einstellungen: Die einen sind sich so sicher, daß die Wissenschaften alles entdecken werden, daß man die Philosophie nicht mehr braucht. Sie bauen auf die Wissenschaften, die Geistes- und Humanwissenschaften inbegriffen, um mit ihnen eine objektive Ordnung zu schaffen, die wissenschaftlich begründet ist, und sie sind bereit, sich diesen Wissenschaften zu unterwerfen. Es gibt zum anderen die Menschen, die sich gegen die Macht der modernen Wissenschaften - hier denke ich in erster Linie an die Naturwissenschaften, die exakten Wissenschaften - empören, die so empört sind, daß sie sich irgendwo in ihrer Menschlichkeit verachtet fühlen. Sie wollen weg von dieser Verachtung und gegen die Herrschaft der Wissenschaften kämpfen. Sie wollen sagen, wie unmenschlich diese Wissenschaften geworden sind, und sie werden zu deren Feinden. Nun glaube ich, daß diese beiden Einstellungen, diejenige, in der man sich der wissenschaftlichen Strenge unterwirft und an die Philosophie gar nicht mehr denkt, und diejenige, in der man im Gegenteil die Wissenschaftlichkeit als solche angreift und sie abschaffen will, weil man sich von ihr geknechtet fühlt, beide zu dem führen, was man heute Nihilismus nennt oder nennen sollte. Es gibt nicht nur religiösen Nihilismus.",
+      "bbox": {
+        "x_pct": 7.946,
+        "y_pct": 7.155,
+        "w_pct": 79.951,
+        "h_pct": 43.61
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Karl Jaspers hat durch sein ganzes Werk und durch seine ganze Lehre versucht, gegen jede Form des Nihilismus zu sprechen. Aber das heißt nicht einfach, nur gegen noch etwas zu sein, nämlich den Nihilismus. Man wird nicht dadurch ein Nicht-Nihilist, daß man auch den Nihilismus angreift. Das ist noch lange kein Glaube. Das ist noch lange kein Zutrauen. Deswegen hat es sich Jaspers viel schwerer gemacht; man sieht das zum Beispiel in seinem kleinen Werk Vernunft und Existenz, das ich Ihnen sehr empfehlen möchte, weil es nicht umfangreich ist. In der ersten dieser fünf Vorlesungen handelt Jaspers von Nietzsche und von Kierkegaard, weil er sie wie zwei Figuren am Eingang unserer Zeit sieht, die sozusagen den Nihilismus geschaffen oder ihn in ihrer Art doch vorbereitet haben. Jaspers hat sie so ernst genommen, weil er davon überzeugt war, daß man den Nihilismus auf fruchtbare Weise nur dadurch besiegen kann, daß man durch den Nihilismus hindurchkommt und jenseits das Mehr, das Positive, das Anti-Nihilistische findet. Man kann also nicht einfach so tun, als könnte man so denken wie vor dem Nihilismus.",
+      "bbox": {
+        "x_pct": 7.738,
+        "y_pct": 50.6,
+        "w_pct": 80.0,
+        "h_pct": 29.556
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers glaubte tief an die Geschichtlichkeit. Das bedeutet, daß jeder Mensch in einer gegebenen Zeit der Geschichte lebt und daß sein Verhältnis",
+      "bbox": {
+        "x_pct": 7.702,
+        "y_pct": 81.99,
+        "w_pct": 79.829,
+        "h_pct": 4.252
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 1,
+  "issues": [
+    "Page number 15 missing from automated detection",
+    "Running header 'Menschsein, Grenzen und Widersprüche' detected as text inside paragraph block"
+  ],
+  "doc_id": "2990",
+  "page": 8,
+  "elapsed_seconds": 6.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

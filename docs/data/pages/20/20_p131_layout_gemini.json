@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "CHIFFRES NÉCESSAIRES 129",
+      "bbox": {
+        "x_pct": 315.0,
+        "y_pct": 82.0,
+        "w_pct": 369.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "au monde des limites définitives. Non seulement notre faculté de connaître se heurte à des limites, mais elle-même nous reste incompréhensible. Que la nature à travers elle nous apparaisse comme elle le fait, c'est une nécessité. Mais pourquoi notre faculté de connaître est telle qu'elle est, nous l'ignorons. Pour nous, c'est « par hasard ».",
+      "bbox": {
+        "x_pct": 91.5,
+        "y_pct": 130.0,
+        "w_pct": 745.0,
+        "h_pct": 204.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le seul point qui demeure, c'est la liberté. Mais elle n'est jamais connue, ni des autres, ni de moi-même. Elle se réalise par des actes. Or, les actes n'atteignent jamais la perfection morale. Les Idées qui nous guident et nous attirent ne peuvent pas être un terme : nous ne connaîtrons jamais de terme, ni à la recherche scientifique, ni à l'effort moral. Les Idées sont inaccessibles, et nous ne pouvons que nous acheminer, à l'infini.",
+      "bbox": {
+        "x_pct": 85.0,
+        "y_pct": 333.0,
+        "w_pct": 760.0,
+        "h_pct": 232.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a reproché à Kant son abstraction, son formalisme. On lui a reproché ses dualismes poussés à l'extrême et qui ne se ferment pas par des synthèses. On lui a reproché son inachèvement. Mais n'apparaît-il pas que ces critiques méconnaissent précisément l'essentiel de sa philosophie?",
+      "bbox": {
+        "x_pct": 87.0,
+        "y_pct": 561.0,
+        "w_pct": 760.0,
+        "h_pct": 157.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourquoi est-ce justement la liberté qui est pour nous la seule réalité du monde nouménal? Parce que seul l'homme qui agit, et non se regarde agir, est sujet (au sens métaphysique); il n'est en aucune façon « objet », il n'apparaît pas. Et si c'est la liberté qui nous ouvre le monde nouménal, il est évident que l'abstraction de ce penseur devait être",
+      "bbox": {
+        "x_pct": 87.0,
+        "y_pct": 716.0,
+        "w_pct": 765.0,
+        "h_pct": 182.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 795.0,
+        "y_pct": 903.0,
+        "w_pct": 10.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Page number and header were not filtered.",
+    "Text regions were truncated and contained OCR artifacts.",
+    "Labels for non-text regions were incorrectly set to text."
+  ],
+  "doc_id": "20",
+  "page": 131,
+  "elapsed_seconds": 4.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

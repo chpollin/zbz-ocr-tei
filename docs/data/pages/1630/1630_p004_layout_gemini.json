@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONTENTS",
+      "bbox": {
+        "x_pct": 39.788,
+        "y_pct": 13.846,
+        "w_pct": 13.259,
+        "h_pct": 1.746
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Introduction. . . . . . . . . . . . . . . . . . . . . . . . . . . 5\nThe Draft Optional Protocol . . . . . . . . . . . . . . . . . . . . . . 7\nArticles\nEric Martin\nTorture, A Disgrace in Our Day . . . . . . . . . . . . . . . . . . . . 14\nNiall MacDermot\nHow to Enforce the Torture Convention . . . . . . . . . . . . . . . . . . 18\nJean-Jacques Gautier\nThe Case for an Effective and Realistic Procedure . . . . . . . . . . . . . 31\nFrançois de Vargas\nHistory of a Campaign . . . . . . . . . . . . . . . . . . . . . . . . . 41\nComments\nCardinal Paulo E. Arns: Of the Greatest Importance for Our Time . . . . 27\nFrancis Blanchard: A New and Simple Idea . . . . . . . . . . . . . . . . 39\nRafael Caldera: A Universal Commitment to Renounce Torture . . . . . . . 16\nHans Haug: The Red Cross Can Serve as a Model . . . . . . . . . . . . . . 30\nJeanne Hersch: Effectiveness Rather than Universality . . . . . . . . . . 48\nWerner Kaegi: Not to Build on Sand . . . . . . . . . . . . . . . . . . . 30\nFélix Marti Ambel: Mobilise All Our Capacities of Imagination and\nAction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47\nKéba Mbaye: Not Longer Be Content to Condemn . . . . . . . . . . . . . . 17\nPierre Mendès France: One of the Most Revolting Sores . . . . . . . . . . 40\nRev. Philip Potter: Shed Light on These Acts . . . . . . . . . . . . . . 28\nNigel Rodley: An Antidote Spreading Progressively . . . . . . . . . . . . 46\nJoaquin Ruiz-Gimenez: A Highly Laudable Initiative . . . . . . . . . . . . 29\nMarc Schreiber: To Verify the Implementation of International Instru-\nments . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40\nWilly Spühler: Ensure International Inspection . . . . . . . . . . . . . . 38\nDenis Szabo: To Extinguish the Temptation of Reasons of State . . . . . . 39\nFriedrich T. Wahlen: What Are the Priotity Tasks?. . . . . . . . . . . . 17\nList of the Non-Governmental Organisations Supporting the Draft Op-\ntional Protocol . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49\nAppendices\n1. The Swedish Draft of an International Convention Against Torture\nand Other Cruel, Inhuman or Degrading Treatment or Punishment 50\n2. The International Association of Penal Law Draft . . . . . . . . . . . . 55\nOpinions expressed in the Comments are those of the authors.",
+      "bbox": {
+        "x_pct": 12.296,
+        "y_pct": 17.485,
+        "w_pct": 68.138,
+        "h_pct": 71.115
+      },
+      "changed": true,
+      "change_reason": "The original tag 'document_index' was overly broad; mapping to 'text/zb_paragraph' for document content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": {
+        "x_pct": 78.894,
+        "y_pct": 92.428,
+        "w_pct": 1.259,
+        "h_pct": 1.746
+      },
+      "changed": true,
+      "change_reason": "Page number identified and moved to _filter tag."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Initial label was 'document_index' which is not in the provided schema.",
+    "Page number at the bottom was not captured in initial layout."
+  ],
+  "doc_id": "1630",
+  "page": 4,
+  "elapsed_seconds": 5.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

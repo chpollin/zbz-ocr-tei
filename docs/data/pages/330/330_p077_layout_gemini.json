@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ 43",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correcting the misidentified running header and page number region which were omitted by Docling or mislabeled. Added the combined top line."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "au sens moral, mais au sens religieux du mot : le plus invraisemblables, le plus incompréhensibles. Leur attitude représente, pour la défense de la démocratie, d'une part une force, de l'autre une faiblesse : une force parce que toute idéologie politique non démocratique se trouve impuissante à entamer leur conviction, elle n'entre pas en ligne de compte, elle est exclue et condamnée d'emblée ; une faiblesse parce que, ne concevant pas et ne cherchant pas à concevoir l'adhésion à une idéologie non démocratique, ils se trouvent dans l'impossibilité de comprendre leurs adversaires et donc de les combattre pour ce qu'ils sont réellement. Ils sont incapables de jauger leurs chances de succès, d'imaginer les tentations qu'ils représentent pour larges masses humaines et d'élaborer les contre-poisons. Cela va si loin qu'il leur arrive, dans certaines circonstances, de collaborer avec des mouvements antidémocratiques, simplement parce qu'ils les estiment nuls, absurdes, donc voués à l'échec par définition, à plus ou moins brève échéance ; une telle collaboration peut être efficace dans l'immédiat, et elle ne saurait, selon eux, faire courir aucun risque à la démocratie. A vrai dire, ils ont le sentiment que la démocratie n'est jamais vraiment en danger, qu'il est à peine besoin de la défendre, qu'elle ne peut souffrir que des éclipses. Elle est liée à la raison éternelle, à la nature permanente de l'homme civilisé.",
+      "bbox": {
+        "x_pct": 2.967,
+        "y_pct": 11.168,
+        "w_pct": 84.694,
+        "h_pct": 45.25
+      },
+      "changed": true,
+      "change_reason": "Corrected the broken OCR text extraction; the original was fragmented and garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce n'est pas tout. L'adhésion inconditionnelle et sans discussion des démocrates progressistes au régime démocratique comporte d'autres inconvénients. Le nom de « démocratie » a pour eux un prestige tel qu'ils ont tendance à ne pas trop analyser ce qu'il recouvre. Ils négligent d'apprécier le degré de participation du peuple au gouvernement de l'État, il leur importe peu que ce peuple vote des lois ou se contente d'élire des représentants, qu'il ait ou non le pouvoir d'intervenir à propos de telle ou telle décision politique en cours de magistrature, soit en retirant le pouvoir à des hommes, soit en refusant la légalité d'un décret. Ils tiennent peu à vérifier, en général, si le peuple a bien la possibilité matérielle, économique, concrète, d'exercer le contrôle démocratique qui lui est formellement accordé par la constitution ; si chacun peut vraiment publier ses opinions, par exemple, ou se déplacer, ou juger les autorités, comme il l'entend. Le mot « démocratie » a quelque chose de magique : il suffit.",
+      "bbox": {
+        "x_pct": 3.357,
+        "y_pct": 55.882,
+        "w_pct": 84.763,
+        "h_pct": 33.244
+      },
+      "changed": true,
+      "change_reason": "Corrected the broken OCR text extraction."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Docling missed the header/page number line as a distinct region.",
+    "The OCR text for the paragraph regions was significantly garbled and required manual correction.",
+    "The layout regions provided were incomplete regarding the top line."
+  ],
+  "doc_id": "330",
+  "page": 77,
+  "elapsed_seconds": 5.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fiele, sondern weil sich das Thema schon nach kurzer Besinnung als erschreckend umfassend darstellt und weil die beiden Begriffe eine Unzahl von Assoziationen, von Zusammenhängen auslösen. Läßt man sich durch die Begriffe Sicherheit und Risiko die Perspektive für die Wahrnehmung unserer Wirklichkeit vorschreiben, so will sich unvermutet fast die ganze Wirklichkeit diesem Begriffspaar zuordnen. Nicht nur einige wenige Phänomene, sondern unsere gesamte Existenz scheint, im Kleinen und im Grossen, auf die Polarität von Sicherheit und Risiko bezogen zu sein.",
+      "bbox": {
+        "x_pct": 27.935,
+        "y_pct": 57.0,
+        "w_pct": 65.0,
+        "h_pct": 26.0
+      },
+      "changed": true,
+      "change_reason": "Original extraction was incomplete or missing; corrected to capture the full paragraph context from the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zentral ist der Gegensatz von Sicherheit und Risiko für die Politik und die Wirtschaftspolitik – man denke etwa an die verschiedenen Risikogarantien, die zur Zeit diskutiert werden. Wer die weltpolitische Lage, wer Weltprobleme wie die Energiefrage und die Umweltfrage diskutiert, diskutiert im Spannungsfeld von Sicherheit und Risiko. Zu diesem Spannungsfeld gehören aber auch ganz andere Lebens- und Problembereiche, etwa die Frage der Berufswahl und natürlich auch die sogenannte Karriereplanung. Zu unserem Thema gehören wesentlich die sozialen Maßnahmen der Gesellschaft, aber auch gesellschaftliche Verhaltensweisen gehören dazu: die Art, wie wir unsere Ferien verbringen etwa, oder auch der Umgang mit dem Fernsehen, das uns mit fremen Risiken unterhält, während wir uns selbst in Sicherheit wiegen.",
+      "bbox": {
+        "x_pct": 27.935,
+        "y_pct": 32.511,
+        "w_pct": 65.302,
+        "h_pct": 41.092
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Polarität von Sicherheit und Risiko ist für unser Leben bestimmend",
+      "bbox": {
+        "x_pct": 3.986,
+        "y_pct": 66.063,
+        "w_pct": 21.413,
+        "h_pct": 6.667
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to reflect the actual text string in the box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Da sich so Vieles in unserer Erfahrungswelt den Begriffen Sicherheit und Risiko zuordnen läßt, drängt sich die Frage auf nach dem Verhältnis von Risiko und Sicherheit in unserem Leben. Manches spricht dafür, daß wir heute mit besonderen Anstrengungen nach Sicherheit streben, aber nicht weniges deutet darauf hin, daß eben dieses Streben",
+      "bbox": {
+        "x_pct": 28.019,
+        "y_pct": 73.02,
+        "w_pct": 64.94,
+        "h_pct": 16.208
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to reflect the actual text string in the box."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 58.747,
+        "y_pct": 91.954,
+        "w_pct": 2.587,
+        "h_pct": 2.299
+      },
+      "changed": true,
+      "change_reason": "Detected page number, changed from text to page_footer (_filter)."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial parsing failed to capture full paragraphs correctly.",
+    "Page number 12 was incorrectly labeled as generic text.",
+    "Content of text boxes was truncated or inaccurate in the provided JSON."
+  ],
+  "doc_id": "2400",
+  "page": 11,
+  "elapsed_seconds": 7.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

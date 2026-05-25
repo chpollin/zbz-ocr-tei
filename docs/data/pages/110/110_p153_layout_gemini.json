@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le malhématicien est le seul à n'avoir pas de ( point de particularisé, c'est pourquoi aucun espace ",
+      "bbox": {
+        "x_pct": 11.371,
+        "y_pct": 13.645,
+        "w_pct": 68.733,
+        "h_pct": 28.018
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "3 Caractère exclusif",
+      "bbox": {
+        "x_pct": 25.922,
+        "y_pct": 44.191,
+        "w_pct": 25.657,
+        "h_pct": 1.951
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from 3 Caractère exclusif to 3. Caractère exclusif"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malgré diversités   modales, le terme despace reste cependant pour nous par définition au singulier.",
+      "bbox": {
+        "x_pct": 11.832,
+        "y_pct": 46.925,
+        "w_pct": 68.733,
+        "h_pct": 28.018
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "LA FORME ET L'ESPACE",
+      "bbox": {
+        "x_pct": 11.371,
+        "y_pct": 10.6,
+        "w_pct": 68.7,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "151",
+      "bbox": {
+        "x_pct": 75.3,
+        "y_pct": 10.6,
+        "w_pct": 4.8,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number in header area"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Fixed minor text extraction error in heading",
+    "Added missing page header and page number region"
+  ],
+  "doc_id": "110",
+  "page": 153,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content from 3 Caractère exclusif to 3. Caractère exclusif": 1,
+    "ADDED": 2
+  }
+}

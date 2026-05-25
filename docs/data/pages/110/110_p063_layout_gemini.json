@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE 61",
+      "bbox": {
+        "x_pct": 10.253,
+        "y_pct": 2.0,
+        "w_pct": 68.353,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "[in de Thistoire humaine. Sur le la forme est toujours proposée par lesprit, jamais déposée et  cons",
+      "bbox": {
+        "x_pct": 10.253,
+        "y_pct": 13.743,
+        "w_pct": 68.353,
+        "h_pct": 7.236
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les novateurs non plus 'inventent didéologies   pro domo. Mais   il est nalurel   que les victimes c",
+      "bbox": {
+        "x_pct": 10.104,
+        "y_pct": 21.01,
+        "w_pct": 68.664,
+        "h_pct": 18.679
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voil ici lambiguïté de toule réalité politique et sociale donnée. Le droit est une forme, mais en",
+      "bbox": {
+        "x_pct": 10.219,
+        "y_pct": 39.658,
+        "w_pct": 68.548,
+        "h_pct": 18.755
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le plus significatif, c'est justement que lorsque le sujet veut sortir de l'ambiguïté, la forme se perd. Nous avons vu déjà que le conservateur risque de perdre la forme à force d'en respecter l'incarnation dans le donné stagnant. Mais le novateur aussi est menacé d'une autre façon. Le risque, lui, de chercher la forme pure, de l'élaborer en toute indépendance du donné social, de négliger celui-ci même en tant que matière. Le temps alors se fait complice d'une telle évasion. Jamais le présent ne paraît apte à recevoir la",
+      "bbox": {
+        "x_pct": 10.219,
+        "y_pct": 60.152,
+        "w_pct": 68.548,
+        "h_pct": 14.867
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing paragraph"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region in original input",
+    "Missing body paragraph in original input"
+  ],
+  "doc_id": "110",
+  "page": 63,
+  "elapsed_seconds": 6.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

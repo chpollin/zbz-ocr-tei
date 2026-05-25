@@ -1,0 +1,40 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hier, avoir écrit le récit de cette première rencontre, je me suis mise à tricoter. Il le fallait. J'ai eu de la peine, en posant ma plume, à retrouver la solidité familière de ma vie. Impossible d'écrire un mot de plus. Mais impossible aussi de m'en aller, de me détacher de cela: « Il m'habitait ». — Tandis que je m'attardais, la tête dans les mains, ce « il » se métamorphosait, devenait je ne sais quoi. Un être sans forme m'envahissait, m'élargissait, m'étirait en tous sens en un désir infini que l'étreinte de l'univers entier ne pourrait pas satisfaire. L'ancienne soif, l'ancienne faim, l'ancien amour d'avant l'amour. Jamais cet amour-là ne sera payé de retour. Jamais.",
+      "bbox": {
+        "x_pct": 11.122,
+        "y_pct": 32.259,
+        "w_pct": 81.081,
+        "h_pct": 32.486
+      },
+      "changed": true,
+      "change_reason": "The text content extracted was incomplete and truncated. Replaced with the full text present in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai tremblé peu de le savoir à nouveau, des années d'oubli. Et puis, sans raison, je me suis sentie lasse et lourde, — riche, riche de notre enfant et de toi, Marc. Est-ce que je t'avais quitté, Marc ? Est-ce qu'une minute la magie de l'adolescence m'avait emportée loin de toi, m'avait rendue infidèle ? — Je sais bien que non, et toi aussi tu l'aurais su. Comme lorsque nous écoutons de la musique ensemble, et que, loin de nous faire communier,",
+      "bbox": {
+        "x_pct": 11.176,
+        "y_pct": 65.189,
+        "w_pct": 80.851,
+        "h_pct": 20.35
+      },
+      "changed": true,
+      "change_reason": "The text content extracted was incomplete and truncated. Replaced with the full text present in the image."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "The OCR/extraction tool failed to capture the full text blocks, providing significantly truncated versions."
+  ],
+  "doc_id": "40",
+  "page": 23,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

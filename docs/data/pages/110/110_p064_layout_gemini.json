@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "62",
+      "bbox": {
+        "x_pct": 19.967,
+        "y_pct": 2.0,
+        "w_pct": 2.535,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number/header at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 67.247,
+        "y_pct": 2.0,
+        "w_pct": 21.055,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "forme rêvée; il est   méprisé comme trop confus; trop Iourd,  trop équivoque. La forme rêvée déploie",
+      "bbox": {
+        "x_pct": 19.7,
+        "y_pct": 13.462,
+        "w_pct": 68.698,
+        "h_pct": 26.021
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lopposition enlre conservaleurs et  novateurs est extrême. Mais il y a une quantité   inlinie daulre",
+      "bbox": {
+        "x_pct": 19.505,
+        "y_pct": 39.582,
+        "w_pct": 68.825,
+        "h_pct": 35.209
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/footer detection in original input",
+    "Labels correctly mapped based on instructions"
+  ],
+  "doc_id": "110",
+  "page": 64,
+  "elapsed_seconds": 6.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

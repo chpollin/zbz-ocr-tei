@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "84 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 16.59,
+        "y_pct": 2.0,
+        "w_pct": 68.66,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En fait, il est bien vrai que psychologiquement praliquement il y une grande   dilférence entre el u",
+      "bbox": {
+        "x_pct": 16.59,
+        "y_pct": 13.278,
+        "w_pct": 68.664,
+        "h_pct": 13.225
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or nous Favons ce est forme par rapport à une malière être une matière par rapport à une autre forme",
+      "bbox": {
+        "x_pct": 16.636,
+        "y_pct": 26.555,
+        "w_pct": 68.583,
+        "h_pct": 12.898
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'existence même de l'art est défendue par le fait que la forme n'est pas, une fois pour toutes, ceci ou cela, mais, sur le plan esthétique, une appropriation par l'artiste de l'appropriation accomplie sur le plan pratique, social, théorique, ou sur un autre. La mobilité de la démarcation entre matière et forme empêche de fixer les recettes et les critères de l'œuvre d'art, et celle-ci n'est possible qu'à condition de rester à jamais contestable.",
+      "bbox": {
+        "x_pct": 16.624,
+        "y_pct": 39.5,
+        "w_pct": 68.479,
+        "h_pct": 12.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing paragraph"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici encore nous retrouvons la situation décrile plus haut. Lœæuvre dart peut et doit avoir une exist",
+      "bbox": {
+        "x_pct": 16.624,
+        "y_pct": 52.678,
+        "w_pct": 68.479,
+        "h_pct": 14.697
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing paragraph between defined regions"
+  ],
+  "doc_id": "110",
+  "page": 86,
+  "elapsed_seconds": 4.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

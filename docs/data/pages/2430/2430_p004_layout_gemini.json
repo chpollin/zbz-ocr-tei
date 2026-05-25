@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sen will, dass es keine Rolle spielt; ob diese Programmschaffenden von der staatlichen Autorität bzw. dem Druck der Werbung abhängig sind oder nicht - es spielt sogar eine sehr grosse Rolle. Doch das ist nicht der springende Punkt. Die Entscheidungen fällen nämlich die Programmschaffenden selbst: Sie sind es, die tagtäglich auf das einwirken - und einwirken müssen -, was ich eingangs als ethische Affektivität der Bevölkerung bezeichnet habe und von der sich in der Folge Stellungnahmen in sämtlichen Bereichen ableiten.",
+      "bbox": {
+        "x_pct": 7.746,
+        "y_pct": 5.455,
+        "w_pct": 41.716,
+        "h_pct": 28.767
+      },
+      "changed": false
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "3 Macht der Programmschaffenden anzusprechen, stellt heutzutage ein heikles Unterfangen dar, ist es doch gelungen, sie mit der Pressefreiheit gleichzusetzen: Rüttelt man an ersterer, so spricht man sich bereits gegen letztere aus. Wir haben es hier mit einem Axiom zu tun, das dazu dient, jede Kritik einzuschüchtern und mögliche Kontrollmassnahmen lahmzulegen, einem Axiom also, das es abzulehnen gilt. Das herausragende Merkmal einer Demokratie besteht darin, dass im Prinzip jeder Macht ein oder mehrere Gegengewichte gegenübergesetzt werden, die - meist sogar einem Präventivprinzip folgend - Machtmissbräuche verhindern bzw. abfangen. Wo dieses Gegengewicht fehlt, klafft sozusagen eine Lücke im Gerüst der Demokratie, infolge dessen sich Kräfteverhältnisse bilden können, die längerfristig nicht toleriert werden dürfen, weil sie sich den Gesetzen und dem Willen des Volkes entziehen.",
+      "bbox": {
+        "x_pct": 7.78,
+        "y_pct": 36.1,
+        "w_pct": 41.957,
+        "h_pct": 49.581
+      },
+      "changed": true,
+      "change_reason": "Corrected the broken text stream extracted for this paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was nun die elektronischen Medien (also Radio und Fernsehen) anbe-",
+      "bbox": {
+        "x_pct": 8.043,
+        "y_pct": 85.633,
+        "w_pct": 41.499,
+        "h_pct": 4.053
+      },
+      "changed": true,
+      "change_reason": "Separated incorrectly merged text content."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "4 Wer aber verbirgt sich hinter diesem Sammelbegriff? Ich möchte gleich an dieser Stelle festhalten, dass es mir nicht darum geht, Einzelpersonen anzugreifen; es geht mir um den effektiven Status im allgemeinen. Die Programmschaffenden hatten sich nie dem Volksentscheid einer Wahl - und demzufolge auch keiner Wiederwahl - zu stellen, das heisst, sie müssen nie die Sanktionen der öffentlichen Meinung hinnehmen.",
+      "bbox": {
+        "x_pct": 52.632,
+        "y_pct": 66.374,
+        "w_pct": 41.728,
+        "h_pct": 23.312
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 85.2,
+        "y_pct": 91.5,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Docling incorrectly merged paragraphs across columns",
+    "Page number 12 was missing from list",
+    "Ocr text segments were broken/truncated",
+    "Missing columns of text (right side top part)"
+  ],
+  "doc_id": "2430",
+  "page": 4,
+  "elapsed_seconds": 5.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

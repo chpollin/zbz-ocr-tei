@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE PHILOSOPHE ET L'ARTISTE SELON VALÉRY 195",
+      "bbox": {
+        "x_pct": 133.0,
+        "y_pct": 75.0,
+        "w_pct": 732.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Header text labeled as paragraph; corrected to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "recherche de l'imprévu et du choc. Il ne sert plus alors qu'à étouffer ce qui pourrait s'éveiller chez l'homme d'angoisse philosophique et de velléités de transcendance.",
+      "bbox": {
+        "x_pct": 117.92,
+        "y_pct": 119.45,
+        "w_pct": 758.58,
+        "h_pct": 99.14
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality issues and formatting."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Paul Valéry, dans la préface qu'il a faite à une étude de Leo Ferrero et qu'il a intitulée Léonard et les Philosophes (1) traite la question de l'avenir de la philosophie. Et grâce à son esprit en vrille qui pénètre d'un coup au cœur d'un problème, grâce aussi à son expression singulièrement mobile et serrée il arrive à dire sur le sujet qui nous intéresse ici des choses saisissantes. Il compare le philosophe et l'artiste. Le philosophe, dit-il, s'oppose à l'artiste et croit que son activité est radicalement différente de la création artistique. Il croit que pour lui ce qui est constitue « la limite à rejoindre et l'objet à retrouver à l'extrême des excursions et opérations de son esprit »; l'artiste, lui, « se propage dans le possible et se fait agent de ce qui sera ». Mais en réalité, selon Valéry, le philosophe se trompe. Il est « un créateur qui s'ignore, et qui croit qu'il ne fait que substituer une idée plus exacte ou plus complète du réel à une idée grossière ou superficielle, quand, au contraire, il invente ». Les philosophes, dit encore Valéry, « par profond désir d'un certain état,... par profond amour de ce qui peut être, que font-ils que créer, quand ils ajoutent des problèmes aux pro-",
+      "bbox": {
+        "x_pct": 110.99,
+        "y_pct": 220.21,
+        "w_pct": 765.06,
+        "h_pct": 592.95
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality and extended content to include full paragraph."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Léonard de Vinci ou l'œuvre d'art, par Léo FERRERO. Editions Kra, Paris, 1929.",
+      "bbox": {
+        "x_pct": 120.0,
+        "y_pct": 846.0,
+        "w_pct": 750.0,
+        "h_pct": 35.0
+      },
+      "changed": true,
+      "change_reason": "Footnote misclassified as text/paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "13.",
+      "bbox": {
+        "x_pct": 787.0,
+        "y_pct": 894.0,
+        "w_pct": 33.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Page number misclassified as text/paragraph."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial parsing missed footnotes and page indicators.",
+    "OCR quality on initial detection was poor.",
+    "Section header was completely missing from the detection region."
+  ],
+  "doc_id": "20",
+  "page": 197,
+  "elapsed_seconds": 5.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

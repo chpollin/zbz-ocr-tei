@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">À la mémoire d’Henri Frenay (1905-1988)</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2520</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>À la mémoire d’Henri Frenay (1905-1988)</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>unknown</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screen-claude" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: 0 Fehler, 0 Warnings; Overlay S.1+S.3: Zweispaltenlayout korrekt, Zonen decken Text ab; Entities: 56p 31o 32l 8w = 127, plausibel (Frenay, Hersch, de Gaulle, Petain etc.) (+1 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1090" lry="1516">
+      <zone xml:id="facs_1_r_1" ulx="130" uly="193" lrx="966" lry="343" />
+      <zone xml:id="facs_1_r_2" ulx="438" uly="392" lrx="649" lry="418" />
+      <zone xml:id="facs_1_r_3" ulx="561" uly="498" lrx="969" lry="861" />
+      <zone xml:id="facs_1_r_4" ulx="119" uly="499" lrx="528" lry="683" />
+      <zone xml:id="facs_1_r_5" ulx="119" uly="680" lrx="528" lry="822" />
+      <zone xml:id="facs_1_r_6" ulx="121" uly="817" lrx="529" lry="1181" />
+      <zone xml:id="facs_1_r_7" ulx="562" uly="863" lrx="970" lry="1027" />
+      <zone xml:id="facs_1_r_8" ulx="561" uly="1021" lrx="970" lry="1316" />
+      <zone xml:id="facs_1_r_9" ulx="122" uly="1179" lrx="529" lry="1292" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1090" lry="1516">
+      <zone xml:id="facs_2_r_1" ulx="559" uly="138" lrx="968" lry="510" />
+      <zone xml:id="facs_2_r_2" ulx="119" uly="142" lrx="528" lry="622" />
+      <zone xml:id="facs_2_r_3" ulx="559" uly="505" lrx="968" lry="1097" />
+      <zone xml:id="facs_2_r_4" ulx="121" uly="631" lrx="527" lry="785" />
+      <zone xml:id="facs_2_r_5" ulx="121" uly="811" lrx="384" lry="849" />
+      <zone xml:id="facs_2_r_6" ulx="120" uly="864" lrx="528" lry="976" />
+      <zone xml:id="facs_2_r_7" ulx="119" uly="970" lrx="527" lry="1336" />
+      <zone xml:id="facs_2_r_8" ulx="559" uly="1095" lrx="966" lry="1187" />
+      <zone xml:id="facs_2_r_9" ulx="562" uly="1219" lrx="731" lry="1248" />
+      <zone xml:id="facs_2_r_10" ulx="561" uly="1269" lrx="968" lry="1317" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1090" lry="1516">
+      <zone xml:id="facs_3_r_1" ulx="118" uly="138" lrx="529" lry="916" />
+      <zone xml:id="facs_3_r_2" ulx="562" uly="138" lrx="970" lry="249" />
+      <zone xml:id="facs_3_r_3" ulx="562" uly="249" lrx="970" lry="340" />
+      <zone xml:id="facs_3_r_4" ulx="561" uly="337" lrx="971" lry="633" />
+      <zone xml:id="facs_3_r_5" ulx="562" uly="628" lrx="971" lry="965" />
+      <zone xml:id="facs_3_r_6" ulx="5199" uly="909" lrx="9417" lry="1121" />
+      <zone xml:id="facs_3_r_7" ulx="121" uly="915" lrx="530" lry="986" />
+      <zone xml:id="facs_3_r_8" ulx="119" uly="986" lrx="529" lry="1344" />
+      <zone xml:id="facs_3_r_9" ulx="563" uly="999" lrx="714" lry="1029" />
+      <zone xml:id="facs_3_r_10" ulx="562" uly="1048" lrx="971" lry="1345" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1090" lry="1516">
+      <zone xml:id="facs_4_r_1" ulx="118" uly="140" lrx="526" lry="231" />
+      <zone xml:id="facs_4_r_2" ulx="120" uly="229" lrx="524" lry="300" />
+      <zone xml:id="facs_4_r_3" ulx="119" uly="297" lrx="526" lry="343" />
+      <zone xml:id="facs_4_r_4" ulx="799" uly="318" lrx="967" lry="338" />
+      <zone xml:id="facs_4_r_5" ulx="330" uly="625" lrx="758" lry="649" />
+      <zone xml:id="facs_4_r_6" ulx="164" uly="674" lrx="921" lry="962" />
+      <zone xml:id="facs_4_r_7" ulx="165" uly="956" lrx="922" lry="1055" />
+      <zone xml:id="facs_4_r_8" ulx="729" uly="1066" lrx="880" lry="1086" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1090" lry="1516">
+      <zone xml:id="facs_5_r_1" ulx="329" uly="260" lrx="720" lry="292" />
+      <zone xml:id="facs_5_r_2" ulx="145" uly="311" lrx="902" lry="405" />
+      <zone xml:id="facs_5_r_3" ulx="143" uly="405" lrx="902" lry="527" />
+      <zone xml:id="facs_5_r_4" ulx="143" uly="522" lrx="902" lry="736" />
+      <zone xml:id="facs_5_r_5" ulx="143" uly="731" lrx="900" lry="831" />
+      <zone xml:id="facs_5_r_6" ulx="142" uly="827" lrx="902" lry="1020" />
+      <zone xml:id="facs_5_r_7" ulx="146" uly="1013" lrx="902" lry="1134" />
+      <zone xml:id="facs_5_r_8" ulx="505" uly="1145" lrx="863" lry="1213" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1090" lry="1516">
+      <zone xml:id="facs_6_r_1" ulx="287" uly="439" lrx="846" lry="491" />
+      <zone xml:id="facs_6_r_2" ulx="188" uly="515" lrx="943" lry="589" />
+      <zone xml:id="facs_6_r_3" ulx="188" uly="586" lrx="943" lry="636" />
+      <zone xml:id="facs_6_r_4" ulx="185" uly="632" lrx="945" lry="964" />
+      <zone xml:id="facs_6_r_5" ulx="246" uly="959" lrx="520" lry="986" />
+      <zone xml:id="facs_6_r_6" ulx="752" uly="998" lrx="905" lry="1021" />
+      <zone xml:id="facs_6_r_7" ulx="4883" uly="10217" lrx="9090" lry="10430" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          1027
+        </head>
+        <p facs="#facs_1_r_2">
+          À la mémoire d'<persName ref="#zbz-p.196">Henri Frenay</persName> (1905-1988)
+        </p>
+        <p facs="#facs_1_r_3">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_1_r_4">
+          <persName ref="#zbz-p.196">HENRI Frenay</persName> s'est éteint dans sa maison de <placeName ref="#zbz-l.432">Pezza Cardo</placeName>, en <placeName ref="#zbz-l.401">Corse</placeName>, le 6 août dernier. Après une lourde opération, il avait gardé jusqu'à la fin sa claire conscience, ses convictions, sa dignité et son style. L'une des toutes dernières fois où j'ai pu le voir quelques minutes — car il se fatiguait vite —, il m'a dit : « J'espère partir le plus vite possible vers le Père éternel. »
+        </p>
+        <p facs="#facs_1_r_5">
+          Il fut enseveli, selon son désir, dans le caveau préparé pour lui et les siens dans le cimetière de <placeName ref="#zbz-l.433">Porto-Vecchio</placeName>. Une messe fut célébrée, toute religieuse, presque sans allusion aux combats menés, à l'ombre de l'histoire, par ce grand vivant qui, si longtemps, affronta chaque jour la mort.
+        </p>
+        <p facs="#facs_1_r_6">
+          Fils de saint-cyrien et saint-cyrien lui même, attaché à l'armée par tradition familiale, mais aussi, profondément, par les vertus qu'il lui reconnaît — désintéressement, pauvreté, fidélité, courage — il est capitaine et il a trente-cinq ans lorsque éclate la Seconde Guerre mondiale. Dès ce moment, cette guerre n'a pas pour lui le même sens que pour les autres : il a déjà consacré un an, à <placeName ref="#zbz-l.83">Strasbourg</placeName>, à des études germaniques ; il a appris l'allemand, lu <hi rendition="#i"><bibl ref="#zbz-w.469">Mein Kampf</bibl></hi> dans le texte ; il sait ce que c'est que le national-socialisme. L'immense majorité des <persName ref="#zbz-p.630">Français</persName> entre en guerre contre l'<placeName ref="#zbz-l.26">Allemagne</placeName> : lui va se battre pour la <placeName ref="#zbz-l.2">France</placeName>, contre le nazisme, pour la liberté. Aussi, lorsque après la drôle de guerre et la débâcle l'armistice est conclu, il n'a pas un moment d'hésitation sur ce qu'il lui faut faire.
+        </p>
+        <p facs="#facs_1_r_7">
+          L'armistice contraint son corps d'armée à la reddition. Il se trouve prisonnier. Sans attendre une libération qu'on prétendait prochaine, il s'évade, avec un seul camarade. Quinze jours de marche, en uniforme, hors de tout chemin.
+        </p>
+        <p facs="#facs_1_r_8">
+          Il rejoint sa famille, où la ferveur pour <persName ref="#zbz-p.472">Pétain</persName> était grande. Pendant longtemps, <persName ref="#zbz-p.196">Frenay</persName> essaya de
+        </p>
+        <p facs="#facs_1_r_9">
+          croire à un double jeu de <persName ref="#zbz-p.472">Pétain</persName>, qui se voudrait, suppose-t-il encore bien plus tard, « le bouclier de la <placeName ref="#zbz-l.2">France</placeName> » alors que <persName ref="#zbz-p.199">de Gaulle</persName> en serait « le glaive ». Mais il ne peut l'oublier, les armées françaises n'ont pas succombé devant un adversaire honorable, mais devant <persName ref="#zbz-p.64">Hitler</persName> ; « l'âme de la <placeName ref="#zbz-l.2">France</placeName> » est en péril de mort. Il l'avait dit et répété en ces termes lors d'une série de conférences données dans diverses villes, en 1938 et en 1939. Le 27 juillet 1940, recevant la nouvelle, pour lui miraculeuse, que <persName ref="#zbz-p.1077">Churchill</persName> avait refusé toute négociation avec <persName ref="#zbz-p.64">Hitler</persName>, <persName ref="#zbz-p.196">Frenay</persName>, seul dans sa chambre, rédige son premier manifeste : impossible d'accepter la défaite, le combat n'est pas fini. L'esprit doit vaincre la barbarie. Il faut préparer la libération par les armes.
+        </p>
+        <p>
+          Il commence aussitôt à se chercher des compagnons et à esquisser les plans d'organisation dont sortira progressivement la <orgName ref="#zbz-o.435">Résistance</orgName>, pour le recrutement, l'information, l'action. À la midécembre, il dispose d'un « trésor de guerre » de 14 000 francs. Au début de 1941, paraît le premier <hi rendition="#i">Bulletin d'information</hi>, — à 18 exemplaires.
+        </p>
+        <p>
+          Bientôt s'impose à la conscience de <persName ref="#zbz-p.196">Frenay</persName> la contradiction qui s'approfondit entre son état d'officier, dont la loi fondamentale est l'obéissance, et sa condition de rebelle, assumant tous les devoirs de l'action clandestine. Il aime l'armée, mais décide de la quitter. Dans sa lettre demandant un congé prolongé il écrit : « ... La confiance que j'avais naguère dans le commandement a maintenant disparu... » Et comme un général bienveillant cherchait à le retenir en lui offrant une nouvelle affectation, il dit : « Je suis dans la situation d'un prêtre qui a perdu la foi et à qui on propose un changement de paroisse. »
+        </p>
+        <p>
+          À partir de ce moment et jusqu'à la Libération
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_2_r_2">
+          en 1945, la vie d'<persName ref="#zbz-p.196">Henri Frenay</persName> s'identifie à l'histoire du développement de la <orgName ref="#zbz-o.435">Résistance</orgName> métropolitaine, sous toutes ses formes. Il crée, organise, dirige, anime, son « Mouvement » de loin le plus important, <orgName ref="#zbz-o.298">Combat</orgName>. Il faut lire ou relire son livre, <bibl ref="#zbz-w.470">La nuit finira</bibl>, pour revivre cette croissance, à la fois réfléchie et spontanée, marquée par tant de problèmes, d'urgences, de crises, de dangers, de victimes, de cas de conscience, de confusion et de grandeur. Peu d'ouvrages permettent au lecteur de « mimer » d'aussi près l'expérience et la condition d'un homme plongé dans l'épaisseur de l'histoire, roulé par ses flots, et émergeant pourtant hors d'elle, l'embrassant du regard, la contraignant par ses actes à aller où il veut. Il était — comme il l'a écrit lui-même à propos d'un autre — « fait pour l'action et tendu vers elle ». Et ce qui est saisissant, au-delà même du courage, c'est l'oubli de soi, l'absence à soi qu'implique justement une telle passion de l'action — que certains semblent même incapables d'imaginer lorsqu'ils prêtent à un tel homme des mobiles qui ne pouvaient même pas effleurer son esprit.
+        </p>
+        <p facs="#facs_2_r_3">
+          La <orgName ref="#zbz-o.435">Résistance</orgName> a vaincu, elle a contribué à la victoire des Alliés et à la Libération de la <placeName ref="#zbz-l.2">France</placeName>. Le <persName ref="#zbz-p.199">général de Gaulle</persName> a fait <persName ref="#zbz-p.196">Henri Frenay</persName> Compagnon de la Libération et l'a fait entrer dans son premier gouvernement, lui confiant la très lourde responsabilité de ministre chargé des Prisonniers, Déportés et Réfugiés.
+        </p>
+        <p facs="#facs_2_r_4">
+          Un fédéraliste européen
+        </p>
+        <p facs="#facs_2_r_5">
+          Mais ce qui, après la <orgName ref="#zbz-o.435">Résistance</orgName> proprement dite, a le plus compté dans la vie d'<persName ref="#zbz-p.196">Henri Frenay</persName>, ce qui d'ailleurs, à ses yeux, donnait à ce combat une partie de son sens, ce fut la lutte pour la fédération de l'<placeName ref="#zbz-l.29">Europe</placeName>.
+        </p>
+        <p facs="#facs_2_r_6">
+          On ne sait pas assez que les grandes inspirations du fédéralisme européen ont surgi au milieu des combats des résistants anti-hitlériens dans les divers pays d'<placeName ref="#zbz-l.60">Europe occidentale</placeName>. Les fondateurs de l'<orgName ref="#zbz-o.436">Union européenne des fédéralistes</orgName> ont été <persName ref="#zbz-p.196">Henri Frenay</persName> en <placeName ref="#zbz-l.2">France</placeName>, <persName ref="#zbz-p.1001">Eugen Kogon</persName> (qui a connu <placeName ref="#zbz-l.434">Buchenwald</placeName>) en <placeName ref="#zbz-l.26">Allemagne</placeName>, <persName ref="#zbz-p.1000">Altiero Spinelli</persName> (17 ans prisonnier du fascisme dans les îles) en <placeName ref="#zbz-l.110">Italie</placeName>. <placeName ref="#zbz-l.29">L'Europe</placeName> unie est née des combats pour la liberté. Il est remarquable aussi que ce furent les grands résistants de la première heure, les plus hostiles au nazisme, qui, aussitôt après sa défaite, furent les premiers à tendre la main aux <persName ref="#zbz-p.42">Allemands</persName> pour reconstruire l'avenir. J'ai servi d'interprète lors d'une rencontre organisée très peu après la guerre par <persName ref="#zbz-p.196">Frenay</persName> et quelques fédéralistes, avec des officiers de l'armée allemande vaincue.
+        </p>
+        <p facs="#facs_2_r_7">
+          Lorsque <persName ref="#zbz-p.196">Henri Frenay</persName> quitta le gouvernement, il ne revint pas aussitôt à une carrière professionnelle normale. Non, il consacra dix années entières de sa vie à militer, par toutes les voies possibles, pour cette <placeName ref="#zbz-l.29">Europe</placeName> unie qui inspirait déjà son combat dans la <orgName ref="#zbz-o.435">Résistance</orgName>. Il avait écrit, dès le printemps 1941 : « Nous voulons en <placeName ref="#zbz-l.29">Europe</placeName> une fédération d'États égaux avec une <placeName ref="#zbz-l.26">Allemagne</placeName> guérie de sa mégalomanie. » Intention qui était aussi celle de la plus grande partie de la <orgName ref="#zbz-o.435">Résistance</orgName> non communiste. C'est probablement l'une des raisons pour lesquelles une bonne partie de la <orgName ref="#zbz-o.435">Résistance</orgName> métropolitaine refusa assez longtemps de suivre la bannière de <persName ref="#zbz-p.199">de Gaulle</persName> ; elle le jugeait trop nationaliste ; et <persName ref="#zbz-p.196">Frenay</persName>, poussé par son souci primordial d'unité, dut à mainte reprise déployer de grands efforts pour la lui rallier.
+        </p>
+        <p facs="#facs_2_r_8">
+          Cette passion de l'unité, il en avait toujours été possédé. Rien de plus émouvant que de voir combien de concessions, au nom de cette unité, il a pu faire, tout au long de son action pour la <orgName ref="#zbz-o.435">Résistance</orgName>, même lorsqu'il était absolument convaincu d'avoir raison contre les autres. Mais son grand dessein pour l'<placeName ref="#zbz-l.29">Europe</placeName> n'était nullement d'en atténuer la diversité en la rendant monolithique. Au contraire : sa visée de l'unité était servie par un sens à la fois raisonné et instinctif de la spontanéité, fût-elle divergente des divers peuples. Dans l'organisation de la <orgName ref="#zbz-o.435">Résistance</orgName> il s'est fait des amis partout, à vie, parce qu'il était toujours enclin à les laisser être eux-mêmes et agir à leur guise, selon leur impulsion propre, dans toute la mesure compatible avec l'efficacité. De même, il concevait une <placeName ref="#zbz-l.29">Europe</placeName> vraiment fédérale et démocratique, favorisant la spontanéité des personnes et des divers pays. Il a mis toutes ses forces dans la balance lors du vote sur la <orgName ref="#zbz-o.437">Communauté européenne de défense</orgName> (C.E.D.) en 1954. Au dernier moment, je m'en souviens, il téléphonait encore longuement à <persName ref="#zbz-p.1042">Mendès France</persName>. Lorsque l'échec fut là et que ce projet décisif eut été refusé par le <orgName ref="#zbz-o.489">Parlement</orgName> français, il jugea que l'entreprise de l'<placeName ref="#zbz-l.29">Europe</placeName> politique se trouvait désormais bloquée pour une génération, et il se retira.
+        </p>
+        <p facs="#facs_2_r_9">
+          Jamais complètement cependant. Il continua à écrire occasionnellement des articles, à suivre attentivement les événements, mais il cessa d'être présent au centre de l'action.
+        </p>
+        <p facs="#facs_2_r_10">
+          Un homme fier
+        </p>
+        <p>
+          Ce qui frappe avant tout chez <persName ref="#zbz-p.196">Frenay</persName> — dans sa vie, sa personne, ses écrits —, c'est la simplicité et la lucidité du regard, de la pensée, de la réaction
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          À LA MÉMOIRE D'HENRI FRENAY (1905-1988)
+        </p>
+        <p facs="#facs_3_r_2">
+          aux événements. Aucune trace, nulle part, d'auto-portrait, d'auto délectation. Il a été constamment entraîné empiriquement, par les faits eux-mêmes, dans les complexités et les conflits du siècle, mais jamais il n'a cessé de les affronter selon une hiérarchie nette des niveaux d'exigences, s'interdisant de confondre celles qui commandent le succès, celles qui sont relatives ou hypothétiques, et celles qui s'imposent absolument. Il a toujours eu le plus vif souci d'équité envers les autres. On observe en lui, d'une part, une prudence extrême, imaginative, concrètement prévoyante (qui lui a permis d'échapper pendant des années à la police pétainiste et à la <orgName ref="#zbz-o.438">Gestapo</orgName>, qui le recherchaient — presque un miracle), d'autre part une manière prompte, immédiate, d'assumer les risques, comme s'il pouvait compter sur une mystérieuse protection. Il a toujours gardé une sorte de confiance généreuse, presque enfantine, presque naïve — qui tenait à sa cordialité naturelle — qui pouvait lui cacher longtemps des trahisons ou des intrigues qu'il répugnait à connaître. Il n'aimait pas les idées qui ne débouchent pas sur l'action, qui ne s'éprouvent pas par elle, comme si, gratuites, elles perdaient de leur loyauté. Les idées étaient faites pour concevoir l'avenir, pour façonner, mettre en forme et organiser le réel. Son intelligence, puissante et imaginative, déchiffrait la complexité des données et des hommes, mais il n'aimait pas cette complexité, y pressentant quelque chose d'ambigu. Lorsqu'il prenait une décision, c'était par une sorte d'« instinct d'honneur », comme si l'honneur n'était pas chez lui une vertu, mais une « nature », présente dans sa personne entière, jusqu'à dans sa manière de se tenir « debout ».
+        </p>
+        <p facs="#facs_3_r_3">
+          Il a toujours exigé de lui-même une parfaite netteté, dans son style écrit ou oral, dans sa démarche intellectuelle, dans ses décisions.
+        </p>
+        <p facs="#facs_3_r_4">
+          C'était un homme fier, non pas en certaines circonstances, mais, avec simplicité, toujours. Mais cette fierté ne ressemblait pas à l'amour-propre. Il ne revendiquait jamais. Il ne considérait pas que quelque chose lui fût dû. Il est impressionnant de voir, dans <hi rendition="#i"><bibl ref="#zbz-w.470">La nuit finira</bibl></hi>, pendant combien de temps il a trouvé tout naturel que d'autres eussent des contacts avec <persName ref="#zbz-p.199">de Gaulle</persName>, à <placeName ref="#zbz-l.85">Londres</placeName>, alors que lui, chef du mouvement <hi rendition="#i"><orgName ref="#zbz-o.298">Combat</orgName></hi>, qui avait un besoin urgent de son soutien, ne fût-ce que pour aider les maquis à subsister, s'en trouvait écarté. Quand peu avant sa mort <persName ref="#zbz-p.38">François Mitterrand</persName> lui a remis la Grand Croix de la Légion d'honneur, cela lui a fait plaisir ; mais il n'a jamais dit qu'il aurait pu la recevoir plus tôt — et je pense même qu'il ne l'a pas pensé.
+        </p>
+        <p facs="#facs_3_r_5">
+          Il ne s'installait pas dans les délices de conflits intimes. Il a connu des cas de conscience, des conflits aigus de devoirs, mais ceux-ci lui ont toujours été imposés du dehors, et il les a toujours tranchés.
+        </p>
+        <p facs="#facs_3_r_6">
+          Sa simplicité défiait les manœuvres en les ignorant. S'il en prenait conscience, il les balayait par l'action — ou alors il décidait de les ignorer, et il les ignorait vraiment.
+        </p>
+        <p facs="#facs_3_r_7">
+          Il était naturellement fidèle, d'une manière qui allait sans dire : fidèle à sa patrie, comme il l'a montré ; fidèle à sa femme Chilina et à sa famille ; fidèle à ses amis et à ses camarades, auxquels il a consacré un livre, <hi rendition="#i"><bibl ref="#zbz-w.471">Les volontaires de la nuit</bibl></hi> ; fidèle à la foi catholique de son enfance, qu'il prenait tout simplement telle qu'elle était ; fidèle à l'<placeName ref="#zbz-l.29">Europe</placeName> en devenir. J'ai dit, sur ce dernier point, qu'il s'était retiré de l'action elle-même. Mais son dernier souci, son dernier chagrin, quelques jours avant sa mort, ce fut <persName ref="#zbz-p.1107">Margaret Thatcher</persName> qui l'occasionna en retirant ses deux commissaires à <placeName ref="#zbz-l.41">Bruxelles</placeName> par trop européens.
+        </p>
+        <p facs="#facs_3_r_8">
+          <persName ref="#zbz-p.196">Frenay</persName> n'était certainement pas — malgré <hi rendition="#i"><orgName ref="#zbz-o.298">Combat</orgName></hi>, malgré ses fonctions gouvernementales, malgré l'<placeName ref="#zbz-l.29">Europe</placeName> — une personnalité naturellement politique. Il a fait de la politique quand il a fallu, par devoir — et par foi. Au cœur de sa vie il y a eu la <orgName ref="#zbz-o.435">Résistance</orgName>, sa participation centrale et éclatante à une victoire. Et pourtant, lui l'a ressentie comme un itinéraire allant d'une défaite militaire à une défaite politique : de la défaite militaire des armées françaises à la défaite politique que représentait à ses yeux l'échec du rêve résistant, la rechute dans les jeux des anciens partis au lieu de la naissance d'une République nouvelle, issue des épreuves de la <orgName ref="#zbz-o.435">Résistance</orgName> et prête à jouer son rôle dans la construction d'une <placeName ref="#zbz-l.29">Europe</placeName> politique fédérée.
+        </p>
+        <p facs="#facs_3_r_9">
+          La simple vie
+        </p>
+        <p facs="#facs_3_r_10">
+          Il faut que je termine cet article, et j'ai l'impression de n'avoir rien dit. Il y a eu, dans la vie et l'action de <persName ref="#zbz-p.196">Frenay</persName>, tant de tragédies — la mort des amis les plus chers, exécutés, ou partis et jamais revenus —, tant de conflits : avec les communistes, qui cherchaient, malgré leur retard dû au Pacte germano-soviétique, à s'approprier la <orgName ref="#zbz-o.435">Résistance</orgName> tout entière ; avec <persName ref="#zbz-p.200">Jean Moulin</persName>, mort, dit <persName ref="#zbz-p.196">Frenay</persName>, en véritable héros, mais qui, parachuté dans la <orgName ref="#zbz-o.435">Résistance</orgName> dix-huit mois après la création de <hi rendition="#i"><orgName ref="#zbz-o.298">Combat</orgName></hi>, put, grâce à ses pouvoirs exceptionnels, entraver la recherche des ressources indispensables à la survie des maquis ; avec le général <persName ref="#zbz-p.1108">Giraud</persName>,
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          1030
+        </p>
+        <p facs="#facs_4_r_2">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_4_r_3">
+          lorsqu'il agissait en rival de <persName ref="#zbz-p.199">de Gaulle</persName>; et avec le <persName ref="#zbz-p.199">général de Gaulle</persName> lui-même, symbole pourtant à ses yeux de l'unité. Je me sens débordée et coupable au moment de poser la plume.
+        </p>
+        <p facs="#facs_4_r_4">
+          Heureusement, il reste ses livres, dont il faut absolument assurer la présence, indispensable à qui veut comprendre ce que fut la <orgName ref="#zbz-o.435">Résistance</orgName>.
+        </p>
+        <p facs="#facs_4_r_5">
+          Il reste aussi, pour ceux qui l'ont connu, le souvenir d'un homme qui, tout en bravant la mort,
+        </p>
+        <p facs="#facs_4_r_6">
+          a toujours aimé la simple vie de tous les jours : la pêche, son bateau sur le golfe, le soleil et la nuit, ses amis, la bonne cuisine, et son jardin, qu'il a façonné lui-même à partir du maquis, et où, avec sa femme Chilina, il a travaillé avec passion de ses mains, aussi longtemps qu'il l'a pu, et souvent au-delà de ses forces.
+        </p>
+        <p facs="#facs_4_r_7">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_4_r_8">
+          HENRI FRENAY ET LES COMMUNISTES
+        </p>
+        <p>
+          Parce qu'il fut un résistant de la première heure et qu'il n'éprouvait pas en 1944 le besoin de se dédouaner, parce qu'il n'a jamais transigé sur ses principes ni sur la vérité, parce qu'il a traité l'accord avec les communistes pendant la guerre, quand ceux-ci rejoignirent la <orgName ref="#zbz-o.435">Résistance</orgName>, seulement après l'invasion de l'<placeName ref="#zbz-l.59">Union soviétique</placeName> par l'<placeName ref="#zbz-l.26">Allemagne</placeName>, comme une simple alliance tactique qui n'impliquait pas qu'on prenne le P.C. pour plus vertueux qu'il n'était, <persName ref="#zbz-p.196">Henri Frenay</persName> n'a jamais au cours de sa vie séparé son combat contre le nazisme de son combat contre le communisme. <persName ref="#zbz-p.38">François Mitterrand</persName> a bien connu <persName ref="#zbz-p.196">Henri Frenay</persName>. Il lui a rendu un juste et bel hommage le 20 septembre dernier. Il a oublié de rappeler dans son discours que <persName ref="#zbz-p.196">Frenay</persName> n'avait jamais pactisé avec les totalitaires. Sans doute le Président de la République se souvenait-il des reproches que son ami <persName ref="#zbz-p.196">Frenay</persName> lui avait faits en d'autres temps.
+        </p>
+        <p>
+          On trouvera page suivante un extrait d'une brochure que <persName ref="#zbz-p.196">Frenay</persName>, qui, avec <persName ref="#zbz-p.211">Aron</persName>, Souvarine, Branko Lazitch et <persName ref="#zbz-p.2">Jeanne Hersch</persName>, comptait des amis nombreux et fidèles à <bibl ref="#zbz-w.465">Commentaire</bibl>, a publiée en 1945, quand les communistes siégeaient encore au gouvernement de la <placeName ref="#zbz-l.2">France</placeName>.
+        </p>
+        <p>
+          <orgName ref="#zbz-o.439">COMMENTAIRE</orgName>.
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          1031
+        </p>
+        <p facs="#facs_5_r_2">
+          DÉMOCRATIE OU TOTALITARISME?
+        </p>
+        <p facs="#facs_5_r_3">
+          Je me suis efforcé de traiter brièvement des attaques personnelles que j'ai subies de la part de <orgName ref="#zbz-o.440">L'Humanité</orgName>. Elles ne sont qu'un exemple de méthodes plus générales, appliquées à tous les domaines de la vie publique. Je vais en parler maintenant.
+        </p>
+        <p facs="#facs_5_r_4">
+          Le moment est venu d'exprimer ici ce que beaucoup pensent sans oser le dire par suite d'un complexe de crainte qui n'a pas de précédent dans les annales d'un pays libre. Je n'hésite pas en effet à affirmer que le <orgName ref="#zbz-o.82">Parti communiste</orgName>, par ses organes de presse, ses orateurs, les zones d'influence qu'il s'est créées, exerce sur l'opinion française une sorte de terrorisme intellectuel auquel il est urgent de se soustraire.
+        </p>
+        <p facs="#facs_5_r_5">
+          Il faut en faire remonter l'origine à l'habile slogan : « l'anticommunisme est le début du fascisme » lancé par le Parti lui-même. Encore aurait-il fallu définir l'anticommunisme, ce qui n'a pas été fait. Si l'opposition systématique à tous les points de la doctrine et du programme communistes est en effet d'origine éminemment suspecte, il est assez humoristique de traiter de fascistes ou néofascistes tous ceux qui n'approuvent pas tous les actes et toutes les méthodes du <orgName ref="#zbz-o.82">Parti communiste</orgName>. En ce cas, évidemment, je suis, en commun avec un nombre considérable de dirigeants et militants socialistes, de syndicalistes, de libéraux et d'hommes libres de tous les pays, un « fasciste ».
+        </p>
+        <p facs="#facs_5_r_6">
+          Cependant le slogan était encore trop souple. Il fut amélioré par M. <persName ref="#zbz-p.1109">Albert Bayet</persName> qui a écrit dans un article d'<bibl ref="#zbz-w.186">Action</bibl> : « l'extra-communisme mène au fascisme ». Dès lors, les communistes deviennent les seuls défenseurs de la Démocratie menacée par l'écrasante majorité du Pays. [...]
+        </p>
+        <p facs="#facs_5_r_7">
+          Chacun de ceux qui jouent, en <placeName ref="#zbz-l.2">France</placeName>, un rôle politique, si mince soit-il, est terrorisé à l'idée de pouvoir apparaître comme fasciste, car l'étiquette ne pardonne pas. Il se sent épié dans le moindre de ses actes ou de ses propos par ces vigilants défenseurs de la Démocratie en même temps que du parti unique. Une propagande habile et orchestrée est arrivée à créer ce miracle que les jugements politiques de la majorité des <persName ref="#zbz-p.630">Français</persName> ne s'établissent plus qu'en fonction de la réaction probable qu'aura devant eux le <orgName ref="#zbz-o.82">Parti communiste</orgName>. Il faut tirer son chapeau à ceux qui ont réalisé cet exploit. Il faut aussi en mesurer les conséquences.
+        </p>
+        <p facs="#facs_5_r_8">
+          C'est la liberté de pensée et d'expression elle-même qui est en danger de mort. Le <persName ref="#zbz-p.630">Français</persName> ne juge plus en son âme et conscience. Il suppute l'interprétation tendancieuse que pourra tirer de ses propos le <orgName ref="#zbz-o.82">Parti communiste</orgName>, envisage, sans toujours le trouver, le moyen d'y répondre et se résigne souvent soit à se taire, soit à faire ce que veut ce dernier.
+        </p>
+        <p>
+          Extrait de <persName ref="#zbz-p.196">Henri FRENAY</persName>,<lb facs="#facs_5_l_9_1" n="N001" /><bibl ref="#zbz-w.472">Méthodes d'un parti. Alerte aux démocrates</bibl>,<lb facs="#facs_5_l_9_2" n="N002" /><orgName ref="#zbz-o.441">Les Éditions Universelles</orgName>, <placeName ref="#zbz-l.1">Paris</placeName>, 1945, 16 p.
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          1032
+        </p>
+        <p facs="#facs_6_r_2">
+          LE RACISME HITLÉRIEN EN 1937:<lb facs="#facs_6_l_2_1" n="N001" />UN STATUT NOUVEAU DE L'HUMANITÉ SE PRÉPARE
+        </p>
+        <p facs="#facs_6_r_3">
+          Le 1er janvier 1934, une certaine loi sur la stérilisation est entrée en vigueur; si elle joue contre l'Indigène du <orgName ref="#zbz-o.33">Reich</orgName>, croit-on que l'Étranger vaincu s'en défendra facilement?
+        </p>
+        <p facs="#facs_6_r_4">
+          Nous n'avons pas le droit de glisser sur de tels faits. Parce qu'ils gouverneront la conduite de l'ennemi, nous devons les savoir par cœur.
+        </p>
+        <p facs="#facs_6_r_5">
+          D'après leur type bien connu, les volontés et les passions germaniques n'auront pas peur d'être ce qu'elles sont, les <persName ref="#zbz-p.42">Allemands</persName> ne craindront pas de se satisfaire. Nous pouvons nous tenir pour exposés à subir des conditions pires que la mort. Fort de sa mission de Messie humain, ce peuple de Seigneurs, cette race de Maîtres, s'entraîne déjà à compter quelles légitimes violences devront être imposées aux mâles des peuples vaincus et quelles hontes pèseront sur leurs femmes et sur leurs enfants. Ces femmes que vous croyez à vous, jeunes <persName ref="#zbz-p.630">Français</persName>, ne vous appartiennent plus dans le songe de l'<persName ref="#zbz-p.42">Allemand</persName>. Ni vos fils, ni vos filles, jeunes pères de familles françaises! Un statut nouveau de l'humanité se prépare, un droit particulier est élaboré: un code de nouveaux devoirs, auprès desquels les pauvres petites corvées et translations pangermanistes de 1918 feront l'effet de jeux d'enfants. Le racisme hitlérien nous fera assister au règne tout-puissant de sa Horde et, dernier gémissement de nos populations ahuries, il sera contesté que d'aussi révoltantes iniquités puissent être éclairées par notre soleil:
+        </p>
+        <p facs="#facs_6_r_6">
+          — Le soleil du vingtième siècle!
+        </p>
+        <p facs="#facs_6_r_7">
+          <persName ref="#zbz-p.1110">Charles MAURRAS</persName>,<lb facs="#facs_6_l_7_1" n="N001" /><bibl ref="#zbz-w.473">Devant l'Allemagne éternelle</bibl>, 1937, préface pp. 6-7.
+        </p>
+      </div>
+      </body></text>
+</TEI>

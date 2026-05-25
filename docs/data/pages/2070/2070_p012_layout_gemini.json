@@ -1,0 +1,152 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "420",
+      "bbox": {
+        "x_pct": 16.096,
+        "y_pct": 11.231,
+        "w_pct": 3.754,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number marked as filter"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "J. HERSCH",
+      "bbox": {
+        "x_pct": 45.452,
+        "y_pct": 11.458,
+        "w_pct": 9.297,
+        "h_pct": 2.138
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header marked as filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "la non-coïncidence des modes de dans la durée . Vérité et liberté n'existent jamais pour nous en tan",
+      "bbox": {
+        "x_pct": 15.748,
+        "y_pct": 15.17,
+        "w_pct": 68.135,
+        "h_pct": 8.838
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'être est pour nous déchiré. phique ne Fexplique pas   par un récit ni par une déduction elle tion.",
+      "bbox": {
+        "x_pct": 15.881,
+        "y_pct": 23.927,
+        "w_pct": 67.961,
+        "h_pct": 6.629
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle sépare science et philosophie mais pour profondeur. L'être, selon elle, ne nous est donné qu'à ",
+      "bbox": {
+        "x_pct": 15.912,
+        "y_pct": 30.871,
+        "w_pct": 68.023,
+        "h_pct": 10.246
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès lors, la voie est ouverte où il devient possible. au-delà de toute subjectivité modale de tel ou",
+      "bbox": {
+        "x_pct": 15.881,
+        "y_pct": 41.181,
+        "w_pct": 68.105,
+        "h_pct": 6.907
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La logique philosophique clarifie le rapport entre philosophie et vie Le contenu des pensées philoso",
+      "bbox": {
+        "x_pct": 16.014,
+        "y_pct": 48.062,
+        "w_pct": 68.002,
+        "h_pct": 5.139
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La logique philosophique jette une vive clarté sur les problèmes, mais elle ne livre pas les solutio",
+      "bbox": {
+        "x_pct": 16.158,
+        "y_pct": 54.924,
+        "w_pct": 67.828,
+        "h_pct": 5.158
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle ni celui de son existence temporelle. Elle ne donne pas de réponse au problème du mal . Et elle",
+      "bbox": {
+        "x_pct": 16.086,
+        "y_pct": 60.12,
+        "w_pct": 67.93,
+        "h_pct": 8.251
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le néant, auquel   Nietzsche voulait sacrifier Dieu lui-même, peut parfois désigner, positivement, c",
+      "bbox": {
+        "x_pct": 15.984,
+        "y_pct": 72.771,
+        "w_pct": 68.268,
+        "h_pct": 8.794
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 07 Aug 2025 14:52:34 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.791,
+        "y_pct": 92.483,
+        "w_pct": 36.418,
+        "h_pct": 3.738
+      },
+      "changed": true,
+      "change_reason": "ADDED: Footer metadata marked as filter"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Detected page header and footer metadata requiring filter label"
+  ],
+  "doc_id": "2070",
+  "page": 12,
+  "elapsed_seconds": 5.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

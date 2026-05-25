@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Chevalier montait une jument arabe. On voyait par moments se lever les pattes dansantes, trop fines, si fragiles qu'à chaque pas le sol semblait les blesser. Il portait un simple habit de chasse brun, et son épée. Dans l'éclat du cortège, il mettait une tache terne. Plus loin on lui donnerait une lance.",
+      "bbox": {
+        "x_pct": 24.812,
+        "y_pct": 11.859,
+        "w_pct": 66.097,
+        "h_pct": 19.596
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled OCR text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plus loin, à l'entrée de la sombre vallée au silence de pierre, on lui donnerait une lance. On lui donnerait l'accolade, la bénédiction. Et il irait seul.",
+      "bbox": {
+        "x_pct": 24.848,
+        "y_pct": 31.43,
+        "w_pct": 65.661,
+        "h_pct": 11.102
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled OCR text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seul dans la sombre vallée au silence de pierre, à la recherche du dragon cracheur de flammes, qu'il tuerait pour conquérir sa Princesse blonde.",
+      "bbox": {
+        "x_pct": 24.691,
+        "y_pct": 42.834,
+        "w_pct": 65.976,
+        "h_pct": 10.849
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled OCR text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ou bien il mourrait.",
+      "bbox": {
+        "x_pct": 28.642,
+        "y_pct": 54.079,
+        "w_pct": 30.388,
+        "h_pct": 2.355
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant le cortège éteint s'éloigne sur la route bleue. Le soleil ne l'atteint plus. Il éblouit encore, d'un dernier rayon, la Princesse au sommet de la tour, dont les larmes soudain brillent comme des gouttes de sang.",
+      "bbox": {
+        "x_pct": 24.691,
+        "y_pct": 62.044,
+        "w_pct": 65.818,
+        "h_pct": 17.376
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled OCR text to match the image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "34",
+      "bbox": {
+        "x_pct": 24.812,
+        "y_pct": 82.526,
+        "w_pct": 2.6,
+        "h_pct": 2.3
+      },
+      "changed": true,
+      "change_reason": "Misidentified as paragraph text, should be page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Most text regions contained highly inaccurate OCR.",
+    "Page number at bottom left was misclassified as text paragraph."
+  ],
+  "doc_id": "2260",
+  "page": 32,
+  "elapsed_seconds": 4.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

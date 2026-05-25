@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Hans Ulrich Glarner",
+      "bbox": {
+        "x_pct": 6.005,
+        "y_pct": 33.946,
+        "w_pct": 15.757,
+        "h_pct": 1.396
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in transcription from 'Hlans' to 'Hans'."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "HANS ULRICH GLARNER",
+      "bbox": {
+        "x_pct": 25.235,
+        "y_pct": 10.393,
+        "w_pct": 25.94,
+        "h_pct": 1.756
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aspekte der Schweiz, auf die man nicht verzichten darf: Vielsprachigkeit, d.h. Modellcharakter (für Europa), wechselndes Gleichgewicht. Wir sollten nicht viel Harmonie anstreben: Der Dissens, eine gesunde Streitkultur, fördert kreatives Handeln. Zu gross und historisch nicht begründbar ist die Angst vor dem Fremden. Das Andersartige als Bereicherung erfahren, als Chance nutzen, ist für den Vielvölkerstaat lebenswichtig. Eine Willensnation kann sich nicht von der Welt abschotten. Vom Sendungsbewusstsein müssen wir uns trennen. Kein Land soll so werden wie die Schweiz - bitte keine Illusionen! - was würde mit der Welt passieren, wenn alle Chinesen so mobil wären wie die Schweizer? Die Spitzenposition der Schweiz nützt andere Völker aus.",
+      "bbox": {
+        "x_pct": 25.026,
+        "y_pct": 15.36,
+        "w_pct": 65.927,
+        "h_pct": 32.885
+      },
+      "changed": true,
+      "change_reason": "Expanded text to include the full content of the paragraph block."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "32",
+      "bbox": {
+        "x_pct": 25.597,
+        "y_pct": 94.675,
+        "w_pct": 1.956,
+        "h_pct": 1.547
+      },
+      "changed": true,
+      "change_reason": "Identified page number and re-labeled to filter."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Transcription error in caption corrected.",
+    "Paragraph text was truncated; corrected to full content.",
+    "Page number missing from initial detection; added as footer."
+  ],
+  "doc_id": "2940",
+  "page": 35,
+  "elapsed_seconds": 4.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "25 octobre.",
+      "bbox": {
+        "x_pct": 71.018,
+        "y_pct": 27.604,
+        "w_pct": 16.735,
+        "h_pct": 2.213
+      },
+      "changed": true,
+      "change_reason": "Identified as a page date/header instead of body text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A partir de ce jour, mes parents interdirent tout. La vie ne fut plus qu'absence. L'absence alors ne me fut pas cruelle. Elle me berçait, m'enfonçait dans une sorte de sommeil qui, comme le fait souvent le sommeil véritable, protégeait par une extrême concentration et nourrissait substantiellement un plus profond réveil. Je ne prenais pas clairement conscience de mes désirs, je ne concevais aucun plan pour les réaliser, aucune impulsion ne s'élevait assez nettement pour me faire heurter les obstacles. Du fond de cette obscurité dormante, je tâtonnais pourtant vers lui. Et ces tâtonnements de somnambule réussirent longtemps d'une façon miraculeuse. Nous ne nous sommes presque plus rien dit. Nos rencontres n'en étaient pour moi que plus magnifiquement éloquentes d'un bonheur intérieur, tellement intérieur qu'il n'y avait rien à dissimuler aux autres, alors que tout me semblait clair entre nous.",
+      "bbox": {
+        "x_pct": 9.905,
+        "y_pct": 32.297,
+        "w_pct": 80.595,
+        "h_pct": 42.656
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'était le printemps, le plus beau printemps. Surtout, il y avait les soirées. Quelques marches menaient de ma chambre au jardin. Je m'asseyais là. Notre jardin était très petit, c'était en somme tout juste une terrasse avec",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 75.208,
+        "w_pct": 80.365,
+        "h_pct": 10.047
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 12.372,
+        "y_pct": 86.133,
+        "w_pct": 1.464,
+        "h_pct": 2.148
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text content was heavily truncated and garbled in initial input.",
+    "Page header '25 octobre.' misidentified as paragraph.",
+    "Page number '4' misidentified as paragraph."
+  ],
+  "doc_id": "40",
+  "page": 47,
+  "elapsed_seconds": 4.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

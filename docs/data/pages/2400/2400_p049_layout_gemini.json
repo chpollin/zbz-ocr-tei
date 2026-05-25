@@ -1,0 +1,116 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ger empfindet diese Abhängigkeit von Vorschriften und Maßnahmen als schwere Einengung seiner Freiheit.",
+      "bbox": {
+        "x_pct": 27.284,
+        "y_pct": 4.887,
+        "w_pct": 65.615,
+        "h_pct": 4.549
+      },
+      "changed": true,
+      "change_reason": "Included missed region from header/top of snippet."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Merci pour rouge",
+      "bbox": {
+        "x_pct": 7.028,
+        "y_pct": 25.204,
+        "w_pct": 17.661,
+        "h_pct": 1.892
+      },
+      "changed": true,
+      "change_reason": "This is a margin note/caption describing the phrase mentioned in the text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: Ja, er empfindet das so, aber vielleicht lernt er, das nicht so zu empfinden. Ich hatte einen Freund, der seine Enkelkinder, wenn sie bei Rot stillstehen mußten, zu sagen lehrte: ‹Merci pour rouge, qui nous protèges.› Vielleicht lernen mehr Eltern so zu denken, und dann empfindet man eine solche Regelung nicht mehr als Einengung der Freiheit.",
+      "bbox": {
+        "x_pct": 27.284,
+        "y_pct": 13.224,
+        "w_pct": 65.615,
+        "h_pct": 17.999
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Im ganzen scheint mir, daß es im modernen Staat mehr Freiheit gibt als früher – trotz aller Zwänge, die es natürlich gibt und die Sie als Unternehmer ganz besonders empfinden. Was für die einen als Zwang erscheint, kann für andere Schutz sein. Ich denke z. B. an die Tatsache, daß es eine Altersversicherung gibt, daß die alten Menschen ihre Zeit frei gebrauchen können, ohne auf andere Menschen angewiesen, von anderen Menschen abhängig zu sein. Man darf solche Errungenschaften nicht gering schätzen. Es handelt sich hier um eigentliche Eroberungen. Natürlich müssen die einen nachbezahlen, aber das auf der anderen Seite ergibt das sehr viel mehr Freiheit.",
+      "bbox": {
+        "x_pct": 27.284,
+        "y_pct": 31.565,
+        "w_pct": 65.615,
+        "h_pct": 31.317
+      },
+      "changed": false
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Die moderne Zivilisation macht uns frei",
+      "bbox": {
+        "x_pct": 10.268,
+        "y_pct": 57.766,
+        "w_pct": 14.458,
+        "h_pct": 4.971
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and labeled as caption (margin note)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ANDEREGG: Ihr Beispiel zeigt etwas Wichtiges: Die Altersversicherung schafft zwar einen Freiraum, aber der, der in ihren Genuß kommt, ist damit allein noch nicht wirklich frei.",
+      "bbox": {
+        "x_pct": 27.527,
+        "y_pct": 64.869,
+        "w_pct": 65.53,
+        "h_pct": 9.389
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: Das ist richtig. Man bekommt die Freiheit nicht von außen, nicht vom Staat – Gott sei Dank! Aber ich verteidige hier die Möglichkeit zur Freiheit, und ich halte diese für wesentlich. Und lassen Sie mich beifügen: Ich habe auch die Hoff-",
+      "bbox": {
+        "x_pct": 27.442,
+        "y_pct": 76.252,
+        "w_pct": 65.493,
+        "h_pct": 12.009
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "50",
+      "bbox": {
+        "x_pct": 59.04,
+        "y_pct": 90.648,
+        "w_pct": 2.214,
+        "h_pct": 2.285
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 4,
+  "issues": [
+    "Detected page footer",
+    "Misidentified margin notes as paragraphs",
+    "Missing initial fragment in snippet"
+  ],
+  "doc_id": "2400",
+  "page": 49,
+  "elapsed_seconds": 8.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

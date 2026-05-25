@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tout entière est comme un développement de la Révélation initiale dans l'histoire, elle-même insérée dans un passé. L'histoire de l'Eglise est la Révélation continuée, à travers avatars et péchés de la condition charnelle, mais toujours accompagnée, en tant que telle, par le Saint-Esprit, qui parle à travers elle, au fil du temps. Le refus du dogme par les protestants au nom de la conscience individuelle, virtuellement contemporaine du Christ et dont la capacité critique vient de Dieu même, leur apparaît comme un subjectivisme abstrait, rejetant en quelque sorte le domaine de la foi hors du temps et privant l'Eglise de toute présence et autorité réelles tout au long de l'histoire.",
+      "bbox": {
+        "x_pct": 12.125,
+        "y_pct": 8.144,
+        "w_pct": 77.587,
+        "h_pct": 20.282
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match the visible source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les catholiques voudraient que les protestants reconnaissent, eux aussi, la qualité historiquement «accompagnée» de l'Eglise au fil de son histoire, ce qui leur permettrait de comprendre et d'admettre le dogme de l'infaillibilité. Les protestants voudraient que les catholiques reviennent à la pureté originelle de «la Parole de Dieu», à la contemporanéité avec le Christ, ce qui les ferait renoncer à l'infaillibilité papale et rétablir l'exigence ultime et sans concession de la conscience individuelle. Les efforts oecuméniques pourraient amener des catholiques à se dire qu'après tout l'infaillibilité n'est pas si importante, qu'elle ne se rattache pas à la nature la plus profonde de l'Eglise, et que l'unité, la fin du «scandale des frères séparés» vaut bien qu'on la sacrifie.",
+      "bbox": {
+        "x_pct": 12.089,
+        "y_pct": 27.745,
+        "w_pct": 77.551,
+        "h_pct": 22.475
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match the visible source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les efforts oecuméniques pourraient amener des protestants à penser qu'après tout l'infaillibilité est limitée, et que d'ailleurs, de toute façon, l'autorité du pape est aujourd'hui en fait assez réduite dans ses effets réels; l'unité, la fin du «scandale des frères séparés», demande peut-être, dès lors, qu'on l'accepte au niveau d'une déférence plutôt théorique.",
+      "bbox": {
+        "x_pct": 12.161,
+        "y_pct": 49.702,
+        "w_pct": 77.359,
+        "h_pct": 10.595
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match the visible source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ne serait-ce pas, dans les deux cas, un triste appauvrissement de la religion chrétienne? Le caractère inconciliable, sur ce point, des deux confessions n'exclut peut-être pas que dans sa profondeur transcendante – au-delà de tout credo humain – un christianisme qu'aucune pensée humaine ne pourrait posséder soit à la fois l'absolu ponctuel, transtemporel, d'une conscience, juge ultime et à tout instant contemporaine du Christ (Kierkegaard), et une Eglise embourbée dans l'histoire relative, dont elle traîne avec elle les erreurs et les crimes, mais accompagnée pourtant par une transcendance qui s'efforce encore, dans l'incarnation, de parler de temps en temps le langage des hommes?",
+      "bbox": {
+        "x_pct": 12.161,
+        "y_pct": 59.671,
+        "w_pct": 77.311,
+        "h_pct": 20.493
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match the visible source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle serait l'une des richesses des «frères séparés»",
+      "bbox": {
+        "x_pct": 14.73,
+        "y_pct": 79.898,
+        "w_pct": 55.654,
+        "h_pct": 2.036
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "137",
+      "bbox": {
+        "x_pct": 85.346,
+        "y_pct": 87.898,
+        "w_pct": 2.493,
+        "h_pct": 2.036
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer for page number."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Original text extraction contained numerous truncated words and encoding errors.",
+    "Page number at bottom right was incorrectly identified as text.",
+    "Several text blocks were merged incorrectly or split improperly in original."
+  ],
+  "doc_id": "2460",
+  "page": 5,
+  "elapsed_seconds": 5.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

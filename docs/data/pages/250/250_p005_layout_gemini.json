@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "82",
+      "bbox": {
+        "x_pct": 113.0,
+        "y_pct": 340.0,
+        "w_pct": 21.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "MONDE NOUVEAU",
+      "bbox": {
+        "x_pct": 293.0,
+        "y_pct": 340.0,
+        "w_pct": 119.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vérité, mais par manque de rigueur qui finit par être une non-pensée, un simple empâtement de toute exigence.",
+      "bbox": {
+        "x_pct": 110.0,
+        "y_pct": 366.0,
+        "w_pct": 487.0,
+        "h_pct": 32.0
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et puisque je suis en train de parler de la partie dite « littéraire », du festival (qui n'a certes pas été, malgré l'importance que certains lui donnaient, ce qu'il y a eu de mieux), on me permettra d'exprimer un regret. Pendant un mois, on avait réuni à Paris des penseurs, des écrivains et des artistes éminents de tous les pays libres d'Europe et d'Amérique, ou exilés des pays asservis. On aurait pu, semble-t-il, tirer bien davantage de cette rencontre. Au lieu de les faire parler anarchiquement l'un après l'autre, on aurait pu organiser des groupes de discussion restreints sur un problème bien plus limité que les grands thèmes « Isolement et communication », « Révolte et communisme », « Diversité et universalité ». On aurait pu aussi faire partir les entretiens publics d'une expérience commune aux orateurs et aux auditeurs, par exemple l'un des spectacles du festival ou un film particulièrement riche et chargé, de nombreux plans, de significations actuelles, comme Jeux interdits de René Clément - ce qui aurait permis à une discussion de s'engager immédiatement.",
+      "bbox": {
+        "x_pct": 107.0,
+        "y_pct": 400.0,
+        "w_pct": 490.0,
+        "h_pct": 270.0
+      },
+      "changed": true,
+      "change_reason": "Fixed severe OCR transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais passons aux arts. Le festival fut avant tout - peut être parce que l'organisateur principal, Nicolas Nabokov, est compositeur - une fête de la musique. Je n'ai pas pu tout entendre (le programme était beaucoup trop riche pour mes capacités d'absorption) - la musique de chambre en particulier, où l'on joua des œuvres de jeunes compositeurs contemporains, m'a échappé complètement. Inutile d'énumérer les programmes de musique symphonique, des concerts ou des ballets. Le premier concert, donné à l'église Saint-Roch, était dédié à la mémoire des victimes des régimes totalitaires. On joua du Bach, puis du Poulenc. C'est à travers ce contraste que j'ai éprouvé une impression qui ne cessa de se préciser par la suite : la musique moderne (comme sans doute l'art moderne dans son ensemble) porte la trace d'une blessure nouvelle, qui paraît s'être ajoutée à celle, permanente, de la condition d'homme conscient. Bach, jusque dans l'expression de la douleur, construit son œuvre avec une harmonie qui est",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 677.0,
+        "w_pct": 491.0,
+        "h_pct": 246.0
+      },
+      "changed": true,
+      "change_reason": "Fixed severe OCR transcription errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text detection was extremely poor quality due to OCR misreads",
+    "Missing explicit page footer/header metadata in original detection"
+  ],
+  "doc_id": "250",
+  "page": 5,
+  "elapsed_seconds": 6.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

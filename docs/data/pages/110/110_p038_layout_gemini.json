@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "36",
+      "bbox": {
+        "x_pct": 19.141,
+        "y_pct": 2.0,
+        "w_pct": 11.233,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number/header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊIRE ET LA FORME",
+      "bbox": {
+        "x_pct": 69.455,
+        "y_pct": 2.0,
+        "w_pct": 18.232,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "faiblesse incarnative; à cause de sa non-résistance toutes les ébauches; à cause de sa frivolité et ",
+      "bbox": {
+        "x_pct": 19.333,
+        "y_pct": 13.769,
+        "w_pct": 68.431,
+        "h_pct": 5.72
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et   pendant ce temps; pendant que Thomme sur une matière rêvée des intentions; des volontés; des ac",
+      "bbox": {
+        "x_pct": 19.141,
+        "y_pct": 19.187,
+        "w_pct": 68.815,
+        "h_pct": 52.213
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/footer regions in initial JSON",
+    "Labeling of page header as text is inaccurate per instructions"
+  ],
+  "doc_id": "110",
+  "page": 38,
+  "elapsed_seconds": 7.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

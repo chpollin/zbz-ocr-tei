@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "nouvelle dont Ies problemes n0us assaillent el nous pres-",
+      "bbox": {
+        "x_pct": 6.233,
+        "y_pct": 7.087,
+        "w_pct": 32.948,
+        "h_pct": 2.71
+      },
+      "changed": true,
+      "change_reason": "This is part of the main text body, not page footer. Reverting to paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien que je ne connaisse pas grand-chose \u0000 la technique; parfois, contradictoirc.",
+      "bbox": {
+        "x_pct": 6.166,
+        "y_pct": 11.206,
+        "w_pct": 32.948,
+        "h_pct": 8.984
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La technique est faite de moycns. Qu'est-cc 'un moyen? d\u0000termninisme physique chimique de la nalure",
+      "bbox": {
+        "x_pct": 6.358,
+        "y_pct": 19.553,
+        "w_pct": 32.852,
+        "h_pct": 18.957
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "6 Iaquclle cclle Lechnique, dc son progres, des inventions qu'on peul y d\u0000velopper les conqueles qui",
+      "bbox": {
+        "x_pct": 25.848,
+        "y_pct": 55.014,
+        "w_pct": 5.944,
+        "h_pct": 1.897
+      },
+      "changed": true,
+      "change_reason": "Artifact box covering text, incorrectly segmented."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dexprimer; est actuellement r\u0000panduc partout , parmi toute r\u0000petent, ils chanlent Ia nocivit\u0000 non-va",
+      "bbox": {
+        "x_pct": 60.857,
+        "y_pct": 10.257,
+        "w_pct": 33.102,
+        "h_pct": 11.111
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "obnubiles par n'ont guere cherch\u0000 \u0000 en comprcndr prendre puis",
+      "bbox": {
+        "x_pct": 60.819,
+        "y_pct": 22.9,
+        "w_pct": 29.547,
+        "h_pct": 8.713
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "relalion",
+      "bbox": {
+        "x_pct": 60.819,
+        "y_pct": 75.569,
+        "w_pct": 4.566,
+        "h_pct": 1.802
+      },
+      "changed": true,
+      "change_reason": "Single word fragment detection is noisy and redundant."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Fragmented detection of paragraphs.",
+    "Small text artifacts detected as separate regions.",
+    "Incorrect label for paragraph start."
+  ],
+  "doc_id": "2040",
+  "page": 3,
+  "elapsed_seconds": 3.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

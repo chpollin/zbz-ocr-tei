@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Widerspruch in philosophischen Seminaren nicht nur geduldet, sondern sogar gelobt würde! Es gibt wichtige Widersprüche und Paradoxien, und es gibt logische Fehler, die es nicht mal bis zu Widersprüchen und Paradoxien bringen, und die sind natürlich nicht gemeint. Das heißt, gemeint ist eigentlich der Widerspruch, der sich ergibt, obwohl man, ja vielleicht präziser noch nach dem, was Frau Pieper gesagt hat, weil man die Logik so benutzt. Das heißt, es sind die Widersprüche gemeint, in die man hineingetrieben wird dadurch, daß man sich ein möglichst widerspruchsfreies Bild von der Welt und von sich selbst in dieser Welt zu verschaffen versucht.",
+      "bbox": {
+        "x_pct": 7.391,
+        "y_pct": 4.281,
+        "w_pct": 85.262,
+        "h_pct": 24.617
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und das letzte, was ich bei dieser Gelegenheit noch tun möchte, ist: zu fragen, was denn nun eigentlich das Ziel der Reflexion auf die Reflexion oder der Reflexion auf die Widersprüche und Antinomien ist. Philosophiegeschichte beginnt ja mitten in der Vorsokratik, in der Blüte der vorsokratischen Philosophie, mit der Reflexion von Paradoxien, nämlich in der Verteidigung der eleatischen Lehre von der Einheit und ruhigen Unbeweglichkeit des Seins. Wie verteidigt der Schüler Zenon die These seines Lehrers Parmenides, daß das Sein nur sei und nicht nicht sein könne, sondern unbeweglich und ruhig sei? Er verteidigt sie, indem er versucht zu zeigen, welcher Unsinn resultierte, wenn man das Gegenteil annähme. Er zeigt, daß wir uns erst richtig in Widersprüche verstricken, wenn wir das Gegenteil annehmen.",
+      "bbox": {
+        "x_pct": 7.301,
+        "y_pct": 31.084,
+        "w_pct": 85.247,
+        "h_pct": 31.485
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Müssen wir jetzt daraus den Schluß ziehen, daß es eben darauf ankomme, Paradoxien und Widersprüche dazu zu benutzen, um aufzuweisen, daß das Sein selbst ruhig, ewig, immer gleich und widerspruchsfrei ist? Ich denke nicht. Die Philosophiegeschichte zeigt uns, daß diese These des Zenon ja auch nicht unwidersprochen bleibt: Heraklit und seine Gefolgsleute z. B. haben das genaue Gegenteil behauptet – auch eine Antinomie, wenn Sie so wollen, zwischen Eleaten und Herakliteern –, daß es so etwas wie ein Nichtbewegtes gar nicht geben könne, daß das, was wir das ruhige und nichtbewegte Sein nennen, eigentlich das Entstehen und Vergehen, also das Werden ist. Sie merken gleich, ich versuche Sie jetzt zu verlocken, den Nürnberger Hegel doch nicht so schlecht zu finden wie das, was ich",
+      "bbox": {
+        "x_pct": 7.451,
+        "y_pct": 64.454,
+        "w_pct": 85.247,
+        "h_pct": 29.29
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "35",
+      "bbox": {
+        "x_pct": 89.28,
+        "y_pct": 95.3,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number and assigned correct label."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original transcript text was riddled with OCR errors and punctuation mistakes.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "3180",
+  "page": 12,
+  "elapsed_seconds": 4.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

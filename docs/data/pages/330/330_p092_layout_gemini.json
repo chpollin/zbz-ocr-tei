@@ -1,0 +1,96 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "58 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 8.788,
+        "w_pct": 85.599,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text/paragraph to page_header for running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le remide consiste à abolir la propriété privée des moyens de production, et, du même coup, la libre concurrence économique, qui n'est que la loi de la jungle et le règne du plus fort. Les moyens de production et de distribution, lorsqu'ils atteignent les dimensions et l'importance de l'équipement industriel moderne, doivent appartenir soit à l'ensemble des travailleurs (coopératives de production), soit à l'ensemble des consommateurs (par exemple, les magasins coopératifs), soit à la population tout entière (nationalisation). Le profit doit donc être aboli, le capital cesse de rapporter de l'argent, seul le travail productif mérite « salaire ». Ce n'est d'ailleurs plus un salaire, mais le pouvoir d'achat reconnu par la société à chaque travailleur pour sa contribution à la production.",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 11.524,
+        "w_pct": 85.599,
+        "h_pct": 27.041
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and ensured proper paragraph tagging."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le jeu de la libre concurrence capitaliste, l'anarchie et la lutte des classes qu'il implique sont remplacés par le planisme économique, qui règle la production sur les besoins de la communauté. Selon l'idéologie, il ne s'agit pas d'autorités, fussent-elles démocratiquement élues qui régneraient sur l'économie, mais en quelque sorte d'un organe enregistreur impersonnel, sensible aux besoins des consommateurs, grâce auquel la production se réglerait de façon presque automatique sur ces besoins.",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 38.866,
+        "w_pct": 85.599,
+        "h_pct": 15.656
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph block that was skipped in initial detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'idéologie socialiste est donc, sur le terrain économique, résolument révolutionnaire. Il ne s'agit pas d'améliorer les conditions de vie des salariés, de diminuer l'écart des conditions sociales, mais de mettre un terme à la lutte des classes en supprimant les classes, de supprimer le salariat, de remplacer la propriété privée des moyens de production par des formes diverses de propriété collective, et la libre concurrence par un planisme éclairé.",
+      "bbox": {
+        "x_pct": 11.657,
+        "y_pct": 54.661,
+        "w_pct": 85.515,
+        "h_pct": 15.241
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "REMARQUES CRITIQUES SUR CES IDÉOLOGIES",
+      "bbox": {
+        "x_pct": 11.978,
+        "y_pct": 73.592,
+        "w_pct": 58.774,
+        "h_pct": 2.344
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une chose est l'image qu'un militant ou un sympathisant se fait du mouvement auquel il adhère, la façon dont il se sent y adhérer et dont il « mime » intérieurement l'adhésion de ses amis — et une autre la manière dont le mouvement s'insère dans la réalité politique et sociale, les résultats réels qu'il produit pour le spectateur nullement désintéressé, critique, impatient, souvent",
+      "bbox": {
+        "x_pct": 11.741,
+        "y_pct": 77.451,
+        "w_pct": 85.515,
+        "h_pct": 12.986
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Running header was initially misidentified as part of the paragraph.",
+    "OCR text was heavily garbled in multiple sections.",
+    "One entire paragraph block was missing from initial detection.",
+    "Section header had a typo 'GES' instead of 'CES'.",
+    "Missing text content at the end of the last paragraph."
+  ],
+  "doc_id": "330",
+  "page": 92,
+  "elapsed_seconds": 7.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

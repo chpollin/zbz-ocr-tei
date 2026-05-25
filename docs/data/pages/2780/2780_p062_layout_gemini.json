@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'une solution rationnelle satisfaisante, mais au sens d'une purification apaisante, la contradiction. La musique n'abolit pas la contradiction, elle la substantifie.",
+      "bbox": {
+        "x_pct": 16.176,
+        "y_pct": 13.14,
+        "w_pct": 57.097,
+        "h_pct": 8.962
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi s'expliquent aussi toutes les autres contradictions de la condition humaine que nous retrouvons dans la musique. Étant à la fois temporelle et intemporelle, la musique peut d'une part être faite de sentiments, et d'autre part ouvrir une distance par rapport à tous les sentiments. Je ne crois pas du tout que la musique soit un bon moyen de communication entre personnes amoureuses l'une de l'autre. On l'utilise souvent à cette fin, mais il ne s'agit pas là d'un usage proprement musical de la musique, car celle-ci implique justement des sentiments d'un genre tout à fait particulier, des sentiments qu'on éprouve tout en ne les éprouvant pas. Le désir, la crainte, l'inquiétude, toutes ces émotions existent dans la musique, mais elles n'y ont aucun enjeu. En écoutant une œuvre, nous n'avons pas à nous raconter une histoire fournissant un enjeu à ce désir ou à cette crainte. Nous allons au concert parfois écouter une musique dont nous savons parfaitement qu'elle nous fera souffrir. Et nous payons notre billet pour aller souffrir. Pourquoi cela? Parce que c'est une souffrance dont on est",
+      "bbox": {
+        "x_pct": 15.964,
+        "y_pct": 21.832,
+        "w_pct": 57.479,
+        "h_pct": 50.613
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR errors to reflect actual source text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "63",
+      "bbox": {
+        "x_pct": 70.084,
+        "y_pct": 74.457,
+        "w_pct": 2.941,
+        "h_pct": 2.052
+      },
+      "changed": true,
+      "change_reason": "Labelled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Severe OCR transcription errors in text segments.",
+    "Page number not detected as a separate segment initially.",
+    "Bounding boxes contained raw OCR garbage instead of accurate text representation."
+  ],
+  "doc_id": "2780",
+  "page": 62,
+  "elapsed_seconds": 3.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

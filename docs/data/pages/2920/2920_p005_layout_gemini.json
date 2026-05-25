@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Les droits de l'homme 507",
+      "bbox": {
+        "x_pct": 252.0,
+        "y_pct": 82.0,
+        "w_pct": 512.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page header content as filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des réalités empiriques, en même temps que les dimensions de la visée, de la finalité et de l'histoire. L'homme ne cesse pas pour autant d'appartenir à la nature ; il continue à dépendre du règne de la force. Le droit, les droits, s'ils se détachent complètement de la force, n'auront pas de réalité. La force n'aura rien d'humain si elle ne se subordonne pas au droit.",
+      "bbox": {
+        "x_pct": 4.418,
+        "y_pct": 12.336,
+        "w_pct": 71.429,
+        "h_pct": 15.731
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi situé seul à cette intersection opposés de la nature et de la liberté, l'homme sent vivre en lui — si diverses qu'en soient les expressions culturelles — une exigence fondamentale : du seul fait qu'il est un être humain, quelque chose lui est dû : un respect, un égard ; quelque chose qui sauvegarde ses chances de faire de lui-même ce qu'il est capable de devenir ; la reconnaissance d'une dignité qu'il revendique parce qu'il est seul à viser consciemment un futur. Tout homme veut « être un homme » et être reconnu comme tel. S'il ne l'est pas, il préfère parfois mourir.",
+      "bbox": {
+        "x_pct": 4.418,
+        "y_pct": 27.87,
+        "w_pct": 71.429,
+        "h_pct": 26.202
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Nature humaine et « données de nature »",
+      "bbox": {
+        "x_pct": 6.524,
+        "y_pct": 58.42,
+        "w_pct": 53.078,
+        "h_pct": 2.453
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for section header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous voyons ici que le terme « nature » peut avoir deux sens. S'il est vrai que le fondement universel des droits de l'homme en tant que droits naturels subjectifs, c'est que tout homme veut « être un homme », reconnu comme tel dans sa dignité et jouir des égards qui, de ce fait, lui sont dus, cela signifie qu'« être un homme » n'est pas une donnée de nature, et qu'il y a, dans la « nature humaine », une exigence qui dépasse, transcende, ou même contredit les données de nature, au sens des caractères biologiques d'une espèce.",
+      "bbox": {
+        "x_pct": 4.418,
+        "y_pct": 62.777,
+        "w_pct": 71.281,
+        "h_pct": 24.073
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans la nature telle qu'elle nous est donnée règne, nous l'avons vu, la loi du plus fort. Le règne de la force",
+      "bbox": {
+        "x_pct": 51.0,
+        "y_pct": 870.0,
+        "w_pct": 712.0,
+        "h_pct": 42.0
+      },
+      "changed": true,
+      "change_reason": "Added missing bottom paragraph region"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Page header was missed by auto-detection",
+    "Missing bottom paragraph region",
+    "Header text transcription was slightly incomplete"
+  ],
+  "doc_id": "2920",
+  "page": 5,
+  "elapsed_seconds": 4.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

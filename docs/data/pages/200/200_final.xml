@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">L'Existentialisme devant l'Opinion Publique</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">200</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>L'Existentialisme devant l'Opinion Publique</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1950</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screening-t3" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). 'Kierkegaard' (2x, S.4+6) tagged as bibl ref=zbz-w.529 -- refers to the philosopher, not a book title; 'Nietzsche' (1x, S.7) tagged as bibl ref=zbz-w.530 -- refers to the philosopher, not a book title; 'Internationale' (1x, S.2) tagged as orgName ref=zbz-o.753 -- generic adjective in 'Revue Mensuelle Internationale', not an org (+3 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_1_r_1" ulx="136" uly="606" lrx="326" lry="636" />
+      <zone xml:id="facs_1_r_2" ulx="137" uly="685" lrx="500" lry="714" />
+      <zone xml:id="facs_1_r_3" ulx="137" uly="758" lrx="235" lry="790" />
+      <zone xml:id="facs_1_r_4" ulx="135" uly="798" lrx="1065" lry="833" />
+      <zone xml:id="facs_1_r_5" ulx="362" uly="890" lrx="666" lry="918" />
+      <zone xml:id="facs_1_r_6" ulx="136" uly="894" lrx="237" lry="920" />
+      <zone xml:id="facs_1_r_7" ulx="136" uly="917" lrx="241" lry="942" />
+      <zone xml:id="facs_1_r_8" ulx="363" uly="918" lrx="391" lry="940" />
+      <zone xml:id="facs_1_r_9" ulx="363" uly="941" lrx="415" lry="966" />
+      <zone xml:id="facs_1_r_10" ulx="134" uly="942" lrx="189" lry="965" />
+      <zone xml:id="facs_1_r_11" ulx="136" uly="966" lrx="226" lry="992" />
+      <zone xml:id="facs_1_r_12" ulx="136" uly="989" lrx="349" lry="1014" />
+      <zone xml:id="facs_1_r_13" ulx="361" uly="989" lrx="752" lry="1060" />
+      <zone xml:id="facs_1_r_14" ulx="136" uly="1012" lrx="301" lry="1037" />
+      <zone xml:id="facs_1_r_15" ulx="134" uly="1037" lrx="206" lry="1060" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_2_r_1" ulx="415" uly="492" lrx="816" lry="554" />
+      <zone xml:id="facs_2_r_2" ulx="307" uly="591" lrx="920" lry="634" />
+      <zone xml:id="facs_2_r_3" ulx="560" uly="715" lrx="672" lry="731" />
+      <zone xml:id="facs_2_r_4" ulx="480" uly="743" lrx="752" lry="768" />
+      <zone xml:id="facs_2_r_5" ulx="275" uly="1422" lrx="961" lry="1443" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_3_r_1" ulx="330" uly="504" lrx="853" lry="623" />
+      <zone xml:id="facs_3_r_2" ulx="253" uly="690" lrx="937" lry="895" />
+      <zone xml:id="facs_3_r_3" ulx="253" uly="892" lrx="939" lry="1061" />
+      <zone xml:id="facs_3_r_4" ulx="255" uly="1048" lrx="947" lry="1437" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1240" lry="1753">
+      <zone xml:id="facs_4_r_1" ulx="275" uly="334" lrx="953" lry="615" />
+      <zone xml:id="facs_4_r_2" ulx="275" uly="620" lrx="953" lry="867" />
+      <zone xml:id="facs_4_r_3" ulx="576" uly="867" lrx="652" lry="881" />
+      <zone xml:id="facs_4_r_4" ulx="275" uly="915" lrx="953" lry="1440" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_5_r_1" ulx="253" uly="329" lrx="945" lry="955" />
+      <zone xml:id="facs_5_r_2" ulx="253" uly="959" lrx="945" lry="1159" />
+      <zone xml:id="facs_5_r_3" ulx="586" uly="1180" lrx="616" lry="1194" />
+      <zone xml:id="facs_5_r_4" ulx="253" uly="1227" lrx="945" lry="1433" />
+      <zone xml:id="facs_5_r_5" ulx="198" uly="1547" lrx="708" lry="1564" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_6_r_1" ulx="260" uly="263" lrx="719" lry="306" />
+      <zone xml:id="facs_6_r_2" ulx="260" uly="321" lrx="959" lry="1437" />
+      <zone xml:id="facs_6_r_3" ulx="198" uly="1534" lrx="905" lry="1569" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_7_r_1" ulx="251" uly="334" lrx="944" lry="587" />
+      <zone xml:id="facs_7_r_2" ulx="250" uly="625" lrx="938" lry="787" />
+      <zone xml:id="facs_7_r_3" ulx="249" uly="787" lrx="939" lry="1288" />
+      <zone xml:id="facs_7_r_4" ulx="250" uly="1284" lrx="942" lry="1453" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_8_r_1" ulx="272" uly="335" lrx="963" lry="679" />
+      <zone xml:id="facs_8_r_2" ulx="268" uly="758" lrx="963" lry="1303" />
+      <zone xml:id="facs_8_r_3" ulx="265" uly="1303" lrx="960" lry="1449" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1241" lry="1754">
+      <zone xml:id="facs_9_r_1" ulx="260" uly="329" lrx="944" lry="554" />
+      <zone xml:id="facs_9_r_2" ulx="260" uly="556" lrx="939" lry="736" />
+      <zone xml:id="facs_9_r_3" ulx="717" uly="780" lrx="897" lry="803" />
+      <zone xml:id="facs_9_r_4" ulx="197" uly="1545" lrx="709" lry="1562" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <p facs="#facs_1_r_1">
+          ZB <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName>
+        </p>
+        <p facs="#facs_1_r_2">
+          <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName> | Zähringerplatz 6 | CH-8001 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_1_r_3">
+          <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName>, Dienstkonto<lb facs="#facs_1_l_3_1" n="N001" />Digitalisierungsprojekte<lb facs="#facs_1_l_3_2" n="N002" />Zähringerplatz 6<lb facs="#facs_1_l_3_3" n="N003" />8001 <placeName ref="#zbz-l.45">Zürich</placeName>
+        </p>
+        <p facs="#facs_1_r_4">
+          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName><lb facs="#facs_1_l_4_1" n="N001" /><orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_4_2" n="N002" />Fernleihe / Document Delivery<lb facs="#facs_1_l_4_3" n="N003" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_4_4" n="N004" />Zähringerplatz 6<lb facs="#facs_1_l_4_5" n="N005" />CH-8001 <placeName ref="#zbz-l.45">Zürich</placeName><lb facs="#facs_1_l_4_6" n="N006" />Tel. +41 44 268 31 00<lb facs="#facs_1_l_4_7" n="N007" />Web www.zb.uzh.ch<lb facs="#facs_1_l_4_8" n="N008" />www.ub.uzh.ch
+        </p>
+        <p facs="#facs_1_r_5">
+          <placeName ref="#zbz-l.45">Zürich</placeName>, 13.05.2025
+        </p>
+        <p facs="#facs_1_r_6">
+          Kopienbestellung ZBZ-ME-250430-07
+        </p>
+        <p facs="#facs_1_r_7">
+          Guten Tag
+        </p>
+        <p facs="#facs_1_r_8">
+          Vielen Dank für Ihre Bestellung vom 30.04.2025. Die gewünschten Kopien finden Sie in der Beilage.
+        </p>
+        <p facs="#facs_1_r_9">
+          Haupttitel: Synthèses : revue internationale<lb facs="#facs_1_l_9_1" n="N001" />Band/Heft: 52<lb facs="#facs_1_l_9_2" n="N002" />Jahr: 1950<lb facs="#facs_1_l_9_3" n="N003" />Signatur:<lb facs="#facs_1_l_9_4" n="N004" />Verfasser des Artikels: <persName ref="#zbz-p.2">Hersch, Jeanne</persName><lb facs="#facs_1_l_9_5" n="N005" />Titel des Artikels: <bibl ref="#zbz-w.353">L'existentialisme devant l'opinion publique</bibl><lb facs="#facs_1_l_9_6" n="N006" />Seiten: 49–55<lb facs="#facs_1_l_9_7" n="N007" />Bemerkung: Dienstlicher Gebrauch (für <persName ref="#zbz-p.2">Hersch</persName>-Projekt) bitte nicht verrechnen; https://uzb.swisscovery.slsp.ch/permalink/415LSP_UZB/1d8f8q/alma890052932940205508; Jahrgang 1950 fehlt in SLSP-Bibliotheken
+        </p>
+        <p facs="#facs_1_r_10">
+          Mit der Bestellung haben Sie zudem die Urheberrechtsbestimmungen akzeptiert.
+        </p>
+        <p facs="#facs_1_r_11">
+          Sind die Kopien fehlerhaft? Es tut uns leid, dass etwas nicht nach Wunsch funktioniert hat. Bitte geben Sie uns via fernleihe@zb.uzh.ch eine Rückmeldung.
+        </p>
+        <p facs="#facs_1_r_12">
+          Für die Kosten (CHF 5.00) erhalten Sie innert den nächsten 6–8 Wochen eine Rechnung per E-Mail. Für UZH-Angehörige gelten Sonderkonditionen.
+        </p>
+        <p facs="#facs_1_r_13">
+          Wir wünschen Ihnen einen schönen Tag.
+        </p>
+        <p facs="#facs_1_r_14">
+          Freundliche Grüsse<lb facs="#facs_1_l_14_1" n="N001" />Fernleihe / Dokumentlieferdienst
+        </p>
+        <p facs="#facs_1_r_15">
+          <orgName ref="#zbz-o.46">Universitätsbibliothek Zürich</orgName> &amp; <orgName ref="#zbz-o.46">Zentralbibliothek Zürich</orgName><lb facs="#facs_1_l_15_1" n="N001" />fernleihe@zb.uzh.ch<lb facs="#facs_1_l_15_2" n="N002" />www.ub.uzh.ch<lb facs="#facs_1_l_15_3" n="N003" />www.zb.uzh.ch
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          N° 52<lb facs="#facs_2_l_1_1" n="N001" />SEPTEMBRE 1950<lb facs="#facs_2_l_1_2" n="N002" />5e ANNEE
+        </p>
+        <p facs="#facs_2_r_2">
+          SYNTHÈSES
+        </p>
+        <p facs="#facs_2_r_3">
+          Revue Mensuelle <orgName ref="#zbz-o.753">Internationale</orgName>
+        </p>
+        <p facs="#facs_2_r_4">
+          DIRECTEUR<lb facs="#facs_2_l_4_1" n="N001" />JEAN STADTSBAEDER
+        </p>
+        <p facs="#facs_2_r_5">
+          EDITIONS « SYNTHESES », 27, RUE DE LA LIMITE, <placeName ref="#zbz-l.41">BRUXELLES</placeName>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          <bibl ref="#zbz-w.353">L'Existentialisme devant l'Opinion Publique</bibl>
+        </p>
+        <p facs="#facs_3_r_2">
+          L'EXISTENTIALISME a mauvaise presse et son succès a été avant tout un succès de scandale. Il me souvient d'un article paru dans un quotidien genevois : l'existentialisme y était comparé à une peste qui se serait abattue sur <placeName ref="#zbz-l.1">Paris</placeName>; il consistait, selon l'auteur, à affirmer que tout effort intellectuel ou moral est vide de sens, que l'homme n'est qu'une ordure abandonnée dans un coin du monde, et qu'il ne lui reste qu'à céder aux mouvements « de ses viscères les plus bas »...
+        </p>
+        <p facs="#facs_3_r_3">
+          La vogue et le scandale de l'existentialisme prouve d'abord une chose : c'est que nous vivons en un temps où non seulement chacun parle de ce qu'il ne connaît pas, mais encore où ceux qui écrivent (sans être tous journalistes !) n'éprouvent aucune gêne à propager par l'imprimerie des comptes-rendus, des exposés, des jugements concernant des ouvrages qu'ils n'ont jamais lus. La confiance règne : il suffit d'avoir oui dire.
+        </p>
+        <p facs="#facs_3_r_4">
+          Que connaît-on en effet, dans le public, des œuvres dites « existentialistes » ? Partiellement, l'œuvre littéraire de <persName ref="#zbz-p.8">Sartre</persName> — et je dis « partiellement », car <bibl ref="#zbz-w.188">La Nausée</bibl> n'est pas un livre facile à lire d'un bout à l'autre, et <bibl ref="#zbz-w.257">Les Chemins de la Liberté</bibl>, en mainte partie, ne sont guère propres à flatter des lecteurs en quête de commodité. On connaît en général le titre du grand ouvrage philosophique de <persName ref="#zbz-p.8">Sartre</persName>, <bibl ref="#zbz-w.145">L'Être et le Néant</bibl>, titre dont on retient surtout « le Néant », plus pathétique et plus sensationnel. Souvent on sait aussi, par oui-dire, qu'il s'agit d'un livre où Dieu est nié et où il est question de vertige, de honte et de mauvaise foi. On connaît le film de <persName ref="#zbz-p.8">Sartre</persName>, <bibl ref="#zbz-w.354">Les Jeux sont faits</bibl>, montrant, évidemment, que l'homme ne peut rien à rien. On connaît partiellement les romans et les pièces de théâtre de <persName ref="#zbz-p.307">Camus</persName> et de <persName ref="#zbz-p.308">Simone de Beauvoir</persName>. Parfois enfin, on leur rattache <persName ref="#zbz-p.585">Anouilh</persName>, à cause du climat pessimiste de son œuvre. C'est à peu près tout... à moins de rappeler les caveaux, les coiffures et les suicides existentialistes.
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          50
+        </p>
+        <p facs="#facs_4_r_2">
+          SYNTHÈSES
+        </p>
+        <p facs="#facs_4_r_3">
+          Dans l'ensemble, le public français ignore tout de <bibl ref="#zbz-w.529">Kierkegaard</bibl>, tout de l'« existentialisme » allemand (<persName ref="#zbz-p.5">Heidegger</persName>, <persName ref="#zbz-p.1">Jaspers</persName>), tout, sauf peut-être des noms propres, du mouvement français d'avant-guerre tel qu'il s'exprimait dans les <bibl ref="#zbz-w.215">Recherches philosophiques</bibl>, en particulier sous la plume de <persName ref="#zbz-p.89">Jean Wahl</persName> et de <persName ref="#zbz-p.88">Gabriel Marcel</persName>; presque tout de l'œuvre philosophique de <persName ref="#zbz-p.8">Sartre</persName>, de l'œuvre critique de <persName ref="#zbz-p.308">Simone de Beauvoir</persName>, et même, je crois, malgré des citations fréquentes, du <bibl ref="#zbz-w.183">Sisyphe</bibl> de <persName ref="#zbz-p.307">Camus</persName>. Ajoutons que le public ignore dans une très large mesure les antécédents de l'existentialisme à travers toute l'histoire de la philosophie occidentale depuis l'antiquité, et que ce mouvement lui paraît ainsi né ex nihilo d'une époque de crime et de désespoir.
+        </p>
+        <p facs="#facs_4_r_4">
+          Il faut considérer aussi que l'étiquette d'« existentialiste », collée sur tels ou tels auteurs, ne se justifie pas par une profession de foi de leur part puisque, à ma connaissance, <persName ref="#zbz-p.8">Sartre</persName> est le seul à l'accepter expressément. On délimite l'existentialisme non selon des critères objectifs, mais d'après un climat vaguement caractérisé à l'avance pour les besoins de la cause. On taxera d'existentialiste telle œuvre à cause de tel ou tel caractère jugé immoral ou décadent, puis on jettera l'anathème sur l'existentialisme dans son ensemble, parce qu'il possède les caractères en question. Rien de plus déloyal que cette pétition de principe.
+        </p>
+        <p>
+          <hi rendition="#i"> </hi> *
+        </p>
+        <p>
+          Quelle idée le public se fait-il donc de l'existentialisme ? D'abord, à ses yeux, il s'agit d'un mouvement décadent. Tout en le jugeant hardiment, le public lui fait grief d'une certaine obscurité qu'il sait ne pas réussir à percer, et il la lui reproche comme une malhonnête coquetterie. Pourquoi faut-il que derrière ces histoires scandaleuses si faciles à condamner, il y ait ces gros livres philosophiques qu'on devrait lire et qu'on ne lira pas, et qui paraissent être là à seule fin de donner mauvaise conscience ? Pourquoi, dans ces gros livres, un vocabulaire étrange, une lourdeur et une complication de pensée qui découragent d'emblée ? Pourquoi, dans les œuvres proprement littéraires, ces techniques faites d'incohérences, exprès, dirait-on, pour déranger le lecteur en faisant vaciller devant lui le réel, la logique, l'univocité des actes ? (Par exemple, dans le deuxième volume des <bibl ref="#zbz-w.257">Chemins de la Liberté</bibl>, cette façon de passer d'un groupe de personnages à un autre, d'un pays à un autre, sans crier gare, au milieu d'une phrase...) Certes, continue le public, il y a dans ce goût de l'obscurité quelque chose de malsain. Et cet élément pathologique se manifeste aussi dans la prédilection de ces auteurs pour les réalités nauséabondes et suspectes (il suffit, pour s'en convaincre, de considérer les seuls titres des œuvres de <persName ref="#zbz-p.8">Sartre</persName> : <bibl ref="#zbz-w.188">La Nausée</bibl>, <bibl ref="#zbz-w.190">Les Mouches</bibl>, <bibl ref="#zbz-w.355">Les Mains sales</bibl>, <bibl ref="#zbz-w.356">La Mort dans l'Ame</bibl>, <bibl ref="#zbz-w.145">L'Être</bibl> et le
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          L'EXISTENTIALISME DEVANT L'OPINION PUBLIQUE
+        </p>
+        <p facs="#facs_5_r_2">
+          Néant, etc). Et pourquoi choisissent-ils, pour illustrer leur pensée, des expériences telles que le vertige ou l'angoisse, qui font perdre au sujet la maîtrise de lui-même, le submergent ou l'aliènent ? D'ailleurs, — c'est toujours le public qui parle — l'existentialisme est avant tout un immoralisme, et c'est ce qui a fait son succès. (Ici, on pourrait croire que le public, se jugeant si mal, va forcer notre respect. Mais non : la sévérité de chacun vise toujours autrui). Chacun sait que, selon les existentialistes, tout est permis ; on peut faire ce qu'on veut. La valeur suprême étant la liberté, la conduite humaine devient sa propre norme et perd ainsi tout frein. Cette même liberté à chaque instant renaissante exige un détachement absolu du passé et fait disparaître toute responsabilité grâce à une désagrégation intégrale du sujet à travers le temps. Le sujet jouit ainsi d'une innocence, d'une virginité sans cesse renouvelées. Et pour que cette liberté soit parfaite, l'existentialisme a supprimé le Témoin éternel qui, étranger au temps, pourrait « contemporaniser » le temps tout entier, préservant ainsi la consistance ontologique du passé et de ses fautes : l'existentialisme est athée. Au moins aurait-on pu espérer que dans un monde ainsi délivré de la crainte religieuse et des contraintes morales, il ferait bon vivre. Pas du tout : le nihilisme des existentialistes, après avoir aboli le <persName ref="#zbz-p.50">Créateur</persName>, se retourne contre la création et la ternit d'un pessimisme sans remède : vivre est un malheur. L'existence est injustifiée et injustifiable, ce qui donne la nausée du seul fait de sa densité ontologique, seul le néant a du prestige. Principes et valeurs se trouvent dégonflés, fripés, ridicules.
+        </p>
+        <p facs="#facs_5_r_3">
+          Telle est, je crois, dans l'ensemble, la réputation de l'existentialisme. Remarquons pour finir qu'il trouve moyen — chose aujourd'hui difficile — de dresser contre lui à la fois l'opinion bourgeoise et l'opinion marxiste. Aux yeux des bourgeois, il sape l'ordre, ruine le prestige des traditions, compromet les autorités, corrompt les mœurs. Aux yeux des marxistes, il renforce un libéralisme individualiste et pessimiste aux dépens du déterminisme collectif et optimiste nécessaire à la cohésion et à l'élan des forces révolutionnaires.
+        </p>
+        <p facs="#facs_5_r_4">
+          .
+        </p>
+        <note place="foot" n="1" xml:id="fn5-1" facs="#facs_5_r_5">
+          <placeName ref="#zbz-l.13">Est</placeName>-il utile de rappeler ici — bien que ces quelques précisions n'entrent pas dans le cadre de mes remarques — combien la vision courante de l'existentialisme que nous venons d'esquisser déforme son objet ? D'abord elle concerne à peu près exclusivement <persName ref="#zbz-p.8">Sartre</persName>, et c'est abusivement qu'elle recourt au terme général d'« existentialisme ». Mais la pensée de <persName ref="#zbz-p.8">Sartre</persName> lui-même s'y trouve altérée et déformée jusqu'à en être méconnaissable. Les difficultés que cette pensée oppose au lecteur, l'obscurité de l'expression, les techniques inusitées auxquelles
+        </note>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          52
+        </p>
+        <p facs="#facs_6_r_2">
+          SYNTHÈSES
+        </p>
+        <p facs="#facs_6_r_3">
+          l'auteur a recours proviennent non d'une préciosité décadente, mais d'un effort énergique pour échapper aux routines, pour s'éveiller et éveiller, pour sensibiliser à nouveau des esprits, des sens émoussés par un commerce trop abstrait, trop lâche ou trop résigné avec le réel. La prédilection pour les états nauséeux et les expériences suspectes correspond peut-être à des traits personnels de <persName ref="#zbz-p.8">Sartre</persName> et de son tempérament imaginatif. Mais nulle part dans son œuvre, ces états et ces expériences ne sont consentis. Au contraire, ils secouent le spectateur ou le lecteur, l'arrachent à sa satisfaction dormeuse, ils hurlent sous le ciel l'appel de quelque chose qui agonise. Celui qui n'a pas entendu ce hurlement, par exemple, dans le passage du <bibl ref="#zbz-w.357">Sursis</bibl> où la capitulation de <placeName ref="#zbz-l.22">Münich</placeName> se mêle au quasi-viol d'Ivitch, est un sourd. J'en viens à dire ainsi deux mots de ce qu'on appelle l'immoralisme, ou l'amoralisme, de <persName ref="#zbz-p.8">Sartre</persName> et des auteurs que le public groupe autour de lui. Ce qui me frappe, chez eux, c'est une véritable obsession éthique. C'en est fait, non de la responsabilité, non de la culpabilité, mais de l'innocence. Il n'existe plus d'acte, même plus de simple « temps de vie » dénué de qualification morale, ni bon ni mauvais. Sourire, respirer, aller, venir, s'arrêter, dormir, caresser, rester seul, — tout, absolument tout, a valeur morale, valeur humaine, valeur éternelle. Si le passé est séparé du présent par un rien insurmontable et si ce rien permet la liberté, ce n'est nullement que le passé s'abolisse dans le néant, comme on l'a prétendu par mauvaise foi ou par ignorance : c'est qu'il devient éternel, comme l'être-en-soi lui-même. Et nul n'a pu insister plus que <persName ref="#zbz-p.8">Sartre</persName> sur le lien indissoluble qui persiste entre un sujet et son passé, — au point qu'à sa mort, le sujet n'est plus que son passé. Le rien qui sépare le passé du présent, loin de diminuer la responsabilité, tend à supprimer un alibi : le passé n'est jamais une excuse. Quant à l'athéisme, certes <persName ref="#zbz-p.8">Sartre</persName> (mais non <bibl ref="#zbz-w.529">Kierkegaard</bibl>, ni <persName ref="#zbz-p.1">Jaspers</persName>, ni <persName ref="#zbz-p.88">Gabriel Marcel</persName>) en fait profession. Mais je suis de plus en plus convaincue que ce terme n'a jamais un sens généralisable : tout dépend de ce que nie en réalité un athée, et aussi de la nature de sa négation. De prétendus croyants peuvent être des athées, et il y a des athées chez qui l'absence de Dieu prend la consistance d'une présence. Certains aussi nient tel dieu derrière lequel transparaît Dieu. L'athéisme de <persName ref="#zbz-p.8">Sartre</persName> me paraît encore insuffisamment élucidé. Mais il est évident que sa négation de Dieu est d'abord un refus de l'idéalisme tout fait dont Dieu a coutume d'être, chez les penseurs contents d'eux-mêmes, le garant et le support ; un refus aussi de l'éloquence permettant d'échapper à l'angoisse des évidences, ainsi que des ornements servant à éviter le heurt de la réalité nue. Enfin, le pessimisme et le nihilisme ne peuvent chez aucun penseur existentialiste avoir la portée d'un jugement de valeur définitif porté sur la réalité telle qu'elle est donnée : en effet, la valeur, pour eux tous, se rattache à la
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          L'EXISTENTIALISME DEVANT L'OPINION PUBLIQUE
+        </p>
+        <p facs="#facs_7_r_2">
+          liberté existentielle, non au monde des faits. « Pessimisme » signifie tout au plus que la valeur de ce qui n'est pas une donnée, que la vie n'est pas justifiée du seul fait qu'elle est, et même qu'aucune justification n'est acquise une fois pour toutes. Il s'agit d'une exigence sans fin : la vie, le monde ne sont pas justifiés, parce qu'ils sont à justifier sans fin. Justifie-les, justifie-toi. Quant au « nihilisme », ce terme appliqué à la pensée de <persName ref="#zbz-p.8">Sartre</persName> est absurde, à moins qu'on n'entende par là que pour lui le prestige du néant se ramène au prestige de la liberté opposée à l'être de fait. C'est alors le « nihilisme » de toute philosophie de la liberté.
+        </p>
+        <p facs="#facs_7_r_3">
+          Comment s'expliquer une telle déformation ? Il importe de comprendre en quoi l'œuvre de <persName ref="#zbz-p.8">Sartre</persName> en particulier, et la pensée existentialiste en général, ont prêté le flanc à des interprétations aussi caricaturales. Mais il importe plus encore de comprendre pourquoi le public les a acceptées avec un tel empressement, en quoi elles satisfaisaient ses tendances profondes et servaient ses réactions de défense.
+        </p>
+        <p facs="#facs_7_r_4">
+          Pour le premier point, il me semble que la responsabilité d'un tel malentendu incombe d'abord à <persName ref="#zbz-p.8">Sartre</persName>, et à <persName ref="#zbz-p.8">Sartre</persName> romancier et dramaturge bien plus qu'à <persName ref="#zbz-p.8">Sartre</persName> philosophe ; à sa curiosité pour les états de semi-morbidité, de semi-aliénation ; à la violente répugnance de son intelligence et de son sens esthétique devant la niaiserie facile de la vertu littéraire. Il y a aussi chez lui une pudeur, certes, et bien profonde, puisqu'elle s'est dissimulée jusque dans les fondements de sa pensée philosophique sous la forme d'une théorie de la « mauvaise foi ». Alors que la cruauté, la perversion, l'hypocrisie sous toutes ses formes s'étalent minutieusement le long des pages, incarnées en une foule de détails d'une extrême précision, la fraternité humaine, par exemple, ou la vraie tendresse éclosent sobrement à travers un langage qui cherche à les dissimuler sous l'aspect de l'indifférence ou même de la grossièreté. Or comme le vulgarisateur — journaliste ou femme du monde — manque de patience et évite l'effort, il a vite fait de considérer tel personnage comme incarnant « la morale existentialiste » ou même toute cette philosophie. Un peu comme si connaissant les sources jansénistes de <bibl ref="#zbz-w.842">Phèdre</bibl>, on tirait du comportement de l'héroïne, sans s'informer davantage, les principes d'une morale janséniste !
+        </p>
+        <p>
+          Mais il y a plus : l'existentialisme en général a été la victime des malentendus qui ne peuvent manquer de se produire lorsque se propage une pensée tendant à éveiller et non à instruire. On a vu ce que <bibl ref="#zbz-w.530">Nietzsche</bibl> pouvait devenir pour ceux qui cherchent des préceptes là où il n'y a qu'un appel à les dépasser tous. Le public, en général, refuse de quitter un auteur les mains vides, sans un bagage de savoir solide et uti
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          54<lb facs="#facs_8_l_1_1" n="N001" />SYNTHÈSES
+        </p>
+        <p facs="#facs_8_r_2">
+          lisable. Il ne croit pas à une œuvre purement « instrumentale », consumant toute son efficacité dans la force de son appel libérateur. Il ne croit pas qu'une phrase puisse être écrite pour contredire la précédente et s'effacer avec elle, ouvrant ainsi le vide salutaire qui permet la liberté. Voyez ce qu'il fait de <persName ref="#zbz-p.6">Kant</persName>, des maximes purement formelles qui doivent chez <persName ref="#zbz-p.6">Kant</persName> acculer l'homme à sa liberté : il les « réifie » jusqu'à en faire des préceptes concrets et impersonnels, ou bien il leur reproche leur inefficacité pratique ; parfois il fait les deux choses à la fois... Plus une philosophie s'efface devant la liberté, et moins elle est comprise. Vue sous cet angle, la caricature que le public s'est faite de l'existentialisme peut passer pour une confirmation de sa pureté existentielle. Et c'est un bon signe aussi, à cet égard, que l'existentialisme ait à la fois la droite et la gauche pour ennemis.
+        </p>
+        <p facs="#facs_8_r_3">
+          <hi rendition="#i">*</hi>
+        </p>
+        <p>
+          Nous avons vu jusqu'ici quelques-unes des raisons pouvant expliquer les malentendus qui se sont produits entre les auteurs existentialistes et le public. Mais cela n'exclut pas que le public ait aussi des raisons vraies de réagir avec vigueur contre l'existentialisme véritable. Il est certain, par exemple, que l'existentialisme comporte ce qu'il est convenu d'appeler, dans les traités de morale, « des dangers ». La sécurité, qui repose sur les mythes sociaux, sur ces « Choses Vagues » dont <persName ref="#zbz-p.260">Valéry</persName> faisait le fondement de la réalité sociale, se trouve sapée, amenuisée sinon ruinée. Les structures objectives protégeant l'homme contre son instabilité passionnelle cessent d'aller sans dire et perdent ainsi leur efficacité. Prescriptions univoques, critères, garanties, tout manque à la fois. Un thème moral n'est plus qu'un exemple, une illustration, il n'est pas une loi. Et cela en un temps où les fours crématoires ont fait que l'homme a pris peur devant lui-même et ses possibles et où il a plus que jamais besoin d'être assuré et rassuré. L'élucidation existentialiste transforme paradoxalement les exigences fixées de la morale en alibi, en fuite devant la morale. Il est vrai que c'est pour susciter sans cesse la présence héroïque du sujet à sa situation — du sujet unique à sa situation unique —, du sujet responsable pour l'éternité non seulement de la valeur de son acte, mais de l'être même des valeurs. Mais n'est-ce pas malgré tout donner carte blanche au mal ?
+        </p>
+        <p>
+          Le public, la société se défendent d'instinct contre cette mise en question de tous les instants ; leur existence dépend en effet de confusions inextricables (telle que celle, par exemple, de l'idéal et de la force dans le prestige du droit) et de respects automatiques et indiscutés. Peu de clarté, mais une antique sagesse collective, voilà leur climat vital.
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          L'EXISTENTIALISME DEVANT L'OPINION PUBLIQUE
+        </p>
+        <p facs="#facs_9_r_2">
+          55
+        </p>
+        <p facs="#facs_9_r_3">
+          Cette sagesse s'accompagne d'ailleurs de sentiments véhéments et agréables qui achèvent la confusion personnelle tout en parachevant la sécurité sociale : c'est le contentement de soi et l'indignation contre autrui. Posséder la norme du bien, de la santé morale, permet d'être sûr de soi et de juger autrui. Toute la société repose sur la certitude qu'autrui peut, en bonne justice, être jugé, et cela non seulement sur un plan socialement relatif et utilitaire, mais aussi moralement, en liaison avec un absolu. Et juger est agréable : on s'indignera voluptueusement contre la corruption existentialiste en se drapant dans sa propre vertu, — tout en sauvegardant la société.
+        </p>
+        <note place="foot" n="1" xml:id="fn9-1" facs="#facs_9_r_4">
+          Il y a donc bien des risques réels dans l'existentialisme. Mais qu'y faire quand ce sont ceux-là même de la condition humaine ? Les existentialistes ne l'ont pas inventée : ils ne font que l'élucider, la faisant apparaître avec une netteté qui ne permet plus d'ignorer ses mystères et supprime à la fois les alibis d'une connaissance universelle et ceux d'une vertu objectivée. Or il faut bien, n'est-ce pas, préférer la vérité.
+        </note>
+        <p>
+          <persName ref="#zbz-p.2">Jeanne HERSCH</persName>
+        </p>
+      </div>
+      </body></text>
+</TEI>

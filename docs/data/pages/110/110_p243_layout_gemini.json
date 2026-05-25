@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONCLUSION",
+      "bbox": {
+        "x_pct": 35.173,
+        "y_pct": 23.574,
+        "w_pct": 20.588,
+        "h_pct": 2.223
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous ne renconlrons   jamais lêtre en tant qu mais   toujours Fêtre   particulier à lexistence pour ",
+      "bbox": {
+        "x_pct": 11.21,
+        "y_pct": 29.537,
+        "w_pct": 68.007,
+        "h_pct": 5.235
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais   préciser le caractère essentiellement   anthropomorphisé de toute rencontre, c'est déjà le dé",
+      "bbox": {
+        "x_pct": 11.175,
+        "y_pct": 34.879,
+        "w_pct": 68.088,
+        "h_pct": 11.404
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y ainsi des  noms des  objels   de pensée dont la pensée est incapable daccueillir la présence ac",
+      "bbox": {
+        "x_pct": 11.06,
+        "y_pct": 46.335,
+        "w_pct": 68.122,
+        "h_pct": 14.795
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lêlre en tant qu'être est un de Ces La conscience Paperçoit vectoriellement comme le comble de Tabsl",
+      "bbox": {
+        "x_pct": 10.864,
+        "y_pct": 61.024,
+        "w_pct": 68.053,
+        "h_pct": 13.126
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16 L'Etre et la Formne",
+      "bbox": {
+        "x_pct": 14.171,
+        "y_pct": 75.592,
+        "w_pct": 18.353,
+        "h_pct": 1.214
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Misidentified label for page footer region."
+  ],
+  "doc_id": "110",
+  "page": 243,
+  "elapsed_seconds": 5.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to page_footer": 1
+  }
+}

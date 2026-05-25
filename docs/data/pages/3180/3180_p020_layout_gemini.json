@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Insofern glaube ich, daß wir doch wieder in die Richtung des Paradoxen gelangen, von dem Frau Hersch spricht. Denn: Wann kommen wir mit der ganzen Begründerei zu einem Ende, dahin, daß man sagt, dies erkenne ich an, das ist wirklich gut? Oder kann ich nicht weiterfragen, muß ich noch weitergehen? Welche Art von Gründen erkennen wir als nicht mehr selber begründungsbedürftig an?",
+      "bbox": {
+        "x_pct": 8.832,
+        "y_pct": 3.916,
+        "w_pct": 85.135,
+        "h_pct": 15.911
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 9.476,
+        "y_pct": 21.767,
+        "w_pct": 33.683,
+        "h_pct": 2.067
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ja, vielleicht ist das ein gutes Beispiel. Es gibt ja bekanntlich ein Lugen- oder Lügnerparadox: Ein Kreter sagt: Alle Kreter lügen. Warum soll man eigentlich nicht lügen? Nun, deswegen - ich verkürze jetzt die Standardargumentation, die wir von Kant kennen, und presse sie auch ein wenig -, weil eine Gesellschaft, in der man nicht weiß, wer lügt und wer nicht lügt, zu einer Gesellschaft der Kreter, also zu einer Gesellschaft des Lügenparadoxes führt, in der wir dauernd, auch bei ganz normalen Handlungen, in dieser verzwackten Situation des iterierenden Paradoxes stehen. Das bedeutet: zu einer Gesellschaft, in der man sich auf nichts verlassen kann, so daß also eigentlich der Hintergrund dieser praktischen Umsetzung des Lügnerparadoxes doch - und da können wir auch wieder unseren Namenspatron benutzen - eine Situation ist, in der nicht nur die Welt und ich vorhanden sind, und ich denke die Welt und handle in diese Welt hinein und verstricke mich in Widersprüche, sondern es ist eine Welt, in der nicht nur ich und die Welt, sondern ich, die anderen und die Welt vorhanden sind. Daß es hier zu einem fatalen Ende führt, wenn wir paradoxe Konsequenzen zulassen, liegt nicht daran, daß ich dann die Welt nicht mehr verstehen würde, sondern daran, daß ich mit den anderen nicht mehr kommunizieren könnte. Vielleicht ist also der Grund, warum wir uns gegen bestimmte Paradoxa wenden, der, daß wir als soziale Wesen miteinander zusammenleben wollen und müssen.",
+      "bbox": {
+        "x_pct": 8.728,
+        "y_pct": 23.953,
+        "w_pct": 85.24,
+        "h_pct": 55.556
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained errors from OCR; replaced with corrected transcription based on the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Im übrigen kann man für diesen Fall auch bei Nietzsche ganz gute Argumente finden. Die Forderung nach Wahrheit hat durchaus funktionale Hintergründe, und die Forderung, daß wir versuchen sollten, Paradoxien dort, wo wir sie denn vermeiden können, zu vermeiden - vielleicht können wir sie nicht",
+      "bbox": {
+        "x_pct": 8.683,
+        "y_pct": 81.812,
+        "w_pct": 85.284,
+        "h_pct": 11.175
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained errors from OCR; replaced with corrected transcription based on the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "43",
+      "bbox": {
+        "x_pct": 89.96,
+        "y_pct": 94.665,
+        "w_pct": 3.336,
+        "h_pct": 2.457
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "OCR output in text regions was incomplete and contained errors, requiring full re-transcription.",
+    "Page number at the bottom was misclassified as text."
+  ],
+  "doc_id": "3180",
+  "page": 20,
+  "elapsed_seconds": 5.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

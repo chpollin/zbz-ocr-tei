@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 10.289,
+        "y_pct": 10.155,
+        "w_pct": 8.092,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Menschenrechte und Menschsein",
+      "bbox": {
+        "x_pct": 77.052,
+        "y_pct": 10.155,
+        "w_pct": 14.121,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wel zu bein den verschicdcnsten Teilen der Wclr und schrich an dic Nationalen Kommissionen allcr M",
+      "bbox": {
+        "x_pct": 10.289,
+        "y_pct": 12.607,
+        "w_pct": 35.757,
+        "h_pct": 18.381
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich schickte dicsen Bricl in alle Länder damals 128 War Cin Expcrimcnt!",
+      "bbox": {
+        "x_pct": 10.405,
+        "y_pct": 31.762,
+        "w_pct": 35.572,
+        "h_pct": 8.453
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nichi mchr konnte; Oberall lagen \"Stalagmiten\" Von hen, ob wirllich Westen von Mcnschenrechten in de",
+      "bbox": {
+        "x_pct": 10.289,
+        "y_pct": 42.937,
+        "w_pct": 35.688,
+        "h_pct": 34.814
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeder Mensch hal Ursprung davon Zu begreifcn; Warun haben sind Und aber GCscEze wollen dic Menschen ",
+      "bbox": {
+        "x_pct": 55.572,
+        "y_pct": 15.043,
+        "w_pct": 35.607,
+        "h_pct": 55.831
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 10.405,
+        "y_pct": 87.037,
+        "w_pct": 1.445,
+        "h_pct": 1.954
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 89.884,
+        "y_pct": 87.037,
+        "w_pct": 1.445,
+        "h_pct": 1.954
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page headers were labeled as text.",
+    "Page footers were labeled as text.",
+    "OCR text quality in detected regions is low/jumbled, but bounding boxes are mostly correct.",
+    "Missing some original paragraphs in the detection."
+  ],
+  "doc_id": "2930",
+  "page": 2,
+  "elapsed_seconds": 5.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

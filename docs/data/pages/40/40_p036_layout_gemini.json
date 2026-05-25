@@ -1,0 +1,112 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "38 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 102.7,
+        "y_pct": 77.0,
+        "w_pct": 481.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header, should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "morte se détacha de son talon, juste sous la lampe, et elle l'écrasa sans le voir en repassant au même endroit. Elle racontait, racontait, et depuis qu'elle était là, jetant autour d'elle le vent de son manteau ouvert, il me parut qu'il faisait froid et mouillé.",
+      "bbox": {
+        "x_pct": 9.865,
+        "y_pct": 12.382,
+        "w_pct": 80.905,
+        "h_pct": 12.571
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ecoute, écoute, disait-elle, je ne sais plus. Il y avait Jean. Je l'aimais. Rien n'a changé. Je l'aime encore.",
+      "bbox": {
+        "x_pct": 10.135,
+        "y_pct": 25.047,
+        "w_pct": 80.541,
+        "h_pct": 5.388
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle fit quelques pas adoucis, tut, s'arrêta devant moi. Penchée sur la table, je tournais toujours la pâte. Elle, je ne la regardais pas. Je la sentais dans un état où on ne doit pas être vu, et j'aurais souhaité l'enfermer, faire surgir autour d'elle les piliers, les ogives d'une église. Elle remit en marche, et sa voix devint extraordinaire, tendre et dure à la fois:",
+      "bbox": {
+        "x_pct": 10.135,
+        "y_pct": 30.18,
+        "w_pct": 80.635,
+        "h_pct": 17.457
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais Jean, il rêve. Quand il sort, il ne voit pas ce qu'on peut semer ou construire, mais ce à quoi on ne peut rien changer. Des étoiles. Des montagnes. Des lacs.",
+      "bbox": {
+        "x_pct": 9.959,
+        "y_pct": 48.081,
+        "w_pct": 80.851,
+        "h_pct": 10.019
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle prononçait ces mots avec une jalousie grandissante; le dernier trembla d'une sorte de haine.",
+      "bbox": {
+        "x_pct": 10.23,
+        "y_pct": 57.94,
+        "w_pct": 80.716,
+        "h_pct": 5.132
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il m'aime. Bien sûr, c'est vrai. Il ne ment pas. Mais il ne m'épousera jamais. Ou plutôt, il attendra doucement que nous nous trouvions unis, de la main même de Dieu, dans l'autre monde. Oui, dans l'autre monde.",
+      "bbox": {
+        "x_pct": 10.176,
+        "y_pct": 63.233,
+        "w_pct": 80.811,
+        "h_pct": 12.382
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle se tut; ses pas aussi s'interrompirent. Dans le bref silence, les derniers mots qu'elle avait prononcés perdirent leur amère ironie, éveillèrent malgré elle des échos différents de précieuse tendresse. J'imaginai vaguement, suc-",
+      "bbox": {
+        "x_pct": 10.041,
+        "y_pct": 75.898,
+        "w_pct": 81.216,
+        "h_pct": 10.463
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page header not included in initial extraction.",
+    "OCR quality is poor/fragmented in some areas, manual correction of text content implied for logical flow, though not required by schema rules."
+  ],
+  "doc_id": "40",
+  "page": 36,
+  "elapsed_seconds": 6.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

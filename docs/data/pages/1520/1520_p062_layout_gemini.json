@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et peut-tre aussi de sa « passion philosophique ». Mais la politique reprsentait pour lui un test, et peut-tre le test par excellence, de lauthenticit des penses et du courage qui les nourrit. Ce courage, dailleurs, ne fait quun avec lexigence de libert et de vrit. Courage dune sagesse en laquelle prudence et sens de labsolu se renforcent mutuellement, sans rien dchevel, mais inflexible dans sa rigueur. Un courage que je nai jamais vu chez personne dautre : immdiat et rflchi, intemporel et coll au dtail concret des cir- constances, imperturbable sans aucune raideur, li  des principes et transcendante toute formule. Un courage dhomme dEtat qui aurait une dimension prophtique.",
+      "bbox": {
+        "x_pct": 9.214,
+        "y_pct": 5.51,
+        "w_pct": 84.011,
+        "h_pct": 21.285
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Karl Jaspers, charg de culture, porteur de culture, qui se vou- lait ouvert  toute tradition et  toute pense existant sur ce globe, qui croyait lhumanit engage bon gr mal gr dans une histoire dsormais mondialement solidaire et dans un change culturel universel, tait videmment, quant  la culture, un « conservateur »,  lcoute des voix du pass. Mais il tait en mme temps vigilant  lextrme devant ce que lpoque a dunique, de « sans prcdent ». Il avertissait que lhumanit ne se sauverait pas  bon compte de sa propre aventure, quil y faudrait « une conversion ». Seulement, cette conversion ne concidait avec aucune recette ni aucune doctrine, aucune confession religieuse, aucun systme politique ou social. De sorte que sa critique du prsent tait impitoyable, et sa libert,  lgard de toutes les options offertes, totale.",
+      "bbox": {
+        "x_pct": 9.173,
+        "y_pct": 26.478,
+        "w_pct": 84.146,
+        "h_pct": 25.167
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A plusieurs reprises, il est intervenu explicitement dans le domaine politique. Avant lavnement du nazisme, il lance lavertis- sement de son petit ouvrage, « La situation spirituelle de notre temps » (Die geistige Situation der Zeit). Aprs la guerre, il publie « La culpabilit (allemande) » (Die Schuldfrage) et sefforce daider ses compatriotes  surmonter le dsespoir engendr  la fois par les crimes et par leffondrement du Reich,  lucider et reconnatre leur part propre, individuelle et collective, de culpabilit, et  laborer lucidement un sens politique quitable et constructif. Il pensait, ayant lui-mme souffert sous le rgime nazi, avoir le droit  et le devoir  parler. Puis il reprend sa plume politique, aprs 1956, pour critiquer la politique du gouvernement allemand qui, selon lui, tablit une hirarchie fausse entre lobjectif de la runification (finalit nationaliste) et celui de la libert (finalit transcendante). Dautre part, il examine la situation politique sans prcdent cre par la prsence de la bombe atomique, alors quil reste impossible de renoncer  la valeur la plus haute, qui continue  tre la libert.",
+      "bbox": {
+        "x_pct": 9.214,
+        "y_pct": 50.9,
+        "w_pct": 84.106,
+        "h_pct": 32.759
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La politique, pense Jaspers, ne doit pas tre abandonne aux seuls politiciens professionnels. Elle exige  comme dailleurs tous les actes importants de la vie  en tant que condition pralable,",
+      "bbox": {
+        "x_pct": 9.173,
+        "y_pct": 83.316,
+        "w_pct": 83.875,
+        "h_pct": 6.23
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "56",
+      "bbox": {
+        "x_pct": 96,
+        "y_pct": 92,
+        "w_pct": 4,
+        "h_pct": 4
+      },
+      "changed": true,
+      "change_reason": "Marked page number as page_footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Page number 56 was detected as text/paragraph",
+    "OCR quality issues in the third paragraph"
+  ],
+  "doc_id": "1520",
+  "page": 62,
+  "elapsed_seconds": 7.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

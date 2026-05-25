@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONCLUSION",
+      "bbox": {
+        "x_pct": 37.651,
+        "y_pct": 21.457,
+        "w_pct": 22.997,
+        "h_pct": 2.19
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Que sera l'avenir ?",
+      "bbox": {
+        "x_pct": 35.286,
+        "y_pct": 26.381,
+        "w_pct": 27.666,
+        "h_pct": 1.971
+      },
+      "changed": true,
+      "change_reason": "Corrected typographical errors in the transcription of the section heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Posons-nous maintenant la même question que posions plus haut à propos de Hegel : que devenons-nous dans cette philosophie? Quelles possibilités nous laisse-t-elle?",
+      "bbox": {
+        "x_pct": 11.039,
+        "y_pct": 30.695,
+        "w_pct": 75.708,
+        "h_pct": 10.543
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text transcription of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons vu qu'elle est ouverte de toutes parts. Elle appelle à la recherche scientifique et lui donne même un incomparable élan puisqu'elle montre que son ressort est existentiel. Elle exige l'action, puisque c'est seulement par la liberté, et non par la philosophie, que se réalise l'existence, et puisque c'est par l'échec final dans la recherche et dans l'existence que devient possible l'expérience de la transcendance. Nous ne sommes plus, comme chez Hegel, prisonniers d'un être éternel (zeitlos) qui se déroule suivant sa nécessité dans le temps. Ici le temps est pour l'existence l'indispensable réalité créatrice, — essayer d'en sortir ne peut être pour nous qu'un naufrage dans le néant. L'être est d'une part le devenir libre de l'existence, d'autre part la fugace transcendance. L'être ne joue jamais pour nous le rôle d'une réalité objective, et nous ne connaissons de lui que ce que nous en éprouvons dans les actes transcendants. Aucune science",
+      "bbox": {
+        "x_pct": 10.994,
+        "y_pct": 40.695,
+        "w_pct": 76.205,
+        "h_pct": 48.857
+      },
+      "changed": true,
+      "change_reason": "Corrected highly truncated and erroneous text transcription of the paragraph."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Text transcription for paragraphs was significantly truncated and contained spelling errors in the initial detection result."
+  ],
+  "doc_id": "20",
+  "page": 189,
+  "elapsed_seconds": 3.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

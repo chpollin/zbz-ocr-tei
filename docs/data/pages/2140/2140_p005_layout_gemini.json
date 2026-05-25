@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 105.66,
+        "y_pct": 47.96,
+        "w_pct": 13.88,
+        "h_pct": 11.08
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header instead of section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "These",
+      "bbox": {
+        "x_pct": 105.66,
+        "y_pct": 102.59,
+        "w_pct": 71.81,
+        "h_pct": 18.35
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La technologie, comme d'ailleurs, dans une moindre mesure la science elle-même, n'a pas été assimilée CULTURELLEMENT par l'ensemble des gens dont elle façonne les conditions de vie, faute d'étre saisie dans son DEVENIR HISTORIQUE.",
+      "bbox": {
+        "x_pct": 106.39,
+        "y_pct": 134.86,
+        "w_pct": 783.61,
+        "h_pct": 92.24
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text to match the content accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le public ne saisit que ses produits actuels, et quelque peu ses promesses pour un futur proche. Il n'a presque aucune conscience des étapes parcourues, des efforts accomplis, des recherches et des tentatives des savants et des inventeurs, du travail des ouvriers, investi dans chaque objet dont il se sert. Il ne compare guère la situation actuelle à celle de cinquante ans ou d'un siècle en arrière, mais plutôt à un état paradisiaque, où des exigences contradictoires seraient compossibles. Il ne comprend, dans l'ensemble, ni le processus de création, ni le processus de production, ni même celui d'échange, des objets techniques, et encore moins les ressorts de la recherche et le fonctionnement ainsi obtenu. Il vit dans un monde devenu illisible.",
+      "bbox": {
+        "x_pct": 106.02,
+        "y_pct": 239.12,
+        "w_pct": 784.34,
+        "h_pct": 313.01
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text to match the content accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il appartiendrait aux philosophes de replacer le développement technique dans le processus incarnatif et historique des étres humains, dans le contexte de ce qu'on peut changer et de ce qu'il faut subir, et de ce qu'on ne peut changer qu'en acceptant ce qu'il faut subir.",
+      "bbox": {
+        "x_pct": 107.59,
+        "y_pct": 564.89,
+        "w_pct": 784.34,
+        "h_pct": 120.1
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text to match the content accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En particulier: on considère presque toujours la science comme ayant eu le mérite, ou la culpabilité, d'avoir engendré le développement technique. Tout au plus admet-on que développement scientifique et développement technique sont interdépendants, dans la mesure où certaines conquêtes technologiques conditionnent souvent des progrès scientifiques décisifs. Mais on méconnaît une finalité inverse: grâce à la libération que permet la technique, des sujets de plus en plus nombreux peuvent s'adonner à l'une des activités fondamentales de l'étre humain, qui n'a besoin d'aucune autre légitimation: celle de chercher à comprendre l'univers.",
+      "bbox": {
+        "x_pct": 107.23,
+        "y_pct": 696.16,
+        "w_pct": 783.49,
+        "h_pct": 260.47
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text to match the content accurately."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR text quality for paragraphs was poor.",
+    "Page number at the top left was incorrectly labeled as text.",
+    "Text corrections were required for all paragraphs to match source image."
+  ],
+  "doc_id": "2140",
+  "page": 5,
+  "elapsed_seconds": 5.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

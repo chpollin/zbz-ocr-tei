@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Chevalier monte. Il s'enfonce dans des toiles de salive dont il sent sur son visage la répugnante caresse. Ses mains passent dans de hautes plantes baveuses. A peine s'il voit, en ombre grisâtre sur fond de nuit, les pierres qui s'ébranlent sous ses pas.",
+      "bbox": {
+        "x_pct": 24.0,
+        "y_pct": 11.775,
+        "w_pct": 65.915,
+        "h_pct": 16.93
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Frissonnant au contact de l'obscurité collante, il pense avec impatience, avec joie, au dragon qu'il va chercher.",
+      "bbox": {
+        "x_pct": 23.842,
+        "y_pct": 28.621,
+        "w_pct": 65.697,
+        "h_pct": 8.78
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est là-haut, dit-on, quelque part dans un repli du rocher, là où l'herbe est moelleuse. Il est revêtu d'une cuirasse invulnérable. Il crache des flammes au loin. Il ne connaît que le sommeil et la rage.",
+      "bbox": {
+        "x_pct": 24.0,
+        "y_pct": 36.863,
+        "w_pct": 65.697,
+        "h_pct": 14.357
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'emportera personne, songe le Chevalier. Demain à l'aube, à l'heure où il s'éveille pour se mettre en chasse, je l'attaquerai.",
+      "bbox": {
+        "x_pct": 23.964,
+        "y_pct": 51.245,
+        "w_pct": 65.77,
+        "h_pct": 10.799
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect original image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Soudain, autour du Chevalier, la nuit se resserra. Les parois rocheuses qui enfermaient la vallée se rapprochèrent brusquement, tandis que le lit de torrent asséché qu'il suivait se",
+      "bbox": {
+        "x_pct": 24.085,
+        "y_pct": 67.763,
+        "w_pct": 65.891,
+        "h_pct": 11.69
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to reflect original image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "36",
+      "bbox": {
+        "x_pct": 24.717,
+        "y_pct": 82.527,
+        "w_pct": 3.738,
+        "h_pct": 2.44
+      },
+      "changed": true,
+      "change_reason": "Identified page number and assigned to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR text was significantly truncated or malformed.",
+    "Page number 36 was incorrectly labeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 34,
+  "elapsed_seconds": 5.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

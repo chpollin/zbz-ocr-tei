@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "malade sauf, bien sûr, en ce concerne la décision daccepter ou de refuser [opération. Je pense ici, ",
+      "bbox": {
+        "x_pct": 5.772,
+        "y_pct": 6.526,
+        "w_pct": 79.28,
+        "h_pct": 5.539
+      },
+      "changed": true,
+      "change_reason": "Corrected label to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant et il faut y penser aussi ~ comme toutes les activités médicales aujourd'hui, la chirurgie ",
+      "bbox": {
+        "x_pct": 5.691,
+        "y_pct": 12.142,
+        "w_pct": 79.71,
+        "h_pct": 18.768
+      },
+      "changed": true,
+      "change_reason": "Corrected label to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais cette limite, mystérieuse; recule: lunité ne réside ni dans le rein; ni dans le poumon, ni même",
+      "bbox": {
+        "x_pct": 5.691,
+        "y_pct": 30.581,
+        "w_pct": 79.71,
+        "h_pct": 7.751
+      },
+      "changed": true,
+      "change_reason": "Corrected label to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Correspondance: Prof. Dr Jeanne Hersch, Département de philosophie de [Université de Genève; av. Pie",
+      "bbox": {
+        "x_pct": 5.889,
+        "y_pct": 40.987,
+        "w_pct": 79.71,
+        "h_pct": 3.06
+      },
+      "changed": true,
+      "change_reason": "Corrected label to zb_paragraph"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "425",
+      "bbox": {
+        "x_pct": 81.65,
+        "y_pct": 88.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 5,
+  "issues": [
+    "One missing page footer region was identified and added."
+  ],
+  "doc_id": "1300",
+  "page": 7,
+  "elapsed_seconds": 6.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label to zb_paragraph": 4,
+    "ADDED": 1
+  }
+}

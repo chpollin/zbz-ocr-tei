@@ -1,0 +1,130 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "6",
+      "bbox": {
+        "x_pct": 95.892,
+        "y_pct": 2.274,
+        "w_pct": 1.258,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_header to be filtered."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Symposium du 14.1.1988 à Berne",
+      "bbox": {
+        "x_pct": 5.618,
+        "y_pct": 7.027,
+        "w_pct": 41.791,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "Labeled symposium title as section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Allocution de Madame Jeanne Hersch",
+      "bbox": {
+        "x_pct": 5.681,
+        "y_pct": 11.444,
+        "w_pct": 46.592,
+        "h_pct": 1.626
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mesdames et Messieurs",
+      "bbox": {
+        "x_pct": 5.681,
+        "y_pct": 15.804,
+        "w_pct": 29.062,
+        "h_pct": 1.567
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je vais parler en français. Ceux qui le désirent peuvent se reporter à l'esquisse de mon discours, qui est à votre disposition en allemand.",
+      "bbox": {
+        "x_pct": 5.618,
+        "y_pct": 19.249,
+        "w_pct": 90.415,
+        "h_pct": 6.203
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ceux qui désirent aujourd'hui entrevoir ce que sera l'avenir s'interrogent avant tout sur les pensées et les intentions secrètes réelles des grands personnages politiques. Comme je ne les ai pas approchés et que je ne suis absolument pas prophète, je n'essaierai pas de prédire l'avenir.",
+      "bbox": {
+        "x_pct": 5.564,
+        "y_pct": 27.365,
+        "w_pct": 91.758,
+        "h_pct": 10.622
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais simplement mettre en lumière le danger le plus grand qui nous menace aujourd'hui, afin qu'il nous aide à nous souvenir de tout ce que nous aurions dû faire dans le passé, et que nous n'avons pas fait. Il s'agit avant tout de l'unification de l'Europe et de la solution du problème allemand, dont nous aurions dû nous occuper avec bien plus de vigilance depuis des dizaines et des dizaines d'années.",
+      "bbox": {
+        "x_pct": 5.392,
+        "y_pct": 39.613,
+        "w_pct": 91.993,
+        "h_pct": 14.965
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout le monde s'interroge sur la sincérité de M. Gorbatchov, sur sa volonté de mettre fin au régime totalitaire soviétique pour se rapprocher d'un régime démocratique à la manière occidentale. Cette question peut intéresser les proches de M. Gorbatchov ou ceux qui se soucient du salut de son âme. Mais pour nous, l'avenir ne dépend que dans une faible mesure de sa sincérité ou de sa non-sincérité. Bien plus importants seront les rapports de force qui s'établiront autour de lui, sans compter que la sincérité est quelque chose de très différent à l'Est et à l'Ouest. Il vaut mieux concevoir des hypothèses concernant les faits. Trois perspectives semblent possibles.",
+      "bbox": {
+        "x_pct": 5.437,
+        "y_pct": 56.573,
+        "w_pct": 90.532,
+        "h_pct": 23.574
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Depuis très longtemps, j'avais mis, pour ma part, de grands espoirs dans la nécessité où se trouvaient, non Gorbatchov dont on ne parlait pas encore, mais les dirigeants soviétiques en général, d'évoluer dans une certaine mesure pour pouvoir former des savants, des industriels et des techniciens. Cela n'est pas possible sans un certain sens critique, un certain assouplissement.",
+      "bbox": {
+        "x_pct": 5.437,
+        "y_pct": 81.942,
+        "w_pct": 90.658,
+        "h_pct": 13.146
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Original OCR was very poor for long paragraphs, leading to incoherent text.",
+    "Page number missing from initial detection labels."
+  ],
+  "doc_id": "2570",
+  "page": 4,
+  "elapsed_seconds": 7.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

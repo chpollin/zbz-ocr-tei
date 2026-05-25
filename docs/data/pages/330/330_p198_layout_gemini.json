@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "164",
+      "bbox": {
+        "x_pct": 102.5,
+        "y_pct": 63.5,
+        "w_pct": 30.5,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 372.5,
+        "y_pct": 63.5,
+        "w_pct": 255.0,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Running header incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est qu'on emploie le même mot liberté dans deux sens totalement différents. Au sens philosophique, la liberté désigne ce qu'il y a de plus impossible et en même temps de plus irréductible dans l'expérience humaine : la présence d'un sujet qui intervient dans ce qui n'est pas lui pour le transformer, lui attribuer signification et valeur. Le mot liberté ainsi employé n'a aucun sens objectif. Cette liberté ne se constate pas, fût-ce par le sujet lui-même. Regardée, elle retombe aussitôt en objectivité, elle se réassujettit aux chaïnes d'explication causalistes. Elle est si étrangère à l'objectivité qu'on ne peut pas la dire subjective. Elle transcende toute la relation polarisée du sujet et de l'objet et se situe au-dessous ou au delà. Plus concrète, plus dense, plus immédiate que n'importe quelle perception, elle est la rencontre du sujet et du monde où s'engendrent d'un coup le sujet et le monde. Elle n'est pas une qualité, un don, une capacité du sujet humain, elle est le sujet lui-même dans la mesure où il est. Mais cela ne signifie pas qu'elle soit une donnée : elle est une conquête sans possession par un sujet qui se crée à travers cette conquête même, dans le monde et face à lui.",
+      "bbox": {
+        "x_pct": 9.889,
+        "y_pct": 9.207,
+        "w_pct": 85.655,
+        "h_pct": 39.305
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, à cette conquête, le monde se prête plus ou moins. Socrate buvant la ciguë, disions-nous, était l'homme le plus libre. Oui, en ce sens que tout ce qui, dans les circonstances du moment, dépendait de lui — c'est-à-dire la signification, le style, l'acceptation et le don de sa mort — il le remplissait, le traversait, l'imprégnait de sa loi propre, de son inflexible obéissance, de sa souveraineté, de sa vérité, de sa foi, de son amitié. Mais s'il mourait sans regrets, ne voyant guère d'avantage à retarder l'heure de sa mort, il lui restait peut-ètre encore des tâches à remplir ici-bas, il lui restait peut-ètre à étre là encore quelque temps pour Platon, ou à éveiller d'autres âmes dont, sans lui, le sommeil a englouti le souvenir. Peut-ètre aurait-il pu, aurait-il dû travailler, avant la prison, à former un monde politique plus disposé à accueillir la liberté.",
+      "bbox": {
+        "x_pct": 9.93,
+        "y_pct": 48.28,
+        "w_pct": 85.613,
+        "h_pct": 27.389
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous nous heurtons ici à la liberté politique. En soi, elle n'est rien. Rien qu'un espace ouvert à l'âme, à peine un peu d'air pour son souffle. A proprement parler, elle n'est pas liberté, mais seulement possibilité d'une libre présence. Elle préserve un vide indispensable. Elle n'a pas de plénitude. Les credo, les dogmatismes, eux, sont substantiels. Les formules où ils se fixent sont",
+      "bbox": {
+        "x_pct": 9.889,
+        "y_pct": 75.223,
+        "w_pct": 85.613,
+        "h_pct": 12.745
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content from OCR."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR output significantly truncated in bounding boxes provided by Docling.",
+    "Page number and running header were misclassified as text.",
+    "Bounding boxes contained incomplete sentences."
+  ],
+  "doc_id": "330",
+  "page": 198,
+  "elapsed_seconds": 12.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

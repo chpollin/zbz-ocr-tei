@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "142",
+      "bbox": {
+        "x_pct": 18.25,
+        "y_pct": 1.05,
+        "w_pct": 2.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 65.5,
+        "y_pct": 1.05,
+        "w_pct": 21.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "que le  mouvement el Ie repos seraient   impossibles dans le   vide; parce que mouvement et repos n'",
+      "bbox": {
+        "x_pct": 18.318,
+        "y_pct": 13.581,
+        "w_pct": 68.468,
+        "h_pct": 22.382
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En fece de tentalive faile par le   vide, il 4 celle revient reluser la dislinction et ce remplit, c",
+      "bbox": {
+        "x_pct": 18.548,
+        "y_pct": 35.835,
+        "w_pct": 68.514,
+        "h_pct": 27.572
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les analyses phénoménologiques jettent sur Ies  origines humaines de précieuses lumières. Ainsi Max ",
+      "bbox": {
+        "x_pct": 18.894,
+        "y_pct": 63.483,
+        "w_pct": 68.318,
+        "h_pct": 7.86
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "ARISTOTE;  Physique; IV, 8.",
+      "bbox": {
+        "x_pct": 22.465,
+        "y_pct": 73.293,
+        "w_pct": 23.929,
+        "h_pct": 1.844
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Added missing header regions",
+    "Corrected footnote text"
+  ],
+  "doc_id": "110",
+  "page": 144,
+  "elapsed_seconds": 4.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content": 1,
+    "ADDED": 2
+  }
+}

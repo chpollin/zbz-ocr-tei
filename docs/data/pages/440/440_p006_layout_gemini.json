@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": {
+        "x_pct": 7.0,
+        "y_pct": 3.7,
+        "w_pct": 2.2,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "HANS EGON HOLTHAUSEN",
+      "bbox": {
+        "x_pct": 57.3,
+        "y_pct": 3.7,
+        "w_pct": 35.8,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Heureusement, il nous reste toujours un peu de frivolité, et tous les moments où l'on oublie. Un enfant, un être aimé occupe l'horizon. Un problème nous fascine. Il fait bon au soleil. On n'a plus envie d'écrire, et écrire redevient possible.",
+      "bbox": {
+        "x_pct": 6.845,
+        "y_pct": 6.611,
+        "w_pct": 86.31,
+        "h_pct": 8.033
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text for better readability."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "HANS EGON HOLTHAUSEN",
+      "bbox": {
+        "x_pct": 25.137,
+        "y_pct": 21.029,
+        "w_pct": 50.362,
+        "h_pct": 1.983
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Né en 1910 en Schleswig-Holstein. Etudes de lettres, d'histoire et de philosophie. Essayiste et poète. Essais : l'Homme inhabité (1951), Oui et Non (1954). Poésie : Au Sein de notre Temps (1949), Années labyrinthiques.",
+      "bbox": {
+        "x_pct": 22.185,
+        "y_pct": 24.603,
+        "w_pct": 71.346,
+        "h_pct": 9.59
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry labeled as section_header for consistency."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mes livres n'ont pas la prétention d'être des « œuvres », seulement des tentatives. Ils représentent un effort de compréhension à l'égard de ce quelque chose qui se dresse en face de nous, que nous ne pouvons jamais espérer maîtriser complètement, et qu'on appelle la Vérité, ou le mystère du monde ou encore signification suprême, victoire de l'expression. Ce que j'ai publié jusqu'ici est peu, et peu satisfaisant : ce sont surtout des essais et des poésies, quelques petits morceaux en prose et le journal fictif d'une croisière, dans lequel je cherche à réunir les moyens d'expression du lyrisme, de la narration et le style de l'essai. Celui-ci, forme représentative qui englobe des éléments scientifiques et philosophiques, mais qui, en définitive, procède avec des moyens artistiques et présuppose un rapport artistique avec l'objet, a joué à plusieurs reprises dans l'histoire de la pensée allemande de ces deux derniers siècles, un rôle de révolutionnaire, de législateur, de destructeur de mondes surannés et d'édificateur de nouveaux concepts artistiques, de nouveaux idéals de style et de nouveaux contenus thématiques. Ceci est vrai pour Hamann et Herder, Lessing, Schiller et Gœthe, aussi bien que pour Schlegel et Nietzsche, Borchardt, Kassner et Hofmansthal, Jünger et Benn. Ce sont là autant d'exemples, bien que l'auteur actuel, pris dans des remous culturels beaucoup plus violents, ne puisse plus prétendre à construire un « monde », mais seulement à contribuer à rendre une « situation » plus claire et plus consciente.",
+      "bbox": {
+        "x_pct": 7.048,
+        "y_pct": 38.159,
+        "w_pct": 87.554,
+        "h_pct": 47.808
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text and improved label accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans mes études sur différents maîtres de la poésie et de la prose contemporaine, Rilke et Thomas Mann, Benn et Eliot, Jünger, Kafka, Ezra Pound, Bernanos et d'autres, dans nombreux articles de critique sociale et politique,",
+      "bbox": {
+        "x_pct": 7.713,
+        "y_pct": 85.414,
+        "w_pct": 87.178,
+        "h_pct": 8.31
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number missing from initial detections.",
+    "Running header missing from initial detections.",
+    "OCR text was heavily corrupted.",
+    "Bibliographic block misclassified as regular text."
+  ],
+  "doc_id": "440",
+  "page": 6,
+  "elapsed_seconds": 6.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SEELE UND LEIB GEIST UND MATERIE",
+      "bbox": {
+        "x_pct": 7.896,
+        "y_pct": 6.562,
+        "w_pct": 37.457,
+        "h_pct": 1.695
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "partenance commune, qui est une donnée sociale ou naturelle, mais bien leur volonté convergente, leur visée semblable, qui s'exprime et se cristallise en un programme destiné à être celui de tous.",
+      "bbox": {
+        "x_pct": 7.942,
+        "y_pct": 11.195,
+        "w_pct": 79.688,
+        "h_pct": 6.438
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled OCR text to match the original document image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or l'une des critiques les plus constantes que l'on adresse aux partis politiques - qu'on s'efforce de discréditer l'un d'eux au profit d'un autre, ou qu'on s'en prenne au système des partis comme tel -, c'est qu'ils font de l'électoralisme. Faire de l'électoralisme, pour un parti, c'est sacrifier une partie de son programme en vue de plaire à un plus grand nombre d'électeurs ou de recruter un plus grand nombre de membres. A la limite, lorsque la subordination du programme (de la visée) à la force même du parti (à son corps) devient excessive, on parlera de trahison.",
+      "bbox": {
+        "x_pct": 7.896,
+        "y_pct": 19.062,
+        "w_pct": 83.283,
+        "h_pct": 18.383
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled OCR text to match the original document image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette condition contradictoire qui est celle des entités politiques se retrouve d'ailleurs dans la situation des individus. On parle un peu vite, me semble-t-il, un peu trop facilement, de \"l'égoïsme\" des êtres humains. Certes, chacun lutte pour soi et pour ses proches, entrant ainsi en conflit avec autrui. Mais c'est que chaque être humain est mortel, et le sait. Chaque être humain est vulnérable en tous ses points d'existence, et le sait. Chaque être humain sait aussi que ses proches sont mortels et vulnérables, qu'ils ont besoin d'être protégés, donc défendus. Bien plus: tout, absolument tout ce à quoi un être humain peut tenir, tout ce qu'il peut aimer, est vulnérable et destructible. (Sauf Dieu. Mais c'est pourquoi l'amour de Dieu ne ressemble à aucun autre.) Il faut donc comprendre que dans l'homme, ni l'égoïsme, ni l'agressivité ne se laissent séparer du vouloir vivre, du pouvoir de viser et d'agir, et même du pouvoir.",
+      "bbox": {
+        "x_pct": 8.127,
+        "y_pct": 55.805,
+        "w_pct": 82.012,
+        "h_pct": 30.133
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted/garbled OCR text to match the original document image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "102",
+      "bbox": {
+        "x_pct": 84.1,
+        "y_pct": 88.5,
+        "w_pct": 3.2,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Corrected missing region and labeled as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text was heavily garbled in all paragraph regions.",
+    "Page number at the bottom was missing from initial detection."
+  ],
+  "doc_id": "1640",
+  "page": 8,
+  "elapsed_seconds": 5.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "148 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 110.0,
+        "y_pct": 87.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "The page header '148 IDÉOLOGIES ET RÉALITÉ' was labeled as text, it should be filtered out or marked as a header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand on me dit d'un parti qu'il n'a pas de mystique, je pense : tant mieux, c'est donc que ses membres peuvent, tout en étant des partisans fidèles, peut-être jusqu'au sacrifice total, avoir l'âme religieuse. Quand on me dit d'un partisan qu'il ne donne pas tout son temps libre au parti, je pense encore : tant mieux, c'est donc qu'il vit peut-être aussi ailleurs, que sa famille, ses amis, son métier, ses compagnons de travail, ses paysages existent pour lui hors du parti. C'est que l'homme, en lui, existe encore, sans qui le parti n'aurait pas de sens.",
+      "bbox": {
+        "x_pct": 11.462,
+        "y_pct": 11.881,
+        "w_pct": 85.432,
+        "h_pct": 19.135
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais on me dit que les partis empoisonnent la vie politique et corrompent les individus, je pense qu'on se méprend sur la vie politique et sur les individus vivant en société; et je revendique pour les partis le droit d'exister, d'imposer à leurs membres une discipline sur le plan de l'action politique, d'attendre d'eux des sacrifices, parfois même un dévouement absolu, non pas en leur nom propre, mais pour la défense des valeurs sans lesquelles la vie n'est plus humaine.",
+      "bbox": {
+        "x_pct": 11.281,
+        "y_pct": 30.303,
+        "w_pct": 85.655,
+        "h_pct": 16.693
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of text content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "The page header containing the page number 148 was missing in the original detection.",
+    "OCR text was heavily garbled in both paragraphs.",
+    "The header was not initially categorized."
+  ],
+  "doc_id": "330",
+  "page": 182,
+  "elapsed_seconds": 5.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

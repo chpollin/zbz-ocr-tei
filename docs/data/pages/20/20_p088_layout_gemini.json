@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "86 RÉALITÉ HISTORIQUE DU TEMPS :",
+      "bbox": {
+        "x_pct": 141.285,
+        "y_pct": 86.81,
+        "w_pct": 53.606,
+        "h_pct": 10.963
+      },
+      "changed": true,
+      "change_reason": "Page number and header content should be filtered as page_header/page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'homme. Ce qu'elle représente lui de réel, c'est une limite. Si Zeitlosigkeit n'est pas pour Hegel une limite, ni une expérience mystique, le soupçon surgit que ce ne soit qu'un mot, formé de Zeit et d'un suffixe privatif. Pourtant Hegel parle de l'éternité comme de quelque chose de réel et de connu. Et cette réalité, il ne la saisit ni par l'action, ni par la contemplation de l'Eternel, mais dans le temps. Il reconnaît l'éternité sous la forme d'une loi, indépendante du temps, qui règne sur le développement temporel de l'histoire. Il la reconnaît comme nécessité.",
+      "bbox": {
+        "x_pct": 13.81,
+        "y_pct": 13.031,
+        "w_pct": 75.798,
+        "h_pct": 30.315
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text OCR reading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2. Le temps et l'histoire.",
+      "bbox": {
+        "x_pct": 33.584,
+        "y_pct": 46.044,
+        "w_pct": 35.117,
+        "h_pct": 2.554
+      },
+      "changed": true,
+      "change_reason": "Combined fragmented heading and corrected text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans la conception hégélienne, la réalité de l'éternité n'entraîne pas du tout l'irréalité du temps, au contraire : l'éternité trouve sa réalité par son déploiement dans le temps. Le déroulement de l'histoire, les personnes et les événements ne deviennent jamais pour Hegel des ombres indifférentes en face de la grandeur de l'éternité. Ils restent pleins, concrets, vivants. Plus ils sont soumis au temps, c'est-à-dire plus vite ils se développent, passent, disparaissent, et plus ils rendent manifeste l'éternité.",
+      "bbox": {
+        "x_pct": 13.901,
+        "y_pct": 48.646,
+        "w_pct": 75.813,
+        "h_pct": 27.969
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text OCR reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La puissance du temps se révèle tout d'abord dans l'hétérogénéité absolue des moments historiques. C'est à cause d'elle que les événements passés ne peuvent pas livrer des règles d'action aux hommes. Bergson, plus tard, a vu dans cette hétérogénéité absolue",
+      "bbox": {
+        "x_pct": 13.961,
+        "y_pct": 76.74,
+        "w_pct": 75.994,
+        "h_pct": 13.155
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text OCR reading."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 5,
+  "issues": [
+    "Page number and header were not correctly filtered.",
+    "Text paragraphs contained OCR truncation and errors.",
+    "Section header was fragmented and poorly parsed."
+  ],
+  "doc_id": "20",
+  "page": 88,
+  "elapsed_seconds": 5.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

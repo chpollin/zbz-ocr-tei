@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "déterminisme et liberté. De l'autre côté, parmi ceux qui contribuent au développement de la technique, on en vient à porter bien haut le drapeau de la liberté, sans se soucier des moyens de la faire vivre, de l'exprimer, de la nourrir et d'en transmettre le sens.",
+      "bbox": {
+        "x_pct": 5.854,
+        "y_pct": 8.731,
+        "w_pct": 32.946,
+        "h_pct": 4.629
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a quelque chose de tout-à-fait fondamental. L'homme ne change rien au déterminisme; mais il le connaît, le plie à ses fins. Et quelles sont ces fins? Il s'agit de réduire les servitudes de l'homme à l'égard du déterminisme. Nous découvrons ici une ruse essentielle de l'humanité, qui se sert du déterminisme de la nature pour réduire son propre asservissement à ce déterminisme en gagnant du temps. «Du temps», c'est quelque chose de capital. S'imagine-t-on ce que cela peut signifier pour des hommes, d'avoir plus de temps? On disait naguère: «Time is money» - le temps, c'est de l'argent. Mais la vérité, c'est que pour l'être humain, l'argent, c'est en tout premier lieu du temps, du temps pour vivre en homme, pour vivre comme on choisit de vivre, selon sa propre liberté.",
+      "bbox": {
+        "x_pct": 6.113,
+        "y_pct": 19.163,
+        "w_pct": 32.726,
+        "h_pct": 26.532
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 26.622,
+        "y_pct": 64.116,
+        "w_pct": 2.226,
+        "h_pct": 1.633
+      },
+      "changed": true,
+      "change_reason": "Page number identified as paragraph"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est exactement ce qui",
+      "bbox": {
+        "x_pct": 62.121,
+        "y_pct": 12.996,
+        "w_pct": 13.167,
+        "h_pct": 2.213
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mesure des hommes capables d'accomplir parfaitement le travail exigé par les techniques de demain, de sorte que les machines, qui ne travailleraient que peu d'heures et se gaveraient de télévision le reste du temps, même si on arrive à réaliser ainsi une véritable modèle, sans problème, sans révolution et sans attentat, je crois qu'on se trouvera bientôt dans une situation catastrophique. C'est que l'être humain ne peut pas vivre sans que sa vie ait un sens. Or ce sens n'est jamais donné par la technique. C'est la technique qui attend toujours que la liberté des hommes lui donne un sens.",
+      "bbox": {
+        "x_pct": 60.816,
+        "y_pct": 24.791,
+        "w_pct": 32.754,
+        "h_pct": 23.387
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "devenu pour nous à peu près illisible. On n'enseigne pas aux enfants à lire dans les produits techniques qui les entourent.",
+      "bbox": {
+        "x_pct": 61.036,
+        "y_pct": 65.816,
+        "w_pct": 32.083,
+        "h_pct": 3.725
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text"
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR was highly inaccurate and severely truncated",
+    "Page number 28 incorrectly tagged as paragraph"
+  ],
+  "doc_id": "2040",
+  "page": 5,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

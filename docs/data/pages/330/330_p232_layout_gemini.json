@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "198",
+      "bbox": {
+        "x_pct": 122.0,
+        "y_pct": 82.0,
+        "w_pct": 28.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Page numbers are identified as page_header/page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 391.0,
+        "y_pct": 80.0,
+        "w_pct": 242.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Juste place aux experts, à ne la faire ni trop petite ni trop grande. Négliger l'opinion des experts, c'est risquer de perdre le réel. Se soumettre à eux, c'est risquer de perdre le but. Une Chambre économique est en quelque sorte un organe d'experts où s'affirment non seulement des intérêts divers, mais aussi des compétences. Elle devrait — à supposer qu'on la crée — être consultative avant tout, rester soumise aux décisions politiques d'un parlement éclairé par ses débats.",
+      "bbox": {
+        "x_pct": 118.0,
+        "y_pct": 109.0,
+        "w_pct": 857.0,
+        "h_pct": 169.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and aligned with document structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une Chambre économique n'est d'ailleurs pas nécessairement le meilleur moyen, ni le seul, de contraindre les intéressés à livrer leur combat le visage découvert. Les sévères coutumes contraignantes élaborées dans ce domaine par la Grande-Bretagne empiriste sont exemplaires. Budgets publics des campagnes électorales ; tracts de propagande signés et assumés ; obligation, pour les parlementaires qui interviennent dans une discussion, de déclarer les intérêts qu'ils ont dans les problèmes débattus, et, pour les journaux, d'imprimer les noms de leurs bailleurs de fonds : autant de règles qui, strictement appliquées comme elles le sont là-bas, forcent les milieux économiquement intéressés, non au silence ou à l'abstention — ce qui serait anormal —, mais à intervenir dans le débat en déclarant ils sont, de façon que chacun puisse, dans les arguments qu'ils avancent, faire la part des choses. Et on sait qu'il ne s'agit nullement d'une façade hypocrite : des parlementaires, pour avoir violé telle de ces règles, ont vu leur carrière politique brisée.",
+      "bbox": {
+        "x_pct": 116.0,
+        "y_pct": 272.0,
+        "w_pct": 857.0,
+        "h_pct": 358.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and aligned with document structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a d'autres problèmes : la démocratie, nous l'avons vu, a besoin, pour vivre, d'être voulue, aimée, par les citoyens. Elle exige leur vigilance constante, sous peine de devenir la proie de maladies mortelles. Or cette vigilance n'existe guère que chez de petits peuples, ayant à affronter des problèmes à la mesure des individus et dont les liens avec la vie quotidienne de chacun sont manifestes. Les droits de référendum et d'initiative, tels qu'ils existent en Suisse par exemple, permettent au citoyen d'abolir des lois votées par le parlement ou d'en proposer de nouvelles. Ils l'encouragent à suivre de près l'évolution politique intérieure et extérieure, — intérieure surtout. La politique lui apparaît comme l'art de tenir le ménage de la collectivité, et grâce à la démocratie, il peut contribuer à le tenir. Il n'a pas paru possible",
+      "bbox": {
+        "x_pct": 119.0,
+        "y_pct": 625.0,
+        "w_pct": 858.0,
+        "h_pct": 276.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and aligned with document structure."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR text was heavily truncated and garbled.",
+    "Page number and running header incorrectly labeled as paragraph.",
+    "Multiple boxes contained overlapping text.",
+    "Bbox values were missing accurate coordinates in the provided prompt, using relative positions."
+  ],
+  "doc_id": "330",
+  "page": 232,
+  "elapsed_seconds": 6.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

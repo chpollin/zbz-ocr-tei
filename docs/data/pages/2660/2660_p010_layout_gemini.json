@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber gerade das ist die Ethik der Demokratie und der Republik. Diese Ethik ist die Ehrfurcht vor den Möglichkeiten jedes einzelnen Menschen, der die Möglichkeit und also die Aufgabe hat, diese Leere, die um ihn herum geschützt wird, mit etwas zu füllen, was von seiner inneren Autonomie kommt; mit dem zu füllen, was er selbst - in den Grenzen der Gesetze und der Institutionen - will. Der Vorwurf, den man diesen politischen Formen macht, bezieht sich eigentlich auf ihre tiefste Askese, damit jeder Bürger die Möglichkeit hat, aus vollem Recht zu wählen und zu entscheiden, was er glaubt, was er will, was er anerkennt.",
+      "bbox": {
+        "x_pct": 7.352,
+        "y_pct": 9.807,
+        "w_pct": 82.976,
+        "h_pct": 17.252
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match full paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber das setzt voraus, daß jeder einzelne selbst nicht leer ist. Denn, wenn die einzelnen selbst leer sind, dann bleibt auch der Raum um sie herum leer, und das Menschsein erträgt die Leere genauso wenig wie die Natur. Ist diese Leere da, dann wächst in irgendeiner Form, unter irgendeinem Vorwand, der sehr erhaben sein darf, die Gewalt; die Gewalt der nicht zu vereinigenden Interessen oder einfach der Ungeduld und der Langeweile.",
+      "bbox": {
+        "x_pct": 7.654,
+        "y_pct": 26.723,
+        "w_pct": 82.598,
+        "h_pct": 15.353
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match full paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Deswegen ist der Kampf der Geschichte ohne Ende. Deswegen müssen wir es vertragen und es ertragen, daß dieser Kampf ohne Ende ist. Deshalb müssen wir geduldig immer wieder anfangen, um günstigere Möglichkeiten, günstigere Chancen zu schaffen, damit jeder einzelne mehr Chancen hat, zu seiner inneren Autonomie zu finden. Man kann sie keinem einzelnen geben. Die innere Instanz wird nie geschenkt, von niemandem, von keiner Gesellschaft. Diese Autonomie kann sich nur der einzelne erwerben. Aber man kann günstigere Umstände schaffen, die ihm mehr Chancen, mehr Möglichkeiten geben. Und in diesem Sinn ist der Kampf für die Menschenrechte Folge der Französischen Revolution, etwas, das wahrscheinlich immer bedroht bleiben wird, aber zugleich auch nie aufhören wird, oder nur mit der Geschichte der Menschen.",
+      "bbox": {
+        "x_pct": 7.654,
+        "y_pct": 41.739,
+        "w_pct": 82.673,
+        "h_pct": 22.63
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match full paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "69",
+      "bbox": {
+        "x_pct": 87.108,
+        "y_pct": 90.648,
+        "w_pct": 2.378,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected text was truncated in the original JSON input.",
+    "Page number at bottom right was labeled as 'text' instead of 'page_footer'."
+  ],
+  "doc_id": "2660",
+  "page": 10,
+  "elapsed_seconds": 4.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

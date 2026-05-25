@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was nennt man nun mit Gesamtschule... [Text is garbled in OCR, but is definitely paragraph content]",
+      "bbox": {
+        "x_pct": 16.262,
+        "y_pct": 13.651,
+        "w_pct": 34.228,
+        "h_pct": 26.349
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was corrupted/hallucinated by OCR; corrected label remains paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Kampf für die Gesamtschule... [Text is garbled in OCR, but is definitely paragraph content]",
+      "bbox": {
+        "x_pct": 9.841,
+        "y_pct": 54.651,
+        "w_pct": 40.404,
+        "h_pct": 30.794
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was corrupted/hallucinated by OCR; corrected label remains paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Menschen wird. Eine schon von... [Text is garbled in OCR, but is definitely paragraph content]",
+      "bbox": {
+        "x_pct": 54.816,
+        "y_pct": 15.286,
+        "w_pct": 39.583,
+        "h_pct": 7.778
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was corrupted/hallucinated by OCR; corrected label remains paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das ist aber, dass man gerade...",
+      "bbox": {
+        "x_pct": 57.316,
+        "y_pct": 79.381,
+        "w_pct": 23.431,
+        "h_pct": 2.841
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was corrupted/hallucinated by OCR; corrected label remains paragraph."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Severe OCR degradation in all regions, text content is unreadable and hallucinated.",
+    "Bbox for the final paragraph is incomplete (cuts off middle of the sentence).",
+    "Missing the page number '17' at the bottom right, which should be labeled as page_footer."
+  ],
+  "doc_id": "930",
+  "page": 2,
+  "elapsed_seconds": 4.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

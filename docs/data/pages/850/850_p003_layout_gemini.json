@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "possible devenir nais Ce qu'il voudra commen[ il pcut le mieux respecler ce de son travail, de sa fo",
+      "bbox": {
+        "x_pct": 8.366,
+        "y_pct": 11.798,
+        "w_pct": 35.955,
+        "h_pct": 14.481
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les ann\tes universitaires, si elles accroissent les chances des \ttudiants, ne leur fournissent pas un s\tcurit\t ou un bonheur absolu.",
+      "bbox": {
+        "x_pct": 7.451,
+        "y_pct": 31.162,
+        "w_pct": 36.772,
+        "h_pct": 33.389
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text readability and label validity."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'on ne me dise pas que je d\tcris l\t l'universit\t r\tserv\te. Ceux qui ont lutt\t pour le privil\tge inappr\tciable et socialement f\tcond de ces quelques ann\tes de libre travail soit plus largement r\tpandu ne se consoleraient pas de les voir abolies pour tous,",
+      "bbox": {
+        "x_pct": 7.283,
+        "y_pct": 69.115,
+        "w_pct": 36.447,
+        "h_pct": 14.938
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match original paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "et la d\tmocratisation des \ttudes leur para\ttrait perdre sa signification humaine pour prendre celle d'une mobilisation g\tn\trale au service de la production industrielle.",
+      "bbox": {
+        "x_pct": 56.329,
+        "y_pct": 13.278,
+        "w_pct": 34.39,
+        "h_pct": 6.542
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'en reste pas moins vrai qu'une seconde all\tgeance s'impose \t l'Universit\t : une all\tgeance envers la soci\tt\t, et des raisons beaucoup plus profondes que le fardeau des bourses sur les finances publiques, le co\tt des \ttudes assum\t par les contribuables, etc.",
+      "bbox": {
+        "x_pct": 56.171,
+        "y_pct": 20.526,
+        "w_pct": 34.508,
+        "h_pct": 43.333
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il signifie simplement qu'apr\ts la s\tlection par la naissance, la d\tmocratisation des \ttudes permet, fonction de la valeur des \ttudes faites.",
+      "bbox": {
+        "x_pct": 56.033,
+        "y_pct": 68.423,
+        "w_pct": 34.39,
+        "h_pct": 9.82
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": {
+        "x_pct": 78,
+        "y_pct": 860,
+        "w_pct": 15,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer for page number 10."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 885,
+        "y_pct": 860,
+        "w_pct": 15,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer for page number 11."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Several text boxes had poor OCR quality",
+    "Page numbers were incorrectly labeled as text",
+    "Missing text content in original JSON"
+  ],
+  "doc_id": "850",
+  "page": 3,
+  "elapsed_seconds": 7.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

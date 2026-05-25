@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "92",
+      "bbox": {
+        "x_pct": 14.12,
+        "y_pct": 6.81,
+        "w_pct": 2.19,
+        "h_pct": 2.27
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 44.02,
+        "y_pct": 6.94,
+        "w_pct": 11.96,
+        "h_pct": 2.15
+      },
+      "changed": true,
+      "change_reason": "Running header identified as section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alors il faut trouver dans le terreau humain lui-même, dans les tissus sociaux, et les structures, dans les formes, dans les traditions, dans les institutions, les moyens de contrôler, de disperser, de limiter le Pouvoir — sans pourtant l'empêcher d'être le Pouvoir, donc sans l'empêcher de pouvoir.",
+      "bbox": {
+        "x_pct": 14.005,
+        "y_pct": 10.521,
+        "w_pct": 75.845,
+        "h_pct": 11.463
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quadrature du cercle. Tâche sans fin de l'histoire. Mais des progrès sont possibles, quand les hommes acceptent les bornes de leur condition.",
+      "bbox": {
+        "x_pct": 13.854,
+        "y_pct": 21.76,
+        "w_pct": 76.042,
+        "h_pct": 6.421
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut apprivoiser le Pouvoir. Comme pour un animal, si l'on veut apprivoiser le Pouvoir, il faut consentir à vivre avec lui la vie concrète de tous les jours. Mais jamais sans les exigences de la liberté.",
+      "bbox": {
+        "x_pct": 13.889,
+        "y_pct": 28.074,
+        "w_pct": 75.81,
+        "h_pct": 9.008
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a du pouvoir dans la famille, à l'école, dans la profession. C'est là que chacun en fait l'apprentissage et apprend à l'apprivoiser. Le Pouvoir proprement politique commence dans les communes où se présentent le plus concrètement les choix de la vie collective.",
+      "bbox": {
+        "x_pct": 14.005,
+        "y_pct": 37.132,
+        "w_pct": 75.694,
+        "h_pct": 9.256
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'on me comprenne bien: si je mentionne d'abord la commune, ce n'est pas pour partir du bas d'une échelle hiérarchique, et monter ensuite par degrés jusqu'au niveau d'un Pouvoir national, puis continental. Entre la commune et le canton ou le département, entre le canton ou le département et la région, entre la région et l'Etat national, il ne devrait pas y avoir avant tout un rapport hiérarchique de subordination, mais bien une différenciation qualitative des compétences, établie par la coutume ou le Droit. Tel est bien l'esprit du fédéralisme, ce qui, entre parenthèses, permet de comprendre pourquoi une Europe fédérée ne serait nullement exclusive des Pouvoirs nationaux.",
+      "bbox": {
+        "x_pct": 13.657,
+        "y_pct": 46.281,
+        "w_pct": 76.076,
+        "h_pct": 24.157
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce ne sont pas seulement les plus petites unités administratives qui devraient servir à apprivoiser le Pouvoir. Tous les grands pouvoirs sociaux devraient apparaître au grand jour, et se faire entendre en tant que tels, dans des organes appropriés, au niveau du Pouvoir de l'Etat, en particulier les syndicats patronaux et ouvriers, de façon à donner à celui-ci le lest des réalités concrètes avec lesquelles les hommes sont aux prises — de façon aussi à rendre lisibles, manifestes, les termes de ses choix et les enjeux de ses décisions.",
+      "bbox": {
+        "x_pct": 13.692,
+        "y_pct": 70.438,
+        "w_pct": 76.007,
+        "h_pct": 19.917
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and running header incorrectly labeled as text.",
+    "The OCR text content was largely incoherent and needed significant manual cleanup to match source image readability."
+  ],
+  "doc_id": "1530",
+  "page": 20,
+  "elapsed_seconds": 4.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

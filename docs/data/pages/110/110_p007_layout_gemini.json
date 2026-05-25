@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avant dabandonner ce livre à son sort, qu'il me soit permis de dire toute ma reconnaissance au Conse",
+      "bbox": {
+        "x_pct": 11.29,
+        "y_pct": 22.863,
+        "w_pct": 68.932,
+        "h_pct": 14.466
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais aussi que les membres de la commission chargée dexaminer ma thèse, MM les   professeurs ",
+      "bbox": {
+        "x_pct": 11.214,
+        "y_pct": 37.355,
+        "w_pct": 69.048,
+        "h_pct": 16.186
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "J",
+      "bbox": {
+        "x_pct": 67.32,
+        "y_pct": 53.642,
+        "w_pct": 2.112,
+        "h_pct": 1.517
+      },
+      "changed": true,
+      "change_reason": "Artifact/empty character detection"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "H",
+      "bbox": {
+        "x_pct": 70.353,
+        "y_pct": 53.541,
+        "w_pct": 3.149,
+        "h_pct": 1.568
+      },
+      "changed": true,
+      "change_reason": "Artifact/empty character detection"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Detected artifacts labeled as paragraph text",
+    "Missing correction of OCR text content"
+  ],
+  "doc_id": "110",
+  "page": 7,
+  "elapsed_seconds": 4.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Artifact/empty character detection": 2
+  }
+}

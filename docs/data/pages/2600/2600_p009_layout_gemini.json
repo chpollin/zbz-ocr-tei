@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "temps et transcende le miniature d'éternité.",
+      "bbox": {
+        "x_pct": 6.25,
+        "y_pct": 8.063,
+        "w_pct": 79.885,
+        "h_pct": 4.323
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in transcription to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est pas surprenant que la liberté, qui n'a d'actualité qu'au présent, participe de l'être paradoxal du présent, — à moins qu'on ne préfère dire que le présent participe de l'être paradoxal de la liberté. Présent et liberté se trouvent chacun, pour la pensée, doublement exclus, de par leur nature même doublement impossibles. En même temps, présent et liberté sont doublement nécessaires, doublement inévitables pour la pensée même qui tente de les exclure.",
+      "bbox": {
+        "x_pct": 5.995,
+        "y_pct": 19.975,
+        "w_pct": 80.23,
+        "h_pct": 18.903
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text to match full sentences visible in the document."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Doublement exclus:",
+      "bbox": {
+        "x_pct": 6.378,
+        "y_pct": 41.87,
+        "w_pct": 25.217,
+        "h_pct": 1.854
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour le présent, il suffit de reprendre la constatation, d'une simplicité sans issue, de Saint Augustin: le présent est une limite entre deux néants, celui de ce qui n'est plus et celui de ce qui n'est pas encore.",
+      "bbox": {
+        "x_pct": 6.122,
+        "y_pct": 43.998,
+        "w_pct": 80.102,
+        "h_pct": 9.759
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text to match image text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, si l'on admet que le présent est, il faut admettre aussi qu'il n'est qu' \"en passant\", que son être c'est de cesser d'être.",
+      "bbox": {
+        "x_pct": 6.25,
+        "y_pct": 56.193,
+        "w_pct": 79.847,
+        "h_pct": 6.899
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text to match image text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour la liberté, il faut bien choisir de la saisir soit dans la continuité de la conscience active, soit comme un commencement absolu faisant irruption dans cette continuité. Dans le premier cas, elle apparaît comme dérivée au fil du temps, rattachée à quelque causalité, physique ou psychologique. Dans le second, ou bien elle sombre dans le non-sens, l'arbitraire du hasard, de n'importe quoi, — ou bien elle fait irruption comme percée de",
+      "bbox": {
+        "x_pct": 6.161,
+        "y_pct": 65.894,
+        "w_pct": 80.23,
+        "h_pct": 16.841
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text to match image text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "59",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 88.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as a filtered region."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Heavy OCR corruption in text regions.",
+    "Missing page number region."
+  ],
+  "doc_id": "2600",
+  "page": 9,
+  "elapsed_seconds": 5.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "c) Les partis. — Nous sommes ici au cœur de l'étude de Jeanne Hersch. Pour elle, pas de démocratie sans partis. Ils servent à unir ceux qui, dans le domaine politique, veulent accomplir ensemble la même chose. Ils reflètent les divergences et les conflits qui existent dans l'opinion, leur fonction étant de simplifier ces divergences et de présenter au corps électoral des choix aussi clairs que possible. Jeanne Hersch procède à une analyse des différentes idéologies politiques, telles qu'elles lui apparaissent dans l'état actuel de l'opinion en Europe occidentale, sur le continent. J'ai apprécié son effort pour définir les différents tempéraments : fasciste, communiste, conservateur-libéral, démocrate-progressiste et socialiste. En fait, cette analyse a été spécialement axée sur la France; il n'est pas certain que dans d'autres pays occidentaux, elle ne devrait pas être reprise sous d'autres formes et avec d'autres nuances.",
+      "bbox": {
+        "x_pct": 11.741,
+        "y_pct": 10.276,
+        "w_pct": 85.71,
+        "h_pct": 28.939
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete and garbled OCR text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la difficulté, à notre époque, c'est que les divisions entre partis politiques ne correspondent plus aux « types » de tempéraments analysés plus haut. Nous avons hérité la plupart de nos partis du XIXe siècle, et leurs divisions correspondent souvent à des problèmes anciens, dépassés, mais qui soulèvent encore des réactions sentimentales, presque instinctives, prenant parfois la forme de réflexes conditionnés. Le plus caractéristique est le problème de la laïcité. La Belgique et la France connaissent l'une et l'autre une grande bataille entre « cléricaux » et « anticléricaux ». Les passions s'échauffent, là à propos de la loi Collard, ici de la loi Barangé, et l'on invoque tantôt le droit sacré du père de famille, tantôt l'effroyable danger de la mainmise cléricale. Il est curieux de constater que, proportionnellement à la population et au budget des deux pays, l'abominable projet Collard, expression d'un anticléricalisme forcené, accorde aux écoles privées des subventions vingt-cinq fois plus élevées que l'horrible loi Barangé, ce produit d'un cléricalisme sans frein. Bataille rituelle, où l'on discute non sur le réel, mais sur des symboles, et où l'essentiel n'est pas d'obtenir des résultats concrets, mais d'avoir le sentiment « d'écraser l'infâme ».",
+      "bbox": {
+        "x_pct": 11.657,
+        "y_pct": 39.216,
+        "w_pct": 86.072,
+        "h_pct": 39.064
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled OCR text extraction to match the source document."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR extraction was significantly corrupted for both text regions.",
+    "The bounding box for the first region was slightly misaligned with the actual paragraph content start."
+  ],
+  "doc_id": "330",
+  "page": 18,
+  "elapsed_seconds": 4.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

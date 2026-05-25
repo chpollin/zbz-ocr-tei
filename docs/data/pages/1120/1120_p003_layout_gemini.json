@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selbst diese materialistische Erklärung, die auf die materiellen Bedürfnisse zurückgreift, erfasst n",
+      "bbox": {
+        "x_pct": 13.562,
+        "y_pct": 6.969,
+        "w_pct": 71.716,
+        "h_pct": 20.991
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieser Rassismus ist zwangsläufig irrational, instinktiv , und die Argumente, seien sie oder schlech",
+      "bbox": {
+        "x_pct": 13.642,
+        "y_pct": 28.131,
+        "w_pct": 71.668,
+        "h_pct": 21.157
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man kann vielleicht den Rassismus durch eine vernünftige Infor mation schwächen, indem man die allzu",
+      "bbox": {
+        "x_pct": 13.4,
+        "y_pct": 51.698,
+        "w_pct": 71.692,
+        "h_pct": 19.339
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn jeder Mensch Rechte hat, ist es nicht, weil jeder tatsächlich gleich ist, sondern weil jeder an",
+      "bbox": {
+        "x_pct": 13.352,
+        "y_pct": 71.339,
+        "w_pct": 71.684,
+        "h_pct": 17.453
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_paragraph"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "58",
+      "bbox": {
+        "x_pct": 13.7,
+        "y_pct": 90.5,
+        "w_pct": 4.5,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number region"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page footer region in original JSON",
+    "Labels were incorrectly mapped to text instead of zb_paragraph"
+  ],
+  "doc_id": "1120",
+  "page": 3,
+  "elapsed_seconds": 10.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to zb_paragraph": 3,
+    "ADDED": 1
+  }
+}

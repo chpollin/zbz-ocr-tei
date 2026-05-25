@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Platon, c'est que chacune est unique dans sa pureté. Le principe des indiscernables, chez Leibniz, assure celui des monades dans un sens analogue. Pour saint Thomas, chaque ange absorbe en lui l'unicité d'un genre. Et chez Bergson, le prestige de l'unicité entraîne une dévaluation inverse: si les individus d'une même espèce répètent à peu près un modèle unique, cela vient d'une fatigue de l'élan vital, d'un épuisement de sa force créatrice, du rôle négatif dévolu à la matière. Et malgré les apparences, ce n'est pas grâce à la répétition approximative d'une sensation que Proust rejoint le temps perdu, ou l'éternité qui est comme un temps devenu d'une épaisseur infinie, mais par la singularisation instantanée et absolue de la sensation.",
+      "bbox": {
+        "x_pct": 15.552,
+        "y_pct": 9.67,
+        "w_pct": 65.214,
+        "h_pct": 23.476
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'où vient à l'unique ce prestige ? — C'est que rien ne peut devenir symbole de la transcendance (c'est-à-dire provoquer un acte qui la vise) sans être exclusif et unique. C'est qu'un tel symbole doit correspondre à l'unicité de l'être, fondement de toute pensée et de toute action.",
+      "bbox": {
+        "x_pct": 15.528,
+        "y_pct": 33.202,
+        "w_pct": 65.294,
+        "h_pct": 10.313
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR recognition accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La situation humaine est pleine de pièges. L'esprit risque de se vouer à une généralité qui perd son efficacité symbolique et se réduit à des cadres vides. Tout est là, mais ontologiquement si anémié qu'il n'y a presque plus rien. L'esprit jouit alors d'une étrange légèreté, d'une facilité trichée, qui tient à l'absence de l'être.",
+      "bbox": {
+        "x_pct": 15.608,
+        "y_pct": 47.276,
+        "w_pct": 65.109,
+        "h_pct": 11.601
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR truncation errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ou bien l'esprit risque de se vouer à des données particulières dont il ignore la transcendance et l'unicité. Il croit être au cœur de l'expérience, mais en fait il retombe dans le général, faute d'inépuisable concret.",
+      "bbox": {
+        "x_pct": 15.633,
+        "y_pct": 59.048,
+        "w_pct": 65.085,
+        "h_pct": 8.091
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ou encore l'esprit risque de prétendre atteindre la transcendance sans passer par le symbolisme du singulier et de se perdre ainsi dans l'inconsistance d'une pensée qui essaye d'échapper aux nécessités humaines de l'incarnation.",
+      "bbox": {
+        "x_pct": 15.713,
+        "y_pct": 66.855,
+        "w_pct": 65.109,
+        "h_pct": 7.806
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au fur et à mesure que ces pièges apparaissent plus nettement à la conscience, l'homme se voit de plus en plus contraint de sauver la transcendance par l'épreuve de l'immanence maximum, par le singulier. C'est pourquoi notre philosophie tend de plus en plus à s'éprouver dans notre action.",
+      "bbox": {
+        "x_pct": 15.633,
+        "y_pct": 74.855,
+        "w_pct": 65.246,
+        "h_pct": 10.387
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "51",
+      "bbox": {
+        "x_pct": 77.92,
+        "y_pct": 87.78,
+        "w_pct": 2.15,
+        "h_pct": 2.15
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR text was heavily truncated and garbled.",
+    "Page number at bottom right was misidentified as text."
+  ],
+  "doc_id": "190",
+  "page": 9,
+  "elapsed_seconds": 6.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

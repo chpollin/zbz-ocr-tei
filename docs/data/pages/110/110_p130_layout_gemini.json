@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "128 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 19.643,
+        "y_pct": 9.774,
+        "w_pct": 68.7,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "être sacriliée à une autre cohérence; et pourtant elle ne doit pas, sous de se perdre dans Firréalit",
+      "bbox": {
+        "x_pct": 19.643,
+        "y_pct": 12.8,
+        "w_pct": 68.7,
+        "h_pct": 27.716
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Celte sorte de   séduclion dont le rêve se pare ne s'exerce dailElle atire partout, de mille manière",
+      "bbox": {
+        "x_pct": 19.413,
+        "y_pct": 40.721,
+        "w_pct": 68.7,
+        "h_pct": 33.505
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header bounding box in original input."
+  ],
+  "doc_id": "110",
+  "page": 130,
+  "elapsed_seconds": 8.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

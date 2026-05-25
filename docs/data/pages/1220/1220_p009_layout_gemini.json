@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "plauben",
+      "bbox": {
+        "x_pct": 9.59,
+        "y_pct": 13.517,
+        "w_pct": 5.654,
+        "h_pct": 2.579
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Entmnythologisicrung zurud geschwadite der Transzendcnz.  Wenn man im Christlichen keine Ende Zeite ",
+      "bbox": {
+        "x_pct": 9.59,
+        "y_pct": 16.414,
+        "w_pct": 38.339,
+        "h_pct": 21.241
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "sagen; dann stünde allerdings das entmythologisierte Christen[ui der marxistischen Zukunfiserwartung",
+      "bbox": {
+        "x_pct": 9.477,
+        "y_pct": 49.2,
+        "w_pct": 38.567,
+        "h_pct": 4.91
+      },
+      "changed": true,
+      "change_reason": "Corrected label and expanded text to match image"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zu Gremium der scinunion",
+      "bbox": {
+        "x_pct": 9.636,
+        "y_pct": 73.379,
+        "w_pct": 28.396,
+        "h_pct": 5.931
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Verheilung des Pa Ganz dic sidh gibt es einen Abbruc zwischen der indischen GeDenn dann und mchr bel",
+      "bbox": {
+        "x_pct": 52.196,
+        "y_pct": 16.924,
+        "w_pct": 37.907,
+        "h_pct": 24.262
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 52.4,
+        "y_pct": 48.0,
+        "w_pct": 10.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified as section header/biographical entry header"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Philosophic in   Genf, Paris, Ilcidel Dolorat Lehrauftrage an der Pennsylvania State University der ",
+      "bbox": {
+        "x_pct": 52.526,
+        "y_pct": 49.2,
+        "w_pct": 37.77,
+        "h_pct": 32.276
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "82",
+      "bbox": {
+        "x_pct": 9.0,
+        "y_pct": 90.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "83",
+      "bbox": {
+        "x_pct": 90.0,
+        "y_pct": 90.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Fixed label for Jeanne Hersch",
+    "Added page numbers as _filter",
+    "Label corrected from list_item to zb_paragraph for consistency"
+  ],
+  "doc_id": "1220",
+  "page": 9,
+  "elapsed_seconds": 7.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label and expanded text to match image": 1,
+    "ADDED": 3
+  }
+}

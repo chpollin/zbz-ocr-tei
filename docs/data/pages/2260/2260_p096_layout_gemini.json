@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de notre vie sa séparation atroce et nécessaire. L’instant où l’on a vu mourir l’être qu’on aime ne reste pas isolé. Il était déjà là avant, il est resté là après, il est là pour toujours. Les instants de vie, sans lui, se perdent dans l’insignifiance. Ils ont besoin de lui, comme s’il leur conférait une sorte d’absolu. Mais c’est l’absolu d’une séparation, non celle de l’union définitive. La mort a bien son aiguillon — mais comment vivre sans lui?",
+      "bbox": {
+        "x_pct": 24.0,
+        "y_pct": 11.632,
+        "w_pct": 65.661,
+        "h_pct": 27.788
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to accurately match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sans lui, sans le Never more intolérable, le temps dure changerait l’homme en statue de l’ennui.",
+      "bbox": {
+        "x_pct": 24.085,
+        "y_pct": 39.47,
+        "w_pct": 65.648,
+        "h_pct": 6.056
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to accurately match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous ne savons aimer que ce qui est mortel. Ce que nous pouvons perdre. Ce dont nous pouvons être séparés. Nous aimons dans les fleurs leur flétrissure imminente et en ceux que nous aimons le moment de l’adieu.",
+      "bbox": {
+        "x_pct": 24.085,
+        "y_pct": 56.712,
+        "w_pct": 65.648,
+        "h_pct": 13.936
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to accurately match the image content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Ce n’est pas que cette condition mortelle leur confère une transparence nous permettant de les aimer au-delà du temps, là où tout",
+      "bbox": {
+        "x_pct": 24.0,
+        "y_pct": 70.732,
+        "w_pct": 65.697,
+        "h_pct": 8.52
+      },
+      "changed": true,
+      "change_reason": "Corrected label to 'footnote' and updated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "96",
+      "bbox": {
+        "x_pct": 23.95,
+        "y_pct": 82.25,
+        "w_pct": 3.42,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified missing page number region and marked as filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text was highly inaccurate and contained artifacts.",
+    "Footnote was incorrectly labeled as paragraph.",
+    "Page number at the bottom was missing from the original JSON regions."
+  ],
+  "doc_id": "2260",
+  "page": 96,
+  "elapsed_seconds": 5.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

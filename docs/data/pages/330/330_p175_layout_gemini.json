@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 313,
+        "y_pct": 77,
+        "w_pct": 371,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "141",
+      "bbox": {
+        "x_pct": 863,
+        "y_pct": 77,
+        "w_pct": 31,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fondamentale interdisant d'tablir entre les diverses mes collectives une hirarchie absolue, sauvegardant la libert individuelle. La libert seule sert de charnire  ces fictions agissantes, actuelles ou virtuelles. Cest elle qui les met en question, les conteste, les rejette peut-tre, et sans elle il ny aurait rien que des contraintes physiques et des ides abstraites.",
+      "bbox": {
+        "x_pct": 49,
+        "y_pct": 105,
+        "w_pct": 840,
+        "h_pct": 128
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Revenons en politiques. Ont-ils, doivent-ils avoir une me collective? On admet gnralement que oui, puisquon loue lun de comporter  une mystique , on en blme un autre den manquer. Mais  mystique  a ici un sens trs vague ; il dsigne un facteur irrationnel dadhsion, spirituellement suprieur, par lintensit et la qualit,  ce que peut tre une adhsion rflchie. Les partisans qui ont une mystique donnent leur temps, leurs biens, leur vie ; ils sont soulevs au-dessus deux-mmes au point que lhrosme devient leur comportement normal. De si grands efforts constats tant de fois chez des hommes quelconques ne peuvent avoir quune grande cause. On appelle celle-ci  une mystique . Elle passe pour tre lun des lments essentiels de  lme du parti .",
+      "bbox": {
+        "x_pct": 44,
+        "y_pct": 288,
+        "w_pct": 845,
+        "h_pct": 266
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cependant, si nous comparons le parti  nimporte laquelle des ralits collectives numres plus haut, nous trouvons une diffrence fondamentale. Celles-ci sont imposes  lindividu par sa destine elle-mme. Elles nont fait lobjet daucun choix. Elles tirent leur force, prcisment, leur densit substantielle, du fait quelles appartiennent au rseau de ncessits qui enveloppent lindividu tout en chappant  son vouloir. Elles ont pour lui quelque chose de maternel. Sil aime sa mre comme personne dautre, cest quelle a pour lui ce caractre unique de ne pas avoir t choisie,  dtre sa mre. Ce quil ne choisit pas le rassure, le rattache  ltre directement, sans quil ait  passer par les abmes de la libert. Lhomme  inconcevabIe  qui choisirait toutes les circonstances de sa vie, qui ne porterait plus le lest dune destine lui imposant un lieu, un temps, des attaches multiples, serait comme perdu par sa propre absence de poids. Il prouverait sans doute le vertige du nant. Et ce nant ne serait pas seulement en",
+      "bbox": {
+        "x_pct": 39,
+        "y_pct": 556,
+        "w_pct": 844,
+        "h_pct": 330
+      },
+      "changed": true,
+      "change_reason": "Corrected text content transcription."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original text transcriptions were fragmented and contained significant OCR errors.",
+    "Page number and running header not categorized as _filter."
+  ],
+  "doc_id": "330",
+  "page": 175,
+  "elapsed_seconds": 8.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

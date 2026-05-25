@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TABLE DES MATIÈRES 1949",
+      "bbox": {
+        "x_pct": 135.73,
+        "y_pct": 80.6,
+        "w_pct": 393.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index to page_header as it is the running head of the table of contents."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "687",
+      "bbox": {
+        "x_pct": 806.0,
+        "y_pct": 80.6,
+        "w_pct": 39.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index to page_footer."
+    },
+    {
+      "label": "table",
+      "zbz_tag": "zb_paragraph",
+      "text": "NICOLE, GEORGES Poèmes en prose de Jean Lœwenson . . . 3\nNIETZSCHE, FRÉDÉRIC Vers des mers nouvelles — Venise (poëmes) 193\n— Les Moyens pour arriver à la Paix véritable 194\n— Notes bibliographiques (Les Livres et les Disques nouveaux)\n60, 123, 190, 254, 316, 557, 621, 680\nOLIVIER, JUSTE La Campagne vaudoise (fragment) . . . . 377\nOLIVIER, URBAIN La Fille du Forestier (fragment) . . . . 378\nPEILLEX, GEORGES Deux grands peintres vaudois : Charles\nClément et R.-Th. Bosshard . . . . . 553\nPERRUCHOT, HENRI La leçon du Surréalisme. . . . . . 275\n— L'Epiphanisme . . . . . . . . . 660\nPRENANT, MAURICE J. B. S. Haldane. . . . . . . . 475\nPrix du Théâtre protestant . . . . . . . . 54, 241, 556\nPrix C. Engelmann . . . . . . . . . 136\nPrix littéraire O. S. L. . . . . . . . . 683\nRADINE, SERGE Un Message de Romain Rolland . . . . . 25\n— Ecrivains américains non-conformistes . . . 287\n— Actualité de deux romanciers italiens . . . 608\nRAMUZ, C. F. Passage du Poëte (fragment) . . . . 383\nREYMOND, MARCEL Charles Secrétan, Philosophe de la Liberté . 296\n— Chronique des Essais . . . . . . . 545\n— Humanisme et Communisme (H.-L. Miéville) 606\nRIBONI, DENISE Un Aspect du Mysticisme goethien : la\nConception de la Puissance démonique . 586\nRIVAZ, ALICE Jura . . . . . . . . . . 414\nRIVIER, ANDRÉ Notes sur les Journalistes et le Problème de\nl'Objectivité. . . . . . . . . . 137\nROD, EDOUARD Ma Ville natale (fragment) . . . . . 382\nROHRER, HENRI Sur l'Europe chrétienne et la Civilisation\nchinoise . . . . . . . . . . 504, 572\nROLLAND, ROMAIN Message aux hommes et aux femmes d'aujourd-\nhui. . . . . . . . . . . . 25\nROUD, GUSTAVE Haut-Jorat . . . . . . . . . 400\nROUSSEAU, JEAN-JACQUES La Lac de Genève (fragment) . . . . 374\nSECRÉTAN, CLAUDE Les Sciences physiques à l'Académie de\nLausanne . . . . . . . . . . 362\nSÉNÉCHAUD, MARCEL Défense de Puccini . . . . . . 52\n— « Raskolnikoff », opéra de P. et H. Sutermeister 182\n— Festivals. . . . . . . . . . . 614\nSIMOND, DANIEL Journée à bord. . . . . . . . 409\n— Discours de Thonon. . . . . . . . 667",
+      "bbox": {
+        "x_pct": 135.73,
+        "y_pct": 109.27,
+        "w_pct": 713.93,
+        "h_pct": 783.4
+      },
+      "changed": true,
+      "change_reason": "Refined the document index into a structured text/table block."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial label was too broad (document_index) covering the entire page content.",
+    "Page number and header were not correctly segmented in initial layout."
+  ],
+  "doc_id": "160",
+  "page": 5,
+  "elapsed_seconds": 4.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

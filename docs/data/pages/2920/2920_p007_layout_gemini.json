@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Les droits de l'homme",
+      "bbox": {
+        "x_pct": 24.644,
+        "y_pct": 9.941,
+        "w_pct": 28.539,
+        "h_pct": 2.226
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and marked for filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "509",
+      "bbox": {
+        "x_pct": 70.191,
+        "y_pct": 9.941,
+        "w_pct": 4.606,
+        "h_pct": 2.226
+      },
+      "changed": true,
+      "change_reason": "Identified as page number and marked for filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'exigence absolue (Antigone)",
+      "bbox": {
+        "x_pct": 4.227,
+        "y_pct": 15.702,
+        "w_pct": 37.408,
+        "h_pct": 2.915
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour ranimer sans cesse et éduquer la racine la plus profonde et le sens des droits de l'homme, on a recouru de tout temps à l'histoire ou à la légende. Dans les exemples européens, l'exigence absolue apparaît le plus souvent meurtrière pour le héros, ravageuse pour son entourage. L'un des plus purs, c'est celui d'Antigone. L'exigence absolue, pour elle, c'était, au mépris de l'autorité instituée (l'édit du roi Créon), obéir à la loi non écrite des dieux, lui ordonnant de recouvrir de terre le cadavre de son frère, alors que le roi l'avait interdit. Elle l'a fait et elle en est morte, et autour d'elle les morts se sont multipliés. Les arguments de sa sœur Ismène, au niveau des considérations relatives, étaient bien plus raisonnables.",
+      "bbox": {
+        "x_pct": 4.227,
+        "y_pct": 20.02,
+        "w_pct": 71.325,
+        "h_pct": 31.374
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on image visual."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'agit là certes, d'un exemple extrême, où une conscience humaine se veut libre au point de s'engager absolument envers une loi transcendant toutes les données naturelles, et assume dès lors, jusqu'à la mort, la responsabilité des actes concrets par lesquels elle incarne cet engagement dans les faits. Nous sommes loin, pourrait-on penser, des énoncés positifs du droit en général, et des droits de l'homme en particulier. Et pourtant : si la revendication des droits de l'homme venait à se couper complètement de cette racine — si sauvage, si dangereuse qu'elle puisse être —, je pense qu'elle perdrait son sens.",
+      "bbox": {
+        "x_pct": 4.462,
+        "y_pct": 50.834,
+        "w_pct": 70.943,
+        "h_pct": 27.017
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on image visual."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un engagement absolu est toujours dangereux, c'est vrai. A travers toutes les formes d'intégrisme, il risque d'inspirer et de justifier les pires violations des droits. Et c'est pourquoi certains essaient de rattacher au contraire le respect des droits au rejet de tout engagement absolu, à une sorte de neutralité raisonnable et pragmatique. Mais c'est ne pas prendre au sérieux les",
+      "bbox": {
+        "x_pct": 4.904,
+        "y_pct": 77.105,
+        "w_pct": 70.648,
+        "h_pct": 16.094
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on image visual."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 5,
+  "issues": [
+    "Omitted page header and page number in original JSON",
+    "Text transcriptions were heavily truncated or erroneous",
+    "Missing bounding boxes for header/footer elements"
+  ],
+  "doc_id": "2920",
+  "page": 7,
+  "elapsed_seconds": 4.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

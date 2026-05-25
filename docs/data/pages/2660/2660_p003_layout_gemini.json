@@ -1,0 +1,52 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Inhalt",
+      "bbox": {
+        "x_pct": 43.72,
+        "y_pct": 8.849,
+        "w_pct": 9.584,
+        "h_pct": 2.471
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hans Spatzenegger: Zum Thema . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7\nThaddäus Podgorski: Die Französische Revolution und ihre Ideen 9\nMichel Vovelle: Die Französische Revolution und ihr weltweiter\nEinfluß . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13\nErnst Wangermann: Österreichische Aufklärung und Französische\nRevolution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27\nPodiumsgespräch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35\nJoseph Rovan: Christliche Konterrevolution und christliche\nDemokratie in Frankreich (1789–1850) . . . . . . . . . . . . . . . . . . . . . . . . . 57\nJeanne Hersch: Herrschaft der Gesetze und Institutionen. . . . . . . 63\nPodiumsgespräch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71\nChristian Graf von Krockow: Von der Revolution\nzur Gegenrevolution – Die Herausforderung der Gleichheit\nund die Antwort des Faschismus . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 85\nPodiumsgespräch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 97\nIring Fetscher: Die Große Französische Revolution im Spiegel des\nMarxismus . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 111\nPodiumsgespräch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 131\nErwin K. Scheuch: Eine Gesellschaft wie nie zuvor . . . . . . . . . . . . . . 143\nPodiumsgespräch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 171\nAndrás Hegedüs: Die Französische Revolution und die Renaissance\nder Zivilgesellschaft in Osteuropa . . . . . . . . . . . . . . . . . . . . . . . . . . . 179\nPodiumsgespräch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 191\nLeszek Kolakowski: Informationsbarrieren in kommunistischen\nLändern: Stärken oder Belastungen? . . . . . . . . . . . . . . . . . . . . . . . . . . 201\nPodiumsgespräch . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 219\nKarl Dietrich Bracher: Das Janusgesicht der modernen\nRevolutionen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 229\nPodiumsgespräch und Schlußdiskussion . . . . . . . . . . . . . . . . . . . . . . . 247\nDie Referenten des 14. Humanismusgesprächs und Autoren dieses\nBuches . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 265\nDie Gesprächspartner und die Diskussionsleiter\nin den Podiumsgesprächen . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 269",
+      "bbox": {
+        "x_pct": 7.844,
+        "y_pct": 15.37,
+        "w_pct": 81.967,
+        "h_pct": 72.269
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index to text, as the region represents the main content of the table of contents."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 88.462,
+        "y_pct": 89.655,
+        "w_pct": 1.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer for cleaner filtering."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Table of contents entries should ideally be individual lines or logical blocks rather than one monolithic text block."
+  ],
+  "doc_id": "2660",
+  "page": 3,
+  "elapsed_seconds": 6.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

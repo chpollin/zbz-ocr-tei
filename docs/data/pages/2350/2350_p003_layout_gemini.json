@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nichts anderes. Das ist, was du willst, ich tue das, und Hartnäckigkeit; es ist, was du willst, ich tue das. Das ist, was du willst, ich tue das, und Hartnäckigkeit. Hartnäckigkeit; es ist, was du willst, ich tue das. Das schöpft ihre Kraft daraus, daß sie nicht willkürlich, sondern gerade notwendig angesichts eines Gegenübers vollzogen wird, das absolut ist. Man ist dann versucht, zu sagen: »Gott«. Es bedeutet einfach: die existentielle Entscheidung hat es mit einer Ebene zu tun, die nicht mehr zum Relativen, Bedingten der Tatsachen gehört, sondern wo ein Bezug zum Absoluten möglich ist. Und weil es möglich ist, ist er für Existenz notwendig. Denn wenn ein Bezug zum Absoluten möglich ist, dann will man diesen Bezug unbedingt haben.",
+      "bbox": {
+        "x_pct": 9.084,
+        "y_pct": 8.252,
+        "w_pct": 37.684,
+        "h_pct": 27.591
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content and ensured consistency with paragraph label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sophie übt einen der tiefgründigen Spinozismus. Jaspers sagt also von diesem Auftauchen von Existenz zur Entscheidung in bezug auf Transzendenz und von der Transzendenz her, es sei quer zur Zeit. Diesen Ausdruck »quer zur Zeit« halte ich für wesentlich. Er bedeutet, daß Existenz der Zeit nicht fremd ist, sie verwirklicht sich nicht in der Zeitlosigkeit, sondern in der Zeit. Sie ist aber »quer zur Zeit«, weil sie die Zeit kreuzt oder durchbohrt. Sie bleibt nicht da, wo es Ursachen und Wirkungen gibt, sondern sie entspringt nur quer zur Zeit. Existenz ist ganz eng an das »Jetzt« gebunden, sie ist in der empirischen Wirklichkeit situiert. Sie hat ihren Ort in Zeit und Raum. Entstanden ist sie aber irgendwo als Geschenk, und sie zielt auf etwas anderes hin, als Absolutes, was sich hier und jetzt in der jetzigen Gegebenheit verwirklicht.",
+      "bbox": {
+        "x_pct": 6.527,
+        "y_pct": 35.024,
+        "w_pct": 39.822,
+        "h_pct": 33.118
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ursprung. Etwas Absolutes steht",
+      "bbox": {
+        "x_pct": 49.529,
+        "y_pct": 8.457,
+        "w_pct": 17.812,
+        "h_pct": 2.567
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vorlesungen und in seinen Werken mehr Giordano Galileis Überlegung umdrehung zum Tode zu verurteilen. Er rettete sein Leben, indem er ableugnete. Und man erzählt, er hätte alsdann den Kopf zur Seite gedreht und gesagt: >Eppur si muove<. - Giordano Bruno jedoch wurde hingerichtet dafür, daß er dieselbe astronomische Theorie bis zu Ende vertrat; er starb auf dem Scheiterhaufen. - Galileis Überlegung war sehr vernünftig, dann es handelte sich hier, in seinen Augen, um eine wissenschaftliche Theorie, deren Offensichtlichkeit allgemeingültig war und die man eines Tages wiederentdecken würde; an der Erdbewegung hatte einen anderen Sinn: er starb nicht, um die Lehre von der Erdrotation zu verteidigen, sondern weil er den absoluten Wert der wissenschaftlichen Wahrheit nicht verraten wollte. Eine absolute Wahrheit hängt gewissermaßen davon ab, was die Menschen dafür einsetzen, welchen Preis sie dafür zu zahlen bereit sind. Es geht nicht um die Bewegung der Erde, die Erde dreht sich sowieso weiter. Etwas anderes steht hier auf dem Spiel. Es ist wie in einer Tragödie: Wir sehen zu, und das Schicksal dieser Menschen geht uns an. Aber in Wirklichkeit sind diese Menschen, die wir im Vordergrund sehen, nur auf der Bühne da. Ihr Schicksal ist ein Bild für das, was durch diese Menschen hindurch in einem ganz bestimmten Sinn transzendent im Spiel ist. Die Menschen sterben wirklich, empirisch. Das Empirische wird dadurch nicht schwächer, aber etwas anderes, Wichtigeres, kommt hinzu und wird auf einer anderen Ebene entschieden.",
+      "bbox": {
+        "x_pct": 47.786,
+        "y_pct": 12.551,
+        "w_pct": 40.0,
+        "h_pct": 61.102
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Existenz ist selbst keine Tatsache, und Jaspers spricht deswegen, wenn er von ihr theoretisch spricht - in einer Vorlesung oder in einem philosophischen Werk -, fast immer nur von >möglicher Existenz<. Denn man kann nur von der Möglichkeit der Existenz sprechen. Wenn Kant vom kategorischen Imperativ spricht, wenn man das tut, so hat das mit Kant zu tun. Wenn Kant das als einen formellen Ausdruck bezeichnet, das ist in einer Vorlesung ein rein formeller Ausdruck sei, der den Menschen niemals",
+      "bbox": {
+        "x_pct": 47.29,
+        "y_pct": 83.307,
+        "w_pct": 38.677,
+        "h_pct": 6.772
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Most text blocks contained corrupted OCR content that needed correction.",
+    "Bbox for regions is correct, but labels should be monitored for consistent application."
+  ],
+  "doc_id": "2350",
+  "page": 3,
+  "elapsed_seconds": 7.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "clame daucun statut communautaire, daucune autorité, d'aucun livre sacré ou révélé, d'aucune institution. Elle ne dispose d'aucun moyen de contrainte, fût-ce celui d'une preuve rationnelle. Elle ne peut revendiquer pour elle la moindre évidence scientifique. Elle est donc incapable de dicter, avec une assurance impersonnelle, une conduite qui se prétendrait la seule correcte, de justifier un programme d'action ou un ordre s'imposant à tous. Pourtant c'est elle qui éclaire l'autre côté du réel, où la communauté disloquée peut retrouver ses sources, l'autorité ébranlée ses fondements, la conduite morale ses racines, la planification ses fins. La rationalité scientifique elle-même tient d'elle la force de son évidence. Toutes ces réalités sont, dans le monde, plus puissantes qu'elle, et d'ailleurs elle se perdrait si elle tentait de s'approprier la force ou les prestiges. C'est elle en revanche qui en éclaire l'origine, le sens et les limites, elle qui peut rendre un homme inébranlable en l'enracinant au-delà de la peur.",
+      "bbox": {
+        "x_pct": 10.027,
+        "y_pct": 5.801,
+        "w_pct": 83.916,
+        "h_pct": 30.9
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par fidélité à cette foi, Jaspers n'a cessé, tout au long de sa vie, d'affirmer la plus farouche indépendance à l'égard de toute forme d'appartenance confessionnelle, que ce fût à une communauté religieuse, à une autorité consacrée, à un livre qui serait le seul Livre. Mais cette indépendance absolue différait par deux traits, essentiels, de celle des agnostiques. D'abord, loin de se fonder sur l'autosuffisance de la raison, elle puisait sa force dans son ultime soumission à la transcendance, au silence de l'être, et c'est la plénitude de ce silence que Jaspers a défendue contre toute Révélation.",
+      "bbox": {
+        "x_pct": 10.163,
+        "y_pct": 36.247,
+        "w_pct": 83.97,
+        "h_pct": 17.541
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les grands philosophes. La foi philosophique, c'est l'existence s'assurant de sa liberté par l'engagement qu'elle ne cesse de prendre, face à la transcendance de laquelle elle tient tout. Elle ne s'accomplit ni dans l'abstrait, ni dans la solitude, nous l'avons vu, mais en situation et par la communication. Tout recours à une quelconque pression serait contraire à sa nature et à son sens. Elle ne peut que « faire appel » à l'existence d'autrui, et percevoir elle-même l'appel de celle-ci.",
+      "bbox": {
+        "x_pct": 10.122,
+        "y_pct": 64.636,
+        "w_pct": 83.686,
+        "h_pct": 15.63
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour Jaspers, l'espace privilégié où la foi philosophique se nourrit de la communication avec les esprits les plus grands et les plus libres, c'est celui de la tradition philosophique, le monde des grands philosophes du passé. Chacune de leurs œuvres est un chiffre privilégié qui aiguise et renouvelle la présence de l'existence à la transcendance.",
+      "bbox": {
+        "x_pct": 10.163,
+        "y_pct": 79.863,
+        "w_pct": 83.875,
+        "h_pct": 9.829
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription errors."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Text extraction quality was low, requiring manual reconstruction of sentences.",
+    "Bbox for the middle text paragraph was also clipping the line 'Ensuite, à l'égard... (36 à 44).' which was not labeled."
+  ],
+  "doc_id": "1520",
+  "page": 60,
+  "elapsed_seconds": 5.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'être humains sur la Terre, vous faites un raisonnement qui se révèle faux lorsque l'on étudie cette réalité scientifiquement. En effet, il n'est pas vrai que la population augmente de façon continue: on constate sans exception qu'au fur et à mesure que le niveau de vie des peuples s'élève, la natalité diminue. Cela s'est produit en Europe - il n'y a qu'à suivre les courbes de natalité qui chutent dans un pays après l'autre -; plus cela commence tard plus cela va vite, et il est probable qu'au fur et à mesure que les pays du tiers-monde verront leur niveau de vie s'élever, l'accroissement de la population diminuera dans des proportions considérables. Au vu de ces données, les prévisions apocalyptiques sont de la fiction. C'est pourquoi je dis qu'il faut tout de même tenir compte de ce que l'on peut connaître scientifiquement; il ne s'agit pas de faire un calcul précis et d'en tirer les conséquences trop tard, mais d'en tenir compte. Pour revenir à la mort des forêts: j'ai rencontré un homme qui était botaniste de formation et qui possédait une grande forêt en Appenzell: il n'en croyait rien de la mort des forêts. Dans le canton de Genève on dit que jamais les forêts n'ont aussi belles. Apparemment cela dépend du point de vue. Je pense que la nature connaît des hauts et des bas et qu'une forêt est quelque chose d'extrêmement complexe. Il y a quelquefois des invasions de chenilles, des invasions d'insectes. Il y a des périodes où le bois est bon marché et où on ne soigne pas les forêts: les arbres non soignés meurent. Les forêts ont aussi besoin des hommes. Mais nous n'allons pas approfondir le problème de l'écologie maintenant; ce n'est pas l'essentiel. Je veux dire que nous sommes effectivement toujours dans un état d'incertitude. Mais les problèmes que j'ai posés sont des problèmes qui dépassent l'incertitude, qui risquent d'envoyer dans des directions qui seraient complètement destructrices des droits de l'homme. On perdrait le sens de ce que c'est qu'un être humain. Il me paraît urgent d'attendre sur ce plan. En résumé: ne pas rien faire, tâcher d'apprendre à connaître les phénomènes à propos desquels on veut prendre une décision. Fixer des possibilités constitutionnelles qui permettraient de prendre des décisions extrêmement dangereuses pour l'avenir me paraît être prématuré dans beaucoup de domaines. Bemerkung aus dem Plenum. Ihr Ratschlag, abzuwarten, scheint vordergründig sehr plausibel, wenn andere Mächte auch abwarten. Sie haben das Beispiel der Genetik erwähnt. Wie ich Sie verstanden habe, gehört die Genetik zu jenen Themen, wo Sie abwarten wollen. Aber die Chemie wartet nicht! Diese Probleme werden einen oder anderen Sinne gelöst. Es kommt nur darauf an, ob sie demokratisch oder technokratisch gelöst werden. - Die einen warten, die andern nicht. Also können die anderen auch nicht warten, sondern müssen dieses Problem in einer Weise lösen, die demokratisch vertretbar erscheint.",
+      "bbox": {
+        "x_pct": 7.633,
+        "y_pct": 4.766,
+        "w_pct": 85.666,
+        "h_pct": 56.997
+      },
+      "changed": true,
+      "change_reason": "The initial transcription was truncated and incomplete. The region contains multiple paragraphs covering the main body text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hersch: Je pense que ce que vous dites est vrai. Ce n'est pas les uns qui prennent des décisions et les autres n en prennent pas. Il s'agit d'une Constitution; tout le monde prend des décisions. Nous prenons tous, tous les jours des décisions \"nach bestem Wissen und Gewissen\" (en toute conscience) et nous n'attendons pas, c'est bien évident. Il n'y a pas que l'industrie. Nous prenons tous, chacun et chaque groupe, des décisions au fur et à mesure",
+      "bbox": {
+        "x_pct": 7.572,
+        "y_pct": 82.433,
+        "w_pct": 85.091,
+        "h_pct": 10.682
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and added missing speaker name 'Hersch:' which identifies the author's response."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "- 50 -",
+      "bbox": {
+        "x_pct": 47.4,
+        "y_pct": 95.8,
+        "w_pct": 5.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number region detected at the bottom center."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial JSON had severely truncated text for the main paragraph.",
+    "Speaker attribution 'Hersch:' missing from the start of the final paragraph.",
+    "Page number not captured in initial bounding boxes."
+  ],
+  "doc_id": "2710",
+  "page": 14,
+  "elapsed_seconds": 7.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

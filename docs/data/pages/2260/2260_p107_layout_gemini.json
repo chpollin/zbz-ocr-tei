@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "NOTES BIBLIOGRAPHIQUES",
+      "bbox": {
+        "x_pct": 23.552,
+        "y_pct": 25.231,
+        "w_pct": 41.576,
+        "h_pct": 2.582
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DIEU CONTRE DIEU. Hommage à Karl Jaspers pour son soixantième anniversaire. Lausanne, Suisse contemporaine, troisième année, n° 7, juillet 1943; pages 557-560.",
+      "bbox": {
+        "x_pct": 10.788,
+        "y_pct": 42.136,
+        "w_pct": 65.976,
+        "h_pct": 9.865
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry identified as section_header/zb_heading per instructions."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ÈVE OU LA NAISSANCE ÉTERNELLE DU TEMPS",
+      "bbox": {
+        "x_pct": 11.309,
+        "y_pct": 54.079,
+        "w_pct": 65.091,
+        "h_pct": 4.71
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le Temps dans la pensée de l'homme",
+      "bbox": {
+        "x_pct": 11.273,
+        "y_pct": 59.075,
+        "w_pct": 43.721,
+        "h_pct": 2.851
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and identified as section_header per bibliographic structure."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le Locle, Micromégas, cahier IIIa (édité par Les Fabriques d'Assortiments Réunies), 1968; pages 32-35. [Photographie de Benedikt Rast]",
+      "bbox": {
+        "x_pct": 11.152,
+        "y_pct": 61.455,
+        "w_pct": 65.612,
+        "h_pct": 7.569
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry identified as section_header/zb_heading per instructions."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE COMBAT DE DRAGON",
+      "bbox": {
+        "x_pct": 11.358,
+        "y_pct": 71.379,
+        "w_pct": 38.424,
+        "h_pct": 2.128
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "in Festgabe für Carlo Schmid Tübingen; J CB. Mohr, 1962; pages 111-118.",
+      "bbox": {
+        "x_pct": 11.152,
+        "y_pct": 73.844,
+        "w_pct": 57.212,
+        "h_pct": 5.324
+      },
+      "changed": true,
+      "change_reason": "Bibliographic entry identified as section_header/zb_heading per instructions."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "107",
+      "bbox": {
+        "x_pct": 71.8,
+        "y_pct": 82.0,
+        "w_pct": 4.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Bibliographic sections were mislabeled as paragraph text",
+    "Missing bounding box for page number",
+    "OCR text for bibliographical entries was poorly transcribed"
+  ],
+  "doc_id": "2260",
+  "page": 107,
+  "elapsed_seconds": 6.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

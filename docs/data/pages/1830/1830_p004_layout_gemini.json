@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PHILOSOPHES CRITIQUES D'EUX-MEMES JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 54.333,
+        "y_pct": 7.333,
+        "w_pct": 36.655,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Header elements identified as text should be section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ecrire cette critique a pour moi une importance particuliere. En effet, cela",
+      "bbox": {
+        "x_pct": 55.546,
+        "y_pct": 15.778,
+        "w_pct": 36.655,
+        "h_pct": 13.469
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'avais cinq ans, j'ai un jour harcele mon pere de questions pour sa- voir aussi, \"Et lui, ai-je le pere a contrainte pere\": mon pere allegua que cette feuille de papier, il la voyait aussi, et que ma mere, si elle entrait, la verrait egalement. \"Oui, repliquai-je, mais si je me trompe, tu peux te tromper aussi, et Maman aussi.\" Mon pere: \"Et moi, tu me vois? Peut-etre que je ne suis pas vraiment la?\" Je commençais a avoir peur: \"Peut-etre.\" Mon pere: \"Et toi, je te vois? Peut-etre n'es-tu pas la pour vrai?\" Il me prit par la main, me conduisit dans le corridor, devant le poele ou la braise rougeoyait derriere le mica, et dit: \"Tu vois du feu? Peut-etre que ce n'est pas vrai? Eh bien, mets-y la main et tu verras.\" Je ressens encore la contrainte qui, alors, me reduisit au silence, sans m'eclairer.",
+      "bbox": {
+        "x_pct": 56.157,
+        "y_pct": 35.166,
+        "w_pct": 36.48,
+        "h_pct": 24.49
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce que je retiens de cet incident, c'est que j'avais besoin non d'une explication, mais d'un rapport au reel qui, repondit a un etrange etonnement. \"Voir\" ne suffisait pas.",
+      "bbox": {
+        "x_pct": 56.55,
+        "y_pct": 61.0,
+        "w_pct": 36.0,
+        "h_pct": 7.0
+      },
+      "changed": true,
+      "change_reason": "Added surrounding context to captured word fragment 'qui'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Autour de mes parents, etudiants tous deux, d'autres etudiants venus de l'est de l'Europe, debattaient chaque jour de tous les problemes philosophiques et politiques de l'epoque. Ils m'empechaient de dormir. Bien plus tard, j'ai decouvert que tout un vocabulaire abstrait, polonais et russe, etait depose quelque part dans ma tete, avec des significations bien precises, alors que je ne pouvais rien comprendre a ce dont il etait question.",
+      "bbox": {
+        "x_pct": 56.55,
+        "y_pct": 71.0,
+        "w_pct": 36.0,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "45",
+      "bbox": {
+        "x_pct": 92.0,
+        "y_pct": 87.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "OCR text is heavily corrupted and needs re-transcription",
+    "Headers and page numbers were misclassified as standard paragraphs",
+    "Bounding boxes were slightly offset from text block flow"
+  ],
+  "doc_id": "1830",
+  "page": 4,
+  "elapsed_seconds": 8.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

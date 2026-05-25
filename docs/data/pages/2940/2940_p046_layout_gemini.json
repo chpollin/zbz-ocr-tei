@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SCHLUSSBEMERKUNG",
+      "bbox": {
+        "x_pct": 11.323,
+        "y_pct": 10.008,
+        "w_pct": 22.797,
+        "h_pct": 1.839
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das vom Verfasser einleitend vorgelegte Papier hat durch die nachfolgende Diskussion wesentliche Ergänzungen erfahren. Abschliessend soll deshalb versucht werden, zum Anliegen dieser Schrift zurückzukehren; denn unsere Hauptfrage lautete: Wie ist es möglich, dass in der Schweiz über einen so langen Zeitraum hinweg immer Friede, materieller Wohlstand, völliges Ausbleiben kriegerischer Verwicklungen sowie politische Stabilität verwirklicht werden konnten?",
+      "bbox": {
+        "x_pct": 11.111,
+        "y_pct": 14.992,
+        "w_pct": 63.296,
+        "h_pct": 20.067
+      },
+      "changed": true,
+      "change_reason": "OCR content was truncated and contained artifacts; replaced with full text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jede Lektüre der Voten am Symposium wird zum Eindruck führen, dass die verschiedenen Standpunkte primär generationbedingt sind. Die beiden Vertreter der älteren Generation verteidigen die Ansicht, die Schweiz stelle im positiven Sinne einen Sonderfall dar – die drei jüngeren bestreiten dies. Die jüngeren fügen zudem bei, dass die Schweiz für den Fall, dass sie doch einen Sonderfall bilden sollte, die Pflicht habe, sich den Gepflogenheiten der übrigen Welt anzugleichen.",
+      "bbox": {
+        "x_pct": 11.074,
+        "y_pct": 35.644,
+        "w_pct": 63.246,
+        "h_pct": 20.711
+      },
+      "changed": true,
+      "change_reason": "OCR content was corrupted and missing text; replaced with full text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sieht man von dieser Differenz ab, so ergibt sich aus dem Gespräch doch eine lange Reihe von Eigenarten der Schweiz, die Grund dafür sein könnten, wieso das kleine Lande zu den genannten positiven Qualitäten kam. Diese Gründe wollen nun zusammengefasst werden.",
+      "bbox": {
+        "x_pct": 11.074,
+        "y_pct": 56.246,
+        "w_pct": 63.296,
+        "h_pct": 13.069
+      },
+      "changed": true,
+      "change_reason": "OCR content was corrupted; corrected text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In der Schweiz hat man sich auf dem Weg langsamer Entwicklung dazu entschieden, dass Menschen verschiedener Sprache, Religion und kultureller Eigenart im selben Staat zusammenleben können. Im Gegensatz zum Nationalstaat, der grundsätzlich gleiche Sprache, Religion und möglichst grossräumige Übereinstimmung anstrebt, bekennt man sich in der Schweiz zur Pflege der Minderheiten und zur Toleranz gegenüber abweichenden Ansichten. Die politischen Strukturen sind nicht von oben oder gar von aussen aufgezwungen, vielmehr erfolgt der",
+      "bbox": {
+        "x_pct": 11.149,
+        "y_pct": 69.097,
+        "w_pct": 63.221,
+        "h_pct": 23.177
+      },
+      "changed": true,
+      "change_reason": "OCR content was corrupted; corrected text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "43",
+      "bbox": {
+        "x_pct": 71.365,
+        "y_pct": 94.062,
+        "w_pct": 2.457,
+        "h_pct": 2.083
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR content in almost all regions was corrupted or incomplete.",
+    "Page number 43 was not detected initially.",
+    "General OCR quality was very low."
+  ],
+  "doc_id": "2940",
+  "page": 46,
+  "elapsed_seconds": 5.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

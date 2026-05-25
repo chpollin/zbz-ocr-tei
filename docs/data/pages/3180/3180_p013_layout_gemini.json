@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "eben über ihn gesagt habe, denn was ich gerade ausge führt habe, ist nichts anderes als der Anfang der Hegelschen Logik, die er in Nürnberg geschrieben hat und die ich selbstverständlich auf diesen philosophiehistorischen Anfangshintergrund projiziert habe.",
+      "bbox": {
+        "x_pct": 7.451,
+        "y_pct": 4.945,
+        "w_pct": 85.007,
+        "h_pct": 11.539
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Frage bleibt: Was ist das Ziel? Ist das Ziel unseres Philosophierens, die Widersprüche und Paradoxien, in die wir uns hausgemacht, wie Frau Pieper zu Recht sagt, selbst verstricken, aufzulösen und dahin zu kommen, daß wir nachher keine mehr haben, oder ist das Ziel nicht vielmehr, Paradoxien und Antinomien und Widersprüche als dasjenige zu betrachten und mithin auch zu retten, was unser Existieren in dieser Welt adäquater ausdrückt, als eine widerspruchsfreie Formulierung es könnte?",
+      "bbox": {
+        "x_pct": 7.301,
+        "y_pct": 18.37,
+        "w_pct": 85.352,
+        "h_pct": 20.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Darf ich diese Frage weitergeben; an wen auch immer. Bitte, Frau Hersch, wollen Sie daran anknüpfen?",
+      "bbox": {
+        "x_pct": 7.541,
+        "y_pct": 40.556,
+        "w_pct": 85.112,
+        "h_pct": 4.772
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 7.691,
+        "y_pct": 47.423,
+        "w_pct": 23.148,
+        "h_pct": 2.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich habe das Gefühl, daß das, was wirklich in der ersten Sicht ist, was man betonen und erreichen muß, das ist das Faktum, daß wir in der Zeit denken und daß ohne Zeit überhaupt nicht denken können. Ein unbewegliches Denken wäre ein Denken, das der Zeit entfliehen würde. Aber das können wir nicht. Es ist eine Prüfung, die wir nicht bestehen können; wir können keinen ewigen Gedanken erreichen. Denn während wir den Gedanken suchen, während dieser Zeit sind das Paradox und der Widerspruch schon da. Und wenn wir uns dann fragen, wo wir sind, wenn wir denken, womit wir es zu tun haben, was es bedeutet, daß wir in der Zeit sind, so können wir es gar nicht sagen. Sobald wir nämlich versuchen, es adäquat zu sagen, dringt das Paradox und Widerspruch in unsere Äußerung. Es kommt in unsere Sprache, unsere Sprache kann es gar nicht vermeiden.",
+      "bbox": {
+        "x_pct": 7.601,
+        "y_pct": 49.335,
+        "w_pct": 85.307,
+        "h_pct": 33.789
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wir stellen fest; daß wir eigentlich in der Philosophie das 20. Jahrhundert gar nicht zu erwarten brauchten, um Existenzphilosophie zu haben, sondern daß Existenz schon immer unser Schicksal gewesen ist. Wir waren in dieser Situation, indem",
+      "bbox": {
+        "x_pct": 7.601,
+        "y_pct": 85.091,
+        "w_pct": 85.097,
+        "h_pct": 9.29
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "36",
+      "bbox": {
+        "x_pct": 80.0,
+        "y_pct": 95.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified and corrected label to page_footer/filter."
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "One missing region for page number 36.",
+    "The OCR text for paragraph contents needs significant cleanup relative to image source, though layout tags are correct."
+  ],
+  "doc_id": "3180",
+  "page": 13,
+  "elapsed_seconds": 5.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

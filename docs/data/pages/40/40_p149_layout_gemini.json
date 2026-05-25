@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 151",
+      "bbox": {
+        "x_pct": 397.0,
+        "y_pct": 77.0,
+        "w_pct": 444.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Header text and page number identified as page_header/filter instead of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans l'attitude extrême de l'angoisse que la pierre les immobilisait. Puis tout s'abolit, il n'y avait plus que moi à saisir. Et moi, en ce moment, ce n'était pas une conscience, ni rien de dédoublé, rien qui se sût soi-même, c'était dans l'immense insensibilité rocheuse le lieu restreint de la douleur, l'unique douleur du monde, sans masque, jetant son cri. Douleur qui ne venait pas de l'effroi devant la fin. Au contraire, elle l'avait elle-même par son excès provoquée, attirée irrésistiblement, elle faisait mourir la terre par son désir de mourir, et maintenant c'était contre elle, contre elle seule que montait la marée compacte, pour bâillonner son cri et l'étouffer, car il était trop solitaire, discordant, hors de tout. Elle n'avait plus rien à faire non plus avec le visage de Pierre ni avec aucun visage, et pourtant subsistait, dans le froid mortel et sans frisson, la sensation aiguë d'une paume écorchée et brûlante.",
+      "bbox": {
+        "x_pct": 11.041,
+        "y_pct": 12.127,
+        "w_pct": 80.851,
+        "h_pct": 42.694
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La roche me cernait. Je me mis à courir en tous sens, heurtant voûtes et murailles. Soudain, je me sentis dans un tunnel, — j'y avançai debout, puis à genoux, puis en rampant. Enfin la pierre enferma exactement mon corps, l'immobilisa, le pénétra jusqu'au cœur.",
+      "bbox": {
+        "x_pct": 10.946,
+        "y_pct": 55.227,
+        "w_pct": 80.716,
+        "h_pct": 12.826
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne crois pas avoir perdu connaissance. Sans doute fut-ce exactement à l'instant où la roche glacée attenta à ma vie que j'ouvris les yeux sur les étoiles. En tâtonnant",
+      "bbox": {
+        "x_pct": 11.527,
+        "y_pct": 77.911,
+        "w_pct": 80.135,
+        "h_pct": 7.722
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR extraction errors."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "The page number 151 and running header were incorrectly parsed as text blocks.",
+    "OCR output for paragraphs contained significant character errors (e.g., 'me mnis', 'seng', 'gla cée', etc.).",
+    "Overall OCR fidelity on the page is low, requiring substantial manual correction."
+  ],
+  "doc_id": "40",
+  "page": 149,
+  "elapsed_seconds": 4.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

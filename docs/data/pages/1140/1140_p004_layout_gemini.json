@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "donner quelques exemples; quelques chiquenaudes pour susciter la fexion autour de prétendues évidenc",
+      "bbox": {
+        "x_pct": 13.86,
+        "y_pct": 9.191,
+        "w_pct": 64.972,
+        "h_pct": 17.892
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Le préjugé &avoir réduit à lunivocité des notions essentiellement complexes et problématiques",
+      "bbox": {
+        "x_pct": 13.965,
+        "y_pct": 29.818,
+        "w_pct": 64.948,
+        "h_pct": 4.103
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée contemporaine comme si on savait parfaitement ce 'est lhomme, la société ou lhistoire On $",
+      "bbox": {
+        "x_pct": 14.045,
+        "y_pct": 34.644,
+        "w_pct": 64.948,
+        "h_pct": 16.051
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Le rapport entre la permanence et le changement",
+      "bbox": {
+        "x_pct": 26.809,
+        "y_pct": 53.618,
+        "w_pct": 39.75,
+        "h_pct": 2.051
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie doit faire sa sUr son vieux problème, celui du rapport entre la permanence et le chan",
+      "bbox": {
+        "x_pct": 14.239,
+        "y_pct": 56.393,
+        "w_pct": 65.028,
+        "h_pct": 17.966
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "En 1968, beaucoup de gens, notamment de grands professcurs, se sont ralliés au mouvement, uniquement",
+      "bbox": {
+        "x_pct": 14.287,
+        "y_pct": 74.285,
+        "w_pct": 65.004,
+        "h_pct": 12.137
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "3",
+      "bbox": {
+        "x_pct": 77.0,
+        "y_pct": 88.0,
+        "w_pct": 3.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 100,
+  "num_corrections": 1,
+  "issues": [],
+  "doc_id": "1140",
+  "page": 4,
+  "elapsed_seconds": 5.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

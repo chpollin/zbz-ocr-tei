@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "MAIS LA PHILOSOPHIE N'EST PAS UN ART 197",
+      "bbox": {
+        "x_pct": 234,
+        "y_pct": 79,
+        "w_pct": 637,
+        "h_pct": 10
+      },
+      "changed": true,
+      "change_reason": "Header text including page number should be labeled as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pensée. Qu'il s'agisse des Idées, de la Dunamis, de l'Être, du Noumène, du Cogito ou du Moi, ce sont des chiffres uniquement déterminés par un contexte, et c'est donc enfin par une sorte de création personnelle que leur lecteur, comme il arrive du lecteur de poètes, — donne force de vie à des œuvres où le discours ordinaire est ployé à exprimer des choses que les hommes ne peuvent échanger entre eux, et qui n'existent pas dans le milieu où sonne la parole ». Valéry dit encore : « On n'a jamais constaté, et on ne peut même imaginer, deux philosophes compatibles l'un avec l'autre; ni une doctrine dont l'interprétation soit une et constante ».",
+      "bbox": {
+        "x_pct": 122.44,
+        "y_pct": 122.02,
+        "w_pct": 760.54,
+        "h_pct": 336.51
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Puisque nous sommes arrivés, à la fin de cette étude, à constater que l'illusion philosophique avait été détruite, et que la philosophie se trouvait par là acculée à une impasse, il n'est pas sans intérêt de comparer ce résultat avec la conception de Paul Valéry. La similitude des constatations et même des termes entre Jaspers et lui est trop frappante pour que j'aie besoin du souligner. Les différences, qui dérivent d'une opposition fondamentale, sont moins visibles, et plus décisives. Il est évident que Valéry, au contraire de Jaspers, n'a connu de la philosophie que le jeu. Et ce jeu en effet s'apparente à la jouissance esthétique. Jeu singulièrement acéré, attentif et sincère, qui, à la façon caractéristique de M. Teste et de Valéry, fait pénétrer d'un coup dans l'essentiel sans qu'on y reste jamais engagé. Or il y a dans la philosophie une profondeur qu'on ne",
+      "bbox": {
+        "x_pct": 123.49,
+        "y_pct": 455.0,
+        "w_pct": 760.99,
+        "h_pct": 441.37
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for accuracy."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Docling failed to capture the page header/number line correctly as an independent region.",
+    "Text transcriptions were truncated and contained significant OCR errors."
+  ],
+  "doc_id": "20",
+  "page": 199,
+  "elapsed_seconds": 6.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

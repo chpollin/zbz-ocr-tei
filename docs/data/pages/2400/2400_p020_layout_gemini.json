@@ -1,0 +1,72 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Risikobereitschaft ist ja nicht ein Schulfach. Sie ist nicht lehrbar, aber sie ist sicher lernbar. Risikobereitschaft ist eine Geisteshaltung. Ich glaube, daß Not, daß Vorbilder und eigene Erfahrungen die Risikobereitschaft wachsen lassen. Und das Problem, wie sich solche Risikobereitschaft im Unternehmen mitteilen läßt, ist in der Tat ganz zentral, denn es nützt nichts, wenn an der Spitze des Unternehmens etwas verkündet wird, was die Mitarbeiter nicht verinnerlichen und nicht aus Überzeugung mittragen.",
+      "bbox": {
+        "x_pct": 6.068,
+        "y_pct": 5.044,
+        "w_pct": 65.376,
+        "h_pct": 25.211
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Verständnis zu finden für Risikobereitschaft ist im großen Unternehmen besonders schwierig. Der Schwierigkeitsgrad wächst überproportional in großen Unternehmen, weil diese, wie alle großen Organisationen, ein inhärentes Absicherungsbedürfnis haben. Aber ich bin der Überzeugung, daß bestimmte Verhaltensweisen an der Spitze des Unternehmens die Risikobereitschaft im Unternehmen mehr fördern als andere. Die Risikobereitschaft in Unternehmen wird nicht wachsen, wenn beispielsweise Fehler stärker bestraft werden, als der Erfolg belohnt wird. Und wenn eine Erfolgsbeteiligung nur am aktuellen Cash flow gemessen wird, hat der Einzelne im Unternehmen mehr Interesse daran, einen bestehenden Zustand zu perpetuieren als etwas Neues, Risikoreiches aufzubauen.",
+      "bbox": {
+        "x_pct": 6.153,
+        "y_pct": 29.891,
+        "w_pct": 65.364,
+        "h_pct": 37.94
+      },
+      "changed": false
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Die Wirkung des Vorbildes",
+      "bbox": {
+        "x_pct": 73.944,
+        "y_pct": 62.06,
+        "w_pct": 17.646,
+        "h_pct": 3.421
+      },
+      "changed": true,
+      "change_reason": "Label changed to 'caption' as it describes the content in the margin."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es hier um die Frage der Überzeugungskraft, und diese hat mit Glaubwürdigkeit zu tun. Ich komme deshalb zurück auf das, was Frau Hersch gesagt hat. Es scheint mir fundamental zu sein: Man darf nicht andere ins Risiko führen und sich selbst außerhalb des Risikos halten. Aus dieser Überzeugung heraus sind mir auch verschiedene Vorschläge unheimlich, die in jüngster Zeit in diesem Lande politisch diskutiert wurden, wie z. B.",
+      "bbox": {
+        "x_pct": 6.104,
+        "y_pct": 67.926,
+        "w_pct": 65.291,
+        "h_pct": 20.626
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "21",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added page number as a filter."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "One missing region for the page number.",
+    "Incorrect label for margin caption."
+  ],
+  "doc_id": "2400",
+  "page": 20,
+  "elapsed_seconds": 4.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

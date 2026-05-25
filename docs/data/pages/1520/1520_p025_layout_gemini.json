@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ment sur soi, ne peut s’accomplir dignement devant autrui que si cet autrui est lié à soi par une communication existentielle, impliquant un lien qui dure à travers la vie, et le devenir-soi des deux sujets concernés. Faute de quoi ce processus doit s’accomplir solitairement, avec l’aide de la tradition des philosophes, des poètes, des sages, — et non grâce aux techniques d’une analyse conduite par un « expert ». «Ici, dit Jaspers, il ne peut y avoir pour le jugement aucune demi-mesure. » Il ne s’agit plus de science seulement, mais de raison et de liberté.",
+      "bbox": {
+        "x_pct": 8.496,
+        "y_pct": 5.938,
+        "w_pct": 83.916,
+        "h_pct": 17.087
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the visual image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Ethique du médecin",
+      "bbox": {
+        "x_pct": 8.577,
+        "y_pct": 25.767,
+        "w_pct": 25.203,
+        "h_pct": 2.194
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute la médecine doit ramener le savoir scientifique et technique à son rôle instrumental, le soumettre à l’éthique du médecin. L’autre (le malade) n’est pas pour le médecin un objet de recherche scientifique, il est une personne face à une personne, elle-même en devenir. Que le médecin soit cette « personne », c’est aussi la condition d’un esprit scientifique authentique.",
+      "bbox": {
+        "x_pct": 8.266,
+        "y_pct": 28.56,
+        "w_pct": 83.97,
+        "h_pct": 11.971
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the visual image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En effet, selon Jaspers, parler d’une part de la personnalité du médecin qui ne saurait cesser de progresser vers plus de maturité morale, et de l’autre, de la rigueur de l’esprit scientifique, ne revient nullement à juxtaposer des exigences contradictoires, au contraire: l’un est la condition de l’autre. L’esprit scientifique du médecin ne mérite plus la confiance lorsque sa personnalité perd sa fermeté et sa présence. Et sa personnalité ne conduit à rien si elle ne maîtrise pas son outil. (1 et 2).",
+      "bbox": {
+        "x_pct": 8.537,
+        "y_pct": 39.957,
+        "w_pct": 83.604,
+        "h_pct": 15.544
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the visual image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PHILOSOPHIE",
+      "bbox": {
+        "x_pct": 10.257,
+        "y_pct": 59.126,
+        "w_pct": 23.076,
+        "h_pct": 1.859
+      },
+      "changed": true,
+      "change_reason": "Removed trailing character '>' from heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L’œuvre de Karl Jaspers est une méditation rationnelle aux confins de la condition humaine.",
+      "bbox": {
+        "x_pct": 8.401,
+        "y_pct": 63.093,
+        "w_pct": 77.276,
+        "h_pct": 3.745
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je dis « méditation » et non « réflexion », ou « exploration », ou « recherche », parce que les opérations accomplies aux confins par la pensée ne concernent pas ces confins seuls, mais bien l’existence de celui qui pense, sa manière d’être un sujet pensant et sa possible liberté.",
+      "bbox": {
+        "x_pct": 8.496,
+        "y_pct": 68.578,
+        "w_pct": 83.469,
+        "h_pct": 9.889
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je dis « méditation rationnelle » parce qu’elle n’a recours ni à des expériences d’ordre affectif (émotions, sentiments, aspirations), ni à une Révélation, mais aux claires démarches de la raison. Il est vrai que cette « raison » (Vernunft) apparaît vivante, inlassablement tendue vers une vérité qui est toujours au delà de ses pouvoirs.",
+      "bbox": {
+        "x_pct": 8.171,
+        "y_pct": 79.803,
+        "w_pct": 83.794,
+        "h_pct": 9.829
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 88.586,
+        "y_pct": 91.503,
+        "w_pct": 2.474,
+        "h_pct": 2.194
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Most text fields had truncated transcriptions.",
+    "Page number 19 was missed in original JSON.",
+    "Section heading PHILOSOPHIE included a noise character >."
+  ],
+  "doc_id": "1520",
+  "page": 25,
+  "elapsed_seconds": 7.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

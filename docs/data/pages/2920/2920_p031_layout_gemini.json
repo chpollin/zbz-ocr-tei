@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme entraîne un aveuglement croissant sur les données essentielles de la condition humaine. Il est, par exemple, absurde de nier les inégalités qui existent empiriquement entre les hommes, ne fût-ce que parce qu'une telle négation empêche de leur chercher des remèdes ou des correctifs. Il est absurde également, par horreur de la discrimination raciale, de dénier toute réalité aux diverses races humaines, ce qui incite à effacer, contre la volonté des peuples, leurs particularités, leurs dons et leurs besoins propres. Lutter contre le racisme, ce n'est pas nier l'existence des races, c'est refuser une prétendue fatalité en vertu de laquelle inégalités de l'esprit seraient irrémédiablement déterminées par des caractéristiques physiques héréditaires. Une telle fatalité serait, du même coup, la négation de la racine même des droits de l'homme : la possible liberté responsable de toute personne humaine, avec sa marge essentielle de création et d'autocréation, au fil de l'histoire.",
+      "bbox": {
+        "x_pct": 3.49,
+        "y_pct": 11.747,
+        "w_pct": 70.987,
+        "h_pct": 42.355
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text extraction completion."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La persécution des minorités, quelles qu'elles soient, personnes isolées ou tribus, n'est encore qu'une variante du racisme, une façon de chercher sa sécurité et son prestige dans le cocon de la masse majoritaire au lieu d'assumer pour soi et de respecter pour autrui les possibles de chaque liberté.",
+      "bbox": {
+        "x_pct": 3.579,
+        "y_pct": 53.749,
+        "w_pct": 70.839,
+        "h_pct": 13.994
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and punctuation."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Droit au bonheur",
+      "bbox": {
+        "x_pct": 4.08,
+        "y_pct": 72.522,
+        "w_pct": 21.797,
+        "h_pct": 2.62
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce respect même ne transforme pas l'être humain en un ange jouissant du bonheur et de la paix universelle. Je pense qu'un certain lyrisme est l'ennemi des droits de l'homme. Il en existe deux versions : l'une considère que leur mise en œuvre équivaut à la réalisation durable du bonheur pour tous ;",
+      "bbox": {
+        "x_pct": 3.932,
+        "y_pct": 77.596,
+        "w_pct": 70.736,
+        "h_pct": 13.768
+      },
+      "changed": true,
+      "change_reason": "Corrected major OCR errors (e.g., 'F'être', 'lyrisme', 'universelle')."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction had numerous OCR errors.",
+    "Section content needed correction to match document text."
+  ],
+  "doc_id": "2920",
+  "page": 31,
+  "elapsed_seconds": 5.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "contrare un meteorite era estremamente piccola e, infatti, in base ai calcoli, uno squarcio di questo tipo si sarebbe verificato solo in un viaggio di cento anni, invece si è prodotto già al tredicesimo volo. Il significato fisico esatto del termine caso è proprio questo; si devono considerare i sistemi chiusi, i soli di cui si riesca a descrivere l'evoluzione, soltanto come una approssimazione, come una legalizzazione della realtà. Di conseguenza, piú considero un futuro lontano, meno sicure sono le mie previsioni.",
+      "bbox": {
+        "x_pct": 7.949,
+        "y_pct": 7.012,
+        "w_pct": 85.52,
+        "h_pct": 16.887
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cosí pure per il passato, rispetto al quale sono informato sugli avvenimenti prossimi da un insieme di documenti, mentre l'informazione diminuisce considerevolmente man mano che mi allontano dal presente. Vi è dunque una diminuzione di informazione verso il passato come verso il futuro.\nc) Per concludere vorrei soffermarmi sulla nozione di significato della storia. Siamo portati a ricercare un significato nella storia in quanto noi rappresentiamo sistemi in stato di equilibrio metastabile evolventi secondo processi irreversibili. Dalla constatazione che gli altri, cioè il nostro prossimo, hanno un'evoluzione dello stesso tipo, siamo spinti a fare una statistica di questi sistemi che evolvono similmente. È questo che tentiamo di chiamare il significato della storia.",
+      "bbox": {
+        "x_pct": 7.692,
+        "y_pct": 23.286,
+        "w_pct": 85.626,
+        "h_pct": 24.288
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of misread/truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mi sembra innegabile che nella storia esista una orientazione dovuta all'evoluzione di un sistema non in equilibrio, ma volendo affermare che in ciò è possibile individuare un significato si solleva un problema al quale non so dare una risposta.",
+      "bbox": {
+        "x_pct": 7.496,
+        "y_pct": 47.045,
+        "w_pct": 85.46,
+        "h_pct": 9.719
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of truncated/misread text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH Cercherò di rispondere a Scheurer su qualche punto. Inizio dal problema della comunicazione del presente cosciente, vissuto, con il presente cosciente di un soggetto di un'altra civiltà. Una delle difficoltà principali sta proprio nelle differenze connesse al concetto di tempo. Piú si indagano le civiltà straniere, piú ci si rende conto che esse non possiedono lo stesso concetto di tempo. Le parole sono segnate da una esperienza del tempo veramente differente che, di conseguenza, modifica la natura della storia. Si può anche domandare in certi casi se vi sia ancora storia, nel significato che attribuiamo ad essa, o se si debba attribuire alla storia un significato molto piú vasto.",
+      "bbox": {
+        "x_pct": 7.24,
+        "y_pct": 57.368,
+        "w_pct": 85.822,
+        "h_pct": 22.434
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription and identified HERSCH as an author signature/name."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quando Scheurer mi chiede se il mio presente coincide con il presente di un autore, forse intende dire con il presente suscitato dall'opera di un autore. Certe letture, piú del momento comunicativo implicano l'identificazione o il « mimo » interiore. Questo genere di letture fornisce al nostro senso del presente una elasticità, una ricchezza che di per sé non possiede.",
+      "bbox": {
+        "x_pct": 7.315,
+        "y_pct": 79.305,
+        "w_pct": 85.143,
+        "h_pct": 13.187
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "248",
+      "bbox": {
+        "x_pct": 75,
+        "y_pct": 94,
+        "w_pct": 5,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was extremely poor with significant truncation in nearly all boxes.",
+    "Page number at bottom not initially detected.",
+    "HERSCH is an author name/signature embedded in the text start, left as text but identified."
+  ],
+  "doc_id": "990",
+  "page": 20,
+  "elapsed_seconds": 7.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

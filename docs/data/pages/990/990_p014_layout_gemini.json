@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "passa, ovvero come storiografia. Quando si fa storia come scienza si è costretti a costruire una simmetria del tutto simile a quella delle scienze sperimentali, come ad esempio la fisica.",
+      "bbox": {
+        "x_pct": 9.005,
+        "y_pct": 7.558,
+        "w_pct": 85.415,
+        "h_pct": 7.343
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and typographical errors in the transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Facciamo un esempio e consideriamo il problema della nascita del capitalismo nell'Europa alla fine del medioevo. Si inizia col proporre alcune ipotesi di invarianza che si è obbligati a verificare alla luce dei fatti sperimentali — questi nel caso specifico sono i dati dei « documenti ». Cosí, ad esempio, si può avere l'ipotesi di Sombart secondo cui il capitalismo nacque perché alcuni proprietari terrieri, in seguito ad un forte incremento demografico, hanno potuto vendere i loro terreni come aree edificabili, entrando così in possesso di enormi quantità di denaro. Tuttavia questa ipotesi è stata smentita, visto che ricerche successive di storici tedeschi hanno dimostrato che ad Augusta e in altre importanti città, i primi capitalisti non erano stati originariamente proprietari immobiliari. Non intendo entrare nei dettagli di questo problema particolare; è sufficiente sottolineare che il procedimento è identico alla formulazione di una ipotesi fisica per l'interpretazione di alcuni risultati sperimentali: si cerca un invariante che, proposto come ipotesi, possa spiegare i fatti considerati, ferma restando la possibilità di poter abbandonare l'ipotesi fatta qualora si pervenga ad un contro esempio valido.",
+      "bbox": {
+        "x_pct": 8.793,
+        "y_pct": 14.652,
+        "w_pct": 85.732,
+        "h_pct": 39.098
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and typographical errors in the transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mi pare che nell'interpretazione storica ci si avvicini di molto a questo procedimento: si parte da alcuni dati, per formulare poi una ipotesi di invarianza, facendo cioè intervenire considerazioni di simmetria del tutto analoghe a quelle delle leggi sperimentali, al fine di interpretare i fatti stessi. Ma non solo: occorre riuscire a prevedere nuovi fatti. Il che non significa anticipare quello che accadrà domani, dopodomani o nel 1980, ma ciò che nuovi « documenti del passato » saranno in grado di indicarci. Ci si attende che, se l'ipotesi è buona, se il principio di simmetria è valido, tutto ciò che si potrà scoprire in futuro riguardo a un argomento passato dovrà confermare l'ipotesi.",
+      "bbox": {
+        "x_pct": 9.155,
+        "y_pct": 53.063,
+        "w_pct": 85.52,
+        "h_pct": 22.161
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and typographical errors in the transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Premetto che non voglio escludere questa possibilità, tuttavia, a mio avviso, la struttura complessa delle condizioni storiche impedisce a qualsiasi teoria di essere la sola valida: con una teoria storica, infatti, si colgono solo alcuni aspetti. Ora quando Agazzi afferma che nella storia tutto accade come in fisica, si applica implicitamente la simmetria del primo tipo.",
+      "bbox": {
+        "x_pct": 9.05,
+        "y_pct": 75.935,
+        "w_pct": 85.475,
+        "h_pct": 13.469
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription to match document content, removing redundant header tag 'HERSCH' erroneously parsed as part of paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ma ciò ho forti dubbi in quanto esiste una differenza strutturale tra la storia e la fisica; la storia può infatti es-",
+      "bbox": {
+        "x_pct": 9.351,
+        "y_pct": 88.576,
+        "w_pct": 85.219,
+        "h_pct": 3.949
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "242",
+      "bbox": {
+        "x_pct": 9.0,
+        "y_pct": 96.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and correctly identified as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 6,
+  "issues": [
+    "Original transcription was highly truncated.",
+    "Author name HERSCH was incorrectly embedded in the paragraph block.",
+    "Page number 242 was not detected as a region."
+  ],
+  "doc_id": "990",
+  "page": 14,
+  "elapsed_seconds": 7.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

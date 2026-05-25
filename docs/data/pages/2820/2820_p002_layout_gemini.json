@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_heading",
+      "text": "Lettre à Peter Sager",
+      "bbox": {
+        "x_pct": 39.408,
+        "y_pct": 77.294,
+        "w_pct": 21.206,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header/zb_heading as it is the title of the section."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien vite apparut l'énormité des problèmes économiques. Le défi qui s'imposait était celui d'une entr'aide sans précédent, dont on n'imaginait encore ni les dimensions, ni les formes, ni les modalités. Il fallait avant tout changer les hommes et leurs organisations immédiates, implanter des compétences, inventer des connexions, remédier à des blocages, à des manques soudains, greffer l'espoir et le goût du risque dans un espace immense, amorphe et discontinu, écrasé à la fois par le pouvoir central, par l'anarchie et la peur. Ce qui était certain, c'est qu'il faudrait apporter une aide massive, sans précédent, qu'on tenta d'évaluer en dollars ou en écus. Dans l'immédiat, c'était le plus facile.",
+      "bbox": {
+        "x_pct": 9.762,
+        "y_pct": 113.124,
+        "w_pct": 82.353,
+        "h_pct": 20.105
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR content error."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On s'efforça de susciter en Occident une ambition capitaliste démesurée, inspirée à la fois par la concurrence des libres entreprises entre elles et par un dessein missionnaire de secours aux peuples, aux terres, aux eaux, aux champs, aux forêts, à tout ce qui avait longuement périclité à l'Est.",
+      "bbox": {
+        "x_pct": 9.599,
+        "y_pct": 32.665,
+        "w_pct": 82.428,
+        "h_pct": 10.411
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR content error."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les économistes occidentaux se trouvaient en fait confrontés à un problème tout neuf: comment passer d'une économie sous dirigisme absolu, et en pleine anarchie, à une économie de marché? Par quel bout fallait-il prendre ce problème? Comment venir en aide à un audacieux de l'Est qui, essayant de faire démarrer une entreprise nouvelle, avait imaginé, pour faire supporter les sacrifices du début à ses ouvriers, de les séduire en leur procurant ce qui leur manquait le plus: des logements suffisants. Ils étaient logés une famille par chambre, et la perspective d'un appartement ouvrait un paradis. Oui, mais pour faire des maisons il fallait des briques et du bois. Le patron avait les briques, mais pas le bois. Comment faire pour que briques et bois se trouvent au même moment au même endroit? Comment faire pour qu'un moyen de transport soit disponible à l'endroit d'où le bois devait venir? Comment faire pour sortir de la boue où tout s'enlise, et qui stagne pendant des mois dans ce qui sert de chemin?",
+      "bbox": {
+        "x_pct": 9.512,
+        "y_pct": 42.754,
+        "w_pct": 82.641,
+        "h_pct": 31.184
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR content error."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces plaines continentales sont immenses, les hivers interminables et rigoureux. Temps et espace peuvent y servir de prisons sans barreaux.",
+      "bbox": {
+        "x_pct": 9.762,
+        "y_pct": 74.018,
+        "w_pct": 82.19,
+        "h_pct": 6.119
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR content error."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certains, à l'Ouest de l'Europe, ont cru assister à la naissance d'un paradis de paix et de Droits de l'homme. Il ne restait plus qu'un petit effort à faire au niveau matériel, économique. Ensuite il n'y aurait plus qu'à désarmer et à s'occuper tous ensemble, dans la maison commune réunifiée, des problèmes du tiers-monde.",
+      "bbox": {
+        "x_pct": 9.512,
+        "y_pct": 79.791,
+        "w_pct": 82.441,
+        "h_pct": 10.169
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR content error."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 9.5,
+        "y_pct": 93.5,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter as per instructions."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Initial OCR was very poor and required full manual text correction.",
+    "Page number missing from initial detection.",
+    "Section title Lettre à Peter Sager missing from initial detection."
+  ],
+  "doc_id": "2820",
+  "page": 2,
+  "elapsed_seconds": 6.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

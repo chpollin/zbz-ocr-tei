@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "7 novembre",
+      "bbox": {
+        "x_pct": 69.554,
+        "y_pct": 27.788,
+        "w_pct": 17.108,
+        "h_pct": 1.89
+      },
+      "changed": true,
+      "change_reason": "This is a date/heading entry, not a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les jours firent des semaines, les semaines des mois. Non seulement il ne venait plus, mais il me fuyait. Une fois, je passais sur le pont du Mont-Blanc. La bise, pleine d'écume et de soleil, glacée, mais vive comme une flamme, purifiait de toute vie sentimentale et livrait le corps à la joie. Tout à coup, j'eus mal, un mal précis que je reconnus aussitôt. Quelque chose d'opaque et de brûlant passa à toute vitesse à côté de moi. Puis la bicyclette ralentit un peu son allure, et je pus constater, avec les yeux enfin, que je ne m'étais pas trompée. Un autre jour, je le vis en ville, de loin, qui avançait vers moi sans me voir. Une peur panique me fixa sur place. Il me semblait qu'il allait marcher sur moi en aveugle et m'écraser, comme le font, dans les contes ou les cauchemars, les géants. Mais il me vit avant le heurt; il traversa la rue et se mit à courir.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 32.514,
+        "w_pct": 80.986,
+        "h_pct": 37.902
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pensais encore vaguement à sa mère, qui avait toujours été si douce pour moi, comme à un refuge. Un jour, malgré l'hiver, le soleil était doux, elle vint un instant sur son balcon avec l'enfant. Mon premier regard, à la récréation, était toujours pour ce balcon. Elle m'aperçut. J'allais la saluer quand je la vis rentrer, fermer la fenêtre.",
+      "bbox": {
+        "x_pct": 10.095,
+        "y_pct": 70.444,
+        "w_pct": 80.757,
+        "h_pct": 15.312
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match image."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction for paragraphs was highly inaccurate (garbled characters/truncated words).",
+    "Date entry at the top incorrectly tagged as paragraph."
+  ],
+  "doc_id": "40",
+  "page": 89,
+  "elapsed_seconds": 4.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

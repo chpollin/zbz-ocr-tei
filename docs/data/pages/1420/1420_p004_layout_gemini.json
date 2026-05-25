@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "et multiplie portée de nos sens, elle étend ainsi notre faculté de cevoir et de déchiffrer le monde.",
+      "bbox": {
+        "x_pct": 6.922,
+        "y_pct": 28.488,
+        "w_pct": 28.433,
+        "h_pct": 63.451
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "II importe donc que nous réapprenions travail, la",
+      "bbox": {
+        "x_pct": 7.132,
+        "y_pct": 92.037,
+        "w_pct": 28.191,
+        "h_pct": 2.729
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "peine; cristallisées dans le monde technique qui nous entoure. Ils représentent un énorme accroissem",
+      "bbox": {
+        "x_pct": 36.834,
+        "y_pct": 62.337,
+        "w_pct": 27.948,
+        "h_pct": 16.157
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour qui sait lire; la condition humaine est tout entière lisible dans la réalité technique. La tech",
+      "bbox": {
+        "x_pct": 36.858,
+        "y_pct": 78.552,
+        "w_pct": 27.948,
+        "h_pct": 16.388
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'attitude de nos contemporains à légard de la technique est ambiguë jusqu'à la contradiction: D'une",
+      "bbox": {
+        "x_pct": 66.179,
+        "y_pct": 62.32,
+        "w_pct": 28.005,
+        "h_pct": 32.527
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 95.582,
+        "y_pct": 27.023,
+        "w_pct": 1.292,
+        "h_pct": 1.252
+      },
+      "changed": true,
+      "change_reason": "Label changed to _filter as it is a page number."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Fixed label for page number."
+  ],
+  "doc_id": "1420",
+  "page": 4,
+  "elapsed_seconds": 17.2,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to _filter as it is a page number.": 1
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "est si concret que l'énoncé de la liberté ne peut être, en somme, un synonyme abstrait de la liberté.",
+      "bbox": {
+        "x_pct": 5.944,
+        "y_pct": 8.005,
+        "w_pct": 80.242,
+        "h_pct": 4.63
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match visible scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les hommes, souvent las de leur condition temporelle, se construisent autour du présent paradoxal. Ils voudraient ou bien l'arbitraire total - que tout soit toujours permis, ou bien que les lois des dieux soient clairement écrites et puissent s'imposer à tous par l'évidence ou la force. La liberté vit de l'impossibilité d'une telle abdication. Elle s'enracine dans l'exigence du présent paradoxal, miniature d'éternité, qui fonde et qui perce le temps.",
+      "bbox": {
+        "x_pct": 5.867,
+        "y_pct": 20.175,
+        "w_pct": 80.268,
+        "h_pct": 16.791
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match visible scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais si l'on me demande - comme un grand savant me l'a demandé un jour - comment concevoir, non le temps vécu de la liberté, mais celui de la nature, je réponds que je n'en sais vraiment rien. Devant ce mystère, certains se réfugient dans le temps représenté par la lettre t dans les équations des physiciens. Ils substituent à une conception du temps la faculté de le mesurer indirectement. D'autres en viennent à dire que, dans la nature, sans conscience et sans liberté, le temps n'existe pas. Pourtant il faut évidemment “du temps” au morceau de sucre pour fondre dans une tasse de thé, au poussin pour devenir une poule, à l'eau pour creuser le rocher.",
+      "bbox": {
+        "x_pct": 5.995,
+        "y_pct": 44.281,
+        "w_pct": 80.191,
+        "h_pct": 26.068
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match visible scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La barrière kantienne, qui nous enferme dans le monde phénoménal, ne cède pas, ici non plus. Je ne sais pas.",
+      "bbox": {
+        "x_pct": 6.122,
+        "y_pct": 72.901,
+        "w_pct": 80.064,
+        "h_pct": 4.929
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match visible scan."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text recognition was severely degraded/garbled in all regions.",
+    "Page number at bottom right was omitted from the JSON layout list, should be captured as page_footer."
+  ],
+  "doc_id": "2600",
+  "page": 13,
+  "elapsed_seconds": 5.08,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

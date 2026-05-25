@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "page_header",
+      "text": "IDÉOLOGIES ET RÉALITÉ 139",
+      "bbox": {
+        "x_pct": 307.75,
+        "y_pct": 74.456,
+        "w_pct": 537.497,
+        "h_pct": 21.059
+      },
+      "changed": true,
+      "change_reason": "Header text and page number identified as page_header instead of plain text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par la confusion des valeurs incarnées, des choses valorisées. L'air de la montagne est salubre, mais la pureté parfaite des trop grandes altitudes devient irrespirable. L'orgueil y triomphe plutôt que l'efficacité et l'amour. La valeur absolue se fait aimer à travers les créatures, mais toute créature risque de devenir — et doit peut-être devenir jusqu'à un certain point — l'idole qui en barre l'accès.",
+      "bbox": {
+        "x_pct": 42.128,
+        "y_pct": 104.707,
+        "w_pct": 844.757,
+        "h_pct": 142.368
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La société reflète cette ambiguïté. L'idéal d'un corps social dépouillé de sa spiritualité propre, de cette âme collective dont nous avons parlé avec tant de suspicion, de ces obéissances superstitieuses qui altèrent par des voies extra-conscientielles, quasi organiques, la liberté individuelle, l'idéal d'une société où chacun se déciderait hors de toute pression indirecte, en pleine lucidité, est sans doute aussi absurde et mortel que celui d'une personnalité trouvant son parfait épanouissement dans une splendide solitude. Le milieu social est et doit être plein d'odeurs, comme l'air que nous respirons ; mais des odeurs ne doivent pas être rigoureuses. Elles sont si peu faites pour la logique ou pour la morale qu'elles échappent non seulement à la définition, mais aussi à la description. L'âme collective n'est pas rien, elle n'est pas tout, elle n'est pas Dieu : elle est un ensemble d'odeurs. Elle vit, — elle laisse vivre et elle fait vivre tant qu'elle reste respirable, dans sa vague inconsistance. Vague, mais précise, de cette précision qui appartient à la nuance inexprimable et non à la couleur nommée. Inconsistante, mais exigeante, de cette exigence sans armes des choses aimées, pour lesquelles on meurt avec simplicité parce que, sans elles, on ne sait pas vivre.",
+      "bbox": {
+        "x_pct": 42.128,
+        "y_pct": 246.883,
+        "w_pct": 847.625,
+        "h_pct": 412.661
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc l'âme collective me paraît n'être réelle qu'à condition de manquer d'une certaine densité d'être qui ne peut ni ne doit lui appartenir. Elle est, sur le plan spirituel, le milieu vitalement nécessaire à travers lequel l'être individuel et la valeur absolue se cherchent. Elle tient du sujet l'élément de personnification qui l'unifie; de la valeur absolue, sa puissance impérative. Le reste de son épaisseur lui vient des faits. Il y a en elle une part de superstition indispensable, mais qui reste en quelque sorte en suspens grâce au caractère flou de l'être dont elle transmet l'exigence et à la complexité mobile, libre de tout ciment ontologique, des éléments qui la constituent. Dès qu'elle s'érige en être substantiel,",
+      "bbox": {
+        "x_pct": 42.128,
+        "y_pct": 654.192,
+        "w_pct": 847.625,
+        "h_pct": 224.872
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 1,
+  "issues": [
+    "Page header with page number was mislabeled as text."
+  ],
+  "doc_id": "330",
+  "page": 173,
+  "elapsed_seconds": 5.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

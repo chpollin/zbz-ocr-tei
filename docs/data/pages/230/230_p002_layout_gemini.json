@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "subito Urheberrechtshinweis",
+      "bbox": {
+        "x_pct": 26.105,
+        "y_pct": 22.761,
+        "w_pct": 43.952,
+        "h_pct": 2.413
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Bestellung und Nutzung der über subito gelieferten Aufsatzkopien unterliegen urheberrechtlichen Bestimmungen. Mit der Registrierung bei subito verpflichten Sie sich, diese einzuhalten.",
+      "bbox": {
+        "x_pct": 24.516,
+        "y_pct": 29.133,
+        "w_pct": 61.185,
+        "h_pct": 6.081
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Kopien von subito sind grundsätzlich zum eigenen Gebrauch bestimmt und dürfen, außer, wenn sie durch eine Hilfsperson bestellt worden sind, nicht an Dritte weitergegeben werden.",
+      "bbox": {
+        "x_pct": 24.597,
+        "y_pct": 35.898,
+        "w_pct": 61.129,
+        "h_pct": 3.993
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Kopien sind mit einem Wasserzeichen versehen, welches einen Urheberrechtsvermerk enthält. Das von subito e.V. angebrachte Wasserzeichen darf nicht entfernt werden.",
+      "bbox": {
+        "x_pct": 10.403,
+        "y_pct": 46.281,
+        "w_pct": 75.323,
+        "h_pct": 5.476
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Weiterverwendet werden können innerhalb Deutschlands durch deutsche Bibliotheken ausgelieferte Kopien unter Beachtung der urheberrechtlichen Schrankenregelungen. So können sie zum Beispiel unter Einhaltung der nach § 60a UrhG geltenden Bestimmungen für den Unterricht und die Lehre an Bildungseinrichtungen, etwa auch für Semesterapparate und in Schulen genutzt werden. Dies gilt nicht nur für analoge, sondern auch für digitale Plattformen für Unterrichts- und Lehrmedien. Unter Beachtung von § 45 UrhG können analoge und digitale Kopien auch in Verfahren vor einem Gericht, einem Schiedsgericht oder einer Behörde verwendet werden.",
+      "bbox": {
+        "x_pct": 10.161,
+        "y_pct": 52.921,
+        "w_pct": 75.379,
+        "h_pct": 15.117
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Für Kopienlieferungen mit dem Ziel außerhalb Deutschlands sind alle einschlägigen urheberrechtlichen Bestimmungen des Landes zu beachten, in dem der Nutzer seinen (Wohn-) Sitz hat.",
+      "bbox": {
+        "x_pct": 10.185,
+        "y_pct": 68.893,
+        "w_pct": 75.274,
+        "h_pct": 5.533
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Im Zweifel wenden Sie sich bitte an die Rechtsabteilung Ihres Unternehmens oder an einen Rechtsanwalt.",
+      "bbox": {
+        "x_pct": 10.242,
+        "y_pct": 75.317,
+        "w_pct": 75.137,
+        "h_pct": 3.691
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Detected OCR text was heavily truncated in all paragraph regions.",
+    "Corrected text contents to match source image."
+  ],
+  "doc_id": "230",
+  "page": 2,
+  "elapsed_seconds": 5.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "minée, cette révolution n'a alors pas de sens. Lorsque le sens manque, on se débat; et lorsqu'on se ",
+      "bbox": {
+        "x_pct": 4.595,
+        "y_pct": 7.398,
+        "w_pct": 88.068,
+        "h_pct": 20.333
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "6ème thèse:",
+      "bbox": {
+        "x_pct": 5.095,
+        "y_pct": 31.57,
+        "w_pct": 13.959,
+        "h_pct": 1.792
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En même temps, les sciences humaines débattent dans extrême désarroi, et internationales   qui   vou",
+      "bbox": {
+        "x_pct": 4.865,
+        "y_pct": 33.507,
+        "w_pct": 88.243,
+        "h_pct": 10.154
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les sciences humaines sont plus nécessaires que jamais Mais il ne leur appartient pas de résorber ou",
+      "bbox": {
+        "x_pct": 4.824,
+        "y_pct": 43.575,
+        "w_pct": 88.459,
+        "h_pct": 19.932
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je crois qu'il importe pour les sciences humaines d'accomplir ce que mon maître Jaspers appelait: sich bescheiden, l'acte de se restreindre. Consentir à des aspects partiels, à des méthodes spécifiques. Ramener l'homme à sa condition, l'aider à accepter celle-ci, avec son irréductibilité à un savoir. L'aider à assumer son centre existentiel, son rapport au transcendant, son recours au permanent pour fonder et pour justifier le changement. Et essentiellement: son besoin d'un sens.",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 65.5,
+        "w_pct": 88.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing main text paragraph block"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "223",
+      "bbox": {
+        "x_pct": 94.0,
+        "y_pct": 93.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number in footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Main body text block missing in original input",
+    "Page number missing in original input"
+  ],
+  "doc_id": "1180",
+  "page": 8,
+  "elapsed_seconds": 5.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

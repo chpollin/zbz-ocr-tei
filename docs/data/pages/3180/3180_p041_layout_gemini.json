@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Denn es gehört schließlich eine gewisse Evidenz dazu; überhaupt ein Paradox als Paradox zu erfahren. Es könnte ja auch sein, daß wir überhaupt keine Paradoxa erkennen. Ist also nicht die Bedingung der Möglichkeit – und da wäre die Transzendentalphilosophie gefragt – dafür, Paradoxa zu erfahren, daß wir mit einem Bein in der Wahrheit stehen, zu der wir hinstreben sollen; gibt es also ein letztes Paradox, das nicht auflösbar ist?",
+      "bbox": {
+        "x_pct": 9.027,
+        "y_pct": 3.16,
+        "w_pct": 85.389,
+        "h_pct": 18.124
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 9.626,
+        "y_pct": 36.639,
+        "w_pct": 33.638,
+        "h_pct": 2.004
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Darüber werde ich nachdenken, vor allen Dingen, weil ich es in der Tat eine schöne Frage finde, die ihrerseits ziemlich paradox ist, und zwar deswegen, weil ich bisher derjenige war, der versucht hat zu zeigen, daß man alle Paradoxien – oder jedenfalls die meisten, die man so kennt – auflösen kann. Und da ist es natürlich eine wunderbar paradoxe Forderung, daß derjenige, der das behauptet, nun ein Paradox nennen soll, das er nicht auflösen kann. Damit haben Sie die Antwort schon: Ihre Frage ist das Paradox, das ich nicht auflösen kann. – Nein, das wäre zu billig, ich überlege es mir noch genauer. Das dauert ein Weilchen.",
+      "bbox": {
+        "x_pct": 8.982,
+        "y_pct": 38.616,
+        "w_pct": 85.329,
+        "h_pct": 24.499
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in the original detection; updated to include the full paragraph content matching the image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Frage aus dem Publikum (A):",
+      "bbox": {
+        "x_pct": 8.982,
+        "y_pct": 65.483,
+        "w_pct": 44.506,
+        "h_pct": 2.55
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich im Zusammenhang damit, ob eine Lüge gut oder schlecht ist? Ich könnte doch auch fragen: Ist eine Lüge weiß? Dann würde man sagen: Die Frage ist unsinnig. Ich könnte es vielleicht irgendwie herleiten, aber es ist unsinnig. Man könnte sagen: Ist sie langsam, die Lüge? Das, würde man sagen, ist auch eine unsinnige Frage. Frage ich aber, ob eine Lüge gut ist, kann ein anderer antworten, daß sie schlecht ist. Dann aber könnte auch ich sagen, daß das eine unsinnige Feststellung ist. Meine Frage also: Warum bleiben Sie bei diesen Begriffen? Was hält Sie an ,gut‘ und ,schlecht‘? Ist das ein Normsystem, in dem Sie stehen?",
+      "bbox": {
+        "x_pct": 8.787,
+        "y_pct": 67.423,
+        "w_pct": 85.419,
+        "h_pct": 24.991
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in the original detection; updated to include the full paragraph content matching the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "64",
+      "bbox": {
+        "x_pct": 99.8,
+        "y_pct": 94,
+        "w_pct": 3,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction for paragraphs was truncated/incomplete.",
+    "Page number 64 was not detected as a region initially.",
+    "Detection missing text lines for paragraph 2 and 3."
+  ],
+  "doc_id": "3180",
+  "page": 41,
+  "elapsed_seconds": 5.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

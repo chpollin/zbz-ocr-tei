@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Pourquoi une éducation physique?</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1690</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Pourquoi une éducation physique?</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1980</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). Exzellenter Hersch-Vortrag ueber Sporterziehung; Italienische Einleitung fehlt Sprach-Annotation (kein foreign-Element); Hersch-Werkverweis Die Hoffnung Mensch zu sein korrekt als bibl</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1203" lry="1742">
+      <zone xml:id="facs_1_r_1" ulx="624" uly="78" lrx="1166" lry="240" />
+      <zone xml:id="facs_1_r_2" ulx="67" uly="391" lrx="213" lry="414" />
+      <zone xml:id="facs_1_r_3" ulx="811" uly="412" lrx="1163" lry="1672" />
+      <zone xml:id="facs_1_r_4" ulx="66" uly="422" lrx="642" lry="470" />
+      <zone xml:id="facs_1_r_5" ulx="67" uly="478" lrx="792" lry="694" />
+      <zone xml:id="facs_1_r_6" ulx="69" uly="732" lrx="393" lry="764" />
+      <zone xml:id="facs_1_r_7" ulx="440" uly="732" lrx="791" lry="904" />
+      <zone xml:id="facs_1_r_8" ulx="65" uly="769" lrx="419" lry="1270" />
+      <zone xml:id="facs_1_r_9" ulx="440" uly="900" lrx="793" lry="1258" />
+      <zone xml:id="facs_1_r_10" ulx="68" uly="1267" lrx="421" lry="1505" />
+      <zone xml:id="facs_1_r_11" ulx="465" uly="1296" lrx="767" lry="1417" />
+      <zone xml:id="facs_1_r_12" ulx="439" uly="1479" lrx="791" lry="1673" />
+      <zone xml:id="facs_1_r_13" ulx="68" uly="1507" lrx="419" lry="1674" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1203" lry="1742">
+      <zone xml:id="facs_2_r_1" ulx="57" uly="387" lrx="414" lry="796" />
+      <zone xml:id="facs_2_r_2" ulx="80" uly="826" lrx="386" lry="1162" />
+      <zone xml:id="facs_2_r_3" ulx="831" uly="828" lrx="1135" lry="972" />
+      <zone xml:id="facs_2_r_4" ulx="429" uly="828" lrx="785" lry="1309" />
+      <zone xml:id="facs_2_r_5" ulx="831" uly="972" lrx="1136" lry="1095" />
+      <zone xml:id="facs_2_r_6" ulx="54" uly="1195" lrx="409" lry="1580" />
+      <zone xml:id="facs_2_r_7" ulx="849" uly="1195" lrx="1134" lry="1267" />
+      <zone xml:id="facs_2_r_8" ulx="453" uly="1362" lrx="761" lry="1648" />
+      <zone xml:id="facs_2_r_9" ulx="54" uly="1576" lrx="407" lry="1674" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          Sporterziehung in der Schule 7/8/1980 S.33/34
+        </head>
+        <p facs="#facs_1_r_2">
+          Science des sports<lb facs="#facs_1_l_2_1" n="N001" />Sportwissenschaft<lb facs="#facs_1_l_2_2" n="N002" />Scienza dello sport
+        </p>
+        <p facs="#facs_1_r_3">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_1_r_4">
+          Pourquoi une éducation physique?
+        </p>
+        <p facs="#facs_1_r_5">
+          Certamente <persName ref="#zbz-p.2">Jeanne Hersch</persName> non è la specialista in educazione sportiva, ciò non vuol dire però che in quanto filosofa non abbia niente a che dire a questo proposito. In occasione della «conferenza dei capi degli istituti universitari per l'educazione fisica», <persName ref="#zbz-p.2">Jeanne Hersch</persName> tenne un discorso alquanto rimarchevole su «Scopi e compiti dell'educazione fisica», discorso che sebbene tenuto da un outsider comunicò delle idee critiche e degli impulsi che veramente sono degni di nota quali: «Interdépendance», «Liberté», «Souplesse», «Visibilité», «Jeu compétitif», «Réhabilitation du travail manuel», «Solidarité», «Egalité», «Agressivité et l'amour».
+        </p>
+        <p facs="#facs_1_r_6">
+          Réflexions sur les finalités
+        </p>
+        <p facs="#facs_1_r_7">
+          La toute première, je la mets sous le signe du poète <persName ref="#zbz-p.173">Rimbaud</persName>. Il a dit de l'homme qu'il est «une âme et un corps». Je mets l'accent sur le plus petit de ces mots, le mot «et»: il souligne l'importance de la jonction des deux. Toute éducation peut-être, mais toute éducation physique en tous cas, doit aider celui qui en bénéficie à approfondir le rapport «une âme et un corps».
+        </p>
+        <p facs="#facs_1_r_8">
+          Qu'est-ce que cette interdépendance, cette unité de deux réalités aussi différentes? L'interdépendance rappelle l'unité des deux, et en même temps la maîtrise possible de l'âme sur le corps, de façon qu'elle ne s'englue pas dans son corps comme une mouche s'englue dans un ruban collant. Il s'agit en somme d'apprendre à approfondir et à maîtriser les conditions de notre possible liberté.
+        </p>
+        <p facs="#facs_1_r_9">
+          Le mot liberté est très à la mode; mais il semble souvent vidé de son sens. On parle de la liberté comme si c'était une chose qu'on possède, en quelque sorte donnée d'avance, une espèce de fait acquis. Nous avons deux yeux, un nez, une bouche, des oreilles, et puis la liberté. Eh bien non! Ce qui nous est donné, c'est que nous pouvons devenir libres.
+        </p>
+        <p facs="#facs_1_r_10">
+          Certains d'entre vous connaissent peut-être le titre d'un de mes livres, en allemand (parce qu'il n'a paru qu'en allemand) «<bibl ref="#zbz-w.92">Die Hoffnung Mensch zu sein</bibl>». On ne possède pas son humanité – ce que j'appelle l'humanité ici, c'est justement le fait d'être libre –, on
+        </p>
+        <p facs="#facs_1_r_11">
+          ne possède pas sa liberté, on espère se rendre libre. Devenir un être libre, c'est en tout premier lieu assurer l'indépendance et l'unité de l'âme et du corps, d'une part, et la maîtrise de l'un sur l'autre part, pour que l'un ne soit pas englouti dans l'autre.
+        </p>
+        <p facs="#facs_1_r_12">
+          J'ai parlé tout à l'heure de s'engluer dans son corps. Il n'y avait là rien d'hostile à l'égard du corps, au contraire. Je crois qu'il y a deux manières de manquer sa liberté, par rapport au corps. L'une est de le mépriser, de faire comme s'il n'existait pas; c'est l'attitude puritaine qui, en général, aboutit à une revanche brutale du corps, qui échappe complètement à l'influence de l'âme. L'autre manière, au contraire, est de s'y engluer, de s'y perdre, de s'y subordonner et de le laisser régner en tant que facteur d'engourdissement et de répétition.
+        </p>
+        <p facs="#facs_1_r_13">
+          «A mon sens, l'éducation physique devrait exclure le galvaudage du corps. Une considération telle que „ceci ne touche que mon corps, cela n'a pas d'importance" devrait nous mettre en garde.»
+        </p>
+        <p>
+          Donc, première finalité de l'éducation physique: la liberté, la conquête, la création de la liberté, conçue comme un approfondissement et une maîtrise de la relation «âme et corps». Si cela est vrai, l'éducation physique apparaît aussitôt comme ayant une fonction conjuguée mais double. D'une part apprendre à vouloir – parce que la liberté passe par le vouloir – non pas en laissant son corps de côté, non pas en dehors et indépendamment du corps comme si nous étions des anges, mais à vouloir avec son corps et à travers son corps. Cela est un premier aspect. L'autre, qui est complémentaire, consiste à rendre le corps perméable, réceptif à ce vouloir. On peut exercer, entraîner son corps, de façon qu'il accueille ce vouloir, c'est-à-dire s'efforcer de faire du corps un instrument expressif du vouloir de l'âme.
+        </p>
+        <p>
+          «Vous savez qu'on parle beaucoup de réhabiliter le travail manuel. Mais on a largement perdu de vue les effets pédagogiques que le travail manuel peut avoir sur l'âme et le caractère parce qu'il présente, comme l'éducation physique, cette évidence de la chose faite, où l'objet parle de lui-même, manifeste ce qui a été fait, la qualité de ce qui a été fait, et dresse ainsi l'esprit à une forme de franchise et d'honnêteté que les <bibl ref="#zbz-w.39">exercices spirituels</bibl> n'exigent pas toujours (dans certaines disciplines peut-être, mais de loin pas dans toutes).»
+        </p>
+        <p>
+          Du côté du vouloir, l'éducation physique cherchera à développer d'abord le courage. Il faut en effet beaucoup moins de courage pour rêver ses actions que pour les accomplir. Vous connaissez tous les bonnes résolutions, par exemple pour tout ce que l'on fera durant le weekend etc. L'intention est bonne, mais l'enfer en est pavé. Quand cela doit passer par le corps, on affronte une épreuve – «oui ou non je l'ai fait» –, et c'est ce qui me fait dire qu'il y a, dans la confrontation du vouloir avec le corps, une épreuve de courage. Dans ce sens, l'éducation physique tend à développer le courage en même temps qu'une certaine confiance en soi. L'acrobate ailé qui se risque sur sa corde, là-haut, sur quoi compte-t-il? Il compte sur son corps et
+        </p>
+        <p>
+          Sporterziehung in der Schule 7/8/1980
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          sur la pesanteur. Et c'est parce qu'il compte sur la constance et la fidélité de la pesanteur qu'il peut en jouer, sur sa corde. Il suffit d'avoir vu les astronautes privés de la pesanteur, et qui avaient l'air de ne plus savoir bouger, pour comprendre à quel point nous comptons sur la pesanteur. L'exercice physique implique une confiance à l'égard du monde qui nous entoure. Plus l'exercice est risqué, plus cette confiance doit être grande, même si elle est combinée avec une certaine prudence, parce que l'on sait aussi que lorsque l'on essaie véritablement de faire passer le vouloir par le corps, on encourt des risques.
+        </p>
+        <p facs="#facs_2_r_2">
+          «C'est un autre côté de l'éducation physique, où ce que l'on accepte est une structure pleine de sens et finalisée dans le jeu, pour le jeu, et à laquelle tous se subordonnent parce qu'il y a une fin commune, qui est celle du groupe tout entier. Là il y a à la fois émulation et collaboration, compétition et solidarité. Dans ce sens, l'expérience de l'équipe est certainement une des meilleures choses qu'il y ait en éducation physique.»
+        </p>
+        <p facs="#facs_2_r_3">
+          Lorsqu'on est couché dans son lit et que l'on rêve sur son oreiller qu'on fera ceci ou cela, — mais qu'on ne le fait pas —, on ne risque rien du tout. Mais du moment que l'on met son corps en branle, on affronte la causalité physique, qui est à la fois un support et une menace. Et on apprend alors non seulement à approfondir et à perfectionner le rapport dont j'ai parlé d'abord (une âme et un corps), mais encore celui d'un individu à son monde, parce qu'on affronte ce monde par le mouvement, par les exercices, qu'on accepte de courir des risques, avec courage et prudence.
+        </p>
+        <p facs="#facs_2_r_4">
+          Jusqu'ici, j'ai parlé comme si l'éducation physique était une occupation purement solitaire. Or, en général, elle ne se fait pas dans la solitude, mais devant les autres et avec les autres. Il y a les témoins, ceux qui nous voient faire des exercices physiques. C'est un nouvel apprentissage du courage, parce que dans l'exercice physique règne une visibilité évidente (je n'ai pas trouvé de terme plus exact). La réussite ou l'échec, la qualité du geste, du mouvement, tout cela est absolument manifeste. L'exercice ne se passe pas dans le secret de la conscience et de la pensée; on ne peut pas dire: «ce n'est pas cela que j'ai voulu exprimer, ma pensée était bien plus profonde», comme on peut le faire en philosophie, par exemple. Dans l'éducation physique, on est astreint à agir à l'extérieur, à être complètement visible au cours de l'exercice — devant soi-même si l'on est seul, devant les autres la plupart du temps.
+        </p>
+        <p facs="#facs_2_r_5">
+          Je pense qu'un corps exercé doit finalement ressembler à un visage, être aussi expressif, aussi mobile qu'un visage, parce qu'il est traversé par le vouloir de l'âme. Par conséquent, l'éducation physique recherchera la souplesse, la force, le délié de ce corps, développera une certaine vitesse, une certaine endurance, une qualité de précision, et ainsi de suite.
+        </p>
+        <p facs="#facs_2_r_6">
+          «L'agressivité n'est pas une chose que l'on peut simplement faire disparaître, ignorer ou mépriser. Pourquoi les hommes sont-ils agressifs? (...) L'agressivité a des causes très diverses. Mais je dirai que tout homme doit être, jusqu'à un certain point, agressif, et que si vous supprimez complètement l'agressivité, vous supprimez également l'amour. Pourquoi?»
+        </p>
+        <p facs="#facs_2_r_7">
+          SCHÜLER-MEDAILLEN<lb facs="#facs_2_l_7_1" n="N001" />SCHÜLER-EHRENPREISE<lb facs="#facs_2_l_7_2" n="N002" />SCHÜLER-ERINNERUNGSPREISE
+        </p>
+        <p facs="#facs_2_r_8">
+          
+        </p>
+        <p facs="#facs_2_r_9">
+          Sporterziehung in der Schule 7/8/1980
+        </p>
+      </div>
+      </body></text>
+</TEI>

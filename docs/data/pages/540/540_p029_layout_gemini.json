@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE 257",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region included; identified as page header content at top of page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vitaux, par la finalité de son action, par les valeurs auxquelles il croit. Mais entre la Geschichte et l'historia, ne pourrait-on marquer la place de ce que les Italiens appellent la storiografia, qui est la fonction propre de l'historien. Si l'histoire comme science a un rôle, n'est-ce pas précisément d'affranchir l'historia, la vision spontanée du passé, de l'aura subjective où elle prend naissance, d'amener les peuples à une connaissance plus objective d'eux-mêmes?",
+      "bbox": {
+        "x_pct": 14.928,
+        "y_pct": 17.128,
+        "w_pct": 69.467,
+        "h_pct": 12.563
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mle HERSCH :",
+      "bbox": {
+        "x_pct": 15.133,
+        "y_pct": 32.746,
+        "w_pct": 14.857,
+        "h_pct": 1.515
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je vais essayer de répondre rapidement à tous ceux se sont exprimés sur mon rapport.",
+      "bbox": {
+        "x_pct": 14.826,
+        "y_pct": 35.814,
+        "w_pct": 69.262,
+        "h_pct": 4.003
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Entre M. Marias et moi, il n'y a pas de sujet important de discussion. Il me semble qu'il a décrit la capillarité du changement historique, la manière dont les fils y glissent, plutôt que la connaissance historique comme telle. J'ajouterai seulement que lorsqu'il parle de l'histoire en tant que raison, c'est là, à mon sens une formule trop possessive.",
+      "bbox": {
+        "x_pct": 14.826,
+        "y_pct": 39.52,
+        "w_pct": 69.395,
+        "h_pct": 10.562
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "M. Aaron a attiré l'attention sur le danger qu'il y a à parler de mémoire collective ou de mémoire de race. Je n'ai pas moi-même prononcé le mot de race et je crois d'ailleurs n'avoir pas prononcé celui de mémoire non plus. En tout cas, je suis bien loin de recourir à ces notions. Je considère aussi le genre de mythe qu'elles tendent à consolider comme dangereux; ce sont là des métaphores nocives et j'abonde donc dans votre sens. J'ai expliqué dans un des mes livres que je n'admets pas l'usage que l'on fait de l'expression d'âme collective parce qu'on fait passer en elle toutes sortes de choses qui ne sont pas d'abord dans l'intention de celui qui l'emploie, et qui troublent la perspective. C'est pourquoi, quant au mot d'âme, je m'en tiens très strictement au plan individuel, tandis que sur le plan social j'emploie d'autres termes, empêchant toute espèce de personnalisation substantielle d'une réalité collective.",
+      "bbox": {
+        "x_pct": 14.785,
+        "y_pct": 49.811,
+        "w_pct": 69.406,
+        "h_pct": 23.864
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant à l'induction historique et aux lois historiques, j'en ai dit quelques mots, essayant de montrer que l'histoire ne peut pas se constituer en une unité claire de méthodes, de moyens, de fins et d'objets. J'ai voulu montrer que l'histoire était et devait rester",
+      "bbox": {
+        "x_pct": 14.887,
+        "y_pct": 73.232,
+        "w_pct": 69.098,
+        "h_pct": 7.134
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match OCR."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region included; identified as page number at bottom of page."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region included; identified as footer metadata."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Missing OCR regions for headers/footers were not labeled.",
+    "Text regions had significant typos or truncation in labels.",
+    "Page number at bottom not labeled.",
+    "JSTOR metadata footer not labeled.",
+    "Running header at top of page not labeled."
+  ],
+  "doc_id": "540",
+  "page": 29,
+  "elapsed_seconds": 5.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

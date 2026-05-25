@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA CONDITION HUMAINE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 21.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 79.5,
+        "y_pct": 100,
+        "w_pct": 2.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "marque de Thumain une matière \" cette création humanisée qu'est toutc connaissance; et comme il n'y ",
+      "bbox": {
+        "x_pct": 13.613,
+        "y_pct": 13.766,
+        "w_pct": 68.665,
+        "h_pct": 31.465
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous arrivons donc aux résultats suivants Ia connaissance est toujours une forme résultant dune une ",
+      "bbox": {
+        "x_pct": 13.613,
+        "y_pct": 47.153,
+        "w_pct": 68.746,
+        "h_pct": 27.844
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page footer region"
+  ],
+  "doc_id": "110",
+  "page": 57,
+  "elapsed_seconds": 6.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

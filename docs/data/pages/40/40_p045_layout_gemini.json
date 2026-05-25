@@ -1,0 +1,121 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 47",
+      "bbox": {
+        "x_pct": 398.0,
+        "y_pct": 77.0,
+        "w_pct": 498.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header containing page number and section title should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans l'air mat, comme la fumée, là-bas, sur la montagne, de ce feu qu'il avait voulu allumer malgré tout. Seulement, ici, ce ne sont plus les troncs des sapins que je vois se tordre par transparence, mais l'incompréhensible serpent du retour.",
+      "bbox": {
+        "x_pct": 11.757,
+        "y_pct": 12.098,
+        "w_pct": 80.541,
+        "h_pct": 13.015
+      },
+      "changed": true,
+      "change_reason": "Corrected text content as detected in image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A l'entracte, les applaudissements brusquement extérieurs de la foule resserrent autour de nous les murs oubliés du petit salon. Maintenant le silence empêche tout à fait les secondes de passer, et cet arrêt confère à chaque chose une densité qui la met hors d'usage. Le sombre sirop de cassis, dans la carafe, prend figure d'une énorme pierre précieuse déjà enchâssée dans le souvenir; et à côté, les verres minces, fins, retiennent dans leurs flancs une lumière courbée, mais résistante, comme un acier qui aurait des reflets d'or, si bien qu'ils deviennent de barbares gobelets de métal, posés là pour des siècles, depuis que des rois ont oublié de les remplir pour boire.",
+      "bbox": {
+        "x_pct": 11.757,
+        "y_pct": 25.0,
+        "w_pct": 80.5,
+        "h_pct": 28.0
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Du sein de cette immobilité, Pierre le premier replace parmi les jours. Il dit:",
+      "bbox": {
+        "x_pct": 11.527,
+        "y_pct": 54.915,
+        "w_pct": 72.757,
+        "h_pct": 5.548
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai deux billets pour le concert Beethoven de mercredi prochain. Ma mère ne peut pas venir. Voudriez-vous y aller avec moi ?",
+      "bbox": {
+        "x_pct": 11.851,
+        "y_pct": 60.208,
+        "w_pct": 80.27,
+        "h_pct": 7.533
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je lui avoue que mes parents ne le permettront peut-être pas; il ferait mieux de donner le billet à quelqu'un d'autre. Il me répond:",
+      "bbox": {
+        "x_pct": 11.757,
+        "y_pct": 67.647,
+        "w_pct": 80.5,
+        "h_pct": 7.779
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Ce n'est pas la même chose.",
+      "bbox": {
+        "x_pct": 19.865,
+        "y_pct": 75.331,
+        "w_pct": 40.851,
+        "h_pct": 2.552
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avant que leur trace sonore ne se fût effacée, j'avais recueilli ces syllabes pour toujours. Leur banalité les rendait inépuisables, sans mesure.",
+      "bbox": {
+        "x_pct": 11.716,
+        "y_pct": 77.628,
+        "w_pct": 80.486,
+        "h_pct": 7.817
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Failed to detect the main paragraph in the middle of the page.",
+    "OCR output was severely corrupted in several regions.",
+    "Page number and section title should have been categorized as a header.",
+    "Missing text content in bounding box assignments."
+  ],
+  "doc_id": "40",
+  "page": 45,
+  "elapsed_seconds": 7.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

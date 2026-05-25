@@ -1,0 +1,187 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 36 -",
+      "bbox": {
+        "x_pct": 27.2,
+        "y_pct": 7.5,
+        "w_pct": 3.4,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 37 -",
+      "bbox": {
+        "x_pct": 72.8,
+        "y_pct": 7.5,
+        "w_pct": 3.4,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "und Problemberciche iet; der Zweite wichtige Bereich betrifft unser ganz personliches Ieben Von Geor",
+      "bbox": {
+        "x_pct": 9.701,
+        "y_pct": 14.845,
+        "w_pct": 36.32,
+        "h_pct": 14.98
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Rognon",
+      "bbox": {
+        "x_pct": 15.058,
+        "y_pct": 34.143,
+        "w_pct": 4.277,
+        "h_pct": 1.484
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sie haben von Rnergie ganz allgemein und der Energiearten im spezicllen gesprochen ist im Zusamnenha",
+      "bbox": {
+        "x_pct": 9.249,
+        "y_pct": 37.692,
+        "w_pct": 36.734,
+        "h_pct": 11.255
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 9.181,
+        "y_pct": 53.131,
+        "w_pct": 9.249,
+        "h_pct": 1.93
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fragen Sic mich dieg nicht; ich habe ich die Anrwort schuldig bleiben Muss Ich bin sondern gan2 einf",
+      "bbox": {
+        "x_pct": 8.767,
+        "y_pct": 56.721,
+        "w_pct": 37.158,
+        "h_pct": 21.323
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Mationalrat Georg",
+      "bbox": {
+        "x_pct": 8.478,
+        "y_pct": 82.051,
+        "w_pct": 15.125,
+        "h_pct": 1.889
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nir Gind uns Bicher alle @inig, dass wir zur verBedacht",
+      "bbox": {
+        "x_pct": 8.41,
+        "y_pct": 85.695,
+        "w_pct": 37.091,
+        "h_pct": 4.049
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Her aber kann Wns wolches die richtige Energienutzung ist und der bein Verbrauch beginnt? Mer Goll d",
+      "bbox": {
+        "x_pct": 54.528,
+        "y_pct": 14.48,
+        "w_pct": 35.771,
+        "h_pct": 9.271
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 54.5,
+        "y_pct": 27.5,
+        "w_pct": 10.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Missing header detected and labeled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nenn sie 'Ko beginnt der mich, als ob a1s Golchen bereits lich im Gegenteil. In perierenden Wirtscha",
+      "bbox": {
+        "x_pct": 54.624,
+        "y_pct": 31.174,
+        "w_pct": 36.484,
+        "h_pct": 40.486
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prolessor Heini GrAnicher Dr .",
+      "bbox": {
+        "x_pct": 54.913,
+        "y_pct": 77.058,
+        "w_pct": 20.424,
+        "h_pct": 2.699
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Henn wir den Gedanken nach der Ziclrichtung Energien aufwerlen wir der Ethik und der Moral schon die",
+      "bbox": {
+        "x_pct": 54.913,
+        "y_pct": 81.201,
+        "w_pct": 36.195,
+        "h_pct": 8.003
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page numbers detected in initial pass.",
+    "Missing section header 'Jeanne Hersch' in the right column was not annotated by Docling.",
+    "Author name 'Jeanne Hersch' identified in the right column is a section header."
+  ],
+  "doc_id": "2360",
+  "page": 19,
+  "elapsed_seconds": 6.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

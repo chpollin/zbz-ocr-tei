@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 173",
+      "bbox": {
+        "x_pct": 312.0,
+        "y_pct": 77.0,
+        "w_pct": 534.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page header containing title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ni le développement de la gratuité scolaire, ni la multiplication des bourses ne changent radicalement les choses : il ne s'agissait pas tant du coût des études que du gain perdu ; il fallait non seulement se suffire à soi-même, mais encore rapporter de l'argent à la maison et prendre rang dans le circuit économique.",
+      "bbox": {
+        "x_pct": 4.359,
+        "y_pct": 12.478,
+        "w_pct": 84.401,
+        "h_pct": 11.346
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Droit de parler et d'écrire — mais on ne sait ni parler ni écrire. Liberté de pensée — mais les instruments verbaux de la pensée font défaut. Droit d'étudier — mais on n'en a pas les moyens. Droit de publier — mais on n'a pas d'argent. Et ainsi de suite. Il ne convient pas de hausser les épaules lorsque les ouvriers communistes occidentaux répliquent par des railleries à ceux qui leur décrivent les contraintes policières qui, à l'est, empêchent les gens de se déplacer à leur guise : ils ont parfaitement le droit de dire que l'autorisation de voyager ne présente aucun intérêt pour qui n'a pas de quoi se payer le train.",
+      "bbox": {
+        "x_pct": 3.942,
+        "y_pct": 22.754,
+        "w_pct": 84.777,
+        "h_pct": 21.159
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ainsi que la plupart des arguments qu'il est légitime d'avancer pour donner de la démocratie une justification pessimiste — la seule vraie — perdent en tout cas une grande part de leur poids.",
+      "bbox": {
+        "x_pct": 3.76,
+        "y_pct": 43.556,
+        "w_pct": 84.638,
+        "h_pct": 8.191
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Légalité théorique des droits pour tous a paru être le moindre mal dans une collectivité où aucun critère objectif ne permet de distinguer l'élite, la meilleure garantie contre les abus du pouvoir et la plus sûre protection pour les possibles inconnus de chaque personne humaine. Elle semble cependant réduite à peu de chose, dans la réalité concrète de la vie quotidienne. Les chances de développement, à la naissance, sont influencées de façon décisive par une inégalité extérieure, socialement imposée, qui entrave et fausse le libre épanouissement des inégalités naturelles. Et tout le long de la vie, sur le plan politique même, le principe sur lequel se fonde le régime se trouve en fait foulé aux pieds. Cette situation est d'autant plus dangereuse pour la démocratie politique que celle-ci dépend, plus que n'importe quel autre régime, de l'adhésion idéologique des citoyens. Or cette adhésion, dont elle a organiquement besoin, elle la rend presque impossible puisqu'elle se voit forcée d'inculquer, pour sa justification, des principes et des valeurs (le respect égal, par exemple, de chaque personne humaine) qui se retournent forcément contre la manière dont ses institutions",
+      "bbox": {
+        "x_pct": 2.786,
+        "y_pct": 51.399,
+        "w_pct": 85.474,
+        "h_pct": 37.255
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 1,
+  "issues": [
+    "Page header was incorrectly labeled as text.",
+    "OCR text quality in input JSON was quite poor compared to image content."
+  ],
+  "doc_id": "330",
+  "page": 207,
+  "elapsed_seconds": 4.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

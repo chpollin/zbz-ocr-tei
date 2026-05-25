@@ -1,0 +1,143 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "204",
+      "bbox": {
+        "x_pct": 15.656,
+        "y_pct": 73.0,
+        "w_pct": 3.493,
+        "h_pct": 2.519
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TABLE DES MATIÈRES",
+      "bbox": {
+        "x_pct": 39.063,
+        "y_pct": 73.0,
+        "w_pct": 21.875,
+        "h_pct": 2.519
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "du savoir Texistence, 163; situationslimites , conscience absolue; actes absolus; Expression existen",
+      "bbox": {
+        "x_pct": 20.979,
+        "y_pct": 11.686,
+        "w_pct": 62.108,
+        "h_pct": 30.914
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONCLUSION",
+      "bbox": {
+        "x_pct": 43.328,
+        "y_pct": 43.333,
+        "w_pct": 20.377,
+        "h_pct": 1.971
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que seva Favenir?",
+      "bbox": {
+        "x_pct": 15.557,
+        "y_pct": 46.448,
+        "w_pct": 23.102,
+        "h_pct": 2.124
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment faire encore de la philosophie? 188 Impossible de négliger le passé, 189 Iéleuent philosop",
+      "bbox": {
+        "x_pct": 18.63,
+        "y_pct": 48.829,
+        "w_pct": 64.096,
+        "h_pct": 12.695
+      },
+      "changed": false
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Table des matières",
+      "bbox": {
+        "x_pct": 15.768,
+        "y_pct": 62.257,
+        "w_pct": 23.389,
+        "h_pct": 1.905
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_header because it's a repeating section heading/header structure."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "187",
+      "bbox": {
+        "x_pct": 86.596,
+        "y_pct": 46.067,
+        "w_pct": 4.262,
+        "h_pct": 2.629
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "201",
+      "bbox": {
+        "x_pct": 86.596,
+        "y_pct": 62.148,
+        "w_pct": 4.262,
+        "h_pct": 2.629
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "picture",
+      "zbz_tag": "_skip",
+      "text": "Universitätsbibliothek Zürich",
+      "bbox": {
+        "x_pct": 28.509,
+        "y_pct": 74.448,
+        "w_pct": 31.732,
+        "h_pct": 2.41
+      },
+      "changed": true,
+      "change_reason": "Library stamp identified as library mark/skip."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page numbers misclassified as text.",
+    "Table des matières misinterpreted as content paragraph instead of structural header.",
+    "Library label should be skipped.",
+    "Running header at the top (204, TABLE DES MATIERES) missing in initial extraction."
+  ],
+  "doc_id": "20",
+  "page": 206,
+  "elapsed_seconds": 5.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

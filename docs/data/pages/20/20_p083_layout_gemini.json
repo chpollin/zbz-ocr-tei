@@ -1,0 +1,127 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ROLE DU TEMPS DANS LA DIALECTIQUE 81",
+      "bbox": {
+        "x_pct": 103.5,
+        "y_pct": 91.5,
+        "w_pct": 743.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Correcting page headers and page numbers to _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "embrassant tout. Elle ne peut devenir une expérience intérieure totale et cohérente; elle fait tort au temps et à l'éternité.",
+      "bbox": {
+        "x_pct": 99.0,
+        "y_pct": 134.0,
+        "w_pct": 759.0,
+        "h_pct": 78.0
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "I. - EFFORT VERS LE MIME",
+      "bbox": {
+        "x_pct": 243.0,
+        "y_pct": 252.0,
+        "w_pct": 374.0,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and assigned as heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le temps et la dialectique.",
+      "bbox": {
+        "x_pct": 260.0,
+        "y_pct": 307.0,
+        "w_pct": 431.0,
+        "h_pct": 34.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le système de Hegel embrasse tout le devenir. Mais le système lui-même se dérobe au devenir. Il se donne pour achevé, comme une œuvre d'art. L'unité qui lui sert de base est donc nécessairement éternelle.",
+      "bbox": {
+        "x_pct": 99.0,
+        "y_pct": 361.0,
+        "w_pct": 759.0,
+        "h_pct": 126.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il devait aussi être universel, ne rien nier, ne rien rejeter. Tout devait trouver sa place nécessaire dans l'édifice parfait des cercles et des triades. Mais pour pouvoir embrasser tous les contraires, il fallait vaincre le principe de contradiction, ce qui n'est possible que par le mouvement entre les contraires, donc dans le temps.",
+      "bbox": {
+        "x_pct": 99.0,
+        "y_pct": 490.0,
+        "w_pct": 761.0,
+        "h_pct": 180.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi l'éternité du système achevé ne pouvait être conquise que par un mouvement dans le temps.",
+      "bbox": {
+        "x_pct": 99.0,
+        "y_pct": 668.0,
+        "w_pct": 763.0,
+        "h_pct": 56.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps n'est pas chez Hegel un problème philosophique isolé qui se présenterait çà et là, — le temps est partout. Partout où un terme abstrait « se nie » (sich negiert) et devient par synthèse avec son contraire un terme concret, partout où Hegel surmonte une solution exclusive, partout où il dessine l'un de ses cercles grand ou petit, il y a du",
+      "bbox": {
+        "x_pct": 99.0,
+        "y_pct": 724.0,
+        "w_pct": 763.0,
+        "h_pct": 178.0
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "6",
+      "bbox": {
+        "x_pct": 801.0,
+        "y_pct": 932.0,
+        "w_pct": 13.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Detected artifacts in text box grouping",
+    "Missing OCR fidelity in original detection",
+    "Page number and headers mislabeled as standard paragraph text"
+  ],
+  "doc_id": "20",
+  "page": 83,
+  "elapsed_seconds": 4.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

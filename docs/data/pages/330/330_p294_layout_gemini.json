@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "260 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header identified at top of page, should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'idée ne lui venait pas qu'un jour, les descendants de ces fidèles serviteurs pouvaient en venir à s'interroger sur la nature de la nécessité qui, de génération en génération, faisait d'eux les domestiques des Français, et non l'inverse. Les conservateurs ne comprennent pas que leur innocence, leur aveuglement, c'est précisément cette « lutte de classes » que dénonce le marxisme et qu'ils s'obstinent, eux, à interpréter comme un appel à la haine consciente pour pouvoir plus légèrement la condamner. Une fois de plus, le sens de l'urgence leur manque : ce qui fut si longtemps peut, leur semble-t-il, durer.",
+      "bbox": {
+        "x_pct": 12.019,
+        "y_pct": 10.071,
+        "w_pct": 85.933,
+        "h_pct": 21.506
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les démocrates progressistes, souvent assez proches des conservateurs dans leurs conclusions, en diffèrent cependant par leurs motifs ou les arguments qu'ils invoquent. Ils ne se justifient pas par ce qui fut. Au contraire : ils cherchent dans les « erreurs » commises dans le passé des raisons d'espérer qu'il suffira de les « réparer » pour résoudre le problème. Dans leur optimisme bienveillant, toujours prêts à un examen de conscience et à un sincère retour sur eux-mêmes, ils se refusent à admettre qu'une situation puisse devenir tragique au point d'exclure désormais toute solution raisonnable entre partenaires de bonne volonté. Ils ne comprennent pas davantage que le simple écoulement du temps, la seule durée des « erreurs » et des iniquités puisse rendre insuffisantes et mêmes vaines, lorsqu'il est trop tard, certaines réparations. Eux aussi ignorent l'urgence, le poids et l'efficacité — positive ou négative — du temps qui passe. Il leur semble qu'un comportement, juste il y a un certain nombre d'années, reste juste, qu'il est juste « en soi ». Ainsi, les transformations du statut algérien qui auraient donné jadis, ou même naguère, satisfaction aux Arabes, leur paraissent devoir suffire encore aujourd'hui. Ils ne conçoivent pas ce qu'il peut y avoir d'irréductible et d'absolu dans les revendications d'un peuple qui s'éveille, prend conscience de lui-même, et se met à ressentir comme autant d'humiliations tous les signes, grands et petits, matériels ou gratuits, de son statut inférieur — et cela d'autant plus vivement que ces signes lui sont prodigués sans intention hostile, simplement parce que son infériorité, pour les autres, continue à aller de soi.",
+      "bbox": {
+        "x_pct": 12.117,
+        "y_pct": 32.95,
+        "w_pct": 85.836,
+        "h_pct": 54.305
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les démocrates-progressistes sont trop raisonnables pour com-",
+      "bbox": {
+        "x_pct": 15.279,
+        "y_pct": 86.809,
+        "w_pct": 82.591,
+        "h_pct": 2.611
+      },
+      "changed": true,
+      "change_reason": "Corrected typographical error in OCR."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR for body text was highly corrupted.",
+    "Header line was missing from detected layout blocks.",
+    "Bbox for header was not provided in original input."
+  ],
+  "doc_id": "330",
+  "page": 294,
+  "elapsed_seconds": 5.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

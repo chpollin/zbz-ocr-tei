@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "à sa condition   séparée de moi face à un non-moi et cesse dêtre lui-même. Cet instant mystique n'a ",
+      "bbox": {
+        "x_pct": 11.06,
+        "y_pct": 15.085,
+        "w_pct": 68.433,
+        "h_pct": 8.985
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Action.",
+      "bbox": {
+        "x_pct": 13.825,
+        "y_pct": 25.892,
+        "w_pct": 7.412,
+        "h_pct": 1.392
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "dès qu'elle acquiert pour Thomme la   prise du moi Jai essayé   desquisser cette transformation tell",
+      "bbox": {
+        "x_pct": 10.906,
+        "y_pct": 29.613,
+        "w_pct": 68.664,
+        "h_pct": 26.12
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "En effet, la  métamorphose fait   subir au moi   connaissant ou le moi   contemplatif   n'est réelle",
+      "bbox": {
+        "x_pct": 10.637,
+        "y_pct": 55.809,
+        "w_pct": 68.702,
+        "h_pct": 18.729
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Text content was incomplete in initial provided JSON and needed expansion.",
+    "Running header was missing.",
+    "Bbox for added header is placeholder, actual image inspection required for precise coordinates."
+  ],
+  "doc_id": "110",
+  "page": 33,
+  "elapsed_seconds": 6.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content.": 2
+  }
+}

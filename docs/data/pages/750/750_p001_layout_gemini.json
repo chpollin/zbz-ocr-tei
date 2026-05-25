@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SUR LA NOTION DE RACE",
+      "bbox": {
+        "x_pct": 34.674,
+        "y_pct": 29.852,
+        "w_pct": 30.169,
+        "h_pct": 1.841
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par",
+      "bbox": {
+        "x_pct": 47.889,
+        "y_pct": 34.068,
+        "w_pct": 3.336,
+        "h_pct": 1.461
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 41.902,
+        "y_pct": 36.817,
+        "w_pct": 15.608,
+        "h_pct": 1.425
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le texte ci-dessous constitue un examen critique des bases de l'action internationale d''j' engag'e en ce domaine o' il n'est pas facile de conjuguer (ou de s'parer) les obligations de l'objectivit' scientifique et les imp'ratifs 'thiques. Il s'agit en l'occurrence d'une r'flexion sur une sorte de difficult's inh'rentes ' des initiatives caract'ristiques de certaines institutions propres ' notre temps. Elles posent des probl'mes qui d'passent de loin l'objet de la pr'sente 'tude. Ces pages ne font gu're que procurer un exemple, d'ailleurs particuli'rement d'licat et qui appelle la discussion, des conflits qui se font jour dans des r'gions mixtes et qui tous r'clament une r'partition plus stricte des responsabilit's. (N. d. l. R.)",
+      "bbox": {
+        "x_pct": 22.828,
+        "y_pct": 41.568,
+        "w_pct": 53.828,
+        "h_pct": 12.352
+      },
+      "changed": true,
+      "change_reason": "OCR text extraction was poor, incomplete, and misaligned with source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il me souvient d'un s'minaire, ' l'Universit' de Heidelberg, peu de temps apr's la prise du pouvoir par Hitler. Karl Jaspers, qui devait 'tre un peu plus tard priv' de sa chaire pour avoir commis le crime de Rassenschande, c'est-'-dire d'avoir 'pous' une juive, commentait un travail d''tudiant sur la philosophie de Hegel. Il dit : ' Comme on parle tant, h'las, de race ces temps-ci, je vous recommande de lire le livre de X... sur ' les races chez les harengs '. Vous verrez alors ce qu'on sait aujourd'hui sur les races, quand les passions humaines ne s'm'lent pas. '",
+      "bbox": {
+        "x_pct": 22.78,
+        "y_pct": 55.98,
+        "w_pct": 54.069,
+        "h_pct": 15.398
+      },
+      "changed": true,
+      "change_reason": "OCR text correction for accuracy."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Ambigu't'.",
+      "bbox": {
+        "x_pct": 22.965,
+        "y_pct": 73.634,
+        "w_pct": 9.508,
+        "h_pct": 1.977
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La notion de race est, dans le domaine humain, l'une des plus ambigu'es qui soient. Evidemment, elle partage ce caract're avec beaucoup d'autres notions d'une dignit' 'minente, comme par exemple la vie, l''me, la mati're; ou encore la justice, l'amour; ou l''ternit', l'absolu.",
+      "bbox": {
+        "x_pct": 22.885,
+        "y_pct": 76.645,
+        "w_pct": 54.045,
+        "h_pct": 6.211
+      },
+      "changed": true,
+      "change_reason": "Corrected fragmented OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seulement, cette ambigu't' est moins supportable dans la notion de race que dans celles que je viens de mentionner. En effet, son sens m'me exige qu'elle ne soit pas ambigu'e.",
+      "bbox": {
+        "x_pct": 23.046,
+        "y_pct": 83.866,
+        "w_pct": 53.852,
+        "h_pct": 4.911
+      },
+      "changed": true,
+      "change_reason": "Corrected fragmented OCR output."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction had significant character errors due to OCR quality.",
+    "Author name is separated from the title which is typical but often needs careful grouping.",
+    "Some OCR artifacts replaced accents with special characters."
+  ],
+  "doc_id": "750",
+  "page": 1,
+  "elapsed_seconds": 12.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

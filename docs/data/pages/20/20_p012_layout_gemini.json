@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "10 INTRODUCTION",
+      "bbox": {
+        "x_pct": 108.333,
+        "y_pct": 74.0,
+        "w_pct": 482.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Corrected header/page number to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les philosophes construisent-ils sur des vérités antérieurement acquises, et la valeur d'une philosophie est-elle proportionnelle à son importance dans l'édifice final? En d'autres termes, la philosophie est-elle constructive à travers l'histoire? — Il est évident de prime abord — et on l'a remarqué depuis toujours — que chaque philosophe recommence tout. On peut parler d'influences et de traditions, comme on en parle dans l'art, mais non pas d'étapes constructrices dans la conquête d'une vérité permanente. Chaque nouvelle philosophie, bien qu'elle soit obligée de tenir compte des systèmes antérieurs, veut être le point de départ de la vraie philosophie dont elle resterait la base, — quand elle ne se considère pas comme achevée déjà. Mais deux ou trois disciples au plus la continuent, — la tuent en pétrifiant son schéma, ou bien la refont, tout autre. Et la chaîne se rompt.",
+      "bbox": {
+        "x_pct": 10.09,
+        "y_pct": 11.971,
+        "w_pct": 76.31,
+        "h_pct": 52.886
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text significantly as the original was mangled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est-ce défaut de la philosophie? Pouvons-nous attendre encore le philosophe-messie? Quel sens ont pour nous les philosophies du passé? Puisque nous n'acceptons pas pour « vraies » les solutions qu'elles donnent, pourquoi donc étudions-nous leurs problèmes, la façon dont ils sont posés, la façon dont ils sont résolus? Serait-ce pour acquérir la méthode qui a conduit à ces erreurs? Ou bien par intérêt historique pour les",
+      "bbox": {
+        "x_pct": 9.895,
+        "y_pct": 64.667,
+        "w_pct": 76.355,
+        "h_pct": 25.048
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text significantly as the original was mangled."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was highly inaccurate in both paragraph regions.",
+    "Page number and header were detected as part of the page content region."
+  ],
+  "doc_id": "20",
+  "page": 12,
+  "elapsed_seconds": 3.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

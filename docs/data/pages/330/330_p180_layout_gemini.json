@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "146 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 108.356,
+        "y_pct": 89.264,
+        "w_pct": 535.889,
+        "h_pct": 21.036
+      },
+      "changed": true,
+      "change_reason": "Page header identified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "elle (supprime ou devrait la suite du dbat), il peut toujours l'abandonner.",
+      "bbox": {
+        "x_pct": 101.442,
+        "y_pct": 115.656,
+        "w_pct": 856.257,
+        "h_pct": 46.223
+      },
+      "changed": true,
+      "change_reason": "Text content corrected based on OCR scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais tout ce que je viens dcrire tient de l'pure et reste fictif. Les hommes ne vivent pas, surtout en groupes, parmi des distinctions et des dlimitations aussi nettes. En fait, l'appartenance  un parti est lie  quantit d'expriences motionnelles. Ses membres vivent ensemble des moments d'espoir, de triomphe, d'angoisse. Ils savent qu'ils peuvent tre exposs ensemble aux pires dangers, soumis aux mmes pressions, aux mmes sductions, aux mmes menaces. Une solidarit affective se cre, d'autant plus vive que les risques sont plus grands. Le parti n'est plus un instrument collectif dont on comprend le rle politique : il devient en soi l'objet d'un attachement, d'une fidlit. L'insigne, le drapeau, le chant s'en mlent. L'me collective se cre aux dpens de la subordination aux fins. Non seulement les fins perdent leur importance dcisive, mais par une perversion progressive du rapport, elles sont mises au service du parti, choisies en vue de le renforcer et de l'tendre.",
+      "bbox": {
+        "x_pct": 98.473,
+        "y_pct": 199.023,
+        "w_pct": 855.992,
+        "h_pct": 331.282
+      },
+      "changed": true,
+      "change_reason": "Text content corrected based on OCR scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nouvelle me collective ainsi cre diffre pourtant profondment de celles dont nous avons parl plus haut et qui, avant d'tre voulues ou mme aimes, sont imposes par la ralit, par des traditions, des modes de vie. Il est vrai, l'me collective partisane, elle aussi, se forge bientt un pass, des hros, des martyrs. La diffrence tient avant tout, en ce qui concerne le parti,  sa rigueur et  son inscurit. L'inscurit : les autres mes collectives n'ont pas besoin de vouloir tre, parce qu'elles sont. Mme menaces dans leur ralit historique  par exemple lorsqu'une nation se voit sur le point de disparatre  il semble que seul le corps qui leur correspond puisse tre provisoirement annihil, non l'me mme.  La Pologne n'est pas encore morte , disait  la fin du sicle dernier l'hymne de la Pologne dmembre. Au contraire, le parti, mme devenu l'objet d'une adhsion passionne, est ressenti comme menac dans son tre par sa simple dissolution. S'il se dsagre, il n'en restera, en mettant les choses au mieux, que des ides, mais acune me. La rigueur : on a beau faire, un parti, c'est un programme. Si complexe que puisse devenir l'atta-",
+      "bbox": {
+        "x_pct": 95.132,
+        "y_pct": 529.136,
+        "w_pct": 860.305,
+        "h_pct": 374.872
+      },
+      "changed": true,
+      "change_reason": "Text content corrected based on OCR scan."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page header was improperly labeled as text.",
+    "OCR for paragraph segments contained significant errors.",
+    "Text cleanup required for punctuation and special character rendering."
+  ],
+  "doc_id": "330",
+  "page": 180,
+  "elapsed_seconds": 7.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

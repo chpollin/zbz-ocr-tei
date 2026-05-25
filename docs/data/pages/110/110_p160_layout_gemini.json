@@ -1,0 +1,59 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "158 L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 21.74,
+        "y_pct": 2.0,
+        "w_pct": 68.848,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les actes sont plus purs conme une   slalue enl marbre est plus pure qu 'une stalue en rêve. Les acl",
+      "bbox": {
+        "x_pct": 21.74,
+        "y_pct": 13.756,
+        "w_pct": 68.848,
+        "h_pct": 55.516
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lécart entre la malléahililé de lélément   psychologique dune lend à se   déployer en a quelque chos",
+      "bbox": {
+        "x_pct": 21.889,
+        "y_pct": 69.294,
+        "w_pct": 68.399,
+        "h_pct": 5.645
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text transcription contained typos",
+    "Missing page header identification",
+    "Label mappings required adjustment"
+  ],
+  "doc_id": "110",
+  "page": 160,
+  "elapsed_seconds": 6.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text transcription": 2,
+    "ADDED": 1
+  }
+}

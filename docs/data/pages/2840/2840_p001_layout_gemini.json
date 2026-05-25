@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La Suisse et la Fédération européenne",
+      "bbox": {
+        "x_pct": 13.854,
+        "y_pct": 11.741,
+        "w_pct": 72.447,
+        "h_pct": 10.27
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 40.247,
+        "y_pct": 23.991,
+        "w_pct": 19.205,
+        "h_pct": 1.755
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it identifies the author of the text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "O — que les premiers efforts en vue de créer l’Union fédérale européenne sont issus de la Résistance. Dès avant la fin de la guerre, avant les premiers succès des grands réalisateurs politiques — Adenauer, de Gasperi, Schumann, Jean Monnet —, des Européens qui, pour avoir combattu le nazisme ou le fascisme, en avaient été victimes pendant une bonne partie de leur vie, étaient désormais convaincus que paix et liberté avaient partie liée, et que la seule voie pour les assurer sur le continent passait par l’union fédérale de ses États. Kogon avait survécu aux geôles allemandes ; Spinelli avait passé dix-sept ans de relégation dans une île italienne dévorée de soleil ; Henri Frenay avait, dès l’armistice et pendant toute la guerre, organisé et commandé clandestinement la Résistance en zone libre sur territoire français. La Résistance avait été la première patrie commune des futurs compatriotes d’une Europe fédérée dont ils se voulaient les artisans, et c’est au sein de cette patrie qu’aussitôt la guerre finie ils se sont retrouvés alliés. Il s’agissait de créer une situation irréversible, excluant à jamais l’horreur des guerres civiles européennes et assurant à tous les démocrates de l’Europe occidentale un rôle d’agents, et non d’enjeux, dans l’histoire de leur continent.",
+      "bbox": {
+        "x_pct": 11.114,
+        "y_pct": 32.17,
+        "w_pct": 37.315,
+        "h_pct": 42.546
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette Europe qui se voulait fédérale, garantissant un avenir de paix et de démocratie, avait, semblait-il, tout ce qu’il fallait pour que les citoyens suisses en fussent des partisans résolus. Il n’en fut pas ainsi. Quelques citoyens suisses, militants fédéralistes européens, qui avaient déjà travaillé pendant toute la guerre à renforcer la résistance intérieure du pays au régime nazi qui l’encerclait, furent, il est vrai, les premiers, à la fin, à tendre la main aux vaincus afin de préparer l’avenir. Mais le pays, dans son ensemble, tira du fait qu’il avait été épargné par la guerre des conclusions plutôt conservatrices. Après tout, son statut de neutralité avait été efficace, conjugué avec le rôle dissuasif joué par la mobilisation des citoyens ; il convenait donc de maintenir « la neutralité armée ». Tentant aussi d’échapper à un certain malaise, qui devait persister longtemps, le pays se replia sur ses traditions humanitaires, essentiellement la Croix-Rouge.",
+      "bbox": {
+        "x_pct": 51.297,
+        "y_pct": 34.367,
+        "w_pct": 37.443,
+        "h_pct": 31.22
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi les premiers sacrifices consentis pour l’Europe furent inspirés par une véritable passion pour la paix et pour la liberté, deux raisons de vivre inséparables. C’est avec stupeur qu’il fallut entendre, au bout de quelques années, se propager la nouvelle selon laquelle l’unification de l’Europe n’était qu’une entreprise de bureaucrates, au service de certains intérêts économiques.",
+      "bbox": {
+        "x_pct": 11.05,
+        "y_pct": 76.055,
+        "w_pct": 37.288,
+        "h_pct": 12.289
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les nationalismes, d’une nation à l’autre, se ressemblent. Pourtant, « être citoyen de tel ou tel État » n’implique pas une appartenance identique ; ce n’est pas une donnée générale, commune aux diverses nations de l’Europe. Je ne pense pas ici avant tout aux régimes politiques et sociaux différents et aux situations contrastées qui en résultent pour les citoyens, entraînant bien sûr des rapports différents entre eux et leur État. Il s’agit d’autre chose, de plus subtil et de plus profondément enraciné dans l’histoire et la culture, parfois dans la religion, ou même dans le lien familial. L’attachement",
+      "bbox": {
+        "x_pct": 51.233,
+        "y_pct": 68.865,
+        "w_pct": 37.534,
+        "h_pct": 19.261
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "575",
+      "bbox": {
+        "x_pct": 85.571,
+        "y_pct": 89.288,
+        "w_pct": 3.196,
+        "h_pct": 1.705
+      },
+      "changed": true,
+      "change_reason": "Labeled as page_footer per guidelines for page numbers."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 6,
+  "issues": [
+    "Severe OCR errors in initial parsing.",
+    "Page number at bottom not identified as page_footer.",
+    "Author signature not recognized as section_header."
+  ],
+  "doc_id": "2840",
+  "page": 1,
+  "elapsed_seconds": 7.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

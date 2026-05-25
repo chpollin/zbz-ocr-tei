@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FÊTES",
+      "bbox": {
+        "x_pct": 37.257,
+        "y_pct": 25.025,
+        "w_pct": 11.65,
+        "h_pct": 2.946
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une fête ce n'est pas une explosion spontanée par laquelle on se décharge des contraintes sociales. Toute fête exige d'être longuement et soigneusement préparée. Lorsqu'on croit voir l'une d'elles éclater spontanément au soleil de la joie, c'est que sa préparation vient de si loin que sa trace se perd au fond des siècles. Il y faut la solennité de l'attente et de la préexistence.",
+      "bbox": {
+        "x_pct": 10.036,
+        "y_pct": 32.18,
+        "w_pct": 65.85,
+        "h_pct": 25.96
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a bien des années, j'ai vécu une fête à Angkor Vat. Un cercle de jeunes garçons, nus et bruns comme des statues de bronze, tenaient chacun une torche allumée dans la main droite. Derrière eux, sur la façade du temple, les danseuses de pierre semblaient se mouvoir dans la lumière tremblante. A l'intérieur.",
+      "bbox": {
+        "x_pct": 10.073,
+        "y_pct": 59.285,
+        "w_pct": 65.983,
+        "h_pct": 19.478
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match the image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "65",
+      "bbox": {
+        "x_pct": 72.22,
+        "y_pct": 82.26,
+        "w_pct": 2.37,
+        "h_pct": 2.45
+      },
+      "changed": true,
+      "change_reason": "Detected page number labeled as text, reclassified as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR for paragraphs was severely corrupted.",
+    "Page number 65 was missing from the initial detection list.",
+    "Label for page number 65 was missing."
+  ],
+  "doc_id": "2260",
+  "page": 65,
+  "elapsed_seconds": 3.5,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

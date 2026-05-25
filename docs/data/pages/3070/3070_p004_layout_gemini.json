@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pour dire que ses Parents étaient bundistes, du Bund, un mouvement socialiste et antisioniste né en Pologne et en Russie, qui regroupait des populations ouvrières et misérables aspirant à plus de liberté, à plus de justice sociale. Au temps des pogroms, ces gens vivaient misérablement cachés dans des caves, ils avaient très peu à offrir à leurs enfants, mais le Bund avait réussi à mettre sur pied des maisons de vacances, des sanatoriums, des centres de culture et des théâtres, des écoles de yiddish, des organes de presse. Par méfiance pour le nationalisme, les bundistes ne voulaient pas d’État juif: le peuple, la langue yiddish, la culture, c’était pour eux la sainte Trinité. Toute sa vie durant, le père de Jeanne Hersch a écrit des articles dans la presse bundiste en yiddish, la langue des pauvres. Ce qui navre le plus Jeanne Hersch, c’est que le Bund a été effacé de l’histoire par les persécutions hitlériennes et communistes, et par le sionisme. Ce n’est plus qu’un champ de ruines! Quand la guerre fut finie, quand Israël a été créé, son gouvernement a invité M. Hersch père. Dans le livre d’or d’Israël il a écrit: Une merveille sur un volcan.",
+      "bbox": {
+        "x_pct": 14.124,
+        "y_pct": 14.444,
+        "w_pct": 77.345,
+        "h_pct": 31.99
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Laïque et non pratiquante comme l'étaient ses parents, Jeanne Hersch ne va pas à la synagogue et ne sait pas encore où elle sera enterrée. Mais récemment, elle a assisté à la cérémonie funéraire d'un ami juif. «J'ai beaucoup aimé votre discours, a-t-elle dit au rabbin François Garaï de la communauté israélite libérale de Genève, car chaque mot que vous disiez était vrai.» Ajoutant: «M. le rabbin, feriez-vous la même chose pour moi?» Il a répondu: «Laissez-moi du temps pour me préparer et vivez encore longtemps!» Be ézrat haChem! (en hébreu: si Dieu le veut).",
+      "bbox": {
+        "x_pct": 18.136,
+        "y_pct": 52.991,
+        "w_pct": 69.944,
+        "h_pct": 16.117
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated and inaccurate; corrected to match the actual paragraph content in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Genève, décembre 1997",
+      "bbox": {
+        "x_pct": 54.746,
+        "y_pct": 73.504,
+        "w_pct": 25.235,
+        "h_pct": 2.198
+      },
+      "changed": true,
+      "change_reason": "Misidentified as paragraph text; this is a bibliographic/location marker at the bottom of the section and should be filtered."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Paragraph content in the second region was heavily truncated/summarized incorrectly.",
+    "Footer element identified as paragraph text."
+  ],
+  "doc_id": "3070",
+  "page": 4,
+  "elapsed_seconds": 4.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

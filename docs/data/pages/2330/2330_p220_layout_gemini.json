@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "deux trois paragraphes de saint Thomas. Il a été pour moi d'une générosité extraordinaire. Plus tard, lorsqu'il est devenu cardinal, il est venu un jour me rendre visite à Genève. Il avait gardé son manteau fermé jusqu'au cou. Je lui ai dit : « Monsieur l'Abbé — il voulait que tout le monde continue à l'appeler « Monsieur l'Abbé » — n'avez-vous pas trop chaud ? » Il a entrouvert son manteau, laissant apparaître une petite boutonnière rouge et m'a dit : « Vous savez, en dessous, c'est plein de choses rouges », et il a refermé son manteau jusqu'au cou.",
+      "bbox": {
+        "x_pct": 15.47,
+        "y_pct": 6.694,
+        "w_pct": 79.768,
+        "h_pct": 16.185
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the content in the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C.D.K. — Tout ce que vous nous avez raconté concernant les amis que vous avez eus dans les milieux philosophiques, politiques, artistiques, littéraires, témoigne de la place immense qu'a tenue l'amitié dans votre vie. Il arrive que des intellectuels souffrent de la solitude ou travaillent dans un relatif isolement, il ne semble pas que ce fut votre cas.",
+      "bbox": {
+        "x_pct": 15.629,
+        "y_pct": 26.266,
+        "w_pct": 79.573,
+        "h_pct": 8.492
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the content in the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai eu la tentation d'esquisser les portraits de certains de ces amis qui ont accompagné ma vie et qui l'accompagnent encore, les uns depuis l'enfance, d'autres tout au long des années, d'autres encore rencontrés récemment et tout aussi indispensables. Mais comment choisir ? Chacun d'eux, si j'arrivais à communiquer quelque chose de son être, de sa présence, de sa manière de répondre à la vie, de sa voix, serait un cadeau sans prix à faire au lecteur qui le rencontrerait à travers moi. Mais comment capter cette essence ? Et comment ne pas me perdre dans les méandres sans fin de chaque être ? Il vaut mieux sans doute que je n'essaye même pas.",
+      "bbox": {
+        "x_pct": 21.38,
+        "y_pct": 61.798,
+        "w_pct": 73.785,
+        "h_pct": 18.306
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the content in the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si je les prenais tous ensemble, ils sont d'une extrême diversité. Ils appartiennent à des pays, à des traditions, à des milieux sociaux extraordinairement divers. Leurs orientations, leurs options, leurs intérêts sont divergents, parfois opposés. Ils jouent dans ma vie des rôles différents ; leur manière d'aimer le monde et la vie n'est pas la même. Ils",
+      "bbox": {
+        "x_pct": 15.421,
+        "y_pct": 81.718,
+        "w_pct": 79.573,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the content in the image accurately and removed artifact tags."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "216",
+      "bbox": {
+        "x_pct": 15.353,
+        "y_pct": 94.757,
+        "w_pct": 3.738,
+        "h_pct": 1.442
+      },
+      "changed": true,
+      "change_reason": "Identified and correctly labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Transcription accuracy was very poor in all paragraphs",
+    "Missing identification of page number region",
+    "Artifacts present in original transcript text"
+  ],
+  "doc_id": "2330",
+  "page": 220,
+  "elapsed_seconds": 6.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

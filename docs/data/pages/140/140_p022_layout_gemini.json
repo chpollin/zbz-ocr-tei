@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DISCONTINUITE DES PERSPECTIVES HUMAINES 103",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header and included page number"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "sion et donner Yimpression qu'un plan culier est devenu la totalité parti-",
+      "bbox": {
+        "x_pct": 12.096,
+        "y_pct": 14.912,
+        "w_pct": 73.906,
+        "h_pct": 4.803
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une autre tentation, cest de prendre Yun des modes, et den user dune façon impériaexemple, ce genre ",
+      "bbox": {
+        "x_pct": 11.422,
+        "y_pct": 20.0,
+        "w_pct": 74.82,
+        "h_pct": 49.687
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ou encorc,  quand falsifie esthétiquement, artistiquement; la vie pratique; lorsque Zesthétique remp",
+      "bbox": {
+        "x_pct": 11.053,
+        "y_pct": 69.345,
+        "w_pct": 74.017,
+        "h_pct": 15.368
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page title and number were not labeled correctly in initial input"
+  ],
+  "doc_id": "140",
+  "page": 22,
+  "elapsed_seconds": 4.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to section_header and included page number": 1
+  }
+}

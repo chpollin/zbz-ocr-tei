@@ -1,0 +1,134 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "2) L'histoire se structure intrieurement  travers la transformation de la simple ralit individuelle et de ce qui ne fait que passer sans trve. Elle ne devient histoire que par l'unit du gnral et de l'individuel, mais elle met en lumire la nature absolument individuelle du sens indispensable, cet unique-gnral (ein Einzig-Allgemeines). Elle est transition et passage en tant qu'accomplissement de l'tre.",
+      "bbox": {
+        "x_pct": 11.518,
+        "y_pct": 5.913,
+        "w_pct": 84.322,
+        "h_pct": 13.282
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated, corrected to match the full extent of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire devient l'Ide d'une totalit  travers la question : o rside l'unit de l'histoire ?",
+      "bbox": {
+        "x_pct": 11.883,
+        "y_pct": 19.195,
+        "w_pct": 83.74,
+        "h_pct": 3.83
+      },
+      "changed": true,
+      "change_reason": "Label changed from list_item to text as it's part of the continuous paragraph flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les abmes de l'histoire : la nature extrieure  elle et en reste le fondement volcanique ;  le caractre transitoire et vanescent de tout ce qui se manifeste en son sein ;  la dispersion sans fin  travers laquelle son unit toujours alatoire essaie de se conqurir ;  ces abmes, lorsqu'on les voit en pleine conscience, renforcent notre sens pour la vritable historicit.",
+      "bbox": {
+        "x_pct": 11.748,
+        "y_pct": 23.051,
+        "w_pct": 83.875,
+        "h_pct": 11.628
+      },
+      "changed": true,
+      "change_reason": "Text content truncated, corrected to capture full content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Vom Ursprung und Ziel der Geschichte, p. 224-225)",
+      "bbox": {
+        "x_pct": 59.851,
+        "y_pct": 34.336,
+        "w_pct": 35.813,
+        "h_pct": 4.139
+      },
+      "changed": true,
+      "change_reason": "Bibliographic reference is a footnote."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "58. La priode axiale",
+      "bbox": {
+        "x_pct": 11.965,
+        "y_pct": 40.874,
+        "w_pct": 26.748,
+        "h_pct": 2.399
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation in section title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie de l'histoire, en Occident, s'est fonde sur la foi chrtienne. A travers les uvres grandioses des philosophes, de Saint Augustin  Hegel, nous voyons cette foi reconnatre la dmarche de Dieu dans le devenir de l'histoire. Les actes de Dieu dans la Rvlation marquent les tapes dcisives. Ainsi Hegel disait encore : Toute l'histoire va vers le Christ et vient de lui ; l'apparition du Fils de Dieu est l'axe de l'histoire universelle. Notre manire de compter les annes atteste chaque jour cette structure chrtienne de l'histoire universelle.",
+      "bbox": {
+        "x_pct": 11.653,
+        "y_pct": 43.676,
+        "w_pct": 84.011,
+        "h_pct": 17.224
+      },
+      "changed": true,
+      "change_reason": "Corrected full paragraph text from truncated version."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la foi chrtienne est une foi, elle n'est pas la foi de l'humanit. Une telle vision de l'histoire universelle a le dfaut de n'tre valable que pour des croyants chrtiens. Encore ceux-ci n'ont-ils pas, mme en Occident, rattach leur conception de l'histoire empirique  cette foi. Un article de foi n'exprime pas pour eux une vidence empirique concernant le cours effectif de l'histoire. L'histoire sainte prend  leurs yeux un autre sens que l'histoire profane, elle s'en spare. Cela leur permet d'examiner la tradition chrtienne elle-mme comme ils examinent d'autres donnes empiriques.",
+      "bbox": {
+        "x_pct": 11.694,
+        "y_pct": 60.865,
+        "w_pct": 83.835,
+        "h_pct": 17.344
+      },
+      "changed": true,
+      "change_reason": "Corrected full paragraph text from truncated version."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un axe de l'histoire, s'il en un, devrait tre dcouvert empiriquement, comme une donne de fait dont tous les hommes, y compris les chrtiens, pourraient reconnatre la validit. Il se situerait l o l'on a vu surgir ce qui caractrise depuis lors les possibilits humaines, l o, avec une fcondit prodigieuse, la condition humaine s'est dploye et a pris forme pour l'Occident, pour l'Asie,",
+      "bbox": {
+        "x_pct": 11.694,
+        "y_pct": 77.866,
+        "w_pct": 83.835,
+        "h_pct": 11.851
+      },
+      "changed": true,
+      "change_reason": "Corrected full paragraph text from truncated version."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "114",
+      "bbox": {
+        "x_pct": 11.833,
+        "y_pct": 91.246,
+        "w_pct": 3.75,
+        "h_pct": 2.459
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 9,
+  "issues": [
+    "Most text blocks were truncated and contained OCR garbage.",
+    "Page number mislabeled as text.",
+    "Section header had missing period.",
+    "List item was part of regular paragraph flow."
+  ],
+  "doc_id": "1520",
+  "page": 120,
+  "elapsed_seconds": 7.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

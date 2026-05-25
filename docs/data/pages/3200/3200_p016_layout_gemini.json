@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. Dr. h. c. Jeanne Hersch",
+      "bbox": {
+        "x_pct": 9.72,
+        "y_pct": 53.27,
+        "w_pct": 43.839,
+        "h_pct": 2.112
+      },
+      "changed": true,
+      "change_reason": "The original text detected in the bbox had a transcription error ('Jeanne Hersch' vs 'Jeanne Hersch' and missing period)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ordinarius für Philosophie an der Universität Genf",
+      "bbox": {
+        "x_pct": 9.603,
+        "y_pct": 55.982,
+        "w_pct": 52.392,
+        "h_pct": 1.972
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Geb. 13. Juli 1910 in Genf. Schweizer Staatsbürgerin jüdisch-polnischer Abstammung. Wohnhaft in Genf.",
+      "bbox": {
+        "x_pct": 9.72,
+        "y_pct": 58.258,
+        "w_pct": 79.813,
+        "h_pct": 3.944
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated transcription and fixed typo in 'Wohnhaft'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ihr Philosophiestudium in Genf, Paris (Sorbonne), Heidelberg und Freiburg i. Br. schloß Jeanne Hersch 1931 mit der Lizenz an der Universität Genf ab. Bis 1955 lehrte sie anschließend an der Ecole Internationale in Genf und besuchte in dieser Zeit Chile (1935/36) sowie Thailand (1938/39).",
+      "bbox": {
+        "x_pct": 9.568,
+        "y_pct": 65.3,
+        "w_pct": 79.895,
+        "h_pct": 7.584
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated transcription error."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nachdem sie bereits 1936 für das Werk „L'Illusion philosophique“ mit dem Amiel-Preis der Universität Genf ausgezeichnet worden war, promovierte Jeanne Hersch mit ihrem zweiten philosophischen Buch „L'Être et la Forme“ (Baconnière Neuenburg) zum Dr. phil. unter gleichzeitiger Auszeichnung mit dem Prix d'Esthétique et de Morale Adolphe Neumann. Nach neunjährigem Wirken als Privatdozentin wurde sie 1956 von der Universität ihrer Geburtsstadt zum außerordentlichen Professor für Philosophie berufen, und seit 1962 ist sie Ordinarius an dieser Hochschule. 1959 und 1961/62 lehrte Prof. Hersch überdies als Gastdozentin in den USA.",
+      "bbox": {
+        "x_pct": 9.452,
+        "y_pct": 74.281,
+        "w_pct": 80.082,
+        "h_pct": 16.327
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated transcription error."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 9.9,
+        "y_pct": 94.2,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as a filterable element."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR content for paragraphs was severely truncated or misaligned in the provided input.",
+    "Page number at the bottom was missing from the original JSON detection."
+  ],
+  "doc_id": "3200",
+  "page": 16,
+  "elapsed_seconds": 4.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

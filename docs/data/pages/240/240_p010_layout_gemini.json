@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "58 MONDE NOUVEAU",
+      "bbox": {
+        "x_pct": 25.59,
+        "y_pct": 20.35,
+        "w_pct": 49.33,
+        "h_pct": 1.7
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "idées, lorsque ceux qui doivent s'orienter dans le débat ne comprennent pas ou comprennent mal trois mots sur cinq dans les articles qu'on publie pour les convaincre ?",
+      "bbox": {
+        "x_pct": 26.0,
+        "y_pct": 22.73,
+        "w_pct": 49.02,
+        "h_pct": 4.65
+      },
+      "changed": true,
+      "change_reason": "Refined text transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De même quand le peuple ne jouit pas des fruits de la culture, il se trouve appelé à défendre des valeurs pour lui vides de sens, comme, par exemple, la liberté intangible du savant ou de l'artiste. Et ce beau cri de ralliement lancé aujourd'hui, « L'Europe » ! Qu'est ce que l'Europe pour qui n'en connaît guère la géographie réelle, à peine l'histoire, pas du tout l'esprit, du moins dans ce qui le distingue de celui des autres continents ? Dans un discours d'ouverture, un jour, S. de Madariaga, parlant de la nécessité et de la fragilité de l'Europe, enfilait comme des perles des noms d'artistes, de penseurs et de chefs-d'œuvre. Mais quel est le nombre des privilégiés en qui ces noms font monter une tendresse alarmée ?",
+      "bbox": {
+        "x_pct": 25.84,
+        "y_pct": 27.55,
+        "w_pct": 49.31,
+        "h_pct": 18.34
+      },
+      "changed": true,
+      "change_reason": "Refined text transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La démocratie politique occidentale a été un puissant instrument pour les conquêtes populaires. Son rôle est de les garantir et de préserver les chances de l'avenir. Elle nous protège encore contre une rechute - que nous savons désormais toujours possible - dans la barbarie et l'esclavage au sens littéral et rigoureux de ce mot. Mais elle convient si bien à la respiration humaine qu'on cesse vite de la percevoir, elle n'est plus qu'un peu d'air qui passe inaperçu, et bientôt les fictions qu'elle implique la compromettent tout entière. On ne sent plus l'esclavage passé ni l'esclavage futur, mais seulement les manques de la liberté actuelle.",
+      "bbox": {
+        "x_pct": 25.52,
+        "y_pct": 46.12,
+        "w_pct": 49.74,
+        "h_pct": 15.87
+      },
+      "changed": true,
+      "change_reason": "Refined text transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sans l'éducation du peuple entier, le manque de compétence et surtout d'orientation générale continuera à entraver la démocratisation économique indispensable. Sans elle, le vide formel que préserve la démocratie politique ne se remplira pas d'expériences concrètes, vécues par des hommes libres. Sans elle, pas de contrôle réel des gouvernants ni de véritable exercice des droits civiques. Il faut donc revendre toute l'éducation scolaire, créer celle des adultes. Il ne s'agit pas de vulgariser l'enseignement universitaire, mais d'inventer des méthodes permettant de partir de l'homme réel, de son expérience propre, de son métier.",
+      "bbox": {
+        "x_pct": 25.41,
+        "y_pct": 62.18,
+        "w_pct": 49.72,
+        "h_pct": 15.83
+      },
+      "changed": true,
+      "change_reason": "Refined text transcription accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 19.0,
+        "y_pct": 85.8,
+        "w_pct": 59.8,
+        "h_pct": 1.2
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer for footer/metadata."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Original text transcriptions contained significant typos and truncation errors.",
+    "Header and footer regions incorrectly labeled as text."
+  ],
+  "doc_id": "240",
+  "page": 10,
+  "elapsed_seconds": 6.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "helfen kann zu wissen, was sie tun sollen. Der Begriff ist aber stenz bezeichnet, nämlich den Punkt, wo sich ein Mensch in seiner Situation wirklich entscheidet. »Ethisch entscheiden« bedeutet: nicht unter dem Zwang von Ursachen, sondern in der Reihe einer Kette von Ursachen und Folgen, sondern »quer zur Zeit«, in der Absolutheit dessen, was nicht in der Zeit ist, die eigene Entscheidung treffen. Und es ist so wahr, was Kant selbst gesagt hat: daß wohl kein Mensch je aus rein kategorischem Imperativ gehandelt hätte. Ist also der kategorische Imperativ unwirklich? Der Begriff bedeutet, daß es möglich ist, aus dem kategorischen Imperativ heraus zu handeln. Und diese Möglichkeit ist eine ethische Notwendigkeit, d.h. eine Pflicht. Ob dieser Pflicht empirisch gefolgt wird oder nicht, bleibt in der Schwebe. In einem bestimmten Sinn inszeniert Jaspers Existenz. Und um sie zu inszenieren, beschreibt er die verschiedenen »Richtungen«, in denen das Subjekt handeln oder suchen oder etwas tun kann. Nennen wir, um schneller vorwärtszukommen, die drei Arten von Perspektiven, die der Mensch in sich selber vorfindet.",
+      "bbox": {
+        "x_pct": 11.577,
+        "y_pct": 6.694,
+        "w_pct": 38.423,
+        "h_pct": 43.14
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and label for paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": {
+        "x_pct": 10.599,
+        "y_pct": 86.595,
+        "w_pct": 7.738,
+        "h_pct": 2.724
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer as it is a page number."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "53",
+      "bbox": {
+        "x_pct": 85.599,
+        "y_pct": 93.3,
+        "w_pct": 7.738,
+        "h_pct": 2.724
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer for page 53."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese drei Perspektiven nennt Jaspers die drei Umgreifenden Horizonte vorstellen. Sie kommen ineinander hinein, sie greifen ineinander. Aber das bedeutet keineswegs, daß sie Übergänge unter sich haben. Es bestehen eben nach Jaspers unter ihnen keine Übergänge. Sie sind diskontinuierlich. Man kann keines von den Umgreifenden auf ein anderes reduzieren. Sie sind in ihrem Wesen nach unreduzierbar.",
+      "bbox": {
+        "x_pct": 52.848,
+        "y_pct": 56.528,
+        "w_pct": 35.293,
+        "h_pct": 20.831
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and label for paragraph."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "raturgegebe-",
+      "bbox": {
+        "x_pct": 80.403,
+        "y_pct": 30.399,
+        "w_pct": 8.105,
+        "h_pct": 3.322
+      },
+      "changed": true,
+      "change_reason": "This is an artifact or partial word hyphenation in the margin; removing or marking as paragraph segment."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text quality in initial boxes was very poor.",
+    "Page numbers were labeled as text.",
+    "Missed page 53 footer.",
+    "Small margin artifact labeled as text paragraph."
+  ],
+  "doc_id": "2350",
+  "page": 4,
+  "elapsed_seconds": 5.21,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

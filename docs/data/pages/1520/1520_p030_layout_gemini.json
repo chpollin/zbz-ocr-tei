@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "temps, par l'acte libre historiquement situé, au sein des réalités empiriques et des circonstances particulières. Mais cet acte vient d'ailleurs et son véritable enjeu est ailleurs.",
+      "bbox": {
+        "x_pct": 10.474,
+        "y_pct": 5.51,
+        "w_pct": 83.469,
+        "h_pct": 5.973
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'existence comme possible liberté sait qu'elle ne s'est pas créée elle-même. Elle est à elle-même un cadeau de la transcendance. Que par sa liberté existentielle l'homme ait part à l'absolu ne lui confère aucune autosuffisance, au contraire. La liberté vit de sa dépendance envers la transcendance, qui en est l'origine. Sa dépendance de l'absolu la libère des nécessités relatives. Sartre pense que si Dieu est, la liberté humaine n'est pas. Pour Jaspers c'est le contraire: sans lien à la transcendance, pas de liberté.",
+      "bbox": {
+        "x_pct": 10.569,
+        "y_pct": 11.165,
+        "w_pct": 83.699,
+        "h_pct": 15.63
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A partir de la certitude éternelle du « je suis », à laquelle pourtant elle ne peut donner aucun contenu objectivable, l'existence est source de sens et source d'actes inconditionnés. Ainsi, par exemple, lorsque Giordano Bruno préféra le bûcher au reniement d'une évidence pourtant toute scientifique et rationnelle, ce choix ne fut pas lui-même rationnel, mais bien existentiel. Si l'homme pouvait savoir ce qu'est le moi, le sujet, comme il connaît les réalités objectives, il saurait du même coup ce que sont la vérité et l'évidence. Mais vérité et évidence perdraient aussitôt leur sens en tant que valeurs, en tant que convictions existentielles, — faute de liberté.",
+      "bbox": {
+        "x_pct": 10.298,
+        "y_pct": 26.452,
+        "w_pct": 83.835,
+        "h_pct": 19.246
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Situation et situations-limites.",
+      "bbox": {
+        "x_pct": 10.61,
+        "y_pct": 47.386,
+        "w_pct": 83.333,
+        "h_pct": 2.425
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header as it is a heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non seulement l'existence est toujours située d'une façon singulière, mais elle est aussi captive, irrémédiablement, d'un certain nombre de conditions premières, qu'elle n'a pas choisies et qu'il lui faut pourtant assumer. Jaspers appelle ces conditions, que nul être humain ne peut choisir, mais auxquelles il dépend de lui de donner, par son existence, une signification, des situations-limites. Ainsi, personne ne peut choisir lui-même à quelle époque, dans quel milieu, de quels parents il vient au monde. La naissance, avec ses",
+      "bbox": {
+        "x_pct": 10.569,
+        "y_pct": 73.719,
+        "w_pct": 83.875,
+        "h_pct": 15.63
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text errors."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Significant OCR errors in multiple paragraphs.",
+    "Section heading was mislabeled as text.",
+    "Page number missing from detection/labels."
+  ],
+  "doc_id": "1520",
+  "page": 30,
+  "elapsed_seconds": 6.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

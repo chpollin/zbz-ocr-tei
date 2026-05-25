@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "alle verantwortlichen Kräfte in unserer Gesellschaft, diese Probleme anzupacken und einer Lösung zuzuführen. Während der Krise sind sie leider mit anderem beschäftigt.",
+      "bbox": {
+        "x_pct": 14.249,
+        "y_pct": 8.307,
+        "w_pct": 75.919,
+        "h_pct": 6.819
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ebenfalls von seiten der Gewerkschaften wird nun die Forderung nach immer umfassenderer sozialer und materieller Absicherung des einzelnen erhoben. Ist diese Forderung mit dem tiefgreifenden wissenschaftlich-technischen und industriellen Strukturwandel überhaupt in Einklang zu bringen? Ich meine: inwieweit ist sie realistisch?",
+      "bbox": {
+        "x_pct": 14.223,
+        "y_pct": 17.389,
+        "w_pct": 75.998,
+        "h_pct": 10.718
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and removed hallucinated word 'Conturen' which is not present in the source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zunächst einmal bin ich nicht der Auffassung jener Kritiker des Versicherungssystems in den westlichen Industrieländern, die erklären, daß dieses Versicherungssystem den Bürger seiner Eigenverantwortung enthebt und ihn gewissermaßen entmündigt. Ich vertrete ganz im Gegenteil den Standpunkt, daß unser Versicherungssystem in hohem Maße menschlich ist, weil es dem Bürger die Möglichkeit bietet, sich gegen die unmittelbaren Sorgen und Nöte des Daseins zu schützen. So wird er für andere Gedanken frei. Denn da, wo eine Versorgungseinrichtung besteht (Alters- und Hinterlassenen-Versicherung, Krankenversicherung usw.) sind es nicht nur die Bezieher, sondern wir alle, die davon profitieren: von der Erleichterung nämlich zu wissen, daß eine solche Hilfe besteht. Natürlich darf dieser kollektive Versicherungsschutz nicht soweit ausgebaut werden, daß die Menschen in einen Zustand kommen, wo sie jedes, auch das geringste Risiko als etwas Unerträgliches erleben. Gegenwärtig habe ich den Eindruck, daß die Gefahren, die in der verschmutzten Luft, im verschmutzten Wasser, in den mit Chemikalien durchsetzten Nahrungsmitteln etc. liegen, in der Öffentlichkeit so stark betont werden, daß die Menschen am Ende kaum mehr zu atmen, zu trinken, zu essen, ja zu leben wagen. Wenn irgendwo auch nur der Anschein einer Gefahr oder einer Gefährdung besteht, dann ist das schon ein Grund, dieses oder jenes nicht zu tun. In dieser Haltung liegt etwas Anormales. Denn in der Realität des menschlichen Lebens geschieht nichts ohne Risiko. Dieser Tatsache müssen wir uns endlich wieder bewußt werden. Wir müssen achtgeben, »nicht wegen des Lebens die Gründe des Lebens zu verlieren«, wie ein alter lateinischer Dichter schrieb. Das",
+      "bbox": {
+        "x_pct": 14.488,
+        "y_pct": 31.072,
+        "w_pct": 76.175,
+        "h_pct": 55.701
+      },
+      "changed": true,
+      "change_reason": "Removed hallucinated 'Hersch:' prefix from the start of the paragraph and cleaned up OCR transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "262",
+      "bbox": {
+        "x_pct": 14.488,
+        "y_pct": 89.15,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Correctly labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original extraction included OCR artifacts and hallucinated words like 'Conturen'.",
+    "Hersch: label was incorrectly included in the paragraph text.",
+    "Page number at the bottom was missing a label."
+  ],
+  "doc_id": "2540",
+  "page": 14,
+  "elapsed_seconds": 5.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 113",
+      "bbox": {
+        "x_pct": 328.0,
+        "y_pct": 94.0,
+        "w_pct": 572.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified header containing title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fètre en effet. La séparation des pouvoirs n'implique pas que les intentions de la masse électorale puissent se maintenir à l'état pur, indépendamment des contingences, dans une autorité législative souveraine à laquelle l'exécutif serait nettement et distinctement subordonné, comme le serait par exemple le corps au commandement de l'esprit ; et pas non plus que l'autorité judiciaire soit une conscience morale absolue, sans compromis, échappant à toute emprise contingente. Et l'instruction obligatoire n'implique pas la croyance que, pour l'avoir reçue, tous les habitants seront désormais des citoyens, ou même des hommes au sens plein du mot, capables de se faire une opinion valable sur tous les problèmes posés par l'époque.",
+      "bbox": {
+        "x_pct": 6.031,
+        "y_pct": 12.451,
+        "w_pct": 84.54,
+        "h_pct": 25.187
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les lois signifient, en premier lieu, que devant l'imprévisibilité des passions et des appétits humains et les dimensions que risque de leur donner le pouvoir, il importe de fixer des procédures objectives garantissant certaines constantes sociales. Les élections signifient que, pour protéger les droits individuels et ceux de la minorité et pour assurer l'exécution approximative des volontés de la majorité, il faut prévoir un contrôle périodique du pouvoir et sa remise en question. Le suffrage universel signifie qu'en l'absence de critères objectifs consacrant une élite, c'est la volonté du plus grand nombre, avec l'obligation qu'elle impose aux détenteurs du pouvoir de briguer l'adhésion de chaque individu, qui garantit le mieux un contrôle effectif du pouvoir. Les libertés signifient que l'homme ne s'épuisant pas sur le plan politique, et ce plan, d'autre part, n'étant nullement indépendant de tous les autres modes de sa présence au monde, il faut réserver pour lui, sur le plan politique, une marge d'indétermination que viendront remplir des nécessités intérieures. La séparation des pouvoirs signifie qu'étant donné le mal humainement inhérent au pouvoir et les risques d'abus que celui-ci comporte, il est sage de le morceler en plusieurs compétences dont deux exercent de leur mieux, avec le maximum d'indépendance, leur contrôle sur l'exécutif. Enfin l'instruction publique obligatoire signifie que l'homme étant avant tout ses possibles, il faut, au début de la vie, donner à chacun les moyens de découvrir lesquels lui sont propres, de façon qu'il dépende de lui désormais, autant que faire se peut, de les réaliser ou de les négliger.",
+      "bbox": {
+        "x_pct": 5.989,
+        "y_pct": 36.72,
+        "w_pct": 84.777,
+        "h_pct": 53.298
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Detected page header and page number incorrectly labeled as text.",
+    "OCR of the text regions was highly inaccurate and required total replacement.",
+    "BBox detection for header was merged into paragraph 1 by previous model."
+  ],
+  "doc_id": "330",
+  "page": 147,
+  "elapsed_seconds": 5.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

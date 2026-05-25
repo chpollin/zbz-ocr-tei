@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "194 DANS L'ART",
+      "bbox": {
+        "x_pct": 15.211,
+        "y_pct": 72.072,
+        "w_pct": 76.506,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page header/number info."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "hasard de l'objet jusqu'à faire de ses contours, de ses teintes, de ses ombres, des éléments nécessaires du tableau, si bien que l'objet, au lieu d'être un hasard, est véritablement. C'est lui aussi qui permet de transcender les complications psychologiques d'un héros de roman, dans lesquelles pendant ces dernières années se sont embourbées tant d'analyses : pour ingénieuses qu'elles soient, elles n'en restent pas moins désespérément mesquines et vides. Grâce à l'élément philosophique, l'art parvient à atteindre le point de vérité métaphysique où se nouent la liberté et le destin (1). C'est lui aussi qui permettra à la musique de transcender la région purement sentimentale et émotive du moi pour atteindre sa liberté, le mettre dans cet état de « disponibilité » dont parle Schiller (2). — Mais il se peut aussi que l'art, n'entendant plus l'appel de la philosophie, s'oublie dans la copie du réel et l'attendrissement psychologique, d'où l'ennui le jette dans la seule",
+      "bbox": {
+        "x_pct": 15.211,
+        "y_pct": 11.697,
+        "w_pct": 76.506,
+        "h_pct": 48.808
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'Idiot, de Dostoiewsky, me paraît à cet égard essentiel : à la surface, ce roman est chaotique et inattendu jusqu'à la fantasmagorie et à l'hallucination; les actes des héros sont parfois insensés. Mais dessous règne une cohérence qu'on peut bien appeler « fatalité ». Cela ne pouvait pas se passer autrement. Et cette fatalité n'est pas extérieure aux personnages, elle n'est enracinée que dans leur existence possible. Destin et existence ne font qu'un et apparaissent sous la forme du chaos de la vie. Tout sommet de l'art me paraît réunir ces pôles opposés.",
+      "bbox": {
+        "x_pct": 15.211,
+        "y_pct": 64.795,
+        "w_pct": 76.506,
+        "h_pct": 22.212
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR errors."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) L'Idiot, de Dostoiewsky, me paraît à cet égard essentiel",
+      "bbox": {
+        "x_pct": 15.211,
+        "y_pct": 64.795,
+        "w_pct": 47.506,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected footnote annotation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense ici surtout à Bach et à Mozart.",
+      "bbox": {
+        "x_pct": 18.479,
+        "y_pct": 86.53,
+        "w_pct": 57.229,
+        "h_pct": 2.345
+      },
+      "changed": true,
+      "change_reason": "Changed label from list_item to text as it's a standard paragraph continuation."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Misidentified header as paragraph.",
+    "Footnote marker/content overlap with main text block.",
+    "OCR errors in main text extraction.",
+    "Misidentified text as list_item."
+  ],
+  "doc_id": "20",
+  "page": 196,
+  "elapsed_seconds": 5.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

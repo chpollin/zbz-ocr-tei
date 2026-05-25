@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 93",
+      "bbox": {
+        "x_pct": 374,
+        "y_pct": 77,
+        "w_pct": 251,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "The top line contains the title of the work and the page number, which should be filtered out or marked as a page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "quand on me voyait dans la rue, dans la campagne, je m’y endormais. Là où finissaient les hommes, là où commençait naguère une nature toute terrestre, mais transparente et traversée de partout par des signes infinis, s’étendaient maintenant des plaines ou des mers ou des îles funèbres, qui m’acceptaient, où je pouvais vivre avec l’accord des choses une sorte de vie morte. Tous ces pays avaient en commun leur absence totale de devenir. Chacun existait dans un certain éclairage, à un certain moment du jour ou de la nuit. Jamais ce moment n’y changeait. Il se répétait, intact, dans une poignante, une étouffante identité.",
+      "bbox": {
+        "x_pct": 99,
+        "y_pct": 121,
+        "w_pct": 802,
+        "h_pct": 301
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y avait un bateau, mince et tout blanc. Il avançait très vite dans le matin embrumé, sur une mer plate et étrangement agitée. Aucune vague ne se soulevait et ne crachait d’écume. Mais la surface moirée de l’eau se déplaçait et se tordait horizontalement avec une puissance lente, épaisse. Le bateau effilé coupait les méandres droit devant lui, — j’étais à l’avant, assise sur la pointe de la proue, sous moi il y avait cette mer, comme un tissu de serpents qui tordaient les nuances atténuées d’un coucher de soleil hivernal. Je sens encore sur mon visage le vent mouillé et son odeur presque effacée de lointain marécage. Le bateau allait tout droit, très vite, fuyait, glissait, planait, et je n’étais qu’un regard fixé devant moi comme une corde pour maintenir la direction de sa course. Je ne l’ai jamais vu arriver nulle part.",
+      "bbox": {
+        "x_pct": 99,
+        "y_pct": 451,
+        "w_pct": 802,
+        "h_pct": 404
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR output contained significant character errors.",
+    "Page header 'TEMPS ALTERNÉS 93' was missing from the initial region list.",
+    "Bounding boxes needed to be mapped to more accurate OCR representations."
+  ],
+  "doc_id": "40",
+  "page": 91,
+  "elapsed_seconds": 4.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

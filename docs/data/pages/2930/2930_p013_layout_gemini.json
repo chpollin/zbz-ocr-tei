@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mhan als doch an die ihm den, und sie darf ihm niche unterschlagen werden.",
+      "bbox": {
+        "x_pct": 7.545,
+        "y_pct": 19.221,
+        "w_pct": 37.617,
+        "h_pct": 17.206
+      },
+      "changed": true,
+      "change_reason": "The original text capture included hallucinated or junk text outside of the actual paragraph content, and the bounding box contains only the main paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich wurde gerne der Skepsis widersprechcn, die in der Diskussion angeklungen ist und wonach in der geschichtlichen Entwicklung nichts weitergegangen sei. Wenn man nämlich die Rechtsentwicklung in längeren Zusammenhängen beobachtet, dann muß man doch sagen, daß wir uns seit 1789 beträchtlich weiterentwickelt haben und im Jahre 1989 mit gutem Grund die 200-Jahr-Feier der Menschenrechte begehen konnten. Es ist seither nämlich ungeheuer viel geschehen. Ich möchte dies damit veranschaulichen, daß es einen großen Unterschied machen würde, wenn wir auch nur einen einzigen Artikel des Staatsgrundgesetzes von 1867 weniger hätten. Jeder dieser Artikel ist unverzichtbar und jeder ist mühevoll und unter großen Opfern errungen worden.",
+      "bbox": {
+        "x_pct": 7.304,
+        "y_pct": 52.353,
+        "w_pct": 37.906,
+        "h_pct": 25.338
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and removed junk artifacts from the OCR result."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Kulturpessimismus verfallen.",
+      "bbox": {
+        "x_pct": 53.514,
+        "y_pct": 15.103,
+        "w_pct": 18.123,
+        "h_pct": 2.353
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelling from OCR result."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Skepsis Ich würde das in dem Sinne akzeptieren, daß man in der Fortentwicklung der Menschenrechte manchmal eine Pause einlegen sollte, um das Bestehende zu sichern - um gewissermaßen in die Selbstverständlichkeit herüberzuführen. Aber es kann zu keinem Zeitpunkt ein Ende der Menschenrechtsentwicklung geben. Sie wird und muß - mit unserem Zutun - analog zur Evolution fortschreiten.",
+      "bbox": {
+        "x_pct": 57.677,
+        "y_pct": 16.809,
+        "w_pct": 32.214,
+        "h_pct": 17.691
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and updated text for accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Was anderes ist damit gemeint als eine artgerechte Tierhaltung und die Vermeidung von unnötigen Qualen und Leiden? Und daß wir Juristen am diesem Punkt den Zeitgeist einzufangen suchen, indem wir etwa § 285 ABGB ändern und das Tier aus dem Sachbegriff herausnehmen, dann doch wohl aus Respekt vor jenen Lebewesen, die an ihrem Tier in besonderer Weise hängen.",
+      "bbox": {
+        "x_pct": 53.718,
+        "y_pct": 43.338,
+        "w_pct": 24.296,
+        "h_pct": 13.765
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR truncation and hallucinated text fragment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und dann die Frage anklang, ob Einbeziehung der Natur, ob - wenn man den haben: Prof. Heitger künftig seine Eigenschaft als Anthropozentriker abgelegt haben muß, würde ich antworten: nein. Es ist schlicht und einfach eine Frage, wie Prof. Heitger sie formuliert hat: die Einbeziehung künftiger Generationen. Und wenn man sagt, die Generationen, die ich noch nicht kenne, die sind gewissermaßen auch nicht existent, dann bin ich froh, daß das noch nicht so gesehen wurde, bevor wir hier ankamen. Ich hoffe, daß sich die Menschenrechte in Richtung auf eine Generationensolidarität entwickeln werden und es gelingen wird, mit Hilfe der Menschenrechte langfristig auch die Rechte künftiger Generationen zu sichern, damit diese noch dieselbe Schöpfung vorfinden, die auch wir vorgefunden haben.",
+      "bbox": {
+        "x_pct": 53.55,
+        "y_pct": 56.088,
+        "w_pct": 36.426,
+        "h_pct": 28.662
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated OCR and corrected text alignment."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Significant OCR quality issues in the provided source text extraction.",
+    "Multiple fragments contained cut-off words or scrambled characters.",
+    "Metadata for text boxes needs manual verification as original OCR output was inaccurate."
+  ],
+  "doc_id": "2930",
+  "page": 13,
+  "elapsed_seconds": 5.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

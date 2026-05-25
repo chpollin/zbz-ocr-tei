@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Als Gott die Welt schuf, trennte er sich von sich selbst, trennte er die Welt von sich, trennte er die Elemente voneinander. Als Gott den Menschen schuf, trennte er sich vom Menschen und trennte den Menschen von sich. Erst dadurch wurden die Welt, die Elemente und der Mensch wirklich.",
+      "bbox": {
+        "x_pct": 6.06,
+        "y_pct": 8.472,
+        "w_pct": 77.289,
+        "h_pct": 10.84
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eigentlich verstehen wir gar nicht, wie Gott, der das Sein ist, die verschiedenen Wesen voneinander und von sich trennen konnte, um sie wirklich werden zu lassen. Was ist das überhaupt: Trennung? Wir wissen es nicht. Aber für uns ist sie Voraussetzung jeder Wirklichkeit. Alles, was wirklich ist, ist getrennt, und erst die Trennung gibt jedem wirklichen Wesen Gestalt und Form, Bestimmung, Sinn – also seine Schönheit.",
+      "bbox": {
+        "x_pct": 6.721,
+        "y_pct": 18.253,
+        "w_pct": 76.593,
+        "h_pct": 14.902
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist jedoch eine Schönheit im Verbanntsein, durch das Nichts abgegrenzt. Sie genügt sich nicht selbst; was sie wirklich macht, trennt sie vom Sein. Der Baum möchte den Wind, den er atmet, in sich aufnehmen oder in ihm aufgehen, um die getrennte Einheit von einst wiederzufinden. Der Baum atmet aus Sehnsucht nach dem Einssein – oder dem Nichtsein. Der Baum vereint die Bewegungen seiner Äste und träumt davon, ungetrennt zu sein und doch nicht vernichtet durch das Ende seines Exils. Er ist wie alle anderen Geschöpfe mit der Erde und mit Gott verbunden durch diese ausweglose Sehnsucht.",
+      "bbox": {
+        "x_pct": 7.532,
+        "y_pct": 32.05,
+        "w_pct": 77.486,
+        "h_pct": 21.936
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Im eigenen Wesen getrennt zu sein, das gehört zum Geschöpf. Deswegen wird es geboren und deswegen stirbt es. Deswegen liegt es wohl in der Natur des Lebendigen, daß alles alles auffrißt. Deswegen lieben und töten wohl auch die Menschen, und deswegen erzählen sie einander lange Geschichten, die sich in Raum und Zeit entfalten.",
+      "bbox": {
+        "x_pct": 8.656,
+        "y_pct": 53.003,
+        "w_pct": 76.86,
+        "h_pct": 12.224
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ein Mann war einst von weit hergekommen, nach einer langen und beschwerlichen Reise, und setzte sich unter einen unserer Bäume. Dort, wo er herkam, wuchsen die Bäume anders, ihre Äste entfalteten sich auf andere Weise, und ihr Rauschen im Winde war nicht dasselbe, dort sprachen die Leute eine andere Sprache, die man hier nicht verstand. Was bei ihnen gesprochen wurde, war aber für ihn Lüge, die er nicht verbreiten wollte. Verrat an der Wahrheit kann man nicht lange ertragen, vor allem nicht zu Hause. Darum hatte er sich von allem und allen getrennt, von seinen Liebsten und von seinem Haus. Er suchte Zuflucht in der Ferne, er wurde heimatlos.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 65.03,
+        "w_pct": 75.284,
+        "h_pct": 21.808
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Obgleich er immer im Wald gelebt hatte, war ihm der Pilz, der am Fuße des Stammes wuchs, völlig unbekannt. Er hörte",
+      "bbox": {
+        "x_pct": 11.437,
+        "y_pct": 86.362,
+        "w_pct": 73.963,
+        "h_pct": 4.357
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "247",
+      "bbox": {
+        "x_pct": 81.077,
+        "y_pct": 92.203,
+        "w_pct": 4.148,
+        "h_pct": 2.564
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Initial OCR text was heavily truncated and garbled.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "2160",
+  "page": 4,
+  "elapsed_seconds": 6.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

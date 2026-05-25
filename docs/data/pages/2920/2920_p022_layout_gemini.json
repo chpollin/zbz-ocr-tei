@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "524",
+      "bbox": {
+        "x_pct": 25.735,
+        "y_pct": 8.01,
+        "w_pct": 3.75,
+        "h_pct": 2.158
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Coups de sonde",
+      "bbox": {
+        "x_pct": 51.544,
+        "y_pct": 7.917,
+        "w_pct": 14.853,
+        "h_pct": 2.251
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for running header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les langues. Collectivité et individu",
+      "bbox": {
+        "x_pct": 25.838,
+        "y_pct": 13.906,
+        "w_pct": 46.029,
+        "h_pct": 2.905
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il existe, dans certaines régions de l'Afrique, des langues nombreuses, dont chacune n'est parlée par un petit nombre d'hommes, ce qui ne l'empêche pas d'avoir ses moyens d'expression propres et irremplaçables. Inspirés par les droits de l'homme selon lesquels tout peuple a droit à sa langue, on s'est attaché à fixer ces langues par l'écriture et à les utiliser lors de l'alphabétisation des enfants. Les groupes concernés en ont été heureux et ont vu dans ces efforts une reconnaissance de l'égalité de leurs droits, conformément à la Déclaration universelle. Pourtant, une question se pose au sujet des individus concernés, et en particulier des enfants. Si ces derniers ne peuvent être scolarisés que pendant un petit nombre d'années, ils pourront peut-être apprendre encore, par la suite, la langue de l'État qui est le leur. Mais ils n'auront toujours pas accès, pour autant, à une langue de grande circulation internationale - ce qui représente nécessairement une mutilation pour leur avenir. Dès lors, la question est posée : les droits de l'homme concernent-ils avant tout les personnes ou les collectivités ?",
+      "bbox": {
+        "x_pct": 25.441,
+        "y_pct": 18.184,
+        "w_pct": 71.132,
+        "h_pct": 48.616
+      },
+      "changed": true,
+      "change_reason": "Text fixed to represent original content correctly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De telles contradictions, dans la mise en œuvre des droits, ne surgissent pas par suite d'erreurs commises, mais tout simplement par suite des imbrications et des polarités constitutives de la condition humaine - par exemple, du fait qu'aucun individu n'advient à sa liberté responsable sans appartenir à une collectivité, qui le limite et qu'il transcende pourtant.",
+      "bbox": {
+        "x_pct": 25.191,
+        "y_pct": 66.663,
+        "w_pct": 70.985,
+        "h_pct": 15.967
+      },
+      "changed": true,
+      "change_reason": "Text fixed to represent original content correctly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi l'exigence des droits de l'homme concerne toutes les dimensions de la condition humaine, les relations les plus diverses qui s'établissent entre une personne et n'importe quelle autre.",
+      "bbox": {
+        "x_pct": 25.338,
+        "y_pct": 82.169,
+        "w_pct": 70.735,
+        "h_pct": 9.323
+      },
+      "changed": true,
+      "change_reason": "Text fixed to represent original content correctly."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Original text transcription had truncated words and missing characters.",
+    "Page number and running header were incorrectly labeled as text."
+  ],
+  "doc_id": "2920",
+  "page": 22,
+  "elapsed_seconds": 4.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

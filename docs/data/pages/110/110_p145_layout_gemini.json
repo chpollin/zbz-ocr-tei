@@ -1,0 +1,84 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "(als Anschauung) fassen will. Das Kernerlebnis ist ursprünglich Könnenserlebnis eines Lebewesens;   ",
+      "bbox": {
+        "x_pct": 10.634,
+        "y_pct": 13.126,
+        "w_pct": 68.94,
+        "h_pct": 51.745
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Max   ScHELER,   Idealismus-Realismus, dans   Philosophischer   Anzeiger, édité 293.",
+      "bbox": {
+        "x_pct": 14.977,
+        "y_pct": 69.727,
+        "w_pct": 64.435,
+        "h_pct": 2.936
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Max SCHELER, op. cit. p. 304.",
+      "bbox": {
+        "x_pct": 14.977,
+        "y_pct": 72.891,
+        "w_pct": 26.843,
+        "h_pct": 1.616
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "LA FORME ET L'ESPACE",
+      "bbox": {
+        "x_pct": 10.826,
+        "y_pct": 10.0,
+        "w_pct": 68.664,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "143",
+      "bbox": {
+        "x_pct": 75.31,
+        "y_pct": 98.0,
+        "w_pct": 4.147,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Footnote regions were labeled incorrectly as list_item",
+    "Missing page header region",
+    "Missing page footer region"
+  ],
+  "doc_id": "110",
+  "page": 145,
+  "elapsed_seconds": 4.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label to footnote": 2,
+    "ADDED": 2
+  }
+}

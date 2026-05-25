@@ -1,0 +1,176 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr. Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 9.38,
+        "y_pct": 7.7,
+        "w_pct": 18.0,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page header/author name"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Wir können nur hoffen, Menschen zu werden",
+      "bbox": {
+        "x_pct": 19.96,
+        "y_pct": 10.199,
+        "w_pct": 60.701,
+        "h_pct": 3.037
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie sieht Jeanne Hersch <Die Hoffnung , Mensch zu seins und wie will sie diese Formel verstanden wis",
+      "bbox": {
+        "x_pct": 9.106,
+        "y_pct": 17.208,
+        "w_pct": 40.508,
+        "h_pct": 24.997
+      },
+      "changed": false
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "arrogant zu behaupten, in unserer Gesellschaft könne ma nicht Mensch seins: Jeanne Hersch, die bekan",
+      "bbox": {
+        "x_pct": 51.41,
+        "y_pct": 33.521,
+        "w_pct": 15.415,
+        "h_pct": 7.618
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine Damen und Herren; Ich glaube, der Titel meines Vortrages verlangt eine Erklärung; Es ist eigen",
+      "bbox": {
+        "x_pct": 9.106,
+        "y_pct": 44.746,
+        "w_pct": 40.427,
+        "h_pct": 16.98
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Viele wichtige Wörter sind zweideutig",
+      "bbox": {
+        "x_pct": 15.367,
+        "y_pct": 64.387,
+        "w_pct": 28.332,
+        "h_pct": 1.595
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der   Ausdruck ist für mich   wirklich sehr zentral Das kommt daher; dass Wörter die   wichtig sind.",
+      "bbox": {
+        "x_pct": 9.001,
+        "y_pct": 66.991,
+        "w_pct": 40.556,
+        "h_pct": 19.863
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mit dem Wort Mensch ist es genauso. Wir brauchen da Zu zweifeln; dass wir Menschen   sind denn   wir",
+      "bbox": {
+        "x_pct": 9.162,
+        "y_pct": 87.692,
+        "w_pct": 40.338,
+        "h_pct": 4.427
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Kälber und keine  Schlangen;  wir sind eben Menschen   und keine  Affen. Das kann feststellen;   das",
+      "bbox": {
+        "x_pct": 51.193,
+        "y_pct": 42.239,
+        "w_pct": 40.185,
+        "h_pct": 11.761
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das bedeutet nicht, dass er biologisch kein Mensch ist,  sondern das   bedeutet, dass er das   Wesen",
+      "bbox": {
+        "x_pct": 51.193,
+        "y_pct": 55.214,
+        "w_pct": 40.242,
+        "h_pct": 9.499
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Nur der Mensch hat Erwartungen",
+      "bbox": {
+        "x_pct": 58.743,
+        "y_pct": 66.877,
+        "w_pct": 25.326,
+        "h_pct": 1.766
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und was ist es, was in wertendem Sinn zum Mensch gehört? Ich glaube; das ist in erster Linie die Fäh",
+      "bbox": {
+        "x_pct": 51.144,
+        "y_pct": 69.573,
+        "w_pct": 40.258,
+        "h_pct": 17.02
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "211",
+      "bbox": {
+        "x_pct": 88.0,
+        "y_pct": 90.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page number footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header text region",
+    "Missing page number region"
+  ],
+  "doc_id": "1430",
+  "page": 2,
+  "elapsed_seconds": 7.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

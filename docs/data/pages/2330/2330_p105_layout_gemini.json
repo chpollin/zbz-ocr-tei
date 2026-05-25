@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.11. — Vous voulez. À mon avis, il faut toujours aller aussi loin qu'on le peut dans la liberté qu'on laisse aux adversaires de la démocratie, mais aussi loin qu'on le peut sans trop exposer la démocratie, sans la mettre trop en danger.",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 4.573,
+        "w_pct": 79.817,
+        "h_pct": 8.435
+      },
+      "changed": true,
+      "change_reason": "The text extraction and label were incomplete; corrected to capture the full paragraph context starting with the speaker indicator."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A plusieurs occasions vous établissez des liens très étroits entre démocratie et droits de l'homme. Est-ce que vous pourriez expliciter ces liens ?",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 13.411,
+        "w_pct": 79.573,
+        "h_pct": 5.782
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and typos in the OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.11. — Il me semble que la racine de la démocratie est dans les droits de l'homme. Et les droits de l'homme eux-mêmes ont leurs racines dans ce qu'est l'être humain. Alors je crois que dans une certaine mesure, comme je l'ai déjà dit, c'est parce que l'être humain individuel a ce pouvoir de devenir lui-même et d'assumer ses propres décisions, qu'il doit avoir aussi la possibilité de prendre réellement ses décisions. Or, prendre réellement des décisions, c'est avoir une efficacité sur le monde où l'on vit et dans lequel vivent les gens auxquels on tient. Par conséquent, cela implique une participation de tous à la mise en forme de ce monde : c'est le régime démocratique. Remarquez, moi, je trouve toujours curieux que ce lien entre démocratie et droits de l'homme n'apparaisse pas avec évidence à tous, et je me demande pourquoi. C'est qu'on situe probablement la démocratie sur un plan politique tout à fait séparé de celui où l'on situe les droits de l'homme. Mais pourtant ces plans sont solidaires, dans la condition humaine, ils sont interdépendants. Qu'est-ce que l'homme si ce n'est l'intersection de tous ces plans, l'intersection du plan politique et du plan quasi métaphysique de la liberté irréductible de chaque être humain ?",
+      "bbox": {
+        "x_pct": 4.518,
+        "y_pct": 19.25,
+        "w_pct": 79.939,
+        "h_pct": 35.323
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR truncation errors and incomplete sentence structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.12. — Est-ce que vous n'avez pas le sentiment que maintenant, à notre époque, cette notion de « droits de l'homme » est devenue une espèce de fourre-tout idéologique et un pur slogan. Vous la liez au régime démocratique, mais en fait, on voit que la notion de « droits de l'homme » est invoquée par des régimes qui sont aux antipodes de la définition que vous venez de donner de la démocratie.",
+      "bbox": {
+        "x_pct": 4.31,
+        "y_pct": 56.129,
+        "w_pct": 79.78,
+        "h_pct": 11.879
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR truncation errors and improved text accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le fait est que la notion même de « droits de l'homme », qui renvoie à des prétentions auxquelles satisfaction peut être donnée par la voie de procédures juridiques, le fait est que cette notion, comme l'a dit un...",
+      "bbox": {
+        "x_pct": 4.518,
+        "y_pct": 85.056,
+        "w_pct": 79.536,
+        "h_pct": 6.177
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated words and improved transcription accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "101",
+      "bbox": {
+        "x_pct": 79.5,
+        "y_pct": 95.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Detected missing page number region. Assigned to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial OCR was highly truncated in multiple segments.",
+    "Page number at bottom right was not captured in initial processing.",
+    "Multiple misidentifications of text content due to truncated OCR."
+  ],
+  "doc_id": "2330",
+  "page": 105,
+  "elapsed_seconds": 7.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

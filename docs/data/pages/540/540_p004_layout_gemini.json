@@ -1,0 +1,119 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "232",
+      "bbox": {
+        "x_pct": 15.061,
+        "y_pct": 14.654,
+        "w_pct": 2.235,
+        "h_pct": 1.768
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "J. HERSCH",
+      "bbox": {
+        "x_pct": 44.802,
+        "y_pct": 14.654,
+        "w_pct": 10.395,
+        "h_pct": 1.637
+      },
+      "changed": true,
+      "change_reason": "Header identified as text, changed to section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de lacunes irrémédiables, dont l'historien parfois oublie la présence, mais qui s'imposent à l'esprit dès qu'on envisage, dans l'expérience quotidienne, la rapidité avec laquelle un fait devient incontrôlable, l'altération des témoignages, et, dès qu'acteurs ou témoins ont disparu, l'infiltration de l'oubli.",
+      "bbox": {
+        "x_pct": 14.928,
+        "y_pct": 17.172,
+        "w_pct": 69.395,
+        "h_pct": 9.154
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and misidentified text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'agit ensuite de comprendre ce qui s'est passé, c'est-à-dire d'établir entre les faits un lien ou des liens, de quelque nature qu'ils soient. Remarquons ici que le choix entre le singulier (un lien) et le pluriel (des liens) n'est pas indifférent. Idéalement, la connaissance historique, comme toute connaissance, tend à l'unité systématique et préfère par conséquent un lien, ou du moins un système de liens, à une pluralité hétérogène de liens.",
+      "bbox": {
+        "x_pct": 15.061,
+        "y_pct": 27.462,
+        "w_pct": 69.467,
+        "h_pct": 12.292
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and misidentified text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Fascinée, comme l'ont été toutes les sciences humaines, par les succès des sciences de la nature, la connaissance historique s'est efforcée de relier les faits par des lois déterministes, s'énonçant en termes de déterminisme causal ou au moins de variations concomitantes. Comme tous les faits (y compris ceux dont s'occupent les sciences humaines) font aussi partie de la « nature », au sens kantien de ce mot, les faits historiques sont donc aussi des faits naturels et l'interprétation déterministe ne cesse à leur propos de remporter des succès. Dans l'hypothèse — absurde — d'une réussite totale (au sens, par exemple, de l'explication exhaustive d'un ensemble historique limité), il faudrait envisager, non pas une connaissance déterministe sur le modèle des sciences physiques, mais la suppression de l'histoire elle-même en tant que réalité spécifique et sa résorption dans la « nature », objet des sciences physiques.",
+      "bbox": {
+        "x_pct": 15.133,
+        "y_pct": 39.375,
+        "w_pct": 69.529,
+        "h_pct": 24.343
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and misidentified text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle réduction se heurte à un obstacle manifeste et qu'il est banal de signaler : l'absence, en histoire, de répétition, qu'elle soit donnée ou provoquée. Il faut donc recourir aux approximations de l'analogie. Celles-ci se prêtent assez aisément à l'illustration de quelques « lois » très générales, très vagues, et l'illustration passe vite pour une vérification ; les détails, les précisions, en revanche, vouent les tentatives de ce genre à l'échec.",
+      "bbox": {
+        "x_pct": 15.195,
+        "y_pct": 63.529,
+        "w_pct": 69.406,
+        "h_pct": 11.894
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and misidentified text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En fait, la connaissance historique s'est développée à travers une méthode non élucidée et intérieurement contradictoire (ce qui confirme encore une fois une expérience faite dans maint domaine :",
+      "bbox": {
+        "x_pct": 15.338,
+        "y_pct": 75.126,
+        "w_pct": 69.283,
+        "h_pct": 5.473
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and misidentified text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.849,
+        "y_pct": 92.518,
+        "w_pct": 36.326,
+        "h_pct": 2.768
+      },
+      "changed": true,
+      "change_reason": "External metadata footer identified as text, changed to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Most text content was heavily truncated/corrupted in the initial JSON.",
+    "Multiple artifacts (page numbers, headers, footers) misidentified as paragraph text."
+  ],
+  "doc_id": "540",
+  "page": 4,
+  "elapsed_seconds": 5.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

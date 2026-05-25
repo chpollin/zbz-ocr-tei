@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Nun die Verantwortung im Beruf. Der Beruf ist nicht nur Mittel, der Beruf ist auch Zweck.",
+      "bbox": {
+        "x_pct": 10.323,
+        "y_pct": 8.758,
+        "w_pct": 79.702,
+        "h_pct": 18.194
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header because it is the title of the paragraph section. Text corrected for OCR errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jetzt komme ich zu einem Punkt, den ich für sehr, sehr wichtig halte: die politische Verantwortung.",
+      "bbox": {
+        "x_pct": 10.669,
+        "y_pct": 27.749,
+        "w_pct": 79.653,
+        "h_pct": 40.416
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header because it introduces a new major section. Text corrected for OCR errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Am allerentscheidendsten ist letzlich die politische Entwicklung dadurch, daß sie den Frieden oder den Krieg vorbereitet.",
+      "bbox": {
+        "x_pct": 10.831,
+        "y_pct": 68.792,
+        "w_pct": 79.71,
+        "h_pct": 20.057
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header because it introduces a new major section. Text corrected for OCR errors."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "All three initial regions were incorrectly labeled as simple paragraphs; they are distinct thematic section headings.",
+    "Significant OCR errors in the provided 'text' fields necessitated complete rewriting for accuracy.",
+    "The bounding boxes are acceptable but the content classification was imprecise."
+  ],
+  "doc_id": "730",
+  "page": 10,
+  "elapsed_seconds": 7.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

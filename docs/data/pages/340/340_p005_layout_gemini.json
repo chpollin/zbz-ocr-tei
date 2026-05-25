@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LES PROCES DE POZNAN",
+      "bbox": {
+        "x_pct": 625.0,
+        "y_pct": 30.0,
+        "w_pct": 211.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Identified running page header incorrectly labeled as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "plus nette que Milosz, par exemple, ne l'a raconté dans La Pensée captive. Le Ketman, dont il a fait une analyse brillante, a dû rester le « privilège » d'un cercle assez restreint. La plupart des gens semblent avoir vécu l'œil clair et critique, bien ouvert sur ce qui se passait. En tout cas, ceux avec lesquels j'ai pu m'entretenir avaient en ces matières l'esprit bien lucide que nombre de « penseurs » parisiens. Il ne faudrait pas — du moins je l'espère — en conclure que l'autre système soit plus sain pour l'intelligence.",
+      "bbox": {
+        "x_pct": 6.422,
+        "y_pct": 8.185,
+        "w_pct": 37.826,
+        "h_pct": 20.953
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La misère des banderoles promenées par la foule réclamaient du pain pour les adultes, du beurre pour les enfants — a été, dans l'insurrection de Poznan, un mobile parmi d'autres. Mais c'est qu'elle était, si l'on peut dire, un signe particulièrement éclatant du mensonge. Le pire n'était peut-être pas d'avoir faim, mais, ayant faim, de devoir dire qu'on était heureux, que tout allait bien, que du moins tout allait beaucoup mieux, alors qu'en réalité on trouvait que tout allait de plus en plus mal. La misère n'a pas été, je crois, la vraie cause de l'insurrection, et je ne pense pas qu'on puisse invoquer celle-ci à l'appui de la thèse selon laquelle c'est au comble de la misère que naît la révolte ouvrière. Au contraire, l'insurrection a eu lieu malgré la misère et l'impulsion était ailleurs.",
+      "bbox": {
+        "x_pct": 6.119,
+        "y_pct": 28.999,
+        "w_pct": 38.349,
+        "h_pct": 30.807
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selon l'un des avocats, la foule, à Poznan, a d'abord cherché un interlocuteur. On lui avait dit : « Un membre du gouvernement va venir. Il vous écoutera. Vous pourrez discuter vos problèmes avec lui. » Mais la foule n'a pas trouvé d'interlocuteur. Elle n'a trouvé personne. Elle n'a pas non plus rencontré de résistance, parce que la police et l'armée ont fraternisé avec elle. Ne rencontrant ni interlocuteur ni résistance — je répète à peu près ce qu'a dit l'avocat — elle s'est trouvée devant un de ces objectifs énormes et vagues qui s'emparent parfois de l'imagination collective — quelque chose de monstrueux qu'il fallait jeter bas. Impossible de préciser quoi. C'était tout ensemble, cet objet multiple de haine dont il a déjà été question. Il fallait abattre cela.",
+      "bbox": {
+        "x_pct": 6.147,
+        "y_pct": 59.618,
+        "w_pct": 38.991,
+        "h_pct": 29.485
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On connaît l'histoire du caporal de la Sécurité qui fut assassiné le 28 juin ; c'est pour cet assassinat, commis avec quelques raffinements",
+      "bbox": {
+        "x_pct": 6.211,
+        "y_pct": 88.853,
+        "w_pct": 38.927,
+        "h_pct": 5.445
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quels ont été les attaqués par la foule, dans l'insurrection ? La prison, la Maison de la Sécurité, les dépôts d'armes et de munitions, la tour de brouillage de la radio. On a allumé quantité de foyers d'incendie autour des édifices haïs. On s'est battu comme on pouvait, avec les armes qu'on trouvait. On remplissait d'essence des bouteilles de bière. La foule renversait des trams pour se mettre à",
+      "bbox": {
+        "x_pct": 48.046,
+        "y_pct": 78.442,
+        "w_pct": 39.202,
+        "h_pct": 15.577
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": {
+        "x_pct": 850.0,
+        "y_pct": 956.0,
+        "w_pct": 14.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Initial OCR text was extremely poor and required complete rewrite based on image content.",
+    "Page header and page number were labeled as paragraph initially.",
+    "Multiple artifacts/poor bounding boxes identified in the original extraction."
+  ],
+  "doc_id": "340",
+  "page": 5,
+  "elapsed_seconds": 5.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

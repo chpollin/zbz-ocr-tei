@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "202 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 8.816,
+        "y_pct": 8.655,
+        "w_pct": 85.891,
+        "h_pct": 2.581
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for running title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n'est commis ou positivement prpar. Une telle conception a livr l'Allemagne  Hitler et le monde  la deuxime guerre mondiale. Par excs de puret, par anglisme politique, elle a permis le viol des consciences et le meurtre des corps de millions d'tres humains. Il n'existe pas de principe politique absolu et illimit  sinon celui qui exige, de faon tout  fait indtermine, la prsence entire et la dcision des citoyens  tous les moments cruciaux de leur histoire.",
+      "bbox": {
+        "x_pct": 8.816,
+        "y_pct": 11.497,
+        "w_pct": 85.891,
+        "h_pct": 16.907
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La dmocratie politique est un principe relativement net, relativement dtermin,  bien qu'il soit facile, mme sur le plan thorique, de mettre un dmocrate consquent dans l'embarras. Mais son sens est limit. Elle est destine avant tout  garantir le libre jeu de la diversit des esprits, des adhsions, des opinions. Or ce libre jeu n'a son vritable sens que pour ceux qui acceptent la rgle mme du jeu, c'est--dire la dmocratie. Le rgime dmocratique doit avoir la lucidit et le courage de limiter la porte du principe qui l'inspire, sinon il n'est plus qu'un rgime de suicide, qui se dtruit  force de se vouloir fidle  soi.",
+      "bbox": {
+        "x_pct": 8.774,
+        "y_pct": 28.405,
+        "w_pct": 85.891,
+        "h_pct": 20.971
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En les liberts dmocratiques ne favorisent pas galement la cause des partisans et celle des adversaires du rgime : elles crent une ingalit en faveur de ces derniers. Les dmocrates ne peuvent pas mener la lutte par tous les moyens : ils sont obligs de la maintenir dans les limites imposes par les formes politiques qu'ils dfendent et qu'ils ne sauraient discrditer sans dtruire eux-mmes ce pour quoi ils se battent. Leur propagande ne peut mentir que dans une certaine mesure ; les stratagmes lectoraux destins  diminuer les risques encourus par la dmocratie en influant sur la porte finale des votes ne peuvent, eux non plus, tre pousss trop loin, sous peine de ridiculiser le suffrage universel. Au contraire, les adversaires ont les mains libres. Les mensonges de la propagande, multiplis et grossis au point que la vrit devient insaisissable et que des mots contraires deviennent synonymes, servent  la fois deux fins : un objectif direct, momentanment ncessaire, et un objectif permanent, qui est de discrditer le rgime tout entier, la libert de parole mme. En effet, la libert de parole, devenue libert de mentir, perd sa valeur. Plus on va loin dans cette voie, mieux cela vaut. Certes, le lecteur averti essaie de faire la part des choses ; mais parmi les normits pu-",
+      "bbox": {
+        "x_pct": 9.011,
+        "y_pct": 48.752,
+        "w_pct": 85.836,
+        "h_pct": 42.335
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Initial parsing missed the page header at the top.",
+    "The OCR text content inside regions was slightly garbled and required manual verification to restore original formatting."
+  ],
+  "doc_id": "330",
+  "page": 236,
+  "elapsed_seconds": 9.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

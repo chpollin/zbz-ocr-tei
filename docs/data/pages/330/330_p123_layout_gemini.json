@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 89",
+      "bbox": {
+        "x_pct": 329.0,
+        "y_pct": 94.0,
+        "w_pct": 516.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header containing running title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tinnocence, simplifie les adhsions, unit les adhrents: Puisque la vrit n'est pas, pourquoi ne pourrait-on pas lgitimement la dcrter telle ou telle?",
+      "bbox": {
+        "x_pct": 57.5,
+        "y_pct": 120.6,
+        "w_pct": 843.2,
+        "h_pct": 61.2
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce pige permanent de la condition humaine, qui donne  celle-ci  la fois son imperfection dfinitive, son exigence et sa possibilit infinie, n'excuse pas la confusion partout o la clart peut tre faite. Au contraire. C'est un devoir imprieux et une ncessit, pour tous ceux qui veulent l'homme libre et toujours plus libre, d'examiner,  partir de leurs fondements, les idologies qui s'opposent aujourd'hui, de faon  tracer des fronts politiques aussi adquats que possible au conflit rel des volonts. Il est vain, dans un monde comme le ntre, de chercher des formules universelles sur lesquelles tout le monde se mettra d'accord. Ou bien ces formules n'auront aucun sens dfini, et l'accord se fera sur un nant voil de mots vagues; ou bien elles auront un sens quivoque, et l'accord se fera sur un malentendu; ou bien encore elles auront un sens net, elles aiguiseront les conflits et deviendront des armes pour un nouvel imprialisme messianique. Rien de plus dangereux, lorsque les hommes sont diviss, que ceux qui tentent de nier les divergences et de leur substituer une unanimit: fussent-ils les plus parfaits pacifistes, ils se trouvent acculs au mtier de tyrans.",
+      "bbox": {
+        "x_pct": 51.5,
+        "y_pct": 383.9,
+        "w_pct": 850.0,
+        "h_pct": 371.9
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre monde est divis, dchir. Il faut lucider ces divisions, en tablir le trac, en dlimiter la porte. Peut-tre ne sont-elles pas  totalitaires , peut-tre n'opposent-elles pas des hommes tout entiers  d'autres hommes tout entiers. Peut-tre certains de ces hommes, opposs sur le plan de la politique ou de l'conomie,",
+      "bbox": {
+        "x_pct": 54.7,
+        "y_pct": 748.9,
+        "w_pct": 841.8,
+        "h_pct": 108.7
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Dans les Frres Karamazov, livre v, chap. v.",
+      "bbox": {
+        "x_pct": 50.7,
+        "y_pct": 875.6,
+        "w_pct": 571.0,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Re-labeled from list_item to footnote."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Docling merged the running header with the body text initially.",
+    "Footnote was misidentified as a list item."
+  ],
+  "doc_id": "330",
+  "page": 123,
+  "elapsed_seconds": 5.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

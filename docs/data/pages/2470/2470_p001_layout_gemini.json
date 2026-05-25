@@ -1,0 +1,168 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "der Nacht , in der die Movember 1987 , dem 49 Im 9 sprach bei der Besinnung\" im Stuttder garter",
+      "bbox": {
+        "x_pct": 9.21,
+        "y_pct": 14.862,
+        "w_pct": 76.46,
+        "h_pct": 8.475
+      },
+      "changed": true,
+      "change_reason": "Identified as a header/introductory title section."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch Genf Frau Professor",
+      "bbox": {
+        "x_pct": 12.766,
+        "y_pct": 22.48,
+        "w_pct": 41.242,
+        "h_pct": 2.911
+      },
+      "changed": true,
+      "change_reason": "Author name and title are section headings."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "über das Thema:",
+      "bbox": {
+        "x_pct": 9.169,
+        "y_pct": 25.817,
+        "w_pct": 17.685,
+        "h_pct": 1.841
+      },
+      "changed": true,
+      "change_reason": "Section header for the talk topic."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Menschen an ? Wo fängt da s Unmenschliche im Gibt es ohne",
+      "bbox": {
+        "x_pct": 13.734,
+        "y_pct": 26.277,
+        "w_pct": 51.484,
+        "h_pct": 4.603
+      },
+      "changed": true,
+      "change_reason": "Section header for the title of the talk."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine Damen und Herren,",
+      "bbox": {
+        "x_pct": 8.952,
+        "y_pct": 34.712,
+        "w_pct": 27.234,
+        "h_pct": 1.939
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Einladung danken , die mir Ge ich möchte Ihnen zunächst für die mit Ihnen diese Besinnungsstunde zu ",
+      "bbox": {
+        "x_pct": 8.895,
+        "y_pct": 36.116,
+        "w_pct": 79.008,
+        "h_pct": 17.353
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Worte sind zu Ieicht . Es ist viel zu reden. Man fragt warum ich heute abend da s Recht habe zu rede",
+      "bbox": {
+        "x_pct": 8.927,
+        "y_pct": 53.297,
+        "w_pct": 81.21,
+        "h_pct": 31.473
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie kann man noch dieses Wort BrüderTichkeit mit einem Minimum an Ehrlichkeit aussprechen? Wie kann ",
+      "bbox": {
+        "x_pct": 8.952,
+        "y_pct": 84.563,
+        "w_pct": 76.048,
+        "h_pct": 8.303
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "uns hat, sich",
+      "bbox": {
+        "x_pct": 48.121,
+        "y_pct": 91.41,
+        "w_pct": 10.371,
+        "h_pct": 1.916
+      },
+      "changed": true,
+      "change_reason": "Segment of page metadata."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "zu erinnern",
+      "bbox": {
+        "x_pct": 65.565,
+        "y_pct": 92.002,
+        "w_pct": 2.766,
+        "h_pct": 1.208
+      },
+      "changed": true,
+      "change_reason": "Segment of page metadata."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "treu",
+      "bbox": {
+        "x_pct": 81.831,
+        "y_pct": 91.985,
+        "w_pct": 5.484,
+        "h_pct": 1.703
+      },
+      "changed": true,
+      "change_reason": "Segment of page metadata."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Blm",
+      "bbox": {
+        "x_pct": 61.395,
+        "y_pct": 94.591,
+        "w_pct": 8.847,
+        "h_pct": 3.682
+      },
+      "changed": true,
+      "change_reason": "Fragment of page number/metadata at bottom."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Labels were incorrectly set to text for headers and metadata.",
+    "OCR text quality is low and contains broken words.",
+    "Multiple small text fragments were found to be page metadata/footer elements."
+  ],
+  "doc_id": "2470",
+  "page": 1,
+  "elapsed_seconds": 8.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

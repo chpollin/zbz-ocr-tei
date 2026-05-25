@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "520",
+      "bbox": {
+        "x_pct": 28.941,
+        "y_pct": 7.625,
+        "w_pct": 3.725,
+        "h_pct": 2.502
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to _filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Coups de sonde",
+      "bbox": {
+        "x_pct": 53.926,
+        "y_pct": 7.625,
+        "w_pct": 21.074,
+        "h_pct": 2.748
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a ensuite les droits économiques et sociaux, qui tendent à alléger pour tous les hommes les contraintes de « nature » qui pèsent sur chacun du fait des besoins vitaux qu'il lui faut satisfaire, pour lui-même et ses proches — toujours, à la limite, sous peine de mort —, et dont le fardeau, s'il absorbe tout son temps et toutes ses forces, l'asservit à son corps et réduit ses chances d'accéder à sa liberté responsable. Les contraintes de cette sorte, contrairement à ce que certains imaginent, ne seront jamais complètement supprimées, tant que l'homme restera un homme — et non un ange —, mortel, avec un corps à nourrir. Mais ce qu'il est possible de réaliser, et ce que demande la Déclaration, c'est que la pression des besoins vitaux (nourriture, logement, etc.) soit mise à une certaine distance, pour l'homme et ses proches, de façon à accroître les chances de sa liberté. Sans cette marge de sécurité, toujours précaire pourtant, les droits risquent d'être étouffés par l'urgence de la lutte pour la vie.",
+      "bbox": {
+        "x_pct": 28.235,
+        "y_pct": 11.874,
+        "w_pct": 70.25,
+        "h_pct": 44.23
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les sociétés humaines ne fournissent à personne sa responsabilité responsable, c'est l'affaire et la tâche de chacun. Mais c'est la tâche de toute société d'en accroître les chances. Elle le peut et elle le doit. Si les sociétés scientifiquement et techniquement développées élèvent le niveau de vie matériel des peuples, elles ne méritent pas, pour autant, d'être traitées de « matérialistes ». Au contraire : le développement scientifique et technique trouve là précisément, en termes de droits de l'homme et de plus grandes chances, sa finalité et son sens. Mais il est évident que les droits économiques et sociaux dépendent toujours, bien plus que les droits civils et politiques, d'un contexte de développement, d'un niveau de vie ambiant, de conditions climatiques et de ressources données, et que, de ce fait, leur exigibilité est bien",
+      "bbox": {
+        "x_pct": 28.132,
+        "y_pct": 56.104,
+        "w_pct": 70.441,
+        "h_pct": 35.976
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match full paragraph content."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Page number 520 was labeled as text",
+    "Text extraction for paragraphs was truncated/incomplete in original detection"
+  ],
+  "doc_id": "2920",
+  "page": 18,
+  "elapsed_seconds": 3.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

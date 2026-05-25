@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "22",
+      "bbox": {
+        "x_pct": 127.0,
+        "y_pct": 91.0,
+        "w_pct": 19.0,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "RSULTATS",
+      "bbox": {
+        "x_pct": 430.0,
+        "y_pct": 89.0,
+        "w_pct": 141.0,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qu'elle ait toujours tendance à se cristalliser en un système considéré comme définitif, elle est plutôt en route qu'« arrivée ». Car rêverie, contemplation, extase, états complets dans l'expérience du sujet, ne le sont jamais dans la recherche discursive. Dans son œuvre, le philosophe ne pourra que tâtonner : il s'efforcera de suggérer aux autres, tout en la cherchant lui-même, l'expérience simple, mais inépuisable.",
+      "bbox": {
+        "x_pct": 12.093,
+        "y_pct": 13.184,
+        "w_pct": 76.16,
+        "h_pct": 23.07
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant par la logique de sa forme, nous l'avons vu, la philosophie proprement dite reste distincte d'une méditation qui tendrait à Dieu. N'est-ce là vraiment qu'une différence formelle ? — Ici comme partout, « forme » ne signifie pas seulement apparence, et une différence de forme révèle une différence fondamentale. Alors que le mystique essaye de se libérer de lui-même, de se perdre, le philosophe essaye de se soumettre le monde. Son attitude est volontaire et orgueilleuse. Il ne veut se servir que de sa raison, — ne fùt-ce que pour en démontrer les limites. Ces limites, il se doit de les connaître et de les constater par lui-même, — et, les connaissant, de les vouloir, car c'est elles qui le font ce qu'il est. Que l'esprit humain leur ait paru tout-puissant ou misérable, ce n'est que par lui-même que les philosophes ont voulu le juger.",
+      "bbox": {
+        "x_pct": 12.093,
+        "y_pct": 36.196,
+        "w_pct": 76.16,
+        "h_pct": 43.432
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comparant la philosophie à la science, nous sommes arrivés à un double résultat :",
+      "bbox": {
+        "x_pct": 12.455,
+        "y_pct": 79.571,
+        "w_pct": 66.657,
+        "h_pct": 4.795
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1° Toute philosophie procède comme si elle pouvait démontrer ses thèses avec une évidence",
+      "bbox": {
+        "x_pct": 12.048,
+        "y_pct": 84.623,
+        "w_pct": 76.16,
+        "h_pct": 5.434
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Fixed missing page number in bounding box detections.",
+    "Fixed section header label.",
+    "Text cleanup required for OCR artifacts like 'I0' instead of '1°'."
+  ],
+  "doc_id": "20",
+  "page": 24,
+  "elapsed_seconds": 7.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

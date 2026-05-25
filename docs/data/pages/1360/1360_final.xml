@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">UBIQUITÉ DE LA PUISSANCE ET VOLONTÉ DE JUSTICE</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1360</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>UBIQUITÉ DE LA PUISSANCE ET VOLONTÉ DE JUSTICE</title>
+          <author>Jeanne Hersch</author>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Fehler, 1 Warning (W10 17p 0o 0l); 5 Seiten, Sammelband-Beitrag mit Fussnote und Uebergang zu Thielicke (deu); Fussnote mit bibl korrekt; foreign xml:lang=deu fuer deutschen Folgeartikel; div-Struktur sauber (+3 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="940" lry="740">
+      <zone xml:id="facs_1_r_1" ulx="586" uly="71" lrx="752" lry="82" />
+      <zone xml:id="facs_1_r_2" ulx="556" uly="103" lrx="788" lry="144" />
+      <zone xml:id="facs_1_r_3" ulx="501" uly="185" lrx="843" lry="436" />
+      <zone xml:id="facs_1_r_4" ulx="505" uly="444" lrx="844" lry="505" />
+      <zone xml:id="facs_1_r_5" ulx="545" uly="550" lrx="844" lry="621" />
+      <zone xml:id="facs_1_r_6" ulx="827" uly="635" lrx="843" lry="655" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="930" lry="755">
+      <zone xml:id="facs_2_r_1" ulx="223" uly="22" lrx="353" lry="37" />
+      <zone xml:id="facs_2_r_2" ulx="492" uly="22" lrx="892" lry="37" />
+      <zone xml:id="facs_2_r_3" ulx="68" uly="181" lrx="260" lry="277" />
+      <zone xml:id="facs_2_r_4" ulx="505" uly="282" lrx="844" lry="629" />
+      <zone xml:id="facs_2_r_5" ulx="65" uly="352" lrx="367" lry="557" />
+      <zone xml:id="facs_2_r_6" ulx="65" uly="604" lrx="367" lry="671" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="947" lry="753">
+      <zone xml:id="facs_3_r_1" ulx="534" uly="79" lrx="857" lry="90" />
+      <zone xml:id="facs_3_r_2" ulx="211" uly="80" lrx="317" lry="92" />
+      <zone xml:id="facs_3_r_3" ulx="78" uly="99" lrx="403" lry="378" />
+      <zone xml:id="facs_3_r_4" ulx="521" uly="107" lrx="867" lry="131" />
+      <zone xml:id="facs_3_r_5" ulx="524" uly="169" lrx="869" lry="344" />
+      <zone xml:id="facs_3_r_6" ulx="559" uly="436" lrx="869" lry="537" />
+      <zone xml:id="facs_3_r_7" ulx="93" uly="463" lrx="430" lry="508" />
+      <zone xml:id="facs_3_r_8" ulx="845" uly="640" lrx="866" lry="652" />
+      <zone xml:id="facs_3_r_9" ulx="86" uly="640" lrx="106" lry="652" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="958" lry="746">
+      <zone xml:id="facs_4_r_1" ulx="75" uly="98" lrx="433" lry="171" />
+      <zone xml:id="facs_4_r_2" ulx="530" uly="101" lrx="881" lry="122" />
+      <zone xml:id="facs_4_r_3" ulx="543" uly="156" lrx="577" lry="169" />
+      <zone xml:id="facs_4_r_4" ulx="76" uly="178" lrx="433" lry="308" />
+      <zone xml:id="facs_4_r_5" ulx="533" uly="302" lrx="817" lry="363" />
+      <zone xml:id="facs_4_r_6" ulx="534" uly="407" lrx="875" lry="621" />
+      <zone xml:id="facs_4_r_7" ulx="79" uly="503" lrx="151" lry="521" />
+      <zone xml:id="facs_4_r_8" ulx="93" uly="520" lrx="432" lry="578" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="947" lry="759">
+      <zone xml:id="facs_5_r_1" ulx="215" uly="92" lrx="295" lry="100" />
+      <zone xml:id="facs_5_r_2" ulx="86" uly="103" lrx="431" lry="126" />
+      <zone xml:id="facs_5_r_3" ulx="529" uly="119" lrx="868" lry="150" />
+      <zone xml:id="facs_5_r_4" ulx="86" uly="132" lrx="431" lry="189" />
+      <zone xml:id="facs_5_r_5" ulx="529" uly="222" lrx="868" lry="290" />
+      <zone xml:id="facs_5_r_6" ulx="529" uly="293" lrx="868" lry="381" />
+      <zone xml:id="facs_5_r_7" ulx="529" uly="388" lrx="868" lry="644" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="67" />
+        <div type="text">
+<head>
+          <persName ref="GND:118815679">JEANNE HERSCH</persName>
+          <title type="main">UBIQUITÉ DE LA PUISSANCE ET VOLONTÉ DE JUSTICE</title>
+        </head>
+        <p facs="#facs_1_r_3">
+          <lb facs="#facs_1_r_3" n="N001" />Au moment où j'ai proposé ce thème, j'étais poussée par le désir de m'en prendre à un emmêlement <lb facs="#facs_1_r_3" n="N002" />inextricable, à un nœud impossible à défaire, — et que nous ne cessons toutefois de trancher, tant <lb facs="#facs_1_r_3" n="N003" />bien que mal, au fil de notre vie pratique, telle qu'elle se déroule chaque jour. Mais quand vint <lb facs="#facs_1_r_3" n="N004" />l'heure de préparer effectivement ma conférence, j'ai pris peur, tant les termes de «puissance» et <lb facs="#facs_1_r_3" n="N005" />de «justice», tout en m'apparaissant étrangers l'un à l'autre et incompatibles entre eux, se <lb facs="#facs_1_r_3" n="N006" />révélaient en même temps indispensables l'un à l'autre, chacun renvoyant à l'autre comme à sa <lb facs="#facs_1_r_3" n="N007" />condition d'existence ou de sens. Et pourtant il ne s'agit pas ici de problèmes lointains, surgissant <lb facs="#facs_1_r_3" n="N008" />aux limites extrêmes d'enchaînements abstraits, ni même de saisir la condition particulière de <lb facs="#facs_1_r_3" n="N009" />l'existence politique, que, selon <persName ref="GND:118629743">Max Weber</persName>, personne n'est obligé de choisir. Il s'agit simplement <lb facs="#facs_1_r_3" n="N010" />de notre vie quotidienne, celle que nous avons tous à vivre, — avec, certes, des différences <lb facs="#facs_1_r_3" n="N011" />d'intensité importantes, et des écarts plus ou moins grands entre les termes antinomiques qui y <lb facs="#facs_1_r_3" n="N012" />sont impliqués.
+        </p>
+        <p facs="#facs_1_r_4">
+          <lb facs="#facs_1_r_4" n="N001" />La notion de puissance s'emploie à des niveaux divers et avec une extension variable. Ainsi, <lb facs="#facs_1_r_4" n="N002" />certains ne l'emploient qu'au niveau des rapports entre États (qu'on appelle «les Puissances», et <lb facs="#facs_1_r_4" n="N003" />on parle de «politique de puissance»), sans doute parce qu'au-dessus des États il n'existe plus <lb facs="#facs_1_r_4" n="N004" />aucun arbitre.
+        </p>
+        <p facs="#facs_1_r_5">
+          <lb facs="#facs_1_r_5" n="N001" />Pour ma part, et comme mon titre l'indique, je voudrais donner au terme «puissance» son <lb facs="#facs_1_r_5" n="N002" />extension maximum. Partout où existent des êtres vivants, et donc mortels, il y a puissance et <lb facs="#facs_1_r_5" n="N003" />volonté de puissance, parce que ces êtres vivants vivent leur condition mortelle sous forme <lb facs="#facs_1_r_5" n="N004" />d'appétits à cause des besoins qui les pressent, et de peur à cause des menaces qui les entourent. <lb facs="#facs_1_r_5" n="N005" />Les oiseaux se disputent les moindres graines, celui qui est plus gros, ou qui a un bec plus long,
+        </p>
+      </div>
+<pb facs="#facs_2" n="2" />
+        <div type="text">
+<head facs="#facs_2_r_1">
+          <persName ref="GND:118815679">JEANNE HERSCH</persName><lb facs="#facs_2_l_1_1" n="N001" />UBIQUITÉ DE LA PUISSANCE ET VOLONTÉ DE JUSTICE
+        </head>
+        <p facs="#facs_2_r_2">
+          <lb facs="#facs_2_l_2_1" n="N001" />ou qui est entouré d'autres de la même espèce, menace de la tête et fait fuir le plus petit, le moins armé, l'isolé. Le «struggle for life» est partout. Dans toute la nature vivante, être, c'est vouloir être, vivre, c'est vouloir vivre, c'est pratiquer sous mille formes l'exercice de la puissance. Remarquons d'ailleurs que la théorie darwinienne de «la survivance des plus aptes» perd son sens si elle prétend mettre ce vouloir-vivre hors du jeu. En effet : «apte» signifie «apte à survivre»; le terme «apte» comporte une valorisation positive qui se réfère au vouloir-vivre, et il ne servirait de rien à la girafe d'avoir un long cou si elle ne le dressait pas pour saisir des nourritures inaccessibles à d'autres. Finalité et puissance, malgré tous les efforts faits pour les réduire, sont partout.
+        </p>
+        <p facs="#facs_2_r_3">
+          <lb facs="#facs_2_l_3_1" n="N001" />Dans la condition humaine, on a d'abord été enclin à considérer comme appartenant à la «puissance» uniquement des rapports de force nue, guerrière, ou alors des rapports politiques au niveau de l'État, soit entre États, soit à l'intérieur d'un État. Progressivement se sont dévoilés d'autres exercices de puissance, dissimulés d'abord sous des structures sociales et des besoins économiques qui allaient trop sans dire pour qu'on y prêtât attention. <persName ref="GND:118504274">Raymond Aron</persName>, illustrant une composante darwinienne de la pensée de <persName ref="GND:118629743">Max Weber</persName>, cite de lui le passage suivant : « Quiconque touche un centime de rente que d'autres sont obligés de payer — directement ou indirectement —, quiconque possède un bien d'usage ou utilise un [bien de consommation] dû à la sueur du front d'autrui et non à son propre travail, celui-là alimente son existence par les mouvements de la lutte économique pour la vie, privée de tout amour et indifférente à la pitié, que la phraséologie bourgeoise présente comme ,un travail pacifique de culture'. Ce n'est là qu'une autre forme de la lutte de l'homme contre l'homme, au cours de laquelle non seulement des millions mais des centaines de millions d'hommes se consument chaque année corps et âme . . . ! »
+        </p>
+        <note place="foot" n="1" xml:id="fn2-1" facs="#facs_2_r_4">
+          <lb facs="#facs_2_l_4_1" n="N001" />1 <bibl>Max Weber, Gesammelte Politische Schriften, 2., erweiterte Auflage, herausgegeben von J. Winckelmann, Tübingen 1958, p. 141</bibl>, cité d'après <persName ref="GND:118504274">Raymond Aron</persName>, <bibl>Les étapes de la pensée sociologique, Paris 1967, p. 648</bibl>, avec une correction, entre crochets, de l'auteur.
+        </note>
+        <p facs="#facs_2_r_5">
+          <lb facs="#facs_2_l_5_1" n="N001" />Vivre, se nourrir, dans la mesure où cela n'est pas entièrement payé par son propre travail, est déjà un exercice de puissance. Seul le travail (le temps et la peine donnés par un être mortel) paye le travail. Seul un argent qui représente du travail paye le travail. Un rapport de puissance s'établit partout où vivent et veulent vivre plusieurs êtres vivants. S'imaginer qu'un régime ou des institutions soient capables de l'éliminer, c'est jouer les anges, commettre le péché d'angélisme.
+        </p>
+        <p facs="#facs_2_r_6">
+          <lb facs="#facs_2_l_6_1" n="N001" />C'est ainsi qu'on a pu en venir, de nos jours, à appliquer un schème dénonciateur, conçu sur le modèle de la lutte de classes, à tous les rapports humains : maître — élève, parents — enfants, homme — femme, etc.
+        </p>
+        <p facs="#facs_2_r_7">
+          <lb facs="#facs_2_l_7_1" n="N001" />Le grand Congrès qui s'est tenu à Berne en janvier 1975 pour l'ouverture de l'Année de la Femme exigeait la <foreign xml:lang="deu">«Partnerschaft»</foreign> au sens d'une «collaboration dans l'égalité» entre l'homme et la femme. Il dénonçait l'intervention, dans ce rapport, de la puissance de l'un des partenaires sur l'autre, manifeste dans des textes de droit surannés, dans l'inégalité des salaires et surtout dans l'inégalité des chances professionnelles, comme aussi dans la répartition traditionnelle des tâches. Cette dénonciation était juste et nécessaire. Elle négligeait pourtant le fait qu'une relation traditionnelle très ancienne est profondément intériorisée par l'un et l'autre partenaire et que son bouleversement risque de détruire des «tissus sociaux» à la fois fragiles et essentiels, avec des risques impossibles à mesurer. J'ai dit alors que l'égalité entre l'homme et la femme dans la famille, bien qu'indispensable dès que les choses vont mal, n'est pas source de sens pour la vie commune (elle peut en être la condition), et qu'on ne vit pas d'égalité. — Mais d'un autre côté, le Congrès péchait par excès d'optimisme s'il croyait pouvoir abolir tout rapport de puissance, et de compétition pour la puissance, entre l'homme et la femme. Ce rapport existe partout, et je ne connais pour l'abolir qu'un miracle, — un miracle rare comme tous les miracles et que seul l'amour peut accomplir : quand l'autre me devient plus intérieur, plus présent, plus sensible que moi-même, quand <persName ref="GND:118613480">Madame de Sévigné</persName>, par exemple, écrivait qu'elle avait mal à l'épaule de sa fille.
+        </p>
+        <p facs="#facs_2_r_8">
+          <lb facs="#facs_2_l_8_1" n="N001" />69
+        </p>
+      </div>
+<pb facs="#facs_3" n="3" />
+        <div type="text">
+<p facs="#facs_3_r_1">
+          <lb facs="#facs_3_l_1_1" n="N001" />70<lb facs="#facs_3_l_1_2" n="N002" />71
+        </p>
+        <p facs="#facs_3_r_2">
+          <lb facs="#facs_3_l_2_1" n="N001" /><persName ref="GND:118815679">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_3_r_3">
+          <lb facs="#facs_3_l_3_1" n="N001" />Que signifie alors, sur un tel fond constant de puissance, la volonté de justice? Il me suffira d'abord de dire négativement que la théorie positiviste et utilitaire, selon laquelle cette volonté de justice naît de l'expérience des maux engendrés par les conflits de puissance et des avantages que procure la justice, est totalement insuffisante. Elle méconnaît la force des convoitises et des fureurs immédiates dans le recours à la puissance, comme aussi les menaces d'échec et de destruction auxquelles s'expose l'exercice conséquent d'une volonté de justice. Non : dans la volonté de justice il y a autre chose qui intervient, un facteur d'un autre ordre, une autre finalité. Certes, « la justice » a signifié au cours des âges des choses bien différentes. Pour <persName ref="GND:118594893">Platon</persName>, par exemple, elle désigne l'harmonie de l'État dans son ensemble, une nette hiérarchie des classes, comportant pour chacune des exigences spécifiques et différentes, — une « vision » qui semble n'avoir que peu de ressemblances avec la justice-égalité des idéologies contemporaines. Mais partout cependant l'idée de justice comporte l'exigence de ce qui est dû à l'être humain en tant que tel, donc le sens de ce qu'il est dans sa spécificité : conscient et virtuellement responsable de ses actes, vivant et assumant le lien qui unit l'exigence de liberté et celle de justice. Il y a donc là, comme je le disais, un facteur autre, qui n'est pas au service du vouloir-vivre ou d'un vouloir-mieux-vivre, qui peut même, le cas échéant, contredire « le vouloir-vivre » et « l'exercice de la puissance », et les mettre en échec.
+        </p>
+        <p facs="#facs_3_r_4">
+          <lb facs="#facs_3_l_4_1" n="N001" />On voit donc que sous cet angle la « puissance », le « vouloir-vivre » ne sont nullement des fins, mais qu'au contraire c'est la justice qui leur donne leur sens, en tant qu'ils sont des moyens pour la servir et l'incarner.
+        </p>
+        <p facs="#facs_3_r_5">
+          <lb facs="#facs_3_l_5_1" n="N001" />Pourtant, bien qu'étant d'un autre ordre que le vouloir-vivre, bien que ne lui étant ni identique, ni coextensive, la volonté de justice se trouve être doublement emmêlée avec les rapports de puissance. D'abord, la manière de concevoir la justice dépend dans une mesure importante des rapports de puissance tels qu'ils existent en fait. Ensuite, le processus de réalisation, ou d'incarnation, de la justice retombe nécessairement dans le règne des rapports de puissance.
+        </p>
+        <p>
+          <lb facs="#facs_3_l_6_1" n="N001" />UBIQUITÉ DE LA PUISSANCE ET VOLONTÉ DE JUSTICE
+        </p>
+        <p facs="#facs_3_r_7">
+          <lb facs="#facs_3_l_7_1" n="N001" />Le premier de ces deux points a été abondamment étudié et illustré par de nombreux chercheurs s'inspirant de la critique marxiste. Je m'attacherai donc seulement au second.
+        </p>
+        <p facs="#facs_3_r_8">
+          <lb facs="#facs_3_l_8_1" n="N001" />Une volonté de justice n'a d'authenticité que si elle tend à s'inscrire dans la réalité sociale. A cette fin elle doit créer ses organes et acquérir de la puissance. Par exemple, elle recourt à des partis politiques. Admettons que certains partis ont pour finalité la mise en œuvre de telle ou telle conception de la justice. Ils établissent un programme, puis ils prennent position, au fil des jours, sur les problèmes particuliers qui se posent. Leurs adversaires — ou leurs doctrinaires rigoureux — leur reprocheront des « trahisons électoralistes », des compromis. Mais forcément : pour lutter pour la justice, pour l'incarner dans la réalité, il faut être. Comme il a été dit, il est vain de garder les mains pures si cela signifie n'avoir pas de mains. Pour l'authenticité même de sa volonté d'incarnation, la justice a besoin de conquérir de la puissance. L'alternative « justice ou puissance » cesse d'en être une, ou du moins perd beaucoup de sa netteté, au niveau de la pratique politique.
+        </p>
+        <p facs="#facs_3_r_9">
+          <lb facs="#facs_3_l_9_1" n="N001" />Les choses deviennent encore plus opaques, les exigences de pureté et d'efficacité encore plus contradictoires, lorsqu'il s'agit des responsables des États. D'une part, leurs décisions prennent une portée générale, mettant en jeu le sens moral, l'honneur ou le déshonneur des citoyens, en tant qu'elles engagent « la personnalité symbolique » de l'État, qui est celui de tous. D'autre part, il leur est interdit de « préférer la justice à tout prix », comme le peut par exemple un citoyen ; il leur est interdit de recourir au sacrifice, car ils doivent réussir, ils doivent assurer — comme leur fonction l'implique et comme ils ont promis de le faire en l'assumant — la situation de puissance (de tous ordres) de l'État dont ils ont la charge, en même temps que la protection des citoyens.
+        </p>
+        <p facs="#facs_3_r_10">
+          <lb facs="#facs_3_l_10_1" n="N001" />Une analyse sérieuse de la réalité politique ne peut donc conduire qu'à un pessimisme, mais à un pessimisme actif. <persName ref="GND:118632280">Simone Weil</persName>, par exemple, dans son livre <bibl corresp="GND:4043664-0">« Oppression et liberté »</bibl>, reprend ce que <persName ref="GND:118578537">Marx</persName> a dit du capitalisme et l'applique à la puissance en général : « La puissance enferme une espèce de fatalité qui pèse aussi impitoyable
+        </p>
+      </div>
+<pb facs="#facs_4" n="72" />
+        <div type="text">
+<p facs="#facs_4_r_1">
+          <lb facs="#facs_4_l_1_1" n="N001" />72<lb facs="#facs_4_l_1_2" n="N002" />73
+        </p>
+        <p facs="#facs_4_r_2">
+          <lb facs="#facs_4_l_2_1" n="N001" /><persName ref="GND:118815679">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_4_r_3">
+          <lb facs="#facs_4_l_3_1" n="N001" />ment sur ceux qui commandent que sur ceux qui obéissent . . ., car,<lb facs="#facs_4_l_3_2" n="N002" />par un cercle sans issue, le maître est redoutable à l'esclave du fait<lb facs="#facs_4_l_3_3" n="N003" />même qu'il le redoute, et réciproquement; et il en est de même entre<lb facs="#facs_4_l_3_4" n="N004" />puissances rivales.» «La course au pouvoir asservit tout le monde,<lb facs="#facs_4_l_3_5" n="N005" />les puissants comme les faibles.»
+        </p>
+        <p facs="#facs_4_r_4">
+          <lb facs="#facs_4_l_4_1" n="N001" />C'est que le règne de la puissance de certains hommes sur d'autres<lb facs="#facs_4_l_4_2" n="N002" />est contraire à leur exigence profonde, et en même temps impossible<lb facs="#facs_4_l_4_3" n="N003" />à éliminer, fût-ce de leur lutte pour la justice. Aussi la puissance<lb facs="#facs_4_l_4_4" n="N004" />n'est-elle jamais stable et assurée, ni non plus jamais vaincue. Telle<lb facs="#facs_4_l_4_5" n="N005" />est sa fatalité: n'être jamais assurée contre les assauts de ceux qu'elle<lb facs="#facs_4_l_4_6" n="N006" />asservit et de ceux qui sont ses rivaux. Et tel est son cercle vicieux:<lb facs="#facs_4_l_4_7" n="N007" />chercher nécessairement toujours plus de puissance, c'est-à-dire<lb facs="#facs_4_l_4_8" n="N008" />souffrir irrémédiablement de son impuissance. Il n'y aurait place que<lb facs="#facs_4_l_4_9" n="N009" />pour un absolu désespoir, au sens d'une impossibilité absolue d'espé<lb facs="#facs_4_l_4_10" n="N010" break="no" />rer, si c'était là le tout de la condition politique.
+        </p>
+        <p facs="#facs_4_r_5">
+          <lb facs="#facs_4_l_5_1" n="N001" />Mais tel n'est pas le cas. Il y a cet autre élément, d'origine mysté<lb facs="#facs_4_l_5_2" n="N002" break="no" />rieuse, la volonté de justice, par lequel entre en jeu l'efficacité de la<lb facs="#facs_4_l_5_3" n="N003" />non-puissance (qui n'est pas l'impuissance). Efficacité qui brave la<lb facs="#facs_4_l_5_4" n="N004" />fatalité de la puissance, simplement en se mettant «hors». La fatalité<lb facs="#facs_4_l_5_5" n="N005" />de la puissance, nous l'avons vu, repose sur la peur, cette peur enra<lb facs="#facs_4_l_5_6" n="N006" break="no" />cinée dans notre condition vulnérable et mortelle. C'est la peur qui<lb facs="#facs_4_l_5_7" n="N007" />nourrit le besoin de plus de puissance chez le puissant, et de puis<lb facs="#facs_4_l_5_8" n="N008" break="no" />sance chez l'impuissant. Mais si un homme cesse d'avoir peur, refuse<lb facs="#facs_4_l_5_9" n="N009" />la peur? Il ne devient pas puissant, mais la puissance ne peut plus<lb facs="#facs_4_l_5_10" n="N010" />rien sur lui, sinon le détruire. Or il se trouve — l'histoire le montre —<lb facs="#facs_4_l_5_11" n="N011" />qu'il peut être dangereux pour la puissance de détruire un homme<lb facs="#facs_4_l_5_12" n="N012" />qui n'a pas peur.
+        </p>
+        <p facs="#facs_4_r_6">
+          <lb facs="#facs_4_l_6_1" n="N001" />Un homme qui a cessé d'avoir peur, nous en avons un parmi nous:<lb facs="#facs_4_l_6_2" n="N002" /><persName ref="GND:unknown">Soljenitsyne</persName>.
+        </p>
+        <p facs="#facs_4_r_7">
+          <lb facs="#facs_4_l_7_1" n="N001" />L'homme qui n'a plus peur devient alors le témoin. Et comme il y a<lb facs="#facs_4_l_7_2" n="N002" />un lien étroit entre puissance et mensonge (parce que la puissance<lb facs="#facs_4_l_7_3" n="N003" />doit nécessairement se dire assurée alors qu'elle ne peut jamais l'être),<lb facs="#facs_4_l_7_4" n="N004" />le témoin qui lui échappe dit le vrai — qui seul sert la justice.
+        </p>
+        <p facs="#facs_4_r_8">
+          <lb facs="#facs_4_l_8_1" n="N001" />On n'éliminera jamais la puissance et sa fatalité, fût-ce de la volonté<lb facs="#facs_4_l_8_2" n="N002" />même de justice. Il est donc infantile d'exiger, pour «tout de suite»<lb facs="#facs_4_l_8_3" n="N003" />ou pour «plus tard», le paradis de la justice sur la terre.
+        </p>
+        <p>
+          <lb facs="#facs_4_l_9_1" n="N001" />UBIQUITÉ DE LA PUISSANCE ET VOLONTÉ DE JUSTICE
+        </p>
+        <p facs="#facs_4_r_10">
+          <lb facs="#facs_4_l_10_1" n="N001" />Mais il est infantile aussi — ou lâche — ou rusé — de s'arroger le<lb facs="#facs_4_l_10_2" n="N002" />droit au désespoir total et de proclamer vaine la volonté de justice.
+        </p>
+        <p facs="#facs_4_r_11">
+          <lb facs="#facs_4_l_11_1" n="N001" />Notre pays, par ses dimensions et le nombre de ses habitants, est<lb facs="#facs_4_l_11_2" n="N002" />hors du jeu de la puissance. En revanche, par son importance écono<lb facs="#facs_4_l_11_3" n="N003" break="no" />mique et financière il y joue un rôle important.
+        </p>
+        <p facs="#facs_4_r_12">
+          <lb facs="#facs_4_l_12_1" n="N001" />En tant qu'il est hors du jeu de la puissance il est «neutre» et quasi<lb facs="#facs_4_l_12_2" n="N002" />exempt de peur. En tant qu'il y joue son rôle, il est pris dans le cycle<lb facs="#facs_4_l_12_3" n="N003" />de la concurrence et de l'intimidation.
+        </p>
+        <p facs="#facs_4_r_13">
+          <lb facs="#facs_4_l_13_1" n="N001" />C'est plutôt à cause de sa puissance que de sa non-puissance qu'il a<lb facs="#facs_4_l_13_2" n="N002" />tant de mal à inventer sa fonction propre dans la foule des nations,<lb facs="#facs_4_l_13_3" n="N003" />et à s'y tenir: la fonction d'un neutre, donc d'un témoin impartial,<lb facs="#facs_4_l_13_4" n="N004" />au service de la paix par le vrai.
+        </p>
+        <p facs="#facs_4_r_14">
+          <lb facs="#facs_4_l_14_1" n="N001" />L'impuissance internationale des entreprises de paix vient de ce qu'il<lb facs="#facs_4_l_14_2" n="N002" />n'y a pas d'arbitre: nul n'est «dehors». Mais celui-là en est le plus<lb facs="#facs_4_l_14_3" n="N003" />proche, qui échappe le mieux à la fatalité de la puissance: c'est le<lb facs="#facs_4_l_14_4" n="N004" />petit neutre.
+        </p>
+        <p facs="#facs_4_r_15">
+          <lb facs="#facs_4_l_15_1" n="N001" />Il lui incombe particulièrement de résister à ce que <persName ref="GND:unknown">Simone Weil</persName> appelait<lb facs="#facs_4_l_15_2" n="N002" />«le mal essentiel de l'humanité: la substitution des moyens aux fins».<lb facs="#facs_4_l_15_3" n="N003" />La puissance n'est que moyen, mais étant toujours menacée, elle ne<lb facs="#facs_4_l_15_4" n="N004" />cesse de s'imposer comme une fin immédiate. Elle n'est pas, ne doit<lb facs="#facs_4_l_15_5" n="N005" />pas être source de sens: son sens au contraire doit lui venir d'ailleurs,<lb facs="#facs_4_l_15_6" n="N006" />de la volonté de justice. C'est encore <persName ref="GND:unknown">Simone Weil</persName> qui a écrit: «Le<lb facs="#facs_4_l_15_7" n="N007" />pouvoir, par définition, ne constitue qu'un moyen; ou pour mieux<lb facs="#facs_4_l_15_8" n="N008" />dire posséder un pouvoir, cela consiste simplement à posséder des<lb facs="#facs_4_l_15_9" n="N009" />moyens d'action qui dépassent la force si restreinte dont un individu<lb facs="#facs_4_l_15_10" n="N010" />dispose par lui-même. Mais la recherche du pouvoir, du fait même<lb facs="#facs_4_l_15_11" n="N011" />qu'elle est essentiellement impuissante à se saisir de son objet, exclut<lb facs="#facs_4_l_15_12" n="N012" />toute considération de fin, et en arrive, par un renversement inévita<lb facs="#facs_4_l_15_13" n="N013" break="no" />ble, à tenir lieu de toutes les fins. C'est ce renversement du rapport<lb facs="#facs_4_l_15_14" n="N014" />entre le moyen et la fin, c'est cette folie fondamentale qui rend compte<lb facs="#facs_4_l_15_15" n="N015" />de tout ce qu'il y a d'insensé et de sanglant tout au long de l'histoire.<lb facs="#facs_4_l_15_16" n="N016" />L'histoire humaine n'est que l'histoire de l'asservissement qui fait des<lb facs="#facs_4_l_15_17" n="N017" />hommes, aussi bien oppresseurs qu'opprimés, le simple jouet des<lb facs="#facs_4_l_15_18" n="N018" />instruments de domi<lb facs="#facs_4_l_15_19" n="N019" break="no" />
+        </p>
+      </div>
+<pb facs="#facs_5" n="5" />
+        <div type="text">
+<p facs="#facs_5_r_3">
+          <lb facs="#facs_5_l_3_1" n="N001" />nation qu'ils ont fabriqués eux-mêmes, et ravale ainsi l'humanité<lb facs="#facs_5_l_3_2" n="N002" /> vivante à être la chose des choses inertes.»
+        </p>
+        <p facs="#facs_5_r_4">
+          <lb facs="#facs_5_l_4_1" n="N001" />L'homme libre veut la justice, et s'il recherche la puissance, c'est<lb facs="#facs_5_l_4_2" n="N002" /> pour la conquérir. Mais la puissance, par sa croissance même, se<lb facs="#facs_5_l_4_3" n="N003" /> substitue à sa fin véritable: «la justice, cette fugitive du camp des<lb facs="#facs_5_l_4_4" n="N004" /> vainqueurs».
+        </p>
+        </div>
+<div n="2">
+          <head facs="#facs_5_r_5">
+            <lb facs="#facs_5_l_5_1" n="N001" /><persName ref="GND:unknown">HELMUT THIELICKE</persName>
+          </head>
+          <p facs="#facs_5_r_6">
+            <lb facs="#facs_5_l_6_1" n="N001" />DIE BEDROHUNG DER FREIHEIT<lb facs="#facs_5_l_6_2" n="N002" /> DURCH DIE FREIHEITLICHE GESELLSCHAFT
+          </p>
+          <p facs="#facs_5_r_7">
+            <lb facs="#facs_5_l_7_1" n="N001" /><foreign xml:lang="deu">Martin <persName ref="GND:118547798">Heidegger</persName> hat in seiner Einführung in die Metaphysik<lb facs="#facs_5_l_7_2" n="N002" /> einmal gesagt, Ost und West drohten heute, metaphysisch gesehen,<lb facs="#facs_5_l_7_3" n="N003" /> dasselbe zu werden: Überall dieselbe «trostlose Raserei der entfesselten<lb facs="#facs_5_l_7_4" n="N004" /> Technik und der bodenlosen Organisation des Normalmenschen». </foreign>
+          </p>
+          <p facs="#facs_5_r_8">
+            <lb facs="#facs_5_l_8_1" n="N001" /><foreign xml:lang="deu">Der Mensch als Gegenstand der Organisation oder — wie das<lb facs="#facs_5_l_8_2" n="N002" /> eminent verräterische deutsche Wort hier zu lauten hätte — des<lb facs="#facs_5_l_8_3" n="N003" /> «Einsatzes» tritt in der Tat überdeutlich hervor, wenn man im<lb facs="#facs_5_l_8_4" n="N004" /> Kraftfeld des Marxismus-Leninismus die These von der Machbarkeit<lb facs="#facs_5_l_8_5" n="N005" /> des Menschen vertritt, die These also von seiner Machbarkeit als<lb facs="#facs_5_l_8_6" n="N006" /> Material mit Hilfe gesellschaftlich-struktureller Einwirkungen; oder<lb facs="#facs_5_l_8_7" n="N007" /> wenn in einer amerikanischen Kadettenanstalt das ebenso verräterische<lb facs="#facs_5_l_8_8" n="N008" /> Wort fallen kann, der Mensch sei eine Fehlkonstruktion, weil er<lb facs="#facs_5_l_8_9" n="N009" /> biologisch denjenigen Möglichkeiten nicht mehr gewachsen sei, die<lb facs="#facs_5_l_8_10" n="N010" /> seine Weltraumtechnik ihm zur Verfügung stellt.</foreign>
+          </p>
+          <p facs="#facs_5_r_9">
+            <lb facs="#facs_5_l_9_1" n="N001" /><foreign xml:lang="deu">Ich möchte meinerseits nicht mißverstanden werden: Die billige<lb facs="#facs_5_l_9_2" n="N002" /> und undifferenzierte Gleichsetzung von Ost und West in dem Sinne,<lb facs="#facs_5_l_9_3" n="N003" /> daß beide Hemisphären sich in gleicher Verdammnis befänden, daß<lb facs="#facs_5_l_9_4" n="N004" /> also in der allgemeinen Weltnacht alle Katzen grau seien und somit<lb facs="#facs_5_l_9_5" n="N005" /> kein Grund bestünde, die östliche Tyrannis als besonders hochgradige<lb facs="#facs_5_l_9_6" n="N006" /> Bedrohung zu empfinden — diese Nivellierung von Ost und West<lb facs="#facs_5_l_9_7" n="N007" /> liegt mir ganz fern. Denn es ist ein grundsätzlicher Unterschied,<lb facs="#facs_5_l_9_8" n="N008" /> ob Freiheitsberaubung und Personlosigkeit zum Programm gehören<lb facs="#facs_5_l_9_9" n="N009" /> (weil beides nämlich die politische Gefügigkeit des Menschen bewirken<lb facs="#facs_5_l_9_10" n="N010" /> soll) oder ob — ja, wie soll ich mich nun ausdrücken? Am besten so:<lb facs="#facs_5_l_9_11" n="N011" /> ob eine «kalte» Bedrohung der Freiheit statt der bolschewistisch<lb facs="#facs_5_l_9_12" n="N012" /> «heißen» am Horizont auftaucht und uns zur Wachsamkeit gegenüber<lb facs="#facs_5_l_9_13" n="N013" /> unseren wesentlichsten Gütern ruft. Diese «kalte»</foreign>
+          </p>
+        </div>
+      </div>
+</body></text>
+</TEI>

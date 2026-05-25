@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elles ont servi à accréditer la seule interprétation du fameux coup de téléphone qui ait eu cours: Madame Kopp a téléphoné à son mari parce que, le sachant coupable, elle voulait le protéger. Interprétation qui lui a d'ailleurs valu certaines sympathies.",
+      "bbox": {
+        "x_pct": 10.753,
+        "y_pct": 6.589,
+        "w_pct": 80.376,
+        "h_pct": 8.815
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par l'adjonction d'un passé lointain, mais réactualisé ainsi, l'«affaire» prit ainsi une nouvelle dimension. Elle devait de même trouver plus tard d'interminables prolongements grâce à l'histoire des «fiches» et de quelques autres. On masqua ainsi le fait que l'énorme machine complexe mise en place pour faire la lumière et rétablir vérité et confiance avait finalement accouché d'une souris.",
+      "bbox": {
+        "x_pct": 10.79,
+        "y_pct": 17.153,
+        "w_pct": 80.389,
+        "h_pct": 14.839
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En effet : quel en fut l'aboutissement ? La Conseillère fédérale démissionnaire (démissionnée) a été acquittée par le Tribunal fédéral. Mais ce fut, comme on l'a dit, un acquittement de deuxième classe, car accordé «au bénéfice du doute»: il n'était pas possible de prouver que Madame Kopp connaissait la source, interne à son Département, de l'information qu'elle a donnée — et fait donner — à son mari. Et c'est pourquoi une grande partie des frais de la cause lui ont été imputés.",
+      "bbox": {
+        "x_pct": 10.916,
+        "y_pct": 36.508,
+        "w_pct": 80.464,
+        "h_pct": 17.065
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais s'agissait-il bien de cela? Etait-ce la question que chacun se posait? N'y a-t-il pas eu un artifice juridique, contraire à la clarté que l'on voulait faire régner, à ne répondre — et encore: sans répondre — qu'à la question de violation subjective du secret de fonction, alors que, pendant des semaines et des mois, on avait renforcé, alimenté, par nombre de répugnants amalgames, l'accusation publique non formulée selon laquelle Madame Kopp avait profité de sa charge pour favoriser d'énormes profits dérivés de la drogue? Indirectement, certes, — à travers son mari, certes, — mais une telle substitution de thème était-elle propre à rétablir la confiance, — but déclaré de toute l'opération?",
+      "bbox": {
+        "x_pct": 10.878,
+        "y_pct": 57.798,
+        "w_pct": 80.376,
+        "h_pct": 23.516
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense que cette procédure disproportionnée, déviée de sa fin, a été superficiellement habile, mais qu'elle laisse dans le peuple un profond sentiment d'injustice — dans les deux sens! — et",
+      "bbox": {
+        "x_pct": 11.041,
+        "y_pct": 83.306,
+        "w_pct": 80.263,
+        "h_pct": 6.669
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "54",
+      "bbox": {
+        "x_pct": 10.753,
+        "y_pct": 92.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Most text transcriptions were truncated or garbled in original JSON.",
+    "Page number missing from initial region list.",
+    "Aggressive fix of all paragraph text content required for accuracy."
+  ],
+  "doc_id": "2810",
+  "page": 4,
+  "elapsed_seconds": 6.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

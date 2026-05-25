@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 139.5,
+        "y_pct": 77.0,
+        "w_pct": 21.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "The page number 28 at the top is a page header and should be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EMPRISE DE LA MORALE",
+      "bbox": {
+        "x_pct": 328.0,
+        "y_pct": 77.0,
+        "w_pct": 344.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "raison pure? Il 2 groupé du côté des thèses celle du monde créé, celle de l'existence d'un être simple, celle de la liberté, celle de l'existence d'un être nécessaire, pour les opposer aux « antitheses » du monde infini dans le temps, infiniment décomposable, régi par la causalité, et où les causes s'enchaînent à l'infini. C'est qu'à travers la raison pure il tendait déjà vers la raison pratique : là en effet le côté « thèse » et le côté « antithèse » s'affrontent, non plus comme deux solutions intellectuelles également réfutables, mais comme les deux mondes de la croyance et de l'incroyance. Ce n'est pas pour rien que Heidegger, dans son livre intitulé Sein und Zeit, prétendant faire une pure description « phénoménologique » de l'être de l'homme dans le temps, sans aucune appréciation morale ou religieuse, se sert de la vieille terminologie chrétienne, dont les mots, qu'on le veuille ou non, restent, depuis des siècles, chargés de bénédiction ou de malédiction mots tels que Verfallen, Geworfenheit, Sorge, Gewissen, Schuld, etc. Certes, il se défendrait bien de leur laisser leur poids traditionnel d'angoisse morale. Mais pourtant, il les emploie. Pourquoi y a-t-il telle phrase dans son livre qui, extraite de son cadre froidement phénoménologique, rendrait le son profond et sombre d'une phrase de saint Augustin?",
+      "bbox": {
+        "x_pct": 13.057,
+        "y_pct": 12.107,
+        "w_pct": 76.747,
+        "h_pct": 66.826
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie a donc toujours ce caractère d'être aussi une morale, et une morale exigeante, qui demande fidélité dans l'œuvre et dans la vie et sans cette fidélité n'est plus qu'un jeu menteur. Un",
+      "bbox": {
+        "x_pct": 13.449,
+        "y_pct": 78.646,
+        "w_pct": 76.28,
+        "h_pct": 10.2
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly corrupted (hallucinated 'Il 2' at start).",
+    "Missing page header/footer detection in initial JSON.",
+    "BBox for page number missing in original list."
+  ],
+  "doc_id": "20",
+  "page": 30,
+  "elapsed_seconds": 4.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

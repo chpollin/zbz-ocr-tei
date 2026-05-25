@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il mettait à monter par sursauts. A peine si un ruisseau d'étoiles persistait au-dessus de lui, tordu, brisé, parfois coupé tout à fait par une masse surplombante. D'ailleurs il ne pouvait guère se permettre de lever la tête. Toute son attention le rivait à ce sol tantôt visqueux, tantôt croulant, où de vagues taches moins noires ne faisaient que l'égarer. Il ne savait plus s'il avançait. Il avait grimpé presque verticalement dans une sorte de cheminée quand son front heurta le rocher, avec toute la force de l'élan qu'il avait pris. Il chancela, étourdi, crut tomber. Mais il était comme incrusté dans la montagne et ne tomba pas. Il restait là, accroché debout dans la faille de la paroi. Bientôt il sentit que la sueur qui l'inondait était froide. Un peu de vent tournait dans le noir. Le ruisseau d'étoiles avait disparu. Des mains, il tâta la surface rugueuse, tout autour de lui, rugueuse, avec des parties lisses et végétales, et d'autres qui s'en allaient en mottes, en croûtes, sous lesquelles on devinait des bêtes plates aux pattes innombrables, ou des vers.",
+      "bbox": {
+        "x_pct": 10.061,
+        "y_pct": 11.448,
+        "w_pct": 65.976,
+        "h_pct": 64.815
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and contained OCR errors; corrected the full text based on the image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "37",
+      "bbox": {
+        "x_pct": 72.0,
+        "y_pct": 82.2,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original text transcription was incomplete and inaccurate.",
+    "Page number at the bottom was incorrectly identified as part of the paragraph text."
+  ],
+  "doc_id": "2260",
+  "page": 35,
+  "elapsed_seconds": 4.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

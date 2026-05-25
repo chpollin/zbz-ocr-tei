@@ -1,0 +1,172 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "37e année Septembre 1980",
+      "bbox": {
+        "x_pct": 3.844,
+        "y_pct": 12.348,
+        "w_pct": 10.524,
+        "h_pct": 2.279
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header element."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "R\tflexions sur les finalit\ts de l'\tducation physique",
+      "bbox": {
+        "x_pct": 3.489,
+        "y_pct": 27.276,
+        "w_pct": 24.899,
+        "h_pct": 5.544
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "R\tsum\t du discours de Mlle Jeanne Hersch prononc\t \t la Journ\te de travail de la Conf\trence \tlargie d",
+      "bbox": {
+        "x_pct": 3.683,
+        "y_pct": 33.236,
+        "w_pct": 29.251,
+        "h_pct": 4.752
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Brechb\tchl Jean",
+      "bbox": {
+        "x_pct": 3.973,
+        "y_pct": 38.194,
+        "w_pct": 9.702,
+        "h_pct": 1.083
+      },
+      "changed": false
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Revue d'\tducation physique de |'Ecole f\td\trale de gymnastique et de sport Macolin (Suisse)",
+      "bbox": {
+        "x_pct": 34.488,
+        "y_pct": 12.308,
+        "w_pct": 22.458,
+        "h_pct": 5.225
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header/journal title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vos coll\tgues m'ont expliqu\t que c'est justement en tant que n'ayant pas d'exp\trience dans |'\tducati",
+      "bbox": {
+        "x_pct": 34.625,
+        "y_pct": 27.236,
+        "w_pct": 29.46,
+        "h_pct": 5.829
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "finalit\ts de |'\tducation physique ? Pourquoi une \tducation physique? Voici quelques r\tponses",
+      "bbox": {
+        "x_pct": 34.835,
+        "y_pct": 34.091,
+        "w_pct": 29.388,
+        "h_pct": 2.587
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La toute premi\tre, je la mets sous le signe du po\tte Rimbaud a \"une \tme et un corps \" plus Vimportan",
+      "bbox": {
+        "x_pct": 34.625,
+        "y_pct": 36.849,
+        "w_pct": 29.46,
+        "h_pct": 9.151
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'est-ce que cette interd\tpendance cette unit\t de deux r\talit\ts aussi diff\trentes ? L'interd\tpendan",
+      "bbox": {
+        "x_pct": 34.649,
+        "y_pct": 46.251,
+        "w_pct": 29.388,
+        "h_pct": 10.177
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certains d'entre vous connaissent peut-\ttre le titre d'un de mes livres , en allemand (parce qu'il n",
+      "bbox": {
+        "x_pct": 65.592,
+        "y_pct": 27.39,
+        "w_pct": 29.468,
+        "h_pct": 13.538
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jai parl\t tout \t I'heure de 5 'engluer dans son corps Il n'y avait l\t rien d'hostile \t l\tgard du au ",
+      "bbox": {
+        "x_pct": 65.729,
+        "y_pct": 40.952,
+        "w_pct": 29.412,
+        "h_pct": 13.766
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le mot libert\t est tr\ts \t la mode; mais il semble souvent vid\t de son sens On parle de la libert\t co",
+      "bbox": {
+        "x_pct": 34.593,
+        "y_pct": 56.94,
+        "w_pct": 29.388,
+        "h_pct": 9.117
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Donc, premi\tre finalit\t de |'\tducation physique la libert\t, la conqu\tte, la cr\tation de la libert\t c",
+      "bbox": {
+        "x_pct": 65.697,
+        "y_pct": 54.547,
+        "w_pct": 29.573,
+        "h_pct": 11.379
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Two running header elements misclassified as paragraph text."
+  ],
+  "doc_id": "1740",
+  "page": 2,
+  "elapsed_seconds": 6.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "160 SA G\u0000N\u0000RALIT\u0000 ET SA R\u0000ALIT\u0000",
+      "bbox": {
+        "x_pct": 14.458,
+        "y_pct": 82.5,
+        "w_pct": 76.762,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "The bounding box included the page header and page number which were incorrectly labeled as a single text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le rapport entre l'activité philosophique toujours inachevée et le système, forme achevée, sera donc nécessairement paradoxal. La philosophie voudrait atteindre le Tout, sans le pouvoir jamais. Elle en crée pourtant l'apparence en prenant la forme d'un tout. Mais elle déborde son propre système. Ce dernier ne contient que ce qu'elle peut savoir, et représente la face de sa généralité (Seite des Allgemeinen). Elle lutte contre le système qu'elle crée. L'acte qui brise tout système est pour la pensée existentielle la face de sa réalité (Seite der Wirklichkeit). « Toute vraie philosophie s'engage volontairement dans des chemins où elle voit finalement échouer sa volonté de savoir; elle ne veut pas que l'évidence suffise à la remplir, elle veut au contraire faire place à la liberté. Alors qu'à l'origine elle est un tout, son système achevé n'est finalement qu'un fragment. Ainsi on pourra maintenir à l'égard de la liberté la plus haute exigence possible : continuer à avancer dans un monde toujours plus largement ouvert; se trouver elle-même en approfondissant son existence; chercher à prendre pied dans sa profondeur transcendante. » Cette exigence n'est possible que dans l'inachèvement de la réalité temporelle; elle se trouverait ensevelie sous la vérité objectivement sue d'un système. — Vu du dehors, un système est le style de la pensée d'un sujet. Du dedans, il a une vérité d'une sorte unique. A son origine, il est identique au sujet. En s'objectivant, il devient la clarté du sujet envers lui-même. Comme",
+      "bbox": {
+        "x_pct": 14.458,
+        "y_pct": 12.667,
+        "w_pct": 76.762,
+        "h_pct": 76.79
+      },
+      "changed": true,
+      "change_reason": "Corrected the content to reflect the actual paragraph text and adjusted coordinates to exclude the header."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Initial parsing included the page header in the paragraph block.",
+    "OCR text was truncated and contained artifacts from the header/page number region."
+  ],
+  "doc_id": "20",
+  "page": 162,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "208 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 10.724,
+        "y_pct": 8.012,
+        "w_pct": 85.836,
+        "h_pct": 2.534
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header which should be excluded."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'être la route, le pont, les logements, la puissance électrique — non, ce sont la route, le pont, les logements, la puissance électrique qui deviennent des « occasions de travail », qui ont pour justification d'exiger du travail humain. Ne s'est-on pas aperçu dans les milieux dits de gauche, où l'on défend les droits et la dignité du travail, qu'en proclamant le principe du « droit au travail » de chaque citoyen on acceptait l'optique patronale, celle qui justifie les droits du capital contre ceux du travail par le fait que le capital a le mérite de donner du travail aux ouvriers? Comme on comprend dès lors ceux qui, contre ce principe, ont défendu celui du droit à la paresse!",
+      "bbox": {
+        "x_pct": 10.724,
+        "y_pct": 10.989,
+        "w_pct": 85.836,
+        "h_pct": 23.832
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout cela dira-t-on, ce sont des mots ; le chômage est une réalité, et quelle réalité, et il faut bien le combattre lorsqu'il menace ou sévit déjà. Mais il ne faut pas oublier que les slogans, les moules des pensées et des revendications collectives, les formes que l'on tend à une classe pour qu'elle y coule sa volonté, ses exigences, ses rêves, ne lui restent pas extérieurs. Ils la façonnent elle-même, durablement et profondément. Proclamer le droit au travail, c'est faire du travail une réalité qui a sa raison d'être en elle-même, qui n'a pas besoin de se justifier par une fin humainement légitime; c'est justifier n'importe quel travail et admettre que son résultat n'importe pas, qu'il n'est qu'un prétexte. C'est consommer le divorce le plus catastrophique que le capitalisme ait introduit dans nos mœurs, celui du travail et de son fruit, du travail et de son sens concret (qui n'est pas et ne peut pas être le salaire). C'est asservir les travailleurs en les amenant à revendiquer leur servitude et à renoncer au sens, à l'unité de leur vie. Dès lors, au lieu de donner leur travail à l'humanité, ils revendiquent « le droit » d'être aliénés à eux-mêmes tant d'heures par jour, « le droit » de vendre leur vie au client capitaliste qui veut bien la leur acheter.",
+      "bbox": {
+        "x_pct": 10.585,
+        "y_pct": 34.198,
+        "w_pct": 85.836,
+        "h_pct": 40.223
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De là au troisième remède, celui qui a si profondément miné — sinon détruit — la solidarité ouvrière internationale, il n'y a qu'un pas. Chaque corps de métier, chaque main-d'œuvre nationale entreprend de défendre ses « chances de travail » contre la main-d'œuvre extérieure. On a oublié que l'internationalisme ouvrier, avant d'être un idéal de fraternité humaine, a été une conception réaliste de la force ouvrière, une constatation du fait que les salariés sont impuissants partout tant qu'ils restent des",
+      "bbox": {
+        "x_pct": 10.585,
+        "y_pct": 73.592,
+        "w_pct": 85.613,
+        "h_pct": 17.139
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Included header in page analysis initially.",
+    "Text regions seem mostly accurate but some OCR noise was present in original bounding box definitions."
+  ],
+  "doc_id": "330",
+  "page": 242,
+  "elapsed_seconds": 6.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

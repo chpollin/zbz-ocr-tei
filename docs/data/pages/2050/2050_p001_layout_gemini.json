@@ -1,0 +1,212 @@
+{
+  "doc_id": "2050",
+  "page": 1,
+  "image_width": 1173,
+  "image_height": 819,
+  "num_regions": 18,
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 65.5,
+        "y_pct": 7.5,
+        "w_pct": 10.7,
+        "h_pct": 3.2
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 62.6,
+        "y_pct": 20.6,
+        "w_pct": 16.2,
+        "h_pct": 2.4
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 62.9,
+        "y_pct": 25.3,
+        "w_pct": 19.5,
+        "h_pct": 8.2
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 67.4,
+        "y_pct": 36.7,
+        "w_pct": 10.0,
+        "h_pct": 2.1
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 62.5,
+        "y_pct": 39.9,
+        "w_pct": 19.4,
+        "h_pct": 1.4
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 68.6,
+        "y_pct": 46.3,
+        "w_pct": 8.1,
+        "h_pct": 2.1
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 68.9,
+        "y_pct": 48.8,
+        "w_pct": 7.0,
+        "h_pct": 1.4
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 69.0,
+        "y_pct": 50.9,
+        "w_pct": 6.7,
+        "h_pct": 1.1
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 69.5,
+        "y_pct": 52.7,
+        "w_pct": 5.8,
+        "h_pct": 1.4
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 69.0,
+        "y_pct": 54.4,
+        "w_pct": 6.8,
+        "h_pct": 1.5
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 69.6,
+        "y_pct": 56.2,
+        "w_pct": 5.5,
+        "h_pct": 1.5
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 68.9,
+        "y_pct": 58.0,
+        "w_pct": 6.8,
+        "h_pct": 1.4
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 69.2,
+        "y_pct": 59.8,
+        "w_pct": 6.3,
+        "h_pct": 1.4
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 68.4,
+        "y_pct": 61.6,
+        "w_pct": 7.8,
+        "h_pct": 1.4
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 69.6,
+        "y_pct": 63.2,
+        "w_pct": 5.1,
+        "h_pct": 1.2
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 68.6,
+        "y_pct": 64.8,
+        "w_pct": 7.6,
+        "h_pct": 1.6
+      }
+    },
+    {
+      "label": "picture",
+      "zbz_tag": "_skip",
+      "text": "",
+      "bbox": {
+        "x_pct": 70.7,
+        "y_pct": 78.6,
+        "w_pct": 3.1,
+        "h_pct": 5.4
+      }
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 58.7,
+        "y_pct": 85.4,
+        "w_pct": 27.1,
+        "h_pct": 1.4
+      }
+    }
+  ],
+  "elapsed_seconds": 3.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini-detect",
+  "page_orientation": "unknown",
+  "num_columns": 1
+}

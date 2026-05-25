@@ -1,0 +1,91 @@
+{
+  "doc_id": "940",
+  "page": 1,
+  "image_width": 1169,
+  "image_height": 1705,
+  "num_regions": 7,
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 9.1,
+        "y_pct": 3.0,
+        "w_pct": 19.0,
+        "h_pct": 6.6
+      }
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 34.2,
+        "y_pct": 19.4,
+        "w_pct": 51.5,
+        "h_pct": 9.7
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 33.5,
+        "y_pct": 57.2,
+        "w_pct": 9.9,
+        "h_pct": 2.5
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 12.5,
+        "y_pct": 69.6,
+        "w_pct": 69.0,
+        "h_pct": 2.2
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 11.0,
+        "y_pct": 75.1,
+        "w_pct": 71.7,
+        "h_pct": 5.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 11.1,
+        "y_pct": 83.4,
+        "w_pct": 52.7,
+        "h_pct": 2.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 2.5,
+        "y_pct": 88.6,
+        "w_pct": 67.4,
+        "h_pct": 2.3
+      }
+    }
+  ],
+  "elapsed_seconds": 3.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini-detect",
+  "page_orientation": "unknown",
+  "num_columns": 1
+}

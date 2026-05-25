@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.1) Vous pensez que c'est encore réaliste aujourd'hui, cette idée de la Suisse terre d'asile, face aux pays totalitaires, et dans l'ordre des menaces qui pèsent sur nous ?",
+      "bbox": {
+        "x_pct": 5.702,
+        "y_pct": 4.218,
+        "w_pct": 79.243,
+        "h_pct": 5.911
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'y renoncerai jamais. Pour le moment, c'est encore dans notre constitution, cela fait partie de notre essence. On ne peut pas y renoncer. Jusqu'à présent, malgré fautes et bavures, dans une certaine mesure, cela a joué, cela joue encore. Tant qu'on en a la moindre possibilité, il faut se cramponner à la Suisse terre d'asile. Cela fait partie essentielle de son identité.",
+      "bbox": {
+        "x_pct": 5.531,
+        "y_pct": 10.266,
+        "w_pct": 79.536,
+        "h_pct": 11.75
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR errors and provided full text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. La Suisse est aussi une réalité culturelle, mais une réalité culturelle si multiforme, si diverse et contrastée que certains en viennent périodiquement à douter de son identité. Vous qui parlez si souvent en Suisse allemande, que pensez-vous du prétendu fossé qui se creuserait entre Romands et Alémaniques ?",
+      "bbox": {
+        "x_pct": 5.617,
+        "y_pct": 23.685,
+        "w_pct": 79.121,
+        "h_pct": 10.403
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed missing text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, je crois qu'il y a toujours eu un certain fossé entre les Suisses-romands et les Suisses-allemands, ne fût-ce que parce que la Suisse romande est contiguë à la Suisse allemande et qu'en général on est plus ou moins en mauvais termes avec son voisin. Quand deux régions, deux entités culturelles se touchent, elles ont des frottements et des difficultés. Mais il est vrai que la coupure entre Suisse romande et Suisse allemande est en train de s'accentuer actuellement, pour plusieurs raisons. D'abord les Suisses-allemands, depuis l'hitlérisme, se sont attachés de plus en plus à leurs dialectes qu'ils développent aux dépens du bon allemand ; par conséquent, comme les Suisses-romands qui s'en donnent la peine apprennent l'allemand, et non le suisse allemand (ce qui est parfaitement compréhensible), il devient toujours plus difficile de se comprendre. Personnellement je déplore, par exemple, que lors de votations fédérales, quand nous, Romands, voudrions savoir ce que pensent nos Confédérés, et que nous ouvrons le poste pour écouter un débat entre Suisses-allemands compétents, d'opinions diverses, nous n'entendions que du suisse allemand, auquel nous ne comprenons rien. Ils devraient se donner la peine, dans ces cas-là, de parler en allemand. Mais ce n'est pas l'élément principal. Le plus grave, c'est le développement des media électroniques — radio et télévision — qui deviennent de plus en plus régionaux : on voit s'atténuer les différences cantonales, d'une part, et s'affaiblir la communauté fédérale, d'autre part. Il ne faut pas oublier que les Suisses-romands disposent à la télévision de 4 chaînes en langue française, dont une seule est suisse ; ils ont donc 3 chaînes qui viennent de France. Les Suisses-allemands ont à leur disposition 4 chaînes en allemand, dont une seule est suisse, et les 3 autres viennent d'Allemagne. Or, il y a dans bien des domaines, entre les courants de pensée et de culture qui portent le même nom en Europe des différences profondes de l'un de ces pays à l'autre. Prenons par exemple le socialisme, dont nous",
+      "bbox": {
+        "x_pct": 5.372,
+        "y_pct": 33.524,
+        "w_pct": 79.487,
+        "h_pct": 57.927
+      },
+      "changed": true,
+      "change_reason": "Corrected extensive OCR errors and provided complete text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "137",
+      "bbox": {
+        "x_pct": 80.5,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "OCR quality extremely poor in initial detection.",
+    "Page number missing from initial region list.",
+    "Multiple paragraphs contained garbled characters instead of text."
+  ],
+  "doc_id": "2330",
+  "page": 141,
+  "elapsed_seconds": 5.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "table",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nr. 13 Planung in der freien Marktwirtschaft Prof. Dr. Edgar Salin Universität Basel Prof. Dr. Gottfried Bombach Universität Basel Nr. 14 Wohin Deutschland in Europa? Prof. Alfred Grosser Universität Paris Karl Theodor Frhr. zu Guttenberg, MdB, Bonn François Bondy \"Preuves\", Paris Nr. 15 Entwicklungshilfe - Mittel des Aufstiegs oder des Verfalls? Dr. Walter Rau Bundesministerium für wirtsch. Zusammenarbeit, Bonn Dr. E. F. Schumacher National Coal Board, London Prof. Dr. Edgar Salin Universität Basel Nr. 16 Industrielle Gesellschaft - menschlich oder unmenschlich? Prof. Dr. Raymond Aron Universität Paris Prof. Dr. Ralf Dahrendorf, Ph. D. Universität Konstanz Nr. 17 Vermögensbildung in Arbeitnehmerhand - ein revolutionäres oder evolutionäres Ziel? Prof. Dr. Helmut Meinhold Universität Frankfurt Prof. Dr. H. J. Wallraff, S. J. Philos.-Theolog. Hochschule Frankfurt Prof. Dr. Eugen Kogon Technische Hochschule Darmstadt Nr. 18 Hemmen Tabus die Demokratisierung der deutschen Gesellschaft? Prof. Dr. Alexander Mitscherlich Universität Heidelberg Prof. Hellmut Becker Institut für Bildungsforschung, Berlin Nr. 19 Automatisierung - eine gesellschaftliche Herausforderung? Soziale Konsequenzen aus Tatsachen und Ideologien Prof. Dr. Gottfried Bombach Universität Basel Dr. Günter Friedrichs IG Metall, Frankfurt Dr. Kurt Pentzlin H. Bahlsens Keksfabrik KG, Hannover Prof. Dr. Hans Wenke Universität Hamburg Nr. 20 Ein Dilemma der westlichen Demokratien: Kurzfristige Soziallösungen contra langfristige Regionalpolitik - das europäische Koordinationsproblem Prof. Dr. Leo H. Klaassen Nederlandsch Economisch Instituut, Rotterdam Prof. Dr. Edgar Salin Universität Basel Nr. 21 Die \"unterentwickelten\" hochindustrialisierten Gesellschaften Prof. Dr. Friedrich Heer Universität Wien Prof. Hellmut Becker Institut für Bildungsforschung, Berlin Nr. 22 Muß unsere politische Maschinerie umkonstruiert werden? Dr. Rüdiger Altmann Deutscher Industrie- und Handelstag, Bonn Joseph Rovan \"Peuple et Culture\", Paris Prof. Dr. Eugen Kogon Technische Hochschule Darmstadt Nr. 23 Wissenschaftliche Experten und politische Praxis - Das Problem der Zusammenarbeit in der heutigen Demokratie Prof. Dr. Helmut Schelsky Universität Münster Dr. Ulrich Lohmar, MdB, Bonn Prof. Hellmut Becker Institut für Bildungsforschung, Berlin",
+      "bbox": {
+        "x_pct": 6.677,
+        "y_pct": 6.514,
+        "w_pct": 83.855,
+        "h_pct": 82.59
+      },
+      "changed": true,
+      "change_reason": "The region was incorrectly labeled as an empty paragraph. It is a structured table containing academic content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "59",
+      "bbox": {
+        "x_pct": 89.658,
+        "y_pct": 90.169,
+        "w_pct": 1.296,
+        "h_pct": 1.706
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Original detection missed the page number.",
+    "Original detection failed to parse content of table, treating it as empty."
+  ],
+  "doc_id": "810",
+  "page": 61,
+  "elapsed_seconds": 6.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

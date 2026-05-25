@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "166 EXPRESSION EXISTENTIELLE INDIRECTE :",
+      "bbox": {
+        "x_pct": 14.864,
+        "y_pct": 82.355,
+        "w_pct": 76.099,
+        "h_pct": 2.448
+      },
+      "changed": true,
+      "change_reason": "Corrected page header classification from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telles sont, en suivant Jaspers de très près (II, pp. 6 et sq.) quelques-unes des directions dans lesquelles doit s'engager une philosophie qui veut éclairer l'existence. Voyons maintenant ses méthodes (II, pp. 9 et sq.)",
+      "bbox": {
+        "x_pct": 14.864,
+        "y_pct": 12.695,
+        "w_pct": 76.099,
+        "h_pct": 12.857
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elles doivent être d'un caractère particulier, puisque l'existence n'est pas un objet dans le monde, ni même un objet idéal. La pensée vise la réalité de l'existence. Cette réalité, c'est un acte transcendant que l'existence accomplit vers elle-même, dans sa situation historique. Mais pour atteindre l'acte transcendant originel de l'existence, la pensée a besoin d'un objet qu'elle devra, elle-même, transcender. Ainsi, lorsqu'on pense un concept philosophique destiné à éclairer l'existence, et qu'on transcende ce concept, on n'accomplit pas un acte de réalité existentielle, mais seulement de possibilité existentielle. L'existence elle-même ne se réalise que dans l'action. Quand nous philosophons, nous nous tournons vers l'existence; nous ne sommes pas encore, mais nous pensons notre être.",
+      "bbox": {
+        "x_pct": 14.804,
+        "y_pct": 25.429,
+        "w_pct": 76.461,
+        "h_pct": 41.076
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les énoncés qui éclairent l'existence atteignent la liberté. La critère de leur vérité n'est pas un critère objectif, mais bien plutôt la volonté elle-même qui dit oui ou qui dit non. La philosophie, dans ses points décisifs, est déjà, alors qu'elle éclaire l'existence, une manifestation de la liberté. La forme de chaque énoncé est liée à un contenu objectif et a par conséquent un sens général. Mais comme chaque énoncé veut éclairer l'existence, il peut et doit",
+      "bbox": {
+        "x_pct": 14.864,
+        "y_pct": 66.41,
+        "w_pct": 76.551,
+        "h_pct": 22.99
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and running header incorrectly identified as text.",
+    "OCR text content was highly inaccurate in original input.",
+    "Bounding boxes were provided for the page number/header but incorrectly labeled."
+  ],
+  "doc_id": "20",
+  "page": 168,
+  "elapsed_seconds": 4.39,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

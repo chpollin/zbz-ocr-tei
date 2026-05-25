@@ -1,0 +1,395 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">JOURNAL DE GENEVE</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1190</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>JOURNAL DE GENEVE</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1975</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:warning L3:ok L4:warning L5:n/a L6:ok L7:warning). Titel JOURNAL DE GENEVE statt spezifischem Artikeltitel -- Hersch-Beitrag ist Nachruf auf Helene Naef; OCR-Halluzination am Ende von S.1; Komplexe Zeitung mit mehreren unabhaengigen Artikeln</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1938" lry="2857">
+      <zone xml:id="facs_1_r_1" ulx="100" uly="95" lrx="254" lry="241" />
+      <zone xml:id="facs_1_r_2" ulx="97" uly="255" lrx="187" lry="288" />
+      <zone xml:id="facs_1_r_3" ulx="203" uly="258" lrx="274" lry="288" />
+      <zone xml:id="facs_1_r_4" ulx="93" uly="294" lrx="338" lry="466" />
+      <zone xml:id="facs_1_r_5" ulx="565" uly="447" lrx="1862" lry="519" />
+      <zone xml:id="facs_1_r_6" ulx="96" uly="473" lrx="346" lry="502" />
+      <zone xml:id="facs_1_r_7" ulx="985" uly="539" lrx="1263" lry="573" />
+      <zone xml:id="facs_1_r_8" ulx="119" uly="566" lrx="393" lry="603" />
+      <zone xml:id="facs_1_r_9" ulx="535" uly="569" lrx="942" lry="802" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1913" lry="2848">
+      <zone xml:id="facs_2_r_1" ulx="62" uly="144" lrx="478" lry="193" />
+      <zone xml:id="facs_2_r_2" ulx="510" uly="155" lrx="1839" lry="280" />
+      <zone xml:id="facs_2_r_3" ulx="83" uly="194" lrx="321" lry="212" />
+      <zone xml:id="facs_2_r_4" ulx="64" uly="216" lrx="493" lry="341" />
+      <zone xml:id="facs_2_r_5" ulx="575" uly="279" lrx="1321" lry="502" />
+      <zone xml:id="facs_2_r_6" ulx="1410" uly="281" lrx="1836" lry="428" />
+      <zone xml:id="facs_2_r_7" ulx="64" uly="339" lrx="491" lry="535" />
+      <zone xml:id="facs_2_r_8" ulx="853" uly="518" lrx="1043" lry="555" />
+      <zone xml:id="facs_2_r_9" ulx="64" uly="549" lrx="277" lry="575" />
+      <zone xml:id="facs_2_r_10" ulx="62" uly="576" lrx="324" lry="605" />
+      <zone xml:id="facs_2_r_11" ulx="512" uly="579" lrx="940" lry="866" />
+      <zone xml:id="facs_2_r_12" ulx="959" uly="579" lrx="1389" lry="724" />
+      <zone xml:id="facs_2_r_13" ulx="1410" uly="605" lrx="1837" lry="733" />
+      <zone xml:id="facs_2_r_14" ulx="62" uly="610" lrx="490" lry="717" />
+      <zone xml:id="facs_2_r_15" ulx="62" uly="717" lrx="491" lry="824" />
+      <zone xml:id="facs_2_r_16" ulx="959" uly="726" lrx="1387" lry="866" />
+      <zone xml:id="facs_2_r_17" ulx="1407" uly="744" lrx="1707" lry="805" />
+      <zone xml:id="facs_2_r_18" ulx="1409" uly="810" lrx="1834" lry="1024" />
+      <zone xml:id="facs_2_r_19" ulx="62" uly="824" lrx="488" lry="860" />
+      <zone xml:id="facs_2_r_20" ulx="62" uly="859" lrx="489" lry="917" />
+      <zone xml:id="facs_2_r_21" ulx="959" uly="866" lrx="1387" lry="959" />
+      <zone xml:id="facs_2_r_22" ulx="511" uly="880" lrx="905" lry="944" />
+      <zone xml:id="facs_2_r_23" ulx="236" uly="913" lrx="292" lry="929" />
+      <zone xml:id="facs_2_r_24" ulx="64" uly="929" lrx="490" lry="1053" />
+      <zone xml:id="facs_2_r_25" ulx="511" uly="944" lrx="940" lry="1127" />
+      <zone xml:id="facs_2_r_26" ulx="960" uly="969" lrx="1326" lry="1003" />
+      <zone xml:id="facs_2_r_27" ulx="959" uly="1004" lrx="1387" lry="1111" />
+      <zone xml:id="facs_2_r_28" ulx="1406" uly="1021" lrx="1835" lry="1238" />
+      <zone xml:id="facs_2_r_29" ulx="62" uly="1052" lrx="490" lry="1142" />
+      <zone xml:id="facs_2_r_30" ulx="511" uly="1125" lrx="940" lry="1165" />
+      <zone xml:id="facs_2_r_31" ulx="62" uly="1170" lrx="262" lry="1196" />
+      <zone xml:id="facs_2_r_32" ulx="836" uly="1192" lrx="1014" lry="1226" />
+      <zone xml:id="facs_2_r_33" ulx="62" uly="1202" lrx="469" lry="1272" />
+      <zone xml:id="facs_2_r_34" ulx="869" uly="1230" lrx="982" lry="1256" />
+      <zone xml:id="facs_2_r_35" ulx="509" uly="1265" lrx="941" lry="1356" />
+      <zone xml:id="facs_2_r_36" ulx="60" uly="1273" lrx="489" lry="1398" />
+      <zone xml:id="facs_2_r_37" ulx="959" uly="1342" lrx="1387" lry="1418" />
+      <zone xml:id="facs_2_r_38" ulx="510" uly="1357" lrx="938" lry="1592" />
+      <zone xml:id="facs_2_r_39" ulx="62" uly="1395" lrx="489" lry="1576" />
+      <zone xml:id="facs_2_r_40" ulx="1460" uly="1398" lrx="1778" lry="1435" />
+      <zone xml:id="facs_2_r_41" ulx="962" uly="1420" lrx="1380" lry="1481" />
+      <zone xml:id="facs_2_r_42" ulx="1433" uly="1461" lrx="1809" lry="1559" />
+      <zone xml:id="facs_2_r_43" ulx="958" uly="1480" lrx="1388" lry="1625" />
+      <zone xml:id="facs_2_r_44" ulx="1568" uly="1564" lrx="1675" lry="1590" />
+      <zone xml:id="facs_2_r_45" ulx="61" uly="1573" lrx="490" lry="1788" />
+      <zone xml:id="facs_2_r_46" ulx="510" uly="1591" lrx="938" lry="1683" />
+      <zone xml:id="facs_2_r_47" ulx="1476" uly="1594" lrx="1769" lry="1631" />
+      <zone xml:id="facs_2_r_48" ulx="959" uly="1625" lrx="1384" lry="1661" />
+      <zone xml:id="facs_2_r_49" ulx="1433" uly="1633" lrx="1808" lry="1674" />
+      <zone xml:id="facs_2_r_50" ulx="975" uly="1662" lrx="1138" lry="1681" />
+      <zone xml:id="facs_2_r_51" ulx="1245" uly="1677" lrx="1367" lry="1701" />
+      <zone xml:id="facs_2_r_52" ulx="509" uly="1702" lrx="938" lry="1776" />
+      <zone xml:id="facs_2_r_53" ulx="507" uly="1778" lrx="938" lry="1987" />
+      <zone xml:id="facs_2_r_54" ulx="62" uly="1838" lrx="491" lry="1930" />
+      <zone xml:id="facs_2_r_55" ulx="58" uly="1957" lrx="338" lry="2043" />
+      <zone xml:id="facs_2_r_56" ulx="510" uly="1991" lrx="938" lry="2046" />
+      <zone xml:id="facs_2_r_57" ulx="508" uly="2087" lrx="938" lry="2147" />
+      <zone xml:id="facs_2_r_58" ulx="62" uly="2145" lrx="491" lry="2308" />
+      <zone xml:id="facs_2_r_59" ulx="535" uly="2151" lrx="916" lry="2185" />
+      <zone xml:id="facs_2_r_60" ulx="509" uly="2194" lrx="936" lry="2235" />
+      <zone xml:id="facs_2_r_61" ulx="510" uly="2234" lrx="938" lry="2277" />
+      <zone xml:id="facs_2_r_62" ulx="1251" uly="2368" lrx="1547" lry="2408" />
+      <zone xml:id="facs_2_r_63" ulx="277" uly="2397" lrx="730" lry="2439" />
+      <zone xml:id="facs_2_r_64" ulx="402" uly="2434" lrx="600" lry="2504" />
+      <zone xml:id="facs_2_r_65" ulx="1057" uly="2461" lrx="1196" lry="2487" />
+      <zone xml:id="facs_2_r_66" ulx="1153" uly="2497" lrx="1646" lry="2535" />
+      <zone xml:id="facs_2_r_67" ulx="358" uly="2507" lrx="646" lry="2584" />
+      <zone xml:id="facs_2_r_68" ulx="1332" uly="2536" lrx="1459" lry="2562" />
+      <zone xml:id="facs_2_r_69" ulx="1021" uly="2567" lrx="1766" lry="2705" />
+      <zone xml:id="facs_2_r_70" ulx="338" uly="2592" lrx="666" lry="2640" />
+      <zone xml:id="facs_2_r_71" ulx="340" uly="2632" lrx="662" lry="2660" />
+      <zone xml:id="facs_2_r_72" ulx="649" uly="2670" lrx="740" lry="2694" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <div type="text">
+<p facs="#facs_1_r_1">
+            <lb facs="#facs_1_l_1_1" n="N001" />J.A. No 12<lb facs="#facs_1_l_1_2" n="N002" />JEUDI<lb facs="#facs_1_l_1_3" n="N003" />16 JANVIER<lb facs="#facs_1_l_1_4" n="N004" />1975<lb facs="#facs_1_l_1_5" n="N005" />SUISSE : 50 ct.<lb facs="#facs_1_l_1_6" n="N006" />BELGIQUE : 10 F.<lb facs="#facs_1_l_1_7" n="N007" />ALLEMAGNE : 0.50 DM<lb facs="#facs_1_l_1_8" n="N008" />FRANCE : 1 F.<lb facs="#facs_1_l_1_9" n="N009" />ESPAGNE : 20 PESETAS<lb facs="#facs_1_l_1_10" n="N010" />ITALIE : 200 LIRES<lb facs="#facs_1_l_1_11" n="N011" />PORTUGAL : 10 Esc.<lb facs="#facs_1_l_1_12" n="N012" />ABONNEMENTS : PAGE
+          </p>
+        
+        </div>
+<div n="2">
+          <head>
+            <orgName ref="GND:unknown">ETATS-UNIS</orgName> - <orgName ref="GND:unknown">URSS</orgName>
+            <lb facs="#facs_1_l_2_1" n="N001" /><title type="main">Recoudre maintenant !</title>
+          </head>
+          <p facs="#facs_1_r_4">
+            <lb facs="#facs_1_l_4_1" n="N001" />Ainsi l'accord commercial américain-soviétique signé en 1972 ne sera pas appliqué. En fait, il ne pouvait guère en être autrement. La loi américaine sur le commerce extérieur (« Trade Act »), récemment adoptée par le <orgName ref="GND:unknown">Congrès des Etats-Unis</orgName>, n'autorise en effet la <orgName ref="GND:unknown">Maison-Blanche</orgName> à accorder la clause de la notion la plus favorisée (MFN) à l'<orgName ref="GND:unknown">URSS</orgName> qu'à la condition que cette dernière ne mette aucune entrave à l'intégration des juifs. Or, l'accord commercial américain-soviétique prévenait que les deux pays se concédaient mutuellement et sans condition la clause MFN. On ne voit donc pas comment cet accord pouvait entrer en vigueur alors que les <orgName ref="GND:unknown">Etats-Unis</orgName> sont dans l'impossibilité d'en respecter le premier article.
+          </p>
+          <p facs="#facs_1_r_5">
+            <lb facs="#facs_1_l_5_1" n="N001" />Certes, les autres accords économiques signés à la même époque (transports maritimes, céréales, double imposition, etc., ne sont pas touchés pour le moment en tout cas par ce premier coup de frein au développement des échanges commerciaux entre l'<orgName ref="GND:unknown">Union soviétique</orgName> et les <orgName ref="GND:unknown">Etats-Unis</orgName>. Mais, bien que les relations commerciales ne soient qu'un des volets de la détente mutuelle entre <orgName ref="GND:unknown">Maison-Blanche</orgName> et échanges, il semble bien que celle-ci risque de souffrir d'un refroidissement. Il n'est dès lors pas inutile de se souvenir que M. <persName ref="GND:unknown">Henry Kissinger</persName> a toujours calculé que la détente était un « processus » et non un « événement » et que cet effort doivent être mesurés sur des années, voire des générations.
+          </p>
+          <p facs="#facs_1_r_6">
+            <lb facs="#facs_1_l_6_1" n="N001" />Au-delà des faits, des promesses tenues par des engagements non respectés, il faut reconnaître que ce coup d'arrêt est le produit d'une série de circonstances politiques, économiques et psychologiques qui se sont accumulées tant à <orgName ref="GND:unknown">Washington</orgName> qu'à <orgName ref="GND:unknown">Moscou</orgName>.
+          </p>
+          <p facs="#facs_1_r_7">
+            <lb facs="#facs_1_l_7_1" n="N001" />Du côté américain, nombreux sont ceux qui, au nom de la sécurité nationale, mettent en doute l'opportunité de fournir à l'<orgName ref="GND:unknown">Union soviétique</orgName> les moyens scientifiques et technologiques dont elle a besoin et sur lesquels elle compte pour renforcer, en définitive, sa puissance. Il est par exemple significatif que le magazine américain « <bibl corresp="GND:unknown">Fortune</bibl> », dans son édition de janvier, rappelle qu'au cours de l'histoire, la <orgName ref="GND:unknown">Russie</orgName> a ouvert à deux reprises sa porte pour l'<orgName ref="GND:unknown">URSS</orgName>. On ne peut pas le dire que le rapport de l'<orgName ref="GND:unknown">URSS</orgName> n'est pas un « document » et que ce n'est pas un « événement » et que cet effort est un « événement » et que cet effort devient être mesurés sur des années, voire des générations.
+          </p>
+        </div>
+        <div n="2">
+          <head>
+            <lb facs="#facs_1_l_8_1" n="N001" /><orgName ref="GND:unknown">JOURNAL DE GENEVE</orgName>
+            <lb facs="#facs_1_l_9_1" n="N001" /><hi rendition="#i">* LE QUOTIDIEN SUISSE D'AUDIENCE INTERNATIONALE</hi>
+          </head>
+        </div>
+      <pb facs="#facs_2" n="2" />
+        <div type="text">
+<head facs="#facs_2_r_1">
+          Jeudi 16 janvier 1975
+        </head>
+        <p facs="#facs_2_r_2">
+          GENÈVE
+        </p>
+        <p facs="#facs_2_r_3">
+          JOURNAL DE GENÈVE — 11
+        </p>
+        <p facs="#facs_2_r_4">
+          9000 francs pour le Sahel
+        </p>
+        <p facs="#facs_2_r_5">
+          Caritas-Genève communique :
+        </p>
+        <p facs="#facs_2_r_6">
+          Lors de notre collecte du 21 décembre et grâce à la bonne volonté de plus de 100 jeunes, nous avons pu verser intégralement à notre centrale de Caritas-Suisse, à Lucerne, la somme de Fr. 9.100.— soit 9000 francs — dans le cadre de la campagne Famine 74 — à la construction de puits et de relevage d'eau au Sahel.
+        </p>
+        <p facs="#facs_2_r_7">
+          Nous tenons à remercier toute la population genevoise pour sa générosité tout en attirant son attention sur l'ampleur du problème de la sécheresse qui ne pourra être vaincue qu'à longue échéance par la diversité des indigènes de ces régions et par l'apport généreux de la communauté internationale ; la campagne reste donc ouverte et toute personne ou groupement qui désire organiser une collecte ou une manifestation dans ce sens peut prendre contact avec notre secrétariat, rue du Conseil-Général 6, tél. 25 23 30.
+        </p>
+        <p facs="#facs_2_r_8">
+          Dixième anniversaire des boutiques de Caritas
+        </p>
+        <p facs="#facs_2_r_9">
+          Au printemps 1965, Caritas-Genève ouvrait son premier magasin à la rue Charles-Cusin ; le but de cette initiative était double : procurer des vêtements bon marché à une clientèle sans grands moyens financiers et apporter des ressources à l'institution civile.
+        </p>
+        <p facs="#facs_2_r_10">
+          Très rapidement, la petite arcade des Pâques s'est révélée trop exigüe pour recevoir les nombreux clients qui s'y rendaient ; il a donc fallu trouver des locaux plus vastes et, parallèlement, d'autres magasins, un grand nombre de boutiques qu'attirent de la ville.
+        </p>
+        <p facs="#facs_2_r_11">
+          Au début 1975, Caritas-Genève met à la disposition de la population les arcades suivantes :
+        </p>
+        <p facs="#facs_2_r_12">
+          13, rue des Pâques, 110, rue des Eaux-Vives, 5, rue de la Fontenette à Carouge, 52, bd Saint-Georges.
+        </p>
+        <p facs="#facs_2_r_13">
+          Ces magasins sont tous ouverts du lundi au samedi, entre 15 et 18 heures.
+        </p>
+        <p facs="#facs_2_r_14">
+          On ne peut évoquer le secteur des boutiques de Caritas sans parler du bénévolat sur celui-ci pour un rôle irremplaçable puisque toutes les arcades — on ne le soulignera jamais assez — fonctionnent grâce à la présence fidèle et compétente de 150 dames qui se relaient jour après jour pour assurer leur ouverture.
+        </p>
+        <p facs="#facs_2_r_15">
+          Au cours de l'année 1975, Caritas-Genève a l'intention de marquer ce dixième anniversaire en complétant, entre autres, son éventail de magasin par une nouvelle boutique dans le quartier de Plainpalais. (jc)
+        </p>
+        <p facs="#facs_2_r_16">
+          Initiative des UCJG
+        </p>
+        <p facs="#facs_2_r_17">
+          Deux initiatives aux voyages pour les jeunes
+        </p>
+        <p facs="#facs_2_r_18">
+          Après l'éclatant succès des dix premières éditions de leurs vacances de Pâques en haute montagne, les Unions chrétiennes genevoises mettent sur pied un nouveau programme, ouvert à tous les jeunes, pour leur permettre de vivre une année de aventure pendant les prochaines vacances, du 31 mars au 6 avril.
+        </p>
+        <p facs="#facs_2_r_19">
+          Deux expéditions bien différentes sont prévues par les animateurs : la première, le trek « Adrets des 4000 », montagne et skieur chevronné : une traversée de la célèbre « Haute route », d'Arolla à Chamonix, qui aura la particularité de passer par le refuge, d'Italie et la réserve « avec arcades des 4000 », dans le massif du Mont-Rose, comprenant l'ascension de six sommets de plus de 4000 mètres d'altitude, le plus élevé — la Pointe Parrot —, culminant à 4436 mètres.
+        </p>
+        <p facs="#facs_2_r_20">
+          Si ces deux expéditions alpines sont ouvertes à tous les jeunes et offrent toute la sécurité souhaitée grâce à la participation de deux guides dans chaque équipe (le camp des « 4000 » est dirigé par MM. Adrien Calame et Bernard Tamone), les candidats n'en sont pas moins astreints à une sérieuse préparation. Trois dimanches ou week-ends d'entraînement sont prévus en février et mars (Jura, Haute-Savoie et Argentière) afin de rôder les skieurs aussi bien que leur équipement (peaux de phoque, port du sac, chaussures, fixations, etc.).
+        </p>
+        <p facs="#facs_2_r_21">
+          Il est en effet indispensable d'avoir une bonne forme physique pour éviter des défaillances en haute altitude.
+        </p>
+        <p facs="#facs_2_r_22">
+          Les inscriptions sont prises jusqu'au 1er février au secrétariat du Centre des Unions chrétiennes de Genève, 9, avenue Sainte-Clotilde (téléphone : 28 11 33), qui donne volontiers tout renseignement sur ces deux programmes. J.-P. Fr.
+        </p>
+        <p facs="#facs_2_r_23">
+          Soldats genevois à Saint-Cergue
+        </p>
+        <p facs="#facs_2_r_24">
+          Le traditionnel concours à ski du régiment d'infanterie 3 et des troupes genevoises se déroulera à Saint-Cergue le 26 janvier prochain. Ce concours est ouvert aux jeunes de plus de 15 ans et aux officiers, sous-officiers et soldats d'élite, de Landwehr et de Landsturm.
+        </p>
+        <p facs="#facs_2_r_25">
+          Le colonel J. Della Santa, cdt du rgt inf. 3, invite tous les officiers, sous-officiers et soldats genevois à participer à ce concours « Il me serait agréable, affirme-t-il, de concourir en compagnie de patrouilleurs de tout grade car je reste persuadé que cette joute sportive contribue à renforcer les liens de camaraderie au service de la cause que nous voulons défendre ; dans ce sens le chef agit par l'exemple. » (JS).
+        </p>
+        <p facs="#facs_2_r_26">
+          15 JOURS EXCEPTIONNELS
+        </p>
+        <p facs="#facs_2_r_27">
+          SUPERBES MANTEAUX<lb facs="#facs_2_l_27_1" n="N001" />cashmere et vigogne<lb facs="#facs_2_l_27_2" n="N002" />850.— soldés 495.—
+        </p>
+        <p facs="#facs_2_r_28">
+          costumes 495.— soldés 200.—<lb facs="#facs_2_l_28_1" n="N001" />Vestes sport 275.— soldées 150.—<lb facs="#facs_2_l_28_2" n="N002" />du 15/1 au 4/2
+        </p>
+        <p facs="#facs_2_r_29">
+          LONDON HOUSE<lb facs="#facs_2_l_29_1" n="N001" />PLACE SAINT-GERVAIS - GENÈVE<lb facs="#facs_2_l_29_2" n="N002" />ASSA 9574
+        </p>
+        <p facs="#facs_2_r_30">
+          Pourquoi une rallonge de 30 millions pour l'équipement de la troisième étape de la reconstruction de l'hôpital ?
+        </p>
+        <p facs="#facs_2_r_31">
+          Au cours de sa dernière séance, le Grand Conseil a renvoyé en commission l'examen du projet de loi, présenté par le Conseil d'État, sollicitant l'ouverture d'un crédit complémentaire de 30 494 256 francs, dont doit être déduite la subvention fédérale, estimée à 6 millions de francs, destiné à compléter le crédit de 6 400 000 francs, que le Parlement cantonal avait voté le 9 mai 1969, afin de couvrir les frais d'acquisition et d'équipement, en matériel mobile, du bâtiment des services médicaux, de l'extension du bâtiment central, de l'entrée des maisons et du garage nord et des ateliers complémentaires, dans le cadre de la troisième étape de la reconstruction de l'Hôpital central.
+        </p>
+        <p facs="#facs_2_r_32">
+          Par Henri Villy
+        </p>
+        <p facs="#facs_2_r_33">
+          Il est intéressant d'examiner d'un peu plus près à quelle fin sont destinées ces trente millions et demi supplémentaires. Il convient de dire, tout d'abord, que, pour les quatre bâtiments concernés par le projet de loi en question, le programme général des travaux, fixé par le Département des travaux publics, est le suivant en ce qui concerne l'achèvement : mars 1975 pour les ateliers complémentaires, juin 1975 pour l'extension du bâtiment central, juin 1976 pour l'entrée des malades et le garage nord, décembre 1976 pour le bâtiment des services médicaux. Les crédits demandés concernent la totalité des besoins des futurs utilisateurs et se répartissent entre l'acquisition des installations médicales et scientifiques (90 %) et les installations de bureaux (10 %).
+        </p>
+        <p facs="#facs_2_r_34">
+          Bâtiment des services médicaux : améliorer la qualité des soins
+        </p>
+        <p facs="#facs_2_r_35">
+          Le bâtiment des services médicaux, qui est d'appui, et dont le plan n'est évidemment pas destiné à abriter de nouveaux lits, contrairement à ce que l'on croit généralement, mais à recevoir l'ensemble de l'infrastructure médicale, scientifique et administrative des cliniques, laboratoires et centres de recherches. Il représente la construction la plus importante de la troisième étape de la reconstruction de l'Hôpital central et permettra une amélioration de la gestion médicale du bâtiment des lits.
+        </p>
+        <p facs="#facs_2_r_36">
+          La qualité des soins, des examens et des traitements destinés aux malades, par les spécialistes de l'établissement hospitalier, s'en trouvera amélioré. La mise en service de ce nouveau bâtiment aura pour conséquence de diminuer sensiblement la durée d'attente du malade ainsi que celle de son séjour dans l'un ou l'autre des services de la maison. Il facilitera le travail quotidien de l'ensemble du personnel et favorisera une meilleure utilisation de celui-ci.
+        </p>
+        <p facs="#facs_2_r_37">
+          Avec l'achèvement des travaux de ce bâtiment, on obtiendra également une meilleure centralisation des policliniques, dont le premier résultat tangible sera une amélioration des soins ambulatoires. Situé juste devant le bâtiment des lits, celui des services médicaux comprend deux ailes, l'une donnant sur le boulevard de la Cluse, l'autre sur l'avenue de la Roseraie.
+        </p>
+        <p facs="#facs_2_r_38">
+          C'est au huitième étage de cet immeuble que sera installée l'administration de l'Hôpital cantonal, avec ses divers services ainsi que les soins infirmiers. Tous les autres niveaux sont essentiellement réservés à l'usage direct de services médicaux.
+        </p>
+        <p facs="#facs_2_r_39">
+          Même une petite imprimerie...
+        </p>
+        <p facs="#facs_2_r_40">
+          Le budget d'équipement de services généraux se monte à 659 324 francs. Les 58 % de cette somme, soit 382 708 francs très exactement, sont destinés à l'acquisition des équipements nécessaires à l'illustration médicale et aux moyens de reproduction des imprimés.
+        </p>
+        <p facs="#facs_2_r_41">
+          La mise sur pied de cette petite imprimerie, déclare le Conseil d'État dans l'exposé des motifs qui accompagne le projet de loi en question, permettra la réalisation des imprimés à des conditions nettement plus favorables que celles pratiquées sur le marché. L'acquisition d'un équipement offset satisfera à la publication périodique de la liste des numéros de téléphone internes, des numéros de recherche de personnes, des médecins, ainsi qu'à la diffusion des communiqués et des ordres de la direction ainsi que du collège des chefs de service.
+        </p>
+        <p facs="#facs_2_r_42">
+          A ce propos, il n'est pas sans intérêt de rappeler que, de la dernière séance du Grand Conseil, un député radical, M. Robert Ducret, s'est étonné de ce que l'Hôpital cantonal veuille ainsi se charger de tâches qui pourraient fort bien être accomplies par des imprimeries privées et sans doute à des conditions aussi satisfaisantes, en raison de la situation existant actuellement dans le secteur des arts graphiques.
+        </p>
+        <p facs="#facs_2_r_43">
+          Le conseiller d'État Willy Donzé, chef du Département de la prévoyance et de la santé publique, a reconnu que l'on pouvait effectivement se poser des questions à ce propos mais que l'État avait le souci d'utiliser au mieux les deniers de la collectivité publique, dans le sens d'une saine gestion de notre grand établissement hospitalier.
+        </p>
+        <p facs="#facs_2_r_44">
+          Qu'est-ce que l'extension du bâtiment central ?
+        </p>
+        <p facs="#facs_2_r_45">
+          Une construction destinée à faire le joint entre le bâtiment des services médicaux et l'ancien bâtiment central de l'Hôpital cantonal. Il s'agit d'un immeuble de cinq étages sur deux rez-de-chaussées et un sous-sol, dans lesquels seront logés les bureaux du service technique, de l'onco-hématologie, une partie de la policlinique de médecine, les bureaux du service de santé du personnel, la psychogériatrie, une partie de la thérapie respiratoire, les locaux du service des admissions et de l'intérieur, ainsi que certaines annexes des services généraux de l'établissement.
+        </p>
+        <p facs="#facs_2_r_46">
+          La future entrée des malades et le garage nord, situés sur la rue Micheli-du-Crest, comprendront trois niveaux, soit deux rez-de-chaussées et un sous-sol. Cette entrée ne nécessite qu'un investissement de 295 140 francs, dépense nécessaire pour l'aménagement du hall d'attente et des policliniques, des loges de renseignements, ainsi que des locaux sanitaires et des vestiaires non gardés.
+        </p>
+        <p facs="#facs_2_r_47">
+          Quant aux ateliers complémentaires, leur aménagement ne coûte que 227 204 francs. Il s'agit d'un atelier de réparation des appareils médicaux, comportant dix-huit postes de travail, d'un atelier des applications thermiques, d'un atelier des clefs et serrures, d'un atelier de frigoriste et d'un atelier de verrier.
+        </p>
+        <p facs="#facs_2_r_48">
+          Hélène Naef 1895 - 1975
+        </p>
+        <p facs="#facs_2_r_49">
+          Le 4 janvier 1975, Hélène Naef s'est paisiblement éteinte. Avant de l'abandonner à la mémoire fidèle de ceux qui l'ont aimée, il convient, je pense, d'esquisser au moins, publiquement, ce que fut cette femme exceptionnelle.
+        </p>
+        <p facs="#facs_2_r_50">
+          Elle appartenait à une génération où l'on n'encourageait guère les filles à faire des études. Mais, pourvue des filles officielles et universitaires, simplement par goût pour les quatre bâtiments concernés par le latin, dès l'enfance, avec son père le pédiatre Eugène Revilliod, et plus tard le sanscrit. Disciple de Charles Bally, elle s'occupa de grammaire comparée et codifia grâce à ses connaissances philologiques, l'orthographe du patois gruyérien. Elle travailla également aux Archives de Genève et collabora avec son mari, l'historien Henri Naef, pour ses recherches consacrées au XVIe siècle et la mise au point de ses ouvrages.
+        </p>
+        <p facs="#facs_2_r_51">
+          Comme elle adorait l'Italie, la peinture, la Renaissance, et tout particulièrement les printemps et les automnes romains, elle apprit l'italien. Elle s'intéressait profondément aux problèmes humains et à la philosophie et elle lisait l'allemand.
+        </p>
+        <p facs="#facs_2_r_52">
+          Elle avait déjà dépassé l'âge mûr lorsque je fis sa connaissance, je ne les sais plus comment, c'était entre une merveilleuse collaboration, qui devait durer des années, pour la traduction des œuvres de <persName ref="GND:118557106">Karl Jaspers</persName>.
+        </p>
+        <p facs="#facs_2_r_53">
+          Hélène Naef s'attacha à cette tâche de tout son être. C'est qu'elle trouvait en elle la pensée de <persName ref="GND:118557106">Jaspers</persName> et la sienne de profondes affinités. Elle avait l'âme trop religieuse pour accepter les exclusives de la porte qu'elle confessait. Elle avait trop le sens de la transcendance pour consentir à s'enfermer dans un credo prétendument privilégié. Mais son esprit était aussi exigeant pour se satisfaire d'un éclectisme vague baigné de tolérance. La rigueur des démarches de <persName ref="GND:118557106">Jaspers</persName> et l'interprétation serrée du sens de leur échec final lui permettaient de respirer un air vrai.
+        </p>
+        <p facs="#facs_2_r_54">
+          Que de journées, de soirées — bien avant dans la nuit — passées à travailler avec elle, à la recherche de la traduction la plus juste des passages les plus difficiles ! Et quelle joie c'était pour moi lorsqu'il m'arrivait de suggérer à une difficulté une solution qui lui paraissait toucher juste et qui illustrait son visage.
+        </p>
+        <p facs="#facs_2_r_55">
+          Il était si beau, ce visage : Clair, régulier, d'un merveilleux ovale, avec des traits parfaits et des yeux bleus où se lisait une sorte de mélancolie intérieure et d'appel amical.
+        </p>
+        <p facs="#facs_2_r_56">
+          D'ailleurs tout autour d'elle était goût, beauté, harmonie. Chaque objet portait sa marque et reflétait une élégance qui était le style de sa personne.
+        </p>
+        <p facs="#facs_2_r_57">
+          Ouverte à l'avenir, elle était pourtant profondément attachée à ce qui témoignait de la vérité du passé. Elle aimait la simplicité des vieilles maisons et les préférait à son confort. Elle contribua, enfin, au renouveau des traditions populaires et fut pendant de nombreuses années la traductrice de la Revue de la Fédération suisse du costume et des coutumes.
+        </p>
+        <p facs="#facs_2_r_58">
+          Elle avait le respect des gens et des choses, et c'est pourquoi avec elle, chacun se sentait à l'aise. Resquiescat in pace.
+        </p>
+        <p facs="#facs_2_r_59">
+          <persName ref="GND:118815679">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_2_r_60">
+          AVIS MORTUAIRES
+        </p>
+        <p facs="#facs_2_r_61">
+          Les directeurs généraux et le personnel de l'Organisation européenne pour la recherche nucléaire (CERN) ont le profond regret de faire part du décès survenu à Paris, le 14 janvier 1975 du
+        </p>
+        <p facs="#facs_2_r_62">
+          Professeur<lb facs="#facs_2_l_62_1" n="N001" />André LAGARRAGUE
+        </p>
+        <p facs="#facs_2_r_63">
+          membre de son Comité des directives scientifiques.
+        </p>
+        <p facs="#facs_2_r_64">
+          ‡
+        </p>
+        <p facs="#facs_2_r_65">
+          Madame Vassily Photiades ;<lb facs="#facs_2_l_65_1" n="N001" />Madame Marika et Mademoiselle Pelly Photiades ;<lb facs="#facs_2_l_65_2" n="N002" />Son Excellence et Madame Capetanides ;<lb facs="#facs_2_l_65_3" n="N003" />Monsieur et Madame Jean Choremi ;<lb facs="#facs_2_l_65_4" n="N004" />Madame Alice Philippon ;<lb facs="#facs_2_l_65_5" n="N005" />Madame Yvette Siegenthaler ;<lb facs="#facs_2_l_65_6" n="N006" />Monsieur et Madame Robert Koch ;<lb facs="#facs_2_l_65_7" n="N007" />Monsieur et Madame Claude Philippon ;<lb facs="#facs_2_l_65_8" n="N008" />et les nombreux amis du disparu,<lb facs="#facs_2_l_65_9" n="N009" />ont le profond chagrin de faire part du décès, survenu le 11 janvier 1975 dans sa 74e année, de
+        </p>
+        <p facs="#facs_2_r_66">
+          Monsieur Vassily PHOTIADES
+        </p>
+        <p facs="#facs_2_r_67">
+          Chevalier de la Légion d'Honneur<lb facs="#facs_2_l_67_1" n="N001" />Officier de la Croix du Sauveur
+        </p>
+        <p facs="#facs_2_r_68">
+          Selon le désir du défunt, les obsèques ont eu lieu à Pully, dans la plus stricte intimité, le 15 janvier 1975.<lb facs="#facs_2_l_68_1" n="N001" />Prière de ne pas faire de visites.<lb facs="#facs_2_l_68_2" n="N002" />Cet avis tient lieu de faire-part.
+        </p>
+        <p facs="#facs_2_r_69">
+          Les pasteurs et le Conseil de paroisse de l'Église nationale protestante de Carouge ont le profond chagrin de faire part du décès de
+        </p>
+        <p facs="#facs_2_r_70">
+          Monsieur Henri GROSJEAN
+        </p>
+        <p facs="#facs_2_r_71">
+          ancien président du Conseil de paroisse et membre dévoué de nombreuses activités paroissiales.
+        </p>
+        <p facs="#facs_2_r_72">
+          Pour les obsèques, prière de se référer à l'avis de famille.
+        </p>
+        <p>
+          REMERCIEMENTS
+        </p>
+        <p>
+          La famille de
+        </p>
+        <p>
+          Madame Jeanne BERNASCONI
+        </p>
+        <p>
+          née BUBLIN
+        </p>
+        <p>
+          profondément touchée par les innombrables marques de sympathie témoignées lors du douloureux deuil qui l'a frappée, et dans l'impossibilité de répondre à chacun, exprime ses sincères remerciements à toutes les personnes qui, par leur présence, leurs messages, leurs envois de fleurs, leurs offrandes pour des messes et pour le Foyer Saint-Paul, ont pris part à son immense douleur.
+        </p>
+      </div>
+</div>
+      </body></text>
+</TEI>

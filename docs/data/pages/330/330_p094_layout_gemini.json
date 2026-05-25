@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "60 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 118,
+        "y_pct": 79,
+        "w_pct": 579,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Corrected label and tag for the page header which was incorrectly identified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans la théologie médiévale un rôle de damné. Il n'y a plus de cérémonie universelle qui l'englobe, plus de rôle pour lui, plus de place. Le monde n'a pas besoin de lui — c'est lui qui, comme un intrus, né sans invitation, doit s'emparer d'un lieu pour y vivre, d'un travail, à force de coups, contre les autres. Seul, perdu dans l'indifférence bruyante des villes, dans le chassé-croisé des abandons. A cet homme, soudain, voici que s'offre, dans les mouvements fasciste ou communiste, un chant, une marche en commun, une conquête unanime, une fraternité forcée, à la vie à la mort.",
+      "bbox": {
+        "x_pct": 111,
+        "y_pct": 109,
+        "w_pct": 856,
+        "h_pct": 206
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seulement, à cette fraternité fragile et forcée, il faut des ennemis mortels. L'agressivité du fascisme, du nazisme, du communisme, ne s'explique pas en dernier ressort par des facteurs économiques ou politiques, par le manque de matières premières ou d'espace vital, par une crainte de l'agression. Ces idéologies ne peuvent vivre, entretenir la solidarité indispensable, que grâce au fait qu'elles ont des ennemis, et des ennemis mortels. Voyez le communisme stalinien : s'il vante encore dans sa propagande ses réalisations techniques ou sociales spectaculaires, il ne conteste même plus la misère profonde des masses à l'est de l'Europe, et il est obligé de recourir à l'idéologie de « l'étape socialiste », qui n'est pas encore la société communiste véritable, pour justifier cette situation. Sur quels faits s'appuie donc la foi de ses adhérents occidentaux? Essentiellement sur les preuves d'hostilité qui l'environnent. Ce qui ne veut pas dire qu'il suffirait de renoncer à lui être hostile pour le voir s'effondrer. Non, certes : car il inventerait sans trêve des hostilités nouvelles, enchaînant les mensonges qui, lui étant vitalement nécessaires, prennent figure de légitime défense.",
+      "bbox": {
+        "x_pct": 111,
+        "y_pct": 315,
+        "w_pct": 857,
+        "h_pct": 391
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Même dans le fonctionnement politique des « démocraties populaires » de style soviétique, je ne suis pas sûre, comme le croient la plupart des commentateurs bourgeois, que les nombreuses « épurations » soient des preuves de faiblesse interne, des signes de défaite, et qu'elles soient toujours imposées aux dirigeants par la résistance renaissante. Le communisme a besoin périodiquement de resserrer sa fraternité fondamentale contre un ennemi, intérieur ou extérieur. Il y faut sans cesse des faits nouveaux. De nouvelles trahisons sont nécessaires. Et si jamais un régime de",
+      "bbox": {
+        "x_pct": 109,
+        "y_pct": 707,
+        "w_pct": 856,
+        "h_pct": 188
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number/header was incorrectly identified as text at the beginning of the block."
+  ],
+  "doc_id": "330",
+  "page": 94,
+  "elapsed_seconds": 4.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

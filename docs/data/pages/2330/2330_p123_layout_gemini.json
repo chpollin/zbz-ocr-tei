@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "respecte dans le domaine de la réflexion politique en ont un sens aigu. Prenez Raymond Aron par exemple : ce n'est pas pour rien qu'il incarnait à la fois philosophie et journalisme, compétences stratégiques et connaissances économiques et politiques.",
+      "bbox": {
+        "x_pct": 4.359,
+        "y_pct": 4.46,
+        "w_pct": 79.194,
+        "h_pct": 8.306
+      },
+      "changed": true,
+      "change_reason": "Extracted text was truncated and incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais citer ici, dans le prolongement de votre réflexion, un texte très pénétrant tiré de votre étude « Mythe et politique », parue en allemand en 1965 :",
+      "bbox": {
+        "x_pct": 4.518,
+        "y_pct": 13.226,
+        "w_pct": 79.035,
+        "h_pct": 5.806
+      },
+      "changed": true,
+      "change_reason": "Extracted text was truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme reste cependant homme dans le temps ; sans mythe il n'est pas homme, mais il cesse d'être homme lorsque ses mythes, par leur prétention à la totalité, tendent à priver de leur poids propre les faits de chaque jour qui passe, la vie et la mort quotidiennes, les amours quotidiennes, les contraintes et les frustrations quotidiennes. Le monde de la politique est amer et l'on est souvent tenté d'en rendre responsables des personnes déterminées, adversaires ou alliées. Cette amertume vient cependant de plus profond, elle procède en effet du fait que, pendant que l'action politique se réalise au service du mythe, dans le moment même où elle trouve sa justification et son sens, elle appelle aussi le maintien et la croissance du pouvoir qui l'accomplit. Nulle part ailleurs que dans la politique ne se montre avec autant de force et de manière aussi inéluctable l'antinomie pratique qui habite chaque sujet éthique vivant. Il faut manger pour aider les affamés, il faut sauver sa propre vie pour agir ; pour agir efficacement il faut disposer du pouvoir ; et pour mieux servir les hommes il faut bientôt se rendre maître du pouvoir des autres et les affaiblir, voire les détruire au cas où ils constituent un obstacle. On voit tout de suite combien le rapport des moyens et des fins devient confus, la facilité avec laquelle il peut être inversé. Est-ce le pouvoir qui est au service du mythe ou le mythe au service du pouvoir ?",
+      "bbox": {
+        "x_pct": 4.029,
+        "y_pct": 19.895,
+        "w_pct": 79.695,
+        "h_pct": 39.968
+      },
+      "changed": true,
+      "change_reason": "Extracted text was garbled/incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est-ce que les événements de ces vingt dernières années vous ont confortée dans ces positions ?",
+      "bbox": {
+        "x_pct": 4.64,
+        "y_pct": 60.887,
+        "w_pct": 78.877,
+        "h_pct": 4.597
+      },
+      "changed": true,
+      "change_reason": "Extracted text was garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout à fait. Je suis encore d'accord avec chaque mot de ce texte et je crois d'ailleurs que j'ai souvent écrit sous différentes formes, et à propos de divers sujets, des textes très proches de celui-ci. Par exemple lorsque je me suis interrogée sur la nature du pouvoir, pour les Rencontres internationales de Genève, j'ai développé une idée analogue. Bien des gens aiment s'imaginer qu'ils n'ont rien à voir avec le pouvoir ; dès lors, ils vous présentent le pouvoir sous son aspect le plus barbare, et eux, ils croient en être purs. Mais être pur du pouvoir, c'est être pur de toute action, c'est-à-dire se rendre finalement irresponsable. Si on veut se rendre responsable, il y faut du pouvoir. On se procurera du pouvoir. Cela rejoint aussi ce que j'ai déjà dit ailleurs, l'histoire du papa qui inscrit son enfant dans la classe du meilleur maître. C'est analogue. Telle est la condition humaine. Ce serait extrêmement facile si nous pouvions être des",
+      "bbox": {
+        "x_pct": 4.31,
+        "y_pct": 64.944,
+        "w_pct": 79.451,
+        "h_pct": 26.0
+      },
+      "changed": true,
+      "change_reason": "Extracted text was garbled."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "119",
+      "bbox": {
+        "x_pct": 79.4,
+        "y_pct": 93.6,
+        "w_pct": 3.7,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Missing region for page number identified as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most text blocks contained severe OCR errors and omissions.",
+    "Page number 119 was missing from detection.",
+    "OCR output failed to correctly represent the content of paragraphs."
+  ],
+  "doc_id": "2330",
+  "page": 123,
+  "elapsed_seconds": 6.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

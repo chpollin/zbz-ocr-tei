@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 27 -",
+      "bbox": {
+        "x_pct": 44.808,
+        "y_pct": 59.907,
+        "w_pct": 10.385,
+        "h_pct": 1.776
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "der Zeit würde sie uns Langeweile sterben lassen, weil sie für uns die Zeitstruktur zerstören würde, wie wir sie leben: mit der Vergangenheit, von der wir gemacht sind, angehalten von unserer Gegenwart, mit dem Mangel, der dieser Gegenwart innewohnt und der unseren Zukunftsplänen, die noch von unserer gegenwärtigen Entscheidung abhängen, ihren Sinn gibt.",
+      "bbox": {
+        "x_pct": 10.992,
+        "y_pct": 13.301,
+        "w_pct": 80.726,
+        "h_pct": 12.811
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese Struktur der Zeit, bestimmt durch den Mangel, ist die Voraussetzung für den Sinn, und sie sorgt dafür, daß wir in der Geschichte leben, daß wir darin verantwortliche Entscheidungen fällen und daß Erziehung und Bildung darin unverzichtbar sind. Erziehung und Bildung sorgen dafür, daß die zeitlichen Dimensionen, so wie wir sie erleben und so unterschiedlich und sogar gegensätzlich, wie sie sind, sich gegenseitig durchdringen, um unser \"geschichtliches Sein\", das die deutschen Denker \"Geschichtlichkeit\" genannt haben und was man ins Französische mit \"historicité\" übersetzt, zu schaffen.",
+      "bbox": {
+        "x_pct": 10.944,
+        "y_pct": 27.098,
+        "w_pct": 80.935,
+        "h_pct": 21.112
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and spelling errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn das, was ich gerade ausgeführt habe, gut mit dem Menschsein in seiner wesentlichen und dauernden Struktur übereinstimmt, und damit alle historischen Veränderungen, die dazwischenkommen können, dann ist klar, daß man die Bildung nicht, ohne ernsten Schaden an sich selbst zu nehmen, auf die Kinder- und Jugendzeit beschränken darf oder gar auf die Jahre in der Jugend, in denen man eine gewisse Meisterschaft im Beruf erwirbt.",
+      "bbox": {
+        "x_pct": 10.782,
+        "y_pct": 49.276,
+        "w_pct": 78.597,
+        "h_pct": 14.96
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Man spricht heute viel über die Fortbildung, und man fordert die Einhaltung und die Weiterentwicklung in den verschiedensten Formen und Gebieten. Aber gewöhnlich rechtfertigt man diese Forderung auf zweierlei Weise. Einerseits fordert man unentwegt neue Beiträge aus Wissenschaft und Forschung, die neuen technischen Mittel, über die man künftig verfügt und die zu ignorieren oder zu vernachlässigen niemand in seinem Beruf das Recht hat - so wie auch in den verschiedenen Berufen die bei den Aufgaben eingetretenen Veränderungen zu erfüllen sind. Andererseits legt man Nach -",
+      "bbox": {
+        "x_pct": 10.54,
+        "y_pct": 65.182,
+        "w_pct": 80.048,
+        "h_pct": 19.35
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number at top was incorrectly identified as text.",
+    "OCR text was truncated in multiple regions.",
+    "OCR typos ('bestimt' vs 'bestimmt', 'Binhaltung' vs 'Einhaltung')."
+  ],
+  "doc_id": "2230",
+  "page": 12,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

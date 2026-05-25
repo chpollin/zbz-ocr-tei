@@ -1,0 +1,72 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ALTERNATIVE : ÊTRE OU NE PAS ÊTRE 33",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correctly identifying page header running text instead of paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ride s'est faite à la surface de ce monde jusqu'ici allait sans dire? », donc: «Vais-je être en face des choses ou cesser d'être en me confondant avec elles? Vais-je être ou ne pas être »",
+      "bbox": {
+        "x_pct": 10.241,
+        "y_pct": 12.364,
+        "w_pct": 76.114,
+        "h_pct": 10.162
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and label tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pourrait faire de ces instants une description psychologique et pathétique. Je l'éviterai. Il faut seulement comprendre que la fissure qui s'est produite dans l'acceptation pure et simple, sans questions et banale, de la vie quotidienne, apparaît d'abord comme une menace à notre vie. A cause d'elle, ce que nous appelions notre vie apparaît comme un état de mort. La situation n'est pas la même avant et après la question. Avant, la vie n'était pas un état de mort, puisque l'alternative « vie ou mort » ne se posait pas. Or la question, nous ne l'avons pas voulue. Elle s'est posée, voilà tout, et en même temps elle a posé l'alternative.",
+      "bbox": {
+        "x_pct": 10.196,
+        "y_pct": 22.593,
+        "w_pct": 76.205,
+        "h_pct": 33.365
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and label tag."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La situation est alors complètement changée, car que nous décidions, nous décidons en nous trouvant dans l'alternative. Si nous nous refusons à la troublante question, si nous refermons les yeux, nous ne retrouvons pas par là notre naïveté antérieure : la question a été posée, et nous avons fui. Avant, dans la vie naïve, nous ne fuyions pas. La question, en se posant, nous a placés à un point de vue nouveau qu'il ne dépend plus de nous de quitter; la vie naïve a pris figure de mort; en même temps s'ouvre le chemin d'une vie possible, que nous pouvons perdre ou conquérir. Ainsi le premier problème philosophique, le problème fondamental",
+      "bbox": {
+        "x_pct": 10.587,
+        "y_pct": 55.357,
+        "w_pct": 76.657,
+        "h_pct": 33.775
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and label tag."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correctly identifying page number as page footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text segments contained poor OCR accuracy.",
+    "Running header was incorrectly labeled as paragraph.",
+    "Page number at bottom was missing a bounding box and labeled as text.",
+    "The segmentation was quite coarse, failing to delineate individual paragraphs correctly if multiple existed."
+  ],
+  "doc_id": "20",
+  "page": 35,
+  "elapsed_seconds": 4.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

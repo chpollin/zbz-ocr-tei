@@ -1,0 +1,96 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DISCONTINUITE DES PERSPECTIVES HUMAINES",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 21.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "95",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 33.3,
+        "h_pct": 25.1
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "II",
+      "bbox": {
+        "x_pct": 46.048,
+        "y_pct": 18.501,
+        "w_pct": 3.841,
+        "h_pct": 2.199
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_heading"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je vais résumer eu deux ou trois mots le contenu de ma première causerie.",
+      "bbox": {
+        "x_pct": 11.108,
+        "y_pct": 23.06,
+        "w_pct": 73.749,
+        "h_pct": 5.162
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Javais   essayé de montrer que Phomme visait par un détour une unité transcendante, ne pouvait pas v",
+      "bbox": {
+        "x_pct": 10.646,
+        "y_pct": 27.749,
+        "w_pct": 74.423,
+        "h_pct": 32.365
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Javais essayé de montrer aussi que le type de cohérence de chacun de ces modes était exclusif, exclu",
+      "bbox": {
+        "x_pct": 10.342,
+        "y_pct": 60.154,
+        "w_pct": 75.254,
+        "h_pct": 26.211
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text labels for page_header and page_footer were incorrect",
+    "Section header II was labeled as generic text",
+    "Typographic cleanup in text representation"
+  ],
+  "doc_id": "140",
+  "page": 14,
+  "elapsed_seconds": 6.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to page_header": 1,
+    "Corrected label from text to page_footer": 1,
+    "Corrected label from text to zb_heading": 1
+  }
+}

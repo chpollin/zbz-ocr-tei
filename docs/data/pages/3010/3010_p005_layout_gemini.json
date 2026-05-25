@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "VOLTAIRE ETLA TOLERANCE",
+      "bbox": {
+        "x_pct": 32.755,
+        "y_pct": 6.338,
+        "w_pct": 33.969,
+        "h_pct": 3.093
+      },
+      "changed": true,
+      "change_reason": "Identified as a section heading/title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "est donc un impérialisme, une identification avec une espèce de modèle de l'humanité, une prétention à être ce modèle. L'intolérance est une mainmise sur le vrai, une possession la vérité par les beaucoup question des contradictions de cette mainmise supposent à tort la possession d'un modèle total, alors que s'il existait un tel modèle, un homme avec ses droits serait impossible. Il s'agit en réalité de pratiquer une discipline de dépossession d'un tel savoir. Il faut savoir reconnaître le prix de la différence et de la divergence, qui sont des conditions des droits de l'Homme, c'est-à-dire de la liberté. Certains hommes, enracinés dans une conviction donnée, essayent de mimer en quelque sorte celle d'autrui en lui prêtant leur être intérieur. Il est possible que par cette méthode subjective grandisse en soi une dimension créatrice nouvelle, qui ouvre les chances d'une vraie communication. Mais à condition d'être d'abord dépossédé d'un savoir unique et total qui empêcherait absolument cette sorte d'exercice. C'est donc un engagement qui est dans le temps. Chacun d'entre nous reste dans le temps. et chacun d'entre nous doit, dans le temps, avoir un absolu respect, dont le reflet doit être une tolérance et non une indifférence. C'est la condition pour qu'il y ait vraiment droits de l'homme. Ainsi la vraie tolérance, loin de renoncer à la vérité par gain de paix, stimule la recherche de la vérité. Seulement, la vérité n'est pas seule en cause. L'homme, comme disait Rimbaud, est une âme et un corps. Et dès que le corps est impliqué, il s'agit de vivre ou de mourir. Il n'y a pas d'homme sans droits; mais il n'y a pas non plus de droits sans police.",
+      "bbox": {
+        "x_pct": 28.459,
+        "y_pct": 14.383,
+        "w_pct": 60.424,
+        "h_pct": 34.341
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbage/hallucinated text OCR output."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Note de l'Éditeur : Face à l'intolérance, il n'y a pas de tolérance car on ne peut donner la liberté à la destruction de la liberté » Jaspers. Invitée à commenter la phrase de celui qui fut son maître, et questionnée sur la recherche d'un pont entre la liberté humaine et la nécessité de mettre un frein à l'intolérance, Jeanne Hersch explicite le paradoxe inhérent à la condition humaine : « (...) il n'y pas moyen d'éviter le plan du corps; ce plan du droit codé. Cela fait partie de la condition humaine. Mais la formule de Jaspers n'épuise pas la question. Aucun droit, si perfectionné soit-il, ne peut supprimer cette problématique de la condition humaine. Ce n'est pas un constat triste, car s'il y avait une solution, cela voudrait dire qu'il y a une solution à la condition humaine, et que finalement, on pourrait avoir une humanité qui n'en serait plus une, c'est-à-dire qui serait composée d'êtres humains dont chacun serait libre, au sens fort, au sens sauvage du mot. (...) On ne peut que tenter, partout, de mettre le maximum de tolérance, avec le maximum d'épaisseur, c'est-à-dire sans détruire l'épaisseur de la liberté. C'est cela, l'histoire. Et ceux qui rêvent que d'un plan fini rêvent en fait que l'homme soit fini. Il est frappant de constater que les hommes veulent souvent mettre fin à ce qui est constitutif de leur condition. Ils aimeraient échapper au temps, à la mort, à l'insoluble qu'il y a dans leur condition. Mais alors, ils ne seraient pas des hommes. Il s'agit d'apprendre ce que c'est fait d'être un homme, d'apprendre à aimer la condition humaine..., avec qu'elle a d'insoluble. »",
+      "bbox": {
+        "x_pct": 133.0,
+        "y_pct": 707.0,
+        "w_pct": 673.0,
+        "h_pct": 204.0
+      },
+      "changed": true,
+      "change_reason": "Added missing footnote region not correctly identified or parsed as a single unit."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "OCR output for the main paragraph was completely garbled/hallucinated.",
+    "Title was misidentified as generic text.",
+    "Footnote was incorrectly segmented or ignored in the provided input.",
+    "Small artifact labeled as 'text' ignored (removed from final list)."
+  ],
+  "doc_id": "3010",
+  "page": 5,
+  "elapsed_seconds": 11.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

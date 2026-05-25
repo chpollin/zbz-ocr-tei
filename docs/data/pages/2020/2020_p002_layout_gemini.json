@@ -1,0 +1,169 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "même et à cette communication indispensable une co...",
+      "bbox": {
+        "x_pct": 15.419,
+        "y_pct": 4.348,
+        "w_pct": 74.429,
+        "h_pct": 5.962
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La science étant une activité créatrice de langage...",
+      "bbox": {
+        "x_pct": 15.484,
+        "y_pct": 13.963,
+        "w_pct": 74.69,
+        "h_pct": 7.86
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les deux problèmes sont distincts, et pourtant ils...",
+      "bbox": {
+        "x_pct": 15.419,
+        "y_pct": 22.634,
+        "w_pct": 74.788,
+        "h_pct": 3.896
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sens de l'activité suppose un sujet libre, néce...",
+      "bbox": {
+        "x_pct": 15.31,
+        "y_pct": 27.592,
+        "w_pct": 74.712,
+        "h_pct": 4.072
+      },
+      "changed": true,
+      "change_reason": "Fixed typo 'lactivite'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sens des langages suppose un objet donné...",
+      "bbox": {
+        "x_pct": 15.267,
+        "y_pct": 32.584,
+        "w_pct": 74.864,
+        "h_pct": 4.038
+      },
+      "changed": true,
+      "change_reason": "Fixed typo 'lactivite'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or il semble parfois que le sujet libre et l'objet...",
+      "bbox": {
+        "x_pct": 15.343,
+        "y_pct": 37.316,
+        "w_pct": 74.94,
+        "h_pct": 5.769
+      },
+      "changed": true,
+      "change_reason": "Fixed typos in transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En philosophie comme en science, certains théorici...",
+      "bbox": {
+        "x_pct": 15.125,
+        "y_pct": 44.256,
+        "w_pct": 75.158,
+        "h_pct": 15.385
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si nous nous interrogeons sur le sens de l'activit...",
+      "bbox": {
+        "x_pct": 15.267,
+        "y_pct": 61.313,
+        "w_pct": 74.831,
+        "h_pct": 5.769
+      },
+      "changed": true,
+      "change_reason": "Fixed typos in transcript."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) l'activité trouve son sens dans la visée...",
+      "bbox": {
+        "x_pct": 15.745,
+        "y_pct": 67.918,
+        "w_pct": 74.679,
+        "h_pct": 4.298
+      },
+      "changed": true,
+      "change_reason": "Fixed typo 'lactivite'."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) l'activité trouve son sens dans la visée...",
+      "bbox": {
+        "x_pct": 15.637,
+        "y_pct": 71.714,
+        "w_pct": 74.679,
+        "h_pct": 6.129
+      },
+      "changed": true,
+      "change_reason": "Fixed typo 'lactivite' and sequencing."
+    },
+    {
+      "label": "list_item",
+      "zbz_tag": "zb_paragraph",
+      "text": "c) l'activité trouve sens en elle-même...",
+      "bbox": {
+        "x_pct": 15.778,
+        "y_pct": 77.784,
+        "w_pct": 74.505,
+        "h_pct": 7.667
+      },
+      "changed": true,
+      "change_reason": "Fixed typo 'lactivite' and sequencing."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "82",
+      "bbox": {
+        "x_pct": 15.543,
+        "y_pct": 92.428,
+        "w_pct": 2.457,
+        "h_pct": 1.776
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 8,
+  "issues": [
+    "Several OCR errors fixed in paragraph text.",
+    "Page number at bottom left identified as page_footer.",
+    "Fixed list item order and typos."
+  ],
+  "doc_id": "2020",
+  "page": 2,
+  "elapsed_seconds": 6.68,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

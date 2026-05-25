@@ -1,0 +1,154 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "356",
+      "bbox": {
+        "x_pct": 10.149,
+        "y_pct": 2.768,
+        "w_pct": 3.42,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 28.528,
+        "y_pct": 2.723,
+        "w_pct": 11.23,
+        "h_pct": 1.946
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "WAS KANN ICH WISSEN?",
+      "bbox": {
+        "x_pct": 72.045,
+        "y_pct": 2.723,
+        "w_pct": 12.28,
+        "h_pct": 1.946
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "357",
+      "bbox": {
+        "x_pct": 90.963,
+        "y_pct": 2.768,
+        "w_pct": 3.42,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ci CC qui elle, logique el dire qu 'i] quc Kanl ne dercolise pas du Ce aussi p2u que sul qu'i] de pl",
+      "bbox": {
+        "x_pct": 10.149,
+        "y_pct": 14.041,
+        "w_pct": 35.996,
+        "h_pct": 6.818
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "récupéralion   consolatrice  ]un autre monde n'ont",
+      "bbox": {
+        "x_pct": 20.885,
+        "y_pct": 41.883,
+        "w_pct": 24.06,
+        "h_pct": 4.243
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ja (comme, existe) Ia \"pprecialions du bien ou du mal moral Ja distinction du bien €l 1 Ia condilion",
+      "bbox": {
+        "x_pct": 9.963,
+        "y_pct": 67.151,
+        "w_pct": 35.382,
+        "h_pct": 19.619
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pourtant Iui-méme, par la liberté, est non pas cmpirique mnais",
+      "bbox": {
+        "x_pct": 57.644,
+        "y_pct": 14.1,
+        "w_pct": 32.272,
+        "h_pct": 4.791
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chez Kant, il ne des lermes. La pas du phénoménal, et ni dans Fun; ni dans Vaulre, dispense clle k e",
+      "bbox": {
+        "x_pct": 52.291,
+        "y_pct": 19.046,
+        "w_pct": 37.346,
+        "h_pct": 14.47
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de dirc que sí Tobéissance inconditionnelle 4 la loi morale ne conduit Raison   pratique , pas n'est",
+      "bbox": {
+        "x_pct": 52.244,
+        "y_pct": 52.682,
+        "w_pct": 36.648,
+        "h_pct": 11.955
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "empirique puisque celui-ci régi impossibilite",
+      "bbox": {
+        "x_pct": 52.207,
+        "y_pct": 75.602,
+        "w_pct": 35.94,
+        "h_pct": 8.224
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Missing page header regions",
+    "Some regions were mislabeled as text"
+  ],
+  "doc_id": "1380",
+  "page": 7,
+  "elapsed_seconds": 8.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 4
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quel rapport y a-t-il donc entre cette densité ontologique qu'on désigne vaguement du nom de «réalité», et l'unicité d'une chose quelle qu'elle soit ?",
+      "bbox": {
+        "x_pct": 15.391,
+        "y_pct": 9.174,
+        "w_pct": 65.189,
+        "h_pct": 6.023
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et d'abord à quoi pensons-nous quand nous parlons d'un être singulier ? — Nous voyons la pupille de l'esprit se rétrécir: on n'accueille plus que quelque chose de restreint. Il se produit comme un mouvement négatif, un refus de la totalité, de l'universalité, de la généralité.",
+      "bbox": {
+        "x_pct": 15.576,
+        "y_pct": 18.974,
+        "w_pct": 65.141,
+        "h_pct": 10.16
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "À ce rétrécissement du champ correspond une précision accrue de l'objet. Celui-ci tend à devenir un signal efficace, ou un signe. A la limite, l'objet singulier tend à exclure tout «autour», de façon si radicale qu'il cesse une représentation partielle découpée dans l'ensemble du «monde» objectif pour s'isoler, s'ériger en absolu, et coïncider avec une réaction subjective totale. Ainsi une nouvelle totalité se crée par l'étranglement exclusif de l'esprit que provoque l'unique.",
+      "bbox": {
+        "x_pct": 15.657,
+        "y_pct": 28.775,
+        "w_pct": 65.189,
+        "h_pct": 16.507
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais, d'autre part, «il n'y a de science que du général». Le singulier paraît bien être, en effet, du côté du pôle subjectif, dans la condition humaine. Il est lié à la réaction, donc à l'action, — non à la connaissance impersonnelle qui voudrait se passer d'un point de vue (cet élément singulier toujours insinué partout et contre lequel on n'en finit pas de ruser). Et pourtant la connaissance, se voulant objective, revient toujours à l'expérience comme à l'instance suprême. Or il n'y a d'expérience que du singulier. Le général n'affecte aucun de nos sens, aucun de nos instruments. Le singulier, nous le rencontrons, nous nous y heurtons, il nous assaille. Le général, nous l'inventons, ou du moins nous ne le rencontrons dans sa nécessité propre que lorsque nous faisons exister pour nous le mode tout entier des généralités. Ce réseau fictif présente bien en lui des nécessités internes, — mais tel est le cas de toute fiction: sinon elle n'existe pas. Le général n'a pas les efficacités des objets.",
+      "bbox": {
+        "x_pct": 15.576,
+        "y_pct": 48.336,
+        "w_pct": 65.246,
+        "h_pct": 31.818
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On voit ainsi le paradoxe qui nous montre, une fois de plus, à quel point, quand nous avons affaire au «monde», nous restons emmêlés à nous-mêmes: le fondement de l'objectivité se ramène",
+      "bbox": {
+        "x_pct": 15.818,
+        "y_pct": 80.017,
+        "w_pct": 65.028,
+        "h_pct": 6.137
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "45",
+      "bbox": {
+        "x_pct": 78.1,
+        "y_pct": 87.2,
+        "w_pct": 2.2,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Transcription of all paragraphs was heavily truncated or corrupted.",
+    "Page number 45 was incorrectly labeled as text.",
+    "Need to ensure better OCR accuracy for academic texts."
+  ],
+  "doc_id": "190",
+  "page": 3,
+  "elapsed_seconds": 6.92,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

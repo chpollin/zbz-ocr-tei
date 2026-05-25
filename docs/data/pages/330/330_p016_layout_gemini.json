@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "II IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 115.0,
+        "y_pct": 74.0,
+        "w_pct": 0.0,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for the running title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gr&acirc;ce &agrave; leur complaisance pour les fossoyeurs de la soci&eacute;t&eacute; dans laquelle ils vivent. Jeanne Hersch a le premier m&eacute;rite de d&eacute;noncer ce qu&rsquo;elle appelle &laquo; cette docilit&eacute; charg&eacute;e de repentir &raquo;, de maintenir intact son sens critique et de montrer que cet attrait du marxisme pour les intellectuels s&rsquo;affirme &agrave; un moment o&ugrave; en fait, sur le plan psychologique, le marxisme a cess&eacute; d&rsquo;animer les masses ouvri&egrave;res. Dans notre monde occidental, le marxisme semble avoir accompli sa fonction. Il a impos&eacute; &agrave; tous une prise de conscience de l&rsquo;histoire; il a montr&eacute; l&rsquo;importance, souvent d&eacute;terminante, des facteurs &eacute;conomiques. Mais peu d&rsquo;&eacute;conomistes, aujourd&rsquo;hui, croient &agrave; la valeur travail, &agrave; l&rsquo;analyse de la plus-value, &agrave; la concentration agricole, &agrave; la paup&eacute;risation croissante des masses, &agrave; la crise d&eacute;coulant fatalement de la baisse tendancielle du taux du profit. Peu de militants croient au d&eacute;terminisme dialectique. En fait, les travailleurs de l&rsquo;Occident &mdash; et les communistes comme les autres &mdash; croient &agrave; leur libert&eacute;, &agrave; leur emprise sur l&rsquo;Histoire. Il n&rsquo;en va sans doute pas autrement en Russie, o&ugrave; c&rsquo;est d&rsquo;une philosophie volontariste que s&rsquo;inspire en r&eacute;alit&eacute; l&rsquo;&eacute;lite technicienne qui domine le pays. Le probl&egrave;me pos&eacute; dans le monde entier est celui de l&rsquo;&eacute;l&eacute;vation du niveau de vie de tous par une organisation consciente de l&rsquo;&eacute;conomie. Il s&rsquo;agit donc de mettre au point un syst&egrave;me de planification, assez pr&eacute;cis pour orienter la production, assez souple et d&eacute;centralisateur pour favoriser toutes les initiatives individuelles et locales.",
+      "bbox": {
+        "x_pct": 11.476,
+        "y_pct": 10.071,
+        "w_pct": 85.738,
+        "h_pct": 47.326
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality to match original document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le probl&egrave;me politique se trouve ainsi pos&eacute; sur le plan du r&eacute;alisme exp&eacute;rimental. Jeanne Hersch fait ici une pr&eacute;cieuse analyse des positions respectives de Kant et de Machiavel. Elle montre comment, en politique, l&rsquo;une et l&rsquo;autre sont indispensables : pas de succ&egrave;s politique si ce n&rsquo;est au service d&rsquo;un id&eacute;al moral; mais pas d&rsquo;id&eacute;al moral politique s&rsquo;il n&rsquo;entra&icirc;ne, dans les faits, une action efficace et qui doit r&eacute;ussir. La morale individuelle ne peut pas se transposer telle quelle sur le plan collectif, car l&rsquo;homme politique a charge d&rsquo;&acirc;mes et ne peut pas prendre pour le compte d&rsquo;autrui certains risques qu&rsquo;il prendrait individuellement. Tout jugement politique est donc hypoth&eacute;tique. L&rsquo;homme politique ne peut &ecirc;tre jug&eacute; sur ses intentions, mais seulement a posteriori, sur les r&eacute;sultats de son action.",
+      "bbox": {
+        "x_pct": 11.602,
+        "y_pct": 57.246,
+        "w_pct": 85.891,
+        "h_pct": 25.196
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce r&eacute;alisme exp&eacute;rimental justifie la d&eacute;mocratie. Jeanne Hersch se garde de fonder celle-ci, selon la tradition rousseauiste, sur la bont&eacute; naturelle de l&rsquo;homme; elle en pr&eacute;sente, au contraire, une justification.",
+      "bbox": {
+        "x_pct": 12.117,
+        "y_pct": 81.756,
+        "w_pct": 85.515,
+        "h_pct": 6.988
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text quality."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR quality was extremely poor in original detection",
+    "Running header at top of page was incorrectly labeled as text"
+  ],
+  "doc_id": "330",
+  "page": 16,
+  "elapsed_seconds": 8.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

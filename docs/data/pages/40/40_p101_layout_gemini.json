@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNS 103",
+      "bbox": {
+        "x_pct": 379.0,
+        "y_pct": 84.0,
+        "w_pct": 244.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Header elements identified and marked for filtering."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "chemin pour moi — rien que ces chemins de fantôme qui ne vont nulle part ? Il n'y aurait pas de bon vrai chemin caillouteux, sonore, grimpant vers un col qui touche le ciel ? Il n'y aurait pas de vrai compagnon aux yeux clairs, aux souliers bruyants, pour mordre en même temps que moi dans le pain et le fromage ?",
+      "bbox": {
+        "x_pct": 9.73,
+        "y_pct": 13.393,
+        "w_pct": 80.581,
+        "h_pct": 15.217
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Revinrent les vacances de Pâques. Restée en ville, je vécus à nouveau la magie de l'année précédente, et elle seule me parut certaine. Ce qui s'était passé depuis perdit toute signification, devint irréel, comme aussi je ne pouvais plus imaginer la suite ininterrompue des grisailles de l'hiver. Un mouvement de révolte gronda, tellement fort que les derniers mois parurent crouler en fumées. Après tout, il n'y avait rien eu, rien, pas un mot échangé; pas une des promesses tacites n'avait été retirée. Ma vie était toujours promise à Pierre; quand j'aurais vingt ans je la lui donnerais. Et il le savait bien. C'était sûr.",
+      "bbox": {
+        "x_pct": 9.865,
+        "y_pct": 28.261,
+        "w_pct": 80.581,
+        "h_pct": 30.18
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le jour de Pâques, à midi, je me retins d'aller à la fenêtre pour le voir passer. Peut-être ne passerait-il même pas. Il était sans doute allé quelque part. Il ne faut pas provoquer le sort.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 58.45,
+        "w_pct": 80.5,
+        "h_pct": 10.482
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais je décidai que je devais savoir, que tout serait dit, et que j'allais simplement lui demander ce qu'il en était. Je ne pesai pas un instant le pour et le contre. Cela s'imposa d'un coup.",
+      "bbox": {
+        "x_pct": 10.135,
+        "y_pct": 68.743,
+        "w_pct": 80.676,
+        "h_pct": 10.463
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seulement, quand il s'agit de passer à l'exécution, j'eus peur. Je renvoyai de jour en jour, de semaine en semaine, tout geste décisif. Au moins, j'étais sortie du néant qui",
+      "bbox": {
+        "x_pct": 10.365,
+        "y_pct": 78.667,
+        "w_pct": 80.405,
+        "h_pct": 7.94
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Running header was included as text",
+    "All paragraph segments contained severe OCR errors"
+  ],
+  "doc_id": "40",
+  "page": 101,
+  "elapsed_seconds": 5.33,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "140 NIETZSCHE",
+      "bbox": {
+        "x_pct": 11.642,
+        "y_pct": 68.32,
+        "w_pct": 468.97,
+        "h_pct": 82.26
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page_header/filter instead of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "elles plus \u0000 la philosophie proprement dite; elles deviennent po\u0000mes, œuvres d'art. Ce qu'on retire d'une plong\u0000e dans la pens\u0000e de Nietzsche n'est souvent pas pur, philosophiquement parlant, mais est m\u0000l\u0000 d'\u0000motion esth\u0000tique et de jeu. Pourtant sa force d'appel est d\u0000cupl\u0000e parce que toute l'affectivit\u0000 de l'\u0000me y participe. Je ne m'attarderai pas \u0000 l'\u0000tudier ici : elle est, malgr\u0000 ou plut\u0000t \u0000 cause de sa force et de sa profondeur, en un certain sens hors cadre. Renon\u0000ant d'avance \u0000 la forme scientifique, elle d\u0000passe la th\u0000se de la pr\u0000sente \u0000tude qui est : la philosophie doit croire \u0000 son caract\u0000re scientifique sans pouvoir l'acqu\u0000rir jamais. L'œuvre de Nietzsche appartient trop d\u0000j\u0000 au domaine de l'art pour pouvoir nous renseigner sur les caract\u0000res de la philosophie. Si je l'ai mentionn\u0000e ici, c'est qu'elle a eu une influence d\u0000cisive sur les philosophes post\u0000rieurs qui, eux, n'\u0000taient pas des artistes, mais bien des esprits discursifs et syst\u0000matiques. Qu'on me permette pourtant encore une remarque au sujet de Nietzsche. Nul n'a r\u0000v\u0000l\u0000 avec plus de clairvoyance et de force la perte qu'a faite la philosophie quand l'esprit analyste et rationaliste (symbolis\u0000 pour Nietzsche en Socrate) a d\u0000truit l'expression mythique. Et nul n'a soulign\u0000 avec plus d'\u0000nergie la n\u0000cessit\u0000 d'une renaissance du mythe, nul ne l'a salu\u0000e avec plus d'enthousiasme qu'il ne l'a fait en croyant la voir s'accomplir par l'œuvre de Richard Wagner. Or, cette d\u0000couverte de la n\u0000cessit\u0000 du mythe, c'\u0000tait, me",
+      "bbox": {
+        "x_pct": 11.642,
+        "y_pct": 11.439,
+        "w_pct": 76.657,
+        "h_pct": 76.864
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for the main paragraph block."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text detection was garbled.",
+    "Page number/header was not correctly segmented from the paragraph."
+  ],
+  "doc_id": "20",
+  "page": 142,
+  "elapsed_seconds": 6.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

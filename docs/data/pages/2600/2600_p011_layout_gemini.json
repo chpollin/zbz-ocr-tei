@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'expérience vécue de quelque chose d'impensable oblige à recourir au mythe ou à l'image, — à ce que Jaspers appelait “l'écriture chiffrée”. Celle-ci se distingue du langage direct par le fait qu'elle ne peut être “déchiffrée” que par une conscience active, située à un moment de l'histoire et de son histoire; déchiffrage non généralisable parce que son “organe” n'est pas seulement l'entendement intemporel, mais aussi et surtout la liberté engagée hic et nunc. En effet, lorsqu'il s'agit d'une synthèse vécue du contradictoire, l'entendement ne peut que lui refuser l'être s'il n'est pas soutenu et nourri par la liberté, devenue à sa manière un organe de compréhension. Prenons donc une image: la molécule d'eau qui tourne dans une vague déferlant vers un rivage. La vague avance, mais la molécule tourne presque sur place, et elle change de vague parce qu'elle tourne presque sur place. “Presque”: elle monte avec la vague vers sa crête, elle avance avec elle un instant quand elle est dans sa crête, puis elle descend au creux de la vague suivante qui la tire en arrière, et elle recommence. La vague va vers le rivage comme le temps vers l'avenir. Mais elle dépend de la vague qui est derrière elle comme le temps dépend du passé. Et elle tourne “presque” sur place, avançant tout de même un peu vers le rivage, comme le présent — ce présent qui est l'être du temps comme la molécule est l'être de la vague, ce présent qui dépend du passé, qui vise l'avenir — et qui, contrairement au temps, contrairement à la vague, ne s'écoule pas, — ou presque pas.",
+      "bbox": {
+        "x_pct": 5.778,
+        "y_pct": 7.756,
+        "w_pct": 80.319,
+        "h_pct": 60.299
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien sûr, ce n'est là qu'une image. Mais elle suggère, me semble-t-il, les rapports justes du présent vécu avec son passé et son avenir. Elle suggère l'attitude mentale permettant de concevoir qu'au coeur du temps, et en tant que condition de son écoulement, il y a ce présent qui ne s'écoule “presque” pas, et qui en est sans doute la substance.",
+      "bbox": {
+        "x_pct": 5.867,
+        "y_pct": 70.599,
+        "w_pct": 80.14,
+        "h_pct": 14.214
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to reflect the actual full paragraph content visible in the scan."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "61",
+      "bbox": {
+        "x_pct": 82.222,
+        "y_pct": 88.583,
+        "w_pct": 2.667,
+        "h_pct": 2.295
+      },
+      "changed": true,
+      "change_reason": "Identified page number incorrectly omitted from original detection."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Original detection failed to include page number region.",
+    "Original extraction of text in the second paragraph was truncated."
+  ],
+  "doc_id": "2600",
+  "page": 11,
+  "elapsed_seconds": 5.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

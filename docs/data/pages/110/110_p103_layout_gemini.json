@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 21.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "101",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number as part of header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "4 ule terme, du moment qu'il existe, n'est toul à fait éqjuivalent terme Mais   j'appelle terme absl",
+      "bbox": {
+        "x_pct": 10.127,
+        "y_pct": 14.123,
+        "w_pct": 68.665,
+        "h_pct": 58.99
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais éclairer un peu ce qui précède par deux exemples autres que la notion de forme, qu'il faudra discuter ensuite. Prenons,",
+      "bbox": {
+        "x_pct": 10.127,
+        "y_pct": 71.9,
+        "w_pct": 78.5,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: bottom paragraph text"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page header regions initially",
+    "Missing bottom paragraph region initially"
+  ],
+  "doc_id": "110",
+  "page": 103,
+  "elapsed_seconds": 4.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

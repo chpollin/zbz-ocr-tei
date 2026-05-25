@@ -1,0 +1,506 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Journal de Genève</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1210</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Journal de Genève</title>
+            <author>Jeanne Hersch</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>1975</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:warning L3:ok L4:warning L5:n/a L6:ok L7:warning). Kein signierter Hersch-Text erkennbar; Absatz-Duplikation: r_14/r_15 wiederholen Teile von r_9/r_10 woertlich; Massive OCR-Degradation S.2: USSI statt URSS, Nonsens-Saetze</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1867" lry="2745">
+      <zone xml:id="facs_1_r_1" ulx="44" uly="38" lrx="232" lry="203" />
+      <zone xml:id="facs_1_r_2" ulx="46" uly="234" lrx="219" lry="270" />
+      <zone xml:id="facs_1_r_3" ulx="46" uly="332" lrx="285" lry="360" />
+      <zone xml:id="facs_1_r_4" ulx="44" uly="358" lrx="226" lry="388" />
+      <zone xml:id="facs_1_r_5" ulx="509" uly="384" lrx="1796" lry="453" />
+      <zone xml:id="facs_1_r_6" ulx="48" uly="402" lrx="323" lry="432" />
+      <zone xml:id="facs_1_r_7" ulx="927" uly="470" lrx="1308" lry="506" />
+      <zone xml:id="facs_1_r_8" ulx="1373" uly="476" lrx="1799" lry="677" />
+      <zone xml:id="facs_1_r_9" ulx="67" uly="500" lrx="293" lry="536" />
+      <zone xml:id="facs_1_r_10" ulx="483" uly="503" lrx="883" lry="736" />
+      <zone xml:id="facs_1_r_11" ulx="922" uly="526" lrx="1351" lry="749" />
+      <zone xml:id="facs_1_r_12" ulx="67" uly="546" lrx="421" lry="719" />
+      <zone xml:id="facs_1_r_13" ulx="1370" uly="681" lrx="1657" lry="709" />
+      <zone xml:id="facs_1_r_14" ulx="1374" uly="707" lrx="1801" lry="1028" />
+      <zone xml:id="facs_1_r_15" ulx="65" uly="722" lrx="464" lry="933" />
+      <zone xml:id="facs_1_r_16" ulx="482" uly="726" lrx="883" lry="877" />
+      <zone xml:id="facs_1_r_17" ulx="928" uly="750" lrx="1262" lry="785" />
+      <zone xml:id="facs_1_r_18" ulx="951" uly="795" lrx="1352" lry="1035" />
+      <zone xml:id="facs_1_r_19" ulx="481" uly="870" lrx="881" lry="1015" />
+      <zone xml:id="facs_1_r_20" ulx="65" uly="926" lrx="462" lry="1054" />
+      <zone xml:id="facs_1_r_21" ulx="480" uly="1012" lrx="882" lry="1380" />
+      <zone xml:id="facs_1_r_22" ulx="1372" uly="1025" lrx="1798" lry="1121" />
+      <zone xml:id="facs_1_r_23" ulx="926" uly="1049" lrx="1351" lry="1145" />
+      <zone xml:id="facs_1_r_24" ulx="69" uly="1072" lrx="462" lry="1140" />
+      <zone xml:id="facs_1_r_25" ulx="1368" uly="1124" lrx="1615" lry="1157" />
+      <zone xml:id="facs_1_r_26" ulx="62" uly="1138" lrx="463" lry="1425" />
+      <zone xml:id="facs_1_r_27" ulx="1370" uly="1155" lrx="1799" lry="1496" />
+      <zone xml:id="facs_1_r_28" ulx="480" uly="1376" lrx="881" lry="1544" />
+      <zone xml:id="facs_1_r_29" ulx="924" uly="1396" lrx="1350" lry="1613" />
+      <zone xml:id="facs_1_r_30" ulx="66" uly="1423" lrx="460" lry="1612" />
+      <zone xml:id="facs_1_r_31" ulx="1372" uly="1488" lrx="1798" lry="1763" />
+      <zone xml:id="facs_1_r_32" ulx="480" uly="1539" lrx="880" lry="1668" />
+      <zone xml:id="facs_1_r_33" ulx="65" uly="1607" lrx="461" lry="1696" />
+      <zone xml:id="facs_1_r_34" ulx="923" uly="1625" lrx="1130" lry="1653" />
+      <zone xml:id="facs_1_r_35" ulx="925" uly="1653" lrx="1352" lry="1857" />
+      <zone xml:id="facs_1_r_36" ulx="658" uly="1672" lrx="853" lry="1702" />
+      <zone xml:id="facs_1_r_37" ulx="39" uly="1740" lrx="311" lry="1776" />
+      <zone xml:id="facs_1_r_38" ulx="480" uly="1741" lrx="908" lry="1854" />
+      <zone xml:id="facs_1_r_39" ulx="1370" uly="1764" lrx="1582" lry="1795" />
+      <zone xml:id="facs_1_r_40" ulx="34" uly="1776" lrx="457" lry="2057" />
+      <zone xml:id="facs_1_r_41" ulx="1370" uly="1792" lrx="1801" lry="2047" />
+      <zone xml:id="facs_1_r_42" ulx="925" uly="1850" lrx="1353" lry="1981" />
+      <zone xml:id="facs_1_r_43" ulx="479" uly="1881" lrx="795" lry="1912" />
+      <zone xml:id="facs_1_r_44" ulx="480" uly="1911" lrx="906" lry="2179" />
+      <zone xml:id="facs_1_r_45" ulx="923" uly="1975" lrx="1352" lry="2124" />
+      <zone xml:id="facs_1_r_46" ulx="1373" uly="2043" lrx="1799" lry="2137" />
+      <zone xml:id="facs_1_r_47" ulx="39" uly="2057" lrx="290" lry="2095" />
+      <zone xml:id="facs_1_r_48" ulx="62" uly="2095" lrx="460" lry="2263" />
+      <zone xml:id="facs_1_r_49" ulx="1143" uly="2129" lrx="1337" lry="2152" />
+      <zone xml:id="facs_1_r_50" ulx="1688" uly="2136" lrx="1783" lry="2156" />
+      <zone xml:id="facs_1_r_51" ulx="480" uly="2191" lrx="701" lry="2219" />
+      <zone xml:id="facs_1_r_52" ulx="482" uly="2221" lrx="905" lry="2263" />
+      <zone xml:id="facs_1_r_53" ulx="1263" uly="2230" lrx="1471" lry="2299" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1867" lry="2732">
+      <zone xml:id="facs_2_r_1" ulx="798" uly="19" lrx="992" lry="61" />
+      <zone xml:id="facs_2_r_2" ulx="508" uly="84" lrx="1276" lry="122" />
+      <zone xml:id="facs_2_r_3" ulx="1391" uly="95" lrx="1692" lry="149" />
+      <zone xml:id="facs_2_r_4" ulx="334" uly="104" lrx="448" lry="137" />
+      <zone xml:id="facs_2_r_5" ulx="471" uly="125" lrx="1353" lry="253" />
+      <zone xml:id="facs_2_r_6" ulx="40" uly="155" lrx="361" lry="309" />
+      <zone xml:id="facs_2_r_7" ulx="1379" uly="169" lrx="1603" lry="253" />
+      <zone xml:id="facs_2_r_8" ulx="1378" uly="249" lrx="1784" lry="613" />
+      <zone xml:id="facs_2_r_9" ulx="473" uly="254" lrx="902" lry="592" />
+      <zone xml:id="facs_2_r_10" ulx="40" uly="302" lrx="442" lry="562" />
+      <zone xml:id="facs_2_r_11" ulx="920" uly="395" lrx="1347" lry="523" />
+      <zone xml:id="facs_2_r_12" ulx="920" uly="519" lrx="1346" lry="662" />
+      <zone xml:id="facs_2_r_13" ulx="128" uly="583" lrx="368" lry="605" />
+      <zone xml:id="facs_2_r_14" ulx="472" uly="595" lrx="899" lry="861" />
+      <zone xml:id="facs_2_r_15" ulx="1712" uly="616" lrx="1758" lry="639" />
+      <zone xml:id="facs_2_r_16" ulx="40" uly="627" lrx="439" lry="834" />
+      <zone xml:id="facs_2_r_17" ulx="1516" uly="686" lrx="1782" lry="721" />
+      <zone xml:id="facs_2_r_18" ulx="961" uly="736" lrx="1757" lry="856" />
+      <zone xml:id="facs_2_r_19" ulx="42" uly="832" lrx="438" lry="966" />
+      <zone xml:id="facs_2_r_20" ulx="922" uly="860" lrx="1346" lry="991" />
+      <zone xml:id="facs_2_r_21" ulx="1368" uly="861" lrx="1795" lry="1045" />
+      <zone xml:id="facs_2_r_22" ulx="922" uly="997" lrx="1345" lry="1162" />
+      <zone xml:id="facs_2_r_23" ulx="1368" uly="1051" lrx="1794" lry="1185" />
+      <zone xml:id="facs_2_r_24" ulx="39" uly="1127" lrx="439" lry="1311" />
+      <zone xml:id="facs_2_r_25" ulx="950" uly="1161" lrx="1345" lry="1185" />
+      <zone xml:id="facs_2_r_26" ulx="473" uly="1275" lrx="704" lry="1308" />
+      <zone xml:id="facs_2_r_27" ulx="49" uly="1311" lrx="435" lry="1354" />
+      <zone xml:id="facs_2_r_28" ulx="784" uly="1618" lrx="889" lry="1636" />
+      <zone xml:id="facs_2_r_29" ulx="411" uly="1658" lrx="1399" lry="1707" />
+      <zone xml:id="facs_2_r_30" ulx="258" uly="1709" lrx="1594" lry="1833" />
+      <zone xml:id="facs_2_r_31" ulx="939" uly="1832" lrx="1268" lry="1866" />
+      <zone xml:id="facs_2_r_32" ulx="501" uly="1833" lrx="902" lry="2188" />
+      <zone xml:id="facs_2_r_33" ulx="85" uly="1850" lrx="481" lry="1977" />
+      <zone xml:id="facs_2_r_34" ulx="922" uly="1868" lrx="1323" lry="1975" />
+      <zone xml:id="facs_2_r_35" ulx="921" uly="1973" lrx="1322" lry="2257" />
+      <zone xml:id="facs_2_r_36" ulx="185" uly="1997" lrx="375" lry="2025" />
+      <zone xml:id="facs_2_r_37" ulx="85" uly="2047" lrx="482" lry="2280" />
+      <zone xml:id="facs_2_r_38" ulx="1342" uly="2053" lrx="1742" lry="2124" />
+      <zone xml:id="facs_2_r_39" ulx="1340" uly="2141" lrx="1584" lry="2175" />
+      <zone xml:id="facs_2_r_40" ulx="1342" uly="2179" lrx="1745" lry="2342" />
+      <zone xml:id="facs_2_r_41" ulx="519" uly="2201" lrx="836" lry="2234" />
+      <zone xml:id="facs_2_r_42" ulx="503" uly="2236" lrx="902" lry="2400" />
+      <zone xml:id="facs_2_r_43" ulx="946" uly="2262" lrx="1322" lry="2314" />
+      <zone xml:id="facs_2_r_44" ulx="101" uly="2309" lrx="420" lry="2343" />
+      <zone xml:id="facs_2_r_45" ulx="945" uly="2318" lrx="1322" lry="2391" />
+      <zone xml:id="facs_2_r_46" ulx="85" uly="2344" lrx="483" lry="2645" />
+      <zone xml:id="facs_2_r_47" ulx="1344" uly="2348" lrx="1742" lry="2406" />
+      <zone xml:id="facs_2_r_48" ulx="946" uly="2393" lrx="1322" lry="2466" />
+      <zone xml:id="facs_2_r_49" ulx="1341" uly="2412" lrx="1744" lry="2540" />
+      <zone xml:id="facs_2_r_50" ulx="505" uly="2413" lrx="901" lry="2504" />
+      <zone xml:id="facs_2_r_51" ulx="922" uly="2484" lrx="1323" lry="2647" />
+      <zone xml:id="facs_2_r_52" ulx="504" uly="2501" lrx="902" lry="2645" />
+      <zone xml:id="facs_2_r_53" ulx="1524" uly="2546" lrx="1561" lry="2564" />
+      <zone xml:id="facs_2_r_54" ulx="1343" uly="2581" lrx="1742" lry="2649" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        
+          <div type="text">
+<p facs="#facs_1_r_1">
+            J.A. No 271<lb facs="#facs_1_l_1_1" n="N001" />JEUDI<lb facs="#facs_1_l_1_2" n="N002" />20 NOVEMBRE<lb facs="#facs_1_l_1_3" n="N003" />1975<lb facs="#facs_1_l_1_4" n="N004" />SUISSE: 70 ct.<lb facs="#facs_1_l_1_5" n="N005" />FRANCE : 1 40 F<lb facs="#facs_1_l_1_6" n="N006" />BELGIQUE : 14 FB<lb facs="#facs_1_l_1_7" n="N007" />ESPAGNE : 30 PESETAS<lb facs="#facs_1_l_1_8" n="N008" />ITALIE : 200 LIRES<lb facs="#facs_1_l_1_9" n="N009" />ABONNEMENTS : PAGE 14
+          </p>
+          <p facs="#facs_1_r_2">
+            JOURNAL DE GENEVE<lb facs="#facs_1_l_2_1" n="N001" />LE QUOTIDIEN SUISSE D'AUDIENCE INTERNATIONALE
+          </p>
+        
+        </div>
+<div n="2">
+          <head>
+            <title type="main">PC EUROPÉENS</title>
+            <lb facs="#facs_1_l_3_1" n="N001" />
+            <title type="sub">Le goût irrésistible de l'indépendance</title>
+          </head>
+          <p facs="#facs_1_r_5">
+            <lb facs="#facs_1_l_5_1" n="N001" />Quand on essaie d'imaginer l'évolution future de l'Europe occidentale, il y a toujours un facteur moins qui exaspère l'analyse le plus placide : le rôle que pourrait jouer les partis communistes occidentaux, et notamment les deux plus puissants d'entre eux, l'Italie et le français. Les occasions d'y voir plus clair sont trop rares pour qu'on ne les saisisse pas au vol lorsqu'elles se présentent.
+          </p>
+          <p facs="#facs_1_r_6">
+            <lb facs="#facs_1_l_6_1" n="N001" />Ainsi cette réunion à Rome de MM. <persName ref="GND:unknown">Enrico Berlinguer</persName> et <persName ref="GND:unknown">Georges Marchais</persName> qui, mardi soir, ont approuvé leur signature, au nom des deux partis communistes dont ils sont les secrétaires généraux, sur une « déclaration commune » fort inhabituelle.
+          </p>
+          <p facs="#facs_1_r_7">
+            <lb facs="#facs_1_l_7_1" n="N001" />Certes les engagements mêmes de cette déclaration ne sont pas immédiatement éclairants, rhétoriques obligés sur la démocratie, et les masses, et l'interprétation.
+          </p>
+          <p facs="#facs_1_r_8">
+            <lb facs="#facs_1_l_8_1" n="N001" />Ainsi faut-il voir plus loin : les deux grands <orgName ref="GND:unknown">PC</orgName> d'Europe occidentale ont éprouvé le besoin d'affirmer une forme de solidarité parce qu'ils sentent bien que les choses pourraient changer en Europe, et qu'il convient à la fois de assurer tous ceux qui doivent l'être sur les tendances futures de ces partis (d'où les paragraphes sur la nécessité du multipartisme, du respect total des figures, etc.) et d'autre part de prévenir si possible le risque qu'ils courent aux mêmes de s'affichier, risqué toujours (vous) plus chacun dans les périodes de transition.
+          </p>
+          <p facs="#facs_1_r_9">
+            <lb facs="#facs_1_l_9_1" n="N001" />Ces considérations tactiques étant pleinement raisonnées, une autre évidence s'impose, plus lourde de conséquences : le « fond intangible » d'un <orgName ref="GND:unknown">PC</orgName> c'est la volonté de transformer la société dans laquelle il agit ; tout le reste — et notamment ses alliances internationales — est « négociable », c'est-à-dire pourra varier en fonction des circonstances.
+          </p>
+          <p facs="#facs_1_r_10">
+            <lb facs="#facs_1_l_10_1" n="N001" />Cela a toujours été vrai dans les faits, mais de nombreux <orgName ref="GND:unknown">PC</orgName> sont, depuis plusieurs années, désintest de le faire passer dans la doctrine : ainsi les <orgName ref="GND:unknown">PC</orgName> italien, pongodere, roumain. Dans l'optique de l'<orgName ref="GND:unknown">Union soviétique</orgName>, les <orgName ref="GND:unknown">PC</orgName> sont soviétiques devraient être en fin de compte des environnements de sa politique étrangère. Cela joue plus ou moins quand ces <orgName ref="GND:unknown">PC</orgName> écrergent sont de petites choses faibles et ouvertement subversives ; cela ne joue plus là où les <orgName ref="GND:unknown">PC</orgName> ont acquis un poids majeur et — comme en Italie — sont pratiquement des paramètres du gouvernement « bourgeois » en place.
+          </p>
+          <p facs="#facs_1_r_11">
+            <lb facs="#facs_1_l_11_1" n="N001" />Cela signifie, en d'autres termes, que les <orgName ref="GND:unknown">PC</orgName>, pas plus que n'importe quel ensemble, groupe ou formation politique, n'échappent aux grandes lois de la nature. Faibles, ils ne peuvent se détacher de leur « protecteur ». Forts, ils font tout ce qu'ils peuvent pour ne prendre d'ordres que d'ous-mêmes.
+          </p>
+          <p facs="#facs_1_r_12">
+            <lb facs="#facs_1_l_12_1" n="N001" />De voir d'ailleurs que cette évolution est inéluctable dans les attitudes différentes du <orgName ref="GND:unknown">PC</orgName> italien — proche du pouvoir et donc particulièrement soucieux d'indépendance, et du <orgName ref="GND:unknown">PC</orgName> français, loin du pouvoir et donc moins impatient de jouer les grands emancipés.
+          </p>
+          <p facs="#facs_1_r_13">
+            <lb facs="#facs_1_l_13_1" n="N001" />Ces constatations sont simples mais, à notre avis, extrêmement importantes car elles définissent clairement la ligne que les démocrates libéraux d'Europe occidentale doivent adopter. En effet, si l'on admet, primo, que les <orgName ref="GND:unknown">PC</orgName> occidentaux joueront d'autant plus la rôle d'instruments de la politique soviétique qu'ils sont plus faibles ; seconds, qu'ils sont d'autant plus nationaux et indépendants du <orgName ref="GND:unknown">l'URSS</orgName> qu'ils sont plus forts ; tertio, qu'ils supprimeraient, par logique descriscée interet, le système libéral auquel nous tenons s'ils acquéraient la même température du pouvoir, en doit conclure qu'il y a une zone moyenne où les <orgName ref="GND:unknown">PC</orgName> sont très proches des partis démocratiques classiques, zone dans laquelle ils sont à tout prix les maintenir.
+          </p>
+          <p facs="#facs_1_r_14">
+            <lb facs="#facs_1_l_14_1" n="N001" />Cette remarque est d'ailleurs valable pour toutes les formations importantes, car la démocratie est, en dernière analyse, fondée sur une notion d'équilibre des forces. Que cet équilibre soit détruit irrésistibilement en faveur d'un seul groupe, et la démocratie met en évidence nul. Car s'il pourrait aboutir à un certain nombre d'exercices de la politique soviétique, il est possible de le faire passer dans la doctrine ou en détention de <orgName ref="GND:unknown">l'URSS</orgName> qu'ils sont plus forts ; tertio, qu'ils supprimeraient, par logique descriscée interet, le système libéral auquel nous tenons s'ils acquéraient la même température du pouvoir, en doit conclure qu'il y a une zone moyenne où les <orgName ref="GND:unknown">PC</orgName> sont très proches des partis démocratiques classiques, zone dans laquelle ils sont pris les maintenir.
+          </p>
+          <p facs="#facs_1_r_15">
+            <lb facs="#facs_1_l_15_1" n="N001" />Cet insomnique est d'ailleurs valable pour toutes les formations importantes, car la démocratie est, en dernière analyse, fondée sur une notion d'équilibre des forces. Que cet équilibre soit détruit irrésistibilement en faveur d'un seul groupe, et la démocratie met en évidence nul. Car s'il pourrait aboutir à un certain nombre d'exercices de la politique soviétique, il est possible de le faire passer dans la doctrine ou en détention de <orgName ref="GND:unknown">l'URSS</orgName> qu'ils sont plus forts.
+          </p>
+          <p facs="#facs_1_r_16">
+            <lb facs="#facs_1_l_16_1" n="N001" />Ces informations tactiques étant pleinement raisonnées, une autre évidence s'impose, plus lourde de conséquences : le « fond intangible » d'un <orgName ref="GND:unknown">PC</orgName> c'est la volonté de transformer la société dans laquelle on peut être apportée à la question. L'analyse est très poussée plus avant. On a estimé que l'analyse de la réunion de Rome suggère.
+          </p>
+          <p facs="#facs_1_r_17">
+            <lb facs="#facs_1_l_17_1" n="N001" /><persName ref="GND:unknown">Claude Monnier</persName>
+          </p>
+        </div>
+        <div n="2">
+          <head>
+            <title type="main">ECONOMIE SUISSE</title>
+            <lb facs="#facs_1_l_18_1" n="N001" />
+            <title type="sub">Rien ne sert d'attendre la reprise comme on attend le printemps</title>
+          </head>
+          <p facs="#facs_1_r_20">
+            <lb facs="#facs_1_l_20_1" n="N001" />Par <persName ref="GND:unknown">François Schaller</persName>
+          </p>
+          <p facs="#facs_1_r_21">
+            <lb facs="#facs_1_l_21_1" n="N001" />Le plus souvent, le succès d'un vocable est dû à une imprécision. La fortune d'un mot dont on fait que chacun a toute latitude de les charger d'une signification que d'autres lui prônent. Aujourd'hui, tout le monde dénonce la crise structurelle que traverse notre économie et qui se double par malheur d'une crise conjoncturelle.
+          </p>
+          <p facs="#facs_1_r_22">
+            <lb facs="#facs_1_l_22_1" n="N001" />En <orgName ref="GND:unknown">Allemagne fédérale</orgName> comme chez nous, la crise structurelle est à l'ordre du jour. Toutefois, lorsque l'interlocuteur veut bien se donner la peine de prêcher au pensée, au s'aperçoit vite que le sens privé ou non de structure est très différent selon le pays, et même d'un utilisateur à l'autre.
+          </p>
+          <p facs="#facs_1_r_23">
+            <lb facs="#facs_1_l_23_1" n="N001" />Comme le retour du printemps
+          </p>
+          <p facs="#facs_1_r_24">
+            <lb facs="#facs_1_l_24_1" n="N001" />En recourant à l'expression « crise de structure », on veut préciser que les difficultés que connaît l'économie d'un pays, une branche d'industrie ou une cellule de production, sont les plus à la conjoncture économique générale, à l'état de santé du marché qui s'améliore ou se détériore et brusquement. Ces difficultés ont leur origine ailleurs, et les causes peuvent être diverses. Ce sont ces causes qui sont trop rarement générales. Ainsi, parler d'une crise de structure ne veut rien dire, si ce n'est que le malaise n'est pas de nature continentale et qu'il serait donc vain d'attendre passivement que la situation s'améliore, un peu comme on attend le retour du printemps.
+          </p>
+          <p facs="#facs_1_r_25">
+            <lb facs="#facs_1_l_25_1" n="N001" />Les causes historiques
+          </p>
+          <p facs="#facs_1_r_26">
+            <lb facs="#facs_1_l_26_1" n="N001" />De quelle crise, l'instancile notre économie est-elle aujourd'hui affectée ? Aucune réponse
+          </p>
+        </div>
+        <div type="text">
+<figure>
+          <head>
+            <lb facs="#facs_1_l_28_1" n="N001" />PAUL DAUNAY S.A.<lb facs="#facs_1_l_28_2" n="N002" />PERS HENRIK<lb facs="#facs_1_l_28_3" n="N003" />Courtier-Fourneur
+          </head>
+          <p facs="#facs_1_r_29">
+            <lb facs="#facs_1_l_29_1" n="N001" />Une certaine idée avec la mode, mais aussi un rendez-vous avec les grandes capitales des créations en haute-couture, haute-fourrure et prêt-à-porter de luxe.
+          </p>
+          <p facs="#facs_1_r_30">
+            <lb facs="#facs_1_l_30_1" n="N001" />5, rue des Alpes<lb facs="#facs_1_l_30_2" n="N002" />1211 Genève<lb facs="#facs_1_l_30_3" n="N003" />Tél. 31 07 40/49<lb facs="#facs_1_l_30_4" n="N004" />ASSA 9100
+          </p>
+        </figure>
+        </div>
+<div n="2">
+          <head>
+            <title type="main">LE LIBAN EXSANGUE (II)</title>
+            <lb facs="#facs_1_l_31_1" n="N001" />
+            <title type="sub">Les moyens d'organiser le sauve-qui-peut de la paix civile</title>
+          </head>
+          <p facs="#facs_1_r_33">
+            <lb facs="#facs_1_l_33_1" n="N001" />De Beyrouth : <persName ref="GND:unknown">Edouard Soab</persName>
+          </p>
+          <p facs="#facs_1_r_34">
+            <lb facs="#facs_1_l_34_1" n="N001" />Les manœuvres qui consistent à agir sur M. <persName ref="GND:unknown">Chamoux</persName> pour isoler les <orgName ref="GND:unknown">Kataëb</orgName> au pour cotamer leur leadership dans les milieux chrétiens ne peuvent aboutir. Dans la conjoncture présente, seul l'extrémisme est percuté. MM. <persName ref="GND:unknown">Joumblatt</persName> et <persName ref="GND:unknown">Arafat</persName> ont beau lierre être livers au ministre de l'Intérieur, ils savent plus que d'autres que derrière les barricades d'un lieu, les miliciens du <orgName ref="GND:unknown">Parti national libéral</orgName> et devraient aux côtés des phéniciens « pour le meilleur et pour le pire », l'hôt aussi aux éditions du 19 novembre.
+          </p>
+          <p facs="#facs_1_r_35">
+            <lb facs="#facs_1_l_35_1" n="N001" />Les intermédiaires, dans ce cas, ne peuvent qu'être concentrants. L'isolement des <orgName ref="GND:unknown">Kataëb</orgName> devient un non-sens politique, d'autant plus que cette décision avait été prise au lendemain du 13 avril, date du déclenchement de la guerre.
+          </p>
+          <p facs="#facs_1_r_36">
+            <lb facs="#facs_1_l_36_1" n="N001" />globale ne peut être apportée à la question. L'analyse est très poussée plus avant. On sait par exemple que le secteur de la construction souffre d'une telle crise. Il faut probablement, par exemple, présenter <persName ref="GND:unknown">Jacques Chabane</persName>, le <orgName ref="GND:unknown">Plan Zipfel</orgName> inspirait aux pouvoirs publics une politique de restrictions structurelles en matière d'investissements. Rien ne presque ne fut entrecréé, au lendemain de la guerre, en faveur du développement de l'infrastructure. On attendait la crise. Elle ne vint pas.
+          </p>
+          <p facs="#facs_1_r_37">
+            <lb facs="#facs_1_l_37_1" n="N001" />Au début des années 60, les pouvoirs publics, plus meilleurs dans l'avenir économique du pays, furent tout à coup azotés d'une véritable fièvre (l'investissement). Le retard devait être semblé, et un développement rapide assisté. L'industrie de la construction fut fortement mobilisé. Le gouvernement l'époque où nos industriels d'expansion, profitant de cours de change d'eau extrêmement favorables, prônait l'usage que l'on sait. Le bâtiment fut invité à se mettre en mesure de répondre, là aussi, à une demande largement accrue.
+          </p>
+          <p facs="#facs_1_r_38">
+            <lb facs="#facs_1_l_38_1" n="N001" />Surdimensionnement
+          </p>
+          <p facs="#facs_1_r_39">
+            <lb facs="#facs_1_l_39_1" n="N001" />Lorsque celle-ci se contracte brutalement, l'un dernier, dans le secteur public et dans le secteur privé, il ne reste plus qu'à constater le surdimensionnement de l'appareil de construction. La crise est structurée en ce sens que même si la conjoncture économique mondiale se redressait dès demain, le secteur de la construction ne pourrait plus compter que sur les trois quarts ou les deux tiers des commandes dont elle bénéficiait encore en 2012. Les difficultés de cette branche ne sont donc pas uniquement conjoncturelles.
+          </p>
+          <p facs="#facs_1_r_40">
+            <lb facs="#facs_1_l_40_1" n="N001" />Une rapide évolution de la technologie peut également provoquer une crise structurelle. Tout progrès technique est en un sens une manifestation de désordre, sémiotique et désorganisation d'un appareil de production. Il est permis de mener que c'est là une des causes des problèmes de la crise : il n'y a pas de déconfinement, et il n'y a pas de déconfinement.
+          </p>
+          <p facs="#facs_1_r_41">
+            <lb facs="#facs_1_l_41_1" n="N001" />civile, à une époque où les <orgName ref="GND:unknown">Libanais</orgName>, dans leur écosu majorité, se demandaient s'il ne suffisait pas de quitter ou vingt lisieries pour jeter tous les miliciens phénicidiens à la mer, même que les « maris » du nom de la ville, en excluant, si devient beaucoup plus difficile aujourd'hui à un <persName ref="GND:unknown">Kamal Joumblatt</persName> et à un <persName ref="GND:unknown">Yawir Arafat</persName> un <persName ref="GND:unknown">Kamal Joumblatt</persName> et à un <persName ref="GND:unknown">Tawer Arafat</persName> qu'ils n'auraient pu le faire si ce dernier avait subi, ne serait-ce que pour la forme et continuitablement, quelques revers sur le terrain.
+          </p>
+          <p facs="#facs_1_r_42">
+            <lb facs="#facs_1_l_42_1" n="N001" />Pas de cassure irrémédiable
+          </p>
+          <p facs="#facs_1_r_43">
+            <lb facs="#facs_1_l_43_1" n="N001" />Il n'en demeure pas moins qu'à défaut d'un vainqueur et d'un valeur, et après ce drame terrible qui s'enseignera le <orgName ref="GND:unknown">Liban</orgName> autant qu'il n'y ait pas de défaillance d'institutions. Par ce l'autre des antagonistes seront, tôt ou tard, accultés à s'imposer une trêve des armes. D'oresc faut-il que celle-ci intervienne avant que les leaders traditionnels et les chefs historiques ne soient définitivement déformés les uns sur leur extrême droite, les autres sur leur extrême proche. A ce tour du moment, les questions prises de part et d'autre pour ce qui a trait aux relations libano-palestiniennes, la cassure est loin d'être consommée et les attitudes pointues par chacune des parties au conflit ne sont pas intermittentes. Que l'host se réfère les mêmes et la <orgName ref="GND:unknown">Ligue marimée</orgName> qui parle au nom des chrétiens ?
+          </p>
+          <p facs="#facs_1_r_44">
+            <lb facs="#facs_1_l_44_1" n="N001" />Que « l'État doit recourrer au universalisme sur tout les territoires libanais ». Que dit le mensuration des <orgName ref="GND:unknown">Palestiniens</orgName> ? Que « l'État libanais doit exercer son contrôle sur toutes les régions du pays. ».
+          </p>
+          <p facs="#facs_1_r_45">
+            <lb facs="#facs_1_l_45_1" n="N001" />Concessions réciproques
+          </p>
+          <p facs="#facs_1_r_46">
+            <lb facs="#facs_1_l_46_1" n="N001" />Au-delà de ces déclarations d'intention, il y a, bien sûr, les préjugés et les arrête-rempliments de la guerre civile, qu'on peut en voir la crise, tous les antagonistes sont tenus de se tolérer mutuellement et de se faire des concessions réciproques. Ils pourraient, pour commencer, se retrouver autour de la même situation, s'en amener le long de la vie de la population, et s'en amener à se faire des concessions. La crise n'est pas un « cas » de la crise, mais un « cas » de la crise, et de ne pas se faire des concessions.
+          </p>
+          <p facs="#facs_1_r_47">
+            <lb facs="#facs_1_l_47_1" n="N001" />La conclusion est bien plus que celle de l'État, mais qu'elle ne peut être apportée à la question. L'analyse est très poussée plus avant. On a estimé que l'analyse est très poussée plus avant. On a estimé que l'analyse est très poussée plus avant.
+          </p>
+        </div>
+        <div type="text">
+<figure>
+          <head>
+            <lb facs="#facs_1_l_48_1" n="N001" />Chaumet<lb facs="#facs_1_l_49_1" n="N002" />Jouillier depuis 1780 - Place Vendôme
+          </head>
+          <p facs="#facs_1_r_50">
+            <lb facs="#facs_1_l_50_1" n="N001" />Parce qu'il est des jours heureux qu'il faut marquer d'une pierre.
+          </p>
+          <p facs="#facs_1_r_51">
+            <lb facs="#facs_1_l_51_1" n="N001" />Chaumet c'est un univers
+          </p>
+          <p facs="#facs_1_r_52">
+            <lb facs="#facs_1_l_52_1" n="N001" />CHAUMET • L'ANCAGE • LES TEMPORELLES<lb facs="#facs_1_l_52_2" n="N002" />12 place Vendôme Paris Tel. 260.32.12
+          </p>
+          <p facs="#facs_1_r_53">
+            <lb facs="#facs_1_l_53_1" n="N001" />ASSA 10 510 813
+          </p>
+        </figure>
+      </div>
+<pb facs="#facs_2" n="2" />
+        <div type="text">
+<head facs="#facs_2_r_1">
+          <lb facs="#facs_2_r_1" n="N001" />jeudi 20 novembre 1975
+        </head>
+        
+          <p facs="#facs_2_r_2">
+            <lb facs="#facs_2_r_2" n="N001" />ETRANGER
+          </p>
+          <p facs="#facs_2_r_3">
+            <lb facs="#facs_2_r_3" n="N001" />JOURNAL DE GENEVE — 3
+          </p>
+          <p facs="#facs_2_r_4">
+            <lb facs="#facs_2_r_4" n="N001" />FRANCE
+          </p>
+        
+        </div>
+<div n="2">
+          <head facs="#facs_2_r_5">
+            <lb facs="#facs_2_l_5_1" n="N001" />Après Rambouillet
+            <lb facs="#facs_2_l_5_2" n="N002" />Paris voit
+            <lb facs="#facs_2_l_5_3" n="N003" />en Washington
+            <lb facs="#facs_2_l_5_4" n="N004" />un allié plus proche
+          </head>
+          <p facs="#facs_2_r_6">
+            <lb facs="#facs_2_r_6" n="N001" />Selon Paris, les États-Unis du président <persName ref="GND:unknown">Gerald Ford</persName> appliquent une politique plus ouverte envers leurs alliés universels l'<orgName ref="GND:unknown">USSI</orgName> et le <orgName ref="GND:unknown">China</orgName>. C'est ce qui frappe après la conclave de <orgName ref="GND:unknown">Rambouillet</orgName> et le retour à une diplomatie américaine plus scientifique vétérinaire. Le 1er octobre, M. <persName ref="GND:unknown">Hiram</persName> et <persName ref="GND:unknown">R. Kissinger</persName> s'évoient montrés en diverses circonstances moins sensibles avec l'<orgName ref="GND:unknown">Europe</orgName> et le <orgName ref="GND:unknown">Japon</orgName> que vis-à-vis de <orgName ref="GND:unknown">Moscow</orgName> et <orgName ref="GND:unknown">Paris</orgName>. Du manière significative, la secrétaire au <orgName ref="GND:unknown">Département d'État</orgName> au domaine plus le même sujet refueront depuis le départ de l'ancien président.
+          </p>
+          <p facs="#facs_2_r_7">
+            <lb facs="#facs_2_r_7" n="N001" />DE PARIS - <persName ref="GND:unknown">BONI GABERNAZ</persName>
+          </p>
+          <p facs="#facs_2_r_8">
+            <lb facs="#facs_2_r_8" n="N001" />En premier lieu, à <orgName ref="GND:unknown">Rambouillet</orgName>, l'<orgName ref="GND:unknown">Amérique</orgName> a accepté de mettre la drôler en société avec l'<orgName ref="GND:unknown">Europe</orgName> et le <orgName ref="GND:unknown">Japon</orgName>, selon l'expression d'un ministre occidental. Là où il y avait un monopole américain de décision, il y aura un mécanisme de consultation fraternités et parfois, quotidiennes. Les <orgName ref="GND:unknown">États-Unis</orgName> reconnaissent qu'ils ne sont pas au mesure des controverses. L'inflation mondiale qui vient, parmi d'autres causes, de la rupture des digues qu'ilsaient cru pouvoir élever anti.
+          </p>
+          <p facs="#facs_2_r_9">
+            <lb facs="#facs_2_r_9" n="N001" />Le Gouvernement américain renonce à manipuler un morroch à son gré. Dans un domaine aussi fonctionnant que le conventionnel, le gouvernement américain parle en changement si de moins les accords sont respectés. La président <persName ref="GND:unknown">Ford</persName> a été refilé au nom de « l'indépendance » ?
+          </p>
+          <p facs="#facs_2_r_10">
+            <lb facs="#facs_2_r_10" n="N001" />En deuxième lieu, la presse soviétique s'en prend depuis peu le <persName ref="GND:unknown">Gerald Ford</persName>. Déjà les relations entre le <orgName ref="GND:unknown">Empire</orgName> et le <orgName ref="GND:unknown">Nécropole-Elisabeth</orgName> (affichage de l'anneau des <orgName ref="GND:unknown">Brouquettes</orgName>, conditions et modèles sur les armements stratégiques, la voie par l'<orgName ref="GND:unknown">USSI</orgName> et les pays communistes (sur) de <orgName ref="GND:unknown">Roumone</orgName>, résenté) de la résolution du <orgName ref="GND:unknown">TONG</orgName> envoient la circusane à une forme de racisme (les fend diabolique.
+          </p>
+          <p facs="#facs_2_r_11">
+            <lb facs="#facs_2_r_11" n="N001" />On ne peut conclure à une nouvelle guerre froide. Cependant, les <orgName ref="GND:unknown">États-Unis</orgName> ont fini leur faire de mot avec l'<orgName ref="GND:unknown">USSI</orgName>. Les courres et connexions de la guerre froide, les relations pour amortir le départ font place à des négociations pour le pied, à la rude manière américaine. Ce fut le cas lors de l'accord fris-période. Même avec l'élite, où la président <persName ref="GND:unknown">Ford</persName> compte sa rendre, un phénomène comparable au devoirs.
+          </p>
+          <p facs="#facs_2_r_12">
+            <lb facs="#facs_2_r_12" n="N001" />L'<orgName ref="GND:unknown">Amérique</orgName>, en redéplissant sa diplomatie, renonce une autre époque.
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_13">
+            <lb facs="#facs_2_r_13" n="N001" />Exposé à la Chambre de commerce des Pays-Bas pour la Suisse
+          </head>
+          <p facs="#facs_2_r_14">
+            <lb facs="#facs_2_r_14" n="N001" /><title type="sub">« L'entente européenne doit se nourrir d'utopie pour voir, une fois, le jour »</title>
+          </p>
+          <p facs="#facs_2_r_15">
+            <lb facs="#facs_2_r_15" n="N001" />Gentille, — L'affiliation de l'unité européenne est enfermée dans un cercle violent, qui ne peut être brisé ni de l'intérieur ni de l'extérieur. L'utopie de l'unité représente néanmoins la préalable nécessaire à toute tentative pour atteindre la loi, réalisable, de l'entente européenne. La distinction entre un chose terrien, unité et entente, n'est d'ailleurs pas nouvelle : elle avait été formulée par <persName ref="GND:unknown">Ruthvenich</persName> à propos de l'Allemagne (« Enigme»), <foreign xml:lang="de">keine Einheit</foreign>. Telle est la conclusion d'un exposé sur l'<orgName ref="GND:unknown">Europe</orgName> présenté par M. <persName ref="GND:unknown">J. Heldring</persName>, directeur de l'<orgName ref="GND:unknown">Institut néerlandais pour la politique extérieure</orgName>, mercredi à <orgName ref="GND:unknown">Genève</orgName>, devant la <orgName ref="GND:unknown">Chambre de commerce des Pays-Bas pour la Suisse</orgName>, qui n'aura pas une autre chose. La question est encore un auditoire attendu. Leurs facultés sont l'<orgName ref="GND:unknown">Amérique</orgName>, qui les rassemble le plus. La président <persName ref="GND:unknown">Pompidou</persName> dirait à ce propos que « l'Europe sera vraiment l'Europe que si elle ne distingue de l'Amérique », devait regarder M. <persName ref="GND:unknown">Reidering</persName>. Si la logique de cette observation est très peu éphémère, elle n'est pas un « point de vue » de la loi. Il est noté que les « questions » de la loi sont très bien comparables et non plus récurrentes. En outre, les « questions » de la loi sont très bien comparables et non plus récurrentes. En outre, les « questions » de la loi sont très bien comparables et non plus récurrentes. En outre, les « questions » de la loi sont très bien comparables et non plus récurrentes.
+          </p>
+          <p facs="#facs_2_r_16">
+            <lb facs="#facs_2_r_16" n="N001" />La question est encore un « point de vue » de la loi. Il est noté que les « questions » de la loi sont très bien comparables et non plus récurrentes. En outre, les « questions » de la loi sont très bien comparables et non plus récurrentes. En outre, les « questions » de la loi sont très bien comparables et non plus récurrentes.
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_17">
+            <lb facs="#facs_2_r_17" n="N001" />M. <persName ref="GND:unknown">Ponomarev</persName> émet des réserves sur les principes émis à <orgName ref="GND:unknown">Helsinki</orgName>
+          </head>
+          <p facs="#facs_2_r_18">
+            <lb facs="#facs_2_r_18" n="N001" /><orgName ref="GND:unknown">Moscow</orgName>, 16 — (1977). M. <persName ref="GND:unknown">Boris Ponomarev</persName>, secrétaire du comité central, montre, suppléant de <orgName ref="GND:unknown">Politechnie</orgName> du <orgName ref="GND:unknown">PC soviétique</orgName> et idéaliseur de parti, a saisi, mardi soir à <orgName ref="GND:unknown">Moscou</orgName> les réserves sur l'application, en l'<orgName ref="GND:unknown">USSI</orgName>, des principes honoraires. Il a été le premier à le confirmer. Il a été le premier à le confirmer. Il a été le premier à le confirmer. Il a été le premier à le confirmer.
+          </p>
+          <p facs="#facs_2_r_19">
+            <lb facs="#facs_2_r_19" n="N001" />Prenant la parole à la télévision soviétique à l'occasion de 100 anniversaires de la naissance de <persName ref="GND:unknown">Mikhail Kalinine</persName>, premier chef de l'État soviétique, M. <persName ref="GND:unknown">Ponomarev</persName> semblait faire allusion, bien qu'il ne l'ait pas nommé, au physicien <persName ref="GND:unknown">Andrii Bishkurov</persName>, à qui les autorités soviétiques ont refusé un visa pour la <orgName ref="GND:unknown">Norvège</orgName>, où il devait recevoir le Prix <persName ref="GND:unknown">Embol</persName> de la paix. La « sécurité de l'État » avait précisément essentiel le motif de ce refus.
+          </p>
+          <p facs="#facs_2_r_20">
+            <lb facs="#facs_2_r_20" n="N001" />« La législation soviétique, a notamment déclaré M. <persName ref="GND:unknown">Ponomarev</persName>, garantit les droits politiques les plus larges, mais elle prévoit aussi de supporter les abus connus au préjudice de notre société et des intérêts du peuple soviétique. » Cette position, n'est qu'ouï, répond d'ailleurs aux principes des accords de <orgName ref="GND:unknown">Helsinki</orgName>, qui stipulent que ces droits ne peuvent être émis plus tard. Il n'est pas de donc le cadre de la législation prévue dans chaque pays pour garantir la sécurité de l'État, l'ordre social et la liberté d'autrui.
+          </p>
+          <p facs="#facs_2_r_21">
+            <lb facs="#facs_2_r_21" n="N001" />M. <persName ref="GND:unknown">Ponomarev</persName> a promus un discours dans la salle des columns de la maison des syndrome soviétiques à <orgName ref="GND:unknown">Moscou</orgName>, en présence notamment de M. <persName ref="GND:unknown">Fodor Koulakov</persName>, secrétaire du comité central, membre de <orgName ref="GND:unknown">Politechnie</orgName> et secrétaire du comité central chargé des questions agricults qui n'avait pas été vu en public depuis plus d'un mois.
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_22">
+            <lb facs="#facs_2_r_22" n="N001" />L'HORIZON
+          </head>
+          <p facs="#facs_2_r_23">
+            <lb facs="#facs_2_r_23" n="N001" /><title type="sub">Objectif MLF : la banque</title>
+          </p>
+          <p facs="#facs_2_r_24">
+            <lb facs="#facs_2_r_24" n="N001" />Longlangu plus s'auront que les quatre coins d'un appartement pour mal horizon et les cris créant les pays unique mélodés. Leur monde avait tendance à s'arrêter où s'annonçait celui des hommes, le « vrai monde ». Elles, les hommes, ont brisé peu à peu cette condition, abonnements considérés par leurs partenaires moncelles comme prédestinés. Elles se sont mises à noter, nouvelles à la ville, obliges (renoncer) il est vrai). Cette révolution s'est surtout faite aux <orgName ref="GND:unknown">États-Unis</orgName> et, traditionnellement, s'est muni là que ce résilier aujourd'hui le dernière conquête des féministes : la banque. À <orgName ref="GND:unknown">New York</orgName>, le première banque des femmes, entièrement dirigée et grâce par des femmes, s'est ouverte la semaine dernière. Saubellans-lentinques furieux, dans le pappelle financière de la ville, elles en auront bien besoin !
+          </p>
+          <p facs="#facs_2_r_25">
+            <lb facs="#facs_2_r_25" n="N001" />Ph. G.
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_26">
+            <lb facs="#facs_2_r_26" n="N001" />M. <persName ref="GND:unknown">Ponomarev</persName> émet des réserves sur les principes émis à <orgName ref="GND:unknown">Helsinki</orgName>
+          </head>
+          <p facs="#facs_2_r_27">
+            <lb facs="#facs_2_r_27" n="N001" /><orgName ref="GND:unknown">Moscow</orgName>, 16 — (1977). M. <persName ref="GND:unknown">Boris Ponomarev</persName>, secrétaire du comité central, montre, suppléant de <orgName ref="GND:unknown">Politechnie</orgName> du <orgName ref="GND:unknown">PC soviétique</orgName> et idéaliseur de parti, a saisi, mardi soir à <orgName ref="GND:unknown">Moscou</orgName> les réserves sur l'application, en l'<orgName ref="GND:unknown">USSI</orgName>, des principes honoraires. Il a été le premier à le confirmer. Il a été le premier à le confirmer. Il a été le premier à le confirmer. Il a été le premier à le confirmer.
+          </p>
+          <p facs="#facs_2_r_28">
+            <lb facs="#facs_2_r_28" n="N001" />Prenant la parole à la télévision soviétique à l'occasion de 100 anniversaires de la naissance de <persName ref="GND:unknown">Mikhail Kalinine</persName>, premier chef de l'État soviétique, M. <persName ref="GND:unknown">Ponomarev</persName> semblait faire allusion, bien qu'il ne l'ait pas nommé, au physicien <persName ref="GND:unknown">Andrii Bishkurov</persName>, à qui les autorités soviétiques ont refusé un visa pour la <orgName ref="GND:unknown">Norvège</orgName>, où il devait recevoir le Prix <persName ref="GND:unknown">Embol</persName> de la paix. La « sécurité de l'État » avait précisément essentiel le motif de ce refus.
+          </p>
+          <p facs="#facs_2_r_29">
+            <lb facs="#facs_2_r_29" n="N001" />« La législation soviétique, a notamment déclaré M. <persName ref="GND:unknown">Ponomarev</persName>, garantit les droits politiques les plus larges, mais elle prévoit aussi de supporter les abus connus au préjudice de notre société et des intérêts du peuple soviétique. » Cette position, n'est qu'ouï, répond d'ailleurs aux principes des accords de <orgName ref="GND:unknown">Helsinki</orgName>, qui stipulent que ces droits ne peuvent être émis plus tard. Il a été le premier à le confirmer.
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_30">
+            <lb facs="#facs_2_r_30" n="N001" />M. <persName ref="GND:unknown">Ponomarev</persName>
+          </head>
+          <p facs="#facs_2_r_31">
+            <lb facs="#facs_2_r_31" n="N001" />Le 1er octobre, M. <persName ref="GND:unknown">Boris Ponomarev</persName>, secrétaire du comité central, montre, suppléant de <orgName ref="GND:unknown">Politechnie</orgName> du <orgName ref="GND:unknown">PC soviétique</orgName> et idéaliseur de parti, a saisi, mardi soir à <orgName ref="GND:unknown">Moscou</orgName> les réserves sur l'application, en l'<orgName ref="GND:unknown">USSI</orgName>, des principes honoraires. Il a été le premier à le confirmer. Il a été le premier à le confirmer. Il a été le premier à le confirmer.
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_32">
+            <lb facs="#facs_2_r_32" n="N001" />M. <persName ref="GND:unknown">Ponomarev</persName> émet des réserves sur les principes émis à <orgName ref="GND:unknown">Helsinki</orgName>
+          </head>
+          <p facs="#facs_2_r_33">
+            <lb facs="#facs_2_r_33" n="N001" /><orgName ref="GND:unknown">Moscow</orgName>, 16 — (1977). M. <persName ref="GND:unknown">Boris Ponomarev</persName>, secrétaire du comité central, montre, suppléant de <orgName ref="GND:unknown">Politechnie</orgName> du <orgName ref="GND:unknown">PC soviétique</orgName> et idéaliseur de parti, a saisi, mardi soir à <orgName ref="GND:unknown">Moscou</orgName> les réserves sur l'application, en l'<orgName ref="GND:unknown">USSI</orgName>, des principes honoraires. Il a été le premier à le confirmer.
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_34">
+            <lb facs="#facs_2_r_34" n="N001" />EN MARGE D'UN RAPPORT D'AMNESTY INTERNATIONAL (II)
+          </head>
+          <p facs="#facs_2_r_35">
+            <lb facs="#facs_2_r_35" n="N001" /><title type="sub">« <persName ref="GND:unknown">Pliouchtch</persName> n'a pas violé les lois de l'<orgName ref="GND:unknown">Union soviétique</orgName> simplement, devant l'injustice, il ne pouvait se taire »</title>
+          </p>
+          <p facs="#facs_2_r_36">
+            <lb facs="#facs_2_r_36" n="N001" />Je n'ai jamais annoncé l'amitié <persName ref="GND:unknown">Pliouchtch</persName>. Il n'a vu de lui manier photographié. Mais il faut donc s'achever l'examen de nous représentés qui est cet homme, car ce n'est jamais un homme désirait que l'on détruit, c'est toujours cet homme, unique et irremplaçable. Voici donc quelques témoignages. (Voir aussi nos éditions du 10 novembre.)
+          </p>
+          <p facs="#facs_2_r_37">
+            <lb facs="#facs_2_r_37" n="N001" />Par <persName ref="GND:118815679">Jeanne Hersch</persName>
+          </p>
+          <p facs="#facs_2_r_38">
+            <lb facs="#facs_2_r_38" n="N001" />La <orgName ref="GND:unknown">Groupe d'injustice pour la défense des droits de l'homme</orgName> est <orgName ref="GND:unknown">USSB</orgName> (exil). « De bonnes d'une haute culture artificielle et d'une grand-ambition d'être, un methiocalisme qui s'intéresse aux politiques et la sociologie est déclaré malediment et national dans une clinique psychologique d'un type spécial... Dis l'âge de 18 ans, comme jume d'aubert, il s'était engagé sur le chemin qui devait le conduire là où il est. Dis l'âge de 17 ou 18 ans, qu'on a bien la femme et la conscience qui conviendrait à sa nature et à l'image qu'il se faisait d'un futur savant, à l'étude de la philosophie, particulièrement celle des œuvres s'excluent du marxisme.
+          </p>
+          <p facs="#facs_2_r_39">
+            <lb facs="#facs_2_r_39" n="N001" />« La contradiction tragique »
+          </p>
+          <p facs="#facs_2_r_40">
+            <lb facs="#facs_2_r_40" n="N001" />» La résultat est facile à deviner : la contradiction entre la théorie du socialisme et la pratique de la sociologie est une question de la nature et de la société. « La contrainte, l'utopie, la contrainte, l'utopie, l'utopie, l'utopie, l'utopie, l'utopie, l'utopie, l'utopie, l'utopie, l'utopie, l'utopie, l'utopie, l'utopie, l'utopie, l'
+          </p>
+        </div>
+        <div n="2">
+          <p facs="#facs_2_r_48">
+            <lb facs="#facs_2_r_48" n="N001" />UNE REVUE MENSUELLE D'INFORMATIONS TECHNIQUES ET ECONOMIQUES DE LA METALLURGIE ROMANDE
+          </p>
+          <p facs="#facs_2_r_49">
+            <lb facs="#facs_2_r_49" n="N001" /><persName ref="GND:unknown">Emile M. LAMBELLET</persName> Editeur 1232 <orgName ref="GND:unknown">Cardignon-Genève</orgName>
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_51">
+            <lb facs="#facs_2_r_51" n="N001" />EN MARGE D'UN RAPPORT D'AMNESTY INTERNATIONAL (II)
+          </head>
+          <p facs="#facs_2_r_52">
+            <lb facs="#facs_2_r_52" n="N001" /><title type="sub">« <persName ref="GND:unknown">Pliouchtch</persName> n'a pas violé les lois de l'<orgName ref="GND:unknown">Union soviétique</orgName> simplement, devant l'injustice, il ne pouvait se taire »</title>
+          </p>
+          <p facs="#facs_2_r_53">
+            <lb facs="#facs_2_r_53" n="N001" />Je n'ai jamais annoncé l'amitié <persName ref="GND:unknown">Pliouchtch</persName>. Il n'a vu de lui manier photographié. Mais il faut donc s'achever l'examen de nous représentés qui est cet homme, car ce n'est jamais un homme désirait que l'on détruit, c'est toujours cet homme, unique et irremplaçable. Voici donc quelques témoignages. (Voir aussi nos éditions du 10 novembre.)
+          </p>
+          <p facs="#facs_2_r_54">
+            <lb facs="#facs_2_r_54" n="N001" />Pour <persName ref="GND:118815679">Jeanne Hersch</persName>
+          </p>
+          <p>
+            <lb facs="#facs_2_r_55" n="N001" />La <orgName ref="GND:unknown">Groupe d'injustice pour la défense des droits de l'homme</orgName> est <orgName ref="GND:unknown">USSB</orgName> (exil). « De bonnes d'une haute culture artificielle et d'une grand-ambition d'être, un methiocalisme qui s'intéresse aux politiques et la sociologie est déclaré malediment et national dans une clinique psychologique d'un type spécial... Dis l'âge de 18 ans, comme jume d'aubert, il s'était engagé sur le chemin qui devait le conduire là où il est. Dis l'âge de 17 ou 18 ans, qu'on a bien la femme et la conscience qui conviendrait à sa nature et à l'image qu'il se faisait d'un futur savant, à l'étude de la philosophie, particulièrement celle des œuvres s'excluent du marxisme.
+          </p>
+          <p>
+            <lb facs="#facs_2_r_56" n="N001" />« Une preuve expérimentale »
+          </p>
+          <p>
+            <lb facs="#facs_2_r_57" n="N001" />C'est maintenant un récit dont montrent <persName ref="GND:unknown">Pliouchtch</persName> « en arte », et je peux m'exprimer ainsi. Tout son caractère, la fois memiliki-que lui entre le passé et le vécu, ce préception de réalisations de défense « du régime soviétique » se nourrit dans cette histoire.
+          </p>
+          <p>
+            <lb facs="#facs_2_r_58" n="N001" />On avait arrêté, en sa présence, une ardeuse, son ami de <orgName ref="GND:unknown">Kharkov</orgName>, <persName ref="GND:unknown">Levita</persName>, <persName ref="GND:unknown">Ekrem</persName> ouen l'impression de cet événement, il la connoit à ainsi : « Cher nous, quand on se vit quand on se vit, on se vit quand on se vit quand on se vit, on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand on se vit quand
+          </p>
+          <p>
+            <lb facs="#facs_2_r_59" n="N001" />Il est en train de se faire en train de se faire en train de se faire en train de se faire en train de se faire en train de se faire en train de se faire en train de se faire en
+          </p>
+        </div>
+      </div>
+</body></text>
+</TEI>

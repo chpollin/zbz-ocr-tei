@@ -1,0 +1,28 @@
+{
+  "doc_id": "110",
+  "page": 250,
+  "image_width": 869,
+  "image_height": 1317,
+  "num_regions": 1,
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 36.7,
+        "y_pct": 23.7,
+        "w_pct": 29.7,
+        "h_pct": 9.2
+      }
+    }
+  ],
+  "elapsed_seconds": 2.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini-detect",
+  "page_orientation": "portrait",
+  "num_columns": 1,
+  "label_counts": {
+    "text": 1
+  }
+}

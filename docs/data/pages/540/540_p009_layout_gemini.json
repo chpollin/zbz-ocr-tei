@@ -1,0 +1,146 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE",
+      "bbox": {
+        "x_pct": 328.0,
+        "y_pct": 147.0,
+        "w_pct": 340.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Header wrongly labeled as text"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "237",
+      "bbox": {
+        "x_pct": 807.0,
+        "y_pct": 145.0,
+        "w_pct": 38.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Page number wrongly labeled as text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sens en postulant en histoire un déterminisme qui l'assimile à la nature. Ces oscillations peuvent engendrer des formes mixtes, des combinaisons dialectiques, comme par exemple dans le marxisme, la coïncidence mystérieuse du déterminisme et de l'exigence humaine de justice.",
+      "bbox": {
+        "x_pct": 15.031,
+        "y_pct": 17.254,
+        "w_pct": 69.293,
+        "h_pct": 8.801
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La visée d'un sens me paraît nécessaire à la fois à l'histoire et à la recherche historique, à la manière d'une Idée, au sens kantien. Mais il faut reconnaître en même temps que le sens continue à dépendre de l'histoire et de la connaissance qu'en prend l'historien. Il reste donc en suspens, aussi longtemps que dure — que passe — le temps.",
+      "bbox": {
+        "x_pct": 14.723,
+        "y_pct": 26.029,
+        "w_pct": 69.703,
+        "h_pct": 10.442
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "B. Nature et conditions de la connaissance historique",
+      "bbox": {
+        "x_pct": 22.408,
+        "y_pct": 38.194,
+        "w_pct": 54.467,
+        "h_pct": 2.102
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ayant ainsi tenté de répondre sommairement aux questions que nous ont posées les organisateurs de nos entretiens, je m'aperçois que je n'ai encore presque rien dit de ce qui me paraît essentiel concernant la connaissance historique. A quoi cela tient-il? Peut-être au fait que dans l'expression « connaissance historique », le premier mot prime, suggérant ainsi qu'on peut s'interroger sur l'histoire de la même manière que sur d'autres domaines de la science. Et sans doute fallait-il dire « connaissance historique » pour éviter l'équivoque du terme « histoire ». Arrêtons-nous pourtant sur cette équivoque elle-même.",
+      "bbox": {
+        "x_pct": 14.447,
+        "y_pct": 40.865,
+        "w_pct": 69.775,
+        "h_pct": 17.235
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "I. Double sens du mot « histoire »",
+      "bbox": {
+        "x_pct": 17.52,
+        "y_pct": 60.019,
+        "w_pct": 32.715,
+        "h_pct": 1.578
+      },
+      "changed": true,
+      "change_reason": "Corrected text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le terme d'« histoire » désigne à la fois le cours vécu des événements et le récit organisateur et explicatif qu'en font les historiens. Il y a, me semble-t-il, de profondes raisons à cette dénomination commune, qui ont empêché la formation d'un mot en logie, par exemple: historiologie ou science de l'histoire.",
+      "bbox": {
+        "x_pct": 14.416,
+        "y_pct": 61.913,
+        "w_pct": 69.57,
+        "h_pct": 9.003
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1. Interdépendance de l'histoire vécue et de l'histoire-récit. D'abord il est clair que l'histoire vécue ne peut commencer qu'avec l'histoire racontée. Des primitifs peuvent avoir des comportements collectifs, affronter des hasards collectifs, dont des historiens pourraient raconter l'histoire. Mais tant que leur organisation",
+      "bbox": {
+        "x_pct": 14.139,
+        "y_pct": 71.926,
+        "w_pct": 69.744,
+        "h_pct": 8.737
+      },
+      "changed": true,
+      "change_reason": "Changed label from list_item to text as it's a paragraph starting with a numbering, and corrected truncated text content"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 319.0,
+        "y_pct": 925.0,
+        "w_pct": 361.0,
+        "h_pct": 35.0
+      },
+      "changed": true,
+      "change_reason": "Footer information identified"
+    }
+  ],
+  "score": 65,
+  "num_corrections": 7,
+  "issues": [
+    "Several text blocks were truncated in the provided layout JSON",
+    "Missing page header/footer detection in original JSON",
+    "Section headers were inconsistently labeled",
+    "List item label used for standard paragraph with numbering"
+  ],
+  "doc_id": "540",
+  "page": 9,
+  "elapsed_seconds": 7.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

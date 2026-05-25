@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "VII. Mitarbeiter dieses Bandes",
+      "bbox": {
+        "x_pct": 11.295,
+        "y_pct": 6.0,
+        "w_pct": 77.042,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index/paragraph to section_header/zb_heading as this is the title of the section."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prof. Dr. Fritz Linder, ehem. Direktor der Chirurgischen Universitätsklinik, Waldweg 25, 6900 Heidelberg\n\nProf. Dr. Emilio Lledó, O’Donnell 19, Madrid 9\n\nProf. Dr. Peter Anselm Riedl, Kunsthistorisches Institut der Universität Heidelberg, Seminarstraße 4, 6900 Heidelberg\n\nProf. Paul Ricœur, 19, Rue de Antony, F-92 Châtenay-Malabry\n\nProf. Dr. Adolf Martin Ritter, Theologisches Seminar der Universität Heidelberg, Kisselgasse 4, 6900 Heidelberg\n\nProf. Dr. Christopher Smith, 123 Market St., Apt. I, Portsmouth, NH 03801, USA\n\nProf. Dr. Martin Staehelin, Direktor des Musikwissenschaftlichen Seminars der Georg-August-Universität, Kurze Geismarstraße 1, 3400 Göttingen\n\nProf. Dr. Volker Storch, Zoologisches Institut der Universität Heidelberg, Im Neuenheimer Feld 230, 6900 Heidelberg\n\nProf. Dr. Dr. Hubertus Tellenbach, Emeritus für Psychiatrie der Universität Heidelberg, Runge-Straße 43, 8000 München 71\n\nProf. Dr. Valerio Verra, Via Flaminia 701, I-00191 Roma\n\nProf. Dr. Reiner Wiehl, Direktor des Philosophischen Seminars der Universität Heidelberg, Marsiliusplatz 1, 6900 Heidelberg\n\nDipl.-Bibl. Hiltraud Zell, Greifstraße 6, 6900 Heidelberg",
+      "bbox": {
+        "x_pct": 11.295,
+        "y_pct": 16.0,
+        "w_pct": 77.042,
+        "h_pct": 51.804
+      },
+      "changed": true,
+      "change_reason": "Corrected the bounding box logic to represent the actual paragraph content, excluding the header."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Initial parsing lumped header and content into one large block.",
+    "Bbox needs to be split accurately."
+  ],
+  "doc_id": "2730",
+  "page": 8,
+  "elapsed_seconds": 3.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

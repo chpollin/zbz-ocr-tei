@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "hommes sont toujours en désaccord. Et c’est tout à fait normal ; cela tient à leur nature et à leur liberté. Les hommes étant en désaccord, un signe — et je dirais le signe le plus sûr — qu’on vit en démocratie, c’est qu’une opposition puisse se manifester et se faire jour. Encore maintenant, quand on me parle des dictatures d’Amérique latine — et j’y suis allée, et j’en ai vu la terrible injustice économique et sociale — si je constate qu’il y a des manifestations, des marches dans la rue, je me dit qu’il s’agit d’un régime un peu moins totalitaire qu’un autre où il n’y en a jamais, ou du moins où l’on n’en entend jamais parler. Que l’opposition se manifeste, voilà un critère extrêmement important.",
+      "bbox": {
+        "x_pct": 16.325,
+        "y_pct": 4.169,
+        "w_pct": 79.646,
+        "h_pct": 20.105
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'idée centrale de justification de la démocratie par-delà le rejet des superstitions relatives à ce qui fonde sa légitimité. La démocratie se justifie en effet, d’une part, comme instrument de justice sociale ; de l’autre, de par son rattachement aux droits de l’homme, eux-mêmes enracinés dans la vocation de liberté responsable qui est celle de tout être humain.",
+      "bbox": {
+        "x_pct": 16.361,
+        "y_pct": 23.573,
+        "w_pct": 79.524,
+        "h_pct": 12.613
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "A.D. — Pourquoi a-t-on pu qualifier cet ouvrage ou une partie de cet ouvrage d'« essai de reconstruction de la doctrine socialiste » ?",
+      "bbox": {
+        "x_pct": 27.143,
+        "y_pct": 36.452,
+        "w_pct": 68.828,
+        "h_pct": 2.476
+      },
+      "changed": true,
+      "change_reason": "Relabeled to section_header and corrected OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "1.Il Parce que la dernière partie du livre essaie d’exercer une critique à l’égard du socialisme d’alors. Ce que je critiquais dans une certaine aile des partis socialistes d’alors, c’était une sorte d’usure de la foi démocratique. Ensuite, une tendance à donner une importance à peu près exclusive aux problèmes d’ordre économique et, dans le domaine économique, une façon de poser les problèmes qui me paraissait déjà à cette époque légèrement dépassée par les événements. Il me semblait, et il me semble encore, que dans le vocabulaire, dans les arguments, dans les catégories, dans les passions aussi qu’on met en jeu, on se réfère à une situation de « lutte des classes » sous des formes dépassées. En tout cas avec un aiguillon que cette lutte n’a plus, et sans justifier assez la revendication socialiste par l’exigence humaniste.",
+      "bbox": {
+        "x_pct": 16.203,
+        "y_pct": 40.194,
+        "w_pct": 79.78,
+        "h_pct": 24.379
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "116",
+      "bbox": {
+        "x_pct": 16.325,
+        "y_pct": 93.637,
+        "w_pct": 3.42,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR content was severely garbled.",
+    "A.D. header was labeled as normal text.",
+    "Page number at bottom was labeled as normal text.",
+    "Missing text regions for the rest of the page (bottom paragraph starting A.D.)."
+  ],
+  "doc_id": "2330",
+  "page": 120,
+  "elapsed_seconds": 6.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

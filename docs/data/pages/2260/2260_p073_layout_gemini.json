@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faut pas confondre les fêtes avec les carnavals, les orgies ou les bacchanales. Ceux-ci ne sont que des défoulements, plus ou moins sauvages, au cours desquels explosent les forces que la culture n’a su ni utiliser, ni mettre en forme, ni dompter, mais seulement, par le pouvoir et la menace, maintenir violemment au repos. Ces psychodrames des masses servent de thérapie sociale. Même ornés de musique, de masques, de poésie, d’imagination, ils ne sont pas des œuvres d’art – ils ne sont pas des fêtes. Leur violence peut nous submerger, mais il leur manque la paix qui échappe au temps, le recueillement préalable, la préparation lourde d’attente, l’accomplissement rêveur et pourtant vigilant. Puissance et passion y sont prose, soupirs, cris, syllabes balbutiées de la vie primitive – non pas poésie.",
+      "bbox": {
+        "x_pct": 9.818,
+        "y_pct": 11.186,
+        "w_pct": 66.182,
+        "h_pct": 52.876
+      },
+      "changed": true,
+      "change_reason": "The initial text extraction was incomplete and fragmented; provided full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans certaines fêtes, les symboles intemporels se saisissent des hommes, qui les animent alors de leur force vive et de leur sang. Ce",
+      "bbox": {
+        "x_pct": 10.024,
+        "y_pct": 69.975,
+        "w_pct": 65.527,
+        "h_pct": 8.89
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and line breaks to reflect the actual content of the paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "73",
+      "bbox": {
+        "x_pct": 71.868,
+        "y_pct": 82.268,
+        "w_pct": 2.457,
+        "h_pct": 1.704
+      },
+      "changed": true,
+      "change_reason": "Isolated page number identified as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction failed to capture the full content of the paragraphs.",
+    "Page number at the bottom was missing from the initial region list.",
+    "Formatting artifacts in text extraction (hyphenation issues)."
+  ],
+  "doc_id": "2260",
+  "page": 73,
+  "elapsed_seconds": 4.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de plénitude ou rongeur au service du néant, il nous défie, se contredit, nie notre condition et ses données les plus évidentes.",
+      "bbox": {
+        "x_pct": 20.387,
+        "y_pct": 13.622,
+        "w_pct": 59.444,
+        "h_pct": 3.404
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A la vérité, il semble qu'un interdit pèse sur nous : nous ne devons pas, sans doute, le considérer de front, car il cesse d'être ce qu'il est sous notre regard ou devant la visée de notre esprit. Il paraît fausser moins les problèmes et s'altérer moins lui-même lorsqu'il se glisse en eux, si l'on peut dire, latéralement. Quand nous nous posons tel ou tel problème qui n'est pas celui du temps, le temps est en lui et nous pouvons en quelque sorte l'apercevoir de biais, sans en avoir l'air, sans tourner la tête, et cela d'autant mieux que nous visons plus fortement autre chose. Dans ce sens, le progrès dont nous parlions, dont les modernes sont si fiers, cette acquisition du sens du temps, du sens de l'histoire, devient peut-être douteux et même suspect. Le temps exprime cette fragilité parfaite, ce juste équilibre d'être et de manque qui fait la condition humaine. Il est « impliqué » dans tous nos problèmes, mais comme nous le disions, de biais. Et par là il fait obstacle à la phénoménologie (Heidegger, par exemple, ne l'a pas décrit directement, mais à travers une ruse : l'être-pour-la-mort), il reste irréductible et inconnu.",
+      "bbox": {
+        "x_pct": 20.25,
+        "y_pct": 17.031,
+        "w_pct": 59.549,
+        "h_pct": 25.816
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'exigence morale, il est vrai, n'existe que lorsque le temps reste irréductible ; pour peu qu'il s'abolisse au sein de l'éternel, l'éternel devient l'alibi qui l'annule. Elle est vouée au l'immédiat, sur lequel le présent pèse de tout son poids ; mais il lui faut aussi la perspective étendue du temps plus lointain, passé et futur ; et il lui faut encore une référence à un transcendant éternel, sans lequel le temps même se fige en un instant ou une somme et cesse de s'écouler. Ce transcendant éternel, dira-t-on, reste inconnu. Certes. Mais l'expression qui le désigne n'est pourtant pas tout à fait vide de sens. Il reste inconnu — mais, à vrai dire, pas beaucoup plus inconnu que ne l'est la temporalité elle-même, à laquelle il est dialectiquement lié. Comme tant de données fondamentales de la condition humaine, ces deux-là se contestent et se conditionnent mutuellement, et toutes deux ensemble conditionnent l'exigence morale.",
+      "bbox": {
+        "x_pct": 20.282,
+        "y_pct": 57.334,
+        "w_pct": 59.468,
+        "h_pct": 20.961
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/OCR-corrupted text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH.",
+      "bbox": {
+        "x_pct": 57.752,
+        "y_pct": 79.807,
+        "w_pct": 14.311,
+        "h_pct": 1.372
+      },
+      "changed": true,
+      "change_reason": "Fixed author signature text. Note: This is an author signature at the end of the text block."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction contained significant OCR errors in all paragraphs.",
+    "Author signature labeled as text, keeping as text but noted as signature."
+  ],
+  "doc_id": "310",
+  "page": 4,
+  "elapsed_seconds": 4.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

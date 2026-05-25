@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "die nur das Eingreifen des Prinzen von Oranien verhinderte. Und worum ging es im «Theologisch-politischen Traktat»? Es ging um eine säuberliche Trennung von Wissen und Glauben, von Philosophie und Theologie; es ging um eine historisch-philologische Bibelekritik, um den Nachweis, daß die Schriften des «Alten Testaments» nicht von jenen Verfassern herrühren konnten, denen sie zugeschrieben wurden. Damit freilich wurde der Offenbarungscharakter der Bibel hinfällig, zumindest in ihrem Gesamtzusammenhange. Dabei kam der deus sive natura im «Theologisch-politischen Traktat» gar nicht einmal zur Sprache. Wie auch immer die Interpretation dieses spinozistischen Gottesbegriffes vorgenommen worden sein mag, eines steht fest: deus sive natura ist weder persönlicher Gott noch Gott als Geist. Das ist letzten Endes auch keine Vergöttlichung der Natur (wie dies als Ausdeutung im Begriff des Pantheismus zum Ausdruck gebracht werden sollte), sondern vielmehr die Ersetzung des Gottesbegriffes durch etwas anderes, rational verständlich zu Machendes.",
+      "bbox": {
+        "x_pct": 14.746,
+        "y_pct": 8.587,
+        "w_pct": 65.536,
+        "h_pct": 31.43
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/typo-ridden OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mag die Offenbarung was auch immer für ein Erlebnis sein (z. B. bei Moses, bei Christus, bei Mohammed), wer ihrer nicht teilhaftig geworden ist (wie z. B. Kant), vermag sich darunter nichts Rechtes vorzustellen. Vom Standpunkt des aus der Unmündigkeit sich befreit habenden Individuums formulierte Kant seine drei berühmten Fragen: Was kann ich wissen? Was soll ich tun? Was darf ich hoffen?» Man horche auf diesen Ton: «Ich» in bezug auf «Gott», von dem nichts zu wissen ist! Das läuft selbstverständlich nicht aufeine Vergöttlichung des Menschen hinaus. Nicht einmal dann später bei Feuerbach und seiner These: Nicht Gott schuf den Menschen nach seinem Bilde, sondern der Mensch erschuf Gott nach seinem Bilde. Keiner der bürgerlichen Atheisten vermöchte einzusehen, inwiefern der Mensch in irgendeine ursächliche Beziehung zum Weltall gebracht werden könnte, wohl aber würde er die vermeintliche Gotteskindschaft des Menschen für eine Vergöttlichung des Menschen halten.",
+      "bbox": {
+        "x_pct": 14.746,
+        "y_pct": 40.561,
+        "w_pct": 65.536,
+        "h_pct": 28.526
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph block that was not captured by initial OCR extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das waren einige Blinklichter in eine historisch vergangene geistische Landschaft. Sie umgab Marx, als er aufwuchs. Damit soll gesagt sein, daß Marx den Atheismus nicht zu erfinden brauchte. Für ihn war der Atheismus eine Erbschaft aus der Entwicklung der vorhergegangenen bürgerlichen Philosophie. Wenn Marx (1843/44) die Kritik der Religion für Deutschland als im wesentlichen beendet ansah, so meinte er damit die theoretisch vollzogene Kritik der Religion, wie sie damals vorlag. Sie wurde für ihn zu einer theoretischen",
+      "bbox": {
+        "x_pct": 14.907,
+        "y_pct": 69.573,
+        "w_pct": 65.536,
+        "h_pct": 16.222
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/typo-ridden OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": {
+        "x_pct": 78.851,
+        "y_pct": 87.798,
+        "w_pct": 1.258,
+        "h_pct": 1.954
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR missed one complete paragraph block in the middle of the page.",
+    "OCR text content for paragraphs was severely truncated and contained transcription errors."
+  ],
+  "doc_id": "3100",
+  "page": 4,
+  "elapsed_seconds": 5.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

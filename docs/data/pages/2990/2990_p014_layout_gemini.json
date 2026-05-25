@@ -1,0 +1,61 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Menschsein, Grenzen und Widersprüche 21",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The text at the top contains the page number and running header, which should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "schluß, bedeutet, zu forschen, zu suchen, zu üben, damit ich besser weiß, wer ich bin, was ich glaube, was ich entscheide. So ist es, und das ist die philosophische Klarheit.",
+      "bbox": {
+        "x_pct": 6.785,
+        "y_pct": 7.344,
+        "w_pct": 80.049,
+        "h_pct": 6.283
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun habe ich gesagt, daß ich heute zu Ihnen über das Menschsein, über die Menschen, sprechen will. Ich habe es getan, wenn auch nicht direkt. So entdecken die Menschen durch Philosophie die Grenzen und Widersprüche ihres Selbstseins. Sie haben vielleicht jetzt am Anfang noch keine Ahnung, wie weit das geht: Was ist das, ein Mensch zu sein? Zunächst einmal heißt das, der zoologischen Gattung Mensch anzugehören. Zu wissen, daß man zur zoologischen Gattung Mensch gehört, ist etwas ganz Wesentliches. Das bedeutet, daß alle Menschen auch Tiere sind. Viele unserer Zeitgenossen neigen dazu, das zu vergessen. Unsere moderne Welt ist so bequem, daß man eigentlich leicht vergessen kann, daß man einen Körper hat. Ist für viele so leicht, Licht zu bekommen, Wärme oder Essen. Da tut man so, hätte man alle diese Bedürfnisse gar nicht. Sie sind sozusagen alle schneller befriedigt, als man sie empfindet in unserer westlichen Welt. Dann tut man so, als wäre man ein Engel, d.h. als wäre man körperlos. Ich glaube, es ist bequemer oder leichter, ein Engel zu sein als ein Mensch, gerade weil der Mensch einen Körper hat. Diese Körperlichkeit, die kommt dazwischen. Aber er ist nicht nur ein Tier, er hat nicht nur einen Körper; er hat ihn eben auch. Das schafft sehr viele Schwierigkeiten, über die wir in den nächsten Vorlesungen noch sprechen werden. Aber das entdeckt man durch die Klarheit der Fragestellung. Man merkt gleich, daß es, obgleich wir alle einen Körper haben, wie jedes Tier einen Körper hat, doch einen Unterschied gibt: Wir wissen es, während die anderen Gattungen nicht wissen, daß sie einen Körper haben. Sie sind ein Körper, und das ist etwas ganz anderes, als zu wissen, daß man einen Körper hat.",
+      "bbox": {
+        "x_pct": 6.748,
+        "y_pct": 13.347,
+        "w_pct": 80.086,
+        "h_pct": 47.566
+      },
+      "changed": true,
+      "change_reason": "The previous text transcription was truncated and incomplete."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist nicht verboten, nach der Vorlesung noch darüber nachzudenken.",
+      "bbox": {
+        "x_pct": 10.429,
+        "y_pct": 60.419,
+        "w_pct": 75.865,
+        "h_pct": 2.303
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Page number/header was included as text in the original input.",
+    "The main body paragraph transcription was extremely inaccurate and incomplete.",
+    "The page header (including page number 21) was detected as a body text paragraph in original annotations."
+  ],
+  "doc_id": "2990",
+  "page": 14,
+  "elapsed_seconds": 5.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

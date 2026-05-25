@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'<span></span>éterminations singulières lourdes de conséquences, est une situa-\ntion-limite. La mort en est une autre, à laquelle nul n'échappe. De\nmême la souffrance : si heureuse que paraisse la vie de l'âtre le plus\nprivilégié, celui-ci n'échappe pas à la condition temporelle, ce qui\nsignifie que tout ce qu'il aime, tout ce dont il jouit, sans exception,\nporte en soi le sceau de l'éphémère et se trouve condamné à périr.",
+      "bbox": {
+        "x_pct": 8.089,
+        "y_pct": 5.398,
+        "w_pct": 83.957,
+        "h_pct": 12.142
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and formatting artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De telles « situations-limites » ne sont pas ainsi nommées,\ncomme on pourrait le croire, parce qu'étant inéluctables elles limi-\ntent la liberté. Non, elles sont loin chez Jaspers d'avoir une fonction\npurement négative et de faire échec à l'existence possible en lui im-\nposant une lourde passivité. Au contraire : l'existence recherche\nl'expérience des situations-limites, elle s'efforce de l'approfondir\njusqu'à lui trouver un sens qui la rende elle-même à son authen-\nticité. En effet, l'existence ne saurait s'actualiser dans l'abstraction\nvide d'un milieu indéterminé ou dans un moment quelconque du\ntemps. C'est en situation, et par conséquent limitée par toutes les\ndéterminations du concret et de l'historique, que l'existence est pos-\nsible. Et c'est en prenant la conscience la plus claire de ce qu'elle ne\npeut pas changer, c'est contre la résistance des situations-limites et\ngrâce à elles, en reconnaissant en elles ses conditions primordiales,\nque la liberté peut s'accomplir.",
+      "bbox": {
+        "x_pct": 7.9,
+        "y_pct": 18.937,
+        "w_pct": 84.336,
+        "h_pct": 29.049
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to reflect full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi les prétentions à une liberté totale, à une maîtrise totale de\nla vie et de ses conditions, ne sont que des fuites devant les condi-\ntions réelles de l'existence possible, celles qui permettent de faire de\nvrais choix et d'assumer de vraies responsabilités.",
+      "bbox": {
+        "x_pct": 7.995,
+        "y_pct": 47.326,
+        "w_pct": 84.051,
+        "h_pct": 7.969
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En prétendant à une liberté totale dans la condition humaine,\nl'étre humain, par sa démesure, escamote les vrais possibles d'une\nliberté que les situations-limites restreignent et structurent. Il incite\nà fuir la liberté réelle et concrète dans la fiction malléable d'une\nliberté sans bornes. L'infini ici engloutit l'absolu. Car l'homme ne\nrencontre l'absolu qu'à travers les situations-limites, hic et nunc.",
+      "bbox": {
+        "x_pct": 7.9,
+        "y_pct": 54.756,
+        "w_pct": 84.201,
+        "h_pct": 11.885
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il importe de bien saisir, d'une façon générale, l'importance,\npour Jaspers, de la notion de « limite ». Elle est pour lui décisive.\nLorsqu'il parle de limite, il ne s'agit jamais d'une limite provisoire,\nsusceptible d'étre franchie. Le terme a pour lui valeur définitive :\ntoute limite qui mérite ce nom est essentielle à la condition hu-\nmaine, quélle détermine et structure ; elle est par définition infran-\nchissable. En revanche, toute limite parle de ce dont elle sépare, de\nce qui est au delà d'elle. Elle n'est limite que parce que tout n'est\npas en deçà. Davantage : elle n'est limite que pour un sujet qui cher-\nche à la franchir, qui tend à ce qui est au-delà. C'est pourquoi elle\nn'est pas une notion statique, descriptive d'un espace objectif. Elle\ndésigne un obstacle rencontré par un sujet, et elle n'a son véritable",
+      "bbox": {
+        "x_pct": 7.764,
+        "y_pct": 66.213,
+        "w_pct": 84.106,
+        "h_pct": 23.333
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "25",
+      "bbox": {
+        "x_pct": 88.586,
+        "y_pct": 91.139,
+        "w_pct": 1.748,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR content for paragraphs was fragmented and inaccurate.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "1520",
+  "page": 31,
+  "elapsed_seconds": 9.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,58 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "64",
+      "bbox": {
+        "x_pct": 20.0,
+        "y_pct": 2.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 67.8,
+        "y_pct": 2.0,
+        "w_pct": 21.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page running header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "conviendra que la { malière donnée \" si elle existe; est bien diflicile à déterminer. Voyons dabord ",
+      "bbox": {
+        "x_pct": 19.908,
+        "y_pct": 13.452,
+        "w_pct": 68.964,
+        "h_pct": 61.533
+      },
+      "changed": true,
+      "change_reason": "Corrected zbz_tag and label mapping for standard body text paragraph"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Fixed missing page header/footer metadata",
+    "Corrected zbz_tag mapping"
+  ],
+  "doc_id": "110",
+  "page": 66,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected zbz_tag and label mapping for standard body text paragraph": 1,
+    "ADDED": 2
+  }
+}

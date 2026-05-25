@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Vom Drang zu den Wissenschaften",
+      "bbox": {
+        "x_pct": 79.583,
+        "y_pct": 25.132,
+        "w_pct": 4.141,
+        "h_pct": 25.132
+      },
+      "changed": true,
+      "change_reason": "Correctly identified running header text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "57",
+      "bbox": {
+        "x_pct": 84.816,
+        "y_pct": 25.132,
+        "w_pct": 3.067,
+        "h_pct": 25.132
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nen was wir kennen. Es trennt uns davon; und deshalb kann es nicht das Letzte sein.",
+      "bbox": {
+        "x_pct": 8.307,
+        "y_pct": 5.921,
+        "w_pct": 79.583,
+        "h_pct": 3.808
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "man etwas jenseits dessen, was man weiß vermuten muß, weil man sonst noch nicht einmal denken kann; auch nicht, daß man etwas unter oder über oder jenseits dessen vermuten muß, sondern daß in die Wissenschaft selbst, in die Schritte, die der Wissenschaftler tut, sich Faktoren und Elemente mischen, von denen er keine Rechenschaft abgeben könnte. Um von der Welt, um von der Wirklichkeit Rechenschaft abzugeben, muß das Denken zu dem greifen, wovon es keine Rechenschaft abgeben könnte; denn wenn es darüber Rechenschaft abgeben kann, würde es wieder etwas heranziehen, das es davon trennen würde. Es ist wie ein Gewinnen, das trennt. Man gewinnt etwas, was durch den Gewinn von einem getrennt wird, und das kann nicht anders sein. Das ist vielleicht die Tatsache, die es erklärt, warum in der neueren Physik so erstaunliche Dinge vor sich gegangen sind. So in der Atomphysik zum Beispiel, als man zu einem wissenschaftlichen Verständnis von Nicht-Determiniertheit gekommen ist, als man dazu gekommen ist, zwei einander widersprechende Erklärungen zu haben, von denen man sagt, daß beide wahr sind. Daß man zu solch erstaunlichen Resultaten gekommen ist, spiegelt wahrscheinlich im Gewußten die Umstände des Forschens beim Menschen wider. Vielleicht erkennt man gerade in dieser Widerspiegelung das, was man unterwegs getan hat, um es zu entdecken.",
+      "bbox": {
+        "x_pct": 7.975,
+        "y_pct": 9.868,
+        "w_pct": 79.914,
+        "h_pct": 39.498
+      },
+      "changed": true,
+      "change_reason": "Text incomplete in original JSON; corrected content representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte meine eigenen Fragen stellen mit der Absicht, eine These von Jaspers bildhaft darzustellen und zu konkretisieren, nämlich die, daß man gerade nicht das Ganze ergreifen kann, sondern daß uns die Wissenschaften selbst, wenn man darüber nachdenkt, eigentlich nicht zu Besitzern machen, sondern uns enteignen. Wir ergreifen nicht Besitz von dem, was wir wissen, sondern die Art unseres Wissens ist so, daß man am Ende durch das Wissen selbst enteignet wird. Es ist nicht das Ende, es ist nicht das Ganze, es ist nicht das Sein. Das ist, glaube ich, eine Bestätigung der Auffassung von Jaspers, die Sie so vielleicht viel konkreter verstehen können – diese Anti-Totalität, Anti-Ontologie. Es ist keine Ontologie, weil das eine Wissenschaft ist, und eine Wissenschaft kann keine Ontologie sein. Sie kann kein Besitz vom Sein durch das Wissen sein.",
+      "bbox": {
+        "x_pct": 7.89,
+        "y_pct": 49.013,
+        "w_pct": 79.877,
+        "h_pct": 23.791
+      },
+      "changed": true,
+      "change_reason": "Text incomplete in original JSON; corrected content representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Erfahrung des Übergangs von der klassischen zur modernen Physik läßt uns noch Grenzen von einer anderen Art, mit einem anderen Widerstand, ahnen. Ich möchte Ihnen einige Beispiele nennen. Sie wissen, daß der Begriff der Ursache eine sehr große Rolle in der Geschichte der Wissenschaft und überhaupt des Wissens gespielt hat. Sie wissen, daß das eine ganz großen Differenzen zwischen den Menschen gewesen ist, daß die",
+      "bbox": {
+        "x_pct": 7.73,
+        "y_pct": 72.451,
+        "w_pct": 79.914,
+        "h_pct": 12.36
+      },
+      "changed": true,
+      "change_reason": "Text incomplete in original JSON; corrected content representation."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Detected page header/footer as text paragraphs",
+    "Extracted text content was truncated in the original input regions",
+    "Running header 'Vom Drang zu den Wissenschaften' and page number '57' were not correctly tagged as _filter",
+    "Bounding boxes for header/footer were incorrectly defined"
+  ],
+  "doc_id": "2990",
+  "page": 50,
+  "elapsed_seconds": 6.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

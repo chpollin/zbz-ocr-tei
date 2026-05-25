@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "comme vous et moi ne peuvent agir que maintenant . Dieu, lui, agit dans l'éternité. Ce ne sont là que des images, dit-on. Mais prenons-y garde : ce ne sont justement pas des images. Rien au monde n'est plus impossible pour nous que de nous représenter une action éternelle. Bien plus, je dirai ceci : ces textes nous parlent à travers l'impossibilité même qu'ils nous font vivre, l'impossibilité où nous sommes de nous faire des images de ce qu'ils nous racontent. C'est ce qui donne, pour nous, sa transcendance à l'éternité. – Kierkegaard veut dire quelque chose d'analogue, au sujet de l'éternité, lorsqu'il affirme, par exemple, que le Christ, par sa vie et sa mort, est pour tout croyant aussi littéralement contemporain qu'il l'a été pour ses disciples immédiats.",
+      "bbox": {
+        "x_pct": 16.028,
+        "y_pct": 13.925,
+        "w_pct": 57.352,
+        "h_pct": 33.009
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to match the content visible in the provided image region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais prendre encore un autre exemple, qui n'appartient pas à la tradition religieuse, mais au sens que nous donnons généralement, sans trop l'approfondir, à l'histoire et au temps.",
+      "bbox": {
+        "x_pct": 16.239,
+        "y_pct": 46.386,
+        "w_pct": 57.14,
+        "h_pct": 7.032
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and inaccurate OCR text to reflect the full paragraph visible in the region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une certaine époque de l'histoire humaine passe. Elle est passée, elle n'est plus là. Bien des événements n'ont laissé aucune trace, quantité d'êtres humains, de faits, d'actions ont été oubliés. Nous sommes néanmoins tous convaincus que l'histoire s'est accomplie d'une certaine manière déterminée, et non d'une autre ; que des hommes déterminés – et non d'autres – ont vécu comme ils ont vécu.",
+      "bbox": {
+        "x_pct": 16.133,
+        "y_pct": 55.004,
+        "w_pct": 57.246,
+        "h_pct": 17.522
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR artifacts (e.g., '1') to reflect the actual text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "19",
+      "bbox": {
+        "x_pct": 70.3,
+        "y_pct": 75.35,
+        "w_pct": 2.7,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Newly identified page number region, should be filtered out."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction in regions was heavily truncated and contained OCR artifacts.",
+    "Page number '19' was completely ignored in the initial region list.",
+    "OCR for the first paragraph failed to capture the majority of the block's text."
+  ],
+  "doc_id": "2780",
+  "page": 18,
+  "elapsed_seconds": 4.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

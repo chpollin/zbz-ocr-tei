@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "86 IDOLOGIES ET RALIT",
+      "bbox": {
+        "x_pct": 121.0,
+        "y_pct": 74.0,
+        "w_pct": 579.0,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "Header/Page number incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y aurait encore bien des exemples illustrant cette vrit que les idologies qu'on nous propose ne sont pas d'un seul tenant et n'entranent pas d'adhsion totale  tous les lments qui les constituent sur leurs divers plans. Ceux que nous avons vus suffiront sans doute  nous rendre notre libert d'examen et de contestation.",
+      "bbox": {
+        "x_pct": 11.838,
+        "y_pct": 16.07,
+        "w_pct": 85.334,
+        "h_pct": 12.745
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "NON-CONCIDENCE DES FRONTS IDOLOGIQUES RELS AVEC LE DCOUPAGE DES PARTIS POLITIQUES",
+      "bbox": {
+        "x_pct": 12.577,
+        "y_pct": 32.799,
+        "w_pct": 84.359,
+        "h_pct": 4.162
+      },
+      "changed": true,
+      "change_reason": "Section header labeled as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prtendant  une cohrence interne et  une totalit de doctrine dont ils sont en fait incapables, les partis politiques en qui les diverses idologies devraient s'incarner pour avoir prise sur le rel se trouvent lis et maintenus par tout autre chose que par les idologies elles-mmes. Chaque parti devient une sorte d'glise. Il se propose  peine au choix de l'esprit. L'adhsion se fait de pre en fils et finit par aller de soi pour qui se veut fidle  une tradition familiale ou  une classe. La couleur politique est hrditaire, comme la religion. Le parti ne peut plus, ds lors, tre l'organe d'une rvolution inspire par une idologie; il ne sert plus qu' la dfense des intrts d'un clan ou d'une classe. C'est ainsi qu'on verra un parti conservateur rclamer des interventions tatistes et des barrires douanires, ou au contraire exiger la libert du champ conomique et le libre-change, au gr des circonstances et des consquences prvisibles pour tel groupe intress. On verra un parti socialiste exiger le maintien de la souverainet nationale et des protections douanires, au chant de l'Internationale et de la fraternit. On verra les valeurs morales des dmocrates progressistes servir  promouvoir des lois protgeant les intrts de cliques prives. Et je ne parle pas des fascistes et de leurs offensives  populaires  et  pacifistes , ni des communistes rvolts par l'ingrence trangre dans les affaires nationales.",
+      "bbox": {
+        "x_pct": 12.117,
+        "y_pct": 38.948,
+        "w_pct": 85.139,
+        "h_pct": 47.415
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les choses seraient simples si elles ne relevaient que du men-",
+      "bbox": {
+        "x_pct": 12.117,
+        "y_pct": 86.87,
+        "w_pct": 85.139,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing line detected at bottom of image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR output significantly garbled.",
+    "Section header identified as paragraph.",
+    "Page number missing from initial detection.",
+    "Last partial line missing from initial detection."
+  ],
+  "doc_id": "330",
+  "page": 120,
+  "elapsed_seconds": 5.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

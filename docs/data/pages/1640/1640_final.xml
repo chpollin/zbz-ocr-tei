@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Seele und Leib – Geist und Materie</title>
+        <author>Maja Svilar</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1640</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Seele und Leib – Geist und Materie</title>
+          <author>Maja Svilar</author>
+          <date>1979</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:warning L7:ok). 'Alfred' (2x) als persName -- nur Vorname getaggt, ohne Nachname; 'Geist' und 'Psychologie' als bibl in Running Headers/Inhaltsverzeichnis -- Uebertagging</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="865" lry="1280">
+      <zone xml:id="facs_1_r_1" ulx="55" uly="79" lrx="538" lry="133" />
+      <zone xml:id="facs_1_r_2" ulx="187" uly="156" lrx="707" lry="209" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="864" lry="1280">
+      <zone xml:id="facs_2_r_1" ulx="147" uly="34" lrx="723" lry="253" />
+      <zone xml:id="facs_2_r_2" ulx="151" uly="499" lrx="384" lry="581" />
+      <zone xml:id="facs_2_r_3" ulx="148" uly="1046" lrx="581" lry="1136" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="865" lry="1280">
+      <zone xml:id="facs_3_r_1" ulx="159" uly="60" lrx="579" lry="88" />
+      <zone xml:id="facs_3_r_2" ulx="166" uly="117" lrx="602" lry="296" />
+      <zone xml:id="facs_3_r_3" ulx="273" uly="925" lrx="595" lry="1005" />
+      <zone xml:id="facs_3_r_4" ulx="95" uly="1027" lrx="784" lry="1103" />
+      <zone xml:id="facs_3_r_5" ulx="225" uly="1181" lrx="606" lry="1210" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="864" lry="1280">
+      <zone xml:id="facs_4_r_1" ulx="577" uly="1084" lrx="835" lry="1118" />
+      <zone xml:id="facs_4_r_2" ulx="561" uly="1996" lrx="7266" lry="10227" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="864" lry="1280">
+      <zone xml:id="facs_5_r_1" ulx="46" uly="133" lrx="154" lry="162" />
+      <zone xml:id="facs_5_r_2" ulx="47" uly="174" lrx="722" lry="228" />
+      <zone xml:id="facs_5_r_3" ulx="45" uly="265" lrx="175" lry="287" />
+      <zone xml:id="facs_5_r_4" ulx="48" uly="357" lrx="152" lry="379" />
+      <zone xml:id="facs_5_r_5" ulx="47" uly="397" lrx="748" lry="806" />
+      <zone xml:id="facs_5_r_6" ulx="48" uly="823" lrx="749" lry="970" />
+      <zone xml:id="facs_5_r_7" ulx="48" uly="984" lrx="737" lry="1099" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="865" lry="1280">
+      <zone xml:id="facs_6_r_1" ulx="68" uly="152" lrx="769" lry="357" />
+      <zone xml:id="facs_6_r_2" ulx="67" uly="373" lrx="759" lry="519" />
+      <zone xml:id="facs_6_r_3" ulx="68" uly="581" lrx="174" lry="607" />
+      <zone xml:id="facs_6_r_4" ulx="69" uly="622" lrx="768" lry="766" />
+      <zone xml:id="facs_6_r_5" ulx="69" uly="782" lrx="768" lry="866" />
+      <zone xml:id="facs_6_r_6" ulx="70" uly="879" lrx="761" lry="936" />
+      <zone xml:id="facs_6_r_7" ulx="72" uly="953" lrx="750" lry="1062" />
+      <zone xml:id="facs_6_r_8" ulx="72" uly="1079" lrx="741" lry="1104" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="864" lry="1280">
+      <zone xml:id="facs_7_r_1" ulx="54" uly="147" lrx="707" lry="232" />
+      <zone xml:id="facs_7_r_2" ulx="54" uly="248" lrx="735" lry="333" />
+      <zone xml:id="facs_7_r_3" ulx="54" uly="346" lrx="708" lry="433" />
+      <zone xml:id="facs_7_r_4" ulx="54" uly="445" lrx="746" lry="504" />
+      <zone xml:id="facs_7_r_5" ulx="54" uly="546" lrx="754" lry="754" />
+      <zone xml:id="facs_7_r_6" ulx="54" uly="769" lrx="746" lry="914" />
+      <zone xml:id="facs_7_r_7" ulx="54" uly="928" lrx="699" lry="986" />
+      <zone xml:id="facs_7_r_8" ulx="55" uly="998" lrx="727" lry="1083" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="865" lry="1280">
+      <zone xml:id="facs_8_r_1" ulx="68" uly="83" lrx="392" lry="105" />
+      <zone xml:id="facs_8_r_2" ulx="68" uly="143" lrx="757" lry="225" />
+      <zone xml:id="facs_8_r_3" ulx="68" uly="243" lrx="788" lry="479" />
+      <zone xml:id="facs_8_r_4" ulx="70" uly="714" lrx="779" lry="1100" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="864" lry="1280">
+      <zone xml:id="facs_9_r_1" ulx="55" uly="83" lrx="690" lry="105" />
+      <zone xml:id="facs_9_r_2" ulx="56" uly="144" lrx="154" lry="165" />
+      <zone xml:id="facs_9_r_3" ulx="54" uly="184" lrx="764" lry="299" />
+      <zone xml:id="facs_9_r_4" ulx="54" uly="314" lrx="746" lry="607" />
+      <zone xml:id="facs_9_r_5" ulx="53" uly="623" lrx="737" lry="829" />
+      <zone xml:id="facs_9_r_6" ulx="53" uly="894" lrx="138" lry="918" />
+      <zone xml:id="facs_9_r_7" ulx="54" uly="933" lrx="746" lry="1047" />
+      <zone xml:id="facs_9_r_8" ulx="54" uly="1064" lrx="749" lry="1091" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="865" lry="1280">
+      <zone xml:id="facs_10_r_1" ulx="66" uly="80" lrx="457" lry="102" />
+      <zone xml:id="facs_10_r_2" ulx="67" uly="139" lrx="738" lry="285" />
+      <zone xml:id="facs_10_r_3" ulx="68" uly="298" lrx="767" lry="534" />
+      <zone xml:id="facs_10_r_4" ulx="69" uly="548" lrx="766" lry="751" />
+      <zone xml:id="facs_10_r_5" ulx="70" uly="768" lrx="768" lry="825" />
+      <zone xml:id="facs_10_r_6" ulx="70" uly="870" lrx="768" lry="1099" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="864" lry="1280">
+      <zone xml:id="facs_11_r_1" ulx="516" uly="1440" lrx="7526" lry="2562" />
+      <zone xml:id="facs_11_r_2" ulx="509" uly="2762" lrx="7522" lry="3872" />
+      <zone xml:id="facs_11_r_3" ulx="502" uly="4529" lrx="2013" lry="4797" />
+      <zone xml:id="facs_11_r_4" ulx="500" uly="4936" lrx="7577" lry="6696" />
+      <zone xml:id="facs_11_r_5" ulx="489" uly="6859" lrx="7592" lry="9207" />
+      <zone xml:id="facs_11_r_6" ulx="496" uly="9363" lrx="7603" lry="10807" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="865" lry="1280">
+      <zone xml:id="facs_12_r_1" ulx="74" uly="82" lrx="398" lry="104" />
+      <zone xml:id="facs_12_r_2" ulx="74" uly="143" lrx="757" lry="227" />
+      <zone xml:id="facs_12_r_3" ulx="72" uly="241" lrx="774" lry="415" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="speech">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          [an der] <orgName ref="#zbz-o.213">UNIVERSITÄT BERN</orgName>
+        </head>
+        <p facs="#facs_1_r_2">
+          KULTURHISTORISCHE VORLESUNGEN<lb facs="#facs_1_l_2_1" n="N001" />1977/78
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          TA 3562 : 1977/78
+        </p>
+        <p facs="#facs_2_r_2">
+          <bibl ref="#zbz-w.265">Seele und Leib – Geist und Materie</bibl>
+        </p>
+        <p facs="#facs_2_r_3">
+          Herausgegeben von
+        </p>
+        <p>
+          <persName ref="#zbz-p.614">MAJA SVILAR</persName>
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          <orgName ref="#zbz-o.214">PETER LANG</orgName>
+        </p>
+        <p>
+          <placeName ref="#zbz-l.6">Bern</placeName> · <placeName ref="#zbz-l.23">Frankfurt am Main</placeName> · Las Vegas
+        </p>
+        <p>
+          1979
+        </p>
+        <p>
+          2K 79 - 4c, 123
+        </p>
+        <p>
+          Vang
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          CIP-Kurztitelaufnahme der <orgName ref="#zbz-o.48">Deutschen Bibliothek</orgName>
+        </p>
+        <p facs="#facs_3_r_2">
+          <bibl ref="#zbz-w.265">Seele und Leib, Geist und Materie</bibl> / hrsg. von<lb facs="#facs_3_l_2_1" n="N001" /><persName ref="#zbz-p.614">Maja Svilar</persName>. – <placeName ref="#zbz-l.6">Bern</placeName>, <placeName ref="#zbz-l.23">Frankfurt am Main</placeName>, Las Vegas:<lb facs="#facs_3_l_2_2" n="N002" />Lang, 1979.<lb facs="#facs_3_l_2_3" n="N003" />(Kulturhistorische Vorlesungen / <orgName ref="#zbz-o.46">Universität</orgName><lb facs="#facs_3_l_2_4" n="N004" /><placeName ref="#zbz-l.6">Bern</placeName>; 1977/78)<lb facs="#facs_3_l_2_5" n="N005" />ISBN 3-261-04601-5<lb facs="#facs_3_l_2_6" n="N006" />NE: <persName ref="#zbz-p.614">Svilar, Maja</persName> Reemda [Hrsg.]
+        </p>
+        <p facs="#facs_3_r_3">
+          
+        </p>
+        <p facs="#facs_3_r_4">
+          ©<orgName ref="#zbz-o.215">Verlag Peter Lang AG</orgName>, <placeName ref="#zbz-l.6">Bern</placeName> 1979<lb facs="#facs_3_l_4_1" n="N001" />Nachfolger des Verlages<lb facs="#facs_3_l_4_2" n="N002" />der Herbert Lang &amp;amp; Cie AG, <placeName ref="#zbz-l.6">Bern</placeName>
+        </p>
+        <p facs="#facs_3_r_5">
+          Alle Rechte vorbehalten<lb facs="#facs_3_l_5_1" n="N001" />Nachdruck oder Vervielfältigung, auch auszugsweise, in allen Formen wie<lb facs="#facs_3_l_5_2" n="N002" />Mikrofilm, Xerographie, Mikrofiche, Mikrocard, Offset verboten.
+        </p>
+        <p>
+          Druck: <orgName ref="#zbz-o.216">Lang Druck AG</orgName>, <placeName ref="#zbz-l.230">Liebefeld/Bern</placeName><lb facs="#facs_3_l_6_1" n="N001" />6. v. 19
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          5
+        </p>
+        <p facs="#facs_4_r_2">
+          INHALTSVERZEICHNIS
+        </p>
+        <p>
+          Vorwort 7<lb facs="#facs_4_l_3_1" n="N001" /><bibl ref="#zbz-w.15">Geist</bibl> und Körper<lb facs="#facs_4_l_3_2" n="N002" />von Sir <persName ref="#zbz-p.1892">Alfred</persName> Ayer 9<lb facs="#facs_4_l_3_3" n="N003" />Die Seele im Glauben früher Kulturen<lb facs="#facs_4_l_3_4" n="N004" />von Ernst Zbinden 39<lb facs="#facs_4_l_3_5" n="N005" />Die Seele im indischen Denken<lb facs="#facs_4_l_3_6" n="N006" />von Maria <persName ref="#zbz-p.887">Bürgi</persName> 59<lb facs="#facs_4_l_3_7" n="N007" />Die Seele im (Neo-) Platonismus und in der Gnosis<lb facs="#facs_4_l_3_8" n="N008" />von Andreas Graeser 79<lb facs="#facs_4_l_3_9" n="N009" />La problématique de l'âme dans la réalisation politique<lb facs="#facs_4_l_3_10" n="N010" />von <persName ref="#zbz-p.2">Jeanne Hersch</persName> 99<lb facs="#facs_4_l_3_11" n="N011" />Wahrnehmung, Denken, Gedächtnis - Psychische Funktionen<lb facs="#facs_4_l_3_12" n="N012" />"zwischen" <bibl ref="#zbz-w.15">Geist</bibl> und Materie<lb facs="#facs_4_l_3_13" n="N013" />von <persName ref="#zbz-p.1892">Alfred</persName> Lang 107<lb facs="#facs_4_l_3_14" n="N014" />Leib, Seele und <bibl ref="#zbz-w.15">Geist</bibl> in der Medizin<lb facs="#facs_4_l_3_15" n="N015" />von Kenower W. Bash 129<lb facs="#facs_4_l_3_16" n="N016" />Gedanken zum "Leib-Seele-Problem" aus naturwissenschaftlicher Sicht<lb facs="#facs_4_l_3_17" n="N017" />von Hoimar von Ditfurth 171<lb facs="#facs_4_l_3_18" n="N018" />Kreativität beim Tier<lb facs="#facs_4_l_3_19" n="N019" />von Heini Hediger 193<lb facs="#facs_4_l_3_20" n="N020" />Das Menschenbild in der heutigen <bibl ref="#zbz-w.66">Psychologie</bibl><lb facs="#facs_4_l_3_21" n="N021" />von Gion Condrau 217<lb facs="#facs_4_l_3_22" n="N022" />Das Menschenbild in der heutigen Theologie<lb facs="#facs_4_l_3_23" n="N023" />von Hermann Ringeling 233
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          99
+        </p>
+        <p facs="#facs_5_r_2">
+          LA PROBLEMATIQUE DE L'AME ET DU CORPS DANS LA REALISATION POLITIQUE
+        </p>
+        <p facs="#facs_5_r_3">
+          Gekürzte Fassung des frei in deutscher Sprache gehaltenen Vortrags über DIE LEIB-SEELE-PROBLEMATIK IN DER POLITISCHEN VERWIRKLICHUNG
+        </p>
+        <p facs="#facs_5_r_4">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_5_r_5">
+          Corps-âme
+        </p>
+        <p facs="#facs_5_r_6">
+          Le thème traité dans cette série de conférences nous renvoie nécessairement au <placeName ref="#zbz-l.173">jardin d'Eden</placeName> et à cette pomme où <persName ref="#zbz-p.168">Eve</persName> n'a pu s'empêcher de mordre. Le péché original, cette <hi rendition="#i">felix culpa</hi>, comme l'ont qualifié les théologiens, mérite doublement l'épithète de "<hi rendition="#i">felix</hi>", dans les deux sens du mot: faute heureuse, mais surtout faute féconde, faute créatrice, parce que c'est elle qui a vraiment fait surgir l'humain dans la Création, entre le bien et le mal. Le corps n'est pas encore corps, l'âme pas encore âme, avant. Le corps n'est corps, l'âme n'est âme, qu'à partir du moment où s'instaure leur problématique réciproque. C'est alors la naissance du sens, du <hi rendition="#i">faire</hi>, du manque et de la <hi rendition="#i">visée</hi>, la naissance de la mort et du temps, du devenir et de l'<hi rendition="#i">histoire</hi>. Le "monde" même, avant, n'était pas tel qu'il existe en face d'une conscience; il n'avait que l'être insaisissable de ce qu'aucune conscience ne perçoit, celle du dessus des nuages d'avant l'avion, quand nul ne l'avait vu.
+        </p>
+        <p facs="#facs_5_r_7">
+          Problématique réciproque de l'âme et du corps, créatrice, instauratrice, constitutive: l'âme est le sens du corps, mais le corps (incarnation, mise-en-matière) est l'épreuve de l'âme, à travers laquelle celle-ci se prouve et s'éprouve "âme" justement, - et non pas force, énergie, électricité, ou Dieu sait quoi.
+        </p>
+        <p>
+          D'où l'ambiguïté des étiquettes trop faciles, telles que "valeurs spirituelles", par exemple, ou "civilisation matérialiste". Car des valeurs ne sont pas "spirituelles" sans "entrer en matière", et une civilisation qui asservit la matière n'est pas "matérialiste" pour autant.
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          SEELE UND LEIB - GEIST UND MATERIE
+        </p>
+        <p facs="#facs_6_r_2">
+          La problématique corps-âme est indispensable pour que l'être humain soit. Sans elle, il n'est pas. Or elle est toujours menacée par n'importe quelle espèce de monisme, qu'il soit spiritualiste ou matérialiste, parce que le monisme est totalisant. Tout monisme prétend apporter la solution du problème, alors qu'il n'est que le refus de le poser, de l'affronter et de le vivre, offrant une ligne de fuite imaginaire, permettant d'échapper à la fatigue et à la merveille d'être un homme.
+        </p>
+        <p facs="#facs_6_r_3">
+          Corps et âme ne peuvent être ni séparés, ni unifiés. Il s'agit de penser et de vivre dans leur dualisme, dans la polarité où l'un est la tâche de l'autre, et vice-versa, où chacun est le projet et l'épreuve de l'autre. C'est ainsi, à travers cette condition, que l'homme apprend à s'accepter, dans l'exigence réciproque de la pesanteur et de la grâce.
+        </p>
+        <p facs="#facs_6_r_4">
+          Politique
+        </p>
+        <p facs="#facs_6_r_5">
+          Toute politique est une visée incarnative. L'action politique est tendue entre une utopie visée, des valeurs à actualiser dans le temps, une efficacité de l'âme — et la pesanteur du "donné", la lourdeur d'une situation de fait, les rapports de force, les besoins et les urgences qui conditionnent la vie du corps.
+        </p>
+        <p facs="#facs_6_r_6">
+          La racine de la visée incarnative est métapolitique, existentielle. Elle est dans la liberté en quête du meilleur, et, en dernier ressort, dans son exigence d'absolu.
+        </p>
+        <p facs="#facs_6_r_7">
+          L'objet de la visée, "l'utopie", est métapolitique, lui aussi. Il est par nature au-delà de ce que la politique peut actualiser dans le temps.
+        </p>
+        <p facs="#facs_6_r_8">
+          La pesanteur du "donné", les contraintes et les urgences "naturelles" ne sont pas encore politiques. Mais elles sont, au niveau de la politique proprement dite, pour la visée incarnative, à la fois obstacle et condition de réalité.
+        </p>
+        <p>
+          La politique se passe donc entre deux exigences contraires par nature,
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          LA PROBLEMATIQUE DE L'AME ET DU CORPS DANS LA REALISATION POLITIQUE
+        </p>
+        <p facs="#facs_7_r_2">
+          par elles et avec elles. Elle est constituée par une contradiction sans laquelle elle s'abolit et qu'on peut considérer symboliquement comme étant celle de "l'âme" et du "corps".
+        </p>
+        <p facs="#facs_7_r_3">
+          Mais cette condition contradictoire de réalité ne se lit pas seulement dans la politique en général: elle est constitutive pour les "organismes" de l'action politique.
+        </p>
+        <p facs="#facs_7_r_4">
+          Tout organisme politique a pour raison d'être, et donc pour condition d'existence, une visée, c'est-à-dire une exigence rigoureuse, dont l'incarnation comporte des relais approximatifs, à l'infini.
+        </p>
+        <p facs="#facs_7_r_5">
+          Mais en même temps, tout organisme politique, pour fonctionner au service de sa visée, exige d'exister, de persister dans le réel, de renforcer son corps efficace.
+        </p>
+        <p facs="#facs_7_r_6">
+          (Il semble parfois qu'il existe des organismes politiques aux buts limités et au fonctionnement statique ou répétitif. Mais c'est à tort qu'on les appelle "politiques": ils ne sont que techniques, par exemple administratifs. Encore cette immobilité et cette répétition sont-elles plus abstraites que concrètes: en fait l'histoire va, et à cause d'elle, même les fonctionnements les plus techniques en apparence impliquent quelque chose de la contradiction politique.)
+        </p>
+        <p facs="#facs_7_r_7">
+          Que l'on pense ici aux entités nationales, aux États; que l'on pense aux entités sociales, aux organisations professionnelles; que l'on pense même aux entités religieuses, <orgName ref="#zbz-o.71">Églises</orgName> ou sectes. En toutes se combattent et se conditionnent les exigences de la visée et celles de la nécessité de croître et de durer.
+        </p>
+        <p facs="#facs_7_r_8">
+          La meilleure manière d'illustrer ce qui précède, c'est sans doute de prendre pour exemple la vie des partis politiques.
+        </p>
+        <p>
+          En effet, un parti n'est jamais une donnée naturelle. Même s'il recrute ses membres à peu près exclusivement dans telle classe sociale, ou dans telle race, ce qui tient ensemble ses adhérents, ce n'est pas leur ap-
+        </p>
+        <p>
+          101
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          SEELE UND LEIB - GEIST UND MATERIE
+        </p>
+        <p facs="#facs_8_r_2">
+          partenance commune, qui est une donnée sociale ou naturelle, mais bien leur volonté convergente, leur visée semblable, qui s'exprime et se cristallise en un programme destiné à être celui de tous.
+        </p>
+        <p facs="#facs_8_r_3">
+          Or l'une des critiques les plus constantes que l'on adresse aux partis politiques - qu'on s'efforce de discréditer l'un d'eux au profit d'un autre, ou qu'on s'en prenne au système des partis comme tel -, c'est qu'"ils font de l'électoralisme". Faire de l'électoralisme, pour un parti, c'est sacrifier une partie de son programme en vue de plaire à un plus grand nombre d'électeurs ou de recruter un plus grand nombre de membres. A la limite, lorsque la subordination du programme (de la visée) à la force même du parti (à son corps) devient excessive, on parlera de trahison.
+        </p>
+        <p facs="#facs_8_r_4">
+          Mais il n'est que juste de reconnaître que "l'électoralisme" est une préoccupation inévitable et indispensable de tout parti, quel qu'il soit. Comment pourrait-il servir efficacement les finalités dont il tire sa raison d'être s'il perd ses effectifs jusqu'à l'inexistence? Il a nécessairement le devoir de se renforcer, pour exister davantage au service de ses fins. Or les exigences électoralistes et celles de ses fins sont très souvent, au fil des circonstances et de l'histoire, divergentes.
+        </p>
+        <p>
+          Cette condition contradictoire qui est celle des entités politiques se retrouve d'ailleurs dans la situation des individus. On parle un peu vite, me semble-t-il, un peu trop facilement, de "l'égoïsme" des êtres humains. Certes, chacun lutte pour soi et pour ses proches, entrant ainsi en conflit avec autrui. Mais c'est que chaque être humain est mortel, et le sait. Chaque être humain est vulnérable en tous ses points d'existence, et le sait. Chaque être humain sait aussi que ses proches sont mortels et vulnérables, qu'ils ont besoin d'être protégés, donc défendus. Bien plus: tout, absolument tout ce à quoi un être humain peut tenir, tout ce qu'il peut aimer, est vulnérable et destructible. (Sauf Dieu. Mais c'est pourquoi l'amour de Dieu ne ressemble à aucun autre.) Il faut donc comprendre que dans l'homme, ni l'égoïsme, ni l'agressivité ne se laissent séparer du vouloir vivre, du pouvoir de viser et d'agir, et même du pouvoir
+        </p>
+        <p>
+          102
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          LA PROBLEMATIQUE DE L'AME ET DU CORPS DANS LA REALISATION POLITIQUE
+        </p>
+        <p facs="#facs_9_r_2">
+          d'aimer et de défendre les êtres aimés.
+        </p>
+        <p facs="#facs_9_r_3">
+          Encore est-il possible, au niveau individuel, de faire intervenir le sacrifice, la mort à soi. Lorsqu'il s'agit de l'âme seule, la formule célèbre "Stirb und werde!" ("meurs et deviens!"), qui résume de nombreux rites d'initiation, garde tout son sens, et même tous ses sens.
+        </p>
+        <p facs="#facs_9_r_4">
+          Mais non en politique. L'extrême rigueur de l'exigence, au niveau individuel, peut imposer le devenir par la mort, le sacrifice comme absolu. L'extrême rigueur politique, en revanche, maintient nécessairement jusqu'au bout (et il n'y a pas de "bout") la double exigence: celle de la visée, et celle d'être, et d'être fort, pour pouvoir viser et réussir. En politique, jamais aucun devoir de sacrifice ne dispense du devoir de réussir. L'homme de parti, l'homme d'Etat promet de réussir et doit tenir sa promesse. Il ne peut sacrifier que sa propre personne, s'il quitte le niveau où règne la dure loi politique de l'épreuve des faits, l'exigence d'incarnation réussie.
+        </p>
+        <p facs="#facs_9_r_5">
+          C'est pourquoi, en politique, plus tragiquement qu'au niveau individuel, s'affrontent les deux sagesses des nations: "Fais ce que dois, advienne que pourra", dit l'une; - mais l'autre: "La fin justifie les moyens". La première retient la pure visée de l'âme; la seconde, l'exigence d'incarnation, jusqu'au cynisme. Se rallier à l'une ou à l'autre, c'est relativement facile, c'est abolir le problème. Le politique assume les deux: la visée, mais aussi le devoir d'être et de réussir.
+        </p>
+        <p facs="#facs_9_r_6">
+          Pouvoir
+        </p>
+        <p facs="#facs_9_r_7">
+          Etre, en politique, c'est avoir la possibilité d'agir, et donc, avoir du pouvoir. Aussitôt on voit le dualisme essentiel du pouvoir constituer une polarité dont chaque pôle considéré seul l'exclut, mais dont l'opposition le conditionne.
+        </p>
+        <p facs="#facs_9_r_8">
+          Le premier pôle, c'est celui où le pouvoir, n'étant jamais suffisant pour
+        </p>
+        <p>
+          103
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          SEELE UND LEIB - GEIST UND MATERIE
+        </p>
+        <p facs="#facs_10_r_2">
+          ne se sentir plus menacé, ne tend qu'à sa propre croissance et fait de cette croissance sa seule raison d'être. Il n'y a pas alors, à proprement parler, "pouvoir" au sens historique et humain du terme, mais seulement lutte pour la vie (struggle for life) et, au niveau des affrontements naturels, le seul règne de la force.
+        </p>
+        <p facs="#facs_10_r_3">
+          L'autre pôle, c'est celui où le pouvoir trouve sa raison d'être au service de la liberté, de l'indépendance, d'impératifs qui peuvent être absolus au point d'exiger le renoncement total à la force. Ce pôle, l'extrême opposé de toute contrainte, c'est celui où l'âme, à travers le renoncement, obéit à l'appel de la liberté. Là encore il n'y a pas "pouvoir" au sens humain du terme, mais pour une raison inverse: le niveau naturel de la force est complètement abandonné à lui-même, la liberté ne l'assume plus, elle se veut purement "âme". Il ne s'agit plus de politique.
+        </p>
+        <p facs="#facs_10_r_4">
+          Le pouvoir politique n'existe que dans une problématique intermédiaire, là où les hommes acceptent et supportent la coexistence des deux pôles extrêmes et de leurs exigences divergentes: celle d'un pouvoir toujours menacé, donc toujours insuffisant par nature, qui prend pour fin constante sa propre croissance - et celle d'un pouvoir subordonné, borné et conditionné par sa fin essentielle, métapolitique, absolue, qui est la liberté des hommes.
+        </p>
+        <p facs="#facs_10_r_5">
+          Ce pouvoir contradictoire constitue par essence la réalité politique, l'une des dimensions où l'homme doit apprendre à vivre sa condition d'homme.
+        </p>
+        <p facs="#facs_10_r_6">
+          A cause des contradictions que je viens d'expliciter, l'homme ne peut vivre ni avec le pouvoir, ni sans lui. Il ne lui reste qu'à tenter de l'apprivoiser sans s'y asservir. Cet apprivoisement, c'est la civilisation. Elle se développe au niveau spécifiquement humain - ni celui du corps seul, comme celui des animaux, ni celui de l'esprit pur, comme serait celui des anges -, cherchant, par les moeurs, le droit, les formes, les traditions, à maîtriser la force sans l'abolir, pour la mettre cahin caha au service de la liberté.
+        </p>
+        <p>
+          104
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          LA PROBLEMATIQUE DE L'AME ET DU CORPS DANS LA REALISATION POLITIQUE
+        </p>
+        <p facs="#facs_11_r_2">
+          Ainsi la politique assume les besoins du "corps social". Pour les satisfaire, elle cherche à aménager l'économie, sachant bien que si elle échoue en cela, elle expose l'entité sociale tout entière au chantage et à la menace de mort.
+        </p>
+        <p facs="#facs_11_r_3">
+          En même temps et par là même, elle s'efforce de suivre un dessin cohérent, de sauvegarder un sens qui lui vient des valeurs, et parmi celles-ci, avant tout, celles qui sont sa raison d'être, les <bibl ref="#zbz-w.286">Droits de l'homme</bibl>, conditions de la liberté.
+        </p>
+        <p facs="#facs_11_r_4">
+          Problématique
+        </p>
+        <p facs="#facs_11_r_5">
+          Il n'est pas de politique digne de ce nom sans référence au moins implicite de l'action aux <bibl ref="#zbz-w.286">Droits de l'homme</bibl>, qui lui donnent son sens en explicitant l'exigence absolue d'une liberté personnelle étrangère au pouvoir. Il n'en est pas non plus quand ne sont pas sauvegardées ou conquises ses conditions d'action, l'indépendance collective garantie par la maîtrise de la force et des ressources.
+        </p>
+        <p facs="#facs_11_r_6">
+          C'est pourquoi l'anarchisme, en tant qu'angélisme refusant d'assumer le corps et ses nécessités, et entraînant bientôt une rechute dans le règne pur de la force - et le totalitarisme, en tant que règne cynique de la force seule sur l'homme et la société, ne cessent de s'entrecroiser, et leur affrontement ne comporte, dans l'histoire, aucune solution définitive. Le totalitarisme déploie, dans un temps horizontal, une planification technicienne du futur élaborée par des ingénieurs de l'histoire. L'anarchisme espère dans l'instant le miracle édénique d'une harmonie intemporelle.
+        </p>
+        <p>
+          Les deux dimensions ensemble permettent au fil de l'histoire les réalisations fragmentaires de la politique. Elles ne sont ni techniques en vue d'un futur totalisé, ni fuite hors de l'actualité vers une intemporalité imaginaire, mais des efforts limités à l'intersection de l'inconciliable. C'est là seulement que l'homme peut "apprivoiser" "le corps" de la politi
+        </p>
+        <p>
+          105
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          SEELE UND LEIB - GEIST UND MATERIE
+        </p>
+        <p facs="#facs_12_r_2">
+          que: force, besoins, économie, nécessité d'abord d'exister, pour pouvoir viser une fin, - apprivoiser, légaliser, maîtriser la force sans s'y engluer.
+        </p>
+        <p facs="#facs_12_r_3">
+          Dans une telle "condition" du politique, les "idées", les programmes ne suffisent pas. Il y faut l'efficacité de formes, de symboles, l'efficacité d'un langage, et celle d'une vérité sans laquelle il n'y a pas de langage. Il y faut une reconnaissance du réel donné, et son imprégnation par une visée jamais totale, mais sans cesse référée, dans l'inachèvement, à l'absolu.
+        </p>
+        <p>
+          106
+        </p>
+      </div>
+      </body></text>
+</TEI>

@@ -1,0 +1,76 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "4 Texercice de En est hors d'atteinle. qu'1/ qu'",
+      "bbox": {
+        "x_pct": 8.453,
+        "y_pct": 10.175,
+        "w_pct": 37.215,
+        "h_pct": 16.411
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "un",
+      "bbox": {
+        "x_pct": 40.755,
+        "y_pct": 29.553,
+        "w_pct": 2.067,
+        "h_pct": 1.499
+      },
+      "changed": true,
+      "change_reason": "Artifact detected, removing from main text blocks."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'existence dc la bombe atomique Tend impensable et donc Impossible le declenchement ]une lroi fidel",
+      "bbox": {
+        "x_pct": 8.168,
+        "y_pct": 48.054,
+        "w_pct": 37.537,
+        "h_pct": 35.47
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "au Tegime Jctuel, bombe en moyens inlellectuels. qui",
+      "bbox": {
+        "x_pct": 69.394,
+        "y_pct": 15.04,
+        "w_pct": 15.718,
+        "h_pct": 6.699
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu de neulraliser Texpression libre des optons Yolontaires point  de la Cesl Zinsi possible elever d",
+      "bbox": {
+        "x_pct": 55.111,
+        "y_pct": 62.249,
+        "w_pct": 37.252,
+        "h_pct": 16.587
+      },
+      "changed": false
+    }
+  ],
+  "score": 95,
+  "num_corrections": 1,
+  "issues": [
+    "Detected small artifact region labeled as text; updated to _filter.",
+    "OCR output is significantly degraded; while labels are corrected, the text content remains messy but representative of the detected bounds."
+  ],
+  "doc_id": "980",
+  "page": 7,
+  "elapsed_seconds": 4.15,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

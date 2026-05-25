@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA PENSÉE PHILOSOPHIQUE, EXERCICE DE DÉPOSSESSION ERZIEHUNG ZUR PHILOSOPHIE DURCH ENTEIGNENDES DENKEN",
+      "bbox": {
+        "x_pct": 9.267,
+        "y_pct": 4.748,
+        "w_pct": 81.923,
+        "h_pct": 10.46
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image more accurately."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "von Jeanne Hersch (Genève)",
+      "bbox": {
+        "x_pct": 31.95,
+        "y_pct": 20.893,
+        "w_pct": 36.653,
+        "h_pct": 2.299
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le mot \"enteignen\" a ici le sens de \"déposséder\". Il s'agit de découvrir une modalité de notre pensée qui ne nous livre pas ce qui est visé dans notre recherche, mais qui, au contraire, nous le refuse. Seulement, l'expérience de ce refus n'est pas simplement négative: elle doit \"prendre sens\", et même \"prendre efficacité\" pour et par notre liberté. Par qu'elle nous refuse, elle nous fait exister. Philosopher, c'est explorer, avec le plus de clarté possible, les limites, la nature, l'inévitabilité de ce refus. De même, la \"theologia negativa\" médiévale dit quelque chose d'essentiel au sujet de Dieu en mettant en échec notre connaissance de Dieu, changeant du même coup la nature de ce savoir, la possible liberté du sujet, et son ouverture à l'écriture chiffrée.",
+      "bbox": {
+        "x_pct": 5.353,
+        "y_pct": 27.737,
+        "w_pct": 90.041,
+        "h_pct": 27.144
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le négatif se trouve ainsi, dans la philosophie de Jaspers, au coeur de l'éducation et de la culture, et la notion décisive de \"situation-limite\" en reste inséparable, comme aussi l'expérience de l'échec, \"chiffre suprême\", à partir duquel toute lecture des chiffres peut commencer à s'accomplir.",
+      "bbox": {
+        "x_pct": 5.712,
+        "y_pct": 54.934,
+        "w_pct": 89.903,
+        "h_pct": 11.998
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il ne faudrait pas imaginer que ce membre de phrase, enfin positif (\"la lecture des chiffres peut commencer à s'accomplir\") ait le sens d'une promesse positive, d'une conquête. Nullement: la lecture possible des chiffres ne correspond pas à l'acquisition d'un savoir, mais à un exercice pratique de l'existence, à une mise en oeuvre de la liberté, dont le signe n'est pas la possession d'un savoir, mais son échec et son ascèse.",
+      "bbox": {
+        "x_pct": 5.671,
+        "y_pct": 66.021,
+        "w_pct": 89.945,
+        "h_pct": 16.004
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est avec raison que notre Congrès a choisi pour titre, non pas \"Education et culture dans la philosophie de Karl Jaspers\", mais \"Philosophie de l'éducation et de la culture chez Karl Jaspers\". En effet, il s'agit non pas de conquête et de possession de méthodes et de résultats, mais, au contraire, d'une quête (\"philo-sophie\"), - à travers",
+      "bbox": {
+        "x_pct": 5.947,
+        "y_pct": 82.113,
+        "w_pct": 89.945,
+        "h_pct": 11.609
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 92.793,
+        "y_pct": 95.344,
+        "w_pct": 2.378,
+        "h_pct": 2.449
+      },
+      "changed": true,
+      "change_reason": "Detected page number, changed from text to page_footer/filter."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Several text blocks were significantly truncated.",
+    "Page number at the bottom was mislabeled as text."
+  ],
+  "doc_id": "3130",
+  "page": 3,
+  "elapsed_seconds": 4.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

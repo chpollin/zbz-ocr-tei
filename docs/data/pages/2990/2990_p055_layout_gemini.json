@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "62 Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 13.337,
+        "y_pct": 2.556,
+        "w_pct": 80.196,
+        "h_pct": 2.651
+      },
+      "changed": true,
+      "change_reason": "Page header and number should be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "z.B. wenn Einstein dazu kommt, da es unmglich ist, eine perfekte Gleichzeitigkeit zwischen zwei Bewegungen im Raum festzustellen, oder genauer: Zwischen einer Bewegung im Raum und einem sich selber bewegenden Beobachter. Wenn ein Beobachter, der selbst in Bewegung ist, keine genaue Gleichzeitigkeit mit einer anderenBewegung herstellen kann, dann ist das vielleicht gerade deswegen jetzt zum Vorschein gekommen und in die Physik eingegangen, weil die Physik diesen sehr hohen Grad der Genauigkeit im Messen erreicht hat. Vielleicht htte dieser Unterschied sonst keine Rolle gespielt. Er ist nicht erst jetzt Wirklichkeit geworden, aber er hat jetzt Folgen, weil man so genau mit.",
+      "bbox": {
+        "x_pct": 13.337,
+        "y_pct": 6.11,
+        "w_pct": 80.196,
+        "h_pct": 21.768
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese Unterschiede scheinen einem Problem eine neue Aktualitt und eine neue Wirksamkeit zu geben, nmlich dem Problem der Situation, in der etwas oder jemand sich befindet. Die Situation in der physischen Welt und wie sie sich im Bewutsein des Forschers durch diese Genauigkeit widerspiegelt, bekommt eine ganz neue Bedeutung und eine neue Aktualitt. Vielleicht kann man das sogar so verallgemeinern, da das empirische Subjekt, das Ich, das sich vor einem Nicht-Ich befindet, dies jetzt auch anders empfinden kann. Das ganze Ich und nicht nur der Physiker, nicht nur der Astronom, ist - was man auch gar nicht vermeiden kann - gegenber dem Nicht-Ich ein Subjekt. Es geht ihn etwas an. Er ist ein Subjekt, das versteht, das wei, das verstehen will, und die Art und Weise, wie sich die Wissenschaft verndert hat, betrifft ihn und berhrt ihn auf sehr direkte Weise, vielleicht ohne da er es wissen kann.",
+      "bbox": {
+        "x_pct": 13.374,
+        "y_pct": 29.688,
+        "w_pct": 80.037,
+        "h_pct": 23.66
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn es stimmt, was ich jetzt durch einfache Vermutungen versuchte auszudrcken, dann ist es ganz klar, da dadurch auch der Sinn des Wissens und des Nicht-Wissens verndert wird. Daraus folgt, da sich die Vorstellung, die sich der Physiker von der Welt macht, von seiner Abhngigkeit oder Unabhngigkeit ihr gegenber von seiner Verantwortung, die er fr seine eigene Wirklichkeit in dieser neuen Wissenschaft zu bernehmen hat, verndern mu.",
+      "bbox": {
+        "x_pct": 13.374,
+        "y_pct": 53.648,
+        "w_pct": 80.037,
+        "h_pct": 12.802
+      },
+      "changed": true,
+      "change_reason": "Missing text segment captured in the original scan region logic."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Art und Weise, wie die Wissenschaft hier erlebt wird, wird allmhlich zu einem wichtigen Faktor fr das menschliche Wesen, fr die Gesellschaft - von der Technik einmal abgesehen, die ich jetzt gar nicht meine. Ich meine nur die Art und Weise, wie die Vorstellungskraft beeinflut wird, und vielleicht auch die Kultur dieser Welt sowie die anderen Wissenschaften, die sich daneben entwickeln. Die Grten unter diesen Gelehrten haben selbst ein Bewutsein davon. So fragte sich z.B. Einstein am Ende seines Lebens - und er fragte sich das wirklich und nicht nur rhetorisch: Was ist Denken? Dazu gehrt eine bestimmte Qualitt der Einstellung gegenber",
+      "bbox": {
+        "x_pct": 13.215,
+        "y_pct": 66.859,
+        "w_pct": 79.914,
+        "h_pct": 18.199
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header (including page number 62) was improperly classified as part of the first paragraph region.",
+    "Small OCR discrepancies present in input text (e.g., umlaut handling)."
+  ],
+  "doc_id": "2990",
+  "page": 55,
+  "elapsed_seconds": 5.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

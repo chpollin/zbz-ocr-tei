@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "posent il n'y a pas d'autorité démocratiquement élue, que par conséquent, au niveau où ils se posent, la démocratie est incapable de les contrôler politiquement, et que par conséquent il faut créer - c'est une exigence démocratique - démocratiquement les autorités politiques qui pourront alors les résoudre au niveau réel où ils se posent, qui est un niveau supranational. Je dois dire que j'ai toujours été très étonnée de trouver si peu d'enthousiasme dans les milieux dits de gauche, justement, pour soutenir les tentatives de fédération européenne. Et je crois que la raison essentielle en est qu'un très profond conservatisme s'est introduit dans ce qu'on appelle la gauche, en particulier le conservatisme nationaliste.",
+      "bbox": {
+        "x_pct": 7.317,
+        "y_pct": 8.416,
+        "w_pct": 84.878,
+        "h_pct": 14.959
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and formatting of the paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant aux tentatives pour fédérer l'Europe, je pense qu'il est indispensable de comprendre un tout petit peu les étapes qui ont été parcourues depuis l'origine du mouvement. Les fédéralistes que j'ai connus, et qui étaient particulièrement actifs au niveau international, étaient des hommes qui, pour la plupart, avaient médité sur la nécessité de fédérer l'Europe pendant la dernière guerre, alors qu'ils étaient, soit dans la clandestinité en France, soit dans l'exil de l'Italie fasciste, soit dans la résistance des camps de concentration en Allemagne. On peut dire que la plupart des énergies vives et des pensées et des conceptions concernant l'Europe fédérée sont nées de la résistance, juste avant et pendant la dernière guerre. Au sortir de cette guerre, l'Europe se trouvait dans un état d'extraordinaire faiblesse. Quand je dis l'Europe, je veux dire par là, à ce moment-là, les nations européennes. Et comme d'autre part toute la structure du pouvoir dans le monde avait changé - car on se trouvait devant deux économies dominantes qui n'étaient plus l'Europe, mais qui étaient les Etats-Unis d'Amérique d'une part et l'URSS de l'autre - ces faibles nations européennes étaient relativement disposées à conclure des alliances. Elles étaient en quelque sorte, si vous voulez, disposées à sacrifier un pouvoir qu'elles sentaient bien ne plus avoir. Il est relativement facile de donner ce qu'on n'a pas. Et comme elles étaient dans un état d'extrême impuissance et d'extrême faiblesse, elles étaient disposées à ce moment-là à chercher un peu de force dans leur union. Il faut dire aussi que les premières tentatives de fédération de l'Europe ont été fortement encouragées par le Plan Marshall. Le Plan Marshall d'aide de l'Amérique aux Etats européens appelait une organisation générale de l'aide qui n'existait pas. Et c'est probablement l'une des raisons aussi pour lesquelles les tentatives pour fédérer l'Europe se sont développées d'abord au niveau économique. Il y a encore évidemment bien d'autres raisons. Il y a eu donc, à l'époque du Plan Marshall, toute une série d'organismes créés par les Nations Unies pour réorganiser le marché mondial; puis, au niveau européen, des tentatives en vue d'établir un plan de développement d'ensemble. Il y a eu l'OECE, puis d'autres tentatives de regroupement plus étroit, l'OECE ne comportant aucune espèce d'élément de supranationalité. Il y a eu d'abord la tentative en miniature du Bénélux, l'association de la Belgique, de la Hollande et du Luxembourg, puis en 1953 le Plan Schuman. Le Plan Schuman créa la Communauté européenne du charbon et de l'acier, la CECA, qui, pour la première fois dans l'histoire du monde moderne, confiait une certaine part de pouvoir supranational à une autorité dite la Haute-Autorité, une autorité qui n'était plus composée de représentants des gouvernements, mais qui représentait la communauté européenne du charbon et de l'acier. Les pouvoirs de cette Haute-Autorité de la CECA étaient en réalité encore très limités, et on peut même dire que cette Haute-Autorité, intimidée sans doute par la nouveauté de l'entreprise et par les pressions qui s'exerçaient sur elle, n'a sans doute pas fait un plein usage des pouvoirs qui lui étaient en fait accessibles, sinon complètement confiés. Mais enfin c'était là une grande nouveauté et qui permettait de grands espoirs.",
+      "bbox": {
+        "x_pct": 7.439,
+        "y_pct": 24.86,
+        "w_pct": 85.402,
+        "h_pct": 66.724
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR errors and restored the full paragraph text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": {
+        "x_pct": 90.732,
+        "y_pct": 93.684,
+        "w_pct": 1.463,
+        "h_pct": 2.564
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 3,
+  "issues": [
+    "OCR text was severely corrupted.",
+    "Page number was misidentified as part of the text body."
+  ],
+  "doc_id": "630",
+  "page": 8,
+  "elapsed_seconds": 5.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

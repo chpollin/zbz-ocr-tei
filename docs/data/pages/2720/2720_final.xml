@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Anziano e società quale partecipazione?</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2720</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Anziano e società quale partecipazione?</title>
+          <author>Jeanne Hersch</author>
+          <date>1989</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="ita" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screen-t2" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Fehler, 0 Warnings; Overlay S1: Titelseite Kongressakte korrekt. S4: Biographienseite mit Foto (figure-Region fehlt, Foto nicht annotiert -- akzeptabel fuer diesen Typ); Text koherent, Kongressbeitrag Lugano 1989 Anziano e societa, Vortrag Hersch auf Italienisch (Uebersetzung aus Franzoesisch) (+1 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1182" lry="1741">
+      <zone xml:id="facs_1_r_1" ulx="332" uly="50" lrx="852" lry="87" />
+      <zone xml:id="facs_1_r_2" ulx="211" uly="139" lrx="969" lry="196" />
+      <zone xml:id="facs_1_r_3" ulx="312" uly="240" lrx="873" lry="269" />
+      <zone xml:id="facs_1_r_4" ulx="765" uly="414" lrx="978" lry="503" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1182" lry="1741">
+      <zone xml:id="facs_2_r_1" ulx="315" uly="1095" lrx="627" lry="1192" />
+      <zone xml:id="facs_2_r_2" ulx="96" uly="1535" lrx="562" lry="1634" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1741" lry="1182">
+      <zone xml:id="facs_3_r_1" ulx="214" uly="343" lrx="454" lry="388" />
+      <zone xml:id="facs_3_r_2" ulx="581" uly="378" lrx="880" lry="411" />
+      <zone xml:id="facs_3_r_3" ulx="1301" uly="378" lrx="1604" lry="410" />
+      <zone xml:id="facs_3_r_4" ulx="944" uly="379" lrx="1238" lry="410" />
+      <zone xml:id="facs_3_r_5" ulx="178" uly="418" lrx="484" lry="494" />
+      <zone xml:id="facs_3_r_6" ulx="1301" uly="419" lrx="1554" lry="440" />
+      <zone xml:id="facs_3_r_7" ulx="583" uly="421" lrx="857" lry="442" />
+      <zone xml:id="facs_3_r_8" ulx="943" uly="421" lrx="1222" lry="440" />
+      <zone xml:id="facs_3_r_9" ulx="1358" uly="484" lrx="1557" lry="553" />
+      <zone xml:id="facs_3_r_10" ulx="1302" uly="485" lrx="1351" lry="503" />
+      <zone xml:id="facs_3_r_11" ulx="998" uly="485" lrx="1259" lry="587" />
+      <zone xml:id="facs_3_r_12" ulx="943" uly="486" lrx="991" lry="504" />
+      <zone xml:id="facs_3_r_13" ulx="583" uly="487" lrx="706" lry="509" />
+      <zone xml:id="facs_3_r_14" ulx="242" uly="501" lrx="423" lry="527" />
+      <zone xml:id="facs_3_r_15" ulx="638" uly="504" lrx="855" lry="523" />
+      <zone xml:id="facs_3_r_16" ulx="584" uly="539" lrx="790" lry="564" />
+      <zone xml:id="facs_3_r_17" ulx="638" uly="557" lrx="889" lry="607" />
+      <zone xml:id="facs_3_r_18" ulx="1304" uly="576" lrx="1351" lry="594" />
+      <zone xml:id="facs_3_r_19" ulx="1357" uly="576" lrx="1506" lry="614" />
+      <zone xml:id="facs_3_r_20" ulx="943" uly="603" lrx="991" lry="621" />
+      <zone xml:id="facs_3_r_21" ulx="998" uly="604" lrx="1044" lry="621" />
+      <zone xml:id="facs_3_r_22" ulx="584" uly="627" lrx="786" lry="649" />
+      <zone xml:id="facs_3_r_23" ulx="1304" uly="633" lrx="1350" lry="651" />
+      <zone xml:id="facs_3_r_24" ulx="1357" uly="635" lrx="1508" lry="654" />
+      <zone xml:id="facs_3_r_25" ulx="998" uly="640" lrx="1113" lry="659" />
+      <zone xml:id="facs_3_r_26" ulx="640" uly="644" lrx="759" lry="662" />
+      <zone xml:id="facs_3_r_27" ulx="1356" uly="651" lrx="1551" lry="687" />
+      <zone xml:id="facs_3_r_28" ulx="943" uly="675" lrx="991" lry="692" />
+      <zone xml:id="facs_3_r_29" ulx="999" uly="675" lrx="1156" lry="694" />
+      <zone xml:id="facs_3_r_30" ulx="586" uly="682" lrx="766" lry="698" />
+      <zone xml:id="facs_3_r_31" ulx="640" uly="697" lrx="806" lry="716" />
+      <zone xml:id="facs_3_r_32" ulx="1357" uly="707" lrx="1525" lry="729" />
+      <zone xml:id="facs_3_r_33" ulx="1302" uly="708" lrx="1350" lry="726" />
+      <zone xml:id="facs_3_r_34" ulx="942" uly="727" lrx="1092" lry="745" />
+      <zone xml:id="facs_3_r_35" ulx="584" uly="734" lrx="633" lry="752" />
+      <zone xml:id="facs_3_r_36" ulx="639" uly="735" lrx="850" lry="788" />
+      <zone xml:id="facs_3_r_37" ulx="943" uly="763" lrx="991" lry="780" />
+      <zone xml:id="facs_3_r_38" ulx="998" uly="763" lrx="1228" lry="781" />
+      <zone xml:id="facs_3_r_39" ulx="997" uly="778" lrx="1115" lry="799" />
+      <zone xml:id="facs_3_r_40" ulx="1311" uly="801" lrx="1516" lry="823" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1182" lry="1741">
+      <zone xml:id="facs_4_r_1" ulx="502" uly="1197" lrx="679" lry="1232" />
+      <zone xml:id="facs_4_r_2" ulx="252" uly="1258" lrx="929" lry="1535" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1222" lry="1729">
+      <zone xml:id="facs_5_r_1" ulx="46" uly="101" lrx="1001" lry="223" />
+      <zone xml:id="facs_5_r_2" ulx="51" uly="301" lrx="141" lry="331" />
+      <zone xml:id="facs_5_r_3" ulx="617" uly="303" lrx="1139" lry="505" />
+      <zone xml:id="facs_5_r_4" ulx="614" uly="502" lrx="1137" lry="532" />
+      <zone xml:id="facs_5_r_5" ulx="617" uly="552" lrx="1138" lry="732" />
+      <zone xml:id="facs_5_r_6" ulx="615" uly="727" lrx="1138" lry="900" />
+      <zone xml:id="facs_5_r_7" ulx="615" uly="900" lrx="1138" lry="1052" />
+      <zone xml:id="facs_5_r_8" ulx="616" uly="1049" lrx="1138" lry="1149" />
+      <zone xml:id="facs_5_r_9" ulx="615" uly="1149" lrx="1137" lry="1398" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1223" lry="1729">
+      <zone xml:id="facs_6_r_1" ulx="81" uly="107" lrx="433" lry="137" />
+      <zone xml:id="facs_6_r_2" ulx="82" uly="158" lrx="608" lry="262" />
+      <zone xml:id="facs_6_r_3" ulx="653" uly="184" lrx="1177" lry="262" />
+      <zone xml:id="facs_6_r_4" ulx="80" uly="258" lrx="608" lry="438" />
+      <zone xml:id="facs_6_r_5" ulx="653" uly="258" lrx="1178" lry="388" />
+      <zone xml:id="facs_6_r_6" ulx="652" uly="382" lrx="1177" lry="535" />
+      <zone xml:id="facs_6_r_7" ulx="80" uly="433" lrx="606" lry="561" />
+      <zone xml:id="facs_6_r_8" ulx="652" uly="534" lrx="1178" lry="738" />
+      <zone xml:id="facs_6_r_9" ulx="80" uly="558" lrx="606" lry="639" />
+      <zone xml:id="facs_6_r_10" ulx="80" uly="632" lrx="604" lry="814" />
+      <zone xml:id="facs_6_r_11" ulx="652" uly="734" lrx="1177" lry="911" />
+      <zone xml:id="facs_6_r_12" ulx="78" uly="809" lrx="603" lry="941" />
+      <zone xml:id="facs_6_r_13" ulx="651" uly="908" lrx="1176" lry="990" />
+      <zone xml:id="facs_6_r_14" ulx="78" uly="935" lrx="603" lry="1039" />
+      <zone xml:id="facs_6_r_15" ulx="652" uly="983" lrx="1176" lry="1086" />
+      <zone xml:id="facs_6_r_16" ulx="77" uly="1059" lrx="604" lry="1236" />
+      <zone xml:id="facs_6_r_17" ulx="650" uly="1085" lrx="1176" lry="1286" />
+      <zone xml:id="facs_6_r_18" ulx="79" uly="1234" lrx="604" lry="1312" />
+      <zone xml:id="facs_6_r_19" ulx="649" uly="1286" lrx="1176" lry="1416" />
+      <zone xml:id="facs_6_r_20" ulx="75" uly="1309" lrx="602" lry="1538" />
+      <zone xml:id="facs_6_r_21" ulx="651" uly="1409" lrx="1176" lry="1488" />
+      <zone xml:id="facs_6_r_22" ulx="650" uly="1487" lrx="1176" lry="1542" />
+      <zone xml:id="facs_6_r_23" ulx="651" uly="1535" lrx="1176" lry="1613" />
+      <zone xml:id="facs_6_r_24" ulx="77" uly="1536" lrx="602" lry="1613" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1222" lry="1729">
+      <zone xml:id="facs_7_r_1" ulx="32" uly="911" lrx="548" lry="940" />
+      <zone xml:id="facs_7_r_2" ulx="597" uly="911" lrx="1122" lry="1188" />
+      <zone xml:id="facs_7_r_3" ulx="33" uly="936" lrx="552" lry="1038" />
+      <zone xml:id="facs_7_r_4" ulx="33" uly="1037" lrx="552" lry="1236" />
+      <zone xml:id="facs_7_r_5" ulx="33" uly="1234" lrx="552" lry="1363" />
+      <zone xml:id="facs_7_r_6" ulx="33" uly="1360" lrx="550" lry="1413" />
+      <zone xml:id="facs_7_r_7" ulx="31" uly="1408" lrx="552" lry="1561" />
+      <zone xml:id="facs_7_r_8" ulx="597" uly="1435" lrx="1122" lry="1537" />
+      <zone xml:id="facs_7_r_9" ulx="32" uly="1559" lrx="552" lry="1614" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1222" lry="1729">
+      <zone xml:id="facs_8_r_1" ulx="83" uly="115" lrx="611" lry="418" />
+      <zone xml:id="facs_8_r_2" ulx="658" uly="265" lrx="1185" lry="496" />
+      <zone xml:id="facs_8_r_3" ulx="84" uly="414" lrx="610" lry="466" />
+      <zone xml:id="facs_8_r_4" ulx="80" uly="465" lrx="609" lry="920" />
+      <zone xml:id="facs_8_r_5" ulx="657" uly="492" lrx="1185" lry="620" />
+      <zone xml:id="facs_8_r_6" ulx="657" uly="617" lrx="1185" lry="1021" />
+      <zone xml:id="facs_8_r_7" ulx="80" uly="917" lrx="609" lry="1094" />
+      <zone xml:id="facs_8_r_8" ulx="657" uly="1018" lrx="1184" lry="1197" />
+      <zone xml:id="facs_8_r_9" ulx="80" uly="1093" lrx="609" lry="1451" />
+      <zone xml:id="facs_8_r_10" ulx="656" uly="1192" lrx="1184" lry="1400" />
+      <zone xml:id="facs_8_r_11" ulx="80" uly="1467" lrx="608" lry="1623" />
+      <zone xml:id="facs_8_r_12" ulx="654" uly="1577" lrx="1179" lry="1626" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="conference">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          Atti del Congresso<lb facs="#facs_1_l_1_1" n="N001" />ANZIANO E SOCIETÀ<lb facs="#facs_1_l_1_2" n="N002" />QUALE PARTECIPAZIONE?<lb facs="#facs_1_l_1_3" n="N003" /><placeName ref="#zbz-l.183">Lugano</placeName> 16 - 17 - 18 ottobre 1989
+        </head>
+        <p facs="#facs_1_r_2">
+          
+        </p>
+        <p facs="#facs_1_r_3">
+          E. Ristone
+        </p>
+        <p facs="#facs_1_r_4">
+          <orgName ref="#zbz-o.474">ASSOCIAZIONE TICINESE TERZA ETÀ</orgName> 52/3/90
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <orgName ref="#zbz-o.431">SCHWEIZERISCHE LANDESBIBLIOTHEK</orgName>
+        </p>
+        <p facs="#facs_2_r_2">
+          <orgName ref="#zbz-o.432">BIBLIOTHÈQUE NATIONALE SUISSE</orgName>
+        </p>
+        <p>
+          <orgName ref="#zbz-o.433">BIBLIOTECA NAZIONALE SVIZZERA</orgName>
+        </p>
+        <p>
+          <orgName ref="#zbz-o.475">BIBLIOTECA NAZIUNALA SVIZRA</orgName>
+        </p>
+        <p>
+          Le fotografie presentate negli atti sono di <persName ref="#zbz-p.1188">Liliana Holländer</persName>, <placeName ref="#zbz-l.183">Lugano</placeName>. I disegni sono di <persName ref="#zbz-p.1189">Claudio Egli</persName>, <placeName ref="#zbz-l.447">Giubiasco</placeName>. Il bozzetto della copertina è di <persName ref="#zbz-p.1190">Emilio Rissone</persName>.
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          7
+        </p>
+        <p facs="#facs_3_r_2">
+          <orgName ref="#zbz-o.474">ASSOCIAZIONE TICINESE TERZA ETÀ</orgName>
+        </p>
+        <p facs="#facs_3_r_3">
+          Anziano e società<lb facs="#facs_3_l_3_1" n="N001" />Quale partecipazione?
+        </p>
+        <p facs="#facs_3_r_4">
+          2° Congresso <orgName ref="#zbz-o.474">ATTE</orgName>
+        </p>
+        <p facs="#facs_3_r_5">
+          
+        </p>
+        <p facs="#facs_3_r_6">
+          <placeName ref="#zbz-l.183">Lugano</placeName>, Palazzo dei Congressi, 16, 17, 18 ottobre 1989
+        </p>
+        <p facs="#facs_3_r_7">
+          Lunedì 16 ottobre 1989
+        </p>
+        <p facs="#facs_3_r_8">
+          Presidente di giornata: <persName ref="#zbz-p.1191">Alberto Gianetta</persName>
+        </p>
+        <p facs="#facs_3_r_9">
+          09.15 Apertura<lb facs="#facs_3_l_9_1" n="N001" />Saluti Autorità civili e religiose.
+        </p>
+        <p facs="#facs_3_r_10">
+          10.30 Pour le troisième âge: nouvelles tâches, nouvelle jeunesse<lb facs="#facs_3_l_10_1" n="N001" />Prof. <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_3_l_10_2" n="N002" />(<orgName ref="#zbz-o.6">Università di Ginevra</orgName>)
+        </p>
+        <p facs="#facs_3_r_11">
+          11.30 Intermezzo musicale<lb facs="#facs_3_l_11_1" n="N001" />Quartetto Torres
+        </p>
+        <p facs="#facs_3_r_12">
+          12.30 Pranzo in comune<lb facs="#facs_3_l_12_1" n="N001" />(Ristorante Mövenpick)
+        </p>
+        <p facs="#facs_3_r_13">
+          14.15 I soci <orgName ref="#zbz-o.474">ATTE</orgName>: presentazione dell'inchiesta<lb facs="#facs_3_l_13_1" n="N001" />Sociologa Thea Moretti-Varile
+        </p>
+        <p facs="#facs_3_r_14">
+          15.00 Pausa
+        </p>
+        <p facs="#facs_3_r_15">
+          15.15 Troisième âge et culture: attentes, ressources et participation<lb facs="#facs_3_l_15_1" n="N001" />Prof. <persName ref="#zbz-p.1192">Claude Bridel</persName><lb facs="#facs_3_l_15_2" n="N002" />(<orgName ref="#zbz-o.137">Università di Losanna</orgName>)
+        </p>
+        <p facs="#facs_3_r_16">
+          16.15 Testimonianze<lb facs="#facs_3_l_16_1" n="N001" />Diversi modi di vivere l'anzianità
+        </p>
+        <p facs="#facs_3_r_17">
+          16.45 Plenum<lb facs="#facs_3_l_17_1" n="N001" />Informazioni, costituzione gruppi di studio
+        </p>
+        <p facs="#facs_3_r_18">
+          17.00 Chiusura della prima giornata
+        </p>
+        <p facs="#facs_3_r_19">
+          Martedì 17 ottobre 1989
+        </p>
+        <p facs="#facs_3_r_20">
+          Presidente di giornata: <persName ref="#zbz-p.1193">Osvaldo Cavadini</persName>
+        </p>
+        <p facs="#facs_3_r_21">
+          09.30 Alcune conseguenze economiche dell'invecchiamento della popolazione ticinese<lb facs="#facs_3_l_21_1" n="N001" />Prof. <persName ref="#zbz-p.1194">Angelo Rossi</persName><lb facs="#facs_3_l_21_2" n="N002" />(<orgName ref="#zbz-o.476">Institut de Hautes Etudes en Administration Publique</orgName>, <placeName ref="#zbz-l.19">Losanna</placeName>)
+        </p>
+        <p facs="#facs_3_r_22">
+          10.45 Pausa
+        </p>
+        <p facs="#facs_3_r_23">
+          11.00 Lavori di gruppo
+        </p>
+        <p facs="#facs_3_r_24">
+          11.00 I giovani e la terza età: presentazione di studi e ricerche
+        </p>
+        <p facs="#facs_3_r_25">
+          12.00 Pranzo libero
+        </p>
+        <p facs="#facs_3_r_26">
+          14.15 Presentazione mostra artigianato<lb facs="#facs_3_l_26_1" n="N001" />Dr. <persName ref="#zbz-p.1195">Dino Poggioli</persName>
+        </p>
+        <p facs="#facs_3_r_27">
+          14.45 Ruoli umanizzanti della vita anziana<lb facs="#facs_3_l_27_1" n="N001" />Prof. <persName ref="#zbz-p.1196">Giuseppe Dal Ferro</persName><lb facs="#facs_3_l_27_2" n="N002" />(<orgName ref="#zbz-o.477">Istituto Scienze Sociali di Vicenza</orgName>)
+        </p>
+        <p facs="#facs_3_r_28">
+          15.45 Pausa
+        </p>
+        <p facs="#facs_3_r_29">
+          16.00 Lavori di gruppo
+        </p>
+        <p facs="#facs_3_r_30">
+          16.00 Sfilata di abiti eseguiti nei centri <orgName ref="#zbz-o.474">ATTE</orgName>
+        </p>
+        <p facs="#facs_3_r_31">
+          16.00 I giovani e la terza età: presentazione di studi e ricerche
+        </p>
+        <p facs="#facs_3_r_32">
+          17.00 Chiusura della seconda giornata
+        </p>
+        <p facs="#facs_3_r_33">
+          Mercoledì 18 ottobre 1989
+        </p>
+        <p facs="#facs_3_r_34">
+          Presidente di giornata: <persName ref="#zbz-p.1197">Carla Balmelli</persName>
+        </p>
+        <p facs="#facs_3_r_35">
+          09.30 Sintesi dei lavori di gruppo<lb facs="#facs_3_l_35_1" n="N001" />Conclusioni del Congresso<lb facs="#facs_3_l_35_2" n="N002" />Prof. <persName ref="#zbz-p.1198">Franco Zambelloni</persName><lb facs="#facs_3_l_35_3" n="N003" />(<orgName ref="#zbz-o.478">Liceo cantonale</orgName>, <placeName ref="#zbz-l.252">Mendrisio</placeName>)
+        </p>
+        <p facs="#facs_3_r_36">
+          10.30 Intermezzo musicale<lb facs="#facs_3_l_36_1" n="N001" />Duo Bianchi-Maggini
+        </p>
+        <p facs="#facs_3_r_37">
+          11.30 Concorso fotografico<lb facs="#facs_3_l_37_1" n="N001" />Premiazione delle fotografie prime classificate
+        </p>
+        <p facs="#facs_3_r_38">
+          12.00 Chiusura del Congresso
+        </p>
+        <p facs="#facs_3_r_39">
+          Il Congresso accoglierà inoltre:
+        </p>
+        <p facs="#facs_3_r_40">
+          - la mostra di lavori artigianali realizzati da persone anziane;<lb facs="#facs_3_l_40_1" n="N001" />- l'esposizione delle fotografie partecipanti al concorso fotografico;<lb facs="#facs_3_l_40_2" n="N002" />- la bancarella di pubblicazioni dei soci dell'<orgName ref="#zbz-o.474">ATTE</orgName>;<lb facs="#facs_3_l_40_3" n="N003" />- i lavori di gruppo con i seguenti argomenti:<lb facs="#facs_3_l_40_4" n="N004" />1. l'anziano e la politica sociale<lb facs="#facs_3_l_40_5" n="N005" />2. l'anziano e la cultura<lb facs="#facs_3_l_40_6" n="N006" />3. l'anziano e la vita sociale
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          8
+        </p>
+        <p facs="#facs_4_r_2">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p>
+          Nata a <placeName ref="#zbz-l.5">Ginevra</placeName> nel 1910. Studi universitari (lettere e filosofia) a <placeName ref="#zbz-l.5">Ginevra</placeName>, <placeName ref="#zbz-l.1">Parigi</placeName>, <placeName ref="#zbz-l.21">Heidelberg</placeName> e <placeName ref="#zbz-l.87">Friburgo in Brisgovia</placeName>. Licenza in lettere a <placeName ref="#zbz-l.5">Ginevra</placeName> (1931). Dottorato (1946) con la tesi «L'Essere e la Forma». Insegna alla <orgName ref="#zbz-o.479">Scuola internazionale di Ginevra</orgName> (1933-56). Due viaggi: <placeName ref="#zbz-l.375">Chili</placeName> (1935-36) e <placeName ref="#zbz-l.448">Thailandia</placeName> (1938-39). Privat-docent (1947). Dal 1956 professore di filosofia all'<orgName ref="#zbz-o.6">Università di Ginevra</orgName>. Insegna anche in diverse Università degli <placeName ref="#zbz-l.285">USA</placeName>. Dal 1966 al 1968 dirige la Divisione di filosofia dell'<orgName ref="#zbz-o.51">UNESCO</orgName> a <placeName ref="#zbz-l.1">Parigi</placeName>. Dal '70 al '72 rappresenta la <placeName ref="#zbz-l.10">Svizzera</placeName> al Consiglio esecutivo dell'<orgName ref="#zbz-o.51">UNESCO</orgName>. Lascia l'Università nel 1977. Compie cicli di conferenze in <placeName ref="#zbz-l.329">America latina</placeName> (1980). Ha pubblicato tra il 1936 e il 1986 parecchie opere conosciutissime (citiamo «<bibl ref="#zbz-w.147">L'illusion philosophique</bibl>» del 1936, «<bibl ref="#zbz-w.133">Le droit d'être un homme</bibl>» del 1968, «<bibl ref="#zbz-w.293">Antithèses</bibl>» del 1981) e ottenuto premi e riconoscimenti in <placeName ref="#zbz-l.10">Svizzera</placeName> e all'estero.
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          9
+        </p>
+        <p facs="#facs_5_r_2">
+          Pour le troisième âge: nouvelles tâches, nouvelle jeunesse
+        </p>
+        <p facs="#facs_5_r_3">
+          Sintesi
+        </p>
+        <p facs="#facs_5_r_4">
+          La prospettiva di questa relazione non è quella dei diritti delle persone anziane, dei loro bisogni bensì piuttosto di quanto le altre componenti la società possono aspettarsi dagli anziani. E ciò dipende dal modo, molto differenziato di invecchiare e su questo modo dobbiamo vigilare perché i giovani hanno bisogno di modelli di adulti e di adulti che sanno invecchiare restando giovani.
+        </p>
+        <p facs="#facs_5_r_5">
+          È in questa apparente contraddizione che sta l'indicazione per un buon invecchiamento.
+        </p>
+        <p facs="#facs_5_r_6">
+          Restar giovani non significa comportarsi come i giovani, ma riuscire, in un momento in cui l'avvicinarsi della morte determina un distacco dalla vita, a dare alle cose della vita il giusto peso che permette di capire ancora i giovani che sono pienamente nella vita ed a raggiungere il giusto grado di distacco proprio della terza età.
+        </p>
+        <p facs="#facs_5_r_7">
+          Anche il rapporto con il proprio corpo necessita della ricerca di un equilibrio fra attenzione, necessaria per evitare inutile sofferenza, e il distacco necessario per evitarne l'ossessione. Invecchiare bene vuol anche dire non cristallizzarsi in modo compiaciuto nella propria maniera di essere.
+        </p>
+        <p facs="#facs_5_r_8">
+          In un mondo che non è più il suo l'anziano può fronteggiare il rischio della solitudine trovando anche qui un equilibrio fra il distanziarsi dagli affetti e il vivere invece l'affettività in modo ossessionante e tirannico, riconoscendo con gratitudine il valore per la vita vissuta.
+        </p>
+        <p facs="#facs_5_r_9">
+          Una via indicata dalla relatrice per il raggiungimento di quest'equilibrio è quella dell'assunzione di nuovi compiti piuttosto che delle rivendicazioni di diritti.
+        </p>
+        <p>
+          La persona anziana non deve essere solo occupata di se stessa, ma avere delle poste in gioco, dei ruoli da assumere, una disponibilità da offrire nell'umanizzazione dei rapporti, contro l'ossessione di sé; solo così essa vive nel presente, accettando pienamente la condizione del presente indipendentemente dalla morte, del mondo che esiste oggi, che è il nostro mondo, il solo dove abbiamo un appuntamento con qualcuno e qualcosa.
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          10
+        </p>
+        <p facs="#facs_6_r_2">
+          Relazione di <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_6_r_3">
+          Ringrazio di avermi invitato a prendere la parola in questo Congresso nell'ambito di una Associazione Terza Età che mi sembra avere oggi ruoli e funzioni innumerevoli e sempre più evoluti.
+        </p>
+        <p facs="#facs_6_r_4">
+          Forse vi dispiacerà, ma invece di parlare dei bisogni delle persone anziane o di chiamare le persone meno anziane a soddisfare questi bisogni, ho l'intenzione di indirizzarmi direttamente agli anziani — e ne ho il diritto perché faccio parte anch'io della terza età — e dire loro quello che ci si può aspettare da loro.
+        </p>
+        <p facs="#facs_6_r_5">
+          Penso che le persone che invecchiano hanno troppo la tendenza a trovare che non beneficiano di tutti i diritti, che non ottengono tutto quello che potrebbero ottenere, che non ricevono tutto quello che dovrebbe essere dato loro.
+        </p>
+        <p facs="#facs_6_r_6">
+          Invecchiare è difficile e devo dire che conosco un buon numero di casi per i quali la mia generazione pesa troppo sulla generazione che la segue.
+        </p>
+        <p facs="#facs_6_r_7">
+          È argomento del quale non si parla volentieri, ma effettivamente molti membri di quest'ultima generazione, e sono soprattutto donne, hanno sacrificato molti anni della loro vita a spese della loro famiglia per assistere dei congiunti anziani. Dobbiamo noi averne coscienza e dobbiamo cercare di pesare il meno possibile sugli altri.
+        </p>
+        <p facs="#facs_6_r_8">
+          Invecchiare non crea situazioni omogenee: infatti non si invecchia tutti nella stessa maniera. Per alcuni si ha l'impressione che l'invecchiare costituisca un progresso, per altri che significhi penetrare nella malinconia e nella disgrazia.
+        </p>
+        <p facs="#facs_6_r_9">
+          Grazie agli enormi progressi che sono stati fatti, ai quali dobbiamo il prolungamento della vita e il protrarsi del diventare «vecchio» — dobbiamo pur dirlo — oggi più si diventa vecchi e più a lungo si rimane giovani nello stesso tempo.
+        </p>
+        <p facs="#facs_6_r_10">
+          Il periodo della vecchiaia comincia oggi ben più tardi. Tutto ciò costituisce dei regali che noi dobbiamo al lavoro, agli sforzi, alle ricerche di quelli che ci hanno preceduto e ai quali dobbiamo riconoscenza. Questa riconoscenza dovrebbe portarci a vigilare maggiormente sulla maniera in cui noi diventiamo anziani.
+        </p>
+        <p facs="#facs_6_r_11">
+          Dobbiamo fare ogni sforzo per restare giovani il più a lungo possibile e per invecchiare nella maniera migliore possibile.
+        </p>
+        <p facs="#facs_6_r_12">
+          Restare giovani il più a lungo possibile non vuol dire comportarsi come i giovani; trovo molto desolante osservare anziani che si applicano a farsi coro dei giovani per sentirsi ancora parte di loro. Non è di questo che i giovani hanno bisogno: i giovani hanno bisogno di veri adulti e di adulti che invecchiano bene, e hanno bisogno che questi adulti abbiano il coraggio di essere quelli che sono in forza delle esperienze vissute.
+        </p>
+        <p facs="#facs_6_r_13">
+          Ho qualche volta l'impressione penosa, nel vedere persone che invecchiano, che abdicano davanti ai giovani e che non assolvono alla loro funzione, che sono in sostanza dei demagoghi nei confronti dei giovani, nel senso di quei politici che possono essere dei demagoghi.
+        </p>
+        <p facs="#facs_6_r_14">
+          Penso che questo comportamento porti con sé la corruzione della società e del rapporto sociale tra giovani e anziani.
+        </p>
+        <p facs="#facs_6_r_15">
+          Vorrei dire che c'è prima una differenza sostanziale e profonda che deve essere riconosciuta tra giovani e anziani e di conseguenza una differenza nella maniera di accettare o meno di diventare vecchi.
+        </p>
+        <p facs="#facs_6_r_16">
+          Il giovane è pienamente nella vita; anche quando parla della morte ne parla come di cosa estremamente lontana, la sua visuale concerne la vita; vuole questo, esige di raggiungere quest'altro, tutta la sua persona è tesa verso i suoi desideri e le sue attività.
+        </p>
+        <p facs="#facs_6_r_17">
+          Gli anziani, anche se rifuggono dal pensarci, si avvicinano alla morte e vi si avvicinano in modi diversi e non solo alla loro morte ma anche a quella di persone del loro ambiente, dei loro congiunti: la loro generazione va a poco a poco scomparendo e di conseguenza la loro visuale è visuale a breve termine perché sarebbe assurdo per loro avere delle aspettative a lungo termine.
+        </p>
+        <p facs="#facs_6_r_18">
+          Ne risultano due attitudini estreme: alcuni anziani si aggrappano alla vita, altri se ne distaccano; credo che uno dei compiti, quando ci si applica al modo di invecchiare e non semplicemente al fatto di invecchiare, è il trovare il giusto peso, in sé contraddittorio, delle cose della vita di fronte alla morte.
+        </p>
+        <p facs="#facs_6_r_19">
+          Non è facile, si tratta di trovare un equilibrio che non esiste oggettivamente, e per il quale non esiste massima da imparare e da applicare.
+        </p>
+        <p facs="#facs_6_r_20">
+          Bisogna arrivare a realizzare questo equilibrio in se stessi, con una certa attitudine equilibrata verso la morte, attitudine che riconosca comunque il valore delle cose della vita.
+        </p>
+        <p facs="#facs_6_r_21">
+          Il raggiungere questo equilibrio dipende evidentemente dal senso che si continua a dare alla vita, anche se a lunga scadenza non sarà forse più la nostra vita: dipende dal senso che si dà alla vita, dal rapporto che si continua a intrattenere con il tempo, con la durata di questo tempo che si continua a prendere molto seriamente e anche non molto seriamente.
+        </p>
+        <p facs="#facs_6_r_22">
+          Credo che molte cose nella vita sono così paradossali e trovano la loro armonia nella contraddizione. E sono cose che possono essere realizzate in se stessi molto lentamente, senza troppo parlarne, e senza troppo pensarci esplicitamente.
+        </p>
+        <p facs="#facs_6_r_23">
+          Ma per realizzarle intimamente bisogna cessare di avere prima di tutto dei diritti e bisogna trovarsi dei compiti.
+        </p>
+        <p facs="#facs_6_r_24">
+          Da qui parte il titolo della mia relazione «<bibl ref="#zbz-w.497">Nuovi compiti, nuova giovinezza</bibl>».
+        </p>
+        <p>
+          Questi compiti devono portare a comprendere il peso che le cose hanno per i giovani e dire che più che comprendere occorre assorbire in sé
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          11
+        </p>
+        <p facs="#facs_7_r_2">
+          
+        </p>
+        <p facs="#facs_7_r_3">
+          stessi il peso che queste cose hanno per i giovani.
+        </p>
+        <p facs="#facs_7_r_4">
+          Non bisogna assumere l'atteggiamento di persone distinte per le quali queste cose, cui gli altri sono così disperatamente attaccati, sono diventate cose frivole.
+        </p>
+        <p facs="#facs_7_r_5">
+          Saper ancora riconoscere l'importanza di un abito, di una escursione, di una cosa passeggera che un altro vive e che forse voi stessi vivrete, saper dare a queste cose il giusto peso ma con quell'indispensabile elemento di distacco, costituisce il vero distacco vivente, la vera serenità vivente, non quella neutra e distante che e già insita nella morte.
+        </p>
+        <p facs="#facs_7_r_6">
+          C'è un'altra cosa: invecchiare investe il rapporto che si ha con il proprio corpo; il corpo dei giovani è uno strumento perfetto, è così perfetto che non ha bisogno che ci si pensi, tranne quando ciò faccia piacere.
+        </p>
+        <p facs="#facs_7_r_7">
+          Per le persone anziane il corpo è spesso uno strumento doloroso e minacciato.
+        </p>
+        <p facs="#facs_7_r_8">
+          C'è una certa imminenza della minaccia nell'età; e questa è causa del motivo per cui spesso le persone anziane nella vita quotidiana sono più pesantemente preoccupate del loro corpo che non i giovani che possono permettersi di dimenticarlo.
+        </p>
+        <p facs="#facs_7_r_9">
+          Il corpo prende, per così dire, un posto preponderante; conosco persone che passano il loro
+        </p>
+        <p>
+          tempo a spostare uno scialle a seconda della direzione di un soffio di vento e che hanno sempre male da qualche parte a cominciare dalla punta dei piedi fino alla punta dei capelli.
+        </p>
+        <p>
+          Questo implica naturalmente un modo di vivere estremamente doloroso e penoso, una enorme dipendenza e servitù; si è presi così in un circolo vizioso dal quale non si riesce più ad uscire. Non esiste più quella contraddizione vivente della quale ho parlato prima, e non può esserci in questa situazione un vero equilibrio.
+        </p>
+        <p>
+          C'è un paradosso: quando siamo anziani qualche volta abbiamo la tendenza a pensare che è meglio non occuparsi del proprio corpo perché non ne vale più la pena. Mi ricordo che un giorno quando dissi una sciocchezza di questo genere al mio medico egli mi rispose che trascurare il proprio corpo non significava morire, ma soffrire. Di conseguenza si è obbligati ad occuparsi del proprio corpo: è cosa che le persone anziane devono imparare.
+        </p>
+        <p>
+          È però assolutamente necessario, anche qui, trovare il giusto limite tra occuparsene e dimenticarsene, restando liberi nella vigilanza e non lasciandosi ossessionare.
+        </p>
+        <p>
+          C'è un'altra cosa ancora: io direi che invecchiare vuol dire indurirsi. La caratteristica del giovane è l'elasticità, l'anziano può indurirsi magari nei
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          12
+        </p>
+        <p facs="#facs_8_r_2">
+          tratti migliori del carattere, ciò che è pur sempre un indurimento. Conosco anziani che nel corso della loro vita sono stati di una grande amabilità, di una generosità estrema e che diventando anziani questa amabilità è diventata come una specie di maschera convenzionale sulla loro persona. È triste! Bisogna vigilare per non diventare la caricatura di se stessi; non bisogna diventare lo schiavo di se stessi, d'un se stessi che non si è mai veramente conosciuto ma del quale si era orgogliosi e del quale si ripetono meccanicamente le attitudini e le espressioni.
+        </p>
+        <p facs="#facs_8_r_3">
+          C'è un'altro elemento nell'invecchiare che concerne l'affettività.
+        </p>
+        <p facs="#facs_8_r_4">
+          Nei giovani l'egocentrismo affettivo è molto grande ma è mobile e mutevole; nel vecchio o l'affettività è superata nell'approssimarsi della morte ed egli vive in una sorta di distanza dove l'affettività non riesce più a vibrare, o al contrario perché egli è sotto la minaccia della morte, vive in uno stato affettivo tirannico e ossessionante talmente primordiale che lo porta ad esigere che questa affettività sia primordiale in tutti. A suo parere tutti dovrebbero sentirsi minacciati dalla morte. Questo comportamento porta con sé una grande minaccia di solitudine perché non è facile per gli altri accettare questo comportamento. La persona anziana insaziabile, che non può ricevere una visita senza rimproverare che questa visita è tardiva o non sufficientemente frequente, allontana e scoraggia il giovane il quale non tornerà più.
+        </p>
+        <p facs="#facs_8_r_5">
+          C'è un'altra cosa: essere vecchio significa aver visto molti morire, vuol dire aver perso dei congiunti. Il mondo nel quale l'anziano vive non è più il suo mondo, soprattutto un mondo che cambia così in fretta quale è il mondo del giorno d'oggi. Ciò accresce la sua solitudine e le occasioni di sofferenza.
+        </p>
+        <p facs="#facs_8_r_6">
+          Ma d'altro canto essere vecchio vuol dire aver vissuto, aver visto il mondo, aver provato la condizione umana, è aver incontrato i tesori del passato e del presente, aver passato rischi, fallimenti, aver usato della propria libertà. Vuol dire cioè avere mille ragioni per dire grazie. E allora se si dice grazie per tutto questo credo che sia importante, finché si vive, avere ancora, in questo mondo che si svuota, dei compiti, prendere dei rischi e avere qualche cosa che conta, avere delle poste in gioco. Sicuramente non saranno gli stessi impegni di un giovane di venti anni. Saranno cose su cui contare, che ci portano a dire «domani cosa faccio?, quale sarà il risultato del mio impegno di domani?»
+        </p>
+        <p facs="#facs_8_r_7">
+          Ma l'importante è avere delle cose più importanti della propria persona. Ebbene per questo non c'è che un modo, avere dei nuovi compiti che ci offrono nuove esperienze e nuove poste in gioco. E questo vale in molti altri campi: i rapporti si sono disumanizzati e si sono disumanizzati al
+        </p>
+        <p facs="#facs_8_r_8">
+          punto tale che alcuni dei particolari che una volta davano conforto, anche se una volta la vita era meno confortevole di oggi, sono scomparsi; per esempio si trovava del latte e del pane vicino alla bucalettere, piccoli piaceri, piccole gioie, piccoli segni di umanità.
+        </p>
+        <p facs="#facs_8_r_9">
+          Oggi la maggior parte delle persone non è più disponibile; ad esempio una madre di famiglia che lavora ha il figlio con un po' di febbre, non sa più cosa fare, deve andare dal dottore, deve fare la spesa, e non può contare su nessuno. Nel contempo ci sono delle persone anziane che sono sole, che vivono da sole, rinchiuse fra le loro quattro mura, che non sanno più vivere perché niente più le coinvolge.
+        </p>
+        <p facs="#facs_8_r_10">
+          Ora io penso che per queste situazioni ci sia bisogno di molte nonne e di molti nonni; questa presenza permetterebbe di evitare che, non appena c'è un contrattempo, e c'è sempre un contrattempo nella vita, ci si trovi disorientati.
+        </p>
+        <p facs="#facs_8_r_11">
+          Quando durante il congresso di <placeName ref="#zbz-l.81">Tolosa</placeName> ho avuto modo di rivolgermi a qualcuno della vostra Associazione, ho parlato dell'importanza del lavoro artigianale delle persone anziane. Oltre a questo esempio ci sono mille altre forme di aiuto da offrire che creerebbero dei legami tra gli anziani e le famiglie, perché io credo che anche con le migliori intenzioni del mondo, alla lunga se non c'è amicizia, o bisogni reciproci, ci si inaridisce. Bisogna tessere delle amicizie, sentire il bisogno di amicizie. Si tratta di costruire delle passerelle contro la solitudine, contro la rinuncia, per rispondere a bisogni reali in maniera umana. E non penso che ciò possa essere risolto senza una vera presenza di un nonno o di una nonna, di qualcuno che ha vissuto e che ha l'esperienza della vita.
+        </p>
+        <figure facs="#facs_8_r_12">
+          <head>Per la persona anziana questo è il miglior rimedio contro l'ossessione di sé. La persona anziana allora anziché dire «perché non si fa niente per me, perché non mi vengono a trovare?» si sveglia al mattino e dice «mi aspettano là, devo andarci, perché hanno bisogno di me, devo essere pronta».</head>
+        </figure>
+        <p>
+          Ciò significa che si accetta pienamente la condizione del presente indipendentemente dalla morte, del mondo che esiste oggi, che è il nostro mondo, il solo dove abbiamo un appuntamento con qualcuno e qualcosa, e che costituisce il presente. E credo che questa sia la salute della libertà, libertà in virtù della quale non si è più occupati solo del proprio io!
+        </p>
+        <p>
+          Traduzione ripresa con il consenso della prof. <persName ref="#zbz-p.2">J. Hersch</persName> dalla registrazione in francese.
+        </p>
+      </div>
+      </body></text>
+</TEI>

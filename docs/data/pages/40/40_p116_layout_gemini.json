@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "118",
+      "bbox": {
+        "x_pct": 110.81,
+        "y_pct": 77.27,
+        "w_pct": 36.49,
+        "h_pct": 10.37
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 395.95,
+        "y_pct": 82.59,
+        "w_pct": 210.81,
+        "h_pct": 11.11
+      },
+      "changed": true,
+      "change_reason": "Running header identified as section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "celais en tout petits morceaux. Je ne considérais jamais de deux ou trois jours. Et à la fin de ces segments je m’inventais un point de sauvetage quelconque, un petit plaisir assez désirable pour me servir d’attente et de radeau dans l’intervalle. Je n’y mettais aucun orgueil et j’acceptais les secours les plus humbles. C’est que je souffrais trop vraiment pour désirer souffrir, et je sentais en danger ma puissance de vivre. Les mots de Pierre « Vous referez votre vie » ne m’étaient d’aucun secours, non parce que je mettais mon orgueil à souffrir éternellement, mais parce que cela me paraissait inévitable. Même si un nouvel amour devait un jour s’emparer de moi, je n’y croirais plus. Je cherchais donc de moindres secours. Un concert le mercredi, une course de montagne le samedi et le dimanche suffisaient pour faire passer une semaine. Parfois il n’y avait pas de concert, il fallait inventer un autre plaisir, se promettre une bonne soirée au lit avec un livre. Je m’exerçais à me réjouir de ces choses, à compter au réveil le temps qui m’en séparait, à les attendre réellement. Il m’est arrivé, une fois où je n’avais rien trouvé d’autre et où je me sentais plus menacée que de coutume, de me faire une fête à moi-même. Je me suis acheté un tas de petits cadeaux, des fleurs, du chocolat, un roman, j’ai disposé tout cela dans ma chambre sur une nappe fraîche; mais j’ai vite senti qu’une telle tentative frôlait dangereusement la détresse et je n’ai pas recommencé.",
+      "bbox": {
+        "x_pct": 110.81,
+        "y_pct": 126.65,
+        "w_pct": 813.51,
+        "h_pct": 658.79
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text and label assignment for the main paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps passa. Je ne pensais guère à Pierre. Je ne savais même plus si je l’aimais. L’absence pourtant, qui",
+      "bbox": {
+        "x_pct": 113.11,
+        "y_pct": 808.41,
+        "w_pct": 809.32,
+        "h_pct": 52.65
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text for consistency with source image."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was significantly corrupted and inaccurate for both paragraph blocks.",
+    "Page number and running header were mislabeled as text."
+  ],
+  "doc_id": "40",
+  "page": 116,
+  "elapsed_seconds": 4.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

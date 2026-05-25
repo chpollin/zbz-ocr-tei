@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Suisses et Juifs",
+      "bbox": {
+        "x_pct": 23.061,
+        "y_pct": 6.874,
+        "w_pct": 7.911,
+        "h_pct": 2.283
+      },
+      "changed": true,
+      "change_reason": "Identified as running header, moved to _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Porte-t-elle un jugement sur celte époque? Jeanne Hersch a des est diflicile, sinon impossible de ju",
+      "bbox": {
+        "x_pct": 6.871,
+        "y_pct": 40.659,
+        "w_pct": 38.873,
+        "h_pct": 34.921
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fait lentement le tour de la pièce et declare: jupe de mohair à carreaux; les Fesprit de revendicati",
+      "bbox": {
+        "x_pct": 53.965,
+        "y_pct": 12.821,
+        "w_pct": 39.067,
+        "h_pct": 14.689
+      },
+      "changed": false
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "quoi?",
+      "bbox": {
+        "x_pct": 69.368,
+        "y_pct": 51.294,
+        "w_pct": 3.508,
+        "h_pct": 1.563
+      },
+      "changed": true,
+      "change_reason": "Fragment identified as part of header/noise, moved to _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lon de plus de difficulte pour etre satisfait de soi Par nature; le juif est commenct avec le origin",
+      "bbox": {
+        "x_pct": 53.576,
+        "y_pct": 54.664,
+        "w_pct": 37.872,
+        "h_pct": 7.888
+      },
+      "changed": true,
+      "change_reason": "Changed label from list_item to text as it is a standard paragraph continuation"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Est cel attendent toujours le Messie? qu'ils",
+      "bbox": {
+        "x_pct": 57.532,
+        "y_pct": 63.944,
+        "w_pct": 27.182,
+        "h_pct": 2.723
+      },
+      "changed": true,
+      "change_reason": "Changed label from list_item to text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "perdraient la condition historique qui leur philosophes juits comme Spinoza, Bergson et les autres l",
+      "bbox": {
+        "x_pct": 53.421,
+        "y_pct": 65.971,
+        "w_pct": 37.707,
+        "h_pct": 25.153
+      },
+      "changed": true,
+      "change_reason": "Changed label from list_item to text"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "False positive labeling of text regions as list items",
+    "Running headers misidentified as text",
+    "Fragment noise incorrectly labeled"
+  ],
+  "doc_id": "3070",
+  "page": 3,
+  "elapsed_seconds": 4.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

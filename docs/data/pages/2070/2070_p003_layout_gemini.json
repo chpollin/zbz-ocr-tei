@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "KARL JASPERS 411",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 100,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified running header with page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "avait au cœur de sa pensée T'idée ou liberté   responsable en chaque homme fait   qu'il est un homme",
+      "bbox": {
+        "x_pct": 16.117,
+        "y_pct": 15.152,
+        "w_pct": 67.766,
+        "h_pct": 17.487
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant, la r39flexion sur le nihilisme occupe encore une place relativement restreinte dans ses 39uvres d'avant le nazisme et la guerre. C'est dans son gros livre 39De la V39rit3939, dont le sous-titre est 39Logique philosophique39, que le nihilisme prend une place capitale. Sans doute l'exp39rience du nazisme a-t-elle renforc39 la part de lui-m39me qui disputait avec Dieu. L'ouvrage fut 39crit au cours des ann39es noires, alors que Jaspers vivait 39 Heidelberg, priv39 de sa chaire 39 l'Universit39, r39duit au silence, et sans cesse menac39, avec sa femme juive, de d39portation. Les victoires, int39rieures et ext39rieures, du r39gime, l'aberrance de l'histoire, 39 cette 39poque comme en bien d'autres, mais celle-ci plus criante et plus proche, ont s39rement renforc39 dans sa pens39e le th39me du nihilisme et du combat sans fin 39 mener contre lui.",
+      "bbox": {
+        "x_pct": 16.055,
+        "y_pct": 32.7,
+        "w_pct": 68.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph between blocks."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il y avait plus. Dès avant la prise du pouvoir par Hitler . Jaspers avait publie. tout au début",
+      "bbox": {
+        "x_pct": 16.055,
+        "y_pct": 53.239,
+        "w_pct": 67.93,
+        "h_pct": 15.448
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "à Jaspers.  dans Fhistoire de la   philosophie   occidentale, à travers les deux grandes figures d'e",
+      "bbox": {
+        "x_pct": 16.117,
+        "y_pct": 68.75,
+        "w_pct": 67.869,
+        "h_pct": 11.932
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from...",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 58.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Bottom footer info."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing running header region at top.",
+    "Missing footer region at bottom.",
+    "Missing paragraph block between first and second existing blocks."
+  ],
+  "doc_id": "2070",
+  "page": 3,
+  "elapsed_seconds": 15.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

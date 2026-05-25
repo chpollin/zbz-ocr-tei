@@ -1,0 +1,114 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne s'agit pas avant tout de contrôle, mais de quelque chose de beaucoup plus important. Il s'agit du sentiment qu'a l'enfant de sa propre présence parmi les autres. Je touche là un thème qui me tient très à cœur. On n'est pas assez conscient de l'importance du résidu de cérémonial dans la vie collective. Dans une cérémonie, lorsque quelqu'un manque, il y a un trou. Eh bien ! l'être humain a besoin qu'il y ait un trou quand il manque. Si, au contraire, il se trouve dans l'amorphe, s'il est indifférent qu'il soit présent ou pas, il se sentira n'être rien. Avoir sa place particulière au monde, c'est un besoin fondamental.",
+      "bbox": {
+        "x_pct": 15.995,
+        "y_pct": 6.669,
+        "w_pct": 79.646,
+        "h_pct": 17.685
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text which was garbled."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D.K. : Et les enfants ont le goût du rituel.",
+      "bbox": {
+        "x_pct": 18.889,
+        "y_pct": 25.782,
+        "w_pct": 49.206,
+        "h_pct": 1.815
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est vrai. Les enfants sont misonéistes, ils ne sont pas du tout révolutionnaires.",
+      "bbox": {
+        "x_pct": 16.203,
+        "y_pct": 27.742,
+        "w_pct": 79.487,
+        "h_pct": 3.79
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "N'êtes-vous pas frappée par le caractère radical de certaines réformes, qui n'affectent plus seulement les programmes, mais concernent la totalité de l'institution scolaire, ses structures, sa finalité, les rapports maître-élève, famille-école, etc. ?",
+      "bbox": {
+        "x_pct": 16.117,
+        "y_pct": 32.766,
+        "w_pct": 79.487,
+        "h_pct": 8.339
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oui. On prétend réformer le tout ; ces réformes sont plutôt totales que radicales.",
+      "bbox": {
+        "x_pct": 16.154,
+        "y_pct": 40.621,
+        "w_pct": 79.609,
+        "h_pct": 4.218
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D.K. : Dans de nombreux projets de réforme, en France, en Suisse, en Allemagne, l'intégration dans le groupe, la « socialisation » sont données comme le but essentiel de la formation scolaire. Par exemple, dans un état des travaux du 30 septembre 1970, les responsables de la réforme scolaire, dans le Canton de Vaud, remarquent : « Toutes les nouvelles réformes des systèmes d'enseignement mettent l'accent sur l'éveil du sens social ». Que pensez-vous de cette orientation ?",
+      "bbox": {
+        "x_pct": 15.995,
+        "y_pct": 45.887,
+        "w_pct": 79.731,
+        "h_pct": 14.25
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'enfant doit apprendre à vivre en société, mais pour socialiser un enfant, il faut avoir compris ce qu'est une société. Une société est une réalité extrêmement complexe. Pour être socialisé, il ne suffit pas de savoir réciter un catéchisme social et de déclarer que tous les hommes sont égaux. Ces principes abstraits n'impliquent encore aucune socialisation réelle de la personne. La société est une réalité qui comporte des niveaux différents, allant du niveau rituel des formes de la société qui règlent, presque à notre insu, par des sortes de coutumes formelles, notre manière de vivre avec les autres, — passant par le niveau où nous nous faisons une certaine idée des rapports entre les hommes et de leurs droits, et s'affirmant au niveau vital où intérêts et conceptions s'affrontent. On peut donc distinguer, dans la structure d'une société, une zone formelle d'harmonie et d'équilibre extérieurs, une zone de conceptions théoriques plus ou moins éthiques et une zone de conflits et d'intérêts vitaux, jamais complètement éliminée, parce que nous sommes des êtres vivants, mortels, menacés, et que nos proches le sont aussi. A cet égard, on a un",
+      "bbox": {
+        "x_pct": 15.836,
+        "y_pct": 59.677,
+        "w_pct": 80.098,
+        "h_pct": 32.097
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "zb_paragraph",
+      "text": "68",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page number, should be page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Severe OCR errors throughout",
+    "Page number missing from initial detection"
+  ],
+  "doc_id": "2330",
+  "page": 72,
+  "elapsed_seconds": 6.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

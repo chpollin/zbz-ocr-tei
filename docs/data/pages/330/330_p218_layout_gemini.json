@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "184 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 9.513,
+        "y_pct": 7.946,
+        "w_pct": 85.891,
+        "h_pct": 4.425
+      },
+      "changed": true,
+      "change_reason": "Page header and page number incorrectly labeled as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "partout \", condamner en fait la démocratie politique et la livrer à ses ennemis.",
+      "bbox": {
+        "x_pct": 9.513,
+        "y_pct": 10.946,
+        "w_pct": 85.891,
+        "h_pct": 4.425
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JUSTIFICATION DE LA DÉMOCRATIE « QUAND MÊME »",
+      "bbox": {
+        "x_pct": 9.986,
+        "y_pct": 19.536,
+        "w_pct": 66.574,
+        "h_pct": 1.963
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils disent donc, ces ennemis, que la démocratie capitaliste est « formelle », qu'elle n'est que « formelle », c'est-à-dire en somme, une façade, un leurre. Le complexe d'infériorité ou de culpabilité, chez les démocrates est prêt à jouer, car ils ont conscience de l'altération interne du régime et de son infidélité aux valeurs. Peut-être aussi existe-t-il une tentation de rejeter le régime entier, en bloc, — ce qui permet de renvoyer le moment d'agir à après-demain, quand la démocratie politique aura été détruite, plutôt que d'avoir une tâche économique et sociale déterminée à accomplir aujourd'hui, dans le cadre du régime actuel. Quoi qu'il en soit, il ne faut pas se laisser aveugler par les fautes commises au point de méconnaître la valeur concrète énorme, sur tous les plans où se joue la vie quotidienne des individus, de la démocratie politique. Et je peux bien, après la critique qui précède, tenter de la mettre en relief.",
+      "bbox": {
+        "x_pct": 9.471,
+        "y_pct": 23.131,
+        "w_pct": 85.891,
+        "h_pct": 31.311
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord le problème de la sécurité. Quoi qu'en aient dit, dans la paix de leur cabinet de travail ou même dans leurs misérables mansardes, penseurs et poètes rêvant d'aventures les deux pieds sous l'édredon ou dans leurs pantoufles, la sécurité est un élément capital de la civilisation, non pas tant à cause du sentiment de bien-être qu'elle procure que des possibilités qu'elle ouvre. Il suffit d'un regard sur le monde animal non domestiqué pour être saisi par l'épouvante perpétuelle qui y règne. Le rat de rivière, glissant à la nage sous les feuilles des plantes aquatiques dont les feuilles plates recouvrent la surface de l'eau, ose à peine, de temps en temps, émerger pour prendre une lampée d'air. Le canard sauvage, la tête sous une feuille, guette le danger de son œil rond, tout le corps en alerte. Même sous la détente apparemment distraite des insectes, sous l'engourdissement des fauves, le bond de la fuite, à travers muscles, poils, antennes, est toujours prêt. L'aventure humaine commence avec les répits de la peur.",
+      "bbox": {
+        "x_pct": 9.192,
+        "y_pct": 54.175,
+        "w_pct": 85.891,
+        "h_pct": 33.631
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les répits de la peur immédiate; celle comme la peau qui est",
+      "bbox": {
+        "x_pct": 12.214,
+        "y_pct": 87.154,
+        "w_pct": 82.591,
+        "h_pct": 2.855
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription of paragraph text."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Transcription for entire paragraph blocks was highly inaccurate.",
+    "Page header with page number was mislabeled as text.",
+    "Section header had OCR errors."
+  ],
+  "doc_id": "330",
+  "page": 218,
+  "elapsed_seconds": 7.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

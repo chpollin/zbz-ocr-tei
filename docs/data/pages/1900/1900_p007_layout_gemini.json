@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'EUROPE",
+      "bbox": {
+        "x_pct": 12.073,
+        "y_pct": 5.091,
+        "w_pct": 11.742,
+        "h_pct": 1.596
+      },
+      "changed": true,
+      "change_reason": "Corrected typographical error in label extraction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "exemple, ne s'est pas remise de cette déchirure. Socrate, aujourd'hui, ne choisirait pas de mourir par respect d'une loi injustement appliquée. Ou plutôt : il ne peut plus y avoir de Socrate.",
+      "bbox": {
+        "x_pct": 12.04,
+        "y_pct": 9.561,
+        "w_pct": 80.944,
+        "h_pct": 5.302
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "20 L'expérience du « mal absolu » engendre le refus d'une lente progression humaine parmi les mélanges et les compromis. Elle incite à l'angélisme, à l'exigence vide d'un homme, d'une société, d'un monde neufs, conformes à des normes « chimiquement pures », d'une convergence paradisiaque — et à un irréalisme pathétique et prétentieux.",
+      "bbox": {
+        "x_pct": 12.258,
+        "y_pct": 14.954,
+        "w_pct": 80.806,
+        "h_pct": 7.452
+      },
+      "changed": true,
+      "change_reason": "Changed list_item to text as it is part of a larger paragraph block"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "30 Une telle perspective ne s'accommode ni de ce qui a été, ni de ce qui est, fût-ce comme matériau réel en vue du futur. D'où le refus de l'histoire, du passé, du donné et de sa résistance. L'irréalisme ne peut soutenir ses prétentions que dans la malléabilité du néant. D'où l'horreur des réformes, qui prennent appui sur ce qui est. Même si on parle beaucoup d'histoire, c'est une histoire sans histoire, abstraite, pour une génération sans pères, sans hérédité et sans héritage. Seule a du prestige la table rase, elle seule est digne de « l'homme nouveau ».",
+      "bbox": {
+        "x_pct": 12.097,
+        "y_pct": 22.121,
+        "w_pct": 81.105,
+        "h_pct": 12.486
+      },
+      "changed": true,
+      "change_reason": "Changed list_item to text as it is part of a larger paragraph block"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'entreprise peut paraître héroïque, au point de négliger les limites humaines. En fait, à force d'analyse, de purisme abstrait, à force de démystifier et de démythifier la condition humaine pour mieux la refaire à notre gré, nous l'avons décomposée jusqu'à la platitude et à la destruction. On sait depuis longtemps que celui qui veut faire l'ange fait la bête.",
+      "bbox": {
+        "x_pct": 12.315,
+        "y_pct": 34.396,
+        "w_pct": 80.968,
+        "h_pct": 7.583
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais s'il est vrai que nous devons l'Europe à des Européens qui ont accepté les chances et les risques, les tragédies et les limites, les audaces et l'inachèvement, les appétits et les sacrifices, et toutes les polarités de la condition humaine — que va-t-elle devenir, maintenant qu'ils n'y consentent plus?",
+      "bbox": {
+        "x_pct": 12.234,
+        "y_pct": 47.32,
+        "w_pct": 80.855,
+        "h_pct": 7.355
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne HERSCH.",
+      "bbox": {
+        "x_pct": 70.75,
+        "y_pct": 55.969,
+        "w_pct": 17.5,
+        "h_pct": 1.745
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "252",
+      "bbox": {
+        "x_pct": 12.35,
+        "y_pct": 91.5,
+        "w_pct": 3.4,
+        "h_pct": 2.1
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region"
+    }
+  ],
+  "score": 85,
+  "num_corrections": 4,
+  "issues": [
+    "Missing page footer detection for 252",
+    "List item labels were incorrectly assigned to paragraph blocks",
+    "Typo in header text",
+    "Jeanne HERSCH author signature remains as text"
+  ],
+  "doc_id": "1900",
+  "page": 7,
+  "elapsed_seconds": 5.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

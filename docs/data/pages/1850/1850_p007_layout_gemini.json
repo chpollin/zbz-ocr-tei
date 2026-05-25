@@ -1,0 +1,114 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IV",
+      "bbox": {
+        "x_pct": 49.33,
+        "y_pct": 10.33,
+        "w_pct": 2.5,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Identified as section header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, non seulement l'homme ne cr29e jamais aucune réalité ex nihilo,(fût-ce un art, quoi qu'il ose prétendre), mais encore il n'est aucune de ses démarches en vue d'une connaissance objective ou rationnelle, aucun des jugements de valeur qui guident son action, qui puissent se développer à partir de rien. L'homme ne part jamais de rien. Chacun de ses efforts, chacune de ses pensées met en jeu, implicitement ou explicitement, des « préjugés » : postulats de réalité ou de droit, valeurs, impératifs, règles de validité ou de légitimité. Sinon, ce qu'il pourrait dire ou faire n'aurait ni cohérence, ni sens.",
+      "bbox": {
+        "x_pct": 11.499,
+        "y_pct": 14.025,
+        "w_pct": 81.193,
+        "h_pct": 19.441
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a donc un préjugé qui commande la pensée, l'action, la création, d'une époque qui, comme la nôtre, se veut libre et ex nihilo, c'est celui de l'absence de tout préjugé. Nous retrouvons ici le paradoxe ou le cercle implicite dans toute philosophie : il faut étre libre pour mettre en œuvre la liberté — mais on ne choisit pas d'étre libre, et on a pu dire que l'homme est « condamné à la liberté ». L'essentiel ne se justifie plus par autre chose. L'ultime justification ne se justifie plus. Le sens critique n'y peut rien.",
+      "bbox": {
+        "x_pct": 11.257,
+        "y_pct": 32.896,
+        "w_pct": 81.33,
+        "h_pct": 17.161
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "V",
+      "bbox": {
+        "x_pct": 49.33,
+        "y_pct": 52.33,
+        "w_pct": 2.5,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Identified as section header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'étre humain vivant, changeant, nostalgique, conscient de sa finitude — s'attache à des préjugés dont la permanence l'assure de son étre. Mais « étre » pour un étre humain implique une présence à l'instant concret qui interdit toute généralisation dogmatique. S'il y a eu un homme ayant cherché sa liberté dans sa fidélité à des principes, ce fut bien Gandhi. Il a pourtant lui-même nié qu'il puisse y avoir un seul principe capable d'exiger une conduite déterminée en n'importe quelle circonstance. Ainsi l'impératif de la non-violence lui-même : une non-violence qui, dans une situation donnée, se confondrait avec la lâcheté serait, selon Gandhi, pire que la violence.",
+      "bbox": {
+        "x_pct": 10.798,
+        "y_pct": 55.775,
+        "w_pct": 81.604,
+        "h_pct": 21.095
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aucun préjugé ne dispense une liberté vraie de son acte de présence au hic et nunc, par lequel la continuité objective du temps est à jamais existentiellement rompue.",
+      "bbox": {
+        "x_pct": 10.741,
+        "y_pct": 76.169,
+        "w_pct": 81.741,
+        "h_pct": 6.916
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'absolu moral reste ponctuel, non totalisable, et s'il transcende les préjugés il n'en est pas moins, malgré la contradiction des termes, « relatif » à des postulats, à des valeurs, dont ne dérive aucune prescription littérale, permanente et univoque.",
+      "bbox": {
+        "x_pct": 10.58,
+        "y_pct": 82.252,
+        "w_pct": 81.845,
+        "h_pct": 9.612
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "30",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 92.5,
+        "w_pct": 2.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer"
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original detection missed the page number at the bottom",
+    "Section headings IV and V were incorrectly labeled as text"
+  ],
+  "doc_id": "1850",
+  "page": 7,
+  "elapsed_seconds": 9.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

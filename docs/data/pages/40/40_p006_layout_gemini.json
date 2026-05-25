@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "8 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 82.5,
+        "y_pct": 77.0,
+        "w_pct": 14.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_header for the page number and running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "paraître sèche la maigreur de ses doigts. Je proteste, je dis que je n'ai pas faim. Elle sourit alors, à peine: « Vous verrez, madame, demain matin. Il aura faim, le petit ». Hier, comme chaque jour, ton petit, Marc, a eu faim. J'ai donc mangé les raisins pour lui; ils étaient d'une douceur riche et durable.",
+      "bbox": {
+        "x_pct": 7.797,
+        "y_pct": 12.127,
+        "w_pct": 81.257,
+        "h_pct": 15.378
+      },
+      "changed": true,
+      "change_reason": "Text content updated to match source image more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'entendais se former au loin un creux de silence; c'est à peine si un murmure écumait sur ses bords. Puis le vent en jaillissait, roulait sur des grèves de feuillage, envahissait l'espace. Les murs n'étaient rien contre cette immensité, et la sécurité était dehors, sur les flots de l'air. Le même vent t'a enveloppé sans doute, Marc, quand tu es sorti, à l'aube, de ton cantonnement. Ma chambre était solitaire, mais la mer nous est toujours commune, comme la nuit qui rapproche ceux qui sont séparés. Je me suis abandonnée complètement aux vagues du dehors, moi et notre enfant, Marc. Car elles sont si lourdes et si profondes qu'elles le porteront et le nourriront toute sa vie, s'il veut bien.",
+      "bbox": {
+        "x_pct": 7.703,
+        "y_pct": 28.762,
+        "w_pct": 81.257,
+        "h_pct": 32.826
+      },
+      "changed": true,
+      "change_reason": "Text content updated to match source image more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plus tard, j'ai fait un tour de jardin. Il est très mal entretenu depuis que tu n'es pas là. Mes pas ne faisaient aucun bruit dans les allées où les feuilles humides s'accumulent. Des liserons étouffaient les plates-bandes. Le lierre de la fontaine envahissait l'intérieur du bassin. Les brumes et les plantes s'emmêlaient. J'ai mordu dans une pomme intacte que le vent avait arrachée, une pomme allongée, dure, verte tachée de vert-de-gris, du pommier qui est au milieu du poulailler. Acide, âpre,",
+      "bbox": {
+        "x_pct": 7.662,
+        "y_pct": 62.543,
+        "w_pct": 81.122,
+        "h_pct": 23.346
+      },
+      "changed": true,
+      "change_reason": "Text content updated to match source image more accurately."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 4,
+  "issues": [
+    "The page header (8 TEMPS ALTERNÉS) was misidentified as part of the paragraph or skipped entirely.",
+    "OCR text extraction quality was poor and had significant gaps and artifacts.",
+    "Bbox coordinates provided were acceptable but the classification of header components was missing."
+  ],
+  "doc_id": "40",
+  "page": 6,
+  "elapsed_seconds": 4.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

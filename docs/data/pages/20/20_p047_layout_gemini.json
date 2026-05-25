@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ET VEUT ÊTRE UNE SCIENCE 45",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The header 'ET VEUT ÊTRE UNE SCIENCE 45' was missing as a region, and page number 45 should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "voulut lui emprunter de sa sécurité. Mais ce faisant, elle offrait plus que jamais prise à ses détracteurs, auxquels elle donnait le droit de lui appliquer des critères scientifiques. Or elle n'obtenait pas de résultats scientifiques et pour la science elle valait donc moins que rien : elle était une erreur obstinée. Philosophiquement elle conservait sans le vouloir son sens, car elle faisait autre chose que ce qu'elle voulait faire. Cependant, en se proclamant science, elle dissimulait sa propre nature, elle se dérobait à sa tâche de poser la « question radicale », et son point de départ restait obscur.",
+      "bbox": {
+        "x_pct": 11.747,
+        "y_pct": 11.888,
+        "w_pct": 76.054,
+        "h_pct": 30.887
+      },
+      "changed": true,
+      "change_reason": "OCR text was truncated and inaccurate; updated to reflect full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous nous demanderons maintenant si son défaut originel n'était pas inévitable, si son questionnaire sans bornes et sans révérence, ignorant de tout scire nefas, ne devait pas nécessairement partir de cette obscurité. En même temps, il s'agit de voir si les contradictions auxquelles s'est heurtée notre recherche n'ont pas un sens positif à l'intérieur de la philosophie. Il s'agit de voir enfin si la philosophie du passé a eu tort, si elle a manqué d'une base que nous allons lui donner, si elle aurait dû reconnaître ses contradictions fondamentales et leur valeur positive, ou si, au contraire, l'illusion scientifique était nécessaire à l'existence même de la philosophie.",
+      "bbox": {
+        "x_pct": 12.048,
+        "y_pct": 42.545,
+        "w_pct": 75.949,
+        "h_pct": 36.034
+      },
+      "changed": true,
+      "change_reason": "OCR text was heavily truncated and garbled; updated to reflect full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je regarde une cascade. Il y a plusieurs façons de la voir. Elle peut m'apparaître comme une force,",
+      "bbox": {
+        "x_pct": 12.455,
+        "y_pct": 83.098,
+        "w_pct": 75.693,
+        "h_pct": 5.872
+      },
+      "changed": true,
+      "change_reason": "OCR text was incorrectly sequenced and incomplete; updated to match the text in the image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Missing bounding box for page header",
+    "OCR text extraction for all paragraphs was significantly corrupted or truncated",
+    "Paragraph text alignment in extraction was incorrect"
+  ],
+  "doc_id": "20",
+  "page": 47,
+  "elapsed_seconds": 4.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

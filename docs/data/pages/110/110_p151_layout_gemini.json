@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME ET L'ESPACE",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 2.0,
+        "w_pct": 19.3,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "149",
+      "bbox": {
+        "x_pct": 77.3,
+        "y_pct": 93.0,
+        "w_pct": 4.1,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce   mouvement le long de la voie ne correspond   dailleurs à aucun allongement (et dans   Timage le",
+      "bbox": {
+        "x_pct": 12.923,
+        "y_pct": 13.971,
+        "w_pct": 68.631,
+        "h_pct": 48.216
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous voyons dès lors en tout cas deux facteurs (el il y doute dautres) viennent   conférer 4 Tespace",
+      "bbox": {
+        "x_pct": 13.119,
+        "y_pct": 64.108,
+        "w_pct": 68.274,
+        "h_pct": 11.215
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page footer/number region"
+  ],
+  "doc_id": "110",
+  "page": 151,
+  "elapsed_seconds": 7.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

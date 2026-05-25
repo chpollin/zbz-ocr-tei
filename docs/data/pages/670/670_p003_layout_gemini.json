@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "322",
+      "bbox": {
+        "x_pct": 117.0,
+        "y_pct": 73.0,
+        "w_pct": 27.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 374.0,
+        "y_pct": 73.0,
+        "w_pct": 134.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2. PROJET ET SENS",
+      "bbox": {
+        "x_pct": 355.0,
+        "y_pct": 137.0,
+        "w_pct": 198.0,
+        "h_pct": 21.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais s'il s'agit d'histoire, les faits ne suffisent pas, même si on leur ajoute ces « faits » que sont les intentions, les visées des acteurs. Il y faut un sens, aux deux sens du mot sens : direction et signification. La causalité ne constitue jamais un sens car il n'y a pas de sens sans référence, déclarée ou clandestine, à des valeurs. Le sens reste indissolublement lié aux projets présents, individuels ou collectifs, et par conséquent au futur. Le projet, source de toute tentative de sens, porte sur un futur encore vide de faits, où le sens précède, attend les faits. Le projet porte aussi sur tout le passé, dont le sens dépend encore de lui et n'est jamais « un fait ». Le passé se trouve donc donné comme un ensemble de faits, mais comme une virtualité de sens. Le futur se trouve donné comme sens (par le projet), mais comme virtualité de faits. Une sorte d'osmose se produit alors entre le passé et le futur, entre la virtualité de sens du passé et la virtualité de faits du futur. Il semble que l'on puisse trouver des sens dans le passé, (pré)voir des faits dans le futur. Ainsi se constitue la continuité du temps, le fil du temps, où le présent s'évanouit ou se dilue, avec pour effet immédiat la fusion indistincte du théorique et du pratique, dont la distinction exige en effet, en premier lieu, une articulation nette entre le passé et le futur.",
+      "bbox": {
+        "x_pct": 109.0,
+        "y_pct": 170.0,
+        "w_pct": 685.0,
+        "h_pct": 360.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match original."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3. ILLUSTRATION HISTORIQUE",
+      "bbox": {
+        "x_pct": 303.0,
+        "y_pct": 579.0,
+        "w_pct": 293.0,
+        "h_pct": 17.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le « miracle grec » a été avant tout la prise de conscience du théorique pur par lui-même. Le regard grec contemple les étoiles fixes qui, du haut de leur immuabilité, commandent l'action, ses avatars et ses péripéties. Il y eut l'immuabilité éternelle de Parménide, le logos (trop souvent négligé) d'Héraclite, les Idées de Platon, et dans tous les domaines le déploiement des lois. Il est vrai que Platon avait bien vu l'indissoluble ambiguïté de la quête philosophique entre théorie et pratique : la « connaissance » du Bien exige un exercice, pratique et purificateur, du sujet connaissant. Si les Idées sont de sortes des « faits transcendants » immuables, l'âme, qui a une histoire, est comme une Idée, elle n'est pas une Idée. Il n'en reste pas moins que l'être du Bien existe en soi ; et l'ambiguïté même de sa connaissance n'a pu être montrée que grâce à la netteté de la distinction entre le théorique et le pratique.",
+      "bbox": {
+        "x_pct": 106.0,
+        "y_pct": 611.0,
+        "w_pct": 684.0,
+        "h_pct": 256.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or, avec le christianisme, la vérité devient elle-même une personne et une histoire. « Je suis la Vérité... » Dès lors, transcendance et",
+      "bbox": {
+        "x_pct": 109.0,
+        "y_pct": 868.0,
+        "w_pct": 685.0,
+        "h_pct": 29.0
+      },
+      "changed": true,
+      "change_reason": "Added missing text region at the bottom."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was severely corrupted/truncated.",
+    "Page number and header were not correctly labeled.",
+    "One paragraph at the bottom was missing from extraction."
+  ],
+  "doc_id": "670",
+  "page": 3,
+  "elapsed_seconds": 7.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

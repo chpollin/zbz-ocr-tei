@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Hans Spatzenegger (Hg.)",
+      "bbox": {
+        "x_pct": 42.668,
+        "y_pct": 89.284,
+        "w_pct": 44.858,
+        "h_pct": 14.868
+      },
+      "changed": true,
+      "change_reason": "Missing region identified. Author/Editor information is a header/metadata element."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FREIHEIT GLEICHHEIT BRÜDERLICHKEIT",
+      "bbox": {
+        "x_pct": 28.286,
+        "y_pct": 21.696,
+        "w_pct": 57.217,
+        "h_pct": 13.846
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Ideale der Französischen Revolution – was ist aus ihnen geworden?",
+      "bbox": {
+        "x_pct": 17.975,
+        "y_pct": 38.106,
+        "w_pct": 67.652,
+        "h_pct": 10.306
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image (added dash)."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Universitätsverlag Anton Pustet",
+      "bbox": {
+        "x_pct": 10.472,
+        "y_pct": 83.482,
+        "w_pct": 54.037,
+        "h_pct": 3.176
+      },
+      "changed": true,
+      "change_reason": "Publisher name is a bibliographic entry, best categorized as section_header/zb_heading."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Missing region for author line at the top",
+    "Typo in title text (missing dash)",
+    "Misclassification of publisher name"
+  ],
+  "doc_id": "2660",
+  "page": 1,
+  "elapsed_seconds": 3.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

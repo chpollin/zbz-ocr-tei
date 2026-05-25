@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Absolu donc de la nécessité — dans le temps. Dérivée ou nécessaire, elle n’est pas la liberté.",
+      "bbox": {
+        "x_pct": 17.385,
+        "y_pct": 7.756,
+        "w_pct": 80.663,
+        "h_pct": 4.713
+      },
+      "changed": true,
+      "change_reason": "The text was poorly OCR'd; corrected to match the image content exactly."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il semble donc qu'aussi bien le recours au temps que le recours à l'éternité excluent à la fois le présent et la liberté. Et nombreuses ont été les réflexions qui, soit sub specie temporis, soit sub specie aeternitatis, ont nié la liberté — du moins la liberté comme un choix historique concret.",
+      "bbox": {
+        "x_pct": 17.436,
+        "y_pct": 15.021,
+        "w_pct": 80.561,
+        "h_pct": 12.078
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR output to match full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être pourrions-nous, dès lors, chercher une issue, si mystérieuse qu'elle demeure pour nous, dans \"la miniature d'éternité\" dont il vient d'être question, et qui est \"notre présent vécu\". Elle tente en effet de suggérer un contact du temps avec l'éternité, mieux: un emmêlement précis avec elle, une éternité qui resterait dans son essence liée au temps, faite de temps et d'histoire. Cet emmêlement reste impensable, encore bien plus impensable que l'éternité en tant qu'absence de temps, dont on a pu au moins suggérer l'idée à l'aide des figures et des rapports intemporels de la géométrie. Il faudrait penser plutôt aux représentations simultanées, sur la même surface, dans un tableau unique, des étapes successives de l'histoire sainte, qui semble ainsi se dérouler en abolissant, non le vécu, mais le temps, ou plutôt en le transposant en \"autre chose\".",
+      "bbox": {
+        "x_pct": 17.258,
+        "y_pct": 34.497,
+        "w_pct": 80.918,
+        "h_pct": 33.807
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR output to match full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "\"Autre chose\" impensable. Mais du moment que le présent, où nous ne cessons de vivre, est lui-même impensable, il nous faut bien admettre \"l'impensable\" dans notre pensée et tenter de voir ce que peut suggérer l'expérience vécue de cette \"impensabilité\".",
+      "bbox": {
+        "x_pct": 17.436,
+        "y_pct": 70.765,
+        "w_pct": 80.561,
+        "h_pct": 12.053
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR output to match full paragraph text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "60",
+      "bbox": {
+        "x_pct": 17.84,
+        "y_pct": 88.756,
+        "w_pct": 2.296,
+        "h_pct": 2.155
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Text content was severely truncated in original detection.",
+    "Page number at bottom was missing or labeled incorrectly as text."
+  ],
+  "doc_id": "2600",
+  "page": 10,
+  "elapsed_seconds": 6.75,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

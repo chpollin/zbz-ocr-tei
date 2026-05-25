@@ -1,0 +1,115 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sagte, klang nicht so, als ob die Paradoxien ihrer Auffassung nach etwas von Philosophen Fabriziertes seien, sondern als ob die Paradoxie gleichsam die einzige Möglichkeit sei, die condition humaine zu beschreiben. Zu beschreiben allerdings, und insofern sicherlich auch in irgendeiner Weise den Philosophen zuzuschieben. Aber es scheint mir doch eine unterschiedliche Annahme zu sein. Wollen Sie sich dazu äußern?",
+      "bbox": {
+        "x_pct": 7.391,
+        "y_pct": 3.825,
+        "w_pct": 85.307,
+        "h_pct": 15.546
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Annemarie Pieper:",
+      "bbox": {
+        "x_pct": 7.841,
+        "y_pct": 21.612,
+        "w_pct": 28.186,
+        "h_pct": 2.978
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich möchte gerne etwas dazu sagen und auch das aufgreifen, wovon Sie ausgegangen sind, etwa Parmenides. Irgendwie kommt mir das jetzt fast tragisch vor, wenn Frau Hersch sagt, unsere Existenz sei so, daß wir eigentlich nie das erreichen, was wir unserer Sehnsucht nach eigentlich erreichen möchten: etwas Ewiges, Dauerndes, etwas, das der Zeit überhoben ist. Eigentlich wollen wir schon so etwas wie Unsterblichkeit, aber wir machen immer wieder die Erfahrung, daß es das nicht gibt, daß es sich entzieht. Andererseits aber benötigen wir solche Konstrukte von etwas Ewigem, um unsere Wirklichkeit, um unsere Existenz zu deuten. In diesem Falle wären das dann so etwas wie Interpretationsbegriffe. Wir setzen unserer werdenden, vergänglichen Existenz etwas entgegen, ein Modell, an dem wir dann abmessen können, wie wir existieren und wonach wir unsere Existenz beurteilen. Nur dürfen wir dann nicht den Fehler machen, den man häufig macht – wenn man bspw. Platon, wie ich meine, manchmal etwas überzogen interpretiert –, als gäbe es da eine andere Welt, eine Welt der Ideen für sich selber.",
+      "bbox": {
+        "x_pct": 7.391,
+        "y_pct": 23.925,
+        "w_pct": 85.367,
+        "h_pct": 42.131
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch:",
+      "bbox": {
+        "x_pct": 7.541,
+        "y_pct": 68.515,
+        "w_pct": 23.148,
+        "h_pct": 2.004
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das ist keine andere Welt.",
+      "bbox": {
+        "x_pct": 7.646,
+        "y_pct": 70.583,
+        "w_pct": 36.537,
+        "h_pct": 2.186
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Annemarie Pieper:",
+      "bbox": {
+        "x_pct": 7.601,
+        "y_pct": 74.927,
+        "w_pct": 28.231,
+        "h_pct": 2.823
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist keine andere Welt, genau, aber wir erschaffen diese Welt, um unsere Welt verständlich zu machen. Von daher ist mir im Grunde genommen ein Denker wie Nietzsche sehr einleuchtend. Ich glaube, es gibt keinen widersprüchlicheren Denker als Nietzsche. In einem Satz behauptet er etwas, im nächsten Satz negiert er es wieder. Bei Nietzsche habe ich gelernt, daß alles, was er sagt, für sich genommen, richtig ist – wenn",
+      "bbox": {
+        "x_pct": 7.346,
+        "y_pct": 77.322,
+        "w_pct": 85.202,
+        "h_pct": 15.874
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "38",
+      "bbox": {
+        "x_pct": 7.346,
+        "y_pct": 94.607,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was truncated in multiple paragraphs.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "3180",
+  "page": 15,
+  "elapsed_seconds": 5.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

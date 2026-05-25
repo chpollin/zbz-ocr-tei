@@ -1,0 +1,121 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 36.326,
+        "y_pct": 7.078,
+        "w_pct": 14.155,
+        "h_pct": 1.109
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header, not a paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "122",
+      "bbox": {
+        "x_pct": 5.435,
+        "y_pct": 7.378,
+        "w_pct": 2.215,
+        "h_pct": 1.053
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number, not a paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "123",
+      "bbox": {
+        "x_pct": 94.671,
+        "y_pct": 7.327,
+        "w_pct": 2.215,
+        "h_pct": 1.053
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number, not a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "science et technique, ne sont pas des traits de culture entre d'autres, une vocation universelle. La civilisation occidentale est conforme a un modele singulier, mais celui-ci, en rendant possible le developpement de la raison scientifique et technique, participe, a un point de vue particulier, de l'universalite virtuelle de la raison.",
+      "bbox": {
+        "x_pct": 54.85,
+        "y_pct": 9.397,
+        "w_pct": 39.123,
+        "h_pct": 10.531
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and bounding box alignment."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais d'abord essayer d'elucider davantage la triade de ces termes, d'une part a l'ideal d'une morale universelle, de l'autre a la valeur universelle de la verite. Il s'agit, dans mon esprit, non pas de definir des mots, mais de differencier et de deployer quelques perspectives methodologiquement indispensables a l'examen des problemes qui nous occupent. Ensuite, je m'efforcerai de saisir quelques elements du developpement, non pas tel qu'il apparait a ceux qui, d'un point de vue theorique, en analysent les criteres et tentent de le juger comme s'ils le consideraient de l'exterieur, mais tel qu'il s'actualise en ceux qui le vivent et dont il faconne en partie le destin. Ce faisant, je rejoindrai, je crois, parfaitement les tout derniers paragraphes de Raymond Aron, ceux ou il traite du developpement comme differenciation sociale et mentale. A la rationalisation, a l'universalisation, a la moralisation et au bonheur, je tenterai de substituer le pluralisme, ses problemes, ses risques et ses chances pour la liberte.",
+      "bbox": {
+        "x_pct": 53.69,
+        "y_pct": 20.48,
+        "w_pct": 39.737,
+        "h_pct": 30.632
+      },
+      "changed": true,
+      "change_reason": "Corrected mangled OCR text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "HUMAINES ET INSTITUTIONS",
+      "bbox": {
+        "x_pct": 50.192,
+        "y_pct": 8.432,
+        "w_pct": 20.409,
+        "h_pct": 0.834
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ne cessera, par elle-meme, d'occidentaliser notre reflexion, en usant sans cesse, a tort et a travers, des autres comme une assimilation progressive, par ces autres, de la civilisation occidentale. Malgre toute modestie reelle ou voulue, et si disposes que nous soyons, comme nombre de nos contemporains, a battre notre coulpe d'hommes blancs, cest a nous, a notre maniere de vivre, a nos echelles de valeurs, a notre vision symbolique de la vie et de la mort, que nous tirerons ceux auxquels nous souhaitons un plein developpement; et cela non par egocentrisme ou par racisme, ni meme parce que nous ne connaissons aucun autre modele de societe developpee que le notre, mais essentiellement, par la logique meme du probleme pose et du terme qui le contient.",
+      "bbox": {
+        "x_pct": 50.334,
+        "y_pct": 13.236,
+        "w_pct": 40.354,
+        "h_pct": 22.44
+      },
+      "changed": true,
+      "change_reason": "Corrected mangled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce qu'il y a a l'autre chose. Si la notion de developpement impose a tous au point de reduire, semble-t-il, un developpement, une vaste logomachie depassee par les faits, elle se trouve au croisement de deux lignes justifiees.",
+      "bbox": {
+        "x_pct": 59.312,
+        "y_pct": 82.895,
+        "w_pct": 29.079,
+        "h_pct": 7.408
+      },
+      "changed": true,
+      "change_reason": "Corrected mangled OCR text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "High error rate in OCR transcription (mangled words).",
+    "Incorrect label assignment for page headers and numbers.",
+    "Truncated header text.",
+    "Multiple layout regions misclassified as generic text."
+  ],
+  "doc_id": "690",
+  "page": 4,
+  "elapsed_seconds": 11.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

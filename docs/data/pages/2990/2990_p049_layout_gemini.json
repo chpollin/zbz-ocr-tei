@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "56 Philosophie als Schule des Staunens",
+      "bbox": {
+        "x_pct": 13.534,
+        "y_pct": 2.138,
+        "w_pct": 80.0,
+        "h_pct": 2.632
+      },
+      "changed": true,
+      "change_reason": "Page header was incorrectly labeled as paragraph/text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nur eine Ahnung; sie wiederholen manche Gesetze, weil sie sie in der Schule gelernt haben. Doch davon, was in der Forschung vor sich geht, wissen sie nichts. Nun, in diesem Buch sieht man sie lebendig vor sich. Es ist wirklich nötig geworden, die Natur, die Tragweite, den Sinn, die Grenzen der Wissenschaft unserer Zeit anhand der Schriften der Menschen nachzuvollziehen, die sich Mühe gegeben haben, das für uns zu schreiben.",
+      "bbox": {
+        "x_pct": 13.534,
+        "y_pct": 60.526,
+        "w_pct": 80.0,
+        "h_pct": 11.02
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription and fixed label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie werden auch sehen, was da gesucht wird. Man macht Erfahrungen, man schreibt mathematische Formeln. Aber was will man im Grunde? Man stellt sich meistens vor, daß die Wissenschaft das ganze Sein erreicht. Aber gerade das Sein erreicht sie nicht. Man muß sich fragen: Warum erreicht sie das Sein nicht? Sie sehen das zum Beispiel, wenn einer dieser Wissenschaftler Musik spielt oder hört und zögert: Werde ich Musiker oder werde ich Physiker? Er ist für beides begabt, und wissen Sie, was er denkt? Er denkt, glaube ich, daß man heute in der Physik Neueres tun kann als in der Musik. Das ist das Argument, das er geben wird, und nicht, daß er wissen wird, was das Sein und wie die Welt ist.",
+      "bbox": {
+        "x_pct": 13.411,
+        "y_pct": 17.599,
+        "w_pct": 80.209,
+        "h_pct": 19.572
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription and fixed label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Erstens merken sie ziemlich schnell, daß die Welt noch nicht das Sein ist, und das ist etwas ganz Wesentliches. Die Welt, selbst wenn Sie mit dem Wort Welt das Ganze der physischen Welt zu bezeichnen versuchen – vorausgesetzt, daß Sie das können –, ist noch lange nicht das Ganze, das Ganze absolut gesprochen. Jaspers sagt: Mit der Welt erreicht man nicht die Transzendenz. Wenn ich Transzendenz sage, denken Sie an etwas Religiöses, zum Teil mit Recht. Aber zunächst einmal ist es negativ gemeint. Warum erreicht man nicht das Ganze, nicht die Transzendenz, wenn man die Welt nennt? Jaspers sagt, weil wir die Welt und alles, was in der Welt ist, mit unserer Vernunft denken müssen, weil wir kein anderes Werkzeug haben. Die Vernunft denkt in Kategorien. Und die Kategorien entfernen schon das, was man denkt. Die Kategorien kommen dazwischen. Sie merken schon, worauf das zielt, auf das Antitotalitäre von Jaspers – er will immer zeigen, daß man das Ganze nicht erreicht. Das dient dazu zu sagen: Jenseits ist noch etwas. Dies ist der Schutz von einem Etwas, von einem Jenseits dessen, was man weiß. Was immer man auch wissen wird, dieses Wissen wird nicht das Letzte sein, weil es das nicht mit in sich aufnehmen kann, was uns erlaubt, es zu denken. Im Grunde kommt das wieder von Kant. Kant sagte, daß es das Ding an sich gibt und die phänomenale Welt. „Ding an sich“ ist ein sehr seltsamer Ausdruck, Sie erinnern sich, widerspruchsvoll in sich, denn „an sich“ kann, nach Kant, ein Ding nicht sein. Dies ist ein ganz grundlegender Widerspruch bei Kant. Das bedeutet aber, daß wir mit unserem Denken, mit den Mitteln unseres Denkens, das entfernen.",
+      "bbox": {
+        "x_pct": 13.252,
+        "y_pct": 37.196,
+        "w_pct": 80.331,
+        "h_pct": 45.395
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription and fixed label."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcription was extremely corrupted.",
+    "Page header was mixed into first paragraph.",
+    "The bounding boxes in the original JSON were severely misaligned with the visual text structure."
+  ],
+  "doc_id": "2990",
+  "page": 49,
+  "elapsed_seconds": 6.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

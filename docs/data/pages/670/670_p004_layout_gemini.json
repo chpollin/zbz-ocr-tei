@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LE RÉEL ET L'IMAGINAIRE AU FIL DU TEMPS 323",
+      "bbox": {
+        "x_pct": 273.0,
+        "y_pct": 71.0,
+        "w_pct": 530.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Header text identified at the top of the page should be labeled as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "immanence se nouent en une histoire vécue et datée. Le théorique et le pratique fusionnent existentiellement.",
+      "bbox": {
+        "x_pct": 11.144,
+        "y_pct": 9.858,
+        "w_pct": 68.122,
+        "h_pct": 4.199
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y avait là un germe aux conséquences extraordinairement lointaines, par exemple celle de l'hégélianisme, proclamant la vie du Concept universel, intégrant faits et projets dans le mouvement dialectique de l'histoire, nourri de l'ambiguïté constante où il se tient entre l'immanence d'une visée future et la transcendance du Maintenant éternel (ewiges Itzt).",
+      "bbox": {
+        "x_pct": 10.959,
+        "y_pct": 13.715,
+        "w_pct": 68.308,
+        "h_pct": 11.185
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aujourd'hui, des doctrines et des conceptions aussi divergentes que marxisme, pragmatisme anglo-saxon, existentialisme, emmêlent inextricablement théorie et pratique, fait et projet. Si nous examinons de plus près leur manière de se situer dans le temps, nous découvrons une ambiguïté essentielle.",
+      "bbox": {
+        "x_pct": 11.12,
+        "y_pct": 24.632,
+        "w_pct": 68.276,
+        "h_pct": 9.368
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "4. AMBIGUÏTÉ DU LIEN ENTRE « THÉORIQUE » ET « PRATIQUE »",
+      "bbox": {
+        "x_pct": 14.722,
+        "y_pct": 39.242,
+        "w_pct": 48.155,
+        "h_pct": 2.125
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'une part, ce lien tend à devenir technique : celui de cause à effet, de moyen à fin. On retrouve ici le rapport simple « avant-après » du temps de la nature ou de la bobine à enrouler l'histoire. Ce rapport est dénué de centre. Il permet d'établir un ordre de succession, une série causale, un procédé de fabrication, un sens possible venant du futur. On y passe de l'avant à l'après, du passé au futur sans que joue l'articulation du présent, le long d'un temps continu. Le présent s'y étire vaguement selon les deux perspectives que Valéry disait « imaginaires » et qui sont ici plus « réelles » que lui. C'est le fil du temps. Et au fil de ce temps, le présent devient négligeable ou malléable, comparable à un verbe être qui n'est plus qu'une copule grammaticale, vidé de toute substance ontologique.",
+      "bbox": {
+        "x_pct": 11.12,
+        "y_pct": 42.524,
+        "w_pct": 68.251,
+        "h_pct": 22.393
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, et à l'inverse, ce lien tend à devenir existentiel : il se réduit alors à un point de discontinuité, irréductible aux relations scientifiques et techniques, un point d'être au sens d'un point de présence, un point où la présence injecte l'être dans l'imaginaire du temps. Ce présent de la présence, hic et nunc, cet « instant », devient le cœur commun du théorique et du pratique, l'origine commune de leur sens et du sens de l'histoire.",
+      "bbox": {
+        "x_pct": 11.015,
+        "y_pct": 64.501,
+        "w_pct": 68.356,
+        "h_pct": 12.479
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Entre le temps continu sans présent et celui dont l'instant est la source nourricière, il faut en fin de compte choisir. Ce choix me paraît aujourd'hui crucial — crucial théoriquement, pratiquement, existentiellement, politiquement, et peut-être même théologiquement, car il s'agit de choisir entre deux manières d' « approcher » l'éternité, c'est-à-dire de faire acte de présence envers elle. Je voudrais donc élucider les termes de ce choix.",
+      "bbox": {
+        "x_pct": 11.225,
+        "y_pct": 76.906,
+        "w_pct": 68.227,
+        "h_pct": 12.741
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 7,
+  "issues": [
+    "Page number 323 mixed with running header at top; separated.",
+    "Multiple paragraphs were severely truncated; expanded to match image text."
+  ],
+  "doc_id": "670",
+  "page": 4,
+  "elapsed_seconds": 6.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

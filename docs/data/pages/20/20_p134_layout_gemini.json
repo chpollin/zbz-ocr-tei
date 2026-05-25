@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "132 LE SYSTÈME",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected page number and header from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "reste pas moins vrai que la métaphysique était pour lui une science, et même une science qui, à la différence des autres, serait bientôt achevée et définitive, à laquelle on ne pourrait plus jamais rien changer, ni ajouter, comparable en ceci à ce que lui semblait être la logique formelle d'Aristote. Le tout était de trouver les bases de cette science. Il crut les avoir établies par les Critiques. Aussi a-t-il écrit lui-même, en se fondant sur elles, deux ouvrages qui contiennent non plus sa critique, mais sa doctrine : la Métaphysique de la nature et la Métaphysique des mœurs.",
+      "bbox": {
+        "x_pct": 13.599,
+        "y_pct": 13.031,
+        "w_pct": 76.31,
+        "h_pct": 30.848
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je me pose maintenant la question suivante : la philosophie de Kant a-t-elle été réellement ce qu'il voulait qu'elle fût? Et si elle ne l'a pas été, en quoi a-t-elle échoué? Était-ce par des défauts auxquels Kant aurait pu remédier, ou par des défauts nécessaires?",
+      "bbox": {
+        "x_pct": 13.81,
+        "y_pct": 43.661,
+        "w_pct": 76.099,
+        "h_pct": 15.062
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si vraiment Kant avait établi les bases d'une science philosophique apodictique, la présente étude n'aurait plus de sens. Mais il est évident maintenant pour nous, grâce au recul des temps, qu'il n'en est rien : nous savons que la métaphysique, malgré les Critiques, n'a pas cessé d'être le champ de bataille pour lequel Kant ne pouvait trouver assez d'ironie. Il faut examiner si l'échec de Kant tient seulement à une incompréhension de son système, à un parti pris d'échapper à l'évidence scientifique.",
+      "bbox": {
+        "x_pct": 13.75,
+        "y_pct": 59.133,
+        "w_pct": 76.114,
+        "h_pct": 28.217
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Kant lui-même nous dit que le caractère scien-",
+      "bbox": {
+        "x_pct": 17.515,
+        "y_pct": 87.255,
+        "w_pct": 72.289,
+        "h_pct": 2.574
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly inaccurate for all paragraphs.",
+    "Page number and running header were incorrectly included in text region.",
+    "Missing text regions in OCR output, manual verification required for full integrity."
+  ],
+  "doc_id": "20",
+  "page": 134,
+  "elapsed_seconds": 4.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

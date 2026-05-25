@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "bezugauf das Absolure Das Relative selbst wird als Daseinssituation Geschichi geradeder Bezugaufdas ",
+      "bbox": {
+        "x_pct": 12.433,
+        "y_pct": 6.177,
+        "w_pct": 38.509,
+        "h_pct": 14.307
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Kal Jaspers und die Politik",
+      "bbox": {
+        "x_pct": 52.286,
+        "y_pct": 12.521,
+        "w_pct": 21.149,
+        "h_pct": 4.174
+      },
+      "changed": true,
+      "change_reason": "Identified as a section title/header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In seiner Avrobiographic prizisier Karl Jaspers gegen Ende des 50 politisches Denken, Von Plaro bis ",
+      "bbox": {
+        "x_pct": 52.2,
+        "y_pct": 27.763,
+        "w_pct": 36.43,
+        "h_pct": 32.17
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ergriffenwerden Yon schen Denken und Tun und sche d<3ë> poliri -",
+      "bbox": {
+        "x_pct": 75.831,
+        "y_pct": 60.1,
+        "w_pct": 12.274,
+        "h_pct": 3.456
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "'in den fiinfziger Jahren; nach und des Krieges den Erfahrungen des Natonalsozialismus kommt , ist J",
+      "bbox": {
+        "x_pct": 51.87,
+        "y_pct": 75.075,
+        "w_pct": 36.308,
+        "h_pct": 13.506
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One section header incorrectly labeled as text."
+  ],
+  "doc_id": "2350",
+  "page": 7,
+  "elapsed_seconds": 3.46,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

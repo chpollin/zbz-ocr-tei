@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce est pas sans une certaine confusion que je me vois contrainte de rappeler de telles évidences. Cela dit, il est bien évident aussi qu'il existe, dans ces rapports de prix et de travail, des injustices considérables que toute société démocratique s'efforce de corriger ou de réduire par la contrainte des lois. Il y aurait là, pour les jeunes si sensibles aux injustices, un vaste champ d'action. Mais les lois ne sauraient avoir pour fin de fonder le droit sur le désir. Et ce ne peut étre le droit d'aucune personne ni d'aucun groupe de décréter où commence « la violence indirecte » quand les désirs de certains ne peuvent étre satisfaits. La société n'est pas, ne sera jamais, et n'a pas à étre, le Jardin d'Eden. Mais étant démocratique, elle se prête à la persuasion et à la correction légale de son fonctionnement, sans violence. Livrée à la violence, elle n'est plus qu'un lieu d'affrontement où règnent les plus forts.",
+      "bbox": {
+        "x_pct": 5.855,
+        "y_pct": 7.057,
+        "w_pct": 82.237,
+        "h_pct": 23.257
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En justifiant le recours à la violence de certains jeunes par une prétendue « violence indirecte » ou « légale », les Thèses trompent les jeunes sur la nature de la société en général, sur la démocratie en particulier; elles les corrompent en les empêchant de mørir et de comprendre leur condition d'hommes.",
+      "bbox": {
+        "x_pct": 6.206,
+        "y_pct": 30.425,
+        "w_pct": 82.002,
+        "h_pct": 9.756
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si, comme je l'ai préconisé auparavant, nous comparons d'ailleurs notre société actuelle avec celle d'époques révolues, nous découvrirons que l'exposé des « causes » par la Commission n'est pas seulement nocif pour les jeunes, mais encore qu'il ne correspond pas à la réalité. J'ai déjà souligné le fait que jamais, de mémoire d'homme, autant de possibilités de tout ordre - culturel, sportif, professionnel, etc. - n'ont été offertes à autant de jeunes de toutes les couches sociales. Jamais ils n'ont eu aussi vite autant de voies possibles pour s'affranchir de la tutelle familiale et choisir leur manière de vivre. Jamais ils n'ont disposé d'autant de loisirs - on ne leur dit guère qu'il y a une quarantaine d'années le mot « vacances » n'avait de sens que pour une infime minorité - et jamais ils n'ont pu en fait les meubler à leur guise aussi facilement.",
+      "bbox": {
+        "x_pct": 5.972,
+        "y_pct": 40.464,
+        "w_pct": 82.119,
+        "h_pct": 23.006
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On nous parle de « l'atmosphère empoisonnée » des immeubles locatifs, et, certes, pour certains grands ensembles, on s'est fourvoyé. Mais à quelles conditions de logement compare-t-on les immeubles actuels? De quelle époque? A quelles conditions d'habitat du passé le peuple dans son ensemble serait-il prét à revenir?",
+      "bbox": {
+        "x_pct": 6.007,
+        "y_pct": 63.942,
+        "w_pct": 82.014,
+        "h_pct": 9.701
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On nous parle des frustrations engendrées par le passage de la prospérité économique à la récession. Là, il s'agit de quelque chose de réel. Mais beaucoup de critiques faites à la société contemporaine visent précisément ce que la prospérité a déployé. Et les troubles de jeunes n'ont pas attendu la récession pour se produire. Il est d'ailleurs plutôt étrange d'appeler « violence indirecte » les limitations économiques découlant d'une période de récession.",
+      "bbox": {
+        "x_pct": 5.89,
+        "y_pct": 74.327,
+        "w_pct": 82.248,
+        "h_pct": 13.375
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout cela montre que « les troubles » des « jeunes » ont d'autres causes et qu'en effet, disant « ce que tout le monde dit », la Commission se trompe.",
+      "bbox": {
+        "x_pct": 5.984,
+        "y_pct": 88.277,
+        "w_pct": 81.803,
+        "h_pct": 3.934
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 90.0,
+        "y_pct": 88.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 7,
+  "issues": [
+    "Transcription errors in initial paragraphs.",
+    "Page number 11 was incorrectly labeled as text."
+  ],
+  "doc_id": "1810",
+  "page": 15,
+  "elapsed_seconds": 9.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

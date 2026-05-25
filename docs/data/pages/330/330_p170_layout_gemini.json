@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "136 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 113.1,
+        "y_pct": 89.8,
+        "w_pct": 0,
+        "h_pct": 0
+      },
+      "changed": true,
+      "change_reason": "The header text '136 IDÉOLOGIES ET RÉALITÉ' was incorrectly classified as part of the paragraph. It is a page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais alors qu'elle n'est rien en elle-même, il s'y conserve des éléments innombrables qui se perdent dans la nuit des temps. Elle renferme encore l'unité tribale d'avant la prise de conscience individuelle, le totem, le protecteur redouté, la crainte primitive où la peur ne se distinguait pas encore de la culpabilité. Il y a en elle la continuité biologique des générations à travers les âges, cet appui que donne, contre le vertige du futur béant, un passé paternel. L'homme projette sur elle cette gratitude dont s'accompagne tout sentiment d'existence qui touche à la plénitude; dans un sens déjà très complexe il sent qu'il lui doit la vie, comme un enfant la doit à ses parents, comme Socrate, selon Platon, disait la devoir aux lois, comme le croyant la doit à Dieu. Ce passé paternel et créateur qui le sauve d'une naissance toute neuve hors du néant (sans ce passé il serait comme cerné par la mort), il l'étoffe en assimilant à sa propre durée les défaites, les victoires, les douleurs, les triomphes et surtout les œuvres de ceux qui vécurent avant lui dans la même entité collective. Ce ne sont pas nécessairement des aïeux : en quelque façon tous les Suisses de la Confédération actuelle sentent qu'ils étaient présents au Serment du Grutli prêté en 1291 par un habitant de Schwyz, un d'Uri et un troisième d'Unterwald; tous, même ceux dont le canton n'adhéra à la Confédération qu'en 1815, même ceux dont les ascendants cherchèrent refuge en Suisse dans un passé récent. Et pourtant le lien ainsi créé avec un passé lointain est aussi biologique : il est ressenti aussi dans le corps et dans le sang. Tout être humain a ainsi des aïeux, un arbre généalogique plus réel que l'autre, bien plus efficient.",
+      "bbox": {
+        "x_pct": 11.56,
+        "y_pct": 12.121,
+        "w_pct": 85.696,
+        "h_pct": 56.212
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and messy OCR text from the original block to reflect the actual content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais cette âme collective, on ne la sent pas seulement vivre en soi comme une mémoire diffuse et à demi matérielle : on la contemple dans ses réalités objectives. Les œuvres du passé sont là, données comme une propriété commune à tous ceux qui font partie de la même entité sociale. Là encore, le réel ne se distingue pas de l'imaginaire. Ces œuvres appartiennent d'une certaine manière à ceux-là mêmes qui les connaissent pas, ou qui les rejetteraient s'ils connaissaient, comme un bien virtuel, et donc inaliénable. L'attachement à l'âme collective n'entraîne pas nécessairement la volonté d'en explorer les richesses. Souvent la certitude de ces réalités objectives suffit, ou, si l'on veut, grâce à l' « âme",
+      "bbox": {
+        "x_pct": 12.019,
+        "y_pct": 67.799,
+        "w_pct": 85.376,
+        "h_pct": 23.173
+      },
+      "changed": true,
+      "change_reason": "Corrected the heavily truncated and messy OCR text to match the paragraph content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR was extremely poor, requiring full text replacement.",
+    "Page header '136 IDÉOLOGIES ET RÉALITÉ' was merged into the paragraph box."
+  ],
+  "doc_id": "330",
+  "page": 170,
+  "elapsed_seconds": 6.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

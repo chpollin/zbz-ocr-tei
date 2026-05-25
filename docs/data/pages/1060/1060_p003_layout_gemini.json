@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DIE MENSCHENRECHTE",
+      "bbox": {
+        "x_pct": 14.328,
+        "y_pct": 11.225,
+        "w_pct": 23.441,
+        "h_pct": 2.127
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Wollen wir sie wirklich 2",
+      "bbox": {
+        "x_pct": 14.624,
+        "y_pct": 15.252,
+        "w_pct": 31.559,
+        "h_pct": 1.823
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Um welchen Preis",
+      "bbox": {
+        "x_pct": 14.543,
+        "y_pct": 19.259,
+        "w_pct": 20.403,
+        "h_pct": 1.709
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vorab möchte ich der Stiftung meinen Dank aussprechen für die mir verliehene Auszeichnung Ich glaube",
+      "bbox": {
+        "x_pct": 14.14,
+        "y_pct": 23.761,
+        "w_pct": 75.349,
+        "h_pct": 36.011
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn ich diesen Preis nicht gnugend verdient habe , ist er mir un so mehr Verpflichtung fur die Zuku",
+      "bbox": {
+        "x_pct": 14.194,
+        "y_pct": 61.747,
+        "w_pct": 72.93,
+        "h_pct": 4.16
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Menschenrechte sind nicht von Natur her vorhanden Der Bereich der Natur das ist der Bereich, in ",
+      "bbox": {
+        "x_pct": 14.086,
+        "y_pct": 69.326,
+        "w_pct": 74.462,
+        "h_pct": 10.845
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Menschenrechte nun gehören zur spezifisch menschlichen den Naturgesetzen , auf welcher trotz all",
+      "bbox": {
+        "x_pct": 14.113,
+        "y_pct": 82.013,
+        "w_pct": 74.382,
+        "h_pct": 6.648
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Headings text mismatch"
+  ],
+  "doc_id": "1060",
+  "page": 3,
+  "elapsed_seconds": 5.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected transcript text": 2
+  }
+}

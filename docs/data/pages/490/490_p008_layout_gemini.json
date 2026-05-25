@@ -1,0 +1,99 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "PRÉFACE 9",
+      "bbox": {
+        "x_pct": 42.066,
+        "y_pct": 82.527,
+        "w_pct": 49.336,
+        "h_pct": 0.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identifying page header and number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "respondant prend alors IC 'agit pas de contes intellcctuels, dc poésic abstraite, mais chaque étape c'est bien une perspective de l'être pour nous déchiré, de nous déchirés par lui aussi, qui apparaît.",
+      "bbox": {
+        "x_pct": 10.743,
+        "y_pct": 11.623,
+        "w_pct": 72.048,
+        "h_pct": 10.091
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tcl est Poutillage un double regard polairement disloqué, un double regard réciproque, inversant constamment son rapport interne, faisant varier son écartement de façon discontinue, traversant des « seuils » de distance où se constituent les divers niveaux de l'être.",
+      "bbox": {
+        "x_pct": 10.814,
+        "y_pct": 21.358,
+        "w_pct": 71.94,
+        "h_pct": 9.985
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Arbitraire, dira-t-on peut-être. Certes. Mais je me demande s'il est aucune philosophie qui ne se donne au départ, arbitrairement, les moyens de sa réflexion.",
+      "bbox": {
+        "x_pct": 10.778,
+        "y_pct": 31.525,
+        "w_pct": 71.772,
+        "h_pct": 6.34
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici on nous invite à lire une sorte de poème abstrait et difficile, mais visionnaire et qui, je crois, n'aurait pu être écrit avant l'ère du cinéma. Peut-être s'agit-il d'une tentative analogue à celle que Sartre suggérait lorsqu'il distinguait, à la fin de l'Etre et le Néant, l'ontologie, étudiant les structures de l'être, et la métaphysique, racontant les événements ayant engendré cet être ainsi structuré. La métaphysique serait alors, selon Sartre, à l'ontologie comme l'histoire à la sociologie. Dans ce cas, nous aurions ici un film métaphysique.",
+      "bbox": {
+        "x_pct": 10.695,
+        "y_pct": 37.909,
+        "w_pct": 72.096,
+        "h_pct": 19.321
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pourrait croire, d'après ce qui précède, que l'ouvrage que nous présentons ignore délibérément la philosophia perennis et se prétend né de rien, dans la superbe d'une absolue nouveauté. Rien ne serait plus faux. La tradition est sans cesse présente ou constamment rejointe, mais parfois, éclairée d'un jour nouveau, elle prend un relief inattendu. Si l'outillage dont j'ai parlé constitue la chaîne du texte, on retrouve sans cesse dans la trame les problèmes traditionnels. Ainsi je me demande si, au fond, ce n'est pas la querelle des Universaux qui constitue ici la résistance centrale, et si ce n'est pas pour tenter de transformer une irréductibilité logique en récit universel ou mieux en histoire de l'être qu'on déroule ce film devant nous.",
+      "bbox": {
+        "x_pct": 10.982,
+        "y_pct": 57.434,
+        "w_pct": 72.012,
+        "h_pct": 26.77
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On ne retrouve pas seulement les problèmes traditionnels.",
+      "bbox": {
+        "x_pct": 15.413,
+        "y_pct": 84.551,
+        "w_pct": 67.341,
+        "h_pct": 2.294
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page header and number as body text in original analysis."
+  ],
+  "doc_id": "490",
+  "page": 8,
+  "elapsed_seconds": 5.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

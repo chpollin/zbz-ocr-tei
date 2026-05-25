@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "EXIGENCES DE L'ART",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 20.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header at top"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "183",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at top right"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fois nécessaires selon les normes propres   qu'établissait jeu; et irréels   selon les normes de la ",
+      "bbox": {
+        "x_pct": 9.747,
+        "y_pct": 13.288,
+        "w_pct": 68.423,
+        "h_pct": 33.485
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans le monde réel de Tilla Durieux; Moissi était moins qu'une bulle de ligée. Dans le monde de   Mo",
+      "bbox": {
+        "x_pct": 10.207,
+        "y_pct": 46.72,
+        "w_pct": 67.929,
+        "h_pct": 5.649
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3. Inexistence  par pure   expressivité",
+      "bbox": {
+        "x_pct": 23.855,
+        "y_pct": 54.822,
+        "w_pct": 42.624,
+        "h_pct": 2.453
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si Texpression vraisemblable démotions et de sentiments fictifs ne suflit pas à conférer lexistence ",
+      "bbox": {
+        "x_pct": 10.322,
+        "y_pct": 58.109,
+        "w_pct": 68.308,
+        "h_pct": 16.53
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header region",
+    "Missing page number region"
+  ],
+  "doc_id": "110",
+  "page": 185,
+  "elapsed_seconds": 7.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

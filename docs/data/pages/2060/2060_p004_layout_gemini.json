@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "habe mich gefragt: Haben die Leute heute wirklich mehr Angst als in der Vergangenheit? Ich glaube es nicht. Ich glaube, daß die Menschen immer Angst gehabt haben. Und mit gutem Grund. Weil sie sterblich sind und es wissen. Und infolgedessen verletzlich. Und infolgedessen ist alles zerstörbar, was sie lieben, und infolgedessen, da sie ein bißchen Vernunft haben, haben sie Angst. Und das haben sie von jeher gehabt - Angst. Man hat doch jahrhundertelang immer für alles, was man besaß, gezittert, in allen Schichten der Gesellschaft. Man konnte jede Woche alles verlieren. Das Feld konnte ruiniert sein, eine Seuche konnte kommen, alles mögliche, Heere konnten alles vernichten, usw. Doch wenn ich die Leute im Sommer an den Stränden beobachte, so habe ich gar nicht das Gefühl, daß sie so sehr unter Angst leiden. Sie sehen nicht danach aus. Ja, ob sie es verstehen? Aber auch dieses Gefühl habe ich nicht. Doch wenn es eine Angst gibt (ich sage nicht, daß es keine Angst gibt) - wenn es eine Angst gibt, dann fürchte ich, daß heutzutage diese Angst ziemlich zerredet wird. Denn man redet zu viel von Angst. Die echte Angst schweigt eher, wenn nicht beim Psychoanalytiker oder beim Psychiater. Nun Schluß mit meinen Vorbemerkungen.",
+      "bbox": {
+        "x_pct": 16.954,
+        "y_pct": 8.351,
+        "w_pct": 73.55,
+        "h_pct": 51.126
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to reflect full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich habe das Gefühl, daß wir darunter leiden, daß wir einer sehr wichtigen Tradition irgendwie untreu werden. Und ich will versuchen, diese Untreue klarer zu sehen. Man hat hier viel von Deutschland, aber kaum von Europa gesprochen. Ich bin überzeugt, daß, wenn wir uns retten können, dann als Europa. Wir müssen uns also etwas überlegen: Was hat Europa erlaubt das zu werden, was es geworden ist? Europa war ja schon immer in Krise. Für Europa ist das sozusagen ein Normalzustand. Das ist nicht neu. Europa hat viele Krisen ertragen, und es ist eigentlich durch diese Krisen hindurch das geworden, was es geworden ist. Vielleicht muß man sagen, die Europäer sind heutzutage müde. Und das kann man verstehen. Die Europäer haben in",
+      "bbox": {
+        "x_pct": 17.219,
+        "y_pct": 58.842,
+        "w_pct": 73.377,
+        "h_pct": 28.763
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to reflect full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "282",
+      "bbox": {
+        "x_pct": 17.132,
+        "y_pct": 90.264,
+        "w_pct": 3.755,
+        "h_pct": 2.21
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original text extraction for paragraphs was truncated.",
+    "Page number at the bottom was missing a label/region.",
+    "OCR text content was incomplete for provided regions."
+  ],
+  "doc_id": "2060",
+  "page": 4,
+  "elapsed_seconds": 6.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

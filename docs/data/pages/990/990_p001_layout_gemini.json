@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 42.232,
+        "y_pct": 7.285,
+        "w_pct": 25.747,
+        "h_pct": 2.235
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SIMMETRIA E STORIA",
+      "bbox": {
+        "x_pct": 35.098,
+        "y_pct": 11.2,
+        "w_pct": 39.668,
+        "h_pct": 2.235
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Era mia intenzione far si che questa relazione si saldasse con le precedenti; purtroppo questo non è stato possibile nemmeno ricorrendo ad un movimento di traslazione, né ad un movimento di rotazione e né ad uno di sovrapposizione. Resterò quindi fedele al progetto che avevo concepito inizialmente.",
+      "bbox": {
+        "x_pct": 12.368,
+        "y_pct": 31.151,
+        "w_pct": 85.173,
+        "h_pct": 12.947
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match original text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vorrei tuttavia dapprima riprendere i due « schemi di simmetria » cui ci si è fin qui riferiti. Il primo si presenta soprattutto in fisica: si tratta di una simmetria di invarianza e di ripetizione, che è stata illustrata e discussa, anche in riferimento ad altri campi di indagine (si veda ad esempio la « simmetria del merletto » sulla quale si è soffermato Roger Caillois). Essa è caratterizzata dalla possibilità di sovrapporre un elemento ad un altro, con un movimento di traslazione spazio-temporale. Il secondo, sul quale si è soffermato Evandro Agazzi nella sua relazione, prospetta una simmetria che chiamerei centrata, oppure ‘architetturale’: anch’essa è situata nello spazio e nel tempo. Una illustrazione di questo schema è fornito ad esempio dalle due parti di un frontone, oppure dalle due mani: simili tra loro ma non esattamente sovrapponibili. Queste non possono essere sostituite l'una all'altra mediante un movimento di traslazione.",
+      "bbox": {
+        "x_pct": 12.262,
+        "y_pct": 43.295,
+        "w_pct": 85.324,
+        "h_pct": 34.462
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match original text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il schema di simmetria può essere applicato, in linea di principio, all'infinito. Nello stesso modo in cui il merletto, almeno in linea di principio, può essere continuato all'infinito, anche l'invarianza può essere perseguita all'infinito: nella sua relazione, Scheurer ci ha mostrato come questo sia il solo modo corretto di usare questa nozione. Infatti, se non si tende all'infinito, si",
+      "bbox": {
+        "x_pct": 12.368,
+        "y_pct": 77.674,
+        "w_pct": 85.068,
+        "h_pct": 14.603
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match original text"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "229",
+      "bbox": {
+        "x_pct": 91.8,
+        "y_pct": 94.2,
+        "w_pct": 3.4,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as filter"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original transcript text for paragraphs was highly inaccurate due to OCR errors.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "990",
+  "page": 1,
+  "elapsed_seconds": 11.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

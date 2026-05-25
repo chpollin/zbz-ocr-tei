@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 127",
+      "bbox": {
+        "x_pct": 367.0,
+        "y_pct": 80.0,
+        "w_pct": 266.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nuages. Je me retourne vers la chambre où rien ne bouge. Voici la coupe préparée par Ida. Il n'y a plus de raisins depuis longtemps. Quelques bananes se recourbent sur les oranges cuivrées et les noix ternes. Une douceur pleine d'angoisse sommeille dans les creux d'ombre, dans les épaisseurs de saveur que le regard ignore. Si tu étais là, Marc, tu pèlerais une orange et nous la partagerions. Tu casserais deux noix dans ta main. Tu dirais: « Allons-nous dormir ? » Une immobilité absolue se ferait, contenant toute la vie, l'avant et l'après, rien ne passerait plus. Et alors, moi, je chercherais jusqu'au tourment, non hors de la vie, mais en elle, ce qui fuit par la présence, ce qui se dérobe par la plénitude du don, ce qui éternellement surabonde. Je te chercherais, toi qui est mien, toi qui te donnes, toi dont la présence est sans réserve, totale et claire comme un cercle. Mais le cercle échappe et recommence. Je n'aurai jamais fini de te chercher.",
+      "bbox": {
+        "x_pct": 8.419,
+        "y_pct": 12.382,
+        "w_pct": 80.676,
+        "h_pct": 43.006
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'appris alors à refaire toujours mieux, avec toujours plus de patience, le geste de puiser et de puiser encore à la même source. Les nourritures affluèrent de nouveau. Les paysages funèbres s'évanouirent. La joie naquit de marcher, de respirer, de voir, d'entendre. Les vœux se turent. L'attention les remplaça. Il ne resta du passé, de l'échec de l'amour, que cette flaque morte, quelque part au fond de moi, et le flot intérieur n'arrivait pas à l'emporter. C'est que l'échec était venu du dehors, comme par un hasard, et restait incompréhensible.",
+      "bbox": {
+        "x_pct": 8.419,
+        "y_pct": 60.369,
+        "w_pct": 80.77,
+        "h_pct": 25.482
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "The OCR transcript was highly inaccurate and required manual correction.",
+    "The running header and page number were included in the first paragraph's region box incorrectly and should have been separate.",
+    "Docling missed the header line entirely."
+  ],
+  "doc_id": "40",
+  "page": 125,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

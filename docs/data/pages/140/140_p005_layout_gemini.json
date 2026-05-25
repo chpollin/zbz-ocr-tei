@@ -1,0 +1,42 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "86 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number and running header"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "nous ne pouvons chercher que Yunité Il nous faut donc essayer de confronter ces aspects. Et ce faisa",
+      "bbox": {
+        "x_pct": 12.742,
+        "y_pct": 15.197,
+        "w_pct": 74.543,
+        "h_pct": 72.781
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Initial JSON missed the page header/running title region."
+  ],
+  "doc_id": "140",
+  "page": 5,
+  "elapsed_seconds": 8.7,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

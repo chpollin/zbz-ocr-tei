@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "6 L'EUROPE AU DÉFI",
+      "bbox": {
+        "x_pct": 11.0,
+        "y_pct": 6.0,
+        "w_pct": 80.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected the label for page number and header from text to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "chose qui est en exclut une autre. Des hommes, âme et corps, conçoivent des desseins et acceptent les lois et les risques de leur insertion dans ce qui est. Ils ne se soumettent pas à une réalité donnée, ils ne s'y résignent pas; ils s'en détachent, la regardent et se révoltent. Mais c'est une révolte soumise à un ordre non encore réel, qui la dépasse.",
+      "bbox": {
+        "x_pct": 11.205,
+        "y_pct": 10.423,
+        "w_pct": 78.983,
+        "h_pct": 17.712
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diversité, ruptures, changements, crises. Les États se cherchent des significations, les idées se cherchent des sociétés à modeler. Les croyances s'emparent des corps humains, les mettent en mouvement, les jettent à l'assaut de la nature et les uns contre les autres. Elles veulent prendre corps. L'esprit ne se contente ni de la matière, ni de lui-même; il lui faut l'affrontement, l'incarnation, comme l'épreuve du feu. Ce n'est pas un hasard si, au début des temps modernes, de cette aventure prodigieuse et sans précédent que fut et qu'est encore la révolution scientifique et technique, nous trouvons le dualisme impitoyable de Descartes : d'un côté la matière, dénudée, dépouillée de toute spontanéité, de tout mélange (fût-il affectif ou vital) avec autre chose que son intégrale passivité, réduite au pur mécanisme, — de l'autre la pensée, dégagée elle aussi de tout emmêlement avec l'innocence de l'inertie, réduite au pur vouloir rationnel, — et les deux aux prises l'une avec l'autre, se purifiant chacune de l'autre par leur affrontement. Cette radicalité dans la distinction s'écarte de tout bon sens; elle paraîtrait caricaturale si elle n'était symbolique.",
+      "bbox": {
+        "x_pct": 9.598,
+        "y_pct": 27.0,
+        "w_pct": 80.094,
+        "h_pct": 53.45
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original text transcriptions were heavily truncated and contained errors.",
+    "Page number and header were incorrectly identified as text."
+  ],
+  "doc_id": "460",
+  "page": 8,
+  "elapsed_seconds": 3.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

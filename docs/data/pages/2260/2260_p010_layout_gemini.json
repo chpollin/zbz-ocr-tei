@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi il fallait rassembler ces pages où se dessine, sans préméditation, une ligne de faîte. En demeurant épars et introuvables, ces textes auraient manqué à la pleine connaissance de Jeanne Hersch. On l'entend en personne, de tout près, s'interroger sur ce qui doit compter le plus, sur les idées et les valeurs qu'elle veut partageables. On perçoit une invitation passionnée à maintenir en éveil une liberté que menacent - partout et jusqu'au fond de soi - le fracas et les perversions de notre siècle. On rencontre surtout, dans la densité du symbole, les convictions dominantes d'une philosophie qui, pour avoir discerné l'exil et l'absence dans le tissu même de l'existence, y trouve la ressource de ses affirmations les plus fortes.",
+      "bbox": {
+        "x_pct": 22.687,
+        "y_pct": 11.641,
+        "w_pct": 65.867,
+        "h_pct": 39.259
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jean Starobinski",
+      "bbox": {
+        "x_pct": 66.867,
+        "y_pct": 53.897,
+        "w_pct": 21.651,
+        "h_pct": 2.727
+      },
+      "changed": true,
+      "change_reason": "Author name at the end of a contribution should be classified as a section_header/zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avril 1985",
+      "bbox": {
+        "x_pct": 23.289,
+        "y_pct": 62.231,
+        "w_pct": 15.386,
+        "h_pct": 2.475
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 23.494,
+        "y_pct": 82.538,
+        "w_pct": 2.811,
+        "h_pct": 2.051
+      },
+      "changed": true,
+      "change_reason": "Page number identified and should be filtered out."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Page number 12 was missed by the initial extraction.",
+    "Author name 'Jean Starobinski' was incorrectly classified as standard paragraph text."
+  ],
+  "doc_id": "2260",
+  "page": 10,
+  "elapsed_seconds": 4.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

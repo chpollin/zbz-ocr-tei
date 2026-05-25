@@ -1,0 +1,117 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ohne Wachstum kein Leben",
+      "bbox": {
+        "x_pct": 7.058,
+        "y_pct": 37.751,
+        "w_pct": 16.998,
+        "h_pct": 3.275
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ohne Risiko bereitschaft keine Kultur",
+      "bbox": {
+        "x_pct": 6.453,
+        "y_pct": 69.723,
+        "w_pct": 17.845,
+        "h_pct": 4.971
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Die erste Gesprächsrunde",
+      "bbox": {
+        "x_pct": 45.884,
+        "y_pct": 5.582,
+        "w_pct": 28.002,
+        "h_pct": 2.373
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Über die Notwendigkeit von Risikobereitschaft und über die Verantwortung",
+      "bbox": {
+        "x_pct": 27.724,
+        "y_pct": 9.17,
+        "w_pct": 63.886,
+        "h_pct": 5.604
+      },
+      "changed": true,
+      "change_reason": "Corrected whitespace in text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "SCHMIDHEINY: Jeder von uns erlebt tagtäglich, daß alles Leben eine Abfolge ist von Aufbau und Zerfall. Es gibt keinen stabilen Lebenszustand. Das Nullwachstum ist eine Utopie, die der Natur widerspricht. Nullwachstum erscheint mir als die Illusion des Satten, der sich nach einem geruhsamen und ungestörten Verdauungsschlaf sehnt. Wachstum heißt ja nicht nur: größer werden. In der evolutionären Anpassung an die Umwelt kann Wachstum durchaus auch mehr Sicherheit durch bessere Beherrschung der Risiken bedeuten.",
+      "bbox": {
+        "x_pct": 27.276,
+        "y_pct": 16.325,
+        "w_pct": 64.939,
+        "h_pct": 25.182
+      },
+      "changed": true,
+      "change_reason": "Full text correction based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wachstum und Wandlung zur Anpassung an die sich wandelnde Umwelt sind gewissermaßen naturgesetzliche Mechanismen zur Risikobewältigung. Der Entdecker- und Erfindergeist des Menschen nimmt Risiken, auch unbekannte Risiken, bewußt in Kauf, um bestehenden bekannten Risiken auszuweichen oder um neue Chancen zu suchen. Ohne diese Risikobereitschaft des Menschen wäre keine Zivilisation, keine Kultur entstanden. Und wenn unsere Gesellschaft grundsätzlich zugunsten der Sicherheit gegen das Risiko optierte, so würde sie ihre weitere Entwicklung verhindern; sie wäre zum Stillstand verurteilt, der nach dem Naturgesetz des Lebens Rückschritt und Zerfall bedeutet.",
+      "bbox": {
+        "x_pct": 26.792,
+        "y_pct": 41.07,
+        "w_pct": 65.012,
+        "h_pct": 33.675
+      },
+      "changed": true,
+      "change_reason": "Full text correction based on visual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der Unternehmer lebt gleichsam exemplarisch zwischen den beiden Polen Risiko und Sicherheit. Er setzt sein Risikokapital produktiv ein, mit dem Ziel, für sein Unternehmen Sicherheit zu gewinnen. Er hat gelernt – er hat gerade in diesen letzten Jahren lernen müssen –, daß er das Unternehmen",
+      "bbox": {
+        "x_pct": 26.55,
+        "y_pct": 74.913,
+        "w_pct": 65.254,
+        "h_pct": 13.734
+      },
+      "changed": true,
+      "change_reason": "Full text correction based on visual content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "14",
+      "bbox": {
+        "x_pct": 57.65,
+        "y_pct": 91.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and corrected label/tag."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Transcription for paragraphs was incomplete/cut off in input.",
+    "Page number at bottom was not identified.",
+    "Formatting/typo errors in heading transcription."
+  ],
+  "doc_id": "2400",
+  "page": 13,
+  "elapsed_seconds": 6.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

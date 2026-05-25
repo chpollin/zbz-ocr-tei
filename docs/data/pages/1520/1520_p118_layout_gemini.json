@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais est-ce que la liberté ? La liberté extérieure d'un Etat et la liberté intérieure par sa manière de gouverner n'ont de substance que par la liberté existentielle de chaque être humain. D'où les ambiguïtés du terme « liberté » : même un Etat despotique peut jouir de la liberté politique à l'extérieur. Même un peuple composé d'hommes sans liberté intérieure peut jouir d'une Constitution démocratique et libre.",
+      "bbox": {
+        "x_pct": 12.778,
+        "y_pct": 9.426,
+        "w_pct": 84.241,
+        "h_pct": 13.65
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La liberté commence avec la liberté individuelle, elle prend socialement forme dans le mode de gouvernement républicain, elle s'affirme contre l'oppression d'Etats étrangers. Elle s'actualise dans l'ensemble de ces trois moments.",
+      "bbox": {
+        "x_pct": 12.832,
+        "y_pct": 22.596,
+        "w_pct": 84.228,
+        "h_pct": 7.678
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord la liberté, ensuite la paix dans le monde ! L'exigence inverse : « d'abord la paix, ensuite la liberté » trompe. Car une paix extérieure momentanée, due au hasard, ou au despotisme, ou à une opération habile, ou à la peur de tous les intéressés, n'a pas son fondement assuré dans l'homme lui-même. L'agressivité qui réside en fait dans l'absence de liberté des individus la fera bientôt déboucher à nouveau sur la guerre.",
+      "bbox": {
+        "x_pct": 12.696,
+        "y_pct": 29.931,
+        "w_pct": 84.228,
+        "h_pct": 14.027
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La démocratie en tant que simple forme constitutionnelle n'est pas encore liberté. Elle peut donner libre cours à l'arbitraire, aux débordements. Une démocratie brusquement introduite, sans avoir été instaurée par un peuple qui ne la comprend donc pas, ne représente pour ce peuple que la possibilité d'acquérir l'Idée de la démocratie et de devenir ainsi libre à travers les citoyens. Une liberté simplement formelle se perd facilement. Lorsque les combats des partis détruisent les liens de solidarité et déclenchent un processus suicidaire, le libre Etat n'est plus qu'un décor qui peut être jeté bas demain, avec tous ses politiciens et ses partis. Une démocratie de pure forme engendre d'elle-même la domination totale, si bien qu'Hitler a pu à bon droit triompher : « Je les ai abattus par leur propre folie. »",
+      "bbox": {
+        "x_pct": 12.778,
+        "y_pct": 43.59,
+        "w_pct": 84.106,
+        "h_pct": 24.987
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3. La liberté seulement par la vérité",
+      "bbox": {
+        "x_pct": 13.049,
+        "y_pct": 70.891,
+        "w_pct": 44.268,
+        "h_pct": 2.142
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la liberté ne naît pas de rien. Elle ne signifie pas l'arbitraire, la possibilité d'avoir n'importe quelle opinion. Elle ne trouve sa plénitude que chez qui se voue à la vérité.",
+      "bbox": {
+        "x_pct": 12.778,
+        "y_pct": 73.925,
+        "w_pct": 83.93,
+        "h_pct": 6.221
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pas de paix sans liberté, mais pas de liberté sans vérité. C'est le point décisif. La liberté reste vide tant qu'elle ne vise pas la vérité, dont elle jaillit et qu'elle doit servir.",
+      "bbox": {
+        "x_pct": 12.778,
+        "y_pct": 79.751,
+        "w_pct": 84.065,
+        "h_pct": 6.11
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Qu'est-ce que la vérité ? Depuis l'antiquité les philosophes n'ont cessé de traiter « de la vérité ». A l'époque moderne ils se sont",
+      "bbox": {
+        "x_pct": 12.967,
+        "y_pct": 85.347,
+        "w_pct": 83.875,
+        "h_pct": 4.199
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "112",
+      "bbox": {
+        "x_pct": 13.25,
+        "y_pct": 91.5,
+        "w_pct": 5.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 8,
+  "issues": [
+    "Most paragraphs had OCR artifacts and garbled text.",
+    "Page number 112 was misidentified as text.",
+    "Reconstructed text based on French academic context."
+  ],
+  "doc_id": "1520",
+  "page": 118,
+  "elapsed_seconds": 6.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

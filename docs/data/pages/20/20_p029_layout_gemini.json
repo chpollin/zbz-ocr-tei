@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ELLE COMPORTE TOUJOURS UNE MORALE",
+      "bbox": {
+        "x_pct": 215.0,
+        "y_pct": 84.0,
+        "w_pct": 530.0,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 826.0,
+        "y_pct": 85.0,
+        "w_pct": 21.0,
+        "h_pct": 22.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "trouvons chez les grands une continuité singulière, un ça-va-sans-dire, et jusque dans les solutions les plus neuves un élément que nous reconnaissons, si bien qu'en lisant d'eux un nouvel ouvrage on a l'illusion de l'avoir prévu tel qu'il est. Illusion bien sûr, car il est aussi imprévisible que l'acte d'un être libre — mais non pas seulement illusion, car les actes d'un être libre, et non arbitraire, portent réellement la marque d'une même origine. Ce n'est pas du tout un procédé qui se répète, un « truc » intellectuel qu'on exploite; cela ressemble plutôt à de la fidélité.",
+      "bbox": {
+        "x_pct": 98.95,
+        "y_pct": 127.74,
+        "w_pct": 762.5,
+        "h_pct": 306.29
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le devenir fidèle de la philosophie s'oppose donc à la perfection instantanée — ou éternelle — de l'art.",
+      "bbox": {
+        "x_pct": 105.42,
+        "y_pct": 434.7,
+        "w_pct": 754.52,
+        "h_pct": 54.05
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De là découle encore une différence essentielle : c'est que la philosophie oblige, tandis que l'art n'oblige pas. C'est un fait en lui même frappant qu'une philosophie comporte toujours une morale. Je n'entends pas par là seulement l'ouvrage qui, dans la série des œuvres d'un philosophe, s'appellera « Morale » ou « Ethique ». Je veux dire qu'en philosophie, l'affirmation en apparence la plus purement théorique elle-même est à base de morale et entraîne une morale. Si Aristote, par exemple, établit la hiérarchie des êtres vivants d'après leur degré d'affranchissement à l'égard de l'élément « terre », c'est qu'il vise à l'idéal du νοῦς, contempteur de pures formes, dégagé de la matière. Comment Kant a-t-il établi les antinomies de la",
+      "bbox": {
+        "x_pct": 98.34,
+        "y_pct": 512.87,
+        "w_pct": 763.1,
+        "h_pct": 381.6
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output text"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Detected header incorrectly labelled as text",
+    "Detected page number incorrectly labelled as text",
+    "OCR output text was truncated and contained errors",
+    "Missing some layout regions that were not processed by the initial bounding box"
+  ],
+  "doc_id": "20",
+  "page": 29,
+  "elapsed_seconds": 4.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

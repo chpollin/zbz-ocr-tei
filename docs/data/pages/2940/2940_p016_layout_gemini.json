@@ -1,0 +1,51 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zürich und Bern der französisch sprechende Kanton Waadt stets einen Sitz in der obersten Landesbehörde, dem Bundesrat, erhalten solle. Interessanterweise mussten sowohl Bern wie Zürich vorübergehend auf dieses Vorrecht verzichten, die Waadt hingegen konnte dieses Privileg ohne Unterbruch bewahren. Eine solche Tatsache kann nur mit einer beständigen Kompromissbereitschaft der deutschsprechenden Mehrheit gegenüber einer Minderheit begründet werden. Die traditionelle sprachpolitische Grosszügigkeit erfuhr im 20. Jahrhundert eine Ausweitung durch die bewusste Förderung der romanischen Sprache, die sich in den Bündnertälern erhalten konnte. Das Verständnis gegenüber Minderheiten muss deshalb als weitere Eigenheit der Schweiz vermerkt werden.",
+      "bbox": {
+        "x_pct": 23.277,
+        "y_pct": 15.803,
+        "w_pct": 66.24,
+        "h_pct": 33.336
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mit der Glaubensspaltung wurde die Tendenz zur Toleranz einer harten Bewährung ausgesetzt. Als Folge einer durchaus zufälligen Entwicklung zerfiel die Schweiz gegen die Mitte des 16. Jahrhunderts in zwei konfessionell getrennte, militärisch gesehen ungefähr gleich starke Teile. Zwinglis Hoffnungen auf eine Reform der ganzen Eidgenossenschaft erfüllten sich nicht. Doch auch Roms Pläne zu einer Rekatholisierung blieben Wunschdenken. So lebten zwei Eidgenossenschaften, eine reformierte und eine katholische, während Jahrhunderten nebeneinander – gewiss nicht konfliktlos, aber doch notdürftig durch gemeinsame politische Interessen aneinander gebunden. Während sich andere Staaten in konfessionellen Wirren aufrieben oder die Mehrheit die Minderheit unterwarf, wie in Frankreich, festigten sich in der Schweiz die Grundsätze der religiösen Toleranz. Dem entsprach auch die Offenheit für Glaubensflüchtlinge aus den verschiedensten Ländern. Dies wiederum führte zur traditionellen Rolle der Schweiz als Asyl für religiöse und politische Flüchtlinge.",
+      "bbox": {
+        "x_pct": 23.238,
+        "y_pct": 49.473,
+        "w_pct": 66.227,
+        "h_pct": 43.562
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 23.238,
+        "y_pct": 94.945,
+        "w_pct": 2.22,
+        "h_pct": 2.583
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected page number was labeled as text in the input."
+  ],
+  "doc_id": "2940",
+  "page": 16,
+  "elapsed_seconds": 6.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,61 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 71",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified running header and page number as page_header/filter instead of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "moyen pour la seconde, à la seconde le et dun couronnement et d'un couronnement de la première.",
+      "bbox": {
+        "x_pct": 4.136,
+        "y_pct": 10.9,
+        "w_pct": 52.73,
+        "h_pct": 4.724
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il faut dire que les communistes ont reussi depuis longtemps à poser les problèmes politiques de l'heure en des termes tels que les socialistes ne peuvent que perdre sur tous les tableaux. Quand ces derniers, par exemple, votent des crédits militaires, ils semblent accepter un compromis, se mettre à la remorque de « la droite », puisque leur tradition est antimilitariste, pacifiste, internationale - tradition dont ils n'ont pas osé mettre en question la signification, les conditions et les limites; du même coup, votant ces crédits, ils diminuent le budget civil, celui des réformes, de la sécurité sociale. Le risque électoral devient alors trop grand et ils ne trouvent guère qu'un moyen de se distinguer des conservateurs et d'affirmer leur continuité doctrinale : voter les crédits militaires en rechignant, en lésinant, en étant ceux qui ne consentent qu'aux chiffres les plus bas. Comme si c'était là le problème ! Ils n'ont pas l'air alors de tenir à l'efficacité militaire, mais seulement de consentir à des concessions inutiles, et ils suscitent l'hostilité des pacifistes sans conquérir la confiance des défenseurs de l'État. Ce qu'ils devraient reconnaître, c'est qu'ils ont désormais, eux aussi, quelque chose à défendre, et que cette défense, une fois décidée, doit être efficace - problème technique et non plus politique - sous peine de jongler avec les sacrifices populaires.",
+      "bbox": {
+        "x_pct": 3.858,
+        "y_pct": 15.178,
+        "w_pct": 84.485,
+        "h_pct": 44.652
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text OCR reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sous la pression communiste, tous les points les plus durs, les plus indiscutés, du programme d'action, l'élévation du niveau de vie, par exemple, ou l'émancipation des colonies, prennent un double visage : la fidélité à la doctrine traditionnelle se met à ressembler au suicide ou à la trahison, et l'attitude nouvelle, manquant de fermeté, liée à des desseins ennemis, ressemble à l'abdication. Captifs dans ces pièges simples, grossiers, mais efficaces, les socialistes essaient de ne bouger que le moins possible et d'échapper aux nécessités de l'action par de vaines tentatives de pureté. Il faudrait penser les données actuelles de la situation jusqu'à leur racine pour retrouver la fidélité au sens premier, mais cet examen est redoutable, l'urgence est grande, on se contente de compromis entre les menaces les plus manifestes et les nécessités électorales. Et là même, on préfère blesser le moins",
+      "bbox": {
+        "x_pct": 3.663,
+        "y_pct": 59.626,
+        "w_pct": 84.318,
+        "h_pct": 29.171
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text OCR reading."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Running header detected as text",
+    "OCR output for paragraph blocks was severely truncated and incorrect"
+  ],
+  "doc_id": "330",
+  "page": 105,
+  "elapsed_seconds": 4.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

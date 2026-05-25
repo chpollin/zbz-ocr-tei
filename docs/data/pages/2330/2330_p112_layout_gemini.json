@@ -1,0 +1,96 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "laquelle ces peuples sont pris. Cela n'a pas grand-chose à voir avec ce qui se passe en Occident.",
+      "bbox": {
+        "x_pct": 14.286,
+        "y_pct": 4.355,
+        "w_pct": 79.853,
+        "h_pct": 4.621
+      },
+      "changed": true,
+      "change_reason": "Corrected scrambled text segments that were improperly detected."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. — Pour revenir à des questions de principes et de doctrine, vous avez souvent identifié la gauche et la liberté. Vous avez même écrit, voici trente ans, dans Idéologies et réalité : « J'appellerai gauche, l'idéologie qui insiste le plus sur la liberté, droite celle qui insiste plus sur l'autorité armée de force. » Est-ce que vous souscrivez toujours à cette formule ?",
+      "bbox": {
+        "x_pct": 14.286,
+        "y_pct": 9.008,
+        "w_pct": 79.853,
+        "h_pct": 10.645
+      },
+      "changed": true,
+      "change_reason": "Merged split segments and corrected OCR content for the paragraph starting with A.D."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — Oui, j'y souscris toujours, sauf que probablement aujourd'hui, plutôt qu' « autorité », je dirais « ordre », parce que le terme « autorité » a été tellement discrédité au cours des dernières années et que l'autorité m'est apparue tellement nécessaire dans tant de domaines, que je n'emploierais pas ce mot de cette manière négative. Je dirais plutôt « ordre armé de la force ». J'ai bien précisé que c'est une question d'accent. Personne ne peut se passer d' « ordre armé de la force » et personne à mon sens ne peut se passer complètement de « liberté ». Mais ceux qui mettent le plus l'accent sur la liberté, je les appelle de gauche, et ceux qui mettent le plus l'accent sur l'ordre armé de la force, je les considère comme étant de droite. Je ne pense pas qu'il y ait un être humain qui soit « pure droite » ou « pure gauche », parce que tous sont des êtres humains, et s'ils pensent un tout petit peu plus profond, ils s'apercevront très vite de l'interdépendance de ces pôles opposés. Maintenant, je suis toujours désolée, quand je vois que l'un des critères de la gauche, pour une masse de gens, et parfois même le critère principal, c'est le degré de sympathie que l'on nourrit à l'égard de l'URSS. Comme l'URSS est un pays qui, à mes yeux — et je pense qu'il en est bien objectivement ainsi — est le plus dépourvu de liberté et celui où l'ordre est le plus armé de la force, je ne comprends pas que la sympathie à son égard puisse être un critère permettant d'apprécier l'appartenance à la gauche de qui que ce soit.",
+      "bbox": {
+        "x_pct": 14.286,
+        "y_pct": 19.516,
+        "w_pct": 79.853,
+        "h_pct": 43.145
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph block that was skipped by initial detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — C'est celui-là même. De tous les régimes que je connaisse actuellement, en dehors peut-être de quelques petits régimes dictatoriaux insulaires comme Haïti ou d'autres du même genre, c'est le régime qui comporte le plus d'ordre armé de la force et le moins de liberté. Un régime farci d'espionnage, de peur, où toute la vie dépend de l'adhésion imposée à des idées, à des conceptions et à des théories, même si on les juge mensongères, je considère que c'est aux antipodes de la gauche et par conséquent, j'ai horreur de ce régime.",
+      "bbox": {
+        "x_pct": 14.127,
+        "y_pct": 62.847,
+        "w_pct": 79.805,
+        "h_pct": 20.218
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. — Mais vous ne pensez pas que dans la pratique, dans l'histoire politique de ces trente ou quarante dernières années, c'est la gauche qui conduit le plus généralement à plus d'autorité, à plus d'Etat et à moins de liberté ?",
+      "bbox": {
+        "x_pct": 14.078,
+        "y_pct": 83.629,
+        "w_pct": 79.78,
+        "h_pct": 7.742
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "108",
+      "bbox": {
+        "x_pct": 14.286,
+        "y_pct": 94.677,
+        "w_pct": 3.75,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer for page number."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text blocks had significant OCR errors.",
+    "Multiple paragraphs were merged incorrectly or split arbitrarily.",
+    "Initial detection missed significant content blocks.",
+    "Page number was not labeled as page_footer.",
+    "Detection failed to accurately capture full sentence structure."
+  ],
+  "doc_id": "2330",
+  "page": 112,
+  "elapsed_seconds": 8.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

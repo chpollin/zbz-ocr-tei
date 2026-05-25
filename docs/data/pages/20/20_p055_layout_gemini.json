@@ -1,0 +1,41 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n©ité familière du monde, en tant que s'est créée une polarité, en tant que l'étre sujet s'est détaché et s'est opposé à l'étre objet. L'étre objet, de son côté, n'existe qu'en face de l'étre sujet ainsi détaché. L'état antérieur, quoique présent de toutes parts dans notre vie, échappe à la représentation, à la pensée, au langage humain. C'est l'état de la bête — ou l'état mystique de l'ange. C'est l'état de non-étre ou de plénitude absolus où l'homme comme tel n'existe pas et ne s'efforce pas de graver dans un monde extérieur et opposé à lui la ligne claire, étroite et volontaire de sa liberté.",
+      "bbox": {
+        "x_pct": 11.19,
+        "y_pct": 12.695,
+        "w_pct": 76.31,
+        "h_pct": 30.638
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted transcription from raw OCR output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On souvent défini la philosophie comme la science de la totalité. Mais on a eu tort d'interpréter cette totalité comme si la philosophie était la science de l'univers total, ou la somme des sciences particulières, ou la science des bases de toutes les sciences. Le caractère total de la philosophie tient à ce qu'elle décide de l'étre entier de l'homme en décidant du monde qui lui sert d'objet. Elle décide des deux en un. Elle est totale, parce que là où elle cesse, cesse l'étre-sujet, l'étre-objet, — l'étre. Étant totale à sa source et non par ce qu'elle embrasse, mettant l'étre en question constamment, et non une fois pour toutes, elle est totale non seulement comme système achevé, mais dans chacune de ses parties, dans chacun de ses problèmes. Étudier réellement un problème d'une vraie philosophie, c'est viser le point de profondeur qu'on aurait toujours atteint, quel qu'ait été au départ, le pro-",
+      "bbox": {
+        "x_pct": 10.889,
+        "y_pct": 43.495,
+        "w_pct": 76.717,
+        "h_pct": 46.152
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted transcription from raw OCR output."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Raw OCR text was highly garbled and required manual reconstruction based on the image.",
+    "Top header 'ET DE LA TOTALITÉ' and page number '53' were ignored by the initial detection; they should have been captured as page_header/page_footer."
+  ],
+  "doc_id": "20",
+  "page": 55,
+  "elapsed_seconds": 7.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

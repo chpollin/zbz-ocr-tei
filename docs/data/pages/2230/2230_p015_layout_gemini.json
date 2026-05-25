@@ -1,0 +1,185 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "BULLETIN OF THE EUROPEAN ACADEMY FOR CONTINUING MEDICAL EDUCATION",
+      "bbox": {
+        "x_pct": 10.242,
+        "y_pct": 21.254,
+        "w_pct": 81.29,
+        "h_pct": 1.88
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Vol. 5 n 2",
+      "bbox": {
+        "x_pct": 76.911,
+        "y_pct": 26.228,
+        "w_pct": 9.113,
+        "h_pct": 1.197
+      },
+      "changed": true,
+      "change_reason": "Page info/issue identifier moved to page_footer"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SOMMAIRE INHALISVERZEICHNIS",
+      "bbox": {
+        "x_pct": 13.653,
+        "y_pct": 36.051,
+        "w_pct": 35.403,
+        "h_pct": 1.63
+      },
+      "changed": true,
+      "change_reason": "Heading labeled as section_header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Seite 1",
+      "bbox": {
+        "x_pct": 77.444,
+        "y_pct": 38.234,
+        "w_pct": 8.419,
+        "h_pct": 1.407
+      },
+      "changed": true,
+      "change_reason": "Page number moved to page_footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "page 2",
+      "bbox": {
+        "x_pct": 77.444,
+        "y_pct": 40.473,
+        "w_pct": 8.548,
+        "h_pct": 1.504
+      },
+      "changed": true,
+      "change_reason": "Page number moved to page_footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Seite 3",
+      "bbox": {
+        "x_pct": 77.339,
+        "y_pct": 48.165,
+        "w_pct": 8.653,
+        "h_pct": 1.39
+      },
+      "changed": true,
+      "change_reason": "Page number moved to page_footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "page 10",
+      "bbox": {
+        "x_pct": 77.339,
+        "y_pct": 52.405,
+        "w_pct": 10.266,
+        "h_pct": 1.687
+      },
+      "changed": true,
+      "change_reason": "Page number moved to page_footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "page 16",
+      "bbox": {
+        "x_pct": 77.339,
+        "y_pct": 60.986,
+        "w_pct": 10.024,
+        "h_pct": 1.538
+      },
+      "changed": true,
+      "change_reason": "Page number moved to page_footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Seite 25",
+      "bbox": {
+        "x_pct": 77.339,
+        "y_pct": 63.704,
+        "w_pct": 9.944,
+        "h_pct": 1.481
+      },
+      "changed": true,
+      "change_reason": "Page number moved to page_footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "page 30",
+      "bbox": {
+        "x_pct": 77.234,
+        "y_pct": 72.308,
+        "w_pct": 10.048,
+        "h_pct": 1.538
+      },
+      "changed": true,
+      "change_reason": "Page number moved to page_footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Seite 40",
+      "bbox": {
+        "x_pct": 77.234,
+        "y_pct": 76.524,
+        "w_pct": 10.024,
+        "h_pct": 1.385
+      },
+      "changed": true,
+      "change_reason": "Page number moved to page_footer"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "page 50",
+      "bbox": {
+        "x_pct": 77.202,
+        "y_pct": 82.393,
+        "w_pct": 10.056,
+        "h_pct": 1.635
+      },
+      "changed": true,
+      "change_reason": "Page number moved to page_footer"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "EUROPEAN ACADEMY FOR CONTINUING MEDICAL EDUCATION Carl-Oelemann-Weg 7, D-6350 Bad Nauheim, Telefon: 0 60 32 / 60 95",
+      "bbox": {
+        "x_pct": 9.976,
+        "y_pct": 86.61,
+        "w_pct": 64.298,
+        "h_pct": 3.915
+      },
+      "changed": true,
+      "change_reason": "Footer address block marked as section_header"
+    }
+  ],
+  "score": 40,
+  "num_corrections": 13,
+  "issues": [
+    "Most page numbers were incorrectly labeled as text.",
+    "Section headers were missed.",
+    "OCR text for phone number was incomplete."
+  ],
+  "doc_id": "2230",
+  "page": 15,
+  "elapsed_seconds": 5.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

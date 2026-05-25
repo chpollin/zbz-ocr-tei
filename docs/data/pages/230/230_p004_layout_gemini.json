@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LES SOCIALISTES EUROPÉENS A FRANCFORT . 15",
+      "bbox": {
+        "x_pct": 149.2,
+        "y_pct": 36.6,
+        "w_pct": 346.0,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a running header and page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "geants, coupés de la base, suivent de façon presque auto- matique une ligne que la masse ne comprend plus, et les mili- tants, lassés de ne pouvoir exercer aucune influence sur la politique générale du parti, désertent ses sections. Nous ver- rons bien maintenant, nous socialistes fédéralistes, si ce sont là réalités ou calomnies. Un congrès comme celui de Franc- fort ne peut pas étre ignoré. Si les responsables nationaux continuent, comme si de rien n'était, à donner le spectacle douloureux d'un socialisme livré à la surenchère nationaliste ou reculant avec effroi devant toute formule nouvelle, ce sera la preuve que le sang ne porte plus la vie dans tout le corps du parti, que les artères sont bouchées et qu'il faut, sous peine de mort, trouver d'autres voies.",
+      "bbox": {
+        "x_pct": 6.688,
+        "y_pct": 6.1,
+        "w_pct": 48.292,
+        "h_pct": 17.976
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text and validated tagging"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'article de Spaak rend un son optimiste. Dans son enthousiasme, il déploie de grands espoirs : la Fédération européenne apportera la prospérité et la paix. A Francfort, il a même parlé de la grandeur, de la splendeur possible de l'Europe. Je voudrais ici adresser quelques mots aux pes- simistes. Ils voient l'Europe, même fédérée, menacée de tous côtés par des dangers mortels. Ils ne pensent guère à la splendeur, pour l'instant : il leur suffirait de voir l'Europe, après avoir subi la respiration artificielle de l'aide américaine, se mettre à respirer, simplement respirer, par elle-même. Etre vivante. Et ces pessimistes nous disent, à nous fédéralistes : « Ne voyez-vous pas les dangers auxquels vous nous expo- sez ? Nous risquons de voir se construire une Europe réac- tionnaire où le standard de vie des travailleurs s'égalisera au niveau le plus bas. Nous risquons de voir cette Europe, qui commence son intégration par l'armée, dominée par une Allemagne rendue à ses pires traditions militaristes et impé- rialistes. Nous risquons, en fédérant une Europe armée, de provoquer l'U.R.S.S. et de déclencher la guerre. Nous ris- quons de créer une Europe si dépendante à tous égards de l'Amérique qu'elle deviendra une sorte de colonie sous le camouflage d'une indépendance fictive. »",
+      "bbox": {
+        "x_pct": 6.664,
+        "y_pct": 23.905,
+        "w_pct": 48.155,
+        "h_pct": 30.371
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text and validated tagging"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je réponds à ces sages pessimistes : « Vous avez rai- son. Tous ces dangers nous menacent, je partage toutes vos craintes, j'en ai d'autres encore. Mais si vous étes pessimistes, en revanche vous n'étes pas objectifs. La situation est telle-",
+      "bbox": {
+        "x_pct": 6.986,
+        "y_pct": 53.894,
+        "w_pct": 47.623,
+        "h_pct": 5.969
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text and validated tagging"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 1.773,
+        "y_pct": 64.099,
+        "w_pct": 41.015,
+        "h_pct": 1.482
+      },
+      "changed": true,
+      "change_reason": "Identified as a digital library watermark/footer"
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR for the main paragraphs was fragmented and incomplete.",
+    "Header and footer elements were mislabeled as standard text paragraphs."
+  ],
+  "doc_id": "230",
+  "page": 4,
+  "elapsed_seconds": 6.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

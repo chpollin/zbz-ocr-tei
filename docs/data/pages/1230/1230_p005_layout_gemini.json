@@ -1,0 +1,97 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "satisfaction devant ce succès, mais   ajouter immédiatement faudra minorité exprimé son désaccord. C",
+      "bbox": {
+        "x_pct": 15.788,
+        "y_pct": 9.741,
+        "w_pct": 69.109,
+        "h_pct": 12.649
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le fédéralisme, garantit Vexistence des rités, est également nécessaire à Fexistence de la Suisse. E",
+      "bbox": {
+        "x_pct": 15.836,
+        "y_pct": 22.672,
+        "w_pct": 68.816,
+        "h_pct": 9.357
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A Tintérieur; la Suisse se distingue donc par le respect des minorités et le fédéralisme en matière ",
+      "bbox": {
+        "x_pct": 15.714,
+        "y_pct": 31.975,
+        "w_pct": 69.109,
+        "h_pct": 21.63
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans un conllit où avonS été dispensés dle prendre les armnes, et où manilestement tous nos intérêts",
+      "bbox": {
+        "x_pct": 15.104,
+        "y_pct": 54.13,
+        "w_pct": 69.353,
+        "h_pct": 23.323
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce que je souhaile el ne semhle pas encore admis c'est que la Suisse mette vieille rience des procéd",
+      "bbox": {
+        "x_pct": 14.86,
+        "y_pct": 77.876,
+        "w_pct": 69.426,
+        "h_pct": 7.704
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "— 42 —",
+      "bbox": {
+        "x_pct": 44,
+        "y_pct": 87.5,
+        "w_pct": 12,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text content was OCR-poor and inaccurate.",
+    "Missing page number region."
+  ],
+  "doc_id": "1230",
+  "page": 5,
+  "elapsed_seconds": 9.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content for better transcription accuracy.": 1,
+    "Corrected text content.": 3,
+    "ADDED": 1
+  }
+}

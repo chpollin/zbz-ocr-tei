@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "OBJECTIVATION DE L'EXISTENCE 169",
+      "bbox": {
+        "x_pct": 288.667,
+        "y_pct": 82.667,
+        "w_pct": 425.333,
+        "h_pct": 31.0
+      },
+      "changed": true,
+      "change_reason": "Corrected the page header incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des chemins, des possibilités contradictoires entre lesquelles il faudra choisir. La possibilité d'un choix éclaire l'existence, mais le choix n'étant que pensé, la possibilité choisie reste générale. Comprendre ce choix, c'est exprimer l'existence, non pas la réaliser.",
+      "bbox": {
+        "x_pct": 11.747,
+        "y_pct": 12.326,
+        "w_pct": 75.904,
+        "h_pct": 15.224
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "b) L'objectivation peut se faire par détermination logique. On y parle de l'existence possible au moyen de concepts abstraits. Mais ceux-ci, au lieu de saisir un objet, se détruisent à l'usage, et accomplissent ainsi leur fonction, qui est d'éclairer l'existence. On paraît fixer un savoir; en réalité ce savoir ne s'accomplit que dans le clair non-savoir d'une chose pourtant actuellement présente. Les déterminations logiques sont la face de généralité, le non-savoir est dans le mouvement de l'existence possible qui seul donne aux déterminations un contenu. Un exemple de cette méthode, c'est le cercle vicieux, dont il a déjà été question plus haut : dans le cercle vicieux, l'objet dont on a parlé perd sa base et disparaît, laissant seulement derrière lui ce dont il s'agissait en réalité. Un autre exemple, c'est la contradiction logique : deux concepts qui dans le monde objectif sont en contradiction peuvent parfois être dans leur totalité l'expression de l'existence, et ils remplissent alors leur fonction expressive de façon d'autant plus adéquate qu'ils rendent toute fixation et toute définition de l'existence impossible au seul entendement. Tels sont par exemple les concepts suivants : temporalité —",
+      "bbox": {
+        "x_pct": 11.792,
+        "y_pct": 27.836,
+        "w_pct": 76.16,
+        "h_pct": 61.992
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Detected page header was missing entirely in JSON.",
+    "The OCR text for the main paragraphs was truncated/incomplete.",
+    "Layout analysis failed to identify the page header as a distinct block."
+  ],
+  "doc_id": "20",
+  "page": 171,
+  "elapsed_seconds": 4.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Torture: How to Make the International Convention Effective</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1630</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Torture: How to Make the International Convention Effective</title>
+          <author>Jeanne Hersch</author>
+          <date>1980</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="eng" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-t2" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Entities: 27p 9o 9l 2w = 47; Fragmented persName tagging on cover/TOC: e.g. '<persName>Jean-Jacques</persName> Gautier' tags only first name; systematic for co-author list; Validator: VALID, 0 errors, 0 warnings (+2 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="945" lry="1300">
+      <zone xml:id="facs_1_r_1" ulx="200" uly="343" lrx="726" lry="546" />
+      <zone xml:id="facs_1_r_2" ulx="288" uly="642" lrx="645" lry="666" />
+      <zone xml:id="facs_1_r_3" ulx="390" uly="886" lrx="541" lry="921" />
+      <zone xml:id="facs_1_r_4" ulx="504" uly="922" lrx="718" lry="978" />
+      <zone xml:id="facs_1_r_5" ulx="231" uly="923" lrx="404" lry="971" />
+      <zone xml:id="facs_1_r_6" ulx="376" uly="994" lrx="552" lry="1027" />
+      <zone xml:id="facs_1_r_7" ulx="146" uly="1047" lrx="791" lry="1136" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="945" lry="1300">
+      <zone xml:id="facs_2_r_1" ulx="171" uly="229" lrx="697" lry="435" />
+      <zone xml:id="facs_2_r_2" ulx="260" uly="531" lrx="614" lry="553" />
+      <zone xml:id="facs_2_r_3" ulx="359" uly="676" lrx="514" lry="705" />
+      <zone xml:id="facs_2_r_4" ulx="201" uly="708" lrx="374" lry="756" />
+      <zone xml:id="facs_2_r_5" ulx="474" uly="709" lrx="686" lry="765" />
+      <zone xml:id="facs_2_r_6" ulx="347" uly="786" lrx="524" lry="812" />
+      <zone xml:id="facs_2_r_7" ulx="114" uly="815" lrx="757" lry="923" />
+      <zone xml:id="facs_2_r_8" ulx="112" uly="1033" lrx="411" lry="1079" />
+      <zone xml:id="facs_2_r_9" ulx="565" uly="1035" lrx="756" lry="1077" />
+      <zone xml:id="facs_2_r_10" ulx="116" uly="1086" lrx="409" lry="1149" />
+      <zone xml:id="facs_2_r_11" ulx="579" uly="1086" lrx="743" lry="1151" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="945" lry="1300">
+      <zone xml:id="facs_3_r_1" ulx="194" uly="939" lrx="832" lry="981" />
+      <zone xml:id="facs_3_r_2" ulx="194" uly="1019" lrx="832" lry="1060" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="945" lry="1300">
+      <zone xml:id="facs_4_r_1" ulx="375" uly="179" lrx="501" lry="202" />
+      <zone xml:id="facs_4_r_2" ulx="116" uly="227" lrx="760" lry="1151" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="945" lry="1300">
+      <zone xml:id="facs_5_r_1" ulx="199" uly="283" lrx="399" lry="317" />
+      <zone xml:id="facs_5_r_2" ulx="296" uly="328" lrx="681" lry="363" />
+      <zone xml:id="facs_5_r_3" ulx="202" uly="382" lrx="774" lry="499" />
+      <zone xml:id="facs_5_r_4" ulx="203" uly="496" lrx="773" lry="638" />
+      <zone xml:id="facs_5_r_5" ulx="202" uly="633" lrx="773" lry="818" />
+      <zone xml:id="facs_5_r_6" ulx="204" uly="816" lrx="774" lry="930" />
+      <zone xml:id="facs_5_r_7" ulx="424" uly="930" lrx="773" lry="1043" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          MASTER
+        </head>
+        <p facs="#facs_1_r_2">
+          <orgName ref="#zbz-o.210">INTERNATIONAL COMMISSION OF JURISTS</orgName>
+        </p>
+        <p facs="#facs_1_r_3">
+          <orgName ref="#zbz-o.211">SWISS COMMITTEE AGAINST TORTURE</orgName>
+        </p>
+        <p facs="#facs_1_r_4">
+          Torture: How to Make the International Convention Effective
+        </p>
+        <p facs="#facs_1_r_5">
+          A DRAFT OPTIONAL PROTOCOL
+        </p>
+        <p facs="#facs_1_r_6">
+          With articles by
+        </p>
+        <p facs="#facs_1_r_7">
+          Niall MacDermot<lb facs="#facs_1_l_7_1" n="N001" />† Eric <persName ref="#zbz-p.945">Martin</persName>
+        </p>
+        <p>
+          <persName ref="#zbz-p.554">Jean-Jacques</persName> Gautier<lb facs="#facs_1_l_8_1" n="N001" />François de Vargas
+        </p>
+        <p>
+          and comments by
+        </p>
+        <p>
+          Card. Paulo E. ARNS, Francis BLANCHARD, Rafael CALDERA, Hans HAUG, <persName ref="#zbz-p.2">Jeanne HERSCH</persName>, <persName ref="#zbz-p.1676">Werner</persName> KAEGI, Felix MARTI AMBEL, Kéba MBAYE, <persName ref="#zbz-p.158">Pierre</persName> MENDES <placeName ref="#zbz-l.2">FRANCE</placeName>, <persName ref="#zbz-p.999">Philip</persName> POTTER, Nigel RODLEY, Joaquin RUIZ-GIMENEZ, † <persName ref="#zbz-p.157">Marc</persName> SCHREIBER, Willy SPUEHLER, Denis SZABO, <persName ref="#zbz-p.1113">Friedrich</persName> T. WAHLEN
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          box 7 / 31
+        </p>
+        <p facs="#facs_2_r_2">
+          Torture: How to Make the International Convention Effective
+        </p>
+        <p facs="#facs_2_r_3">
+          A DRAFT OPTIONAL PROTOCOL
+        </p>
+        <p facs="#facs_2_r_4">
+          With articles by
+        </p>
+        <p facs="#facs_2_r_5">
+          Niall MacDermot<lb facs="#facs_2_l_5_1" n="N001" />† Eric <persName ref="#zbz-p.945">Martin</persName>
+        </p>
+        <p facs="#facs_2_r_6">
+          <persName ref="#zbz-p.554">Jean-Jacques</persName> Gautier<lb facs="#facs_2_l_6_1" n="N001" />François de Vargas
+        </p>
+        <p facs="#facs_2_r_7">
+          and comments by
+        </p>
+        <p facs="#facs_2_r_8">
+          Card. Paulo E. ARNS, Francis BLANCHARD, Rafael CALDERA, Hans HAUG, <persName ref="#zbz-p.2">Jeanne HERSCH</persName>, <persName ref="#zbz-p.1676">Werner</persName> KAEGI, Felix MARTI AMBEL, Kéba MBAYE, <persName ref="#zbz-p.158">Pierre</persName> MENDES <placeName ref="#zbz-l.2">FRANCE</placeName>, <persName ref="#zbz-p.999">Philip</persName> POTTER, Nigel RODLEY, Joaquin RUIZ-GIMENEZ, † <persName ref="#zbz-p.157">Marc</persName> SCHREIBER, Willy SPUEHLER, Denis SZABO, <persName ref="#zbz-p.1113">Friedrich</persName> T. WAHLEN
+        </p>
+        <p facs="#facs_2_r_9">
+          <orgName ref="#zbz-o.210">INTERNATIONAL COMMISSION OF JURISTS</orgName><lb facs="#facs_2_l_9_1" n="N001" />B.P. 120<lb facs="#facs_2_l_9_2" n="N002" />CH-1224 <placeName ref="#zbz-l.496">Chêne-Bougeries</placeName>/<placeName ref="#zbz-l.5">Geneva</placeName> (<placeName ref="#zbz-l.10">Switzerland</placeName>)
+        </p>
+        <p facs="#facs_2_r_10">
+          <orgName ref="#zbz-o.211">SWISS COMMITTEE AGAINST TORTURE</orgName><lb facs="#facs_2_l_10_1" n="N001" />B.P. 2402<lb facs="#facs_2_l_10_2" n="N002" />CH-1002 <placeName ref="#zbz-l.19">Lausanne</placeName> (<placeName ref="#zbz-l.10">Switzerland</placeName>)
+        </p>
+        <p facs="#facs_2_r_11">
+          C. number 760
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          © First edition 1979<lb facs="#facs_3_l_1_1" n="N001" />Second edition 1980 — <orgName ref="#zbz-o.210">International Commission of Jurists</orgName> — <placeName ref="#zbz-l.5">Geneva</placeName>
+        </p>
+        <p facs="#facs_3_r_2">
+          Reproduction of the articles in this booklet is authorised, subject to indication of the source with a copy to the <orgName ref="#zbz-o.210">International Commission of Jurists</orgName>. This booklet has also been published in French and Spanish.
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          CONTENTS
+        </p>
+        <p facs="#facs_4_r_2">
+          Introduction. 5<lb facs="#facs_4_l_2_1" n="N001" />The Draft Optional Protocol 7
+        </p>
+        <p>
+          Articles
+        </p>
+        <p>
+          Eric <persName ref="#zbz-p.945">Martin</persName><lb facs="#facs_4_l_4_1" n="N001" />Torture, A Disgrace in Our Day 14
+        </p>
+        <p>
+          Niall MacDermot<lb facs="#facs_4_l_5_1" n="N001" />How to Enforce the Torture Convention 18
+        </p>
+        <p>
+          <persName ref="#zbz-p.554">Jean-Jacques</persName> Gautier<lb facs="#facs_4_l_6_1" n="N001" />The Case for an Effective and Realistic Procedure 31
+        </p>
+        <p>
+          François de Vargas<lb facs="#facs_4_l_7_1" n="N001" />History of a Campaign 41
+        </p>
+        <p>
+          Comments
+        </p>
+        <p>
+          Cardinal Paulo E. Arns: Of the Greatest Importance for Our Time 27<lb facs="#facs_4_l_9_1" n="N001" />Francis Blanchard: A New and Simple Idea 39<lb facs="#facs_4_l_9_2" n="N002" />Rafael Caldera: A Universal Commitment to Renounce Torture 16<lb facs="#facs_4_l_9_3" n="N003" /><persName ref="#zbz-p.421">Hans Haug</persName>: The <orgName ref="#zbz-o.212">Red Cross</orgName> Can Serve as a Model 30<lb facs="#facs_4_l_9_4" n="N004" /><persName ref="#zbz-p.2">Jeanne Hersch</persName>: Effectiveness Rather than Universality 48<lb facs="#facs_4_l_9_5" n="N005" /><persName ref="#zbz-p.1676">Werner</persName> Kaegi: Not to Build on Sand 30<lb facs="#facs_4_l_9_6" n="N006" />Félix Marti Ambel: Mobilise All Our Capacities of Imagination and <bibl ref="#zbz-w.186">Action</bibl> 47<lb facs="#facs_4_l_9_7" n="N007" />Kéba Mbaye: Not Longer Be Content to Condemn 17<lb facs="#facs_4_l_9_8" n="N008" /><persName ref="#zbz-p.1042">Pierre Mendès France</persName>: One of the Most Revolting Sores 40<lb facs="#facs_4_l_9_9" n="N009" />Rev. <persName ref="#zbz-p.999">Philip</persName> Potter: Shed Light on These Acts 28<lb facs="#facs_4_l_9_10" n="N010" />Nigel Rodley: An Antidote Spreading Progressively 46<lb facs="#facs_4_l_9_11" n="N011" />Joaquin Ruiz-Gimenez: A Highly Laudable Initiative 29<lb facs="#facs_4_l_9_12" n="N012" /><persName ref="#zbz-p.157">Marc</persName> Schreiber: To Verify the Implementation of International Instruments 40<lb facs="#facs_4_l_9_13" n="N013" />Willy Spühler: Ensure International Inspection 38<lb facs="#facs_4_l_9_14" n="N014" />Denis Szabo: To Extinguish the Temptation of Reasons of State 39<lb facs="#facs_4_l_9_15" n="N015" /><persName ref="#zbz-p.1113">Friedrich</persName> T. Wahlen: What Are the Priority Tasks? 17
+        </p>
+        <p>
+          List of the Non-Governmental Organisations Supporting the Draft Optional Protocol 49
+        </p>
+        <p>
+          Appendices
+        </p>
+        <p>
+          1. The Swedish Draft of an International Convention Against Torture and Other Cruel, Inhuman or Degrading Treatment or Punishment 50<lb facs="#facs_4_l_12_1" n="N001" />2. The International Association of Penal Law Draft 55
+        </p>
+        <p>
+          Opinions expressed in the Comments are those of the authors.
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          <persName ref="#zbz-p.2">JEANNE HERSCH</persName>
+        </p>
+        <p facs="#facs_5_r_2">
+          Effectiveness Rather Than Universality
+        </p>
+        <p facs="#facs_5_r_3">
+          The originality of this draft Optional Protocol lies in the fact that, while it is open to all, it is not established at first at a universal level, but only between a number of consenting nations who are ready to put it into force at once in such a way that no political pressures, internal or external, could obstruct it.
+        </p>
+        <p facs="#facs_5_r_4">
+          It must be said that in the world as it is today any effective action against violations of human rights are fettered and even neutralized if they depend upon world-wide organisations. One is led to ask whether some initiatives, which could have limited but real results in certain States, are not totally emasculated by the world-wide scope which is sought to be given to them.
+        </p>
+        <p facs="#facs_5_r_5">
+          It is, indeed, within those States where public opinion is not able to exercise an effective check that unannounced visits to places of detention are most needed. Nevertheless, the fact that on the world stage some countries were prepared to submit themselves mutually to a right of inspection, thus exposing themselves of their own free will to international verification, would serve to denounce before world public opinion those who reject it, as having something serious to hide. That would be no mean form of pressure.
+        </p>
+        <p facs="#facs_5_r_6">
+          The idea of the Protocol is of an impressive simplicity: open to all, voluntary accession, mutual inspection, and publication of the results. It contains something which is immediate for the present and contagious for the future. Moreover, it is in the best tradition of the <orgName ref="#zbz-o.212">Red Cross</orgName>.
+        </p>
+        <p facs="#facs_5_r_7">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_5_l_7_1" n="N001" /><placeName ref="#zbz-l.5">Geneva</placeName><lb facs="#facs_5_l_7_2" n="N002" />Professor of Philosophy and writer<lb facs="#facs_5_l_7_3" n="N003" />former Member of the Executive Council<lb facs="#facs_5_l_7_4" n="N004" />of <orgName ref="#zbz-o.51">UNESCO</orgName>
+        </p>
+        <p>
+          48
+        </p>
+      </div>
+      </body></text>
+</TEI>

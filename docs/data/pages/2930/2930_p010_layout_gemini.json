@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "20",
+      "bbox": {
+        "x_pct": 70.0,
+        "y_pct": 878.0,
+        "w_pct": 14.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as section header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "21",
+      "bbox": {
+        "x_pct": 885.0,
+        "y_pct": 875.0,
+        "w_pct": 15.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ist also schr dcudlich anhropozcntrisch Nun aber notwendig noch Fur Ecachet haben?",
+      "bbox": {
+        "x_pct": 7.212,
+        "y_pct": 18.018,
+        "w_pct": 37.74,
+        "h_pct": 18.062
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "und hal cine Ausnalme in unserer Wirksonder ciner biologischen oder wo alles mitcinander verschmilzt",
+      "bbox": {
+        "x_pct": 7.055,
+        "y_pct": 52.526,
+        "w_pct": 37.692,
+        "h_pct": 28.488
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ecfahrlisic abl der scn wir die Nacur pflegen?",
+      "bbox": {
+        "x_pct": 53.329,
+        "y_pct": 17.327,
+        "w_pct": 36.058,
+        "h_pct": 9.838
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich wurde sagen, da'f mir dic Mnan dic Sorge",
+      "bbox": {
+        "x_pct": 53.365,
+        "y_pct": 46.99,
+        "w_pct": 22.392,
+        "h_pct": 6.021
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aber ich konntc dem Satz doch cinigcs 1bgcwinncn, num-",
+      "bbox": {
+        "x_pct": 53.522,
+        "y_pct": 61.865,
+        "w_pct": 36.142,
+        "h_pct": 2.599
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Manche Menschen emporen sich daruber; Jal die Erde odcr zu kal wird, aber",
+      "bbox": {
+        "x_pct": 53.486,
+        "y_pct": 78.414,
+        "w_pct": 36.418,
+        "h_pct": 6.123
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page numbers labeled incorrectly.",
+    "OCR text extraction is significantly corrupted."
+  ],
+  "doc_id": "2930",
+  "page": 10,
+  "elapsed_seconds": 5.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On dira qu'il persiste dans le souvenir, ou dans des traces et des documents qu'on pourrait retrouver, ou dans des conséquences qui permettraient de remonter à leurs causes, – et tout cela comporte une part de réalité. Mais notre sens du passé, c'est encore autre chose. Nous sommes au fond convaincus que le passé est à jamais tel qu'il a été.",
+      "bbox": {
+        "x_pct": 16.811,
+        "y_pct": 13.374,
+        "w_pct": 57.489,
+        "h_pct": 17.484
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled text extraction and matched the source text accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avec les époques, les interprétations de ce passé changent. Mais si elles changent, c'est pour mieux rejoindre ce passé tel qu'il a été, pour mieux saisir les intentions qui furent celles de ses acteurs, de mieux comprendre les causes agissantes lorsqu'elles ont agi.",
+      "bbox": {
+        "x_pct": 16.843,
+        "y_pct": 30.94,
+        "w_pct": 57.489,
+        "h_pct": 13.088
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tous les livres d'histoire, tous les professeurs, nous ont enseigné que Brutus avait tué César. A supposer que nul n'en doute et que personne ne dise ni n'écrive autre chose jusqu'à la fin de l'humanité, – si c'est un autre que Brutus qui a tué César, la thèse selon laquelle Brutus a tué César restera fausse jusqu'à la fin des temps vécus par les hommes. D'ailleurs, personne n'en doute. Nous croyons tous, bon gré mal gré, à l'immuabilité du passé qui, fut un présent où des hommes ont agi.",
+      "bbox": {
+        "x_pct": 16.769,
+        "y_pct": 43.734,
+        "w_pct": 57.352,
+        "h_pct": 22.418
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sans un tel passé, le temps vécu se décompose.",
+      "bbox": {
+        "x_pct": 20.413,
+        "y_pct": 65.547,
+        "w_pct": 53.633,
+        "h_pct": 2.974
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "93",
+      "bbox": {
+        "x_pct": 71.0,
+        "y_pct": 75.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter as per instructions."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Garbled text content in OCR.",
+    "Page number 93 missing from region list.",
+    "Bounding boxes for text blocks were slightly imprecise."
+  ],
+  "doc_id": "2780",
+  "page": 92,
+  "elapsed_seconds": 5.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,161 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "759",
+      "bbox": {
+        "x_pct": 2.87,
+        "y_pct": 2.76,
+        "w_pct": 3.75,
+        "h_pct": 1.45
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "J\tSUS",
+      "bbox": {
+        "x_pct": 87.16,
+        "y_pct": 2.86,
+        "w_pct": 5.25,
+        "h_pct": 1.25
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "DONI P. R.. 1960 . DE Karl Jaspers, Paris, 1945. WAHL J . L",
+      "bbox": {
+        "x_pct": 2.993,
+        "y_pct": 8.18,
+        "w_pct": 39.469,
+        "h_pct": 6.706
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "Jeanne HERSCI",
+      "bbox": {
+        "x_pct": 34.494,
+        "y_pct": 17.929,
+        "w_pct": 10.787,
+        "h_pct": 1.304
+      },
+      "changed": true,
+      "change_reason": "Artifact/Filter"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Arendt Culpabilite Guerre paix Phenoménologie Relations internationales",
+      "bbox": {
+        "x_pct": 5.312,
+        "y_pct": 19.801,
+        "w_pct": 39.254,
+        "h_pct": 2.55
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "JÉSUS Jésus et les Évangiles",
+      "bbox": {
+        "x_pct": 2.86,
+        "y_pct": 26.993,
+        "w_pct": 19.581,
+        "h_pct": 3.81
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "gnement moral ; le mnessage des Évangiles pas dabord un message moral. La bonne nouvelle ( euaggéest",
+      "bbox": {
+        "x_pct": 2.829,
+        "y_pct": 33.884,
+        "w_pct": 42.523,
+        "h_pct": 47.642
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La morale   évangélique tout Caracde son enseignement nullement   présentée par Jésus comme obligato",
+      "bbox": {
+        "x_pct": 2.962,
+        "y_pct": 81.231,
+        "w_pct": 42.39,
+        "h_pct": 16.389
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Famour Les commandements de Jésus   surenchérissent cience morale naturelle et à la Loi juive appara",
+      "bbox": {
+        "x_pct": 48.897,
+        "y_pct": 6.905,
+        "w_pct": 43.718,
+        "h_pct": 11.688
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "La conscience morale naturelle",
+      "bbox": {
+        "x_pct": 49.367,
+        "y_pct": 20.214,
+        "w_pct": 24.147,
+        "h_pct": 1.105
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jésus ne  condamne pas la morale commune mais il en evidence ses limites (Mt 5, 47). Cette morale {i",
+      "bbox": {
+        "x_pct": 48.999,
+        "y_pct": 21.887,
+        "w_pct": 43.677,
+        "h_pct": 59.786
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cependant, que Fhomme soit capable de découvrir en soi est juste et injuste n'implique pas mette cet",
+      "bbox": {
+        "x_pct": 48.999,
+        "y_pct": 81.481,
+        "w_pct": 43.412,
+        "h_pct": 16.33
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page headers and footers in initial annotation"
+  ],
+  "doc_id": "3040",
+  "page": 9,
+  "elapsed_seconds": 6.53,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

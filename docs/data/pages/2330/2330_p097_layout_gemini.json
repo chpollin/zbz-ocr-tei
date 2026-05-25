@@ -1,0 +1,49 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CDK. Dans le conflit opposé Israël à l'Unesco en 1974-1975, quelle a été votre position ?",
+      "bbox": {
+        "x_pct": 3.785,
+        "y_pct": 3.605,
+        "w_pct": 79.853,
+        "h_pct": 4.565
+      },
+      "changed": true,
+      "change_reason": "Label changed from text to section_header as this is an interview question header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette crise a représenté pour moi une rude épreuve. Non que je sois inconditionnellement liée à Israël, bien que je sois juive — d'une certaine manière, cela m'induirait plutôt à la réserve ; mais certains épisodes ont été pour moi très pénibles. Par exemple : à chaque session du Conseil Exécutif, les pays arabes attaquaient Israël parce qu'il empêchait des livres d'origine arabe de parvenir dans les écoles de l'UNRWA (United Nations Relief and Work Agency for the Refugees of Near East). Or, un jour où j'étais montée chez le Directeur général pour une toute autre question, il m'a accueillie en me disant : « Savez-vous ce qu'il y a dans les livres que les Israéliens interdisent d'utiliser dans les écoles de l'UNRWA ? Eh bien ! dans l'un d'entre eux — un livre d'arithmétique — on trouve le problème suivant : il y a 12 juifs, on en tue 7, combien en reste-t-il ? » Ou encore, un atlas scolaire, dans lequel Israël ne figure pas. L'Unesco a décidé alors de nommer une commission chargée de contrôler les livres scolaires acceptables en vue de leur utilisation dans les écoles de l'UNRWA. C'était extrêmement difficile, parce qu'à mesure qu'on supprimait certains livres, il en arrivait d'autres, et la question n'était jamais définitivement résolue. — Je me souviens d'un jour qui m'a été particulièrement désagréable. La Conférence générale, les pays arabes ont soulevé une fois de plus le problème des fouilles à Jérusalem. Ces fouilles, selon eux, constituaient un danger pour les soubassements des mosquées arabes. L'Unesco avait envoyé à plusieurs reprises des experts, architectes et archéologues, pour contrôler la qualité des fouilles, et elle en avait reçu des rapports nuancés. Mais lors de cette Conférence générale, le problème des fouilles a été posé d'une manière particulièrement agressive, et tout le monde savait qu'avant la Conférence, le Directeur général avait envoyé à Jérusalem un expert belge, mondialement connu, pour faire rapport sur la situation actuelle. Ce rapport était destiné à être remis aux Etats-membres. Mais pour que ce rapport fût remis, il fallait que deux Etats-membres se prononcent pour cette distribution. J'ai dit alors au chef de notre délégation ceci : l'une des institutions les plus fortement ancrées dans notre tradition suisse c'est de recourir à l'arbitrage de témoins indépendants ; je trouve par conséquent que ce rapport doit être distribué, et nous devons le demander. Eh bien ! nous ne l'avons pas fait. C'est une chose qui m'a été extraordinairement pénible, surtout du point de vue suisse, mais aussi israélien et « unesquien ».",
+      "bbox": {
+        "x_pct": 3.748,
+        "y_pct": 7.798,
+        "w_pct": 80.049,
+        "h_pct": 71.556
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match the document image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "93",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Manually added page number at the bottom right identified."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "OCR text was heavily garbled in the provided regions.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "2330",
+  "page": 97,
+  "elapsed_seconds": 5.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

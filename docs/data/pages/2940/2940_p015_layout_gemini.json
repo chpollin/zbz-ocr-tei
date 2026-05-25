@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SIGMUND WIDMER",
+      "bbox": {
+        "x_pct": 11.677,
+        "y_pct": 9.464,
+        "w_pct": 20.363,
+        "h_pct": 1.843
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mehrsprachigkeit: Sie war zwar nie ein staatspolitisches Ziel. Vielmehr ergab sie sich zwangsläufig aus dem expansiven Charakter eines politischen Bundes, der im Gebirge, das heisst an den europäischen Sprachgrenzen beheimatet war.",
+      "bbox": {
+        "x_pct": 11.602,
+        "y_pct": 14.179,
+        "w_pct": 62.904,
+        "h_pct": 10.553
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text snippet to reflect actual document content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Den Urnern blieb, wollten sie an der machtpolitischen Ausdehnung der Eidgenossen teilhaben, keine andere Stossrichtung, als jene über die Alpen nach Oberitalien; denn nordwärts gerichtet, im deutschen Sprachgebiet, war ihnen der Vormarsch durch Schwyz, Luzern, Zürich und Bern verwehrt. Ähnliches galt für Bern; wollte es sich ins deutsche Sprachgebiet ausdehnen, so geriet es in Konkurrenz zu den eidgenössischen Verbündeten. So blieb Bern nur die Expansion in die heutige französische Schweiz.",
+      "bbox": {
+        "x_pct": 11.389,
+        "y_pct": 24.682,
+        "w_pct": 63.329,
+        "h_pct": 22.638
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selbstverständlich betrachteten die Eidgenossen die eroberten «welschen» Bevölkerungsteile nicht als gleichberechtigte Partner, sondern als Untertanen. Und doch waren sie gezwungen, Sprache und Lebensgewohnheiten der Untertanen wenigstens notdürftig zu verstehen, wollten sie diese zu fügsamen Landsleuten erziehen. Die Gewöhnung an das Französische als zweite Landessprache ergab sich namentlich in Bern seit dem 17. Jahrhundert auch durch die enge Anlehnung an Frankreich. In den sogenannten «besseren Familien» der Alten Eidgenossenschaft war die Beherrschung der französischen Sprache obligatorisch. Allerdings, die formelle Gleichberechtigung erlangten Französisch und Italienisch erst mit dem Eindringen der politischen Ideen der Aufklärung um 1800. Aber auch dies muss in Europa als Sonderfall bewertet werden: Die volle Gleichberechtigung von drei Sprachen im selben Land bildet den Beweis für ein hohes Mass von Toleranz und Rücksichtnahme. Dazu ein Detail: 1848 wurde festgelegt, dass neben den beiden grossen Kantonen",
+      "bbox": {
+        "x_pct": 11.477,
+        "y_pct": 47.764,
+        "w_pct": 63.367,
+        "h_pct": 43.802
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Sigmund Widmer",
+      "bbox": {
+        "x_pct": 77.972,
+        "y_pct": 32.889,
+        "w_pct": 13.267,
+        "h_pct": 1.809
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 71.956,
+        "y_pct": 93.362,
+        "w_pct": 1.156,
+        "h_pct": 1.543
+      },
+      "changed": true,
+      "change_reason": "Detected page number and assigned to page_footer/filter."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 4,
+  "issues": [
+    "Transcription for paragraphs was heavily truncated or incorrect.",
+    "Page number 11 was missed in the original parsing."
+  ],
+  "doc_id": "2940",
+  "page": 15,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

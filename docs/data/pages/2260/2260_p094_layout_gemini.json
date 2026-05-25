@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "circonstances sont exceptionnelles ou si nous avons trouvé le moyen et le courage de mettre le destin au pied du mur, nous vivons de souvenirs et de nostalgies, noyant le présent dans le temps. Notre ménage du temps est bien étrange. Nous y vivons tant bien que mal, comme des prisonniers séduits par leur exil.",
+      "bbox": {
+        "x_pct": 21.576,
+        "y_pct": 11.086,
+        "w_pct": 65.855,
+        "h_pct": 22.416
+      },
+      "changed": true,
+      "change_reason": "The full text content of the region was not correctly extracted by the model."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La vie ne nous laisse, peu à peu, que nos souvenirs. C’est tout notre avoir, et combien précaire. Ceux que nous évoquons le plus souvent, s’usent ou se figent à notre approche répétée. La plupart se dérobent ou s’emmêlent. Les souvenirs heureux projettent leur absence sur le présent. Les souvenirs tristes, dont la tristesse s’est atténuée au fil du temps, ont tendance à rejoindre, dans le monde des histoires, les mots qui serviraient à raconter et suscitent le remords, comme si on les abandonnait par infidélité.",
+      "bbox": {
+        "x_pct": 21.333,
+        "y_pct": 42.231,
+        "w_pct": 66.182,
+        "h_pct": 34.032
+      },
+      "changed": true,
+      "change_reason": "The full text content of the region was not correctly extracted by the model."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "94",
+      "bbox": {
+        "x_pct": 21.944,
+        "y_pct": 82.528,
+        "w_pct": 2.5,
+        "h_pct": 1.778
+      },
+      "changed": true,
+      "change_reason": "The page number was not detected as a region initially and needs to be labeled as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction for the two main paragraphs was truncated/incomplete.",
+    "The page number '94' was missing from the initial detection list."
+  ],
+  "doc_id": "2260",
+  "page": 94,
+  "elapsed_seconds": 3.8,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

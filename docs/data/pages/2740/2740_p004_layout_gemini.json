@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tout à produire en public. Ils jouent pour pouvoir mieux écouter, pour apprendre à laisser la musique agir en eux à travers leur liberté.",
+      "bbox": {
+        "x_pct": 8.791,
+        "y_pct": 8.385,
+        "w_pct": 81.173,
+        "h_pct": 4.538
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'insiste sur ce point, parce que l'on a souvent tendance, notamment dans les théories pédagogiques contemporaines, à concevoir toute intervention dans l'intérieur d'un être et dans sa liberté comme une « manipulation ». Or, c'est le propre de la liberté de consentir à être « manipulée » de cette manière. La liberté est réceptive, elle permet à autre chose d'entrer en elle et, comme disait le garçon, « de faire quelque chose dans soi ».",
+      "bbox": {
+        "x_pct": 8.791,
+        "y_pct": 13.462,
+        "w_pct": 81.33,
+        "h_pct": 12.385
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après tout, la musique, contrairement à ce qu'on s'imagine souvent sans trop y réfléchir, n'est pas là pour ceux qui la font, mais pour ceux qui ne la font pas. Dans une salle de concert, les interprètes d'une pièce sont là pour les auditeurs, et non l'inverse. La musique est jouée surtout pour la réceptivité active de ceux qui l'écoutent. Et cette activité intérieure se développe avec la liberté, avec le Soi. Autrement dit, alors qu'on se représente toujours la liberté comme une faculté qui nous permet de choisir et de décider, la liberté d'une personne qui écoute de la musique ne choisit pas et ne décide pas. Elle consent à quelque chose ; elle accueille quelque chose qui lui devient plus intérieur qu'elle-même. Et ici je reprends l'expression, toute proportion gardée, que saint Augustin employait à propos de Dieu : Interior intimo meo. La liberté permet à la musique de lui devenir plus intérieure qu'elle-même. Ce faisant, la liberté se multiplie, s'élargit ; elle se laisse discipliner plutôt qu'elle ne se discipline. Elle respire au souffle d'une autre respiration, et s'abandonne à ce qui est plus elle qu'elle-même.",
+      "bbox": {
+        "x_pct": 8.912,
+        "y_pct": 26.592,
+        "w_pct": 81.378,
+        "h_pct": 30.715
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces quelques remarques permettent de préciser le sens du verbe transcender, dans la question qui nous occupe : « La musique transcende-t-elle le temps ? » Ce verbe transcender ne signifie pas, comme on le croit trop souvent, « dépasser » ou « laisser quelque chose derrière soi ». Transcender désigne bien l'acte par lequel quelque chose est dépassé, mais dépassé par le quelque chose soi-même. Rien n'est laissé derrière : c'est l'acte entier qui est transcendant. Et c'est dans ce sens que je voudrais traiter mon sujet : « La musique transcende-t-elle le temps ? »",
+      "bbox": {
+        "x_pct": 8.863,
+        "y_pct": 58.308,
+        "w_pct": 81.463,
+        "h_pct": 16.485
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je n'entends pas dire par là : « La musique abolit-elle le temps ? » Nullement. « La musique ne nous arrache pas au temps, elle ne nous rend pas étrangers ou indifférents au temps. D'ailleurs, il en va de même, je crois, dans le domaine religieux. La religion ne transcende pas la souffrance, au sens où elle l'abolirait ; elle la transcende, en l'élevant à un autre niveau. De même, si la musique transcende véritablement le temps, cela signifie qu'elle nous",
+      "bbox": {
+        "x_pct": 9.069,
+        "y_pct": 75.485,
+        "w_pct": 81.1,
+        "h_pct": 12.723
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "41",
+      "bbox": {
+        "x_pct": 87.218,
+        "y_pct": 90.0,
+        "w_pct": 2.215,
+        "h_pct": 2.385
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Text extraction was highly corrupted and incomplete.",
+    "Page number at the bottom was missing and needed to be added to _filter."
+  ],
+  "doc_id": "2740",
+  "page": 4,
+  "elapsed_seconds": 6.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

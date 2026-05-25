@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PROF. DR. JEANNE HERSCH, UNIVERSITY OF GENEVA",
+      "bbox": {
+        "x_pct": 68.324,
+        "y_pct": 137.95,
+        "w_pct": 651.173,
+        "h_pct": 14.549
+      },
+      "changed": true,
+      "change_reason": "Identified as page header/author header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Karl Jaspers and his Philosophy",
+      "bbox": {
+        "x_pct": 64.91,
+        "y_pct": 267.437,
+        "w_pct": 458.558,
+        "h_pct": 25.66
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "It was by pure chance that I went to Heidelberg...",
+      "bbox": {
+        "x_pct": 60.24,
+        "y_pct": 313.0,
+        "w_pct": 763.95,
+        "h_pct": 237.91
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "One day as I was walking through our beautiful...",
+      "bbox": {
+        "x_pct": 58.31,
+        "y_pct": 549.77,
+        "w_pct": 762.1,
+        "h_pct": 100.91
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The lecture was in the old auditorium maximum...",
+      "bbox": {
+        "x_pct": 55.4,
+        "y_pct": 648.23,
+        "w_pct": 768.79,
+        "h_pct": 137.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "At that time I had no more than the faintest...",
+      "bbox": {
+        "x_pct": 54.6,
+        "y_pct": 783.52,
+        "w_pct": 770.65,
+        "h_pct": 107.01
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "145",
+      "bbox": {
+        "x_pct": 788.136,
+        "y_pct": 907.38,
+        "w_pct": 26.54,
+        "h_pct": 15.65
+      },
+      "changed": true,
+      "change_reason": "Detected page number as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/author header region in initial detection",
+    "Missing page number region in initial detection"
+  ],
+  "doc_id": "3090",
+  "page": 3,
+  "elapsed_seconds": 6.49,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

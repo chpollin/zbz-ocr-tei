@@ -1,0 +1,146 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "22",
+      "bbox": {
+        "x_pct": 53.0,
+        "y_pct": 88.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": {
+        "x_pct": 898.0,
+        "y_pct": 88.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "humaine, car aucune conciliation n'est possible dans le temps.",
+      "bbox": {
+        "x_pct": 8.0,
+        "y_pct": 6.8,
+        "w_pct": 39.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ainsi qu'Aron refuse de rattacher la fidélité historique à quelque immobilisme ou à quelque révolution...",
+      "bbox": {
+        "x_pct": 8.0,
+        "y_pct": 10.0,
+        "w_pct": 40.0,
+        "h_pct": 30.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous lisons ainsi, entre le Père jésuite et les écrits de Léon Jaspers : le plus pur ce qu'on puisse souhaiter...",
+      "bbox": {
+        "x_pct": 8.0,
+        "y_pct": 42.0,
+        "w_pct": 40.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Raymond Aron, comme le Père Fessard, attache une grande importance, dans le langage, au rôle de médiation entre le sujet et l'objet...",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 60.0,
+        "w_pct": 40.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est ainsi que le problème posé par Brunschvicg lors de la 55ème conférence de la Sorbonne V constitue son cachet...",
+      "bbox": {
+        "x_pct": 52.0,
+        "y_pct": 7.0,
+        "w_pct": 40.0,
+        "h_pct": 30.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La première hypothèse a été examinée tout au long du premier, puis la seconde dont n'existe qu'une ébauche...",
+      "bbox": {
+        "x_pct": 52.0,
+        "y_pct": 35.0,
+        "w_pct": 40.0,
+        "h_pct": 12.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'unité du drame ne pouvait se trouver, pour le fidèle, que dans le Verbe incarné, dans le Christ...",
+      "bbox": {
+        "x_pct": 52.0,
+        "y_pct": 48.0,
+        "w_pct": 40.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rien de tel chez Raymond Aron. L'unité du drame est, pour lui, une unité de pensée...",
+      "bbox": {
+        "x_pct": 52.0,
+        "y_pct": 55.0,
+        "w_pct": 40.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 10,
+  "issues": [
+    "Most OCR text in original JSON was corrupted/unreadable.",
+    "Page numbers not correctly labeled.",
+    "Formatting of text regions was fragmented."
+  ],
+  "doc_id": "1710",
+  "page": 10,
+  "elapsed_seconds": 6.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

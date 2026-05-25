@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Les conférences du congrès : l'homme et la femme, partenaires égaux ?</title>
+        <author>Hersch, Jeanne</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1170</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Les conférences du congrès : l'homme et la femme, partenaires égaux ?</title>
+            <author>Hersch, Jeanne</author>
+          </analytic>
+          <monogr>
+            <title>Femmes suisses et le Mouvement féministe</title>
+            <imprint>
+              <date>1975</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:warning L3:ok L4:ok L5:n/a L6:ok L7:warning). OCR-Halluzinationen: Repetitive Phrasen a la vie de la femme (Z.169); Titel korrekt: Les conferences du congres; Zweiter Abschnitt (Bindschedler-Robert) ohne head-Element</change>
+    <change when="2026-03-26" who="manual-review" status="REVIEWED">Manuelle Optimierung: (1) OCR-Halluzinationen durch gap[@reason='ocr-hallucination'] ersetzt (2x), (2) head-Element fuer Bindschedler-Robert-Abschnitt ergaenzt, (3) e-periodica-Metadatenseite als div[@type='source-metadata'] typisiert, (4) monogr/title mit Zeitschriftenname ergaenzt</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_1_r_1" ulx="351" uly="128" lrx="1067" lry="185" />
+      <zone xml:id="facs_1_r_2" ulx="144" uly="130" lrx="279" lry="159" />
+      <zone xml:id="facs_1_r_3" ulx="349" uly="197" lrx="800" lry="271" />
+      <zone xml:id="facs_1_r_4" ulx="145" uly="200" lrx="311" lry="230" />
+      <zone xml:id="facs_1_r_5" ulx="145" uly="240" lrx="221" lry="266" />
+      <zone xml:id="facs_1_r_6" ulx="145" uly="281" lrx="207" lry="307" />
+      <zone xml:id="facs_1_r_7" ulx="355" uly="285" lrx="366" lry="302" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1241" lry="1755">
+      <zone xml:id="facs_2_r_1" ulx="170" uly="137" lrx="717" lry="228" />
+      <zone xml:id="facs_2_r_2" ulx="979" uly="144" lrx="1149" lry="169" />
+      <zone xml:id="facs_2_r_3" ulx="722" uly="173" lrx="928" lry="209" />
+      <zone xml:id="facs_2_r_4" ulx="980" uly="182" lrx="1147" lry="193" />
+      <zone xml:id="facs_2_r_5" ulx="960" uly="218" lrx="1149" lry="289" />
+      <zone xml:id="facs_2_r_6" ulx="177" uly="224" lrx="560" lry="240" />
+      <zone xml:id="facs_2_r_7" ulx="63" uly="252" lrx="225" lry="267" />
+      <zone xml:id="facs_2_r_8" ulx="283" uly="254" lrx="311" lry="265" />
+      <zone xml:id="facs_2_r_9" ulx="62" uly="269" lrx="269" lry="521" />
+      <zone xml:id="facs_2_r_10" ulx="722" uly="275" lrx="928" lry="444" />
+      <zone xml:id="facs_2_r_11" ulx="282" uly="280" lrx="471" lry="318" />
+      <zone xml:id="facs_2_r_12" ulx="960" uly="292" lrx="1130" lry="326" />
+      <zone xml:id="facs_2_r_13" ulx="282" uly="316" lrx="489" lry="440" />
+      <zone xml:id="facs_2_r_14" ulx="944" uly="362" lrx="1147" lry="399" />
+      <zone xml:id="facs_2_r_15" ulx="1111" uly="413" lrx="1137" lry="424" />
+      <zone xml:id="facs_2_r_16" ulx="943" uly="442" lrx="1149" lry="529" />
+      <zone xml:id="facs_2_r_17" ulx="724" uly="458" lrx="928" lry="532" />
+      <zone xml:id="facs_2_r_18" ulx="62" uly="524" lrx="268" lry="608" />
+      <zone xml:id="facs_2_r_19" ulx="944" uly="565" lrx="1149" lry="724" />
+      <zone xml:id="facs_2_r_20" ulx="280" uly="621" lrx="488" lry="671" />
+      <zone xml:id="facs_2_r_21" ulx="60" uly="623" lrx="266" lry="669" />
+      <zone xml:id="facs_2_r_22" ulx="723" uly="672" lrx="929" lry="734" />
+      <zone xml:id="facs_2_r_23" ulx="221" uly="696" lrx="470" lry="776" />
+      <zone xml:id="facs_2_r_24" ulx="722" uly="756" lrx="929" lry="1003" />
+      <zone xml:id="facs_2_r_25" ulx="90" uly="806" lrx="201" lry="821" />
+      <zone xml:id="facs_2_r_26" ulx="944" uly="821" lrx="1149" lry="869" />
+      <zone xml:id="facs_2_r_27" ulx="94" uly="839" lrx="354" lry="876" />
+      <zone xml:id="facs_2_r_28" ulx="94" uly="875" lrx="470" lry="901" />
+      <zone xml:id="facs_2_r_29" ulx="94" uly="899" lrx="372" lry="962" />
+      <zone xml:id="facs_2_r_30" ulx="503" uly="958" lrx="709" lry="1107" />
+      <zone xml:id="facs_2_r_31" ulx="94" uly="972" lrx="376" lry="1020" />
+      <zone xml:id="facs_2_r_32" ulx="945" uly="980" lrx="1147" lry="991" />
+      <zone xml:id="facs_2_r_33" ulx="956" uly="1015" lrx="1149" lry="1076" />
+      <zone xml:id="facs_2_r_34" ulx="724" uly="1041" lrx="930" lry="1066" />
+      <zone xml:id="facs_2_r_35" ulx="94" uly="1044" lrx="260" lry="1060" />
+      <zone xml:id="facs_2_r_36" ulx="267" uly="1064" lrx="280" lry="1074" />
+      <zone xml:id="facs_2_r_37" ulx="94" uly="1074" lrx="472" lry="1125" />
+      <zone xml:id="facs_2_r_38" ulx="96" uly="1162" lrx="300" lry="1195" />
+      <zone xml:id="facs_2_r_39" ulx="724" uly="1191" lrx="929" lry="1327" />
+      <zone xml:id="facs_2_r_40" ulx="503" uly="1194" lrx="570" lry="1205" />
+      <zone xml:id="facs_2_r_41" ulx="79" uly="1197" lrx="469" lry="1234" />
+      <zone xml:id="facs_2_r_42" ulx="503" uly="1206" lrx="709" lry="1404" />
+      <zone xml:id="facs_2_r_43" ulx="96" uly="1234" lrx="472" lry="1282" />
+      <zone xml:id="facs_2_r_44" ulx="946" uly="1276" lrx="1070" lry="1289" />
+      <zone xml:id="facs_2_r_45" ulx="263" uly="1286" lrx="283" lry="1299" />
+      <zone xml:id="facs_2_r_46" ulx="943" uly="1292" lrx="1151" lry="1489" />
+      <zone xml:id="facs_2_r_47" ulx="96" uly="1314" lrx="472" lry="1360" />
+      <zone xml:id="facs_2_r_48" ulx="725" uly="1336" lrx="800" lry="1349" />
+      <zone xml:id="facs_2_r_49" ulx="724" uly="1353" lrx="930" lry="1512" />
+      <zone xml:id="facs_2_r_50" ulx="95" uly="1360" lrx="474" lry="1470" />
+      <zone xml:id="facs_2_r_51" ulx="503" uly="1404" lrx="710" lry="1478" />
+      <zone xml:id="facs_2_r_52" ulx="503" uly="1479" lrx="710" lry="1701" />
+      <zone xml:id="facs_2_r_53" ulx="943" uly="1509" lrx="996" lry="1524" />
+      <zone xml:id="facs_2_r_54" ulx="725" uly="1521" lrx="854" lry="1535" />
+      <zone xml:id="facs_2_r_55" ulx="942" uly="1526" lrx="1151" lry="1720" />
+      <zone xml:id="facs_2_r_56" ulx="723" uly="1537" lrx="931" lry="1695" />
+      <zone xml:id="facs_2_r_57" ulx="247" uly="1544" lrx="306" lry="1555" />
+      <zone xml:id="facs_2_r_58" ulx="81" uly="1556" lrx="474" lry="1640" />
+      <zone xml:id="facs_2_r_59" ulx="79" uly="1652" lrx="287" lry="1713" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="conference">
+  <pb facs="#facs_1" n="1" />
+  <div type="source-metadata">
+<p facs="#facs_1_r_1">
+    <lb facs="#facs_1_r_1" n="N001" />Zeitschrift: Femmes suisses et le Mouvement féministe : organe officiel des <lb facs="#facs_1_r_1" n="N002" />informations de l'<orgName ref="GND:unknown">Alliance de Sociétés Féminines Suisses</orgName>
+  </p>
+  <p facs="#facs_1_r_2">
+    <lb facs="#facs_1_r_2" n="N001" />Herausgeber: <orgName ref="GND:unknown">Alliance de Sociétés Féminines Suisses</orgName>
+  </p>
+  <p facs="#facs_1_r_3">
+    <lb facs="#facs_1_r_3" n="N001" />Band: 63 (1975)
+  </p>
+  <p facs="#facs_1_r_4">
+    <lb facs="#facs_1_r_4" n="N001" />Heft: 1
+  </p>
+  <p facs="#facs_1_r_5">
+    <lb facs="#facs_1_r_5" n="N001" />Artikel: Les conférences du congrès : l'homme et la femme, partenaires égaux <lb facs="#facs_1_r_5" n="N002" />? : extraits du résumé de la conférence de <persName ref="GND:118815679">Jeanne Hersch</persName>
+  </p>
+  <p facs="#facs_1_r_6">
+    <lb facs="#facs_1_r_6" n="N001" />Autor: <persName ref="GND:118815679">Hersch, Jeanne</persName>
+  </p>
+  <p facs="#facs_1_r_7">
+    <lb facs="#facs_1_r_7" n="N001" />DOI: https://doi.org/10.5169/seals-274006
+  </p>
+</div>
+<pb facs="#facs_2" n="2" />
+        <div type="text">
+<head facs="#facs_2_r_1">
+          8 janvier 1975
+        </head>
+        <p facs="#facs_2_r_2">
+          FEMMES SUISSES
+        </p>
+        <p facs="#facs_2_r_3">
+          LES CONFÉRENCES DU CONGRÈS<lb facs="#facs_2_l_3_1" n="N001" />L'homme et la femme, partenaires égaux?
+        </p>
+        <p facs="#facs_2_r_4">
+          <hi rendition="#b">EXTRAITS DU RÉSUMÉ DE LA CONFÉRENCE DE <persName ref="GND:118815679">JEANNE HERSCH</persName></hi>
+        </p>
+        </div>
+<div n="2">
+          <head facs="#facs_2_r_5">1. La femme, un être humain</head>
+          <p facs="#facs_2_r_6">
+            D'abord une ressource générale, qui conditionne toute la suite de ma réflexion ; la femme est avant tout un être humain. C'est dire qu'elle est, comme l'homme, à partir de sa naissance et peut-être déjà auparavant, faite de données non pas seulement biologiques et physiologiquement héréditaires, mais aussi, et inscrites en l'état de l'homme, de données sociales, culturelles, traditionnelles. En même temps, elle est, comme l'homme, en tant qu'être humain, virtuellement, un sujet capable de raison et de liberté responsable, ce qui signifie que les données constituent son être le plus intime sans encore, dans une certaine mesure, dans une réalité sans, la matière première de son pouvoir créateur et accordable.
+          </p>
+          <p facs="#facs_2_r_7">
+            Société, culture, tradition ne sont pas des apports extérieurs servant à la manipulation d'un sujet antérieurement complet et libre, mais des données profondes, constitutives de celui-ci, sur lesquelles cependant il dispose d'un certain pouvoir d'invention et de recreation.
+          </p>
+          <p facs="#facs_2_r_8">
+            L'idée «l'égalité», au nom de laquelle on exagère de rejeter toutes les données traditionnelles, est ainsi une donnée culturelle et traditionnelle.
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_9">2. La différence fondamentale de la maternité</head>
+          <p facs="#facs_2_r_10">
+            Il est évident que ces données se modifient quand les conditions de vie changent profondément.
+          </p>
+          <p facs="#facs_2_r_11">
+            Reste la différence naturelle fondamentale de la maternité, liée à des traditions profondément intériorisées dans la manière de sentir, et de se sentir, aussi bien des femmes que des hommes, des autres, l'élément, ou ces traditions ne peuvent être effacées ou ignorées, ou niées, sous peine de propager, malgré le slogan d'une « égalité » générale, moderne, maladie et désespoir.
+          </p>
+          <p facs="#facs_2_r_12">
+            Ces traditions confient dans la vie familiale des tâches distinctes — <sic>de inégalés</sic> — aux femmes et aux hommes, <gap reason="ocr-hallucination" resp="pipeline" quantity="13" unit="repetition"><desc>Repetitive OCR-Artefakte: "à la vie de la femme" ca. 13x wiederholt. Originaltext nicht rekonstruierbar.</desc></gap>
+          </p>
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_13">La collaboration dans l'égalité fondement de la paix</head>
+            <p facs="#facs_2_r_14">
+              Résumé de la conférence de <persName ref="GND:unknown">Denise Bindschedler-Robert</persName>
+            </p>
+          
+        </div>
+        <div n="2">
+          <head facs="#facs_2_r_36">2. Les problèmes actuels de la femme</head>
+          <p facs="#facs_2_r_37">
+            Il n'existe pas aujourd'hui, dans notre société en mutation, de modèle dogmatique de la vie féminine, dont on ait le droit de dire qu'il est le plus important de l'avenir. Il est inséparable à la fois comme dans ce qui empêche en fait une femme de choisir son mode de vie, et contre toute pression exclusive ou dépréciative s'exerçant sur tel ou tel choix. C'est la liberté de la femme qui doit être respectée, et non telle option, traditionnelle ou dans le vent, aux dépens d'une autre option.
+          </p>
+          <p facs="#facs_2_r_38">
+            Les problèmes actuels se posent dans divers domaines et à divers niveaux :
+          </p>
+          <list>
+            <item>
+              <p facs="#facs_2_r_39">
+                Au niveau du droit, toute subordination à autrui, toute autorisation à demander à autrui constituent des abus désormais injustifiables — à supposer qu'ils l'aient jamais été.
+              </p>
+            </item>
+            <item>
+              <p facs="#facs_2_r_40">
+                En ce qui concerne l'avortement, la femme n'a de choix véritable que dans la mesure où la société lui ouvre une possibilité souscrite et durable de parler avec l'oubli, et en ce qui concerne l'avortement, de lui permettre de vivre ailleurs, dans des conditions dignes d'un être humain. Sinon, aussi bien les adversaires que les partisans de la libéralisation de l'avortement sont dans l'hypercritique. Les uns s'alignent à tort le droit de la femme à une décision libre qui reste en fait impossible, les autres font un point de lui comportement qui n'est pas choisi.
+              </p>
+            </item>
+            <item>
+              <p facs="#facs_2_r_41">
+                Au niveau de l'éducation, les mêmes possibilités et les mêmes stimulants doivent être offerts aux filles qu'aux garçons, et les filles doivent être soumises à une sélection identique pour des études plus longues et plus difficiles.
+              </p>
+            </item>
+            <item>
+              <p facs="#facs_2_r_42">
+                Au niveau économique et professionnel, il faut que le principe « à travail égal, salaire égal, devienne une réalité contrôlée et assurée, que tous les niveaux professionnellement sont accessibles aux femmes, que la protection de la maternité, les congés et les institutions nécessaires à l'accueil de l'enfant, deviennent des données élémentaires de la société.
+              </p>
+            </item>
+            <item>
+              <p facs="#facs_2_r_43">
+                Au niveau de la vie quotidienne, les femmes qui assument souvent la qualité de deux vies au moins doivent pouvoir disposer des instruments ménagers actuels d'une part, de l'aide du père de l'autre.
+              </p>
+            </item>
+            <item>
+              <p facs="#facs_2_r_44">
+                Mais il ne faut pas oublier que « l'égalité » est une abstraction qui ne nourrit pas le sens de la vie. Elle est parfois condition de sens, elle n'en est jamais la source, même au niveau du travail, elle ne peut pas en faire un sens. <gap reason="ocr-hallucination" resp="pipeline" quantity="3" unit="repetition"><desc>Repetitive OCR-Artefakte: "à la vie de la femme" ca. 3x wiederholt. Satzende nicht rekonstruierbar.</desc></gap>
+              </p>
+            </item>
+          </list>
+        </div>
+      </div>
+</body></text>
+</TEI>

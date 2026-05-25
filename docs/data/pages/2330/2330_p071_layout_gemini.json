@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "réformes importantes. C'est pourquoi j'ai toujours eu envie de rire quand les étudiants, en 1968, prétendaient ouvrir une ère de réformes succédant à une période d'immobilisme.",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 4.411,
+        "w_pct": 79.731,
+        "h_pct": 6.21
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Considérons peut-être, en premier lieu, la période la plus récente. L'école, ces dernières années, vit, semble-t-il, dans un état quasi permanent de réformes.",
+      "bbox": {
+        "x_pct": 4.676,
+        "y_pct": 10.887,
+        "w_pct": 79.731,
+        "h_pct": 6.589
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il a connu aussi de nombreux changements auparavant. Mais on était moins prétentieux. Il s'agissait de changements partiels, on n'en faisait pas une révolution, on ne désignait pas toutes sortes de commissions pour refaire le genre humain. A partir de 68 a surgi cette idée complètement chimérique d'une nouvelle étape de l'humanité, on allait créer un homme nouveau, une société nouvelle et par conséquent une école nouvelle - qui, si possible, ne serait plus une école du tout. Il y a beaucoup de vent dans tout cela. Aujourd'hui encore, certains pensent que 68 a été une renaissance. Ce n'a pas été une renaissance. On a pris quelques mesures, on a changé de style - ou peut-être ferais-je mieux de dire qu'on a renoncé à tout style - on est retourné, à certains égards, à un état sauvage. On s'est laissé aller à ce chambardement sans tenir compte du fait que les matières à enseigner restent les mêmes, que les conditions d'assimilation du savoir restent les mêmes, que les êtres humains, fondamentalement, ne changent pas, même si la société autour de nous change. Le plus ardent partisan de réformes urgentes en France, à l'école comme à l'université, c'était Raymond Aron. Il n'a pas marché du tout dans le mouvement.",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 17.04,
+        "w_pct": 79.976,
+        "h_pct": 35.677
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text and removed prefix artifact"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelles sont les réformes qui s'imposaient, à votre avis?\nJ.H. - Celles que je préconisais tout à l'heure. Elles ne sont toujours pas accomplies. Mais je voudrais faire encore une remarque. Je pense qu'en réformant l'enseignement de telle ou telle branche, on n'a pas assez tenu compte de sa nature propre. L'exemple le plus frappant, c'est la supression de la chronologie en histoire. Les enfants ont, comme en sociologie, un dossier avec des fiches volantes, par thèmes. La succession a disparu. Les fiches font sauter la structure chronologique ; par là-même on détruit l'histoire, et le sens même de l'historicité. Et cela à une époque où les gens ont l'histoire plein la bouche. Je m'amuse beaucoup - et je me réjouis - quand je vois aujourd'hui Chevènement, qui a été à la tête du CERES, l'aile ultra-gauche du parti socialiste, tenter, maintenant qu'il est ministre, de rétablir dans les écoles la mémoire et la chronologie. Ce qui a le plus manqué, dans les réformes qui ont suivi les événements de mai 68, c'est le sens critique. On a énormément supprimé ou assoupli les formes de la vie scolaire sans se rendre compte de leurs implications. Auparavant il y avait dans les écoles un cérémonial, des sortes de rites qui donnaient forme à la vie commune. Par exemple, on entrait deux par deux en classe. Un détail ? Je ne crois pas. Lorsque des enfants se tiennent deux par deux",
+      "bbox": {
+        "x_pct": 4.396,
+        "y_pct": 53.387,
+        "w_pct": 79.976,
+        "h_pct": 37.879
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text and removed prefix artifacts"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "67",
+      "bbox": {
+        "x_pct": 80.9,
+        "y_pct": 94.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region"
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR output was extremely corrupted",
+    "Missing bounding box for page number at bottom right",
+    "Prefix noise (like 'n & connu') inside text blocks"
+  ],
+  "doc_id": "2330",
+  "page": 71,
+  "elapsed_seconds": 6.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

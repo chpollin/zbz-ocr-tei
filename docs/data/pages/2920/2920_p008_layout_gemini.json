@@ -1,0 +1,102 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "510",
+      "bbox": {
+        "x_pct": 27.647,
+        "y_pct": 9.539,
+        "w_pct": 3.75,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header as it is a page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Coups de sonde",
+      "bbox": {
+        "x_pct": 53.235,
+        "y_pct": 9.539,
+        "w_pct": 13.912,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "menaces de mort planent toujours sur la mise en oeuvre des droits de l'homme. Seul le recours à un absolu permet de leur résister. Je voudrais ici rappeler encore un exemple moderne : dans Le Chêne et le Veau, Soljenitsyne raconte comment, à un moment donné, lui et sa femme ont décidé, une fois pour toutes et quoi qu'il arrive à eux-mêmes et à leurs enfants, de ne plus mentir. Ce fut pour eux la fin de l'angoisse — comme s'ils avaient traversé un mur du son — et une sorte d'allégresse de la liberté.",
+      "bbox": {
+        "x_pct": 26.956,
+        "y_pct": 13.18,
+        "w_pct": 70.794,
+        "h_pct": 23.003
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faut donc pas confondre les droits de l'homme avec des conditions de bonheur ou de bien-être collectif, avec des moyens permettant d'aménager la vie des individus ou des sociétés. Ils ne sont pas une technique de paix, de commodité, de distribution ou de répartition. Ils ne servent pas à délimiter la liberté de chacun pour qu'elle n'empiète pas sur celle d'autrui. Ils servent au contraire à reconnaître que, lorsqu'il s'agit d' « être un homme », la liberté, avec son absolu, est en jeu.",
+      "bbox": {
+        "x_pct": 26.912,
+        "y_pct": 35.496,
+        "w_pct": 70.294,
+        "h_pct": 22.277
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous sommes ici en plein kantisme. Kant est tout proche d'Antigone. Or s'agissant des droits, l'absolu ne reste pas « à l'état sauvage », ni flottant dans les idées et les mythes. Il faut le mettre en œuvre, parmi les réalités relatives et contraignantes, au fil de l'histoire, à tous les niveaux des sociétés humaines.",
+      "bbox": {
+        "x_pct": 26.618,
+        "y_pct": 57.507,
+        "w_pct": 70.103,
+        "h_pct": 13.248
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Universalité et contexte concret",
+      "bbox": {
+        "x_pct": 26.956,
+        "y_pct": 75.172,
+        "w_pct": 40.941,
+        "h_pct": 2.355
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'absolu est nécessairement en jeu quand il s'agit d'incarner l'exigence des droits de l'homme, malgré les risques qu'il leur fait toujours courir, la question de leur universalité se pose avec d'autant plus d'acuité. Ce n'est pas un citoyen abstrait du monde en général dont il s'agit de respecter absolument les droits. C'est",
+      "bbox": {
+        "x_pct": 26.618,
+        "y_pct": 79.097,
+        "w_pct": 70.294,
+        "h_pct": 14.132
+      },
+      "changed": false
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Docling missed the page number as a distinct region initially.",
+    "Running header was captured as a paragraph region in the original list.",
+    "The segmentation of text blocks needs careful verification against the actual image content, specifically punctuation and paragraph flow."
+  ],
+  "doc_id": "2920",
+  "page": 8,
+  "elapsed_seconds": 4.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

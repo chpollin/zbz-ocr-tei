@@ -1,0 +1,146 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "338 lés les forces des torrents de sang, ils ont accumulé des den construit: Le monde vient den fair",
+      "bbox": {
+        "x_pct": 16.695,
+        "y_pct": 7.153,
+        "w_pct": 29.698,
+        "h_pct": 11.016
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "IV.",
+      "bbox": {
+        "x_pct": 29.59,
+        "y_pct": 20.968,
+        "w_pct": 1.823,
+        "h_pct": 1.718
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_heading as it acts as a section marker."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien que Benedetto Croce soit en pleine certains   points   compléter encore et qu'i] éclairer peut-",
+      "bbox": {
+        "x_pct": 15.442,
+        "y_pct": 24.863,
+        "w_pct": 30.94,
+        "h_pct": 16.081
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Linfuence du penseur de Naples a été ainsi dire renouvelé le climat   culturel de et a pour même mom",
+      "bbox": {
+        "x_pct": 14.832,
+        "y_pct": 40.726,
+        "w_pct": 31.134,
+        "h_pct": 13.653
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est juste qu'il en soit ainsi. Aucun systhme, si complet, si organique soit-il, n'est definitif. Ce qui est definitif est mort, et l'esprit ne cesse de progresser, de surmonter de nouvelles positions et de creer de nouvelles synthhses. C'est avoir bien compris Croce que de le depasser et d'entreprendre librement l'etude des problhmes que pose ` toute heure, ` chaque instant, la realite mouvante de l'histoire qui se fait et se renouvelle incessamment dans son inexorable devenir. Aucune loi, aucun enseignement ne doit etre une chahne. Penser, c'est travailler, comme l'a dit Croce, ` la philosophie, c'est-`-dire au progrhs de la pensee.",
+      "bbox": {
+        "x_pct": 14.832,
+        "y_pct": 55.48,
+        "w_pct": 30.648,
+        "h_pct": 27.218
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing paragraph region at bottom left."
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "de lexistentialisme La et son vrai visage caricature",
+      "bbox": {
+        "x_pct": 51.208,
+        "y_pct": 14.032,
+        "w_pct": 28.638,
+        "h_pct": 8.121
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_heading."
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "I. LA SOTTISE DES SLOGANS A LA MODE.",
+      "bbox": {
+        "x_pct": 54.027,
+        "y_pct": 25.645,
+        "w_pct": 23.364,
+        "h_pct": 2.177
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_heading."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "de 1existentialisme, me mettant à à mon tour En une véritable On en discute partout, on Entre deux  ",
+      "bbox": {
+        "x_pct": 48.929,
+        "y_pct": 29.54,
+        "w_pct": 35.174,
+        "h_pct": 53.734
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Radio-Genève, les 8 et 22 mars et le 5 avril Causeries faites 1946.",
+      "bbox": {
+        "x_pct": 51.174,
+        "y_pct": 84.008,
+        "w_pct": 30.399,
+        "h_pct": 4.516
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "GEORGES GOLAY.",
+      "bbox": {
+        "x_pct": 35.257,
+        "y_pct": 81.653,
+        "w_pct": 10.158,
+        "h_pct": 1.774
+      },
+      "changed": true,
+      "change_reason": "ADDED: Signature/Author name region."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Missing author name signature box",
+    "Missing main paragraph block bottom left",
+    "Label misclassification for headings"
+  ],
+  "doc_id": "120",
+  "page": 1,
+  "elapsed_seconds": 12.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected to zb_heading as it acts as a section marker.": 1,
+    "Label corrected to zb_heading.": 2,
+    "ADDED": 2
+  }
+}

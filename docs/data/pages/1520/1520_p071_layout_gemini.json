@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TEXTES",
+      "bbox": {
+        "x_pct": 41.369,
+        "y_pct": 15.707,
+        "w_pct": 12.696,
+        "h_pct": 1.834
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header as it is a major document heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PSYCHIATRIE :",
+      "bbox": {
+        "x_pct": 6.138,
+        "y_pct": 25.107,
+        "w_pct": 22.141,
+        "h_pct": 1.971
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "1. Psychologie explicative et psychologie compréhensive",
+      "bbox": {
+        "x_pct": 6.233,
+        "y_pct": 27.935,
+        "w_pct": 37.304,
+        "h_pct": 4.173
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Entre relations compréhensibles et relations causales, il y a une différence radicale. Nous comprenons, par exemple, un acte à partir de ses motifs, mais nous expliquons causalement un mouvement par une excitation des nerfs. Nous comprenons que des émotions engendrent des états d'âme, et que ceux-ci puissent donner naissance à certains espoirs, à des représentations imaginaires ou à des craintes, mais nous expliquons l'apparition ou la disparition de dispositions de la mémoire, de phénomènes de fatigue ou de récupération. Comprendre un phénomène psychique à partir d'un autre, c'est donner aussi, comme on dit, une explication psychologique, et les chercheurs des sciences de la nature, qui n'ont jamais affaire qu'à des perceptions sensibles et à des explications causales, éprouvent une répulsion justifiée contre toute explication psychologique qui prétendrait, en n'importe quelle matière, remplacer leur recherche. Ces relations compréhensibles entre phénomènes psychiques, on les appelle aussi causalité interne, soulignant ainsi l'abîme infranchissable qui subsiste entre ces relations, causales seulement par métaphore, et les relations causales proprement dites de la causalité externe.",
+      "bbox": {
+        "x_pct": 5.786,
+        "y_pct": 32.622,
+        "w_pct": 84.011,
+        "h_pct": 36.101
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(Gesammelte Schriften zur Psychopathologie, p. 329)",
+      "bbox": {
+        "x_pct": 56.64,
+        "y_pct": 76.29,
+        "w_pct": 33.022,
+        "h_pct": 4.113
+      },
+      "changed": true,
+      "change_reason": "Changed label to footnote as it is a bibliographic reference."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "2. Psychanalyse",
+      "bbox": {
+        "x_pct": 6.138,
+        "y_pct": 83.008,
+        "w_pct": 19.919,
+        "h_pct": 2.082
+      },
+      "changed": true,
+      "change_reason": "Added missing period for consistency."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "a) Chez Freud, il s'agit en fait de psychologie compréhensive, et non d'explication causale, comme il le croit. Des explications",
+      "bbox": {
+        "x_pct": 6.098,
+        "y_pct": 85.75,
+        "w_pct": 83.238,
+        "h_pct": 4.165
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "65",
+      "bbox": {
+        "x_pct": 86.1,
+        "y_pct": 92.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified and added missing page number region."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text truncation in original OCR content.",
+    "Missing page number region.",
+    "Bibliographic reference misidentified as standard paragraph."
+  ],
+  "doc_id": "1520",
+  "page": 71,
+  "elapsed_seconds": 4.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

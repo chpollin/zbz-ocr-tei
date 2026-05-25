@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "valeurs incarnées, des exigences empiriques, — quelle que puisse être d’ailleurs leur qualité humaine personnelle. Leur fonction est toute puissante sur eux comme sur les autres, ils ne peuvent pas se libérer d’elle. Cette densité des rapports et des fonctions n’existe plus guère, en Occident, que dans l’Eglise. Voyez le prêtre de La Puissance et la Gloire, de Graham Greene; ni l’ivrognerie, ni la paternité honteuse ne peuvent altérer cette qualité ontologique sacerdotale qui est la sienne. Sous l’Ancien Régime, tous les rapports sociaux semblent avoir eu une densité comparable, indépendante de l’adhésion subjective... Ces relations symboliques impliquaient la coïncidence du sujet avec sa fonction, sans distance ni interstices. — Ce qui s’est produit ensuite, c’est que le sujet, avec plus ou moins de lucidité, plus ou moins radicalement, s’est retiré de sa fonction. Tout change dès lors. Les fonctions perdent leur substance. Les formes sociales deviennent des possibles — des formes, davantage... Cette évanescence a une contrepartie positive: dès lors, et de plus en plus, les relations sociales et l’être même de ceux qui y sont engagés dépendent de la subjectivité de chaque personne... Tout — absolument tout — prend le prix et la fragilité de l’humain, de cette création toujours menacée, par l’homme, de son être et de ses valeurs... Tout repose donc sur ce que chacun est. »",
+      "bbox": {
+        "x_pct": 13.215,
+        "y_pct": 9.499,
+        "w_pct": 66.664,
+        "h_pct": 42.279
+      },
+      "changed": true,
+      "change_reason": "Corrected the full text content of the paragraph based on the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce que chacun est, c’est ce qu’il invente d’être, ce sont les possibles de sa liberté.",
+      "bbox": {
+        "x_pct": 13.239,
+        "y_pct": 51.778,
+        "w_pct": 66.559,
+        "h_pct": 4.137
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "12. C’est pourquoi il est impossible aujourd’hui d’établir une communauté humaine aux conceptions unanimes.",
+      "bbox": {
+        "x_pct": 13.32,
+        "y_pct": 55.88,
+        "w_pct": 66.293,
+        "h_pct": 4.33
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for list item."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ceux qui parlent ou rêvent d’un «nouvel âge épique», entendant par là une nouvelle ère de la vie sociale fondée sur l’unanimité, ne peuvent fonder leur espoir, qu’ils le veuillent ou non, que sur le recours totalitaire à la contrainte par la force. Sans celle-ci, c’est la divergence, ce sont les oppositions et les conflits qui éclatent. Il ne s’agit donc pas aujourd’hui de rétablir une unanimité qui ne peut plus être que mensongère, mais de créer les techniques, les organes, les procédures d’une vie en commun reconnaissant les divergences et les organisant, et accroissant, désormais sans peur, les possibles devant la liberté de chacun. Dans une démocratie véritable, les partis politiques n’ont pas d’autre sens ni d’autre rôle que d’être les organes de la diversité.",
+      "bbox": {
+        "x_pct": 13.215,
+        "y_pct": 59.772,
+        "w_pct": 66.64,
+        "h_pct": 24.37
+      },
+      "changed": true,
+      "change_reason": "Corrected the full text content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "13. On a dit beaucoup de mal de la sécurité, en même temps que certains annoncent une sécurité totale et définitive. Or la sécurité",
+      "bbox": {
+        "x_pct": 13.481,
+        "y_pct": 84.063,
+        "w_pct": 66.374,
+        "h_pct": 3.761
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for list item."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "120",
+      "bbox": {
+        "x_pct": 13.481,
+        "y_pct": 90.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page number."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Most text content was incorrectly truncated or OCR-mangled in initial processing.",
+    "Page number at bottom was labeled as text, changed to page_footer.",
+    "Multiple paragraphs were inaccurately captured in the OCR field."
+  ],
+  "doc_id": "450",
+  "page": 8,
+  "elapsed_seconds": 5.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

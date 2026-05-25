@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME ET L'ESPACE",
+      "bbox": {
+        "x_pct": 10.173,
+        "y_pct": 2.0,
+        "w_pct": 21.365,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header region"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "159",
+      "bbox": {
+        "x_pct": 74.839,
+        "y_pct": 2.0,
+        "w_pct": 4.274,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "surprenant  dès attention. Il de soi que lorsque je dis & élément psychologique > je ne pense pas à ",
+      "bbox": {
+        "x_pct": 10.173,
+        "y_pct": 13.462,
+        "w_pct": 68.94,
+        "h_pct": 60.972
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page_header regions identified.",
+    "Corrected labels for page_header components."
+  ],
+  "doc_id": "110",
+  "page": 161,
+  "elapsed_seconds": 6.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

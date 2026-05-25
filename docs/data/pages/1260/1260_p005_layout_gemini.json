@@ -1,0 +1,157 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "CONFUSIONS IDEOLOGIQUES ET DIMENSIONS RELIGIEUSES",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 74,
+        "w_pct": 76,
+        "h_pct": 5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header text"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "337",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 74,
+        "w_pct": 34,
+        "h_pct": 5
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "le manque, condition   permanente de toute visée et de tout   désir (eros) ; le verbe que les  modes",
+      "bbox": {
+        "x_pct": 13.897,
+        "y_pct": 10.744,
+        "w_pct": 70.306,
+        "h_pct": 5.92
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "la transcendance, ce reste irrémédiablement au-delà des faits, du possédé et du connu ; qui",
+      "bbox": {
+        "x_pct": 13.897,
+        "y_pct": 17.486,
+        "w_pct": 70.131,
+        "h_pct": 4.122
+      },
+      "changed": true,
+      "change_reason": "label corrected from list_item to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "le vécu toujours partiel et discontinu, sans que puisse être éliminée la visée ( insatisfaite) de la",
+      "bbox": {
+        "x_pct": 13.974,
+        "y_pct": 22.31,
+        "w_pct": 70.197,
+        "h_pct": 3.862
+      },
+      "changed": true,
+      "change_reason": "label corrected from list_item to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "le permanent, à la fois celui des données élémentaires (naissance, mort, léphémère, le   périssable,",
+      "bbox": {
+        "x_pct": 13.646,
+        "y_pct": 27.107,
+        "w_pct": 70.448,
+        "h_pct": 8.097
+      },
+      "changed": true,
+      "change_reason": "label corrected from list_item to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vemmêlement , dans la condition   incarnée, des facteurs   biologiques et des   facteurs   tradition",
+      "bbox": {
+        "x_pct": 13.832,
+        "y_pct": 35.604,
+        "w_pct": 70.262,
+        "h_pct": 5.667
+      },
+      "changed": true,
+      "change_reason": "label corrected from list_item to zb_paragraph"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "quelques conditions de sens. En revanche, les   idéologies absolutisées, totalisées, sont des contre",
+      "bbox": {
+        "x_pct": 10.338,
+        "y_pct": 42.254,
+        "w_pct": 73.799,
+        "h_pct": 11.938
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La différence entre et idéologies   apparaît   peut-être avec le phus de radicalité tentations souve",
+      "bbox": {
+        "x_pct": 10.186,
+        "y_pct": 59.298,
+        "w_pct": 73.734,
+        "h_pct": 9.593
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si une idéologie fait entrer la fin de lhistoire dans son projet collectif, cest alors qu'elle situe",
+      "bbox": {
+        "x_pct": 10.044,
+        "y_pct": 69.642,
+        "w_pct": 73.832,
+        "h_pct": 15.471
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Entre la fin de lhistoire de lidéologie et le présent historique que nous n y a aucune discontinuité",
+      "bbox": {
+        "x_pct": 10.076,
+        "y_pct": 85.344,
+        "w_pct": 73.734,
+        "h_pct": 6.32
+      },
+      "changed": false
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Used list_item for paragraph-like body text",
+    "Missing page header/footer detection in input"
+  ],
+  "doc_id": "1260",
+  "page": 5,
+  "elapsed_seconds": 6.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "label corrected from list_item to zb_paragraph": 4,
+    "ADDED": 2
+  }
+}

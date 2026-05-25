@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "force et du pouvoir commis par les dictatures, on r''ve de se passer enti''rement de la force et du pouvoir. Apr''s les abus du capitalisme qui a profit'' de la n''cessit'' du gagne-pain pour transformer le travail en servitude, on r''ve de satisfaire tous les besoins et tous les d''sirs sans autre travail que celui qui fait plaisir. Apr''s les ann''es et parfois les d''cennies v''cues dans des Etats corrompus o'' toute la d''cence s''''tait r''fugi''e dans l''ill''galit'' h''ro''que d''une R''sistance devenue presque l''gendaire '' travers les r''cits des vieux et les nostalgies des jeunes, la l''galit'', le droit tout entier se trouve compromis. On se contente de r''ver d''un ordre spontan''ment fraternel.",
+      "bbox": {
+        "x_pct": 4.145,
+        "y_pct": 7.454,
+        "w_pct": 83.459,
+        "h_pct": 21.751
+      },
+      "changed": true,
+      "change_reason": "Text content truncated in initial detection. Correcting for full content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Irr''alisme totalisateur, permettant de rejeter tout recours '' la force, toute obligation de travail, toute l''gitimit'' de la loi gr''ce '' la vis''e ''d''nique d''une collectivit'' spontan''ment fraternelle et juste, vivant de pure cr''ativit'' en prot''geant ses d''viants, - sur tous ces points ce que j''ai appel'' '' la sensibilit'' contemporaine '', et que la plupart des intellectuels ne cessent de renforcer, rejoint l''inspiration des terroristes, ou du moins l''inspiration dont ils se r''clament. A cela s''ajoute la vision caricaturale et massivement d''nonciatrice de la soci''t'' actuelle, dont il a ''t'' question plus haut. D''truire devient alors prestigieux.",
+      "bbox": {
+        "x_pct": 4.404,
+        "y_pct": 29.001,
+        "w_pct": 83.329,
+        "h_pct": 19.655
+      },
+      "changed": true,
+      "change_reason": "Text content truncated in initial detection. Correcting for full content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rien de plus contraire '' l''Europe, '' sa culture et '' sa civilisation, que de tels mythes d''r''alisateurs et totalisateurs, rendus inefficaces par leurs exc''s.",
+      "bbox": {
+        "x_pct": 5.35,
+        "y_pct": 50.309,
+        "w_pct": 82.565,
+        "h_pct": 6.393
+      },
+      "changed": true,
+      "change_reason": "Text content truncated in initial detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sa nostalgie du Jardin d''Eden ne s''est jamais ''teinte. Mais loin de lui souffler l''exigence d''un retour imm''diat qui l''arracherait ''",
+      "bbox": {
+        "x_pct": 5.959,
+        "y_pct": 84.73,
+        "w_pct": 82.293,
+        "h_pct": 4.863
+      },
+      "changed": true,
+      "change_reason": "Text content truncated in initial detection."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "57",
+      "bbox": {
+        "x_pct": 85.362,
+        "y_pct": 91.296,
+        "w_pct": 2.59,
+        "h_pct": 2.645
+      },
+      "changed": true,
+      "change_reason": "Page number identified and reclassified from text to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text detection was significantly truncated for multiple paragraphs.",
+    "Page number 57 at the bottom right was missing a dedicated label and tag.",
+    "Need to ensure character encoding (apostrophes) is standard."
+  ],
+  "doc_id": "1590",
+  "page": 11,
+  "elapsed_seconds": 6.88,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

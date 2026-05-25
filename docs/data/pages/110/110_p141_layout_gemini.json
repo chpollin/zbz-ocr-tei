@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME ET L'ESPACE 139",
+      "bbox": {
+        "x_pct": 12.313,
+        "y_pct": 10.0,
+        "w_pct": 68.504,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header region covering top text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de la nature; 'elles existent avec évidence. Le déploiement dans la malière phénoménale  est pour la",
+      "bbox": {
+        "x_pct": 12.313,
+        "y_pct": 13.113,
+        "w_pct": 68.504,
+        "h_pct": 31.382
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hegel 4 parfaitement décrit la nécessité   dialectique où est le spirituel, juslement pour être spir",
+      "bbox": {
+        "x_pct": 12.509,
+        "y_pct": 44.267,
+        "w_pct": 68.654,
+        "h_pct": 30.046
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page_header label for top line"
+  ],
+  "doc_id": "110",
+  "page": 141,
+  "elapsed_seconds": 5.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

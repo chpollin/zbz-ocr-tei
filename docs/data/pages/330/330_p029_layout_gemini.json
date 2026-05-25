@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ                                                                XV",
+      "bbox": {
+        "x_pct": 286.0,
+        "y_pct": 89.0,
+        "w_pct": 431.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Header elements like book titles and page numbers at the top of the page should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de vue le # reste de lhomme \". Que le lecteur veuille bien ne jamais oublier que toute l'étude qui suit, malgré les efforts que j'ai faits pour rester proche des réalités concrètes d'aujourd'hui, est forcément abstraite au plus haut point. La netteté des découpages indispensables reste donc toute fictive, et il faut la corriger sans cesse en revenant aux riches confusions de la vie quotidienne.",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 118.0,
+        "w_pct": 839.0,
+        "h_pct": 133.0
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LES TYPES IDÉOLOGIQUES",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 296.0,
+        "w_pct": 356.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Corrected typos in the heading text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin, la pire difficulté que j'aie rencontrée est née de la nécessité où je me trouvais d'établir des types abstraits d'hommes adhérant à un petit nombre d'idéologies typiques. Pour être plus près du réel, j'ai dû m'astreindre, paradoxalement, à un comble d'abstraction. Je n'ai pas voulu m'en tenir au tracé des partis existants, car il m'importait justement de mettre ce tracé en question, de confronter les fronts idéologiques figés par la tradition avec les oppositions idéologiques vivantes dans les consciences d'aujourd'hui. Je voulais aussi dépasser les différences nationales, celles qui tiennent à l'histoire particulière des pays, à la manière dont les partis s'y sont constitués, scindés ou groupés, comme aussi celles qui découlent des tempéraments et des conceptions éducatives. Il m'a fallu négliger aussi, bien sûr, toutes les caractéristiques de milieu, de genre de vie, de classe, — faire comme si un conservateur libéral anglais, par exemple, gentleman farmer du Sussex, était semblable à un conservateur libéral allemand, directeur de banque à Francfort ou grand actionnaire de construction navale à Hambourg. J'ai donc laissé de côté, non pas seulement des nuances, mais des différences énormes, historiques, géographiques, sociales, religieuses, etc. A vrai dire, pour approcher plus fidèlement la réalité idéologique que ne le fait la géographie politique reconnue, j'ai dû parler de personnages si abstraits qu'ils n'existent pas. Cela m'inquiète fort. Ma défense, c'est seulement que l'abstraction est poussée trop loin pour faire illusion et que la réalité se trouve, de ce fait, peut-être mieux respectée que dans des descriptions plus limitées, moins générales, moins construites, et qui laissent pourtant échapper, sans le",
+      "bbox": {
+        "x_pct": 20.0,
+        "y_pct": 341.0,
+        "w_pct": 841.0,
+        "h_pct": 559.0
+      },
+      "changed": true,
+      "change_reason": "Corrected severely garbled OCR text to match the content in the image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was very poor quality, requiring extensive text correction.",
+    "Page header 'IDÉOLOGIES ET RÉALITÉ' and 'XV' were mislabeled as paragraph text."
+  ],
+  "doc_id": "330",
+  "page": 29,
+  "elapsed_seconds": 4.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

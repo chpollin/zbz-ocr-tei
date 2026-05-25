@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "ID\tOLOGIES ET R\tALIT\t",
+      "bbox": {
+        "x_pct": 395.0,
+        "y_pct": 71.0,
+        "w_pct": 210.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header/zb_heading as it is a page title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi il faut bien se garder de laisser les artistes dans l'impossibilit\t de cr\ter leur œuvre, et de la personne humaine au de lui refuser la formation et les loisirs n\tcessaires \t la simple \tlaboration d'une vie de la pens\te. Mais leurs adh\trents, eux, dans la mesure des possibilit\ts, d\tfendront effectivement ces valeurs.",
+      "bbox": {
+        "x_pct": 12.911,
+        "y_pct": 10.401,
+        "w_pct": 85.376,
+        "h_pct": 10.517
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est pourquoi il faut bien reconnaitre qu'il n'existe gu\tre, en politique, de mensonge tout \t fait pur, c'est-\t-dire tout \t fait vain. Le mensonge choisi importe, il produit ses fruits, il devient, dans la mesure o\t il est cru, r\talit\t partiellement efficace. Il est donc faux et sommaire de dire que les id\tologies ne comptent pas, qu'elles sont toutes mensong\tres, que seuls comptent les actes. Les id\tologies sont elles-m\tmes des actes, des facteurs r\tels. C'est ici en particulier que vient s'enraciner ce refus, que l'on a rencontr\t si souvent chez des individus de toutes les cat\tgories sociales et de toutes les tendances, d'assimiler le r\tgime concentrationnaire stalinien (qu'ils reconnaissaient pourtant \ttre tel) au r\tgime concentrationnaire national-socialiste. Ce n'est pas tant le fait que le premier ait ignor\t les fours cr\tmatoires qui constitue \t leurs yeux la diff\trence essentielle : on sait et on admet que des adversaires du r\tgime ont \tt\t gel\ts dans le Grand Nord, on admet que l'attachement \t certaines valeurs ne m\trite pas davantage la peine de mort que l'appartenance \t une race donn\te, on reconna\tt que la mort par le gel n'est pas n\tcessairement pr\tf\trable \t la mort par les gaz. Il arrive souvent qu'on avance une justification absurde, ou simplement qu'on se taise; mais le sentiment, dont on n'arrive pas \t rendre compte, d'une diff\trence de degr\t, en tout cas, dans l'horreur, entre le r\tgime stalinien et le r\tgime nazi, subsiste. Je le crois fond\t \t peu pr\ts uniquement sur la diff\trence doctrinale, et cela \t juste titre. Qu'on n'objecte pas que c'est accorder une prime au mensonge. Professer l'id\tologie de l'affranchissement universel de l'homme par la conqu\tte des vraies chances pour tous, c'est, m\tme pour un r\tgime concentrationnaire, maintenir vivante l'id\te que tous les hommes doivent \ttre affranchis par la conqu\tte de leurs vraies chances. Et cette id\te a malgr\t tout \t travers le monde une autre efficacit\t que celle de la domination du peuple allemand, Herrenvolk, sur toutes les autres races consid\tr\tes comme inf\trieures.",
+      "bbox": {
+        "x_pct": 12.911,
+        "y_pct": 20.348,
+        "w_pct": 86.253,
+        "h_pct": 65.9
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text to match actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il va sans dire que la sup\triorit\t morale de l'une des id\tologies",
+      "bbox": {
+        "x_pct": 17.131,
+        "y_pct": 86.034,
+        "w_pct": 82.075,
+        "h_pct": 2.736
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "4",
+      "bbox": {
+        "x_pct": 136.0,
+        "y_pct": 71.0,
+        "w_pct": 10.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer/filter."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was very poor and required manual re-transcription.",
+    "Page number at top left was improperly labeled as text.",
+    "Heading was missed entirely in original detection."
+  ],
+  "doc_id": "330",
+  "page": 38,
+  "elapsed_seconds": 6.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

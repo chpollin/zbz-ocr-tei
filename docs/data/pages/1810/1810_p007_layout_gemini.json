@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "«Thèses» nocives",
+      "bbox": {
+        "x_pct": 5.738,
+        "y_pct": 18.175,
+        "w_pct": 49.731,
+        "h_pct": 4.721
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in extracted text from OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les Thèses concernant les manifestations des jeunes en 1980 sont devenues un best-seller, parait-il, non seulement en Suisse, mais en Europe, et en particulier en RFA. Pourtant cette brochure n'apporte rien de neuf: elle réunit et systématise (à peine, et plus en apparence qu'en réalité) ce que «tout le monde» a dit et écrit à ce sujet. J'entends par «tout le monde» la grande majorité des gens qui, de façon à peu près homogène, donnent le ton par les médias: journalistes, sociologues, théoriciens de l'éducation, tous ceux qui font métier de comprendre le présent et l'avenir, d'avoir l'esprit ouvert, généreux, de penser avec le cœur, créativement et sans élitisme, au même moment, les choses que la masse, selon eux conformiste et craintive, n'ose pas penser.",
+      "bbox": {
+        "x_pct": 5.855,
+        "y_pct": 37.034,
+        "w_pct": 82.166,
+        "h_pct": 21.345
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text to full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La seule nouveauté — mais elle est importante — de la brochure en question, c'est qu'ayant été «élaborée par la Commission fédérale de la jeunesse», elle confère pour la première fois le sceau de l'officialité aux thèses qu'elle contient. Elle jouit ainsi d'un prestige spécial pour justifier le recours à la violence, pour rendre les adultes — parents, éducateurs, autorités — incertains, perplexes et tâtonnants, enfin pour affaiblir le sens de l'ordre légal (tout en prétendant le respecter), au point que des enclaves d'anarchie paraissent indispensables.",
+      "bbox": {
+        "x_pct": 5.738,
+        "y_pct": 59.009,
+        "w_pct": 82.119,
+        "h_pct": 15.5
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text to full paragraph content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La majorité silencieuse soupçonnée d'apathie",
+      "bbox": {
+        "x_pct": 6.054,
+        "y_pct": 76.105,
+        "w_pct": 59.368,
+        "h_pct": 2.754
+      },
+      "changed": true,
+      "change_reason": "Corrected typos in extracted text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous vivons une époque où d'énormes sottises, devenues clichés, intimident. En voici, presque au hasard, quelques exemples. Selon la brochure, c'est la majorité silencieuse de la jeunesse «normale» qui se trouve soupçonnée d'apathie, d'indifférence, et d'offrir ainsi un terrain favorable à la drogue. Sitôt après, il est dit qu'en 1968, les troubles impliquaient «une élite» en mesure d'analyser la situation et la société et d'en déduire «des programmes systématiques».",
+      "bbox": {
+        "x_pct": 6.054,
+        "y_pct": 79.205,
+        "w_pct": 82.002,
+        "h_pct": 13.871
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and typos in extracted paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": {
+        "x_pct": 90.0,
+        "y_pct": 91.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text extraction for paragraphs was truncated and contained many OCR errors.",
+    "Page number at bottom right was missing from original annotation."
+  ],
+  "doc_id": "1810",
+  "page": 7,
+  "elapsed_seconds": 6.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

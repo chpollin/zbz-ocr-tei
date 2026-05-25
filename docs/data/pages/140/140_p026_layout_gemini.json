@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DISCONTINUIT\u0000\u0000\u0000 DES PERSPECTIVES HUMAINES",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 27
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "107",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 36,
+        "h_pct": 27
+      },
+      "changed": true,
+      "change_reason": "Corrected label to _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "particuliers dont jai parlé, mais la limile où cette réolilé cesse de dépendre de moi, elle, n'est p",
+      "bbox": {
+        "x_pct": 11.57,
+        "y_pct": 14.775,
+        "w_pct": 75.808,
+        "h_pct": 7.464
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et je crois que, cet angle, le et vieux problème de la liberlé apparaît sous un angle un peu nouveau",
+      "bbox": {
+        "x_pct": 11.293,
+        "y_pct": 21.977,
+        "w_pct": 75.319,
+        "h_pct": 18.764
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout ce que je dis là est très abstrait pour le moment, mais je vais essayer de vous lexpliquer mieu",
+      "bbox": {
+        "x_pct": 10.646,
+        "y_pct": 40.496,
+        "w_pct": 75.439,
+        "h_pct": 44.308
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Headings and page numbers incorrectly labeled as text.",
+    "Bbox for headings and page numbers was partially captured as text regions."
+  ],
+  "doc_id": "140",
+  "page": 26,
+  "elapsed_seconds": 7.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label to section_header": 1,
+    "Corrected label to _filter": 1
+  }
+}

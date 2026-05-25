@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "senpolitik. Die ethnische Vielgestalt der Schweiz zwang das kleine Land, wollte es angesichts zerstrittener Nachbarn nicht zerrissen werden, zum weitgehenden Verzicht auf Parteinahme. So entwickelte sich die Neutralitätspolitik. Man hielt sich konsequent aus internationalen Verwicklungen heraus. Dabei schuf man die besondere Form der bewaffneten Neutralität. Gemessen an der Kleinheit des Landes ist die Schweiz eines der militärisch stärksten Länder der Welt. So gab man kriegslustigen Nachbarn zu erkennen, dass ein Angriff auf die Schweiz kostspielig, das heisst nicht lohnend sei. Man entwickelte eine schlaue Überlebensstrategie, die es erlaubte, inmitten des von Kriegen erfüllten Europa praktisch unbeschadet zu existieren. Dem Vorwurf der Welt, Neutralitätspolitik sei opportunistisch und egoistisch, begegnete man mit dem Argument, wenn alle Länder der Welt dieselbe Neutralität einhielten, so wäre der Weltfrieden gewährleistet. Zudem: der Verzicht der Schweiz auf Expansion und das damit verbundene Bekenntnis zum Kleinstaat ist ein Beitrag zur Friedenssicherung. Darüber hinaus leistet die Schweiz (z.B. Rotes Kreuz) humanitäre Hilfe.",
+      "bbox": {
+        "x_pct": 10.963,
+        "y_pct": 14.824,
+        "w_pct": 63.375,
+        "h_pct": 48.554
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Im weiteren ist die Schweiz durch innenpolitische Stabilität gekennzeichnet. Die politische Grundeinstellung des Volkes ist konservativ. Grossen Massenbewegungen begegnet der Schweizer mit Skepsis. Immerhin erweist sich der Staat als reformfähig; dazu gehört das Initiativrecht, das auf allen Stufen rege benutzt wird. Lange Zeit hindurch zeichneten sich die Schweizer durch Solidarität nach innen wie nach aussen aus. Der persönliche Einsatz für das Gemeinwohl ist zwar in letzter Zeit zurückgegangen, jedoch immer noch vergleichsweise beachtlich.",
+      "bbox": {
+        "x_pct": 11.0,
+        "y_pct": 63.771,
+        "w_pct": 63.163,
+        "h_pct": 22.96
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Abschliessend sei die in der Diskussionsrunde unverkennbare Neigung zur Selbstkritik vermerkt. Der kritische Bürger stellt die",
+      "bbox": {
+        "x_pct": 11.0,
+        "y_pct": 86.982,
+        "w_pct": 63.037,
+        "h_pct": 5.1
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "45",
+      "bbox": {
+        "x_pct": 71.0,
+        "y_pct": 93.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text transcription in regions was highly inaccurate and truncated.",
+    "Page number at the bottom was missing from the initial detection list.",
+    "Bboxes for paragraphs were okay but OCR content needed full replacement."
+  ],
+  "doc_id": "2940",
+  "page": 48,
+  "elapsed_seconds": 4.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

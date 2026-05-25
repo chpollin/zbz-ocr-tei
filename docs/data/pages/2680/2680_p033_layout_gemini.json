@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "où tout persiste pour toujours. Sans cette intersection, ou bien rien ne s'écoule et il ne se passe rien, où bien tout s'écoule et rien de ce qui s'écoule ne pèse dans la balance de la liberté. C'est soit un néant de réalité, soit un néant de sens.",
+      "bbox": {
+        "x_pct": 9.167,
+        "y_pct": 5.852,
+        "w_pct": 86.429,
+        "h_pct": 5.281
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained OCR errors; updated to match the actual text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une telle intersection, où le permanent affronte l'écoulement et où l'éphémère met en jeu l'absolu, c'est ce que les philosophes appellent «l'historicité» de l'homme, c'est-à-dire son lien irrémédiable avec l'écoulement, et la percée qu'il opère au-delà de lui.",
+      "bbox": {
+        "x_pct": 9.167,
+        "y_pct": 12.911,
+        "w_pct": 86.345,
+        "h_pct": 5.585
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained OCR errors; updated to match the actual text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un des conférenciers qui m'ont précédée a parlé du triomphe et du tragique de l'homme. Il avait certes raison. Et pourtant, le plus souvent, ce n'est pas sur le mode du triomphe, ni sur celui du tragique, que l'homme vit, de la naissance à la mort, sa contradiction essentielle, au coeur de l'historicité. En en approfondissant les termes, il découvre peu à peu que cette contradiction lui est essentielle et qu'il ne saurait, sans elle, étre un homme. Il en vient à l'intérioriser jusqu'à en entrevoir le sens. Elle lui révèle - dans un sens très fort, celui d'une expérience centrale et sans cesse refaite - sa finitude, sans laquelle, soumis par nature à la totalité, il ne pourrait étre libre et responsable. Il finit par rendre grâce pour le fait que cette totalité lui soit refusée à jamais, ce qui lui permet d'étre lui-même. Et au lieu du triomphe, ou au lieu du tragique, il essaye, au fil du temps, d'apprendre la patience qui traverse le temps sans lui échapper jamais.",
+      "bbox": {
+        "x_pct": 9.048,
+        "y_pct": 21.874,
+        "w_pct": 86.512,
+        "h_pct": 22.03
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained OCR errors; updated to match the actual text in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps qu'il vit, ambigu et irréductible, est la condition de son existence de sujet responsable. L'alternative illusoire que semble lui offrir l'opposition des futuristes et des conservateurs, s'impose à lui, à la fois inévitable et fausse, car il lui faut en vivre les deux termes, l'un par l'autre, l'un avec l'autre, au sein de ce présent épaissi de passé et de futur où se rencontrent pour lui l'étre et le sens.",
+      "bbox": {
+        "x_pct": 9.012,
+        "y_pct": 45.089,
+        "w_pct": 86.548,
+        "h_pct": 9.259
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained OCR errors; updated to match the actual text in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "30",
+      "bbox": {
+        "x_pct": 92.5,
+        "y_pct": 86.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified and corrected to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR for all paragraphs was severely incomplete and contained many character errors.",
+    "Page number 30 was initially missing from the region list."
+  ],
+  "doc_id": "2680",
+  "page": 33,
+  "elapsed_seconds": 7.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

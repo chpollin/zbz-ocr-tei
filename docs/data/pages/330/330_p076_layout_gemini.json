@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "42 IDOLOGIES ET RALIT",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified page number and header text that was missing from original analysis."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "les valeurs à l'histoire, indestructibles. Ils ne pensent pas qu'elles ont à étre nourries et transmises, au sein d'un tout qui les justifie. Ils ne les voient pas s'anémier, s'isoler, perdre sans bruit, mais vite, leur visage d'absolu dont il ne subsiste bientôt plus qu'une grimace arbitraire.",
+      "bbox": {
+        "x_pct": 11.323,
+        "y_pct": 11.471,
+        "w_pct": 85.794,
+        "h_pct": 12.264
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils revendiquent partout de beaux possibles, croient à l'efficacité politique de la parole, de la bonne volonté. Le progrès, à leurs yeux, n'a rien d'un processus historique automatique ; il dépend de l'intention et de l'énergie des hommes. Le mal non plus n'a pas de réalité métaphysique ou naturelle, il n'est pas fatal dans le monde humain, - il n'est que le tracé négatif qui nous indique nos tâches.",
+      "bbox": {
+        "x_pct": 11.602,
+        "y_pct": 23.467,
+        "w_pct": 85.376,
+        "h_pct": 14.563
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est eux, et non les conservateurs, qui, sur ce plan, sont les véritables héritiers de l'optimisme éloquent des « lumières ».",
+      "bbox": {
+        "x_pct": 14.582,
+        "y_pct": 38.119,
+        "w_pct": 82.214,
+        "h_pct": 4.1
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Beaucoup d'hommes, cependant, qui adhèrent personnellement à un credo absolu, militent dans des mouvements démocrate-progressistes, précisément parce qu'une idéologie plus inconsistante paraît permettre ici une adhésion plus limitée, une intervention, dès lors, moins « politique » et plus humaine.",
+      "bbox": {
+        "x_pct": 11.462,
+        "y_pct": 42.094,
+        "w_pct": 85.571,
+        "h_pct": 10.82
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Plan de la politique intérieure. - Les démocrates progressistes ont avec la démocratie politique un rapport différent de celui des conservateurs libéraux. Ces derniers, nous l'avons vu, n'adhèrent à la structure démocratique de l'État que conditionnellement. La démocratie n'est pour eux qu'une forme propice, dont la justification est extérieure à elle. Pour les démocrates progressistes la démocratie vaut par elle-même. On serait tenté de dire qu'elle est pour eux un absolu, si toute notion d'absolu, précisément, n'était pas aussi essentiellement étrangère à leur idéologie. Disons qu'elle est, dans cette idéologie, « aussi absolue que possible » ; nous introduisons ainsi une contradiction dans les termes, qui dit bien ce qu'elle veut dire. Ce n'est pas que la démocratie se justifie par elle-même ; bien plutôt, elle se passe de justification, elle va de soi. Les démocrates progressistes sont attachés à elle comme on tient à l'air qu'on respire, sans y penser. Ils ne comprennent simplement pas qu'on puisse ne pas étre démocrate. C'est pour eux que les mouvements fascistes et national-socialistes ont été le plus « scan-",
+      "bbox": {
+        "x_pct": 11.421,
+        "y_pct": 54.519,
+        "w_pct": 85.696,
+        "h_pct": 35.285
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR text was significantly garbled.",
+    "Page number and header were not captured as separate layout elements.",
+    "Multiple paragraphs contained broken words."
+  ],
+  "doc_id": "330",
+  "page": 76,
+  "elapsed_seconds": 7.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

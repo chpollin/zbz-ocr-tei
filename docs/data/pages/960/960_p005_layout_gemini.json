@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "A QUOI BON UNE FACULT\t DES LETTRES A LA FIN DU XXE SI\tCLE ?",
+      "bbox": {
+        "x_pct": 142.11,
+        "y_pct": 91.0,
+        "w_pct": 69.58,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "Top level section heading identified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "verS Ou construit l\tbauche dune nouvelle conception du monde et de lhistoire, peut avoir limpres",
+      "bbox": {
+        "x_pct": 11.005,
+        "y_pct": 11.7,
+        "w_pct": 71.64,
+        "h_pct": 11.972
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lui a-t-0n au moins appris \t enseigner ? Pas tout-\t-fait. La Facult\t lavoir rendu denseigner , ce n",
+      "bbox": {
+        "x_pct": 11.143,
+        "y_pct": 23.083,
+        "w_pct": 71.503,
+        "h_pct": 18.882
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seulement; la perplexit\t est grande. Donnet un enseignement, mais lequel ? A quelles fins ? En un te",
+      "bbox": {
+        "x_pct": 11.111,
+        "y_pct": 41.111,
+        "w_pct": 71.429,
+        "h_pct": 15.673
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est tr\ts difficile de r\tpondre \t cette mise en question, diffuse explicite, de la Facult\t des Let",
+      "bbox": {
+        "x_pct": 11.037,
+        "y_pct": 57.741,
+        "w_pct": 71.503,
+        "h_pct": 29.382
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "287",
+      "bbox": {
+        "x_pct": 787.0,
+        "y_pct": 884.0,
+        "w_pct": 27.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, moved to page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "Section header was mislabeled as text.",
+    "Page number was mislabeled as text.",
+    "Some OCR artifacts/noise noted in text segments."
+  ],
+  "doc_id": "960",
+  "page": 5,
+  "elapsed_seconds": 5.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

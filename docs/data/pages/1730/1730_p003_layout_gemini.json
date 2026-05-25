@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "E 1e rejerer donnco blologique Ou bion envlganer un huma1n houz Zee 11 2n personne\" quelqu Qu Eh bie",
+      "bbox": {
+        "x_pct": 8.268,
+        "y_pct": 12.637,
+        "w_pct": 37.91,
+        "h_pct": 23.674
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour 11 2 elle 1 1! P2s 5 MuzzinDE Jans Cnacun EE que An Pupllong Ma15 de 2' 1",
+      "bbox": {
+        "x_pct": 7.961,
+        "y_pct": 39.092,
+        "w_pct": 37.869,
+        "h_pct": 40.98
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "11 de",
+      "bbox": {
+        "x_pct": 84.355,
+        "y_pct": 16.671,
+        "w_pct": 2.018,
+        "h_pct": 3.501
+      },
+      "changed": true,
+      "change_reason": "Artifact/page fragment, incorrectly identified as a paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mu 5 10 un ans Elle 1 125 Eans 11 1 1a 9u1",
+      "bbox": {
+        "x_pct": 57.275,
+        "y_pct": 23.3,
+        "w_pct": 35.523,
+        "h_pct": 23.242
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Por 1 'honme qu1 Par 125 12 234 romps 'alenr qu1 11 Lul Gn e Laches 1",
+      "bbox": {
+        "x_pct": 53.658,
+        "y_pct": 58.213,
+        "w_pct": 38.76,
+        "h_pct": 26.902
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One false positive fragment misidentified as a paragraph."
+  ],
+  "doc_id": "1730",
+  "page": 3,
+  "elapsed_seconds": 3.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

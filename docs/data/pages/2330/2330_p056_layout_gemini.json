@@ -1,0 +1,92 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous faites allusion à une espèce de grâce?",
+      "bbox": {
+        "x_pct": 28.816,
+        "y_pct": 4.529,
+        "w_pct": 46.679,
+        "h_pct": 1.931
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Simplement à une éducation. Il n'est pas aussi raisonnable qu'il semble d'attendre que les enfants aient l'âge de raison pour leur exposer les éléments de la foi, comme le font certains parents protestants ou catholiques. Ce n'est pas à travers une raison adulte qu'on adhère naturellement à une religion, et ce n'est pas non plus à travers elle qu'on apprend à respecter la religion des autres. Au cours de mes années d'enseignement, c'était un principe impératif pour moi de ne jamais ébranler sciemment la foi d'autrui.",
+      "bbox": {
+        "x_pct": 15.055,
+        "y_pct": 6.412,
+        "w_pct": 80.427,
+        "h_pct": 16.01
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une fois, un de mes élèves de l'Ecole Internationale a écrit un article dans le journal de l'Ecole pour mettre en garde ses camarades de la volée suivante contre l'influence corrosive du cours de philosophie, dans lequel on apprenait tant de conceptions successives qu'on ne savait plus ce qu'il fallait croire. J'ai pris cette critique très au sérieux. Ma méthode consistait en effet à présenter chaque philosophe sous son meilleur jour, en m'efforçant de montrer la signification la plus profonde de sa pensée. J'ai donc bien compris l'objection de cet élève. Mais j'ai répondu qu'il fallait avoir une foi suffisamment enracinée et suffisamment subordonnée à la vérité pour être toujours prêt à entendre la plus belle vérité d'autrui.",
+      "bbox": {
+        "x_pct": 15.299,
+        "y_pct": 23.065,
+        "w_pct": 80.22,
+        "h_pct": 20.193
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans son livre sur Raymond Aron, le Père Fessard a écrit ces lignes : « La présence de la transcendance négatrice de toute idolâtrie est tout à fait spécifique du juif : telle est son élection, sa vocation propre et elle subsiste toujours alors même qu'il la nie ». Que pensez-vous de cette affirmation ?",
+      "bbox": {
+        "x_pct": 15.263,
+        "y_pct": 48.005,
+        "w_pct": 80.22,
+        "h_pct": 9.783
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Père Fessard était convaincu que les Juifs avaient une fonction propre dans le plan providentiel et que cette fonction consistait dans le rappel constant de la transcendance à l'état pur. Et j'ai eu souvent le sentiment que le petit instrument dont j'ai joué parmi les hommes avait très modestement sa raison d'être de ce côté-là. Là encore je m'en remets... Vous savez, pour moi le Bon Dieu a souvent bon dos. Je n'en ai aucune image ni aucune idée. Ce n'est pas tellement une question de goût, chez moi, si je n'aime pas les déclarations assurées et solennelles dans le domaine de la religion. C'est plutôt que je ne les crois pas vraies. Il est presque impossible que ceux qui croient vraiment ne soient pas intimidés par ce qu'ils croient, c'est-à-dire réduits à un certain silence. Les paroles authentiques dans ce domaine sont rares. Je préfère ne pas en parler. Des auditeurs m'ont souvent reproché, lors de telle ou telle conférence, de n'avoir pas parlé de Dieu, alors qu'ils percevaient quelque chose de cet ordre à travers mon exposé. Je leur ai toujours répondu en citant Gabriel Marcel : « Lorsqu'on parle de Dieu, ce n'est presque jamais de Dieu qu'on parle ». Dans ce domaine la pudeur est plus vraie que le discours.",
+      "bbox": {
+        "x_pct": 14.896,
+        "y_pct": 58.061,
+        "w_pct": 80.623,
+        "h_pct": 33.998
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": {
+        "x_pct": 15.244,
+        "y_pct": 94.636,
+        "w_pct": 2.146,
+        "h_pct": 1.776
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text transcriptions were severely truncated.",
+    "Page number at bottom left was mislabeled as text."
+  ],
+  "doc_id": "2330",
+  "page": 56,
+  "elapsed_seconds": 6.64,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

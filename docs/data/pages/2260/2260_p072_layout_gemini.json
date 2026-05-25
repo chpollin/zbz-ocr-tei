@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La flamme réchauffe, sans donner au solitaire un ami ou une amante. Elle est comme une espérance, devenue pour un moment seulement presque réelle, celle d'une joie flottante, commune, sans raison ni objet.",
+      "bbox": {
+        "x_pct": 23.309,
+        "y_pct": 11.354,
+        "w_pct": 65.818,
+        "h_pct": 14.441
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the visual input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La fête n'est pas un refuge. Elle naît d'une surabondance de la joie, ou de la tendresse, ou de la gratitude. Elle ne fleurit que par surcroît. Mais cela ne signifie nullement qu'un homme qui souffre ne puisse pas vivre une fête. La seule chose qui lui soit défendue, c'est d'exiger d'elle qu'elle lui apporte secours. Mais s'il est capable, malgré tout et du fond de son être, de dire «oui» à sa vie et à sa vie entière, et de rendre grâce, alors pour lui aussi la fête peut fleurir. Car toute fête reste liée à la condition mortelle et les larmes multiplient son éclat. Si les hommes ne savaient rien de la mort, ils n'auraient, comme les bêtes, pas de fêtes. Et leur action de grâce n'aurait de sens pour aucune divinité.",
+      "bbox": {
+        "x_pct": 23.358,
+        "y_pct": 26.72,
+        "w_pct": 65.939,
+        "h_pct": 45.526
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription which contained hallucinated or garbled segments in the original prompt."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "72",
+      "bbox": {
+        "x_pct": 23.95,
+        "y_pct": 82.529,
+        "w_pct": 3.708,
+        "h_pct": 2.274
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text transcription was truncated and corrupted.",
+    "Page number at the bottom was missing a region assignment.",
+    "The OCR output for paragraph segments was incomplete compared to the actual text in the image."
+  ],
+  "doc_id": "2260",
+  "page": 72,
+  "elapsed_seconds": 4.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

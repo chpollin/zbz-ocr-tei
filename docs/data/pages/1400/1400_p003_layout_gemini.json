@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SCHWEIZERISCHER SCHRIFTSTELLER-VERBAND SOCIÉTÉ SUISSE DES ÉCRIVAINS SOCIETA SVIZZERA DEGLI SCRITTORI",
+      "bbox": {
+        "x_pct": 6.211,
+        "y_pct": 5.622,
+        "w_pct": 55.701,
+        "h_pct": 8.555
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vorstand comilé 1576~1973: Theo Candinas, Präsidentprésident (Chur) ; Mousse Boulanger Vize(Mezieres",
+      "bbox": {
+        "x_pct": 6.14,
+        "y_pct": 15.848,
+        "w_pct": 83.967,
+        "h_pct": 5.205
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sekretariat/Secrétariat: Otto Böni, Kirchgasse 25, 8001 Zürich, Tel. 01/47 30 20 «welt im wort» — Forum der Schriftsteller — Organ der Schweizerischen Schriftsteller-Verbandes «voix des lettres» — forum des écrivains — organe de la Société suisse des écrivains",
+      "bbox": {
+        "x_pct": 6.378,
+        "y_pct": 21.5,
+        "w_pct": 83.646,
+        "h_pct": 4.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing text block for secretariat info"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alfred A Hâsler). Ursula von Wiese (deutschsprachiger Teil); E Ballmer et Mousse Boulanger (Suisse r",
+      "bbox": {
+        "x_pct": 6.378,
+        "y_pct": 27.068,
+        "w_pct": 83.646,
+        "h_pct": 3.818
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "INHALTSVERZEICHNIS SOMMAIRE",
+      "bbox": {
+        "x_pct": 6.33,
+        "y_pct": 33.918,
+        "w_pct": 37.933,
+        "h_pct": 1.671
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 6.746,
+        "y_pct": 37.293,
+        "w_pct": 83.694,
+        "h_pct": 55.639
+      },
+      "changed": true,
+      "change_reason": "Label corrected from document_index to text"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Corrected label of index region to text",
+    "Added missing secretariat text region"
+  ],
+  "doc_id": "1400",
+  "page": 3,
+  "elapsed_seconds": 8.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected from document_index to text": 1,
+    "ADDED": 1
+  }
+}

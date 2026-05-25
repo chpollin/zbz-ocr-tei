@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "complices, c'est de retrouver le niveau proprement humain de leur civilisation, de puiser un regain de force dans les contradictions mêmes qui y sont impliquées, et de réapprendre à les aimer.",
+      "bbox": {
+        "x_pct": 57.65,
+        "y_pct": 60.17,
+        "w_pct": 857.0,
+        "h_pct": 82.0
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and aligned bounding box logic."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si les hommes ont des droits, ce n'est pas qu'un bonheur particulier leur serait promis. C'est qu'ils ont le devoir, ou la vocation, de faire d'eux-mêmes des êtres libres, face à un absolu inaccessible. Liberté toujours imparfaite, dépendante de conditions concrètes plus ou moins favorables, mais qui ne suffisent jamais ni à l'engendrer, ni à l'exclure. Ces conditions favorables, il s'agit de les créer et de les multiplier pour chacun et pour tous, aux divers niveaux de l'existence individuelle et sociale, de façon à multiplier les possibles devant la liberté. L'actualisation, au fil du temps, incarnée et progressive, des chances de la liberté, à jamais imparfaite et inachevée, c'est ce qui mérite le nom d'histoire.",
+      "bbox": {
+        "x_pct": 57.65,
+        "y_pct": 124.67,
+        "w_pct": 857.0,
+        "h_pct": 273.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and bounding box accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire, nous l'avons dit, ne vas pas sans conflits ni sans tragédies. C'est pourquoi les hommes se sont imposé les entraves des institutions et du droit, elles-mêmes toujours imparfaites et inachevées, mais prévoyant les voies et les procédures de leurs propres progrès.",
+      "bbox": {
+        "x_pct": 57.65,
+        "y_pct": 352.0,
+        "w_pct": 857.0,
+        "h_pct": 128.0
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling 'lavons' to 'l'avons'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le passé de l'Europe, comme tout passé d'ailleurs, reste, par delà nos mémoires, ce qu'il a été. Nous n'y changerons plus rien, même s'il prend au cours des siècles des significations nouvelles. Mais l'avenir, avec ses possibles, est ouvert devant nous. Il nous appartient, au niveau de l'Europe, d'inventer ensemble les institutions et le droit qui lui permettront de s'unir, de se retrouver elle-même et de créer peu à peu son futur.",
+      "bbox": {
+        "x_pct": 57.65,
+        "y_pct": 464.0,
+        "w_pct": 857.0,
+        "h_pct": 172.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and punctuation errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais voici présent, qui nous a ici réunis. En cette circonstance solennelle et frivole comme le sont tous les honneurs, même ceux qui nous touchent le plus profondément, en cette circonstance où vous me remettez un prix anobli au cours des ans par ceux qui l'ont reçu, je veux simplement vous dire merci. Merci pour l'honneur qui m'est fait, merci pour l'amitié dont témoigne votre présence à tous, merci pour l'obligation que tout cela m'impose et qui soutiendra, je l'espère, mon travail à venir.",
+      "bbox": {
+        "x_pct": 57.65,
+        "y_pct": 648.0,
+        "w_pct": 857.0,
+        "h_pct": 215.0
+      },
+      "changed": true,
+      "change_reason": "Refined text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 632.0,
+        "y_pct": 836.0,
+        "w_pct": 235.0,
+        "h_pct": 25.0
+      },
+      "changed": false,
+      "change_reason": "Correct label as author signature."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": {
+        "x_pct": 850.0,
+        "y_pct": 880.0,
+        "w_pct": 20.0,
+        "h_pct": 25.0
+      },
+      "changed": true,
+      "change_reason": "Identify and relabel page number."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Text content was heavily hallucinated or truncated in original detection.",
+    "Bbox coordinates were inconsistent with actual layout.",
+    "Page number at bottom right was labeled as paragraph.",
+    "Author signature was incorrectly identified as part of the paragraph block."
+  ],
+  "doc_id": "1580",
+  "page": 6,
+  "elapsed_seconds": 4.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

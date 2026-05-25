@@ -1,0 +1,51 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gegebenen d2 der  Es Existenz geschieht nur in der Geschichilichkeir [ bzla werden, sablichei Verste",
+      "bbox": {
+        "x_pct": 10.88,
+        "y_pct": 11.519,
+        "w_pct": 39.768,
+        "h_pct": 79.75
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "bic nach diesen Huch von dem ich jeder Zeit Iekove Gewissensprufung in Eepackt, Jahre",
+      "bbox": {
+        "x_pct": 86.43,
+        "y_pct": 25.76,
+        "w_pct": 2.286,
+        "h_pct": 2.003
+      },
+      "changed": true,
+      "change_reason": "Artifact or small snippet misidentified as text; likely noise or mis-OCR'd header/footer artifact."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "haben und weiterhin tun ~ politischen Enischeidungen, werden Sonder Wuklichkeit, empirischen und d1s",
+      "bbox": {
+        "x_pct": 52.237,
+        "y_pct": 60.484,
+        "w_pct": 36.271,
+        "h_pct": 22.504
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One region identified as text was likely a false positive or minor artifact that should be filtered."
+  ],
+  "doc_id": "2350",
+  "page": 6,
+  "elapsed_seconds": 3.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

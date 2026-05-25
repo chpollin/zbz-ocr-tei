@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Vom Wissen und Nicht-Wissen",
+      "bbox": {
+        "x_pct": 5.968,
+        "y_pct": 2.827,
+        "w_pct": 79.608,
+        "h_pct": 2.302
+      },
+      "changed": true,
+      "change_reason": "Identified as page header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "65",
+      "bbox": {
+        "x_pct": 82.528,
+        "y_pct": 2.827,
+        "w_pct": 3.064,
+        "h_pct": 2.302
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "und immer wieder verifizieren kann. Dann lernt man zu unterschei- den zwischen dem, was man weiß - und das entspricht dem Willen zum Wissen - und der Illusion, indem man nach der Wirklichkeit in Raum und Zeit fragt.",
+      "bbox": {
+        "x_pct": 5.968,
+        "y_pct": 6.39,
+        "w_pct": 79.608,
+        "h_pct": 8.059
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR artifacts and formatting for complete sentences."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "So wird sich die Welt als objektive Wirklichkeit ausbilden. Und man hat die Vorstellung einer Ganzheit, die nicht das Ganze der Wirklichkeiten ist, die mein empirisches Leben ausmachen, sondern eine Ganzheit jenseits davon; eine Ganzheit, die ohne unmittelbaren Bezug auf mich da ist. Das nennt man dann die „objektive Welt“. Man hat sozusagen fast zwei Welten. Eine empirische Welt – das ist das, was ich darin erlebe – und eine um- greifende Welt, in der sich das empirische Leben abspielt.",
+      "bbox": {
+        "x_pct": 5.723,
+        "y_pct": 16.094,
+        "w_pct": 79.902,
+        "h_pct": 12.336
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers sagt, daß sich auf dieser Stufe zwei Grenzen festlegen. Die eine Grenze ist die vorgefaßte Grenze einer Wahrheit, die weltweit gilt, die universell ist. Sie wird nie bewiesen, sie wird nie gewußt, sie ist nur eine Vorbedingung des Suchens und Studierens. Also gibt es hier schon eine Grenze, die eine Bedingung der Wissenschaft ist – kein Hindernis, sondern eine Bedingung. Hätte das Suchen keine Bedingung, wäre es im Unbe- stimmten. Aber hier ist eine Grenze, die Grenze dessen, was zwingend universell gültig ist. Die andere Grenze ist die Einheit der Welt. Auch das hat man nicht festgelegt, und man hat es nicht bewiesen. Aber diese Einheit der Welt ist die zweite Grenze, die da entsteht.",
+      "bbox": {
+        "x_pct": 5.551,
+        "y_pct": 51.505,
+        "w_pct": 79.828,
+        "h_pct": 19.77
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Wissenschaft hat einen Sinn durch zwei Grenzen, die sie tragen und sie zugleich begrenzen. Es ist nicht so, daß man erst in die Wissenschaft hineinkommt, wenn man die Unendlichkeit vor sich hat, sondern die Gren- zen der Wissenschaft sind konstitutiv für diese Welt, die man studie- ren kann. Das sind also existentiell wesentliche Grenzen.",
+      "bbox": {
+        "x_pct": 5.515,
+        "y_pct": 71.135,
+        "w_pct": 79.694,
+        "h_pct": 9.786
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Warum existentiell? Weil das Forschen eine existentielle Tätigkeit ist. Viele Menschen glauben das nicht, weil Forschung und Existenz nicht",
+      "bbox": {
+        "x_pct": 5.846,
+        "y_pct": 80.946,
+        "w_pct": 79.203,
+        "h_pct": 4.276
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Original layout regions contained severe OCR errors and fragmented words.",
+    "Page number and page header were labeled as text.",
+    "Several text blocks required manual reconstruction for correct readability."
+  ],
+  "doc_id": "2990",
+  "page": 58,
+  "elapsed_seconds": 5.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

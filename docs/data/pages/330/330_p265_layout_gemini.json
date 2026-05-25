@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 231",
+      "bbox": {
+        "x_pct": 296.0,
+        "y_pct": 98.0,
+        "w_pct": 556.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page header/numbering containing journal title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'on croit que la disparition de la classe salariée suffisait à supprimer l'aiguillon du risque et de l'initiative, il faudrait admettre que, à la bourgeoisie, cet aiguillon fait depuis longtemps défaut. Lorsque les salariés d'aujourd'hui s'efforcent d'obtenir une législation leur garantissant qu'ils pourront gagner leur vie tant qu'ils pourront travailler, que leur famille et eux-mêmes ne seront pas abandonnés à la misère en cas de maladie ou lorsqu'ils seront vieux, la sécurité à laquelle ils tendent — et qu'ils sont encore loin d'avoir vraiment conquise — n'est qu'une toute petite fraction de celle dont jouit en fait la classe bourgeoise. Et qu'on n'aille pas prétendre que chaque bourgeois a dû lui-même conquérir cette sécurité, alors que le prolétaire la demande à un appareil étatique le dispensant de tout effort ! La vérité est qu'en dehors des crises révolutionnaires, le bourgeois vit de la naissance à la mort sans même imaginer la menace du vide économique qui pèse sans cesse sur le prolétaire. Quiconque a, par exemple, un peu d'argent quelque part, une petite source de revenus qui continue à couler indépendamment des avatars de sa vie personnelle, un toit à lui, une maison familiale où il sait qu'il peut, en cas de besoin, se retirer, se trouve immédiatement séparé de la condition de celui qui vit rigoureusement au jour le jour, qui cesse d'avoir un logis le jour où il cesse de le payer, qui cesse de pouvoir le payer le jour où le travail ou la force lui fait défaut. Nous l'avons vu dans un chapitre précédent, cette insécurité anéantit la condition humaine elle-même et la rejette à la grande peur primitive des bêtes ; elle étouffe les possibles, les initiatives, les projets. Elle est la grande ennemie de l'homme. Et la bourgeoisie triche lorsqu'elle l'identifie aux beaux risques que l'homme ne devient capable d'assumer, justement, que lorsqu'il est libéré d'elle. Elle joue sur les mots lorsqu'elle assimile les mesures élémentaires de sécurité sociale à je ne sais quel confort dont jouirait, grâce à l'État, une population paresseuse qui n'attend que de s'y engourdir.",
+      "bbox": {
+        "x_pct": 25.0,
+        "y_pct": 127.0,
+        "w_pct": 851.0,
+        "h_pct": 658.0
+      },
+      "changed": true,
+      "change_reason": "Refined OCR content to accurately represent the full paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les socialistes, de leur côté, s'abandonnent parfois à des visions paradisiaques : ils imaginent une société si bien, si « rationnellement » organisée que, grâce au progrès technique et à la bonne compréhension de l'intérêt commun, les problèmes posés par la condition charnelle de l'homme se trouveraient simplement abolis. On trouve chez les socialistes héritiers du matérialisme mar-",
+      "bbox": {
+        "x_pct": 27.0,
+        "y_pct": 778.0,
+        "w_pct": 846.0,
+        "h_pct": 125.0
+      },
+      "changed": true,
+      "change_reason": "Refined OCR content to accurately represent the paragraph text."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "The OCR provided in the initial region boxes was highly fragmented and inaccurate.",
+    "The header and page number were included in a single text region by the initial detection.",
+    "The bounding box coordinates in the original JSON were clearly scaled incorrectly or misaligned."
+  ],
+  "doc_id": "330",
+  "page": 265,
+  "elapsed_seconds": 4.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

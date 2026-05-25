@@ -1,0 +1,102 @@
+---
+type: moc
+created: 2026-01-29
+updated: 2026-04-27
+tags: [zbz-ocr-tei, index, navigation]
+status: active
+---
+
+# Knowledge Base — zbz-ocr-tei
+
+Dokumentation der LLM-gestuetzten OCR- und TEI-Pipeline der Jeanne-Hersch-Edition (Zentralbibliothek Zuerich).
+
+Diese Knowledge-Base wurde am 2026-04-27 konsolidiert: 25 Dokumente auf 10 reduziert,
+SSoT pro Domaene, eine Datei pro Thema.
+
+---
+
+## Dokumente
+
+| Dokument | Beantwortet |
+|---|---|
+| [projekt.md](projekt.md) | Was ist das Projekt? Auftrag, Korpus (286 Texte, 7.200 Seiten), ZBZ-Workflow, Status, Kosten |
+| [pipeline.md](pipeline.md) | Wie ist die Pipeline aufgebaut? 7 Stufen PDF → TEI, Engines (Mistral, DeepSeek, Docling, Gemini), TEI-Mapping (DTA + ZBZ), Implementierungsphasen |
+| [entities.md](entities.md) | Wie funktioniert Entity Linking? NER + GND + Wikidata, Dual-Attribut-Strategie (E50), 4.504 Entitaeten / 47% verlinkt, Wikidata-Workflow |
+| [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Median 1.83%), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Agent-Based Quality Screening |
+| [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay, OCR/TEI-Editor, Datei-Download |
+| [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |
+| [methodik.md](methodik.md) | Wie arbeiten wir? Epistemische Infrastruktur, Verifikationskaskade, Critical Expert in the Loop, Dreischichtung, operative CLI |
+| [decisions.md](decisions.md) | Was ist entschieden? E1-E55, offene Punkte (O8, O13, O18, O22), Risiken |
+| [journal.md](journal.md) | Was wurde wann gemacht? kompakter Sitzungs-Ueberblick (Jan-Apr 2026), wiederkehrende Muster |
+
+Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Regeln).
+
+---
+
+## Abhaengigkeiten
+
+```
+projekt (Vision, Korpus, ZBZ-Kontext)
+   │
+   ├── pipeline (7-Stufen: PDF → TEI)
+   │      ├── entities (NER + Wikidata + GND)
+   │      └── infrastruktur (Azure, Podman, CI/CD)
+   │
+   ├── quality (CER + TEI-Validierung + Screening)
+   │
+   ├── edition (Lese-Edition + Curation + Design)
+   │
+   └── methodik (Promptotyping + Verifikationskaskade)
+
+decisions       — cross-cutting, Entscheidungsregister
+journal         — chronologisch, kompakter Ueberblick
+```
+
+---
+
+## Schluesselkonzepte
+
+| Begriff | Definition | Quelle |
+|---|---|---|
+| 7-Stage Pipeline | Bilder → OCR → Layout → PAGE-XML → NER/GND → TEI-XML → Evaluation | [pipeline.md](pipeline.md) |
+| Dokumenttypen A-D | einspaltig / zweispaltig / Monografie / Spezial | [projekt.md](projekt.md) |
+| DTA-Basisformat | TEI-Basisschema mit ZBZ-Anpassungen | [pipeline.md §TEI-Mapping](pipeline.md) |
+| `zbz_hersch.rng` (E48/E49) | projektspezifisches RelaxNG-Schema, ref-Pattern fuer GND + #zbz | [pipeline.md](pipeline.md) |
+| Dual-Attribut-Strategie (E50) | `ref="GND:..."` (primaer) + `corresp="#zbz-{typ}.{N}"` (intern) | [entities.md](entities.md) |
+| Hybrid Pipeline | Docling Layout + LLM-OCR Text | [pipeline.md](pipeline.md) |
+| Unified TEI Pipeline (E32) | Scaffold + Gemini Refinement + Assembly + Validation | [pipeline.md](pipeline.md) |
+| Agent-Based Quality Screening (E41) | 7-Schichten-Pre-Curation, Review-JSON pro Doc | [quality.md](quality.md) |
+| CER-Benchmark (E51) | End-to-End TEI-vs-TEI, Median 1.83% (n=19) | [quality.md](quality.md) |
+| CER-Statistik (E54) | BCa-Bootstrap-CIs, paired E2E vs OCR-only, HCPR | [quality.md](quality.md) |
+| Quality Proxy | Dictionary Hit Rate fuer 285 Docs ohne Ground Truth | [quality.md](quality.md) |
+| revisionDesc (E42) | Pipeline + Screening-Status im TEI-Header, reist mit dem Dokument | [pipeline.md](pipeline.md) |
+| `output/tei_final/` (E43) | Single Source of Truth fuer die Edition | [pipeline.md](pipeline.md) |
+| Verifikationskaskade | 4 Stufen: automatisch / kontextuell / visuell / fachlich | [methodik.md](methodik.md) |
+| Dreischichtung | Command (Regel) / Artifact (Werkzeug) / Tool (Aufruf) | [methodik.md](methodik.md) |
+| Pipeline-Viewer (E56) | Single-Page-App mit Faksimile + OCR + TEI + Layout-/Transkriptions-Editor, Datei-Download | [viewer.md](viewer.md) |
+| Hersch Design-System | Anthrazit + Ziegelrot + EB Garamond + Jost, `--h-*` Tokens | [viewer.md](viewer.md) |
+
+---
+
+## Quick Start
+
+1. **Projekt verstehen:** [projekt.md](projekt.md) — Auftrag, Korpus, Beteiligte
+2. **Pipeline verstehen:** [pipeline.md](pipeline.md) — 7 Stufen + Engines + TEI-Mapping
+3. **Qualitaet:** [quality.md](quality.md) — CER-Benchmark, Screening, Proxy
+4. **Dashboard:** `docs/index.html` — Metriken + Katalog
+5. **Status:** [decisions.md](decisions.md) — was ist entschieden, was blockiert
+6. **Letzte Sitzung:** [journal.md](journal.md) — kompakter Sitzungs-Ueberblick
+
+---
+
+## Wartung
+
+- **neuer Fakt?** in genau ein Dokument einfuegen, von anderen referenzieren
+- **neue Entscheidung?** in [decisions.md](decisions.md) eintragen
+- **Sitzungsende?** eine Zeile in [journal.md](journal.md) ergaenzen
+- **Duplikation gefunden?** sofort beseitigen, Cross-Reference einfuegen
+- **Inhalte nur in einem Dokument** — bei Ueberschneidung: ein Dokument behaelt die Definition, das andere verlinkt
+
+---
+
+*Konsolidiert: 2026-04-27 (von 25 Dokumenten auf 10 reduziert)*

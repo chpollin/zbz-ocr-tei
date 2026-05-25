@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "DANS LA RÉALITÉ EMPIRIQUE DE SON TEMPS 103",
+      "bbox": {
+        "x_pct": 182,
+        "y_pct": 71,
+        "w_pct": 639,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Identified page header containing title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "cette époque concrète que l'éternelle nécessité de l'histoire pouvait avoir un contenu substantiel.",
+      "bbox": {
+        "x_pct": 98,
+        "y_pct": 113,
+        "w_pct": 753,
+        "h_pct": 30
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for better alignment with image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour considérer l'histoire, Hegel part donc de lui-même et de son temps. Sa foi, sa vie, la situation de son pays, tels sont ses points de départ et d'aboutissement. Et c'est là, dans le temps, que réside le contenu métaphysique de sa philosophie. C'est pour sauver sa liberté que Hegel est resté enfermé, enraciné dans ce qui était empiriquement donné. S'il a méconnu la mobilité des points de vue, le sien pourtant a été vrai, au sens métaphysique du mot. Par les insuffisances apparentes de sa philosophie, il a défendu sa liberté contre l'emprise de l'éternité.",
+      "bbox": {
+        "x_pct": 98,
+        "y_pct": 163,
+        "w_pct": 758,
+        "h_pct": 305
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Celle de tout autre que lui, pourtant, est damnée dans son système. Un autre ne peut que le contempler aussi profondément que possible, et aller plus loin — ou bien alors sacrifier à une universelle conciliation esthétique sa liberté.",
+      "bbox": {
+        "x_pct": 99,
+        "y_pct": 472,
+        "w_pct": 756,
+        "h_pct": 130
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and missing words."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'espère, par cette analyse d'un problème de la philosophie, avoir réussi à montrer plus concrètement ce que j'entends par « vérité métaphysique », par la différence radicale qu'il y a entre l'action du philosophe créateur et celle du philosophe étudiant; j'espère avoir suggéré ce que pourrait être, en philosophie, un effort de compréhension véritable.",
+      "bbox": {
+        "x_pct": 99,
+        "y_pct": 673,
+        "w_pct": 758,
+        "h_pct": 186
+      },
+      "changed": true,
+      "change_reason": "Corrected text content and OCR errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On a vu que dans une philosophie dogmatique",
+      "bbox": {
+        "x_pct": 138,
+        "y_pct": 853,
+        "w_pct": 722,
+        "h_pct": 28
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR noise."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "OCR transcription was highly inaccurate, requiring full text replacement.",
+    "Page header was included as regular paragraph text.",
+    "Formatting of the header line (page 103) ignored."
+  ],
+  "doc_id": "20",
+  "page": 105,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

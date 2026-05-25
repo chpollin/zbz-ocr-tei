@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "INTRODUCTION 13",
+      "bbox": {
+        "x_pct": 11.521,
+        "y_pct": 2.0,
+        "w_pct": 68.472,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Missing page_header region"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "réalité sans contraire; sans irréalité, sans absence; dont   j'essayerai de montrer   que elle va co",
+      "bbox": {
+        "x_pct": 11.521,
+        "y_pct": 13.227,
+        "w_pct": 68.472,
+        "h_pct": 11.558
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jessayerai de montrer  que rien n'a réalité dans une conscience humaine sans avoir forme. Tout ce ex",
+      "bbox": {
+        "x_pct": 10.945,
+        "y_pct": 30.147,
+        "w_pct": 69.015,
+        "h_pct": 44.234
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region"
+  ],
+  "doc_id": "110",
+  "page": 15,
+  "elapsed_seconds": 5.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

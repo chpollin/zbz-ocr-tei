@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "24",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 89.0,
+        "w_pct": 16.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 90.0,
+        "w_pct": 100,
+        "h_pct": 9.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "du du nombre, également, le style des produits de la grande industrie, des maisons, des meubles, des",
+      "bbox": {
+        "x_pct": 12.054,
+        "y_pct": 12.651,
+        "w_pct": 76.615,
+        "h_pct": 46.494
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais n'était-il pas question délite ouvrière? Patience: je ne crois pas puisse viser directement à l",
+      "bbox": {
+        "x_pct": 11.202,
+        "y_pct": 58.915,
+        "w_pct": 77.209,
+        "h_pct": 26.388
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "JEANNE HERSCH.",
+      "bbox": {
+        "x_pct": 61.499,
+        "y_pct": 86.33,
+        "w_pct": 22.442,
+        "h_pct": 2.363
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/footer detection in original input",
+    "Minor label corrections"
+  ],
+  "doc_id": "130",
+  "page": 18,
+  "elapsed_seconds": 4.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

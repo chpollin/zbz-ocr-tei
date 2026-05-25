@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pas constitué , dans sa conscience, une fuite de caractère officiel ? Et est-il surprenant qu'elle ait essayé par la suite, en se jetant dans son travail, de croire que presque rien ne s'était passé, pour n'avoir pas à ajouter encore aux harcèlements quotidiens des media ?",
+      "bbox": {
+        "x_pct": 10.577,
+        "y_pct": 6.073,
+        "w_pct": 80.602,
+        "h_pct": 10.379
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour être juste envers elle, à ce propos (et je voudrais faire remarquer que, de toute façon, il ne s'agit certes pas ici de crime, ni de délit, même pas sans doute de mensonge, mais, dans des circonstances extraordinairement difficiles, d'un certain manque de courage qui, pendant un temps, l'a empêchée de regarder en face les choses qui pouvaient servir à mettre en cause l'honneur de sa fonction), il faudrait se livrer à une étude détaillée de la presse écrite, quotidienne et hebdomadaire, pendant cette période, comme aussi des programmes les plus divers de la radio et de la télévision. Il ne saurait en être question ici. Contentons-nous de quelques remarques.",
+      "bbox": {
+        "x_pct": 10.627,
+        "y_pct": 20.968,
+        "w_pct": 80.59,
+        "h_pct": 23.605
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord il faut constater que si nous avons, en Suisse, un Etat fouineur, nous avons, à plus forte raison, une presse fouineuse. Pendant la période cruciale de cette histoire, chaque jour apportait sa moisson de nouveaux détails, puisés dans d'innombrables documents confidentiels, en partie étrangers, et dont on ne nous donnait la source. Les conditionnels abondaient, dans cette prose incertaine et compliquée à plaisir, dont il était impossible de suivre les méandres qui devaient sans doute la mettre à l'abri des poursuites. Spécialement dans la presse romande, que j'ai bien sûr lue davantage, les articles consacrés à Madame Kopp ou à son mari étaient, dans toute la mesure du possible, mélangés à des informations concernant d'autres enquêtes, d'autres développements d'affaires de drogue et d'argent criminel. Si le mélange était impossible, on s'arrangeait au moins pour les intriquer ou les juxtaposer. Chose remarquable: presque tous les articles allaient dans le même sens, y compris les lettres de lecteurs qu'on a consenti à publier. On peut, je crois, compter sur les doigts d'une main les articles parus qui ont tenté de faire entendre un son de cloche différent.",
+      "bbox": {
+        "x_pct": 10.627,
+        "y_pct": 46.669,
+        "w_pct": 80.678,
+        "h_pct": 40.266
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "58",
+      "bbox": {
+        "x_pct": 11.196,
+        "y_pct": 91.954,
+        "w_pct": 2.22,
+        "h_pct": 2.051
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer per instructions."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction for paragraphs was truncated in the original JSON.",
+    "Page number 58 was mislabeled as text."
+  ],
+  "doc_id": "2810",
+  "page": 8,
+  "elapsed_seconds": 5.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

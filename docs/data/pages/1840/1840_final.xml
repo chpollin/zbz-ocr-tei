@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Herbsttagung 1981</title>
+        <author>Jeanne Hersch</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">1840</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Herbsttagung 1981</title>
+          <author>Jeanne Hersch</author>
+          <date>1981</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="deu" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="quality-screener-manual" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Validator: VALID, 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings; Entities: 4p 1o 6l 20w = 31; persName 'Mensch' (zbz-p.1251) in 'Wie verhaelt sich der Mensch zu seiner Arbeit' -- Gattungsbegriff, kein Personenname (+4 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="999" lry="741">
+      <zone xml:id="facs_1_r_1" ulx="647" uly="185" lrx="861" lry="211" />
+      <zone xml:id="facs_1_r_2" ulx="647" uly="214" lrx="857" lry="225" />
+      <zone xml:id="facs_1_r_3" ulx="650" uly="290" lrx="892" lry="302" />
+      <zone xml:id="facs_1_r_4" ulx="652" uly="442" lrx="761" lry="514" />
+      <zone xml:id="facs_1_r_5" ulx="180" uly="653" lrx="328" lry="689" />
+      <zone xml:id="facs_1_r_6" ulx="663" uly="700" lrx="742" lry="722" />
+      <zone xml:id="facs_1_r_7" ulx="214" uly="703" lrx="292" lry="715" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1035" lry="745">
+      <zone xml:id="facs_2_r_1" ulx="748" uly="211" lrx="872" lry="240" />
+      <zone xml:id="facs_2_r_2" ulx="551" uly="364" lrx="873" lry="376" />
+      <zone xml:id="facs_2_r_3" ulx="551" uly="391" lrx="700" lry="403" />
+      <zone xml:id="facs_2_r_4" ulx="551" uly="414" lrx="998" lry="455" />
+      <zone xml:id="facs_2_r_5" ulx="551" uly="468" lrx="998" lry="517" />
+      <zone xml:id="facs_2_r_6" ulx="551" uly="529" lrx="998" lry="589" />
+      <zone xml:id="facs_2_r_7" ulx="551" uly="601" lrx="998" lry="643" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1045" lry="745">
+      <zone xml:id="facs_3_r_1" ulx="58" uly="39" lrx="471" lry="102" />
+      <zone xml:id="facs_3_r_2" ulx="565" uly="41" lrx="988" lry="221" />
+      <zone xml:id="facs_3_r_3" ulx="58" uly="119" lrx="430" lry="133" />
+      <zone xml:id="facs_3_r_4" ulx="58" uly="141" lrx="472" lry="221" />
+      <zone xml:id="facs_3_r_5" ulx="58" uly="233" lrx="472" lry="300" />
+      <zone xml:id="facs_3_r_6" ulx="564" uly="239" lrx="704" lry="255" />
+      <zone xml:id="facs_3_r_7" ulx="564" uly="264" lrx="983" lry="300" />
+      <zone xml:id="facs_3_r_8" ulx="564" uly="314" lrx="988" lry="382" />
+      <zone xml:id="facs_3_r_9" ulx="58" uly="314" lrx="472" lry="591" />
+      <zone xml:id="facs_3_r_10" ulx="564" uly="394" lrx="987" lry="461" />
+      <zone xml:id="facs_3_r_11" ulx="564" uly="473" lrx="988" lry="584" />
+      <zone xml:id="facs_3_r_12" ulx="58" uly="598" lrx="283" lry="613" />
+      <zone xml:id="facs_3_r_13" ulx="564" uly="598" lrx="989" lry="708" />
+      <zone xml:id="facs_3_r_14" ulx="58" uly="631" lrx="472" lry="708" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1038" lry="748">
+      <zone xml:id="facs_4_r_1" ulx="52" uly="67" lrx="477" lry="113" />
+      <zone xml:id="facs_4_r_2" ulx="53" uly="132" lrx="473" lry="173" />
+      <zone xml:id="facs_4_r_3" ulx="421" uly="177" lrx="473" lry="198" />
+      <zone xml:id="facs_4_r_4" ulx="557" uly="189" lrx="719" lry="207" />
+      <zone xml:id="facs_4_r_5" ulx="902" uly="237" lrx="978" lry="250" />
+      <zone xml:id="facs_4_r_6" ulx="559" uly="346" lrx="978" lry="430" />
+      <zone xml:id="facs_4_r_7" ulx="54" uly="362" lrx="248" lry="380" />
+      <zone xml:id="facs_4_r_8" ulx="56" uly="385" lrx="78" lry="401" />
+      <zone xml:id="facs_4_r_9" ulx="560" uly="445" lrx="701" lry="462" />
+      <zone xml:id="facs_4_r_10" ulx="560" uly="524" lrx="980" lry="631" />
+      <zone xml:id="facs_4_r_11" ulx="383" uly="558" lrx="476" lry="573" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1038" lry="744">
+      <zone xml:id="facs_5_r_1" ulx="66" uly="68" lrx="489" lry="254" />
+      <zone xml:id="facs_5_r_2" ulx="557" uly="68" lrx="980" lry="128" />
+      <zone xml:id="facs_5_r_3" ulx="557" uly="139" lrx="980" lry="215" />
+      <zone xml:id="facs_5_r_4" ulx="557" uly="224" lrx="800" lry="238" />
+      <zone xml:id="facs_5_r_5" ulx="557" uly="247" lrx="980" lry="511" />
+      <zone xml:id="facs_5_r_6" ulx="66" uly="278" lrx="376" lry="291" />
+      <zone xml:id="facs_5_r_7" ulx="66" uly="301" lrx="489" lry="377" />
+      <zone xml:id="facs_5_r_8" ulx="66" uly="387" lrx="489" lry="499" />
+      <zone xml:id="facs_5_r_9" ulx="66" uly="508" lrx="489" lry="537" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1" type="speech">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          Herbsttagung 1981
+        </head>
+        <p facs="#facs_1_r_2">
+          Kongresshaus <placeName ref="#zbz-l.45">Zürich</placeName>, 26. November 1981
+        </p>
+        <p facs="#facs_1_r_3">
+          Menschen – Karrieren – Strukturen
+        </p>
+        <p facs="#facs_1_r_4">
+          
+        </p>
+        <p facs="#facs_1_r_5">
+          ETHICS ETH-BWI
+        </p>
+        <p facs="#facs_1_r_6">
+          01300001045263
+        </p>
+        <p facs="#facs_1_r_7">
+          SPERRY+UNIVAC
+        </p>
+        <p>
+          82.323
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <figure facs="#facs_2_r_1">
+          <head />
+        </figure>
+        <p facs="#facs_2_r_2">
+          Prof. Dr. <persName ref="#zbz-p.2">Jeanne Hersch</persName><lb facs="#facs_2_l_2_1" n="N001" />Philosophin und<lb facs="#facs_2_l_2_2" n="N002" />emeritierte Professorin<lb facs="#facs_2_l_2_3" n="N003" />der <orgName ref="#zbz-o.6">Universität Genf</orgName>
+        </p>
+        <p facs="#facs_2_r_3">
+          Wie verhält sich der <persName ref="#zbz-p.1251">Mensch</persName> zu seiner Arbeit heute?
+        </p>
+        <p facs="#facs_2_r_4">
+          Das ambivalente Verhältnis zur Arbeit
+        </p>
+        <p facs="#facs_2_r_5">
+          <bibl ref="#zbz-w.657">Der Mensch</bibl> hat seit jeher ein zweideutiges Verhältnis zur Arbeit, wenn nicht gar ein vieldeutiges. Auf der einen Seite ist die Arbeit als Mühe und Anstrengung, als Fluch erlebt worden. Auf der anderen Seite ist sie vom Arbeitenden auch seit jeher als Erfüllung empfunden worden. Sie ist sein Stolz, sein Grund zum Leben und bedeutet ihm oft auch einen Sieg.
+        </p>
+        <p facs="#facs_2_r_6">
+          Oft brachte sie auch Risiko und Gefahr; es gab sogar Formen der Arbeit, bei denen Menschen den Tod gefunden haben. Denken Sie an die Opfer beim Tunnelbau oder der wissenschaftlichen Forschung. Denken Sie auch an die vielen namenlosen Arbeiter, die in den vergangenen Jahrhunderten wegen ihrer Arbeit zu früh gestorben sind.
+        </p>
+        <p facs="#facs_2_r_7">
+          Mein Vater hatte seinerzeit eine statistische Studie gemacht über die Ungleichheit vor dem Tode. Zwar spricht man meistens von der Gleichheit vor dem Tode. Aber mein Vater, Demograph und Statistiker, gliederte die Stadt <placeName ref="#zbz-l.1">Paris</placeName> nach der Höhe der Mieten und verglich damit die verschiedenen Todesalter und Todesursachen. Er kam zu ergreifenden Ergebnissen: Es gab wirklich eine Ungleichheit der Menschen vor dem Tode, je nach der Arbeit, die sie geleistet hatten.
+        </p>
+        <p>
+          Aber auf der anderen Seite kann man sagen, dass die Nicht-Arbeit, sei es, weil man eben nicht arbeiten will, nicht arbeiten kann oder dazu nicht fähig ist, zu gefährlicher Langeweile, manchmal sogar zu Wahnsinn oder zu Selbstmord führt. So
+        </p>
+        <p>
+          SPERRY-LINIVAC
+        </p>
+        <p>
+          Computer-Fachleute, die Ihnen zuhören.
+        </p>
+        <p>
+          49
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          zweideutig ist die Arbeit im menschlichen Leben, und sie war es in allen Phasen der Geschichte. Es ist das Schicksal des Menschen, dass er diese Zweideutigkeit der Arbeit auf sich nehmen und ertragen muss.
+        </p>
+        <p facs="#facs_3_r_2">
+          In der industriellen Welt hat sich das Verhältnis zur Arbeit geändert
+        </p>
+        <p facs="#facs_3_r_3">
+          Doch unsere heutige Situation ist, was die Arbeit anbetrifft, durch etwas ganz Besonderes gekennzeichnet. Das hat, wie ich glaube, verschiedene Gründe; zunächst geschichtliche. In unserer <bibl ref="#zbz-w.705">Zeit</bibl>, und ich nehme jetzt diese <bibl ref="#zbz-w.705">Zeit</bibl> ziemlich breit, ist die Arbeit eine bezahlte Arbeit. Sie ist meistens nicht direkt auf den Wert des Hervorgebrachten ausgerichtet; ihre Entlöhnung wird sozusagen von aussen festgelegt. Und so ist es für die große Mehrheit der Menschen in der entwickelten Welt, die ja eine industrielle Arbeit verrichten.
+        </p>
+        <p facs="#facs_3_r_4">
+          Dazu kommen die Bedingungen, unter denen die Arbeit vollzogen wird. Es ist offensichtlich etwas ganz anderes, auf dem Feld zu arbeiten, auf einem Hof oder in einer Fabrik, in einem Gewerbebetrieb oder in einem Bürohaus. Und das alles wirkt sehr stark auf die Art, wie die Arbeit erlebt wird. Aber ich glaube, dass der größte Unterschied zwischen unserer und der früheren <bibl ref="#zbz-w.705">Zeit</bibl> darin besteht, dass wir eine ganz andere Beziehung zum Produkt unserer Arbeit haben.
+        </p>
+        <p facs="#facs_3_r_5">
+          In früheren Zeiten gebrauchte man in der Arbeit seinen Körper und Werkzeuge, wodurch schließlich etwas entstand. Und es gab eine direkte, von jedem Menschen erlebte Beziehung zwischen der Bewegung, der Arbeit seines Körpers oder seiner Werkzeuge und dem Gegenstand, der dabei entstand. Natürlich wurde das Produkt dann verkauft, denn der Arbeitende brauchte Geld. Doch kam das Geld sozusagen von «ausserhalb» dazu; direkt in der Arbeit hatte man es nur mit dem Produkt zu tun. Das lässt sich vielleicht am ehesten damit vergleichen, was in einer Schule geschieht. Wenn der Lehrer unterrichtet, beschäftigt er sich den ganzen Tag mit den Kindern und dem Lehrstoff, aber nicht mit dem Geld, das er am Monatsende bekommen wird. Ich glaube, dieses Verhältnis zur Arbeit war in früheren Zeiten vorherrschend. Die Verbindung zwischen der Mühe der Arbeit und dem Produkt der Arbeit wurde direkt erlebt. In der industriellen Welt aber ist etwas dazwischengekommen: das Geld. Man arbeitet, um Geld zu verdienen. Und ich glaube, das gilt nicht nur für die Arbeitnehmer, sondern ebenso für die Arbeitgeber. Ein Arbeitgeber wird durchaus seinen Betrieb von der Herstellung von Stoffen auf, beispielsweise, Platten umstellen, wenn das bisherige Produkt nicht mehr genügend Profit abwirft. Denn oft ist es ihm ziemlich gleichgültig, ob er Stoffe verfertigt oder Platten. Dem Arbeitnehmer geht es genauso. Er arbeitet dort, wo er am besten verdient, egal, ob der Betrieb Stoffe oder Platten herstellt. Was also entscheidend geworden ist, ist nicht der Gegenstand, das aus der Arbeit entstehende Produkt, sondern der Profit einerseits, der Lohn andererseits, also das Geld. Und im Grunde hat man das Gefühl, dass die Arbeit nicht so sehr dazu da ist, um etwas zu produzieren, als eher, um etwas kaufen zu können, egal, ob es Investitionen oder Güter sind. Dadurch hat sich etwas sehr Tiefes im Verhältnis des Menschen zu seiner Arbeit geändert.
+        </p>
+        <p facs="#facs_3_r_6">
+          Die industrielle Welt kennt keine Tradition
+        </p>
+        <p facs="#facs_3_r_7">
+          Ich war einmal vor dem Krieg in <placeName ref="#zbz-l.50">Polen</placeName>. Dort in einem Dorf auf dem Lande gab es eine Bevölkerung, die teils auf den Feldern und teils in einer Farbenfabrik arbeitete.
+        </p>
+        <p facs="#facs_3_r_8">
+          Ein Familienmitglied bestellte das Feld, ein anderes war im Betrieb beschäftigt. Auch waren es die selben Familien, die einerseits diesen Boden, andererseits diesen Betrieb besassen. Die beiden Arbeitswelten waren also auf engstem Raume zu vergleichen. Die verschiedenen Ereignisse der Landwirtschaft, etwa die Saatzeit oder die Erntezeit, wurden mit sehr prägnanten Festen gefeiert. Das brachte Rhythmus in das Leben der Bevölkerung. Auffallend war jedoch, dass es nichts derartiges im industriellen Leben gab. Es ist fast überall so: Die Industriewelt hat keine Traditionen geschaffen. Vielleicht ist das ein Zeichen für die Veränderung, von der ich eben sprach. Es ist, als könnte man in der industriellen Welt gar keine Feste säen. Es ist, wie wenn man Korn auf ein Trottoir aussät, da wächst eben nichts. Die Zweiwertigkeit der Arbeit hängt auch damit zusammen, und dadurch wird es noch schwieriger, sie zu ertragen und zu verstehen.
+        </p>
+        <p facs="#facs_3_r_9">
+          Sinnverlust in der Arbeit
+        </p>
+        <p facs="#facs_3_r_10">
+          Einerseits spricht man vom Recht auf Arbeit – es ist fast ein Dogma geworden –, andererseits aber soll die Arbeit so kurz dauern wie nur möglich – auch das ist ein Dogma. Ein klares Zeichen für die Doppelwertigkeit der Arbeit.
+        </p>
+        <p facs="#facs_3_r_11">
+          Welche Veränderungen sind in der industriellen Welt der Arbeit vor sich gegangen? Zunächst einmal hat man es hier mit einem Produktionsystem zu tun, das äusserst kompliziert ist und von dem man immer das Gefühl hat, es existiere seit jeher. Man kann darin seinen Platz oder seinen Weg finden, aber das System existiert schon, es ist irgendwie eine Gegebenheit. Damit verbunden ist die Erfahrung, dass es wichtige und kostspielige Werkzeuge braucht, die von jemandem, ihrem Besitzer, bereitgestellt werden.
+        </p>
+        <p facs="#facs_3_r_12">
+          Daher wird von all denjenigen, die mit diesen Werkzeugen arbeiten, ein Zwang erlebt; ein Zwang, der nicht vom Wetter kommt oder von der Sache, sondern ein Zwang, der von Menschen ausgeübt wird; ein Zwang, der ihre <bibl ref="#zbz-w.705">Zeit</bibl>, den Ort ihrer Arbeit betrifft und die Art und Weise, wie die Arbeit gemacht werden muss. Das ist eine erste Feststellung, die ich für wichtig halte.
+        </p>
+        <p facs="#facs_3_r_13">
+          Ausserdem gibt es jene <bibl ref="#zbz-w.371">Trennung</bibl> zwischen der Arbeit und dem hervorgebrachten Gegenstand durch das Geld. Und dieses Geld ist nur Quantität, es hat keine Qualitäten. Es ist eine abstrakte Wirklichkeit, die nur mengenhaft unterscheidet ist. Diese quantitative Abstraktion des Geldes bewirkt einen starken Verlust an Sinn, den die Menschen schmerzlich empfinden. Man weiß sehr wohl um diesen Sinnverlust und sucht nach Lösungen. Aber meistens sucht man Lösungen, indem man die Arbeitnehmer und Arbeitgeber und ihr gegenseitiges Verhältnis sozusagen als psychologisches Problem betrachtet und sich fragt: Wie kann man das heilen?
+        </p>
+        <p facs="#facs_3_r_14">
+          Ich bin nicht sicher, ob dies der richtige Weg ist. Denn es wäre genau so, wie wenn man im Schulunterricht die Probleme der Kinder in erster Linie psychologisch anfasst und sich fragt, was mit diesen Kindern falsch sei, wie man ihnen psychologisch helfen könnte. Ich habe oft gesagt, der Lehrer solle kein Psychologe sein. Warum? Zwar schaden psychologische Kenntnisse nicht, aber ich meine, der normale Lehrer hat seine Schüler nicht als Gegenstand der Forschung vor sich, sondern er hat Schüler vor sich, also junge Wesen, mit denen er etwas anderes, ein Drittes, studiert oder lernt. Der Lehrer begegnet den Schülern im Lehrstoff, in
+        </p>
+        <p>
+          SPERRY-LINIVAC
+        </p>
+        <p>
+          Herbsttagung 1981
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          dem, wovon die Rede ist. Es handelt sich also um ein Verhältnis zu dritt: Lehrer, Schüler und <bibl ref="#zbz-w.93">Begegnung</bibl> im Lehrstoff. Das ist das normale Schema des Unterrichts und nicht die direkte <bibl ref="#zbz-w.93">Begegnung</bibl>, wo der Lehrer seine Schüler psychologisch behandelt.
+        </p>
+        <p facs="#facs_4_r_2">
+          In der Arbeit ist es auch so. Woran leiden also diese Menschen in der Arbeitswelt? Am Verlust an wirklichen, greifbaren Zielen. Das Produkt der Arbeit, der Gegenstand, fehlt. Mit dem Verlust des Gegenstandes geht uns sehr viel verloren. Die Wirklichkeit des Gegenstandes, der gemeinsame Gegenstand fehlt.
+        </p>
+        <p facs="#facs_4_r_3">
+          Wie kann man das heilen? Es geht weniger darum, dass ein Psychologe Arbeitgeber und Arbeitnehmer als Gegenstand behandelt, als viel mehr wieder einen echten Gegenstand zu finden. Das heisst, ein gemeinsames Ziel, etwas, worauf beide ausgerichtet sind, ein Drittes, wie in der Schule. An jenem Mangel an Objekt, an Gegenstand, leiden alle.
+        </p>
+        <p facs="#facs_4_r_4">
+          Daher kommt etwas, was ebenso schädliche Wirkungen hat: Die scharfe <bibl ref="#zbz-w.371">Trennung</bibl> zwischen der Arbeitszeit und der Freizeit.
+        </p>
+        <p facs="#facs_4_r_5">
+          Die mangelnde Einheit des Lebens
+        </p>
+        <p facs="#facs_4_r_6">
+          Wenn man eine sehr mühsame oder sehr sinnlos scheinende oder gar langweilige Arbeit hat, dann kann man diese Arbeitszeit wahrscheinlich nur schwerlich mit der Freizeit verbinden. Aber solche Arbeiten gibt es viel weniger, als man denkt. Und es gibt weit mehr Arbeiten, die, wenn sie mit Sinn erlebt würden, sehr wohl eine Verbindung mit der Freizeit zuließen.
+        </p>
+        <p facs="#facs_4_r_7">
+          Wie erleben heute die meisten Menschen das Verhältnis zwischen ihrer Arbeit und ihrer Freizeit? Sie arbeiten beispielsweise bis halb sechs. Um halb sechs, was immer auch geschieht, wo immer man ist, plötzlich ist niemand mehr da, alle sind auf der Strasse. Das zeugt davon, dass sie ihre Arbeit irgendwo und irgendwann völlig mechanisch stehen lassen können.
+        </p>
+        <p facs="#facs_4_r_8">
+          Diese Arbeitsweise, diese mechanische <bibl ref="#zbz-w.371">Trennung</bibl> zeigt, dass man im Moment, wo man die Arbeit verlässt, sich zur Freizeit wendet, und da erst fängt das «eigentliche» Leben an. Und dieses eigentliche Leben, das da plötzlich anfängt, hat keine Beziehung mehr mit der eben noch geleisteten Arbeit. Vergleichen wir das zum Beispiel mit der Arbeit eines Fischers. Er fischt auf dem See, und nachher, in der Freizeit, flickt er seine Netze. Das hat weiterhin mit seiner Arbeit zu tun, das eine bereitet das andere vor, das andere ist Folge von dem einen – das Leben hat eine bestimmte Einheit. In der industriellen Arbeitswelt fehlt diese Einheit. Und das, glaube ich, ist sehr wichtig. Wenn die Freizeit zum eigentlichen Leben wird, dann ist die Arbeitszeit dem Leben entzogen, gestohlen. Gestohlen – auch wenn diese <bibl ref="#zbz-w.705">Zeit</bibl> bezahlt wird.
+        </p>
+        <p facs="#facs_4_r_9">
+          Es ist eine verkehrte Vorstellung zu glauben, man sei quitt, wenn man eine Arbeit bezahle. Man ist niemals quitt für eine Arbeit, die jemand für einen leistet. Warum nicht? Weil die Arbeit Mühe und <bibl ref="#zbz-w.705">Zeit</bibl> des Lebens bedeutet. Und <bibl ref="#zbz-w.705">Zeit</bibl> des Lebens gibt kein Geld zurück. In einem der Vorträge haben wir von der Endlichkeit und Sterblichkeit gehört. Das sind Grundeigenschaften des Menschen. Gerade deswegen bezahlt ja kein Geld die <bibl ref="#zbz-w.705">Zeit</bibl> der Arbeit, die jemand tut. Die einzige Weise, Arbeitszeit zu bezahlen, besteht darin, diese Arbeitszeit mit dem Geld zu bezahlen, das man selbst durch Aufwendung eigener Lebenszeit verdient hat. Dann zahlt man <bibl ref="#zbz-w.705">Zeit</bibl> mit <bibl ref="#zbz-w.705">Zeit</bibl>.
+        </p>
+        <p facs="#facs_4_r_10">
+          Dankbarkeit für die Arbeit
+        </p>
+        <p facs="#facs_4_r_11">
+          Überdies sollte man demjenigen, der für einen arbeitet, nicht nur dafür zahlen, sondern ihm auch Danke sagen. Eigentlich ist die deutsche Redensart ziemlich seltsam, wonach der Arbeitgeber derjenige ist, der jemanden dazu bringt, zu arbeiten, und derjenige, der für ersteren arbeitet, Arbeitnehmer heisst – er ist doch in Wirklichkeit der Arbeitgeber.
+        </p>
+        <p>
+          Wenn man das einmal klar sieht, ändert dies das Verhältnis unter den Menschen in der Arbeitswelt sehr stark. Das sollte bereits in der Erziehung der Kinder anfangen, die von klein auf Dankbarkeit für geleistete Arbeit lernen sollten. Welche Eltern denken schon daran, wenn sie mit Kindern auf einer Strasse fahren, diese darauf aufmerksam zu machen, dass die Strasse nicht einfach da ist, wie ein <persName ref="#zbz-p.777">Bach</persName> etwa, sondern dass sie mühsam von Menschen gebaut wurde und jetzt Kinder und Eltern dorthin führt, wo sie hin wollen? Also ein Gedanke der Dankbarkeit für die, welche die Strasse geschaffen haben.
+        </p>
+        <p>
+          Identifikation in der Arbeit
+        </p>
+        <p>
+          Weiter besteht in der industriellen Welt eine <bibl ref="#zbz-w.371">Trennung</bibl> zwischen Denken und Produzieren, zwischen Kopf und Hand. Nur zu oft fühlen sich arbeitende Menschen anonym, so anonym, dass sie den Drang verlieren, ihr Bestes zu leisten und daher für die schwierigere Arbeit eingesetzt zu werden. Es ist jedoch ein Grundbedürfnis jedes Menschen, zu versuchen, so zuständig zu werden, dass man ihn durch seine Exzellenz mit der Arbeit identifizieren kann, selbst da, wo die Arbeit weitgehend anonym ist.
+        </p>
+        <p>
+          Die Entwertung der Arbeit
+        </p>
+        <p>
+          Natürlich kommen in der industriellen Welt die konkreten Arbeitsbedingungen wie Lärm, Hitze, Kälte oder Eintönigkeit dazu. Man hat auf diesem Gebiet sehr grosse Fortschritte gemacht. Doch nimmt heute der Anteil der langweiligen Arbeiten weiter zu: Die Langeweile in der Arbeit ist etwas Gefährliches. Sie trägt sehr viel dazu bei, dass ausschließlich die Freizeit das echte Leben ausmacht. Dazu kommt, dass wir in einer sehr anspruchsvollen Welt leben: Die meisten Menschen glauben, sie wären unter anderen Umständen grosse Dichter, grosse Musiker oder grosse Forscher geworden. Vor einigen Jahren gab es in <placeName ref="#zbz-l.2">Frankreich</placeName> einen Wettbewerb unter Kindern, und der hiess: Wir sind alle Dichter. Ich habe oft gesagt, dass wir nicht alle Dichter sind – <persName ref="#zbz-p.50">Gott</persName> sei Dank. Denn Dichter sind sehr kostbar, doch sollten sie nicht zu zahlreich sein. Wenn aber jeder glaubt, er hätte einen Anspruch darauf, ein grosser schöpferischer Dichter, Musiker oder Maler zu werden, dann kann ihn natürlich die alltägliche Arbeit nur erbittern, und er empfindet seine Entwertung doppelt.
+        </p>
+        <p>
+          Hinzu kommt noch die Entwertung der technischen Welt schlechthin. Zwar genießt man sie jeden Tag, jede Nacht, die ganze <bibl ref="#zbz-w.705">Zeit</bibl>, aber gleichzeitig verdammt
+        </p>
+        <p>
+          SPERRY-LINIVAC
+        </p>
+        <p>
+          Computer-Fachleute, die Ihnen zuhören.
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          man sie. Überhaupt ist sie entwertet: Man denkt, man sei auf dem falschen Weg. Eigenartigerweise sind es die selben Menschen, die einerseits behaupten, wir taten zu wenig, um die Technik über die ganze Welt zu verbreiten, die andererseits sagen, dass die technische Welt sinnlos sei. Das Seltsame dabei ist, dass man nichts zu Ende denkt. Wenn aber diese industrielle Welt und sogar deren Ergebnisse als sinnlos bezeichnet werden, dann wird natürlich auch die Arbeit, die dies alles hervorbringt, einmal mehr entwertet. Von daher kommt es, dass manche sagen: «Ich will keine Karriere machen, ich bin nicht dumm.» Das bedeutet im Grunde gar nicht, dass sie keine Karriere machen wollen. Denn Karriere machen wollen, das ist ungefähr wie blühen wollen, sich entfalten wollen. Dabei entfaltet man sich nicht und man blüht auch nicht, man welkt. Man blüht nur und entwickelt sich, indem man sich vergisst, weil man an etwas denkt. An etwas anderes, etwa an eine Erfindung, an eine Möglichkeit, einen Dienst zu leisten, jemanden zu retten, ein Werk zu schaffen, oder weil man an einen Menschen denkt. Und dabei vergisst man vollkommen zu blühen und erblüht dabei doch. Also ist diese Denkweise über das Karrieremachen irgendwie verfehlt.
+        </p>
+        <p facs="#facs_5_r_2">
+          Zurück zu den Grundbedürfnissen des Menschen
+        </p>
+        <p facs="#facs_5_r_3">
+          Was ich zeigen wollte, ist, dass die Erfahrungen im Unbehagen oder im Unglück der Arbeit neue Wirklichkeiten entdecken lassen. Man kann sie nicht einfach abschaffen, sagen, es wäre besser, wenn wir heute noch so denken würden wie vor fünfzig Jahren. Die Erfahrungen enthalten Wahrheiten und Widersprüche, alles eng ineinander verwickelt. Wir müssen Wege finden, um diesem Ungenügen, diesen Entwertungen entgegenzutreten, wo immer es möglich ist. Wir müssen den Grundbedürfnissen der Menschen entsprechen. Das bedeutet viel. Es heisst gerade darin Echtes von Falschem zu unterscheiden.
+        </p>
+        <p facs="#facs_5_r_4">
+          Zunächst müssen wir im Menschen unserer <bibl ref="#zbz-w.705">Zeit</bibl> wieder das Bewusstsein dafür wecken, dass die Menschen arbeiten müssen, sonst können sie nicht leben. Das hängt weder von einem System ab, noch von einer politischen Ordnung: arbeiten müssen die Menschen, das gehört zum Menschsein. Es ist kein Sollen, es ist zunächst einmal ein Müssen. Es hilft gar nichts, davon zu träumen, dass man wieder im <placeName ref="#zbz-l.262">Garten Eden</placeName> ist, wo die Früchte an den Bäumen hingen.
+        </p>
+        <p facs="#facs_5_r_5">
+          Doch müssen wir uns eines bewusst sein: Die Kinder wachsen meistens in der Stadt auf. In der Stadt sehen sie die Arbeit nicht, sie sehen den Vater erst nach der Arbeit. Sie sehen höchstens die Hausarbeit der Mutter, nicht aber die Berufsarbeit. Was sehen sie also? Nur Gegenstände, die zu verkaufen und zu kaufen sind. So haben sie das Gefühl – es ist kein Gedanke, es ist ein Gefühl –, dass die Gegenstände von alleine da sind, von Natur aus. Warum also sollte man kein Recht darauf haben? Die Idee, dass es sie zunächst einmal hervorzubringen galt und somit menschliche Arbeit darin investiert ist, das können sie in den Gegenständen nicht mehr lesen. Es ist daher eine Umerziehung nötig, damit die Kinder von klein auf wieder erfahren, dass alle Gegenstände, die sie mit so viel Begeisterung brauchen, eben Arbeitsprodukte der Menschen sind und daher Dankbarkeit erheischen. Dankbarkeit für das, was vorher geschaffen wurde.
+        </p>
+        <p facs="#facs_5_r_6">
+          Weiter ist es notwendig, den Menschen, den Arbeitenden, durch erlebte Erfahrung klar zu machen, wie sehr sich das Leben in den letzten vierzig Jahren verändert hat und wieso diese sozialen Veränderungen erst möglich geworden sind.
+        </p>
+        <p facs="#facs_5_r_7">
+          Nehmen wir das Beispiel von der Arbeit am Fliessband, die zu Recht so unmenschlich erfahren und beschrieben wird. Aber ohne Arbeit am Fliessband hätten nicht alle Arbeiter ihren Wagen. Das eine geht nicht ohne das andere. Dass es sich nun verändert, dass man es vielleicht anders anstellen kann, das ist dann ein Beitrag der Forscher.
+        </p>
+        <p facs="#facs_5_r_8">
+          Was ist in unseren westlichen Demokratien in den letzten vierzig, fünfzig Jahren alles geändert worden? Mehr als in der ganzen Geschichte der Menschheit. Aber niemand weiß davon, woher soll man auch. Es wird nicht gelehrt, es wird nicht gezeigt, es wird nicht erlebt. Man weiß nichts davon, die nahe Vergangenheit ist nicht bekannt. Und dadurch gehen der Sinn und die Einsicht in die Notwendigkeit der Arbeit verloren. All das muss wieder von Grund auf gezeigt und begriffen werden. Dadurch lässt sich vielleicht das Verhältnis des Arbeitenden zu seiner Arbeit verbessern.
+        </p>
+        <p facs="#facs_5_r_9">
+          Vertieftes Verständnis für seine Arbeit
+        </p>
+        <p>
+          Es gibt noch etwas anderes. In der Ausbildung der Lehrlinge sollte sehr viel mehr Breite und Tiefe, viel mehr Bildung eingebracht werden. Ich finde es absurd, dass man sich in einer derart reichen Gesellschaft wie der unsrigen um zwei Stunden mehr oder weniger Ausbildung streiten kann. Was ich damit meine, ist nicht eine allgemeine, oberflächliche Bildung, sondern eine Bildung, die dem Lehrling an Hand der Arbeit selbst, auf die er sich vorbereitet, ein tieferes und klareres Bewusstsein verschafft von der Situation, in der er einst arbeiten wird, von der Vergangenheit, aus der seine Arbeit stammt. Wenn ich zum Beispiel an die Holzberufe denke, so liesse sich die ganze Geschichte der Pflanzen lehren, die Geschichte der Bäume, die Chemie des Holzes, seine Eigenschaften usw. Aber auch die Formen der Bearbeitung des Holzes, die <placeName ref="#zbz-l.565">Rolle</placeName> des Holzes in der Geschichte des Menschen, der Kunst oder die Probleme des Transportes, des Handels mit dem Holz, so dass diese Lehrlinge in ihrer Arbeit nicht sich selbst fremd werden, sondern wissen, wie sie arbeiten, wofür sie arbeiten, in welcher Welt sie arbeiten und darin wirklich mit ihrem Bewusstsein gegenwärtig sind. Eine derartige Bildung wäre auch der Mühe wert, und ganz besonders im Feld der Informatik. Hier wäre es wesentlich, dass alle Leute, die da mitarbeiten, und alle jene, die Informatik brauchen oder brauchen werden, mehr und tiefer verstehen, was darin vor sich geht. Damit sie nicht jenen Aberglauben weiterpflegen von den «denkenden Maschinen». Diese Redensart ist pervers. Sie trägt dazu bei, dass die Menschen den Sinn für das spezifisch Menschliche verlieren.
+        </p>
+        <p>
+          54 SPERRY-LINIVAC
+        </p>
+        <p>
+          55 Herbsttagung 1981
+        </p>
+      </div>
+      </body></text>
+</TEI>

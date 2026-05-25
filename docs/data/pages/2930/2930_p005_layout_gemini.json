@@ -1,0 +1,135 @@
+{
+  "doc_id": "2930",
+  "page": 5,
+  "image_width": 868,
+  "image_height": 697,
+  "num_regions": 11,
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 9.7,
+        "w_pct": 8.2,
+        "h_pct": 1.3
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 12.5,
+        "w_pct": 35.1,
+        "h_pct": 8.5
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 21.2,
+        "w_pct": 35.1,
+        "h_pct": 11.0
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 32.4,
+        "w_pct": 35.1,
+        "h_pct": 42.3
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 75.1,
+        "w_pct": 35.1,
+        "h_pct": 6.9
+      }
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 10.5,
+        "y_pct": 86.7,
+        "w_pct": 1.6,
+        "h_pct": 1.5
+      }
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 65.4,
+        "y_pct": 9.7,
+        "w_pct": 25.6,
+        "h_pct": 1.3
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 55.9,
+        "y_pct": 12.5,
+        "w_pct": 35.1,
+        "h_pct": 8.6
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 55.9,
+        "y_pct": 21.3,
+        "w_pct": 35.1,
+        "h_pct": 16.4
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 55.9,
+        "y_pct": 37.9,
+        "w_pct": 35.1,
+        "h_pct": 44.1
+      }
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 89.4,
+        "y_pct": 86.7,
+        "w_pct": 1.6,
+        "h_pct": 1.5
+      }
+    }
+  ],
+  "elapsed_seconds": 6.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini-detect",
+  "page_orientation": "portrait",
+  "num_columns": 2
+}

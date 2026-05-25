@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dincertitude angoissée en a été Tagent affectif et efficace ? Ici encore, nous nouS trouvons rejetés loin de Kant et de son pur Devoir, puisque le facteur éthique est ici fait de sentiment, et d’un sentiment entretenu par l’ignorance provisoire, temporaire, d’un certain futur.",
+      "bbox": {
+        "x_pct": 6.256,
+        "y_pct": 8.131,
+        "w_pct": 81.928,
+        "h_pct": 8.862
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Reste le présent insaisissable, pourrait ici, parce qu’insaisissable, tenir le rôle du noumène parfait : la liberté responsable. Mais comme ce présent se déplace sans cesse “au fil du temps” il n’en est que “le lieu” ou plutôt “le non-lieu” temporel. “Le lieu” s’il lui reste une fixité, malgré tout. “Le non-lieu” s’il n’est que glisse. Le présent “décisif” ? Oui, c’est là seulement que je peux travailler à ma conférence pour la rendre meilleure, je ne le peux ni hier, ni demain. Mais si le futur va en abolir l’enjeu, en même temps que le souci ?",
+      "bbox": {
+        "x_pct": 6.306,
+        "y_pct": 18.462,
+        "w_pct": 81.667,
+        "h_pct": 16.992
+      },
+      "changed": true,
+      "change_reason": "The text content was significantly truncated and contained typos compared to the source image. Updated content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je vois se refermer un piège prodigieux, fait de fluidité et de cristal, m’épinglant à ma liberté.",
+      "bbox": {
+        "x_pct": 6.592,
+        "y_pct": 37.239,
+        "w_pct": 80.933,
+        "h_pct": 4.418
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and casing in text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Du moins jusqu’à ma mort, qui abolira l’avenir.",
+      "bbox": {
+        "x_pct": 9.913,
+        "y_pct": 43.645,
+        "w_pct": 35.485,
+        "h_pct": 2.065
+      },
+      "changed": true,
+      "change_reason": "Added missing text fragment from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais non le passé. Car le passé, lui, ne passe pas. Serait-ce lui, le proche de l’être, qui, toute liberté éteinte, en conserve le poids pour la vérité ?",
+      "bbox": {
+        "x_pct": 6.343,
+        "y_pct": 47.664,
+        "w_pct": 81.716,
+        "h_pct": 4.359
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text spacing."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Juillet 1992",
+      "bbox": {
+        "x_pct": 73.756,
+        "y_pct": 56.075,
+        "w_pct": 14.303,
+        "h_pct": 2.065
+      },
+      "changed": true,
+      "change_reason": "Label changed to page_footer/filter as it represents a document metadata tag, not paragraph text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text was incomplete and contained many errors.",
+    "Footer date was incorrectly classified as paragraph text.",
+    "Punctuation and spacing errors throughout segments."
+  ],
+  "doc_id": "2850",
+  "page": 3,
+  "elapsed_seconds": 6.63,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

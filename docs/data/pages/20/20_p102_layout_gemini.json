@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "100 SÉDUCTION ESTHÉTIQUE",
+      "bbox": {
+        "x_pct": 14.88,
+        "y_pct": 8.04,
+        "w_pct": 69.45,
+        "h_pct": 2.25
+      },
+      "changed": true,
+      "change_reason": "Identified as running header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "le temps que remplit une symphonie n'est du temps. Cela est possible justement parce qu'une œuvre d'art ne devient pas. Le processus de sa création est, du point de vue de l'art, indifférent, et elle n'existe que définitive. Mais si, en cherchant l'unité philosophique du monde, on supprime le temps indéfini et amorphe pour lui substituer une forme close, c'est alors une œuvre d'art qui se crée — le système de Hegel.",
+      "bbox": {
+        "x_pct": 14.91,
+        "y_pct": 12.517,
+        "w_pct": 76.31,
+        "h_pct": 23.546
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'est pas permis de rester devant une œuvre d'art. L'artiste l'abandonne et va plus loin. S'il reste auprès d'elle, elle le tue. Car il n'y a vie que dans le temps. La pensée a besoin d'infinité, l'action a besoin d'avenir et de réalité inachevée, l'existence a besoin de risque.",
+      "bbox": {
+        "x_pct": 14.955,
+        "y_pct": 35.815,
+        "w_pct": 76.114,
+        "h_pct": 15.853
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "C. L'OBSTACLE AU MIME COMME CHIFFRE DE VÉRITÉ METAPHYSIQUE",
+      "bbox": {
+        "x_pct": 19.834,
+        "y_pct": 54.366,
+        "w_pct": 66.265,
+        "h_pct": 4.995
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling in header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le système de Hegel n'est pas, néanmoins, une construction vide, loin de là. C'est qu'à la tendance si forte du philosophe à la forme esthétique il y avait un contre-poids : sa propre personnalité. Voilà pourquoi nul autre ne peut vivre dans son œuvre : sans la personnalité de l'auteur, elle devient aussitôt, à cause de son achèvement même, une chose morte. Cette philosophie qui embrasse tout, qui devait être valable pour tous et pour tout, qui sacrifie à sa volonté d'universalité tout ce qui est individuel, ne reste vraie que comme philosophie",
+      "bbox": {
+        "x_pct": 14.608,
+        "y_pct": 61.363,
+        "w_pct": 76.37,
+        "h_pct": 28.37
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match content."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Detected page header and page number as separate entity.",
+    "Initial text transcriptions were severely garbled.",
+    "Section header had OCR errors in spelling."
+  ],
+  "doc_id": "20",
+  "page": 102,
+  "elapsed_seconds": 4.48,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

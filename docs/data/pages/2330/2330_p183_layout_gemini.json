@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'ailleurs, il est très difficile d'agir, de toute façon. Si, par exemple, vous élevez une plainte sur un point précis, les responsables de la radio ou de la télévision vous répondront : ce n'est qu'un élément dans un ensemble. Et si vous vous en prenez à l'ensemble, on vous dira : donnez-nous un exemple précis. Dans les media, le rapport de la partie au tout et du tout à la partie est presque insaisissable. De plus, je ne crois pas à l'efficacité du contrôle après coup. Comme le contrôle préalable est tabou parce qu'il constituerait une forme de censure répressive, on ne peut agir qu'en favorisant le pluralisme des journalistes et des réalisateurs.",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 3.871,
+        "w_pct": 79.976,
+        "h_pct": 19.597
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pensez-vous qu'une formation spécifique, destinée aux réalisateurs d'émissions de radio et de télévision, est souhaitable ? J.H. - Comment cela se passe-t-il dans les autres professions ? Pour être coiffeur, il faut faire un apprentissage, passer un examen et acquérir une patente. Le journalisme est un des rares métiers pour l'exercice duquel on n'exige quasi aucun diplôme. On se forme sur le tas. Je crois indispensable d'avoir de bonnes écoles de journalisme, qui travaillent en collaboration avec les facultés, afin que les futurs journalistes fassent l'expérience d'un travail exact et méthodique. En France, en Allemagne, ces écoles existent. En Suisse, ce qui existe me paraît insuffisant. Lorsqu'on fait des études d'un certain niveau, on acquiert, bon gré mal gré, une discipline en vue d'atteindre une certaine objectivité, on assume cette exigence, avec ses critères. Ensuite on peut se former sur le tas et parler de tout autre chose ; mais la qualité de l'exigence qu'on aura acquise se fera sentir partout.",
+      "bbox": {
+        "x_pct": 4.542,
+        "y_pct": 24.435,
+        "w_pct": 80.232,
+        "h_pct": 30.137
+      },
+      "changed": true,
+      "change_reason": "The text content was poorly OCR'd and truncated, corrected it to reflect the full paragraph content in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je remonte presque quarante ans en arrière pour citer un texte que vous avez écrit en 1947, alors que la télévision n'existait pas encore. « La puissance du film et de la radio, disiez-vous, va grandissant. Et le film et la radio dépendent du grand nombre. Rien ne sert de prendre un air pincé et supérieur en constatant que, sous la pression du grand nombre, le niveau de la radio reste bas. Rien ne sert d'aller contre notre époque qui tend à l'affranchissement du grand nombre, et de revendiquer des compétences dictatoriales pour une aristocratie restreinte. Il faut éduquer le grand nombre. La culture de demain sera ce qu'il en aura fait ». Pensez-vous encore aujourd'hui que les problèmes des media se posent en terme de culture de masse ?",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 55.266,
+        "w_pct": 80.305,
+        "h_pct": 22.153
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text to represent the full paragraph content as seen on the page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. Je le pense plus que jamais. Mais aujourd'hui, non seulement tout le monde est auditeur et téléspectateur, mais tout le monde va se mettre à produire. Certains pensent que la concurrence est un bon moyen de lutter contre le pouvoir absolu des media actuels. Je ne le crois pas. Surtout en Suisse, qui est un très petit pays et où, par conséquent, les ressources humaines sont limitées. Les radios et télévisions locales ne peuvent alimenter cette machine dévoreuse, tous les jours, à un niveau",
+      "bbox": {
+        "x_pct": 4.762,
+        "y_pct": 76.96,
+        "w_pct": 79.89,
+        "h_pct": 14.274
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text to represent the full paragraph content as seen on the page."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "179",
+      "bbox": {
+        "x_pct": 80.25,
+        "y_pct": 93.5,
+        "w_pct": 4.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number in the footer, should be labeled as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily truncated and fragmented.",
+    "Page number at bottom right was mislabeled as text."
+  ],
+  "doc_id": "2330",
+  "page": 183,
+  "elapsed_seconds": 7.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

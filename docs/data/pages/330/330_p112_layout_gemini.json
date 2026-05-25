@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE II",
+      "bbox": {
+        "x_pct": 47.173,
+        "y_pct": 27.21,
+        "w_pct": 15.919,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header and fixed OCR typo (GHAPITRE -> CHAPITRE)"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "AMBIGUITÉS",
+      "bbox": {
+        "x_pct": 44.192,
+        "y_pct": 30.152,
+        "w_pct": 20.251,
+        "h_pct": 2.531
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les cinq attitudes idéologiques typiques que nous avons tenté de dégager diffèrent entre elles, plus ou moins nettement, mais toujours de façon sensible, sur chacun des plans considérés. Elles tendent à s'ériger en unités cohérentes, organiques, ou même spirituelles, à imposer la croyance qu'un homme soucieux de l'unité de sa pensée et de ses actes doit forcément, s'il adhère à l'un des points de doctrine énoncés, adhérer également à tous les autres, à la doctrine entière. Mieux : chacune tend à s'incarner en une personne idéale à laquelle tout bon militant s'efforcera de ressembler, si bien que les citoyens finissent par vivre dans une imagerie d'Épinal des idéologies politiques. Choisissez : qui allez-vous être? Qui seront vos amis? — Je crois en Dieu, à l'importance et à l'efficacité de l'esprit, je serai donc conservateur, je défendrai la propriété privée des moyens de production, l'ordre économique établi, je combattrai toutes les tentatives révolutionnaires... — Je trouve l'ordre établi injuste, je suis contre l'anarchie de la libre concurrence, je serai donc socialiste, je ne croirai plus en Dieu, je me détournerai des traditions nationales pour ne travailler qu'à la Révolution économique...",
+      "bbox": {
+        "x_pct": 12.256,
+        "y_pct": 36.248,
+        "w_pct": 85.056,
+        "h_pct": 39.866
+      },
+      "changed": true,
+      "change_reason": "Updated truncated OCR text to represent full paragraph content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ces cohérences restent à examiner. Il faut les mettre à l'épreuve. Trop souvent on nous force la main en nous acculant au choix, et la liberté d'esprit nous manque pour nous interroger d'abord sur les termes dans lesquels ce choix nous est offert. Est-il bien vrai qu'en s'engageant dans la lutte qui déchire notre époque, pour le maintien ou la destruction de telle ou telle structure politique ou économique, on accorde ou l'on refuse du même coup sa...",
+      "bbox": {
+        "x_pct": 12.117,
+        "y_pct": 75.695,
+        "w_pct": 85.195,
+        "h_pct": 14.795
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR output for better text coherence"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "78",
+      "bbox": {
+        "x_pct": 20.67,
+        "y_pct": 91.33,
+        "w_pct": 2.22,
+        "h_pct": 1.25
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer/filter"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction contained significant OCR truncation",
+    "Page number not captured in original regions",
+    "Chapter header was mistagged as text"
+  ],
+  "doc_id": "330",
+  "page": 112,
+  "elapsed_seconds": 5.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

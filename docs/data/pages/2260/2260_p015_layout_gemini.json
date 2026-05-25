@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu secoua sa main. Il la secoua tant qu'il put, rejetant loin de lui le plus de manque possible. Comme le manque était très léger, il alla tomber très loin de Dieu. La masse qu'il forma là-bas resta sans transparence devant l'esprit de Dieu. Et la Terre fut.",
+      "bbox": {
+        "x_pct": 10.843,
+        "y_pct": 11.17,
+        "w_pct": 65.542,
+        "h_pct": 16.86
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu alors créa l'Arbre à nouveau, mais d'une main appauvrie, mêlée de manque et de mort. Il enracina l'Arbre à la terre pour l'empêcher de perdre l'être en revenant à Lui. Il le cerna d'un inflexible liseré d'absence, le sépara à jamais, le multiplia. Et les arbres furent.",
+      "bbox": {
+        "x_pct": 10.964,
+        "y_pct": 30.665,
+        "w_pct": 65.542,
+        "h_pct": 19.613
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu créa la Rivière à nouveau, mais il disloqua son cours et lui refusa la force de remonter jusqu'à Lui. Bruissante et lente, brisée en innombrables filets, elle glissa sur les pentes divergentes de la terre, se cherchant sans espoir. Et les rivières furent.",
+      "bbox": {
+        "x_pct": 10.88,
+        "y_pct": 50.564,
+        "w_pct": 65.386,
+        "h_pct": 16.751
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and cleaned up OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dieu créa le Ciel aux limites du néant pur. Il l'échelonna dans l'inaccessible, le rejeta sans cesse au-delà de lui-même, le mit «ail-",
+      "bbox": {
+        "x_pct": 11.205,
+        "y_pct": 70.227,
+        "w_pct": 64.855,
+        "h_pct": 8.283
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR artifacts and text completion."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "17",
+      "bbox": {
+        "x_pct": 72.8,
+        "y_pct": 81.6,
+        "w_pct": 2.4,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction was heavily truncated and contained OCR artifacts.",
+    "Page number at bottom right was missing from original regions list.",
+    "OCR text did not match the provided visual input correctly."
+  ],
+  "doc_id": "2260",
+  "page": 15,
+  "elapsed_seconds": 4.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

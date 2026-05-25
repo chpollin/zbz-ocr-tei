@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On the plane of concrete circumstances the free ac...",
+      "bbox": {
+        "x_pct": 7.5,
+        "y_pct": 11.46,
+        "w_pct": 74.54,
+        "h_pct": 26.471
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "But, however rigorously clarified, the absolute de...",
+      "bbox": {
+        "x_pct": 7.581,
+        "y_pct": 37.457,
+        "w_pct": 74.355,
+        "h_pct": 9.424
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "That is why the confrontation of Existence with Ex...",
+      "bbox": {
+        "x_pct": 7.444,
+        "y_pct": 46.505,
+        "w_pct": 74.677,
+        "h_pct": 30.616
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in extracted text representation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "But when we are considering the kind of Truth that...",
+      "bbox": {
+        "x_pct": 7.444,
+        "y_pct": 76.796,
+        "w_pct": 74.919,
+        "h_pct": 9.732
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in extracted text representation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "151",
+      "bbox": {
+        "x_pct": 787,
+        "y_pct": 874,
+        "w_pct": 22,
+        "h_pct": 19
+      },
+      "changed": true,
+      "change_reason": "Labeled as text but is a page number, changing to page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Page number 151 was incorrectly labeled as text.",
+    "OCR errors in text field extracted content (e.g. 'wve' -> 'we', 'Trullh' -> 'Truth')."
+  ],
+  "doc_id": "3090",
+  "page": 9,
+  "elapsed_seconds": 6.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

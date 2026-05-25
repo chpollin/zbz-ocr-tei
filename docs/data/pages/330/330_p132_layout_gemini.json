@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "98 IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 11.554,
+        "y_pct": 73.187,
+        "w_pct": 74.321,
+        "h_pct": 2.502
+      },
+      "changed": true,
+      "change_reason": "Top page header erroneously grouped with paragraph text; needs filtering."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Prince; en effet, ce n'est pas le cynisme, c'est la pureté théorique. De même que Kant cherche dans l'acte humain ce qui le rend moral, isolant ainsi un aspect qui n'existe que mélé à tous les autres, de même Machiavel, dans Le Prince, cherche dans la conduite de l'homme d'État ce qui le rend politique, isolant, lui aussi, ce qui n'existe en fait que mélé. Et si le critère de l'élément moral, pour Kant, c'est de s'imposer à la conscience, absolument, inconditionnellement, indépendamment de toute réussite — si bien que les catégories de réussite ou d'échec n'ont sur lui aucune prise —, l'élément politique, pour Machiavel, est celui dont toute la valeur vient de la réussite, celui de l'efficacité, et qui s'impose comme un nombre à ajouter dans une addition dont la somme serait connue d'avance. Ici, les catégories de réussite ou d'échec sont les seules valables, les seules sources de valeur. Quelqu'un se demandait, si la fin ne justifiait pas les moyens, ce qui pourrait bien les justifier.",
+      "bbox": {
+        "x_pct": 12.117,
+        "y_pct": 9.831,
+        "w_pct": 85.237,
+        "h_pct": 33.191
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est aussi absurde d'accuser Machiavel d'immoralisme que Kant d'irréalisme. Kant sait fort bien que l'impératif catégorique ne s'impose guère, et peut-étre jamais, autrement qu'à travers les impératifs hypothétiques. Et Machiavel sait tout aussi bien qu'aucun homme politique n'est une simple machine à réussir des entreprises et que l'exigence politique de la réussite se trouve presque toujours mêle à des exigences morales. Ils font une analyse théorique, pure, de chacune de ces exigences, isolée.",
+      "bbox": {
+        "x_pct": 11.741,
+        "y_pct": 43.137,
+        "w_pct": 85.195,
+        "h_pct": 17.139
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais ce qui vient compliquer les choses, précisément, c'est que sur le plan politique pur, réussir est une obligation, une obligation morale. Comment se fait-il que précisément cet aspect, dont Kant fait pour la conscience individuelle un critère de non-moralité, puisse constituer une exigence morale sur le plan politique? Il est un trait de l'existence politique, d'une importance décisive, auquel on n'a pas suffisamment pris garde. Trop souvent on demande à un homme d'État, à une nation, à une organisation politique ou sociale, de « se sacrifier » à l'idéal commun, de renoncer à tout « égoïsme », de « faire confiance » aux adversaires, etc. Paroles qui tendent à faire coïncider les exigences morales habituelles, valables pour l'individu, avec celles qui devraient s'imposer à un organisme collectif, un corps politique ou social. Mais cela est faux car si l'individu peut — et parfois doit — se sacrifier pour le",
+      "bbox": {
+        "x_pct": 11.323,
+        "y_pct": 59.599,
+        "w_pct": 85.474,
+        "h_pct": 29.26
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match document."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page number and header were incorrectly included in the first paragraph's text bounding box.",
+    "OCR text content for paragraphs was severely corrupted and truncated.",
+    "The header '98 IDÉOLOGIES ET RÉALITÉ' was mislabeled as text."
+  ],
+  "doc_id": "330",
+  "page": 132,
+  "elapsed_seconds": 8.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

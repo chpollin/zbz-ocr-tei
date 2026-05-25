@@ -1,0 +1,114 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SUR LA NOTION DE RACE 137",
+      "bbox": {
+        "x_pct": 33.398,
+        "y_pct": 102.222,
+        "w_pct": 43.19,
+        "h_pct": 1.776
+      },
+      "changed": true,
+      "change_reason": "Identified as page header containing page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle massivement le fait vécu de la rencontre avec des gens ressentis comme physiquement, culturellement, religieusement, différents.",
+      "bbox": {
+        "x_pct": 22.748,
+        "y_pct": 15.556,
+        "w_pct": 54.126,
+        "h_pct": 4.861
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sociologue contemporain, le plus souvent, ne choisit pas entre l'aspect individuel et l'aspect social du préjugé raciste, mais il hésite quant à leur importance respective, et donc quant à l'efficacité de l'éducation d'une part, des mesures sociales ou législatives de l'autre.",
+      "bbox": {
+        "x_pct": 22.861,
+        "y_pct": 20.091,
+        "w_pct": 53.908,
+        "h_pct": 8.144
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est en outre aux prises avec une ambiguité nouvelle, due aux transformations politiques intervenues dans le monde, et qui le rendent incertain quant à l'orientation « morale » à donner à ses recherches, c'est-à-dire quant aux résultats « moralement souhaitables » qu'elles devraient avoir. Depuis 1951, nombre d'États nouveaux sont apparus sur la scène, en Asie et surtout en Afrique. Pour plusieurs d'entre eux l'unité nationale, contestée, fragile, cherche encore ses composantes, de préférence dans une unité culturelle, reflet de l'unité raciale, faute d'unité historique. Les anciennes « races » opprimées ne se contentent plus d'avoir part à l'universalité prétendue des anciennes « races » dominantes; elles revendiquent leur originalité, leur différence. D'autre part, les migrations de natures diverses qui n'ont cessé de s'intensifier au cours du siècle ont posé le problème du rapport entre le maintien de l'Etat et l'unité ou le pluralisme de l'héritage culturel.",
+      "bbox": {
+        "x_pct": 22.885,
+        "y_pct": 27.551,
+        "w_pct": 54.174,
+        "h_pct": 23.718
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En 1951, les victimes du colonialisme attendaient des experts qu'ils enlèvent au racisme exploiteur ses justifications « scientifiques » en niant ou en atténuant la réalité biologique des « races ». En 1967, elles demandent la reconnaissance de leur particularité raciale et culturelle. Les minorités, de leur côté, se contentent de moins en moins des possibilités croissantes d'« assimilation », dont l'idéal serait de les rendre indiscernables de la majorité, mais revendiquent, elles aussi, leur particularité raciale et culturelle.",
+      "bbox": {
+        "x_pct": 22.941,
+        "y_pct": 52.255,
+        "w_pct": 54.15,
+        "h_pct": 14.008
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'expression « raciale et culturelle » n'est d'ailleurs pas nette. Dans son imprécision, elle vise ici avec force l'étre même, le noyau d'étre le plus dense d'une collectivité, l'unité indissociable de son corps et de son âme, le sujet sacré et collectif qui exige la reconnaissance de ses droits. C'est la race vécue comme sujet et défiant toute analyse.",
+      "bbox": {
+        "x_pct": 23.231,
+        "y_pct": 65.84,
+        "w_pct": 53.94,
+        "h_pct": 9.692
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A cette affirmation absolue correspond, du côté des études sociologiques, la découverte croissante de l'irréductible intrication des facteurs et des aspects. Les conflits ethniques s'embrouillent inextricablement avec les processus de colonisation et de décolonisation, avec les rapports de majorité et minorité, avec les intérêts économiques en conflit, avec les inégalités du développement, avec l'urbanisation, les structures politiques, avec tout l'environnement social.",
+      "bbox": {
+        "x_pct": 23.231,
+        "y_pct": 75.03,
+        "w_pct": 53.94,
+        "h_pct": 12.05
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Copyright © 2010 ProQuest LLC. All rights reserved. Copyright © Presses Universitaires de France.",
+      "bbox": {
+        "x_pct": 15.65,
+        "y_pct": 93.8,
+        "w_pct": 49.3,
+        "h_pct": 6.2
+      },
+      "changed": true,
+      "change_reason": "Correctly identified footer content."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Page header/number region mislabeled initially.",
+    "Footer was previously ignored.",
+    "OCR errors in provided text fields."
+  ],
+  "doc_id": "750",
+  "page": 13,
+  "elapsed_seconds": 14.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

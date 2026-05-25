@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Les expériences communistes et l'optimisme éclairé</title>
+        <author>Jeanne HERSCH</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">400</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic>
+            <title>Les expériences communistes et l'optimisme éclairé</title>
+            <author>Jeanne HERSCH</author>
+          </analytic>
+          <monogr>
+            <title />
+            <imprint>
+              <date>unknown</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="claude-opus-4.6-screening" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). TEI VALID: 0 Schema-Fehler, 0 Projekt-Fehler, 0 Warnings; Layout-Overlay S.1/5/9: Regionen korrekt erkannt, single-column, Seitenzahlen separiert; OCR-Text koherent, franzoesisch, keine sichtbaren Artefakte. Fachsprache der politischen Philosophie korrekt (+4 more)</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_1_r_1" ulx="304" uly="360" lrx="774" lry="459" />
+      <zone xml:id="facs_1_r_2" ulx="632" uly="468" lrx="947" lry="525" />
+      <zone xml:id="facs_1_r_3" ulx="156" uly="971" lrx="950" lry="1122" />
+      <zone xml:id="facs_1_r_4" ulx="159" uly="1116" lrx="953" lry="1211" />
+      <zone xml:id="facs_1_r_5" ulx="162" uly="1201" lrx="959" lry="1578" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_2_r_1" ulx="323" uly="156" lrx="1050" lry="281" />
+      <zone xml:id="facs_2_r_2" ulx="323" uly="273" lrx="1050" lry="454" />
+      <zone xml:id="facs_2_r_3" ulx="324" uly="449" lrx="1046" lry="654" />
+      <zone xml:id="facs_2_r_4" ulx="322" uly="652" lrx="1044" lry="1031" />
+      <zone xml:id="facs_2_r_5" ulx="322" uly="1021" lrx="1039" lry="1569" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_3_r_1" ulx="202" uly="152" lrx="940" lry="336" />
+      <zone xml:id="facs_3_r_2" ulx="202" uly="326" lrx="935" lry="532" />
+      <zone xml:id="facs_3_r_3" ulx="201" uly="531" lrx="932" lry="731" />
+      <zone xml:id="facs_3_r_4" ulx="201" uly="730" lrx="930" lry="931" />
+      <zone xml:id="facs_3_r_5" ulx="198" uly="929" lrx="928" lry="1052" />
+      <zone xml:id="facs_3_r_6" ulx="198" uly="1041" lrx="926" lry="1195" />
+      <zone xml:id="facs_3_r_7" ulx="196" uly="1185" lrx="927" lry="1364" />
+      <zone xml:id="facs_3_r_8" ulx="198" uly="1356" lrx="926" lry="1476" />
+      <zone xml:id="facs_3_r_9" ulx="195" uly="1469" lrx="926" lry="1570" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_4_r_1" ulx="316" uly="151" lrx="1063" lry="329" />
+      <zone xml:id="facs_4_r_2" ulx="316" uly="323" lrx="1058" lry="420" />
+      <zone xml:id="facs_4_r_3" ulx="314" uly="414" lrx="1057" lry="764" />
+      <zone xml:id="facs_4_r_4" ulx="314" uly="935" lrx="1050" lry="1141" />
+      <zone xml:id="facs_4_r_5" ulx="311" uly="1162" lrx="1044" lry="1284" />
+      <zone xml:id="facs_4_r_6" ulx="311" uly="1276" lrx="1044" lry="1481" />
+      <zone xml:id="facs_4_r_7" ulx="310" uly="1474" lrx="1037" lry="1566" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_5_r_1" ulx="155" uly="154" lrx="955" lry="420" />
+      <zone xml:id="facs_5_r_2" ulx="156" uly="417" lrx="954" lry="600" />
+      <zone xml:id="facs_5_r_3" ulx="156" uly="588" lrx="954" lry="1081" />
+      <zone xml:id="facs_5_r_4" ulx="158" uly="1073" lrx="952" lry="1223" />
+      <zone xml:id="facs_5_r_5" ulx="157" uly="1213" lrx="952" lry="1368" />
+      <zone xml:id="facs_5_r_6" ulx="159" uly="1357" lrx="954" lry="1567" />
+      <zone xml:id="facs_5_r_7" ulx="920" uly="1592" lrx="942" lry="1631" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_6_r_1" ulx="325" uly="153" lrx="1066" lry="421" />
+      <zone xml:id="facs_6_r_2" ulx="320" uly="703" lrx="1056" lry="821" />
+      <zone xml:id="facs_6_r_3" ulx="315" uly="813" lrx="1052" lry="1053" />
+      <zone xml:id="facs_6_r_4" ulx="314" uly="1043" lrx="1045" lry="1138" />
+      <zone xml:id="facs_6_r_5" ulx="311" uly="1130" lrx="1042" lry="1360" />
+      <zone xml:id="facs_6_r_6" ulx="307" uly="1356" lrx="1039" lry="1508" />
+      <zone xml:id="facs_6_r_7" ulx="306" uly="1502" lrx="1036" lry="1566" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_7_r_1" ulx="152" uly="143" lrx="945" lry="271" />
+      <zone xml:id="facs_7_r_2" ulx="153" uly="266" lrx="945" lry="418" />
+      <zone xml:id="facs_7_r_3" ulx="154" uly="413" lrx="943" lry="513" />
+      <zone xml:id="facs_7_r_4" ulx="151" uly="535" lrx="947" lry="1085" />
+      <zone xml:id="facs_7_r_5" ulx="156" uly="1081" lrx="947" lry="1172" />
+      <zone xml:id="facs_7_r_6" ulx="155" uly="1173" lrx="950" lry="1379" />
+      <zone xml:id="facs_7_r_7" ulx="155" uly="1377" lrx="951" lry="1549" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_8_r_1" ulx="250" uly="140" lrx="1148" lry="438" />
+      <zone xml:id="facs_8_r_2" ulx="249" uly="435" lrx="1141" lry="643" />
+      <zone xml:id="facs_8_r_3" ulx="252" uly="641" lrx="1140" lry="764" />
+      <zone xml:id="facs_8_r_4" ulx="249" uly="762" lrx="1137" lry="1080" />
+      <zone xml:id="facs_8_r_5" ulx="246" uly="1079" lrx="1132" lry="1313" />
+      <zone xml:id="facs_8_r_6" ulx="244" uly="1311" lrx="1128" lry="1493" />
+      <zone xml:id="facs_8_r_7" ulx="243" uly="1488" lrx="1123" lry="1552" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="1240" lry="1755">
+      <zone xml:id="facs_9_r_1" ulx="139" uly="139" lrx="942" lry="198" />
+      <zone xml:id="facs_9_r_2" ulx="139" uly="196" lrx="943" lry="550" />
+      <zone xml:id="facs_9_r_3" ulx="140" uly="549" lrx="942" lry="669" />
+      <zone xml:id="facs_9_r_4" ulx="141" uly="666" lrx="941" lry="901" />
+      <zone xml:id="facs_9_r_5" ulx="142" uly="897" lrx="936" lry="1012" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          <bibl ref="#zbz-w.607">Les expériences communistes et l'optimisme éclairé</bibl>
+        </head>
+        <p facs="#facs_1_r_2">
+          Professeur <persName ref="#zbz-p.2">Jeanne HERSCH</persName><lb facs="#facs_1_l_2_1" n="N001" /><placeName ref="#zbz-l.5">Genève</placeName>
+        </p>
+        <p facs="#facs_1_r_3">
+          Je voudrais dire d'abord que je trouve difficile le sujet proposé à nos travaux. Et plus j'y ai réfléchi, plus je l'ai trouvé difficile. Preuve en soit le fait qu'à lire le programme des conférences, on a l'impression que quatre d'entre elles seulement, du moins d'après leur titre, s'y conforment véritablement. Je n'entends pas par là formuler une critique, mais signaler un symptôme. Nous avons beaucoup de peine à prendre les choses sous le biais proposé. Personnellement ce sujet m'a plongé dans une grande perplexité, surtout pour deux raisons que je veux donner parce qu'elles pourront, peut-être, servir à élucider, ou du moins à mettre en évidence, les difficultés de méthode qu'implique notre propos.
+        </p>
+        <p facs="#facs_1_r_4">
+          Première difficulté : quelles sont les expériences qui méritent d'être appelées « communistes » ? Quels sont ici les critères ? Il ne suffit pas qu'une expérience se situe dans une région géographique déterminée pour qu'elle mérite de s'appeler communiste.
+        </p>
+        <p facs="#facs_1_r_5">
+          Or il y a une ambiguïté peut-être insurmontable entre au moins trois aspects de ce que l'on a coutume aujourd'hui d'appeler « expérience communiste ».
+        </p>
+        <p>
+          Certains ont tendance à appeler communiste ce qui se trouve être lié à une révolution accomplie contre un ordre de choses antérieur, féodal ou quasi féodal. Pour d'autres, une expérience communiste est indissolublement liée à un capitalisme d'<orgName ref="#zbz-o.754">État</orgName>. Or, notre collègue yougoslave nous a bien dit que dans les analyses marxistes, on avait davantage développé la critique du régime à abolir que l'esquisse du régime à instituer. Cela revient à constater que la seconde définition est négative, comme la première. En effet, dans le cas du capitalisme d'<orgName ref="#zbz-o.754">État</orgName>, c'est bien son côté négatif — à savoir la suppression de la propriété privée — qui s'identifie au communisme. C'est parce que « capitalisme d'<orgName ref="#zbz-o.754">État</orgName> » signifie ici « suppression de la propriété privée » que nous avons tendance à le considérer comme une « expérience communiste ».
+        </p>
+        <p>
+          27
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          Le troisième aspect des « expériences communistes », c'est l'accumulation forcée, accélérée, douloureuse — douloureuse sous n'importe quel régime — du capital primitif indispensable, dans des pays non encore industrialisés.
+        </p>
+        <p facs="#facs_2_r_2">
+          Ces trois aspects sont très différents. Nous pouvons adopter chacun d'entre eux comme décisif. Ce choix, qui ne dépend que de nous, donne à la notion de communisme cette espèce de scintillement, de chatoiement, qui engendre de grandes difficultés de méthode. Encore ces aspects sont-ils emmêlés et ne concernent-ils que la pratique, les faits de la réalité dite communiste.
+        </p>
+        <p facs="#facs_2_r_3">
+          Or, il s'y ajoute une doctrine et une idéologie. Et le lien de cette doctrine avec la pratique n'est pas simple. Il est quelquefois contestable, presque toujours problématique, et constamment variable au cours de l'histoire. Mais le facteur idéologique fait inextricablement partie de ces expériences, et on ne peut les considérer indépendamment de la doctrine qui les porte, ne serait-ce qu'en tant qu'instrument du pouvoir.
+        </p>
+        <p facs="#facs_2_r_4">
+          S'il est difficile de séparer l'aspect fait de l'aspect doctrine, il est difficile aussi de les unir. Il est donc presque impossible de démêler ce qui a eu une influence sur les autres idéologies : si c'est la doctrine, ou si ce sont les expériences elles-mêmes. Par exemple, on peut dire que ce qu'on a appelé le christianisme communisant de l'<placeName ref="#zbz-l.27">Occident</placeName> s'est beaucoup plus occupé des idéologies que des expériences concrètes. Certains aspects doctrinaux ont été beaucoup plus influents que la pratique. Si l'on étudie attentivement la sympathie des chrétiens communisants pour le régime communiste, on y trouvera, paradoxalement, moins le souci du sort concret des hommes que la fascination d'une perspective idéologique. Tout cela demanderait évidemment un plus long développement.
+        </p>
+        <p facs="#facs_2_r_5">
+          D'autre part, ce que l'<placeName ref="#zbz-l.27">Occident</placeName> conçoit ou imagine sous le titre d'expériences communistes ressemble, je crois, assez peu à ce que, en réalité, vivent ou croient vivre les hommes de l'<placeName ref="#zbz-l.13">Est</placeName>. En général, l'<placeName ref="#zbz-l.27">Occident</placeName> est séduit par une interprétation qui peut être celle d'un petit groupe d'intellectuels de l'<placeName ref="#zbz-l.13">Est</placeName>, mais qui n'est certainement pas celle des masses. C'est ainsi qu'il se représente ces masses elles-mêmes comme homogènes et ayant en quelque sorte perdu le sens démocratique de la liberté. Dans sa générosité, il essaie d'entrer en contact avec elles afin de leur rendre ce sens de la liberté, ou du moins d'en semer les germes. Les gens qui viennent de l'<placeName ref="#zbz-l.13">Est</placeName>, eux, éprouvent, parfois jusqu'au désespoir, l'impossibilité de se faire comprendre, parce qu'ils constatent la faiblesse incroyable de notre sens démocratique et de notre sens de la liberté. Ils découvrent que l'<placeName ref="#zbz-l.27">Occident</placeName> ignore tout de ce qui est pour eux la souffrance de chaque jour, tout des conséquences concrètes qu'entraîne pour eux la perte de la liberté. Ils sont alors, sans doute, infiniment plus qualifiés pour donner des leçons de liberté que les <persName ref="#zbz-p.2100">Occidentaux</persName>, parce qu'ils savent ce qui leur manque. Ils cherchent souvent en vain à faire
+        </p>
+        <p>
+          28
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          imaginer la réalité qui est la leur, à expliquer l'air qu'ils respirent ou qu'ils ne respirent pas. Mais pour ceux qui, en <placeName ref="#zbz-l.27">Occident</placeName>, sympathisent avec l'idéologie communiste, des témoignages de ce genre, allant exactement à l'encontre de leurs rêves, ne sont pas valables; ils refusent de croire à leur sincérité et s'empressent de les qualifier de partiaux.
+        </p>
+        <p facs="#facs_3_r_2">
+          Enfin — et peut-être surtout — le titre général de notre semaine d'étude présuppose une influence rationnelle des expériences communistes sur les autres doctrines. Il présuppose qu'il existe des personnes raisonnables, se rattachant à une doctrine, qui, ayant étudié les expériences communistes, en auraient tiré des leçons susceptibles de modifier ce qu'elles pensaient auparavant.
+        </p>
+        <p facs="#facs_3_r_3">
+          Or je crois que les relations de toutes les doctrines, sympathisantes ou hostiles, avec les expériences communistes, ont presque toujours été d'abord d'ordre passionnel, même si elles se sont exprimées dans un langage rationnel. Il existe bien une relation entre les expériences communistes et les modifications des idéologies ou doctrines autres que communistes, mais cette relation me paraît d'un ordre tout à fait différent.
+        </p>
+        <p facs="#facs_3_r_4">
+          D'où, j'y reviens, l'énorme difficulté du sujet proposé, et son ambiguïté, difficile à surmonter. Mais je considère la question, telle qu'elle a été posée, d'un intérêt capital. Nous devons essayer de ne pas nous en détacher. Même si nous ne réussissons qu'à éclairer cette ambiguïté, ce serait déjà une rationalisation considérable et cela déblayerait le chemin pour des travaux ultérieurs.
+        </p>
+        <p facs="#facs_3_r_5">
+          J'ai choisi, pour mon exposé, un point d'impact qui n'est pas d'ordre économique et je lui ai donné le nom d'« optimisme éclairé ». J'ai voulu, en transposant le « despotisme éclairé », rattacher cet optimisme aux lumières, à la « Aufklärung ».
+        </p>
+        <p facs="#facs_3_r_6">
+          L'optimisme éclairé, c'est l'attitude de ceux qui pensent que la seule suppression d'un ordre jugé mauvais par la raison suffit à instaurer un véritable bien. Ils affirment ainsi l'existence d'un bien commun, universellement reconnaissable, qu'on peut situer dans la ligne de la fameuse volonté générale.
+        </p>
+        <p facs="#facs_3_r_7">
+          Une fois l'obstacle au bien reconnu, puis supprimé ou vaincu, l'homme devient ce qu'il doit être pour que le bien commun soit. Cela présuppose donc une malléabilité et une perfectibilité de l'homme; cela présuppose qu'il n'existe pas chez l'homme ce quelque chose que l'on appelle parfois « nature humaine », ce quelque chose qui met la rationalisation humaine en échec.
+        </p>
+        <p facs="#facs_3_r_8">
+          Il y a, je crois, trois dogmes impliqués dans l'optimisme éclairé. Le premier c'est celui de la transparence scientifique du monde et de l'être. Cette transparence peut n'être pas encore atteinte, mais elle est possible, virtuelle; en droit, elle existe.
+        </p>
+        <p facs="#facs_3_r_9">
+          Deuxièmement, cette transparence scientifique apparaîtra intérieurement cohérente, et accordée à l'idéal moral que l'homme possède naturellement. Pour l'optimisme éclairé, il n'est pas
+        </p>
+        <p>
+          29
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          30
+        </p>
+        <p facs="#facs_4_r_2">
+          d'antagonismes constants, inhérents à l'histoire humaine, comme par exemple entre consommation et investissement, entre efficacité et liberté individuelle; il n'existe pas de difficultés tenant à la nature de l'homme, à la nature des choses ou à la nature des sociétés. On se trouve alors devant une cohérence transparente.
+        </p>
+        <p facs="#facs_4_r_3">
+          Enfin, troisième dogme : une fois cette transparence conquise, elle livre les clefs de la conduite à tenir ou de l'organisation à mettre sur pied pour accorder à la fois le bien et le bonheur.
+        </p>
+        <p facs="#facs_4_r_4">
+          Je crois qu'on peut dire que l'optimisme éclairé est une eschatologie rationnelle. Or, en principe, les expériences communistes sont plutôt de cet ordre. L'idée était que par l'élimination d'un seul mal, et si l'on arrivait à créer des « institutions pédagogiques » comme des camps de rééducation, des écoles, des cours — réalisant ainsi l'éducation à outrance, le règne du maître d'école — on arriverait à produire tout ce qui doit être produit, de la manière même dont cela doit être produit. Et, en autres résultats, on arriverait à produire l'homme qu'il faut produire. Il s'agit donc d'une politique scientifiquement fondée, et les hommes d'<orgName ref="#zbz-o.754">État</orgName> qui l'appliquent méritent le titre d'ingénieurs de l'histoire.
+        </p>
+        <p facs="#facs_4_r_5">
+          Il est évident que je durcis la réalité pour m'en tenir aux aspects essentiels. Il faudrait introduire des aménagements et des atténuations. Mais, pour essayer de voir une structure doctrinale, nous sommes obligés de procéder de cette façon, surtout lorsqu'il s'agit d'une réalité aussi complexe que les conceptions communistes.
+        </p>
+        <p facs="#facs_4_r_6">
+          Le mouvement révolutionnaire qui tendait à réaliser ces expériences était, en principe, un mouvement moderniste, tourné vers l'avenir, croyant au progrès et rationalisant les rapports humains. Il considérait, par exemple, la famille comme étant beaucoup trop enlisée dans le végétatif, le biologique, le social vague; il fallait donc la remettre en question, en même temps qu'on réaliserait l'égalité des salaires, qu'on supprimerait les uniformes, etc., bref qu'on ferait régner partout la légitimité rationnelle.
+        </p>
+        <p facs="#facs_4_r_7">
+          Ces exemples ne constituent évidemment pas l'essentiel de la conception marxiste primitive. Mais ils en montrent un côté qu'on pourrait appeler « décoratif », à cause de l'attrait qu'il est capable d'exercer.
+        </p>
+        <p>
+          Or que s'est-il passé en fait dans les expériences communistes? En général, on est revenu à plus de rigidité qu'avant ces expériences. Le mariage par exemple, a été mis au service du collectif. On a recommandé aux citoyens d'avoir beaucoup d'enfants pour le bien de l'<orgName ref="#zbz-o.754">État</orgName>. La forte hiérarchie sociale et l'éventail énorme des salaires a été réintroduit, de même que le conformisme en art et en culture, etc.
+        </p>
+        <p>
+          On s'est alors trouvé devant un double facteur d'irrationalité. D'une part, la doctrine gonfle certains termes pour leur conserver leur efficacité, en leur donnant un sens assez vague et
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          presque mythique; on les écrit avec des majuscules, on se dispense de les confronter avec les réalités consécutives à la victoire communiste, on ne s'inquiète pas de savoir s'ils correspondent désormais à des données objectives. C'est vrai pour la notion de prolétariat, par exemple, jamais réexaminée malgré toutes les transformations sociales survenues : ce Prolétariat — avec un grand « P » — qui apparaît comme une sorte de Sauveur — avec un grand « S » —, et qui en joue le rôle dans l'eschatologie rationnelle dont nous avons parlé.
+        </p>
+        <p facs="#facs_5_r_2">
+          Parallèlement, il y a l'autre aspect, cette résistance qu'on rencontre, contrairement à l'hypothèse, dans la nature humaine. Dans les expériences communistes, on s'est trouvé devant des gens chez qui quelque chose refusait d'accepter ce qui était évidemment dans leur intérêt. Ils voulaient autre chose et refusaient de laisser pénétrer en eux ce qu'on tentait de leur inculquer.
+        </p>
+        <p facs="#facs_5_r_3">
+          Cette résistance a été mise en évidence, lors de l'insurrection de 1956, par le comportement de jeunes Hongrois qui pourtant n'avaient jamais connu d'autre régime. J'ai eu, pour ma part, cette même révélation au procès des insurgés de <placeName ref="#zbz-l.369">Poznam</placeName>, que j'ai suivi de près en comprenant la langue. Il y avait longtemps qu'en <placeName ref="#zbz-l.27">Occident</placeName>, je n'avais vécu des journées aussi étrangères à la doctrine communiste que celles que j'ai passées là-bas. J'ai vu cependant défiler bon nombre de jeunes gens, pour la plupart de 18 à 21 ans, de toutes les catégories sociales, de tous les genres, et qui tous parlaient de leurs cours de formation marxiste. Mais jamais, ni dans leur langage, ni dans leur manière de penser, on n'en percevait aucune trace. La seule argumentation proprement communiste que j'aie entendue, ce furent les phrases d'un avocat, déclarant que pour lui, militant communiste, ce procès était conçu d'une façon absurde du point de vue marxiste. Et il s'est précisément servi du marxisme pour démolir la machine judiciaire montée par le régime polonais antérieur à <persName ref="#zbz-p.967">Gomulka</persName>.
+        </p>
+        <p facs="#facs_5_r_4">
+          On peut donc dire que les expériences communistes offrent, tant aux adhérents d'autres doctrines qu'à ceux qui ne se réclament d'aucune, le spectacle étrange d'une réalité de fait rendue efficace précisément par le contraire de ce qu'elle prétend être sur le plan idéologique.
+        </p>
+        <p facs="#facs_5_r_5">
+          Efficace par le contraire, en effet : théoriquement anti-religieuse, anti-absolutiste, scientifique, faite pour le devenir de l'histoire, pour épouser tous les changements, elle s'affirme partout comme une religion absolue et absolutiste, demandant à régner sans partage et définitivement sur les esprits.
+        </p>
+        <p facs="#facs_5_r_6">
+          Vu du dehors, cet optimisme historique et eschatologique apparaît non comme une marche en avant, une projection vers le futur, mais comme un retour à un état de chose antérieur, à des superstitions, à un stade de pensée apparemment dépassé par la direction générale du sens de l'histoire. Lorsqu'on lit les comptes rendus de certaines discussions, de certains mea culpa et de certaines confrontations, on reste stupéfait des termes
+        </p>
+        <p facs="#facs_5_r_7">
+          31
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          utilisés. Ils servent à désigner ce qui, du dehors, paraît leur pur contraire. Ainsi, la démocratie peut devenir le nom efficace d'une tyrannie de fait. Le rationalisme, devenu passionnel, entraîne les gens à une espèce d'indignation permanente, alors que l'indignation n'a rationnellement pas de sens dans une doctrine par laquelle tout s'explique. D'autre part, la doctrine trouve une efficacité étrange par le mélange des conceptions théoriciennes et moralisantes avec un appareil de force et de contrainte économique et sociale.
+        </p>
+        <p facs="#facs_6_r_2">
+          Rationalité, affectivité, pression du conformisme, bien qu'en principe contradictoires, se renforcent mutuellement et finissent par forger un milieu social tout-puissant et indéchiffrable. Ainsi, qu'est-ce qu'une rencontre d'écrivains où chacun parle le langage qu'il faut parler et juge son prochain en fonction de normes qu'il faut appliquer, alors que tout le monde est contre ce langage et ces normes et que chacun le sait ? Mais le jeu doit se jouer publiquement. Je vous renvoie, à ce propos, au livre de <persName ref="#zbz-p.658">Czeslaw Milosz</persName>, intitulé <hi rendition="#i"><bibl ref="#zbz-w.592">La pensée captive</bibl></hi>, qui est une analyse de ce phénomène, de cette étrange et complexe contrainte.
+        </p>
+        <p facs="#facs_6_r_3">
+          Ainsi, même là où personne ne croit rationnellement ce qu'il s'agit de croire, la pression sociale continue à s'exercer. C'est un spectacle surprenant, mystérieux, fascinant, et impossible à réduire à des données rationnelles.
+        </p>
+        <p facs="#facs_6_r_4">
+          L'étrangeté de ce spectacle a obligé — ou du moins devrait obliger — ceux qui le considèrent de l'extérieur à corriger la platitude optimiste de l'avenir de l'humanité ou de leurs propres conceptions, cette vision bienveillante de l'avenir selon laquelle les sociétés s'arrangent pour progresser, pas à pas, rationnellement, vers un ordre de choses meilleures, les hommes étant des créatures raisonnables et par conséquent les sociétés qu'ils composent l'étant également.
+        </p>
+        <p facs="#facs_6_r_5">
+          Tout l'optimisme diffus et facile des doctrines occidentales est en quelque sorte mis en échec par le mystère de ce qui se passe là-bas.
+        </p>
+        <p facs="#facs_6_r_6">
+          Les expériences communistes ont avant tout mis en lumière — à mon avis — le ressort extra-politique et extra-rationnel de l'action politique. Cela paraît paradoxal, mais je le pense vrai. La doctrine politique qui prétend le plus radicalement à la rationalité de la science a mis en évidence, de fait, le facteur extra-politique et extra-rationnel. Et elle fait apparaître comment celui-ci s'enracine précisément dans un absolu de foi, quel qu'il soit.
+        </p>
+        <p facs="#facs_6_r_7">
+          Elle a ainsi obligé les autres à creuser en profondeur leur propre doctrine. C'est ainsi que le socialisme démocratique d'inspiration marxiste est aujourd'hui contraint de se chercher des racines plus profondes qu'il ne croyait nécessaire, d'ajouter de nouvelles dimensions à sa représentation de l'homme marxiste.
+        </p>
+        <p>
+          Les catholiques, de leur côté, doivent fouiller leur théologie pour lui ajouter des dimensions nouvelles, ou, en tous cas, des
+        </p>
+        <p>
+          32
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          dimensions négligées, notamment le sens du temps, le sens de l'histoire qui est le nôtre aujourd'hui, et qui ne pouvait être celui de <persName ref="#zbz-p.141">saint Thomas</persName>, au XIIIe siècle. Bien des théologiens catholiques s'aperçoivent aujourd'hui de ces nécessités.
+        </p>
+        <p facs="#facs_7_r_2">
+          D'une façon générale, les démocrates, au sens occidental du terme, se trouvent devant la nécessité de rechercher les raisons pour lesquelles ils tiennent au régime démocratique, de justifier leur préférence par des valeurs suffisamment décisives pour compenser les défauts du régime et le fonder plus solidement.
+        </p>
+        <p facs="#facs_7_r_3">
+          On peut dire que les expériences communistes contraignent à rattacher la politique à une perspective métaphysique, à la situer dans une dimension qui la dépasse.
+        </p>
+        <p facs="#facs_7_r_4">
+          Mais, en même temps que les expériences communistes obligent à cette révision des fondements, il se produit quelque chose d'exactement inverse. Les autres doctrines, repoussées par les expériences communistes et par la propagande communiste sur des positions défensives, tendent alors à se « cléricaliser », selon le mot d'<persName ref="#zbz-p.999">André Philip</persName>. Il définit cette « cléricalisation » comme le phénomène par lequel, à un moment donné, on se met à préférer une institution, quelle qu'elle soit, aux raisons pour lesquelles elle a été créée. Cette cléricalisation résulte souvent de la position défensive à laquelle on a été réduit. On a peur et, parce qu'on a peur, on veut être puriste. Être puriste, c'est garder le même drapeau, le même vocabulaire, les mêmes slogans, et les répéter le plus souvent possible pour empêcher toute brèche. A partir de ce moment, on se cramponne aux institutions, au vocabulaire. On garde des fétiches, dont plus personne ne sait exactement le sens. Mais il faut les garder à tout prix, d'abord pour montrer qu'on est encore révolutionnaire, qu'on est encore de gauche, qu'on est toujours marxiste. On ne connaît plus le sens du mot, mais il faut garder le mot, sinon la chose.
+        </p>
+        <p facs="#facs_7_r_5">
+          Cette évolution est un effet, non voulu, des expériences communistes sur les autres doctrines. A mes yeux, elle est catastrophique.
+        </p>
+        <p facs="#facs_7_r_6">
+          Ainsi, les expériences communistes ont provoqué dans les autres doctrines à la fois une sclérose et un besoin de renouveau; à la fois un ferment d'approfondissement et un engourdissement. C'est là une des causes des profondes scissions qui se sont produites, non sur le plan des doctrines, mais sur le plan pratique de la vie des partis, dans tel sens ou tel autre selon que la sclérose ou le réexamen l'a emporté.
+        </p>
+        <p facs="#facs_7_r_7">
+          En somme, l'optimisme éclairé, dans les expériences communistes proprement dites, n'est que préalable. C'est une conception superficielle et sans racines, qui crée une sorte de vacuité, le vide et l'insatisfaction qui rendent les hommes réceptifs et accessibles à une propagande prétendant les prendre tout entiers.
+        </p>
+        <p>
+          33
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          On ne constate pas cela en <placeName ref="#zbz-l.29">Europe</placeName> seulement. J'ai personnellement constaté le même processus chez de jeunes étudiants d'<placeName ref="#zbz-l.28">Asie</placeName>, qui avaient reçu presque exclusivement une formation d'économistes. Pour eux, l'organisation rationnelle de l'économie donnait la solution de tous les problèmes. Aucune antinomie véritable et irréductible ne subsistait plus nulle part. Ces jeunes se trouvent dès lors dans le vide, disponibles pour toute propagande. Le communisme ne s'attache pas les gens par l'optimisme éclairé, mais l'optimisme éclairé les prépare à accueillir la doctrine et les expériences.
+        </p>
+        <p facs="#facs_8_r_2">
+          En fait, lorsque les expériences communistes entraînent l'adhésion, c'est essentiellement non par les avantages qu'elles promettent (contrairement à ce que beaucoup de gens croient), mais par les sacrifices qu'elles coûtent. Les hommes sont bien plus étroitement attachés à ce qui leur coûte des sacrifices qu'à ce qui leur procure des avantages. Et les sacrifices que demandent les expériences communistes ont été, sont et seront énormes.
+        </p>
+        <p facs="#facs_8_r_3">
+          En résumé, nous pouvons dire que le communisme déclenche, au point de vue doctrinal, un double mouvement, à la fois anti-passionnel et passionné. Nous devons accomplir un double effort si nous ne voulons pas être communistes.
+        </p>
+        <p facs="#facs_8_r_4">
+          Il faut revenir aux faits contre les mythologies, contre les vocabulaires périmés, contre les tabous; il faut réexaminer sans superstition les slogans et les mots à la lumière des faits d'aujourd'hui; essayer de voir si, concrètement, quelque chose de réel correspond à chacun d'entre eux. (Qu'on me permette ici une remarque : la mystification par les slogans et les mots réussit d'autant mieux qu'on est plus éloigné des expériences considérées. Elles sont beaucoup plus agissantes, d'une certaine manière, en tout cas sur les doctrines, quand on est plus loin du théâtre où elles se déroulent. Les mots acquièrent de la force loin du démenti des faits.)
+        </p>
+        <p facs="#facs_8_r_5">
+          Un tel réexamen est absolument indispensable. J'ai dit que dans les expériences communistes, on trouve, inextricablement mêlés, ce qui est révolution contre l'ordre féodal antérieur, et l'accumulation primitive du capital. J'aurais pu ajouter : toute l'industrialisation. L'industrialisation est devenue, dans les pays communistes, une splendide épopée. Elle a le prestige d'un mythe épique. On en a fait des romans, des films, des pièces de théâtre, etc...
+        </p>
+        <p facs="#facs_8_r_6">
+          Au contraire, que s'est-il passé en <placeName ref="#zbz-l.27">Occident</placeName> ? Nous avons industrialisé nos pays sous le mépris à peu près unanime des penseurs. Ils utilisaient bien les salles de bains et les voitures, mais seulement du haut de la grandeur de leur spiritualité. Notre culture n'a pas accepté de donner à l'industrialisation, au processus scientifique, le prestige qu'ils méritaient.
+        </p>
+        <p facs="#facs_8_r_7">
+          Nous payerons durement le discrédit qu'à nos propres yeux d'abord, mais ensuite aux yeux de tout l'univers, nous avons
+        </p>
+        <p>
+          34
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          jeté sur l'industrialisation. Il s'agit ici, selon moi, d'une énorme erreur.
+        </p>
+        <p facs="#facs_9_r_2">
+          J'ai vu, dans un quartier ouvrier de <placeName ref="#zbz-l.1">Paris</placeName>, un film soviétique racontant la création d'une centrale électrique. On montrait toutes les difficultés rencontrées par le héros et l'héroïne jusqu'au moment où la centrale électrique fut prête. Il y eut à ce moment une séquence d'un lyrisme extraordinaire : l'héroïne, à l'intérieur de la centrale, abaissait une manette, puis une autre, et chaque fois un secteur de la campagne s'éclairait. Les paysans, sur l'écran, regardaient s'accomplir ce miracle et, dans leur émerveillement, se jetaient à genoux. Les ouvriers parisiens, dans la salle, applaudirent à tout rompre. Ils n'avaient sans doute jamais vu un village sans électricité. Mais là, ils étaient transportés par le lyrisme de l'événement.
+        </p>
+        <p facs="#facs_9_r_3">
+          Ainsi les expériences communistes forgent une unité idéologique efficace entre des choses diverses; elles tendent à identifier communisme et progrès industriel. Tout cela demande à être réexaminé froidement, à la lumière des faits.
+        </p>
+        <p facs="#facs_9_r_4">
+          Le second effort nécessaire est d'un tout autre ordre : le retour à l'homme, à l'homme réel, en profondeur, qui doit être accepté tout entier. Ce n'est pas celui de l'optimisme éclairé. C'est celui que nous voyons vivre sans eschatologie, dans l'histoire réelle, qui n'a pas pris fin, qui ne prend pas fin et qui ne prendra pas fin. Il ne calcule pas scientifiquement ses chances. L'histoire réelle et tragique de l'homme, c'est qu'elle comporte des adhésions absolues que la science ne suffit pas à expliquer.
+        </p>
+        <p facs="#facs_9_r_5">
+          En conclusion, les expériences communistes, pour les autres idéologies, doivent être l'aiguillon qui oblige à ce travail en profondeur vers les faits d'une part, et de l'autre, vers l'homme réel.
+        </p>
+        <p>
+          35
+        </p>
+      </div>
+      </body></text>
+</TEI>

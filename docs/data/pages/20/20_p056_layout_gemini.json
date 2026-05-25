@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "54 L'IMPUISSANCE SCIENTIFIQUE",
+      "bbox": {
+        "x_pct": 141.0,
+        "y_pct": 94.0,
+        "w_pct": 560.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "Corrected page number and running header to _filter"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De n'importe quel point de la circonférence on doit atteindre le même centre. Car chaque problème décide de l'être du philosophe, et là il n'y a pas de parties.",
+      "bbox": {
+        "x_pct": 13.599,
+        "y_pct": 13.699,
+        "w_pct": 76.009,
+        "h_pct": 10.257
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On conçoit maintenant, grâce au rapport sujet-objet, l'identité réelle des termes opposés plus haut : problème explicitement posé, et alternative tacite d'être ou de n'être pas. Résoudre le problème et trancher l'alternative, c'est un seul et même acte, mais qui a deux faces.",
+      "bbox": {
+        "x_pct": 13.509,
+        "y_pct": 23.67,
+        "w_pct": 76.054,
+        "h_pct": 15.386
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela nous aidera à expliquer la situation paradoxale de la philosophie que nous avons constatée au début de cette étude. La philosophie, disions-nous, telle que l'histoire nous l'a transmise, ne se distingue des autres domaines de l'esprit humain que négativement, par des impuissances. De la science elle envie le caractère apodictique. De la religion elle envie la foi. De l'art elle envie la perfection. Mais nous avons vu que le caractère spécifique de la philosophie, c'est d'être fondamentalement double, d'être à la fois théorie explicite et décision implicite. Ne serait-il pas possible maintenant de montrer que les insuffisances de la philosophie comparée à la science, à la religion, à l'art, sont nécessaires, indispensables à sa duplicité essentielle?",
+      "bbox": {
+        "x_pct": 13.599,
+        "y_pct": 39.209,
+        "w_pct": 76.16,
+        "h_pct": 40.553
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout d'abord, si l'acte de poser et de résoudre un problème philosophique comporte une décision, il faut qu'il y ait à la base de cette décision une liberté.",
+      "bbox": {
+        "x_pct": 13.509,
+        "y_pct": 80.143,
+        "w_pct": 76.054,
+        "h_pct": 9.847
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text content to match image"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "The OCR text content was significantly corrupted and required full replacement.",
+    "The header '54 L'IMPUISSANCE SCIENTIFIQUE' was missing in original JSON extraction and was added as a _filter region."
+  ],
+  "doc_id": "20",
+  "page": 56,
+  "elapsed_seconds": 4.56,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

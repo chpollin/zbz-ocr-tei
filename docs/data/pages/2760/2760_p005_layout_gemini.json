@@ -1,0 +1,83 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "151",
+      "bbox": {
+        "x_pct": 574.0,
+        "y_pct": 925.0,
+        "w_pct": 20.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dessus. Mais parce que ce temps v''cu reste contradictoire et discontinu, il implique, pour la libert'' responsable constitutive du pr''sent et de cette discontinuit'' m''me, une r''f''rence, interrogative et absolue, '' ce qui transcende le temps en toutes ses structures et toutes ses dimensions. Transcendance qui, loin d''abolir les discontinuit''s ou de r''soudre les contradictions, les rend, dans la condition humaine, d''finitives, - ou plut''t: sans cesse renaissantes.",
+      "bbox": {
+        "x_pct": 31.758,
+        "y_pct": 29.546,
+        "w_pct": 54.491,
+        "h_pct": 10.54
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text from source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Condition humaine disloqu''e, ''cartel''e, sans solution - mais historique et libre. Avec tout juste l''ignorance n''cessaire '' une possible recherche d''un sens, '' un pauvre, indestructible espoir.",
+      "bbox": {
+        "x_pct": 31.79,
+        "y_pct": 40.201,
+        "w_pct": 54.54,
+        "h_pct": 4.788
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text from source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sujet agissant dans l'histoire se sert parfois de la transcendance pour ''chapper de son mieux '' sa condition temporelle. Il le fait alors en isolant et en absolutisant une seule des dimensions du temps v''cu. Il peut recourir '' l''tre indestructible du pass'' en y situant l'''ge d''or. Il peut recourir '' la mall''abilit'' du futur et '' la constante fuite en avant qu'il permet.",
+      "bbox": {
+        "x_pct": 31.733,
+        "y_pct": 44.759,
+        "w_pct": 54.491,
+        "h_pct": 9.219
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text from source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la transcendance est au pr''sent, dans cette \"petite dur''e\" qui joint et s''pare le pass'' et l'avenir, qui ne s''coule pas puisqu'elle permet la pens''e et la m''lodie, qui s''ffiloche seulement en ses extr''mit''s en pass'' et en futur, en souvenir et en projet, et que j'ai appel''e, parce qu'elle ne s''coule pas, miniature d''t''rnit''.",
+      "bbox": {
+        "x_pct": 31.546,
+        "y_pct": 53.863,
+        "w_pct": 54.727,
+        "h_pct": 7.732
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text from source image content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Detected text regions in the left margin are mostly OCR artifacts and noise; removed from final JSON.",
+    "OCR text for main paragraphs contained many character errors; updated to match the image text content.",
+    "The page number 151 was not captured in the initial JSON and needed to be added.",
+    "Inconsistent OCR quality for block text.",
+    "Some bounding boxes for left-side noise should be discarded."
+  ],
+  "doc_id": "2760",
+  "page": 5,
+  "elapsed_seconds": 9.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,379 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Réflexions sur la liberté humaine / Gedanken zur menschlichen Freiheit / Concepts of Human Freedom</title>
+        <author>Maja Svilar</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ZBZ / DHCraft</publisher>
+        <idno type="docID">2600</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <title>Réflexions sur la liberté humaine / Gedanken zur menschlichen Freiheit / Concepts of Human Freedom</title>
+          <author>Maja Svilar</author>
+          <date>1988</date>
+        </bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fra" />
+        <language ident="deu" />
+        <language ident="eng" />
+      </langUsage>
+    </profileDesc>
+  <revisionDesc>
+    <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). No issues found</change>
+  </revisionDesc>
+  </teiHeader>
+  <facsimile>
+    <surface xml:id="facs_1" ulx="0" uly="0" lrx="851" lry="1236">
+      <zone xml:id="facs_1_r_1" ulx="134" uly="109" lrx="748" lry="326" />
+      <zone xml:id="facs_1_r_2" ulx="110" uly="389" lrx="740" lry="459" />
+      <zone xml:id="facs_1_r_3" ulx="184" uly="482" lrx="666" lry="551" />
+      <zone xml:id="facs_1_r_4" ulx="153" uly="572" lrx="699" lry="648" />
+      <zone xml:id="facs_1_r_5" ulx="224" uly="741" lrx="624" lry="817" />
+    </surface>
+    <surface xml:id="facs_2" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_2_r_1" ulx="222" uly="93" lrx="560" lry="179" />
+    </surface>
+    <surface xml:id="facs_3" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_3_r_1" ulx="288" uly="16" lrx="536" lry="67" />
+      <zone xml:id="facs_3_r_2" ulx="45" uly="87" lrx="762" lry="307" />
+      <zone xml:id="facs_3_r_3" ulx="85" uly="367" lrx="715" lry="439" />
+      <zone xml:id="facs_3_r_4" ulx="159" uly="461" lrx="640" lry="534" />
+      <zone xml:id="facs_3_r_5" ulx="128" uly="554" lrx="674" lry="628" />
+      <zone xml:id="facs_3_r_6" ulx="200" uly="722" lrx="599" lry="798" />
+      <zone xml:id="facs_3_r_7" ulx="324" uly="1041" lrx="474" lry="1064" />
+      <zone xml:id="facs_3_r_8" ulx="174" uly="1069" lrx="624" lry="1095" />
+    </surface>
+    <surface xml:id="facs_4" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_4_r_1" ulx="124" uly="89" lrx="671" lry="239" />
+      <zone xml:id="facs_4_r_2" ulx="253" uly="929" lrx="676" lry="1092" />
+    </surface>
+    <surface xml:id="facs_5" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_5_r_1" ulx="281" uly="100" lrx="426" lry="122" />
+      <zone xml:id="facs_5_r_2" ulx="40" uly="156" lrx="548" lry="211" />
+      <zone xml:id="facs_5_r_3" ulx="41" uly="359" lrx="669" lry="593" />
+      <zone xml:id="facs_5_r_4" ulx="41" uly="623" lrx="668" lry="853" />
+      <zone xml:id="facs_5_r_5" ulx="41" uly="880" lrx="668" lry="994" />
+    </surface>
+    <surface xml:id="facs_6" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_6_r_1" ulx="131" uly="97" lrx="764" lry="271" />
+      <zone xml:id="facs_6_r_2" ulx="130" uly="301" lrx="763" lry="446" />
+      <zone xml:id="facs_6_r_3" ulx="130" uly="478" lrx="763" lry="707" />
+      <zone xml:id="facs_6_r_4" ulx="130" uly="796" lrx="763" lry="882" />
+      <zone xml:id="facs_6_r_5" ulx="130" uly="912" lrx="761" lry="1024" />
+    </surface>
+    <surface xml:id="facs_7" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_7_r_1" ulx="32" uly="96" lrx="662" lry="302" />
+      <zone xml:id="facs_7_r_2" ulx="34" uly="387" lrx="662" lry="561" />
+      <zone xml:id="facs_7_r_3" ulx="34" uly="590" lrx="662" lry="706" />
+      <zone xml:id="facs_7_r_4" ulx="34" uly="737" lrx="661" lry="792" />
+      <zone xml:id="facs_7_r_5" ulx="33" uly="822" lrx="662" lry="998" />
+    </surface>
+    <surface xml:id="facs_8" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_8_r_1" ulx="134" uly="94" lrx="767" lry="151" />
+      <zone xml:id="facs_8_r_2" ulx="134" uly="183" lrx="766" lry="298" />
+      <zone xml:id="facs_8_r_3" ulx="134" uly="326" lrx="766" lry="415" />
+      <zone xml:id="facs_8_r_4" ulx="135" uly="472" lrx="766" lry="531" />
+      <zone xml:id="facs_8_r_5" ulx="133" uly="678" lrx="766" lry="825" />
+      <zone xml:id="facs_8_r_6" ulx="132" uly="852" lrx="766" lry="999" />
+    </surface>
+    <surface xml:id="facs_9" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_9_r_1" ulx="49" uly="96" lrx="675" lry="149" />
+      <zone xml:id="facs_9_r_2" ulx="47" uly="240" lrx="676" lry="467" />
+      <zone xml:id="facs_9_r_3" ulx="50" uly="503" lrx="247" lry="525" />
+      <zone xml:id="facs_9_r_4" ulx="47" uly="529" lrx="675" lry="646" />
+      <zone xml:id="facs_9_r_5" ulx="49" uly="676" lrx="675" lry="758" />
+      <zone xml:id="facs_9_r_6" ulx="48" uly="792" lrx="677" lry="995" />
+    </surface>
+    <surface xml:id="facs_10" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_10_r_1" ulx="136" uly="93" lrx="768" lry="150" />
+      <zone xml:id="facs_10_r_2" ulx="136" uly="180" lrx="768" lry="326" />
+      <zone xml:id="facs_10_r_3" ulx="135" uly="414" lrx="769" lry="821" />
+      <zone xml:id="facs_10_r_4" ulx="136" uly="851" lrx="768" lry="996" />
+      <zone xml:id="facs_10_r_5" ulx="139" uly="1067" lrx="157" lry="1093" />
+    </surface>
+    <surface xml:id="facs_11" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_11_r_1" ulx="45" uly="93" lrx="675" lry="818" />
+      <zone xml:id="facs_11_r_2" ulx="45" uly="849" lrx="674" lry="1020" />
+    </surface>
+    <surface xml:id="facs_12" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_12_r_1" ulx="134" uly="90" lrx="768" lry="620" />
+      <zone xml:id="facs_12_r_2" ulx="136" uly="648" lrx="769" lry="845" />
+      <zone xml:id="facs_12_r_3" ulx="136" uly="880" lrx="769" lry="996" />
+    </surface>
+    <surface xml:id="facs_13" ulx="0" uly="0" lrx="784" lry="1203">
+      <zone xml:id="facs_13_r_1" ulx="46" uly="96" lrx="675" lry="151" />
+      <zone xml:id="facs_13_r_2" ulx="45" uly="242" lrx="675" lry="444" />
+      <zone xml:id="facs_13_r_3" ulx="47" uly="532" lrx="675" lry="846" />
+      <zone xml:id="facs_13_r_4" ulx="47" uly="876" lrx="675" lry="936" />
+    </surface>
+  </facsimile>
+  <text>
+    <body>
+<div n="1">
+        <pb facs="#facs_1" n="1" />
+        <head facs="#facs_1_r_1">
+          GGN 8650
+        </head>
+        <p facs="#facs_1_r_2">
+          Revisions sur la liberté humaine
+        </p>
+        <p facs="#facs_1_r_3">
+          Occasion zu menschlichen Freiheit
+        </p>
+        <p facs="#facs_1_r_4">
+          <bibl ref="#zbz-w.484">Concepts of Human Freedom</bibl>
+        </p>
+        <p facs="#facs_1_r_5">
+          <bibl ref="#zbz-w.425">Mélanges</bibl> offerts à <persName ref="#zbz-p.869">André Mercier</persName> à l'occasion de son 75e anniversaire
+        </p>
+        <p>
+          Festschrift zum 75. Geburtstag von <persName ref="#zbz-p.869">André Mercier</persName>
+        </p>
+        <p>
+          Festschrift in Honour of <persName ref="#zbz-p.869">André Mercier</persName> on the Occasion of His 75th Birthday
+        </p>
+        <p>
+          Edités par / Herausgegeben von <persName ref="#zbz-p.614">Maja Svilar</persName>
+        </p>
+        <p>
+          <orgName ref="#zbz-o.214">Peter Lang</orgName>
+        </p>
+      <pb facs="#facs_2" n="2" />
+        <p facs="#facs_2_r_1">
+          <bibl ref="#zbz-w.483">Réflexions sur la liberté humaine</bibl><lb facs="#facs_2_l_1_1" n="N001" /><bibl ref="#zbz-w.22">Gedanken zur menschlichen Freiheit</bibl><lb facs="#facs_2_l_1_2" n="N002" /><bibl ref="#zbz-w.484">Concepts of Human Freedom</bibl>
+        </p>
+      <pb facs="#facs_3" n="3" />
+        <p facs="#facs_3_r_1">
+          GGN 8650
+        </p>
+        <p facs="#facs_3_r_2">
+          <bibl ref="#zbz-w.483">Réflexions sur la liberté humaine</bibl><lb facs="#facs_3_l_2_1" n="N001" /><bibl ref="#zbz-w.22">Gedanken zur menschlichen Freiheit</bibl><lb facs="#facs_3_l_2_2" n="N002" /><bibl ref="#zbz-w.484">Concepts of Human Freedom</bibl>
+        </p>
+        <p facs="#facs_3_r_3">
+          <bibl ref="#zbz-w.425">Mélanges</bibl> offerts à <persName ref="#zbz-p.869">André Mercier</persName> à l'occasion de son 75e anniversaire
+        </p>
+        <p facs="#facs_3_r_4">
+          Festschrift zum 75. Geburtstag von <persName ref="#zbz-p.869">André Mercier</persName>
+        </p>
+        <p facs="#facs_3_r_5">
+          Festschrift in Honour of <persName ref="#zbz-p.869">André Mercier</persName> on the Occasion of His 75th Birthday
+        </p>
+        <p facs="#facs_3_r_6">
+          Edités par / Herausgegeben von <persName ref="#zbz-p.614">Maja Svilar</persName>
+        </p>
+        <p facs="#facs_3_r_7">
+          
+        </p>
+        <p facs="#facs_3_r_8">
+          
+        </p>
+        <p>
+          <orgName ref="#zbz-o.214">PETER LANG</orgName><lb facs="#facs_3_l_9_1" n="N001" /><placeName ref="#zbz-l.6">Berne</placeName> · <placeName ref="#zbz-l.23">Frankfurt am Main</placeName> · <placeName ref="#zbz-l.52">New York</placeName> · <placeName ref="#zbz-l.1">Paris</placeName>
+        </p>
+        <p>
+          k88-24244-0<lb facs="#facs_3_l_10_1" n="N001" />lang
+        </p>
+      <pb facs="#facs_4" n="4" />
+        <p facs="#facs_4_r_1">
+          gnr 34976
+        </p>
+        <note place="foot" n="1" xml:id="fn4-1" facs="#facs_4_r_2">
+          CIP-Titelaufnahme der <orgName ref="#zbz-o.48">Deutschen Bibliothek</orgName>
+        </note>
+        <p>
+          <bibl ref="#zbz-w.483">Réflexions sur la liberté humaine</bibl> : mélanges offerts à <persName ref="#zbz-p.869">André Mercier</persName> à l'occasion de son 75e anniversaire = <bibl ref="#zbz-w.22">Gedanken zur menschlichen Freiheit</bibl> / ed. par <persName ref="#zbz-p.614">Maja Svilar</persName>. - <placeName ref="#zbz-l.6">Berne</placeName>; <placeName ref="#zbz-l.23">Frankfurt am Main</placeName>; <placeName ref="#zbz-l.52">New York</placeName>; <placeName ref="#zbz-l.1">Paris</placeName>: Lang, 1988 ISBN 3-261-03857-8
+        </p>
+        <p>
+          NE: <persName ref="#zbz-p.614">Svilar, Maja</persName> [Hrsg.]; <persName ref="#zbz-p.869">Mercier, André</persName>: Festschrift; PT
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          © <orgName ref="#zbz-o.215">Verlag Peter Lang AG</orgName>, <placeName ref="#zbz-l.6">Bern</placeName> 1988
+        </p>
+        <p>
+          Nachfolger des Verlages der
+        </p>
+        <p>
+          Herbert Lang &amp;amp; Cie AG, <placeName ref="#zbz-l.6">Bern</placeName>
+        </p>
+        <p>
+          Alle Rechte vorbehalten.
+        </p>
+        <p>
+          Nachdruck oder Vervielfältigung, auch auszugsweise, in allen Formen wie Mikrofilm, Xerographie, Mikrofiche, Mikrocard, Offset verboten.
+        </p>
+        <p>
+          Druck: <orgName ref="#zbz-o.451">Weihert-Druck GmbH</orgName>, <placeName ref="#zbz-l.435">Darmstadt</placeName>
+        </p>
+      <pb facs="#facs_5" n="5" />
+        <p facs="#facs_5_r_1">
+          <persName ref="#zbz-p.2">Jeanne Hersch</persName>
+        </p>
+        <p facs="#facs_5_r_2">
+          LA LIBERTÉ ENTRE LE PARADOXE ET LE CERCLE VICIEUX
+        </p>
+        <p facs="#facs_5_r_3">
+          Mon point de départ, ici comme souvent, sera la philosophie de <persName ref="#zbz-p.6">Kant</persName>. Selon <persName ref="#zbz-p.6">Kant</persName>, le temps est, comme l'espace, une des deux formes a priori du monde phénoménal, c'est-à-dire une des conditions préalables que chaque sujet pensant impose inévitablement au contenu de son expérience. D'autre part, selon <persName ref="#zbz-p.6">Kant</persName>, la liberté est un des postulats de la raison pratique, c'est-à-dire une des conditions préalables de toute réflexion d'un sujet pensant sur son action.
+        </p>
+        <p facs="#facs_5_r_4">
+          Il suit de là que la liberté reste impensable dans le monde phénoménal, nécessairement “mis en forme” par le temps, donc aussi par la catégorie causale de l'entendement. Tout phénomène se situe dans le temps et parmi les enchaînements de la causalité. Tout phénomène — qu'il soit physique ou psychique, et par conséquent aussi tout action constatée, objectivée, a des causes antécédentes. A propos d'une action constatée dans le monde phénoménal, on parlera de causalité psychologique.
+        </p>
+        <p facs="#facs_5_r_5">
+          La liberté se trouve ainsi exclue du monde phénoménal. Dans le monde phénoménal, il ne peut y avoir aucune liberté, et ce que nous appelons des actes ne sont que des phénomènes dont les causes nous sont encore cachées.
+        </p>
+        <p>
+          55
+        </p>
+      <pb facs="#facs_6" n="6" />
+        <p facs="#facs_6_r_1">
+          Mais d'un autre côté, une liberté — postulat de la raison pratique — qui se situerait « à l'extérieur » du monde phénoménal, au niveau des nouménes ou « choses en soi », serait pour un sujet humain parfaitement vide, parce que dépourvue de tout enjeu. C'est ce « vide » qu'énonce, en en faisant un absolu, la « catégoricité » de l'impératif moral.
+        </p>
+        <p facs="#facs_6_r_2">
+          Pour ne pas être vide, la liberté implique nécessairement une finalité. Celle-ci ne peut être que future, si elle appartient au monde phénoménal, donc temporel, ou transcendantale, si elle se situe dans le monde nouménal. Dans le premier cas, l'impératif est hypothétique, dans le second, il est catégorique.
+        </p>
+        <p facs="#facs_6_r_3">
+          Mais il se peut aussi que la finalité future (hypothétique) tire son efficience impérative (catégorique) de la transcendance. <bibl ref="#zbz-w.838">Antigone</bibl> agit afin que le cadavre de <persName ref="#zbz-p.975">Polynice</persName> soit recouvert de terre (finalité future), et qu'ainsi soient respectées « les lois non écrites des dieux » (finalité transcendantale). Et à vrai dire, seul un tel entrecroissement permet à la liberté d'échapper à son impossibilité phénoménale en même temps qu'à l'abstraction désincarnée d'une transcendance pure.
+        </p>
+        <p facs="#facs_6_r_4">
+          Il est donc inévitable de concevoir une intersection entre temps et transcendance, si étrangers que ces deux termes apparaissent d'abord, par nature, l'un à l'autre.
+        </p>
+        <p facs="#facs_6_r_5">
+          Une telle intersection reste absolument impensable au niveau du temps unilinéaire, allant d'avant en après, à l'aide duquel les sciences mesurent et interprètent les phénomènes de la nature.
+        </p>
+        <p>
+          56
+        </p>
+      <pb facs="#facs_7" n="7" />
+        <p facs="#facs_7_r_1">
+          Elle constitue le présent du temps vécu par la conscience. En effet, seul le présent, dans toute l'extension du temps vécu, est le moment de l'action. C'est au présent que la raison pratique trouve son seul point d'efficacité. C'est au présent qu'elle a son seul rendez-vous avec le monde phénoménal pour y insérer un acte. On peut même dire que cette insertion possible constitue le présent du temps vécu par une conscience.
+        </p>
+        <p facs="#facs_7_r_2">
+          La cause est antérieure à l'effet, l'effet se produit après la cause. Le lien entre la cause et l'effet épouse un temps continu qui va d'avant en après, sans articulation ni coupure. Mais la recherche d'une cause, qui est un acte de conscience, intervient dans cette continuité et remonte le temps, vers le passé, — alors que cet acte, par sa finalité, vise un avenir où la cause sera connue.
+        </p>
+        <p facs="#facs_7_r_3">
+          Ainsi se constitue, pour la conscience, un temps fait de “dimensions” opposées: d'un passé qui ne cesse de s'éloigner en arrière de son acte présent, et d'un futur qui ne cesse de s'ouvrir devant elle, et où se déploie sa visée.
+        </p>
+        <p facs="#facs_7_r_4">
+          Entre les deux, la coupure radicale du présent, qu'on dit pourtant, malgré sa radicalité, insaisissable.
+        </p>
+        <p facs="#facs_7_r_5">
+          Coupure radicale: en effet, entre le passé et le futur il y a, pour la conscience active, l'opposition entre ce qui est ce qu'il est et à quoi on ne peut plus rien changer, et ce qui s'offre à la finalité active, non pas n'importe comment, certes, non pas comme une indétermination pure, mais comme donnant prise encore, dans une certaine mesure, à l'action. Ce qui est passé ne rede-
+        </p>
+        <p>
+          57
+        </p>
+      <pb facs="#facs_8" n="8" />
+        <p facs="#facs_8_r_1">
+          viendra jamais un présent. Ce qui est futur va devenir le présent du sujet actif.
+        </p>
+        <p facs="#facs_8_r_2">
+          Présent insaisissable? Dans un sens, c'est vrai. <persName ref="#zbz-p.65">Saint Augustin</persName> disait déjà n'y rien comprendre, puisque le présent n'est même pas un instant entre le passé qui n'est plus et l'avenir qui n'est pas encore, — donc: une limite fictive entre deux néants.
+        </p>
+        <p facs="#facs_8_r_3">
+          Et pourtant: toute notre vie se vit et se joue au présent. C'est au présent qu'il y a de l'être pour nous et que nous-mêmes nous sommes. Le cogito de <persName ref="#zbz-p.179">Descartes</persName> n'a de sens qu'au présent. Il faut donc bien que le présent ait une “épaisseur”.
+        </p>
+        <p facs="#facs_8_r_4">
+          C'est cette épaisseur qui permet la présence d'une phrase, d'un sens, d'une mélodie, d'une volonté.
+        </p>
+        <p facs="#facs_8_r_5">
+          Sans le présent épaissi, il n'y aurait qu'un halètement d'angoisse.
+        </p>
+        <p facs="#facs_8_r_6">
+          Si le présent s'épaissit, c'est que la conscience active “retient” en se l'appropriant une certaine marge de passé “donné”, comme une potentialité qu'elle finalise vers le futur. C'est aussi que la conscience active s'ouvre à elle-même une certaine marge de futur, que sa visée tente déjà d'actualiser.
+        </p>
+        <p>
+          Le présent est donc un instant qui dure, un passé-futur, un futur-passé. Il est, dans le temps, ce qui passe le plus vite, et ce qui ne passe pas. Il est une contradiction qui, loin d'exclure, est, et à travers laquelle est tout ce qui est pour nous. Il est la synthèse ontologique de ce qui s'exclut. Il est l'essence du
+        </p>
+        <p>
+          58
+        </p>
+      <pb facs="#facs_9" n="9" />
+        <p facs="#facs_9_r_1">
+          temps et transcende le temps. Je l'appelle “miniature d'éternité”.
+        </p>
+        <p facs="#facs_9_r_2">
+          Il n'est pas surprenant que la liberté, qui n'a d'actualité qu'au présent, participe de l'être paradoxal du présent, — à moins qu'on ne préfère dire que le présent participe de l'être paradoxal de la liberté. Présent et liberté se trouvent chacun, pour la pensée, doublement exclus, de par leur nature même doublement impossibles. En même temps, présent et liberté sont doublement nécessaires, doublement inévitables pour la pensée même qui tente de les exclure.
+        </p>
+        <p facs="#facs_9_r_3">
+          Doublement exclus:
+        </p>
+        <p facs="#facs_9_r_4">
+          Pour le présent, il suffit de reprendre la constatation, d'une simplicité sans issue, de <persName ref="#zbz-p.65">Saint Augustin</persName>: le présent est une limite entre deux néants, celui de ce qui n'est plus et celui de ce qui n'est pas encore.
+        </p>
+        <p facs="#facs_9_r_5">
+          D'autre part, si l'on admet que le présent est, il faut admettre aussi qu'il n'est qu'“en passant”, que son être c'est de cesser d'être.
+        </p>
+        <p facs="#facs_9_r_6">
+          Pour la liberté, il faut bien choisir de la saisir soit dans la continuité de la conscience active, soit comme un commencement absolu faisant irruption dans cette continuité. Dans le premier cas, elle apparaît comme dérivée au fil du temps, rattachée à quelque causalité, physique ou psychologique. Dans le second, ou bien elle sombre dans le non-sens, l'arbitraire du hasard, de n'importe quoi, — ou bien elle fait irruption comme percée de
+        </p>
+        <p>
+          59
+        </p>
+      <pb facs="#facs_10" n="10" />
+        <p facs="#facs_10_r_1">
+          l'absolu — donc de la nécessité — dans le temps. Dérivée ou nécessaire, elle n'est pas la liberté.
+        </p>
+        <p facs="#facs_10_r_2">
+          Il semble donc qu'aussi bien le recours au temps que le recours à l'éternité excluent à la fois le présent et la liberté. Et nombreuses ont été les réflexions qui, soit sub specie temporis, soit sub specie aeternitatis, ont nié la liberté — du moins la liberté comme un choix historique concret.
+        </p>
+        <p facs="#facs_10_r_3">
+          Peut-être pourrions-nous, dès lors, chercher une issue, si mystérieuse qu'elle demeure pour nous, dans "la miniature d'éternité" dont il vient d'être question, et qui est "notre présent vécu". Elle tente en effet de suggérer un contact du temps avec l'éternité, mieux: un emmêlement précis avec elle, une éternité qui resterait dans son essence liée au temps, faite de temps et d'histoire. Cet emmêlement reste impensable, encore bien plus impensable que l'éternité en tant qu'absence de temps, dont on a pu au moins suggérer l'idée à l'aide des figures et des rapports intemporels de la géométrie. Il faudrait penser plutôt aux représentations simultanées, sur la même surface, dans un tableau unique, des étapes successives de l'histoire sainte, qui semble ainsi se dérouler en abolissant, non le vécu, mais le temps, ou plutôt en le transposant en "autre chose".
+        </p>
+        <p facs="#facs_10_r_4">
+          "Autre chose" impensable. Mais du moment que le présent, où nous ne cessons de vivre, est lui-même impensable, il nous faut bien admettre "l'impensable" dans notre pensée et tenter de voir ce que peut nous suggérer l'expérience vécue de cette "impensabilité".
+        </p>
+        <p facs="#facs_10_r_5">
+          60
+        </p>
+      <pb facs="#facs_11" n="11" />
+        <p facs="#facs_11_r_1">
+          "L'expérience vécue" de quelque chose d'impensable oblige à recourir au mythe ou à l'image, — à ce que <persName ref="#zbz-p.1">Jaspers</persName> appelait "l'écriture chiffrée". Celle-ci se distingue du langage direct par le fait qu'elle ne peut être "déchiffrée" que par une conscience active, située à un moment de l'histoire et de son histoire; déchiffrage non généralisable parce que son "organe" n'est pas seulement l'entendement intemporel, mais aussi et surtout la liberté engagée hic et nunc. En effet, lorsqu'il s'agit d'une synthèse vécue du contradictoire, l'entendement ne peut que lui refuser l'être s'il n'est pas soutenu et nourri par la liberté, devenue à sa manière un organe de compréhension. Prenons donc une image: la molécule d'eau qui tourne dans une vague déferlant vers un rivage. La vague avance, mais la molécule tourne presque sur place, et elle change de vague parce qu'elle tourne presque sur place. "Presque": elle monte avec la vague vers sa crête, elle avance avec elle un instant quand elle est dans sa crête, puis elle descend au creux de la vague suivante qui la tire en arrière, et elle recommence. La vague va vers le rivage comme le temps vers l'avenir. Mais elle dépend de la vague qui est derrière elle comme le temps dépend du passé. Et elle tourne "presque" sur place, avançant tout de même un peu vers le rivage, comme le présent — ce présent qui est l'être du temps comme la molécule est l'être de la vague, ce présent qui dépend du passé, qui vise l'avenir — et qui, contrairement au temps, contrairement à la vague, ne s'écoule pas, — ou presque pas.
+        </p>
+        <p facs="#facs_11_r_2">
+          Bien sûr, ce n'est là qu'une image. Mais elle suggère, me semble-t-il, les rapports justes du présent vécu avec son passé et son avenir. Elle suggère l'attitude mentale permettant de concevoir qu'au cœur du temps, et en tant que condition de son écoulement, il y a ce présent qui ne s'écoule "presque" pas, et qui en est sans doute la substance.
+        </p>
+        <p>
+          61
+        </p>
+      <pb facs="#facs_12" n="12" />
+        <p facs="#facs_12_r_1">
+          Ce présent paradoxal seul permet de concevoir que la liberté soit possible. Celle-ci serait inconcevable sans le support d'un passé qui, bien qu'étant ce qui n'est plus, donne à ce qui n'est plus l'immuabilité substantielle de ce qui échappe désormais à toute intervention active, de ce qui est désormais à jamais ce qu'il a été, précisément parce qu'il n'est plus, parce qu'il est sous l'abri définitif du néant, hors d'atteinte. Sans cette immuabilité du passé, aucun acte libre ne serait possible, à force de frivolité et d'inconsistance. Mais le présent paradoxal n'entame en rien l'immuabilité du passé. Au contraire, il l'assume et il compte sur lui dans sa visée de l'avenir, et c'est à travers lui que cet avenir va devenir un passé immuable. Mais il ne découle pas de lui puisqu'il y met un terme en ne s'écoulant pas. "Miniature d'éternité", le présent n'est pas un point, mais une sorte d'interruption qui dure, qui s'effrange en passé, en futur, comme la molécule entre les deux vagues, une interruption qui ne s'écoule pas, qui fonde le temps et l'alimente peut-être d'ailleurs, sans lui échapper et sans lui appartenir.
+        </p>
+        <p facs="#facs_12_r_2">
+          Il en va de même de la liberté. Aucune liberté n'est libre de causalité. Mais aucune liberté n'est libre non plus sans "les lois non-écrites des dieux". Aucune liberté ne se réduit à une causalité, mais aucune liberté n'est pure soumission à "des lois non-écrites" définissant une fois pour toutes l'acte libre du fond de l'éternité. La liberté n'est possible qu'au sein du présent paradoxal.
+        </p>
+        <p facs="#facs_12_r_3">
+          C'est pourquoi "les lois" doivent être "non-écrites". C'est pourquoi l'impératif catégorique kantien, seul synonyme, dans cette philosophie, de la liberté elle-même, ne peut être qu'une formule si abstraite que certains la jugent vide. Le présent paradoxal
+        </p>
+        <p>
+          62
+        </p>
+      <pb facs="#facs_13" n="13" />
+        <p facs="#facs_13_r_1">
+          est si concret que l'énoncé de la liberté ne peut être, en somme, qu'un synonyme abstrait de la liberté.
+        </p>
+        <p facs="#facs_13_r_2">
+          Les hommes, souvent las de leur condition temporelle, se construisent autour du présent paradoxal. Ils voudraient ou bien l'arbitraire total — que tout soit toujours permis, ou bien que les lois des dieux soient clairement écrites et puissent s'imposer à tous par l'évidence ou la force. La liberté vit de l'impossibilité d'une telle abdication. Elle s'enracine dans l'exigence du présent paradoxal, miniature d'éternité, qui fonde et qui perce le temps.
+        </p>
+        <p facs="#facs_13_r_3">
+          Mais si l'on demande — comme un grand savant me l'a demandé un jour — comment concevoir, non le temps vécu de la liberté, mais celui de la nature, je réponds que je n'en sais vraiment rien. Devant ce mystère, certains se réfugient dans le temps représenté par la lettre <hi rendition="#i">t</hi> dans les équations des physiciens. Ils substituent à une conception du temps la faculté de le mesurer indirectement. D'autres en viennent à dire que, dans la nature, sans conscience et sans liberté, le temps n'existe pas. Pourtant il faut évidemment "du temps" au morceau de sucre pour fondre dans une tasse de thé, au poussin pour devenir une poule, à l'eau pour creuser le rocher.
+        </p>
+        <p facs="#facs_13_r_4">
+          La barrière kantienne, qui nous enferme dans le monde phénoménal, ne cède pas, ici non plus. Je ne sais pas.
+        </p>
+        <p>
+          63
+        </p>
+      </div>
+      </body></text>
+</TEI>

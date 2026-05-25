@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au premier niveau (a), le chercheur a en vue un...",
+      "bbox": {
+        "x_pct": 12.59,
+        "y_pct": 4.431,
+        "w_pct": 74.244,
+        "h_pct": 4.239
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au second niveau (b), il s'efforce de pénétrer...",
+      "bbox": {
+        "x_pct": 12.437,
+        "y_pct": 9.197,
+        "w_pct": 74.538,
+        "h_pct": 10.059
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au troisième niveau (c), le chercheur se donne...",
+      "bbox": {
+        "x_pct": 12.622,
+        "y_pct": 19.9,
+        "w_pct": 74.461,
+        "h_pct": 21.488
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant au sens des langages engendrés par l'activi...",
+      "bbox": {
+        "x_pct": 12.622,
+        "y_pct": 45.234,
+        "w_pct": 74.538,
+        "h_pct": 13.687
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "11. nature de ce que nous appelons...",
+      "bbox": {
+        "x_pct": 12.807,
+        "y_pct": 61.564,
+        "w_pct": 74.538,
+        "h_pct": 17.617
+      },
+      "changed": true,
+      "change_reason": "Identified as a footnote (starts with a superscript-like index 11 and summarizes a book reference)."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le langage scientifique, comme tout langage, n'a...",
+      "bbox": {
+        "x_pct": 12.731,
+        "y_pct": 81.998,
+        "w_pct": 74.396,
+        "h_pct": 8.194
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "83",
+      "bbox": {
+        "x_pct": 84.4,
+        "y_pct": 92.5,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Missing region for page number identified; labeled as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Footnote was mislabeled as paragraph.",
+    "Page number at bottom right was not captured in initial regions."
+  ],
+  "doc_id": "2020",
+  "page": 3,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,84 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "10",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'EUROPE AU DÉFI",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lement investi par le capital libre, aveugle et impitoyable du xixe siècle, — des musées, des trésors déjà accumulés, donc passés, à la bonne heure. Mais hériter des tâches, et par elles un avenir?",
+      "bbox": {
+        "x_pct": 9.009,
+        "y_pct": 11.892,
+        "w_pct": 79.572,
+        "h_pct": 10.117
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons envie de répondre : impossible. Nous sommes de vieilles nations, divisées à l'intérieur d'elles-mêmes et entre elles. Nous tenons à tout ce qui nous divise, à nos souvenirs atroces, à nos rancunes liées à nos gloires, à ce sang versé, et même à nos crimes, s'ils furent nôtres. Nous sommes de vieux peuples individualistes, et chacun de nos efforts, militaire, sportif, industriel, trouve son sens dans le prestige qu'il donne à un drapeau, rival d'autres drapeaux.",
+      "bbox": {
+        "x_pct": 9.197,
+        "y_pct": 21.559,
+        "w_pct": 79.023,
+        "h_pct": 22.342
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a des pays, non loin de nous, un peu plus à l'est, qui n'ont plus vraiment de drapeau. Cela nous gêne un peu. Il est vrai que « drapeau » ici est un peu une manière de dire, un euphémisme imagé; car ce que nous pensons réellement, c'est que les hommes là-bas, ne peuvent plus être eux-mêmes, penser ce qu'ils pensent, croire ce qu'ils croient, aimer et haïr ce qu'ils haïssent ou aiment. Nous réussissons parfois à croire qu'ils en ont peut-être moins besoin que nous, que de longues traditions les ont habitués à se passer de ce qui, pour nous, rend l'air respirable. Évidemment nous n'en sommes pas bien certains, mais comme de toute façon nous ne pouvons rien faire pour les libérer, mieux vaut croire qu'il en est ainsi.",
+      "bbox": {
+        "x_pct": 9.063,
+        "y_pct": 45.559,
+        "w_pct": 80.535,
+        "h_pct": 34.234
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certains craignent que la contrainte ne s'étende jusqu'à nous. Mais cela, nous trouvons que dans nos vieux pays raisonnables, c'est difficile à imaginer. On",
+      "bbox": {
+        "x_pct": 9.545,
+        "y_pct": 79.216,
+        "w_pct": 79.92,
+        "h_pct": 7.964
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR was highly inaccurate",
+    "Missing bounding box for page number and running header in detected regions",
+    "Labels for page elements were incorrectly categorized as text"
+  ],
+  "doc_id": "460",
+  "page": 12,
+  "elapsed_seconds": 6.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

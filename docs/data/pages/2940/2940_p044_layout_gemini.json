@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DISKUSSION IM PUBLIKUM",
+      "bbox": {
+        "x_pct": 13.196,
+        "y_pct": 10.309,
+        "w_pct": 28.04,
+        "h_pct": 1.839
+      },
+      "changed": false
+    },
+    {
+      "label": "table",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wie steht es mit dem Unbehagen? Frau Ribi\nUnbehagen kann auch förderlich sein. Gasteyger\nWir sind Profis im Entmutigen, aber Amateure im Ermutigen. Furgler\nDas ist eine Aufgabe für Parteien und Medien.\nDas Unbehagen ist eine Sache der Schriftsteller und Jour- Hersch\nnalisten, nicht des Volkes.\nWas geschieht mit der Neutralität in einem Vereinigten Europa von Moos\nnach Maastricht?\nVon einem Vereinigten Europa sind wir noch weit entfernt. Gasteyger\nJedoch: in der EG ist Neutralität vorläufig akzeptiert.\nNeutralität ist für uns auch innere Friedenswahrung. Furgler\nIst humanitäre Hilfe noch möglich? von Känel\nmit Frau Hersch der Meinung, in Jugoslawien kann humanitäre Furgler\nHilfe nur mit militärischem Schutz geleistet werden = neue Hilfs-\nformen (Blauhelme!)\nSouveränitätsverlust der Schweiz mit EWR. Schwarz\nDie totale Souveränität gibt es nicht, auch für das Individuum Furgler\nnicht. Interdependenz ist mitzuberücksichtigen.",
+      "bbox": {
+        "x_pct": 13.059,
+        "y_pct": 15.192,
+        "w_pct": 74.544,
+        "h_pct": 71.99
+      },
+      "changed": true,
+      "change_reason": "The table content was empty and needed the extracted text to be represented as a paragraph block within the table structure."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "41",
+      "bbox": {
+        "x_pct": 73.201,
+        "y_pct": 94.025,
+        "w_pct": 1.918,
+        "h_pct": 1.839
+      },
+      "changed": true,
+      "change_reason": "Identified page number and corrected label to page_footer to comply with formatting guidelines."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "The initial layout extraction lacked the table content text.",
+    "The page number at the bottom was missing from the initial detection."
+  ],
+  "doc_id": "2940",
+  "page": 44,
+  "elapsed_seconds": 4.19,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 30.422,
+        "y_pct": 5.81,
+        "w_pct": 37.048,
+        "h_pct": 2.638
+      },
+      "changed": true,
+      "change_reason": "The author name is a header-level element, not a standard paragraph."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LILLUSION PHILOSOPHIQUE",
+      "bbox": {
+        "x_pct": 4.819,
+        "y_pct": 26.286,
+        "w_pct": 89.111,
+        "h_pct": 19.905
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LIBRAIRIE FÉLIX ALCAN",
+      "bbox": {
+        "x_pct": 20.377,
+        "y_pct": 87.114,
+        "w_pct": 58.042,
+        "h_pct": 3.048
+      },
+      "changed": true,
+      "change_reason": "Publisher information on title pages should be categorized as a section header element."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Misclassified author name as paragraph",
+    "Misclassified publisher name as paragraph"
+  ],
+  "doc_id": "20",
+  "page": 1,
+  "elapsed_seconds": 2.73,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

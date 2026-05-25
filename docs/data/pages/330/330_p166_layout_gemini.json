@@ -1,0 +1,96 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "132",
+      "bbox": {
+        "x_pct": 123.0,
+        "y_pct": 87.0,
+        "w_pct": 27.0,
+        "h_pct": 13.0
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 393.0,
+        "y_pct": 82.0,
+        "w_pct": 298.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Running header incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nature même à perdre leur raison d'être en s'enlisant dans le effort de subsister. Il semble qu'au bout d'un certain temps ce qui devait permettre aux volontés humaines d'intervenir dans le déterminisme social les enlise au contraire, leur inflige une lente paralysie et les soumette à ce déterminisme même. Et une fois ce stade de décadence atteint, la situation paraît sans issue : les individus ne peuvent avoir prise sur la réalité ni par les partis existants, ni par un nouveau parti, ni isolément. Il semble impossible de maintenir un régime démocratique dont les raisons d'être se sont perdues et qui se retourne même, par une sorte de fatalité, contre elles. Mais en même temps on voit que renoncer à lui, c'est choisir la voie du mensonge effrayé, conquérant par peur, voué à la police et à la guerre.",
+      "bbox": {
+        "x_pct": 11.88,
+        "y_pct": 11.381,
+        "w_pct": 85.515,
+        "h_pct": 27.299
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est vrai, il n'y a pas de solution. Il n'y a pas de solution au sens d'une possibilité ménagée d'avance, institutionnellement. Il n'y a pas de solution donnée. Mais ce n'est là rien d'exceptionnel. Toute vie vraiment humaine se donne à des valeurs qui, incarnées comme elles doivent l'être, mènent à des impossibilités sans issue. Il n'y a pas seulement la sainteté qui soit impossible. L'homme ne peut ni renoncer à lui-même, ni s'accomplir. Ou plutôt il ne cesse de s'accomplir en maintenant la possibilité constamment diverse de cet impossible accomplissement.",
+      "bbox": {
+        "x_pct": 12.298,
+        "y_pct": 38.262,
+        "w_pct": 84.958,
+        "h_pct": 19.287
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a pas de salut en effet, pour la démocratie et pour le jeu des partis, dans la démocratie en tant que régime, dans les partis en tant qu'organismes collectifs. S'il y a un salut, il ne peut venir que de l'homme, des hommes individuels. Et quand je dis « s'il y a un salut », ce n'est pas là une hypothèse au sens ordinaire, théorique, du mot - car en sens, je crois avoir montré qu'il n'y en a pas. Sur le plan pratique, en revanche, ce n'est plus une hypothèse, mais un impératif : il faut qu'il y ait un salut. L'homme doit inventer ce salut.",
+      "bbox": {
+        "x_pct": 12.298,
+        "y_pct": 57.5,
+        "w_pct": 84.958,
+        "h_pct": 17.5
+      },
+      "changed": true,
+      "change_reason": "Identified missing paragraph block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce recours dernier du régime politique à l'homme, à son invention, à sa capacité de maintenir par sa présence vivante le possible dans l'impossible, nous amène à examiner le problème des droits des partis sur l'individu, et des limites de ces droits.",
+      "bbox": {
+        "x_pct": 12.772,
+        "y_pct": 75.463,
+        "w_pct": 84.903,
+        "h_pct": 8.583
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Detected incorrect transcriptions and merged text blocks",
+    "Missed paragraphs in scan interpretation",
+    "Missing Page Header/Footer identification",
+    "Transcript content was inaccurate",
+    "Page number and header were not labeled as filter"
+  ],
+  "doc_id": "330",
+  "page": 166,
+  "elapsed_seconds": 6.57,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

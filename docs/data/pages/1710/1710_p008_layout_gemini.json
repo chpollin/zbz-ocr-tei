@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le rationalisme engendre le scepticisme et le dogmatisme dont découlent fatalisme et fanatisme, et qu'il se réfère à « la logique de la vérité » qui appelle chacun à une décision personnelle, il se situe exactement au même « centre » que le Père Fessard. Lorsque, parlant de l'humanité, il oppose sa « destination » à une « destinée » établie d'avance, il vise l'unité dialectique du « théorique » et du « pratique », et donc celle qui a commandé tous les efforts et toutes les recherches du Père Fessard : l'unité de la Vérité et de la Liberté.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 7.279,
+        "w_pct": 38.348,
+        "h_pct": 21.781
+      },
+      "changed": true,
+      "change_reason": "OCR content was garbled. Corrected text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On comprend donc pourquoi le Père Fessard est amené à faire, pour ainsi dire, de l'immanence en quelque sorte, à invoquer « sa pratique » contre « sa théorie », en tant que la première « rattrape » et « dépasse » la seconde ; ou encore, à défendre la légitimité et la portée de « l'être juif » d'Aron contre le purisme intellectuel de la tradition philosophique dont celui-ci se réclame.",
+      "bbox": {
+        "x_pct": 9.633,
+        "y_pct": 32.863,
+        "w_pct": 38.556,
+        "h_pct": 15.755
+      },
+      "changed": true,
+      "change_reason": "OCR content was garbled. Corrected text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "souci de rigueur théorique, s'est imposé de plus en plus à lui, au point que finalement son esprit, au lieu de se satisfaire, à travers ses efforts de « neutralité », comme d'une « une tunique de Nessus », tant l'imbrication de la donnée de sa naissance et de son choix existentiel s'avère, dans sa « solidarité », indestructible.",
+      "bbox": {
+        "x_pct": 53.831,
+        "y_pct": 7.379,
+        "w_pct": 32.497,
+        "h_pct": 10.242
+      },
+      "changed": true,
+      "change_reason": "OCR content was garbled. Corrected text to match original."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il s'agit d'une solidarité « mystique » d'Aron : il mystique parce identique à elle (affirmation des diversités de tout genre, et qui doit en triompher. L'historicité qui en dérive est à la fois identique à celle de tous les hommes, et « hors série » (affirmation contraire à la théorie « abstraite » de Sartre). Elle est donc indissolublement historique et religieuse, rejoignant ainsi le schème ignatien et le temps de Kierkegaard, structuré par l'Instant, hic et nunc.",
+      "bbox": {
+        "x_pct": 53.77,
+        "y_pct": 26.254,
+        "w_pct": 38.482,
+        "h_pct": 18.091
+      },
+      "changed": true,
+      "change_reason": "OCR content was garbled. Corrected text to match original."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "The initial OCR text was severely corrupted.",
+    "The bounding boxes are acceptable but the OCR content required complete replacement."
+  ],
+  "doc_id": "1710",
+  "page": 8,
+  "elapsed_seconds": 4.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

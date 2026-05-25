@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "22 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 14.888,
+        "y_pct": 2.0,
+        "w_pct": 65.17,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number and running header at top"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jai dit ailleurs 1 ce que la classe ouvrière me paraît devoir entreprendre de sa propre initiative p",
+      "bbox": {
+        "x_pct": 15.072,
+        "y_pct": 14.476,
+        "w_pct": 79.185,
+        "h_pct": 20.615
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord Pécole   primaire : elle à mon avis, garder son caractère préparatoire pour tout le monde, e",
+      "bbox": {
+        "x_pct": 14.888,
+        "y_pct": 35.034,
+        "w_pct": 78.016,
+        "h_pct": 18.857
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Puis : la sélection des futurs intellectuels et des futurs manuels doit se faire dune façon toute di",
+      "bbox": {
+        "x_pct": 14.757,
+        "y_pct": 53.477,
+        "w_pct": 78.541,
+        "h_pct": 36.052
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Voir Revue syndicale suisse, novembre 1944.",
+      "bbox": {
+        "x_pct": 19.448,
+        "y_pct": 90.077,
+        "w_pct": 52.339,
+        "h_pct": 2.142
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Added page header",
+    "Corrected footnote label"
+  ],
+  "doc_id": "130",
+  "page": 16,
+  "elapsed_seconds": 3.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label to footnote": 1,
+    "ADDED": 1
+  }
+}

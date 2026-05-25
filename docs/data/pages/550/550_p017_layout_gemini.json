@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "76 Discussion sur les communications",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correctly identified as page running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La troisième condition, c'est la nécessité de la participation pour comprendre et pour expliquer. En effet, la participation engagée est nécessaire au sociologue, mais pas au moment où il fait son opération de prise de conscience. Seulement, il ne peut la réaliser sans cet engagement en tant qu'être social. A ces trois conditions (transmissibilité, référence au total, participation mais désengagement pour la prise de conscience) le sociologue politique peut faire œuvre scientifique et objective. J'en arrive aux remarques de M. Werner qui visaient mon exposé. La démocratie économique est-elle un but pertinent, alors que la démocratie politique est elle-même si vacillante ?",
+      "bbox": {
+        "x_pct": 7.864,
+        "y_pct": 13.801,
+        "w_pct": 85.021,
+        "h_pct": 16.009
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated/corrupted, updated to match full paragraph content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ne pourrait-on pas répondre à cela que, si la démocratie politique est vacillante et faible, c'est précisément parce qu'elle n'est pas fondée sur la démocratie économique. De ce fait elle est plus formelle que réelle.",
+      "bbox": {
+        "x_pct": 7.947,
+        "y_pct": 37.248,
+        "w_pct": 84.702,
+        "h_pct": 8.044
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au sujet de l'intervention de la démocratie dans l'économique, vous dites que la démocratie est essentiellement politique, alors que l'homme, en tant qu'il participe à l'économie, est dans une position « extérieure ». Ce sont deux catégories qu'il ne faut pas mêler.",
+      "bbox": {
+        "x_pct": 7.767,
+        "y_pct": 46.159,
+        "w_pct": 84.84,
+        "h_pct": 9.834
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici, je voudrais faire une observation qui me paraît importante : la ségrégation fonctionnelle de l'économique est un phénomène historique contingent. Dans la plupart des sociétés, l'économique est profondément impliqué dans la politique et dans tout l'ensemble de la vie sociale. Seul le XIXme siècle a déterminé une ségrégation artificielle de l'économique, parce que cette ségrégation est un système de pouvoir. Elle doit cesser, sinon la démocratie politique qui est hétérogène au système de classes du XIXme siècle, doit entièrement périr, car la séparation de l'économique est une manière de conserver le système ancien.",
+      "bbox": {
+        "x_pct": 7.67,
+        "y_pct": 56.885,
+        "w_pct": 84.938,
+        "h_pct": 19.558
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Réponse de M. Touraine",
+      "bbox": {
+        "x_pct": 7.809,
+        "y_pct": 79.472,
+        "w_pct": 34.452,
+        "h_pct": 2.603
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "M. Goriely a raison de souligner que j'ai voulu définir des types de syndicalisme et donc nécessairement des types de situations ouvrières.",
+      "bbox": {
+        "x_pct": 7.767,
+        "y_pct": 83.36,
+        "w_pct": 84.785,
+        "h_pct": 5.812
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'insiste sur le fait qu'il ne s'agit pas ici de dégager un secteur unique d'évolution linéaire.",
+      "bbox": {
+        "x_pct": 8.044,
+        "y_pct": 90.276,
+        "w_pct": 79.376,
+        "h_pct": 4.338
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 7,
+  "issues": [
+    "The initial segmentation captured truncated text for almost all paragraphs.",
+    "Page header was not labeled."
+  ],
+  "doc_id": "550",
+  "page": 17,
+  "elapsed_seconds": 6.42,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

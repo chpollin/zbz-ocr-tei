@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Begrüßung durch die Ausländerbeauftragte, Barbara John",
+      "bbox": {
+        "x_pct": 9.452,
+        "y_pct": 4.708,
+        "w_pct": 79.148,
+        "h_pct": 2.851
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Meine sehr geehrten Damen und Herren,",
+      "bbox": {
+        "x_pct": 9.452,
+        "y_pct": 17.514,
+        "w_pct": 43.127,
+        "h_pct": 2.112
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match actual block content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Als ich vor vielen Monaten eine Einladung an Sie schickte, Madame Hersch, da hatte ich nicht viel Hoffnung. Warum eigentlich nicht? Sie sehen, daß auch manchmal Kleinmut belohnt wird, obwohl das nicht sein sollte. Vielleicht auch nur, wenn er gepaart ist mit einer Initiative. Aber ich hatte Erfolg, und wir sind alle sehr glücklich, Frau Hersch, daß Sie nach Berlin gekommen sind und begrüßen Sie voller Dankbarkeit.",
+      "bbox": {
+        "x_pct": 9.218,
+        "y_pct": 28.127,
+        "w_pct": 80.012,
+        "h_pct": 11.044
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to include full transcription of the block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich bin überzeugt, daß vielen von Ihnen Madame Hersch mit ihrem weitverbreiteten philosophischen Werk bekannt ist. Es ist sehr umfangreich. Ich habe die Philosophin Jeanne Hersch kennengelernt über dieses Buch. Das ist ein sehr altes Buch, es ist auch ziemlich ramponiert. Es hat all meine Umzüge überstanden. Ich habe es gelesen, als ich in einem Alter war – etwa 26 – das war das Alter, in dem Frau Hersch als Studentin dieses Buch geschrieben hat; und ich war damals – wer interessiert sich nicht, wenn er jung ist, für die Grundfragen, für die Sinnfragen des Lebens –, ich war damals fasziniert von der Eleganz, aber auch natürlich von der Klarheit und der Entschiedenheit, mit der Sie den Weg der Philosophie und uns bewegenden Fragen nachgezeichnet haben.",
+      "bbox": {
+        "x_pct": 9.253,
+        "y_pct": 39.663,
+        "w_pct": 80.093,
+        "h_pct": 18.513
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to include full transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Frau Hersch hat aber neben Lehre und Forschung, die sie in zahlreiche Länder geführt haben, auch immer zu den brennenden Fragen der Zeit Stellung bezogen, und zwar nicht nur vom Schreibtisch aus, sondern Sie waren als Berichterstatterin für internationale Organisationen über lange Zeit tätig, besonders auch für die UNESCO. Zentrales Anliegen Ihrer Arbeit war der Erhalt, die Wiedererrichtung, die Verbreitung der Menschenrechte, und eine Ihrer berühmtesten, bekanntesten Anthologien: „Le Droit d’être un homme“, „Das Recht ein Mensch zu sein“, ist in dieser Zeit entstanden. Im vorigen Jahr hat Madame Hersch auf der Tagung des Europarates in Straßburg einen weit beachteten Vortrag zum Thema Rassismus und Fremdenfeindlichkeit gehalten. Bei einem solchen Lebenswerk könnte ich sehr viel erzählen, aber ich will Ihnen so schnell wie möglich das Wort geben und bitte darum.",
+      "bbox": {
+        "x_pct": 9.137,
+        "y_pct": 58.233,
+        "w_pct": 80.327,
+        "h_pct": 22.235
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to include full transcription."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 4,
+  "issues": [
+    "Original text snippets provided were incomplete and failed to represent the full content of the paragraphs.",
+    "Bbox for 'Meine sehr geehrten Damen...' was slightly off in the initial JSON."
+  ],
+  "doc_id": "3200",
+  "page": 5,
+  "elapsed_seconds": 5.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNES",
+      "bbox": {
+        "x_pct": 36.326,
+        "y_pct": 82.164,
+        "w_pct": 27.534,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Identified running header at top of page, though the OCR text indicates location near middle/top, the header text 'TEMPS ALTERNÉS' is clearly a page header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "113",
+      "bbox": {
+        "x_pct": 83.243,
+        "y_pct": 81.398,
+        "w_pct": 4.144,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Identified page number 113 as page_header/page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette possibilité était si loin de moi, si incompréhensible et méprisable que je ne protestai même pas. Il continua: — Le temps où je vous ai connue restera un de mes plus précieux souvenirs. Pour le moment, il vaut mieux ne plus nous voir; peut-être plus tard, quand nous serons calmes l'un et l'autre, dans un ou deux ans, si vous le permettez. Je ne vous oublierai pas.",
+      "bbox": {
+        "x_pct": 8.149,
+        "y_pct": 12.694,
+        "w_pct": 80.635,
+        "h_pct": 17.93
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne lui réponds pas. Tout ce qu'il dit se perd dans un silence sans bornes qui s'est fait. Nous nous arrêtons, face à face, et une dernière fois je regarde ses yeux. Ils sont pleins de larmes bleues et son visage se crispe quand il me serre la main.",
+      "bbox": {
+        "x_pct": 8.338,
+        "y_pct": 30.435,
+        "w_pct": 80.581,
+        "h_pct": 12.287
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant il est parti. Il n'y a plus que la lumière funèbre, l'agitation vide des hommes. Je dois aller à l'école. Je suis là, sur le bord du trottoir, et je ne sais pas si je vais traverser la chaussée éclatante d'azur. Elle me fait peur. Les claxons des autos me déchirent les nerfs. La lumière du soleil me fait mal aux yeux, et j'ai froid. Comment peut-il faire si clair et pourtant si froid ? Où sont les vêtements du monde ? D'où vient cette blessante nudité à son squelette de cristal ? J'ai envie de me coucher là, tout de mon long, par terre, de cacher ma tête au creux de mon bras, et de ne plus bouger, et de laisser passer sur moi n'importe quoi. Je traverse pourtant, en automate bien remonté, la surface brillante comme une glace. Je descends la rue, je prends le chemin de l'école. J'arrive avant la cloche. Je m'assieds à mon banc. Je suis la leçon. Et je m'émerveille d'avoir un corps aussi délimité, aussi",
+      "bbox": {
+        "x_pct": 8.203,
+        "y_pct": 45.624,
+        "w_pct": 80.676,
+        "h_pct": 40.454
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 7.8,
+        "y_pct": 86.8,
+        "w_pct": 1.2,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Identified orphan page number/footer fragment."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR for text blocks was severely degraded.",
+    "Page number and header incorrectly classified as text.",
+    "Bottom-left artifact '8' identified as page_footer."
+  ],
+  "doc_id": "40",
+  "page": 111,
+  "elapsed_seconds": 5.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'ozone, les températures, les espèces animales, les climats sur la terre, l'efficience du soleil tout semblait subir à cause deux des altérations dont les effets, dans une certaine mesure prévisibles, restaient indéfinis dans leurs dimensions, même si les périodes envisagées dans le futur étaient relativement courtes. Ils prirent peur, une peur d'autant plus forte qu'elle était à la fois rationnelle et irrationnelle, rationnelle en tant qu'elle se fondait sur des constatations partiellement scientifiques, des mesures, des travaux d'experts, - irrationnelle en tant qu'elle extrapolait loin au delà des mesures et des constatations, et qu'elle se nourrissait d'un profond sentiment d'impuissance, comme si les pouvoirs humains incriminés échappaient précisément aux décisions humaines et devenaient les instruments d'une nouvelle fatalité.",
+      "bbox": {
+        "x_pct": 9.405,
+        "y_pct": 65.481,
+        "w_pct": 86.786,
+        "h_pct": 16.126
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content which was previously garbled/truncated."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En ce concerne la vie, la biologie moléculaire réussit à rendre compte à la fois, par une seule et même découverte, de la reproduction répétitive des individus d'une espèce donnée et de la naissance d'espèces nouvelles. Il devient dès lors possible d'intervenir techniquement dans le processus même de la création des espèces et d'en faire surgir d'inédites. L'homme s'interroge sur ce nouveau pouvoir. Il est vrai qu'il a une très vieille habitude de modifier la terre qu'il habite, qui ne ressemble plus guère, depuis bien longtemps, à celle où Adam et Eve commencèrent à travailler. Mais il a le sentiment que maintenant il s'agit d'autre chose, d'interventions d'un autre ordre. Il lui est presque impossible de préciser en quoi consiste la différence, et pourtant elle ne fait pour lui pas de doute.",
+      "bbox": {
+        "x_pct": 9.405,
+        "y_pct": 25.83,
+        "w_pct": 86.738,
+        "h_pct": 16.296
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand Adam et Eve furent mis au travail, ils assumèrent à la fois la tâche de changer la surface de la terre pour la rendre plus riche et plus féconde, et d'assurer la survie des espèces issues de la barque de Noé. Transformation et sauvegarde s'interpénétraient comme les deux faces de la réalisation d'un plan divin encore inachevé, et d'ailleurs de tout temps imprévisible. Les espèces, néanmoins, paraissaient données une fois pour toutes, à travers la répétition des naissances et des morts. Tandis que l'apparition, techniquement programmée, d'une chèvre-mouton, reste, malgré les fables, malgré les dragons, comme une nouvelle désobéissance et un sacrilège incarné.",
+      "bbox": {
+        "x_pct": 9.524,
+        "y_pct": 45.481,
+        "w_pct": 86.631,
+        "h_pct": 14.719
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et si ce n'était là qu'une faiblesse de l'imagination? S'il s'agissait en réalité d'un développement continu, et pour Dieu prévisible, des travaux des premiers hommes? S'il n'y avait rien de radical dans ce changement, aucun viol d'un sacré permanent?",
+      "bbox": {
+        "x_pct": 9.607,
+        "y_pct": 61.556,
+        "w_pct": 86.548,
+        "h_pct": 5.652
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et cette réflexion se resserre sur l'être humain lui-même lorsqu'elle porte, non plus sur ce qu'il fait, mais sur ce est, à travers le temps et l'histoire. Reste-t-il ce qu'il est, malgré les nouveautés apparemment radicales de l'histoire, ce sujet pensant, jugeant et décidant, en suspens entre obéissance et rébellion, souvent rebelle par obéissance, - ou bien est-il en train de se doter d'un alibi techniquement programmé, qui va le dispenser de son humanité? S'il se trouvait un jour, grâce aux techniques, libéré d'une part des hasards de la nature animale, et d'autre part, des choix à travers lesquels s'affrontent le bien et le mal, ce serait le changement ultime au delà duquel",
+      "bbox": {
+        "x_pct": 9.56,
+        "y_pct": 70.689,
+        "w_pct": 86.714,
+        "h_pct": 14.4
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 94.679,
+        "y_pct": 86.852,
+        "w_pct": 1.786,
+        "h_pct": 1.543
+      },
+      "changed": true,
+      "change_reason": "Re-identified as page number to filter from text stream."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Original text transcriptions were significantly corrupted.",
+    "Page number at the bottom was misclassified as text.",
+    "Coordinates for paragraph blocks needed better precision alignment with original image text."
+  ],
+  "doc_id": "2680",
+  "page": 31,
+  "elapsed_seconds": 6.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

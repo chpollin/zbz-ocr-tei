@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Exactement. Le deuxième conseil est celui-ci : surprendre. La façon de rompre une situation difficile dans une classe, c'est de surprendre. Par exemple se taire, quand les élèves s'attendent à vous entendre parler. Un troisième conseil : dans une classe, on doit toujours être très occupé, on ne doit pas laisser s'établir des moments de relâche. Lorsque tout le monde est occupé, il n'y a pas de problèmes de discipline. Je n'ai presque jamais eu de problèmes de discipline. Il faut dire que l'enseignement était beaucoup plus facile que de nos jours. Les élèves étaient différents. Quand j'entends aujourd'hui une jeune maîtresse me raconter que, lorsqu'elle dit à une petite élève : « Cécile, tu vas être punie », l'élève la regarde d'un air sidéré, met son index sur sa tempe et répond : « non mais, ça va pas la tête », je dois avouer que ce sont des choses que je n'ai pas vécues. Le métier est beaucoup plus difficile aujourd'hui que dans le temps.",
+      "bbox": {
+        "x_pct": 16.276,
+        "y_pct": 4.411,
+        "w_pct": 79.902,
+        "h_pct": 28.008
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text segments."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez souvent affirmé que l'enseignement doit éviter « l'encyclopédisme encombrant et viser à développer les capacités et non le savoir ». Est-ce là un des principes de votre pédagogie ?",
+      "bbox": {
+        "x_pct": 16.691,
+        "y_pct": 33.04,
+        "w_pct": 79.438,
+        "h_pct": 6.21
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce sont des choses que je ne dirais pas aujourd'hui, parce qu'elles vont trop dans le sens des clichés actuels. Tout le monde est persuadé aujourd'hui qu'une tête bien faite vaut mieux qu'une tête bien pleine. A tel point qu'il semble inutile de mettre quoi que ce soit dans la tête. Alors maintenant, je dis le contraire. Evidemment je reste convaincue qu'il est plus important d'avoir une tête bien faite qu'une tête pleine. Mais je suis convaincue qu'il n'y a pas de tête bien faite dans laquelle il n'y a rien. Les instruments de pensée, les exemples, les vérifications, etc., on ne peut les mettre en œuvre qu'avec ce qu'on a fait entrer dans sa propre tête. Il ne faut rien enseigner sans en faire un objet de pensée pour tête bien faite, n'importe quel contenu de pensée s'y prête. Je dirai la même chose en ce qui concerne le fameux sens critique, dont on parle tant. On ne peut pas le développer dans le vide. En quoi consiste en effet le sens critique ? A examiner ce qui vous est proposé en fonction de certains critères de validité préalables. Pour que le sens critique fonctionne, il faut qu'il se réfère lui-même à quelque chose. L'opinion selon laquelle il ne faut pas influencer l'enfant, comme si, au départ, il était constitué en personne achevée, est absurde. C'est la diversité et le pluralisme des influences qui finissent par créer une personnalité. Il y a beaucoup d'absurdités dans les théories pédagogiques actuelles.",
+      "bbox": {
+        "x_pct": 16.276,
+        "y_pct": 38.895,
+        "w_pct": 80.024,
+        "h_pct": 39.871
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quels principes opposeriez-vous à ces théories ?",
+      "bbox": {
+        "x_pct": 29.707,
+        "y_pct": 79.113,
+        "w_pct": 52.674,
+        "h_pct": 2.605
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On dit maintenant, et dans une certaine mesure on a raison, que tous les enseignants doivent recevoir une formation pédagogique générale. Personnellement je pense que chaque pédagogie est liée à une branche déterminée. Une didactique spécifiée offre une richesse de contenu qui peut améliorer considérablement l'enseignement. Par",
+      "bbox": {
+        "x_pct": 16.398,
+        "y_pct": 81.935,
+        "w_pct": 79.939,
+        "h_pct": 9.653
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "64",
+      "bbox": {
+        "x_pct": 16.63,
+        "y_pct": 95.534,
+        "w_pct": 3.785,
+        "h_pct": 2.27
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer and added as a new region."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Most OCR segments were highly truncated or hallucinatory, requiring complete re-transcription.",
+    "Page number 64 was missing from the initial region list.",
+    "Multiple regions required re-transcription to match actual source text content."
+  ],
+  "doc_id": "2330",
+  "page": 68,
+  "elapsed_seconds": 6.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

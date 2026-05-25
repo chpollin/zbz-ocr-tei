@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "92",
+      "bbox": {
+        "x_pct": 18.664,
+        "y_pct": 2.0,
+        "w_pct": 1.701,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number as page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊIRE ET LA FORME",
+      "bbox": {
+        "x_pct": 65.688,
+        "y_pct": 2.0,
+        "w_pct": 21.674,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "puisque la détermination logique ne se faire que par opposition de qualités   dont Tune est appropri",
+      "bbox": {
+        "x_pct": 18.514,
+        "y_pct": 13.3,
+        "w_pct": 68.548,
+        "h_pct": 4.226
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lunilé en tant que modalité   logique ne convenir tolal. Atribuée à être elle est mise enlre crochet",
+      "bbox": {
+        "x_pct": 18.664,
+        "y_pct": 17.147,
+        "w_pct": 68.698,
+        "h_pct": 22.253
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Enfin l'unit\u0000 en tant que modalit\u0000 logique exclut le changement et implique l'\u0000ternit\u0000, non la dur\u0000e acquise, mais l'\u0000ternit\u0000 d'essence. Elle exclut donc le changement. - Ces relations n\u0000cessaires sont trop \u0000videntes depuis Parm\u0000nide pour qu'il soit utile d'y insister.",
+      "bbox": {
+        "x_pct": 18.664,
+        "y_pct": 39.5,
+        "w_pct": 68.698,
+        "h_pct": 7.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: text paragraph"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La nolion de forme   impliquant à la fois   Tunité dune   part ct de Tautre la   différenciation   s",
+      "bbox": {
+        "x_pct": 18.929,
+        "y_pct": 48.657,
+        "w_pct": 68.664,
+        "h_pct": 22.489
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces{ ainsi faudra   essayer de dire ce qu'est la forme_ qu'il",
+      "bbox": {
+        "x_pct": 21.774,
+        "y_pct": 71.191,
+        "w_pct": 59.067,
+        "h_pct": 1.821
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Added missing header and running title",
+    "Added missing paragraph between main text blocks"
+  ],
+  "doc_id": "110",
+  "page": 94,
+  "elapsed_seconds": 7.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 3
+  }
+}

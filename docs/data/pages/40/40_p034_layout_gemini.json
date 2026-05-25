@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "36",
+      "bbox": {
+        "x_pct": 102.5,
+        "y_pct": 74.5,
+        "w_pct": 20,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 383,
+        "y_pct": 74,
+        "w_pct": 235,
+        "h_pct": 18
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header to be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Non, dit Maman. Tu ne le connais presque pas, et il pourrait être ton père.",
+      "bbox": {
+        "x_pct": 98.24,
+        "y_pct": 120.32,
+        "w_pct": 806.76,
+        "h_pct": 51.98
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Non, dit Papa. Non.",
+      "bbox": {
+        "x_pct": 179.32,
+        "y_pct": 170.13,
+        "w_pct": 303.11,
+        "h_pct": 29.58
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est à ce moment sans doute que l'état de grâce, où l'âme détendue attend efficacement le bonheur comme une chose naturelle, prit fin pour moi. J'insistai, avec colère et une forte envie de pleurer. Je ne comprenais pas ce qu'on me disait. Trop âgé, lui, pour trouver normalement du plaisir dans une promenade avec moi ? Mais puisque j'en aurais, moi, avec lui ! Trop âgé ? Je revoyais ses jeux avec les enfants, la force de son visage dans le vent, la justesse de ses pas. Je ne le connais pas assez ? Mais qui est-ce que je connais alors, en qui puis-je avoir confiance si ce n'est pas en lui ? Je le retrouve marchant devant moi, enfonçant devant moi ses empreintes dans la neige pour que j'y place ensuite les pieds. Il a veillé sur moi, et le monde n'avait jamais été si frais ni si sûr. Mais comment expliquer cela ? Comment faire exister cela devant les yeux de Maman, qui voient si clair dans les choses qu'elle voit, et ne laissent point de place pour les choses qu'elle ne voit pas ? — Tout se replia. Je me tus. Il aurait pu être mon père ? Je calculai la différence de nos âges. On me défendait la course de dimanche ? Cette défense me révéla ce que j'ignorais, fixa ce qui flottait sans désir et sans attente, fit d'un rêve une volonté. Je tendis toutes mes forces. Et peu à peu je me dis une vérité qui, à mesure que je la découvrais, s'emparait de moi.",
+      "bbox": {
+        "x_pct": 98.65,
+        "y_pct": 195.94,
+        "w_pct": 809.86,
+        "h_pct": 609.07
+      },
+      "changed": true,
+      "change_reason": "Corrected heavily corrupted text content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Page number not detected as separate element initially.",
+    "Running header not detected as separate element initially.",
+    "Text content was heavily OCR-mangled and required full correction.",
+    "BBox for main paragraph incorrectly combined text before and after sub-headings."
+  ],
+  "doc_id": "40",
+  "page": 34,
+  "elapsed_seconds": 4.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

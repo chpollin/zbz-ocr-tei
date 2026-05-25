@@ -1,0 +1,90 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "plus souvent solubles; quand on le veut vraiment. Il s'agit dy mettre le autorités, ils doivent y me",
+      "bbox": {
+        "x_pct": 5.294,
+        "y_pct": 4.204,
+        "w_pct": 83.479,
+        "h_pct": 9.622
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand nous faisons un budget, il s'agit de savoir si nous préférons changer de voiture plus souvent ",
+      "bbox": {
+        "x_pct": 5.294,
+        "y_pct": 13.609,
+        "w_pct": 83.905,
+        "h_pct": 23.609
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces questions sont très concrètes et elles sont très constantes. Il ne s'agit pas seulement dune dis",
+      "bbox": {
+        "x_pct": 5.97,
+        "y_pct": 36.817,
+        "w_pct": 83.73,
+        "h_pct": 25.161
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi, les problèmes posés par la nature sont liés à la profonde des désirs des hommes, à /éducation",
+      "bbox": {
+        "x_pct": 6.596,
+        "y_pct": 61.278,
+        "w_pct": 83.104,
+        "h_pct": 20.016
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si nous sommes tous maintenant à genoux devant Ie pétrole, c'est parce que Je pétrole était meilleur",
+      "bbox": {
+        "x_pct": 7.096,
+        "y_pct": 80.844,
+        "w_pct": 82.641,
+        "h_pct": 9.405
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "127",
+      "bbox": {
+        "x_pct": 85.9,
+        "y_pct": 92.2,
+        "w_pct": 3.4,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page number region"
+  ],
+  "doc_id": "1290",
+  "page": 6,
+  "elapsed_seconds": 3.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

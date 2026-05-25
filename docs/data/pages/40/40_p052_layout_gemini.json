@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "54 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 103.0,
+        "y_pct": 79.0,
+        "w_pct": 100.0,
+        "h_pct": 100.0
+      },
+      "changed": true,
+      "change_reason": "Correcting page number and running header from text to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne crois pas qu'il ait jamais été absent. La souffrance sauvait par la beauté, et la mort toujours sous ses yeux devenait une liturgie. Ne va pas imaginer alors, Marc, que j'aie été constamment calme, en harmonie avec sa création ! J'ai poussé parfois d'énormes cris silencieux à travers toute mon âme et tout mon corps. J'ai souffert, je crois, profondément et violemment. Mais les eaux où je me débattais étaient celles d'un grand fleuve sans marécages, qui roulaient selon la loi vers la mer.",
+      "bbox": {
+        "x_pct": 9.77,
+        "y_pct": 12.599,
+        "w_pct": 81.041,
+        "h_pct": 23.034
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and misrecognized OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'imagine un peu le visage qu'en ce temps-là je laissais voir aux autres, par oubli. On devait sentir jusqu'à la gêne, dans son excessive mobilité, qui excluait tout contour sereinement sculptural, la présence trop immédiate d'une âme encore sans retraite et sans refus. Je ne refusais rien, non, pas un instant je n'ai rejeté la peine, ou regretté la paix d'avant l'amour. Mais peut-être était-ce facile, dans un monde que nul ne pouvait me ravager et dont Dieu ne s'en irait jamais. Il me semble que j'avais à peine un visage, à peine cette surface qui enferme l'être et le sépare en révélant une forme, emmêlée que j'étais alors à toutes les confusions mouvantes du sentiment.",
+      "bbox": {
+        "x_pct": 10.041,
+        "y_pct": 35.255,
+        "w_pct": 81.041,
+        "h_pct": 32.543
+      },
+      "changed": true,
+      "change_reason": "Corrected misrecognized OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Maintenant.",
+      "bbox": {
+        "x_pct": 13.689,
+        "y_pct": 70.86,
+        "w_pct": 16.892,
+        "h_pct": 2.013
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je me suis levée, Marc, cette fois avec un peu de peine, — l'enfant se fait lourd. J'ai été vers le miroir. J'y ai vu mon visage habituel, et la question insolite qui troublait le regard s'est apaisée d'elle-même. Mon visage tel que je le vois là chaque jour, avec comme fond la vieille, grande",
+      "bbox": {
+        "x_pct": 10.365,
+        "y_pct": 73.157,
+        "w_pct": 80.892,
+        "h_pct": 13.072
+      },
+      "changed": true,
+      "change_reason": "Corrected misrecognized OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR was highly inaccurate.",
+    "Page number and header were labeled as text."
+  ],
+  "doc_id": "40",
+  "page": 52,
+  "elapsed_seconds": 5.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

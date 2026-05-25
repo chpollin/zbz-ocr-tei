@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE III",
+      "bbox": {
+        "x_pct": 37.244,
+        "y_pct": 19.666,
+        "w_pct": 24.955,
+        "h_pct": 2.193
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'illusion philosophique",
+      "bbox": {
+        "x_pct": 31.13,
+        "y_pct": 24.5,
+        "w_pct": 35.783,
+        "h_pct": 2.316
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling of 'L'illusion' from 'Lillusion'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Singulière situation, si ce qui précède est vrai, que celle du philosophe essayant de débrouiller un problème philosophique. Il doit tendre à l'évidence scientifique, mais il lui est impossible d'y atteindre. En renonçant à elle aussi bien qu'en l'obtenant il quitte le domaine de la philosophie. Nous voyons maintenant que sous le problème dont il paraît s'occuper uniquement se cache un autre problème — ou plutôt que le problème en apparence théorique dissimule une alternative métaphysique : être ou n'être pas, — et qu'il appelle, sous forme de solution scientifique, une décision comparable à un acte moral.",
+      "bbox": {
+        "x_pct": 11.34,
+        "y_pct": 29.676,
+        "w_pct": 75.813,
+        "h_pct": 33.842
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que les éléments qui sont au point de départ d'une science, puissent souvent rester voilés pour le spécialiste sans nuire à ses recherches, est un fait notoire. Mais la philosophie, elle, prétend questionner sans fin, remonter aux sources, aller aux extrêmes limites. Elle prétend ne rien admettre d'avance. Elle prétend tout recommencer, tout remettre en question, et être ainsi la science de ce que les Allemands appellent radikales Fragen. Elle ne doit pas ramener l'univers à des équations",
+      "bbox": {
+        "x_pct": 11.446,
+        "y_pct": 63.136,
+        "w_pct": 76.009,
+        "h_pct": 25.71
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Severe OCR misrecognition in main paragraph blocks.",
+    "Section header spelling error in original detection."
+  ],
+  "doc_id": "20",
+  "page": 44,
+  "elapsed_seconds": 3.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

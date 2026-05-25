@@ -1,0 +1,64 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE II",
+      "bbox": {
+        "x_pct": 38.705,
+        "y_pct": 22.946,
+        "w_pct": 23.238,
+        "h_pct": 2.193
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le problème philosophique et le philosophe",
+      "bbox": {
+        "x_pct": 29.925,
+        "y_pct": 27.617,
+        "w_pct": 40.361,
+        "h_pct": 4.576
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jusqu'ici nous n'avons obtenu, en comparant la philosophie à la science, à la théologie et à l'art, que des résultats négatifs. Comment alors s'expliquer qu'il y ait eu toujours et qu'il y ait encore des philosophes? Comment un homme avide de vérité peut-il préférer la philosophie à l'évidence scientifique? Comment celui qui a quelque chose à exprimer peut-il préférer la philosophie à la perfection de l'art? Comment peut-on, lorsqu'on cherche Dieu, préférer la philosophie à la foi?",
+      "bbox": {
+        "x_pct": 12.093,
+        "y_pct": 35.3,
+        "w_pct": 75.964,
+        "h_pct": 25.739
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On aura senti aussitôt, je l'espère, ce que la question ainsi posée a d'artificiel et de mensonger. On ne choisit pas la philosophie plutôt que la science, l'art, la religion. C'est le problème philosophique lui-même qui se pose. Et une fois qu'il s'est posé, l'alternative n'est jamais : « Vais-je résoudre ce problème, ou plutôt un problème scientifique? » L'alternative est: « Vais-je le regarder ou le fuir? », et en même temps : « Vais-je décider, ou me laisser porter? Vais-je aller jusqu'au bout, affirmer que je suis, ou m'effacer et supprimer la",
+      "bbox": {
+        "x_pct": 12.093,
+        "y_pct": 61.039,
+        "w_pct": 75.904,
+        "h_pct": 28.16
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original OCR content for paragraphs was severely truncated and garbled."
+  ],
+  "doc_id": "20",
+  "page": 34,
+  "elapsed_seconds": 4.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

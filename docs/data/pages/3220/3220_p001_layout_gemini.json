@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "im Anwcioung urd cin Therhpieschema 2in@ intonsive und Vobervachung und kamentensplegels Herden Lat ",
+      "bbox": {
+        "x_pct": 9.616,
+        "y_pct": 12.244,
+        "w_pct": 32.491,
+        "h_pct": 23.622
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In d05 Danebcn Punkl di2 Peren Ein 1 Entschoidend igl uu Compllen und konund",
+      "bbox": {
+        "x_pct": 9.831,
+        "y_pct": 43.268,
+        "w_pct": 32.949,
+        "h_pct": 11.667
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Vullleuigr",
+      "bbox": {
+        "x_pct": 20.253,
+        "y_pct": 57.218,
+        "w_pct": 6.245,
+        "h_pct": 1.837
+      },
+      "changed": true,
+      "change_reason": "Label is already section_header, but confirmed correct as a subheading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gompllanco Dindungon , Han dle Foktoren",
+      "bbox": {
+        "x_pct": 9.831,
+        "y_pct": 59.843,
+        "w_pct": 27.06,
+        "h_pct": 6.995
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Forechung Von 0 Lrollen studlen Klinikon Pnricnren Kon",
+      "bbox": {
+        "x_pct": 20.412,
+        "y_pct": 71.391,
+        "w_pct": 21.601,
+        "h_pct": 6.43
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Foder",
+      "bbox": {
+        "x_pct": 20.534,
+        "y_pct": 79.265,
+        "w_pct": 2.94,
+        "h_pct": 1.273
+      },
+      "changed": true,
+      "change_reason": "Small fragment misidentified as text; likely a structural artifact or page number element."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "@ber vorfug: VOE und und uch EntGchoidend Ptlonon pollui , Jeune",
+      "bbox": {
+        "x_pct": 13.137,
+        "y_pct": 81.588,
+        "w_pct": 28.408,
+        "h_pct": 6.509
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pnrIcr 1 Ennt",
+      "bbox": {
+        "x_pct": 62.425,
+        "y_pct": 26.509,
+        "w_pct": 25.028,
+        "h_pct": 11.325
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 1,
+  "issues": [
+    "Text extraction quality is poor due to OCR errors.",
+    "Section headers or page markers identified as body text."
+  ],
+  "doc_id": "3220",
+  "page": 1,
+  "elapsed_seconds": 4.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

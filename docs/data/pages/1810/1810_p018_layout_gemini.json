@@ -1,0 +1,114 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mouvement, créativité, chaleur humaine > sont pour eux des besoins vitaux ils veulent { changer latm",
+      "bbox": {
+        "x_pct": 11.876,
+        "y_pct": 6.192,
+        "w_pct": 81.794,
+        "h_pct": 4.115
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comme on les plus ou moins explicite a été le ressort constant de lhistoire humaine; et sans elle, r",
+      "bbox": {
+        "x_pct": 11.571,
+        "y_pct": 9.701,
+        "w_pct": 82.216,
+        "h_pct": 15.688
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A cause  de leurs   divergences : ils ne se représentent pas de la même manière le monde idéal dont ",
+      "bbox": {
+        "x_pct": 11.758,
+        "y_pct": 25.389,
+        "w_pct": 82.227,
+        "h_pct": 17.569
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'être humain est un être de désir, un être nostalgique; et donc un être par nature   insatisfait. C",
+      "bbox": {
+        "x_pct": 11.923,
+        "y_pct": 42.644,
+        "w_pct": 82.134,
+        "h_pct": 10.016
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aucun ordre, aucun droit, dans aucune société, ne saurait être légitime si Pon admet qu une < violen",
+      "bbox": {
+        "x_pct": 11.841,
+        "y_pct": 52.636,
+        "w_pct": 82.098,
+        "h_pct": 13.824
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certes, les familles ont des difficultés. Mais quand, dans quelle société a-t-on connu; si on consid",
+      "bbox": {
+        "x_pct": 12.04,
+        "y_pct": 66.011,
+        "w_pct": 81.946,
+        "h_pct": 8.025
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi donc, si on lit les Thèses en s'arrachant tant soit peu aux clichés semblent aller sans dire, ",
+      "bbox": {
+        "x_pct": 11.758,
+        "y_pct": 73.958,
+        "w_pct": 82.145,
+        "h_pct": 17.522
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "14",
+      "bbox": {
+        "x_pct": 64.0,
+        "y_pct": 89.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number at bottom"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page number region"
+  ],
+  "doc_id": "1810",
+  "page": 18,
+  "elapsed_seconds": 4.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

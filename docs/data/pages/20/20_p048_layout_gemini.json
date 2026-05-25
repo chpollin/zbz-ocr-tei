@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "46 LA CASCADE :",
+      "bbox": {
+        "x_pct": 140.6,
+        "y_pct": 77.0,
+        "w_pct": 75.8,
+        "h_pct": 7.8
+      },
+      "changed": true,
+      "change_reason": "Correctly identifying page header and number 46 which were incorrectly captured in the text paragraph or missed."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "extérieure à moi mais volontaire et intentionnelle comme moi, comparable à une force humaine. Elle peut m’apparaître comme un spectacle esthétique qu’on contemple sans l’interroger, un ensemble de couleurs, de mouvements, de fracas, de fraîcheur qui charme les sens. Elle peut m’apparaître comme le symbole de telle de mes pensées, de tel de mes désirs, de tel de mes rêves. Elle peut enfin, perdant toute autonomie, devenir un reflet de mon âme et une partie de moi-même, la passion ou le désespoir qui m’entraîne. Dans tous ces cas, elle me reste proche et compréhensible, soit en s’identifiant à moi-même, soit en devenant un être, hostile peut-être, mais hostile à ma façon, soit en demeurant simplement une source de jouissance. Elle n’existe alors pour moi que sur le plan pratique, psychologique ou esthétique, comme adversaire ou comme symbole sentimental.",
+      "bbox": {
+        "x_pct": 13.614,
+        "y_pct": 12.011,
+        "w_pct": 76.19,
+        "h_pct": 46.206
+      },
+      "changed": true,
+      "change_reason": "Refined the full paragraph text as it was truncated in the original output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais elle peut m’apparaître encore autrement. En la regardant tomber, je la vois tout à coup en elle-même, nue, dépouillée de mes sentiments, de mes intentions, de ma jouissance et de mes symboles. Elle perd alors jusqu’à son nom. Elle devient prodigieusement inconnue et incompréhensible. Elle ne veut pas, elle ne sent pas, elle ne désespère pas. Elle tombe. Elle n’a pas de sens. Et si elle entraînait la passerelle sur laquelle je me tiens, elle ne l’aurait pas voulu, elle ne serait pas une colère de Dieu. Une colère de Dieu, je pourrais l’imaginer et, en quelque sorte, la comprendre.",
+      "bbox": {
+        "x_pct": 14.006,
+        "y_pct": 57.96,
+        "w_pct": 76.401,
+        "h_pct": 31.296
+      },
+      "changed": true,
+      "change_reason": "Refined the full paragraph text as it was truncated in the original output."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Original detection missed page number and header entirely.",
+    "Original detection truncated the text content within the paragraphs."
+  ],
+  "doc_id": "20",
+  "page": 48,
+  "elapsed_seconds": 3.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

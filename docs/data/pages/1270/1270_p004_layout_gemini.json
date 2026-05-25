@@ -1,0 +1,115 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "ORDRE MORAL ET LIBERTÉ",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 17
+      },
+      "changed": true,
+      "change_reason": "ADDED: page header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "127",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 26,
+        "h_pct": 17
+      },
+      "changed": true,
+      "change_reason": "ADDED: page footer"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Atteinte dans son ultime profondeur , cette liberté coïncide avec la nécessité, comme Spinoza /a sou",
+      "bbox": {
+        "x_pct": 16.197,
+        "y_pct": 13.863,
+        "w_pct": 63.61,
+        "h_pct": 8.741
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre titre n'a de sens que si < ordre > signifie ici ordre humain, historique, que si ( moral > un ",
+      "bbox": {
+        "x_pct": 16.06,
+        "y_pct": 25.128,
+        "w_pct": 63.795,
+        "h_pct": 7.39
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notre titre implique donc la finalité, et même une finalité sans dans les deux sens de ce dernier mo",
+      "bbox": {
+        "x_pct": 16.197,
+        "y_pct": 31.949,
+        "w_pct": 63.521,
+        "h_pct": 8.581
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une conception résolument et irréductiblement   finaliste, parce qu'elle est condition de sens, est ",
+      "bbox": {
+        "x_pct": 16.035,
+        "y_pct": 40.302,
+        "w_pct": 63.795,
+        "h_pct": 5.624
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ilest vain de chercher ici n'importe quelle forme de < conciliation > de (( correspondance ou de com",
+      "bbox": {
+        "x_pct": 15.898,
+        "y_pct": 48.245,
+        "w_pct": 63.852,
+        "h_pct": 32.513
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par la finalité du vrai, lentreprise scientifique est le fait d'une liberté moralement engagée. Cell",
+      "bbox": {
+        "x_pct": 15.979,
+        "y_pct": 82.946,
+        "w_pct": 63.578,
+        "h_pct": 5.356
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Missing page header/footer in original input"
+  ],
+  "doc_id": "1270",
+  "page": 4,
+  "elapsed_seconds": 4.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

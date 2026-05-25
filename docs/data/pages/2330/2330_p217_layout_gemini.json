@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Etait-il en rapport avec un milieu littéraire, que ce soit en Pologne ou en France ?",
+      "bbox": {
+        "x_pct": 4.432,
+        "y_pct": 4.331,
+        "w_pct": 79.328,
+        "h_pct": 4.54
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "JH. Il était en rapport avec Kultura par exemple. On venait le voir. C'étaient les autres qui venaient chez lui. Je pense qu'il aura sa place dans la littérature polonaise, mais une place très particulière, étrangère à l'époque. Il est profondément anachronique. Mais c'est un penseur qui reste, parce qu'il avait le sens de ce qui est éternel en l'homme. — Il se trouve d'ailleurs que, par je ne sais quel miracle de ceux qui l'ont aimé, son œuvre vient d'être éditée en Pologne.",
+      "bbox": {
+        "x_pct": 4.676,
+        "y_pct": 8.282,
+        "w_pct": 79.328,
+        "h_pct": 14.484
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3 Hommes politiques",
+      "bbox": {
+        "x_pct": 4.799,
+        "y_pct": 25.806,
+        "w_pct": 24.908,
+        "h_pct": 2.258
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "G.D.K. Vous êtes une Européenne convaincue, vous avez milité dans différents mouvements consacrés à la cause de l'Europe. Est-ce dans ce contexte que vous avez connu Henri Frenay ?",
+      "bbox": {
+        "x_pct": 4.725,
+        "y_pct": 29.839,
+        "w_pct": 79.121,
+        "h_pct": 6.185
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai connu, si je me souviens bien, en 1948. En compagnie de mon ami Ernst von Schenk, dont j'ai parlé, nous avons milité activement dans l'Union européenne des Fédéralistes, qui avait son siège à Paris, et également dans le Mouvement socialiste pour les Etats-Unis d'Europe. Frenay a joué un rôle de premier plan dans la Résistance française, dès la toute première heure. C'est lui qui a fondé le grand mouvement de résistance métropolitaine Combat. Pendant la guerre déjà, ceux qui dirigeaient les mouvements de résistance ont tenté de se faire une image de la France et de l'Europe de l'après-guerre, et le courant favorable à une Europe fédérée était très fort parmi eux. Après la guerre, à la Libération, Henri Frenay a été ministre des Prisonniers, des Déportés et des Réfugiés dans le premier gouvernement de Gaulle. Il était, à cette époque-là, membre de la SFIO et, en même temps, la bête noire des communistes, parce qu'il avait combattu les manœuvres du parti communiste visant à s'assurer, à la fin des combats, une influence prépondérante au sein de la Résistance.",
+      "bbox": {
+        "x_pct": 4.31,
+        "y_pct": 35.726,
+        "w_pct": 79.695,
+        "h_pct": 31.427
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR text errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Frenay a consacré sa vie à la cause européenne, jusqu'en 1954 très exactement. A ce moment il a ressenti tragiquement l'échec devant le parlement français du projet de Communauté Européenne de Défense. J'ai assisté à une conversation qu'il avait eue, le matin du vote, avec Mendès-France, essayant de le persuader d'adopter une position nette, de lui faire sentir l'importance de l'enjeu. Le projet a été rejeté. A partir de ce moment-là, il s'est presque complètement retiré de la vie politique et a repris une activité professionnelle. Il était convaincu que l'échec de la CED était celui de l'idée européenne pour une génération. Et il ne s'est pas trompé parce que, depuis cette date, si la Communauté Economique Européenne s'est développée, l'Europe politique n'a presque pas fait de progrès.",
+      "bbox": {
+        "x_pct": 4.31,
+        "y_pct": 67.234,
+        "w_pct": 79.78,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "Corrected significant OCR text errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "213",
+      "bbox": {
+        "x_pct": 79.609,
+        "y_pct": 94.758,
+        "w_pct": 4.137,
+        "h_pct": 2.258
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original text layer had severe OCR corruption/truncation.",
+    "Page number missing from initial detections.",
+    "Multiple paragraphs contained broken lines and OCR errors needing full restoration."
+  ],
+  "doc_id": "2330",
+  "page": 217,
+  "elapsed_seconds": 6.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Point de vue philosophique",
+      "bbox": {
+        "x_pct": 8.271,
+        "y_pct": 13.931,
+        "w_pct": 69.459,
+        "h_pct": 4.019
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mesdames; Messieurs, je suis dans une assez grande confusion: je croyais devoir parler de l'euthanasie proprement dite, et je ne savais pas que nous allions traiter des problèmes de l'avortement, et des problèmes propres aux handicapés. Pourtant, après avoir entendu les orateurs précédents, j'ai noté un certain nombre de points sur lesquels je voudrais m'exprimer. Les idées que je vais vous exposer seront donc dans un grand désordre, mais cela n'a pas une grande importance, après tout. Il ne s'agit ni d'un livre, ni d'un article, mais simplement d'une contribution à votre discussion.",
+      "bbox": {
+        "x_pct": 7.8,
+        "y_pct": 23.875,
+        "w_pct": 45.059,
+        "h_pct": 50.667
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to reflect actual paragraph structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais faire d'abord quelques remarques préliminaires, qui me paraissent valables pour tout l'ensemble des problèmes que nous embrassons aujourd'hui. Nous touchons à des sujets capables de déclencher une espèce de guerre civile dans notre pays et dans l'Europe en général. Ils sont chargés de dynamite. Ce qui m'étonne et me peine dans les discussions à leur sujet, c'est à quel point les gens qui sont convaincus, d'un côté comme de l'autre, sont enclins au mépris de leurs adversaires. Je ne peux pas le comprendre. Il y a, bien sûr, des problèmes à propos desquels on ne peut éprouver que du mépris pour ses adversaires (je ne suis pas du tout incapable de mépris). Mais dans un problème comme, par exemple, l'avortement, où il y a un tel poids sur les deux plateaux de la balance, où il est tellement",
+      "bbox": {
+        "x_pct": 7.729,
+        "y_pct": 53.215,
+        "w_pct": 44.188,
+        "h_pct": 40.892
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "évident que les options des uns et des autres se font en allégeant artificiellement l'autre plateau de la balance, il me semble qu'on doit comprendre ceux qui font un choix inverse à celui qu'on fait soi-même. Or, ceux qui sont inconditionnellement pour le droit à la vie, comme on dit, et contre la libéralisation de l'avortement considèrent leurs adversaires comme des matérialistes, pour être gentils, comme des espèces d'animaux, ou alors comme des assassins, qui ne font aucune place de l'humain, qui n'ont aucun sens pour ce qui peut transcender les données matérielles. Réciproquement, ceux qui sont pour la libéralisation de l'avortement refusent absolument de comprendre les motifs de ceux qui s'y opposent et les considèrent comme des espèces de troglodites attardés. Je dois le dire, devant un problème comme celui-ci, ces deux attitudes me paraissent extrêmement alarmantes. L'un des conférenciers précédents dit que le débat était déjà bon, en lui-même, qu'il faisait réfléchir le peuple suisse. Je veux bien qu'on fasse réfléchir le peuple suisse, qu'on fasse réfléchir tout le monde le plus possible. Mais cela ne suffit pas. Ce n'est pas seulement une question de réflexion. Le problème est ailleurs. Il me semble qu'il faudrait inciter tout ceux qui défendent l'une ou l'autre des deux positions à «mimer» un moment la position des adversaires, pour la comprendre à travers sa motivation la meilleure et la",
+      "bbox": {
+        "x_pct": 53.294,
+        "y_pct": 23.714,
+        "w_pct": 44.435,
+        "h_pct": 70.201
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "306",
+      "bbox": {
+        "x_pct": 82.2,
+        "y_pct": 96.0,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "OCR output was severely mangled in paragraph regions.",
+    "Page number at the bottom was missing from the initial detection list."
+  ],
+  "doc_id": "1820",
+  "page": 3,
+  "elapsed_seconds": 5.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

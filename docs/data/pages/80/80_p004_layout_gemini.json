@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "3 Qui sont et que veulent les auditeurs de l'université ouvrière?",
+      "bbox": {
+        "x_pct": 12.434,
+        "y_pct": 4.769,
+        "w_pct": 73.006,
+        "h_pct": 1.937
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header as it is a numbered section title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans le public de l'université ouvrière on voit de moins en moins de jeunes et de moins en moins d'ouvriers. C'est le signe le plus certain qu'elle a fait fausse route et qu'il faut chercher autre chose.",
+      "bbox": {
+        "x_pct": 12.385,
+        "y_pct": 6.969,
+        "w_pct": 73.191,
+        "h_pct": 7.39
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Certes, le public qui se trouve là rend la tâche difficile. D'abord il est extraordinairement hétérogène par l'âge et la préparation: des employés, des étudiants, des vieilles dames, etc. Ils sont venus fatigués, après une longue journée de travail. Pour la plupart, ils sont déjà intellectuellement rouillés, ayant quitté l'école tout jeunes et il y a très longtemps.",
+      "bbox": {
+        "x_pct": 12.224,
+        "y_pct": 14.114,
+        "w_pct": 73.433,
+        "h_pct": 11.567
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourquoi viennent-ils? Qu'attendent-ils en compensation de cette fatigue supplémentaire qu'ils s'imposent? Il me semble que d'une manière générale on peut distinguer à leur assiduité deux motifs principaux:",
+      "bbox": {
+        "x_pct": 12.329,
+        "y_pct": 25.054,
+        "w_pct": 73.304,
+        "h_pct": 7.442
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ils veulent être édifiés. Dans un certain sens, l'université ouvrière a pris la succession de l'Eglise. Autrefois, il y avait, dans la vie remplie par le travail, une heure où l'on était tranquille, délivré des exigences des autres, rendu à soi et au meilleur de soi, une heure pour exister comme être spirituel, penser à son âme et tendre au bien. Même si pour beaucoup de fidèles l'heure de la messe ou du culte n'avait pas de véritable authenticité religieuse, c'était cependant pour tous une heure où leur dignité d'homme leur était rendue, puisque dans un cadre beau et recueilli on leur parlait d'eux-mêmes et de Dieu et qu'on les invitait à une élévation. Un besoin de cette église plus ou moins perdue subsiste chez ceux qui viennent à l'université ouvrière. Ils se taisent, et quelqu'un s'adresse à leur esprit, leur rendant une sorte d'estime de soi. Ce besoin vague d'élévation devra être utilisé dans l'enseignement, c'est une prise vivante et profonde qui s'offre au maître.",
+      "bbox": {
+        "x_pct": 12.063,
+        "y_pct": 32.781,
+        "w_pct": 73.731,
+        "h_pct": 27.373
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Voilà, je crois, ce que veulent surtout les auditeurs. Mais il faut avoir le courage de voir les choses telles qu'elles sont, de voir aussi ce qu'ils ne veulent pas: ils ne veulent pas travailler activement. Ils ne viennent pas à l'université ouvrière pour travailler — et ça se comprend: ils ont bien assez travaillé toute la journée. Ils n'aiment pas parler, réagir, participer à la leçon. Ils se gênent. Ils sont des adultes, conscients d'eux-mêmes, ils ont beaucoup de peine à s'oublier pour ne plus penser qu'au sujet de la leçon.",
+      "bbox": {
+        "x_pct": 12.224,
+        "y_pct": 76.336,
+        "w_pct": 73.513,
+        "h_pct": 15.174
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors in text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "368",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 91.5,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Correctly identified page number as page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 6,
+  "issues": [
+    "Severe OCR degradation in original JSON content.",
+    "Page number missing from initial JSON extraction.",
+    "Section header incorrectly labeled as text."
+  ],
+  "doc_id": "80",
+  "page": 4,
+  "elapsed_seconds": 11.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je finis par fermer les yeux pour ne rien voir, et j'aurais voulu que quelque chose se fermât aussi sur moi, que s'abaissât une paupière protectrice et toute-puissante. Mais pour cela, il aurait fallu dire: « Que ta volonté soit faite », et je ne savais pas.",
+      "bbox": {
+        "x_pct": 10.095,
+        "y_pct": 32.353,
+        "w_pct": 80.851,
+        "h_pct": 12.732
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and incomplete. Updated to reflect the full content of the paragraph in the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je repris mes promenades nocturnes ; j'allais loin et je marchais plus vite. Je n'écoutais plus l'eau. Je marchais. Je m'appuyais pendant une heure ou deux sur un équilibre que la marche créait. C'était comme lorsque la bise souffle si dur qu'on avance en pesant sur elle de tout son long. Tête baissée, les coudes contre les hanches, je poursuivais la fatigue qui devait me sauver d'un vide mou. Je ne souffrais pas assez. Il n'y avait pas eu l'un de ces déclenchements aigus de douleur qui font bondir la vie, la forcent à se défendre, lui font crier qu'elle existe. Quelque chose avait simplement cessé, un instant quotidien avait perdu sa lueur. Encore l'horreur de cette interruption n'était pas apparue d'un seul coup, mais peu à peu, trouvant son sens de néant par la chute douce, moelleuse, des jours. Quand j'avais commencé à aimer Pierre, j'étais devenue incapable d'accueillir, des yeux,",
+      "bbox": {
+        "x_pct": 9.905,
+        "y_pct": 44.83,
+        "w_pct": 81.311,
+        "h_pct": 40.803
+      },
+      "changed": true,
+      "change_reason": "The original OCR text was incomplete and contained several transcription errors (typos). Corrected to match the source text accurately."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "5 novembre.",
+      "bbox": {
+        "x_pct": 69.456,
+        "y_pct": 27.653,
+        "w_pct": 17.653,
+        "h_pct": 2.502
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header/date marker. Categorized as filter."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR for the first paragraph was truncated.",
+    "Original OCR for the second paragraph contained numerous typos and character recognition errors.",
+    "The date '5 novembre.' was misidentified as text and should be filtered as a header."
+  ],
+  "doc_id": "40",
+  "page": 82,
+  "elapsed_seconds": 3.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

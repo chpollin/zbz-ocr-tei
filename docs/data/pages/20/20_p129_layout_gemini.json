@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FORMALISME DE L'IMPÉRATIF CATÉGORIQUE 127",
+      "bbox": {
+        "x_pct": 194.0,
+        "y_pct": 84.0,
+        "w_pct": 651.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Header contains title and page number, should be section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "a mis à garder un vide fondamental à conserver à sa philosophie l'intégrité d'une pure forme, ou plutôt, d'une forme « exigeante » — mais dont l'exigence reste absolument indéterminée. La Critique de la raison pratique a été, plus que les autres œuvres de Kant, vulgarisée et banalisée — sans doute parce qu'elle contenait quelques maximes pouvant servir de thèmes moralisateurs. Cette banalisation, qui a permis de faire de Kant un raide et pédant moraliste, ignorant de toute souplesse humaine et de toute nuance psychologique, vient justement de cet qu'on n'a pas su prendre ce qu'il disait dans sa vide et formelle profondeur, qu'on n'a pas su se débarrasser de contenus psychologiques, qu'on n'a pas su suivre Kant dans le domaine métaphysique pur dont il s'agissait réellement.",
+      "bbox": {
+        "x_pct": 8.991,
+        "y_pct": 12.667,
+        "w_pct": 76.401,
+        "h_pct": 41.333
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'impératif catégorique n'est pas la morale, ou cette morale. Il est la forme vide, la condition a priori d'une morale. Chaque contenu de la loi morale est déjà matière, empiriquement, historiquement conditionné. Or, il s'agit de ce qui rend possible toute morale.",
+      "bbox": {
+        "x_pct": 8.886,
+        "y_pct": 53.619,
+        "w_pct": 76.009,
+        "h_pct": 15.552
+      },
+      "changed": true,
+      "change_reason": "Cleaned up transcription errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'impératif catégorique présuppose la liberté. Il n'a de sens que si l'on peut lui obéir. Voilà le sens premier de la célèbre phrase : Du kannst, denn Du sollst, « Tu peux, car tu dois », sens qu'on a trop souvent négligé pour n'y voir que l'affirmation héroïque — et pour le goût de Kant un peu trop pathétique, — de l'absoluité du devoir. D'autres ensuite en ont conclu que Kant, ce philosophe de",
+      "bbox": {
+        "x_pct": 8.78,
+        "y_pct": 69.048,
+        "w_pct": 76.265,
+        "h_pct": 20.543
+      },
+      "changed": true,
+      "change_reason": "Cleaned up transcription errors."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Transcription errors in paragraph texts.",
+    "Section header was missing from the initial detection list.",
+    "Page number 127 in the top right was ignored."
+  ],
+  "doc_id": "20",
+  "page": 129,
+  "elapsed_seconds": 5.16,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 83",
+      "bbox": {
+        "x_pct": 387.0,
+        "y_pct": 82.0,
+        "w_pct": 515.0,
+        "h_pct": 98.0
+      },
+      "changed": true,
+      "change_reason": "Header/page number region misidentified as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La réussite de ces choses-là, c’était l’accord et la bénédiction. Et puis il avait rejeté tout cela. Vu maintenant par des adultes, par toi, par moi, ce n’est pas surprenant. Ce qui étonne, c’est que cela n’ait pas cessé plus tôt. Il a suffi sans doute à Pierre de retrouver un instant un regard d’adulte pour se faire l’effet d’un fou. Mais pour moi, qui n’avais pas de regard d’adulte, c’était plus, bien plus que je ne suis capable maintenant de comprendre ou même de dire; et sûrement il a dû en être de même pour lui, tant que dura cette enfance qu’il vivait alors avec moi.",
+      "bbox": {
+        "x_pct": 10.27,
+        "y_pct": 12.599,
+        "w_pct": 80.716,
+        "h_pct": 27.599
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Abandonnée à la fois par lui et cernée par un désert emprisonnant exactement mon corps et ma peine, je me tournais dans mon lit, je me souvenais, je cherchais son image, je cherchais un sens — je ne comprenais rien.",
+      "bbox": {
+        "x_pct": 10.581,
+        "y_pct": 40.643,
+        "w_pct": 80.23,
+        "h_pct": 12.732
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le lendemain, il ne vint pas. Le surlendemain non plus. Il ne vint plus jamais.",
+      "bbox": {
+        "x_pct": 10.27,
+        "y_pct": 53.091,
+        "w_pct": 80.446,
+        "h_pct": 5.161
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pus désormais imaginer à mon gré l’apparition naguère familière et toujours imprévue, à tel tournant ou à tel autre, en brun ou en gris, et même plusieurs fois successivement — jamais plus la vraie ne vint démentir mes fantômes.",
+      "bbox": {
+        "x_pct": 10.446,
+        "y_pct": 58.346,
+        "w_pct": 80.595,
+        "h_pct": 9.962
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript text to match source image."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Page number and header were not separated as a filter region.",
+    "OCR output was severely corrupted compared to original text.",
+    "Bbox coordinates provided in prompt implied a very different scan than the image content, mapping issues were manual."
+  ],
+  "doc_id": "40",
+  "page": 81,
+  "elapsed_seconds": 4.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

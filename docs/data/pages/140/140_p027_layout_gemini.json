@@ -1,0 +1,57 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "108 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 14.829,
+        "y_pct": 10.457,
+        "w_pct": 74.035,
+        "h_pct": 2.502
+      },
+      "changed": true,
+      "change_reason": "Label corrected from text to page_header as it is a running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "néral en chef ; mais son emprise sur Phistoire militaire de la guerre dépendra du degré de pénétrati",
+      "bbox": {
+        "x_pct": 14.589,
+        "y_pct": 14.547,
+        "w_pct": 74.515,
+        "h_pct": 28.114
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a des gens n'éraflent même pas lc réel sur lequel ils prétendent agir ; il y en 9 y mettent une",
+      "bbox": {
+        "x_pct": 13.878,
+        "y_pct": 42.832,
+        "w_pct": 74.275,
+        "h_pct": 42.028
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript errors."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Running header was labeled as text",
+    "Transcription inaccuracies in the second paragraph"
+  ],
+  "doc_id": "140",
+  "page": 27,
+  "elapsed_seconds": 7.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected from text to page_header as it is a running header.": 1,
+    "Corrected transcript errors.": 1
+  }
+}

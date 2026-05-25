@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ID\u0000OLOGIES ET R\u0000ALIT\u0000 213",
+      "bbox": {
+        "x_pct": 317.0,
+        "y_pct": 86.0,
+        "w_pct": 591.0,
+        "h_pct": 105.0
+      },
+      "changed": true,
+      "change_reason": "Identified header including page number as section_header/page_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "miquement retardataires, les métropoles capitalistes se procurent non seulement une main d'oeuvre à très bas prix, mais encore une clientèle qui permet d'écouler des produits de camelote en quantité. J'ai vu au Chili pour quels misérables pardessus sans chaleur les indigènes troquent dès qu'ils le peuvent leurs lourds ponchos de laine de mouton ou de lama non dégraissée, épaisse et imperméable. J'ai vu, au Pérou et ailleurs, des femmes indigènes acheter un tissu en le montrant du bout du doigt, sans l'avoir palpé. Mais en Europe aussi le capitalisme a besoin d'une clientèle immense, donc populaire, pour les produits en masse que la technique fabrique avec tant de facilité.",
+      "bbox": {
+        "x_pct": 4.916,
+        "y_pct": 11.292,
+        "w_pct": 84.735,
+        "h_pct": 23.467
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce fait est passé presque inaperçu. On n'a guère vu ce danger terrible et sans précédent : la corruption des masses humaines en tant que consommatrices. La servitude a été à toutes les époques le lot du grand nombre, et ceux qui, sur ce point, regrettent le bon vieux temps sont des hypocrites ou ignorent de quoi ils parlent. Malgré les tyrannies matérielles du régime capitaliste, bien plus nombreux sont aujourd'hui ceux auxquels les biens de la vie deviennent accessibles et qui se trouvent désormais responsables de leur propre épanouissement. Il est vrai, en revanche, qu'en d'autres temps, on se contentait d'étouffer les possibilités des étres asservis, sans prendre à tâche de les corrompre en excitant en eux certains besoins.",
+      "bbox": {
+        "x_pct": 5.111,
+        "y_pct": 34.162,
+        "w_pct": 84.68,
+        "h_pct": 24.51
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On dira qu'aujourd'hui, dans un sens extrémement pénétrant - je veux dire : qui atteint le fond de l'étre - l'homme en est réduit à n'étre plus qu'un rouage social, non seulement parce qu'il est souvent condamné au travail à la chaîne, mais parce qu'il est dressé à n'étre qu'un consommateur standardisé. L'éducation, le goût, la mode, l'originalité elle-même sont mis au service de ce dressage qui, à son tour, n'a pas d'autre justification que le profit. Pour l'immense majorité des jeunes, la « formation », ce qu'on appelle d'ordinaire « les études », a pour unique raison d'étre de les mieux « armer pour l'existence », de leur « permettre de mieux gagner leur vie », c'est-à-dire de consommer une plus grande part des biens produits par la technique. C'est pourquoi la première partie de la vie s'évalue en deux termes entre lesquels il s'agit d'établir la proportion la plus favorable : ce que coûte l'éducation et qu'elle permettra ensuite de gagner. Il faut",
+      "bbox": {
+        "x_pct": 5.014,
+        "y_pct": 58.556,
+        "w_pct": 84.777,
+        "h_pct": 31.078
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 783.0,
+        "y_pct": 898.0,
+        "w_pct": 27.0,
+        "h_pct": 23.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was highly inaccurate in all text segments.",
+    "Page header merged with text, needed splitting.",
+    "Page number at bottom was missed as a region and needs to be excluded.",
+    "Several text fragments were incorrectly identified as individual blocks instead of continuing paragraphs."
+  ],
+  "doc_id": "330",
+  "page": 247,
+  "elapsed_seconds": 9.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

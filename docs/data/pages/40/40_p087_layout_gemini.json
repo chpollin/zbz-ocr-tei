@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 89",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The header at the top contains the book title and page number, which were missing from the initial region list or improperly categorized. This needs to be marked as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tu contemples pas le néant en train monde : tu lui voles matériaux, et tu les formes avec tes mains d'homme. L'éternité ne te fascine pas, car avec ta pensée d'homme, sans la comprendre, tu l'as nommée, et tu l'as déroulée tout le long de tes jours. Les fracas, les cris, tu les effaces sous le bruit net de ton travail, et ce n'est plus qu'une pédale lointaine qu'on oublie. Tu sais ne pas entendre. Et dans le silence, tu sais percevoir différents silences, et les désigner avec des mots sonores. Les troupeaux peuvent beugler, les félins miaulent, l'éternité se tait — tu leur parles à tous ton langage d'homme, tu leur donnes leur nom, et alors ils dépendent de toi: tu guides, tu domptes, tu pries.",
+      "bbox": {
+        "x_pct": 13.284,
+        "y_pct": 12.382,
+        "w_pct": 80.946,
+        "h_pct": 32.987
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text to match the source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais, hier, tu n'étais pas là. Et moi, je me sentais jetée dans l'enfilade des fenêtres. L'angoisse me prenait. Ce que j'avais perdu jadis, à dix-sept ans, et qui me jetait dans le désespoir, l'ai-je retrouvé ? L'ai-je seulement oublié ? C'était un monde entier, un monde sacré, l'ai-je oublié ? Comment suis-je sortie de là ? Comment ai-je continué ? Qu'est-ce qui vaut, qu'est-ce qui compte, qu'est-ce qui est sacré, ce monde-là ou la vie ? Petite fille, t'ai-je trahie ?",
+      "bbox": {
+        "x_pct": 13.338,
+        "y_pct": 47.703,
+        "w_pct": 80.892,
+        "h_pct": 22.618
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and misspelled OCR text to match the source image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ouvris la fenêtre, comme elle. Il avait neigé lourdement toute la nuit et toute la matinée. Maintenant le jardin était immobile, j'entendais des gouttes s'écraser. Un vague soleil essayait de percer les nuages clairs. Je mis un manteau, des caoutchoucs, et je sortis dans les allées où nul n'avait encore marché. J'arrivai au bas du jardin, là",
+      "bbox": {
+        "x_pct": 13.284,
+        "y_pct": 70.321,
+        "w_pct": 80.865,
+        "h_pct": 15.312
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and misspelled OCR text to match the source image content."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 4,
+  "issues": [
+    "The page header (TEMPS ALTERNÉS 89) was completely missing from the detection.",
+    "OCR text for all three paragraphs was heavily truncated, corrupted, and contained spelling errors.",
+    "Bbox for the header needs to be identified manually."
+  ],
+  "doc_id": "40",
+  "page": 87,
+  "elapsed_seconds": 4.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

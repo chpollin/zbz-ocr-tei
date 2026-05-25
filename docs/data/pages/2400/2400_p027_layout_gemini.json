@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Ein Risiko im Kleinstaat: Globalisierung",
+      "bbox": {
+        "x_pct": 11.08,
+        "y_pct": 24.33,
+        "w_pct": 15.583,
+        "h_pct": 5.386
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/zb_paragraph to caption as this serves as a marginal label for the adjacent text."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Das Risiko zunehmender Komplexität",
+      "bbox": {
+        "x_pct": 5.461,
+        "y_pct": 66.499,
+        "w_pct": 21.238,
+        "h_pct": 3.639
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/zb_paragraph to caption as this serves as a marginal label for the adjacent text."
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "Das zentrale Risiko: Einengung der Handlungsfreiheit",
+      "bbox": {
+        "x_pct": 6.553,
+        "y_pct": 82.751,
+        "w_pct": 20.146,
+        "h_pct": 5.335
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/zb_paragraph to caption as this serves as a marginal label for the adjacent text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und hier entstehen nun große Probleme für unseren Kleinstaat Schweiz. Der Kleinstaat ist in der heutigen Welt schon der umfassenden Beziehungen und Abhängigkeiten wegen ein Risiko. Und die Globalisierung der Ereignisse bringt uns u. a. das Risiko, daß sich unser Volk auseinander dividiert, weil man sich um Dinge streitet, die nicht etwa innerhalb dieses Landes, sondern fernab von diesem Land geschehen und über die meistens einseitig, unfachmännisch und oft manipuliert berichtet wird.",
+      "bbox": {
+        "x_pct": 29.333,
+        "y_pct": 4.491,
+        "w_pct": 65.364,
+        "h_pct": 25.226
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription and label classification for standard paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das zweite Veränderungsphänomen ist die zunehmende Komplexität. Wir erfahren immer deutlicher, daß scheinbar verschiedene Sachbereiche eng zusammenhängen. Und wie bewältigen wir diese Komplexität? Höchst inkompetent, indem wir glauben, mit größter Spezialisierung, mit noch mehr partikularisiertem Wissen die komplexen Probleme lösen zu können. So werden auch die Parlamentarier zu Spezialisten – oder sie werden zumindest von den Medien zu Spezialisten in diesem oder jenem Sachbereich gemacht. Der eine gilt als Ökologe, der andere als Mann der Finanzen und ein dritter als Wirtschaftsspezialist. Komplexe Probleme lassen sich aber nicht durch Spezialisierung, sondern nur interdisziplinär lösen. In der veränderten, komplex gewordenen Welt sind unsere üblichen Verfahren weitgehend untauglich geworden.",
+      "bbox": {
+        "x_pct": 29.612,
+        "y_pct": 29.643,
+        "w_pct": 65.255,
+        "h_pct": 40.59
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription and label classification for standard paragraph text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Welche Schlußfolgerungen kann man aus der Beobachtung der Veränderungen ziehen? Ganz sicher die eine: unsere Handlungsfreiheit wird eingeengt. Die Meinung, das Parlament oder die Regierung könne im Einzelfall frei so oder so entscheiden, trifft nicht zu. Zur Schwierigkeit, daß die Probleme interdisziplinäres Denken und Handeln erfordern, kommt das zweite Problem.",
+      "bbox": {
+        "x_pct": 29.697,
+        "y_pct": 69.723,
+        "w_pct": 65.17,
+        "h_pct": 18.268
+      },
+      "changed": true,
+      "change_reason": "Corrected transcription and label classification for standard paragraph text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "28",
+      "bbox": {
+        "x_pct": 60.5,
+        "y_pct": 90.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer region for pagination."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text transcriptions contained significant OCR errors.",
+    "Marginal captions were incorrectly tagged as paragraph text.",
+    "Page number at bottom of page was missed by the initial extraction."
+  ],
+  "doc_id": "2400",
+  "page": 27,
+  "elapsed_seconds": 6.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

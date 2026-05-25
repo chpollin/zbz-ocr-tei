@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Welt mitwirken ? Man darf den Begriff des Sinns nicht für die letzten Dinge reservieren; auch das Naheliegende hat mit Sinn zu tun.",
+      "bbox": {
+        "x_pct": 8.249,
+        "y_pct": 4.803,
+        "w_pct": 64.698,
+        "h_pct": 7.038
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ANDEREGG: Darf ich noch einmal den Versuch einer Zuspitzung machen? Sinn ist offenbar nicht etwas, was man ein für allemal haben kann, sondern etwas, woran man arbeitet, etwas, das immer von neuem gesucht werden muß. Wenn ich die Erfahrung ernst nehme, dass ich während meines ganzen Lebens ständig auf dem Weg bin, mir Sinn zu erschließen, so heißt das auch, daß ich darauf verzichte, ein für allemal eine feste Sinnkonzeption zu haben. Deshalb gehören aus meiner Sicht die Begriffe Sinn und Risiko eng zusammen. Vielleicht können wir diesen Zusammenhang noch konkretisieren, so daß das Wort Sinn mehr ist als ein Etikett.",
+      "bbox": {
+        "x_pct": 8.056,
+        "y_pct": 13.879,
+        "w_pct": 65.097,
+        "h_pct": 31.223
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header because it identifies the speaker and starts a new section."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SCHMIDHEINY: Die Grundfrage, mit der sich heute ein Unternehmer tagtäglich konfrontiert sieht, ist die Frage: Wie kann ich den Wandel der Welt, der immer rascher vor sich geht, der zu immer höheren Leistungserwartungen führt, in meiner eigenen Arbeit umsetzen, in eine Bewegung des Unternehmens, in eine dynamische Entwicklung, die mit dem äußeren Wandel Schritt halten kann. Mit einer solchen Fragestellung ist man nahe an der Sinnfrage, die eben nicht mit einem abstrakten Konzept beantwortet werden kann – dann jedenfalls nicht, wenn wir von transzendentalen Antworten auf die Sinnfrage absehen. So verstanden, finden wir Sinn ganz pragmatisch in dem, was wir tun, vorausgesetzt, wir sind bereit, etwas zu tun. Und hier liegt dann der Konnex zum Risiko, weil etwas tun immer heißt: Risiko auf sich zu nehmen. So gesehen geht es um Sinn, wenn ich",
+      "bbox": {
+        "x_pct": 7.935,
+        "y_pct": 47.256,
+        "w_pct": 65.012,
+        "h_pct": 41.077
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header because it identifies the speaker and starts a new section."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ohne Risiko keine Sinnfindung",
+      "bbox": {
+        "x_pct": 75.242,
+        "y_pct": 39.52,
+        "w_pct": 19.239,
+        "h_pct": 3.712
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "25",
+      "bbox": {
+        "x_pct": 39.3,
+        "y_pct": 91.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Detected page number, changed to page_footer to be filtered out."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction of speaker lines was incomplete.",
+    "Speaker names should be treated as section headers.",
+    "Page number 25 was missed in original JSON."
+  ],
+  "doc_id": "2400",
+  "page": 24,
+  "elapsed_seconds": 9.78,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

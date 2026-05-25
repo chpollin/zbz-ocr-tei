@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA MUSIQUE TRANSCENDE-T-ELLE LE TEMPS ?",
+      "bbox": {
+        "x_pct": 14.756,
+        "y_pct": 14.052,
+        "w_pct": 57.097,
+        "h_pct": 4.469
+      },
+      "changed": true,
+      "change_reason": "Corrected misspelled/split title text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais vous inviter \u0000à réfléchir avec moi à l'expérience que nous faisons de la musique et à cette question : que se passe-t-il lorsqu'il y a musique ? J'aimerais d'abord délimiter ma question; et pour ce faire, je distinguerai entre le compositeur, les exécutants et les auditeurs.",
+      "bbox": {
+        "x_pct": 14.481,
+        "y_pct": 27.1,
+        "w_pct": 57.235,
+        "h_pct": 13.039
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation and typos."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense depuis longtemps – là, je vais peut-étre blesser certains dans leur conviction – qu'en fait l'artiste créateur rencontre assez mal son public, et que ce dernier s'imagine souvent un peu à tort rencontrer l'artiste créateur. En effet, l'attitude de celui qui crée et celle de ceux qui reçoivent l'œuvre sont très profondément différentes. L'artiste veut avant tout faire quelque chose ; plus précisément, il veut faire étre quelque chose. Il ne s'adresse que très indirectement au public. Son interlocuteur, c'est l'œuvre, et son problème, c'est de la faire étre. Il se soucie relativement peu, pendant qu'il travaille, des vibrations que sa création suscitera ou ne suscitera pas chez ses auditeurs ou ses spectateurs. Et cela est vrai des musiciens, des écrivains, des peintres.",
+      "bbox": {
+        "x_pct": 14.407,
+        "y_pct": 40.196,
+        "w_pct": 57.309,
+        "h_pct": 32.925
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation, formatting issues, and typos."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "49",
+      "bbox": {
+        "x_pct": 68.307,
+        "y_pct": 75.735,
+        "w_pct": 3.447,
+        "h_pct": 2.451
+      },
+      "changed": true,
+      "change_reason": "Labeled page number correctly as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR text was severely truncated and contained broken characters.",
+    "Page number at bottom right was missing from initial detection.",
+    "Title was incorrectly transcribed."
+  ],
+  "doc_id": "2780",
+  "page": 48,
+  "elapsed_seconds": 6.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

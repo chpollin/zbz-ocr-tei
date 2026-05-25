@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME 117",
+      "bbox": {
+        "x_pct": 13.5,
+        "y_pct": 2.0,
+        "w_pct": 68.3,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Identified page header/footer elements for filtering."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vouant se5 eflorls coïncider avec elles. une   telle insertion reste eflels sur le   développement  ",
+      "bbox": {
+        "x_pct": 13.153,
+        "y_pct": 13.493,
+        "w_pct": 68.631,
+        "h_pct": 23.736
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lautre irréalisme politique consiste à vouloir   réaliser  une forme; mais au moyen dun donné dilfér",
+      "bbox": {
+        "x_pct": 13.349,
+        "y_pct": 37.487,
+        "w_pct": 68.849,
+        "h_pct": 37.099
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page header text was missing from the original segmentation and added as a filtered region."
+  ],
+  "doc_id": "110",
+  "page": 119,
+  "elapsed_seconds": 3.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

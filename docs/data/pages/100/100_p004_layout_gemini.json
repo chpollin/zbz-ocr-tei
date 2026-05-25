@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "moyen, tirant sans cesse son effcacité de lêtre où il n'y a plus de moyens. Jaspers a inventé un nou",
+      "bbox": {
+        "x_pct": 8.952,
+        "y_pct": 8.571,
+        "w_pct": 74.462,
+        "h_pct": 5.131
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette philosophie me dit ce que je suis en me montrant ce que je peux en se heurtant à la limite où ",
+      "bbox": {
+        "x_pct": 8.038,
+        "y_pct": 21.532,
+        "w_pct": 75.242,
+        "h_pct": 13.341
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais lexistence ne saurait être voulue ou visée directement. Le sujet n'existe 'en voulant autre cho",
+      "bbox": {
+        "x_pct": 6.962,
+        "y_pct": 42.645,
+        "w_pct": 75.726,
+        "h_pct": 23.678
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parmi ces chiffres, il y a avant tout les échecs   auxquels Phomme se heurte lorsque sa quête de lêt",
+      "bbox": {
+        "x_pct": 6.075,
+        "y_pct": 74.116,
+        "w_pct": 76.317,
+        "h_pct": 6.937
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "59",
+      "bbox": {
+        "x_pct": 42.5,
+        "y_pct": 83.5,
+        "w_pct": 5.0,
+        "h_pct": 4.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page footer region."
+  ],
+  "doc_id": "100",
+  "page": 4,
+  "elapsed_seconds": 5.62,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

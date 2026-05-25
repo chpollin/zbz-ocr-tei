@@ -1,0 +1,126 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch, Genève:",
+      "bbox": {
+        "x_pct": 4.149,
+        "y_pct": 0.998,
+        "w_pct": 27.784,
+        "h_pct": 2.048
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_heading"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Tâches et limites des ,, Sciences humaines dans le monde d'aujourd 'hui",
+      "bbox": {
+        "x_pct": 4.419,
+        "y_pct": 4.838,
+        "w_pct": 81.568,
+        "h_pct": 2.415
+      }
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Introduction",
+      "bbox": {
+        "x_pct": 4.23,
+        "y_pct": 8.532,
+        "w_pct": 15.095,
+        "h_pct": 1.561
+      }
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les problèmes que je vais essayer de poser devant vous concernent des disciplines que, par toute vot",
+      "bbox": {
+        "x_pct": 3.743,
+        "y_pct": 12.287,
+        "w_pct": 88.73,
+        "h_pct": 14.531
+      }
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La deuxième difficulté que je rencontre provient de lextension du sujet. La traduction de Geisteswis",
+      "bbox": {
+        "x_pct": 4.095,
+        "y_pct": 26.28,
+        "w_pct": 88.743,
+        "h_pct": 36.237
+      }
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne faut donc pas 'imaginer pouvoir procéder par simple juxtaposition, des sciences humaines aux s",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 62.261,
+        "w_pct": 88.419,
+        "h_pct": 10.119
+      }
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parmi les   sciences humaines,  les unes sont plus proches des  sciences de la nature, les autres mo",
+      "bbox": {
+        "x_pct": 4.689,
+        "y_pct": 72.466,
+        "w_pct": 88.189,
+        "h_pct": 20.367
+      }
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "9} peut s'appliquer le plus bres:",
+      "bbox": {
+        "x_pct": 63.959,
+        "y_pct": 92.551,
+        "w_pct": 28.973,
+        "h_pct": 4.121
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to footnote"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "217",
+      "bbox": {
+        "x_pct": 94.0,
+        "y_pct": 95.0,
+        "w_pct": 4.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Missing page number region",
+    "Incorrect label for Jeanne Hersch",
+    "Incorrect label for footnote"
+  ],
+  "doc_id": "1180",
+  "page": 2,
+  "elapsed_seconds": 8.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from text to zb_heading": 1,
+    "Corrected label from text to footnote": 1,
+    "ADDED": 1
+  }
+}

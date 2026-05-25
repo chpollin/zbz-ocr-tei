@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Welt für uns erwerben müssen. Wir müssen diese Welt klären, darin unseren Platz bezeichnen und einen Plan und eine Absicht entwickeln, damit das Ganze einen gewissen Zusammenhang gewinnt. Diese Einheit schöpfen wir für uns, schaffen wir für uns; sie ist uns nicht gegeben. Uns gegeben ist ein Ort, und dieser Ort ist irgendwo. Aber wo dieser Ort ist, ist so sehr von mir abhängig, so sehr abhängig von dem, was ich für ihn entscheide, daß es durcheinander kommt, der Einfluß des Subjekts und der Einfluß dessen, was man vorbereitet für die Wirkung der persönlichen Freiheit. Diese Situation ist derart, daß sie nicht klarer sein könnte, daß sie aber so einigermaßen der Möglichkeit des Menschen angeboten wird. Die Frage ist, was daraus wird, und das hängt davon ab, ob jeder Mensch genug Stütze in sich findet und in dem, was er glaubt, um sich stark und entschieden in dieser Welt zu verwirklichen.",
+      "bbox": {
+        "x_pct": 7.932,
+        "y_pct": 3.552,
+        "w_pct": 84.777,
+        "h_pct": 33.306
+      },
+      "changed": true,
+      "change_reason": "Corrected the full text content of the paragraph based on the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Eben das aber ist das Problem. Es ist etwas, das wirklich ein Motiv sein kann, um Philosophie zu treiben, denn die Philosophie hilft doch, klarer, solider und bewußter zu werden und zu wissen, was man da verwirklicht, wofür man es verwirklicht und inwiefern es wirklich von uns abhängt. Das ist die Frage.",
+      "bbox": {
+        "x_pct": 7.738,
+        "y_pct": 39.226,
+        "w_pct": 84.866,
+        "h_pct": 11.503
+      },
+      "changed": true,
+      "change_reason": "Corrected the full text content of the paragraph based on the image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist seltsam; daß die Welt für uns eigentlich etwas ist, woran wir nicht oft denken. Irgendwie haben wir Ferien von unserer Welt. Irgendwie läßt es uns in Ruhe. Wenn wir daran denken müßten, dann wären wir wahrscheinlich sehr ängstlich, und wir wüßten nicht, wie wir dieses Schiff steuern sollten. Aber dadurch, daß uns irgendwie eine Welt gegeben ist, daß wir sie um uns haben und wir in uns einen Platz haben, dadurch fühlen wir uns mehr oder weniger zu Hause in dieser Welt. Deswegen ist es so wichtig, daß die Menschen dieses Zuhause füreinander bestätigen, damit sie alle kräftiger werden in dem, was sie darin zu verwirklichen suchen. Es ist allerdings eine Schwierigkeit, daß die Welt von dem Menschen nicht stark genug unterstützt wird, wenn wir unsere Krisen haben. Wenn wir unsere geschichtlichen Krisen haben, wissen wir oft nicht mehr ein noch aus, und die Welt kommt nicht, um uns zu retten, und ohne Welt können wir nicht da sein, denn wir brauchen diese Umwelt, und die Umwelt ist die Welt, die ganze Welt. Aber wir müssen wissen, daß es gleichzeitig fest und",
+      "bbox": {
+        "x_pct": 7.932,
+        "y_pct": 52.495,
+        "w_pct": 84.732,
+        "h_pct": 40.155
+      },
+      "changed": true,
+      "change_reason": "Corrected the full text content of the paragraph based on the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "23",
+      "bbox": {
+        "x_pct": 88.583,
+        "y_pct": 94.664,
+        "w_pct": 2.455,
+        "h_pct": 2.115
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "The text content in the original annotations was truncated and incorrect.",
+    "The page number was incorrectly labeled as text."
+  ],
+  "doc_id": "3160",
+  "page": 6,
+  "elapsed_seconds": 7.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "EXIGENCES DE L'ART 203",
+      "bbox": {
+        "x_pct": 11.08,
+        "y_pct": 10.74,
+        "w_pct": 68.39,
+        "h_pct": 1.77
+      },
+      "changed": true,
+      "change_reason": "Corrected label for page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sonorités,   les   rythmes souvent déterminent sens de facon décisive. qui",
+      "bbox": {
+        "x_pct": 11.243,
+        "y_pct": 13.667,
+        "w_pct": 68.159,
+        "h_pct": 3.645
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne s'agir ici de commenter des textes poétiques. Je prends   seulement; POur expliquer pensée, Fe",
+      "bbox": {
+        "x_pct": 11.243,
+        "y_pct": 17.669,
+        "w_pct": 68.239,
+        "h_pct": 5.308
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Quelle , el si fine, et si mortelle Que soit ta   pointe, blonde abeille",
+      "bbox": {
+        "x_pct": 26.778,
+        "y_pct": 24.882,
+        "w_pct": 34.476,
+        "h_pct": 3.44
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ladjectif fine signifier toute espèce de finesse ; quand entend mortelle On sait bien plus que et me",
+      "bbox": {
+        "x_pct": 11.013,
+        "y_pct": 29.818,
+        "w_pct": 68.539,
+        "h_pct": 40.85
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Paul VALÉRY, L’Abeille.",
+      "bbox": {
+        "x_pct": 13.56,
+        "y_pct": 73.34,
+        "w_pct": 20.35,
+        "h_pct": 1.77
+      },
+      "changed": true,
+      "change_reason": "ADDED: Footnote at bottom"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Running header was missing label",
+    "Footnote was missing label"
+  ],
+  "doc_id": "110",
+  "page": 205,
+  "elapsed_seconds": 6.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label for page header": 1,
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA SUISSE DANS L'EUROPE ACTUELLE 83",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected from text to page_header as it contains title and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mettant en vedette les risques de nationalisme allemand au point de rendre toute espèce de confiance de ce côté impossible, reproduisant précisément les photographies les pires, reproduisant précisément les textes les pires, et passant sous silence des efforts comme ceux dont j'ai parlé tout à l'heure 1.",
+      "bbox": {
+        "x_pct": 11.929,
+        "y_pct": 10.454,
+        "w_pct": 81.691,
+        "h_pct": 14.516
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous avons d'autres tâches encore. Ainsi nous devrions, nous Suisses, défendre sur le plan international les langues européennes. A mon avis, nous consentons beaucoup trop facilement à parler l'anglais, quand nous le savons, partout où nous allons. Nous devons défendre les langues européennes, et en particulier nos trois langues nationales, le français, l'allemand et l'italien. Non pas parce qu'elles sont nos trois langues nationales, mais parce que la tradition qu'elles portent est indispensable au monde entier. J'ai assisté récemment à une réunion d'un Institut international de philosophie, où n'étaient admises comme langues de congrès que l'anglais et le français, mais pas l'allemand. La langue de Kant, par conséquent, ne pouvait pas être parlée. Or il est essentiel que cette langue reste présente, afin que les textes écrits dans cette langue restent présents, que la tradition de pensée portée par cette langue reste présente. Sinon, les jeunes générations auront le sentiment que ces langues n'existent plus, ils ne les apprendront plus, ils ne les liront plus et nos langues occidentales, l'allemand probablement avant le français - mais le français suivra bientôt - seront des langues mortes ou des dialectes.",
+      "bbox": {
+        "x_pct": 11.268,
+        "y_pct": 24.929,
+        "w_pct": 81.823,
+        "h_pct": 60.121
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction errors."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "1 Voir ci-dessus pp. 80-81.",
+      "bbox": {
+        "x_pct": 15.68,
+        "y_pct": 88.881,
+        "w_pct": 27.781,
+        "h_pct": 2.52
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for the paragraph regions was highly inaccurate, missing many words and character combinations.",
+    "Page header was misidentified as text.",
+    "Footnote was misidentified as text."
+  ],
+  "doc_id": "530",
+  "page": 24,
+  "elapsed_seconds": 5.05,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

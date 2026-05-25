@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ces jours, de ces nuits m'ont été donnés alors que dautres sont morts?",
+      "bbox": {
+        "x_pct": 21.697,
+        "y_pct": 11.591,
+        "w_pct": 65.491,
+        "h_pct": 5.724
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match image content more accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'heure zéro: on regarde l'agenda de 1972, dont les pages sont encore toutes blanches. On espère, on craint. On décide qu'on fera ceci, qu'on ne fera plus cela. On espère qu'on fera ce qu'on a décidé, que la force pour le faire vous sera donnée.",
+      "bbox": {
+        "x_pct": 21.576,
+        "y_pct": 18.519,
+        "w_pct": 65.782,
+        "h_pct": 16.524
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Soudain se creuse l'immensité de la terre - toute petite pour les fusées qui tournent autour de la planète Mars. L'immensité de la terre, dont le moindre kilomètre suffit à étouffer le cri de celui qui meurt, le sanglot de celui qui souffre, et dont tant de cris et de sanglots s'engloutissent soudain, d'un seul coup, avec cette vieille année, dans la tombe ou le musée de l'histoire.",
+      "bbox": {
+        "x_pct": 21.455,
+        "y_pct": 36.81,
+        "w_pct": 65.855,
+        "h_pct": 24.975
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est l'heure de la grande ambiguïté: il semble qu'en même temps tout s'efface et rien ne compte, - et que rien ne s'efface et que tout compte absolument et pour toujours.",
+      "bbox": {
+        "x_pct": 21.576,
+        "y_pct": 63.527,
+        "w_pct": 65.661,
+        "h_pct": 11.616
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content to match image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "54",
+      "bbox": {
+        "x_pct": 21.818,
+        "y_pct": 82.593,
+        "w_pct": 2.5,
+        "h_pct": 3.7
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR text content was significantly corrupted.",
+    "Page number 54 was not labeled."
+  ],
+  "doc_id": "2260",
+  "page": 52,
+  "elapsed_seconds": 5.24,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

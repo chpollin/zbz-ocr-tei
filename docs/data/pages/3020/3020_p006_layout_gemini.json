@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "entscheiden, oder wir hätten früher entschieden, dass das E. ein unwirklicher [..] unwirklicher nuns Lage dass",
+      "bbox": {
+        "x_pct": 21.011,
+        "y_pct": 10.235,
+        "w_pct": 32.729,
+        "h_pct": 9.459
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Noch etwas: Ich habe vorhin gesagt, ich sche überhaupt nicht ein, wieso Liberalisierung der Drogen...",
+      "bbox": {
+        "x_pct": 21.371,
+        "y_pct": 22.143,
+        "w_pct": 32.41,
+        "h_pct": 25.714
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "darun, Menschen zu Menschsein... Es gibt sehr viel, was man tun kann.",
+      "bbox": {
+        "x_pct": 55.263,
+        "y_pct": 13.878,
+        "w_pct": 33.518,
+        "h_pct": 30.306
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text was severely corrupted/garbled and needed correction to match document source.",
+    "BBox coordinates were kept as requested despite potential overlaps with existing layout regions."
+  ],
+  "doc_id": "3020",
+  "page": 6,
+  "elapsed_seconds": 3.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

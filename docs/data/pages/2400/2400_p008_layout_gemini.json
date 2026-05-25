@@ -1,0 +1,74 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Vorbemerkung des Herausgebers",
+      "bbox": {
+        "x_pct": 16.461,
+        "y_pct": 5.218,
+        "w_pct": 50.048,
+        "h_pct": 3.028
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dem folgenden Text liegt die Tonbandaufzeichnung des Helvetia-Forums zugrunde, welches am 22. Oktober 1986 unter dem Titel <Wirtschaft, Gesellschaft und Staat zwischen Risiko und Sicherheit> durchgeführt wurde. Die Überarbeitung der Tonbandnachschrift beschränkte sich darauf, aus einem mündlichen Text einen lesbaren Text zu machen; beibehalten wurde der Gesprächscharakter und der Gesprächsverlauf, und der Inhalt der einzelnen Voten wurde nicht angetastet.",
+      "bbox": {
+        "x_pct": 8.249,
+        "y_pct": 12.882,
+        "w_pct": 65.338,
+        "h_pct": 22.904
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Gesprächspartner waren sich darin einig, dass das Forum mehr sein sollte als eine Abfolge von wohl-vorbereiteten Statements. Sie wollten den Versuch machen, möglichst ohne Umschweife und Absprachen in ein eigentliches Gespräch einzutreten, in einen Gedankenaustausch, eine Auseinandersetzung. Das Risiko von Mißverständnissen, von Wiederholungen, von Brüchen in der gedanklichen Abfolge wurde, trotz der großen Zuhörerschaft, in Kauf genommen: zugunsten der Lebendigkeit.",
+      "bbox": {
+        "x_pct": 8.176,
+        "y_pct": 35.568,
+        "w_pct": 65.495,
+        "h_pct": 25.007
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Auch diese <Nachschrift> will nicht etwa abgerundete und ausgefeilte Statements präsentieren; sie möchte Spiegel des lebendigen Gesprächs sein mit all seinen Eigenarten, seinen Schwierigkeiten und seinen unerwarteten Wendungen. Nicht fertige Antworten werden präsentiert, und der Band erhebt nicht den Anspruch auf Endgültigkeit; er möchte vielmehr die Fruchtbarkeit des Fragens zeigen und zum Weiterfragen ermuntern. Auch seiner Form nach plädiert er nicht für das Abgeschlossene, Abgesicherte, sondern für das Vorläu-",
+      "bbox": {
+        "x_pct": 8.333,
+        "y_pct": 62.445,
+        "w_pct": 65.302,
+        "h_pct": 25.233
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "9",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Added missing page footer region for pagination digit."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "OCR text extraction was heavily truncated and contained transcription errors.",
+    "Page number 9 was missing from layout regions."
+  ],
+  "doc_id": "2400",
+  "page": 8,
+  "elapsed_seconds": 5.98,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

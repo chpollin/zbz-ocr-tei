@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vers le fond obscur par le relief éclatant de ce coude, de ce sein, de cet arbre central, vivace, hiératiquement tordu, qui coupe en deux la nageuse fugitive de l’éternité et hisse, comme un arbre de Jessé, jusque tout en haut, jusqu’au-delà du bord, ses feuilles-fruits résumant les saisons dans l’axe unique de son présent. Le corps d’Eve, qu’il coupe en deux, passe derrière lui. Le bras d’Eve, qui cueille la pomme, passe devant lui. Prisonnière, la nageuse, de cette puissance verticale qui la scinde, comme elle scinde la scène entière, et à jamais le temps. Scission éternelle de l’éternité dans l’acte d’Eve. A cause de cet arbre qui la coupe, la cache, la cloue, la féconde, jamais Eve prisonnière ne cessera de cueillir cette pomme. Jamais elle ne s’arrachera à cet instant où elle s’arrache à l’éternité innocente des plantes. Jamais le temps qu’elle engendre ne cessera de naître de ce vertical instant qui le déchire en avenir et en passé.",
+      "bbox": {
+        "x_pct": 10.182,
+        "y_pct": 11.305,
+        "w_pct": 66.061,
+        "h_pct": 59.318
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the actual image content, removing hallucinated artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nageuse prisonnière de l’éternel, sens-tu le courant? Toi qui déjà désires, qui déjà regret-",
+      "bbox": {
+        "x_pct": 10.182,
+        "y_pct": 72.786,
+        "w_pct": 65.782,
+        "h_pct": 6.313
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the actual image content, removing hallucinated artifacts."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "29",
+      "bbox": {
+        "x_pct": 72.75,
+        "y_pct": 82.35,
+        "w_pct": 2.15,
+        "h_pct": 2.25
+      },
+      "changed": true,
+      "change_reason": "Identified page number and labeled as page_footer for filtering."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction contained numerous OCR hallucinations and artifacts.",
+    "Page number at bottom right was not identified as a separate region.",
+    "Bounding box for the main paragraph was slightly imprecise regarding the content."
+  ],
+  "doc_id": "2260",
+  "page": 27,
+  "elapsed_seconds": 4.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

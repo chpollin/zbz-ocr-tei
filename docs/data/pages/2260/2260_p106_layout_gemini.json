@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bien que nous ne lui échappions jamais, le temps ne nous emprisonne pas. Ou alors, s'il nous emprisonne, ce serait plutôt à la manière dont les bagnards des grands déserts glacés du Nord sont prisonniers de la seule immensité de l'espace, sans issue nulle part à force d'être ouvert. Nous nous enfonçons dans les labyrinthes du temps, dans la rigueur inépuisable de son inconsistance et des supplices qu'elle inflige par la séparation et la mort. Mais ces labyrinthes ne se referment pas. Ils s'ouvrent sans cesse au-delà, suggérant comme un leurre une possession éternelle.",
+      "bbox": {
+        "x_pct": 22.209,
+        "y_pct": 17.34,
+        "w_pct": 65.934,
+        "h_pct": 36.641
+      },
+      "changed": true,
+      "change_reason": "Text content was incomplete and did not match the actual image content accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Parfois ils nous ramènent à l'instant présent, à sa surabondante richesse, à sa mort imminente, présence de toutes les morts. Alors il nous est demandé, mystérieusement, d'aimer cet instant et d'y croire assez pour lui dire adieu.",
+      "bbox": {
+        "x_pct": 22.172,
+        "y_pct": 53.931,
+        "w_pct": 65.692,
+        "h_pct": 16.33
+      },
+      "changed": true,
+      "change_reason": "Text content was corrupted/incomplete and did not match the image text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "106",
+      "bbox": {
+        "x_pct": 22.172,
+        "y_pct": 82.529,
+        "w_pct": 3.738,
+        "h_pct": 2.227
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, corrected to page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Text transcription in OCR was heavily fragmented/incorrect.",
+    "Page number 106 was incorrectly labeled as text."
+  ],
+  "doc_id": "2260",
+  "page": 106,
+  "elapsed_seconds": 4.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

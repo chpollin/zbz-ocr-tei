@@ -1,0 +1,116 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Les droits de l'homme",
+      "bbox": {
+        "x_pct": 23.166,
+        "y_pct": 8.999,
+        "w_pct": 36.657,
+        "h_pct": 2.257
+      },
+      "changed": true,
+      "change_reason": "Separate page number from header text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "537",
+      "bbox": {
+        "x_pct": 68.805,
+        "y_pct": 8.999,
+        "w_pct": 5.277,
+        "h_pct": 2.257
+      },
+      "changed": true,
+      "change_reason": "Correctly classify page number as page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire de chaque peuple et de chaque personne devient vraiment celle de tous.",
+      "bbox": {
+        "x_pct": 3.093,
+        "y_pct": 13.081,
+        "w_pct": 70.987,
+        "h_pct": 4.809
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Participer à l'histoire",
+      "bbox": {
+        "x_pct": 3.093,
+        "y_pct": 21.168,
+        "w_pct": 26.657,
+        "h_pct": 3.003
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Car c'est là un droit de l'homme dont nous n'avons pas encore parlé : le droit de chacun de participer par son action à l'histoire de son pays, et aussi, à travers l'exigence des droits, à celle de l'humanité — au lieu de subir l'une et l'autre comme une fatalité résultant de la volonté d'autrui.",
+      "bbox": {
+        "x_pct": 2.901,
+        "y_pct": 25.417,
+        "w_pct": 70.987,
+        "h_pct": 13.248
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misinterpreted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous touchons ici au lien qui unit les droits de l'homme à l'organisation démocratique de la société.",
+      "bbox": {
+        "x_pct": 2.946,
+        "y_pct": 38.538,
+        "w_pct": 70.795,
+        "h_pct": 4.936
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Droits et démocratie",
+      "bbox": {
+        "x_pct": 3.137,
+        "y_pct": 46.546,
+        "w_pct": 25.331,
+        "h_pct": 2.424
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce lien n'est ni évident ni absolu. Il y a pourtant dans toute organisation démocratique une retenue ou une suspension du pouvoir lorsqu'il touche aux droits de la personne. Cette retenue, cette suspension n'est pas toujours comprise, et certains accusent l'État qui s'abstient d'adhérer comme tel à un dogme religieux ou à une hiérarchie de valeurs de n'être rien de plus qu'un système matérialiste de fonctionnement économique. C'est méconnaître le fait qu'un État démocratique doit protéger, autour de chaque citoyen libre, un espace de liberté que celui-ci pourra remplir à son gré de substance et de valeurs. La mise en œuvre des droits de l'homme, vue du dehors, présente nécessairement un tel aspect, spirituellement pauvre. Il reste que les citoyens doivent avoir alors en eux-mêmes de quoi remplir, de leurs croyances et de leurs adhésions, le vide pour eux préservé. Sinon le vide reste vide, et s'il n'y a plus vraiment de citoyens, il n'y a pas non plus de démocratie.",
+      "bbox": {
+        "x_pct": 3.049,
+        "y_pct": 50.373,
+        "w_pct": 70.781,
+        "h_pct": 42.198
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/misinterpreted OCR text."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR contained multiple truncations and misread characters.",
+    "Page number at the top of the page was incorrectly grouped with the header title."
+  ],
+  "doc_id": "2920",
+  "page": 35,
+  "elapsed_seconds": 5.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

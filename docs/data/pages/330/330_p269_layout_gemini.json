@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 235",
+      "bbox": {
+        "x_pct": 331.0,
+        "y_pct": 69.0,
+        "w_pct": 625.0,
+        "h_pct": 18.0
+      },
+      "changed": true,
+      "change_reason": "Header text misidentified as paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'on en tenons à la seule valeur qui puisse fonder le socialisme (celle de l'être humain en tant qu'il est libre et qu'il a des possibles), il est clair que les restrictions socialistes à la liberté individuelle ne peuvent se justifier ni par un recours à l'ordre (qui ferait de lui une doctrine de droite), ni par un recours à l'efficience (qui le réduirait à n'être qu'une technique de productivité), mais seulement à la liberté elle-même.",
+      "bbox": {
+        "x_pct": 38.0,
+        "y_pct": 99.5,
+        "w_pct": 845.96,
+        "h_pct": 144.92
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Arrêtons-nous un instant sur cette idée. C'est ici que le socialisme court, idéologiquement et existentiellement, ses plus grands risques, qu'il est exposé aux plus fortes tentations. Le prolétariat remonte de si bas qu'il est travaillé par des besoins impérieux et immédiats. La sécurité, par exemple, est le plus souvent ressentie, non comme un moyen permettant d'établir entre soi et le milieu le minimum de distance nécessaire au surgissement de la liberté et de ses possibles, mais comme un bien se suffisant à lui-même, un élément constitutif du bonheur. De même, la fin de l'humiliation : le prolétariat est tenté, au premier abord, de préférer des mesures qui suppriment les riches à celles qui élèveraient plus efficacement son propre niveau de vie en augmentant ses ressources : la suppression des riches, l'égalité, non comme moyen permettant l'épanouissement personnel, mais là encore comme facteur de confort moral, de bonheur. De même, l'organisation rationnelle de la production et de la distribution des biens : les loisirs, le confort n'apparaissent pas comme des moyens permettant de libérer la personne pour de nouveaux possibles, mais comme valables en soi, comme devant être recherchés pour eux-mêmes. Cette dernière perversion, en particulier, tend à asservir à nouveau les masses, à les noyer dans une inertie les rendant corvéables à merci — cette fois moins en tant que masses travailleuses qu'en tant que masses consommatrices.",
+      "bbox": {
+        "x_pct": 31.06,
+        "y_pct": 243.58,
+        "w_pct": 853.34,
+        "h_pct": 474.51
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi s'ouvrent devant politiciens et démagogues des voies faciles, plus rapides, plus simples et bien plus attrayantes que celle où reste toujours à conquérir, pour les individus qui composent la masse, et par eux-mêmes, leur liberté d'êtres humains. Les conquêtes économiques et sociales ont une importance énorme, décisive, mais négative : elles suppriment des obstacles extérieurs, elles rendent possible l'effort créateur individuel. Elles ne peuvent pas le remplacer. Sans lui, elles sont vides de sens. Augmenter",
+      "bbox": {
+        "x_pct": 28.27,
+        "y_pct": 710.07,
+        "w_pct": 850.97,
+        "h_pct": 174.33
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and hallucinated OCR text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Page header detected as paragraph text.",
+    "OCR output significantly truncated and hallucinated in initial JSON.",
+    "Bounding boxes provided in the prompt were relative to raw coordinates not properly scaled."
+  ],
+  "doc_id": "330",
+  "page": 269,
+  "elapsed_seconds": 7.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

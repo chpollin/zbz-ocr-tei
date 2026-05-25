@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "title/section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 57.794,
+        "y_pct": 8.786,
+        "w_pct": 32.245,
+        "h_pct": 6.23
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/paragraph to title/section_header as it is an author name on a title page."
+    },
+    {
+      "label": "title/section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PROBLEMES ACTUELS DE LA LIBERTE",
+      "bbox": {
+        "x_pct": 53.877,
+        "y_pct": 18.099,
+        "w_pct": 40.809,
+        "h_pct": 9.904
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/paragraph to title/section_header as it is a book title."
+    },
+    {
+      "label": "title/section_header",
+      "zbz_tag": "zb_heading",
+      "text": "AKTUELLE PROBLEME DER FREIHEIT",
+      "bbox": {
+        "x_pct": 54.047,
+        "y_pct": 31.901,
+        "w_pct": 40.209,
+        "h_pct": 9.904
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/paragraph to title/section_header as it is a book title."
+    },
+    {
+      "label": "title/section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CONTEMPORARY PROBLEMS OF FREEDOM",
+      "bbox": {
+        "x_pct": 57.141,
+        "y_pct": 45.847,
+        "w_pct": 33.982,
+        "h_pct": 14.808
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/paragraph to title/section_header as it is a book title."
+    },
+    {
+      "label": "title/section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PROBLEMAS ACTUALES DE LA LIBERTAD",
+      "bbox": {
+        "x_pct": 52.089,
+        "y_pct": 64.856,
+        "w_pct": 43.995,
+        "h_pct": 10.064
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/paragraph to title/section_header as it is a book title."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "SOI",
+      "bbox": {
+        "x_pct": 69.321,
+        "y_pct": 79.601,
+        "w_pct": 7.663,
+        "h_pct": 4.696
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/footer element, reassigned to _filter."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "All text regions were incorrectly labeled as paragraph.",
+    "Title page components must be marked as section_header/zb_heading.",
+    "The page numbering or printer mark at bottom was misidentified as body text."
+  ],
+  "doc_id": "980",
+  "page": 1,
+  "elapsed_seconds": 4.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

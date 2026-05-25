@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "La musique transcende-t-elle le temps ?",
+      "bbox": {
+        "x_pct": 9.105,
+        "y_pct": 8.669,
+        "w_pct": 80.738,
+        "h_pct": 9.638
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais vous inviter à réfléchir avec moi à l'expérience que nous faisons de la musique et à cette question : que se passe-t-il lorsqu'il y a musique ? J'aimerais d'abord délimiter ma question ; et pour ce faire, je distinguerai entre le compositeur, les exécutants et les auditeurs.",
+      "bbox": {
+        "x_pct": 8.984,
+        "y_pct": 30.846,
+        "w_pct": 81.137,
+        "h_pct": 8.177
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je pense depuis longtemps — là, je vais peut-être blesser certains dans leur conviction — qu'en fait l'artiste créateur rencontre assez mal son public, et que ce dernier s'imagine souvent un peu à tort rencontrer l'artiste créateur. En effet, l'attitude de celui qui crée et celle de ceux qui reçoivent l'œuvre sont très profondément différentes. L'artiste veut avant tout faire quelque chose ; plus précisément, il veut faire être quelque chose. Il ne s'adresse que très indirectement au public. Son interlocuteur, c'est l'œuvre, et son problème, c'est de la faire être. Il se soucie relativement peu, pendant qu'il travaille, des vibrations que sa création suscitera ou ne suscitera pas chez ses auditeurs ou ses spectateurs. Et cela est vrai des musiciens, des écrivains, des peintres, et la plupart des artistes : ils sont aux prises avec leur œuvre.",
+      "bbox": {
+        "x_pct": 8.912,
+        "y_pct": 39.923,
+        "w_pct": 81.378,
+        "h_pct": 24.077
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR content to match full text in paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par contre, le public qui reçoit l'œuvre se pose, à travers elle, quantité de questions qui concernent souvent l'artiste. C'est l'artiste que le public voudrait rejoindre à travers l'œuvre. Son intention est donc très différente de celle du créateur. Il ressent, il éprouve des choses que l'œuvre suscite en lui, et ce qui l'absorbe, ce sont ces pensées, ces émotions qui se passent en lui — alors que ce n'était peut-être pas cela à quoi visait l'artiste. Ainsi, il se produit, la plupart du temps, une espèce de chassé-croisé entre l'artiste et le",
+      "bbox": {
+        "x_pct": 9.069,
+        "y_pct": 65.362,
+        "w_pct": 81.221,
+        "h_pct": 14.508
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled OCR text to match image."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "zb_paragraph",
+      "text": "Texte d'une conférence donnée par Madame Jeanne Hersch à ia Journée valaisanne de philosophie. Nous avons gardé intentionnellement la saveur du style oral.",
+      "bbox": {
+        "x_pct": 9.19,
+        "y_pct": 84.746,
+        "w_pct": 81.294,
+        "h_pct": 3.2
+      },
+      "changed": true,
+      "change_reason": "Relabeled from list_item to footnote as it appears to be a bibliographic footer note."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "39",
+      "bbox": {
+        "x_pct": 87.5,
+        "y_pct": 90.0,
+        "w_pct": 2.5,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was highly inaccurate for body paragraphs.",
+    "Page number missing from initial detection.",
+    "Footer label was incorrectly assigned as list_item."
+  ],
+  "doc_id": "2740",
+  "page": 2,
+  "elapsed_seconds": 5.07,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

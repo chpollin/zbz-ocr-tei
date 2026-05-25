@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "REVUE",
+      "bbox": {
+        "x_pct": 30.128,
+        "y_pct": 7.909,
+        "w_pct": 34.824,
+        "h_pct": 6.548
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Internationale de",
+      "bbox": {
+        "x_pct": 20.503,
+        "y_pct": 17.061,
+        "w_pct": 53.754,
+        "h_pct": 12.128
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text recognition errors"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CRIMINOLOGIE et de",
+      "bbox": {
+        "x_pct": 9.807,
+        "y_pct": 30.878,
+        "w_pct": 75.572,
+        "h_pct": 14.903
+      },
+      "changed": true,
+      "change_reason": "Corrected text content to match image"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POLICE TECHNIQUE",
+      "bbox": {
+        "x_pct": 2.92,
+        "y_pct": 48.564,
+        "w_pct": 91.123,
+        "h_pct": 6.793
+      },
+      "changed": true,
+      "change_reason": "Changed label from text to section_header as this is part of the journal title block"
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "OCR errors in journal title",
+    "Label misclassification for journal title component"
+  ],
+  "doc_id": "720",
+  "page": 1,
+  "elapsed_seconds": 7.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

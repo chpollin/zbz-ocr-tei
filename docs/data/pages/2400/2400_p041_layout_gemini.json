@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Ziel der Entwicklung: frei werden",
+      "bbox": {
+        "x_pct": 7.964,
+        "y_pct": 42.744,
+        "w_pct": 18.061,
+        "h_pct": 5.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ohne Sicherheit ist der Mensch ganz an sein Tiersein gebunden. Aber ein Minimum von Sicherheit gibt ihm auch schon ein Minimum an Muße, an Entspannung und ist Chance für seine selbstverantwortete Freiheit. Deshalb halte ich die industrielle Entwicklung nicht einfach für einen materialistischen Prozeß; die wissenschaftliche und industrielle Entwicklung hat vielmehr die Möglichkeiten geschaffen, daß sich immer mehr Menschen zu freien, verantwortlichen Menschen machen können. Wir haben es hier mit einem geistigen Sinn der Entwicklung zu tun, mit einem Sinn, der niemanden knechtet, weil er unbestimmt ist, weil er nichts ist als die Möglichkeit für den einzelnen, frei zu werden. So gesehen brauchen wir Sicherheit, damit der einzelne ein Risiko eingehen kann, und wir gehen Risiken ein, um mehr Sicherheit zu gewinnen. Das eine ist mit dem anderen verkettet.",
+      "bbox": {
+        "x_pct": 28.448,
+        "y_pct": 5.335,
+        "w_pct": 65.248,
+        "h_pct": 42.46
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ist nicht möglich, für eine konkrete Situation eine allgemeine Regel anzugeben, die uns erkennen ließe, welches Risiko annehmbar ist und welche Sicherheit unbedingt erhalten werden muß. Risiken und Sicherheiten liegen in der Zukunft, aber unsere Verabredung mit der Welt, der Bereich, in dem wir handeln können, liegt nicht in der Zukunft, sondern in der Gegenwart. Nur jetzt und heute können wir entscheiden, und das heißt immer: vor einer unbekannten Zukunft. In der Spanne zwischen Gegenwart und Zukunft laufen wir immer Gefahr, schlecht zu entscheiden. Möglicherweise halten wir eine Sicherheit in der Gegenwart fest und verpassen damit die Möglichkeit, uns für die Zukunft zu sichern, oder wir opfern die Gegenwart und die gegenwärtigen Menschen einem zukünftigen Traum von Sicherheit auf, der gar nicht realisierbar ist. Die Spannung zwischen Ge-",
+      "bbox": {
+        "x_pct": 28.364,
+        "y_pct": 47.94,
+        "w_pct": 65.418,
+        "h_pct": 41.164
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "42",
+      "bbox": {
+        "x_pct": 59.81,
+        "y_pct": 91.565,
+        "w_pct": 2.271,
+        "h_pct": 2.271
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text blocks were truncated and did not reflect full OCR content.",
+    "Page number 42 was missing from initial layout.",
+    "Page number identified and reclassified from text to page_footer."
+  ],
+  "doc_id": "2400",
+  "page": 41,
+  "elapsed_seconds": 6.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

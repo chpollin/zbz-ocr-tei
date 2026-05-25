@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "permet d'atteindre d'une façon extrêmement mystérieuse et insaisissable, quelque chose dont les hommes ont toujours rêvé et qui leur est absolument refusé, à savoir : ce qui serait à la fois, en un, la capacité de désirer et celle de vivre la plénitude.",
+      "bbox": {
+        "x_pct": 9.274,
+        "y_pct": 8.485,
+        "w_pct": 81.258,
+        "h_pct": 8.385
+      },
+      "changed": true,
+      "change_reason": "The original text was truncated and contained OCR errors; corrected the full content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme a besoin de désirer ; il a besoin de la finitude, du manque. Les hommes ne sont pas doués pour être heureux, même si les circonstances sont favorables, ce qui est assez rare. Même si tout leur sourit, ils s'ennuient très vite. Quelqu'un demanda un jour à un théologien combien de temps avait duré le Paradis terrestre avant la chute. Et le théologien de répondre que l'on ne savait pas, mais que tout portait à croire que cela avait été bref. ... Il avait sûrement raison. Ce fut très bref, car on ne peut guère parler de durée à propos du Paradis. Parce qu'il est dans le temps, l'homme a besoin du désir, donc du manque, pour ne pas s'ennuyer. Pourtant il ne rêve que d'échapper au manque et de parvenir à la plénitude définitive. Faire coïncider le désir et la plénitude, voilà en quoi consisterait « transcender ».",
+      "bbox": {
+        "x_pct": 9.274,
+        "y_pct": 17.946,
+        "w_pct": 81.378,
+        "h_pct": 22.538
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and OCR artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« réceptivité active » dont j'ai parlé tout à l'heure est un terme contradictoire ; mais j'ai depuis longtemps renoncé — surtout lorsqu'il s'agit de réalités philosophiques — à considérer la contradiction comme un vice rédhibitoire. Au contraire, chaque fois que l'on touche à un nœud de la condition humaine — et en philosophie on les cherche — une figure contradictoire surgit devant nous. Et la contradiction est peut-être un des instruments privilégiés qui nous permet ou qui nous aide à transcender.",
+      "bbox": {
+        "x_pct": 9.311,
+        "y_pct": 41.869,
+        "w_pct": 81.221,
+        "h_pct": 14.231
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est certain que « réceptivité active » constitue une expression contradictoire, mais c'est la contradiction même de la liberté. Dans son acception superficielle de libre arbitre ou d'arbitraire, la liberté est le pouvoir de faire n'importe quoi, n'importe quand, n'importe comment, n'importe où, ce qui n'a pas le moindre intérêt parce que si c'est n'importe quoi, cela peut tout aussi bien être autrement. Par contre, dans son sens philosophique, la liberté trouve son prix en étant le contraire de l'arbitraire. Or le contraire de l'arbitraire, c'est la nécessité. Comment s'en sortir ? Ici, je me tourne vers ma propre expérience — et je prie chacun d'entre vous de se reporter à la sienne. Si nous cherchons dans notre passé un acte vraiment libre, au sens le plus fort du terme, nous aurons bien du mal à en expliciter les raisons. Nous devrons finalement reconnaître que nous l'avons accompli parce que nous ne pouvions pas faire autrement ; c'était notre plus profonde nécessité qui nous motivait. Personne n'aurait pu nous en détourner, non pas que nous fussions entêtés, mais parce qu'en agissant autrement nous aurions trahi",
+      "bbox": {
+        "x_pct": 9.19,
+        "y_pct": 57.408,
+        "w_pct": 81.499,
+        "h_pct": 30.592
+      },
+      "changed": true,
+      "change_reason": "Corrected major OCR errors and truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "42",
+      "bbox": {
+        "x_pct": 96.0,
+        "y_pct": 90.0,
+        "w_pct": 4.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Newly identified page number region."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "The OCR for almost every paragraph was heavily truncated or corrupted.",
+    "The page number at the bottom was missing from the initial detection."
+  ],
+  "doc_id": "2740",
+  "page": 5,
+  "elapsed_seconds": 5.44,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

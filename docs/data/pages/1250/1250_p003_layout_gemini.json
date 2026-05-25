@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IV. Conclusions",
+      "bbox": {
+        "x_pct": 38.022,
+        "y_pct": 3.823,
+        "w_pct": 18.519,
+        "h_pct": 1.784
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "",
+      "bbox": {
+        "x_pct": 6.389,
+        "y_pct": 6.974,
+        "w_pct": 87.124,
+        "h_pct": 33.823
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index to section_header as content is table of contents/headings."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Les   textes forment le présent ouvrage ont été publiés   dans le Volume No 4, 1974 de la Revue Inte",
+      "bbox": {
+        "x_pct": 8.573,
+        "y_pct": 88.692,
+        "w_pct": 85.265,
+        "h_pct": 3.099
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "IV",
+      "bbox": {
+        "x_pct": 7.0,
+        "y_pct": 94.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number in footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Initial label 'document_index' was incorrect for TOC/heading content.",
+    "Added missing page footer region."
+  ],
+  "doc_id": "1250",
+  "page": 3,
+  "elapsed_seconds": 5.31,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected label from document_index to section_header as content is table of contents/headings.": 1,
+    "ADDED": 1
+  }
+}

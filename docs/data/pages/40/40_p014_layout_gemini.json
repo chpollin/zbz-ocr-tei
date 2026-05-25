@@ -1,0 +1,77 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 98.66,
+        "y_pct": 77.2,
+        "w_pct": 18.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, moved to page_header/filter"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 376.0,
+        "y_pct": 77.0,
+        "w_pct": 268.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to section_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "main rend la nuit alentour impénétrable. Je veux te dire seulement ce qui vit en moi de ce passé. Tant pis si ne surgissent que des minutes incohérentes et des lieux poignants, sans voie d’accès, sans issue, sans géographie. D’être isolés ainsi absolument les empêche de s’effacer.",
+      "bbox": {
+        "x_pct": 95.95,
+        "y_pct": 123.16,
+        "w_pct": 809.86,
+        "h_pct": 131.1
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne sais pas quel temps il faisait. Mais la maison restera à jamais pour moi telle que je la vis en remontant par les raccourcis le jour où je rencontrai Pierre, — rien qu’une façade blanche devant la plaque sombre des sapins, au sommet d’une pente d’herbe que l’hiver jaunissait encore. Ce n’était pas la première fois que je voyais d’en bas la tache blanche, et ce ne fut pas la dernière; ce fut pourtant la seule. Jamais cette herbe ne reverdira. Jamais le ciel ne deviendra là-haut complètement bleu, ni complètement gris. Les nuages continuent comme ce jour à flotter, féconds et nuls, gonflés de possibles, charriant des ébauches de mondes à travers un espace où aucun réel ne mettait sa limite. Car de ce lieu qui véritablement a perdu son nom, plus que d’aucun autre, l’espace, au-dessous, était vaste. Il y avait une plaine immense couleur d’hiver, terre nue, herbe pauvre, champs en attente, broussailles sans feuilles, — une lente rivière paresseusement déroulée, le lac, — et au delà, rien. Pour englober tout cela, se déployait un ciel inépuisable, multipliant sans trêve ses profondeurs et ses nuages, comme si chaque nuage créait un nouveau ciel.",
+      "bbox": {
+        "x_pct": 93.24,
+        "y_pct": 251.42,
+        "w_pct": 810.81,
+        "h_pct": 531.47
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je remontais du village, au pied de la montagne. Pourquoi j'étais descendue, je ne sais plus. Je ne me souviens même pas d'être descendue. Mais je remontais. Je remonte",
+      "bbox": {
+        "x_pct": 96.89,
+        "y_pct": 777.6,
+        "w_pct": 806.76,
+        "h_pct": 80.62
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and header were labeled as text paragraphs",
+    "OCR text content needs validation against source image for accuracy"
+  ],
+  "doc_id": "40",
+  "page": 14,
+  "elapsed_seconds": 4.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

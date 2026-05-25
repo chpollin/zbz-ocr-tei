@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE",
+      "bbox": {
+        "x_pct": 29.232,
+        "y_pct": 14.654,
+        "w_pct": 49.336,
+        "h_pct": 1.411
+      },
+      "changed": true,
+      "change_reason": "Identified running header as page_header instead of text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "251",
+      "bbox": {
+        "x_pct": 80.609,
+        "y_pct": 14.475,
+        "w_pct": 3.75,
+        "h_pct": 1.603
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer instead of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "monde social entier change un peu ; les hommes nés dans cette période ou « zones de dates » appartiennent à la même génération. Le temps historique, au lieu d’être « rectiligne », est « ondulatoire », avec une « longueur d’onde » de quinze ans environ. La détermination empirique des générations est difficile, mais elle me semble la première condition de la connaissance historique. Les générations sont à la fois les vrais personnages et les « scènes » ou unités élémentaires du drame de l’histoire.",
+      "bbox": {
+        "x_pct": 14.857,
+        "y_pct": 17.424,
+        "w_pct": 69.672,
+        "h_pct": 12.165
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant à la macrostructure, il n’y a pas de régularité ou de cycle prévisible pour des « époques » ou « âges » historiques. Ce n’est pas la forme de la vie, mais son contenu qui les détermine. Il y a des moments où les croyances et les idées maîtresses qui ont dominé une société font défaut : il se produit une crise, il se manifeste des changements de structure et surtout des variations de l’« argument » de la vie collective : une nouvelle époque va commencer, fondée sur de nouveaux principes, qui ne sont d’abord qu’une innovation individuelle, mais qui vont devenir le système général de la société de l’époque future. S’il s’agit d’une vraie époque historique et non simplement d’une école, d’une tendance ou d’une mode, c’est-à-dire d’une forme de la vie, le processus total ne peut durer moins de quatre générations, soixante ans environ. C’est ce que j’appelle l’époque élémentaire, au-dessous de laquelle il n’y a pas de vraie époque historique, mais seulement des périodes de transition (bien entendu, de transition entre des époques, puisque toute l’histoire est transition). L’application méthodique de ces principes peut faire ressortir l’articulation des diverses sociétés coexistantes et leur articulation temporelle, soit et le sujet et la structure de l’histoire.",
+      "bbox": {
+        "x_pct": 15.061,
+        "y_pct": 31.105,
+        "w_pct": 69.744,
+        "h_pct": 32.702
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "4. La raison historique",
+      "bbox": {
+        "x_pct": 38.145,
+        "y_pct": 65.846,
+        "w_pct": 24.18,
+        "h_pct": 2.083
+      },
+      "changed": true,
+      "change_reason": "Corrected typo in section header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pire tentation de l’historien serait le rationalisme, si ce n’était l’irrationalisme. Au XIXe siècle, l’identification qu’on a faite de la raison avec la raison abstraite des sciences a abouti à l’état d’esprit de l’« échec de la raison ». On entendait par raison le procédé qui explique les choses en les réduisant à leurs éléments, principes ou causes. En ce faisant, on peut manipuler les choses, mentalement (science) ou physiquement (technique), mais on les perd en tant",
+      "bbox": {
+        "x_pct": 15.471,
+        "y_pct": 68.415,
+        "w_pct": 69.467,
+        "h_pct": 12.159
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.554,
+        "y_pct": 92.408,
+        "w_pct": 36.877,
+        "h_pct": 2.62
+      },
+      "changed": true,
+      "change_reason": "JSTOR watermark identified as page_footer / filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR text was significantly corrupted and truncated.",
+    "Running headers, page numbers, and website footers were misclassified as standard text."
+  ],
+  "doc_id": "540",
+  "page": 23,
+  "elapsed_seconds": 5.35,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

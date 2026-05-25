@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "triomphale ou la plus joyeuse ; la marche funèbre la plus fermée à un salut éternel laisse poindre, du seul fait qu'elle est musique, une aube de paix au-delà du temps.",
+      "bbox": {
+        "x_pct": 16.6,
+        "y_pct": 13.374,
+        "w_pct": 57.309,
+        "h_pct": 9.175
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cest pourquoi, s'ouvrant au concert pendant cette ((durée) étrange où il oublie son avant et son après, l'auditeur ne recherche pas un îlot de bonheur, et ne redoute pas un moment de souffrance – même si bonheur et souffrance ne quittent pas la musique. Il se tient au seuil d'une simultanéité sans durée qui serait comme la promesse d'un impossible accord de la plénitude et du désir.",
+      "bbox": {
+        "x_pct": 16.494,
+        "y_pct": 21.953,
+        "w_pct": 57.415,
+        "h_pct": 18.105
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Se développant ainsi dans l'écoulement même du temps et vécue dans la déchirure du présent au seuil d'une simultanéité sans durée, la musique n'est pas seulement au nœud des contradictions qui font la condition humaine. Dire qu'elle est «à la fois» ceci et cela, ce n'est pas dire assez. Plus elle est ceci, et plus elle est cela.",
+      "bbox": {
+        "x_pct": 16.515,
+        "y_pct": 39.485,
+        "w_pct": 57.182,
+        "h_pct": 15.523
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle accomplit et elle communique quelque chose d'impossible : une «dilatation resserrée» du soi, à travers un paradoxe s'incarnant dans des sons. Elle porte à son comble le douloureux plaisir de la condition humaine : cette prison, béante devant l'inaccessible.",
+      "bbox": {
+        "x_pct": 16.388,
+        "y_pct": 54.493,
+        "w_pct": 57.309,
+        "h_pct": 13.235
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle mobilise le corps entier tout en le laissant au repos dans son fauteuil d'orchestre. Elle mobi-",
+      "bbox": {
+        "x_pct": 16.419,
+        "y_pct": 67.729,
+        "w_pct": 57.203,
+        "h_pct": 4.739
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription to match image content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "31",
+      "bbox": {
+        "x_pct": 70.36,
+        "y_pct": 74.965,
+        "w_pct": 1.9,
+        "h_pct": 2.2
+      },
+      "changed": true,
+      "change_reason": "Added page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original text transcription was severely truncated in all paragraphs.",
+    "Page number 31 was missing from detection."
+  ],
+  "doc_id": "2780",
+  "page": 30,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les preuves viennent de peu de foi ? Je me suis aperçue tout à coup à midi, en repensant à cette phrase au moment où j’emportais la vaisselle à la cuisine pour libérer plus vite Ida, que toute ma vie actuelle est un démenti à cette affirmation. En un sens, justement maintenant que tu n’es pas là, ma vie n’est qu’un tissu de preuves de notre amour. Il n’est pas de geste que je fasse qui ne soit preuve, car il n’existerait pas sans notre amour. Il n’est pas un objet que je regarde ou que je touche qui ne soit preuve, car c’est de notre amour qu’il tire présence et réalité. Tissu de preuves tellement serré, tellement ininterrompu, que les trous du doute sont impossibles, que les chutes et les relâchements de la foi ne peuvent jamais faire glisser l’âme plus d’une seconde dans le gouffre, retenue qu’elle est aussitôt par un filet de témoignages irrécusables.",
+      "bbox": {
+        "x_pct": 7.297,
+        "y_pct": 32.353,
+        "w_pct": 81.081,
+        "h_pct": 40.397
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "O Marc — oui, je sais. Si tu étais là, et si je disais une chose pareille, tu lèverais la tête, tu regarderais avec étonnement et un peu d’inquiétude. Tu m’entraînerais peut-être faire un tour de jardin, et puis tu demanderais : « Ça va mieux ? » Ou bien tu viendrais t’asseoir",
+      "bbox": {
+        "x_pct": 7.257,
+        "y_pct": 72.845,
+        "w_pct": 80.946,
+        "h_pct": 12.628
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text to match the image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "5",
+      "bbox": {
+        "x_pct": 9.73,
+        "y_pct": 85.945,
+        "w_pct": 1.176,
+        "h_pct": 1.04
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer as it is a page number."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Transcription for first paragraph was heavily truncated/corrupted.",
+    "Transcription for second paragraph was truncated/corrupted.",
+    "Page number incorrectly identified as text."
+  ],
+  "doc_id": "40",
+  "page": 63,
+  "elapsed_seconds": 4.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

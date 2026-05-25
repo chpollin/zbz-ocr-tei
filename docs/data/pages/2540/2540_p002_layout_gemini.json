@@ -1,0 +1,66 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese enge Beziehung ist durch das Geld, das man mit seiner Arbeit verdient, zerstört worden. Allmählich wurde das Geld als Erlebniswert der Arbeit wichtiger als das geschaffene Produkt. Von dieser Entwicklung sind Arbeitnehmer und Arbeitgeber gleichermaßen betroffen: die einen wie die anderen wechseln gelegentlich ihre Arbeit beziehungsweise ihre Produkte, wenn ihnen eine andere Arbeit oder andere Produkte mehr Geld einbringen. Der hergestellte Gegenstand, das Produkt, ist ihnen nicht mehr wichtig, sondern dient nur noch als Mittel, an mehr Geld heranzukommen. Aber Geld ist abstrakt. Gerade weil das Geld seinen Besitzer in die Lage versetzt, alles zu erwerben, wonach es ihn gelüstet, ist es abstrakt. Infolgedessen steckt auch im Erlebten kein Sinn mehr. Es ist ein tiefer, fast würde ich sagen ein tragischer Bruch in der menschlichen Beziehung zur Arbeit entstanden. Vieles, das früher zusammengehörte, ist heute getrennt. Die Einheit von Arbeit und allen übrigen Tätigkeitsbereichen des Menschen gibt es kaum mehr. Diesen großen Schnitt zwischen der Zeit der Arbeit und der »Freizeit«, wie wir heute sagen, hatte man früher nicht gekannt. Zum Beispiel: der Fischer reparierte während der Zeit, in der er sich nicht zum Fischfang auf dem Meer befand, seine Netze oder sein Boot. Seine »Freizeit« verbrachte er mit Dingen, die eine enge Beziehung zu seiner Arbeit aufwiesen. Ebenso bereiteten die Bauern im Winter, in der Zeit der toten Natur, alles für den kommenden Frühling vor. Arbeit und »Freizeit« gingen ineinander über, sie bildeten eine Einheit. Das war Leben, und dieses Leben ergab einen Sinn. Durch das Geld und die mit ihm verbundene scharfe Trennung von Arbeitszeit und »Freizeit« sind diese Einheit und damit auch der Sinn des Lebens zerstört worden. Hier ist etwas sehr Entscheidendes und Schädliches geschehen.",
+      "bbox": {
+        "x_pct": 13.163,
+        "y_pct": 8.096,
+        "w_pct": 76.528,
+        "h_pct": 60.473
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn man nun die öffentlichen Diskussionen über Arbeit und Leistung verfolgt, wie sie von Parteien, Gewerkschaften, Kirchen und Interessenverbänden geführt werden, gewinnt man häufig den Eindruck, daß beide Begriffe nicht klar umrissen sind und von den Beteiligten unterschiedlich interpretiert werden. Was ist unter Arbeit und Leistung in unserer Gesellschaft konkret zu verstehen?",
+      "bbox": {
+        "x_pct": 13.189,
+        "y_pct": 69.139,
+        "w_pct": 75.442,
+        "h_pct": 12.315
+      },
+      "changed": true,
+      "change_reason": "The text extraction was incomplete and contained OCR noise ('Conturen:'). Replaced with full readable text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Diese Frage läßt sich in der Tat sehr schwer beantworten. Wie ich schon festgestellt habe, ist die Arbeit der Menschen sehr",
+      "bbox": {
+        "x_pct": 13.339,
+        "y_pct": 82.514,
+        "w_pct": 74.85,
+        "h_pct": 4.527
+      },
+      "changed": true,
+      "change_reason": "The text extraction was incomplete and contained OCR noise ('Hersch:'). Replaced with full readable text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "250",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 88.8,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as footer and added to list."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Text extraction was highly corrupted by OCR artifacts and truncated in the provided initial JSON",
+    "Missing page number region"
+  ],
+  "doc_id": "2540",
+  "page": 2,
+  "elapsed_seconds": 5.38,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Wie kann man die Freiheit verwirklichen?",
+      "bbox": {
+        "x_pct": 9.22,
+        "y_pct": 27.074,
+        "w_pct": 15.713,
+        "h_pct": 4.876
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header/zb_heading as it acts as a heading."
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "Offenheit für die Welt: günstige Umstände für die Freiheit",
+      "bbox": {
+        "x_pct": 5.323,
+        "y_pct": 56.674,
+        "w_pct": 19.683,
+        "h_pct": 6.863
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to section_header/zb_heading and cleaned up truncated OCR text."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "MUHEIM: Mich bewegt am meisten die Möglichkeit, daß die moderne Zivilisation – die durch hohen Wohlstand und durch die technisch-wissenschaftlich-industrielle Welt charakterisiert ist – zur Freiheit führt – führen kann. Welches sind denn die Voraussetzungen dafür, daß aus dem möglichen Weg zur Freiheit ein wirklicher Weg zur Freiheit wird?",
+      "bbox": {
+        "x_pct": 27.369,
+        "y_pct": 14.265,
+        "w_pct": 65.53,
+        "h_pct": 17.737
+      },
+      "changed": true,
+      "change_reason": "Cleaned up truncated OCR text."
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "HERSCH: Wenn wir die moderne Zivilisation als eine Bedingung für mehr Freiheit begreifen, so heißt dies natürlich nicht, daß sie diese Freiheit in jedem Falle schafft. Auch dies gehört zur Freiheit, daß man zu einem freien Menschen werden kann oder auch nicht. Aber es gibt günstige und ungünstige Umstände, und wenn Sie nach den Voraussetzungen fragen, dann fragen Sie, wenn ich Sie recht verstehe, nach den günstigen Umständen. Günstige Umstände sind aus meiner Sicht z. B. die Erweiterung des Horizonts in Raum und Zeit. Dazu gehört, daß der Mensch ein bißchen mehr von der Welt um sich herum begreift, daß er ein bißchen mehr Verschiedenheit erkennt, daß er nicht nur ein Eckchen des Menschseins, sondern ein breites Spektrum kennt. Zu den günstigen Umständen gehört, daß der Mensch von Kindheit an freie Zeit hat, um zu sich selber zu kommen, um etwas kennenzulernen, um sich zu entwickeln, um die Dinge nicht nur so sehen wie sie sind, sondern so, wie sie eventuell sein könnten. Zu den günstigen Umständen gehört die Möglichkeit, sich Ziele setzen zu können, einen Sinn suchen zu können. Und in dieser Hinsicht, hilft uns die moderne Zivilisation.",
+      "bbox": {
+        "x_pct": 27.284,
+        "y_pct": 34.592,
+        "w_pct": 65.895,
+        "h_pct": 53.886
+      },
+      "changed": true,
+      "change_reason": "Cleaned up truncated OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "44",
+      "bbox": {
+        "x_pct": 590.0,
+        "y_pct": 915.0,
+        "w_pct": 20.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and assigned to page_footer/_filter."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text was heavily truncated.",
+    "Labels were incorrectly assigned as text.",
+    "Page number at the bottom was missing from the initial detection.",
+    "The top fragment was mis-attributed to the text block below it."
+  ],
+  "doc_id": "2400",
+  "page": 43,
+  "elapsed_seconds": 8.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

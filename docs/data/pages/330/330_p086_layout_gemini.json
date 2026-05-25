@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "52",
+      "bbox": {
+        "x_pct": 13.52,
+        "y_pct": 82.25,
+        "w_pct": 1.7,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 39.5,
+        "y_pct": 82.0,
+        "w_pct": 37.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Running header corrected to section_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "subordonnent idéologiquement Thomme à rien et ils subordonnent tout à lui.",
+      "bbox": {
+        "x_pct": 13.134,
+        "y_pct": 11.062,
+        "w_pct": 85.334,
+        "h_pct": 4.46
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sur le ment démocrates et il y a longtemps que la formule marxiste de la « dictature du prolétariat » a perdu pour eux toute espèce de sens concret. Ils sont démocrates pour les mêmes raisons que les démocrates progressistes, la démocratie a pour eux le même prestige incontesté et nous n'y insisterons donc pas. Mais ils ont quelques raisons de plus que les progressistes de s'attacher à elle. Elle ne leur paraît pas seulement juste en soi : elle est aussi le moyen et le seul qui permette au peuple d'exercer une influence déterminante sur le régime du pays.",
+      "bbox": {
+        "x_pct": 13.273,
+        "y_pct": 17.814,
+        "w_pct": 85.292,
+        "h_pct": 20.874
+      },
+      "changed": true,
+      "change_reason": "Refining OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et le peuple, c'est pour eux l'immense foule de ceux qui ne possèdent rien ou presque rien et vivent d'un salaire payé par autrui. Leur attachement à la démocratie politique n'est pas conditionnel comme celui des conservateurs libéraux, mais la démocratie politique leur paraît coïncider forcément avec leur intérêt, puisque sur un plan au moins elle donne des pouvoirs, des garanties, des droits, à des hommes qui économiquement n'en auraient aucun. La conquête capitale qui reste à faire se situe sur le terrain économique, mais elle a pour condition absolument indispensable la démocratie politique. Celle-ci a permis l'ascension du capital mais aussi le développement des syndicats, elle a assuré les droits d'association et de grève et rendu possibles les luttes pour l'élévation du niveau de vie et pour l'humanisation de la condition ouvrière.",
+      "bbox": {
+        "x_pct": 13.607,
+        "y_pct": 38.153,
+        "w_pct": 85.0,
+        "h_pct": 27.083
+      },
+      "changed": true,
+      "change_reason": "Refining OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En outre, à l'avènement d'un homme auquel sa condition sociale permettra la vie de l'esprit. Or celle-ci réclame la liberté d'opinion, le libre examen, la participation aux problèmes de l'État. Les socialistes ne l'oublient pas.",
+      "bbox": {
+        "x_pct": 13.51,
+        "y_pct": 64.969,
+        "w_pct": 85.097,
+        "h_pct": 10.678
+      },
+      "changed": true,
+      "change_reason": "Refining OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cependant, si les démocrates progressistes sont enclins à négliger les injustices sociales et leurs répercussions sur le fonctionnement même des institutions démocratiques à cause de l'éclat formel que la démocratie politique garde à leurs yeux, les socialistes au contraire sont frappés par ces répercussions à tel point qu'il leur est arrivé de trouver des raisons de ne plus vouloir la démocratie politique à n'importe quel prix. C'est ce qui explique en partie leurs",
+      "bbox": {
+        "x_pct": 13.788,
+        "y_pct": 75.138,
+        "w_pct": 84.958,
+        "h_pct": 14.987
+      },
+      "changed": true,
+      "change_reason": "Refining OCR text content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was heavily garbled in initial input.",
+    "Page number at top left wasn't categorized.",
+    "Header running text was categorized as paragraph."
+  ],
+  "doc_id": "330",
+  "page": 86,
+  "elapsed_seconds": 6.22,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

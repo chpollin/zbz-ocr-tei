@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Von ihrem engagierten Einsatz sowohl für philosophische Fragen, für Freiheit und Selbstverwirklichung als Grundbedingungen menschlicher Existenz wie auch, als überzeugte Sozialistin, für die Auseinandersetzung mit dem Zeitgeschehen zeugen die zahlreichen Werke, Diskussionbeiträge und Übersetzungen. Eine ausführliche Bibliographie ist in dem vor zwei Jahren erschienenen Buch «Schwierige Freiheit» enthalten, in denen Gabrielle und Alfred Dufour die autobiographischen Gespräche mit Jeanne Hersch aufgezeichnet haben.",
+      "bbox": {
+        "x_pct": 1.748,
+        "y_pct": 5.578,
+        "w_pct": 86.278,
+        "h_pct": 11.111
+      },
+      "changed": true,
+      "change_reason": "Corrected full text content which was previously truncated in the provided input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das ausserordentliche Wirken von Frau Professor Jeanne Hersch ist wiederholt national und international geehrt worden, so 1970 mit dem Ida Somazzi-Preis, 1972 mit dem Ehrendoktor der Theologischen Fakultät der Universität Basel, 1973 mit dem erstmals verliehenen Preis für Freiheit und Menschenrechte, 1979 mit dem Montaigne-, 1980 dem Max Schmidheiny- und 1985 mit dem Max Petitpierre-Preis; 1987 wurde sie mit der Albert Einstein-Medaille ausgezeichnet.",
+      "bbox": {
+        "x_pct": 1.867,
+        "y_pct": 20.222,
+        "w_pct": 86.124,
+        "h_pct": 10.985
+      },
+      "changed": true,
+      "change_reason": "Corrected full text content which was previously truncated in the provided input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Hans Erni-Stiftung ist Frau Professor Jeanne Hersch für ihren Vortrag zu grossem Dank verpflichtet, gibt sie uns doch Gedanken mit auf den Weg, die uns alle zutiefst berühren.",
+      "bbox": {
+        "x_pct": 1.819,
+        "y_pct": 32.593,
+        "w_pct": 86.136,
+        "h_pct": 5.407
+      },
+      "changed": true,
+      "change_reason": "Corrected full text content which was previously truncated in the provided input."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": {
+        "x_pct": 86.603,
+        "y_pct": 86.129,
+        "w_pct": 1.435,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region and classified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 4,
+  "issues": [
+    "Input text for paragraphs was truncated.",
+    "Page number at bottom right was missing from the initial region list."
+  ],
+  "doc_id": "2680",
+  "page": 10,
+  "elapsed_seconds": 3.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

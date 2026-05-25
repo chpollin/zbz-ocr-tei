@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "1er novembre.",
+      "bbox": {
+        "x_pct": 66.446,
+        "y_pct": 28.043,
+        "w_pct": 19.77,
+        "h_pct": 1.947
+      },
+      "changed": true,
+      "change_reason": "Identified as a running header/date stamp, therefore should be marked as _filter/page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette angoisse aux mille visages et sans visage qui me guette ces temps-ci derrière chaque apparence vient sûrement de ce que tu es loin depuis trop longtemps. Mais je la sens dormir aussi au fond de cette histoire de jadis que j'essaye de faire revivre pour toi. Qu'est-ce que tous ces détails au sujet des pommes ? Et pourquoi n'ai-je rien écrit depuis, sinon par peur d'arriver à la période qu'il me faut maintenant raconter ?",
+      "bbox": {
+        "x_pct": 9.054,
+        "y_pct": 32.637,
+        "w_pct": 80.676,
+        "h_pct": 20.359
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text segmentation issues in the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vint le moment de partir pour les vacances d'été. Un matin, je me trouvai assise à la fenêtre d'un compartiment dans un train qui nous emportait vers la Bretagne. La Bretagne, je ne l'avais jamais vue, et j'en avais tellement rêvé qu'elle m'apparaissait retranchée de cette terre ronde dont les hommes ont aplani toutes les routes et sillonné toutes les mers. L'emportant hors de l'espace, d'accès facile, mon désir l'avait reléguée, cloîtrée, au fond d'un très lointain passé. Des siècles, immobiles, plus infranchissables que sa ceinture d'écueils et d'écume, la gardaient. Or j'étais dans un wagon qui irait en Bretagne, et je n'avais aucune impression de prodige. Ses roues, que je sentais tourner sous",
+      "bbox": {
+        "x_pct": 8.784,
+        "y_pct": 55.605,
+        "w_pct": 80.905,
+        "h_pct": 30.624
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and text segmentation issues in the paragraph."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction contained significant OCR garbage and truncation errors.",
+    "The running header was misclassified as text.",
+    "Text block contents needed full reconstruction from the image source."
+  ],
+  "doc_id": "40",
+  "page": 67,
+  "elapsed_seconds": 3.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

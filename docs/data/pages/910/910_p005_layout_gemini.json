@@ -1,0 +1,108 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Sur le « sens de l’histoire » 95",
+      "bbox": {
+        "x_pct": 12.395,
+        "y_pct": 89.261,
+        "w_pct": 69.645,
+        "h_pct": 1.579
+      },
+      "changed": true,
+      "change_reason": "Header region correctly identified with page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais n’en retenir dès maintenant qu’un trait essentiel : il s’agit bien d’une unité qui organise les moments du temps, et qui par là figure ou préfigure une totalité en miniature, une micro-totalité. Toute action s’inscrit, certes, dans un tissu de données et dans un contexte d’autres actions. Mais plus elle est action, et plus elle tend à se rendre saisissable isolément, comme si elle avait créé, d’une certaine manière, en un certain sens, une petite totalité de temps, bien à elle et comme auto-suffisante.",
+      "bbox": {
+        "x_pct": 12.395,
+        "y_pct": 11.949,
+        "w_pct": 69.645,
+        "h_pct": 14.547
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais alors, son sens ? Est-il en elle ou hors d’elle ?",
+      "bbox": {
+        "x_pct": 15.024,
+        "y_pct": 25.943,
+        "w_pct": 52.476,
+        "h_pct": 2.051
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous disions tout à l’heure que la source du sens, conçue comme située « à l’extrémité » future de la ligne temporelle, s’abolissait dans la facticité si cette extrémité était conçue comme étant encore temporelle, comme faisant encore partie de la ligne de la temporalité. Nous disions aussi qu’elle perdait toute réalité future si elle était repoussée à l’infini, dans un futur toujours futur. Ou, plus exactement, nous disions que ce futur toujours futur se ramène à un imaginaire présent, accompagnant, de son efficacité actuelle, chaque moment du temps.",
+      "bbox": {
+        "x_pct": 12.04,
+        "y_pct": 27.732,
+        "w_pct": 69.355,
+        "h_pct": 16.028
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "À la question de savoir si le sens de l’action est en elle ou hors d’elle, il faut répondre : en elle et hors d’elle. « En elle », en tant que l’action tend à constituer une « petite totalité » dans laquelle les « buts » immédiats sont source de sens. Mais « hors d’elle », en tant que ces buts eux-mêmes ne sont source de sens que de façon dérivée, et que la valeur même qui lui permet d’être des buts vient d’ailleurs.",
+      "bbox": {
+        "x_pct": 11.774,
+        "y_pct": 43.134,
+        "w_pct": 68.548,
+        "h_pct": 12.211
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Où situer cet « ailleurs » ?",
+      "bbox": {
+        "x_pct": 14.379,
+        "y_pct": 55.231,
+        "w_pct": 27.29,
+        "h_pct": 1.88
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici se révèle le caractère essentiellement dialectique du sens. Cet ailleurs semble d’abord se situer là où s’achève la ligne future, à son extrémité, elle-même temporelle. En effet, le sens de la petite totalité constituée par l’action, la validité de ses buts immédiats lui vient en dernier ressort de l’achèvement futur d’un dessein total. On peut donc dire à juste titre que la totalité est une condition de sens. Mais en même temps, nous l’avons vu, la totalité est la mort du sens, qu’elle étouffe dans le donné de fait, fût-il futur. Quand tout est, fût-ce virtuellement, l’être n’a plus de sens, il est le sens, et cette coïncidence de l’être et du sens, qui ne cesse de hanter l’esprit humain, reste en même temps radicalement impensable, abolissant la temporalité et l’histoire. Cette coïncidence peut prendre la valeur d’un paradoxe religieux, chiffre du divin ou de la transcendance, mais il n’a rien de dialectique, puisque, entre les termes contraires, il ne peut rien se passer, faute de véritable temps.",
+      "bbox": {
+        "x_pct": 11.371,
+        "y_pct": 56.735,
+        "w_pct": 68.492,
+        "h_pct": 28.034
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Initial text extraction had severe OCR errors (garbled text).",
+    "Header line was labeled as part of the paragraph.",
+    "Section headers were missed entirely.",
+    "Page number at 95 was not labeled as page_header/page_footer."
+  ],
+  "doc_id": "910",
+  "page": 5,
+  "elapsed_seconds": 7.52,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

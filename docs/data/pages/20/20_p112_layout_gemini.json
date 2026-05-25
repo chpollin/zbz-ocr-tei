@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "110",
+      "bbox": {
+        "x_pct": 15.22,
+        "y_pct": 84.42,
+        "w_pct": 3.73,
+        "h_pct": 1.67
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA SCOLASTIQUE",
+      "bbox": {
+        "x_pct": 42.44,
+        "y_pct": 84.42,
+        "w_pct": 15.35,
+        "h_pct": 1.67
+      },
+      "changed": true,
+      "change_reason": "Identified as a page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mais le source de toute clarté. Pourtant, déjà avec Plotin, la philosophie a dépassé son état d'harmonie : elle a trop perdu de sa lucidité, et elle a pris un accent pathétique qui la rapproche de la mystique et de l'extase.",
+      "bbox": {
+        "x_pct": 15.407,
+        "y_pct": 12.583,
+        "w_pct": 76.009,
+        "h_pct": 13.403
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Une démonstration scolastique.",
+      "bbox": {
+        "x_pct": 15.708,
+        "y_pct": 26.759,
+        "w_pct": 43.63,
+        "h_pct": 3.432
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le monde chrétien apporta alors aux âmes son inquiétude et son désespoir. La face d'ombre de la réalité devint soit le domaine sacré de Dieu, soit celui du péché et de la tentation; on l'adora, ou on s'acharna contre elle. Il était devenu impossible, dans ce monde tragique où une « décision radicale » s'imposait, d'accepter les limites du savoir, de conserver le regard serein qui se pose sans que l'esprit se cramponne. La mort devant tous. Il fallut chercher à savoir ou renoncer à savoir, et tout de façon absolue. En même temps la notion du péché originel, malédiction inévitable, distincte de toute étude et de toute science, dissociait violemment le savoir de la volonté, la raison théorique de la raison pratique.",
+      "bbox": {
+        "x_pct": 15.211,
+        "y_pct": 30.629,
+        "w_pct": 76.31,
+        "h_pct": 38.675
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De ceux qui renoncèrent passionnément à savoir, de ceux qui dirent : « Otez tout, que j'y voie », l'histoire de la philosophie ne dit rien. Les mystiques n'entrent pas dans les cadres, pas même dans les cadres religieux. C'est donc des autres, de ceux qui voulurent savoir, que nous parlerons ici. La scolastique s'acharna, entre tous les problèmes, à trouver des preuves de l'existence de Dieu. Prenons",
+      "bbox": {
+        "x_pct": 15.166,
+        "y_pct": 68.732,
+        "w_pct": 76.401,
+        "h_pct": 20.782
+      },
+      "changed": true,
+      "change_reason": "Corrected transcribed text."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Page numbers and running headers were mislabeled as text.",
+    "OCR text transcription was inaccurate and required fixing.",
+    "Bboxes for page header/footer were missing in original detection."
+  ],
+  "doc_id": "20",
+  "page": 112,
+  "elapsed_seconds": 8.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

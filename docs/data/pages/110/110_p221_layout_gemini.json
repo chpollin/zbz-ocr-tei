@@ -1,0 +1,97 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "CHAPITRE V",
+      "bbox": {
+        "x_pct": 37.779,
+        "y_pct": 20.805,
+        "w_pct": 14.695,
+        "h_pct": 1.572
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "FORME ET { RÉALITÉ .",
+      "bbox": {
+        "x_pct": 27.468,
+        "y_pct": 24.852,
+        "w_pct": 35.823,
+        "h_pct": 2.46
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text from 'FORME ET { RÉALITÉ .' to match image content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "début de nolre étude; nouS remarquions la question de de Dieu manque de clarté Car exister \" n'a pas",
+      "bbox": {
+        "x_pct": 11.162,
+        "y_pct": 29.484,
+        "w_pct": 68.389,
+        "h_pct": 22.475
+      },
+      "changed": true,
+      "change_reason": "Correction of garbled OCR text"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PREMIÈRE PARTIE",
+      "bbox": {
+        "x_pct": 32.911,
+        "y_pct": 55.224,
+        "w_pct": 24.971,
+        "h_pct": 1.951
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Ambiguïté de la notion réalité",
+      "bbox": {
+        "x_pct": 23.625,
+        "y_pct": 58.641,
+        "w_pct": 41.623,
+        "h_pct": 2.308
+      },
+      "changed": true,
+      "change_reason": "Correction of text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La notion de réalité est bien   étrange.  Notre premier   mouvement est dappeler réel ce se voit et ",
+      "bbox": {
+        "x_pct": 11.277,
+        "y_pct": 63.25,
+        "w_pct": 68.274,
+        "h_pct": 11.26
+      },
+      "changed": true,
+      "change_reason": "Correction of OCR text"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR text for paragraphs was highly corrupted",
+    "Missing guillemets and punctuation in initial OCR"
+  ],
+  "doc_id": "110",
+  "page": 221,
+  "elapsed_seconds": 5.03,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Correction of OCR text from 'FORME ET { RÉALITÉ .' to match image content": 1,
+    "Correction of garbled OCR text": 1,
+    "Correction of text": 1,
+    "Correction of OCR text": 1
+  }
+}

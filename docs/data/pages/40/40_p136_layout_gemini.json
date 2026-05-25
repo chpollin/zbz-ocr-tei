@@ -1,0 +1,135 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "138",
+      "bbox": {
+        "x_pct": 115.0,
+        "y_pct": 82.0,
+        "w_pct": 33.0,
+        "h_pct": 17.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 395.0,
+        "y_pct": 82.0,
+        "w_pct": 238.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est un homme déjà vécu, a tout connu, a éprouvé tous les sentiments...",
+      "bbox": {
+        "x_pct": 115.0,
+        "y_pct": 127.0,
+        "w_pct": 806.0,
+        "h_pct": 51.0
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Il sera jaloux.",
+      "bbox": {
+        "x_pct": 154.0,
+        "y_pct": 177.0,
+        "w_pct": 263.0,
+        "h_pct": 26.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tu pourras rien lui faire découvrir, rien découvrir en même temps que lui...",
+      "bbox": {
+        "x_pct": 119.0,
+        "y_pct": 203.0,
+        "w_pct": 802.0,
+        "h_pct": 52.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Il a donné sa mesure, il ne deviendra plus rien.",
+      "bbox": {
+        "x_pct": 154.0,
+        "y_pct": 255.0,
+        "w_pct": 724.0,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Il sera malheureuse...",
+      "bbox": {
+        "x_pct": 154.0,
+        "y_pct": 281.0,
+        "w_pct": 358.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Quand tu auras quarante ans, il en aura soixante.",
+      "bbox": {
+        "x_pct": 154.0,
+        "y_pct": 306.0,
+        "w_pct": 744.0,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je sentais d’où naissaient leurs paroles, de quelle sollicitude et de quelle crainte, mais cela ne pouvait rien changer. La vanité des efforts tenaces qu'ils faisaient par tendresse et raison m'emplissait de détresse, — comment pouvais-je les laisser ainsi s'user ? Au-dessus de leurs arguments auxquels je ne désirais pas de réponse, j'entendais les ailes des papillons lourds heurter la lampe avec un claquement fragile. Je cherchais avec désespoir comment persuader mes parents qu'il n'y avait rien à faire. Ils ne me croiraient pas; ils croiraient seulement que je refusais de les écouter. C'était faux, je les entendais, je ne luttais pas contre leurs paroles, mais elles ne pouvaient rien, et c'est pour eux que je ne voulais pas supporter ces efforts dans le néant. Comment leur dire: « J'entends, je comprends, je vous aime, — mais il le faut. » Je voletais contre un plafond. Des envies me vinrent de leur parler du lac, ou de leur montrer le beau creux d'ombre dans le rideau brun, ou de leur faire écouter les bruits des branches. J'avais soif. Peut-être aurais-je pu aller chercher le sirop de fraise, avec une cruche d'eau bien froide. Mais ce n'aurait été qu'une insolence. Un instant, j'ai failli dire:",
+      "bbox": {
+        "x_pct": 116.0,
+        "y_pct": 331.0,
+        "w_pct": 813.0,
+        "h_pct": 530.0
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text block for the main paragraph."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 8,
+  "issues": [
+    "Most list items had corrupted OCR text.",
+    "Page number at top was misidentified.",
+    "Running header was misidentified.",
+    "The large paragraph was partially concatenated with lines above it.",
+    "Formatting of list items needs adjustment based on ZBZ guidelines."
+  ],
+  "doc_id": "40",
+  "page": 136,
+  "elapsed_seconds": 6.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

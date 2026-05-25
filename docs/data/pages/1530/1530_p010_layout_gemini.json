@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "82",
+      "bbox": {
+        "x_pct": 14.544,
+        "y_pct": 63.636,
+        "w_pct": 2.766,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_header."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 44.02,
+        "y_pct": 63.636,
+        "w_pct": 11.969,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Running header identified as text, changed to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Remarquons d'ailleurs que la langue elle-même le montre bien: on n'invente pas, on ne crée pas le pouvoir: on s'en empare, on le saisit. On parle de la prise du pouvoir. L'allemand dit: die Macht ergreifen. C'est qu'il est déjà là. Latent. Toujours.",
+      "bbox": {
+        "x_pct": 14.317,
+        "y_pct": 10.223,
+        "w_pct": 75.88,
+        "h_pct": 9.091
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LE pouvoir",
+      "bbox": {
+        "x_pct": 45.567,
+        "y_pct": 20.579,
+        "w_pct": 13.426,
+        "h_pct": 2.455
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La pensée politique, comme aussi les philosophies de l'histoire, oscillent entre une apologétique quasi mythologique du pouvoir et sa réduction, sa mise à nu, sa dénonciation systématique. Mais de tels jugements ne peuvent être portés que lorsque la liberté s'est déjà opposée au pouvoir, lorsque la réflexion a dissocié le pouvoir des événements qu'il engendre, de sorte qu'il est conçu séparément et pose désormais ses problèmes propres. Il est alors possible de l'idolâtrer comme étant l'instrument d'une volonté providentielle à l'œuvre dans l'histoire — ou bien de l'honorer en tant qu'il manifeste une élection ou un mérite exceptionnel. Il est possible aussi de le réduire à la simple résultante d'un certain nombre de faits donnés, d'où découlerait mécaniquement un rapport des forces — ou encore de le dénoncer comme résultant d'abus et de crimes d'un homme ou de quelques hommes plus avides et plus effrénés que les autres — ou même de le rejeter massivement comme étant le Mal absolu, l'ennemi malin de l'amour, qui, lui, engendre entre les hommes leur reconnaissance mutuelle et le respect réciproque de leur liberté.",
+      "bbox": {
+        "x_pct": 14.433,
+        "y_pct": 23.331,
+        "w_pct": 75.845,
+        "h_pct": 40.554
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malgré l'extrême diversité de telles attitudes face au pouvoir, il y a en elles quelque chose de fondamentalement commun. Elles tendent à séparer le pouvoir de l'être humain et à le rattacher à quelque chose d'autre: transcendance divine, efficacité des valeurs, mécanismes naturels ou compétition vitale, tentations des appétits et de la démesure, pouvoir du mal. On dirait que dans une condition humaine à lui étrangère, le pouvoir ne fait que survenir.",
+      "bbox": {
+        "x_pct": 14.618,
+        "y_pct": 63.496,
+        "w_pct": 75.625,
+        "h_pct": 15.702
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ma thèse est inverse. Je suggère que le pouvoir, avant tout politique, dont je veux parler maintenant (mais le pouvoir a bien d'autres formes : bureaucratique, financier, patronal, syndical, éducation, information, etc.) a pour «matière première» ce que nous avons appelé jusqu'ici «du pouvoir», et qu'il est donc omni-",
+      "bbox": {
+        "x_pct": 14.78,
+        "y_pct": 78.95,
+        "w_pct": 75.613,
+        "h_pct": 11.521
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page number and running header were mislabeled as text.",
+    "The OCR text for paragraphs contained truncation errors in the provided structure compared to the image."
+  ],
+  "doc_id": "1530",
+  "page": 10,
+  "elapsed_seconds": 4.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

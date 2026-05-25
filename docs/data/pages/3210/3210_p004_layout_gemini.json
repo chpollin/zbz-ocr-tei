@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aus diesem entscheidenden Jetzt strukturiert sich unsere praktische Zeit, diesseits und jenseits, wie wir sie nicht mit unserer Freiheit - denn die kann ja nicht eingreifen -, sondern mit unserem Gefühl, erleben. Die vergangene Zeit, die sich entfernt, fliesst sozusagen rückwärts, weg von uns, und nähert sich allmählich den entfernten Epochen menschlicher Geschichte. Wir erleben in der Vergangenheit eine bestimmte Perspektive. Alles wird darin allmählich kleiner und enger, je weiter man schaut; und das, was erst jetzt in die Vergangenheit gefallen ist und noch gross ist, wird mit der Zeit in denselben grossen Keller der Vergangenheit fallen, zusammen mit der ägyptischen Geschichte und dem ganzen menschlichen Geschehen.",
+      "bbox": {
+        "x_pct": 8.142,
+        "y_pct": 8.019,
+        "w_pct": 87.207,
+        "h_pct": 19.018
+      },
+      "changed": true,
+      "change_reason": "Corrected the full text content from the image, as the previous transcription was truncated and erroneous."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "In entgegengesetzter Richtung trägt uns dieselbe Zeit unserer Zukunft entgegen, so dass wir uns immer mehr demjenigen nähern, was wir von der Zukunft entweder erwarten oder befürchten. Da können wir nicht eingreifen, aber wir freuen uns, wir erwarten einen Erfolg, oder wir fürchten Trauer; wir fürchten oder wir wünschen unseren Tod.",
+      "bbox": {
+        "x_pct": 8.229,
+        "y_pct": 29.069,
+        "w_pct": 87.032,
+        "h_pct": 8.501
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun ist zu bemerken, dass wir die Gegenwart nicht - wie oft gesagt wurde - als einen punktuellen Augenblick erleben. Die Gegenwart ist nicht der punktuelle Augenblick als Grenze zwischen Vergangenheit und Zukunft. Wir erleben sie nicht so. So könnten wir gar nicht leben. Wir wissen - das ist ein Wissen -, dass unsere Zeit fliesst und zerfliesst. Denn wir haben immer schon eine Vergangenheit als das, was wir nicht mehr haben. Aber die Gegenwart erleben wir nicht als ein punktuelles Zerfliessen, sonst hätten wir keine Möglichkeit, überhaupt etwas zu verstehen, zu denken, auszudrücken, zu verwirklichen. Zum Beispiel könnte keiner meiner Sätze von Ihnen als Ganzes verstanden werden. Er wäre verstummt nach dem Anfang der ersten Silbe. Ich könnte zu Ihnen nicht sprechen; Sie würden mich nicht verstehen. Nein, wir erleben die Gegenwart, als wäre sie sozusagen ein breiterer Augenblick, eine kleine Dauer, die eigentlich - und das ist das Seltsame - die eigentlich nicht zerfliesst.",
+      "bbox": {
+        "x_pct": 8.267,
+        "y_pct": 39.738,
+        "w_pct": 87.12,
+        "h_pct": 25.292
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie haben nicht das Gefühl, dass in dem Augenblick, in dem ich den Anfang des Satzes ausspreche, die Zeit dieses Anfangs schon weg ist; sondern Sie haben das Gefühl, dass sie bleibt, so lange es nötig ist, bis ich meinen Satz fertiggesprochen habe - eine kleine Dauer, die eigentlich nicht zerfliesst, die wir gewissermassen mit uns nehmen, die uns begleitet, der Zeit entlang, der Zukunft entgegen.",
+      "bbox": {
+        "x_pct": 8.267,
+        "y_pct": 67.172,
+        "w_pct": 87.12,
+        "h_pct": 10.474
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Sie zerfliesst natürlich zerfliesst sie -, und doch zerfliesst sie nicht. Man kann es nicht quantitativ unterscheiden und sagen, soundsoviel zerfliesst nicht und soundsoviel zerfliesst. Wir erleben die Gegenwart nicht so. Ich spreche ja hier von der erlebten Zeit, sonst hätte sie nichts mit der Musik zu tun.",
+      "bbox": {
+        "x_pct": 8.267,
+        "y_pct": 79.848,
+        "w_pct": 87.032,
+        "h_pct": 8.103
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "3",
+      "bbox": {
+        "x_pct": 93.758,
+        "y_pct": 96.634,
+        "w_pct": 1.258,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun stellen wir uns einen Tag vor, an dem wir die Absicht haben, abends in ein Konzert zu gehen. Dieses Konzert fängt um acht Uhr an; und wir freuen uns darauf. Und endlich",
+      "bbox": {
+        "x_pct": 8.479,
+        "y_pct": 90.152,
+        "w_pct": 86.995,
+        "h_pct": 3.98
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Most text segments were significantly truncated in the provided initial input.",
+    "Page number at the bottom was mislabeled as text.",
+    "General text content was incomplete and contained transcription errors."
+  ],
+  "doc_id": "3210",
+  "page": 4,
+  "elapsed_seconds": 7.37,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

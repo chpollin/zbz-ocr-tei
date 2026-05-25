@@ -1,0 +1,101 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE",
+      "bbox": {
+        "x_pct": 293.0,
+        "y_pct": 147.0,
+        "w_pct": 497.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_header as it is a running title."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "249",
+      "bbox": {
+        "x_pct": 804.0,
+        "y_pct": 145.0,
+        "w_pct": 39.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_footer as it is a page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "instantanée montre la temporalité de la structure, comme le sang qui jaillit de la veine coupée par laquelle il circulait.",
+      "bbox": {
+        "x_pct": 149.0,
+        "y_pct": 175.0,
+        "w_pct": 694.0,
+        "h_pct": 38.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute société est « ancienne », au sens qu'on y est arrivé, et par conséquent conservatrice ; mais en même temps elle est essentiellement instable, tournée vers le futur et innovatrice. Une société retient le temps qui échappe et anticipe le futur. Passé et futur deviennent tradition et avenir ; une société historique est avant tout un « argument » qui la fait traverser une série de situations.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 213.0,
+        "w_pct": 693.0,
+        "h_pct": 105.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une situation est une certaine place, un situs où l'on est ; elle en est toujours une parmi d'autres possibles : une situation unique est un contresens. La situation, qui est historique, est essentiellement instable, elle consiste en transition. L'homme qui était dans une certaine situation en sort pour arriver à une autre. Il faut se demander pourquoi. D'abord, parce que les éléments qui la composent changent ; mais surtout parce que l'homme prétend être dans une autre situation : voici la condition de l'existence même de toute situation. Si je suis dans ma chambre, la porte fermée du dehors, je puis définir ma situation comme « être enfermé », mais seulement parce que je prétends, maintenant ou plus tard, en sortir ; autrement, cela n'aurait pas de sens de dire que je suis enfermé. L'homme a été « lié » au sol, parce qu'il a prétendu voler depuis longtemps. Mais il n'a pas été « enfermé » dans la planète, parce qu'il n'a pas sérieusement voulu en sortir. Je crois que dans un avenir prochain l'homme voudra authentiquement sortir de la Terre ; alors il y sera enfermé et finalement il en sortira et se trouvera dans une nouvelle situation, celle de la liberté interplanétaire.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 319.0,
+        "w_pct": 693.0,
+        "h_pct": 311.0
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une situation, par conséquent, n'est pas intelligible si elle est isolée. Elle se présente enchaînée dans une succession, dont les principaux caractères sont au nombre de quatre : 1o Comme le temps est irréversible, la succession des situations est ordonnée dans une direction déterminée. 2o Ce temps est non seulement successif, mais qualitativement différencié ; chaque moment est irremplaçable, non seulement « localisé », mais différent : chaque situation est un niveau historique concret. 3o Chaque situation historique provient d'une autre, elle est le résultat de quelque chose sans lequel elle n'est pas intelligible. 4o Chaque situation est définie par un projet ou programme qui la fait passer à une autre.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 622.0,
+        "w_pct": 693.0,
+        "h_pct": 198.0
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 318.0,
+        "y_pct": 927.0,
+        "w_pct": 362.0,
+        "h_pct": 32.0
+      },
+      "changed": true,
+      "change_reason": "Corrected from text to page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original layout labels were mostly correct but missed the page header, page footer, and the JSTOR download footer as filters."
+  ],
+  "doc_id": "540",
+  "page": 21,
+  "elapsed_seconds": 6.25,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

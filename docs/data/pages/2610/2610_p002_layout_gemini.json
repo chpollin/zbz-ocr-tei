@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "12",
+      "bbox": {
+        "x_pct": 84.6,
+        "y_pct": 84.6,
+        "w_pct": 1.1,
+        "h_pct": 1.1
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as text"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "13",
+      "bbox": {
+        "x_pct": 912.7,
+        "y_pct": 846.5,
+        "w_pct": 1.2,
+        "h_pct": 1.2
+      },
+      "changed": true,
+      "change_reason": "Page number incorrectly labeled as text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "lcgungcn tun, was Sic wollen; fcrtig- schcr Sprachc nur",
+      "bbox": {
+        "x_pct": 9.004,
+        "y_pct": 14.578,
+        "w_pct": 15.914,
+        "h_pct": 6.308
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sclbe Gattung pllegen Trotzdem das, Was Franzosen als Dichung' id Dichtung' in ihrcr metaphgsischen ",
+      "bbox": {
+        "x_pct": 8.45,
+        "y_pct": 46.226,
+        "w_pct": 39.425,
+        "h_pct": 29.346
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und \"Etwas' cinc komplexc ist, Korpcr Worter",
+      "bbox": {
+        "x_pct": 53.46,
+        "y_pct": 27.112,
+        "w_pct": 38.522,
+        "h_pct": 42.997
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das beslen gibt",
+      "bbox": {
+        "x_pct": 53.388,
+        "y_pct": 72.616,
+        "w_pct": 4.682,
+        "h_pct": 3.583
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page numbers were missed in original detection/labeling",
+    "Bounding boxes provided in prompt for page numbers 12 and 13 were outside the explicit list of regions but identified in image"
+  ],
+  "doc_id": "2610",
+  "page": 2,
+  "elapsed_seconds": 3.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

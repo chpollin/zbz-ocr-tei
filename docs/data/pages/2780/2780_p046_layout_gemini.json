@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "POUR BERNARD DUCRET",
+      "bbox": {
+        "x_pct": 15.932,
+        "y_pct": 14.125,
+        "w_pct": 57.066,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Corrected label from text to zb_heading as it is a title/section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La musique est là surtout pour les non-professionnels de la musique, pour ceux qui ne chantent, ni ne jouent, ni ne dansent, ou alors qui le font pour apprendre à mieux écouter - comme il est possible de peindre pour mieux voir.",
+      "bbox": {
+        "x_pct": 15.71,
+        "y_pct": 24.285,
+        "w_pct": 57.352,
+        "h_pct": 11.717
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ceux qui écoutent doivent développer une réceptivité active, parfois même plus active que ceux qui jouent. Il s'agit d'une activité intérieure, qui se fait avec «le soi», avec la liberté : au lieu de choisir, elle se multiplie, s'élargit, se perd et se retrouve, se discipline, respire, s'abandonne à ce qui est plus elle qu'elle-même.",
+      "bbox": {
+        "x_pct": 15.784,
+        "y_pct": 35.593,
+        "w_pct": 57.288,
+        "h_pct": 17.612
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La réceptivité active est celle de la liberté quand celle-ci coïncide avec sa nécessité. L'image pure qui se déploie, c'est la vraie musique : imprévisible et nécessaire, une invention qui invente au fur et à mesure sa loi, dans un temps qui n'est pas celui d'«avant» et d'«après», qui est un temps intemporel.",
+      "bbox": {
+        "x_pct": 15.752,
+        "y_pct": 52.633,
+        "w_pct": 57.373,
+        "h_pct": 15.863
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Notes et rythmes se suivent et s'effacent, mais en même temps ne s'effacent pas, chacun implique",
+      "bbox": {
+        "x_pct": 15.922,
+        "y_pct": 67.702,
+        "w_pct": 57.066,
+        "h_pct": 5.012
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR text extraction errors."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "47",
+      "bbox": {
+        "x_pct": 69.458,
+        "y_pct": 74.881,
+        "w_pct": 3.498,
+        "h_pct": 2.232
+      },
+      "changed": true,
+      "change_reason": "Corrected label to page_footer."
+    }
+  ],
+  "score": 65,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text extraction contained significant OCR hallucinations and mangled sentences.",
+    "Section header was improperly labeled as text.",
+    "Page number was improperly labeled as text."
+  ],
+  "doc_id": "2780",
+  "page": 46,
+  "elapsed_seconds": 6.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

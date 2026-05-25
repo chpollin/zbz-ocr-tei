@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LA CONTRADICTION DANS LA MUSIQUE",
+      "bbox": {
+        "x_pct": 18.612,
+        "y_pct": 13.725,
+        "w_pct": 56.917,
+        "h_pct": 4.845
+      },
+      "changed": true,
+      "change_reason": "The original OCR text was mangled; corrected to match visual text accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Au moment de préparer ce discours, j'ai tremblé devant ma tâche. Il me fallait parler de musique, et cela à Salzbourg, dans cette ville où chaque pierre, chaque courant d'air, ont absorbé à jamais les noms et les sons qui, interdisant les vains bavardages, imposent dans le monde entier silence et recueillement. Il vous faudra donc un peu de patience. Bientôt des voix et les instruments vont couvrir mes paroles téméraires. Le temps de l'attente est passé, et nous retiendrons notre souffle dans le temps intemporel de la musique.",
+      "bbox": {
+        "x_pct": 18.083,
+        "y_pct": 24.73,
+        "w_pct": 57.585,
+        "h_pct": 24.51
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors (e.g., 'ïai', 'trem blé', 'musique;') and merged fragmented text lines."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment donc, «le temps intemporel?»",
+      "bbox": {
+        "x_pct": 21.79,
+        "y_pct": 50.711,
+        "w_pct": 46.642,
+        "h_pct": 2.663
+      },
+      "changed": true,
+      "change_reason": "Corrected punctuation and OCR reading of the interjection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Que la musique se déploie dans le temps, c'est évident. Mais dans quel sens serait-elle intemporelle? Ce concert, nous l'avons longtemps attendu. Maintenant nous sommes dans la salle, ce sont les dernières minutes, les musiciens accordent leurs instruments, je pense encore au travail que j'ai quitté pour venir ici, je me prépare à le reprendre tout à l'heure. Et puis, le silence. La baguette du chef se lève. La première note passe comme une ride",
+      "bbox": {
+        "x_pct": 18.008,
+        "y_pct": 52.639,
+        "w_pct": 57.521,
+        "h_pct": 20.294
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and restored full sentences that were truncated or misread."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "27",
+      "bbox": {
+        "x_pct": 72.164,
+        "y_pct": 75.367,
+        "w_pct": 3.32,
+        "h_pct": 2.157
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from text to page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR for the title was significantly corrupted.",
+    "Multiple paragraph text regions had severe character read errors.",
+    "Page number at the bottom was misclassified as text.",
+    "The input text boxes were poorly aligned with original character boundaries due to poor OCR quality."
+  ],
+  "doc_id": "2780",
+  "page": 26,
+  "elapsed_seconds": 4.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

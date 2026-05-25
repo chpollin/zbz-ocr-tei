@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "DISCONTINUITÉ DES PERSPECTIVES HUMAINES 113",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 100,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Label corrected from text to heading"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "avait seulement deux éléments doivent coïncider mais en réalité les éléments sont infiniment nombreu",
+      "bbox": {
+        "x_pct": 11.634,
+        "y_pct": 17.567,
+        "w_pct": 75.042,
+        "h_pct": 18.803
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cette sorte de fermeture sur soi que sente une œuvIe dart est obtenue non pas par un ensemble de cap",
+      "bbox": {
+        "x_pct": 11.514,
+        "y_pct": 36.239,
+        "w_pct": 74.663,
+        "h_pct": 23.248
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par dune certaine manière, échappe au morcellement, puisqu'il y trouve la coïncidence et lunificatio",
+      "bbox": {
+        "x_pct": 11.699,
+        "y_pct": 59.356,
+        "w_pct": 74.571,
+        "h_pct": 25.641
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et cest pourquoi je voudrais conclure ces",
+      "bbox": {
+        "x_pct": 17.331,
+        "y_pct": 84.729,
+        "w_pct": 68.846,
+        "h_pct": 2.832
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 18.0,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number to filter"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Heading incorrectly labeled as text.",
+    "Page number missing from annotations."
+  ],
+  "doc_id": "140",
+  "page": 32,
+  "elapsed_seconds": 7.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected from text to heading": 1,
+    "ADDED": 1
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "106 LE CHOIX, LE MONDE, L'EXISTENCE",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 98.0,
+        "w_pct": 74.0,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans chacun des modes réels de lexistence humaine, Phomme se trouve   toujours devant quelque chose ",
+      "bbox": {
+        "x_pct": 11.145,
+        "y_pct": 13.521,
+        "w_pct": 73.869,
+        "h_pct": 35.635
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Aulrement dit, si vous voulez, j'avancerais ceci lobjectivité nest pas objectivement délimitahlc ; o",
+      "bbox": {
+        "x_pct": 10.434,
+        "y_pct": 48.718,
+        "w_pct": 74.488,
+        "h_pct": 35.652
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Added missing page header region"
+  ],
+  "doc_id": "140",
+  "page": 25,
+  "elapsed_seconds": 9.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

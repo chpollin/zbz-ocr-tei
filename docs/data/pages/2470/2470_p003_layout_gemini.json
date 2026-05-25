@@ -1,0 +1,63 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 3 -",
+      "bbox": {
+        "x_pct": 472.0,
+        "y_pct": 73.0,
+        "w_pct": 56.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "haben? Und ich finde es ein biBchen Ieichtsinnig, notwendig , aber Ieichtsinnig , sich auf die geschichtlichen Umst&auml;nde zu begrenzen, die dann alles erkl&auml;ren sollen, kausal erkl&auml;ren, als w&auml;ren die Menschen Wesen, die kausal handeln, nicht aus Freiheit, sondern aus Kausalit&auml;t. Die Ursachen f&uuml;r den Nationalsozialismus waren zum Beispiel der Versailler Vertrag, oder die Inflation, oder die Arbeitslosigkeit usw., usw. Der Mensch ist eben nicht ein Wesen, der kausal erkl&auml;ren soll, was er tut. Also soll man sich auf diese geschichtlichen Umst&auml;nde nicht st&uuml;tzen, sondern wirklich die Wurzeln, die permanenten Wurzeln suchen, die in den menschlichen Wesen so etwas erm&ouml;glichen. Es handelt sich also darum, sozusagen den S&uuml;ndenfall zu verkn&uuml;pfen, das zu suchen, was so etwas erm&ouml;glicht.",
+      "bbox": {
+        "x_pct": 10.968,
+        "y_pct": 11.893,
+        "w_pct": 80.347,
+        "h_pct": 28.153
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und dabei muB ich mich gleich korrigieren, denn es k&ouml;nnte sich daraus ergeben, daB man, wie man auf franz&ouml;sisch sagt: on noit le poisson, daB man den Fisch ertrinken l&auml;Bt, das bedeutet, daB man versucht ist zu sagen, ja, wir sind alle so, jedes Volk, jeder Mensch ist eben so, und dann verschwindet sozusagen die Schuld des einzelnen in der einer gro&szlig;en Menschheit. Aber nein! Genausowenig wie es eine Ursache gegeben hat, geradesowenig ist es eine Antwort, sich auf die Schuld, auf die allgemein menschliche Schuld zur&uuml;ckzuziehen. Es hat in jedem Fall, in jedem gro&szlig;en und kleinen Umstand der Art, was jeder getan hat, hat es Entscheidung gegeben, hat es Unterwerfung gegeben, hat es Annahme gegeben, hat es willentliches Nichtwissen gegeben, also eine pers&ouml;nliche Schuld. Sehen Sie, wie man auch das Problem angreift, irgendetwas ist unm&ouml;glich. Man kommt zu einem Schlu&szlig;, der nicht annehmbar ist. Versuchen wir es trotzdem.",
+      "bbox": {
+        "x_pct": 10.403,
+        "y_pct": 40.063,
+        "w_pct": 79.976,
+        "h_pct": 31.703
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das Unmenschliche im Menschen und die Macht dieses Unmenschlichen sollte uns helfen, klarer zu sehen, was den Menschen ausmacht, was den Menschen zum Menschen macht. Warum hat der Mensch zum Beispiel Rechte? Welcher ist der Grundunterschied zwischen einem Menschen und irgendeinem Tier? Und das ist das gro&szlig;e Geheimnis, das gro&szlig;e Geheimnis des Menschseins in dieser Natur und in dieser Welt. Man hat gesagt, der Mensch wurde nach dem Bild Gottes geschaffen. In welchem Sinn Bild Gottes? Ich sehe nur eines, das man da anerkennen k&ouml;nnte: Das ist die F&auml;higkeit, die M&ouml;glichkeit, aus sich selbst ein freies und verantwortliches Wesen zu machen.",
+      "bbox": {
+        "x_pct": 10.056,
+        "y_pct": 72.135,
+        "w_pct": 80.105,
+        "h_pct": 21.364
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number at the top of the page was initially missing from layout detection."
+  ],
+  "doc_id": "2470",
+  "page": 3,
+  "elapsed_seconds": 5.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

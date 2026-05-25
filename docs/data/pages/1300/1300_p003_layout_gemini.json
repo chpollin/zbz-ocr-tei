@@ -1,0 +1,131 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Helv. chir. Acta 43, 421-425 (1976)",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 100,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Le chirurgien face à Pangoisse et au nombre",
+      "bbox": {
+        "x_pct": 5.11,
+        "y_pct": 17.269,
+        "w_pct": 53.426,
+        "h_pct": 2.548
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Prof. Dr phil. JEANNE HERSCH, Genève",
+      "bbox": {
+        "x_pct": 5.308,
+        "y_pct": 21.247,
+        "w_pct": 39.559,
+        "h_pct": 2.012
+      },
+      "changed": true,
+      "change_reason": "Label changed to section_header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En remerciant votre Comité pour Thonneur me fait en me permettant de prendre la parole parmi vous; j",
+      "bbox": {
+        "x_pct": 4.797,
+        "y_pct": 26.756,
+        "w_pct": 80.685,
+        "h_pct": 16.855
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le nœud des problèmes se posent me semble se trouver dans le fait que le chirurgien est aussi un méd",
+      "bbox": {
+        "x_pct": 5.261,
+        "y_pct": 43.405,
+        "w_pct": 80.337,
+        "h_pct": 6.098
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce caractérise le travail spécifique du chirurgien dans lensemble de la pratique médicale, cest dabo",
+      "bbox": {
+        "x_pct": 5.343,
+        "y_pct": 48.914,
+        "w_pct": 80.407,
+        "h_pct": 15.05
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, son intervention est par nature essentiellement mécaniste. Elle tend à supprimer gêne ",
+      "bbox": {
+        "x_pct": 5.656,
+        "y_pct": 63.711,
+        "w_pct": 80.256,
+        "h_pct": 18.516
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces deux caractères fondamentaux: discontinuité de lintervention et sa nature mécaniste; entraînent ",
+      "bbox": {
+        "x_pct": 6.237,
+        "y_pct": 82.096,
+        "w_pct": 79.477,
+        "h_pct": 4.208
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "421",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 30.0,
+        "h_pct": 15.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: page_footer"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Missing header in source JSON",
+    "Missing page footer in source JSON",
+    "Incorrect label for professional title/name"
+  ],
+  "doc_id": "1300",
+  "page": 3,
+  "elapsed_seconds": 6.99,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label changed to section_header": 1,
+    "ADDED": 2
+  }
+}

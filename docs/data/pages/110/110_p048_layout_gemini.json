@@ -1,0 +1,98 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "sens que par ce monde extérieur il se trouve   dépendant de mon action (dont il n'est pas sujet) com",
+      "bbox": {
+        "x_pct": 18.719,
+        "y_pct": 13.617,
+        "w_pct": 68.7,
+        "h_pct": 39.003
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Cf:  André   MALRAUX, La Condition humaine: Gallimard   1933, 54 et 66. Mais   moi, moi, la gorge, q",
+      "bbox": {
+        "x_pct": 18.642,
+        "y_pct": 66.262,
+        "w_pct": 68.738,
+        "h_pct": 4.604
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy."
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "2 Cf. Karl JASPERS, Philosophie, vol. II, Existenzerhellung, p. 92. « Kommunikation als existentiell wirkliche muss eine Gewissheit in ihr selbst haben ohne Wissen.",
+      "bbox": {
+        "x_pct": 18.757,
+        "y_pct": 70.893,
+        "w_pct": 62.255,
+        "h_pct": 4.198
+      },
+      "changed": true,
+      "change_reason": "Merged fragmented footnote lines and corrected text content."
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "46",
+      "bbox": {
+        "x_pct": 19.123,
+        "y_pct": 10.428,
+        "w_pct": 1.722,
+        "h_pct": 1.474
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number identified as page_footer/filter"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 72.355,
+        "y_pct": 10.428,
+        "w_pct": 15.063,
+        "h_pct": 1.474
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header identified as page_header/filter"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant à l'art, il constitue bien un rapport humain, il sert à la communication, il existe aussi dans le donné de l'action. Mais s'il est vrai que l'œuvre est aussi un objet social, comme nous l'avons déjà vu, le rapport, la communication qu'elle crée n'est pas sociale. Si l'art est bien un comme on l'a souvent dit, il est d'une sorte particulière: un langage indirect,",
+      "bbox": {
+        "x_pct": 18.719,
+        "y_pct": 52.887,
+        "w_pct": 68.7,
+        "h_pct": 12.046
+      },
+      "changed": true,
+      "change_reason": "ADDED: missing paragraph text"
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Footnote content was incomplete in original JSON",
+    "Footnote was split into two fragments",
+    "Missing page header, page number, and main text body segment"
+  ],
+  "doc_id": "110",
+  "page": 48,
+  "elapsed_seconds": 6.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content for accuracy.": 1,
+    "Merged fragmented footnote lines and corrected text content.": 1,
+    "ADDED": 3
+  }
+}

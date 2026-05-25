@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 404.0,
+        "y_pct": 84.0,
+        "w_pct": 191.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page header."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "43",
+      "bbox": {
+        "x_pct": 890.0,
+        "y_pct": 83.0,
+        "w_pct": 24.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Peut-être tisse-t-elle pourtant quelque part sa pulpe insaisissable, peut-être mûrit-elle de toutes nos incohérences.",
+      "bbox": {
+        "x_pct": 12.257,
+        "y_pct": 12.921,
+        "w_pct": 80.716,
+        "h_pct": 7.117
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'avais donc découvert d'un seul coup la gloire de l'aimer, et qu'il fallait m'en cacher comme d'une honte. Alors commencèrent les rougeurs, les impatiences, les angoisses, les battements de cœur. Le monde qui jusqu'ici m'avait été si souvent caché par l'éblouissement que me donnait sa lumière et par trop de recueillement, devint visible, mais sous un aspect instable, cruel, apparaissant par grands coups de conscience et s'effaçant parfois dans un espace décoloré, glissant de biais dans la pluie. Je ne pouvais plus m'oublier en le reflétant. De trop violents sursauts me rappelaient crûment à ma propre existence. Des joies douloureuses à force d'être grandes exaltaient mon âme jusqu'à lui faire éprouver ses bornes. Elles me laissaient ensuite sombrer dans une solitude sans remède, et un appel anonyme, qui par hasard sortait de mon cœur, sonnait, seul réel, au milieu de la surdité de tout.",
+      "bbox": {
+        "x_pct": 12.257,
+        "y_pct": 20.482,
+        "w_pct": 80.892,
+        "h_pct": 40.321
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A quoi bon suivre ici le fil des jours, si même je pouvais le retrouver ? Il n'existe pas dans mon souvenir. Je n'avais aucun désir précis, aucun espoir, aucun plan. Je savais que je désirais être près de lui, le plus souvent possible, n'importe où, n'importe comment, fût-ce sans lui dire un mot. Je désirais qu'il éprouvât pour moi un peu de ce que j'éprouvais pour lui. Mais rien de plus. Ma rêverie même était extrêmement timide et effleurait à peine sa personne. Je ne crois pas avoir souvent prononcé le mot « amour ».",
+      "bbox": {
+        "x_pct": 12.608,
+        "y_pct": 60.841,
+        "w_pct": 80.676,
+        "h_pct": 22.902
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from OCR."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original OCR was severely corrupted.",
+    "Page number and running header were incorrectly classified as text regions."
+  ],
+  "doc_id": "40",
+  "page": 41,
+  "elapsed_seconds": 4.54,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Suisse, cst non seulement de droits politiques, mais en n'es- se qu'elle n'est ni économiquement, ni professionnellement, sur un pied d'égalité avec l'homme.",
+      "bbox": {
+        "x_pct": 10.331,
+        "y_pct": 4.987,
+        "w_pct": 84.256,
+        "h_pct": 6.377
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visual evidence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, s'il est vrai que son affranchissement personnel a fait d'énormes progrès et que de nombreuses possibilités se sont ouvertes devant elle, il faut voir qu'elle paye chèrement ces nouveaux droits. Elle n'a peut-être jamais fait face à une telle accumulation de tâches. La femme qui travaille dehors tout en étant maîtresse de maison assume à la fois deux vies professionnelles. Selon le milieu, le gain, le niveau économique, sa vie sera plus ou moins dure. L'ouvrière mère de famille accomplit chaque jour des miracles, au détriment de sa santé. Mais à tous les niveaux sociaux cette double condition est excessivement lourde. Inutile d'insister ici sur ces difficultés graves, constantes, que chacun connaît aujourd'hui sans qu'on ait trouvé le moyen jusqu'ici d'apporter autre chose que des palliatifs.",
+      "bbox": {
+        "x_pct": 6.06,
+        "y_pct": 10.833,
+        "w_pct": 88.481,
+        "h_pct": 26.076
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visual evidence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La femme semble donc payer cher « les droits de la personne » plus que l'homme. La société qui, pour la première fois, consent à les lui concéder lui impose en même temps un surcroît de tâches, d'efforts, de fatigues, de soucis. Je n'oserais pas affirmer que la condition de la femme soit devenue « plus facile » qu'autrefois. Mais elle est devenue plus digne.",
+      "bbox": {
+        "x_pct": 6.511,
+        "y_pct": 36.554,
+        "w_pct": 87.774,
+        "h_pct": 12.046
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visual evidence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les bienfaiteurs de la femme, bien plutôt que les hommes politiques, les juristes ou les moralistes, ce sont les techniciens. Celui qui a inventé le nylon a fait plus pour son affranchissement que n'importe quel législateur. Il a en effet vidé - au moins partiellement - les corbeilles de raccommodage où s'accumulaient les chaussettes trouées - ce qui veut dire qu'il a rendu à la femme un nombre incalculable d'heures à vivre. (Il est vrai cependant que certains hommes, qui bien sûr ne raccommodent pas leurs propres chaussettes, refusent encore de porter du nylon, ou même de la laine renforcée.)",
+      "bbox": {
+        "x_pct": 6.271,
+        "y_pct": 48.246,
+        "w_pct": 88.256,
+        "h_pct": 19.805
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visual evidence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais la femme d'aujourd'hui n'est pas seulement partagée entre des tâches immédiates divergentes. Elle est aussi divisée en elle-même. Elle hésite encore, dans sa lutte pour la vie, entre son attitude traditionnelle d'esclave armée de séduction, et son attitude nouvelle de personne autonome, pouvant ne se donner que si elle aime, et gratuitement. C'est pourquoi elle s'efforce encore souvent, le sachant ou à son insu, de ressembler à la faible femme dont l'idéal lui fut imposé au cours des âges, à cette femme incapable, justement, de s'acquitter des tâches qui sont désormais les siennes. Un de mes amis assure que si les femmes portent de hauts talons, c'est moins pour faire paraître leurs jambes plus élégantes et plus fines que pour rendre fragile leur démarche, appelant ainsi le soutien d'un bras.",
+      "bbox": {
+        "x_pct": 5.91,
+        "y_pct": 67.733,
+        "w_pct": 88.571,
+        "h_pct": 24.234
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on visual evidence."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "218",
+      "bbox": {
+        "x_pct": 66,
+        "y_pct": 92,
+        "w_pct": 5,
+        "h_pct": 3
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text transcriptions were severely truncated.",
+    "Page number at the bottom was not identified or categorized as text.",
+    "Multiple boxes captured cut-off or incomplete words due to poor OCR/segmentation."
+  ],
+  "doc_id": "430",
+  "page": 3,
+  "elapsed_seconds": 5.58,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

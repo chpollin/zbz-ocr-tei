@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 286.0,
+        "y_pct": 74.0,
+        "w_pct": 427.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running header"
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "237",
+      "bbox": {
+        "x_pct": 822.0,
+        "y_pct": 74.0,
+        "w_pct": 27.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "paru; si disparition n'entraîne pas pour le pauvre un changement concret de condition, un surcroît de chances pour sa propre liberté.",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 102.0,
+        "w_pct": 845.0,
+        "h_pct": 64.0
+      },
+      "changed": true,
+      "change_reason": "Corrected broken text sequence from OCR"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On s'est aperçu aussi qu'un capitalisme d'État n'est pas un socialisme et que l'État, s'il dispose massivement des ressorts industriels de l'économie, acquiert une puissance, une toute-puissance, incompatible avec le contrôle démocratique, donc avec cette liberté dont le socialisme tire sens et valeur. Il serait absurde de courir des risques totalitaires au nom d'un accroissement de la liberté. C'est pourquoi il paraît de plus en plus nécessaire de diversifier les formes de la propriété collective, de la décentraliser et de la pluraliser.",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 165.0,
+        "w_pct": 848.0,
+        "h_pct": 190.0
+      },
+      "changed": true,
+      "change_reason": "Corrected broken text sequence from OCR"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si la suppression du riche compte pour beaucoup dans l'attrait des nationalisations, c'est l' « amour de la sécurité » qui alimente à la fois l'extension du fonctionnariat et l'envie presque haineuse dont les fonctionnaires sont souvent l'objet. Il est évident qu'une économie planifiée entraîne une bureaucratie considérable. Qu'une bureaucratie coûte moins cher à la communauté populaire qu'une guerre ou une classe patronale, de tels arguments sont à côté de la question. Une bureaucratie trop développée paralyse effectivement l'initiative, empêche les interventions immédiates, ou au moins rapides, là où elles sont nécessaires. Elle pèse de plusieurs manières sur l'économie, sur le prix de revient de la production. Elle crée en outre une classe de fonctionnaires dont la participation au processus de la production est si indirecte, si peu manifeste, qu'en fait le sens de leur travail s'efface, non seulement aux yeux des autres, mais aux leurs. On retrouve dès lors, à propos de ces employés, de « ces travailleurs en faux-col », les mêmes problèmes qu'à propos du travail en régime capitaliste : une activité vide de sens, sans autre intérét que d'être un gagne-pain. Le problème de la bureaucratie me paraît étre un problème socialiste grave. Sans doute faudrait-il veiller d'abord à la réduire toujours le plus possible, puis à y préserver des possibilités d'invention, de simplification, d'initiative, enfin à rendre aussi visibles que possible, pour tous ceux qui y sont occupés, les liens qui rattachent ses rouages à ceux de l'économie générale. Mais surtout, il faudrait faire disparaître du statut du fonctionnaire cette sécurité excessive, mortelle pour l'intéressé qu'elle réduit à l'indifférence et à la passivité.",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 352.0,
+        "w_pct": 849.0,
+        "h_pct": 539.0
+      },
+      "changed": true,
+      "change_reason": "Corrected massive OCR misinterpretation of text flow"
+    }
+  ],
+  "score": 40,
+  "num_corrections": 3,
+  "issues": [
+    "Heavy OCR noise in paragraph text",
+    "Missing section header identification initially",
+    "Page number and running header merged into text flow"
+  ],
+  "doc_id": "330",
+  "page": 271,
+  "elapsed_seconds": 7.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

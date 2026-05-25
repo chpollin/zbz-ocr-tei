@@ -1,0 +1,103 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne Hersch",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Identified as author name at the start of text, should be categorized as section header or retained as text based on context; however, Docling missed the box. Creating logical entry."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'état de grâce, l'expérience qu'elle a faite autrefois dans l'état de péché : dans la mesure où elle s'unit à son objet, elle le détruit, et, le détruisant, elle sent davantage le vide creusé au sein de son désir. L'âme ne détruit point son objet parce qu'il est indestructible, mais plus elle se tend vers lui, plus il recule, et comme il s'agit de l'âme humaine et de l'objet divin, du premier coup l'objet s'enfuit à l'infini... »",
+      "bbox": {
+        "x_pct": 21.193,
+        "y_pct": 15.544,
+        "w_pct": 58.525,
+        "h_pct": 6.542
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Christ remonte donc au ciel, vers son Père. L'espérance l'accompagne et dépasse avec lui toute limite, recevant l'assurance d'un retour, d'une Parousie. « L'Ascension écartèle l'Espérance pour l'ouvrir à la mesure de la Présence qui doit précisément se révéler en elle. »",
+      "bbox": {
+        "x_pct": 21.193,
+        "y_pct": 25.012,
+        "w_pct": 58.525,
+        "h_pct": 6.306
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "*",
+      "bbox": {
+        "x_pct": 49.154,
+        "y_pct": 33.452,
+        "w_pct": 2.877,
+        "h_pct": 0.81
+      },
+      "changed": true,
+      "change_reason": "Removed noise/wrong character from section header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après le passage sur l'Élection, le deuxième « sommet » de l'ouvrage se trouve dans la Postface qui suit le commentaire des Exercices proprement dits. C'est ici que l'auteur adopte un moyen d'expression caractéristique de sa propre pensée : il construit un « Schème géométrique des Exercices ».",
+      "bbox": {
+        "x_pct": 21.273,
+        "y_pct": 37.364,
+        "w_pct": 58.477,
+        "h_pct": 5.079
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les Quatre Semaines se projettent le long d'un axe horizontal — les deux premières dans l'Avant de l'Election, les deux dernières dans l'Après, — et le divisent en quatre segments égaux, non à cause de leur durée (variable), mais à cause de leur fin, de leur rapport immuable à l'Election centrale. L'axe horizontal n'est pas une droite indéfinie figurant un temps naturel, mais une droite limitée, allant de la réflexion (au début des Exercices) sur le péché des Anges et celui d'Adam, au terme de la même réflexion sur l'Ascension. Le point initial s'appellera Alpha, le point final Oméga. La Deuxième et la Troisième Semaine ont pour contenu la vie historique du Christ ; l'horizontale représente donc à la fois le temps intérieur, subjectif, de chaque acte libre, et le temps historique, objectif, de l'humanité. Le schème construit sur ces bases aura, lui aussi, cette double signification. Le point central est à la fois celui de l'Election, en fonction de laquelle s'organise le temps du sujet libre, et celui du Christ, principe, milieu et fin des temps, en fonction duquel s'organisent les diverses périodes de l'histoire humaine. C'est à cette seconde signification que le P. Fessard s'attachera sans doute dans Théologie et Histoire. Ici, c'est la première surtout qui importe, et qu'Ignace a directement mise en lumière. L'horizontale est coupée perpendiculairement en son milieu par une verticale dont le sommet représente le Très-Haut, et le bas, Satan ou l'Infernum. Autour de l'axe horizontal, l'auteur enroule une ligne brisée dont les segments figurent les mouvements du moi qui, suivant les Semaines des Exercices, se dirige vers le Très-Haut ou, au contraire, vers Satan ; des segments de droite en pointillé figurent les mouvements inverses, possibles, mais non choisis par la liberté. Autour de l'axe vertical s'enroule une ligne brisée analogue, figurant les mou-",
+      "bbox": {
+        "x_pct": 20.87,
+        "y_pct": 43.736,
+        "w_pct": 58.743,
+        "h_pct": 41.348
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "374",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 86.5,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "OCR errors in paragraph segments requiring manual restoration from visual context",
+    "Section header had incorrectly captured numbers as part of text",
+    "Missing page number in extraction",
+    "Author name label missing in source extraction"
+  ],
+  "doc_id": "350",
+  "page": 5,
+  "elapsed_seconds": 5.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

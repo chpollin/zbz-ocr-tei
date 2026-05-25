@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "106 Kierkegaard vivant",
+      "bbox": {
+        "x_pct": 118.0,
+        "y_pct": 65.0,
+        "w_pct": 776.0,
+        "h_pct": 89.0
+      },
+      "changed": true,
+      "change_reason": "Corrected page number and running header from text to page_header / _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pas à la « théorie », au sens grec de ce mot. Il est un problème moral, existentiel, métaphysique, constitutif de la conscience temporelle vécue, germe de toutes les ambiguïtés nécessaires de la condition humaine (nécessaires à la liberté) ; il suscite aussitôt de nombreuses lignes de fuite permettant d'échapper — ou de feindre d'échapper — à celle-ci, dans le passé, dans l'avenir, dans la totalité ou la vanité du temps, ou dans l'intemporel, ou dans une fixation arbitraire et factice de l'instant lui-même. Problème moral, donc, ouvrant devant l'existence son to be or not to be auquel ne peut répondre qu'une décision, et non une certitude. A propos de la flèche, Zénon demandait : « Quand se meut-elle ? » A propos de l'instant, la question est : « Quand puis-je, dois-je exister ? » On n'a pas assez insisté, me semble-t-il, je le remarque en passant, sur l'intense moralisation métaphysique survenue dans la philosophie contemporaine. Elle comporte un enrichissement sans doute exceptionnel. On peut se demander pourtant où nous conduit la perte de prestige du regard purement théorique, tel que les Grecs l'avaient élucidé, qui avait permis la naissance des lois formelles, dans les sciences et dans la cité.",
+      "bbox": {
+        "x_pct": 105.0,
+        "y_pct": 107.0,
+        "w_pct": 812.0,
+        "h_pct": 655.0
+      },
+      "changed": true,
+      "change_reason": "Refined text content for accuracy based on the actual visual text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'instant entraîne encore d'autres conséquences. Nous l'avons vu, sa ponctualité exclut la spatialisation, les aménagements que permet l'indifférence de l'espace à ce qui se juxtapose en lui.",
+      "bbox": {
+        "x_pct": 102.0,
+        "y_pct": 788.0,
+        "w_pct": 811.0,
+        "h_pct": 106.0
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was garbled in the initial detection."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was very poor for main paragraph.",
+    "Page header/number was incorrectly labeled as paragraph text.",
+    "Bounding boxes need to be tighter to capture actual text lines."
+  ],
+  "doc_id": "740",
+  "page": 15,
+  "elapsed_seconds": 9.12,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

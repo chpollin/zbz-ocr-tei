@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "30",
+      "bbox": {
+        "x_pct": 13.88,
+        "y_pct": 17.51,
+        "w_pct": 1.76,
+        "h_pct": 1.87
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "plus de conférence à faire. Tu peux faire ce te plaît, ou ne rien faire du tout.\" Ce changement radical s'est d'ailleurs produit sans que j'aie remué le petit doigt. Le temps qui me séparait de la conférence s'en est allé de lui-même. Bien plus, je pouvais compter d'avance, avec une certitude absolue, sur son évanouissement, sur le fait qu'il y aurait, de toute façon, un après à mon inquiétude, un après qui arriverait de lui-même et me rendrait à mon loisir.",
+      "bbox": {
+        "x_pct": 13.52,
+        "y_pct": 7.162,
+        "w_pct": 81.915,
+        "h_pct": 14.308
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Avant, j'assumais la responsabilité de ma conférence, de sa qualité future, je refusais l'attrait du reste du monde présent pour me concentrer tout entière dans l'effort de construire un meilleur discours; car ceux qui viendraient l'écouter allaient me faire confiance, s'exposant à sacrifier chacun une ou deux heures de leur vie — une ou deux heures que personne ne leur rendrait jamais —, alors que le nombre d'heures qu'ils ont encore à vivre, et quel que soit leur âge, n'est certainement pas infini.",
+      "bbox": {
+        "x_pct": 13.47,
+        "y_pct": 50.442,
+        "w_pct": 82.052,
+        "h_pct": 14.639
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après, même si la conférence m'a laissé un mauvais souvenir, il n'y a plus rien à faire. Tout au plus, un avertissement pour la prochaine fois. Mais il s'agit alors d'autre chose. Mon échec passé est retombé dans l'anonymat neutre de ce qui ne dépend plus de moi — puisqu'il est passé.",
+      "bbox": {
+        "x_pct": 13.52,
+        "y_pct": 67.23,
+        "w_pct": 81.915,
+        "h_pct": 8.496
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dirons-nous donc que la dimension éthique ne vit que dans la perspective du futur? Il faudrait pour cela se situer aux antipodes de Kant et la faire dépendre uniquement d'un résultat empirique, obtenu par l'enchaînement des moyens et des fins, au fil d'une histoire qui en serait finalement le juge.",
+      "bbox": {
+        "x_pct": 13.396,
+        "y_pct": 77.426,
+        "w_pct": 82.127,
+        "h_pct": 10.79
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dirons-nous au contraire que la dimension morale réside tout entière dans le temps de l'effort qui a précédé la conférence, dans l'avant.",
+      "bbox": {
+        "x_pct": 13.595,
+        "y_pct": 90.059,
+        "w_pct": 81.803,
+        "h_pct": 4.274
+      },
+      "changed": true,
+      "change_reason": "Extracted full text content from image."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Page number at top left incorrectly tagged as text",
+    "Missing text content in original boxes",
+    "Many transcriptions were incomplete or cut off"
+  ],
+  "doc_id": "2850",
+  "page": 2,
+  "elapsed_seconds": 6.06,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 365,
+        "y_pct": 85,
+        "w_pct": 270,
+        "h_pct": 20
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page_header rather than text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "67",
+      "bbox": {
+        "x_pct": 852,
+        "y_pct": 84,
+        "w_pct": 21,
+        "h_pct": 24
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer rather than text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qui se répandent parfois dans les atmosphères imprégnées de brume. Les bosquets voguaient comme dans la buée d'une haleine et les arbres poussaient à des hauteurs invraisemblables leurs réseaux subtils et nus. Seuls les sapins s'appesantissaient, chargés d'humidité dormante. Je suis arrivée vers le pommier tordu, près de la barrière. Les pommes avaient un peu grossi, mais elles étaient encore dures comme des pierres dans leur peau verte, vernissée. J'ai tiré sur l'une d'elles, mais elle ne céda pas, toute la branche s'abaissa avec un ruissellement. J'aime cueillir les fruits quand l'arbre les donne, quand ils restent d'eux-mêmes dans la main comme s'ils lui étaient destinés; je déteste déchirer trop tôt, de force, la mince tige par laquelle l'arbre les nourrit, les gonfle encore. Je suis repartie avec ma corbeille vide, et j'ai rencontré devant la porte Ida qui rentrait. Elle m'a dit qu'il fallait absolument tout cueillir, que ça allait pourrir sur l'arbre, dans cette humidité. Le soir venait. Je lui ai donné la corbeille en lui disant:",
+      "bbox": {
+        "x_pct": 8.162,
+        "y_pct": 12.637,
+        "w_pct": 80.662,
+        "h_pct": 48.043
+      },
+      "changed": true,
+      "change_reason": "OCR correction for accurate text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Vous les cueillerez donc demain.",
+      "bbox": {
+        "x_pct": 16.351,
+        "y_pct": 60.803,
+        "w_pct": 48.743,
+        "h_pct": 2.401
+      },
+      "changed": true,
+      "change_reason": "OCR correction for accurate text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Puis je suis restée un moment dehors. La nuit se faisait confusément, paraissant naître partout à la fois de l'air embrumé. L'immobilité était parfaite. Sûrement les choses devaient être maintenues ensemble d'ailleurs. Si on les laissait aller, si Dieu était distrait d'elles un seul instant, elles pourraient s'éparpiller, se subtiliser en glumes de pissenlits, s'amenuiser en reflets minces, s'évanouir en voiles, en ombres, et un arbre ne serait plus qu'une dentelle d'air obscurci s'en allant",
+      "bbox": {
+        "x_pct": 8.149,
+        "y_pct": 63.233,
+        "w_pct": 80.811,
+        "h_pct": 22.94
+      },
+      "changed": true,
+      "change_reason": "OCR correction for accurate text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Docling failed to identify page header/footer correctly.",
+    "OCR content contained significant artifacts.",
+    "Some text fragments in paragraph were split incorrectly."
+  ],
+  "doc_id": "40",
+  "page": 65,
+  "elapsed_seconds": 5.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

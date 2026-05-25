@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de manière dont elles contribuent à définir le visage de l'homme et de la société de demain. Je crois, autrement dit, que la matière enseignée n'est guère culturelle (ou universitaire) par elle-même ; elle le devient par le style de l'enseignement. On peut former un helléniste, un sociologue, un professeur de philosophie, un physicien ou un chirurgien dans le style d'une simple école professionnelle. Mais si l'information professionnelle est saisie et transmise avec ses composantes culturelles, on peut former un technicien ou un gérant dans le style le plus complet de l'Université. Je suis d'ailleurs de plus en plus convaincue que le sauvetage de la culture pour le monde en train de naître sous nos yeux n'est pas essentiellement affaire de latin, de grec, ou même de proportion entre science et technique d'une part et culture de l'autre, mais bien affaire de découverte et de récupération de la culture implicite dans le développement des sciences et des techniques, et de restauration de sa puissance éducative lors de leur enseignement. Il s'agit donc de surmonter l'opposition du « professionnel » et du « culturel » en rendant au « professionnel » son efficacité culturelle.",
+      "bbox": {
+        "x_pct": 9.474,
+        "y_pct": 12.551,
+        "w_pct": 36.871,
+        "h_pct": 47.885
+      },
+      "changed": true,
+      "change_reason": "Corrected the OCR-garbled text to reflect the actual content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "en savoir. Elle a été — ou parfois elle n'a pas été, mais elle a de contestation à toute « vérité » imposée et à toute limitation de la recherche, de l'information et de la parole. L'allégeance de l'Université à l'Etat n'est légitime que si l'Etat lui-même respecte et protège en elle cette ouverture et cette liberté. L'Etat entretient alors financièrement l'Université et n'y commande pas ; il l'entretient parce qu'il a besoin de cette indépendance même ; et l'Université actualise cette indépendance en posant les problèmes de la Société et de l'Etat contemporains, à la lumière de la raison, de l'information et des valeurs permanentes qui sont sa raison d'être. La perversion est à son comble quand l'Université se jette comme telle dans l'action politique, et que la défense de ses valeurs permanentes devient l'affaire de la police de l'Etat.",
+      "bbox": {
+        "x_pct": 57.225,
+        "y_pct": 12.592,
+        "w_pct": 34.134,
+        "h_pct": 33.697
+      },
+      "changed": true,
+      "change_reason": "Corrected the severely garbled OCR text to match the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Par delà l'Etat, l'Université se reconnaît des devoirs envers la culture qui lui donne sa substance. Elle se reconnaît des devoirs envers transmettre et de la ré-actualiser sans cesse, c'est-à-dire de la faire vivre en explicitant ses exigences face aux données de la situation historique actuelle. Certains, ces derniers temps, ont excommunié la culture comme n'étant qu'un procédé de manipulation conservateur et bourgeois, dont le simple rejet ressusciterait tout homme l'homme originel, le révolutionnaire pur, sans peur et sans reproche. Mais l'homme originel vierge de toute culture n'a même pas de langue maternelle ; il ne serait qu'une bête aux cris inarticulés. La biologie, la psychologie, la sociologie mettent en évidence, de plus en plus, combien les données biologiques et l'apport culturel sont chez l'homme d'emblée indiscernables. Il est vrai que l'apport culturel se trouve inégalement transmis, que l'inégalité sociale",
+      "bbox": {
+        "x_pct": 57.732,
+        "y_pct": 48.336,
+        "w_pct": 33.656,
+        "h_pct": 31.978
+      },
+      "changed": true,
+      "change_reason": "Corrected the garbled OCR text to match the image content."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was highly inaccurate in all detected regions.",
+    "Bboxes are acceptable but labels required validation against the content."
+  ],
+  "doc_id": "850",
+  "page": 5,
+  "elapsed_seconds": 5.65,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDOLOGIES ET RALIT 69",
+      "bbox": {
+        "x_pct": 313.0,
+        "y_pct": 86.0,
+        "w_pct": 574.0,
+        "h_pct": 105.0
+      },
+      "changed": true,
+      "change_reason": "Page header identified as page_header instead of text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ment du proltariat, de totale impuissance et de misre, a trouv son lan  la fois dans une alliance idologique avec la ncessit de l'histoire et dans une vision qui avait quelque chose d'eschatologique. Le sentiment qui l'animait, l'amour de la justice et des victimes de l'injustice, lui imposait deux tches : amliorer progressivement la condition ouvrire (rduction des heures de travail, rglementation, lvation des salaires, ducation, dignit, droits) et remplacer les structures conomiques du capitalisme par des structures collectivistcs. Or la seconde de ces tches n'ouvrait alors qu'une perspective extrmement lointaine. Sur le plan de l'actualit, elle ne pouvait tre qu'un thme de propagande servant  soutenir les efforts, nourrir les rves, vaincre l'apathie, la soumission fataliste et lasse aux faits. Les militants socialistes se sont enfoncs dans cette action et dans cette optique. Ils ont travaill avec une tnacit, une fidlit, un succs remarquables  lever le niveau de vie des salaris, dans tous les sens qu'une telle « lvation » implique. Ils ont allum et propag la foi en une rvolution conomique qui abolirait le profit et remettrait aux travailleurs et au peuple lui-mme la proprit dsormais collective des moyens de production. Mais, absorbs par les ncessits et les moyens de la lutte quotidienne  l'accidentel est toujours plus urgent que l'essentiel  ils ont, semble-t-il, perdu de vue souvent, non la perspective, mais la ralit de leur but final. Si bien qu'en plusieurs occasions, lorsque les rsultats mmes de leurs efforts et les grands bouleversements de l'histoire ont branl les structures primes et offert l'occasion ou mme impos la ncessit de structures nouvelles, ils n'taient pas prts. Comme s'ils avaient fait rouler l'histoire sur une pente o elle allait dsormais plus vite qu'eux. L'imagination et l'tude prcise des techniques collectivistes leur manquaient. Ils n'avaient pas non plus form assez d'hommes capables de saisir les leviers offerts. Leurs formules, prcises dans l'abstrait, taient toutes des mots d'ordre, non des modes d'emploi. Ds lors, on recourut le plus souvent au moyen le plus rapide, le plus simple dans l'abstrait, celui qui pntre le moins dans les tissus complexes de la vie conomique concrte : la nationalisation. Mais de toutes les formes collectivistes, c'est la nationalisation qui s'oppose le moins nettement  l'tatisme totalitaire des Soviets ; les socialistes se sont trouvs lis aux",
+      "bbox": {
+        "x_pct": 53.0,
+        "y_pct": 121.0,
+        "w_pct": 890.0,
+        "h_pct": 893.0
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": {
+        "x_pct": 789.0,
+        "y_pct": 901.0,
+        "w_pct": 14.0,
+        "h_pct": 27.0
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer instead of text"
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial bounding box for paragraph was misaligned with physical page content.",
+    "Page number and running header were mislabeled as text."
+  ],
+  "doc_id": "330",
+  "page": 103,
+  "elapsed_seconds": 6.29,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

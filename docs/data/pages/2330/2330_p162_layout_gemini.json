@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce a facilité l'avènement de Hitler, ce fut au Reichstag, la conjonction des votes des communistes et des représentants de l'extrême-droite. Car ils sont, les uns et les autres, anti-démocrates, ils n'ont ni les uns ni les autes, d'aucune façon, comme valeur centrale la liberté, et par conséquent ils sont faits pour s'entendre quand il s'agit de détruire un régime démocratique. Après, bien sûr, ils deviennent ennemis, et celui qui détient le pouvoir persécute l'autre.",
+      "bbox": {
+        "x_pct": 16.484,
+        "y_pct": 3.653,
+        "w_pct": 79.939,
+        "h_pct": 14.411
+      },
+      "changed": true,
+      "change_reason": "Corrected the incomplete text extraction to reflect the full content visible in the region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A propos de l'Amérique, chose assez curieuse, vous qui avez été mêlée de près à l'intelligentsia française, vous n'avez jamais été affectée par son anti-américanisme si fréquent. Vous paraissez au contraire assez indifférente à ce phénomène d'attraction-répulsion que suscite en France l'« american way of life ». Est-ce que vous pouvez vous expliquer à ce propos ?",
+      "bbox": {
+        "x_pct": 16.569,
+        "y_pct": 18.492,
+        "w_pct": 79.768,
+        "h_pct": 12.29
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text extraction to represent the full content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A.D. — Est-ce que vous ne redoutez pas cependant une certaine américanisation de l'Europe, sur le plan culturel comme sur le plan des mœurs politiques ?",
+      "bbox": {
+        "x_pct": 16.5,
+        "y_pct": 62.5,
+        "w_pct": 79.5,
+        "h_pct": 6.371
+      },
+      "changed": true,
+      "change_reason": "Corrected incorrectly cropped text region to capture the full sentence."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. — Certainement. Seulement je crois qu'il faut résister à l'américanisation de l'Europe par le même progrès intérieur, qui peut nous permettre de juguler le défaitisme à l'égard de l'Est, c'est-à-dire en donnant toujours plus de substance à notre propre sens de la liberté, et donc de nos propres responsabilités européennes, dans la défense de celle-ci, avec l'Amérique. Plus nous aurons le sens vécu de la liberté individuelle incarnée dans notre vie, dans notre culture, dans notre formation, dans la formation des enfants, dans les universités, plus cette liberté prendra du poids et plus l'Europe s'affirmera comme telle. Car l'américanisation s'étend là où il y a du vide. Mais si c'est le plein, il n'y a pas de risque ! Ce plein est nécessaire aussi par rapport à l'Est. Il ne s'agit",
+      "bbox": {
+        "x_pct": 16.117,
+        "y_pct": 68.548,
+        "w_pct": 80.061,
+        "h_pct": 22.121
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction to include the full paragraph content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "158",
+      "bbox": {
+        "x_pct": 16.2,
+        "y_pct": 96.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and assigned correct filter label."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original JSON had severely truncated text content in all regions.",
+    "Page number at the bottom was missing.",
+    "Bounding boxes were slightly off or misaligned with actual text content.",
+    "OCR text quality was poor, requiring manual correction of content."
+  ],
+  "doc_id": "2330",
+  "page": 162,
+  "elapsed_seconds": 7.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

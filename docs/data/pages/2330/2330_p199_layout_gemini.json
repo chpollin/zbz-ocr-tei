@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "période de brouille noire durait assez longtemps, ils se retrouvaient. Leur orientation philosophique était proche : ils étaient tous deux ouverts à la philosophie de l'existence. Mais Jean Wahl était un mystique interrogateur sur les bords de l'athéisme, alors que Gabriel Marcel adhérait à la foi catholique, mais en un Dieu très caché. Leurs rapports avec leur entourage, leur façon de recevoir n'étaient pas les mêmes : Gabriel Marcel recevait surtout des philosophes à ses soirées philosophiques régulièrement programmées. Tandis que Jean Wahl et sa femme recevaient des écrivains, des peintres, des poètes, qui venaient de l'étranger, de partout, et qui passaient chez eux au hasard des circonstances. Leur maison était ouverte à tous et il y régnait une grande intensité de présence. Encore une chose à comparer entre eux : ils étaient, l'un et l'autre, d'intenses liseurs. Chez Jean Wahl comme chez Gabriel Marcel, les livres et les papiers s'entassaient, mais pas de la même façon. - J'ai toujours eu envie, à ce propos, d'écrire une petite étude sur les formations géologiques du papier chez les divers penseurs que j'ai connus. Je commencerai par Jean Piaget. Je suis allée chez lui une fois, avec un étudiant qui devait passer un examen, et on nous a introduits dans le saint des saints, c'est-à-dire le cabinet de travail. Ce bureau se présentait un peu comme le Grand Canyon vu d'en haut. Le papier constituait des strates géologiques denses, compactes, coupées en parois de un mètre environ de hauteur, laissant entre elles un passage pour piétons. On passait donc par cette sorte de gorge et on aboutissait à un rond-point, également cerné de parois verticales de papiers, où étaient installées nos trois chaises. - Chez Jean Wahl, à l'époque où il n'était pas encore marié et où il habitait à l'hôtel, on se trouvait devant des stalagmites de livres et de papiers qu'il fallait enjamber avec une grande attention car ils risquaient, au moindre faux pas, de s'écrouler. A la fin de sa vie, des collines toscanes s'étaient développées dans les diverses pièces de son appartement : c'était des piles de livres recouvertes avec des draps. Chez Gabriel Marcel, j'avais toujours des angoisses à cause de sa petite taille, car je voyais livres et papiers monter tout autour de lui, et j'avais l'impression que, la prochaine fois, je le trouverais enseveli dessous. - Jean Wahl et Gabriel Marcel étaient des amis merveilleux, extraordinairement accueillants et curieux de vous. Pour moi leur disparition a laissé dans le monde un grand vide.",
+      "bbox": {
+        "x_pct": 4.359,
+        "y_pct": 3.008,
+        "w_pct": 80.012,
+        "h_pct": 71.613
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez fait allusion tout à l'heure à une certaine sympathie de Jean Wahl pour le communisme - sympathie d'ailleurs jamais orthodoxe et toujours critique. D'autres que lui, à vrai dire une grande partie de l'intelligentsia française ou parisienne, allait beaucoup plus loin et se montrait littéralement fascinée par le modèle soviétique. En fait, cet attrait pour le communisme soviétique a été constant en France depuis 1917...",
+      "bbox": {
+        "x_pct": 4.603,
+        "y_pct": 76.29,
+        "w_pct": 79.683,
+        "h_pct": 13.766
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/garbled OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "195",
+      "bbox": {
+        "x_pct": 80.3,
+        "y_pct": 93.3,
+        "w_pct": 4.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Corrected missing region for page number and labeled as page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR for paragraph regions was highly degraded.",
+    "Page number at bottom right was not captured in initial segmentation."
+  ],
+  "doc_id": "2330",
+  "page": 199,
+  "elapsed_seconds": 6.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

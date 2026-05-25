@@ -1,0 +1,113 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LA CARICATURE DE L'EXISTENTIALISME",
+      "bbox": {
+        "x_pct": 16.41,
+        "y_pct": 7.234,
+        "w_pct": 31.641,
+        "h_pct": 4.167
+      },
+      "changed": true,
+      "change_reason": "Label corrected to zb_heading"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "c' de lexistence s'accomplir. Le désespoir est discontinuite, l'absurde et le paradoxe -- car c'est là, en ces failles de l'objectivité, que l'authentique subjectivité vécue de l'existence s'accomplir. Le désespoir est ambigu ; car s'il est, comme le dit Kierkegaard, la maladie mortelle de l'âme, qui risque de la faire renoncer à l'existence, il est en même temps la condition de l'existence. Pour exister, il faut désespérer de la continuité et de la cohérence objective, il faut renoncer aussi à toute possession de l'existence. Il faut accepter qu'elle reste à jamais inséparable de l'angoisse.",
+      "bbox": {
+        "x_pct": 16.41,
+        "y_pct": 11.402,
+        "w_pct": 31.641,
+        "h_pct": 19.461
+      },
+      "changed": true,
+      "change_reason": "Updated region coverage"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tous ces mots, malheureusement, sont 4 de puissance pathétique, affective. Les philosophes sont serv",
+      "bbox": {
+        "x_pct": 14.034,
+        "y_pct": 30.968,
+        "w_pct": 33.789,
+        "h_pct": 60.185
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "346",
+      "bbox": {
+        "x_pct": 14.0,
+        "y_pct": 87.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "347",
+      "bbox": {
+        "x_pct": 84.0,
+        "y_pct": 6.0,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "LA CARICATURE DE L'EXISTENTIALISME",
+      "bbox": {
+        "x_pct": 51.009,
+        "y_pct": 7.903,
+        "w_pct": 36.228,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Label corrected and refined"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "On pourrait s'étonner qu'à propos de l'existentialisme allemand, je m'attarde si longuement sur un philosophe danois. Mais c'est que d'abord sa méditation est née d'un violent retournement contre Hegel dont il a bouleversé la dialectique. Et c'est surtout qu'elle a exercé une immense influence sur la pensée allemande, tant sur les théologiens que sur les philosophes — tant sur Karl Barth que sur des existentialistes comme Heidegger et Jaspers. Chez le philosophe contemporain Martin Heidegger, l'influence de Kierkegaard est venue se fondre plus particulièrement avec celles de la scolastique, de Kant, et de la phénoménologie (qu'actuellement la mode confond constamment avec l'existentialisme). La scolastique a imprimé au style de Heidegger une sorte de rigueur verbale grâce à laquelle des structures exclusivement dynamiques, loin d'être mimées souplement par un langage aussi fluide et suggestif que possible, comme chez un Bergson par exemple, se trouvent fixées dans fonctionnement même par des néologismes dont l'étymologie pourra servir au raisonnement. Kant a communiqué à la méthode de Heidegger sa pureté formelle, son rejet de tout résidu d'expérience concrète, de façon que n'en soient retenues que les pures conditions. La phénoménologie, elle, est une méthode qui avait été surtout élaborée par Husserl et qui consiste en un effort pour éliminer de la recherche à la fois le contenu particulier de l'expérience et toute construction de l'esprit à propos de l'expérience (par exemple toute hypothèse de chose en soi), de façon à décrire, de la façon la plus immédiate possible, les structures de l'expérience en général, tout ce qui est immédiatement impliqué dans les rapports du moi avec les choses, du moi avec lui-même, ou du moi avec autrui. Grâce à ces dépouillements successifs Heidegger dégage avec une grande force les caractéristiques limitatives, négatives, et par là, pour l'existence, décisives, de la condition humaine. L'homme, selon lui, est jeté dans un monde dont la nature lui est étrangère, un monde de choses situées autour de lui dans l'espace",
+      "bbox": {
+        "x_pct": 51.009,
+        "y_pct": 10.5,
+        "w_pct": 36.228,
+        "h_pct": 80.0
+      },
+      "changed": true,
+      "change_reason": "Combined and fixed regional bounding box"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Fragmented regions for text",
+    "Missing page numbers in initial input",
+    "Incorrect label for headings"
+  ],
+  "doc_id": "120",
+  "page": 5,
+  "elapsed_seconds": 9.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Label corrected to zb_heading": 1,
+    "Updated region coverage": 1,
+    "Label corrected and refined": 1,
+    "Combined and fixed regional bounding box": 1,
+    "ADDED": 2
+  }
+}

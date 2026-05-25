@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "506",
+      "bbox": {
+        "x_pct": 28.971,
+        "y_pct": 82.528,
+        "w_pct": 3.75,
+        "h_pct": 2.228
+      },
+      "changed": true,
+      "change_reason": "Page number identified as text, changed to page_footer."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Coups de sonde",
+      "bbox": {
+        "x_pct": 54.706,
+        "y_pct": 8.018,
+        "w_pct": 20.485,
+        "h_pct": 2.836
+      },
+      "changed": true,
+      "change_reason": "Reordered words to match document text 'Coups de sonde'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "droits de l'homme, c'est celle de leur raison d'être, de leur fondement. Ils ne sont pas une donnée naturelle. Leur connaissance explicite a été tardive. On ne les découvre pas dans la réalité. Ils n'appartiennent pas au monde des faits. Aucune logique ne les impose à la raison. Il n'est pas évident de prime abord qu'ils rendent plus faciles, par les organisations internationales qui s'en inspirent, le maintien de la paix, la conquête du bonheur, la production des biens. Et d'abord, qu'est-ce que cet homme, dont il s'agit de respecter les droits ?",
+      "bbox": {
+        "x_pct": 28.338,
+        "y_pct": 12.365,
+        "w_pct": 70.632,
+        "h_pct": 24.73
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated text and OCR artifacts."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "« une âme ET un corps »",
+      "bbox": {
+        "x_pct": 28.897,
+        "y_pct": 41.157,
+        "w_pct": 34.338,
+        "h_pct": 2.441
+      },
+      "changed": true,
+      "change_reason": "Added missing quotes and fixed OCR errors in header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'homme est, disait Rimbaud, après tant d'autres : une âme et un corps. Et tant qu'il est un corps vivant et mortel, il appartient à la nature. Et la nature, c'est le règne de la force : « Tout mange tout », comme disait avec désespoir une petite fille. Le plus fort, le mieux armé, le plus rapide mange sa proie, au risque de devenir aussitôt la proie d'un autre, mieux armé encore, plus fort encore, ou plus rapide. La nature ne connaît pas le droit, ni les droits.",
+      "bbox": {
+        "x_pct": 28.338,
+        "y_pct": 45.368,
+        "w_pct": 69.897,
+        "h_pct": 20.186
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "S'il n'était qu'une âme, l'homme pourrait peut-être se désintéresser de la force et être tenté de l'oublier. La question de manger, ou d'être mangé, ne se poserait pas. Il pourrait rêver qu'il est un ange et n'aurait aucun souci de ses droits.",
+      "bbox": {
+        "x_pct": 28.235,
+        "y_pct": 65.26,
+        "w_pct": 69.912,
+        "h_pct": 11.021
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text and fixed punctuation."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais en tant qu'il est « une âme ET un corps », il vit son humanité précisément à l'intersection de l'une et de l'autre. La réalité de la nature, des données de fait prend une importance décisive, et il lui faut vivre pour... Il se propose des fins. Il veut, il désire, il opte, il choisit. Il est et se veut une liberté responsable. De ce fait, il introduit des droits, et le droit, dans le monde.",
+      "bbox": {
+        "x_pct": 27.985,
+        "y_pct": 75.888,
+        "w_pct": 70.294,
+        "h_pct": 16.094
+      },
+      "changed": true,
+      "change_reason": "Fixed severe OCR transcription errors."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 7,
+  "issues": [
+    "Page number at bottom of page incorrectly identified as text region.",
+    "Major OCR errors in almost every paragraph block.",
+    "Section headers had incorrect content and label mapping."
+  ],
+  "doc_id": "2920",
+  "page": 4,
+  "elapsed_seconds": 7.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

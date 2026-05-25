@@ -1,0 +1,118 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "244 J. HERSCH/J. MARIAS",
+      "bbox": {
+        "x_pct": 149.5,
+        "y_pct": 149.5,
+        "w_pct": 0,
+        "h_pct": 0
+      },
+      "changed": true,
+      "change_reason": "Correcting top header to page_header and _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dans la liberté le temps et l'intemporel, les contraintes naturelles et l'exigence transcendante.",
+      "bbox": {
+        "x_pct": 149.59,
+        "y_pct": 174.87,
+        "w_pct": 696,
+        "h_pct": 36.62
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces limites ne rendent pas la connaissance historique impossible, mais la maintiennent en quelque sorte en suspens, car elle ne peut pas prendre, par rapport à son objet, la juste distance scientifique : elle en est trop proche, au point de s'identifier à lui, ou trop distante, au point de l'abolir ou de le dénaturer. Peut-être sera-t-il toujours plus nécessaire qu'elle se différencie en études consciemment partielles, faites à des niveaux distincts, allant des plus objectives, quantitatives et causales, touchant les aspects de l'histoire les plus proches des réalités naturelles, aux plus intériorisées, où la compréhension mimée ou existentielle est indispensable. Peut-être, au contraire — ou simultanément — tirera-t-elle de son ambiguïté même, de ses emmêlements, une plus grande fécondité.",
+      "bbox": {
+        "x_pct": 149.9,
+        "y_pct": 205.37,
+        "w_pct": 696.72,
+        "h_pct": 211.49
+      },
+      "changed": true,
+      "change_reason": "OCR correction applied."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "M. MARIAS :",
+      "bbox": {
+        "x_pct": 152.36,
+        "y_pct": 450.13,
+        "w_pct": 128.38,
+        "h_pct": 15.15
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mlle Jeanne Hersch a écrit un rapport remarquable sur la connaissance historique. Le rôle d'un contre-rapport ne doit pas consister à suivre de près le rapport et en faire le commentaire ou la critique, mais plutôt à essayer une autre perspective sur le même sujet, à le considérer d'un autre point de vue, qui pourrait être complémentaire, en insistant surtout sur des aspects qui ont été négligés ou moins soulignés dans le rapport et qui peuvent contribuer à rendre plus claire la réalité étudiée. Les références au rapport se dégageront donc d'elles-mêmes dans mon exposé sans essayer de suivre sa ligne, ce qui obligerait à des répétitions inutiles.",
+      "bbox": {
+        "x_pct": 150.31,
+        "y_pct": 482.77,
+        "w_pct": 696,
+        "h_pct": 173.99
+      },
+      "changed": true,
+      "change_reason": "OCR correction applied."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Histoire et société : le sujet de l'histoire",
+      "bbox": {
+        "x_pct": 298.87,
+        "y_pct": 681.19,
+        "w_pct": 420.7,
+        "h_pct": 12.44
+      },
+      "changed": true,
+      "change_reason": "Corrected label and tag from '1' to section_header/zb_heading containing the actual text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Imaginons une société quelconque. Nous trouvons un certain espace et des personnes qui y vivent « ensemble ». Le sens de ce dernier mot n'est pas univoque si on l'applique à l'Athènes de Socrate ou aux Etats-Unis d'Amérique. Il y a parmi ces personnes des rapports interindividuels qui n'appartiennent pas à la société comme telle ; d'autres, par contre, affectent la vie collective et ne",
+      "bbox": {
+        "x_pct": 153.38,
+        "y_pct": 704.36,
+        "w_pct": 691.91,
+        "h_pct": 101.64
+      },
+      "changed": true,
+      "change_reason": "OCR correction applied."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 300,
+        "y_pct": 920,
+        "w_pct": 400,
+        "h_pct": 50
+      },
+      "changed": true,
+      "change_reason": "New region detected as page footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "OCR text was heavily corrupted in original detection",
+    "Missing bibliographic line at bottom as footer",
+    "Section header was misidentified as '1'"
+  ],
+  "doc_id": "540",
+  "page": 16,
+  "elapsed_seconds": 5.14,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

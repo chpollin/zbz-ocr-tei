@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or c'est exactement le contraire de ce que j'essaie de montrer ici. Fuir dans la musique, l'utiliser comme moyen d'évasion, c'est fuir du même coup la condition humaine. Une musique qui permet cette fuite n'est pas une musique ; elle en a seulement l'air. La vraie musique est créée par la liberté, et elle se vit par la liberté.",
+      "bbox": {
+        "x_pct": 15.858,
+        "y_pct": 13.573,
+        "w_pct": 57.415,
+        "h_pct": 13.598
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript and label text content to match image content precisely."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La liberté passe par la musique voit s'ouvrir d'innombrables possibilités. Comme je l'ai dit plus haut, elle se multiplie. C'est une des raisons pour lesquelles la musique occidentale, en particulier, présente une si prodigieuse diversité. De toutes les créations artistiques des Européens, la musique est probablement ce qui est le plus incomparable à tout ce qui existe ailleurs. La musique existe partout, mais nulle part dans le monde on ne trouve en elle une diversité aussi grande qu'en Occident. Ansermet parlait d'«une musique présente en chair et en os» (c'est le corps de la musique) par laquelle un sentiment en acte communique avec un sentiment en acte. Tous les éléments sont réunis dans cette phrase : il y a le corps, il y a le sentiment qui communique avec un sentiment, mais en acte. Autrement dit, il s'agit d'un sentiment dans la liberté, vécu par la liberté, et non pas d'un sentiment subi.",
+      "bbox": {
+        "x_pct": 15.678,
+        "y_pct": 28.479,
+        "w_pct": 57.595,
+        "h_pct": 41.594
+      },
+      "changed": true,
+      "change_reason": "Corrected transcript to match full text present in the box."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a une musique obscure et une musique",
+      "bbox": {
+        "x_pct": 19.174,
+        "y_pct": 69.747,
+        "w_pct": 54.025,
+        "h_pct": 3.05
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "65",
+      "bbox": {
+        "x_pct": 697,
+        "y_pct": 743,
+        "w_pct": 25,
+        "h_pct": 23
+      },
+      "changed": true,
+      "change_reason": "Identified missing page number region which was part of the background content area."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 3,
+  "issues": [
+    "Original transcriptions for paragraphs were incomplete and contained typos.",
+    "Page number 65 was missing from the initial region list.",
+    "Bounding box for the page number needs to be mapped to the actual coordinates."
+  ],
+  "doc_id": "2780",
+  "page": 64,
+  "elapsed_seconds": 4.69,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

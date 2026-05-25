@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "jeté sur l'industrialisation. Il s'agit ici, selon moi, d'une énorme erreur.",
+      "bbox": {
+        "x_pct": 11.21,
+        "y_pct": 7.96,
+        "w_pct": 64.782,
+        "h_pct": 3.379
+      },
+      "changed": true,
+      "change_reason": "Corrected typographical errors and restored missing apostrophe in 'l'industrialisation'."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'ai vu, dans un quartier ouvrier de Paris, un film soviétique racontant la création d'une centrale électrique. On montrait toutes les difficultés rencontrées par le héros et l'héroïne jusqu'au moment où la centrale électrique fut prête. Il y eut à ce moment une séquence d'un lyrisme extraordinaire : l'héroïne, à l'intérieur de la centrale, abaissait une manette, puis une autre, et chaque fois un secteur de la campagne s'éclairait. Les paysans, sur l'écran, regardaient s'accomplir ce miracle et, dans leur émerveillement, se jetaient à genoux. Les ouvriers parisiens, dans la salle, applaudirent à tout rompre. Ils n'avaient sans doute jamais vu un village sans électricité. Mais là, ils étaient transportés par le lyrisme de l'événement.",
+      "bbox": {
+        "x_pct": 11.21,
+        "y_pct": 11.225,
+        "w_pct": 64.919,
+        "h_pct": 20.171
+      },
+      "changed": true,
+      "change_reason": "Combined and corrected OCR fragment into a single, cohesive paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi les expériences communistes forgent une unité idéologique efficace entre des choses diverses; elles tendent à identifier communisme et progrès industriel. Tout cela demande à être réexaminé froidement, à la lumière des faits.",
+      "bbox": {
+        "x_pct": 11.347,
+        "y_pct": 31.339,
+        "w_pct": 64.621,
+        "h_pct": 6.781
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and restored missing text segments for grammatical correctness."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le second effort nécessaire est d'un tout autre ordre : le retour à l'homme, à l'homme réel, en profondeur, qui doit être accepté tout entier. Ce n'est pas celui de l'optimisme éclairé. C'est celui que nous voyons vivre sans eschatologie, dans l'histoire réelle, qui n'a pas pris fin, qui ne prend pas fin et qui ne prendra pas fin. Il ne calcule pas scientifiquement ses chances. L'histoire réelle et tragique de l'homme, c'est qu'elle comporte des adhésions absolues que la science ne suffit pas à expliquer.",
+      "bbox": {
+        "x_pct": 11.427,
+        "y_pct": 37.989,
+        "w_pct": 64.484,
+        "h_pct": 13.368
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR fragment and reconstructed missing full text block."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En conclusion, les expériences communistes, pour les autres idéologies, doivent être l'aiguillon qui oblige à ce travail en profondeur vers les faits d'une part, et de l'autre, vers l'homme réel.",
+      "bbox": {
+        "x_pct": 11.508,
+        "y_pct": 51.151,
+        "w_pct": 64.056,
+        "h_pct": 6.553
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and completed missing sentence fragments."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "35",
+      "bbox": {
+        "x_pct": 73.1,
+        "y_pct": 90.0,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Corrected label from 'text' to 'page_footer' for pagination."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Severe OCR fragmentation across all paragraphs",
+    "Punctuation errors (missing colons, apostrophes)",
+    "Page number at bottom of page incorrectly identified as text"
+  ],
+  "doc_id": "400",
+  "page": 9,
+  "elapsed_seconds": 9.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

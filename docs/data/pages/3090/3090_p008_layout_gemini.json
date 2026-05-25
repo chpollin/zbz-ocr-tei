@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers' enthusiasm for scientific research - it...",
+      "bbox": {
+        "x_pct": 16.266,
+        "y_pct": 8.951,
+        "w_pct": 73.194,
+        "h_pct": 29.743
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Discontinuity and plurality are for Existence...",
+      "bbox": {
+        "x_pct": 15.669,
+        "y_pct": 38.312,
+        "w_pct": 72.452,
+        "h_pct": 23.757
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated start text and label context."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "The less human decisions are supported by some...",
+      "bbox": {
+        "x_pct": 15.379,
+        "y_pct": 61.591,
+        "w_pct": 71.371,
+        "h_pct": 15.758
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated start text."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Initial text detection was slightly truncated in the provided JSON input.",
+    "BBox order in the input JSON did not match reading flow."
+  ],
+  "doc_id": "3090",
+  "page": 8,
+  "elapsed_seconds": 4.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

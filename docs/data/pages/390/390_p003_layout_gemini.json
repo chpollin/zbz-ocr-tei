@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "4 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 17.22,
+        "y_pct": 91.0,
+        "w_pct": 65.27,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Page number and author name at top of page should be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "que dénigré, inutile, condamné à la stérilité ; devant le moi, au contraire, le mot « philosophe » devient trop beau. Comment oser dire qu'on va être philosophe toute sa vie — alors qu'on sait bien qu'il n'y a que de rares heures où la philosophie vit vraiment par nous, et que le reste du temps on parle de mémoire, on répète — comme un violoniste répéterait sa propre interprétation trouvée naguère, sans la vivre hic et nunc ? Il en va de même, me semble-t-il, du prêtre, du pasteur. Comment peuvent-ils promettre de prononcer chaque dimanche les paroles sacrées, exigeant la totale présence et la plénitude intérieure ? Pour que la philosophie soit, il faut que l'existence surgisse face à la transcendance et qu'elle entre en communication avec d'autres existences. Comment peut-on être philosophe ?",
+      "bbox": {
+        "x_pct": 17.301,
+        "y_pct": 11.812,
+        "w_pct": 65.294,
+        "h_pct": 20.553
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Il faut tenter diverses réponses.",
+      "bbox": {
+        "x_pct": 20.709,
+        "y_pct": 34.205,
+        "w_pct": 31.612,
+        "h_pct": 2.148
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quant à l'objet, la philosophie perfectionne, sinon ses réponses, du moins ses interrogations. Elle élucide — sans les réduire — les mystères essentiels de la condition humaine, c'est-à-dire ceux sans lesquels la condition humaine serait détruite. Elle s'efforce de les faire admettre, et même de les faire aimer, en tant qu'ils sont la condition nécessaire de la liberté. Elle s'efforce aussi d'en tirer les conséquences théoriques, pratiques et religieuses, en déployant devant la conscience l'espace des possibles qu'ils préservent. Dans la pensée moderne, en particulier, elle exige un débat constant avec la pensée scientifique en vue d'éclairer la nature, les pouvoirs et les limites de celle-ci. Un tel débat devient d'autant plus nécessaire lorsque la pensée scientifique, à travers les superstitions envahissantes des demi-savants, se fait impérialiste et totalitaire, et risque de faire oublier que seuls des êtres libres sont capables de science. En effet, la recherche objective de la vérité implique une conscience pour qui la vérité est une valeur, et une valeur préférée à toute autre. Seul un sujet libre est capable d'une telle préférence. Lorsque l'enthousiasme scientifique pousse le « savant » à faire du sujet lui-même un phénomène comme les autres, inséré comme les autres dans le déterminisme physique, biologique et social, c'est la science elle-même qui perd la racine qui la fait vivre : car cette racine est liberté.",
+      "bbox": {
+        "x_pct": 17.22,
+        "y_pct": 36.085,
+        "w_pct": 65.27,
+        "h_pct": 37.687
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La philosophie se voit amenée aussi à poser autrement ses problèmes à cause du double fait de l'accélération de l'histoire et de la prise de conscience, par l'homme, de son historicité, celle de son être, de ses œuvres et de toute société. La réflexion sur le temps, sur la condition temporelle, devient de plus en plus centrale quand l'écoulement historique risque davantage d'emporter dans son relativisme absolu toutes les valeurs prétendues jadis éternelles, et de se vider ainsi lui-même de son sens et de sa raison d'être. Car si rien",
+      "bbox": {
+        "x_pct": 17.268,
+        "y_pct": 73.943,
+        "w_pct": 65.165,
+        "h_pct": 12.342
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text transcriptions were heavily truncated/corrupted.",
+    "Page header at top was labeled incorrectly as text."
+  ],
+  "doc_id": "390",
+  "page": 3,
+  "elapsed_seconds": 6.0,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

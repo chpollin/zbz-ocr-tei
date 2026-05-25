@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "zb_paragraph",
+      "text": "154 L'EXISTENCE",
+      "bbox": {
+        "x_pct": 12.8,
+        "y_pct": 85.0,
+        "w_pct": 74.0,
+        "h_pct": 10.0
+      },
+      "changed": true,
+      "change_reason": "Page header and number identified as page_header/page_footer."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il n'y a plus autour de moi que des séries de rapports s'appuyant les uns sur les autres, mais se perdant finalement dans le néant. Nulle part un point d'appui, qui tienne par lui-même, qui tienne seul. C'est à ce moment que mon angoisse se distingue de l'infini des rapports flottants dans le vide et s'oppose à eux. Le lieu de mon angoisse n'est plus un point de l'espace indéterminé; ce n'est plus un lieu qui puisse être échangé contre un autre, ce n'est plus un anneau de la chaîne des rapports. Je trouve là une source première.",
+      "bbox": {
+        "x_pct": 12.605,
+        "y_pct": 12.841,
+        "w_pct": 75.949,
+        "h_pct": 28.437
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction and removed garbage character artifacts."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il ne suffirait pas de dire que le noyau substantiel vers lequel m'a rejeté mon échec à saisir le monde, et auquel je me cramponne maintenant, c'est le moi. Car le moi, je peux aussi le considérer comme un anneau de la chaîne, comme un objet dans l'infinité des objets. C'est ce qui, dans le moi, ne pourra jamais devenir objet, ni pour autrui, ni pour moi-même. C'est ce que Jaspers, après Kierkegaard, appelle l'existence.",
+      "bbox": {
+        "x_pct": 12.651,
+        "y_pct": 40.925,
+        "w_pct": 75.798,
+        "h_pct": 22.908
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'existence n'est pas pour moi quelque chose de moi qui est. Car ce qui est pour moi lorsque j'en constate l'être, devient un objet. L'existence est, quand elle est, absolument. C'est pourquoi lorsque Jaspers parle d'elle, et qu'il doit se placer sur le plan du langage, c'est-à-dire sur le plan des objets, il ne dit pas « existence », mais « existence possible » (mögliche Existenz). Car ce qui est pour moi qui regarde, c'est une possibilité d'exister. Si j'existe, je ne le constate pas.",
+      "bbox": {
+        "x_pct": 12.5,
+        "y_pct": 63.994,
+        "w_pct": 76.069,
+        "h_pct": 25.71
+      },
+      "changed": true,
+      "change_reason": "Corrected text extraction and removed footnote markers/artifacts."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original extraction had corrupted character sequences.",
+    "Page number and running head at top of page were incorrectly labeled as paragraph text.",
+    "Footnote markers were incorrectly included in the text block extraction."
+  ],
+  "doc_id": "20",
+  "page": 156,
+  "elapsed_seconds": 4.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

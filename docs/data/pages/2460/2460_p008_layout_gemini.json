@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "alors qu'il s'actualise en revanche tout au long du temps. Pour les protestants, c'était la pureté toute spirituelle de leur offrande qui venait s'engluer dans cette corbeille, et aucun plaisir d'expérience fraternelle au niveau social ne pouvait justifier un tel mélange. Les uns et les autres perdaient la sorte de réalité propre à leur foi confessionnelle. Et le christianisme tout entier y perdait l'efficace d'une opposition irréductible, avec sa portée transcendante.",
+      "bbox": {
+        "x_pct": 11.681,
+        "y_pct": 8.246,
+        "w_pct": 77.479,
+        "h_pct": 13.97
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR recognition accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ici nous sommes en pleine métaphysique: il s'agit non de conventions sociales, de rites, mais d'être et d'absolu. Quand des protestants s'indignent contre le fait que l'Eglise catholique se refuse à admettre le divorce, ils méconnaissent l'être du sacrement du mariage, dont, avec la meilleure volonté du monde, les catholiques, le voudraient-ils, ne peuvent pas se libérer. Quand les catholiques reprochent aux protestants de céder au laxisme de l'époque, ils méconnaissent l'exigence absolue de rectitude hic et nunc, incompatible avec le maintien apparent d'une union défunte. Un compromis entre les uns et les autres permettrait sans doute un modus vivendi plus commode, mais se ferait à la fois aux dépens de l'être et de l'exigence absolue.",
+      "bbox": {
+        "x_pct": 11.729,
+        "y_pct": 22.06,
+        "w_pct": 77.467,
+        "h_pct": 22.522
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR recognition accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quand un célèbre théologien qui se croit catholique prétend exiger de son Eglise qu'elle lui donne le droit de parler en son nom, je pense qu'il devrait se reconnaître protestant, - tout comme lorsqu'il tire argument de la date d'un dogme pour en contester la vérité. Pourquoi ne serait-il pas protestant? - D'autre part, beaucoup des reproches que des protestants - et parfois des catholiques - adressent au pape actuel concernent des prises de position auxquelles l'Eglise catholique ne saurait renoncer sans se renier elle-même. Ne peut-on pas accepter que le pape soit catholique?",
+      "bbox": {
+        "x_pct": 11.441,
+        "y_pct": 43.853,
+        "w_pct": 77.671,
+        "h_pct": 16.547
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR recognition accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les tentatives oecuméniques faites pour venir à bout du «scandale des frères séparés» me paraissent souvent plus profanes que chrétiennes. On essaye de «se rencontrer à mi-chemin», de se faire «des concessions» équilibrées, de pratiquer «fraternité et ouverture». Mais s'agira-t-il finalement de théologie oecuménique - ou de laïcisation?",
+      "bbox": {
+        "x_pct": 11.645,
+        "y_pct": 59.773,
+        "w_pct": 77.395,
+        "h_pct": 10.548
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR recognition accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne suis pas chrétienne, mais j'aime que les chrétiens soient chrétiens, - les catholiques catholiques, les protestants protestants. Je crois que les diverses confessions chrétiennes, - comme aussi l'Eglise d'Orient avec son épanouissement en profondeur du dogme trinitaire, dont je n'ai rien dit ici - constituent ensemble, à travers leurs oppositions inconciliables, la richesse vivante du christianisme, et qu'ensemble elles préservent, à travers leurs efforts de connaissance, le Dieu inconnu.",
+      "bbox": {
+        "x_pct": 11.561,
+        "y_pct": 69.93,
+        "w_pct": 77.479,
+        "h_pct": 14.041
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved OCR recognition accuracy."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "140",
+      "bbox": {
+        "x_pct": 11.75,
+        "y_pct": 88.0,
+        "w_pct": 3.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original OCR was severely truncated/incomplete for every paragraph block.",
+    "Page number at the bottom was not initially captured and was mislabeled as text by absence."
+  ],
+  "doc_id": "2460",
+  "page": 8,
+  "elapsed_seconds": 6.17,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

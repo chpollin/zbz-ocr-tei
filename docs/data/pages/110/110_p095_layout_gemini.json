@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "3 Paradoxe intrinsèque de la notion de forme",
+      "bbox": {
+        "x_pct": 17.742,
+        "y_pct": 13.311,
+        "w_pct": 53.191,
+        "h_pct": 2.635
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce n'est pas malgré cette contradiction que la forme est une notion cohérente, mais par elle. La forme n'est pas autre chose que le nom donné à cette contradiction, là où cette dernière est réalisée. C'est le nom donné à l'actualisation en tant qu'unité de ce qui est différencié spatialement, de ce qui est partiel, limité, déterminé, fini, soumis au changement. La forme est une victoire paradoxale. Elle isole un être partiel, limité, déterminé, fini, variable, mais par son existence même elle fait de l'être partiel un tout, de l'être limité un être complet, de l'être déterminé un être inépuisable, de l'être fini un être absolu, de l'être variable un être définitif. Tout en restant inséparable d'une conception spatiale, en impliquant la délimitation d'un «dedans» par opposition à un «dehors», la forme abolit l'espace en tant qu'extériorité au sein de ce «dedans», elle détermine un morceau d'espace qui échappe aux caractéristiques spatiales et même qui les défie, — et elle abolit du même coup l'espace en tant qu'extériorité du «dehors»: en effet l'espace du «dedans» est à tel point arraché par la forme aux caractéristiques de la spatialité qu'il ignore, comme totalement étranger à sa nature, l'espace brut ambiant. Si bien que la forme fait d'un morceau d'espace un dedans sans dehors, donc un tout. On peut illustrer ce qui précède par l'exemple d'un tableau ou d'une statue qui s'emparent d'un morceau d'espace de telle sorte que ses caractéristiques spatiales (divisibilité, homogénéité, extériorité réciproque des parties) sont intégralement abolies, si bien qu'il se trouve retranché de l'ensemble de l'espace, et non baigné et entouré par lui. Mais qu'on ne s'y trompe pas: ce n'est là qu'un exemple, qu'une illustration. En réalité, j'entends ici par «espace» quelque chose de beaucoup plus général: l'ensemble du plan sur lequel la forme s'actualise, quel que soit d'ailleurs celui-ci. Par exemple, la forme musicale s'empare d'une partie d'un espace qui est le temps; la forme logique s'empare",
+      "bbox": {
+        "x_pct": 10.058,
+        "y_pct": 16.856,
+        "w_pct": 68.594,
+        "h_pct": 74.453
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for full coverage"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "LA FORME POUR L'HOMME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 1.0,
+        "w_pct": 21.666,
+        "h_pct": 2.666
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page header"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "93",
+      "bbox": {
+        "x_pct": 75.833,
+        "y_pct": 95.0,
+        "w_pct": 2.166,
+        "h_pct": 2.333
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text box cut off content",
+    "Missing page header",
+    "Missing page number"
+  ],
+  "doc_id": "110",
+  "page": 95,
+  "elapsed_seconds": 6.04,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected text content for full coverage": 1,
+    "ADDED": 2
+  }
+}

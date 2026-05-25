@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Chine, les usines, les prisons, les parlements, les églises, les laboratoires, les journaux et l’âme de chacun d’entre nous. Partout des hommes, dont la jouissance des libertés a émoussé le sens de la liberté, s’ingénient à préparer, par la confusion des idées et grâce à la complicité de la peur, les voies de la servitude. Partout d’autres hommes, jusqu’ici asservis par la misère, l’ignorance ou le travail servile, mettent la civilisation humaniste au pied du mur. L’heure de vérité semble proche. Ces valeurs proclamées au cours des siècles et des millénaires, étaient-ce des mots ou des promesses? Elles vont s’incarner dans les structures politiques et sociales ou périr.",
+      "bbox": {
+        "x_pct": 22.731,
+        "y_pct": 11.507,
+        "w_pct": 66.068,
+        "h_pct": 42.593
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Comment ne pas entendre ce tintamarre, ces explosions, ces chuchotements? Comment ignorer ces propagandes, ces séductions? Comment, alors qu’il s’agit du sens même de la vie, ne pas chercher son poste de combat et ses compagnons? Il est difficile d’écrire, lorsqu’on entre dans la lutte, sur les problèmes éternels de l’homme et sur la surabondance du monde. Mais il me semble que si je n’en-",
+      "bbox": {
+        "x_pct": 22.694,
+        "y_pct": 53.897,
+        "w_pct": 66.177,
+        "h_pct": 25.311
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated OCR text content to match the visible text accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "84",
+      "bbox": {
+        "x_pct": 22.8,
+        "y_pct": 82.5,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number and labeled as page_footer."
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Text content in second region was truncated.",
+    "Page number at bottom was missing from initial detection."
+  ],
+  "doc_id": "2260",
+  "page": 84,
+  "elapsed_seconds": 3.95,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

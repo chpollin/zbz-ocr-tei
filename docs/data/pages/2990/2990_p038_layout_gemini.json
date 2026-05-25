@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "Welt und Geschichte",
+      "bbox": {
+        "x_pct": 9.387,
+        "y_pct": 3.738,
+        "w_pct": 19.344,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "Identified running page header"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "45",
+      "bbox": {
+        "x_pct": 87.037,
+        "y_pct": 3.738,
+        "w_pct": 2.58,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "Identified page number"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "gäbe phänomenal einen ersten Augenblick, dann sage ich, daß man da die Grenze der Denkbarkeit überschritten hat. Warum gibt es keinen Augenblick vorher? Wie kann man den Augenblick davor vermeiden? Man kann sagen, die Augenblicke werden zusammen mit der Welt geboren. Aber was heißt „zusammen mit der Welt“? Da gebraucht man schon die Zeit, als wäre sie eine Wirklichkeit, und keine Form apriori, die die Bedingung der Erfahrung ist und nicht aus ihr abgeleitet wird.",
+      "bbox": {
+        "x_pct": 9.411,
+        "y_pct": 7.13,
+        "w_pct": 80.245,
+        "h_pct": 14.334
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation in extracted content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hier geschieht ein Scheitern, das vielleicht nicht zu vermeiden ist. Vielleicht hat dieser Versuch trotzdem einen Wert, so wie manche Fallen der Logik dazu nötig sind, um diese oder jene Grenze offenzulegen. So zeigen uns manche Ausdrücke der Logik Grenzen, die wir sonst nicht sehen würden. Ich erinnere in diesem Kontext an etwas, das Jaspers mehrmals gesagt und geschrieben hat, nämlich daß man in den Tiefen aller großen Philosophien am Ende lauter Tautologien, Zirkel oder Widersprüche trifft. Das habe ich selbst geprüft, und es stimmt. Im Eigentlich ist das Tiefe, welches die Philosophien ausdrücken wollen, nur durch Fehler der Logik auszudrücken, die gerade diese letzte Tiefe zeigen, also durch Tautologien, Zirkel und Widersprüche.",
+      "bbox": {
+        "x_pct": 9.534,
+        "y_pct": 20.97,
+        "w_pct": 80.074,
+        "h_pct": 22.064
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation in extracted content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun kommen wir zurück zum Menschen, der nicht allein dasteht, sondern mit seiner Welt und mit seiner Geschichte. Wodurch kommt er dazu? Er arbeitet an den Widerständen, die die Wirklichkeit ihm entgegenstellt. Diese Widerstände sind Bedingungen der Wirklichkeit, Zeichen der Wirklichkeit, Prüfsteine der Wirklichkeit und ihrer Echtheit. Es gibt also für den Menschen nicht nur eine Vorfindlichkeit der Zeit, der Geschichte und der Welt. Es gibt sozusagen eine Verpflichtung zur Wirklichkeit, gegen das Schwärmen. Jaspers sprach sehr oft gegen das Schwärmen, das für ihn ein besonderes Zeichen der Unechtheit war - gegen das Schwärmen und gegen die Gefälligkeit.",
+      "bbox": {
+        "x_pct": 9.411,
+        "y_pct": 42.656,
+        "w_pct": 80.0,
+        "h_pct": 20.033
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation in extracted content"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Gefälligkeit gehörte für ihn zu dieser Schwärmerei. Man soll unbedingt die Gefälligkeit vermeiden. Warum? Weil die Gefälligkeit wieder auf der Seite der Abstraktheit, der Nachgiebigkeit gegen das, was nicht wirklich ist, steht. Die Gefälligkeit entrealisiert die Wirklichkeit. Es handelt sich also bei Jaspers - und ich glaube überhaupt beim echten philosophischen Denken - um eine bestimmte Buchstäblichkeit, insofern Buchstäblichkeit der Allgemeinheit des „überhaupt“ entgegengesetzt ist. Die Chiffreschrift war für Jaspers eine existentielle Buchstäblichkeit, eine bestimmte Übertragung des Genauen in eine andere Tiefe des Denkens und der Wirklichkeit. Man sagt nicht irgendetwas, sondern man spricht sehr genau, und ist da existentiell. Aber damit diese Operation gelingt, muß sie ganz streng sein.",
+      "bbox": {
+        "x_pct": 9.239,
+        "y_pct": 62.253,
+        "w_pct": 80.209,
+        "h_pct": 23.742
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation in extracted content"
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Docling extracted text fragments were truncated compared to the actual visible content.",
+    "Page header and page number were misclassified as text.",
+    "Multiple layout boxes were merged into larger, imprecise chunks instead of mapping to semantic paragraphs."
+  ],
+  "doc_id": "2990",
+  "page": 38,
+  "elapsed_seconds": 6.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

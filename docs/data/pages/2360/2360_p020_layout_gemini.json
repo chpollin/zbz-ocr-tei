@@ -1,0 +1,154 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 38 -",
+      "bbox": {
+        "x_pct": 32.55,
+        "y_pct": 74.0,
+        "w_pct": 5.4,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Corrected page number to page_header / _filter."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 39 -",
+      "bbox": {
+        "x_pct": 63.1,
+        "y_pct": 74.0,
+        "w_pct": 5.4,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Corrected page number to page_header / _filter."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 9.0,
+        "y_pct": 25.5,
+        "w_pct": 11.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Labeled author name/section header as zb_heading."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 55.0,
+        "y_pct": 59.3,
+        "w_pct": 11.5,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Labeled author name/section header as zb_heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "des Fortachritts und der anhaltenden Steigerung Die Fragc, wie weit die uns heute Btellen_ der",
+      "bbox": {
+        "x_pct": 9.165,
+        "y_pct": 13.228,
+        "w_pct": 36.906,
+        "h_pct": 8.208
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Frage mehr berechtigt; ist aber noch verfruhl Denn , Sie wir kGnnen doch nicht f\u0007\u0007r eine Zielrichtung",
+      "bbox": {
+        "x_pct": 8.379,
+        "y_pct": 29.234,
+        "w_pct": 37.79,
+        "h_pct": 60.41
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Burger Mehr und mehr @n Boden gcwinnt. Ich bin \u0007\u0007ber_ Henn ungere solcher ielsetzungen bekusst wird g",
+      "bbox": {
+        "x_pct": 54.882,
+        "y_pct": 14.131,
+        "w_pct": 36.896,
+        "h_pct": 17.51
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Nationalrat Rudolf Reichling",
+      "bbox": {
+        "x_pct": 54.941,
+        "y_pct": 35.609,
+        "w_pct": 21.0,
+        "h_pct": 2.326
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for section header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Rad der %eit zuruckdrehen Auf die Frage \"Nas ich nicht tun?\" w\u0007\u0007ssten wir alle besser eine geben Jede",
+      "bbox": {
+        "x_pct": 54.941,
+        "y_pct": 39.22,
+        "w_pct": 36.974,
+        "h_pct": 15.636
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es ein Konzept joner Eungen erarbeiten die lcdiglich elnem boPergonenkroio von Hutzen wir brauchen i",
+      "bbox": {
+        "x_pct": 55.236,
+        "y_pct": 62.613,
+        "w_pct": 36.876,
+        "h_pct": 15.267
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vergleiche mlt der Politik lasaen Auch Nenn nicht alle Schveizer dle gleichen polltlIdeen und Absich",
+      "bbox": {
+        "x_pct": 55.177,
+        "y_pct": 79.932,
+        "w_pct": 35.982,
+        "h_pct": 9.713
+      },
+      "changed": false
+    }
+  ],
+  "score": 65,
+  "num_corrections": 7,
+  "issues": [
+    "Page numbers at top were not labeled.",
+    "Author names labeled as text rather than section_header.",
+    "Incorrect OCR transcription for Nationalrat Rudolf Reichling.",
+    "Multiple layout regions misidentified."
+  ],
+  "doc_id": "2360",
+  "page": 20,
+  "elapsed_seconds": 6.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

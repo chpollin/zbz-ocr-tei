@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 119",
+      "bbox": {
+        "x_pct": 38.39,
+        "y_pct": 85.5,
+        "w_pct": 52.32,
+        "h_pct": 2.25
+      },
+      "changed": true,
+      "change_reason": "Header and page number identified as page_header/page_footer for exclusion."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "n'avait visage; occupait toute ma vie. Je continuais à enchaîner les jours avec application, je travaillais consciencieusement à vivre, et j'y réussissais passablement. J'ai fini l'école, je suis entrée à l'université; cela m'aidait. Seulement, avec le temps, vivre devenait plus difficile et parfois la fatigue me prenait. Je me mis à appeler je ne savais quel secours, tout en me démontrant à moi-même qu'il était impossible.",
+      "bbox": {
+        "x_pct": 10.041,
+        "y_pct": 12.949,
+        "w_pct": 80.676,
+        "h_pct": 20.35
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Depuis cette période de vertigineuse disponibilité, je sais que j'aurais pu être n'importe quoi. La page blanche n'est pas plus docile sous la plume que je ne l'étais alors devant le destin. J'aurais pu être n'importe quoi. J'aurais pu pousser des racines au bord d'un champ, me tordre, me durcir, et devenir un pommier rabougri. — J'aurais pu me défaire dans l'eau d'une rigole, le long de la chaussée, et emporter un peu plus loin une pelure de banane. J'aurais pu vieillir en un jour entre un chat et la cage d'un canari. J'aurais pu être la femme de n'importe quel homme. J'aurais pu être une fille, immobile sous le réverbère. Tu te rappelles, Marc, celle que nous avons vue un soir à Paris, perchée sur le bord du trottoir, avec un grand col de fourrure blanche et une jambe de bois ? Tu te rappelles, l'horreur m'a prise avec un besoin de fuir, et je me suis mise à chanter tout bas une chanson de berger de chez nous. J'aurais pu être cette fille. O Dieu, comment nous jugeras-tu ?",
+      "bbox": {
+        "x_pct": 10.23,
+        "y_pct": 40.482,
+        "w_pct": 80.946,
+        "h_pct": 45.718
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Initial OCR text for paragraphs was truncated.",
+    "Header and page number were missing from the provided region list."
+  ],
+  "doc_id": "40",
+  "page": 117,
+  "elapsed_seconds": 4.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

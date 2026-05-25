@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch Existenz",
+      "bbox": {
+        "x_pct": 14.355,
+        "y_pct": 5.228,
+        "w_pct": 24.54,
+        "h_pct": 6.328
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nun, versuchen wir zu verstehen, was bei Jaspers das Wort Existenz bedeutet. Wie alle Worte bei Jaspers, wie alle philosophischen Worte bei den großen Philosophen überhaupt, wird Existenz nicht dadurch klar, daß wir eine Definition davon geben. Wir müssen in der Übung verstehen lernen, wie das Wort gebraucht wird. Das Wort »Existenz« wird dann gebraucht, wenn ein menschliches Subjekt in einer konkreten Situation durch einen Akt, eine Handlung, eine Entscheidung seine Freiheit aktualisiert. Oder, wenn Sie wollen: »Existenz« bezeichnet den Ursprung, die tiefste Quelle dieser Freiheit, die einen bestimmten Entschluß möglich macht. Also bezeichnet das Wort »Existenz« nicht die freie Handlung selbst, so wie man sie bei jemandem feststellen oder beschreiben oder objektiv festlegen kann (bei der und der Gelegenheit hat der und der das und das getan), sondern: es geht um den Entschluß, der hinter dieser Handlung wirksam war. Existenz ist sozusagen die sich aktualisierende Freiheit, hic et nunc, in unserer Welt. Und das bedeutet, daß die Entscheidung nicht in der Luft schwebt, sondern daß sie, unter den gegebenen Umständen, in diese Umstände eingreift, obgleich sie selbst nie ein Umstand, nie ein Faktum, nie ein empirisch Gegebenes ist. Deshalb habe ich diesen Titel gewählt: »Existenz in der empirischen Wirklichkeit«. Existenz ist in der empirischen Wirklichkeit, aber Existenz ist nicht empirische Wirklichkeit. Das bedeutet, daß Existenz sozusagen die Ebene der gegebenen Fakten durchkreuzt oder durchbohrt, zu etwas hin, in Richtung auf etwas, oder etwas gegenüber, was Jaspers Transzendenz nennt.",
+      "bbox": {
+        "x_pct": 14.056,
+        "y_pct": 18.546,
+        "w_pct": 73.581,
+        "h_pct": 58.176
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in the original input."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Und was heißt nun »Transzendenz«? (Denn wenn man sie nicht auch in die Übung mit hineinnimmt, dann versteht man »Existenz« ebenfalls nicht.) Wir sollen nicht vorschnell »Transzendenz« durch »Gott« ersetzen. Denn dann stellen wir uns vor, daß wir Gott als Zeugen der Existenz haben. Transzendenz ist kein Zeuge, sondern es bedeutet, daß da, wo Existenz zu einer Ent-",
+      "bbox": {
+        "x_pct": 14.331,
+        "y_pct": 76.99,
+        "w_pct": 73.089,
+        "h_pct": 13.642
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated in the original input and bbox coordinates were slightly off."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "16",
+      "bbox": {
+        "x_pct": 14.864,
+        "y_pct": 92.518,
+        "w_pct": 2.21,
+        "h_pct": 2.502
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kiesov Subito / WIG / des. für Satzbild / S. 16 / 15.05.2023",
+      "bbox": {
+        "x_pct": 14.331,
+        "y_pct": 97.23,
+        "w_pct": 55.492,
+        "h_pct": 1.488
+      },
+      "changed": true,
+      "change_reason": "Added missing region for printer/processing notes at the bottom."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original JSON truncated long text blocks.",
+    "Page number at the bottom was missing.",
+    "Printer/processing footer was missing."
+  ],
+  "doc_id": "2630",
+  "page": 2,
+  "elapsed_seconds": 6.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

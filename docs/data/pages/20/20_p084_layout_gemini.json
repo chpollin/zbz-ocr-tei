@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "82 LE TEMPS EST LE MOUVEMENT DIALECTIQUE MÊME",
+      "bbox": {
+        "x_pct": 146.0,
+        "y_pct": 82.0,
+        "w_pct": 72.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified as running page header, should be _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès le début, le mouvement entre l'être et le non-être, la première synthèse, c'est le devenir. Et le devenir est-il concevable en dehors du temps?",
+      "bbox": {
+        "x_pct": 140.73,
+        "y_pct": 124.91,
+        "w_pct": 761.53,
+        "h_pct": 105.15
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il serait, au sens de Hegel, plus juste de dire : le devenir crée le temps. Car le temps n'est pas un cadre vide : il n'y a pas pour Hegel de généralités indifférentes, indéfinies, dans lesquelles ou par lesquelles agirait la force créatrice. S'il y en avait, quelque chose d'amorphe subsisterait autour de la forme du monde, ce qui est impossible dans le système de Hegel, dans le monde de Hegel, comme c'est impossible dans une œuvre d'art. De même que l'espace, le temps n'existe que par un acte qui le remplit. Le temps vide n'est qu'une abstraction. Le temps conçu comme antérieur ou postérieur à tout devenir est une représentation fausse, tout irréelle. Le néant n'est pas dans le temps. L'être non plus, car la durée sans changement, donc sans non-être, n'est pas du temps. Le temps est donc le devenir, le mouvement dialectique lui-même.",
+      "bbox": {
+        "x_pct": 140.73,
+        "y_pct": 227.17,
+        "w_pct": 761.53,
+        "h_pct": 438.51
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans l'espace, les contraires subsistent avec indifférence, les uns à côté des autres. Cette juxtaposition ne signifie pas synthèse, et c'est pourquoi elle doit être détruite : les contraires doivent devenir exclusifs les uns des autres, l'un ne peut devenir réel que par la disparition de l'autre. Cette « négativité », c'est le temps.",
+      "bbox": {
+        "x_pct": 140.73,
+        "y_pct": 663.2,
+        "w_pct": 761.53,
+        "h_pct": 180.74
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il a beau être créé par le devenir concret, il n'en reste pas moins abstrait et indéfini. Car il est",
+      "bbox": {
+        "x_pct": 140.73,
+        "y_pct": 842.04,
+        "w_pct": 761.53,
+        "h_pct": 53.1
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "One missing region for the running header was identified and tagged as _filter."
+  ],
+  "doc_id": "20",
+  "page": 84,
+  "elapsed_seconds": 6.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

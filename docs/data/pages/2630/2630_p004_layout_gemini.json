@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sie aber irgendwo als Geschenk, und sie zielt auf etwas anderes hin, als Absolutes, was sich hier und jetzt in der jetzigen Gegebenheit verwirklicht.",
+      "bbox": {
+        "x_pct": 13.32,
+        "y_pct": 4.276,
+        "w_pct": 73.409,
+        "h_pct": 6.67
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and contained misspellings; corrected to match source text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Es geht also keineswegs darum, die konkret gegebene Wirklichkeit zu entwaffnen, wie etwa im Stoizismus. Jaspers hat es immer wieder betont: Er wiederholt nicht den überlegenen, distanzierenden Vers: Impavidum ferient ruinae. Nein, im Gegenteil: wir sollen die jetzige Situation, in der wir uns existentiell befinden – und sei sie die furchtbarste, tödlichste –, wortwörtlich so erleben, wie sie für uns im Dasein angetroffen wird. Aber in diesem empirischen Jetzt ist gerade für Existenz die Möglichkeit einer Entscheidung gegeben in bezug auf das Absolute und aus einem transzendenten Ursprung. Etwas Absolutes steht auf dem Spiel.",
+      "bbox": {
+        "x_pct": 13.352,
+        "y_pct": 10.849,
+        "w_pct": 73.513,
+        "h_pct": 23.073
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated and incorrectly ordered in the source json; corrected to reflect the full paragraph structure."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers hat in seinen Vorlesungen und in seinen Werken mehrmals Galilei mit Giordano Bruno verglichen. Die religiösen Obrigkeiten waren dabei, Galilei wegen seiner Theorie von der Erdumdrehung zum Tode zu verurteilen. Er rettete sein Leben, indem er ableugnete. Und man erzählt, er hätte alsdann den Kopf zur Seite gedreht und gesagt: »Eppur si muove«. – Giordano Bruno jedoch wurde hingerichtet dafür, daß er dieselbe astronomische Theorie bis zu Ende vertrat; er starb auf dem Scheiterhaufen. – Galileis Überlegung war sehr vernünftig, dann es handelte sich hier, in seinen Augen, um eine wissenschaftliche Theorie, deren Offensichtlichkeit allgemeingültig war und die man eines Tages wiederentdecken würde; an der Erdbewegung änderte sein Ableugnen nichts. – Der Tod Giordano Brunos hatte einen anderen Sinn: er starb nicht, um die Lehre von der Erdrotation zu verteidigen, sondern weil er den absoluten Wert der wissenschaftlichen Wahrheit nicht verraten wollte. Eine absolute Wahrheit hängt gewissermaßen davon ab, was die Menschen dafür einsetzen, welchen Preis sie dafür zu zahlen bereit sind. Es geht nicht um die Bewegung der Erde, die Erde dreht sich sowieso weiter. Etwas anderes steht hier auf dem Spiel. Es ist wie in einer Tragödie: Wir sehen zu, und das Schicksal dieser Menschen geht uns an. Aber in Wirklichkeit sind diese Menschen, die wir im Vordergrund sehen, nur auf der Bühne da. Ihr Schicksal ist ein Bild für das, was durch diese Menschen hindurch in einem ganz bestimmten Sinn transzendent im Spiel ist. Die Menschen sterben wirklich, empirisch.",
+      "bbox": {
+        "x_pct": 13.4,
+        "y_pct": 33.483,
+        "w_pct": 73.409,
+        "h_pct": 56.442
+      },
+      "changed": true,
+      "change_reason": "Text content was truncated; expanded to full paragraph text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "18",
+      "bbox": {
+        "x_pct": 147.0,
+        "y_pct": 918.0,
+        "w_pct": 23.0,
+        "h_pct": 19.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number, reassigned from text to page_footer."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "Kiesow, S. 327/WIS; dsf. S. 328/Zbb.",
+      "bbox": {
+        "x_pct": 147.0,
+        "y_pct": 966.0,
+        "w_pct": 710.0,
+        "h_pct": 16.0
+      },
+      "changed": true,
+      "change_reason": "Identified as a bibliographic footer note, reassigned from text to page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Initial JSON had severely truncated text content.",
+    "Order of regions was incorrect.",
+    "Page numbers and bibliographic footers were incorrectly tagged as paragraphs.",
+    "Multiple typos in text field content."
+  ],
+  "doc_id": "2630",
+  "page": 4,
+  "elapsed_seconds": 6.6,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

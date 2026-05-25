@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mier plan. Ce est plus du tout lhomme importe ; sa volonté propre, comme aussi le souci de son propr",
+      "bbox": {
+        "x_pct": 9.932,
+        "y_pct": 5.681,
+        "w_pct": 84.512,
+        "h_pct": 42.074
+      },
+      "changed": false
+    },
+    {
+      "label": "caption",
+      "zbz_tag": "caption",
+      "text": "(Introduction à la philosophie; traduction française 1ère édition, p. 47-48)",
+      "bbox": {
+        "x_pct": 52.751,
+        "y_pct": 47.498,
+        "w_pct": 41.423,
+        "h_pct": 5.861
+      },
+      "changed": true,
+      "change_reason": "Bibliographic references acting as source citations are identified as captions."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DE LA VÉRITÉ",
+      "bbox": {
+        "x_pct": 10.068,
+        "y_pct": 56.615,
+        "w_pct": 21.192,
+        "h_pct": 2.228
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "28 L'englobant",
+      "bbox": {
+        "x_pct": 10.027,
+        "y_pct": 60.951,
+        "w_pct": 20.908,
+        "h_pct": 2.605
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR artifact '0' at the start of the heading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout ce devient objet pour moi se trouve enclos dans une totalité relative du monde où nous vivons. Cette totalité, nous la voyons, nous y sommes en sécurité. Elle nous cerne, pour ainsi dire, d'un horizon de savoir.",
+      "bbox": {
+        "x_pct": 9.851,
+        "y_pct": 64.379,
+        "w_pct": 83.916,
+        "h_pct": 7.918
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for better semantic accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Tout horizon nous enferme ; il nous empêche de voir au-delà. C'est pourquoi nous avons le besoin de dépasser chaque horizon, quel qu'il soit. Mais quel que soit notre point d'arrivée, l'horizon qui cerne toujours ce que nous avons pu atteindre se déplace avec nous. Il se trouve toujours là, à nouveau, et nous force, parce qu'il n'est qu'horizon et non achèvement, à renoncer à tout séjour définitif. Nous n'obtenons jamais un point de vue à partir duquel s'abolirait l'horizon limitatif, ce qui permettrait dès lors d'embrasser du regard une totalité qu'aucun horizon n'enfermerait et qui",
+      "bbox": {
+        "x_pct": 9.797,
+        "y_pct": 71.722,
+        "w_pct": 84.146,
+        "h_pct": 17.935
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription for full paragraph coverage."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "88",
+      "bbox": {
+        "x_pct": 10.229,
+        "y_pct": 91.365,
+        "w_pct": 2.656,
+        "h_pct": 2.454
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to filter."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "OCR errors in paragraph segments",
+    "Caption label misidentified as text",
+    "Page number missing from initial detection"
+  ],
+  "doc_id": "1520",
+  "page": 94,
+  "elapsed_seconds": 5.3,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

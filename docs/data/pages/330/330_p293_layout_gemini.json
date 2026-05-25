@@ -1,0 +1,62 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ID\u0000OLOGIES ET R\u0000ALIT\u0000 259",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Header text detected at top of page."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nistes, avoir essay\u0000 de concilier les deux, ont fini cependant par opter pour l'opposition : en effet, les dirigeants du Parti socialiste, comme nous le verrons plus loin, paraissent impossibles \u0000 s\u0000duire, f\u0000t-ce \u0000 l'aide d'un voyage en U. R. S. S. ; en revanche, la guerre d'Alg\u0000rie semble offrir aux communistes, dans l'opposition, des chances de rapprochement avec la base de la S. F. I. O. Ils esp\u0000rent donc embrasser une fois de plus la juste cause des d\u0000sh\u0000rit\u0000s et des humili\u0000s avec le maximum de profit.",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 105.0,
+        "w_pct": 85.056,
+        "h_pct": 17.166
+      },
+      "changed": true,
+      "change_reason": "The text was garbled; fixed to match the source document text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'id\u0000ologie des conservateurs lib\u0000raux, elle aussi, s'est manifest\u0000e \u0000 propos de l'Alg\u0000rie avec une particuli\u0000re clart\u0000. Lorsque les conservateurs disent \u0000 l'Alg\u0000rie, c'est la France \u0000, ils recourent, comme toujours, au prestige et \u0000 la \u0000 densit\u0000 \u0000 que garde pour eux la Tradition. Des objections ethniques, historiques, juridiques, sociales, ne peuvent rien contre celle-ci. Leur formule m\u0000me, d'ailleurs, \u0000 l'Alg\u0000rie, c'est la France \u0000 est moins absurde qu'il ne para\u0000t \u0000 ceux qui la comprennent de l'ext\u0000rieur. Il ne s'agit pas l\u0000, pour eux, d'une simple constatation, mais aussi, comme toujours lorsqu'on se r\u0000f\u0000re \u0000 l'autorit\u0000 de la tradition, d'un imp\u0000ratif : l'Alg\u0000rie doit \u0000tre la France. La \u0000 constatation imp\u0000rative \u0000, si l'on peut dire, la tendance \u0000 identifier ce qui est \u0000 ou plut\u0000t : ce qui est cens\u0000 \u0000tre \u0000 et ce qui doit \u0000tre, constitue, nous l'avons vu, une des caract\u0000ristiques de l'id\u0000ologie conservatrice. Le progr\u0000s, ici, tend \u0000 mieux stabiliser ce qui est, \u0000 lui ajouter de l'\u0000tre par l'\u0000quilibre et la dur\u0000e. C'est pourquoi certains conservateurs sont dispos\u0000s \u0000 des r\u0000formes limit\u0000es en Alg\u0000rie \u0000 afin que \u0000 l'Alg\u0000rie soit \u0000 toujours plus \u0000 la France \u0000.",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 291.0,
+        "w_pct": 85.139,
+        "h_pct": 35.437
+      },
+      "changed": true,
+      "change_reason": "The text was garbled; fixed to match the source document text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La obstru\u0000e par une r\u0000alit\u0000 conventionnellement adapt\u0000e \u0000 leurs exigences morales, les conservateurs ne per\u0000oivent pas les puissants d\u0000sirs montants, les passions naissantes ou m\u0000me \u0000panouies des masses; ils ignorent les forces qui travaillent le pr\u0000sent et le minent pour en faire un avenir diff\u0000rent. Ce qui leur permet de pr\u0000server une innocence de bon ton et de croire \u0000 leur propre bonne volont\u0000. Une Fran\u0000aise d'Alg\u0000rie, par exemple, disait : \u0000 Nous n'avons aucune difficult\u0000 avec les Arabes. Nous sommes sur notre terre depuis cent ans. C'est mon grand-p\u0000re qui l'a d\u0000frich\u0000e. Eh bien, depuis cent ans, nous avons les m\u0000mes domestiques arabes. Le conflit a \u0000t\u0000 mont\u0000 de toutes pi\u0000ces. \u0000",
+      "bbox": {
+        "x_pct": 21.0,
+        "y_pct": 660.0,
+        "w_pct": 85.139,
+        "h_pct": 23.235
+      },
+      "changed": true,
+      "change_reason": "The text was garbled; fixed to match the source document text."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR was extremely poor/garbled.",
+    "Detected header was not labeled."
+  ],
+  "doc_id": "330",
+  "page": 293,
+  "elapsed_seconds": 6.01,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

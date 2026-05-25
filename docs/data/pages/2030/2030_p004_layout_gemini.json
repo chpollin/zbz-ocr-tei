@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "l'inglobante: non passiede evidenze (come la coscienza in generale, non rale). in vivinmo 2 cui ci identifichiamo. ",
+      "bbox": {
+        "x_pct": 10.397,
+        "y_pct": 12.441,
+        "w_pct": 31.919,
+        "h_pct": 5.937
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text extraction"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Essa è origine, tramite l'evidenza eterna dell'«io sono», ma essa è oggettivabile. Se sapessi che cos'è, saprei contemporaneamente che cosa sono la verità e l'evidenza, ma allora evidenza e verità non avrebbero più alcun senso.",
+      "bbox": {
+        "x_pct": 10.558,
+        "y_pct": 18.602,
+        "w_pct": 34.905,
+        "h_pct": 7.916
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text extraction"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "COSCIENZA METODOLOGICA E IL PROBLEMA DELL'ESISTENZA",
+      "bbox": {
+        "x_pct": 55.265,
+        "y_pct": 15.871,
+        "w_pct": 21.361,
+        "h_pct": 4.67
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR formatting"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "rapporto tra scienza e filosofia",
+      "bbox": {
+        "x_pct": 55.293,
+        "y_pct": 23.918,
+        "w_pct": 15.312,
+        "h_pct": 2.955
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from corrupted OCR"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nella problematica di Jaspers non è possibile tracciare una netta tesi di fondo Jaspers sostiene che, se il filosofare sorge dall'interno stesso dell'indagine scientifica, lo stesso procedere scientifico deve però tenersi sempre aperto a una cosciente visione filosofica. Tra momento empirico e momento filosofico vi è un rapporto intrinseco. Così, secondo questa impostazione teorica, se l'empirismo imparziale (unbefangener Empirismus) porta ai confini autentici dove incomincia la riflessione filosofica, pure una coscienza",
+      "bbox": {
+        "x_pct": 55.265,
+        "y_pct": 28.008,
+        "w_pct": 35.217,
+        "h_pct": 18.865
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "nell'ultima parte riflessione metodologica. Questa è sempre presente in Allgemeine Psychopathologie assieme alle due scienze che sono più prettamente unite ad essa, come la psicologia e la medicina somatica. Secondo Jaspers, non è sufficiente arrestarsi all'osservazione psicologica ma è necessario formarsi dei concetti chiari e comunicabili che devono rappresentare la base per un ulteriore approfondimento del conoscere stesso. Senza questa riflessione filosofica, lo scienziato può cadere vittima di alcuni pregiudizi nel corso del",
+      "bbox": {
+        "x_pct": 55.227,
+        "y_pct": 54.261,
+        "w_pct": 35.161,
+        "h_pct": 20.185
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text"
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "Jaspers, Allgemeine Psychopathologie, Springer, Berlin 1965; trad. it. Psicopatologia Generale (a cura di R. Priori), il pensiero scientifico, Roma 1965.",
+      "bbox": {
+        "x_pct": 56.144,
+        "y_pct": 82.058,
+        "w_pct": 34.134,
+        "h_pct": 1.675
+      },
+      "changed": true,
+      "change_reason": "Corrected label to footnote and cleaned corrupted text"
+    }
+  ],
+  "score": 30,
+  "num_corrections": 7,
+  "issues": [
+    "Severe OCR corruption in multiple regions",
+    "Incorrect label for footnote",
+    "Section header text was misidentified by OCR engine"
+  ],
+  "doc_id": "2030",
+  "page": 4,
+  "elapsed_seconds": 6.26,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

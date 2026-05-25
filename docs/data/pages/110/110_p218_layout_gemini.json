@@ -1,0 +1,82 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "216",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 36.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number region"
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'ÊTRE ET LA FORME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 100,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Running header"
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "4. de la forme",
+      "bbox": {
+        "x_pct": 41.671,
+        "y_pct": 15.14,
+        "w_pct": 28.917,
+        "h_pct": 2.194
+      },
+      "changed": true,
+      "change_reason": "Corrected heading text"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Malgré cette   dernière  remarque;   certalns ne verront dans   nolre étude de la forme que la doctr",
+      "bbox": {
+        "x_pct": 21.509,
+        "y_pct": 18.58,
+        "w_pct": 69.044,
+        "h_pct": 46.363
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quelques æuvres, je le Panalyse basée sur la Ihéorie de la forme vient dêlre développée: Shakespeare",
+      "bbox": {
+        "x_pct": 21.394,
+        "y_pct": 67.099,
+        "w_pct": 68.583,
+        "h_pct": 7.844
+      },
+      "changed": false
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Heading text was incomplete in original JSON",
+    "Missing header/page number regions"
+  ],
+  "doc_id": "110",
+  "page": 218,
+  "elapsed_seconds": 5.11,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected heading text": 1,
+    "ADDED": 2
+  }
+}

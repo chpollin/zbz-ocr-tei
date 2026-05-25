@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "126",
+      "bbox": {
+        "x_pct": 160,
+        "y_pct": 89,
+        "w_pct": 34,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Page number must be excluded from text/paragraph analysis."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA LIBERTÉ",
+      "bbox": {
+        "x_pct": 466,
+        "y_pct": 85,
+        "w_pct": 118,
+        "h_pct": 21
+      },
+      "changed": true,
+      "change_reason": "Running header identified as page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "était fausse parce qu'on n'y trouvait jamais d'achè- vement : tout reste daus le devoir \". Les tâches 5 'imposent sont infinies, les buts inaccessibles. Enfermé de toutes parts dans le monde phénoménal, dans les contradictions insolubles, l'homme perd pied. Il reste loin de l'être. On lui prend tout. — C'est que Hegel veut donner la « réconciliation » à l'homme, toute faite; Kant, lui, n'oublie pas que l'homme est dans le temps, et que l'existence temporelle empêche toute possession et ne permet que « l'effort vers quelque chose ». L'Idée ne peut donc être donnée à l'homme comme un objet, mais imposée comme une tâche. Elle fait participer l'homme à l'achèvement, mais n'est jamais achevée. La seule joie est celle des conquêtes que l'on fait, — non du bien que l'on a. Ce n'est pas seulement en faisant tourner la philosophie autour du sujet que Kant a accompli sa révolution copernicienne; c'est aussi en détruisant la solidité du monde. Jusqu'ici nous l'avons vu limiter le domaine de l'entendement en démontrant le caractère fatalement phénoménal de la réalité objective. L'homme ne peut s'assurer ni de l'existence d'un monde indépendant de lui, ni de l'existence de Dieu. Un seul point solide reste : c'est la liberté. Sur la liberté, Kant reconstruit l'univers humain.",
+      "bbox": {
+        "x_pct": 159,
+        "y_pct": 133,
+        "w_pct": 764,
+        "h_pct": 657
+      },
+      "changed": true,
+      "change_reason": "Corrected text content which was fragmented/incomplete in original region."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La critique de la raison pure, démonstration négative, fixait les limites du savoir possible. En parlant de la critique de la raison pratique, qui est reconstructrice, je voudrais montrer quel soin Kant",
+      "bbox": {
+        "x_pct": 159,
+        "y_pct": 796,
+        "w_pct": 764,
+        "h_pct": 89
+      },
+      "changed": true,
+      "change_reason": "Additional paragraph detected."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original region mislabeled part of the page header and page number as paragraph text.",
+    "Text capture was incomplete.",
+    "Failed to identify separate logical blocks (headers vs text)."
+  ],
+  "doc_id": "20",
+  "page": 128,
+  "elapsed_seconds": 4.81,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

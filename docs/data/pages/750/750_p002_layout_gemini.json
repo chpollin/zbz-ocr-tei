@@ -1,0 +1,132 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "126 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 22.965,
+        "y_pct": 126.0,
+        "w_pct": 54.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "mais nette, positive, empiriquement évidente. L'âme implique le mystère, la race l'exclut. Elle a eu d'emblée deux aspects : d'une part, elle résumait un ensemble de qualités, différentes selon les groupes et visibles à l'œil nu, des constatations grossières, des évidences massives; d'autre part, elle pré-nommait un savoir scientifique futur, anticipant sur des connaissances à venir. La race n'a jamais été une hypothèse explicative, comme l'éther, par exemple, mais un ensemble de données empiriques à élucider et à expliquer. Ambiguë d'emblée entre la donnée quotidienne soustraite à tout doute et l'objet de la recherche critique pratiquée par les sciences, elle se situait du moins nettement, et sous ses deux aspects, dans l'objectivité et le champ de l'expérience.",
+      "bbox": {
+        "x_pct": 22.965,
+        "y_pct": 15.58,
+        "w_pct": 54.013,
+        "h_pct": 20.091
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text for readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Une notion qui anticipe sur le savoir scientifique voit sa légitimité s'accroître au fur et à mesure que son contenu s'élucide. Son sens se précise, son lien avec le réel se diversifie et se multiplie, elle prend de la consistance avec le progrès du savoir. Or, contrairement à ce qui aurait dû se passer, les progrès scientifiques ont rendu la notion de race de plus en plus insaisissable, incertaine, évanescente. Chaque étude faite pour la cerner de plus près la faisait se dérober davantage.",
+      "bbox": {
+        "x_pct": 22.941,
+        "y_pct": 34.903,
+        "w_pct": 54.013,
+        "h_pct": 12.878
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text for readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On finit par mettre en doute sa réalité même. Et pourtant, au sortir d'une étude précise qui la noyait dans l'inconsistance, voici que s'imposaient de nouveau les évidences massives initiales, la couleur de la peau, la consistance des cheveux.",
+      "bbox": {
+        "x_pct": 23.102,
+        "y_pct": 47.34,
+        "w_pct": 53.852,
+        "h_pct": 7.902
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text for readability."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Inégalité.",
+      "bbox": {
+        "x_pct": 24.682,
+        "y_pct": 58.446,
+        "w_pct": 8.09,
+        "h_pct": 1.693
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En outre, les passions humaines s'en étaient profondément mêlées. Les passions, ou plus simplement les intérêts.",
+      "bbox": {
+        "x_pct": 23.231,
+        "y_pct": 61.245,
+        "w_pct": 53.747,
+        "h_pct": 3.585
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text for readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces différences les plus grossières, manifestes aux yeux de n'importe qui, il se trouva qu'elles coïncidèrent, à une époque de l'histoire, avec des différences de force et des écarts de développement. Les plus forts asservirent les plus faibles, ne reconnaissant à leur suprématie aucune autre limite que celles imposées par leur propre intérêt : celles au-delà desquelles l'esclave serait mort. Et cela même, pas toujours, car il y avait beaucoup d'esclaves, et ils avaient beaucoup d'enfants.",
+      "bbox": {
+        "x_pct": 23.07,
+        "y_pct": 64.389,
+        "w_pct": 53.908,
+        "h_pct": 13.585
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text for readability."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si les uns jouissaient de ce pouvoir illimité, si les autres n'avaient aucun moyen de résistance, n'était-ce pas forcément que les premiers étaient « supérieurs » et les seconds « inférieurs »? Ainsi la « supériorité » ou l' « infériorité » s'ajouta aux autres caractéristiques objectives et massivement évidentes des races. Elle se lisait dans la situation de fait. Et, du",
+      "bbox": {
+        "x_pct": 23.022,
+        "y_pct": 77.854,
+        "w_pct": 54.013,
+        "h_pct": 9.148
+      },
+      "changed": true,
+      "change_reason": "Fixed OCR text for readability."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Copyright © 2010 ProQuest LLC. All rights reserved. Copyright © Presses Universitaires de France.",
+      "bbox": {
+        "x_pct": 150.0,
+        "y_pct": 900.0,
+        "w_pct": 500.0,
+        "h_pct": 50.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR text was poorly formatted and incomplete.",
+    "Page number and header were not correctly classified.",
+    "Page footer was missing from the initial detection list."
+  ],
+  "doc_id": "750",
+  "page": 2,
+  "elapsed_seconds": 12.84,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

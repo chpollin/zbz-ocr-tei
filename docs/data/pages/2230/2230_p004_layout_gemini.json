@@ -1,0 +1,78 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "- 19 -",
+      "bbox": {
+        "x_pct": 42.106,
+        "y_pct": 63.812,
+        "w_pct": 14.542,
+        "h_pct": 1.761
+      },
+      "changed": true,
+      "change_reason": "Identified as a page number/page header marker."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "par un dogmatisme futuriste",
+      "bbox": {
+        "x_pct": 9.984,
+        "y_pct": 13.666,
+        "w_pct": 32.919,
+        "h_pct": 1.899
+      },
+      "changed": true,
+      "change_reason": "Corrected from text/paragraph to section_header as it represents the title of the section."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans les années soixante-dix, alors qu'on élaborait dans mon université, comme partout, une nouvelle loi, on n'osait pas mettre dans le préambule, parmi les tâches de l'enseignement, la transmission des connaissances. Il s'agissait d'encourager, de stimuler la recherche. Mais la transmission des connaissances, c'était déjà passéiste, c'était bon pour les incapables. Or, il me paraît évident que si l'on ne transmet pas les connaissances, il n'y a plus d'histoire. L'histoire humaine tient au fait que les hommes transmettent leurs connaissances, et que la formation permanente ne s'étend pas seulement de la naissance à la mort d'une génération. C'est ce qui constitue la formation permanente de l'humanité. Si l'on voulait interrompre cette chaîne, et si chacun devait recommencer à zéro, il n'y aurait plus d'histoire et plus d'humanité.",
+      "bbox": {
+        "x_pct": 9.702,
+        "y_pct": 16.494,
+        "w_pct": 79.306,
+        "h_pct": 29.8
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Selon certains, on ne devrait pas enseigner la langue maternelle, parce qu'elle nous est donnée, déjà toute faite, par le passé. Mais il est évident que si chacun inventait sa propre langue personne ne comprendrait personne, il n'y aurait plus de langue, et nous serions des bêtes poussant des cris inarticulés.",
+      "bbox": {
+        "x_pct": 9.839,
+        "y_pct": 47.509,
+        "w_pct": 78.927,
+        "h_pct": 10.53
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il nous faut donc transmettre des connaissances. En particulier, au moment où se produit la démocratisation des études, cette transmission des connaissances prend une importance accrue, et nous avons plus besoin que jamais de très bons enseignants, qui sachent les transmettre. On pousse beaucoup trop les enseignants à publier à tout prix, à justifier leur travail par de longues bibliographies: souvent les nouveaux ouvrages sont fait avec trois autres et n'apportent rien de nouveau, et les publications trop abondantes nous séparent des grandes œuvres, vraiment importantes, qu'il nous faudrait connaître et méditer. Un très bon transmetteur de connaissances est quelqu'un de première importance dans notre société; il ne devrait jamais être, comme il arrive, victime d'un ostracisme dans nos carrières universitaires, sous prétexte qu'",
+      "bbox": {
+        "x_pct": 9.653,
+        "y_pct": 59.025,
+        "w_pct": 80.694,
+        "h_pct": 27.805
+      },
+      "changed": false
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Page header (- 19 -) was incorrectly labeled as paragraph text.",
+    "Section title at the top was labeled as paragraph text instead of section_header.",
+    "The OCR text extraction was incomplete for several blocks, needing refinement for full accuracy."
+  ],
+  "doc_id": "2230",
+  "page": 4,
+  "elapsed_seconds": 5.59,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

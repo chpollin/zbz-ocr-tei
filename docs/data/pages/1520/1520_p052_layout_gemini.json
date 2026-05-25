@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est un englobant, car rien n'est réel pour moi (même pas moi-même) sinon en s'actualisant comme mon Dasein, et donc aussi pour mon corps sensible, toujours présent. Tout doit passer par là.",
+      "bbox": {
+        "x_pct": 16.26,
+        "y_pct": 5.167,
+        "w_pct": 79.634,
+        "h_pct": 6.144
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le Dasein est vivant, mais en même temps le vivant devient pour le sujet objet d'étude scientifique. La vie alors n'est plus l'englobant, mais une réalité dans le monde, parmi d'autres, sous la forme particulière de tels ou tels corps vivants. Le vivant comme objet de science résulte de l'objectivation d'une réalité (la vie), qui n'est pas, dans sa totalité, objectivable. Mon sens intérieur, englobant, de la vie — de moi-même comme vivant —, qui est d'abord indéterminé, est en quelque sorte «représenté» objectivement par un objet vivant, déterminé et saisissable (mon corps). — mais il y faut une opération de soustraction. Ainsi la vie devient objet de recherche pour la biologie, puis pour la sociologie. L'objet empirique de ces sciences, en tant que déterminé, résulte d'une construction réductive, qui passe inaperçue. On saisit alors des aspects particuliers, matière corporelle, corps animé, environnement, âme, conscience, — mais non l'englobant qui les traverse et les assume.",
+      "bbox": {
+        "x_pct": 11.924,
+        "y_pct": 14.824,
+        "w_pct": 83.97,
+        "h_pct": 28.706
+      },
+      "changed": true,
+      "change_reason": "Corrected incomplete text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il en va de même lorsque les hommes veulent se connaître objectivement. Etre-homme se réduit alors à l'appartenance à une espèce parmi d'autres. La «nature humaine» n'est plus qu'une partie de la nature en général. Mais la manière spécifiquement humaine d'être un Dasein s'en est retirée, en même temps que l'englobant.",
+      "bbox": {
+        "x_pct": 11.883,
+        "y_pct": 43.248,
+        "w_pct": 84.106,
+        "h_pct": 9.88
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La science, dit Jaspers, n'impose rien de tel. Le savant peut parfaitement étudier scientifiquement son objet en restant dans l'englobant, lui et son objet ; et c'est alors la conscience de l'englobant qui donne un sens à sa recherche, en même temps que les limites du savoir objectif restent sans cesse présentes. Il n'est d'ailleurs pas nécessaire, pour qu'il en soit ainsi, de parler explicitement de l'englobant.",
+      "bbox": {
+        "x_pct": 12.019,
+        "y_pct": 54.387,
+        "w_pct": 83.686,
+        "h_pct": 11.705
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and combined split lines."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers demande donc, pour qu'il y ait vraiment science, à la fois la connaissance des réalités objectives et l'éclairement de l'englobant, l'un avec l'autre, l'un par l'autre. Mais ce n'est pas l'englobant de la vie des animaux et des plantes que nous pouvons éclairer; c'est l'englobant du sujet vital que nous sommes, qui ne cesse d'être présent à nous-mêmes. « Je vis la vie » (« Ich erlebe das Leben »).",
+      "bbox": {
+        "x_pct": 11.558,
+        "y_pct": 65.835,
+        "w_pct": 84.065,
+        "h_pct": 13.513
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais comment ? — Il y a un oui fondamental, implicite, dans le sujet vital. Il est pour lui-même une valeur non dérivée (c'est pourquoi, sur un certain plan, la question «pourquoi vivre ? » reste vide de sens). Il est l'irremplaçable qui conditionne tout le reste, et qui donne à la mort son aiguillon. — En revanche : aucune de ses satis-",
+      "bbox": {
+        "x_pct": 11.653,
+        "y_pct": 79.066,
+        "w_pct": 83.875,
+        "h_pct": 9.94
+      },
+      "changed": true,
+      "change_reason": "Corrected inaccurate and truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "46",
+      "bbox": {
+        "x_pct": 11.653,
+        "y_pct": 90.0,
+        "w_pct": 5.0,
+        "h_pct": 5.0
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, moved to page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 6,
+  "issues": [
+    "Most text content was incorrectly transcribed or truncated by OCR engine.",
+    "Page number 46 was missing from initial layout labels.",
+    "Bounding boxes were generally correct, but textual content required full manual verification against the image."
+  ],
+  "doc_id": "1520",
+  "page": 52,
+  "elapsed_seconds": 6.1,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

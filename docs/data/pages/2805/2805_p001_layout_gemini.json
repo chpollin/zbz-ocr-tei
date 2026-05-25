@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "AVANT-PROPOS",
+      "bbox": {
+        "x_pct": 36.465,
+        "y_pct": 20.874,
+        "w_pct": 24.46,
+        "h_pct": 1.82
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les événements et les circonstances qui ont accompagné la démission de Madame Elisabeth Kopp du Conseil fédéral ont eu un profond retentissement dans la conscience du peuple suisse. Tous les citoyens, chacun à sa manière, ont vécu, affectivement et moralement, l’histoire, invraisemblablement rapide, de son ascension et de sa chute. Les uns ont triomphé, constatant qu’une conseillère fédérale pouvait tomber de si haut, confirmation à leurs yeux d’une justice égale pour tous. D’autres ont été déçus dans leur espoir de voir les grilles d’une prison se refermer sur une conseillère fédérale. D’autres encore, fidèles à leur admiration de naguère, se posèrent bien des questions au sujet de cette «affaire», dont le déroulement leur était insupportable et qui leur laissait un goût d’injustice très amer.",
+      "bbox": {
+        "x_pct": 7.237,
+        "y_pct": 29.246,
+        "w_pct": 82.609,
+        "h_pct": 27.61
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire un jour. apportera plus de clarté . Pour elle. il est encore trop tôt. Mais ce qui est d'ores et déjà évident, c'est que «l’affaire» a servi de révélateur. Il est apparu que, dans les conditions nouvelles du monde technique, social, politique, d'aujourd'hui, les institutions de notre pays ne pouvaient plus fonctionner de façon satisfaisante. De vieux problèmes se posent autrement, des problèmes nouveaux ne cessent de surgir. Il est apparu que des pressions incomparablement plus fortes et plus massives ne cessent de s’exercer sur les consciences individuelles et sur la justice elle-même, si bien qu’il est devenu plus difficile d’être un citoyen. De ce fait, les citoyens ont tendance à se faire moins nombreux. Il est impossible de savoir combien d’entre eux ont réagi de telle manière ou de telle autre au harcèlement des «nouvelles». Ce qui est sûr, c’est l’expression publique, par media imprimés ou électroniques, est allée de façon à peu près",
+      "bbox": {
+        "x_pct": 7.288,
+        "y_pct": 58.966,
+        "w_pct": 82.519,
+        "h_pct": 32.053
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and inaccurate OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": {
+        "x_pct": 87.458,
+        "y_pct": 93.633,
+        "w_pct": 1.488,
+        "h_pct": 1.765
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter as per instructions."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Original OCR text for paragraphs was heavily truncated and contained errors.",
+    "Page number 7 was missing from the initial region list.",
+    "Layout analysis requires manual intervention for proper text transcription."
+  ],
+  "doc_id": "2805",
+  "page": 1,
+  "elapsed_seconds": 5.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

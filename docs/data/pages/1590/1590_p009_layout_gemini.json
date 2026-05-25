@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par delà les structures déterminées des sociétés occidentales, «la condition humaine» elle-même, c'est-à-dire la nécessité à laquelle nul homme n'échappe d'avoir à vivre à la fois, difficilement, les nécessités de la nature et les devoirs de la liberté.",
+      "bbox": {
+        "x_pct": 36.632,
+        "y_pct": 70.835,
+        "w_pct": 83.057,
+        "h_pct": 156.45
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription based on the image content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or le terrorisme aussi trouve son ressort essentiel dans l'exigence des droits de l'homme. Seulement, il méconnaît ou il oublie les immuables données de nature auxquelles, à travers et malgré toutes les métamorphoses, l'homme reste soumis, et que Jaspers appelait «les situations-limites ». Il méconnaît les limites humaines. Il attend, de la seule destruction de ce qui existe, le surgissement miraculeux de la justice et de l'égalité, un nouvel Eden.",
+      "bbox": {
+        "x_pct": 59.5,
+        "y_pct": 627.76,
+        "w_pct": 822.15,
+        "h_pct": 152.08
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Force est de constater que «les attitudes » morales et affectives ambiantes, répandues par les intellectuels à l'aide des moyens d'expression modernes, présentent des affinités avec l'irréalisme des terroristes et leur rejet global de la réalité actuelle. On cherche à convaincre les petits enfants de ce que le monde où nous vivons est le pire qui ait",
+      "bbox": {
+        "x_pct": 56.99,
+        "y_pct": 778.34,
+        "w_pct": 822.54,
+        "h_pct": 106.72
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "55",
+      "bbox": {
+        "x_pct": 846.63,
+        "y_pct": 912.42,
+        "w_pct": 27.46,
+        "h_pct": 28.09
+      },
+      "changed": true,
+      "change_reason": "Identified page number and reclassified from text to page_footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text transcriptions were severely truncated or garbled.",
+    "Page number at bottom right was missing from the initial region list.",
+    "Bbox coordinates provided in the initial input seem to use a different scale than standard 0-100 percentages based on the values provided, but I have retained them as per instructions."
+  ],
+  "doc_id": "1590",
+  "page": 9,
+  "elapsed_seconds": 3.82,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

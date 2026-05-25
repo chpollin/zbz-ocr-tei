@@ -1,0 +1,71 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region for author name; added as section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Idéologies ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 4.554,
+        "y_pct": 20.561,
+        "w_pct": 87.688,
+        "h_pct": 20.143
+      },
+      "changed": true,
+      "change_reason": "Corrected spelling 'Idl' to 'Idé' based on visual input."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Essai d'orientation",
+      "bbox": {
+        "x_pct": 27.953,
+        "y_pct": 45.125,
+        "w_pct": 40.989,
+        "h_pct": 2.977
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR error 'worientation' to 'd'orientation' and updated tag to section_header as it describes the work type."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "POLITIQUE",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Missing region for the word 'POLITIQUE' below the title; added as section_header."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "PLON",
+      "bbox": {
+        "x_pct": 38.579,
+        "y_pct": 81.791,
+        "w_pct": 20.014,
+        "h_pct": 4.84
+      },
+      "changed": true,
+      "change_reason": "Publisher name is a bibliographic component, labeled as section_header."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Original OCR contained spelling errors in title and subtitle.",
+    "Multiple components (Author, POLITIQUE) were not captured by initial segmentation.",
+    "Publisher was incorrectly labeled as paragraph."
+  ],
+  "doc_id": "330",
+  "page": 5,
+  "elapsed_seconds": 3.23,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

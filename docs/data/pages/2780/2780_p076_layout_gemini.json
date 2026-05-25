@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "fuite du temps. Petite durée si dense que notre sort s'y joue absolument, dans un réel impitoyable, qui est ce qu'il est, où jamais la mémoire ne saurait rétablir la présence d'un souvenir ni l'espoir actualiser une attente, à cause de l'invincible différence qui persiste entre «ce qui est» et «ce qui n'est plus» ou «ce qui sera peut-être». Petite durée qui s'effiloche pourtant à ses extrémités, en passé, en futur, sans rien perdre de son inépuisable présence présente – miniature humaine de l'éternité.",
+      "bbox": {
+        "x_pct": 16.314,
+        "y_pct": 13.701,
+        "w_pct": 57.627,
+        "h_pct": 22.304
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A cause de cette petite durée, notre vie se situe dans un monde, avec ses résistances, ses possibles, ses enjeux. A cause d'elle, nous pouvons agir, jouir, créer, aimer la vie et attendre la mort. Et parce qu'elle s'effiloche vers le futur, nous avons des possibles, nous disposons d'un espace de liberté. Et parce qu'elle s'effiloche vers le passé, celui-ci sans que nous comprenions ni où, ni comment, ne cesse jamais de garder l'être de ce qui a été.",
+      "bbox": {
+        "x_pct": 16.388,
+        "y_pct": 37.394,
+        "w_pct": 57.415,
+        "h_pct": 20.31
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Grâce à cette petite durée, ce n'est pas seulement un rêve si nous croyons que nous sommes des hommes, libres, responsables, mortels. Libres et dépendants. Jamais les maîtres. Mais jamais non plus des choses ni des bêtes.",
+      "bbox": {
+        "x_pct": 16.451,
+        "y_pct": 57.083,
+        "w_pct": 57.246,
+        "h_pct": 11.381
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the image accurately."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute la vie consciente de l'homme est un démêlé avec le temps, où les contradictions s'entre-",
+      "bbox": {
+        "x_pct": 16.314,
+        "y_pct": 68.08,
+        "w_pct": 57.235,
+        "h_pct": 4.853
+      },
+      "changed": true,
+      "change_reason": "Corrected the transcribed text to match the image accurately."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "77",
+      "bbox": {
+        "x_pct": 70.339,
+        "y_pct": 75.184,
+        "w_pct": 2.436,
+        "h_pct": 2.203
+      },
+      "changed": true,
+      "change_reason": "Identified as page number, reassigned to page_footer."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 5,
+  "issues": [
+    "Text transcription for multiple paragraphs was inaccurate and required full replacement.",
+    "Page number 77 was labeled as text and required reassignment to page_footer."
+  ],
+  "doc_id": "2780",
+  "page": 76,
+  "elapsed_seconds": 4.77,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

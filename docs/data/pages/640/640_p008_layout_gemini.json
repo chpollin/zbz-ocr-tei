@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 50.0,
+        "y_pct": 3.0,
+        "w_pct": 2.0,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hors de ville, on voit des choses, ces choses changent, mais on les voit persister à travers les changements. On voit des choses qui durent et qui, en durant, changent. En ville, l'expérience visuelle de l'enfant est non pas celle de quelque chose qui change, mais de quelque chose qui surgit et disparaît. Or, on sait que les animaux, les oiseaux, très souvent, ne voient pas ce qui ne bouge pas, même si c'est gros, tandis que quelque chose de petit qui se déplace est vu. Pour l'enfant, il y a une agression constante dans cet apparaître et ce disparaître perpétuel. Imaginons-le vers midi et quart, à St-François. Ce qu'il voit, c'est, sans cesse, un surgissement à partir de rien. Il y a un fond de rien dans son expérience. Ce sont comme des étincelles visuelles sur un fond de néant. L'enfant a affaire à une ville qui tout le temps clignote. Et je ne parle même pas de la ville du soir, où c'est encore plus marqué.",
+      "bbox": {
+        "x_pct": 13.458,
+        "y_pct": 6.206,
+        "w_pct": 81.749,
+        "h_pct": 21.102
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a un sens qui est, je crois, très important pour l'enfant, c'est le toucher. L'enfant aime toucher, il aime prendre en main et tenir en main. Or la ville n'est pas quelque chose qui se touche. La convoitise des mains, chez l'enfant qui vit en ville, est constamment frustée. Tout est trop rapide, ou trop grand, ou trop dangereux, ou hors d'atteinte, ou défendu. Il n'y a pas de terre sur laquelle on puisse se traîner; pas d'arbre, pas d'animaux. On n'a pas les bons morceaux de bois ou terre qu'on peut ramasser à la campagne. La seule chose, à peu près, qu'on puisse toucher, c'est du papier; et plus tard, des pièces mécaniques qui permettent de faire, de défaire, d'inventer, mais qui ne parlent pas au toucher comme tel.",
+      "bbox": {
+        "x_pct": 13.737,
+        "y_pct": 27.564,
+        "w_pct": 81.605,
+        "h_pct": 17.533
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A partir du moment où l'âge des animaux de peluche est passé, l'enfant n'a plus rien à toucher, et c'est peut-être l'une des raisons pour lesquelles il garde actuellement ses animaux de peluche plus longtemps qu'autrefois. Le bricolage technique n'est pas du toucher; c'est un domaine où posséder, c'est d'emblée utiliser. Là, l'enfant est vite arrêté parce que commence le monde de l'adulte, et son seul rêve va être de devenir un adulte.",
+      "bbox": {
+        "x_pct": 13.903,
+        "y_pct": 45.384,
+        "w_pct": 81.511,
+        "h_pct": 10.76
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "STIMULATION, ATTENTION ET DISTRACTION",
+      "bbox": {
+        "x_pct": 34.13,
+        "y_pct": 61.234,
+        "w_pct": 41.573,
+        "h_pct": 2.459
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Quels sont les effets de ce dont je viens de parler sur l'enfant ? D'abord, une intense stimulation. L'enfant qui vit en ville est stimulé comme il ne l'est jamais hors de ville. Il reste léger, disponible, vif, rapide, il est habitué à changer immédiatement d'attitude et de dessein. il est réceptif aux signaux, il apprend à leur répondre vite. Quantité de mécanismes rapides se développent en lui. Ses facultés d'adaptation se développent au plus haut point, mais non les facultés lentes de création spontanée. L'enfant répond à ce qui est hors de lui, il y réagit immédiatement : mais si rien ne vient de l'extérieur, le plus souvent rien ne vient de l'enfant. C'est une des raisons, je crois, pour lesquelles on a tant de peine à voir ce qui intéresse réellement un enfant : lorsqu'on ne l'occupe pas, il ne s'occupe pas. Ce n'est pas l'effet d'une passivité foncière, mais il est tellement occupé à réagir sans cesse, il est tellement obligé de réagir, il est tellement entraîné, que lorsque cette excitation cesse, il se trouve inoc.",
+      "bbox": {
+        "x_pct": 14.42,
+        "y_pct": 65.299,
+        "w_pct": 81.263,
+        "h_pct": 24.686
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Remarquez l'ambiguïté qu'il y a dans l'expression « fais attention ». A l'école, quand on dit à l'enfant « tu feras bien attention », on espère que, lorsqu'il",
+      "bbox": {
+        "x_pct": 15.217,
+        "y_pct": 88.929,
+        "w_pct": 79.783,
+        "h_pct": 4.709
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Page number missing from initial detection was corrected.",
+    "OCR output for text blocks required restoration from image contents for accuracy."
+  ],
+  "doc_id": "640",
+  "page": 8,
+  "elapsed_seconds": 6.13,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

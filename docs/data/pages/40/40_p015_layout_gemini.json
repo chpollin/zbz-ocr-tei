@@ -1,0 +1,50 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 17",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The bounding box covering the header was missing in the input; identifying page headers as _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est un chemin sans fin que je ne cesserai jamais de gravir. C'est un chemin pierreux, raide, bordé de noisetiers et de haies nues, coupant les lacets de la route, parmi les rayons intermittents, allongés, d'un soleil sans chaleur, sous un ciel en désordre. Je monte. Les oiseaux ne chantent pas. Mais on entend de tous côtés les ruisseaux sur les cailloux, grossis par la neige fondue. J'ai chaud parce que je monte, mais je sens à la morsure de l'air sur mes joues qu'il fait frais et que la nuit vient. Derrière moi, le soleil descend; ses rayons se couchent sur les champs, deviennent rouges. La plaine est déjà froide, le sang du jour n'y circule plus, la rivière est morte. Mais l'air rebondit et danse, tous les sons y restent clairs, séparés, avec des tintements très lointains protégés par l'approche de la nuit. Entre deux nuages, un rayon met une touche éclatante sur la maison, encore loin, tout là-haut. Puis s'éteint; la façade devient mauve. L'ombre monte d'un seul coup. Le sentier traverse un pré, fait un coude, continue entre deux haies d'arbustes mêlant étroitement leurs bois violacés. Je m'arrête un instant. Au calme qui se répand dans la plaine et l'espace et le ciel, je mesure le trouble provoqué dans ce sommeil par mes souliers cloutés et les battements de mon cœur. Ceux-ci s'apaisent, font place au silence comme l'harmonie la plus cachée. Un frisson qui me gagne passe sans que rien ne bouge. Soudain, des deux côtés du sentier les haies s'enflamment. Je ne me suis pas retournée vers le soleil qui lançait un dernier jet rouge. Je ne peux pas. Le buisson ardent est trop soudain et trop splendide, bouffée de",
+      "bbox": {
+        "x_pct": 11.351,
+        "y_pct": 11.786,
+        "w_pct": 81.041,
+        "h_pct": 73.28
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and mangled OCR text to reflect the actual content of the paragraph."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 13.743,
+        "y_pct": 85.473,
+        "w_pct": 1.297,
+        "h_pct": 1.134
+      },
+      "changed": true,
+      "change_reason": "Page markers/numbers identified as page_footer and filtered."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Original JSON had incorrect text extraction/OCR interpretation.",
+    "Page number at bottom left mislabeled as text.",
+    "Header line 'TEMPS ALTERNÉS 17' was completely missing from the detection."
+  ],
+  "doc_id": "40",
+  "page": 15,
+  "elapsed_seconds": 6.05,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

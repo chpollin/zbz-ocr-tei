@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jaspers insiste : s'en tenir à l'angoisse de l'échec ou s'en tenir à la paix de l'être, c'est dans les deux cas se dissimuler la réalité. Seule l'existence qui ose accomplir le bond de l'angoisse à la paix devient capable de regarder en face, sans dérobade, notre monde dans sa réalité. L'angoisse laissée à elle seule barbouille ou atténue l'échec, se cramponnant à telle ou telle réalité, qu'elle prétend posséder et connaître. Elle falsifie sa condition en s'accordant une quelconque totalité, une harmonie prétendue, une morale idéale, une vérité dogmatisée comme seule valable et certaine. La paix alors naît du mensonge ou de l'illusion, elle n'est que l'angoisse vivant les yeux fermés.",
+      "bbox": {
+        "x_pct": 10.434,
+        "y_pct": 8.543,
+        "w_pct": 84.011,
+        "h_pct": 19.023
+      },
+      "changed": true,
+      "change_reason": "The original text extraction was garbled. Corrected to reflect the actual content of the paragraph."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pour Jaspers, ici tout proche de Kierkegaard, nul ne saurait passer directement du bien-être ou de l'optimisme vital à la paix lucide de l'être transcendant. L'accès à cette paix passe par l'impossibilité de vivre, et non pas une fois pour toutes, comme si la radicalité de l'échec affrontée avec courage donnait droit à une récompense, mais sans cesse à nouveau, tout au long d'une présence constante à la vie temporelle.",
+      "bbox": {
+        "x_pct": 10.664,
+        "y_pct": 27.446,
+        "w_pct": 83.821,
+        "h_pct": 13.745
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« C'est une donnée fondamentale de notre existence temporelle que la réalité qui engendre l'angoisse destructrice ne puisse être vue telle qu'elle est ni sans angoisse, ni sans passage de l'angoisse à la paix. Que l'homme puisse à la fois (je souligne) voir la réalité, être réel lui-même, et pourtant vivre sans mourir d'angoisse, cela rattache sa liberté à son sens du réel le plus proche et le plus résolu, mais au fil d'un processus toujours inachevé où ni l'angoisse, ni la paix ne sont le terme ultime et où rien de réel n'est définitif. »",
+      "bbox": {
+        "x_pct": 10.528,
+        "y_pct": 40.703,
+        "w_pct": 83.916,
+        "h_pct": 15.424
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Supporter et agir. Quand on a bien vu, en toute sincérité et véracité de conscience, qu'il n'existe pas de solution, pas de réponse dans le silence, pas de justification de la réalité telle qu'elle est, aucun apaisement, et aucune révélation dans l'écriture chiffrée, il ne reste à celui qui espère la paix qu'une seule voie : celle où l'on apprend à « supporter » (dulden). Il y a une manière passive, vide, de supporter, qui revient à se laisser aller purement et simplement aux choses telles qu'elles sont. Mais il y a aussi une manière active de supporter l'échec universel tout en réalisant ce qui peut l'être, aussi longtemps qu'on en a la force. De cette tension naît la sérénité. Supporter, c'est vivre dans le non-savoir d'une foi qui continue à agir pour améliorer les choses dans le monde sans espérer pour autant que s'y réalisera un jour une organisation parfaite et définitive. Supporter, c'est se tenir à l'être malgré l'échec, même quand, à force d'échec, l'écriture chiffrée se dérobe à l'existence.",
+      "bbox": {
+        "x_pct": 10.799,
+        "y_pct": 59.666,
+        "w_pct": 83.875,
+        "h_pct": 28.655
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text extraction."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "page_footer",
+      "text": "38",
+      "bbox": {
+        "x_pct": 10.799,
+        "y_pct": 92.5,
+        "w_pct": 2.5,
+        "h_pct": 2.5
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial OCR extraction was extremely low quality and garbled across all regions.",
+    "Page number missing from initial detections.",
+    "Bboxes are acceptable, but label assignment was incomplete."
+  ],
+  "doc_id": "1520",
+  "page": 44,
+  "elapsed_seconds": 7.72,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

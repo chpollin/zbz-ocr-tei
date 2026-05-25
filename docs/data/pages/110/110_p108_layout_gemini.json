@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "_filter",
+      "zbz_tag": "page_footer",
+      "text": "106",
+      "bbox": {
+        "x_pct": 22.316,
+        "y_pct": 100,
+        "w_pct": 2.859,
+        "h_pct": 1.48
+      },
+      "changed": true,
+      "change_reason": "ADDED: page number"
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "L'ÊIRE ET LA FORME",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 100,
+        "w_pct": 15.932,
+        "h_pct": 1.343
+      },
+      "changed": true,
+      "change_reason": "ADDED: running header"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "si profondément elle en reste invisible la limite du théorique désignation, et de Tintentionnel (asp",
+      "bbox": {
+        "x_pct": 22.661,
+        "y_pct": 13.06,
+        "w_pct": 68.618,
+        "h_pct": 18.884
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il reste à remarquer ceci : c'est que Tacte subjectif transcen dant vient   soulenir la réalité spir",
+      "bbox": {
+        "x_pct": 22.27,
+        "y_pct": 31.739,
+        "w_pct": 68.744,
+        "h_pct": 21.617
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On ne sort donc pas de Thumain. Lacte spirituel transcende Thumain   resle  lui-même humain spéciliq",
+      "bbox": {
+        "x_pct": 22.154,
+        "y_pct": 53.303,
+        "w_pct": 68.594,
+        "h_pct": 3.743
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous sommeS servis de trois exemples : vérilé, justice; [orme. Mais en réalité , vérité juslice sonl",
+      "bbox": {
+        "x_pct": 21.889,
+        "y_pct": 59.734,
+        "w_pct": 68.698,
+        "h_pct": 14.601
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected missed header and page number region"
+  ],
+  "doc_id": "110",
+  "page": 108,
+  "elapsed_seconds": 7.74,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 2
+  }
+}

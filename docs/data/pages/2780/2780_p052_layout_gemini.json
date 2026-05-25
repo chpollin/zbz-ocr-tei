@@ -1,0 +1,53 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après tout, la musique, contrairement à ce on s'imagine souvent sans trop y réfléchir, n'est pas là pour ceux qui la font, mais pour ceux qui ne la font pas. Dans une salle de concert, les interprètes d'une pièce sont là pour les auditeurs, et non l'inverse. La musique est jouée surtout pour la réceptivité active de ceux qui l'écoutent. Et cette activité intérieure se développe avec la liberté, avec le Soi. Autrement dit, alors qu'on se représente toujours la liberté comme une faculté qui nous permet de choisir et de décider, la liberté d'une personne qui écoute de la musique ne choisit pas et ne décide pas. Elle consent à quelque chose ; elle accueille quelque chose qui lui devient plus intérieur qu'elle-même. Et ici je reprends l'expression, toute proportion gardée, que saint Augustin employait à propos de Dieu : Interior intimo meo. La liberté permet à la musique de lui devenir plus intérieure qu'elle-même. Ce faisant, la liberté se multiplie, s'élargit ; elle se laisse discipliner plutôt qu'elle ne se discipline. Elle respire au souffle d'une autre respiration, et s'abandonne à ce qui est plus elle qu'elle-même.",
+      "bbox": {
+        "x_pct": 17.511,
+        "y_pct": 13.807,
+        "w_pct": 57.532,
+        "h_pct": 48.668
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ces quelques remarques permettent de préciser le sens du verbe transcender, dans la question qui nous occupe : «La musique transcende-t-elle le temps?» Ce verbe transcender ne signifie pas, comme on le croit trop souvent, «dépasser» ou",
+      "bbox": {
+        "x_pct": 17.511,
+        "y_pct": 61.74,
+        "w_pct": 57.489,
+        "h_pct": 11.977
+      },
+      "changed": true,
+      "change_reason": "The transcription was incomplete and inaccurate compared to the OCR text in the image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "53",
+      "bbox": {
+        "x_pct": 71.696,
+        "y_pct": 75.297,
+        "w_pct": 3.326,
+        "h_pct": 2.222
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 2,
+  "issues": [
+    "The OCR transcription of the paragraphs was significantly truncated or garbled in the initial input.",
+    "Page number '53' was missing from the initial region list."
+  ],
+  "doc_id": "2780",
+  "page": 52,
+  "elapsed_seconds": 4.55,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

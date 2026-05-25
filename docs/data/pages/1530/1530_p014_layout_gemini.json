@@ -1,0 +1,100 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "86 JEANNE HERSCH",
+      "bbox": {
+        "x_pct": 14.306,
+        "y_pct": 6.322,
+        "w_pct": 75.856,
+        "h_pct": 2.215
+      },
+      "changed": true,
+      "change_reason": "Corrected page header classification from text to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pouvoir est tout cela à la fois. Chacune de ses composantes imprègne toutes les autres. C'est cette imprégnation elle-même qui fait de lui ce mixte: le pouvoir.",
+      "bbox": {
+        "x_pct": 14.306,
+        "y_pct": 10.058,
+        "w_pct": 75.856,
+        "h_pct": 6.992
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi constitué en unité symbolique par ses composantes en même temps l'écartèlent — origine et finalité transcendante, pure force contraignante avec menace de mort, en passant par les valorisations morales, les abstractions juridiques, l'affectivité familiale, l'emmêlement de la production, des besoins, des échanges, des services, sans parler des nécessités de la défense contre des pouvoirs extérieurs, le Pouvoir n'a cessé d'accroître ses tâches et ses moyens, de multiplier et de diversifier ses organes, de prendre corps dans la société en s'infiltrant partout en elle, mais en s'identifiant de moins en moins à elle.",
+      "bbox": {
+        "x_pct": 14.155,
+        "y_pct": 16.917,
+        "w_pct": 76.007,
+        "h_pct": 21.983
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Infiltré partout en elle, il paralyse la liberté individuelle. S'identifiant de moins en moins à elle, il semble tombé en déshérence, attendant la saisie d'une main prédestinée. Voyons cela d'un peu plus près.",
+      "bbox": {
+        "x_pct": 14.317,
+        "y_pct": 39.008,
+        "w_pct": 75.729,
+        "h_pct": 9.116
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Destruction du mixte symbolique",
+      "bbox": {
+        "x_pct": 34.606,
+        "y_pct": 49.091,
+        "w_pct": 35.683,
+        "h_pct": 2.339
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans l'archétype du Pouvoir, il y a d'abord quelqu'un qui en est le détenteur ou l'incarnation, et il l'est pour des raisons hétérogènes et souvent contradictoires qui doivent rendre cette détention légitime: origine transcendante ou coutumière, personnification de la Nation ou du Peuple, prestige personnel, services rendus, finalités de justice ou de salut pour la communauté, capacité effective de gouverner par la force ou de rétablir l'ordre après le chaos, etc.",
+      "bbox": {
+        "x_pct": 14.317,
+        "y_pct": 51.983,
+        "w_pct": 75.926,
+        "h_pct": 18.207
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais comment concevoir encore le Pouvoir en un siècle qui a connu des détenteurs comme Hitler, comme Staline et ses successeurs? On a donné déjà nombre d'explications à l'avènement et au règne d'Hitler, mais malgré elles, nous continuons à ne pas comprendre: comment cela a-t-il été possible? De quelle nature était le pouvoir qu'il incarnait et dont il disposait, et qui lui a permis de mobiliser un peuple civilisé pour lui faire exécuter un programme dont chaque point, isolément, devait lui faire horreur — jusques et y compris la ruine physique et morale de sa propre patrie?",
+      "bbox": {
+        "x_pct": 14.387,
+        "y_pct": 70.306,
+        "w_pct": 75.741,
+        "h_pct": 20.248
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Detected missed header in the initial parsing.",
+    "OCR text transcription errors were manually corrected for the output representation."
+  ],
+  "doc_id": "1530",
+  "page": 14,
+  "elapsed_seconds": 4.28,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

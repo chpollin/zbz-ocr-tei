@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. J'étais en Pologne juste avant la guerre, pendant l'été 38. Je me trouvais chez une cousine éloignée dont les parents possédaient une fabrique de colorants près de Piotrków. La population de l'endroit était mixte : il y avait d'une part l'usine, d'autre part une entreprise agricole. J'ai été frappée de constater que dans la population agricole, il y avait tout un rituel rural, des traditions, des fêtes bien vivantes et dans la population industrielle, rien. Le rituel, il semble bien qu'on ne puisse pas le faire pousser en milieu industriel, c'est comme si on voulait faire pousser du blé sur un trottoir. Cela ne tient pas aux gens, mais à la nature du travail, au style de vie.",
+      "bbox": {
+        "x_pct": 15.104,
+        "y_pct": 4.562,
+        "w_pct": 79.927,
+        "h_pct": 19.783
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "GD.k. Vous vous êtes donc trouvée en Pologne chez votre cousine juste avant l'invasion.",
+      "bbox": {
+        "x_pct": 15.263,
+        "y_pct": 24.191,
+        "w_pct": 79.768,
+        "h_pct": 4.312
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J.H. Oui, en août 38. Une troupe de cavalerie était cantonnée près de chez nous. Les officiers venaient prendre leurs repas avec nous et je me souviens combien cette société était, à la veille de la guerre, frivole. On dansait, on s'amusait, on faisait des promenades à cheval. Or, précisément, un jour, je me promenais à cheval, et en rentrant j'ai vu de loin qu'on me faisait de grands signes. J'arrive à la maison, on me pousse vers le téléphone, c'était mon père qui me téléphonait de Suisse pour me dire de rentrer par le premier train, avec ma sœur, à Genève : c'était le jour où avait été signé le pacte germano-soviétique.",
+      "bbox": {
+        "x_pct": 15.177,
+        "y_pct": 28.319,
+        "w_pct": 79.853,
+        "h_pct": 18.101
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je voudrais vous dire un autre souvenir que j'ai de ce jour-là. A midi, nous étions en train de déjeuner, avec deux visiteurs venus de Lodz. L'un, tout d'un coup, a dit : « Ah ! vous savez, il y a un nouveau chiffon de papier dans la vie diplomatique : un pacte germano-soviétique. » Il disait cela en riant, tellement cela paraissait ridicule. J'ai fait un saut sur ma chaise et j'ai dit : « C'est la guerre. » Tout le monde m'a regardé avec de grands yeux : « Qu'est-ce qui te prend ? » J'ai répondu : « C'est tellement énorme que cela ne peut signifier que la guerre. » Tout le monde se moquait de moi. Quelques heures plus tard mon père, donc, téléphonait de Genève. Je l'entends encore me dire : « Tu ne discutes pas, tu prends le premier train pour Genève avec ta sœur. » Le train partait de Piotrków à 4 heures du matin. Je me rappelle le visage de ma cousine, blême dans la petite aube. Et nous sommes parties en les laissant là, avec tous les autres. Une semaine après, cet endroit était bombardé. Ma cousine a passé une partie de la guerre à Varsovie, clandestinement, puis elle a été déportée à Bergen-Belsen. A la fin de la guerre, elle été envoyée en Suède. Elle vit maintenant à Genève.",
+      "bbox": {
+        "x_pct": 15.177,
+        "y_pct": 46.018,
+        "w_pct": 79.976,
+        "h_pct": 33.467
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "GD.k. Etes-vous retournée en Pologne après la guerre ?",
+      "bbox": {
+        "x_pct": 18.23,
+        "y_pct": 80.129,
+        "w_pct": 62.552,
+        "h_pct": 2.759
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 15.65,
+        "y_pct": 94.65,
+        "w_pct": 2.2,
+        "h_pct": 1.5
+      },
+      "changed": true,
+      "change_reason": "Labeled page number as footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 5,
+  "issues": [
+    "Heavy OCR corruption in text detection",
+    "Missing page number detection in original scan",
+    "Incorrect paragraph breaks due to OCR error"
+  ],
+  "doc_id": "2330",
+  "page": 22,
+  "elapsed_seconds": 5.79,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

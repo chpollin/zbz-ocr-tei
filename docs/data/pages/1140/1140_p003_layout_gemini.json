@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Un élément non négligeable de cette situation me semble être Pin timidation règne au niveau des mass",
+      "bbox": {
+        "x_pct": 14.158,
+        "y_pct": 9.288,
+        "w_pct": 64.915,
+        "h_pct": 15.88
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "La philosophie face au monde en crise",
+      "bbox": {
+        "x_pct": 30.806,
+        "y_pct": 28.131,
+        "w_pct": 31.483,
+        "h_pct": 1.858
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Face à la crise de civilisation, que fait la philosophie? Quand elle ne fait pas de la propagande au",
+      "bbox": {
+        "x_pct": 14.102,
+        "y_pct": 30.9,
+        "w_pct": 64.948,
+        "h_pct": 41.538
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_heading",
+      "zbz_tag": "zb_heading",
+      "text": "La tâche de la philosophie",
+      "bbox": {
+        "x_pct": 35.479,
+        "y_pct": 75.402,
+        "w_pct": 22.297,
+        "h_pct": 1.92
+      },
+      "changed": false
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "La tâche de la philosophie est dexercer son scns critique sur les qui, dans la propagande actuelle; ",
+      "bbox": {
+        "x_pct": 14.239,
+        "y_pct": 78.103,
+        "w_pct": 64.811,
+        "h_pct": 6.245
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR typo in 'sens'"
+    },
+    {
+      "label": "zb_paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y aurait beaucoup à dire en cette matière. Je me contenterai de",
+      "bbox": {
+        "x_pct": 16.334,
+        "y_pct": 84.291,
+        "w_pct": 62.635,
+        "h_pct": 1.994
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "_filter",
+      "text": "2",
+      "bbox": {
+        "x_pct": 14.333,
+        "y_pct": 88.0,
+        "w_pct": 3.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: Page number"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 2,
+  "issues": [
+    "Detected page number",
+    "Typo in 'sens'"
+  ],
+  "doc_id": "1140",
+  "page": 3,
+  "elapsed_seconds": 5.86,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "Corrected OCR typo in 'sens'": 1,
+    "ADDED": 1
+  }
+}

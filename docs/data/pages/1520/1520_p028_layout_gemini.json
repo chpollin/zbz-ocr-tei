@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi les lois générales que le sujet conquiert en s'orientant parmi les multiples perspectives discontinues du monde et auxquelles, en tant que cas particulier, il se trouve lui-même subordonné, se nouent en lui en tant qu'il les pense et les connaît. Mais en tant qu'il les pense, en tant qu'il les connaît, il n'est plus un cas particulier de ces lois générales. Par contraste avec leur abstraction, il est à chaque fois l'unique (das jeweils Einzige).",
+      "bbox": {
+        "x_pct": 11.016,
+        "y_pct": 6.024,
+        "w_pct": 83.93,
+        "h_pct": 14.053
+      },
+      "changed": true,
+      "change_reason": "The text was fragmented and contained placeholders. Corrected to reflect the actual content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le sujet a d'abord tenté de s'orienter dans le monde (Weltorientierung) afin de s'y situer dans une totalité. Mais la totalité s'est perdue dans la multiplicité des perspectives inachevées. Le monde déchiré renvoie le sujet à lui-même, en tant qu'unique concret, afin qu'il éclaire sa propre existence (Existenzerhellung). (5 et 6).",
+      "bbox": {
+        "x_pct": 11.07,
+        "y_pct": 19.452,
+        "w_pct": 83.875,
+        "h_pct": 9.914
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and messy text content to align with the visual scan."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Éclairement de l'existence",
+      "bbox": {
+        "x_pct": 11.748,
+        "y_pct": 31.474,
+        "w_pct": 32.195,
+        "h_pct": 1.859
+      },
+      "changed": true,
+      "change_reason": "Corrected the spelling of the heading title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le terme d'« existence » n'a pas le même sens pour tous les philosophes qu'on a coutume de classer — souvent malgré eux — dans le mouvement de pensée dit « existentialisme » ou « philosophie de l'existence », et il en est résulté bien des malentendus. Essayons de comprendre ce que ce terme signifie chez Jaspers.",
+      "bbox": {
+        "x_pct": 11.287,
+        "y_pct": 34.764,
+        "w_pct": 83.699,
+        "h_pct": 10.077
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Méthodes et langage indirect. Or la pensée qui veut éclairer l'existence ne peut être elle-même qu'« existentielle », et donc profondément différente de celle qui, cherchant à s'orienter dans le monde, rationalise l'expérience par les lois et les théories. Elle ne dispose pas de l'évidence rationnelle. Ce qu'elle affirme n'est pas impersonnellement évident, pour une raison bien simple : elle parle de ce qui n'est pas objet. Elle n'a donc aucun pouvoir pour le montrer, là, en face, à autrui. Elle ne dispose ni de preuves, ni de vérifications, ni de révélations. Bien plus, elle est incapable de susciter le sens de ce qu'elle dit dans la pensée de quelqu'un qui d'avance ne « connaît » pas ce dont elle parle. Pour celui qui nie l'existence possible, ce qu'elle dit n'a simplement aucun sens. Parfois il semble qu'elle ait un sens — et soudain ce",
+      "bbox": {
+        "x_pct": 11.382,
+        "y_pct": 64.953,
+        "w_pct": 83.509,
+        "h_pct": 24.961
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "22",
+      "bbox": {
+        "x_pct": 11.5,
+        "y_pct": 91.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified and reclassified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Most text blocks were heavily truncated or garbled in original detection.",
+    "Page number 22 was missing a region box.",
+    "Section header spelling corrected."
+  ],
+  "doc_id": "1520",
+  "page": 28,
+  "elapsed_seconds": 12.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "NATURE DE LA CONNAISSANCE HISTORIQUE",
+      "bbox": {
+        "x_pct": 33.092,
+        "y_pct": 14.5,
+        "w_pct": 47.458,
+        "h_pct": 1.258
+      },
+      "changed": true,
+      "change_reason": "Identified running header incorrectly labeled as text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "235",
+      "bbox": {
+        "x_pct": 80.85,
+        "y_pct": 14.45,
+        "w_pct": 3.478,
+        "h_pct": 1.458
+      },
+      "changed": true,
+      "change_reason": "Identified page number incorrectly labeled as text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "3. Les critères changent complètement, en revanche, lorsqu'il s'agit d'« expliquer » les comportements successifs d'un personnage historique ou d'un groupe — du moins si « expliquer » ne signifie pas « réduire les actes aux effets d'une cause ». Dans ce cas, la validité de l'explication sera éprouvée par une sorte d'imitation, de mime du personnage historique considéré, et « comprendre » sa conduite signifiera qu'on a réussi (ou qu'on a le sentiment d'avoir réussi) à coïncider avec sa liberté à travers un certain nombre de décisions successives. Certes, ces critères ne sont pas objectifs. Mais on peut — et on doit — comprendre objectivement qu'ils ne peuvent pas l'être. Car si l'histoire existe et n'est pas réductible à la physique, c'est qu'elle dépend aussi de la liberté humaine. Or la liberté n'existe pas objectivement; elle n'est approchée que par la communication et le mime — voies d'approche qui transcendent l'objectivité et par lesquelles l'historien cherche à rejoindre la subjectivité à l'œuvre dans l'histoire.",
+      "bbox": {
+        "x_pct": 15.092,
+        "y_pct": 17.254,
+        "w_pct": 69.57,
+        "h_pct": 27.696
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "III. Limites de la connaissance historique",
+      "bbox": {
+        "x_pct": 15.359,
+        "y_pct": 46.13,
+        "w_pct": 39.611,
+        "h_pct": 2.374
+      },
+      "changed": true,
+      "change_reason": "Included section number in header text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Laissons de côté, pour l'instant, les difficultés qui empêchent souvent l'historien d'être « objectif », l'obstacle de ses idées préconçues, de ses intentions et de ses options actuelles. Négligeons la variabilité et l'incertitude des témoignages, la substitution si fréquente de souvenirs retouchés aux faits. Accordons-nous un historien idéal. On verra que des limites évidentes s'imposent d'emblée à sa recherche :",
+      "bbox": {
+        "x_pct": 15.338,
+        "y_pct": 48.655,
+        "w_pct": 69.262,
+        "h_pct": 12.14
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'abord, la réalité historique ne se laisse pas délimiter. Elle se perd par touches insensibles, d'un côté dans la foule infinie d'incidents privés qui constituent la vie concrète des individus, de l'autre dans les lois générales régissant la réalité physique et certains comportements des masses humaines. La réalité historique est par nature tout emmêlée au reste des faits, minuscules ou immenses, de son contexte naturel, mécanique, biologique, physiologique, psychologique : nutrition, digestion, artérioles des acteurs, leurs actes souvent minimes, leurs passions privées, récoltes, conditions climatiques, tremblements de terre, lois cosmiques. Il n'y a pas de réalité historique se délimitant elle-même comme telle, ni",
+      "bbox": {
+        "x_pct": 15.266,
+        "y_pct": 61.85,
+        "w_pct": 69.365,
+        "h_pct": 18.832
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "This content downloaded from 130.60.149.195 on Thu, 27 Feb 2025 16:49:00 UTC All use subject to https://about.jstor.org/terms",
+      "bbox": {
+        "x_pct": 31.95,
+        "y_pct": 92.5,
+        "w_pct": 47.7,
+        "h_pct": 3.5
+      },
+      "changed": true,
+      "change_reason": "Added missing footer content as page_footer."
+    }
+  ],
+  "score": 75,
+  "num_corrections": 5,
+  "issues": [
+    "Several text blocks contained significant OCR errors in the provided json input.",
+    "Running header and page number were missing or mislabeled.",
+    "Footer metadata was missing from input regions."
+  ],
+  "doc_id": "540",
+  "page": 7,
+  "elapsed_seconds": 6.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

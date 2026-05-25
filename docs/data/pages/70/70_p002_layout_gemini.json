@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "les moyens de s'éprouver. Offrons-les lui en lui proposant ce qu'il y a de meilleur dans tous les genres.",
+      "bbox": {
+        "x_pct": 10.637,
+        "y_pct": 5.088,
+        "w_pct": 73.006,
+        "h_pct": 3.972
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il me reste, Mesdames et Messieurs, à vous remercier de votre attention et à souhaiter que cette esquisse suscite en vous maintes suggestions et objections. Si elle doit engendrer une discussion nourrie, j'aurai atteint mon but.",
+      "bbox": {
+        "x_pct": 10.612,
+        "y_pct": 8.678,
+        "w_pct": 73.086,
+        "h_pct": 7.373
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Un roman soviétique.",
+      "bbox": {
+        "x_pct": 28.848,
+        "y_pct": 20.741,
+        "w_pct": 37.607,
+        "h_pct": 4.655
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "« Jaime », par Avdéenko.",
+      "bbox": {
+        "x_pct": 33.384,
+        "y_pct": 25.168,
+        "w_pct": 27.881,
+        "h_pct": 1.972
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header/zb_heading as it is an author/title block. Corrected OCR."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'histoire qu'on nous raconte, c'est la vie typique d'un jeune communiste russe. Il est né dans une famille d'ouvriers modèles, d'une force et d'une ardeur au travail exceptionnelles. Mais les conditions de vie telles qu'elles étaient sous l'ancien régime finissent par avoir raison de tant de vertu, de courage, d'amour familial. Nikanor, le vieux grand-père, qui avait construit avec passion, pour sa femme et ses enfants, la première bicoque des « Ravins-Pourris », devient fou. Il se met à boire. On commence à se battre. Les sentiments les plus purs tournent au poison sous l'action conjuguée de l'épuisement, de la faim, des accidents de travail, du tord-boyau. Le frère du héros, Kozma, qui apprend à lire et devient un révolutionnaire, perd d'abord un bras au laminoir, puis il est envoyé en Sibérie (il sera, plus tard, tué dans l'une des première émeutes de la révolution). Sa sœur se prostitue pour apporter un citron au grand-père fou, à la fin d'une journée de travail harassant qui l'a laissée presque inconsciente. Les deux cadets meurent dans cet enfer où la mort est ressentie par le lecteur comme une véritable délivrance. Reste Sania, le héros, un enfant perdu. Il devient le coéquipier d'un voleur, pille les maisons, les trains... Une nuit, à la suite d'une rixe avec son chef, il gît blessé à côté de la voie ferrée. On le recueille à la Commune des anciens enfants vagabonds. Son âme y guérit autant que son corps, grâce aux bons traitements, à la confiance de l'éducateur, à l'amitié des camarades, à la liberté aussi qui lui est laissée. Lorsqu'il quitte cette maison, il sait qu'il deviendra un homme utile. Le voilà qui s'instruit avec acharnement, il devient mécanicien, conduit une locomotive et, dans un élan d'émulation et de camaraderie socialiste, il parvient, par des initiatives héroïques, à sauver plusieurs fois le rendement compromis des hauts fourneaux de Magnostroï. A la fin, il vit heureux, dans une maison ouvrière, il aime une jeune fille, il va avoir un enfant.",
+      "bbox": {
+        "x_pct": 10.58,
+        "y_pct": 28.473,
+        "w_pct": 73.57,
+        "h_pct": 55.533
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "« Jaime » reste une épopée filmée. L'auteur est dominé par l'esthétique et la psychologie du cinéma. Davantage que les réussites de l'U.R.S.S. dans le domaine du film, un roman comme celui-ci montre que le cinéma est bien l'art excellence de cette civili-",
+      "bbox": {
+        "x_pct": 10.419,
+        "y_pct": 83.744,
+        "w_pct": 73.602,
+        "h_pct": 7.595
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR text transcript."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "395",
+      "bbox": {
+        "x_pct": 79.5,
+        "y_pct": 91.5,
+        "w_pct": 5.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Added page number as footer."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was very poor in quality",
+    "Missing page number region detected"
+  ],
+  "doc_id": "70",
+  "page": 2,
+  "elapsed_seconds": 11.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

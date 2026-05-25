@@ -1,0 +1,81 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pr©sent. Sans en faire aucunement la th©orie, il retient en sa m©moire un pass© qui est ce qu'il a ©t©, d©sormais pour toujours ; il ouvre devant ses actes un avenir encore inconnu, aux possibles multiples, qui d©pend partiellement de ce qu'il va d©cider et accomplir. Contrairement au temps extra-humain, où se d©roulent les ph©nom¨nes physiques ©tudi©s par la science, et qui va, ind©finiment et sans coupure, d'avant vers après, le temps coule pour l'homme historique à partir de son présent, à la rencontre de son avenir. Cette coupure, cette scission du présent dont d©pend la structure historique tout entière, elle n'est — on l'a dit souvent — qu'un point à peine, une limite presque abstraite. Mais elle est en même temps l'instant existentiel, le seul, l'unique concret, où l'homme s'accomplit en tant que sujet libre, parce que c'est là seulement qu'il a un rendez-vous réel avec le monde et qu'il peut y inscrire son vouloir.",
+      "bbox": {
+        "x_pct": 13.18,
+        "y_pct": 4.987,
+        "w_pct": 78.928,
+        "h_pct": 30.13
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais il est impossible de s'en tenir là. D'une part, l'action libre dans l'instant ne peut pas ne pas chercher son sens dans une relation avec une sorte d'éternité non possédée, refusée même à la pensée ou à l'imagination, une éternité où se concentrerait, au delà du temps, l'histoire entière. D'autre part, n'importe quelle action, n'importe quel énoncé du langage occupe une dimension plus large que l'instant existentiel. Nous ne vivons pas et ne pouvons pas vivre dans une ponctualité absolue, qui percerait le temps sans s'y épaissir. Au contraire : nous vivons dans une sorte de « petite durée » qui n'est ni la pointe de l'absolu, ni un morceau du temps qui fuit, mais une sorte de présent élargi qui, sans s'écouler, se déplace avec nous, comme une éternité en miniature, incarnée dans notre condition, et qui interdit la banalisation et la bagatellisation de nos actes, que la fuite du temps pourrait nous offrir.",
+      "bbox": {
+        "x_pct": 12.756,
+        "y_pct": 34.806,
+        "w_pct": 79.227,
+        "h_pct": 29.611
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle me paraît étre l'historicité humaine, et son épuisant imbroglio de relatif et d'absolu. Les fruits en ont été sanglants, atroces, mais aussi admirables. Le meilleur et le pire s'y sont déployés. Quoi d'étonnant si les Européens qui la vivent depuis longtemps en sont las, s'ils rêvent aujourd'hui de démission, au profit d'un déterminisme analogue à celui de la nature, ou d'un angélisme sans contrainte, spontanément et chimériquement harmonieux ?",
+      "bbox": {
+        "x_pct": 12.556,
+        "y_pct": 64.131,
+        "w_pct": 79.252,
+        "h_pct": 15.151
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and improved transcription accuracy."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'essentiel, dès lors, pour les Européens, c'est, malgré ou à cause des défis multiples et des chantages pressants auxquels ils sont soumis, et dont leur lassitude et leur mauvaise conscience se font étrangement",
+      "bbox": {
+        "x_pct": 12.556,
+        "y_pct": 78.885,
+        "w_pct": 79.09,
+        "h_pct": 6.482
+      },
+      "changed": true,
+      "change_reason": "Corrected text truncation."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 12.8,
+        "y_pct": 87.5,
+        "w_pct": 2.0,
+        "h_pct": 3.0
+      },
+      "changed": true,
+      "change_reason": "Corrected classification of page number as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 5,
+  "issues": [
+    "Original detection failed to capture full paragraph text.",
+    "Page number at bottom left was misidentified as text.",
+    "OCR text was heavily fragmented and incomplete."
+  ],
+  "doc_id": "1580",
+  "page": 5,
+  "elapsed_seconds": 6.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

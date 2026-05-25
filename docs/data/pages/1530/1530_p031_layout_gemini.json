@@ -1,0 +1,91 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "104",
+      "bbox": {
+        "x_pct": 12.8,
+        "y_pct": 57.0,
+        "w_pct": 3.7,
+        "h_pct": 2.1
+      },
+      "changed": true,
+      "change_reason": "Label changed from text to page_header as it is a page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "ENTRETIEN PUBLIC",
+      "bbox": {
+        "x_pct": 42.0,
+        "y_pct": 62.0,
+        "w_pct": 16.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Label changed from text to page_header as it is a running header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "FEtat un écrivain, Sciascia, a dit — je cite plus ou moins de mémoire — que si la pédagogie morale exhorte à la vérité et à la résistance, donc au courage, une saine pédagogie politique, en revanche, doit aboutir à une société où le pouvoir soit exercé de façon que le courage ne soit pas nécessaire, où on n'ait pas besoin d'être courageux pour exprimer ses convictions en n'étant pas obligé de répéter ce que disent les plus forts, qui, une fois au pouvoir, assiègent, avec leur stupidité et leur intolérance, les intelligences. Et, hier encore, Jeanne Hersch a évoqué Thomas More qui prétendait au droit de ne pas être martyr. Voilà qu'en passant par Papageno, Sciascia et Thomas More, on en vient à réfléchir, comme Jeanne Hersch nous a invités à le faire, sur les imbrications du pouvoir avec les données premières de la condition humaine, avec cette condition humaine dans son épaisseur existentielle.",
+      "bbox": {
+        "x_pct": 12.535,
+        "y_pct": 9.504,
+        "w_pct": 75.972,
+        "h_pct": 22.479
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH: Je voudrais répondre très brièvement à certaines de vos remarques.",
+      "bbox": {
+        "x_pct": 12.581,
+        "y_pct": 33.0,
+        "w_pct": 75.926,
+        "h_pct": 19.041
+      },
+      "changed": true,
+      "change_reason": "Corrected speaker identification to section_header label."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Si l'Etat s'érige en Providence programmée, c'est que les hommes ont envie d'avoir une providence étatique. Ils ont envie d'être protégés, encore et toujours mieux protégés, et d'être sûrs de leur retraite au moment où ils viennent au monde. Le pouvoir n'est pas une chose qui est séparable de ce que veulent les hommes; c'est pourquoi je crois que nous ne voyons pas toute la complexité du problème quand nous mettons, en quelque sorte, cette espèce de bête noire de l'Etat ou du pouvoir en face de nous. Il n'est pas en face de nous, il est déjà derrière nous, déjà en nous. Je crois que l'appétit ou le désir de cette garantie, de cette protection, de cette sécurité, est diffus, et qu'en fait le pouvoir, lorsqu'il parle à travers ses organes propres, ne fait que répéter les « clichés » dont les citoyens remplissent leurs journaux, leur radio, leur TV, etc., ces « clichés » qu'on entend, même, jusqu'à l'Unesco!",
+      "bbox": {
+        "x_pct": 12.731,
+        "y_pct": 51.298,
+        "w_pct": 75.856,
+        "h_pct": 22.446
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A propos du courage et de la peur, vous avez dit: « Papageno a le droit de ne pas être courageux ». Il a, sûrement, le droit de ne pas être courageux, mais la condition humaine est telle qu'il en subira les conséquences. Car, lorsqu'on renonce complètement à être courageux, on en subit les conséquences; vous avez dit: « Heureuses les époques où il n'est pas nécessaire d'être courageux », et, je vous entends bien. Mais vous avez « flirté », là, je crois, avec une pensée très répandue aujourd'hui, qui me paraît extrêmement dangereuse: l'époque idéale, la société idéale, le régime idéal, seraient ceux où l'on n'aurait plus besoin d'être des hommes. On n'aurait plus besoin d'être des hommes — mais l'être, c'est toujours",
+      "bbox": {
+        "x_pct": 12.535,
+        "y_pct": 73.083,
+        "w_pct": 75.88,
+        "h_pct": 17.19
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Page number and header were labeled as text.",
+    "Speaker identification heading was labeled as text.",
+    "The OCR text content needs minor refinement."
+  ],
+  "doc_id": "1530",
+  "page": 31,
+  "elapsed_seconds": 7.36,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

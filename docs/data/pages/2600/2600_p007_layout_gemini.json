@@ -1,0 +1,93 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Elle constitue le présent du temps vécu par la conscience. En effet, seul le présent, dans toute l'extension du temps vécu, est le moment de l'action. C'est au présent que la raison pratique trouve son seul point d'efficacité. C'est au présent qu'elle a son seul rendez-vous avec le monde phénoménal pour y insérer un acte. On peut même dire que cette insertion possible constitue le présent du temps vécu par une conscience.",
+      "bbox": {
+        "x_pct": 4.171,
+        "y_pct": 8.063,
+        "w_pct": 80.306,
+        "h_pct": 17.099
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La cause est antérieure à l'effet, l'effet se produit après la cause. Le lien entre la cause et l'effet épouse un temps continu qui va d'avant en après, sans articulation ni coupure. Mais la recherche d'une cause, qui est un acte de conscience, intervient dans cette continuité et remonte le temps, vers le passé, — alors que cet acte, par sa finalité, vise un avenir où la cause sera connue.",
+      "bbox": {
+        "x_pct": 4.337,
+        "y_pct": 32.228,
+        "w_pct": 80.14,
+        "h_pct": 14.406
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi se constitue, pour la conscience, un temps fait de “dimensions” opposées: d'un passé qui ne cesse de s'éloigner en arrière de son acte présent, et d'un futur qui ne cesse de s'ouvrir devant elle, et où se déploie sa visée.",
+      "bbox": {
+        "x_pct": 4.337,
+        "y_pct": 49.102,
+        "w_pct": 80.14,
+        "h_pct": 9.667
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Entre les deux, la coupure radicale du présent, qu'on dit pourtant, malgré sa radicalité, insaisissable.",
+      "bbox": {
+        "x_pct": 4.426,
+        "y_pct": 61.264,
+        "w_pct": 79.974,
+        "h_pct": 4.597
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Coupure radicale: en effet, entre le passé et le futur il y a, pour la conscience active, l'opposition entre ce qui est ce qu'il est et à quoi on ne peut plus rien changer, et ce qui s'offre à la finalité active, non pas n'importe comment, certes, non pas comme une indétermination pure, mais comme donnant prise encore, dans une certaine mesure, à l'action. Ce qui est passé ne rede-",
+      "bbox": {
+        "x_pct": 4.247,
+        "y_pct": 68.387,
+        "w_pct": 80.319,
+        "h_pct": 14.597
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text transcription."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "57",
+      "bbox": {
+        "x_pct": 80.893,
+        "y_pct": 88.756,
+        "w_pct": 2.219,
+        "h_pct": 2.235
+      },
+      "changed": true,
+      "change_reason": "Added missing page footer region."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 6,
+  "issues": [
+    "Original transcriptions for paragraphs were heavily truncated and contained typos.",
+    "Page number at bottom right was not detected in original regions."
+  ],
+  "doc_id": "2600",
+  "page": 7,
+  "elapsed_seconds": 5.97,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

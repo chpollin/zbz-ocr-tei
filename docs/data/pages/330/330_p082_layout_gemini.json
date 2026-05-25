@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "48",
+      "bbox": {
+        "x_pct": 126.0,
+        "y_pct": 82.0,
+        "w_pct": 17.0,
+        "h_pct": 24.0
+      },
+      "changed": true,
+      "change_reason": "Recognized page number as page_header to be filtered out."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": {
+        "x_pct": 395.0,
+        "y_pct": 81.0,
+        "w_pct": 226.0,
+        "h_pct": 20.0
+      },
+      "changed": true,
+      "change_reason": "Identified running header as page_header to be filtered out."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "tentés de fonder sur le déterminisme une passivité nouvelle et de dire : « Laissons faire, l'histoire suffit. »",
+      "bbox": {
+        "x_pct": 12.396,
+        "y_pct": 10.9,
+        "w_pct": 85.237,
+        "h_pct": 5.232
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Or il s'est trouvé que, s'inscrivant progressivement dans les faits, le socialisme a atténué ses propres évidences. Tandis que les vérités qu'il apportait gagnaient des esprits de plus en plus nombreux tout en imposant aux rapports économiques et sociaux les palliatifs les plus urgents, on vit de plus en plus clairement qu'elles ne correspondaient qu'à certains aspects de la réalité. Elles apparaissaient sur un fond de complexité plus grande qui restait indéchiffré. L'enfer terrestre perdait de son acuité, le paradis terrestre se brouillait et s'éloignait.",
+      "bbox": {
+        "x_pct": 12.214,
+        "y_pct": 14.884,
+        "w_pct": 85.794,
+        "h_pct": 19.581
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les travailleurs conquirent, grâce aux libertés politiques et à l'arme de la grève, des droits, un niveau de vie plus élevé, un minimum de propriété. Ces droits, cette propriété, les tenaient à les défendre. L'opposition absolue de ceux qui avaient tout à gagner et rien à perdre n'existait plus. Des solidarités apparurent, liant patrons et ouvriers, face à d'autres périls. Des contrats collectifs divers remplacèrent le schéma simple de la lutte des classes. Par l'impôt, le contrôle, les subventions, la cogestion, la notion même de propriété devint moins claire. Des guerres éclatèrent, dont on distinguait bien les ressorts capitalistes, mais dont on ne pouvait pas ignorer les destructions capitalistes — dont on voyait qu'elles étaient aussi autre chose, qu'elles avaient un autre enjeu. L'analyse sociale marxiste, malgré ses évidences économiques, apparut partielle et non plus totale.",
+      "bbox": {
+        "x_pct": 12.0,
+        "y_pct": 34.0,
+        "w_pct": 86.0,
+        "h_pct": 28.0
+      },
+      "changed": true,
+      "change_reason": "Added missing paragraph block that was skipped by previous detection."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "D'autre part, les travailleurs, devenus conscients de leur force, prirent l'habitude d'en faire usage. L'action syndicale et politique quotidienne leur prouva que les résultats variaient avec leurs décisions, que le succès ou l'échec dépendait d'un calcul juste ou d'une erreur. Le déterminisme historique, ils l'oublièrent, ayant désormais leurs raisons positives d'espérer et leurs responsabilités précises.",
+      "bbox": {
+        "x_pct": 12.354,
+        "y_pct": 62.683,
+        "w_pct": 85.655,
+        "h_pct": 14.92
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ainsi paradoxalement chez les socialistes que l'idéologie professée s'est écartée le plus de l'idéologie vécue. La doctrine qui avait donné naissance et conscience au mouvement d'affranchissement des travailleurs est théoriquement maintenue et fait figure de drapeau : la renier, c'est presque passer à l'ennemi. On le sait, les grandes époques révolutionnaires de l'histoire ont souvent été les plus paradoxales.",
+      "bbox": {
+        "x_pct": 12.493,
+        "y_pct": 77.273,
+        "w_pct": 85.724,
+        "h_pct": 12.772
+      },
+      "changed": true,
+      "change_reason": "Corrected text content based on image."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Initial text blocks were severely mangled by OCR.",
+    "Missing entire paragraph in the middle of the page.",
+    "Header and page number not labeled as filter."
+  ],
+  "doc_id": "330",
+  "page": 82,
+  "elapsed_seconds": 9.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

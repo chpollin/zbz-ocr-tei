@@ -1,0 +1,141 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "be ich sondern die Konsequenz muß die sein – und da gebe ich Frau Hersch vollkommen recht –, die Konsequenz muß die sein zu sagen: dann müssen wir uns eben mit paradoxen Formulierungen begnügen. Es ist nicht fraglich, ob Lügen gut oder schlecht ist, denn wenn das Argumentationsgerüst, das ich zu errichten versucht habe, hält, dann ist Lügen im Regelfalle moralisch schlecht. Interessant ist vielmehr zu fragen, in welcher Situation das nicht greift, in welcher Situation Lügen also, obwohl moralisch schlecht, geboten ist. Das kann man, glaube ich, ohne neue Wörter zu erfinden ... ohnehin überlege ich gerade, welches ein neues Wort sein könnte ... vielleicht statt ,Lüge‘ und ,Wahrheit‘ irgend so etwas drittes, vielleicht ...",
+      "bbox": {
+        "x_pct": 8.488,
+        "y_pct": 4.308,
+        "w_pct": 85.075,
+        "h_pct": 27.295
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Annemarie Pieper:",
+      "bbox": {
+        "x_pct": 8.832,
+        "y_pct": 33.005,
+        "w_pct": 27.485,
+        "h_pct": 3.024
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Lahrheit und Wuge",
+      "bbox": {
+        "x_pct": 8.728,
+        "y_pct": 35.219,
+        "w_pct": 26.707,
+        "h_pct": 2.942
+      },
+      "changed": true,
+      "change_reason": "Typo correction in text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 8.982,
+        "y_pct": 39.918,
+        "w_pct": 33.728,
+        "h_pct": 2.004
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Oder Lürheit und Wahre. Ich will das nicht ridikülisieren; ich will nur sagen, daß neue Wörter wahrscheinlich nicht viel helfen. Heidegger hat es jedenfalls bis auf wenige Ausnahmen auch nicht geschafft.",
+      "bbox": {
+        "x_pct": 8.578,
+        "y_pct": 42.013,
+        "w_pct": 84.731,
+        "h_pct": 9.326
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated/typoed text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Frage aus dem Publikum (A):",
+      "bbox": {
+        "x_pct": 8.278,
+        "y_pct": 53.215,
+        "w_pct": 44.566,
+        "h_pct": 2.678
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn ich ganz kurz noch etwas sagen darf. Wenn Sie so ein Mittelwort bilden zwischen diesen beiden Gegensätzen, dann bewegen Sie sich immer noch in den Gegensätzen.",
+      "bbox": {
+        "x_pct": 8.383,
+        "y_pct": 55.464,
+        "w_pct": 85.03,
+        "h_pct": 7.104
+      },
+      "changed": true,
+      "change_reason": "Corrected typo 's0' to 'so' and truncated text."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Walther Ch. Zimmerli:",
+      "bbox": {
+        "x_pct": 8.937,
+        "y_pct": 64.362,
+        "w_pct": 33.728,
+        "h_pct": 2.24
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dann bin ich wieder in der Falle; genau so ist es. Ich bilde also etwas ganz Neues. Es gibt diese Versuche. Wer sich ein bißchen in der Geschichte der Philosophie auskennt, erinnert sich, daß Carnap solche Beispiele gebracht hat. Sie erinnern sich an ,,babig“ und ,,bebig“, neue Wörter, die er erfunden hat, um sich über die Metaphysik lustig zu machen, aber das hat das Problem leider auch nicht richtig gelöst. Heidegger hat ganze Bücher mit neuerfundenen Wörtern gefüllt, und das hat, wie Frau Hersch uns heute im Seminar sehr schön gesagt hat, eigentlich nur dazu geführt, daß wir immer vermuten, da stecke doch noch mehr hinter diesen Texten, als wir denken würden, wenn sie mit alten Wörtern geschrieben wären. Es steckt",
+      "bbox": {
+        "x_pct": 8.278,
+        "y_pct": 66.512,
+        "w_pct": 85.24,
+        "h_pct": 26.995
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "53",
+      "bbox": {
+        "x_pct": 89.28,
+        "y_pct": 95.15,
+        "w_pct": 2.7,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number region."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 5,
+  "issues": [
+    "Original text extraction contained numerous truncations and typos.",
+    "Page number 53 was initially omitted from extraction regions."
+  ],
+  "doc_id": "3180",
+  "page": 30,
+  "elapsed_seconds": 6.09,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

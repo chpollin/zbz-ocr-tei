@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "view of Liberty Jaspers has in recent years...",
+      "bbox": {
+        "x_pct": 6.927,
+        "y_pct": 6.46,
+        "w_pct": 74.04,
+        "h_pct": 56.254
+      },
+      "changed": true,
+      "change_reason": "Corrected typo 'Liberly' to 'Liberty' in text field."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "And that is not the only way in which Jaspers...",
+      "bbox": {
+        "x_pct": 8.766,
+        "y_pct": 62.258,
+        "w_pct": 72.387,
+        "h_pct": 20.2
+      },
+      "changed": true,
+      "change_reason": "Fixed truncated and inaccurate text preview."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "153",
+      "bbox": {
+        "x_pct": 776,
+        "y_pct": 894,
+        "w_pct": 29,
+        "h_pct": 14
+      },
+      "changed": true,
+      "change_reason": "Added missing page number region which was detected but labeled as noise or omitted; categorized as page_footer."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text preview for the first paragraph contained a typo.",
+    "Initial text preview for the second paragraph was incomplete.",
+    "Page number at the bottom right was missing from the initial region list."
+  ],
+  "doc_id": "3090",
+  "page": 11,
+  "elapsed_seconds": 3.94,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "SEELE UND LEIB - GEIST UND MATERIE",
+      "bbox": {
+        "x_pct": 7.688,
+        "y_pct": 6.273,
+        "w_pct": 45.159,
+        "h_pct": 1.703
+      },
+      "changed": true,
+      "change_reason": "Header identified as section title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "ne se sentir plus menace, ne tend qu'à sa propre croissance et fait de cette croissance sa seule raison d'être. Il n'y a pas alors, à proprement parler, \"pouvoir\" au sens historique et humain du terme, mais seulement lutte pour la vie (struggle for life) et, au niveau des affrontements naturels, le seul règne de la force.",
+      "bbox": {
+        "x_pct": 7.827,
+        "y_pct": 10.883,
+        "w_pct": 77.572,
+        "h_pct": 11.438
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'autre pôle, c'est celui où le pouvoir trouve sa raison d'être au service de la liberté, de l'indépendance, d'impératifs qui peuvent être absolus au point d'exiger le renoncement total à la force. Ce pôle, l'extrême opposé de toute contrainte, c'est celui où l'âme, à travers le renoncement, obéit à l'appel de la liberté. Là encore il n'y a pas \"pouvoir\" au sens humain du terme, mais pour une raison inverse: le niveau naturel de la force est complètement abandonné à lui-même, la liberté ne l'assume plus, elle se veut purement \"âme\". Il ne s'agit plus de politique.",
+      "bbox": {
+        "x_pct": 7.942,
+        "y_pct": 23.359,
+        "w_pct": 80.763,
+        "h_pct": 18.383
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le pouvoir politique n'existe que dans une problématique intermédiaire, là où les hommes acceptent et supportent la coexistence des deux pôles extrêmes et de leurs exigences divergentes: celle d'un pouvoir toujours menacé, donc toujours insuffisant par nature, qui prend pour fin constante sa propre croissance - et celle d'un pouvoir subordonné, borné et conditionné par sa fin essentielle, métapolitique, absolue, qui est la liberté des hommes.",
+      "bbox": {
+        "x_pct": 8.092,
+        "y_pct": 42.867,
+        "w_pct": 80.578,
+        "h_pct": 15.859
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce pouvoir contradictoire constitue par essence la réalité politique, l'une des dimensions où l'homme doit apprendre à vivre sa condition d'homme.",
+      "bbox": {
+        "x_pct": 8.208,
+        "y_pct": 60.078,
+        "w_pct": 80.613,
+        "h_pct": 4.398
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text output."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A cause des contradictions que je viens d'expliciter, l'homme ne peut vivre ni avec le pouvoir, ni sans lui. Il ne lui reste qu'à tenter de l'apprivoiser sans s'y asservir. Cet apprivoisement, c'est la civilisation. Elle se développe au niveau spécifiquement humain - ni celui du corps seul, comme celui des animaux, ni celui de l'esprit pur, comme serait celui des anges -, cherchant, par les moeurs, le droit, les formes, les traditions, à maîtriser la force sans l'abolir, pour la mettre cahin caha au service de la liberté.",
+      "bbox": {
+        "x_pct": 8.127,
+        "y_pct": 67.992,
+        "w_pct": 80.74,
+        "h_pct": 17.922
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text output."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "104",
+      "bbox": {
+        "x_pct": 88.0,
+        "y_pct": 87.0,
+        "w_pct": 3.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 7,
+  "issues": [
+    "Original OCR output was heavily garbled and required manual reconstruction.",
+    "Page number missing from initial detection."
+  ],
+  "doc_id": "1640",
+  "page": 10,
+  "elapsed_seconds": 5.32,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

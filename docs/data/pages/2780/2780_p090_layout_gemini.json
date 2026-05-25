@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "comprendre ou à l'imaginer, pour m'en tenir à celui de l'histoire humaine, tel que nous le vivons quand nous y vivons.",
+      "bbox": {
+        "x_pct": 18.114,
+        "y_pct": 13.41,
+        "w_pct": 57.278,
+        "h_pct": 6.893
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le temps vécu par les hommes, contrairement à celui que les physiciens mesurent dans la nature, est centré sur un présent, autour duquel s'articulent, de part et d'autre, un passé et un avenir. Telles sont les trois dimensions qui lui sont indispensables. Il est donc constitué par le présent – par la présence – d'une conscience, celle d'un sujet à la fois acteur et témoin. Tout moment du temps est un présent – actuel ou virtuel – d'acteur actuel ou virtuel. C'est ce que la langue appelle « le présent historique », qui peut se situer en n'importe quel point du passé ou du futur, mais qui se caractérise par la présence du monde à tel sujet donné, permettant à celui-ci d'y inscrire une action.",
+      "bbox": {
+        "x_pct": 17.903,
+        "y_pct": 19.894,
+        "w_pct": 57.765,
+        "h_pct": 30.417
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il est étrange de constater combien nous sommes peu conscients du fait que pour agir il faut avoir un monde, et que nous n'avons un monde qu'au présent. Le monde passé est désormais pour nous hors d'atteinte. Le monde à venir n'est pas encore là. Pour qui veut agir, manquer le présent est irréparable. Savoir ce qu'on aurait voulu faire à tel moment du passé, ou ce qu'on rêve de faire à tel moment du futur, ne donne aucune prise sur le réel.",
+      "bbox": {
+        "x_pct": 18.008,
+        "y_pct": 50.311,
+        "w_pct": 57.627,
+        "h_pct": 19.926
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le présent de l'agent historique est donc constitué",
+      "bbox": {
+        "x_pct": 21.536,
+        "y_pct": 69.583,
+        "w_pct": 54.025,
+        "h_pct": 3.107
+      },
+      "changed": true,
+      "change_reason": "Corrected corrupted OCR text reading."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "91",
+      "bbox": {
+        "x_pct": 72.18,
+        "y_pct": 74.96,
+        "w_pct": 1.76,
+        "h_pct": 2.51
+      },
+      "changed": true,
+      "change_reason": "Identified page number as page_footer and added as a new region."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 5,
+  "issues": [
+    "Significant OCR errors in nearly every paragraph block.",
+    "Page number 91 was not detected as a separate region."
+  ],
+  "doc_id": "2780",
+  "page": 90,
+  "elapsed_seconds": 5.41,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

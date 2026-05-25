@@ -1,0 +1,58 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "IDÉOLOGIES ET RÉALITÉ",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The text 'IDÉOLOGIES ET RÉALITÉ' is clearly a page-level section header, not body text."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "III",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Page number 'III' is a page header/numbering, not body text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "C'est parce que la vérité ne s'impose pas avec certitude que toute option politique doit toujours pouvoir être équilibrée par des options inverses; c'est parce que le pouvoir est en soi corrupteur qu'il doit rester limité, de façon à préserver l'individu comme centre possible d'indétermination, capable d'initiatives, de recherches et d'impulsions nouvelles.",
+      "bbox": {
+        "x_pct": 3.162,
+        "y_pct": 10.811,
+        "w_pct": 84.401,
+        "h_pct": 14.171
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from fragmented recognition to match original document."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "6) Pouvoir politique efficace. — Jeanne Hersch insiste sur la part de fiction que comportent les démocraties de l'Occident du fait de leur structure économique. Si les mesures libérales du XIXe siècle tendaient à assurer l'équilibre des pouvoirs afin de limiter l'action de l'exécutif et de protéger l'individu, l'État actuel doit de plus en plus intervenir dans la vie économique, orienter la production et assurer une plus juste répartition des biens. De telles tâches exigent une action efficace et de longue durée — donc une meilleure organisation du travail parlementaire et une stabilité suffisante des organes gouvernementaux. En France, en matière de budget par exemple, on s'en tient à des traditions périmées; le budget étant aujourd'hui l'expression financière du plan économique dans son ensemble, devrait être adopté pour la durée de la législature. Il faut que le gouvernement puisse procéder à des décisions rapides dans le cadre d'un plan d'ensemble qui sauvegarde leur cohésion. Le rôle de l'Assemblée n'est pas de mutiler ou de tronquer jusqu'à l'absurde les projets du gouvernement, ni d'en régler dans le détail la réalisation, mais d'en fixer les fins et les limites en votant un ensemble de lois-cadres. Quant à la stabilité ministérielle, le simple recours à la dissolution du Parlement risquerait de remplacer l'instabilité de l'exécutif par celle du législatif et de conduire à une crise du régime, comme en Allemagne pré-hitlérienne. Notons que dans les pays à régime présidentiel, l'exécutif, parce qu'il est permanent, a en réalité moins de puissance. Le Président Truman a vu, près d'une cinquantaine de fois, des lois votées contre son veto; après les avoir dénoncées comme nocives, il a dû en assurer l'application. Chez nous, il y aurait eu une dizaine de chutes gouvernementales, mais la menace de la question de confiance aurait obligé quarante fois le législatif à subir la volonté de l'exécutif. Il semble bien qu'ici le problème de l'instabilité ne sera pas résolu par des mesures extérieures ou des modifications constitutionnelles, mais par une meilleure organisation des partis.",
+      "bbox": {
+        "x_pct": 2.967,
+        "y_pct": 25.045,
+        "w_pct": 84.596,
+        "h_pct": 63.307
+      },
+      "changed": true,
+      "change_reason": "Corrected text content from truncated recognition to match the full paragraph text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction was heavily truncated and fragmented.",
+    "Section header and page numbers were missing from the provided region list.",
+    "Labeling was imprecise regarding structural elements vs body text."
+  ],
+  "doc_id": "330",
+  "page": 17,
+  "elapsed_seconds": 4.89,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

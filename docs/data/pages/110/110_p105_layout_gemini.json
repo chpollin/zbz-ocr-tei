@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "LA FORME POUR L'HOMME 103",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 2.0,
+        "w_pct": 68.3,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "ADDED: PAGE_HEADER"
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "la   catégorie de la totalité ? Les   termes distincts   manquent. La raison;   dêtre un rapport à e",
+      "bbox": {
+        "x_pct": 10.714,
+        "y_pct": 13.786,
+        "w_pct": 68.353,
+        "h_pct": 35.129
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On arrivera au même résullal avec la nolion de   justice Pour c'est une nolion   distributive;   déf",
+      "bbox": {
+        "x_pct": 10.403,
+        "y_pct": 49.264,
+        "w_pct": 68.594,
+        "h_pct": 26.077
+      },
+      "changed": false
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Missing page header region in initial selection"
+  ],
+  "doc_id": "110",
+  "page": 105,
+  "elapsed_seconds": 5.66,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

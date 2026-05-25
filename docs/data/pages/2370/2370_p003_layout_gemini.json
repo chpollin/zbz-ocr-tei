@@ -1,0 +1,131 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "L'armée, le sol et la liberté",
+      "bbox": {
+        "x_pct": 23.059,
+        "y_pct": 14.779,
+        "w_pct": 53.187,
+        "h_pct": 4.202
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch Philosophe",
+      "bbox": {
+        "x_pct": 39.594,
+        "y_pct": 20.104,
+        "w_pct": 19.93,
+        "h_pct": 4.731
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Même si Guillaume Tell est une figure de légende, il a eu une efficacité historique réelle: au cœur du sens de notre pays, au point de départ de son histoire il y a son refus (intérieur) d'obéissance à la force (extérieure). Et c'est le refus d'un homme seul.",
+      "bbox": {
+        "x_pct": 9.073,
+        "y_pct": 30.473,
+        "w_pct": 81.738,
+        "h_pct": 7.859
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La Suisse me paraît faite pour que ce refus soit possible. Pour qu'un comportement ou un dogme uniforme ne puisse pas être imposé par la contrainte. Il serait médiocre de penser que les citoyens de ce pays, étant différents les uns des autres, se sont vus contraints à la tolérance. Bien plutôt: ils ont voulu pour la liberté la pluralité des possibles, et c'est pourquoi ils sont restés divers.",
+      "bbox": {
+        "x_pct": 9.119,
+        "y_pct": 38.332,
+        "w_pct": 81.761,
+        "h_pct": 11.812
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Défendre la démocratie, c'est défendre l'espace des possibles où s'accomplira le choix – substantiel – de chaque citoyen, et c'est rejeter de ce fait tout dogmatisme exclusif. D'où la force souple de la démocratie, mais aussi sa faiblesse et son vide quand les citoyens deviennent indifférents.",
+      "bbox": {
+        "x_pct": 9.154,
+        "y_pct": 49.984,
+        "w_pct": 81.773,
+        "h_pct": 8.557
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'être humain, comme disait Rimbaud, est «une âme et un corps», et c'est dans le et que se situe sa liberté. La liberté incarne une volonté de l'âme. Si l'âme agit seule, sans rien incarner, cela ne tire pas à conséquence parce qu'elle ne produit aucun résultat et n'affronte aucune suite. Si le corps agit seul, il fonctionne selon les lois de la nature physique, où la force règne seule.",
+      "bbox": {
+        "x_pct": 9.699,
+        "y_pct": 74.042,
+        "w_pct": 81.924,
+        "h_pct": 12.59
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De même, la liberté n'est rien à l'état de pure idée. Elle doit s'incarner, prendre corps.",
+      "bbox": {
+        "x_pct": 9.733,
+        "y_pct": 86.071,
+        "w_pct": 81.692,
+        "h_pct": 4.387
+      },
+      "changed": true,
+      "change_reason": "Swapped order with previous text block for correct reading flow."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "«Le corps» de la liberté démocratique, ce sont les institutions, politiques, syndicales, sociales, culturelles, à travers lesquelles elle s'inscrit dans les",
+      "bbox": {
+        "x_pct": 9.884,
+        "y_pct": 89.679,
+        "w_pct": 81.622,
+        "h_pct": 4.627
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "11",
+      "bbox": {
+        "x_pct": 89.3,
+        "y_pct": 95.8,
+        "w_pct": 2.2,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number."
+    }
+  ],
+  "score": 50,
+  "num_corrections": 7,
+  "issues": [
+    "Text content was heavily truncated/corrupted in multiple regions.",
+    "Page number missing from initial detection.",
+    "Reading flow/order of text blocks at bottom of page was incorrect."
+  ],
+  "doc_id": "2370",
+  "page": 3,
+  "elapsed_seconds": 5.87,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

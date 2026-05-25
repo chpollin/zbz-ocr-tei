@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "BIBLIOGRAPHIE",
+      "bbox": {
+        "x_pct": 28.535,
+        "y_pct": 21.637,
+        "w_pct": 31.99,
+        "h_pct": 2.774
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "PHILOSOPHIE",
+      "bbox": {
+        "x_pct": 46.126,
+        "y_pct": 31.066,
+        "w_pct": 14.881,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "Corrected label from document_index to text, ensuring it is treated as a paragraph/heading content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les images dans l'œuvre de M. Bergson, Archives de psychologie, Genève, 1931, pp. 97-130. L'illusion philosophique, Paris, Alcan, 1936, 204 p. L'obstacle du langage, in Henri Bergson. Essais et témoignages inédits, Neuchâtel, La Baconnière, 1941, pp. 222-229. Défense de la technicité en philosophie, in L'Homme, Neuchâtel, La Baconnière, 1943, pp. 54-71. La illusione della filosofia, traduction italienne de L'illusion philosophique, Milan, Einaudi, 1943, 161 p. Une philosophie de l'existence : Karl Jaspers, Lettres, Genève, 1945, I, pp. 56-62. La caricature de l'existentialisme et son vrai visage, Suisse contemporaine, 1946, 6e année, 4, pp. 339-357. L'être et la forme, Neuchâtel, La Baconnière, 1946, 234 p. Discontinuité des perspectives humaines, in Le Choix, le Monde, l'Existence, Paris, Arthaud, 1947, pp. 83-123. La liberté sans choix, in Actes du IVe Congrès des Sociétés de philosophie de langue française, Neuchâtel, La Baconnière, 1949, pp. 209-212. La politique et l'humanisme, in A la recherche d'un humanisme vivant, La Chaux-de-Fonds, Librairie Coopérative, 1949, pp. 14-18. L'Existentialisme devant l'opinion publique, Synthèses, Bruxelles, 1950, pp. 49-55. La transcendance du singulier, Studia Philosophica, Bâle, vol. X, 1950, pp. 44-51. L'histoire contre l'absolu, in Actes du VIe Congrès des Sociétés de philosophie de langue française, Paris, Presses Universitaires de France, 1952, pp. 321-323. Tragweite und Grenzen des politischen Handelns, in Offener Horizont, Festschrift für Karl Jaspers, München, Piper, 1953, pp. 265-277.",
+      "bbox": {
+        "x_pct": 46.126,
+        "y_pct": 34.665,
+        "w_pct": 84.77,
+        "h_pct": 57.066
+      },
+      "changed": true,
+      "change_reason": "Refined the bounding box and label for the bibliographic list entries."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "227",
+      "bbox": {
+        "x_pct": 80.088,
+        "y_pct": 93.42,
+        "w_pct": 4.539,
+        "h_pct": 1.764
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to _filter."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 3,
+  "issues": [
+    "Initial bounding box was too large and included multiple content types.",
+    "Page number at the bottom was not classified as page_footer.",
+    "Title/heading text was mislabeled."
+  ],
+  "doc_id": "2330",
+  "page": 231,
+  "elapsed_seconds": 7.67,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

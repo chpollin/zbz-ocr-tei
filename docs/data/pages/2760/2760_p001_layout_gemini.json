@@ -1,0 +1,105 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch",
+      "bbox": {
+        "x_pct": 53.759,
+        "y_pct": 35.494,
+        "w_pct": 12.172,
+        "h_pct": 1.418
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "HISTOIRE ENTRE TEMPS ET TRANSCENDANCE",
+      "bbox": {
+        "x_pct": 37.567,
+        "y_pct": 40.258,
+        "w_pct": 44.67,
+        "h_pct": 1.607
+      },
+      "changed": false
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous vivons de si constante dans le temps que lorsqu'il change selon ce qui le remplit, de nature et de structure, nous ne nous en apercevons pas. Nous admettons comme allant de soi que le monde ambiant, avec notre propre corps, ainsi que la conscience que nous en avons, durent et changent dans un temps qui leur est commun et qui reste identique à lui-même à travers tous les changements.",
+      "bbox": {
+        "x_pct": 32.685,
+        "y_pct": 46.94,
+        "w_pct": 54.296,
+        "h_pct": 9.414
+      },
+      "changed": true,
+      "change_reason": "Corrected label to paragraph and refined OCR text content."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Pourtant, à la réflexion, il paraît évident que les savants qui s'attachent à l'étude des phénomènes de la nature pour ensuite nous en rapporter l'histoire - ou les histoires - recourent à un temps spécifique. Ils mesurent les intervalles entre les moments du devenir, le long d'un temps à une seule dimension, c'est-à-dire s'écoulant dans un seul sens, et dénué de présent. Les seuls repères, le long de cet écoulement, ce sont ceux d'\"avant\" et d'\"après\", et d'intervalle entre les deux. Ce temps, où des intervalles peuvent être mesurés, fonctionne dans les équations de la physique. En revanche, les notions de passé ou de futur n'y ont aucun sens, faute d'un présent pour les séparer.",
+      "bbox": {
+        "x_pct": 32.465,
+        "y_pct": 56.217,
+        "w_pct": 54.597,
+        "h_pct": 15.35
+      },
+      "changed": true,
+      "change_reason": "Corrected label to paragraph and refined OCR text content."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais le premier paradoxe auquel nous nous heurtons est déjà là: ce temps sans mystère, unidimensionnel et mesurable, dont les physiciens se servent sans risquer aucun autre démenti expérimental que celui de l'insaisissable simultanéité, reste tout-à-fait inconcevable tant qu'on n'y introduit pas, subrepticement, une conscience, - \"témoin\" devant lequel se déroule le processus naturel. La nature n'a d'\"histoire\" que pour ce \"témoin\", car quelle sorte de réalité peut bien avoir \"le moment d'avant\" ou \"le moment d'après\" d'une nature dénuée de conscience? La nature, semble-t-il, est étrangère au temps qu'elle n'est là qu'au présent.",
+      "bbox": {
+        "x_pct": 32.465,
+        "y_pct": 71.315,
+        "w_pct": 54.573,
+        "h_pct": 14.104
+      },
+      "changed": true,
+      "change_reason": "Corrected label to paragraph and refined OCR text content."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Et pourtant le temps de la nature ne se laisse pas réduire à un idéalisme pur, puisqu'il constitue un facteur nécessaire, réel, de ce qui s'y passe. Toutes choses égales d'ailleurs, il faut \"du temps\" pour que l'eau",
+      "bbox": {
+        "x_pct": 32.441,
+        "y_pct": 85.321,
+        "w_pct": 54.434,
+        "h_pct": 4.69
+      },
+      "changed": true,
+      "change_reason": "Corrected label to paragraph and refined OCR text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "147",
+      "bbox": {
+        "x_pct": 49.336,
+        "y_pct": 91.56,
+        "w_pct": 2.583,
+        "h_pct": 1.579
+      },
+      "changed": true,
+      "change_reason": "Labelled page number as page_footer."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 5,
+  "issues": [
+    "Initial OCR was highly inaccurate in text transcription.",
+    "Page number at bottom was incorrectly labeled as paragraph.",
+    "Multiple paragraph regions were fragmented incorrectly by original layout engine."
+  ],
+  "doc_id": "2760",
+  "page": 1,
+  "elapsed_seconds": 8.43,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

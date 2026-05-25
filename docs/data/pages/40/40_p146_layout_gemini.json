@@ -1,0 +1,146 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "148 TEMPS ALTERNÉS",
+      "bbox": {
+        "x_pct": 100,
+        "y_pct": 77,
+        "w_pct": 0,
+        "h_pct": 0
+      },
+      "changed": true,
+      "change_reason": "Page number and header must be filtered."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "qui venait de là-haut. Puis il me lâcha, et nous sommes remis à descendre.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 12.127,
+        "w_pct": 64.419,
+        "h_pct": 4.887
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "A la station j'ai attendu avec lui le train qui allait nous séparer.",
+      "bbox": {
+        "x_pct": 9.824,
+        "y_pct": 17.42,
+        "w_pct": 80.757,
+        "h_pct": 5.104
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Nous tenions par la main et j'essayais de lui expliquer tout ce qui s'était passé pour moi depuis notre première rencontre. Je voulais détruire à jamais les chiens de faïence entre nous, et qu'il sût que son rêve, je l'avais partagé. J'étais sûre que ce récit rendrait pour lui son sens et sa valeur au passé, que le passé au moins n'aurait pas à être rejeté, renié, moqué. La tristesse pouvait être plus grande, mais il n'y aurait rien de laid ni d'humiliant. Il m'écouta et me crut. Il souffla:",
+      "bbox": {
+        "x_pct": 9.865,
+        "y_pct": 22.524,
+        "w_pct": 80.851,
+        "h_pct": 22.372
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "— Mais pourquoi ? pourquoi alors ?",
+      "bbox": {
+        "x_pct": 17.973,
+        "y_pct": 45.151,
+        "w_pct": 46.986,
+        "h_pct": 2.892
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne sentais en ce moment que c'était non, mais je m'en souvenais, sans aucun doute possible. Je me forçai à lui répondre:",
+      "bbox": {
+        "x_pct": 9.77,
+        "y_pct": 47.76,
+        "w_pct": 80.635,
+        "h_pct": 7.561
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Vous avez vu vous-même que ce n'est plus comme avant.",
+      "bbox": {
+        "x_pct": 9.77,
+        "y_pct": 55.293,
+        "w_pct": 80.5,
+        "h_pct": 4.698
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Le train arriva. Je lui tenais la main par la fenêtre du wagon, et ce fut le train en s'en allant qui me l'arracha.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 60.302,
+        "w_pct": 80.27,
+        "h_pct": 5.104
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Après quelques minutes sans doute, je me retrouvai seule sur le quai; ma main encore tendue, brûlée par l'arrachement, retomba, inutile, à côté de moi. Il faisait vide, l'air sonnait à tout comme une boîte creuse.",
+      "bbox": {
+        "x_pct": 9.595,
+        "y_pct": 67.836,
+        "w_pct": 80.851,
+        "h_pct": 10.113
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Je ne croirais jamais en moi. J'avais perdu droit et pouvoir de promesse. J'avais détruit moi-même ce qui était sacré. J'avais été folle. J'étais folle. Quel sens tout",
+      "bbox": {
+        "x_pct": 9.554,
+        "y_pct": 77.854,
+        "w_pct": 80.811,
+        "h_pct": 7.467
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 9,
+  "issues": [
+    "Initial text detection was highly garbled with OCR artifacts.",
+    "Page header '148 TEMPS ALTERNÉS' was incorrectly parsed as paragraph text.",
+    "Multiple lines contained spurious characters or merged lines incorrectly."
+  ],
+  "doc_id": "40",
+  "page": 146,
+  "elapsed_seconds": 6.02,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

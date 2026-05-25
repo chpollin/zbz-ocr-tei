@@ -1,0 +1,175 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Der Lehrer in der heutigen Krise",
+      "bbox": {
+        "x_pct": 13.296,
+        "y_pct": 5.886,
+        "w_pct": 38.678,
+        "h_pct": 2.416
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Jeanne Hersch, Genf",
+      "bbox": {
+        "x_pct": 13.215,
+        "y_pct": 9.362,
+        "w_pct": 16.092,
+        "h_pct": 1.521
+      },
+      "changed": true,
+      "change_reason": "Corrected label to section_header as it identifies the author of the text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der von Frau Prof. Dr. Jeanne Hersch am 2. Dezember 1969 vor der Basler Schulsynode gehaltene Vortrag...",
+      "bbox": {
+        "x_pct": 13.215,
+        "y_pct": 11.235,
+        "w_pct": 38.868,
+        "h_pct": 8.083
+      },
+      "changed": true,
+      "change_reason": "Text region was incorrectly merged with author name/header in original json."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Wider den Strom sprechen",
+      "bbox": {
+        "x_pct": 13.4,
+        "y_pct": 22.222,
+        "w_pct": 20.145,
+        "h_pct": 1.442
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Meine Damen und Herren,",
+      "bbox": {
+        "x_pct": 13.296,
+        "y_pct": 24.37,
+        "w_pct": 20.387,
+        "h_pct": 1.385
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Wenn man sich zu einem Thema \u0003ussert, das in der Gegenwart brennend ist, so sollte man immer gegen den Strom sprechen.",
+      "bbox": {
+        "x_pct": 13.159,
+        "y_pct": 25.983,
+        "w_pct": 40.0,
+        "h_pct": 37.778
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Homo sapiens - homo docilis",
+      "bbox": {
+        "x_pct": 13.513,
+        "y_pct": 65.259,
+        "w_pct": 22.611,
+        "h_pct": 1.618
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Der franz\u0003sische Philosoph Maritain definierte...",
+      "bbox": {
+        "x_pct": 13.352,
+        "y_pct": 67.464,
+        "w_pct": 39.911,
+        "h_pct": 24.917
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Lernschule",
+      "bbox": {
+        "x_pct": 54.69,
+        "y_pct": 10.541,
+        "w_pct": 8.59,
+        "h_pct": 1.083
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die Reaktion gegen die traditionelle Schule...",
+      "bbox": {
+        "x_pct": 54.392,
+        "y_pct": 12.462,
+        "w_pct": 40.024,
+        "h_pct": 27.538
+      },
+      "changed": false
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "Der vorgegebene, umgreifende Sinn",
+      "bbox": {
+        "x_pct": 54.633,
+        "y_pct": 41.863,
+        "w_pct": 27.26,
+        "h_pct": 1.481
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die aktive Schule vergisst aber etwas...",
+      "bbox": {
+        "x_pct": 54.392,
+        "y_pct": 43.858,
+        "w_pct": 40.105,
+        "h_pct": 48.49
+      },
+      "changed": false
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "1106",
+      "bbox": {
+        "x_pct": 13.0,
+        "y_pct": 94.5,
+        "w_pct": 5.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Added page number region to filters."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original parsing merged the author name with the following paragraph.",
+    "Page number missing from initial list.",
+    "Small artifacts in text content OCR."
+  ],
+  "doc_id": "880",
+  "page": 2,
+  "elapsed_seconds": 10.51,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

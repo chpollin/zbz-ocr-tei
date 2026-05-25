@@ -1,0 +1,61 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "128 ABSTRACTION, INACHÈVEMENT, DUALISME :",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "The line 128 ABSTRACTION, INACHÈVEMENT, DUALISME : is a running header, not a paragraph of text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Bois, ignorait la faiblesse humaine, — sans s'apercevoir qu'il parlait pas de « force de volonté », mais de libre-arbitre, et qu'il ne pensait pas du tout à la psychologie. En réalité, cette phrase veut fonder la croyance en la liberté sur le fait qu'un impératif catégorique existe. Par l'acte libre la liberté se manifeste, elle n'est pas prouvée par des raisonnements. Vouloir connaître et affirmer la liberté autrement qu'en la réalisant, c'est à la fois fausser la connaissance et enlever à la liberté son authenticité, c'est mettre le pathos de l'affirmation à la place de l'acte.",
+      "bbox": {
+        "x_pct": 15.105,
+        "y_pct": 12.488,
+        "w_pct": 76.265,
+        "h_pct": 30.562
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to match the visual image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les impératifs conditionnés par des contingences étrangères à l'impératif catégorique sont toujours compréhensibles, — mais l'impératif catégorique ne l'est pas. Étant absolu, il ne saurait s'expliquer que par lui-même. Il est enfermé dans son propre cercle : car il n'est pas un objet. Si l'on détermine la liberté comme un objet, elle pourra toujours être réfutée : la causalité naturelle ne peut avoir de lacunes, puisqu'elle est méthodologique (étant catégorie obligatoire de notre esprit) : nous connaissons quand nous pouvons l'établir — et quand nous ne le pouvons pas, nous ne connaissons pas. D'ailleurs, réaliser une liberté connue ne serait plus un acte libre. De même, la sagesse de la divinité se montre dans le fait qu'elle se cache : si elle apparaissait, l'homme ne serait plus qu'une marionnette et n'aurait plus sa liberté.",
+      "bbox": {
+        "x_pct": 15.166,
+        "y_pct": 43.155,
+        "w_pct": 76.401,
+        "h_pct": 43.851
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated OCR text content to match the visual image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Kant borne donc le savoir au monde phénoménal,",
+      "bbox": {
+        "x_pct": 18.976,
+        "y_pct": 86.816,
+        "w_pct": 72.44,
+        "h_pct": 2.698
+      },
+      "changed": false
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial OCR was highly inaccurate and truncated.",
+    "Top header '128...' was missing from detection but should be labeled as _filter/page_header."
+  ],
+  "doc_id": "20",
+  "page": 130,
+  "elapsed_seconds": 3.96,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

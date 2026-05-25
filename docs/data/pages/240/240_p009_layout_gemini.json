@@ -1,0 +1,106 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "SOURCES HUMAINES DE LA DÉMOCRATIE 57",
+      "bbox": {
+        "x_pct": 23.364,
+        "y_pct": 20.803,
+        "w_pct": 49.034,
+        "h_pct": 1.777
+      },
+      "changed": true,
+      "change_reason": "Identified as page header and page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "pas. La peinture n'existe guère : aucun rapport ne s'établit entre le vase ou le cube que l'on dessine et la nature morte d'un grand peintre. La littérature, à travers les < textes choisis > n'existe pas davantage ; la poésie, malgré les strophes apprises par cœur, non plus. Ne parlons pas de danse, ni d'architecture.",
+      "bbox": {
+        "x_pct": 23.263,
+        "y_pct": 23.107,
+        "w_pct": 49.154,
+        "h_pct": 8.666
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "La joie que donnent les arts est toute imprégnée de valeurs humaines. Ces valeurs qui devraient habiter l'âme presque à son insu, à l'ombre de l'amour des œuvres concrètes et des hommes qui les créent ou les contemplent; on tente de les imposer directement, par un moralisme abstrait qui n'engendre que des conformistes ou des révoltés. L'amour, le plaisir qui donnent à l'homme quelque chose à défendre, il n'en est pas question.",
+      "bbox": {
+        "x_pct": 23.666,
+        "y_pct": 32.44,
+        "w_pct": 48.558,
+        "h_pct": 11.477
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dès lors, rien à aimer, que des < vertus >.",
+      "bbox": {
+        "x_pct": 27.18,
+        "y_pct": 44.185,
+        "w_pct": 34.061,
+        "h_pct": 1.727
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ce mince bagage sans joie s'amenuise par la suite, quand l'école a pris fin. Lorsque l'adulte (et cela est vrai d'ailleurs à quelque classe qu'il appartienne) est < en mesure de gagner sa vie >, il considère, de même que la société, qu'il a < fini ses études >. Après, il gagne et il dépense. Selon le niveau social atteint, la proportion du temps consacré à l'une ou à l'autre de ces deux occupations varie, c'est tout. On ne sort plus de là. Et les problèmes changeants du monde, il est de moins en moins capable de les saisir.",
+      "bbox": {
+        "x_pct": 23.312,
+        "y_pct": 46.938,
+        "w_pct": 48.751,
+        "h_pct": 12.999
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Les quelques principes sur lesquels repose la démocratie occidentale sont actuellement, dans une large mesure, des fictions. Je laisse ici de côté tout ce qui concerne l'altération de la démocratie politique par la féodalité économique à laquelle elle reste inextricablement liée et tout le problème de ses institutions. On voit du moins, d'après ce qui précède, combien se trouve compromis et menacé à tout instant le prétendu contrôle des gouvernants par le peuple, du seul fait que les citoyens n'ont pas reçu l'éducation nécessaire. Les éléments indispensables leur manquent, et d'abord, simplement, un vocabulaire. Que signifie < savoir lire >, liberté de la presse et de l'information, libre défense contradictoire des",
+      "bbox": {
+        "x_pct": 23.022,
+        "y_pct": 61.003,
+        "w_pct": 49.017,
+        "h_pct": 17.087
+      },
+      "changed": true,
+      "change_reason": "Corrected text content."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "Kopie von subito e.V., geliefert für Universität Zürich (SLS02X00013)",
+      "bbox": {
+        "x_pct": 18.527,
+        "y_pct": 84.779,
+        "w_pct": 59.88,
+        "h_pct": 1.139
+      },
+      "changed": true,
+      "change_reason": "Identified as page footer metadata."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original text extraction contained significant OCR errors/hallucinations.",
+    "Section header was mislabeled as text.",
+    "Page footer was mislabeled as text."
+  ],
+  "doc_id": "240",
+  "page": 9,
+  "elapsed_seconds": 7.45,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

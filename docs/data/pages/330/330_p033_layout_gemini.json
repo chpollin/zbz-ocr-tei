@@ -1,0 +1,94 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "ID\u0000\u0000LOGIES ET R\u0000\u0000ALIT\u0000\u0000",
+      "bbox": {
+        "x_pct": 315.68,
+        "y_pct": 92.5,
+        "w_pct": 372.48,
+        "h_pct": 27.5
+      },
+      "changed": true,
+      "change_reason": "Missing header region in original input; this is the main page title."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "XIX",
+      "bbox": {
+        "x_pct": 796.6,
+        "y_pct": 93.5,
+        "w_pct": 35.84,
+        "h_pct": 27.5
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute adhésion — sous peine de voir le monde même des valeurs s'abolir, se vider d'être, au contact de sa pensée. Et Platon décrivant le monde des Idées énonce une profession de foi. Les idéologies ne sont pas des espèces botaniques. Elles ont besoin, pour être, de l'adhésion des hommes, elles ne sont que pour des hommes capables d'adhésion.",
+      "bbox": {
+        "x_pct": 14.84,
+        "y_pct": 124.57,
+        "w_pct": 841.13,
+        "h_pct": 118.84
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content extraction."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Socialiste, j'ai cru voir dans la carence idéologique du socialisme actuel l'un des facteurs les plus graves de l'heure. C'est pourquoi la seconde et la troisième partie de cet ouvrage essaient d'être une contribution à son renouvellement doctrinal. La place occupée par le socialisme, parmi les idéologies considérées, sera donc prépondérante. Dès lors, la méthode sera inverse : abandonnant les analyses descriptives, nous essaierons de construire une conception socialiste cohérente et limitée, à partir de valeurs fondamentales communes, de principes directeurs, sur les divers plans idéologiques. Même et surtout s'il s'agit de s'adapter à des circonstances sans cesse nouvelles, il faut d'abord savoir ce qu'on veut et pourquoi on le veut.",
+      "bbox": {
+        "x_pct": 14.84,
+        "y_pct": 248.8,
+        "w_pct": 841.13,
+        "h_pct": 245.71
+      },
+      "changed": true,
+      "change_reason": "Corrected garbled text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "LIMITE DE L'ADHÉSION IDÉOLOGIQUE",
+      "bbox": {
+        "x_pct": 11.56,
+        "y_pct": 531.82,
+        "w_pct": 485.65,
+        "h_pct": 22.82
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Toute adhésion idéologique, cependant, si elle a un sens, doit comporter des limites, sinon elle revient à une abdication aveugle et fanatique au profit d'un absolu humainement indéterminé, donc arbitraire. Qu'est-ce que je déclare, par exemple, lorsque j'adhère au parti socialiste? Est-ce là une promesse qui m'engage sur tous les plans de l'existence humaine ou seulement sur certains? Plus précisément : en devenant membre de ce parti, est-ce que je me prononce contre l'existence de Dieu, contre la foi dans le sacrifice du Christ, contre les Églises, contre n'importe quelle philosophie idéaliste ou spiritualiste, contre Platon, contre la réalité de valeurs éternelles, — pour la foi dans le progrès, dans le matérialisme dialectique, pour le régime républicain parlementaire, pour les partis, pour les nationalisations, pour le réarmement, pour l'école laïque, pour la propriété collective des moyens de production, etc., etc... — pour ou contre tout cela en bloc? Entrer dans un parti, cela implique-t-il une certaine façon de concevoir sa vie, son rapport",
+      "bbox": {
+        "x_pct": 14.84,
+        "y_pct": 570.68,
+        "w_pct": 841.13,
+        "h_pct": 332.17
+      },
+      "changed": true,
+      "change_reason": "Fixed garbled text content and removed OCR noise."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Initial text extraction for top paragraphs was severely corrupted.",
+    "Page number missing from initial detections.",
+    "Main document title missing from detections.",
+    "Manual correction required for all OCR blocks to ensure linguistic accuracy."
+  ],
+  "doc_id": "330",
+  "page": 33,
+  "elapsed_seconds": 6.91,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

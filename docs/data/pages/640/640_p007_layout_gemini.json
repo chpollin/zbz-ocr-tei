@@ -1,0 +1,79 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "7",
+      "bbox": {
+        "x_pct": 50.8,
+        "y_pct": 3.4,
+        "w_pct": 2.1,
+        "h_pct": 1.9
+      },
+      "changed": true,
+      "change_reason": "Page number identified as page_header/_filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "vie ou les vies de plusieurs personnages, sans y avoir eux-mêmes directement participé. Toute culture multiplie la vie individuelle par des dimensions fictives. Mais les proportions changent énormément. Celles qui existent en ville gagnent d'ailleurs du terrain dans la mesure où les grands moyens de diffusion modernes atteignent les campagnes les plus reculées. On peut dire qu'aujourd'hui, pour l'humanité entière, la part de la fiction se développe au dépens de celle de la réalité. Je me suis demandé parfois si on n'allait pas un jour arriver à la situation suivante : en voyageant, on n'aurait absolument aucune aventure, parce que voyager constituerait à aller d'un aérodrome à un autre identique, d'une ville dans une autre toute pareille. On saurait à peine qu'on a changé de lieu, et le voyage ne comporterait aucun dépaysement. En revanche, en restant dans sa propre chambre, qui serait toute tapissée d'écrans, et en appuyant sur un bouton qui donnerait la vision, le son, l'odeur, etc. d'un lieu exotique, on vivrait dans son fauteuil toutes les diversités possibles et imaginables du monde. Ainsi la fiction envahirait la réalité et la submergerait complètement. Mais dès maintenant, la vie en ville augmente énormément la part de la fiction, et de ce fait, la vitesse à laquelle les choses sont vécues varie énormément. L'accélération dans la fiction, est énorme. Une vie prend, pour se dérouler, près de 80 ans. L'enfant, devant le petit ou le grand écran, va faire en une demie-heure, une heure ou deux ou trois heures, l'expérience d'une vie ramassée, donnée fictivement. Le rythme d'une telle expérience est rapide, hâché. C'est cela qui est important. Si vous comparez la durée d'un film ou d'une émission de télévision avec le temps que prend, pour l'enfant assis sur le rebord de la fenêtre, la lecture d'une série de romans d'Alexandre Dumas, vous verrez que l'expérience qu'il fait est toute différente. La lecture, prenant le temps qu'elle prend, et tout en étant plus rapide que notre vie réelle, l'accompagne pendant des jours, des semaines, des mois. On m'a parlé récemment d'un enfant qui avait été dans une école du canton de Berne où, pendant une année, on avait centré l'activité de la classe sur une certaine histoire. Les personnages de cette histoire se sont vraiment installés dans la vie personnelle de cet enfant, et lorsque l'année a été finie, ce sont des personnages réels qu'il lui a fallu quitter. Or ce même enfant va maintenant dans une école genevoise où l'on raconte deux histoires tous les jours. Il connaîtra ainsi quantité d'histoires, mais il est évident qu'aucune ne représentera pour lui une expérience comparable à celle de l'année précédente.",
+      "bbox": {
+        "x_pct": 9.108,
+        "y_pct": 6.695,
+        "w_pct": 84.226,
+        "h_pct": 61.187
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and misspelled text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "L'enfant qui vit en ville vit la plupart des choses qu'il vit, et qui sont fictives dans une énorme proportion, à une cadence d'accélération extrême, ce qui lui constitue une expérience psychologique toute différente.",
+      "bbox": {
+        "x_pct": 9.108,
+        "y_pct": 68.092,
+        "w_pct": 82.935,
+        "h_pct": 5.609
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and misspelled text content."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "HARCELEMENT VISUEL, RIEN A TOUCHER",
+      "bbox": {
+        "x_pct": 29.495,
+        "y_pct": 79.185,
+        "w_pct": 41.226,
+        "h_pct": 2.25
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "On parle toujours du bruit en ville. Mais pour l'enfant citadin, le bruit est peut-être moins important, malgré tout. Il en a tellement l'habitude qu'avec ce bruit, il finit par reconstituer assez facilement une sorte de bruitage continu, une sorte de silence de mer, de torrent ou de fontaine. Ce qui assaille l'enfant avec une force extrême est surtout, me semble-t-il, visuel. L'enfant est constamment soumis à des chocs visuels. Il voit sans cesse une foule de chose nouvelles, tout autrement qu'à la campagne.",
+      "bbox": {
+        "x_pct": 8.925,
+        "y_pct": 82.987,
+        "w_pct": 82.871,
+        "h_pct": 12.102
+      },
+      "changed": true,
+      "change_reason": "Corrected the truncated and misspelled text content."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Text content was severely truncated and contained transcription errors.",
+    "Page number at the top identified as generic text instead of page_header."
+  ],
+  "doc_id": "640",
+  "page": 7,
+  "elapsed_seconds": 7.61,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

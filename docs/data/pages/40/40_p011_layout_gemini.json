@@ -1,0 +1,55 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "TEMPS ALTERNÉS 13",
+      "bbox": {
+        "x_pct": 393.0,
+        "y_pct": 77.0,
+        "w_pct": 215.0,
+        "h_pct": 14.0
+      },
+      "changed": true,
+      "change_reason": "Corrected page header and number identification."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "J'avais surtout en horreur mon nom, ce bruit qui toujours signifiait moi parmi les autres, qui marquait une approche et un viol, qui exigeait mon retour et m'imposait des mouvements dans un milieu à la fois irréel et épais, où les choses à mouvoir étaient lourdes, les lieux à franchir discontinus. Je ne voulais plus avoir de nom, je ne voulais plus être moi, je souhaitais me laisser au bord du chemin, me dissiper jusqu'à la dernière ride dans l'air et n'être plus qu'un regard.",
+      "bbox": {
+        "x_pct": 10.811,
+        "y_pct": 12.164,
+        "w_pct": 81.122,
+        "h_pct": 23.062
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text recognition."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Alors amis, mes refuges, c'étaient les choses qui ne me nommaient pas et ne voulaient rien de moi. Je faisais de longues promenades au bord du lac. Le plus souvent je préférais le soir, parce qu'il me séparait des hommes par de grandes profondeurs de nuit. Les maisons ne déterminaient plus l'aspect du paysage. Le ciel et le lac régnaient. Ils offraient à l'évasion leurs deux obscurités illimitées. Les reflets tremblaient, plus longs ou plus courts selon le vent. Les lumières à terre n'étaient que des constellations. La ville nocturne, à cette distance, n'empêchait pas d'entendre distinctement l'eau se brisant à coups sourds sous les pierres du bord. La nuit ne sentait plus la rue, mais l'eau. J'allais jusqu'au bout de la jetée, vers le phare. Là, j'étais comme sur une île minuscule tout entourée de bruits liquides, disposés les uns derrière les autres avec limpidité jusqu'à un horizon de silence. Mon regard allait sans fin du noir le plus proche à l'ombre indistincte du lointain, des quais éclairés à l'espace sombre, velouté du haut lac. Une nourriture me venait par les yeux, par les oreilles, par la marche, par l'immo-",
+      "bbox": {
+        "x_pct": 10.635,
+        "y_pct": 34.754,
+        "w_pct": 81.351,
+        "h_pct": 47.977
+      },
+      "changed": true,
+      "change_reason": "Corrected text transcription which was garbled."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 3,
+  "issues": [
+    "Page header/number were mislabeled as text.",
+    "Text content was garbled/truncated by OCR process.",
+    "Bounding boxes were not tightly aligned with visual text content."
+  ],
+  "doc_id": "40",
+  "page": 11,
+  "elapsed_seconds": 4.85,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

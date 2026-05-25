@@ -1,0 +1,65 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "page_header",
+      "text": "122 L'A PRIORI ET LES PSYCHOLOGUES",
+      "bbox": {
+        "x_pct": 15.663,
+        "y_pct": 7.425,
+        "w_pct": 75.949,
+        "h_pct": 2.585
+      },
+      "changed": true,
+      "change_reason": "Identified as page header containing page number and running title."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "de parties qu'on puisse connaître séparément. Son unité seule peut être connue — ou rien. Car son unité, c'est celle du sujet.",
+      "bbox": {
+        "x_pct": 15.663,
+        "y_pct": 11.754,
+        "w_pct": 75.949,
+        "h_pct": 7.722
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle est l'attitude de Kant. Tel est le centre qu'il vise. Et tel est le sens et la grandeur de son a priori. Quand les psychologues modernes lui objectent que le temps et l'espace ne sont pas des formes a priori de la conscience puisqu'on voit l'espace par exemple se construire peu à peu dans la conscience de l'enfant, on ne s'aperçoit pas que l'objection passe à côté de Kant sans l'atteindre. Car a priori ne signifie pas : existant dans le temps avant tout contenu d'expérience, mais signifie : présent dans toute expérience. Dans la mesure où l'enfant en fait une, celle-ci s'accomplit déjà dans l'espace. Le fait que l'espace lui-même se construit pour lui peu à peu montre seulement que sa capacité de faire une expérience se développe. Dès qu'il y a conscience, c'est-à-dire réalité objectivement perçue, il y a espace. Kant applaudirait aux recherches du psychologue qui observe, dans l'esprit de l'enfant, la formation progressive de l'espace, comme à toutes les recherches scientifiques (1). Mais il ajoute qu'elles se font toutes dans le monde phénoménal, donc déjà dans le cadre de l'espace et du temps.",
+      "bbox": {
+        "x_pct": 15.316,
+        "y_pct": 19.542,
+        "w_pct": 76.401,
+        "h_pct": 56.625
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Kant dit lui-même, répondant d'avance à ces objections : « Dass alle unsere Erkenntnis mit der Erfahrung anfange, darin ist gar kein Zweifel... Der Zeit nach geht also keine Erkenntnis in uns vor der Erfahrung vorher, und mit dieser fängt alle an. Wenn aber gleich alle...",
+      "bbox": {
+        "x_pct": 15.361,
+        "y_pct": 78.141,
+        "w_pct": 76.009,
+        "h_pct": 10.896
+      },
+      "changed": true,
+      "change_reason": "Identified as footnote text."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page header was incorrectly labeled as paragraph.",
+    "Footnote text was incorrectly labeled as paragraph."
+  ],
+  "doc_id": "20",
+  "page": 124,
+  "elapsed_seconds": 4.34,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

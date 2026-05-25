@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "protester contre l'intervention de la force dans la recherche du vrai que ceux parmi les universitaires — professeurs ou signant avec la collectivité ce contrat leur donnant pour fonction l'éducation du sens du vrai, la recherche à tout prix du vrai, la volonté de comprendre ce que l'autre tient pour vrai ; — et bien entendu cet effort vers le vrai, cette élucidation constante vise aussi, et sans doute particulièrement, le domaine politique, dont dépend notamment la possibilité de la poursuivre et de l'enseigner. Seulement, une telle élucidation politique, c'est le contraire de la propagande, c'est une anti-propagande. L'Université ne peut exister que tant que ce contrat reste vivant dans les esprits et dans les mœurs. Sinon, elle cède la place à des écoles purement professionnelles ou à des centres de propagande.",
+      "bbox": {
+        "x_pct": 10.142,
+        "y_pct": 15.04,
+        "w_pct": 35.227,
+        "h_pct": 31.359
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text content to match actual document text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Dans les deux cas, l'étudiant ne serait plus qu'un moyen asservi des fins de production industrielle ou de mécanismes politiques, avec encore quelques soubresauts aveugles, impuissants, d'homme qui étouffe, faute d'un sens.",
+      "bbox": {
+        "x_pct": 10.142,
+        "y_pct": 46.346,
+        "w_pct": 35.009,
+        "h_pct": 9.551
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and truncated text content."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Esquisser les allégeances multiples de l'Université, c'est l'idée de l'Université, immenses. Les étudiants non plus. On a besoin d'hommes de nouveaux genres, de formation diversifiée, je l'ai dit, comportant des degrés, des durées inégales. Le monde a besoin d'un droit nouveau, à l'échelle de l'humanité entière, pour régir les nouveaux pouvoirs des hommes, par exemple dans les espaces planétaires, dans les profondeurs des mers, dans le corps, l'âme, l'hérédité des hommes. On a besoin de médecins humanistes et juristes, de physiciens-philosophes, de biologistes moralistes, — c'est dire qu'on a besoin d'une université au-delà de l'Université. Les tâches surabondent, à l'égard du tiers-monde, — à l'égard des masses qui vont accéder enfin à l'Université.",
+      "bbox": {
+        "x_pct": 56.049,
+        "y_pct": 15.607,
+        "w_pct": 34.121,
+        "h_pct": 31.926
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors and missing text segment."
+    }
+  ],
+  "score": 70,
+  "num_corrections": 3,
+  "issues": [
+    "Initial text extraction for all three regions was heavily corrupted/truncated.",
+    "OCR failed to capture full paragraphs correctly."
+  ],
+  "doc_id": "850",
+  "page": 7,
+  "elapsed_seconds": 4.18,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

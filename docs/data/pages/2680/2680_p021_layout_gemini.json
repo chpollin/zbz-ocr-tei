@@ -1,0 +1,107 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich hielt ihm entgegen: «Ich will gerne glauben, dass die elektronischen Apparate viel schneller als wir viel kompliziertere Vollzüge ausführen. Es werden aber nie Denkvollzüge sein.» Er wurde ungehalten. «Woher wissen Sie das?» Und ich: «Weil es mir manchmal passiert ist, zu denken. Aus Erfahrung weiss ich, dass denken bedeutet, auf etwas Wahres hinzuzielen, und Falsches vermeiden zu wollen. Und dazu ist Ihre Maschine nicht fähig. Sie will nichts, sie zielt auf nichts hin. Sie ist programmiert. Aber sie denkt nicht.»",
+      "bbox": {
+        "x_pct": 9.917,
+        "y_pct": 6.17,
+        "w_pct": 86.631,
+        "h_pct": 12.719
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Das ist ein grundlegender Unterschied, der durch alle Verwandlungen hindurch weiter besteht, und den nichts ändern kann, wenn nicht durch das Verschwinden des Menschen selbst. Die Menschen sind es noch immer, und nicht die elektronischen Apparate, die die technischen Methoden wählen, durch die dann die Rhythmen ihres Denkens und die Modalitäten ihrer Entwicklung verändert werden. Was wir uns fragen können, und vielleicht müssen, ist, bis zu welchem Grad die Werte und Kriterien, die diese Wahl leiten, im Laufe der Geschichte selbst beständig oder veränderlich sind.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 19.681,
+        "w_pct": 86.429,
+        "h_pct": 14.341
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Hier müssen wir noch einmal das Verhältnis vom Menschen zur Geschichte erwähnen.",
+      "bbox": {
+        "x_pct": 10.119,
+        "y_pct": 37.059,
+        "w_pct": 86.226,
+        "h_pct": 3.407
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Zunächst ist der Mensch, in der Geschichte und in der Welt, durch die Zeit seiner Geburt und dem Ort, wo er lebt, situiert. Zeit und Ort bestimmen, was er ist, und im Verhältnis dazu entscheidet er weiter, durch seine Freiheit, was er sein wird. Wie alle Gegebenheiten seines Menschseins, können diese weder verneint noch vernachlässigt werden, ohne dass die tatsächlichen Möglichkeiten, die sich ihm bieten, gleichzeitig zerstört werden. Es gibt zwei extrem entgegengesetzte Arten, diese Zerstörung zu vollziehen: die eine besteht darin, den Menschen im Verhältnis zu einem ewigen Bestehen aufzufassen, als wäre dies für ihn das einzig Absolute; die andere besteht darin, den Menschen ganz in den sich verändernden und relativen Gegebenheiten der Geschichte aufzulösen, sodass seine Handlungen nur noch Phänomene wären, einfache Glieder in den Ketten von Ursache und Wirkung. Im ersteren Fall gibt es im Wesentlichen nichts, was sich verändert oder zerfliesst. Im zweiten, gibt es es nur Veränderung und Zerfliessen.",
+      "bbox": {
+        "x_pct": 9.964,
+        "y_pct": 41.556,
+        "w_pct": 86.583,
+        "h_pct": 23.556
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Die menschliche Freiheit aber verwirklicht sich nur in der real vergehenden Zeit, und in deren Kreuzung mit einer absoluten Senkrechten, wo nichts vergeht, wo alles für immer besteht. Ohne diese Kreuzung gibt es nur dies: entweder zerfliesst nichts, und nichts geschieht; oder alles zerfliesst, und nichts von dem was zerfliesst, besitzt irgend ein Gewicht in der Waagschale der Freiheit: entweder ein Nichts an Wirklichkeit, oder ein Nichts an Sinn.",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 65.874,
+        "w_pct": 86.464,
+        "h_pct": 10.889
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match image."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jene Kreuzung, wo das Bestehende auf das Zerfliessende stösst, und das Zerfliessende das Absolute aufs Spiel setzt, ist, was die Philosophen die «Geschichtlichkeit» des Menschen nennen, d. h. seine unwiderrufliche Zugehörigkeit zum Zerfliessenden und sein Durchbruch in dessen Jenseits.",
+      "bbox": {
+        "x_pct": 10.119,
+        "y_pct": 77.8,
+        "w_pct": 86.274,
+        "h_pct": 6.993
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated and garbled text content to match image."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "18",
+      "bbox": {
+        "x_pct": 10.0,
+        "y_pct": 86.7,
+        "w_pct": 2.0,
+        "h_pct": 2.0
+      },
+      "changed": true,
+      "change_reason": "Identified page number and labeled as page_footer."
+    }
+  ],
+  "score": 40,
+  "num_corrections": 6,
+  "issues": [
+    "Most text fields contained severe OCR errors/truncations.",
+    "Page number 18 was not detected as a region initially.",
+    "Initial text extractions were largely unusable."
+  ],
+  "doc_id": "2680",
+  "page": 21,
+  "elapsed_seconds": 7.47,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

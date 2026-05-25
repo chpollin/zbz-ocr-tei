@@ -1,0 +1,89 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "IDÉOLOGIES ET RÉALITÉ 187",
+      "bbox": {
+        "x_pct": 315.0,
+        "y_pct": 77.0,
+        "w_pct": 530.0,
+        "h_pct": 11.0
+      },
+      "changed": true,
+      "change_reason": "Header identified as text; corrected to page_header."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "dune guerre internationale. On a du de Varsovie, celui do linsurrection de Varsovie ellemame. Cest P",
+      "bbox": {
+        "x_pct": 4.875,
+        "y_pct": 10.668,
+        "w_pct": 84.54,
+        "h_pct": 12.745
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Telle est la source de la nouvelle terreur cette toute-puissance gan8 recours de elle apparait bet",
+      "bbox": {
+        "x_pct": 5.014,
+        "y_pct": 22.932,
+        "w_pct": 84.68,
+        "h_pct": 22.941
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "En un temps comme celui-ci qu'une telle terreur 8'exerce Ol ne 8'exerce pas, voila n'est pas, certes",
+      "bbox": {
+        "x_pct": 4.833,
+        "y_pct": 45.57,
+        "w_pct": 85.0,
+        "h_pct": 32.95
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Contre cette rigueur, la democratie defend un etat de choses plus facile, approximatif, ou la de mor",
+      "bbox": {
+        "x_pct": 4.833,
+        "y_pct": 78.048,
+        "w_pct": 85.0,
+        "h_pct": 6.622
+      },
+      "changed": false
+    },
+    {
+      "label": "footnote",
+      "zbz_tag": "footnote",
+      "text": "(1) Cf. la Pensee captive, de Czeslaw MILOSZ. Gallimard.",
+      "bbox": {
+        "x_pct": 5.0,
+        "y_pct": 86.0,
+        "w_pct": 550.0,
+        "h_pct": 40.0
+      },
+      "changed": true,
+      "change_reason": "Footnote detected; corrected label from text to footnote."
+    }
+  ],
+  "score": 80,
+  "num_corrections": 2,
+  "issues": [
+    "Page header missing detection initially.",
+    "Footnote missing detection initially."
+  ],
+  "doc_id": "330",
+  "page": 221,
+  "elapsed_seconds": 4.76,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

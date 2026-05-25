@@ -1,0 +1,54 @@
+{
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "TABLE DES MATIÈRES",
+      "bbox": {
+        "x_pct": 26.582,
+        "y_pct": 22.984,
+        "w_pct": 39.436,
+        "h_pct": 2.453
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 11.554,
+        "y_pct": 28.671,
+        "w_pct": 69.448,
+        "h_pct": 46.34
+      },
+      "changed": false
+    },
+    {
+      "label": "_filter",
+      "zbz_tag": "page_header",
+      "text": "Pages",
+      "bbox": {
+        "x_pct": 75.337,
+        "y_pct": 29.563,
+        "w_pct": 4.673,
+        "h_pct": 1.25
+      },
+      "changed": true,
+      "change_reason": "ADDED: Extracted document header label"
+    }
+  ],
+  "score": 90,
+  "num_corrections": 1,
+  "issues": [
+    "Existing document_index box was too broad, overlapping internal structure; clarified as text."
+  ],
+  "doc_id": "110",
+  "page": 247,
+  "elapsed_seconds": 4.83,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini",
+  "changes_summary": {
+    "ADDED": 1
+  }
+}

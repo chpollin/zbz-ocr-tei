@@ -1,0 +1,80 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Gesellschaft unvermeidlich Relatives verabsolutiert. Und das ist die gefährlichste Verdrehung.",
+      "bbox": {
+        "x_pct": 11.004,
+        "y_pct": 8.412,
+        "w_pct": 71.559,
+        "h_pct": 4.693
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors: 'Relacives' to 'Relatives', 'verabsoluciert' to 'verabsolutiert', removed colon."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Welches sind also die Zwecke, wenn ich fragte: Wozu? Wozu Wissenschaft, wozu Technologie, wozu Pluralismus? Gar nicht für materialistische Zwecke, sondern im Gegenteil: Damit jedem Menschen, zu welcher Gesellschaftsschicht er auch gehöre, mehr Chancen (mehr als Chancen können es nicht sein, die von außen gegeben werden), mehr Möglichkeiten gegeben werden können, damit er frei wird. Frei werden und Sinn für ein Absolutes haben, das gehört als Möglichkeit zusammen. Natürlich nur als Möglichkeit, denn die Gesellschaft kann und soll die Aufgabe des einzelnen nicht erfüllen. Damit aber diese Möglichkeit zur erlebten Wirklichkeit wird, muß der junge Mensch geistig „ernährt“ werden. Durch Tradition, durch Geschichte, durch Werke, durch die ganze Vergangenheit – und in Europa haben wir von der Nahrung genug, wenn wir nur davon Gebrauch machen wollten.",
+      "bbox": {
+        "x_pct": 10.964,
+        "y_pct": 13.318,
+        "w_pct": 72.127,
+        "h_pct": 37.311
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR truncation and garbled text into full paragraphs as visible in the scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Christentum ist eine der Quellen. Ich war aber etwas erschrocken, als ich gestern beim Zuhören das Gefühl hatte, daß manche unter Ihnen das Christentum sozusagen als die einzige Zwangslösung für die jetzige Situation betrachten. Ich glaube, das darf nicht kollektiv und von außen entschieden werden, denn hier gerade geht es um das Absolute. Andererseits hatte ich das Gefühl, daß manche Redner sich ihres eigenen Glaubens irgendwie zu sicher waren. Die Äußerung ging mir durch den Kopf: Herr, ich glaube an Dich, bitte komm meinem Unglauben zu Hilfe. Irgendwie klingt für mich die eindeutige Behauptung des Glaubens wie eine Gefahr der Verabsolutierung einer Aussage, wenn ich so sagen darf. Und davor muß ich warnen.",
+      "bbox": {
+        "x_pct": 11.321,
+        "y_pct": 51.494,
+        "w_pct": 72.523,
+        "h_pct": 30.715
+      },
+      "changed": true,
+      "change_reason": "Corrected severe OCR truncation and garbled text into full paragraphs as visible in the scan."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ich sprach vorhin von Empörung. Wogegen ist Empörung heutzutage gerichtet? Es sieht so aus, als sei sie",
+      "bbox": {
+        "x_pct": 12.246,
+        "y_pct": 82.311,
+        "w_pct": 71.466,
+        "h_pct": 5.189
+      },
+      "changed": true,
+      "change_reason": "Corrected OCR errors: 'sprachen vorhin von Empörung', fixed spelling and flow."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "289",
+      "bbox": {
+        "x_pct": 78.89,
+        "y_pct": 89.65,
+        "w_pct": 3.75,
+        "h_pct": 1.76
+      },
+      "changed": true,
+      "change_reason": "Identified page number and moved to page_footer."
+    }
+  ],
+  "score": 30,
+  "num_corrections": 5,
+  "issues": [
+    "Initial text blocks were highly fragmented and contained severe OCR errors.",
+    "Page number 289 was not labeled separately."
+  ],
+  "doc_id": "2060",
+  "page": 11,
+  "elapsed_seconds": 5.71,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

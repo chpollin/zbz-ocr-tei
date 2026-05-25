@@ -1,0 +1,68 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "RÉSUMÉ 75",
+      "bbox": {
+        "x_pct": 10.985,
+        "y_pct": 82.522,
+        "w_pct": 76.099,
+        "h_pct": 3.097
+      },
+      "changed": true,
+      "change_reason": "Header content (RÉSUMÉ) and page number (75) incorrectly identified as paragraph text."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Ma recherche jusqu'ici visait ce qui est spécifique de la philosophie et de son histoire, par opposition à la science, à la religion et à l'art. Je me suis efforcée de décrire la situation de la philosophie et celle du philosophe d'après ce que nous en révèle le passé. Ce faisant je me suis heurtée aux infériorités, aux contradictions, aux paradoxes fondamentaux qu'on découvre dans la philosophie et dont on se sert pour l'accabler. J'ai voulu montrer qu'ils existent réellement. Mais loin d'être des « défauts » accidentels et dus à des erreurs du passé, ils me paraissent être des caractères spécifiques et nécessaires de la philosophie. Pas de philosophie sans eux, parce que sans eux pas de décision radicale, pas de liberté, pas de vérité métaphysique. Ce n'est là ni une conception idéale de la philosophie, ni une condamnation de son passé, mais un état de fait à jamais inévitable sur lequel les philosophes devaient nécessairement se faire illusion. Illusion métaphysiquement vraie et nécessaire.",
+      "bbox": {
+        "x_pct": 10.693,
+        "y_pct": 12.488,
+        "w_pct": 76.205,
+        "h_pct": 51.382
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and verified label."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Cela étant, j'ai étudié ce qu'il en résultait pour l'auteur philosophe et pour l'étudiant philosophe : ce que cherche l'un, ce que cherche l'autre, ce que l'un veut donner et ce qu'il donne en réalité à l'autre. L'influence en philosophie m'a paru se réduire essentiellement à une force d'appel à la liberté.",
+      "bbox": {
+        "x_pct": 10.949,
+        "y_pct": 63.613,
+        "w_pct": 76.099,
+        "h_pct": 15.729
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and verified label."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "Mais tout cela est resté jusqu'ici entièrement abstrait. Le moment me paraît venu de choisir comme exemple un problème particulier d'une certaine philosophie. Il faudra saisir, à propos de ce",
+      "bbox": {
+        "x_pct": 11.099,
+        "y_pct": 79.056,
+        "w_pct": 75.753,
+        "h_pct": 10.391
+      },
+      "changed": true,
+      "change_reason": "Corrected truncated text and verified label."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "The OCR text extraction was severely truncated and inaccurate.",
+    "The page header (RÉSUMÉ) and page number (75) were misidentified as a paragraph region.",
+    "Bounding boxes for text blocks were significantly overlapping with incorrectly classified header content."
+  ],
+  "doc_id": "20",
+  "page": 77,
+  "elapsed_seconds": 5.27,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

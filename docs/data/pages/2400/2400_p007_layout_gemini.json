@@ -1,0 +1,67 @@
+{
+  "regions": [
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "sönlicher Gewinn. Wenngleich auf die zentralen Fragen keine allgemeingültigen Antworten gegeben werden konnten, vermochte das Gespräch dennoch sehr wertvolle Denkanstöße für unser Verhalten als Unternehmer und Bürger zu geben.",
+      "bbox": {
+        "x_pct": 26.413,
+        "y_pct": 5.313,
+        "w_pct": 65.254,
+        "h_pct": 11.667
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Auf Wunsch vieler Teilnehmer des Helvetia-Forums haben wir Rektor Dr. Johannes Anderegg, St.Gallen, gebeten, über das am Helvetia-Forum gehaltene Gespräch eine Nachschrift zu erarbeiten, damit nicht nur unsere Gäste, sondern auch andere interessierte Kreise die Gelegenheit erhalten, die tiefschürfenden Gedanken der Referenten nachlesen zu können. Rektor Dr. Anderegg ist dies ganz vorzüglich gelungen, wofür wir ihm unseren herzlichsten Dank aussprechen. Danken möchten wir vor allem auch den Referenten, deren Einverständnis die Drucklegung dieses Podiumsgesprächs erst möglich gemacht hat. So hoffen wir, daß diese Schrift auf ein lebhaftes Interesse stoßen wird und alle Leser anspornt, vertieft über das zentrale Thema von Risiko und Sicherheit nachzudenken.",
+      "bbox": {
+        "x_pct": 26.57,
+        "y_pct": 16.645,
+        "w_pct": 65.338,
+        "h_pct": 38.159
+      },
+      "changed": true,
+      "change_reason": "Corrected text content for accuracy based on image."
+    },
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "DR. PAUL BÜRGI Präsident des Verwaltungsrates der Helvetia Schweizerische Feuerversicherungs-Gesellschaft, St.Gallen",
+      "bbox": {
+        "x_pct": 54.143,
+        "y_pct": 57.256,
+        "w_pct": 37.126,
+        "h_pct": 9.796
+      },
+      "changed": true,
+      "change_reason": "Changed label to section_header because this is a signature block/title of a person."
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "8",
+      "bbox": {
+        "x_pct": 59.222,
+        "y_pct": 91.531,
+        "w_pct": 1.173,
+        "h_pct": 1.739
+      },
+      "changed": true,
+      "change_reason": "Identified page number and assigned to page_footer (_filter)."
+    }
+  ],
+  "score": 85,
+  "num_corrections": 3,
+  "issues": [
+    "Original JSON text content for the second paragraph was incomplete/truncated compared to the image.",
+    "Signature block was incorrectly labeled as a paragraph.",
+    "Page number at bottom of page was missing from the regions list."
+  ],
+  "doc_id": "2400",
+  "page": 7,
+  "elapsed_seconds": 4.9,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}

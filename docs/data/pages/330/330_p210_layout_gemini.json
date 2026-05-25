@@ -1,0 +1,75 @@
+{
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "176 ID\u0000OLOGIES ET R\u0000ALIT\u0000",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Corrected page header classification from text to _filter."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "d'une telle assembl&eacute;e. Ils repartent d&eacute;cus, avec le sentiment d'avoir &eacute;t&eacute; dupes et la volont&eacute; bien arr&ecirc;t&eacute;e de ne plus l'&ecirc;tre d&eacute;sormais, la certitude que tout cela est mensonge. En r&eacute;alit&eacute;, pensent-ils, tout est d&eacute;cid&eacute; d'avance, par le m&ecirc;me comit&eacute;, les m&ecirc;mes hommes. L'ordre du jour, la date, l'horaire, les nuances de comportement de la pr&eacute;sidence, la succession des orateurs, tout a &eacute;t&eacute; combin&eacute; de fa&ccedil;on &agrave; exclure des surprises. &laquo; La cuisine des partis. &raquo; &laquo; La dictature des bonzes. &raquo; Cette d&eacute;mocratie les d&eacute;go&ucirc;te.",
+      "bbox": {
+        "x_pct": 8.398,
+        "y_pct": 11.025,
+        "w_pct": 85.794,
+        "h_pct": 17.228
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Il y a l&agrave; beaucoup de vrai, c'est ce qui rend la situation dangereuse. Mais ils ne voient pas que l'obligation de para&icirc;tre devant ce congr&egrave;s, dont on obtient pourtant si facilement, semble-t-il, une approbation assez artificielle, contraint les dirigeants, hors du congr&egrave;s, &agrave; tenir compte de ses tendances profondes. Le congr&egrave;s est mall&eacute;able, comme le peuple, certes - mais jusqu'&agrave; un certain point. Le contr&ocirc;le, malgr&eacute; tout, le d&eacute;menti possible, la vague de fond hostile, p&egrave;sent sur les comit&eacute;s. Pour entra&icirc;ner l'assentiment du nombre, il faut d'abord, d'avance, lui ob&eacute;ir. Et les vell&eacute;it&eacute;s d'opposition, les tendances &eacute;touff&eacute;es par la tactique des dirigeants au cours du congr&egrave;s m&ecirc;me, il faudra bien en tenir compte par la suite, sous peine d'un renversement des forces. C'est pourquoi nos d&eacute;l&eacute;gu&eacute;s d&eacute;cus ont tort malgr&eacute; tout : ils triomphent d'avoir jet&eacute; bas une fa&ccedil;ade d&eacute;corative, mais ils ne voient pas que ce qu'ils prennent maintenant pour la r&eacute;alit&eacute; nue n'est encore qu'un d&eacute;cor. Le vrai jeu se joue au-del&agrave;, et d&eacute;pend d'eux tous.",
+      "bbox": {
+        "x_pct": 8.12,
+        "y_pct": 27.692,
+        "w_pct": 85.989,
+        "h_pct": 33.832
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Seulement, les apparences comptent. Le contr&ocirc;le des gouvernants, qui constitue l'une des justifications essentielles du r&eacute;gime d&eacute;mocratique, ne se trouve pas seulement, en r&eacute;gime capitaliste, r&eacute;duit et alt&eacute;r&eacute; en fait par l'in&eacute;gale r&eacute;partition des ressources et des comp&eacute;tences. Il appara&icirc;t encore &agrave; la masse du peuple comme moins effectif qu'il ne l'est. A force de pr&eacute;tendre, pour la d&eacute;mocratie, &agrave; une puret&eacute; qu'elle ne peut avoir, &agrave; une efficacit&eacute; directe qui ne peut plus &ecirc;tre la sienne, on finit par obtenir le r&eacute;sultat inverse : le peuple doute du r&eacute;gime entier, de ceux qui l'incarnent et de ceux qui pr&eacute;tendent le contr&ocirc;ler.",
+      "bbox": {
+        "x_pct": 7.939,
+        "y_pct": 61.114,
+        "w_pct": 85.515,
+        "h_pct": 21.15
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "De nos jours, toute d&eacute;cision politique, qu'on le veuille ou non, a des r&eacute;percussions &eacute;conomiques. Les forces &eacute;conomiques, d&eacute;cisives pour la vie quotidienne de chaque pays, cherchent &agrave; rendre inapplicables les d&eacute;cisions politiques qui leur sont d&eacute;favorables.",
+      "bbox": {
+        "x_pct": 7.758,
+        "y_pct": 81.907,
+        "w_pct": 85.515,
+        "h_pct": 8.583
+      },
+      "changed": true,
+      "change_reason": "Cleaned up OCR garbage text."
+    }
+  ],
+  "score": 60,
+  "num_corrections": 4,
+  "issues": [
+    "Original detection had significant OCR errors in text extraction.",
+    "Page number/Header was not correctly filtered out as a distinct element."
+  ],
+  "doc_id": "330",
+  "page": 210,
+  "elapsed_seconds": 9.4,
+  "model": "gemini-3.1-flash-lite-preview",
+  "source": "gemini"
+}
