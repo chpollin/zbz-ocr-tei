@@ -334,7 +334,7 @@ Separat von der UI-Welle, sollte ein eigenes Etappen-Paket sein.
 |---|---|---|
 | Knowledge-Refactoring | alle 10 knowledge-Docs + README auf Stand bringen, workflow.md neu, Drift-Befunde fixen | **in Arbeit (diese Session)** |
 | Code-Drift-Fix | `generate_edition_data.py` referenziert geloeschte `dashboard.json` — Catalog-Rebuild ist vermutlich kaputt | offen |
-| UI-Verdichtung Viewer (Etappe 2.10) | Region-Liste als Sub-Spalte, Layout-Toolbar in Panel-Header, Downloads als Dropdown, Hint-Texte als Tooltips, Edit-Toggles als Icons, Doc-Subbar + Toolbar fusionieren | geplant |
+| UI-Verdichtung Viewer (Etappe 2.10) | Erledigt (E64): Doc-Subbar + Toolbar fusioniert, OCR-Quellen-Umschalter entfernt (Viewer = Mistral), Edit-Toggles benannt ("Layout"/"Text" als Text-Label, **nicht** als Icons — User-Entscheidung). Offen: Region-Liste als Sub-Spalte, Downloads als Dropdown, Hint-Texte als Tooltips | teilweise (E64) |
 | Per-Doc-Export-Drawer (Etappe 2.9) | JSZip-basierter Export aller Pipeline-Artefakte pro Doc, im Bulk-Modus auch aus Korpus-Uebersicht (Etappe 1.6) | geplant, abhaengig von Knowledge-Welle + (optional) `_complete.xml` |
 | Quality-Drawer (Etappe 2.2) | `{doc}_review.json` als oeffenbares Drawer-Panel im Viewer | geplant |
 | Provenance-Drawer (Etappe 2.11, neu) | `{doc}_provenance.json` als oeffenbares Drawer-Panel im Viewer; setzt voraus dass provenance.json existiert | geplant, blockiert durch Pipeline-Welle |

@@ -33,9 +33,15 @@
 
   <div class="app">
 
-    <!-- ============================================================ Doc-Subbar (Meta + Downloads) ============================================================ -->
+    <!-- ============================================================ Doc-Subbar (Seitennav + Meta + Downloads) ============================================================ -->
     <div class="doc-subbar" id="doc-subbar" hidden>
       <div class="doc-subbar__inner">
+        <div class="toolbar__group" role="group" aria-label="Seitennavigation">
+          <button class="btn btn--sm btn--icon" id="btn-prev" title="Vorherige Seite (Pfeil links)" disabled>&blacktriangleleft;</button>
+          <span class="page-info" id="page-info">&mdash; / &mdash;</span>
+          <button class="btn btn--sm btn--icon" id="btn-next" title="Naechste Seite (Pfeil rechts)" disabled>&blacktriangleright;</button>
+        </div>
+        <div class="toolbar__divider"></div>
         <div class="doc-subbar__meta" id="doc-meta" aria-live="polite"></div>
         <div class="doc-subbar__actions">
           <button class="btn btn--sm" id="btn-download-layout"  title="Layout-JSON herunterladen" disabled>Layout &darr;</button>
@@ -45,32 +51,8 @@
       </div>
     </div>
 
-    <!-- ============================================================ Main: Toolbar + Panels ============================================================ -->
+    <!-- ============================================================ Main: Editor-Toolbar + Panels ============================================================ -->
     <main class="main" id="main">
-
-      <!-- Toolbar: Seitennav + OCR-Quelle (Mode-Buttons E60-refactored: Edit-Toggle pro Panel) -->
-      <div class="toolbar">
-        <div class="toolbar__inner">
-          <div class="toolbar__group" role="group" aria-label="Seitennavigation">
-            <button class="btn btn--sm btn--icon" id="btn-prev" title="Vorherige Seite (Pfeil links)" disabled>&blacktriangleleft;</button>
-            <span class="page-info" id="page-info">— / —</span>
-            <button class="btn btn--sm btn--icon" id="btn-next" title="Naechste Seite (Pfeil rechts)" disabled>&blacktriangleright;</button>
-          </div>
-
-          <div class="toolbar__divider"></div>
-
-          <div class="toolbar__group toolbar__group--right" role="group" aria-label="OCR-Quelle">
-            <label class="toolbar__label" for="ocr-source">OCR</label>
-            <select class="input toolbar__select" id="ocr-source">
-              <option value="mistral">Mistral</option>
-              <option value="gemini_corrected_a">Gemini A</option>
-              <option value="gemini_corrected_b">Gemini B</option>
-              <option value="llm_corrected">LLM (Haiku)</option>
-              <option value="deepseek">DeepSeek</option>
-            </select>
-          </div>
-        </div>
-      </div>
 
       <!-- Layout-Editor-Toolbar (nur im Faksimile-Edit-Modus sichtbar) -->
       <div class="editor-toolbar hidden" id="layout-toolbar" aria-label="Layout-Editor-Werkzeuge">
@@ -110,7 +92,7 @@
             <span class="panel__hint" id="region-count"></span>
             <div class="panel__header-actions">
               <button class="panel__edit-toggle" id="btn-image-edit" aria-pressed="false"
-                      title="Layout bearbeiten (Bounding-Boxes, Reading-Order)">Bearbeiten</button>
+                      title="Layout bearbeiten (Bounding-Boxes, Reading-Order)">Layout</button>
             </div>
           </div>
           <div class="panel__body" id="image-body">
@@ -130,7 +112,7 @@
                 <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI als XML-Quelle">XML</button>
               </div>
               <button class="panel__edit-toggle" id="btn-text-edit" aria-pressed="false"
-                      title="Aktuelle Text-Quelle bearbeiten">Bearbeiten</button>
+                      title="Aktuelle Text-Quelle bearbeiten">Text</button>
             </div>
           </div>
           <div class="panel__body panel__body--paper" id="text-body">

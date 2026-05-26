@@ -12,10 +12,12 @@ Interne Web-UI zur Inspektion und Kuration der Pipeline-Ergebnisse (OCR, Layout,
 Ersetzt seit E56 (2026-04-27) die zuvor vorhandene oeffentliche Edition und die separaten
 Diagnostik-/CER-Dashboards.
 
-**Zweck:** Inspektion und Korrektur der Pipeline-Ergebnisse. Vier konkrete Funktionen:
+**Zweck:** Inspektion und Korrektur der Pipeline-Ergebnisse. Drei konkrete Funktionen:
 QA der OCR-/Layout-/TEI-Ergebnisse, manuelle Korrektur durch Human-in-the-Loop,
-Engine-Vergleich (Mistral/Gemini/DeepSeek), Demonstration gegenueber ZBZ. Nicht
-gedacht als oeffentliche Edition oder Lese-Frontend — das macht ZBZ ueber Oxygen/Alma.
+Demonstration gegenueber ZBZ. Der Viewer zeigt die **ausgelieferte Edition = Mistral-OCR**;
+der frueher hier moegliche Engine-Vergleich liegt seit E64 ausserhalb des Viewers
+(CER-Benchmark + Methode-Seite, E62). Nicht gedacht als oeffentliche Edition oder
+Lese-Frontend — das macht ZBZ ueber Oxygen/Alma.
 
 **Vier Seiten:** Korpus-Uebersicht (`index.html`: filter- und sortierbare Doc-Liste mit
 Screening-Status), der eigentliche Viewer (`viewer.html`: Faksimile + Layout-Overlay links,
@@ -24,9 +26,10 @@ Werte + Limitations + Literatur-Vergleich, E62, statisch) und eine About-Seite (
 Der Viewer kennt drei Modi: *Anzeigen*, *Layout bearbeiten*, *Transkription bearbeiten*.
 Persistenz erfolgt ausschliesslich via Datei-Download (kein Server).
 
-**In Umbau (Mai 2026 Edition-Uplift-Welle):** Mode-Buttons werden zu Edit-Toggle pro Panel
-(E60), Faksimile-Renderer ist im View-Modus auf OpenSeadragon umgestellt (E58, Pan + Zoom +
-Rotate), Layout-Editor wird mit OSD-Koordinaten-Conversion neu verdrahtet. Polygon-Support
+**In Umbau (Mai 2026 Edition-Uplift-Welle):** Mode-Buttons sind Edit-Toggle pro Panel
+(E60, erledigt; benannt "Layout"/"Text", E64), Faksimile-Renderer ist im View-Modus auf
+OpenSeadragon umgestellt (E58, Pan + Zoom + Rotate), Layout-Editor wird mit
+OSD-Koordinaten-Conversion neu verdrahtet. Polygon-Support
 bewusst ausgeschlossen (E59) — Hersch-Druck reicht mit Rechtecken. Plan-Dokument:
 `C:\Users\Chrisi\.claude\plans\edition-uplift-three-pages.md`.
 
@@ -86,13 +89,11 @@ Beide Libraries werden zur Laufzeit aus dem CDN nachgeladen. Keine npm/Build-Pip
 | **Layout** | Layout-Overlay | Regionen (BBox, Typ, Reihenfolge) korrigieren | Download `{doc}_p{N}_layout_curated.json` |
 | **Transkription** | Text-Panel | OCR-Text oder TEI-Text/XML korrigieren | Download `{doc}_p{N}_curated.md` oder `{doc}_curated.xml` |
 
-Edit-Toggle in der Toolbar oben rechts. Im Layout-Modus erscheint eine zweite Toolbar mit
-Regions-Tools (`+ Region`, `Loeschen`, Typ-Dropdown).
-
-**In Umbau (E60, Mai 2026):** Globale Mode-Leiste wird abgeloest durch je einen Edit-Toggle
-pro Panel — Faksimile-Panel-Toggle aktiviert den Layout-Editor, Text-Panel-Toggle aktiviert
-den Transkriptions-Editor fuer die aktive Text-Quelle (OCR/TEI/XML). Begruendung:
-Wortdoppelung "Transkription"-Mode mit "OCR"-Source.
+Je ein Edit-Toggle im Panel-Header (E60): das Faksimile-Panel traegt den Knopf **"Layout"**,
+das Text-Panel den Knopf **"Text"**. Aktiv = anthrazit-gefuellter Knopf (Farbe zeigt den Modus,
+E64). Im Layout-Modus erscheint eine zweite Toolbar mit Regions-Tools (`+ Region`, `Loeschen`,
+Typ-Dropdown). Die globale Mode-Leiste (Anzeigen/Layout/Transkription) entfiel mit E60 —
+Begruendung: Wortdoppelung "Transkription"-Mode mit "OCR"-Source.
 
 ---
 
@@ -200,7 +201,9 @@ Multi-Doc-Export ueber 50 Docs: Warnhinweis wegen Browser-Memory.
 Alle 285 Docs haben vollstaendige Per-Seiten-Daten in `docs/data/pages/` (Layout, Mistral-OCR, TEI)
 und ein Thumbnail in `docs/data/thumbs/`. Damit funktioniert der Viewer ohne lokalen Server fuer
 das gesamte Korpus. Die alternativen OCR-Engines (Gemini A/B, LLM, DeepSeek) bleiben unter
-`output/` und sind nur lokal abrufbar.
+`output/` und sind nur lokal abrufbar. Der Viewer bietet seit E64 **keinen OCR-Quellen-Umschalter**
+mehr — er zeigt ausschliesslich Mistral (die ausgelieferte Edition); die Alt-Engines sind reine
+Benchmark-Artefakte (E51/E54) und nicht Teil der Edition.
 
 ### Leerseiten (E63)
 

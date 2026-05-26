@@ -37,6 +37,7 @@
   align-items: center;
   gap: var(--h-space-md);
   flex-wrap: wrap;
+  min-height: var(--v-toolbar-height);
 }
 .doc-subbar__meta {
   flex: 1;
@@ -91,21 +92,8 @@
 }
 
 /* ============================================================
-   Toolbar (Seitennav + OCR-Source + Mode)
+   Toolbar-Bausteine (geteilt: Doc-Subbar + Editor-Toolbar)
    ============================================================ */
-.toolbar {
-  background: var(--h-bg);
-  border-bottom: 1px solid var(--h-border);
-}
-.toolbar__inner {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 var(--h-space-xl);
-  display: flex;
-  align-items: center;
-  gap: var(--h-space-md);
-  min-height: var(--v-toolbar-height);
-}
 .toolbar__group {
   display: flex;
   align-items: center;
@@ -137,7 +125,6 @@
   text-align: center;
   color: var(--h-text-secondary);
 }
-.toolbar__group--right { margin-left: auto; }
 
 .toolbar__mode {
   display: inline-flex;

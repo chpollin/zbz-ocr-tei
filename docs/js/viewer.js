@@ -51,7 +51,6 @@
         btnImageEdit:   $('#btn-image-edit'),
         btnTextEdit:    $('#btn-text-edit'),
         textSourceBtns: $$('.mode-btn[data-text-source]'),
-        ocrSourceSel:   $('#ocr-source'),
         imageBody:      $('#image-body'),
         textBody:       $('#text-body'),
         textTitle:      $('#text-panel-title'),
@@ -527,11 +526,6 @@
         refs.btnImageEdit.addEventListener('click', () => setImageEdit(!state.imageEdit));
         refs.btnTextEdit.addEventListener('click', () => setTextEdit(!state.textEdit));
         refs.textSourceBtns.forEach(b => b.addEventListener('click', () => setTextSource(b.getAttribute('data-text-source'))));
-
-        refs.ocrSourceSel.addEventListener('change', () => {
-            state.ocrSource = refs.ocrSourceSel.value;
-            if (state.textSource === 'ocr') renderTextPanel();
-        });
 
         refs.btnDlLayout.addEventListener('click', downloadLayout);
         refs.btnDlText.addEventListener('click', downloadText);

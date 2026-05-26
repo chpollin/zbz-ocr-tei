@@ -79,7 +79,8 @@ journal         — chronologisch, kompakter Ueberblick
 | Pipeline-Viewer (E56) | Single-Page-App mit Faksimile + OCR + TEI + Layout-/Transkriptions-Editor, Datei-Download | [viewer.md](viewer.md) |
 | Hersch Design-System | Anthrazit + Ziegelrot + EB Garamond + Jost, `--h-*` Tokens | [viewer.md](viewer.md) |
 | OpenSeadragon-Faksimile (E58) | Faksimile-Renderer im View-Modus mit Pan/Zoom/Rotate, CDN-Bezug | [viewer.md](viewer.md) |
-| Mode-Edit-Toggle pro Panel (E60) | Faksimile- und Text-Panel haben je einen Bearbeiten-Toggle, keine globale Mode-Leiste | [viewer.md](viewer.md) |
+| Mode-Edit-Toggle pro Panel (E60) | Faksimile-Panel "Layout", Text-Panel "Text" (E64), aktiv = anthrazit; keine globale Mode-Leiste | [viewer.md](viewer.md) |
+| Viewer = Mistral-Edition (E64) | Kein OCR-Quellen-Umschalter im Viewer; Alt-Engines (Gemini/LLM/DeepSeek) sind Benchmark-only; Doc-Subbar + Toolbar fusioniert | [viewer.md](viewer.md) |
 | Export-Modul (E61) | JSZip-basierter Per-Doc-Drawer + Bulk-Export aus Korpus-Uebersicht | [viewer.md](viewer.md) |
 | Methode-Seite (E62) | `docs/methode.html` mit Headline-CER, stratifizierten Werten, Limitations, Literatur-Vergleich (statisch) | [viewer.md](viewer.md) |
 | End-to-End-Workflow | Datenfluss + Save-Mechanismus + Round-Trip + Provenance-Konzept + geplante `_complete.xml`-Variante | [workflow.md](workflow.md) |
