@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   <text>
-    <body><pb facs="#facs_140" n="140" />
-        <div type="text">
-<p facs="#facs_140_r_1">
-          Die OCR-Ausgabe enthält nur die Seitennummer "1", die offenbar ein Artefakt ist. Es gibt keinen substantiellen Text zur Korrektur.
-        </p>
-        <p facs="#facs_140_r_2">
-          Nach den Regeln (NUR Zeichenfehler korrigieren, im Zweifel NICHT ändern, Maschinenerzeugte Artefakte entfernen) sollte diese Seite als leer behandelt werden.
-        </p>
-        <p facs="#facs_140_r_3">
-          ---
-        </p>
-        <p facs="#facs_140_r_4">
-          <hi rendition="#i">(Leere Seite oder nur Seitennummer)</hi>
-        </p>
-      </div>
+    <body><pb facs="#facs_140" n="140" type="blank" />
+        
 </body>
   </text>
 </TEI>
