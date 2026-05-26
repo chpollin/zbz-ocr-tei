@@ -1,0 +1,48 @@
+{
+  "doc_id": "2780",
+  "page_count": 105,
+  "generated": "2026-05-26",
+  "generator": "page_manifest-v3",
+  "streams": {
+    "ocr": {
+      "engine": "mistral",
+      "status": "unverifiziert",
+      "history": []
+    },
+    "layout": {
+      "engines": [
+        "docling",
+        "gemini"
+      ],
+      "status": "unverifiziert",
+      "history": []
+    },
+    "tei": {
+      "source": "final",
+      "status": "unverifiziert",
+      "history": []
+    }
+  },
+  "pages": {
+    "101": {
+      "class": "blank",
+      "source": "auto",
+      "review": false,
+      "evidence": {
+        "ocr_len": 2,
+        "ocr_reason": "len<=5",
+        "docling_regions": 0
+      }
+    },
+    "103": {
+      "class": "blank",
+      "source": "auto",
+      "review": false,
+      "evidence": {
+        "ocr_len": 10,
+        "ocr_reason": "blank-marker",
+        "docling_regions": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "doc_id": "2680",
+  "page_count": 39,
+  "generated": "2026-05-26",
+  "generator": "page_manifest-v3",
+  "streams": {
+    "ocr": {
+      "engine": "mistral",
+      "status": "unverifiziert",
+      "history": []
+    },
+    "layout": {
+      "engines": [
+        "docling",
+        "gemini"
+      ],
+      "status": "unverifiziert",
+      "history": []
+    },
+    "tei": {
+      "source": "final",
+      "status": "unverifiziert",
+      "history": []
+    }
+  },
+  "pages": {
+    "34": {
+      "class": "blank",
+      "source": "auto",
+      "review": false,
+      "evidence": {
+        "ocr_len": 22,
+        "ocr_reason": "no-alnum",
+        "docling_regions": 0
+      }
+    },
+    "35": {
+      "class": "blank",
+      "source": "auto",
+      "review": false,
+      "evidence": {
+        "ocr_len": 1,
+        "ocr_reason": "len<=5",
+        "docling_regions": 0
+      }
+    },
+    "36": {
+      "class": "blank",
+      "source": "auto",
+      "review": false,
+      "evidence": {
+        "ocr_len": 22,
+        "ocr_reason": "no-alnum",
+        "docling_regions": 0
+      }
+    },
+    "37": {
+      "class": "blank",
+      "source": "auto",
+      "review": false,
+      "evidence": {
+        "ocr_len": 22,
+        "ocr_reason": "no-alnum",
+        "docling_regions": 0
+      }
+    },
+    "39": {
+      "class": "blank",
+      "source": "auto",
+      "review": false,
+      "evidence": {
+        "ocr_len": 1,
+        "ocr_reason": "len<=5",
+        "docling_regions": 0
+      }
+    }
+  }
+}

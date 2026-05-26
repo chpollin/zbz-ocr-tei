@@ -1,8 +1,9 @@
 """
 Generiert Edition-Daten fuer den statischen Viewer (docs/):
 
-- catalog.json          : Korpus-Uebersicht mit Metadaten und Screening-Status
+- catalog.json          : Korpus-Uebersicht mit Metadaten und Stream-Status (E66)
 - entity_index.json     : Entity-Index fuer NER-Highlighting im TEI-Render
+- manifests/{doc}.json  : Spiegel der Pro-Objekt-Manifeste (Status + History + Leerseiten)
 - pages/{doc}/...       : Per-Seiten-Mirror (Layout, Mistral-OCR, TEI extrahiert aus _final.xml)
 - thumbs/{doc}.jpg      : Thumbnail der ersten Seite (140x200 JPEG)
 
@@ -28,6 +29,7 @@ LAYOUT_DIR = PROJECT_ROOT / "output" / "layout"
 MISTRAL_DIR = PROJECT_ROOT / "output" / "mistral_results"
 PAGES_DIR = DOCS_DIR / "data" / "pages"
 THUMBS_DIR = DOCS_DIR / "data" / "thumbs"
+MANIFESTS_DIR = DOCS_DIR / "data" / "manifests"
 IMAGES_DIR = DOCS_DIR / "images"
 THUMB_SIZE = (140, 200)
 THUMB_QUALITY = 70
@@ -197,6 +199,28 @@ def generate_thumbnails(verbose: bool = False) -> int:
     return created
 
 
+def mirror_manifests(verbose: bool = False) -> int:
+    """Spiegelt Pro-Objekt-Manifeste nach docs/data/manifests/{doc}_manifest.json.
+
+    Der Viewer liest aus diesem Spiegel den Workflow-Status pro Strom (E66) und
+    schreibt Aenderungen als Datei-Download zurueck; Anwender:innen legen die
+    Datei dann manuell in `output/tei_final/` ab. Beim naechsten Mirror-Lauf
+    wandert der neue Stand wieder hierher.
+    """
+    if not TEI_FINAL_DIR.exists():
+        return 0
+    MANIFESTS_DIR.mkdir(parents=True, exist_ok=True)
+    n = 0
+    for src in TEI_FINAL_DIR.glob("*_manifest.json"):
+        dst = MANIFESTS_DIR / src.name
+        if not dst.exists() or src.stat().st_mtime > dst.stat().st_mtime:
+            shutil.copy2(src, dst)
+            n += 1
+            if verbose:
+                print(f"  manifest {src.name}")
+    return n
+
+
 def mirror_per_page_data(verbose: bool = False) -> dict:
     """Spiegelt per-Seiten-Daten (Layout, Mistral-OCR, TEI) fuer alle 285 Docs
     nach docs/data/pages/{doc}/.
@@ -264,18 +288,45 @@ def mirror_per_page_data(verbose: bool = False) -> dict:
     return stats
 
 
+_TITLECASE_WORD_RE = re.compile(r"\b([\wÀ-ÿ]+)\b", re.UNICODE)
+
+def _normalize_author(name):
+    """Vermeidet HARTE-Caps-Autoren (z.B. "JEANNE HERSCH" -> "Jeanne Hersch").
+
+    Wirkt nur, wenn der gesamte Name fast vollstaendig in Grossbuchstaben steht
+    (>=80% der Buchstaben). Reine Initialen oder gemischte Faelle bleiben
+    unveraendert. Diakritik wird respektiert (À-ÿ).
+    """
+    if not name or not isinstance(name, str):
+        return name
+    letters = [c for c in name if c.isalpha()]
+    if not letters:
+        return name
+    upper_ratio = sum(1 for c in letters if c.isupper()) / len(letters)
+    if upper_ratio < 0.8:
+        return name
+    # Title-case mit Spezialfaellen fuer kleine Worte und Apostrophe (l', d', ...)
+    def fix_word(m):
+        w = m.group(1)
+        if len(w) <= 1:
+            return w
+        return w[0].upper() + w[1:].lower()
+    return _TITLECASE_WORD_RE.sub(fix_word, name.lower()).replace(" L'", " l'").replace(" D'", " d'")
+
+
 def build_catalog():
-    """Baut catalog.json aus dashboard.json + doc_metadata.json."""
-    dashboard = load_json(DOCS_DIR / "data" / "dashboard.json")
-    if not dashboard:
-        print("FEHLER: dashboard.json nicht gefunden!")
-        return None
+    """Baut catalog.json aus doc_metadata.json + tei_final/ + Pro-Objekt-Manifesten.
+
+    dashboard.json wurde mit E56 abgeschafft. Falls vorhanden, dient es als Initial-
+    Map; sonst werden alle Docs aus tei_final/*_final.xml entdeckt und mit Gemini-
+    Metadaten aufgefuellt.
+    """
+    dashboard = load_json(DOCS_DIR / "data" / "dashboard.json") or {}
 
     doc_metadata = load_json(DOC_METADATA_PATH) or {}
     gemini_docs = doc_metadata.get("documents", {})
 
     docs = dict(dashboard.get("documents", {}))
-    overview = dashboard.get("pipeline_summary", {})
 
     # Discover docs from tei_final/ that are not in dashboard
     if TEI_FINAL_DIR.exists():
@@ -305,18 +356,29 @@ def build_catalog():
                     "pipeline_status": {"tei": True},
                 }
 
-    # Screening-Status vorladen (aus Review-JSONs)
-    screening_status = {}
+    # Workflow-Status vorladen (aus Pro-Objekt-Manifesten, E66)
+    # streams = { ocr: {status, last_at, last_by}, layout: {...}, tei: {...} }
+    manifest_streams = {}
     if TEI_FINAL_DIR.exists():
-        for review_file in TEI_FINAL_DIR.glob("*_review.json"):
+        for mf in TEI_FINAL_DIR.glob("*_manifest.json"):
             try:
-                review = json.loads(review_file.read_text(encoding="utf-8"))
-                did = review.get("doc_id", review_file.stem.replace("_review", ""))
-                screening_status[did] = {
-                    "status": review.get("status", "UNKNOWN"),
-                    "reviewer": review.get("reviewer", "unknown"),
-                    "date": review.get("date", ""),
-                }
+                m = json.loads(mf.read_text(encoding="utf-8"))
+                did = m.get("doc_id", mf.stem.replace("_manifest", ""))
+                streams_in = m.get("streams") or {}
+                streams_out = {}
+                for sname in ("ocr", "layout", "tei"):
+                    s = streams_in.get(sname)
+                    if not isinstance(s, dict):
+                        streams_out[sname] = {"status": "unverifiziert", "last_at": None, "last_by": None}
+                        continue
+                    history = s.get("history") or []
+                    last = history[-1] if history else {}
+                    streams_out[sname] = {
+                        "status": s.get("status", "offen"),
+                        "last_at": last.get("at"),
+                        "last_by": last.get("by"),
+                    }
+                manifest_streams[did] = streams_out
             except (json.JSONDecodeError, IOError):
                 pass
 
@@ -350,7 +412,7 @@ def build_catalog():
         entry = {
             "id": doc_id,
             "title": doc.get("title") or "Dokument " + doc_id,
-            "author": doc.get("author"),
+            "author": _normalize_author(doc.get("author")),
             "date": doc.get("date"),
             "lang": doc.get("lang", "?"),
             "type": doc.get("type", "-"),
@@ -359,9 +421,11 @@ def build_catalog():
             "page_count": doc.get("page_count", 0),
             "has_tei": doc.get("pipeline_status", {}).get("tei", False),
             "entity_count": entity_counts.get(doc_id, 0),
-            "screening": screening_status.get(doc_id, {}).get("status"),
-            "screening_reviewer": screening_status.get(doc_id, {}).get("reviewer"),
-            "screening_date": screening_status.get(doc_id, {}).get("date"),
+            "streams": manifest_streams.get(doc_id, {
+                "ocr":    {"status": "unverifiziert", "last_at": None, "last_by": None},
+                "layout": {"status": "unverifiziert", "last_at": None, "last_by": None},
+                "tei":    {"status": "unverifiziert", "last_at": None, "last_by": None},
+            }),
             "curation": curation_status.get(doc_id, "uncurated"),
             "demo": doc_id in FEATURED_DOCS,
         }
@@ -377,11 +441,13 @@ def build_catalog():
         pf = e["pub_form"] or "other"
         form_counts[pf] = form_counts.get(pf, 0) + 1
 
-    screening_counts = {}
+    # Pro Strom: Verteilung der Workflow-Status (E66)
+    stream_status_counts = {"ocr": {}, "layout": {}, "tei": {}}
     curation_counts = {}
     for e in entries:
-        s = e.get("screening") or "NOT_SCREENED"
-        screening_counts[s] = screening_counts.get(s, 0) + 1
+        for sname in ("ocr", "layout", "tei"):
+            st = (e.get("streams") or {}).get(sname, {}).get("status") or "unverifiziert"
+            stream_status_counts[sname][st] = stream_status_counts[sname].get(st, 0) + 1
         c = e.get("curation") or "uncurated"
         curation_counts[c] = curation_counts.get(c, 0) + 1
 
@@ -403,7 +469,7 @@ def build_catalog():
             "languages": lang_counts,
             "types": type_counts,
             "forms": form_counts,
-            "screening": screening_counts,
+            "stream_status": stream_status_counts,
             "curation": curation_counts,
         },
         "labels": {
@@ -457,6 +523,9 @@ def main():
         stats = mirror_per_page_data(verbose=args.verbose)
         print(f"  Mirror fertig: {stats['docs']} Docs, "
               f"{stats['layout']} Layout, {stats['ocr']} OCR, {stats['tei']} TEI-Seiten")
+        print("Manifeste nach docs/data/manifests/...")
+        n_mf = mirror_manifests(verbose=args.verbose)
+        print(f"  Manifeste gespiegelt: {n_mf}")
         print("Thumbnails nach docs/data/thumbs/...")
         n_thumbs = generate_thumbnails(verbose=args.verbose)
         print(f"  Thumbs erzeugt: {n_thumbs}")
@@ -477,6 +546,10 @@ def main():
         json.dumps(catalog, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
+
+    # 5. Manifeste spiegeln (klein, immer mitlaufen lassen)
+    n_mf = mirror_manifests(verbose=args.verbose)
+    print(f"  Manifeste gespiegelt: {n_mf} -> docs/data/manifests/")
 
     # 7. Per-Seiten-Mirror fuer alle 285 Docs (kann mit --no-mirror uebersprungen werden)
     if not args.no_mirror:

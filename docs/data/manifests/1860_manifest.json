@@ -1,0 +1,38 @@
+{
+  "doc_id": "1860",
+  "page_count": 14,
+  "generated": "2026-05-26",
+  "generator": "page_manifest-v3",
+  "streams": {
+    "ocr": {
+      "engine": "mistral",
+      "status": "unverifiziert",
+      "history": []
+    },
+    "layout": {
+      "engines": [
+        "docling",
+        "gemini"
+      ],
+      "status": "unverifiziert",
+      "history": []
+    },
+    "tei": {
+      "source": "final",
+      "status": "unverifiziert",
+      "history": []
+    }
+  },
+  "pages": {
+    "2": {
+      "class": "blank",
+      "source": "auto",
+      "review": false,
+      "evidence": {
+        "ocr_len": 5,
+        "ocr_reason": "len<=5",
+        "docling_regions": 0
+      }
+    }
+  }
+}
