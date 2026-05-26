@@ -1,15 +1,18 @@
 """Projiziert Leerseiten-Marker aus dem Manifest in die finale TEI (E63 Phase 2, Schritt 2).
 
-Liest `output/tei_final/{doc}_manifest.json` und setzt fuer jede sichere Leerseite
-(class=blank, review=false) in `output/tei_final/{doc}_final.xml`:
+Liest `output/tei_final/{doc}_manifest.json` und behandelt jede sichere Leerseite
+(class=blank, review=false) in `output/tei_final/{doc}_final.xml` so:
   - `type="blank"` an das zugehoerige `<pb>` (Seite = sequenzielle pb-Position, 1-basiert,
     identisch zum Mirror-Splitter in generate_edition_data.py),
-  - Entfernung des bloszen Junk-`<p>` (kein facs-Attribut, Inhalt blank) der Seite.
+  - der Seiten-Body wird GELEERT: alle `<p>`/`<head>` der Seite werden entfernt, dadurch
+    leer gewordene `<div>` eingeklappt; strukturelle (unbalancierte) `<div>`/`</div>`-Grenzen
+    bleiben erhalten. Eine bestaetigte Leerseite traegt danach nur noch den Marker.
 
-Konservativ: `type="blank"` wird nur gesetzt, wenn noch keins da ist (idempotent); ein
-`<p>` wird nur entfernt, wenn es attributlos ist UND sein Inhalt die Blank-Regel erfuellt.
-Bleibt nach dem Entfernen noch Nicht-Whitespace-Text im Seiten-Chunk, wird das gemeldet
-und NICHT angetastet. Vor dem Schreiben wird je Datei ein Backup angelegt.
+Sicher per Vorbedingung: `clean_chunk` wird nur fuer bestaetigte Leerseiten aufgerufen, daher
+ist das bedingungslose Entfernen korrekt. `type="blank"` wird nur gesetzt, wenn noch keins da
+ist (idempotent). Ein Residual-Check meldet unerwarteten Resttext (sollte 0 sein); eine
+Konsistenzpruefung verlangt genug `<pb>` fuer die hoechste Leerseite. Vor dem Schreiben wird
+je Datei ein Backup angelegt.
 
 Aufruf:
     python -m scripts.tei.tei_blank_marker --dry-run        # nur Bericht, nichts schreiben
@@ -30,7 +33,6 @@ BACKUP_DIR = ROOT / "output" / "_backup_pre_blank_marker"
 # identisch zum Mirror-Splitter (generate_edition_data.py)
 _PB_RE = re.compile(r"<pb\s[^>]*/?>")
 _BODY_RE = re.compile(r"<body[^>]*>(.*?)</body>", re.DOTALL)
-_ALNUM = re.compile(r"[A-Za-zÀ-ÿ0-9]")
 # Inhalts-Element einer Leerseite (p oder head); group(2) = Inhalt
 _CONTENT_RE = re.compile(r"<(p|head)\b[^>]*>(.*?)</\1>", re.DOTALL)
 # leerer <div> (nur Whitespace zwischen oeffnendem und schliessendem Tag)
