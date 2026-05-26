@@ -20,6 +20,9 @@
   --h-preussischblau-subtle: rgba(43, 76, 126, 0.08);
   --h-olivgruen:        #6B7B5E;
   --h-olivgruen-subtle: rgba(107, 123, 94, 0.08);
+  /* Ampel-Gelb fuer Workflow-Indikatoren (warmer Ocker, kompatibel zur Hersch-Palette) */
+  --h-ocker:            #C49A3D;
+  --h-ocker-subtle:     rgba(196, 154, 61, 0.10);
 
   /* ---- Text ---- */
   --h-text:             #2C2825;

@@ -1,7 +1,11 @@
 /*
  * catalog.css — Korpus-Uebersichtsseite (docs/index.html)
  * Geladen nach tokens.css + base.css.
- * Heller, offener Light-Mode-Stil. Kein Dark-Theme.
+ *
+ * Designziel: ruhiges, konsistentes Tabellen-Bild. Eine Body-Schrift fuer alle
+ * Zellen, Monospace nur fuer Identifier (Doc-ID, Stream-Labels). Header sitzt im
+ * gleichen Surface wie der Body, nur durch eine Linie getrennt. Filter-Bar mit
+ * einheitlicher 32px-Hoehe ueber alle Eingaben + Reset-Button.
  */
 
 .catalog-body {
@@ -10,175 +14,89 @@
   min-height: 100vh;
 }
 
-/* (Site-Header-Styles liegen in base.css und sind seitenuebergreifend.) */
+/* (Site-Header/Footer + Header-Disclaimer stehen in base.css.) */
 
 /* ============================================================
-   Catalog-Wrap
+   Wrap
    ============================================================ */
 .catalog {
   max-width: 1320px;
   margin: 0 auto;
-  padding: var(--h-space-xl) var(--h-space-xl) var(--h-space-2xl);
+  padding: var(--h-space-lg) var(--h-space-xl) var(--h-space-2xl);
 }
 
 /* ============================================================
-   Status-Leiste (Progress + Counts)
-   ============================================================ */
-.status-bar {
-  background: var(--h-surface);
-  border: 1px solid var(--h-border);
-  border-radius: var(--h-radius-lg);
-  margin-bottom: var(--h-space-lg);
-}
-.status-bar__inner {
-  padding: var(--h-space-lg) var(--h-space-xl);
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: var(--h-space-2xl);
-  align-items: center;
-}
-@media (max-width: 900px) {
-  .status-bar__inner { grid-template-columns: 1fr; gap: var(--h-space-lg); }
-}
-
-.progress-block__label,
-.counts-block__label {
-  font-family: var(--h-font-heading);
-  font-size: var(--h-xs);
-  letter-spacing: var(--h-tracking-caps);
-  text-transform: uppercase;
-  color: var(--h-text-muted);
-  margin: 0 0 var(--h-space-sm);
-  font-weight: 500;
-}
-
-.progress-bar {
-  display: flex;
-  height: 10px;
-  border-radius: 999px;
-  overflow: hidden;
-  background: var(--h-bg-alt);
-  margin-bottom: var(--h-space-sm);
-}
-.progress-bar__seg {
-  height: 100%;
-  transition: flex-grow var(--h-transition);
-}
-.progress-bar__seg--approved      { background: var(--h-olivgruen); }
-.progress-bar__seg--with_notes    { background: var(--h-ziegelrot-light); }
-.progress-bar__seg--needs_review  { background: var(--h-ziegelrot); }
-.progress-bar__seg--not_screened  { background: var(--h-border-emphasis); }
-
-.progress-legend {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--h-space-md);
-  font-size: var(--h-sm);
-}
-.progress-legend li {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  color: var(--h-text-secondary);
-}
-.progress-legend__dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex: 0 0 8px;
-}
-.progress-legend__count { font-weight: 500; color: var(--h-text); }
-.progress-legend__pct { color: var(--h-text-muted); font-size: var(--h-xs); }
-
-.counts-block {
-  display: flex;
-  gap: var(--h-space-lg);
-  align-items: center;
-}
-.counts-block__main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-right: 1px solid var(--h-border);
-  padding-right: var(--h-space-lg);
-}
-.counts-block__main > span:first-child {
-  font-family: var(--h-font-heading);
-  font-size: var(--h-2xl);
-  font-weight: 500;
-  color: var(--h-text);
-  line-height: 1;
-}
-.counts-block__split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px var(--h-space-md);
-  font-size: var(--h-xs);
-  color: var(--h-text-secondary);
-}
-.counts-block__split-item {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--h-space-sm);
-}
-.counts-block__split-item strong {
-  font-weight: 500;
-  color: var(--h-text);
-  font-family: var(--h-font-mono);
-}
-
-/* ============================================================
-   Filter-Bar
+   Filter-Bar: eine kompakte Reihe, alles 32px hoch
+   Search nimmt 1fr, Dropdowns sind auto-breit (>= 130px),
+   Reset rechts. base.css hat `.input { width: 100% }` -- daher
+   muessen wir hier explizit width: auto setzen, sonst stapeln
+   die Selects vertikal.
    ============================================================ */
 .filter-bar {
   margin-bottom: var(--h-space-md);
+  /* Sticky am oberen Viewport-Rand: Filter bleibt erreichbar, wenn die Seite scrollt.
+     Loest den frueheren doppelten Scroll (Tabellen-overflow + Seiten-Scroll). */
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding-top: var(--h-space-sm);
+  background: var(--h-bg);
 }
 .filter-bar__inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--h-space-sm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
 }
-.filter-bar__search input {
+.filter-bar__search {
+  flex: 1 1 240px;
+  min-width: 200px;
+  display: flex;
+}
+.filter-bar__search .input {
+  flex: 1 1 auto;
   width: 100%;
-  font-size: var(--h-base);
-  padding: 10px 14px;
+  padding: 0 12px;
 }
 .filter-bar__group {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--h-space-sm);
   align-items: center;
+  gap: 8px;
 }
-.filter-bar__group .input { padding: 6px 10px; font-size: var(--h-sm); width: auto; }
-.filter-bar__sort {
-  display: flex;
-  gap: var(--h-space-sm);
-  align-items: center;
+
+/* Einheitliche 32-px-Hoehe + Reset des base.css `width: 100%` fuer alle Filter-Items. */
+.filter-bar .input,
+.filter-bar .btn {
+  height: 32px;
+  padding: 0 10px;
   font-size: var(--h-sm);
-  margin-left: auto;
+  line-height: 1;
+  border-radius: var(--h-radius);
+  box-sizing: border-box;
 }
-.filter-bar__label {
+.filter-bar__group .input,
+.filter-bar__group .btn {
+  width: auto;
+  flex: 0 0 auto;
+}
+.filter-bar__group select.input {
+  min-width: 130px;
+  padding-right: 22px;  /* Platz fuer den nativen Caret-Pfeil */
+}
+
+#filter-reset.btn--ghost {
+  border: 1px solid var(--h-border-emphasis);
+  background: transparent;
+  color: var(--h-text-secondary);
   font-family: var(--h-font-heading);
   font-size: var(--h-xs);
   letter-spacing: var(--h-tracking-caps);
   text-transform: uppercase;
-  color: var(--h-text-muted);
 }
-.filter-bar__hits {
-  font-family: var(--h-font-mono);
-  font-size: var(--h-xs);
-  color: var(--h-text-muted);
-  margin-left: var(--h-space-md);
-}
-@media (min-width: 900px) {
-  .filter-bar__inner {
-    grid-template-columns: minmax(280px, 1fr) auto auto;
-    align-items: center;
-  }
+#filter-reset.btn--ghost:hover {
+  color: var(--h-text);
+  border-color: var(--h-text-muted);
 }
 
 /* ============================================================
@@ -190,45 +108,57 @@
   border-radius: var(--h-radius-lg);
   overflow: hidden;
 }
+
+/* Gemeinsames Spalten-Raster fuer Head + Row. */
 .doc-table__head,
 .doc-table__row {
   display: grid;
   grid-template-columns:
-    60px              /* thumb */
-    minmax(280px, 3fr) /* title */
-    minmax(140px, 1.4fr) /* meta */
-    72px              /* lang */
-    72px              /* type */
-    minmax(120px, 1fr) /* form */
-    72px              /* pages */
-    minmax(140px, 1fr); /* screening */
-  gap: var(--h-space-md);
+    48px                 /* thumb */
+    minmax(220px, 3fr)   /* title */
+    minmax(120px, 1.4fr) /* author */
+    64px                 /* date */
+    80px                 /* lang  -- Platz fuer "SPRACHE" + Sort-Pfeil */
+    56px                 /* type */
+    minmax(110px, 1fr)   /* form */
+    64px                 /* pages */
+    100px;               /* workflow (vertikale Ampel + Labels) */
+  column-gap: var(--h-space-md);
   align-items: center;
-  padding: var(--h-space-sm) var(--h-space-lg);
 }
+
+/* Head: gleiche Flaeche wie Body, nur Trennstrich. */
 .doc-table__head {
-  background: var(--h-bg-alt);
-  border-bottom: 1px solid var(--h-border-emphasis);
+  padding: 10px var(--h-space-lg);
+  border-bottom: 1px solid var(--h-border);
   font-family: var(--h-font-heading);
   font-size: var(--h-xs);
+  font-weight: 500;
   letter-spacing: var(--h-tracking-caps);
   text-transform: uppercase;
   color: var(--h-text-muted);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background: var(--h-surface);
 }
+
 .doc-table__body {
-  max-height: calc(100vh - 360px);
-  overflow-y: auto;
+  /* Kein eigener Scroll mehr -- die Tabelle waechst natuerlich und die Seite scrollt
+     als Ganzes. Die Filter-Bar bleibt via position:sticky im Blick. */
 }
+
 .doc-table__row {
+  padding: 10px var(--h-space-lg);
   border-bottom: 1px solid var(--h-border);
   text-decoration: none;
   color: var(--h-text);
   transition: background var(--h-transition-fast);
+  /* Eine Body-Schrift, sofern Zelle nicht ueberschreibt. */
+  font-family: var(--h-font-body);
+  font-size: var(--h-sm);
+  line-height: 1.3;
 }
 .doc-table__row:last-child { border-bottom: none; }
-.doc-table__row:hover { background: var(--h-ziegelrot-subtle); }
+.doc-table__row:hover { background: var(--h-bg-alt); }
+
 .doc-table__empty {
   padding: var(--h-space-2xl);
   text-align: center;
@@ -236,9 +166,52 @@
   color: var(--h-text-muted);
 }
 
+/* ============================================================
+   Sortierbare Spaltenheader (Affordance bei Ruhezustand)
+   ============================================================ */
+.col-sort {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  user-select: none;
+  /* Wichtig: KEIN overflow:hidden/ellipsis hier, sonst verschwindet der Sortier-Pfeil. */
+}
+.col-sort::after {
+  content: '\2195';          /* up-down arrow, Ruhezustand */
+  font-size: 10px;
+  color: var(--h-text-muted);
+  opacity: 0.4;
+  transition: opacity var(--h-transition-fast), color var(--h-transition-fast);
+  flex: 0 0 auto;
+}
+.col-sort:hover { color: var(--h-text); }
+.col-sort:hover::after { opacity: 0.8; }
+.col-sort[aria-sort="ascending"]  { color: var(--h-ziegelrot); }
+.col-sort[aria-sort="descending"] { color: var(--h-ziegelrot); }
+.col-sort[aria-sort="ascending"]::after  { content: '\2191'; color: var(--h-ziegelrot); opacity: 1; }
+.col-sort[aria-sort="descending"]::after { content: '\2193'; color: var(--h-ziegelrot); opacity: 1; }
+
+/* Numerische Spalten: Header rechts ausrichten -- Pfeil dann nach dem Text rechts. */
+.doc-table__head .col-pages.col-sort,
+.doc-table__head .col-date.col-sort  { justify-content: flex-end; text-align: right; }
+
+/* ============================================================
+   Spalten-Inhalt
+   ============================================================ */
 .col-thumb {
-  width: 60px;
-  height: 78px;
+  width: 48px;
+  height: 64px;
   background: var(--h-bg-alt);
   border: 1px solid var(--h-border);
   border-radius: var(--h-radius-sm);
@@ -258,106 +231,127 @@
   font-size: var(--h-xs);
   color: var(--h-text-muted);
 }
+.doc-table__head .col-thumb {
+  background: transparent;
+  border: none;
+  height: auto;
+}
 
-.col-title {
+/* Titel: in Datenzeilen 2-stoeckig (ID/Name). Im Header bleibt der Sort-Button inline. */
+.doc-table__row .col-title {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   min-width: 0;
 }
 .col-title__id {
   font-family: var(--h-font-mono);
   font-size: var(--h-xs);
   color: var(--h-text-muted);
+  letter-spacing: 0.02em;
 }
 .col-title__name {
+  font-family: var(--h-font-body);
   font-size: var(--h-base);
   color: var(--h-ziegelrot);
   font-weight: 500;
+  line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .doc-table__row:hover .col-title__name { text-decoration: underline; }
 
-.col-meta {
-  font-size: var(--h-sm);
+/* Datenzellen: gleiche Body-Schrift, kein italic, nur Ton-Variation. */
+.doc-table__row .col-author,
+.doc-table__row .col-date,
+.doc-table__row .col-lang,
+.doc-table__row .col-type,
+.doc-table__row .col-form,
+.doc-table__row .col-pages {
   color: var(--h-text-secondary);
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-}
-.col-meta__author {
-  font-style: italic;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.col-meta__date { font-family: var(--h-font-mono); font-size: var(--h-xs); color: var(--h-text-muted); }
+.doc-table__row .col-lang,
+.doc-table__row .col-type { color: var(--h-text-muted); }
 
-.col-lang,
-.col-type,
-.col-pages {
-  font-family: var(--h-font-mono);
-  font-size: var(--h-sm);
-  color: var(--h-text-secondary);
+/* Numerische Spalten: tabular-nums + rechtsbuendig. */
+.doc-table__row .col-date,
+.doc-table__row .col-pages {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
-.col-form { font-size: var(--h-sm); color: var(--h-text-secondary); }
-
-.col-screening { display: flex; align-items: center; }
-.badge-screening {
-  font-family: var(--h-font-heading);
-  font-size: var(--h-xs);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 2px 8px;
-  border-radius: var(--h-radius);
-  border: 1px solid currentColor;
-  background: transparent;
-  font-weight: 500;
-}
-.badge-screening--approved      { color: var(--h-olivgruen); }
-.badge-screening--with_notes    { color: var(--h-ziegelrot-light); }
-.badge-screening--needs_review  { color: var(--h-ziegelrot); }
-.badge-screening--not_screened  { color: var(--h-text-muted); }
-
-/* (Site-Footer-Styles liegen in base.css.) */
 
 /* ============================================================
-   Reset-Button: gerahmte Ghost-Variante. Auf #filter-reset gescoped,
-   um die Basis-Komponente .btn--ghost (base.css) nicht global zu ueberschreiben.
+   Workflow-Spalte: vertikale Ampel mit OCR/Layout/TEI-XML Labels
    ============================================================ */
-#filter-reset.btn--ghost {
-  border: 1px solid var(--h-border-emphasis);
-  color: var(--h-text-secondary);
-  padding: 6px 12px;
-  font-size: var(--h-sm);
-  border-radius: var(--h-radius);
-  font-family: var(--h-font-heading);
+.col-workflow {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
-#filter-reset.btn--ghost:hover { color: var(--h-text); border-color: var(--h-text-muted); }
+.col-workflow__row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+.col-workflow__dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: 0 0 10px;
+  border: 1px solid rgba(44, 40, 37, 0.18);
+  cursor: help;
+}
+.col-workflow__label {
+  font-family: var(--h-font-mono);
+  font-size: var(--h-xs);
+  color: var(--h-text-muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+/* Ampel-Semantik (E67): die Pipeline ERZEUGT OCR/Layout/TEI deterministisch fuer
+   alle 285 Docs, der Default-Status ist also nicht "nichts da", sondern "vorhanden,
+   unverifiziert".
+   gelb = Pipeline-Output da, nicht menschlich verifiziert (unverifiziert + in_arbeit + bearbeitet),
+   gruen = menschlich freigegeben (fertig).
+   rot bleibt reserviert fuer einen expliziten "Problem"/"fehlt"-Status. */
+.col-workflow__dot--unverifiziert { background: var(--h-ocker); }
+.col-workflow__dot--in_arbeit     { background: var(--h-ocker); }
+.col-workflow__dot--bearbeitet    { background: var(--h-ocker); }
+.col-workflow__dot--fertig        { background: var(--h-olivgruen); }
+
+/* Header: Workflow-Label nur als statisches Wort, nicht klickbar. */
+.doc-table__head .col-workflow {
+  display: block;
+  text-align: left;
+}
 
 /* ============================================================
-   Responsive (Tabelle wird auf Mobile zur Card-Liste)
+   Responsive: ab 1000px Tabelle, darunter Karten-Liste
    ============================================================ */
 @media (max-width: 1000px) {
   .doc-table__head { display: none; }
   .doc-table__row {
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: 48px 1fr auto;
     grid-template-areas:
-      "thumb title"
-      "thumb meta"
-      "thumb tags";
+      "thumb title    workflow"
+      "thumb author   workflow"
+      "thumb meta     workflow";
     row-gap: 4px;
     padding: var(--h-space-md) var(--h-space-lg);
   }
-  .col-thumb { grid-area: thumb; align-self: start; }
-  .col-title { grid-area: title; }
-  .col-meta  { grid-area: meta; }
+  .col-thumb    { grid-area: thumb; align-self: start; }
+  .col-title    { grid-area: title; }
+  .col-author   { grid-area: author; }
+  .col-workflow { grid-area: workflow; align-self: center; }
+  .col-date,
   .col-lang,
   .col-type,
   .col-form,
-  .col-pages,
-  .col-screening { display: none; }
+  .col-pages { display: none; }
 }

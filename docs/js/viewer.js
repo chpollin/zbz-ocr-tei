@@ -34,8 +34,24 @@
         textEdit: false,      // Text-Edit-Toggle: aktiviert Transcription-Editor fuer aktive Quelle
         _currentText: null,
         _currentEditedText: null,
-        _isBlank: false       // Leerseite (Vorsatz/Rueckseite/Durchschlag) — kein echter Text
+        _isBlank: false,      // Leerseite (Vorsatz/Rueckseite/Durchschlag) — kein echter Text
+        manifest: null,       // E66: Pro-Objekt-Manifest mit streams.{ocr,layout,tei}.{status,history}
+        manifestDirty: false  // ungespeicherte Status-Aenderungen (Download faellig)
     };
+
+    // E66/E67: Workflow-Status pro Strom -- unverifiziert -> in_arbeit -> bearbeitet -> fertig -> unverifiziert
+    // `unverifiziert` heisst: Pipeline-Output existiert, kein Mensch hat verifiziert (gelb).
+    // `fertig` = menschlich freigegeben (gruen). Rot bleibt reserviert fuer expliziten Problem-Status.
+    const STATUS_CYCLE = ['unverifiziert', 'in_arbeit', 'bearbeitet', 'fertig'];
+    const STATUS_LABEL = {
+        unverifiziert: 'unverifiziert',
+        in_arbeit:     'in Arbeit',
+        bearbeitet:    'bearbeitet',
+        fertig:        'fertig'
+    };
+    // Legacy-Mapping fuer v2-Manifeste mit "offen"
+    const STATUS_LEGACY = { offen: 'unverifiziert' };
+    const STREAM_LABEL = { ocr: 'OCR', layout: 'Layout', tei: 'TEI-XML' };
 
     const OSD_PREFIX = 'https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/images/';
 
@@ -58,7 +74,13 @@
         layoutToolbar:  $('#layout-toolbar'),
         btnDlLayout:    $('#btn-download-layout'),
         btnDlText:      $('#btn-download-text'),
-        btnDlTei:       $('#btn-download-tei')
+        btnDlTei:       $('#btn-download-tei'),
+        // E66: Workflow-Status-Controls
+        statusOcr:      $('#status-ocr'),
+        statusLayout:   $('#status-layout'),
+        statusTei:      $('#status-tei'),
+        statusHint:     $('#status-hint'),
+        btnDlManifest:  $('#btn-download-manifest')
     };
 
     // ============================================================ Init ============================================================
@@ -110,6 +132,8 @@
         state.page = startPage || 1;
         state.layout = null;
         state.teiXml = null;
+        state.manifest = null;
+        state.manifestDirty = false;
         ZBZ.setParams({ doc: doc.id, page: state.page });
         document.title = (doc.title ? doc.title.slice(0, 60) + ' — ' : '') + 'Hersch Pipeline-Viewer';
 
@@ -124,7 +148,135 @@
         refs.btnDlText.disabled = false;
         refs.btnDlTei.disabled = false;
 
+        // E66: Manifest fuer Workflow-Status laden (parallel zu Seitenrendering)
+        loadManifest(doc.id);
+
         await loadPage();
+    }
+
+    // ============================================================ Workflow-Status (E66) ============================================================
+
+    async function loadManifest(docId) {
+        const m = await ZBZ.fetchJSON('data/manifests/' + encodeURIComponent(docId) + '_manifest.json');
+        if (m && m.streams) {
+            // Legacy-Status-Werte migrieren (v2 -> v3)
+            ['ocr', 'layout', 'tei'].forEach(s => {
+                const stream = m.streams[s];
+                if (stream && STATUS_LEGACY[stream.status]) {
+                    stream.status = STATUS_LEGACY[stream.status];
+                }
+                if (stream && Array.isArray(stream.history)) {
+                    stream.history.forEach(h => {
+                        if (h.from && STATUS_LEGACY[h.from]) h.from = STATUS_LEGACY[h.from];
+                        if (h.to   && STATUS_LEGACY[h.to])   h.to   = STATUS_LEGACY[h.to];
+                    });
+                }
+            });
+            state.manifest = m;
+        } else {
+            // Fallback: synthetisches Manifest, falls Mirror nicht aktuell (defensiv)
+            state.manifest = {
+                doc_id: docId,
+                page_count: state.doc && state.doc.page_count,
+                generated: new Date().toISOString().slice(0, 10),
+                generator: 'viewer-fallback',
+                streams: {
+                    ocr:    { engine: 'mistral', status: 'unverifiziert', history: [] },
+                    layout: { engines: ['docling', 'gemini'], status: 'unverifiziert', history: [] },
+                    tei:    { source: 'final', status: 'unverifiziert', history: [] }
+                },
+                pages: {}
+            };
+        }
+        renderStatusPills();
+        refs.btnDlManifest.disabled = false;
+    }
+
+    function getAuthor() {
+        let by = (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
+        if (!by) {
+            by = (prompt('Kuerzel fuer Bearbeitungs-Eintraege (z.B. CP, JH):', '') || '').trim();
+            if (by && window.localStorage) localStorage.setItem('zbz.workflow.by', by);
+        }
+        return by || 'anonym';
+    }
+
+    function streamStatus(stream) {
+        const s = state.manifest && state.manifest.streams && state.manifest.streams[stream];
+        let v = s && s.status;
+        if (STATUS_LEGACY[v]) v = STATUS_LEGACY[v];
+        return STATUS_LABEL[v] ? v : 'unverifiziert';
+    }
+
+    function renderStatusPills() {
+        const enable = !!state.manifest;
+        ['ocr', 'layout', 'tei'].forEach(stream => {
+            const btn = refs['status' + stream.charAt(0).toUpperCase() + stream.slice(1)];
+            if (!btn) return;
+            btn.disabled = !enable;
+            const status = streamStatus(stream);
+            // Klassen aktualisieren (alte Status-Klassen wegnehmen)
+            btn.className = 'status-pill status-pill--' + status + (state.manifestDirty ? ' status-pill--dirty' : '');
+            const sm = (state.manifest && state.manifest.streams && state.manifest.streams[stream]) || {};
+            const history = sm.history || [];
+            const last = history.length ? history[history.length - 1] : null;
+            const baseLine = (status === 'unverifiziert')
+                ? STREAM_LABEL[stream] + ': Pipeline-Output existiert, noch nicht menschlich verifiziert'
+                : STREAM_LABEL[stream] + ': ' + STATUS_LABEL[status];
+            btn.title = baseLine
+                + (last ? '\nzuletzt: ' + last.to + ' · ' + (last.by || '?') + ' · ' + (last.at || '').slice(0, 16) : '')
+                + '\nKlick wechselt: unverifiziert -> in Arbeit -> bearbeitet -> fertig';
+            btn.innerHTML =
+                '<span class="status-pill__stream">' + STREAM_LABEL[stream] + '</span>'
+                + '<span class="status-pill__dot"></span>'
+                + '<span class="status-pill__label">' + STATUS_LABEL[status] + '</span>';
+        });
+        refs.btnDlManifest.disabled = !state.manifest;
+        refs.statusHint.textContent = state.manifestDirty
+            ? 'ungespeichert · Manifest herunterladen'
+            : '';
+    }
+
+    function setStreamStatus(stream, newStatus, opts) {
+        if (!state.manifest) return;
+        if (STATUS_CYCLE.indexOf(newStatus) < 0) return;
+        const s = state.manifest.streams[stream];
+        if (!s) return;
+        const from = s.status || 'offen';
+        if (from === newStatus) return;
+        s.status = newStatus;
+        if (!Array.isArray(s.history)) s.history = [];
+        s.history.push({
+            at: new Date().toISOString(),
+            by: (opts && opts.by) || getAuthor(),
+            from: from,
+            to: newStatus,
+            note: (opts && opts.note) || null
+        });
+        state.manifestDirty = true;
+        renderStatusPills();
+    }
+
+    function cycleStatus(stream) {
+        if (!state.manifest) return;
+        const cur = streamStatus(stream);
+        const next = STATUS_CYCLE[(STATUS_CYCLE.indexOf(cur) + 1) % STATUS_CYCLE.length];
+        setStreamStatus(stream, next);
+    }
+
+    function autoStartArbeit(stream) {
+        // Beim ersten Touch eines Edit-Toggles: unverifiziert -> in_arbeit
+        if (!state.manifest) return;
+        if (streamStatus(stream) === 'unverifiziert') {
+            setStreamStatus(stream, 'in_arbeit', { note: 'auto: Edit-Toggle aktiviert' });
+        }
+    }
+
+    function downloadManifest() {
+        if (!state.manifest) { ZBZ.toast('Kein Manifest geladen', 'warn'); return; }
+        ZBZ.Download.manifest(state.doc.id, state.manifest);
+        state.manifestDirty = false;
+        renderStatusPills();
     }
 
     // ============================================================ Page laden ============================================================
@@ -146,10 +298,19 @@
     }
 
     async function detectBlankPage(doc, page) {
+        // E63 Schritt 3: primaer den <pb type="blank"/>-Marker aus der per-Seiten-TEI
+        // lesen (deterministisch, vom Korpus-Skript projiziert). Fallback auf die
+        // OCR-Heuristik (isBlankPageText), falls die per-Seiten-TEI fehlt.
         const ck = 'blank:' + doc + ':' + page;
         if (cache.has(ck)) return cache.get(ck);
-        const res = await ZBZ.fetchFirstOk(ZBZ.path.ocr('mistral', doc, page));
-        const blank = res ? ZBZ.isBlankPageText(res.text) : false;
+        let blank = false;
+        const tei = await loadTeiPage(doc, page);
+        if (tei) {
+            blank = /<pb\b[^>]*\btype\s*=\s*"blank"/i.test(tei);
+        } else {
+            const res = await ZBZ.fetchFirstOk(ZBZ.path.ocr('mistral', doc, page));
+            blank = res ? ZBZ.isBlankPageText(res.text) : false;
+        }
         cache.set(ck, blank);
         return blank;
     }
@@ -404,13 +565,7 @@
             if (i > 0) meta.appendChild(ZBZ.el('span', { cls: 'sep', text: '·' }));
             meta.appendChild(node);
         });
-        if (doc.screening) {
-            const badge = ZBZ.el('span', {
-                cls: 'badge badge--screening badge--' + String(doc.screening).toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-                text: doc.screening
-            });
-            meta.appendChild(badge);
-        }
+        // E66: Screening-Badge wurde durch Workflow-Status-Pills (zweite Subbar-Zeile) abgeloest.
     }
 
     function ensureTextEditableState() {
@@ -454,6 +609,8 @@
             if (ZBZ.LayoutEditor) ZBZ.LayoutEditor.detach();
             // Faksimile-Variante wechselt: OSD (view) <-> img (edit). renderFacsimileImg() attached Editor.
             renderFacsimile();
+            // E66: Auto-Uebergang offen -> in_arbeit, wenn der Layout-Edit-Modus zum ersten Mal greift
+            if (state.imageEdit) autoStartArbeit('layout');
         }
     }
 
@@ -473,6 +630,12 @@
             renderTextPanel();
         } else {
             ensureTextEditableState();
+        }
+
+        // E66: Auto-Uebergang offen -> in_arbeit fuer den Strom, der gerade editiert wird.
+        // textSource bestimmt, welcher Strom: ocr-Quelle -> OCR-Strom, tei/xml -> TEI-Strom.
+        if (state.textEdit) {
+            autoStartArbeit(state.textSource === 'ocr' ? 'ocr' : 'tei');
         }
     }
 
@@ -530,6 +693,21 @@
         refs.btnDlLayout.addEventListener('click', downloadLayout);
         refs.btnDlText.addEventListener('click', downloadText);
         refs.btnDlTei.addEventListener('click', downloadTei);
+
+        // E66: Status-Pills klick = naechster Status (Cycle), Manifest-Download
+        refs.statusOcr.addEventListener('click', () => cycleStatus('ocr'));
+        refs.statusLayout.addEventListener('click', () => cycleStatus('layout'));
+        refs.statusTei.addEventListener('click', () => cycleStatus('tei'));
+        refs.btnDlManifest.addEventListener('click', downloadManifest);
+
+        // Warnen vor Verlassen mit ungespeicherten Status-Aenderungen
+        window.addEventListener('beforeunload', (e) => {
+            if (state.manifestDirty) {
+                e.preventDefault();
+                e.returnValue = '';
+                return '';
+            }
+        });
     }
 
     ZBZ.Viewer = { init, state };

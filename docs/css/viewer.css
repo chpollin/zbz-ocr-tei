@@ -81,6 +81,94 @@
   gap: var(--h-space-xs);
 }
 
+/* ---- E66: Workflow-Status-Zeile in der Doc-Subbar ---- */
+.doc-subbar__inner--status {
+  border-top: 1px solid var(--h-border);
+  padding-top: 6px;
+  padding-bottom: 6px;
+  min-height: auto;
+}
+.status-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--h-space-xs);
+  flex: 1;
+  flex-wrap: wrap;
+}
+.status-controls__label {
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+  margin-right: var(--h-space-sm);
+}
+.status-controls__hint {
+  font-size: var(--h-xs);
+  color: var(--h-text-muted);
+  font-style: italic;
+  margin-left: var(--h-space-sm);
+}
+.status-controls__actions {
+  display: flex;
+  gap: var(--h-space-xs);
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--h-border);
+  background: var(--h-surface);
+  color: var(--h-text-secondary);
+  font-family: var(--h-font-body);
+  font-size: var(--h-xs);
+  cursor: pointer;
+  transition: background var(--h-transition-fast), border-color var(--h-transition-fast);
+  white-space: nowrap;
+}
+.status-pill:hover:not(:disabled) {
+  border-color: var(--h-text-muted);
+  background: var(--h-bg-alt);
+}
+.status-pill:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.status-pill__stream {
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+}
+.status-pill__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 8px;
+}
+.status-pill__label {
+  color: var(--h-text);
+  font-size: var(--h-xs);
+}
+/* Ampel-Semantik (E67): gelb = Pipeline-Output da, unverifiziert (Default fuer alle Stroeme);
+   gruen = menschlich freigegeben. Rot bleibt fuer expliziten Problem/fehlt-Status reserviert. */
+.status-pill--unverifiziert .status-pill__dot { background: var(--h-ocker); }
+.status-pill--in_arbeit     .status-pill__dot { background: var(--h-ocker); }
+.status-pill--bearbeitet    .status-pill__dot { background: var(--h-ocker); }
+.status-pill--fertig        .status-pill__dot { background: var(--h-olivgruen); }
+.status-pill--dirty {
+  box-shadow: 0 0 0 1px var(--h-ziegelrot-light);
+}
+.status-pill--dirty .status-pill__label::after {
+  content: ' *';
+  color: var(--h-ziegelrot);
+  font-weight: 600;
+}
+
 /* ============================================================
    Main
    ============================================================ */

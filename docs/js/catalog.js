@@ -2,31 +2,30 @@
  * catalog.js — Korpus-Uebersicht (docs/index.html)
  *
  * Liest data/catalog.json und rendert:
- * - Screening-Progress-Bar mit Legende
- * - Counts pro Publikationsform
- * - Such-/Filter-/Sortier-Bar
- * - Tabelle mit Thumbnails + Metadaten, Klick fuehrt in viewer.html
+ * - Such-/Filter-Bar (Sprache, Typ, Form, Stream, Status)
+ * - Tabelle mit Title/Autor/Datum/Lang/Typ/Form/Seiten/Workflow
+ *   Spaltenheader sind klickbar fuer Sortierung.
+ *
+ * Workflow-Statuswerte pro Strom: unverifiziert | in_arbeit | bearbeitet | fertig (E66/E67)
  *
  * Namespace: ZBZ.Catalog (initialisiert von DOMContentLoaded)
  */
 (function () {
     'use strict';
     const $ = ZBZ.$;
+    const $$ = ZBZ.$$;
 
     // ---- Konfiguration ----
-    const SCREENING_ORDER  = ['APPROVED', 'APPROVED_WITH_NOTES', 'NEEDS_REVIEW', 'NOT_SCREENED'];
-    const SCREENING_LABEL  = {
-        APPROVED:           'Approved',
-        APPROVED_WITH_NOTES:'With Notes',
-        NEEDS_REVIEW:       'Needs Review',
-        NOT_SCREENED:       'Nicht gescreent'
+    const STREAMS         = ['ocr', 'layout', 'tei'];
+    const STREAM_LABEL    = { ocr: 'OCR', layout: 'Layout', tei: 'TEI-XML' };
+    const STATUS_LABEL    = {
+        unverifiziert: 'unverifiziert',
+        in_arbeit:     'in Arbeit',
+        bearbeitet:    'bearbeitet',
+        fertig:        'fertig'
     };
-    const SCREENING_CLASS  = {
-        APPROVED:           'approved',
-        APPROVED_WITH_NOTES:'with_notes',
-        NEEDS_REVIEW:       'needs_review',
-        NOT_SCREENED:       'not_screened'
-    };
+    // Map alter Status-Werte (v2-Manifeste mit "offen") auf neue.
+    const STATUS_LEGACY = { offen: 'unverifiziert' };
     const FORM_LABEL = {
         journalArticle: 'Zeitschriftenartikel',
         book:           'Monografie',
@@ -43,23 +42,19 @@
         catalog: null,
         docs: [],
         filtered: [],
-        filters: { query: '', lang: '', type: '', form: '', screening: '' },
+        filters: { query: '', lang: '', type: '', form: '', stream: '', status: '' },
         sort: 'id-asc'
     };
 
     const refs = {
-        progressBar:    $('#progress-bar'),
-        progressLegend: $('#progress-legend'),
-        countTotal:     $('#count-total'),
-        countsSplit:    $('#counts-split'),
         search:         $('#search'),
         filterLang:     $('#filter-lang'),
         filterType:     $('#filter-type'),
         filterForm:     $('#filter-form'),
-        filterScreening:$('#filter-screening'),
+        filterStream:   $('#filter-stream'),
+        filterStatus:   $('#filter-status'),
         filterReset:    $('#filter-reset'),
-        sortSelect:     $('#sort'),
-        hitsCount:      $('#hits-count'),
+        head:           $('#doc-head'),
         rows:           $('#doc-rows'),
         generated:      $('#generated-info')
     };
@@ -75,89 +70,35 @@
         state.catalog = data;
         state.docs = data.documents || data.docs || [];
 
-        renderStatusBar();
         populateFilters();
         applyUrlState();
         bindEvents();
         applyFilters();
+        renderSortIndicators();
 
-        const gen = data.generated ? new Date(data.generated).toLocaleString('de-CH') : '';
+        const gen = data.generated ? new Date(data.generated).toLocaleDateString('de-CH') : '';
         refs.generated.textContent = gen ? `Generiert ${gen}` : '';
         ZBZ.log('Catalog', 'init done, ' + state.docs.length + ' docs');
     }
 
-    // ============================================================ Status-Bar ============================================================
+    // ============================================================ Helpers ============================================================
 
-    function renderStatusBar() {
-        // Progress: pro Screening-Status
-        const counts = {};
-        SCREENING_ORDER.forEach(k => counts[k] = 0);
-        state.docs.forEach(d => {
-            const k = d.screening || 'NOT_SCREENED';
-            counts[k] = (counts[k] || 0) + 1;
-        });
-        const total = state.docs.length;
-
-        // Segmente
-        refs.progressBar.innerHTML = '';
-        SCREENING_ORDER.forEach(k => {
-            if (!counts[k]) return;
-            const seg = ZBZ.el('div', {
-                cls: 'progress-bar__seg progress-bar__seg--' + SCREENING_CLASS[k],
-                style: { flex: counts[k] + ' 1 0' },
-                attrs: { title: SCREENING_LABEL[k] + ': ' + counts[k] }
-            });
-            refs.progressBar.appendChild(seg);
-        });
-
-        // Legende
-        refs.progressLegend.innerHTML = '';
-        SCREENING_ORDER.forEach(k => {
-            const li = ZBZ.el('li', {
-                html:
-                    `<span class="progress-legend__dot" style="background:${segColor(k)}"></span>` +
-                    `<span class="progress-legend__count">${counts[k]}</span>` +
-                    `<span>${ZBZ.esc(SCREENING_LABEL[k])}</span>` +
-                    `<span class="progress-legend__pct">${total ? Math.round((counts[k]/total)*100) : 0}%</span>`
-            });
-            refs.progressLegend.appendChild(li);
-        });
-
-        // Counts pro Pub-Form
-        refs.countTotal.textContent = String(total);
-        const formCounts = {};
-        state.docs.forEach(d => {
-            const f = d.pub_form || 'other';
-            formCounts[f] = (formCounts[f] || 0) + 1;
-        });
-        refs.countsSplit.innerHTML = '';
-        Object.entries(formCounts)
-            .sort((a, b) => b[1] - a[1])
-            .forEach(([form, n]) => {
-                const label = FORM_LABEL[form] || form;
-                const item = ZBZ.el('div', {
-                    cls: 'counts-block__split-item',
-                    html: `<span>${ZBZ.esc(label)}</span><strong>${n}</strong>`
-                });
-                refs.countsSplit.appendChild(item);
-            });
+    function streamStatus(d, stream) {
+        const s = (d.streams || {})[stream];
+        let v = s && s.status;
+        if (STATUS_LEGACY[v]) v = STATUS_LEGACY[v];
+        return STATUS_LABEL[v] ? v : 'unverifiziert';
     }
 
-    function segColor(k) {
-        // Werte aus tokens.css, hier nur fuer Legende-Dots inline
-        const map = {
-            APPROVED:           'var(--h-olivgruen)',
-            APPROVED_WITH_NOTES:'var(--h-ziegelrot-light)',
-            NEEDS_REVIEW:       'var(--h-ziegelrot)',
-            NOT_SCREENED:       'var(--h-border-emphasis)'
-        };
-        return map[k] || 'var(--h-text-muted)';
+    function workflowAriaLabel(d) {
+        return 'Workflow ' + STREAMS.map(s =>
+            STREAM_LABEL[s] + ' ' + STATUS_LABEL[streamStatus(d, s)]
+        ).join(', ');
     }
 
     // ============================================================ Filter-Befuellung ============================================================
 
     function populateFilters() {
-        // Sprache aus Daten ableiten
         const langs = new Set();
         const forms = new Set();
         state.docs.forEach(d => {
@@ -180,14 +121,20 @@
 
     function applyFilters() {
         const q = state.filters.query.trim().toLowerCase();
+        const fStream = state.filters.stream;
+        const fStatus = state.filters.status;
+
         state.filtered = state.docs.filter(d => {
             if (state.filters.lang && d.lang !== state.filters.lang) return false;
             if (state.filters.type && d.type !== state.filters.type) return false;
             if (state.filters.form && d.pub_form !== state.filters.form) return false;
-            if (state.filters.screening) {
-                const s = d.screening || 'NOT_SCREENED';
-                if (s !== state.filters.screening) return false;
+
+            if (fStream && fStatus) {
+                if (streamStatus(d, fStream) !== fStatus) return false;
+            } else if (fStatus) {
+                if (!STREAMS.some(s => streamStatus(d, s) === fStatus)) return false;
             }
+
             if (q) {
                 const hay = (d.id + ' ' + (d.title || '') + ' ' + (d.author || '') + ' ' + (d.desc || '')).toLowerCase();
                 if (!hay.includes(q)) return false;
@@ -197,7 +144,6 @@
 
         sortFiltered();
         renderRows();
-        refs.hitsCount.textContent = state.filtered.length + ' / ' + state.docs.length;
         syncUrlState();
     }
 
@@ -207,15 +153,46 @@
         state.filtered.sort((a, b) => {
             let av, bv;
             switch (field) {
-                case 'id':    av = parseInt(a.id, 10); bv = parseInt(b.id, 10); break;
-                case 'title': av = (a.title || '').toLowerCase(); bv = (b.title || '').toLowerCase(); break;
-                case 'pages': av = a.page_count || 0; bv = b.page_count || 0; break;
-                case 'date':  av = a.date || ''; bv = b.date || ''; break;
-                default:      av = a.id; bv = b.id;
+                case 'id':     av = parseInt(a.id, 10); bv = parseInt(b.id, 10); break;
+                case 'title':  av = (a.title || '').toLowerCase(); bv = (b.title || '').toLowerCase(); break;
+                case 'author': av = (a.author || '').toLowerCase(); bv = (b.author || '').toLowerCase(); break;
+                case 'date':   av = a.date || ''; bv = b.date || ''; break;
+                case 'lang':   av = a.lang || ''; bv = b.lang || ''; break;
+                case 'type':   av = a.type || ''; bv = b.type || ''; break;
+                case 'form':   av = a.pub_form || ''; bv = b.pub_form || ''; break;
+                case 'pages':  av = a.page_count || 0; bv = b.page_count || 0; break;
+                default:       av = parseInt(a.id, 10); bv = parseInt(b.id, 10);
             }
             if (av < bv) return -1 * mul;
             if (av > bv) return  1 * mul;
             return 0;
+        });
+    }
+
+    function toggleSort(field) {
+        const [curField, curDir] = state.sort.split('-');
+        if (curField === field) {
+            state.sort = field + '-' + (curDir === 'asc' ? 'desc' : 'asc');
+        } else {
+            // Default-Richtung: id/pages/date numerisch absteigend macht selten Sinn,
+            // Text-Felder beginnen mit asc; pages beginnt mit desc (viele zuerst).
+            const defaultDir = (field === 'pages') ? 'desc' : 'asc';
+            state.sort = field + '-' + defaultDir;
+        }
+        renderSortIndicators();
+        applyFilters();
+    }
+
+    function renderSortIndicators() {
+        const [field, dir] = state.sort.split('-');
+        // Erste Spalte (Titel) sortiert nach id, daher data-sort="id"; visuelles Mapping:
+        $$('.col-sort').forEach(btn => {
+            const sf = btn.getAttribute('data-sort');
+            if (sf === field) {
+                btn.setAttribute('aria-sort', dir === 'desc' ? 'descending' : 'ascending');
+            } else {
+                btn.removeAttribute('aria-sort');
+            }
         });
     }
 
@@ -233,8 +210,6 @@
     }
 
     function rowFor(d) {
-        const screening = d.screening || 'NOT_SCREENED';
-        const cls = SCREENING_CLASS[screening];
         const formLabel = FORM_LABEL[d.pub_form] || d.pub_form || '—';
 
         const a = ZBZ.el('a', {
@@ -259,7 +234,6 @@
         };
         thumb.appendChild(img);
 
-        // Title-Cell
         const title = ZBZ.el('div', {
             cls: 'col-title',
             html:
@@ -267,62 +241,79 @@
                 `<span class="col-title__name">${ZBZ.esc(d.title || 'Dokument ' + d.id)}</span>`
         });
 
-        // Meta-Cell
-        const meta = ZBZ.el('div', {
-            cls: 'col-meta',
-            html:
-                `<span class="col-meta__author">${ZBZ.esc(d.author || '—')}</span>` +
-                `<span class="col-meta__date">${ZBZ.esc(d.date || '')}</span>`
+        const author = ZBZ.el('div', { cls: 'col-author', text: d.author || '—' });
+        const date   = ZBZ.el('div', { cls: 'col-date',   text: d.date || '' });
+        const lang   = ZBZ.el('div', { cls: 'col-lang',   text: d.lang || '—' });
+        const type   = ZBZ.el('div', { cls: 'col-type',   text: d.type || '—' });
+        const form   = ZBZ.el('div', { cls: 'col-form',   text: formLabel });
+        const pages  = ZBZ.el('div', { cls: 'col-pages',  text: String(d.page_count || '—') });
+
+        // Workflow: drei Ampel-Zeilen (Dot + Label). Status im Tooltip.
+        const workflow = ZBZ.el('div', {
+            cls: 'col-workflow',
+            attrs: { 'aria-label': workflowAriaLabel(d) }
+        });
+        STREAMS.forEach(s => {
+            const st = streamStatus(d, s);
+            const sm = (d.streams || {})[s] || {};
+            let tip;
+            if (st === 'unverifiziert') {
+                tip = STREAM_LABEL[s] + ': Pipeline-Output existiert, noch nicht menschlich verifiziert';
+            } else {
+                tip = STREAM_LABEL[s] + ': ' + STATUS_LABEL[st]
+                    + (sm.last_by ? ' · ' + sm.last_by : '')
+                    + (sm.last_at ? ' · ' + sm.last_at.slice(0, 10) : '');
+            }
+            const row = ZBZ.el('div', {
+                cls: 'col-workflow__row',
+                attrs: { title: tip },
+                html:
+                    `<span class="col-workflow__dot col-workflow__dot--${st}"></span>` +
+                    `<span class="col-workflow__label">${STREAM_LABEL[s]}</span>`
+            });
+            workflow.appendChild(row);
         });
 
-        const lang  = ZBZ.el('div', { cls: 'col-lang',  text: d.lang || '—' });
-        const type  = ZBZ.el('div', { cls: 'col-type',  text: d.type || '—' });
-        const form  = ZBZ.el('div', { cls: 'col-form',  text: formLabel });
-        const pages = ZBZ.el('div', { cls: 'col-pages', text: String(d.page_count || '—') });
-
-        const screen = ZBZ.el('div', { cls: 'col-screening' });
-        screen.appendChild(ZBZ.el('span', {
-            cls: 'badge-screening badge-screening--' + cls,
-            text: SCREENING_LABEL[screening]
-        }));
-
-        [thumb, title, meta, lang, type, form, pages, screen].forEach(el => a.appendChild(el));
+        [thumb, title, author, date, lang, type, form, pages, workflow].forEach(el => a.appendChild(el));
         return a;
     }
 
     // ============================================================ URL-State ============================================================
 
     function applyUrlState() {
-        const q  = ZBZ.getParam('q')         || '';
-        const l  = ZBZ.getParam('lang')      || '';
-        const t  = ZBZ.getParam('type')      || '';
-        const f  = ZBZ.getParam('form')      || '';
-        const sc = ZBZ.getParam('screening') || '';
-        const so = ZBZ.getParam('sort')      || 'id-asc';
+        const q  = ZBZ.getParam('q')       || '';
+        const l  = ZBZ.getParam('lang')    || '';
+        const t  = ZBZ.getParam('type')    || '';
+        const f  = ZBZ.getParam('form')    || '';
+        const sm = ZBZ.getParam('stream')  || '';
+        const st = ZBZ.getParam('status')  || '';
+        const so = ZBZ.getParam('sort')    || 'id-asc';
 
-        state.filters.query     = q;
-        state.filters.lang      = l;
-        state.filters.type      = t;
-        state.filters.form      = f;
-        state.filters.screening = sc;
-        state.sort              = so;
+        state.filters.query  = q;
+        state.filters.lang   = l;
+        state.filters.type   = t;
+        state.filters.form   = f;
+        state.filters.stream = sm;
+        state.filters.status = st;
+        state.sort           = so;
 
-        refs.search.value           = q;
-        refs.filterLang.value       = l;
-        refs.filterType.value       = t;
-        refs.filterForm.value       = f;
-        refs.filterScreening.value  = sc;
-        refs.sortSelect.value       = so;
+        refs.search.value       = q;
+        refs.filterLang.value   = l;
+        refs.filterType.value   = t;
+        refs.filterForm.value   = f;
+        refs.filterStream.value = sm;
+        refs.filterStatus.value = st;
     }
 
     function syncUrlState() {
         ZBZ.setParams({
-            q:         state.filters.query     || null,
-            lang:      state.filters.lang      || null,
-            type:      state.filters.type      || null,
-            form:      state.filters.form      || null,
-            screening: state.filters.screening || null,
-            sort:      state.sort !== 'id-asc' ? state.sort : null
+            q:      state.filters.query  || null,
+            lang:   state.filters.lang   || null,
+            type:   state.filters.type   || null,
+            form:   state.filters.form   || null,
+            stream: state.filters.stream || null,
+            status: state.filters.status || null,
+            sort:   state.sort !== 'id-asc' ? state.sort : null
         });
     }
 
@@ -335,10 +326,11 @@
         }, 200));
 
         [
-            ['filterLang',      'lang'],
-            ['filterType',      'type'],
-            ['filterForm',      'form'],
-            ['filterScreening', 'screening']
+            ['filterLang',   'lang'],
+            ['filterType',   'type'],
+            ['filterForm',   'form'],
+            ['filterStream', 'stream'],
+            ['filterStatus', 'status']
         ].forEach(([ref, key]) => {
             refs[ref].addEventListener('change', e => {
                 state.filters[key] = e.target.value;
@@ -346,21 +338,20 @@
             });
         });
 
-        refs.sortSelect.addEventListener('change', e => {
-            state.sort = e.target.value;
-            applyFilters();
-        });
-
         refs.filterReset.addEventListener('click', () => {
-            state.filters = { query: '', lang: '', type: '', form: '', screening: '' };
-            state.sort = 'id-asc';
+            state.filters = { query: '', lang: '', type: '', form: '', stream: '', status: '' };
             refs.search.value = '';
             refs.filterLang.value = '';
             refs.filterType.value = '';
             refs.filterForm.value = '';
-            refs.filterScreening.value = '';
-            refs.sortSelect.value = 'id-asc';
+            refs.filterStream.value = '';
+            refs.filterStatus.value = '';
             applyFilters();
+        });
+
+        // Klickbare Spalten-Sortierung
+        $$('.col-sort').forEach(btn => {
+            btn.addEventListener('click', () => toggleSort(btn.getAttribute('data-sort')));
         });
     }
 

@@ -55,6 +55,17 @@
         trigger(fname, content, 'application/xml;charset=utf-8');
     }
 
-    ZBZ.Download = { trigger, layout, text, tei };
+    /**
+     * Speichert das Pro-Objekt-Manifest (Workflow-Status + History + Leerseiten) als JSON.
+     * Datei muss vom Anwender manuell nach output/tei_final/{doc}_manifest.json kopiert
+     * werden; danach `python -m scripts.generate_edition_data --mirror-only`, damit der
+     * neue Stand wieder im Mirror landet.
+     */
+    function manifest(doc, manifestObj) {
+        const fname = `${doc}_manifest.json`;
+        trigger(fname, JSON.stringify(manifestObj, null, 2), 'application/json;charset=utf-8');
+    }
+
+    ZBZ.Download = { trigger, layout, text, tei, manifest };
     ZBZ.log('Download', 'ready');
 })();
