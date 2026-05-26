@@ -191,13 +191,17 @@ Ergebnis (285/285 Docs): 242 APPROVED (85%), 43 WITH_NOTES (15%), 0 NEEDS_REVIEW
 python -m scripts.page_manifest                                          # Korpus: {doc}_manifest.json
 python -m scripts.page_manifest --doc {DOC_ID}                           # Einzeldokument
 python -m scripts.page_manifest --dry-run                                # nur Bericht, nichts schreiben
+python -m scripts.tei.tei_blank_marker --dry-run                         # Marker-Projektion: Vorschau
+python -m scripts.tei.tei_blank_marker                                   # <pb type="blank"/> in tei_final schreiben (mit Backup)
 ```
 
 Pro-Objekt-Manifest `output/tei_final/{DOC_ID}_manifest.json` (eigene Datei, nur Ausnahme-Seiten) =
-Single Source of Truth fuer Seiten-Fakten. Detektor befuellt nur die sichere Klasse `blank`
+Single Source of Truth fuer Seiten-Fakten. `page_manifest` befuellt nur die sichere Klasse `blank`
 (OCR-Text leer/Marker UND Docling=0); Grauzone (`image_only`/`ocr_loop`) bleibt manuellem Review
-vorbehalten. Stand: 79 Leerseiten in 15 Docs, alle cross-validiert. Treibt spaeter den
-TEI-Marker `<pb type="blank"/>`. Details: [knowledge/decisions.md](knowledge/decisions.md) E63.
+vorbehalten. `tei_blank_marker` projiziert daraus `<pb type="blank"/>` in `output/tei_final/{DOC_ID}_final.xml`
+und leert den Seiten-Body (bestaetigte Leerseite = nur Marker). Danach Mirror neu:
+`python -m scripts.generate_edition_data --mirror-only`. Stand: 79 Leerseiten in 15 Docs, 0 Schema-Regression.
+Details: [knowledge/decisions.md](knowledge/decisions.md) E63/E65.
 
 ## Viewer-Daten
 
