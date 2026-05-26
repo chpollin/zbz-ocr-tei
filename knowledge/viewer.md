@@ -17,11 +17,12 @@ QA der OCR-/Layout-/TEI-Ergebnisse, manuelle Korrektur durch Human-in-the-Loop,
 Engine-Vergleich (Mistral/Gemini/DeepSeek), Demonstration gegenueber ZBZ. Nicht
 gedacht als oeffentliche Edition oder Lese-Frontend — das macht ZBZ ueber Oxygen/Alma.
 
-**Drei Seiten:** Korpus-Uebersicht (`index.html`: filter- und sortierbare Doc-Liste mit
+**Vier Seiten:** Korpus-Uebersicht (`index.html`: filter- und sortierbare Doc-Liste mit
 Screening-Status), der eigentliche Viewer (`viewer.html`: Faksimile + Layout-Overlay links,
-Transkription/TEI rechts) und eine About-Seite (`about.html`). Der Viewer kennt drei Modi:
-*Anzeigen*, *Layout bearbeiten*, *Transkription bearbeiten*. Persistenz erfolgt ausschliesslich
-via Datei-Download (kein Server).
+Transkription/TEI rechts), eine Methode-Seite (`methode.html`: CER-Headline + stratifizierte
+Werte + Limitations + Literatur-Vergleich, E62, statisch) und eine About-Seite (`about.html`).
+Der Viewer kennt drei Modi: *Anzeigen*, *Layout bearbeiten*, *Transkription bearbeiten*.
+Persistenz erfolgt ausschliesslich via Datei-Download (kein Server).
 
 **In Umbau (Mai 2026 Edition-Uplift-Welle):** Mode-Buttons werden zu Edit-Toggle pro Panel
 (E60), Faksimile-Renderer ist im View-Modus auf OpenSeadragon umgestellt (E58, Pan + Zoom +
@@ -37,7 +38,8 @@ bewusst ausgeschlossen (E59) — Hersch-Druck reicht mit Rechtecken. Plan-Dokume
 docs/
 ├── index.html                   # Korpus-Uebersicht: filter-/sortierbare Doc-Liste, Screening-Status
 ├── viewer.html                  # Doc-Detail: Faksimile + Layout-Overlay + OCR/TEI-Panel, 3 Modi
-├── about.html                   # Projekt-/Methodik-Seite
+├── methode.html                 # CER-Methodik, Headline, Stratifiziert, Limitations, Literatur (E62, statisch)
+├── about.html                   # Projekt-Seite (verweist auf methode.html fuer Qualitaets-Details)
 ├── css/
 │   ├── tokens.css               # Hersch Design Tokens (--h-*)
 │   ├── base.css                 # Reset, Typography, Buttons, Badges, Tabs
@@ -61,9 +63,9 @@ docs/
     └── examples/                # Legacy: 4 DEMO-Docs (Backward-Kompatibilitaet)
 ```
 
-**Volumen:** 3 HTML (385 Z.), 4 CSS (1.369 Z.), 7 JS (1.832 Z.). Die Korpus-Uebersicht
+**Volumen:** 4 HTML (~520 Z.), 4 CSS (~1.420 Z.), 7 JS (1.832 Z.). Die Korpus-Uebersicht
 (`index.html` + `catalog.js` + `catalog.css`) und die About-Seite kamen nach der E56-Radikalkur
-hinzu (Commit „Korpus-Uebersicht + Top-Nav").
+hinzu (Commit „Korpus-Uebersicht + Top-Nav"); die Methode-Seite folgte 2026-05-26 (E62).
 
 **CDN-Dependencies:**
 

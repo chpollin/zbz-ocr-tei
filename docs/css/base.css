@@ -399,3 +399,51 @@ select.input {
 }
 .prose ol.steps li:last-child { border-bottom: none; }
 .prose ol.steps strong { color: var(--h-text); font-weight: 500; }
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--h-space-md) 0;
+  font-size: var(--h-sm);
+}
+.prose table caption {
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+  text-align: left;
+  margin-bottom: var(--h-space-sm);
+  font-weight: 500;
+}
+.prose table th,
+.prose table td {
+  padding: var(--h-space-sm) var(--h-space-md) var(--h-space-sm) 0;
+  border-bottom: 1px dotted var(--h-border);
+  text-align: left;
+  vertical-align: top;
+}
+.prose table th {
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.prose table td.num,
+.prose table th.num {
+  font-family: var(--h-font-mono);
+  text-align: right;
+  white-space: nowrap;
+  padding-right: var(--h-space-lg);
+}
+.prose table tr:last-child td { border-bottom: none; }
+.prose table strong { color: var(--h-ziegelrot); font-weight: 500; }
+.prose .note {
+  font-size: var(--h-xs);
+  color: var(--h-text-muted);
+  font-style: italic;
+  margin-top: var(--h-space-sm);
+}

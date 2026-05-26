@@ -81,6 +81,7 @@ journal         — chronologisch, kompakter Ueberblick
 | OpenSeadragon-Faksimile (E58) | Faksimile-Renderer im View-Modus mit Pan/Zoom/Rotate, CDN-Bezug | [viewer.md](viewer.md) |
 | Mode-Edit-Toggle pro Panel (E60) | Faksimile- und Text-Panel haben je einen Bearbeiten-Toggle, keine globale Mode-Leiste | [viewer.md](viewer.md) |
 | Export-Modul (E61) | JSZip-basierter Per-Doc-Drawer + Bulk-Export aus Korpus-Uebersicht | [viewer.md](viewer.md) |
+| Methode-Seite (E62) | `docs/methode.html` mit Headline-CER, stratifizierten Werten, Limitations, Literatur-Vergleich (statisch) | [viewer.md](viewer.md) |
 | End-to-End-Workflow | Datenfluss + Save-Mechanismus + Round-Trip + Provenance-Konzept + geplante `_complete.xml`-Variante | [workflow.md](workflow.md) |
 | Manueller Round-Trip | User-Edit -> Download -> manuelles Ablegen -> `tei_unified --reassemble` -> regenerierte TEI | [workflow.md §3.3](workflow.md), [pipeline.md §Round-Trip](pipeline.md) |
 | Provenance pro Objekt (geplant) | `{doc}_provenance.json` mit voller Edit-History (AI + human), Anzeige im Viewer als Drawer | [workflow.md §4.2](workflow.md) |

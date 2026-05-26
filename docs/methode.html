@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methode &amp; Qualitaet — Hersch Pipeline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css?v=2">
+  <link rel="stylesheet" href="css/base.css?v=5">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">
+        <strong>Hersch</strong>
+        <span>Pipeline</span>
+      </a>
+      <p class="site-header__sub">Nachlass Jeanne Hersch, ZBZ &middot; OCR / Layout / TEI</p>
+      <nav class="site-header__nav" aria-label="Hauptnavigation">
+        <a href="index.html">Korpus</a>
+        <a href="methode.html" aria-current="page">Methode</a>
+        <a href="about.html">About</a>
+        <a href="https://github.com/DHCraft/zbz-ocr-tei" target="_blank" rel="noopener">Repo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="prose">
+
+    <header class="intro">
+      <h1>Methode &amp; Qualitaet</h1>
+      <p class="lede">
+        Wie wir die Pipeline messen, was die Zahlen bedeuten und wo ihre Grenzen liegen.
+        Wissenschaftlich fundierte CER-Re-Evaluation vom 27.&nbsp;April&nbsp;2026 (BCa-Bootstrap,
+        Seed&nbsp;42, B&nbsp;=&nbsp;10.000). Volle Methodik im Repo unter
+        <code>knowledge/quality.md</code>.
+      </p>
+    </header>
+
+    <section>
+      <h2>Was wird gemessen</h2>
+      <p>
+        <strong>Character Error Rate (CER)</strong> als Levenshtein-Distanz zwischen
+        Pipeline-TEI und Referenz-TEI, normiert auf die Referenz-Laenge. Referenz sind 19
+        manuell in Transkribus erstellte ZBZ-TEIs (scope-bereinigt aus urspruenglich 25). Verglichen
+        wird das Pipeline-Endprodukt (<code>output/tei_final/</code>) mit der menschlichen
+        Transkription, nicht der OCR-Rohtext.
+      </p>
+      <p>
+        Textextraktion mit <code>&lt;choice&gt;</code>-Korrektur, Fussnoten exkludiert,
+        symmetrische Unicode-Normalisierung (NFC, Quotes, Apostroph, Whitespace).
+        Aggregations-Einheit ist das Dokument, nicht die Seite &mdash;
+        <em>content-aligned</em>-Vergleich macht die Messung immun gegen Page-Numbering-Drift.
+        Bootstrap (B&nbsp;=&nbsp;10.000) liefert 95&nbsp;%-Konfidenzintervalle nach
+        BCa-Methode (Bias-Corrected and Accelerated).
+      </p>
+    </section>
+
+    <section>
+      <h2>Headline-Werte (n = 19, scope-bereinigt)</h2>
+      <table>
+        <caption>End-to-End-CER: Pipeline-TEI vs. ZBZ-Referenz-TEI</caption>
+        <thead>
+          <tr><th>Metrik</th><th class="num">Punktwert</th><th class="num">95 %-CI</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>End-to-End-CER Mean</strong></td><td class="num">4.10 %</td><td class="num">[2.01, 6.75]</td></tr>
+          <tr><td><strong>End-to-End-CER Median</strong></td><td class="num">1.83 %</td><td class="num">[0.84, 5.14]</td></tr>
+          <tr><td>OCR-only-CER Mean (Mistral)</td><td class="num">18.93 %</td><td class="num">[9.19, 30.57]</td></tr>
+          <tr><td>Pipeline-Verbesserung (paired)</td><td class="num">&minus;14.83 pp</td><td class="num">p = 0.0004</td></tr>
+          <tr><td>HCPR (Diakritik-Erhalt)</td><td class="num">~99 %</td><td class="num">&mdash;</td></tr>
+        </tbody>
+      </table>
+      <p class="note">
+        Median 1.83&nbsp;% heisst: die Haelfte der Dokumente liegt bei oder unter diesem Wert.
+        Die Pipeline reduziert den reinen OCR-Fehler um ~14.8&nbsp;Prozentpunkte
+        (Paired&nbsp;Bootstrap, p&nbsp;&lt;&nbsp;0.01) &mdash; Stages 3&ndash;7 (Layout-QA,
+        TEI-Generierung, Post-Processing) liefern messbaren Mehrwert. Ziel &lt;3.5&nbsp;%
+        Median ist erreicht.
+      </p>
+    </section>
+
+    <section>
+      <h2>Stratifiziert</h2>
+      <table>
+        <caption>Nach Layout-Typ</caption>
+        <thead>
+          <tr><th>Typ</th><th class="num">n</th><th class="num">Mean CER</th><th class="num">Median CER</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A (einspaltig)</td><td class="num">11</td><td class="num">3.7 %</td><td class="num">1.8 %</td></tr>
+          <tr><td>B (zweispaltig)</td><td class="num">5</td><td class="num">5.9 %</td><td class="num">5.1 %</td></tr>
+          <tr><td>C (Monografie)</td><td class="num">2</td><td class="num">4.0 %</td><td class="num">4.0 %</td></tr>
+          <tr><td>D (Spezial)</td><td class="num">1</td><td class="num">0.8 %</td><td class="num">0.8 %</td></tr>
+        </tbody>
+      </table>
+
+      <table>
+        <caption>Nach Sprache</caption>
+        <thead>
+          <tr><th>Sprache</th><th class="num">n</th><th class="num">Mean CER</th><th class="num">Median CER</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Franzoesisch</td><td class="num">11</td><td class="num">4.0 %</td><td class="num">1.8 %</td></tr>
+          <tr><td>Deutsch</td><td class="num">5</td><td class="num">5.9 %</td><td class="num">5.6 %</td></tr>
+          <tr><td>fra/deu gemischt</td><td class="num">3</td><td class="num">2.1 %</td><td class="num">0.8 %</td></tr>
+        </tbody>
+      </table>
+      <p class="note">
+        Zweispaltige Druckwerke (Typ&nbsp;B) sind das verbleibende Hauptproblem &mdash; in der
+        Regel Spaltenerkennung im Layout-Stadium. Reprocessing-Kandidat ist Dokument&nbsp;1910
+        (16.1&nbsp;% CER): <code>python -m scripts.layout_qa_gemini --mode detect --doc 1910</code>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Vergleich mit der Forschungsliteratur (gedruckte historische Dokumente)</h2>
+      <table>
+        <thead>
+          <tr><th>Quelle</th><th>Methode</th><th>Sprache</th><th class="num">CER</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 + Gemini 2.0 Post-Korrektur</td><td>deu Fraktur</td><td class="num">0.84 %</td></tr>
+          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Gemini 2.0 Flash zero-shot</td><td>deu</td><td class="num">1.27 %</td></tr>
+          <tr><td><strong>Hersch-Pipeline (eigen)</strong></td><td>Mistral + Docling + Gemini-TEI + NER</td><td>fra/deu</td><td class="num"><strong>1.83 %</strong></td></tr>
+          <tr><td>arXiv 2510.06743</td><td>Gemini 2.5 Pro</td><td>rus 18.&nbsp;Jh.</td><td class="num">3.36 %</td></tr>
+          <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 allein</td><td>deu</td><td class="num">3.67 %</td></tr>
+          <tr><td>Crosilla et&nbsp;al. 2025</td><td>GPT-4o direkt</td><td>deu</td><td class="num">6.31 %</td></tr>
+          <tr><td>arXiv 2510.06743</td><td>traditional OCR</td><td>rus</td><td class="num">21&ndash;45 %</td></tr>
+        </tbody>
+      </table>
+      <p class="note">
+        Hersch-Median (1.83&nbsp;%) liegt zwischen Crosillas bestem Stack
+        (Transkribus + LLM-Post-Korrektur, 0.84&nbsp;%) und Transkribus allein (3.67&nbsp;%) &mdash;
+        besser als Gemini&nbsp;2.5&nbsp;Pro zero-shot auf vergleichbarem Material. Ausschliesslich
+        Quellen ab 2025 zitiert, vollstaendige Liste im Repo.
+      </p>
+    </section>
+
+    <section>
+      <h2>Limitations</h2>
+      <ul class="feature-list">
+        <li><strong>n = 19</strong> &mdash; Korpus-Aussagen jenseits dieser 19 Dokumente sind Schaetzungen, nicht Messungen.</li>
+        <li><strong>Selektionsbias n_chars (p = 0.041)</strong> &mdash; das Referenz-Subset weicht im Char-Volumen signifikant vom Gesamtkorpus ab. Median-CER (volumen-unabhaengig) ist davon weniger betroffen als Mean-CER.</li>
+        <li><strong>Stability nicht gemessen</strong> &mdash; Pipeline-Stages 5 (Mistral) und 6 (Gemini TEI-Gen) sind nicht-deterministisch. Run-zu-Run-Varianz unbekannt, Pilot pending API-Budget-Freigabe.</li>
+        <li><strong>HCPR ist frequenz-basiert</strong> &mdash; vergleicht Diakritik-Zaehlungen, nicht Positionen. Unterschaetzt Substitutions-Fehler.</li>
+        <li><strong>Multi-Norm-Regimes wenig differenziert</strong> &mdash; vorgeschaltete Normalisierung macht die nominellen Normalisierungs-Stufen praktisch identisch.</li>
+        <li><strong>Korpus-Proxy generalisiert nicht</strong> &mdash; Composite-OLS aus Dictionary-Hit-Rate hat LOOCV-R&sup2;&nbsp;&lt;&nbsp;0. Die Korpus-Schaetzung von 6.20&nbsp;% Mean ist eine Plausibilitaets-Schranke, kein Schaetzer.</li>
+        <li><strong>Kein Inter-Engine-Vergleich</strong> &mdash; nur ein OCR-Engine-Run (Mistral), keine zweite Quelle als Cross-Validation.</li>
+      </ul>
+      <p class="note">
+        Die Honest-Disclosure dieser Punkte ist Teil der Methodik. Wer die Headline-Zahlen
+        zitiert, sollte die Limitations mitzitieren.
+      </p>
+    </section>
+
+    <section>
+      <h2>Werkzeuge &amp; Reproduzierbarkeit</h2>
+      <dl class="meta-list">
+        <dt>Statistik-Library</dt><dd><code>scripts/cer_statistics.py</code> (55 Tests gruen)</dd>
+        <dt>Orchestrator</dt><dd><code>scripts/cer_statistics_full.py</code></dd>
+        <dt>Test-Suite</dt><dd><code>python -m pytest tests/test_cer_statistics.py -q</code></dd>
+        <dt>JSON-Generierung</dt><dd><code>python -m scripts.cer_statistics_full --seed 42 --bootstrap-n 10000</code></dd>
+        <dt>Output</dt><dd><code>docs/data/cer_statistics.json</code> (deterministisch bei Seed&nbsp;42, derzeit nicht eingecheckt)</dd>
+        <dt>Methodik-Doku</dt><dd><a href="https://github.com/DHCraft/zbz-ocr-tei/blob/main/knowledge/quality.md" target="_blank" rel="noopener">knowledge/quality.md</a></dd>
+        <dt>Schema</dt><dd><code>data/schema/zbz_hersch.rng</code> (TEI P5 4.10.2 projektspezifisch, 551 Definitionen)</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Forschungsliteratur (Auswahl, alle 2025+)</h2>
+      <ul class="feature-list">
+        <li><strong>Singh 2025</strong>, "When +1% Is Not Enough", arXiv:2511.19794 &mdash; Paired-Bootstrap-Protokoll</li>
+        <li><strong>Nosova et&nbsp;al. 2025</strong>, arXiv:2510.06743 &mdash; HCPR/AIR-Adaption, no-GT-Methodik, Stabilitaets-Tests</li>
+        <li><strong>Crosilla, Klic, Colavizza 2025</strong>, arXiv:2503.15195 &mdash; LLM-HTR-Vergleichsbenchmarks</li>
+        <li><strong>Kanerva &amp; Ledins 2025</strong>, arXiv:2502.01205 &mdash; Sprachabhaengigkeit der LLM-Post-Korrektur ("No Free Lunches")</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>DHCraft / Zentralbibliothek Zuerich</span>
+      <span>Hersch Pipeline-Viewer</span>
+    </div>
+  </footer>
+
+</body>
+</html>
