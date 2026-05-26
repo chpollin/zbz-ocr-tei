@@ -12,7 +12,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 
 ---
 
-## Entschieden (E1-E61)
+## Entschieden (E1-E63)
 
 | # | Entscheidung | Begruendung | Datum | Dokument |
 |---|---|---|---|---|
@@ -73,6 +73,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 | E60 | Mode-Button-Redesign Option C: Edit-Toggle pro Panel | Aufloesung der Wort-Redundanz zwischen globalem Mode-Button "Transkription" und Text-Source-Switch "OCR". Globale Mode-Leiste (Anzeigen / Layout / Transkription) entfaellt. Jedes Panel bekommt einen kleinen Bearbeiten-Toggle im Panel-Header. Faksimile-Toggle aktiviert Layout-Editor; Text-Toggle aktiviert Transkriptions-Editor fuer aktive Text-Quelle. `setMode()` in `setImageEdit()` + `setTextEdit()` zerlegt | 2026-05-25 | [viewer.md](viewer.md) |
 | E61 | Export-Modul mit JSZip 3.10.1 | Per-Doc-Export-Drawer (Doc-Subbar "Alles ↓") + Multi-Select-Bulk-Export aus Korpus-Uebersicht. Auswahlbare Datentypen: Faksimile-PNGs, OCR pro Engine, Layout-JSON, TEI per-Seite, TEI final, Review-JSON, PAGE-XML. Eine Datei: direkter Download. Mehrere: ZIP mit Verzeichnis-Struktur `{doc_id}/{kategorie}/...` + `manifest.json`. ZIP-Erzeugung im Browser, keine Server-Komponente. Limit bei Multi-Doc-Export ueber 50 Docs (Browser-Memory) | 2026-05-25 | [viewer.md](viewer.md) |
 | E62 | Methode-Seite `docs/methode.html` | Schlanke statische Seite (Prose-Layout wie About) mit Headline-CER, stratifizierten Werten (Layout-Typ + Sprache), Forschungs-Literatur-Vergleich, Limitations und Werkzeug-Doku. Daten statisch eingebettet (kein Lazy-Load aus `cer_statistics.json`, da JSON nicht eingecheckt). Bewusst kein interaktives Dashboard (E55 wurde mit E56 abgeschafft) — wer Bootstrap-Verteilungen visuell sehen will, regeneriert das JSON ueber `cer_statistics_full.py`. Nav-Eintrag "Methode" in allen 3 Hauptseiten; About-Qualitaets-Absatz verweist auf Methode-Seite. `.prose table` zu `base.css` additiv hinzugefuegt. **Niemals LLMs fuer Entity-ID-Linking** als implizite Methodik-Position (siehe [[feedback-no-llm-for-id-linking]]) | 2026-05-26 | [viewer.md](viewer.md) |
+| E63 | Leerseiten-Erkennung + Viewer-Handling (Phase 1) | 79 Leerseiten korpusweit (Vorsatz/Rueck/Durchschlag): trivialer OCR-Muell (`.`, `^{}[]`, leeres Tabellengeruest) + explizite "Blank Page"-Marker. Ursache Phantom-Regionen: Gemini-Layout-QA halluziniert Boxen (bis 21), Docling sagt korrekt 0 — Doppelsignal. Viewer-Fix **interim/heuristisch** (`core.js` `isBlankPageText`: <=5 Zeichen ODER keine Buchstaben/Ziffern): leere Seiten zeigen "Leerseite — kein Text", Phantom-Kaesten unterdrueckt. **Geplant (Phase 2):** Pro-Objekt-Manifest `{doc}_manifest.json` (eigene Datei, nur Ausnahmen) wird Single Source of Truth fuer Seiten-Fakten (`class`: blank/image_only/ocr_loop, `source`: auto/manual, `review`-Flag); TEI-Marker `<pb type="blank"/>` (schema-valide via att.typed) als deterministische Projektion daraus; Viewer liest dann Manifest statt Heuristik (loest Regel-Duplikat JS/Python/Manifest auf). Grauzone (Nur-Bild ~10, OCR-Schleifen) NICHT automatisch — zwei Auto-Detektoren erzeugten Fehlalarme (Zeitungskoepfe, Inhaltsverzeichnisse), Experten-Review im Manifest noetig | 2026-05-26 | [viewer.md](viewer.md) |
 
 ---
 
@@ -116,7 +117,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 - [projekt.md](projekt.md) — Meilensteine + Status
 - [pipeline.md](pipeline.md) — Pipeline-Entscheidungen
 - [workflow.md](workflow.md) — End-to-End-Workflow, Round-Trip, Save-Mechanismus, Provenance-Konzept
-- [viewer.md](viewer.md) — Edition + Curation (E33, E36, E42, E56, E57, E58, E59, E60, E61)
+- [viewer.md](viewer.md) — Edition + Curation (E33, E36, E42, E56, E57, E58, E59, E60, E61, E62, E63)
 - [entities.md](entities.md) — Entity Linking (E34/E35/E38/E50)
 - [quality.md](quality.md) — CER + Screening (E41-E47, E51, E54/E55)
 - [journal.md](journal.md) — chronologische Sitzungs-Historie

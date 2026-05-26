@@ -202,6 +202,18 @@ und ein Thumbnail in `docs/data/thumbs/`. Damit funktioniert der Viewer ohne lok
 das gesamte Korpus. Die alternativen OCR-Engines (Gemini A/B, LLM, DeepSeek) bleiben unter
 `output/` und sind nur lokal abrufbar.
 
+### Leerseiten (E63)
+
+Vorsatz-, Rueck- und Durchschlagseiten liefern nur Muell-OCR (`.`, `^{}[]`, leeres Tabellengeruest)
+und das Gemini-Layout-QA halluziniert dort Phantom-Regionen (Docling sagt korrekt 0). Der Viewer
+erkennt solche Seiten **interim heuristisch** (`ZBZ.isBlankPageText` in `core.js`: getrimmter Text
+<=5 Zeichen ODER ohne Buchstaben/Ziffern) und zeigt statt Muell den ruhigen Hinweis
+"Leerseite — kein Text" (`.empty--blank-page`); die Phantom-Kaesten werden nicht gezeichnet, der
+Faksimile-Header zeigt "Leerseite". Korpusweit 79 sichere Leerseiten. **Geplant:** die Erkennung
+zieht in ein Pro-Objekt-Manifest (`{doc}_manifest.json`, Single Source of Truth fuer Seiten-Fakten),
+der Viewer liest dann den Marker statt die Heuristik, und in der TEI markiert `<pb type="blank"/>`
+die Seite. Details: [decisions.md](decisions.md) E63.
+
 ---
 
 ## Hersch Design-System

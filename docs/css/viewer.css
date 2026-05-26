@@ -622,6 +622,13 @@
   font-size: var(--h-sm);
 }
 
+/* Leerseite: bewusster Zustand, kein Fehler — aufrecht, etwas mehr Praesenz. */
+.empty--blank-page {
+  font-style: normal;
+  letter-spacing: 0.03em;
+  padding-top: calc(var(--h-space-2xl) * 2);
+}
+
 /* ============================================================
    Responsive
    ============================================================ */

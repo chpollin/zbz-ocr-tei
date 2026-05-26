@@ -33,7 +33,8 @@
         imageEdit: false,     // Faksimile-Edit-Toggle: aktiviert Layout-Editor (img + Eigenbau-Overlay)
         textEdit: false,      // Text-Edit-Toggle: aktiviert Transcription-Editor fuer aktive Quelle
         _currentText: null,
-        _currentEditedText: null
+        _currentEditedText: null,
+        _isBlank: false       // Leerseite (Vorsatz/Rueckseite/Durchschlag) — kein echter Text
     };
 
     const OSD_PREFIX = 'https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/images/';
@@ -137,8 +138,21 @@
         refs.btnNext.disabled = page >= (doc.page_count || 1);
         ZBZ.setParams({ page });
 
+        // Leerseite vorab bestimmen (aus Mistral-Basis-OCR), damit Faksimile UND Text
+        // konsistent reagieren: keine Phantom-Regionen, kein OCR-Muell.
+        state._isBlank = await detectBlankPage(doc.id, page);
+
         await renderFacsimile();
         await renderTextPanel();
+    }
+
+    async function detectBlankPage(doc, page) {
+        const ck = 'blank:' + doc + ':' + page;
+        if (cache.has(ck)) return cache.get(ck);
+        const res = await ZBZ.fetchFirstOk(ZBZ.path.ocr('mistral', doc, page));
+        const blank = res ? ZBZ.isBlankPageText(res.text) : false;
+        cache.set(ck, blank);
+        return blank;
     }
 
     async function renderFacsimile() {
@@ -171,9 +185,15 @@
         // Layout vorab laden, Overlays werden nach OSD-'open' angehaengt
         const layout = await fetchLayout(doc.id, page);
         state.layout = layout;
-        refs.regionCount.textContent = (layout && layout.regions)
-            ? layout.regions.length + ' Regionen'
-            : 'keine Layout-Daten';
+        // Leerseite: Phantom-Regionen (Gemini halluziniert Kaesten in den Durchschlag)
+        // nicht zeichnen und die irrefuehrende Zahl durch 'Leerseite' ersetzen.
+        if (state._isBlank) {
+            refs.regionCount.textContent = 'Leerseite';
+        } else {
+            refs.regionCount.textContent = (layout && layout.regions)
+                ? layout.regions.length + ' Regionen'
+                : 'keine Layout-Daten';
+        }
 
         const imgUrl = ZBZ.path.image(doc.id, page);
         state.osdViewer = OpenSeadragon({
@@ -195,7 +215,7 @@
         });
 
         state.osdViewer.addHandler('open', () => {
-            if (layout && layout.regions) addOsdOverlays(state.osdViewer, layout.regions);
+            if (!state._isBlank && layout && layout.regions) addOsdOverlays(state.osdViewer, layout.regions);
         });
 
         state.osdViewer.addHandler('open-failed', () => {
@@ -296,8 +316,27 @@
 
     // ============================================================ Text-Panel ============================================================
 
+    function textPanelTitle() {
+        if (state.textSource === 'tei') return 'TEI · gerendert';
+        if (state.textSource === 'xml') return 'TEI · XML';
+        return 'OCR · ' + state.ocrSource;
+    }
+
     async function renderTextPanel() {
         const doc = state.doc, page = state.page;
+
+        // Leerseite: ruhiger Hinweis statt OCR-Muell ('.', '^{}[]', leere Tabelle).
+        // Im Text-Edit-Modus normal rendern, damit der Rohtext bei Bedarf bereinigt werden kann.
+        if (state._isBlank && !state.textEdit) {
+            refs.textTitle.textContent = textPanelTitle();
+            refs.textBody.innerHTML = '';
+            refs.textBody.appendChild(ZBZ.el('div', {
+                cls: 'empty empty--blank-page', text: 'Leerseite — kein Text'
+            }));
+            state._currentText = null;
+            return;
+        }
+
         refs.textBody.innerHTML = '<div class="empty">Lade…</div>';
 
         if (state.textSource === 'ocr') {
@@ -429,9 +468,10 @@
         // Editor immer detachen bevor Mode-Wechsel; ensureTextEditableState() re-attached wenn noetig
         if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
 
-        // OCR-Panel rendering wechselt: gerenderter Markdown <-> Rohtext
-        if (state.textSource === 'ocr' && state._currentText != null) {
-            renderOcrText(state._currentText);
+        // OCR-Panel rendering wechselt: gerenderter Markdown <-> Rohtext.
+        // renderTextPanel() deckt Leerseite (Hinweis) und Edit/Lese-Modus konsistent ab.
+        if (state.textSource === 'ocr') {
+            renderTextPanel();
         } else {
             ensureTextEditableState();
         }
