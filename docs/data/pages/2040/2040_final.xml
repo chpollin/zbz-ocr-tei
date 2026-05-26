@@ -25,7 +25,9 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:warning L7:ok). 3x persName Mensch (zbz-p.1251) false positive; Seitenzahlen 24-29 als eigene Absaetze</change>
+    <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

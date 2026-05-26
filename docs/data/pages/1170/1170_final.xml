@@ -32,8 +32,10 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:warning L3:ok L4:ok L5:n/a L6:ok L7:warning). OCR-Halluzinationen: Repetitive Phrasen a la vie de la femme (Z.169); Titel korrekt: Les conferences du congres; Zweiter Abschnitt (Bindschedler-Robert) ohne head-Element</change>
     <change when="2026-03-26" who="manual-review" status="REVIEWED">Manuelle Optimierung: (1) OCR-Halluzinationen durch gap[@reason='ocr-hallucination'] ersetzt (2x), (2) head-Element fuer Bindschedler-Robert-Abschnitt ergaenzt, (3) e-periodica-Metadatenseite als div[@type='source-metadata'] typisiert, (4) monogr/title mit Zeitschriftenname ergaenzt</change>
+    <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

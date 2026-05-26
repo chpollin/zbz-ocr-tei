@@ -32,7 +32,9 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="quality-screening-agent" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Overlay S.1/6/11: Layout-Regionen korrekt, single-column Fliesstext; OCR-Text kohaerenter franzoesischer Feuilleton-Bericht ueber Festival des Arts 1952; Facsimile-Anomalie: Zonen auf S.5/6/7/8 mit Koordinaten weit ueber Surface-Grenzen (z.B. facs_5_r_1 ulx=1365 bei surface lrx=1241). Kein Einfluss auf Text, aber Layout-Metadaten fehlerhaft (+3 more)</change>
+    <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

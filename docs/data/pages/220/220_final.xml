@@ -24,7 +24,9 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:warning L4:ok L5:n/a L6:warning L7:ok). L6: 12+ falsche persName-Tags (Mensch 10x, Philosoph 1x, Wahl 1x sind Appellativa); L6: Weber-Referenz zbz-p.345 vermutlich falsche ID (sollte zbz-p.883 fuer Alfred Weber sein); L6: Einige bibl-Tags fragwuerdig (Philosophie, Weltanschauung, Demokratie, Zeit als Werktitel getaggt) (+1 more)</change>
+    <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

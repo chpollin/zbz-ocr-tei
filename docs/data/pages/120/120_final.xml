@@ -32,7 +32,9 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:ok L7:ok). Dokument beginnt mit dem Ende eines Croce-Artikels von Georges Golay (S.338); div-Struktur trennt beide Texte korrekt.; Einige persName-Referenzen verwenden GND:unknown (Racine, Augustin, Pascal, Descartes, Nietzsche, Jean Wahl, Gabriel Marcel).; Seitennummerierung springt: Mischung aus Originalseitenzahlen und laufender Zaehlung.</change>
+    <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

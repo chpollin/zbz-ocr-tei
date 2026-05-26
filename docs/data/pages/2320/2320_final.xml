@@ -33,7 +33,9 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:warning L4:ok L5:n/a L6:ok L7:ok). persName ref=zbz-p.89 fuer Wahl (2x) -- False-Positive, Wahl ist deutsches Substantiv (Freiheit der Wahl).; persName ref=zbz-p.1251 fuer Mensch (2x) -- False-Positive, Gattungsbegriff.; Inhaltsverzeichnis (S.2) extrem granular segmentiert mit >60 einzelnen p-Elementen.</change>
+    <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

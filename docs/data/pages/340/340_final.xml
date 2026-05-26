@@ -32,7 +32,9 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="quality-screening-agent" status="APPROVED">Agent-Based Quality Screening (L1:n/a L2:n/a L3:n/a L4:n/a L5:n/a L6:n/a L7:n/a). Overlay S.1/10/20: Layout korrekt erkannt. Zweispaltig (S.4-6, 12-20), Bildseiten (S.7-10); OCR-Text hochkohaerenter Reportage-Essay ueber Poznan-Prozesse 1956; Facsimile-Anomalie: Zonen auf S.11/12/17/19 mit Koordinaten weit ueber Surface-Grenzen (z.B. facs_11_r_3 ulx=4848 bei surface lrx=1054). Bekanntes Pipeline-Muster bei 2-Spaltern (+4 more)</change>
+    <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

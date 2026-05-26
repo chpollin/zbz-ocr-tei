@@ -25,7 +25,9 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:warning L2:warning L3:ok L4:ok L5:n/a L6:ok L7:ok). OCR-Fehler: 'Jeanne Hench' statt 'Jeanne Hersch' (S.3); OCR-Fehler: 'Dufour-Kowalcka' statt 'Dufour-Kowalska' (S.2); OCR-Fehler in Kredit-Liste: 'Bildatchie Fonn' statt 'Bildarchiv Foto' (+1 more)</change>
+    <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>

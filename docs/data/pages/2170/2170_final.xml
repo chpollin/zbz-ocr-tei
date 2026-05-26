@@ -32,7 +32,9 @@
     </profileDesc>
   <revisionDesc>
     <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
-    <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">Agent-Based Quality Screening (L1:ok L2:ok L3:ok L4:ok L5:n/a L6:warning L7:ok). 'Europaeer'/'Europeens' faelschlich als persName getaggt (zbz-p.436, zbz-p.733); 'Occidentaux' als persName getaggt (zbz-p.2100); Datum 'unknown' in sourceDesc</change>
+    <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+    <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
   </revisionDesc>
   </teiHeader>
   <facsimile>
