@@ -20,7 +20,7 @@ der frueher hier moegliche Engine-Vergleich liegt seit E64 ausserhalb des Viewer
 Lese-Frontend — das macht ZBZ ueber Oxygen/Alma.
 
 **Vier Seiten:** Korpus-Uebersicht (`index.html`: filter- und sortierbare Doc-Liste mit
-Screening-Status), der eigentliche Viewer (`viewer.html`: Faksimile + Layout-Overlay links,
+Workflow-Status pro Strom, E66), der eigentliche Viewer (`viewer.html`: Faksimile + Layout-Overlay links,
 Transkription/TEI rechts), eine Methode-Seite (`methode.html`: CER-Headline + stratifizierte
 Werte + Limitations + Literatur-Vergleich, E62, statisch) und eine About-Seite (`about.html`).
 Der Viewer kennt drei Modi: *Anzeigen*, *Layout bearbeiten*, *Transkription bearbeiten*.
@@ -39,7 +39,7 @@ bewusst ausgeschlossen (E59) — Hersch-Druck reicht mit Rechtecken. Plan-Dokume
 
 ```
 docs/
-├── index.html                   # Korpus-Uebersicht: filter-/sortierbare Doc-Liste, Screening-Status
+├── index.html                   # Korpus-Uebersicht: filter-/sortierbare Doc-Liste, Workflow-Status pro Strom (E66)
 ├── viewer.html                  # Doc-Detail: Faksimile + Layout-Overlay + OCR/TEI-Panel, 3 Modi
 ├── methode.html                 # CER-Methodik, Headline, Stratifiziert, Limitations, Literatur (E62, statisch)
 ├── about.html                   # Projekt-Seite (verweist auf methode.html fuer Qualitaets-Details)
@@ -51,17 +51,18 @@ docs/
 ├── js/
 │   ├── core.js                  # DOM, URL, Fetch, Format, Cache, Toast, EventBus, Markdown-Renderer
 │   ├── viewer.js                # Viewer-Orchestrator: Doc-Selektion + Mode-Switching
-│   ├── catalog.js               # Korpus-Uebersicht: Laden, Filter, Sortierung, Screening-Legende
+│   ├── catalog.js               # Korpus-Uebersicht: Laden, Filter (Strom × Status, E66), Sortierung
 │   ├── tei-render.js            # TEI-XML → DOM (mit Entity-Highlighting)
 │   ├── layout-editor.js         # BBox Drag/Resize/Add/Delete + Reading-Order
 │   ├── transcription-editor.js  # OCR/TEI/XML mit contenteditable
 │   └── download.js              # Datei-Download (JSON/MD/XML)
 └── data/                        # generiert via scripts/generate_edition_data.py
-    ├── catalog.json             # 285 Docs (id, title, author, lang, type, page_count, screening)
+    ├── catalog.json             # 285 Docs (id, title, author, lang, type, page_count, streams.{ocr,layout,tei}.{status,last_at,last_by})
+    ├── manifests/{doc}.json     # Mirror der Pro-Objekt-Manifeste (Workflow + History + Leerseiten, E66)
     ├── entity_index.json        # 4504 Entities mit GND/Wikidata
     ├── entity_register.json     # Cross-Doc-Aggregation
     ├── search_index.json        # Volltext fuer Doc-Suche
-    ├── tei/                     # 285 finale TEIs (*_final.xml + *_review.json)
+    ├── tei/                     # 285 finale TEIs (*_final.xml; legacy *_screening_legacy.json bleibt gitignored im output/)
     ├── pages/                   # alle 285 Docs: Layout-JSONs + Mistral-OCR + per-Seiten-TEI
     └── examples/                # Legacy: 4 DEMO-Docs (Backward-Kompatibilitaet)
 ```
@@ -172,7 +173,8 @@ Exportierbare Datentypen pro Dokument:
 - Layout-JSON (Docling + Gemini-Varianten)
 - TEI per-Seite (`*_p001.xml` ... `*_pNNN.xml`)
 - TEI final (`*_final.xml`)
-- Review-JSON (`*_review.json`, 7-Schichten-Quality-Befund)
+- Pro-Objekt-Manifest (`*_manifest.json`, Workflow-Status + History, E66)
+- Legacy: Review-JSON (`*_screening_legacy.json`, abgeschafftes 7-Schichten-Screening, nur als Diagnose-Spur)
 - PAGE-XML pro Seite, falls vorhanden
 
 Bei einer Datei: direkter Download. Bei mehreren: ZIP-Bundle mit Verzeichnis-Struktur
@@ -205,17 +207,19 @@ das gesamte Korpus. Die alternativen OCR-Engines (Gemini A/B, LLM, DeepSeek) ble
 mehr — er zeigt ausschliesslich Mistral (die ausgelieferte Edition); die Alt-Engines sind reine
 Benchmark-Artefakte (E51/E54) und nicht Teil der Edition.
 
-### Leerseiten (E63)
+### Leerseiten (E63 + Schritt 3, E67)
 
 Vorsatz-, Rueck- und Durchschlagseiten liefern nur Muell-OCR (`.`, `^{}[]`, leeres Tabellengeruest)
-und das Gemini-Layout-QA halluziniert dort Phantom-Regionen (Docling sagt korrekt 0). Der Viewer
-erkennt solche Seiten **interim heuristisch** (`ZBZ.isBlankPageText` in `core.js`: getrimmter Text
-<=5 Zeichen ODER ohne Buchstaben/Ziffern) und zeigt statt Muell den ruhigen Hinweis
-"Leerseite — kein Text" (`.empty--blank-page`); die Phantom-Kaesten werden nicht gezeichnet, der
-Faksimile-Header zeigt "Leerseite". Korpusweit 79 sichere Leerseiten. **Geplant:** die Erkennung
-zieht in ein Pro-Objekt-Manifest (`{doc}_manifest.json`, Single Source of Truth fuer Seiten-Fakten),
-der Viewer liest dann den Marker statt die Heuristik, und in der TEI markiert `<pb type="blank"/>`
-die Seite. Details: [decisions.md](decisions.md) E63.
+und das Gemini-Layout-QA halluziniert dort Phantom-Regionen (Docling sagt korrekt 0). Korpusweit
+79 sichere Leerseiten in 15 Docs.
+
+Erkennung im Viewer (`detectBlankPage` in `viewer.js`) liest **primaer den `<pb type="blank"/>`-
+Marker aus der per-Seiten-TEI** (deterministisch, von `tei_blank_marker.py` projiziert -- E65).
+Fallback nur fuer Faelle ohne TEI: die OCR-Heuristik `ZBZ.isBlankPageText` (getrimmter Text
+<=5 Zeichen ODER ohne Buchstaben/Ziffern). Damit ist die Regel-Duplikation JS/Python aufgeloest --
+die Markierungs-Wahrheit lebt im TEI bzw. im Pro-Objekt-Manifest, der Viewer nur projiziert.
+Bei Leerseiten zeigt der Faksimile-Header "Leerseite", das Text-Panel den ruhigen Hinweis
+"Leerseite — kein Text", Phantom-Boxen werden unterdrueckt. Details: [decisions.md](decisions.md) E63/E65/E67.
 
 ---
 
@@ -283,7 +287,7 @@ S3, CDN) und einen anpassbaren `ZBZ.path.image()` mit `BASE_URL`-Variable.
 
 ### Daten regenerieren
 
-Wenn sich Pipeline-Output oder Screening-Status aendert:
+Wenn sich Pipeline-Output oder Workflow-Status (Manifest) aendert:
 
 ```bash
 python -m scripts.generate_edition_data                  # voller Lauf inkl. Per-Seiten-Mirror

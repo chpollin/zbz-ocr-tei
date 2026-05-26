@@ -68,7 +68,9 @@ journal         — chronologisch, kompakter Ueberblick
 | Dual-Attribut-Strategie (E50) | `ref="GND:..."` (primaer) + `corresp="#zbz-{typ}.{N}"` (intern) | [entities.md](entities.md) |
 | Hybrid Pipeline | Docling Layout + LLM-OCR Text | [pipeline.md](pipeline.md) |
 | Unified TEI Pipeline (E32) | Scaffold + Gemini Refinement + Assembly + Validation | [pipeline.md](pipeline.md) |
-| Agent-Based Quality Screening (E41) | 7-Schichten-Pre-Curation, Review-JSON pro Doc | [quality.md](quality.md) |
+| Agent-Based Quality Screening (E41, deprecated E66) | 7-Schichten-Pre-Curation, Review-JSON pro Doc — als Qualitaetssignal abgeschafft, weil kein Mensch beteiligt war; Legacy als `_screening_legacy.json` erhalten | [quality.md](quality.md) |
+| Workflow-Status pro Strom (E66/E67) | unverifiziert \| in_arbeit \| bearbeitet \| fertig je OCR/Layout/TEI, im Manifest mit Provenienz-History, projizierbar in `<revisionDesc>`. Ampel: gelb=unverifiziert/in_arbeit/bearbeitet, gruen=fertig, rot reserviert | [quality.md](quality.md), [viewer.md](viewer.md) |
+| Ampel-Reframing (E67) | "Pipeline-Output EXISTIERT, ist nur unverifiziert" -- daher Status `offen` umbenannt zu `unverifiziert`, rote Default-Lesart aufgegeben | [decisions.md §E67](decisions.md) |
 | CER-Benchmark (E51) | End-to-End TEI-vs-TEI, Median 1.83% (n=19) | [quality.md](quality.md) |
 | CER-Statistik (E54) | BCa-Bootstrap-CIs, paired E2E vs OCR-only, HCPR | [quality.md](quality.md) |
 | Quality Proxy | Dictionary Hit Rate fuer 285 Docs ohne Ground Truth | [quality.md](quality.md) |

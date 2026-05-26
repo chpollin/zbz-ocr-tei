@@ -468,7 +468,24 @@ projektspezifischen Schema absichtlich ausgeschlossen sind.
 
 ---
 
-## Agent-Based Quality Screening
+## Agent-Based Quality Screening (deprecated, E66)
+
+**Stand 2026-05-26: Das Agent-Screening ist als Qualitaetssignal abgeschafft (E66).** Begruendung:
+keiner der 285/285 "APPROVED"-Status kommt von einem Menschen -- der Agent zertifiziert sich selbst,
+mit eingebauter Ignorier-Liste (W3, W6, W10 als "normal" deklariert) und ohne fachliche Bewertung.
+Das Etikett "APPROVED" im `<revisionDesc>` ist epistemisch irrefuehrend gegenueber ZBZ.
+
+Ersetzt durch **Workflow-Status pro Strom** (siehe Abschnitt unten): `offen | in_arbeit | bearbeitet | fertig`
+je fuer OCR, Layout, TEI. Status wird von Menschen im Viewer gesetzt und in der Manifest-History
+persistiert (`output/tei_final/{doc}_manifest.json`, Schluessel `streams.*.history`).
+Bei der ZBZ-Uebergabe projiziert `scripts/tei/tei_status_marker.py` die History deterministisch
+in den `<revisionDesc>`; Agent-Screening-Eintraege werden dabei entfernt.
+
+Die alten Befunde bleiben als Diagnose-Spur erhalten: `_review.json` -> `_screening_legacy.json`
+(gitignored, nicht im Mirror). Sie sind teilweise inhaltlich nuetzlich (Layer-Befunde),
+aber das `APPROVED`-Label trifft keine Aussage ueber fachliche Qualitaet.
+
+### Historische Funktionsweise (zur Dokumentation)
 
 Agent-basiertes Pre-Curation-Verfahren: Claude Code prueft jedes TEI durch 7 Schichten.
 
@@ -539,6 +556,48 @@ fachliche Richtigkeit. Naechster Schritt: ZBZ-Fachleute pruefen dieselben Docs i
 
 `output/tei_unified/` bleibt unveraendert. Finale TEIs mit `<revisionDesc>` liegen in
 `output/tei_final/`. Nur Letztere werden in der Edition angezeigt.
+
+---
+
+## Workflow-Status pro Strom (E66/E67, ab 2026-05-26)
+
+Ersetzt das Agent-Screening (oben). Vier Statuswerte je Datenstrom (`ocr`, `layout`, `tei`):
+
+| Status | Bedeutung |
+|---|---|
+| `unverifiziert` | Pipeline-Output existiert, kein Mensch hat verifiziert (Default fuer alle 285 Docs) |
+| `in_arbeit` | Bearbeiter:in schaut/editiert gerade |
+| `bearbeitet` | mindestens eine menschliche Korrektur erfolgt, nicht final |
+| `fertig` | bearbeitet + fachlich freigegeben, edition-ready |
+
+**Ampel-Semantik im UI (E67):** **gelb** = `unverifiziert` + `in_arbeit` + `bearbeitet` (alle drei: vorhanden, nicht freigegeben). **gruen** = `fertig`. **rot** ist im aktuellen Modell nicht im Einsatz, bleibt reserviert fuer einen spaeteren expliziten Problem-/Reject-Status (z.B. "OCR fehlt", "muss neu generiert werden"). Begruendung des Reframings: die Pipeline produziert OCR/Layout/TEI deterministisch fuer alle 285 Docs -- der Default ist also "vorhanden, unverifiziert", nicht "nichts da". Der Umbenennungs-Schritt von `offen` zu `unverifiziert` macht die Datenebene konsistent mit dieser Lesart.
+
+**Datenmodell:** Pro-Objekt-Manifest `output/tei_final/{doc}_manifest.json` (E65 erweitert).
+Der `streams`-Header haelt fuer jeden Strom `{engine|engines|source, status, history}`. Die
+`history` ist eine Liste `[{at, by, from, to, note}]` und wird beim Status-Wechsel ergaenzt --
+das ist die Provenienz der menschlichen Bearbeitungsschritte.
+
+**Setzen:** im Viewer (`docs/viewer.html`), Doc-Subbar zweite Zeile. Drei Pills `OCR · Layout · TEI`,
+Klick zykliert vorwaerts. Der Anwender wird einmal nach Kuerzel (Initialen) gefragt; gespeichert
+in `localStorage` unter `zbz.workflow.by`. Aenderungen markieren das Manifest dirty und werden
+ueber "Manifest ↓" als Datei heruntergeladen; manuelles Ablegen unter `output/tei_final/`.
+
+**Auto-Uebergang:** das erste Aktivieren eines Edit-Toggles (Layout oder Text) setzt den zugehoerigen
+Strom automatisch von `unverifiziert` auf `in_arbeit` (Quelle `auto: Edit-Toggle aktiviert`). Bewusste
+Status-Wechsel (z.B. `bearbeitet` → `fertig`) erfolgen ueber die Pill.
+
+**Mirror:** `python -m scripts.generate_edition_data --mirror-only` spiegelt die Manifeste nach
+`docs/data/manifests/{doc}_manifest.json`, von wo der Viewer sie laedt. Der Catalog (`catalog.json`)
+traegt pro Doc ein `streams`-Feld `{ocr|layout|tei: {status, last_at, last_by}}` und ein Korpus-
+Histogramm `corpus.stream_status`.
+
+**TEI-Projektion (ZBZ-Uebergabe):** `python -m scripts.tei.tei_status_marker` schreibt deterministisch
+fuer jedes Dokument `<change when="..." who="..." status="..." n="{stream}">...</change>` in den
+`<revisionDesc>` und entfernt dabei alle Agent-Screening-Eintraege (`who` matched `^(agent-screening|quality-screen|quality-pass|claude)`).
+Backup vorher unter `output/_backup_pre_status_marker/`. Pipeline-Generierungs-Eintrag (`who="pipeline"`)
+bleibt erhalten. Eine Summen-Zeile je Strom haelt den aktuellen Stand fest.
+
+**Stand 2026-05-26:** 285/285 Docs auf `unverifiziert` in allen drei Stroemen -- der ehrliche Anker.
 
 ---
 
