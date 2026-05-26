@@ -185,6 +185,20 @@ Output: `output/tei_final/{DOC_ID}_final.xml` + `{DOC_ID}_review.json` + `screen
 
 Ergebnis (285/285 Docs): 242 APPROVED (85%), 43 WITH_NOTES (15%), 0 NEEDS_REVIEW (0%). Details: [knowledge/quality.md](knowledge/quality.md).
 
+## Seiten-Manifest (Leerseiten, E63 Phase 2)
+
+```bash
+python -m scripts.page_manifest                                          # Korpus: {doc}_manifest.json
+python -m scripts.page_manifest --doc {DOC_ID}                           # Einzeldokument
+python -m scripts.page_manifest --dry-run                                # nur Bericht, nichts schreiben
+```
+
+Pro-Objekt-Manifest `output/tei_final/{DOC_ID}_manifest.json` (eigene Datei, nur Ausnahme-Seiten) =
+Single Source of Truth fuer Seiten-Fakten. Detektor befuellt nur die sichere Klasse `blank`
+(OCR-Text leer/Marker UND Docling=0); Grauzone (`image_only`/`ocr_loop`) bleibt manuellem Review
+vorbehalten. Stand: 79 Leerseiten in 15 Docs, alle cross-validiert. Treibt spaeter den
+TEI-Marker `<pb type="blank"/>`. Details: [knowledge/decisions.md](knowledge/decisions.md) E63.
+
 ## Viewer-Daten
 
 ```bash
