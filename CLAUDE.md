@@ -53,14 +53,33 @@ Bei UI- oder Frontend-Generierung ist [knowledge/viewer.md §Hersch Design-Syste
 
 Token-Katalog: `docs/css/tokens.css`. Basis-Komponenten: `docs/css/base.css`. Viewer-spezifisch: `docs/css/viewer.css`.
 
-## TEI-Datenfluss
+## Projektstruktur & Datenfluss
 
-- `output/tei_unified/` — Pipeline-Output (generierte TEIs, nicht editieren)
-- `output/tei_final/` — gescreente, finale TEIs mit `<revisionDesc>` im Header (E43: Single Source of Truth fuer die Edition)
-- Nur `tei_final/`-Dokumente werden in der Edition angezeigt
-- Jedes finale TEI hat eine `<revisionDesc>` mit Pipeline- und Screening-Status (E42)
-- Review-JSONs (`{DOC_ID}_review.json`) dokumentieren den Befund pro Dokument
-- Kuratierte TEIs (Gold-Standard) liegen in `data/tei_curated/` (git-tracked)
+### Verzeichnisse (Orientierung)
+
+- `data/` — Eingangs- und Referenzdaten: `scans/` (PDFs), `schema/zbz_hersch.rng` (TEI-Schema), `tei_curated/` (Gold-Standard, git-tracked), `referenz-tei/`, `richtlinien/`, `doc_metadata.json`
+- `scripts/` — Pipeline + Werkzeuge: `core/`, `layout/`, `ner/`, `tei/` + Top-Level-Skripte (Eval, Mirror-Generierung)
+- `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
+- `docs/` — statische Edition/Inspektions-Site (GitHub-Pages-tauglich): HTML, `css/`, `js/`, `data/` (generierter Mirror), `images/`
+- `knowledge/` — Wissensbasis (10 Docs), Einstieg [knowledge/index.md](knowledge/index.md)
+- `tests/` — pytest-Suites
+
+### Objekt = Bündel paralleler Datenströme
+
+Ein **Objekt** (Dokument) trägt mehrere Ströme, alle nach `{doc_id}_p{N}`-Konvention:
+
+- **OCR** — `output/mistral_results/` (Basis); alt. Engines: `output/ocr_results/`, `gemini_corrected_{a,b}/`, `llm_corrected_c/`
+- **Layout / PAGE-XML** — `output/layout/` (Docling + Gemini, JSON) → `output/page_xml/` (PAGE-XML + METS-Export)
+- **TEI** — `output/tei_unified/` (Pipeline-Output) → `output/tei_final/` (gescreent, final)
+- **Pro-Objekt-Metadaten** — `{doc_id}_review.json` (Screening-Befund pro Dokument, neben dem finalen TEI)
+
+Detaillierte Stufen / Skripte / Engines: [knowledge/pipeline.md](knowledge/pipeline.md).
+
+### Source of Truth → generierter Mirror (verbindlich)
+
+- **`output/tei_final/{doc}_final.xml` ist die Single Source of Truth der Edition** (E43). Nur `tei_final/` wird angezeigt. Jedes finale TEI traegt `<revisionDesc>` mit Pipeline-/Screening-Status (E42).
+- **`docs/data/pages/{doc}/` ist ein GENERIERTER Mirror — niemals direkt editieren.** Erzeugt von `scripts/generate_edition_data.py` aus: per-Seiten-TEI (aus `tei_final` gesplittet) + Mistral-`.md` + Layout-JSON. Nach Aenderungen an der Quelle Mirror neu generieren.
+- `output/tei_unified/` ist Pipeline-Output (nicht editieren). Kuratierte Gold-TEIs liegen in `data/tei_curated/` (git-tracked).
 
 ## Methodik
 
