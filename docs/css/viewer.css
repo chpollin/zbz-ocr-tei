@@ -61,21 +61,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.doc-subbar__meta .badge--screening {
-  margin-left: var(--h-space-md);
-  font-family: var(--h-font-heading);
-  font-size: var(--h-xs);
-  letter-spacing: var(--h-tracking-caps);
-  text-transform: uppercase;
-  padding: 2px 8px;
-  border-radius: var(--h-radius-sm);
-  border: 1px solid var(--h-border-emphasis);
-  background: var(--h-bg);
-  color: var(--h-text-secondary);
-}
-.doc-subbar__meta .badge--approved      { color: #166534; border-color: rgba(22,101,52,0.35); background: rgba(22,101,52,0.06); }
-.doc-subbar__meta .badge--with-notes    { color: #b45309; border-color: rgba(180,83,9,0.35);  background: rgba(180,83,9,0.06); }
-.doc-subbar__meta .badge--needs-review  { color: #b91c1c; border-color: rgba(185,28,28,0.35); background: rgba(185,28,28,0.06); }
 .doc-subbar__actions {
   display: flex;
   gap: var(--h-space-xs);
