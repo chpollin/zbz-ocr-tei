@@ -181,27 +181,6 @@ TESTPLAN = {
     },
 }
 
-# Phase-1-Tests (Kurzform fuer Mistral-Benchmark)
-PHASE1_TESTS = TESTPLAN["phase1"]["tests"]
-
-# Bekannte Entity-Namen (Seed fuer Erkennung im TEI-Mapping).
-# NUR Namensliste -- Authority-IDs (GND/Wikidata) kommen ausschliesslich
-# aus dem Entity Index (data/entities/), befuellt durch Reconciliation.
-KNOWN_ENTITY_NAMES: list[str] = [
-    "Karl Jaspers",
-    "Jaspers",
-    "Jeanne Hersch",
-    "Hersch",
-    "Bergson",
-    "Kierkegaard",
-    "Heidegger",
-    "Kant",
-    "Platon",
-    "Sartre",
-    "Hannah Arendt",
-]
-
-
 def get_test_metadata(doc_id: str) -> dict | None:
     """Gibt TESTPLAN-Metadaten fuer eine doc_id zurueck."""
     for phase_data in TESTPLAN.values():

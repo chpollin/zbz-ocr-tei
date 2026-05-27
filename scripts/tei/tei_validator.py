@@ -168,21 +168,6 @@ def _check_project_rules(root) -> tuple[list[dict], list[dict]]:
     # WARNINGS -- informativ fuer Editoren
     # -----------------------------------------------------------------------
 
-    # W9: Entity-Elemente ohne ref (wird erst nach NER-Injection aufgeloest)
-    missing_refs = 0
-    total_entities = 0
-    for elem_name in ("persName", "orgName", "placeName"):
-        for elem in root.findall(f".//{{{TEI_NS}}}{elem_name}"):
-            total_entities += 1
-            if not elem.get("ref"):
-                missing_refs += 1
-    if missing_refs > 0:
-        warnings.append({
-            "line": 0,
-            "message": f'{missing_refs}/{total_entities} Entity-Tags ohne ref (NER-Injection ausstehend)',
-            "rule": "W9",
-        })
-
     # W1: Sprach-Code "und" (undetermined) -- nur wenn langUsage vorhanden
     # (zbz_hersch.rng Schema hat kein langUsage, daher optional)
     for lang in root.findall(f".//{{{TEI_NS}}}language"):
@@ -256,29 +241,6 @@ def _check_project_rules(root) -> tuple[list[dict], list[dict]]:
                 "message": f'<graphic> ohne sinnvolles url (url="{url}")',
                 "rule": "W7",
             })
-
-    # W8: Entity-Coverage -- Docs ohne jegliche Entity-Tags
-    n_persName = len(root.findall(f".//{{{TEI_NS}}}persName"))
-    n_orgName = len(root.findall(f".//{{{TEI_NS}}}orgName"))
-    n_placeName = len(root.findall(f".//{{{TEI_NS}}}placeName"))
-    n_bibl = len(root.findall(f".//{{{TEI_NS}}}bibl"))
-    entity_count = n_persName + n_orgName + n_placeName + n_bibl
-    if body is not None and entity_count == 0:
-        body_text = "".join(body.itertext())
-        if len(body_text) > 500:
-            warnings.append({
-                "line": 0,
-                "message": f'Keine Entity-Tags bei {len(body_text)} Zeichen Text',
-                "rule": "W8",
-            })
-
-    # W10: Entity-Typ-Balance -- nur persName ohne orgName/placeName
-    if n_persName > 10 and n_orgName == 0 and n_placeName == 0:
-        warnings.append({
-            "line": 0,
-            "message": f'{n_persName} persName, aber 0 orgName und 0 placeName -- fehlende Typ-Differenzierung?',
-            "rule": "W10",
-        })
 
     # W11: div-Struktur -- zu viele top-level divs mit gleichem n
     if body is not None:
@@ -711,9 +673,6 @@ def generate_html_report(summary: dict, output_path: Path) -> None:
         "W5": "Sehr wenig Text (avg <50 chars/Seite)",
         "W6": "Keine lb-Elemente",
         "W7": "graphic ohne url-Attribut",
-        "W8": "Keine Entity-Tags bei substanziellem Text",
-        "W9": "Entity-Tags ohne ref (NER-Injection ausstehend)",
-        "W10": "Nur persName, keine orgName/placeName (Typ-Differenzierung fehlt)",
         "W11": "Zu viele top-level divs mit gleichem n (div-Merge fehlt)",
     }
 
@@ -845,7 +804,7 @@ footer {{ margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e6ed; colo
 
 <footer>
   <p>Errors: RelaxNG TEI-All + R1 (type=naegeli), R2 (teiHeader), R3 (body), R4 (div), R5 (div-types), R6 (note place)</p>
-  <p>Warnings: W1 (Sprache), W2 (Header-Felder), W3 (facsimile/pb), W4 (leere div), W5 (Text-Volumen), W6 (lb-Dichte), W7 (graphic url), W8 (Entity-Coverage), W9 (Entity-Refs), W10 (Typ-Balance)</p>
+  <p>Warnings: W1 (Sprache), W2 (Header-Felder), W3 (facsimile/pb), W4 (leere div), W5 (Text-Volumen), W6 (lb-Dichte), W7 (graphic url), W11 (div-Merge)</p>
 </footer>
 
 </body>

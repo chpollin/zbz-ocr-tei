@@ -23,7 +23,6 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 from scripts.config import IMAGES_DIR, LABEL_COLORS, LAYOUT_DIR
-from scripts.layout import draw_overlay_from_json
 
 
 def draw_overlay_with_changes(img_path, layout_json, output_path):
