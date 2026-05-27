@@ -430,16 +430,6 @@ def _normalize_text(text: str) -> str:
     return text
 
 
-def _extract_entity_set(root, entity_tag: str) -> set[str]:
-    """Extrahiert normalisierte Entity-Namen aus einem TEI-Tree."""
-    names = set()
-    for elem in root.findall(f".//{{{TEI_NS}}}{entity_tag}"):
-        text = "".join(elem.itertext()).strip().lower()
-        if text and len(text) > 1:
-            names.add(text)
-    return names
-
-
 def _compute_cer(ref_text: str, hyp_text: str) -> float:
     """Berechnet die CER in Prozent (Levenshtein-basiert) aus bereits extrahiertem Text.
 
@@ -517,30 +507,11 @@ def compare_with_reference(tei_dir: Path = None, ref_dir: Path = None) -> dict:
             structure[tag] = {"ref": ref_count, "pipeline": our_count}
 
         # Top-level div count
+        ref_body = ref_root.find(f".//{{{TEI_NS}}}body")
+        our_body = our_root.find(f".//{{{TEI_NS}}}body")
         ref_top_divs = len(ref_body.findall(f"{{{TEI_NS}}}div")) if ref_body is not None else 0
         our_top_divs = len(our_body.findall(f"{{{TEI_NS}}}div")) if our_body is not None else 0
         structure["top_divs"] = {"ref": ref_top_divs, "pipeline": our_top_divs}
-
-        # Entity-Vergleich (Precision/Recall auf normalisierten Namen)
-        entities = {}
-        for tag in ("persName", "orgName", "placeName"):
-            ref_set = _extract_entity_set(ref_root, tag)
-            our_set = _extract_entity_set(our_root, tag)
-            if ref_set:
-                recall = len(ref_set & our_set) / len(ref_set) if ref_set else 0
-            else:
-                recall = None
-            if our_set:
-                precision = len(ref_set & our_set) / len(our_set) if our_set else 0
-            else:
-                precision = None
-            entities[tag] = {
-                "ref_count": len(ref_set),
-                "pipeline_count": len(our_set),
-                "matched": len(ref_set & our_set),
-                "precision": round(precision, 3) if precision is not None else None,
-                "recall": round(recall, 3) if recall is not None else None,
-            }
 
         results.append({
             "doc_id": doc_id,
@@ -548,7 +519,6 @@ def compare_with_reference(tei_dir: Path = None, ref_dir: Path = None) -> dict:
             "ref_chars": len(ref_text),
             "pipeline_chars": len(our_text),
             "structure": structure,
-            "entities": entities,
         })
 
     return {"total": len(results), "docs": results}
@@ -569,13 +539,10 @@ def generate_reference_report(comparison: dict, output_path: Path) -> None:
     doc_rows = ""
     for d in docs:
         if "error" in d:
-            doc_rows += f'<tr><td>{d["doc_id"]}</td><td colspan="6">ERROR: {_html_escape(d["error"])}</td></tr>\n'
+            doc_rows += f'<tr><td>{d["doc_id"]}</td><td colspan="4">ERROR: {_html_escape(d["error"])}</td></tr>\n'
             continue
 
         s = d["structure"]
-        ent = d["entities"]
-        pers_r = f'{ent["persName"]["recall"]:.0%}' if ent["persName"]["recall"] is not None else "-"
-        pers_p = f'{ent["persName"]["precision"]:.0%}' if ent["persName"]["precision"] is not None else "-"
 
         doc_rows += (
             f'<tr>'
@@ -584,8 +551,6 @@ def generate_reference_report(comparison: dict, output_path: Path) -> None:
             f'<td class="num">{s["top_divs"]["ref"]}/{s["top_divs"]["pipeline"]}</td>'
             f'<td class="num">{s["p"]["ref"]}/{s["p"]["pipeline"]}</td>'
             f'<td class="num">{s["pb"]["ref"]}/{s["pb"]["pipeline"]}</td>'
-            f'<td class="num">{ent["persName"]["ref_count"]}/{ent["persName"]["pipeline_count"]}</td>'
-            f'<td>{pers_r} / {pers_p}</td>'
             f'</tr>\n'
         )
 
@@ -621,9 +586,9 @@ footer {{ margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e6ed; colo
 </div>
 
 <h2>Per-Dokument Vergleich</h2>
-<p>Spalten Ref/Pipeline zeigen Counts. Entity-Spalte zeigt Recall / Precision fuer persName.</p>
+<p>Spalten Ref/Pipeline zeigen Counts (Referenz / Pipeline).</p>
 <table>
-<tr><th>Doc</th><th>CER</th><th>top-divs (R/P)</th><th>p (R/P)</th><th>pb (R/P)</th><th>persName (R/P)</th><th>Recall/Prec</th></tr>
+<tr><th>Doc</th><th>CER</th><th>top-divs (R/P)</th><th>p (R/P)</th><th>pb (R/P)</th></tr>
 {doc_rows}
 </table>
 
