@@ -21,22 +21,42 @@ from scripts.config import (
 # OCR-Prioritaet: menschlich kuratiert zuerst, dann beste Korrektur, dann Basis-OCR.
 # OCR_CURATED_DIR wird vom Viewer per File System Access API direkt beschrieben
 # (Direkt-Schreiben-Loop) und muss daher Vorrang vor allen Engine-Outputs haben.
-_OCR_DIRS = [
-    OCR_CURATED_DIR,
-    GEMINI_CORRECTED_B_DIR,
-    GEMINI_CORRECTED_A_DIR,
-    LLM_CORRECTED_C_DIR,
-    MISTRAL_RESULTS_DIR,
+#
+# OCR_SOURCES ist die EINZIGE kanonische Quelle der OCR-Reihenfolge. Alle Konsumenten
+# (auch der PAGE-XML-Generator via load_ocr_text_with_source) leiten sich hieraus ab,
+# damit die Kette nicht an zwei Stellen getrennt driftet. Das Label dient der
+# Provenienz-Angabe (z.B. @source im PAGE-XML).
+OCR_SOURCES: list[tuple] = [
+    (OCR_CURATED_DIR, "curated"),
+    (GEMINI_CORRECTED_B_DIR, "gemini-b"),
+    (GEMINI_CORRECTED_A_DIR, "gemini-a"),
+    (LLM_CORRECTED_C_DIR, "llm-c"),
+    (MISTRAL_RESULTS_DIR, "mistral"),
 ]
+_OCR_DIRS = [d for d, _ in OCR_SOURCES]
 
 
 def load_ocr_text(doc_id: str, page: int) -> str | None:
-    """Laedt OCR-Text: Gemini B > Gemini A > LLM C > Mistral."""
+    """Laedt OCR-Text: kuratiert > Gemini B > Gemini A > LLM C > Mistral."""
     for base_dir in _OCR_DIRS:
         path = base_dir / f"{doc_id}_p{page}.md"
         if path.exists():
             return path.read_text(encoding="utf-8")
     return None
+
+
+def load_ocr_text_with_source(doc_id: str, page: int) -> tuple:
+    """Wie load_ocr_text, gibt zusaetzlich das Quell-Label zurueck.
+
+    Returns: (text, source_label) oder (None, None). Nutzt dieselbe kanonische
+    Reihenfolge wie load_ocr_text (OCR_SOURCES, kuratiert zuerst) -- so kann der
+    PAGE-XML-Generator die Provenienz angeben, ohne die Kette zu duplizieren.
+    """
+    for base_dir, label in OCR_SOURCES:
+        path = base_dir / f"{doc_id}_p{page}.md"
+        if path.exists():
+            return path.read_text(encoding="utf-8"), label
+    return None, None
 
 
 def discover_pages(doc_id: str) -> list[int]:

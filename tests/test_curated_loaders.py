@@ -69,6 +69,45 @@ def test_discover_documents_includes_curated_only_doc(ocr_dirs):
 
 
 # --------------------------------------------------------------------- #
+# load_ocr_text_with_source  (gelabelte Kette -> PAGE-XML-Provenienz, E72/Welle4)
+# Deckt zugleich den page_xml_generator-Pfad ab: dieser delegiert hierher,
+# also wird so verifiziert, dass kuratiertes OCR auch ins PAGE-XML fliesst.
+# --------------------------------------------------------------------- #
+
+@pytest.fixture
+def ocr_sources(tmp_path, monkeypatch):
+    """Gelabelte OCR-Quellen, kuratiert zuerst, fuer load_ocr_text_with_source."""
+    curated = tmp_path / "ocr_curated"
+    mistral = tmp_path / "mistral_results"
+    curated.mkdir()
+    mistral.mkdir()
+    monkeypatch.setattr(loaders, "OCR_SOURCES",
+                        [(curated, "curated"), (mistral, "mistral")])
+    return curated, mistral
+
+
+def test_with_source_curated_wins_and_labels(ocr_sources):
+    curated, mistral = ocr_sources
+    _write(curated / "100_p3.md", "KURATIERT")
+    _write(mistral / "100_p3.md", "MISTRAL")
+    text, src = loaders.load_ocr_text_with_source("100", 3)
+    assert text == "KURATIERT"
+    assert src == "curated"
+
+
+def test_with_source_falls_back_and_labels(ocr_sources):
+    curated, mistral = ocr_sources
+    _write(mistral / "100_p3.md", "MISTRAL")
+    text, src = loaders.load_ocr_text_with_source("100", 3)
+    assert text == "MISTRAL"
+    assert src == "mistral"
+
+
+def test_with_source_missing_returns_none_none(ocr_sources):
+    assert loaders.load_ocr_text_with_source("100", 3) == (None, None)
+
+
+# --------------------------------------------------------------------- #
 # load_layout_gemini  (Layout-Praezedenz)
 # --------------------------------------------------------------------- #
 

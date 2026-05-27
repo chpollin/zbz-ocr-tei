@@ -25,12 +25,8 @@ from lxml import etree
 # Projekt-Imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
-    GEMINI_CORRECTED_A_DIR,
-    GEMINI_CORRECTED_B_DIR,
     IMAGES_DIR,
     LAYOUT_DIR,
-    LLM_CORRECTED_C_DIR,
-    MISTRAL_RESULTS_DIR,
     PAGE_XML_DIR,
     ZBZ_TO_PAGE_TYPE,
 )
@@ -93,21 +89,15 @@ def _get_image_dimensions(doc_id, page_padded):
 
 
 def load_ocr_text_for_page(doc_id, page_num):
-    """Besten OCR-Text laden: Gemini B > Gemini A > Mistral.
+    """Besten OCR-Text laden: kuratiert > Gemini B > Gemini A > LLM C > Mistral.
+
+    Delegiert an die kanonische Kette (loaders.OCR_SOURCES), damit kuratiertes OCR
+    auch ins PAGE-XML fliesst und die Reihenfolge nicht an zwei Stellen driftet.
 
     Returns: (text, source_name) oder (None, None)
     """
-    sources = [
-        (GEMINI_CORRECTED_B_DIR, "gemini-b"),
-        (GEMINI_CORRECTED_A_DIR, "gemini-a"),
-        (LLM_CORRECTED_C_DIR, "llm-c"),
-        (MISTRAL_RESULTS_DIR, "mistral"),
-    ]
-    for base_dir, name in sources:
-        path = base_dir / f"{doc_id}_p{page_num}.md"
-        if path.exists():
-            return path.read_text(encoding="utf-8"), name
-    return None, None
+    from scripts.core.loaders import load_ocr_text_with_source
+    return load_ocr_text_with_source(doc_id, page_num)
 
 
 # ---------------------------------------------------------------------------
