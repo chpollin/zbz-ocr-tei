@@ -206,4 +206,4 @@ Aufruf jeweils als Modul (`python -m scripts.<paket>.<modul>`).
 
 [^10]: OpenSeadragon, quelloffener Bildbetrachter für hochauflösende Zoombilder, Version 5.0.1. [https://openseadragon.github.io/](https://openseadragon.github.io/).
 
-[^11]: Vergleichswerte aus der Literatur, nicht im Rahmen dieses Experiments gemessen. Quelle vor Veröffentlichung zu ergänzen.
+[^11]: Vergleichswerte aus der Literatur, nicht im Rahmen dieses Experiments gemessen. Transkribus Print M1 (allein), deutsch, 3,67 %: Crosilla, Klic und Colavizza 2025, arXiv:2503.15195. Gemini 2.5 Pro zero-shot, russisch (18. Jh.), 3,36 %: Levchenko 2025, arXiv:2510.06743.
