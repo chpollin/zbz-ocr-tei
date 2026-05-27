@@ -316,7 +316,7 @@ HCPR(ref, hyp, lang) = min(observed_count, expected_count) / max(1, expected_cou
 
 Diakritik-Set pro Sprache: fra (é è à ç ù â ê î ô û ë ï ü œ), deu (ä ö ü ß), ita.
 
-**Methodische Quelle:** Nosova et al. (2025), arXiv:2510.06743. Einschraenkung: konservative
+**Methodische Quelle:** Levchenko (2025), arXiv:2510.06743. Einschraenkung: konservative
 Adaption — echte HCPR braucht Zeichen-Alignment, wir vergleichen Frequenzen pro Zeichen.
 Robust, aber unterschaetzt Substitutionen. AIR (Archaic Insertion Rate) deferred — im Hersch-Korpus
 (1930er-1990er Antiqua, kein Frakturanteil) erwartet niedrig.
@@ -334,7 +334,7 @@ Frontend rendert die drei Stufen visuell unterschiedlich (Akzentfarbe / gestreif
 | Quelle | DOI / arXiv | Verwendung |
 |---|---|---|
 | Singh 2025, "When +1% Is Not Enough" | arXiv:2511.19794 | Paired-Bootstrap-Protokoll |
-| Nosova et al. 2025 | arXiv:2510.06743 | HCPR/AIR, no-GT-Methodik, Stabilitaets-Tests |
+| Levchenko 2025 | arXiv:2510.06743 | HCPR/AIR, no-GT-Methodik, Stabilitaets-Tests |
 | Crosilla, Klic, Colavizza 2025 | arXiv:2503.15195 | LLM-HTR-Vergleichsbenchmarks |
 | Kanerva & Ledins 2025 | arXiv:2502.01205 | Sprachabhaengigkeit der LLM-Post-Korrektur |
 | arXiv:2501.18243 (2025) | — | Statistical Multi-Metric Evaluation Framework |

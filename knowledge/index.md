@@ -26,7 +26,7 @@ SSoT pro Domaene, eine Datei pro Thema.
 | [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay (OpenSeadragon E58), OCR/TEI-Editor, Edit-Toggle pro Panel (E60), Export-Modul (E61), Datei-Download |
 | [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |
 | [methodik.md](methodik.md) | Wie arbeiten wir? Epistemische Infrastruktur, Verifikationskaskade, Critical Expert in the Loop, Dreischichtung, operative CLI |
-| [decisions.md](decisions.md) | Was ist entschieden? E1-E71, offene Punkte (O8 teilweise, O13, O18), Risiken |
+| [decisions.md](decisions.md) | Was ist entschieden? E1-E72, offene Punkte (O8 teilweise, O13, O18), Risiken |
 | [journal.md](journal.md) | Was wurde wann gemacht? kompakter Sitzungs-Ueberblick (Jan-Mai 2026), wiederkehrende Muster |
 
 Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Regeln).
@@ -68,7 +68,7 @@ journal         — chronologisch, kompakter Ueberblick
 | Agent-Based Quality Screening (E41, deprecated E66) | 7-Schichten-Pre-Curation, Review-JSON pro Doc — als Qualitaetssignal abgeschafft, weil kein Mensch beteiligt war; Legacy als `_screening_legacy.json` erhalten | [quality.md](quality.md) |
 | Workflow-Status pro Strom (E66/E67) | unverifiziert \| in_arbeit \| bearbeitet \| fertig je OCR/Layout/TEI, im Manifest mit Provenienz-History, projizierbar in `<revisionDesc>`. Ampel: gelb=unverifiziert/in_arbeit/bearbeitet, gruen=fertig, rot reserviert | [quality.md](quality.md), [viewer.md](viewer.md) |
 | Ampel-Reframing (E67) | "Pipeline-Output EXISTIERT, ist nur unverifiziert" -- daher Status `offen` umbenannt zu `unverifiziert`, rote Default-Lesart aufgegeben | [decisions.md §E67](decisions.md) |
-| CER-Benchmark (E51) | End-to-End TEI-vs-TEI, Median 1.83% (n=19) | [quality.md](quality.md) |
+| CER-Benchmark (E51/E70) | End-to-End TEI-vs-TEI, Fidelity-CER Median 1.83% (alle 25 Docs) | [quality.md](quality.md) |
 | CER-Statistik (E54) | BCa-Bootstrap-CIs, paired E2E vs OCR-only, HCPR | [quality.md](quality.md) |
 | Quality Proxy | Dictionary Hit Rate fuer 285 Docs ohne Ground Truth | [quality.md](quality.md) |
 | revisionDesc (E42) | Pipeline + Screening-Status im TEI-Header, reist mit dem Dokument | [pipeline.md](pipeline.md) |
@@ -92,7 +92,7 @@ journal         — chronologisch, kompakter Ueberblick
 ## Quick Start
 
 1. **Projekt verstehen:** [projekt.md](projekt.md) — Auftrag, Korpus, Beteiligte
-2. **Pipeline verstehen:** [pipeline.md](pipeline.md) — 7 Stufen + Engines + TEI-Mapping
+2. **Pipeline verstehen:** [pipeline.md](pipeline.md) — 6 Stufen + Engines + TEI-Mapping
 3. **Qualitaet:** [quality.md](quality.md) — CER-Benchmark, Screening, Proxy
 4. **Dashboard:** `docs/index.html` — Metriken + Katalog
 5. **Status:** [decisions.md](decisions.md) — was ist entschieden, was blockiert

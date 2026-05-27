@@ -64,7 +64,7 @@ python -m http.server 8000 -d docs    # http://localhost:8000/
 
 ```
 zbz-ocr-tei/
-  knowledge/              # 11 documents incl. navigation index (Single Source of Truth, all lowercase)
+  knowledge/              # 10 documents incl. navigation index (Single Source of Truth, all lowercase)
   scripts/                # Python pipeline (grouped by domain; inventory: scripts/README.md)
     config.py             # Central configuration
     utils.py              # Shared utilities
@@ -151,7 +151,7 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | Viewer (frontend architecture, OSD, edit toggles, export) | [knowledge/viewer.md](knowledge/viewer.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
 | Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
-| Decisions + open items (E1–E71) | [knowledge/decisions.md](knowledge/decisions.md) |
+| Decisions + open items (E1–E72) | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team

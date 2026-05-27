@@ -179,7 +179,7 @@ Das QA-Dashboard (`docs/`) ist eine rein statische Web-App, kein Backend noetig.
 | GitHub Pages | `docs/` als Source, automatisches Deployment |
 | beliebiger HTTP-Server | `python -m http.server` im `docs/`-Verzeichnis |
 
-**Daten aktualisieren:** `python -m scripts.edition.generate_edition_data` erzeugt Katalog, Entity-Index
+**Daten aktualisieren:** `python -m scripts.edition.generate_edition_data` erzeugt Katalog
 und den Per-Seiten-Mirror in `docs/data/` aus Pipeline-Outputs.
 
 ---

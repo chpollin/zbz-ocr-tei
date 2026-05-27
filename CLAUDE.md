@@ -207,7 +207,9 @@ python -m scripts.edition.generate_edition_data                                 
 ```
 
 Der Viewer (`docs/viewer.html`) ist eine statische Single-Page-App ohne Backend. Editier-Aenderungen
-werden als Datei-Download bereitgestellt; siehe [knowledge/viewer.md §Persistenz](knowledge/viewer.md).
+werden direkt in den Working Tree geschrieben (File System Access API, Chromium) oder als Datei-Download
+bereitgestellt (Fallback); kuratierte Layout-/OCR-Dateien werden von `--reassemble` real konsumiert (E72).
+Siehe [knowledge/viewer.md §Persistenz](knowledge/viewer.md).
 
 ## Visuelle Artefakte
 

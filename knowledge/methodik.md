@@ -76,7 +76,7 @@ dieselbe, die es fachlich prueft.
 | Schicht | Was | Beispiel |
 |---|---|---|
 | **Command** | Entscheidungsregel (wann, unter welchen Bedingungen) | "Nach jeder TEI-Korrektur validieren" |
-| **Artifact** | materielles Werkzeug (versioniert, wartbar) | `tei_validator.py`, Entity Index, [CLAUDE.md](../CLAUDE.md) |
+| **Artifact** | materielles Werkzeug (versioniert, wartbar) | `tei_validator.py`, `corpus_audit.py`, [CLAUDE.md](../CLAUDE.md) |
 | **Tool** | konkreter Aufruf durch den Agent | `python -m scripts.tei.tei_validator --doc 290` |
 
 Commands ohne Artifacts bleiben abstrakt. Artifacts ohne Commands liegen ungenutzt. Tools ohne

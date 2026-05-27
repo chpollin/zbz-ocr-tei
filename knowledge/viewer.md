@@ -53,14 +53,13 @@ docs/
 │       ├── core.js                  # DOM, URL, Fetch, Format, Cache, Toast, EventBus, Markdown-Renderer
 │       ├── viewer.js                # Viewer-Orchestrator: Doc-Selektion + Mode-Switching
 │       ├── catalog.js               # Korpus-Uebersicht: Laden, Filter (Strom × Status, E66), Sortierung
-│       ├── tei-render.js            # TEI-XML → DOM (mit Entity-Highlighting)
+│       ├── tei-render.js            # TEI-XML → DOM
 │       ├── layout-editor.js         # BBox Drag/Resize/Add/Delete + Reading-Order
 │       ├── transcription-editor.js  # OCR/TEI/XML mit contenteditable
 │       └── download.js              # Datei-Download (JSON/MD/XML)
 └── data/                        # generiert via scripts/edition/generate_edition_data.py
     ├── catalog.json             # 285 Docs (id, title, author, lang, type, page_count, streams.{ocr,layout,tei}.{status,last_at,last_by})
     ├── manifests/{doc}.json     # Mirror der Pro-Objekt-Manifeste (Workflow + History + Leerseiten, E66)
-    ├── entity_register.json     # Cross-Doc-Aggregation
     ├── search_index.json        # Volltext fuer Doc-Suche
     ├── tei/                     # 285 finale TEIs (*_final.xml; legacy *_screening_legacy.json bleibt gitignored im output/)
     ├── pages/                   # alle 285 Docs: Layout-JSONs + Mistral-OCR + per-Seiten-TEI
@@ -145,7 +144,7 @@ loest den Download aus.
 
 ## Persistenz
 
-Kein Server. Zwei Wege, je nach Browser (E70):
+Kein Server. Zwei Wege, je nach Browser (E72):
 
 **1. Direkt-Schreiben (File System Access API, empfohlen, nur Chromium).** Per Klick auf
 "Ordner verbinden" (Doc-Subbar) waehlt der Nutzer einmal den Repo-Root und erteilt
