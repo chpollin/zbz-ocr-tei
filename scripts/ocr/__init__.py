@@ -1,1 +1,1 @@
-"""OCR-Stufe: Mistral/DeepSeek OCR, Gemini-/LLM-Korrektur, Dedup, Dokumentklassifikation."""
+"""OCR-Stufe: Mistral OCR, Gemini-/LLM-Korrektur, Dedup, Dokumentklassifikation."""

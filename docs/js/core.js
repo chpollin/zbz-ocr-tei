@@ -188,9 +188,6 @@
             if (source === 'llm_corrected') {
                 return [`../output/llm_corrected_c/${doc}_p${page}.md`];
             }
-            if (source === 'deepseek') {
-                return [`../output/ocr_results/${doc}_p${page}.md`];
-            }
             return [];
         },
 

@@ -139,7 +139,6 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | Engine | Access | Usage |
 |---|---|---|
 | Mistral Document AI 2512 | Azure AI Foundry | Production OCR |
-| DeepSeek-OCR-2 | Local (GPU) | Development / comparison |
 | Claude Haiku 4.5 | Anthropic API | LLM post-correction (optional) |
 | Docling 2.75 | Local / docling-serve API | Layout analysis (BBox + regions) |
 | Gemini 3.1 Flash Lite | Google AI API | Layout QA/Detect, classification, OCR correction, NER, TEI refinement |

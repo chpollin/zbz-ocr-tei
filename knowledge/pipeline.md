@@ -90,8 +90,8 @@ im Viewer gesetzt, History im Pro-Objekt-Manifest, Projektion in den `<revisionD
 
 ## Engines
 
-Vier aktive Engines in zwei Rollen. Modellwahl ist weniger entscheidend als Pipeline-Design:
-DeepSeek und Mistral liefern aehnliche CER. Pipeline-Investitionen lohnen sich (Chunking,
+Aktive Engines in zwei Rollen. Modellwahl ist weniger entscheidend als Pipeline-Design:
+Pipeline-Investitionen lohnen sich (Chunking,
 Page-Matching, Quality-Routing). API-Kosten vernachlaessigbar.
 LLM-Postkorrektur schadet bei CER <5% (E17).
 
@@ -108,17 +108,6 @@ LLM-Postkorrektur schadet bei CER <5% (E17).
 | Limit | 30 Seiten/Request, 30 MB max (Pipeline splittet automatisch) |
 
 Setup-Hinweise und Fehler-Diagnose: [infrastruktur.md](infrastruktur.md) §Azure.
-
-### DeepSeek-OCR-2 — OCR Development
-
-| Aspekt | Details |
-|---|---|
-| Modell | `deepseek-ai/DeepSeek-OCR-2` (3B VLM) |
-| Rolle | Development-Engine, aktiv fuer Typ A + Typ C |
-| Hardware | GPU 8+ GB VRAM, CUDA 12.4+ |
-| Speed | ~1.6 s/Seite (RTX 3070) |
-| Prompt | `<image>\n<\|grounding\|>Convert the document to markdown.` |
-| Probleme | Hohe GPU-Last; Spaltenreihenfolge bei Typ B falsch (Gemini Detect bevorzugt) |
 
 ### Docling 2.75 — Layout Primary
 

@@ -80,9 +80,6 @@ ocr:
       endpoint_env: MISTRAL_DOC_AI_ENDPOINT
       model: mistral-document-ai-2512
       api_key_env: MISTRAL_DOC_AI_KEY
-    deepseek:
-      provider: local
-      model: deepseek-ai/DeepSeek-OCR-2
     gemini:
       provider: google
       model: gemini-3.1-flash-lite-preview
@@ -153,8 +150,8 @@ Details zur Merge-Strategie: noch zu definieren.
 | Tool | Version | Zweck |
 |---|---|---|
 | Python | 3.11+ | Pipeline-Skripte |
-| CUDA | 12.4+ | DeepSeek-OCR-2 (optional, local only) |
-| GPU | 8+ GB VRAM | DeepSeek-OCR-2 (optional, local only) |
+| CUDA | 12.4+ | Docling (lokale Layout-Analyse, optional) |
+| GPU | 8+ GB VRAM | Docling (lokale Layout-Analyse, optional) |
 | Git | 2.x | Versionierung |
 
 ### Setup

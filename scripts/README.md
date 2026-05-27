@@ -14,7 +14,7 @@ Pipeline-Stufen und Datenfluss: [../knowledge/pipeline.md](../knowledge/pipeline
 |---|---|---|
 | *(top-level)* | geteilte Basis | `config.py` (Pfade, Modelle, Konstanten), `utils.py` |
 | `core/` | geteilte Loader | `loaders.py` (OCR/Layout/Entity-Discovery) |
-| `ocr/` | Textschicht | `ocr_pipeline` (Mistral/DeepSeek), `gemini_ocr_correct`, `llm_postprocess` (Haiku, optional E17), `ocr_dedup`, `classify_docs` (Gemini-Metadaten) |
+| `ocr/` | Textschicht | `ocr_pipeline` (Mistral), `gemini_ocr_correct`, `llm_postprocess` (Haiku, optional E17), `ocr_dedup`, `classify_docs` (Gemini-Metadaten) |
 | `layout/` | Layout + Export | `run_layout_analysis` (Docling lokal), `run_layout_cloud` (docling-serve), `layout_qa_gemini` (QA/Detect/Auto), `generate_layout_overlays`, `page_xml_generator` + `mets_generator` |
 | `ner/` | Entitaeten | `ner_extract`, `entity_store`, `entity_index`, `wikidata_linker` (deterministisch, kein LLM-Linking), `ner_inject_tei`, `ner_evaluate` |
 | `tei/` | TEI-Erzeugung | `tei_unified` (Orchestrator), `tei_step1/2/3` (Scaffold/Gemini/Assembly), `tei_generator`, `tei_mapping_prompt`, `tei_xml_utils`, `tei_validator`, `tei_add_revision`, `tei_blank_marker`, `tei_status_marker` (E66) |

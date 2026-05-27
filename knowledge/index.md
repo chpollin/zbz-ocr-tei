@@ -20,7 +20,7 @@ SSoT pro Domaene, eine Datei pro Thema.
 | Dokument | Beantwortet |
 |---|---|
 | [projekt.md](projekt.md) | Was ist das Projekt? Auftrag, Korpus-Trichter + Seitenbilanz (generiert via corpus_audit), ZBZ-Workflow, Status |
-| [pipeline.md](pipeline.md) | Wie ist die Pipeline aufgebaut? Stufen PDF → TEI, Engines (Mistral, DeepSeek, Docling, Gemini), TEI-Mapping (DTA + ZBZ), Round-Trip-Sektion |
+| [pipeline.md](pipeline.md) | Wie ist die Pipeline aufgebaut? Stufen PDF → TEI, Engines (Mistral, Docling, Gemini), TEI-Mapping (DTA + ZBZ), Round-Trip-Sektion |
 | [workflow.md](workflow.md) | Wie laeuft der End-to-End-Datenfluss? Datenfluss-Diagramm, Datenformate pro Stufe, Save-Mechanismus im Viewer, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante, Roadmap |
 | [entities.md](entities.md) | Wie funktioniert Entity Linking? NER + GND + Wikidata, Dual-Attribut-Strategie (E50), Entity-Zahlen + Verlinkungsquote, Wikidata-Workflow |
 | [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Median 1.83%), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Agent-Based Quality Screening |
@@ -82,7 +82,7 @@ journal         — chronologisch, kompakter Ueberblick
 | Hersch Design-System | Anthrazit + Ziegelrot + EB Garamond + Jost, `--h-*` Tokens | [viewer.md](viewer.md) |
 | OpenSeadragon-Faksimile (E58) | Faksimile-Renderer im View-Modus mit Pan/Zoom/Rotate, CDN-Bezug | [viewer.md](viewer.md) |
 | Mode-Edit-Toggle pro Panel (E60) | Faksimile-Panel "Layout", Text-Panel "Text" (E64), aktiv = anthrazit; keine globale Mode-Leiste | [viewer.md](viewer.md) |
-| Viewer = Mistral-Edition (E64) | Kein OCR-Quellen-Umschalter im Viewer; Alt-Engines (Gemini/LLM/DeepSeek) sind Benchmark-only; Doc-Subbar + Toolbar fusioniert | [viewer.md](viewer.md) |
+| Viewer = Mistral-Edition (E64) | Kein OCR-Quellen-Umschalter im Viewer; Alt-Engines (Gemini/LLM) sind Benchmark-only; Doc-Subbar + Toolbar fusioniert | [viewer.md](viewer.md) |
 | Export-Modul (E61) | JSZip-basierter Per-Doc-Drawer + Bulk-Export aus Korpus-Uebersicht | [viewer.md](viewer.md) |
 | Methode-Seite (E62) | `docs/methode.html` mit Headline-CER, stratifizierten Werten, Limitations, Literatur-Vergleich (statisch) | [viewer.md](viewer.md) |
 | End-to-End-Workflow | Datenfluss + Save-Mechanismus + Round-Trip + Provenance-Konzept + geplante `_complete.xml`-Variante | [workflow.md](workflow.md) |

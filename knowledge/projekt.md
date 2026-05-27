@@ -82,7 +82,7 @@ Trennregeln, Prompt-Beispiele ueberwiegend FR.
 
 | Typ | Layout | Strategie |
 |---|---|---|
-| **A** | einspaltig | OCR direkt (DeepSeek/Mistral) |
+| **A** | einspaltig | OCR direkt (Mistral) |
 | **B** | zweispaltig (Journals, Lexika) | Layout-Analyse + OCR pro Region (Docling + Gemini) |
 | **C** | Monografie (100+ Seiten) | OCR + Chunking, page-by-page Comparison (E16) |
 | **D** | Spezial (historisch, Interview, Bildband) | Fall-zu-Fall |
@@ -140,7 +140,7 @@ und [quality.md](quality.md).
 | Komponente | Status | Details |
 |---|---|---|
 | Bildextraktion | Done | `scripts/edition/extract_pages.py` |
-| OCR (Mistral + DeepSeek) | Done | `scripts/ocr/ocr_pipeline.py` |
+| OCR (Mistral) | Done | `scripts/ocr/ocr_pipeline.py` |
 | LLM-Postkorrektur (Haiku) | Done, optional (E17) | `scripts/ocr/llm_postprocess.py`, bei CER <5% schaedlich |
 | Gemini OCR-Korrektur | Sample | `scripts/ocr/gemini_ocr_correct.py` (E29) |
 | Layout (Docling) | Done | `scripts/layout/run_layout_analysis.py` |
@@ -199,7 +199,7 @@ Seit E21 ersetzt bzw. ergaenzt zbz-ocr-tei folgende Schritte:
 
 | Bestehender Schritt | Ersetzt durch |
 |---|---|
-| Transkribus OCR | Batch-OCR (Mistral/DeepSeek) |
+| Transkribus OCR | Batch-OCR (Mistral) |
 | Manueller Transkribus-Export | automatischer PAGE-XML-Export |
 | Oxygen TEI-Markup | automatische TEI-Transformation |
 | Manuelles GND-Linking | NER + lobid.org / Wikidata |

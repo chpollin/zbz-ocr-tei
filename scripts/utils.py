@@ -1,7 +1,7 @@
 """
 Gemeinsame Hilfsfunktionen fuer das zbz-ocr-tei Projekt.
 
-Konsolidiert: pdf_to_images, check_gpu, load_env, load_deepseek_model.
+Konsolidiert: pdf_to_images, check_gpu, load_env.
 """
 
 import json
@@ -171,28 +171,3 @@ def discover_doc_ids(base_dir: Path) -> list[str]:
         d.name for d in base.iterdir()
         if d.is_dir() and not d.name.startswith(".")
     )
-
-
-def load_deepseek_model():
-    """
-    Laedt das DeepSeek-OCR-2 Modell.
-
-    Returns:
-        (model, tokenizer) Tuple
-    """
-    from transformers import AutoModel, AutoTokenizer
-    import torch
-
-    from scripts.config import DEEPSEEK_MODEL
-
-    print("Lade DeepSeek-OCR-2...")
-    tokenizer = AutoTokenizer.from_pretrained(DEEPSEEK_MODEL, trust_remote_code=True)
-    model = AutoModel.from_pretrained(
-        DEEPSEEK_MODEL,
-        trust_remote_code=True,
-        use_safetensors=True,
-    )
-    model = model.eval().cuda().to(torch.bfloat16)
-    print("DeepSeek-OCR-2 geladen.")
-
-    return model, tokenizer

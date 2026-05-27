@@ -70,11 +70,7 @@ DOCS_DIR = PROJECT_ROOT / "docs"
 IMAGES_DIR = DOCS_DIR / "images"
 
 # OCR-Modelle
-DEEPSEEK_MODEL = "deepseek-ai/DeepSeek-OCR-2"
 MISTRAL_MODEL = "mistral-document-ai-2512"
-
-# OCR-Prompts
-DEEPSEEK_PROMPT = "<image>\n<|grounding|>Convert the document to markdown."
 
 # PDF-Rendering
 DEFAULT_DPI = 300

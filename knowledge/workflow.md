@@ -115,7 +115,7 @@ Der Viewer laedt ausschliesslich statische Files. Der Pfad-Resolver in
 ```
 
 Damit funktioniert der Viewer auf GitHub Pages fuer das gesamte Korpus. Lokal
-sind zusaetzlich Gemini-A/B, LLM-Korrektur und DeepSeek-OCR erreichbar.
+sind zusaetzlich Gemini-A/B und LLM-Korrektur erreichbar.
 
 ### 3.2 Save-Mechanismus (Datei-Download)
 

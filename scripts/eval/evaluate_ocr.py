@@ -1324,7 +1324,7 @@ def main():
     parser.add_argument("--docs", nargs='+', help="Spezifische Dokument-IDs (z.B. 2310 1180)")
     parser.add_argument("--all", action="store_true", help="Alle verfuegbaren Dokumente evaluieren")
     parser.add_argument("--ocr-dir", type=Path, help="OCR-Ergebnis-Verzeichnis (default: output/ocr_results)")
-    parser.add_argument("--engine", default="deepseek", help="Engine-Name fuer Report (default: deepseek)")
+    parser.add_argument("--engine", default="mistral", help="Engine-Name fuer Report (default: mistral)")
     parser.add_argument("--phase", help="Testplan-Phase: phase1, phase2, phase3, phase4, all")
     parser.add_argument("--output", default="evaluation_report.html", help="Name der HTML-Report-Datei")
     parser.add_argument("--json-output", default="evaluation_results.json", help="Name der JSON-Ergebnis-Datei")

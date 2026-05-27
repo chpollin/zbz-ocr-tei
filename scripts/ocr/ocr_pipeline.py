@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OCR-Pipeline: DeepSeek + Mistral Document AI + Docling
+OCR-Pipeline: Mistral Document AI + Docling + Gemini
 
 Unterstuetzt mehrere OCR-Engines fuer verschiedene Dokumenttypen.
 
@@ -12,7 +12,6 @@ Usage:
     python scripts/ocr/ocr_pipeline.py --all
 
     # Bestimmte Engine
-    python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2310.pdf --engine deepseek
     python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2310.pdf --engine mistral
     python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2530.pdf --engine docling
 """
@@ -32,7 +31,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from scripts.config import (
     PROJECT_ROOT, SCANS_DIR, OCR_RESULTS_DIR, MISTRAL_RESULTS_DIR,
-    DEEPSEEK_MODEL, DEEPSEEK_PROMPT, MISTRAL_MODEL,
+    MISTRAL_MODEL,
     MISTRAL_MAX_PAGES_PER_REQUEST, MISTRAL_TIMEOUT_SECONDS,
     TWO_COLUMN_DOCS,
     GEMINI_API_KEY, GEMINI_OCR_MODEL,
@@ -41,64 +40,6 @@ from scripts.utils import check_gpu, load_env, pdf_to_images
 
 # Windows: Symlink-Warnung unterdruecken
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-
-
-class DeepSeekOCR:
-    """DeepSeek-OCR-2 Engine."""
-
-    def __init__(self):
-        self.model = None
-        self.tokenizer = None
-
-    def load(self):
-        """Laedt das Modell."""
-        if self.model is not None:
-            return
-
-        from scripts.utils import load_deepseek_model
-        self.model, self.tokenizer = load_deepseek_model()
-
-    def process_image(self, image_path: Path, output_dir: Path) -> str:
-        """Verarbeitet ein Bild."""
-        self.load()
-
-        self.model.infer(
-            self.tokenizer,
-            prompt=DEEPSEEK_PROMPT,
-            image_file=str(image_path),
-            output_path=str(output_dir),
-            base_size=1024,
-            image_size=768,
-            crop_mode=True,
-            save_results=True
-        )
-
-        result_file = output_dir / "result.mmd"
-        if result_file.exists():
-            return result_file.read_text(encoding="utf-8")
-        return ""
-
-    def process_pdf(self, pdf_path: Path, output_dir: Path) -> dict:
-        """Verarbeitet ein PDF."""
-        temp_dir = Path(tempfile.mkdtemp())
-        images = pdf_to_images(pdf_path, temp_dir)
-
-        results = []
-        for i, image_path in enumerate(images):
-            print(f"  Seite {i+1}/{len(images)}...")
-            text = self.process_image(image_path, temp_dir)
-            results.append({"page": i + 1, "text": text})
-
-            # Speichere Einzelseite
-            page_file = output_dir / f"{pdf_path.stem}_p{i+1}.md"
-            page_file.write_text(text, encoding="utf-8")
-
-        return {
-            "doc_id": pdf_path.stem,
-            "pages": len(images),
-            "results": results,
-            "engine": "deepseek"
-        }
 
 
 class MistralOCR:
@@ -345,10 +286,9 @@ class GeminiOCR:
 
 
 class DoclingOCR:
-    """Docling Engine (mit optionalem DeepSeek-Backend)."""
+    """Docling Engine."""
 
-    def __init__(self, use_deepseek: bool = False):
-        self.use_deepseek = use_deepseek
+    def __init__(self):
         self.converter = None
 
     def load(self):
@@ -392,17 +332,15 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     Args:
         pdf_path: Pfad zum PDF
         output_dir: Ausgabeverzeichnis
-        engine: "deepseek", "mistral", "docling", oder "auto"
+        engine: "mistral", "docling", "gemini", oder "auto"
     """
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if engine == "auto":
         if pdf_path.stem in TWO_COLUMN_DOCS:
             engine = "docling"
-        elif os.environ.get("MISTRAL_DOC_AI_KEY"):
-            engine = "mistral"
         else:
-            engine = "deepseek"
+            engine = "mistral"
 
     # Skip if first page already exists (resume-capable)
     first_page = output_dir / f"{pdf_path.stem}_p1.md"
@@ -415,10 +353,7 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     print(f"\nVerarbeite: {pdf_path.name} (Engine: {engine})")
     print("-" * 50)
 
-    if engine == "deepseek":
-        ocr = DeepSeekOCR()
-        return ocr.process_pdf(pdf_path, output_dir)
-    elif engine == "mistral":
+    if engine == "mistral":
         ocr = MistralOCR()
         return ocr.process_pdf(pdf_path, output_dir)
     elif engine == "docling":
@@ -432,12 +367,12 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="OCR-Pipeline: DeepSeek + Mistral + Docling")
+    parser = argparse.ArgumentParser(description="OCR-Pipeline: Mistral + Docling + Gemini")
     parser.add_argument("--input", "-i", type=Path, help="PDF-Datei")
     parser.add_argument("--all", action="store_true", help="Alle PDFs verarbeiten")
     parser.add_argument(
         "--engine", "-e",
-        choices=["auto", "deepseek", "mistral", "docling", "gemini"],
+        choices=["auto", "mistral", "docling", "gemini"],
         default="auto",
         help="OCR-Engine (default: auto). 'gemini' = Vision-OCR (Ausnahme, schreibt nach mistral_results/)"
     )
@@ -458,7 +393,7 @@ def main():
     # .env laden
     load_env()
 
-    # Pfade: Engine-basiert (Mistral -> mistral_results/, DeepSeek -> ocr_results/)
+    # Pfade: Engine-basiert (Mistral/Gemini -> mistral_results/, Docling -> ocr_results/)
     if args.output:
         output_dir = args.output
     elif args.engine in ("mistral", "gemini"):
@@ -482,14 +417,14 @@ def main():
         return 1
 
     print("=" * 60)
-    print("OCR-Pipeline: DeepSeek + Mistral Document AI + Docling")
+    print("OCR-Pipeline: Mistral Document AI + Docling + Gemini")
     print("=" * 60)
 
     gpu = check_gpu()
     if gpu["available"]:
         print(f"GPU: {gpu['name']} ({gpu['vram_gb']:.1f} GB)")
     else:
-        print("WARNUNG: Keine GPU - DeepSeek wird langsam sein")
+        print("WARNUNG: Keine GPU - lokale Docling-Verarbeitung wird langsam sein")
 
     results = []
     for pdf_path in pdfs:

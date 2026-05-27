@@ -134,7 +134,7 @@ Editiert das aktive Text-Panel via `contenteditable`. Drei Quellen waehlbar:
 
 | Quelle | Format | Editiert man… |
 |---|---|---|
-| **OCR** | Markdown | rohen OCR-Text aus Mistral/DeepSeek/Gemini/Haiku |
+| **OCR** | Markdown | rohen OCR-Text aus Mistral/Gemini/Haiku |
 | **TEI** | gerendertes TEI | nur Text-Inhalte (keine Struktur — fuer Tags den XML-Modus nutzen) |
 | **XML** | TEI-XML mit Syntax-Highlighting | rohes XML inklusive Tags und Attribute |
 
@@ -169,7 +169,7 @@ Zusaetzlich kommt ein Komplett-Export:
 Exportierbare Datentypen pro Dokument:
 
 - Faksimile-PNGs (alle Seiten, `images/{doc}/{doc}_pNNN.png`)
-- OCR-Rohtext pro Engine (Mistral / Gemini A / Gemini B / LLM / DeepSeek)
+- OCR-Rohtext pro Engine (Mistral / Gemini A / Gemini B / LLM)
 - Layout-JSON (Docling + Gemini-Varianten)
 - TEI per-Seite (`*_p001.xml` ... `*_pNNN.xml`)
 - TEI final (`*_final.xml`)
@@ -196,13 +196,13 @@ Multi-Doc-Export ueber 50 Docs: Warnhinweis wegen Browser-Memory.
 | Layout (Gemini) | `data/pages/{doc}/{doc}_pNNN_layout_gemini.json` | `../output/layout/` | `scripts/layout/layout_qa_gemini.py` |
 | Layout (Docling) | `data/pages/{doc}/{doc}_pNNN_layout.json` | `../output/layout/` | Pipeline |
 | OCR Mistral | `data/pages/{doc}/{doc}_pN.md` | `../output/mistral_results/` | Pipeline |
-| OCR (andere) | — | `../output/{source}/...` | nur lokal: Gemini A/B, LLM, DeepSeek |
+| OCR (andere) | — | `../output/{source}/...` | nur lokal: Gemini A/B, LLM |
 | TEI pro Seite | `data/pages/{doc}/{doc}_pN.xml` | `../output/tei_unified/` | aus `_final.xml` extrahiert |
 | TEI final | `data/tei/{doc}_final.xml` | `pages/`, `../output/tei_final/` | `output/tei_final/` |
 
 Alle 285 Docs haben vollstaendige Per-Seiten-Daten in `docs/data/pages/` (Layout, Mistral-OCR, TEI)
 und ein Thumbnail in `docs/data/thumbs/`. Damit funktioniert der Viewer ohne lokalen Server fuer
-das gesamte Korpus. Die alternativen OCR-Engines (Gemini A/B, LLM, DeepSeek) bleiben unter
+das gesamte Korpus. Die alternativen OCR-Engines (Gemini A/B, LLM) bleiben unter
 `output/` und sind nur lokal abrufbar. Der Viewer bietet seit E64 **keinen OCR-Quellen-Umschalter**
 mehr — er zeigt ausschliesslich Mistral (die ausgelieferte Edition); die Alt-Engines sind reine
 Benchmark-Artefakte (E51/E54) und nicht Teil der Edition.
@@ -266,7 +266,7 @@ ausgeliefert werden. Quellverzeichnis ist `docs/`.
 ```bash
 cd c:/Users/Chrisi/Documents/GitHub/DHCraft/zbz-ocr-tei
 python -m http.server 8000 -d docs
-# oder fuer ../output/ Fallback (Gemini A/B, LLM, DeepSeek):
+# oder fuer ../output/ Fallback (Gemini A/B, LLM):
 python -m http.server 8000
 ```
 
