@@ -69,13 +69,13 @@ coOCR / Transkribus erzeugt (`scripts/layout/page_xml_generator.py`).
 | Stufe | Format | Hauptpfad | Quelle |
 |---|---|---|---|
 | Quell-PDF | PDF | `data/scans/{doc}.pdf` | ZBZ-Lieferung (E23) |
-| Faksimile | PNG 300 dpi | `docs/images/{doc}/{doc}_pNNN.png` | `scripts/extract_pages.py` |
-| Doc-Metadaten | JSON | `data/doc_metadata.json` | `scripts/classify_docs.py` (Gemini, E27) |
-| OCR (Mistral) | Markdown pro Seite | `output/mistral_results/{doc}_pN.md` | `scripts/ocr_pipeline.py` |
-| OCR (Gemini A/B) | Markdown korrigiert | `output/gemini_corrected_a/`, `_b/` | `scripts/gemini_ocr_correct.py` (E29) |
-| Layout (Docling) | JSON, bbox in % | `output/layout/{doc}/{doc}_pNNN_layout.json` | `scripts/run_layout_analysis.py` oder `run_layout_cloud.py` |
-| Layout-QA (Gemini) | JSON | `output/layout/{doc}/{doc}_pNNN_layout_gemini.json` | `scripts/layout_qa_gemini.py` (E25/E26) |
-| Overlay-PNG | PNG | `output/overlay/{doc}/...` | `scripts/generate_layout_overlays.py` |
+| Faksimile | PNG 300 dpi | `docs/images/{doc}/{doc}_pNNN.png` | `scripts/edition/extract_pages.py` |
+| Doc-Metadaten | JSON | `data/doc_metadata.json` | `scripts/ocr/classify_docs.py` (Gemini, E27) |
+| OCR (Mistral) | Markdown pro Seite | `output/mistral_results/{doc}_pN.md` | `scripts/ocr/ocr_pipeline.py` |
+| OCR (Gemini A/B) | Markdown korrigiert | `output/gemini_corrected_a/`, `_b/` | `scripts/ocr/gemini_ocr_correct.py` (E29) |
+| Layout (Docling) | JSON, bbox in % | `output/layout/{doc}/{doc}_pNNN_layout.json` | `scripts/layout/run_layout_analysis.py` oder `run_layout_cloud.py` |
+| Layout-QA (Gemini) | JSON | `output/layout/{doc}/{doc}_pNNN_layout_gemini.json` | `scripts/layout/layout_qa_gemini.py` (E25/E26) |
+| Overlay-PNG | PNG | `output/overlay/{doc}/...` | `scripts/layout/generate_layout_overlays.py` |
 | PAGE-XML | XML 2013-07-15 | `output/page_xml/{doc}/{doc}_pNNN.xml` | `scripts/layout/page_xml_generator.py` (E13) |
 | METS | XML | `output/page_xml/{doc}/mets.xml` | `scripts/layout/mets_generator.py` |
 | NER-Output | JSON | `output/entities/{doc_id}/` | `scripts/ner/ner_extract.py` |
@@ -87,7 +87,7 @@ coOCR / Transkribus erzeugt (`scripts/layout/page_xml_generator.py`).
 | TEI-NER-injected | XML mit `<persName>` etc | `output/tei_ner/{doc}.xml` | `scripts/ner/ner_inject_tei.py` |
 | TEI final | XML mit `<revisionDesc>` | `output/tei_final/{doc}_final.xml` | `scripts/tei/tei_add_revision.py` (E42, E43) |
 | Review-JSON | JSON (7 Schichten) | `output/tei_final/{doc}_review.json` | Agent-Screening (E41) |
-| TEI-Mirror (Frontend) | XML | `docs/data/tei/{doc}_final.xml` | `scripts/generate_edition_data.py` |
+| TEI-Mirror (Frontend) | XML | `docs/data/tei/{doc}_final.xml` | `scripts/edition/generate_edition_data.py` |
 | TEI per-Seite (Frontend) | XML (split via `<pb>`) | `docs/data/pages/{doc}/{doc}_pN.xml` | dito (E57) |
 | Catalog (Frontend) | JSON | `docs/data/catalog.json` | dito |
 | Entity-Index (Frontend) | JSON | `docs/data/entity_index.json` | dito |
@@ -165,7 +165,7 @@ Vollstaendiger Ablauf, wenn ein User eine Layout-Region korrigiert hat:
    ```
 7. **Frontend-Daten regenerieren**:
    ```bash
-   python -m scripts.generate_edition_data --doc {ID}
+   python -m scripts.edition.generate_edition_data --doc {ID}
    ```
    Aktualisiert `docs/data/tei/{doc}_final.xml` und `docs/data/pages/{doc}/`.
 
@@ -352,13 +352,13 @@ Plan-Dokument (Stand der Welle):
 
 ### 7.1 Code-Drift
 
-- **`scripts/generate_edition_data.py:268-271`** liest `docs/data/dashboard.json`,
+- **`scripts/edition/generate_edition_data.py:268-271`** liest `docs/data/dashboard.json`,
   die in Session 44 geloescht wurde. Catalog-Rebuild ist vermutlich kaputt.
   Fix: entweder die Funktion `build_catalog()` umstellen auf direkte
   Quellen, oder `dashboard.json` aus den Quellen neu generieren.
 - **`README.md:68`** + **`knowledge/projekt.md:129`** verweisen auf
   `scripts/postprocess/` — in Session 44 geloescht (Orphan, kein Konsument).
-- **`scripts/llm_postprocess.py`** existiert noch — anders als der
+- **`scripts/ocr/llm_postprocess.py`** existiert noch — anders als der
   geloeschte `scripts/postprocess/`-Ordner. Naming-Verwirrung kann auftreten.
 
 ### 7.2 Doku-Drift (vor dieser Session)

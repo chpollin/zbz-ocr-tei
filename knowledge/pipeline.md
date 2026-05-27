@@ -40,7 +40,7 @@ OCR (Mistral)                  Layout (Docling + Gemini-QA)
  └──────────────────────────────┴──► TEI-XML (tei_unified.py)
                                      │
                                      ▼
-                                     Quality Screening (Agent, 7 Schichten)
+                                     Workflow-Status pro Strom (E66, menschgesetzt)
                                      │
                                      ▼
                                      Evaluation + Viewer
@@ -54,14 +54,14 @@ aus Layout-JSON + OCR ab.
 
 | Stufe | Aufgabe | Skript | Output | Status |
 |---|---|---|---|---|
-| 1 | PDF → PNG | `scripts/extract_pages.py` | PNG (`docs/images/`) | Production |
-| 1a | Dokumentklassifikation (Gemini) | `scripts/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (285 docs, E27) |
-| 2 | OCR | `scripts/ocr_pipeline.py` | Page-Markdown (`output/mistral_results/`, `output/ocr_results/`) | Production |
-| 2a | LLM-Postkorrektur (optional) | `scripts/llm_postprocess.py` | `output/llm_corrected_c/` | Production, E17: optional |
-| 2b | Gemini OCR-Korrektur (optional) | `scripts/gemini_ocr_correct.py` | `output/gemini_corrected_a/` / `_b/` | Sample (E29) |
-| 3 | Layout-Analyse | `scripts/run_layout_analysis.py` (local GPU) oder `run_layout_cloud.py` (docling-serve) | Regionen + BBox (`output/layout/`) | Production |
-| 3a | Layout-QA/Detect (Gemini) | `scripts/layout_qa_gemini.py --mode {qa\|detect\|auto}` | `_layout_gemini.json` | Production (E25/E26/E31) |
-| 3b | Overlay-Generator | `scripts/generate_layout_overlays.py` | PNGs + side-by-side compare | Production |
+| 1 | PDF → PNG | `scripts/edition/extract_pages.py` | PNG (`docs/images/`) | Production |
+| 1a | Dokumentklassifikation (Gemini) | `scripts/ocr/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (285 docs, E27) |
+| 2 | OCR | `scripts/ocr/ocr_pipeline.py` | Page-Markdown (`output/mistral_results/`, `output/ocr_results/`) | Production |
+| 2a | LLM-Postkorrektur (optional) | `scripts/ocr/llm_postprocess.py` | `output/llm_corrected_c/` | Production, E17: optional |
+| 2b | Gemini OCR-Korrektur (optional) | `scripts/ocr/gemini_ocr_correct.py` | `output/gemini_corrected_a/` / `_b/` | Sample (E29) |
+| 3 | Layout-Analyse | `scripts/layout/run_layout_analysis.py` (local GPU) oder `run_layout_cloud.py` (docling-serve) | Regionen + BBox (`output/layout/`) | Production |
+| 3a | Layout-QA/Detect (Gemini) | `scripts/layout/layout_qa_gemini.py --mode {qa\|detect\|auto}` | `_layout_gemini.json` | Production (E25/E26/E31) |
+| 3b | Overlay-Generator | `scripts/layout/generate_layout_overlays.py` | PNGs + side-by-side compare | Production |
 | 4 | PAGE-XML + METS | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | `output/page_xml/` | Production |
 | 5 | **NER + Wikidata** | `scripts/ner/` (7 Module, E34/E35) | Entity-JSON + TEI-Indices (`data/entities/`) | 285/285 |
 | 5a | NER Extraction (Gemini) | `ner_extract.py` | `output/entities/{doc_id}/` | 11.685 Entities, 26.197 Mentions |
@@ -73,17 +73,18 @@ aus Layout-JSON + OCR ab.
 | 6b | **Unified TEI Pipeline** (E32) | `scripts/tei/tei_unified.py` | `output/tei_unified/` | **285/285** |
 | 6b+ | Post-Assembly Fixes | `tei_step3.py` | Fixes E/F/G + heuristische lb-Injection | Production (Session 34) |
 | 6c | TEI Validation | `scripts/tei/tei_validator.py` | JSON + HTML-Report | **285/285 valide**, 29 Warnings |
-| 7 | Evaluation | `scripts/evaluate_ocr.py` + `benchmark_cer.py` + `cer_statistics_full.py` | `output/evaluation/` + `docs/data/cer_statistics.json` | Production |
+| 7 | Evaluation | `scripts/eval/evaluate_ocr.py` + `benchmark_cer.py` + `cer_statistics_full.py` | `output/evaluation/` + `docs/data/cer_statistics.json` | Production |
 
 **Manuelle Kuration (E56, Stand 2026-04-27):** Erfolgt im Pipeline-Viewer
 (`docs/viewer.html`) mit Layout- und Transkriptions-Editor. Aenderungen werden als JSON/MD/XML
 heruntergeladen und manuell im Repo abgelegt. Details: [viewer.md](viewer.md).
 Frueher (E36): FastAPI Curation Server unter localhost:8000 — abgeschafft.
 
-**Quality Screening (Pre-Curation):** Agent-basiertes 7-Schichten-Screening (Scan, OCR, Layout,
-Struktur, Referenz, Entities, Kohaerenz). Output: `output/tei_final/{doc_id}_final.xml` +
-`{doc_id}_review.json`. 285/285 gescreent (242 APPROVED, 43 WITH_NOTES, 0 NEEDS_REVIEW).
-Details: [quality.md §Agent-Based Quality Screening](quality.md).
+**Qualitaetssicherung (E66):** Das fruehere Agent-Screening ist abgeschafft (kein Mensch hatte die
+„APPROVED" vergeben — der Agent zertifizierte sich selbst). Ersatz: menschgesetzter
+**Workflow-Status pro Strom** (`unverifiziert | in_arbeit | bearbeitet | fertig` je OCR/Layout/TEI),
+im Viewer gesetzt, History im Pro-Objekt-Manifest, Projektion in den `<revisionDesc>`. Stand:
+285/285 `unverifiziert`. Details: [quality.md §Workflow-Status](quality.md).
 
 ---
 
@@ -127,7 +128,7 @@ Setup-Hinweise und Fehler-Diagnose: [infrastruktur.md](infrastruktur.md) §Azure
 | Rolle | Primary Layout Engine (nur Layout, kein OCR — RapidOCR hat FR-Encoding-Probleme) |
 | Speed | ~5 s/Seite (RTX 4060 GPU), ~27 s/Seite (CPU / docling-serve) |
 | Erkennung | 17 Block-Typen (Title, Section-header, Text, Footnote, Caption, Page-header/footer, Picture, Table, Formula, ...) |
-| API | `scripts/run_layout_cloud.py` → docling-serve (Docker, IBM offiziell) |
+| API | `scripts/layout/run_layout_cloud.py` → docling-serve (Docker, IBM offiziell) |
 
 Coverage-basiertes Quality-Scoring ist ein starker Proxy fuer Layout-Qualitaet — kein ML noetig.
 Landscape/multi-column sind die harten Faelle (~64% bad vs. ~14% Portrait).
@@ -364,15 +365,15 @@ Der juengste `<change>` bestimmt den aktuellen Status. Die Edition zeigt den Sta
 | 3 | NER + Wikidata Linking | Done (285 Docs, 47% Linking) |
 | 4 | TEI-XML mit PAGE-XML + NER | Done (285/285 schema-valide) |
 | 5 | Extended Evaluation (CER-Benchmark) | Done — siehe [quality.md](quality.md) |
-| 6 | Production Run + Quality Screening | In Progress — 285/285 gescreent, Kurationspilot offen |
+| 6 | Production Run + fachliche Kuration | In Progress — 285/285 generiert, Workflow-Status `unverifiziert` (E66), Kuration offen |
 
 **Querschnitt** (parallel zu Phasen 3-6): Pipeline-Viewer mit Edit-Modus — siehe [viewer.md](viewer.md). Die fruehere oeffentliche Lese-Edition (E33) und der Curation Editor (E36) wurden mit E56 abgeschafft.
 
 ### Sub-Projekt: CER-Verbesserung
 
 Systematische OCR-Qualitaetsverbesserung durch iteratives Experimentieren und Benchmarken.
-Baseline und Ziel siehe [quality.md §CER](quality.md). Werkzeuge: `scripts/benchmark_cer.py`,
-`scripts/cer_statistics.py`, `scripts/cer_statistics_full.py`. Phasen 0-4 mit Erfolgsmetriken
+Baseline und Ziel siehe [quality.md §CER](quality.md). Werkzeuge: `scripts/eval/benchmark_cer.py`,
+`scripts/eval/cer_statistics.py`, `scripts/eval/cer_statistics_full.py`. Phasen 0-4 mit Erfolgsmetriken
 (Phase 1 Ziel Median <5%, Phase 2 Ziel Median <4%).
 
 ---
@@ -423,7 +424,7 @@ Konkrete Schritte fuer einen Layout-Edit:
 3. Pipeline-Re-Run: `python -m scripts.tei.tei_unified --doc {ID} --reassemble` regeneriert TEI mit dem kuratierten Layout als Input. `--reassemble` benutzt den Gemini-Step-2-Cache (kostenlos).
 4. `python -m scripts.tei.tei_add_revision --doc {ID}` schreibt `<revisionDesc>` neu.
 5. `python -m scripts.tei.tei_validator --doc {ID}` validiert.
-6. `python -m scripts.generate_edition_data --doc {ID}` regeneriert die Frontend-Mirrors.
+6. `python -m scripts.edition.generate_edition_data --doc {ID}` regeneriert die Frontend-Mirrors.
 
 Aktuelle Manken: Schritte 3-6 sind nicht in einem Wrapper-Script automatisiert.
 Keine Konvention-Erzwingung fuer den Ablage-Pfad. Kein Auto-Save im Browser

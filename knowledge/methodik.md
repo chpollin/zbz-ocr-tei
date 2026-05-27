@@ -88,15 +88,17 @@ naechsten Zyklus. Die epistemische Infrastruktur waechst reaktiv auf Qualitaetss
 
 ---
 
-## Agent-Based Quality Screening
+## Qualitaetssicherung: vom Agent-Screening zum Workflow-Status (E66)
 
-Praktische Implementation der Verifikationskaskade auf Korpusebene (285 Dokumente).
-Details und Ergebnisse: [quality.md §Agent-Based Quality Screening](quality.md).
+Urspruenglich war hier ein agentenbasiertes 7-Schichten-Screening angesiedelt (285 Docs:
+242 APPROVED / 43 WITH_NOTES). Es ist mit **E66 abgeschafft** — kein Mensch hatte die „APPROVED"
+vergeben, der Agent zertifizierte sich selbst mit eingebauter Ignorier-Liste; das Etikett war
+gegenueber ZBZ irrefuehrend.
 
-- 7 Pruefschichten: Scan, OCR, Layout, TEI-Struktur, Referenz, Entities, Kohaerenz
-- Output: Review-JSON pro Dokument mit Layer-Scores und konkreten Findings
-- Ergebnis: 85% publikationsreif (242 APPROVED), 15% mit Hinweisen (43 WITH_NOTES), 0% NEEDS_REVIEW
-- Hauptprobleme: Entity-False-Positives bei Gattungsbegriffen (15), OCR-Halluzinationen bei Zeitungslayouts (8), Strukturprobleme (9)
+Ersatz: **menschgesetzter Workflow-Status pro Strom** (`unverifiziert | in_arbeit | bearbeitet | fertig`
+je OCR/Layout/TEI), gesetzt im Viewer, mit Provenienz-History im Pro-Objekt-Manifest und Projektion
+in den `<revisionDesc>`. Die Verifikationskaskade bleibt das Prinzip; nur die *fachliche* Stufe ist
+jetzt explizit menschlich statt agentisch. Details: [quality.md §Workflow-Status](quality.md).
 
 ---
 
@@ -115,11 +117,11 @@ python -m scripts.tei.tei_validator --doc {DOC_ID}            # TEI-Validierung
 python -m scripts.tei.tei_validator --all --html-report        # Korpus-Report
 python -m scripts.tei.tei_validator --compare-ref              # Referenz-Vergleich (11 Docs)
 python -m scripts.ner.ner_evaluate --doc {DOC_ID}              # NER-Abdeckung
-python -m scripts.evaluate_ocr --all                           # OCR-Metriken
-python -m scripts.quality_proxy --all --html                   # Quality Proxy (Hit Rate)
-python -m scripts.completeness_check --html                    # Vollstaendigkeits-Check (Seiten)
-python -m scripts.benchmark_cer --all --html                   # CER-Benchmark (25 GT-Docs)
-python -m scripts.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss. CER-Statistik
+python -m scripts.eval.evaluate_ocr --all                           # OCR-Metriken
+python -m scripts.eval.quality_proxy --all --html                   # Quality Proxy (Hit Rate)
+python -m scripts.eval.completeness_check --html                    # Vollstaendigkeits-Check (Seiten)
+python -m scripts.eval.benchmark_cer --all --html                   # CER-Benchmark (25 GT-Docs)
+python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss. CER-Statistik
 python -m pytest tests/test_cer_statistics.py -q               # 55 Tests fuer Statistik-Library
 ```
 
@@ -129,18 +131,18 @@ HTML-Dashboard wurde mit E56 abgeschafft — Daten weiterhin als JSON verfuegbar
 ### 2. Textschicht verbessern
 
 ```bash
-python scripts/ocr_pipeline.py -i data/scans/{DOC_ID}.pdf -e mistral   # Basis-OCR
-python -m scripts.gemini_ocr_correct --doc {DOC_ID} --variant B         # Gemini multimodal
-python -m scripts.gemini_ocr_correct --doc {DOC_ID} --dry-run           # Vorschau
+python scripts/ocr/ocr_pipeline.py -i data/scans/{DOC_ID}.pdf -e mistral   # Basis-OCR
+python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B         # Gemini multimodal
+python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run           # Vorschau
 ```
 
 ### 3. Layout
 
 ```bash
-python -m scripts.run_layout_analysis --doc {DOC_ID}                    # Docling
-python -m scripts.layout_qa_gemini --doc {DOC_ID}                       # Gemini QA
-python -m scripts.layout_qa_gemini --mode detect --doc {DOC_ID}         # Neudetektion
-python -m scripts.generate_layout_overlays --doc {DOC_ID} --compare     # Overlay
+python -m scripts.layout.run_layout_analysis --doc {DOC_ID}                    # Docling
+python -m scripts.layout.layout_qa_gemini --doc {DOC_ID}                       # Gemini QA
+python -m scripts.layout.layout_qa_gemini --mode detect --doc {DOC_ID}         # Neudetektion
+python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare     # Overlay
 ```
 
 ### 4. TEI erzeugen
@@ -172,26 +174,25 @@ python -m scripts.tei.tei_validator --all --report                      # JSON-R
 python -m scripts.tei.tei_validator --all --html-report                 # HTML-Report
 ```
 
-### 7. Quality Screening (Pre-Curation)
+### 7. Workflow-Status (ersetzt Agent-Screening, E66)
 
-Agent-Prozess, kein einzelner CLI-Befehl. Tools:
+Das Agent-Screening ist abgeschafft. Status wird von Menschen im Viewer gesetzt;
+die CLI deckt Validierung und Status-Projektion ab:
 
 ```bash
-python -m scripts.tei.tei_validator --doc {DOC_ID}                      # Schicht 4
-python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}        # Schicht 5
-python -m scripts.tei.tei_screening_prep                                # Batch-Manifest erzeugen
-python -m scripts.tei.tei_add_revision --all                            # revisionDesc in alle TEIs
-python -m scripts.tei.tei_quality_pass --all                            # automatischer Pre-Check
-python -m scripts.tei.screening_prompt --batch {N}                      # Agent-Prompt generieren
+python -m scripts.tei.tei_validator --doc {DOC_ID}                      # RelaxNG + Projektregeln
+python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}        # gegen ZBZ-Referenz
+python -m scripts.tei.tei_add_revision --all                            # revisionDesc schreiben
+python -m scripts.tei.tei_status_marker                                 # Workflow-History -> revisionDesc (ZBZ-Uebergabe)
 ```
 
-Output: `output/tei_final/{DOC_ID}_final.xml` + `{DOC_ID}_review.json` + `screening_manifest.json`.
+Output: `output/tei_final/{DOC_ID}_final.xml` + `{DOC_ID}_manifest.json` (Workflow-Status + History).
 
 ### 8. Visuelle Artefakte
 
 ```bash
-python scripts/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300            # Seitenbilder
-python -m scripts.generate_layout_overlays --doc {DOC_ID} --compare     # Layout-Overlay
+python scripts/edition/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300            # Seitenbilder
+python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare     # Layout-Overlay
 ```
 
 ---

@@ -68,7 +68,7 @@ Deployment, API-Zugang, Containerisierung, CI/CD fuer den ZBZ-Production-Betrieb
 ### Konfiguration (in Planung)
 
 Eine YAML-basierte Konfiguration ist geplant, aktuell sind Engines direkt in `scripts/config.py`
-und `scripts/ocr_pipeline.py` konfiguriert.
+und `scripts/ocr/ocr_pipeline.py` konfiguriert.
 
 ```yaml
 # Beispiel config.yaml (geplant)
@@ -115,7 +115,7 @@ ENV MISTRAL_DOC_AI_ENDPOINT=""
 ENV MISTRAL_DOC_AI_KEY=""
 ENV GEMINI_API_KEY=""
 
-ENTRYPOINT ["python", "-m", "scripts.ocr_pipeline"]
+ENTRYPOINT ["python", "-m", "scripts.ocr.ocr_pipeline"]
 ```
 
 **Status:** noch nicht implementiert.
@@ -167,7 +167,7 @@ source .venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 
 # GPU-Check (optional)
-python scripts/ocr_pipeline.py --check-gpu
+python scripts/ocr/ocr_pipeline.py --check-gpu
 ```
 
 ---
@@ -182,7 +182,7 @@ Das QA-Dashboard (`docs/`) ist eine rein statische Web-App, kein Backend noetig.
 | GitHub Pages | `docs/` als Source, automatisches Deployment |
 | beliebiger HTTP-Server | `python -m http.server` im `docs/`-Verzeichnis |
 
-**Daten aktualisieren:** `python -m scripts.generate_edition_data` erzeugt Katalog, Entity-Index
+**Daten aktualisieren:** `python -m scripts.edition.generate_edition_data` erzeugt Katalog, Entity-Index
 und den Per-Seiten-Mirror in `docs/data/` aus Pipeline-Outputs.
 
 ---

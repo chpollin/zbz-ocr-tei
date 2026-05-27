@@ -32,7 +32,7 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 - **Alignment:** content-aligned via `evaluate_tei_vs_tei()` (immun gegen Page-Numbering-Drift, siehe §Lessons).
 - **Aggregation:** char-gewichtete Per-Dok-CER; Bootstrap ueber Docs (n=19).
 - **Statistik:** BCa-Bootstrap (B=10000, Seed=42) fuer alle CIs; Paired Bootstrap fuer E2E vs OCR-only; Chi-Square + KS fuer Selektionsbias.
-- **Werkzeug:** `scripts/cer_statistics_full.py` (Orchestrator) + `scripts/cer_statistics.py` (Library mit 55 Tests). Output: `docs/data/cer_statistics.json` (deterministisch bei `seed=42`).
+- **Werkzeug:** `scripts/eval/cer_statistics_full.py` (Orchestrator) + `scripts/eval/cer_statistics.py` (Library mit 55 Tests). Output: `docs/data/cer_statistics.json` (deterministisch bei `seed=42`).
 
 ### Headline-Werte (n=19 scope-clean, BCa, 2026-04-27)
 
@@ -135,9 +135,9 @@ Vollstaendige Matrix: in den Rohdaten unter `output/evaluation/` (frueher als `d
 Re-Processing-Kandidaten (Typ B mit Layout-Fehlern):
 
 ```bash
-python -m scripts.layout_qa_gemini --mode detect --doc 1910   # 16.1% CER
-python -m scripts.layout_qa_gemini --mode detect --doc 890    #  5.6% CER
-python -m scripts.layout_qa_gemini --mode detect --doc 1410   #  5.1% CER
+python -m scripts.layout.layout_qa_gemini --mode detect --doc 1910   # 16.1% CER
+python -m scripts.layout.layout_qa_gemini --mode detect --doc 890    #  5.6% CER
+python -m scripts.layout.layout_qa_gemini --mode detect --doc 1410   #  5.1% CER
 ```
 
 ---
@@ -306,7 +306,7 @@ Nicht-Woerter ("maison" → "rnaison"), daher korreliert hohe Hit Rate mit guter
 
 **Literatur:** Stroebel et al. 2022, "Evaluation of HTR models without Ground Truth Material" (LREC 2022).
 
-**Implementierung:** `scripts/quality_proxy.py`
+**Implementierung:** `scripts/eval/quality_proxy.py`
 
 - Text-Extraktion aus TEI-XML (gleiche Methode wie CER-Benchmark)
 - Tokenisierung: nur alphabetische Woerter >= 2 Zeichen
@@ -505,12 +505,10 @@ Schicht 4-5 sind automatisierte Tool-Aufrufe.
 ### Werkzeuge
 
 ```bash
-python -m scripts.tei.tei_validator --doc {DOC_ID}              # Schicht 4
-python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID} # Schicht 5
-python -m scripts.tei.tei_screening_prep                        # Batch-Manifest erzeugen
+python -m scripts.tei.tei_validator --doc {DOC_ID}              # Schicht 4 (RelaxNG)
+python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID} # Schicht 5 (Referenz)
 python -m scripts.tei.tei_add_revision --all                    # revisionDesc in alle TEIs
-python -m scripts.tei.tei_quality_pass --all                    # automatischer Pre-Check
-python -m scripts.tei.screening_prompt --batch {N}              # Agent-Prompt generieren
+# tei_screening_prep / tei_quality_pass / screening_prompt: mit E66 entfernt (Agent-Screening abgeschafft)
 ```
 
 ### Output
@@ -586,7 +584,7 @@ ueber "Manifest ↓" als Datei heruntergeladen; manuelles Ablegen unter `output/
 Strom automatisch von `unverifiziert` auf `in_arbeit` (Quelle `auto: Edit-Toggle aktiviert`). Bewusste
 Status-Wechsel (z.B. `bearbeitet` → `fertig`) erfolgen ueber die Pill.
 
-**Mirror:** `python -m scripts.generate_edition_data --mirror-only` spiegelt die Manifeste nach
+**Mirror:** `python -m scripts.edition.generate_edition_data --mirror-only` spiegelt die Manifeste nach
 `docs/data/manifests/{doc}_manifest.json`, von wo der Viewer sie laedt. Der Catalog (`catalog.json`)
 traegt pro Doc ein `streams`-Feld `{ocr|layout|tei: {status, last_at, last_by}}` und ein Korpus-
 Histogramm `corpus.stream_status`.
@@ -687,14 +685,14 @@ Konsequenz: optional, nicht default (E17).
 python -m pytest tests/test_cer_statistics.py -q
 
 # JSON-Generierung (~2-3min, deterministisch bei gleichem Seed)
-python -u -m scripts.cer_statistics_full --seed 42 --bootstrap-n 10000
+python -u -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000
 # → docs/data/cer_statistics.json
 
 # CER-Benchmark (alle 25 GT-Docs)
-python -m scripts.benchmark_cer --all --html
+python -m scripts.eval.benchmark_cer --all --html
 
 # Quality Proxy (alle 285 Docs)
-python -m scripts.quality_proxy --all --html
+python -m scripts.eval.quality_proxy --all --html
 
 # TEI-Validierung
 python -m scripts.tei.tei_validator --all --html-report

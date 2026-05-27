@@ -56,7 +56,7 @@ docs/
 │   ├── layout-editor.js         # BBox Drag/Resize/Add/Delete + Reading-Order
 │   ├── transcription-editor.js  # OCR/TEI/XML mit contenteditable
 │   └── download.js              # Datei-Download (JSON/MD/XML)
-└── data/                        # generiert via scripts/generate_edition_data.py
+└── data/                        # generiert via scripts/edition/generate_edition_data.py
     ├── catalog.json             # 285 Docs (id, title, author, lang, type, page_count, streams.{ocr,layout,tei}.{status,last_at,last_by})
     ├── manifests/{doc}.json     # Mirror der Pro-Objekt-Manifeste (Workflow + History + Leerseiten, E66)
     ├── entity_index.json        # 4504 Entities mit GND/Wikidata
@@ -190,10 +190,10 @@ Multi-Doc-Export ueber 50 Docs: Warnhinweis wegen Browser-Memory.
 
 | Daten | Pfad (primaer) | Fallback | Quelle |
 |---|---|---|---|
-| Korpus-Liste | `data/catalog.json` | — | `scripts/generate_edition_data.py` |
-| Thumbnail | `data/thumbs/{doc}.jpg` | — | `scripts/generate_edition_data.py` (PIL, 140x200, JPEG q=70) |
-| Faksimile | `images/{doc}/{doc}_pNNN.png` | — | Pipeline (`scripts/extract_pages.py`) |
-| Layout (Gemini) | `data/pages/{doc}/{doc}_pNNN_layout_gemini.json` | `../output/layout/` | `scripts/layout_qa_gemini.py` |
+| Korpus-Liste | `data/catalog.json` | — | `scripts/edition/generate_edition_data.py` |
+| Thumbnail | `data/thumbs/{doc}.jpg` | — | `scripts/edition/generate_edition_data.py` (PIL, 140x200, JPEG q=70) |
+| Faksimile | `images/{doc}/{doc}_pNNN.png` | — | Pipeline (`scripts/edition/extract_pages.py`) |
+| Layout (Gemini) | `data/pages/{doc}/{doc}_pNNN_layout_gemini.json` | `../output/layout/` | `scripts/layout/layout_qa_gemini.py` |
 | Layout (Docling) | `data/pages/{doc}/{doc}_pNNN_layout.json` | `../output/layout/` | Pipeline |
 | OCR Mistral | `data/pages/{doc}/{doc}_pN.md` | `../output/mistral_results/` | Pipeline |
 | OCR (andere) | — | `../output/{source}/...` | nur lokal: Gemini A/B, LLM, DeepSeek |
@@ -290,9 +290,9 @@ S3, CDN) und einen anpassbaren `ZBZ.path.image()` mit `BASE_URL`-Variable.
 Wenn sich Pipeline-Output oder Workflow-Status (Manifest) aendert:
 
 ```bash
-python -m scripts.generate_edition_data                  # voller Lauf inkl. Per-Seiten-Mirror
-python -m scripts.generate_edition_data --mirror-only    # nur pages/ neu aufbauen
-python -m scripts.generate_edition_data --no-mirror      # nur Katalog + Indices
+python -m scripts.edition.generate_edition_data                  # voller Lauf inkl. Per-Seiten-Mirror
+python -m scripts.edition.generate_edition_data --mirror-only    # nur pages/ neu aufbauen
+python -m scripts.edition.generate_edition_data --no-mirror      # nur Katalog + Indices
 ```
 
 Der Per-Seiten-Mirror (`docs/data/pages/`) ist ~99 MB, ca. 16.500 Dateien. Bei jeder

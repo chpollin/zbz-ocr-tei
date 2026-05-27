@@ -31,17 +31,26 @@ OCR + Layout + PAGE-XML + NER/GND + TEI-XML. ZBZ behaelt Transkribus parallel al
 
 ## Korpus
 
-286 PDF-Texte aus dem Nachlass (Masterfile listet 289; 3 fehlen, siehe [decisions.md](decisions.md) O22).
+Korpus-Trichter (verifiziert via `python -m scripts.eval.corpus_audit`, Stand 2026-05-27):
+**325 Masterfile-Texte → 289 digitalisiert → 286 als PDF geliefert → 285 mit finalem TEI.**
+Die fruehere Zahl „289" ist der `digitalisiert`-Zaehler der Masterfile, nicht die Textmenge.
+3 digitalisierte Texte ohne PDF-Lieferung: `1745`, `1750`, `1970`; 1 PDF ohne finales TEI: `10`.
 
-| Aspekt | Wert |
-|---|---|
-| Effektiver Korpus | 286 Texte (Stand E23) — 285 produktiv in der Pipeline |
-| Seiten insgesamt | ~7.200 (4.108 in der Pipeline verarbeitet) |
-| Median pro Text | 6 Seiten |
-| Maximum | 588 Seiten |
-| Zeitraum | 1931-2010, Fokus 1970er/1980er (191 Texte) |
+| Aspekt | Wert | Einheit / Quelle |
+|---|---|---|
+| Masterfile-Texte | 325 | Text-Ebene (ZBZ-Masterfile) |
+| als PDF geliefert | 286 | PDFs (`data/scans/`) |
+| produktiv (finales TEI) | 285 | `output/tei_final/` |
+| Seiten bibliografisch | 7.186 | Masterfile (325 Texte) |
+| Seiten physisch | 4.152 | gelieferte PDFs (pypdfium2) |
+| Seiten verarbeitet | 4.117 OCR / 4.115 TEI-`<pb>` | Pipeline |
+| Median pro Text | 6 Seiten | Masterfile |
+| Maximum | 588 Seiten | Masterfile (biblio.) |
+| Zeitraum | 1931–2010, Fokus 1970er/1980er (193 Texte) | Masterfile |
 
 ### Publikationsformen
+
+Auf Text-Ebene laut Masterfile (n=325) — der katalogisierte Bestand, nicht die 286 verarbeiteten PDFs.
 
 | Genre | Anzahl | Anteil |
 |---|---|---|
@@ -51,6 +60,8 @@ OCR + Layout + PAGE-XML + NER/GND + TEI-XML. ZBZ behaelt Transkribus parallel al
 | AV medium | 1 | <1% |
 
 ### Sprachverteilung
+
+Auf Text-Ebene laut Masterfile (n=325). Geminis PDF-Klassifikation (`doc_metadata.json`, n=286) weicht ab und ueberschaetzt Mehrsprachigkeit — fuer Metadaten ist die Masterfile massgeblich.
 
 | Sprache | Anzahl | Anteil |
 |---|---|---|
@@ -118,17 +129,17 @@ und [quality.md](quality.md).
 | M2 | Layout + PAGE-XML | Regionen + BBox + PAGE-XML alle Docs | Done |
 | M3 | NER + Wikidata | Recall >70%, Linking >50% | Done (285 Docs, 11.685 Entities, 47% verlinkt) |
 | M4 | TEI-XML | DTA-konform, schema-valide | Done (285/285 valide gegen `zbz_hersch.rng`) |
-| M5 | Production Run | 285 Docs verarbeitet, QA bestanden | In Progress (gescreent: 242 APPROVED, 43 WITH_NOTES, 0 NEEDS_REVIEW; Kurationspilot offen) |
+| M5 | Production Run | 285 Docs verarbeitet, fachliche QA | In Progress (285/285 generiert; Workflow-Status alle Stroeme `unverifiziert`, E66/E67; fachliche Kuration offen) |
 
 ### Komponenten-Status
 
 | Komponente | Status | Details |
 |---|---|---|
-| Bildextraktion | Done | `scripts/extract_pages.py` |
-| OCR (Mistral + DeepSeek) | Done | `scripts/ocr_pipeline.py` |
-| LLM-Postkorrektur (Haiku) | Done, optional (E17) | `scripts/llm_postprocess.py`, bei CER <5% schaedlich |
-| Gemini OCR-Korrektur | Sample | `scripts/gemini_ocr_correct.py` (E29) |
-| Layout (Docling) | Done | `scripts/run_layout_analysis.py` |
+| Bildextraktion | Done | `scripts/edition/extract_pages.py` |
+| OCR (Mistral + DeepSeek) | Done | `scripts/ocr/ocr_pipeline.py` |
+| LLM-Postkorrektur (Haiku) | Done, optional (E17) | `scripts/ocr/llm_postprocess.py`, bei CER <5% schaedlich |
+| Gemini OCR-Korrektur | Sample | `scripts/ocr/gemini_ocr_correct.py` (E29) |
+| Layout (Docling) | Done | `scripts/layout/run_layout_analysis.py` |
 | Layout-QA (Gemini) | Done | `--mode auto` (E25/E26/E31) |
 | PAGE-XML Generator | Done | `page_xml_generator.py` + METS |
 | Dokumentklassifikation | Done | `classify_docs.py` (E27) |
@@ -136,7 +147,7 @@ und [quality.md](quality.md).
 | Entity Index | Done | 4.504 Eintraege, 2.101 mit Wikidata/GND (47%) |
 | Unified TEI Pipeline | Done | 285/285 schema-valide (E32) |
 | TEI Validator | Done | RelaxNG + 8 Projektregeln + 14 Warnings |
-| Quality Screening | Done | 242 APPROVED, 43 WITH_NOTES, 0 NEEDS_REVIEW |
+| Workflow-Status pro Strom (E66/E67) | Done (Datenmodell) | ersetzt Agent-Screening; 285/285 `unverifiziert`, im Viewer setzbar, Provenienz im Manifest |
 | Pipeline-Viewer (E56) | Done | `docs/viewer.html` Single-Page mit Layout- + Transkriptions-Editor, Persistenz via Download |
 | Viewer Edition-Uplift (Mai 2026) | In Arbeit | OSD-Integration (E58), Mode-Edit-Toggle pro Panel (E60), Layout-Editor-Reichtum, geplant: UI-Verdichtung + Quality/Provenance-Drawer + complete-TEI + Export-Modul (E61). Plan: `~/.claude/plans/edition-uplift-three-pages.md` |
 | Workflow + Provenance | Konzept dokumentiert | [workflow.md](workflow.md) beschreibt Datenfluss, Save-Mechanismus, Round-Trip, `_complete.xml`- und `provenance.json`-Konzept |
