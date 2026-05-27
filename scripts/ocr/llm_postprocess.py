@@ -31,7 +31,7 @@ from scripts.config import (
     ANTHROPIC_TIMEOUT_SECONDS,
     get_test_metadata,
 )
-from scripts.utils import get_phase_doc_ids, load_env
+from scripts.utils import extract_page_num, get_phase_doc_ids, load_env
 
 
 # --- Dokumenttyp-Beschreibungen ---
@@ -241,12 +241,6 @@ def find_page_files(doc_id: str, ocr_dir: Path) -> list[Path]:
     pattern = f"{doc_id}_p*.md"
     files = sorted(ocr_dir.glob(pattern))
     return files
-
-
-def extract_page_num(filepath: Path) -> int:
-    """Extrahiert Seitennummer aus Dateiname (z.B. 2310_p1.md -> 1)."""
-    match = re.search(r"_p(\d+)\.md$", filepath.name)
-    return int(match.group(1)) if match else 0
 
 
 def process_document(

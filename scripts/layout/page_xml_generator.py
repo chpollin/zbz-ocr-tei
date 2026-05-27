@@ -30,6 +30,7 @@ from scripts.config import (
     PAGE_XML_DIR,
     ZBZ_TO_PAGE_TYPE,
 )
+from scripts.core.loaders import discover_layout_documents, discover_layout_pages
 
 # PAGE-XML Namespace (2013-07-15)
 PAGE_NS = "http://schema.primaresearch.org/PAGE/gts/pagecontent/2013-07-15"
@@ -330,21 +331,9 @@ def process_page(doc_id, page_num, force=False):
     return out_path
 
 
-def discover_pages(doc_id):
-    """Findet alle verfuegbaren Seiten fuer ein Dokument (aus Layout-Daten)."""
-    pages = set()
-    layout_path = LAYOUT_DIR / doc_id
-    if layout_path.exists():
-        for f in layout_path.glob(f"{doc_id}_p*_layout.json"):
-            match = re.search(r'_p(\d+)_layout\.json$', f.name)
-            if match:
-                pages.add(int(match.group(1)))
-    return sorted(pages)
-
-
 def process_document(doc_id, force=False):
     """Verarbeitet alle Seiten eines Dokuments + METS. Returns: Anzahl generierter Dateien."""
-    pages = discover_pages(doc_id)
+    pages = discover_layout_pages(doc_id)
     generated = 0
     for page_num in pages:
         result = process_page(doc_id, page_num, force)
@@ -357,16 +346,6 @@ def process_document(doc_id, force=False):
         write_mets(doc_id)
 
     return generated
-
-
-def discover_documents():
-    """Findet alle Dokumente mit Layout-Daten."""
-    doc_ids = set()
-    if LAYOUT_DIR.exists():
-        for d in LAYOUT_DIR.iterdir():
-            if d.is_dir() and d.name.isdigit():
-                doc_ids.add(d.name)
-    return sorted(doc_ids, key=lambda x: int(x))
 
 
 # ---------------------------------------------------------------------------
@@ -397,7 +376,7 @@ def main():
         if args.sample:
             doc_ids = SAMPLE_DOCS
         else:
-            doc_ids = discover_documents()
+            doc_ids = discover_layout_documents()
 
         print(f"Generiere PAGE-XML fuer {len(doc_ids)} Dokumente...")
         total = 0

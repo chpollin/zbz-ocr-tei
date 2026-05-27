@@ -158,3 +158,29 @@ def test_layout_curated_gets_image_dims_from_docling(layout_dir):
 
 def test_layout_missing_returns_none(layout_dir):
     assert loaders.load_layout_gemini("999", 1) is None
+
+
+# --------------------------------------------------------------------- #
+# discover_layout_* (Layout-scoped Discovery, Welle 4 / W4.2)
+# Kanonische Heimat fuer page_xml_generator + generate_layout_overlays.
+# --------------------------------------------------------------------- #
+
+def test_discover_layout_documents_digit_dirs_only(layout_dir):
+    (layout_dir / "100").mkdir()
+    (layout_dir / "20").mkdir()
+    (layout_dir / "_cache").mkdir()                              # nicht-digit -> ignoriert
+    _write(layout_dir / "note.txt", "x")                         # Datei -> ignoriert
+    assert loaders.discover_layout_documents() == ["20", "100"]  # numerisch sortiert
+
+
+def test_discover_layout_pages_from_layout_json_only(layout_dir):
+    doc = layout_dir / "100"
+    _write(doc / "100_p001_layout.json", "{}")
+    _write(doc / "100_p010_layout.json", "{}")
+    _write(doc / "100_p002_layout_gemini.json", "{}")   # Gemini-Variante zaehlt NICHT
+    _write(doc / "100_p003_layout_curated.json", "{}")  # Curated-Variante zaehlt NICHT
+    assert loaders.discover_layout_pages("100") == [1, 10]
+
+
+def test_discover_layout_pages_missing_doc_returns_empty(layout_dir):
+    assert loaders.discover_layout_pages("999") == []

@@ -23,6 +23,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 from scripts.config import IMAGES_DIR, LABEL_COLORS, LAYOUT_DIR
+from scripts.core.loaders import discover_layout_documents
 
 
 def draw_overlay_with_changes(img_path, layout_json, output_path):
@@ -152,13 +153,6 @@ def create_compare_image(img_path, docling_json, gemini_json, output_path):
     combined.save(output_path)
 
 
-def discover_doc_ids(base_dir):
-    """Alle Doc-IDs im Verzeichnis finden."""
-    if not base_dir.exists():
-        return []
-    return sorted([d.name for d in base_dir.iterdir() if d.is_dir() and d.name.isdigit()])
-
-
 def process_document(doc_id, compare=False, force=False):
     """Overlay-Bilder fuer ein Dokument erzeugen."""
     layout_dir = LAYOUT_DIR / doc_id
@@ -218,7 +212,7 @@ def main():
     if args.doc:
         doc_ids = [args.doc]
     else:
-        doc_ids = discover_doc_ids(LAYOUT_DIR)
+        doc_ids = discover_layout_documents()
 
     if not doc_ids:
         print("Keine Dokumente gefunden.")

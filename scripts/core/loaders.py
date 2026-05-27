@@ -83,6 +83,36 @@ def discover_documents() -> list[str]:
     return sorted(doc_ids)
 
 
+def discover_layout_pages(doc_id: str) -> list[int]:
+    """Findet Seiten MIT Layout-Daten (Layout-scoped, aus *_layout.json).
+
+    Unterschied zu discover_pages (OCR-scoped, aus .md): PAGE-XML/Overlays brauchen
+    Layout-Regionen, also wird hier ueber die Layout-JSON discovered.
+    """
+    pages = set()
+    layout_path = LAYOUT_DIR / doc_id
+    if layout_path.exists():
+        for f in layout_path.glob(f"{doc_id}_p*_layout.json"):
+            match = re.search(r'_p(\d+)_layout\.json$', f.name)
+            if match:
+                pages.add(int(match.group(1)))
+    return sorted(pages)
+
+
+def discover_layout_documents() -> list[str]:
+    """Findet Dokumente MIT Layout-Daten (digit-benannte Unterordner von LAYOUT_DIR).
+
+    Layout-scoped Gegenstueck zu discover_documents (OCR-scoped). Kanonische Quelle
+    fuer page_xml_generator und generate_layout_overlays.
+    """
+    doc_ids = set()
+    if LAYOUT_DIR.exists():
+        for d in LAYOUT_DIR.iterdir():
+            if d.is_dir() and d.name.isdigit():
+                doc_ids.add(d.name)
+    return sorted(doc_ids, key=lambda x: int(x))
+
+
 def load_layout_gemini(doc_id: str, page: int) -> dict | None:
     """Laedt Gemini-korrigiertes Layout-JSON, Fallback auf Docling.
 
