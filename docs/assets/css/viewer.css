@@ -344,7 +344,7 @@
 
 /* Weisses "Papier" fuer den Text-Panel-Body */
 .panel__body--paper {
-  background: #FFFFFF;
+  background: var(--h-paper);
   padding: var(--h-space-xl) var(--h-space-2xl);
 }
 
@@ -368,7 +368,7 @@
   display: block;
   max-width: 100%;
   height: auto;
-  background: #FFFFFF;
+  background: var(--h-paper);
   box-shadow: var(--h-shadow-md);
 }
 .facsimile__overlay {
@@ -413,7 +413,7 @@
   cursor: pointer;
   transition: background var(--h-transition-fast);
 }
-.region:hover { background-color: rgba(139,58,58,0.10); }
+.region:hover { background-color: var(--h-ziegelrot-subtle); }
 .region--selected {
   outline: 2px solid var(--h-ziegelrot);
   outline-offset: 2px;
@@ -435,7 +435,7 @@
   width: 8px;
   height: 8px;
   background: var(--h-ziegelrot);
-  border: 1px solid #FFFFFF;
+  border: 1px solid var(--h-paper);
   border-radius: 50%;
 }
 .region__handle--nw { top: -4px; left: -4px; cursor: nwse-resize; }
@@ -551,7 +551,7 @@
 }
 .tei__sp { margin: 0.5em 0 0.5em; }
 .tei__speaker { font-weight: 600; color: var(--h-text-secondary); }
-.tei__unclear { background: rgba(245,158,11,0.12); }
+.tei__unclear { background: var(--h-ocker-subtle); }
 
 /* XML View */
 .xml-view {

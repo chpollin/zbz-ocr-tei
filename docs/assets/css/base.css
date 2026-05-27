@@ -158,9 +158,9 @@ select.input {
   color: var(--h-text-secondary);
   border: 1px solid var(--h-border);
 }
-.badge--ok      { background: rgba(34,197,94,0.15);   color: #166534; border-color: rgba(34,197,94,0.3); }
-.badge--warn    { background: rgba(245,158,11,0.15);  color: #b45309; border-color: rgba(245,158,11,0.3); }
-.badge--error   { background: rgba(220,38,38,0.12);   color: #b91c1c; border-color: rgba(220,38,38,0.3); }
+.badge--ok      { background: var(--h-olivgruen-subtle); color: var(--h-olivgruen); border-color: var(--h-olivgruen); }
+.badge--warn    { background: var(--h-ocker-subtle); color: var(--h-ocker); border-color: var(--h-ocker); }
+.badge--error   { background: var(--h-ziegelrot-subtle); color: var(--h-ziegelrot); border-color: var(--h-border-accent); }
 .badge--info    { background: var(--h-preussischblau-subtle); color: var(--h-preussischblau); border-color: var(--h-preussischblau); }
 .badge--accent  { background: var(--h-ziegelrot-subtle); color: var(--h-ziegelrot); border-color: var(--h-border-accent); }
 
@@ -210,9 +210,9 @@ select.input {
   transition: opacity var(--h-transition), transform var(--h-transition);
 }
 .toast.visible { opacity: 1; transform: translateY(0); }
-.toast--ok    { background: #166534; }
-.toast--warn  { background: #b45309; }
-.toast--error { background: #b91c1c; }
+.toast--ok    { background: var(--h-olivgruen); }
+.toast--warn  { background: var(--h-ocker); color: var(--h-anthrazit); }
+.toast--error { background: var(--h-ziegelrot); }
 
 /* ---- Scrollbar (Webkit) ---- */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
