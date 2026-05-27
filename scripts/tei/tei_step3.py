@@ -7,6 +7,7 @@ Erzeugt teiHeader, facsimile, body und wendet Post-Assembly-Fixes an.
 Wird aufgerufen von: tei_unified.py (Orchestrierung).
 """
 
+import re
 import xml.etree.ElementTree as ET
 
 from xml.sax.saxutils import escape as xml_escape
@@ -23,18 +24,57 @@ from scripts.tei.tei_xml_utils import make_element, wrap_orphan_groups
 # teiHeader + facsimile
 # ---------------------------------------------------------------------------
 
-def build_tei_header(doc_id: str, metadata: dict) -> str:
-    """Erzeugt teiHeader passend zum zbz_hersch.rng Schema.
+# Sprach-Code-Normalisierung auf ISO-639-2/B 3-Letter. doc_metadata liefert
+# meist schon 3-Letter (fra, deu), teils 2-Letter (fr/de) oder mehrsprachig (fra/deu).
+_LANG_2TO3 = {"fr": "fra", "de": "deu", "en": "eng", "it": "ita"}
 
-    Schema-Einschraenkungen (ODD-Customization):
-    - Kein <idno> (nicht im Schema) -> docID als Kommentar
-    - Kein <monogr>/<biblStruct> mit monogr -> immer <bibl>
-    - Kein <langUsage>/<language> -> kein profileDesc
+
+def _language_idents(lang_raw) -> list:
+    """Zerlegt einen Sprach-String in normalisierte 3-Letter-Codes.
+
+    'fra' -> ['fra']; 'fra/deu' -> ['fra', 'deu']; 'fr' -> ['fra'];
+    '' / '?' / unbekannt -> ['und']. Reihenfolge erhalten, Duplikate raus.
+    """
+    if not lang_raw:
+        return ["und"]
+    out = []
+    for tok in re.split(r"[\/,;\s]+", str(lang_raw).strip()):
+        if not tok:
+            continue
+        t = tok.lower()
+        if len(t) == 3 and t.isalpha():
+            code = t
+        else:
+            code = _LANG_2TO3.get(t, "und")
+        if code not in out:
+            out.append(code)
+    return out or ["und"]
+
+
+def build_tei_header(doc_id: str, metadata: dict) -> str:
+    """Erzeugt den teiHeader passend zum ausgelieferten Datenvertrag (E68-Schema).
+
+    Erzeugt:
+    - <idno type="docID"> im publicationStmt (+ <idno type="MMSID"> aus
+      metadata["mmsid"], falls vorhanden -- Masterfile-Norm-ID, O8)
+    - <biblStruct type={pub_form}> im sourceDesc mit <analytic> (title/author)
+      + <monogr>/<imprint>/<date>
+    - <profileDesc>/<langUsage> mit je einem <language ident=...> pro Sprachcode
+
+    Das <revisionDesc> wird hier NICHT erzeugt -- tei_add_revision.py (Pipeline-Zeile)
+    und tei_status_marker.py (Strom-Status, E66) projizieren es nachgelagert.
+
+    Vorher liess diese Funktion idno/biblStruct/langUsage weg ("docID als Kommentar",
+    "immer <bibl>"), war damit aermer als das ausgelieferte tei_final -- ein
+    tei_unified-Neulauf regressierte jeden Header (verlor idno + biblStruct). Jetzt
+    deckungsgleich mit dem Liefer-Vertrag.
     """
     title = xml_escape(metadata.get("title") or doc_id)
     author = xml_escape(metadata.get("author") or "Jeanne Hersch")
     date = xml_escape(metadata.get("date") or "")
-    pub_form = metadata.get("pub_form", "other")
+    pub_form = xml_escape(metadata.get("pub_form") or "other")
+    mmsid = metadata.get("mmsid")
+    lang_idents = _language_idents(metadata.get("lang") or metadata.get("language"))
 
     lines = []
     lines.append("  <teiHeader>")
@@ -45,17 +85,34 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
     lines.append("      </titleStmt>")
     lines.append("      <publicationStmt>")
     lines.append("        <publisher>ZBZ / DHCraft</publisher>")
+    lines.append(f'        <idno type="docID">{xml_escape(str(doc_id))}</idno>')
+    if mmsid:
+        lines.append(f'        <idno type="MMSID">{xml_escape(str(mmsid))}</idno>')
     lines.append("      </publicationStmt>")
-    lines.append(f"      <!-- docID: {doc_id}, pub_form: {pub_form} -->")
     lines.append("      <sourceDesc>")
-    lines.append("        <bibl>")
-    lines.append(f"          <title>{title}</title>")
-    lines.append(f"          <author>{author}</author>")
+    lines.append(f'        <biblStruct type="{pub_form}">')
+    lines.append("          <analytic>")
+    lines.append(f"            <title>{title}</title>")
+    lines.append(f"            <author>{author}</author>")
+    lines.append("          </analytic>")
+    lines.append("          <monogr>")
+    lines.append("            <title />")
     if date:
-        lines.append(f"          <date>{date}</date>")
-    lines.append("        </bibl>")
+        lines.append("            <imprint>")
+        lines.append(f"              <date>{date}</date>")
+        lines.append("            </imprint>")
+    else:
+        lines.append("            <imprint />")
+    lines.append("          </monogr>")
+    lines.append("        </biblStruct>")
     lines.append("      </sourceDesc>")
     lines.append("    </fileDesc>")
+    lines.append("    <profileDesc>")
+    lines.append("      <langUsage>")
+    for ident in lang_idents:
+        lines.append(f'        <language ident="{ident}" />')
+    lines.append("      </langUsage>")
+    lines.append("    </profileDesc>")
     lines.append("  </teiHeader>")
 
     return "\n".join(lines)
