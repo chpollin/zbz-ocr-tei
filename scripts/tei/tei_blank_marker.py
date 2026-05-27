@@ -26,13 +26,12 @@ import re
 import shutil
 from pathlib import Path
 
+from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
+
 ROOT = Path(__file__).resolve().parent.parent.parent
 FINAL_DIR = ROOT / "output" / "tei_final"
 BACKUP_DIR = ROOT / "output" / "_backup_pre_blank_marker"
 
-# identisch zum Mirror-Splitter (generate_edition_data.py)
-_PB_RE = re.compile(r"<pb\s[^>]*/?>")
-_BODY_RE = re.compile(r"<body[^>]*>(.*?)</body>", re.DOTALL)
 # Inhalts-Element einer Leerseite (p oder head); group(2) = Inhalt
 _CONTENT_RE = re.compile(r"<(p|head)\b[^>]*>(.*?)</\1>", re.DOTALL)
 # leerer <div> (nur Whitespace zwischen oeffnendem und schliessendem Tag)
@@ -94,29 +93,27 @@ def project_doc(doc_id, blank_pages, dry_run):
         return report
 
     raw = final_path.read_text(encoding="utf-8")
-    body_match = _BODY_RE.search(raw)
+    body_match = BODY_INNER_RE.search(raw)
     if not body_match:
         report["error"] = "kein <body>"
         return report
 
     body_inner = body_match.group(1)
-    matches = list(_PB_RE.finditer(body_inner))
+    spans = iter_page_spans(body_inner)
 
     # Konsistenzpruefung: genug pb fuer die hoechste Leerseite?
-    if blank_pages and max(blank_pages) > len(matches):
-        report["error"] = (f"pb-Anzahl {len(matches)} < hoechste Leerseite "
+    if blank_pages and max(blank_pages) > len(spans):
+        report["error"] = (f"pb-Anzahl {len(spans)} < hoechste Leerseite "
                            f"{max(blank_pages)} (Pagination-Drift?)")
         return report
 
     blank_set = set(blank_pages)
-    out = body_inner[: matches[0].start()] if matches else body_inner
+    out = body_inner[: spans[0].pb_start] if spans else body_inner
 
-    for i, m in enumerate(matches):
-        page = i + 1
-        pb_tag = m.group(0)
-        chunk_start = m.end()
-        chunk_end = matches[i + 1].start() if i + 1 < len(matches) else len(body_inner)
-        chunk = body_inner[chunk_start:chunk_end]
+    for span in spans:
+        page = span.page
+        pb_tag = span.pb_tag
+        chunk = body_inner[span.content_start:span.content_end]
 
         if page in blank_set:
             pb_tag, typed = add_type_blank(pb_tag)

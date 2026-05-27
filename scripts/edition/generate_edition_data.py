@@ -24,6 +24,7 @@ from pathlib import Path
 
 from scripts.config import PROJECT_ROOT, DOCS_DIR, TEI_FINAL_DIR, TEI_CURATED_DIR, DOC_METADATA_PATH, ENTITIES_DIR
 from scripts.utils import load_json
+from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
 
 LAYOUT_DIR = PROJECT_ROOT / "output" / "layout"
 MISTRAL_DIR = PROJECT_ROOT / "output" / "mistral_results"
@@ -69,7 +70,6 @@ PUB_FORM_LABELS = {
 # Per-Seiten-Mirror: macht den Viewer ohne lokalen Server fuer alle 285 Docs
 # ---------------------------------------------------------------------------
 
-_PB_RE = re.compile(r'<pb\s[^>]*/?>')
 _NS_RE = re.compile(r'\s+xmlns\s*=\s*"[^"]*"')
 _REVISION_RE = re.compile(r"<revisionDesc.*?</revisionDesc>", re.DOTALL)
 # <div>-Tags (offen, nicht self-closing) bzw. schliessend, fuer das Balancieren
@@ -116,22 +116,20 @@ def _extract_pages_from_final(final_path: Path) -> dict:
     clean = _NS_RE.sub("", raw)
 
     # Body extrahieren
-    body_match = re.search(r"<body[^>]*>(.*?)</body>", clean, re.DOTALL)
+    body_match = BODY_INNER_RE.search(clean)
     if not body_match:
         return {}
     body_inner = body_match.group(1)
 
-    matches = list(_PB_RE.finditer(body_inner))
-    if not matches:
+    spans = iter_page_spans(body_inner)
+    if not spans:
         return {1: _wrap_page(f"<body>{body_inner}</body>")}
 
     pages = {}
-    for i, m in enumerate(matches):
-        page_num = i + 1
-        start = m.start()
-        end = matches[i + 1].start() if i + 1 < len(matches) else len(body_inner)
-        chunk = _balance_divs(body_inner[start:end])
-        pages[page_num] = _wrap_page(f"<body>{chunk}</body>")
+    for span in spans:
+        # Chunk inkl. pb-Tag (Seitenanfang) bis zum naechsten pb
+        chunk = _balance_divs(body_inner[span.pb_start:span.content_end])
+        pages[span.page] = _wrap_page(f"<body>{chunk}</body>")
     return pages
 
 
