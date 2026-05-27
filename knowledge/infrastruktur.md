@@ -132,7 +132,7 @@ ENTRYPOINT ["python", "-m", "scripts.ocr.ocr_pipeline"]
 
 | Aspekt | Details |
 |---|---|
-| Development-Repo | GitHub: `DHCraft/zbz-ocr-tei` |
+| Development-Repo | GitHub: `chpollin/zbz-ocr-tei` |
 | Production-Repo | GitLab Uni Zuerich (Fork) |
 | Merge-Richtung | GitHub → GitLab (Upstream-Updates) |
 | Fork-Anpassungen | API-Keys, Endpoints, ZBZ-spezifische Config |

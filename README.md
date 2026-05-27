@@ -37,7 +37,7 @@ the planned `_complete.xml` variant with embedded `<facsimile>` / `<zone>`.
 | TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | Done (285/285) |
 | Workflow status per stream | Manifest + revisionDesc projection | Done (replaces agent screening, E66/E67) |
 
-Current metrics: see [Korpus-Uebersicht](https://dhcraft.github.io/zbz-ocr-tei/) (GitHub Pages) or `docs/index.html` locally. Detailed status: [knowledge/projekt.md](knowledge/projekt.md).
+Current metrics: see [Korpus-Uebersicht](https://chpollin.github.io/zbz-ocr-tei/) (GitHub Pages) or `docs/index.html` locally. Detailed status: [knowledge/projekt.md](knowledge/projekt.md).
 
 ## Frontend
 

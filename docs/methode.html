@@ -27,7 +27,7 @@
         <a href="index.html">Korpus</a>
         <a href="methode.html" aria-current="page">Methode</a>
         <a href="about.html">About</a>
-        <a href="https://github.com/DHCraft/zbz-ocr-tei" target="_blank" rel="noopener">Repo</a>
+        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener">Repo</a>
       </nav>
     </div>
   </header>
@@ -38,8 +38,8 @@
       <h1>Methode &amp; Qualitaet</h1>
       <p class="lede">
         Wie wir die Pipeline messen, was die Zahlen bedeuten und wo ihre Grenzen liegen.
-        Wissenschaftlich fundierte CER-Re-Evaluation vom 27.&nbsp;April&nbsp;2026 (BCa-Bootstrap,
-        Seed&nbsp;42, B&nbsp;=&nbsp;10.000). Volle Methodik im Repo unter
+        Wissenschaftlich fundierte CER-Evaluation, zuletzt korrigiert am 27.&nbsp;Mai&nbsp;2026
+        (BCa-Bootstrap, Seed&nbsp;42, B&nbsp;=&nbsp;10.000). Volle Methodik im Repo unter
         <code>knowledge/quality.md</code>.
       </p>
     </header>
@@ -48,8 +48,9 @@
       <h2>Was wird gemessen</h2>
       <p>
         <strong>Character Error Rate (CER)</strong> als Levenshtein-Distanz zwischen
-        Pipeline-TEI und Referenz-TEI, normiert auf die Referenz-Laenge. Referenz sind 19
-        manuell in Transkribus erstellte ZBZ-TEIs (scope-bereinigt aus urspruenglich 25). Verglichen
+        Pipeline-TEI und Referenz-TEI, normiert auf die Referenz-Laenge. Referenz sind 25
+        manuell in Transkribus erstellte ZBZ-TEIs; die Fidelity-CER nutzt alle 25, die
+        Volltext-/Scope-Werte das scope-bereinigte Subset (n&nbsp;=&nbsp;19). Verglichen
         wird das Pipeline-Endprodukt (<code>output/tei_final/</code>) mit der menschlichen
         Transkription, nicht der OCR-Rohtext.
       </p>
@@ -64,59 +65,71 @@
     </section>
 
     <section>
-      <h2>Headline-Werte (n = 19, scope-bereinigt)</h2>
+      <h2>Headline-Werte (Fidelity n = 25; Volltext/Scope n = 19 scope-bereinigt)</h2>
       <table>
-        <caption>End-to-End-CER: Pipeline-TEI vs. ZBZ-Referenz-TEI</caption>
+        <caption>CER der Pipeline-TEI gegen die ZBZ-Referenz-TEI, zerlegt in echte Fehler und Mehrtext</caption>
         <thead>
-          <tr><th>Metrik</th><th class="num">Punktwert</th><th class="num">95 %-CI</th></tr>
+          <tr><th>Metrik</th><th class="num">Mean</th><th class="num">Median</th><th class="num">95 %-CI (Mean)</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>End-to-End-CER Mean</strong></td><td class="num">4.10 %</td><td class="num">[2.01, 6.75]</td></tr>
-          <tr><td><strong>End-to-End-CER Median</strong></td><td class="num">1.83 %</td><td class="num">[0.84, 5.14]</td></tr>
-          <tr><td>OCR-only-CER Mean (Mistral)</td><td class="num">18.93 %</td><td class="num">[9.19, 30.57]</td></tr>
-          <tr><td>Pipeline-Verbesserung (paired)</td><td class="num">&minus;14.83 pp</td><td class="num">p = 0.0004</td></tr>
-          <tr><td>HCPR (Diakritik-Erhalt)</td><td class="num">~99 %</td><td class="num">&mdash;</td></tr>
+          <tr><td><strong>Fidelity-CER (primaer)</strong> &mdash; echte Fehler</td><td class="num">4.26 %</td><td class="num">1.83 %</td><td class="num">[2.39, 6.48]</td></tr>
+          <tr><td>Volltext-CER (scope-inkl.)</td><td class="num">22.88 %</td><td class="num">13.13 %</td><td class="num">[11.70, 36.56]</td></tr>
+          <tr><td>Scope-Rate (Pipeline-Mehrtext, kein Fehler)</td><td class="num">16.50 %</td><td class="num">7.16 %</td><td class="num">&mdash;</td></tr>
+          <tr><td>Pipeline-Mehrwert vs. reine OCR (paired, Fidelity)</td><td class="num">&minus;7.12 pp</td><td class="num">&mdash;</td><td class="num">p = 0.14 (n.s.)</td></tr>
+          <tr><td>HCPR (Diakritik-Erhalt)</td><td class="num">~99 %</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
         </tbody>
       </table>
       <p class="note">
-        Median 1.83&nbsp;% heisst: die Haelfte der Dokumente liegt bei oder unter diesem Wert.
-        Die Pipeline reduziert den reinen OCR-Fehler um ~14.8&nbsp;Prozentpunkte
-        (Paired&nbsp;Bootstrap, p&nbsp;&lt;&nbsp;0.01) &mdash; Stages 3&ndash;7 (Layout-QA,
-        TEI-Generierung, Post-Processing) liefern messbaren Mehrwert. Ziel &lt;3.5&nbsp;%
-        Median ist erreicht.
+        <strong>Warum drei Zahlen?</strong> Die ZBZ-Referenz-TEIs sind teils selektive
+        Teiltranskriptionen (z.&nbsp;B. nur eine von mehreren Rezensionen einer Seite); die Pipeline ist
+        oft vollstaendiger. Grosse Text-Einfuegungen der Pipeline (&ge;&nbsp;50 Zeichen) sind daher
+        <em>kein</em> Fehler, sondern Mehrtext (Scope). Die <strong>Fidelity-CER</strong> misst nur
+        die echten Fehler und ist die belastbare Qualitaetszahl: <code>Fidelity + Scope = Volltext</code>.
+        Nach Transkribus-Qualitaetsbaendern (&lt;&nbsp;2&nbsp;% exzellent, 2&ndash;5&nbsp;% gut) ist der
+        Fidelity-Median „exzellent", der Mean „gut".
+      </p>
+      <p class="note">
+        Der fruehere Wert „&minus;14.83&nbsp;pp" fuer den Pipeline-Mehrwert war ein Artefakt des
+        getrimmten Vergleichs und ist zurueckgezogen; der korrigierte Mehrwert (&minus;7.12&nbsp;pp)
+        ist statistisch nicht signifikant (p&nbsp;=&nbsp;0.14, n&nbsp;=&nbsp;19).
       </p>
     </section>
 
     <section>
-      <h2>Stratifiziert</h2>
+      <h2>Stratifiziert (Volltext-CER, scope-inkl., n = 19)</h2>
+      <p>
+        Die folgenden Werte sind die <strong>Volltext-CER</strong> (inkl. Pipeline-Mehrtext), nicht die
+        Fidelity-CER &mdash; eine fidelity-genaue Aufschluesselung pro Stratum liegt derzeit nicht vor.
+        Sie liegen daher deutlich ueber der Fidelity-Headline und sind durch die teils selektiven
+        Referenz-Transkriptionen mitbestimmt.
+      </p>
       <table>
         <caption>Nach Layout-Typ</caption>
         <thead>
-          <tr><th>Typ</th><th class="num">n</th><th class="num">Mean CER</th><th class="num">Median CER</th></tr>
+          <tr><th>Typ</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
         </thead>
         <tbody>
-          <tr><td>A (einspaltig)</td><td class="num">11</td><td class="num">3.7 %</td><td class="num">1.8 %</td></tr>
-          <tr><td>B (zweispaltig)</td><td class="num">5</td><td class="num">5.9 %</td><td class="num">5.1 %</td></tr>
-          <tr><td>C (Monografie)</td><td class="num">2</td><td class="num">4.0 %</td><td class="num">4.0 %</td></tr>
-          <tr><td>D (Spezial)</td><td class="num">1</td><td class="num">0.8 %</td><td class="num">0.8 %</td></tr>
+          <tr><td>A (einspaltig)</td><td class="num">11</td><td class="num">28.5 %</td><td class="num">12.3 %</td></tr>
+          <tr><td>B (zweispaltig)</td><td class="num">5</td><td class="num">20.1 %</td><td class="num">21.9 %</td></tr>
+          <tr><td>C (Monografie)</td><td class="num">2</td><td class="num">3.9 %</td><td class="num">3.9 %</td></tr>
+          <tr><td>D (Spezial)</td><td class="num">1</td><td class="num">13.1 %</td><td class="num">13.1 %</td></tr>
         </tbody>
       </table>
 
       <table>
         <caption>Nach Sprache</caption>
         <thead>
-          <tr><th>Sprache</th><th class="num">n</th><th class="num">Mean CER</th><th class="num">Median CER</th></tr>
+          <tr><th>Sprache</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
         </thead>
         <tbody>
-          <tr><td>Franzoesisch</td><td class="num">11</td><td class="num">4.0 %</td><td class="num">1.8 %</td></tr>
-          <tr><td>Deutsch</td><td class="num">5</td><td class="num">5.9 %</td><td class="num">5.6 %</td></tr>
-          <tr><td>fra/deu gemischt</td><td class="num">3</td><td class="num">2.1 %</td><td class="num">0.8 %</td></tr>
+          <tr><td>Franzoesisch</td><td class="num">14</td><td class="num">24.3 %</td><td class="num">9.6 %</td></tr>
+          <tr><td>Deutsch</td><td class="num">5</td><td class="num">18.9 %</td><td class="num">13.8 %</td></tr>
         </tbody>
       </table>
       <p class="note">
-        Zweispaltige Druckwerke (Typ&nbsp;B) sind das verbleibende Hauptproblem &mdash; in der
-        Regel Spaltenerkennung im Layout-Stadium. Reprocessing-Kandidat ist Dokument&nbsp;1910
-        (16.1&nbsp;% CER): <code>python -m scripts.layout.layout_qa_gemini --mode detect --doc 1910</code>.
+        Zweispaltige Druckwerke (Typ&nbsp;B) bleiben am schwierigsten (hoechster Median) &mdash; meist
+        Spaltenerkennung im Layout-Stadium. Solche Dokumente sind Reprocessing-Kandidaten, z.&nbsp;B.
+        <code>python -m scripts.layout.layout_qa_gemini --mode detect --doc {ID}</code>.
       </p>
     </section>
 
@@ -169,7 +182,7 @@
         <dt>Test-Suite</dt><dd><code>python -m pytest tests/test_cer_statistics.py -q</code></dd>
         <dt>JSON-Generierung</dt><dd><code>python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000</code></dd>
         <dt>Output</dt><dd><code>docs/data/cer_statistics.json</code> (deterministisch bei Seed&nbsp;42, derzeit nicht eingecheckt)</dd>
-        <dt>Methodik-Doku</dt><dd><a href="https://github.com/DHCraft/zbz-ocr-tei/blob/main/knowledge/quality.md" target="_blank" rel="noopener">knowledge/quality.md</a></dd>
+        <dt>Methodik-Doku</dt><dd><a href="https://github.com/chpollin/zbz-ocr-tei/blob/main/knowledge/quality.md" target="_blank" rel="noopener">knowledge/quality.md</a></dd>
         <dt>Schema</dt><dd><code>data/schema/zbz_hersch.rng</code> (TEI P5 4.10.2 projektspezifisch, 551 Definitionen)</dd>
       </dl>
     </section>
@@ -194,7 +207,7 @@
       </div>
       <div class="site-footer__col site-footer__col--right">
         <a href="impressum.html">Impressum</a>
-        <a href="https://github.com/DHCraft/zbz-ocr-tei" target="_blank" rel="noopener" class="site-footer__icon" aria-label="GitHub-Repository">
+        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-footer__icon" aria-label="GitHub-Repository">
           <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         </a>
       </div>
