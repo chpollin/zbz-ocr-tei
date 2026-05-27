@@ -478,17 +478,21 @@ def _extract_entity_set(root, entity_tag: str) -> set[str]:
 
 
 def _compute_cer(ref_text: str, hyp_text: str) -> float:
-    """Berechnet Character Error Rate (Levenshtein-basiert, vereinfacht)."""
+    """Berechnet die Character Error Rate in Prozent (Levenshtein-basiert).
+
+    ``calculate_cer`` (scripts.eval.evaluate_ocr) liefert ein Ratio 0-1; der
+    Validator-Report rechnet ueberall in Prozent (HTML/CLI: ``{cer:.1f}%``),
+    daher * 100. Frueher wurde hier ein nicht existentes ``compute_cer``
+    importiert -- der Import schlug still fehl und der Validator fiel auf die
+    grobe Laengen-Approximation zurueck (O24).
+    """
     if not ref_text:
         return 0.0
-    # Einfache CER: |len_diff| / len_ref als Approximation
-    # Fuer exakte CER muesste Levenshtein berechnet werden
-    # Wir nutzen die bestehende evaluate_ocr Logik falls verfuegbar
     try:
-        from scripts.eval.evaluate_ocr import compute_cer
-        return compute_cer(ref_text, hyp_text)
-    except (ImportError, Exception):
-        # Fallback: Laengen-basierte Approximation
+        from scripts.eval.evaluate_ocr import calculate_cer
+        return round(calculate_cer(ref_text, hyp_text) * 100, 2)
+    except ImportError:
+        # Fallback nur, wenn das Eval-Modul fehlt: grobe Laengen-Approximation (Prozent)
         diff = abs(len(ref_text) - len(hyp_text))
         return round(diff / max(len(ref_text), 1) * 100, 2)
 
