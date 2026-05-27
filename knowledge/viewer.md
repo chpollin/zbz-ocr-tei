@@ -75,9 +75,9 @@ hinzu (Commit „Korpus-Uebersicht + Top-Nav"); die Methode-Seite folgte 2026-05
 | Library | Version | CDN | Zweck |
 |---|---|---|---|
 | OpenSeadragon | 5.0.1 | jsDelivr | Faksimile-Renderer (Pan/Zoom/Rotate) im View-Modus (E58) |
-| JSZip | 3.10.1 | cdnjs | ZIP-Bundle fuer Multi-Datei-Export (siehe `Persistenz / Export`) |
+| JSZip | 3.10.1 | cdnjs | GEPLANT (E61) fuer Multi-Datei-Export, im Code noch nicht eingebunden |
 
-Beide Libraries werden zur Laufzeit aus dem CDN nachgeladen. Keine npm/Build-Pipeline.
+OpenSeadragon wird zur Laufzeit aus dem CDN nachgeladen; JSZip ist geplant (E61), aber noch nicht eingebunden. Keine npm/Build-Pipeline.
 
 ---
 
@@ -173,7 +173,10 @@ python -m scripts.tei.tei_unified --doc {DOC} --reassemble ; python -m scripts.e
 Der frueher vorhandene FastAPI-Curation-Server (`scripts/server/curation_server.py`) wurde mit E57
 geloescht, weil das Frontend ihn seit E56 nicht mehr ansteuert.
 
-### Export-Modul (in Umbau, geplant Etappe 2.9 + 1.6)
+### Export-Modul (GEPLANT, im Code noch nicht implementiert)
+
+> Stand 2026-05-27: Das hier beschriebene Export-Modul ist Roadmap. Im Frontend gibt es
+> aktuell weder ein JSZip-CDN-Tag noch ein `ZBZ.Export` — nur den Per-Seite-Einzel-Download.
 
 Der Per-Seite-Einzel-Download (Layout/Text/TEI in der Doc-Subbar) bleibt erhalten.
 Zusaetzlich kommt ein Komplett-Export:

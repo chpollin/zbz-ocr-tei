@@ -49,7 +49,7 @@
       <ul class="feature-list">
         <li><strong>Inspektion</strong> &mdash; Faksimile, Layout-Regionen und Transkription nebeneinander, fuer jede Seite jedes Dokuments.</li>
         <li><strong>Manuelle Korrektur</strong> &mdash; Layout-Editor (Regionen verschieben, typisieren, Reihenfolge), Text-Editor (OCR oder TEI), Persistenz via Datei-Download.</li>
-        <li><strong>Engine-Vergleich</strong> &mdash; Umschalten zwischen Mistral, Gemini A/B und LLM (Haiku) pro Seite.</li>
+        <li><strong>Workflow-Status</strong> &mdash; Ampel pro Strom (OCR / Layout / TEI) und Status je Seite, im Manifest mit Bearbeitungs-History (E66/E67).</li>
         <li><strong>Demonstration</strong> &mdash; klare Sicht fuer ZBZ und akademische Stakeholder auf den aktuellen Pipeline-Stand.</li>
       </ul>
     </section>
@@ -62,18 +62,18 @@
         <dt>Gegenstand</dt><dd>Automatisierte OCR + TEI-Annotation fuer den Hersch-Nachlass</dd>
         <dt>Korpus</dt><dd>286 PDF-Texte, ~7.200 Seiten, 1931&ndash;2010, Fokus 1970er/1980er</dd>
         <dt>Sprachen</dt><dd>Franzoesisch (66 %), Deutsch (30 %), Englisch, Italienisch</dd>
-        <dt>Status</dt><dd>285/285 Dokumente schema-valide, 242 Approved, 43 With Notes, 0 Needs Review</dd>
+        <dt>Status</dt><dd>285/285 Dokumente schema-valide; Workflow-Status je Strom (OCR / Layout / TEI) aktuell durchgehend &bdquo;unverifiziert&ldquo; &mdash; Pipeline-Output vorhanden, fachliche Verifikation offen</dd>
       </dl>
     </section>
 
     <section>
       <h2>Pipeline</h2>
       <ol class="steps">
-        <li><strong>Bilder</strong> &mdash; <code>scripts/extract_pages.py</code> erzeugt PNGs aus den PDF-Scans (300 dpi).</li>
+        <li><strong>Bilder</strong> &mdash; <code>scripts/edition/extract_pages.py</code> erzeugt PNGs aus den PDF-Scans.</li>
         <li><strong>OCR</strong> &mdash; Mistral Document AI 2512 (Azure).</li>
         <li><strong>Layout</strong> &mdash; Docling 2.75 fuer Region-Erkennung, Gemini 3.1 Flash Lite als QA-/Detect-Validator.</li>
         <li><strong>TEI</strong> &mdash; Unified Pipeline aus Scaffold, Gemini-Refinement und Assembly; valide gegen <code>zbz_hersch.rng</code>.</li>
-        <li><strong>Screening</strong> &mdash; agentenbasiertes 7-Schichten-Review mit Statuseintrag in <code>&lt;revisionDesc&gt;</code>.</li>
+        <li><strong>Workflow-Status</strong> &mdash; Status pro Strom (OCR / Layout / TEI) im Manifest, projiziert in <code>&lt;revisionDesc&gt;</code> (E66/E67, ersetzt das fr&uuml;here Agent-Screening).</li>
       </ol>
     </section>
 
@@ -96,8 +96,7 @@
         von Editor-Aenderungen erfolgt als Datei-Download.
       </p>
       <p>
-        Volumen: 3 HTML-Seiten, 7 JS-Module (~1.700 Z.), 3 CSS-Dateien (~1.100 Z.). Daten:
-        catalog.json plus per-Seiten-Mirror unter
+        Daten: catalog.json plus per-Seiten-Mirror unter
         <code>data/pages/</code> (alle 285 Docs) und Thumbnails unter <code>data/thumbs/</code>.
       </p>
     </section>

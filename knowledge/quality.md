@@ -113,20 +113,20 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 - **Statistik:** BCa-Bootstrap (B=10000, Seed=42) fuer alle CIs; Paired Bootstrap fuer E2E vs OCR-only; Chi-Square + KS fuer Selektionsbias.
 - **Werkzeug:** `scripts/eval/cer_statistics_full.py` (Orchestrator) + `scripts/eval/cer_statistics.py` (Library mit 55 Tests). Output: `docs/data/cer_statistics.json` (deterministisch bei `seed=42`).
 
-### Headline-Werte (n=19 scope-clean, BCa, 2026-04-27)
+### Headline-Werte (HISTORISCH, E54-Stand 2026-04-27 — durch E70 ueberholt; aktuelle Fidelity-Werte siehe oben)
 
 | Metrik | Punktwert | 95%-CI |
 |---|---|---|
 | **End-to-End-CER Mean** | **4.10 %** | [2.01 %, 6.75 %] |
 | **End-to-End-CER Median** | **1.83 %** | [0.84 %, 5.14 %] |
 | **OCR-only-CER Mean** (Mistral Stage 2) | 18.93 % | [9.19 %, 30.57 %] |
-| **Pipeline-Verbesserung** (paired) | **−14.83 pp** | p = 0.0004, mehr als 80% der Docs verbessert |
+| **Pipeline-Verbesserung** (paired) | **−14.83 pp** | ZURUECKGEZOGEN: Artefakt des getrimmten Vergleichs; aktuell -7.12 pp (p=0.14, n.s.) |
 | **HCPR (Diakritik-Erhalt) Mean** | ~99 % | siehe `domain_metrics` im JSON |
 
 **Lesehilfe:**
 
 - Median 1.83% heisst: die Haelfte aller Docs hat CER ≤ 1.83% — State-of-the-Art fuer historischen Druck.
-- Paired Test: Pipeline reduziert CER gegenueber rohem Mistral-OCR um ~14.8pp (p < 0.01). Stages 3-7 (Layout-QA, TEI-Generation, Post-Processing) liefern messbaren Mehrwert.
+- Paired Test (ueberholt): die fruehere Angabe ~14.8pp ist zurueckgezogen (Artefakt des getrimmten Vergleichs). Korrigierter Mehrwert -7.12pp, statistisch nicht signifikant (p=0.14, n=19) — siehe E70-Sektion oben.
 - HCPR 99.32%: praktisch alle franzoesischen/deutschen Diakritika werden korrekt erhalten.
 
 ### Reduktions-Timeline

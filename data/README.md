@@ -4,8 +4,8 @@ Input and reference data. Two categories with different versioning rules:
 
 - **`source/`** — delivered by ZBZ, immutable input ("what we started with").
   Mostly **not versioned** (in `.gitignore`); only the editorial guidelines (text) are tracked.
-- **everything else** — project-built authority, **git-tracked**: schema, entity indexes,
-  curated gold TEI. Plus a generated classification cache.
+- **everything else** — project-built authority, **git-tracked**: schema and curated
+  gold TEI. Plus a generated classification cache.
 
 ## Structure
 
@@ -19,7 +19,6 @@ data/
 │   └── guidelines/              # editorial guidelines (text + DTA link)            [tracked]
 │
 ├── schema/                      # zbz_hersch.rng (project-specific TEI schema)      [tracked]
-├── entities/                    # entity authority indexes (person/org/place/work)  [tracked]
 ├── curated_tei/                 # curated gold-standard TEI                          [tracked]
 └── doc_metadata.json            # GENERATED Gemini classification (committed cache)  [tracked]
 ```
@@ -48,5 +47,5 @@ See [knowledge/projekt.md](../knowledge/projekt.md) for the funnel and
 ## Note
 
 `source/` is excluded from Git (sensitive / large files). A fresh clone therefore carries
-the project-built authority (`schema/`, `entities/`, `curated_tei/`) and the classification
+the project-built authority (`schema/`, `curated_tei/`) and the classification
 cache, but not the raw ZBZ delivery.

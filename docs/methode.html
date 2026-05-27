@@ -116,7 +116,7 @@
       <p class="note">
         Zweispaltige Druckwerke (Typ&nbsp;B) sind das verbleibende Hauptproblem &mdash; in der
         Regel Spaltenerkennung im Layout-Stadium. Reprocessing-Kandidat ist Dokument&nbsp;1910
-        (16.1&nbsp;% CER): <code>python -m scripts.layout_qa_gemini --mode detect --doc 1910</code>.
+        (16.1&nbsp;% CER): <code>python -m scripts.layout.layout_qa_gemini --mode detect --doc 1910</code>.
       </p>
     </section>
 
@@ -129,7 +129,7 @@
         <tbody>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 + Gemini 2.0 Post-Korrektur</td><td>deu Fraktur</td><td class="num">0.84 %</td></tr>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>Gemini 2.0 Flash zero-shot</td><td>deu</td><td class="num">1.27 %</td></tr>
-          <tr><td><strong>Hersch-Pipeline (eigen)</strong></td><td>Mistral + Docling + Gemini-TEI + NER</td><td>fra/deu</td><td class="num"><strong>1.83 %</strong></td></tr>
+          <tr><td><strong>Hersch-Pipeline (eigen)</strong></td><td>Mistral + Docling + Gemini-TEI</td><td>fra/deu</td><td class="num"><strong>1.83 %</strong></td></tr>
           <tr><td>arXiv 2510.06743</td><td>Gemini 2.5 Pro</td><td>rus 18.&nbsp;Jh.</td><td class="num">3.36 %</td></tr>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 allein</td><td>deu</td><td class="num">3.67 %</td></tr>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>GPT-4o direkt</td><td>deu</td><td class="num">6.31 %</td></tr>
@@ -164,10 +164,10 @@
     <section>
       <h2>Werkzeuge &amp; Reproduzierbarkeit</h2>
       <dl class="meta-list">
-        <dt>Statistik-Library</dt><dd><code>scripts/cer_statistics.py</code> (55 Tests gruen)</dd>
-        <dt>Orchestrator</dt><dd><code>scripts/cer_statistics_full.py</code></dd>
+        <dt>Statistik-Library</dt><dd><code>scripts/eval/cer_statistics.py</code> (55 Tests gruen)</dd>
+        <dt>Orchestrator</dt><dd><code>scripts/eval/cer_statistics_full.py</code></dd>
         <dt>Test-Suite</dt><dd><code>python -m pytest tests/test_cer_statistics.py -q</code></dd>
-        <dt>JSON-Generierung</dt><dd><code>python -m scripts.cer_statistics_full --seed 42 --bootstrap-n 10000</code></dd>
+        <dt>JSON-Generierung</dt><dd><code>python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000</code></dd>
         <dt>Output</dt><dd><code>docs/data/cer_statistics.json</code> (deterministisch bei Seed&nbsp;42, derzeit nicht eingecheckt)</dd>
         <dt>Methodik-Doku</dt><dd><a href="https://github.com/DHCraft/zbz-ocr-tei/blob/main/knowledge/quality.md" target="_blank" rel="noopener">knowledge/quality.md</a></dd>
         <dt>Schema</dt><dd><code>data/schema/zbz_hersch.rng</code> (TEI P5 4.10.2 projektspezifisch, 551 Definitionen)</dd>

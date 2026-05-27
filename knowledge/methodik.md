@@ -115,7 +115,7 @@ Die untenstehende Liste ist die methodisch geordnete Auswahl (Diagnose → Korre
 ```bash
 python -m scripts.tei.tei_validator --doc {DOC_ID}            # TEI-Validierung
 python -m scripts.tei.tei_validator --all --html-report        # Korpus-Report
-python -m scripts.tei.tei_validator --compare-ref              # Referenz-Vergleich (11 Docs)
+python -m scripts.tei.tei_validator --compare-ref              # Referenz-Vergleich (25 ZBZ-Referenz-TEIs)
 python -m scripts.eval.evaluate_ocr --all                           # OCR-Metriken
 python -m scripts.eval.quality_proxy --all --html                   # Quality Proxy (Hit Rate)
 python -m scripts.eval.completeness_check --html                    # Vollstaendigkeits-Check (Seiten)
