@@ -14,7 +14,7 @@ Pipeline-Stufen und Datenfluss: [../knowledge/pipeline.md](../knowledge/pipeline
 |---|---|---|
 | *(top-level)* | geteilte Basis | `config.py` (Pfade, Modelle, Konstanten), `utils.py` |
 | `core/` | geteilte Loader | `loaders.py` (OCR/Layout-Discovery), `masterfile.py` (Masterfile/MMSID-Lookup, E69) |
-| `ocr/` | Textschicht | `ocr_pipeline` (Mistral-Basis + opt-in Gemini-Vision-OCR `-e gemini`), `gemini_ocr_correct`, `llm_postprocess` (Haiku, optional E17), `ocr_dedup`, `classify_docs` (Gemini-Metadaten) |
+| `ocr/` | Textschicht | `ocr_pipeline` (Mistral-Basis + opt-in Gemini-Vision-OCR `-e gemini`), `gemini_ocr_correct`, `llm_postprocess` (Haiku, optional E17), `classify_docs` (Gemini-Metadaten) |
 | `layout/` | Layout + Export | `run_layout_analysis` (Docling lokal), `run_layout_cloud` (docling-serve), `layout_qa_gemini` (QA/Detect/Auto), `generate_layout_overlays`, `page_xml_generator` + `mets_generator` |
 | `tei/` | TEI-Erzeugung | `tei_unified` (Orchestrator), `tei_step1/2/3` (Scaffold/Gemini/Assembly), `pb_split` (`<pb>`-Segmentierung, E69), `tei_generator`, `tei_mapping_prompt`, `tei_xml_utils`, `tei_validator`, `tei_add_revision`, `tei_blank_marker`, `tei_status_marker` (E66) |
 | `eval/` | Qualitaet | `evaluate_ocr` (CER/WER-Engine), `eval_report` (HTML), `benchmark_cer`, `cer_statistics` + `_runner` + `_full` (BCa/Paired/HCPR), `quality_proxy`, `completeness_check`, `corpus_audit` |

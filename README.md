@@ -68,7 +68,7 @@ zbz-ocr-tei/
   scripts/                # Python pipeline (grouped by domain; inventory: scripts/README.md)
     config.py             # Central configuration
     utils.py              # Shared utilities
-    ocr/                  # OCR + correction: ocr_pipeline, gemini_ocr_correct, llm_postprocess, ocr_dedup, classify_docs
+    ocr/                  # OCR + correction: ocr_pipeline, gemini_ocr_correct, llm_postprocess, classify_docs
     layout/               # Layout analysis (Docling/Gemini) + PAGE-XML/METS + overlays
     tei/                  # TEI-XML pipeline (scaffold, Gemini, assembly, validator, status marker)
     eval/                 # CER benchmark + statistics, quality proxy, corpus audit, HTML report

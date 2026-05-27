@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OCR-Pipeline: Mistral Document AI + Docling + Gemini
+OCR-Pipeline: Mistral Document AI + Gemini
 
 Unterstuetzt mehrere OCR-Engines fuer verschiedene Dokumenttypen.
 
@@ -13,7 +13,6 @@ Usage:
 
     # Bestimmte Engine
     python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2310.pdf --engine mistral
-    python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2530.pdf --engine docling
 """
 
 import argparse
@@ -30,10 +29,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from scripts.config import (
-    PROJECT_ROOT, SCANS_DIR, OCR_RESULTS_DIR, MISTRAL_RESULTS_DIR,
+    PROJECT_ROOT, SCANS_DIR, MISTRAL_RESULTS_DIR,
     MISTRAL_MODEL,
     MISTRAL_MAX_PAGES_PER_REQUEST, MISTRAL_TIMEOUT_SECONDS,
-    TWO_COLUMN_DOCS,
     GEMINI_API_KEY, GEMINI_OCR_MODEL,
 )
 from scripts.utils import check_gpu, load_env, pdf_to_images
@@ -285,46 +283,6 @@ class GeminiOCR:
         }
 
 
-class DoclingOCR:
-    """Docling Engine."""
-
-    def __init__(self):
-        self.converter = None
-
-    def load(self):
-        """Laedt den Converter."""
-        if self.converter is not None:
-            return
-
-        try:
-            from docling.document_converter import DocumentConverter
-            print("Lade Docling...")
-            self.converter = DocumentConverter()
-            print("Docling geladen.")
-        except ImportError as e:
-            raise ImportError(f"Docling nicht installiert: {e}\nInstalliere mit: pip install docling")
-
-    def process_pdf(self, pdf_path: Path, output_dir: Path) -> dict:
-        """Verarbeitet ein PDF."""
-        self.load()
-
-        print(f"  Docling konvertiert {pdf_path.name}...")
-        result = self.converter.convert(str(pdf_path))
-        markdown = result.document.export_to_markdown()
-
-        output_file = output_dir / f"{pdf_path.stem}_docling.md"
-        output_file.write_text(markdown, encoding="utf-8")
-
-        page_count = markdown.count("---") + 1
-
-        return {
-            "doc_id": pdf_path.stem,
-            "pages": page_count,
-            "markdown": markdown,
-            "engine": "docling"
-        }
-
-
 def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     """
     Verarbeitet ein PDF mit der gewaehlten Engine.
@@ -332,15 +290,12 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     Args:
         pdf_path: Pfad zum PDF
         output_dir: Ausgabeverzeichnis
-        engine: "mistral", "docling", "gemini", oder "auto"
+        engine: "mistral", "gemini", oder "auto"
     """
     output_dir.mkdir(parents=True, exist_ok=True)
 
     if engine == "auto":
-        if pdf_path.stem in TWO_COLUMN_DOCS:
-            engine = "docling"
-        else:
-            engine = "mistral"
+        engine = "mistral"
 
     # Skip if first page already exists (resume-capable)
     first_page = output_dir / f"{pdf_path.stem}_p1.md"
@@ -356,9 +311,6 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     if engine == "mistral":
         ocr = MistralOCR()
         return ocr.process_pdf(pdf_path, output_dir)
-    elif engine == "docling":
-        ocr = DoclingOCR()
-        return ocr.process_pdf(pdf_path, output_dir)
     elif engine == "gemini":
         ocr = GeminiOCR()
         return ocr.process_pdf(pdf_path, output_dir)
@@ -367,12 +319,12 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="OCR-Pipeline: Mistral + Docling + Gemini")
+    parser = argparse.ArgumentParser(description="OCR-Pipeline: Mistral + Gemini")
     parser.add_argument("--input", "-i", type=Path, help="PDF-Datei")
     parser.add_argument("--all", action="store_true", help="Alle PDFs verarbeiten")
     parser.add_argument(
         "--engine", "-e",
-        choices=["auto", "mistral", "docling", "gemini"],
+        choices=["auto", "mistral", "gemini"],
         default="auto",
         help="OCR-Engine (default: auto). 'gemini' = Vision-OCR (Ausnahme, schreibt nach mistral_results/)"
     )
@@ -393,15 +345,13 @@ def main():
     # .env laden
     load_env()
 
-    # Pfade: Engine-basiert (Mistral/Gemini -> mistral_results/, Docling -> ocr_results/)
+    # Alle Engines (auto/mistral/gemini) schreiben die Basis-Textschicht nach
+    # mistral_results/, wo load_ocr_text() sie als Basis findet. (Gemini-OCR ist der
+    # Ausnahme-Ersatz fuer die Mistral-Basis-OCR -> gleiches Verzeichnis.)
     if args.output:
         output_dir = args.output
-    elif args.engine in ("mistral", "gemini"):
-        # Gemini-OCR ist der Ausnahme-Ersatz fuer die Mistral-Basis-OCR -> gleiches Verzeichnis,
-        # damit load_ocr_text() es als Basis-Textschicht findet.
-        output_dir = MISTRAL_RESULTS_DIR
     else:
-        output_dir = OCR_RESULTS_DIR
+        output_dir = MISTRAL_RESULTS_DIR
 
     # PDFs sammeln
     if args.input:
@@ -417,14 +367,9 @@ def main():
         return 1
 
     print("=" * 60)
-    print("OCR-Pipeline: Mistral Document AI + Docling + Gemini")
+    print("OCR-Pipeline: Mistral Document AI + Gemini")
     print("=" * 60)
-
-    gpu = check_gpu()
-    if gpu["available"]:
-        print(f"GPU: {gpu['name']} ({gpu['vram_gb']:.1f} GB)")
-    else:
-        print("WARNUNG: Keine GPU - lokale Docling-Verarbeitung wird langsam sein")
+    # GPU-Status nur auf explizite Anfrage (--check-gpu); die Cloud-OCR braucht keine GPU.
 
     results = []
     for pdf_path in pdfs:
