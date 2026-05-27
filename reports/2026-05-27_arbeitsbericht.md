@@ -145,10 +145,9 @@ Aufruf jeweils als Modul (`python -m scripts.<paket>.<modul>`).
 
 **Texterkennung**
 
-- `scripts/ocr/ocr_pipeline.py` steuert die Texterkennung und ruft je nach Dokumenttyp Mistral, Docling oder Gemini auf.  
+- `scripts/ocr/ocr_pipeline.py` steuert die Texterkennung mit Mistral als Basis oder optional Gemini-Vision-OCR (`-e gemini`).  
 - `scripts/ocr/gemini_ocr_correct.py` liefert Ersatz- und Korrektur-OCR mit Gemini in zwei Varianten, nur aus Text oder zusätzlich mit dem Scan-Bild.  
 - `scripts/ocr/llm_postprocess.py` korrigiert den OCR-Text optional mit Claude Haiku nach.  
-- `scripts/ocr/ocr_dedup.py` entfernt OCR-Halluzinationen wie Wiederholungs-Loops und Zeichen-Artefakte.  
 - `scripts/ocr/classify_docs.py` bestimmt aus den ersten Seiten per Gemini die Dokument-Metadaten wie Sprache, Typ, Titel, Autor und Datum.  
 - `scripts/core/loaders.py` legt fest, welcher OCR-Datenstrom Vorrang hat, und ermittelt die zu verarbeitenden Seiten.
 

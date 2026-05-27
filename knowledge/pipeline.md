@@ -53,7 +53,7 @@ aus Layout-JSON + OCR ab.
 |---|---|---|---|---|
 | 1 | PDF → PNG | `scripts/edition/extract_pages.py` | PNG (`docs/images/`) | Production |
 | 1a | Dokumentklassifikation (Gemini) | `scripts/ocr/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (285 docs, E27) |
-| 2 | OCR | `scripts/ocr/ocr_pipeline.py` (`-e mistral` Basis, `-e gemini` opt-in Vision-OCR) | Page-Markdown (`output/mistral_results/`, `output/ocr_results/`) | Production |
+| 2 | OCR | `scripts/ocr/ocr_pipeline.py` (`-e mistral` Basis, `-e gemini` opt-in Vision-OCR) | Page-Markdown (`output/mistral_results/`) | Production |
 | 2a | LLM-Postkorrektur (optional) | `scripts/ocr/llm_postprocess.py` | `output/llm_corrected_c/` | Production, E17: optional |
 | 2b | Gemini OCR-Korrektur (optional) | `scripts/ocr/gemini_ocr_correct.py` | `output/gemini_corrected_a/` / `_b/` | Sample (E29) |
 | 3 | Layout-Analyse | `scripts/layout/run_layout_analysis.py` (local GPU) oder `run_layout_cloud.py` (docling-serve) | Regionen + BBox (`output/layout/`) | Production |

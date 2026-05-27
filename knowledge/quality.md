@@ -106,7 +106,7 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 ### Methodik (Kurzfassung)
 
 - **Referenz:** 25 ZBZ-Referenz-TEIs (`data/source/reference_tei/`), manuell via Transkribus erstellt.
-- **Hypothese:** Pipeline-TEIs (`output/tei_final/`), aus 7-Stufen-Pipeline.
+- **Hypothese:** Pipeline-TEIs (`output/tei_final/`), aus der 6-Stufen-Pipeline.
 - **Textextraktion:** mit `<choice>`-Korrektur, Fussnoten exkludiert, symmetrische Unicode-Normalisierung.
 - **Distanzmass:** `Levenshtein(ref, hyp) / max(1, |ref|)` via `rapidfuzz`.
 - **Alignment:** content-aligned via `evaluate_tei_vs_tei()` (immun gegen Page-Numbering-Drift, siehe §Lessons).
@@ -121,7 +121,7 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 | **End-to-End-CER Mean** | **4.10 %** | [2.01 %, 6.75 %] |
 | **End-to-End-CER Median** | **1.83 %** | [0.84 %, 5.14 %] |
 | **OCR-only-CER Mean** (Mistral Stage 2) | 18.93 % | [9.19 %, 30.57 %] |
-| **Pipeline-Verbesserung** (paired) | **−14.83 pp** | ZURUECKGEZOGEN: Artefakt des getrimmten Vergleichs; aktuell -7.12 pp (p=0.14, n.s.) |
+| **Pipeline-Verbesserung** (paired) | **−14.83 pp** | ZURUECKGEZOGEN: Artefakt des getrimmten Vergleichs; aktuell -7.90 pp (p=0.07, n=25, n.s.) |
 | **HCPR (Diakritik-Erhalt) Mean** | ~99 % | siehe `domain_metrics` im JSON |
 
 **Lesehilfe:**
@@ -712,7 +712,7 @@ ein Mess-Artefakt.
 
 ## Limitations (was wir explizit nicht koennen)
 
-- **n = 19 Docs Ground Truth** — Korpus-Aussagen sind Schaetzungen, nicht Messungen.
+- **n = 25 Docs Ground Truth** — Korpus-Aussagen sind Schaetzungen, nicht Messungen.
 - **Selection-Bias n_chars (p = 0.041)** — Ref-Subset im Char-Volumen abweichend.
 - **Multi-Norm-Regimes wenig differenziert** — wegen vorgeschalteter Normalisierung in `normalize_for_comparison()`.
 - **Stability nicht gemessen** — LLM-Non-Determinismus-Varianz unbekannt.
