@@ -56,6 +56,7 @@
         filterReset:    $('#filter-reset'),
         head:           $('#doc-head'),
         rows:           $('#doc-rows'),
+        count:          $('#result-count'),
         generated:      $('#generated-info')
     };
 
@@ -119,7 +120,23 @@
 
     // ============================================================ Filter + Sort ============================================================
 
+    // Der Strom-Filter grenzt nur ein, AUF WELCHEN Strom sich ein gewaehlter Status
+    // bezieht. Ohne Status ist er wirkungslos -> bis dahin deaktivieren (und einen
+    // verwaisten ?stream= aus der URL raeumen), damit er nicht aktiv wirkt ohne Effekt.
+    function syncStreamControl() {
+        const hasStatus = !!state.filters.status;
+        refs.filterStream.disabled = !hasStatus;
+        refs.filterStream.title = hasStatus
+            ? 'Strom, auf den sich der Status bezieht'
+            : 'Erst einen Status waehlen, dann den Strom eingrenzen';
+        if (!hasStatus && state.filters.stream) {
+            state.filters.stream = '';
+            refs.filterStream.value = '';
+        }
+    }
+
     function applyFilters() {
+        syncStreamControl();
         const q = state.filters.query.trim().toLowerCase();
         const fStream = state.filters.stream;
         const fStatus = state.filters.status;
@@ -156,7 +173,14 @@
                 case 'id':     av = parseInt(a.id, 10); bv = parseInt(b.id, 10); break;
                 case 'title':  av = (a.title || '').toLowerCase(); bv = (b.title || '').toLowerCase(); break;
                 case 'author': av = (a.author || '').toLowerCase(); bv = (b.author || '').toLowerCase(); break;
-                case 'date':   av = a.date || ''; bv = b.date || ''; break;
+                case 'date': {
+                    av = a.date || ''; bv = b.date || '';
+                    // Leere Datumswerte (88/285) immer ans Ende, unabhaengig von der Richtung.
+                    if (!av && !bv) return 0;
+                    if (!av) return 1;
+                    if (!bv) return -1;
+                    break;
+                }
                 case 'lang':   av = a.lang || ''; bv = b.lang || ''; break;
                 case 'type':   av = a.type || ''; bv = b.type || ''; break;
                 case 'form':   av = a.pub_form || ''; bv = b.pub_form || ''; break;
@@ -199,6 +223,7 @@
     // ============================================================ Render ============================================================
 
     function renderRows() {
+        updateCount();
         refs.rows.innerHTML = '';
         if (state.filtered.length === 0) {
             refs.rows.innerHTML = '<div class="doc-table__empty">Keine Dokumente fuer diese Filter.</div>';
@@ -207,6 +232,15 @@
         const frag = document.createDocumentFragment();
         state.filtered.forEach(d => frag.appendChild(rowFor(d)));
         refs.rows.appendChild(frag);
+    }
+
+    function updateCount() {
+        if (!refs.count) return;
+        const n = state.filtered.length;
+        const total = state.docs.length;
+        refs.count.textContent = (n === total)
+            ? total + ' Dokumente'
+            : n + ' von ' + total + ' Dokumenten';
     }
 
     function rowFor(d) {

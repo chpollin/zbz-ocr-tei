@@ -85,6 +85,14 @@
   padding-right: 22px;  /* Platz fuer den nativen Caret-Pfeil */
 }
 
+/* Treffer-Zaehler: rechtsbuendig in der Filterzeile, dezent. */
+.filter-bar__count {
+  margin-left: auto;
+  font-size: var(--h-sm);
+  color: var(--h-text-muted);
+  white-space: nowrap;
+}
+
 #filter-reset.btn--ghost {
   border: 1px solid var(--h-border-emphasis);
   background: transparent;

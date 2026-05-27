@@ -36,7 +36,8 @@
         _currentEditedText: null,
         _isBlank: false,      // Leerseite (Vorsatz/Rueckseite/Durchschlag) — kein echter Text
         manifest: null,       // E66: Pro-Objekt-Manifest mit streams.{ocr,layout,tei}.{status,history}
-        manifestDirty: false  // ungespeicherte Status-Aenderungen (Download faellig)
+        manifestDirty: false, // ungespeicherte Status-Aenderungen (Download faellig)
+        dirtyStreams: new Set() // welche Stroeme seit dem letzten Manifest-Download geaendert wurden
     };
 
     // E66/E67: Workflow-Status pro Strom -- unverifiziert -> in_arbeit -> bearbeitet -> fertig -> unverifiziert
@@ -81,6 +82,7 @@
         statusLayout:   $('#status-layout'),
         statusTei:      $('#status-tei'),
         statusHint:     $('#status-hint'),
+        statusAuthor:   $('#status-author'),
         btnDlManifest:  $('#btn-download-manifest')
     };
 
@@ -196,13 +198,12 @@
         refs.btnDlManifest.disabled = false;
     }
 
+    // Kuerzel aus dem Inline-Feld (Subbar) bzw. localStorage. KEIN blockierendes
+    // prompt() mehr -- das fror beim ersten Edit-Toggle die ganze Seite ein.
     function getAuthor() {
-        let by = (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
-        if (!by) {
-            by = (prompt('Kuerzel fuer Bearbeitungs-Eintraege (z.B. CP, JH):', '') || '').trim();
-            if (by && window.localStorage) localStorage.setItem('zbz.workflow.by', by);
-        }
-        return by || 'anonym';
+        const fromField = refs.statusAuthor && refs.statusAuthor.value.trim();
+        const fromStore = (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
+        return fromField || fromStore || 'anonym';
     }
 
     function streamStatus(stream) {
@@ -220,7 +221,7 @@
             btn.disabled = !enable;
             const status = streamStatus(stream);
             // Klassen aktualisieren (alte Status-Klassen wegnehmen)
-            btn.className = 'status-pill status-pill--' + status + (state.manifestDirty ? ' status-pill--dirty' : '');
+            btn.className = 'status-pill status-pill--' + status + (state.dirtyStreams.has(stream) ? ' status-pill--dirty' : '');
             const sm = (state.manifest && state.manifest.streams && state.manifest.streams[stream]) || {};
             const history = sm.history || [];
             const last = history.length ? history[history.length - 1] : null;
@@ -258,6 +259,7 @@
             note: (opts && opts.note) || null
         });
         state.manifestDirty = true;
+        state.dirtyStreams.add(stream);
         renderStatusPills();
     }
 
@@ -283,6 +285,7 @@
             () => ZBZ.Download.manifest(state.doc.id, state.manifest)
         );
         state.manifestDirty = false;
+        state.dirtyStreams.clear();
         renderStatusPills();
     }
 
@@ -504,6 +507,8 @@
         if (!state.layout) state.layout = { regions: [] };
         state.layout.regions = regions;
         refs.regionCount.textContent = regions.length + ' Regionen (geaendert)';
+        // E66: erste echte Layout-Aenderung -> Strom auf in_arbeit
+        autoStartArbeit('layout');
     }
 
     // ============================================================ Text-Panel ============================================================
@@ -604,6 +609,8 @@
         if (state.textEdit && ZBZ.TranscriptionEditor) {
             ZBZ.TranscriptionEditor.attach(refs.textBody, state.textSource, (newContent) => {
                 state._currentEditedText = newContent;
+                // E66: erste echte Text-Aenderung -> zugehoerigen Strom auf in_arbeit
+                autoStartArbeit(state.textSource === 'ocr' ? 'ocr' : 'tei');
             });
         }
     }
@@ -641,8 +648,8 @@
             if (ZBZ.LayoutEditor) ZBZ.LayoutEditor.detach();
             // Faksimile-Variante wechselt: OSD (view) <-> img (edit). renderFacsimileImg() attached Editor.
             renderFacsimile();
-            // E66: Auto-Uebergang offen -> in_arbeit, wenn der Layout-Edit-Modus zum ersten Mal greift
-            if (state.imageEdit) autoStartArbeit('layout');
+            // Hinweis: Der Status-Uebergang offen -> in_arbeit erfolgt erst bei der ERSTEN
+            // echten Region-Aenderung (onLayoutChanged), nicht schon beim Oeffnen des Editors.
         }
     }
 
@@ -663,12 +670,8 @@
         } else {
             ensureTextEditableState();
         }
-
-        // E66: Auto-Uebergang offen -> in_arbeit fuer den Strom, der gerade editiert wird.
-        // textSource bestimmt, welcher Strom: ocr-Quelle -> OCR-Strom, tei/xml -> TEI-Strom.
-        if (state.textEdit) {
-            autoStartArbeit(state.textSource === 'ocr' ? 'ocr' : 'tei');
-        }
+        // Hinweis: Der Status-Uebergang offen -> in_arbeit erfolgt erst bei der ERSTEN
+        // echten Text-Aenderung (onChange in ensureTextEditableState), nicht beim Oeffnen.
     }
 
     function setTextSource(src) {
@@ -760,6 +763,17 @@
         refs.btnDlLayout.addEventListener('click', downloadLayout);
         refs.btnDlText.addEventListener('click', downloadText);
         refs.btnDlTei.addEventListener('click', downloadTei);
+
+        // Kuerzel-Feld: aus localStorage vorbelegen, Aenderungen lokal persistieren.
+        if (refs.statusAuthor) {
+            refs.statusAuthor.value = (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
+            refs.statusAuthor.addEventListener('input', () => {
+                const v = refs.statusAuthor.value.trim();
+                if (!window.localStorage) return;
+                if (v) localStorage.setItem('zbz.workflow.by', v);
+                else localStorage.removeItem('zbz.workflow.by');
+            });
+        }
 
         // E66: Status-Pills klick = naechster Status (Cycle), Manifest-Download
         refs.statusOcr.addEventListener('click', () => cycleStatus('ocr'));

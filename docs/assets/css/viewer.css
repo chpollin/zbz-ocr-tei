@@ -97,6 +97,21 @@
 .status-controls__actions {
   display: flex;
   gap: var(--h-space-xs);
+  align-items: center;
+}
+.status-controls__author {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--h-xs);
+  color: var(--h-text-muted);
+  white-space: nowrap;
+}
+.status-controls__author .input {
+  width: 6.5em;
+  height: 28px;
+  padding: 0 8px;
+  font-size: var(--h-sm);
 }
 .status-pill {
   display: inline-flex;
@@ -557,7 +572,8 @@
 .xml-view {
   font-family: var(--h-font-mono);
   font-size: var(--h-xs);
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   overflow: auto;
   background: transparent;
   color: var(--h-text-secondary);
@@ -691,4 +707,11 @@
   }
   .panel__divider { display: none; }
   .panel__body { padding: var(--h-space-md); }
+  /* Subbar-Meta auf schmalen Viewports: eigene volle Zeile, Titel einzeilig mit
+     Ellipsis statt in abgeschnittene Wort-Fragmente zu zerfallen. */
+  .doc-subbar__meta { flex-basis: 100%; }
+  .doc-subbar__meta .meta-item--title {
+    white-space: nowrap;
+    max-width: 100%;
+  }
 }

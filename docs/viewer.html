@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=5">
   <link rel="stylesheet" href="assets/css/base.css?v=6">
-  <link rel="stylesheet" href="assets/css/viewer.css?v=5">
+  <link rel="stylesheet" href="assets/css/viewer.css?v=6">
   <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body class="viewer-body">
@@ -63,6 +63,9 @@
           <span class="status-controls__hint" id="status-hint"></span>
         </div>
         <div class="status-controls__actions">
+          <label class="status-controls__author" title="Kuerzel fuer Bearbeitungs-Eintraege (wird nur lokal im Browser gespeichert)">Kuerzel
+            <input class="input" type="text" id="status-author" maxlength="12" placeholder="z.B. CP" autocomplete="off" aria-label="Kuerzel fuer Bearbeitungs-Eintraege">
+          </label>
           <button class="btn btn--sm" id="btn-download-manifest" title="Manifest mit aktuellem Workflow-Status herunterladen" disabled>Manifest &darr;</button>
         </div>
       </div>
@@ -157,12 +160,12 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/tei-render.js"></script>
-  <script src="assets/js/download.js"></script>
-  <script src="assets/js/fs-access.js"></script>
-  <script src="assets/js/layout-editor.js"></script>
-  <script src="assets/js/transcription-editor.js"></script>
-  <script src="assets/js/viewer.js"></script>
+  <script src="assets/js/core.js?v=1"></script>
+  <script src="assets/js/tei-render.js?v=1"></script>
+  <script src="assets/js/download.js?v=1"></script>
+  <script src="assets/js/fs-access.js?v=1"></script>
+  <script src="assets/js/layout-editor.js?v=1"></script>
+  <script src="assets/js/transcription-editor.js?v=1"></script>
+  <script src="assets/js/viewer.js?v=2"></script>
 </body>
 </html>
