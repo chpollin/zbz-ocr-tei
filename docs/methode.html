@@ -49,8 +49,9 @@
       <p>
         <strong>Character Error Rate (CER)</strong> als Levenshtein-Distanz zwischen
         Pipeline-TEI und Referenz-TEI, normiert auf die Referenz-Laenge. Referenz sind 25
-        manuell in Transkribus erstellte ZBZ-TEIs; die Fidelity-CER nutzt alle 25, die
-        Volltext-/Scope-Werte das scope-bereinigte Subset (n&nbsp;=&nbsp;19). Verglichen
+        manuell in Transkribus erstellte ZBZ-TEIs. Alle Werte werden ueber <strong>alle 25</strong>
+        Referenzen gerechnet (kein Doc-Ausschluss). Die <strong>Fidelity-CER</strong> ist die
+        belastbare Qualitaetszahl; Volltext und Scope sind Diagnose-Groessen. Verglichen
         wird das Pipeline-Endprodukt (<code>output/tei_final/</code>) mit der menschlichen
         Transkription, nicht der OCR-Rohtext.
       </p>
@@ -65,7 +66,7 @@
     </section>
 
     <section>
-      <h2>Headline-Werte (Fidelity n = 25; Volltext/Scope n = 19 scope-bereinigt)</h2>
+      <h2>Headline-Werte (alle n = 25)</h2>
       <table>
         <caption>CER der Pipeline-TEI gegen die ZBZ-Referenz-TEI, zerlegt in echte Fehler und Mehrtext</caption>
         <thead>
@@ -73,9 +74,9 @@
         </thead>
         <tbody>
           <tr><td><strong>Fidelity-CER (primaer)</strong> &mdash; echte Fehler</td><td class="num">4.26 %</td><td class="num">1.83 %</td><td class="num">[2.39, 6.48]</td></tr>
-          <tr><td>Volltext-CER (scope-inkl.)</td><td class="num">22.88 %</td><td class="num">13.13 %</td><td class="num">[11.70, 36.56]</td></tr>
+          <tr><td>Volltext-CER <em>(Diagnose, scope-inkl. &mdash; kein Qualitaetsmass)</em></td><td class="num">20.75 %</td><td class="num">13.13 %</td><td class="num">[11.89, 31.89]</td></tr>
           <tr><td>Scope-Rate (Pipeline-Mehrtext, kein Fehler)</td><td class="num">16.50 %</td><td class="num">7.16 %</td><td class="num">&mdash;</td></tr>
-          <tr><td>Pipeline-Mehrwert vs. reine OCR (paired, Fidelity)</td><td class="num">&minus;7.12 pp</td><td class="num">&mdash;</td><td class="num">p = 0.14 (n.s.)</td></tr>
+          <tr><td>Pipeline-Mehrwert vs. reine OCR (paired, E2E)</td><td class="num">&minus;7.90 pp</td><td class="num">&mdash;</td><td class="num">p = 0.07 (n.s.)</td></tr>
           <tr><td>HCPR (Diakritik-Erhalt)</td><td class="num">~99 %</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
         </tbody>
       </table>
@@ -90,18 +91,21 @@
       </p>
       <p class="note">
         Der fruehere Wert „&minus;14.83&nbsp;pp" fuer den Pipeline-Mehrwert war ein Artefakt des
-        getrimmten Vergleichs und ist zurueckgezogen; der korrigierte Mehrwert (&minus;7.12&nbsp;pp)
-        ist statistisch nicht signifikant (p&nbsp;=&nbsp;0.14, n&nbsp;=&nbsp;19).
+        getrimmten Vergleichs und ist zurueckgezogen; der korrigierte Mehrwert (&minus;7.90&nbsp;pp)
+        ist statistisch nicht signifikant (p&nbsp;=&nbsp;0.07, n&nbsp;=&nbsp;25). Die fruehere
+        scope-bereinigte Subset-Auswahl (n&nbsp;=&nbsp;19) wurde entfernt: sie folgte keinem
+        reproduzierbaren Kriterium. Alle Werte rechnen jetzt ueber alle 25 Referenzen.
       </p>
     </section>
 
     <section>
-      <h2>Stratifiziert (Volltext-CER, scope-inkl., n = 19)</h2>
+      <h2>Stratifiziert (Volltext-Diagnose, scope-inkl., n = 25)</h2>
       <p>
-        Die folgenden Werte sind die <strong>Volltext-CER</strong> (inkl. Pipeline-Mehrtext), nicht die
-        Fidelity-CER &mdash; eine fidelity-genaue Aufschluesselung pro Stratum liegt derzeit nicht vor.
-        Sie liegen daher deutlich ueber der Fidelity-Headline und sind durch die teils selektiven
-        Referenz-Transkriptionen mitbestimmt.
+        Die folgenden Werte sind die <strong>Volltext-CER</strong> (inkl. Pipeline-Mehrtext) &mdash;
+        eine <em>Diagnose</em>-Groesse, kein Qualitaetsmass. Sie liegen deutlich ueber der
+        Fidelity-Headline, weil die ZBZ-Referenzen teils selektive Teiltranskriptionen sind und der
+        Pipeline-Mehrtext hier als Abweichung zaehlt. Eine fidelity-genaue Aufschluesselung pro
+        Stratum liegt derzeit nicht vor.
       </p>
       <table>
         <caption>Nach Layout-Typ</caption>
@@ -109,10 +113,10 @@
           <tr><th>Typ</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
         </thead>
         <tbody>
-          <tr><td>A (einspaltig)</td><td class="num">11</td><td class="num">28.5 %</td><td class="num">12.3 %</td></tr>
-          <tr><td>B (zweispaltig)</td><td class="num">5</td><td class="num">20.1 %</td><td class="num">21.9 %</td></tr>
+          <tr><td>A (einspaltig)</td><td class="num">12</td><td class="num">28.2 %</td><td class="num">18.5 %</td></tr>
+          <tr><td>B (zweispaltig)</td><td class="num">7</td><td class="num">17.0 %</td><td class="num">16.9 %</td></tr>
           <tr><td>C (Monografie)</td><td class="num">2</td><td class="num">3.9 %</td><td class="num">3.9 %</td></tr>
-          <tr><td>D (Spezial)</td><td class="num">1</td><td class="num">13.1 %</td><td class="num">13.1 %</td></tr>
+          <tr><td>D (Spezial)</td><td class="num">4</td><td class="num">13.3 %</td><td class="num">10.1 %</td></tr>
         </tbody>
       </table>
 
@@ -122,8 +126,8 @@
           <tr><th>Sprache</th><th class="num">n</th><th class="num">Mean</th><th class="num">Median</th></tr>
         </thead>
         <tbody>
-          <tr><td>Franzoesisch</td><td class="num">14</td><td class="num">24.3 %</td><td class="num">9.6 %</td></tr>
-          <tr><td>Deutsch</td><td class="num">5</td><td class="num">18.9 %</td><td class="num">13.8 %</td></tr>
+          <tr><td>Franzoesisch</td><td class="num">18</td><td class="num">22.5 %</td><td class="num">10.1 %</td></tr>
+          <tr><td>Deutsch</td><td class="num">7</td><td class="num">16.1 %</td><td class="num">13.8 %</td></tr>
         </tbody>
       </table>
       <p class="note">

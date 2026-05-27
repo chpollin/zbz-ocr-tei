@@ -69,16 +69,15 @@ from scripts.eval.cer_statistics_runner import collect_records
 SCHEMA_VERSION = "0.3"
 TOOL_VERSION = "0.1.0"
 
-# Kanonische Scope-Mismatches aus Session 39 (CER-BENCHMARK.md).
-# NICHT auto-heuristisch — diese Liste ist verbindlich.
-SCOPE_MISMATCH_REASONS: dict[str, str] = {
-    "1440": "Pipeline-TEI 8 Seiten, Referenz 7 Seiten (Scope-Mismatch, Session 39 manuell)",
-    "30":   "Referenz nur Anfangsausschnitt, Pipeline volltext (Session 39 manuell)",
-    "300":  "Pipeline-TEI deutlich groesserer Scope als Referenz (Session 39 manuell)",
-    "3020": "Auto-detektierter Scope-Mismatch (Page-Ratio > 1.5, Session 39)",
-    "760":  "Auto-detektierter Scope-Mismatch (Page-Ratio > 1.5, Session 39)",
-    "830":  "Auto-detektierter Scope-Mismatch (Page-Ratio > 1.5, Session 39)",
-}
+# Scope-Status: die fruehere hartkodierte 6er-Ausschlussliste (SCOPE_MISMATCH_REASONS,
+# Session 39) wurde ENTFERNT. Verifiziert an den Rohdaten (2026-05-27): sie war
+# inkohaerent -- schloss Doc 570 (112 % Mehrtext, Voll-CER 113 %) NICHT aus, aber Doc
+# 3020 (0.5 % Mehrtext) schon -- und folgte keinem reproduzierbaren Kriterium. Sie
+# diente nur dazu, eine scope-inklusive Subset-Kennzahl "fair" zu machen.
+# Konsequenz: kein Doc wird mehr ausgeschlossen. Die scope-robuste PRIMAERkennzahl ist
+# die Fidelity-CER ueber ALLE Docs (rechnet den Pipeline-Mehrtext pro Doc heraus). Der
+# rohe end_to_end (scope-inklusiv) bleibt als Diagnose, ist aber KEIN Qualitaetsmass.
+# Siehe decisions.md (CER-Scope-Entscheidung 2026-05-27).
 
 # Char-Klassen fuer HCPR (Nosova 2025 §3 Adaption)
 HCPR_CLASSES = {
@@ -170,14 +169,16 @@ def _hcpr_score(ref_text: str, hyp_text: str) -> float:
 
 
 def _override_scope(records: list[DocCERRecord]) -> None:
-    """Setzt scope_status auf Basis von SCOPE_MISMATCH_REASONS (kanonisch)."""
+    """Setzt scope_status fuer ALLE Records auf 'full' (keine Ausschluesse mehr).
+
+    Die fruehere hartkodierte Ausschlussliste war inkohaerent (s. Konstanten-Block);
+    die scope-robuste Kennzahl ist die Fidelity-CER ueber alle Docs. Das Feld
+    scope_status bleibt erhalten (immer 'full'), damit die nachgelagerten Aggregate
+    deterministisch ueber das volle Korpus rechnen.
+    """
     for r in records:
-        if r.doc_id in SCOPE_MISMATCH_REASONS:
-            r.scope_status = "partial"
-            r.scope_detail = SCOPE_MISMATCH_REASONS[r.doc_id]
-        else:
-            r.scope_status = "full"
-            r.scope_detail = None
+        r.scope_status = "full"
+        r.scope_detail = None
 
 
 # ---------------------------------------------------------------------------
@@ -411,7 +412,7 @@ def build_overall(records: list[DocCERRecord], rng: np.random.Generator,
         "q1": round(float(np.percentile(cers_e2e, 25)), 6),
         "q3": round(float(np.percentile(cers_e2e, 75)), 6),
         "ci_method": f"Doc-level Perzentil-Bootstrap (block=doc, n={len(cers_e2e)}), B={n_resamples}, Singh 2025",
-        "definition": "Volle Volltext-Divergenz von der Referenz (scope-inklusiv), case-sensitiv, kein Trimming.",
+        "definition": "DIAGNOSE, KEIN Qualitaetsmass: volle Volltext-Divergenz von der Referenz inkl. Pipeline-Mehrtext (scope-inklusiv), ueber ALLE Docs. Das Qualitaetsmass ist fidelity (rechnet den Mehrtext heraus).",
     }
 
     # PRIMAER: Fidelity ueber ALLE Docs (echte OCR-/Transkriptionsfehler, ohne
@@ -824,7 +825,7 @@ def build_proxies(records: list[DocCERRecord], all_doc_ids: list[str],
         return {"definitions": _proxy_definitions(),
                 "training_corpus": _training_corpus(),
                 "per_doc_n285": per_doc_n285,
-                "validation_n19": {"status": "deferred", "reason": "no overlap"},
+                "validation": {"status": "deferred", "reason": "no overlap"},
                 "corpus_estimate": {"status": "deferred", "reason": "validation prereq missing"}}
 
     cers = np.asarray([_doc_weighted_cer(r) for r in full], dtype=float)
@@ -851,7 +852,7 @@ def build_proxies(records: list[DocCERRecord], all_doc_ids: list[str],
         return {"definitions": _proxy_definitions(),
                 "training_corpus": _training_corpus(),
                 "per_doc_n285": per_doc_n285,
-                "validation_n19": {"per_proxy": per_proxy,
+                "validation": {"per_proxy": per_proxy,
                                     "composite": {"status": "deferred",
                                                   "reason": "zero variance proxy"}},
                 "corpus_estimate": {"status": "deferred", "reason": "degenerate validation"}}
@@ -956,7 +957,7 @@ def build_proxies(records: list[DocCERRecord], all_doc_ids: list[str],
         "definitions": _proxy_definitions(),
         "training_corpus": _training_corpus(),
         "per_doc_n285": per_doc_n285,
-        "validation_n19": {"n": len(full), "per_proxy": per_proxy, "composite": composite},
+        "validation": {"n": len(full), "per_proxy": per_proxy, "composite": composite},
         "corpus_estimate": corpus_estimate,
     }
 
@@ -1030,7 +1031,7 @@ def main(argv: list[str] | None = None) -> int:
     records, corpus_metadata, n_with_gt, exclusions = collect_records(verbose=False)
     print(f"  records: {len(records)}, n_with_gt: {n_with_gt}")
 
-    print("[2/8] override scope_status (kanonische Liste Session 39)...")
+    print("[2/8] scope_status=full fuer alle (keine Ausschluesse; Fidelity ueber alle Docs)...")
     _override_scope(records)
     full_count = sum(1 for r in records if r.scope_status == "full")
     partial_count = len(records) - full_count
@@ -1061,13 +1062,8 @@ def main(argv: list[str] | None = None) -> int:
     print("[8/8] assemble JSON...")
     git_sha, git_dirty = _git_meta()
 
-    # Erweiterte exclusions: kanonische scope-mismatches + runner-skips
-    excluded_block = []
-    for did, reason in SCOPE_MISMATCH_REASONS.items():
-        excluded_block.append({"doc_id": did, "reason": reason})
-    for did, reason in exclusions.items():
-        if did not in SCOPE_MISMATCH_REASONS:
-            excluded_block.append({"doc_id": did, "reason": reason})
+    # Ausschluesse: nur noch runner-skips (keine scope-mismatch-Liste mehr, s. _override_scope).
+    excluded_block = [{"doc_id": did, "reason": reason} for did, reason in exclusions.items()]
 
     out = {
         "schema_version": SCHEMA_VERSION,

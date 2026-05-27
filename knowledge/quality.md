@@ -48,10 +48,10 @@ Asymmetrie ist beabsichtigt: vollstaendiger sein als die Referenz ist kein Fehle
 | Metrik | Mean | Median | 95%-CI (Mean) | misst |
 |---|---|---|---|---|
 | **Fidelity-CER (PRIMAER)** | **4.26 %** | **1.83 %** | [2.39 %, 6.48 %] | echte OCR-/Transkriptionstreue |
-| Volltext-CER (scope-inkl.) | 22.88 %* | 13.13 %* | [11.70 %, 36.56 %]* | volle Divergenz von der Referenz |
+| Volltext-CER (Diagnose, scope-inkl.) | 20.75 % | 13.13 % | [11.89 %, 31.89 %] | volle Divergenz inkl. Mehrtext — **KEIN Qualitaetsmass** |
 | Scope-Rate (Mehrtext) | 16.50 % | 7.16 % | — | Pipeline-Mehrtext (kein Fehler) |
 
-*Volltext/Scope-Werte aus `overall.end_to_end` auf dem n=19-scope-clean-Subset; Fidelity ueber alle 25.
+Alle Werte ueber **alle 25 Docs** (E73: das fruehere n=19-scope-clean-Subset wurde entfernt, da es keinem reproduzierbaren Kriterium folgte). Volltext/Scope sind Diagnose-Groessen; das Qualitaetsmass ist die Fidelity-CER.
 
 Der Fidelity-Median **1.83 %** reproduziert die fruehere Headline -- jetzt aber sauber: ohne
 deflationaeres Trimming, ohne zirkulaeren Ausschluss, case-sensitiv, ueber das ganze Korpus.
@@ -60,9 +60,10 @@ ist der Median „exzellent", der Mean „gut".
 
 ### Pipeline-Mehrwert (Paired, like-for-like Fidelity)
 
-Pipeline-Fidelity vs. reine Mistral-OCR-Fidelity: **-7.12 pp** (p = 0.14, n=19, nicht signifikant
+Pipeline-E2E vs. reine Mistral-OCR: **-7.90 pp** (p = 0.07, n=25, nicht signifikant
 bei alpha=0.05). Die fruehere Angabe „-14.83 pp, p=0.0004" war ein Artefakt des getrimmten/
-kleingeschriebenen Vergleichs und ist **zurueckgezogen**.
+kleingeschriebenen Vergleichs und ist **zurueckgezogen**; der Wert -7.12 pp (n=19) galt fuer das
+inzwischen entfernte scope-clean-Subset (E73), jetzt -7.90 pp ueber alle 25.
 
 ### Was sich im Code aenderte (E70)
 
@@ -109,7 +110,7 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 - **Textextraktion:** mit `<choice>`-Korrektur, Fussnoten exkludiert, symmetrische Unicode-Normalisierung.
 - **Distanzmass:** `Levenshtein(ref, hyp) / max(1, |ref|)` via `rapidfuzz`.
 - **Alignment:** content-aligned via `evaluate_tei_vs_tei()` (immun gegen Page-Numbering-Drift, siehe §Lessons).
-- **Aggregation:** char-gewichtete Per-Dok-CER; Bootstrap ueber Docs (n=19).
+- **Aggregation:** char-gewichtete Per-Dok-CER; Bootstrap ueber Docs (n=25, alle).
 - **Statistik:** BCa-Bootstrap (B=10000, Seed=42) fuer alle CIs; Paired Bootstrap fuer E2E vs OCR-only; Chi-Square + KS fuer Selektionsbias.
 - **Werkzeug:** `scripts/eval/cer_statistics_full.py` (Orchestrator) + `scripts/eval/cer_statistics.py` (Library mit 55 Tests). Output: `docs/data/cer_statistics.json` (deterministisch bei `seed=42`).
 
@@ -126,7 +127,7 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 **Lesehilfe:**
 
 - Median 1.83% heisst: die Haelfte aller Docs hat CER ≤ 1.83% — State-of-the-Art fuer historischen Druck.
-- Paired Test (ueberholt): die fruehere Angabe ~14.8pp ist zurueckgezogen (Artefakt des getrimmten Vergleichs). Korrigierter Mehrwert -7.12pp, statistisch nicht signifikant (p=0.14, n=19) — siehe E70-Sektion oben.
+- Paired Test (ueberholt): die fruehere Angabe ~14.8pp ist zurueckgezogen (Artefakt des getrimmten Vergleichs). Aktueller Mehrwert **-7.90pp**, statistisch nicht signifikant (p=0.07, **n=25**) — siehe Headline + [decisions.md E73](decisions.md).
 - HCPR 99.32%: praktisch alle franzoesischen/deutschen Diakritika werden korrekt erhalten.
 
 ### Reduktions-Timeline
@@ -140,44 +141,30 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 | + Scope-Bereinigung | 4.18% | 1.83% | 19 |
 | **+ Case-Normalisierung** | **4.10%** | **1.83%** | **19** |
 
-### Statistik scope-bereinigt (n=19)
+### Scope-Klassifikation entfernt (E73, 2026-05-27)
 
-| Metrik | Wert |
-|---|---|
-| ausgeschlossen | 6 (Scope-Mismatch) |
-| Std CER | 5.48% |
-| Min / Max | 0.30% / 20.7% |
-| Q1 / Q3 | 0.80% / 5.57% |
-| Docs <3% | 13 (68%) |
-| Docs >15% | 2 (290, 1910) |
+Die fruehere hartkodierte 6er-Ausschlussliste (`SCOPE_MISMATCH_REASONS`) ist **entfernt** — an den
+Rohdaten verifiziert war sie inkohaerent (schloss Doc 570 mit 112 % Mehrtext / Voll-CER 113 % NICHT
+aus, markierte aber 3020/760/830 mit ~0.5-1.2 % Mehrtext) und folgte keinem reproduzierbaren Kriterium.
+Alle Aggregate rechnen jetzt ueber **alle 25 Docs**, `scope_status` ist immer `full`. Die scope-robuste
+Qualitaetszahl ist die **Fidelity-CER** (oben); Details [decisions.md E73](decisions.md).
 
-**Ziel Median <3.5%: ERREICHT (1.83%).**
+### Stratifiziert (Volltext-Diagnose, scope-inkl., n=25)
 
-### Scope-Mismatches (ausgeschlossen)
+Volltext-CER je Stratum — **Diagnose, kein Qualitaetsmass** (Quelle: `strata` im JSON). Liegt ueber der
+Fidelity-Headline, weil die ZBZ-Referenzen teils selektive Teiltranskriptionen sind.
 
-| Doc | CER | Ref/Pipe Seiten | Ratio | Ursache |
-|---|---|---|---|---|
-| 1440 | 25.7% | 8 / 7 | 1.1x | 2 OCR-Seiten fehlen, S.267 fehlt |
-| 30 | 18.7% | 8 / 4 | 2.0x | nur 50% OCR'd |
-| 300 | 15.2% | 2 / 4 | 2.0x | Referenz nur 2 von 4 Seiten |
-| 760 | 7.0% | 38 / 20 | 1.9x | auto-detektiert |
-| 3020 | 1.5% | 10 / 6 | 1.7x | auto-detektiert |
-| 830 | 1.5% | 4 / 2 | 2.0x | auto-detektiert |
-
-### Nach Layout-Typ / Sprache (scope-bereinigt)
-
-| Typ | n | Mittl. CER | Median CER |
+| Typ | n | Mean | Median |
 |---|---|---|---|
-| A (einspaltig) | 11 | 3.7% | 1.8% |
-| B (zweispaltig) | 5 | 5.9% | 5.1% |
-| C (Monografie) | 2 | 4.0% | 4.0% |
-| D (Spezial) | 1 | 0.8% | 0.8% |
+| A (einspaltig) | 12 | 28.2 % | 18.5 % |
+| B (zweispaltig) | 7 | 17.0 % | 16.9 % |
+| C (Monografie) | 2 | 3.9 % | 3.9 % |
+| D (Spezial) | 4 | 13.3 % | 10.1 % |
 
-| Sprache | n | Mittl. CER | Median CER |
+| Sprache | n | Mean | Median |
 |---|---|---|---|
-| fra | 11 | 4.0% | 1.8% |
-| deu | 5 | 5.9% | 5.6% |
-| fra/deu | 3 | 2.1% | 0.8% |
+| fra | 18 | 22.5 % | 10.1 % |
+| deu | 7 | 16.1 % | 13.8 % |
 
 ### Top-5 Substitutionen (Konfusionsmatrix)
 
@@ -734,7 +721,7 @@ ein Mess-Artefakt.
 - **Kein Inter-Engine-Vergleich** — wir haben nur einen OCR-Engine-Run, keine zweite Quelle.
 
 Diese Limitations sind im JSON dokumentiert (`selection_bias.interpretation`, `multi_norm._note`,
-`stability.status`, `proxies.validation_n19.composite.loocv_r2`) und beim Lesen der Headline-Werte
+`stability.status`, `proxies.validation.composite.loocv_r2`) und beim Lesen der Headline-Werte
 zwingend mitzudenken.
 
 ---
