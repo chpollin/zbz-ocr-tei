@@ -262,7 +262,7 @@ def process_document(
     Verarbeitet ein Dokument: LLM-Korrektur aller Seiten.
 
     Returns:
-        dict mit Stats (pages, tokens, cost, errors)
+        dict mit Stats (pages, tokens, errors)
     """
     page_files = find_page_files(doc_id, ocr_dir)
     if not page_files:
@@ -473,9 +473,6 @@ def main():
     total_errors = sum(s.get("errors", 0) for s in all_stats)
     total_input = sum(s.get("input_tokens", 0) for s in all_stats)
     total_output = sum(s.get("output_tokens", 0) for s in all_stats)
-    cost_input = total_input * 0.80 / 1_000_000
-    cost_output = total_output * 4.00 / 1_000_000
-    cost_total = cost_input + cost_output
 
     print(f"\n{'='*60}")
     print(f"  Zusammenfassung")
@@ -484,7 +481,6 @@ def main():
     print(f"  Uebersprungen: {total_skipped}")
     print(f"  Fehler: {total_errors}")
     print(f"  Tokens: {total_input:,} input + {total_output:,} output")
-    print(f"  Kosten: ${cost_total:.4f} (${cost_input:.4f} input + ${cost_output:.4f} output)")
     print(f"  Dauer: {total_elapsed:.1f}s")
 
     # Manifest schreiben (nur wenn nicht dry-run)
@@ -502,7 +498,6 @@ def main():
                 "errors": total_errors,
                 "input_tokens": total_input,
                 "output_tokens": total_output,
-                "cost_usd": round(cost_total, 4),
                 "elapsed_seconds": round(total_elapsed, 1),
             },
         }

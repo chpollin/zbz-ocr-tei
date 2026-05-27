@@ -12,7 +12,7 @@ Output:
     output/gemini_corrected_a/  oder  output/gemini_corrected_b/
         {doc_id}_p{NNN}.md              # Korrigierter Text
         {doc_id}_p{NNN}.analysis.json   # Analyse (Schritt 1)
-        manifest.json                   # Token-/Kostenstatistik
+        manifest.json                   # Token-Statistik
 
 Usage:
     python -m scripts.ocr.gemini_ocr_correct --doc 2310              # Einzeldokument
