@@ -23,7 +23,7 @@ Gegenstand dieses Arbeitsberichts ist die technische Umsetzung einer vollständi
 
 ### Das Masterfile: Katalog- und Steuerungstabelle der ZB
 
-Ausgangs- und Steuerungsquelle des Projekts ist das von der ZB gepflegte **Masterfile** (`data/projektsteuerung/Masterfile.xlsx`) — eine Tabelle, die den katalogisierten Bestand der Hersch-Edition führt und zugleich den Bearbeitungsfortschritt protokolliert. Pro Text enthält sie zwei Arten von Information:
+Ausgangs- und Steuerungsquelle des Projekts ist das von der ZB gepflegte **Masterfile** (`data/source/masterfile/Masterfile.xlsx`) — eine Tabelle, die den katalogisierten Bestand der Hersch-Edition führt und zugleich den Bearbeitungsfortschritt protokolliert. Pro Text enthält sie zwei Arten von Information:
 
 - **Bibliografische Stammdaten** (autoritativ): interne `ID`, Bibliotheks-ID `MMSID` (swisscovery/Alma), Gattung (`PublForm`), `Jahr`, `Titel`, `Bibliografische Angaben`, `Anzahl Seiten`, `Signatur`, `Standort` und `Sprache`.
 - **Workflow-Status der ZB**: `digitalisiert`, `Bestellstatus`, `Kontrolle Metadaten`, `Korrektur durch JHG`, `korrigiert (und retourniert)`, `ausgezeichnet`, `publiziert` sowie ein Freitextfeld `Anmerkungen` (etwa Hinweise auf Übersetzungen und Nachdrucke).
@@ -36,7 +36,7 @@ Das Masterfile katalogisiert den Gesamtbestand der Edition; für die Pipeline ma
 
 | Kennzahl | Anzahl | Quelle |
 |---|---|---|
-| gelieferte Dokumente (PDF) | **286** | `data/scans/` |
+| gelieferte Dokumente (PDF) | **286** | `data/source/pdf/` |
 | davon mit finalem TEI | **285** | `output/tei_final/` |
 
 Ein geliefertes PDF (`10`) durchlief die Pipeline bislang nicht bis zum finalen TEI und bleibt als offener Verarbeitungspunkt vermerkt. Alle 286 gelieferten Dokumente sind im Masterfile katalogisiert; ihre Metadaten stehen damit vollständig zur Verfügung.
@@ -78,17 +78,42 @@ Der Arbeitszeitraum erstreckte sich von **Ende Januar bis Ende Mai 2026**, dokum
 
 ## Repository-Architektur
 
-Das Projekt ist in einem GitHub-Repository organisiert mit funktional getrennten Bereichen.
+Das Projekt ist in einem öffentlichen GitHub-Repository organisiert, dessen Verzeichnisse die Eingangsdaten, den Code, die generierten Daten und das Frontend voneinander trennen.
 
-Der Ordner `knowledge/` enthält zehn thematisch getrennte Markdown-Dokumente (Projekt, Pipeline, Entitäten, Qualität, Viewer, Infrastruktur, Methodik, Entscheidungen, Journal, Index) als lebende, über Prompts kuratierte Single Source of Truth. Hervorzuheben sind das chronologische Arbeitstagebuch `journal.md` und das Entscheidungsregister `decisions.md` (E1–E67).
+Der Ordner `knowledge/` ist ein Promptotyping Vault, eine an eine Research-Obsidian-Vault angelehnte, KI-erzeugte und expertenkuratierte Wissensbasis in Markdown, die das gesamte Projektwissen möglichst kompakt, präzise und klar abbildet. Sie wird über den Projektverlauf iterativ weiterentwickelt; einzelne Dokumente entstehen, wachsen oder werden zusammengeführt. Leitprinzip ist die Single Source of Truth: Jeder Fakt steht in genau einem Dokument, auf das die übrigen verweisen. Hervorzuheben sind das chronologische Arbeitstagebuch `journal.md` als beschreibende Schicht neben der Git-Historie und das durchnummerierte Entscheidungsregister `decisions.md`.
 
-Die Datenhaltung ist nach Quelle und Generierung klar getrennt:
+Der Ordner `data/` enthält die Eingangs- und Referenzdaten. Unter `data/source/` liegen die von der ZB gelieferten Startdaten, mit denen das Experiment beginnt: die PDF-Scans (`pdf/`), die 25 manuell über Transkribus erstellten Referenz-TEIs (`reference_tei/`), die Transkribus-PAGE-XML-Exporte (`transkribus_page_xml/`), das Masterfile (`masterfile/`) und die Editionsrichtlinien (`guidelines/`). Daneben liegen projektseitig erstellte Referenzdaten: das projektspezifische TEI-Schema (`schema/zbz_hersch.rng`), die Entitäts-Indizes (`entities/`) und die kuratierten Gold-TEIs (`curated_tei/`); die generierte Dokumentklassifikation (`doc_metadata.json`) liegt als Cache bei.
 
-- `data/` — **Eingangs- und Referenzdaten**: PDF-Scans, ZBZ-Masterfile (`projektsteuerung/Masterfile.xlsx`), das projektspezifische TEI-Schema (`schema/zbz_hersch.rng`), 25 ZBZ-Referenz-TEIs, Editionsrichtlinien.
-- `output/` — **alle generierten Datenströme** (gitignored, nicht versioniert).
-- `docs/` — das Frontend (GitHub Pages), ein **generierter Mirror** der Pipeline-Daten und die aus den PDFs erzeugten PNGs.
+Der Ordner `output/` enthält alle generierten Datenströme (OCR, Layout, PAGE-XML, TEI) und ist bewusst nicht versioniert. Der Ordner `scripts/` enthält die Python-Pipeline, 50 versionierte Dateien, nach Domäne in die Pakete `ocr`, `layout`, `ner`, `tei`, `eval`, `edition` und `core` gruppiert, ergänzt um die zentrale Konfiguration `config.py` und geteilte Hilfsfunktionen `utils.py`. Sämtlicher Code wurde von Claude Code generiert; kein Skript wurde manuell geschrieben oder im Detail inspiziert, geprüft wurde jeweils das Endergebnis.
 
-Der Ordner `scripts/` enthält **50 versionierte Python-Skripte**, die zu 100 Prozent von Claude Code generiert wurden; keines wurde manuell geschrieben oder im Detail inspiziert. Geprüft wurde das Endergebnis. Eine zentrale Konvention strukturiert den Datenfluss: `output/tei_final/{doc}_final.xml` ist die Single Source of Truth der Edition, `docs/data/pages/{doc}/` ein generierter Mirror, der nie direkt editiert wird.
+Der Ordner `docs/` ist für GitHub Pages konfiguriert und enthält das Frontend, einen generierten Mirror der Pipeline-Daten und die aus den PDFs erzeugten PNGs. Der Mirror macht den Großteil der versionierten Dateien aus und ermöglicht das Backend-lose Hosting auf GitHub Pages. Eine zentrale Konvention strukturiert den Datenfluss: `output/tei_final/{doc}_final.xml` ist die Single Source of Truth der Edition, `docs/data/pages/{doc}/` ist ein generierter Mirror, der nie direkt editiert, sondern nach Änderungen an der Quelle neu erzeugt wird.
+
+```
+zbz-ocr-tei/
+  knowledge/              Promptotyping Vault: iterativ kuratiertes Projektwissen (Markdown)
+  data/                   Eingangs- und Referenzdaten
+    source/               von der ZB gelieferte Startdaten
+      pdf/                PDF-Scans
+      reference_tei/      Referenz-TEIs (Transkribus)
+      transkribus_page_xml/   Transkribus-PAGE-XML-Exporte
+      masterfile/         Masterfile.xlsx (Metadaten + Steuerung)
+      guidelines/         Editionsrichtlinien
+    schema/               zbz_hersch.rng (TEI-Schema)
+    entities/             Entitäts-Indizes (Person, Organisation, Ort, Werk)
+    curated_tei/          kuratierte Gold-TEIs
+    doc_metadata.json     generierte Dokumentklassifikation (Cache)
+  scripts/                Python-Pipeline, nach Domäne gruppiert
+    ocr/ layout/ ner/ tei/ eval/ edition/ core/
+    config.py             zentrale Konfiguration
+    utils.py              geteilte Hilfsfunktionen
+  output/                 alle generierten Datenströme (nicht versioniert)
+  docs/                   Frontend + generierter Mirror (GitHub Pages)
+    *.html  css/  js/     Frontend
+    data/                 generierter Mirror der Pipeline-Daten
+    images/               aus PDFs erzeugte PNGs
+  tests/                  pytest-Suites
+  reports/                Arbeitsberichte
+```
 
 ## Pipeline-Schritte
 
@@ -108,7 +133,7 @@ Eine optionale OCR-Korrektur mit **Claude Haiku 4.5** lieferte inkonsistente Erg
 
 ### Schritt 4: PAGE-XML-Erzeugung
 
-PAGE-XML wird deterministisch aus Layout-JSON und OCR-Text erzeugt (`page_xml_generator.py`), zusätzlich METS (Schema 2013-07-15 für coOCR/Transkribus). **Wichtig:** PAGE-XML ist **kein Zwischenschritt zum TEI** — das TEI wird direkt aus Layout-JSON und OCR-Markdown generiert; PAGE-XML ist ein paralleler Export für externe Systeme. Beide Formate leiten sich unabhängig aus denselben Quellen ab.
+PAGE-XML wird deterministisch aus Layout-JSON und OCR-Text erzeugt (`scripts/layout/page_xml_generator.py`), zusätzlich METS (Schema 2013-07-15 für coOCR/Transkribus). **Wichtig:** PAGE-XML ist **kein Zwischenschritt zum TEI** — das TEI wird direkt aus Layout-JSON und OCR-Markdown generiert; PAGE-XML ist ein paralleler Export für externe Systeme. Beide Formate leiten sich unabhängig aus denselben Quellen ab.
 
 ### Schritt 5: Named Entity Recognition und Wikidata-Verknüpfung
 
