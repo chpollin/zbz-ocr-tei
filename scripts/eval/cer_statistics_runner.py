@@ -1,6 +1,6 @@
 """
 Runner: liest reale TEIs ein und produziert DocCERRecord-Liste fuer
-`scripts/cer_statistics.py`. Getrennt vom Statistik-Modul, damit Tests
+`scripts/eval/cer_statistics.py`. Getrennt vom Statistik-Modul, damit Tests
 ohne Daten laufen koennen.
 """
 
@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from scripts.cer_statistics import (
+from scripts.eval.cer_statistics import (
     DocCERRecord,
     cer_under_norms,
     diacritic_preservation_rate,
@@ -19,7 +19,7 @@ from scripts.config import (
     REFERENZ_TEI_DIR,
     TEI_FINAL_DIR,
 )
-from scripts.evaluate_ocr import (
+from scripts.eval.evaluate_ocr import (
     evaluate_tei_vs_tei,
     evaluate_tei_vs_tei_pagewise,
     extract_pages_for_comparison,
@@ -109,7 +109,7 @@ def _multi_norm_cer_for_doc(doc_id: str) -> dict[str, float] | None:
     `global_result['cer']` konsistent ist. Pagewise-Vergleich ist seit der
     Pipeline-Aenderung 2026-04 unzuverlaessig (Page-Numbering-Drift).
     """
-    from scripts.cer_statistics import normalize_text, cer as cer_fn, NORM_REGIMES
+    from scripts.eval.cer_statistics import normalize_text, cer as cer_fn, NORM_REGIMES
 
     ref_path = _find_tei_path(doc_id, REFERENZ_TEI_DIR)
     pipe_path = TEI_FINAL_DIR / f"{doc_id}_final.xml"

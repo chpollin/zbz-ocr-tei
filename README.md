@@ -67,22 +67,15 @@ python -m http.server 8000 -d docs    # http://localhost:8000/
 ```
 zbz-ocr-tei/
   knowledge/              # 10 project documents (Single Source of Truth, all lowercase)
-  scripts/                # Python pipeline
+  scripts/                # Python pipeline (grouped by domain; inventory: scripts/README.md)
     config.py             # Central configuration
-    ocr_pipeline.py       # OCR (Mistral / DeepSeek)
-    classify_docs.py      # Document classification (Gemini)
-    gemini_ocr_correct.py # Gemini OCR correction
-    llm_postprocess.py    # LLM post-correction (Haiku 4.5)
-    run_layout_analysis.py   # Layout analysis (Docling local)
-    run_layout_cloud.py      # Layout analysis (docling-serve API)
-    layout_qa_gemini.py      # Layout QA + Detect (Gemini)
-    evaluate_ocr.py       # CER/WER evaluation
-    benchmark_cer.py      # End-to-end CER benchmark
-    cer_statistics_full.py   # BCa-Bootstrap + Paired + HCPR
-    generate_edition_data.py     # Catalog, thumbnails, per-page mirror for viewer
-    layout/               # PAGE-XML + METS generators
-    tei/                  # TEI-XML pipeline (scaffold, Gemini, assembly, validator)
+    utils.py              # Shared utilities
+    ocr/                  # OCR + correction: ocr_pipeline, gemini_ocr_correct, llm_postprocess, ocr_dedup, classify_docs
+    layout/               # Layout analysis (Docling/Gemini) + PAGE-XML/METS + overlays
     ner/                  # NER + Wikidata/GND linking
+    tei/                  # TEI-XML pipeline (scaffold, Gemini, assembly, validator, status marker)
+    eval/                 # CER benchmark + statistics, quality proxy, corpus audit, HTML report
+    edition/              # Catalog/mirror generation, per-object manifest, page extraction
     core/                 # Shared data loaders
   docs/                   # Static frontend (GitHub Pages source)
     index.html            # Corpus overview
@@ -114,10 +107,10 @@ cp .env.example .env
 # Enter Mistral, Anthropic, Gemini keys in .env
 
 # OCR with Mistral (no GPU)
-python -m scripts.ocr_pipeline -i data/scans/2310.pdf -e mistral
+python -m scripts.ocr.ocr_pipeline -i data/scans/2310.pdf -e mistral
 
 # Layout analysis (GPU for local Docling, or docling-serve API)
-python -m scripts.run_layout_analysis --doc 2310
+python -m scripts.layout.run_layout_analysis --doc 2310
 
 # Generate TEI-XML (no GPU, uses Gemini API)
 python -m scripts.tei.tei_unified --doc 2310
@@ -126,11 +119,11 @@ python -m scripts.tei.tei_unified --doc 2310
 python -m scripts.tei.tei_validator --all --html-report
 
 # CER evaluation (no GPU)
-python -m scripts.evaluate_ocr --all
-python -m scripts.benchmark_cer --all --html
+python -m scripts.eval.evaluate_ocr --all
+python -m scripts.eval.benchmark_cer --all --html
 
 # Frontend data: catalog, thumbnails, per-page mirror for viewer
-python -m scripts.generate_edition_data
+python -m scripts.edition.generate_edition_data
 ```
 
 Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.

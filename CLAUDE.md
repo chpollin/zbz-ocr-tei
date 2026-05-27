@@ -58,7 +58,7 @@ Token-Katalog: `docs/css/tokens.css`. Basis-Komponenten: `docs/css/base.css`. Vi
 ### Verzeichnisse (Orientierung)
 
 - `data/` — Eingangs- und Referenzdaten: `scans/` (PDFs), `schema/zbz_hersch.rng` (TEI-Schema), `tei_curated/` (Gold-Standard, git-tracked), `referenz-tei/`, `richtlinien/`, `doc_metadata.json`
-- `scripts/` — Pipeline + Werkzeuge: `core/`, `layout/`, `ner/`, `tei/` + Top-Level-Skripte (Eval, Mirror-Generierung)
+- `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `ner/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
 - `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
 - `docs/` — statische Edition/Inspektions-Site (GitHub-Pages-tauglich): HTML, `css/`, `js/`, `data/` (generierter Mirror), `images/`
 - `knowledge/` — Wissensbasis (10 Docs), Einstieg [knowledge/index.md](knowledge/index.md)
@@ -78,7 +78,7 @@ Detaillierte Stufen / Skripte / Engines: [knowledge/pipeline.md](knowledge/pipel
 ### Source of Truth → generierter Mirror (verbindlich)
 
 - **`output/tei_final/{doc}_final.xml` ist die Single Source of Truth der Edition** (E43). Nur `tei_final/` wird angezeigt. Jedes finale TEI traegt `<revisionDesc>` mit Pipeline-Status (E42); der Workflow-Status pro Strom wird beim ZBZ-Uebergabe-Schritt via `tei_status_marker.py` aus dem Manifest in den `<revisionDesc>` projiziert (E66).
-- **`docs/data/pages/{doc}/` ist ein GENERIERTER Mirror — niemals direkt editieren.** Erzeugt von `scripts/generate_edition_data.py` aus: per-Seiten-TEI (aus `tei_final` gesplittet) + Mistral-`.md` + Layout-JSON. Nach Aenderungen an der Quelle Mirror neu generieren.
+- **`docs/data/pages/{doc}/` ist ein GENERIERTER Mirror — niemals direkt editieren.** Erzeugt von `scripts/edition/generate_edition_data.py` aus: per-Seiten-TEI (aus `tei_final` gesplittet) + Mistral-`.md` + Layout-JSON. Nach Aenderungen an der Quelle Mirror neu generieren.
 - `output/tei_unified/` ist Pipeline-Output (nicht editieren). Kuratierte Gold-TEIs liegen in `data/tei_curated/` (git-tracked).
 
 ## Methodik
@@ -109,12 +109,14 @@ python -m scripts.tei.tei_validator --doc {DOC_ID}             # TEI-Validierung
 python -m scripts.tei.tei_validator --all --html-report         # Korpus-Report
 python -m scripts.tei.tei_validator --compare-ref               # Referenz-Vergleich (11 Docs)
 python -m scripts.ner.ner_evaluate --doc {DOC_ID}               # NER-Abdeckung
-python -m scripts.evaluate_ocr --all                            # OCR-Metriken
-python -m scripts.quality_proxy --all --html                    # Quality Proxy (Hit Rate)
-python -m scripts.completeness_check --html                     # Vollstaendigkeits-Check (Seiten)
-python -m scripts.benchmark_cer --all --html                    # CER-Benchmark (25 GT-Docs)
-python -m scripts.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss. CER-Statistik (BCa-CIs, Paired, HCPR)
+python -m scripts.eval.evaluate_ocr --all                            # OCR-Metriken
+python -m scripts.eval.quality_proxy --all --html                    # Quality Proxy (Hit Rate)
+python -m scripts.eval.completeness_check --html                     # Vollstaendigkeits-Check (Seiten)
+python -m scripts.eval.benchmark_cer --all --html                    # CER-Benchmark (25 GT-Docs)
+python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss. CER-Statistik (BCa-CIs, Paired, HCPR)
+python -m scripts.eval.corpus_audit                             # Korpus-Audit: Trichter 325->289->286->285 + Drift-Check
 python -m pytest tests/test_cer_statistics.py -q                # 55 Tests fuer Statistik-Library
+python -m pytest tests/test_corpus_audit.py -q                  # 22 Tests: Korpus-Invarianten + Vollstaendigkeits-Gate
 ```
 
 Output `docs/data/cer_statistics.json` (regenerierbar, derzeit nicht eingecheckt). Das interaktive CER-Dashboard wurde mit E56 abgeschafft. Methodik: [knowledge/quality.md §CER-Methodik](knowledge/quality.md).
@@ -122,18 +124,18 @@ Output `docs/data/cer_statistics.json` (regenerierbar, derzeit nicht eingecheckt
 ## Textschicht
 
 ```bash
-python scripts/ocr_pipeline.py -i data/scans/{DOC_ID}.pdf -e mistral    # Basis-OCR
-python -m scripts.gemini_ocr_correct --doc {DOC_ID} --variant B          # Gemini-Korrektur
-python -m scripts.gemini_ocr_correct --doc {DOC_ID} --dry-run            # Vorschau
+python scripts/ocr/ocr_pipeline.py -i data/scans/{DOC_ID}.pdf -e mistral    # Basis-OCR
+python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B          # Gemini-Korrektur
+python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run            # Vorschau
 ```
 
 ## Layout
 
 ```bash
-python -m scripts.run_layout_analysis --doc {DOC_ID}                     # Docling
-python -m scripts.layout_qa_gemini --doc {DOC_ID}                        # Gemini QA
-python -m scripts.layout_qa_gemini --mode detect --doc {DOC_ID}          # Neudetektion
-python -m scripts.generate_layout_overlays --doc {DOC_ID} --compare      # Overlay
+python -m scripts.layout.run_layout_analysis --doc {DOC_ID}                     # Docling
+python -m scripts.layout.layout_qa_gemini --doc {DOC_ID}                        # Gemini QA
+python -m scripts.layout.layout_qa_gemini --mode detect --doc {DOC_ID}          # Neudetektion
+python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # Overlay
 ```
 
 ## TEI erzeugen
@@ -184,9 +186,9 @@ python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}         # gegen
 ## Pro-Objekt-Manifest (Leerseiten + Workflow-Status, E65/E66)
 
 ```bash
-python -m scripts.page_manifest                                          # alle 285 Docs (idempotent: status+history bleiben)
-python -m scripts.page_manifest --doc {DOC_ID}                           # Einzeldokument
-python -m scripts.page_manifest --dry-run                                # nur Bericht, nichts schreiben
+python -m scripts.edition.page_manifest                                          # alle 285 Docs (idempotent: status+history bleiben)
+python -m scripts.edition.page_manifest --doc {DOC_ID}                           # Einzeldokument
+python -m scripts.edition.page_manifest --dry-run                                # nur Bericht, nichts schreiben
 python -m scripts.tei.tei_blank_marker --dry-run                         # Leerseiten-Marker: Vorschau
 python -m scripts.tei.tei_blank_marker                                   # <pb type="blank"/> in tei_final schreiben (mit Backup)
 python -m scripts.tei.tei_status_marker --dry-run                        # Workflow-History -> revisionDesc: Vorschau
@@ -203,12 +205,12 @@ Status/History werden ausschliesslich vom Viewer (Klick auf Status-Pill) ergaenz
 ueber Re-Laeufe erhalten. `tei_blank_marker` projiziert Leerseiten als `<pb type="blank"/>`;
 `tei_status_marker` projiziert die Workflow-History deterministisch als `<change>` in den
 `<revisionDesc>` und raeumt dabei die irrefuehrenden Agent-Screening-Eintraege weg. Danach Mirror neu:
-`python -m scripts.generate_edition_data --mirror-only`. Details: [knowledge/decisions.md](knowledge/decisions.md) E63/E65/E66.
+`python -m scripts.edition.generate_edition_data --mirror-only`. Details: [knowledge/decisions.md](knowledge/decisions.md) E63/E65/E66.
 
 ## Viewer-Daten
 
 ```bash
-python -m scripts.generate_edition_data                                  # Katalog (data/catalog.json) + Entity-Index + Per-Seiten-Mirror
+python -m scripts.edition.generate_edition_data                                  # Katalog (data/catalog.json) + Entity-Index + Per-Seiten-Mirror
 ```
 
 Der Viewer (`docs/viewer.html`) ist eine statische Single-Page-App ohne Backend. Editier-Aenderungen
@@ -217,8 +219,8 @@ werden als Datei-Download bereitgestellt; siehe [knowledge/viewer.md §Persisten
 ## Visuelle Artefakte
 
 ```bash
-python scripts/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300             # Seitenbilder
-python -m scripts.generate_layout_overlays --doc {DOC_ID} --compare      # Layout-Overlay
+python scripts/edition/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300             # Seitenbilder
+python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # Layout-Overlay
 ```
 
 ---

@@ -5,12 +5,12 @@ Liest OCR-Markdown-Dateien, korrigiert OCR-Fehler mittels LLM,
 speichert korrigierte Dateien.
 
 Usage:
-    python -m scripts.llm_postprocess --check
-    python -m scripts.llm_postprocess --doc 2310 --dry-run
-    python -m scripts.llm_postprocess --doc 2310
-    python -m scripts.llm_postprocess --phase phase1
-    python -m scripts.llm_postprocess --all
-    python -m scripts.llm_postprocess --phase phase1 --variant B --force
+    python -m scripts.ocr.llm_postprocess --check
+    python -m scripts.ocr.llm_postprocess --doc 2310 --dry-run
+    python -m scripts.ocr.llm_postprocess --doc 2310
+    python -m scripts.ocr.llm_postprocess --phase phase1
+    python -m scripts.ocr.llm_postprocess --all
+    python -m scripts.ocr.llm_postprocess --phase phase1 --variant B --force
 """
 
 import argparse

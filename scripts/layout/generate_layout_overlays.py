@@ -9,10 +9,10 @@ Output:
     output/layout/{doc_id}/{doc_id}_p{NNN}_overlay_compare.png  (--compare)
 
 Usage:
-    python -m scripts.generate_layout_overlays                  # Alle Docs
-    python -m scripts.generate_layout_overlays --doc 2310       # Einzelnes Doc
-    python -m scripts.generate_layout_overlays --compare        # Mit Vergleichsbildern
-    python -m scripts.generate_layout_overlays --force          # Ueberschreiben
+    python -m scripts.layout.generate_layout_overlays                  # Alle Docs
+    python -m scripts.layout.generate_layout_overlays --doc 2310       # Einzelnes Doc
+    python -m scripts.layout.generate_layout_overlays --compare        # Mit Vergleichsbildern
+    python -m scripts.layout.generate_layout_overlays --force          # Ueberschreiben
 """
 
 import argparse

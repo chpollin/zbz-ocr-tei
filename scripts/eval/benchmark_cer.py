@@ -5,7 +5,7 @@ Stratifizierte Analyse nach Dokumenttyp, Sprache und Publikationsform.
 Fehlermuster-Kategorisierung und optionale Proxy-Metriken.
 
 Usage:
-    python -m scripts.benchmark_cer [--all] [--docs 2310 290] [--proxy] [--html]
+    python -m scripts.eval.benchmark_cer [--all] [--docs 2310 290] [--proxy] [--html]
 """
 
 import json
@@ -17,7 +17,7 @@ from datetime import datetime
 from scripts.config import (
     REFERENZ_TEI_DIR, TEI_FINAL_DIR, EVALUATION_DIR, DOC_METADATA_PATH,
 )
-from scripts.evaluate_ocr import (
+from scripts.eval.evaluate_ocr import (
     evaluate_tei_vs_tei, categorize_errors, evaluate_tei_vs_tei_pagewise,
 )
 
@@ -470,7 +470,7 @@ def main():
     # Output zusammenstellen
     output = {
         'generated': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        'generator': 'scripts/benchmark_cer.py',
+        'generator': 'scripts/eval/benchmark_cer.py',
         'comparison': 'tei_vs_tei',
         'ref_source': str(ref_dir),
         'hyp_source': str(pipe_dir),
@@ -497,7 +497,7 @@ def main():
 
     # Proxy-Metriken
     if args.proxy:
-        from scripts.evaluate_ocr import compute_proxy_quality
+        from scripts.eval.evaluate_ocr import compute_proxy_quality
         proxy_data = {}
         pipe_files = sorted(pipe_dir.glob('*_final.xml'))
         gt_set = set(doc_ids)

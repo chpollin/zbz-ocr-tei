@@ -8,11 +8,11 @@ Mit --overlay: Erzeugt annotierte PNG-Bilder mit eingebrannten BBox-Overlays
   Output: output/layout/{doc_id}/{doc_id}_p{NNN}_overlay.png
 
 Usage:
-    python -m scripts.run_layout_analysis                      # alle Dokumente
-    python -m scripts.run_layout_analysis --doc 2310           # einzelnes Dokument
-    python -m scripts.run_layout_analysis --overlay            # nur Overlay-PNGs erzeugen
-    python -m scripts.run_layout_analysis --overlay --doc 2310 # Overlay fuer ein Dokument
-    python -m scripts.run_layout_analysis --force              # ueberschreibt existierende
+    python -m scripts.layout.run_layout_analysis                      # alle Dokumente
+    python -m scripts.layout.run_layout_analysis --doc 2310           # einzelnes Dokument
+    python -m scripts.layout.run_layout_analysis --overlay            # nur Overlay-PNGs erzeugen
+    python -m scripts.layout.run_layout_analysis --overlay --doc 2310 # Overlay fuer ein Dokument
+    python -m scripts.layout.run_layout_analysis --force              # ueberschreibt existierende
 """
 
 import argparse

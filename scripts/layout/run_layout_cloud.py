@@ -8,10 +8,10 @@ Voraussetzung: docling-serve laeuft (z.B. Docker):
     docker run -p 5001:5001 quay.io/docling-project/docling-serve-cpu
 
 Usage:
-    python -m scripts.run_layout_cloud                         # alle Dokumente
-    python -m scripts.run_layout_cloud --doc 2310              # einzelnes Dokument
-    python -m scripts.run_layout_cloud --url http://host:5001  # andere URL
-    python -m scripts.run_layout_cloud --force                 # ueberschreibt existierende
+    python -m scripts.layout.run_layout_cloud                         # alle Dokumente
+    python -m scripts.layout.run_layout_cloud --doc 2310              # einzelnes Dokument
+    python -m scripts.layout.run_layout_cloud --url http://host:5001  # andere URL
+    python -m scripts.layout.run_layout_cloud --force                 # ueberschreibt existierende
 """
 
 import argparse

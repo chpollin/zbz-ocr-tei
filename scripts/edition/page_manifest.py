@@ -29,9 +29,9 @@ Idempotenz: existierende Manifeste werden gelesen, die `streams.*.status` und
 Deskriptoren, `pages`-Map, `generated`, `generator`) werden neu geschrieben.
 
 Aufruf:
-    python -m scripts.page_manifest                  # ganzes Korpus
-    python -m scripts.page_manifest --doc 20         # ein Dokument
-    python -m scripts.page_manifest --dry-run        # nichts schreiben, nur Bericht
+    python -m scripts.edition.page_manifest                  # ganzes Korpus
+    python -m scripts.edition.page_manifest --doc 20         # ein Dokument
+    python -m scripts.edition.page_manifest --dry-run        # nichts schreiben, nur Bericht
 """
 
 import argparse

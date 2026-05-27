@@ -18,7 +18,7 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
-from scripts.cer_statistics import (
+from scripts.eval.cer_statistics import (
     DIACRITICS,
     NORM_REGIMES,
     DocCERRecord,

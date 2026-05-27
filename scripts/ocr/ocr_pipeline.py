@@ -6,15 +6,15 @@ Unterstuetzt mehrere OCR-Engines fuer verschiedene Dokumenttypen.
 
 Usage:
     # Einzelnes PDF
-    python scripts/ocr_pipeline.py --input data/scans/2310.pdf
+    python scripts/ocr/ocr_pipeline.py --input data/scans/2310.pdf
 
     # Alle PDFs
-    python scripts/ocr_pipeline.py --all
+    python scripts/ocr/ocr_pipeline.py --all
 
     # Bestimmte Engine
-    python scripts/ocr_pipeline.py --input data/scans/2310.pdf --engine deepseek
-    python scripts/ocr_pipeline.py --input data/scans/2310.pdf --engine mistral
-    python scripts/ocr_pipeline.py --input data/scans/2530.pdf --engine docling
+    python scripts/ocr/ocr_pipeline.py --input data/scans/2310.pdf --engine deepseek
+    python scripts/ocr/ocr_pipeline.py --input data/scans/2310.pdf --engine mistral
+    python scripts/ocr/ocr_pipeline.py --input data/scans/2530.pdf --engine docling
 """
 
 import argparse

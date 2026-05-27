@@ -19,7 +19,7 @@ Methodik (alle Quellen 2025+, User-Constraint 2026-04-27):
 - arXiv:2501.18243 (2025), arXiv:2509.04013 (2025)
 
 Usage:
-    python -m scripts.cer_statistics_full --seed 42 --bootstrap-n 10000
+    python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000
                                            [--out PATH]
 """
 
@@ -45,20 +45,20 @@ from scripts.config import (
     REFERENZ_TEI_DIR,
     TEI_FINAL_DIR,
 )
-from scripts.evaluate_ocr import (
+from scripts.eval.evaluate_ocr import (
     evaluate_document,
     evaluate_tei_vs_tei,
     extract_text_for_comparison,
     find_best_alignment,
 )
-from scripts import cer_statistics as base
-from scripts.cer_statistics import (
+from scripts.eval import cer_statistics as base
+from scripts.eval.cer_statistics import (
     DocCERRecord,
     NORM_REGIMES,
     bca_ci,
     paired_bootstrap_diff,
 )
-from scripts.cer_statistics_runner import collect_records
+from scripts.eval.cer_statistics_runner import collect_records
 
 
 # ---------------------------------------------------------------------------
@@ -442,7 +442,7 @@ def build_multi_norm(records: list[DocCERRecord], rng: np.random.Generator,
     in cer_statistics_runner._multi_norm_cer_for_doc() durch Page-Konkatenation
     mit " "-Separator unzuverlaessig ist (kann broken alignment exponieren).
     """
-    from scripts.cer_statistics import cer_under_norms
+    from scripts.eval.cer_statistics import cer_under_norms
 
     full = [r for r in records if r.scope_status == "full"]
 
@@ -925,7 +925,7 @@ def _proxy_definitions() -> dict:
     return {
         "hit_rate": ("Anteil OCR-Tokens (>=2 chars) im pyspellchecker FR/DE-Lexikon. "
                      "Eigennamen-Filter fuer FR/multi (uppercase-only-tokens ausgeschlossen). "
-                     "Vorberechnet via scripts/quality_proxy.py."),
+                     "Vorberechnet via scripts/eval/quality_proxy.py."),
         "oov_rate": "Out-of-vocabulary rate, definiert als 1 - hit_rate.",
         "suspicious_char_ratio": ("Anteil unerwarteter Zeichen (z.B. @#$%, fragwuerdige Unicode-Punkte). "
                                     "Klassisches OCR-Artefakt-Signal, vorberechnet via quality_proxy.py."),
@@ -938,7 +938,7 @@ def _proxy_definitions() -> dict:
 
 def _training_corpus() -> dict:
     return {
-        "source": "pyspellchecker FR/DE lexica + scripts/quality_proxy.py heuristics",
+        "source": "pyspellchecker FR/DE lexica + scripts/eval/quality_proxy.py heuristics",
         "size_chars": None,
         "note": "Wikipedia FR/DE n-gram model nicht verfuegbar in dieser Iteration.",
     }

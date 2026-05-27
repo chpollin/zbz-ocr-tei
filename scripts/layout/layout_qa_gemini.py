@@ -11,10 +11,10 @@ Output:
     output/layout/{doc_id}/summary_gemini.json                  # Summary
 
 Usage:
-    python -m scripts.layout_qa_gemini                              # QA (default)
-    python -m scripts.layout_qa_gemini --mode detect --doc 510      # Detect einzeln
-    python -m scripts.layout_qa_gemini --mode auto                  # Auto (detect/qa)
-    python -m scripts.layout_qa_gemini --force                      # ueberschreibt
+    python -m scripts.layout.layout_qa_gemini                              # QA (default)
+    python -m scripts.layout.layout_qa_gemini --mode detect --doc 510      # Detect einzeln
+    python -m scripts.layout.layout_qa_gemini --mode auto                  # Auto (detect/qa)
+    python -m scripts.layout.layout_qa_gemini --force                      # ueberschreibt
 """
 
 import argparse

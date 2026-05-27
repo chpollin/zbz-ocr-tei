@@ -12,10 +12,10 @@ Literatur:
   (LREC 2022, https://aclanthology.org/2022.lrec-1.467/)
 
 Usage:
-  python -m scripts.quality_proxy                  # nur 25 GT-Docs (Validierung)
-  python -m scripts.quality_proxy --all            # alle 285 Docs
-  python -m scripts.quality_proxy --doc 100        # einzelnes Dokument
-  python -m scripts.quality_proxy --html           # mit HTML-Report
+  python -m scripts.eval.quality_proxy                  # nur 25 GT-Docs (Validierung)
+  python -m scripts.eval.quality_proxy --all            # alle 285 Docs
+  python -m scripts.eval.quality_proxy --doc 100        # einzelnes Dokument
+  python -m scripts.eval.quality_proxy --html           # mit HTML-Report
 """
 
 import argparse
@@ -34,7 +34,7 @@ from scripts.config import (
     REFERENZ_TEI_DIR,
     TEI_FINAL_DIR,
 )
-from scripts.evaluate_ocr import extract_text_for_comparison
+from scripts.eval.evaluate_ocr import extract_text_for_comparison
 
 
 # ---------------------------------------------------------------------------
@@ -459,7 +459,7 @@ def run(doc_ids: list[str] | None = None, all_docs: bool = False,
 
     results = {
         "generated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "generator": "scripts/quality_proxy.py",
+        "generator": "scripts/eval/quality_proxy.py",
         "method": "dictionary_hit_rate",
         "reference": "Stroebel et al. 2022 (LREC)",
         "summary": summary,

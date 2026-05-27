@@ -58,6 +58,8 @@ GEMINI_CORRECTED_A_DIR = OUTPUT_DIR / "gemini_corrected_a"
 GEMINI_CORRECTED_B_DIR = OUTPUT_DIR / "gemini_corrected_b"
 PAGE_XML_DIR = OUTPUT_DIR / "page_xml"
 DOC_METADATA_PATH = DATA_DIR / "doc_metadata.json"
+PROJEKTSTEUERUNG_DIR = DATA_DIR / "projektsteuerung"
+MASTERFILE_PATH = PROJEKTSTEUERUNG_DIR / "Masterfile.xlsx"
 
 DOCS_DIR = PROJECT_ROOT / "docs"
 IMAGES_DIR = DOCS_DIR / "images"

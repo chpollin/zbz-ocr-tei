@@ -10,9 +10,9 @@ Generiert Edition-Daten fuer den statischen Viewer (docs/):
 Damit funktioniert der Viewer ohne lokalen Server fuer alle 285 Docs (GitHub Pages tauglich).
 
 Usage:
-    python -m scripts.generate_edition_data                  # voller Lauf inkl. Mirror + Thumbs
-    python -m scripts.generate_edition_data --no-mirror      # nur Katalog + Entity-Index
-    python -m scripts.generate_edition_data --mirror-only    # nur Mirror + Thumbs
+    python -m scripts.edition.generate_edition_data                  # voller Lauf inkl. Mirror + Thumbs
+    python -m scripts.edition.generate_edition_data --no-mirror      # nur Katalog + Entity-Index
+    python -m scripts.edition.generate_edition_data --mirror-only    # nur Mirror + Thumbs
 """
 
 import argparse
@@ -453,7 +453,7 @@ def build_catalog():
 
     catalog = {
         "generated": datetime.now().isoformat(timespec="seconds"),
-        "generator": "scripts/generate_edition_data.py",
+        "generator": "scripts/edition/generate_edition_data.py",
         "edition": {
             "title": "Nachlass Jeanne Hersch",
             "subtitle": "Digitale Edition",

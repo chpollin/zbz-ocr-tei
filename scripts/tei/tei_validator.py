@@ -485,7 +485,7 @@ def _compute_cer(ref_text: str, hyp_text: str) -> float:
     # Fuer exakte CER muesste Levenshtein berechnet werden
     # Wir nutzen die bestehende evaluate_ocr Logik falls verfuegbar
     try:
-        from scripts.evaluate_ocr import compute_cer
+        from scripts.eval.evaluate_ocr import compute_cer
         return compute_cer(ref_text, hyp_text)
     except (ImportError, Exception):
         # Fallback: Laengen-basierte Approximation

@@ -886,7 +886,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     # Lazy Import: nur fuer den Run noetig, nicht fuer die Tests.
-    from scripts.cer_statistics_runner import collect_records  # type: ignore
+    from scripts.eval.cer_statistics_runner import collect_records  # type: ignore
 
     records, corpus_metadata, n_with_gt, exclusions = collect_records()
     data = build_statistics(

@@ -5,9 +5,9 @@ mit tatsaechlichen <pb>-Elementen in den finalen TEI-Dateien.
 Identifiziert Dokumente mit fehlenden Seiten oder unerwarteten Abweichungen.
 
 Usage:
-    python -m scripts.completeness_check              # alle 285 Docs
-    python -m scripts.completeness_check --doc 1910   # einzelnes Doc
-    python -m scripts.completeness_check --html       # mit HTML-Report
+    python -m scripts.eval.completeness_check              # alle 285 Docs
+    python -m scripts.eval.completeness_check --doc 1910   # einzelnes Doc
+    python -m scripts.eval.completeness_check --html       # mit HTML-Report
 """
 
 import argparse
@@ -210,7 +210,7 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
 
     results = {
         "generated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "generator": "scripts/completeness_check.py",
+        "generator": "scripts/eval/completeness_check.py",
         "summary": summary,
         "documents": documents,
     }

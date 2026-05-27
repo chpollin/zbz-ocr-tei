@@ -45,7 +45,7 @@ from scripts.tei.tei_step3 import assemble_document
 # Lazy import fuer build_doc_hints / infer_genre (vermeidet zirkulaere Imports)
 @functools.lru_cache(maxsize=1)
 def _get_layout_qa():
-    import scripts.layout_qa_gemini as m
+    import scripts.layout.layout_qa_gemini as m
     return m
 
 

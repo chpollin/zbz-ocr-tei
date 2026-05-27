@@ -15,14 +15,14 @@ Output:
         manifest.json                   # Token-/Kostenstatistik
 
 Usage:
-    python -m scripts.gemini_ocr_correct --doc 2310              # Einzeldokument
-    python -m scripts.gemini_ocr_correct --sample                # 5 Pilot-Docs
-    python -m scripts.gemini_ocr_correct --sample --variant B    # Multimodal
-    python -m scripts.gemini_ocr_correct --step analyze          # Nur Schritt 1
-    python -m scripts.gemini_ocr_correct --step correct          # Nur Schritt 2
-    python -m scripts.gemini_ocr_correct --all                   # Alle Docs mit OCR
-    python -m scripts.gemini_ocr_correct --force                 # Cache ueberschreiben
-    python -m scripts.gemini_ocr_correct --dry-run               # Prompts anzeigen
+    python -m scripts.ocr.gemini_ocr_correct --doc 2310              # Einzeldokument
+    python -m scripts.ocr.gemini_ocr_correct --sample                # 5 Pilot-Docs
+    python -m scripts.ocr.gemini_ocr_correct --sample --variant B    # Multimodal
+    python -m scripts.ocr.gemini_ocr_correct --step analyze          # Nur Schritt 1
+    python -m scripts.ocr.gemini_ocr_correct --step correct          # Nur Schritt 2
+    python -m scripts.ocr.gemini_ocr_correct --all                   # Alle Docs mit OCR
+    python -m scripts.ocr.gemini_ocr_correct --force                 # Cache ueberschreiben
+    python -m scripts.ocr.gemini_ocr_correct --dry-run               # Prompts anzeigen
 """
 
 import argparse
