@@ -40,10 +40,12 @@
     }
 
     /**
-     * Speichert OCR/Transkription als Markdown.
+     * Speichert OCR/Transkription als Markdown. Kanonischer Name ohne Suffix, damit
+     * die Datei bei manueller Ablage in output/ocr_curated/ direkt vom Loader
+     * (scripts/core/loaders.py, hoechste Prioritaet) gelesen wird.
      */
     function text(doc, page, content) {
-        const fname = `${doc}_p${page}_curated.md`;
+        const fname = `${doc}_p${page}.md`;
         trigger(fname, content, 'text/markdown;charset=utf-8');
     }
 

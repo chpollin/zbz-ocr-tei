@@ -58,39 +58,6 @@ def md_to_tei_inline(text: str) -> str:
     return text
 
 
-def annotate_entities(text: str) -> str:
-    """Ersetzt bekannte Entitaeten durch typkorrekte TEI-Tags mit interner ID.
-
-    Nutzt den Entity Index fuer korrekten Tag-Typ (persName/orgName/placeName/bibl)
-    und setzt ref-Attribut mit interner ID (#zbz-p.N, #zbz-o.N, #zbz-l.N, #zbz-w.N).
-    Laengere Namen zuerst, damit "Karl Jaspers" vor "Jaspers" matched.
-    Verhindert verschachtelte Tags durch Placeholder-Technik.
-    """
-    from scripts.tei.tei_mapping_prompt import _load_entity_entries
-    entries = _load_entity_entries()
-    sorted_names = sorted(entries.keys(), key=len, reverse=True)
-
-    # Phase 1: Ersetze durch Placeholder (damit kuerzere Matches nicht
-    # innerhalb von bereits ersetzten laengeren Matches greifen)
-    placeholders = {}
-    counter = 0
-    for name in sorted_names:
-        tei_tag, xml_id = entries[name]
-        tag = f'<{tei_tag} ref="#{xml_id}">{name}</{tei_tag}>'
-        placeholder = f"\x00ENTITY{counter}\x00"
-        placeholders[placeholder] = tag
-        counter += 1
-        # Wortgrenzen-Match
-        pattern = r'(?<!\w)' + re.escape(name) + r'(?!\w)'
-        text = re.sub(pattern, placeholder, text)
-
-    # Phase 2: Placeholder durch Tags ersetzen
-    for placeholder, tag in placeholders.items():
-        text = text.replace(placeholder, tag)
-
-    return text
-
-
 # ---------------------------------------------------------------------------
 # Dokument-Metadaten (doc_metadata.json > TESTPLAN Fallback)
 # ---------------------------------------------------------------------------
@@ -312,7 +279,7 @@ def generate_tei_page(
         rid = m["region_id"]
         facs_attr = f' facs="#facs_{page}_r_{rid}"' if m["bbox"] else ""
 
-        # Text aufbereiten: XML-Escape, dann Markdown->TEI, dann GND
+        # Text aufbereiten: XML-Escape, dann Markdown->TEI
         raw_text = m["text"]
 
         # Markdown-Heading-Prefix entfernen (## Titel -> Titel)
@@ -322,7 +289,6 @@ def generate_tei_page(
         # Erst escapen, dann Markdown konvertieren
         safe_text = xml_escape(raw_text)
         safe_text = md_to_tei_inline(safe_text)
-        safe_text = annotate_entities(safe_text)
 
         if tag == "zb_heading":
             lines.append(f"        <head{facs_attr}>")

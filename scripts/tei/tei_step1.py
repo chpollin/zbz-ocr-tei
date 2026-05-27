@@ -14,7 +14,6 @@ from xml.sax.saxutils import escape as xml_escape
 
 from scripts.core.loaders import load_layout_gemini, load_ocr_text
 from scripts.tei.tei_generator import (
-    annotate_entities,
     md_to_tei_inline,
     split_paragraphs,
 )
@@ -212,7 +211,6 @@ def _build_tei_body(matched: list[dict], page: int, genre: str | None, is_interv
 
         safe_text = xml_escape(raw_text)
         safe_text = md_to_tei_inline(safe_text)
-        safe_text = annotate_entities(safe_text)
         safe_text = insert_line_breaks(safe_text, page, rid)
 
         if tag == "zb_heading" and not any_content_emitted:

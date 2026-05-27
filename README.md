@@ -34,8 +34,6 @@ the planned `_complete.xml` variant with embedded `<facsimile>` / `<zone>`.
 | Layout analysis | Docling RT-DETR V2 / docling-serve | Done |
 | Layout QA/Detect | Gemini Flash Lite | Done |
 | PAGE-XML + METS | Rule-based generator | Done |
-| NER extraction | Gemini Flash Lite (6 entity types) | Done |
-| Entity Index + Wikidata/GND linking | Wikidata API + TEI indices | Done |
 | TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | Done (285/285) |
 | Workflow status per stream | Manifest + revisionDesc projection | Done (replaces agent screening, E66/E67) |
 
@@ -66,13 +64,12 @@ python -m http.server 8000 -d docs    # http://localhost:8000/
 
 ```
 zbz-ocr-tei/
-  knowledge/              # 10 project documents (Single Source of Truth, all lowercase)
+  knowledge/              # 11 documents incl. navigation index (Single Source of Truth, all lowercase)
   scripts/                # Python pipeline (grouped by domain; inventory: scripts/README.md)
     config.py             # Central configuration
     utils.py              # Shared utilities
     ocr/                  # OCR + correction: ocr_pipeline, gemini_ocr_correct, llm_postprocess, ocr_dedup, classify_docs
     layout/               # Layout analysis (Docling/Gemini) + PAGE-XML/METS + overlays
-    ner/                  # NER + Wikidata/GND linking
     tei/                  # TEI-XML pipeline (scaffold, Gemini, assembly, validator, status marker)
     eval/                 # CER benchmark + statistics, quality proxy, corpus audit, HTML report
     edition/              # Catalog/mirror generation, per-object manifest, page extraction
@@ -83,7 +80,7 @@ zbz-ocr-tei/
     about.html            # Project info
     css/                  # tokens.css, base.css, viewer.css, catalog.css
     js/                   # core.js, viewer.js, catalog.js, tei-render.js, ...
-    data/                 # catalog.json, entity_index.json, pages/, thumbs/, tei/
+    data/                 # catalog.json, pages/, thumbs/, tei/
     images/               # Page scans (4 DEMO docs committed: 1000, 1330, 1540, 2310; rest local-only, ~4 GB)
   data/                   # Input + reference data
     source/               # ZBZ delivery, immutable input (mostly not versioned)
@@ -93,7 +90,6 @@ zbz-ocr-tei/
       masterfile/         # Masterfile.xlsx (catalog + steering)
       guidelines/         # editorial guidelines (ZBZ + DTA link)
     schema/               # zbz_hersch.rng (project TEI schema)
-    entities/             # entity authority indexes
     curated_tei/          # curated gold-standard TEI
     doc_metadata.json     # generated Gemini classification (committed cache)
   output/                 # Generated pipeline data (not versioned)
@@ -141,7 +137,7 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | Mistral Document AI 2512 | Azure AI Foundry | Production OCR |
 | Claude Haiku 4.5 | Anthropic API | LLM post-correction (optional) |
 | Docling 2.75 | Local / docling-serve API | Layout analysis (BBox + regions) |
-| Gemini 3.1 Flash Lite | Google AI API | Layout QA/Detect, classification, OCR correction, NER, TEI refinement |
+| Gemini 3.1 Flash Lite | Google AI API | Layout QA/Detect, classification, OCR correction, TEI refinement, opt-in Vision-OCR (`-e gemini`) |
 
 ## Documentation
 
@@ -151,12 +147,11 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | Project + milestones + corpus | [knowledge/projekt.md](knowledge/projekt.md) |
 | Pipeline + engines + TEI mapping | [knowledge/pipeline.md](knowledge/pipeline.md) |
 | **End-to-end workflow + save mechanism + round-trip + provenance concept** | **[knowledge/workflow.md](knowledge/workflow.md)** |
-| Entities (NER + GND + Wikidata) | [knowledge/entities.md](knowledge/entities.md) |
 | Quality (CER, validation, screening) | [knowledge/quality.md](knowledge/quality.md) |
 | Viewer (frontend architecture, OSD, edit toggles, export) | [knowledge/viewer.md](knowledge/viewer.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
 | Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
-| Decisions + open items (E1–E68) | [knowledge/decisions.md](knowledge/decisions.md) |
+| Decisions + open items (E1–E71) | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team

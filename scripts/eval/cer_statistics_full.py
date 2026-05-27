@@ -46,6 +46,7 @@ from scripts.config import (
     TEI_FINAL_DIR,
 )
 from scripts.eval.evaluate_ocr import (
+    classify_edit_operations,
     evaluate_document,
     evaluate_tei_vs_tei,
     extract_text_for_comparison,
@@ -193,6 +194,11 @@ def enrich_records(records: list[DocCERRecord], verbose: bool = True) -> None:
         e2e = evaluate_tei_vs_tei(r.doc_id, REFERENCE_TEI_DIR, TEI_FINAL_DIR)
         if e2e.get("status") in ("OK", "MISMATCH"):
             r.metadata["e2e_cer_full"] = float(e2e.get("cer", 0.0))
+            # Fidelity (echte OCR-/Transkriptionsfehler) + Scope (Pipeline-Mehrtext).
+            # Siehe classify_edit_operations: cer_full = cer_fidelity + scope_insertion_rate.
+            r.metadata["e2e_cer_fidelity"] = float(e2e.get("cer_fidelity", e2e.get("cer", 0.0)))
+            r.metadata["scope_insertion_rate"] = float(e2e.get("scope_insertion_rate", 0.0))
+            r.metadata["e2e_cer_casefold"] = float(e2e.get("cer_casefold", e2e.get("cer", 0.0)))
             r.metadata["error_categories"] = e2e.get("error_categories", {})
             r.metadata["n_ref_chars_doc"] = int(e2e.get("ref_chars", 0))
             # Aligned ref+hyp Text fuer chunk-basiertes within-doc Bootstrap
@@ -242,6 +248,9 @@ def enrich_records(records: list[DocCERRecord], verbose: bool = True) -> None:
             r.metadata["ocr_only_cer"] = float(ocr_eval["cer"])
             ref_aligned = ocr_eval.get("reference_text", "")
             hyp_aligned = ocr_eval.get("ocr_text", "")
+            # OCR-only Fidelity (gleiche Zerlegung wie E2E) fuer like-for-like Paired-Test.
+            _oc = classify_edit_operations(ref_aligned, hyp_aligned)
+            r.metadata["ocr_only_cer_fidelity"] = _oc["cer_fidelity"]
             chunk_size = 1000
             chunks = []
             for start in range(0, len(ref_aligned), chunk_size):
@@ -363,6 +372,28 @@ def within_doc_bootstrap(r: DocCERRecord, rng: np.random.Generator,
 # Bloecke
 # ---------------------------------------------------------------------------
 
+def _agg_block(values: list[float], rng, n_resamples, ci_label) -> dict:
+    """Ein Aggregat-Block (mean/median + Perzentil-CIs, Doc-Level-Bootstrap)."""
+    if not values:
+        return {"n": 0, "mean": None, "mean_ci95": None, "median": None,
+                "median_ci95": None, "std": None, "min": None, "max": None,
+                "q1": None, "q3": None, "ci_method": ci_label}
+    mean, ml, mh, medl, medh = doc_level_bootstrap(values, rng, n_resamples)
+    return {
+        "n": len(values),
+        "mean": round(mean, 6),
+        "mean_ci95": [round(ml, 6), round(mh, 6)],
+        "median": round(float(np.median(values)), 6),
+        "median_ci95": [round(medl, 6), round(medh, 6)],
+        "std": round(float(np.std(values, ddof=1)) if len(values) > 1 else 0.0, 6),
+        "min": round(min(values), 6),
+        "max": round(max(values), 6),
+        "q1": round(float(np.percentile(values, 25)), 6),
+        "q3": round(float(np.percentile(values, 75)), 6),
+        "ci_method": ci_label,
+    }
+
+
 def build_overall(records: list[DocCERRecord], rng: np.random.Generator,
                   n_resamples: int) -> dict:
     full = [r for r in records if r.scope_status == "full"]
@@ -379,8 +410,29 @@ def build_overall(records: list[DocCERRecord], rng: np.random.Generator,
         "max": round(max(cers_e2e), 6) if cers_e2e else None,
         "q1": round(float(np.percentile(cers_e2e, 25)), 6),
         "q3": round(float(np.percentile(cers_e2e, 75)), 6),
-        "ci_method": f"BCa blockwise (block=doc, n={len(cers_e2e)}), B={n_resamples}, Singh 2025",
+        "ci_method": f"Doc-level Perzentil-Bootstrap (block=doc, n={len(cers_e2e)}), B={n_resamples}, Singh 2025",
+        "definition": "Volle Volltext-Divergenz von der Referenz (scope-inklusiv), case-sensitiv, kein Trimming.",
     }
+
+    # PRIMAER: Fidelity ueber ALLE Docs (echte OCR-/Transkriptionsfehler, ohne
+    # Pipeline-Mehrtext). Braucht keinen Scope-Filter -- grosse Einfuegungen sind
+    # per classify_edit_operations bereits ausgeklammert.
+    fid_vals = [float(r.metadata.get("e2e_cer_fidelity", _doc_weighted_cer(r))) for r in records]
+    scope_vals = [float(r.metadata.get("scope_insertion_rate", 0.0)) for r in records]
+    cf_vals = [float(r.metadata.get("e2e_cer_casefold", _doc_weighted_cer(r))) for r in full]
+    fidelity = _agg_block(fid_vals, rng, n_resamples,
+                          f"Doc-level Perzentil-Bootstrap (block=doc, n={len(fid_vals)}, ALLE Docs), B={n_resamples}")
+    fidelity["definition"] = ("PRIMAER. OCR-/Transkriptionstreue: Substitutionen + kleine Indels "
+                              "+ Loeschungen. Grosse Pipeline-Einfuegungen (Mehrtext ggue. der "
+                              "selektiven Referenz) ausgeschlossen. Ueber ALLE Docs, kein Scope-Filter.")
+    scope = _agg_block(scope_vals, rng, n_resamples,
+                       f"Doc-level Perzentil-Bootstrap (block=doc, n={len(scope_vals)}, ALLE Docs), B={n_resamples}")
+    scope["definition"] = ("Pipeline-Mehrtext ggue. Referenz (grosse Einfuegungen: Masthead, "
+                           "Nachbar-Rezension, Inhaltsverzeichnis). KEIN OCR-Fehler. "
+                           "cer_full = cer_fidelity + scope_insertion_rate.")
+    casefold = _agg_block(cf_vals, rng, n_resamples,
+                          f"Doc-level Perzentil-Bootstrap (block=doc, n={len(cf_vals)}), B={n_resamples}")
+    casefold["definition"] = "Wie end_to_end (scope-inkl.), aber case-insensitiv (Unicode casefold)."
 
     # OCR-only
     cers_ocr = [r.metadata.get("ocr_only_cer") for r in full if r.metadata.get("ocr_only_cer") is not None]
@@ -407,7 +459,8 @@ def build_overall(records: list[DocCERRecord], rng: np.random.Generator,
                "std": None, "min": None, "max": None, "q1": None, "q3": None,
                "ci_method": None}
 
-    return {"end_to_end": e2e, "ocr_only": ocr}
+    return {"end_to_end_fidelity": fidelity, "scope_insertion": scope,
+            "end_to_end": e2e, "end_to_end_casefold": casefold, "ocr_only": ocr}
 
 
 def build_strata(records: list[DocCERRecord], rng: np.random.Generator,
@@ -503,23 +556,26 @@ def build_multi_norm(records: list[DocCERRecord], rng: np.random.Generator,
 
 def build_paired_test(records: list[DocCERRecord], rng: np.random.Generator,
                        n_resamples: int) -> dict:
+    # Like-for-like: BEIDE Seiten auf Fidelity-Basis (echte Fehler), damit der
+    # Vergleich nicht durch Scope-Mehrtext (der nur E2E betrifft) verzerrt wird.
     full = [r for r in records if r.scope_status == "full"]
     diffs = []
     for r in full:
-        e2e = _doc_weighted_cer(r)
-        ocr = r.metadata.get("ocr_only_cer")
-        if ocr is None:
+        e2e = r.metadata.get("e2e_cer_fidelity")
+        ocr = r.metadata.get("ocr_only_cer_fidelity")
+        if e2e is None or ocr is None:
             continue
-        diffs.append(e2e - ocr)
+        diffs.append(float(e2e) - float(ocr))
     if not diffs:
-        return {"status": "deferred", "reason": "no paired E2E+OCR data"}
+        return {"status": "deferred", "reason": "no paired E2E+OCR fidelity data"}
     paired = paired_bootstrap_diff(diffs, n_resamples=n_resamples, seed=42)
     n_better = sum(1 for x in diffs if x < -1e-6)
     n_worse = sum(1 for x in diffs if x > 1e-6)
     n_unchanged = len(diffs) - n_better - n_worse
     return {
         "status": "measured",
-        "baseline_definition": "OCR-only CER per doc (Mistral Stage-2 plain text vs reference TEI, evaluate_document)",
+        "metric": "fidelity-CER (echte Fehler) beidseitig -- scope-neutral",
+        "baseline_definition": "OCR-only Fidelity-CER per doc (Mistral Stage-2 plain text vs reference TEI, evaluate_document + classify_edit_operations)",
         "n": int(paired["n"]),
         "n_better": n_better, "n_worse": n_worse, "n_unchanged": n_unchanged,
         "mean_diff": round(float(paired["mean_diff"]), 6),
@@ -724,6 +780,8 @@ def build_per_doc(records: list[DocCERRecord], rng: np.random.Generator,
             "n_ref_chars": int(r.metadata.get("n_ref_chars_doc", sum(r.page_ref_chars))),
             "cer_end_to_end": round(cer_e2e, 6),
             "cer_end_to_end_ci95": ci_e2e,
+            "cer_fidelity": round(float(r.metadata.get("e2e_cer_fidelity", cer_e2e)), 6),
+            "scope_insertion_rate": round(float(r.metadata.get("scope_insertion_rate", 0.0)), 6),
             "cer_ocr_only": (round(float(r.metadata["ocr_only_cer"]), 6)
                               if r.metadata.get("ocr_only_cer") is not None else None),
             "cer_ocr_only_ci95": ci_ocr,
@@ -1021,8 +1079,11 @@ def main(argv: list[str] | None = None) -> int:
             "python_version": platform.python_version(),
             "numpy_version": np.__version__,
             "scipy_version": scipy.__version__,
-            "cer_lib": "internal char-level Levenshtein (cer_statistics.levenshtein)",
-            "alignment_algo": "evaluate_tei_vs_tei + find_best_alignment (length-ratio-triggered)",
+            "cer_lib": "rapidfuzz char-level Levenshtein (Fallback: cer_statistics.levenshtein)",
+            "alignment_algo": ("Volltext-Levenshtein OHNE Trimming (calculate_cer). "
+                               "Drei-Zahlen-Zerlegung via classify_edit_operations: "
+                               "fidelity (echte Fehler) + scope (Pipeline-Mehrtext) = full. "
+                               "find_best_alignment nur noch fuer Diagnose/within-doc-chunks."),
             "normalization_pipeline": [
                 {"step": "raw", "ops": ["whitespace collapse", "strip"]},
                 {"step": "nfc", "ops": ["raw", "unicodedata.normalize NFC"]},
@@ -1065,12 +1126,15 @@ def main(argv: list[str] | None = None) -> int:
         json.dump(out, f, indent=2, ensure_ascii=False)
 
     e2e = overall["end_to_end"]
+    fid = overall["end_to_end_fidelity"]
+    sco = overall["scope_insertion"]
     ocr = overall["ocr_only"]
     print()
     print(f"Wrote {args.out}")
-    print(f"  schema={SCHEMA_VERSION}, n_evaluated={full_count}, n_excluded={len(excluded_block)}")
-    print(f"  E2E mean = {e2e['mean']*100:.2f}% (CI95 [{e2e['mean_ci95'][0]*100:.2f}%, {e2e['mean_ci95'][1]*100:.2f}%])")
-    print(f"  E2E median = {e2e['median']*100:.2f}% (CI95 [{e2e['median_ci95'][0]*100:.2f}%, {e2e['median_ci95'][1]*100:.2f}%])")
+    print(f"  schema={SCHEMA_VERSION}, n_fidelity(alle)={fid['n']}, n_full(scope-clean)={full_count}, n_excluded={len(excluded_block)}")
+    print(f"  [PRIMAER] Fidelity mean = {fid['mean']*100:.2f}% (CI95 [{fid['mean_ci95'][0]*100:.2f}%, {fid['mean_ci95'][1]*100:.2f}%]), median = {fid['median']*100:.2f}%")
+    print(f"  [scope-inkl] E2E mean = {e2e['mean']*100:.2f}% (CI95 [{e2e['mean_ci95'][0]*100:.2f}%, {e2e['mean_ci95'][1]*100:.2f}%]), median = {e2e['median']*100:.2f}%")
+    print(f"  [scope]      Mehrtext-Rate mean = {sco['mean']*100:.2f}%, median = {sco['median']*100:.2f}%")
     if ocr.get("status") == "measured":
         print(f"  OCR-only mean = {ocr['mean']*100:.2f}% (CI95 [{ocr['mean_ci95'][0]*100:.2f}%, {ocr['mean_ci95'][1]*100:.2f}%])")
         print(f"  Paired diff (E2E - OCR) = {paired_test['mean_diff']*100:+.2f}pp, p={paired_test['p_bootstrap_two_sided']:.4f}")

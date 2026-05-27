@@ -196,7 +196,6 @@
             `../output/tei_unified/${doc}/${doc}_p${page}.xml`
         ],
         teiFinal: (doc) => [
-            `data/tei/${doc}_final.xml`,
             `data/pages/${doc}/${doc}_final.xml`,
             `../output/tei_final/${doc}_final.xml`
         ]

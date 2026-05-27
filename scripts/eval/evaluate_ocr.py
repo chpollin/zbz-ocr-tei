@@ -2,6 +2,33 @@
 OCR-Evaluationsskript: Vergleicht OCR-Output mit Referenz-TEI.
 Berechnet Character Error Rate (CER) und Word Error Rate (WER).
 Generiert visuellen HTML-Report mit Diff-Ansicht.
+
+=====================================================================
+CER-VERTRAG (kanonische Definition, gilt fuer das ganze Projekt)
+=====================================================================
+Verbindlich verifiziert gegen OCR-D, dinglehopper, Transkribus, jiwer
+(siehe knowledge/quality.md, Abschnitt "Externe Verifikation").
+
+- Formel:        CER = Levenshtein(ref, hyp) / len(ref)   (Transkribus-Konvention,
+                 Denominator = Referenzlaenge). Kann >1.0 werden; das wird NICHT
+                 versteckt. Optional zusaetzlich OCR-D-normiert (gedeckelt).
+- Alignment:     GLOBALES Levenshtein ueber den VOLLTEXT. Kein Zuschneiden der
+                 Hypothese auf die Referenz -- das wuerde Insertions/Extra-Text
+                 verstecken (frueheres find_best_alignment-Trimming, abgeschafft).
+- Case:          PRIMAER case-sensitiv (konsistent mit der Transkribus-Ground-Truth
+                 und OCR-D/dinglehopper, wo Case ein Fehler ist). Case-insensitiv
+                 (Unicode casefold) wird SEKUNDAER zusaetzlich berichtet.
+- Unicode:       NFC (Standard). Symmetrische Norm. von Quotes/Guillemets/Apostroph/
+                 Bindestrich -> ASCII, auf BEIDE Seiten angewandt (keine konventions-
+                 bedingten Pseudo-Fehler).
+- Footnotes:     fuer den Hauptvergleich exkludiert; cer_incl_footnotes separat.
+- <choice>:      nur <corr> wird verglichen (nicht sic+corr konkateniert).
+- Aggregation:   Doc-Ebene (1 char-gewichtete CER pro Dok), Bootstrap ueber Docs.
+- Ausschluss:    NUR strukturell (Seitenzahl-Ratio), ergebnisUNABHAENGIG. Ein hoher
+                 CER bei gleicher Seitenzahl ist ein echtes Ergebnis, kein Artefakt.
+
+EINE kanonische Funktion -- extract_text_for_comparison() + calculate_cer() --
+wird von benchmark_cer, cer_statistics_runner UND tei_validator verwendet.
 """
 
 import re
@@ -153,7 +180,7 @@ def normalize_text(text: str) -> str:
     return text
 
 
-def normalize_for_comparison(text: str) -> str:
+def normalize_for_comparison(text: str, casefold: bool = False) -> str:
     """Symmetrische Normalisierung fuer CER-Vergleich.
 
     Wendet alle konventionsbedingten Zeichenersetzungen an, damit
@@ -161,6 +188,13 @@ def normalize_for_comparison(text: str) -> str:
     und Referenz-TEI (Transkribus) nicht als CER gezaehlt werden.
 
     Angewendet auf BEIDE Seiten des Vergleichs.
+
+    Args:
+        casefold: Wenn True, Unicode-Casefolding (case-INSENSITIVE Sekundaer-Metrik).
+                  Standard False = case-SENSITIV -- korrekte Default-Konvention: die
+                  Transkribus-Ground-Truth ist case-sensitiv, OCR-D/dinglehopper zaehlen
+                  Case als Fehler, jiwer macht ToLowerCase opt-in. Ein pauschales lower()
+                  wuerde alle Majuskel/Minuskel-Fehler verstecken.
     """
     # 1. Guillemets + deutsche Anfuehrungszeichen -> ASCII
     text = text.replace('\u00AB', '"').replace('\u00BB', '"')   # « »
@@ -177,10 +211,11 @@ def normalize_for_comparison(text: str) -> str:
     text = text.replace('\u00AD', '')    # Soft hyphen entfernen
     # 4. Leerzeichen vor franzoesischer Interpunktion entfernen
     text = re.sub(r' +([;:?!])', r'\1', text)
-    # 5. Case-Normalisierung: Entfernt kuenstliche Case-Unterschiede
-    #    zwischen Pipeline (z.B. GROSSBUCHSTABEN-Ueberschriften) und
-    #    Referenz (Normalschreibung). Betrifft v.a. Docs 290, 100.
-    text = text.lower()
+    # 5. Optionales Casefolding -- NUR fuer die case-insensitive Sekundaer-Metrik.
+    #    Standard ist case-sensitiv. casefold() ist Unicode-korrekt (ss = ß) und
+    #    konsistent mit dem Regime nfc_hyphen_case in cer_statistics.
+    if casefold:
+        text = text.casefold()
     # 6. Basis-Normalisierung (Whitespace, Smart Quotes, Strip)
     text = normalize_text(text)
     # 7. Unicode NFC
@@ -188,13 +223,16 @@ def normalize_for_comparison(text: str) -> str:
     return text
 
 
-def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False) -> str:
+def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False,
+                                casefold: bool = False) -> str:
     """Extrahiert Text aus TEI-XML fuer CER-Benchmarking.
 
     Gegenueber extract_text_from_tei mit drei Korrekturen:
     1. <choice>: Nur <corr> extrahieren (nicht sic+corr konkateniert)
     2. <note place="foot">: Optional ausschliessen (Default: exkludiert)
     3. Unicode NFC-Normalisierung fuer konsistenten Diakritika-Vergleich
+
+    casefold=True liefert den case-insensitiven Text (Sekundaer-Metrik).
     """
     with open(tei_path, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -203,7 +241,7 @@ def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False)
         root = ET.fromstring(content)
     except ET.ParseError:
         text = re.sub(r'<[^>]+>', '', content)
-        return normalize_for_comparison(text)
+        return normalize_for_comparison(text, casefold=casefold)
 
     # Namespace entfernen
     for elem in root.iter():
@@ -251,11 +289,12 @@ def extract_text_for_comparison(tei_path: Path, include_footnotes: bool = False)
         return ''.join(parts)
 
     text = get_text(body)
-    return normalize_for_comparison(text)
+    return normalize_for_comparison(text, casefold=casefold)
 
 
 def extract_pages_for_comparison(tei_path: Path,
                                  include_footnotes: bool = False,
+                                 casefold: bool = False,
                                  ) -> dict[int, str]:
     """Extrahiert Text pro Seite aus TEI-XML fuer CER-Benchmarking.
 
@@ -292,7 +331,7 @@ def extract_pages_for_comparison(tei_path: Path,
         nonlocal current_page, current_parts
         if current_page is not None and current_parts:
             raw = ''.join(current_parts)
-            text = normalize_for_comparison(raw)
+            text = normalize_for_comparison(raw, casefold=casefold)
             if text.strip():
                 pages[current_page] = text
         current_parts = []
@@ -336,12 +375,12 @@ def extract_pages_for_comparison(tei_path: Path,
     return pages
 
 
-def load_ocr_result(ocr_path: Path) -> str:
+def load_ocr_result(ocr_path: Path, casefold: bool = False) -> str:
     """Laedt OCR-Ergebnis aus Markdown-Datei."""
     if not ocr_path.exists():
         return ""
     text = ocr_path.read_text(encoding='utf-8')
-    return normalize_for_comparison(text)
+    return normalize_for_comparison(text, casefold=casefold)
 
 
 def _levenshtein_distance(s1: str, s2: str) -> int:
@@ -395,12 +434,28 @@ def calculate_wer(reference: str, hypothesis: str) -> float:
     return distance / len(ref_words)
 
 
+def _get_opcodes(reference: str, hypothesis: str):
+    """Liefert (tag, i1, i2, j1, j2)-Opcodes aus dem ECHTEN Levenshtein-Alignment.
+
+    Wichtig: rapidfuzz.Levenshtein.opcodes nutzt dieselbe minimale Editierdistanz
+    wie calculate_cer(). difflib.SequenceMatcher (frueher hier) liefert ein anderes,
+    lesbarkeits-optimiertes Alignment (Autojunk-Heuristik), dessen Block-Distanzen
+    NICHT zur CER aufsummieren. editops/opcodes garantieren Konsistenz mit der Headline.
+    Fallback auf difflib nur, wenn rapidfuzz fehlt.
+    """
+    try:
+        from rapidfuzz.distance import Levenshtein as _RFLev
+        return [(op.tag, op.src_start, op.src_end, op.dest_start, op.dest_end)
+                for op in _RFLev.opcodes(reference, hypothesis)]
+    except ImportError:
+        return list(SequenceMatcher(None, reference, hypothesis).get_opcodes())
+
+
 def find_differences(reference: str, hypothesis: str) -> list:
-    """Findet konkrete Unterschiede zwischen Texten."""
-    matcher = SequenceMatcher(None, reference, hypothesis)
+    """Findet konkrete Unterschiede zwischen Texten (echtes Levenshtein-Alignment)."""
     differences = []
 
-    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+    for tag, i1, i2, j1, j2 in _get_opcodes(reference, hypothesis):
         if tag != 'equal':
             context_start = max(0, i1 - 20)
             context_end = min(len(reference), i2 + 20)
@@ -442,6 +497,64 @@ def _has_repeated_ngrams(text: str, n: int = 3, threshold: int = 3) -> bool:
     from collections import Counter
     counts = Counter(ngrams)
     return any(c >= threshold for c in counts.values())
+
+
+# Eine zusammenhaengende Einfuegung >= SCOPE_BLOCK_MIN Zeichen gilt als
+# struktureller Mehrtext der Pipeline ggue. der (oft selektiven) Referenz
+# -- z.B. Journal-Masthead, Nachbar-Rezension, Inhaltsverzeichnis. Solche
+# Bloecke sind KEIN OCR-Fehler. Tunbar; dokumentiert im CER-Vertrag oben.
+SCOPE_BLOCK_MIN = 50
+
+
+def classify_edit_operations(reference: str, hypothesis: str,
+                             scope_block_min: int = SCOPE_BLOCK_MIN) -> dict:
+    """Zerlegt die Levenshtein-Editieroperationen in zwei Toepfe.
+
+    fidelity (echte Fehler):
+        - Substitutionen (replace-Bloecke)         -> Text falsch erkannt
+        - ALLE Loeschungen (delete)                -> Pipeline VERPASST Referenztext
+        - kleine Einfuegungen (< scope_block_min)  -> spurioses Zeichen/Wort
+    scope (kein OCR-Fehler):
+        - grosse Einfuegungen (>= scope_block_min) -> Pipeline-Mehrtext ggue. Referenz
+                                                      (Masthead, 2. Rezension, Inhaltsverz.)
+
+    fidelity_distance + scope_insertion_distance == Levenshtein(ref, hyp), d.h.
+    cer (=total/N) ist identisch zu calculate_cer; cer_fidelity + scope_insertion_rate == cer.
+    Asymmetrie ist beabsichtigt: vollstaendiger sein als die Referenz ist kein Fehler,
+    unvollstaendiger sein schon (siehe knowledge/quality.md, Scope-Diskussion).
+    """
+    fid = 0
+    scope_ins = 0
+    for tag, i1, i2, j1, j2 in _get_opcodes(reference, hypothesis):
+        r, h = i2 - i1, j2 - j1
+        if tag == 'equal':
+            continue
+        if tag == 'replace':
+            fid += max(r, h)
+        elif tag == 'delete':
+            fid += r
+        elif tag == 'insert':
+            if h >= scope_block_min:
+                scope_ins += h
+            else:
+                fid += h
+    n = len(reference)
+    total = fid + scope_ins
+    if n == 0:
+        base = 0.0 if not hypothesis else 1.0
+        return {'total_distance': total, 'fidelity_distance': fid,
+                'scope_insertion_distance': scope_ins, 'cer': base,
+                'cer_fidelity': base, 'scope_insertion_rate': 0.0,
+                'scope_block_min': scope_block_min}
+    return {
+        'total_distance': total,
+        'fidelity_distance': fid,
+        'scope_insertion_distance': scope_ins,
+        'cer': total / n,
+        'cer_fidelity': fid / n,
+        'scope_insertion_rate': scope_ins / n,
+        'scope_block_min': scope_block_min,
+    }
 
 
 def categorize_errors(differences: list, ref_length: int) -> dict:
@@ -616,7 +729,13 @@ def _find_phrase_in_text(phrase: str, text: str, case_insensitive: bool = False)
 
 def find_best_alignment(reference: str, ocr_text: str, window_size: int = 100) -> tuple:
     """
-    Findet die beste Ausrichtung zwischen OCR-Text und Referenztext.
+    DIAGNOSE-WERKZEUG (nicht mehr Headline-Pfad). Findet die beste Ausrichtung
+    zwischen OCR-Text und Referenztext fuer den Vergleich cer vs cer_aligned_legacy.
+    Die Headline-CER nutzt KEIN Alignment mehr (Volltext-Vergleich), weil das
+    Zuschneiden der Hypothese Insertions/Extra-Text versteckt. Padding-Fallbacks
+    (frueher +200 auf Referenzlaenge) wurden entfernt -- Nicht-Treffer dehnen jetzt
+    bis zum Textende statt auf Referenzlaenge aufzufuellen.
+
     Zwei Szenarien:
     1. OCR ist Teilmenge der Referenz (OCR deckt nur einige Seiten ab)
     2. Referenz ist Teilmenge der OCR (OCR enthaelt mehr als das Dokument)
@@ -661,10 +780,10 @@ def find_best_alignment(reference: str, ocr_text: str, window_size: int = 100) -
         return (0, len(reference), ocr_start_pos, ocr_end_pos, reference, matched_ocr)
 
     if ocr_start_pos != -1:
-        # Anfang gefunden, Ende schaetzen
-        estimated_end = min(ocr_start_pos + len(reference) + 200, len(ocr_text))
-        matched_ocr = ocr_text[ocr_start_pos:estimated_end]
-        return (0, len(reference), ocr_start_pos, estimated_end, reference, matched_ocr)
+        # Anfang gefunden, Ende nicht: bis zum ENDE der Hypothese nehmen.
+        # KEIN Padding auf Referenzlaenge (+200) -- das wuerde Insertions verstecken.
+        matched_ocr = ocr_text[ocr_start_pos:]
+        return (0, len(reference), ocr_start_pos, len(ocr_text), reference, matched_ocr)
 
     # 3. Alternativ: Anfang des OCR in der Referenz finden
     ref_start_pos = -1
@@ -684,7 +803,7 @@ def find_best_alignment(reference: str, ocr_text: str, window_size: int = 100) -
                 break
 
         if ref_end_pos == -1 or ref_end_pos <= ref_start_pos:
-            ref_end_pos = min(ref_start_pos + len(ocr_text) + 200, len(reference))
+            ref_end_pos = len(reference)  # bis zum Ende, kein +200-Padding
 
         matched_ref = reference[ref_start_pos:ref_end_pos]
         return (ref_start_pos, ref_end_pos, 0, len(ocr_text), matched_ref, ocr_text)
@@ -710,9 +829,8 @@ def find_best_alignment(reference: str, ocr_text: str, window_size: int = 100) -
         return (0, len(reference), ci_start, ci_end_pos, reference, matched_ocr)
 
     if ci_start != -1:
-        estimated_end = min(ci_start + len(reference) + 200, len(ocr_text))
-        matched_ocr = ocr_text[ci_start:estimated_end]
-        return (0, len(reference), ci_start, estimated_end, reference, matched_ocr)
+        matched_ocr = ocr_text[ci_start:]  # bis zum Ende, kein +200-Padding
+        return (0, len(reference), ci_start, len(ocr_text), reference, matched_ocr)
 
     # 5. Fallback: Einzelne lange Woerter suchen
     for words, text, is_ref in [(ref_words, ocr_text, True), (ocr_words, reference, False)]:
@@ -722,13 +840,11 @@ def find_best_alignment(reference: str, ocr_text: str, window_size: int = 100) -
                 pos = text.find(word)
                 if pos != -1:
                     if is_ref:
-                        estimated_end = min(pos + len(reference) + 200, len(ocr_text))
-                        matched_ocr = ocr_text[pos:estimated_end]
-                        return (0, len(reference), pos, estimated_end, reference, matched_ocr)
+                        matched_ocr = ocr_text[pos:]  # bis zum Ende, kein +200-Padding
+                        return (0, len(reference), pos, len(ocr_text), reference, matched_ocr)
                     else:
-                        estimated_end = min(pos + len(ocr_text) + 200, len(reference))
-                        matched_ref = reference[pos:estimated_end]
-                        return (pos, estimated_end, 0, len(ocr_text), matched_ref, ocr_text)
+                        matched_ref = reference[pos:]
+                        return (pos, len(reference), 0, len(ocr_text), matched_ref, ocr_text)
 
     # Kein gutes Alignment gefunden
     return (0, len(reference), 0, len(ocr_text), reference, ocr_text)
@@ -1151,11 +1267,14 @@ def evaluate_tei_vs_tei(doc_id: str, ref_dir: Path, pipeline_dir: Path) -> dict:
         result['error'] = f"Pipeline-TEI nicht gefunden: {doc_id}"
         return result
 
-    # Seitenzahl-Mismatch erkennen
+    # Seitenzahl (strukturelles Scope-Signal). Blank-Seiten (<pb type="blank"/>,
+    # von tei_blank_marker nur in tei_final injiziert) werden NICHT mitgezaehlt,
+    # sonst entsteht bei kurzen Docs ein kuenstlicher Seiten-Mismatch.
     def _count_pb(path):
         try:
             content = path.read_text(encoding='utf-8')
-            return content.count('<pb ')
+            return sum(1 for tag in re.findall(r'<pb\b[^>]*>', content)
+                       if 'type="blank"' not in tag)
         except Exception:
             return 0
 
@@ -1165,14 +1284,14 @@ def evaluate_tei_vs_tei(doc_id: str, ref_dir: Path, pipeline_dir: Path) -> dict:
     result['pipe_pages'] = pipe_pages
     if ref_pages > 0 and pipe_pages > 0:
         page_ratio = max(ref_pages, pipe_pages) / max(min(ref_pages, pipe_pages), 1)
-        if page_ratio > 1.5:
+        if page_ratio >= 1.5:
             result['scope_mismatch'] = True
             result['scope_info'] = (
                 f"Seiten-Mismatch: Ref={ref_pages}, Pipeline={pipe_pages} "
-                f"(Ratio {page_ratio:.1f}x). CER nicht direkt vergleichbar."
+                f"(Ratio {page_ratio:.1f}x). Struktureller Scope-Unterschied."
             )
 
-    # Text extrahieren (ohne Fussnoten fuer Hauptvergleich)
+    # Text extrahieren (ohne Fussnoten fuer Hauptvergleich), case-sensitiv = primaer.
     ref_text = extract_text_for_comparison(ref_path, include_footnotes=False)
     pipe_text = extract_text_for_comparison(pipe_path, include_footnotes=False)
 
@@ -1181,39 +1300,57 @@ def evaluate_tei_vs_tei(doc_id: str, ref_dir: Path, pipeline_dir: Path) -> dict:
         result['error'] = f"Referenz-TEI leer: {ref_path.name}"
         return result
 
-    # Alignment bei Laengendifferenz (>5%)
-    len_ratio = max(len(ref_text), len(pipe_text)) / max(min(len(ref_text), len(pipe_text)), 1)
-    if len_ratio > 1.05:
-        _, _, _, _, aligned_ref, aligned_pipe = find_best_alignment(ref_text, pipe_text)
-        result['alignment_info'] = (
-            f"Aligned: ref {len(ref_text)}->{len(aligned_ref)}, "
-            f"pipe {len(pipe_text)}->{len(aligned_pipe)} "
-            f"(ratio {len_ratio:.2f})"
-        )
-        ref_text = aligned_ref
-        pipe_text = aligned_pipe
-    else:
-        result['alignment_info'] = f"Direkt: ref={len(ref_text)}, pipe={len(pipe_text)}"
-
-    # CER / WER
+    # PRIMAER: Volltext-CER OHNE Trimming (dinglehopper/jiwer-Konvention).
+    # calculate_cer rechnet globales Levenshtein ueber den ganzen Text. Wir
+    # schneiden die Hypothese NICHT auf die Referenz zu -- das wuerde Insertions
+    # und Extra-Text der Pipeline verstecken (frueheres find_best_alignment-Trimming).
     result['cer'] = calculate_cer(ref_text, pipe_text)
     result['wer'] = calculate_wer(ref_text, pipe_text)
     result['ref_chars'] = len(ref_text)
     result['hyp_chars'] = len(pipe_text)
+    len_ratio = max(len(ref_text), len(pipe_text)) / max(min(len(ref_text), len(pipe_text)), 1)
 
-    # Alignment-Mismatch erkennen (CER > 50% = vermutlich anderer Text)
-    if result['cer'] > 0.50:
-        result['status'] = 'MISMATCH'
-        result['alignment_info'] += ' [MISMATCH: CER > 50%, vermutlich Textabweichung]'
+    # Drei-Zahlen-Zerlegung (siehe classify_edit_operations):
+    #   cer            = volle Divergenz von der Referenz (= calculate_cer)
+    #   cer_fidelity   = echte OCR-/Transkriptionsfehler (Subst. + kleine Indels + Loeschungen)
+    #   scope_insertion_rate = Pipeline-Mehrtext ggue. (oft selektiver) Referenz, kein Fehler
+    ops_class = classify_edit_operations(ref_text, pipe_text)
+    result['cer_fidelity'] = ops_class['cer_fidelity']
+    result['scope_insertion_rate'] = ops_class['scope_insertion_rate']
 
-    # Fussnoten-CER separat (inkl. vs. exkl. Fussnoten)
+    # SEKUNDAER: case-insensitive (Unicode casefold) -- selber Volltext-Vergleich.
+    ref_cf = extract_text_for_comparison(ref_path, include_footnotes=False, casefold=True)
+    pipe_cf = extract_text_for_comparison(pipe_path, include_footnotes=False, casefold=True)
+    result['cer_casefold'] = calculate_cer(ref_cf, pipe_cf)
+
+    # DIAGNOSE (nicht Headline): die frueher verwendete alignment-getrimmte CER.
+    # Macht den Deflations-Effekt sichtbar (cer vs cer_aligned_legacy). find_best_alignment
+    # ohne Padding-Fallbacks (siehe dortige Korrektur).
+    if len_ratio > 1.05:
+        _, _, _, _, aref, apipe = find_best_alignment(ref_text, pipe_text)
+        result['cer_aligned_legacy'] = calculate_cer(aref, apipe)
+    else:
+        result['cer_aligned_legacy'] = result['cer']
+
+    result['alignment_info'] = (
+        f"Volltext case-sensitiv={result['cer']*100:.2f}%, "
+        f"case-insensitiv={result['cer_casefold']*100:.2f}%, "
+        f"legacy-aligned={result['cer_aligned_legacy']*100:.2f}% (ratio {len_ratio:.2f})"
+    )
+
+    # Hoher CER ist ein informatives Flag, KEIN Status-Wechsel und KEIN Ausschluss.
+    # Ein hoher CER bei gleicher Seitenzahl ist ein echtes Ergebnis; nur strukturelle
+    # Seiten-Mismatches (scope_mismatch oben) sind Benchmark-Artefakte.
+    result['high_cer'] = result['cer'] > 0.50
+
+    # Fussnoten-CER separat (Volltext, konsistent zur Primaer-CER)
     ref_with_fn = extract_text_for_comparison(ref_path, include_footnotes=True)
     pipe_with_fn = extract_text_for_comparison(pipe_path, include_footnotes=True)
     if len(ref_with_fn) > len(ref_text) + 20:
-        result['footnote_cer'] = calculate_cer(ref_with_fn, pipe_with_fn)
-        result['cer_incl_footnotes'] = result['footnote_cer']
+        result['cer_incl_footnotes'] = calculate_cer(ref_with_fn, pipe_with_fn)
+        result['footnote_cer'] = result['cer_incl_footnotes']
 
-    # Fehlerkategorien
+    # Fehlerkategorien (editops-basiert, summiert zur tatsaechlichen Editierdistanz)
     diffs = find_differences(ref_text, pipe_text)
     result['differences'] = diffs[:30]
     result['error_categories'] = categorize_errors(diffs, len(ref_text))

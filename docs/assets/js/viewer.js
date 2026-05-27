@@ -72,6 +72,7 @@
         textTitle:      $('#text-panel-title'),
         regionCount:    $('#region-count'),
         layoutToolbar:  $('#layout-toolbar'),
+        btnConnectRepo: $('#btn-connect-repo'),
         btnDlLayout:    $('#btn-download-layout'),
         btnDlText:      $('#btn-download-text'),
         btnDlTei:       $('#btn-download-tei'),
@@ -87,6 +88,9 @@
 
     async function init() {
         bindEvents();
+
+        // Persistierten Repo-Ordner wiederherstellen (File System Access) + Button-Status
+        if (ZBZ.FsAccess) { await ZBZ.FsAccess.init(); renderConnectBtn(); }
 
         const urlDoc = ZBZ.getParam('doc');
         if (!urlDoc) {
@@ -272,11 +276,39 @@
         }
     }
 
-    function downloadManifest() {
+    async function downloadManifest() {
         if (!state.manifest) { ZBZ.toast('Kein Manifest geladen', 'warn'); return; }
-        ZBZ.Download.manifest(state.doc.id, state.manifest);
+        await persist(
+            () => ZBZ.FsAccess.writeManifest(state.doc.id, state.manifest),
+            () => ZBZ.Download.manifest(state.doc.id, state.manifest)
+        );
         state.manifestDirty = false;
         renderStatusPills();
+    }
+
+    // ============================================================ Repo-Ordner (File System Access) ============================================================
+
+    function renderConnectBtn() {
+        const btn = refs.btnConnectRepo;
+        if (!btn) return;
+        if (!ZBZ.FsAccess || !ZBZ.FsAccess.available) { btn.hidden = true; return; }
+        btn.hidden = false;
+        const conn = ZBZ.FsAccess.isConnected();
+        btn.textContent = conn ? ('Ordner: ' + (ZBZ.FsAccess.rootName() || 'verbunden')) : 'Ordner verbinden';
+        btn.setAttribute('aria-pressed', conn ? 'true' : 'false');
+        btn.title = conn
+            ? 'Verbunden — Kuration wird direkt in den Working Tree geschrieben. Klick trennt.'
+            : 'Repo-Ordner verbinden: Kuration direkt in den Working Tree schreiben statt herunterladen (nur Chromium).';
+    }
+
+    async function toggleConnectRepo() {
+        if (!ZBZ.FsAccess || !ZBZ.FsAccess.available) return;
+        if (ZBZ.FsAccess.isConnected()) {
+            await ZBZ.FsAccess.disconnect();
+        } else {
+            await ZBZ.FsAccess.connect();
+        }
+        renderConnectBtn();
     }
 
     // ============================================================ Page laden ============================================================
@@ -645,20 +677,51 @@
         renderTextPanel();
     }
 
-    // ============================================================ Downloads ============================================================
+    // ============================================================ Speichern (Direkt-Schreiben oder Download) ============================================================
+
+    // Wenn ein Repo-Ordner verbunden ist (File System Access API), direkt in den Working
+    // Tree schreiben; sonst (oder bei Schreibfehler) auf ZBZ.Download zurueckfallen.
+    async function persist(fsWrite, dlFallback) {
+        if (ZBZ.FsAccess && ZBZ.FsAccess.isConnected()) {
+            try {
+                const path = await fsWrite();
+                ZBZ.toast('Gespeichert: ' + path, 'ok');
+                return true;
+            } catch (err) {
+                ZBZ.log('Viewer', 'Direkt-Speichern fehlgeschlagen: ' + (err && err.message));
+                ZBZ.toast('Direkt-Speichern fehlgeschlagen — Download', 'warn');
+            }
+        }
+        dlFallback();
+        return false;
+    }
+
+    function layoutSourceMeta() {
+        return {
+            source: 'curated',
+            original_source: state.layout.source || 'gemini',
+            // Bildgroesse mitschreiben, damit die kuratierte JSON selbsttragend ist
+            image_width: state.layout.image_width || 0,
+            image_height: state.layout.image_height || 0
+        };
+    }
 
     function downloadLayout() {
         if (!state.doc || !state.layout) { ZBZ.toast('Keine Layout-Daten', 'warn'); return; }
-        ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, {
-            source: 'curated',
-            original_source: state.layout.source || 'gemini'
-        });
+        const meta = layoutSourceMeta();
+        persist(
+            () => ZBZ.FsAccess.writeLayout(state.doc.id, state.page, state.layout.regions, meta),
+            () => ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, meta)
+        );
     }
     function downloadText() {
         if (!state.doc) return;
         const content = (state._currentEditedText != null) ? state._currentEditedText : state._currentText;
         if (!content) { ZBZ.toast('Kein Text geladen', 'warn'); return; }
-        ZBZ.Download.text(state.doc.id, state.page, content);
+        persist(
+            () => ZBZ.FsAccess.writeText(state.doc.id, state.page, content),
+            () => ZBZ.Download.text(state.doc.id, state.page, content)
+        );
     }
     async function downloadTei() {
         if (!state.doc) return;
@@ -667,7 +730,10 @@
             xml = await loadTeiFinal(state.doc.id);
         }
         if (!xml) { ZBZ.toast('Kein TEI verfuegbar', 'warn'); return; }
-        ZBZ.Download.tei(state.doc.id, xml, 'curated');
+        persist(
+            () => ZBZ.FsAccess.writeTei(state.doc.id, xml),
+            () => ZBZ.Download.tei(state.doc.id, xml, 'curated')
+        );
     }
 
     // ============================================================ Events ============================================================
@@ -690,6 +756,7 @@
         refs.btnTextEdit.addEventListener('click', () => setTextEdit(!state.textEdit));
         refs.textSourceBtns.forEach(b => b.addEventListener('click', () => setTextSource(b.getAttribute('data-text-source'))));
 
+        if (refs.btnConnectRepo) refs.btnConnectRepo.addEventListener('click', toggleConnectRepo);
         refs.btnDlLayout.addEventListener('click', downloadLayout);
         refs.btnDlText.addEventListener('click', downloadText);
         refs.btnDlTei.addEventListener('click', downloadTei);

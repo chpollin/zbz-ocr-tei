@@ -462,11 +462,13 @@ def diacritic_preservation_rate(
 class DocCERRecord:
     """Per-Dok-Datensatz fuer Aggregation.
 
-    Wichtig: `doc_cer` ist die **gewichtete** Per-Dok-CER (Levenshtein-Summe /
-    Ref-Char-Summe ueber alle Seiten), nicht der Mittelwert der Per-Page-CERs.
-    Eine Seite mit 1 Ref-Char und 50 Hyp-Chars liefert Page-CER 50 -- das wuerde
-    den ungewichteten Mittelwert kaputt machen. Aggregat-Statistik bootstraped
-    deshalb ueber Per-Dok-Werte (n=Docs), nicht ueber Per-Page-Werte.
+    `doc_cer` ist die kanonische Per-Dok-CER: Volltext-Levenshtein / Ref-Laenge,
+    case-sensitiv, OHNE Alignment-Trimming (aus evaluate_tei_vs_tei). Wenn gesetzt,
+    gibt `weighted_cer` genau diesen Wert zurueck -- die page_cers/page_ref_chars
+    dienen nur noch der Per-Seiten-Outlier-Visualisierung, nicht der Headline.
+    Die frueher hier dokumentierte char-gewichtete Per-Page-Aggregation wurde
+    aufgegeben (Page-Numbering-Drift, siehe knowledge/quality.md). Aggregat-Statistik
+    bootstraped ueber Per-Dok-Werte (n=Docs), nicht ueber Per-Page-Werte.
     """
     doc_id: str
     page_cers: list[float]            # eine CER pro Seite (regime: nfc_hyphen)
@@ -475,7 +477,10 @@ class DocCERRecord:
     metadata: dict                    # language, layout_type, pub_form, ...
     scope_status: str                 # "full" | "partial"
     scope_detail: str | None = None
-    doc_cer: float | None = None      # gewichtete Per-Dok-CER (regime: nfc_hyphen)
+    doc_cer: float | None = None      # Volltext-CER, case-sensitiv (kein Trimming)
+    doc_cer_casefold: float | None = None  # Volltext-CER, case-insensitiv
+    doc_cer_fidelity: float | None = None  # nur echte Fehler (Subst.+kleine Indels+Loeschungen)
+    doc_scope_insertion_rate: float | None = None  # Pipeline-Mehrtext ggue. Referenz (kein Fehler)
 
     @property
     def weighted_cer(self) -> float:
@@ -493,16 +498,19 @@ def aggregate_overall(
     records: Sequence[DocCERRecord],
     n_resamples: int,
     seed: int,
+    value_fn: Callable[[DocCERRecord], float] | None = None,
 ) -> dict:
     """Overall-Block: Mean + Median der **Per-Dok-CERs** mit Bootstrap-CI ueber Docs.
 
-    Wir nehmen pro Dok einen einzigen, char-gewichteten CER-Wert (siehe
-    DocCERRecord.weighted_cer). Bootstrap zieht n=Docs Werte mit Zuruecklegen.
-    Das ist der korrekte Aggregations-Level: Pages innerhalb eines Docs sind
-    korreliert, naive Page-Aggregation wird durch Mini-Pages mit 1 Ref-Char
-    verzerrt (Page-CER kann > 1 werden, wenn Hyp-Page viele Chars hat).
+    Wir nehmen pro Dok einen einzigen CER-Wert (Default: weighted_cer = case-sensitive
+    Volltext-CER). `value_fn` erlaubt eine andere Per-Dok-Groesse (z.B. die case-
+    insensitive doc_cer_casefold) ohne Code-Duplikation. Bootstrap zieht n=Docs Werte
+    mit Zuruecklegen -- der korrekte Aggregations-Level (Pages innerhalb eines Docs
+    sind korreliert).
     """
-    doc_cers = [r.weighted_cer for r in records if r.page_ref_chars]
+    if value_fn is None:
+        value_fn = lambda r: r.weighted_cer
+    doc_cers = [value_fn(r) for r in records if r.page_ref_chars]
     if not doc_cers:
         return {"n_docs": 0, "n_pages": 0, "mean": None, "median": None,
                 "ci_method": "bca over docs"}
@@ -652,12 +660,18 @@ def build_statistics(
     # ueber records nach Sprache (records-Metadaten enthalten language).
     diacritic = _aggregate_diacritic(records)
 
-    # Per-Dok-Liste fuer Frontend.
+    # Per-Dok-Liste fuer Frontend. WICHTIG: 'cer' ist hier IDENTISCH zur Headline
+    # (r.weighted_cer == doc_cer, case-sensitive Volltext-CER). Frueher stand hier
+    # cer_by_regime['nfc_hyphen'] -- ein OHNE Alignment gerechneter Wert, der von der
+    # Headline abwich. cer_casefold ist die case-insensitive Sekundaer-Zahl.
     per_doc = []
     for r in records:
         per_doc.append({
             "doc_id": r.doc_id,
-            "cer": r.cer_by_regime.get("nfc_hyphen"),
+            "cer": r.weighted_cer,
+            "cer_fidelity": r.doc_cer_fidelity,
+            "scope_insertion_rate": r.doc_scope_insertion_rate,
+            "cer_casefold": r.doc_cer_casefold,
             "cer_by_regime": r.cer_by_regime,
             "n_ref_chars": int(sum(r.page_ref_chars)),
             "n_pages": len(r.page_cers),
@@ -694,12 +708,33 @@ def build_statistics(
         },
         "selection_bias": selection_bias,
         "overall": {
+            "end_to_end_fidelity": aggregate_overall(
+                records, n_resamples, seed + 10,
+                value_fn=lambda r: (r.doc_cer_fidelity
+                                    if r.doc_cer_fidelity is not None
+                                    else r.weighted_cer),
+            ),
             "end_to_end": aggregate_overall(scope_clean, n_resamples, seed),
+            "end_to_end_casefold": aggregate_overall(
+                scope_clean, n_resamples, seed + 25,
+                value_fn=lambda r: (r.doc_cer_casefold
+                                    if r.doc_cer_casefold is not None
+                                    else r.weighted_cer),
+            ),
             "end_to_end_all": aggregate_overall(records, n_resamples, seed + 50),
+            "metric_note": (
+                "end_to_end_fidelity = OCR-/Transkriptionstreue (Substitutionen + kleine "
+                "Indels + Loeschungen), grosse Pipeline-Einfuegungen (Mehrtext ggue. der oft "
+                "selektiven Referenz) ausgeschlossen -- ueber ALLE Docs, kein Scope-Filter noetig. "
+                "end_to_end = volle Volltext-Divergenz (scope-inkl.), case-sensitiv, kein Trimming. "
+                "end_to_end_casefold = wie end_to_end, aber case-insensitiv. "
+                "Siehe knowledge/quality.md, Topf A/B/C-Zerlegung."
+            ),
             "scope_filter_note": (
                 f"end_to_end nutzt n={len(scope_clean)} scope-bereinigte Docs "
-                f"(scope_status='full'); end_to_end_all nutzt n={len(records)} "
-                "inkl. scope-mismatched Docs zur Vergleichbarkeit mit alten Reports."
+                f"(scope_status='full', NUR struktureller Seitenzahl-Filter, "
+                f"ergebnisunabhaengig); end_to_end_all nutzt n={len(records)} "
+                "inkl. scope-mismatched Docs."
             ),
             "ocr_only": {
                 "status": "open",

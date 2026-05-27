@@ -23,6 +23,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
     REFERENCE_TEI_DIR,
+    TEI_FINAL_DIR,
     TEI_NS,
     TEI_SCHEMA_DIR,
     TEI_SCHEMA_PATH,
@@ -478,13 +479,11 @@ def _extract_entity_set(root, entity_tag: str) -> set[str]:
 
 
 def _compute_cer(ref_text: str, hyp_text: str) -> float:
-    """Berechnet die Character Error Rate in Prozent (Levenshtein-basiert).
+    """Berechnet die CER in Prozent (Levenshtein-basiert) aus bereits extrahiertem Text.
 
-    ``calculate_cer`` (scripts.eval.evaluate_ocr) liefert ein Ratio 0-1; der
-    Validator-Report rechnet ueberall in Prozent (HTML/CLI: ``{cer:.1f}%``),
-    daher * 100. Frueher wurde hier ein nicht existentes ``compute_cer``
-    importiert -- der Import schlug still fehl und der Validator fiel auf die
-    grobe Laengen-Approximation zurueck (O24).
+    Die Extraktion erfolgt im Aufrufer (compare_with_reference) ueber die KANONISCHE
+    extract_text_for_comparison(), damit --compare-ref dieselbe Zahl liefert wie der
+    Benchmark. Prozent, da HTML/CLI in % rechnen (O24).
     """
     if not ref_text:
         return 0.0
@@ -516,7 +515,11 @@ def compare_with_reference(tei_dir: Path = None, ref_dir: Path = None) -> dict:
 
     for ref_file in sorted(ref_dir.glob("*.xml")):
         doc_id = ref_file.stem
-        our_file = tei_dir / doc_id / f"{doc_id}_final.xml"
+        # Ausgelieferte Schicht ist tei_final/ (Single Source of Truth, CLAUDE.md).
+        # Fallback auf die alte per-Doc-Struktur in tei_unified/{id}/.
+        our_file = TEI_FINAL_DIR / f"{doc_id}_final.xml"
+        if not our_file.exists():
+            our_file = tei_dir / doc_id / f"{doc_id}_final.xml"
         if not our_file.exists():
             continue
 
@@ -530,13 +533,18 @@ def compare_with_reference(tei_dir: Path = None, ref_dir: Path = None) -> dict:
         ref_root = ref_tree.getroot()
         our_root = our_tree.getroot()
 
-        # Body-Text extrahieren
-        ref_body = ref_root.find(f".//{{{TEI_NS}}}body")
-        our_body = our_root.find(f".//{{{TEI_NS}}}body")
-        ref_text = _normalize_text("".join(ref_body.itertext())) if ref_body is not None else ""
-        our_text = _normalize_text("".join(our_body.itertext())) if our_body is not None else ""
-
-        # CER
+        # CER: KANONISCHE Extraktion (extract_text_for_comparison) -- identisch zum
+        # Benchmark/Statistik-Pfad. Frueher wurde hier roh body.itertext() genutzt
+        # (zaehlte Fussnoten + sic+corr doppelt, ohne Norm) -> abweichende Zahl.
+        try:
+            from scripts.eval.evaluate_ocr import extract_text_for_comparison as _extract
+            ref_text = _extract(ref_file)
+            our_text = _extract(our_file)
+        except ImportError:
+            ref_body = ref_root.find(f".//{{{TEI_NS}}}body")
+            our_body = our_root.find(f".//{{{TEI_NS}}}body")
+            ref_text = _normalize_text("".join(ref_body.itertext())) if ref_body is not None else ""
+            our_text = _normalize_text("".join(our_body.itertext())) if our_body is not None else ""
         cer = _compute_cer(ref_text, our_text)
 
         # Struktur-Vergleich

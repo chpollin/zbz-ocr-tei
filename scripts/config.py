@@ -29,13 +29,12 @@ MASTERFILE_PATH = MASTERFILE_DIR / "Masterfile.xlsx"
 OUTPUT_DIR = PROJECT_ROOT / "output"
 OCR_RESULTS_DIR = OUTPUT_DIR / "ocr_results"
 MISTRAL_RESULTS_DIR = OUTPUT_DIR / "mistral_results"
+OCR_CURATED_DIR = OUTPUT_DIR / "ocr_curated"                   # vom Viewer kuratiertes OCR (hoechste Prioritaet)
 EVALUATION_DIR = OUTPUT_DIR / "evaluation"
 LAYOUT_DIR = OUTPUT_DIR / "layout"
 CLASSIFICATION_DIR = OUTPUT_DIR / "classification"
 TEI_DIR = OUTPUT_DIR / "tei"
 TEI_UNIFIED_DIR = OUTPUT_DIR / "tei_unified"
-ENTITIES_DIR = OUTPUT_DIR / "entities"
-TEI_NER_DIR = OUTPUT_DIR / "tei_ner"
 TEI_CURATED_DIR = DATA_DIR / "curated_tei"
 TEI_FINAL_DIR = OUTPUT_DIR / "tei_final"
 
@@ -98,14 +97,6 @@ GEMINI_DETECT_MODEL = GEMINI_MODEL  # gleich; bei Bedarf separat ueberschreiben
 # Ausnahme-Pfad (z.B. wenn Azure/Mistral nicht verfuegbar) -- die normale OCR bleibt Mistral.
 GEMINI_OCR_MODEL = "gemini-3.1-flash-lite"
 
-# Wikidata API
-WIKIDATA_API_URL = "https://www.wikidata.org/w/api.php"
-WIKIDATA_RATE_LIMIT = 1.0  # Sekunden zwischen Requests
-WIKIDATA_CACHE_PATH = ENTITIES_DIR / "_wikidata_cache.json"
-WIKIDATA_USER_AGENT = "zbz-ocr-tei/1.0 (DHCraft; Jeanne Hersch Edition)"
-
-# NER Entity-Typen
-NER_ENTITY_TYPES = {"person", "organization", "place", "work", "event", "date"}
 
 # Docling BlockType -> ZBZ Structural Tag
 DOCLING_TO_ZBZ = {

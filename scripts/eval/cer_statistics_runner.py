@@ -60,27 +60,25 @@ def _ground_truth_doc_ids() -> list[str]:
 
 
 def _detect_scope_mismatch(eval_result: dict) -> tuple[str, str | None]:
-    """Heuristische Scope-Bereinigung. Markiert als 'partial' wenn:
-      (a) Pipeline-/Referenz-Seitenzahl deutlich abweicht (Faktor >= 1.5), ODER
-      (b) Doc-CER > 50% (Schwellwert aus existierendem benchmark_cer.py;
-          CER ueber 50% ist ein klares Indiz fuer Text-/Scope-Mismatch, nicht
-          OCR-Qualitaet -- z.B. Pipeline-TEI deckt anderen Text-Abschnitt ab).
+    """STRUKTURELLE Scope-Bereinigung -- ergebnisUNABHAENGIG.
+
+    Markiert 'partial' NUR, wenn Pipeline-/Referenz-SEITENZAHL strukturell
+    abweicht (Faktor >= 1.5). Die fruehere CER>50%-Regel wurde entfernt:
+    sie war zirkulaer (schloss Docs aus, WEIL ihr CER schlecht war) und drueckte
+    den Headline-Mean kuenstlich. Ein hoher CER bei gleicher Seitenzahl ist ein
+    echtes Ergebnis, kein Benchmark-Artefakt, und bleibt in der Statistik.
+
+    Liest die Felder ref_pages/pipe_pages aus evaluate_tei_vs_tei (vorher wurden
+    faelschlich ref_pages_total/pipe_pages_total gelesen, die dort nie gesetzt sind --
+    das Page-Ratio-Kriterium feuerte deshalb nie).
     """
-    ref_total = eval_result.get("ref_pages_total", 0) or 0
-    pipe_total = eval_result.get("pipe_pages_total", 0) or 0
-    cer_val = float(eval_result.get("cer", 0.0) or 0.0)
+    ref_p = int(eval_result.get("ref_pages", 0) or 0)
+    pipe_p = int(eval_result.get("pipe_pages", 0) or 0)
 
-    reasons = []
-    if ref_total > 0 and pipe_total > 0:
-        ratio = max(ref_total, pipe_total) / max(min(ref_total, pipe_total), 1)
+    if ref_p > 0 and pipe_p > 0:
+        ratio = max(ref_p, pipe_p) / max(min(ref_p, pipe_p), 1)
         if ratio >= 1.5:
-            reasons.append(f"page_ratio={ref_total}/{pipe_total} ({ratio:.1f}x)")
-
-    if cer_val > 0.50:
-        reasons.append(f"cer={cer_val*100:.1f}% > 50% (text-scope mismatch)")
-
-    if reasons:
-        return ("partial", "; ".join(reasons))
+            return ("partial", f"page_ratio={ref_p}/{pipe_p} ({ratio:.1f}x)")
     return ("full", None)
 
 
@@ -199,9 +197,12 @@ def collect_records(verbose: bool = True) -> tuple[
         # Top-3 Fehlerkategorien aus dem Doc-Result, falls vorhanden
         # (evaluate_tei_vs_tei_pagewise liefert Categories nicht direkt;
         # nutzen wir den nicht-pagewise Result nur falls noetig).
-        # doc_cer aus GLOBAL eval (content-aligned, robust gegen pb-Drift).
-        # Multi-Norm-Werte sind nur informativ; canonical CER ist global.
+        # doc_cer aus GLOBAL eval: Volltext-CER, case-sensitiv (PRIMAER), kein Trimming.
+        # cer_casefold ist die case-insensitive Sekundaer-Metrik.
         doc_cer = float(global_result.get("cer", 0.0))
+        doc_cer_casefold = float(global_result.get("cer_casefold", doc_cer))
+        doc_cer_fidelity = float(global_result.get("cer_fidelity", doc_cer))
+        doc_scope_ins = float(global_result.get("scope_insertion_rate", 0.0))
 
         records.append(DocCERRecord(
             doc_id=doc_id,
@@ -212,6 +213,9 @@ def collect_records(verbose: bool = True) -> tuple[
             scope_status=scope_status,
             scope_detail=scope_detail,
             doc_cer=doc_cer,
+            doc_cer_casefold=doc_cer_casefold,
+            doc_cer_fidelity=doc_cer_fidelity,
+            doc_scope_insertion_rate=doc_scope_ins,
         ))
 
     return records, metadata, n_with_gt, exclusions

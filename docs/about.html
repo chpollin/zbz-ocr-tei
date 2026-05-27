@@ -72,7 +72,6 @@
         <li><strong>Bilder</strong> &mdash; <code>scripts/extract_pages.py</code> erzeugt PNGs aus den PDF-Scans (300 dpi).</li>
         <li><strong>OCR</strong> &mdash; Mistral Document AI 2512 (Azure).</li>
         <li><strong>Layout</strong> &mdash; Docling 2.75 fuer Region-Erkennung, Gemini 3.1 Flash Lite als QA-/Detect-Validator.</li>
-        <li><strong>NER</strong> &mdash; Gemini Flash Lite extrahiert Personen, Orte, Organisationen, Werke; Linking ueber Wikidata und lobid.org/GND.</li>
         <li><strong>TEI</strong> &mdash; Unified Pipeline aus Scaffold, Gemini-Refinement und Assembly; valide gegen <code>zbz_hersch.rng</code>.</li>
         <li><strong>Screening</strong> &mdash; agentenbasiertes 7-Schichten-Review mit Statuseintrag in <code>&lt;revisionDesc&gt;</code>.</li>
       </ol>
@@ -98,7 +97,7 @@
       </p>
       <p>
         Volumen: 3 HTML-Seiten, 7 JS-Module (~1.700 Z.), 3 CSS-Dateien (~1.100 Z.). Daten:
-        catalog.json, entity_index.json, plus per-Seiten-Mirror unter
+        catalog.json plus per-Seiten-Mirror unter
         <code>data/pages/</code> (alle 285 Docs) und Thumbnails unter <code>data/thumbs/</code>.
       </p>
     </section>

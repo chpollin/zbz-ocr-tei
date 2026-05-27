@@ -22,12 +22,11 @@ SSoT pro Domaene, eine Datei pro Thema.
 | [projekt.md](projekt.md) | Was ist das Projekt? Auftrag, Korpus-Trichter + Seitenbilanz (generiert via corpus_audit), ZBZ-Workflow, Status |
 | [pipeline.md](pipeline.md) | Wie ist die Pipeline aufgebaut? Stufen PDF → TEI, Engines (Mistral, Docling, Gemini), TEI-Mapping (DTA + ZBZ), Round-Trip-Sektion |
 | [workflow.md](workflow.md) | Wie laeuft der End-to-End-Datenfluss? Datenfluss-Diagramm, Datenformate pro Stufe, Save-Mechanismus im Viewer, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante, Roadmap |
-| [entities.md](entities.md) | Wie funktioniert Entity Linking? NER + GND + Wikidata, Dual-Attribut-Strategie (E50), Entity-Zahlen + Verlinkungsquote, Wikidata-Workflow |
-| [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Median 1.83%), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Agent-Based Quality Screening |
+| [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Median 1.83%), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Workflow-Status pro Strom (E66, ersetzt Agent-Screening) |
 | [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay (OpenSeadragon E58), OCR/TEI-Editor, Edit-Toggle pro Panel (E60), Export-Modul (E61), Datei-Download |
 | [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |
 | [methodik.md](methodik.md) | Wie arbeiten wir? Epistemische Infrastruktur, Verifikationskaskade, Critical Expert in the Loop, Dreischichtung, operative CLI |
-| [decisions.md](decisions.md) | Was ist entschieden? E1-E61, offene Punkte (O8, O13, O18, O22), Risiken |
+| [decisions.md](decisions.md) | Was ist entschieden? E1-E71, offene Punkte (O8 teilweise, O13, O18), Risiken |
 | [journal.md](journal.md) | Was wurde wann gemacht? kompakter Sitzungs-Ueberblick (Jan-Mai 2026), wiederkehrende Muster |
 
 Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Regeln).
@@ -40,7 +39,6 @@ Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Reg
 projekt (Vision, Korpus, ZBZ-Kontext)
    │
    ├── pipeline (Stufen: PDF → TEI)
-   │      ├── entities (NER + Wikidata + GND)
    │      └── infrastruktur (Azure, Podman, CI/CD)
    │
    ├── workflow (End-to-End-Datenfluss + Save + Round-Trip + Provenance)
@@ -61,11 +59,10 @@ journal         — chronologisch, kompakter Ueberblick
 
 | Begriff | Definition | Quelle |
 |---|---|---|
-| 7-Stage Pipeline | Bilder → OCR → Layout → PAGE-XML → NER/GND → TEI-XML → Evaluation | [pipeline.md](pipeline.md) |
+| 6-Stage Pipeline | Bilder → OCR → Layout → PAGE-XML → TEI-XML → Evaluation | [pipeline.md](pipeline.md) |
 | Dokumenttypen A-D | einspaltig / zweispaltig / Monografie / Spezial | [projekt.md](projekt.md) |
 | DTA-Basisformat | TEI-Basisschema mit ZBZ-Anpassungen | [pipeline.md §TEI-Mapping](pipeline.md) |
-| `zbz_hersch.rng` (E48/E49) | projektspezifisches RelaxNG-Schema, ref-Pattern fuer GND + #zbz | [pipeline.md](pipeline.md) |
-| Dual-Attribut-Strategie (E50) | `ref="GND:..."` (primaer) + `corresp="#zbz-{typ}.{N}"` (intern) | [entities.md](entities.md) |
+| `zbz_hersch.rng` (E48/E49) | projektspezifisches RelaxNG-Schema fuer das ausgelieferte TEI | [pipeline.md](pipeline.md) |
 | Hybrid Pipeline | Docling Layout + LLM-OCR Text | [pipeline.md](pipeline.md) |
 | Unified TEI Pipeline (E32) | Scaffold + Gemini Refinement + Assembly + Validation | [pipeline.md](pipeline.md) |
 | Agent-Based Quality Screening (E41, deprecated E66) | 7-Schichten-Pre-Curation, Review-JSON pro Doc — als Qualitaetssignal abgeschafft, weil kein Mensch beteiligt war; Legacy als `_screening_legacy.json` erhalten | [quality.md](quality.md) |

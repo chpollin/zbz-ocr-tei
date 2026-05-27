@@ -60,7 +60,6 @@ docs/
 └── data/                        # generiert via scripts/edition/generate_edition_data.py
     ├── catalog.json             # 285 Docs (id, title, author, lang, type, page_count, streams.{ocr,layout,tei}.{status,last_at,last_by})
     ├── manifests/{doc}.json     # Mirror der Pro-Objekt-Manifeste (Workflow + History + Leerseiten, E66)
-    ├── entity_index.json        # Entities mit GND/Wikidata (Zahlen: entities.md)
     ├── entity_register.json     # Cross-Doc-Aggregation
     ├── search_index.json        # Volltext fuer Doc-Suche
     ├── tei/                     # 285 finale TEIs (*_final.xml; legacy *_screening_legacy.json bleibt gitignored im output/)
@@ -146,12 +145,30 @@ loest den Download aus.
 
 ## Persistenz
 
-Kein Server. Alle Aenderungen muessen explizit als Datei heruntergeladen werden.
-Der Nutzer legt die Dateien dann manuell im Repo ab — z.B.:
+Kein Server. Zwei Wege, je nach Browser (E70):
 
-- Layout: `output/layout/{doc}/{doc}_p{N}_layout_curated.json` (manuell anlegen)
-- OCR: `output/{source}_curated/{doc}_p{N}.md`
-- TEI: `data/curated_tei/{doc}/{doc}_curated.xml`
+**1. Direkt-Schreiben (File System Access API, empfohlen, nur Chromium).** Per Klick auf
+"Ordner verbinden" (Doc-Subbar) waehlt der Nutzer einmal den Repo-Root und erteilt
+Schreibrecht; danach schreiben Speicher-Aktionen direkt in den Working Tree. Der Handle
+bleibt in IndexedDB; Schreibrecht muss pro Sitzung per Geste re-granted werden. Modul:
+`docs/assets/js/fs-access.js` (`ZBZ.FsAccess`). Funktioniert unter `localhost` und HTTPS;
+geschrieben wird stets in den lokalen Klon des Nutzers, nie auf den Server.
+
+**2. Download (Fallback, alle Browser).** `ZBZ.Download` (`docs/assets/js/download.js`) bietet
+die Datei als Download an, der Nutzer legt sie manuell ab.
+
+Zielpfade beider Wege (identisch — die Pipeline konsumiert sie mit hoechster Prioritaet):
+
+- Layout: `output/layout/{doc}/{doc}_p{NNN}_layout_curated.json` — gelesen von `load_layout_gemini` (vor Gemini/Docling)
+- OCR/Text: `output/ocr_curated/{doc}_p{N}.md` — `OCR_CURATED_DIR`, erstes Element in `_OCR_DIRS` (`scripts/core/loaders.py`)
+- Manifest: `output/tei_final/{doc}_manifest.json` — Workflow-Status + History (E66)
+- TEI: `output/tei_final/{doc}_final.xml` — **ueberschreibt die Single Source of Truth**. Achtung: ein spaeterer `--reassemble` regeneriert diese Datei aus OCR+Layout und ueberschreibt den manuellen TEI-Edit wieder. Fuer dauerhafte Korrekturen daher Layout/OCR editieren und neu zusammenbauen, nicht das finale TEI direkt.
+
+Nach dem Schreiben regeneriert ein Pipeline-Lauf das TEI und den Mirror:
+
+```bash
+python -m scripts.tei.tei_unified --doc {DOC} --reassemble ; python -m scripts.edition.generate_edition_data --mirror-only
+```
 
 `data/curated_tei/` bleibt der Gold-Standard-Speicher fuer kuratierte TEIs (git-tracked).
 Der frueher vorhandene FastAPI-Curation-Server (`scripts/server/curation_server.py`) wurde mit E57
@@ -199,7 +216,7 @@ Multi-Doc-Export ueber 50 Docs: Warnhinweis wegen Browser-Memory.
 | OCR Mistral | `data/pages/{doc}/{doc}_pN.md` | `../output/mistral_results/` | Pipeline |
 | OCR (andere) | — | `../output/{source}/...` | nur lokal: Gemini A/B, LLM |
 | TEI pro Seite | `data/pages/{doc}/{doc}_pN.xml` | `../output/tei_unified/` | aus `_final.xml` extrahiert |
-| TEI final | `data/tei/{doc}_final.xml` | `pages/`, `../output/tei_final/` | `output/tei_final/` |
+| TEI final | `data/pages/{doc}/{doc}_final.xml` | `../output/tei_final/` | `output/tei_final/` |
 
 Alle 285 Docs haben vollstaendige Per-Seiten-Daten in `docs/data/pages/` (Layout, Mistral-OCR, TEI)
 und ein Thumbnail in `docs/data/thumbs/`. Damit funktioniert der Viewer ohne lokalen Server fuer
@@ -304,7 +321,6 @@ Aenderung am `output/tei_final/` sollte er neu erzeugt werden.
 ## Verweise
 
 - [pipeline.md](pipeline.md) — Pipeline-Output, der vom Viewer angezeigt wird
-- [entities.md](entities.md) — Entity-Highlighting im TEI-Renderer
 - [quality.md](quality.md) — Diagnostik-Daten in `docs/data/` (CER, TEI-Quality)
 - [workflow.md](workflow.md) — End-to-End-Datenfluss, Save-Mechanismus, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante
 - [decisions.md](decisions.md) — E56 (Frontend-Reduktion auf Viewer-only), E57 (Per-Seiten-Mirror + Pages-Deploy), E58 (OpenSeadragon), E59 (Polygone verworfen), E60 (Mode-Button-Redesign Option C), E61 (Export-Modul JSZip)

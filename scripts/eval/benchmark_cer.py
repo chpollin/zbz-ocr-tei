@@ -449,6 +449,8 @@ def main():
 
     cers = [r['cer'] for r in results]
     wers = [r['wer'] for r in results]
+    fids = [r.get('cer_fidelity', r['cer']) for r in results]
+    scopes = [r.get('scope_insertion_rate', 0.0) for r in results]
     summary = {
         'total_documents': len(results),
         'evaluated': len(results),
@@ -459,6 +461,11 @@ def main():
         'min_cer': min(cers),
         'max_cer': max(cers),
         'avg_wer': statistics.mean(wers),
+        # Drei-Zahlen-Zerlegung (siehe classify_edit_operations / quality.md):
+        'avg_cer_fidelity': statistics.mean(fids),
+        'median_cer_fidelity': statistics.median(fids),
+        'avg_scope_insertion_rate': statistics.mean(scopes),
+        'median_scope_insertion_rate': statistics.median(scopes),
     }
 
     # Stratifizierung
@@ -544,10 +551,17 @@ def main():
     print(f"ZUSAMMENFASSUNG")
     print(f"{'='*50}")
     print(f"Dokumente:       {summary['total_documents']}")
+    print(f"--- OCR-/Transkriptionstreue (Fidelity: echte Fehler, ohne Pipeline-Mehrtext) ---")
+    print(f"Mittlere CER:    {summary['avg_cer_fidelity']*100:.2f}%")
+    print(f"Median CER:      {summary['median_cer_fidelity']*100:.2f}%")
+    print(f"--- Volle Divergenz von der Referenz (scope-inklusiv) ---")
     print(f"Mittlere CER:    {summary['avg_cer']*100:.2f}%")
     print(f"Median CER:      {summary['median_cer']*100:.2f}%")
     print(f"Std CER:         {summary['std_cer']*100:.2f}%")
     print(f"Min/Max CER:     {summary['min_cer']*100:.2f}% / {summary['max_cer']*100:.2f}%")
+    print(f"--- Scope (Pipeline-Mehrtext ggue. Referenz, KEIN Fehler) ---")
+    print(f"Mittlere Rate:   {summary['avg_scope_insertion_rate']*100:.2f}%")
+    print(f"Median Rate:     {summary['median_scope_insertion_rate']*100:.2f}%")
     print(f"Mittlere WER:    {summary['avg_wer']*100:.2f}%")
 
     # Stratifizierte Zusammenfassung

@@ -14,12 +14,11 @@ Projekt-Konstitution. Operative Regeln und Konventionen, die bei jedem Pipeline-
 
 Einstiegspunkt: [knowledge/index.md](knowledge/index.md) — Navigation, Abhaengigkeiten, Schluesselkonzepte.
 
-11 thematisch klar getrennte Dokumente:
+10 thematisch klar getrennte Dokumente:
 
 - [projekt.md](knowledge/projekt.md) — Auftrag, Korpus, ZBZ-Workflow, Status
-- [pipeline.md](knowledge/pipeline.md) — 7-Stufen-Pipeline, Engines, TEI-Mapping
+- [pipeline.md](knowledge/pipeline.md) — 6-Stufen-Pipeline, Engines, TEI-Mapping
 - [workflow.md](knowledge/workflow.md) — End-to-End-Datenfluss, Save/Round-Trip, Provenance
-- [entities.md](knowledge/entities.md) — NER + GND + Wikidata
 - [quality.md](knowledge/quality.md) — CER + Validierung + Screening
 - [viewer.md](knowledge/viewer.md) — Pipeline-Viewer (Faksimile + OCR + Layout + TEI + Editor)
 - [infrastruktur.md](knowledge/infrastruktur.md) — Azure, Podman, CI/CD
@@ -59,8 +58,8 @@ Token-Katalog: `docs/assets/css/tokens.css`. Basis-Komponenten: `docs/assets/css
 
 ### Verzeichnisse (Orientierung)
 
-- `data/` — Eingangs- und Referenzdaten. `source/` = ZB-Lieferung (immutabler Input, grösstenteils gitignored): `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (Editionsrichtlinien). Projekt-Autorität (git-tracked): `schema/zbz_hersch.rng`, `entities/`, `curated_tei/` (Gold-Standard). Generiert: `doc_metadata.json` (Gemini-Cache)
-- `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `ner/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
+- `data/` — Eingangs- und Referenzdaten. `source/` = ZB-Lieferung (immutabler Input, grösstenteils gitignored): `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (Editionsrichtlinien). Projekt-Autorität (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (Gold-Standard). Generiert: `doc_metadata.json` (Gemini-Cache)
+- `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
 - `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
 - `docs/` — statische Edition/Inspektions-Site (GitHub-Pages-tauglich): HTML, `assets/` (`css/` + `js/`), `data/` (generierter Mirror), `images/`
 - `knowledge/` — Wissensbasis (10 Docs), Einstieg [knowledge/index.md](knowledge/index.md)
@@ -110,7 +109,6 @@ Methodische Einbettung (Diagnose → Exploration → Ausfuehrung → Re-Validier
 python -m scripts.tei.tei_validator --doc {DOC_ID}             # TEI-Validierung
 python -m scripts.tei.tei_validator --all --html-report         # Korpus-Report
 python -m scripts.tei.tei_validator --compare-ref               # Referenz-Vergleich (11 Docs)
-python -m scripts.ner.ner_evaluate --doc {DOC_ID}               # NER-Abdeckung
 python -m scripts.eval.evaluate_ocr --all                            # OCR-Metriken
 python -m scripts.eval.quality_proxy --all --html                    # Quality Proxy (Hit Rate)
 python -m scripts.eval.completeness_check --html                     # Vollstaendigkeits-Check (Seiten)
@@ -121,6 +119,9 @@ python -m pytest tests/test_cer_statistics.py -q                # 55 Tests fuer 
 python -m pytest tests/test_corpus_audit.py -q                  # 24 Tests: Korpus-Invarianten + delivered-Verteilung + Vollstaendigkeits-Gate
 python -m pytest tests/test_scripts_health.py -q                # Script-Health: Syntax + interne Imports (alle scripts/)
 python -m pytest tests/test_tei_schema.py -q                    # Schema-Gate: tei_final gegen zbz_hersch.rng (E68)
+python -m pytest tests/test_tei_header.py -q                    # teiHeader-Liefer-Vertrag: idno + biblStruct + langUsage + MMSID (E69)
+python -m pytest tests/test_tei_validator.py -q                 # Validator: Referenz-CER in Prozent (O24/E69)
+python -m pytest tests/test_pb_split.py -q                      # <pb>-Segmentierung: pb_split.py byte-identisch (E69)
 ```
 
 Output `docs/data/cer_statistics.json` (regenerierbar, derzeit nicht eingecheckt). Das interaktive CER-Dashboard wurde mit E56 abgeschafft. Methodik: [knowledge/quality.md §CER-Methodik](knowledge/quality.md).
@@ -150,19 +151,7 @@ python -m scripts.tei.tei_unified --doc {DOC_ID} --step 1                # nur S
 python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble            # Re-Assembly (kostenlos)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --force                 # alles neu (inkl. Gemini)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --dry-run               # Prompt-Vorschau
-python -m scripts.tei.tei_unified --all --reassemble --ner               # Korpus Re-Assembly
-```
-
-## Entitaeten
-
-```bash
-python -m scripts.ner.ner_extract --doc {DOC_ID}                         # Extraktion
-python -m scripts.ner.wikidata_linker --doc {DOC_ID}                     # Wikidata
-python -m scripts.ner.ner_inject_tei --doc {DOC_ID} --validate           # Injektion
-python -m scripts.ner.entity_index --merge-all                           # Index zusammenfuehren
-python -m scripts.ner.entity_index --stats                               # Statistiken
-python -m scripts.ner.entity_index --diagnostics --export-csv output/evaluation/entity_review.csv  # CSV fuer Review
-python -m scripts.ner.wikidata_linker --all --resume                     # Batch-Linking
+python -m scripts.tei.tei_unified --all --reassemble                     # Korpus Re-Assembly
 ```
 
 ## Validierung (Qualitaetsgate)
@@ -214,7 +203,7 @@ ueber Re-Laeufe erhalten. `tei_blank_marker` projiziert Leerseiten als `<pb type
 ## Viewer-Daten
 
 ```bash
-python -m scripts.edition.generate_edition_data                                  # Katalog (data/catalog.json) + Entity-Index + Per-Seiten-Mirror
+python -m scripts.edition.generate_edition_data                                  # Katalog (data/catalog.json) + Per-Seiten-Mirror
 ```
 
 Der Viewer (`docs/viewer.html`) ist eine statische Single-Page-App ohne Backend. Editier-Aenderungen

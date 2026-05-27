@@ -34,9 +34,6 @@ OCR (Mistral)                  Layout (Docling + Gemini-QA)
  │                              │    = paralleler Export fuer coOCR
  │                              │    NICHT TEI-Input (E22)
  │                              │
- │                              ▼
- │                              NER + Wikidata/GND
- │                              │
  └──────────────────────────────┴──► TEI-XML (tei_unified.py)
                                      │
                                      ▼
@@ -56,24 +53,18 @@ aus Layout-JSON + OCR ab.
 |---|---|---|---|---|
 | 1 | PDF → PNG | `scripts/edition/extract_pages.py` | PNG (`docs/images/`) | Production |
 | 1a | Dokumentklassifikation (Gemini) | `scripts/ocr/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (285 docs, E27) |
-| 2 | OCR | `scripts/ocr/ocr_pipeline.py` | Page-Markdown (`output/mistral_results/`, `output/ocr_results/`) | Production |
+| 2 | OCR | `scripts/ocr/ocr_pipeline.py` (`-e mistral` Basis, `-e gemini` opt-in Vision-OCR) | Page-Markdown (`output/mistral_results/`, `output/ocr_results/`) | Production |
 | 2a | LLM-Postkorrektur (optional) | `scripts/ocr/llm_postprocess.py` | `output/llm_corrected_c/` | Production, E17: optional |
 | 2b | Gemini OCR-Korrektur (optional) | `scripts/ocr/gemini_ocr_correct.py` | `output/gemini_corrected_a/` / `_b/` | Sample (E29) |
 | 3 | Layout-Analyse | `scripts/layout/run_layout_analysis.py` (local GPU) oder `run_layout_cloud.py` (docling-serve) | Regionen + BBox (`output/layout/`) | Production |
 | 3a | Layout-QA/Detect (Gemini) | `scripts/layout/layout_qa_gemini.py --mode {qa\|detect\|auto}` | `_layout_gemini.json` | Production (E25/E26/E31) |
 | 3b | Overlay-Generator | `scripts/layout/generate_layout_overlays.py` | PNGs + side-by-side compare | Production |
 | 4 | PAGE-XML + METS | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | `output/page_xml/` | Production |
-| 5 | **NER + Wikidata** | `scripts/ner/` (7 Module, E34/E35) | Entity-JSON + TEI-Indices (`data/entities/`) | 285/285 |
-| 5a | NER Extraction (Gemini) | `ner_extract.py` | `output/entities/{doc_id}/` | siehe [entities.md](entities.md) |
-| 5b | Entity Index | `entity_index.py` | `data/entities/*.xml` | siehe [entities.md](entities.md) |
-| 5c | Wikidata Reconciliation | `wikidata_linker.py` | `_wikidata_cache.json` | siehe [entities.md](entities.md) |
-| 5d | TEI Entity Injection | `ner_inject_tei.py` | `output/tei_ner/` | 285/285 Dual-Attribut (E50) |
-| 5e | NER Evaluation | `ner_evaluate.py` | HTML-Report | Done |
-| 6 | TEI-XML (regelbasiert) | `scripts/tei/tei_generator.py` | `output/tei/` | Production |
-| 6b | **Unified TEI Pipeline** (E32) | `scripts/tei/tei_unified.py` | `output/tei_unified/` | **285/285** |
-| 6b+ | Post-Assembly Fixes | `tei_step3.py` | Fixes E/F/G + heuristische lb-Injection | Production (Session 34) |
-| 6c | TEI Validation | `scripts/tei/tei_validator.py` | JSON + HTML-Report | **285/285 valide**, 29 Warnings |
-| 7 | Evaluation | `scripts/eval/evaluate_ocr.py` + `benchmark_cer.py` + `cer_statistics_full.py` | `output/evaluation/` + `docs/data/cer_statistics.json` | Production |
+| 5 | TEI-XML (regelbasiert) | `scripts/tei/tei_generator.py` | `output/tei/` | Production |
+| 5b | **Unified TEI Pipeline** (E32) | `scripts/tei/tei_unified.py` | `output/tei_unified/` | **285/285** |
+| 5b+ | Post-Assembly Fixes | `tei_step3.py` | Fixes E/F/G + heuristische lb-Injection | Production (Session 34) |
+| 5c | TEI Validation | `scripts/tei/tei_validator.py` | JSON + HTML-Report | **285/285 valide**, 29 Warnings |
+| 6 | Evaluation | `scripts/eval/evaluate_ocr.py` + `benchmark_cer.py` + `cer_statistics_full.py` | `output/evaluation/` + `docs/data/cer_statistics.json` | Production |
 
 **Manuelle Kuration (E56, Stand 2026-04-27):** Erfolgt im Pipeline-Viewer
 (`docs/viewer.html`) mit Layout- und Transkriptions-Editor. Aenderungen werden als JSON/MD/XML
@@ -122,12 +113,12 @@ Setup-Hinweise und Fehler-Diagnose: [infrastruktur.md](infrastruktur.md) §Azure
 Coverage-basiertes Quality-Scoring ist ein starker Proxy fuer Layout-Qualitaet — kein ML noetig.
 Landscape/multi-column sind die harten Faelle (~64% bad vs. ~14% Portrait).
 
-### Gemini 3.1 Flash Lite — Layout-QA + Detect + Refinement + NER
+### Gemini 3.1 Flash Lite — Layout-QA + Detect + Refinement
 
 | Aspekt | Details |
 |---|---|
 | Modell | `gemini-3.1-flash-lite-preview` |
-| Rollen | Layout-Korrektur, Layout-Detect (Fallback fuer Docling-Failures, ~15%), Dokumentklassifikation, OCR-Korrektur, TEI-Refinement, NER-Extraktion |
+| Rollen | Layout-Korrektur, Layout-Detect (Fallback fuer Docling-Failures, ~15%), Dokumentklassifikation, OCR-Korrektur, Vision-OCR (opt-in `-e gemini`, Ausnahme-Ersatz fuer Mistral, schreibt nach `output/mistral_results/`), TEI-Refinement |
 | SDK | `google-genai` |
 
 3 Modi in `layout_qa_gemini.py`:
@@ -143,7 +134,7 @@ Anforderungen: strukturelle Erkennung, BBox, FR/DE, PAGE-XML 2013-07-15.
 Evaluiert (25.02.2026): Gemini, Claude, Mistral (fuer Layout), Docling, Surya, Kraken, Azure Document Intelligence.
 
 **Entscheidung:** Docling + Gemini hybrid. Docling = bester Open-Source-BBox (mAP 0.699, 17 Klassen, free, CPU-faehig).
-Gemini = QA-Validator + Detect-Fallback. Claude = nicht fuer Layout (keine BBox), aber wertvoll fuer TEI/NER. Mistral = bleibt Text-Engine.
+Gemini = QA-Validator + Detect-Fallback. Claude = nicht fuer Layout (keine BBox), aber wertvoll fuer TEI. Mistral = bleibt Text-Engine.
 
 Fallback: Kraken (native PAGE-XML, historische FR). `ocr-fileformat` (UB Mannheim) konvertiert
 zwischen 30+ Formaten (hOCR, PAGE-XML, ALTO, TEI).
@@ -165,8 +156,7 @@ Erweiterungen. Verbindlich seit E48/E49 (2026-03-26).
 1. Vorlagengetreue Lesetext-Transkription mit Index-Annotation
 2. DTA-Basisformat als Fundament + projektspezifische Anpassungen
 3. Definierte Normalisierungen (keine diplomatische Transkription)
-4. Jede Entitaet wird verlinkt (auch bei Wiederholung)
-5. Quelltreue Transkription
+4. Quelltreue Transkription
 
 ### Dokumentstruktur
 
@@ -248,13 +238,11 @@ Nur semantisch relevantes Highlighting wird kodiert.
 
 ### Entitaeten
 
-Dual-Attribut-Strategie (E50): siehe [entities.md](entities.md). `<persName>`, `<orgName>`,
-`<placeName>`, `<bibl>` mit `ref="GND:..."` (primaer) + `corresp="#zbz-{typ}.{N}"` (intern).
-
-Ausnahmen (Editionsrichtlinien):
-- Entitaeten in Bildunterschriften (`<figure>/<p>`) werden **nicht** annotiert
-- Entitaeten in `<div type="bibliography">/<listBibl>` werden **nicht** annotiert
-- Adjektivierte Personennamen (`kantien`, `hegelsche`) werden **nicht** annotiert
+Named-Entity-Auszeichnung wurde mit **E71 (2026-05-27) entfernt** (siehe [decisions.md](decisions.md)):
+Die Verlinkung war im ausgelieferten TEI nicht funktionsfaehig (~2.6% der Erwaehnungen mit echter
+GND-ID, Rest `GND:unknown` oder interne IDs). `<persName>`, `<orgName>`, `<placeName>` werden nicht
+mehr getaggt. `<bibl>` bleibt ausschliesslich als bibliografische Struktur erhalten (Literaturlisten
+in `<listBibl>`, Review-Zitation im `<head>`), ohne `ref`/`corresp`.
 
 ### Spezielle Dokumenttypen
 
@@ -325,7 +313,7 @@ Der juengste `<change>` bestimmt den aktuellen Status. Die Edition zeigt den Sta
 | `<title>` | `type` (main/sub) | Titel |
 | `<p>` | `facs` | Absatz |
 | `<hi>` | `rendition` | Highlighting |
-| `<persName>`, `<orgName>`, `<placeName>`, `<bibl>` | `ref`, `corresp` | Entitaeten (Dual-Attribut) |
+| `<bibl>` | — | Bibliografische Eintraege (`<listBibl>`, Review-`<head>`); seit E71 keine Entity-Refs |
 | `<note>` | `place`, `n`, `xml:id`, `next`, `prev` | Fussnote/Marginalie |
 | `<foreign>` | `xml:lang` | Sprachwechsel |
 | `<space>` | `dim` | Abstand |
@@ -350,8 +338,8 @@ Der juengste `<change>` bestimmt den aktuellen Status. Die Edition zeigt den Sta
 | 0 | Pilot: Layout-Eval + OCR + TEI auf 15 Docs | Done |
 | 1 | Scale Layout: Docling + Gemini QA auf 285 Docs | Done |
 | 2 | PAGE-XML Generator + METS | Done (285 Docs) |
-| 3 | NER + Wikidata Linking | Done (285 Docs; Linking-Quote: [entities.md](entities.md)) |
-| 4 | TEI-XML mit PAGE-XML + NER | Done (285/285 schema-valide) |
+| 3 | NER + Wikidata Linking | Entfernt (E71, 2026-05-27) |
+| 4 | TEI-XML mit PAGE-XML | Done (285/285 schema-valide) |
 | 5 | Extended Evaluation (CER-Benchmark) | Done — siehe [quality.md](quality.md) |
 | 6 | Production Run + fachliche Kuration | In Progress — 285/285 generiert, Workflow-Status `unverifiziert` (E66), Kuration offen |
 
@@ -431,7 +419,6 @@ Daten: Scan-Bilder in `docs/images/{doc_id}/`, OCR/Layout/TEI in `docs/data/exam
 ## Verweise
 
 - [methodik.md](methodik.md) — operative Werkzeuge, CLI-Referenz, Arbeitszyklus
-- [entities.md](entities.md) — NER + Wikidata + GND
 - [quality.md](quality.md) — CER + TEI-Validierung + Screening
 - [viewer.md](viewer.md) — Pipeline-Viewer mit Layout- und Transkriptions-Editor
 - [infrastruktur.md](infrastruktur.md) — Azure, Podman, CI/CD

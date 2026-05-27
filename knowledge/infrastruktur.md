@@ -62,7 +62,7 @@ Deployment, API-Zugang, Containerisierung, CI/CD fuer den ZBZ-Production-Betrieb
 
 | API | Zugang | Verwendung | Status |
 |---|---|---|---|
-| Gemini 3.1 Flash Lite | Google API | Layout-QA/Detect, Klassifikation, OCR-Korrektur, TEI-Refinement, NER | aktiv |
+| Gemini 3.1 Flash Lite | Google API | Layout-QA/Detect, Klassifikation, OCR-Korrektur, TEI-Refinement | aktiv |
 | Claude Haiku 4.5 | Anthropic | LLM-Postkorrektur (optional, E17) | aktiv |
 
 ### Konfiguration (in Planung)

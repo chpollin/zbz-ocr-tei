@@ -549,14 +549,6 @@
   font-style: italic;
   color: var(--h-preussischblau);
 }
-.tei__entity {
-  border-bottom: 1px dotted;
-  cursor: help;
-}
-.tei__entity--person { color: var(--h-ziegelrot);       border-color: var(--h-ziegelrot); }
-.tei__entity--org    { color: var(--h-preussischblau);  border-color: var(--h-preussischblau); }
-.tei__entity--place  { color: var(--h-olivgruen);       border-color: var(--h-olivgruen); }
-.tei__entity--work   { color: var(--h-anthrazit-light); border-color: var(--h-text-muted); font-style: italic; }
 .tei__sp { margin: 0.5em 0 0.5em; }
 .tei__speaker { font-weight: 600; color: var(--h-text-secondary); }
 .tei__unclear { background: rgba(245,158,11,0.12); }

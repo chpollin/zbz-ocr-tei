@@ -12,103 +12,10 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-def _load_entity_names() -> list[str]:
-    """Laedt Entity-Namen aus dem Entity Index (alle Typen). Legacy-API."""
-    return list(_load_entity_entries().keys())
-
-
-# Typ -> TEI-Tag Mapping (gleich wie ENTITY_TEI_MAP in ner_inject_tei.py)
-_TYPE_TO_TAG = {
-    "person": "persName",
-    "organization": "orgName",
-    "place": "placeName",
-    "work": "bibl",
-    "event": "name",
-}
-
-
-# Woerter die als Entity-Namen im Index stehen, aber zu generisch sind
-# und im normalen Text False Positives erzeugen wuerden.
-_ENTITY_STOPWORDS = {
-    # Alltagswoerter die zufaellig Entity-Namen sind
-    "Dieu", "Monde", "Temps", "Terre", "Mars", "Nature", "Paix",
-    "Fait", "Sens", "Force", "Droit", "Science", "Vie", "Mort",
-    # Deutsche Gattungsbegriffe die als persName/placeName matchen (P7/E44)
-    "Mensch", "Der Mensch", "Wahl", "Rolle", "Angst", "Geist",
-    "Ursprung", "Gott", "Christ", "Philosophie", "Demokratie",
-    "Philosophen", "Marxisten",
-    # Franzoesische Gattungsbegriffe (P9: Est-ce que)
-    "Est", "Homme",
-    # Adjektiv-/Demonym-Formen (keine Entities, Richtlinie E49)
-    "suisse", "Suisses", "Suisses-romands", "Suisses-allemands",
-    "femmes suisses", "citoyens suisses", "allemand",
-    "Schweizer", "Zuercher", "Zahler",
-    # Adjektivierte Personennamen (Richtlinie: nicht auszeichnen)
-    "kantien", "kantienne", "kantiens", "kantiennes",
-    "hegelsche", "hegelschen", "hegelscher",
-    "cartesien", "cartesienne", "cartesiens", "cartesiennes",
-    "marxiste", "marxistes", "marxistisch", "marxistische",
-    "platonicien", "platonicienne", "nietzscheen",
-    "jaspersschen", "jasperssche",
-    # Generische Begriffe
-    "Etat", "Staat", "State",
-    # Abstrakte Werktitel die zu generisch sind
-    "Zeit", "Gesamtschule",
-}
-
-
-def _load_entity_entries() -> dict[str, tuple[str, str]]:
-    """Laedt Entity-Namen mit TEI-Tag und interner ID aus dem Index.
-
-    Filtert: Stopwoerter, zu kurze Namen (<3 Zeichen), rein kleingeschriebene
-    Einzelwoerter (hohes False-Positive-Risiko).
-
-    Returns:
-        {name: (tei_tag, xml_id)} z.B.
-        {"Karl Jaspers": ("persName", "zbz-p.1"),
-         "Genf": ("placeName", "zbz-l.42"),
-         "UNO": ("orgName", "zbz-o.15")}
-    """
-    try:
-        from scripts.ner.entity_index import EntityIndex
-        index = EntityIndex()
-        index.load_all()
-        entries = {}
-        for entry in index.entries.values():
-            tei_tag = _TYPE_TO_TAG.get(entry.entity_type, "name")
-            xml_id = entry.xml_id
-            # Hauptname
-            if entry.main_name and _is_valid_entity_name(entry.main_name):
-                entries[entry.main_name] = (tei_tag, xml_id)
-            # Varianten
-            for v in entry.variants:
-                if _is_valid_entity_name(v) and v not in entries:
-                    entries[v] = (tei_tag, xml_id)
-        return entries
-    except Exception:
-        return {
-            "Karl Jaspers": ("persName", "zbz-p.1"),
-            "Jaspers": ("persName", "zbz-p.1"),
-            "Jeanne Hersch": ("persName", "zbz-p.2"),
-            "Hersch": ("persName", "zbz-p.2"),
-        }
-
-
-def _is_valid_entity_name(name: str) -> bool:
-    """Prueft ob ein Name sicher als Entity-Tag verwendet werden kann."""
-    if not name or len(name) < 3:
-        return False
-    if name in _ENTITY_STOPWORDS:
-        return False
-    # Rein kleingeschriebene Einzelwoerter sind zu riskant
-    # (z.B. "suisse", "allemand" matchen als Adjektive)
-    if " " not in name and name[0].islower():
-        return False
-    return True
 
 
 # ---------------------------------------------------------------------------
-# Mapping Table (8 Sections)
+# Mapping Table (7 Sections)
 # ---------------------------------------------------------------------------
 
 MAPPING_TABLE = r"""
@@ -183,31 +90,7 @@ see in the image.
 IMPORTANT: Only encode SEMANTICALLY RELEVANT highlighting, not purely
 typographic features used solely for heading decoration.
 
---- SECTION 4: ENTITIES ---
-
-CRITICAL: Tag EVERY SINGLE mention of a person or organization, including
-repeated occurrences. If "Jaspers" appears 5 times, there must be 5 <persName>
-tags. Do NOT skip later mentions. Do NOT tag only the first occurrence.
-The scaffold already contains entity tags -- PRESERVE all existing tags
-and ADD any missing ones.
-
-| Phenomenon | TEI Element | Attributes | Rules |
-|---|---|---|---|
-| Person name | <persName> | (none) | EVERY mention, even if name appears 10+ times. No ref attribute. |
-| Organization | <orgName> | (none) | EVERY mention. No ref attribute. |
-| Work reference | <bibl> | (none) | Book/work titles in reviews or bibliography. No ref/corresp attribute. |
-| Bibliography list | <listBibl> | (none) | Inside div type="bibliography". Contains <bibl> entries. |
-
-Authority IDs (GND, Wikidata) are added later by the NER pipeline from the Entity Index.
-Do NOT add ref or corresp attributes to entity tags.
-
-EXCEPTIONS:
-- Do NOT annotate entities inside image captions (<figure>/<head> or <figure>/<p>).
-- Do NOT annotate entities inside <div type="bibliography">/<listBibl> (encyclopedia entries).
-- Do NOT tag adjectival person names (e.g. "kantien", "hegelsche", "cartesien").
-- Avoid nested tagging (person inside work title).
-
---- SECTION 5: LANGUAGE SWITCHES ---
+--- SECTION 4: LANGUAGE SWITCHES ---
 
 | Phenomenon | TEI Element | Attributes | Rules |
 |---|---|---|---|
@@ -218,7 +101,7 @@ Language codes (ISO 639-3): fra=French, deu=German, eng=English, ita=Italian, la
 Only tag SUBSTANTIAL language switches (phrases, sentences), not individual
 foreign words that are commonly used (e.g. "a priori" in French text).
 
---- SECTION 6: CORRECTIONS & UNCLEAR ---
+--- SECTION 5: CORRECTIONS & UNCLEAR ---
 
 | Phenomenon | TEI Element | Attributes | Rules |
 |---|---|---|---|
@@ -232,17 +115,17 @@ Use <choice>/<sic>/<corr> ONLY for non-obvious errors where both readings
 should be preserved (e.g. missing accent: Eclairement vs Eclairement).
 Use <unclear> when characters are hard to read (damaged, faint). Optional @cert for confidence.
 
---- SECTION 7: SPEECH ACTS (interviews, debates) ---
+--- SECTION 6: SPEECH ACTS (interviews, debates) ---
 
 | Phenomenon | TEI Element | Attributes | Rules |
 |---|---|---|---|
 | Speaker turn | <sp> | (none) | Contains <speaker> + one or more <p>. |
-| Speaker name | <speaker> | (none) | Contains <persName ref="GND:..."/> identifying the speaker. |
+| Speaker name | <speaker> | (none) | Contains the speaker's name. |
 
 How to detect speakers: Bold or CAPS text followed by colon, or a clear
 question-answer pattern. Each speaker turn = one <sp> block.
 
---- SECTION 8: OMISSIONS ---
+--- SECTION 7: OMISSIONS ---
 
 Do NOT include these in the TEI output:
 
@@ -266,17 +149,16 @@ GENRE_RULES = {
     "review": """
 GENRE-SPECIFIC RULES (Review):
 - Outer div: type="review" (NOT n="1")
-- <head> contains <bibl ref="GND:..."> with full bibliographic entry
+- <head> contains <bibl> with full bibliographic entry
   (author, title in <hi rendition="#i">, publisher, date, pages)
 - Review body follows as <p> elements
-- Tag the reviewed work's author with <persName>
 """,
 
     "interview": """
 GENRE-SPECIFIC RULES (Interview):
 - Outer div wraps content: type="interview"
 - Introductory text or epigraph before Q&A may use <epigraph> or <p>
-- Each speaker turn: <sp><speaker><persName ref="GND:...">Name</persName>:</speaker><p>...</p></sp>
+- Each speaker turn: <sp><speaker>Name:</speaker><p>...</p></sp>
 - <sp> can be further specified: type="question" or type="answer"
 - Speaker identification: bold/CAPS name before colon, or clear Q&A pattern
 - A single <sp> can span a page break (<pb/> inside the <p> of an <sp>)
@@ -295,7 +177,6 @@ GENRE-SPECIFIC RULES (Encyclopedia Entry):
 - <head type="lemma"> for the entry heading (e.g. "JASPERS, Karl, 1883-1969")
 - Sub-sections as div n="2" with <head> (Leben, Philosophie, etc.)
 - Bibliography in <div type="bibliography"><listBibl><bibl>...</bibl></listBibl></div>
-- Entities in bibliography section are NOT annotated
 """,
 
     "speech": """
@@ -345,47 +226,6 @@ GENRE-SPECIFIC RULES (Editorial):
 # Prompt Builder
 # ---------------------------------------------------------------------------
 
-def build_known_entities_block() -> str:
-    """Formatiert die bekannten Entitaeten als Prompt-Block, nach Typ gruppiert.
-
-    Jeder Name hat den korrekten TEI-Tag-Typ und eine interne ID als ref.
-    """
-    entries = _load_entity_entries()
-
-    # Nach Typ gruppieren
-    by_type = {}
-    for name, (tei_tag, xml_id) in entries.items():
-        by_type.setdefault(tei_tag, []).append(name)
-
-    type_labels = {
-        "persName": "PERSONS",
-        "orgName": "ORGANIZATIONS",
-        "placeName": "PLACES",
-        "bibl": "WORKS",
-    }
-
-    lines = ["KNOWN ENTITIES (tag with the correct element type):"]
-    for tei_tag in ("persName", "orgName", "placeName", "bibl"):
-        names = by_type.get(tei_tag, [])
-        if not names:
-            continue
-        label = type_labels.get(tei_tag, tei_tag)
-        # Laengere Namen zuerst, max 150 pro Typ
-        sorted_names = sorted(set(names), key=len, reverse=True)[:150]
-        lines.append(f"  {label} -> <{tei_tag}>:")
-        for name in sorted_names:
-            lines.append(f"    {name}")
-
-    lines.append("")
-    lines.append("  Rules:")
-    lines.append("  - Tag persons with <persName>Name</persName>")
-    lines.append("  - Tag organizations with <orgName>Name</orgName>")
-    lines.append("  - Tag places with <placeName>Name</placeName>")
-    lines.append("  - Tag works/publications with <bibl>Title</bibl>")
-    lines.append("  - Do NOT add ref attributes (added later by NER pipeline)")
-    return "\n".join(lines)
-
-
 def build_mapping_prompt(doc_context: dict) -> str:
     """Baut den vollstaendigen Mapping-Table-Prompt fuer Gemini Refinement.
 
@@ -416,9 +256,6 @@ def build_mapping_prompt(doc_context: dict) -> str:
     if genre and genre in GENRE_RULES:
         genre_block = "\n" + GENRE_RULES[genre]
 
-    # Entitaeten-Block
-    entities_block = build_known_entities_block()
-
     prompt = f"""You are a TEI-XML refiner for the Jeanne Hersch Edition (ZBZ Zurich).
 You follow the DTA-Basisformat with project-specific adaptations.
 
@@ -445,19 +282,15 @@ DOCUMENT CONTEXT:
 - Genre: {genre or "standard article"}
 {doc_hints}
 
-{entities_block}
-
 REFINEMENT PRIORITIES (in this order):
 1. VERIFY and correct <lb/> positions against the scanned image
 2. ADD break="no" where words are hyphenated across lines (remove the hyphen)
-3. TAG entities: <persName>, <orgName> with GND refs (known or "unknown")
-4. TAG work references: <bibl corresp="GND:...">
-5. DETECT language switches: <foreign xml:lang="..."> for non-{main_lang} passages
-6. VERIFY <hi> formatting against the image (italic, bold)
-7. CORRECT div hierarchy and types if the scaffold got them wrong
-8. ADD <choice><sic>...<corr>...</choice> for non-obvious print errors
-9. For interviews/debates: EVERY speaker turn MUST be wrapped in <sp><speaker>. Tag ALL turns, not just the first few
-10. For reviews: wrap bibliographic heading in <bibl> inside <head>
+3. DETECT language switches: <foreign xml:lang="..."> for non-{main_lang} passages
+4. VERIFY <hi> formatting against the image (italic, bold)
+5. CORRECT div hierarchy and types if the scaffold got them wrong
+6. ADD <choice><sic>...<corr>...</choice> for non-obvious print errors
+7. For interviews/debates: EVERY speaker turn MUST be wrapped in <sp><speaker>. Tag ALL turns, not just the first few
+8. For reviews: wrap bibliographic heading in <bibl> inside <head>
 
 OUTPUT FORMAT:
 - Return ONLY the refined TEI body fragment

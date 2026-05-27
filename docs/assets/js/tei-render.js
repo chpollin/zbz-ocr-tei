@@ -14,13 +14,6 @@
         '#g': 'tei__hi--g', '#k': 'tei__hi--k'
     };
 
-    const ENTITY_MAP = {
-        persName:  'tei__entity--person',
-        orgName:   'tei__entity--org',
-        placeName: 'tei__entity--place',
-        bibl:      'tei__entity--work'
-    };
-
     /**
      * Rekursiv ein TEI-XML-Element rendern.
      * @param {Node} node
@@ -71,18 +64,6 @@
 
             case 'foreign': {
                 el = ZBZ.el('span', { cls: 'tei__foreign', attrs: { lang: node.getAttribute('xml:lang') || '' } });
-                renderChildren(node, el);
-                target.appendChild(el);
-                break;
-            }
-
-            case 'persName':
-            case 'orgName':
-            case 'placeName':
-            case 'bibl': {
-                el = ZBZ.el('span', { cls: 'tei__entity ' + ENTITY_MAP[tag] });
-                const ref = node.getAttribute('ref') || node.getAttribute('corresp');
-                if (ref) el.title = ref;
                 renderChildren(node, el);
                 target.appendChild(el);
                 break;
@@ -177,24 +158,6 @@
         container.appendChild(pre);
     }
 
-    /**
-     * Entitaeten aus TEI extrahieren (fuer Statistik / Sidebar).
-     */
-    function extractEntities(xml) {
-        const doc = typeof xml === 'string' ? ZBZ.parseXml(xml) : xml;
-        if (!doc) return { persons: [], orgs: [], places: [], works: [] };
-        const map = (sel, list) => ZBZ.$$(sel, doc).forEach(n => list.push({
-            text: n.textContent.trim(),
-            ref: n.getAttribute('ref') || n.getAttribute('corresp') || ''
-        }));
-        const r = { persons: [], orgs: [], places: [], works: [] };
-        map('persName', r.persons);
-        map('orgName',  r.orgs);
-        map('placeName', r.places);
-        map('bibl',     r.works);
-        return r;
-    }
-
-    ZBZ.TeiRender = { render, renderXml, extractEntities };
+    ZBZ.TeiRender = { render, renderXml };
     ZBZ.log('TeiRender', 'ready');
 })();

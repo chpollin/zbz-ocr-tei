@@ -216,7 +216,7 @@
             <title type="main">L'ordinateur en chirurgie, anesthésie et soins intensifs</title>
           </head>
           <p facs="#facs_1_r_10">
-            Cinq ans d'utilisation en temps réel à la clinique thoracique de l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName> à Stockholm *
+            Cinq ans d'utilisation en temps réel à la clinique thoracique de l'Hôpital Karolinska à Stockholm *
           </p>
           <p facs="#facs_1_r_11">
             par R. Bussien¹ (Lausanne), O. Norlandes² (Stockholm) et S. O. Pettersson³ (Järfälla, Suède)
@@ -225,7 +225,7 @@
             La prise rapide de décision est le préalable au fonctionnement rationnel de la médecine intensive moderne. Les multiples données en provenance des équipements qui servent au diagnostic, au traitement ou à la surveillance des malades précaires viennent s'ajouter aux mesures conventionnelles des paramètres physiologiques et aux soins effectués par le personnel infirmier, aux résultats du laboratoire et aux examens physiques médicaux. La consignation manuscrite de ces données et leur consultation traditionnelle ne garantissent plus la prise rapide de décisions optimales concernant les malades.
           </p>
           <p facs="#facs_1_r_13">
-            A la clinique thoracique de l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName>, à Stockholm, une application électronique en temps réel a été mise en place pour maîtriser ce flux accru de données et le transformer en information facilitant la prise accélérée de décision. Il s'agit d'un système interactif de communication qui fonctionne depuis cinq ans sans interruption.
+            A la clinique thoracique de l'Hôpital Karolinska, à Stockholm, une application électronique en temps réel a été mise en place pour maîtriser ce flux accru de données et le transformer en information facilitant la prise accélérée de décision. Il s'agit d'un système interactif de communication qui fonctionne depuis cinq ans sans interruption.
           </p>
           <p facs="#facs_1_r_14">
             Environ 9000 opérés thoraciques ont été enregistrés par le système. Les résultats obtenus sont positifs sur le plan de la technologie, des soins aux malades, de l'organisation du travail et de la gestion financière hospitalière.
@@ -234,7 +234,7 @@
 <div n="3">
             <head>Historique</head>
             <p facs="#facs_1_r_16">
-              En 1967, après quelques mois de pourparlers entre l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName> de Stockholm, le Gouvernement suédois et la firme suédoise d'électronique <orgName ref="GND:unknown">Stansaab</orgName>, l'installation d'un système en temps réel de traitement électronique des données était décidé et se réalisait sans délai à la clinique thoracique (17 lits) de l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName> (1800 lits).
+              En 1967, après quelques mois de pourparlers entre l'Hôpital Karolinska de Stockholm, le Gouvernement suédois et la firme suédoise d'électronique Stansaab, l'installation d'un système en temps réel de traitement électronique des données était décidé et se réalisait sans délai à la clinique thoracique (17 lits) de l'Hôpital Karolinska (1800 lits).
             </p>
             <p facs="#facs_1_r_17">
               Le système, conçu à l'origine pour l'armée de l'air, devait servir une application médicale : — permettre, jour et nuit, l'entrée directe dans
@@ -247,22 +247,22 @@
               Le système, essentiellement système de communication, repose sur un hardware constitué principalement (Fig. 1) :
             </p>
             <p facs="#facs_1_r_21">
-              - d'un ordinateur <orgName ref="GND:unknown">Stansaab</orgName>, Censor 908, instrument rapide du transit et du traitement en temps réel des données (64 K bytes de
+              - d'un ordinateur Stansaab, Censor 908, instrument rapide du transit et du traitement en temps réel des données (64 K bytes de
             </p>
             <note place="foot" n="*" xml:id="fn1-1">
               <p facs="#facs_1_r_22">
-                <lb facs="#facs_1_l_22_1" n="N001" />* Communication présentée aux Journées d'informatique médicale à Toulouse, 5-9 mars 1973.<lb facs="#facs_1_l_22_1" n="N002" />¹ Service d'anesthésie, <orgName ref="GND:unknown">Hôpital communal universitaire</orgName>, Lausanne, et clinique thoracique, <orgName ref="GND:unknown">Hôpital Karolinska</orgName>, Stockholm (Suède).<lb facs="#facs_1_l_22_2" n="N003" />² Chef du service d'anesthésie, clinique thoracique, <orgName ref="GND:unknown">Hôpital Karolinska</orgName>, Stockholm (Suède).<lb facs="#facs_1_l_22_3" n="N004" />³ <orgName ref="GND:unknown">Stansaab Elektronik AB</orgName>, Järfälla (Suède).
+                <lb facs="#facs_1_l_22_1" n="N001" />* Communication présentée aux Journées d'informatique médicale à Toulouse, 5-9 mars 1973.<lb facs="#facs_1_l_22_1" n="N002" />¹ Service d'anesthésie, Hôpital communal universitaire, Lausanne, et clinique thoracique, Hôpital Karolinska, Stockholm (Suède).<lb facs="#facs_1_l_22_2" n="N003" />² Chef du service d'anesthésie, clinique thoracique, Hôpital Karolinska, Stockholm (Suède).<lb facs="#facs_1_l_22_3" n="N004" />³ Stansaab Elektronik AB, Järfälla (Suède).
               </p>
             </note>
             <p facs="#facs_1_r_23">b) la mémoire centrale ; temps d'accès 0,5µsec) ;</p>
             <p facs="#facs_1_r_24">
-              - d'une mémoire auxiliaire à disque magnétique <orgName ref="GND:unknown">Burroughs</orgName> (2 × 10⁶ bytes de mémoire accessoire ; temps moyen d'accès : 17 µsec.) où sont stockés programmes d'application et données :
+              - d'une mémoire auxiliaire à disque magnétique Burroughs (2 × 10⁶ bytes de mémoire accessoire ; temps moyen d'accès : 17 µsec.) où sont stockés programmes d'application et données :
             </p>
             <p facs="#facs_1_r_25">
-              - de terminaux d'entrée-sortie (8 unités d'affichage <orgName ref="GND:unknown">Stansaab</orgName> Grafoskop, 50 interphones Intercom 411 (fig. 2), 1 lecteur-perforateur de ruban et 2 imprimantes lentes) ;<lb facs="#facs_1_l_25_1" n="N001" />- d'un convertisseur analogique, digital, cinq canaux ;
+              - de terminaux d'entrée-sortie (8 unités d'affichage Stansaab Grafoskop, 50 interphones Intercom 411 (fig. 2), 1 lecteur-perforateur de ruban et 2 imprimantes lentes) ;<lb facs="#facs_1_l_25_1" n="N001" />- d'un convertisseur analogique, digital, cinq canaux ;
             </p>
             <p facs="#facs_1_r_26">
-              - d'une interface reliant le système par batch à l'<orgName ref="GND:unknown">IBM</orgName>/360-40 de l'<orgName ref="GND:unknown">Hôpital Karolinska</orgName> (KS)
+              - d'une interface reliant le système par batch à l'IBM/360-40 de l'Hôpital Karolinska (KS)
             </p>
           </div>
         </div>
@@ -300,7 +300,7 @@
           <hi rendition="#sup">*</hi>
         </p>
         <p facs="#facs_2_r_4">
-          J. <persName ref="GND:118815679">Hersch</persName>
+          J. Hersch
         </p>
         <p facs="#facs_2_r_5">
           <lb facs="#facs_2_r_5" n="N001" />Mon sujet étant trop vaste, je ne parlerai pas de des problèmes bien connus, difficiles et peut-être insolubles, que pour aujourd'hui l'organisation de la profession médicale : la marque de « vue d'ensemble » par suite d'une spécialisation excessive, la surcharge des pressions qui ne peuvent fixer que des rendements lointains, les caisses-maladies et la « médicine de masse », les conséquences démographiques et sociales des progrès médicaux, le prix de certains traitements, le choix de ceux qui procurent en bénéficier, etc.
@@ -318,7 +318,7 @@
           <lb facs="#facs_2_r_9" n="N001" />tité». Et il s'agit bien de « l'homme » et non pas du « maladie ». En effet, il importe de comprendre que l'influence de la science médicale déborde de loin le secteur « médicalisé », qui lui-même ne cesse de s'étendre. Elle agit sur la sensibilité de la société entière. Elle y modifie de façon diffuse, à tous les niveaux, le sens que chacun a de soi, de l'autre, du bonheur, de la valeur, de la santé. Il y met des vends qui s'épargissent sur l'eau et qui vont bien au-delà de la conscience claire. C'est pourquoi la responsabilité du corps médical est immense, même en dehors des problèmes de souffrance, de vie ou de mort, qui ne cessent de l'obséder.
         </p>
         <p facs="#facs_2_r_10">
-          <lb facs="#facs_2_r_10" n="N001" />Il y a quelques années, M. Jevko, qui était alors une directrice du <orgName ref="GND:unknown">Bureau international du travail</orgName>, a fait une conférence remarquable. Il montrait que « les nouveaux pouvoirs » des hommes, dans tous les domaines terrestres interplanétaires, fond des mers, atome, biologie moléculaire, génétique, médecine, et en particulier psychiatrie), alors qu'ils sont incomparablement plus puissants que les pouvoirs anciens, se trouvent encore « à l'état sauvage ». Ils ne sont régis par aucun droit ni par aucune morale commune, et il n'existe même pas, dans la plupart des cas, de cette déontologique professionnel à leur sujet. Un consensus paraît intranscrite et aucune autorité n'a compétence pour délimiter ce qui est légitime et ce qui ne l'est pas. Greffes du cœur, expérimentation sur des êtres humains, notion de la santé, avortement, euthanasie, interventions génétiques imminentes, types de traitements psychologiques, chimiques ou psychanalytiques, etc. — autant de questions sur lesquelles les médecins s'opposent jusqu'aux extrêmes, jusqu'à l'indignation et la révolte, sans qu'une autorité puisse trancher, sans qu'apparaisse une référence commune.
+          <lb facs="#facs_2_r_10" n="N001" />Il y a quelques années, M. Jevko, qui était alors une directrice du Bureau international du travail, a fait une conférence remarquable. Il montrait que « les nouveaux pouvoirs » des hommes, dans tous les domaines terrestres interplanétaires, fond des mers, atome, biologie moléculaire, génétique, médecine, et en particulier psychiatrie), alors qu'ils sont incomparablement plus puissants que les pouvoirs anciens, se trouvent encore « à l'état sauvage ». Ils ne sont régis par aucun droit ni par aucune morale commune, et il n'existe même pas, dans la plupart des cas, de cette déontologique professionnel à leur sujet. Un consensus paraît intranscrite et aucune autorité n'a compétence pour délimiter ce qui est légitime et ce qui ne l'est pas. Greffes du cœur, expérimentation sur des êtres humains, notion de la santé, avortement, euthanasie, interventions génétiques imminentes, types de traitements psychologiques, chimiques ou psychanalytiques, etc. — autant de questions sur lesquelles les médecins s'opposent jusqu'aux extrêmes, jusqu'à l'indignation et la révolte, sans qu'une autorité puisse trancher, sans qu'apparaisse une référence commune.
         </p>
         <p facs="#facs_2_r_11">
           <lb facs="#facs_2_r_11" n="N001" />Face à ces divergences l'homme, déjà égaré par les menaces de fin du monde et les promesses de paradis immédiats qui l'assaillent à la fois de toutes parts, perd le sens de sa vie. Il ne sait plus ce qu'il est, ni si ses conquêtes ont un sens.
@@ -330,7 +330,7 @@
           <lb facs="#facs_2_r_13" n="N001" />La régulation des naissances, la généralisation des nouvelles techniques d'avortement
         </p>
         <p facs="#facs_2_r_14">
-          <lb facs="#facs_2_r_14" n="N001" />par J. <persName ref="GND:118815679">Hersch</persName><hi rendition="#sup">*</hi> (Genève)
+          <lb facs="#facs_2_r_14" n="N001" />par J. Hersch<hi rendition="#sup">*</hi> (Genève)
         </p>
         <p facs="#facs_2_r_15">
           <lb facs="#facs_2_r_15" n="N001" />concerne pas directement. Ainsi il est évident que l'usage généralisé des tranquillisants modifie même chez ceux qui n'y ont pas recours lui, sens de ce qui peut, ou non, être supporté. Parallèlement l'enthasis de généralisés modifierait profondément le sens, diffus en quelque sorte dans le corps lui-même, de « ce qu'est un être humain vivant », cette sorte de sympathie respectueuse qui interdit qu'on le touche, qui fait qu'on s'écarte comme instinctivement dans la vue pour éviter de heurter celui qui vient en sens inverse.
@@ -361,17 +361,17 @@
           </p>
         </div>
         <div n="2">
-          <head facs="#facs_2_r_24">NOUVEAUTÉ issue de la recherche <orgName ref="GND:unknown">Wyeth</orgName></head>
+          <head facs="#facs_2_r_24">NOUVEAUTÉ issue de la recherche Wyeth</head>
           <p facs="#facs_2_r_25">Maintenant une anxiolyse plus profonde déjà avec 1 mg</p>
           <p facs="#facs_2_r_26">
-            <lb facs="#facs_2_r_26" n="N001" />Aussi bien expérimentalement que dans les épreuves cliniques il est apparu que l'effet anxiolytique et tranquillisant du <bibl corresp="GND:unknown">TEMESTA</bibl> dépasse, à posologies égales, ceux des autres dérivés de la benzodiazépine. Tous les effets propres aux benzodiazépines n'apparaissent pas simultanément avec le <bibl corresp="GND:unknown">TEMESTA</bibl> mais se montrent avec une posologie croissante dans l'ordre : anxiolyse — effet tranquillisant — induction du sommeil — relaxation musculaire — amnésie — ataxie. On peut séparer ces effets en adaptant les posologies. Le seuil de l'ataxie se trouve très haut comparé à l'effet anxiolytique, tranquillisant.
+            <lb facs="#facs_2_r_26" n="N001" />Aussi bien expérimentalement que dans les épreuves cliniques il est apparu que l'effet anxiolytique et tranquillisant du TEMESTA dépasse, à posologies égales, ceux des autres dérivés de la benzodiazépine. Tous les effets propres aux benzodiazépines n'apparaissent pas simultanément avec le TEMESTA mais se montrent avec une posologie croissante dans l'ordre : anxiolyse — effet tranquillisant — induction du sommeil — relaxation musculaire — amnésie — ataxie. On peut séparer ces effets en adaptant les posologies. Le seuil de l'ataxie se trouve très haut comparé à l'effet anxiolytique, tranquillisant.
           </p>
           <p facs="#facs_2_r_27">TEMESTA 1.0</p>
           <p facs="#facs_2_r_28">
-            <lb facs="#facs_2_r_28" n="N001" /><bibl corresp="GND:unknown">TEMESTA</bibl> 1.0 = 1 mg de processus par comprimé<lb facs="#facs_2_l_28_1" n="N002" /><bibl corresp="GND:unknown">TEMESTA</bibl> 1.0 = 1 mg de l'oxygène par comprimé<lb facs="#facs_2_l_28_2" n="N003" /><bibl corresp="GND:unknown">TEMESTA</bibl> 1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_28_3" n="N004" /><bibl corresp="GND:unknown">TEMESTA</bibl> 1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_28_4" n="N005" /><bibl corresp="GND:unknown">TEMESTA</bibl> 1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_28_5" n="N006" /><bibl corresp="GND:unknown">TEMESTA</bibl> 1.0 = 1 mg dans l'oxygène
+            <lb facs="#facs_2_r_28" n="N001" />TEMESTA 1.0 = 1 mg de processus par comprimé<lb facs="#facs_2_l_28_1" n="N002" />TEMESTA 1.0 = 1 mg de l'oxygène par comprimé<lb facs="#facs_2_l_28_2" n="N003" />TEMESTA 1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_28_3" n="N004" />TEMESTA 1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_28_4" n="N005" />TEMESTA 1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_28_5" n="N006" />TEMESTA 1.0 = 1 mg dans l'oxygène
           </p>
           <p facs="#facs_2_r_29">
-            <lb facs="#facs_2_r_29" n="N001" />1.0 = 1 mg de l'oxygène<lb facs="#facs_2_l_29_1" n="N002" />1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_29_2" n="N003" /><bibl corresp="GND:unknown">TEMESTA</bibl> 1.0 = 1 mg dans l'oxygène
+            <lb facs="#facs_2_r_29" n="N001" />1.0 = 1 mg de l'oxygène<lb facs="#facs_2_l_29_1" n="N002" />1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_29_2" n="N003" />TEMESTA 1.0 = 1 mg dans l'oxygène
           </p>
           <p facs="#facs_2_r_30">Temesta</p>
           <p facs="#facs_2_r_31">
@@ -395,10 +395,10 @@
             <lb facs="#facs_2_r_39" n="N001" />Une de la première égine, en cas de schisme cardiaque et chez les malades dans un état général diminué en n'angénie que de l'angie chronique.
           </p>
           <p facs="#facs_2_r_40">
-            <lb facs="#facs_2_r_40" n="N001" />En cas d'implément cardiaque et d'hypoparose (au patient sans <bibl corresp="GND:unknown">TEMESTA</bibl> comme avait pour d'autres benzodiazépines ou psychologues dans l'angie du corps), le nombre de patients est de 100. On y a, par d'exposants de l'utilisation du <bibl corresp="GND:unknown">TEMESTA</bibl> si « on déprémient » le nouveau contexte ne pensaient en indiquant qu'il y a un « mal pour un patient » (100).
+            <lb facs="#facs_2_r_40" n="N001" />En cas d'implément cardiaque et d'hypoparose (au patient sans TEMESTA comme avait pour d'autres benzodiazépines ou psychologues dans l'angie du corps), le nombre de patients est de 100. On y a, par d'exposants de l'utilisation du TEMESTA si « on déprémient » le nouveau contexte ne pensaient en indiquant qu'il y a un « mal pour un patient » (100).
           </p>
           <p facs="#facs_2_r_41">
-            <lb facs="#facs_2_r_41" n="N001" />Lait d'un traitement avec <bibl corresp="GND:unknown">TEMESTA</bibl>, surtout à des débuts de la vie psychique plus intense, c'est jamais à une dépression des troubles de la vie. Il y a une dépression de la vie, de l'angie chronique, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du
+            <lb facs="#facs_2_r_41" n="N001" />Lait d'un traitement avec TEMESTA, surtout à des débuts de la vie psychique plus intense, c'est jamais à une dépression des troubles de la vie. Il y a une dépression de la vie, de l'angie chronique, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du
           </p>
           <p facs="#facs_2_r_42">
             <lb facs="#facs_2_r_42" n="N001" />Le succès thérapeutique en cas d'infections respiratoires et gastro-intestinales risque d'être compromis par les nausées et les vomissements.
@@ -430,10 +430,10 @@
             <lb facs="#facs_2_r_52" n="N001" />Documentation et échantillons :
           </p>
           <p facs="#facs_2_r_53">
-            <lb facs="#facs_2_r_53" n="N001" /><orgName ref="GND:unknown">GALBALIER</orgName>
+            <lb facs="#facs_2_r_53" n="N001" />GALBALIER
           </p>
           <p facs="#facs_2_r_54">
-            <lb facs="#facs_2_r_54" n="N001" /><orgName ref="GND:unknown">REPRÉSENTATIONS SA</orgName>,
+            <lb facs="#facs_2_r_54" n="N001" />REPRÉSENTATIONS SA,
           </p>
           <p facs="#facs_2_r_55">
             <lb facs="#facs_2_r_55" n="N001" />3001 BERN
@@ -448,13 +448,13 @@
             <lb facs="#facs_2_r_58" n="N001" />2082
           </p>
           <p facs="#facs_2_r_59">
-            <lb facs="#facs_2_r_59" n="N001" /><orgName ref="GND:unknown">HYSTA LABORATORIEL N.B.A.</orgName>
+            <lb facs="#facs_2_r_59" n="N001" />HYSTA LABORATORIEL N.B.A.
           </p>
           <p facs="#facs_2_r_60">
             <lb facs="#facs_2_r_60" n="N001" />PREFECTURES DE L'ASSOCIATION
           </p>
           <p facs="#facs_2_r_61">
-            <lb facs="#facs_2_r_61" n="N001" /><bibl corresp="GND:unknown">TEMESTA</bibl> 2.0
+            <lb facs="#facs_2_r_61" n="N001" />TEMESTA 2.0
           </p>
           <p facs="#facs_2_r_62">
             <lb facs="#facs_2_r_62" n="N001" />comprimé à 2.5 mg
@@ -473,7 +473,7 @@
 <div n="2">
           <head>Intoxications à la thyroxine</head>
           <p facs="#facs_3_r_4">
-            <lb facs="#facs_3_r_4" n="N001" />Les malades qui absorbent certains médicaments sans en faire part à leurs médecins peuvent poser de graves problèmes de diagnostic. C'est ce que démontre le Dr <persName ref="GND:unknown">Richard F. Harvey</persName> dans un article du <bibl corresp="GND:unknown">British Medical Journal</bibl> (2, 35, 1973), dans lequel il traite des malades qui abusent de thyroxine.
+            <lb facs="#facs_3_r_4" n="N001" />Les malades qui absorbent certains médicaments sans en faire part à leurs médecins peuvent poser de graves problèmes de diagnostic. C'est ce que démontre le Dr Richard F. Harvey dans un article du British Medical Journal (2, 35, 1973), dans lequel il traite des malades qui abusent de thyroxine.
           </p>
           <p facs="#facs_3_r_5">
             <lb facs="#facs_3_r_5" n="N001" />Il cite quatre cas de patientes de tous âges, présentant des troubles mentaux certains, des symptômes cliniques d'hyperthyroïdie, une tachycardie, et qui sont hyperkinétiques.
@@ -482,7 +482,7 @@
             <lb facs="#facs_3_r_6" n="N001" />Chez ces malades qui niaient prendre des comprimés contenant de la thyroxine, les tests effectués ont fini par révéler une intoxication exogène par cette substance.
           </p>
           <p facs="#facs_3_r_7">
-            <lb facs="#facs_3_r_7" n="N001" />De l'examen de ces quatre cas, il ressort selon le Dr <persName ref="GND:unknown">Harvey</persName>, que bien que les tests de fonctionnement de la thyroïde soient essentiels à l'établissement du diagnostic, le médecin ne doit pas perdre de vue la possibilité que son malade absorbe des médicaments à son insu. Les résultats des tests communs aux malades examinés - coexistence d'un taux sérique en T4 élevé et d'une très faible captation d'iode radio-actif, ne peuvent avoir qu'un nombre limité d'explications. La plus plausible est une thyrotoxicose accompagnée d'une ingestion d'iode assez forte pour saturer la glande en iode et empêcher la fixation d'iode radio-actif. L'anamnèse révélant une absorption d'iode ou un examen radiologique récent avec l'emploi d'un matériel radio-opaque à base d'iode, le discordance entre les taux sériques de thyroxine et de PBI, ou la présence d'une quantité très augmentée d'iode dans les urines, devraient faciliter le diagnostic. Il est préférable de mesurer le taux de T4 plutôt que celui de PBI, parce que la coexistence d'un PBI élevé et d'une fixation d'iode radio-actif faible est fréquente chez les sujets euthyroïdiens, qui ont reçu un excès d'iode de source exogène.
+            <lb facs="#facs_3_r_7" n="N001" />De l'examen de ces quatre cas, il ressort selon le Dr Harvey, que bien que les tests de fonctionnement de la thyroïde soient essentiels à l'établissement du diagnostic, le médecin ne doit pas perdre de vue la possibilité que son malade absorbe des médicaments à son insu. Les résultats des tests communs aux malades examinés - coexistence d'un taux sérique en T4 élevé et d'une très faible captation d'iode radio-actif, ne peuvent avoir qu'un nombre limité d'explications. La plus plausible est une thyrotoxicose accompagnée d'une ingestion d'iode assez forte pour saturer la glande en iode et empêcher la fixation d'iode radio-actif. L'anamnèse révélant une absorption d'iode ou un examen radiologique récent avec l'emploi d'un matériel radio-opaque à base d'iode, le discordance entre les taux sériques de thyroxine et de PBI, ou la présence d'une quantité très augmentée d'iode dans les urines, devraient faciliter le diagnostic. Il est préférable de mesurer le taux de T4 plutôt que celui de PBI, parce que la coexistence d'un PBI élevé et d'une fixation d'iode radio-actif faible est fréquente chez les sujets euthyroïdiens, qui ont reçu un excès d'iode de source exogène.
           </p>
           <p facs="#facs_3_r_8">
             <lb facs="#facs_3_r_8" n="N001" />Une seconde possibilité bien moins vraisemblable est celle d'une thyrotoxicose dans une thyroïde ectopique. Dans ce cas rare, la thyroïde peut être rétrosternale ou linguale, et son absorption d'iode peut ne pas être détectée par un scanning normal.
@@ -501,7 +501,7 @@
             <lb facs="#facs_3_r_13" n="N001" />La possibilité d'une prise d'hormones thyroïdiennes dissimulée doit être envisagée chez les malades qui présentent des symptômes cliniques d'hyperthyroïdie (sans goitre), des troubles psychiatriques, et dont les tests thyroïdiens sont discordants.
           </p>
           <p facs="#facs_3_r_14">
-            <lb facs="#facs_3_r_14" n="N001" /><persName ref="GND:unknown">M. Tache</persName>
+            <lb facs="#facs_3_r_14" n="N001" />M. Tache
           </p>
         </div>
         <div type="text">
@@ -538,10 +538,10 @@
             <lb facs="#facs_3_r_25" n="N001" />Il ne reste plus alors qu'à généraliser et commercialiser les formes du secours médical là où c'est faisable, ce qui conduit à médicaliser un surtout à psychiatriser la vie entière. Pour échapper à la solitude, on paye une entrée et on peut s'associer en cercle par terre et se toucher les doigts de pied. Le monde devient une vaste clinique aux techniques innombrables — pour qui ?
           </p>
           <p facs="#facs_3_r_26">
-            <lb facs="#facs_3_r_26" n="N001" />Mon maître, <persName ref="GND:118557106">Karl Jaspers</persName>, dont la formation fut celle non d'un philosophe, mais d'un médecin psychiatre, a écrit un jour que le rapport médecin-patient, idéalement, s'établit entre deux hommes raisonnables, où celui qui possède une compétence scientifique aide l'autre. Cela implique que le patient veut comprendre, et agir en conséquence, et que même si le pronostic est mauvais il garde la force, devant l'incertitude qui subsiste toujours, de ne pas renoncer complètement.
+            <lb facs="#facs_3_r_26" n="N001" />Mon maître, Karl Jaspers, dont la formation fut celle non d'un philosophe, mais d'un médecin psychiatre, a écrit un jour que le rapport médecin-patient, idéalement, s'établit entre deux hommes raisonnables, où celui qui possède une compétence scientifique aide l'autre. Cela implique que le patient veut comprendre, et agir en conséquence, et que même si le pronostic est mauvais il garde la force, devant l'incertitude qui subsiste toujours, de ne pas renoncer complètement.
           </p>
           <p facs="#facs_3_r_27">
-            <lb facs="#facs_3_r_27" n="N001" />Mais le malade est rarement cet être raisonnable, et il attend de médecin qu'il accomplisse non seulement ce qu'il peut, mais aussi ce qu'il ne peut pas. Alors le médecin peut renoncer à la raison chez son malade. Il consent, dit <persName ref="GND:118557106">Jaspers</persName>, à la formidable chute qui s'est produite de nos jours dans l'évaluation de ce qu'on peut attendre d'un être humain. Il veut guérir son patient comme on guérit des animaux.
+            <lb facs="#facs_3_r_27" n="N001" />Mais le malade est rarement cet être raisonnable, et il attend de médecin qu'il accomplisse non seulement ce qu'il peut, mais aussi ce qu'il ne peut pas. Alors le médecin peut renoncer à la raison chez son malade. Il consent, dit Jaspers, à la formidable chute qui s'est produite de nos jours dans l'évaluation de ce qu'on peut attendre d'un être humain. Il veut guérir son patient comme on guérit des animaux.
           </p>
           <p facs="#facs_3_r_28">
             <lb facs="#facs_3_r_28" n="N001" />Mais il peut aussi s'obstiner à en appeler à la raison de l'autre, appuyé sur sa science et sur le respect humain.
@@ -556,7 +556,7 @@
             <lb facs="#facs_3_r_31" n="N001" />Soignez-nous quand même, ô médecin ! Et exigez de nous, vos malades, que nous soyons des hommes, doués de raison et capables de volonté. Traitez-nous comme tels. Cela nous aidera à l'être.
           </p>
           <p facs="#facs_3_r_32">
-            <lb facs="#facs_3_r_32" n="N001" />Adresse de l'auteur : Mme <persName ref="GND:118815679">Jeanne Hersch</persName>, avenue Pierre-Odier 14, 1208 Genève.
+            <lb facs="#facs_3_r_32" n="N001" />Adresse de l'auteur : Mme Jeanne Hersch, avenue Pierre-Odier 14, 1208 Genève.
           </p>
         </div>
         <div n="2" type="bibliography">

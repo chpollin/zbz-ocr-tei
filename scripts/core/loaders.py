@@ -3,23 +3,26 @@ Shared Data Loaders: OCR-Text, Layout, Dokument-Discovery.
 
 Kanonische Implementierung fuer load_ocr_text, discover_pages,
 discover_documents, load_layout_gemini, skip_jstor_cover.
-Wird importiert von: tei_generator, tei_unified, ner_extract u.a.
+Wird importiert von: tei_generator, tei_unified u.a.
 """
 
 import json
 import re
 
 from scripts.config import (
-    ENTITIES_DIR,
     GEMINI_CORRECTED_A_DIR,
     GEMINI_CORRECTED_B_DIR,
     LAYOUT_DIR,
     LLM_CORRECTED_C_DIR,
     MISTRAL_RESULTS_DIR,
+    OCR_CURATED_DIR,
 )
 
-# OCR-Prioritaet: beste Korrektur zuerst
+# OCR-Prioritaet: menschlich kuratiert zuerst, dann beste Korrektur, dann Basis-OCR.
+# OCR_CURATED_DIR wird vom Viewer per File System Access API direkt beschrieben
+# (Direkt-Schreiben-Loop) und muss daher Vorrang vor allen Engine-Outputs haben.
 _OCR_DIRS = [
+    OCR_CURATED_DIR,
     GEMINI_CORRECTED_B_DIR,
     GEMINI_CORRECTED_A_DIR,
     LLM_CORRECTED_C_DIR,
@@ -60,16 +63,6 @@ def discover_documents() -> list[str]:
     return sorted(doc_ids)
 
 
-def discover_entity_docs() -> list[str]:
-    """Findet alle Dokumente mit Entity-Daten (ENTITIES_DIR)."""
-    if not ENTITIES_DIR.exists():
-        return []
-    return sorted(
-        d.name for d in ENTITIES_DIR.iterdir()
-        if d.is_dir() and not d.name.startswith("_")
-    )
-
-
 def load_layout_gemini(doc_id: str, page: int) -> dict | None:
     """Laedt Gemini-korrigiertes Layout-JSON, Fallback auf Docling.
 
@@ -77,11 +70,15 @@ def load_layout_gemini(doc_id: str, page: int) -> dict | None:
     Docling-JSON ergaenzt falls vorhanden.
     """
     padded = str(page).zfill(3)
+    curated_path = LAYOUT_DIR / doc_id / f"{doc_id}_p{padded}_layout_curated.json"
     gemini_path = LAYOUT_DIR / doc_id / f"{doc_id}_p{padded}_layout_gemini.json"
     docling_path = LAYOUT_DIR / doc_id / f"{doc_id}_p{padded}_layout.json"
 
+    # Prioritaet: menschlich kuratiert (Viewer-Direktschreiben) > Gemini > Docling
     layout = None
-    if gemini_path.exists():
+    if curated_path.exists():
+        layout = json.loads(curated_path.read_text(encoding="utf-8"))
+    elif gemini_path.exists():
         layout = json.loads(gemini_path.read_text(encoding="utf-8"))
     elif docling_path.exists():
         layout = json.loads(docling_path.read_text(encoding="utf-8"))

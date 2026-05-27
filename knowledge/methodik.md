@@ -116,7 +116,6 @@ Die untenstehende Liste ist die methodisch geordnete Auswahl (Diagnose → Korre
 python -m scripts.tei.tei_validator --doc {DOC_ID}            # TEI-Validierung
 python -m scripts.tei.tei_validator --all --html-report        # Korpus-Report
 python -m scripts.tei.tei_validator --compare-ref              # Referenz-Vergleich (11 Docs)
-python -m scripts.ner.ner_evaluate --doc {DOC_ID}              # NER-Abdeckung
 python -m scripts.eval.evaluate_ocr --all                           # OCR-Metriken
 python -m scripts.eval.quality_proxy --all --html                   # Quality Proxy (Hit Rate)
 python -m scripts.eval.completeness_check --html                    # Vollstaendigkeits-Check (Seiten)
@@ -153,20 +152,10 @@ python -m scripts.tei.tei_unified --doc {DOC_ID} --step 1               # nur Sc
 python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble           # Re-Assembly (kostenlos)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --force                # alles neu (inkl. Gemini)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --dry-run              # Prompt-Vorschau
-python -m scripts.tei.tei_unified --all --reassemble --ner              # Korpus Re-Assembly
+python -m scripts.tei.tei_unified --all --reassemble                    # Korpus Re-Assembly
 ```
 
-### 5. Entitaeten
-
-```bash
-python -m scripts.ner.ner_extract --doc {DOC_ID}                        # Extraktion
-python -m scripts.ner.wikidata_linker --doc {DOC_ID}                    # Wikidata
-python -m scripts.ner.ner_inject_tei --doc {DOC_ID} --validate          # Injektion
-python -m scripts.ner.entity_index --merge-all                          # Index zusammenfuehren
-python -m scripts.ner.entity_index --stats                              # Statistiken
-```
-
-### 6. Validierung (Qualitaetsgate)
+### 5. Validierung (Qualitaetsgate)
 
 ```bash
 python -m scripts.tei.tei_validator --doc {DOC_ID}                      # Einzeldokument
@@ -174,7 +163,7 @@ python -m scripts.tei.tei_validator --all --report                      # JSON-R
 python -m scripts.tei.tei_validator --all --html-report                 # HTML-Report
 ```
 
-### 7. Workflow-Status (ersetzt Agent-Screening, E66)
+### 6. Workflow-Status (ersetzt Agent-Screening, E66)
 
 Das Agent-Screening ist abgeschafft. Status wird von Menschen im Viewer gesetzt;
 die CLI deckt Validierung und Status-Projektion ab:
@@ -188,7 +177,7 @@ python -m scripts.tei.tei_status_marker                                 # Workfl
 
 Output: `output/tei_final/{DOC_ID}_final.xml` + `{DOC_ID}_manifest.json` (Workflow-Status + History).
 
-### 8. Visuelle Artefakte
+### 7. Visuelle Artefakte
 
 ```bash
 python scripts/edition/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300            # Seitenbilder

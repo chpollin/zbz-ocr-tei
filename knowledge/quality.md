@@ -18,7 +18,86 @@ Visualisierung kann bei Bedarf neu aufgebaut werden — die JSON-Daten sind repr
 
 ---
 
-## CER-Benchmark (Headline)
+## Korrektheits-Welle (2026-05-27): korrigierte CER-Methodik [AKTUELLE SOT]
+
+Diese Sektion ist die **verbindliche aktuelle Quelle** fuer die CER. Die darunter folgenden
+Abschnitte (alte Headline, Timeline) sind **historisch** und teils ueberholt -- sie bleiben zur
+Nachvollziehbarkeit stehen, gelten aber nur, wo sie dieser Sektion nicht widersprechen.
+
+### Befund: die ZBZ-Referenzen sind selektive Teiltranskriptionen
+
+Konkret belegt (siehe Beispiel-Dump): Doc 580 enthaelt in der Pipeline **zwei** Rezensionen
+(Piguet + Gehlen), in der Referenz nur **eine**; Doc 570 hat zusaetzlich den Journal-Masthead;
+Doc 90 ein Inhaltsverzeichnis. Die Pipeline ist also oft **vollstaendiger** als die Referenz.
+Eine naive Volltext-CER bestraft das (Doc 570: 113 %, obwohl die OCR fehlerfrei ist). Das alte
+alignment-getrimmte Verfahren verbarg umgekehrt sowohl diesen Mehrtext als auch echte Verluste.
+
+### Drei-Zahlen-Zerlegung (kanonisch, `classify_edit_operations`)
+
+Jede Levenshtein-Editieroperation wird klassifiziert. `cer_fidelity + scope_insertion_rate = cer`.
+
+| Topf | Operation | Bedeutung | OCR-Fehler? |
+|---|---|---|---|
+| **Fidelity (B+C)** | Substitutionen, kleine Indels, **alle Loeschungen** | falsch/nicht erfasster Text | **ja** |
+| **Scope (A)** | grosse Einfuegungen (>= 50 Zeichen) | Pipeline-Mehrtext ggue. Referenz | nein |
+
+Asymmetrie ist beabsichtigt: vollstaendiger sein als die Referenz ist kein Fehler, unvollstaendiger schon.
+
+### Headline-Werte (n=25, alle Docs, Seed 42, B=10000, 2026-05-27)
+
+| Metrik | Mean | Median | 95%-CI (Mean) | misst |
+|---|---|---|---|---|
+| **Fidelity-CER (PRIMAER)** | **4.26 %** | **1.83 %** | [2.39 %, 6.48 %] | echte OCR-/Transkriptionstreue |
+| Volltext-CER (scope-inkl.) | 22.88 %* | 13.13 %* | [11.70 %, 36.56 %]* | volle Divergenz von der Referenz |
+| Scope-Rate (Mehrtext) | 16.50 % | 7.16 % | — | Pipeline-Mehrtext (kein Fehler) |
+
+*Volltext/Scope-Werte aus `overall.end_to_end` auf dem n=19-scope-clean-Subset; Fidelity ueber alle 25.
+
+Der Fidelity-Median **1.83 %** reproduziert die fruehere Headline -- jetzt aber sauber: ohne
+deflationaeres Trimming, ohne zirkulaeren Ausschluss, case-sensitiv, ueber das ganze Korpus.
+Nach **Transkribus-Qualitaetsbaendern** (<2 % exzellent, 2-5 % gut, 5-10 % pruefen, >10 % schlecht)
+ist der Median „exzellent", der Mean „gut".
+
+### Pipeline-Mehrwert (Paired, like-for-like Fidelity)
+
+Pipeline-Fidelity vs. reine Mistral-OCR-Fidelity: **-7.12 pp** (p = 0.14, n=19, nicht signifikant
+bei alpha=0.05). Die fruehere Angabe „-14.83 pp, p=0.0004" war ein Artefakt des getrimmten/
+kleingeschriebenen Vergleichs und ist **zurueckgezogen**.
+
+### Was sich im Code aenderte (E70)
+
+1. **Kein Alignment-Trimming mehr** in der Headline: Volltext-Levenshtein; `find_best_alignment`
+   nur noch Diagnose, Padding-auf-Referenzlaenge entfernt.
+2. **Case-sensitiv** als Default (`normalize_for_comparison(casefold=False)`); pauschales `.lower()`
+   entfernt. Effekt auf die Zahl ~0 (Case-Differenzen liegen fast nur in Versal-Lauftiteln).
+3. **Drei CER-Pfade vereinheitlicht**: `benchmark_cer`, `cer_statistics(_full)` und
+   `tei_validator --compare-ref` nutzen jetzt `extract_text_for_comparison` + `calculate_cer`.
+   `--compare-ref` vergleicht `tei_final/` (statt `tei_unified/{id}/`) und nicht mehr rohes `itertext()`.
+4. **Scope-Ausschluss entzirkelt**: `cer>50%` als Ausschlussgrund entfernt (war zirkulaer); nur noch
+   strukturelles Seitenzahl-Ratio. Latenter Bug behoben (`ref_pages_total` -> `ref_pages`).
+5. **Blank-`<pb>`** aus dem Seiten-Count ausgenommen.
+6. **Fehlerkategorien via `rapidfuzz` editops** (statt `difflib`): summieren exakt zur Levenshtein-Distanz.
+7. **Goldene Regressionstests** `tests/test_cer_extraction.py` (18 Tests) sichern den Vertrag.
+
+### Externe Verifikation (2026-05-27)
+
+| Frage | Standard | Konform? |
+|---|---|---|
+| Denominator `dist/len(ref)` | Transkribus | ja |
+| case-sensitiv als Default | OCR-D, dinglehopper, jiwer (ToLowerCase opt-in) | ja (jetzt) |
+| NFC-Normalisierung | OCR-D, dinglehopper, W3C | ja |
+| globales Volltext-Alignment, kein Trimming | dinglehopper, jiwer | ja (jetzt) |
+| Paired Bootstrap: Perzentil-CI auf Deltas, p = Anteil Vorzeichenwechsel | Singh 2025 (arXiv:2511.19794) | ja |
+
+Quellen: [OCR-D Eval Spec](https://ocr-d.de/en/spec/ocrd_eval.html), [Transkribus CER](https://www.transkribus.org/character-error-rate-cer-explained), [dinglehopper](https://github.com/qurator-spk/dinglehopper), [jiwer](https://github.com/jitsi/jiwer), Singh 2025 (arXiv:2511.19794).
+
+### Zitations-Korrektur
+
+arXiv:2510.06743 (HCPR/AIR) ist von **M. Levchenko 2025**, *nicht* „Nosova et al." -- frueher falsch attribuiert.
+
+---
+
+## CER-Benchmark (Headline) [HISTORISCH, abgeloest durch Korrektheits-Welle oben]
 
 End-to-End Character Error Rate: Pipeline-TEI vs. ZBZ-Referenz-TEI (Transkribus Ground Truth).
 Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
@@ -156,7 +235,7 @@ Konvention bei `|reference| == 0`: CER = 0 wenn `|hypothesis| == 0`, sonst CER =
 
 | Bezeichnung | Vergleich | Misst |
 |---|---|---|
-| End-to-End-CER | Pipeline-TEI (`tei_final/`) vs Referenz-TEI | Gesamtfehler aus OCR + Layout + TEI-Gen + NER |
+| End-to-End-CER | Pipeline-TEI (`tei_final/`) vs Referenz-TEI | Gesamtfehler aus OCR + Layout + TEI-Gen |
 | OCR-only-CER | Mistral OCR Stage-2 vs Referenz | reiner OCR-Fehler ohne Pipeline-Korrekturen |
 
 Differenz quantifiziert die **Pipeline-Verbesserung**.
@@ -164,9 +243,14 @@ Differenz quantifiziert die **Pipeline-Verbesserung**.
 **Aggregations-Einheit:** Dokument-Ebene, nicht Seiten-Ebene.
 
 ```
-doc_cer = Σ(page_levenshtein) / Σ(page_ref_chars)        # char-gewichtet
-mean_cer = mean(doc_cer for doc in evaluated)             # Bootstrap-Einheit = Doc
+doc_cer = Levenshtein(ref_volltext, hyp_volltext) / |ref_volltext|   # Volltext, KEIN Trimming
+mean_cer = mean(doc_cer for doc in evaluated)                        # Bootstrap-Einheit = Doc
 ```
+
+KORREKTUR (E70): Frueher stand hier `Σ(page_levenshtein)/Σ(page_ref_chars)` (char-gewichtete
+Per-Page-Aggregation). Real wird der Doc-CER als Volltext-Levenshtein berechnet
+(`evaluate_tei_vs_tei`); die Per-Page-Werte dienen nur der Outlier-Visualisierung. Der primaere
+Headline-Wert ist die **Fidelity-CER** (siehe Korrektheits-Welle oben), nicht diese Volltext-CER.
 
 ### Bootstrap-Konfidenzintervalle
 
@@ -435,15 +519,10 @@ conversation/text; Doc 1240: 7 eigenstaendige Gespraechsteile).
 
 | Regel | Docs | Beschreibung |
 |---|---|---|
-| W9 | 17 | Entity-Tags ohne ref (NER-Re-Injection noetig) |
-| W10 | 10 | nur persName, 0 orgName/placeName (NER-Extraktionsproblem) |
 | W11 | 2 | zu viele top-level divs (false positive) |
 
-**W9-Docs:** 410, 780, 790, 1530, 1870, 2140, 2330, 2400, 2440, 2510, 2540, 2550, 2660, 3020, 3180, 3190, 3200.
-**W10-Docs:** 30, 50, 100, 910, 1270, 1360, 1370, 1380, 2180, 2310.
-
-W10-Diagnose: alle 10 Docs haben persName aber 0 orgName/placeName. Vermutlich NER-Extraktionsproblem,
-nicht Injection-Problem. Re-Injection-Befehl: `python -m scripts.ner.ner_inject_tei --all --validate`.
+Die fruehere Entity-Validierung (W9 "Entity-Tags ohne ref", W10 "nur persName, 0 orgName/placeName")
+ist mit **E71** (NER entfernt) hinfaellig: das ausgelieferte TEI traegt keine Entity-Tags mehr.
 
 ### Validierungsregeln
 
@@ -636,7 +715,10 @@ ein Mess-Artefakt.
 **Konsequenzen:**
 
 1. **Aggregations-Einheit = Doc-Ebene.** Pages innerhalb eines Docs sind nicht nur korreliert (was naive iid-Bootstrap schon falsch macht), sondern bei Schema-Aenderungen auch falsch identifiziert.
-2. **Content-aligned Eval ist Default.** Pagewise nur fuer Per-Page-Outlier-Visualisierung in den Rohdaten.
+2. **Content-aligned Eval war Default (bis E70).** UEBERHOLT: seit E70 ist die Headline die
+   Fidelity-CER auf dem Volltext (kein Trimming, da Trimming Insertions/Verluste verbarg). Volltext-
+   Levenshtein ist gegen `<pb>`-Drift ohnehin immun (Text in Lesereihenfolge, Page-IDs egal).
+   `find_best_alignment` lebt nur noch als Diagnose-/Within-Doc-Chunk-Werkzeug.
 3. **Lehre fuer kuenftige Pipeline-Aenderungen:** Jede Stage, die `<pb>`-IDs neu vergibt oder Seiten umsortiert, muss vorher in einem Test-Run gegen Referenz-TEIs laufen.
 
 ---
@@ -721,6 +803,5 @@ Im JSON `meta`-Block dokumentiert: `tool_version`, `git_sha`, `git_dirty`, `gene
 ## Verweise
 
 - [pipeline.md §TEI-Mapping](pipeline.md) — TEI-Struktur und Schema
-- [entities.md](entities.md) — Entity-Validierung
 - [viewer.md](viewer.md) — Layout- und Transkriptions-Editor (manuelle QA via Datei-Download)
 - [decisions.md](decisions.md) — E51 (CER-Benchmark), E54/E55 (CER-Statistik + Dashboard), E41-E47 (Screening)

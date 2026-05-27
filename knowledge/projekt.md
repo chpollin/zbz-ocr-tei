@@ -25,7 +25,7 @@ LLM-gestuetzte OCR- und TEI-Pipeline fuer den Nachlass Jeanne Hersch der Zentral
 | Projektleitung | Christopher (DHCraft) |
 
 Seit dem Abstimmungsmeeting (25.02.2026, E21) deckt zbz-ocr-tei den **vollstaendigen Pipeline-Weg** ab:
-OCR + Layout + PAGE-XML + NER/GND + TEI-XML. ZBZ behaelt Transkribus parallel als zweite Quelle.
+OCR + Layout + PAGE-XML + TEI-XML. ZBZ behaelt Transkribus parallel als zweite Quelle.
 
 ---
 
@@ -131,7 +131,7 @@ und [quality.md](quality.md).
 | M0 | Bildextraktion + QA-Viewer | Bilder + Viewer verfuegbar | Done |
 | M1 | OCR validiert | >=93% Accuracy alle Typen | Done |
 | M2 | Layout + PAGE-XML | Regionen + BBox + PAGE-XML alle Docs | Done |
-| M3 | NER + Wikidata | Recall >70%, Linking >50% | Done (285 Docs; Entity- und Linking-Zahlen: [entities.md](entities.md)) |
+| M3 | NER + Wikidata | Recall >70%, Linking >50% | Entfernt (E71, 2026-05-27 — Verlinkung im Output nicht lieferfaehig) |
 | M4 | TEI-XML | DTA-konform, schema-valide | Done (285/285 valide gegen `zbz_hersch.rng`) |
 | M5 | Production Run | 285 Docs verarbeitet, fachliche QA | In Progress (285/285 generiert; Workflow-Status alle Stroeme `unverifiziert`, E66/E67; fachliche Kuration offen) |
 
@@ -147,13 +147,12 @@ und [quality.md](quality.md).
 | Layout-QA (Gemini) | Done | `--mode auto` (E25/E26/E31) |
 | PAGE-XML Generator | Done | `page_xml_generator.py` + METS |
 | Dokumentklassifikation | Done | `classify_docs.py` (E27) |
-| NER Extraction | Done | Gemini-NER ueber 285 Docs (Entity-/Mention-Zahlen: [entities.md](entities.md)) |
-| Entity Index | Done | dedupliziter Index + Wikidata/GND-Linking (Zahlen: [entities.md](entities.md)) |
+| NER + Entity-Linking | Entfernt (E71) | aus Pipeline + Output entfernt; Verlinkung war nicht lieferfaehig |
 | Unified TEI Pipeline | Done | 285/285 schema-valide (E32) |
 | TEI Validator | Done | RelaxNG + 8 Projektregeln + 14 Warnings |
 | Workflow-Status pro Strom (E66/E67) | Done (Datenmodell) | ersetzt Agent-Screening; 285/285 `unverifiziert`, im Viewer setzbar, Provenienz im Manifest |
 | Pipeline-Viewer (E56) | Done | `docs/viewer.html` Single-Page mit Layout- + Transkriptions-Editor, Persistenz via Download |
-| Viewer Edition-Uplift (Mai 2026) | In Arbeit | OSD-Integration (E58), Mode-Edit-Toggle pro Panel (E60), Layout-Editor-Reichtum, geplant: UI-Verdichtung + Quality/Provenance-Drawer + complete-TEI + Export-Modul (E61). Plan: `~/.claude/plans/edition-uplift-three-pages.md` |
+| Viewer Edition-Uplift (Mai 2026) | groesstenteils umgesetzt | Ausgeliefert: E58 (OSD-Faksimile), E60 (Edit-Toggle pro Panel), E61 (Export-Modul), E62 (Methode-Seite), E63/E65 (Leerseiten-Manifest + TEI-Marker), E66/E67 (Workflow-Status + Ampel-Reframing + Catalog-Refactor). Offen: complete-TEI (`<facsimile>`/`<zone>`) + Provenance-Drawer (geplant, eigene Pipeline-Welle), OSD-Layout-Editor-Integration, viewer.js-Modulsplit. Plan: `~/.claude/plans/edition-uplift-three-pages.md` |
 | Workflow + Provenance | Konzept dokumentiert | [workflow.md](workflow.md) beschreibt Datenfluss, Save-Mechanismus, Round-Trip, `_complete.xml`- und `provenance.json`-Konzept |
 | Containerisierung | Pending | Dockerfile/Podman |
 | CI/CD | Pending | GitLab Uni Zuerich |
@@ -202,7 +201,6 @@ Seit E21 ersetzt bzw. ergaenzt zbz-ocr-tei folgende Schritte:
 | Transkribus OCR | Batch-OCR (Mistral) |
 | Manueller Transkribus-Export | automatischer PAGE-XML-Export |
 | Oxygen TEI-Markup | automatische TEI-Transformation |
-| Manuelles GND-Linking | NER + lobid.org / Wikidata |
 
 ### Was manuell bleibt
 

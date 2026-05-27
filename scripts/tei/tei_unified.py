@@ -80,7 +80,6 @@ def process_document(
     reassemble: bool = False,
     dry_run: bool = False,
     validate: bool = False,
-    ner: bool = False,
 ) -> dict:
     """Verarbeitet ein Dokument durch alle Pipeline-Schritte.
 
@@ -217,21 +216,6 @@ def process_document(
         except ImportError:
             print("    WARNUNG: tei_validator nicht verfuegbar")
 
-    # Step 5: NER Entity-Injection
-    ner_result = None
-    if ner and max_step >= 3:
-        final_path = doc_dir / f"{doc_id}_final.xml"
-        if final_path.exists():
-            try:
-                from scripts.ner.ner_inject_tei import process_document as ner_inject
-                ner_result = ner_inject(doc_id, validate=validate)
-                ner_status = "ok" if ner_result.get("status") != "error" else "error"
-                injected = ner_result.get("injected", 0)
-                print(f"    NER: {injected} entities injected ({ner_status})")
-            except Exception as e:
-                print(f"    NER WARNUNG: {e}")
-                ner_result = {"status": "error", "error": str(e)}
-
     elapsed = time.time() - start_time
 
     # Manifest
@@ -245,7 +229,6 @@ def process_document(
         "elapsed_seconds": round(elapsed, 1),
         "max_step": max_step,
         "validation": validation_result,
-        "ner": ner_result,
     }
     manifest_path = doc_dir / f"{doc_id}_manifest.json"
     manifest_path.write_text(
@@ -280,8 +263,6 @@ def main():
                         help="Nur Step 1+3 neu (Fixes anwenden), Step 2 aus Cache (kostenlos)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Prompts anzeigen, keine API-Calls")
-    parser.add_argument("--ner", action="store_true",
-                        help="Step 5: NER Entity-Injection in TEI")
     args = parser.parse_args()
 
     validate = not args.skip_validate
@@ -291,7 +272,6 @@ def main():
     print("=== Unified TEI Pipeline ===")
     print(f"  Step: 1-{args.step}"
           + (" + Validation" if validate else " (Validation OFF)")
-          + (" + NER" if args.ner else "")
           + (" [REASSEMBLE: Step 1+3 neu, Step 2 Cache]" if reassemble else ""))
 
     if args.doc:
@@ -318,7 +298,6 @@ def main():
                 reassemble=reassemble,
                 dry_run=args.dry_run,
                 validate=validate,
-                ner=args.ner,
             )
             results.append(manifest)
         except Exception as e:

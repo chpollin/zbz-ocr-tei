@@ -30,7 +30,7 @@ OCR (Mistral / Gemini-korrigiert)          Layout (Docling + Gemini-QA)
  │   ┌──────────────────────────────────────┤
  │   │                                      │
  │   ▼                                      ▼
- │   PAGE-XML (rule-based)                 NER (Gemini + Wikidata/GND)
+ │   PAGE-XML (rule-based)                  │
  │   = paralleler Export                    │
  │   fuer coOCR-Kompatibilitaet             │
  │   NICHT TEI-Input                        │
@@ -39,13 +39,11 @@ OCR (Mistral / Gemini-korrigiert)          Layout (Docling + Gemini-QA)
  └────────► TEI-XML (Unified: Scaffold + Gemini-Refinement + Assembly)
             │
             ▼
-            Quality Screening (Agent, 7 Schichten)
+            output/tei_final/{doc}_final.xml + {doc}_manifest.json
+            (Workflow-Status pro Strom, E66/E67 — ersetzt das fruehere Agent-Screening)
             │
             ▼
-            output/tei_final/{doc}_final.xml + {doc}_review.json
-            │
-            ▼
-            docs/data/tei/{doc}_final.xml (Git-tracked Mirror)
+            docs/data/pages/{doc}/ (generierter Mirror, inkl. {doc}_final.xml)
             │
             ▼
             Viewer (Inspektion + Korrektur)
@@ -78,19 +76,15 @@ coOCR / Transkribus erzeugt (`scripts/layout/page_xml_generator.py`).
 | Overlay-PNG | PNG | `output/overlay/{doc}/...` | `scripts/layout/generate_layout_overlays.py` |
 | PAGE-XML | XML 2013-07-15 | `output/page_xml/{doc}/{doc}_pNNN.xml` | `scripts/layout/page_xml_generator.py` (E13) |
 | METS | XML | `output/page_xml/{doc}/mets.xml` | `scripts/layout/mets_generator.py` |
-| NER-Output | JSON | `output/entities/{doc_id}/` | `scripts/ner/ner_extract.py` |
-| Entity-Index | XML + JSON | `data/entities/*.xml`, `docs/data/entity_index.json` | `scripts/ner/entity_index.py` |
-| Wikidata-Cache | JSON | `_wikidata_cache.json` | `scripts/ner/wikidata_linker.py` |
 | TEI-Scaffold (Step 1) | XML, regelbasiert | `output/tei_unified/{doc}_step1.xml` | `scripts/tei/tei_step1.py` |
 | TEI-Gemini (Step 2) | XML, LLM-refined | `output/tei_unified/{doc}_step2.xml` | `scripts/tei/tei_step2.py` |
 | TEI-Assembly (Step 3) | XML, post-processed | `output/tei_unified/{doc}.xml` | `scripts/tei/tei_step3.py` |
-| TEI-NER-injected | XML mit `<persName>` etc | `output/tei_ner/{doc}.xml` | `scripts/ner/ner_inject_tei.py` |
-| TEI final | XML mit `<revisionDesc>` | `output/tei_final/{doc}_final.xml` | `scripts/tei/tei_add_revision.py` (E42, E43) |
-| Review-JSON | JSON (7 Schichten) | `output/tei_final/{doc}_review.json` | Agent-Screening (E41) |
-| TEI-Mirror (Frontend) | XML | `docs/data/tei/{doc}_final.xml` | `scripts/edition/generate_edition_data.py` |
+| TEI final | XML mit `<revisionDesc>` | `output/tei_final/{doc}_final.xml` | `scripts/tei/tei_add_revision.py` + `tei_status_marker.py` (E42, E43, E66) |
+| Pro-Objekt-Manifest | JSON (Workflow-Status + History je Strom) | `output/tei_final/{doc}_manifest.json` | `scripts/edition/page_manifest.py` (E65/E66) |
+| Review-JSON (Legacy) | JSON (abgeschafftes 7-Schichten-Screening, nur Diagnose-Spur) | `output/tei_final/{doc}_screening_legacy.json` | Agent-Screening, deprecated E66 |
+| TEI final (Frontend) | XML | `docs/data/pages/{doc}/{doc}_final.xml` | `scripts/edition/generate_edition_data.py` |
 | TEI per-Seite (Frontend) | XML (split via `<pb>`) | `docs/data/pages/{doc}/{doc}_pN.xml` | dito (E57) |
 | Catalog (Frontend) | JSON | `docs/data/catalog.json` | dito |
-| Entity-Index (Frontend) | JSON | `docs/data/entity_index.json` | dito |
 | Thumbnails (Frontend) | JPG 140x200 q70 | `docs/data/thumbs/{doc}.jpg` | dito |
 | Kuratierte TEI | XML | `data/curated_tei/{doc}/` | manuell (aktuell leer + `.gitkeep`) |
 
@@ -158,7 +152,7 @@ Vollstaendiger Ablauf, wenn ein User eine Layout-Region korrigiert hat:
    ```bash
    python -m scripts.tei.tei_add_revision --doc {ID}
    ```
-   Schreibt `<revisionDesc>` neu mit aktuellem Pipeline-Lauf + Screening-Status.
+   Schreibt `<revisionDesc>` neu mit aktuellem Pipeline-Lauf. Der menschgesetzte Workflow-Status pro Strom wird bei der ZBZ-Uebergabe via `tei_status_marker.py` aus dem Manifest in den `<revisionDesc>` projiziert (E66).
 6. **Validierung**:
    ```bash
    python -m scripts.tei.tei_validator --doc {ID}
@@ -167,7 +161,7 @@ Vollstaendiger Ablauf, wenn ein User eine Layout-Region korrigiert hat:
    ```bash
    python -m scripts.edition.generate_edition_data --doc {ID}
    ```
-   Aktualisiert `docs/data/tei/{doc}_final.xml` und `docs/data/pages/{doc}/`.
+   Aktualisiert `docs/data/pages/{doc}/` (inkl. `{doc}_final.xml`).
 
 **Aktuelles Manko:** Schritte 3-7 sind nicht automatisiert. Es gibt keinen
 "Apply Curated Edit"-Wrapper-Befehl. Ein solches Convenience-Script (z.B.
@@ -177,12 +171,13 @@ Vollstaendiger Ablauf, wenn ein User eine Layout-Region korrigiert hat:
 
 ## 4. Provenance — aktuell vs. geplant
 
-### 4.1 Aktuell: revisionDesc + review.json
+### 4.1 Aktuell: revisionDesc + Pro-Objekt-Manifest
 
 | Speicher | Inhalt | Wo |
 |---|---|---|
-| `<revisionDesc>` im TEI-Header (E42) | `<change>`-Elemente: Pipeline-Stufen + Versionen + Screening-Reviewer + Datum | jedes finale TEI in `output/tei_final/` |
-| `{doc}_review.json` (E41) | 7-Schichten-Quality-Befund vom Agent-Screening (Scan, OCR, Layout, Struktur, Referenz, Entities, Kohaerenz) | `output/tei_final/` |
+| `<revisionDesc>` im TEI-Header (E42) | `<change>`-Elemente: Pipeline-Stufen + Versionen + projizierter Workflow-Status (E66) + Datum | jedes finale TEI in `output/tei_final/` |
+| `{doc}_manifest.json` (E65/E66) | Workflow-Status pro Strom (`ocr`/`layout`/`tei`) + History `[{at, by, from, to, note}]` + Ausnahme-Seiten (Leerseiten) | `output/tei_final/` |
+| `{doc}_screening_legacy.json` (Legacy) | abgeschaffter 7-Schichten-Screening-Befund, nur Diagnose-Spur (deprecated E66) | `output/tei_final/` (gitignored) |
 | Git-Log | Datei- und Code-Aenderungs-Historie | Repo |
 
 **Was fehlt:**
@@ -203,8 +198,7 @@ Ein zentrales Bearbeitungs-Log pro Dokument. Schema-Vorschlag:
     "layout_source": "gemini_corrected_v3.1+curated",
     "ocr_source": "mistral_2512",
     "tei_version": "1.4.2",
-    "screening": "APPROVED",
-    "screening_date": "2026-03-15"
+    "workflow_status": { "ocr": "unverifiziert", "layout": "bearbeitet", "tei": "unverifiziert" }
   },
   "history": [
     {
@@ -223,11 +217,12 @@ Ein zentrales Bearbeitungs-Log pro Dokument. Schema-Vorschlag:
       "ref": "output/layout/20_p*_layout_gemini.json"
     },
     {
-      "ts": "2026-03-15T10:23:00Z",
-      "actor": "agent-screening-v2",
-      "kind": "screening",
-      "result": "APPROVED",
-      "ref": "output/tei_final/20_review.json"
+      "ts": "2026-05-26T10:23:00Z",
+      "actor": "human:ek",
+      "kind": "workflow_status",
+      "scope": "layout",
+      "details": "unverifiziert -> bearbeitet",
+      "ref": "output/tei_final/20_manifest.json"
     },
     {
       "ts": "2026-05-25T14:00:00Z",
@@ -303,10 +298,10 @@ Im `<revisionDesc>` des `_complete.xml` werden die Items aus
     OCR durch Mistral Document AI 2512, alle Seiten</change>
   <change when="2026-03-04T16:01:00Z" who="#gemini-3.1-flash-lite" type="layoutQA">
     Layout-QA durch Gemini, 14 Korrekturen</change>
-  <change when="2026-03-15T10:23:00Z" who="#agent-screening-v2" type="screening">
-    7-Schichten-Screening, Status: APPROVED</change>
   <change when="2026-05-25T14:00:00Z" who="#person-chpollin" type="layoutEdit">
     Manuelle Layout-Korrektur, Seite 1, 3 Regionen</change>
+  <change when="2026-05-26T10:23:00Z" who="#person-ek" status="bearbeitet" n="layout">
+    Workflow-Status layout: unverifiziert -&gt; bearbeitet (E66)</change>
 </revisionDesc>
 ```
 
@@ -332,8 +327,8 @@ Separat von der UI-Welle, sollte ein eigenes Etappen-Paket sein.
 
 | Welle | Inhalt | Status |
 |---|---|---|
-| Knowledge-Refactoring | alle 10 knowledge-Docs + README auf Stand bringen, workflow.md neu, Drift-Befunde fixen | **in Arbeit (diese Session)** |
-| Code-Drift-Fix | `generate_edition_data.py` referenziert geloeschte `dashboard.json` — Catalog-Rebuild ist vermutlich kaputt | offen |
+| Knowledge-Refactoring | alle knowledge-Docs + README auf Stand bringen, workflow.md neu, Drift-Befunde fixen | erledigt |
+| Code-Drift-Fix | `generate_edition_data.py` behandelt fehlende `dashboard.json` jetzt als optional (`or {}`, mit E56-Kommentar) | erledigt |
 | UI-Verdichtung Viewer (Etappe 2.10) | Erledigt (E64): Doc-Subbar + Toolbar fusioniert, OCR-Quellen-Umschalter entfernt (Viewer = Mistral), Edit-Toggles benannt ("Layout"/"Text" als Text-Label, **nicht** als Icons — User-Entscheidung). Offen: Region-Liste als Sub-Spalte, Downloads als Dropdown, Hint-Texte als Tooltips | teilweise (E64) |
 | Per-Doc-Export-Drawer (Etappe 2.9) | JSZip-basierter Export aller Pipeline-Artefakte pro Doc, im Bulk-Modus auch aus Korpus-Uebersicht (Etappe 1.6) | geplant, abhaengig von Knowledge-Welle + (optional) `_complete.xml` |
 | Quality-Drawer (Etappe 2.2) | `{doc}_review.json` als oeffenbares Drawer-Panel im Viewer | geplant |
@@ -350,29 +345,14 @@ Plan-Dokument (Stand der Welle):
 
 ## 7. Bekannte Drift / Action-Items
 
-### 7.1 Code-Drift
+Die frueher hier gelisteten Code- und Doku-Drift-Punkte sind behoben:
+`generate_edition_data.py` behandelt die geloeschte `dashboard.json` als optional (`or {}`),
+die `scripts/postprocess/`-Verweise sind aus README und projekt.md entfernt (der eigenstaendige
+`scripts/ocr/llm_postprocess.py` bleibt davon unberuehrt), und die Pipeline-Diagramme zeigen
+PAGE-XML korrekt als Parallel-Export (E22). Historische Details im Git-Log.
 
-- **`scripts/edition/generate_edition_data.py:268-271`** liest `docs/data/dashboard.json`,
-  die in Session 44 geloescht wurde. Catalog-Rebuild ist vermutlich kaputt.
-  Fix: entweder die Funktion `build_catalog()` umstellen auf direkte
-  Quellen, oder `dashboard.json` aus den Quellen neu generieren.
-- **`README.md:68`** + **`knowledge/projekt.md:129`** verweisen auf
-  `scripts/postprocess/` — in Session 44 geloescht (Orphan, kein Konsument).
-- **`scripts/ocr/llm_postprocess.py`** existiert noch — anders als der
-  geloeschte `scripts/postprocess/`-Ordner. Naming-Verwirrung kann auftreten.
-
-### 7.2 Doku-Drift (vor dieser Session)
-
-| Datei | Drift |
-|---|---|
-| README.md | Pipeline-Diagramm zeigt PAGE-XML in der TEI-Kette (falsch, E22); `data/curated_tei/` als "versioned gold-standard" — real nur `.gitkeep` |
-| knowledge/pipeline.md | gleicher Diagramm-Drift; kein Manual-Edit-Round-Trip; kein complete-TEI-Konzept; kein workflow.md-Verweis |
-| knowledge/projekt.md | `scripts/postprocess/` Verweis; kein Session-45-Status |
-| knowledge/quality.md | leichter Drift (E58–E61 nicht relevant, aber Stand-Update sinnvoll) |
-| knowledge/{entities,infrastruktur,methodik}.md | wahrscheinlich nur Datum-Update noetig |
-
-Alle Doku-Drift-Punkte werden in dieser Session adressiert (siehe Commit-Log
-ab `54c0c735`).
+Offen bleibt: der manuelle Round-Trip (Schritte 3-7 in §3.3 sind nicht in einem Wrapper
+automatisiert) und die geplante Pipeline-Welle (`_complete.xml` + `provenance.json`, §5).
 
 ---
 
@@ -381,8 +361,7 @@ ab `54c0c735`).
 - [pipeline.md](pipeline.md) — Pipeline-Stufen, Engines, TEI-Mapping
 - [viewer.md](viewer.md) — Viewer-Architektur, Persistenz, Design-System
 - [quality.md](quality.md) — CER, Screening, Validierung
-- [entities.md](entities.md) — NER, Wikidata, GND, Dual-Attribut (E50)
-- [decisions.md](decisions.md) — E1–E61, offene Punkte
+- [decisions.md](decisions.md) — E1–E71, offene Punkte
 - [methodik.md](methodik.md) — Promptotyping, Verifikationskaskade, Dreischichtung
 - [journal.md](journal.md) — chronologische Sitzungs-Historie
 - [index.md](index.md) — Navigation + Schluesselkonzepte

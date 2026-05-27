@@ -51,63 +51,6 @@ def get_overlay_path(doc_id: str, page: int) -> Path | None:
 
 
 # ---------------------------------------------------------------------------
-# Entity Re-Annotation
-# ---------------------------------------------------------------------------
-
-def reannotate_entities(xml_text: str) -> str:
-    """Tag-aware Entity Re-Annotation: taggt fehlende bekannte Entities.
-
-    Findet Entitaetsnamen im Text die NICHT bereits innerhalb eines
-    Entity-Tags stehen und fuegt typkorrekte Tags mit interner ID hinzu.
-    Laengere Namen zuerst (wie annotate_entities).
-
-    Ausschluss (E49): Keine Entities in <figure> oder <listBibl>.
-    """
-    from scripts.tei.tei_mapping_prompt import _load_entity_entries
-    entries = _load_entity_entries()
-    sorted_names = sorted(entries.keys(), key=len, reverse=True)
-
-    # Ausschluss-Zonen maskieren (<figure>, <listBibl>)
-    masks = []
-    counter = 0
-    for pat in [
-        re.compile(r'<figure\b[^>]*>.*?</figure>', re.DOTALL),
-        re.compile(r'<listBibl\b[^>]*>.*?</listBibl>', re.DOTALL),
-    ]:
-        for m in pat.finditer(xml_text):
-            ph = f"\x01REXCL{counter}\x01"
-            masks.append((ph, m.group(0)))
-            xml_text = xml_text.replace(m.group(0), ph, 1)
-            counter += 1
-
-    # Regex fuer bestehende Entity-Tags (persName, orgName, placeName, bibl)
-    entity_tag_re = re.compile(
-        r'(<(?:persName|orgName|placeName|bibl)[^>]*>.*?</(?:persName|orgName|placeName|bibl)>)',
-        flags=re.DOTALL,
-    )
-
-    for name in sorted_names:
-        tei_tag, xml_id = entries[name]
-        tag = f'<{tei_tag} ref="#{xml_id}">{name}</{tei_tag}>'
-        # Split an bestehenden Entity-Tags, annotiere nur in Zwischenraeumen
-        parts = entity_tag_re.split(xml_text)
-        new_parts = []
-        for i, part in enumerate(parts):
-            if i % 2 == 0:
-                # Text ausserhalb bestehender Entity-Tags -> annotieren
-                pattern = r'(?<!\w)' + re.escape(name) + r'(?!\w)'
-                part = re.sub(pattern, tag, part)
-            new_parts.append(part)
-        xml_text = "".join(new_parts)
-
-    # Ausschluss-Zonen wiederherstellen
-    for ph, original in masks:
-        xml_text = xml_text.replace(ph, original)
-
-    return xml_text
-
-
-# ---------------------------------------------------------------------------
 # Gemini TEI Fixes
 # ---------------------------------------------------------------------------
 
@@ -247,11 +190,10 @@ def _fix_structural_issues(xml: str) -> str:
 def fix_gemini_tei(xml_fragment: str) -> str:
     """Korrigiert haeufige Gemini-TEI-Fehler (Orchestrator).
 
-    Pipeline: Regex-Fixes -> Struktur-Fixes -> Entity Re-Annotation.
+    Pipeline: Regex-Fixes -> Struktur-Fixes.
     """
     xml_fragment = _fix_simple_patterns(xml_fragment)
     xml_fragment = _fix_structural_issues(xml_fragment)
-    xml_fragment = reannotate_entities(xml_fragment)
     return xml_fragment
 
 
