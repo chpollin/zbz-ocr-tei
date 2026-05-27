@@ -6,7 +6,7 @@ Projekt-Konstitution. Operative Regeln und Konventionen, die bei jedem Pipeline-
 
 1. **Journal fuehren:** Jede Sitzung dokumentieren in [knowledge/journal.md](knowledge/journal.md) — eine Zeile pro Sitzung, kompakter Ueberblick. Details ins Git-Log.
 2. **Wissen in `knowledge/`:** nicht in CLAUDE.md duplizieren. Single Source of Truth pro Fakt.
-3. **Output nicht versionieren:** generierte Dateien gehoeren in `output/` (gitignored). Ausnahme: `data/tei_curated/` (Gold-Standard).
+3. **Output nicht versionieren:** generierte Dateien gehoeren in `output/` (gitignored). Ausnahme: `data/curated_tei/` (Gold-Standard).
 4. **Vor Aenderungen testen:** Evaluierung laufen lassen, Metriken vergleichen.
 5. **Single Source of Truth:** jeder Fakt steht in genau einem Dokument. Andere Dokumente verweisen via Cross-Reference.
 
@@ -57,7 +57,7 @@ Token-Katalog: `docs/css/tokens.css`. Basis-Komponenten: `docs/css/base.css`. Vi
 
 ### Verzeichnisse (Orientierung)
 
-- `data/` — Eingangs- und Referenzdaten: `scans/` (PDFs), `schema/zbz_hersch.rng` (TEI-Schema), `tei_curated/` (Gold-Standard, git-tracked), `referenz-tei/`, `richtlinien/`, `doc_metadata.json`
+- `data/` — Eingangs- und Referenzdaten. `source/` = ZB-Lieferung (immutabler Input, grösstenteils gitignored): `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (Editionsrichtlinien). Projekt-Autorität (git-tracked): `schema/zbz_hersch.rng`, `entities/`, `curated_tei/` (Gold-Standard). Generiert: `doc_metadata.json` (Gemini-Cache)
 - `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `ner/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
 - `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
 - `docs/` — statische Edition/Inspektions-Site (GitHub-Pages-tauglich): HTML, `css/`, `js/`, `data/` (generierter Mirror), `images/`
@@ -79,7 +79,7 @@ Detaillierte Stufen / Skripte / Engines: [knowledge/pipeline.md](knowledge/pipel
 
 - **`output/tei_final/{doc}_final.xml` ist die Single Source of Truth der Edition** (E43). Nur `tei_final/` wird angezeigt. Jedes finale TEI traegt `<revisionDesc>` mit Pipeline-Status (E42); der Workflow-Status pro Strom wird beim ZBZ-Uebergabe-Schritt via `tei_status_marker.py` aus dem Manifest in den `<revisionDesc>` projiziert (E66).
 - **`docs/data/pages/{doc}/` ist ein GENERIERTER Mirror — niemals direkt editieren.** Erzeugt von `scripts/edition/generate_edition_data.py` aus: per-Seiten-TEI (aus `tei_final` gesplittet) + Mistral-`.md` + Layout-JSON. Nach Aenderungen an der Quelle Mirror neu generieren.
-- `output/tei_unified/` ist Pipeline-Output (nicht editieren). Kuratierte Gold-TEIs liegen in `data/tei_curated/` (git-tracked).
+- `output/tei_unified/` ist Pipeline-Output (nicht editieren). Kuratierte Gold-TEIs liegen in `data/curated_tei/` (git-tracked).
 
 ## Methodik
 
@@ -117,6 +117,8 @@ python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss
 python -m scripts.eval.corpus_audit                             # Korpus-Audit: Trichter 325->289->286->285 + Drift-Check
 python -m pytest tests/test_cer_statistics.py -q                # 55 Tests fuer Statistik-Library
 python -m pytest tests/test_corpus_audit.py -q                  # 22 Tests: Korpus-Invarianten + Vollstaendigkeits-Gate
+python -m pytest tests/test_scripts_health.py -q                # Script-Health: Syntax + interne Imports (alle scripts/)
+python -m pytest tests/test_tei_schema.py -q                    # Schema-Gate: tei_final gegen zbz_hersch.rng (E68)
 ```
 
 Output `docs/data/cer_statistics.json` (regenerierbar, derzeit nicht eingecheckt). Das interaktive CER-Dashboard wurde mit E56 abgeschafft. Methodik: [knowledge/quality.md §CER-Methodik](knowledge/quality.md).
@@ -124,7 +126,7 @@ Output `docs/data/cer_statistics.json` (regenerierbar, derzeit nicht eingecheckt
 ## Textschicht
 
 ```bash
-python scripts/ocr/ocr_pipeline.py -i data/scans/{DOC_ID}.pdf -e mistral    # Basis-OCR
+python scripts/ocr/ocr_pipeline.py -i data/source/pdf/{DOC_ID}.pdf -e mistral    # Basis-OCR
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B          # Gemini-Korrektur
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run            # Vorschau
 ```

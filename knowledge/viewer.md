@@ -150,9 +150,9 @@ Der Nutzer legt die Dateien dann manuell im Repo ab — z.B.:
 
 - Layout: `output/layout/{doc}/{doc}_p{N}_layout_curated.json` (manuell anlegen)
 - OCR: `output/{source}_curated/{doc}_p{N}.md`
-- TEI: `data/tei_curated/{doc}/{doc}_curated.xml`
+- TEI: `data/curated_tei/{doc}/{doc}_curated.xml`
 
-`data/tei_curated/` bleibt der Gold-Standard-Speicher fuer kuratierte TEIs (git-tracked).
+`data/curated_tei/` bleibt der Gold-Standard-Speicher fuer kuratierte TEIs (git-tracked).
 Der frueher vorhandene FastAPI-Curation-Server (`scripts/server/curation_server.py`) wurde mit E57
 geloescht, weil das Frontend ihn seit E56 nicht mehr ansteuert.
 

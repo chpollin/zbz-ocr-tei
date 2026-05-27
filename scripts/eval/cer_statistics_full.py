@@ -42,7 +42,7 @@ from scripts.config import (
     DOCS_DIR,
     OCR_RESULTS_DIR,
     PROJECT_ROOT,
-    REFERENZ_TEI_DIR,
+    REFERENCE_TEI_DIR,
     TEI_FINAL_DIR,
 )
 from scripts.eval.evaluate_ocr import (
@@ -190,17 +190,17 @@ def enrich_records(records: list[DocCERRecord], verbose: bool = True) -> None:
             print(f"  enriching {r.doc_id}...", flush=True)
 
         # E2E full-doc evaluation (gibt error_categories)
-        e2e = evaluate_tei_vs_tei(r.doc_id, REFERENZ_TEI_DIR, TEI_FINAL_DIR)
+        e2e = evaluate_tei_vs_tei(r.doc_id, REFERENCE_TEI_DIR, TEI_FINAL_DIR)
         if e2e.get("status") in ("OK", "MISMATCH"):
             r.metadata["e2e_cer_full"] = float(e2e.get("cer", 0.0))
             r.metadata["error_categories"] = e2e.get("error_categories", {})
             r.metadata["n_ref_chars_doc"] = int(e2e.get("ref_chars", 0))
             # Aligned ref+hyp Text fuer chunk-basiertes within-doc Bootstrap
-            ref_path = REFERENZ_TEI_DIR / f"{r.doc_id}.xml"
+            ref_path = REFERENCE_TEI_DIR / f"{r.doc_id}.xml"
             if not ref_path.exists():
-                ref_path = REFERENZ_TEI_DIR / "Pilot" / f"{r.doc_id}.xml"
+                ref_path = REFERENCE_TEI_DIR / "Pilot" / f"{r.doc_id}.xml"
                 if not ref_path.exists():
-                    cands = list(REFERENZ_TEI_DIR.glob(f"**/{r.doc_id}*.xml"))
+                    cands = list(REFERENCE_TEI_DIR.glob(f"**/{r.doc_id}*.xml"))
                     ref_path = cands[0] if cands else None
             pipe_path = TEI_FINAL_DIR / f"{r.doc_id}_final.xml"
             if not pipe_path.exists():
@@ -237,7 +237,7 @@ def enrich_records(records: list[DocCERRecord], verbose: bool = True) -> None:
             r.metadata["top_3_error_categories"] = cats[:3]
 
         # OCR-only Eval (Mistral Plain-Text vs Referenz-TEI)
-        ocr_eval = evaluate_document(r.doc_id, REFERENZ_TEI_DIR, OCR_RESULTS_DIR)
+        ocr_eval = evaluate_document(r.doc_id, REFERENCE_TEI_DIR, OCR_RESULTS_DIR)
         if ocr_eval.get("status") == "OK":
             r.metadata["ocr_only_cer"] = float(ocr_eval["cer"])
             ref_aligned = ocr_eval.get("reference_text", "")
@@ -254,11 +254,11 @@ def enrich_records(records: list[DocCERRecord], verbose: bool = True) -> None:
             r.metadata["ocr_only_chunks"] = []
 
         # Volltexte fuer HCPR + Diakritik
-        ref_path = REFERENZ_TEI_DIR / f"{r.doc_id}.xml"
+        ref_path = REFERENCE_TEI_DIR / f"{r.doc_id}.xml"
         if not ref_path.exists():
-            ref_path = REFERENZ_TEI_DIR / "Pilot" / f"{r.doc_id}.xml"
+            ref_path = REFERENCE_TEI_DIR / "Pilot" / f"{r.doc_id}.xml"
             if not ref_path.exists():
-                cands = list(REFERENZ_TEI_DIR.glob(f"**/{r.doc_id}*.xml"))
+                cands = list(REFERENCE_TEI_DIR.glob(f"**/{r.doc_id}*.xml"))
                 ref_path = cands[0] if cands else None
         pipe_path = TEI_FINAL_DIR / f"{r.doc_id}_final.xml"
         if not pipe_path.exists():

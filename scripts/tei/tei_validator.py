@@ -22,7 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
-    REFERENZ_TEI_DIR,
+    REFERENCE_TEI_DIR,
     TEI_NS,
     TEI_SCHEMA_DIR,
     TEI_SCHEMA_PATH,
@@ -502,7 +502,7 @@ def compare_with_reference(tei_dir: Path = None, ref_dir: Path = None) -> dict:
     if tei_dir is None:
         tei_dir = TEI_UNIFIED_DIR
     if ref_dir is None:
-        ref_dir = REFERENZ_TEI_DIR
+        ref_dir = REFERENCE_TEI_DIR
 
     if not HAS_LXML or not ref_dir.exists():
         return {"total": 0, "docs": [], "error": "lxml oder Referenz-Verzeichnis fehlt"}
@@ -928,7 +928,7 @@ def main():
             generate_html_report(summary, html_path)
 
     elif args.compare_ref:
-        print(f"Vergleiche Pipeline-TEI mit Referenz ({REFERENZ_TEI_DIR}) ...")
+        print(f"Vergleiche Pipeline-TEI mit Referenz ({REFERENCE_TEI_DIR}) ...")
         comparison = compare_with_reference(tei_dir)
         print(f"\n  Verglichen: {comparison['total']} Docs")
         for d in comparison.get("docs", []):

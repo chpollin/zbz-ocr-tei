@@ -68,7 +68,7 @@ coOCR / Transkribus erzeugt (`scripts/layout/page_xml_generator.py`).
 
 | Stufe | Format | Hauptpfad | Quelle |
 |---|---|---|---|
-| Quell-PDF | PDF | `data/scans/{doc}.pdf` | ZBZ-Lieferung (E23) |
+| Quell-PDF | PDF | `data/source/pdf/{doc}.pdf` | ZBZ-Lieferung (E23) |
 | Faksimile | PNG 300 dpi | `docs/images/{doc}/{doc}_pNNN.png` | `scripts/edition/extract_pages.py` |
 | Doc-Metadaten | JSON | `data/doc_metadata.json` | `scripts/ocr/classify_docs.py` (Gemini, E27) |
 | OCR (Mistral) | Markdown pro Seite | `output/mistral_results/{doc}_pN.md` | `scripts/ocr/ocr_pipeline.py` |
@@ -92,7 +92,7 @@ coOCR / Transkribus erzeugt (`scripts/layout/page_xml_generator.py`).
 | Catalog (Frontend) | JSON | `docs/data/catalog.json` | dito |
 | Entity-Index (Frontend) | JSON | `docs/data/entity_index.json` | dito |
 | Thumbnails (Frontend) | JPG 140x200 q70 | `docs/data/thumbs/{doc}.jpg` | dito |
-| Kuratierte TEI | XML | `data/tei_curated/{doc}/` | manuell (aktuell leer + `.gitkeep`) |
+| Kuratierte TEI | XML | `data/curated_tei/{doc}/` | manuell (aktuell leer + `.gitkeep`) |
 
 ---
 
@@ -132,7 +132,7 @@ Der User muss sie manuell ins Repo umkopieren — typischerweise nach:
 
 - `output/layout/{doc}_curated/{doc}_p{N}_layout_curated.json`
 - `output/{source}_curated/{doc}_p{N}.md`
-- `data/tei_curated/{doc}/{doc}_curated.xml`
+- `data/curated_tei/{doc}/{doc}_curated.xml`
 
 **Bekannte Limitierungen (real, ehrlich):**
 
@@ -365,7 +365,7 @@ Plan-Dokument (Stand der Welle):
 
 | Datei | Drift |
 |---|---|
-| README.md | Pipeline-Diagramm zeigt PAGE-XML in der TEI-Kette (falsch, E22); `data/tei_curated/` als "versioned gold-standard" — real nur `.gitkeep` |
+| README.md | Pipeline-Diagramm zeigt PAGE-XML in der TEI-Kette (falsch, E22); `data/curated_tei/` als "versioned gold-standard" — real nur `.gitkeep` |
 | knowledge/pipeline.md | gleicher Diagramm-Drift; kein Manual-Edit-Round-Trip; kein complete-TEI-Konzept; kein workflow.md-Verweis |
 | knowledge/projekt.md | `scripts/postprocess/` Verweis; kein Session-45-Status |
 | knowledge/quality.md | leichter Drift (E58–E61 nicht relevant, aber Stand-Update sinnvoll) |

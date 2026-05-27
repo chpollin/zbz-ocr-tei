@@ -31,7 +31,7 @@ from spellchecker import SpellChecker
 from scripts.config import (
     DOC_METADATA_PATH,
     EVALUATION_DIR,
-    REFERENZ_TEI_DIR,
+    REFERENCE_TEI_DIR,
     TEI_FINAL_DIR,
 )
 from scripts.eval.evaluate_ocr import extract_text_for_comparison

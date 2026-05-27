@@ -25,7 +25,7 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 
 ### Methodik (Kurzfassung)
 
-- **Referenz:** 25 ZBZ-Referenz-TEIs (`data/referenz-tei/`), manuell via Transkribus erstellt.
+- **Referenz:** 25 ZBZ-Referenz-TEIs (`data/source/reference_tei/`), manuell via Transkribus erstellt.
 - **Hypothese:** Pipeline-TEIs (`output/tei_final/`), aus 7-Stufen-Pipeline.
 - **Textextraktion:** mit `<choice>`-Korrektur, Fussnoten exkludiert, symmetrische Unicode-Normalisierung.
 - **Distanzmass:** `Levenshtein(ref, hyp) / max(1, |ref|)` via `rapidfuzz`.
@@ -382,7 +382,8 @@ aus ODD generiert, 551 Definitionen).
 
 ### Aktueller Stand
 
-**285/285 Docs valide** gegen `zbz_hersch.rng` (nach Schema-Fix).
+**285/285 Docs valide** gegen `zbz_hersch.rng` (E68, 2026-05-27). Davor real **0/285** — die
+Schema-Erweiterung E68 schloss die Luecke; gegen Regression gesichert durch `tests/test_tei_schema.py`.
 
 | Metrik | Wert |
 |---|---|
@@ -393,12 +394,24 @@ aus ODD generiert, 551 Definitionen).
 
 ### Fix-Verlauf
 
+**Fix-004 / E68 (2026-05-27): fehlende Standard-TEI-Elemente im Schema ergaenzt.** Erste
+korpusweite Validierung der ausgelieferten Schicht ergab **0/285** valide — alle Fehler im
+teiHeader: `revisionDesc`/`change` (E42/E66), `langUsage`/`language`, `idno` (im `publicationStmt`),
+`monogr`/`imprint` (im `biblStruct`). Das ODD-Subset (E48) hatte diese Standard-TEI/DTA-Elemente
+weggelassen; gegen das alte `tei_all.rng` validieren dieselben Dokumente 8/8. Fix: 7 Definitionen +
+4 Inhaltsmodelle in `zbz_hersch.rng` (Inhalt minimal am korpusweit erhobenen Datenvertrag).
+`source-metadata` als div-Typ registriert (Doc 1170). Ergebnis: **285/285 valide**, gegen Regression
+gesichert durch `tests/test_tei_schema.py`. Korrigiert den Fehlschluss aus Fix-001 (siehe unten).
+
 **Fix-001 (2026-03-26): ref-Pattern erweitert.** Vorher 50 valid / 235 invalid. Schema erzwang
 `ref="GND:[0-9A-Za-z\-]+"`, Pipeline injizierte `ref="#zbz-p.NNN"`. RelaxNG-Kaskade machte alle
 235 Docs mit zbz-Refs komplett invalid (nicht nur das ref-Attribut). Fix: Pattern in 3 Stellen
 erweitert: `(GND:[0-9A-Za-z\-]+|#zbz-[a-z]+\.[0-9]+)` an `bibl/@corresp`, `orgName/@ref`,
-`persName/@ref`. Ergebnis: 285 valid / 0 invalid. Scheinbare Nebenfehler (idno/langUsage/biblStruct)
-waren reine Kaskaden-Artefakte.
+`persName/@ref`. Ergebnis (damals): 285 valid / 0 invalid. **Fehlschluss, 2026-05-27 widerlegt:** die
+idno/langUsage/biblStruct-Fehler wurden hier als Kaskaden-Artefakte abgetan — sie waren real,
+das ODD-Subset liess diese Standard-Elemente nicht zu. Als der Header spaeter (E65/E66) reicher
+wurde, fiel `tei_final` auf 0/285, unbemerkt mangels Batch-Validierung der ausgelieferten Schicht.
+Behoben in Fix-004 / E68.
 
 **Fix-002 (2026-03-26): heuristische lb-Injection.** Vorher 46 Docs mit Warning W6 (keine `<lb/>`).
 Root Cause: Mistral OCR liefert Text ohne Zeilen-Umbrueche innerhalb von Absaetzen. Nur 51 Docs

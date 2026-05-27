@@ -168,8 +168,8 @@ Transformationsregeln aus dem Quelltext zu TEI-XML nach DTA-Basisformat mit proj
 Erweiterungen. Verbindlich seit E48/E49 (2026-03-26).
 
 **Quellen:**
-- `data/richtlinien/Editionsrichtlinien_ZBZ.md` — verbindliche Editionsrichtlinien
-- `data/richtlinien/dta_basisformat_komplett.md` — DTA-Referenz
+- `data/source/guidelines/Editionsrichtlinien_ZBZ.md` — verbindliche Editionsrichtlinien
+- DTA-Basisformat — externer Standard, verlinkt in [data/source/guidelines/README.md](../data/source/guidelines/README.md) (deutschestextarchiv.de)
 - `data/schema/zbz_hersch.rng` — projektspezifisches RelaxNG-Schema (TEI P5 v4.10.2)
 
 ### Kernprinzipien

@@ -16,8 +16,15 @@ PROJECT_ROOT = Path(__file__).parent.parent
 
 # Verzeichnisse
 DATA_DIR = PROJECT_ROOT / "data"
-SCANS_DIR = DATA_DIR / "scans"
-REFERENZ_TEI_DIR = DATA_DIR / "referenz-tei"
+
+# Quelldaten (ZB-Lieferung, immutabler Input): alles unter data/source/
+SOURCE_DIR = DATA_DIR / "source"
+SCANS_DIR = SOURCE_DIR / "pdf"                                 # PDF-Scans (ZB-Digitalisate)
+REFERENCE_TEI_DIR = SOURCE_DIR / "reference_tei"               # Transkribus-erstellte Referenz-/Gold-TEI
+TRANSKRIBUS_PAGE_XML_DIR = SOURCE_DIR / "transkribus_page_xml"  # PAGE-XML-Exporte aus Transkribus
+GUIDELINES_DIR = SOURCE_DIR / "guidelines"                     # Editionsrichtlinien (ZBZ + DTA)
+MASTERFILE_DIR = SOURCE_DIR / "masterfile"                     # Masterfile.xlsx (Katalog + Steuerung)
+MASTERFILE_PATH = MASTERFILE_DIR / "Masterfile.xlsx"
 
 OUTPUT_DIR = PROJECT_ROOT / "output"
 OCR_RESULTS_DIR = OUTPUT_DIR / "ocr_results"
@@ -30,7 +37,7 @@ TEI_GEMINI_DIR = OUTPUT_DIR / "tei_gemini"
 TEI_UNIFIED_DIR = OUTPUT_DIR / "tei_unified"
 ENTITIES_DIR = OUTPUT_DIR / "entities"
 TEI_NER_DIR = OUTPUT_DIR / "tei_ner"
-TEI_CURATED_DIR = DATA_DIR / "tei_curated"
+TEI_CURATED_DIR = DATA_DIR / "curated_tei"
 TEI_FINAL_DIR = OUTPUT_DIR / "tei_final"
 
 # TEI-Konstanten
@@ -47,6 +54,7 @@ _RICHTLINIEN_DIV_TYPES = {
 _PIPELINE_DIV_TYPES = {
     "text", "redactional", "speech", "conference",
     "letter", "preface", "sub-section",
+    "source-metadata",  # kuratiert: e-periodica-Metadatenseite (z.B. Doc 1170)
 }
 VALID_DIV_TYPES = _RICHTLINIEN_DIV_TYPES | _PIPELINE_DIV_TYPES
 
@@ -57,9 +65,7 @@ LLM_CORRECTED_C_DIR = OUTPUT_DIR / "llm_corrected_c"
 GEMINI_CORRECTED_A_DIR = OUTPUT_DIR / "gemini_corrected_a"
 GEMINI_CORRECTED_B_DIR = OUTPUT_DIR / "gemini_corrected_b"
 PAGE_XML_DIR = OUTPUT_DIR / "page_xml"
-DOC_METADATA_PATH = DATA_DIR / "doc_metadata.json"
-PROJEKTSTEUERUNG_DIR = DATA_DIR / "projektsteuerung"
-MASTERFILE_PATH = PROJEKTSTEUERUNG_DIR / "Masterfile.xlsx"
+DOC_METADATA_PATH = DATA_DIR / "doc_metadata.json"  # generierte Gemini-Klassifikation (committeter Cache)
 
 DOCS_DIR = PROJECT_ROOT / "docs"
 IMAGES_DIR = DOCS_DIR / "images"
@@ -92,6 +98,10 @@ DOCLING_SERVE_URL = os.environ.get("DOCLING_SERVE_URL", "http://localhost:5001")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 GEMINI_MODEL = "gemini-3.1-flash-lite-preview"
 GEMINI_DETECT_MODEL = GEMINI_MODEL  # gleich; bei Bedarf separat ueberschreiben
+
+# Gemini-OCR (Vision -> Text): stabiles Modell, opt-in via OCR-Engine "gemini".
+# Ausnahme-Pfad (z.B. wenn Azure/Mistral nicht verfuegbar) -- die normale OCR bleibt Mistral.
+GEMINI_OCR_MODEL = "gemini-3.1-flash-lite"
 
 # Wikidata API
 WIKIDATA_API_URL = "https://www.wikidata.org/w/api.php"

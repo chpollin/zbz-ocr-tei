@@ -24,7 +24,7 @@ Pipeline-Stufen und Datenfluss: [../knowledge/pipeline.md](../knowledge/pipeline
 ## Haeufige Einstiegspunkte
 
 ```bash
-python scripts/ocr/ocr_pipeline.py -i data/scans/{ID}.pdf -e mistral   # OCR
+python scripts/ocr/ocr_pipeline.py -i data/source/pdf/{ID}.pdf -e mistral   # OCR
 python -m scripts.layout.run_layout_analysis --doc {ID}                # Layout
 python -m scripts.tei.tei_unified --doc {ID}                           # TEI (4 Stufen)
 python -m scripts.tei.tei_validator --all --html-report                # Validierung

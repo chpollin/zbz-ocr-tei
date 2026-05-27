@@ -131,7 +131,7 @@ HTML-Dashboard wurde mit E56 abgeschafft — Daten weiterhin als JSON verfuegbar
 ### 2. Textschicht verbessern
 
 ```bash
-python scripts/ocr/ocr_pipeline.py -i data/scans/{DOC_ID}.pdf -e mistral   # Basis-OCR
+python scripts/ocr/ocr_pipeline.py -i data/source/pdf/{DOC_ID}.pdf -e mistral   # Basis-OCR
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --variant B         # Gemini multimodal
 python -m scripts.ocr.gemini_ocr_correct --doc {DOC_ID} --dry-run           # Vorschau
 ```
@@ -200,7 +200,7 @@ python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare     #
 ## Konventionen
 
 - Dokument-IDs folgen dem Muster `{DOC_ID}` (z.B. 2310, 2530, 1440).
-- Outputs landen in `output/`-Unterverzeichnissen (gitignored, ausser `data/tei_curated/`).
+- Outputs landen in `output/`-Unterverzeichnissen (gitignored, ausser `data/curated_tei/`).
 - `--dry-run` steht bei allen API-nutzenden Tools zur Verfuegung. Vor kostenpflichtigen Batch-Operationen verwenden.
 - `--force` ueberschreibt gecachte Ergebnisse. Nur sinnvoll bei tatsaechlichen Upstream-Aenderungen.
 - `--reassemble` wendet alle Fixes an ohne Gemini-Calls (Step 2 aus Cache).

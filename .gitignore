@@ -1,10 +1,10 @@
-# Lokale Daten - nicht ins Repository
-data/scans/
-data/referenz-tei/
-data/richtlinien/*.docx
-data/richtlinien/*.pdf
-data/page-xml-transkribus/
-data/projektsteuerung/*.xlsx
+# Lokale Daten - nicht ins Repository (ZB-Lieferung unter data/source/)
+data/source/pdf/
+data/source/reference_tei/
+data/source/transkribus_page_xml/
+data/source/masterfile/*.xlsx
+data/source/guidelines/*.docx
+data/source/guidelines/*.pdf
 HerschStandFeb/
 
 # Secrets

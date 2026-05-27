@@ -1,0 +1,103 @@
+"""
+Schema-Gate fuer die ausgelieferte Edition.
+
+Schliesst die Luecke, die im Mai 2026 (E68) sichtbar wurde: ``tei_final`` ist die
+Single Source of Truth (E43), wurde aber nie als Ganzes gegen das eigene Schema
+validiert. ``tei_unified`` validiert beim Erzeugen (verschachtelte Ablage), ``tei_final``
+ist flach abgelegt und faellt durch ``validate_all`` durch -- die nachtraeglichen
+Schritte ``tei_blank_marker``/``tei_status_marker`` schreiben dort ohne Re-Validierung.
+
+Drei Ebenen:
+
+1. ``test_schema_compiles`` -- das projektspezifische RelaxNG
+   (``data/schema/zbz_hersch.rng``, git-getrackt) laedt fehlerfrei. Laeuft auf jedem
+   Clone und faengt einen kaputten Schema-Patch sofort.
+2. ``test_schema_accepts_pipeline_header`` -- ein synthetischer Minimal-Header mit genau
+   den Elementen, die das ODD-Subset (2026-01-28) faelschlich weggelassen hatte
+   (``revisionDesc``/``change``, ``langUsage``, ``idno``, ``biblStruct/monogr``) ist gegen
+   das Schema valide. Git-getrackt, datenunabhaengig -- haelt die E68-Erweiterung fest,
+   damit sie nicht versehentlich wieder herausfaellt.
+3. ``test_final_doc_valid`` -- jedes ausgelieferte TEI ist gegen Schema + Projektregeln
+   valide. ``output/`` ist gitignored, daher skippt diese Ebene auf einem frischen
+   Clone / in CI, hat aber lokal volle Zaehne (alle ``*_final.xml``).
+"""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import pytest
+
+REPO = Path(__file__).resolve().parent.parent
+SCHEMA = REPO / "data" / "schema" / "zbz_hersch.rng"
+FINAL_DIR = REPO / "output" / "tei_final"
+
+try:
+    from lxml import etree as _etree
+    HAS_LXML = True
+except ImportError:  # pragma: no cover - lxml ist Projekt-Dependency
+    HAS_LXML = False
+    _etree = None
+
+FINAL_DOCS = sorted(FINAL_DIR.glob("*_final.xml")) if FINAL_DIR.exists() else []
+FINAL_IDS = [p.name for p in FINAL_DOCS]
+
+# Synthetischer Header mit genau den E68-Elementen (kein echtes Dokument noetig).
+_PIPELINE_HEADER = """<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt><title type="main">Test</title><author>Hersch, Jeanne</author></titleStmt>
+      <publicationStmt><publisher>ZBZ / DHCraft</publisher><idno type="docID">9999</idno></publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic><title>Test</title><author>Hersch, Jeanne</author></analytic>
+          <monogr><title>Zeitschrift</title><imprint><date>1975</date></imprint></monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc><langUsage><language ident="fra"/></langUsage></profileDesc>
+    <revisionDesc>
+      <change when="2026-03-15" who="pipeline">TEI generated</change>
+      <change status="unverifiziert" n="ocr-summary">OCR-Strom: unverifiziert</change>
+    </revisionDesc>
+  </teiHeader>
+  <text><body><div type="text"><p>Text.</p></div></body></text>
+</TEI>
+"""
+
+
+@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
+def test_schema_compiles():
+    """Das projektspezifische RelaxNG laedt fehlerfrei (git-getrackt, laeuft immer)."""
+    assert SCHEMA.exists(), f"Schema fehlt: {SCHEMA}"
+    _etree.RelaxNG(_etree.parse(str(SCHEMA)))  # wirft RelaxNGParseError bei kaputtem Schema
+
+
+@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
+def test_schema_accepts_pipeline_header():
+    """Schema akzeptiert die E68-Header-Elemente (revisionDesc/langUsage/idno/monogr)."""
+    relaxng = _etree.RelaxNG(_etree.parse(str(SCHEMA)))
+    doc = _etree.fromstring(_PIPELINE_HEADER.encode("utf-8"))
+    assert relaxng.validate(doc), (
+        "Synthetischer Pipeline-Header nicht schema-valide -- E68-Erweiterung verloren?\n  "
+        + "\n  ".join(str(e) for e in relaxng.error_log)
+    )
+
+
+@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
+@pytest.mark.skipif(not FINAL_DOCS, reason="output/tei_final leer (gitignored, kein lokaler Korpus)")
+@pytest.mark.parametrize("doc", FINAL_DOCS, ids=FINAL_IDS)
+def test_final_doc_valid(doc: Path):
+    """Jedes ausgelieferte TEI ist gegen Schema + Projektregeln valide."""
+    from scripts.tei.tei_validator import validate_tei_file
+
+    result = validate_tei_file(doc)
+    assert result["valid"], (
+        f"{doc.name}: {result['schema_errors']} Schema-, "
+        f"{result['project_errors']} Projekt-Fehler\n  "
+        + "\n  ".join(
+            f"[{e.get('rule', 'schema')}] {e['message'][:100]}"
+            for e in result["errors"][:5]
+        )
+    )

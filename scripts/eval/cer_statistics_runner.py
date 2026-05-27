@@ -16,7 +16,7 @@ from scripts.eval.cer_statistics import (
 )
 from scripts.config import (
     DOC_METADATA_PATH,
-    REFERENZ_TEI_DIR,
+    REFERENCE_TEI_DIR,
     TEI_FINAL_DIR,
 )
 from scripts.eval.evaluate_ocr import (
@@ -49,10 +49,10 @@ def _load_metadata() -> dict[str, dict]:
 def _ground_truth_doc_ids() -> list[str]:
     """Findet alle Dok-IDs mit Referenz-TEI."""
     ids = set()
-    if REFERENZ_TEI_DIR.exists():
-        for p in REFERENZ_TEI_DIR.glob("*.xml"):
+    if REFERENCE_TEI_DIR.exists():
+        for p in REFERENCE_TEI_DIR.glob("*.xml"):
             ids.add(p.stem)
-        pilot = REFERENZ_TEI_DIR / "Pilot"
+        pilot = REFERENCE_TEI_DIR / "Pilot"
         if pilot.exists():
             for p in pilot.glob("*.xml"):
                 ids.add(p.stem.split(" ")[0])
@@ -88,7 +88,7 @@ def _diacritic_for_doc(doc_id: str, language: str) -> dict | None:
     """Berechnet Diakritik-Erhaltungsrate ueber den ganzen Dok-Text
     (Volltext-Vergleich, nicht per-Page -- Aggregat ist robust genug).
     """
-    ref_path = _find_tei_path(doc_id, REFERENZ_TEI_DIR)
+    ref_path = _find_tei_path(doc_id, REFERENCE_TEI_DIR)
     pipe_path = TEI_FINAL_DIR / f"{doc_id}_final.xml"
     if not pipe_path.exists():
         pipe_path = TEI_FINAL_DIR / f"{doc_id}.xml"
@@ -111,7 +111,7 @@ def _multi_norm_cer_for_doc(doc_id: str) -> dict[str, float] | None:
     """
     from scripts.eval.cer_statistics import normalize_text, cer as cer_fn, NORM_REGIMES
 
-    ref_path = _find_tei_path(doc_id, REFERENZ_TEI_DIR)
+    ref_path = _find_tei_path(doc_id, REFERENCE_TEI_DIR)
     pipe_path = TEI_FINAL_DIR / f"{doc_id}_final.xml"
     if not pipe_path.exists():
         pipe_path = TEI_FINAL_DIR / f"{doc_id}.xml"
@@ -156,10 +156,10 @@ def collect_records(verbose: bool = True) -> tuple[
             # <pb>-Nummerierung geaendert hat: dieselbe Page-ID kann jetzt
             # unterschiedlichen Inhalt enthalten, was Pagewise-CER absurd hochzieht.
             global_result = evaluate_tei_vs_tei(
-                doc_id, REFERENZ_TEI_DIR, TEI_FINAL_DIR
+                doc_id, REFERENCE_TEI_DIR, TEI_FINAL_DIR
             )
             pagewise_result = evaluate_tei_vs_tei_pagewise(
-                doc_id, REFERENZ_TEI_DIR, TEI_FINAL_DIR
+                doc_id, REFERENCE_TEI_DIR, TEI_FINAL_DIR
             )
         except Exception as e:
             exclusions[doc_id] = f"eval_error: {type(e).__name__}: {e}"

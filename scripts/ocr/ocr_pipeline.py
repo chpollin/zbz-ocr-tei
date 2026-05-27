@@ -6,15 +6,15 @@ Unterstuetzt mehrere OCR-Engines fuer verschiedene Dokumenttypen.
 
 Usage:
     # Einzelnes PDF
-    python scripts/ocr/ocr_pipeline.py --input data/scans/2310.pdf
+    python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2310.pdf
 
     # Alle PDFs
     python scripts/ocr/ocr_pipeline.py --all
 
     # Bestimmte Engine
-    python scripts/ocr/ocr_pipeline.py --input data/scans/2310.pdf --engine deepseek
-    python scripts/ocr/ocr_pipeline.py --input data/scans/2310.pdf --engine mistral
-    python scripts/ocr/ocr_pipeline.py --input data/scans/2530.pdf --engine docling
+    python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2310.pdf --engine deepseek
+    python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2310.pdf --engine mistral
+    python scripts/ocr/ocr_pipeline.py --input data/source/pdf/2530.pdf --engine docling
 """
 
 import argparse
@@ -26,11 +26,16 @@ import tempfile
 import time
 from pathlib import Path
 
+# Repo-Root auf sys.path, damit der Direktaufruf (python scripts/ocr/ocr_pipeline.py)
+# das scripts-Paket findet -- nicht nur die Modul-Form (python -m scripts.ocr.ocr_pipeline).
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+
 from scripts.config import (
     PROJECT_ROOT, SCANS_DIR, OCR_RESULTS_DIR, MISTRAL_RESULTS_DIR,
     DEEPSEEK_MODEL, DEEPSEEK_PROMPT, MISTRAL_MODEL,
     MISTRAL_MAX_PAGES_PER_REQUEST, MISTRAL_TIMEOUT_SECONDS,
     TWO_COLUMN_DOCS,
+    GEMINI_API_KEY, GEMINI_OCR_MODEL,
 )
 from scripts.utils import check_gpu, load_env, pdf_to_images
 
@@ -228,6 +233,117 @@ class MistralOCR:
         }
 
 
+class GeminiOCR:
+    """Gemini-Vision OCR (Bild -> Markdown-Text).
+
+    Opt-in Ausnahme-Engine (``-e gemini``): rendert die PDF-Seiten und transkribiert
+    sie mit ``GEMINI_OCR_MODEL``. Output-Format identisch zu :class:`MistralOCR`
+    (``{stem}_p{N}.md`` flach in ``mistral_results/``), damit der Rest der Pipeline
+    (``load_ocr_text``) es unveraendert konsumiert. Die normale OCR bleibt Mistral.
+    """
+
+    PROMPT = (
+        "Transkribiere den Text dieser Buchseite vollstaendig und originalgetreu als Markdown.\n"
+        "Regeln:\n"
+        "- Gib NUR den transkribierten Text aus -- keine Einleitung, keine Kommentare, keine Code-Fences.\n"
+        "- Bewahre Originalsprache und -orthographie (meist Franzoesisch oder Deutsch), uebersetze nichts.\n"
+        "- Erhalte Absatzstruktur, Ueberschriften (als Markdown-Headings), Fussnoten und Hervorhebungen.\n"
+        "- Unleserliche Stellen mit [...] markieren, nichts erfinden.\n"
+        "- Enthaelt die Seite keinen Text (leer oder reines Bild), gib eine leere Antwort zurueck."
+    )
+
+    def __init__(self):
+        self.api_key = GEMINI_API_KEY or os.environ.get("GEMINI_API_KEY", "")
+        self.model = GEMINI_OCR_MODEL
+
+    def _check_config(self):
+        if not self.api_key:
+            raise ValueError(
+                "GEMINI_API_KEY nicht gesetzt. Setze die Umgebungsvariable oder die .env-Datei."
+            )
+
+    @staticmethod
+    def _strip_fences(text: str) -> str:
+        """Entfernt versehentliche ```-Code-Fences um die Antwort."""
+        if not text.startswith("```"):
+            return text
+        lines = text.split("\n")
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        return "\n".join(lines).strip()
+
+    def process_pdf(self, pdf_path: Path, output_dir: Path) -> dict:
+        self._check_config()
+        import shutil
+
+        from google import genai
+        from google.genai import types
+        from PIL import Image
+
+        client = genai.Client(api_key=self.api_key)
+        gen_config = types.GenerateContentConfig(
+            thinking_config=types.ThinkingConfig(thinking_budget=0),
+        )
+
+        # Seiten rendern (temporaeres Bildverzeichnis, danach aufgeraeumt)
+        img_dir = output_dir / f"_gemini_ocr_img_{pdf_path.stem}"
+        image_paths = pdf_to_images(pdf_path, img_dir, dpi=200)
+        print(f"  {len(image_paths)} Seiten gerendert (200 DPI)")
+
+        all_pages = []
+        empty_pages = []
+        try:
+            for idx, img_path in enumerate(image_paths, start=1):
+                page_file = output_dir / f"{pdf_path.stem}_p{idx}.md"
+                if page_file.exists():
+                    print(f"  SKIP Seite {idx} (bereits vorhanden)")
+                    all_pages.append({"page": idx, "text": page_file.read_text(encoding="utf-8")})
+                    continue
+
+                image = Image.open(img_path)
+                text = ""
+                finish = None
+                t0 = time.time()
+                for attempt in range(2):
+                    response = client.models.generate_content(
+                        model=self.model,
+                        contents=[image, self.PROMPT],
+                        config=gen_config,
+                    )
+                    text = self._strip_fences((response.text or "").strip())
+                    try:
+                        finish = response.candidates[0].finish_reason
+                    except (AttributeError, IndexError, TypeError):
+                        finish = None
+                    if text or attempt == 1:
+                        break
+
+                page_file.write_text(text, encoding="utf-8")
+                all_pages.append({"page": idx, "text": text})
+                if not text:
+                    empty_pages.append(idx)
+                    print(f"  Seite {idx}/{len(image_paths)}: LEER (finish_reason={finish})")
+                else:
+                    print(f"  Seite {idx}/{len(image_paths)}: {len(text)} Zeichen in {time.time() - t0:.1f}s")
+        finally:
+            shutil.rmtree(img_dir, ignore_errors=True)
+
+        if empty_pages:
+            print(f"  WARNUNG: {len(empty_pages)} leere Seite(n): {empty_pages} "
+                  f"(moeglich: Leerseite oder Gemini-Recitation-Filter)")
+
+        return {
+            "doc_id": pdf_path.stem,
+            "pages": len(all_pages),
+            "results": all_pages,
+            "engine": "gemini",
+            "model": self.model,
+            "empty_pages": empty_pages,
+        }
+
+
 class DoclingOCR:
     """Docling Engine (mit optionalem DeepSeek-Backend)."""
 
@@ -308,6 +424,9 @@ def process_pdf(pdf_path: Path, output_dir: Path, engine: str = "auto") -> dict:
     elif engine == "docling":
         ocr = DoclingOCR()
         return ocr.process_pdf(pdf_path, output_dir)
+    elif engine == "gemini":
+        ocr = GeminiOCR()
+        return ocr.process_pdf(pdf_path, output_dir)
     else:
         raise ValueError(f"Unbekannte Engine: {engine}")
 
@@ -318,9 +437,9 @@ def main():
     parser.add_argument("--all", action="store_true", help="Alle PDFs verarbeiten")
     parser.add_argument(
         "--engine", "-e",
-        choices=["auto", "deepseek", "mistral", "docling"],
+        choices=["auto", "deepseek", "mistral", "docling", "gemini"],
         default="auto",
-        help="OCR-Engine (default: auto)"
+        help="OCR-Engine (default: auto). 'gemini' = Vision-OCR (Ausnahme, schreibt nach mistral_results/)"
     )
     parser.add_argument("--output", "-o", type=Path, help="Ausgabeverzeichnis")
     parser.add_argument("--check-gpu", action="store_true", help="Nur GPU pruefen")
@@ -342,7 +461,9 @@ def main():
     # Pfade: Engine-basiert (Mistral -> mistral_results/, DeepSeek -> ocr_results/)
     if args.output:
         output_dir = args.output
-    elif args.engine == "mistral":
+    elif args.engine in ("mistral", "gemini"):
+        # Gemini-OCR ist der Ausnahme-Ersatz fuer die Mistral-Basis-OCR -> gleiches Verzeichnis,
+        # damit load_ocr_text() es als Basis-Textschicht findet.
         output_dir = MISTRAL_RESULTS_DIR
     else:
         output_dir = OCR_RESULTS_DIR

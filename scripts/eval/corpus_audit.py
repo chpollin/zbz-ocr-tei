@@ -9,7 +9,7 @@ vs PDF-/Pipeline-Ebene). Dieses Skript bindet jede Kennzahl an ein Tripel
 
 Quellen-Tiers (nach Autoritaet geordnet):
   0  Masterfile.xlsx     ZBZ-bibliografisch, Text-Ebene (Genre, Sprache, Jahr, Seiten)
-  1  data/scans/*.pdf    physisch geliefert (PDF-Ebene, Seiten via pypdfium2)
+  1  data/source/pdf/*.pdf    physisch geliefert (PDF-Ebene, Seiten via pypdfium2)
   2  output/ + docs/     Pipeline-Output (deterministische Datei-/Element-Zaehlung)
   3  doc_metadata.json   Gemini-Klassifikation (abgeleitet -- nur Hypothese)
   4  knowledge/*.md      reines Verifikations-Ziel, nie Quelle (-> drift-Check)
@@ -44,14 +44,14 @@ from scripts.config import (
 
 TOOL_VERSION = "1.0"
 
-# Behauptungen der Knowledge-Base (Stand projekt.md 2026-05-25) als Soll-Werte
-# fuer den Drift-Check. Bei Knowledge-Updates hier nachziehen.
+# Verifizierte Soll-Werte (Stand projekt.md 2026-05-27) fuer den Drift-Check.
+# Diese Baseline IST die Knowledge-Behauptung -- bei Knowledge-Updates hier nachziehen.
 KNOWLEDGE_CLAIMS = {
-    "masterfile_texts": 289,   # projekt.md: "Masterfile listet 289"
-    "pdfs": 286,               # projekt.md: 286 PDF-Texte
-    "tei_produced": 285,       # projekt.md: 285 produktiv
-    "pages_total": 7200,       # projekt.md: "~7.200"
-    "pages_processed": 4108,   # projekt.md: "4.108 in der Pipeline verarbeitet"
+    "masterfile_texts": 325,   # projekt.md: Masterfile-Texte (Text-Ebene)
+    "pdfs": 286,               # projekt.md: als PDF geliefert
+    "tei_produced": 285,       # projekt.md: produktiv (finales TEI)
+    "pages_total": 7186,       # projekt.md: Seiten bibliografisch (Masterfile)
+    "pages_processed": 4117,   # projekt.md: Seiten verarbeitet (OCR)
 }
 
 
@@ -102,7 +102,7 @@ def _git_sha():
 
 def audit_masterfile():
     result = {
-        "source": "data/projektsteuerung/Masterfile.xlsx",
+        "source": "data/source/masterfile/Masterfile.xlsx",
         "unit": "Texte (Masterfile-Zeilen mit ID)",
         "available": False,
     }
@@ -161,9 +161,30 @@ def audit_masterfile():
         except (ValueError, TypeError):
             pass
 
+    # Pro-ID-Map, damit nachgelagert auf eine Teilmenge (z.B. die gelieferten
+    # PDFs) gefiltert werden kann, ohne die Masterfile erneut zu lesen.
+    def _cell(r, name):
+        i = col.get(name)
+        v = r[i] if i is not None else None
+        return str(v).strip() if v not in (None, "") else "(leer)"
+
+    def _year(r):
+        i = col.get("Jahr")
+        m = re.search(r"(?:19|20)\d{2}", str(r[i] or "")) if i is not None else None
+        return int(m.group()) if m else None
+
+    by_id = {}
+    for r in recs:
+        rid = _norm_id(r[col["ID"]])
+        if rid is not None:
+            by_id[rid] = {"publform": _cell(r, "PublForm"),
+                          "sprache": _cell(r, "Sprache"),
+                          "jahr": _year(r)}
+
     result.update({
         "available": True,
         "texts": len(recs),
+        "by_id": by_id,
         "unique_ids": len(ids),
         "ids": sorted(ids, key=_id_sort_key),
         "digitalisiert": dict(digital.most_common()),
@@ -213,7 +234,7 @@ def audit_pdfs():
         if n is not None:
             page_counts.append(n)
     return {
-        "source": "data/scans/*.pdf",
+        "source": "data/source/pdf/*.pdf",
         "unit": "PDFs (physisch geliefert)",
         "pdfs": len(pdfs),
         "ids": sorted(ids, key=_id_sort_key),
@@ -326,9 +347,9 @@ def drift_check(t0, t1, t2, t3):
         "pages_processed": t2.get("ocr_md_pages"),
     }
     notes = {
-        "masterfile_texts": "Claim 289 ist der digitalisiert-Zaehler, nicht die Textzahl (325)",
-        "pages_total": "Claim ~7.200 vs bibliografische Summe 7.186 (Masterfile)",
-        "pages_processed": "Claim 4.108 vs OCR-md 4.117 / TEI-pb 4.115 -- Quelle der 4.108 unklar",
+        "masterfile_texts": "Text-Ebene (Masterfile-Zeilen mit ID), nicht der digitalisiert-Zaehler (289)",
+        "pages_total": "bibliografische Summe (Masterfile, n=325), nicht physisch/verarbeitet",
+        "pages_processed": "OCR-Markdown-Seiten; TEI-<pb> = 4.115 (Assembly-Artefakt)",
     }
     out = []
     for key, claimed in KNOWLEDGE_CLAIMS.items():

@@ -6,7 +6,7 @@ Zwei Ebenen:
    drift_check) auf synthetischen Daten -- laufen ueberall, ohne Primaerdaten.
 2. Daten-Integritaets-Invarianten auf den echten Primaerquellen -- werden
    uebersprungen, wenn Masterfile/Scans/tei_final fehlen (CI, frischer Clone:
-   data/scans + data/projektsteuerung sind nicht versioniert).
+   data/source/pdf + data/source/masterfile sind nicht versioniert).
 
 Operationalisiert die Lehre aus der Primaerdaten-Analyse: Korpus-Kennzahlen
 sind reproduzierbare Assertions, nicht handgepflegte Prosa. Insbesondere wird

@@ -395,7 +395,7 @@ def build_catalog():
         except Exception:
             pass
 
-    # Kurations-Status vorladen (aus tei_curated/ Metadaten)
+    # Kurations-Status vorladen (aus curated_tei/ Metadaten)
     curation_status = {}
     if TEI_CURATED_DIR.exists():
         for meta_file in TEI_CURATED_DIR.glob("*/*_curation.json"):

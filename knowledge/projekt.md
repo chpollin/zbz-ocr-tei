@@ -39,7 +39,7 @@ Die fruehere Zahl „289" ist der `digitalisiert`-Zaehler der Masterfile, nicht 
 | Aspekt | Wert | Einheit / Quelle |
 |---|---|---|
 | Masterfile-Texte | 325 | Text-Ebene (ZBZ-Masterfile) |
-| als PDF geliefert | 286 | PDFs (`data/scans/`) |
+| als PDF geliefert | 286 | PDFs (`data/source/pdf/`) |
 | produktiv (finales TEI) | 285 | `output/tei_final/` |
 | Seiten bibliografisch | 7.186 | Masterfile (325 Texte) |
 | Seiten physisch | 4.152 | gelieferte PDFs (pypdfium2) |

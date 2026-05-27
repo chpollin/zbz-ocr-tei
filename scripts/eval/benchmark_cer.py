@@ -15,7 +15,7 @@ from pathlib import Path
 from datetime import datetime
 
 from scripts.config import (
-    REFERENZ_TEI_DIR, TEI_FINAL_DIR, EVALUATION_DIR, DOC_METADATA_PATH,
+    REFERENCE_TEI_DIR, TEI_FINAL_DIR, EVALUATION_DIR, DOC_METADATA_PATH,
 )
 from scripts.eval.evaluate_ocr import (
     evaluate_tei_vs_tei, categorize_errors, evaluate_tei_vs_tei_pagewise,
@@ -367,14 +367,14 @@ def main():
     parser.add_argument("--json-output", default="benchmark_tei_vs_tei.json",
                         help="Name der JSON-Ausgabedatei")
     parser.add_argument("--ref-dir", type=Path, default=None,
-                        help="Referenz-TEI-Verzeichnis (Default: data/referenz-tei)")
+                        help="Referenz-TEI-Verzeichnis (Default: data/source/reference_tei)")
     parser.add_argument("--pipe-dir", type=Path, default=None,
                         help="Pipeline-TEI-Verzeichnis (Default: output/tei_final)")
     parser.add_argument("--pagewise", action="store_true",
                         help="Seitenweise CER berechnen und Outlier-Report generieren")
     args = parser.parse_args()
 
-    ref_dir = args.ref_dir or REFERENZ_TEI_DIR
+    ref_dir = args.ref_dir or REFERENCE_TEI_DIR
     pipe_dir = args.pipe_dir or TEI_FINAL_DIR
     EVALUATION_DIR.mkdir(parents=True, exist_ok=True)
 

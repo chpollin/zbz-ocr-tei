@@ -85,11 +85,17 @@ zbz-ocr-tei/
     js/                   # core.js, viewer.js, catalog.js, tei-render.js, ...
     data/                 # catalog.json, entity_index.json, pages/, thumbs/, tei/
     images/               # Page scans (4 DEMO docs committed: 1000, 1330, 1540, 2310; rest local-only, ~4 GB)
-  data/                   # Source data (mostly not versioned)
-    scans/                # 286 PDF digitizations
-    doc_metadata.json     # Gemini classification (versioned)
-    referenz-tei/         # 25 reference TEIs (ZBZ-annotated)
-    tei_curated/          # Curated gold-standard TEI (versioned; currently only .gitkeep, populated as curation runs)
+  data/                   # Input + reference data
+    source/               # ZBZ delivery, immutable input (mostly not versioned)
+      pdf/                # PDF digitizations
+      reference_tei/      # reference/gold TEIs (ZBZ-annotated, Transkribus)
+      transkribus_page_xml/ # Transkribus PAGE-XML exports
+      masterfile/         # Masterfile.xlsx (catalog + steering)
+      guidelines/         # editorial guidelines (ZBZ + DTA link)
+    schema/               # zbz_hersch.rng (project TEI schema)
+    entities/             # entity authority indexes
+    curated_tei/          # curated gold-standard TEI
+    doc_metadata.json     # generated Gemini classification (committed cache)
   output/                 # Generated pipeline data (not versioned)
   .env.example            # Template for API keys
 ```
@@ -107,7 +113,7 @@ cp .env.example .env
 # Enter Mistral, Anthropic, Gemini keys in .env
 
 # OCR with Mistral (no GPU)
-python -m scripts.ocr.ocr_pipeline -i data/scans/2310.pdf -e mistral
+python -m scripts.ocr.ocr_pipeline -i data/source/pdf/2310.pdf -e mistral
 
 # Layout analysis (GPU for local Docling, or docling-serve API)
 python -m scripts.layout.run_layout_analysis --doc 2310

@@ -21,54 +21,58 @@ Jeanne Hersch (1910–2000) zählt zu den bedeutendsten Schweizer Philosophinnen
 
 Gegenstand dieses Arbeitsberichts ist die technische Umsetzung einer vollständig LLM-gestützten Pipeline, die ausgehend von PDF-Scans über mehrere Verarbeitungsstufen TEI-XML-Dokumente erzeugt, welche in einem Webinterface als digitale Edition angezeigt und von Editorinnen und Editoren weiterbearbeitet werden können.
 
-### Der Korpus als Trichter (verifiziert gegen die Primärquellen)
+### Das Masterfile: Katalog- und Steuerungstabelle der ZB
 
-Die zentrale Kennzahl „wie groß ist der Korpus" ist keine einzelne Zahl, sondern ein Trichter über vier Quellen. Er wurde deterministisch aus den Primärdaten abgeleitet (ZBZ-Masterfile, gelieferte PDFs, Pipeline-Output):
+Ausgangs- und Steuerungsquelle des Projekts ist das von der ZB gepflegte **Masterfile** (`data/projektsteuerung/Masterfile.xlsx`) — eine Tabelle, die den katalogisierten Bestand der Hersch-Edition führt und zugleich den Bearbeitungsfortschritt protokolliert. Pro Text enthält sie zwei Arten von Information:
 
-| Stufe | Anzahl | Einheit / Quelle |
+- **Bibliografische Stammdaten** (autoritativ): interne `ID`, Bibliotheks-ID `MMSID` (swisscovery/Alma), Gattung (`PublForm`), `Jahr`, `Titel`, `Bibliografische Angaben`, `Anzahl Seiten`, `Signatur`, `Standort` und `Sprache`.
+- **Workflow-Status der ZB**: `digitalisiert`, `Bestellstatus`, `Kontrolle Metadaten`, `Korrektur durch JHG`, `korrigiert (und retourniert)`, `ausgezeichnet`, `publiziert` sowie ein Freitextfeld `Anmerkungen` (etwa Hinweise auf Übersetzungen und Nachdrucke).
+
+Das Masterfile ist damit die **verlässlichste Metadatenquelle** des Projekts: Titel, Jahr, Gattung und Sprache liegen hier in kuratierter Form vor, während sie in der Pipeline sonst nur als automatische Klassifikation (`doc_metadata.json`, Gemini) anfallen. Die `MMSID` ist dabei kein projektinterner Identifikator, sondern der Datensatz-Schlüssel im Bibliothekskatalog (Ex Libris Alma / swisscovery); sie dient als auflösbarer Anker zur Verknüpfung mit Bibliotheks- und Normdaten — allerdings nur dort, wo sie gesetzt ist: 211 der 286 gelieferten Dokumente (74 %) tragen eine MMSID, für die übrigen 75 fehlt dieser Anker (typischerweise Einzelartikel und Beiträge, die nicht als eigener Katalogdatensatz erschlossen sind). Die *interne*, lückenlose Identifikation aller 286 Dokumente leistet hingegen die fortlaufende `ID` der Masterfile, die in jedem erzeugten TEI als `<idno type="docID">` steht. Die fehlende MMSID ist damit keine Identifikations-, sondern eine Katalog-Verknüpfungslücke.
+
+### Umfang des bearbeiteten Korpus
+
+Das Masterfile katalogisiert den Gesamtbestand der Edition; für die Pipeline maßgeblich sind die **tatsächlich als PDF gelieferten Dokumente**. Alle folgenden Kennzahlen beziehen sich ausschließlich auf diese gelieferten Daten:
+
+| Kennzahl | Anzahl | Quelle |
 |---|---|---|
-| Im Masterfile geführte Texte | **325** | Texte (ZBZ-Masterfile) |
-| davon `digitalisiert = ja` | **289** | Texte (Masterfile) |
-| davon als PDF geliefert | **286** | PDFs (`data/scans/`) |
-| davon mit finalem TEI | **285** | Dokumente (`output/tei_final/`) |
+| gelieferte Dokumente (PDF) | **286** | `data/scans/` |
+| davon mit finalem TEI | **285** | `output/tei_final/` |
 
-Die in früheren Projektnotizen kursierende Zahl „289" ist also nicht die Textmenge, sondern der **Digitalisierungs-Zähler** der Masterfile. Drei digitalisierte Texte wurden nicht als PDF geliefert (`1745`, `1750`, `1970`) — ein offener Klärungspunkt mit der ZB. Ein geliefertes PDF (`10`) durchlief die Pipeline bisher nicht bis zum finalen TEI. Die Differenz zwischen den 325 Masterfile-Texten und den 314 öffentlich genannten ZB-Texten bleibt extern zu klären.
+Ein geliefertes PDF (`10`) durchlief die Pipeline bislang nicht bis zum finalen TEI und bleibt als offener Verarbeitungspunkt vermerkt. Alle 286 gelieferten Dokumente sind im Masterfile katalogisiert; ihre Metadaten stehen damit vollständig zur Verfügung.
 
-### Seitenumfang (vier verschiedene Zählungen)
-
-„Seitenzahl" ist ebenfalls mehrdeutig; die vier Werte messen Verschiedenes und dürfen nicht vermischt werden:
+Der Seitenumfang wird auf drei Ebenen gemessen, die Verschiedenes bezeichnen und nicht vermischt werden dürfen:
 
 | Definition | Anzahl | Einheit / Quelle |
 |---|---|---|
-| bibliografischer Umfang | **7.186** | Seiten der 325 Masterfile-Texte |
-| physischer Umfang | **4.152** | Seiten der 286 gelieferten PDFs (`pypdfium2`) |
+| physischer Umfang | **4.152** | Seiten der 286 PDFs (`pypdfium2`) |
 | OCR-verarbeitet | **4.117** | Per-Seite-Markdown (`output/mistral_results/`) |
 | im finalen TEI | **4.115** | `<pb>`-Elemente in `output/tei_final/` |
 
-Der bibliografische Umfang (7.186) bezieht sich auf den gesamten katalogisierten Bestand, der physische (4.152) nur auf die tatsächlich gelieferten PDFs.
+Die Differenz von 35 Seiten zwischen physischem Umfang (4.152) und OCR-Verarbeitung (4.117) entspricht exakt dem noch nicht prozessierten PDF `10`; die verbleibenden zwei Seiten zwischen OCR und TEI stammen aus Seitengrenzen-Artefakten der TEI-Assembly (einzelne Seiten werden zusammengezogen oder geteilt).
 
-### Heterogenität des Bestands
+### Gattungen, Sprachen, Zeitraum
 
-Sämtliche Dokumente lagen als Drucktexte vor, handschriftliches Material war nicht systematisch vertreten — es handelte sich um einen reinen OCR-Prozess. Der Bestand erstreckt sich über **1931–2010** mit Schwerpunkt in den 1970er/80er-Jahren (**193 Texte** in 1970–1989).
+Sämtliche Dokumente lagen als Drucktexte vor, handschriftliches Material war nicht systematisch vertreten — es handelte sich um einen reinen OCR-Prozess. Der bearbeitete Bestand erstreckt sich über **1931–1998** mit deutlichem Schwerpunkt in den 1970er/80er-Jahren (**168 der 286 Dokumente** in 1970–1989).
 
-Gattungs- und Sprachverteilung sind hier **auf Text-Ebene laut Masterfile (n=325)** angegeben — sie beschreiben den katalogisierten Bestand, nicht die 286 verarbeiteten PDFs:
+Gattungs- und Sprachverteilung sind hier **laut Masterfile für die 286 gelieferten Dokumente** angegeben:
 
-| Gattung (Masterfile) | Anzahl | Anteil |
+| Gattung | Anzahl | Anteil |
 |---|---|---|
-| Zeitschriftenartikel | 159 | 49 % |
-| Sammelbandbeiträge | 127 | 39 % |
-| Monografien | 38 | 12 % |
-| AV-Medium | 1 | <1 % |
+| Zeitschriftenartikel | 146 | 51 % |
+| Sammelbandbeiträge | 116 | 41 % |
+| Monografien | 24 | 8 % |
 
-| Sprache (Masterfile) | Anzahl | Anteil |
+| Sprache | Anzahl | Anteil |
 |---|---|---|
-| Französisch | 215 | 66 % |
-| Deutsch | 98 | 30 % |
-| Englisch | 8 | 2 % |
-| Italienisch | 2 | 1 % |
+| Französisch | 203 | 71 % |
+| Deutsch | 72 | 25 % |
+| Englisch | 7 | 2 % |
+| Italienisch | 2 | <1 % |
 | mehrsprachig fr/de | 1 | <1 % |
+| ohne Angabe | 1 | <1 % |
 
-Geminis automatische Klassifikation der 286 PDFs liefert erwartungsgemäß abweichende Verteilungen (etwa 149 Zeitschriftenartikel, 51 Bücher, 48 Sammelbandbeiträge; und deutlich mehr mehrsprachig klassifizierte Dokumente). Diese Abweichung ist kein Fehler, sondern Ausdruck zweier verschiedener Zähl-Universen (bibliografische Text-Ebene vs. PDF-Ebene) und unterschiedlicher Kategorienschemata. Für Metadaten ist die Masterfile die verlässlichere Quelle. Der hohe Französisch-Anteil hat konkrete Konsequenzen für die Pipeline: französische Typografie (Guillemets, Akzente, Ligaturen, Leerzeichen vor Interpunktion), französische Trennregeln, überwiegend französische Beispiele in den Prompts.
+Geminis automatische Klassifikation derselben 286 PDFs weicht erwartungsgemäß ab (etwa 149 Zeitschriftenartikel, 51 Bücher, 48 Sammelbandbeiträge sowie deutlich mehr mehrsprachig klassifizierte Dokumente), weil sie ein anderes Kategorienschema auf der PDF-Ebene anlegt. Für Metadaten bleibt das Masterfile die verlässlichere Quelle. Der hohe Französisch-Anteil hat konkrete Konsequenzen für die Pipeline: französische Typografie (Guillemets, Akzente, Ligaturen, Leerzeichen vor Interpunktion), französische Trennregeln und überwiegend französische Beispiele in den Prompts.
 
 Der Arbeitszeitraum erstreckte sich von **Ende Januar bis Ende Mai 2026**, dokumentiert durch **178 Commits** (erster Commit 29.01.2026, letzter 26.05.2026; Schwerpunkt im März mit 110 Commits). Im April und Mai folgten die wissenschaftliche CER-Re-Evaluation, eine Frontend-Radikalkur und die Ablösung des agentenbasierten Screenings durch ein menschgesetztes Workflow-Status-Modell.
 
@@ -152,6 +156,6 @@ Eine wichtige Lehre dieser Iteration betrifft die Infrastruktur selbst: Die Veri
 
 ### Offene Punkte und Einschränkungen
 
-Die Layout-Analyse liefert bei Doppelseiten und komplexen Strukturen Fehler (durch zusätzliche Gemini-Calls erweiterbar). Die NER/Wikidata-Verknüpfung ist explorativ und nicht mit Precision/Recall gemessen. Die Run-zu-Run-Stabilität der nicht-deterministischen LLM-Stufen ist nicht quantifiziert. Drei digitalisierte Texte (`1745`, `1750`, `1970`) wurden nicht als PDF geliefert; ein geliefertes PDF (`10`) hat noch kein finales TEI; die Differenz 325 Masterfile-Texte vs. 314 öffentlich genannte ZB-Texte ist extern zu klären. Ein Header-Schema-Defekt (`<idno>` in `tei_final`) ist registriert. Der Round-Trip vom Viewer-Edit zurück in die Pipeline ist dokumentiert, aber nicht in einem Wrapper-Skript automatisiert.
+Die Layout-Analyse liefert bei Doppelseiten und komplexen Strukturen Fehler (durch zusätzliche Gemini-Calls erweiterbar). Die NER/Wikidata-Verknüpfung ist explorativ und nicht mit Precision/Recall gemessen. Die Run-zu-Run-Stabilität der nicht-deterministischen LLM-Stufen ist nicht quantifiziert. Ein geliefertes PDF (`10`) hat noch kein finales TEI. Ein Header-Schema-Defekt (`<idno>` in `tei_final`) ist registriert. Der Round-Trip vom Viewer-Edit zurück in die Pipeline ist dokumentiert, aber nicht in einem Wrapper-Skript automatisiert.
 
 Trotz dieser offenen Punkte demonstriert das Projekt, dass eine vollständige digitale Edition von PDF-Scans bis zum bearbeitbaren, schema-validen TEI-XML — inklusive quantitativ belegter Textqualität (Median-CER 1,83 %) und einem ehrlichen, menschzentrierten Qualitätsmodell — in wenigen Wochen mit Kosten knapp über 100 USD erzeugt werden kann, wenn die gesamte Pipeline LLM-gestützt und agentenbasiert aufgebaut wird.

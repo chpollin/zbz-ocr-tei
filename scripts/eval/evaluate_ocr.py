@@ -13,7 +13,7 @@ from difflib import SequenceMatcher
 import xml.etree.ElementTree as ET
 
 from scripts.config import (
-    REFERENZ_TEI_DIR, OCR_RESULTS_DIR, EVALUATION_DIR, TESTPLAN,
+    REFERENCE_TEI_DIR, OCR_RESULTS_DIR, EVALUATION_DIR, TESTPLAN,
     TEI_FINAL_DIR,
 )
 from scripts.utils import get_phase_doc_ids
@@ -1335,7 +1335,7 @@ def main():
     args = parser.parse_args()
 
     # Pfade
-    tei_dir = REFERENZ_TEI_DIR
+    tei_dir = REFERENCE_TEI_DIR
     ocr_dir = Path(args.ocr_dir) if args.ocr_dir else OCR_RESULTS_DIR
     output_dir = EVALUATION_DIR
     output_dir.mkdir(parents=True, exist_ok=True)
