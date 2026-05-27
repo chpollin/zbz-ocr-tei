@@ -115,39 +115,41 @@ zbz-ocr-tei/
   reports/                Arbeitsberichte
 ```
 
-## Pipeline-Schritte
+## Die Pipeline
 
-### Schritt 1: PDF-zu-PNG-Konvertierung
+Die Pipeline überführt PDF-Scans in TEI-XML. Sie ist dabei nicht als einzelne durchgehende Kette organisiert, sondern als Bündel paralleler Datenströme je Dokument: Aus jedem Objekt entstehen nebeneinander ein Textstrom, ein Layoutstrom und daraus abgeleitet ein TEI-Strom. Die zu verarbeitende Menge wird nicht aus einer zentralen Liste bezogen, sondern aus dem Vorhandensein der Texterkennungs-Dateien abgeleitet. Daraus folgt eine grundlegende Eigenschaft des Systems: Solange für ein Dokument keine vollständige Texterkennung vorliegt, ist es für die nachgelagerten Stufen nur in dem Umfang sichtbar, in dem Erkennungsergebnisse existieren.
 
-Die PDF-Scans werden mit `pypdfium2` in PNG-Bilder zerlegt (`scripts/edition/extract_pages.py`, 300 dpi) und unter `docs/images/` abgelegt — Grundlage aller weiteren Schritte.
+### Vom Scan zum Seitenbild
 
-### Schritt 2: OCR
+Zu Beginn werden die PDF-Scans seitenweise in Einzelbilder zerlegt (`scripts/edition/extract_pages.py`). Diese Bilder sind die gemeinsame Grundlage aller weiteren Stufen.
 
-**DeepSeek-OCR-2** (3B-VLM, lokal auf GPU, ~1,6 s/Seite) dient als Development-Engine für die Dokumenttypen A und C; produktiv wurde es wegen hoher GPU-Last und Spaltenproblemen nicht eingesetzt. Production-Engine ist **Mistral Document AI** (`mistral-document-ai-2512`) über **Azure AI Foundry**: erkennt neben Text auch Tabellen und Listen, liefert Per-Seite-Markdown (~1,3 s/Seite), chunkt große Dokumente automatisch (eine von Claude Code eigenständig getroffene Entscheidung).
+### Texterkennung
 
-Eine optionale OCR-Korrektur mit **Claude Haiku 4.5** lieferte inkonsistente Ergebnisse (bei guter Ausgangs-OCR mit CER < 5 % sogar leicht verschlechternd, gemessen +0,10 %) und ist daher optional, nicht Default. Für alle weiteren LLM-Schritte (Layout-QA, Klassifikation, OCR-Korrektur, TEI-Refinement, NER) wird einheitlich **Gemini 3.1 Flash-Lite** (`gemini-3.1-flash-lite-preview`) verwendet: starkes multimodales Modell, schnell und für den Einsatz gut geeignet.
+Produktiv erfolgt die Texterkennung mit **Mistral Document AI** über **Azure AI Foundry**: Das Modell erfasst neben Fließtext auch Tabellen und Listen und liefert seitenweises Markdown; große Dokumente werden automatisch aufgeteilt — eine von Claude Code eigenständig getroffene Entscheidung. Steht dieser Zugang nicht zur Verfügung, kann ersatzweise ein multimodales **Gemini**-Modell dieselbe Aufgabe übernehmen; es schreibt sein Ergebnis in dasselbe Format und Verzeichnis, sodass die nachgelagerten Stufen unverändert weiterarbeiten. Eine optionale, sprachmodellgestützte Nachkorrektur ist verfügbar, aber nicht standardmäßig aktiv, weil sie bei bereits guter Ausgangsqualität keinen Mehrwert bringt. Liegt für eine Seite eine korrigierte Fassung vor, wird sie der Rohfassung automatisch vorgezogen.
 
-### Schritt 3: Layout-Analyse
+### Layoutanalyse
 
-**Docling 2.75** (IBM Research, RT-DETR V2 Heron, 42,9 M Parameter, DocLayNet, mAP 0.699) erkennt 17 Blocktypen und wird bewusst nur für das Layout verwendet, nicht für OCR (RapidOCR hat FR-Encoding-Probleme). **Gemini 3.1 Flash-Lite** korrigiert die Docling-Ergebnisse ergänzend in drei Modi: `qa` (Korrektur + Quality-Score), `detect` (Neudetektion, Fallback für die ~15 % schwieriger Seiten) und `auto` (routet pro Seite). Beide Versionen bleiben erhalten — in den Digital Humanities ist Provenienz so wichtig wie Qualität. Verifiziert wird über SVG-Overlays im Frontend und gerenderte Overlay-PNGs. Polygon-Support wurde bewusst ausgeschlossen (sauber gesetzter Verlagsdruck, Rechtecke genügen).
+Die Strukturerkennung verbindet **Docling** mit einem nachgeschalteten Korrekturschritt durch **Gemini**. Docling wird bewusst nur für das Layout eingesetzt, nicht für die Texterkennung. Der Korrekturschritt prüft, ergänzt oder erkennt das Layout neu und bemisst den Aufwand pro Seite an einem abgeleiteten Qualitätsmaß, sodass die aufwendige Neudetektion nur dort greift, wo die erste Erkennung schwach blieb. Beide Layoutfassungen — die ursprüngliche und die korrigierte — bleiben erhalten, damit die Herkunft der Daten nachvollziehbar bleibt.
 
-### Schritt 4: PAGE-XML-Erzeugung
+### Austauschformate
 
-PAGE-XML wird deterministisch aus Layout-JSON und OCR-Text erzeugt (`scripts/layout/page_xml_generator.py`), zusätzlich METS (Schema 2013-07-15 für coOCR/Transkribus). **Wichtig:** PAGE-XML ist **kein Zwischenschritt zum TEI** — das TEI wird direkt aus Layout-JSON und OCR-Markdown generiert; PAGE-XML ist ein paralleler Export für externe Systeme. Beide Formate leiten sich unabhängig aus denselben Quellen ab.
+Aus Layout und Text wird zusätzlich PAGE-XML samt METS erzeugt. Dieser Export ist kein Zwischenschritt der TEI-Erzeugung, sondern für externe Systeme bestimmt; das TEI leitet sich unabhängig davon direkt aus Layout und Text ab. Beide Formate gehen auf dieselben Quellen zurück, ohne voneinander abzuhängen.
 
-### Schritt 5: Named Entity Recognition und Wikidata-Verknüpfung
+### Entitäten und Normdaten
 
-Die NER erfolgt seitenweise mit Gemini 3.1 Flash-Lite für sechs Entitätstypen (Personen, Orte, Datum, Organisationen, Events, Werke). Ein Entity Store dedupliziert Schreibvarianten; daraus entstehen Indizes für Personen, Organisationen, Orte und Werke. Der Korpus umfasst rund 11.685 Entitäten / 26.197 Mentions über 285 Dokumente; der Index zählt etwa 4.504 Einträge, von denen rund 47 % mit Wikidata/GND verlinkt sind (Stand laut Knowledge-Base; noch nicht gegen die Primärartefakte re-auditiert). Eine methodische Festlegung ist zentral: **Entity-ID-Linking erfolgt ausschließlich deterministisch über APIs, niemals per LLM**. Die Verknüpfung mit dem TEI folgt der Dual-Attribut-Strategie: `ref="GND:…"` (primär) plus `corresp="#zbz-{typ}.{N}"` (interne ID). Eine Precision/Recall-Messung der NER steht aus.
+Personen, Orte, Organisationen und weitere Entitätstypen werden seitenweise sprachmodellgestützt erkannt und über Schreibvarianten hinweg zu dokumentübergreifenden Registern zusammengeführt. Methodisch ist eine Trennung festgelegt: Die Erkennung der Namen übernimmt das Sprachmodell, die Verknüpfung mit Normdaten-Kennungen erfolgt dagegen ausschließlich deterministisch über Abfragen externer Normdaten- und Wissensdienste, niemals durch ein Sprachmodell. Im TEI werden Entitäten doppelt ausgezeichnet — mit einer externen Normdaten-Referenz und einer projektinternen Kennung —, sodass sie sowohl im Bibliotheks- und Normdatenraum als auch innerhalb der Edition eindeutig adressierbar bleiben.
 
-### Schritt 6: TEI-XML-Erzeugung
+### TEI-Erzeugung
 
-Vier Stufen: (1) regelbasiertes Scaffold, (2) Gemini-Call pro Seite für algorithmisch schwierige Aufgaben, (3) Assembly zu einem TEI-Dokument plus Post-Assembly-Fixes, (4) Validierung. Validiert wird gegen das **projektspezifische RelaxNG-Schema `zbz_hersch.rng`** (TEI P5 v4.10.2, 551 Definitionen, aus ODD generiert), das auf dem DTA-Basisformat aufbaut und durch die verbindlichen ZBZ-Editionsrichtlinien ergänzt wird. Ergebnis: 285/285 Dokumente schema-valide, 29 informative Warnings (ein bekannter Header-Schema-Defekt im `tei_final`-`<idno>` ist als offener Punkt registriert).
+Die TEI-Erzeugung verbindet regelbasierte und sprachmodellgestützte Arbeit. Zunächst entsteht aus Text und Layout ein deterministisches Grundgerüst: Textabschnitte werden den Layoutregionen nach ihrer Position zugeordnet, in Überschriften, Absätze, Fußnoten und vergleichbare Strukturen übersetzt und mit Seiten- und Zeilenmarken versehen; dabei werden auch die typografischen Vereinheitlichungen gemäß den Editionsrichtlinien sowie die Auflösung getrennter Wörter berücksichtigt. Auf dieses Gerüst setzt ein verfeinernder Schritt auf, der das Seitenbild zusammen mit dem Gerüst und dem erkannten Text einem multimodalen Modell vorlegt und so eine strukturell angereicherte Fassung erzeugt. Da modellgenerierte Auszeichnung systematische Eigenheiten aufweist, schließt sich eine korrigierende Nachbearbeitung an, die häufige Struktur- und Schemaverstöße automatisch bereinigt. In der abschließenden Zusammenführung werden die Einzelseiten zu einem Gesamtdokument verbunden, seitenweise entstandene Gliederungseinheiten zusammengezogen und ein zweiter Satz dokumentweiter Korrekturen angewandt. Durchgängig ist die Verarbeitung defensiv ausgelegt: Schlägt eine einzelne Korrektur fehl, wird die Eingabe unverändert weitergereicht, statt den Lauf abzubrechen.
 
-### Schritt 7: Workflow-Status pro Datenstrom (ersetzt das frühere Agent-Screening)
+### Validierung
 
-Ursprünglich war als letzter Schritt ein agentenbasiertes 7-Schichten-Quality-Screening vorgesehen; der Lauf über alle 285 Dokumente ergab 242 „APPROVED" und 43 „WITH_NOTES". Dieses Verfahren wurde im Mai **bewusst abgeschafft**. Der ausschlaggebende Befund: kein einziger „APPROVED"-Status kam von einem Menschen — der Agent zertifizierte sich selbst, mit eingebauter Ignorier-Liste und ohne fachliche Bewertung. Das Etikett war gegenüber der ZB epistemisch irreführend.
+Das erzeugte TEI wird zweistufig geprüft. Zum einen gegen das projektspezifische, auf dem DTA-Basisformat aufbauende und um die verbindlichen ZBZ-Editionsrichtlinien ergänzte RelaxNG-Schema (`zbz_hersch.rng`); zum anderen gegen projekteigene Regeln, die strukturelle Mindestanforderungen blockierend durchsetzen. Ergänzend markieren informative Hinweise prüfenswerte Stellen, ohne die Gültigkeit zu blockieren. Die quantitativen Validierungsergebnisse werden im Abschnitt zur Qualitätsevaluation berichtet. Zu unterscheiden ist dabei die finale, ausgelieferte Editionsablage als verbindliche Quelle der Edition von dem daraus erzeugten Anzeige-Spiegel des Webinterfaces, der nicht direkt bearbeitet wird.
 
-An seine Stelle tritt ein **menschgesetzter Workflow-Status pro Datenstrom**. Für jeden Strom (OCR, Layout, TEI) gilt einer von vier Werten: `unverifiziert` (Default für alle 285 Dokumente), `in_arbeit`, `bearbeitet`, `fertig`. Der Status wird im Viewer gesetzt, mit voller Provenienz-History in einem Pro-Objekt-Manifest persistiert und bei der ZB-Übergabe deterministisch in den `<revisionDesc>` projiziert. Im UI ist die Logik als Ampel umgesetzt: gelb = vorhanden, aber nicht freigegeben; grün = fertig; rot reserviert für einen künftigen Problem-Status. Das Reframing folgt der Einsicht, dass die Pipeline OCR/Layout/TEI deterministisch für alle Dokumente produziert — der ehrliche Default ist „vorhanden, unverifiziert", nicht „nichts da". Stand 26.05.2026 stehen alle 285 Dokumente in allen drei Strömen auf `unverifiziert` — der ehrliche Ausgangsanker für die fachliche Kuration.
+### Bearbeitungsstatus statt Selbstzertifizierung
+
+Ursprünglich war als Abschluss ein agentenbasiertes Quality-Screening vorgesehen. Es wurde bewusst abgeschafft, weil kein einziger seiner Freigabe-Status von einem Menschen stammte — der Agent zertifizierte sich selbst. An seine Stelle tritt ein menschgesetzter Workflow-Status pro Datenstrom: Für Text, Layout und TEI gilt jeweils einer von vier Werten zwischen „unverifiziert" und „fertig". Der Status wird im Webinterface gesetzt, mit voller Provenienz in einem objektbezogenen Manifest gehalten und bei der Übergabe an die ZB in die Versionsbeschreibung des Dokuments übernommen. Das Modell folgt der Einsicht, dass die Pipeline Text, Layout und TEI für alle Dokumente deterministisch produziert — der ehrliche Ausgangspunkt ist daher „vorhanden, aber fachlich noch nicht verifiziert", nicht eine maschinelle Freigabe.
 
 ## Qualitätsevaluation
 
