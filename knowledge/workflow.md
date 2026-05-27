@@ -106,7 +106,7 @@ Repo.
 ### 3.1 Lese-Pfad (read-only)
 
 Der Viewer laedt ausschliesslich statische Files. Der Pfad-Resolver in
-`docs/js/core.js` benutzt eine dreistufige Fallback-Kette:
+`docs/assets/js/core.js` benutzt eine dreistufige Fallback-Kette:
 
 ```
 1. docs/data/pages/{doc}/{doc}_pN.{ext}   (Frontend-Mirror, alle 285 Docs)
@@ -123,7 +123,7 @@ Drei Edit-Modi liefern je einen Download:
 
 | Aktion | Modul | Output-Dateiname | MIME |
 |---|---|---|---|
-| Layout speichern | `ZBZ.Download.layout()` in `docs/js/download.js` | `{doc}_p{N}_layout_curated.json` | `application/json` |
+| Layout speichern | `ZBZ.Download.layout()` in `docs/assets/js/download.js` | `{doc}_p{N}_layout_curated.json` | `application/json` |
 | Text speichern | `ZBZ.Download.text()` | `{doc}_p{N}_curated.md` | `text/markdown` |
 | TEI speichern | `ZBZ.Download.tei()` | `{doc}_curated.xml` | `application/xml` |
 

@@ -56,7 +56,7 @@ DEFAULT_STATUS = "unverifiziert"
 # Map alter Status-Werte (v2-Manifeste) auf die neuen.
 STATUS_MIGRATION = {"offen": "unverifiziert"}
 
-# Identisch zu ZBZ.isBlankPageText (docs/js/core.js)
+# Identisch zu ZBZ.isBlankPageText (docs/assets/js/core.js)
 _ALNUM = re.compile(r"[A-Za-zÀ-ÿ0-9]")
 _MARKER_CLEAN = re.compile(r"[^a-z ]+")
 _BLANK_MARKERS = {"blank page", "blank", "blank pages", "page blanche", "page vide"}

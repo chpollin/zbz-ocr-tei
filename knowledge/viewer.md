@@ -43,19 +43,20 @@ docs/
 ├── viewer.html                  # Doc-Detail: Faksimile + Layout-Overlay + OCR/TEI-Panel, 3 Modi
 ├── methode.html                 # CER-Methodik, Headline, Stratifiziert, Limitations, Literatur (E62, statisch)
 ├── about.html                   # Projekt-Seite (verweist auf methode.html fuer Qualitaets-Details)
-├── css/
-│   ├── tokens.css               # Hersch Design Tokens (--h-*)
-│   ├── base.css                 # Reset, Typography, Buttons, Badges, Tabs
-│   ├── viewer.css               # Viewer-Shell, Faksimile-Overlay, TEI-Render, Editor-UI
-│   └── catalog.css              # Korpus-Uebersicht: Status-Leiste, Filter, Doc-Tabelle
-├── js/
-│   ├── core.js                  # DOM, URL, Fetch, Format, Cache, Toast, EventBus, Markdown-Renderer
-│   ├── viewer.js                # Viewer-Orchestrator: Doc-Selektion + Mode-Switching
-│   ├── catalog.js               # Korpus-Uebersicht: Laden, Filter (Strom × Status, E66), Sortierung
-│   ├── tei-render.js            # TEI-XML → DOM (mit Entity-Highlighting)
-│   ├── layout-editor.js         # BBox Drag/Resize/Add/Delete + Reading-Order
-│   ├── transcription-editor.js  # OCR/TEI/XML mit contenteditable
-│   └── download.js              # Datei-Download (JSON/MD/XML)
+├── assets/
+│   ├── css/
+│   │   ├── tokens.css               # Hersch Design Tokens (--h-*)
+│   │   ├── base.css                 # Reset, Typography, Buttons, Badges, Tabs
+│   │   ├── viewer.css               # Viewer-Shell, Faksimile-Overlay, TEI-Render, Editor-UI
+│   │   └── catalog.css              # Korpus-Uebersicht: Status-Leiste, Filter, Doc-Tabelle
+│   └── js/
+│       ├── core.js                  # DOM, URL, Fetch, Format, Cache, Toast, EventBus, Markdown-Renderer
+│       ├── viewer.js                # Viewer-Orchestrator: Doc-Selektion + Mode-Switching
+│       ├── catalog.js               # Korpus-Uebersicht: Laden, Filter (Strom × Status, E66), Sortierung
+│       ├── tei-render.js            # TEI-XML → DOM (mit Entity-Highlighting)
+│       ├── layout-editor.js         # BBox Drag/Resize/Add/Delete + Reading-Order
+│       ├── transcription-editor.js  # OCR/TEI/XML mit contenteditable
+│       └── download.js              # Datei-Download (JSON/MD/XML)
 └── data/                        # generiert via scripts/edition/generate_edition_data.py
     ├── catalog.json             # 285 Docs (id, title, author, lang, type, page_count, streams.{ocr,layout,tei}.{status,last_at,last_by})
     ├── manifests/{doc}.json     # Mirror der Pro-Objekt-Manifeste (Workflow + History + Leerseiten, E66)

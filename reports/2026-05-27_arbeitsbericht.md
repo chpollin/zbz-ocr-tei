@@ -90,29 +90,49 @@ Der Ordner `docs/` ist für GitHub Pages konfiguriert und enthält das Frontend,
 
 ```
 zbz-ocr-tei/
-  knowledge/              Promptotyping Vault: iterativ kuratiertes Projektwissen (Markdown)
-  data/                   Eingangs- und Referenzdaten
-    source/               von der ZB gelieferte Startdaten
-      pdf/                PDF-Scans
-      reference_tei/      Referenz-TEIs (Transkribus)
-      transkribus_page_xml/   Transkribus-PAGE-XML-Exporte
-      masterfile/         Masterfile.xlsx (Metadaten + Steuerung)
-      guidelines/         Editionsrichtlinien
-    schema/               zbz_hersch.rng (TEI-Schema)
-    entities/             Entitäts-Indizes (Person, Organisation, Ort, Werk)
-    curated_tei/          kuratierte Gold-TEIs
-    doc_metadata.json     generierte Dokumentklassifikation (Cache)
-  scripts/                Python-Pipeline, nach Domäne gruppiert
-    ocr/ layout/ ner/ tei/ eval/ edition/ core/
-    config.py             zentrale Konfiguration
-    utils.py              geteilte Hilfsfunktionen
-  output/                 alle generierten Datenströme (nicht versioniert)
-  docs/                   Frontend + generierter Mirror (GitHub Pages)
-    *.html  css/  js/     Frontend
-    data/                 generierter Mirror der Pipeline-Daten
-    images/               aus PDFs erzeugte PNGs
-  tests/                  pytest-Suites
-  reports/                Arbeitsberichte
+  data/                      Eingangs- und Referenzdaten
+    curated_tei/             im Viewer kuratierte Editions-TEIs (Gold-Standard)
+    entities/                Entitäts-Indizes (Person, Organisation, Ort, Werk)
+    schema/                  zbz_hersch.rng (TEI-Schema)
+    source/                  von der ZB gelieferte Startdaten
+      guidelines/            Editionsrichtlinien
+      masterfile/            Masterfile.xlsx (Metadaten + Steuerung)
+      pdf/                   PDF-Scans
+      reference_tei/         Referenz-TEIs (Transkribus)
+      transkribus_page_xml/  Transkribus-PAGE-XML-Exporte
+    doc_metadata.json        generierte Dokumentklassifikation (Cache)
+  docs/                      Frontend + generierter Mirror (GitHub Pages)
+    assets/                  Frontend-Code (CSS + JS)
+      css/                   Stylesheets (tokens, base, viewer, catalog)
+      js/                    Frontend-Module (Viewer, Editoren, Katalog)
+    data/                    generierter Mirror der Pipeline-Daten
+      manifests/             Pro-Objekt-Manifeste (Workflow-Status)
+      pages/                 Per-Seiten-Mirror (TEI + OCR + Layout-JSON)
+      tei/                   finale TEI-Dokumente
+      thumbs/                Seiten-Thumbnails
+      catalog.json           Korpus-Katalog
+      entity_index.json      aggregierter Entitäts-Index
+    images/                  aus PDFs erzeugte PNGs
+    *.html                   index, viewer, methode, about, impressum
+  knowledge/                 Promptotyping Vault: Projektwissen (11 Markdown-Docs)
+  output/                    alle generierten Datenströme (nicht versioniert)
+  reports/                   Arbeitsberichte
+  scripts/                   Python-Pipeline (50 Skripte), nach Domäne gruppiert
+    core/                    geteilte Loader
+    edition/                 Export, Objekt-Manifeste, Seitenbilder
+    eval/                    CER-Messung, Bootstrap-Statistik, Proxy-Metriken
+    layout/                  Layout-Analyse (Docling + Gemini), PAGE-XML/METS
+    ner/                     Entitätserkennung + Wikidata/GND-Verknüpfung
+    ocr/                     OCR (Mistral), Klassifikation, Korrektur
+    tei/                     TEI-Erzeugung + Schema-Validierung
+    config.py                zentrale Konfiguration
+    utils.py                 geteilte Hilfsfunktionen
+  tests/                     pytest-Suites
+  .claudeignore              Claude-Code-Ausschluesse
+  .gitignore                 Git-Ausschluesse (output/, .env, ...)
+  CLAUDE.md                  Projekt-Konstitution (Regeln + CLI-Referenz)
+  README.md                  Projektueberblick
+  requirements.txt           Python-Abhaengigkeiten
 ```
 
 ## Die Pipeline

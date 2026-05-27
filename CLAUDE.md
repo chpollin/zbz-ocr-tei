@@ -53,7 +53,7 @@ Bei UI- oder Frontend-Generierung ist [knowledge/viewer.md §Hersch Design-Syste
 - keine reinen Schwarz/Weiss-Werte; immer den warmen Anthrazit `--h-text` und das warme Cream `--h-bg`
 - bei neuen Komponenten zuerst pruefen, ob ein bestehender Token oder eine Komponente in `base.css` traegt
 
-Token-Katalog: `docs/css/tokens.css`. Basis-Komponenten: `docs/css/base.css`. Viewer-spezifisch: `docs/css/viewer.css`.
+Token-Katalog: `docs/assets/css/tokens.css`. Basis-Komponenten: `docs/assets/css/base.css`. Viewer-spezifisch: `docs/assets/css/viewer.css`.
 
 ## Projektstruktur & Datenfluss
 
@@ -62,7 +62,7 @@ Token-Katalog: `docs/css/tokens.css`. Basis-Komponenten: `docs/css/base.css`. Vi
 - `data/` — Eingangs- und Referenzdaten. `source/` = ZB-Lieferung (immutabler Input, grösstenteils gitignored): `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (Editionsrichtlinien). Projekt-Autorität (git-tracked): `schema/zbz_hersch.rng`, `entities/`, `curated_tei/` (Gold-Standard). Generiert: `doc_metadata.json` (Gemini-Cache)
 - `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `ner/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
 - `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
-- `docs/` — statische Edition/Inspektions-Site (GitHub-Pages-tauglich): HTML, `css/`, `js/`, `data/` (generierter Mirror), `images/`
+- `docs/` — statische Edition/Inspektions-Site (GitHub-Pages-tauglich): HTML, `assets/` (`css/` + `js/`), `data/` (generierter Mirror), `images/`
 - `knowledge/` — Wissensbasis (10 Docs), Einstieg [knowledge/index.md](knowledge/index.md)
 - `tests/` — pytest-Suites
 
