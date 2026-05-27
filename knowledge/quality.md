@@ -266,7 +266,7 @@ Bei wiederholtem Run variiert das Output.
 
 **Aktueller Status:** `stability.status: open` im JSON, Begruendung "API-Budget pending user decision".
 
-Bei Freigabe: 5 Docs × 3 Re-Runs (geschaetzt $1-2), Std-Dev der Per-Doc-CER reporten.
+Bei Freigabe: 5 Docs × 3 Re-Runs, Std-Dev der Per-Doc-CER reporten.
 Kontextualisierung: ist der gemessene CER mit Bootstrap-CI ueberhaupt praeziser als die
 Run-zu-Run-Varianz? Bootstrap-CIs erfassen nur Sampling-Unsicherheit, nicht Modell-Stochastizitaet.
 

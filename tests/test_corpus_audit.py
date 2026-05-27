@@ -25,6 +25,7 @@ from scripts.eval.corpus_audit import (
     _norm_id,
     _stats,
     build_report,
+    delivered_distribution,
     drift_check,
     reconcile,
 )
@@ -111,6 +112,29 @@ class TestReconcile:
         assert pcs["ocr_md"] == 48
         assert pcs["tei_pb"] == 47
         assert pcs["gemini_page_count_field"] == 49
+
+
+class TestDeliveredDistribution:
+    @staticmethod
+    def _t0():
+        return {"by_id": {
+            "10": {"publform": "journalArticle", "sprache": "fr", "jahr": 1975},
+            "20": {"publform": "book", "sprache": "de", "jahr": 1980},
+            "30": {"publform": "journalArticle", "sprache": "fr", "jahr": 2001},
+        }}
+
+    def test_filters_to_delivered_subset(self):
+        # geliefert: 10 + 20 (30 nicht); 99 geliefert, aber nicht im Masterfile
+        dd = delivered_distribution(self._t0(), ["10", "20", "99"])
+        assert dd["n"] == 2
+        assert dd["not_in_masterfile"] == ["99"]
+        assert dd["publform"] == {"journalArticle": 1, "book": 1}
+        assert dd["sprache"] == {"fr": 1, "de": 1}
+        assert dd["jahr"] == {"min": 1975, "max": 1980, "count_1970_1989": 2}
+
+    def test_empty_when_no_overlap(self):
+        dd = delivered_distribution(self._t0(), ["999"])
+        assert dd["n"] == 0 and dd["publform"] == {} and dd["jahr"]["min"] is None
 
 
 class TestDriftCheck:

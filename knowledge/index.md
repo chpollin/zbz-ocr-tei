@@ -19,10 +19,10 @@ SSoT pro Domaene, eine Datei pro Thema.
 
 | Dokument | Beantwortet |
 |---|---|
-| [projekt.md](projekt.md) | Was ist das Projekt? Auftrag, Korpus-Trichter (325→289→286→285, ~7.186 biblio. Seiten), ZBZ-Workflow, Status, Kosten |
+| [projekt.md](projekt.md) | Was ist das Projekt? Auftrag, Korpus-Trichter + Seitenbilanz (generiert via corpus_audit), ZBZ-Workflow, Status |
 | [pipeline.md](pipeline.md) | Wie ist die Pipeline aufgebaut? Stufen PDF → TEI, Engines (Mistral, DeepSeek, Docling, Gemini), TEI-Mapping (DTA + ZBZ), Round-Trip-Sektion |
 | [workflow.md](workflow.md) | Wie laeuft der End-to-End-Datenfluss? Datenfluss-Diagramm, Datenformate pro Stufe, Save-Mechanismus im Viewer, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante, Roadmap |
-| [entities.md](entities.md) | Wie funktioniert Entity Linking? NER + GND + Wikidata, Dual-Attribut-Strategie (E50), 4.504 Entitaeten / 47% verlinkt, Wikidata-Workflow |
+| [entities.md](entities.md) | Wie funktioniert Entity Linking? NER + GND + Wikidata, Dual-Attribut-Strategie (E50), Entity-Zahlen + Verlinkungsquote, Wikidata-Workflow |
 | [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Median 1.83%), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Agent-Based Quality Screening |
 | [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay (OpenSeadragon E58), OCR/TEI-Editor, Edit-Toggle pro Panel (E60), Export-Modul (E61), Datei-Download |
 | [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |

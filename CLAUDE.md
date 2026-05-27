@@ -14,10 +14,11 @@ Projekt-Konstitution. Operative Regeln und Konventionen, die bei jedem Pipeline-
 
 Einstiegspunkt: [knowledge/index.md](knowledge/index.md) — Navigation, Abhaengigkeiten, Schluesselkonzepte.
 
-10 thematisch klar getrennte Dokumente:
+11 thematisch klar getrennte Dokumente:
 
 - [projekt.md](knowledge/projekt.md) — Auftrag, Korpus, ZBZ-Workflow, Status
 - [pipeline.md](knowledge/pipeline.md) — 7-Stufen-Pipeline, Engines, TEI-Mapping
+- [workflow.md](knowledge/workflow.md) — End-to-End-Datenfluss, Save/Round-Trip, Provenance
 - [entities.md](knowledge/entities.md) — NER + GND + Wikidata
 - [quality.md](knowledge/quality.md) — CER + Validierung + Screening
 - [viewer.md](knowledge/viewer.md) — Pipeline-Viewer (Faksimile + OCR + Layout + TEI + Editor)
@@ -34,6 +35,7 @@ Einstiegspunkt: [knowledge/index.md](knowledge/index.md) — Navigation, Abhaeng
 
 ## Code-Konventionen
 
+- **Keine Kostenangaben:** in Doku, Reports und Code keine Geldbetraege/Budgets (USD/$/CHF/EUR) nennen. Betriebshinweise wie `kostenlos`/`kostenpflichtig` (= kein/ein API-Call) sind erlaubt, da sie Aufrufe steuern, keine Kosten beziffern.
 - **Windows-Encoding:** keine Unicode-Sonderzeichen in Print-Statements
 - **Pfade:** absolute Pfade oder `pathlib`
 - **Output:** JSON fuer Daten, HTML fuer Reports
@@ -116,7 +118,7 @@ python -m scripts.eval.benchmark_cer --all --html                    # CER-Bench
 python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss. CER-Statistik (BCa-CIs, Paired, HCPR)
 python -m scripts.eval.corpus_audit                             # Korpus-Audit: Trichter 325->289->286->285 + Drift-Check
 python -m pytest tests/test_cer_statistics.py -q                # 55 Tests fuer Statistik-Library
-python -m pytest tests/test_corpus_audit.py -q                  # 22 Tests: Korpus-Invarianten + Vollstaendigkeits-Gate
+python -m pytest tests/test_corpus_audit.py -q                  # 24 Tests: Korpus-Invarianten + delivered-Verteilung + Vollstaendigkeits-Gate
 python -m pytest tests/test_scripts_health.py -q                # Script-Health: Syntax + interne Imports (alle scripts/)
 python -m pytest tests/test_tei_schema.py -q                    # Schema-Gate: tei_final gegen zbz_hersch.rng (E68)
 ```

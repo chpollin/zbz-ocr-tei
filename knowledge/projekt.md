@@ -20,7 +20,7 @@ LLM-gestuetzte OCR- und TEI-Pipeline fuer den Nachlass Jeanne Hersch der Zentral
 | Auftragnehmer | DHCraft |
 | Gegenstand | Automatisierte OCR + TEI-Annotation fuer den Hersch-Nachlass |
 | Bestaetigung | 14.02.2026 |
-| Honorar | unveraendert (Azure/Mistral keine Mehrkosten) |
+| Honorar | unveraendert |
 | ZBZ-Kontakte | Elias Kreyenbuehl, Anouschka |
 | Projektleitung | Christopher (DHCraft) |
 
@@ -31,48 +31,52 @@ OCR + Layout + PAGE-XML + NER/GND + TEI-XML. ZBZ behaelt Transkribus parallel al
 
 ## Korpus
 
-Korpus-Trichter (verifiziert via `python -m scripts.eval.corpus_audit`, Stand 2026-05-27):
-**325 Masterfile-Texte → 289 digitalisiert → 286 als PDF geliefert → 285 mit finalem TEI.**
-Die fruehere Zahl „289" ist der `digitalisiert`-Zaehler der Masterfile, nicht die Textmenge.
-3 digitalisierte Texte ohne PDF-Lieferung: `1745`, `1750`, `1970`; 1 PDF ohne finales TEI: `10`.
+Alle Zahlen hier sind generiert via `python -m scripts.eval.corpus_audit` (Artefakt
+`output/corpus_audit.json` / `.md`, jede Zahl an `(Quelle, Einheit, Extraktion)` gebunden) —
+bei Aenderung regenerieren, nicht von Hand pflegen. Stand 2026-05-27.
 
-| Aspekt | Wert | Einheit / Quelle |
+**Korpus-Trichter:** 325 Masterfile-Texte → 289 digitalisiert → 286 als PDF geliefert →
+285 mit finalem TEI. Die Zahl „289" ist der `digitalisiert`-Zaehler der Masterfile, nicht
+die Textmenge. 3 digitalisierte Texte ohne PDF-Lieferung: `1745`, `1750`, `1970`;
+1 PDF ohne finales TEI: `10`.
+
+**Seitenzahlen** — vier Einheiten, nie vermischen:
+
+| Einheit | Wert | Quelle |
 |---|---|---|
-| Masterfile-Texte | 325 | Text-Ebene (ZBZ-Masterfile) |
-| als PDF geliefert | 286 | PDFs (`data/source/pdf/`) |
-| produktiv (finales TEI) | 285 | `output/tei_final/` |
-| Seiten bibliografisch | 7.186 | Masterfile (325 Texte) |
-| Seiten physisch | 4.152 | gelieferte PDFs (pypdfium2) |
-| Seiten verarbeitet | 4.117 OCR / 4.115 TEI-`<pb>` | Pipeline |
-| Median pro Text | 6 Seiten | Masterfile |
-| Maximum | 588 Seiten | Masterfile (biblio.) |
-| Zeitraum | 1931–2010, Fokus 1970er/1980er (193 Texte) | Masterfile |
+| bibliografisch | 7.186 | Masterfile (Text-Ebene, n=325) |
+| physisch | 4.152 | gelieferte PDFs (pypdfium2) |
+| verarbeitet (OCR) | 4.122 | Pipeline (volatil bei Re-OCR) |
+| verarbeitet (TEI-`<pb>`) | 4.115 | finale TEI |
 
-### Publikationsformen
+Median 6 Seiten/Text, Maximum 588 (Masterfile, bibliografisch).
 
-Auf Text-Ebene laut Masterfile (n=325) — der katalogisierte Bestand, nicht die 286 verarbeiteten PDFs.
+### Gattungen, Sprachen, Zeitraum (gelieferte Dokumente, n=286)
 
-| Genre | Anzahl | Anteil |
+Massgeblich ist die **gelieferte** Sicht (Masterfile-Metadaten der 286 PDFs), nicht der
+katalogisierte Gesamtbestand. Zeitraum 1931–1998, davon 168 Texte in den 1970/80er-Jahren.
+
+| Gattung (`PublForm`) | n | Anteil |
 |---|---|---|
-| Journal articles | 159 | 49% |
-| Edited volume contributions | 127 | 39% |
-| Monographs | 38 | 12% |
-| AV medium | 1 | <1% |
+| Journal articles (`journalArticle`) | 146 | 51% |
+| Edited volume contributions (`bookSection`) | 116 | 41% |
+| Monographs (`book`) | 24 | 8% |
 
-### Sprachverteilung
-
-Auf Text-Ebene laut Masterfile (n=325). Geminis PDF-Klassifikation (`doc_metadata.json`, n=286) weicht ab und ueberschaetzt Mehrsprachigkeit — fuer Metadaten ist die Masterfile massgeblich.
-
-| Sprache | Anzahl | Anteil |
+| Sprache | n | Anteil |
 |---|---|---|
-| Franzoesisch | 215 | 66% |
-| Deutsch | 98 | 30% |
-| Englisch | 8 | 2% |
-| Italienisch | 2 | 1% |
-| Mehrsprachig fr/de | 1 | <1% |
+| Franzoesisch | 203 | 71% |
+| Deutsch | 72 | 25% |
+| Englisch | 7 | 2% |
+| Italienisch | 2 | <1% |
+| zweisprachig fr/de | 1 | <1% |
+| ohne Angabe | 1 | <1% |
 
-Konsequenzen fuer die Pipeline: franzoesische Typografie (Guillemets, Akzente, Ligaturen,
-Leerzeichen vor Interpunktion), franzoesische Trennregeln, Beispiele in Prompts ueberwiegend FR.
+Geminis PDF-Klassifikation (`doc_metadata.json`) ueberschaetzt Mehrsprachigkeit — fuer
+Metadaten ist die Masterfile massgeblich. Konsequenz fuer die Pipeline: franzoesische
+Typografie (Guillemets, Akzente, Ligaturen, Leerzeichen vor Interpunktion), franzoesische
+Trennregeln, Prompt-Beispiele ueberwiegend FR.
+
+> Katalog-Ebene (n=325, gesamter erfasster Bestand, zum Vergleich): Gattung `journalArticle` 159 / `bookSection` 127 / `book` 38 / AV-Medium 1; Sprache fr 215 / de 98 / en 8 / it 2 / fr-de 1 / ohne Angabe 1; Zeitraum 1931–2010, 193 in 1970/80ern.
 
 ### Dokumenttypen A-D
 
@@ -127,7 +131,7 @@ und [quality.md](quality.md).
 | M0 | Bildextraktion + QA-Viewer | Bilder + Viewer verfuegbar | Done |
 | M1 | OCR validiert | >=93% Accuracy alle Typen | Done |
 | M2 | Layout + PAGE-XML | Regionen + BBox + PAGE-XML alle Docs | Done |
-| M3 | NER + Wikidata | Recall >70%, Linking >50% | Done (285 Docs, 11.685 Entities, 47% verlinkt) |
+| M3 | NER + Wikidata | Recall >70%, Linking >50% | Done (285 Docs; Entity- und Linking-Zahlen: [entities.md](entities.md)) |
 | M4 | TEI-XML | DTA-konform, schema-valide | Done (285/285 valide gegen `zbz_hersch.rng`) |
 | M5 | Production Run | 285 Docs verarbeitet, fachliche QA | In Progress (285/285 generiert; Workflow-Status alle Stroeme `unverifiziert`, E66/E67; fachliche Kuration offen) |
 
@@ -143,8 +147,8 @@ und [quality.md](quality.md).
 | Layout-QA (Gemini) | Done | `--mode auto` (E25/E26/E31) |
 | PAGE-XML Generator | Done | `page_xml_generator.py` + METS |
 | Dokumentklassifikation | Done | `classify_docs.py` (E27) |
-| NER Extraction | Done | 285 Docs, 11.685 Entities, 26.197 Mentions |
-| Entity Index | Done | 4.504 Eintraege, 2.101 mit Wikidata/GND (47%) |
+| NER Extraction | Done | Gemini-NER ueber 285 Docs (Entity-/Mention-Zahlen: [entities.md](entities.md)) |
+| Entity Index | Done | dedupliziter Index + Wikidata/GND-Linking (Zahlen: [entities.md](entities.md)) |
 | Unified TEI Pipeline | Done | 285/285 schema-valide (E32) |
 | TEI Validator | Done | RelaxNG + 8 Projektregeln + 14 Warnings |
 | Workflow-Status pro Strom (E66/E67) | Done (Datenmodell) | ersetzt Agent-Screening; 285/285 `unverifiziert`, im Viewer setzbar, Provenienz im Manifest |
@@ -153,21 +157,6 @@ und [quality.md](quality.md).
 | Workflow + Provenance | Konzept dokumentiert | [workflow.md](workflow.md) beschreibt Datenfluss, Save-Mechanismus, Round-Trip, `_complete.xml`- und `provenance.json`-Konzept |
 | Containerisierung | Pending | Dockerfile/Podman |
 | CI/CD | Pending | GitLab Uni Zuerich |
-
----
-
-## Kosten
-
-| Posten | Betrag |
-|---|---|
-| Mistral OCR (Azure, 286 Docs) | 6-15 USD |
-| LLM-Korrektur Haiku 4.5 | ~35 USD |
-| Gemini Layout-QA + Detect | ~12 USD |
-| Gemini TEI-Generation | ~17 USD (Flash Lite, E32) |
-| Gemini NER | ~5-12 USD (Flash Lite, E34) |
-| GPU-Cloud (optional) | ~10-20 USD |
-
-Gesamtbudget bewegt sich knapp ueber 100 USD fuer den vollen Korpus.
 
 ---
 

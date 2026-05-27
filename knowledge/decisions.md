@@ -44,7 +44,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 | E29 | Gemini OCR-Korrektur Stage 2b | 2-Schritt (Analyse + Korrektur), Variant A/B | 2026-03-05 | [pipeline.md](pipeline.md) |
 | E30 | Gemini Vision TEI Generator + dokumenttypspezifische Prompts | 4-Ebenen-Prompts (Layout-Typ, Pub-Form, Genre, Sprache), 12 Genre-Prompts | 2026-03-06 | [pipeline.md](pipeline.md) |
 | E31 | Layout-QA Full Run + Overlay-Generator | `--mode auto --force` auf 286 Docs, 14.708 Korrekturen | 2026-03-06 | [pipeline.md](pipeline.md) |
-| E32 | Unified TEI Pipeline (Scaffold + Gemini + Assembly) | 4 Stufen, 50/50 VALID im Pilot, ~$17 fuer Korpus | 2026-03-07 | [pipeline.md](pipeline.md) |
+| E32 | Unified TEI Pipeline (Scaffold + Gemini + Assembly) | 4 Stufen, 50/50 VALID im Pilot | 2026-03-07 | [pipeline.md](pipeline.md) |
 | E33 | Digitale Edition (`docs/`) | oeffentliche Website neben internem Dashboard | 2026-03-06 | [viewer.md](viewer.md) |
 | E34 | NER Pipeline + Entity Index (Phase 3) | Post-hoc NER via Gemini Flash Lite (6 Typen), Wikidata als Primaer-ID | 2026-03-07 | [entities.md](entities.md) |
 | E35 | NER Production-Ready (Phase 3 Scale-Up) | 7 Qualitaetsverbesserungen vor Production Run (Known-Entities-Hint, Diakritik-Matching, Surname-Fallback, 4-Stufen-Konfidenz, OCR-Chunking) | 2026-03-08 | [pipeline.md](pipeline.md) |
@@ -57,7 +57,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 | E42 | `<revisionDesc>` als Screening-Status im TEI-Header | Status reist mit dem Dokument | 2026-03-15 | [pipeline.md](pipeline.md) |
 | E43 | `output/tei_final/` als Single Source of Truth | nur gescreente TEIs werden publiziert | 2026-03-15 | [pipeline.md](pipeline.md) |
 | E44 | Entity-Stopwort-Erweiterung noetig | Screening zeigt: Mensch, Est, Gott, Rolle, Wahl, Christ → False Positives | 2026-03-15 | [entities.md](entities.md) |
-| E45 | Entity-Stopwort-Erweiterung durchgefuehrt | 20 neue Eintraege, Reassembly 32 Docs, alle VALID, $0 | 2026-03-15 | [entities.md](entities.md) |
+| E45 | Entity-Stopwort-Erweiterung durchgefuehrt | 20 neue Eintraege, Reassembly 32 Docs, alle VALID | 2026-03-15 | [entities.md](entities.md) |
 | E46 | OCR-Deduplizierung als deterministische Nachbearbeitung | `ocr_dedup.py`: Token-Loops, Barcode-Artefakte, Jahrzahl-Wiederholungen | 2026-03-15 | [pipeline.md](pipeline.md) |
 | E47 | `div type="essay"` kein valider DTA-Typ | `type="text"` als generischer Ersatz fuer philosophische Essays | 2026-03-15 | [pipeline.md](pipeline.md) |
 | E48 | projektspezifisches Schema `zbz_hersch.rng` | generisches `tei_all.rng` ersetzt durch projektspezifisches Schema (aus ODD, 551 Definitionen) | 2026-03-26 | [pipeline.md](pipeline.md), [quality.md](quality.md) |
@@ -95,8 +95,8 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 
 ### Stabilitaet (LLM-Non-Determinismus, pending User-Entscheidung)
 
-- (a) **Stabilitaets-Pilot:** 5 Docs × 3 Pipeline-Re-Runs (~$1-2 API), Std-Dev der Per-Doc-CER. Aktuell `stability.status: open` im JSON.
-- (b) **Inter-Engine-CER:** zweiter OCR-Run mit anderer Engine als Cross-Validation. Mittlere Kosten.
+- (a) **Stabilitaets-Pilot:** 5 Docs × 3 Pipeline-Re-Runs, Std-Dev der Per-Doc-CER. Aktuell `stability.status: open` im JSON.
+- (b) **Inter-Engine-CER:** zweiter OCR-Run mit anderer Engine als Cross-Validation. Mittlerer Aufwand.
 
 ### Geschlossene Fragen
 

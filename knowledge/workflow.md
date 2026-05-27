@@ -188,7 +188,7 @@ Vollstaendiger Ablauf, wenn ein User eine Layout-Region korrigiert hat:
 **Was fehlt:**
 
 - Edit-History pro Objekt (wer/was/wann hat manuell ediert)
-- AI-Agent-Audit-Trails mit Konfidenz pro Entscheidung (Modell, Prompt-Version, Konfidenz, Kosten pro Call)
+- AI-Agent-Audit-Trails mit Konfidenz pro Entscheidung (Modell, Prompt-Version, Konfidenz)
 - Roll-Back-Moeglichkeit auf frueheren Edit-Stand ohne Git-History
 - Direkte Verknuepfung Region ↔ Body-Element (aktuell ueber Reading-Order implizit)
 
@@ -245,7 +245,7 @@ Eigenschaften:
 
 - Single Source of Truth pro Objekt fuer die gesamte Bearbeitungsgeschichte
 - Anzeigbar im Viewer als Provenance-Drawer (Etappe 2.11 in der UI-Welle)
-- Erweiterbar fuer AI-Agent-Audit (Modell-Hash, Prompt-Version, Konfidenz, Cost-USD)
+- Erweiterbar fuer AI-Agent-Audit (Modell-Hash, Prompt-Version, Konfidenz)
 - Roll-Back: jede Aktion verweist auf konkrete Datei in `output/...`
 - Maschinenlesbar fuer Reports, Reviews und Archive
 

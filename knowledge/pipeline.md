@@ -64,9 +64,9 @@ aus Layout-JSON + OCR ab.
 | 3b | Overlay-Generator | `scripts/layout/generate_layout_overlays.py` | PNGs + side-by-side compare | Production |
 | 4 | PAGE-XML + METS | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | `output/page_xml/` | Production |
 | 5 | **NER + Wikidata** | `scripts/ner/` (7 Module, E34/E35) | Entity-JSON + TEI-Indices (`data/entities/`) | 285/285 |
-| 5a | NER Extraction (Gemini) | `ner_extract.py` | `output/entities/{doc_id}/` | 11.685 Entities, 26.197 Mentions |
-| 5b | Entity Index | `entity_index.py` | `data/entities/*.xml` | 4.504 Eintraege |
-| 5c | Wikidata Reconciliation | `wikidata_linker.py` | `_wikidata_cache.json` | 2.101/4.504 (47%) |
+| 5a | NER Extraction (Gemini) | `ner_extract.py` | `output/entities/{doc_id}/` | siehe [entities.md](entities.md) |
+| 5b | Entity Index | `entity_index.py` | `data/entities/*.xml` | siehe [entities.md](entities.md) |
+| 5c | Wikidata Reconciliation | `wikidata_linker.py` | `_wikidata_cache.json` | siehe [entities.md](entities.md) |
 | 5d | TEI Entity Injection | `ner_inject_tei.py` | `output/tei_ner/` | 285/285 Dual-Attribut (E50) |
 | 5e | NER Evaluation | `ner_evaluate.py` | HTML-Report | Done |
 | 6 | TEI-XML (regelbasiert) | `scripts/tei/tei_generator.py` | `output/tei/` | Production |
@@ -92,7 +92,7 @@ im Viewer gesetzt, History im Pro-Objekt-Manifest, Projektion in den `<revisionD
 
 Vier aktive Engines in zwei Rollen. Modellwahl ist weniger entscheidend als Pipeline-Design:
 DeepSeek und Mistral liefern aehnliche CER. Pipeline-Investitionen lohnen sich (Chunking,
-Page-Matching, Quality-Routing). API-Kosten vernachlaessigbar (~25 USD fuer 7.200 Seiten).
+Page-Matching, Quality-Routing). API-Kosten vernachlaessigbar.
 LLM-Postkorrektur schadet bei CER <5% (E17).
 
 ### Mistral Document AI — OCR Production
@@ -140,7 +140,6 @@ Landscape/multi-column sind die harten Faelle (~64% bad vs. ~14% Portrait).
 | Modell | `gemini-3.1-flash-lite-preview` |
 | Rollen | Layout-Korrektur, Layout-Detect (Fallback fuer Docling-Failures, ~15%), Dokumentklassifikation, OCR-Korrektur, TEI-Refinement, NER-Extraktion |
 | SDK | `google-genai` |
-| Kosten | $0.25 / 1M Input, $1.50 / 1M Output |
 
 3 Modi in `layout_qa_gemini.py`:
 - `--mode qa` — Overlay-PNG + Layout-JSON → Gemini, Labels korrigiert, False Positives entfernt, Quality-Score 0-100
@@ -151,7 +150,7 @@ Strukturierte Outputs via `response_schema`. Beide Versionen bleiben erhalten (`
 
 ### Architektur-Entscheidung (E19/E20)
 
-Anforderungen: strukturelle Erkennung, BBox, FR/DE, <100 USD fuer 7.200 Seiten, PAGE-XML 2013-07-15.
+Anforderungen: strukturelle Erkennung, BBox, FR/DE, PAGE-XML 2013-07-15.
 Evaluiert (25.02.2026): Gemini, Claude, Mistral (fuer Layout), Docling, Surya, Kraken, Azure Document Intelligence.
 
 **Entscheidung:** Docling + Gemini hybrid. Docling = bester Open-Source-BBox (mAP 0.699, 17 Klassen, free, CPU-faehig).
@@ -361,8 +360,8 @@ Der juengste `<change>` bestimmt den aktuellen Status. Die Edition zeigt den Sta
 |---|---|---|
 | 0 | Pilot: Layout-Eval + OCR + TEI auf 15 Docs | Done |
 | 1 | Scale Layout: Docling + Gemini QA auf 285 Docs | Done |
-| 2 | PAGE-XML Generator + METS | Done (285 Docs, 4.108 Seiten) |
-| 3 | NER + Wikidata Linking | Done (285 Docs, 47% Linking) |
+| 2 | PAGE-XML Generator + METS | Done (285 Docs) |
+| 3 | NER + Wikidata Linking | Done (285 Docs; Linking-Quote: [entities.md](entities.md)) |
 | 4 | TEI-XML mit PAGE-XML + NER | Done (285/285 schema-valide) |
 | 5 | Extended Evaluation (CER-Benchmark) | Done — siehe [quality.md](quality.md) |
 | 6 | Production Run + fachliche Kuration | In Progress — 285/285 generiert, Workflow-Status `unverifiziert` (E66), Kuration offen |

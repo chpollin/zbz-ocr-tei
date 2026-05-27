@@ -59,7 +59,7 @@ docs/
 └── data/                        # generiert via scripts/edition/generate_edition_data.py
     ├── catalog.json             # 285 Docs (id, title, author, lang, type, page_count, streams.{ocr,layout,tei}.{status,last_at,last_by})
     ├── manifests/{doc}.json     # Mirror der Pro-Objekt-Manifeste (Workflow + History + Leerseiten, E66)
-    ├── entity_index.json        # 4504 Entities mit GND/Wikidata
+    ├── entity_index.json        # Entities mit GND/Wikidata (Zahlen: entities.md)
     ├── entity_register.json     # Cross-Doc-Aggregation
     ├── search_index.json        # Volltext fuer Doc-Suche
     ├── tei/                     # 285 finale TEIs (*_final.xml; legacy *_screening_legacy.json bleibt gitignored im output/)

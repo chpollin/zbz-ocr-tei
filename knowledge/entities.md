@@ -81,6 +81,10 @@ API (kein LLM fuer IDs — verhindert Halluzinationen). Manuelle Pruefung im Pip
 
 ## Production-Stand (April 2026)
 
+Single Source of Truth fuer die Entity-Zahlen — regenerierbar via
+`python -m scripts.ner.entity_index --stats`. Andere Docs verweisen hierher,
+statt diese Zahlen zu wiederholen.
+
 | Komponente | Wert |
 |---|---|
 | NER-Extraction | 285 Docs, 11.685 unique Entities, 26.197 Mentions |
@@ -213,7 +217,7 @@ pruefen: Entities mit hoher Mention-Zahl aber niedrigem `docs_count` koennten Fe
 
 **Erweiterte Stopwort-Liste (E45, 20 Eintraege):** Mensch, Der Mensch, Wahl, Rolle, Angst,
 Geist, Ursprung, Gott, Christ, Philosophie, Demokratie, Philosophen, Marxisten, Est, Homme,
-Schweizer, Zuercher, Zahler, Zeit, Gesamtschule. Reassembly 32 Docs ohne Kosten ($0).
+Schweizer, Zuercher, Zahler, Zeit, Gesamtschule. Reassembly 32 Docs.
 
 ### Bekannte Hersch-Kontextentitaeten (Seeds)
 

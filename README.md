@@ -8,9 +8,9 @@ Fully automated end-to-end pipeline for 286 documents (~4,100 pages) from the es
 
 ```
 PDF-Scans -> Images -> OCR (Mistral) ──┐
-                                       ├──► TEI-XML ──► Quality Screening
-             (PNG)  -> Layout (Docling)─┘    (Unified:    (Agent-Based,
-                       + Gemini-QA           Scaffold +    7 layers)
+                                       ├──► TEI-XML ──► workflow status
+             (PNG)  -> Layout (Docling)─┘    (Unified:    per stream
+                       + Gemini-QA           Scaffold +    (E66/E67)
                        │                     Gemini +
                        │                     Assembly)
                        ▼
@@ -35,9 +35,9 @@ the planned `_complete.xml` variant with embedded `<facsimile>` / `<zone>`.
 | Layout QA/Detect | Gemini Flash Lite | Done |
 | PAGE-XML + METS | Rule-based generator | Done |
 | NER extraction | Gemini Flash Lite (6 entity types) | Done |
-| Entity Index + Wikidata/GND linking | Wikidata API + TEI indices | Done (47 % linked) |
+| Entity Index + Wikidata/GND linking | Wikidata API + TEI indices | Done |
 | TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | Done (285/285) |
-| Agent-Based Quality Screening | Claude Code (7-layer review) | Done (242 Approved, 43 With Notes) |
+| Workflow status per stream | Manifest + revisionDesc projection | Done (replaces agent screening, E66/E67) |
 
 Current metrics: see [Korpus-Uebersicht](https://dhcraft.github.io/zbz-ocr-tei/) (GitHub Pages) or `docs/index.html` locally. Detailed status: [knowledge/projekt.md](knowledge/projekt.md).
 
@@ -45,7 +45,7 @@ Current metrics: see [Korpus-Uebersicht](https://dhcraft.github.io/zbz-ocr-tei/)
 
 Three static HTML pages under `docs/`, deployed via GitHub Pages:
 
-- `docs/index.html` &mdash; corpus overview with thumbnails, search, filters, screening progress
+- `docs/index.html` &mdash; corpus overview with thumbnails, search, filters, workflow status
 - `docs/viewer.html` &mdash; per-document inspector: OpenSeadragon facsimile (pan/zoom, E58) + layout overlay + OCR/TEI panel + per-panel edit toggle (E60)
 - `docs/about.html` &mdash; project info
 
@@ -157,7 +157,7 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | Viewer (frontend architecture, OSD, edit toggles, export) | [knowledge/viewer.md](knowledge/viewer.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
 | Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
-| Decisions + open items (E1–E61) | [knowledge/decisions.md](knowledge/decisions.md) |
+| Decisions + open items (E1–E68) | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team

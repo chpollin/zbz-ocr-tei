@@ -51,7 +51,7 @@ KNOWLEDGE_CLAIMS = {
     "pdfs": 286,               # projekt.md: als PDF geliefert
     "tei_produced": 285,       # projekt.md: produktiv (finales TEI)
     "pages_total": 7186,       # projekt.md: Seiten bibliografisch (Masterfile)
-    "pages_processed": 4117,   # projekt.md: Seiten verarbeitet (OCR)
+    "pages_processed": 4122,   # projekt.md: Seiten verarbeitet (OCR-md, volatil bei Re-OCR)
 }
 
 
@@ -338,6 +338,30 @@ def reconcile(t0, t1, t2, t3):
     }
 
 
+def delivered_distribution(t0, pdf_ids):
+    """Verteilungen (Genre/Sprache/Jahr) ueber die GELIEFERTEN Dokumente.
+
+    Schnittmenge Masterfile-Metadaten und gelieferte PDFs (n=286), im Gegensatz
+    zu den Katalog-Verteilungen in Tier 0 (n=325). Das ist die Sicht, mit der
+    projektseitig gearbeitet wird ("nur gelieferte Daten").
+    """
+    by_id = t0.get("by_id", {})
+    pdf_ids = set(pdf_ids)
+    delivered = [by_id[i] for i in pdf_ids if i in by_id]
+    jahre = [d["jahr"] for d in delivered if d["jahr"]]
+    return {
+        "n": len(delivered),
+        "not_in_masterfile": sorted(pdf_ids - set(by_id), key=_id_sort_key),
+        "publform": dict(Counter(d["publform"] for d in delivered).most_common()),
+        "sprache": dict(Counter(d["sprache"] for d in delivered).most_common()),
+        "jahr": {
+            "min": min(jahre) if jahre else None,
+            "max": max(jahre) if jahre else None,
+            "count_1970_1989": sum(1 for j in jahre if 1970 <= j <= 1989),
+        },
+    }
+
+
 def drift_check(t0, t1, t2, t3):
     computed = {
         "masterfile_texts": t0.get("texts"),
@@ -385,6 +409,7 @@ def build_report():
         "tier2_pipeline": t2,
         "tier3_doc_metadata": t3,
         "reconciliation": reconcile(t0, t1, t2, t3),
+        "delivered_distribution": delivered_distribution(t0, t1.get("ids", [])),
         "drift_vs_knowledge": drift_check(t0, t1, t2, t3),
     }
 
@@ -433,6 +458,21 @@ def render_markdown(rep):
     md.append(f"| verarbeitet (OCR-Markdown) | {pcs['ocr_md']} | Pipeline-Seiten |")
     md.append(f"| verarbeitet (TEI <pb>) | {pcs['tei_pb']} | TEI-Seiten |")
     md.append(f"| Gemini page_count-Summe | {pcs['gemini_page_count_field']} | abgeleitet (nicht echt) |")
+    md.append("")
+
+    dd = rep["delivered_distribution"]
+    md.append(f"## Gelieferte Dokumente (n={dd['n']}) -- Verteilungen")
+    md.append("")
+    md.append("Schnittmenge Masterfile-Metadaten und gelieferte PDFs -- die projektseitig "
+              "massgebliche Sicht (im Gegensatz zur Katalog-Ebene n=325 in Tier 0).")
+    md.append(f"Jahr {dd['jahr']['min']}-{dd['jahr']['max']}, "
+              f"{dd['jahr']['count_1970_1989']} in 1970-1989.")
+    if dd["not_in_masterfile"]:
+        md.append(f"Geliefert, aber nicht in Masterfile: {dd['not_in_masterfile']}")
+    md.append("")
+    md.append(_dist_table("Genre / PublForm (geliefert)", dd["publform"]))
+    md.append("")
+    md.append(_dist_table("Sprache (geliefert)", dd["sprache"]))
     md.append("")
 
     md.append("## Drift gegen Knowledge-Base")
