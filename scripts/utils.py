@@ -94,7 +94,7 @@ def pdf_to_images_pages(
 
         bitmap = pdf[page_num].render(scale=dpi / 72)
         pil_image = bitmap.to_pil()
-        image_path = output_dir / f"{pdf_path.stem}_p{page_num+1:03d}.png"
+        image_path = output_dir / page_image_name(pdf_path.stem, page_num + 1)
         pil_image.save(str(image_path), "PNG")
         image_paths.append(image_path)
 
@@ -115,6 +115,32 @@ def extract_page_num(filename: str) -> int:
     if not m:
         raise ValueError(f"Keine Seitennummer in: {filename}")
     return int(m.group(1))
+
+
+# ---------------------------------------------------------------------------
+# Seitenpfad-Namen: EINE Stelle fuer die (bewusst asymmetrische) Padding-Konvention.
+# .md ist ungepaddet ({doc}_p1.md), Seitenbild/Layout-JSON 3-stellig ({doc}_p001.*).
+# Module sollen diese Helfer nutzen statt die Konvention je Aufrufer neu zu bauen
+# (Namens-Mismatch beim Laden war die haeufigste stille Falle).
+# ---------------------------------------------------------------------------
+
+def page_md_name(doc_id: str, page: int) -> str:
+    """OCR-Markdown-Dateiname (ungepaddet): '2310_p7.md'."""
+    return f"{doc_id}_p{page}.md"
+
+
+def page_image_name(doc_id: str, page: int) -> str:
+    """Seitenbild-Dateiname (3-stellig gepaddet): '2310_p007.png'."""
+    return f"{doc_id}_p{page:03d}.png"
+
+
+def page_layout_name(doc_id: str, page: int, variant: str = "") -> str:
+    """Layout-JSON-Dateiname (3-stellig gepaddet). variant: '' | '_gemini' | '_curated'.
+
+    page_layout_name('2310', 7)            -> '2310_p007_layout.json'
+    page_layout_name('2310', 7, '_gemini') -> '2310_p007_layout_gemini.json'
+    """
+    return f"{doc_id}_p{page:03d}_layout{variant}.json"
 
 
 def load_json(path: Path) -> dict | None:

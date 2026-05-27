@@ -17,6 +17,7 @@ from scripts.config import (
     MISTRAL_RESULTS_DIR,
     OCR_CURATED_DIR,
 )
+from scripts.utils import page_layout_name, page_md_name
 
 # OCR-Prioritaet: menschlich kuratiert zuerst, dann beste Korrektur, dann Basis-OCR.
 # OCR_CURATED_DIR wird vom Viewer per File System Access API direkt beschrieben
@@ -39,7 +40,7 @@ _OCR_DIRS = [d for d, _ in OCR_SOURCES]
 def load_ocr_text(doc_id: str, page: int) -> str | None:
     """Laedt OCR-Text: kuratiert > Gemini B > Gemini A > LLM C > Mistral."""
     for base_dir in _OCR_DIRS:
-        path = base_dir / f"{doc_id}_p{page}.md"
+        path = base_dir / page_md_name(doc_id, page)
         if path.exists():
             return path.read_text(encoding="utf-8")
     return None
@@ -53,7 +54,7 @@ def load_ocr_text_with_source(doc_id: str, page: int) -> tuple:
     PAGE-XML-Generator die Provenienz angeben, ohne die Kette zu duplizieren.
     """
     for base_dir, label in OCR_SOURCES:
-        path = base_dir / f"{doc_id}_p{page}.md"
+        path = base_dir / page_md_name(doc_id, page)
         if path.exists():
             return path.read_text(encoding="utf-8"), label
     return None, None
@@ -119,10 +120,9 @@ def load_layout_gemini(doc_id: str, page: int) -> dict | None:
     Gemini-JSON hat evtl. kein image_width/image_height -- wird aus
     Docling-JSON ergaenzt falls vorhanden.
     """
-    padded = str(page).zfill(3)
-    curated_path = LAYOUT_DIR / doc_id / f"{doc_id}_p{padded}_layout_curated.json"
-    gemini_path = LAYOUT_DIR / doc_id / f"{doc_id}_p{padded}_layout_gemini.json"
-    docling_path = LAYOUT_DIR / doc_id / f"{doc_id}_p{padded}_layout.json"
+    curated_path = LAYOUT_DIR / doc_id / page_layout_name(doc_id, page, "_curated")
+    gemini_path = LAYOUT_DIR / doc_id / page_layout_name(doc_id, page, "_gemini")
+    docling_path = LAYOUT_DIR / doc_id / page_layout_name(doc_id, page)
 
     # Prioritaet: menschlich kuratiert (Viewer-Direktschreiben) > Gemini > Docling
     layout = None

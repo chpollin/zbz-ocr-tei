@@ -31,6 +31,7 @@ from scripts.core.loaders import (
     discover_pages,
     load_ocr_text,
 )
+from scripts.utils import page_layout_name
 
 
 # ---------------------------------------------------------------------------
@@ -99,8 +100,7 @@ def get_document_metadata(doc_id: str) -> dict | None:
 
 def load_layout(doc_id: str, page: int) -> dict | None:
     """Laedt Layout-JSON fuer eine Seite."""
-    padded = str(page).zfill(3)
-    path = LAYOUT_DIR / doc_id / f"{doc_id}_p{padded}_layout.json"
+    path = LAYOUT_DIR / doc_id / page_layout_name(doc_id, page)
     if path.exists():
         return json.loads(path.read_text(encoding="utf-8"))
     return None

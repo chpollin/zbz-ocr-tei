@@ -17,6 +17,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from scripts.config import SCANS_DIR, IMAGES_DIR, WEB_DPI
+from scripts.utils import page_image_name
 
 
 def extract_pdf_pages(pdf_path: Path, output_dir: Path, dpi: int = 150) -> dict:
@@ -47,8 +48,8 @@ def extract_pdf_pages(pdf_path: Path, output_dir: Path, dpi: int = 150) -> dict:
         bitmap = page.render(scale=dpi/72)
         pil_image = bitmap.to_pil()
 
-        # Dateiname: {doc_id}_p{page:03d}.png
-        filename = f"{doc_id}_p{i+1:03d}.png"
+        # Dateiname: {doc_id}_p{page:03d}.png (zentral in scripts.utils.page_image_name)
+        filename = page_image_name(doc_id, i + 1)
         image_path = doc_output_dir / filename
         pil_image.save(str(image_path), "PNG", optimize=True)
 
