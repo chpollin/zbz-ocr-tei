@@ -30,6 +30,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from scripts.config import (
     DOC_METADATA_PATH,
     GEMINI_API_KEY,
+    LAYOUT_DIR,
+    OCR_CURATED_DIR,
     TEI_UNIFIED_DIR,
 )
 from scripts.core.loaders import (
@@ -37,6 +39,7 @@ from scripts.core.loaders import (
     discover_pages,
     skip_jstor_cover,
 )
+from scripts.utils import page_layout_name, page_md_name
 from scripts.core.masterfile import mmsid_for
 from scripts.tei.tei_generator import get_document_metadata
 from scripts.tei.tei_step1 import process_page_step1
@@ -48,6 +51,34 @@ from scripts.tei.tei_step3 import assemble_document
 def _get_layout_qa():
     import scripts.layout.layout_qa_gemini as m
     return m
+
+
+def _refined_is_stale(doc_id: str, page: int, refined_path: Path) -> bool:
+    """True, wenn eine im Viewer kuratierte OCR-/Layout-Datei NEUER ist als der
+    Step-2-Cache (_refined.xml) dieser Seite.
+
+    Nur im --reassemble-Pfad relevant: dann hat die Kuration das Gemini-Refinement
+    noch nicht durchlaufen, und Step 2 wird fuer GENAU DIESE Seite neu gerechnet,
+    damit die Korrektur ins finale TEI gelangt. Sonst assembliert Step 3 aus dem
+    refined-Cache am frisch regenerierten Scaffold (und damit an der Kuration) vorbei.
+    Haelt die Gemini-Calls auf die kuratierten Seiten beschraenkt, statt wie --force
+    das ganze Dokument neu zu refinen.
+    """
+    try:
+        ref_mtime = refined_path.stat().st_mtime
+    except OSError:
+        return True
+    candidates = (
+        OCR_CURATED_DIR / page_md_name(doc_id, page),
+        LAYOUT_DIR / doc_id / page_layout_name(doc_id, page, "_curated"),
+    )
+    for cand in candidates:
+        try:
+            if cand.stat().st_mtime > ref_mtime:
+                return True
+        except OSError:
+            continue
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -169,7 +200,15 @@ def process_document(
         if max_step >= 2:
             refined_path = doc_dir / f"{doc_id}_p{str(page).zfill(3)}_refined.xml"
 
-            if refined_path.exists() and not force:
+            # Step-2-Cache nutzen, AUSSER --force, ODER (im --reassemble-Pfad) eine im
+            # Viewer kuratierte OCR/Layout-Datei ist neuer als der Cache -> dann das
+            # Refinement fuer DIESE Seite neu rechnen, damit die Kuration ins finale TEI
+            # gelangt (sonst assembliert Step 3 aus dem stale Cache an der Kuration vorbei).
+            use_cache = refined_path.exists() and not force
+            if use_cache and reassemble and _refined_is_stale(doc_id, page, refined_path):
+                use_cache = False
+
+            if use_cache:
                 refined = refined_path.read_text(encoding="utf-8")
             elif client or dry_run:
                 refined = process_page_step2(
