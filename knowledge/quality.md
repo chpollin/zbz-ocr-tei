@@ -368,7 +368,7 @@ bestaetigt durch unsere Haiku-Postkorrektur (+0.10%, Variant C).
 
 ## Korpus-weite Schaetzung (Proxy-Framework)
 
-Direkter CER nur fuer 19 Docs (siehe Headline). Fuer die anderen 266 brauchen wir Proxies.
+Direkter CER nur fuer 25 Docs (siehe Headline). Fuer die anderen 260 brauchen wir Proxies.
 
 ### Methode: Dictionary Hit Rate
 

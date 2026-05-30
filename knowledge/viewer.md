@@ -56,6 +56,7 @@ docs/
 │       ├── tei-render.js            # TEI-XML → DOM
 │       ├── layout-editor.js         # BBox Drag/Resize/Add/Delete + Reading-Order
 │       ├── transcription-editor.js  # OCR/TEI/XML mit contenteditable
+│       ├── fs-access.js             # Direkt-Schreiben in den Working Tree (File System Access API, E72)
 │       └── download.js              # Datei-Download (JSON/MD/XML)
 └── data/                        # generiert via scripts/edition/generate_edition_data.py
     ├── catalog.json             # 285 Docs (id, title, author, lang, type, page_count, streams.{ocr,layout,tei}.{status,last_at,last_by})
@@ -66,7 +67,7 @@ docs/
     └── examples/                # Legacy: 4 DEMO-Docs (Backward-Kompatibilitaet)
 ```
 
-**Volumen:** 4 HTML (~520 Z.), 4 CSS (~1.420 Z.), 7 JS (1.832 Z.). Die Korpus-Uebersicht
+**Volumen:** 5 HTML, 4 CSS, 8 JS-Module (alle als IIFE im `ZBZ.*`-Namespace). Die Korpus-Uebersicht
 (`index.html` + `catalog.js` + `catalog.css`) und die About-Seite kamen nach der E56-Radikalkur
 hinzu (Commit „Korpus-Uebersicht + Top-Nav"); die Methode-Seite folgte 2026-05-26 (E62).
 

@@ -7,7 +7,12 @@
 .viewer-body {
   background: var(--h-bg);
   color: var(--h-text);
-  min-height: 100vh;
+  /* Feste Viewport-Hoehe statt min-height: bindet die Flex-Kette, damit die Panels
+     INTERN scrollen (#text-body overflow:auto). Mit min-height:100vh wuchs der Body bei
+     langem OCR-/TEI-Text ueber den Viewport, die .panels-Grid streckte beide Spalten auf
+     Texthoehe und der OSD-Faksimile-Container wurde tausende px hoch -> Bild unsichtbar. */
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -236,7 +241,7 @@
   border-radius: var(--h-radius-sm);
   transition: background var(--h-transition-fast), color var(--h-transition-fast);
 }
-.mode-btn:hover { background: rgba(44,40,37,0.04); color: var(--h-text); }
+.mode-btn:hover { background: var(--h-anthrazit-subtle); color: var(--h-text); }
 .mode-btn[aria-pressed="true"] {
   background: var(--h-anthrazit);
   color: var(--h-text-inverse);
@@ -339,7 +344,7 @@
   transition: background var(--h-transition-fast), color var(--h-transition-fast), border-color var(--h-transition-fast);
 }
 .panel__edit-toggle:hover {
-  background: rgba(44,40,37,0.04);
+  background: var(--h-anthrazit-subtle);
   color: var(--h-text);
 }
 .panel__edit-toggle[aria-pressed="true"] {
@@ -409,6 +414,23 @@
   min-height: 60vh;
   background: var(--h-bg-alt);
 }
+
+/* Lade-Hinweis ueber dem OSD-Container, bis das (ggf. mehrere MB grosse) PNG
+   dekodiert ist. Wird in renderFacsimileOsd() bei 'open'/'open-failed' entfernt. */
+.facsimile-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+  pointer-events: none;
+}
+.panel__body--canvas { position: relative; }
 
 /* OSD-Navigations-Buttons an Hersch-Design angleichen */
 .openseadragon-canvas:focus { outline: none; }
@@ -535,7 +557,6 @@
 }
 .tei__head { font-family: var(--h-font-heading); font-weight: 500; font-size: var(--h-lg); margin: 1em 0 0.4em; color: var(--h-text); }
 .tei__p { margin: 0 0 0.8em; }
-.tei__lb { display: block; height: 0; }
 .tei__pb {
   display: block;
   margin: 1.5em 0;
@@ -560,6 +581,8 @@
 .tei__hi--u { text-decoration: underline; }
 .tei__hi--g { letter-spacing: 0.15em; }
 .tei__hi--k { font-variant: small-caps; letter-spacing: 0.05em; }
+.tei__hi--sup { vertical-align: super; font-size: 0.75em; }
+.tei__hi--sub { vertical-align: sub;   font-size: 0.75em; }
 .tei__foreign {
   font-style: italic;
   color: var(--h-preussischblau);

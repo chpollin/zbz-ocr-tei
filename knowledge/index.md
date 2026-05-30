@@ -23,10 +23,10 @@ SSoT pro Domaene, eine Datei pro Thema.
 | [pipeline.md](pipeline.md) | Wie ist die Pipeline aufgebaut? Stufen PDF → TEI, Engines (Mistral, Docling, Gemini), TEI-Mapping (DTA + ZBZ), Round-Trip-Sektion |
 | [workflow.md](workflow.md) | Wie laeuft der End-to-End-Datenfluss? Datenfluss-Diagramm, Datenformate pro Stufe, Save-Mechanismus im Viewer, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante, Roadmap |
 | [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Median 1.83%), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Workflow-Status pro Strom (E66, ersetzt Agent-Screening) |
-| [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay (OpenSeadragon E58), OCR/TEI-Editor, Edit-Toggle pro Panel (E60), Export-Modul (E61), Datei-Download |
+| [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay (OpenSeadragon E58), OCR/TEI-Editor, Edit-Toggle pro Panel (E60), Export-Modul (E61, geplant), Datei-Download |
 | [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |
 | [methodik.md](methodik.md) | Wie arbeiten wir? Epistemische Infrastruktur, Verifikationskaskade, Critical Expert in the Loop, Dreischichtung, operative CLI |
-| [decisions.md](decisions.md) | Was ist entschieden? E1-E72, offene Punkte (O8 teilweise, O13, O18), Risiken |
+| [decisions.md](decisions.md) | Was ist entschieden? E1-E75, offene Punkte (O8 teilweise, O13, O18), Risiken |
 | [journal.md](journal.md) | Was wurde wann gemacht? kompakter Sitzungs-Ueberblick (Jan-Mai 2026), wiederkehrende Muster |
 
 Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Regeln).
@@ -80,7 +80,7 @@ journal         — chronologisch, kompakter Ueberblick
 | OpenSeadragon-Faksimile (E58) | Faksimile-Renderer im View-Modus mit Pan/Zoom/Rotate, CDN-Bezug | [viewer.md](viewer.md) |
 | Mode-Edit-Toggle pro Panel (E60) | Faksimile-Panel "Layout", Text-Panel "Text" (E64), aktiv = anthrazit; keine globale Mode-Leiste | [viewer.md](viewer.md) |
 | Viewer = Mistral-Edition (E64) | Kein OCR-Quellen-Umschalter im Viewer; Alt-Engines (Gemini/LLM) sind Benchmark-only; Doc-Subbar + Toolbar fusioniert | [viewer.md](viewer.md) |
-| Export-Modul (E61) | JSZip-basierter Per-Doc-Drawer + Bulk-Export aus Korpus-Uebersicht | [viewer.md](viewer.md) |
+| Export-Modul (E61, geplant) | JSZip-basierter Per-Doc-Drawer + Bulk-Export aus Korpus-Uebersicht — im Code noch nicht eingebunden | [viewer.md](viewer.md) |
 | Methode-Seite (E62) | `docs/methode.html` mit Headline-CER, stratifizierten Werten, Limitations, Literatur-Vergleich (statisch) | [viewer.md](viewer.md) |
 | End-to-End-Workflow | Datenfluss + Save-Mechanismus + Round-Trip + Provenance-Konzept + geplante `_complete.xml`-Variante | [workflow.md](workflow.md) |
 | Manueller Round-Trip | User-Edit -> Download -> manuelles Ablegen -> `tei_unified --reassemble` -> regenerierte TEI | [workflow.md §3.3](workflow.md), [pipeline.md §Round-Trip](pipeline.md) |

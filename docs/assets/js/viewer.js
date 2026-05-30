@@ -377,6 +377,12 @@
         const container = ZBZ.el('div', { cls: 'facsimile-osd', attrs: { id: 'osd-container' } });
         refs.imageBody.appendChild(container);
 
+        // Lade-Hinweis: OSD laedt das komplette (oft mehrere MB grosse) PNG ungetilet und
+        // dekodiert es vor der ersten Darstellung -> ohne Hinweis bliebe das Panel sekundenlang
+        // leer. Wird bei 'open' (Erfolg) bzw. 'open-failed' (Fehler ersetzt innerHTML) entfernt.
+        const loading = ZBZ.el('div', { cls: 'facsimile-loading', text: 'Lade Faksimile…' });
+        refs.imageBody.appendChild(loading);
+
         // Layout vorab laden, Overlays werden nach OSD-'open' angehaengt
         const layout = await fetchLayout(doc.id, page);
         state.layout = layout;
@@ -410,6 +416,7 @@
         });
 
         state.osdViewer.addHandler('open', () => {
+            loading.remove();
             if (!state._isBlank && layout && layout.regions) addOsdOverlays(state.osdViewer, layout.regions);
         });
 

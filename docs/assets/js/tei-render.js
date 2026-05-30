@@ -11,7 +11,8 @@
 
     const HI_MAP = {
         '#b': 'tei__hi--b', '#i': 'tei__hi--i', '#u': 'tei__hi--u',
-        '#g': 'tei__hi--g', '#k': 'tei__hi--k'
+        '#g': 'tei__hi--g', '#k': 'tei__hi--k',
+        '#sup': 'tei__hi--sup', '#sub': 'tei__hi--sub'
     };
 
     /**

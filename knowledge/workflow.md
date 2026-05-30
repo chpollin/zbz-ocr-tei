@@ -361,7 +361,7 @@ automatisiert) und die geplante Pipeline-Welle (`_complete.xml` + `provenance.js
 - [pipeline.md](pipeline.md) — Pipeline-Stufen, Engines, TEI-Mapping
 - [viewer.md](viewer.md) — Viewer-Architektur, Persistenz, Design-System
 - [quality.md](quality.md) — CER, Screening, Validierung
-- [decisions.md](decisions.md) — E1–E72, offene Punkte
+- [decisions.md](decisions.md) — E1–E75, offene Punkte
 - [methodik.md](methodik.md) — Promptotyping, Verifikationskaskade, Dreischichtung
 - [journal.md](journal.md) — chronologische Sitzungs-Historie
 - [index.md](index.md) — Navigation + Schluesselkonzepte
