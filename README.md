@@ -41,13 +41,15 @@ Current metrics: see [Korpus-Uebersicht](https://chpollin.github.io/zbz-ocr-tei/
 
 ## Frontend
 
-Three static HTML pages under `docs/`, deployed via GitHub Pages:
+Five static HTML pages under `docs/`, deployed via GitHub Pages:
 
 - `docs/index.html` &mdash; corpus overview with thumbnails, search, filters, workflow status
 - `docs/viewer.html` &mdash; per-document inspector: OpenSeadragon facsimile (pan/zoom, E58) + layout overlay + OCR/TEI panel + per-panel edit toggle (E60)
+- `docs/methode.html` &mdash; quality & method (CER headline, stratified values, limitations, literature)
 - `docs/about.html` &mdash; project info
+- `docs/impressum.html` &mdash; legal notice
 
-All data is loaded from static JSON/XML/MD files under `docs/data/`. No backend. Editor changes (layout corrections, transcription edits) are exported as file downloads; full round-trip to the pipeline is manual (see [knowledge/workflow.md](knowledge/workflow.md)).
+All data is loaded from static JSON/XML/MD files under `docs/data/`. No backend. Editor changes (layout corrections, transcription edits) are written directly into the working tree via the File System Access API (Chromium, "Ordner verbinden", E72) or exported as file downloads; the round-trip back into the pipeline is manual (see [knowledge/workflow.md](knowledge/workflow.md)).
 
 Frontend dependencies are loaded from CDN at runtime — no build pipeline:
 
@@ -77,10 +79,12 @@ zbz-ocr-tei/
   docs/                   # Static frontend (GitHub Pages source)
     index.html            # Corpus overview
     viewer.html           # Per-document viewer
+    methode.html          # Quality & method
     about.html            # Project info
-    css/                  # tokens.css, base.css, viewer.css, catalog.css
-    js/                   # core.js, viewer.js, catalog.js, tei-render.js, ...
-    data/                 # catalog.json, pages/, thumbs/, tei/
+    impressum.html        # Legal notice
+    assets/css/           # tokens.css, base.css, viewer.css, catalog.css
+    assets/js/            # core.js, viewer.js, catalog.js, tei-render.js, layout-editor.js, ...
+    data/                 # catalog.json, pages/, thumbs/, manifests/, tei/
     images/               # Page scans (4 DEMO docs committed: 1000, 1330, 1540, 2310; rest local-only, ~4 GB)
   data/                   # Input + reference data
     source/               # ZBZ delivery, immutable input (mostly not versioned)
@@ -151,7 +155,7 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | Viewer (frontend architecture, OSD, edit toggles, export) | [knowledge/viewer.md](knowledge/viewer.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
 | Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
-| Decisions + open items (E1–E72) | [knowledge/decisions.md](knowledge/decisions.md) |
+| Decisions + open items (E1–E75) | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team

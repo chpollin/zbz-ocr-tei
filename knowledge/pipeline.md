@@ -396,11 +396,11 @@ Mechanismus.
 Konkrete Schritte fuer einen Layout-Edit:
 
 1. User editiert im Viewer, klickt "Layout ↓" → `{doc}_p{N}_layout_curated.json` landet im Browser-Download-Ordner.
-2. User legt die Datei manuell unter `output/layout/{doc}_curated/` ab (oder ueberschreibt direkt das `_layout_gemini.json`).
-3. Pipeline-Re-Run: `python -m scripts.tei.tei_unified --doc {ID} --reassemble` regeneriert TEI mit dem kuratierten Layout als Input. `--reassemble` benutzt den Gemini-Step-2-Cache (kostenlos).
+2. User legt die Datei manuell unter `output/layout/{doc}/{doc}_p{NNN}_layout_curated.json` ab (der Loader bevorzugt diese `_curated`-Variante; alternativ schreibt der Viewer sie via "Ordner verbinden" direkt dorthin).
+3. Pipeline-Re-Run: `python -m scripts.tei.tei_unified --doc {ID} --reassemble` regeneriert das TEI mit der kuratierten OCR/Layout als Input. `--reassemble` nutzt den Gemini-Step-2-Cache (kostenlos fuer unveraenderte Seiten); Seiten mit neuerer kuratierter OCR/Layout werden gezielt neu refined (je 1 Gemini-Call), damit die Korrektur ins finale TEI gelangt.
 4. `python -m scripts.tei.tei_add_revision --doc {ID}` schreibt `<revisionDesc>` neu.
 5. `python -m scripts.tei.tei_validator --doc {ID}` validiert.
-6. `python -m scripts.edition.generate_edition_data --doc {ID}` regeneriert die Frontend-Mirrors.
+6. `python -m scripts.edition.generate_edition_data --mirror-only` regeneriert die Frontend-Mirrors (alle Docs; es gibt keinen `--doc`-Scope).
 
 Aktuelle Manken: Schritte 3-6 sind nicht in einem Wrapper-Script automatisiert.
 Keine Konvention-Erzwingung fuer den Ablage-Pfad. Kein Auto-Save im Browser

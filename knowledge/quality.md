@@ -357,7 +357,7 @@ Run-zu-Run-Varianz? Bootstrap-CIs erfassen nur Sampling-Unsicherheit, nicht Mode
 | Transkribus-Doku | Richtwert | allg. | 0.5-2% |
 
 **Eigene Position:** Beste Docs 0.3-0.8% (State of the Art), Median 1.83% besser als Transkribus
-allein (3.67%) und Gemini 2.5 Pro zero-shot (3.36%). 13/19 Docs unter 3% (68% des Korpus).
+allein (3.67%) und Gemini 2.5 Pro zero-shot (3.36%).
 
 Kernerkenntnisse: (1) multimodale Post-Korrektur uebertrifft reine Text-Post-Korrektur deutlich.
 (2) LLM-Post-Korrektur ist sprachabhaengig ("No Free Lunches", Kanerva 2025). (3) Gemini-Modelle

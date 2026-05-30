@@ -147,7 +147,7 @@ Vollstaendiger Ablauf, wenn ein User eine Layout-Region korrigiert hat:
    ```bash
    python -m scripts.tei.tei_unified --doc {ID} --reassemble
    ```
-   Der `--reassemble`-Flag macht Step 1 (Scaffold) und Step 3 (Assembly) neu, nutzt Step-2-Cache (Gemini-Refinement bleibt). Damit reproduziert sich der TEI inkl. der manuellen Layout-Korrektur, kostenlos (kein neuer Gemini-Call).
+   Der `--reassemble`-Flag macht Step 1 (Scaffold aus kuratierter OCR/Layout) und Step 3 (Assembly) neu und nutzt den Gemini-Step-2-Cache. Seiten ohne neue Kuration bleiben kostenlos; Seiten mit neuerer kuratierter OCR/Layout werden gezielt neu von Gemini refined (je 1 Call), damit die Korrektur ins finale TEI gelangt (sonst assembliert Step 3 aus dem stale Cache an der Kuration vorbei). Wichtig: Gemini re-derivt dabei den Text — eine OCR-Korrektur ist ein Vorschlag, kein Verbatim-Durchgriff. Fuer wortgenaue Textaenderungen den TEI-XML-Modus nutzen; er schreibt `output/tei_final/{doc}_final.xml` direkt, an der Pipeline vorbei (verbatim, deterministisch).
 5. **revisionDesc-Update**:
    ```bash
    python -m scripts.tei.tei_add_revision --doc {ID}
@@ -159,7 +159,7 @@ Vollstaendiger Ablauf, wenn ein User eine Layout-Region korrigiert hat:
    ```
 7. **Frontend-Daten regenerieren**:
    ```bash
-   python -m scripts.edition.generate_edition_data --doc {ID}
+   python -m scripts.edition.generate_edition_data --mirror-only
    ```
    Aktualisiert `docs/data/pages/{doc}/` (inkl. `{doc}_final.xml`).
 

@@ -149,7 +149,7 @@ python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare     #
 ```bash
 python -m scripts.tei.tei_unified --doc {DOC_ID}                        # Standard (3 Stufen)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --step 1               # nur Scaffold (kostenlos)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble           # Re-Assembly (kostenlos)
+python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble           # Re-Assembly (Gemini-Cache; kuratierte Seiten je 1 Call)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --force                # alles neu (inkl. Gemini)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --dry-run              # Prompt-Vorschau
 python -m scripts.tei.tei_unified --all --reassemble                    # Korpus Re-Assembly
@@ -192,7 +192,7 @@ python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare     #
 - Outputs landen in `output/`-Unterverzeichnissen (gitignored, ausser `data/curated_tei/`).
 - `--dry-run` steht bei allen API-nutzenden Tools zur Verfuegung. Vor kostenpflichtigen Batch-Operationen verwenden.
 - `--force` ueberschreibt gecachte Ergebnisse. Nur sinnvoll bei tatsaechlichen Upstream-Aenderungen.
-- `--reassemble` wendet alle Fixes an ohne Gemini-Calls (Step 2 aus Cache).
+- `--reassemble` wendet die regelbasierten Fixes (Step 1 Scaffold + Step 3 Assembly) an und nutzt den Gemini-Step-2-Cache; nur Seiten mit neuerer kuratierter OCR/Layout werden gezielt neu refined (je 1 Gemini-Call), damit die Kuration ins finale TEI gelangt. `--force` refined das ganze Dokument neu.
 
 ---
 

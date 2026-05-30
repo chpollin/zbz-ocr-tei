@@ -148,7 +148,7 @@ python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      
 ```bash
 python -m scripts.tei.tei_unified --doc {DOC_ID}                         # Standard (3 Stufen)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --step 1                # nur Scaffold (kostenlos)
-python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble            # Re-Assembly (kostenlos)
+python -m scripts.tei.tei_unified --doc {DOC_ID} --reassemble            # Re-Assembly (Gemini-Cache; kuratierte Seiten je 1 Call)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --force                 # alles neu (inkl. Gemini)
 python -m scripts.tei.tei_unified --doc {DOC_ID} --dry-run               # Prompt-Vorschau
 python -m scripts.tei.tei_unified --all --reassemble                     # Korpus Re-Assembly
