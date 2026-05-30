@@ -670,6 +670,17 @@
         // Editor immer detachen bevor Mode-Wechsel; ensureTextEditableState() re-attached wenn noetig
         if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
 
+        // TEI-Bearbeitung nur im XML-Modus: die gerenderte TEI laesst sich nicht zurueck-
+        // serialisieren (transcription-editor liest nur innerText) und downloadTei nimmt
+        // Edits ausschliesslich aus dem XML-Modus mit. Wuerde man hier auf der gerenderten
+        // TEI editieren, gingen die Aenderungen beim Speichern verloren. Daher beim
+        // Aktivieren von Text-Edit auf gerenderter TEI auf die XML-Quelle umschalten.
+        if (state.textEdit && state.textSource === 'tei') {
+            ZBZ.toast('TEI-Bearbeitung im XML-Modus (gerendert ist Lese-Ansicht)', 'info');
+            setTextSource('xml');   // rendert XML + ensureTextEditableState() attached den Editor
+            return;
+        }
+
         // OCR-Panel rendering wechselt: gerenderter Markdown <-> Rohtext.
         // renderTextPanel() deckt Leerseite (Hinweis) und Edit/Lese-Modus konsistent ab.
         if (state.textSource === 'ocr') {
