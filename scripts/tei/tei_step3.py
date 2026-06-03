@@ -55,8 +55,7 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
     """Erzeugt den teiHeader passend zum ausgelieferten Datenvertrag (E68-Schema).
 
     Erzeugt:
-    - <idno type="docID"> im publicationStmt (+ <idno type="MMSID"> aus
-      metadata["mmsid"], falls vorhanden -- Masterfile-Norm-ID, O8)
+    - <idno type="docID"> im publicationStmt
     - <biblStruct type={pub_form}> im sourceDesc mit <analytic> (title/author)
       + <monogr>/<imprint>/<date>
     - <profileDesc>/<langUsage> mit je einem <language ident=...> pro Sprachcode
@@ -73,7 +72,6 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
     author = xml_escape(metadata.get("author") or "Jeanne Hersch")
     date = xml_escape(metadata.get("date") or "")
     pub_form = xml_escape(metadata.get("pub_form") or "other")
-    mmsid = metadata.get("mmsid")
     lang_idents = _language_idents(metadata.get("lang") or metadata.get("language"))
 
     lines = []
@@ -86,8 +84,6 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
     lines.append("      <publicationStmt>")
     lines.append("        <publisher>ZBZ / DHCraft</publisher>")
     lines.append(f'        <idno type="docID">{xml_escape(str(doc_id))}</idno>')
-    if mmsid:
-        lines.append(f'        <idno type="MMSID">{xml_escape(str(mmsid))}</idno>')
     lines.append("      </publicationStmt>")
     lines.append("      <sourceDesc>")
     lines.append(f'        <biblStruct type="{pub_form}">')

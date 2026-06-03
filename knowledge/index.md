@@ -26,7 +26,7 @@ SSoT pro Domaene, eine Datei pro Thema.
 | [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay (OpenSeadragon E58), OCR/TEI-Editor, Edit-Toggle pro Panel (E60), Export-Modul (E61, geplant), Datei-Download |
 | [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |
 | [methodik.md](methodik.md) | Wie arbeiten wir? Epistemische Infrastruktur, Verifikationskaskade, Critical Expert in the Loop, Dreischichtung, operative CLI |
-| [decisions.md](decisions.md) | Was ist entschieden? E1-E75, offene Punkte (O8 teilweise, O13, O18), Risiken |
+| [decisions.md](decisions.md) | Was ist entschieden? E1-E76, offene Punkte (O8 an ZBZ, O13, O18), Risiken |
 | [journal.md](journal.md) | Was wurde wann gemacht? kompakter Sitzungs-Ueberblick (Jan-Mai 2026), wiederkehrende Muster |
 
 Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Regeln).

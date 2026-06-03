@@ -29,7 +29,6 @@ _META_FULL = {
     "date": "1973",
     "pub_form": "journalArticle",
     "lang": "fra",
-    "mmsid": "99117983620605508",
 }
 
 
@@ -60,15 +59,6 @@ def test_langusage_present():
     h = build_tei_header("1000", _META_FULL)
     assert "<langUsage>" in h
     assert '<language ident="fra" />' in h
-
-
-def test_mmsid_emitted_when_present_omitted_when_absent():
-    with_mms = build_tei_header("10", _META_FULL)
-    assert '<idno type="MMSID">99117983620605508</idno>' in with_mms
-
-    no_mms = build_tei_header("1000", {**_META_FULL, "mmsid": None})
-    assert 'type="MMSID"' not in no_mms
-    assert '<idno type="docID">1000</idno>' in no_mms  # docID bleibt
 
 
 def test_multilang_emits_one_language_each():
@@ -104,7 +94,6 @@ def test_language_idents(raw, expected):
 @pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
 @pytest.mark.parametrize("meta", [
     _META_FULL,
-    {**_META_FULL, "mmsid": None},          # ohne MMSID
     {**_META_FULL, "date": ""},             # ohne Datum -> leeres imprint
     {**_META_FULL, "lang": "fra/deu"},      # mehrsprachig -> zwei language
     {**_META_FULL, "lang": "", "pub_form": "other"},  # und + other

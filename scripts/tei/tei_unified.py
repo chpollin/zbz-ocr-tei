@@ -40,7 +40,6 @@ from scripts.core.loaders import (
     skip_jstor_cover,
 )
 from scripts.utils import page_layout_name, page_md_name
-from scripts.core.masterfile import mmsid_for
 from scripts.tei.tei_generator import get_document_metadata
 from scripts.tei.tei_step1 import process_page_step1
 from scripts.tei.tei_step2 import process_page_step2
@@ -131,9 +130,6 @@ def process_document(
     if raw_meta:
         metadata["has_jstor_cover"] = raw_meta.get("has_jstor_cover", False)
         metadata["page_count"] = raw_meta.get("page_count")
-
-    # MMSID aus der Masterfile (Alma-Norm-ID, O8) -> <idno type="MMSID"> im Header
-    metadata["mmsid"] = mmsid_for(doc_id)
 
     # Genre und Hints
     lqa = _get_layout_qa()

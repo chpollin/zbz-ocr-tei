@@ -119,7 +119,7 @@ python -m pytest tests/test_cer_statistics.py -q                # 55 Tests fuer 
 python -m pytest tests/test_corpus_audit.py -q                  # 24 Tests: Korpus-Invarianten + delivered-Verteilung + Vollstaendigkeits-Gate
 python -m pytest tests/test_scripts_health.py -q                # Script-Health: Syntax + interne Imports (alle scripts/)
 python -m pytest tests/test_tei_schema.py -q                    # Schema-Gate: tei_final gegen zbz_hersch.rng (E68)
-python -m pytest tests/test_tei_header.py -q                    # teiHeader-Liefer-Vertrag: idno + biblStruct + langUsage + MMSID (E69)
+python -m pytest tests/test_tei_header.py -q                    # teiHeader-Liefer-Vertrag: idno + biblStruct + langUsage (E69)
 python -m pytest tests/test_tei_validator.py -q                 # Validator: Referenz-CER in Prozent (O24/E69)
 python -m pytest tests/test_pb_split.py -q                      # <pb>-Segmentierung: pb_split.py byte-identisch (E69)
 ```

@@ -13,6 +13,14 @@ Details und Entscheidungen in [decisions.md](decisions.md). Code-Aenderungen im 
 
 ---
 
+## Juni 2026 — Abnahme-Vorbereitung
+
+| # | Datum | Thema |
+|---|---|---|
+| 61 | 2026-06-03 | Abnahme-Tiefenanalyse (User-Auftrag) + Repo-Hygiene + MMSID-Entfernung (E76). Gegen die Platte statt Prosa verifiziert: **524 Tests gruen**, Korpus **325->289->286->285** (0 Drift, `corpus_audit`), **285/285 tei_final schema-valide**, revisionDesc sauber (0 Agent-Screening-Reste, 855 Workflow-Status-Eintraege, 15 Blank-Marker). Befunde fuer die Abnahme: **855/855 Stroeme `unverifiziert`** (M5 fachliche Kuration offen), NER aus Scope entfernt ([[E71]], ZBZ-Zustimmung noetig), Container/CI-CD pending, Faksimile online nur 4 Demo-Docs (Rest gitignored), **MMSID im Code aber 0/285 ausgeliefert**, **195/285 leere Container-Titel** (`<monogr><title/>`, Daten nur als Masterfile-Freitext/Alma), Doc 10 unvollstaendig (285/286), Sprachfilter-Fragmentierung im Catalog. Hygiene: 3 gemergte Branches + `data/schema/tei_all.rng.bak` geloescht (output/_backup_* gitignored, belassen). **MMSID-Entfernung (E76):** vor dem Loeschen den Spec-Konflikt vorgelegt — die Editionsrichtlinien (E49) fordern ID+MMSID+PubForm im Header — User entschied dennoch fuer Entfernen (Header-Metadaten = ZBZ-Domaene, O8); `scripts/core/masterfile.py` + Verdrahtung in `tei_unified`/`tei_step3` + Test raus, ZBZ-Richtlinien-Datei (Input) unberuehrt, Suite 520 gruen. Zusaetzlich Root-`README.md` abnahmetauglich neu gefasst (EN, User-Entscheidung): Status-Sektion (Pipeline fertig + schema-valide vs. Edition `unverified`/M5), Scope-&-Limitations (NER E71 / Container+CI-CD pending / Header-Metadaten = ZBZ-Domaene), CER-Headline (Fidelity 1.83%/4.26%), Drift-Fixes (285/286, E1-E76, JSZip als planned, facsimile/zone bereits vorhanden, Demo-Bild-Hinweis). Lehre: vor einer Spec-konflikt-Loeschung die Anforderung sichtbar machen und die Entscheidung dem Lead lassen — nicht stillschweigend ausfuehren, aber auch nicht verweigern. |
+
+---
+
 ## Mai 2026 — Viewer-Datenversorgung + Deploy-Vorbereitung + Edition-Uplift
 
 | # | Datum | Thema |
