@@ -2,9 +2,29 @@
 
 LLM-powered OCR and TEI pipeline for the Jeanne Hersch Edition at the Zentralbibliothek Zurich.
 
+## Status (acceptance / handover)
+
+The pipeline is complete and its output is schema-valid; the **edition is not yet
+content-verified**. These are two different things, and the distinction matters for the
+handover:
+
+- **Pipeline** &mdash; all six stages are built and have run across the corpus. **285/285**
+  final TEI files validate against the project schema `zbz_hersch.rng` (test-gated, E68).
+- **Edition** &mdash; no document has been reviewed by a domain expert yet. The per-stream
+  workflow status (OCR / Layout / TEI, E66/E67) is **`unverified` for all 285 documents** &mdash;
+  the honest default ("pipeline output exists, not yet human-checked"). Expert curation in the
+  viewer is the remaining step (milestone M5).
+
+In short: this repository delivers a high-quality, schema-valid **starting point** for the
+edition, plus the tooling to verify and curate it &mdash; not a finished, signed-off edition.
+See [Scope & limitations](#scope--limitations) for what is in scope, out of scope, and pending.
+
 ## What does this repo do?
 
-Fully automated end-to-end pipeline for 286 documents (~4,100 pages) from the estate of Jeanne Hersch:
+End-to-end pipeline for the estate of Jeanne Hersch: **286 delivered PDFs (~4,120 pages)**,
+of which **285 have a final TEI** (doc `10` has incomplete OCR). Funnel verified by
+`python -m scripts.eval.corpus_audit`: 325 catalogued texts &rarr; 289 digitized &rarr; 286
+delivered as PDF &rarr; 285 with final TEI.
 
 ```
 PDF-Scans -> Images -> OCR (Mistral) ──┐
@@ -17,27 +37,75 @@ PDF-Scans -> Images -> OCR (Mistral) ──┐
                        PAGE-XML (parallel export for coOCR / Transkribus, NOT the TEI input)
 ```
 
-Note: PAGE-XML is generated in parallel as an export format (for coOCR / Transkribus
-compatibility, E13). TEI is produced **directly** from layout JSON + OCR markdown
-via `scripts/tei/tei_unified.py` (E22). See [knowledge/workflow.md](knowledge/workflow.md)
-for the full end-to-end data flow, the manual round-trip for curated edits, and
-the planned `_complete.xml` variant with embedded `<facsimile>` / `<zone>`.
+Notes:
+- PAGE-XML is generated in parallel as an export format (for coOCR / Transkribus
+  compatibility, E13). TEI is produced **directly** from layout JSON + OCR markdown via
+  `scripts/tei/tei_unified.py` (E22).
+- The delivered TEI already embeds `<facsimile>` with `<zone>` coordinates per page. Planned
+  extensions are `@facs` cross-linking on the text and a provenance drawer in the viewer
+  (see [knowledge/workflow.md](knowledge/workflow.md)).
 
 ## Pipeline Components
 
 | Component | Engine | Status |
 |---|---|---|
-| Image extraction | Python (PDF to PNG) | Done |
-| Document classification | Gemini Flash Lite | Done |
-| OCR | Mistral Document AI (Azure) | Done |
-| OCR correction | Gemini Flash Lite | Pilot |
-| Layout analysis | Docling RT-DETR V2 / docling-serve | Done |
-| Layout QA/Detect | Gemini Flash Lite | Done |
-| PAGE-XML + METS | Rule-based generator | Done |
-| TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | Done (285/285) |
-| Workflow status per stream | Manifest + revisionDesc projection | Done (replaces agent screening, E66/E67) |
+| Image extraction | Python (PDF to PNG) | Built |
+| Document classification | Gemini Flash Lite | Built |
+| OCR | Mistral Document AI (Azure) | Built |
+| OCR correction | Gemini Flash Lite | Sample / opt-in |
+| Layout analysis | Docling RT-DETR V2 / docling-serve | Built |
+| Layout QA/Detect | Gemini Flash Lite | Built |
+| PAGE-XML + METS | Rule-based generator | Built |
+| TEI-XML (Unified Pipeline) | Scaffold + Gemini + RelaxNG validation | Built &mdash; 285/285 schema-valid |
+| Workflow status per stream | Manifest + revisionDesc projection | Built &mdash; all 285 currently `unverified` (E66/E67, replaces agent screening) |
 
-Current metrics: see [Korpus-Uebersicht](https://chpollin.github.io/zbz-ocr-tei/) (GitHub Pages) or `docs/index.html` locally. Detailed status: [knowledge/projekt.md](knowledge/projekt.md).
+*"Built" means the stage is implemented and has run across the corpus &mdash; **not** that the
+output is human-verified. See [Status](#status-acceptance--handover).* Detailed component
+status: [knowledge/projekt.md](knowledge/projekt.md).
+
+## Quality at a glance
+
+End-to-end character error rate against 25 ZBZ reference TEIs (Transkribus ground truth),
+BCa bootstrap, seed 42 (regenerate via `scripts/eval/cer_statistics_full.py`):
+
+| Metric | Median | Mean | 95% CI (mean) |
+|---|---|---|---|
+| **Fidelity CER** (the quality measure) | **1.83%** | **4.26%** | [2.39%, 6.48%] |
+
+By Transkribus quality bands the median is "excellent", the mean "good". Caveat: the ZBZ
+reference TEIs are selective **partial** transcriptions, so naive full-text CER (mean 20.75%)
+is a diagnostic artifact, not a quality measure &mdash; the fidelity CER isolates real
+OCR/transcription errors from "the pipeline produced more text than the reference". Full
+methodology, stratified values, limitations and literature comparison:
+[docs/methode.html](docs/methode.html) and [knowledge/quality.md](knowledge/quality.md).
+
+Live corpus overview with current per-document status:
+[chpollin.github.io/zbz-ocr-tei](https://chpollin.github.io/zbz-ocr-tei/) (or `docs/index.html` locally).
+
+## Scope & limitations
+
+**Delivered (in scope):** OCR (Mistral), layout analysis (Docling + Gemini QA),
+PAGE-XML/METS export, TEI-XML generation &mdash; 285/285 schema-valid.
+
+**Removed from scope:** NER / entity linking (GND/Wikidata). Implemented earlier, removed
+(E71): in the delivered TEI only ~2.6% of tagged mentions carried a real GND id, so the
+linking &mdash; the actual editorial value &mdash; was not deliverable. Honest removal over
+placeholder noise.
+
+**ZBZ domain (not produced here):** TEI header metadata from Alma (project id / MMSID /
+PubForm, as required by the editorial guidelines). An earlier MMSID projection was removed
+(E76); header enrichment is the library's Alma&rarr;header workflow (open item O8).
+Consequently 195/285 delivered headers still carry an empty container/journal title.
+
+**Pending / not done:**
+- Containerization (Podman) and CI/CD (GitLab UZH) &mdash; decided (E9/E10), not built.
+- Human verification of all 285 documents (milestone M5).
+- Live facsimile images: only 4 demo documents are committed (`1000`, `1330`, `1540`,
+  `2310`); the rest are local-only (~4 GB), so the GitHub Pages viewer shows scans only for
+  those four.
+
+**Measurement caveat:** ground truth exists for only 25 of 285 documents; corpus-wide quality
+(dictionary hit rate, median 97.7%) is an estimate, not a measurement.
 
 ## Frontend
 
@@ -49,14 +117,18 @@ Five static HTML pages under `docs/`, deployed via GitHub Pages:
 - `docs/about.html` &mdash; project info
 - `docs/impressum.html` &mdash; legal notice
 
-All data is loaded from static JSON/XML/MD files under `docs/data/`. No backend. Editor changes (layout corrections, transcription edits) are written directly into the working tree via the File System Access API (Chromium, "Ordner verbinden", E72) or exported as file downloads; the round-trip back into the pipeline is manual (see [knowledge/workflow.md](knowledge/workflow.md)).
+All data is loaded from static JSON/XML/MD files under `docs/data/`. No backend. Editor changes
+(layout corrections, transcription edits) are written directly into the working tree via the
+File System Access API (Chromium, "Ordner verbinden", E72) or exported as file downloads; the
+round-trip back into the pipeline is manual (see [knowledge/workflow.md](knowledge/workflow.md)).
+On the public site, facsimile scans are present only for the 4 demo documents listed above.
 
-Frontend dependencies are loaded from CDN at runtime — no build pipeline:
+Frontend dependencies are loaded from CDN at runtime &mdash; no build pipeline:
 
 | Library | Version | CDN | Used for |
 |---|---|---|---|
 | OpenSeadragon | 5.0.1 | jsDelivr | facsimile viewer in view mode (E58) |
-| JSZip | 3.10.1 | cdnjs | ZIP bundles for per-doc and bulk export (E61, planned) |
+| JSZip | 3.10.1 | cdnjs | per-doc / bulk export (E61) &mdash; planned, export module not yet wired in |
 
 ```bash
 python -m http.server 8000 -d docs    # http://localhost:8000/
@@ -102,6 +174,9 @@ zbz-ocr-tei/
 
 ## Quick Start
 
+The delivered corpus was produced with the engines below; re-running any stage requires valid
+API keys in `.env`. The existing pipeline output lives under `output/` (gitignored, regenerable).
+
 ```bash
 # Set up environment
 python -m venv .venv
@@ -132,14 +207,21 @@ python -m scripts.eval.benchmark_cer --all --html
 python -m scripts.edition.generate_edition_data
 ```
 
+Verify the corpus and test gates at any time:
+
+```bash
+python -m scripts.eval.corpus_audit          # funnel 325 -> 289 -> 286 -> 285, drift check
+python -m pytest -q                           # full test suite (incl. 285/285 schema gate)
+```
+
 Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 
 ## OCR Engines
 
 | Engine | Access | Usage |
 |---|---|---|
-| Mistral Document AI 2512 | Azure AI Foundry | Production OCR |
-| Claude Haiku 4.5 | Anthropic API | LLM post-correction (optional) |
+| Mistral Document AI 2512 | Azure AI Foundry | Production OCR (produced the delivered corpus) |
+| Claude Haiku 4.5 | Anthropic API | LLM post-correction (optional, E17) |
 | Docling 2.75 | Local / docling-serve API | Layout analysis (BBox + regions) |
 | Gemini 3.1 Flash Lite | Google AI API | Layout QA/Detect, classification, OCR correction, TEI refinement, opt-in Vision-OCR (`-e gemini`) |
 
@@ -155,7 +237,7 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | Viewer (frontend architecture, OSD, edit toggles, export) | [knowledge/viewer.md](knowledge/viewer.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
 | Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
-| Decisions + open items (E1–E75) | [knowledge/decisions.md](knowledge/decisions.md) |
+| Decisions + open items (E1–E76) | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team
