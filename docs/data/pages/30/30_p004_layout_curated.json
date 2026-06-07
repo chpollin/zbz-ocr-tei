@@ -1,0 +1,110 @@
+{
+  "source": "curated",
+  "original_source": "gemini",
+  "image_width": 0,
+  "image_height": 0,
+  "regions": [
+    {
+      "label": "section_header",
+      "zbz_tag": "zb_heading",
+      "text": "JEANNE HERSCH",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correcting label to section_header as it is an author name/section identifier."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "228",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correcting label to page_header as it is a page number."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "L'OBSTACLE DU LANGAGE",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correcting label to page_header as it is a running head."
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "229",
+      "bbox": null,
+      "changed": true,
+      "change_reason": "Correcting label to page_header as it is a page number."
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "par quil 2l epiriluellazade Je Ini Unc Bilemce Devanl Tormes Nons",
+      "bbox": {
+        "x_pct": 12.794405393686404,
+        "y_pct": 9.486,
+        "w_pct": 36.2135946063136,
+        "h_pct": 15.023
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "4 lcnant, en d Murail el Lincarnation, clle peu philosophique olledelie, eflleure-L-il, Iui Jes form",
+      "bbox": {
+        "x_pct": 10.411202696843201,
+        "y_pct": 23.903,
+        "w_pct": 38.3127973031568,
+        "h_pct": 52.133
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "u } ohlienl , qu'il donne 7u elle accomplit En 2a Jong",
+      "bbox": {
+        "x_pct": 53.1504997831985,
+        "y_pct": 15.537,
+        "w_pct": 36.796500216801505,
+        "h_pct": 7.202913578299952
+      },
+      "changed": false
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "Jeanne HERSCH.",
+      "bbox": null,
+      "changed": false,
+      "change_reason": "Author signature maintained as text per instructions."
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 52.99084870003929,
+        "y_pct": 23.84481942911213,
+        "w_pct": 37.47360852413261,
+        "h_pct": 34.56868001892446
+      },
+      "curated": true
+    },
+    {
+      "label": "paragraph",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 9.535537406796292,
+        "y_pct": 78.09493770698627,
+        "w_pct": 38.52920313044621,
+        "h_pct": 7.065131682699899
+      },
+      "curated": true
+    }
+  ],
+  "curated": true,
+  "curated_at": "2026-06-07T10:42:59.326Z"
+}

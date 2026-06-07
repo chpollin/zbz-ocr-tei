@@ -1,0 +1,98 @@
+{
+  "source": "curated",
+  "original_source": "gemini-detect",
+  "image_width": 960,
+  "image_height": 613,
+  "regions": [
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 25.205418877902417,
+        "y_pct": 8.648940933356295,
+        "w_pct": 11.15017572841118,
+        "h_pct": 2.2021181332874087
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 13.7,
+        "y_pct": 13.8,
+        "w_pct": 33.8,
+        "h_pct": 28.6
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 13.7,
+        "y_pct": 43.3,
+        "w_pct": 33.8,
+        "h_pct": 21.3
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 13.7,
+        "y_pct": 65.5,
+        "w_pct": 33.8,
+        "h_pct": 22.7
+      }
+    },
+    {
+      "label": "page_header",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 66.4,
+        "y_pct": 9.3,
+        "w_pct": 12.2,
+        "h_pct": 1.1
+      }
+    },
+    {
+      "label": "page_footer",
+      "zbz_tag": "_filter",
+      "text": "",
+      "bbox": {
+        "x_pct": 85.17762157474561,
+        "y_pct": 8.2,
+        "w_pct": 5.82237842525439,
+        "h_pct": 3.0287067332529696
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 53.9,
+        "y_pct": 13.8,
+        "w_pct": 35.73525677824159,
+        "h_pct": 28.5
+      }
+    },
+    {
+      "label": "text",
+      "zbz_tag": "zb_paragraph",
+      "text": "",
+      "bbox": {
+        "x_pct": 53.9,
+        "y_pct": 42.0489409333563,
+        "w_pct": 35.383391909470404,
+        "h_pct": 45.57552953332187
+      }
+    }
+  ],
+  "curated": true,
+  "curated_at": "2026-06-07T10:56:02.964Z"
+}

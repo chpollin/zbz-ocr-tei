@@ -6,16 +6,39 @@
   "streams": {
     "ocr": {
       "engine": "mistral",
-      "status": "unverifiziert",
-      "history": []
+      "status": "in_arbeit",
+      "history": [
+        {
+          "at": "2026-06-07T11:16:23.605Z",
+          "by": "CP",
+          "from": "unverifiziert",
+          "to": "in_arbeit",
+          "note": null
+        }
+      ]
     },
     "layout": {
       "engines": [
         "docling",
         "gemini"
       ],
-      "status": "unverifiziert",
-      "history": []
+      "status": "verifiziert",
+      "history": [
+        {
+          "at": "2026-06-07T11:04:50.760Z",
+          "by": "CP",
+          "from": "unverifiziert",
+          "to": "in_arbeit",
+          "note": "auto: Edit-Toggle aktiviert"
+        },
+        {
+          "at": "2026-06-07T11:16:28.013Z",
+          "by": "CP",
+          "from": "in_arbeit",
+          "to": "verifiziert",
+          "note": null
+        }
+      ]
     },
     "tei": {
       "source": "final",
