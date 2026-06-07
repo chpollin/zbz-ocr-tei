@@ -49,10 +49,10 @@ OCR (Mistral / Gemini-korrigiert)          Layout (Docling + Gemini-QA)
             Viewer (Inspektion + Korrektur)
             │
             ▼
-            Browser-Download als JSON/MD/XML
+            "Speichern" -> output/ (kanonisch, Pipeline) + docs/data/ (Mirror, Reload), E78/E79
             │
             ▼
-            (manuell ins Repo, Pipeline-Re-Run)
+            (Pipeline-Re-Run --reassemble faltet die Kuration ins finale TEI)
 ```
 
 **Schluesselpunkt (E22, oft missverstanden):** PAGE-XML ist KEIN Zwischenschritt
@@ -94,8 +94,9 @@ coOCR / Transkribus erzeugt (`scripts/layout/page_xml_generator.py`).
 
 Der Viewer (`docs/viewer.html`) ist eine statische Single-Page-App ohne
 Backend. Der frueher vorhandene FastAPI-Curation-Server wurde mit E56/E57
-abgeschafft. Aenderungen mussten seitdem manuell aus dem Browser zurueck ins
-Repo.
+abgeschafft. Aenderungen schreibt **ein** "Speichern"-Knopf direkt in den Repo-Klon
+(File System Access API, Chromium) bzw. als Datei-Download (Fallback) und spiegelt sie
+zugleich in den Viewer-Mirror, damit ein Reload den Stand zeigt (E72/E78/E79).
 
 ### 3.1 Lese-Pfad (read-only)
 
@@ -111,38 +112,37 @@ Der Viewer laedt ausschliesslich statische Files. Der Pfad-Resolver in
 Damit funktioniert der Viewer auf GitHub Pages fuer das gesamte Korpus. Lokal
 sind zusaetzlich Gemini-A/B und LLM-Korrektur erreichbar.
 
-### 3.2 Save-Mechanismus (Datei-Download)
+### 3.2 Save-Mechanismus (ein "Speichern" -> direkt ins Repo + Mirror)
 
-Drei Edit-Modi liefern je einen Download:
+**Ein** "Speichern"-Knopf sichert alle ungespeicherten Stroeme zugleich (Layout, Text/TEI,
+Manifest mit Workflow-Status; `saveAll()` in `viewer.js`). Schreibweg ist die File System Access
+API (`ZBZ.FsAccess`, Chromium); ohne sie greift der Datei-Download (`ZBZ.Download`,
+Firefox/Safari). Jede Speicher-Aktion schreibt die identische Nutzlast an **zwei** Orte --
+kanonisch nach `output/` (Pipeline-Konsum) und in den Mirror `docs/data/` (Viewer-Reload, E79):
 
-| Aktion | Modul | Output-Dateiname | MIME |
+| Strom | Kanonisch (`output/`) | Mirror (`docs/data/`) | Modul |
 |---|---|---|---|
-| Layout speichern | `ZBZ.Download.layout()` in `docs/assets/js/download.js` | `{doc}_p{N}_layout_curated.json` | `application/json` |
-| Text speichern | `ZBZ.Download.text()` | `{doc}_p{N}_curated.md` | `text/markdown` |
-| TEI speichern | `ZBZ.Download.tei()` | `{doc}_curated.xml` | `application/xml` |
+| Layout | `layout/{doc}/{doc}_p{NNN}_layout_curated.json` | `pages/{doc}/{doc}_p{NNN}_layout_curated.json` | `ZBZ.FsAccess.writeLayout()` |
+| Text | `ocr_curated/{doc}_p{N}.md` | `pages/{doc}/{doc}_p{N}.md` | `ZBZ.FsAccess.writeText()` |
+| Manifest | `tei_final/{doc}_manifest.json` | `manifests/{doc}_manifest.json` | `ZBZ.FsAccess.writeManifest()` |
+| TEI | `tei_final/{doc}_final.xml` | `pages/{doc}/{doc}_final.xml` | `ZBZ.FsAccess.writeTei()` |
 
-Die Dateien werden vom Browser-Download-Dialog im Default-Ordner abgelegt.
-Der User muss sie manuell ins Repo umkopieren — typischerweise nach:
-
-- `output/layout/{doc}_curated/{doc}_p{N}_layout_curated.json`
-- `output/{source}_curated/{doc}_p{N}.md`
-- `data/curated_tei/{doc}/{doc}_curated.xml`
+Einzel-Export pro Strom bleibt ueber das **"Export ▾"**-Dropdown erreichbar (`ZBZ.Download.*`, E78).
 
 **Bekannte Limitierungen (real, ehrlich):**
 
-- Keine Auto-Save im Browser. Schliesst der User den Tab ohne Download, gehen Edits verloren.
-- Keine Wiederherstellung von Edits beim Neuladen der Seite (kein localStorage).
+- Schreibrecht muss pro Sitzung per Geste re-granted werden (Browser-Vertrauensmodell, kein Defekt).
 - Kein Konflikt-Erkennungs-Mechanismus bei parallelem Edit (Browser-State == Wahrheit).
-- Die Ablage-Konvention (`output/layout/{doc}_curated/`) ist nicht erzwungen — kein Script prueft, ob kuratierte Files da landen, wo sie hingehoeren.
+- Per-Seiten-TEI-Splits im Mirror entstehen erst beim `--reassemble`; ein direkter TEI-XML-Edit ueberschreibt die SoT und wird von einem spaeteren `--reassemble` regeneriert.
 - Re-Run der Pipeline (`tei_unified --reassemble`) muss manuell angestossen werden. Das Frontend kann das nicht triggern.
 
 ### 3.3 Round-Trip vom User-Edit zur regenerierten TEI
 
 Vollstaendiger Ablauf, wenn ein User eine Layout-Region korrigiert hat:
 
-1. **Edit im Viewer**: User klickt Faksimile-Bearbeiten-Toggle, korrigiert eine BBox, klickt "Layout ↓".
-2. **Download**: Browser laedt `{doc}_p{N}_layout_curated.json` in den Default-Download-Ordner.
-3. **Manuelles Ablegen**: User kopiert die Datei nach `output/layout/{doc}_curated/{doc}_p{N}_layout_curated.json` (oder direkt ueberschreibt `_layout_gemini.json` — Konvention nicht final festgelegt).
+1. **Edit im Viewer**: User klickt "Layout bearbeiten", korrigiert eine BBox.
+2. **Speichern**: Klick auf "Speichern" schreibt `{doc}_p{NNN}_layout_curated.json` direkt nach `output/layout/{doc}/` (kanonisch) UND in den Mirror `docs/data/pages/{doc}/` (E78/E79); beim ersten Mal fragt der Viewer einmal nach dem Repo-Ordner. Ein Reload zeigt den Stand sofort.
+3. (entfaellt — kein manuelles Ablegen mehr; der Edit liegt bereits an der kanonischen Stelle.)
 4. **Pipeline-Re-Run** mit kuratierten Layout-Daten als Input:
    ```bash
    python -m scripts.tei.tei_unified --doc {ID} --reassemble
@@ -163,7 +163,7 @@ Vollstaendiger Ablauf, wenn ein User eine Layout-Region korrigiert hat:
    ```
    Aktualisiert `docs/data/pages/{doc}/` (inkl. `{doc}_final.xml`).
 
-**Aktuelles Manko:** Schritte 3-7 sind nicht automatisiert. Es gibt keinen
+**Aktuelles Manko:** Schritte 4-7 sind nicht automatisiert. Es gibt keinen
 "Apply Curated Edit"-Wrapper-Befehl. Ein solches Convenience-Script (z.B.
 `scripts/apply_curated.py --doc {ID}`) waere ein sinnvoller naechster Schritt.
 
@@ -351,7 +351,7 @@ die `scripts/postprocess/`-Verweise sind aus README und projekt.md entfernt (der
 `scripts/ocr/llm_postprocess.py` bleibt davon unberuehrt), und die Pipeline-Diagramme zeigen
 PAGE-XML korrekt als Parallel-Export (E22). Historische Details im Git-Log.
 
-Offen bleibt: der manuelle Round-Trip (Schritte 3-7 in §3.3 sind nicht in einem Wrapper
+Offen bleibt: der manuelle Round-Trip (Schritte 4-7 in §3.3 sind nicht in einem Wrapper
 automatisiert) und die geplante Pipeline-Welle (`_complete.xml` + `provenance.json`, §5).
 
 ---

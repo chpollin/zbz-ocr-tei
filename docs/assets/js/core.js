@@ -140,8 +140,13 @@
     };
 
     // ---- Fetch ----
-    ZBZ.fetchText = (url) => fetch(url).then(r => r.ok ? r.text() : null).catch(() => null);
-    ZBZ.fetchJSON = (url) => fetch(url).then(r => r.ok ? r.json() : null).catch(() => null);
+    // cache: 'no-cache' = vor Nutzung der Browser-Kopie immer revalidieren (304 bleibt moeglich,
+    // Caching wird NICHT abgeschaltet). Noetig fuer den lokalen Kurations-Loop: 'Speichern'
+    // ueberschreibt die Datendateien (OCR/Layout/Manifest/TEI); ohne Revalidierung zeigte ein
+    // Reload die alte gecachte Datei und der Edit wirkte verloren. Bilder (OSD-Tiles) laufen
+    // nicht ueber diese Helfer und behalten normales Caching.
+    ZBZ.fetchText = (url) => fetch(url, { cache: 'no-cache' }).then(r => r.ok ? r.text() : null).catch(() => null);
+    ZBZ.fetchJSON = (url) => fetch(url, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null);
     ZBZ.fetchFirstOk = async (urls) => {
         for (const u of urls) {
             const t = await ZBZ.fetchText(u);
@@ -165,6 +170,12 @@
     ZBZ.path = {
         image: (doc, page) => `images/${doc}/${doc}_p${padded(page)}.png`,
 
+        // Menschlich kuratiertes Layout (Viewer-Direktschreiben) hat Vorrang vor den
+        // Engine-Outputs -- analog zu loaders.load_layout_gemini (curated > gemini > docling).
+        layoutCurated: (doc, page) => [
+            `data/pages/${doc}/${doc}_p${padded(page)}_layout_curated.json`,
+            `../output/layout/${doc}/${doc}_p${padded(page)}_layout_curated.json`
+        ],
         layoutGemini: (doc, page) => [
             `data/pages/${doc}/${doc}_p${padded(page)}_layout_gemini.json`,
             `../output/layout/${doc}/${doc}_p${padded(page)}_layout_gemini.json`

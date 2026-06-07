@@ -554,8 +554,8 @@ keiner der 285/285 "APPROVED"-Status kommt von einem Menschen -- der Agent zerti
 mit eingebauter Ignorier-Liste (W3, W6, W10 als "normal" deklariert) und ohne fachliche Bewertung.
 Das Etikett "APPROVED" im `<revisionDesc>` ist epistemisch irrefuehrend gegenueber ZBZ.
 
-Ersetzt durch **Workflow-Status pro Strom** (siehe Abschnitt unten): `offen | in_arbeit | bearbeitet | fertig`
-je fuer OCR, Layout, TEI. Status wird von Menschen im Viewer gesetzt und in der Manifest-History
+Ersetzt durch **Workflow-Status pro Strom** (siehe Abschnitt unten): `unverifiziert | in_arbeit | verifiziert`
+je fuer OCR, Layout, TEI (drei Stufen seit E77). Status wird von Menschen im Viewer gesetzt und in der Manifest-History
 persistiert (`output/tei_final/{doc}_manifest.json`, Schluessel `streams.*.history`).
 Bei der ZBZ-Uebergabe projiziert `scripts/tei/tei_status_marker.py` die History deterministisch
 in den `<revisionDesc>`; Agent-Screening-Eintraege werden dabei entfernt.
@@ -636,18 +636,26 @@ fachliche Richtigkeit. Naechster Schritt: ZBZ-Fachleute pruefen dieselben Docs i
 
 ---
 
-## Workflow-Status pro Strom (E66/E67, ab 2026-05-26)
+## Workflow-Status pro Strom (E66/E67/E77, ab 2026-05-26)
 
-Ersetzt das Agent-Screening (oben). Vier Statuswerte je Datenstrom (`ocr`, `layout`, `tei`):
+Ersetzt das Agent-Screening (oben). Drei Statuswerte je Datenstrom (`ocr`, `layout`, `tei`),
+seit E77 (Kollaps von vier auf drei Stufen, Variante A):
 
 | Status | Bedeutung |
 |---|---|
 | `unverifiziert` | Pipeline-Output existiert, kein Mensch hat verifiziert (Default fuer alle 285 Docs) |
-| `in_arbeit` | Bearbeiter:in schaut/editiert gerade |
-| `bearbeitet` | mindestens eine menschliche Korrektur erfolgt, nicht final |
-| `fertig` | bearbeitet + fachlich freigegeben, edition-ready |
+| `in_arbeit` | mindestens eine menschliche Sichtung/Korrektur begonnen, nicht freigegeben |
+| `verifiziert` | menschlich geprueft und freigegeben, edition-ready |
 
-**Ampel-Semantik im UI (E67):** **gelb** = `unverifiziert` + `in_arbeit` + `bearbeitet` (alle drei: vorhanden, nicht freigegeben). **gruen** = `fertig`. **rot** ist im aktuellen Modell nicht im Einsatz, bleibt reserviert fuer einen spaeteren expliziten Problem-/Reject-Status (z.B. "OCR fehlt", "muss neu generiert werden"). Begruendung des Reframings: die Pipeline produziert OCR/Layout/TEI deterministisch fuer alle 285 Docs -- der Default ist also "vorhanden, unverifiziert", nicht "nichts da". Der Umbenennungs-Schritt von `offen` zu `unverifiziert` macht die Datenebene konsistent mit dieser Lesart.
+**Ampel-Semantik im UI (E77, drei Stufen, E67-konform):** **neutral/grau** = `unverifiziert`
+(vorhanden, noch nicht angefasst), **gelb** = `in_arbeit` (in Bearbeitung), **gruen** =
+`verifiziert` (menschlich freigegeben). **rot** bleibt reserviert fuer einen spaeteren
+expliziten Problem-/Reject-Status (z.B. "OCR fehlt", "muss neu generiert werden"). E77 legt
+die frueheren vier Stufen zusammen: altes `bearbeitet` → `in_arbeit`, altes `fertig` →
+`verifiziert`; damit gibt es genau eine Farbe je Stufe statt vier Stufen in zwei Farben.
+Begruendung (unveraendert aus E67): die Pipeline produziert OCR/Layout/TEI deterministisch fuer
+alle 285 Docs -- der Default ist "vorhanden, unverifiziert", nicht "nichts da", und `unverifiziert`
+ist daher neutral, kein Alarm.
 
 **Datenmodell:** Pro-Objekt-Manifest `output/tei_final/{doc}_manifest.json` (E65 erweitert).
 Der `streams`-Header haelt fuer jeden Strom `{engine|engines|source, status, history}`. Die
@@ -661,7 +669,7 @@ ueber "Manifest ↓" als Datei heruntergeladen; manuelles Ablegen unter `output/
 
 **Auto-Uebergang:** das erste Aktivieren eines Edit-Toggles (Layout oder Text) setzt den zugehoerigen
 Strom automatisch von `unverifiziert` auf `in_arbeit` (Quelle `auto: Edit-Toggle aktiviert`). Bewusste
-Status-Wechsel (z.B. `bearbeitet` → `fertig`) erfolgen ueber die Pill.
+Status-Wechsel (z.B. `in_arbeit` → `verifiziert`) erfolgen ueber die Pill.
 
 **Mirror:** `python -m scripts.edition.generate_edition_data --mirror-only` spiegelt die Manifeste nach
 `docs/data/manifests/{doc}_manifest.json`, von wo der Viewer sie laedt. Der Catalog (`catalog.json`)

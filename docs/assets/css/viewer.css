@@ -99,25 +99,6 @@
   font-style: italic;
   margin-left: var(--h-space-sm);
 }
-.status-controls__actions {
-  display: flex;
-  gap: var(--h-space-xs);
-  align-items: center;
-}
-.status-controls__author {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: var(--h-xs);
-  color: var(--h-text-muted);
-  white-space: nowrap;
-}
-.status-controls__author .input {
-  width: 6.5em;
-  height: 28px;
-  padding: 0 8px;
-  font-size: var(--h-sm);
-}
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -159,12 +140,13 @@
   color: var(--h-text);
   font-size: var(--h-xs);
 }
-/* Ampel-Semantik (E67): gelb = Pipeline-Output da, unverifiziert (Default fuer alle Stroeme);
-   gruen = menschlich freigegeben. Rot bleibt fuer expliziten Problem/fehlt-Status reserviert. */
-.status-pill--unverifiziert .status-pill__dot { background: var(--h-ocker); }
+/* Ampel-Semantik (E77, drei Stufen): neutral/grau = Pipeline-Output da, noch nicht angefasst
+   (unverifiziert, Default fuer alle Stroeme); gelb = in Bearbeitung (in_arbeit);
+   gruen = menschlich verifiziert (verifiziert). Rot bleibt fuer einen spaeteren expliziten
+   Problem/fehlt-Status reserviert. */
+.status-pill--unverifiziert .status-pill__dot { background: var(--h-text-muted); }
 .status-pill--in_arbeit     .status-pill__dot { background: var(--h-ocker); }
-.status-pill--bearbeitet    .status-pill__dot { background: var(--h-ocker); }
-.status-pill--fertig        .status-pill__dot { background: var(--h-olivgruen); }
+.status-pill--verifiziert   .status-pill__dot { background: var(--h-olivgruen); }
 .status-pill--dirty {
   box-shadow: 0 0 0 1px var(--h-ziegelrot-light);
 }
@@ -251,24 +233,20 @@
 
 /* ============================================================
    Editor-Toolbar (im Layout-Modus)
+   E78: sitzt jetzt INLINE in der Workflow-Status-Zeile (.doc-subbar__inner--status),
+   keine eigene Bande mehr -> kein border-bottom, eine horizontale Trennlinie weniger.
+   status-controls (flex:1) drueckt die Werkzeuge an den rechten Rand derselben Zeile.
    ============================================================ */
 .editor-toolbar {
   display: flex;
   align-items: center;
   gap: var(--h-space-sm);
-  padding: var(--h-space-sm) max(var(--h-space-xl), calc((100% - 1320px) / 2 + var(--h-space-xl)));
-  background: var(--h-surface);
-  border-bottom: 1px solid var(--h-border);
+  flex-wrap: wrap;
 }
 .editor-toolbar__group {
   display: flex;
   gap: 4px;
   align-items: center;
-}
-.editor-toolbar__hint {
-  font-size: var(--h-xs);
-  color: var(--h-text-muted);
-  margin-left: auto;
 }
 
 /* ============================================================
@@ -455,6 +433,8 @@
   outline: 2px solid var(--h-ziegelrot);
   outline-offset: 2px;
 }
+/* Region-Label (#N Typ) im Layout-Editor: per Default transparent, damit bei vielen
+   Regionen die Faksimile-Sicht frei bleibt; klar nur bei Hover oder Selektion. */
 .region__label {
   position: absolute;
   top: -18px;
@@ -466,7 +446,12 @@
   padding: 1px 6px;
   border-radius: var(--h-radius-sm);
   white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--h-transition-fast);
+  pointer-events: none;
 }
+.region:hover .region__label,
+.region--selected .region__label { opacity: 1; }
 .region__handle {
   position: absolute;
   width: 8px;
@@ -737,4 +722,142 @@
     white-space: nowrap;
     max-width: 100%;
   }
+}
+
+/* ============================================================ Speichern + Export + Identitaets-Chip (E78) ============================================================ */
+.doc-subbar__actions { align-items: center; }
+
+/* Identitaets-Chip: zeigt das Bearbeiter-Kuerzel; Klick oeffnet ein Inline-Feld. */
+.identity-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1px solid var(--h-border);
+  border-radius: 999px;
+  background: var(--h-surface);
+  color: var(--h-text-secondary);
+  font-family: var(--h-font-body);
+  font-size: var(--h-xs);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--h-transition-fast), background var(--h-transition-fast);
+}
+.identity-chip:hover { border-color: var(--h-text-muted); background: var(--h-bg-alt); }
+.identity-chip__icon { color: var(--h-text-muted); font-weight: 600; }
+.identity-chip__who  { color: var(--h-text); font-weight: 500; }
+.identity-chip--empty .identity-chip__who { color: var(--h-text-muted); font-style: italic; font-weight: 400; }
+.identity-input {
+  width: 7em;
+  height: 28px;
+  padding: 0 8px;
+  font-size: var(--h-sm);
+}
+
+/* Speichern: primaer (Ziegelrot); dezenter Ring, solange Aenderungen ungespeichert sind. */
+#btn-save.btn--dirty { box-shadow: 0 0 0 3px var(--h-ziegelrot-subtle); }
+
+/* Export-Dropdown */
+.export-wrap { position: relative; }
+.export-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 50;
+  min-width: 210px;
+  padding: 6px;
+  background: var(--h-paper);
+  border: 1px solid var(--h-border);
+  border-radius: var(--h-radius);
+  box-shadow: var(--h-shadow-md);
+}
+.export-menu__label {
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+  padding: 4px 8px 6px;
+}
+.export-menu__item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 8px;
+  border: none;
+  background: transparent;
+  color: var(--h-text);
+  font-family: var(--h-font-body);
+  font-size: var(--h-sm);
+  cursor: pointer;
+  border-radius: var(--h-radius-sm);
+}
+.export-menu__item:hover:not(:disabled) { background: var(--h-bg-alt); }
+.export-menu__item:disabled { color: var(--h-text-muted); cursor: not-allowed; }
+.export-menu__sep { height: 1px; background: var(--h-border); margin: 6px 4px; }
+
+/* Seitennavigation im Faksimile-Panel-Header (statt in der Doc-Subbar) */
+.page-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: var(--h-space-sm);
+}
+.page-nav .page-info {
+  font-size: var(--h-xs);
+  color: var(--h-text-secondary);
+  min-width: 3.6em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ---- Info-Modal (einmalige Erklaerung beim ersten Repo-Verbinden) ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(44, 40, 37, 0.45);
+  padding: var(--h-space-md);
+}
+/* WICHTIG: `display:flex` oben wuerde sonst das `hidden`-Attribut aushebeln (Author-Regel
+   schlaegt UA-`[hidden]{display:none}`). Diese Regel (hoehere Spezifitaet) stellt das Verstecken
+   wieder her -- sonst liegt das Overlay dauerhaft ueber der Seite und faengt alle Klicks ab. */
+.modal-overlay[hidden] { display: none; }
+.modal {
+  max-width: 460px;
+  width: 100%;
+  background: var(--h-paper);
+  border: 1px solid var(--h-border);
+  border-radius: var(--h-radius-lg);
+  box-shadow: var(--h-shadow-md);
+  padding: var(--h-space-xl);
+}
+.modal__title {
+  font-family: var(--h-font-heading);
+  color: var(--h-heading);
+  font-size: var(--h-lg);
+  margin: 0 0 var(--h-space-md);
+}
+.modal__text {
+  font-size: var(--h-sm);
+  color: var(--h-text-secondary);
+  line-height: 1.55;
+  margin: 0 0 var(--h-space-md);
+}
+.modal__text code {
+  font-family: var(--h-font-mono);
+  font-size: 0.9em;
+  background: var(--h-bg-alt);
+  color: var(--h-text);
+  padding: 0 4px;
+  border-radius: var(--h-radius-sm);
+}
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--h-space-sm);
+  margin-top: var(--h-space-lg);
 }

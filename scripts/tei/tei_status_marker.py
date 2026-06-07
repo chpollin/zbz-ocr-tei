@@ -34,8 +34,10 @@ STREAMS = ("ocr", "layout", "tei")
 STATUS_LABEL = {
     "unverifiziert": "unverifiziert",
     "in_arbeit":     "in Arbeit",
-    "bearbeitet":    "bearbeitet",
-    "fertig":        "fertig",
+    "verifiziert":   "verifiziert",
+    # Legacy (E66/E67) -> lesbar, falls ein altes Manifest projiziert wird:
+    "bearbeitet":    "in Arbeit",
+    "fertig":        "verifiziert",
 }
 
 # Pseudo-Reviewer aus E41-E44 (Agent-Screening): rausschmeissen, weil kein Mensch geprueft hat

@@ -189,7 +189,7 @@ python -m scripts.tei.tei_status_marker                                  # Histo
 ```
 
 Pro-Objekt-Manifest `output/tei_final/{DOC_ID}_manifest.json` ist der **Annotations-Slot pro Objekt**:
-- `streams.{ocr,layout,tei}.status` — Workflow-Status (unverifiziert | in_arbeit | bearbeitet | fertig). Ampel-Mapping im UI: gelb fuer die ersten drei (vorhanden, unverifiziert), gruen fuer `fertig`, rot reserviert fuer einen kuenftigen Problem-Status (E67).
+- `streams.{ocr,layout,tei}.status` — Workflow-Status (unverifiziert | in_arbeit | verifiziert, drei Stufen seit E77). Ampel-Mapping im UI: neutral/grau fuer `unverifiziert`, gelb fuer `in_arbeit`, gruen fuer `verifiziert`, rot reserviert fuer einen kuenftigen Problem-Status.
 - `streams.{ocr,layout,tei}.history` — Provenienz der menschlichen Bearbeitungsschritte
 - `pages.{N}` — Ausnahme-Seiten (aktuell nur sichere Leerseiten; OCR-Regel + Docling=0)
 
@@ -206,10 +206,12 @@ ueber Re-Laeufe erhalten. `tei_blank_marker` projiziert Leerseiten als `<pb type
 python -m scripts.edition.generate_edition_data                                  # Katalog (data/catalog.json) + Per-Seiten-Mirror
 ```
 
-Der Viewer (`docs/viewer.html`) ist eine statische Single-Page-App ohne Backend. Editier-Aenderungen
-werden direkt in den Working Tree geschrieben (File System Access API, Chromium) oder als Datei-Download
-bereitgestellt (Fallback); kuratierte Layout-/OCR-Dateien werden von `--reassemble` real konsumiert (E72).
-Siehe [knowledge/viewer.md §Persistenz](knowledge/viewer.md).
+Der Viewer (`docs/viewer.html`) ist eine statische Single-Page-App ohne Backend. **Ein** "Speichern"-Knopf
+sichert alle ungespeicherten Stroeme zugleich (Layout, Text/TEI, Manifest, E78); geschrieben wird direkt
+in den Working Tree (File System Access API, Chromium) oder als Datei-Download (Fallback). Jede
+Speicher-Aktion legt die Nutzlast doppelt ab: kanonisch nach `output/` (von `--reassemble` real konsumiert, E72)
+und in den Mirror `docs/data/`, damit der server-lose Viewer (Docroot `docs/`) den Stand nach einem Reload zeigt (E79).
+Einzel-Downloads pro Strom liegen im "Export ▾"-Dropdown. Siehe [knowledge/viewer.md §Persistenz](knowledge/viewer.md).
 
 ## Visuelle Artefakte
 

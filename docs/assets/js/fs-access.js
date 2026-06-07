@@ -20,6 +20,16 @@
  *   Manifest -> output/tei_final/{doc}_manifest.json
  *   TEI      -> output/tei_final/{doc}_final.xml   (ueberschreibt die Single Source of Truth)
  *
+ * Mirror-Pfade (zusaetzlich): Der server-lose Viewer laeuft mit Docroot=docs/ und liest beim
+ * Reload AUSSCHLIESSLICH aus docs/data/ -- output/ ist von dort nicht erreichbar. Damit
+ * 'Speichern' die Kuration sofort (ohne Backend-Lauf) auch nach einem Reload zeigt, schreibt
+ * jede Funktion die identische Nutzlast zusaetzlich in den Mirror:
+ *   Layout   -> docs/data/pages/{doc}/{doc}_p{NNN}_layout_curated.json  (fetchLayout liest curated zuerst)
+ *   OCR/Text -> docs/data/pages/{doc}/{doc}_p{N}.md                     (Viewer-Quelle 'mistral')
+ *   Manifest -> docs/data/manifests/{doc}_manifest.json                (Viewer + Katalog-Statusspalte)
+ *   TEI      -> docs/data/pages/{doc}/{doc}_final.xml                   (Per-Seiten-TEI erst nach --reassemble)
+ * Ein spaeterer `generate_edition_data --mirror-only` reproduziert exakt dieselben Mirror-Dateien.
+ *
  * Namespace: ZBZ.FsAccess
  */
 (function () {
@@ -83,6 +93,16 @@
         return false;
     }
 
+    // ---- Ordner-Plausibilitaet ----
+    async function hasChild(handle, name) {
+        try { await handle.getDirectoryHandle(name); return true; }
+        catch (e) { return false; }
+    }
+    /** Heuristik: ist das der Projekt-Wurzelordner? (docs/ + scripts/ sind git-getrackt). */
+    async function looksLikeRepoRoot(handle) {
+        return (await hasChild(handle, 'docs')) || (await hasChild(handle, 'scripts'));
+    }
+
     // ---- Verbindung ----
 
     /** Beim Laden: persistierten Handle wiederherstellen (ohne Permission-Prompt). */
@@ -119,6 +139,9 @@
             state.connected = true;
             await idbPut(IDB_KEY, handle);
             ZBZ.log('FsAccess', 'Repo-Ordner verbunden: ' + (handle.name || '?'));
+            if (!(await looksLikeRepoRoot(handle))) {
+                ZBZ.toast('Achtung: "' + (handle.name || '?') + '" sieht nicht nach dem Projekt-Ordner aus (erwartet zbz-ocr-tei mit docs/ und scripts/). Ggf. neu verbinden.', 'warn');
+            }
             return true;
         } catch (err) {
             if (err && err.name === 'AbortError') return false; // Nutzer hat Picker abgebrochen
@@ -161,6 +184,9 @@
     function layoutPath(doc, page) {
         return `output/layout/${doc}/${doc}_p${ZBZ.padPage(page)}_layout_curated.json`;
     }
+    function layoutMirrorPath(doc, page) {
+        return `docs/data/pages/${doc}/${doc}_p${ZBZ.padPage(page)}_layout_curated.json`;
+    }
 
     async function writeLayout(doc, page, regions, sourceMeta) {
         const out = Object.assign({}, sourceMeta || {}, {
@@ -168,19 +194,29 @@
             curated: true,
             curated_at: new Date().toISOString()
         });
-        return writeFile(layoutPath(doc, page), JSON.stringify(out, null, 2));
+        const json = JSON.stringify(out, null, 2);
+        const canonical = await writeFile(layoutPath(doc, page), json);
+        await writeFile(layoutMirrorPath(doc, page), json);  // Mirror -> Viewer-Reload
+        return canonical;
     }
 
     async function writeText(doc, page, content) {
-        return writeFile(`output/ocr_curated/${doc}_p${page}.md`, content);
+        const canonical = await writeFile(`output/ocr_curated/${doc}_p${page}.md`, content);
+        await writeFile(`docs/data/pages/${doc}/${doc}_p${page}.md`, content);  // Mirror -> Viewer-Reload
+        return canonical;
     }
 
     async function writeTei(doc, xml) {
-        return writeFile(`output/tei_final/${doc}_final.xml`, xml);
+        const canonical = await writeFile(`output/tei_final/${doc}_final.xml`, xml);
+        await writeFile(`docs/data/pages/${doc}/${doc}_final.xml`, xml);  // Mirror (Final; Per-Seite erst nach --reassemble)
+        return canonical;
     }
 
     async function writeManifest(doc, manifestObj) {
-        return writeFile(`output/tei_final/${doc}_manifest.json`, JSON.stringify(manifestObj, null, 2));
+        const json = JSON.stringify(manifestObj, null, 2);
+        const canonical = await writeFile(`output/tei_final/${doc}_manifest.json`, json);
+        await writeFile(`docs/data/manifests/${doc}_manifest.json`, json);  // Mirror -> Viewer + Katalog
+        return canonical;
     }
 
     ZBZ.FsAccess = {

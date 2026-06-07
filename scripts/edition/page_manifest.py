@@ -4,7 +4,7 @@ Erzeugt fuer jedes Objekt eine Datei `output/tei_final/{doc}_manifest.json`. Das
 ist der **Pro-Objekt-Annotations-Slot** und tragt zwei Sektionen:
 
 1. `streams` -- Workflow-Status + Provenienz-History je Datenstrom (OCR, Layout, TEI).
-   Statuswerte: offen | in_arbeit | bearbeitet | fertig. Default: offen.
+   Statuswerte: unverifiziert | in_arbeit | verifiziert. Default: unverifiziert.
    `history` ist eine Liste von Eintraegen `{at, by, from, to, note}` und enthaelt die
    Provenienz der menschlichen Bearbeitungsschritte (Edit-Toggles, Status-Wechsel im
    Viewer). Eintraege werden NUR vom Skript hinzugefuegt, das die Aenderung anstoesst
@@ -46,15 +46,17 @@ OCR_DIR = ROOT / "output" / "mistral_results"
 MIRROR_PAGES = ROOT / "docs" / "data" / "pages"
 OUT_DIR = ROOT / "output" / "tei_final"
 
-GENERATOR = "page_manifest-v3"
-# E67: `offen` umbenannt zu `unverifiziert` -- die Pipeline produziert OCR/Layout/TEI
-# fuer alle 285 Docs deterministisch, der Default-Zustand ist also "Pipeline-Output
-# existiert, kein Mensch hat verifiziert", nicht "nichts da". Rot bleibt reserviert
-# fuer einen spaeteren expliziten Problem/Reject-Status.
-VALID_STATUS = ("unverifiziert", "in_arbeit", "bearbeitet", "fertig")
+GENERATOR = "page_manifest-v4"
+# E77: Kollaps auf drei Stufen (Variante A, E67-konform). Die Pipeline produziert
+# OCR/Layout/TEI fuer alle 285 Docs deterministisch, der Default-Zustand ist also
+# "Pipeline-Output existiert, kein Mensch hat verifiziert", nicht "nichts da".
+# Ampel: unverifiziert (neutral/grau), in_arbeit (gelb), verifiziert (gruen).
+# `bearbeitet` + `fertig` (E66/E67) zusammengefuehrt. Rot bleibt reserviert fuer
+# einen spaeteren expliziten Problem/Reject-Status.
+VALID_STATUS = ("unverifiziert", "in_arbeit", "verifiziert")
 DEFAULT_STATUS = "unverifiziert"
-# Map alter Status-Werte (v2-Manifeste) auf die neuen.
-STATUS_MIGRATION = {"offen": "unverifiziert"}
+# Map alter Status-Werte auf die neuen (idempotent ueber Re-Laeufe).
+STATUS_MIGRATION = {"offen": "unverifiziert", "bearbeitet": "in_arbeit", "fertig": "verifiziert"}
 
 # Identisch zu ZBZ.isBlankPageText (docs/assets/js/core.js)
 _ALNUM = re.compile(r"[A-Za-zÀ-ÿ0-9]")

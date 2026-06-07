@@ -23,8 +23,11 @@ Lese-Frontend — das macht ZBZ ueber Oxygen/Alma.
 Workflow-Status pro Strom, E66), der eigentliche Viewer (`viewer.html`: Faksimile + Layout-Overlay links,
 Transkription/TEI rechts), eine Methode-Seite (`methode.html`: CER-Headline + stratifizierte
 Werte + Limitations + Literatur-Vergleich, E62, statisch) und eine About-Seite (`about.html`).
-Der Viewer kennt drei Modi: *Anzeigen*, *Layout bearbeiten*, *Transkription bearbeiten*.
-Persistenz erfolgt ausschliesslich via Datei-Download (kein Server).
+Der Viewer kennt drei Modi: *Anzeigen*, *Layout bearbeiten*, *Text bearbeiten*.
+Persistenz erfolgt server-los ueber **einen** Speichern-Knopf: er sichert alle ungespeicherten
+Stroeme (Layout, Text, Workflow-Status) in einem Akt -- direkt in den Repo-Klon via File System
+Access API (Chromium) oder als Datei-Download (Fallback) -- und spiegelt sie zugleich in den
+Viewer-Mirror (`docs/data/`), damit ein Reload den Stand zeigt (E72/E78/E79).
 
 **In Umbau (Mai 2026 Edition-Uplift-Welle):** Mode-Buttons sind Edit-Toggle pro Panel
 (E60, erledigt; benannt "Layout"/"Text", E64), Faksimile-Renderer ist im View-Modus auf
@@ -87,14 +90,16 @@ OpenSeadragon wird zur Laufzeit aus dem CDN nachgeladen; JSZip ist geplant (E61)
 | Modus | Editierbar | Zweck | Persistenz |
 |---|---|---|---|
 | **Anzeigen** | nein | reine Inspektion (read-only) | — |
-| **Layout** | Layout-Overlay | Regionen (BBox, Typ, Reihenfolge) korrigieren | Download `{doc}_p{N}_layout_curated.json` |
-| **Transkription** | Text-Panel | OCR-Text oder TEI-Text/XML korrigieren | Download `{doc}_p{N}_curated.md` oder `{doc}_curated.xml` |
+| **Layout bearbeiten** | Layout-Overlay | Regionen (BBox, Typ, Reihenfolge) korrigieren | "Speichern" (alle Stroeme zugleich), siehe §Persistenz |
+| **Text bearbeiten** | Text-Panel | OCR-Text oder TEI-Text/XML korrigieren | "Speichern" (alle Stroeme zugleich), siehe §Persistenz |
 
-Je ein Edit-Toggle im Panel-Header (E60): das Faksimile-Panel traegt den Knopf **"Layout"**,
-das Text-Panel den Knopf **"Text"**. Aktiv = anthrazit-gefuellter Knopf (Farbe zeigt den Modus,
-E64). Im Layout-Modus erscheint eine zweite Toolbar mit Regions-Tools (`+ Region`, `Loeschen`,
-Typ-Dropdown). Die globale Mode-Leiste (Anzeigen/Layout/Transkription) entfiel mit E60 —
-Begruendung: Wortdoppelung "Transkription"-Mode mit "OCR"-Source.
+Je ein Edit-Toggle im Panel-Header (E60): das Faksimile-Panel traegt den Knopf
+**"Layout bearbeiten"**, das Text-Panel **"Text bearbeiten"** (E78). Aktiv = anthrazit-gefuellter
+Knopf (Farbe zeigt den Modus, E64). Im Layout-Modus erscheint eine zweite Toolbar mit
+Regions-Tools (`+ Region`, `Loeschen`, Typ-Dropdown). Die Seitennavigation (prev/page-info/next)
+sitzt im Faksimile-Panel-Header neben der Regionen-Zahl (E78). Die globale Mode-Leiste
+(Anzeigen/Layout/Transkription) entfiel mit E60 — Begruendung: Wortdoppelung "Transkription"-Mode
+mit "OCR"-Source.
 
 ---
 
@@ -138,33 +143,57 @@ Editiert das aktive Text-Panel via `contenteditable`. Drei Quellen waehlbar:
 | **TEI** | gerendertes TEI | nur Text-Inhalte (keine Struktur — fuer Tags den XML-Modus nutzen) |
 | **XML** | TEI-XML mit Syntax-Highlighting | rohes XML inklusive Tags und Attribute |
 
-Aenderungen werden debounced eingesammelt. Speichern ueber den `Text ↓` / `TEI ↓` Button im Header
-loest den Download aus.
+Aenderungen werden debounced eingesammelt und als ungespeichert markiert; der gemeinsame
+**Speichern**-Knopf sichert sie zusammen mit Layout und Status (siehe §Persistenz). Einzeln
+exportieren laesst sich der Text/TEI ueber **Export ▾** (E78).
 
 ---
 
 ## Persistenz
 
-Kein Server. Zwei Wege, je nach Browser (E72):
+Kein Server. **Ein** "Speichern"-Knopf sichert alle ungespeicherten Stroeme als einen Akt --
+Layout (aktuelle Seite), Text bzw. TEI (aktuelle Seite, je nach Text-Quelle) und das
+Pro-Objekt-Manifest (Workflow-Status + Provenienz). Jeder Strom landet an seiner kanonischen
+Stelle im Repo (`saveAll()` in `viewer.js`). Zwei Schreibwege, je nach Browser (E72):
 
-**1. Direkt-Schreiben (File System Access API, empfohlen, nur Chromium).** Per Klick auf
-"Ordner verbinden" (Doc-Subbar) waehlt der Nutzer einmal den Repo-Root und erteilt
-Schreibrecht; danach schreiben Speicher-Aktionen direkt in den Working Tree. Der Handle
-bleibt in IndexedDB; Schreibrecht muss pro Sitzung per Geste re-granted werden. Modul:
-`docs/assets/js/fs-access.js` (`ZBZ.FsAccess`). Funktioniert unter `localhost` und HTTPS;
-geschrieben wird stets in den lokalen Klon des Nutzers, nie auf den Server.
+**1. Direkt-Schreiben (File System Access API, Normalweg, Chromium).** Beim ersten Speichern
+fragt der Viewer einmal nach dem Repo-Wurzelordner (`connectWithInfo()` mit Erst-Info-Modal:
+welcher Ordner = `zbz-ocr-tei`, was geschrieben wird) und erteilt Schreibrecht; danach schreiben
+Speicher-Aktionen direkt in den Working Tree. Der Handle bleibt in IndexedDB; Schreibrecht muss
+pro Sitzung per Geste re-granted werden. Ein Plausibilitaetscheck (`looksLikeRepoRoot`: `docs/` +
+`scripts/`) warnt bei falscher Ordnerwahl. Modul: `docs/assets/js/fs-access.js` (`ZBZ.FsAccess`).
+Funktioniert unter `localhost` und HTTPS; geschrieben wird stets in den lokalen Klon, nie auf einen Server.
 
-**2. Download (Fallback, alle Browser).** `ZBZ.Download` (`docs/assets/js/download.js`) bietet
-die Datei als Download an, der Nutzer legt sie manuell ab.
+**2. Download (Fallback, alle Browser).** Ohne FSA (Firefox/Safari) oder bei abgebrochener
+Ordnerwahl bietet `ZBZ.Download` (`docs/assets/js/download.js`) die Datei als Download an.
+Die Einzel-Downloads pro Strom bleiben zusaetzlich als **"Export ▾"**-Dropdown erreichbar (E78).
 
-Zielpfade beider Wege (identisch — die Pipeline konsumiert sie mit hoechster Prioritaet):
+Das Bearbeiterkuerzel (ZBZ-Partner) steht als **Identity-Chip** neben dem Speichern-Knopf und
+geht in die Manifest-History ein (`{at, by, from, to}`); kein blockierendes `prompt()` mehr.
 
-- Layout: `output/layout/{doc}/{doc}_p{NNN}_layout_curated.json` — gelesen von `load_layout_gemini` (vor Gemini/Docling)
-- OCR/Text: `output/ocr_curated/{doc}_p{N}.md` — `OCR_CURATED_DIR`, erstes Element in `_OCR_DIRS` (`scripts/core/loaders.py`)
-- Manifest: `output/tei_final/{doc}_manifest.json` — Workflow-Status + History (E66)
-- TEI: `output/tei_final/{doc}_final.xml` — **ueberschreibt die Single Source of Truth**. Achtung: ein spaeterer `--reassemble` regeneriert diese Datei aus OCR+Layout und ueberschreibt den manuellen TEI-Edit wieder. Fuer dauerhafte Korrekturen daher Layout/OCR editieren und neu zusammenbauen, nicht das finale TEI direkt.
+**Doppel-Schreibung kanonisch + Mirror (E79).** Der server-lose Viewer laeuft mit Docroot=`docs/`
+und liest beim Reload **nur** aus `docs/data/` (`output/` ist von dort nicht erreichbar). Damit ein
+gespeicherter Edit den Reload ueberlebt, schreibt jede Speicher-Aktion die identische Nutzlast an
+**zwei** Orte -- den kanonischen `output/`-Pfad (Pipeline-Konsum) **und** den Mirror unter `docs/data/`:
 
-Nach dem Schreiben regeneriert ein Pipeline-Lauf das TEI und den Mirror:
+| Strom | Kanonisch (Pipeline liest) | Mirror (Viewer-Reload liest) |
+|---|---|---|
+| Layout | `output/layout/{doc}/{doc}_p{NNN}_layout_curated.json` | `docs/data/pages/{doc}/{doc}_p{NNN}_layout_curated.json` |
+| OCR/Text | `output/ocr_curated/{doc}_p{N}.md` | `docs/data/pages/{doc}/{doc}_p{N}.md` |
+| Manifest | `output/tei_final/{doc}_manifest.json` | `docs/data/manifests/{doc}_manifest.json` |
+| TEI | `output/tei_final/{doc}_final.xml` | `docs/data/pages/{doc}/{doc}_final.xml` |
+
+Pipeline-Praezedenz: `load_layout_gemini` liest curated > gemini > docling; `OCR_CURATED_DIR` ist
+erstes Element in `_OCR_DIRS` (`scripts/core/loaders.py`). Viewer-Praezedenz: `fetchLayout` probiert
+`layoutCurated > gemini > docling` (E79). `generate_edition_data --mirror-only` reproduziert exakt
+dieselben Mirror-Dateien -> kein Drift.
+
+Caveat TEI: `output/tei_final/{doc}_final.xml` ist die **Single Source of Truth**; ein spaeterer
+`--reassemble` regeneriert sie aus OCR+Layout und ueberschreibt einen manuellen TEI-Edit wieder
+(die Per-Seiten-TEI-Splits im Mirror entstehen ohnehin erst beim Reassemble). Fuer dauerhafte
+Korrekturen daher Layout/OCR editieren und neu zusammenbauen, nicht das finale TEI direkt.
+
+Nach dem Schreiben faltet ein Pipeline-Lauf die Kuration ins TEI und regeneriert den Mirror:
 
 ```bash
 python -m scripts.tei.tei_unified --doc {DOC} --reassemble ; python -m scripts.edition.generate_edition_data --mirror-only
@@ -174,13 +203,14 @@ python -m scripts.tei.tei_unified --doc {DOC} --reassemble ; python -m scripts.e
 Der frueher vorhandene FastAPI-Curation-Server (`scripts/server/curation_server.py`) wurde mit E57
 geloescht, weil das Frontend ihn seit E56 nicht mehr ansteuert.
 
-### Export-Modul (GEPLANT, im Code noch nicht implementiert)
+### Export-Modul (Einzel-Export umgesetzt, ZIP-Bundle weiter Roadmap)
 
-> Stand 2026-05-27: Das hier beschriebene Export-Modul ist Roadmap. Im Frontend gibt es
-> aktuell weder ein JSZip-CDN-Tag noch ein `ZBZ.Export` — nur den Per-Seite-Einzel-Download.
+> Stand 2026-06-07: Die **Einzel-Downloads pro Strom** sind als **"Export ▾"**-Dropdown in der
+> Doc-Subbar umgesetzt (Layout/Text/TEI/Manifest je einzeln, E78). Das hier beschriebene
+> **Komplett-/Multi-Doc-ZIP** (JSZip) ist weiter Roadmap -- es gibt noch kein JSZip-CDN-Tag und
+> kein `ZBZ.Export`.
 
-Der Per-Seite-Einzel-Download (Layout/Text/TEI in der Doc-Subbar) bleibt erhalten.
-Zusaetzlich kommt ein Komplett-Export:
+Das geplante ZIP-Bundle zusaetzlich zum Einzel-Export:
 
 | Ort | Funktion | Granularitaet |
 |---|---|---|

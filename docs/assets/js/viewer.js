@@ -36,22 +36,24 @@
         _currentEditedText: null,
         _isBlank: false,      // Leerseite (Vorsatz/Rueckseite/Durchschlag) — kein echter Text
         manifest: null,       // E66: Pro-Objekt-Manifest mit streams.{ocr,layout,tei}.{status,history}
-        manifestDirty: false, // ungespeicherte Status-Aenderungen (Download faellig)
-        dirtyStreams: new Set() // welche Stroeme seit dem letzten Manifest-Download geaendert wurden
+        manifestDirty: false, // ungespeicherte Status-Aenderungen
+        dirtyStreams: new Set(), // welche Stroeme seit dem letzten Speichern geaendert wurden
+        layoutDirty: false,   // ungespeicherte Layout-Aenderung (aktuelle Seite)
+        textDirty: false      // ungespeicherte Text-Aenderung (aktuelle Seite)
     };
 
-    // E66/E67: Workflow-Status pro Strom -- unverifiziert -> in_arbeit -> bearbeitet -> fertig -> unverifiziert
-    // `unverifiziert` heisst: Pipeline-Output existiert, kein Mensch hat verifiziert (gelb).
-    // `fertig` = menschlich freigegeben (gruen). Rot bleibt reserviert fuer expliziten Problem-Status.
-    const STATUS_CYCLE = ['unverifiziert', 'in_arbeit', 'bearbeitet', 'fertig'];
+    // E77: Workflow-Status pro Strom, drei Stufen -- unverifiziert -> in_arbeit -> verifiziert -> unverifiziert
+    // `unverifiziert` heisst: Pipeline-Output existiert, kein Mensch hat verifiziert (neutral/grau).
+    // `in_arbeit` = in Bearbeitung (gelb). `verifiziert` = menschlich freigegeben (gruen).
+    // Rot bleibt reserviert fuer einen spaeteren expliziten Problem-Status.
+    const STATUS_CYCLE = ['unverifiziert', 'in_arbeit', 'verifiziert'];
     const STATUS_LABEL = {
         unverifiziert: 'unverifiziert',
         in_arbeit:     'in Arbeit',
-        bearbeitet:    'bearbeitet',
-        fertig:        'fertig'
+        verifiziert:   'verifiziert'
     };
-    // Legacy-Mapping fuer v2-Manifeste mit "offen"
-    const STATUS_LEGACY = { offen: 'unverifiziert' };
+    // Legacy-Mapping fuer aeltere Manifeste/Mirror (offen, bearbeitet, fertig)
+    const STATUS_LEGACY = { offen: 'unverifiziert', bearbeitet: 'in_arbeit', fertig: 'verifiziert' };
     const STREAM_LABEL = { ocr: 'OCR', layout: 'Layout', tei: 'TEI-XML' };
 
     const OSD_PREFIX = 'https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/images/';
@@ -73,17 +75,25 @@
         textTitle:      $('#text-panel-title'),
         regionCount:    $('#region-count'),
         layoutToolbar:  $('#layout-toolbar'),
-        btnConnectRepo: $('#btn-connect-repo'),
+        // Speichern + Export-Dropdown + Identitaets-Chip
+        btnSave:        $('#btn-save'),
+        btnExportMenu:  $('#btn-export-menu'),
+        exportMenu:     $('#export-menu'),
+        btnIdentity:    $('#btn-identity'),
+        identityWho:    $('#identity-who'),
+        identityInput:  $('#identity-input'),
         btnDlLayout:    $('#btn-download-layout'),
         btnDlText:      $('#btn-download-text'),
         btnDlTei:       $('#btn-download-tei'),
+        btnDlManifest:  $('#btn-download-manifest'),
+        fsaInfo:        $('#fsa-info'),
+        fsaInfoGo:      $('#fsa-info-go'),
+        fsaInfoCancel:  $('#fsa-info-cancel'),
         // E66: Workflow-Status-Controls
         statusOcr:      $('#status-ocr'),
         statusLayout:   $('#status-layout'),
         statusTei:      $('#status-tei'),
-        statusHint:     $('#status-hint'),
-        statusAuthor:   $('#status-author'),
-        btnDlManifest:  $('#btn-download-manifest')
+        statusHint:     $('#status-hint')
     };
 
     // ============================================================ Init ============================================================
@@ -91,8 +101,9 @@
     async function init() {
         bindEvents();
 
-        // Persistierten Repo-Ordner wiederherstellen (File System Access) + Button-Status
-        if (ZBZ.FsAccess) { await ZBZ.FsAccess.init(); renderConnectBtn(); }
+        renderIdentity();
+        // Persistierten Repo-Ordner wiederherstellen (File System Access)
+        if (ZBZ.FsAccess) { await ZBZ.FsAccess.init(); }
 
         const urlDoc = ZBZ.getParam('doc');
         if (!urlDoc) {
@@ -153,6 +164,8 @@
         refs.btnDlLayout.disabled = false;
         refs.btnDlText.disabled = false;
         refs.btnDlTei.disabled = false;
+        if (refs.btnExportMenu) refs.btnExportMenu.disabled = false;
+        renderSaveState();
 
         // E66: Manifest fuer Workflow-Status laden (parallel zu Seitenrendering)
         loadManifest(doc.id);
@@ -198,12 +211,10 @@
         refs.btnDlManifest.disabled = false;
     }
 
-    // Kuerzel aus dem Inline-Feld (Subbar) bzw. localStorage. KEIN blockierendes
-    // prompt() mehr -- das fror beim ersten Edit-Toggle die ganze Seite ein.
+    // Kuerzel aus dem Identitaets-Chip (localStorage). KEIN blockierendes prompt().
     function getAuthor() {
-        const fromField = refs.statusAuthor && refs.statusAuthor.value.trim();
         const fromStore = (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
-        return fromField || fromStore || 'anonym';
+        return fromStore || 'anonym';
     }
 
     function streamStatus(stream) {
@@ -230,7 +241,7 @@
                 : STREAM_LABEL[stream] + ': ' + STATUS_LABEL[status];
             btn.title = baseLine
                 + (last ? '\nzuletzt: ' + last.to + ' · ' + (last.by || '?') + ' · ' + (last.at || '').slice(0, 16) : '')
-                + '\nKlick wechselt: unverifiziert -> in Arbeit -> bearbeitet -> fertig';
+                + '\nKlick wechselt: unverifiziert -> in Arbeit -> verifiziert';
             btn.innerHTML =
                 '<span class="status-pill__stream">' + STREAM_LABEL[stream] + '</span>'
                 + '<span class="status-pill__dot"></span>'
@@ -238,7 +249,7 @@
         });
         refs.btnDlManifest.disabled = !state.manifest;
         refs.statusHint.textContent = state.manifestDirty
-            ? 'ungespeichert · Manifest herunterladen'
+            ? 'ungespeicherter Status · Speichern'
             : '';
     }
 
@@ -247,7 +258,7 @@
         if (STATUS_CYCLE.indexOf(newStatus) < 0) return;
         const s = state.manifest.streams[stream];
         if (!s) return;
-        const from = s.status || 'offen';
+        const from = s.status || 'unverifiziert';
         if (from === newStatus) return;
         s.status = newStatus;
         if (!Array.isArray(s.history)) s.history = [];
@@ -261,6 +272,7 @@
         state.manifestDirty = true;
         state.dirtyStreams.add(stream);
         renderStatusPills();
+        renderSaveState();
     }
 
     function cycleStatus(stream) {
@@ -278,47 +290,237 @@
         }
     }
 
-    async function downloadManifest() {
-        if (!state.manifest) { ZBZ.toast('Kein Manifest geladen', 'warn'); return; }
-        await persist(
-            () => ZBZ.FsAccess.writeManifest(state.doc.id, state.manifest),
-            () => ZBZ.Download.manifest(state.doc.id, state.manifest)
-        );
-        state.manifestDirty = false;
-        state.dirtyStreams.clear();
+    // ============================================================ Identitaets-Chip (Kuerzel) ============================================================
+
+    let identityCancelling = false; // ESC bricht ab, ohne dass das Blur-Commit speichert
+
+    function currentAuthor() {
+        return (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
+    }
+    function renderIdentity() {
+        if (!refs.identityWho) return;
+        const v = currentAuthor();
+        refs.identityWho.textContent = v || 'Kuerzel';
+        refs.btnIdentity.classList.toggle('identity-chip--empty', !v);
+    }
+    function startIdentityEdit() {
+        refs.identityInput.value = currentAuthor();
+        refs.btnIdentity.hidden = true;
+        refs.identityInput.hidden = false;
+        refs.identityInput.focus();
+        refs.identityInput.select();
+    }
+    function commitIdentityEdit() {
+        if (identityCancelling) { identityCancelling = false; return; }
+        const v = refs.identityInput.value.trim();
+        if (window.localStorage) {
+            if (v) localStorage.setItem('zbz.workflow.by', v);
+            else localStorage.removeItem('zbz.workflow.by');
+        }
+        refs.identityInput.hidden = true;
+        refs.btnIdentity.hidden = false;
+        renderIdentity();
+    }
+    function cancelIdentityEdit() {
+        identityCancelling = true;
+        refs.identityInput.hidden = true;
+        refs.btnIdentity.hidden = false;
+    }
+
+    // ============================================================ Speichern (alle Stroeme direkt ins Repo) ============================================================
+
+    // Schreibt direkt in den verbundenen Repo-Ordner; faellt pro Datei auf Download
+    // zurueck, wenn nicht verbunden oder der Schreibzugriff scheitert. Ohne eigenen Toast
+    // (saveAll meldet gesammelt).
+    async function persistSilent(fsWrite, dlFallback) {
+        if (ZBZ.FsAccess && ZBZ.FsAccess.isConnected()) {
+            try { await fsWrite(); return true; }
+            catch (err) { ZBZ.log('Viewer', 'Direkt-Speichern fehlgeschlagen: ' + (err && err.message)); }
+        }
+        dlFallback();
+        return false;
+    }
+
+    function renderSaveState() {
+        // Was ist ungespeichert? (zugleich Grundlage fuer den zustandsabhaengigen Tooltip)
+        const parts = [];
+        if (state.layoutDirty) parts.push('Layout S.' + state.page);
+        if (state.textDirty)   parts.push((state.textSource === 'xml' || state.textSource === 'tei') ? 'TEI' : 'Text S.' + state.page);
+        if (state.manifestDirty) parts.push('Status');
+        const dirty = parts.length > 0;
+        if (!refs.btnSave) return;
+        refs.btnSave.disabled = !state.doc || !dirty;
+        refs.btnSave.classList.toggle('btn--dirty', dirty);
+        if (!dirty) {
+            refs.btnSave.title = 'Nichts zu speichern. Bearbeite Layout, Text oder Workflow-Status, dann wird gespeichert.';
+        } else {
+            const target = (ZBZ.FsAccess && ZBZ.FsAccess.available)
+                ? (ZBZ.FsAccess.isConnected() ? 'direkt ins Repo' : 'ins Repo (fragt einmal nach dem Ordner)')
+                : 'als Download';
+            refs.btnSave.title = 'Speichert ' + target + ': ' + parts.join(', ');
+        }
+    }
+
+    // Vor einem Seitenwechsel pruefen: Layout/Text-Edits sind per-Seite und gingen beim
+    // Wechsel verloren. Manifest-Dirty ist per-Dokument und ueberlebt die Navigation,
+    // blockiert sie also nicht. Gibt true zurueck, wenn der Wechsel erfolgen darf.
+    function confirmLeavePage() {
+        if (!state.layoutDirty && !state.textDirty) return true;
+        return window.confirm('Ungespeicherte Aenderungen auf dieser Seite gehen verloren. Trotzdem wechseln?');
+    }
+
+    // "Speichern" = alle ungespeicherten Stroeme als ein Akt: Layout (Seite), Text (Seite,
+    // OCR oder TEI je nach Quelle) und das Manifest (Workflow-Status + Provenienz). Jeder
+    // Strom landet an seiner richtigen Stelle im Repo. Kein Download (ausser Fallback).
+    async function saveAll() {
+        if (!state.doc) return;
+        const dl = state.layoutDirty && state.layout && Array.isArray(state.layout.regions);
+        const dt = state.textDirty;
+        const dm = state.manifestDirty;
+        if (!dl && !dt && !dm) { ZBZ.toast('Nichts zu speichern', 'warn'); return; }
+
+        // Direkt-Speichern bevorzugen: einmal den Repo-Ordner verbinden (mit Erst-Info),
+        // falls moeglich. Bricht der Nutzer ab, greift unten der Download-Fallback.
+        if (ZBZ.FsAccess && ZBZ.FsAccess.available && !ZBZ.FsAccess.isConnected()) {
+            await connectWithInfo();
+        }
+
+        const saved = [];
+        try {
+            if (dl) {
+                const meta = layoutSourceMeta();
+                await persistSilent(
+                    () => ZBZ.FsAccess.writeLayout(state.doc.id, state.page, state.layout.regions, meta),
+                    () => ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, meta)
+                );
+                state.layoutDirty = false;
+                if (refs.regionCount) refs.regionCount.textContent = state.layout.regions.length + ' Regionen';
+                saved.push('Layout S.' + state.page);
+            }
+            if (dt) {
+                const content = (state._currentEditedText != null) ? state._currentEditedText : state._currentText;
+                if (content != null) {
+                    const isTei = (state.textSource === 'xml' || state.textSource === 'tei');
+                    if (isTei) {
+                        await persistSilent(
+                            () => ZBZ.FsAccess.writeTei(state.doc.id, content),
+                            () => ZBZ.Download.tei(state.doc.id, content, 'curated')
+                        );
+                        saved.push('TEI');
+                    } else {
+                        await persistSilent(
+                            () => ZBZ.FsAccess.writeText(state.doc.id, state.page, content),
+                            () => ZBZ.Download.text(state.doc.id, state.page, content)
+                        );
+                        saved.push('Text S.' + state.page);
+                    }
+                }
+                state.textDirty = false;
+            }
+            if (dm) {
+                await persistSilent(
+                    () => ZBZ.FsAccess.writeManifest(state.doc.id, state.manifest),
+                    () => ZBZ.Download.manifest(state.doc.id, state.manifest)
+                );
+                state.manifestDirty = false;
+                state.dirtyStreams.clear();
+                saved.push('Status');
+            }
+        } catch (err) {
+            ZBZ.toast('Speichern fehlgeschlagen: ' + (err && err.message), 'err');
+        }
+
         renderStatusPills();
+        renderSaveState();
+        if (saved.length) {
+            const mode = (ZBZ.FsAccess && ZBZ.FsAccess.isConnected()) ? 'Repo' : 'Download';
+            ZBZ.toast('Gespeichert (' + mode + '): ' + saved.join(', '), 'ok');
+        }
+    }
+
+    // ============================================================ Export-Dropdown (Einzel-Download) ============================================================
+
+    function exportLayout() {
+        if (!state.doc || !state.layout) { ZBZ.toast('Keine Layout-Daten', 'warn'); return; }
+        ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, layoutSourceMeta());
+        closeExportMenu();
+    }
+    function exportText() {
+        if (!state.doc) return;
+        const content = (state._currentEditedText != null) ? state._currentEditedText : state._currentText;
+        if (!content) { ZBZ.toast('Kein Text geladen', 'warn'); return; }
+        ZBZ.Download.text(state.doc.id, state.page, content);
+        closeExportMenu();
+    }
+    async function exportTei() {
+        if (!state.doc) return;
+        let xml = state._currentEditedText;
+        if (!xml || state.textSource !== 'xml') xml = await loadTeiFinal(state.doc.id);
+        if (!xml) { ZBZ.toast('Kein TEI verfuegbar', 'warn'); return; }
+        ZBZ.Download.tei(state.doc.id, xml, 'curated');
+        closeExportMenu();
+    }
+    function exportManifest() {
+        if (!state.manifest) { ZBZ.toast('Kein Manifest geladen', 'warn'); return; }
+        ZBZ.Download.manifest(state.doc.id, state.manifest);
+        closeExportMenu();
+    }
+
+    function toggleExportMenu() {
+        if (refs.exportMenu.hidden) openExportMenu(); else closeExportMenu();
+    }
+    function openExportMenu() {
+        refs.exportMenu.hidden = false;
+        refs.btnExportMenu.setAttribute('aria-expanded', 'true');
+        setTimeout(() => document.addEventListener('click', onDocClickForMenu), 0);
+    }
+    function closeExportMenu() {
+        if (!refs.exportMenu || refs.exportMenu.hidden) return;
+        refs.exportMenu.hidden = true;
+        refs.btnExportMenu.setAttribute('aria-expanded', 'false');
+        document.removeEventListener('click', onDocClickForMenu);
+    }
+    function onDocClickForMenu(e) {
+        if (!refs.exportMenu.contains(e.target) && e.target !== refs.btnExportMenu) closeExportMenu();
     }
 
     // ============================================================ Repo-Ordner (File System Access) ============================================================
 
-    function renderConnectBtn() {
-        const btn = refs.btnConnectRepo;
-        if (!btn) return;
-        if (!ZBZ.FsAccess || !ZBZ.FsAccess.available) { btn.hidden = true; return; }
-        btn.hidden = false;
-        const conn = ZBZ.FsAccess.isConnected();
-        btn.textContent = conn ? ('Ordner: ' + (ZBZ.FsAccess.rootName() || 'verbunden')) : 'Ordner verbinden';
-        btn.setAttribute('aria-pressed', conn ? 'true' : 'false');
-        btn.title = conn
-            ? 'Verbunden — Kuration wird direkt in den Working Tree geschrieben. Klick trennt.'
-            : 'Repo-Ordner verbinden: Kuration direkt in den Working Tree schreiben statt herunterladen (nur Chromium).';
+    // Einmalige Info beim ersten Verbinden: erklaert WELCHEN Ordner waehlen + WAS passiert,
+    // bevor der native Ordner-Dialog aufgeht. Danach gemerkt (localStorage).
+    function connectWithInfo() {
+        return new Promise((resolve) => {
+            if (!ZBZ.FsAccess || !ZBZ.FsAccess.available) { resolve(false); return; }
+            const proceed = async () => {
+                if (window.localStorage) localStorage.setItem('zbz.fsa.infoShown', '1');
+                hideFsaInfo();
+                const ok = await ZBZ.FsAccess.connect();
+                resolve(ok);
+            };
+            const cancel = () => { hideFsaInfo(); resolve(false); };
+            if (window.localStorage && localStorage.getItem('zbz.fsa.infoShown')) { proceed(); return; }
+            showFsaInfo(proceed, cancel);
+        });
     }
-
-    async function toggleConnectRepo() {
-        if (!ZBZ.FsAccess || !ZBZ.FsAccess.available) return;
-        if (ZBZ.FsAccess.isConnected()) {
-            await ZBZ.FsAccess.disconnect();
-        } else {
-            await ZBZ.FsAccess.connect();
-        }
-        renderConnectBtn();
+    function showFsaInfo(onGo, onCancel) {
+        if (!refs.fsaInfo) { onGo(); return; }
+        if (refs.fsaInfoGo) refs.fsaInfoGo.onclick = onGo;
+        if (refs.fsaInfoCancel) refs.fsaInfoCancel.onclick = onCancel;
+        refs.fsaInfo.hidden = false;
     }
+    function hideFsaInfo() { if (refs.fsaInfo) refs.fsaInfo.hidden = true; }
 
     // ============================================================ Page laden ============================================================
 
     async function loadPage() {
         if (!state.doc) return;
         const doc = state.doc, page = state.page;
+        // Seitenwechsel: Layout/Text sind per-Seite -> Dirty-Zustand der alten Seite
+        // verfaellt (Manifest-Dirty bleibt, da per-Dokument).
+        state.layoutDirty = false;
+        state.textDirty = false;
+        state._currentEditedText = null;
+        renderSaveState();
         refs.pageInfo.textContent = page + ' / ' + (doc.page_count || '?');
         refs.btnPrev.disabled = page <= 1;
         refs.btnNext.disabled = page >= (doc.page_count || 1);
@@ -485,7 +687,8 @@
     async function fetchLayout(doc, page) {
         const ck = 'layout:' + doc + ':' + page;
         if (cache.has(ck)) return cache.get(ck);
-        const j = await ZBZ.fetchFirstJsonOk(ZBZ.path.layoutGemini(doc, page))
+        const j = await ZBZ.fetchFirstJsonOk(ZBZ.path.layoutCurated(doc, page))
+              || await ZBZ.fetchFirstJsonOk(ZBZ.path.layoutGemini(doc, page))
               || await ZBZ.fetchFirstJsonOk(ZBZ.path.layoutDocling(doc, page));
         cache.set(ck, j);
         return j;
@@ -514,6 +717,8 @@
         if (!state.layout) state.layout = { regions: [] };
         state.layout.regions = regions;
         refs.regionCount.textContent = regions.length + ' Regionen (geaendert)';
+        state.layoutDirty = true;
+        renderSaveState();
         // E66: erste echte Layout-Aenderung -> Strom auf in_arbeit
         autoStartArbeit('layout');
     }
@@ -616,6 +821,8 @@
         if (state.textEdit && ZBZ.TranscriptionEditor) {
             ZBZ.TranscriptionEditor.attach(refs.textBody, state.textSource, (newContent) => {
                 state._currentEditedText = newContent;
+                state.textDirty = true;
+                renderSaveState();
                 // E66: erste echte Text-Aenderung -> zugehoerigen Strom auf in_arbeit
                 autoStartArbeit(state.textSource === 'ocr' ? 'ocr' : 'tei');
             });
@@ -671,8 +878,8 @@
         if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
 
         // TEI-Bearbeitung nur im XML-Modus: die gerenderte TEI laesst sich nicht zurueck-
-        // serialisieren (transcription-editor liest nur innerText) und downloadTei nimmt
-        // Edits ausschliesslich aus dem XML-Modus mit. Wuerde man hier auf der gerenderten
+        // serialisieren (transcription-editor liest nur innerText) und Speichern/Export nehmen
+        // TEI-Edits ausschliesslich aus dem XML-Modus mit. Wuerde man hier auf der gerenderten
         // TEI editieren, gingen die Aenderungen beim Speichern verloren. Daher beim
         // Aktivieren von Text-Edit auf gerenderter TEI auf die XML-Quelle umschalten.
         if (state.textEdit && state.textSource === 'tei') {
@@ -702,21 +909,6 @@
 
     // Wenn ein Repo-Ordner verbunden ist (File System Access API), direkt in den Working
     // Tree schreiben; sonst (oder bei Schreibfehler) auf ZBZ.Download zurueckfallen.
-    async function persist(fsWrite, dlFallback) {
-        if (ZBZ.FsAccess && ZBZ.FsAccess.isConnected()) {
-            try {
-                const path = await fsWrite();
-                ZBZ.toast('Gespeichert: ' + path, 'ok');
-                return true;
-            } catch (err) {
-                ZBZ.log('Viewer', 'Direkt-Speichern fehlgeschlagen: ' + (err && err.message));
-                ZBZ.toast('Direkt-Speichern fehlgeschlagen — Download', 'warn');
-            }
-        }
-        dlFallback();
-        return false;
-    }
-
     function layoutSourceMeta() {
         return {
             source: 'curated',
@@ -727,42 +919,19 @@
         };
     }
 
-    function downloadLayout() {
-        if (!state.doc || !state.layout) { ZBZ.toast('Keine Layout-Daten', 'warn'); return; }
-        const meta = layoutSourceMeta();
-        persist(
-            () => ZBZ.FsAccess.writeLayout(state.doc.id, state.page, state.layout.regions, meta),
-            () => ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, meta)
-        );
-    }
-    function downloadText() {
-        if (!state.doc) return;
-        const content = (state._currentEditedText != null) ? state._currentEditedText : state._currentText;
-        if (!content) { ZBZ.toast('Kein Text geladen', 'warn'); return; }
-        persist(
-            () => ZBZ.FsAccess.writeText(state.doc.id, state.page, content),
-            () => ZBZ.Download.text(state.doc.id, state.page, content)
-        );
-    }
-    async function downloadTei() {
-        if (!state.doc) return;
-        let xml = state._currentEditedText;
-        if (!xml || state.textSource !== 'xml') {
-            xml = await loadTeiFinal(state.doc.id);
-        }
-        if (!xml) { ZBZ.toast('Kein TEI verfuegbar', 'warn'); return; }
-        persist(
-            () => ZBZ.FsAccess.writeTei(state.doc.id, xml),
-            () => ZBZ.Download.tei(state.doc.id, xml, 'curated')
-        );
-    }
-
     // ============================================================ Events ============================================================
 
     function bindEvents() {
-        refs.btnPrev.addEventListener('click', () => { state.page = Math.max(1, state.page - 1); loadPage(); });
+        refs.btnPrev.addEventListener('click', () => {
+            if (state.page <= 1) return;
+            if (!confirmLeavePage()) return;
+            state.page = Math.max(1, state.page - 1);
+            loadPage();
+        });
         refs.btnNext.addEventListener('click', () => {
             const max = state.doc ? (state.doc.page_count || 1) : 1;
+            if (state.page >= max) return;
+            if (!confirmLeavePage()) return;
             state.page = Math.min(max, state.page + 1);
             loadPage();
         });
@@ -777,31 +946,32 @@
         refs.btnTextEdit.addEventListener('click', () => setTextEdit(!state.textEdit));
         refs.textSourceBtns.forEach(b => b.addEventListener('click', () => setTextSource(b.getAttribute('data-text-source'))));
 
-        if (refs.btnConnectRepo) refs.btnConnectRepo.addEventListener('click', toggleConnectRepo);
-        refs.btnDlLayout.addEventListener('click', downloadLayout);
-        refs.btnDlText.addEventListener('click', downloadText);
-        refs.btnDlTei.addEventListener('click', downloadTei);
+        // Speichern (alle Stroeme direkt ins Repo) + Export-Dropdown (Einzel-Download)
+        if (refs.btnSave) refs.btnSave.addEventListener('click', saveAll);
+        if (refs.btnExportMenu) refs.btnExportMenu.addEventListener('click', (e) => { e.stopPropagation(); toggleExportMenu(); });
+        refs.btnDlLayout.addEventListener('click', exportLayout);
+        refs.btnDlText.addEventListener('click', exportText);
+        refs.btnDlTei.addEventListener('click', exportTei);
+        refs.btnDlManifest.addEventListener('click', exportManifest);
 
-        // Kuerzel-Feld: aus localStorage vorbelegen, Aenderungen lokal persistieren.
-        if (refs.statusAuthor) {
-            refs.statusAuthor.value = (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
-            refs.statusAuthor.addEventListener('input', () => {
-                const v = refs.statusAuthor.value.trim();
-                if (!window.localStorage) return;
-                if (v) localStorage.setItem('zbz.workflow.by', v);
-                else localStorage.removeItem('zbz.workflow.by');
+        // Identitaets-Chip (Kuerzel): Klick -> Inline-Feld; Enter/Blur speichert, ESC bricht ab.
+        if (refs.btnIdentity) refs.btnIdentity.addEventListener('click', startIdentityEdit);
+        if (refs.identityInput) {
+            refs.identityInput.addEventListener('blur', commitIdentityEdit);
+            refs.identityInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') { e.preventDefault(); refs.identityInput.blur(); }
+                else if (e.key === 'Escape') { e.preventDefault(); cancelIdentityEdit(); }
             });
         }
 
-        // E66: Status-Pills klick = naechster Status (Cycle), Manifest-Download
+        // E66: Status-Pills klick = naechster Status (Cycle)
         refs.statusOcr.addEventListener('click', () => cycleStatus('ocr'));
         refs.statusLayout.addEventListener('click', () => cycleStatus('layout'));
         refs.statusTei.addEventListener('click', () => cycleStatus('tei'));
-        refs.btnDlManifest.addEventListener('click', downloadManifest);
 
         // Warnen vor Verlassen mit ungespeicherten Status-Aenderungen
         window.addEventListener('beforeunload', (e) => {
-            if (state.manifestDirty) {
+            if (state.manifestDirty || state.layoutDirty || state.textDirty) {
                 e.preventDefault();
                 e.returnValue = '';
                 return '';

@@ -117,10 +117,12 @@ Five static HTML pages under `docs/`, deployed via GitHub Pages:
 - `docs/about.html` &mdash; project info
 - `docs/impressum.html` &mdash; legal notice
 
-All data is loaded from static JSON/XML/MD files under `docs/data/`. No backend. Editor changes
-(layout corrections, transcription edits) are written directly into the working tree via the
-File System Access API (Chromium, "Ordner verbinden", E72) or exported as file downloads; the
-round-trip back into the pipeline is manual (see [knowledge/workflow.md](knowledge/workflow.md)).
+All data is loaded from static JSON/XML/MD files under `docs/data/`. No backend. A single **"Speichern"**
+button persists all unsaved streams at once (layout, text/TEI, manifest); changes are written directly
+into the working tree via the File System Access API (Chromium; the repo folder is picked once on first
+save) or exported as file downloads. Each save writes both the canonical `output/` path (consumed by the
+pipeline) and the `docs/data/` mirror, so a reload reflects the edit (E78/E79); folding curated edits back
+into the final TEI via `--reassemble` is manual (see [knowledge/workflow.md](knowledge/workflow.md)).
 On the public site, facsimile scans are present only for the 4 demo documents listed above.
 
 Frontend dependencies are loaded from CDN at runtime &mdash; no build pipeline:

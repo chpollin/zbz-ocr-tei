@@ -6,7 +6,7 @@
  * - Tabelle mit Title/Autor/Datum/Lang/Typ/Form/Seiten/Workflow
  *   Spaltenheader sind klickbar fuer Sortierung.
  *
- * Workflow-Statuswerte pro Strom: unverifiziert | in_arbeit | bearbeitet | fertig (E66/E67)
+ * Workflow-Statuswerte pro Strom: unverifiziert | in_arbeit | verifiziert (E77)
  *
  * Namespace: ZBZ.Catalog (initialisiert von DOMContentLoaded)
  */
@@ -21,11 +21,10 @@
     const STATUS_LABEL    = {
         unverifiziert: 'unverifiziert',
         in_arbeit:     'in Arbeit',
-        bearbeitet:    'bearbeitet',
-        fertig:        'fertig'
+        verifiziert:   'verifiziert'
     };
-    // Map alter Status-Werte (v2-Manifeste mit "offen") auf neue.
-    const STATUS_LEGACY = { offen: 'unverifiziert' };
+    // Map alter Status-Werte (offen, bearbeitet, fertig) auf neue.
+    const STATUS_LEGACY = { offen: 'unverifiziert', bearbeitet: 'in_arbeit', fertig: 'verifiziert' };
     const FORM_LABEL = {
         journalArticle: 'Zeitschriftenartikel',
         book:           'Monografie',

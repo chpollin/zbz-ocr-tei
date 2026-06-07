@@ -38,6 +38,11 @@ THUMB_QUALITY = 70
 
 FEATURED_DOCS = ["2310", "1000", "1330", "1540"]
 
+# E77: Workflow-Status auf drei Stufen (Variante A, E67-konform). Alte Werte beim
+# Mirror-Lesen auf die neuen mappen, damit Catalog + Histogramm konsistent sind.
+DEFAULT_STREAM_STATUS = "unverifiziert"
+_STREAM_STATUS_MIGRATION = {"offen": "unverifiziert", "bearbeitet": "in_arbeit", "fertig": "verifiziert"}
+
 LANG_LABELS = {
     "FR": "Franzoesisch",
     "DE": "Deutsch",
@@ -371,8 +376,9 @@ def build_catalog():
                         continue
                     history = s.get("history") or []
                     last = history[-1] if history else {}
+                    raw_status = s.get("status", DEFAULT_STREAM_STATUS)
                     streams_out[sname] = {
-                        "status": s.get("status", "offen"),
+                        "status": _STREAM_STATUS_MIGRATION.get(raw_status, raw_status),
                         "last_at": last.get("at"),
                         "last_by": last.get("by"),
                     }

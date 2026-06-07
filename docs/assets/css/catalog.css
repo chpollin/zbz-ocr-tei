@@ -322,16 +322,16 @@
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
-/* Ampel-Semantik (E67): die Pipeline ERZEUGT OCR/Layout/TEI deterministisch fuer
-   alle 285 Docs, der Default-Status ist also nicht "nichts da", sondern "vorhanden,
+/* Ampel-Semantik (E77, drei Stufen): die Pipeline ERZEUGT OCR/Layout/TEI deterministisch
+   fuer alle 285 Docs, der Default-Status ist also nicht "nichts da", sondern "vorhanden,
    unverifiziert".
-   gelb = Pipeline-Output da, nicht menschlich verifiziert (unverifiziert + in_arbeit + bearbeitet),
-   gruen = menschlich freigegeben (fertig).
-   rot bleibt reserviert fuer einen expliziten "Problem"/"fehlt"-Status. */
-.col-workflow__dot--unverifiziert { background: var(--h-ocker); }
+   neutral/grau = Pipeline-Output da, noch nicht angefasst (unverifiziert),
+   gelb = in Bearbeitung (in_arbeit),
+   gruen = menschlich verifiziert (verifiziert).
+   rot bleibt reserviert fuer einen spaeteren expliziten "Problem"/"fehlt"-Status. */
+.col-workflow__dot--unverifiziert { background: var(--h-text-muted); }
 .col-workflow__dot--in_arbeit     { background: var(--h-ocker); }
-.col-workflow__dot--bearbeitet    { background: var(--h-ocker); }
-.col-workflow__dot--fertig        { background: var(--h-olivgruen); }
+.col-workflow__dot--verifiziert   { background: var(--h-olivgruen); }
 
 /* Header: Workflow-Label nur als statisches Wort, nicht klickbar. */
 .doc-table__head .col-workflow {
