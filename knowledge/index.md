@@ -1,7 +1,7 @@
 ---
 type: moc
 created: 2026-01-29
-updated: 2026-05-25
+updated: 2026-06-07
 tags: [zbz-ocr-tei, index, navigation]
 status: active
 ---
@@ -24,6 +24,8 @@ SSoT pro Domaene, eine Datei pro Thema.
 | [workflow.md](workflow.md) | Wie laeuft der End-to-End-Datenfluss? Datenfluss-Diagramm, Datenformate pro Stufe, Save-Mechanismus im Viewer, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante, Roadmap |
 | [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Median 1.83%), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Workflow-Status pro Strom (E66, ersetzt Agent-Screening) |
 | [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay (OpenSeadragon E58), OCR/TEI-Editor, Edit-Toggle pro Panel (E60), ein "Speichern" -> direkt ins Repo + Mirror (E78/E79), Export ▾ pro Strom |
+| [frontend-gaps.md](frontend-gaps.md) | Wie gut erfuellt das Frontend seine User-Stories? Befunde (Bugs/UX/A11y/Performance) je Schweregrad mit `datei:zeile`, Top-10 Hersch, Oekosystem-Vergleich (6 Frontends), Querschnitts-Muster, Methodik-Notizen (G1.3, 2026-06-07) |
+| [oekosystem-synthese.md](oekosystem-synthese.md) | Gesamtbild der drei koordinierten Projekte (zbz / szd-htr / teiCrafter): Setup + Gates + kritischer Pfad, je Projekt Pipeline/Status, ALLE User-Stories, Integration + Bildluecke, Methodik, offene Punkte + Doku-Widersprueche, SSoT-Zuordnung (CC3-Synthese, 2026-06-07) |
 | [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |
 | [methodik.md](methodik.md) | Wie arbeiten wir? Epistemische Infrastruktur, Verifikationskaskade, Critical Expert in the Loop, Dreischichtung, operative CLI |
 | [decisions.md](decisions.md) | Was ist entschieden? E1-E76, offene Punkte (O8 an ZBZ, O13, O18), Risiken |
@@ -46,6 +48,7 @@ projekt (Vision, Korpus, ZBZ-Kontext)
    ├── quality (CER + TEI-Validierung + Screening)
    │
    ├── viewer (Pipeline-Viewer + Layout-/Transkriptions-Editor)
+   │      └── frontend-gaps (Befunde/UX/A11y/Performance, Oekosystem-Vergleich)
    │
    └── methodik (Promptotyping + Verifikationskaskade)
 
