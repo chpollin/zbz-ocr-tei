@@ -211,7 +211,7 @@ CER haengt von Pre-Normalisierung ab. Vier Regimes parallel publiziert:
 **Limitation** (dokumentiert in `multi_norm._note`): `extract_text_for_comparison()` normalisiert
 bereits symmetrisch (Quotes, Apostroph, Guillemets, Whitespace-Kollaps). Die nominellen Regimes
 liefern deshalb fast identische Zahlen. Der echte Effekt der Normalisierung ist in der
-Pipeline-Reduktion von ~9 % Ausgangslage auf die heutige Fidelity-CER (2,79 %, siehe
+Pipeline-Reduktion von ~9 % Ausgangslage auf die heutige Fidelity-CER (2,71 %, siehe
 Korrektheits-Welle oben) sichtbar, nicht zwischen den 4 nominellen Stufen.
 
 ### Domain-Metrik: HCPR-Adaption
@@ -279,7 +279,7 @@ Run-zu-Run-Varianz? Bootstrap-CIs erfassen nur Sampling-Unsicherheit, nicht Mode
 | arXiv 2510.06743 | traditional OCR | rus | 21-45% |
 | Transkribus-Doku | Richtwert | allg. | 0.5-2% |
 
-**Eigene Position:** Beste Docs 0.3-0.8% (State of the Art), Median 1.83% besser als Transkribus
+**Eigene Position:** Beste Docs 0.3-0.8% (State of the Art), Median 1.40% besser als Transkribus
 allein (3.67%) und Gemini 2.5 Pro zero-shot (3.36%).
 
 Kernerkenntnisse: (1) multimodale Post-Korrektur uebertrifft reine Text-Post-Korrektur deutlich.
