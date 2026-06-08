@@ -120,3 +120,6 @@ Aus den Sessions destillierte Beobachtungen, die fuer kuenftige Arbeit relevant 
 - **P7** Gattungsbegriffe im Entity-Index erzeugen False Positives in ~30% der Docs.
 - **P8** Zeitungslayouts versagen systematisch (>40 Zones, OCR-Halluzinationen). ~3% des Korpus.
 - **P10** Tier-2-Docs (4-8 Seiten) haben 85%+ APPROVED-Rate, Tier-1 (1-3 Seiten) nur 40%.
+
+- **2026-06-08** CER-Framing print-kalibriert (E80): Korpus ist Druck, nicht HTR; Transkribus-Baender schmeicheln. „exzellent/SotA/publikationsreif" raus, Headline an eigenen Print-Literaturvergleich (0.84 %–3.67 %) angeglichen. Median 1.83 % = solide, nicht SotA. Geaendert: quality.md, methode.html, arbeitsbericht.md (§6.3).
+- **2026-06-08** Transkribus-Export/Upload (E81): Pipeline-PAGE-XML rueckspielbar nach Transkribus. Zwei Skripte (`edition.transkribus_export` baut Bild+`page/`-Bundle, `edition.transkribus_upload` REST in Collection). Stichprobe 18 Docs/364 S. gebaut, doc 1500 in app.transkribus.org verifiziert (Layout+Text+Reading-Order); Legacy-TrpServer-API schreibt in die neue Plattform. Auth via Env-Vars. Doku: pipeline.md §Transkribus-Export, CLAUDE.md §Commands, scripts/README.

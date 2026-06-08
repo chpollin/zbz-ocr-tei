@@ -55,8 +55,14 @@ Alle Werte ueber **alle 25 Docs** (E73: das fruehere n=19-scope-clean-Subset wur
 
 Der Fidelity-Median **1.83 %** reproduziert die fruehere Headline -- jetzt aber sauber: ohne
 deflationaeres Trimming, ohne zirkulaeren Ausschluss, case-sensitiv, ueber das ganze Korpus.
-Nach **Transkribus-Qualitaetsbaendern** (<2 % exzellent, 2-5 % gut, 5-10 % pruefen, >10 % schlecht)
-ist der Median „exzellent", der Mean „gut".
+
+Einordnung **print-kalibriert** (E80): Die Transkribus-Qualitaetsbaender (<2 % exzellent, 2-5 % gut)
+stammen primaer aus der HTR-Praxis (Handschrift); fuer eine reine **Druck**-OCR-Aufgabe schmeicheln
+sie, weil dort die Messlatte hoeher liegt. Massgeblich ist daher der **Print-OCR-Literaturvergleich**
+(Abschnitt „Vergleich gegen Stand der Forschung" unten): Median 1.83 % liegt **zwischen** dem besten
+spezialisierten Print-Stack (Transkribus + LLM-Post 0.84 %) und Transkribus allein (3.67 %) -- solide
+fuer historischen Druck, aber **nicht** an der Spitze. Zusaetzlich misst die CER gegen eine selbst
+fehlerbehaftete Transkribus-Referenz (siehe Doc 1440), ist also eine Obergrenze der wahren Fehlerrate.
 
 ### Pipeline-Mehrwert (Paired, like-for-like Fidelity)
 
@@ -126,7 +132,7 @@ Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
 
 **Lesehilfe:**
 
-- Median 1.83% heisst: die Haelfte aller Docs hat CER ≤ 1.83% — State-of-the-Art fuer historischen Druck.
+- Median 1.83% heisst: die Haelfte aller Docs hat CER ≤ 1.83% — solide fuer historischen Druck. **Nicht** State-of-the-Art: spezialisierte Print-Stacks liegen darunter (Transkribus + LLM-Post 0.84%, Gemini 2.0 Flash zero-shot 1.27%, siehe „Vergleich gegen Stand der Forschung"). SotA-Niveau erreichen nur die besten Einzeldocs (0.3-0.8%).
 - Paired Test (ueberholt): die fruehere Angabe ~14.8pp ist zurueckgezogen (Artefakt des getrimmten Vergleichs). Aktueller Mehrwert **-7.90pp**, statistisch nicht signifikant (p=0.07, **n=25**) — siehe Headline + [decisions.md E73](decisions.md).
 - HCPR 99.32%: praktisch alle franzoesischen/deutschen Diakritika werden korrekt erhalten.
 
