@@ -220,6 +220,27 @@ python scripts/edition/extract_pages.py --pdf {DOC_ID}.pdf --dpi 300            
 python -m scripts.layout.generate_layout_overlays --doc {DOC_ID} --compare      # Layout-Overlay
 ```
 
+## Transkribus-Export / Upload (PAGE-XML-Round-Trip)
+
+Pipeline-PAGE-XML (`output/page_xml/`) zurueck nach Transkribus: erst Bundle bauen, dann via REST hochladen.
+Konzept + Dialekt-Details: [knowledge/pipeline.md §Transkribus-Export](knowledge/pipeline.md).
+
+```bash
+python -m scripts.edition.transkribus_export --sample                            # stratifizierte Stichprobe (~18) -> output/transkribus_upload/
+python -m scripts.edition.transkribus_export --all                               # kompletter Korpus
+python -m scripts.edition.transkribus_export --reference                         # die 24 Objekte, die ZBZ schon in Transkribus hat
+python -m scripts.edition.transkribus_export --doc {DOC_ID} [--zip]              # gezielt (+ optional ein .zip je Objekt)
+```
+
+Upload braucht den Login als Umgebungsvariablen (NIE im Code/Repo/.env): `TRANSKRIBUS_USER`, `TRANSKRIBUS_PASSWORD`,
+optional `TRANSKRIBUS_COLLECTION`. Jeder Lauf legt NEUE Dokumente an (kein Dedup) -- erst `--dry-run`, dann ein Testobjekt.
+
+```bash
+python -m scripts.edition.transkribus_upload --dry-run --collection {COLL}       # Login + Collection-Zugriff pruefen, nichts hochladen
+python -m scripts.edition.transkribus_upload --doc {DOC_ID} --collection {COLL}  # ein Objekt testweise hochladen
+python -m scripts.edition.transkribus_upload --collection {COLL}                 # ganzes Bundle hochladen
+```
+
 ---
 
 # Hilfe

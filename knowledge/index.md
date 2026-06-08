@@ -87,6 +87,7 @@ journal         — chronologisch, kompakter Ueberblick
 | Methode-Seite (E62) | `docs/methode.html` mit Headline-CER, stratifizierten Werten, Limitations, Literatur-Vergleich (statisch) | [viewer.md](viewer.md) |
 | End-to-End-Workflow | Datenfluss + Save-Mechanismus + Round-Trip + Provenance-Konzept + geplante `_complete.xml`-Variante | [workflow.md](workflow.md) |
 | Round-Trip | User-Edit -> "Speichern" (direkt ins Repo + Mirror, E78/E79) -> `tei_unified --reassemble` -> regenerierte TEI | [workflow.md §3.3](workflow.md), [pipeline.md §Round-Trip](pipeline.md) |
+| Transkribus-Export (E81) | Pipeline-PAGE-XML -> Bundle (`transkribus_export`) -> REST-Upload in Collection (`transkribus_upload`); Gegenrichtung zum Round-Trip, Auth via Env-Vars | [pipeline.md §Transkribus-Export](pipeline.md) |
 | Provenance pro Objekt (geplant) | `{doc}_provenance.json` mit voller Edit-History (AI + human), Anzeige im Viewer als Drawer | [workflow.md §4.2](workflow.md) |
 | `_complete.xml` (geplant) | Selbst-enthaltenes TEI mit `<facsimile>` + `<zone>` + `@facs` + erweitertes `<revisionDesc>` | [workflow.md §5](workflow.md) |
 

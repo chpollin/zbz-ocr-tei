@@ -416,6 +416,51 @@ Daten: Scan-Bilder in `docs/images/{doc_id}/`, OCR/Layout/TEI in `docs/data/exam
 
 ---
 
+## Transkribus-Export (PAGE-XML-Round-Trip, E81)
+
+Die in Stufe 4 erzeugte PAGE-XML (`output/page_xml/{doc}/page/`) ist Standard-PAGE
+2013-07-15 und laesst sich verlustfrei nach Transkribus zurueckspielen -- als Layout +
+Transkription, fuer manuelle Nachkorrektur oder HTR-Modelltraining. Gegenrichtung zum
+Viewer-Round-Trip oben: dort kommen Edits rein, hier geht Pipeline-Layout raus.
+
+**Ordnerkonvention.** Transkribus liest zu jedem Bild eine gleichnamige PAGE-XML aus
+einem `page/`-Unterordner; ein Ordner = ein Dokument:
+
+```
+{doc}/
+  {doc}_p001.png          # Bild oben
+  page/{doc}_p001.xml     # gleichnamige PAGE-XML
+```
+
+`scripts/edition/transkribus_export.py` baut diese Struktur aus `output/page_xml/` +
+`docs/images/{doc}/` nach `output/transkribus_upload/` (gitignored). Auswahl: `--sample`
+(stratifiziert ueber Seitenzahl x Sprache), `--all`, `--reference` (die 24 Objekte, die
+ZBZ bereits in ihrer eigenen Transkribus-Collection hat), `--doc`. Pro Seite verifiziert
+es, dass das PNG-Pixelmass den deklarierten `imageWidth`/`imageHeight` entspricht
+(Koordinaten alignt); Seiten ohne Bild oder mit Mass-Drift werden gemeldet statt still
+kopiert. Der Export laeuft ueber die PAGE-XML, nicht ueber die Bilder -- Seiten ohne
+Layout (z. B. Leerseiten) bleiben aussen vor.
+
+**Dialekt.** Out-of-the-box kompatibel (TextRegion/Coords/TextLine/TextEquiv/
+ReadingOrder + `custom`-Strukturtypen). Einschraenkung: die Pipeline-PAGE traegt
+Zeilen-Polygone, aber **keine Baselines** -- fuer Import, Anzeige und Struktur reicht das;
+nur HTR-*Training* in Transkribus braucht Baselines (die ZBZ-Originale haben sie). Die
+Pipeline-Bilder sind 1240x1754 (150 dpi), die ZBZ-Originale 2479x3508 (300 dpi); jeder
+Stand ist in sich konsistent.
+
+**Upload per API.** `scripts/edition/transkribus_upload.py` laedt die gebauten Bundles
+ueber die Legacy-TrpServer-REST-API (`transkribus.eu/TrpServer/rest`): `POST /auth/login`
+-> `POST /uploads?collId=` (JSON-Manifest mit `md.title` + `pageList`) -> `PUT
+/uploads/{id}` (Bild + XML je Seite). Verifiziert 2026-06-08: die Legacy-API schreibt
+korrekt in eine Collection der **neuen** Plattform (app.transkribus.org); Login +
+Collection teilen sich den readcoop-Account. Auth ausschliesslich ueber Umgebungsvariablen
+(`TRANSKRIBUS_USER`/`TRANSKRIBUS_PASSWORD`/`TRANSKRIBUS_COLLECTION`), nie im Code/Repo/.env.
+Jeder Lauf legt **neue** Dokumente an (kein Dedup) -- vor dem Vollupload `--dry-run`
+(prueft Login + Zugriff) und `--doc {ID}` (ein Testobjekt). CLI:
+[CLAUDE.md §Transkribus-Export / Upload](../CLAUDE.md).
+
+---
+
 ## Verweise
 
 - [methodik.md](methodik.md) — operative Werkzeuge, CLI-Referenz, Arbeitszyklus

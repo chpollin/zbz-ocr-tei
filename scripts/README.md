@@ -18,7 +18,7 @@ Pipeline-Stufen und Datenfluss: [../knowledge/pipeline.md](../knowledge/pipeline
 | `layout/` | Layout + Export | `run_layout_analysis` (Docling lokal), `run_layout_cloud` (docling-serve), `layout_qa_gemini` (QA/Detect/Auto), `generate_layout_overlays`, `page_xml_generator` + `mets_generator` |
 | `tei/` | TEI-Erzeugung | `tei_unified` (Orchestrator), `tei_step1/2/3` (Scaffold/Gemini/Assembly), `pb_split` (`<pb>`-Segmentierung, E69), `tei_generator`, `tei_mapping_prompt`, `tei_xml_utils`, `tei_validator`, `tei_add_revision`, `tei_blank_marker`, `tei_status_marker` (E66) |
 | `eval/` | Qualitaet | `evaluate_ocr` (CER/WER-Engine), `eval_report` (HTML), `benchmark_cer`, `cer_statistics` + `_runner` + `_full` (BCa/Paired/HCPR), `quality_proxy`, `completeness_check`, `corpus_audit` |
-| `edition/` | Frontend-Daten | `generate_edition_data` (Katalog + Mirror), `page_manifest` (Pro-Objekt-Manifest), `extract_pages` (PDF -> PNG) |
+| `edition/` | Frontend-Daten + Export | `generate_edition_data` (Katalog + Mirror), `page_manifest` (Pro-Objekt-Manifest), `extract_pages` (PDF -> PNG), `transkribus_export` (PAGE-XML-Upload-Bundle) + `transkribus_upload` (REST-Upload in Collection) |
 
 ## Haeufige Einstiegspunkte
 
@@ -29,6 +29,8 @@ python -m scripts.tei.tei_unified --doc {ID}                           # TEI (3 
 python -m scripts.tei.tei_validator --all --html-report                # Validierung
 python -m scripts.eval.corpus_audit                                    # Korpus-Audit
 python -m scripts.edition.generate_edition_data                        # Viewer-Daten
+python -m scripts.edition.transkribus_export --sample                  # Transkribus-Upload-Bundle bauen
+python -m scripts.edition.transkribus_upload --dry-run --collection {ID}  # Upload (Login via Env-Vars)
 ```
 
 ## Tests

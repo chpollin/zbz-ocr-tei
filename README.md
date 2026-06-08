@@ -209,6 +209,11 @@ python -m scripts.eval.benchmark_cer --all --html
 
 # Frontend data: catalog, thumbnails, per-page mirror for viewer
 python -m scripts.edition.generate_edition_data
+
+# Round-trip PAGE-XML into Transkribus: build upload bundle, then upload via REST
+python -m scripts.edition.transkribus_export --sample            # -> output/transkribus_upload/
+$env:TRANSKRIBUS_USER="..."; $env:TRANSKRIBUS_PASSWORD="..."     # auth via env vars, never in code/.env
+python -m scripts.edition.transkribus_upload --dry-run --collection {COLL_ID}
 ```
 
 Verify the corpus and test gates at any time:
