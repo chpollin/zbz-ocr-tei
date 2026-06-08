@@ -43,18 +43,20 @@ Jede Levenshtein-Editieroperation wird klassifiziert. `cer_fidelity + scope_inse
 
 Asymmetrie ist beabsichtigt: vollstaendiger sein als die Referenz ist kein Fehler, unvollstaendiger schon.
 
-### Headline-Werte (n=25, alle Docs, Seed 42, B=10000, 2026-05-27)
+### Headline-Werte (n=25, alle Docs, Seed 42, B=10000, 2026-06-08)
 
 | Metrik | Mean | Median | 95%-CI (Mean) | misst |
 |---|---|---|---|---|
-| **Fidelity-CER (PRIMAER)** | **4.26 %** | **1.83 %** | [2.39 %, 6.48 %] | echte OCR-/Transkriptionstreue |
-| Volltext-CER (Diagnose, scope-inkl.) | 20.75 % | 13.13 % | [11.89 %, 31.89 %] | volle Divergenz inkl. Mehrtext — **KEIN Qualitaetsmass** |
-| Scope-Rate (Mehrtext) | 16.50 % | 7.16 % | — | Pipeline-Mehrtext (kein Fehler) |
+| **Fidelity-CER (PRIMAER)** | **3.99 %** | **1.83 %** | [2.36 %, 5.96 %] | echte OCR-/Transkriptionstreue |
+| Volltext-CER (Diagnose, scope-inkl.) | 20.22 % | 12.29 % | [11.37 %, 31.38 %] | volle Divergenz inkl. Mehrtext — **KEIN Qualitaetsmass** |
+| Scope-Rate (Mehrtext) | 16.23 % | 7.06 % | — | Pipeline-Mehrtext (kein Fehler) |
 
 Alle Werte ueber **alle 25 Docs** (E73: das fruehere n=19-scope-clean-Subset wurde entfernt, da es keinem reproduzierbaren Kriterium folgte). Volltext/Scope sind Diagnose-Groessen; das Qualitaetsmass ist die Fidelity-CER.
 
 Der Fidelity-Median **1.83 %** reproduziert die fruehere Headline -- jetzt aber sauber: ohne
 deflationaeres Trimming, ohne zirkulaeren Ausschluss, case-sensitiv, ueber das ganze Korpus.
+
+Stand 2026-06-08: Bei Doc 30 wurde ein OCR-Blockduplikat (ein doppelt erfasster Absatz) entfernt -- das senkte dessen Fidelity-CER von 18.25 % auf 11.59 % und den Korpus-Mean auf 3.99 % (Median unveraendert). Eine **automatische** Block-Deduplikation existiert derzeit nicht in der Pipeline (das in Anhang A des Arbeitsberichts und in CLAUDE.md referenzierte `scripts/ocr/ocr_dedup.py` ist nicht im Repo). Bis eine Dedup-Stufe existiert, ist diese eine Korrektur manuell; alle uebrigen 24 Docs sind reines Pipeline-Output.
 
 Einordnung **print-kalibriert** (E80): Die Transkribus-Qualitaetsbaender (<2 % exzellent, 2-5 % gut)
 stammen primaer aus der HTR-Praxis (Handschrift); fuer eine reine **Druck**-OCR-Aufgabe schmeicheln

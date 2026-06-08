@@ -61,7 +61,7 @@ CC1 ist der Engpass. Gate-Plan existiert nur innerhalb integration.md (keine sep
   (absolute Pixel-Koordinaten). SoT = `output/tei_final/{doc}_final.xml` (E43); `docs/data/pages/`
   ist generierter Mirror (nie direkt editieren). Pro-Objekt-Manifest trägt Workflow-Status + History.
   **Wichtig: `{id}_final.xml` IST teiCrafters natives Format** → öffnet direkt, Text-Edit ohne Konvertierung.
-- **Qualität (E70/E73, SoT):** **Fidelity-CER Median 1,83% / Mean 4,26%** (n=25, BCa-Bootstrap Seed 42).
+- **Qualität (E70/E73, SoT):** **Fidelity-CER Median 1,83% / Mean 3,99%** (n=25, BCa-Bootstrap Seed 42).
   Volltext-CER (Mean 20,75%) ist Diagnose, kein Qualitätsmaß (ZBZ-Referenzen sind Teiltranskriptionen).
   Pipeline-Mehrwert vs. reine OCR −7,90 pp (p=0,07, n.s.) — frühere Headline „−14,83 pp" zurückgezogen
   (Trimming-Artefakt). **285/285 schema-valide** (E68). Dictionary Hit Rate Median 97,7% = Schätzung
