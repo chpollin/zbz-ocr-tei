@@ -468,92 +468,22 @@ projektspezifischen Schema absichtlich ausgeschlossen sind.
 
 ---
 
-## Agent-Based Quality Screening (deprecated, E66)
+## Agent-Based Quality Screening (abgeschafft, E66 -- nur Provenienz)
 
-**Stand 2026-05-26: Das Agent-Screening ist als Qualitaetssignal abgeschafft (E66).** Begruendung:
-keiner der 285/285 "APPROVED"-Status kommt von einem Menschen -- der Agent zertifiziert sich selbst,
-mit eingebauter Ignorier-Liste (W3, W6, W10 als "normal" deklariert) und ohne fachliche Bewertung.
-Das Etikett "APPROVED" im `<revisionDesc>` ist epistemisch irrefuehrend gegenueber ZBZ.
+**2026-05-26 abgeschafft (E66):** Das agentische 7-Schichten-Screening war epistemisch
+irrefuehrend -- keiner der 285/285 "APPROVED"-Status kam von einem Menschen, der Agent
+zertifizierte sich selbst (eingebaute Ignorier-Liste W3/W6/W10). Das "APPROVED"-Etikett im
+revisionDesc traf keine Aussage ueber fachliche Qualitaet.
 
-Ersetzt durch **Workflow-Status pro Strom** (siehe Abschnitt unten): `unverifiziert | in_arbeit | verifiziert`
-je fuer OCR, Layout, TEI (drei Stufen seit E77). Status wird von Menschen im Viewer gesetzt und in der Manifest-History
-persistiert (`output/tei_final/{doc}_manifest.json`, Schluessel `streams.*.history`).
-Bei der ZBZ-Uebergabe projiziert `scripts/tei/tei_status_marker.py` die History deterministisch
-in den `<revisionDesc>`; Agent-Screening-Eintraege werden dabei entfernt.
+Ersetzt durch **Workflow-Status pro Strom** (Abschnitt unten): unverifiziert | in_arbeit |
+verifiziert, menschlich im Viewer gesetzt. Die Alt-Befunde leben als _screening_legacy.json
+(gitignored, nicht im Mirror) -- inhaltlich teils nuetzlich, aber ohne Qualitaetsaussage.
 
-Die alten Befunde bleiben als Diagnose-Spur erhalten: `_review.json` -> `_screening_legacy.json`
-(gitignored, nicht im Mirror). Sie sind teilweise inhaltlich nuetzlich (Layer-Befunde),
-aber das `APPROVED`-Label trifft keine Aussage ueber fachliche Qualitaet.
-
-### Historische Funktionsweise (zur Dokumentation)
-
-Agent-basiertes Pre-Curation-Verfahren: Claude Code prueft jedes TEI durch 7 Schichten.
-
-### Schichten
-
-1. **Scan-Qualitaet** (visuell: Layout-Overlay pruefen)
-2. **OCR-Treue** (Layout-JSON-Text vs. TEI-Text)
-3. **Layout-Korrektheit** (Regionen, Reihenfolge, Typen)
-4. **TEI-Struktur** (Validator: RelaxNG + Projektregeln)
-5. **Referenz-Vergleich** (wo ZBZ-Referenz vorliegt)
-6. **Entity-Plausibilitaet** (Typen, Konflikte, Verteilung)
-7. **Gesamtkohaerenz** (liest sich das als Edition?)
-
-Schichten 1-3, 6-7 erfordern visuelle Pruefung durch den Agent (Scan + TEI lesen).
-Schicht 4-5 sind automatisierte Tool-Aufrufe.
-
-### Werkzeuge
-
-```bash
-python -m scripts.tei.tei_validator --doc {DOC_ID}              # Schicht 4 (RelaxNG)
-python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID} # Schicht 5 (Referenz)
-python -m scripts.tei.tei_add_revision --all                    # revisionDesc in alle TEIs
-# tei_screening_prep / tei_quality_pass / screening_prompt: mit E66 entfernt (Agent-Screening abgeschafft)
-```
-
-### Output
-
-```
-output/tei_final/{DOC_ID}_final.xml       # finales TEI mit revisionDesc
-output/tei_final/{DOC_ID}_review.json     # Befund pro Dokument
-output/tei_final/screening_manifest.json  # Batch-Zuweisungen (4 Tiers)
-```
-
-### Ergebnis (285/285 Docs)
-
-**242 APPROVED (85%), 43 WITH_NOTES (15%), 0 NEEDS_REVIEW (0%).** 58 Batches in 4 Tiers,
-parallelisiert ueber ~40 Agent-Invocations.
-
-Nachbearbeitung (E45-E47): Entity-Stopwoerter erweitert (20 neue Eintraege), Strukturfixes
-(5 Docs: 2140, 2150, 2530, 2550, 2660), OCR-Deduplizierung (3 Docs: 900, 1100, 2630).
-
-### Systematische Muster (P1-P10)
-
-- **P1** Doppelseiten-Scans erzeugen W3 (kein Fix, Buchformat)
-- **P2** W10 False Positive bei abstrakten philosophischen Texten
-- **P3** Seitenzahlen-Erkennung inkonsistent (Original vs. relativ)
-- **P4** Entity-Typ-Konflikte Person/Werk (Kierkegaard, Nietzsche) — fixbar im Index
-- **P5** JSTOR-Scans koennen mehrere Rezensionen pro Seite enthalten
-- **P6** Gemini korrigiert OCR-Fehler im Step-2 Refinement (undokumentierter Qualitaetsgewinn)
-- **P7** Gattungsbegriffe im Entity-Index (Mensch, Est, Gott, Rolle, Wahl, Christ, Schweizer) → ~30% Docs False Positives
-- **P8** Journal de Geneve / mehrspaltige Zeitungslayouts versagen systematisch (~3% Korpus)
-- **P9** Franzoesisches "Est-ce que" wird als placeName "Osten" gematcht
-- **P10** Tier-2-Docs (4-8 Seiten) 85%+ APPROVED-Rate, Tier-1 (1-3 Seiten) nur 40%
-
-### Positionierung
-
-Pre-Curation-Triage — sortiert, wo menschliche Aufmerksamkeit noetig ist. Kein Ersatz fuer
-fachliche Kuration. Visuelle Verifikation ist der echte Mehrwert gegenueber rein automatischer
-Validierung.
-
-Methodische Klarstellung: Agents pruefen Konsistenz und Schemata, garantieren aber nicht
-fachliche Richtigkeit. Naechster Schritt: ZBZ-Fachleute pruefen dieselben Docs im Pipeline-Viewer
-(Edit-Modus), siehe [viewer.md](viewer.md).
-
-### Additivitaet
-
-`output/tei_unified/` bleibt unveraendert. Finale TEIs mit `<revisionDesc>` liegen in
-`output/tei_final/`. Nur Letztere werden im Viewer angezeigt.
+Real erhalten gebliebene Fixes aus der Nachbearbeitung (E45-E47): Entity-Stopwoerter erweitert,
+Strukturfixes (2140/2150/2530/2550/2660), OCR-Deduplizierung (900/1100/2630). Belastbare
+empirische Muster: Gemini korrigiert OCR-Fehler im Step-2-Refinement (Qualitaetsgewinn);
+mehrspaltige Zeitungslayouts (Journal de Geneve) versagen systematisch (~3% Korpus).
+Detail-Provenienz: [decisions.md E41-E47](decisions.md).
 
 ---
 
@@ -655,37 +585,12 @@ zwingend mitzudenken.
 
 ---
 
-## Pilot-Baseline (Mistral OCR, 15 Docs, 18.02.2026)
+## Pilot-Baseline (Mistral OCR, Phase 0, Feb 2026) -- nur Provenienz
 
-Historische Referenz aus Phase 0. Aktuelle End-to-End-Metriken siehe Headline oben.
-
-| Phase | Avg CER | Avg WER | Avg Accuracy |
-|---|---|---|---|
-| Phase 1 (Type A) | 9.40% | 20.22% | 90.60% |
-| Phase 2 (Type B) | 6.31% | 17.53% | 93.69% |
-| Phase 3 (Type D) | 2.88% | 12.62% | 97.12% |
-| Phase 4 (Type C) | 2.65% | 12.98% | 97.35% |
-
-**LLM-Postkorrektur Haiku 4.5 Variant C (Few-Shot, Pilot 19.02.2026):**
-
-| Phase | Mistral CER | LLM CER | Delta |
-|---|---|---|---|
-| Phase 1 (A) | 9.40% | 8.43% | -0.97 |
-| Phase 2 (B) | 6.31% | 6.34% | +0.03 |
-| Phase 3 (D) | 2.88% | 2.72% | -0.16 |
-| Phase 4 (C) | 2.65% | 2.70% | +0.05 |
-| **Total** | **6.42%** | **6.52%** | **+0.10** |
-
-LLM-Korrektur verbessert Docs mit hoher CER (>10%), verschlechtert leicht bei guter OCR (<5%).
-Konsequenz: optional, nicht default (E17).
-
-**Rating Scale:**
-
-- OK: CER <5% (>95% Accuracy)
-- Acceptable: CER 5-15% (manuell korrigierbar)
-- Problematic: CER >15% oder strukturelle Fehler
-
-**Metriken:** CER (Character Error Rate), WER (Word Error Rate), Accuracy = 100% - CER.
+Historische Referenz; aktuelle Metriken siehe Headline oben. Ein Befund bleibt relevant und wird
+oben zitiert: die LLM-Postkorrektur (Haiku 4.5, Variant C, Few-Shot) verbessert Docs mit hoher CER
+(>10%), verschlechtert aber leicht bei bereits guter OCR (<5%) -- netto +0.10pp ueber den Pilot.
+Konsequenz: optional, nicht Default (E17).
 
 ---
 
