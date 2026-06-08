@@ -61,7 +61,7 @@ Token-Katalog: `docs/assets/css/tokens.css`. Basis-Komponenten: `docs/assets/css
 - `data/` — Eingangs- und Referenzdaten. `source/` = ZB-Lieferung (immutabler Input, grösstenteils gitignored): `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (Editionsrichtlinien). Projekt-Autorität (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (Gold-Standard). Generiert: `doc_metadata.json` (Gemini-Cache)
 - `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
 - `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
-- `docs/` — statische Edition/Inspektions-Site (GitHub-Pages-tauglich): HTML, `assets/` (`css/` + `js/`), `data/` (generierter Mirror), `images/`
+- `docs/` — statische Inspektions-/Demo-Site (GitHub-Pages-tauglich): HTML, `assets/` (`css/` + `js/`), `data/` (generierter Mirror), `images/`
 - `knowledge/` — Wissensbasis (10 Docs), Einstieg [knowledge/index.md](knowledge/index.md)
 - `tests/` — pytest-Suites
 
@@ -78,7 +78,7 @@ Detaillierte Stufen / Skripte / Engines: [knowledge/pipeline.md](knowledge/pipel
 
 ### Source of Truth → generierter Mirror (verbindlich)
 
-- **`output/tei_final/{doc}_final.xml` ist die Single Source of Truth der Edition** (E43). Nur `tei_final/` wird angezeigt. Jedes finale TEI traegt `<revisionDesc>` mit Pipeline-Status (E42); der Workflow-Status pro Strom wird beim ZBZ-Uebergabe-Schritt via `tei_status_marker.py` aus dem Manifest in den `<revisionDesc>` projiziert (E66).
+- **`output/tei_final/{doc}_final.xml` ist die Single Source of Truth der ausgelieferten TEI-Daten** (E43). Nur `tei_final/` wird angezeigt. Jedes finale TEI traegt `<revisionDesc>` mit Pipeline-Status (E42); der Workflow-Status pro Strom wird beim ZBZ-Uebergabe-Schritt via `tei_status_marker.py` aus dem Manifest in den `<revisionDesc>` projiziert (E66).
 - **`docs/data/pages/{doc}/` ist ein GENERIERTER Mirror — niemals direkt editieren.** Erzeugt von `scripts/edition/generate_edition_data.py` aus: per-Seiten-TEI (aus `tei_final` gesplittet) + Mistral-`.md` + Layout-JSON. Nach Aenderungen an der Quelle Mirror neu generieren.
 - `output/tei_unified/` ist Pipeline-Output (nicht editieren). Kuratierte Gold-TEIs liegen in `data/curated_tei/` (git-tracked).
 

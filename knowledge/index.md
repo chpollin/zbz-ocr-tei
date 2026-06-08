@@ -75,14 +75,14 @@ journal         — chronologisch, kompakter Ueberblick
 | CER-Statistik (E54) | BCa-Bootstrap-CIs, paired E2E vs OCR-only, HCPR | [quality.md](quality.md) |
 | Quality Proxy | Dictionary Hit Rate fuer 285 Docs ohne Ground Truth | [quality.md](quality.md) |
 | revisionDesc (E42) | Pipeline + Screening-Status im TEI-Header, reist mit dem Dokument | [pipeline.md](pipeline.md) |
-| `output/tei_final/` (E43) | Single Source of Truth fuer die Edition | [pipeline.md](pipeline.md) |
+| `output/tei_final/` (E43) | Single Source of Truth der ausgelieferten TEI-Daten | [pipeline.md](pipeline.md) |
 | Verifikationskaskade | 4 Stufen: automatisch / kontextuell / visuell / fachlich | [methodik.md](methodik.md) |
 | Dreischichtung | Command (Regel) / Artifact (Werkzeug) / Tool (Aufruf) | [methodik.md](methodik.md) |
 | Pipeline-Viewer (E56) | Single-Page-App mit Faksimile + OCR + TEI + Layout-/Transkriptions-Editor; ein "Speichern" -> direkt ins Repo + Mirror (E78/E79) | [viewer.md](viewer.md) |
 | Hersch Design-System | Anthrazit + Ziegelrot + EB Garamond + Jost, `--h-*` Tokens | [viewer.md](viewer.md) |
 | OpenSeadragon-Faksimile (E58) | Faksimile-Renderer im View-Modus mit Pan/Zoom/Rotate, CDN-Bezug | [viewer.md](viewer.md) |
 | Mode-Edit-Toggle pro Panel (E60) | Faksimile-Panel "Layout bearbeiten", Text-Panel "Text bearbeiten" (E78), aktiv = anthrazit; keine globale Mode-Leiste; Seitennav im Faksimile-Header | [viewer.md](viewer.md) |
-| Viewer = Mistral-Edition (E64) | Kein OCR-Quellen-Umschalter im Viewer; Alt-Engines (Gemini/LLM) sind Benchmark-only; Doc-Subbar + Toolbar fusioniert | [viewer.md](viewer.md) |
+| Viewer = Mistral-Datenstand (E64) | Kein OCR-Quellen-Umschalter im Viewer; Alt-Engines (Gemini/LLM) sind Benchmark-only; Doc-Subbar + Toolbar fusioniert | [viewer.md](viewer.md) |
 | Export ▾ (E78) | Einzel-Download pro Strom (Layout/Text/TEI/Manifest) als Dropdown umgesetzt; JSZip-Komplett-/Bulk-Export (E61) weiter geplant, im Code noch nicht eingebunden | [viewer.md](viewer.md) |
 | Methode-Seite (E62) | `docs/methode.html` mit Headline-CER, stratifizierten Werten, Limitations, Literatur-Vergleich (statisch) | [viewer.md](viewer.md) |
 | End-to-End-Workflow | Datenfluss + Save-Mechanismus + Round-Trip + Provenance-Konzept + geplante `_complete.xml`-Variante | [workflow.md](workflow.md) |

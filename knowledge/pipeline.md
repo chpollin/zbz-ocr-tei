@@ -297,7 +297,7 @@ Jedes finale TEI in `output/tei_final/` enthaelt `<revisionDesc>` direkt vor `</
 ```
 
 Status-Werte: `APPROVED` | `APPROVED_WITH_NOTES` | `NEEDS_REVIEW` | `NEEDS_REWORK`.
-Der juengste `<change>` bestimmt den aktuellen Status. Die Edition zeigt den Status als Badge.
+Der juengste `<change>` bestimmt den aktuellen Status. Der Viewer zeigt den Status als Badge.
 
 ### Element-Inventar
 

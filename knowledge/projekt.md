@@ -133,7 +133,7 @@ und [quality.md](quality.md).
 | M2 | Layout + PAGE-XML | Regionen + BBox + PAGE-XML alle Docs | Done |
 | M3 | NER + Wikidata | Recall >70%, Linking >50% | Entfernt (E71, 2026-05-27 — Verlinkung im Output nicht lieferfaehig) |
 | M4 | TEI-XML | DTA-konform, schema-valide | Done (285/285 valide gegen `zbz_hersch.rng`) |
-| M5 | Production Run | 285 Docs verarbeitet, fachliche QA | In Progress (285/285 generiert; Workflow-Status alle Stroeme `unverifiziert`, E66/E67; fachliche Kuration offen) |
+| M5 | Daten-Uebergabe an ZBZ | 285 Docs verarbeitet + schema-valide geliefert; fachliche Verifikation = ZBZ-Aufgabe (Tracking via Workflow-Status) | Daten geliefert (285/285 generiert); alle Stroeme `unverifiziert` als Uebergabe-Default (E66/E67); fachliche Kuration liegt bei ZBZ |
 
 ### Komponenten-Status
 

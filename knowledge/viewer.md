@@ -14,7 +14,7 @@ Diagnostik-/CER-Dashboards.
 
 **Zweck:** Inspektion und Korrektur der Pipeline-Ergebnisse. Drei konkrete Funktionen:
 QA der OCR-/Layout-/TEI-Ergebnisse, manuelle Korrektur durch Human-in-the-Loop,
-Demonstration gegenueber ZBZ. Der Viewer zeigt die **ausgelieferte Edition = Mistral-OCR**;
+Demonstration gegenueber ZBZ. Der Viewer zeigt den **ausgelieferten Datenstand = Mistral-OCR**;
 der frueher hier moegliche Engine-Vergleich liegt seit E64 ausserhalb des Viewers
 (CER-Benchmark + Methode-Seite, E62). Nicht gedacht als oeffentliche Edition oder
 Lese-Frontend — das macht ZBZ ueber Oxygen/Alma.
@@ -255,8 +255,8 @@ Alle 285 Docs haben vollstaendige Per-Seiten-Daten in `docs/data/pages/` (Layout
 und ein Thumbnail in `docs/data/thumbs/`. Damit funktioniert der Viewer ohne lokalen Server fuer
 das gesamte Korpus. Die alternativen OCR-Engines (Gemini A/B, LLM) bleiben unter
 `output/` und sind nur lokal abrufbar. Der Viewer bietet seit E64 **keinen OCR-Quellen-Umschalter**
-mehr — er zeigt ausschliesslich Mistral (die ausgelieferte Edition); die Alt-Engines sind reine
-Benchmark-Artefakte (E51/E54) und nicht Teil der Edition.
+mehr — er zeigt ausschliesslich Mistral (den ausgelieferten Datenstand); die Alt-Engines sind reine
+Benchmark-Artefakte (E51/E54).
 
 ### Leerseiten (E63 + Schritt 3, E67)
 

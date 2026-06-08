@@ -4,20 +4,22 @@ LLM-powered OCR and TEI pipeline for the Jeanne Hersch Edition at the Zentralbib
 
 ## Status (acceptance / handover)
 
-The pipeline is complete and its output is schema-valid; the **edition is not yet
-content-verified**. These are two different things, and the distinction matters for the
-handover:
+This repository is a tool that
+produces edition-ready *data* (OCR text, layout, schema-valid TEI) plus the tooling to verify
+and curate it. The edition itself is built and published by ZBZ downstream (Oxygen / Alma /
+Swisscovery). Two things matter for the handover, and they are different:
 
-- **Pipeline** &mdash; all six stages are built and have run across the corpus. **285/285**
-  final TEI files validate against the project schema `zbz_hersch.rng` (test-gated, E68).
-- **Edition** &mdash; no document has been reviewed by a domain expert yet. The per-stream
-  workflow status (OCR / Layout / TEI, E66/E67) is **`unverified` for all 285 documents** &mdash;
-  the honest default ("pipeline output exists, not yet human-checked"). Expert curation in the
-  viewer is the remaining step (milestone M5).
+- **Pipeline (this repo's deliverable)** &mdash; all six stages are built and have run across
+  the corpus. **285/285** final TEI files validate against the project schema `zbz_hersch.rng`
+  (test-gated, E68).
+- **Verification status of the delivered data** &mdash; the per-stream workflow status
+  (OCR / Layout / TEI, E66/E67) is **`unverified` for all 285 documents** &mdash; the honest
+  default ("pipeline output exists, not yet human-checked"). Content verification by a domain
+  expert is **ZBZ's task**, tracked via this status.
 
-In short: this repository delivers a high-quality, schema-valid **starting point** for the
-edition, plus the tooling to verify and curate it &mdash; not a finished, signed-off edition.
-See [Scope & limitations](#scope--limitations) for what is in scope, out of scope, and pending.
+In short: this repository delivers a high-quality, schema-valid **data starting point + curation
+tooling** for the ZBZ edition &mdash; the edition itself is ZBZ's downstream product. See
+[Scope & limitations](#scope--limitations) for what is in scope, out of scope, and pending.
 
 ## What does this repo do?
 

@@ -2,14 +2,14 @@
 
 Dr. Christopher Pollin, Digital Humanities Craft OG
 
-* v1.1, 30.05.2026 (v1: 27.05.2026)  
-* AI-Unterstützung: Claude Opus 4.7 / 4.8, Claude Code
+* v1, 27.05.2026  
+* AI-Unterstützung: Claude Opus 4.7, Claude Code
 
 ## **Projektkontext und Zielsetzung**
 
 Dieser Bericht dokumentiert ein Experiment im Rahmen der digitalen Neuauflage der Schriften von Jeanne Hersch, einem Projekt der Zentralbibliothek Zürich (ZBZ).[^1] Herschs philosophisches Werk ist mehrsprachig, überwiegend französisch und deutsch, und verstreut überliefert. Mehrsprachigkeit und heterogene Drucküberlieferung sind damit die beiden bestimmenden Anforderungen an die Pipeline.
 
-Parallel zum etablierten Workflow der ZBZ von der Digitalisierung zur digitalen Edition wurde dieselbe Strecke ein zweites Mal durchlaufen, vollständig gestützt auf Large Language Models (LLMs) und Vision-Language Models (VLMs), agentenbasiert und werkzeuggestützt. Leitfrage ist, ob ein solcher Ansatz den etablierten Workflow in der Textqualität erreicht. Aus der Parallelführung stammt zugleich die Vergleichsgrundlage: Die manuell über Transkribus erstellten Referenz-TEIs des etablierten Strangs dienen dem Experiment als Ground Truth (siehe 6.1).
+Parallel zum etablierten Workflow der ZBZ von der Digitalisierung zur digitalen Edition wurde dieselbe Strecke ein zweites Mal durchlaufen, vollständig gestützt auf Large Language Models (LLMs) und Vision-Language Models (VLMs), agentenbasiert und werkzeuggestützt. Leitfrage ist, ob ein solcher Ansatz den etablierten Workflow in Textqualität und Aufwand erreicht. Aus der Parallelführung stammt zugleich die Vergleichsgrundlage: Die manuell über Transkribus erstellten Referenz-TEIs des etablierten Strangs dienen dem Experiment als Ground Truth (siehe 6.1).
 
 Gegenstand ist eine Pipeline, die ausgehend von PDF-Scans TEI-XML im DTA-Basisformat erzeugt und in einem zugehörigen Webinterface anzeigbar und kuratierbar macht. Das DTA-Basisformat ist ein TEI-Subset für die einheitliche Auszeichnung digitalisierter Drucktexte.[^2] Die Pipeline simuliert die Digitalisierung ausgehend von den PDFs, erzeugt Transkription, Layouterkennung und TEI-XML jedoch durchgängig über LLMs und VLMs. Pipeline wie Webinterface entstehen durch *Promptotyping*, eine Context-Engineering-Arbeitsweise zur Erzeugung von Forschungsartefakten aus Forschungsdaten und Forschungskontexten.[^3] Die Codeerzeugung erfolgte vollständig innerhalb von *Claude Code* mit den jeweils aktuellen Opus-Modellen über mehrere Sessions hinweg;[^4] der Erzeugungsprozess ist über die Commit-Historie des offen vorliegenden Repositorys nachvollziehbar.[^5]
 
@@ -84,7 +84,7 @@ Das erzeugte TEI wird zweistufig geprüft, zum einen gegen das projektspezifisch
 
 ### **Bearbeitungsstatus statt Selbstzertifizierung**
 
-Ursprünglich war als Abschluss ein agentenbasiertes Quality-Screening vorgesehen. Es wurde bewusst abgeschafft, weil kein einziger seiner Freigabe-Status von einem Menschen stammte; der Agent zertifizierte sich selbst. An seine Stelle tritt ein menschgesetzter Workflow-Status pro Datenstrom. Für den OCR-, den Layout- und den TEI-Datenstrom gilt jeweils einer von vier Werten zwischen „unverifiziert" und „fertig". Der Status wird im Webinterface gesetzt, mit voller Provenienz in einem objektbezogenen Manifest gehalten und bei der Übergabe an die ZB in die Versionsbeschreibung des Dokuments übernommen. Hintergrund ist, dass die Pipeline alle drei Datenströme für jedes Dokument erzeugt, unabhängig von ihrer fachlichen Qualität. Der ehrliche Ausgangspunkt ist daher „vorhanden, aber fachlich noch nicht verifiziert".
+Die Pipeline erzeugt für jedes Dokument drei Dinge: den erkannten Text (OCR), die Seitenstruktur (Layout) und ein DTA-konformes, einfaches, die Textstrukturen abbildendes TEI-XML (Überschriften, Absätze, Fußnoten, Seiten- und Zeilenumbrüche). Diese drei Datenströme sind nach der maschinellen Erzeugung zunächst nicht verifiziert, also vorhanden, aber fachlich noch nicht geprüft. Den Prüfstand hält ein menschgesetzter Bearbeitungsstatus fest, getrennt für jeden der drei Ströme. Jeder Strom nimmt einen von drei Werten an, unverifiziert, in Arbeit oder verifiziert, die im Webinterface als dreistufige Ampel erscheinen (neutral, gelb, grün) und per Klick weitergeschaltet werden. Jeder Wechsel wird in einer dokumentbezogenen Begleitdatei festgehalten, dem Manifest, einer JSON-Datei je Dokument, und zwar als fortlaufende Liste der einzelnen Schritte mit Zeitpunkt, Bearbeiterkürzel sowie Vor- und Folgestatus, sodass eine vollständige Bearbeitungsspur entsteht. Bei der Übergabe an die ZB werden diese Einträge in die TEI-Versionsbeschreibung (\<revisionDesc\>) des Dokuments übernommen, sodass die Bearbeitungsgeschichte mit dem ausgelieferten Dokument selbst reist.
 
 ## **5\. Webinterface und Kuration**
 
@@ -97,33 +97,166 @@ Daneben stehen vier weitere, direkt aufrufbare Seiten:
 - [About](https://chpollin.github.io/zbz-ocr-tei/about.html)  
 - [Impressum](https://chpollin.github.io/zbz-ocr-tei/impressum.html)
 
-Die **Kuration** ist in den Viewer integriert und kommt ohne separaten Server aus: Der Browser hält keinen Server-Zustand und schreibt nichts automatisch ins Repository zurück; Änderungen verbleiben lokal und werden entweder als Datei-Download exportiert oder, in Chromium, über die File System Access API direkt in den Working Tree geschrieben (siehe unten). Layout und Text tragen je einen eigenen, unabhängigen Bearbeitungsschalter. Beim Wechsel in den Layout-Editor löst die Faksimile-Anzeige OpenSeadragon durch eine einfache, bearbeitbare Overlay-Ebene ab; darin lassen sich Regionen-Boxen auswählen, verschieben, skalieren, neu aufziehen und löschen, ihr Typ ändern und ihre Lesereihenfolge per Ziehen ordnen. Die Boxen werden als bildrelative Prozentkoordinaten (0–100, bezogen auf die in der Layout-Analyse festgehaltenen Seitendimensionen) geführt, sodass sie zoom- und auflösungsunabhängig deckungsgleich auf Faksimile und Overlay liegen; der Editor korrigiert die von der maschinellen Layout-Analyse vorgeschlagenen Boxen und setzt ihre fachliche Richtigkeit gerade nicht voraus.
+Die **Kuration** ist in den Viewer integriert und kommt ohne separaten Server aus: Der Browser hält keinen Server-Zustand und schreibt nichts automatisch ins Repository zurück; Änderungen verbleiben lokal und verlassen den Browser ausschließlich als Datei-Download (siehe unten). Layout und Text tragen je einen eigenen, unabhängigen Bearbeitungsschalter. Beim Wechsel in den Layout-Editor löst die Faksimile-Anzeige OpenSeadragon durch eine einfache, bearbeitbare Overlay-Ebene ab; darin lassen sich Regionen-Boxen auswählen, verschieben, skalieren, neu aufziehen und löschen, ihr Typ ändern und ihre Lesereihenfolge per Ziehen ordnen. Die Boxen werden als bildrelative Prozentkoordinaten (0–100, bezogen auf die in der Layout-Analyse festgehaltenen Seitendimensionen) geführt, sodass sie zoom- und auflösungsunabhängig deckungsgleich auf Faksimile und Overlay liegen; der Editor korrigiert die von der maschinellen Layout-Analyse vorgeschlagenen Boxen und setzt ihre fachliche Richtigkeit gerade nicht voraus.
 
-Der **Transkriptions-Editor** schaltet die jeweils angezeigte Textquelle auf direkt editierbar, wobei strukturelle Eingriffe dem XML-Modus vorbehalten sind, da die gerenderte Ansicht beim Editieren nur den Text und nicht die Auszeichnung zurückgibt. Die Persistenz erfolgt als Datei-Download oder, in Chromium, als Direkt-Schreiben in den Working Tree über die File System Access API: Editierte Layout-JSONs, Transkriptionen oder das Objekt-Manifest — die Pro-Dokument-JSON, die Workflow-Status und Leerseiten je Datenstrom hält — werden abgelegt, woraus ein erneuter Pipeline-Lauf (`--reassemble`) das TEI regeneriert; nur Seiten mit neuer Kuration durchlaufen das Gemini-Refinement erneut, und wortgenaue Textänderungen schreibt der XML-Modus direkt in das finale TEI. Dieser bewusst server-lose Schnitt verlagert das Zurückschreiben auf die bearbeitende Person; er vermeidet Backend-Betrieb und Mehrnutzer-Konflikte, erfordert aber den manuellen Round-Trip aus Download, Ablage und Re-Lauf. (Ausblick: Dieser Round-Trip ließe sich künftig über die GitHub-Plattform schließen, etwa indem ein Commit der exportierten Datei einen GitHub-Actions-Lauf auslöst, der `--reassemble` ausführt und das regenerierte TEI samt Mirror zurückschreibt.) Jeder Datenstrom trägt einen Status mit vier Stufen (unverifiziert, in Arbeit, bearbeitet, fertig), der im Viewer per Klick weitergeschaltet wird und sich in den Ampeln der Korpus-Übersicht spiegelt; das erste Aktivieren eines Bearbeitungsschalters setzt den betroffenen Strom automatisch von unverifiziert auf in Arbeit, und solange Änderungen nicht heruntergeladen sind, warnt das Interface beim Verlassen der Seite. Der leitende Gedanke ist, dass die Edition selbst zum Kurationswerkzeug wird: Die Editorinnen und Editoren arbeiten direkt in der Edition, lernen dabei mehr über die Texte und bessern die Fehler der Pipeline aus.
+Der **Transkriptions-Editor** schaltet die jeweils angezeigte Textquelle auf direkt editierbar, wobei strukturelle Eingriffe dem XML-Modus vorbehalten sind, da die gerenderte Ansicht beim Editieren nur den Text und nicht die Auszeichnung zurückgibt. Die Persistenz erfolgt ausschließlich als Datei-Download: Editierte Layout-JSONs, Transkriptionen oder das Objekt-Manifest — die Pro-Dokument-JSON, die Workflow-Status und Leerseiten je Datenstrom hält — werden heruntergeladen und manuell im Repository abgelegt, woraus ein erneuter Pipeline-Lauf (`--reassemble`) das TEI regeneriert. Dieser bewusst server-lose Schnitt verlagert das Zurückschreiben auf die bearbeitende Person; er vermeidet Backend-Betrieb und Mehrnutzer-Konflikte, erfordert aber den manuellen Round-Trip aus Download, Ablage und Re-Lauf. (Ausblick: Dieser Round-Trip ließe sich künftig über die GitHub-Plattform schließen, etwa indem ein Commit der exportierten Datei einen GitHub-Actions-Lauf auslöst, der `--reassemble` ausführt und das regenerierte TEI samt Mirror zurückschreibt.) Jeder Datenstrom trägt einen Status mit vier Stufen (unverifiziert, in Arbeit, bearbeitet, fertig), der im Viewer per Klick weitergeschaltet wird und sich in den Ampeln der Korpus-Übersicht spiegelt; das erste Aktivieren eines Bearbeitungsschalters setzt den betroffenen Strom automatisch von unverifiziert auf in Arbeit, und solange Änderungen nicht heruntergeladen sind, warnt das Interface beim Verlassen der Seite. Der leitende Gedanke ist, dass die Edition selbst zum Kurationswerkzeug wird: Die Editorinnen und Editoren arbeiten direkt in der Edition, lernen dabei mehr über die Texte und bessern die Fehler der Pipeline aus.
 
-Ergänzend wurden 79 sichere Leerseiten in 15 Dokumenten erkannt und als `<pb type="blank"/>` in die finalen TEI projiziert. Als sicher gilt eine Seite nur, wenn zwei unabhängige Signale übereinstimmen: Der OCR-Text ist praktisch leer (höchstens fünf Zeichen, kein alphanumerisches Zeichen oder lediglich ein „Blank Page"-Marker) und die Docling-Layout-Analyse findet null Regionen. Nur bei Übereinstimmung wird der Marker gesetzt; widersprechen sich die Signale — Text leer, aber Docling erkennt Regionen —, wird die Seite zum manuellen Review markiert statt projiziert (im aktuellen Korpus trat kein solcher Konflikt auf). Ein geplantes Export-Modul auf JSZip-Basis soll Per-Dokument- und Bulk-Export der Datenströme als ZIP erlauben (zum Berichtszeitpunkt noch nicht im Code eingebunden).
+Ergänzend wurden 79 sichere Leerseiten in 15 Dokumenten erkannt und als `<pb type="blank"/>` in die finalen TEI projiziert. Als sicher gilt eine Seite nur, wenn zwei unabhängige Signale übereinstimmen: Der OCR-Text ist praktisch leer (höchstens fünf Zeichen, kein alphanumerisches Zeichen oder lediglich ein „Blank Page"-Marker) und die Docling-Layout-Analyse findet null Regionen. Nur bei Übereinstimmung wird der Marker gesetzt; widersprechen sich die Signale — Text leer, aber Docling erkennt Regionen —, wird die Seite zum manuellen Review markiert statt projiziert (im aktuellen Korpus trat kein solcher Konflikt auf). Ein Export-Modul auf JSZip-Basis erlaubt Per-Dokument- und Bulk-Export der Datenströme als ZIP.
 
 ## **6\. Qualität und methodologische Einordnung**
 
-### **6.1 Quantitative Textqualität**
+Die Qualität der Pipeline wird über die Zeichenfehlerrate (Character Error Rate, CER) gegen die manuell erstellten Referenz-TEIs gemessen. Abschnitt 6.1 entwickelt die Vergleichsmethodik von der Definition der Kennzahl über die Frage, gegen welche Referenz gemessen wird, bis zu den Extraktions-, Normalisierungs- und Verifikationsregeln. Abschnitt 6.2 belegt die Regeln an fünf realen Dokumenten. Abschnitt 6.3 berichtet das Korpus-Ergebnis und die verbleibende Datenlage.
 
-Die Qualitätsbeurteilung der Textschicht ruht auf einer quantitativen Evaluation der End-to-End-Character-Error-Rate, gemessen als Pipeline-TEI gegen die manuell über Transkribus erstellten ZBZ-Referenz-TEIs. Eine zentrale Einsicht prägt die Messung: Die Referenz-TEIs sind selektive Teiltranskriptionen, während die Pipeline vielerorts vollständiger ist, sodass eine naive Volltext-CER diese Vollständigkeit fälschlich als Fehler zählte. Die CER wird daher in zwei Anteile zerlegt, eine Fidelity-CER für echte Fehler (Substitutionen, kleine Ein- und Auslassungen sowie alle größeren Auslassungen) und eine Scope-Rate für großen Pipeline-Mehrtext gegenüber der Referenz, der kein Fehler ist. Maßgeblich ist die Fidelity-CER über alle 25 Referenzdokumente mit einem Mean von 4,26 % (95-%-CI \[2,39 %; 6,48 %\]) und einem Median von 1,83 %; nach den Transkribus-Qualitätsbändern (unter 2 % exzellent, 2–5 % gut) ist der Median exzellent, der Mean gut. Ein Paired-Test gegen die reine Mistral-OCR ergibt einen Pipeline-Mehrwert von −7,90 Prozentpunkten, der bei n \= 25 jedoch nicht signifikant ist (p \= 0,07); die frühere Angabe von −14,83 Prozentpunkten (p \= 0,0004) war ein Artefakt des getrimmten Vergleichs und ist zurückgezogen. Alle Werte rechnen über alle 25 Referenzen; eine frühere scope-bereinigte Subset-Auswahl (n \= 19) wurde entfernt, da sie keinem reproduzierbaren Kriterium folgte. Die Erhaltungsrate diakritischer Zeichen liegt bei rund 99 %.
+### **6.1 Vergleichsmethodik gegen die Referenz-TEIs**
 
-Methodisch werden BCa-Bootstrap-Konfidenzintervalle verwendet, die bei kleiner und schiefer Stichprobe genauer sind als normalverteilungsbasierte Intervalle, mit festem Seed zur Reproduzierbarkeit, dazu ein Paired-Bootstrap für den Vergleich End-to-End gegen OCR-only und eine Selektionsbias-Diagnostik (Chi-Square, Kolmogorov-Smirnov). Die Aggregation erfolgt auf Dokument-Ebene, der Vergleich case-sensitiv und mit globaler Volltext-Levenshtein-Distanz ohne deflationäres Alignment-Trimming. Goldene Regressionstests (`tests/test_cer_extraction.py`, 18 Tests) sichern den Berechnungsvertrag, und die Konformität wurde extern gegen OCR-D, dinglehopper, Transkribus, jiwer und Singh 2025 geprüft.
+#### Was die CER misst und wie sie hier definiert ist
 
-Zur Einordnung dienen zwei aus der Vergleichsliteratur übernommene Werte, Transkribus allein mit 3,67 % und Gemini 2.5 Pro zero-shot mit 3,36 %.[^11] Der eigene Fidelity-Median von 1,83 % liegt im Bereich des State of the Art für historischen Druck und unterschreitet beide Vergleichswerte. Für die übrigen Dokumente ohne Ground Truth dient ein Proxy auf Basis der Dictionary Hit Rate als Plausibilitätsschranke (Median 97,7 %).
+Die CER ist der Anteil der Zeichen im Referenztext, die im erzeugten Text abweichen. Sie ist definiert als die Levenshtein-Distanz zwischen Referenz und Hypothese, geteilt durch die Zeichenzahl der Referenz.
 
-### **6.2 Methodologische Verortung und die Selbstanwendung des Audit-Prinzips**
+Die Levenshtein-Distanz ist die minimale Anzahl an Einzelzeichen-Operationen (Einfügung, Löschung, Ersetzung), um die Hypothese in die Referenz zu überführen.[^11] Diese Operationen werden nicht vorgegeben, sondern ergeben sich aus der Distanzberechnung. Die Überführungsrichtung (Hypothese zu Referenz) ist im gesamten Kapitel einheitlich, sodass die Benennung der Operationstypen über alle Beispiele konsistent bleibt; die Distanz selbst ist richtungsunabhängig. Implementiert ist sie über `rapidfuzz.distance.Levenshtein`.
 
-Der Bericht verwendet *epistemische Infrastruktur* als Arbeitsbegriff. Er bezeichnet die Gesamtheit der Strukturen, die ein LLM-gestützter, generativer Erzeugungsprozess um sich herum aufbaut, um seine Ergebnisse nachvollziehbar, überprüfbar und stabil zu halten. Wo Transkription, Layout und TEI nicht-deterministisch entstehen, treten an die Stelle des verlässlichen Einzelschritts verlässliche Strukturen, die jeden Stand dokumentieren, versionieren und gegen frühere Stände wie gegen formale Maße prüfbar machen. Im vorliegenden Projekt umfasst diese Infrastruktur das versionierte GitHub-Repository mit seiner Commit-Historie als lückenlose Erzeugungsspur, das Repository als geordnete Ablage von Code und Daten, die `pytest`\-Suiten als ausführbare Verifikation, das chronologische Arbeitstagebuch `journal.md`, die kuratierten Dokumente im `knowledge/`\-Ordner, das Webinterface samt Viewer als Werkzeug der menschlichen Inspektion und Kuration sowie die Character Error Rate als formale Metrik, die die Textqualität gegen die Ground Truth messbar macht. Diese Strukturen tragen nicht zum Ergebnis selbst bei, sondern zu der Gewissheit, mit der sich über das Ergebnis urteilen lässt.
+Aggregationseinheit ist das Dokument, nicht die Seite. Das Korpus-Bootstrap-Verfahren (n \= 25 Referenz-TEIs, B \= 10 000, Seed 42, BCa-Konfidenzintervall) liefert daraus Mittelwert und 95-%-Vertrauensbereich. Zur Einordnung der Werte dient die Transkribus-Konvention, nach der unter 2 % als publikationsreif, 2 bis 5 % als forschungstauglich und 5 bis 10 % als brauchbar für Volltextsuche gilt.[^12] Eine hohe CER bedeutet dabei nicht zwingend schlechte Texterkennung; sie kann ebenso aus fehlerhafter Lesereihenfolge bei komplexem Layout folgen[^13] oder daraus, dass Mistral Document AI ein generelles, nicht auf historische Schrift spezialisiertes Modell ist. Die Berechnung selbst ist ein einzelner Funktionsaufruf;[^14] die methodische Substanz liegt in der Aufbereitung der beiden Texte und in der Wahl der Referenz.
 
-Die Verifikations-Milestones liegen bewusst in etablierten Datenformaten vor (PNG, JSON, PAGE-XML, TEI-XML), sodass sie für menschliche wie maschinelle Prüfung zugänglich und mit anderen Systemen interoperabel sind; multimodale Agents können sich Overlay-Bilder und Dokumente eigenständig ansehen. Die Ablösung des selbstzertifizierenden Agent-Screenings durch menschgesetzte Stromstatus markiert die Grenze maschineller Verifikation explizit. Agents prüfen Konsistenz und Schemata, fachliche Richtigkeit garantiert erst die menschliche Kuration; das Status-Modell macht diesen Übergang im Datenmodell sichtbar, statt ihn hinter einem irreführenden „APPROVED" zu verbergen.
+#### Gegen welche Referenz gemessen wird
 
-Methodologisch lässt sich das Projekt zwischen *Agentic Engineering*, *Agentic Coding* und *Promptotyping* verorten. Die Bezeichnung *Vibe Coding* trifft nicht zu, da das Vorgehen strukturiert war. Alle Python-Skripte sind mit Claude Code generiert, keines wurde manuell geschrieben oder im Detail inspiziert; die Validierung erfolgte am Endergebnis. Nicht explizit vorgegebene Entscheidungen wie der Chunking-Mechanismus für große PDFs wurden eigenständig getroffen und dokumentiert.
+Die CER misst die Abweichung von einer gewählten Referenz, nicht objektive Korrektheit. Bei TEI-Ground-Truth ist deshalb vorab festzulegen, welche Lesart die Referenz bildet, denn TEI hält an mehreren Stellen zwei konkurrierende Fassungen desselben Textes vor. Zwei Elementpaare sind relevant. `<sic>` / `<corr>` kennzeichnet eine überlieferte fehlerhafte Form gegenüber einer editorischen Korrektur. `<abbr>` / `<expan>` kennzeichnet eine Abkürzung gegenüber ihrer Auflösung. Der Unterschied ist, dass `<expan>` Text enthält, der nie physisch auf der Vorlage stand (die Auflösung von „Dr." zu „Doctor"), während `<corr>` eine plausible Lesetextvariante ist, die sich von `<sic>` meist nur um wenige Zeichen unterscheidet.
 
-Eine Lehre dieser Iteration betrifft die Infrastruktur selbst. Die Verifikationskaskade, die das Projekt auf die Pipeline-Ergebnisse anwendet, muss auch auf die eigenen Metadaten angewendet werden. Die Korpus-Kennzahlen lebten lange als handgepflegte Prosa in der Knowledge-Base und drifteten, vor allem durch unbemerkte Vermischung der Zähl-Einheiten (Text-Ebene, PDF-Ebene, Seiten). Für diesen Bericht wurden sie aus den Primärquellen neu abgeleitet und in ein reproduzierbares Audit-Artefakt überführt (`scripts/eval/corpus_audit.py` mit Ausgabe nach `output/corpus_audit.json`), das jede Zahl an ein Tripel aus Quelle, Einheit und Extraktion bindet und Abweichungen zur Knowledge-Base automatisch flaggt. Die Drift der eigenen Metadaten verletzte damit genau das Prinzip deterministischer Ableitung, das das Projekt für seine Editionsdaten beansprucht.
+Das Experiment misst gegen die edierte, kuratierte Zielfassung. Bei `<sic>` / `<corr>` wird die korrigierte Form `<corr>` gewählt (Regel E3).
 
-### **6.3 Grenzen und mögliche Weiterführung**
+**\[KLÄRUNG IM REPOSITORY — `<abbr>` / `<expan>`\-Behandlung\]** Frage an den Code: Welche Seite des Paars `<abbr>` / `<expan>` übernimmt `extract_text_for_comparison()` in den Vergleichstext? Drei Fälle sind zu unterscheiden, und nur einer trifft zu: (a) konsistent `<expan>` (kuratiert) — die Messphilosophie ist dann einheitlich „gegen die edierte Zielfassung", die Erkennung wird an Abkürzungsstellen aber gegen nicht sichtbaren Text gemessen; (b) `<abbr>` (diplomatisch) — die Philosophie ist dann gemischt, nämlich „kuratiert bei Schreibvarianten, vorlagennah bei Abkürzungen"; (c) keine Sonderbehandlung, sodass beide Elemente unter die generische Regel E9 fallen und ihr Innentext hintereinander extrahiert würde (z. B. „Dr.Doctor") — das wäre ein latenter Fehler und müsste korrigiert werden. Zu prüfen ist der entsprechende Zweig in `extract_text_for_comparison()`; danach ist dieser Absatz auf den zutreffenden Fall festzulegen.
+
+Diese Wahl hat eine messbare Konsequenz, die Beispiel 5 in 6.2 zeigt: Enthält die Referenz selbst einen Transkriptionsfehler, zählt eine korrektere Erkennung als Differenz. Solche Fälle erhöhen die gemessene CER, sind kein Pipeline-Fehler und begrenzen das mit dieser Methodik Erreichbare.
+
+#### Zerlegung der Fehler in Fidelity und Scope
+
+Die Editieroperationen werden in zwei Kategorien zerlegt, die unterschiedliche Fehlerursachen trennen. **Fidelity** erfasst echte Erkennungsfehler, also Substitutionen, Löschungen und kleine Einfügungen, und bildet das Maß für die Lesequalität im engeren Sinn. **Scope** erfasst große Einfügungen ab einer Schwelle von 50 Zeichen, die typischerweise nicht aus Erkennungsfehlern stammen, sondern aus Textbestandteilen, welche die Pipeline erfasst, die selektiv transkribierte Referenz aber nicht enthält, etwa Mastheads, Autorzeilen oder Editionsmetadaten. Die **Fidelity-CER** wertet nur die erste Kategorie, die **Volltext-CER** schließt den Scope-Anteil als Diagnosegröße ein. Beide Kategorien summieren sich zeichengenau zur Levenshtein-Distanz.
+
+**\[KLÄRUNG IM REPOSITORY — Fidelity/Scope-Definition\]** Frage an den Code: Stimmen die hier genannte 50-Zeichen-Schwelle und die Zuordnung (Substitution und Löschung → Fidelity, große Einfügung → Scope) mit der Implementierung überein? Die Angaben sind aus dem Test `TestEditOperationDecomposition` rekonstruiert und am tatsächlichen Schwellenwert sowie an der Kategorisierung im Code zu bestätigen.
+
+#### TEI-Extraktion
+
+Vor dem Vergleich wird aus jedem TEI in `extract_text_for_comparison()` ein Vergleichstext erzeugt. Dieselbe Funktion verarbeitet beide Seiten, das Referenz-TEI wie das aus der Pipeline erzeugte TEI, damit gemessene Differenzen ausschließlich aus dem Textinhalt stammen und nicht aus einer ungleichen Behandlung der Seiten.
+
+| Nr. | Regel | Effekt |
+| :---- | :---- | :---- |
+| E1 | XML-Parser über `xml.etree.ElementTree`, Namensraum-Präfixe entfernen | `{tei}p` wird zu `p` |
+| E2 | nur Inhalt unterhalb von `<body>` | `<teiHeader>`, `<front>`, `<back>` werden ignoriert |
+| E3 | `<choice><sic>X</sic><corr>Y</corr></choice>` → nur `<corr>` | bei Schreibvariante gilt die kuratierte Lesart |
+| E4 | `<choice>` ohne `<corr>`, nur `<sic>` → `<sic>` | Fallback |
+| E5 | `<note place="foot">…</note>` → ausgeschlossen (Default) | separat edierte Fußnoten würden den Fließtext-Vergleich verzerren; via `include_footnotes=True` einschaltbar |
+| E6 | `<lb/>` ohne `break="no"` → ein Leerzeichen | Druck-Zeilenumbruch ist eine Wortgrenze |
+| E7 | `<lb break="no"/>` → kein Zeichen | getrenntes Wort wird zusammengezogen (Hu \+ manismus → Humanismus) |
+| E8 | `<pb/>` → zwei Zeilenumbrüche `\n\n` | Seitengrenze bleibt erkennbar |
+| E9 | alle übrigen Elemente (`<hi>`, `<persName>`, `<bibl>`, `<title>`, `<head>`, `<p>`, `<div>` …) → rekursiv Innentext | Markup wird transparent: `<hi>Wort</hi>` → Wort |
+| E10 | Attributwerte werden nicht übernommen | Seitenzahlen aus `<pb n="223"/>`, GND-IDs aus `ref`\-Attributen erscheinen nicht im Vergleich |
+| E11 | XML-Tails werden beim Eltern-Element angehängt | korrekte Reihenfolge bei `<p>Wort1<hi>Wort2</hi>Wort3</p>` |
+| E12 | bei XML-Parse-Fehler Regex-Fallback `re.sub(r'<[^>]+>', '', content)` | sichert die Auswertung gegen einzelne nicht wohlgeformte TEIs, damit eine fehlerhafte Datei den Korpuslauf nicht abbricht |
+
+#### Normalisierung
+
+Nach der Extraktion durchläuft der Text `normalize_for_comparison()`, ebenfalls beidseitig identisch. Die Regeln vereinheitlichen typografische Varianten, die keine inhaltlichen Unterschiede sind.
+
+| Nr. | Regel | Mapping |
+| :---- | :---- | :---- |
+| N1 / N2 | französische Guillemets → ASCII `"` | « (U+00AB), » (U+00BB) |
+| N3 | deutsches unteres Anführungszeichen → ASCII `"` | „ (U+201E) |
+| N4 / N5 | spitze Anführungszeichen → ASCII `'` | ‹ (U+2039), › (U+203A) |
+| N6 / N7 | Backtick, Akut → ASCII `'` | \` (U+0060), ´ (U+00B4) |
+| N8–N12 | Hyphen, geschützter Bindestrich, Halbgeviert-, Geviert-, Ziffernstrich → ASCII `-` | U+2010, U+2011, U+2013, U+2014, U+2012 |
+| N13 | weicher Trennstrich entfernen | U+00AD → '' |
+| N14 | Leerzeichen vor `; : ? !` entfernen (frz. Typografie) | `re.sub(r' +([;:?!])', r'\1', text)` |
+| N15 | mehrfacher Whitespace → ein Leerzeichen | `re.sub(r'\s+', ' ', text)` |
+| N16–N19 | englische Anführungszeichen und Apostrophe → ASCII `"` / `'` | U+201C, U+201D, U+2018, U+2019 |
+| N20 | Whitespace am Anfang/Ende entfernen | `strip()` |
+| N21 | Unicode-Normalform NFC | `unicodedata.normalize('NFC', text)` |
+
+Bewusst nicht normalisiert werden Groß- und Kleinschreibung, Diakritika, Satzzeichen, die Unterscheidung von ß und ss sowie Zahlen, da diese substantielle und keine typografischen Differenzen sind. Der case-sensitive Default folgt der Werkzeugpraxis von dinglehopper[^15] und jiwer, die Lowercasing als Opt-in führen; eine optionale case-insensitive Sekundärmetrik existiert (`casefold=True`). Die Erhaltung von Akzenten wird über eine eigene Metrik (HCPR) getrennt geprüft.
+
+#### Verifikation der Messmethodik
+
+Diese Verifikation betrifft die Korrektheit der CER-Messung und ist von der in Abschnitt „Validierung" beschriebenen TEI-Schemavalidierung zu unterscheiden. Sie ruht auf drei Schichten. Erstens 18 handgerechnete Regressionstests (`tests/test_cer_extraction.py`), die unabhängig vom Korpus-Ergebnis das Verhalten festschreiben, darunter die kanonische Formel, Case-Sensitivität, das Unterbleiben von Trimming, die `<choice>`\-Auflösung, die Normalisierung und die Zerlegung in Fidelity und Scope samt zeichengenauer Summenkontrolle. Zweitens die Vereinheitlichung der zuvor drei separaten CER-Implementierungen (`benchmark_cer`, `cer_statistics_full`, `tei_validator --compare-ref`) auf gemeinsame kanonische Funktionen seit Entscheidung E70, sodass alle drei Pfade für dasselbe Dokument dieselbe Zahl liefern. Drittens der Abgleich der Konventionen mit externen Standards: Nenner als Distanz durch Referenzlänge (Transkribus), NFC-Normalisierung als Grapheme-Cluster-Definition (OCR-D),[^16] case-sensitiver Default (jiwer und allgemeine Werkzeugpraxis; OCR-D sieht das Ignorieren der Groß-/Kleinschreibung nur in einer eigenen Letter-Accuracy-Metrik vor), Volltextvergleich ohne Alignment-Trimming (dinglehopper)[^17] sowie der paired multi-seed Bootstrap mit BCa-Konfidenzintervall für Deltas (Du 2025\).[^18] Die Vergleichbarkeit von CER-Werten zwischen verschiedenen Werkzeugen ist allerdings selbst bei nominell gleicher Metrik begrenzt, unter anderem weil bereits die Umwandlung strukturierter Ground Truth in Vergleichstext bei nicht berücksichtigter Lesereihenfolge zur Fehlerquelle wird; die hier dokumentierten Extraktions- und Normalisierungsregeln sind die projektinterne Festlegung dieser Transformation.
+
+**\[KLÄRUNG IM REPOSITORY — quantitative Schemavalidierung\]** Der Validierungsabschnitt des Berichts verweist auf „quantitative Validierungsergebnisse in 6.1". Einzutragen sind die Kennzahlen der TEI-Validierung gegen `zbz_hersch.rng` und die Projektregeln: Wie viele der 285 finalen TEI sind schemavalide, wie viele blockierende Regelverstöße bzw. informative Hinweise verbleiben, und auf welchem Stand? Diese Zahlen liegen weder im CER-Material noch im bisherigen Berichtstext vor.
+
+### **6.2 Fünf Beispiele aus unterschiedlichen Dokumenttypen**
+
+Jedes Beispiel nennt Doc-ID, Layout-Typ und Sprache, stellt eine Referenzstelle der zugehörigen Pipeline-Stelle gegenüber, identifiziert die Differenzen, verweist auf die anwendbaren Regeln und gibt die lokale CER an.
+
+#### Beispiel 1 — Doc 130 (Typ A, Französisch, Zeitschriftenartikel): Titel im Versalsatz
+
+Referenz (`data/source/referenz-tei/130.xml:28-31`):
+
+\<head\>
+
+  \<title type="main"\>L'école de nos périls\</title\>
+
+  \<title type="sub"\>Le problème de l'élite ouvrière\</title\>
+
+\</head\>
+
+Nach Extraktion (E2, E6, E9): `L'école de nos périls Le problème de l'élite ouvrière`
+
+OCR (`output/mistral_results/130_p3.md:1-3`): `L'ÉCOLE DE NOS PÉRILS LE PROBLÈME DE L'ÉLITE OUVRIÈRE`
+
+Die kasusbehafteten Buchstaben unterscheiden sich durchgängig in der Groß-/Kleinschreibung und zählen als Substitutionen; Leerzeichen und Apostroph bleiben gleich. Versalsatz wird nicht normalisiert (siehe 6.1), da er eine Schreibvariante ist.
+
+**\[KLÄRUNG IM REPOSITORY — Zählung Beispiel 1\]** Die im Quellmaterial genannte lokale CER „41 Substitutionen / 54 Zeichen ≈ 76 %" ist nachzurechnen und die Zählbasis anzugeben (Zeichenzahl mit oder ohne Leerzeichen). Die Zahl muss als publiziertes Beispiel exakt stimmen.
+
+Im Gesamtdokument verdünnt sich der Effekt: Der Titel umfasst 54 Zeichen, der Volltext rund 33 000\. Die Dokument-CER bleibt einstellig.
+
+#### Beispiel 2 — Doc 1060 (Typ A, Deutsch): `<choice>` und Schweizer vs. deutsche Orthografie
+
+Referenz (`data/source/referenz-tei/1060.xml:56`):
+
+\<p\>Wenn ich diesen Preis nicht \<choice\>\<sic\>gnügend\</sic\>\<corr\>genügend\</corr\>\</choice\> verdient habe, ist er …\</p\>
+
+Nach Extraktion (E3, nur `<corr>`): `Wenn ich diesen Preis nicht genügend verdient habe, ist er …`
+
+OCR (`output/mistral_results/1060_p3.md:9`): `Wenn ich diesen Preis nicht gnügend verdient habe, ist er …`
+
+Differenz: „gnügend" gegen „genügend", eine Einfügung des e. Lokale CER auf dem Wort: 1/8 ≈ 12,5 %. Zweite Stelle (TEI-Zeile 46): „Füssen" (Referenz, Schweizer Orthografie, 6 Zeichen) gegen „Füßen" (OCR, deutsche Orthografie, 5 Zeichen); die Distanz beträgt 2, da ein s durch ß ersetzt und das zweite s gelöscht wird. Lokale CER: 2/6 ≈ 33 %. Regel E3 extrahiert die kuratierte Form korrekt; die ss/ß-Differenz wird als substantielle orthografische Differenz nicht normalisiert.
+
+#### Beispiel 3 — Doc 2530 (Typ B, Französisch, Zeitschriftenartikel): Guillemets, Striche, französische Interpunktion
+
+Referenz (`data/source/referenz-tei/2530.xml:35-36`):
+
+\<p\>… c'est Israël – ses habitants, et non pas moi – qui aura à les courir.\</p\>
+
+Nach Extraktion und Normalisierung (N10): `… c'est Israël - ses habitants, et non pas moi - qui aura à les courir.`
+
+OCR (`output/mistral_results/2530_p1.md:7`): mit Geviertstrich (—) statt Halbgeviertstrich; nach N11 identisch zur Referenz, Differenz 0\. Zweite Stelle, französischer Doppelpunktabstand (TEI-Zeile 38 gegen OCR-Zeile 9): „un premier principe:" gegen „un premier principe :"; N14 entfernt das Leerzeichen, danach Differenz 0\. Dritte Stelle, Masthead und Autor (`LA SITUATION D'ISRAËL`, `JEANNE HERSCH`): rund 35 Zeichen, die in der Referenz fehlen; da unter der 50-Zeichen-Schwelle, zählen sie als Fidelity-Einfügungen, nicht als Scope (lokale Last etwa 35/2 800 ≈ 1,2 %). N10/N11 und N14 eliminieren typografische Unterschiede; Editionsmetadaten am Seitenrand werden hingegen als echte Differenz mitgemessen.
+
+#### Beispiel 4 — Doc 1330 (Typ D, Französisch/Deutsch, Monografie): transparentes Markup
+
+Referenz (`data/source/referenz-tei/1330.xml:74`):
+
+\<p\>\<persName ref="GND:118583530"\>Jacques Monod\</persName\>, par exemple, a publié un livre célèbre,
+
+   et que je trouve admi\<lb break="no"/\>rable, intitulé
+
+   \<bibl ref="GND:4678418-4"\>\<hi rendition="\#i"\>Le hasard et la nécessité\</hi\>\</bibl\>.\</p\>
+
+Nach Extraktion (E7 fügt admirable zusammen, E9 behält nur den Innentext, E10 ignoriert das `ref`\-Attribut): `Jacques Monod, par exemple, a publié un livre célèbre, et que je trouve admirable, intitulé Le hasard et la nécessité.`
+
+Der OCR-Text vor der TEI-Generierung ist identisch, trägt jedoch Markdown-Sterne um den Buchtitel (`*Le hasard et la nécessité*`), also zwei Einfügungen. Im End-to-End-Vergleich (Pipeline-TEI gegen Referenz-TEI) wird `*Titel*` zu `<hi rendition="#i">Titel</hi>`, das E9 auf beiden Seiten entfernt; die Texte sind dann identisch, Differenz 0\. Die Pipeline darf typografische Auszeichnung frei umsetzen (`*…*` ↔ `<hi>…</hi>`), ohne CER-Strafe; GND-Identifikatoren in `ref`\-Attributen berührt der Vergleich nicht (E10).
+
+#### Beispiel 5 — Doc 1440 (Typ B, Deutsch, Monografie): fehlerbehaftete Referenz
+
+Referenz (`data/source/referenz-tei/1440.xml:41-43`):
+
+\<p\>… 25\. Kongreß der KPdSU, 5\. Februar 1976, "lnforma\<lb break="no"/\>tionsbulletin" Nr. 6/7, 1976, Wien.\</p\>
+
+Nach Extraktion (E7): `… 25. Kongreß der KPdSU, 5. Februar 1976, "lnformationsbulletin" Nr. 6/7, 1976, Wien.` Die Referenz enthält ein kleines l statt eines großen I in „lnformationsbulletin", eine in der Transkribus-Referenz nicht korrigierte Verwechslung von Klein-l und Groß-I.
+
+OCR (`output/mistral_results/1440_p1.md:12`): mit Guillemets und korrektem „Informationsbulletin". Nach N1/N2 sind die Anführungszeichen gleich; es bleibt „lnformationsbulletin" gegen „Informationsbulletin", eine Substitution l → I. Lokale CER auf dem Wort: 1/20 \= 5 %, gezählt gegen die Pipeline, obwohl sie hier die korrekte Form liefert (Annahme: Der Eigenname lautet „Informationsbulletin"; markierte Inferenz, hohe Konfidenz). Das Beispiel zeigt, dass die CER die Differenz zur Referenz misst, nicht objektive Korrektheit; die Referenz ist Ground Truth per Definition, aber selbst eine fehlerbehaftete Transkription. Solche Fälle erhöhen die gemessene CER, ohne ein Pipeline-Versagen zu sein, und begrenzen das Erreichbare.
+
+### **6.3 Korpus-Ergebnis und Datenlage**
+
+Headline-Resultat des aktuellen Korpus (n \= 25, Seed 42, B \= 10 000, Stand 2026-05-27): Die Fidelity-CER, die echte Lese- und Auslassungsfehler ohne selektiv transkribierten Begleittext erfasst, liegt bei einem Median von 1,83 % und einem Mittel von 4,26 % (95-%-CI \[2,39 %; 6,48 %\]). Die Volltext-CER als Diagnosegröße, die den Pipeline-Mehrtext gegenüber den selektiv transkribierten Referenzen einschließt, liegt bei einem Median von 13,13 % und einem Mittel von 20,75 %. Nach Transkribus-Konvention liegt der Median der Fidelity-CER im Bereich „publikationsreif", der Mittelwert im Bereich „forschungstauglich". Die Reproduktion erfolgt über `python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`; Methodikdetails in `knowledge/quality.md`.
+
+Auf der Datenseite bleibt festzuhalten, dass von den 286 gelieferten Dokumenten 285 ein finales TEI besitzen. Das gelieferte PDF ohne finales TEI (Dokument 10\) ist registriert und extern zu klären. Davon zu unterscheiden sind drei im Masterfile gelistete, aber nicht gelieferte Texte (1745, 1750, 1970\) sowie die noch offene Differenz zwischen den Masterfile-Texten und den öffentlich genannten ZB-Texten. Diese Punkte sind in Abschnitt 7 als Grenzen zusammengeführt.
+
+### **7 Grenzen und mögliche Weiterführung**
 
 Mehrere Aspekte sind unvollständig geblieben oder bewusst nicht bearbeitet worden. Die folgende Liste fasst beide zusammen, von Schwächen des Vorhandenen bis zu Schritten, die ein Anschlussvorhaben unternehmen könnte.
 
@@ -145,9 +278,10 @@ Aufruf jeweils als Modul (`python -m scripts.<paket>.<modul>`).
 
 **Texterkennung**
 
-- `scripts/ocr/ocr_pipeline.py` steuert die Texterkennung mit Mistral als Basis oder optional Gemini-Vision-OCR (`-e gemini`).  
+- `scripts/ocr/ocr_pipeline.py` steuert die Texterkennung und ruft je nach Dokumenttyp Mistral, Docling oder Gemini auf.  
 - `scripts/ocr/gemini_ocr_correct.py` liefert Ersatz- und Korrektur-OCR mit Gemini in zwei Varianten, nur aus Text oder zusätzlich mit dem Scan-Bild.  
 - `scripts/ocr/llm_postprocess.py` korrigiert den OCR-Text optional mit Claude Haiku nach.  
+- `scripts/ocr/ocr_dedup.py` entfernt OCR-Halluzinationen wie Wiederholungs-Loops und Zeichen-Artefakte.  
 - `scripts/ocr/classify_docs.py` bestimmt aus den ersten Seiten per Gemini die Dokument-Metadaten wie Sprache, Typ, Titel, Autor und Datum.  
 - `scripts/core/loaders.py` legt fest, welcher OCR-Datenstrom Vorrang hat, und ermittelt die zu verarbeitenden Seiten.
 
@@ -183,7 +317,7 @@ Aufruf jeweils als Modul (`python -m scripts.<paket>.<modul>`).
 
 **Audit**
 
-- `scripts/eval/corpus_audit.py` leitet die Korpus-Kennzahlen reproduzierbar aus den Primärquellen ab und flaggt Abweichungen zur Knowledge-Base.
+- `scripts/corpus_audit.py` leitet die Korpus-Kennzahlen reproduzierbar aus den Primärquellen ab und flaggt Abweichungen zur Knowledge-Base.
 
 [^1]: Zentralbibliothek Zürich. „Jeanne Hersch: Digitale Neuauflage der Schriften". [https://www.zb.uzh.ch/de/jeanne-hersch-digitale-neuauflage-der-schriften](https://www.zb.uzh.ch/de/jeanne-hersch-digitale-neuauflage-der-schriften).
 
@@ -205,4 +339,18 @@ Aufruf jeweils als Modul (`python -m scripts.<paket>.<modul>`).
 
 [^10]: OpenSeadragon, quelloffener Bildbetrachter für hochauflösende Zoombilder, Version 5.0.1. [https://openseadragon.github.io/](https://openseadragon.github.io/).
 
-[^11]: Vergleichswerte aus der Literatur, nicht im Rahmen dieses Experiments gemessen. Transkribus Print M1 (allein), deutsch, 3,67 %: Crosilla, Klic und Colavizza 2025, arXiv:2503.15195. Gemini 2.5 Pro zero-shot, russisch (18. Jh.), 3,36 %: Levchenko 2025, arXiv:2510.06743.
+[^11]: Transkribus, *Character Error Rate (CER) Explained*. [https://www.transkribus.org/character-error-rate-cer-explained](https://www.transkribus.org/character-error-rate-cer-explained) (Definition, Berechnung über die Levenshtein-Editierdistanz, Bewertungsschwellen, Layoutkomplexität als CER-Faktor).
+
+[^12]: Transkribus, *Character Error Rate (CER) Explained*. [https://www.transkribus.org/character-error-rate-cer-explained](https://www.transkribus.org/character-error-rate-cer-explained) (Definition, Berechnung über die Levenshtein-Editierdistanz, Bewertungsschwellen, Layoutkomplexität als CER-Faktor).
+
+[^13]: Transkribus, *Character Error Rate (CER) Explained*. [https://www.transkribus.org/character-error-rate-cer-explained](https://www.transkribus.org/character-error-rate-cer-explained) (Definition, Berechnung über die Levenshtein-Editierdistanz, Bewertungsschwellen, Layoutkomplexität als CER-Faktor).
+
+[^14]: `jiwer`. [https://github.com/jitsi/jiwer](https://github.com/jitsi/jiwer) (Funktionsschnittstelle zur CER-Berechnung).
+
+[^15]: dinglehopper, OCR-Evaluationswerkzeug der OCR-D-Initiative. [https://github.com/qurator-spk/dinglehopper](https://github.com/qurator-spk/dinglehopper).
+
+[^16]: OCR-D, *OCR-D Evaluation und Metriken*. [https://ocr-d.de/en/spec/ocrd\_eval](https://ocr-d.de/en/spec/ocrd_eval). \[KLÄRUNG: exakte URL/Abschnitt am Standard verifizieren.\]
+
+[^17]: dinglehopper, OCR-Evaluationswerkzeug der OCR-D-Initiative. [https://github.com/qurator-spk/dinglehopper](https://github.com/qurator-spk/dinglehopper).
+
+[^18]: Singh, \[Vorname\], u. a. (2025). arXiv:2511.19794. \[KLÄRUNG: vollständige Autor- und Titelangabe am Preprint ergänzen.\]

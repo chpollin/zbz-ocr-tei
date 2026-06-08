@@ -632,7 +632,7 @@ fachliche Richtigkeit. Naechster Schritt: ZBZ-Fachleute pruefen dieselben Docs i
 ### Additivitaet
 
 `output/tei_unified/` bleibt unveraendert. Finale TEIs mit `<revisionDesc>` liegen in
-`output/tei_final/`. Nur Letztere werden in der Edition angezeigt.
+`output/tei_final/`. Nur Letztere werden im Viewer angezeigt.
 
 ---
 

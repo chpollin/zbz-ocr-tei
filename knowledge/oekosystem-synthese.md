@@ -48,9 +48,10 @@ CC1 ist der Engpass. Gate-Plan existiert nur innerhalb integration.md (keine sep
   (Pollin), bestätigt 14.02.2026. Nachlass der Philosophin Jeanne Hersch.
 - **Korpus:** 325 katalogisiert → 289 digitalisiert → **286 PDF** (~4.120 Seiten) → **285 finales TEI**
   (doc 10 unvollständig). 71% FR / 25% DE, 1931–1998, v.a. Journal-Artikel + Sammelbandbeiträge.
-- **Lieferziel (Nuance):** hochwertiger, schema-valider **Ausgangspunkt + Kurationswerkzeug**, NICHT
-  abgenommene Edition. Pipeline fertig, aber **0 Dokumente fachlich verifiziert** (alle Ströme
-  `unverifiziert`). ZBZ behält Transkribus als Parallelquelle.
+- **Lieferziel:** hochwertiger, schema-valider **Datensatz + Kurationswerkzeug**;
+  die Edition baut ZBZ stromabwärts (Oxygen/Alma/Swisscovery). Pipeline fertig und geliefert; die fachliche
+  Verifikation ist ZBZ-Aufgabe, getrackt über den Workflow-Status (alle Ströme `unverifiziert` als
+  Übergabe-Default). ZBZ behält Transkribus als Parallelquelle.
 - **6-Stufen-Pipeline:** PDF→PNG (300 dpi) + Gemini-Klassifikation → **Mistral Document AI 2512**
   (Azure) OCR → **Docling 2.75** Layout + Gemini-QA → PAGE-XML/METS (paralleler Export) → **Unified
   TEI** (Scaffold→Gemini-Refinement→Assembly) → Evaluation.

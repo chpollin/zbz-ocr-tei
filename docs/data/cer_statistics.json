@@ -1,0 +1,4014 @@
+{
+  "schema_version": "0.3",
+  "meta": {
+    "tool_version": "0.1.0",
+    "git_sha": "c2e4876a3c2c1835b917d77e7a19c91dea181eab",
+    "git_dirty": true,
+    "generated_at": "2026-05-27T18:22:29.779427+00:00",
+    "python_version": "3.11.9",
+    "numpy_version": "2.3.5",
+    "scipy_version": "1.17.0",
+    "cer_lib": "rapidfuzz char-level Levenshtein (Fallback: cer_statistics.levenshtein)",
+    "alignment_algo": "Volltext-Levenshtein OHNE Trimming (calculate_cer). Drei-Zahlen-Zerlegung via classify_edit_operations: fidelity (echte Fehler) + scope (Pipeline-Mehrtext) = full. find_best_alignment nur noch fuer Diagnose/within-doc-chunks.",
+    "normalization_pipeline": [
+      {
+        "step": "raw",
+        "ops": [
+          "whitespace collapse",
+          "strip"
+        ]
+      },
+      {
+        "step": "nfc",
+        "ops": [
+          "raw",
+          "unicodedata.normalize NFC"
+        ]
+      },
+      {
+        "step": "nfc_hyphen",
+        "ops": [
+          "nfc",
+          "U+2010..U+2015 -> U+002D",
+          "U+00AD removed"
+        ]
+      },
+      {
+        "step": "nfc_hyphen_case",
+        "ops": [
+          "nfc_hyphen",
+          "casefold"
+        ]
+      }
+    ],
+    "seed": 42,
+    "bootstrap_n": 10000,
+    "bootstrap_method": "BCa blockwise (block=doc) + Perzentil for paired/within-doc, Singh 2025",
+    "literature_refs": [
+      "Singh 2025 (arXiv:2511.19794) - paired bootstrap protocol",
+      "Nosova et al. 2025 (arXiv:2510.06743) - HCPR/AIR domain metrics",
+      "Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195) - HTR like-for-like",
+      "Kanerva & Ledins 2025 (arXiv:2502.01205) - no-GT methodology",
+      "arXiv:2501.18243 (2025) - statistical multi-metric evaluation",
+      "arXiv:2509.04013 (2025) - robustness of LLM benchmark evaluation"
+    ]
+  },
+  "corpus": {
+    "n_total": 285,
+    "n_with_ground_truth": 25,
+    "n_evaluated": 25,
+    "n_excluded": 0,
+    "excluded": []
+  },
+  "selection_bias": {
+    "comparable_overall": false,
+    "tests": [
+      {
+        "variable": "language",
+        "test_type": "chi2",
+        "stat": 0.3165,
+        "p": 0.5737,
+        "comparable": true
+      },
+      {
+        "variable": "layout_type",
+        "test_type": "chi2",
+        "stat": 1.08,
+        "p": 0.7819,
+        "comparable": true
+      },
+      {
+        "variable": "pub_form",
+        "test_type": "chi2",
+        "stat": 2.0204,
+        "p": 0.732,
+        "comparable": true
+      },
+      {
+        "variable": "page_count",
+        "test_type": "ks",
+        "stat": 0.1582,
+        "p": 0.5561,
+        "comparable": true
+      },
+      {
+        "variable": "n_chars",
+        "test_type": "ks",
+        "stat": 0.3158,
+        "p": 0.0155,
+        "comparable": false
+      }
+    ],
+    "interpretation": "Selektions-Subset weicht auf n_chars signifikant vom Korpus ab. Generalisierung auf Gesamtkorpus erfordert Vorsicht; Proxy-basierte Korpus-Schaetzung (siehe proxies.corpus_estimate) ergaenzt diese Limitation."
+  },
+  "overall": {
+    "end_to_end_fidelity": {
+      "n": 25,
+      "mean": 0.042582,
+      "mean_ci95": [
+        0.024061,
+        0.064817
+      ],
+      "median": 0.01833,
+      "median_ci95": [
+        0.010889,
+        0.042373
+      ],
+      "std": 0.053418,
+      "min": 0.003043,
+      "max": 0.18252,
+      "q1": 0.01059,
+      "q3": 0.050519,
+      "ci_method": "Doc-level Perzentil-Bootstrap (block=doc, n=25, ALLE Docs), B=10000",
+      "definition": "PRIMAER. OCR-/Transkriptionstreue: Substitutionen + kleine Indels + Loeschungen. Grosse Pipeline-Einfuegungen (Mehrtext ggue. der selektiven Referenz) ausgeschlossen. Ueber ALLE Docs, kein Scope-Filter."
+    },
+    "scope_insertion": {
+      "n": 25,
+      "mean": 0.164955,
+      "mean_ci95": [
+        0.077195,
+        0.277338
+      ],
+      "median": 0.071647,
+      "median_ci95": [
+        0.007405,
+        0.176755
+      ],
+      "std": 0.261438,
+      "min": 0.0,
+      "max": 1.123596,
+      "q1": 0.004888,
+      "q3": 0.212783,
+      "ci_method": "Doc-level Perzentil-Bootstrap (block=doc, n=25, ALLE Docs), B=10000",
+      "definition": "Pipeline-Mehrtext ggue. Referenz (grosse Einfuegungen: Masthead, Nachbar-Rezension, Inhaltsverzeichnis). KEIN OCR-Fehler. cer_full = cer_fidelity + scope_insertion_rate."
+    },
+    "end_to_end": {
+      "n": 25,
+      "mean": 0.207537,
+      "mean_ci95": [
+        0.118864,
+        0.318945
+      ],
+      "median": 0.131293,
+      "median_ci95": [
+        0.026102,
+        0.247811
+      ],
+      "std": 0.261541,
+      "min": 0.007646,
+      "max": 1.132849,
+      "q1": 0.024177,
+      "q3": 0.254167,
+      "ci_method": "Doc-level Perzentil-Bootstrap (block=doc, n=25), B=10000, Singh 2025",
+      "definition": "DIAGNOSE, KEIN Qualitaetsmass: volle Volltext-Divergenz von der Referenz inkl. Pipeline-Mehrtext (scope-inklusiv), ueber ALLE Docs. Das Qualitaetsmass ist fidelity (rechnet den Mehrtext heraus)."
+    },
+    "end_to_end_casefold": {
+      "n": 25,
+      "mean": 0.206702,
+      "mean_ci95": [
+        0.115886,
+        0.318275
+      ],
+      "median": 0.131293,
+      "median_ci95": [
+        0.026102,
+        0.243089
+      ],
+      "std": 0.261791,
+      "min": 0.00552,
+      "max": 1.132849,
+      "q1": 0.024177,
+      "q3": 0.250726,
+      "ci_method": "Doc-level Perzentil-Bootstrap (block=doc, n=25), B=10000",
+      "definition": "Wie end_to_end (scope-inkl.), aber case-insensitiv (Unicode casefold)."
+    },
+    "ocr_only": {
+      "status": "measured",
+      "reason": null,
+      "n": 25,
+      "mean": 0.230944,
+      "mean_ci95": [
+        0.10461,
+        0.379282
+      ],
+      "median": 0.054076,
+      "median_ci95": [
+        0.016356,
+        0.163357
+      ],
+      "std": 0.361222,
+      "min": 0.007915,
+      "max": 1.434224,
+      "q1": 0.013402,
+      "q3": 0.180991,
+      "ci_method": "Doc-level Perzentil-Bootstrap (block=doc, n=25), B=10000"
+    }
+  },
+  "strata": {
+    "language": {
+      "fra": {
+        "n": 18,
+        "mean": 0.225459,
+        "mean_ci95": [
+          0.106677,
+          0.372777
+        ],
+        "median": 0.100877,
+        "median_ci95": [
+          0.025139,
+          0.250989
+        ]
+      },
+      "deu": {
+        "n": 7,
+        "mean": 0.161452,
+        "mean_ci95": [
+          0.069214,
+          0.257903
+        ],
+        "median": 0.138074,
+        "median_ci95": [
+          0.015478,
+          0.288646
+        ]
+      }
+    },
+    "layout_type": {
+      "A": {
+        "n": 12,
+        "mean": 0.282294,
+        "mean_ci95": [
+          0.117101,
+          0.485977
+        ],
+        "median": 0.18535,
+        "median_ci95": [
+          0.025139,
+          0.442193
+        ]
+      },
+      "D": {
+        "n": 4,
+        "mean": 0.13325,
+        "mean_ci95": [
+          0.042694,
+          0.254853
+        ],
+        "median": 0.100877,
+        "median_ci95": [
+          0.014927,
+          0.316318
+        ]
+      },
+      "B": {
+        "n": 7,
+        "mean": 0.169996,
+        "mean_ci95": [
+          0.081287,
+          0.259615
+        ],
+        "median": 0.169455,
+        "median_ci95": [
+          0.01833,
+          0.241532
+        ]
+      },
+      "C": {
+        "n": 2,
+        "mean": 0.038959,
+        "mean_ci95": [
+          0.018176,
+          0.059742
+        ],
+        "median": 0.038959,
+        "median_ci95": [
+          0.018176,
+          0.059742
+        ]
+      }
+    },
+    "pub_form": {
+      "other": {
+        "n": 3,
+        "mean": 0.048971,
+        "mean_ci95": [
+          0.008547,
+          0.12289
+        ],
+        "median": 0.015478,
+        "median_ci95": [
+          0.008547,
+          0.12289
+        ]
+      },
+      "journalArticle": {
+        "n": 13,
+        "mean": 0.288969,
+        "mean_ci95": [
+          0.137929,
+          0.475337
+        ],
+        "median": 0.219128,
+        "median_ci95": [
+          0.029407,
+          0.316318
+        ]
+      },
+      "book": {
+        "n": 5,
+        "mean": 0.078719,
+        "mean_ci95": [
+          0.02519,
+          0.132248
+        ],
+        "median": 0.059742,
+        "median_ci95": [
+          0.014927,
+          0.169455
+        ]
+      },
+      "bookSection": {
+        "n": 3,
+        "mean": 0.216596,
+        "mean_ci95": [
+          0.007646,
+          0.387974
+        ],
+        "median": 0.254167,
+        "median_ci95": [
+          0.007646,
+          0.387974
+        ]
+      },
+      "encyclopedia": {
+        "n": 1,
+        "mean": 0.241532,
+        "mean_ci95": [
+          0.241532,
+          0.241532
+        ],
+        "median": 0.241532,
+        "median_ci95": [
+          0.241532,
+          0.241532
+        ]
+      }
+    }
+  },
+  "multi_norm": {
+    "regimes": [
+      "raw",
+      "nfc",
+      "nfc_hyphen",
+      "nfc_hyphen_case"
+    ],
+    "results": {
+      "raw": {
+        "mean": 0.059563,
+        "mean_ci95": [
+          0.033911,
+          0.089547
+        ],
+        "median": 0.024177,
+        "median_ci95": [
+          0.014927,
+          0.059742
+        ],
+        "n": 25,
+        "mean_diff_to_raw": 0.0,
+        "diff_ci95_to_raw": [
+          0.0,
+          0.0
+        ]
+      },
+      "nfc": {
+        "mean": 0.059563,
+        "mean_ci95": [
+          0.033649,
+          0.088816
+        ],
+        "median": 0.024177,
+        "median_ci95": [
+          0.014927,
+          0.059742
+        ],
+        "n": 25,
+        "mean_diff_to_raw": 0.0,
+        "diff_ci95_to_raw": [
+          0.0,
+          0.0
+        ]
+      },
+      "nfc_hyphen": {
+        "mean": 0.059563,
+        "mean_ci95": [
+          0.033882,
+          0.089333
+        ],
+        "median": 0.024177,
+        "median_ci95": [
+          0.014927,
+          0.059742
+        ],
+        "n": 25,
+        "mean_diff_to_raw": 0.0,
+        "diff_ci95_to_raw": [
+          0.0,
+          0.0
+        ]
+      },
+      "nfc_hyphen_case": {
+        "mean": 0.058679,
+        "mean_ci95": [
+          0.033364,
+          0.089158
+        ],
+        "median": 0.024177,
+        "median_ci95": [
+          0.014927,
+          0.05821
+        ],
+        "n": 25,
+        "mean_diff_to_raw": -0.000884,
+        "diff_ci95_to_raw": [
+          -0.001389,
+          -0.000461
+        ]
+      }
+    },
+    "diff_method": "paired bootstrap on identical doc set (n=25), B=10000, Singh 2025",
+    "caveat": "extract_text_for_comparison() applies a baseline normalization (NFC + smart-quote/hyphen mapping + casefold) before regime-specific transforms. Regime differences are therefore relative to that baseline; expect small effect sizes."
+  },
+  "paired_test": {
+    "status": "measured",
+    "metric": "fidelity-CER (echte Fehler) beidseitig -- scope-neutral",
+    "baseline_definition": "OCR-only Fidelity-CER per doc (Mistral Stage-2 plain text vs reference TEI, evaluate_document + classify_edit_operations)",
+    "n": 25,
+    "n_better": 14,
+    "n_worse": 11,
+    "n_unchanged": 0,
+    "mean_diff": -0.079049,
+    "mean_diff_ci95": [
+      -0.179769,
+      0.004677
+    ],
+    "p_bootstrap_two_sided": 0.0658,
+    "interpretation": "Pipeline (E2E) ist im Mittel 7.90pp besser als reine Mistral-OCR. In 14/25 Docs verbessert die Pipeline gegenueber dem OCR."
+  },
+  "stability": {
+    "status": "open",
+    "reason": "API-Budget pending user decision (Forschungsplan v2 §9 b); stability not measured in this iteration. Re-Run-Pilot 5 Docs x 3 Gemini-Calls vorgemerkt.",
+    "n_docs": null,
+    "n_runs": null,
+    "per_doc_std": null
+  },
+  "domain_metrics": {
+    "diacritic_preservation_rate": {
+      "reference_source": "ground_truth_tei",
+      "characters": [
+        "é",
+        "è",
+        "à",
+        "ç",
+        "ä",
+        "ö",
+        "ü",
+        "œ",
+        "ß",
+        "æ",
+        "ï",
+        "î",
+        "ô",
+        "û",
+        "ê",
+        "â"
+      ],
+      "by_language": {
+        "fra": {
+          "expected_count": 18970,
+          "observed_count": 19813,
+          "rate": 0.988241,
+          "rate_ci95": [
+            0.969075,
+            1.0
+          ],
+          "n_docs": 18
+        },
+        "deu": {
+          "expected_count": 1575,
+          "observed_count": 1674,
+          "rate": 0.992908,
+          "rate_ci95": [
+            0.978723,
+            1.0
+          ],
+          "n_docs": 7
+        }
+      },
+      "overall": {
+        "rate": 0.989548,
+        "rate_ci95": [
+          0.975748,
+          1.0
+        ]
+      }
+    },
+    "hcpr": {
+      "definition": "HCPR-Adaption nach Nosova et al. 2025 (arXiv:2510.06743 §3): char-class-weighted preservation rate ueber 8 Diakritik-Klassen (fr_acute_grave, fr_circumflex, fr_diaeresis, fr_cedilla, fr_oe, de_umlaut, de_eszett, ae_ligature). Pro Klasse: min(hyp/ref, 1.0). HCPR = Mittel der Klassen-Raten ueber im Doc vorhandene Klassen.",
+      "by_language": {
+        "fra": {
+          "score": 0.980669,
+          "score_ci95": [
+            0.950159,
+            0.99821
+          ],
+          "n_docs": 18
+        },
+        "deu": {
+          "score": 0.989818,
+          "score_ci95": [
+            0.97619,
+            0.999921
+          ],
+          "n_docs": 7
+        }
+      },
+      "overall": {
+        "score": 0.983231,
+        "score_ci95": [
+          0.960535,
+          0.996926
+        ]
+      }
+    },
+    "air": {
+      "status": "deferred",
+      "note": "Abbreviation Interpretation Rate (Nosova 2025) erfordert Korpus-Vorpruefung. Im Hersch-Korpus (FR/DE-Antiqua-Druck 1930er-1990er) sind Abbreviationen selten; Pruefung deferred."
+    }
+  },
+  "error_categories": {
+    "definitions": {
+      "diacritics": "Diakritik-Differenzen (z.B. e vs e mit Akzent)",
+      "punctuation": "Interpunktions-Unterschiede ohne Wortinhalt",
+      "hyphenation": "Trennstrich/Bindestrich-Differenzen <5 Zeichen",
+      "whitespace": "Whitespace-only-Differenzen",
+      "ocr_artifact": "OCR-Halluzinationen (>50 chars, repeated n-grams)",
+      "layout": "Layout-bedingte grosse Inserts/Deletes (>40 chars)",
+      "other": "Restliche Substitutionen / Inserts / Deletes"
+    },
+    "absolute_counts": {
+      "diacritics": 141,
+      "punctuation": 280,
+      "hyphenation": 17,
+      "whitespace": 2952,
+      "ocr_artifact": 30,
+      "layout": 81,
+      "other": 2035
+    },
+    "per_doc_normalized_mean": {
+      "diacritics": 0.006027,
+      "punctuation": 0.015901,
+      "hyphenation": 0.002163,
+      "whitespace": 0.086219,
+      "ocr_artifact": 0.066786,
+      "layout": 0.108827,
+      "other": 0.714077
+    }
+  },
+  "per_doc": [
+    {
+      "doc_id": "100",
+      "n_pages": 7,
+      "n_ref_chars": 11232,
+      "cer_end_to_end": 0.008547,
+      "cer_end_to_end_ci95": [
+        0.003913,
+        0.016619
+      ],
+      "cer_fidelity": 0.008547,
+      "scope_insertion_rate": 0.0,
+      "cer_ocr_only": 0.010683,
+      "cer_ocr_only_ci95": [
+        0.010683,
+        0.010683
+      ],
+      "language": "fra",
+      "layout_type": "A",
+      "pub_form": "other",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 11,
+          "share": 0.59375
+        },
+        {
+          "category": "punctuation",
+          "count": 12,
+          "share": 0.197917
+        },
+        {
+          "category": "whitespace",
+          "count": 18,
+          "share": 0.1875
+        }
+      ]
+    },
+    {
+      "doc_id": "1060",
+      "n_pages": 6,
+      "n_ref_chars": 9952,
+      "cer_end_to_end": 0.12289,
+      "cer_end_to_end_ci95": [
+        0.002518,
+        0.010504
+      ],
+      "cer_fidelity": 0.011355,
+      "scope_insertion_rate": 0.111535,
+      "cer_ocr_only": 0.009237,
+      "cer_ocr_only_ci95": [
+        0.009237,
+        0.009237
+      ],
+      "language": "deu",
+      "layout_type": "A",
+      "pub_form": "other",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 7,
+          "share": 0.668029
+        },
+        {
+          "category": "ocr_artifact",
+          "count": 1,
+          "share": 0.226492
+        },
+        {
+          "category": "layout",
+          "count": 2,
+          "share": 0.076043
+        }
+      ]
+    },
+    {
+      "doc_id": "1180",
+      "n_pages": 7,
+      "n_ref_chars": 19771,
+      "cer_end_to_end": 0.024177,
+      "cer_end_to_end_ci95": [
+        0.002322,
+        0.02872
+      ],
+      "cer_fidelity": 0.011178,
+      "scope_insertion_rate": 0.012999,
+      "cer_ocr_only": 0.018428,
+      "cer_ocr_only_ci95": [
+        0.018428,
+        0.018428
+      ],
+      "language": "fra",
+      "layout_type": "A",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 21,
+          "share": 0.841004
+        },
+        {
+          "category": "layout",
+          "count": 1,
+          "share": 0.104603
+        },
+        {
+          "category": "whitespace",
+          "count": 15,
+          "share": 0.031381
+        }
+      ]
+    },
+    {
+      "doc_id": "130",
+      "n_pages": 15,
+      "n_ref_chars": 24382,
+      "cer_end_to_end": 0.029407,
+      "cer_end_to_end_ci95": [
+        0.029407,
+        0.029407
+      ],
+      "cer_fidelity": 0.029407,
+      "scope_insertion_rate": 0.0,
+      "cer_ocr_only": 0.78179,
+      "cer_ocr_only_ci95": [
+        0.78179,
+        0.78179
+      ],
+      "language": "fra",
+      "layout_type": "A",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 49,
+          "share": 0.853556
+        },
+        {
+          "category": "whitespace",
+          "count": 89,
+          "share": 0.124128
+        },
+        {
+          "category": "punctuation",
+          "count": 7,
+          "share": 0.018131
+        }
+      ]
+    },
+    {
+      "doc_id": "1330",
+      "n_pages": 6,
+      "n_ref_chars": 22385,
+      "cer_end_to_end": 0.131293,
+      "cer_end_to_end_ci95": [
+        0.131293,
+        0.131293
+      ],
+      "cer_fidelity": 0.010275,
+      "scope_insertion_rate": 0.121019,
+      "cer_ocr_only": 0.013402,
+      "cer_ocr_only_ci95": [
+        0.013402,
+        0.013402
+      ],
+      "language": "fra",
+      "layout_type": "D",
+      "pub_form": "book",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 18,
+          "share": 0.785641
+        },
+        {
+          "category": "ocr_artifact",
+          "count": 3,
+          "share": 0.171487
+        },
+        {
+          "category": "layout",
+          "count": 1,
+          "share": 0.021436
+        }
+      ]
+    },
+    {
+      "doc_id": "1410",
+      "n_pages": 4,
+      "n_ref_chars": 12390,
+      "cer_end_to_end": 0.219128,
+      "cer_end_to_end_ci95": [
+        0.219128,
+        0.219128
+      ],
+      "cer_fidelity": 0.042373,
+      "scope_insertion_rate": 0.176755,
+      "cer_ocr_only": 0.054076,
+      "cer_ocr_only_ci95": [
+        0.054076,
+        0.054076
+      ],
+      "language": "fra",
+      "layout_type": "B",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "ocr_artifact",
+          "count": 4,
+          "share": 0.455985
+        },
+        {
+          "category": "other",
+          "count": 45,
+          "share": 0.379742
+        },
+        {
+          "category": "layout",
+          "count": 4,
+          "share": 0.132597
+        }
+      ]
+    },
+    {
+      "doc_id": "1440",
+      "n_pages": 5,
+      "n_ref_chars": 12971,
+      "cer_end_to_end": 0.169455,
+      "cer_end_to_end_ci95": [
+        0.169455,
+        0.169455
+      ],
+      "cer_fidelity": 0.058746,
+      "scope_insertion_rate": 0.110709,
+      "cer_ocr_only": 0.011718,
+      "cer_ocr_only_ci95": [
+        0.011718,
+        0.011718
+      ],
+      "language": "deu",
+      "layout_type": "B",
+      "pub_form": "book",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 200,
+          "share": 0.933121
+        },
+        {
+          "category": "whitespace",
+          "count": 85,
+          "share": 0.038672
+        },
+        {
+          "category": "layout",
+          "count": 1,
+          "share": 0.020928
+        }
+      ]
+    },
+    {
+      "doc_id": "1520",
+      "n_pages": 0,
+      "n_ref_chars": 281496,
+      "cer_end_to_end": 0.059742,
+      "cer_end_to_end_ci95": [
+        0.059742,
+        0.059742
+      ],
+      "cer_fidelity": 0.036068,
+      "scope_insertion_rate": 0.023674,
+      "cer_ocr_only": 0.519931,
+      "cer_ocr_only_ci95": [
+        0.519931,
+        0.519931
+      ],
+      "language": "fra",
+      "layout_type": "C",
+      "pub_form": "book",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 572,
+          "share": 0.650116
+        },
+        {
+          "category": "layout",
+          "count": 33,
+          "share": 0.149313
+        },
+        {
+          "category": "ocr_artifact",
+          "count": 11,
+          "share": 0.115657
+        }
+      ]
+    },
+    {
+      "doc_id": "1910",
+      "n_pages": 2,
+      "n_ref_chars": 10444,
+      "cer_end_to_end": 0.387974,
+      "cer_end_to_end_ci95": [
+        0.387974,
+        0.387974
+      ],
+      "cer_fidelity": 0.164305,
+      "scope_insertion_rate": 0.223669,
+      "cer_ocr_only": 0.030602,
+      "cer_ocr_only_ci95": [
+        0.030602,
+        0.030602
+      ],
+      "language": "deu",
+      "layout_type": "B",
+      "pub_form": "bookSection",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 41,
+          "share": 0.71693
+        },
+        {
+          "category": "layout",
+          "count": 7,
+          "share": 0.271224
+        },
+        {
+          "category": "whitespace",
+          "count": 41,
+          "share": 0.010118
+        }
+      ]
+    },
+    {
+      "doc_id": "2310",
+      "n_pages": 2,
+      "n_ref_chars": 4032,
+      "cer_end_to_end": 0.649554,
+      "cer_end_to_end_ci95": [
+        0.649554,
+        0.649554
+      ],
+      "cer_fidelity": 0.024554,
+      "scope_insertion_rate": 0.625,
+      "cer_ocr_only": 0.007915,
+      "cer_ocr_only_ci95": [
+        0.007915,
+        0.007915
+      ],
+      "language": "fra",
+      "layout_type": "A",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 25,
+          "share": 0.992745
+        },
+        {
+          "category": "whitespace",
+          "count": 16,
+          "share": 0.006109
+        },
+        {
+          "category": "diacritics",
+          "count": 2,
+          "share": 0.000764
+        }
+      ]
+    },
+    {
+      "doc_id": "2530",
+      "n_pages": 2,
+      "n_ref_chars": 5019,
+      "cer_end_to_end": 0.01833,
+      "cer_end_to_end_ci95": [
+        0.0161,
+        0.0222
+      ],
+      "cer_fidelity": 0.01833,
+      "scope_insertion_rate": 0.0,
+      "cer_ocr_only": 0.023311,
+      "cer_ocr_only_ci95": [
+        0.023311,
+        0.023311
+      ],
+      "language": "fra",
+      "layout_type": "B",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 5,
+          "share": 0.782609
+        },
+        {
+          "category": "whitespace",
+          "count": 17,
+          "share": 0.184783
+        },
+        {
+          "category": "diacritics",
+          "count": 2,
+          "share": 0.021739
+        }
+      ]
+    },
+    {
+      "doc_id": "2635",
+      "n_pages": 5,
+      "n_ref_chars": 20927,
+      "cer_end_to_end": 0.007646,
+      "cer_end_to_end_ci95": [
+        0.003146,
+        0.015364
+      ],
+      "cer_fidelity": 0.007646,
+      "scope_insertion_rate": 0.0,
+      "cer_ocr_only": 0.010178,
+      "cer_ocr_only_ci95": [
+        0.010178,
+        0.010178
+      ],
+      "language": "deu",
+      "layout_type": "A",
+      "pub_form": "bookSection",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 19,
+          "share": 0.64375
+        },
+        {
+          "category": "whitespace",
+          "count": 55,
+          "share": 0.34375
+        },
+        {
+          "category": "punctuation",
+          "count": 2,
+          "share": 0.0125
+        }
+      ]
+    },
+    {
+      "doc_id": "290",
+      "n_pages": 5,
+      "n_ref_chars": 13131,
+      "cer_end_to_end": 0.247811,
+      "cer_end_to_end_ci95": [
+        0.247811,
+        0.247811
+      ],
+      "cer_fidelity": 0.177214,
+      "scope_insertion_rate": 0.070596,
+      "cer_ocr_only": 0.163113,
+      "cer_ocr_only_ci95": [
+        0.163113,
+        0.163113
+      ],
+      "language": "fra",
+      "layout_type": "A",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 47,
+          "share": 0.763675
+        },
+        {
+          "category": "layout",
+          "count": 3,
+          "share": 0.124462
+        },
+        {
+          "category": "ocr_artifact",
+          "count": 2,
+          "share": 0.098648
+        }
+      ]
+    },
+    {
+      "doc_id": "30",
+      "n_pages": 4,
+      "n_ref_chars": 13078,
+      "cer_end_to_end": 0.254167,
+      "cer_end_to_end_ci95": [
+        0.254167,
+        0.254167
+      ],
+      "cer_fidelity": 0.18252,
+      "scope_insertion_rate": 0.071647,
+      "cer_ocr_only": 0.180991,
+      "cer_ocr_only_ci95": [
+        0.180991,
+        0.180991
+      ],
+      "language": "fra",
+      "layout_type": "A",
+      "pub_form": "bookSection",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "layout",
+          "count": 8,
+          "share": 0.605897
+        },
+        {
+          "category": "other",
+          "count": 37,
+          "share": 0.385078
+        },
+        {
+          "category": "whitespace",
+          "count": 25,
+          "share": 0.007521
+        }
+      ]
+    },
+    {
+      "doc_id": "300",
+      "n_pages": 0,
+      "n_ref_chars": 5681,
+      "cer_end_to_end": 0.316318,
+      "cer_end_to_end_ci95": [
+        0.316318,
+        0.316318
+      ],
+      "cer_fidelity": 0.050519,
+      "scope_insertion_rate": 0.265798,
+      "cer_ocr_only": 0.160359,
+      "cer_ocr_only_ci95": [
+        0.160359,
+        0.160359
+      ],
+      "language": "fra",
+      "layout_type": "D",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 24,
+          "share": 0.728993
+        },
+        {
+          "category": "layout",
+          "count": 4,
+          "share": 0.159711
+        },
+        {
+          "category": "ocr_artifact",
+          "count": 2,
+          "share": 0.086255
+        }
+      ]
+    },
+    {
+      "doc_id": "3020",
+      "n_pages": 6,
+      "n_ref_chars": 44193,
+      "cer_end_to_end": 0.015478,
+      "cer_end_to_end_ci95": [
+        0.015478,
+        0.015478
+      ],
+      "cer_fidelity": 0.01059,
+      "scope_insertion_rate": 0.004888,
+      "cer_ocr_only": 0.016356,
+      "cer_ocr_only_ci95": [
+        0.016356,
+        0.016356
+      ],
+      "language": "deu",
+      "layout_type": "B",
+      "pub_form": "other",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 125,
+          "share": 0.46345
+        },
+        {
+          "category": "layout",
+          "count": 3,
+          "share": 0.226608
+        },
+        {
+          "category": "whitespace",
+          "count": 136,
+          "share": 0.19883
+        }
+      ]
+    },
+    {
+      "doc_id": "3040",
+      "n_pages": 8,
+      "n_ref_chars": 48031,
+      "cer_end_to_end": 0.241532,
+      "cer_end_to_end_ci95": [
+        0.241532,
+        0.241532
+      ],
+      "cer_fidelity": 0.010889,
+      "scope_insertion_rate": 0.230643,
+      "cer_ocr_only": 0.163357,
+      "cer_ocr_only_ci95": [
+        0.163357,
+        0.163357
+      ],
+      "language": "fra",
+      "layout_type": "B",
+      "pub_form": "encyclopedia",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 63,
+          "share": 0.917507
+        },
+        {
+          "category": "ocr_artifact",
+          "count": 2,
+          "share": 0.056547
+        },
+        {
+          "category": "whitespace",
+          "count": 223,
+          "share": 0.019222
+        }
+      ]
+    },
+    {
+      "doc_id": "40",
+      "n_pages": 147,
+      "n_ref_chars": 198886,
+      "cer_end_to_end": 0.018176,
+      "cer_end_to_end_ci95": [
+        0.018176,
+        0.018176
+      ],
+      "cer_fidelity": 0.015798,
+      "scope_insertion_rate": 0.002378,
+      "cer_ocr_only": 0.737553,
+      "cer_ocr_only_ci95": [
+        0.737553,
+        0.737553
+      ],
+      "language": "fra",
+      "layout_type": "C",
+      "pub_form": "book",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 204,
+          "share": 0.737483
+        },
+        {
+          "category": "layout",
+          "count": 3,
+          "share": 0.095989
+        },
+        {
+          "category": "ocr_artifact",
+          "count": 1,
+          "share": 0.078285
+        }
+      ]
+    },
+    {
+      "doc_id": "560",
+      "n_pages": 4,
+      "n_ref_chars": 10689,
+      "cer_end_to_end": 0.026102,
+      "cer_end_to_end_ci95": [
+        0.018831,
+        0.040111
+      ],
+      "cer_fidelity": 0.026102,
+      "scope_insertion_rate": 0.0,
+      "cer_ocr_only": 0.064483,
+      "cer_ocr_only_ci95": [
+        0.064483,
+        0.064483
+      ],
+      "language": "fra",
+      "layout_type": "A",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 15,
+          "share": 0.562724
+        },
+        {
+          "category": "whitespace",
+          "count": 115,
+          "share": 0.412186
+        },
+        {
+          "category": "punctuation",
+          "count": 5,
+          "share": 0.021505
+        }
+      ]
+    },
+    {
+      "doc_id": "570",
+      "n_pages": 2,
+      "n_ref_chars": 3026,
+      "cer_end_to_end": 1.132849,
+      "cer_end_to_end_ci95": [
+        1.132849,
+        1.132849
+      ],
+      "cer_fidelity": 0.009253,
+      "scope_insertion_rate": 1.123596,
+      "cer_ocr_only": 1.434224,
+      "cer_ocr_only_ci95": [
+        1.434224,
+        1.434224
+      ],
+      "language": "fra",
+      "layout_type": "A",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 4,
+          "share": 0.993291
+        },
+        {
+          "category": "whitespace",
+          "count": 16,
+          "share": 0.004667
+        },
+        {
+          "category": "punctuation",
+          "count": 4,
+          "share": 0.002042
+        }
+      ]
+    },
+    {
+      "doc_id": "580",
+      "n_pages": 2,
+      "n_ref_chars": 3943,
+      "cer_end_to_end": 0.595739,
+      "cer_end_to_end_ci95": [
+        0.595739,
+        0.595739
+      ],
+      "cer_fidelity": 0.003043,
+      "scope_insertion_rate": 0.592696,
+      "cer_ocr_only": 0.483642,
+      "cer_ocr_only_ci95": [
+        0.483642,
+        0.483642
+      ],
+      "language": "fra",
+      "layout_type": "A",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 3,
+          "share": 0.996594
+        },
+        {
+          "category": "whitespace",
+          "count": 8,
+          "share": 0.003406
+        },
+        {
+          "category": "diacritics",
+          "count": 0,
+          "share": 0.0
+        }
+      ]
+    },
+    {
+      "doc_id": "760",
+      "n_pages": 19,
+      "n_ref_chars": 34771,
+      "cer_end_to_end": 0.070461,
+      "cer_end_to_end_ci95": [
+        0.070461,
+        0.070461
+      ],
+      "cer_fidelity": 0.058727,
+      "scope_insertion_rate": 0.011734,
+      "cer_ocr_only": 0.789278,
+      "cer_ocr_only_ci95": [
+        0.789278,
+        0.789278
+      ],
+      "language": "fra",
+      "layout_type": "D",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 442,
+          "share": 0.699184
+        },
+        {
+          "category": "layout",
+          "count": 7,
+          "share": 0.204082
+        },
+        {
+          "category": "whitespace",
+          "count": 158,
+          "share": 0.06449
+        }
+      ]
+    },
+    {
+      "doc_id": "830",
+      "n_pages": 2,
+      "n_ref_chars": 8508,
+      "cer_end_to_end": 0.014927,
+      "cer_end_to_end_ci95": [
+        0.014927,
+        0.014927
+      ],
+      "cer_fidelity": 0.007522,
+      "scope_insertion_rate": 0.007405,
+      "cer_ocr_only": 0.023037,
+      "cer_ocr_only_ci95": [
+        0.023037,
+        0.023037
+      ],
+      "language": "fra",
+      "layout_type": "D",
+      "pub_form": "book",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "layout",
+          "count": 1,
+          "share": 0.496063
+        },
+        {
+          "category": "whitespace",
+          "count": 28,
+          "share": 0.220472
+        },
+        {
+          "category": "other",
+          "count": 12,
+          "share": 0.133858
+        }
+      ]
+    },
+    {
+      "doc_id": "890",
+      "n_pages": 6,
+      "n_ref_chars": 29571,
+      "cer_end_to_end": 0.138074,
+      "cer_end_to_end_ci95": [
+        0.138074,
+        0.138074
+      ],
+      "cer_fidelity": 0.01373,
+      "scope_insertion_rate": 0.124345,
+      "cer_ocr_only": 0.057861,
+      "cer_ocr_only_ci95": [
+        0.057861,
+        0.057861
+      ],
+      "language": "deu",
+      "layout_type": "B",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 32,
+          "share": 0.664462
+        },
+        {
+          "category": "ocr_artifact",
+          "count": 2,
+          "share": 0.266716
+        },
+        {
+          "category": "whitespace",
+          "count": 153,
+          "share": 0.037472
+        }
+      ]
+    },
+    {
+      "doc_id": "90",
+      "n_pages": 4,
+      "n_ref_chars": 9794,
+      "cer_end_to_end": 0.288646,
+      "cer_end_to_end_ci95": [
+        0.004799,
+        0.202669
+      ],
+      "cer_fidelity": 0.075863,
+      "scope_insertion_rate": 0.212783,
+      "cer_ocr_only": 0.008066,
+      "cer_ocr_only_ci95": [
+        0.008066,
+        0.008066
+      ],
+      "language": "deu",
+      "layout_type": "A",
+      "pub_form": "journalArticle",
+      "scope_status": "full",
+      "scope_detail": null,
+      "top_3_error_categories": [
+        {
+          "category": "other",
+          "count": 14,
+          "share": 0.964627
+        },
+        {
+          "category": "ocr_artifact",
+          "count": 1,
+          "share": 0.024407
+        },
+        {
+          "category": "whitespace",
+          "count": 24,
+          "share": 0.00849
+        }
+      ]
+    }
+  ],
+  "comparison_lit": [
+    {
+      "source": "Crosilla, Klic, Colavizza 2025",
+      "arxiv_id": "2503.15195",
+      "method": "Transkribus Print M1 + Gemini 2.0 Flash multimodal post-correction",
+      "lang": "deu Fraktur",
+      "year": 2025,
+      "cer": 0.0084,
+      "comparable": "partial",
+      "caveat_dimensions": [
+        "script",
+        "corpus",
+        "method"
+      ],
+      "caveat": "Deutsche Fraktur, anderes Korpus, multimodale Post-Korrektur. Untergrenze des Forschungsstands."
+    },
+    {
+      "source": "Crosilla et al. 2025",
+      "arxiv_id": "2503.15195",
+      "method": "Gemini 2.0 Flash zero-shot",
+      "lang": "deu Fraktur",
+      "year": 2025,
+      "cer": 0.0127,
+      "comparable": "partial",
+      "caveat_dimensions": [
+        "script",
+        "corpus"
+      ],
+      "caveat": "Deutsche Fraktur, ohne Post-Korrektur."
+    },
+    {
+      "source": "Kanerva & Ledins 2025",
+      "arxiv_id": "2502.01205",
+      "method": "GPT-4o LLM-as-judge OCR evaluation (no GT)",
+      "lang": "multilingual historical",
+      "year": 2025,
+      "cer": 0.063,
+      "comparable": "partial",
+      "caveat_dimensions": [
+        "method",
+        "corpus"
+      ],
+      "caveat": "GPT-4o-Klasse, no-GT-Eval; methodisch verwandt aber andere Korpora."
+    },
+    {
+      "source": "Nosova et al. 2025",
+      "arxiv_id": "2510.06743",
+      "method": "Gemini 2.5 Pro",
+      "lang": "rus 18. Jh. Civil Font",
+      "year": 2025,
+      "cer": 0.0336,
+      "comparable": "false",
+      "caveat_dimensions": [
+        "language",
+        "script",
+        "corpus"
+      ],
+      "caveat": "Russisch, 18. Jh. Civil Font; nicht like-for-like mit FR/DE-Antiqua."
+    },
+    {
+      "source": "Nosova et al. 2025",
+      "arxiv_id": "2510.06743",
+      "method": "GPT-4o",
+      "lang": "rus 18. Jh. Civil Font",
+      "year": 2025,
+      "cer": 0.0923,
+      "comparable": "false",
+      "caveat_dimensions": [
+        "language",
+        "script",
+        "corpus"
+      ],
+      "caveat": "Russisch."
+    }
+  ],
+  "proxies": {
+    "definitions": {
+      "hit_rate": "Anteil OCR-Tokens (>=2 chars) im pyspellchecker FR/DE-Lexikon. Eigennamen-Filter fuer FR/multi (uppercase-only-tokens ausgeschlossen). Vorberechnet via scripts/eval/quality_proxy.py.",
+      "oov_rate": "Out-of-vocabulary rate, definiert als 1 - hit_rate.",
+      "suspicious_char_ratio": "Anteil unerwarteter Zeichen (z.B. @#$%, fragwuerdige Unicode-Punkte). Klassisches OCR-Artefakt-Signal, vorberechnet via quality_proxy.py.",
+      "ngram_loglik": "DEFERRED: 5-gram char-LM Likelihood. Erfordert Trainings-Korpus.",
+      "punct_sanity": "DEFERRED: Anteil sinnvoller Interpunktion.",
+      "sentence_length_kl": "DEFERRED: KL-Divergenz Satzlaengen-Verteilung vs Referenzkorpus.",
+      "diacritic_preservation": "Beobachtete vs erwartete Diakritik-Frequenz. Siehe domain_metrics.diacritic_preservation_rate."
+    },
+    "training_corpus": {
+      "source": "pyspellchecker FR/DE lexica + scripts/eval/quality_proxy.py heuristics",
+      "size_chars": null,
+      "note": "Wikipedia FR/DE n-gram model nicht verfuegbar in dieser Iteration."
+    },
+    "per_doc_n285": [
+      {
+        "doc_id": "100",
+        "hit_rate": 0.986731,
+        "oov_rate": 0.013269,
+        "suspicious_char_ratio": 0.000533,
+        "language": "fr",
+        "char_count": 11254
+      },
+      {
+        "doc_id": "1000",
+        "hit_rate": 0.98744,
+        "oov_rate": 0.01256,
+        "suspicious_char_ratio": 0.000916,
+        "language": "fr",
+        "char_count": 12004
+      },
+      {
+        "doc_id": "1010",
+        "hit_rate": 0.950066,
+        "oov_rate": 0.049934,
+        "suspicious_char_ratio": 0.001523,
+        "language": "fr",
+        "char_count": 22330
+      },
+      {
+        "doc_id": "1020",
+        "hit_rate": 0.991321,
+        "oov_rate": 0.008679,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 11197
+      },
+      {
+        "doc_id": "1040",
+        "hit_rate": 0.980573,
+        "oov_rate": 0.019427,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 13447
+      },
+      {
+        "doc_id": "1060",
+        "hit_rate": 0.959641,
+        "oov_rate": 0.040359,
+        "suspicious_char_ratio": 0.00027,
+        "language": "de",
+        "char_count": 11107
+      },
+      {
+        "doc_id": "1080",
+        "hit_rate": 0.958577,
+        "oov_rate": 0.041423,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 16200
+      },
+      {
+        "doc_id": "1090",
+        "hit_rate": 0.954458,
+        "oov_rate": 0.045542,
+        "suspicious_char_ratio": 0.000412,
+        "language": "fr",
+        "char_count": 19407
+      },
+      {
+        "doc_id": "110",
+        "hit_rate": 0.981676,
+        "oov_rate": 0.018324,
+        "suspicious_char_ratio": 0.000134,
+        "language": "fr",
+        "char_count": 469082
+      },
+      {
+        "doc_id": "1100",
+        "hit_rate": 0.952893,
+        "oov_rate": 0.047107,
+        "suspicious_char_ratio": 0.000221,
+        "language": "fr",
+        "char_count": 13592
+      },
+      {
+        "doc_id": "1120",
+        "hit_rate": 0.968909,
+        "oov_rate": 0.031091,
+        "suspicious_char_ratio": 0.000539,
+        "language": "de",
+        "char_count": 11122
+      },
+      {
+        "doc_id": "1140",
+        "hit_rate": 0.970509,
+        "oov_rate": 0.029491,
+        "suspicious_char_ratio": 0.000147,
+        "language": "fr",
+        "char_count": 20452
+      },
+      {
+        "doc_id": "1170",
+        "hit_rate": 0.969487,
+        "oov_rate": 0.030513,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 5036
+      },
+      {
+        "doc_id": "1180",
+        "hit_rate": 0.984252,
+        "oov_rate": 0.015748,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 19888
+      },
+      {
+        "doc_id": "1190",
+        "hit_rate": 0.977062,
+        "oov_rate": 0.022938,
+        "suspicious_char_ratio": 0.00027,
+        "language": "fr",
+        "char_count": 18542
+      },
+      {
+        "doc_id": "120",
+        "hit_rate": 0.991803,
+        "oov_rate": 0.008197,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 41420
+      },
+      {
+        "doc_id": "1200",
+        "hit_rate": 0.980684,
+        "oov_rate": 0.019316,
+        "suspicious_char_ratio": 0.000226,
+        "language": "fr",
+        "char_count": 13265
+      },
+      {
+        "doc_id": "1210",
+        "hit_rate": 0.959944,
+        "oov_rate": 0.040056,
+        "suspicious_char_ratio": 7.9e-05,
+        "language": "fr",
+        "char_count": 25377
+      },
+      {
+        "doc_id": "1220",
+        "hit_rate": 0.962884,
+        "oov_rate": 0.037116,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 32612
+      },
+      {
+        "doc_id": "1230",
+        "hit_rate": 0.982578,
+        "oov_rate": 0.017422,
+        "suspicious_char_ratio": 8.4e-05,
+        "language": "fr",
+        "char_count": 11846
+      },
+      {
+        "doc_id": "1240",
+        "hit_rate": 0.983909,
+        "oov_rate": 0.016091,
+        "suspicious_char_ratio": 0.000238,
+        "language": "fr",
+        "char_count": 104882
+      },
+      {
+        "doc_id": "1250",
+        "hit_rate": 0.987492,
+        "oov_rate": 0.012508,
+        "suspicious_char_ratio": 9.2e-05,
+        "language": "fr",
+        "char_count": 10833
+      },
+      {
+        "doc_id": "1260",
+        "hit_rate": 0.933362,
+        "oov_rate": 0.066638,
+        "suspicious_char_ratio": 0.000244,
+        "language": "fr",
+        "char_count": 16405
+      },
+      {
+        "doc_id": "1270",
+        "hit_rate": 0.976409,
+        "oov_rate": 0.023591,
+        "suspicious_char_ratio": 0.001705,
+        "language": "fr",
+        "char_count": 10557
+      },
+      {
+        "doc_id": "1280",
+        "hit_rate": 0.977742,
+        "oov_rate": 0.022258,
+        "suspicious_char_ratio": 0.000112,
+        "language": "fr",
+        "char_count": 26888
+      },
+      {
+        "doc_id": "1290",
+        "hit_rate": 0.987462,
+        "oov_rate": 0.012538,
+        "suspicious_char_ratio": 4.2e-05,
+        "language": "multi",
+        "char_count": 23980
+      },
+      {
+        "doc_id": "130",
+        "hit_rate": 0.986082,
+        "oov_rate": 0.013918,
+        "suspicious_char_ratio": 0.000241,
+        "language": "fr",
+        "char_count": 24916
+      },
+      {
+        "doc_id": "1300",
+        "hit_rate": 0.978674,
+        "oov_rate": 0.021326,
+        "suspicious_char_ratio": 0.000189,
+        "language": "multi",
+        "char_count": 15902
+      },
+      {
+        "doc_id": "1330",
+        "hit_rate": 0.98997,
+        "oov_rate": 0.01003,
+        "suspicious_char_ratio": 0.0,
+        "language": "multi",
+        "char_count": 25252
+      },
+      {
+        "doc_id": "1340",
+        "hit_rate": 0.984879,
+        "oov_rate": 0.015121,
+        "suspicious_char_ratio": 0.000234,
+        "language": "fr",
+        "char_count": 25695
+      },
+      {
+        "doc_id": "1350",
+        "hit_rate": 0.976788,
+        "oov_rate": 0.023212,
+        "suspicious_char_ratio": 8.8e-05,
+        "language": "fr",
+        "char_count": 11359
+      },
+      {
+        "doc_id": "1360",
+        "hit_rate": 0.989671,
+        "oov_rate": 0.010329,
+        "suspicious_char_ratio": 0.000114,
+        "language": "multi",
+        "char_count": 17616
+      },
+      {
+        "doc_id": "1370",
+        "hit_rate": 0.992138,
+        "oov_rate": 0.007862,
+        "suspicious_char_ratio": 0.0,
+        "language": "multi",
+        "char_count": 17454
+      },
+      {
+        "doc_id": "1380",
+        "hit_rate": 0.970632,
+        "oov_rate": 0.029368,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 54149
+      },
+      {
+        "doc_id": "1390",
+        "hit_rate": 0.957853,
+        "oov_rate": 0.042147,
+        "suspicious_char_ratio": 0.000325,
+        "language": "de",
+        "char_count": 15365
+      },
+      {
+        "doc_id": "140",
+        "hit_rate": 0.985125,
+        "oov_rate": 0.014875,
+        "suspicious_char_ratio": 7.6e-05,
+        "language": "fr",
+        "char_count": 52942
+      },
+      {
+        "doc_id": "1400",
+        "hit_rate": 0.973169,
+        "oov_rate": 0.026831,
+        "suspicious_char_ratio": 0.000414,
+        "language": "multi",
+        "char_count": 14510
+      },
+      {
+        "doc_id": "1410",
+        "hit_rate": 0.988304,
+        "oov_rate": 0.011696,
+        "suspicious_char_ratio": 0.0,
+        "language": "multi",
+        "char_count": 14926
+      },
+      {
+        "doc_id": "1420",
+        "hit_rate": 0.991686,
+        "oov_rate": 0.008314,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 16334
+      },
+      {
+        "doc_id": "1430",
+        "hit_rate": 0.954906,
+        "oov_rate": 0.045094,
+        "suspicious_char_ratio": 0.000121,
+        "language": "de",
+        "char_count": 33020
+      },
+      {
+        "doc_id": "1440",
+        "hit_rate": 0.964661,
+        "oov_rate": 0.035339,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 14808
+      },
+      {
+        "doc_id": "1460",
+        "hit_rate": 0.931349,
+        "oov_rate": 0.068651,
+        "suspicious_char_ratio": 5.4e-05,
+        "language": "de",
+        "char_count": 18471
+      },
+      {
+        "doc_id": "1475",
+        "hit_rate": 0.956808,
+        "oov_rate": 0.043192,
+        "suspicious_char_ratio": 0.000528,
+        "language": "multi",
+        "char_count": 13270
+      },
+      {
+        "doc_id": "1480",
+        "hit_rate": 0.95675,
+        "oov_rate": 0.04325,
+        "suspicious_char_ratio": 0.000274,
+        "language": "multi",
+        "char_count": 7309
+      },
+      {
+        "doc_id": "1490",
+        "hit_rate": 0.874549,
+        "oov_rate": 0.125451,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 16493
+      },
+      {
+        "doc_id": "150",
+        "hit_rate": 0.992024,
+        "oov_rate": 0.007976,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 6545
+      },
+      {
+        "doc_id": "1500",
+        "hit_rate": 0.933377,
+        "oov_rate": 0.066623,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 20943
+      },
+      {
+        "doc_id": "1510",
+        "hit_rate": 0.974077,
+        "oov_rate": 0.025923,
+        "suspicious_char_ratio": 0.000329,
+        "language": "fr",
+        "char_count": 9125
+      },
+      {
+        "doc_id": "1520",
+        "hit_rate": 0.983003,
+        "oov_rate": 0.016997,
+        "suspicious_char_ratio": 0.000154,
+        "language": "fr",
+        "char_count": 286102
+      },
+      {
+        "doc_id": "1530",
+        "hit_rate": 0.982983,
+        "oov_rate": 0.017017,
+        "suspicious_char_ratio": 4.3e-05,
+        "language": "fr",
+        "char_count": 115239
+      },
+      {
+        "doc_id": "1540",
+        "hit_rate": 0.953765,
+        "oov_rate": 0.046235,
+        "suspicious_char_ratio": 0.000243,
+        "language": "de",
+        "char_count": 24714
+      },
+      {
+        "doc_id": "1560",
+        "hit_rate": 0.982639,
+        "oov_rate": 0.017361,
+        "suspicious_char_ratio": 0.000191,
+        "language": "multi",
+        "char_count": 5222
+      },
+      {
+        "doc_id": "1570",
+        "hit_rate": 0.95208,
+        "oov_rate": 0.04792,
+        "suspicious_char_ratio": 0.000887,
+        "language": "fr",
+        "char_count": 9017
+      },
+      {
+        "doc_id": "1580",
+        "hit_rate": 0.992958,
+        "oov_rate": 0.007042,
+        "suspicious_char_ratio": 0.000254,
+        "language": "fr",
+        "char_count": 11834
+      },
+      {
+        "doc_id": "1590",
+        "hit_rate": 0.987556,
+        "oov_rate": 0.012444,
+        "suspicious_char_ratio": 7.6e-05,
+        "language": "fr",
+        "char_count": 26343
+      },
+      {
+        "doc_id": "160",
+        "hit_rate": 0.887151,
+        "oov_rate": 0.112849,
+        "suspicious_char_ratio": 0.024454,
+        "language": "fr",
+        "char_count": 17257
+      },
+      {
+        "doc_id": "1600",
+        "hit_rate": 0.947605,
+        "oov_rate": 0.052395,
+        "suspicious_char_ratio": 0.000257,
+        "language": "fr",
+        "char_count": 23326
+      },
+      {
+        "doc_id": "1610",
+        "hit_rate": 0.888693,
+        "oov_rate": 0.111307,
+        "suspicious_char_ratio": 0.00025,
+        "language": "multi",
+        "char_count": 35992
+      },
+      {
+        "doc_id": "1620",
+        "hit_rate": 0.926342,
+        "oov_rate": 0.073658,
+        "suspicious_char_ratio": 0.000236,
+        "language": "de",
+        "char_count": 16963
+      },
+      {
+        "doc_id": "1630",
+        "hit_rate": 0.212346,
+        "oov_rate": 0.787654,
+        "suspicious_char_ratio": 0.001067,
+        "language": "fr",
+        "char_count": 4685
+      },
+      {
+        "doc_id": "1640",
+        "hit_rate": 0.97948,
+        "oov_rate": 0.02052,
+        "suspicious_char_ratio": 0.00051,
+        "language": "multi",
+        "char_count": 15682
+      },
+      {
+        "doc_id": "1650",
+        "hit_rate": 0.944557,
+        "oov_rate": 0.055443,
+        "suspicious_char_ratio": 7.4e-05,
+        "language": "fr",
+        "char_count": 27080
+      },
+      {
+        "doc_id": "1680",
+        "hit_rate": 0.936364,
+        "oov_rate": 0.063636,
+        "suspicious_char_ratio": 0.000149,
+        "language": "fr",
+        "char_count": 13426
+      },
+      {
+        "doc_id": "1690",
+        "hit_rate": 0.947683,
+        "oov_rate": 0.052317,
+        "suspicious_char_ratio": 0.000342,
+        "language": "fr",
+        "char_count": 8774
+      },
+      {
+        "doc_id": "170",
+        "hit_rate": 0.997523,
+        "oov_rate": 0.002477,
+        "suspicious_char_ratio": 0.000197,
+        "language": "fr",
+        "char_count": 10142
+      },
+      {
+        "doc_id": "1700",
+        "hit_rate": 0.980807,
+        "oov_rate": 0.019193,
+        "suspicious_char_ratio": 0.003103,
+        "language": "multi",
+        "char_count": 19980
+      },
+      {
+        "doc_id": "1710",
+        "hit_rate": 0.980163,
+        "oov_rate": 0.019837,
+        "suspicious_char_ratio": 0.000585,
+        "language": "fr",
+        "char_count": 34192
+      },
+      {
+        "doc_id": "1720",
+        "hit_rate": 0.994375,
+        "oov_rate": 0.005625,
+        "suspicious_char_ratio": 0.0,
+        "language": "multi",
+        "char_count": 17411
+      },
+      {
+        "doc_id": "1730",
+        "hit_rate": 0.99512,
+        "oov_rate": 0.00488,
+        "suspicious_char_ratio": 9.4e-05,
+        "language": "multi",
+        "char_count": 21200
+      },
+      {
+        "doc_id": "1740",
+        "hit_rate": 0.991039,
+        "oov_rate": 0.008961,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 26637
+      },
+      {
+        "doc_id": "1755",
+        "hit_rate": 0.969156,
+        "oov_rate": 0.030844,
+        "suspicious_char_ratio": 5.8e-05,
+        "language": "multi",
+        "char_count": 17381
+      },
+      {
+        "doc_id": "1760",
+        "hit_rate": 0.956908,
+        "oov_rate": 0.043092,
+        "suspicious_char_ratio": 0.000114,
+        "language": "multi",
+        "char_count": 17472
+      },
+      {
+        "doc_id": "1770",
+        "hit_rate": 0.989498,
+        "oov_rate": 0.010502,
+        "suspicious_char_ratio": 8.1e-05,
+        "language": "fr",
+        "char_count": 24540
+      },
+      {
+        "doc_id": "1780",
+        "hit_rate": 0.987229,
+        "oov_rate": 0.012771,
+        "suspicious_char_ratio": 9.6e-05,
+        "language": "fr",
+        "char_count": 10429
+      },
+      {
+        "doc_id": "180",
+        "hit_rate": 0.992951,
+        "oov_rate": 0.007049,
+        "suspicious_char_ratio": 0.000139,
+        "language": "fr",
+        "char_count": 28823
+      },
+      {
+        "doc_id": "1810",
+        "hit_rate": 0.989325,
+        "oov_rate": 0.010675,
+        "suspicious_char_ratio": 0.000114,
+        "language": "fr",
+        "char_count": 78999
+      },
+      {
+        "doc_id": "1820",
+        "hit_rate": 0.985753,
+        "oov_rate": 0.014247,
+        "suspicious_char_ratio": 4.8e-05,
+        "language": "multi",
+        "char_count": 20676
+      },
+      {
+        "doc_id": "1830",
+        "hit_rate": 0.931591,
+        "oov_rate": 0.068409,
+        "suspicious_char_ratio": 0.000847,
+        "language": "multi",
+        "char_count": 46033
+      },
+      {
+        "doc_id": "1840",
+        "hit_rate": 0.980997,
+        "oov_rate": 0.019003,
+        "suspicious_char_ratio": 4.8e-05,
+        "language": "de",
+        "char_count": 20654
+      },
+      {
+        "doc_id": "1850",
+        "hit_rate": 0.962617,
+        "oov_rate": 0.037383,
+        "suspicious_char_ratio": 0.000263,
+        "language": "fr",
+        "char_count": 11419
+      },
+      {
+        "doc_id": "1860",
+        "hit_rate": 0.90987,
+        "oov_rate": 0.09013,
+        "suspicious_char_ratio": 0.000548,
+        "language": "multi",
+        "char_count": 23728
+      },
+      {
+        "doc_id": "1870",
+        "hit_rate": 0.985915,
+        "oov_rate": 0.014085,
+        "suspicious_char_ratio": 4e-05,
+        "language": "fr",
+        "char_count": 24824
+      },
+      {
+        "doc_id": "1880",
+        "hit_rate": 0.962448,
+        "oov_rate": 0.037552,
+        "suspicious_char_ratio": 0.001052,
+        "language": "fr",
+        "char_count": 10454
+      },
+      {
+        "doc_id": "190",
+        "hit_rate": 0.98064,
+        "oov_rate": 0.01936,
+        "suspicious_char_ratio": 0.000746,
+        "language": "fr",
+        "char_count": 17434
+      },
+      {
+        "doc_id": "1900",
+        "hit_rate": 0.988318,
+        "oov_rate": 0.011682,
+        "suspicious_char_ratio": 0.000227,
+        "language": "fr",
+        "char_count": 22071
+      },
+      {
+        "doc_id": "1910",
+        "hit_rate": 0.904331,
+        "oov_rate": 0.095669,
+        "suspicious_char_ratio": 0.000805,
+        "language": "de",
+        "char_count": 11187
+      },
+      {
+        "doc_id": "1920",
+        "hit_rate": 0.991814,
+        "oov_rate": 0.008186,
+        "suspicious_char_ratio": 0.000235,
+        "language": "multi",
+        "char_count": 21237
+      },
+      {
+        "doc_id": "1930",
+        "hit_rate": 0.985104,
+        "oov_rate": 0.014896,
+        "suspicious_char_ratio": 0.000265,
+        "language": "multi",
+        "char_count": 18859
+      },
+      {
+        "doc_id": "1940",
+        "hit_rate": 0.98302,
+        "oov_rate": 0.01698,
+        "suspicious_char_ratio": 0.000543,
+        "language": "multi",
+        "char_count": 14735
+      },
+      {
+        "doc_id": "1950",
+        "hit_rate": 0.992927,
+        "oov_rate": 0.007073,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 6962
+      },
+      {
+        "doc_id": "1960",
+        "hit_rate": 0.95166,
+        "oov_rate": 0.04834,
+        "suspicious_char_ratio": 0.000603,
+        "language": "de",
+        "char_count": 29865
+      },
+      {
+        "doc_id": "1980",
+        "hit_rate": 0.98886,
+        "oov_rate": 0.01114,
+        "suspicious_char_ratio": 0.000244,
+        "language": "multi",
+        "char_count": 8205
+      },
+      {
+        "doc_id": "1990",
+        "hit_rate": 0.961259,
+        "oov_rate": 0.038741,
+        "suspicious_char_ratio": 0.004494,
+        "language": "de",
+        "char_count": 27817
+      },
+      {
+        "doc_id": "20",
+        "hit_rate": 0.983631,
+        "oov_rate": 0.016369,
+        "suspicious_char_ratio": 0.00012,
+        "language": "fr",
+        "char_count": 267497
+      },
+      {
+        "doc_id": "200",
+        "hit_rate": 0.952983,
+        "oov_rate": 0.047017,
+        "suspicious_char_ratio": 0.000604,
+        "language": "fr",
+        "char_count": 18207
+      },
+      {
+        "doc_id": "2000",
+        "hit_rate": 0.982711,
+        "oov_rate": 0.017289,
+        "suspicious_char_ratio": 9.1e-05,
+        "language": "fr",
+        "char_count": 21875
+      },
+      {
+        "doc_id": "2010",
+        "hit_rate": 0.967584,
+        "oov_rate": 0.032416,
+        "suspicious_char_ratio": 0.00025,
+        "language": "fr",
+        "char_count": 12018
+      },
+      {
+        "doc_id": "2020",
+        "hit_rate": 0.97296,
+        "oov_rate": 0.02704,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 14897
+      },
+      {
+        "doc_id": "2030",
+        "hit_rate": 0.173487,
+        "oov_rate": 0.826513,
+        "suspicious_char_ratio": 0.001517,
+        "language": "fr",
+        "char_count": 13181
+      },
+      {
+        "doc_id": "2040",
+        "hit_rate": 0.984838,
+        "oov_rate": 0.015162,
+        "suspicious_char_ratio": 0.0,
+        "language": "multi",
+        "char_count": 19932
+      },
+      {
+        "doc_id": "2050",
+        "hit_rate": 0.937571,
+        "oov_rate": 0.062429,
+        "suspicious_char_ratio": 0.000296,
+        "language": "de",
+        "char_count": 30449
+      },
+      {
+        "doc_id": "2060",
+        "hit_rate": 0.943703,
+        "oov_rate": 0.056297,
+        "suspicious_char_ratio": 0.000309,
+        "language": "de",
+        "char_count": 22690
+      },
+      {
+        "doc_id": "2070",
+        "hit_rate": 0.953373,
+        "oov_rate": 0.046627,
+        "suspicious_char_ratio": 0.000234,
+        "language": "fr",
+        "char_count": 29899
+      },
+      {
+        "doc_id": "2090",
+        "hit_rate": 0.977475,
+        "oov_rate": 0.022525,
+        "suspicious_char_ratio": 0.000252,
+        "language": "fr",
+        "char_count": 11889
+      },
+      {
+        "doc_id": "210",
+        "hit_rate": 0.98375,
+        "oov_rate": 0.01625,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 5436
+      },
+      {
+        "doc_id": "2110",
+        "hit_rate": 0.987871,
+        "oov_rate": 0.012129,
+        "suspicious_char_ratio": 0.002631,
+        "language": "multi",
+        "char_count": 28503
+      },
+      {
+        "doc_id": "2120",
+        "hit_rate": 0.962208,
+        "oov_rate": 0.037792,
+        "suspicious_char_ratio": 3.2e-05,
+        "language": "de",
+        "char_count": 31377
+      },
+      {
+        "doc_id": "2130",
+        "hit_rate": 0.871184,
+        "oov_rate": 0.128816,
+        "suspicious_char_ratio": 0.000234,
+        "language": "fr",
+        "char_count": 46938
+      },
+      {
+        "doc_id": "2140",
+        "hit_rate": 0.937297,
+        "oov_rate": 0.062703,
+        "suspicious_char_ratio": 0.009468,
+        "language": "fr",
+        "char_count": 6654
+      },
+      {
+        "doc_id": "2150",
+        "hit_rate": 0.840426,
+        "oov_rate": 0.159574,
+        "suspicious_char_ratio": 0.000226,
+        "language": "multi",
+        "char_count": 4418
+      },
+      {
+        "doc_id": "2160",
+        "hit_rate": 0.958957,
+        "oov_rate": 0.041043,
+        "suspicious_char_ratio": 0.00023,
+        "language": "de",
+        "char_count": 21696
+      },
+      {
+        "doc_id": "2170",
+        "hit_rate": 0.982456,
+        "oov_rate": 0.017544,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 4821
+      },
+      {
+        "doc_id": "2180",
+        "hit_rate": 0.977103,
+        "oov_rate": 0.022897,
+        "suspicious_char_ratio": 0.000233,
+        "language": "fr",
+        "char_count": 12897
+      },
+      {
+        "doc_id": "2190",
+        "hit_rate": 0.987865,
+        "oov_rate": 0.012135,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 17684
+      },
+      {
+        "doc_id": "220",
+        "hit_rate": 0.970189,
+        "oov_rate": 0.029811,
+        "suspicious_char_ratio": 5.5e-05,
+        "language": "de",
+        "char_count": 18180
+      },
+      {
+        "doc_id": "2200",
+        "hit_rate": 0.983701,
+        "oov_rate": 0.016299,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 7083
+      },
+      {
+        "doc_id": "2210",
+        "hit_rate": 0.97801,
+        "oov_rate": 0.02199,
+        "suspicious_char_ratio": 0.000251,
+        "language": "multi",
+        "char_count": 15967
+      },
+      {
+        "doc_id": "2220",
+        "hit_rate": 0.97976,
+        "oov_rate": 0.02024,
+        "suspicious_char_ratio": 0.002305,
+        "language": "multi",
+        "char_count": 35137
+      },
+      {
+        "doc_id": "2230",
+        "hit_rate": 0.748992,
+        "oov_rate": 0.251008,
+        "suspicious_char_ratio": 7.5e-05,
+        "language": "fr",
+        "char_count": 26516
+      },
+      {
+        "doc_id": "2240",
+        "hit_rate": 0.966088,
+        "oov_rate": 0.033912,
+        "suspicious_char_ratio": 0.001097,
+        "language": "fr",
+        "char_count": 9116
+      },
+      {
+        "doc_id": "2260",
+        "hit_rate": 0.988048,
+        "oov_rate": 0.011952,
+        "suspicious_char_ratio": 0.000394,
+        "language": "fr",
+        "char_count": 88841
+      },
+      {
+        "doc_id": "2270",
+        "hit_rate": 0.192595,
+        "oov_rate": 0.807405,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 36358
+      },
+      {
+        "doc_id": "2280",
+        "hit_rate": 0.962167,
+        "oov_rate": 0.037833,
+        "suspicious_char_ratio": 0.000401,
+        "language": "multi",
+        "char_count": 9986
+      },
+      {
+        "doc_id": "2290",
+        "hit_rate": 0.986205,
+        "oov_rate": 0.013795,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 25112
+      },
+      {
+        "doc_id": "230",
+        "hit_rate": 0.959569,
+        "oov_rate": 0.040431,
+        "suspicious_char_ratio": 0.001049,
+        "language": "multi",
+        "char_count": 9535
+      },
+      {
+        "doc_id": "2300",
+        "hit_rate": 0.163152,
+        "oov_rate": 0.836848,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 16749
+      },
+      {
+        "doc_id": "2310",
+        "hit_rate": 0.988439,
+        "oov_rate": 0.011561,
+        "suspicious_char_ratio": 0.000153,
+        "language": "fr",
+        "char_count": 6543
+      },
+      {
+        "doc_id": "2320",
+        "hit_rate": 0.979899,
+        "oov_rate": 0.020101,
+        "suspicious_char_ratio": 0.000892,
+        "language": "multi",
+        "char_count": 8965
+      },
+      {
+        "doc_id": "2330",
+        "hit_rate": 0.981618,
+        "oov_rate": 0.018382,
+        "suspicious_char_ratio": 0.000133,
+        "language": "fr",
+        "char_count": 630423
+      },
+      {
+        "doc_id": "2340",
+        "hit_rate": 0.956625,
+        "oov_rate": 0.043375,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 8803
+      },
+      {
+        "doc_id": "2350",
+        "hit_rate": 0.945481,
+        "oov_rate": 0.054519,
+        "suspicious_char_ratio": 0.000109,
+        "language": "de",
+        "char_count": 27505
+      },
+      {
+        "doc_id": "2360",
+        "hit_rate": 0.643688,
+        "oov_rate": 0.356312,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 69305
+      },
+      {
+        "doc_id": "2370",
+        "hit_rate": 0.990598,
+        "oov_rate": 0.009402,
+        "suspicious_char_ratio": 0.000623,
+        "language": "fr",
+        "char_count": 9635
+      },
+      {
+        "doc_id": "2380",
+        "hit_rate": 0.986801,
+        "oov_rate": 0.013199,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 21820
+      },
+      {
+        "doc_id": "240",
+        "hit_rate": 0.954874,
+        "oov_rate": 0.045126,
+        "suspicious_char_ratio": 0.00049,
+        "language": "fr",
+        "char_count": 20392
+      },
+      {
+        "doc_id": "2400",
+        "hit_rate": 0.939822,
+        "oov_rate": 0.060178,
+        "suspicious_char_ratio": 0.004092,
+        "language": "de",
+        "char_count": 82362
+      },
+      {
+        "doc_id": "2410",
+        "hit_rate": 0.987354,
+        "oov_rate": 0.012646,
+        "suspicious_char_ratio": 5.7e-05,
+        "language": "fr",
+        "char_count": 35272
+      },
+      {
+        "doc_id": "2420",
+        "hit_rate": 0.942693,
+        "oov_rate": 0.057307,
+        "suspicious_char_ratio": 0.000474,
+        "language": "fr",
+        "char_count": 25292
+      },
+      {
+        "doc_id": "2430",
+        "hit_rate": 0.95109,
+        "oov_rate": 0.04891,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 15394
+      },
+      {
+        "doc_id": "2440",
+        "hit_rate": 0.985799,
+        "oov_rate": 0.014201,
+        "suspicious_char_ratio": 0.000165,
+        "language": "fr",
+        "char_count": 12113
+      },
+      {
+        "doc_id": "2450",
+        "hit_rate": 0.964249,
+        "oov_rate": 0.035751,
+        "suspicious_char_ratio": 0.000158,
+        "language": "de",
+        "char_count": 19005
+      },
+      {
+        "doc_id": "2460",
+        "hit_rate": 0.98725,
+        "oov_rate": 0.01275,
+        "suspicious_char_ratio": 0.00019,
+        "language": "multi",
+        "char_count": 15798
+      },
+      {
+        "doc_id": "2470",
+        "hit_rate": 0.961025,
+        "oov_rate": 0.038975,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 17835
+      },
+      {
+        "doc_id": "2480",
+        "hit_rate": 0.971542,
+        "oov_rate": 0.028458,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 23250
+      },
+      {
+        "doc_id": "2490",
+        "hit_rate": 0.980903,
+        "oov_rate": 0.019097,
+        "suspicious_char_ratio": 0.000279,
+        "language": "fr",
+        "char_count": 3582
+      },
+      {
+        "doc_id": "250",
+        "hit_rate": 0.960522,
+        "oov_rate": 0.039478,
+        "suspicious_char_ratio": 0.000359,
+        "language": "fr",
+        "char_count": 22307
+      },
+      {
+        "doc_id": "2500",
+        "hit_rate": 0.975352,
+        "oov_rate": 0.024648,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 2049
+      },
+      {
+        "doc_id": "2510",
+        "hit_rate": 0.983303,
+        "oov_rate": 0.016697,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 30778
+      },
+      {
+        "doc_id": "2520",
+        "hit_rate": 0.987054,
+        "oov_rate": 0.012946,
+        "suspicious_char_ratio": 9.9e-05,
+        "language": "fr",
+        "char_count": 20179
+      },
+      {
+        "doc_id": "2530",
+        "hit_rate": 0.985955,
+        "oov_rate": 0.014045,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 5095
+      },
+      {
+        "doc_id": "2540",
+        "hit_rate": 0.949309,
+        "oov_rate": 0.050691,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 41622
+      },
+      {
+        "doc_id": "2550",
+        "hit_rate": 0.943434,
+        "oov_rate": 0.056566,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 17655
+      },
+      {
+        "doc_id": "2560",
+        "hit_rate": 0.917479,
+        "oov_rate": 0.082521,
+        "suspicious_char_ratio": 0.00227,
+        "language": "de",
+        "char_count": 21142
+      },
+      {
+        "doc_id": "2570",
+        "hit_rate": 0.987148,
+        "oov_rate": 0.012852,
+        "suspicious_char_ratio": 7.6e-05,
+        "language": "multi",
+        "char_count": 13115
+      },
+      {
+        "doc_id": "2580",
+        "hit_rate": 0.970621,
+        "oov_rate": 0.029379,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 6326
+      },
+      {
+        "doc_id": "2590",
+        "hit_rate": 0.909898,
+        "oov_rate": 0.090102,
+        "suspicious_char_ratio": 0.000412,
+        "language": "fr",
+        "char_count": 21861
+      },
+      {
+        "doc_id": "2600",
+        "hit_rate": 0.980472,
+        "oov_rate": 0.019528,
+        "suspicious_char_ratio": 0.000533,
+        "language": "multi",
+        "char_count": 15001
+      },
+      {
+        "doc_id": "2610",
+        "hit_rate": 0.961181,
+        "oov_rate": 0.038819,
+        "suspicious_char_ratio": 0.000127,
+        "language": "de",
+        "char_count": 23698
+      },
+      {
+        "doc_id": "2620",
+        "hit_rate": 0.945986,
+        "oov_rate": 0.054014,
+        "suspicious_char_ratio": 0.000687,
+        "language": "de",
+        "char_count": 18924
+      },
+      {
+        "doc_id": "2630",
+        "hit_rate": 0.940571,
+        "oov_rate": 0.059429,
+        "suspicious_char_ratio": 8.4e-05,
+        "language": "de",
+        "char_count": 11915
+      },
+      {
+        "doc_id": "2635",
+        "hit_rate": 0.970667,
+        "oov_rate": 0.029333,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 20881
+      },
+      {
+        "doc_id": "2640",
+        "hit_rate": 0.960768,
+        "oov_rate": 0.039232,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 23176
+      },
+      {
+        "doc_id": "2650",
+        "hit_rate": 0.969087,
+        "oov_rate": 0.030913,
+        "suspicious_char_ratio": 0.000138,
+        "language": "multi",
+        "char_count": 21749
+      },
+      {
+        "doc_id": "2660",
+        "hit_rate": 0.952933,
+        "oov_rate": 0.047067,
+        "suspicious_char_ratio": 0.000292,
+        "language": "de",
+        "char_count": 20555
+      },
+      {
+        "doc_id": "2670",
+        "hit_rate": 0.98787,
+        "oov_rate": 0.01213,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 22271
+      },
+      {
+        "doc_id": "2680",
+        "hit_rate": 0.600489,
+        "oov_rate": 0.399511,
+        "suspicious_char_ratio": 0.000742,
+        "language": "de",
+        "char_count": 57954
+      },
+      {
+        "doc_id": "2690",
+        "hit_rate": 0.979035,
+        "oov_rate": 0.020965,
+        "suspicious_char_ratio": 8.3e-05,
+        "language": "fr",
+        "char_count": 24236
+      },
+      {
+        "doc_id": "270",
+        "hit_rate": 0.827533,
+        "oov_rate": 0.172467,
+        "suspicious_char_ratio": 0.000959,
+        "language": "fr",
+        "char_count": 10425
+      },
+      {
+        "doc_id": "2710",
+        "hit_rate": 0.991906,
+        "oov_rate": 0.008094,
+        "suspicious_char_ratio": 0.0,
+        "language": "multi",
+        "char_count": 51684
+      },
+      {
+        "doc_id": "2720",
+        "hit_rate": 0.215734,
+        "oov_rate": 0.784266,
+        "suspicious_char_ratio": 0.001391,
+        "language": "fr",
+        "char_count": 18694
+      },
+      {
+        "doc_id": "2730",
+        "hit_rate": 0.844523,
+        "oov_rate": 0.155477,
+        "suspicious_char_ratio": 0.000238,
+        "language": "de",
+        "char_count": 21026
+      },
+      {
+        "doc_id": "2740",
+        "hit_rate": 0.983421,
+        "oov_rate": 0.016579,
+        "suspicious_char_ratio": 0.000121,
+        "language": "fr",
+        "char_count": 24730
+      },
+      {
+        "doc_id": "2750",
+        "hit_rate": 0.949367,
+        "oov_rate": 0.050633,
+        "suspicious_char_ratio": 0.00049,
+        "language": "de",
+        "char_count": 24506
+      },
+      {
+        "doc_id": "2760",
+        "hit_rate": 0.990087,
+        "oov_rate": 0.009913,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 11351
+      },
+      {
+        "doc_id": "2780",
+        "hit_rate": 0.985484,
+        "oov_rate": 0.014516,
+        "suspicious_char_ratio": 2.7e-05,
+        "language": "fr",
+        "char_count": 112790
+      },
+      {
+        "doc_id": "2790",
+        "hit_rate": 0.965993,
+        "oov_rate": 0.034007,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 14611
+      },
+      {
+        "doc_id": "2800",
+        "hit_rate": 0.990132,
+        "oov_rate": 0.009868,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 23372
+      },
+      {
+        "doc_id": "2805",
+        "hit_rate": 0.988176,
+        "oov_rate": 0.011824,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 4061
+      },
+      {
+        "doc_id": "2810",
+        "hit_rate": 0.990385,
+        "oov_rate": 0.009615,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 21894
+      },
+      {
+        "doc_id": "2820",
+        "hit_rate": 0.994578,
+        "oov_rate": 0.005422,
+        "suspicious_char_ratio": 8.7e-05,
+        "language": "fr",
+        "char_count": 11487
+      },
+      {
+        "doc_id": "2830",
+        "hit_rate": 0.974213,
+        "oov_rate": 0.025787,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 23001
+      },
+      {
+        "doc_id": "2840",
+        "hit_rate": 0.986969,
+        "oov_rate": 0.013031,
+        "suspicious_char_ratio": 4.5e-05,
+        "language": "fr",
+        "char_count": 22442
+      },
+      {
+        "doc_id": "2850",
+        "hit_rate": 0.993742,
+        "oov_rate": 0.006258,
+        "suspicious_char_ratio": 0.0002,
+        "language": "fr",
+        "char_count": 5008
+      },
+      {
+        "doc_id": "2870",
+        "hit_rate": 0.987847,
+        "oov_rate": 0.012153,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 3707
+      },
+      {
+        "doc_id": "2880",
+        "hit_rate": 0.950245,
+        "oov_rate": 0.049755,
+        "suspicious_char_ratio": 0.000704,
+        "language": "de",
+        "char_count": 8524
+      },
+      {
+        "doc_id": "2890",
+        "hit_rate": 0.972364,
+        "oov_rate": 0.027636,
+        "suspicious_char_ratio": 0.001146,
+        "language": "fr",
+        "char_count": 6983
+      },
+      {
+        "doc_id": "290",
+        "hit_rate": 0.977654,
+        "oov_rate": 0.022346,
+        "suspicious_char_ratio": 0.000981,
+        "language": "fr",
+        "char_count": 12234
+      },
+      {
+        "doc_id": "2900",
+        "hit_rate": 0.983319,
+        "oov_rate": 0.016681,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 7514
+      },
+      {
+        "doc_id": "2910",
+        "hit_rate": 0.992516,
+        "oov_rate": 0.007484,
+        "suspicious_char_ratio": 0.000527,
+        "language": "fr",
+        "char_count": 18991
+      },
+      {
+        "doc_id": "2920",
+        "hit_rate": 0.991165,
+        "oov_rate": 0.008835,
+        "suspicious_char_ratio": 4.8e-05,
+        "language": "fr",
+        "char_count": 62683
+      },
+      {
+        "doc_id": "2930",
+        "hit_rate": 0.947084,
+        "oov_rate": 0.052916,
+        "suspicious_char_ratio": 2e-05,
+        "language": "de",
+        "char_count": 49100
+      },
+      {
+        "doc_id": "2940",
+        "hit_rate": 0.93026,
+        "oov_rate": 0.06974,
+        "suspicious_char_ratio": 0.000275,
+        "language": "de",
+        "char_count": 50916
+      },
+      {
+        "doc_id": "2950",
+        "hit_rate": 0.969891,
+        "oov_rate": 0.030109,
+        "suspicious_char_ratio": 0.000221,
+        "language": "de",
+        "char_count": 22650
+      },
+      {
+        "doc_id": "2960",
+        "hit_rate": 0.955235,
+        "oov_rate": 0.044765,
+        "suspicious_char_ratio": 0.001523,
+        "language": "fr",
+        "char_count": 21005
+      },
+      {
+        "doc_id": "2980",
+        "hit_rate": 0.895298,
+        "oov_rate": 0.104702,
+        "suspicious_char_ratio": 0.001774,
+        "language": "multi",
+        "char_count": 14092
+      },
+      {
+        "doc_id": "2990",
+        "hit_rate": 0.964993,
+        "oov_rate": 0.035007,
+        "suspicious_char_ratio": 2.5e-05,
+        "language": "de",
+        "char_count": 197964
+      },
+      {
+        "doc_id": "30",
+        "hit_rate": 0.983772,
+        "oov_rate": 0.016228,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 11915
+      },
+      {
+        "doc_id": "300",
+        "hit_rate": 0.938322,
+        "oov_rate": 0.061678,
+        "suspicious_char_ratio": 0.00054,
+        "language": "fr",
+        "char_count": 7406
+      },
+      {
+        "doc_id": "3000",
+        "hit_rate": 0.992773,
+        "oov_rate": 0.007227,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 14666
+      },
+      {
+        "doc_id": "3010",
+        "hit_rate": 0.994119,
+        "oov_rate": 0.005881,
+        "suspicious_char_ratio": 0.000393,
+        "language": "fr",
+        "char_count": 25455
+      },
+      {
+        "doc_id": "3020",
+        "hit_rate": 0.978091,
+        "oov_rate": 0.021909,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 44430
+      },
+      {
+        "doc_id": "3040",
+        "hit_rate": 0.963113,
+        "oov_rate": 0.036887,
+        "suspicious_char_ratio": 0.001531,
+        "language": "fr",
+        "char_count": 59438
+      },
+      {
+        "doc_id": "3060",
+        "hit_rate": 0.995763,
+        "oov_rate": 0.004237,
+        "suspicious_char_ratio": 0.000267,
+        "language": "fr",
+        "char_count": 7500
+      },
+      {
+        "doc_id": "3070",
+        "hit_rate": 0.985588,
+        "oov_rate": 0.014412,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 12795
+      },
+      {
+        "doc_id": "3090",
+        "hit_rate": 0.164044,
+        "oov_rate": 0.835956,
+        "suspicious_char_ratio": 0.001353,
+        "language": "fr",
+        "char_count": 28090
+      },
+      {
+        "doc_id": "310",
+        "hit_rate": 0.994104,
+        "oov_rate": 0.005896,
+        "suspicious_char_ratio": 9e-05,
+        "language": "fr",
+        "char_count": 11168
+      },
+      {
+        "doc_id": "3100",
+        "hit_rate": 0.980508,
+        "oov_rate": 0.019492,
+        "suspicious_char_ratio": 0.000133,
+        "language": "multi",
+        "char_count": 82412
+      },
+      {
+        "doc_id": "3120",
+        "hit_rate": 0.987215,
+        "oov_rate": 0.012785,
+        "suspicious_char_ratio": 8.1e-05,
+        "language": "multi",
+        "char_count": 24768
+      },
+      {
+        "doc_id": "3130",
+        "hit_rate": 0.983823,
+        "oov_rate": 0.016177,
+        "suspicious_char_ratio": 0.000328,
+        "language": "multi",
+        "char_count": 12187
+      },
+      {
+        "doc_id": "3140",
+        "hit_rate": 0.963425,
+        "oov_rate": 0.036575,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 17544
+      },
+      {
+        "doc_id": "3150",
+        "hit_rate": 0.969309,
+        "oov_rate": 0.030691,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 5111
+      },
+      {
+        "doc_id": "3160",
+        "hit_rate": 0.974972,
+        "oov_rate": 0.025028,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 11108
+      },
+      {
+        "doc_id": "3180",
+        "hit_rate": 0.93784,
+        "oov_rate": 0.06216,
+        "suspicious_char_ratio": 0.000285,
+        "language": "de",
+        "char_count": 101904
+      },
+      {
+        "doc_id": "3190",
+        "hit_rate": 0.16596,
+        "oov_rate": 0.83404,
+        "suspicious_char_ratio": 9.2e-05,
+        "language": "fr",
+        "char_count": 43376
+      },
+      {
+        "doc_id": "3200",
+        "hit_rate": 0.937282,
+        "oov_rate": 0.062718,
+        "suspicious_char_ratio": 2.6e-05,
+        "language": "de",
+        "char_count": 38387
+      },
+      {
+        "doc_id": "3210",
+        "hit_rate": 0.978863,
+        "oov_rate": 0.021137,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 27075
+      },
+      {
+        "doc_id": "3220",
+        "hit_rate": 0.992163,
+        "oov_rate": 0.007837,
+        "suspicious_char_ratio": 0.0,
+        "language": "multi",
+        "char_count": 23282
+      },
+      {
+        "doc_id": "3230",
+        "hit_rate": 0.994496,
+        "oov_rate": 0.005504,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 26420
+      },
+      {
+        "doc_id": "330",
+        "hit_rate": 0.991046,
+        "oov_rate": 0.008954,
+        "suspicious_char_ratio": 0.000123,
+        "language": "fr",
+        "char_count": 665838
+      },
+      {
+        "doc_id": "340",
+        "hit_rate": 0.98652,
+        "oov_rate": 0.01348,
+        "suspicious_char_ratio": 0.000301,
+        "language": "fr",
+        "char_count": 59721
+      },
+      {
+        "doc_id": "350",
+        "hit_rate": 0.978797,
+        "oov_rate": 0.021203,
+        "suspicious_char_ratio": 0.000389,
+        "language": "fr",
+        "char_count": 41181
+      },
+      {
+        "doc_id": "380",
+        "hit_rate": 0.969325,
+        "oov_rate": 0.030675,
+        "suspicious_char_ratio": 0.000557,
+        "language": "fr",
+        "char_count": 3589
+      },
+      {
+        "doc_id": "390",
+        "hit_rate": 0.982857,
+        "oov_rate": 0.017143,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 9489
+      },
+      {
+        "doc_id": "40",
+        "hit_rate": 0.990433,
+        "oov_rate": 0.009567,
+        "suspicious_char_ratio": 2.5e-05,
+        "language": "fr",
+        "char_count": 200601
+      },
+      {
+        "doc_id": "400",
+        "hit_rate": 0.991922,
+        "oov_rate": 0.008078,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 24183
+      },
+      {
+        "doc_id": "410",
+        "hit_rate": 0.950473,
+        "oov_rate": 0.049527,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 32838
+      },
+      {
+        "doc_id": "430",
+        "hit_rate": 0.98528,
+        "oov_rate": 0.01472,
+        "suspicious_char_ratio": 0.000726,
+        "language": "fr",
+        "char_count": 13768
+      },
+      {
+        "doc_id": "440",
+        "hit_rate": 0.886159,
+        "oov_rate": 0.113841,
+        "suspicious_char_ratio": 0.008979,
+        "language": "fr",
+        "char_count": 12251
+      },
+      {
+        "doc_id": "450",
+        "hit_rate": 0.9872,
+        "oov_rate": 0.0128,
+        "suspicious_char_ratio": 0.000227,
+        "language": "fr",
+        "char_count": 22009
+      },
+      {
+        "doc_id": "460",
+        "hit_rate": 0.978893,
+        "oov_rate": 0.021107,
+        "suspicious_char_ratio": 0.000796,
+        "language": "fr",
+        "char_count": 22621
+      },
+      {
+        "doc_id": "470",
+        "hit_rate": 0.954009,
+        "oov_rate": 0.045991,
+        "suspicious_char_ratio": 0.001027,
+        "language": "fr",
+        "char_count": 32135
+      },
+      {
+        "doc_id": "480",
+        "hit_rate": 0.979887,
+        "oov_rate": 0.020113,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 8656
+      },
+      {
+        "doc_id": "490",
+        "hit_rate": 0.934292,
+        "oov_rate": 0.065708,
+        "suspicious_char_ratio": 0.01816,
+        "language": "fr",
+        "char_count": 7599
+      },
+      {
+        "doc_id": "50",
+        "hit_rate": 0.982827,
+        "oov_rate": 0.017173,
+        "suspicious_char_ratio": 0.000211,
+        "language": "fr",
+        "char_count": 33193
+      },
+      {
+        "doc_id": "500",
+        "hit_rate": 0.991396,
+        "oov_rate": 0.008604,
+        "suspicious_char_ratio": 7.8e-05,
+        "language": "fr",
+        "char_count": 38538
+      },
+      {
+        "doc_id": "510",
+        "hit_rate": 0.989531,
+        "oov_rate": 0.010469,
+        "suspicious_char_ratio": 0.001206,
+        "language": "fr",
+        "char_count": 97844
+      },
+      {
+        "doc_id": "520",
+        "hit_rate": 0.963667,
+        "oov_rate": 0.036333,
+        "suspicious_char_ratio": 0.000305,
+        "language": "de",
+        "char_count": 45843
+      },
+      {
+        "doc_id": "530",
+        "hit_rate": 0.972612,
+        "oov_rate": 0.027388,
+        "suspicious_char_ratio": 0.000693,
+        "language": "fr",
+        "char_count": 31746
+      },
+      {
+        "doc_id": "540",
+        "hit_rate": 0.922394,
+        "oov_rate": 0.077606,
+        "suspicious_char_ratio": 0.000364,
+        "language": "fr",
+        "char_count": 66006
+      },
+      {
+        "doc_id": "550",
+        "hit_rate": 0.991674,
+        "oov_rate": 0.008326,
+        "suspicious_char_ratio": 0.000206,
+        "language": "fr",
+        "char_count": 48626
+      },
+      {
+        "doc_id": "560",
+        "hit_rate": 0.98536,
+        "oov_rate": 0.01464,
+        "suspicious_char_ratio": 9.2e-05,
+        "language": "fr",
+        "char_count": 10908
+      },
+      {
+        "doc_id": "570",
+        "hit_rate": 0.956783,
+        "oov_rate": 0.043217,
+        "suspicious_char_ratio": 0.001088,
+        "language": "fr",
+        "char_count": 6435
+      },
+      {
+        "doc_id": "580",
+        "hit_rate": 0.980818,
+        "oov_rate": 0.019182,
+        "suspicious_char_ratio": 0.000159,
+        "language": "multi",
+        "char_count": 6280
+      },
+      {
+        "doc_id": "590",
+        "hit_rate": 0.884576,
+        "oov_rate": 0.115424,
+        "suspicious_char_ratio": 0.000294,
+        "language": "fr",
+        "char_count": 27234
+      },
+      {
+        "doc_id": "60",
+        "hit_rate": 0.984405,
+        "oov_rate": 0.015595,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 7138
+      },
+      {
+        "doc_id": "600",
+        "hit_rate": 0.989557,
+        "oov_rate": 0.010443,
+        "suspicious_char_ratio": 0.000187,
+        "language": "multi",
+        "char_count": 21365
+      },
+      {
+        "doc_id": "610",
+        "hit_rate": 0.956592,
+        "oov_rate": 0.043408,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 29944
+      },
+      {
+        "doc_id": "630",
+        "hit_rate": 0.989469,
+        "oov_rate": 0.010531,
+        "suspicious_char_ratio": 0.000129,
+        "language": "fr",
+        "char_count": 46652
+      },
+      {
+        "doc_id": "640",
+        "hit_rate": 0.993351,
+        "oov_rate": 0.006649,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 34794
+      },
+      {
+        "doc_id": "650",
+        "hit_rate": 0.925352,
+        "oov_rate": 0.074648,
+        "suspicious_char_ratio": 0.002372,
+        "language": "fr",
+        "char_count": 46367
+      },
+      {
+        "doc_id": "660",
+        "hit_rate": 0.959036,
+        "oov_rate": 0.040964,
+        "suspicious_char_ratio": 0.000152,
+        "language": "fr",
+        "char_count": 26316
+      },
+      {
+        "doc_id": "670",
+        "hit_rate": 0.976206,
+        "oov_rate": 0.023794,
+        "suspicious_char_ratio": 0.000121,
+        "language": "fr",
+        "char_count": 41387
+      },
+      {
+        "doc_id": "680",
+        "hit_rate": 0.992235,
+        "oov_rate": 0.007765,
+        "suspicious_char_ratio": 6.2e-05,
+        "language": "fr",
+        "char_count": 48423
+      },
+      {
+        "doc_id": "690",
+        "hit_rate": 0.987465,
+        "oov_rate": 0.012535,
+        "suspicious_char_ratio": 3.3e-05,
+        "language": "fr",
+        "char_count": 60038
+      },
+      {
+        "doc_id": "70",
+        "hit_rate": 0.987239,
+        "oov_rate": 0.012761,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 11729
+      },
+      {
+        "doc_id": "700",
+        "hit_rate": 0.958072,
+        "oov_rate": 0.041928,
+        "suspicious_char_ratio": 0.000312,
+        "language": "de",
+        "char_count": 32053
+      },
+      {
+        "doc_id": "720",
+        "hit_rate": 0.988241,
+        "oov_rate": 0.011759,
+        "suspicious_char_ratio": 0.005547,
+        "language": "fr",
+        "char_count": 15324
+      },
+      {
+        "doc_id": "730",
+        "hit_rate": 0.971545,
+        "oov_rate": 0.028455,
+        "suspicious_char_ratio": 0.000167,
+        "language": "de",
+        "char_count": 35834
+      },
+      {
+        "doc_id": "740",
+        "hit_rate": 0.969461,
+        "oov_rate": 0.030539,
+        "suspicious_char_ratio": 0.000157,
+        "language": "fr",
+        "char_count": 25533
+      },
+      {
+        "doc_id": "750",
+        "hit_rate": 0.986711,
+        "oov_rate": 0.013289,
+        "suspicious_char_ratio": 0.000263,
+        "language": "fr",
+        "char_count": 41801
+      },
+      {
+        "doc_id": "760",
+        "hit_rate": 0.991071,
+        "oov_rate": 0.008929,
+        "suspicious_char_ratio": 0.000199,
+        "language": "fr",
+        "char_count": 35088
+      },
+      {
+        "doc_id": "770",
+        "hit_rate": 0.985897,
+        "oov_rate": 0.014103,
+        "suspicious_char_ratio": 0.0,
+        "language": "multi",
+        "char_count": 16666
+      },
+      {
+        "doc_id": "780",
+        "hit_rate": 0.975109,
+        "oov_rate": 0.024891,
+        "suspicious_char_ratio": 1.9e-05,
+        "language": "fr",
+        "char_count": 53086
+      },
+      {
+        "doc_id": "790",
+        "hit_rate": 0.95967,
+        "oov_rate": 0.04033,
+        "suspicious_char_ratio": 3.4e-05,
+        "language": "de",
+        "char_count": 29122
+      },
+      {
+        "doc_id": "80",
+        "hit_rate": 0.992567,
+        "oov_rate": 0.007433,
+        "suspicious_char_ratio": 6.9e-05,
+        "language": "fr",
+        "char_count": 28895
+      },
+      {
+        "doc_id": "800",
+        "hit_rate": 0.995889,
+        "oov_rate": 0.004111,
+        "suspicious_char_ratio": 7.7e-05,
+        "language": "multi",
+        "char_count": 12984
+      },
+      {
+        "doc_id": "810",
+        "hit_rate": 0.919699,
+        "oov_rate": 0.080301,
+        "suspicious_char_ratio": 0.004771,
+        "language": "de",
+        "char_count": 213562
+      },
+      {
+        "doc_id": "830",
+        "hit_rate": 0.991157,
+        "oov_rate": 0.008843,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 8557
+      },
+      {
+        "doc_id": "840",
+        "hit_rate": 0.974734,
+        "oov_rate": 0.025266,
+        "suspicious_char_ratio": 0.000666,
+        "language": "multi",
+        "char_count": 6008
+      },
+      {
+        "doc_id": "850",
+        "hit_rate": 0.99353,
+        "oov_rate": 0.00647,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 18862
+      },
+      {
+        "doc_id": "860",
+        "hit_rate": 0.951087,
+        "oov_rate": 0.048913,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 4803
+      },
+      {
+        "doc_id": "870",
+        "hit_rate": 0.179684,
+        "oov_rate": 0.820316,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 28167
+      },
+      {
+        "doc_id": "880",
+        "hit_rate": 0.953186,
+        "oov_rate": 0.046814,
+        "suspicious_char_ratio": 2.9e-05,
+        "language": "de",
+        "char_count": 34983
+      },
+      {
+        "doc_id": "890",
+        "hit_rate": 0.920788,
+        "oov_rate": 0.079212,
+        "suspicious_char_ratio": 3e-05,
+        "language": "de",
+        "char_count": 33305
+      },
+      {
+        "doc_id": "90",
+        "hit_rate": 0.840299,
+        "oov_rate": 0.159701,
+        "suspicious_char_ratio": 0.007929,
+        "language": "de",
+        "char_count": 11351
+      },
+      {
+        "doc_id": "900",
+        "hit_rate": 0.945686,
+        "oov_rate": 0.054314,
+        "suspicious_char_ratio": 0.000191,
+        "language": "fr",
+        "char_count": 20960
+      },
+      {
+        "doc_id": "910",
+        "hit_rate": 0.982546,
+        "oov_rate": 0.017454,
+        "suspicious_char_ratio": 0.000177,
+        "language": "fr",
+        "char_count": 22570
+      },
+      {
+        "doc_id": "920",
+        "hit_rate": 0.853892,
+        "oov_rate": 0.146108,
+        "suspicious_char_ratio": 0.001361,
+        "language": "multi",
+        "char_count": 37479
+      },
+      {
+        "doc_id": "930",
+        "hit_rate": 0.973438,
+        "oov_rate": 0.026562,
+        "suspicious_char_ratio": 0.0,
+        "language": "de",
+        "char_count": 14110
+      },
+      {
+        "doc_id": "940",
+        "hit_rate": 0.977961,
+        "oov_rate": 0.022039,
+        "suspicious_char_ratio": 0.000512,
+        "language": "multi",
+        "char_count": 15610
+      },
+      {
+        "doc_id": "950",
+        "hit_rate": 0.97514,
+        "oov_rate": 0.02486,
+        "suspicious_char_ratio": 0.000752,
+        "language": "fr",
+        "char_count": 27915
+      },
+      {
+        "doc_id": "960",
+        "hit_rate": 0.980718,
+        "oov_rate": 0.019282,
+        "suspicious_char_ratio": 0.000105,
+        "language": "fr",
+        "char_count": 28451
+      },
+      {
+        "doc_id": "970",
+        "hit_rate": 0.980392,
+        "oov_rate": 0.019608,
+        "suspicious_char_ratio": 0.0,
+        "language": "fr",
+        "char_count": 3588
+      },
+      {
+        "doc_id": "980",
+        "hit_rate": 0.97048,
+        "oov_rate": 0.02952,
+        "suspicious_char_ratio": 0.000263,
+        "language": "multi",
+        "char_count": 19033
+      },
+      {
+        "doc_id": "990",
+        "hit_rate": 0.195806,
+        "oov_rate": 0.804194,
+        "suspicious_char_ratio": 0.001717,
+        "language": "fr",
+        "char_count": 50660
+      }
+    ],
+    "validation": {
+      "n": 25,
+      "per_proxy": {
+        "hit_rate": {
+          "pearson": -0.2331,
+          "pearson_p": 0.2622,
+          "spearman": -0.4577,
+          "spearman_p": 0.0214,
+          "loocv_r2": -0.1155
+        },
+        "oov_rate": {
+          "pearson": 0.2331,
+          "pearson_p": 0.2622,
+          "spearman": 0.4577,
+          "spearman_p": 0.0214,
+          "loocv_r2": -0.1155
+        },
+        "suspicious_char_ratio": {
+          "pearson": 0.1841,
+          "pearson_p": 0.3784,
+          "spearman": 0.5009,
+          "spearman_p": 0.0108,
+          "loocv_r2": -3.2744
+        }
+      },
+      "composite": {
+        "method": "linear regression OLS, features standardized",
+        "weights": {
+          "hit_rate_z": -0.061373,
+          "suspicious_char_ratio_z": -0.002052,
+          "intercept": 0.207537
+        },
+        "in_sample_r2": 0.0543,
+        "loocv_r2": -2.9048,
+        "loocv_r2_ci95": [
+          0.0128,
+          0.5947
+        ]
+      }
+    },
+    "corpus_estimate": {
+      "method": "composite proxy (hit_rate + suspicious_char_ratio) via OLS, propagated regression uncertainty (Singh 2025)",
+      "estimated_mean_cer": 0.257973,
+      "estimated_mean_inner_ci95": [
+        0.230068,
+        0.290258
+      ],
+      "estimated_mean_total_ci95": [
+        0.0,
+        1.048564
+      ],
+      "estimated_distribution": {
+        "bucket_edges_cer": [
+          0.0,
+          0.01,
+          0.02,
+          0.03,
+          0.05,
+          0.08,
+          0.13,
+          0.2,
+          1.0
+        ],
+        "buckets": [
+          "[0.00,0.01)",
+          "[0.01,0.02)",
+          "[0.02,0.03)",
+          "[0.03,0.05)",
+          "[0.05,0.08)",
+          "[0.08,0.13)",
+          "[0.13,0.20)",
+          "[0.20,1.00)"
+        ],
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          158,
+          118
+        ]
+      },
+      "caveat": "Schaetzung auf Basis 2 validierter Proxies (hit_rate, suspicious_char_ratio). In-Sample-R² = 0.054, LOOCV-R² = -2.905 (n=25). Geringe Validierungsguete -> breite Total-CI. KEIN direkter CER. ngram_loglik / punct_sanity / sentence_length_kl als Proxies deferred."
+    }
+  }
+}
