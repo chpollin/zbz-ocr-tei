@@ -437,11 +437,13 @@ ist mit **E71** (NER entfernt) hinfaellig: das ausgelieferte TEI traegt keine En
 **Errors (blockierend, 8 Regeln R1-R8):** RelaxNG + Projekt-Regeln (R1 type="naegeli",
 R2 teiHeader, R3 body, R4 min 1 div, R5 gueltige div-types, R6 note place, R7 entity-ref).
 
-**Warnings (14 Regeln W1-W14, informativ):** W1 Sprach-Code "und", W2 teiHeader title/author
+**Warnings (18 Regeln W1-W18, informativ):** W1 Sprach-Code "und", W2 teiHeader title/author
 leer, W3 facsimile/pb Mismatch, W4 leere div, W5 Text-Volumen <50 chars/Seite, W6 keine lb,
 W7 graphic ohne url, W8 keine Entity-Tags bei >500 Zeichen, W9 Entity-Tags ohne ref, W10 nur
 persName, W11 zu viele top-level divs gleichen Namens, W12 Fussnoten-n, W13 Fussnoten xml:id-Pattern,
-W14 back/div-types.
+W14 back/div-types, W15 div mit type UND n (exklusiv), W16 figure ohne xml:id, W17 leerer speaker
+(Kurations-Slot, E71), W18 foreign xml:lang nicht normalisiert. W15-W18 aus dem Konformitaets-Audit
+2026-06-08 (siehe `reports/tei-konformitaet-audit-welle1-2026-06-08.md`).
 
 ### Referenz-TEI-Validierung
 
@@ -554,7 +556,7 @@ waren (CER >1 = Hyp-Laenge >> Ref-Laenge auf der "matched" Page).
 
 **Loesung:** `evaluate_tei_vs_tei()` nutzt content-aligned Vergleich: bei Length-Ratio > 1.05
 ruft `find_best_alignment()` auf, Substring-Matching ueber das ganze Dokument. Immun gegen
-Page-Numbering-Drift. Nach Wechsel: Mean 3.99% / Median 1.82% (n=18, scope-clean). Drift-Check:
+Page-Numbering-Drift. Nach Wechsel: Mean 3.99% / Median 1.82% (n=18, scope-clean -- historischer Zwischenstand vom 2026-04-27; aktuelle Headline siehe oben: Mean 2.79% / Median 1.58%). Drift-Check:
 nur 1 Doc weicht noch >5pp ab → **Pipeline ist tatsaechlich stabil**, der "Drift"-Eindruck war
 ein Mess-Artefakt.
 
