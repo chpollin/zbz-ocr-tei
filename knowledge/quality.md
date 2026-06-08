@@ -47,31 +47,53 @@ Asymmetrie ist beabsichtigt: vollstaendiger sein als die Referenz ist kein Fehle
 
 | Metrik | Mean | Median | 95%-CI (Mean) | misst |
 |---|---|---|---|---|
-| **Fidelity-CER (PRIMAER)** | **3.99 %** | **1.83 %** | [2.36 %, 5.96 %] | echte OCR-/Transkriptionstreue |
-| Volltext-CER (Diagnose, scope-inkl.) | 20.22 % | 12.29 % | [11.37 %, 31.38 %] | volle Divergenz inkl. Mehrtext — **KEIN Qualitaetsmass** |
+| **Fidelity-CER (PRIMAER)** | **2.79 %** | **1.58 %** | [1.85 %, 3.90 %] | echte OCR-/Transkriptionstreue |
+| Volltext-CER (Diagnose, scope-inkl.) | 19.02 % | 12.13 % | [10.35 %, 30.11 %] | volle Divergenz inkl. Mehrtext — **KEIN Qualitaetsmass** |
 | Scope-Rate (Mehrtext) | 16.23 % | 7.06 % | — | Pipeline-Mehrtext (kein Fehler) |
 
 Alle Werte ueber **alle 25 Docs** (E73: das fruehere n=19-scope-clean-Subset wurde entfernt, da es keinem reproduzierbaren Kriterium folgte). Volltext/Scope sind Diagnose-Groessen; das Qualitaetsmass ist die Fidelity-CER.
 
-Der Fidelity-Median **1.83 %** reproduziert die fruehere Headline -- jetzt aber sauber: ohne
-deflationaeres Trimming, ohne zirkulaeren Ausschluss, case-sensitiv, ueber das ganze Korpus.
+Der Fidelity-Median **1.58 %** (Stand 2026-06-08) wird sauber gemessen: ohne deflationaeres
+Trimming, ohne zirkulaeren Ausschluss, case-sensitiv, ueber das ganze Korpus.
 
-Stand 2026-06-08: Bei Doc 30 wurde ein OCR-Blockduplikat (ein doppelt erfasster Absatz) entfernt -- das senkte dessen Fidelity-CER von 18.25 % auf 11.59 % und den Korpus-Mean auf 3.99 % (Median unveraendert). Eine **automatische** Block-Deduplikation existiert derzeit nicht in der Pipeline (das in Anhang A des Arbeitsberichts und in CLAUDE.md referenzierte `scripts/ocr/ocr_dedup.py` ist nicht im Repo). Bis eine Dedup-Stufe existiert, ist diese eine Korrektur manuell; alle uebrigen 24 Docs sind reines Pipeline-Output.
+Stand 2026-06-08: Bei Doc 30 wurde ein OCR-Blockduplikat (ein doppelt erfasster Absatz) entfernt -- das senkte dessen Fidelity-CER von 18.25 % auf 11.59 % und den Korpus-Mean auf 3.99 % (damaliger Stand; die anschliessende Fussnoten-Demotion vom 2026-06-08, siehe Korrektur unten, senkte ihn weiter auf 2.79 % / Median 1.58 %). Eine **automatische** Block-Deduplikation existiert derzeit nicht in der Pipeline (das in Anhang A des Arbeitsberichts und in CLAUDE.md referenzierte `scripts/ocr/ocr_dedup.py` ist nicht im Repo). Bis eine Dedup-Stufe existiert, ist diese eine Korrektur manuell; alle uebrigen 24 Docs sind reines Pipeline-Output.
 
 Einordnung **print-kalibriert** (E80): Die Transkribus-Qualitaetsbaender (<2 % exzellent, 2-5 % gut)
 stammen primaer aus der HTR-Praxis (Handschrift); fuer eine reine **Druck**-OCR-Aufgabe schmeicheln
 sie, weil dort die Messlatte hoeher liegt. Massgeblich ist daher der **Print-OCR-Literaturvergleich**
-(Abschnitt „Vergleich gegen Stand der Forschung" unten): Median 1.83 % liegt **zwischen** dem besten
+(Abschnitt „Vergleich gegen Stand der Forschung" unten): Median 1.58 % liegt **zwischen** dem besten
 spezialisierten Print-Stack (Transkribus + LLM-Post 0.84 %) und Transkribus allein (3.67 %) -- solide
 fuer historischen Druck, aber **nicht** an der Spitze. Zusaetzlich misst die CER gegen eine selbst
 fehlerbehaftete Transkribus-Referenz (siehe Doc 1440), ist also eine Obergrenze der wahren Fehlerrate.
 
+### Korrektur 2026-06-08: referenz-verifizierte Fussnoten-Demotion
+
+Drei Objekte trugen Fliesstext faelschlich als `<note place="foot">` (Gemini Stufe 6); da der
+Vergleich Fussnoten ausschliesst (E5), zaehlte dieser Text als Loeschung und blaehte ihre CER auf.
+Verifiziert gegen die ZBZ-Referenz (der Text steht dort im Body) wurden sie nach `<p>` demoted --
+evidenzbasiert, nicht geraten. Ergebnis (gegen `zbz_hersch.rng` validiert, Mirror regeneriert):
+
+| Doc | Bloecke | Fidelity vorher | nachher |
+|---|---|---|---|
+| 290 | 2 (1352 + 685) | 17,7 % | 2,6 % |
+| 1910 | 1 (912) | 16,4 % | 7,7 % |
+| 90 | 1 (609) | 7,6 % | 1,4 % |
+
+**Korpus-Fidelity neu: Mean 2,79 % / Median 1,58 % / micro 2,70 % (n=25).** Die Headline-Tabelle
+oben ist mit dem `cer_statistics_full`-Lauf vom 2026-06-08 auf diesen Stand aktualisiert
+(BCa-CI [1,85 %, 3,90 %]); der Pipeline-Mehrwert gegenueber reiner OCR ist dadurch signifikant
+geworden (-9,38 pp, p=0,013). Diskriminator: eine `<note place="foot">` ist verifizierter
+Fliesstext, wenn ihre ersten 120 Zeichen im Body der Referenz vorkommen. Vollstaendige Worklist der
+verbleibenden Faelle (6 referenz-verifiziert zurueckgehalten, 11 zur Handpruefung, 1 Seitenzahl):
+[reports/fussnoten-kuration-2026-06-08.md](../reports/fussnoten-kuration-2026-06-08.md).
+
 ### Pipeline-Mehrwert (Paired, like-for-like Fidelity)
 
-Pipeline-E2E vs. reine Mistral-OCR: **-7.90 pp** (p = 0.07, n=25, nicht signifikant
-bei alpha=0.05). Die fruehere Angabe „-14.83 pp, p=0.0004" war ein Artefakt des getrimmten/
-kleingeschriebenen Vergleichs und ist **zurueckgezogen**; der Wert -7.12 pp (n=19) galt fuer das
-inzwischen entfernte scope-clean-Subset (E73), jetzt -7.90 pp ueber alle 25.
+Pipeline-E2E vs. reine Mistral-OCR: **-9.38 pp** (p = 0.013, n=25, **signifikant**
+bei alpha=0.05; Stand 2026-06-08 nach der Fussnoten-Demotion). Die fruehere Angabe „-14.83 pp,
+p=0.0004" war ein Artefakt des getrimmten/kleingeschriebenen Vergleichs und ist **zurueckgezogen**;
+der Zwischenstand vor der Demotion war -7.90 pp (p=0.07, n.s.). Die Demotion verbesserte die
+End-to-End-Treue und vergroesserte damit den Abstand zur reinen OCR.
 
 ### Was sich im Code aenderte (E70)
 
@@ -103,116 +125,6 @@ Quellen: [OCR-D Eval Spec](https://ocr-d.de/en/spec/ocrd_eval.html), [Transkribu
 ### Zitations-Korrektur
 
 arXiv:2510.06743 (HCPR/AIR) ist von **M. Levchenko 2025**, *nicht* „Nosova et al." -- frueher falsch attribuiert.
-
----
-
-## CER-Benchmark (Headline) [HISTORISCH, abgeloest durch Korrektheits-Welle oben]
-
-End-to-End Character Error Rate: Pipeline-TEI vs. ZBZ-Referenz-TEI (Transkribus Ground Truth).
-Wissenschaftliche Re-Evaluation 2026-04-27 (E54).
-
-### Methodik (Kurzfassung)
-
-- **Referenz:** 25 ZBZ-Referenz-TEIs (`data/source/reference_tei/`), manuell via Transkribus erstellt.
-- **Hypothese:** Pipeline-TEIs (`output/tei_final/`), aus der 6-Stufen-Pipeline.
-- **Textextraktion:** mit `<choice>`-Korrektur, Fussnoten exkludiert, symmetrische Unicode-Normalisierung.
-- **Distanzmass:** `Levenshtein(ref, hyp) / max(1, |ref|)` via `rapidfuzz`.
-- **Alignment:** content-aligned via `evaluate_tei_vs_tei()` (immun gegen Page-Numbering-Drift, siehe §Lessons).
-- **Aggregation:** char-gewichtete Per-Dok-CER; Bootstrap ueber Docs (n=25, alle).
-- **Statistik:** BCa-Bootstrap (B=10000, Seed=42) fuer alle CIs; Paired Bootstrap fuer E2E vs OCR-only; Chi-Square + KS fuer Selektionsbias.
-- **Werkzeug:** `scripts/eval/cer_statistics_full.py` (Orchestrator) + `scripts/eval/cer_statistics.py` (Library mit 55 Tests). Output: `docs/data/cer_statistics.json` (deterministisch bei `seed=42`).
-
-### Headline-Werte (HISTORISCH, E54-Stand 2026-04-27 — durch E70 ueberholt; aktuelle Fidelity-Werte siehe oben)
-
-| Metrik | Punktwert | 95%-CI |
-|---|---|---|
-| **End-to-End-CER Mean** | **4.10 %** | [2.01 %, 6.75 %] |
-| **End-to-End-CER Median** | **1.83 %** | [0.84 %, 5.14 %] |
-| **OCR-only-CER Mean** (Mistral Stage 2) | 18.93 % | [9.19 %, 30.57 %] |
-| **Pipeline-Verbesserung** (paired) | **−14.83 pp** | ZURUECKGEZOGEN: Artefakt des getrimmten Vergleichs; aktuell -7.90 pp (p=0.07, n=25, n.s.) |
-| **HCPR (Diakritik-Erhalt) Mean** | ~99 % | siehe `domain_metrics` im JSON |
-
-**Lesehilfe:**
-
-- Median 1.83% heisst: die Haelfte aller Docs hat CER ≤ 1.83% — solide fuer historischen Druck. **Nicht** State-of-the-Art: spezialisierte Print-Stacks liegen darunter (Transkribus + LLM-Post 0.84%, Gemini 2.0 Flash zero-shot 1.27%, siehe „Vergleich gegen Stand der Forschung"). SotA-Niveau erreichen nur die besten Einzeldocs (0.3-0.8%).
-- Paired Test (ueberholt): die fruehere Angabe ~14.8pp ist zurueckgezogen (Artefakt des getrimmten Vergleichs). Aktueller Mehrwert **-7.90pp**, statistisch nicht signifikant (p=0.07, **n=25**) — siehe Headline + [decisions.md E73](decisions.md).
-- HCPR 99.32%: praktisch alle franzoesischen/deutschen Diakritika werden korrekt erhalten.
-
-### Reduktions-Timeline
-
-| Schritt | Mean CER | Median CER | n |
-|---|---|---|---|
-| Ausgangslage (E51) | 9.33% | 5.52% | 24 |
-| + symmetrische Normalisierung | 8.11% | 5.36% | 24 |
-| + Hyphen-Normalisierung | 7.29% | 2.61% | 25 |
-| + CI-Alignment | 5.97% | 2.42% | 25 |
-| + Scope-Bereinigung | 4.18% | 1.83% | 19 |
-| **+ Case-Normalisierung** | **4.10%** | **1.83%** | **19** |
-
-### Scope-Klassifikation entfernt (E73, 2026-05-27)
-
-Die fruehere hartkodierte 6er-Ausschlussliste (`SCOPE_MISMATCH_REASONS`) ist **entfernt** — an den
-Rohdaten verifiziert war sie inkohaerent (schloss Doc 570 mit 112 % Mehrtext / Voll-CER 113 % NICHT
-aus, markierte aber 3020/760/830 mit ~0.5-1.2 % Mehrtext) und folgte keinem reproduzierbaren Kriterium.
-Alle Aggregate rechnen jetzt ueber **alle 25 Docs**, `scope_status` ist immer `full`. Die scope-robuste
-Qualitaetszahl ist die **Fidelity-CER** (oben); Details [decisions.md E73](decisions.md).
-
-### Stratifiziert (Volltext-Diagnose, scope-inkl., n=25)
-
-Volltext-CER je Stratum — **Diagnose, kein Qualitaetsmass** (Quelle: `strata` im JSON). Liegt ueber der
-Fidelity-Headline, weil die ZBZ-Referenzen teils selektive Teiltranskriptionen sind.
-
-| Typ | n | Mean | Median |
-|---|---|---|---|
-| A (einspaltig) | 12 | 28.2 % | 18.5 % |
-| B (zweispaltig) | 7 | 17.0 % | 16.9 % |
-| C (Monografie) | 2 | 3.9 % | 3.9 % |
-| D (Spezial) | 4 | 13.3 % | 10.1 % |
-
-| Sprache | n | Mean | Median |
-|---|---|---|---|
-| fra | 18 | 22.5 % | 10.1 % |
-| deu | 7 | 16.1 % | 13.8 % |
-
-### Top-5 Substitutionen (Konfusionsmatrix)
-
-| # | Erwartet | Erkannt | Codepoints | Anzahl |
-|---|---|---|---|---|
-| 1 | e | (Space) | U+0065 → U+0020 | 31 |
-| 2 | e | E | U+0065 → U+0045 | 28 |
-| 3 | (Space) | e | U+0020 → U+0065 | 25 |
-| 4 | s | S | U+0073 → U+0053 | 18 |
-| 5 | e | s | U+0065 → U+0073 | 17 |
-
-Vollstaendige Matrix: in den Rohdaten unter `output/evaluation/` (frueher als `docs/data/diagnostik_ocr.json` verfuegbar, mit E56 entfernt).
-
-### Fehlerkategorien (alle 25 Docs)
-
-| Kategorie | Chars | Anteil | Beschreibung |
-|---|---|---|---|
-| other | 311.221 | 93.2% | Scope-Mismatches, Textverschiebungen |
-| ocr_artifact | 10.118 | 3.0% | Zeichenverwechslungen, Halluzinationen |
-| layout | 8.810 | 2.6% | fehlende Spalten/Regionen |
-| whitespace | 3.532 | 1.1% | Leerzeichen-Differenzen |
-| punctuation | 253 | 0.1% | Satzzeichen |
-| diacritics | 85 | 0.0% | Akzent-Fehler |
-
-**Fazit:** 93% der gemessenen Fehler sind Scope-Mismatches (Benchmark-Artefakte). Nur 6% sind echte OCR/Layout-Fehler.
-
-### Verbleibende Problemdokumente
-
-| Doc | CER | Kategorie | Ursache | Fix |
-|---|---|---|---|---|
-| 290 | 20.7% | Scope + Case | Textverlust + Case-Differenzen | Case-Norm. reduzierte 0.5% |
-| 1910 | 16.1% | Layout | 16% Text fehlt aus Spaltenregionen (Typ B) | Layout re-run |
-
-Re-Processing-Kandidaten (Typ B mit Layout-Fehlern):
-
-```bash
-python -m scripts.layout.layout_qa_gemini --mode detect --doc 1910   # 16.1% CER
-python -m scripts.layout.layout_qa_gemini --mode detect --doc 890    #  5.6% CER
-python -m scripts.layout.layout_qa_gemini --mode detect --doc 1410   #  5.1% CER
-```
 
 ---
 
@@ -297,7 +209,8 @@ CER haengt von Pre-Normalisierung ab. Vier Regimes parallel publiziert:
 **Limitation** (dokumentiert in `multi_norm._note`): `extract_text_for_comparison()` normalisiert
 bereits symmetrisch (Quotes, Apostroph, Guillemets, Whitespace-Kollaps). Die nominellen Regimes
 liefern deshalb fast identische Zahlen. Der echte Effekt der Normalisierung ist in der
-Reduktions-Timeline der Pipeline sichtbar (9.33% → 4.10%), nicht zwischen den 4 nominellen Stufen.
+Pipeline-Reduktion von ~9 % Ausgangslage auf die heutige Fidelity-CER (2,79 %, siehe
+Korrektheits-Welle oben) sichtbar, nicht zwischen den 4 nominellen Stufen.
 
 ### Domain-Metrik: HCPR-Adaption
 

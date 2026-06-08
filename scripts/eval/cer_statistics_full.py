@@ -4,7 +4,7 @@ CER Statistics — Full Pipeline (Schema v0.3).
 Ergaenzt das Geruest in `cer_statistics.py` + `cer_statistics_runner.py` um:
 - OCR-only Block (Mistral Stage-2 vs Referenz-TEI)
 - paired_test (E2E vs OCR-only, Singh 2025 paired bootstrap)
-- HCPR-Adaption (Nosova 2025) zusaetzlich zu Diakritik-Erhaltung
+- HCPR-Adaption (Levchenko 2025) zusaetzlich zu Diakritik-Erhaltung
 - Proxies B'1-B'3 (hit_rate, suspicious_char_ratio + composite + corpus_estimate)
 - Per-doc within-doc Bootstrap CIs
 - Selection-Bias n_chars (KS) zusaetzlich zu page_count
@@ -13,7 +13,7 @@ Ergaenzt das Geruest in `cer_statistics.py` + `cer_statistics_runner.py` um:
 
 Methodik (alle Quellen 2025+, User-Constraint 2026-04-27):
 - Singh 2025 (arXiv:2511.19794): paired bootstrap, BCa, Reproduzierbarkeit
-- Nosova et al. 2025 (arXiv:2510.06743): HCPR/AIR Domain-Metriken
+- Levchenko 2025 (arXiv:2510.06743): HCPR/AIR Domain-Metriken
 - Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195): like-for-like
 - Kanerva & Ledins 2025 (arXiv:2502.01205): no-GT Methodik
 - arXiv:2501.18243 (2025), arXiv:2509.04013 (2025)
@@ -79,7 +79,7 @@ TOOL_VERSION = "0.1.0"
 # rohe end_to_end (scope-inklusiv) bleibt als Diagnose, ist aber KEIN Qualitaetsmass.
 # Siehe decisions.md (CER-Scope-Entscheidung 2026-05-27).
 
-# Char-Klassen fuer HCPR (Nosova 2025 §3 Adaption)
+# Char-Klassen fuer HCPR (Levchenko 2025 §3 Adaption)
 HCPR_CLASSES = {
     "fr_acute_grave": "éèà",
     "fr_circumflex": "âêîôû",
@@ -93,7 +93,7 @@ HCPR_CLASSES = {
 
 LITERATURE_REFS = [
     "Singh 2025 (arXiv:2511.19794) - paired bootstrap protocol",
-    "Nosova et al. 2025 (arXiv:2510.06743) - HCPR/AIR domain metrics",
+    "Levchenko 2025 (arXiv:2510.06743) - HCPR/AIR domain metrics",
     "Crosilla, Klic, Colavizza 2025 (arXiv:2503.15195) - HTR like-for-like",
     "Kanerva & Ledins 2025 (arXiv:2502.01205) - no-GT methodology",
     "arXiv:2501.18243 (2025) - statistical multi-metric evaluation",
@@ -116,12 +116,12 @@ COMPARISON_LIT = [
      "lang": "multilingual historical", "year": 2025, "cer": 0.063,
      "comparable": "partial", "caveat_dimensions": ["method", "corpus"],
      "caveat": "GPT-4o-Klasse, no-GT-Eval; methodisch verwandt aber andere Korpora."},
-    {"source": "Nosova et al. 2025", "arxiv_id": "2510.06743",
+    {"source": "Levchenko 2025", "arxiv_id": "2510.06743",
      "method": "Gemini 2.5 Pro",
      "lang": "rus 18. Jh. Civil Font", "year": 2025, "cer": 0.0336,
      "comparable": "false", "caveat_dimensions": ["language", "script", "corpus"],
      "caveat": "Russisch, 18. Jh. Civil Font; nicht like-for-like mit FR/DE-Antiqua."},
-    {"source": "Nosova et al. 2025", "arxiv_id": "2510.06743",
+    {"source": "Levchenko 2025", "arxiv_id": "2510.06743",
      "method": "GPT-4o",
      "lang": "rus 18. Jh. Civil Font", "year": 2025, "cer": 0.0923,
      "comparable": "false", "caveat_dimensions": ["language", "script", "corpus"],
@@ -716,7 +716,7 @@ def build_domain_metrics(records: list[DocCERRecord], rng: np.random.Generator,
         },
         "hcpr": {
             "definition": (
-                "HCPR-Adaption nach Nosova et al. 2025 (arXiv:2510.06743 §3): "
+                "HCPR-Adaption nach Levchenko 2025 (arXiv:2510.06743 §3): "
                 "char-class-weighted preservation rate ueber 8 Diakritik-Klassen "
                 "(fr_acute_grave, fr_circumflex, fr_diaeresis, fr_cedilla, fr_oe, "
                 "de_umlaut, de_eszett, ae_ligature). Pro Klasse: min(hyp/ref, 1.0). "
@@ -727,7 +727,7 @@ def build_domain_metrics(records: list[DocCERRecord], rng: np.random.Generator,
         },
         "air": {
             "status": "deferred",
-            "note": ("Abbreviation Interpretation Rate (Nosova 2025) erfordert "
+            "note": ("Abbreviation Interpretation Rate (Levchenko 2025) erfordert "
                      "Korpus-Vorpruefung. Im Hersch-Korpus (FR/DE-Antiqua-Druck "
                      "1930er-1990er) sind Abbreviationen selten; Pruefung deferred."),
         },
@@ -1009,7 +1009,7 @@ def _training_corpus() -> dict:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="CER Statistics Full (Schema v0.3, Singh 2025 / Nosova 2025)",
+        description="CER Statistics Full (Schema v0.3, Singh 2025 / Levchenko 2025)",
     )
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--bootstrap-n", type=int, default=10000)
@@ -1049,7 +1049,7 @@ def main(argv: list[str] | None = None) -> int:
     paired_test = build_paired_test(records, rng, n_boot)
     selection_bias = build_selection_bias(records, corpus_metadata)
 
-    print("[6/8] build domain_metrics (diacritic + HCPR Nosova 2025)...")
+    print("[6/8] build domain_metrics (diacritic + HCPR Levchenko 2025)...")
     domain_metrics = build_domain_metrics(records, rng, n_boot)
     error_categories = build_error_categories(records)
     per_doc = build_per_doc(records, rng, n_boot)

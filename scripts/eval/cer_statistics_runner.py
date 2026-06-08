@@ -60,25 +60,17 @@ def _ground_truth_doc_ids() -> list[str]:
 
 
 def _detect_scope_mismatch(eval_result: dict) -> tuple[str, str | None]:
-    """STRUKTURELLE Scope-Bereinigung -- ergebnisUNABHAENGIG.
+    """Scope-Status pro Doc -- seit E73 konsequent 'full'.
 
-    Markiert 'partial' NUR, wenn Pipeline-/Referenz-SEITENZAHL strukturell
-    abweicht (Faktor >= 1.5). Die fruehere CER>50%-Regel wurde entfernt:
-    sie war zirkulaer (schloss Docs aus, WEIL ihr CER schlecht war) und drueckte
-    den Headline-Mean kuenstlich. Ein hoher CER bei gleicher Seitenzahl ist ein
-    echtes Ergebnis, kein Benchmark-Artefakt, und bleibt in der Statistik.
-
-    Liest die Felder ref_pages/pipe_pages aus evaluate_tei_vs_tei (vorher wurden
-    faelschlich ref_pages_total/pipe_pages_total gelesen, die dort nie gesetzt sind --
-    das Page-Ratio-Kriterium feuerte deshalb nie).
+    E73 (2026-05-27) hat ALLE Scope-Ausschluesse abgeschafft: alle 25 Docs gehen
+    in jedes Aggregat ein, scope_status ist immer 'full'. Die fruehere strukturelle
+    Seitenzahl-Heuristik (page_ratio >= 1.5 -> 'partial') markierte zwar Doppelseiten-
+    Spreads (Doc 30, 760), wurde aber in cer_statistics_full ohnehin auf 'full'
+    ueberschrieben -- sie war wirkungsloser, irrefuehrender Code und ist hier entfernt.
+    Damit stimmen Code und quality.md ("scope_status ist immer full") wieder ueberein;
+    die scope-robuste Qualitaetszahl bleibt die Fidelity-CER. eval_result wird fuer
+    Signatur-Kompatibilitaet beibehalten, aber nicht mehr ausgewertet.
     """
-    ref_p = int(eval_result.get("ref_pages", 0) or 0)
-    pipe_p = int(eval_result.get("pipe_pages", 0) or 0)
-
-    if ref_p > 0 and pipe_p > 0:
-        ratio = max(ref_p, pipe_p) / max(min(ref_p, pipe_p), 1)
-        if ratio >= 1.5:
-            return ("partial", f"page_ratio={ref_p}/{pipe_p} ({ratio:.1f}x)")
     return ("full", None)
 
 
