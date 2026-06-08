@@ -1,11 +1,11 @@
 """
 Unified TEI Pipeline: Rule-Based Scaffold + Gemini Refinement.
 
-4-Stufen-Pipeline:
+3 Generierungs-Stufen + optionale Validierung:
   Step 1: Enhanced rule-based TEI (kostenlos, deterministisch)
   Step 2: Gemini Refinement (1 API-Call/Seite, Mapping-Table-Prompt)
   Step 3: Document Assembly (teiHeader + facsimile + body)
-  Step 4: RelaxNG Validation (optional)
+  Step 4: RelaxNG Validation (optional, default aktiv)
 
 Aufruf:
     python -m scripts.tei.tei_unified --doc 2310

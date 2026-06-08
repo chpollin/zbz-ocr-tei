@@ -73,7 +73,7 @@ Frueher (E36): FastAPI Curation Server unter localhost:8000 — abgeschafft.
 
 **Qualitaetssicherung (E66):** Das fruehere Agent-Screening ist abgeschafft (kein Mensch hatte die
 „APPROVED" vergeben — der Agent zertifizierte sich selbst). Ersatz: menschgesetzter
-**Workflow-Status pro Strom** (`unverifiziert | in_arbeit | bearbeitet | fertig` je OCR/Layout/TEI),
+**Workflow-Status pro Strom** (`unverifiziert | in_arbeit | verifiziert` je OCR/Layout/TEI, drei Stufen seit E77),
 im Viewer gesetzt, History im Pro-Objekt-Manifest, Projektion in den `<revisionDesc>`. Stand:
 285/285 `unverifiziert`. Details: [quality.md §Workflow-Status](quality.md).
 
@@ -163,7 +163,7 @@ Erweiterungen. Verbindlich seit E48/E49 (2026-03-26).
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <TEI xmlns='http://www.tei-c.org/ns/1.0' type="naegeli">
-  <teiHeader><!-- aus ALMA via Skript --></teiHeader>
+  <teiHeader><!-- aus doc_metadata.json via build_tei_header; Alma-Metadaten (MMSID) = ZBZ-Domaene, O8 --></teiHeader>
   <text>
     <front><!-- optional: Vorworte, Widmungen --></front>
     <body>
@@ -244,6 +244,24 @@ GND-ID, Rest `GND:unknown` oder interne IDs). `<persName>`, `<orgName>`, `<place
 mehr getaggt. `<bibl>` bleibt ausschliesslich als bibliografische Struktur erhalten (Literaturlisten
 in `<listBibl>`, Review-Zitation im `<head>`), ohne `ref`/`corresp`.
 
+### Kuration statt Automatik: front/back/anchor/unclear (Stand 2026-06-08)
+
+Die Pipeline erzeugt pro Seite ein `<div>`-Body-Fragment (Step 2, OUTPUT FORMAT in
+`tei_mapping_prompt.py`). Dokument- und seitenuebergreifende Strukturen entstehen daher
+NICHT automatisch — sie werden in der Kuration (Viewer) gesetzt. Begruendung je Fall (mit
+Haeufigkeit in den 25 Referenz-TEIs):
+
+- **`<front>`/`<back>`** (Widmung, redaktionelle Hinweise; Uebersetzung/Nachdruck/otherEdition;
+  front 6/25, back 5/25): Dokumentebene. Die Nachspann-Quelle im Masterfile (Spalte
+  "Anmerkungen") ist **Freitext** ("deutsche Uebersetzung: ID 320", teils nur interne
+  Verweise) — kein verlaessliches Zitat, daher bewusst **kein Auto-Bau** (sonst falsches TEI).
+  Nachspann-Zitation nach MLA 9 + Swisscovery-Link bleibt ZBZ/Kuration.
+- **seitenuebergreifende `<anchor>`** (Doppelseiten-Abbildung, 1/25): braucht beide Seiten,
+  zu selten + zu fehleranfaellig fuer Automatik.
+- **`<unclear>`** (0/25): Urteil pro Zeichen am Scan-Bild; nur Kuration.
+- **`<epigraph>`** (1/25): wird uebernommen, wenn die KI es am div-Anfang setzt; ein
+  fehlplatziertes Motto entpackt `tei_step2._fix_structural_issues`.
+
 ### Spezielle Dokumenttypen
 
 - `<div type="review">` mit `<bibl>` im `<head>`
@@ -281,23 +299,25 @@ Zitierung in `<back>` nach MLA 9, mit Swisscovery-Permalink als `<ref target="..
 | Initialen | nicht annotiert |
 | Mehrspaltigkeit | nicht reproduziert als solche |
 
-### revisionDesc (Screening-Status, E42)
+### revisionDesc (Workflow-Status, E66/E77)
 
-Jedes finale TEI in `output/tei_final/` enthaelt `<revisionDesc>` direkt vor `</teiHeader>`:
+Jedes finale TEI in `output/tei_final/` enthaelt `<revisionDesc>` direkt vor `</teiHeader>`.
+Der erste `<change>` haelt die Pipeline-Erzeugung fest; danach folgt je ein Summary-`<change>`
+pro Strom (OCR/Layout/TEI) mit dem menschgesetzten Workflow-Status. Projiziert vom Manifest
+in den Header durch `tei_status_marker.py` (E66):
 
 ```xml
 <revisionDesc>
-  <change when="2026-03-15" who="pipeline">
-    TEI generated (Unified Pipeline v1, Gemini + RelaxNG)
-  </change>
-  <change when="2026-03-15" who="agent-screening-v2" status="APPROVED_WITH_NOTES">
-    Agent-Based Quality Screening (L1:ok L2:ok ... L7:ok). Findings...
-  </change>
+  <change when="2026-03-15" who="pipeline">TEI generated (Unified Pipeline v1, Gemini + RelaxNG)</change>
+  <change status="unverifiziert" n="ocr-summary">OCR-Strom (Stand): unverifiziert</change>
+  <change status="unverifiziert" n="layout-summary">LAYOUT-Strom (Stand): unverifiziert</change>
+  <change status="unverifiziert" n="tei-summary">TEI-Strom (Stand): unverifiziert</change>
 </revisionDesc>
 ```
 
-Status-Werte: `APPROVED` | `APPROVED_WITH_NOTES` | `NEEDS_REVIEW` | `NEEDS_REWORK`.
-Der juengste `<change>` bestimmt den aktuellen Status. Der Viewer zeigt den Status als Badge.
+Status-Werte (drei Stufen seit E77): `unverifiziert` | `in_arbeit` | `verifiziert`. Das fruehere
+Agent-Screening (Status-Werte `APPROVED`/`NEEDS_REVIEW`/...) ist mit E66 abgeschafft — kein Mensch
+hatte diese „APPROVED" vergeben. Stand: 285/285 `unverifiziert`. Der Viewer zeigt den Status als Ampel-Pill.
 
 ### Element-Inventar
 

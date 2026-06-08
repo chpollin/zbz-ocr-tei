@@ -30,6 +30,7 @@ from scripts.config import (
     TEI_UNIFIED_DIR,
     VALID_DIV_TYPES,
 )
+from scripts.tei.tei_xml_utils import normalize_lang_code
 
 try:
     from lxml import etree as lxml_etree
@@ -290,6 +291,50 @@ def _check_project_rules(root) -> tuple[list[dict], list[dict]]:
                     "message": f'<back>/<div type="{div_type}"> -- erwartet: {_BACK_DIV_TYPES}',
                     "rule": "W14",
                 })
+
+    # W15: div mit @type UND @n -- Editionsrichtlinie: Struktur-n vs. Spezial-type exklusiv
+    for div in root.findall(f".//{{{TEI_NS}}}div"):
+        if div.get("type") and div.get("n") is not None:
+            warnings.append({
+                "line": div.sourceline or 0,
+                "message": f'<div type="{div.get("type")}"> traegt zugleich n="{div.get("n")}" (type/n exklusiv)',
+                "rule": "W15",
+            })
+
+    # W16: figure ohne xml:id -- Editionsrichtlinie: fortlaufende figN
+    for fig in root.findall(f".//{{{TEI_NS}}}figure"):
+        if not fig.get("{http://www.w3.org/XML/1998/namespace}id"):
+            warnings.append({
+                "line": fig.sourceline or 0,
+                "message": "<figure> ohne xml:id (Richtlinie: fortlaufende figN)",
+                "rule": "W16",
+            })
+
+    # W17: leeres <speaker> -- Sprechername fehlt. Kurations-Slot: Benennung/GND-Verknuepfung
+    # ist stromabwaerts (ZBZ-Edition, E71), nicht in der Pipeline. Hier nur sichtbar machen.
+    for sp in root.findall(f".//{{{TEI_NS}}}sp"):
+        speaker = sp.find(f"{{{TEI_NS}}}speaker")
+        if speaker is not None:
+            has_content = (speaker.text or "").strip() or len(list(speaker)) > 0
+            if not has_content:
+                warnings.append({
+                    "line": speaker.sourceline or 0,
+                    "message": "<speaker> ohne Inhalt (Sprechername fehlt -- Kurations-Slot, E71)",
+                    "rule": "W17",
+                })
+
+    # W18: <foreign> mit nicht-normalisiertem Sprachcode (Richtlinie: einheitlich ISO-639-2/T
+    # 3-Letter). Deckungsgleich mit dem Pipeline-Pass: gemeldet wird genau das, was
+    # _normalize_foreign_lang aendern wuerde (gemeinsame normalize_lang_code, keine
+    # un-raeumbaren Dauer-Warnungen, kein duplizierter Varianten-Satz).
+    for fo in root.findall(f".//{{{TEI_NS}}}foreign"):
+        lang = fo.get("{http://www.w3.org/XML/1998/namespace}lang")
+        if lang and normalize_lang_code(lang) != lang:
+            warnings.append({
+                "line": fo.sourceline or 0,
+                "message": f'<foreign xml:lang="{lang}"> nicht normalisiert (erwartet 639-2/T 3-Letter)',
+                "rule": "W18",
+            })
 
     return errors, warnings
 
@@ -639,6 +684,13 @@ def generate_html_report(summary: dict, output_path: Path) -> None:
         "W6": "Keine lb-Elemente",
         "W7": "graphic ohne url-Attribut",
         "W11": "Zu viele top-level divs mit gleichem n (div-Merge fehlt)",
+        "W12": "note place=foot ohne n-Attribut",
+        "W13": "Fussnoten xml:id entspricht nicht fn{Seite}-{Nr}",
+        "W14": "back/div mit unerwartetem type",
+        "W15": "div mit type UND n (exklusiv)",
+        "W16": "figure ohne xml:id (figN)",
+        "W17": "speaker ohne Inhalt (Kurations-Slot, E71)",
+        "W18": "foreign xml:lang nicht normalisiert (639-2/B)",
     }
 
     # Error-Frequency HTML
@@ -752,7 +804,7 @@ footer {{ margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e6ed; colo
 
 <h2>Warnings (informativ fuer Editoren)</h2>
 <div class="rule-desc">
-  Quality-Checks (W1-W8). Nicht blockierend -- zeigen Probleme,
+  Quality-Checks (W1-W14). Nicht blockierend -- zeigen Probleme,
   die bei der Kuration geprueft werden sollten.
 </div>
 {"<p>Keine Warnings.</p>" if not warning_freq_rows else f'''
@@ -769,7 +821,7 @@ footer {{ margin-top: 3em; padding-top: 1em; border-top: 1px solid #e0e6ed; colo
 
 <footer>
   <p>Errors: RelaxNG TEI-All + R1 (type=naegeli), R2 (teiHeader), R3 (body), R4 (div), R5 (div-types), R6 (note place)</p>
-  <p>Warnings: W1 (Sprache), W2 (Header-Felder), W3 (facsimile/pb), W4 (leere div), W5 (Text-Volumen), W6 (lb-Dichte), W7 (graphic url), W11 (div-Merge)</p>
+  <p>Warnings: W1 (Sprache), W2 (Header-Felder), W3 (facsimile/pb), W4 (leere div), W5 (Text-Volumen), W6 (lb-Dichte), W7 (graphic url), W11 (div-Merge), W12 (Fussnoten-n), W13 (Fussnoten-xml:id), W14 (back/div-Typ), W15 (div type+n), W16 (figure xml:id), W17 (leerer speaker), W18 (foreign lang)</p>
 </footer>
 
 </body>

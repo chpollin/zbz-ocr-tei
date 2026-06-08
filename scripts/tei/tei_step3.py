@@ -13,7 +13,7 @@ import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape as xml_escape
 
 from scripts.config import TEI_NS
-from scripts.tei.tei_xml_utils import make_element, wrap_orphan_groups
+from scripts.tei.tei_xml_utils import make_element, normalize_lang_code, wrap_orphan_groups
 
 
 # ---------------------------------------------------------------------------
@@ -212,6 +212,18 @@ def assemble_document(
     # Post-Assembly Fix: Schema-Verletzungen nach Assembly korrigieren
     result = _fix_post_assembly_schema(result)
 
+    # Post-Assembly Fix: @n von Spezial-divs entfernen (@type/@n exklusiv, Richtlinie)
+    result = _fix_div_n_type_exclusive(result)
+
+    # Post-Assembly Fix: fortlaufende xml:id fuer jede <figure> (Richtlinie figN)
+    result = _assign_figure_ids(result)
+
+    # Post-Assembly Fix: Werktitel der ersten <head> in <title type="main"> (Richtlinie)
+    result = _wrap_first_title(result, genre)
+
+    # Post-Assembly Fix: <foreign> xml:lang auf einheitliches ISO-639-2/B normalisieren
+    result = _normalize_foreign_lang(result)
+
     # Post-Assembly Fix: Heuristische <lb/> fuer Absaetze ohne Zeilenumbrueche
     result = _inject_heuristic_lb(result)
 
@@ -318,6 +330,119 @@ def _merge_page_divs(xml_text: str, genre: str = None) -> str:
         return ET.tostring(root, encoding="unicode", xml_declaration=True)
     except Exception:
         return xml_text
+
+
+# ---------------------------------------------------------------------------
+# Post-Assembly: Editionsrichtlinien-Konformitaet (Audit 2026-06-08)
+# ---------------------------------------------------------------------------
+
+_XML_ID_ATTR = "{http://www.w3.org/XML/1998/namespace}id"
+_XML_LANG_ATTR = "{http://www.w3.org/XML/1998/namespace}lang"
+
+
+def _transform_tree(xml_text: str, mutate) -> str:
+    """Gemeinsame Klammer fuer die deterministischen Konformitaets-Paesse (Audit 2026-06-08).
+
+    Parst das TEI, wendet mutate(root) in-place an und serialisiert wieder. Bei jedem Fehler
+    (nicht wohlgeformt o.ae.) bleibt der Eingang unveraendert -- jeder Pass ist damit
+    fehlertolerant und einzeln ueberspringbar. mutate veraendert den Baum, gibt nichts zurueck.
+    """
+    try:
+        ET.register_namespace("", TEI_NS)
+        root = ET.fromstring(xml_text)
+        mutate(root)
+        return ET.tostring(root, encoding="unicode", xml_declaration=True)
+    except Exception:
+        return xml_text
+
+
+def _fix_div_n_type_exclusive(xml_text: str) -> str:
+    """Editionsrichtlinie: Struktur-divs tragen @n, Spezial-divs @type -- exklusiv.
+
+    Entfernt @n von jedem <div>, das bereits ein @type traegt. Die ZBZ-Referenz-TEIs
+    haben 0 divs mit beiden Attributen; die Pipeline erzeugte 73 (Genre-type ueber das
+    Scaffold-n="1" gesetzt, ohne n zu entfernen). Audit 2026-06-08, Regel div-n-vs-type-exclusive.
+    """
+    def mutate(root):
+        for div in root.iter(f"{{{TEI_NS}}}div"):
+            if div.get("type") and div.get("n") is not None:
+                div.attrib.pop("n", None)
+    return _transform_tree(xml_text, mutate)
+
+
+def _assign_figure_ids(xml_text: str) -> str:
+    """Editionsrichtlinie: jede <figure> traegt eine fortlaufende xml:id figN.
+
+    Die ZBZ-Referenz (z.B. 760) nummeriert figure dokumentweit fortlaufend (fig3..fig35);
+    die Pipeline emittierte 0/52 mit xml:id. Vergibt fig1, fig2, ... in Dokumentreihenfolge.
+    Audit 2026-06-08, Regel figure-xmlid.
+    """
+    def mutate(root):
+        counter = 0
+        for fig in root.iter(f"{{{TEI_NS}}}figure"):
+            counter += 1
+            fig.set(_XML_ID_ATTR, f"fig{counter}")
+    return _transform_tree(xml_text, mutate)
+
+
+def _wrap_first_title(xml_text: str, genre: str = None) -> str:
+    """Editionsrichtlinie: der Werktitel steht in <head><title type="main">.
+
+    Wickelt den Inhalt der ERSTEN <head> im Dokument in <title type="main">. Dokumentweit
+    (nicht pro Seite), daher genau ein Werktitel. Uebersprungen fuer encyclopedia (erste
+    Ueberschrift = Lemma) und review (rezensiertes Werk als <bibl>, eigener Fix) sowie fuer
+    bereits typisierte/Titel-tragende Heads. Audit 2026-06-08, Regel title-main-sub.
+    """
+    if genre in ("encyclopedia", "review"):
+        return xml_text
+
+    def mutate(root):
+        body = root.find(f".//{{{TEI_NS}}}body")
+        if body is None:
+            return
+        # Nur Struktur-Ueberschriften zaehlen (direktes Kind von <div>/<body>). body.iter()
+        # steigt rekursiv auch in <figure> ab; ein Bildunterschrift-<head> darf nicht zum
+        # Werktitel werden. ElementTree hat keine Eltern-Zeiger -> Eltern-Map aufbauen.
+        struct_parents = {f"{{{TEI_NS}}}div", f"{{{TEI_NS}}}body"}
+        parent_of = {child: parent for parent in body.iter() for child in parent}
+        head = next(
+            (h for h in body.iter(f"{{{TEI_NS}}}head")
+             if (parent_of.get(h) is not None and parent_of[h].tag in struct_parents)),
+            None,
+        )
+        if head is None or head.get("type"):
+            return
+        title_tag = f"{{{TEI_NS}}}title"
+        if head.find(title_tag) is not None:
+            return
+        title = ET.Element(title_tag)
+        title.set("type", "main")
+        title.text = (head.text or "").strip() or None
+        head.text = None
+        for child in list(head):
+            head.remove(child)
+            title.append(child)
+        head.append(title)
+    return _transform_tree(xml_text, mutate)
+
+
+def _normalize_foreign_lang(xml_text: str) -> str:
+    """Editionsrichtlinie: Sprachwechsel via <foreign> mit einheitlichem ISO-639-Code.
+
+    Normalisiert xml:lang auf <foreign> auf 639-2/T 3-Letter via normalize_lang_code
+    (de->deu, fr->fra, fre->fra, la->lat, en-US->eng, ...). Dieselbe Funktion speist
+    Validator-W18, daher meldet W18 genau das, was dieser Pass aendern wuerde -- keine
+    un-raeumbaren Dauer-Warnungen. Audit 2026-06-08, Regel foreign-lang.
+    """
+    def mutate(root):
+        for fo in root.iter(f"{{{TEI_NS}}}foreign"):
+            lang = fo.get(_XML_LANG_ATTR)
+            if not lang:
+                continue
+            norm = normalize_lang_code(lang)
+            if norm != lang:
+                fo.set(_XML_LANG_ATTR, norm)
+    return _transform_tree(xml_text, mutate)
 
 
 # ---------------------------------------------------------------------------

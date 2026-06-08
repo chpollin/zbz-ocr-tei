@@ -5,7 +5,8 @@ Erzeugt den Mapping-Table-Prompt fuer Step 2 (Gemini Refinement) der
 Unified TEI Pipeline. Kein Few-Shot-Prompting -- stattdessen eine
 vollstaendige Tabelle aller Phaenomen-zu-TEI-Zuordnungen.
 
-Quelle: knowledge/TEI-MAPPING.md (DTA-Basisformat + ZBZ-Anpassungen)
+Quellen: data/source/guidelines/Editionsrichtlinien_ZBZ.md (verbindlich)
+         + knowledge/pipeline.md, Abschnitt "TEI-Mapping" (DTA-Basisformat + ZBZ-Anpassungen)
 """
 
 import sys
@@ -24,6 +25,16 @@ MAPPING_TABLE = r"""
 
 You MUST follow these rules EXACTLY. Each row defines how a phenomenon
 maps to a TEI element with specific attributes.
+
+SCOPE OF THIS STEP (important): You refine ONE page at a time and return a single
+<div> body fragment (see OUTPUT FORMAT at the end). Therefore document-level and
+cross-page structures are NOT your job and are added later during human curation:
+  - <front>/<back> (dedications, editorial intros, translation/reprint notices)
+    -> built at document assembly from the Masterfile, not per page
+  - cross-page <anchor> for double-page figures -> needs both pages, set in curation
+  - <unclear> -> requires per-character judgement against the image, set in curation
+The rows describing these below document the TARGET edition format for reference;
+do NOT emit <front>, <back>, cross-page <anchor> or <unclear> in your per-page output.
 
 --- SECTION 1: DOCUMENT STRUCTURE ---
 

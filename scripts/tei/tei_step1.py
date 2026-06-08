@@ -214,7 +214,9 @@ def _build_tei_body(matched: list[dict], page: int, genre: str | None, is_interv
         safe_text = insert_line_breaks(safe_text, page, rid)
 
         if tag == "zb_heading" and not any_content_emitted:
-            lines.append(f"        <head{facs_attr}>")
+            # Lexikonartikel: erste Ueberschrift ist das Lemma (Richtlinie head type="lemma")
+            head_type = ' type="lemma"' if genre == "encyclopedia" else ""
+            lines.append(f"        <head{head_type}{facs_attr}>")
             lines.append(f"          {safe_text}")
             lines.append("        </head>")
             any_content_emitted = True

@@ -115,6 +115,7 @@ python -m scripts.eval.completeness_check --html                     # Vollstaen
 python -m scripts.eval.benchmark_cer --all --html                    # CER-Benchmark (25 GT-Docs)
 python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss. CER-Statistik (BCa-CIs, Paired, HCPR)
 python -m scripts.eval.corpus_audit                             # Korpus-Audit: Trichter 325->289->286->285 + Drift-Check
+python -m scripts.eval.structure_audit                          # Struktur-Audit: Pipeline-TEI vs 25 Ground Truth (Diagnose, kein Gate; E84)
 python -m pytest tests/test_cer_statistics.py -q                # 55 Tests fuer Statistik-Library
 python -m pytest tests/test_corpus_audit.py -q                  # 24 Tests: Korpus-Invarianten + delivered-Verteilung + Vollstaendigkeits-Gate
 python -m pytest tests/test_scripts_health.py -q                # Script-Health: Syntax + interne Imports (alle scripts/)
@@ -122,6 +123,7 @@ python -m pytest tests/test_tei_schema.py -q                    # Schema-Gate: t
 python -m pytest tests/test_tei_header.py -q                    # teiHeader-Liefer-Vertrag: idno + biblStruct + langUsage (E69)
 python -m pytest tests/test_tei_validator.py -q                 # Validator: Referenz-CER in Prozent (O24/E69)
 python -m pytest tests/test_pb_split.py -q                      # <pb>-Segmentierung: pb_split.py byte-identisch (E69)
+python -m pytest tests/test_tei_conformance.py -q               # Konformitaets-Fixes: div-n/type, figure-xmlid, head-lemma, title-main, foreign-lang (E84)
 ```
 
 Output `docs/data/cer_statistics.json` (regenerierbar, derzeit nicht eingecheckt). Das interaktive CER-Dashboard wurde mit E56 abgeschafft. Methodik: [knowledge/quality.md §CER-Methodik](knowledge/quality.md).

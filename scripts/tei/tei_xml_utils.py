@@ -10,6 +10,44 @@ import xml.etree.ElementTree as ET
 from scripts.config import TEI_NS
 
 
+# ISO-639 Sprachcode-Normalisierung auf 639-2/T 3-Letter (Projektkonvention: fra/deu/nld/ell
+# statt der B-Varianten fre/ger/dut/gre). EINZIGE Quelle der Wahrheit fuer die <foreign>-
+# Normalisierung (tei_step3._normalize_foreign_lang) UND die Validator-Warnung W18 -- beide
+# rufen normalize_lang_code, damit "was der Pass aendert" und "was W18 meldet" deckungsgleich
+# sind. Der teiHeader-langUsage-Pfad (tei_step3._language_idents) bleibt bewusst getrennt
+# (anderer Liefer-Vertrag, eigenes Test-Gate E69).
+_LANG_B2T = {"fre": "fra", "ger": "deu", "dut": "nld", "gre": "ell"}
+_LANG_2TO3_FOREIGN = {
+    "fr": "fra", "de": "deu", "en": "eng", "it": "ita",
+    "la": "lat", "es": "spa", "el": "ell", "nl": "nld",
+    "pt": "por", "ru": "rus", "pl": "pol", "cs": "ces",
+    "da": "dan", "sv": "swe", "fi": "fin", "hu": "hun",
+    "ro": "ron", "tr": "tur", "ca": "cat",
+}
+
+
+def normalize_lang_code(raw):
+    """Kanonische ISO-639-2/T 3-Letter-Form fuer einen xml:lang-Wert auf <foreign>.
+
+    Behandelt Gross-/Kleinschreibung, eckige Klammern, B->T-Varianten (fre->fra), bekannte
+    2-Letter-Codes (fr->fra, la->lat) und BCP-47-Region-Subtags (en-US -> eng). Liefert den
+    Eingang UNVERAENDERT zurueck, wenn keine Normalisierung bekannt ist -- dadurch melden
+    _normalize_foreign_lang und Validator-W18 exakt dieselbe Menge (kein un-raeumbarer Dauer-
+    Warnhinweis fuer Codes, die der Pass ohnehin nicht heben koennte).
+    """
+    if not raw:
+        return raw
+    c = raw.strip().strip("[]").lower()
+    primary = c.split("-")[0]
+    if primary in _LANG_B2T:
+        return _LANG_B2T[primary]
+    if len(primary) == 2 and primary in _LANG_2TO3_FOREIGN:
+        return _LANG_2TO3_FOREIGN[primary]
+    if len(primary) == 3 and primary.isalpha():
+        return primary
+    return c if c != raw else raw
+
+
 def make_element(tag: str, tail: str = None, **attribs):
     """Erzeugt ein ET.Element mit optionalem tail und Attributen."""
     elem = ET.Element(tag)
