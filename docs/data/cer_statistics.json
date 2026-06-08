@@ -2,9 +2,9 @@
   "schema_version": "0.3",
   "meta": {
     "tool_version": "0.1.0",
-    "git_sha": "f70b8891580a8c68d7c32ec30cfadc78ac8f4341",
+    "git_sha": "a5b53fad91c4701b517a753e35d66044183cbb68",
     "git_dirty": true,
-    "generated_at": "2026-06-08T15:15:09.908441+00:00",
+    "generated_at": "2026-06-08T16:45:23.925276+00:00",
     "python_version": "3.11.9",
     "numpy_version": "2.3.5",
     "scipy_version": "1.17.0",
@@ -104,21 +104,21 @@
   "overall": {
     "end_to_end_fidelity": {
       "n": 25,
-      "mean": 0.027881,
+      "mean": 0.027136,
       "mean_ci95": [
-        0.018515,
-        0.038998
+        0.017694,
+        0.038213
       ],
-      "median": 0.015798,
+      "median": 0.013988,
       "median_ci95": [
         0.010889,
-        0.029407
+        0.026102
       ],
-      "std": 0.0267,
+      "std": 0.026753,
       "min": 0.003043,
       "max": 0.11592,
       "q1": 0.01059,
-      "q3": 0.036068,
+      "q3": 0.029407,
       "ci_method": "Doc-level Perzentil-Bootstrap (block=doc, n=25, ALLE Docs), B=10000",
       "definition": "PRIMAER. OCR-/Transkriptionstreue: Substitutionen + kleine Indels + Loeschungen. Grosse Pipeline-Einfuegungen (Mehrtext ggue. der selektiven Referenz) ausgeschlossen. Ueber ALLE Docs, kein Scope-Filter."
     },
@@ -144,17 +144,17 @@
     },
     "end_to_end": {
       "n": 25,
-      "mean": 0.190184,
+      "mean": 0.189438,
       "mean_ci95": [
-        0.103536,
-        0.301053
+        0.102563,
+        0.300909
       ],
       "median": 0.121272,
       "median_ci95": [
         0.026102,
         0.219128
       ],
-      "std": 0.259815,
+      "std": 0.260247,
       "min": 0.007646,
       "max": 1.132849,
       "q1": 0.024177,
@@ -164,17 +164,17 @@
     },
     "end_to_end_casefold": {
       "n": 25,
-      "mean": 0.189477,
+      "mean": 0.188734,
       "mean_ci95": [
-        0.101117,
-        0.30065
+        0.100069,
+        0.300105
       ],
       "median": 0.11982,
       "median_ci95": [
         0.026102,
         0.218725
       ],
-      "std": 0.260187,
+      "std": 0.260619,
       "min": 0.00552,
       "max": 1.132849,
       "q1": 0.024177,
@@ -208,10 +208,10 @@
     "language": {
       "fra": {
         "n": 18,
-        "mean": 0.209652,
+        "mean": 0.208616,
         "mean_ci95": [
-          0.091647,
-          0.359851
+          0.090261,
+          0.358796
         ],
         "median": 0.083323,
         "median_ci95": [
@@ -275,15 +275,15 @@
       },
       "C": {
         "n": 2,
-        "mean": 0.038959,
+        "mean": 0.029637,
         "mean_ci95": [
-          0.018176,
-          0.059742
+          0.014516,
+          0.044757
         ],
-        "median": 0.038959,
+        "median": 0.029637,
         "median_ci95": [
-          0.018176,
-          0.059742
+          0.014516,
+          0.044757
         ]
       }
     },
@@ -316,14 +316,14 @@
       },
       "book": {
         "n": 5,
-        "mean": 0.078719,
+        "mean": 0.07499,
         "mean_ci95": [
-          0.02519,
-          0.132248
+          0.020729,
+          0.130917
         ],
-        "median": 0.059742,
+        "median": 0.044757,
         "median_ci95": [
-          0.014927,
+          0.014516,
           0.169455
         ]
       },
@@ -364,15 +364,15 @@
     ],
     "results": {
       "raw": {
-        "mean": 0.041607,
+        "mean": 0.040861,
         "mean_ci95": [
-          0.023445,
-          0.065667
+          0.022777,
+          0.064914
         ],
         "median": 0.01833,
         "median_ci95": [
           0.009577,
-          0.051493
+          0.044757
         ],
         "n": 25,
         "mean_diff_to_raw": 0.0,
@@ -382,15 +382,15 @@
         ]
       },
       "nfc": {
-        "mean": 0.041607,
+        "mean": 0.040861,
         "mean_ci95": [
-          0.023503,
-          0.065006
+          0.022847,
+          0.064188
         ],
         "median": 0.01833,
         "median_ci95": [
           0.009577,
-          0.051493
+          0.044757
         ],
         "n": 25,
         "mean_diff_to_raw": 0.0,
@@ -400,15 +400,15 @@
         ]
       },
       "nfc_hyphen": {
-        "mean": 0.041607,
+        "mean": 0.040861,
         "mean_ci95": [
-          0.023645,
-          0.065334
+          0.022897,
+          0.064718
         ],
         "median": 0.01833,
         "median_ci95": [
           0.009577,
-          0.051493
+          0.044757
         ],
         "n": 25,
         "mean_diff_to_raw": 0.0,
@@ -418,21 +418,21 @@
         ]
       },
       "nfc_hyphen_case": {
-        "mean": 0.040859,
+        "mean": 0.040115,
         "mean_ci95": [
-          0.023025,
-          0.065532
+          0.022346,
+          0.064869
         ],
         "median": 0.01833,
         "median_ci95": [
           0.009253,
-          0.05109
+          0.043226
         ],
         "n": 25,
-        "mean_diff_to_raw": -0.000748,
+        "mean_diff_to_raw": -0.000746,
         "diff_ci95_to_raw": [
-          -0.001196,
-          -0.00037
+          -0.001194,
+          -0.000367
         ]
       }
     },
@@ -447,13 +447,13 @@
     "n_better": 16,
     "n_worse": 9,
     "n_unchanged": 0,
-    "mean_diff": -0.09375,
+    "mean_diff": -0.094496,
     "mean_diff_ci95": [
-      -0.19174,
-      -0.011508
+      -0.192789,
+      -0.012108
     ],
     "p_bootstrap_two_sided": 0.013,
-    "interpretation": "Pipeline (E2E) ist im Mittel 9.37pp besser als reine Mistral-OCR. In 16/25 Docs verbessert die Pipeline gegenueber dem OCR."
+    "interpretation": "Pipeline (E2E) ist im Mittel 9.45pp besser als reine Mistral-OCR. In 16/25 Docs verbessert die Pipeline gegenueber dem OCR."
   },
   "stability": {
     "status": "open",
@@ -486,7 +486,7 @@
       "by_language": {
         "fra": {
           "expected_count": 18970,
-          "observed_count": 19873,
+          "observed_count": 20012,
           "rate": 0.995169,
           "rate_ci95": [
             0.985507,
@@ -517,10 +517,10 @@
       "definition": "HCPR-Adaption nach Levchenko 2025 (arXiv:2510.06743 §3): char-class-weighted preservation rate ueber 8 Diakritik-Klassen (fr_acute_grave, fr_circumflex, fr_diaeresis, fr_cedilla, fr_oe, de_umlaut, de_eszett, ae_ligature). Pro Klasse: min(hyp/ref, 1.0). HCPR = Mittel der Klassen-Raten ueber im Doc vorhandene Klassen.",
       "by_language": {
         "fra": {
-          "score": 0.995344,
+          "score": 0.995829,
           "score_ci95": [
-            0.990479,
-            0.999145
+            0.990981,
+            0.999357
           ],
           "n_docs": 18
         },
@@ -534,10 +534,10 @@
         }
       },
       "overall": {
-        "score": 0.996303,
+        "score": 0.996652,
         "score_ci95": [
-          0.992694,
-          0.99905
+          0.993103,
+          0.999273
         ]
       }
     },
@@ -558,21 +558,21 @@
     },
     "absolute_counts": {
       "diacritics": 141,
-      "punctuation": 284,
+      "punctuation": 286,
       "hyphenation": 17,
-      "whitespace": 2963,
+      "whitespace": 2974,
       "ocr_artifact": 30,
-      "layout": 71,
-      "other": 2034
+      "layout": 63,
+      "other": 1958
     },
     "per_doc_normalized_mean": {
-      "diacritics": 0.006059,
-      "punctuation": 0.016228,
-      "hyphenation": 0.002174,
-      "whitespace": 0.087792,
-      "ocr_artifact": 0.073273,
-      "layout": 0.102445,
-      "other": 0.712027
+      "diacritics": 0.006172,
+      "punctuation": 0.01643,
+      "hyphenation": 0.002164,
+      "whitespace": 0.089518,
+      "ocr_artifact": 0.075608,
+      "layout": 0.097872,
+      "other": 0.712236
     }
   },
   "per_doc": [
@@ -853,13 +853,13 @@
       "doc_id": "1520",
       "n_pages": 0,
       "n_ref_chars": 281496,
-      "cer_end_to_end": 0.059742,
+      "cer_end_to_end": 0.044757,
       "cer_end_to_end_ci95": [
-        0.059742,
-        0.059742
+        0.044757,
+        0.044757
       ],
-      "cer_fidelity": 0.036068,
-      "scope_insertion_rate": 0.023674,
+      "cer_fidelity": 0.021087,
+      "scope_insertion_rate": 0.02367,
       "cer_ocr_only": 0.519931,
       "cer_ocr_only_ci95": [
         0.519931,
@@ -873,18 +873,18 @@
       "top_3_error_categories": [
         {
           "category": "other",
-          "count": 572,
-          "share": 0.650116
-        },
-        {
-          "category": "layout",
-          "count": 33,
-          "share": 0.149313
+          "count": 536,
+          "share": 0.600286
         },
         {
           "category": "ocr_artifact",
           "count": 11,
-          "share": 0.115657
+          "share": 0.154298
+        },
+        {
+          "category": "layout",
+          "count": 28,
+          "share": 0.130963
         }
       ]
     },
@@ -1243,12 +1243,12 @@
       "doc_id": "40",
       "n_pages": 147,
       "n_ref_chars": 198886,
-      "cer_end_to_end": 0.018176,
+      "cer_end_to_end": 0.014516,
       "cer_end_to_end_ci95": [
-        0.018176,
-        0.018176
+        0.014516,
+        0.014516
       ],
-      "cer_fidelity": 0.015798,
+      "cer_fidelity": 0.012138,
       "scope_insertion_rate": 0.002378,
       "cer_ocr_only": 0.737553,
       "cer_ocr_only_ci95": [
@@ -1263,18 +1263,18 @@
       "top_3_error_categories": [
         {
           "category": "other",
-          "count": 204,
-          "share": 0.737483
-        },
-        {
-          "category": "layout",
-          "count": 3,
-          "share": 0.095989
+          "count": 164,
+          "share": 0.792518
         },
         {
           "category": "ocr_artifact",
           "count": 1,
-          "share": 0.078285
+          "share": 0.098026
+        },
+        {
+          "category": "whitespace",
+          "count": 255,
+          "share": 0.088327
         }
       ]
     },
@@ -3928,52 +3928,52 @@
       "n": 25,
       "per_proxy": {
         "hit_rate": {
-          "pearson": -0.1897,
-          "pearson_p": 0.3637,
-          "spearman": -0.4608,
-          "spearman_p": 0.0204,
+          "pearson": -0.1909,
+          "pearson_p": 0.3608,
+          "spearman": -0.4685,
+          "spearman_p": 0.0182,
           "loocv_r2": -0.1357
         },
         "oov_rate": {
-          "pearson": 0.1897,
-          "pearson_p": 0.3637,
-          "spearman": 0.4608,
-          "spearman_p": 0.0204,
+          "pearson": 0.1909,
+          "pearson_p": 0.3608,
+          "spearman": 0.4685,
+          "spearman_p": 0.0182,
           "loocv_r2": -0.1357
         },
         "suspicious_char_ratio": {
-          "pearson": 0.1393,
-          "pearson_p": 0.5067,
-          "spearman": 0.4789,
-          "spearman_p": 0.0154,
-          "loocv_r2": -2.8487
+          "pearson": 0.1399,
+          "pearson_p": 0.5047,
+          "spearman": 0.471,
+          "spearman_p": 0.0175,
+          "loocv_r2": -2.8521
         }
       },
       "composite": {
         "method": "linear regression OLS, features standardized",
         "weights": {
-          "hit_rate_z": -0.055661,
-          "suspicious_char_ratio_z": -0.009181,
-          "intercept": 0.190184
+          "hit_rate_z": -0.056199,
+          "suspicious_char_ratio_z": -0.00939,
+          "intercept": 0.189438
         },
-        "in_sample_r2": 0.0365,
-        "loocv_r2": -2.5323,
+        "in_sample_r2": 0.0369,
+        "loocv_r2": -2.534,
         "loocv_r2_ci95": [
-          0.0042,
-          0.5936
+          0.0043,
+          0.5937
         ]
       }
     },
     "corpus_estimate": {
       "method": "composite proxy (hit_rate + suspicious_char_ratio) via OLS, propagated regression uncertainty (Singh 2025)",
-      "estimated_mean_cer": 0.235859,
+      "estimated_mean_cer": 0.235554,
       "estimated_mean_inner_ci95": [
-        0.210928,
-        0.264556
+        0.210376,
+        0.264527
       ],
       "estimated_mean_total_ci95": [
         0.0,
-        0.918484
+        0.920093
       ],
       "estimated_distribution": {
         "bucket_edges_cer": [
@@ -4004,11 +4004,11 @@
           0,
           0,
           1,
-          186,
-          89
+          190,
+          85
         ]
       },
-      "caveat": "Schaetzung auf Basis 2 validierter Proxies (hit_rate, suspicious_char_ratio). In-Sample-R² = 0.036, LOOCV-R² = -2.532 (n=25). Geringe Validierungsguete -> breite Total-CI. KEIN direkter CER. ngram_loglik / punct_sanity / sentence_length_kl als Proxies deferred."
+      "caveat": "Schaetzung auf Basis 2 validierter Proxies (hit_rate, suspicious_char_ratio). In-Sample-R² = 0.037, LOOCV-R² = -2.534 (n=25). Geringe Validierungsguete -> breite Total-CI. KEIN direkter CER. ngram_loglik / punct_sanity / sentence_length_kl als Proxies deferred."
     }
   }
 }

@@ -47,28 +47,28 @@ Asymmetrie ist beabsichtigt: vollstaendiger sein als die Referenz ist kein Fehle
 
 | Metrik | Mean | Median | 95%-CI (Mean) | misst |
 |---|---|---|---|---|
-| **Fidelity-CER (PRIMAER)** | **2.79 %** | **1.58 %** | [1.85 %, 3.90 %] | echte OCR-/Transkriptionstreue |
-| Volltext-CER (Diagnose, scope-inkl.) | 19.02 % | 12.13 % | [10.35 %, 30.11 %] | volle Divergenz inkl. Mehrtext — **KEIN Qualitaetsmass** |
+| **Fidelity-CER (PRIMAER)** | **2.71 %** | **1.40 %** | [1.77 %, 3.82 %] | echte OCR-/Transkriptionstreue |
+| Volltext-CER (Diagnose, scope-inkl.) | 18.94 % | 12.13 % | [10.26 %, 30.09 %] | volle Divergenz inkl. Mehrtext — **KEIN Qualitaetsmass** |
 | Scope-Rate (Mehrtext) | 16.23 % | 7.06 % | — | Pipeline-Mehrtext (kein Fehler) |
 
 Alle Werte ueber **alle 25 Docs** (E73: das fruehere n=19-scope-clean-Subset wurde entfernt, da es keinem reproduzierbaren Kriterium folgte). Volltext/Scope sind Diagnose-Groessen; das Qualitaetsmass ist die Fidelity-CER.
 
-Der Fidelity-Median **1.58 %** (Stand 2026-06-08) wird sauber gemessen: ohne deflationaeres
+Der Fidelity-Median **1.40 %** (Stand 2026-06-08) wird sauber gemessen: ohne deflationaeres
 Trimming, ohne zirkulaeren Ausschluss, case-sensitiv, ueber das ganze Korpus.
 
-Stand 2026-06-08: Bei Doc 30 wurde ein OCR-Blockduplikat (ein doppelt erfasster Absatz) entfernt -- das senkte dessen Fidelity-CER von 18.25 % auf 11.59 % und den Korpus-Mean auf 3.99 % (damaliger Stand; die anschliessende Fussnoten-Demotion vom 2026-06-08, siehe Korrektur unten, senkte ihn weiter auf 2.79 % / Median 1.58 %). Eine **automatische** Block-Deduplikation existiert derzeit nicht in der Pipeline (das in Anhang A des Arbeitsberichts und in CLAUDE.md referenzierte `scripts/ocr/ocr_dedup.py` ist nicht im Repo). Bis eine Dedup-Stufe existiert, ist diese eine Korrektur manuell; alle uebrigen 24 Docs sind reines Pipeline-Output.
+Stand 2026-06-08: Bei Doc 30 wurde ein OCR-Blockduplikat (ein doppelt erfasster Absatz) entfernt -- das senkte dessen Fidelity-CER von 18.25 % auf 11.59 % und den Korpus-Mean auf 3.99 % (damaliger Stand; die anschliessenden Fussnoten-Demotionen vom 2026-06-08 (290/1910/90, dann 40/1520; siehe Korrektur unten) senkten ihn weiter auf 2.71 % / Median 1.40 %). Eine **automatische** Block-Deduplikation existiert derzeit nicht in der Pipeline (das in Anhang A des Arbeitsberichts und in CLAUDE.md referenzierte `scripts/ocr/ocr_dedup.py` ist nicht im Repo). Bis eine Dedup-Stufe existiert, ist diese eine Korrektur manuell; alle uebrigen 24 Docs sind reines Pipeline-Output.
 
 Einordnung **print-kalibriert** (E80): Die Transkribus-Qualitaetsbaender (<2 % exzellent, 2-5 % gut)
 stammen primaer aus der HTR-Praxis (Handschrift); fuer eine reine **Druck**-OCR-Aufgabe schmeicheln
 sie, weil dort die Messlatte hoeher liegt. Massgeblich ist daher der **Print-OCR-Literaturvergleich**
-(Abschnitt „Vergleich gegen Stand der Forschung" unten): Median 1.58 % liegt **zwischen** dem besten
+(Abschnitt „Vergleich gegen Stand der Forschung" unten): Median 1.40 % liegt **zwischen** dem besten
 spezialisierten Print-Stack (Transkribus + LLM-Post 0.84 %) und Transkribus allein (3.67 %) -- solide
 fuer historischen Druck, aber **nicht** an der Spitze. Zusaetzlich misst die CER gegen eine selbst
 fehlerbehaftete Transkribus-Referenz (siehe Doc 1440), ist also eine Obergrenze der wahren Fehlerrate.
 
 ### Korrektur 2026-06-08: referenz-verifizierte Fussnoten-Demotion
 
-Drei Objekte trugen Fliesstext faelschlich als `<note place="foot">` (Gemini Stufe 6); da der
+Fuenf Objekte trugen Fliesstext faelschlich als `<note place="foot">` (Gemini Stufe 6); da der
 Vergleich Fussnoten ausschliesst (E5), zaehlte dieser Text als Loeschung und blaehte ihre CER auf.
 Verifiziert gegen die ZBZ-Referenz (der Text steht dort im Body) wurden sie nach `<p>` demoted --
 evidenzbasiert, nicht geraten. Ergebnis (gegen `zbz_hersch.rng` validiert, Mirror regeneriert):
@@ -78,18 +78,20 @@ evidenzbasiert, nicht geraten. Ergebnis (gegen `zbz_hersch.rng` validiert, Mirro
 | 290 | 2 (1352 + 685) | 17,7 % | 2,6 % |
 | 1910 | 1 (912) | 16,4 % | 7,7 % |
 | 90 | 1 (609) | 7,6 % | 1,4 % |
+| 40 | 1 (743) | 1,6 % | 1,2 % |
+| 1520 | 9 (233-779) | 3,6 % | 2,1 % |
 
-**Korpus-Fidelity neu: Mean 2,79 % / Median 1,58 % / micro 2,70 % (n=25).** Die Headline-Tabelle
+**Korpus-Fidelity neu: Mean 2,71 % / Median 1,40 % / micro 2,13 % (n=25).** Die Headline-Tabelle
 oben ist mit dem `cer_statistics_full`-Lauf vom 2026-06-08 auf diesen Stand aktualisiert
-(BCa-CI [1,85 %, 3,90 %]); der Pipeline-Mehrwert gegenueber reiner OCR ist dadurch signifikant
-geworden (-9,38 pp, p=0,013). Diskriminator: eine `<note place="foot">` ist verifizierter
+(BCa-CI [1,77 %, 3,82 %]); der Pipeline-Mehrwert gegenueber reiner OCR ist dadurch signifikant
+geworden (-9,45 pp, p=0,013). Diskriminator: eine `<note place="foot">` ist verifizierter
 Fliesstext, wenn ihre ersten 120 Zeichen im Body der Referenz vorkommen. Vollstaendige Worklist der
 verbleibenden Faelle (6 referenz-verifiziert zurueckgehalten, 11 zur Handpruefung, 1 Seitenzahl):
 [reports/fussnoten-kuration-2026-06-08.md](../reports/fussnoten-kuration-2026-06-08.md).
 
 ### Pipeline-Mehrwert (Paired, like-for-like Fidelity)
 
-Pipeline-E2E vs. reine Mistral-OCR: **-9.38 pp** (p = 0.013, n=25, **signifikant**
+Pipeline-E2E vs. reine Mistral-OCR: **-9.45 pp** (p = 0.013, n=25, **signifikant**
 bei alpha=0.05; Stand 2026-06-08 nach der Fussnoten-Demotion). Die fruehere Angabe „-14.83 pp,
 p=0.0004" war ein Artefakt des getrimmten/kleingeschriebenen Vergleichs und ist **zurueckgezogen**;
 der Zwischenstand vor der Demotion war -7.90 pp (p=0.07, n.s.). Die Demotion verbesserte die
@@ -556,7 +558,7 @@ waren (CER >1 = Hyp-Laenge >> Ref-Laenge auf der "matched" Page).
 
 **Loesung:** `evaluate_tei_vs_tei()` nutzt content-aligned Vergleich: bei Length-Ratio > 1.05
 ruft `find_best_alignment()` auf, Substring-Matching ueber das ganze Dokument. Immun gegen
-Page-Numbering-Drift. Nach Wechsel: Mean 3.99% / Median 1.82% (n=18, scope-clean -- historischer Zwischenstand vom 2026-04-27; aktuelle Headline siehe oben: Mean 2.79% / Median 1.58%). Drift-Check:
+Page-Numbering-Drift. Nach Wechsel: Mean 3.99% / Median 1.82% (n=18, scope-clean -- historischer Zwischenstand vom 2026-04-27; aktuelle Headline siehe oben: Mean 2.71% / Median 1.40%). Drift-Check:
 nur 1 Doc weicht noch >5pp ab → **Pipeline ist tatsaechlich stabil**, der "Drift"-Eindruck war
 ein Mess-Artefakt.
 

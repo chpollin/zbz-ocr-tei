@@ -25,8 +25,7 @@ Referenz, ist er beweisbar Fliesstext -> Demotion ist verifiziert, nicht geraten
 |---|---|---|
 | KEIN Eingriff: Quellenangabe `(Philosophie, I, p. 27)` | 26 | bleibt Fussnote |
 | KEIN Eingriff: kurz | 8 | bleibt Fussnote |
-| DEMOTE referenz-verifiziert -- **bereits angewandt** | 3 | erledigt (s.u.) |
-| DEMOTE referenz-verifiziert -- **zurueckgehalten** | 6 | ZBZ-Freigabe |
+| DEMOTE referenz-verifiziert -- **angewandt (alle)** | 14 Bloecke / 5 Docs | erledigt (s.u.) |
 | PRUEFEN (nicht im Ref-Body) | 11 | Handentscheid + Bild |
 | PAGENUM (reine Zahl) | 1 | Seitenzahl, keine Fussnote |
 
@@ -39,26 +38,23 @@ Note -> `<p>` in `output/tei_final/`, gegen Schema validiert, Mirror regeneriert
 | 290 | fn3-1 + fn4-1 | 1352 + 685 | 17,7 % | 2,6 % |
 | 1910 | fn4-3 | 912 | 16,4 % | 7,7 % |
 | 90 | fn6-1 | 609 | 7,6 % | 1,4 % |
+| 40 | fn10-1 | 743 | 1,6 % | 1,2 % |
+| 1520 | fn81-2 u.a. (9) | 233-779 | 3,6 % | 2,1 % |
 
-Korpus-Fidelity-Mittel **3,99 % -> 2,79 %**, Median **1,83 % -> 1,58 %**, micro 2,70 %.
-(290 fn4-1 wurde per strengem 200+-Zeichen-Treffer im Ref-Body nachverifiziert; der Erste-120-
-Zeichen-Check hatte ihn nur wegen OCR-Rauschen am Blockanfang verfehlt.)
+Korpus-Fidelity-Mittel **3,99 % -> 2,71 %**, Median **1,83 % -> 1,40 %**, micro 2,13 %
+(BCa-CI [1,77 %, 3,82 %], kanonischer cer_statistics_full-Lauf 2026-06-08).
+40 + 1520 wurden auf Operator-Anweisung („setze alles um", 2026-06-08) per `--include-hold`
+angewandt -- referenz-verifiziert und **voll reversibel** (Backup, idempotentes Tool, Git).
 
-## B. Referenz-verifiziert, aber zurueckgehalten (ZBZ-Freigabe noetig)
+## B. Referenz-verifiziert -- angewandt (vormals zurueckgehalten; ZBZ-Bestaetigung offen)
 
-Die Referenz fuehrt diese Bloecke als Body -- aber Doc 40 und 1520 enthalten **plausibel echte
-lange Zitat-Fussnoten**, die die Referenz nur eingeebnet haben koennte. Editorischer Entscheid
-liegt bei ZBZ. Demotion aller sechs senkt den Korpus-Mittelwert weiter auf ~2,9 % (1520:
-3,6 -> 2,7 %, 40: 1,6 -> 1,2 %).
-
-| Doc | n | Laenge | Textanfang |
-|---|---|---|---|
-| 40 | 1 | 743 | On me rappelait sans cesse hors de cette contemplation... |
-| 1520 | 1 | 263 | Chaque mode de l'englobant en indique un autre... |
-| 1520 | 1 | 536 | De l'etre du monde, par une rupture (es durchbrechend)... |
-| 1520 | 1 | 538 | La philosophie, contrairement a la foi revelee... |
-| 1520 | 2 | 557 | L'idee qu'une philosophie universelle est en train de naitre... |
-| 1520 | 2 | 657 | La communication au sens de la vie avec autrui... |
+Doc 40 (1 Block) und 1520 (9 Bloecke) waren referenz-verifiziert, aber editorisch heikel
+(1520 = Jaspers-Anthologie mit plausibel echten langen Zitat-Fussnoten). Auf Operator-Anweisung
+„setze alles um" (2026-06-08) per `tei_footnote_demote --apply --include-hold` angewandt, beide
+schema-valide. **Voll reversibel:** Backup unter `output/_backup_pre_footnote_demote/`, idempotentes
+Tool, Git. Fuer ZBZ bleibt der Body/Fussnote-Entscheid zu bestaetigen; bei Ablehnung Rueckbau aus
+dem Backup. Das `>=150`-Zeichen-Schiebefenster fand in 1520 **9** statt der frueher per
+Erste-120-Check geschaetzten 5 Bloecke (es erkennt auch Bloecke mit OCR-Rauschen am Anfang).
 
 ## C. Pruefen (nicht im Ref-Body -- echte Fussnote ODER ausserhalb des Referenz-Ausschnitts)
 
