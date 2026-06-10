@@ -1,23 +1,120 @@
 ---
+title: Arbeitsjournal
 type: journal
+project:
+  name: zbz-ocr-tei
+  repository: https://github.com/chpollin/zbz-ocr-tei
+status: active
+language: de
 created: 2026-01-29
 updated: 2026-06-10
 tags: [zbz-ocr-tei, journal]
-status: active
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+template:
+  name: Vorlage Journal
+  version: 0.2
+  url: https://dhcraft.org/Promptotyping/promptotyping-document/journal
+related: [decisions, index]
 ---
 
 # Arbeitsjournal
 
-Kompakter chronologischer Ueberblick aller Arbeitssitzungen. Eine Zeile pro Sitzung;
-Entscheidungen und Begruendungen in [decisions.md](decisions.md), Code-Aenderungen im Git-Log.
+Chronologische Entwicklungsgeschichte des Projekts, neueste Eintraege zuerst. Das Journal
+verdichtet je Sitzung Anlass, Verlauf, Entscheidungen und Stand. Es ist weder Git-Log noch
+Sitzungsprotokoll: einzelne Commits stehen in der Git-History, Entscheidungs-Begruendungen
+im Register [decisions.md](decisions.md).
+
+## Format-Kontrakt
+
+Jeder Eintrag wird am Sitzungsende geschrieben; beim Wiedereinstieg wird zuerst der oberste
+Eintrag gelesen. Neue Eintraege stehen immer direkt unter der Ueberschrift "Eintraege".
+Bestehende Eintraege werden nie nachtraeglich geaendert; Korrekturen sind neue Eintraege
+mit Verweis auf den alten.
+
+Feste Feldreihenfolge pro Eintrag: **Anlass** (1 Satz: warum diese Arbeit jetzt),
+**Ziel** (1 Satz), **Verlauf** (1 bis 4 Absaetze, mit Belegstellen), **Entscheidungen**
+(je Punkt: was, warum, verworfene Alternative; Registernummer falls vorhanden),
+**Stand** (1 Absatz, allein lesbar; optional Commit-Hash als Savepoint),
+**Naechste Schritte** (nummeriert), **Dead Ends** (optional, mit Begruendung).
+Pflichtfelder: Anlass, Ziel, Verlauf, Stand, Naechste Schritte.
+
+Formregeln: formell und projektbezogen; Fachbegriffe und Abkuerzungen beim ersten
+Auftreten im Eintrag erklaeren; Zahlen mit Bezugsgroesse. Nicht hinein gehoeren:
+Spezifikation (gehoert in [decisions.md](decisions.md) bzw. die Fach-Docs), Code-Diffs
+und Commit-Texte, stundengenaue Protokolle, Selbstbewertungen, Notizen ueber die Pflege
+der Dokumentation selbst, Personennamen (Rollen und Organisationen verwenden).
+
+Die Sitzungen 1 bis 68 stehen unveraendert im Kompakt-Archiv weiter unten (eine Zeile
+pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
+
+## Eintraege
+
+### 2026-06-10 Sitzung 69: Repository-Audit mit Umsetzungswelle (E86)
+
+**Anlass.** Vor der ZBZ-Abnahme sollte das gesamte Repository begutachtet werden
+(Code, Prozesse, Dokumentation), einschliesslich bekannter Fehler im Viewer-Frontend.
+
+**Ziel.** Alle verifizierten Befunde in einem Durchgang beheben und die Wissensbasis
+redundanzfrei auf den tatsaechlichen Projektstand bringen.
+
+**Verlauf.** Im Viewer wurde das Datenverlust-Risiko des XML-Modus behoben: Der Modus
+lud bisher nur die Einzelseite, waehrend der Speichern-Knopf das Gesamtdokument
+`output/tei_final/{doc}_final.xml` ueberschreibt; jetzt laedt er das Gesamtdokument,
+und ein Save-Guard weist unvollstaendige TEI-Inhalte ab. Dazu kamen die uebrigen
+Befunde der Frontend-Gap-Analyse vom 2026-06-07: ein "Gehe zu Seite"-Feld mit
+Tastaturnavigation, aktuelle Status-Ampeln im Katalog (der Katalog laedt die
+Pro-Objekt-Manifeste nach und korrigiert damit das veraltete Aggregat), klare
+Fehlermeldungen mit Wiederholen-Knopf, Fokus-Fuehrung im Modal sowie
+Bedienbarkeit von Layout-Editor und Text-Editor per Tastatur und Screenreader.
+
+Auf Prozessseite prueft seither ein GitHub-Actions-Workflow die komplette Testsuite
+bei jedem Push und Pull Request; `requirements.txt` wurde fuer frische Umgebungen
+lauffaehig gemacht (fehlende Pakete ergaenzt, sechs ungenutzte entfernt), und zwei
+Transkribus-Skripte schliessen ihre Dateihandles jetzt auch im Fehlerfall.
+
+In der Dokumentation wurden die veralteten CER-Kennzahlen site-weit auf den kanonischen
+Stand gezogen (Fidelity-CER Mean 2,71 %, Median 1,40 %, ueber alle 25 Referenzdokumente);
+das Entscheidungsregister fuehrt die Eintraege ab E64 als Unterkapitel mit Begruendung
+und Datum; die Roadmap in workflow.md trennt Erledigtes von Offenem in verstaendlicher
+Sprache; Zustaendigkeiten sind als Rollen statt Personennamen notiert.
+
+**Entscheidungen.**
+- Der XML-Modus zeigt und speichert das Gesamtdokument (E86). Die Alternative, weiter
+  die Einzelseite zu zeigen und das Speichern zu sperren, wurde verworfen, weil der
+  Gesamtdokument-Weg dem Design der Speicherarchitektur (E72) entspricht und Kuration
+  ohne Umweg erlaubt.
+- Die vier verbliebenen Frontend-Befunde N1/N3/N6/N7 (Komfort, kein Fehlerrisiko)
+  werden bis nach der ZBZ-Abnahme zurueckgestellt, damit der Stand fuer die Abnahme
+  stabil bleibt.
+- `data/curated_tei/` wird als vorgesehen fuer kuenftig von Hand verifizierte TEI und
+  derzeit leer deklariert. Die bisherige Bezeichnung als Gold-Standard wurde verworfen,
+  weil noch keines der 285 Dokumente fachlich verifiziert ist.
+
+**Stand.** Testsuite 563 gruen, 285/285 Dokumente schema-valide, alle H- und M-Befunde
+der Gap-Analyse behoben, Wissensbasis konsistent mit dem Repo-Stand. Offen bleiben die
+zurueckgestellten N-Befunde sowie die fachliche Verifikation der Inhalte (855 von 855
+Datenstroemen stehen auf `unverifiziert`). Savepoint: Commits 52fd7733 bis 9aa7163e
+auf `cc3/session-2026-06-07`.
+
+**Naechste Schritte.**
+1. Render-Check der TEI-Daten in der teiCrafter-Integration nach Testplan T1-T9
+   (`reports/test-plan-zbz-teicrafter-2026-06-07.md`).
+2. Fachliche Kuration im Viewer beginnen (Status-Pills, Strom fuer Strom).
+3. Nach der ZBZ-Abnahme die zurueckgestellten Befunde N1/N3/N6/N7 umsetzen.
 
 ---
 
-## Juni 2026 — Abnahme-Vorbereitung
+## Kompakt-Archiv (Sitzungen 1 bis 68)
+
+Eine Zeile pro Sitzung, neueste zuerst. Begruendungen im
+[Entscheidungsregister](decisions.md), Details in der Git-History.
+
+### Juni 2026 — Abnahme-Vorbereitung
 
 | # | Datum | Thema |
 |---|---|---|
-| 69 | 2026-06-10 | Repository-Audit mit Umsetzungswelle (E86). Im Viewer das Datenverlust-Risiko des XML-Modus behoben: er laedt jetzt das Gesamtdokument, ein Save-Guard weist unvollstaendige TEI-Inhalte ab; dazu die uebrigen Befunde der Frontend-Gap-Analyse (Seitennavigation, Katalog-Statusaktualisierung, Fehlermeldungen, Tastaturbedienung, Barrierefreiheit). Ein GitHub-Actions-Test-Gate prueft seither jeden Push; `requirements.txt` fuer frische Umgebungen lauffaehig gemacht. CER-Kennzahlen site-weit auf den kanonischen Stand (Mean 2,71 %/Median 1,40 %) vereinheitlicht; Wissensbasis konsolidiert (Entscheidungsregister fuehrt E64 ff. mit Begruendung als Unterkapitel, Roadmap auf den Ist-Stand gebracht, `data/curated_tei/` als vorgesehen fuer kuenftig verifizierte TEI und derzeit leer praezisiert). Suite 563 gruen. |
 | 68 | 2026-06-08 | Doc-30-Bereinigung und Tail-Analyse (E82): ein dupliziertes OCR-Blockpaar entfernt (Fidelity-CER 18,25 -> 11,59 %). Die Analyse der verbliebenen Ausreisser zeigt strukturelle Ursachen (Fussnoten-Ueberdetektion, Scope-Differenzen, Doppelseiten), keine Schwaechen der Zeichenerkennung. Korpus-Mean 4,26 -> 3,99 % konsistent publiziert. |
 | 67 | 2026-06-08 | Transkribus-Export/Upload (E81): Pipeline-PAGE-XML rueckspielbar nach Transkribus (`edition.transkribus_export` baut Bundles, `edition.transkribus_upload` laedt via REST in eine Collection). Stichprobe 18 Docs gebaut, Doc 1500 in der Plattform verifiziert; Auth nur via Env-Vars. |
 | 66 | 2026-06-08 | CER-Einordnung print-kalibriert (E80): da der Korpus aus Druckseiten besteht, ist der Vergleich mit Handschriften-Benchmarks unangemessen; die Bewertung wurde am Print-Literaturvergleich ausgerichtet und wertende Zuschreibungen entfernt. Geaendert: quality.md, methode.html, Arbeitsbericht. |
@@ -27,9 +124,7 @@ Entscheidungen und Begruendungen in [decisions.md](decisions.md), Code-Aenderung
 | 62 | 2026-06-07 | Workflow-Status von vier auf drei Stufen kollabiert (E77): `unverifiziert\|in_arbeit\|verifiziert`, eine Farbe je Stufe (grau/gelb/gruen), rot reserviert. Backend + Frontend + CSS umgestellt, neues Gate `test_workflow_status.py`, Suite 525 gruen; keine Mirror-Regeneration noetig (alle 285 Docs standen auf `unverifiziert`). |
 | 61 | 2026-06-03 | Abnahme-Tiefenanalyse + Repo-Hygiene + MMSID-Entfernung (E76): Korpus-Invarianten am realen Datenbestand verifiziert (524 Tests gruen, 285/285 schema-valide, 0 Drift), Abnahme-Befunde dokumentiert (855 Stroeme `unverifiziert`, 195 leere Container-Titel, Doc 10 unvollstaendig). Die Projektion der Alma-Katalognummer (MMSID) in den TEI-Header wurde nach Vorlage des Spezifikations-Konflikts entfernt, da Katalog-Metadaten in der ZBZ-Domaene liegen (O8); Root-README abnahmetauglich neu gefasst. |
 
----
-
-## Mai 2026 — Viewer-Datenversorgung + Deploy-Vorbereitung + Edition-Uplift
+### Mai 2026 — Viewer-Datenversorgung + Deploy-Vorbereitung + Edition-Uplift
 
 | # | Datum | Thema |
 |---|---|---|
@@ -52,18 +147,14 @@ Entscheidungen und Begruendungen in [decisions.md](decisions.md), Code-Aenderung
 | 44 | 2026-05-25 | Befund-Fixes + Konsistenz-Refactoring: TEI-Doppelkodierung `&amp;amp;` behoben, Knowledge-Drift nach E56/E57 bereinigt, `<pb>`-Splitter balanciert jetzt `<div>`-Grenzen. Alle 4970 ausgelieferten XML wohlgeformt (vorher 327 nicht). |
 | 43 | 2026-05-25 | Viewer auf vollen Korpus erweitert (E57): Mirror-Generator fuer alle 285 Docs (8083 Layout-, 4117 OCR-, 4115 TEI-Seiten via `<pb>`-Splitting), dreistufiger Pfad-Resolver, GitHub-Pages-tauglich. Bildlieferung bleibt lokal. |
 
----
-
-## April 2026 — Frontend-Radikalkur + Wissenschaftliche CER-Re-Evaluation
+### April 2026 — Frontend-Radikalkur + Wissenschaftliche CER-Re-Evaluation
 
 | # | Datum | Thema |
 |---|---|---|
 | 42 | 2026-04-27 | Knowledge-Konsolidierung (25 auf 10 Docs) + Frontend-Radikalreduktion: Edition, Diagnostik, CER-Dashboard und Curation Editor abgeschafft, neue Single-Page-App `docs/viewer.html` (Faksimile + OCR/TEI + Layout-/Transkriptions-Editor). 9 auf 1 HTML, 23 auf 6 JS, CSS minus 84 %. E56. |
 | 41 | 2026-04-27 | CER wissenschaftlich fundiert: BCa-Bootstrap-CIs (B=10000, Seed=42), Paired-Test E2E vs OCR-only, Selektionsbias ehrlich geflaggt, Pagewise-vs-Global-Artefakt diagnostiziert und in [quality.md](quality.md) dokumentiert. E54/E55. |
 
----
-
-## Maerz 2026 — Pipeline-Konsolidierung + Edition
+### Maerz 2026 — Pipeline-Konsolidierung + Edition
 
 | # | Datum | Thema |
 |---|---|---|
@@ -93,9 +184,7 @@ Entscheidungen und Begruendungen in [decisions.md](decisions.md), Code-Aenderung
 | 11 | 2026-03-05 | Gemini-Dokumentklassifikation (E27, Stage 1a). Online-Demo (E28). Gemini OCR-Korrektur Stage 2b (E29). |
 | 9-10 | 2026-03-03–04 | docling-serve API (E24), Gemini Layout QA + Detect (E25/E26): 3 Modi (qa/detect/auto). |
 
----
-
-## Februar 2026 — Pipeline-Aufbau
+### Februar 2026 — Pipeline-Aufbau
 
 | # | Datum | Thema |
 |---|---|---|
@@ -107,7 +196,7 @@ Aeltere Detail-Eintraege im Git-Verlauf erhalten.
 
 ---
 
-## Wiederkehrende Muster
+## Learnings
 
 Aus den Sessions destillierte Beobachtungen, die fuer kuenftige Arbeit relevant bleiben:
 
@@ -127,3 +216,27 @@ Aus den Sessions destillierte Beobachtungen, die fuer kuenftige Arbeit relevant 
 - **P7** Gattungsbegriffe im Entity-Index erzeugen False Positives in ~30% der Docs.
 - **P8** Zeitungslayouts versagen systematisch (>40 Zones, OCR-Halluzinationen). ~3% des Korpus.
 - **P10** Tier-2-Docs (4-8 Seiten) haben 85%+ APPROVED-Rate, Tier-1 (1-3 Seiten) nur 40%.
+
+<!--
+Eintrags-Template zum Kopieren (neuen Eintrag direkt unter "## Eintraege" einfuegen):
+
+### YYYY-MM-DD Sitzung N: Sitzungstitel
+
+**Anlass.** [Ein Satz: warum diese Arbeit jetzt.]
+
+**Ziel.** [Ein Satz: was am Ende stehen sollte.]
+
+**Verlauf.** [Ein bis vier Absaetze. Was tatsaechlich geschah, mit Belegstellen.
+Fachbegriffe beim ersten Auftreten erklaeren.]
+
+**Entscheidungen.**
+- [Was, warum, verworfene Alternative. Registernummer falls vorhanden.]
+
+**Stand.** [Ein Absatz, allein lesbar: was steht, was ist offen.
+Optional Commit-Hash als Savepoint.]
+
+**Naechste Schritte.**
+1. [Konkret genug als Sitzungseinstieg.]
+
+**Dead Ends.** [Optional: versucht und verworfen, mit Begruendung.]
+-->

@@ -4,7 +4,7 @@ Projekt-Konstitution. Operative Regeln und Konventionen, die bei jedem Pipeline-
 
 ## Workflow
 
-1. **Journal fuehren:** Jede Sitzung dokumentieren in [knowledge/journal.md](knowledge/journal.md) — eine Zeile pro Sitzung, kompakter Ueberblick. Details ins Git-Log.
+1. **Journal fuehren:** jede Sitzung als Eintrag nach der Journal-Vorlage v0.2 in [knowledge/journal.md](knowledge/journal.md) dokumentieren: neuester Eintrag ganz oben unter "Eintraege", Felder Anlass / Ziel / Verlauf / Entscheidungen / Stand / Naechste Schritte (Format-Kontrakt + kopierbares Eintrags-Template stehen im Journal selbst). Sitzungen 1-68 bleiben unveraendert im Kompakt-Archiv.
 2. **Wissen in `knowledge/`:** nicht in CLAUDE.md duplizieren. Single Source of Truth pro Fakt.
 3. **Output nicht versionieren:** generierte Dateien gehoeren in `output/` (gitignored). Ausnahme: `data/curated_tei/` (vorgesehen fuer von Hand verifizierte TEI, derzeit leer).
 4. **Vor Aenderungen testen:** Evaluierung laufen lassen, Metriken vergleichen.
