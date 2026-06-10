@@ -375,6 +375,12 @@
   pointer-events: none;
 }
 .facsimile__overlay.editing { pointer-events: auto; cursor: default; touch-action: none; }
+
+/* Gehe-zu-Seite-Feld in der Seitennavigation */
+.page-goto { width: 58px; text-align: center; }
+.page-goto::-webkit-outer-spin-button,
+.page-goto::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.empty__retry { margin-top: var(--h-space-sm); }
 .facsimile__overlay.creating { cursor: crosshair; }
 .facsimile__overlay.creating .region { pointer-events: none; }
 

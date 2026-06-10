@@ -64,38 +64,23 @@ Konsole (0 Fehler, alle 8 Module geladen), Accessibility-Tree.
 | **M7** | Status-Pills ohne aktuellen Wert im `aria-label` | dynamisches `aria-label` in `renderStatusPills` |
 | **N4** | OSD-Fehlerzustand ohne `destroyOsd()` (Leak) | `destroyOsd()` vor `innerHTML`-Ersatz in `open-failed` |
 | **N5** | `rgba(44,40,37,0.45)` statt Token | Token `--h-overlay` in `tokens.css`, genutzt in `viewer.css` |
+| **H4** | Keine Seiten-QA-Navigation (nur Prev/Next ueber bis zu 208 Seiten) | „Gehe zu Seite"-Feld in der Seitennav + Home/End-Tasten (`gotoPage()`); Seiten-Strip mit Statusmarkern bleibt Idee |
+| **M1** | Katalog-Ampeln hinkten nach Viewer-Save (catalog.json = Aggregat) | `refreshWorkflowFromManifests()`: Katalog laedt nach dem Render die Manifest-Mirrors nach und aktualisiert die Dots |
+| **M3** | 404 und Netzwerkfehler beide nur „Keine Daten" | `ZBZ.lastFetchError` (missing/network) + `renderLoadError()` mit Ursache und Retry-Knopf; TEI-Cache speichert keine Fehlschlaege mehr |
+| **M5** | Ampelfarben nur in Tooltips erklaert | Sichtbare Status-Legende ueber der Katalog-Tabelle; Viewer-Pills tragen den Status als Text-Label |
+| **N2** | Tastatur-Shortcuts minimal | Strg+S = Speichern (auch im Editor), Home/End = erste/letzte Seite, Enter im Seitenfeld |
+| — | Typ-Spalte zeigte rohe Codes (A/C) | Lesbare Labels (Einspaltig/Zweispaltig/Monografie/Spezial), Code im Tooltip |
 
-### Befunde — Schweregrad HOCH
-
-| ID | Befund | Ort | US | Fix |
-|---|---|---|---|---|
-| **H4** | **Keine Seiten-QA-Navigation.** Nur Prev/Next ueber ~4.100 Seiten; kein „gehe zu Seite N", keine Status-/Leerseiten-Uebersicht. | `viewer.html:112-116` | US1 | Seiten-Eingabefeld + Seiten-Strip mit Statusmarkern |
-
-### Befunde — Schweregrad MITTEL
-
-| ID | Befund | Ort | US | Fix |
-|---|---|---|---|---|
-| **M1** | **Katalog-Status aktualisiert nicht nach Speichern** — Korpus liest Status nur aus `catalog.json`, nicht aus dem Manifest-Mirror. | `catalog.js:87,291` vs. `fs-access.js:218` | US1 | Manifest-Mirror nachladen oder Verhalten dokumentieren |
-| **M3** | **Lade- vs. Fehlerzustand nicht unterscheidbar** — 404 und Netzwerkfehler liefern beide „Keine OCR-Daten". | `viewer.js:754-767` | US1 | Fehlerzustand trennen, Retry-Button |
-| **M5** | **Fehlende Status-Legende** — Ampelfarben (grau/gelb/gruen, rot reserviert) nur in Tooltips erklaert. | Katalog + Viewer | US1/US3 | Sichtbare Legende ueber Tabelle und in Subbar |
-
-### Befunde — Schweregrad NIEDRIG
+### Befunde — offen
 
 | ID | Befund | Ort | Fix |
 |---|---|---|---|
 | **N1** | Kein Multi-Select-Export/Batch im Katalog (JSZip vorgesehen, nicht eingebunden) | `download.js` | Sammel-Export, siehe Roadmap E61 in [viewer.md](viewer.md) |
-| **N2** | Tastatur-Shortcuts minimal (nur ←/→) | `viewer.js:939-943` | Ctrl+S, Home/End, Toggle-Tasten |
-| **N3** | OSD laedt unkacheltes Voll-PNG, re-instanziiert pro Seitenwechsel | `viewer.js:602-604` | Tiling/DZI oder Nachbar-Preload |
-| **N6** | Mobile-Katalog blendet Datum/Sprache/Typ/Form/Seiten alle aus (<1000px) | `catalog.css:360-364` | mind. Datum/Typ behalten |
+| **N3** | OSD laedt unkacheltes Voll-PNG, re-instanziiert pro Seitenwechsel | `viewer.js` | Tiling/DZI oder Nachbar-Preload |
+| **N6** | Mobile-Katalog blendet Datum/Sprache/Typ/Form/Seiten alle aus (<1000px) | `catalog.css` | mind. Datum/Typ behalten |
 | **N7** | Kontrast `--h-text-muted` (~3.3:1) unter WCAG AA fuer Kleintext | `tokens.css:32` | nur fuer Hilfstexte nutzen |
 
-### Umsetzungsreihenfolge (offen)
-
-1. **M1** Katalog-Status nach Speichern (US1)
-2. **H4** Seiten-QA-Navigation (US1)
-3. **M5** Status-Legende (US1/US3 — schnell & sichtbar)
-4. **M3 + N2** Fehlerzustaende + Ctrl+S (US1/US2)
-5. **N3/N6/N7** Performance + Mobile + Kontrast
+Bewusst zurueckgestellt bis nach der ZBZ-Abnahme (User-Entscheidung 2026-06-10).
 
 ---
 

@@ -67,6 +67,7 @@
         pageInfo:       $('#page-info'),
         btnPrev:        $('#btn-prev'),
         btnNext:        $('#btn-next'),
+        pageGoto:       $('#page-goto'),
         btnImageEdit:   $('#btn-image-edit'),
         btnTextEdit:    $('#btn-text-edit'),
         textSourceBtns: $$('.mode-btn[data-text-source]'),
@@ -161,6 +162,10 @@
         // Buttons enablen
         refs.btnPrev.disabled = state.page <= 1;
         refs.btnNext.disabled = state.page >= (doc.page_count || 1);
+        if (refs.pageGoto) {
+            refs.pageGoto.disabled = false;
+            refs.pageGoto.max = doc.page_count || 1;
+        }
         refs.btnDlLayout.disabled = false;
         refs.btnDlText.disabled = false;
         refs.btnDlTei.disabled = false;
@@ -820,7 +825,7 @@
             const res = await ZBZ.fetchFirstOk(ZBZ.path.ocr(state.ocrSource, doc.id, page));
             if (stale()) return;
             if (!res) {
-                refs.textBody.innerHTML = '<div class="empty">Keine OCR-Daten fuer ' + state.ocrSource + ' / Seite ' + page + '.</div>';
+                renderLoadError('Keine OCR-Daten fuer ' + state.ocrSource + ' / Seite ' + page);
                 state._currentText = null;
                 return;
             }
@@ -832,7 +837,7 @@
             const xml = await loadTeiPage(doc.id, page);
             if (stale()) return;
             if (!xml) {
-                refs.textBody.innerHTML = '<div class="empty">Kein TEI fuer Seite ' + page + '.</div>';
+                renderLoadError('Kein TEI fuer Seite ' + page);
                 return;
             }
             state.teiXml = xml;
@@ -846,13 +851,29 @@
             const xml = await loadTeiFinal(doc.id);
             if (stale()) return;
             if (!xml) {
-                refs.textBody.innerHTML = '<div class="empty">Kein finales TEI fuer Dokument ' + doc.id + '.</div>';
+                renderLoadError('Kein finales TEI fuer Dokument ' + doc.id);
                 return;
             }
             state.teiXml = xml;
             ZBZ.TeiRender.renderXml(xml, refs.textBody);
             ensureTextEditableState();
         }
+    }
+
+    // Failed loads: name the cause (missing file vs network) and offer a retry.
+    function renderLoadError(what) {
+        const cause = (ZBZ.lastFetchError === 'network')
+            ? 'Netzwerkfehler — Verbindung pruefen.'
+            : 'Datei nicht vorhanden (404).';
+        refs.textBody.innerHTML = '';
+        const box = ZBZ.el('div', { cls: 'empty' });
+        box.appendChild(ZBZ.el('div', { text: what + '. ' + cause }));
+        box.appendChild(ZBZ.el('button', {
+            cls: 'btn btn--sm empty__retry',
+            text: 'Erneut versuchen',
+            on: { click: () => renderTextPanel() }
+        }));
+        refs.textBody.appendChild(box);
     }
 
     function renderOcrText(text) {
@@ -906,7 +927,7 @@
         if (cache.has(ck)) return cache.get(ck);
         const res = await ZBZ.fetchFirstOk(ZBZ.path.teiPage(doc, page));
         const xml = res ? res.text : null;
-        cache.set(ck, xml);
+        if (xml != null) cache.set(ck, xml); // never cache failures, retry must refetch
         return xml;
     }
 
@@ -915,7 +936,7 @@
         if (cache.has(ck)) return cache.get(ck);
         const res = await ZBZ.fetchFirstOk(ZBZ.path.teiFinal(doc));
         const xml = res ? res.text : null;
-        cache.set(ck, xml);
+        if (xml != null) cache.set(ck, xml);
         return xml;
     }
 
@@ -993,25 +1014,40 @@
 
     // ============================================================ Events ============================================================
 
+    function gotoPage(n) {
+        if (!state.doc) return;
+        const max = state.doc.page_count || 1;
+        const target = Math.min(max, Math.max(1, n));
+        if (target === state.page) return;
+        if (!confirmLeavePage()) return;
+        state.page = target;
+        loadPage();
+    }
+
     function bindEvents() {
-        refs.btnPrev.addEventListener('click', () => {
-            if (state.page <= 1) return;
-            if (!confirmLeavePage()) return;
-            state.page = Math.max(1, state.page - 1);
-            loadPage();
-        });
-        refs.btnNext.addEventListener('click', () => {
-            const max = state.doc ? (state.doc.page_count || 1) : 1;
-            if (state.page >= max) return;
-            if (!confirmLeavePage()) return;
-            state.page = Math.min(max, state.page + 1);
-            loadPage();
-        });
+        refs.btnPrev.addEventListener('click', () => gotoPage(state.page - 1));
+        refs.btnNext.addEventListener('click', () => gotoPage(state.page + 1));
+        if (refs.pageGoto) {
+            refs.pageGoto.addEventListener('keydown', (e) => {
+                if (e.key !== 'Enter') return;
+                e.preventDefault();
+                const n = parseInt(refs.pageGoto.value, 10);
+                if (!isNaN(n)) { gotoPage(n); refs.pageGoto.value = ''; refs.pageGoto.blur(); }
+            });
+        }
 
         document.addEventListener('keydown', (e) => {
+            // Ctrl+S saves even while an editor field has focus
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+                if (refs.btnSave && !refs.btnSave.disabled) saveAll();
+                return;
+            }
             if (e.target.matches('input, textarea, select, [contenteditable="true"]')) return;
-            if (e.key === 'ArrowLeft')      refs.btnPrev.click();
+            if (e.key === 'ArrowLeft')       refs.btnPrev.click();
             else if (e.key === 'ArrowRight') refs.btnNext.click();
+            else if (e.key === 'Home')       { e.preventDefault(); gotoPage(1); }
+            else if (e.key === 'End')        { e.preventDefault(); gotoPage(state.doc ? (state.doc.page_count || 1) : 1); }
         });
 
         refs.btnImageEdit.addEventListener('click', () => setImageEdit(!state.imageEdit));

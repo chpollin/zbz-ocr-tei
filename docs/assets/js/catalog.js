@@ -35,6 +35,13 @@
         anthology:      'Anthologie',
         other:          'Sonstige'
     };
+    // Layout-Typ (Masterfile): same labels as the type filter options
+    const TYPE_LABEL = {
+        A: 'Einspaltig',
+        B: 'Zweispaltig',
+        C: 'Monografie',
+        D: 'Spezial'
+    };
 
     // ---- State ----
     const state = {
@@ -79,6 +86,28 @@
         const gen = data.generated ? new Date(data.generated).toLocaleDateString('de-CH') : '';
         refs.generated.textContent = gen ? `Generiert ${gen}` : '';
         ZBZ.log('Catalog', 'init done, ' + state.docs.length + ' docs');
+
+        refreshWorkflowFromManifests();
+    }
+
+    // catalog.json is an aggregate that lags behind viewer saves; the manifest
+    // mirror is written immediately. Prefer it so the workflow dots are fresh.
+    async function refreshWorkflowFromManifests() {
+        const BATCH = 24;
+        let changed = 0;
+        for (let i = 0; i < state.docs.length; i += BATCH) {
+            await Promise.all(state.docs.slice(i, i + BATCH).map(async d => {
+                const m = await ZBZ.fetchJSON('data/manifests/' + encodeURIComponent(d.id) + '_manifest.json');
+                if (m && m.streams && JSON.stringify(m.streams) !== JSON.stringify(d.streams || {})) {
+                    d.streams = m.streams;
+                    changed++;
+                }
+            }));
+        }
+        if (changed) {
+            applyFilters();
+            ZBZ.log('Catalog', 'workflow refreshed from manifests (' + changed + ' docs)');
+        }
     }
 
     // ============================================================ Helpers ============================================================
@@ -276,7 +305,11 @@
         const author = ZBZ.el('div', { cls: 'col-author', text: d.author || '—' });
         const date   = ZBZ.el('div', { cls: 'col-date',   text: d.date || '' });
         const lang   = ZBZ.el('div', { cls: 'col-lang',   text: d.lang || '—' });
-        const type   = ZBZ.el('div', { cls: 'col-type',   text: d.type || '—' });
+        const type   = ZBZ.el('div', {
+            cls: 'col-type',
+            text: TYPE_LABEL[d.type] || d.type || '—',
+            attrs: d.type ? { title: 'Layout-Typ ' + d.type } : {}
+        });
         const form   = ZBZ.el('div', { cls: 'col-form',   text: formLabel });
         const pages  = ZBZ.el('div', { cls: 'col-pages',  text: String(d.page_count || '—') });
 

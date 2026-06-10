@@ -108,6 +108,31 @@
 }
 
 /* ============================================================
+   Status-Legende (Workflow-Ampel, sichtbar statt nur Tooltip)
+   ============================================================ */
+.status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--h-space-md);
+  margin: var(--h-space-sm) 0;
+  font-size: var(--h-sm);
+  color: var(--h-text-secondary);
+}
+.status-legend__title {
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+}
+.status-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ============================================================
    Doc-Tabelle
    ============================================================ */
 .doc-table {
@@ -127,7 +152,7 @@
     minmax(120px, 1.4fr) /* author */
     64px                 /* date */
     80px                 /* lang  -- Platz fuer "SPRACHE" + Sort-Pfeil */
-    56px                 /* type */
+    96px                 /* type -- lesbares Label ("Zweispaltig") statt Code */
     minmax(110px, 1fr)   /* form */
     64px                 /* pages */
     100px;               /* workflow (vertikale Ampel + Labels) */

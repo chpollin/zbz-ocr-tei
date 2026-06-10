@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=7">
   <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/viewer.css?v=14">
+  <link rel="stylesheet" href="assets/css/viewer.css?v=15">
   <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body class="viewer-body">
@@ -113,6 +113,8 @@
                 <button class="btn btn--sm btn--icon" id="btn-prev" title="Vorherige Seite (Pfeil links)" disabled>&blacktriangleleft;</button>
                 <span class="page-info" id="page-info">&mdash; / &mdash;</span>
                 <button class="btn btn--sm btn--icon" id="btn-next" title="Naechste Seite (Pfeil rechts)" disabled>&blacktriangleright;</button>
+                <input class="input page-goto" id="page-goto" type="number" min="1" inputmode="numeric"
+                       aria-label="Gehe zu Seite" title="Gehe zu Seite (Enter springt; Home/End = erste/letzte Seite)" placeholder="S." disabled>
               </div>
               <button class="panel__edit-toggle" id="btn-image-edit" aria-pressed="false"
                       title="Layout bearbeiten (Bounding-Boxes, Reading-Order)">Layout bearbeiten</button>
@@ -183,12 +185,12 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="assets/js/core.js?v=3"></script>
+  <script src="assets/js/core.js?v=4"></script>
   <script src="assets/js/tei-render.js?v=2"></script>
   <script src="assets/js/download.js?v=1"></script>
   <script src="assets/js/fs-access.js?v=4"></script>
   <script src="assets/js/layout-editor.js?v=2"></script>
   <script src="assets/js/transcription-editor.js?v=2"></script>
-  <script src="assets/js/viewer.js?v=13"></script>
+  <script src="assets/js/viewer.js?v=14"></script>
 </body>
 </html>

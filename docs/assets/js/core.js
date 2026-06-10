@@ -147,11 +147,19 @@
     // nicht ueber diese Helfer und behalten normales Caching.
     ZBZ.fetchText = (url) => fetch(url, { cache: 'no-cache' }).then(r => r.ok ? r.text() : null).catch(() => null);
     ZBZ.fetchJSON = (url) => fetch(url, { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null);
+    // 'missing' (HTTP error, e.g. 404) vs 'network' (fetch threw) -- consumed by error UI
+    ZBZ.lastFetchError = null;
+    const fetchTextDetailed = (url) => fetch(url, { cache: 'no-cache' })
+        .then(r => r.ok ? r.text().then(t => ({ text: t, error: null })) : { text: null, error: 'missing' })
+        .catch(() => ({ text: null, error: 'network' }));
     ZBZ.fetchFirstOk = async (urls) => {
+        let network = false;
         for (const u of urls) {
-            const t = await ZBZ.fetchText(u);
-            if (t != null) return { url: u, text: t };
+            const r = await fetchTextDetailed(u);
+            if (r.text != null) { ZBZ.lastFetchError = null; return { url: u, text: r.text }; }
+            if (r.error === 'network') network = true;
         }
+        ZBZ.lastFetchError = network ? 'network' : 'missing';
         return null;
     };
     ZBZ.fetchFirstJsonOk = async (urls) => {
