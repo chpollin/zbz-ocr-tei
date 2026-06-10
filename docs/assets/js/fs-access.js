@@ -165,8 +165,12 @@
     /** Schreibt content nach relPath (relativ zum Repo-Root); legt Verzeichnisse an. */
     async function writeFile(relPath, content) {
         if (!isConnected()) throw new Error('nicht verbunden');
-        // Permission ggf. erneut sicherstellen (Geste vorhanden: aktiver Speicher-Klick)
-        if (!(await ensurePermission(state.root, true))) throw new Error('Schreibrecht entzogen');
+        // Schreibrecht nur PRUEFEN (queryPermission), nicht neu anfordern: requestPermission
+        // braucht eine frische Nutzer-Geste, die nach dem Ordner-Dialog bereits verbraucht ist.
+        // Das Recht wurde beim Verbinden (connect, mit Geste) erteilt -- hier genuegt die Pruefung.
+        if (!(await ensurePermission(state.root, false))) {
+            throw new Error('Schreibrecht nicht aktiv -- Repo-Ordner erneut verbinden');
+        }
         const segs = relPath.split('/').filter(Boolean);
         const fileName = segs.pop();
         let dir = state.root;

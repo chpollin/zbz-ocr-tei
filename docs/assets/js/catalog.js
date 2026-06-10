@@ -64,7 +64,7 @@
     async function init() {
         const data = await ZBZ.fetchJSON('data/catalog.json');
         if (!data) {
-            refs.rows.innerHTML = '<div class="doc-table__empty">catalog.json nicht gefunden. <code>python -m scripts.generate_edition_data</code></div>';
+            refs.rows.innerHTML = '<div class="doc-table__empty">catalog.json nicht gefunden. <code>python -m scripts.edition.generate_edition_data</code></div>';
             return;
         }
         state.catalog = data;
@@ -208,7 +208,6 @@
 
     function renderSortIndicators() {
         const [field, dir] = state.sort.split('-');
-        // Erste Spalte (Titel) sortiert nach id, daher data-sort="id"; visuelles Mapping:
         $$('.col-sort').forEach(btn => {
             const sf = btn.getAttribute('data-sort');
             if (sf === field) {

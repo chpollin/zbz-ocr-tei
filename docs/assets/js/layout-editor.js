@@ -115,10 +115,11 @@
 
     // ============================================================ Overlay-Events ============================================================
 
-    let _onMouseDown, _onMouseMove, _onMouseUp, _onKeyDown;
+    // pointer events cover mouse + touch/pen; CSS sets touch-action:none on .editing
+    let _onPointerDown, _onPointerMove, _onPointerUp, _onKeyDown;
 
     function bindOverlayEvents() {
-        _onMouseDown = (e) => {
+        _onPointerDown = (e) => {
             if (e.target.classList.contains('region__handle')) {
                 startResize(e);
                 return;
@@ -138,12 +139,12 @@
                 }
             }
         };
-        _onMouseMove = (e) => {
+        _onPointerMove = (e) => {
             if (state.mode === 'dragging')  doDrag(e);
             else if (state.mode === 'resizing') doResize(e);
             else if (state.mode === 'creating') doCreate(e);
         };
-        _onMouseUp = (e) => {
+        _onPointerUp = (e) => {
             if (state.mode === 'dragging' || state.mode === 'resizing' || state.mode === 'creating') {
                 state.mode = 'idle';
                 state.dragData = null;
@@ -158,6 +159,19 @@
             if ((e.key === 'Delete' || e.key === 'Backspace') && state.selectedIdx != null) {
                 e.preventDefault();
                 deleteSelected();
+            } else if (e.key.startsWith('Arrow') && state.selectedIdx != null) {
+                // Keyboard nudge: 1% per step, 5% with Shift
+                e.preventDefault();
+                const step = e.shiftKey ? 5 : 1;
+                const r = state.regions[state.selectedIdx];
+                if (!r || !r.bbox) return;
+                if (e.key === 'ArrowLeft')  r.bbox.x_pct = clamp(r.bbox.x_pct - step, 0, 100 - r.bbox.w_pct);
+                if (e.key === 'ArrowRight') r.bbox.x_pct = clamp(r.bbox.x_pct + step, 0, 100 - r.bbox.w_pct);
+                if (e.key === 'ArrowUp')    r.bbox.y_pct = clamp(r.bbox.y_pct - step, 0, 100 - r.bbox.h_pct);
+                if (e.key === 'ArrowDown')  r.bbox.y_pct = clamp(r.bbox.y_pct + step, 0, 100 - r.bbox.h_pct);
+                applyRegionStyle(state.selectedIdx);
+                renderRegionList();
+                state.onChange(state.regions);
             } else if (e.key === 'Escape') {
                 if (state.mode === 'create-pending' || state.mode === 'creating') {
                     e.preventDefault();
@@ -178,17 +192,17 @@
                 }
             }
         };
-        state.overlay.addEventListener('mousedown', _onMouseDown);
-        document.addEventListener('mousemove', _onMouseMove);
-        document.addEventListener('mouseup', _onMouseUp);
+        state.overlay.addEventListener('pointerdown', _onPointerDown);
+        document.addEventListener('pointermove', _onPointerMove);
+        document.addEventListener('pointerup', _onPointerUp);
         document.addEventListener('keydown', _onKeyDown);
         redrawOverlay();
     }
 
     function unbindOverlayEvents(overlay) {
-        if (_onMouseDown) overlay.removeEventListener('mousedown', _onMouseDown);
-        document.removeEventListener('mousemove', _onMouseMove);
-        document.removeEventListener('mouseup', _onMouseUp);
+        if (_onPointerDown) overlay.removeEventListener('pointerdown', _onPointerDown);
+        document.removeEventListener('pointermove', _onPointerMove);
+        document.removeEventListener('pointerup', _onPointerUp);
         document.removeEventListener('keydown', _onKeyDown);
     }
 

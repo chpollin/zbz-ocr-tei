@@ -113,7 +113,7 @@
 
         const data = await ZBZ.fetchJSON('data/catalog.json');
         if (!data) {
-            renderError('catalog.json nicht gefunden. <code>python -m scripts.generate_edition_data</code>');
+            renderError('catalog.json nicht gefunden. <code>python -m scripts.edition.generate_edition_data</code>');
             return;
         }
         state.catalog = data;
@@ -242,6 +242,8 @@
             btn.title = baseLine
                 + (last ? '\nzuletzt: ' + last.to + ' · ' + (last.by || '?') + ' · ' + (last.at || '').slice(0, 16) : '')
                 + '\nKlick wechselt: unverifiziert -> in Arbeit -> verifiziert';
+            // announce the current status, not just "set status" (a11y)
+            btn.setAttribute('aria-label', STREAM_LABEL[stream] + '-Status: ' + STATUS_LABEL[status] + ' (Klick wechselt)');
             btn.innerHTML =
                 '<span class="status-pill__stream">' + STREAM_LABEL[stream] + '</span>'
                 + '<span class="status-pill__dot"></span>'
@@ -333,9 +335,14 @@
     // zurueck, wenn nicht verbunden oder der Schreibzugriff scheitert. Ohne eigenen Toast
     // (saveAll meldet gesammelt).
     async function persistSilent(fsWrite, dlFallback) {
-        if (ZBZ.FsAccess && ZBZ.FsAccess.isConnected()) {
-            try { await fsWrite(); return true; }
-            catch (err) { ZBZ.log('Viewer', 'Direkt-Speichern fehlgeschlagen: ' + (err && err.message)); }
+        // Auf Chromium (File System Access verfuegbar) wird ausschliesslich direkt ins Repo
+        // geschrieben; saveAll hat die Verbindung vorher sichergestellt. Ein Schreibfehler
+        // propagiert nach saveAll und wird dort sichtbar gemeldet -- KEIN stiller Download,
+        // der sonst verwirrende Dateien im Downloads-Ordner ablegt. Der Download bleibt nur
+        // der Weg, wenn die API gar nicht verfuegbar ist (Nicht-Chromium-Browser).
+        if (ZBZ.FsAccess && ZBZ.FsAccess.available) {
+            await fsWrite();
+            return true;
         }
         dlFallback();
         return false;
@@ -379,49 +386,66 @@
         const dm = state.manifestDirty;
         if (!dl && !dt && !dm) { ZBZ.toast('Nichts zu speichern', 'warn'); return; }
 
-        // Direkt-Speichern bevorzugen: einmal den Repo-Ordner verbinden (mit Erst-Info),
-        // falls moeglich. Bricht der Nutzer ab, greift unten der Download-Fallback.
+        // Direkt-Speichern: Auf Chromium MUSS ein Repo-Ordner verbunden sein. Ist er es nicht,
+        // einmal verbinden (mit Erst-Info). Klappt das nicht (Nutzer bricht ab oder erteilt kein
+        // Schreibrecht), brechen wir mit klarer Meldung ab, statt die Datei still in den
+        // Downloads-Ordner zu legen. Die Stroeme bleiben ungespeichert, nichts geht verloren;
+        // ein erneuter Klick (oder Export -> Download) ist moeglich.
         if (ZBZ.FsAccess && ZBZ.FsAccess.available && !ZBZ.FsAccess.isConnected()) {
             await connectWithInfo();
+            if (!ZBZ.FsAccess.isConnected()) {
+                ZBZ.toast('Nicht gespeichert: Repo-Ordner nicht verbunden oder kein Schreibrecht erteilt. Ordner "zbz-ocr-tei" verbinden und erneut Speichern (oder ueber Export herunterladen).', 'warn');
+                return;
+            }
         }
 
         const saved = [];
+        let downloaded = false; // any stream fell back to download
         try {
             if (dl) {
                 const meta = layoutSourceMeta();
-                await persistSilent(
+                if (!(await persistSilent(
                     () => ZBZ.FsAccess.writeLayout(state.doc.id, state.page, state.layout.regions, meta),
                     () => ZBZ.Download.layout(state.doc.id, state.page, state.layout.regions, meta)
-                );
+                ))) downloaded = true;
                 state.layoutDirty = false;
                 if (refs.regionCount) refs.regionCount.textContent = state.layout.regions.length + ' Regionen';
                 saved.push('Layout S.' + state.page);
             }
             if (dt) {
                 const content = (state._currentEditedText != null) ? state._currentEditedText : state._currentText;
-                if (content != null) {
+                if (content == null) {
+                    state.textDirty = false;
+                } else {
                     const isTei = (state.textSource === 'xml' || state.textSource === 'tei');
                     if (isTei) {
-                        await persistSilent(
-                            () => ZBZ.FsAccess.writeTei(state.doc.id, content),
-                            () => ZBZ.Download.tei(state.doc.id, content, 'curated')
-                        );
-                        saved.push('TEI');
+                        // writeTei replaces the whole SoT file -- only accept a complete TEI document
+                        if (content.indexOf('<teiHeader') === -1 || content.indexOf('</TEI>') === -1) {
+                            ZBZ.toast('TEI nicht gespeichert: Inhalt ist kein vollstaendiges TEI-Dokument (teiHeader/TEI-Wurzel fehlt). Edit bleibt ungespeichert erhalten.', 'err');
+                        } else {
+                            if (!(await persistSilent(
+                                () => ZBZ.FsAccess.writeTei(state.doc.id, content),
+                                () => ZBZ.Download.tei(state.doc.id, content, 'curated')
+                            ))) downloaded = true;
+                            cache.set('tei-final:' + state.doc.id, content);
+                            state.textDirty = false;
+                            saved.push('TEI');
+                        }
                     } else {
-                        await persistSilent(
+                        if (!(await persistSilent(
                             () => ZBZ.FsAccess.writeText(state.doc.id, state.page, content),
                             () => ZBZ.Download.text(state.doc.id, state.page, content)
-                        );
+                        ))) downloaded = true;
+                        state.textDirty = false;
                         saved.push('Text S.' + state.page);
                     }
                 }
-                state.textDirty = false;
             }
             if (dm) {
-                await persistSilent(
+                if (!(await persistSilent(
                     () => ZBZ.FsAccess.writeManifest(state.doc.id, state.manifest),
                     () => ZBZ.Download.manifest(state.doc.id, state.manifest)
-                );
+                ))) downloaded = true;
                 state.manifestDirty = false;
                 state.dirtyStreams.clear();
                 saved.push('Status');
@@ -433,8 +457,12 @@
         renderStatusPills();
         renderSaveState();
         if (saved.length) {
-            const mode = (ZBZ.FsAccess && ZBZ.FsAccess.isConnected()) ? 'Repo' : 'Download';
-            ZBZ.toast('Gespeichert (' + mode + '): ' + saved.join(', '), 'ok');
+            // a download is not a repo write -- be explicit about it (H2)
+            if (downloaded) {
+                ZBZ.toast('Download erzeugt (Dateien manuell ins Repo legen): ' + saved.join(', '), 'warn');
+            } else {
+                ZBZ.toast('Gespeichert (Repo): ' + saved.join(', '), 'ok');
+            }
         }
     }
 
@@ -502,18 +530,44 @@
             showFsaInfo(proceed, cancel);
         });
     }
+    // modal a11y: focus restore target + document-level key handler (ESC, Tab trap)
+    let fsaInfoPrevFocus = null;
+    let fsaInfoKeydown = null;
+
     function showFsaInfo(onGo, onCancel) {
         if (!refs.fsaInfo) { onGo(); return; }
         if (refs.fsaInfoGo) refs.fsaInfoGo.onclick = onGo;
         if (refs.fsaInfoCancel) refs.fsaInfoCancel.onclick = onCancel;
+        fsaInfoPrevFocus = document.activeElement;
         refs.fsaInfo.hidden = false;
+        if (refs.fsaInfoGo) refs.fsaInfoGo.focus();
+        fsaInfoKeydown = (e) => {
+            if (e.key === 'Escape') { e.preventDefault(); onCancel(); return; }
+            if (e.key === 'Tab') {
+                // focus trap: the modal has exactly two buttons
+                e.preventDefault();
+                const next = (document.activeElement === refs.fsaInfoGo) ? refs.fsaInfoCancel : refs.fsaInfoGo;
+                if (next) next.focus();
+            }
+        };
+        document.addEventListener('keydown', fsaInfoKeydown);
     }
-    function hideFsaInfo() { if (refs.fsaInfo) refs.fsaInfo.hidden = true; }
+    function hideFsaInfo() {
+        if (!refs.fsaInfo) return;
+        refs.fsaInfo.hidden = true;
+        if (fsaInfoKeydown) { document.removeEventListener('keydown', fsaInfoKeydown); fsaInfoKeydown = null; }
+        if (fsaInfoPrevFocus && typeof fsaInfoPrevFocus.focus === 'function') fsaInfoPrevFocus.focus();
+        fsaInfoPrevFocus = null;
+    }
 
     // ============================================================ Page laden ============================================================
 
+    // Only the newest page load may render (rapid paging overlaps async fetches)
+    let pageLoadSeq = 0;
+
     async function loadPage() {
         if (!state.doc) return;
+        const seq = ++pageLoadSeq;
         const doc = state.doc, page = state.page;
         // Seitenwechsel: Layout/Text sind per-Seite -> Dirty-Zustand der alten Seite
         // verfaellt (Manifest-Dirty bleibt, da per-Dokument).
@@ -529,8 +583,10 @@
         // Leerseite vorab bestimmen (aus Mistral-Basis-OCR), damit Faksimile UND Text
         // konsistent reagieren: keine Phantom-Regionen, kein OCR-Muell.
         state._isBlank = await detectBlankPage(doc.id, page);
+        if (seq !== pageLoadSeq) return;
 
         await renderFacsimile();
+        if (seq !== pageLoadSeq) return;
         await renderTextPanel();
     }
 
@@ -587,6 +643,7 @@
 
         // Layout vorab laden, Overlays werden nach OSD-'open' angehaengt
         const layout = await fetchLayout(doc.id, page);
+        if (state.doc !== doc || state.page !== page || state.imageEdit) return; // race guard
         state.layout = layout;
         // Leerseite: Phantom-Regionen (Gemini halluziniert Kaesten in den Durchschlag)
         // nicht zeichnen und die irrefuehrende Zahl durch 'Leerseite' ersetzen.
@@ -617,12 +674,17 @@
             navigationControlAnchor: OpenSeadragon.ControlAnchor ? OpenSeadragon.ControlAnchor.TOP_LEFT : undefined
         });
 
-        state.osdViewer.addHandler('open', () => {
+        // handlers must not touch a newer viewer instance after rapid paging
+        const viewer = state.osdViewer;
+        viewer.addHandler('open', () => {
+            if (state.osdViewer !== viewer) return;
             loading.remove();
-            if (!state._isBlank && layout && layout.regions) addOsdOverlays(state.osdViewer, layout.regions);
+            if (!state._isBlank && layout && layout.regions) addOsdOverlays(viewer, layout.regions);
         });
 
-        state.osdViewer.addHandler('open-failed', () => {
+        viewer.addHandler('open-failed', () => {
+            if (state.osdViewer !== viewer) return;
+            destroyOsd(); // before innerHTML, else canvas + listeners leak
             refs.imageBody.innerHTML =
                 '<div class="empty">Faksimile nicht verfuegbar fuer Seite ' + page +
                 '<br><code style="font-size:0.85em">' + ZBZ.esc(imgUrl) + '</code></div>';
@@ -671,6 +733,7 @@
         refs.imageBody.appendChild(facs);
 
         const layout = await fetchLayout(doc.id, page);
+        if (state.doc !== doc || state.page !== page || !state.imageEdit) return;
         state.layout = layout;
         if (layout && layout.regions) {
             refs.regionCount.textContent = layout.regions.length + ' Regionen';
@@ -727,16 +790,20 @@
 
     function textPanelTitle() {
         if (state.textSource === 'tei') return 'TEI · gerendert';
-        if (state.textSource === 'xml') return 'TEI · XML';
+        if (state.textSource === 'xml') return 'TEI · XML (Gesamtdokument)';
         return 'OCR · ' + state.ocrSource;
     }
 
     async function renderTextPanel() {
         const doc = state.doc, page = state.page;
+        const src = state.textSource;
+        // True once doc/page/source changed mid-fetch -- a stale response must not render.
+        const stale = () => (state.doc !== doc || state.page !== page || state.textSource !== src);
 
         // Leerseite: ruhiger Hinweis statt OCR-Muell ('.', '^{}[]', leere Tabelle).
-        // Im Text-Edit-Modus normal rendern, damit der Rohtext bei Bedarf bereinigt werden kann.
-        if (state._isBlank && !state.textEdit) {
+        // Im Text-Edit-Modus normal rendern, damit der Rohtext bei Bedarf bereinigt
+        // werden kann. XML mode is exempt (shows the whole document).
+        if (state._isBlank && !state.textEdit && state.textSource !== 'xml') {
             refs.textTitle.textContent = textPanelTitle();
             refs.textBody.innerHTML = '';
             refs.textBody.appendChild(ZBZ.el('div', {
@@ -751,6 +818,7 @@
         if (state.textSource === 'ocr') {
             refs.textTitle.textContent = 'OCR · ' + state.ocrSource;
             const res = await ZBZ.fetchFirstOk(ZBZ.path.ocr(state.ocrSource, doc.id, page));
+            if (stale()) return;
             if (!res) {
                 refs.textBody.innerHTML = '<div class="empty">Keine OCR-Daten fuer ' + state.ocrSource + ' / Seite ' + page + '.</div>';
                 state._currentText = null;
@@ -762,6 +830,7 @@
         else if (state.textSource === 'tei') {
             refs.textTitle.textContent = 'TEI · gerendert';
             const xml = await loadTeiPage(doc.id, page);
+            if (stale()) return;
             if (!xml) {
                 refs.textBody.innerHTML = '<div class="empty">Kein TEI fuer Seite ' + page + '.</div>';
                 return;
@@ -771,10 +840,13 @@
             ensureTextEditableState();
         }
         else if (state.textSource === 'xml') {
-            refs.textTitle.textContent = 'TEI · XML';
-            const xml = await loadTeiPage(doc.id, page);
+            // Must load the FULL final TEI: saving overwrites {doc}_final.xml as a
+            // whole (E72). Loading a single page here would destroy the rest on save.
+            refs.textTitle.textContent = 'TEI · XML (Gesamtdokument)';
+            const xml = await loadTeiFinal(doc.id);
+            if (stale()) return;
             if (!xml) {
-                refs.textBody.innerHTML = '<div class="empty">Kein TEI fuer Seite ' + page + '.</div>';
+                refs.textBody.innerHTML = '<div class="empty">Kein finales TEI fuer Dokument ' + doc.id + '.</div>';
                 return;
             }
             state.teiXml = xml;

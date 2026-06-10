@@ -47,6 +47,10 @@
 
         editTarget.setAttribute('contenteditable', 'true');
         editTarget.setAttribute('spellcheck', source === 'xml' ? 'false' : 'true');
+        // expose as multiline textbox to screen readers
+        editTarget.setAttribute('role', 'textbox');
+        editTarget.setAttribute('aria-multiline', 'true');
+        editTarget.setAttribute('aria-label', 'Text-Editor (' + source.toUpperCase() + ')');
         editTarget.style.minHeight = '60vh';
 
         state.originalText = readContent(editTarget, source);
@@ -75,6 +79,9 @@
         targets.forEach(t => {
             t.removeAttribute('contenteditable');
             t.removeAttribute('spellcheck');
+            t.removeAttribute('role');
+            t.removeAttribute('aria-multiline');
+            t.removeAttribute('aria-label');
             t.style.minHeight = '';
             if (_onInput) t.removeEventListener('input', _onInput);
             t.removeEventListener('keydown', tabHandler);

@@ -140,8 +140,8 @@ Editiert das aktive Text-Panel via `contenteditable`. Drei Quellen waehlbar:
 | Quelle | Format | Editiert man… |
 |---|---|---|
 | **OCR** | Markdown | rohen OCR-Text aus Mistral/Gemini/Haiku |
-| **TEI** | gerendertes TEI | nur Text-Inhalte (keine Struktur — fuer Tags den XML-Modus nutzen) |
-| **XML** | TEI-XML mit Syntax-Highlighting | rohes XML inklusive Tags und Attribute |
+| **TEI** | gerendertes TEI (per Seite) | nur Text-Inhalte (keine Struktur — fuer Tags den XML-Modus nutzen) |
+| **XML** | TEI-XML mit Syntax-Highlighting, **Gesamtdokument** | rohes XML inklusive Tags und Attribute; Speichern ersetzt `{doc}_final.xml` als Ganzes (E72), ein Guard verweigert unvollstaendige TEI-Inhalte |
 
 Aenderungen werden debounced eingesammelt und als ungespeichert markiert; der gemeinsame
 **Speichern**-Knopf sichert sie zusammen mit Layout und Status (siehe §Persistenz). Einzeln
@@ -192,6 +192,9 @@ Caveat TEI: `output/tei_final/{doc}_final.xml` ist die **Single Source of Truth*
 `--reassemble` regeneriert sie aus OCR+Layout und ueberschreibt einen manuellen TEI-Edit wieder
 (die Per-Seiten-TEI-Splits im Mirror entstehen ohnehin erst beim Reassemble). Fuer dauerhafte
 Korrekturen daher Layout/OCR editieren und neu zusammenbauen, nicht das finale TEI direkt.
+Der XML-Modus laedt darum das **Gesamtdokument** (nicht die per-Seiten-TEI), damit der
+Save-als-Ganzes nie nur eine Seite ins Final schreibt; ein Guard in `saveAll()` verweigert
+Inhalte ohne `teiHeader`/`TEI`-Wurzel (Fix des H1-Befunds, 2026-06-10).
 
 Nach dem Schreiben faltet ein Pipeline-Lauf die Kuration ins TEI und regeneriert den Mirror:
 

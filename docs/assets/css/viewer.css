@@ -374,7 +374,7 @@
   inset: 0;
   pointer-events: none;
 }
-.facsimile__overlay.editing { pointer-events: auto; cursor: default; }
+.facsimile__overlay.editing { pointer-events: auto; cursor: default; touch-action: none; }
 .facsimile__overlay.creating { cursor: crosshair; }
 .facsimile__overlay.creating .region { pointer-events: none; }
 
@@ -819,7 +819,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(44, 40, 37, 0.45);
+  background: var(--h-overlay);
   padding: var(--h-space-md);
 }
 /* WICHTIG: `display:flex` oben wuerde sonst das `hidden`-Attribut aushebeln (Author-Regel

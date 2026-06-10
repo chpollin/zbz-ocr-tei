@@ -1,7 +1,7 @@
 ---
 type: knowledge
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-06-10
 tags: [zbz-ocr-tei, frontend, viewer, gap-analyse, qa, accessibility, ux]
 status: active
 ---
@@ -17,7 +17,7 @@ Viewer funktioniert) um die Dimension *wie gut* er seine User-Stories erfuellt.
 > Qualitaet der *Pipeline-Daten* (CER, TEI-Validierung) → [quality.md](quality.md).
 > Hier ausschliesslich: Qualitaet der *Benutzeroberflaeche*.
 
-Erhebung: 2026-06-07 (G1.3, CC3), Live-Inspektion im Browser + statische Quellcode-Analyse.
+Erhebung: 2026-06-07, Live-Inspektion im Browser + statische Quellcode-Analyse.
 Vollstaendiger zeitpunktbezogener Befundbericht inkl. Oekosystem-Detail:
 [../reports/frontend-gap-analyse-2026-06-07.md](../reports/frontend-gap-analyse-2026-06-07.md).
 
@@ -43,34 +43,41 @@ Konsole (0 Fehler, alle 8 Module geladen), Accessibility-Tree.
 
 ### Staerken (Bestand sichern, nicht anfassen)
 
-- **Token-Disziplin nahezu perfekt** — `base.css`/`catalog.css` ohne Hex-/rgb-Verstoss;
-  `viewer.css` mit genau **einer** `rgba()`-Ausnahme (`viewer.css:822`). Kein reines Schwarz/Weiss.
+- **Token-Disziplin vollstaendig** — `base.css`/`catalog.css`/`viewer.css` ohne Hex-/rgb-Verstoss
+  (letzte `rgba()`-Ausnahme seit 2026-06-10 als Token `--h-overlay`). Kein reines Schwarz/Weiss.
 - **Leerseiten-Behandlung** konsistent ueber Faksimile + Text, primaer aus `<pb type="blank"/>`.
 - **Status-Auto-Uebergang** `unverifiziert→in_arbeit` erst bei echter Aenderung (richtige Semantik).
 - **Doppel-Schreiben kanonisch + Mirror** mit Download-Fallback (siehe [viewer.md §Persistenz](viewer.md)).
 - Semantisches HTML, gute Button-ARIA, `aria-live` am Zaehler, `aria-current` in der Nav.
 
+### Behoben (2026-06-10, Sitzung Repo-Audit)
+
+| ID | Befund (Kurzform) | Fix |
+|---|---|---|
+| **H1** | TEI-XML-Edit ueberschrieb gesamtes `{doc}_final.xml` mit per-Seiten-Inhalt (im Code verifiziert: `loadTeiPage` → `writeTei`) | XML-Modus laedt jetzt das Gesamtdokument (`loadTeiFinal`); Save-Guard verweigert unvollstaendige TEI (`viewer.js`) |
+| **H2** | „Gespeichert"-Meldung verschwieg Download-Fallback | `persistSilent`-Rueckgabe ausgewertet; Download-Fall meldet explizit „Dateien manuell ins Repo legen" |
+| **H3** | Layout-Editor nur mausbedienbar | Pointer Events (Maus+Touch+Stift), `touch-action:none`, Pfeiltasten-Nudge (1%, Shift=5%) |
+| **H5** | Modal ohne Fokus-Trap/ESC/Fokus-Rueckgabe | Initial-Fokus, Tab-Trap, ESC=Abbrechen, Fokus-Rueckgabe (`showFsaInfo`/`hideFsaInfo`) |
+| **M2** | Race bei schnellem Seitenwechsel | `pageLoadSeq`-Token + stale-Guards nach jedem `await`; OSD-Handler instanz-gebunden |
+| **M4** | „Titel"-Spalte sortierte nach ID | `data-sort="title"` (`index.html`) |
+| **M6** | `contenteditable` ohne ARIA | `role="textbox"`, `aria-multiline`, `aria-label` in `transcription-editor.js` |
+| **M7** | Status-Pills ohne aktuellen Wert im `aria-label` | dynamisches `aria-label` in `renderStatusPills` |
+| **N4** | OSD-Fehlerzustand ohne `destroyOsd()` (Leak) | `destroyOsd()` vor `innerHTML`-Ersatz in `open-failed` |
+| **N5** | `rgba(44,40,37,0.45)` statt Token | Token `--h-overlay` in `tokens.css`, genutzt in `viewer.css` |
+
 ### Befunde — Schweregrad HOCH
 
 | ID | Befund | Ort | US | Fix |
 |---|---|---|---|---|
-| **H1** | **TEI-XML-Edit kann gesamtes Final ueberschreiben.** `_currentEditedText` ist per-Seite, der Write ueberschreibt aber das komplette `{doc}_final.xml` → ein Seitenblock kann das ganze Dokument ersetzen. *Aus Code abgeleitet, NICHT durch echten Speichervorgang reproduziert — vor Fix per kontrolliertem Test bestaetigen.* | `viewer.js:401-409`, `fs-access.js:209` | US2 | Per-Seiten-XML vom Final-Write entkoppeln; Konsistenz-Check vor Write |
-| **H2** | **„Gespeichert" luegt bei Download-Fallback.** Dirty-Flag wird gecleart, auch wenn der Repo-Write per Exception auf Download umgelenkt wurde. | `viewer.js:396,418,425` | US2 | Dirty erst clearen, wenn echter Repo-Write erfolgte (Rueckgabewert auswerten) |
-| **H3** | **Layout-Editor nur mausbedienbar** (`mousedown/move/up`), kein Touch/Pointer/Tastatur → auf Tablet und ohne Maus unbenutzbar. | `layout-editor.js:181-184` | US2 | Pointer Events; Pfeiltasten-Nudge fuer selektierte Region |
 | **H4** | **Keine Seiten-QA-Navigation.** Nur Prev/Next ueber ~4.100 Seiten; kein „gehe zu Seite N", keine Status-/Leerseiten-Uebersicht. | `viewer.html:112-116` | US1 | Seiten-Eingabefeld + Seiten-Strip mit Statusmarkern |
-| **H5** | **Modal ohne Fokus-Trap/ESC/Fokus-Rueckgabe** (`#fsa-info` ist `aria-modal`, faengt Fokus aber nicht). | `viewer.js:505-511` | US2/US3 | Ersten Button fokussieren, Tab trappen, ESC=schliessen, Fokus zurueck |
 
 ### Befunde — Schweregrad MITTEL
 
 | ID | Befund | Ort | US | Fix |
 |---|---|---|---|---|
 | **M1** | **Katalog-Status aktualisiert nicht nach Speichern** — Korpus liest Status nur aus `catalog.json`, nicht aus dem Manifest-Mirror. | `catalog.js:87,291` vs. `fs-access.js:218` | US1 | Manifest-Mirror nachladen oder Verhalten dokumentieren |
-| **M2** | **Race bei schnellem Seitenwechsel** — kein Abbruch-Token; zuletzt aufgeloeste statt angeforderte Seite kann gewinnen. | `viewer.js:515-535` | US1 | Sequenz-Token nach jedem `await` pruefen |
 | **M3** | **Lade- vs. Fehlerzustand nicht unterscheidbar** — 404 und Netzwerkfehler liefern beide „Keine OCR-Daten". | `viewer.js:754-767` | US1 | Fehlerzustand trennen, Retry-Button |
-| **M4** | **„Titel"-Spalte sortiert nach ID** (`data-sort="id"`) — irrefuehrend. | `index.html:81` | US1/US3 | Header „ID/Titel" oder `data-sort="title"` |
 | **M5** | **Fehlende Status-Legende** — Ampelfarben (grau/gelb/gruen, rot reserviert) nur in Tooltips erklaert. | Katalog + Viewer | US1/US3 | Sichtbare Legende ueber Tabelle und in Subbar |
-| **M6** | **`contenteditable`-Editor ohne ARIA** (`role`/`aria-label`/`aria-multiline`). | `transcription-editor.js:48` | US2 | ARIA ergaenzen |
-| **M7** | **Status-Pills sagen aktuellen Wert nicht an** (statisches `aria-label`). | `viewer.html:66-68` | US2 | `aria-label` dynamisch |
 
 ### Befunde — Schweregrad NIEDRIG
 
@@ -79,23 +86,16 @@ Konsole (0 Fehler, alle 8 Module geladen), Accessibility-Tree.
 | **N1** | Kein Multi-Select-Export/Batch im Katalog (JSZip vorgesehen, nicht eingebunden) | `download.js` | Sammel-Export, siehe Roadmap E61 in [viewer.md](viewer.md) |
 | **N2** | Tastatur-Shortcuts minimal (nur ←/→) | `viewer.js:939-943` | Ctrl+S, Home/End, Toggle-Tasten |
 | **N3** | OSD laedt unkacheltes Voll-PNG, re-instanziiert pro Seitenwechsel | `viewer.js:602-604` | Tiling/DZI oder Nachbar-Preload |
-| **N4** | Faksimile-Fehlerzustand ersetzt OSD-Container ohne `destroyOsd()` (Leak) | `viewer.js:625-629` | `destroyOsd()` vor `innerHTML`-Ersatz |
-| **N5** | `rgba(44,40,37,0.45)` statt Token | `viewer.css:822` | neuer Token `--h-overlay` in `tokens.css` |
 | **N6** | Mobile-Katalog blendet Datum/Sprache/Typ/Form/Seiten alle aus (<1000px) | `catalog.css:360-364` | mind. Datum/Typ behalten |
 | **N7** | Kontrast `--h-text-muted` (~3.3:1) unter WCAG AA fuer Kleintext | `tokens.css:32` | nur fuer Hilfstexte nutzen |
 
-### Top-10 Hersch (Umsetzungsreihenfolge)
+### Umsetzungsreihenfolge (offen)
 
-1. **H1** TEI-XML-Datenverlust *verifizieren* → fixen (kritisch, US2)
-2. **H2** Dirty-Flag bei Download-Fallback (US2)
-3. **H5** Modal-Fokus-Management (US2/US3)
-4. **H3** Layout-Editor Touch/Tastatur (US2)
-5. **M1** Katalog-Status nach Speichern (US1)
-6. **H4** Seiten-QA-Navigation (US1)
-7. **M2** Race bei Seitenwechsel (US1)
-8. **M4** „Titel"-Sortierung (US1)
-9. **M5** Status-Legende (US1/US3 — schnell & sichtbar)
-10. **M3 + N2** Fehlerzustaende + Ctrl+S (US1/US2)
+1. **M1** Katalog-Status nach Speichern (US1)
+2. **H4** Seiten-QA-Navigation (US1)
+3. **M5** Status-Legende (US1/US3 — schnell & sichtbar)
+4. **M3 + N2** Fehlerzustaende + Ctrl+S (US1/US2)
+5. **N3/N6/N7** Performance + Mobile + Kontrast
 
 ---
 
@@ -106,7 +106,7 @@ Frontend im [Befundbericht](../reports/frontend-gap-analyse-2026-06-07.md).
 
 | Frontend | Zweck | Reifegrad | Dringlichste Luecke |
 |---|---|---|---|
-| **Hersch** (`zbz-ocr-tei/docs`) | OCR/Layout/TEI-Inspektion + Kuration | nutzbar → produktionsnah | H1 TEI-XML-Datenverlust (verifizieren) |
+| **Hersch** (`zbz-ocr-tei/docs`) | OCR/Layout/TEI-Inspektion + Kuration | nutzbar → produktionsnah | H4 Seiten-QA-Navigation, M1 Katalog-Status-Lag |
 | **szd-htr** (`szd-htr/docs`) | VLM-Transkriptions-Viewer + Review | **produktionsnah (Referenz)** | Empty-States Vault/Stats, Deeplink-Nav |
 | **teiCrafter** (`ResearchTools/teiCrafter`) | verlustfreier TEI-Editor | fortgeschr. Prototyp | Editor nicht responsive, A11y Tabs/Modal |
 | **SZD** (`SZD/docs`) | Ontologie-Referenz + Graph | produktionsnah (Doku) | D3-CDN ohne Fallback, Graph-A11y |
@@ -143,8 +143,7 @@ Die uebrigen Frontends sollten sich daran ausrichten.
 - **Live-Resize unzuverlaessig** im Automations-Tooling (Viewport spiegelt die Fenstergroesse
   nicht). Responsive-Verhalten daher aus den CSS-Media-Queries verifizieren — Hersch: Katalog
   `@1000px` → Kartenliste, Viewer `@900px` → gestapelte Panels (vorhanden und korrekt).
-- **szd-htr** wurde rein statisch analysiert (Live ausgelassen, da aktive CC2-Domaene —
-  Browser-Konflikt vermieden).
+- **szd-htr** wurde rein statisch analysiert (Live ausgelassen, Browser-Konflikt vermieden).
 
 ---
 
