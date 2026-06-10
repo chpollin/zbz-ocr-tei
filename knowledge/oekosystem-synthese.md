@@ -2,47 +2,45 @@
 type: knowledge
 created: 2026-06-07
 updated: 2026-06-07
-tags: [oekosystem, synthese, zbz-ocr-tei, szd-htr, teicrafter, koordination, cc3]
+tags: [oekosystem, synthese, zbz-ocr-tei, szd-htr, teicrafter]
 status: active
 ---
 
 # Ökosystem-Synthese — Hersch / SZD / teiCrafter
 
-**Was ist das?** Ein verdichtetes Gesamtbild über die drei koordinierten Editions-Projekte,
-erstellt von CC3 nach vollständiger Lektüre aller Knowledge-Dokumente der drei Repos
+**Was ist das?** Ein verdichtetes Gesamtbild über die drei Editions-Projekte,
+erstellt nach vollständiger Lektüre aller Knowledge-Dokumente der drei Repos
 (~34 Dateien) + Frontend-Live-Analyse. **Single Source of Truth bleibt jeweils das Heimat-Repo**
 (siehe §10); dieses Dokument synthetisiert, dupliziert nicht. Zeitpunktbezogen (2026-06-07);
 `datei:zeile`- und Zahl-Angaben vor Nutzung gegen den Code prüfen.
 
-Kanonische Koordinationsdatei der drei Claudes: `teiCrafter/knowledge/integration.md` (von CC2).
-
 ---
 
-## 1. Setup & Koordination
+## 1. Setup
 
-Drei Repos, drei Claude-Code-Instanzen, eine Methode (Promptotyping). Ziel: zwei unabhängige
+Drei Repos, eine Methode (Promptotyping). Ziel: zwei unabhängige
 HTR/OCR-Pipelines in **einem** verlustfreien Editor (teiCrafter) zusammenführen.
 
-| Claude | Repo | Rolle / Gate |
-|---|---|---|
-| **CC1** | `ResearchTools/teiCrafter` | Editor/Engine/Annotation (G2), Tests (G1.2/G4), Konverter-Referenz (G1.4b-Vorleistung) |
-| **CC2** | `szd-htr` | SZD-Batch-Konverter Page-JSON→TEI (G1.4b) + Koordinationsdoku |
-| **CC3** | `DHCraft/zbz-ocr-tei` | Frontend-Gap-Analyse ZBZ→teiCrafter, Hersch zuerst (G1.3) |
+| Repo | Rolle / Gate |
+|---|---|
+| `ResearchTools/teiCrafter` | Editor/Engine/Annotation (G2), Tests (G1.2/G4), Konverter-Referenz (G1.4b-Vorleistung) |
+| `szd-htr` | SZD-Batch-Konverter Page-JSON→TEI (G1.4b) |
+| `DHCraft/zbz-ocr-tei` | Frontend-Gap-Analyse ZBZ→teiCrafter, Hersch zuerst |
 
 **Gemeinsame Haltung:** „maschinell erzeugt = unverifiziert bis ein Mensch prüft" → in teiCrafter
 als violette `--color-ai`-Markierung sichtbar; in zbz/szd als Workflow-/Review-Status.
 
 **Kritischer Pfad (alle Deliverables auf Platte noch OFFEN, Stand 2026-06-07):**
 ```
-CC3 liefert CC1 das ZBZ-Bild-URL-Schema ─┐
-                                          ├─> CC1: converter-reference.md + <graphic>-Support
-CC2 baut mapping-unabh. Gerüst, wartet ───┘        └─> CC2: pipeline/export_tei.py fertig
+ZBZ-Bild-URL-Schema ─┐
+                     ├─> teiCrafter: converter-reference.md + <graphic>-Support
+mapping-unabh. Gerüst ┘        └─> szd: pipeline/export_tei.py fertig
 ```
-CC1 ist der Engpass. Gate-Plan existiert nur innerhalb integration.md (keine separate Plandatei).
+teiCrafter ist der Engpass.
 
 ---
 
-## 2. zbz-ocr-tei — Jeanne-Hersch-Pipeline (CC3)
+## 2. zbz-ocr-tei — Jeanne-Hersch-Pipeline
 
 - **Auftrag:** Zentralbibliothek Zürich (Kontakte Kreyenbühl, Anouschka), Auftragnehmer DHCraft
   (Pollin), bestätigt 14.02.2026. Nachlass der Philosophin Jeanne Hersch.
@@ -61,9 +59,9 @@ CC1 ist der Engpass. Gate-Plan existiert nur innerhalb integration.md (keine sep
   (absolute Pixel-Koordinaten). SoT = `output/tei_final/{doc}_final.xml` (E43); `docs/data/pages/`
   ist generierter Mirror (nie direkt editieren). Pro-Objekt-Manifest trägt Workflow-Status + History.
   **Wichtig: `{id}_final.xml` IST teiCrafters natives Format** → öffnet direkt, Text-Edit ohne Konvertierung.
-- **Qualität (E70/E73, SoT):** **Fidelity-CER Median 1,83% / Mean 3,99%** (n=25, BCa-Bootstrap Seed 42).
-  Volltext-CER (Mean 20,75%) ist Diagnose, kein Qualitätsmaß (ZBZ-Referenzen sind Teiltranskriptionen).
-  Pipeline-Mehrwert vs. reine OCR −7,90 pp (p=0,07, n.s.) — frühere Headline „−14,83 pp" zurückgezogen
+- **Qualität (E70/E73/E85, SoT):** **Fidelity-CER Median 1,40% / Mean 2,71%** (n=25, BCa-Bootstrap Seed 42).
+  Volltext-CER (Mean 18,94%) ist Diagnose, kein Qualitätsmaß (ZBZ-Referenzen sind Teiltranskriptionen).
+  Pipeline-Mehrwert vs. reine OCR −9,45 pp (p=0,013, signifikant; E85) — frühere Headline „−14,83 pp" zurückgezogen
   (Trimming-Artefakt). **285/285 schema-valide** (E68). Dictionary Hit Rate Median 97,7% = Schätzung
   (GT nur für 25 Docs; Proxy generalisiert nachweislich nicht, LOOCV-R²<0).
 - **Workflow-Status (E66/E67/E77):** je Strom (OCR/Layout/TEI) drei Stufen `unverifiziert | in_arbeit |
@@ -71,7 +69,7 @@ CC1 ist der Engpass. Gate-Plan existiert nur innerhalb integration.md (keine sep
 
 ---
 
-## 3. szd-htr — Stefan-Zweig-Nachlass HTR (CC2)
+## 3. szd-htr — Stefan-Zweig-Nachlass HTR
 
 - **Projekt:** Teilprojekt von *Stefan Zweig Digital*; VLM-HTR aus Faksimiles (Literaturarchiv Salzburg),
   Bild-Hosting GAMS (Uni Graz). Komplett von Claude Code generiert, Pollin = Fachentscheider. CC-BY 4.0.
@@ -101,12 +99,12 @@ CC1 ist der Engpass. Gate-Plan existiert nur innerhalb integration.md (keine sep
 
 ---
 
-## 4. teiCrafter — verlustfreier TEI-Editor (CC1)
+## 4. teiCrafter — verlustfreier TEI-Editor
 
 - **Zweck:** browserbasierter, **verlustfreier** Editor für beliebiges TEI. Öffnen → Folio-für-Folio
   lesen → im gerenderten Text korrigieren → **byte-identisch** zurückspeichern (außer Editiertem).
   „One workbench, two ways in": deterministischer Editor-Pfad + optionale „New from text (LLM)"-On-Ramp.
-- **Werkzeug-Abgrenzung (verbindlich, CC1 2026-06-07):** teiCrafter *bearbeitet* beliebiges TEI (Werkzeug).
+- **Werkzeug-Abgrenzung (verbindlich, 2026-06-07):** teiCrafter *bearbeitet* beliebiges TEI (Werkzeug).
   **EditionCrafter** ist eine eigene, unabhängige Linie und *baut ganze Editionen* (Anzeige/Apparat/Publikation);
   der **Editopia-Hersch-Demonstrator ist EditionCrafter v0, NICHT teiCrafter**. Die statischen ZBZ-/SZD-Viewer
   gehören zu den jeweiligen Pipelines, nicht zu teiCrafter. Merksatz: teiCrafter erzeugt/bearbeitet TEI,
@@ -173,15 +171,15 @@ Status: *Built* / *Browser-check* / *Future*.
 ```
 ZBZ:  PDF → Mistral-OCR → Docling-Layout → Unified-TEI → {id}_final.xml ──┐
                                                                           ├─> teiCrafter (Open)
-SZD:  Bilder → Gemini-VLM → [Layout] → Page-JSON v0.2 → (CC2 export_tei) ─┘
+SZD:  Bilder → Gemini-VLM → [Layout] → Page-JSON v0.2 → (export_tei) ─────┘
                                        └─> PAGE-XML / METS (Archiv, nicht Editor)
 ```
 - **ZBZ→Editor: funktioniert HEUTE für Text** (kein Konverter nötig; teiCrafter-Bundle ist doc 100s
   `_final.xml` + standOff-Demo).
-- **SZD→Editor: braucht CC2s `export_tei.py`** (blockiert auf CC1s Konverter-Referenz).
+- **SZD→Editor: braucht `export_tei.py`** (blockiert auf der Konverter-Referenz).
 - **Gemeinsame Bildlücke:** Editor zeigt Faksimile nur mit BEIDEM (imageUrl ∧ surface); imageUrl kommt
   nur aus hartcodiertem Demopfad (kein `<graphic>`-Support). **Fix:** `<graphic url>` pipeline-seitig ins
-  `<surface>` schreiben + `facsimile.js` liest `surface.graphic`. Lossless, generalisiert (CC1+CC3).
+  `<surface>` schreiben + `facsimile.js` liest `surface.graphic`. Lossless, generalisiert.
 - **Status-Mapping:** zbz Workflow-Status ↔ szd 4-Tier-Review ↔ teiCrafter violette AI-Markierung.
 
 ---
@@ -198,7 +196,7 @@ können es aber nicht selbst beurteilen → deterministischer Kern macht keine p
 
 ---
 
-## 8. CC3-Befunde: Frontend-Gaps (Detail → frontend-gaps.md)
+## 8. Befunde: Frontend-Gaps (Detail → frontend-gaps.md)
 
 Sechs Frontends analysiert; **szd-htr = Referenzimplementierung** (Empty/Error-States, `aria-sort`,
 URL-State, lokale Deps, Capability-Detection). Hersch-Top-Risiken: **H1** TEI-XML-Edit kann ganzes
@@ -207,14 +205,14 @@ Download-Fallback · **H3** Layout-Editor nur mausbedienbar · **H4** keine QA-S
 · **H5** Modal ohne Fokus-Trap. Stärke: Token-Disziplin nahezu perfekt. **Ökosystem-Muster:** ungehärtete
 fetch/Relativpfade → stille 404 auf GitHub Pages (editionCrafter, agentic-pipeline, SZD); A11y interaktiver
 Visualisierungen durchgängig schwach; visuelle Inkonsistenz Hersch-Viewer (= EditionCrafter v0)↔teiCrafter.
-**Hinweis:** Die *kanonische* G1.3 (ZBZ-Dateien IN teiCrafter testen + Bild-URL-Schema an CC1) steht noch aus.
+**Hinweis:** ZBZ-Dateien in teiCrafter testen plus Bild-URL-Schema stehen noch aus.
 
 ---
 
 ## 9. Offene Punkte / Blocker / Widersprüche
 
-**Blocker / kritischer Pfad:** CC1 converter-reference.md + `<graphic>`-Support fehlen → CC2 wartet;
-CC3 schuldet CC1 das ZBZ-Bild-URL-Schema (`docs/images/<id>/<id>_p00N.png` + ggf. IIIF-Pendant).
+**Blocker / kritischer Pfad:** converter-reference.md + `<graphic>`-Support in teiCrafter fehlen → SZD-Export
+wartet; ZBZ-Bild-URL-Schema steht aus (`docs/images/<id>/<id>_p00N.png` + ggf. IIIF-Pendant).
 
 **zbz offen:** M5 fachliche Kuration (855/855 Ströme unverifiziert) · O8 Header-Metadaten aus Alma →
 **195/285 Header mit leerem Container-/Journaltitel** (Spec-Konflikt mit Editionsrichtlinien, bewusst E76) ·
@@ -243,10 +241,10 @@ Raw-XML-Source-View · In-Browser-Full-Validate · segmentiertes Laden großer E
 
 | Domäne | SSoT |
 |---|---|
-| 3-Claude-Koordination, Kontrakte, Gates | `teiCrafter/knowledge/integration.md` (kanonisch) |
+| Kontrakte, Gates | `teiCrafter/knowledge/integration.md` (kanonisch) |
 | zbz Pipeline/Workflow/Qualität/Entscheidungen | `zbz-ocr-tei/knowledge/{pipeline,workflow,quality,decisions,methodik,projekt}.md` |
 | zbz Viewer-Funktion / Frontend-Gaps | `zbz-ocr-tei/knowledge/{viewer,frontend-gaps}.md` |
 | szd Pipeline/Verifikation/Daten | `szd-htr/knowledge/{data-overview,verification-concept,htr-interchange-format,page-xml-mets-architecture,evaluation-results,annotation-protocol}.md` |
 | teiCrafter Spec/Architektur/Stories/Tests | `teiCrafter/knowledge/{specification,architecture,user-stories,testing,design,data}.md` |
 
-Dieses Dokument = CC3-Synthese (zeitpunktbezogen). Bei Konflikt gilt der jeweilige Domänen-SSoT.
+Dieses Dokument = Synthese (zeitpunktbezogen). Bei Konflikt gilt der jeweilige Domänen-SSoT.

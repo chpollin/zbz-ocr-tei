@@ -14,13 +14,15 @@ Projekt-Konstitution. Operative Regeln und Konventionen, die bei jedem Pipeline-
 
 Einstiegspunkt: [knowledge/index.md](knowledge/index.md) — Navigation, Abhaengigkeiten, Schluesselkonzepte.
 
-10 thematisch klar getrennte Dokumente:
+12 thematisch klar getrennte Dokumente:
 
 - [projekt.md](knowledge/projekt.md) — Auftrag, Korpus, ZBZ-Workflow, Status
 - [pipeline.md](knowledge/pipeline.md) — 6-Stufen-Pipeline, Engines, TEI-Mapping
 - [workflow.md](knowledge/workflow.md) — End-to-End-Datenfluss, Save/Round-Trip, Provenance
 - [quality.md](knowledge/quality.md) — CER + Validierung + Screening
 - [viewer.md](knowledge/viewer.md) — Pipeline-Viewer (Faksimile + OCR + Layout + TEI + Editor)
+- [frontend-gaps.md](knowledge/frontend-gaps.md) — Frontend-Befunde (Bugs/UX/A11y/Performance) je Schweregrad
+- [oekosystem-synthese.md](knowledge/oekosystem-synthese.md) — Gesamtbild der drei Projekte (zbz / szd-htr / teiCrafter)
 - [infrastruktur.md](knowledge/infrastruktur.md) — Azure, Podman, CI/CD
 - [methodik.md](knowledge/methodik.md) — Promptotyping + epistemische Infrastruktur
 - [decisions.md](knowledge/decisions.md) — Entscheidungsregister
@@ -62,7 +64,7 @@ Token-Katalog: `docs/assets/css/tokens.css`. Basis-Komponenten: `docs/assets/css
 - `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
 - `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
 - `docs/` — statische Inspektions-/Demo-Site (GitHub-Pages-tauglich): HTML, `assets/` (`css/` + `js/`), `data/` (generierter Mirror), `images/`
-- `knowledge/` — Wissensbasis (10 Docs), Einstieg [knowledge/index.md](knowledge/index.md)
+- `knowledge/` — Wissensbasis (12 Docs), Einstieg [knowledge/index.md](knowledge/index.md)
 - `tests/` — pytest-Suites
 
 ### Objekt = Bündel paralleler Datenströme

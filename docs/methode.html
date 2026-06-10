@@ -73,10 +73,10 @@
           <tr><th>Metrik</th><th class="num">Mean</th><th class="num">Median</th><th class="num">95 %-CI (Mean)</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Fidelity-CER (primaer)</strong> &mdash; echte Fehler</td><td class="num">3.99 %</td><td class="num">1.83 %</td><td class="num">[2.36, 5.96]</td></tr>
-          <tr><td>Volltext-CER <em>(Diagnose, scope-inkl. &mdash; kein Qualitaetsmass)</em></td><td class="num">20.22 %</td><td class="num">12.29 %</td><td class="num">[11.37, 31.38]</td></tr>
+          <tr><td><strong>Fidelity-CER (primaer)</strong> &mdash; echte Fehler</td><td class="num">2.71 %</td><td class="num">1.40 %</td><td class="num">[1.77, 3.82]</td></tr>
+          <tr><td>Volltext-CER <em>(Diagnose, scope-inkl. &mdash; kein Qualitaetsmass)</em></td><td class="num">18.94 %</td><td class="num">12.13 %</td><td class="num">[10.26, 30.09]</td></tr>
           <tr><td>Scope-Rate (Pipeline-Mehrtext, kein Fehler)</td><td class="num">16.23 %</td><td class="num">7.06 %</td><td class="num">&mdash;</td></tr>
-          <tr><td>Pipeline-Mehrwert vs. reine OCR (paired, E2E)</td><td class="num">&minus;7.90 pp</td><td class="num">&mdash;</td><td class="num">p = 0.07 (n.s.)</td></tr>
+          <tr><td>Pipeline-Mehrwert vs. reine OCR (paired, E2E)</td><td class="num">&minus;9.45 pp</td><td class="num">&mdash;</td><td class="num">p = 0.013</td></tr>
           <tr><td>HCPR (Diakritik-Erhalt)</td><td class="num">~99 %</td><td class="num">&mdash;</td><td class="num">&mdash;</td></tr>
         </tbody>
       </table>
@@ -88,13 +88,14 @@
         die echten Fehler und ist die belastbare Qualitaetszahl: <code>Fidelity + Scope = Volltext</code>.
         Die Transkribus-Qualitaetsbaender (&lt;&nbsp;2&nbsp;% exzellent, 2&ndash;5&nbsp;% gut) stammen
         primaer aus der HTR-Praxis (Handschrift) und schmeicheln einer reinen Druck-OCR-Aufgabe;
-        massgeblich ist der Print-OCR-Literaturvergleich unten. Der Fidelity-Median (1.83&nbsp;%) ist
+        massgeblich ist der Print-OCR-Literaturvergleich unten. Der Fidelity-Median (1.40&nbsp;%) ist
         fuer historischen Druck solide, aber nicht an der Spitze.
       </p>
       <p class="note">
         Der fruehere Wert „&minus;14.83&nbsp;pp" fuer den Pipeline-Mehrwert war ein Artefakt des
-        getrimmten Vergleichs und ist zurueckgezogen; der korrigierte Mehrwert (&minus;7.90&nbsp;pp)
-        ist statistisch nicht signifikant (p&nbsp;=&nbsp;0.07, n&nbsp;=&nbsp;25). Die fruehere
+        getrimmten Vergleichs und ist zurueckgezogen; nach den referenz-verifizierten
+        Fussnoten-Demotionen (E85) betraegt der Mehrwert &minus;9.45&nbsp;pp und ist statistisch
+        signifikant (p&nbsp;=&nbsp;0.013, n&nbsp;=&nbsp;25). Die fruehere
         scope-bereinigte Subset-Auswahl (n&nbsp;=&nbsp;19) wurde entfernt: sie folgte keinem
         reproduzierbaren Kriterium. Alle Werte rechnen jetzt ueber alle 25 Referenzen.
       </p>
@@ -148,7 +149,7 @@
         <tbody>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 + Gemini 2.0 Post-Korrektur</td><td>deu Fraktur</td><td class="num">0.84 %</td></tr>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>Gemini 2.0 Flash zero-shot</td><td>deu</td><td class="num">1.27 %</td></tr>
-          <tr><td><strong>Hersch-Pipeline (eigen)</strong></td><td>Mistral + Docling + Gemini-TEI</td><td>fra/deu</td><td class="num"><strong>1.83 %</strong></td></tr>
+          <tr><td><strong>Hersch-Pipeline (eigen)</strong></td><td>Mistral + Docling + Gemini-TEI</td><td>fra/deu</td><td class="num"><strong>1.40 %</strong></td></tr>
           <tr><td>arXiv 2510.06743</td><td>Gemini 2.5 Pro</td><td>rus 18.&nbsp;Jh.</td><td class="num">3.36 %</td></tr>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>Transkribus M1 allein</td><td>deu</td><td class="num">3.67 %</td></tr>
           <tr><td>Crosilla et&nbsp;al. 2025</td><td>GPT-4o direkt</td><td>deu</td><td class="num">6.31 %</td></tr>
@@ -156,7 +157,7 @@
         </tbody>
       </table>
       <p class="note">
-        Hersch-Median (1.83&nbsp;%) liegt zwischen Crosillas bestem Stack
+        Hersch-Median (1.40&nbsp;%) liegt zwischen Crosillas bestem Stack
         (Transkribus + LLM-Post-Korrektur, 0.84&nbsp;%) und Transkribus allein (3.67&nbsp;%) &mdash;
         besser als Gemini&nbsp;2.5&nbsp;Pro zero-shot auf vergleichbarem Material. Ausschliesslich
         Quellen ab 2025 zitiert, vollstaendige Liste im Repo.

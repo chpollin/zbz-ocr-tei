@@ -72,10 +72,12 @@ BCa bootstrap, seed 42 (regenerate via `scripts/eval/cer_statistics_full.py`):
 
 | Metric | Median | Mean | 95% CI (mean) |
 |---|---|---|---|
-| **Fidelity CER** (the quality measure) | **1.83%** | **4.26%** | [2.39%, 6.48%] |
+| **Fidelity CER** (the quality measure) | **1.40%** | **2.71%** | [1.77%, 3.82%] |
 
-By Transkribus quality bands the median is "excellent", the mean "good". Caveat: the ZBZ
-reference TEIs are selective **partial** transcriptions, so naive full-text CER (mean 20.75%)
+Calibrated against print-OCR literature, not HTR quality bands (E80): the median 1.40% sits
+between the best specialised print stack (0.84%) and Transkribus alone (3.67%) &mdash; solid
+for historical print, not state of the art. Caveat: the ZBZ reference TEIs are selective
+**partial** transcriptions, so naive full-text CER (mean 18.94%)
 is a diagnostic artifact, not a quality measure &mdash; the fidelity CER isolates real
 OCR/transcription errors from "the pipeline produced more text than the reference". Full
 methodology, stratified values, limitations and literature comparison:
@@ -244,9 +246,11 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | **End-to-end workflow + save mechanism + round-trip + provenance concept** | **[knowledge/workflow.md](knowledge/workflow.md)** |
 | Quality (CER, validation, screening) | [knowledge/quality.md](knowledge/quality.md) |
 | Viewer (frontend architecture, OSD, edit toggles, export) | [knowledge/viewer.md](knowledge/viewer.md) |
+| Frontend findings (bugs/UX/a11y per severity) | [knowledge/frontend-gaps.md](knowledge/frontend-gaps.md) |
+| Ecosystem synthesis (zbz / szd-htr / teiCrafter) | [knowledge/oekosystem-synthese.md](knowledge/oekosystem-synthese.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
 | Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
-| Decisions + open items (E1–E76) | [knowledge/decisions.md](knowledge/decisions.md) |
+| Decisions + open items (E1–E85) | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team
