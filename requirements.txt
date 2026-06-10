@@ -1,40 +1,37 @@
 # ZBZ-OCR-TEI Pipeline
 # Python 3.11+
 
-# OCR (GPU erforderlich)
-torch>=2.0.0
-torchvision>=0.15.0
-transformers>=4.35.0
-accelerate>=0.24.0
+# config (.env -> env vars; top-level import in scripts/config.py)
+python-dotenv>=1.0.0
 
-# PDF-Verarbeitung
+# PDF processing
 pypdfium2>=4.0.0
 Pillow>=10.0.0
-PyMuPDF>=1.23.0           # PDF-Splitting fuer Mistral (max 30 Seiten/Request)
+PyMuPDF>=1.23.0           # PDF splitting for Mistral (max 30 pages/request)
 
-# API-Zugang (Mistral Document AI auf Azure)
+# HTTP (OCR APIs, Transkribus upload)
 requests>=2.31.0
 
 # TEI/XML
 lxml>=4.9.0
 
-# Evaluation
-jiwer>=3.0.0          # CER/WER Berechnung
-rapidfuzz>=3.0.0      # String-Matching
+# evaluation
+rapidfuzz>=3.0.0          # Levenshtein opcodes (CER decomposition)
+numpy>=1.26.0             # CER statistics (bootstrap)
+scipy>=1.11.0             # CER statistics (tests/distributions)
+pyspellchecker>=0.7.0     # quality proxy (dictionary hit rate)
 
-# Optional: Docling (Alternative OCR)
-# pip install docling "docling[easyocr]"
-# Hinweis: Erfordert Windows Developer Mode (Symlinks)
-
-# LLM Post-Correction (optional, Stage 2a)
+# LLM post-correction (optional, stage 2a; lazy import)
 anthropic>=0.39.0
 
-# Gemini API (Layout QA, Classification, OCR Correction)
+# Gemini API (layout QA, classification, OCR correction, TEI step 2)
 google-genai>=1.0.0
 
-# Curation Server
-fastapi>=0.110.0
-uvicorn[standard]>=0.29.0
+# optional: torch (lazy import in scripts/utils.py, local GPU experiments only)
+# pip install torch
 
-# Entwicklung
+# optional: Docling layout engine (requires Windows Developer Mode for symlinks)
+# pip install docling "docling[easyocr]"
+
+# development
 pytest>=7.0.0

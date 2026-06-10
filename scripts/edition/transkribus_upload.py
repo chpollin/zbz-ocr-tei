@@ -29,6 +29,7 @@ Wichtig: Jeder Lauf legt NEUE Dokumente an (kein Dedup). Vor dem ersten echten L
     python -m scripts.edition.transkribus_upload                 # ganzes Bundle
 """
 import argparse
+import contextlib
 import os
 import sys
 import time
@@ -113,15 +114,13 @@ def create_upload(session, coll, title, pages):
 
 
 def put_page(session, uid, img, xml):
-    files = {"img": (img.name, open(img, "rb"), "application/octet-stream")}
-    if xml:
-        files["xml"] = (xml.name, open(xml, "rb"), "application/octet-stream")
-    try:
+    # ExitStack closes both handles even if the second open() fails
+    with contextlib.ExitStack() as stack:
+        files = {"img": (img.name, stack.enter_context(open(img, "rb")), "application/octet-stream")}
+        if xml:
+            files["xml"] = (xml.name, stack.enter_context(open(xml, "rb")), "application/octet-stream")
         r = session.put(f"{BASE}/uploads/{uid}", files=files, timeout=300)
         r.raise_for_status()
-    finally:
-        for _k, tup in files.items():
-            tup[1].close()
 
 
 def upload_doc(session, coll, doc_dir, dry_run):

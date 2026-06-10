@@ -311,11 +311,12 @@ def main():
             print(f"        - {w}")
 
     write_readme(args.out, selection, catalog)
-    json.dump(
-        {"selection": selection, "pages": total_pages},
-        open(args.out / "_selection.json", "w", encoding="utf-8"),
-        ensure_ascii=False, indent=2,
-    )
+    with open(args.out / "_selection.json", "w", encoding="utf-8") as f:
+        json.dump(
+            {"selection": selection, "pages": total_pages},
+            f,
+            ensure_ascii=False, indent=2,
+        )
     print(f"\nFertig: {len(selection)} Objekte, {total_pages} Seiten -> {args.out}")
     if total_warn:
         print(f"{total_warn} Hinweis(e) gesamt (siehe oben).")
