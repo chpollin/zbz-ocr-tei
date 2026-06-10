@@ -93,10 +93,12 @@ Sprache; Zustaendigkeiten sind als Rollen statt Personennamen notiert.
   weil noch keines der 285 Dokumente fachlich verifiziert ist.
 
 **Stand.** Testsuite 563 gruen, 285/285 Dokumente schema-valide, alle H- und M-Befunde
-der Gap-Analyse behoben, Wissensbasis konsistent mit dem Repo-Stand. Offen bleiben die
-zurueckgestellten N-Befunde sowie die fachliche Verifikation der Inhalte (855 von 855
-Datenstroemen stehen auf `unverifiziert`). Savepoint: Commits 52fd7733 bis 9aa7163e
-auf `cc3/session-2026-06-07`.
+der Gap-Analyse behoben, Wissensbasis konsistent mit dem Repo-Stand. Erste inhaltliche
+Kurationsschritte ueber den Viewer liegen vor: In den Dokumenten 3200 und 760 wurden
+Werktitel als `<bibl>` ausgezeichnet (kanonisch in `tei_final`, Mirror konsistent).
+Offen bleiben die zurueckgestellten N-Befunde sowie die fachliche Verifikation der
+Inhalte (855 von 855 Datenstroemen stehen auf `unverifiziert`). Savepoint: Commits
+52fd7733 bis 6a73478f auf `cc3/session-2026-06-07`.
 
 **Naechste Schritte.**
 1. Render-Check der TEI-Daten in der teiCrafter-Integration nach Testplan T1-T9
