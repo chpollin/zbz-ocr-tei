@@ -19,7 +19,7 @@ data/
 │   └── guidelines/              # editorial guidelines (text + DTA link)            [tracked]
 │
 ├── schema/                      # zbz_hersch.rng (project-specific TEI schema)      [tracked]
-├── curated_tei/                 # curated gold-standard TEI                          [tracked]
+├── curated_tei/                 # reserved for human-verified TEI (currently empty)  [tracked]
 └── doc_metadata.json            # GENERATED Gemini classification (committed cache)  [tracked]
 ```
 
@@ -47,5 +47,5 @@ See [knowledge/projekt.md](../knowledge/projekt.md) for the funnel and
 ## Note
 
 `source/` is excluded from Git (sensitive / large files). A fresh clone therefore carries
-the project-built authority (`schema/`, `curated_tei/`) and the classification
-cache, but not the raw ZBZ delivery.
+the project-built authority (`schema/`), the reserved `curated_tei/` folder (empty until
+documents are human-verified) and the classification cache, but not the raw ZBZ delivery.

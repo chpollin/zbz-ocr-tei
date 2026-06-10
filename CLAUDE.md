@@ -6,7 +6,7 @@ Projekt-Konstitution. Operative Regeln und Konventionen, die bei jedem Pipeline-
 
 1. **Journal fuehren:** Jede Sitzung dokumentieren in [knowledge/journal.md](knowledge/journal.md) — eine Zeile pro Sitzung, kompakter Ueberblick. Details ins Git-Log.
 2. **Wissen in `knowledge/`:** nicht in CLAUDE.md duplizieren. Single Source of Truth pro Fakt.
-3. **Output nicht versionieren:** generierte Dateien gehoeren in `output/` (gitignored). Ausnahme: `data/curated_tei/` (Gold-Standard).
+3. **Output nicht versionieren:** generierte Dateien gehoeren in `output/` (gitignored). Ausnahme: `data/curated_tei/` (vorgesehen fuer von Hand verifizierte TEI, derzeit leer).
 4. **Vor Aenderungen testen:** Evaluierung laufen lassen, Metriken vergleichen.
 5. **Single Source of Truth:** jeder Fakt steht in genau einem Dokument. Andere Dokumente verweisen via Cross-Reference.
 
@@ -36,6 +36,8 @@ Einstiegspunkt: [knowledge/index.md](knowledge/index.md) — Navigation, Abhaeng
 
 ## Code-Konventionen
 
+- **Code-Kommentare:** ausschliesslich Englisch, kompakt, und nur wo wirklich noetig — fuer Constraints, die der Code selbst nicht zeigt. Keine Erklaerungen des Offensichtlichen, keine Herkunfts- oder Aenderungsnotizen (kein "added 2026-06-10", kein "fixes H1") im Code; Entscheidungs-Provenienz gehoert in [knowledge/decisions.md](knowledge/decisions.md) bzw. ins Journal.
+- **Keine Personennamen in Markdown:** in Repo-Markdown (knowledge/, README, reports/) Rollen und Organisationen verwenden (ZBZ, DHCraft, Projektleitung). Jeanne Hersch als Gegenstand des Korpus ist davon ausgenommen.
 - **Keine Kostenangaben:** in Doku, Reports und Code keine Geldbetraege/Budgets (USD/$/CHF/EUR) nennen. Betriebshinweise wie `kostenlos`/`kostenpflichtig` (= kein/ein API-Call) sind erlaubt, da sie Aufrufe steuern, keine Kosten beziffern.
 - **Windows-Encoding:** keine Unicode-Sonderzeichen in Print-Statements
 - **Pfade:** absolute Pfade oder `pathlib`
@@ -60,7 +62,7 @@ Token-Katalog: `docs/assets/css/tokens.css`. Basis-Komponenten: `docs/assets/css
 
 ### Verzeichnisse (Orientierung)
 
-- `data/` — Eingangs- und Referenzdaten. `source/` = ZB-Lieferung (immutabler Input, grösstenteils gitignored): `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (Editionsrichtlinien). Projekt-Autorität (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (Gold-Standard). Generiert: `doc_metadata.json` (Gemini-Cache)
+- `data/` — Eingangs- und Referenzdaten. `source/` = ZB-Lieferung (immutabler Input, grösstenteils gitignored): `pdf/`, `reference_tei/`, `transkribus_page_xml/`, `masterfile/Masterfile.xlsx`, `guidelines/` (Editionsrichtlinien). Projekt-Autorität (git-tracked): `schema/zbz_hersch.rng`, `curated_tei/` (vorgesehen fuer von Hand verifizierte TEI, derzeit leer). Generiert: `doc_metadata.json` (Gemini-Cache)
 - `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
 - `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
 - `docs/` — statische Inspektions-/Demo-Site (GitHub-Pages-tauglich): HTML, `assets/` (`css/` + `js/`), `data/` (generierter Mirror), `images/`
@@ -82,7 +84,7 @@ Detaillierte Stufen / Skripte / Engines: [knowledge/pipeline.md](knowledge/pipel
 
 - **`output/tei_final/{doc}_final.xml` ist die Single Source of Truth der ausgelieferten TEI-Daten** (E43). Nur `tei_final/` wird angezeigt. Jedes finale TEI traegt `<revisionDesc>` mit Pipeline-Status (E42); der Workflow-Status pro Strom wird beim ZBZ-Uebergabe-Schritt via `tei_status_marker.py` aus dem Manifest in den `<revisionDesc>` projiziert (E66).
 - **`docs/data/pages/{doc}/` ist ein GENERIERTER Mirror — niemals direkt editieren.** Erzeugt von `scripts/edition/generate_edition_data.py` aus: per-Seiten-TEI (aus `tei_final` gesplittet) + Mistral-`.md` + Layout-JSON. Nach Aenderungen an der Quelle Mirror neu generieren.
-- `output/tei_unified/` ist Pipeline-Output (nicht editieren). Kuratierte Gold-TEIs liegen in `data/curated_tei/` (git-tracked).
+- `output/tei_unified/` ist Pipeline-Output (nicht editieren). Von Hand verifizierte TEIs sind fuer `data/curated_tei/` (git-tracked) vorgesehen; der Ordner ist derzeit leer.
 
 ## Methodik
 

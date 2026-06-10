@@ -173,7 +173,7 @@ zbz-ocr-tei/
       masterfile/         # Masterfile.xlsx (catalog + steering)
       guidelines/         # editorial guidelines (ZBZ + DTA link)
     schema/               # zbz_hersch.rng (project TEI schema)
-    curated_tei/          # curated gold-standard TEI
+    curated_tei/          # reserved for human-verified TEI (currently empty)
     doc_metadata.json     # generated Gemini classification (committed cache)
   output/                 # Generated pipeline data (not versioned)
   .env.example            # Template for API keys
