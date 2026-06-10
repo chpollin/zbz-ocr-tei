@@ -102,7 +102,8 @@ PubForm, as required by the editorial guidelines). An earlier MMSID projection w
 Consequently 195/285 delivered headers still carry an empty container/journal title.
 
 **Pending / not done:**
-- Containerization (Podman) and CI/CD (GitLab UZH) &mdash; decided (E9/E10), not built.
+- Containerization (Podman) and GitLab-UZH CI &mdash; decided (E9/E10), not built. A GitHub
+  Actions test gate (full pytest suite on every push/PR) exists since 2026-06-10.
 - Human verification of all 285 documents (milestone M5).
 - Live facsimile images: only 4 demo documents are committed (`1000`, `1330`, `1540`,
   `2310`); the rest are local-only (~4 GB), so the GitHub Pages viewer shows scans only for
@@ -250,7 +251,7 @@ Complete CLI reference: [CLAUDE.md](CLAUDE.md) at the bottom.
 | Ecosystem synthesis (zbz / szd-htr / teiCrafter) | [knowledge/oekosystem-synthese.md](knowledge/oekosystem-synthese.md) |
 | Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
 | Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
-| Decisions + open items (E1–E85) | [knowledge/decisions.md](knowledge/decisions.md) |
+| Decisions + open items | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 
 ## Team

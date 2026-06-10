@@ -224,10 +224,10 @@ Faksimiles online nur 4 Demo-Docs · LLM-Varianz ungemessen (`stability: open`).
 **teiCrafter offen (Future):** echte IIIF-Tiles · Apparat-/Note-Authoring · Normdaten-IDs · Page-JSON→TEI ·
 Raw-XML-Source-View · In-Browser-Full-Validate · segmentiertes Laden großer Editionen.
 
-**Doku-Widersprüche/Veraltetes (festgestellt):**
-- zbz: `pipeline.md`/`methodik.md` nennen noch die alten **4** Status (E77 → jetzt 3); README-E-Zähler
-  „E1–E76" obwohl E77–E79 existieren; JSZip-Export uneinheitlich (Einzel-Export da, ZIP-Bundle nicht
-  eingebunden); `data/curated_tei/` als Gold deklariert, aber leer (`.gitkeep`).
+**Doku-Widersprüche/Veraltetes (nachgeprüft 2026-06-10):**
+- zbz: Status-Stufen (E77) und E-Zähler sind in allen Docs nachgezogen (behoben 2026-06-10).
+  Weiterhin offen: JSZip-ZIP-Bundle (E61) nicht eingebunden (Einzel-Export vorhanden);
+  `data/curated_tei/` als Gold deklariert, aber leer (`.gitkeep`).
 - szd: Objektzahlen schwanken dokumentübergreifend (1319…2107; maßgeblich 2.107); Modell-IDs
   („Gemini 3.1 Flash Lite", „Claude Opus 4.6") und Session-Daten in projizierter 2026-Zeitlinie;
   `teicrafter-integration.md` (06/2026) reaktiviert den in Session 21 gelöschten TEI-Konverter-Kontrakt

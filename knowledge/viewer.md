@@ -29,12 +29,12 @@ Stroeme (Layout, Text, Workflow-Status) in einem Akt -- direkt in den Repo-Klon 
 Access API (Chromium) oder als Datei-Download (Fallback) -- und spiegelt sie zugleich in den
 Viewer-Mirror (`docs/data/`), damit ein Reload den Stand zeigt (E72/E78/E79).
 
-**In Umbau (Mai 2026 Edition-Uplift-Welle):** Mode-Buttons sind Edit-Toggle pro Panel
-(E60, erledigt; benannt "Layout"/"Text", E64), Faksimile-Renderer ist im View-Modus auf
-OpenSeadragon umgestellt (E58, Pan + Zoom + Rotate), Layout-Editor wird mit
-OSD-Koordinaten-Conversion neu verdrahtet. Polygon-Support
-bewusst ausgeschlossen (E59) — Hersch-Druck reicht mit Rechtecken. Plan-Dokument:
-`C:\Users\Chrisi\.claude\plans\edition-uplift-three-pages.md`.
+**Edition-Uplift-Welle (Mai 2026, E58-E67):** Mode-Buttons sind Edit-Toggle pro Panel
+(E60; benannt "Layout bearbeiten"/"Text bearbeiten", E64/E78), Faksimile-Renderer ist im
+View-Modus OpenSeadragon (E58, Pan + Zoom + Rotate). Polygon-Support bewusst
+ausgeschlossen (E59) — Hersch-Druck reicht mit Rechtecken. Der Layout-Editor nutzt
+weiterhin das statische `<img>`-Overlay; die OSD-Koordinaten-Verdrahtung ist offen.
+Offene Frontend-Reste: [frontend-gaps.md](frontend-gaps.md).
 
 ---
 
@@ -360,4 +360,4 @@ Aenderung am `output/tei_final/` sollte er neu erzeugt werden.
 - [quality.md](quality.md) — Diagnostik-Daten in `docs/data/` (CER, TEI-Quality)
 - [workflow.md](workflow.md) — End-to-End-Datenfluss, Save-Mechanismus, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante
 - [decisions.md](decisions.md) — E56 (Frontend-Reduktion auf Viewer-only), E57 (Per-Seiten-Mirror + Pages-Deploy), E58 (OpenSeadragon), E59 (Polygone verworfen), E60 (Mode-Button-Redesign Option C), E61 (Export-Modul JSZip)
-- Plan-Dokument: `C:\Users\Chrisi\.claude\plans\edition-uplift-three-pages.md`
+- [frontend-gaps.md](frontend-gaps.md) — offene Befunde (Bugs/UX/A11y) je Schweregrad

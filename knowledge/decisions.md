@@ -12,7 +12,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 
 ---
 
-## Entschieden (E1-E84)
+## Entschieden (E1-E86)
 
 | # | Entscheidung | Begruendung | Datum | Dokument |
 |---|---|---|---|---|

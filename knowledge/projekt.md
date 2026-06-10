@@ -149,13 +149,13 @@ und [quality.md](quality.md).
 | Dokumentklassifikation | Done | `classify_docs.py` (E27) |
 | NER + Entity-Linking | Entfernt (E71) | aus Pipeline + Output entfernt; Verlinkung war nicht lieferfaehig |
 | Unified TEI Pipeline | Done | 285/285 schema-valide (E32) |
-| TEI Validator | Done | RelaxNG + 8 Projektregeln + 14 Warnings |
+| TEI Validator | Done | RelaxNG + 8 Projektregeln + 18 Warnings (W15-W18 seit E84) |
 | Workflow-Status pro Strom (E66/E67) | Done (Datenmodell) | ersetzt Agent-Screening; 285/285 `unverifiziert`, im Viewer setzbar, Provenienz im Manifest |
-| Pipeline-Viewer (E56) | Done | `docs/viewer.html` Single-Page mit Layout- + Transkriptions-Editor, Persistenz via Download |
-| Viewer Edition-Uplift (Mai 2026) | groesstenteils umgesetzt | Ausgeliefert: E58 (OSD-Faksimile), E60 (Edit-Toggle pro Panel), E62 (Methode-Seite), E63/E65 (Leerseiten-Manifest + TEI-Marker), E66/E67 (Workflow-Status + Ampel-Reframing + Catalog-Refactor). Offen: E61 (Export-Modul, JSZip — geplant, im Code noch nicht eingebunden), complete-TEI (`<facsimile>`/`<zone>`) + Provenance-Drawer (geplant, eigene Pipeline-Welle), OSD-Layout-Editor-Integration, viewer.js-Modulsplit. Plan: `~/.claude/plans/edition-uplift-three-pages.md` |
+| Pipeline-Viewer (E56) | Done | `docs/viewer.html` Single-Page mit Layout- + Transkriptions-Editor; Persistenz direkt ins Repo + Mirror (E72/E78/E79), Download als Fallback |
+| Viewer Edition-Uplift (Mai 2026) | groesstenteils umgesetzt | Ausgeliefert: E58 (OSD-Faksimile), E60 (Edit-Toggle pro Panel), E62 (Methode-Seite), E63/E65 (Leerseiten-Manifest + TEI-Marker), E66/E67 (Workflow-Status + Ampel-Reframing + Catalog-Refactor). Offen: E61 (Export-Modul, JSZip — geplant, im Code noch nicht eingebunden), complete-TEI (`<facsimile>`/`<zone>`) + Provenance-Drawer (geplant, eigene Pipeline-Welle), OSD-Layout-Editor-Integration, viewer.js-Modulsplit. Offene Frontend-Befunde: [frontend-gaps.md](frontend-gaps.md) |
 | Workflow + Provenance | Konzept dokumentiert | [workflow.md](workflow.md) beschreibt Datenfluss, Save-Mechanismus, Round-Trip, `_complete.xml`- und `provenance.json`-Konzept |
 | Containerisierung | Pending | Dockerfile/Podman |
-| CI/CD | Pending | GitLab Uni Zuerich |
+| CI/CD | Teilweise | GitHub Actions aktiv (pytest bei Push/PR, 2026-06-10); GitLab Uni Zuerich pending |
 
 ---
 

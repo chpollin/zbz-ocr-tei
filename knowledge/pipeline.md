@@ -408,27 +408,12 @@ der 4 DEMO-Docs (Bildlieferung lokal-only, 4 GB).
 
 ## Manuelle Edits zurueck in die Pipeline (Round-Trip)
 
-Der Viewer (E56) erlaubt manuelle Layout- und Transkriptions-Korrekturen.
-Persistenz erfolgt ausschliesslich als Browser-Download. Der vollstaendige
-Round-Trip in die Pipeline ist NICHT automatisiert — Konvention statt
-Mechanismus.
-
-Konkrete Schritte fuer einen Layout-Edit:
-
-1. User editiert im Viewer, klickt "Layout ↓" → `{doc}_p{N}_layout_curated.json` landet im Browser-Download-Ordner.
-2. User legt die Datei manuell unter `output/layout/{doc}/{doc}_p{NNN}_layout_curated.json` ab (der Loader bevorzugt diese `_curated`-Variante; alternativ schreibt der Viewer sie via "Ordner verbinden" direkt dorthin).
-3. Pipeline-Re-Run: `python -m scripts.tei.tei_unified --doc {ID} --reassemble` regeneriert das TEI mit der kuratierten OCR/Layout als Input. `--reassemble` nutzt den Gemini-Step-2-Cache (kostenlos fuer unveraenderte Seiten); Seiten mit neuerer kuratierter OCR/Layout werden gezielt neu refined (je 1 Gemini-Call), damit die Korrektur ins finale TEI gelangt.
-4. `python -m scripts.tei.tei_add_revision --doc {ID}` schreibt `<revisionDesc>` neu.
-5. `python -m scripts.tei.tei_validator --doc {ID}` validiert.
-6. `python -m scripts.edition.generate_edition_data --mirror-only` regeneriert die Frontend-Mirrors (alle Docs; es gibt keinen `--doc`-Scope).
-
-Aktuelle Manken: Schritte 3-6 sind nicht in einem Wrapper-Script automatisiert.
-Keine Konvention-Erzwingung fuer den Ablage-Pfad. Kein Auto-Save im Browser
-(Tab schliessen ohne Download = Edit weg).
-
-Vollstaendige Beschreibung inkl. Save-Mechanismus, Provenance-Konzept und
-geplanter `_complete.xml`-Variante mit eingebettetem `<facsimile>` / `<zone>`:
-[workflow.md](workflow.md).
+Der Viewer schreibt Kuration (Layout, OCR-Text, Workflow-Status) direkt in den
+Working Tree (File System Access API, E72/E78) und spiegelt sie nach `docs/data/`
+(E79); `tei_unified --reassemble` konsumiert die kuratierten Dateien real und
+refined gezielt die geaenderten Seiten (je 1 Gemini-Call). Vollstaendiger Ablauf
+inkl. Save-Mechanismus, Schrittfolge, Provenance-Konzept und geplanter
+`_complete.xml`-Variante: [workflow.md §Round-Trip](workflow.md).
 
 Daten: Scan-Bilder in `docs/images/{doc_id}/`, OCR/Layout/TEI in `docs/data/examples/{doc_id}/`.
 `core.js`-Pfadresolver mit dreistufiger Fallback-Kette: `data/pages/` → `data/examples/{doc_id}/`

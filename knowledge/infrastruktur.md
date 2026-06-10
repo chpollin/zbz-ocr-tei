@@ -119,9 +119,16 @@ ENTRYPOINT ["python", "-m", "scripts.ocr.ocr_pipeline"]
 
 ---
 
-## CI/CD (GitLab)
+## CI/CD
 
-### Anforderungen
+### Aktiv: GitHub Actions (Development-Repo)
+
+`.github/workflows/tests.yml` (seit 2026-06-10) fuehrt bei jedem Push/PR die volle
+pytest-Suite aus (Python 3.11, `pip install -r requirements.txt`). Datenabhaengige
+Tests (`output/`, `data/source/`) skippen sich auf dem frischen Checkout selbst;
+geprueft werden damit Schema-Kompilat, Statistik-Library, Helfer und Script-Health.
+
+### Geplant: GitLab CI (Uni Zuerich, E10)
 
 - GitLab CI auf der Uni-Zuerich-Instanz
 - Container Build + Push zur GitLab Registry

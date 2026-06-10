@@ -198,7 +198,7 @@ Ein zentrales Bearbeitungs-Log pro Dokument. Schema-Vorschlag:
     "layout_source": "gemini_corrected_v3.1+curated",
     "ocr_source": "mistral_2512",
     "tei_version": "1.4.2",
-    "workflow_status": { "ocr": "unverifiziert", "layout": "bearbeitet", "tei": "unverifiziert" }
+    "workflow_status": { "ocr": "unverifiziert", "layout": "in_arbeit", "tei": "unverifiziert" }
   },
   "history": [
     {
@@ -221,7 +221,7 @@ Ein zentrales Bearbeitungs-Log pro Dokument. Schema-Vorschlag:
       "actor": "human:ek",
       "kind": "workflow_status",
       "scope": "layout",
-      "details": "unverifiziert -> bearbeitet",
+      "details": "unverifiziert -> in_arbeit",
       "ref": "output/tei_final/20_manifest.json"
     },
     {
@@ -300,8 +300,8 @@ Im `<revisionDesc>` des `_complete.xml` werden die Items aus
     Layout-QA durch Gemini, 14 Korrekturen</change>
   <change when="2026-05-25T14:00:00Z" who="#person-chpollin" type="layoutEdit">
     Manuelle Layout-Korrektur, Seite 1, 3 Regionen</change>
-  <change when="2026-05-26T10:23:00Z" who="#person-ek" status="bearbeitet" n="layout">
-    Workflow-Status layout: unverifiziert -&gt; bearbeitet (E66)</change>
+  <change when="2026-05-26T10:23:00Z" who="#person-ek" status="in_arbeit" n="layout">
+    Workflow-Status layout: unverifiziert -&gt; in_arbeit (E66/E77)</change>
 </revisionDesc>
 ```
 
@@ -338,8 +338,8 @@ Separat von der UI-Welle, sollte ein eigenes Etappen-Paket sein.
 | Etappe 3 (about.html) | Workflow-Sektion mit Pipeline-Diagramm, CER-Visualisierung, Korpus-Komposition (3 Bar-Charts), Screening-Pyramide, Featured-Karten | geplant |
 | Etappe 4 (Quer-Politur) | Token-Audit, Print-CSS, Site-Header schlanker | geplant |
 
-Plan-Dokument (Stand der Welle):
-`C:\Users\Chrisi\.claude\plans\edition-uplift-three-pages.md`.
+Die Entscheidungen der Welle sind als E58-E67 in [decisions.md](decisions.md)
+dokumentiert; offene Frontend-Reste in [frontend-gaps.md](frontend-gaps.md).
 
 ---
 
@@ -361,8 +361,7 @@ automatisiert) und die geplante Pipeline-Welle (`_complete.xml` + `provenance.js
 - [pipeline.md](pipeline.md) — Pipeline-Stufen, Engines, TEI-Mapping
 - [viewer.md](viewer.md) — Viewer-Architektur, Persistenz, Design-System
 - [quality.md](quality.md) — CER, Screening, Validierung
-- [decisions.md](decisions.md) — E1–E75, offene Punkte
+- [decisions.md](decisions.md) — Entscheidungsregister, offene Punkte
 - [methodik.md](methodik.md) — Promptotyping, Verifikationskaskade, Dreischichtung
 - [journal.md](journal.md) — chronologische Sitzungs-Historie
 - [index.md](index.md) — Navigation + Schluesselkonzepte
-- Plan-Dokument fuer aktuelle Welle: `~/.claude/plans/edition-uplift-three-pages.md`
