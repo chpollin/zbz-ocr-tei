@@ -1,6 +1,6 @@
 # Frontend-Gap-Analyse — DHCraft Editions-Ökosystem
 
-**Erstellt:** 2026-06-07 · **Autor:** Claude Code 3 (CC3) · **Auftrag:** G1.3 — Live-Frontend-Gap-Analyse, Hersch zuerst
+**Erstellt:** 2026-06-07 · **Thema:** Live-Frontend-Gap-Analyse, Hersch zuerst
 **Methode:** Live-Inspektion im Browser (Chrome-Automation, Screenshots + Accessibility-Tree + Konsole) kombiniert mit statischer Quellcode-Analyse (HTML/CSS/JS).
 
 ---
@@ -120,7 +120,7 @@ Untersucht wurden **sechs Frontends** des DHCraft-Editions-Ökosystems. Der Hers
 
 ## 4. szd-htr (`szd-htr/docs`) — Referenzimplementierung
 
-**Hinweis:** Live-Inspektion bewusst nicht durchgeführt (aktive CC2-Domäne, Browser-Konflikt vermieden) — Analyse rein aus dem Quellcode.
+**Hinweis:** Live-Inspektion bewusst nicht durchgeführt, Analyse rein aus dem Quellcode.
 
 - **Was es ist:** vollwertige SPA (Katalog + Faksimile/Transkriptions-Viewer + Research-Vault + Stats-Dashboard + Edit/Review). Vanilla (`app.js` ~3.300 Z.), Hash-Routing, Chart.js lokal vendored. Local/Remote-Capability-Detection (`detectLocal()`) schaltet Edit/Approve/GT-Verify nur lokal frei.
 - **Stärken (Vorbild fürs Ökosystem):** Empty/Error-States, `aria-sort`, `aria-live`, skip-link, URL-Filter-State (teilbar), Touch (Pinch/Swipe), Tastatur-Shortcuts, Cross-Model-Diff + Edit-Diff.
@@ -129,7 +129,7 @@ Untersucht wurden **sechs Frontends** des DHCraft-Editions-Ökosystems. Der Hers
   - **MITTEL — A11y:** klickbare `<tr tabindex="0">` ohne `role`/`aria-label`. (`app.js:1178`)
   - **MITTEL — Performance:** `catalog.json` (2,4 MB) synchron vor erstem Paint; Chart.js (206 KB) immer geladen. (`index.html:545`)
   - **NIEDRIG-MITTEL — Empty-States für Vault/Stats/About fehlen** (stille leere Seite). (`app.js:678-686,2787-2792`)
-  - **NIEDRIG — Reviewer-Name hartkodiert** („Christopher Pollin") → Mehr-Personen-Review (CC2 als zweite Hand) nicht abbildbar. (`app.js:2362,2428,2603`)
+  - **NIEDRIG — Reviewer-Name hartkodiert** („Christopher Pollin") → Mehr-Personen-Review nicht abbildbar. (`app.js:2362,2428,2603`)
   - **NIEDRIG — Bild-Fehlerzustand** überschreibt `className` statt `classList`, kein Retry. (`app.js:1545-1554`)
 - **Reifegrad:** produktionsnah. Lücken in Randzuständen und Mehrbenutzer-Review, nicht im Kern.
 
@@ -158,11 +158,11 @@ Dependency-freies Editions-Grundgerüst (Katalog + Viewer + Indizes). **Befunde:
 
 ---
 
-## 7. Empfohlene Sofort-Maßnahmen (für CC1/CC2-Koordination)
+## 7. Empfohlene Sofort-Maßnahmen
 
-- **CC3/Hersch (sofort):** H1 verifizieren (Datenverlust-Risiko) → H2 → H5 → M5 (Legende, schnell & sichtbar) → H4 (QA-Navigation).
-- **CC1/teiCrafter:** Editor-Responsiveness + A11y-Tab-Pattern; Note-Indexing auf DOM-Walker umstellen (trifft das „arbitrary TEI"-Versprechen).
-- **CC2/szd-htr:** Deeplink-Navigation, Vault/Stats-Empty-States, Reviewer-Feld (für zweite Hand).
+- **Hersch (sofort):** H1 verifizieren (Datenverlust-Risiko) → H2 → H5 → M5 (Legende, schnell & sichtbar) → H4 (QA-Navigation).
+- **teiCrafter:** Editor-Responsiveness + A11y-Tab-Pattern; Note-Indexing auf DOM-Walker umstellen (trifft das „arbitrary TEI"-Versprechen).
+- **szd-htr:** Deeplink-Navigation, Vault/Stats-Empty-States, Reviewer-Feld (für zweite Hand).
 - **Ökosystem:** Fetch-Härtung in editionCrafter + agentic-pipeline (HOCH-Befunde, schnell behebbar).
 
 ---
@@ -172,7 +172,7 @@ Dependency-freies Editions-Grundgerüst (Katalog + Viewer + Indizes). **Befunde:
 - **Live-Tooling:** Hersch (Korpus + Viewer) und teiCrafter live im Browser bestätigt (Screenshots, Accessibility-Tree, Konsole). Konsole des Hersch-Viewers fehlerfrei, alle Module geladen.
 - **Beobachtung Screenshot-Stabilität:** Solange OpenSeadragon im Faksimile-Panel aktiv ist, blockiert der Canvas wiederholt `Page.captureScreenshot` (Renderer-Timeout) nach Klick-Interaktionen. Frische Navigationen liefern stabile Screenshots; Klick-Folgen nicht. Für künftige automatisierte Visual-Tests des Viewers relevant (z.B. OSD vor dem Capture pausieren).
 - **Live-Resize unzuverlässig:** Fenster-Resize spiegelte sich nicht im Screenshot-Viewport — Responsive-Verhalten wurde daher aus den CSS-Media-Queries verifiziert (Hersch: Katalog @1000px → Kartenliste, Viewer @900px → gestapelte Panels; vorhanden und korrekt).
-- **szd-htr:** rein statische Analyse (Live ausgelassen, da aktive CC2-Domäne).
+- **szd-htr:** rein statische Analyse (keine Live-Inspektion).
 - **Hinweis zu HOCH-Befund H1:** Aus der Quellcode-Lese-Analyse abgeleitet, **nicht durch einen echten Speichervorgang reproduziert**. Vor einem Fix mit einem kontrollierten Test bestätigen.
 
 *Quell-Frontends und Zeilennummern beziehen sich auf den Stand 2026-06-07 (zbz-ocr-tei @ bb8bf156).*
