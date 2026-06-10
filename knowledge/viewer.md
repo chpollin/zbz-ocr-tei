@@ -202,7 +202,8 @@ Nach dem Schreiben faltet ein Pipeline-Lauf die Kuration ins TEI und regeneriert
 python -m scripts.tei.tei_unified --doc {DOC} --reassemble ; python -m scripts.edition.generate_edition_data --mirror-only
 ```
 
-`data/curated_tei/` bleibt der Gold-Standard-Speicher fuer kuratierte TEIs (git-tracked).
+`data/curated_tei/` ist fuer von Hand verifizierte TEIs vorgesehen (git-tracked, derzeit leer,
+da noch kein Dokument fachlich verifiziert ist).
 Der frueher vorhandene FastAPI-Curation-Server (`scripts/server/curation_server.py`) wurde mit E57
 geloescht, weil das Frontend ihn seit E56 nicht mehr ansteuert.
 

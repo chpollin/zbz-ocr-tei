@@ -91,7 +91,7 @@ Frontend im [Befundbericht](../reports/frontend-gap-analyse-2026-06-07.md).
 
 | Frontend | Zweck | Reifegrad | Dringlichste Luecke |
 |---|---|---|---|
-| **Hersch** (`zbz-ocr-tei/docs`) | OCR/Layout/TEI-Inspektion + Kuration | nutzbar → produktionsnah | H4 Seiten-QA-Navigation, M1 Katalog-Status-Lag |
+| **Hersch** (`zbz-ocr-tei/docs`) | OCR/Layout/TEI-Inspektion + Kuration | produktionsnah | H- und M-Befunde behoben (2026-06-10); offen nur N1/N3/N6/N7 |
 | **szd-htr** (`szd-htr/docs`) | VLM-Transkriptions-Viewer + Review | **produktionsnah (Referenz)** | Empty-States Vault/Stats, Deeplink-Nav |
 | **teiCrafter** (`ResearchTools/teiCrafter`) | verlustfreier TEI-Editor | fortgeschr. Prototyp | Editor nicht responsive, A11y Tabs/Modal |
 | **SZD** (`SZD/docs`) | Ontologie-Referenz + Graph | produktionsnah (Doku) | D3-CDN ohne Fallback, Graph-A11y |

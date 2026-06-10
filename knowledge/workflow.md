@@ -323,23 +323,23 @@ Separat von der UI-Welle, sollte ein eigenes Etappen-Paket sein.
 
 ---
 
-## 6. Roadmap (vorlaeufig, Stand 2026-05-25)
+## 6. Roadmap (Stand 2026-06-10)
 
-| Welle | Inhalt | Status |
-|---|---|---|
-| Knowledge-Refactoring | alle knowledge-Docs + README auf Stand bringen, workflow.md neu, Drift-Befunde fixen | erledigt |
-| Code-Drift-Fix | `generate_edition_data.py` behandelt fehlende `dashboard.json` jetzt als optional (`or {}`, mit E56-Kommentar) | erledigt |
-| UI-Verdichtung Viewer (Etappe 2.10) | Erledigt (E64): Doc-Subbar + Toolbar fusioniert, OCR-Quellen-Umschalter entfernt (Viewer = Mistral), Edit-Toggles benannt ("Layout"/"Text" als Text-Label, **nicht** als Icons — User-Entscheidung). Offen: Region-Liste als Sub-Spalte, Downloads als Dropdown, Hint-Texte als Tooltips | teilweise (E64) |
-| Per-Doc-Export-Drawer (Etappe 2.9) | JSZip-basierter Export aller Pipeline-Artefakte pro Doc, im Bulk-Modus auch aus Korpus-Uebersicht (Etappe 1.6) | geplant, abhaengig von Knowledge-Welle + (optional) `_complete.xml` |
-| Quality-Drawer (Etappe 2.2) | `{doc}_review.json` als oeffenbares Drawer-Panel im Viewer | geplant |
-| Provenance-Drawer (Etappe 2.11, neu) | `{doc}_provenance.json` als oeffenbares Drawer-Panel im Viewer; setzt voraus dass provenance.json existiert | geplant, blockiert durch Pipeline-Welle |
-| Pipeline-Welle complete-TEI + Provenance | `tei_unified` erweitern um `<facsimile>` + `<zone>` + `@facs`; `provenance.json`-Generator (zunaechst aus revisionDesc + Datei-Timestamps abgeleitet); Schema-Anpassung | geplant |
-| Etappe 1 (Korpus-Uebersicht) | Edition-Hero, Quality-Strip, Smart-Filter mit Live-Counts, klickbare Spalten-Header, Featured-Sektion, Multi-Select-Bulk-Export | geplant |
-| Etappe 3 (about.html) | Workflow-Sektion mit Pipeline-Diagramm, CER-Visualisierung, Korpus-Komposition (3 Bar-Charts), Screening-Pyramide, Featured-Karten | geplant |
-| Etappe 4 (Quer-Politur) | Token-Audit, Print-CSS, Site-Header schlanker | geplant |
+### Erledigt
 
-Die Entscheidungen der Welle sind als E58-E67 in [decisions.md](decisions.md)
-dokumentiert; offene Frontend-Reste in [frontend-gaps.md](frontend-gaps.md).
+- Knowledge-Refactoring: alle knowledge-Docs und README konsolidiert, Drift behoben (zuletzt 2026-06-10).
+- Viewer verdichtet (E64): Doc-Subbar und Toolbar fusioniert, OCR-Quellen-Umschalter entfernt (Viewer zeigt die ausgelieferte Mistral-Schicht), Edit-Toggles "Layout"/"Text".
+- Speichern-Loop geschlossen (E72/E78/E79): ein Speichern-Knopf sichert alle Stroeme, schreibt kanonisch nach `output/` und in den `docs/data/`-Mirror; Einzel-Downloads im Export-Dropdown.
+- Workflow-Status auf drei Stufen (E77) und die Frontend-Befunde der Gap-Analyse (H1 bis H5, M-Reihe) behoben (2026-06-10).
+
+### Offen
+
+- ZIP-Export pro Dokument (E61): alle Pipeline-Artefakte eines Objekts als ein Download (JSZip), optional gesammelt aus der Korpus-Uebersicht.
+- Provenance-Erweiterung der Pipeline: Body-Elemente per `@facs` an die Layout-Zonen knuepfen und eine maschinenlesbare `provenance.json` erzeugen (Aufwandsschaetzung in §5.4). Ein Provenance-Panel im Viewer setzt darauf auf.
+- Weitere Ausbau-Ideen fuer Korpus-Uebersicht und About-Seite (Hero-Sektion, Diagramme, Print-CSS) sowie die Frontend-Restbefunde N1/N3/N6/N7 sind bewusst zurueckgestellt bis nach der ZBZ-Abnahme.
+
+Die Entscheidungen der Uplift-Welle sind als E58-E67 in [decisions.md](decisions.md)
+dokumentiert; offene Frontend-Befunde in [frontend-gaps.md](frontend-gaps.md).
 
 ---
 

@@ -4,7 +4,7 @@ type: knowledge
 created: 2026-03-15
 updated: 2026-05-25
 dependencies: [pipeline, viewer]
-source: "papers/Paper.md (Workshop-Beitrag DHd/DH, Pollin & Kreyenbuehl)"
+source: "papers/Paper.md (Workshop-Beitrag DHd/DH, DHCraft & ZBZ)"
 ---
 
 # Methodik
@@ -95,8 +95,8 @@ Urspruenglich war hier ein agentenbasiertes 7-Schichten-Screening angesiedelt (2
 vergeben, der Agent zertifizierte sich selbst mit eingebauter Ignorier-Liste; das Etikett war
 gegenueber ZBZ irrefuehrend.
 
-Ersatz: **menschgesetzter Workflow-Status pro Strom** (`unverifiziert | in_arbeit | bearbeitet | fertig`
-je OCR/Layout/TEI), gesetzt im Viewer, mit Provenienz-History im Pro-Objekt-Manifest und Projektion
+Ersatz: **menschgesetzter Workflow-Status pro Strom** (`unverifiziert | in_arbeit | verifiziert`
+je OCR/Layout/TEI, drei Stufen seit E77), gesetzt im Viewer, mit Provenienz-History im Pro-Objekt-Manifest und Projektion
 in den `<revisionDesc>`. Die Verifikationskaskade bleibt das Prinzip; nur die *fachliche* Stufe ist
 jetzt explizit menschlich statt agentisch. Details: [quality.md §Workflow-Status](quality.md).
 

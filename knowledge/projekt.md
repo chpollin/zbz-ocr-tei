@@ -21,8 +21,8 @@ LLM-gestuetzte OCR- und TEI-Pipeline fuer den Nachlass Jeanne Hersch der Zentral
 | Gegenstand | Automatisierte OCR + TEI-Annotation fuer den Hersch-Nachlass |
 | Bestaetigung | 14.02.2026 |
 | Honorar | unveraendert |
-| ZBZ-Kontakte | Elias Kreyenbuehl, Anouschka |
-| Projektleitung | Christopher (DHCraft) |
+| ZBZ-Kontakte | ZBZ-Projektteam (Ansprechpartner intern dokumentiert) |
+| Projektleitung | DHCraft |
 
 Seit dem Abstimmungsmeeting (25.02.2026, E21) deckt zbz-ocr-tei den **vollstaendigen Pipeline-Weg** ab:
 OCR + Layout + PAGE-XML + TEI-XML. ZBZ behaelt Transkribus parallel als zweite Quelle.

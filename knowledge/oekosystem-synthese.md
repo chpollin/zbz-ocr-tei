@@ -42,8 +42,8 @@ teiCrafter ist der Engpass.
 
 ## 2. zbz-ocr-tei — Jeanne-Hersch-Pipeline
 
-- **Auftrag:** Zentralbibliothek Zürich (Kontakte Kreyenbühl, Anouschka), Auftragnehmer DHCraft
-  (Pollin), bestätigt 14.02.2026. Nachlass der Philosophin Jeanne Hersch.
+- **Auftrag:** Zentralbibliothek Zürich, Auftragnehmer DHCraft, bestätigt 14.02.2026.
+  Nachlass der Philosophin Jeanne Hersch.
 - **Korpus:** 325 katalogisiert → 289 digitalisiert → **286 PDF** (~4.120 Seiten) → **285 finales TEI**
   (doc 10 unvollständig). 71% FR / 25% DE, 1931–1998, v.a. Journal-Artikel + Sammelbandbeiträge.
 - **Lieferziel:** hochwertiger, schema-valider **Datensatz + Kurationswerkzeug**;
@@ -72,7 +72,7 @@ teiCrafter ist der Engpass.
 ## 3. szd-htr — Stefan-Zweig-Nachlass HTR
 
 - **Projekt:** Teilprojekt von *Stefan Zweig Digital*; VLM-HTR aus Faksimiles (Literaturarchiv Salzburg),
-  Bild-Hosting GAMS (Uni Graz). Komplett von Claude Code generiert, Pollin = Fachentscheider. CC-BY 4.0.
+  Bild-Hosting GAMS (Uni Graz). Komplett von Claude Code generiert, DHCraft-Projektleitung = Fachentscheider. CC-BY 4.0.
 - **Korpus:** **2.107 Objekte, 18.719 Scans, ~23,6 GB.** 4 Sammlungen: lebensdokumente 127 / werke 169
   / aufsatzablage 625 / korrespondenzen 1.186. DE 95,6%. 9 Dokument-Prompt-Gruppen A–I.
 - **Pipeline:** TEI-Kontext-Auflösung (Gruppe A–I) → 4-Schicht-Prompt → **Gemini 3.1 Flash Lite** VLM
@@ -226,8 +226,9 @@ Raw-XML-Source-View · In-Browser-Full-Validate · segmentiertes Laden großer E
 
 **Doku-Widersprüche/Veraltetes (nachgeprüft 2026-06-10):**
 - zbz: Status-Stufen (E77) und E-Zähler sind in allen Docs nachgezogen (behoben 2026-06-10).
-  Weiterhin offen: JSZip-ZIP-Bundle (E61) nicht eingebunden (Einzel-Export vorhanden);
-  `data/curated_tei/` als Gold deklariert, aber leer (`.gitkeep`).
+  Weiterhin offen: JSZip-ZIP-Bundle (E61) nicht eingebunden (Einzel-Export vorhanden).
+  `data/curated_tei/` ist seit 2026-06-10 korrekt deklariert (vorgesehen fuer von Hand
+  verifizierte TEI, derzeit leer; vorher irrefuehrend als Gold-Standard bezeichnet).
 - szd: Objektzahlen schwanken dokumentübergreifend (1319…2107; maßgeblich 2.107); Modell-IDs
   („Gemini 3.1 Flash Lite", „Claude Opus 4.6") und Session-Daten in projizierter 2026-Zeitlinie;
   `teicrafter-integration.md` (06/2026) reaktiviert den in Session 21 gelöschten TEI-Konverter-Kontrakt
