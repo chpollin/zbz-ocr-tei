@@ -3,15 +3,15 @@ title: Arbeitsjournal
 type: journal
 project:
   name: zbz-ocr-tei
-  repository: https://github.com/chpollin/zbz-ocr-tei
-status: active
+  repository: https://github.com/chpollin/zbz-ocr-tei.git
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: draft
 language: de
 created: 2026-01-29
 updated: 2026-06-10
 tags: [zbz-ocr-tei, journal]
-method:
-  name: Promptotyping
-  url: https://dhcraft.org/Promptotyping/
 template:
   name: Vorlage Journal
   version: 0.2

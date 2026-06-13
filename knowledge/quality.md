@@ -1,9 +1,16 @@
 ---
+title: Qualitaet
 type: knowledge
-created: 2026-03-26
-updated: 2026-05-25
+project:
+  name: zbz-ocr-tei
+  repository: https://github.com/chpollin/zbz-ocr-tei.git
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+created: 2026-05-25
+updated: 2026-06-08
 tags: [zbz-ocr-tei, qualitaet, cer, tei-validation, screening, evaluation]
-status: active
 ---
 
 # Qualitaet

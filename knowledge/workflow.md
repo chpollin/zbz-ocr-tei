@@ -1,9 +1,16 @@
 ---
+title: Workflow + Datenfluss
 type: knowledge
+project:
+  name: zbz-ocr-tei
+  repository: https://github.com/chpollin/zbz-ocr-tei.git
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
 created: 2026-05-25
-updated: 2026-05-25
+updated: 2026-06-10
 tags: [zbz-ocr-tei, workflow, datafluss, persistenz, provenance, complete-tei, round-trip]
-status: active
 ---
 
 # Workflow + Datenfluss

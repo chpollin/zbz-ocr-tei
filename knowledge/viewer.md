@@ -1,9 +1,16 @@
 ---
+title: Pipeline-Viewer
 type: knowledge
-created: 2026-03-09
-updated: 2026-05-25
+project:
+  name: zbz-ocr-tei
+  repository: https://github.com/chpollin/zbz-ocr-tei.git
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
+created: 2026-05-25
+updated: 2026-06-10
 tags: [zbz-ocr-tei, viewer, frontend, editor, osd]
-status: active
 ---
 
 # Pipeline-Viewer

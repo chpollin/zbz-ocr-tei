@@ -1,9 +1,16 @@
 ---
+title: Ökosystem-Synthese — Hersch / SZD / teiCrafter
 type: knowledge
+project:
+  name: zbz-ocr-tei
+  repository: https://github.com/chpollin/zbz-ocr-tei.git
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: complete
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-06-10
 tags: [oekosystem, synthese, zbz-ocr-tei, szd-htr, teicrafter]
-status: active
 ---
 
 # Ökosystem-Synthese — Hersch / SZD / teiCrafter
