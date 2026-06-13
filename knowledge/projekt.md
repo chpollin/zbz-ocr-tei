@@ -8,7 +8,7 @@ method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: complete
-created: 2026-05-25
+created: 2026-02-18
 updated: 2026-06-10
 tags: [zbz-ocr-tei, projekt, korpus, zbz, workflow]
 ---

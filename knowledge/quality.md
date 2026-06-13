@@ -8,7 +8,7 @@ method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: complete
-created: 2026-05-25
+created: 2026-03-26
 updated: 2026-06-08
 tags: [zbz-ocr-tei, qualitaet, cer, tei-validation, screening, evaluation]
 ---

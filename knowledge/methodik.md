@@ -8,7 +8,7 @@ method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: complete
-created: 2026-05-25
+created: 2026-03-15
 updated: 2026-06-10
 dependencies: [pipeline, viewer]
 source: "papers/Paper.md (Workshop-Beitrag DHd/DH, DHCraft & ZBZ)"
