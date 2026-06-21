@@ -393,14 +393,17 @@ Beides gegen Regression gesichert durch `tests/test_tei_schema.py`.
 | Dokumente (`tei_final`) | 285 |
 | Schema-valide | 285 (100%) |
 | Invalid | 0 |
-| Dokumente mit Warnung (auf `tei_unified`) | 121 |
+| Dokumente mit Warnung (`tei_final`, SoT) | 145 |
+| Dokumente mit Warnung (`tei_unified`, Zwischenschicht) | 121 |
 
 Zwei Groessen nicht verwechseln: die Zahl der **Warn-Regeln** (15 aktiv, siehe
-Validierungsregeln) und die Zahl der **Dokumente mit mindestens einer Warnung** (121,
-gemessen auf `tei_unified`, dem Layer den der CLI-Validator durchlaeuft). Die flach
-abgelegte SoT `tei_final` faellt durch `validate_all` und wird ueber das Schema-Gate
-`tests/test_tei_schema.py` geprueft. Warnungen sind informativ, sie blockieren die
-Auslieferung nicht.
+Validierungsregeln) und die Zahl der **Dokumente mit mindestens einer Warnung**. Letztere
+ist seit dem `validate_all`-Fix (flache Ablage, 2026-06-21) auf der ausgelieferten SoT
+`tei_final` direkt messbar: **145**. Die Zwischenschicht `tei_unified` hat **121**; die
+Differenz stammt aus den Post-Assembly-Schritten (blank-/footnote-/status-Marker), die nur
+in `tei_final` wirken. Zuvor fiel `tei_final` durch `validate_all` (nur verschachtelte
+Ablagen geprueft) und wurde allein ueber das Schema-Gate `tests/test_tei_schema.py` validiert.
+Warnungen sind informativ, sie blockieren die Auslieferung nicht.
 
 ### Fix-Verlauf
 

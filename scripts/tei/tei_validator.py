@@ -422,8 +422,29 @@ def validate_tei_file(tei_path: Path) -> dict:
     return result
 
 
+def _collect_finals(tei_dir: Path) -> list[tuple[str, Path]]:
+    """Sammelt (doc_id, final_path) aus zwei Ablage-Layouts.
+
+    Flach (``{dir}/*_final.xml``) wie die ausgelieferte SoT ``tei_final`` ODER verschachtelt
+    (``{dir}/{id}/{id}_final.xml``) wie ``tei_unified``. Die flache Schicht fiel zuvor durch
+    (``validate_all`` prueffte nur ``is_dir``-Eintraege), wurde also nie mit Projektregeln und
+    Warnungen validiert -- genau die Luecke aus E68 (``tei_final`` ist flach abgelegt).
+    """
+    flat = sorted(tei_dir.glob("*_final.xml"))
+    if flat:
+        return [(f.name[: -len("_final.xml")], f) for f in flat]
+    finals = []
+    for doc_dir in sorted(tei_dir.iterdir()):
+        if not doc_dir.is_dir():
+            continue
+        final = doc_dir / f"{doc_dir.name}_final.xml"
+        if final.exists():
+            finals.append((doc_dir.name, final))
+    return finals
+
+
 def validate_all(tei_dir: Path = None) -> dict:
-    """Validiert alle TEI-Dateien in einem Verzeichnis."""
+    """Validiert alle TEI-Dateien in einem Verzeichnis (flache oder verschachtelte Ablage)."""
     if tei_dir is None:
         tei_dir = TEI_UNIFIED_DIR
 
@@ -439,16 +460,10 @@ def validate_all(tei_dir: Path = None) -> dict:
         print(f"Verzeichnis nicht gefunden: {tei_dir}")
         return summary
 
-    for doc_dir in sorted(tei_dir.iterdir()):
-        if not doc_dir.is_dir():
-            continue
-        final = doc_dir / f"{doc_dir.name}_final.xml"
-        if not final.exists():
-            continue
-
+    for doc_id, final in _collect_finals(tei_dir):
         summary["total"] += 1
         result = validate_tei_file(final)
-        summary["per_doc"][doc_dir.name] = result
+        summary["per_doc"][doc_id] = result
 
         if result["valid"]:
             summary["valid"] += 1

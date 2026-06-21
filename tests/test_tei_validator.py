@@ -7,12 +7,39 @@ importierte _compute_cer ein nicht existentes ``compute_cer`` und fiel still
 auf eine Laengen-Approximation zurueck.
 """
 
-from scripts.tei.tei_validator import _compute_cer
+from scripts.tei.tei_validator import _compute_cer, _collect_finals
 from scripts.eval.evaluate_ocr import calculate_cer
 
 
 def test_identical_text_is_zero():
     assert _compute_cer("Hello World", "Hello World") == 0.0
+
+
+# --- _collect_finals: beide Ablage-Layouts (E68-Luecke, 2026-06-21) ---------
+
+def test_collect_finals_flat_layout(tmp_path):
+    """Flache Ablage (ausgelieferte SoT tei_final): direkte *_final.xml werden erfasst."""
+    (tmp_path / "100_final.xml").write_text("<TEI/>", encoding="utf-8")
+    (tmp_path / "2310_final.xml").write_text("<TEI/>", encoding="utf-8")
+    (tmp_path / "notes.txt").write_text("x", encoding="utf-8")
+    assert sorted(doc_id for doc_id, _ in _collect_finals(tmp_path)) == ["100", "2310"]
+
+
+def test_collect_finals_nested_layout(tmp_path):
+    """Verschachtelte Ablage (tei_unified): {id}/{id}_final.xml."""
+    d = tmp_path / "100"
+    d.mkdir()
+    (d / "100_final.xml").write_text("<TEI/>", encoding="utf-8")
+    assert [doc_id for doc_id, _ in _collect_finals(tmp_path)] == ["100"]
+
+
+def test_collect_finals_flat_takes_precedence(tmp_path):
+    """Liegen flache *_final.xml vor, werden sie genommen, nicht die Unterordner."""
+    (tmp_path / "100_final.xml").write_text("<TEI/>", encoding="utf-8")
+    sub = tmp_path / "200"
+    sub.mkdir()
+    (sub / "200_final.xml").write_text("<TEI/>", encoding="utf-8")
+    assert [doc_id for doc_id, _ in _collect_finals(tmp_path)] == ["100"]
 
 
 def test_empty_reference_is_zero():
