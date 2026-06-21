@@ -5,10 +5,11 @@ Zwei Ebenen:
   - Errors (blockierend):  RelaxNG-Schema + Projekt-Regeln (valid=false)
   - Warnings (informativ):  Quality-Checks fuer Editoren (valid bleibt true)
 
-Aufruf:
+Aufruf (Default-Verzeichnis ist die ausgelieferte SoT tei_final, --dir ueberschreibt):
     python -m scripts.tei.tei_validator --doc 2310
     python -m scripts.tei.tei_validator --all --report
     python -m scripts.tei.tei_validator --all --html-report
+    python -m scripts.tei.tei_validator --all --dir output/tei_unified  # Zwischenstand
 """
 
 import argparse
@@ -475,9 +476,14 @@ def _collect_finals(tei_dir: Path) -> list[tuple[str, Path]]:
 
 
 def validate_all(tei_dir: Path = None) -> dict:
-    """Validiert alle TEI-Dateien in einem Verzeichnis (flache oder verschachtelte Ablage)."""
+    """Validiert alle TEI-Dateien in einem Verzeichnis (flache oder verschachtelte Ablage).
+
+    Default ist die ausgelieferte SoT ``tei_final`` (E43): das No-Argument-Gate prueft den
+    Lieferbestand, nicht den Zwischenstand. ``tei_unified`` (Pipeline-Selbstcheck) wird von
+    ``tei_unified.py`` explizit uebergeben; ``--dir`` erlaubt jedes andere Verzeichnis.
+    """
     if tei_dir is None:
-        tei_dir = TEI_UNIFIED_DIR
+        tei_dir = TEI_FINAL_DIR
 
     summary = {
         "total": 0,
@@ -934,8 +940,8 @@ def main():
     )
     parser.add_argument("--doc", help="Einzelnes Dokument validieren")
     parser.add_argument("--all", action="store_true",
-                        help="Alle unified TEI validieren")
-    parser.add_argument("--dir", help="Alternatives TEI-Verzeichnis")
+                        help="Alle ausgelieferten TEI (tei_final) validieren")
+    parser.add_argument("--dir", help="Alternatives TEI-Verzeichnis (z.B. tei_unified)")
     parser.add_argument("--report", action="store_true",
                         help="Validierungsbericht als JSON speichern")
     parser.add_argument("--html-report", action="store_true",
@@ -946,11 +952,14 @@ def main():
                         help="ZBZ-Konformitaetspruefung (Inline-GND-Modell, E88) ueber tei_final")
     args = parser.parse_args()
 
-    tei_dir = Path(args.dir) if args.dir else TEI_UNIFIED_DIR
+    tei_dir = Path(args.dir) if args.dir else TEI_FINAL_DIR
 
     if args.doc:
-        doc_dir = tei_dir / args.doc
-        final = doc_dir / f"{args.doc}_final.xml"
+        # Flache Ablage (tei_final/{id}_final.xml) zuerst, dann verschachtelt
+        # (tei_unified/{id}/{id}_final.xml) -- analog _collect_finals.
+        final = tei_dir / f"{args.doc}_final.xml"
+        if not final.exists():
+            final = tei_dir / args.doc / f"{args.doc}_final.xml"
         if not final.exists():
             print(f"Datei nicht gefunden: {final}")
             return

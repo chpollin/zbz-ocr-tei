@@ -51,6 +51,24 @@ pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
 
+### 2026-06-21 Sitzung 76: Bestandsverifikation (Stichproben + Vollpruefung) und Validator-Default auf die SoT korrigiert
+
+**Anlass** Operator-Frage, ob der gelieferte Datenbestand tatsaechlich verifizierbar ist, mit der Aufforderung, Stichproben-Workflows durchzugehen und die Daten zu pruefen statt nur den Git-Stand.
+
+**Ziel** Die Liefer-Aussage "schemavalidiert und ZBZ-konform" mit reproduzierbarer Messung belegen, an echten Dokumenten Inhalt und Lesefluss stichprobenhaft pruefen, und etwaige Befunde aus dem Pruefweg selbst aufdecken.
+
+**Verlauf** Die maschinellen Pruefungen liefen read-only ueber die SoT `output/tei_final` (E43, n=285). Schema (`zbz_hersch.rng`) 285/285 valide, ZBZ-Konformitaet Z1-Z8 285/285 konform ohne Verstoss. Das Reading-Order-Audit reproduziert exakt 216 Docs / 831 Seiten, davon 557 robust und 274 fragil ueber 145 Docs, und der Korpus-Trichter (corpus_audit) bestaetigt 285 finale TEI. Das Warnungsprofil ist durchweg nicht-blockierend: groesster Posten W17 (844, leere `<speaker>`-Slots als Kurations-Slot), gefolgt von W19 (831, Lesereihenfolge), W16/W15/W18/W6 als Auszeichnungs-Feinheiten. Drei Inhaltsstichproben wurden im Klartext gelesen: 2310 (franzoesische Jaspers-Rezension, alle 17 Absaetze mit sauberem Text und korrekten Akzenten), 760 (Chagall, Œ-Ligatur und UTF-8 korrekt), 810 (deutscher Zweispalter, korrekte Umlaute und ß, Entitaeten Hersch/Jungk/Schubert erkennbar). An 810 Seite 7 wurde der Lesereihenfolge-Defekt direkt belegt: die gelieferte Reihenfolge verschraenkt die beiden Spalten nach y-Position (x-Mitte wechselt 14/19/26/72/27/72...), der M1-Fix gruppiert links vollstaendig vor rechts.
+
+Im Pruefweg fiel ein Werkzeug-Fallstrick auf: der Validator-Default `--all` (und `--doc` sowie das No-Argument-`validate_all`) zielte auf das veraltete Zwischenverzeichnis `tei_unified` (55 valide / 230 invalide gegen das aktuelle Schema), nicht auf die ausgelieferte SoT `tei_final`, waehrend `conformity_all` bereits korrekt auf `tei_final` defaultete. Das dokumentierte Pruefkommando haette so einen Fehlalarm auf den falschen Dateien erzeugt. Der Default wurde auf `tei_final` umgestellt; `--doc` loest jetzt layout-tolerant auf (flach `{id}_final.xml`, sonst verschachtelt `{id}/{id}_final.xml`); `--dir` ueberschreibt weiter fuer den Zwischenstand. Der Pipeline-Selbstcheck in `tei_unified.py` und die CER-Referenz bleiben unberuehrt, da sie ihr Verzeichnis explizit uebergeben.
+
+**Entscheidungen** Validator-Default von `tei_unified` auf `tei_final` korrigiert, weil das dokumentierte Kommando den Lieferbestand pruefen muss, nicht den Zwischenstand; verworfen wurde, nur die Doku anzupassen, da der falsche Default selbst der Defekt ist (Lektion "Drift fixen, nicht wegdokumentieren"). Kein Eingriff am Lieferbestand und keine neue Registernummer, da reiner Werkzeug-Fix.
+
+**Stand** SoT `tei_final` ist auf der maschinell pruefbaren Ebene vollstaendig gruen (Schema und ZBZ-Konformitaet je 285/285), die Warnungen sind Editor-Kurations-Hinweise. Der Validator pruefte per Default das falsche Verzeichnis; das ist behoben, `--all` zielt jetzt auf die SoT (285/285 valide bestaetigt), `--doc` ist layout-tolerant. Volle Suite 1179 gruen. Die Inhaltsstichproben bestaetigen gute OCR-Qualitaet und belegen den Lesereihenfolge-Defekt als real im Lieferbestand.
+
+**Naechste Schritte**
+1. M3-Zuschnitt durch Operator entscheiden (robuste Mehrheit nach Stichprobe vertrauen plus 274 fragile Seiten sichten, oder stueckweise).
+2. Genre-Inferenz und `xml:lang` an Docs mit `div@type=None` (z.B. 760/810) bleibt Kurationsluecke, nicht-blockierend.
+
 ### 2026-06-21 Sitzung 75: M3-Triage -- Lesereihenfolge-Audit (robust/fragil) + geteilte W19-Extraktion
 
 **Anlass** Operator-Auftrag nach der Milestone-Runde: weiter am Ziel arbeiten, und was autonom entscheidbar ist, gleich umsetzen. Der groesste Qualitaetshebel M3 (Reihenfolge-Fix auf den Lieferbestand) ist operator-gated; autonom moeglich ist, M3 entscheidbar und sicher zu machen, statt am Bestand zu schreiben.
