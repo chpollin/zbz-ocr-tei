@@ -37,6 +37,7 @@ TEI_DIR = OUTPUT_DIR / "tei"
 TEI_UNIFIED_DIR = OUTPUT_DIR / "tei_unified"
 TEI_CURATED_DIR = DATA_DIR / "curated_tei"
 TEI_FINAL_DIR = OUTPUT_DIR / "tei_final"
+TEI_PREVIEW_DIR = OUTPUT_DIR / "tei_preview"        # reversible M3-Vorschau, beruehrt tei_final nie
 
 # TEI-Konstanten
 TEI_NS = "http://www.tei-c.org/ns/1.0"

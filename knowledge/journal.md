@@ -51,6 +51,26 @@ pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
 
+### 2026-06-21 Sitzung 77: M3-Reassemble-Vorschau gebaut (reversibler Trockenlauf, W19 831 auf 39)
+
+**Anlass** Synchronisation mit der Forschungsleitstelle deckte auf, dass der order-Auftrag dieser Iteration noch offen war: ein verifizierter Trockenlauf der Lesereihenfolge-Korrektur. Die Sitzungen 75/76 (Triage-Audit, Validator-Fix) waren benachbart, aber nicht das bestellte Artefakt.
+
+**Ziel** Beweisen, dass die Korpus-Neugenerierung die W19-betroffenen Seiten korrigiert, ohne die ausgelieferte Source of Truth zu ueberschreiben, samt deterministischem Vorher-Nachher-Bericht und Tests.
+
+**Verlauf** Zunaechst die Maschinerie verifiziert: der M1-Lesereihenfolge-Fix sitzt in `tei_step1.match_paragraphs_to_regions`, und `reassemble` re-rechnet Step 1, also greift M1 im Reassemble-Pfad. `process_document` schreibt nach `tei_unified/{id}/` (Arbeitsbereich), nicht nach `tei_final`, die Vorschau ist damit von Natur aus reversibel. Ein Machbarkeitstest (Dok 2530) bestaetigte W19 1 auf 0 in unter zwei Sekunden, offline. Das neue Werkzeug `scripts/tei/tei_reassemble_preview.py` reassembliert je betroffenes Dokument und kopiert das Ergebnis flach nach `output/tei_preview`. W19 wird mit der geteilten Logik (`iter_page_zone_bboxes` + `reading_order_permutation`) gezaehlt, dieselbe wie Validator und Audit.
+
+Beim Probelauf zeigte sich, dass die Reassemblierung nicht durchweg offline ist: wo der Step-2-Refinement-Cache kalt ist, versucht sie einen Gemini-Call (Dok 3040 schlug ohne API-Key fehl). Da die Lesereihenfolge in Step 1 entsteht und von der Text-Verfeinerung unabhaengig ist, laeuft die Vorschau nun mit `dry_run=True`: gecachte Seiten nutzen den warmen Cache, kalte fallen auf das Step-1-Scaffold zurueck, kein API-Call, keine Kosten. `tei_final` blieb in allen Laeufen byte-identisch (per SHA256 geprueft).
+
+Der Vollbericht ueber alle 216 betroffenen Dokumente: W19 sinkt von 831 auf 39 Seiten, 188 Dokumente gehen vollstaendig auf 0, 28 behalten zusammen 39 Restseiten. Die schweren Faelle kollabieren stark (810 von 54 auf 1, 1520 von 40 auf 1, 1830 von 11 auf 1), groesster Rest ist 1240 (13 auf 7). Das literale M3-Gruen-Kriterium "0 W19" wird durch Reassemblierung allein nicht erreicht. Ein Idempotenz-Test schloss Nicht-Idempotenz der Permutation aus; Ursache ist, dass die Ordnungsstufe (Step 1, Region-Bboxes) und die Pruefstufe (W19, Faksimile-Zonen-Bboxes) verschiedene Geometriequellen nutzen und an Grenzfaellen auseinanderfallen.
+
+**Entscheidungen** Vorschau offline und kostenfrei ueber `dry_run=True`, weil die W19-Aussage von der gated, kostenpflichtigen Text-Verfeinerung unabhaengig ist; verworfen wurde der Live-Pfad, der ohne Cache scheitert und Kosten verursacht. Bericht deterministisch (sortiert, ohne Zeitstempel), damit Re-Laeufe sauber diffen. Den residualen Geometrie-Gap nicht autonom gefixt, da er ein Design-Entscheid ist (welche Bbox-Basis massgeblich ist) und die W19-Definition beruehrt; als naechster Schritt dokumentiert, nicht gebaut. Keine neue E-Nummer (E90 fortgeschrieben), Rollout bleibt operator-gated.
+
+**Stand** Werkzeug, Tests (6, davon ein gated Pipeline-Test auf Dok 890) und deterministischer Bericht `reports/m3-reassemble-preview.md` liegen vor; volle Suite 1187 gruen. Die Vorschau beweist die Lesereihenfolge-Korrektur reversibel: 831 auf 39 W19-Seiten, `tei_final` unberuehrt. Die 39 Restseiten ueber 28 Dokumente sind die Faksimile-Sicht-Worklist, weitgehend deckungsgleich mit der fragilen Triage aus Sitzung 75.
+
+**Naechste Schritte**
+1. Operator-Entscheid M3: den Trockenlauf abnehmen und die Auslieferung freigeben (gated), oder zuerst den Geometrie-Gap schliessen.
+2. Ordnungs- und Pruefstufe auf dieselbe Bbox-Basis bringen, um die 39 Restseiten gegen 0 zu fuehren (Design-Entscheid offen).
+
 ### 2026-06-21 Sitzung 76: Bestandsverifikation (Stichproben + Vollpruefung) und Validator-Default auf die SoT korrigiert
 
 **Anlass** Operator-Frage, ob der gelieferte Datenbestand tatsaechlich verifizierbar ist, mit der Aufforderung, Stichproben-Workflows durchzugehen und die Daten zu pruefen statt nur den Git-Stand.

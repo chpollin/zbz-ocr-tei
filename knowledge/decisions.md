@@ -421,7 +421,32 @@ einer Sicht-Stichprobe vertrauen, die fragile Worklist (`--worklist`) einzeln am
 Rollout bleibt unratifiziert und operator-gated; das Gruen-Kriterium M3 (0 W19 nach Neugenerierung)
 ist unveraendert. Volle Suite 1179.
 
-Dokumente: [journal.md](journal.md) Sitzung 74, Sitzung 75
+M3-Vorschau (reversibler Trockenlauf, 2026-06-21). Der Leitstellen-Auftrag dieser Iteration: einen
+verifizierten Trockenlauf bauen, der beweist, dass die Korpus-Neugenerierung die betroffenen Seiten
+korrigiert, ohne die SoT zu ueberschreiben. Werkzeug
+[tei_reassemble_preview.py](../scripts/tei/tei_reassemble_preview.py): reassembliert je betroffenes
+Dokument (Step 1+3 neu, M1 wirkt in Step 1) und kopiert das Ergebnis flach nach `output/tei_preview`;
+`output/tei_final` wird nie beruehrt (per Hash und Test verifiziert). Offline und kostenfrei
+(`dry_run=True`, kein Gemini-Call): die Vorschau beweist die Lesereihenfolge, nicht die
+Text-Verfeinerung, die von der Reihenfolge unabhaengig ist und der gated Auslieferung vorbehalten
+bleibt. W19 mit derselben geteilten Logik gezaehlt wie Validator und Audit. Tests
+`tests/test_reassemble_preview.py` (6, davon ein gated Pipeline-Test auf Dok 890), volle Suite 1187.
+Bericht [reports/m3-reassemble-preview.md](../reports/m3-reassemble-preview.md), deterministisch.
+
+Befund, der das M3-Gruen-Kriterium praezisiert. Die Reassemblierung senkt W19 von 831 auf 39 Seiten
+ueber 216 Dokumente; 188 Dokumente gehen vollstaendig auf 0, 28 behalten zusammen 39 Restseiten (die
+schweren Faelle kollabieren stark: 810 54->1, 1520 40->1, 1830 11->1; groesster Rest 1240 13->7). Das
+literale Gruen-Kriterium "0 W19" wird durch Reassemblierung allein also nicht erreicht. Ursache (per
+Idempotenz-Test isoliert: `reading_order_permutation` ist idempotent, schliesst Nicht-Idempotenz aus):
+die Ordnungsstufe (Step 1 sortiert auf den Region-Bboxes) und die Pruefstufe (W19/Audit auf den
+Faksimile-Zonen-Bboxes) ziehen auf verschiedene Geometriequellen; wo beide ueber eine Schwelle
+auseinanderfallen, bleibt eine Seite trotz korrekter Neugenerierung als W19 markiert. Die 39 Restseiten
+sind die Faksimile-Sicht-Worklist fuer M3, weitgehend deckungsgleich mit der fragilen Triage. Noch nicht
+gebaut, naechster Schritt: Ordnungs- und Pruefstufe auf dieselbe Bbox-Basis bringen (Design-Entscheid,
+welche Geometrie massgeblich ist), um den Rest gegen 0 zu fuehren; bis dahin ist 39 der ehrliche
+Restbestand. Keine neue E-Nummer, Rollout bleibt operator-gated.
+
+Dokumente: [journal.md](journal.md) Sitzung 74, Sitzung 75, Sitzung 77
 
 ---
 
