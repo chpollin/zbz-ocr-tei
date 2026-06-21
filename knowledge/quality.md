@@ -452,7 +452,7 @@ ist mit **E71** (NER entfernt) hinfaellig: das ausgelieferte TEI traegt keine En
 
 ### Validierungsregeln
 
-**Errors (blockierend, 8 Regeln R1-R8):** RelaxNG + Projekt-Regeln (R1 type="naegeli",
+**Errors (blockierend, 7 Regeln R1-R7):** RelaxNG + Projekt-Regeln (R1 type="naegeli",
 R2 teiHeader, R3 body, R4 min 1 div, R5 gueltige div-types, R6 note place, R7 entity-ref).
 
 **Warnings (15 aktive Regeln, informativ; W8-W10 entfallen seit E71, entitaetenfrei):** W1
