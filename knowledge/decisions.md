@@ -436,17 +436,22 @@ Bericht [reports/m3-reassemble-preview.md](../reports/m3-reassemble-preview.md),
 Befund, der das M3-Gruen-Kriterium praezisiert. Die Reassemblierung senkt W19 von 831 auf 39 Seiten
 ueber 216 Dokumente; 188 Dokumente gehen vollstaendig auf 0, 28 behalten zusammen 39 Restseiten (die
 schweren Faelle kollabieren stark: 810 54->1, 1520 40->1, 1830 11->1; groesster Rest 1240 13->7). Das
-literale Gruen-Kriterium "0 W19" wird durch Reassemblierung allein also nicht erreicht. Ursache (per
-Idempotenz-Test isoliert: `reading_order_permutation` ist idempotent, schliesst Nicht-Idempotenz aus):
-die Ordnungsstufe (Step 1 sortiert auf den Region-Bboxes) und die Pruefstufe (W19/Audit auf den
-Faksimile-Zonen-Bboxes) ziehen auf verschiedene Geometriequellen; wo beide ueber eine Schwelle
-auseinanderfallen, bleibt eine Seite trotz korrekter Neugenerierung als W19 markiert. Die 39 Restseiten
-sind die Faksimile-Sicht-Worklist fuer M3, weitgehend deckungsgleich mit der fragilen Triage. Noch nicht
-gebaut, naechster Schritt: Ordnungs- und Pruefstufe auf dieselbe Bbox-Basis bringen (Design-Entscheid,
-welche Geometrie massgeblich ist), um den Rest gegen 0 zu fuehren; bis dahin ist 39 der ehrliche
-Restbestand. Keine neue E-Nummer, Rollout bleibt operator-gated.
+literale Gruen-Kriterium "0 W19" wird durch Reassemblierung allein also nicht erreicht.
 
-Dokumente: [journal.md](journal.md) Sitzung 74, Sitzung 75, Sitzung 77
+Ursache der 39 Restseiten (diagnostisch isoliert, kein Geometrie-Gap). `reading_order_permutation` ist
+idempotent (Nicht-Idempotenz ausgeschlossen). 35 der 39 Restseiten haben einen OCR-Absatz-gegen-
+Layout-Region-Count-Mismatch (z.B. 810 S.56: 3 Absaetze gegen 236 Regionen, 1240 S.3: 50 gegen 61):
+`match_paragraphs_to_regions` paart im Mismatch-Zweig die Absaetze per Index an einen Ausschnitt der
+umsortierten Regionen, der emittierte Zonen-Ausschnitt ist daher nicht kanonisch und W19 schlaegt zu
+Recht an. Die uebrigen 4 Restseiten haben 1:1-Count, aber eine Layout-Geometrie, die die
+Spaltenerkennung bricht (etwa ein sub-60%-breiter Kopf, dessen Mitte in die zweite Spalte ragt, wie
+460 S.1). Beides heisst dasselbe: die 39 sind genau die Seiten, auf denen die automatische Korrektur
+unzuverlaessig ist, also die Faksimile-Sicht-Worklist fuer M3, weitgehend deckungsgleich mit der
+fragilen Triage. Verworfen: den emittierten Zonen-Ausschnitt nachsortieren, um W19 auf 0 zu zwingen,
+das schaltet das Signal stumm, ohne den Count-Mismatch (ein Upstream-Segmentierungsproblem) zu beheben
+(Wegdokumentieren-Antipattern). Keine neue E-Nummer, Rollout bleibt operator-gated.
+
+Dokumente: [journal.md](journal.md) Sitzung 74, Sitzung 75, Sitzung 77, Sitzung 78
 
 ---
 

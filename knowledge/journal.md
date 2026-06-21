@@ -51,6 +51,22 @@ pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
 
+### 2026-06-21 Sitzung 78: Ursache der 39 Restseiten isoliert (Count-Mismatch, nicht Geometrie-Gap; korrigiert Sitzung 77)
+
+**Anlass** Operator-Auftrag, weiterzumachen. Autonom moeglich war nicht die gated M3-Auslieferung, sondern die in Sitzung 77 offen gelassene Ursachenklaerung der 39 verbleibenden W19-Seiten.
+
+**Ziel** Verstehen, warum die Reassemblierung 39 Seiten nicht auf null bringt, und ob ein sicherer Fix existiert oder die Seiten der Faksimile-Sicht gehoeren.
+
+**Verlauf** Sitzung 77 hatte die Ursache als Geometrie-Gap zwischen Ordnungsstufe (Region-Bboxes) und Pruefstufe (Zonen-Bboxes) vermutet. Die Diagnose widerlegt das: `reading_order_permutation` ist idempotent, und 35 der 39 Restseiten haben einen OCR-Absatz-gegen-Layout-Region-Count-Mismatch (etwa 810 S.56: 3 Absaetze gegen 236 Regionen, 1240 S.3: 50 gegen 61). Im Mismatch-Zweig von `match_paragraphs_to_regions` werden die Absaetze per Index an einen Ausschnitt der umsortierten Regionen gepaart, der emittierte Zonen-Ausschnitt ist dann nicht kanonisch, und W19 schlaegt zu Recht an. Die uebrigen 4 Restseiten haben 1:1-Count, aber eine Layout-Geometrie, die die Spaltenerkennung bricht (sub-60%-breiter Kopf, dessen Mitte in die zweite Spalte ragt, etwa 460 S.1).
+
+**Entscheidungen** Den naheliegenden Fix verworfen, den emittierten Zonen-Ausschnitt nachzusortieren, um W19 auf null zu zwingen: das schaltet die Warnung stumm, ohne den Count-Mismatch zu beheben, der ein Upstream-Segmentierungsproblem ist (Wegdokumentieren-Antipattern). Die 39 Restseiten sind damit als die genuinen Faksimile-Sicht-Faelle ausgewiesen, nicht als Tool-Defekt. Korrigiert die Ursachenangabe aus Sitzung 77 (kein Geometrie-Gap); decisions.md E90 entsprechend nachgezogen.
+
+**Stand** Ursache der 39 Restseiten verifiziert (35 Count-Mismatch, 4 Spaltenerkennung-Grenzfall), reproduzierbar ueber Layout-/OCR-Cache. Kein Code geaendert, nur die Diagnose und die Doku-Korrektur. Die Reassemblierung bleibt bei 831 auf 39; die 39 sind genau die Seiten, auf denen automatische Korrektur unzuverlaessig ist.
+
+**Naechste Schritte**
+1. Operator-Entscheid M3 (gated): Trockenlauf abnehmen, Auslieferung freigeben, die 39 Restseiten am Faksimile sichten.
+2. Optional separat: den Count-Mismatch upstream angehen (OCR-Absatz- gegen Layout-Region-Segmentierung), nicht die W19-Reihenfolge nachbessern.
+
 ### 2026-06-21 Sitzung 77: M3-Reassemble-Vorschau gebaut (reversibler Trockenlauf, W19 831 auf 39)
 
 **Anlass** Synchronisation mit der Forschungsleitstelle deckte auf, dass der order-Auftrag dieser Iteration noch offen war: ein verifizierter Trockenlauf der Lesereihenfolge-Korrektur. Die Sitzungen 75/76 (Triage-Audit, Validator-Fix) waren benachbart, aber nicht das bestellte Artefakt.
