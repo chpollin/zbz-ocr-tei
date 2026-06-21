@@ -51,6 +51,35 @@ pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
 
+### 2026-06-21 Sitzung 72: Unabhaengige Verifikation der ZBZ-Lieferung + Konsolidierungsbericht an die Forschungsleitstelle
+
+**Anlass.** Nach Abschluss der Order (Sitzung 71) war der ausgelieferte Bestand unabhaengig
+nachzupruefen und der Stand vollstaendig an die Forschungsleitstelle zu berichten, inklusive
+des fuer die Vault-Session bestimmten Wissens-Deltas.
+
+**Ziel.** Die drei Konformitaets-Gates auf dem realen Bestand reproduzieren und die Reichweite
+des Konformitaets-Gates praezise benennen.
+
+**Verlauf.** Die drei Pruefungen wurden direkt auf `output/tei_final` (285 Dateien) ausgefuehrt:
+Schema plus Projektregeln (`tei_validator --all --dir output/tei_final`) 285 valide / 0 invalide /
+145 mit nicht-blockierender Warnung; ZBZ-Konformitaet (`--conformity`) 285 konform / 0 Verletzungen;
+die committeten Gates `test_tei_schema.py` und `test_zbz_conformity.py` zusammen 583 passed. Befund
+zur Reichweite: der Bestand traegt 0 Dateien mit `ref="GND:"`, 6 nackte `<persName>` und 400 `<bibl>`
+(ueberwiegend Abbildungs- und Quellenverweise, keine Normdaten-Verknuepfung). Die entitaetsbezogenen
+Konformitaetsregeln (Z1-Z4) laufen also auf einem authority-freien Korpus leer; das Gate wird erst
+scharf, sobald kuratierte Inline-GND-Dokumente durchlaufen.
+
+**Stand.** Lieferbestand unabhaengig verifiziert, Ergebnis deckt sich mit den committeten Tests aus
+Sitzung 71. An die Forschungsleitstelle berichtet: handoff bereinigt (Vor-Order-Staende entfernt) und
+um das Vault-Wissens-Delta ergaenzt (Inline-GND ersetzt standOff in den Vault-Dokumenten,
+teiCrafter-Atom-Korrektur, Entscheidungen A/B und E87 als aufgeloest). Keine offenen Gates, Lane ruht.
+
+**Naechste Schritte.**
+1. teiCrafter-Ausgabemodell auf Inline-GND umstellen (lane teicrafter-editor); danach den
+   Konformitaets-Gate erstmals auf kuratierten Output anwenden.
+2. ZBZ-Rueckfragen O27 (Bildunterschrift-Widerspruch), O13 (Schlagworte), O8 (Header-Metadaten)
+   ueber den Operator klaeren.
+
 ### 2026-06-21 Sitzung 71: ZBZ-Order umgesetzt -- Inline-GND-Schema (E88), Konformitaetspruefung, Seitenbild-Anbindung (E89)
 
 **Anlass.** Die Forschungsleitstelle hat das uebergebene ZBZ-Material ausgewertet und drei
@@ -305,6 +334,7 @@ Aus den Sessions destillierte Beobachtungen, die fuer kuenftige Arbeit relevant 
 - **L11** Eine server-lose Persistenz hat zwei Wahrheiten: den kanonischen Konsum-Ort (`output/`, Pipeline) und den Lese-Ort des Frontends (`docs/data/`-Mirror). Wer nur in den ersten schreibt, speichert real, aber unsichtbar fuer den Kuratierenden.
 - **L12** Bei parallelen Instanzen im selben Tree sind `git status` + Verifikation gegen den realen Dateistand Pflicht; ein "file modified since read"-Konflikt ist das Signal zum Zuruecktreten, nicht zum Erzwingen.
 - **L13** Eine Prosa-Zahl ("285/285 valide") ist kein Beleg. Die ausgelieferte SSoT braucht ein automatisiertes Gate, keine Behauptung.
+- **L14** Ein gruenes Konformitaets-Gate ist nur so scharf wie der Bestand, ueber den es laeuft. "285/285 konform" heisst auf dem entitaetenfreien `tei_final` "keine Verletzung", nicht "Entitaeten korrekt GND-ausgezeichnet"; die entitaetsbezogenen Regeln (Z1-Z4) greifen erst nach der Inline-GND-Kuration durch teiCrafter.
 - **P7** Gattungsbegriffe im Entity-Index erzeugen False Positives in ~30% der Docs.
 - **P8** Zeitungslayouts versagen systematisch (>40 Zones, OCR-Halluzinationen). ~3% des Korpus.
 - **P10** Tier-2-Docs (4-8 Seiten) haben 85%+ APPROVED-Rate, Tier-1 (1-3 Seiten) nur 40%.

@@ -436,7 +436,11 @@ Zwei Schichten zusammen ergeben die ZBZ-Konformitaet:
 0 Advisories.** Ad-hoc per `python -m scripts.tei.tei_validator --conformity`. Die
 entitaetsbezogenen Regeln (Z1-Z4, Z8) greifen erst auf kuratierten teiCrafter-Output, weil
 `tei_final` seit E71 entitaetenfrei ist; Z5 (Renderings) und Z6 (`pb facs/n`) gelten auf dem
-realen Bestand und sind sauber. Bewusst nicht maschinell erzwungen: "Entitaeten in
+realen Bestand und sind sauber. Damit bedeutet das Ergebnis auf dem heutigen Bestand "keine
+Verletzung der ZBZ-Regeln", nicht "Entitaeten korrekt GND-ausgezeichnet": das entitaetsbezogene
+Gate wird erst scharf, sobald kuratierte Inline-GND-Dokumente durchlaufen (verifiziert 2026-06-21,
+Sitzung 72: 0 Dateien mit `ref="GND:"`, 6 nackte `<persName>`, 400 `<bibl>` als Abbildungs- und
+Quellenverweise). Bewusst nicht maschinell erzwungen: "Entitaeten in
 Bildunterschriften werden nicht ausgezeichnet" -- die README widerspricht sich hier selbst (ihr
 §Abbildungen-Beispiel zeichnet eine `<orgName ref="GND:...">` in einer `<figure>` aus), als
 ZBZ-Rueckfrage offen.
