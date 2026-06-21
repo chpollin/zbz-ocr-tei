@@ -223,7 +223,7 @@ Seit E21 ersetzt bzw. ergaenzt zbz-ocr-tei folgende Schritte:
 
 | Problem | Betroffene PDFs | Loesungsansatz |
 |---|---|---|
-| Zweispaltige Lesereihenfolge | 2530, 890, 3040 (auch 30, 760) | Docling + Gemini Detect; spalten-/bandbewusste Assembly-Reihenfolge (E90), W19 prueft den Bestand, Auslieferung M3 gated |
+| Zweispaltige Lesereihenfolge | grosse Mehrheit des Lieferbestands (Audit), Schwerpunkt u.a. 810/1520/2360/760 | Docling + Gemini Detect; spalten-/bandbewusste Assembly-Reihenfolge (E90), W19 prueft den Bestand; `scripts/eval/reading_order_audit` triagiert robust/fragil fuer die M3-Sicht; Auslieferung M3 gated |
 | Seitenuebergreifende Fussnoten | 3040 | `@next/@prev` |
 | Interview-Sprecherwechsel | 1440 | Pattern-Erkennung |
 | Historischer Druck | 90 | beide OCR-Engines testen |

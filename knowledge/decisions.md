@@ -403,7 +403,25 @@ ZBZ-Konformitaet bleiben 285/285, der Fidelity-CER von 30/760 sinkt.
 Verifiziert: volle Suite 1168 passed (je Milestone neue Tests); git-deterministisch (HEAD `26c8fcd6`,
 synchron 0/0). Keine neue Validierungs- oder Konformitaetsregel-Klasse, ein Bugfix plus eine Diagnose.
 
-Dokumente: [journal.md](journal.md) Sitzung 74
+M3-Vorbereitung (Audit-Instrument + Triage, 2026-06-21, Commit `8aa3a87d`). Damit der gated Rollout
+nicht blind ueber den ganzen Bestand laeuft, triagiert ein Diagnose-Werkzeug die W19-Menge.
+Verhaltenswahrender Refactor zuerst: die Seiten-/Zonen-Extraktion aus `_check_reading_order` als
+geteilten Generator `iter_page_zone_bboxes` ([tei_xml_utils.py](../scripts/tei/tei_xml_utils.py))
+gezogen (Validator-W19 und Audit sehen exakt dieselbe Seitenmenge), `reading_order_permutation` um
+optionale Schwellwert-Parameter erweitert (Defaults verhaltenswahrend). Das Werkzeug
+[reading_order_audit.py](../scripts/eval/reading_order_audit.py) rechnet je umzusortierender Seite die
+kanonische Permutation unter Schwellwert-Perturbation (WIDE 60 +/-5, GAP 12 +/-3) nach: bleibt sie
+gleich, ist die Seite robust (schwellwert-unabhaengig), kippt sie, ist sie fragil (geometrischer
+Grenzfall, etwa ein Block nahe der Vollbreiten-Schwelle wie 760 S.1). Messung ueber `tei_final`
+(reproduzierbar via `python -m scripts.eval.reading_order_audit`): 831 umzusortierende Seiten ueber 216
+Dokumente, davon 557 robust und 274 fragil, 145 Dokumente mit mindestens einer fragilen Seite; stark
+gestreut (Dok 810: 54/33, Dok 520: 9/0). Empfehlung fuer den M3-Zuschnitt: die robuste Mehrheit nach
+einer Sicht-Stichprobe vertrauen, die fragile Worklist (`--worklist`) einzeln am Faksimile sichten;
+"robust" heisst schwellwert-unabhaengig, nicht bewiesen korrekt. Bewusst keine neue E-Nummer, der
+Rollout bleibt unratifiziert und operator-gated; das Gruen-Kriterium M3 (0 W19 nach Neugenerierung)
+ist unveraendert. Volle Suite 1179.
+
+Dokumente: [journal.md](journal.md) Sitzung 74, Sitzung 75
 
 ---
 

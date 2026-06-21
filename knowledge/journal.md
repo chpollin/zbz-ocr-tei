@@ -51,6 +51,22 @@ pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
 
+### 2026-06-21 Sitzung 75: M3-Triage -- Lesereihenfolge-Audit (robust/fragil) + geteilte W19-Extraktion
+
+**Anlass** Operator-Auftrag nach der Milestone-Runde: weiter am Ziel arbeiten, und was autonom entscheidbar ist, gleich umsetzen. Der groesste Qualitaetshebel M3 (Reihenfolge-Fix auf den Lieferbestand) ist operator-gated; autonom moeglich ist, M3 entscheidbar und sicher zu machen, statt am Bestand zu schreiben.
+
+**Ziel** Die W19-Menge so triagieren, dass die operator-gated Auslieferung nicht blind ueber den ganzen Bestand laufen muss. Trennen, welche Umsortierungen schwellwert-unabhaengig (vertraubar) und welche Grenzfaelle (Sicht noetig) sind.
+
+**Verlauf** Verhaltenswahrender Refactor: die Seiten-/Zonen-Extraktion aus `_check_reading_order` als geteilten Generator `iter_page_zone_bboxes` nach tei_xml_utils gezogen, damit Validator-W19 und das Audit exakt dieselbe handlungsrelevante Seitenmenge sehen und nicht auseinanderdriften. `reading_order_permutation` um optionale Schwellwert-Parameter (wide_w_pct/column_gap_pct) erweitert, Defaults verhaltenswahrend (bestehende Aufrufer unveraendert). Neues Diagnose-Werkzeug `scripts/eval/reading_order_audit.py`: fuer jede Seite, die der Fix umsortieren wuerde (W19), wird die kanonische Permutation unter Schwellwert-Perturbation (WIDE 60 +/-5, GAP 12 +/-3) neu berechnet; bleibt sie gleich, ist die Seite robust, kippt sie, ist sie fragil. Schreibt nichts am Lieferbestand. Neun Tests (`tests/test_reading_order_audit.py`), volle Suite 1179. Commit `8aa3a87d`.
+
+**Befund (Messung, reproduzierbar via `python -m scripts.eval.reading_order_audit`)** 831 umzusortierende Seiten ueber 216 Dokumente; davon 557 robust, 274 fragil; 145 Dokumente tragen mindestens eine fragile Seite. Stark gestreut: Dok 810 allein 54 Seiten (33 fragil), waehrend etwa 520 mit 9/0 vollstaendig robust ist. Damit schrumpft die eigentliche Sicht-Arbeit von "216 Dokumente pruefen" auf 274 fragile Seiten plus eine Stichprobe ueber die robuste Mehrheit.
+
+**Entscheidungen** Unter [[E90]] als M3-Vorbereitung dokumentiert, bewusst keine neue E-Nummer (der Rollout selbst bleibt unratifiziert und operator-gated; konsistent mit der W19-Kennungslektion, kein vorgreifendes Label). Empfehlung fuer den M3-Zuschnitt aus der Persona: die 557 robusten Seiten nach einer kleinen Sicht-Stichprobe vertrauen, die 274 fragilen Seiten (Worklist via `--worklist`) einzeln am Faksimile sichten. "Robust" heisst schwellwert-unabhaengig, nicht bewiesen korrekt, daher die Stichprobe. Offene Operator-Frage bleibt der Zuschnitt: stueckweise per Worklist oder Blanket nach Stichprobe.
+
+**Stand** HEAD `8aa3a87d` auf main (Code), synchron mit origin, Arbeitsbaum sauber. Audit-Instrument abnahmereif (maschinell gruen, volle Suite 1179). Kein Eingriff am Lieferbestand. Der W19-Korpusbefund aus den Operator-Rueckfragen (216/285) ist mit dieser Sitzung im Repo persistiert, zuvor lag er nur in der Leitstellen-Handoff. Savepoint `8aa3a87d`.
+
+**Naechste Schritte** M3 wartet auf die operator-gated Zuschnittentscheidung. Bis dahin kein Eingriff am Bestand; das Audit liefert auf Abruf (`--worklist`) die fragile Seitenliste als Sicht-Grundlage.
+
 ### 2026-06-21 Sitzung 74: Milestone-Runde -- Lesereihenfolge spalten-/bandbewusst (M1) + Validator-Warnung W19 (M2)
 
 **Anlass** Milestone-Runde der Forschungsleitstelle: aus der Editionsphilologie-Persona die naechsten zwei Milestones bestimmen, bauen, verifizieren, sichern, den dritten scopen und die Rest-Roadmap melden.
