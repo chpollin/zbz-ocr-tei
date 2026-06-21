@@ -70,7 +70,9 @@ def _bbox_centre_x(bbox: dict) -> float:
     return bbox["x_pct"] + bbox["w_pct"] / 2.0
 
 
-def reading_order_permutation(bboxes: list[dict]) -> list[int]:
+def reading_order_permutation(
+    bboxes: list[dict], *, wide_w_pct: float = None, column_gap_pct: float = None
+) -> list[int]:
     """Original-Indizes der bboxes in kanonischer Lesereihenfolge.
 
     bboxes: Liste von {x_pct, y_pct, w_pct, h_pct} in Seitenprozent (0-100). Gibt die
@@ -80,16 +82,25 @@ def reading_order_permutation(bboxes: list[dict]) -> list[int]:
     Ordnung, identisch zur frueheren y-Sortierung. Rein und deterministisch; bei Gleichstand
     bleibt die Eingangsreihenfolge erhalten (stabil), damit Aufrufer sowohl umordnen als auch
     pruefen koennen, ob eine bestehende Reihenfolge bereits kanonisch ist (Identitaet).
+
+    wide_w_pct/column_gap_pct ueberschreiben optional die Modul-Schwellwerte. Defaults (None)
+    verwenden WIDE_REGION_W_PCT/COLUMN_GAP_PCT, sodass das Verhalten fuer Generator und Validator
+    unveraendert bleibt. Die Override-Parameter dienen der Schwellwert-Stabilitaetspruefung des
+    Lesereihenfolge-Audits (scripts/eval/reading_order_audit): kippt die Permutation unter kleiner
+    Schwellwert-Aenderung, ist die Umsortierung der Seite ein Grenzfall und braucht fachliche Sicht.
     """
     n = len(bboxes)
     if n <= 1:
         return list(range(n))
 
+    wide_w = WIDE_REGION_W_PCT if wide_w_pct is None else wide_w_pct
+    gap = COLUMN_GAP_PCT if column_gap_pct is None else column_gap_pct
+
     wide = sorted(
-        (i for i in range(n) if bboxes[i]["w_pct"] >= WIDE_REGION_W_PCT),
+        (i for i in range(n) if bboxes[i]["w_pct"] >= wide_w),
         key=lambda i: (bboxes[i]["y_pct"], i),
     )
-    narrow = [i for i in range(n) if bboxes[i]["w_pct"] < WIDE_REGION_W_PCT]
+    narrow = [i for i in range(n) if bboxes[i]["w_pct"] < wide_w]
 
     def columns_ordered(members: list[int]) -> list[int]:
         if not members:
@@ -97,7 +108,7 @@ def reading_order_permutation(bboxes: list[dict]) -> list[int]:
         members = sorted(members, key=lambda i: (_bbox_centre_x(bboxes[i]), i))
         cols = [[members[0]]]
         for i in members[1:]:
-            if _bbox_centre_x(bboxes[i]) - _bbox_centre_x(bboxes[cols[-1][-1]]) > COLUMN_GAP_PCT:
+            if _bbox_centre_x(bboxes[i]) - _bbox_centre_x(bboxes[cols[-1][-1]]) > gap:
                 cols.append([i])
             else:
                 cols[-1].append(i)
@@ -115,6 +126,70 @@ def reading_order_permutation(bboxes: list[dict]) -> list[int]:
         prev_top = wy
     order.extend(columns_ordered([i for i in narrow if bboxes[i]["y_pct"] >= prev_top]))
     return order
+
+
+def iter_page_zone_bboxes(root):
+    """Seiten mit ihren Faksimile-Zonen-Bboxes in Liefer-(Dokument-)Reihenfolge.
+
+    Liefert (page, zone_ids, bboxes, line) je Seite, deren Body-Bloecke ueber
+    @facs="#facs_<page>_r_<n>" auf Faksimile-Zonen zeigen, beschraenkt auf Seiten mit >= 2
+    referenzierten Zonen, bei denen ALLE referenzierten Zonen Surface-Koordinaten aufloesen.
+    bboxes in Seitenprozent ({x_pct,y_pct,w_pct,h_pct}), dieselbe Geometrie, die W19 und der
+    Generator nutzen. line ist die sourceline des ersten Blocks (0, falls der Parser keine
+    fuehrt). Geteilt von tei_validator (W19) und dem Lesereihenfolge-Audit, damit beide exakt
+    dieselbe handlungsrelevante Seitenmenge sehen und nicht auseinanderdriften.
+    """
+    xml_id = "{http://www.w3.org/XML/1998/namespace}id"
+    ref_re = re.compile(r"^#facs_(\d+)_r_(\d+)$")
+
+    zone_bbox = {}
+    for surface in root.findall(f".//{{{TEI_NS}}}surface"):
+        try:
+            pw = float(surface.get("lrx") or 0)
+            ph = float(surface.get("lry") or 0)
+        except (TypeError, ValueError):
+            continue
+        if pw <= 0 or ph <= 0:
+            continue
+        for zone in surface.findall(f"{{{TEI_NS}}}zone"):
+            zid = zone.get(xml_id)
+            if not zid:
+                continue
+            try:
+                ulx = float(zone.get("ulx"))
+                uly = float(zone.get("uly"))
+                lrx = float(zone.get("lrx"))
+                lry = float(zone.get("lry"))
+            except (TypeError, ValueError):
+                continue
+            zone_bbox[zid] = {
+                "x_pct": ulx / pw * 100.0,
+                "y_pct": uly / ph * 100.0,
+                "w_pct": (lrx - ulx) / pw * 100.0,
+                "h_pct": (lry - uly) / ph * 100.0,
+            }
+
+    if not zone_bbox:
+        return
+
+    body = root.find(f".//{{{TEI_NS}}}body")
+    if body is None:
+        return
+
+    pages = {}        # Seite -> Zonen-ids in Liefer-(Dokument-)Reihenfolge
+    page_line = {}    # Seite -> sourceline des ersten Blocks
+    for el in body.iter():
+        ref = el.get("facs")
+        if not ref or not ref_re.match(ref):
+            continue
+        page = ref_re.match(ref).group(1)
+        pages.setdefault(page, []).append(ref[1:])
+        page_line.setdefault(page, getattr(el, "sourceline", 0) or 0)
+
+    for page, zids in pages.items():
+        if len(zids) < 2 or any(z not in zone_bbox for z in zids):
+            continue
+        yield page, zids, [zone_bbox[z] for z in zids], page_line.get(page, 0)
 
 
 def make_element(tag: str, tail: str = None, **attribs):

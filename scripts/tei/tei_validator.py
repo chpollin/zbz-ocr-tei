@@ -30,7 +30,11 @@ from scripts.config import (
     TEI_UNIFIED_DIR,
     VALID_DIV_TYPES,
 )
-from scripts.tei.tei_xml_utils import normalize_lang_code, reading_order_permutation
+from scripts.tei.tei_xml_utils import (
+    iter_page_zone_bboxes,
+    normalize_lang_code,
+    reading_order_permutation,
+)
 from scripts.tei.zbz_conformity import RULE_LABELS as ZBZ_RULE_LABELS, check_conformity
 
 try:
@@ -354,61 +358,10 @@ def _check_reading_order(root, warnings):
     ausgelieferten Editionstext maschinell umzuschreiben. Greift nur, wo Zonen-Koordinaten
     vorliegen; neu generierte Dokumente (Generator-Fix) sind kanonisch und loesen nicht aus.
     """
-    xml_id = "{http://www.w3.org/XML/1998/namespace}id"
-    ref_re = re.compile(r"^#facs_(\d+)_r_(\d+)$")
-
-    # Zonen-Geometrie je xml:id, aus den Surface-Dimensionen in Seitenprozent umgerechnet
-    zone_bbox = {}
-    for surface in root.findall(f".//{{{TEI_NS}}}surface"):
-        try:
-            pw = float(surface.get("lrx") or 0)
-            ph = float(surface.get("lry") or 0)
-        except (TypeError, ValueError):
-            continue
-        if pw <= 0 or ph <= 0:
-            continue
-        for zone in surface.findall(f"{{{TEI_NS}}}zone"):
-            zid = zone.get(xml_id)
-            if not zid:
-                continue
-            try:
-                ulx = float(zone.get("ulx"))
-                uly = float(zone.get("uly"))
-                lrx = float(zone.get("lrx"))
-                lry = float(zone.get("lry"))
-            except (TypeError, ValueError):
-                continue
-            zone_bbox[zid] = {
-                "x_pct": ulx / pw * 100.0,
-                "y_pct": uly / ph * 100.0,
-                "w_pct": (lrx - ulx) / pw * 100.0,
-                "h_pct": (lry - uly) / ph * 100.0,
-            }
-
-    if not zone_bbox:
-        return
-
-    body = root.find(f".//{{{TEI_NS}}}body")
-    if body is None:
-        return
-
-    pages = {}        # Seite -> Zonen-ids in Liefer-(Dokument-)Reihenfolge
-    page_line = {}    # Seite -> sourceline des ersten Blocks fuer den Befund
-    for el in body.iter():
-        ref = el.get("facs")
-        if not ref or not ref_re.match(ref):
-            continue
-        page = ref_re.match(ref).group(1)
-        pages.setdefault(page, []).append(ref[1:])
-        page_line.setdefault(page, el.sourceline or 0)
-
-    for page, zids in pages.items():
-        if len(zids) < 2 or any(z not in zone_bbox for z in zids):
-            continue
-        bboxes = [zone_bbox[z] for z in zids]
+    for page, zids, bboxes, line in iter_page_zone_bboxes(root):
         if reading_order_permutation(bboxes) != list(range(len(bboxes))):
             warnings.append({
-                "line": page_line.get(page, 0),
+                "line": line,
                 "message": (
                     f"Lesereihenfolge Seite {page}: {len(zids)} Bloecke nicht in kanonischer "
                     f"Spalten-/Lese-Ordnung (Doppelseite/Mehrspalter, Kuration/Neugenerierung)"
