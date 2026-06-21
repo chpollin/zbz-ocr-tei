@@ -270,6 +270,13 @@ und loest teiCrafters hartcodierten Demo-Bildpfad ab. Offen bleibt das URL-Schem
 (relativ `<id>_p{KKK}.png` vs. absolute GitHub-Pages-URL vs. IIIF) und dass der Einbau
 alle 285 `tei_final` (SoT) neu schreibt -- beides operator-gated.
 
+Offen (Richtlinien-Konformitaet, siehe [[O26]]): E87 richtet sich am teiCrafter-Datenvertrag
+aus, nicht an den ZBZ-Editionsrichtlinien (E49). Die Richtlinien fordern Inline-Auszeichnung
+am Erwaehnungsort (`<persName ref="GND:...">`/`<orgName>`/`<bibl>`, alle `@ref` auf die GND),
+nicht ein standOff-Register mit `<name ref="#id">` und GND als `<idno>`. E87 macht das
+Tool-Modell valide, ohne zu entscheiden, ob es das Liefermodell ist; beide Modelle sind jetzt
+schema-erlaubt. Welches gilt, ist ZBZ-/Operator-Sache.
+
 Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md)
 
 ---
@@ -282,6 +289,7 @@ Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md)
 | O13 | TEI-Editorial-Details (Schlagworte) | wer erstellt diese? Im Header? Richtlinien: "in Abklaerung" | Phase 3 TEI | **Entscheider: ZBZ** (Richtlinien selbst sagen "in Abklaerung"). Haengt ab von der ZBZ-internen Festlegung, wer Schlagworte vergibt und wo sie im Header stehen. Solange bleiben die Header ohne Schlagworte; kein Pipeline-Blocker |
 | O18 | multimodale LLM-Korrektur testen (Scan-Bild + OCR-Text) | Forschung: <1% CER (Crosilla 2025). Infrastruktur steht | Quality | **Entscheider: DHCraft (Projektleitung)**, eigener Test. Haengt ab von Priorisierung nach der ZBZ-Abnahme; blockiert nichts (reines Verbesserungs-Experiment auf der bestehenden Gemini-Infrastruktur), [quality.md](quality.md) |
 | O25 | Faksimile-`<graphic url>` pipeline-seitig erzeugen statt nachgelagert via teiCrafter | Die Pipeline erzeugt `surface`/`zone`/`@facs` schon selbst ([[E87]]); nur der Surface->Bild-Zeiger `<graphic>` fehlt im Normalfall. Einbau = `<graphic>` als erstes `<surface>`-Kind in `build_facsimile` (`tei_step3.py`), Schema valide (graphic vor zone). | macht Faksimile selbst-enthaltend, loest teiCrafter-Demo-Bildpfad ab | **Entscheider: DHCraft (Projektleitung).** Offen: URL-Schema (relativ `<id>_p{KKK}.png` vs. absolute GitHub-Pages-URL vs. IIIF) und dass der Einbau alle 285 `tei_final` (SoT) neu schreibt. Kein Blocker, reine Pipeline-Erweiterung |
+| O26 | teiCrafter-Annotationsmodell (E87) vs. ZBZ-Editionsrichtlinien (E49) | Die Richtlinien fordern Inline `<persName ref="GND:...">`/`<orgName>`/`<bibl>` am Erwaehnungsort (alle `@ref` auf die GND); teiCrafter erzeugt standOff-Register + `<name ref="#id">` mit GND als `<idno>`, plus Orte/Events und GeoNames/Wikidata. E87 macht das Tool-Modell valide, ohne das Liefermodell zu entscheiden. tei_final ist seit [[E71]] entitaetenfrei, die Annotation ist ein kuenftiger Pfad. | nichts (Schema-Erweiterung steht eigenstaendig); beruehrt teicrafter-editor (bei Option a Ausgabemodell-Aenderung) | **Entscheider: ZBZ gemeinsam mit DHCraft.** Optionen: (a) teiCrafter an Richtlinien anpassen (Inline statt standOff), (b) Richtlinien um standOff erweitern, (c) beide bewusst als Uebergang erlauben. Vor der ZBZ-Abnahme zu klaeren |
 | ~~O22~~ | 289 vs 286 PDF-Diskrepanz — **GEKLAERT** (2026-05-27) | Masterfile hat 325 Texte, davon 289 `digitalisiert`, davon 286 als PDF geliefert; die 3 nicht gelieferten: `1745`, `1750`, `1970`. Verifiziert via `python -m scripts.eval.corpus_audit` | — | erledigt |
 | ~~O23~~ | `tei_final`-Header nicht schema-valide — **GEKLAERT (2026-05-27, E68)** | Diagnose bei E65 nannte nur `<idno>`; die korpusweite Validierung zeigte vier Ursachen (`idno`, `langUsage`, `revisionDesc`/`change`, `biblStruct/monogr`), alle vom ODD-Subset weggelassen. Behoben durch Schema-Erweiterung E68; alle 285 ausgelieferten TEI valide; gegen Regression abgesichert durch `tests/test_tei_schema.py`. | — | erledigt |
 | ~~O24~~ | `tei_validator --compare-ref` zeigt falschen Referenz-CER — **GEKLAERT (2026-05-27, E69)** | `compute_cer`-Import schlug still fehl (Funktion heisst `calculate_cer`), Validator fiel auf Laengen-Approximation zurueck. Fix: `calculate_cer` * 100 (Ratio->Prozent, passend zur Report-Formatierung), `except` auf `ImportError` verengt. Gate `tests/test_tei_validator.py`. | — | erledigt |
