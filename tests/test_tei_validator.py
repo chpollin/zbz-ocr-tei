@@ -7,8 +7,81 @@ importierte _compute_cer ein nicht existentes ``compute_cer`` und fiel still
 auf eine Laengen-Approximation zurueck.
 """
 
-from scripts.tei.tei_validator import _compute_cer, _collect_finals
+from lxml import etree
+
+from scripts.tei.tei_validator import _compute_cer, _collect_finals, _check_project_rules
 from scripts.eval.evaluate_ocr import calculate_cer
+
+
+# --- W19: Lesereihenfolge-Anomalie (Spalten-/Band-Ordnung, Defekt 30/760) ---
+
+def _tei(zones, blocks):
+    return (
+        '<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">'
+        '<teiHeader><fileDesc><titleStmt><title>T</title><author>A</author></titleStmt>'
+        '<publicationStmt><publisher>p</publisher></publicationStmt>'
+        '<sourceDesc><bibl><publisher>p</publisher></bibl></sourceDesc></fileDesc></teiHeader>'
+        '<facsimile><surface xml:id="facs_1" ulx="0" uly="0" lrx="1000" lry="1000">'
+        f'{zones}</surface></facsimile>'
+        '<text><body><div n="1"><pb facs="#facs_1" n="1"/>'
+        f'{blocks}</div></body></text></TEI>'
+    )
+
+
+def _w19(zones, blocks):
+    root = etree.fromstring(_tei(zones, blocks).encode("utf-8"))
+    _, warnings = _check_project_rules(root)
+    return [w for w in warnings if w["rule"] == "W19"]
+
+
+# zwei Spalten: links (cx ~27.5%) facs_1_r_1/r_3, rechts (cx ~72.5%) facs_1_r_2
+_TWO_COL_ZONES = (
+    '<zone xml:id="facs_1_r_1" ulx="100" uly="100" lrx="450" lry="200"/>'
+    '<zone xml:id="facs_1_r_2" ulx="550" uly="150" lrx="900" lry="250"/>'
+    '<zone xml:id="facs_1_r_3" ulx="100" uly="400" lrx="450" lry="500"/>'
+)
+
+
+def test_w19_fires_on_column_interleaved_order():
+    # ausgeliefert in der verschraenkten y-Reihenfolge (L1, R1, L2) der alten Sortierung
+    blocks = (
+        '<p facs="#facs_1_r_1">L1</p>'
+        '<p facs="#facs_1_r_2">R1</p>'
+        '<p facs="#facs_1_r_3">L2</p>'
+    )
+    found = _w19(_TWO_COL_ZONES, blocks)
+    assert len(found) == 1
+    assert "Seite 1" in found[0]["message"]
+
+
+def test_w19_silent_on_correct_column_order():
+    # dieselben Zonen, aber in kanonischer Ordnung ausgeliefert (linke Spalte ganz, dann rechte)
+    blocks = (
+        '<p facs="#facs_1_r_1">L1</p>'
+        '<p facs="#facs_1_r_3">L2</p>'
+        '<p facs="#facs_1_r_2">R1</p>'
+    )
+    assert _w19(_TWO_COL_ZONES, blocks) == []
+
+
+def test_w19_silent_on_single_column():
+    zones = (
+        '<zone xml:id="facs_1_r_1" ulx="100" uly="100" lrx="900" lry="200"/>'
+        '<zone xml:id="facs_1_r_2" ulx="100" uly="400" lrx="900" lry="500"/>'
+        '<zone xml:id="facs_1_r_3" ulx="100" uly="700" lrx="900" lry="800"/>'
+    )
+    blocks = (
+        '<p facs="#facs_1_r_1">A</p>'
+        '<p facs="#facs_1_r_2">B</p>'
+        '<p facs="#facs_1_r_3">C</p>'
+    )
+    assert _w19(zones, blocks) == []
+
+
+def test_w19_silent_without_zone_coords():
+    # pb traegt nur #facs_1 (kein _r_), kein region-genauer Beleg -> keine Auswertung
+    blocks = '<p>kein facs</p><p>auch nicht</p>'
+    assert _w19(_TWO_COL_ZONES, blocks) == []
 
 
 def test_identical_text_is_zero():
