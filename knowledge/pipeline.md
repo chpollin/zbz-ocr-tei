@@ -70,7 +70,7 @@ aus Layout-JSON + OCR ab.
 | 5 | TEI-XML (regelbasiert) | `scripts/tei/tei_generator.py` | `output/tei/` | Production |
 | 5b | **Unified TEI Pipeline** (E32) | `scripts/tei/tei_unified.py` | `output/tei_unified/` | **285/285** |
 | 5b+ | Post-Assembly Fixes | `tei_step3.py` | Fixes E/F/G + heuristische lb-Injection | Production (Session 34) |
-| 5c | TEI Validation | `scripts/tei/tei_validator.py` | JSON + HTML-Report | **285/285 valide**, 29 Warnings |
+| 5c | TEI Validation | `scripts/tei/tei_validator.py` | JSON + HTML-Report | **285/285 schema-valide**; Warnungen informativ (15 Regeln, 121 Docs auf `tei_unified`) |
 | 6 | Evaluation | `scripts/eval/evaluate_ocr.py` + `benchmark_cer.py` + `cer_statistics_full.py` | `output/evaluation/` + `docs/data/cer_statistics.json` | Production |
 
 **Manuelle Kuration (E56, Stand 2026-04-27):** Erfolgt im Pipeline-Viewer
@@ -355,6 +355,15 @@ hatte diese „APPROVED" vergeben. Stand: 285/285 `unverifiziert`. Der Viewer ze
 | `<anchor>` | `xml:id` | Doppelseiten-Bilder |
 | `<ref>` | `target` | externer Verweis |
 | `<revisionDesc>`, `<change>` | `who`, `when`, `status` | Versionsstatus |
+
+**Faksimile-Anbindung (Stand E87, 2026-06-21).** Der Generator erzeugt `<facsimile>`,
+`<surface ulx uly lrx lry>`, `<zone>` mit Pixelkoordinaten und die `@facs`-Bindung
+Zeile<->Zone selbst und vollstaendig. Was fehlt, ist der Surface->Bild-Zeiger `<graphic url>`
+im Normalfall (zonenbehaftete Seite); nur der Leerseiten-Zweig in `build_facsimile`
+([tei_step3.py](../scripts/tei/tei_step3.py)) schreibt einen blossen Dateinamen `{seite}.png`.
+Der dauerhafte Einbau (`<graphic>` als erstes `<surface>`-Kind, das Schema verlangt graphic
+vor zone) plus URL-Schema ist in [[O25]] offen; bis dahin liefert teiCrafter das Bild ueber
+einen hartcodierten Demo-Pfad nach.
 
 ---
 

@@ -383,15 +383,24 @@ aus ODD generiert, 551 Definitionen).
 
 ### Aktueller Stand
 
-**285/285 Docs valide** gegen `zbz_hersch.rng` (E68, 2026-05-27). Davor real **0/285** — die
-Schema-Erweiterung E68 schloss die Luecke; gegen Regression gesichert durch `tests/test_tei_schema.py`.
+**285/285 Docs valide** gegen `zbz_hersch.rng`. Die Schema-Erweiterung E68 (2026-05-27)
+schloss die Header-Luecke (davor real 0/285); E87 (2026-06-21) ergaenzte das
+teiCrafter-`standOff`-Register und `<name>`-Mentions, ohne die Validitaet zu veraendern.
+Beides gegen Regression gesichert durch `tests/test_tei_schema.py`.
 
 | Metrik | Wert |
 |---|---|
-| Dokumente | 285 |
-| Valid | 285 (100%) |
+| Dokumente (`tei_final`) | 285 |
+| Schema-valide | 285 (100%) |
 | Invalid | 0 |
-| Mit Warnings | 29 |
+| Dokumente mit Warnung (auf `tei_unified`) | 121 |
+
+Zwei Groessen nicht verwechseln: die Zahl der **Warn-Regeln** (15 aktiv, siehe
+Validierungsregeln) und die Zahl der **Dokumente mit mindestens einer Warnung** (121,
+gemessen auf `tei_unified`, dem Layer den der CLI-Validator durchlaeuft). Die flach
+abgelegte SoT `tei_final` faellt durch `validate_all` und wird ueber das Schema-Gate
+`tests/test_tei_schema.py` geprueft. Warnungen sind informativ, sie blockieren die
+Auslieferung nicht.
 
 ### Fix-Verlauf
 
@@ -446,10 +455,10 @@ ist mit **E71** (NER entfernt) hinfaellig: das ausgelieferte TEI traegt keine En
 **Errors (blockierend, 8 Regeln R1-R8):** RelaxNG + Projekt-Regeln (R1 type="naegeli",
 R2 teiHeader, R3 body, R4 min 1 div, R5 gueltige div-types, R6 note place, R7 entity-ref).
 
-**Warnings (18 Regeln W1-W18, informativ):** W1 Sprach-Code "und", W2 teiHeader title/author
-leer, W3 facsimile/pb Mismatch, W4 leere div, W5 Text-Volumen <50 chars/Seite, W6 keine lb,
-W7 graphic ohne url, W8 keine Entity-Tags bei >500 Zeichen, W9 Entity-Tags ohne ref, W10 nur
-persName, W11 zu viele top-level divs gleichen Namens, W12 Fussnoten-n, W13 Fussnoten xml:id-Pattern,
+**Warnings (15 aktive Regeln, informativ; W8-W10 entfallen seit E71, entitaetenfrei):** W1
+Sprach-Code "und", W2 teiHeader title/author leer, W3 facsimile/pb Mismatch, W4 leere div,
+W5 Text-Volumen <50 chars/Seite, W6 keine lb,
+W7 graphic ohne url, W11 zu viele top-level divs gleichen Namens, W12 Fussnoten-n, W13 Fussnoten xml:id-Pattern,
 W14 back/div-types, W15 div mit type UND n (exklusiv), W16 figure ohne xml:id, W17 leerer speaker
 (Kurations-Slot, E71), W18 foreign xml:lang nicht normalisiert. W15-W18 aus dem Konformitaets-Audit
 2026-06-08 (siehe `reports/tei-konformitaet-audit-welle1-2026-06-08.md`).

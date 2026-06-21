@@ -51,6 +51,46 @@ pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
 
+### 2026-06-21 Sitzung 70: Schema-Erweiterung teiCrafter-standOff (E87) + Faksimile-Befund + Warnungs-Angleichung
+
+**Anlass.** Im Kurations-Editor teiCrafter annotierte ZBZ-Dokumente waren gegen ihr
+eigenes Schema invalide, weil das ODD-Subset (E48) das `standOff`-Register und das
+generische `<name>` weggelassen hatte; `{id}_final.xml` ist aber teiCrafters natives Format.
+
+**Ziel.** Das Schema so erweitern, dass kuratierte Dokumente schemavalide werden, die
+Entscheidung dokumentieren, den finalen TEI-Bestand regressionspruefen und die
+Wissensdokumente auf einen konsistenten, verifizierten Stand bringen.
+
+**Verlauf.** Datenvertrag aus `ResearchTools/teiCrafter` (`docs/js/editor/standoff.js`)
+erhoben: `standOff` mit `listPerson`/`listPlace`/`listOrg`/`listEvent`/`listBibl`,
+Entitaeten mit Namens-Element plus `<idno>`-Normdaten und `resp="#ai"`, editoriale
+`<note target>`, `<respStmt>` mit `<name>AI</name>`, In-Text-Mentions `<name ref>`. Schema
+nach Muster E68 minimal erweitert: `standOff` an `model.resource` gehaengt, `name` an
+`model.nameLike.agent` (deckt in einem Zug Inline-Mentions und den respStmt-Namen), elf
+neue Element-Defines plus ein dediziertes standOff-Werkregister, weil das geteilte
+ODD-reduzierte `bibl` weder `<title>` noch `@resp` zulaesst und unangetastet bleibt.
+`@resp`/`@ref`/`@target` reiten auf vorhandenen Attribut-Klassen. Verifiziert: synthetisches
+kuratiertes Dokument valide, alle 285 `tei_final` weiterhin valide (keine Regression), neues
+git-getracktes Schema-Gate, Suite gruen. Faksimile geprueft: der Generator erzeugt
+`surface`/`zone`/`@facs` selbst und vollstaendig, nur der Surface->Bild-Zeiger `<graphic>`
+fehlt im Normalfall (`build_facsimile`, `tei_step3.py`). Warnungszahlen quer durch quality/
+pipeline/projekt angeglichen.
+
+**Entscheidungen.** E87 (Schema-Erweiterung teiCrafter-standOff, Begruendung in
+[decisions.md](decisions.md)). O25 eroeffnet: Faksimile-`<graphic>` pipeline-seitig erzeugen,
+URL-Schema und SoT-Regeneration operator-gated. Warnungs-Divergenz aufgeloest: 15 aktive
+Warn-Regeln (W1-W7, W11-W18; W8-W10 seit E71 entfallen) gegenueber 121 Dokumenten mit
+mindestens einer Warnung auf `tei_unified` -- zwei Groessen, vorher unter einem Wort vermengt.
+
+**Stand.** Schema erweitert und kompiliert, Schema-Gate 288 gruen. Wissensdokumente
+(decisions, quality, pipeline, projekt, oekosystem-synthese, index) konsistent und gegen
+den gemessenen Stand verifiziert. Branch `chore/frontmatter-migration`.
+
+**Naechste Schritte.**
+1. Operator-Entscheidung zu [decisions.md O25] (URL-Schema fuer Surface-`<graphic>`).
+2. Bei Zustimmung: `build_facsimile` um `<graphic>` als erstes Surface-Kind erweitern, alle
+   285 `tei_final` regenerieren, Schema-Gate erneut.
+
 ### 2026-06-10 Sitzung 69: Repository-Audit mit Umsetzungswelle (E86)
 
 **Anlass.** Vor der ZBZ-Abnahme sollte das gesamte Repository begutachtet werden

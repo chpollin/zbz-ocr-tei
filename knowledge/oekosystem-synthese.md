@@ -182,11 +182,14 @@ SZD:  Bilder → Gemini-VLM → [Layout] → Page-JSON v0.2 → (export_tei) ─
                                        └─> PAGE-XML / METS (Archiv, nicht Editor)
 ```
 - **ZBZ→Editor: funktioniert HEUTE für Text** (kein Konverter nötig; teiCrafter-Bundle ist doc 100s
-  `_final.xml` + standOff-Demo).
+  `_final.xml` + standOff-Demo). Seit E87 (2026-06-21) ist die teiCrafter-Annotation (standOff-Register
+  + `<name ref>`-Mentions) auch gegen `zbz_hersch.rng` schemavalide; ein kuratiertes Dokument bleibt
+  also valide.
 - **SZD→Editor: braucht `export_tei.py`** (blockiert auf der Konverter-Referenz).
 - **Gemeinsame Bildlücke:** Editor zeigt Faksimile nur mit BEIDEM (imageUrl ∧ surface); imageUrl kommt
-  nur aus hartcodiertem Demopfad (kein `<graphic>`-Support). **Fix:** `<graphic url>` pipeline-seitig ins
-  `<surface>` schreiben + `facsimile.js` liest `surface.graphic`. Lossless, generalisiert.
+  nur aus hartcodiertem Demopfad (kein `<graphic>`-Support). **Fix (verifiziert E87, Entscheidung [[decisions#O25|O25]]):**
+  `<graphic url>` pipeline-seitig als erstes `<surface>`-Kind schreiben (Schema verlangt graphic vor zone)
+  + `facsimile.js` liest `surface.graphic`. Lossless, generalisiert; offen bleibt nur das URL-Schema.
 - **Status-Mapping:** zbz Workflow-Status ↔ szd 4-Tier-Review ↔ teiCrafter violette AI-Markierung.
 
 ---
