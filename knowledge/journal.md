@@ -351,9 +351,8 @@ Aus den Sessions destillierte Beobachtungen, die fuer kuenftige Arbeit relevant 
 - **L12** Bei parallelen Instanzen im selben Tree sind `git status` + Verifikation gegen den realen Dateistand Pflicht; ein "file modified since read"-Konflikt ist das Signal zum Zuruecktreten, nicht zum Erzwingen.
 - **L13** Eine Prosa-Zahl ("285/285 valide") ist kein Beleg. Die ausgelieferte SSoT braucht ein automatisiertes Gate, keine Behauptung.
 - **L14** Ein gruenes Konformitaets-Gate ist nur so scharf wie der Bestand, ueber den es laeuft. "285/285 konform" heisst auf dem entitaetenfreien `tei_final` "keine Verletzung", nicht "Entitaeten korrekt GND-ausgezeichnet"; die entitaetsbezogenen Regeln (Z1-Z4) greifen erst nach der Inline-GND-Kuration durch teiCrafter.
-- **P7** Gattungsbegriffe im Entity-Index erzeugen False Positives in ~30% der Docs.
-- **P8** Zeitungslayouts versagen systematisch (>40 Zones, OCR-Halluzinationen). ~3% des Korpus.
-- **P10** Tier-2-Docs (4-8 Seiten) haben 85%+ APPROVED-Rate, Tier-1 (1-3 Seiten) nur 40%.
+- **L15** Zeitungslayouts versagen systematisch (>40 Zones, OCR-Halluzinationen). ~3% des Korpus.
+- **L16** Tier-2-Docs (4-8 Seiten) haben 85%+ APPROVED-Rate, Tier-1 (1-3 Seiten) nur 40%.
 
 <!--
 Eintrags-Template zum Kopieren (neuen Eintrag direkt unter "## Eintraege" einfuegen):
