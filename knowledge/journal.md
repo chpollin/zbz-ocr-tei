@@ -51,6 +51,29 @@ pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
 
+### 2026-06-21 Sitzung 74: Milestone-Runde -- Lesereihenfolge spalten-/bandbewusst (M1) + Validator-Warnung W19 (M2)
+
+**Anlass** Milestone-Runde der Forschungsleitstelle: aus der Editionsphilologie-Persona die naechsten zwei Milestones bestimmen, bauen, verifizieren, sichern, den dritten scopen und die Rest-Roadmap melden.
+
+**Ziel** Die belegten strukturellen Defekte angehen, die laut [[E80]]/decisions.md den hohen CER-Tail tragen (strukturell, nicht Zeichenerkennung). Konkret die offene Doppelseiten-Lesereihenfolge (decisions.md, 30/760), die die Fussnoten-Ueberdetektion (290/1910/90, ueber [[E85]] bereits referenzbelegt teilkorrigiert) ergaenzt.
+
+**Verlauf** Befund am Code: `match_paragraphs_to_regions` sortierte die Layout-Regionen rein nach `y_pct` (tei_step1.py:45 live, tei_generator.py:140 Legacy, identischer Bug). Die Layout-Erkennung liefert Regionen aber bereits linke-Spalte-zuerst; die reine y-Sortierung verschraenkt linke und rechte Spalte bei Zwei-Spaltern und Doppelseiten wieder. Kein gespeichertes `reading_order`-Feld, nur Geometrie. **M1** Eine geteilte reine Funktion `reading_order_permutation` in tei_xml_utils.py: vollbreite Bloecke (w>=60%) segmentieren die Seite in waagrechte Baender, innerhalb eines Bands liest man Spalte fuer Spalte (x-Mitten-Abstand >12% = Spaltensteg) links nach rechts, je Spalte oben nach unten. Einspaltig faellt das exakt auf die alte y-Reihenfolge zurueck (keine Regression). Beide Aufrufstellen darauf gezogen (Bug-Duplikat aufgeloest). Neun Tests (`tests/test_reading_order.py`), volle Suite 1164. Commit `6f51eac2`. **M2** Validator-Warnung W19 (`_check_reading_order`, tei_validator.py): vergleicht je Seite die ausgelieferte Block-Reihenfolge (Body-`@facs` -> Zonen-Geometrie) gegen die kanonische Lesereihenfolge derselben Zonen, dieselbe Funktion wiederverwendet. Weicht sie ab, liegt eine Spalten-Verschraenkung vor; nicht-blockierend. Damit wird der noch nicht neugenerierte 285er-Bestand auf genau die betroffenen Dokumente gescoped. Vier Tests, volle Suite 1168. Commit `f72743ac`. Beide nach main gepusht.
+
+**Entscheidungen** Keine neue E-Nummer (Bugfix plus Diagnose-Warnung, kein neues Architektur-Element). Philologische Trennung als Persona-Urteil: den Generator reparieren und den Restbestand sichtbar machen, statt ausgelieferten Editionstext per Geometrie-Heuristik blind umzuschreiben. Eine automatische Block-Umordnung im Lieferbestand waere ohne Kurationsblick philologisch nicht verantwortbar, weil die Heuristik auf komplexen historischen Layouts irren kann; sie bleibt deshalb operator-gated (M3).
+
+**Stand** HEAD `f72743ac` auf main, synchron mit origin, Arbeitsbaum sauber. Beide Milestones abnahmereif (maschinell gruen, volle Suite 1168). Der M1-Fix wirkt auf kuenftige Generierung; der ausgelieferte 285er-Bestand ist erst nach Neugenerierung korrigiert (operator-gated, [[E84]]-konsistent). Savepoint `f72743ac`.
+
+**Milestone 3 (gescopt, nicht gebaut)** Strukturfix-Auslieferung an den Lieferbestand: die Lesereihenfolge (M1) plus die offenen E84-Strukturfixes per Korpus-Neugenerierung (`tei_unified --all --reassemble`) auf die von W19 gemeldeten Dokumente ausrollen. Ergebnis-Artefakt: neu generierte `tei_final` mit kanonischer Reihenfolge auf den betroffenen Seiten. Verifikation/Gruen-Kriterium: `tei_validator --all` meldet 0 W19; Schema und ZBZ-Konformitaet bleiben 285/285; der Fidelity-CER der betroffenen Docs (30/760) sinkt. Nicht gebaut, weil die Neugenerierung die SoT neu schreibt und mit den Kurations-Lanes (Fussnoten 1910/290/90) zu koordinieren ist (E84-Gate, Operator-Entscheidung).
+
+**Verbleibende Milestones bis Projektvollendung (Sach-Roadmap)**
+1. Strukturfix-Auslieferung an den 285er-Bestand per Neugenerierung (= M3, operator-gated, schreibt die SoT neu).
+2. Entitaetsbezogenes Konformitaets-Gate (Z1-Z4) erstmals scharf auf kuratierten Inline-GND-Output anwenden (haengt am teicrafter-editor-Modellwechsel, cross-lane).
+3. Fussnoten-Restbestand (290/1910/90-Rest, nicht sicher auto-fixbar) kurativ aufloesen, analog zur W17/W19-Sichtbarmachung.
+4. LLM-OCR-Stabilitaet quantifizieren (Re-Run-Varianz, 5 Docs x 3 Laeufe), um die publizierte Fidelity-Zahl mit einer Schwankungsbreite zu versehen (operator-gated wegen API-Kosten).
+5. ZBZ-Rueckfragen schliessen (O8 Header-Metadaten, O13 Schlagworte, O27 Bildunterschrift-Widerspruch), extern bei der ZB Zuerich.
+
+**Naechste Schritte** M3 ist operator-gated; bis zur Freigabe der Korpus-Neugenerierung kein weiterer Eingriff am Lieferbestand. W19 laeuft ab jetzt im bestehenden Validierungs-Gate mit und weist den Umfang aus.
+
 ### 2026-06-21 Sitzung 73: Konsolidierungsteil 1 (Code-Base) verifiziert, Waisen-Zettel entfernt
 
 **Anlass** Naechste Arbeitsphase der Forschungsleitstelle, offen war der noch nicht als eigener Durchgang ausgefuehrte Konsolidierungsteil 1 (Code-Base verhaltenswahrend bereinigen).
