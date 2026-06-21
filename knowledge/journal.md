@@ -10,7 +10,7 @@ method:
 status: draft
 language: de
 created: 2026-01-29
-updated: 2026-06-10
+updated: 2026-06-21
 tags: [zbz-ocr-tei, journal]
 template:
   name: Vorlage Journal
@@ -50,6 +50,22 @@ Die Sitzungen 1 bis 68 stehen unveraendert im Kompakt-Archiv weiter unten (eine 
 pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
+
+### 2026-06-21 Sitzung 73: Konsolidierungsteil 1 (Code-Base) verifiziert, Waisen-Zettel entfernt
+
+**Anlass** Naechste Arbeitsphase der Forschungsleitstelle, offen war der noch nicht als eigener Durchgang ausgefuehrte Konsolidierungsteil 1 (Code-Base verhaltenswahrend bereinigen).
+
+**Ziel** Pruefen, ob die Code-Base verhaltenswahrenden Rueckbau braucht, und nur nachweislich Totes entfernen.
+
+**Verlauf** Survey ueber alle getrackten Skripte und Tests. Der einzige augenscheinliche Redundanz-Kandidat, die drei Dateien `cer_statistics.py` / `cer_statistics_runner.py` / `cer_statistics_full.py`, ist keine Redundanz, sondern bewusste getestete Schichtung (reine Statistik-Library mit 55 Tests, korpus-abhaengiger Datensammler, Orchestrator-CLI); ein Zusammenlegen waere ein Architekturbruch. Der tote OCR-Dedup-Pfad war bereits in [[E75]] entfernt. Genau ein veralteter Artefakt blieb: `HANDOFF-cc3.md` im Repo-Root, ein zeitpunktbezogener Uebergabezettel (2026-06-07), dessen Aktionspunkte vollstaendig als [[E89]] gebaut sind und der null Referenzen im Repo hat (git grep). Entfernt (Commit `0e1712c3`). Committete Gates danach gruen (1027 passed ueber test_tei_schema, test_zbz_conformity, test_tei_surface_graphic, test_scripts_health, test_cer_statistics).
+
+**Entscheidungen** Keine neue Registernummer. CER-Statistik-Schichtung bewusst nicht zusammengelegt (Architekturbruch, kein verhaltenswahrender Rueckbau).
+
+**Stand** Code-Base konsolidiert, kein weiterer verhaltenswahrender Rueckbau ohne Scope-Ausweitung erkennbar. HEAD `0e1712c3` auf main, synchron mit origin, Arbeitsbaum sauber. Savepoint `0e1712c3`.
+
+**Naechste Schritte**
+1. Niedrige Prioritaet, fuer die Vault-/Knowledge-Session: die Caveats in decisions.md und quality.md sagen "das in CLAUDE.md referenzierte ocr_dedup.py"; CLAUDE.md referenziert es nicht mehr, nur der historische Arbeitsbericht (Anhang A). Reine Caveat-Praezisierung, kein Defekt.
+2. Unveraendert: entitaetsbezogenes Konformitaets-Gate (Z1-Z4) erstmals auf kuratierten Inline-GND-Output anwenden, sobald teicrafter-editor sein Ausgabemodell umstellt.
 
 ### 2026-06-21 Sitzung 72: Unabhaengige Verifikation der ZBZ-Lieferung + Konsolidierungsbericht an die Forschungsleitstelle
 
