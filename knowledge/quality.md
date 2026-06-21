@@ -409,6 +409,38 @@ in `tei_final` wirken. Zuvor fiel `tei_final` durch `validate_all` (nur verschac
 Ablagen geprueft) und wurde allein ueber das Schema-Gate `tests/test_tei_schema.py` validiert.
 Warnungen sind informativ, sie blockieren die Auslieferung nicht.
 
+### ZBZ-Konformität (Inline-GND-Modell, E88)
+
+Über die Schema- und Projektregel-Validierung hinaus prueft `scripts/tei/zbz_conformity.py`
+die Editionsrichtlinien-Regeln, die ein RelaxNG nicht ausdruecken kann, weil sie an Inhalt und
+Kontext haengen. Maßgeblich ist die uebergebene ZBZ-README (`data/source/zbz-lieferung-2026-06-21/`,
+byte-identisch zum Arbeitsexemplar `data/source/guidelines/Editionsrichtlinien_ZBZ.md`, E49).
+Zwei Schichten zusammen ergeben die ZBZ-Konformitaet:
+
+1. **Strukturell** (Schema + Projektregeln): das aktive `zbz_hersch.rng` ist die ZBZ-Pruefvorlage
+   plus E68; 285/285 valide; R1-R7 erfuellt.
+2. **Modell** (`zbz_conformity.py`, Inline-GND): Normdaten ausschliesslich GND, kein Register, nur
+   Person/Organisation/Werk, Rendering-Vokabular, `pb facs/n`.
+
+| Regel | ZBZ-README | Schweregrad |
+|---|---|---|
+| Z1 | Entitaets-`@ref` muss `GND:...` sein (§Registereintraege) | violation |
+| Z2 | keine fremde Normdatei GeoNames/Wikidata (§Registereintraege, §TEI-Header) | violation |
+| Z3 | keine Orte/Events als Entitaet, nur Person/Org/Werk | violation |
+| Z4 | kein standOff-Register, keine `<name ref>`-Mention (Inline-GND) | violation |
+| Z5 | Rendering nur aus `{#b,#i,#u,#g,#sup,#sub,#k}` (§Renderings) | violation |
+| Z6 | `<pb>` mit `@facs` und `@n` (§Seitenumbrueche) | violation |
+| Z8 | Entitaet ohne GND-Verweis = Kurationsluecke | advisory |
+
+**Pruefergebnis (committet, `tests/test_zbz_conformity.py`): 285/285 konform, 0 Verletzungen,
+0 Advisories.** Ad-hoc per `python -m scripts.tei.tei_validator --conformity`. Die
+entitaetsbezogenen Regeln (Z1-Z4, Z8) greifen erst auf kuratierten teiCrafter-Output, weil
+`tei_final` seit E71 entitaetenfrei ist; Z5 (Renderings) und Z6 (`pb facs/n`) gelten auf dem
+realen Bestand und sind sauber. Bewusst nicht maschinell erzwungen: "Entitaeten in
+Bildunterschriften werden nicht ausgezeichnet" -- die README widerspricht sich hier selbst (ihr
+§Abbildungen-Beispiel zeichnet eine `<orgName ref="GND:...">` in einer `<figure>` aus), als
+ZBZ-Rueckfrage offen.
+
 ### Fix-Verlauf
 
 **Fix-004 / E68 (2026-05-27): fehlende Standard-TEI-Elemente im Schema ergaenzt.** Erste

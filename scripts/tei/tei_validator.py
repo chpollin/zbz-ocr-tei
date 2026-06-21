@@ -31,6 +31,7 @@ from scripts.config import (
     VALID_DIV_TYPES,
 )
 from scripts.tei.tei_xml_utils import normalize_lang_code
+from scripts.tei.zbz_conformity import RULE_LABELS as ZBZ_RULE_LABELS, check_conformity
 
 try:
     from lxml import etree as lxml_etree
@@ -476,6 +477,41 @@ def validate_all(tei_dir: Path = None) -> dict:
     return summary
 
 
+def conformity_all(tei_dir: Path = None) -> dict:
+    """ZBZ-Konformitaetspruefung (Inline-GND-Modell, E88) ueber alle ausgelieferten TEI.
+
+    Ergaenzt die Schema-/Projektregel-Validierung um die Editionsrichtlinien-Regeln, die ein
+    RelaxNG nicht ausdruecken kann (Normdaten nur GND, kein Register, nur Person/Org/Werk,
+    Rendering-Vokabular, ``pb facs/n``). Siehe scripts/tei/zbz_conformity.py.
+    """
+    if tei_dir is None:
+        tei_dir = TEI_FINAL_DIR
+
+    summary = {"total": 0, "conformant": 0, "with_violation": 0,
+               "violations": Counter(), "advisories": Counter(), "per_doc": {}}
+
+    if not HAS_LXML or not tei_dir.exists():
+        return summary
+
+    for doc_id, final in _collect_finals(tei_dir):
+        summary["total"] += 1
+        root = lxml_etree.parse(str(final)).getroot()
+        findings = check_conformity(root)
+        viol = [f for f in findings if f["severity"] == "violation"]
+        adv = [f for f in findings if f["severity"] == "advisory"]
+        for f in viol:
+            summary["violations"][f["rule"]] += 1
+        for f in adv:
+            summary["advisories"][f["rule"]] += 1
+        if viol:
+            summary["with_violation"] += 1
+        else:
+            summary["conformant"] += 1
+        summary["per_doc"][doc_id] = {"violations": viol, "advisories": adv}
+
+    return summary
+
+
 # ---------------------------------------------------------------------------
 # Referenz-Vergleich
 # ---------------------------------------------------------------------------
@@ -875,6 +911,8 @@ def main():
                         help="HTML-Validierungsbericht erzeugen")
     parser.add_argument("--compare-ref", action="store_true",
                         help="Vergleich mit ZBZ-Referenz-TEI")
+    parser.add_argument("--conformity", action="store_true",
+                        help="ZBZ-Konformitaetspruefung (Inline-GND-Modell, E88) ueber tei_final")
     args = parser.parse_args()
 
     tei_dir = Path(args.dir) if args.dir else TEI_UNIFIED_DIR
@@ -953,6 +991,30 @@ def main():
             encoding="utf-8"
         )
         print(f"  JSON: {json_path}")
+
+    elif args.conformity:
+        cdir = Path(args.dir) if args.dir else TEI_FINAL_DIR
+        print(f"ZBZ-Konformitaetspruefung (Inline-GND, E88) ueber {cdir} ...")
+        summary = conformity_all(cdir)
+        print(f"\n  Gesamt:           {summary['total']}")
+        print(f"  Konform:          {summary['conformant']}")
+        print(f"  Mit Verletzung:   {summary['with_violation']}")
+        if summary["violations"]:
+            print("\n  Verletzungen je Regel:")
+            for rule, count in summary["violations"].most_common():
+                print(f"    {rule}: {count}  ({ZBZ_RULE_LABELS.get(rule, rule)})")
+        else:
+            print("\n  Keine Konformitaets-Verletzungen.")
+        if summary["advisories"]:
+            print("\n  Advisories je Regel:")
+            for rule, count in summary["advisories"].most_common():
+                print(f"    {rule}: {count}  ({ZBZ_RULE_LABELS.get(rule, rule)})")
+        # Dokumente mit Verletzung auflisten
+        for doc_id, res in summary["per_doc"].items():
+            if res["violations"]:
+                print(f"  {doc_id}: {len(res['violations'])} Verletzung(en)")
+                for v in res["violations"][:3]:
+                    print(f"    [{v['rule']}] L{v['line']}: {v['message'][:80]}")
 
     else:
         parser.print_help()
