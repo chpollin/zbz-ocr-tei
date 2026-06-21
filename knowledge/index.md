@@ -73,7 +73,7 @@ journal         — chronologisch, kompakter Ueberblick
 | 6-Stage Pipeline | Bilder → OCR → Layout → PAGE-XML → TEI-XML → Evaluation | [pipeline.md](pipeline.md) |
 | Dokumenttypen A-D | einspaltig / zweispaltig / Monografie / Spezial | [projekt.md](projekt.md) |
 | DTA-Basisformat | TEI-Basisschema mit ZBZ-Anpassungen | [pipeline.md §TEI-Mapping](pipeline.md) |
-| `zbz_hersch.rng` (E48/E49, erweitert E68/E87) | projektspezifisches RelaxNG-Schema fuer das ausgelieferte TEI; E68 Standard-Header-Elemente, E87 teiCrafter-standOff-Register + `name`-Mentions | [pipeline.md](pipeline.md) |
+| `zbz_hersch.rng` (E48/E49, erweitert E68) | projektspezifisches RelaxNG-Schema fuer das ausgelieferte TEI; aktiver Stand = ZBZ-Pruefvorlage (`data/source/zbz-lieferung-2026-06-21/`) + E68-Header-Elemente. Auszeichnungsmodell Inline-GND (E88): `persName`/`orgName`/`bibl` mit `ref="GND:..."` am Erwaehnungsort, kein standOff-Register | [pipeline.md](pipeline.md), [decisions.md §E88](decisions.md) |
 | Hybrid Pipeline | Docling Layout + LLM-OCR Text | [pipeline.md](pipeline.md) |
 | Unified TEI Pipeline (E32) | Scaffold + Gemini Refinement + Assembly + Validation | [pipeline.md](pipeline.md) |
 | Agent-Based Quality Screening (E41, deprecated E66) | 7-Schichten-Pre-Curation, Review-JSON pro Doc — als Qualitaetssignal abgeschafft, weil kein Mensch beteiligt war; Legacy als `_screening_legacy.json` erhalten | [quality.md](quality.md) |

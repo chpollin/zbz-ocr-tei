@@ -182,12 +182,14 @@ SZD:  Bilder → Gemini-VLM → [Layout] → Page-JSON v0.2 → (export_tei) ─
                                        └─> PAGE-XML / METS (Archiv, nicht Editor)
 ```
 - **ZBZ→Editor: funktioniert HEUTE für Text** (kein Konverter nötig; teiCrafter-Bundle ist doc 100s
-  `_final.xml` + standOff-Demo). Seit E87 (2026-06-21) ist die teiCrafter-Annotation (standOff-Register
-  + `<name ref>`-Mentions) auch gegen `zbz_hersch.rng` schemavalide; ein kuratiertes Dokument bleibt
-  also valide.
+  `_final.xml` + standOff-Demo). Auszeichnungsmodell: das ZBZ-Material (2026-06-21) entscheidet
+  zugunsten **Inline-GND** (`persName`/`orgName`/`bibl` mit `ref="GND:..."` am Erwaehnungsort), das
+  aktive Schema lehnt das standOff-Register seit E88 ab (Guard-Test). teiCrafter erzeugt bisher
+  standOff; sein Ausgabemodell ist an Inline-GND anzugleichen, damit ein kuratiertes Dokument gegen
+  `zbz_hersch.rng` valide bleibt (Delta an die Forschungsleitstelle gemeldet).
 - **SZD→Editor: braucht `export_tei.py`** (blockiert auf der Konverter-Referenz).
 - **Gemeinsame Bildlücke:** Editor zeigt Faksimile nur mit BEIDEM (imageUrl ∧ surface); imageUrl kommt
-  nur aus hartcodiertem Demopfad (kein `<graphic>`-Support). **Fix (verifiziert E87, Entscheidung [[decisions#O25|O25]]):**
+  nur aus hartcodiertem Demopfad (kein `<graphic>`-Support). **Fix (verifiziert, Entscheidung [[decisions#O25|O25]]):**
   `<graphic url>` pipeline-seitig als erstes `<surface>`-Kind schreiben (Schema verlangt graphic vor zone)
   + `facsimile.js` liest `surface.graphic`. Lossless, generalisiert; offen bleibt nur das URL-Schema.
 - **Status-Mapping:** zbz Workflow-Status ↔ szd 4-Tier-Review ↔ teiCrafter violette AI-Markierung.

@@ -384,9 +384,13 @@ aus ODD generiert, 551 Definitionen).
 ### Aktueller Stand
 
 **285/285 Docs valide** gegen `zbz_hersch.rng`. Die Schema-Erweiterung E68 (2026-05-27)
-schloss die Header-Luecke (davor real 0/285); E87 (2026-06-21) ergaenzte das
-teiCrafter-`standOff`-Register und `<name>`-Mentions, ohne die Validitaet zu veraendern.
-Beides gegen Regression gesichert durch `tests/test_tei_schema.py`.
+schloss die Header-Luecke (davor real 0/285). Das aktive Schema ist seit E88 (2026-06-21)
+**exakt die ZBZ-Pruefvorlage plus E68**: das mit E87 kurz eingezogene standOff-Register wurde
+nach dem ZBZ-Material wieder entfernt (Inline-GND ist das maßgebliche Auszeichnungsmodell,
+siehe [decisions.md §E88](decisions.md)), die `@ref`-Pattern auf GND-only verengt. Der
+ausgelieferte Bestand ist seit E71 entitaetenfrei, daher blieb die Validitaet unveraendert.
+Gegen Regression gesichert durch `tests/test_tei_schema.py` (Inline-GND-Positivtest plus
+standOff-Guard).
 
 | Metrik | Wert |
 |---|---|

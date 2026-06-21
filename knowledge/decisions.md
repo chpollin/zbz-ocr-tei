@@ -84,7 +84,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 
 ---
 
-## Entschieden (E64-E87, Detail)
+## Entschieden (E64-E88, Detail)
 
 Juengere Entscheidungen mit ausfuehrlicher Begruendung als eigene Abschnitte
 (Reihenfolge wie zuvor in der Tabelle).
@@ -229,6 +229,11 @@ Dokumente: [frontend-gaps.md](frontend-gaps.md), [viewer.md](viewer.md)
 
 ### E87 — `zbz_hersch.rng` um teiCrafter-standOff-Register + `name`-Mentions erweitert (2026-06-21)
 
+> **Ueberholt durch [[E88]] (2026-06-21).** Das am selben Tag uebergebene ZBZ-Material
+> hat das Auszeichnungsmodell zugunsten Inline-GND entschieden; das standOff-Register ist
+> fuer die Auslieferung gegenstandslos und wurde aus dem aktiven Schema wieder entfernt.
+> Der Eintrag bleibt als Herleitung stehen.
+
 Der Kurations-Editor teiCrafter schreibt beim Annotieren ein `<standOff>`-Register
 (`listPerson`/`listPlace`/`listOrg`/`listEvent`/`listBibl` mit `person`/`place`/`org`/
 `event`/`bibl`, je ein Namens-Element plus optionale Normdaten als `<idno type="GND|GeoNames|Wikidata">`),
@@ -279,6 +284,46 @@ schema-erlaubt. Welches gilt, ist ZBZ-/Operator-Sache.
 
 Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md)
 
+### E88 — Inline-GND als maßgebliches Auszeichnungsmodell; standOff (E87) aus dem aktiven Schema entfernt (2026-06-21)
+
+Loest [[O26]]. Das von ZBZ uebergebene Material (`data/source/zbz-lieferung-2026-06-21/`,
+README = vollstaendige Editionsrichtlinie, `zbz_hersch.rng` = ZBZ-Pruefvorlage) entscheidet
+das Auszeichnungsmodell: Personen, Organisationen und Werke werden **inline an der
+Erwaehnungsstelle** ausgezeichnet, jede Nennung mit `ref="GND:..."` auf die GND, kein
+separates Register. Belegstellen der README: `<persName ref="GND:118815679">Hersch</persName>`,
+`<orgName ref="GND:1010450-1">Universitaet Genf</orgName>`, `<bibl ref="GND:1088036961">L'etre
+et la forme</bibl>`; nur Person/Organisation/Werk, keine Orte/Events, keine GeoNames/Wikidata,
+keine Auszeichnung in Bildunterschriften. Die ZBZ-Pruefvorlage kennt kein `standOff`. Order
+der Forschungsleitstelle (2026-06-21): nur die ZBZ-Editionsregeln gelten.
+
+Schema-Konsequenz: das standOff-Register aus [[E87]] ist fuer die Auslieferung gegenstandslos
+und wurde aus dem aktiven `data/schema/zbz_hersch.rng` wieder entfernt: die elf E87-Defines
+(`standOff`, `listPerson`/`listPlace`/`listOrg`/`listEvent`, `person`/`place`/`org`/`event`,
+`label`, `name`) samt `tei_standOff.listBibl`/`tei_standOff.bibl`, der `tei_standOff`-Ref in
+`tei_model.resource` und der `tei_name`-Ref in `tei_model.nameLike.agent`. Zusaetzlich die drei
+`@ref`-Pattern von `(GND:...|#zbz-...)` auf `GND:...` verengt (Inline-GND-only, keine internen
+Register-Verweise). Die E68-Kopf-Elemente (revisionDesc/change, langUsage/language, idno,
+monogr/imprint) bleiben erhalten. Damit ist das aktive Schema **exakt die ZBZ-Pruefvorlage plus
+E68**; der vollstaendige Diff zwischen beiden besteht nur noch aus den E68-Elementen
+(verifiziert). Begruendung fuer additiv-minus-E87 statt roher Schema-Uebernahme: die ZBZ-Vorlage
+ist aelter als der Repo-Stand, ihr fehlen die E68-Kopf-Elemente, die die Pipeline regulaer
+erzeugt (revisionDesc/langUsage/idno in allen 285); eine rohe Uebernahme wuerde alle 285
+invalidieren (Widerspruch im ZBZ-Material, das im Header `idno`/Metadaten fordert, vgl. [[O8]]).
+
+Verifiziert: Schema kompiliert; Inline-GND-Dokument (persName/orgName/bibl mit GND) valide;
+standOff-Dokument jetzt **abgelehnt** (neuer Guard `test_schema_rejects_standoff_register`);
+neuer Positiv-Test `test_schema_accepts_inline_gnd`; **285/285 `tei_final` weiterhin valide**
+(der ausgelieferte Bestand ist seit [[E71]] entitaetenfrei, daher keine Migration noetig);
+Suite gruen (289). Der frueher hinzugefuegte Test `test_schema_accepts_teicrafter_standoff`
+ist durch die beiden neuen ersetzt.
+
+Wirkung auf teiCrafter (lane teicrafter-editor): der Editor erzeugt bisher standOff; sein
+Ausgabemodell ist an Inline-GND anzugleichen, damit sein `{id}_final.xml` gegen das
+maßgebliche Schema valide bleibt. Nur-lesend aus dieser Lane beruehrt, keine Schreibzugriffe
+ausserhalb von zbz-ocr-tei; als Delta an die Forschungsleitstelle gemeldet.
+
+Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md), [index.md](index.md)
+
 ---
 
 ## Offene Punkte
@@ -289,7 +334,7 @@ Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md)
 | O13 | TEI-Editorial-Details (Schlagworte) | wer erstellt diese? Im Header? Richtlinien: "in Abklaerung" | Phase 3 TEI | **Entscheider: ZBZ** (Richtlinien selbst sagen "in Abklaerung"). Haengt ab von der ZBZ-internen Festlegung, wer Schlagworte vergibt und wo sie im Header stehen. Solange bleiben die Header ohne Schlagworte; kein Pipeline-Blocker |
 | O18 | multimodale LLM-Korrektur testen (Scan-Bild + OCR-Text) | Forschung: <1% CER (Crosilla 2025). Infrastruktur steht | Quality | **Entscheider: DHCraft (Projektleitung)**, eigener Test. Haengt ab von Priorisierung nach der ZBZ-Abnahme; blockiert nichts (reines Verbesserungs-Experiment auf der bestehenden Gemini-Infrastruktur), [quality.md](quality.md) |
 | O25 | Faksimile-`<graphic url>` pipeline-seitig erzeugen statt nachgelagert via teiCrafter | Die Pipeline erzeugt `surface`/`zone`/`@facs` schon selbst ([[E87]]); nur der Surface->Bild-Zeiger `<graphic>` fehlt im Normalfall. Einbau = `<graphic>` als erstes `<surface>`-Kind in `build_facsimile` (`tei_step3.py`), Schema valide (graphic vor zone). | macht Faksimile selbst-enthaltend, loest teiCrafter-Demo-Bildpfad ab | **Entscheider: DHCraft (Projektleitung).** Offen: URL-Schema (relativ `<id>_p{KKK}.png` vs. absolute GitHub-Pages-URL vs. IIIF) und dass der Einbau alle 285 `tei_final` (SoT) neu schreibt. Kein Blocker, reine Pipeline-Erweiterung |
-| O26 | teiCrafter-Annotationsmodell (E87) vs. ZBZ-Editionsrichtlinien (E49) | Die Richtlinien fordern Inline `<persName ref="GND:...">`/`<orgName>`/`<bibl>` am Erwaehnungsort (alle `@ref` auf die GND); teiCrafter erzeugt standOff-Register + `<name ref="#id">` mit GND als `<idno>`, plus Orte/Events und GeoNames/Wikidata. E87 macht das Tool-Modell valide, ohne das Liefermodell zu entscheiden. tei_final ist seit [[E71]] entitaetenfrei, die Annotation ist ein kuenftiger Pfad. | nichts (Schema-Erweiterung steht eigenstaendig); beruehrt teicrafter-editor (bei Option a Ausgabemodell-Aenderung) | **Entscheider: ZBZ gemeinsam mit DHCraft.** Optionen: (a) teiCrafter an Richtlinien anpassen (Inline statt standOff), (b) Richtlinien um standOff erweitern, (c) beide bewusst als Uebergang erlauben. **Befund 2026-06-21:** die uebergebene ZBZ-Pruefvorlage (`data/source/zbz-lieferung-2026-06-21/`) kennt kein standOff, die ZBZ-README schreibt durchgaengig Inline-GND vor; Option (a) ist damit belegt. Umsetzung (standOff aus dem aktiven Schema entfernen, teiCrafter angleichen) operator-gated |
+| ~~O26~~ | teiCrafter-Annotationsmodell vs. ZBZ-Editionsrichtlinien — **GEKLAERT (2026-06-21, [[E88]])** | Die Richtlinien fordern Inline `<persName ref="GND:...">`/`<orgName>`/`<bibl>` am Erwaehnungsort (alle `@ref` auf die GND); E87 hatte zusaetzlich ein standOff-Register schema-erlaubt gemacht. | — | Order der Forschungsleitstelle (2026-06-21): nur die ZBZ-Editionsregeln gelten, Inline-GND ist das Liefermodell. Umgesetzt in [[E88]]: standOff aus dem aktiven Schema entfernt, `@ref` auf GND-only verengt, aktives Schema = ZBZ-Pruefvorlage + E68; 285/285 valide, Guard-Test gegen Wiedereinzug. teiCrafter-Ausgabemodell ist anzugleichen (Delta an Leitstelle gemeldet) |
 | ~~O22~~ | 289 vs 286 PDF-Diskrepanz — **GEKLAERT** (2026-05-27) | Masterfile hat 325 Texte, davon 289 `digitalisiert`, davon 286 als PDF geliefert; die 3 nicht gelieferten: `1745`, `1750`, `1970`. Verifiziert via `python -m scripts.eval.corpus_audit` | — | erledigt |
 | ~~O23~~ | `tei_final`-Header nicht schema-valide — **GEKLAERT (2026-05-27, E68)** | Diagnose bei E65 nannte nur `<idno>`; die korpusweite Validierung zeigte vier Ursachen (`idno`, `langUsage`, `revisionDesc`/`change`, `biblStruct/monogr`), alle vom ODD-Subset weggelassen. Behoben durch Schema-Erweiterung E68; alle 285 ausgelieferten TEI valide; gegen Regression abgesichert durch `tests/test_tei_schema.py`. | — | erledigt |
 | ~~O24~~ | `tei_validator --compare-ref` zeigt falschen Referenz-CER — **GEKLAERT (2026-05-27, E69)** | `compute_cer`-Import schlug still fehl (Funktion heisst `calculate_cer`), Validator fiel auf Laengen-Approximation zurueck. Fix: `calculate_cer` * 100 (Ratio->Prozent, passend zur Report-Formatierung), `except` auf `ImportError` verengt. Gate `tests/test_tei_validator.py`. | — | erledigt |

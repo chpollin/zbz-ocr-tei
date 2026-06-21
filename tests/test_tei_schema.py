@@ -66,23 +66,48 @@ _PIPELINE_HEADER = """<?xml version="1.0" encoding="UTF-8"?>
 </TEI>
 """
 
-# Synthetischer Korpus eines teiCrafter-kuratierten Dokuments (E87): standOff-Register
-# (person/place/org/event/bibl mit idno + resp="#ai"), editoriale note mit @target,
-# respStmt mit <name>AI</name> und eine In-Text-Mention <name ref="#id">. Exakt die
-# Strukturen aus ResearchTools/teiCrafter (docs/js/editor/standoff.js). Git-getrackt,
-# datenunabhaengig -- haelt die E87-Erweiterung fest.
+# Synthetischer Korpus mit Inline-GND-Auszeichnung (ZBZ-Editionsrichtlinie, order
+# 2026-06-21): Person/Organisation/Werk werden an der Erwaehnungsstelle ausgezeichnet,
+# jede mit ref="GND:..." auf die GND, kein separates Register. persName/orgName/bibl
+# entsprechen den Beispielen aus der ZBZ-README. Git-getrackt, datenunabhaengig --
+# haelt das Inline-GND-Modell fest, damit es nicht versehentlich aufweicht.
+_INLINE_GND_DOC = """<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt><title type="main">Test</title><author>Hersch, Jeanne</author></titleStmt>
+      <publicationStmt><publisher>ZBZ / DHCraft</publisher><idno type="docID">9999</idno></publicationStmt>
+      <sourceDesc>
+        <biblStruct type="journalArticle">
+          <analytic><title>Test</title><author>Hersch, Jeanne</author></analytic>
+          <monogr><title>Zeitschrift</title><imprint><date>1975</date></imprint></monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc><langUsage><language ident="fra"/></langUsage></profileDesc>
+    <revisionDesc><change when="2026-06-21" who="pipeline">init</change></revisionDesc>
+  </teiHeader>
+  <text type="naegeli">
+    <body>
+      <div type="article">
+        <pb facs="#facs_1" n="1"/>
+        <p><persName ref="GND:118815679">Hersch</persName> lehrte an der
+           <orgName ref="GND:1010450-1">Universitaet Genf</orgName> und schrieb
+           <bibl ref="GND:1088036961">L'etre et la forme</bibl>.</p>
+      </div>
+    </body>
+  </text>
+</TEI>
+"""
+
+# Negativ-Fixture: das verworfene standOff-Register (E87, durch das ZBZ-Material
+# ueberholt) plus eine In-Text-Mention <name ref="#id">. Muss vom Schema abgelehnt
+# werden -- der Guard kippt, falls jemand das standOff-Modell wieder einzieht.
 _STANDOFF_DOC = """<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" type="naegeli">
   <teiHeader>
     <fileDesc>
-      <titleStmt>
-        <title type="main">Test</title>
-        <author>Hersch, Jeanne</author>
-        <respStmt xml:id="ai">
-          <resp>Machine-generated draft, unreviewed (teiCrafter LLM on-ramp)</resp>
-          <name>AI</name>
-        </respStmt>
-      </titleStmt>
+      <titleStmt><title type="main">Test</title><author>Hersch, Jeanne</author></titleStmt>
       <publicationStmt><publisher>ZBZ / DHCraft</publisher><idno type="docID">9999</idno></publicationStmt>
       <sourceDesc>
         <biblStruct type="journalArticle">
@@ -96,27 +121,14 @@ _STANDOFF_DOC = """<?xml version="1.0" encoding="UTF-8"?>
   </teiHeader>
   <standOff>
     <listPerson>
-      <person xml:id="pers_jeanne_hersch" resp="#ai"><persName>Jeanne Hersch</persName><idno type="GND">118703129</idno></person>
+      <person xml:id="pers_jeanne_hersch"><persName>Jeanne Hersch</persName></person>
     </listPerson>
-    <listPlace>
-      <place xml:id="plc_zurich"><placeName>Zuerich</placeName><idno type="GeoNames">2657896</idno></place>
-    </listPlace>
-    <listOrg>
-      <org xml:id="org_zbz"><orgName>Zentralbibliothek Zuerich</orgName></org>
-    </listOrg>
-    <listEvent>
-      <event xml:id="evt_1"><label>Ereignis</label></event>
-    </listEvent>
-    <listBibl>
-      <bibl xml:id="wrk_1" resp="#ai"><title>Ein Werk</title><idno type="Wikidata">Q42</idno></bibl>
-    </listBibl>
-    <note target="#pers_jeanne_hersch" resp="#ai">Editorische Notiz.</note>
   </standOff>
   <text type="naegeli">
     <body>
       <div type="article">
-        <pb n="1"/>
-        <p><name ref="#pers_jeanne_hersch">Jeanne Hersch</name> schrieb in <name ref="#plc_zurich">Zuerich</name>.</p>
+        <pb facs="#facs_1" n="1"/>
+        <p><name ref="#pers_jeanne_hersch">Jeanne Hersch</name> schrieb.</p>
       </div>
     </body>
   </text>
@@ -143,13 +155,24 @@ def test_schema_accepts_pipeline_header():
 
 
 @pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
-def test_schema_accepts_teicrafter_standoff():
-    """Schema akzeptiert das teiCrafter-standOff-Register + name-Mentions (E87)."""
+def test_schema_accepts_inline_gnd():
+    """Schema akzeptiert Inline-GND-Auszeichnung (persName/orgName/bibl mit ref=GND:...)."""
+    relaxng = _etree.RelaxNG(_etree.parse(str(SCHEMA)))
+    doc = _etree.fromstring(_INLINE_GND_DOC.encode("utf-8"))
+    assert relaxng.validate(doc), (
+        "Inline-GND-Dokument nicht schema-valide -- ZBZ-Auszeichnungsmodell verloren?\n  "
+        + "\n  ".join(str(e) for e in relaxng.error_log)
+    )
+
+
+@pytest.mark.skipif(not HAS_LXML, reason="lxml nicht installiert")
+def test_schema_rejects_standoff_register():
+    """Schema lehnt das verworfene standOff-Register und <name>-Mentions ab (Inline-GND-Guard)."""
     relaxng = _etree.RelaxNG(_etree.parse(str(SCHEMA)))
     doc = _etree.fromstring(_STANDOFF_DOC.encode("utf-8"))
-    assert relaxng.validate(doc), (
-        "Synthetisches teiCrafter-standOff-Dokument nicht schema-valide -- E87-Erweiterung verloren?\n  "
-        + "\n  ".join(str(e) for e in relaxng.error_log)
+    assert not relaxng.validate(doc), (
+        "standOff-Register weiterhin schema-valide -- das ZBZ-Material (order 2026-06-21) "
+        "verlangt Inline-GND, kein Register. Wurde E87 versehentlich wieder eingezogen?"
     )
 
 
