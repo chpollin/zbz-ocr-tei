@@ -32,6 +32,7 @@ from scripts.core.loaders import (
     load_ocr_text,
 )
 from scripts.utils import page_layout_name
+from scripts.tei.tei_xml_utils import reading_order_permutation
 
 
 # ---------------------------------------------------------------------------
@@ -136,8 +137,10 @@ def match_paragraphs_to_regions(
         and r.get("bbox")
     ]
 
-    # Sortiere Regionen nach y-Position (Lesereihenfolge)
-    relevant.sort(key=lambda r: r["bbox"]["y_pct"])
+    # Spalten- und bandbewusste Lesereihenfolge (geteilt mit tei_step1, behebt die
+    # Spalten-Verschraenkung der frueheren reinen y-Sortierung bei Doppelseiten/Zwei-Spaltern)
+    order = reading_order_permutation([r["bbox"] for r in relevant])
+    relevant = [relevant[i] for i in order]
 
     result = []
 

@@ -17,7 +17,7 @@ from scripts.tei.tei_generator import (
     md_to_tei_inline,
     split_paragraphs,
 )
-from scripts.tei.tei_xml_utils import normalize_for_tei
+from scripts.tei.tei_xml_utils import normalize_for_tei, reading_order_permutation
 
 # Speaker-Erkennung: "Name:" am Zeilenanfang (Interview/Debate)
 SPEAKER_PATTERN = re.compile(r'^([A-Z][a-zA-Z\u00e9\u00e8\u00ea\u00e0\u00e2\u00fc\u00f6\u00e4\s.\-]+?):\s*')
@@ -42,7 +42,8 @@ def match_paragraphs_to_regions(
         if r.get("zbz_tag") not in ("_filter", "_skip", None)
         and r.get("bbox")
     ]
-    relevant.sort(key=lambda r: r["bbox"]["y_pct"])
+    order = reading_order_permutation([r["bbox"] for r in relevant])
+    relevant = [relevant[i] for i in order]
 
     result = []
     if len(paragraphs) == len(relevant):
