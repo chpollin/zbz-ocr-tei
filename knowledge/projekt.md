@@ -156,7 +156,7 @@ und [quality.md](quality.md).
 | Dokumentklassifikation | Done | `classify_docs.py` (E27) |
 | NER + Entity-Linking | Entfernt (E71) | aus Pipeline + Output entfernt; Verlinkung war nicht lieferfaehig |
 | Unified TEI Pipeline | Done | 285/285 schema-valide (E32) |
-| TEI Validator | Done | RelaxNG + 7 Projektregeln (R1-R7) + 15 aktive Warnregeln (W1-W7, W11-W18; W15-W18 seit E84) |
+| TEI Validator | Done | RelaxNG + 7 Projektregeln (R1-R7) + 16 aktive Warnregeln (W1-W7, W11-W19; W15-W18 seit E84, W19 Lesereihenfolge seit E90) |
 | Workflow-Status pro Strom (E66/E67) | Done (Datenmodell) | ersetzt Agent-Screening; 285/285 `unverifiziert`, im Viewer setzbar, Provenienz im Manifest |
 | Pipeline-Viewer (E56) | Done | `docs/viewer.html` Single-Page mit Layout- + Transkriptions-Editor; Persistenz direkt ins Repo + Mirror (E72/E78/E79), Download als Fallback |
 | Viewer Edition-Uplift (Mai 2026) | groesstenteils umgesetzt | Ausgeliefert: E58 (OSD-Faksimile), E60 (Edit-Toggle pro Panel), E62 (Methode-Seite), E63/E65 (Leerseiten-Manifest + TEI-Marker), E66/E67 (Workflow-Status + Ampel-Reframing + Catalog-Refactor). Offen: E61 (Export-Modul, JSZip — geplant, im Code noch nicht eingebunden), complete-TEI (`<facsimile>`/`<zone>`) + Provenance-Drawer (geplant, eigene Pipeline-Welle), OSD-Layout-Editor-Integration, viewer.js-Modulsplit. Offene Frontend-Befunde: [frontend-gaps.md](frontend-gaps.md) |
@@ -223,7 +223,7 @@ Seit E21 ersetzt bzw. ergaenzt zbz-ocr-tei folgende Schritte:
 
 | Problem | Betroffene PDFs | Loesungsansatz |
 |---|---|---|
-| Zweispaltige Lesereihenfolge | 2530, 890, 3040 | Docling + Gemini Detect |
+| Zweispaltige Lesereihenfolge | 2530, 890, 3040 (auch 30, 760) | Docling + Gemini Detect; spalten-/bandbewusste Assembly-Reihenfolge (E90), W19 prueft den Bestand, Auslieferung M3 gated |
 | Seitenuebergreifende Fussnoten | 3040 | `@next/@prev` |
 | Interview-Sprecherwechsel | 1440 | Pattern-Erkennung |
 | Historischer Druck | 90 | beide OCR-Engines testen |

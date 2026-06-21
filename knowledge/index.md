@@ -36,7 +36,7 @@ SSoT pro Domaene, eine Datei pro Thema.
 | [oekosystem-synthese.md](oekosystem-synthese.md) | Gesamtbild der drei Projekte (zbz / szd-htr / teiCrafter): Setup + Gates + kritischer Pfad, je Projekt Pipeline/Status, ALLE User-Stories, Integration + Bildluecke, Methodik, offene Punkte + Doku-Widersprueche, SSoT-Zuordnung (2026-06-07) |
 | [infrastruktur.md](infrastruktur.md) | Wie wird deployed? Azure, Mistral Document AI, Podman, GitLab Uni Zuerich, CI/CD |
 | [methodik.md](methodik.md) | Wie arbeiten wir? Epistemische Infrastruktur, Verifikationskaskade, Critical Expert in the Loop, Dreischichtung, operative CLI |
-| [decisions.md](decisions.md) | Was ist entschieden? Entscheidungsregister (E-Eintraege bis E89), offene Punkte (O8/O13/O27 an ZBZ, O18 DHCraft; O25/O26 geschlossen), Risiken |
+| [decisions.md](decisions.md) | Was ist entschieden? Entscheidungsregister (E-Eintraege bis E90), offene Punkte (O8/O13/O27 an ZBZ, O18 DHCraft; O25/O26 geschlossen), Risiken |
 | [journal.md](journal.md) | Was wurde wann gemacht? kompakter Sitzungs-Ueberblick (seit Jan 2026), wiederkehrende Muster |
 
 Konstitution + Commands: [CLAUDE.md](../CLAUDE.md) (Top-Level, projekt-weite Regeln).

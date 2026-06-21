@@ -199,7 +199,7 @@ Dokumente: [pipeline.md §Transkribus-Export](pipeline.md)
 
 ### E82 — Doc-30-Dedup publiziert + Korpus-Mean 3.99 % (vorher 4.26) + Tail-Ursachen-Register (2026-06-08)
 
-Bei Doc 30 wurde ein OCR-**Block**duplikat (ein doppelt erfasster Absatz, in Mistral x2) entfernt; Fidelity-CER 18.25 -> 11.59 %, publiziert nach `tei_final/30` (revisionDesc erhalten) + Mirror `docs/data/pages/30/`. Dadurch Korpus-Mean Fidelity **4.26 -> 3.99 %** (CI [2.36; 5.96]), Median 1.83 % unveraendert; `cer_statistics.json` neu (Seed 42, B=10000). **4.26 entfaellt als aktuelle Zahl** (User-Entscheidung: nur der aktuelle/echte CER zaehlt); konsistent gezogen in `quality.md`, `methode.html`, `about.html`, `oekosystem-synthese.md`. Caveat: 3.99 = 24 Docs reines Pipeline-Output + 1 manuell entdupliziertes (Doc 30), weil **keine automatische Block-Deduplikation existiert** -- das in Arbeitsbericht Anhang A und CLAUDE.md referenzierte `scripts/ocr/ocr_dedup.py` ist NICHT im Repo (nur verwaiste `.pyc`); Doku-Drift, separat zu klaeren. Tail-Ursachen belegt + in Bericht 6.3 (25-Objekt-Tabelle) / 7 (Problem-Uebersicht): die hohen CER sind strukturell, NICHT Zeichenerkennung. **Offene Defekte registriert:** (a) Gemini-Layout-QA ueber-detektiert Fussnoten -> Body-als-`<note>` (290/1910/90), nicht sicher auto-fixbar wg. echter langer Fussnoten in 1520/40/3040; (b) Doppelseiten-Lesereihenfolge -- `match_paragraphs_to_regions` (tei_step1) sortiert nur nach y, ignoriert x + `reading_order` (30/760). [[E80]] (print-kalibriert) bleibt gueltig
+Bei Doc 30 wurde ein OCR-**Block**duplikat (ein doppelt erfasster Absatz, in Mistral x2) entfernt; Fidelity-CER 18.25 -> 11.59 %, publiziert nach `tei_final/30` (revisionDesc erhalten) + Mirror `docs/data/pages/30/`. Dadurch Korpus-Mean Fidelity **4.26 -> 3.99 %** (CI [2.36; 5.96]), Median 1.83 % unveraendert; `cer_statistics.json` neu (Seed 42, B=10000). **4.26 entfaellt als aktuelle Zahl** (User-Entscheidung: nur der aktuelle/echte CER zaehlt); konsistent gezogen in `quality.md`, `methode.html`, `about.html`, `oekosystem-synthese.md`. Caveat: 3.99 = 24 Docs reines Pipeline-Output + 1 manuell entdupliziertes (Doc 30), weil **keine automatische Block-Deduplikation existiert** -- das in Arbeitsbericht Anhang A und CLAUDE.md referenzierte `scripts/ocr/ocr_dedup.py` ist NICHT im Repo (nur verwaiste `.pyc`); Doku-Drift, separat zu klaeren. Tail-Ursachen belegt + in Bericht 6.3 (25-Objekt-Tabelle) / 7 (Problem-Uebersicht): die hohen CER sind strukturell, NICHT Zeichenerkennung. **Offene Defekte registriert:** (a) Gemini-Layout-QA ueber-detektiert Fussnoten -> Body-als-`<note>` (290/1910/90), nicht sicher auto-fixbar wg. echter langer Fussnoten in 1520/40/3040; (b) Doppelseiten-Lesereihenfolge -- `match_paragraphs_to_regions` (tei_step1) sortiert nur nach y, ignoriert x + `reading_order` (30/760) **[Update [[E90]] (2026-06-21): (b) generatorseitig behoben (spalten-/bandbewusste Lesereihenfolge), Validator-Warnung W19 macht den noch nicht neugenerierten Bestand sichtbar, Auslieferung M3 operator-gated; (a) Fussnoten-Ueberdetektion bleibt offen]**. [[E80]] (print-kalibriert) bleibt gueltig
 
 Dokumente: [quality.md](quality.md), [reports/2026-05-27_arbeitsbericht.md](../reports/2026-05-27_arbeitsbericht.md)
 
@@ -359,6 +359,51 @@ referenzierten Seitenbilder existieren im Bildordner; 285/285 schema-valide (gra
 Suite gruen.
 
 Dokumente: [pipeline.md](pipeline.md), [quality.md](quality.md)
+
+---
+
+### E90 — Lesereihenfolge spalten-/bandbewusst (Generator-Fix, M1) + Validator-Warnung W19 (M2) (2026-06-21)
+
+Loest den offenen Defekt (b) aus dem Doc-30/CER-Eintrag generatorseitig. Milestone-Runde der
+Forschungsleitstelle, naechste zwei Milestones aus der Editionsphilologie-Persona.
+
+Befund. `match_paragraphs_to_regions` sortierte die Layout-Regionen rein nach `y_pct`
+([tei_step1.py](../scripts/tei/tei_step1.py) live, [tei_generator.py](../scripts/tei/tei_generator.py)
+Legacy, identischer Bug). Die Layout-Erkennung liefert die Regionen aber bereits linke-Spalte-zuerst;
+die reine y-Sortierung verschraenkt linke und rechte Spalte bei Zwei-Spaltern und Doppelseiten wieder
+(30/760). Kein gespeichertes `reading_order`-Feld, nur die Bbox-Geometrie. Strukturelle Tail-Ursache,
+nicht Zeichenerkennung ([[E80]]).
+
+M1 (Generator-Fix). Geteilte reine Funktion `reading_order_permutation` in
+[tei_xml_utils.py](../scripts/tei/tei_xml_utils.py): vollbreite Bloecke (w >= 60%) segmentieren die
+Seite in waagrechte Baender, innerhalb eines Bands liest man Spalte fuer Spalte (x-Mitten-Abstand
+> 12% = Spaltensteg) links nach rechts, je Spalte oben nach unten. Eine einspaltige Seite faellt
+exakt auf die alte y-Reihenfolge zurueck, daher regressionsfrei. Beide Aufrufstellen ziehen jetzt auf
+diese eine Funktion (Bug-Duplikat aufgeloest). Tests `tests/test_reading_order.py` (9). Commit `6f51eac2`.
+
+M2 (Diagnose). Nicht-blockierende Validator-Warnung W19 (`_check_reading_order`,
+[tei_validator.py](../scripts/tei/tei_validator.py)): vergleicht je Seite die ausgelieferte
+Block-Reihenfolge (Body-`@facs` -> Zonen-Geometrie) gegen die kanonische Lesereihenfolge derselben
+Zonen, dieselbe Funktion wiederverwendet. Weicht sie ab, liegt eine Spalten-Verschraenkung vor. Feuert
+nur auf dem noch nicht neugenerierten Bestand (neu generierte Dokumente sind kanonisch) und scoped damit
+genau die M3-Dokumente. Tests `tests/test_tei_validator.py` (4). Commit `f72743ac`.
+
+Kennungs-Klarstellung W19. Das implementierte W19 ist die Lesereihenfolge-Warnung. Die [[E85]]-Notiz
+"3 W19-Diagnose-Specs an die TEI-Struktur-Lane uebergeben" war ein provisorisches Sammel-Label fuer drei
+nie als Regel implementierte Diagnose-Vorschlaege (footnote-inline-anchor, pb-blank, lb-break, als
+Diagnose/Kuration/ZBZ verworfen); der Validator reichte real nur bis W18. Dieses Label ist mit E90
+ueberholt; werden jene Specs spaeter implementiert, nehmen sie freie Kennungen ab W20.
+
+Auslieferung an den Bestand. M3, operator-gated: die Korpus-Neugenerierung
+(`tei_unified --all --reassemble`) schreibt die SoT neu und ist mit den Kurations-Lanes zu koordinieren
+([[E84]]-konsistent). Der M1-Fix wirkt auf kuenftige Generierung; der ausgelieferte 285er-Bestand ist
+erst nach Neugenerierung korrigiert. Gruen-Kriterium M3: `tei_validator --all` meldet 0 W19, Schema und
+ZBZ-Konformitaet bleiben 285/285, der Fidelity-CER von 30/760 sinkt.
+
+Verifiziert: volle Suite 1168 passed (je Milestone neue Tests); git-deterministisch (HEAD `26c8fcd6`,
+synchron 0/0). Keine neue Validierungs- oder Konformitaetsregel-Klasse, ein Bugfix plus eine Diagnose.
+
+Dokumente: [journal.md](journal.md) Sitzung 74
 
 ---
 

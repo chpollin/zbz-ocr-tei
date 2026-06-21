@@ -498,13 +498,14 @@ ist mit **E71** (NER entfernt) hinfaellig: das ausgelieferte TEI traegt keine En
 **Errors (blockierend, 7 Regeln R1-R7):** RelaxNG + Projekt-Regeln (R1 type="naegeli",
 R2 teiHeader, R3 body, R4 min 1 div, R5 gueltige div-types, R6 note place, R7 entity-ref).
 
-**Warnings (15 aktive Regeln, informativ; W8-W10 entfallen seit E71, entitaetenfrei):** W1
+**Warnings (16 aktive Regeln, informativ; W8-W10 entfallen seit E71, entitaetenfrei):** W1
 Sprach-Code "und", W2 teiHeader title/author leer, W3 facsimile/pb Mismatch, W4 leere div,
 W5 Text-Volumen <50 chars/Seite, W6 keine lb,
 W7 graphic ohne url, W11 zu viele top-level divs gleichen Namens, W12 Fussnoten-n, W13 Fussnoten xml:id-Pattern,
 W14 back/div-types, W15 div mit type UND n (exklusiv), W16 figure ohne xml:id, W17 leerer speaker
-(Kurations-Slot, E71), W18 foreign xml:lang nicht normalisiert. W15-W18 aus dem Konformitaets-Audit
-2026-06-08 (siehe `reports/tei-konformitaet-audit-welle1-2026-06-08.md`).
+(Kurations-Slot, E71), W18 foreign xml:lang nicht normalisiert, W19 Lesereihenfolge Seite nicht
+kanonisch (Spalten-/Band-Ordnung). W15-W18 aus dem Konformitaets-Audit 2026-06-08 (siehe
+`reports/tei-konformitaet-audit-welle1-2026-06-08.md`), W19 aus E90 (Lesereihenfolge-Defekt 30/760).
 
 ### Referenz-TEI-Validierung
 
