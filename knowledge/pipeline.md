@@ -356,14 +356,20 @@ hatte diese „APPROVED" vergeben. Stand: 285/285 `unverifiziert`. Der Viewer ze
 | `<ref>` | `target` | externer Verweis |
 | `<revisionDesc>`, `<change>` | `who`, `when`, `status` | Versionsstatus |
 
-**Faksimile-Anbindung (Stand E87, 2026-06-21).** Der Generator erzeugt `<facsimile>`,
-`<surface ulx uly lrx lry>`, `<zone>` mit Pixelkoordinaten und die `@facs`-Bindung
-Zeile<->Zone selbst und vollstaendig. Was fehlt, ist der Surface->Bild-Zeiger `<graphic url>`
-im Normalfall (zonenbehaftete Seite); nur der Leerseiten-Zweig in `build_facsimile`
-([tei_step3.py](../scripts/tei/tei_step3.py)) schreibt einen blossen Dateinamen `{seite}.png`.
-Der dauerhafte Einbau (`<graphic>` als erstes `<surface>`-Kind, das Schema verlangt graphic
-vor zone) plus URL-Schema ist in [[O25]] offen; bis dahin liefert teiCrafter das Bild ueber
-einen hartcodierten Demo-Pfad nach.
+**Faksimile-Anbindung (Stand E89, 2026-06-21, ZBZ-konform).** Der Generator erzeugt
+`<facsimile>`, `<surface ulx uly lrx lry>`, `<zone>` mit Pixelkoordinaten und die
+`@facs`-Bindung Zeile<->Zone selbst und vollstaendig. Der Seitenumbruch traegt
+`<pb facs="#facs_N" n="Seitenzahl"/>` (ZBZ-Editionsrichtlinie, alle 285). Damit dieser
+Verweis selbst-enthaltend zum Bild aufloest, traegt jede `<surface>` ein `<graphic url>`
+als erstes Kind (Schema verlangt graphic vor zone). Adressschema: relativer Dateiname
+`{doc_id}_p{NNN}.png` (real in `docs/images/{doc_id}/`, sequenziell zu `facs_N`). Erzeugt
+direkt in `build_facsimile` ([tei_step3.py](../scripts/tei/tei_step3.py)); der bereits
+ausgelieferte Bestand wird ohne OCR-Neulauf per Post-Schritt
+[tei_surface_graphic.py](../scripts/tei/tei_surface_graphic.py) auf denselben Stand gebracht.
+Loest [[O25]] und ersetzt den fehlerhaften Leerseiten-Platzhalter `{seite}.png` (zeigte auf
+eine nicht existente Datei). ZBZ schreibt fuer Seitenbilder die `<pb facs>`-Form vor, nicht
+zwingend ein Surface-`<graphic>`; das `<graphic>` macht den Verweis aufloesbar und loest
+teiCrafters hartcodierten Demo-Pfad ab.
 
 ---
 

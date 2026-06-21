@@ -114,11 +114,29 @@ def build_tei_header(doc_id: str, metadata: dict) -> str:
     return "\n".join(lines)
 
 
-def build_facsimile(page_facsimiles: dict[int, dict], page_teis: dict[int, str] = None) -> str:
+def page_image_url(doc_id: str, page_num: int) -> str:
+    """Relativer Pfad zum Seitenbild, ZBZ-Adressschema (README: "relationaler Pfad zum Bild").
+
+    Die Bilder liegen als ``docs/images/{doc_id}/{doc_id}_p{NNN}.png`` (3-stellig, 1-basiert,
+    sequenziell zur Surface ``facs_{page_num}``). Der Konsument loest relativ zum Bildordner
+    des Dokuments auf, daher der nackte Dateiname ohne Verzeichnis (wie der vorherige
+    Leerseiten-Platzhalter, nur korrekt statt ``{page_num}.png``).
+    """
+    return f"{doc_id}_p{page_num:03d}.png" if doc_id else f"p{page_num:03d}.png"
+
+
+def build_facsimile(
+    page_facsimiles: dict[int, dict],
+    page_teis: dict[int, str] = None,
+    doc_id: str = "",
+) -> str:
     """Erzeugt <facsimile> Element aus gesammelten Seitendaten.
 
     Erzeugt eine <surface> fuer jede Seite die im body vorkommt (via page_teis),
     auch wenn keine Layout-Zones vorhanden sind. So stimmen pb- und surface-Anzahl ueberein.
+    Jede Surface traegt als erstes Kind ein <graphic url> auf das Seitenbild, damit der
+    Verweis <pb facs="#facs_N"> der ZBZ-Editionsrichtlinie selbst-enthaltend aufloest
+    (Schema verlangt graphic vor zone).
     """
     # Alle Seiten die eine surface brauchen (aus body-pages oder facsimile-keys)
     all_pages = set(page_facsimiles.keys())
@@ -135,28 +153,20 @@ def build_facsimile(page_facsimiles: dict[int, dict], page_teis: dict[int, str] 
         img_h = facs.get("image_height", 0) if facs else 0
         zones = facs.get("zones", []) if facs else []
 
-        if zones:
+        lines.append(
+            f'    <surface xml:id="facs_{page_num}" ulx="0" uly="0" '
+            f'lrx="{img_w}" lry="{img_h}">'
+        )
+        lines.append(
+            f'      <graphic url="{page_image_url(doc_id, page_num)}"/>'
+        )
+        for z in zones:
             lines.append(
-                f'    <surface xml:id="facs_{page_num}" ulx="0" uly="0" '
-                f'lrx="{img_w}" lry="{img_h}">'
+                f'      <zone xml:id="{z["zone_id"]}" '
+                f'ulx="{z["ulx"]}" uly="{z["uly"]}" '
+                f'lrx="{z["lrx"]}" lry="{z["lry"]}"/>'
             )
-            for z in zones:
-                lines.append(
-                    f'      <zone xml:id="{z["zone_id"]}" '
-                    f'ulx="{z["ulx"]}" uly="{z["uly"]}" '
-                    f'lrx="{z["lrx"]}" lry="{z["lry"]}"/>'
-                )
-            lines.append("    </surface>")
-        else:
-            # Leere surface mit graphic-Platzhalter (surface braucht min. 1 Kind)
-            lines.append(
-                f'    <surface xml:id="facs_{page_num}" ulx="0" uly="0" '
-                f'lrx="{img_w}" lry="{img_h}">'
-            )
-            lines.append(
-                f'      <graphic url="{page_num}.png"/>'
-            )
-            lines.append("    </surface>")
+        lines.append("    </surface>")
 
     lines.append("  </facsimile>")
 
@@ -181,8 +191,8 @@ def assemble_document(
     # teiHeader
     lines.append(build_tei_header(doc_id, metadata))
 
-    # facsimile (page_teis uebergeben fuer pb/surface-Synchronisation)
-    facs = build_facsimile(page_facsimiles, page_teis)
+    # facsimile (page_teis uebergeben fuer pb/surface-Synchronisation, doc_id fuer graphic-URL)
+    facs = build_facsimile(page_facsimiles, page_teis, doc_id)
     if facs:
         lines.append(facs)
 

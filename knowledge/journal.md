@@ -51,6 +51,56 @@ pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
 
+### 2026-06-21 Sitzung 71: ZBZ-Order umgesetzt -- Inline-GND-Schema (E88), Konformitaetspruefung, Seitenbild-Anbindung (E89)
+
+**Anlass.** Die Forschungsleitstelle hat das uebergebene ZBZ-Material ausgewertet und drei
+Aufgaben erteilt (order-zbz-ocr-tei.md): das Auszeichnungsmodell auf die ZBZ-Editionsregeln
+festlegen, die ZBZ-Konformitaet des ausgelieferten Bestands nachweisen, und die Seitenbild-
+Anbindung nach ZBZ-Regeln erzeugen. Korrigiert Sitzung 70, in der das standOff-Modell (E87)
+gebaut wurde, bevor das ZBZ-Material vorlag.
+
+**Ziel.** Die drei Auftragspunkte umsetzen und je gegen committete Artefakte verifizieren,
+Inline-GND als maßgebliches Liefermodell verankern.
+
+**Verlauf.** (1) Modell: Der vollstaendige Schema-Diff zeigte, dass das aktive Schema die
+ZBZ-Pruefvorlage plus E68 plus E87 ist; jede Diff-Zeile ist ein E68- oder E87-Element plus drei
+`@ref`-Pattern-Stellen. Der ausgelieferte Bestand ist seit E71 entitaetenfrei (kein standOff,
+kein `#zbz-`, kein `<name>`), das Entfernen von E87 daher risikolos. E87 zurueckgenommen, die
+`@ref`-Pattern auf GND-only verengt; aktives Schema jetzt exakt ZBZ-Pruefvorlage + E68
+(Restdiff nur noch E68, verifiziert). 285/285 weiterhin valide, standOff-Guard-Test neu. (2)
+Konformitaet: Befund, dass das alte Richtlinien-Arbeitsexemplar (E49) byte-identisch zur neuen
+ZBZ-README ist und der Validator viele Editionsregeln schon als R/W-Regeln kodiert. Ergaenzt um
+die Inline-GND-Modellregeln, die ein RelaxNG nicht ausdruecken kann (Normdaten nur GND, nur
+Person/Org/Werk, Rendering-Vokabular, `pb facs/n`), als `zbz_conformity.py` mit
+`--conformity`-Modus. 285/285 konform, 0 Verletzungen. (3) Seitenbild: Befund, dass `<pb facs>`
+die bindende Form ist (alle 285), das Surface-`<graphic>` aber fehlte bzw. der Leerseiten-
+Platzhalter `{N}.png` auf eine nicht existente Datei zeigte. Jede Surface bekommt nun `<graphic
+url="{doc_id}_p{NNN}.png"/>` als erstes Kind; alle 4108 referenzierten Bilder existieren.
+
+Nebenbefunde als ZBZ-Rueckfragen festgehalten: die ZBZ-README widerspricht sich bei
+Bildunterschriften (O27); der Header-Widerspruch (idno gefordert, Schema verbot es) wird durch
+E68 aufgeloest (vgl. O8).
+
+**Entscheidungen.** E88 (Inline-GND als Liefermodell, standOff aus Schema entfernt; verworfen:
+rohe Uebernahme der ZBZ-Vorlage, weil ihr die E68-Kopf-Elemente fehlen und alle 285 invalidieren
+wuerden). E89 (`<graphic>` als erstes Surface-Kind, Adressschema `{doc_id}_p{NNN}.png`; verworfen:
+absolute GitHub-Pages-URL und IIIF, da Hosting offen und ein relativer Pfad die ZBZ-Vorgabe ist).
+O26 geschlossen, O25 geschlossen, O27 eroeffnet.
+
+**Stand.** Alle drei Auftragspunkte umgesetzt, gegen committete Tests verifiziert: Schema-Gate
+(Inline-GND-Positivtest + standOff-Guard), `test_zbz_conformity.py` (285/285 konform),
+`test_tei_surface_graphic.py` (Surface-Graphics + Korpus). Volle Suite gruen. Drei Commits auf
+main (per order: alles in main, keine eigenen Branches): E88-Schema, Task-2-Konformitaet,
+E89-Seitenbild. Lane entblockt, keine offenen Gates.
+
+**Naechste Schritte.**
+1. teiCrafter-Ausgabemodell an Inline-GND angleichen (Delta an die Forschungsleitstelle gemeldet,
+   beruehrt lane teicrafter-editor).
+2. ZBZ-Rueckfragen klaeren: Bildunterschrift-Widerspruch (O27), Schlagworte (O13), Header-
+   Metadaten aus Alma (O8).
+3. Optional: E84-Strukturfixes per Korpus-Neugenerierung ausrollen (Koordination mit den
+   Kurations-Lanes).
+
 ### 2026-06-21 Sitzung 70: Schema-Erweiterung teiCrafter-standOff (E87) + Faksimile-Befund + Warnungs-Angleichung
 
 **Anlass.** Im Kurations-Editor teiCrafter annotierte ZBZ-Dokumente waren gegen ihr

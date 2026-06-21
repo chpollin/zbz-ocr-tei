@@ -84,7 +84,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 
 ---
 
-## Entschieden (E64-E88, Detail)
+## Entschieden (E64-E89, Detail)
 
 Juengere Entscheidungen mit ausfuehrlicher Begruendung als eigene Abschnitte
 (Reihenfolge wie zuvor in der Tabelle).
@@ -324,6 +324,42 @@ ausserhalb von zbz-ocr-tei; als Delta an die Forschungsleitstelle gemeldet.
 
 Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md), [index.md](index.md)
 
+### E89 — Seitenbild-Anbindung ZBZ-konform: `<graphic>` als erstes Kind jeder `<surface>` (2026-06-21)
+
+Loest [[O25]]. Order der Forschungsleitstelle (2026-06-21, Punkt 3): die Seitenbild-Anbindung
+richtet sich vollstaendig nach den ZBZ-Regeln; Adressschema technische Entscheidung der Lane,
+kein Operator-Gate.
+
+Befund (die geforderte Pruefung). Die ZBZ-Edition ist primaer eine Leseausgabe (zeichengetreuer
+Lesetext). Die bindende Verknuepfungsform fuer Seitenbilder ist `<pb facs="#facs_N" n="Seitenzahl"/>`
+(README §Seitenumbrueche) -- ein Verweis auf die Digitalisat-Surface, vorhanden auf allen 285
+(Konformitaetsregel Z6). Ein Surface-`<graphic>` schreibt die README nicht zwingend vor; sie
+zeigt `<graphic url>` explizit nur fuer Inhalts-Abbildungen (`<figure>`, relativer Pfad). Das
+ZBZ-Schema erlaubt `<graphic>` in `<surface>` (graphic vor zone). Damit der `<pb facs>`-Verweis
+selbst-enthaltend zum Bild aufloest (und nicht ueber teiCrafters hartcodierten Demo-Pfad), traegt
+jede `<surface>` ein `<graphic url>` als erstes Kind.
+
+Adressschema (technische Entscheidung der Lane): relativer Dateiname `{doc_id}_p{NNN}.png`
+(3-stellig, 1-basiert, sequenziell zu `facs_N`), real abgelegt unter `docs/images/{doc_id}/`.
+Nackter Dateiname ohne Verzeichnis, der Konsument loest relativ zum Bildordner des Dokuments auf
+(wie der frueheren Leerseiten-Platzhalter, nur korrekt). Verworfen: absolute GitHub-Pages-URL und
+IIIF (Hosting noch offen, ein relativer Pfad bleibt portabel und ist die ZBZ-Vorgabe -- "die
+graphic url bezeichnet den relationalen Pfad zum Bild").
+
+Umsetzung zweiteilig: `build_facsimile` ([tei_step3.py](../scripts/tei/tei_step3.py)) erzeugt das
+`<graphic>` direkt fuer frische Pipeline-Laeufe; der Post-Schritt
+[tei_surface_graphic.py](../scripts/tei/tei_surface_graphic.py) bringt den bereits ausgelieferten
+Bestand ohne OCR/Layout-Neulauf auf denselben Stand (idempotent, Backup je Datei). Behebt den
+fehlerhaften Leerseiten-Platzhalter `{N}.png` (zeigte auf eine nicht existente Datei) und ergaenzt
+das fehlende `<graphic>` auf den zonenbehafteten Surfaces.
+
+Verifiziert: 4108 Surfaces in 285 Dokumenten tragen je ein `<graphic>` als erstes Kind; alle 4108
+referenzierten Seitenbilder existieren im Bildordner; 285/285 schema-valide (graphic vor zone),
+285/285 konform; committetes Gate `tests/test_tei_surface_graphic.py` (Synthetik + Korpus); volle
+Suite gruen.
+
+Dokumente: [pipeline.md](pipeline.md), [quality.md](quality.md)
+
 ---
 
 ## Offene Punkte
@@ -333,7 +369,7 @@ Dokumente: [quality.md](quality.md), [pipeline.md](pipeline.md), [index.md](inde
 | O8 | Metadaten aus ALMA/MMSID | ID + MMSID + PubForm im `teiHeader` (laut ZBZ-Editionsrichtlinien) | Phase 3 TEI | **offen, an ZBZ (Stand 2026-06-08, [[E76]]/[[E83]] bestaetigt):** Header-Metadaten aus Alma (inkl. MMSID) gelten als ZBZ-Domaene und gehoeren nicht in die OCR/Layout/TEI-Pipeline. Eine MMSID-Projektion wurde mit [[E69]] eingefuehrt, mit [[E76]] entfernt und mit [[E83]] erneut verworfen. Achtung Spec-Konflikt: die Editionsrichtlinien (`data/source/guidelines/Editionsrichtlinien_ZBZ.md`, E49) fordern ID+MMSID+PubForm im Header; mit ZBZ zu klaeren (wer zieht aus Alma, welche Felder). **Entscheider: ZBZ gemeinsam mit DHCraft.** Solange offen, tragen 195/285 ausgelieferte Header einen leeren Container-Titel (beabsichtigt, kein Defekt) |
 | O13 | TEI-Editorial-Details (Schlagworte) | wer erstellt diese? Im Header? Richtlinien: "in Abklaerung" | Phase 3 TEI | **Entscheider: ZBZ** (Richtlinien selbst sagen "in Abklaerung"). Haengt ab von der ZBZ-internen Festlegung, wer Schlagworte vergibt und wo sie im Header stehen. Solange bleiben die Header ohne Schlagworte; kein Pipeline-Blocker |
 | O18 | multimodale LLM-Korrektur testen (Scan-Bild + OCR-Text) | Forschung: <1% CER (Crosilla 2025). Infrastruktur steht | Quality | **Entscheider: DHCraft (Projektleitung)**, eigener Test. Haengt ab von Priorisierung nach der ZBZ-Abnahme; blockiert nichts (reines Verbesserungs-Experiment auf der bestehenden Gemini-Infrastruktur), [quality.md](quality.md) |
-| O25 | Faksimile-`<graphic url>` pipeline-seitig erzeugen statt nachgelagert via teiCrafter | Die Pipeline erzeugt `surface`/`zone`/`@facs` schon selbst ([[E87]]); nur der Surface->Bild-Zeiger `<graphic>` fehlt im Normalfall. Einbau = `<graphic>` als erstes `<surface>`-Kind in `build_facsimile` (`tei_step3.py`), Schema valide (graphic vor zone). | macht Faksimile selbst-enthaltend, loest teiCrafter-Demo-Bildpfad ab | **Entscheider: DHCraft (Projektleitung).** Offen: URL-Schema (relativ `<id>_p{KKK}.png` vs. absolute GitHub-Pages-URL vs. IIIF) und dass der Einbau alle 285 `tei_final` (SoT) neu schreibt. Kein Blocker, reine Pipeline-Erweiterung |
+| ~~O25~~ | Faksimile-`<graphic url>` pipeline-seitig erzeugen — **GEKLAERT (2026-06-21, [[E89]])** | Die Pipeline erzeugt `surface`/`zone`/`@facs` selbst; der Surface->Bild-Zeiger `<graphic>` fehlte im Normalfall, der Leerseiten-Platzhalter `{N}.png` zeigte auf eine nicht existente Datei. | macht Faksimile selbst-enthaltend, loest teiCrafter-Demo-Bildpfad ab | Order (2026-06-21): Adressschema technische Entscheidung der Lane, kein Gate. Umgesetzt in [[E89]]: `<graphic url="{doc_id}_p{NNN}.png"/>` als erstes Surface-Kind, in `build_facsimile` + Post-Schritt `tei_surface_graphic.py`; 4108 Surfaces, alle Bilder existieren, 285/285 valide+konform, committetes Gate |
 | ~~O26~~ | teiCrafter-Annotationsmodell vs. ZBZ-Editionsrichtlinien — **GEKLAERT (2026-06-21, [[E88]])** | Die Richtlinien fordern Inline `<persName ref="GND:...">`/`<orgName>`/`<bibl>` am Erwaehnungsort (alle `@ref` auf die GND); E87 hatte zusaetzlich ein standOff-Register schema-erlaubt gemacht. | — | Order der Forschungsleitstelle (2026-06-21): nur die ZBZ-Editionsregeln gelten, Inline-GND ist das Liefermodell. Umgesetzt in [[E88]]: standOff aus dem aktiven Schema entfernt, `@ref` auf GND-only verengt, aktives Schema = ZBZ-Pruefvorlage + E68; 285/285 valide, Guard-Test gegen Wiedereinzug. teiCrafter-Ausgabemodell ist anzugleichen (Delta an Leitstelle gemeldet) |
 | O27 | ZBZ-README widerspricht sich bei Bildunterschriften | §Registereintraege: "Entitaeten in Bildunterschriften werden nicht ausgezeichnet"; das §Abbildungen-Beispiel zeichnet aber eine `<orgName ref="GND:...">` innerhalb einer `<figure>` aus. Bei der Konformitaetspruefung ([[E88]], `zbz_conformity.py`) entdeckt. | nichts (auf dem entitaetenfreien Bestand kein Effekt; betrifft kuenftigen teiCrafter-Output) | **Entscheider: ZBZ.** Bewusst nicht maschinell erzwungen, solange der Widerspruch offen ist. Rueckfrage: gilt das Verbot fuer die Bildunterschrift (`<head>`) oder den ganzen `<figure>`-Block inkl. Erlaeuterung (`<p>`)? |
 | ~~O22~~ | 289 vs 286 PDF-Diskrepanz — **GEKLAERT** (2026-05-27) | Masterfile hat 325 Texte, davon 289 `digitalisiert`, davon 286 als PDF geliefert; die 3 nicht gelieferten: `1745`, `1750`, `1970`. Verifiziert via `python -m scripts.eval.corpus_audit` | — | erledigt |
