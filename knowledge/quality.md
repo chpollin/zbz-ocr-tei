@@ -96,6 +96,19 @@ Fliesstext, wenn ihre ersten 120 Zeichen im Body der Referenz vorkommen. Vollsta
 verbleibenden Faelle (6 referenz-verifiziert zurueckgehalten, 11 zur Handpruefung, 1 Seitenzahl):
 [reports/fussnoten-kuration-2026-06-08.md](../reports/fussnoten-kuration-2026-06-08.md).
 
+### Unabhängige Gegenprobe 2026-07-03
+
+Externe Verifikation ohne Repo-Code (Neuimplementierung aus der Spec, python-Levenshtein als
+Zweit-Engine, eigene Aggregation): alle Headline- und Einzelwerte auf die Dezimale reproduziert,
+Engines auf allen 25 Distanzen einig. Alignmentfreie Zweitmetrik Bag-of-chars-Miss Median 0,01 %
+(echt fehlender Referenztext ist die Ausnahme); inhaltlicher Durchgang aller 25 Docs klassifiziert
+die Fidelity-Treiber als Seitenapparat-Einfügungen <50 Zeichen, wenige echte Verlustfälle
+(Doc 30 Doppelseiten-Foto, am Faksimile verifiziert; 1910; 1520 Zitatnachweise; 760 Bildlegenden)
+und Konventionsdivergenzen der Referenz (Versalien-Titel, am Faksimile Doc 100 verifiziert).
+Schwellen-Sensitivität: SCOPE_BLOCK_MIN 30/50/100 ergibt Mean 2,38/2,71/3,33 % — die Schwelle 50
+beim Zitieren stets mitnennen. Details und Folgearbeits-Kandidaten:
+[reports/cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md).
+
 ### Pipeline-Mehrwert (Paired, like-for-like Fidelity)
 
 Pipeline-E2E vs. reine Mistral-OCR: **-9.45 pp** (p = 0.013, n=25, **signifikant**
