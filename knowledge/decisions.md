@@ -84,7 +84,7 @@ Konsolidiertes Register aller Entscheidungen und offenen Fragen. Cross-cutting, 
 
 ---
 
-## Entschieden (E64-E89, Detail)
+## Entschieden (E64-E91, Detail)
 
 Juengere Entscheidungen mit ausfuehrlicher Begruendung als eigene Abschnitte
 (Reihenfolge wie zuvor in der Tabelle).
@@ -452,6 +452,34 @@ das schaltet das Signal stumm, ohne den Count-Mismatch (ein Upstream-Segmentieru
 (Wegdokumentieren-Antipattern). Keine neue E-Nummer, Rollout bleibt operator-gated.
 
 Dokumente: [journal.md](journal.md) Sitzung 74, Sitzung 75, Sitzung 77, Sitzung 78
+
+### E91 — Unabhaengige CER-Gegenprobe bestaetigt SoT; Arbeitsbericht 6.3 auf E82/E85-Stand gebracht (2026-07-03)
+
+Anlass: Operator-Zweifel an der Soliditaet der CER-Zahlen, geprueft aus einer externen Session
+(Promptotyping-Paper-Lane). Gegenprobe ohne jeden Repo-Code-Import: Extraktion und Normalisierung aus
+der dokumentierten Spec neu implementiert, python-Levenshtein als zweite Engine neben rapidfuzz,
+eigene Aggregation; dazu Zweitmetriken (WER, case-insensitive CER, alignmentfreier Bag-of-chars-Miss,
+Bag-of-words-Recall), inhaltlicher Durchgang der Top-Fehlerbloecke aller 25 GT-Docs und zwei
+Faksimile-Sichtpruefungen (30, 100).
+
+Ergebnis. Alle Headline- und Einzelwerte reproduzieren exakt (2.71/1.40, micro 2.13, Volltext
+18.94/12.13, Scope 16.23/7.06; Vorher-Vektoren 3.99/1.83 und 4.26/1.83). Bag-of-chars-Miss Median
+0.01 %, echter Textverlust ist die Ausnahme. Schwellen-Sensitivitaet SCOPE_BLOCK_MIN 30/50/100 ergibt
+Mean 2.38/2.71/3.33 %; die Schwelle 50 gehoert in jede Zitierung. Fidelity-Treiber klassifiziert:
+Apparat-Einfuegungen <50 Zeichen (kein Erkennungsfehler), echte Verluste (30 Doppelseite, am Faksimile
+verifiziert; 1910 Passagen; 1520 Zitatnachweise; 760 Bildlegenden), Konventionsdivergenzen der
+Referenz (Versalien-Titel Doc 100, am Faksimile verifiziert), seltene echte Fehlerkennungen. Bericht:
+[cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md); Gegenprobe-Skripte im
+Paper-Repo (DHCraft/promptotyping-paper, `verification/`).
+
+Umgesetzt. Arbeitsbericht 6.3 stand auf dem 12:58-Zwischenstand 3.99/1.83 und traegt jetzt einen
+Update-Vermerk plus den SoT (Headline inkl. CI und micro, Volltext/Scope, per-Doc-Tabelle auf
+Nach-E85-Werte, Einordnungs-Passage mit Obergrenze/Schwelle/Stichprobe/Handkorrektur/Einzellauf,
+Kennzahl-Entwicklung 4.26 -> 3.99 -> 2.71); Problem-Tabelle Zeile 2 (E90-Stand) und Zeile 3
+(E85-Kuration) nachgezogen, Zeile 5 um die Versalien-Divergenz (100) erweitert; Anhang-A-Hinweis,
+dass `ocr_dedup.py` derzeit nicht im Repo liegt. quality.md Obergrenzen-Passage konkretisiert.
+Offen als Folgearbeit: Ellipsen-Normalisierung (U+2026 vs "..."), Apparat-Einfuegungen ggf. als
+eigene Ausweiskategorie, Doc-30/760-Bestandskorrektur via M3 (operator-gated, E90).
 
 ---
 

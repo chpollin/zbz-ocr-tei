@@ -72,6 +72,12 @@ sie, weil dort die Messlatte hoeher liegt. Massgeblich ist daher der **Print-OCR
 spezialisierten Print-Stack (Transkribus + LLM-Post 0.84 %) und Transkribus allein (3.67 %) -- solide
 fuer historischen Druck, aber **nicht** an der Spitze. Zusaetzlich misst die CER gegen eine selbst
 fehlerbehaftete Transkribus-Referenz (siehe Doc 1440), ist also eine Obergrenze der wahren Fehlerrate.
+Die Gegenprobe 2026-07-03 konkretisiert die Obergrenzen-Natur doppelt. Apparat-Einfuegungen unter
+50 Zeichen (Kolumnentitel, Seitenzahlen, Impressum), die die Pipeline treu transkribiert und die
+selektive Referenz weglaesst, zaehlen als Fidelity-Fehler, ohne Erkennungsfehler zu sein; und die
+Referenz normalisiert Versalien-Titel auf Kleinschreibung (Doc 100, am Faksimile verifiziert), wodurch
+die druckbildtreuere Pipeline bestraft wird. Echter Textverlust ist die Ausnahme (Bag-of-chars-Miss
+Median 0.01 %); die tatsaechliche Zeichen-Erkennungsleistung liegt unter den zitierten Werten.
 
 ### Korrektur 2026-06-08: referenz-verifizierte Fussnoten-Demotion
 

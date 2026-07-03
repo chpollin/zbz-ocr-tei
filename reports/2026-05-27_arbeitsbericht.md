@@ -252,36 +252,40 @@ OCR (`output/mistral_results/1440_p1.md:12`): mit Guillemets und korrektem „In
 
 ### **6.3 Korpus-Ergebnis und Datenlage**
 
-Headline-Resultat des aktuellen Korpus (n \= 25, Seed 42, B \= 10 000, Stand 2026-06-08): Die Fidelity-CER, die echte Lese- und Auslassungsfehler ohne selektiv transkribierten Begleittext erfasst, liegt bei einem Median von 1,83 % und einem Mittel von 3,99 % (95-%-CI \[2,36 %; 5,96 %\]). Die Volltext-CER als Diagnosegröße, die den Pipeline-Mehrtext gegenüber den selektiv transkribierten Referenzen einschließt, liegt bei einem Median von 12,29 % und einem Mittel von 20,22 %. Diese Werte sind print-kalibriert einzuordnen: Die Transkribus-Qualitätsbänder (unter 2 Prozent „publikationsreif", 2 bis 5 Prozent „forschungstauglich") stammen primär aus der HTR-Praxis der Handschriftenerkennung und schmeicheln einer reinen Druck-OCR-Aufgabe, bei der die Messlatte höher liegt. Maßgeblich ist daher der Vergleich mit der Print-OCR-Literatur: Der Fidelity-Median von 1,83 Prozent liegt zwischen dem besten spezialisierten Stack (Transkribus mit LLM-Nachkorrektur, 0,84 Prozent; Crosilla et al. 2025) und Transkribus allein (3,67 Prozent) — solide für historischen Druck, aber nicht an der Spitze; das technische Optimum erreichen nur die besten Einzeldokumente (0,3 bis 0,8 Prozent). Hinzu kommt, dass die CER gegen eine selbst fehlerbehaftete Transkribus-Referenz misst (Beispiel 5, Doc 1440) und damit eine Obergrenze der wahren Fehlerrate ist. Die Reproduktion erfolgt über `python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`; Methodikdetails in `knowledge/quality.md`.
+> **Aktualisierung 2026-07-03.** Dieser Abschnitt stand bis dahin auf dem Zwischenstand vom 2026-06-08, 12:58 Uhr (Fidelity Mittel 3,99 %, Median 1,83 %), der die am selben Nachmittag durchgeführten referenz-verifizierten Korrekturen E82/E85 noch nicht enthielt. Die folgenden Werte sind der verbindliche Stand aus `knowledge/quality.md`; sie wurden durch eine unabhängige Gegenprobe (Neuimplementierung ohne Repo-Code, zweite Levenshtein-Engine, Zweitmetriken, Faksimile-Stichproben) exakt bestätigt, Details in [cer-gegenprobe-2026-07-03.md](cer-gegenprobe-2026-07-03.md).
 
-Gegenüber dem ersten Korpuslauf (Mittel 4,26 %) ist der Mittelwert leicht gesunken, weil bei Dokument 30 eine OCR-Duplikation (ein doppelt erfasster Textblock) entfernt wurde; das senkte dessen Fidelity-CER von 18,25 % auf 11,59 %. Der Median bleibt unverändert robust bei 1,83 %.
+Headline-Resultat des aktuellen Korpus (n = 25, Seed 42, B = 10 000, Stand 2026-06-08 nach E82/E85): Die Fidelity-CER, die echte Lese- und Auslassungsfehler ohne selektiv transkribierten Begleittext erfasst, liegt bei einem Median von 1,40 % und einem Mittel von 2,71 % (95-%-CI [1,77 %; 3,82 %], micro 2,13 %). Die Volltext-CER als Diagnosegröße, die den Pipeline-Mehrtext gegenüber den selektiv transkribierten Referenzen einschließt, liegt bei einem Median von 12,13 % und einem Mittel von 18,94 %, die Scope-Rate bei 7,06 % bzw. 16,23 %. Diese Werte sind print-kalibriert einzuordnen. Die Transkribus-Qualitätsbänder (unter 2 Prozent „publikationsreif", 2 bis 5 Prozent „forschungstauglich") stammen primär aus der HTR-Praxis der Handschriftenerkennung und schmeicheln einer reinen Druck-OCR-Aufgabe, bei der die Messlatte höher liegt. Maßgeblich ist daher der Vergleich mit der Print-OCR-Literatur; der Fidelity-Median von 1,40 Prozent liegt zwischen dem besten spezialisierten Stack (Transkribus mit LLM-Nachkorrektur, 0,84 Prozent; Crosilla et al. 2025) und Transkribus allein (3,67 Prozent), solide für historischen Druck, wobei das technische Optimum nur die besten Einzeldokumente erreichen (0,3 bis 0,8 Prozent). Die Reproduktion erfolgt über `python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`; Methodikdetails in `knowledge/quality.md`.
 
-Die folgende Aufstellung schlüsselt alle 25 gemessenen Dokumente nach Fidelity-CER auf und ordnet jeder erhöhten CER ihre Hauptursache zu. Sie belegt, dass die Streuung nicht aus der Zeichenerkennung stammt, sondern aus drei strukturellen Mustern: Mehrtext gegenüber selektiven Referenzen (Scope, kein Fehler), Fehlklassifikation von Fließtext als Fußnote sowie verwürfelter Lesereihenfolge bei Doppelseiten. Die acht als „sauber“ markierten Dokumente (Volltext etwa gleich Fidelity, Scope null) zeigen die Erkennungsqualität bei einfachem Layout und vollständiger Referenz.
+Für die Einordnung der Kennzahl sind fünf Punkte maßgeblich, präzisiert durch die Gegenprobe vom 2026-07-03. Erstens ist sie eine Obergrenze der wahren Erkennungsfehlerrate, und das doppelt. Die Referenz ist selbst eine fehlbare Transkription (Beispiel 5, Doc 1440) und normalisiert zudem Versalien-Titel auf Kleinschreibung (Doc 100, am Faksimile verifiziert), wodurch die druckbildtreuere Pipeline bestraft wird; außerdem zählen Einfügungen unter 50 Zeichen als Fidelity-Fehler, obwohl sie überwiegend Seitenapparat sind (Kolumnentitel, Seitenzahlen, Impressum), den die Pipeline treu transkribiert und die selektive Referenz weglässt. Der alignmentfreie Gegencheck zeigt, dass echter Textverlust die Ausnahme ist; fehlende Referenzzeichen liegen im Median bei 0,01 %. Zweitens hängt die Fidelity/Scope-Zerlegung an der Schwelle SCOPE_BLOCK_MIN = 50; bei Schwelle 30 ergäbe sich 2,38 %/1,21 %, bei Schwelle 100 3,33 %/2,10 %. Die Schwelle gehört deshalb in jede Zitierung. Drittens ist die Stichprobe die von der ZB gelieferte Referenzmenge und keine gezogene (Selektionstest auf Zeichenvolumen p = 0,041); für Korpusaussagen ist der Median dem Mittel vorzuziehen. Viertens misst der Wert das Output nach referenz-verifizierter Handkorrektur von 6 der 25 Dokumente (eine Dedup, fünf Fußnoten-Demotionen); der Vorkorrektur-Wert auf derselben Stichprobe beträgt 3,99 %/1,83 %. Fünftens ist es ein Einzellauf; die Run-zu-Run-Stabilität der nicht-deterministischen LLM-Stufen ist nicht quantifiziert.
+
+Die Entwicklung der Kennzahl in drei Ständen desselben Messaufbaus: Der erste Korpuslauf ergab 4,26 %/1,83 %. Die Entfernung eines doppelt erfassten OCR-Textblocks in Dokument 30 (E82, dessen Fidelity fiel von 18,25 % auf 11,59 %) senkte das Mittel auf 3,99 % bei unverändertem Median. Die referenz-verifizierte Demotion von 14 fälschlich als Fußnote ausgezeichneten Fließtext-Blöcken in fünf Dokumenten (E85) führte auf den aktuellen Stand von 2,71 %/1,40 %.
+
+Die folgende Aufstellung schlüsselt alle 25 gemessenen Dokumente nach Fidelity-CER auf (Stand nach E82/E85, durch die Gegenprobe vom 2026-07-03 unabhängig bestätigt) und ordnet jeder erhöhten CER ihre Hauptursache zu. Sie belegt, dass die Streuung überwiegend strukturelle Ursachen hat und die Zeichenerkennung selbst wenig beiträgt. Die Muster sind Mehrtext gegenüber selektiven Referenzen (Scope, kein Fehler), verwürfelte Lesereihenfolge bei Doppelseiten (30, 760; generatorseitig mit E90 behoben, Bestandskorrektur M3 operator-gated offen) sowie Restverluste einzelner Passagen, Bildlegenden und Zitatnachweise. Die vor E85 dominante Fehlklassifikation von Fließtext als Fußnote (290, 1910, 90, 40, 1520) ist referenz-verifiziert kuratiert. Die acht als „sauber“ markierten Dokumente (Volltext etwa gleich Fidelity, Scope null) zeigen die Erkennungsqualität bei einfachem Layout und vollständiger Referenz.
 
 | Doc | Typ | Spr | Fidelity % | Volltext % | Scope % | Hauptursache |
 | :---- | :---- | :---- | ----: | ----: | ----: | :---- |
-| 290 | A | FR | 17,72 | 24,78 | 7,06 | Body-als-Fußnote (Gemini) |
-| 1910 | B | DE | 16,43 | 38,80 | 22,37 | Scope + Body-als-Fußnote |
-| 30 | A | FR | 11,59 | 12,13 | 0,54 | Lesereihenfolge (Doppelseite) |
-| 90 | A | DE | 7,59 | 28,86 | 21,28 | Scope + Extra-Seiten + Fußnote |
-| 1440 | B | DE | 5,87 | 16,95 | 11,07 | Scope + fehlerhafte Referenz |
-| 760 | D | FR | 5,87 | 7,05 | 1,17 | Lesereihenfolge (Doppelseite) |
+| 30 | A | FR | 11,59 | 12,13 | 0,54 | Lesereihenfolge (Doppelseite); Verlust am Faksimile verifiziert |
+| 1910 | B | DE | 7,69 | 30,06 | 22,37 | Scope + Restverluste nach Demotion (E85) |
+| 1440 | B | DE | 5,87 | 16,95 | 11,07 | Scope + fehlerbehaftete Referenz |
+| 760 | D | FR | 5,87 | 7,05 | 1,17 | Lesereihenfolge (Doppelseite); fehlende Bildlegenden |
 | 300 | D | FR | 5,05 | 31,63 | 26,58 | Scope + Extra-Seiten |
 | 1410 | B | FR | 4,24 | 21,91 | 17,68 | Scope + Extra-Seiten |
-| 1520 | C | FR | 3,61 | 5,97 | 2,37 | Extra-Seiten |
-| 130 | A | FR | 2,94 | 2,94 | 0,00 | nahezu sauber |
+| 130 | A | FR | 2,94 | 2,94 | 0,00 | nahezu sauber (Kolumnentitel) |
 | 560 | A | FR | 2,61 | 2,61 | 0,00 | sauber |
+| 290 | A | FR | 2,56 | 9,62 | 7,06 | Body-als-Fußnote behoben (E85) |
 | 2310 | A | FR | 2,46 | 64,96 | 62,50 | Scope (JSTOR-Cover) |
+| 1520 | C | FR | 2,11 | 4,48 | 2,37 | Demotion (E85); Rest fehlende Zitatnachweise |
 | 2530 | B | FR | 1,83 | 1,83 | 0,00 | sauber |
-| 40 | C | FR | 1,58 | 1,82 | 0,24 | sauber |
+| 90 | A | DE | 1,40 | 22,68 | 21,28 | Body-als-Fußnote behoben (E85) |
 | 890 | B | DE | 1,37 | 13,81 | 12,43 | Scope |
+| 40 | C | FR | 1,21 | 1,45 | 0,24 | sauber (Demotion E85) |
 | 1060 | A | DE | 1,14 | 12,29 | 11,15 | Scope |
-| 1180 | A | FR | 1,12 | 2,42 | 1,30 | sauber |
+| 1180 | A | FR | 1,12 | 2,42 | 1,30 | sauber (ein fehlender Satz) |
 | 3040 | B | FR | 1,09 | 24,15 | 23,06 | Scope (Fußnoten) |
 | 3020 | B | DE | 1,06 | 1,55 | 0,49 | sauber |
 | 1330 | D | FR | 1,03 | 13,13 | 12,10 | Scope |
 | 570 | A | FR | 0,93 | 113,28 | 112,36 | Scope (extrem) |
-| 100 | A | FR | 0,85 | 0,85 | 0,00 | sauber |
+| 100 | A | FR | 0,85 | 0,85 | 0,00 | sauber; Versalien-Konvention der Referenz |
 | 2635 | A | DE | 0,76 | 0,76 | 0,00 | sauber |
 | 830 | D | FR | 0,75 | 1,49 | 0,74 | sauber |
 | 580 | A | FR | 0,30 | 59,57 | 59,27 | Scope (extrem) |
@@ -298,10 +302,10 @@ Die folgende Übersicht bündelt die im Projekt identifizierten Probleme kompakt
 | # | Problem | Betroffen | Ursache | Status |
 | :---- | :---- | :---- | :---- | :---- |
 | 1 | OCR-Duplikation (doppelt erfasster Textblock) | Dok 30 | Mistral wiederholte einen Absatz | behoben (Dedup; Fidelity 18,25 zu 11,59 %) |
-| 2 | Verwürfelte Lesereihenfolge bei Doppelseiten | 30, 760 | Querformat-Scans (ein Bild = zwei Seiten); der Region-Matcher sortiert nur nach y-Position und ignoriert x, daher verschränken sich linke und rechte Seite | offen (Code: x-bewusste Sortierung der Regionen) |
-| 3 | Fließtext fälschlich als Fußnote ausgezeichnet | 290, 1910, 90 | Geminis Layout-QA über-detektiert Fußnoten-Regionen; der Text wandert in `<note place="foot">` und fällt aus dem Fidelity-Vergleich (Regel E5) | offen (Layout-Prompt schärfen + Kuration; ein automatischer Demote ist unsicher, weil 1520, 40 und 3040 echte lange Fußnoten führen) |
+| 2 | Verwürfelte Lesereihenfolge bei Doppelseiten | 30, 760 | Querformat-Scans (ein Bild = zwei Seiten); der Region-Matcher sortierte nur nach y-Position und ignorierte x, daher verschränkten sich linke und rechte Seite | Generator behoben (E90: band-/spaltenbewusste Lesereihenfolge + W19-Diagnose); Bestandskorrektur M3 operator-gated offen; Doc-30-Verlust am Faksimile verifiziert (Gegenprobe 2026-07-03) |
+| 3 | Fließtext fälschlich als Fußnote ausgezeichnet | 290, 1910, 90, 40, 1520 | Geminis Layout-QA über-detektiert Fußnoten-Regionen; der Text wandert in `<note place="foot">` und fällt aus dem Fidelity-Vergleich (Regel E5) | kuratiert (E85: referenz-verifizierte Demotion, 14 Blöcke in 5 Docs, Kriterium ≥150-Zeichen-Ausschnitt im GT-Body; Fidelity-Mean 3,99 auf 2,71 %); Layout-Prompt-Schärfung offen; 3040 führt echte lange Fußnoten und blieb unangetastet |
 | 4 | Scope: Mehrtext gegenüber selektiver Referenz | 570, 580, 2310, 300, 3040, 890, 1060, 1330 | Die Referenz-TEIs sind Teiltranskriptionen; die Pipeline erfasst Cover, Titelei, Nachbarbeiträge und Fußnoten zusätzlich | kein Defekt; durch die Fidelity/Scope-Trennung als Diagnosegröße ausgewiesen |
-| 5 | Fehlerhafte Referenz | 1440 | Die Transkribus-Ground-Truth enthält selbst einen Transkriptionsfehler, die korrektere Pipeline wird bestraft | nicht behebbar (Ground Truth per Definition; siehe Beispiel 5) |
+| 5 | Fehlerhafte bzw. konventionsdivergente Referenz | 1440, 100 | Die Transkribus-Ground-Truth enthält selbst Transkriptionsfehler (1440) und normalisiert Versalien-Titel auf Kleinschreibung (100, am Faksimile verifiziert); die druckbildtreuere Pipeline wird bestraft | nicht behebbar (Ground Truth per Definition; siehe Beispiel 5 und Gegenprobe 2026-07-03) |
 | 6 | CER-Schwellen HTR-kalibriert | Methodik | Die Transkribus-Qualitätsbänder stammen aus der Handschriftenerkennung und schmeicheln einer Druck-OCR-Aufgabe | behoben (print-kalibriert eingeordnet; Vergleich mit Print-OCR-Literatur) |
 | 7 | Header-Schema-Defekt im `<idno>` | finale TEI | registriert | offen |
 
@@ -326,7 +330,7 @@ Aufruf jeweils als Modul (`python -m scripts.<paket>.<modul>`).
 - `scripts/ocr/ocr_pipeline.py` steuert die Texterkennung und ruft je nach Dokumenttyp Mistral, Docling oder Gemini auf.  
 - `scripts/ocr/gemini_ocr_correct.py` liefert Ersatz- und Korrektur-OCR mit Gemini in zwei Varianten, nur aus Text oder zusätzlich mit dem Scan-Bild.  
 - `scripts/ocr/llm_postprocess.py` korrigiert den OCR-Text optional mit Claude Haiku nach.  
-- `scripts/ocr/ocr_dedup.py` entfernt OCR-Halluzinationen wie Wiederholungs-Loops und Zeichen-Artefakte.  
+- `scripts/ocr/ocr_dedup.py` entfernt OCR-Halluzinationen wie Wiederholungs-Loops und Zeichen-Artefakte. (Korrektur 2026-07-03: Das Skript liegt derzeit nicht im Repo; die Doc-30-Dedup war ein manueller, referenz-verifizierter Eingriff, siehe `knowledge/quality.md`.)  
 - `scripts/ocr/classify_docs.py` bestimmt aus den ersten Seiten per Gemini die Dokument-Metadaten wie Sprache, Typ, Titel, Autor und Datum.  
 - `scripts/core/loaders.py` legt fest, welcher OCR-Datenstrom Vorrang hat, und ermittelt die zu verarbeitenden Seiten.
 
