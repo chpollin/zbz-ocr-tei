@@ -382,6 +382,42 @@ Documents: [journal.md](journal.md) session 88
 
 ---
 
+### E98 Doc 30 double-page half restored (2026-07-07)
+
+Occasion: E97 adjudicated the doc-30 CER outlier as genuine recognition loss of the left half of scan page 1 (printed page [222]); the operator approved the targeted repair (plan phase 1).
+
+Execution (E96 pattern, backup `output/_backup_pre_30_p1_reocr/`): the double page was re-read with `gemini-3.5-flash` at 300 DPI (the scan is well legible, unlike 1520 p70) and verified against the facsimile. The base OCR stream now carries the full spread in canonical order (this also preserves the E82 dedup, since the duplicated block is gone from the source text); stale per-page caches were removed; `tei_final` page 1 was patched surgically. The patch also repaired the facsimile metadata: the three recovered paragraphs got honest new zones (`facs_1_r_4..r_6` from the Gemini layout), and the two provably wrong zone boxes were corrected (`r_2` carried the heading box while holding a right-column paragraph, `r_3` carried the first left paragraph's box). `pb@n` was lifted from the fallback `[1]` to `[222]`, consistent with the `[224]`/`[226]` neighbours.
+
+Result: doc-30 fidelity CER 11.59 to 0.90 percent (corpus maximum gone); corpus headline (seed 42, B=10000) fidelity mean 2.50 to 2.08 percent, median 1.37 to 1.28 percent; paired against raw OCR -10.08pp, p = 0.0034. Validator and schema gates green; W19 cleared for page 1 (pages 2/3 remain flagged, see E99 for why they stay untouched).
+
+Documents: [journal.md](journal.md) session 89
+
+---
+
+### E99 Machine reading-order rollout falsified: W19 pages carry corrupt zone assignments over correct text (2026-07-07)
+
+Occasion: the plan for the M3 rollout replaced the barred reassembly path (it would revert the E94-E96 stock state, which includes non-re-runnable hand patches E82/E96) with an in-place instrument: `scripts/tei/tei_reading_order_fix.py`, built test-first, permutes the region blocks of robust W19 pages as byte splices (marker idiom, dry-run default, idempotent, self-check on the identity permutation), reusing `classify_page`, `reading_order_permutation`, `pb_split`, and a new shared `build_zone_bbox` in `tei_xml_utils`.
+
+Falsification (the decisive evidence, produced BEFORE any real run by the plan's dry-run gate): applying the fix to copies of all 25 reference documents and measuring fidelity CER per document yields 0 improvements and 9 degradations, up to +40 percentage points (doc 30: 0.90 to 24.04; doc 2635: 0.73 to 40.71). Root-cause inspection (doc 30 page 3) shows the delivered TEXT is correct (CER-proven against the human reference, textually continuous across pages) while the block-to-zone ASSIGNMENT lies (blocks carry other blocks' boxes, as first seen on doc 30 page 1 in E98). This matches the E94 calibration finding that 5 of 6 W19 sample pages read correctly at the facsimile.
+
+Decision: NO machine reordering of the delivered corpus, on either path; rejected alternatives are the E90 reassembly rollout (stock-state loss AND the same corrupt-zone risk) and the corpus-wide in-place run (measured damage). W19 is reframed as a text-OR-zone suspect signal (validator message updated); its resolution is facsimile curation. The tool stays as the evidence instrument: dry-run default produces the triaged worklist, a real run requires the explicit `--write` and is defensible only for individually facsimile-verified pages. The 2026-06-21 preview (`output/tei_preview/`, E90) is obsolete on both grounds and must not be promoted.
+
+Documents: [journal.md](journal.md) session 89
+
+---
+
+### E100 Run-to-run stability measured: the LLM refinement is practically deterministic in CER effect (2026-07-07)
+
+Occasion: the released stability pilot (5 documents x 3 runs, decisions "Stability" 2026-07-07) had neither tooling nor designated documents.
+
+Execution: new harness `scripts/eval/stability_pilot.py` runs full `--force` regenerations into isolated `output/stability_runs/run{N}/` directories (the production step-2 cache and tei_final stay untouched) and measures fidelity CER per run over the canonical `evaluate_ocr` path. Documents 570, 2310, 1910, 830, 890 (stratified over layout types A/B/D and both languages; type C excluded, the only measurable candidate has 147 pages). 20 pages per run, 60 step-2 calls total, pipeline model `gemini-3.1-flash-lite-preview` (deliberately the configured production model, not 3.5-flash, for representativeness).
+
+Result: per-document standard deviation of fidelity CER across runs 0.000 to 0.129 percentage points (mean 0.040, doc 2310 exactly 0); the refinement stage is practically deterministic in its text effect. The `stability` block in `docs/data/cer_statistics.json` is closed (`status: measured`) via a loader in `cer_statistics_full` that consumes `output/audits/stability_pilot.json`. Side finding: the ABSOLUTE fidelity of fresh regenerations lies far above the delivered corpus values (the delivered tei_final embodies accumulated corrections the pipeline caches do not reproduce), which independently reinforces the E99 ban on regenerating the delivered corpus. The pilot's absolute values are therefore not comparable to the headline; only the within-pilot spread is the measurement.
+
+Documents: [journal.md](journal.md) session 89
+
+---
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |

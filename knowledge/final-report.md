@@ -630,15 +630,15 @@ the 2026-07-07 statistics run (after the stock-correction wave, decisions E94/E9
 
 | Metric | Mean | Median | 95% CI (mean) | Measures |
 | :---- | ----: | ----: | :---- | :---- |
-| fidelity CER (primary) | 2.50% | 1.37% | [1.65%, 3.54%] | real OCR and transcription fidelity (micro average 2.06%) |
-| full-text CER (diagnosis) | 18.79% | 12.13% | [10.17%, 29.93%] | full divergence including surplus text; no quality measure |
-| scope rate (surplus text) | 16.29% | 7.03% | | pipeline text beyond the selective reference; no error |
+| fidelity CER (primary) | 2.08% | 1.28% | [1.51%, 2.73%] | real OCR and transcription fidelity (micro average 1.94%) |
+| full-text CER (diagnosis) | 18.36% | 9.59% | [9.57%, 29.49%] | full divergence including surplus text; no quality measure |
+| scope rate (surplus text) | 16.28% | 7.03% | | pipeline text beyond the selective reference; no error |
 
 These values are to be read print-calibrated: the Transkribus quality bands
 (under 2% publication-ready, 2 to 5% research-usable) stem primarily from
 handwriting recognition practice and flatter a pure print OCR task where the
 bar sits higher. Decisive is therefore the comparison with the print OCR
-literature below: the fidelity median of 1.37% lies between the best
+literature below: the fidelity median of 1.28% lies between the best
 specialized print stack (Transkribus with LLM post-correction, 0.84%;
 Crosilla et al. 2025) and Transkribus alone (3.67%), solid for historical
 print but not at the top; the technical optimum is reached only by the best
@@ -658,8 +658,8 @@ printed image. Genuine text loss is the exception across the corpus; the
 true character recognition performance therefore lies below the cited
 values.
 
-The end-to-end pipeline beats raw Mistral OCR by 9.66 percentage points of
-fidelity CER (paired bootstrap, p = 0.0066, n = 25, 17 of 25 documents
+The end-to-end pipeline beats raw Mistral OCR by 10.08 percentage points of
+fidelity CER (paired bootstrap, p = 0.0034, n = 25, 17 of 25 documents
 improved, significant at alpha = 0.05). An earlier figure of -14.83 pp (p = 0.0004) was an artifact of the
 old trimmed, lowercased comparison and is retracted.
 
@@ -707,14 +707,15 @@ and assigns each elevated value its main cause. It substantiates that the
 spread does not stem from character recognition but from three structural
 patterns: surplus text against selective references (scope, no error),
 misclassification of running text as footnote (fixed for the demoted
-documents), and scrambled reading order on double pages. The documents
+documents), and the reading-order suspect signal on double pages, which
+mostly marks corrupt zone assignments over correct text (machine
+reordering falsified, E99). The documents
 marked clean show the recognition quality on simple layout with a complete
 reference. The full three-number decomposition per document is in
 `docs/data/cer_statistics.json`.
 
 | Doc | Type | Lang | Fidelity % | Main cause |
 | :---- | :---- | :---- | ----: | :---- |
-| 30 | A | FR | 11.59 | double page: genuine text loss, counter-check-verified; reordering alone does not recover it (E91) |
 | 1910 | B | DE | 2.81 | residue cleared by the verdict-driven demotion (E94) |
 | 760 | D | FR | 5.87 | double page: lost picture captions and unsegmented pagination, counter-check-verified (E91); reading order itself holds at the facsimile |
 | 1440 | B | DE | 5.87 | scope + faulty reference |
@@ -734,6 +735,7 @@ reference. The full three-number decomposition per document is in
 | 3040 | B | FR | 1.26 | scope (footnotes) |
 | 3020 | B | DE | 1.06 | clean |
 | 1330 | D | FR | 1.03 | scope |
+| 30 | A | FR | 0.90 | repaired: lost left half of double page 1 restored, zones corrected (E97/E98) |
 | 570 | A | FR | 0.79 | scope (extreme) |
 | 100 | A | FR | 0.85 | clean |
 | 2635 | A | DE | 0.73 | clean |
@@ -768,8 +770,8 @@ reference subset deviates significantly in character volume
 (Kolmogorov-Smirnov p = 0.041, disclosed in the JSON); the four
 normalization regimes differ little because the comparison pipeline already
 normalizes symmetrically; the run-to-run variance of the non-deterministic
-LLM stages is not yet quantified (the stability measurement, 5 documents
-times 3 runs, is released and executes at the workstation); the HCPR
+LLM stage is measured and negligible (5 documents times 3 runs, per-doc
+fidelity std 0.000 to 0.129 percentage points, E100); the HCPR
 adaption is frequency-based and underestimates substitutions.
 
 On the data side it remains on record that of the 286 delivered documents,
@@ -805,8 +807,8 @@ one place, with per-finding status.
 
 | # | Problem | Affected | Cause | Status |
 | :---- | :---- | :---- | :---- | :---- |
-| 1 | OCR duplication (a text block captured twice) | doc 30 | Mistral repeated a paragraph | fixed manually (fidelity 18.25 to 11.59%); no automatic deduplication stage exists |
-| 2 | scrambled reading order on double pages and columns | W19 worklist, prominently 30, 760 | landscape scans and column layouts; the old assembly sorted by y position only | fix built and previewed (E90); corpus rollout operator-gated (M3), residue of 39 pages to facsimile review (section 7) |
+| 1 | OCR duplication (a text block captured twice) | doc 30 | Mistral repeated a paragraph | fixed manually (fidelity 18.25 to 11.59%), superseded by the full page-1 repair (0.90%, E98); no automatic deduplication stage exists |
+| 2 | reading-order suspect signal (W19) on double pages and columns | W19 worklist | generator fixed (E90); on the delivered corpus the signal mostly marks corrupt block-to-zone assignments over CORRECT text | machine reordering falsified and rejected (0 improvements, 9 degradations across the reference docs, E99); worklist goes to facsimile curation |
 | 3 | running text wrongly marked as footnote | 290, 1910, 90, 40, 1520 | Gemini layout QA over-detects footnote regions; the text falls out of the fidelity comparison (rule E5) | fixed by reference-verified demotion (2026-06-08) and the corpus-wide verdict-driven demotion (2026-07-07, E94); the remaining audit candidates are facsimile-confirmed genuine footnotes plus one new borderline case |
 | 4 | scope: surplus text against selective references | for example 570, 580, 2310, 300, 3040 | the reference TEIs are partial transcriptions; the pipeline additionally captures covers, front matter, neighboring articles | no defect; disclosed as a diagnostic quantity via the fidelity/scope separation |
 | 5 | faulty reference | 1440 | the Transkribus ground truth itself contains a transcription error; the more correct pipeline is penalized | not fixable (ground truth by definition; example 5) |
@@ -824,8 +826,11 @@ Beyond that, open or deliberately left aside:
 - Header enrichment from Alma (project ID, MMSID, publication form) is ZBZ
   domain (E76, open item O8); most delivered headers therefore carry an
   empty container title.
-- The run-to-run stability of the non-deterministic LLM stages is not yet
-  quantified; the measurement is released and executes at the workstation.
+- The run-to-run stability of the non-deterministic LLM stage is measured
+  (E100): per-document fidelity spread 0.000 to 0.129 percentage points
+  across 3 full runs; the refinement is practically deterministic. Fresh
+  regenerations do not reach the curated corpus quality, reinforcing the
+  regeneration ban (E99).
 - The dictionary-hit-rate proxy does not generalize statistically (LOOCV
   R^2 below 0) and stays a plausibility bound.
 - On the data side, the three undelivered texts (1745, 1750, 1970), the

@@ -57,6 +57,43 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-07-07 Session 89: backlog plan executed; doc 30 repaired (E98), machine reordering falsified (E99), stability measured (E100)
+
+**Occasion** The operator approved the plan for the three remaining backlog items
+(doc-30 repair, M3 reading-order rollout, run-to-run stability pilot).
+
+**Goal** Close the backlog with evidence: repair what is repairable, prove or
+refute the reorder before touching the corpus, and quantify LLM non-determinism.
+
+**Course** Phase 1 restored the lost left half of doc 30's first double page
+(re-read at 300 DPI, facsimile-verified; three paragraphs with honest new zones
+r_4..r_6, two provably wrong zone boxes corrected, pb lifted to [222]); fidelity
+11.59% to 0.90%, corpus headline to mean 2.08% / median 1.28% (paired -10.08pp,
+p = 0.0034). Phase 2 built `tei_reading_order_fix.py` test-first (byte-splice
+permutation of robust W19 pages, marker idiom, shared `build_zone_bbox`); the
+plan's dry-run gate then FALSIFIED the corpus run: CER-guarded probe over copies
+of all 25 reference docs shows 0 improvements, 9 degradations up to +40pp,
+because W19 pages mostly carry corrupt block-to-zone assignments over correct
+text. No machine reordering, on any path; W19 reframed as text-or-zone suspect
+signal, tool kept as dry-run instrument with --write gate (E99). Phase 4
+measured run-to-run stability (5 docs x 3 forced runs in isolated directories):
+per-doc fidelity std 0.000-0.129pp, mean 0.040pp; `stability` closed as measured
+in the versioned statistics JSON (E100). Gates green throughout (suite, schema,
+validator 285/285); mirror regenerated; reports and register updated.
+
+**Decisions** E98 (repair executed), E99 (reorder falsified and banned, preview
+obsolete), E100 (stability measured on the production model). Pilot documents
+570/2310/1910/830/890 designated (stratified, reference-covered, small).
+
+**Status** All three backlog items closed. The corpus stands at 285/285 valid,
+fidelity mean 2.08% / median 1.28%, stability measured, W19 as curation
+worklist. Commits pending push gate.
+
+**Next steps**
+1. Push (operator gate).
+2. ZBZ items: better scan for 1520 p70; W19 zone-curation worklist; doc 10.
+3. Optional: doubled-page tails 760/1440 (E91-classified, curation).
+
 ### 2026-07-07 Session 88: Doc 30 adjudicated (E97), arbeitsbericht v3 finalized
 
 **Occasion** The operator asked for the best answers to three involvement questions

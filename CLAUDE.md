@@ -122,7 +122,9 @@ python -m scripts.eval.benchmark_cer --all --html                    # CER bench
 python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # scientific CER statistics (BCa CIs, paired, HCPR)
 python -m scripts.eval.corpus_audit                             # corpus audit: corpus funnel + drift check
 python -m scripts.eval.structure_audit                          # structure audit: pipeline TEI vs 25 ground truth (diagnosis, no gate; E84)
-python -m scripts.eval.reading_order_audit                      # W19 triage robust/fragile (E90, basis of the M3 view; --worklist: fragile pages per document)
+python -m scripts.eval.reading_order_audit                      # W19 triage robust/fragile (E90; --worklist: fragile pages per document)
+python -m scripts.tei.tei_reading_order_fix                     # W19 worklist instrument, dry-run default; corpus reorder empirically refuted (E99), --write only for facsimile-verified pages
+python -m scripts.eval.stability_pilot --dry-run                # run-to-run stability pilot scope (real run: paid Step-2 calls, E100)
 python -m scripts.eval.char_lint_audit                          # character normalization audit: apostrophes, guillemets, space classes (E92)
 python -m scripts.eval.pb_number_audit                          # pb@n plausibility + per-document semantics classification (E92)
 python -m scripts.eval.hi_preservation_audit                    # OCR emphasis signal survival into tei_final (E92/E93)
@@ -137,7 +139,8 @@ python -m pytest tests/test_tei_header.py -q                    # teiHeader deli
 python -m pytest tests/test_tei_validator.py -q                 # validator: reference CER in percent (O24/E69)
 python -m pytest tests/test_pb_split.py -q                      # <pb> segmentation: pb_split.py byte-identical (E69)
 python -m pytest tests/test_tei_conformance.py -q               # conformance fixes: div-n/type, figure-xmlid, head-lemma, title-main, foreign-lang (E84)
-python -m pytest tests/test_reading_order.py tests/test_reading_order_audit.py tests/test_reassemble_preview.py -q  # reading order: permutation + W19 triage + M3 preview (E90)
+python -m pytest tests/test_reading_order.py tests/test_reading_order_audit.py tests/test_reassemble_preview.py tests/test_reading_order_fix.py -q  # reading order: permutation + W19 triage + preview + in-place instrument (E90/E99)
+python -m pytest tests/test_stability_pilot.py -q               # stability pilot: aggregation + statistics wiring (E100)
 python -m pytest tests/test_char_lint_audit.py tests/test_pb_number_audit.py tests/test_hi_preservation_audit.py tests/test_relation_integrity_audit.py tests/test_body_note_audit.py -q  # guideline-conformity audits (E92)
 python -m pytest tests/test_char_normalize.py tests/test_pb_folio.py tests/test_body_note_demote.py tests/test_marker_common.py tests/test_status_marker.py tests/test_completeness_check.py tests/test_step1_filter.py -q  # stock-correction tools + shared marker scaffolding + step-1 fixes (E92/E94)
 ```
