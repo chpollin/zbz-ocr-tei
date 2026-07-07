@@ -10,7 +10,7 @@ method:
 status: draft
 language: de
 created: 2026-01-29
-updated: 2026-06-21
+updated: 2026-07-07
 tags: [zbz-ocr-tei, journal]
 template:
   name: Vorlage Journal
@@ -50,6 +50,24 @@ Die Sitzungen 1 bis 68 stehen unveraendert im Kompakt-Archiv weiter unten (eine 
 pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
 
 ## Eintraege
+
+### 2026-07-07 Sitzung 79: Doku-Korrektheits-Pass (README, CLAUDE.md, knowledge/ und referenzierte Aussenstellen)
+
+**Anlass** Operator-Auftrag, den Knowledge-Ordner, README.md und CLAUDE.md auf ausschliesslich richtige und konstruktive Aussagen zu pruefen und Befunde zu beheben.
+
+**Ziel** Faktisch falsche, kollidierende und fehlende Doku-Aussagen identifizieren und beheben, ohne Code- oder Datenaenderung.
+
+**Verlauf** Audit ueber die Triade plus die von ihr referenzierten Aussenstellen (scripts/README.md als Inventar, docs/methode.html als oeffentliche Methodenseite). Neun Befunde, alle behoben. Faktisch falsch: CLAUDE.md und methode.html behaupteten, `docs/data/cer_statistics.json` sei nicht eingecheckt, waehrend die Git-Historie die Datei seit 2026-04-27 als bewusst mitgefuehrtes Beleg-Artefakt der CER-Entwicklung zeigt; quality.md nannte als Validation-Report-Pfad `tei_unified`, der Validator schreibt seit der Default-Umstellung (Sitzung 76) in das validierte Verzeichnis, per Default `tei_final` (der alte Pfad haette auf einen veralteten Report mit Fehlalarm-Zahlen gefuehrt); das README zaehlte 10 statt 12 Knowledge-Dokumente. Kollidierend bzw. unvollstaendig: die Kennung M3 bezeichnete zweierlei (entfernter NER-Meilenstein in projekt.md gegen Strukturfix-Auslieferung in Journal/E90), das README verschwieg den Lesereihenfolge-Defekt samt wartendem Rollout, und der M5-Punkt der Pending-Liste las sich als eigene Bringschuld statt als ZBZ-Aufgabe. Konstruktive Luecken: die M3-Werkzeuge `reading_order_audit` und `tei_reassemble_preview` fehlten in der CLI-Referenz (CLAUDE.md) und im Inventar (scripts/README.md), samt ihrer Testsuiten; der E82-Caveat zu `ocr_dedup` war ueberholt. Zusaetzlich wurden ungebundene volatile Testzahlen aus CLAUDE.md, methode.html und scripts/README.md gestrichen.
+
+Zweite Welle auf Operator-Zuruf: neue Markdown-Stilregeln (kein Bold-Emphasis, kein Gedankenstrich-Konnektor, keine volatilen Mengenangaben in durablen Dokumenten) in CLAUDE.md §Code-Konventionen kodifiziert und per Subagent vollstaendig auf das README angewandt. Das README wurde zugleich per SSoT-Deduplikation verschlankt: Komponenten-Tabelle, Verzeichnisbaum, Engine- und CDN-Tabellen sowie der lange Quick-Start entfielen, jeweils nach Verifikation, dass jeder Fakt im Ziel-Knowledge-Dokument existiert; einziger echter Umzug war impressum.html als fuenfte statische Seite nach viewer.md. Entbundene Zaehlungen in CLAUDE.md und index.md wurden qualitativ gefasst.
+
+**Entscheidungen** `cer_statistics.json` bleibt versioniert, weil die Git-Historie bewusstes Mitfuehren belegt (jeder CER-Commit aktualisiert die Datei); verworfen wurde das Enttracken, die falschen Texte waren der Defekt. M3-Kollision per Kennungs-Hinweis in projekt.md geloest statt Umnummerierung, weil die Journaleintraege 74 bis 78 der primaere Wiedereinstieg sind und ein zweiter Name Alias-Drift erzeugt. Volatile Testzahlen gestrichen statt gepflegt, weil kein Drift-Waechter existiert und die Kommandos ihre Zahl selbst melden. Keine neue Registernummer (Doku-Hygiene, kein Architekturentscheid); E82 per Inline-Annotation praezisiert. Stilregeln gelten prospektiv, der Bold-/Gedankenstrich-Bestand in knowledge/ wurde nicht flaechig umgeschrieben. Operator-Entscheide im Anschluss: die gesamte Markdown-Doku wird englisch, einschliesslich Journal, Entscheidungsregister und reports/; die vier deutsch benannten Knowledge-Dateien werden englisch umbenannt (project, methodology, infrastructure, ecosystem-synthesis); vor der Uebersetzungswelle ein Savepoint-Commit.
+
+**Stand** Beide Wellen umgesetzt und verifiziert: alle neun Befunde behoben, README frei von Bold, Gedankenstrichen und volatilen Zahlen, Links geprueft, Code und Lieferbestand unangetastet. Dieser Stand wird als Savepoint committet; die Uebersetzungswelle folgt als eigene Einheit. M3 bleibt unveraendert operator-gated (Sitzung 78).
+
+**Naechste Schritte**
+1. Uebersetzungswelle: alle Markdown-Dokumente englisch (inkl. Journal/Register/Reports), Renames + Querverweis-Sweep, danach eigener Commit.
+2. Operator-Entscheid M3 (unveraendert offen): Trockenlauf abnehmen, Auslieferung freigeben, 39 Restseiten am Faksimile sichten.
 
 ### 2026-06-21 Sitzung 78: Ursache der 39 Restseiten isoliert (Count-Mismatch, nicht Geometrie-Gap; korrigiert Sitzung 77)
 

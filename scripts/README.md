@@ -16,8 +16,8 @@ Pipeline-Stufen und Datenfluss: [../knowledge/pipeline.md](../knowledge/pipeline
 | `core/` | geteilte Loader | `loaders.py` (OCR/Layout-Discovery) |
 | `ocr/` | Textschicht | `ocr_pipeline` (Mistral-Basis + opt-in Gemini-Vision-OCR `-e gemini`), `gemini_ocr_correct`, `llm_postprocess` (Haiku, optional E17), `classify_docs` (Gemini-Metadaten) |
 | `layout/` | Layout + Export | `run_layout_analysis` (Docling lokal), `run_layout_cloud` (docling-serve), `layout_qa_gemini` (QA/Detect/Auto), `generate_layout_overlays`, `page_xml_generator` + `mets_generator` |
-| `tei/` | TEI-Erzeugung | `tei_unified` (Orchestrator), `tei_step1/2/3` (Scaffold/Gemini/Assembly), `pb_split` (`<pb>`-Segmentierung, E69), `tei_generator`, `tei_mapping_prompt`, `tei_xml_utils`, `tei_validator`, `tei_add_revision`, `tei_blank_marker`, `tei_status_marker` (E66) |
-| `eval/` | Qualitaet | `evaluate_ocr` (CER/WER-Engine), `eval_report` (HTML), `benchmark_cer`, `cer_statistics` + `_runner` + `_full` (BCa/Paired/HCPR), `quality_proxy`, `completeness_check`, `corpus_audit` |
+| `tei/` | TEI-Erzeugung | `tei_unified` (Orchestrator), `tei_step1/2/3` (Scaffold/Gemini/Assembly), `pb_split` (`<pb>`-Segmentierung, E69), `tei_generator`, `tei_mapping_prompt`, `tei_xml_utils`, `tei_validator`, `tei_add_revision`, `tei_blank_marker`, `tei_status_marker` (E66), `tei_reassemble_preview` (M3-Trockenlauf, E90) |
+| `eval/` | Qualitaet | `evaluate_ocr` (CER/WER-Engine), `eval_report` (HTML), `benchmark_cer`, `cer_statistics` + `_runner` + `_full` (BCa/Paired/HCPR), `quality_proxy`, `completeness_check`, `corpus_audit`, `structure_audit` (E84), `reading_order_audit` (W19-Triage, E90) |
 | `edition/` | Frontend-Daten + Export | `generate_edition_data` (Katalog + Mirror), `page_manifest` (Pro-Objekt-Manifest), `extract_pages` (PDF -> PNG), `transkribus_export` (PAGE-XML-Upload-Bundle) + `transkribus_upload` (REST-Upload in Collection) |
 
 ## Haeufige Einstiegspunkte
@@ -41,13 +41,14 @@ python -m pytest tests/ -q
 
 Gates pro Domaene:
 
-- `test_cer_statistics.py` — Statistik-Primitiven (BCa/Paired/HCPR), 55 Tests
-- `test_corpus_audit.py` — Korpus-Invarianten + Vollstaendigkeits-Gate, 24 Tests
+- `test_cer_statistics.py` — Statistik-Primitiven (BCa/Paired/HCPR)
+- `test_corpus_audit.py` — Korpus-Invarianten + Vollstaendigkeits-Gate
 - `test_cer_extraction.py` — OCR-/CER-Textextraktion
 - `test_tei_schema.py` — `tei_final` gegen `zbz_hersch.rng` (E68)
 - `test_tei_header.py` — teiHeader-Liefer-Vertrag (idno + biblStruct + langUsage, E69)
 - `test_tei_validator.py` — Referenz-CER in Prozent (O24/E69)
 - `test_pb_split.py` — `<pb>`-Segmentierung byte-identisch (E69)
+- `test_reading_order.py` / `test_reading_order_audit.py` / `test_reassemble_preview.py` — Lesereihenfolge: Permutation, W19-Triage, M3-Vorschau (E90)
 - `test_scripts_health.py` — Syntax + interne Imports aller `scripts/`
 
 ## Konventionen
@@ -61,4 +62,4 @@ Gates pro Domaene:
 
 ---
 
-*Aktualisiert: 2026-05-27 (Domaenen-Reorg: `scripts.<paket>.<modul>`)*
+*Aktualisiert: 2026-07-07 (M3-Werkzeuge ergaenzt; Domaenen-Reorg 2026-05-27)*

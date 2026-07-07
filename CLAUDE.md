@@ -14,7 +14,7 @@ Projekt-Konstitution. Operative Regeln und Konventionen, die bei jedem Pipeline-
 
 Einstiegspunkt: [knowledge/index.md](knowledge/index.md) — Navigation, Abhaengigkeiten, Schluesselkonzepte.
 
-12 thematisch klar getrennte Dokumente:
+Thematisch getrennte Dokumente:
 
 - [projekt.md](knowledge/projekt.md) — Auftrag, Korpus, ZBZ-Workflow, Status
 - [pipeline.md](knowledge/pipeline.md) — 6-Stufen-Pipeline, Engines, TEI-Mapping
@@ -39,6 +39,8 @@ Einstiegspunkt: [knowledge/index.md](knowledge/index.md) — Navigation, Abhaeng
 - **Code-Kommentare:** ausschliesslich Englisch, kompakt, und nur wo wirklich noetig — fuer Constraints, die der Code selbst nicht zeigt. Keine Erklaerungen des Offensichtlichen, keine Herkunfts- oder Aenderungsnotizen (kein "added 2026-06-10", kein "fixes H1") im Code; Entscheidungs-Provenienz gehoert in [knowledge/decisions.md](knowledge/decisions.md) bzw. ins Journal.
 - **Keine Personennamen in Markdown:** in Repo-Markdown (knowledge/, README, reports/) Rollen und Organisationen verwenden (ZBZ, DHCraft, Projektleitung). Jeanne Hersch als Gegenstand des Korpus ist davon ausgenommen.
 - **Keine Kostenangaben:** in Doku, Reports und Code keine Geldbetraege/Budgets (USD/$/CHF/EUR) nennen. Betriebshinweise wie `kostenlos`/`kostenpflichtig` (= kein/ein API-Call) sind erlaubt, da sie Aufrufe steuern, keine Kosten beziffern.
+- **Markdown-Stil (prospektiv):** in neuem Repo-Markdown kein `**`-Bold als Emphasis (Absatz-Label als Ueberschrift passender Ebene oder Fliesstext) und kein `&mdash;`/Gedankenstrich als Konnektor (Komma, Semikolon, Doppelpunkt vor Liste oder eigener Satz). Gilt prospektiv, Bestand wird nicht flaechig umgeschrieben. Ausnahme: die Bold-Feldlabels der Journal-Vorlage bleiben.
+- **Keine volatilen Mengenangaben in durablen Dokumenten:** Dokument-/Seiten-Zahlen, Prozent- und Testzahlen gehoeren nicht in durable Markdown-Dokumente (README, knowledge/-Dauerdokumente), stattdessen qualitativ formulieren und auf die generierende Quelle verweisen (`corpus_audit` fuer Korpuszahlen, Validator/Audit fuer Zaehlungen, [knowledge/quality.md](knowledge/quality.md) fuer CER-Werte). Fixe definierende Groessen bleiben (die 25 Ground-Truth-Referenz-TEIs, gepinnte Library-Versionen, Datumsangaben, Entscheidungs-/Warn-Kennungen, Dokument-IDs). Ausgenommen sind datierte Snapshot-Dokumente (journal.md-Eintraege, decisions.md-Register, reports/) und generator-gebundene Tabellen (z.B. projekt.md §Korpus), dort ist die Zahl der Zweck.
 - **Windows-Encoding:** keine Unicode-Sonderzeichen in Print-Statements
 - **Pfade:** absolute Pfade oder `pathlib`
 - **Output:** JSON fuer Daten, HTML fuer Reports
@@ -66,7 +68,7 @@ Token-Katalog: `docs/assets/css/tokens.css`. Basis-Komponenten: `docs/assets/css
 - `scripts/` — Pipeline + Werkzeuge, nach Domaene gruppiert: `ocr/`, `layout/`, `tei/`, `eval/`, `edition/`, `core/` (nur `config.py` + `utils.py` top-level). Inventar: [scripts/README.md](scripts/README.md)
 - `output/` — alle generierten Datenströme (gitignored, NICHT versioniert)
 - `docs/` — statische Inspektions-/Demo-Site (GitHub-Pages-tauglich): HTML, `assets/` (`css/` + `js/`), `data/` (generierter Mirror), `images/`
-- `knowledge/` — Wissensbasis (12 Docs), Einstieg [knowledge/index.md](knowledge/index.md)
+- `knowledge/` — Wissensbasis, Einstieg [knowledge/index.md](knowledge/index.md)
 - `tests/` — pytest-Suites
 
 ### Objekt = Bündel paralleler Datenströme
@@ -118,19 +120,22 @@ python -m scripts.eval.quality_proxy --all --html                    # Quality P
 python -m scripts.eval.completeness_check --html                     # Vollstaendigkeits-Check (Seiten)
 python -m scripts.eval.benchmark_cer --all --html                    # CER-Benchmark (25 GT-Docs)
 python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # wiss. CER-Statistik (BCa-CIs, Paired, HCPR)
-python -m scripts.eval.corpus_audit                             # Korpus-Audit: Trichter 325->289->286->285 + Drift-Check
+python -m scripts.eval.corpus_audit                             # Korpus-Audit: Korpus-Trichter + Drift-Check
 python -m scripts.eval.structure_audit                          # Struktur-Audit: Pipeline-TEI vs 25 Ground Truth (Diagnose, kein Gate; E84)
-python -m pytest tests/test_cer_statistics.py -q                # 55 Tests fuer Statistik-Library
-python -m pytest tests/test_corpus_audit.py -q                  # 24 Tests: Korpus-Invarianten + delivered-Verteilung + Vollstaendigkeits-Gate
+python -m scripts.eval.reading_order_audit                      # W19-Triage robust/fragil (E90, M3-Sicht-Grundlage; --worklist: fragile Seiten je Dokument)
+python -m scripts.tei.tei_reassemble_preview --all              # M3-Trockenlauf: Reassembly-Vorschau -> output/tei_preview + Bericht, tei_final unberuehrt
+python -m pytest tests/test_cer_statistics.py -q                # Statistik-Library (BCa/Paired/HCPR)
+python -m pytest tests/test_corpus_audit.py -q                  # Korpus-Invarianten + delivered-Verteilung + Vollstaendigkeits-Gate
 python -m pytest tests/test_scripts_health.py -q                # Script-Health: Syntax + interne Imports (alle scripts/)
 python -m pytest tests/test_tei_schema.py -q                    # Schema-Gate: tei_final gegen zbz_hersch.rng (E68)
 python -m pytest tests/test_tei_header.py -q                    # teiHeader-Liefer-Vertrag: idno + biblStruct + langUsage (E69)
 python -m pytest tests/test_tei_validator.py -q                 # Validator: Referenz-CER in Prozent (O24/E69)
 python -m pytest tests/test_pb_split.py -q                      # <pb>-Segmentierung: pb_split.py byte-identisch (E69)
 python -m pytest tests/test_tei_conformance.py -q               # Konformitaets-Fixes: div-n/type, figure-xmlid, head-lemma, title-main, foreign-lang (E84)
+python -m pytest tests/test_reading_order.py tests/test_reading_order_audit.py tests/test_reassemble_preview.py -q  # Lesereihenfolge: Permutation + W19-Triage + M3-Vorschau (E90)
 ```
 
-Output `docs/data/cer_statistics.json` (regenerierbar, derzeit nicht eingecheckt). Das interaktive CER-Dashboard wurde mit E56 abgeschafft. Methodik: [knowledge/quality.md §CER-Methodik](knowledge/quality.md).
+Output `docs/data/cer_statistics.json` (versioniert als Beleg der publizierten CER-Werte, deterministisch regenerierbar bei Seed 42). Das interaktive CER-Dashboard wurde mit E56 abgeschafft. Methodik: [knowledge/quality.md §CER-Methodik](knowledge/quality.md).
 
 ## Textschicht
 
@@ -185,7 +190,7 @@ python -m scripts.tei.tei_validator --compare-ref --doc {DOC_ID}         # gegen
 ## Pro-Objekt-Manifest (Leerseiten + Workflow-Status, E65/E66)
 
 ```bash
-python -m scripts.edition.page_manifest                                          # alle 285 Docs (idempotent: status+history bleiben)
+python -m scripts.edition.page_manifest                                          # alle Docs (idempotent: status+history bleiben)
 python -m scripts.edition.page_manifest --doc {DOC_ID}                           # Einzeldokument
 python -m scripts.edition.page_manifest --dry-run                                # nur Bericht, nichts schreiben
 python -m scripts.tei.tei_blank_marker --dry-run                         # Leerseiten-Marker: Vorschau
@@ -232,9 +237,9 @@ Pipeline-PAGE-XML (`output/page_xml/`) zurueck nach Transkribus: erst Bundle bau
 Konzept + Dialekt-Details: [knowledge/pipeline.md §Transkribus-Export](knowledge/pipeline.md).
 
 ```bash
-python -m scripts.edition.transkribus_export --sample                            # stratifizierte Stichprobe (~18) -> output/transkribus_upload/
+python -m scripts.edition.transkribus_export --sample                            # stratifizierte Stichprobe -> output/transkribus_upload/
 python -m scripts.edition.transkribus_export --all                               # kompletter Korpus
-python -m scripts.edition.transkribus_export --reference                         # die 24 Objekte, die ZBZ schon in Transkribus hat
+python -m scripts.edition.transkribus_export --reference                         # die Referenz-Objekte mit ZBZ-Transkribus-Bestand
 python -m scripts.edition.transkribus_export --doc {DOC_ID} [--zip]              # gezielt (+ optional ein .zip je Objekt)
 ```
 

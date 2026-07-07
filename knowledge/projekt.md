@@ -9,7 +9,7 @@ method:
   url: https://dhcraft.org/Promptotyping/
 status: complete
 created: 2026-02-18
-updated: 2026-06-10
+updated: 2026-07-07
 tags: [zbz-ocr-tei, projekt, korpus, zbz, workflow]
 ---
 
@@ -141,6 +141,11 @@ und [quality.md](quality.md).
 | M3 | NER + Wikidata | Recall >70%, Linking >50% | Entfernt (E71, 2026-05-27 — Verlinkung im Output nicht lieferfaehig) |
 | M4 | TEI-XML | DTA-konform, schema-valide | Done (285/285 valide gegen `zbz_hersch.rng`) |
 | M5 | Daten-Uebergabe an ZBZ | 285 Docs verarbeitet + schema-valide geliefert; fachliche Verifikation = ZBZ-Aufgabe (Tracking via Workflow-Status) | Daten geliefert (285/285 generiert); alle Stroeme `unverifiziert` als Uebergabe-Default (E66/E67); fachliche Kuration liegt bei ZBZ |
+
+> Kennungs-Hinweis: „M3" bezeichnet in der aktuellen Sach-Roadmap (Journal Sitzung 74 ff.,
+> [decisions.md](decisions.md) E90) die operator-gated Strukturfix-Auslieferung der
+> Lesereihenfolge an den Lieferbestand, nicht den entfernten NER-Meilenstein dieser Tabelle.
+> Stand dort: Trockenlauf liegt vor (`reports/m3-reassemble-preview.md`), Freigabe offen.
 
 ### Komponenten-Status
 

@@ -30,7 +30,7 @@ SSoT pro Domaene, eine Datei pro Thema.
 | [projekt.md](projekt.md) | Was ist das Projekt? Auftrag, Korpus-Trichter + Seitenbilanz (generiert via corpus_audit), ZBZ-Workflow, Status |
 | [pipeline.md](pipeline.md) | Wie ist die Pipeline aufgebaut? Stufen PDF → TEI, Engines (Mistral, Docling, Gemini), TEI-Mapping (DTA + ZBZ), Round-Trip-Sektion |
 | [workflow.md](workflow.md) | Wie laeuft der End-to-End-Datenfluss? Datenfluss-Diagramm, Datenformate pro Stufe, Save-Mechanismus im Viewer, Round-Trip vom Edit zur regenerierten TEI, Provenance-Konzept, geplante `_complete.xml`-Variante, Roadmap |
-| [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Fidelity Mean 2.71% / Median 1.40%), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Workflow-Status pro Strom (E66, ersetzt Agent-Screening) |
+| [quality.md](quality.md) | Wie gut ist die Pipeline? CER-Benchmark (Fidelity-CER als Headline, Werte in quality.md), CER-Methodik (BCa-Bootstrap), TEI-Schema-Validierung, Quality-Proxy, Workflow-Status pro Strom (E66, ersetzt Agent-Screening) |
 | [viewer.md](viewer.md) | Wie funktioniert der Pipeline-Viewer? Single-Page-App mit Doc-Liste, Faksimile + Layout-Overlay (OpenSeadragon E58), OCR/TEI-Editor, Edit-Toggle pro Panel (E60), ein "Speichern" -> direkt ins Repo + Mirror (E78/E79), Export ▾ pro Strom |
 | [frontend-gaps.md](frontend-gaps.md) | Wie gut erfuellt das Frontend seine User-Stories? Befunde (Bugs/UX/A11y/Performance) je Schweregrad mit `datei:zeile`, Top-10 Hersch, Oekosystem-Vergleich (6 Frontends), Querschnitts-Muster, Methodik-Notizen (2026-06-07) |
 | [oekosystem-synthese.md](oekosystem-synthese.md) | Gesamtbild der drei Projekte (zbz / szd-htr / teiCrafter): Setup + Gates + kritischer Pfad, je Projekt Pipeline/Status, ALLE User-Stories, Integration + Bildluecke, Methodik, offene Punkte + Doku-Widersprueche, SSoT-Zuordnung (2026-06-07) |
@@ -79,7 +79,7 @@ journal         — chronologisch, kompakter Ueberblick
 | Agent-Based Quality Screening (E41, deprecated E66) | 7-Schichten-Pre-Curation, Review-JSON pro Doc — als Qualitaetssignal abgeschafft, weil kein Mensch beteiligt war; Legacy als `_screening_legacy.json` erhalten | [quality.md](quality.md) |
 | Workflow-Status pro Strom (E66/E67/E77) | unverifiziert \| in_arbeit \| verifiziert je OCR/Layout/TEI (drei Stufen seit E77), im Manifest mit Provenienz-History, projizierbar in `<revisionDesc>`. Ampel: grau=unverifiziert, gelb=in_arbeit, gruen=verifiziert, rot reserviert | [quality.md](quality.md), [viewer.md](viewer.md) |
 | Ampel-Reframing (E67) + 3-Stufen-Kollaps (E77) | "Pipeline-Output EXISTIERT, ist nur unverifiziert" -- daher Status `offen` umbenannt zu `unverifiziert`, rote Default-Lesart aufgegeben (E67); E77 fuehrt `bearbeitet`+`fertig` zu `verifiziert` zusammen, eine Farbe je Stufe | [decisions.md §E77](decisions.md) |
-| CER-Benchmark (E51/E70/E85) | End-to-End TEI-vs-TEI, Fidelity-CER Mean 2.71% / Median 1.40% (alle 25 Docs) | [quality.md](quality.md) |
+| CER-Benchmark (E51/E70/E85) | End-to-End TEI-vs-TEI, Fidelity-CER als Headline ueber die 25 Referenz-Docs (Werte in quality.md) | [quality.md](quality.md) |
 | CER-Statistik (E54) | BCa-Bootstrap-CIs, paired E2E vs OCR-only, HCPR | [quality.md](quality.md) |
 | Quality Proxy | Dictionary Hit Rate fuer 285 Docs ohne Ground Truth | [quality.md](quality.md) |
 | revisionDesc (E42) | Pipeline + Screening-Status im TEI-Header, reist mit dem Dokument | [pipeline.md](pipeline.md) |

@@ -528,7 +528,7 @@ projektspezifischen Schema absichtlich ausgeschlossen sind.
 |---|---|
 | Schema | `data/schema/zbz_hersch.rng` |
 | Validator | `scripts/tei/tei_validator.py` |
-| Validation Report | `output/tei_unified/validation_report.{json,html}` |
+| Validation Report | `output/tei_final/validation_report.{json,html}` (landet im jeweils validierten Verzeichnis; Default ist die SoT `tei_final`) |
 
 ---
 

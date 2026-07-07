@@ -26,10 +26,11 @@ der frueher hier moegliche Engine-Vergleich liegt seit E64 ausserhalb des Viewer
 (CER-Benchmark + Methode-Seite, E62). Nicht gedacht als oeffentliche Edition oder
 Lese-Frontend — das macht ZBZ ueber Oxygen/Alma.
 
-**Vier Seiten:** Korpus-Uebersicht (`index.html`: filter- und sortierbare Doc-Liste mit
+**Fuenf Seiten:** Korpus-Uebersicht (`index.html`: filter- und sortierbare Doc-Liste mit
 Workflow-Status pro Strom, E66), der eigentliche Viewer (`viewer.html`: Faksimile + Layout-Overlay links,
 Transkription/TEI rechts), eine Methode-Seite (`methode.html`: CER-Headline + stratifizierte
-Werte + Limitations + Literatur-Vergleich, E62, statisch) und eine About-Seite (`about.html`).
+Werte + Limitations + Literatur-Vergleich, E62, statisch), eine About-Seite (`about.html`) und
+das Impressum (`impressum.html`: rechtlicher Hinweis).
 Der Viewer kennt drei Modi: *Anzeigen*, *Layout bearbeiten*, *Text bearbeiten*.
 Persistenz erfolgt server-los ueber **einen** Speichern-Knopf: er sichert alle ungespeicherten
 Stroeme (Layout, Text, Workflow-Status) in einem Akt -- direkt in den Repo-Klon via File System
