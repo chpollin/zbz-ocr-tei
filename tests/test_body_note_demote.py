@@ -198,6 +198,8 @@ def test_demoted_real_doc_stays_schema_valid():
     entries = [{"doc": "530", "page": n.page, "len": n.length,
                 "verdict": "HAUPTTEXT", "real_footnote_following": True}
                for n in notes if n.length >= 400]
+    if not entries:
+        pytest.skip("530 traegt keine langen foot-notes mehr (Bestandslauf E94 vollzogen)")
     new_raw, _ = transform_document(raw, entries, promote=True, validator=validator)
     assert new_raw != raw
     assert validator(new_raw), "Demotetes 530 muss valide bleiben"

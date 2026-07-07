@@ -57,6 +57,46 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-07-07 Session 85: E94 stock runs executed; echo-strip sp defect found, repaired, healing pending
+
+**Occasion** The operator executed both pending stock runs (`tei_pb_folio
+--strip-folio-echo`, then `tei_body_note_demote --promote-footnotes`); both
+reproduced the dry-run figures exactly (folio sources 1753/1033/151/208/970/79,
+1212 echoes; demotion 59/2/2/19, 0 unmatched).
+
+**Goal** Run the gates on the corrected corpus, diagnose any regression to the root
+cause, and repair it in the tool rather than the data.
+
+**Course** The schema gate failed for four interview documents (2330, 2400, 2540,
+3180) that were valid before the run. Bisecting the diff against the pre-run backup
+located the defect: footer echoes inside `<sp>` with empty `<speaker/>`; the strip
+removed the `<p>` and left a wrapper the schema rejects (14 orphans corpus-wide).
+The repair makes the strip sp-aware (whole-block removal, named-speaker blocks
+untouched, orphan healing on any run), verified end-to-end on copies of all four
+documents. Rewriting the integration tests to the post-run state exposed a second
+defect: a rerun would have bracketed leftover scan fallbacks in mostly-bracketed
+documents into false print folios; guarded via `doc_has_brackets` (register E95).
+UTF-8 integrity of the corrected corpus spot-checked (console mojibake was cp1252
+rendering only).
+
+**Decisions** Repair in the tool, then heal the corpus by re-running it, instead of
+hand-editing the four documents (E95; keeps provenance on the marker path). Echoes
+under a named speaker stay in the text.
+
+**Status** Tool fix and post-state tests committed; suite green except the four
+schema failures that the healing rerun resolves. Corpus healing and the after-gates
+remain pending.
+
+**Next steps**
+1. Operator re-runs `python -m scripts.tei.tei_pb_folio --strip-folio-echo` (heals
+   14 wrappers in 4 documents, otherwise a no-op).
+2. Gates and after-audits (`pytest`, `tei_validator --all`, `pb_number_audit`,
+   `body_note_audit`), then fill the two stock-run slots in
+   `reports/arbeitsbericht-v3.md`.
+3. CER re-measurement after the wave (char normalization and demotions changed the
+   hypothesis text of reference documents).
+4. Doc-30 adjudication; mirror regeneration.
+
 ### 2026-07-07 Session 84: E92/E94 tooling refactored, behavior equivalence proven
 
 **Occasion** The E92/E94 wave was built by parallel agents, so the marker tools and

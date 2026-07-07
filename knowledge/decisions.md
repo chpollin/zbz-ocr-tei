@@ -340,6 +340,20 @@ Findings feeding later decisions: the sampled doc-30 double pages show no charac
 
 Documents: [journal.md](journal.md) session 83, [specification.md](specification.md)
 
+### E95 Echo-strip repaired sp-aware after the executed stock runs; rerun made semantically idempotent (2026-07-07)
+
+Occasion: the operator executed both pending E94 stock runs (`tei_pb_folio --strip-folio-echo`, then `tei_body_note_demote --promote-footnotes`); both reproduced the dry-run-verified figures exactly. The post-run gates then caught four schema-invalid interview documents (2330, 2400, 2540, 3180), all previously valid.
+
+Root cause: in interview documents the footer echo sits inside `<sp>` with an empty `<speaker/>`; the echo strip removed the `<p>` but left the wrapper, and the schema requires at least one `<p>` per `<sp>` (14 orphaned wrappers corpus-wide). The dry run could not see this because it counts removals without validating.
+
+Repair (test-first): the strip is sp-aware. An echo that is the sole content of an `<sp>` with empty speaker removes the whole block; an `<sp>` with a named speaker stays untouched, echo included (content over cosmetics); already orphaned empty wrappers are healed on any strip run, so re-running the tool repairs the corpus. Healing verified end-to-end on copies of all four documents (schema-valid afterwards, second run a no-op).
+
+Second defect found by the new post-state tests: a rerun reclassified mostly-bracketed documents as printed_folio and would have bracketed the remaining unbracketed scan fallbacks into false print folios (e.g. doc 110 scan page 1 to `[1]`). Guard: once a document carries bracketed pb@n, unbracketed values are by the R-PBN convention scan fallbacks of a prior run and are never reinterpreted (`doc_has_brackets` in `resolve_page_folio`).
+
+The integration tests in `tests/test_pb_folio.py` now assert the delivered post-run state plus rerun idempotence instead of the pre-run proposals. Corpus healing runs over the operator-gated marker path (a repeated `tei_pb_folio --strip-folio-echo`).
+
+Documents: [journal.md](journal.md) session 85
+
 ---
 
 ## Open items

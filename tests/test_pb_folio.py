@@ -138,6 +138,22 @@ def test_printed_folio_doc_dot_notation():
     assert resolve_page_folio(2, False, None, {}, None, False, "7.14", True)[0] == "[7.14]"
 
 
+def test_rerun_keeps_scan_fallback_unbracketed():
+    # Wiederholungslauf: Dokument traegt schon Klammern, ungeklammerte Werte sind
+    # Scan-Fallbacks des ersten Laufs und duerfen nicht zu Druckfolios werden
+    new_n, source, num = resolve_page_folio(
+        page=1, blank=False, footer=None, interp={}, offset=None,
+        offset_ok=False, current_n="1", printed_folio_doc=True, doc_has_brackets=True)
+    assert (new_n, source, num) == ("1", "fallback", None)
+
+
+def test_rerun_rebrackets_bracketed_idempotent():
+    new_n, source, num = resolve_page_folio(
+        page=2, blank=False, footer=None, interp={}, offset=None,
+        offset_ok=False, current_n="[248]", printed_folio_doc=True, doc_has_brackets=True)
+    assert (new_n, source, num) == ("[248]", "existing_folio", "248")
+
+
 def test_blank_page_bracketed_only_when_interpolable():
     new_n, source, num = resolve_page_folio(
         page=3, blank=True, footer=None, interp={3: 5}, offset=None,
@@ -187,22 +203,43 @@ def test_offset_is_stable_threshold():
 
 def test_echo_removed_on_exact_match():
     chunk = "<p>248</p><p>Fliesstext</p>"
-    new, removed = strip_echo_paragraphs(chunk, "248")
-    assert removed == 1 and new == "<p>Fliesstext</p>"
+    new, removed, healed = strip_echo_paragraphs(chunk, "248")
+    assert (removed, healed) == (1, 0) and new == "<p>Fliesstext</p>"
 
 
 def test_echo_whitespace_tolerant():
-    new, removed = strip_echo_paragraphs("<p> 7 </p>", "7")
+    new, removed, _ = strip_echo_paragraphs("<p> 7 </p>", "7")
     assert removed == 1 and new == ""
 
 
 def test_echo_not_removed_on_partial_match():
-    assert strip_echo_paragraphs("<p>248 und mehr</p>", "248") == ("<p>248 und mehr</p>", 0)
-    assert strip_echo_paragraphs("<p>1248</p>", "248") == ("<p>1248</p>", 0)
+    assert strip_echo_paragraphs("<p>248 und mehr</p>", "248") == ("<p>248 und mehr</p>", 0, 0)
+    assert strip_echo_paragraphs("<p>1248</p>", "248") == ("<p>1248</p>", 0, 0)
 
 
 def test_echo_noop_without_folio():
-    assert strip_echo_paragraphs("<p>7</p>", None) == ("<p>7</p>", 0)
+    assert strip_echo_paragraphs("<p>7</p>", None) == ("<p>7</p>", 0, 0)
+
+
+def test_echo_in_sp_removes_whole_block():
+    # Schema verlangt ein <p> im <sp>: das Echo-<p> allein zu entfernen hinterlaesst
+    # einen invaliden Rest-Rahmen (Korpus-Defekt 2330/2400/2540/3180, Lauf 2026-07-07)
+    chunk = '<sp>\n  <speaker />\n  <p>\n    17\n  </p>\n</sp><p>Fliesstext</p>'
+    new, removed, healed = strip_echo_paragraphs(chunk, "17")
+    assert (removed, healed) == (1, 0)
+    assert "<sp>" not in new and new.strip() == "<p>Fliesstext</p>"
+
+
+def test_echo_in_sp_with_named_speaker_untouched():
+    chunk = "<sp><speaker>G.D.K.</speaker><p>17</p></sp>"
+    assert strip_echo_paragraphs(chunk, "17") == (chunk, 0, 0)
+
+
+def test_orphaned_empty_sp_healed_even_without_folio():
+    chunk = "<p>Text</p><sp>\n  <speaker />\n  \n</sp>"
+    new, removed, healed = strip_echo_paragraphs(chunk, None)
+    assert (removed, healed) == (0, 1)
+    assert new.strip() == "<p>Text</p>"
 
 
 # ---------------------------------------------------------------------------
@@ -262,40 +299,44 @@ def test_dry_run_writes_nothing():
     assert path.read_bytes() == before
 
 
+# Die Integrationstests asserten den AUSGELIEFERTEN Zustand nach dem Bestandslauf
+# vom 2026-07-07 (pb@n geklammert) plus Idempotenz: ein erneuter Lauf schlaegt keine
+# pb@n-Aenderung mehr vor. Vor dem Lauf asserteten sie die damaligen Vorschlaege.
+
+def _final_text(doc_id):
+    return (TEI_FINAL_DIR / f"{doc_id}_final.xml").read_text(encoding="utf-8")
+
+
 def test_570_footer_interpolation_fallback():
     _require("570")
+    text = _final_text("570")
+    assert 'n="[248]"' in text  # Footer-Folio, geklammert
+    assert 'n="[249]"' in text  # interpoliert, geklammert
+    assert 'n="1"' in text      # Fallback bleibt ungeklammerte Scan-Nummer
     r = process_doc("570", dry_run=True, strip_echo=True)
-    changes = {c[0]: (c[2], c[3]) for c in r["changes"]}
-    assert changes[2] == ("[248]", "footer")
-    assert changes[3] == ("[249]", "interpolation")
-    assert 1 not in changes  # p1 bleibt Fallback (Scan-Nummer)
-    assert r["echo"] == 2  # <p>248</p> und <p>249</p>
+    assert r["changes"] == []
 
 
 def test_110_offset_two():
     _require("110")
+    # Offset 2: Scanseite 5 traegt Druckseite [3]
+    assert 'n="[3]"' in _final_text("110")
     r = process_doc("110", dry_run=True, strip_echo=False)
-    assert r["offset"] == 2
-    off_changes = [c for c in r["changes"] if c[3] == "offset"]
-    assert off_changes, "Doc 110 sollte Offset-abgeleitete Seiten haben"
-    for page, _frm, to, _src in off_changes:
-        assert to == f"[{page - 2}]"
+    assert r["changes"] == []
 
 
 def test_2330_printed_seven_on_scan_eleven():
     _require("2330")
+    assert 'n="[7]"' in _final_text("2330")  # Druckseite 7 auf Scanseite 11
     r = process_doc("2330", dry_run=True, strip_echo=True)
-    changes = {c[0]: (c[2], c[3]) for c in r["changes"]}
-    assert changes[11][0] == "[7]"  # Druckseite 7 auf Scanseite 11
-    assert changes[11][1] == "footer"
+    assert r["changes"] == []
 
 
 def test_30_printed_folio_bracketed_not_recomputed():
     _require("30")
     r = process_doc("30", dry_run=True, strip_echo=True)
     assert r["class"] == "printed_folio"
-    changes = {c[0]: c[2] for c in r["changes"]}
-    # bereits druckpaginierte Werte werden nur geklammert
-    assert changes[2] == "[224]"
-    assert changes[3] == "[226]"
-    assert changes[4] == "[229]"
+    assert r["changes"] == []
+    text = _final_text("30")
+    for folio in ("[224]", "[226]", "[229]"):
+        assert f'n="{folio}"' in text

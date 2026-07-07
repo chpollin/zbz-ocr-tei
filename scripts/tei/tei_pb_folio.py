@@ -69,6 +69,10 @@ _N_ATTR_RE = re.compile(r'\sn="[^"]*"')
 _N_VALUE_RE = re.compile(r'\sn="([^"]*)"')
 # ein <p>...</p> (Echo-Kandidat); group(1) = Inhalt
 _P_RE = re.compile(r"<p\b[^>]*>(.*?)</p>", re.DOTALL)
+# <sp>-Bloecke: das Schema verlangt mindestens ein <p> im <sp>; Echo-Strip muss den
+# ganzen Block entfernen statt nur das <p>, sonst bleibt ein invalider Rest-Rahmen
+_SP_BLOCK_RE = re.compile(r"<sp\b[^>]*>.*?</sp>", re.DOTALL)
+_EMPTY_SPEAKER_RE = re.compile(r"<speaker\s*/>|<speaker>\s*</speaker>")
 
 SOURCES = ("footer", "interpolation", "offset", "existing_folio", "fallback")
 
@@ -137,16 +141,22 @@ def offset_is_stable(consistency, single_pages):
     return single_pages >= OFFSET_MIN_FOOTER_PAGES and consistency >= OFFSET_CONSISTENCY_MIN
 
 
-def resolve_page_folio(page, blank, footer, interp, offset, offset_ok, current_n, printed_folio_doc):
+def resolve_page_folio(page, blank, footer, interp, offset, offset_ok, current_n,
+                       printed_folio_doc, doc_has_brackets=False):
     """Bestimmt pb@n einer Seite plus Quelle und die klammerlose Folio-Ziffer.
 
     Returns (new_n, source, folio_numeric). Bei source='fallback' bleibt new_n == current_n
     (Scan-Nummer, ungeklammert) und folio_numeric ist None (kein Echo-Abgleich).
+    doc_has_brackets: traegt das Dokument bereits geklammerte pb@n, sind ungeklammerte
+    Werte per Konvention Scan-Fallbacks eines frueheren Laufs und werden nie zu
+    Druckfolios umgedeutet (Idempotenz des Wiederholungslaufs).
     """
     if printed_folio_doc:
         inner = folio_content(current_n)
         if inner is not None:
-            return bracket(inner), "existing_folio", inner
+            if current_n.strip().startswith("[") or not doc_has_brackets:
+                return bracket(inner), "existing_folio", inner
+            return current_n, "fallback", None
         return current_n, "fallback", None
 
     if blank:
@@ -170,21 +180,58 @@ def strip_echo_paragraphs(chunk, folio_numeric):
     """Entfernt <p>-Absaetze, deren sichtbarer Text EXAKT der Folio-Ziffer entspricht.
 
     Nur exakte Uebereinstimmung (whitespace-tolerant); '<p>248 und mehr</p>' oder
-    '<p>1248</p>' bleiben unangetastet. Returns (neuer_chunk, entfernte_anzahl).
+    '<p>1248</p>' bleiben unangetastet. Sitzt das Echo als einziger Inhalt in einem
+    <sp> mit leerem <speaker/>, faellt der ganze <sp>-Block (das Schema verlangt ein
+    <p> im <sp>); bei benanntem Sprecher bleibt der Block samt Echo unangetastet.
+    Bereits verwaiste <sp><speaker/></sp>-Rahmen (Strip-Schaden frueherer Laeufe)
+    werden auch ohne Folio-Ziffer geheilt. Returns (chunk, entfernt, geheilt).
     """
-    if not folio_numeric:
-        return chunk, 0
     removed = 0
+    healed = 0
 
-    def repl(m):
+    def visible(text):
+        return re.sub(r"<[^>]+>", "", text).strip()
+
+    def strip_plain(segment):
         nonlocal removed
-        visible = re.sub(r"<[^>]+>", "", m.group(1)).strip()
-        if visible == folio_numeric:
-            removed += 1
-            return ""
-        return m.group(0)
+        if not folio_numeric:
+            return segment
 
-    return _P_RE.sub(repl, chunk), removed
+        def repl(m):
+            nonlocal removed
+            if visible(m.group(1)) == folio_numeric:
+                removed += 1
+                return ""
+            return m.group(0)
+
+        return _P_RE.sub(repl, segment)
+
+    def handle_sp(block):
+        nonlocal removed, healed
+        inner = block[block.index(">") + 1: block.rindex("<")]
+        m = _EMPTY_SPEAKER_RE.search(inner)
+        if not m:
+            return block
+        rest = inner[:m.start()] + inner[m.end():]
+        if not rest.strip():
+            healed += 1
+            return ""
+        if folio_numeric:
+            contents = _P_RE.findall(rest)
+            leftover = _P_RE.sub("", rest).strip()
+            if contents and not leftover and all(visible(c) == folio_numeric for c in contents):
+                removed += len(contents)
+                return ""
+        return block
+
+    out = []
+    pos = 0
+    for m in _SP_BLOCK_RE.finditer(chunk):
+        out.append(strip_plain(chunk[pos:m.start()]))
+        out.append(handle_sp(m.group(0)))
+        pos = m.end()
+    out.append(strip_plain(chunk[pos:]))
+    return "".join(out), removed, healed
 
 
 def rewrite_body(body_inner, detected_str, interp, offset, offset_ok, printed_folio_doc, strip_echo):
@@ -200,18 +247,21 @@ def rewrite_body(body_inner, detected_str, interp, offset, offset_ok, printed_fo
         "content_folio": 0,
         "blank_pages": 0,
         "echo": 0,
+        "sp_healed": 0,
         "changes": [],
     }
     if not spans:
         return body_inner, report
 
+    doc_has_brackets = any(n_value(s.pb_tag).strip().startswith("[") for s in spans)
     out = body_inner[: spans[0].pb_start]
     for span in spans:
         blank = is_blank_pb(span.pb_tag)
         current = n_value(span.pb_tag)
         footer = detected_str.get(span.page)
         new_n, source, folio_num = resolve_page_folio(
-            span.page, blank, footer, interp, offset, offset_ok, current, printed_folio_doc
+            span.page, blank, footer, interp, offset, offset_ok, current, printed_folio_doc,
+            doc_has_brackets=doc_has_brackets,
         )
         report["source_counts"][source] += 1
         if blank:
@@ -223,9 +273,10 @@ def rewrite_body(body_inner, detected_str, interp, offset, offset_ok, printed_fo
 
         new_pb = set_pb_n(span.pb_tag, new_n)
         chunk = body_inner[span.content_start:span.content_end]
-        if strip_echo and folio_num:
-            chunk, removed = strip_echo_paragraphs(chunk, folio_num)
+        if strip_echo:
+            chunk, removed, healed = strip_echo_paragraphs(chunk, folio_num)
             report["echo"] += removed
+            report["sp_healed"] += healed
         if new_n != current:
             report["changes"].append([span.page, current, new_n, source])
         out += new_pb + chunk
@@ -342,6 +393,9 @@ def _print_summary(reports):
     for c in ("full", "partial", "none"):
         print(f"    {c:16s}: {cov.get(c, 0)}")
     print(f"Footer-Echo-Absaetze:      {echo_total}")
+    healed_total = sum(r.get("sp_healed", 0) for r in ok)
+    if healed_total:
+        print(f"Geheilte leere sp-Rahmen:  {healed_total}")
     if errors:
         print(f"FEHLER in {len(errors)} Docs: {[e[0] for e in errors]}")
 
@@ -363,6 +417,7 @@ def _write_report(reports, strip_echo):
             "pages_per_source": dict(src_total),
             "blank_pages": sum(r["blank_pages"] for r in ok),
             "echo_paragraphs": sum(r["echo"] for r in ok),
+            "sp_wrappers_healed": sum(r.get("sp_healed", 0) for r in ok),
             "coverage": dict(Counter(r["coverage"] for r in ok)),
         },
         "documents": reports,
