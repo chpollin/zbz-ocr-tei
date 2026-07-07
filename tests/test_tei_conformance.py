@@ -96,14 +96,14 @@ def _heading(text="Freiheit"):
 
 def test_encyclopedia_first_heading_is_lemma():
     """Bei genre=encyclopedia traegt die erste Ueberschrift type='lemma'."""
-    out = _build_tei_body(_heading(), page=1, genre="encyclopedia", is_interview=False)
+    out = _build_tei_body(_heading(), page=1, genre="encyclopedia", is_interview=False, pb_n="1")
     assert 'type="lemma"' in out
     assert "type=\"entry\"" in out  # div-Typ fuer Lexikonartikel
 
 
 def test_non_encyclopedia_heading_has_no_lemma():
     """Ausserhalb encyclopedia bleibt die Ueberschrift ein blankes <head>."""
-    out = _build_tei_body(_heading(), page=1, genre=None, is_interview=False)
+    out = _build_tei_body(_heading(), page=1, genre=None, is_interview=False, pb_n="1")
     assert "type=\"lemma\"" not in out
     assert "<head" in out
 

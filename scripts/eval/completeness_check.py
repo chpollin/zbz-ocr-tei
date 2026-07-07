@@ -33,6 +33,85 @@ def count_pb_elements(tei_path: Path) -> int:
         return 0
 
 
+def extract_pb_facs(content: str) -> tuple[int, list[int], bool]:
+    """Parse <pb> elements and their facs indices.
+
+    Returns (pb_count, facs_indices, all_have_facs). facs_indices holds the
+    integer N from facs="#facs_N" in document order; all_have_facs is False
+    if any <pb> lacks a facs reference (then facs-based reconciliation is
+    unsafe and the caller falls back to the raw pb count).
+    """
+    pbs = re.findall(r"<pb\b[^>]*>", content)
+    facs_indices: list[int] = []
+    all_have_facs = True
+    for pb in pbs:
+        m = re.search(r'facs="#facs_(\d+)"', pb)
+        if m:
+            facs_indices.append(int(m.group(1)))
+        else:
+            all_have_facs = False
+    return len(pbs), facs_indices, all_have_facs
+
+
+def reconcile_page_count(
+    expected_pages: int,
+    pb_count: int,
+    facs_indices: list[int],
+    all_have_facs: bool,
+    pdf_pages: int,
+) -> dict:
+    """Reconcile the pb structure against the expected physical scan count.
+
+    Two deterministic counting artifacts are neutralized:
+      (a) split double page -- two <pb> share one facs scan; inflates pb_count.
+      (b) leading cover -- facs numbering starts above 1 (library / e-periodica
+          cover scan carries no content pb); deflates pb_count.
+
+    Each adjustment is capped to only close the gap toward expected, never to
+    overshoot it. A split can shave off at most the pb excess above expected; a
+    leading cover can add at most the shortfall below expected. This keeps the
+    check on its own dimension (page count): a document whose pb already equals
+    expected stays OK even when facs labels are swapped (a facs-integrity issue
+    for other audits), while genuine content loss beyond the artifacts still
+    surfaces as MINOR/MISMATCH.
+    """
+    if facs_indices and all_have_facs:
+        distinct_facs = len(set(facs_indices))
+        leading_cover = min(facs_indices) - 1
+        split_pages = pb_count - distinct_facs
+    else:
+        # No usable facs mapping: fall back to the raw pb count.
+        distinct_facs = pb_count
+        leading_cover = 0
+        split_pages = 0
+
+    reference = expected_pages if expected_pages > 0 else pdf_pages
+    effective = pb_count
+    if reference > 0:
+        if pb_count > reference and split_pages > 0:
+            effective = pb_count - min(split_pages, pb_count - reference)
+        elif pb_count < reference and leading_cover > 0:
+            effective = pb_count + min(leading_cover, reference - pb_count)
+
+    count_status = "OK"
+    if expected_pages > 0 and effective > 0:
+        diff = abs(effective - expected_pages)
+        if diff > 0:
+            ratio = effective / expected_pages
+            if ratio < 0.8 or ratio > 1.3:
+                count_status = "MISMATCH"
+            else:
+                count_status = "MINOR"
+
+    return {
+        "effective_pages": effective,
+        "distinct_facs": distinct_facs,
+        "split_pages": split_pages,
+        "leading_cover": leading_cover,
+        "count_status": count_status,
+    }
+
+
 def count_pdf_pages(pdf_path: Path) -> int:
     """Zaehlt Seiten einer PDF-Datei (ohne externe Dependencies)."""
     try:
@@ -98,12 +177,18 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
         # Erwartete Seitenzahl aus Metadaten
         expected_pages = docs_meta.get(doc_id, {}).get("page_count", 0)
 
-        # Tatsaechliche <pb>-Elemente
-        actual_pb = count_pb_elements(tei_path)
+        # Tatsaechliche <pb>-Elemente + facs-Struktur
+        content = tei_path.read_text(encoding="utf-8")
+        actual_pb, facs_indices, all_have_facs = extract_pb_facs(content)
 
         # PDF-Seitenzahl als dritte Quelle
         pdf_path = SCANS_DIR / f"{doc_id}.pdf"
         pdf_pages = count_pdf_pages(pdf_path) if pdf_path.exists() else -1
+
+        # Reconcile pb structure against physical scans (splits + leading cover)
+        recon = reconcile_page_count(
+            expected_pages, actual_pb, facs_indices, all_have_facs, pdf_pages
+        )
 
         # Textlaenge pro Seite
         page_stats = check_text_per_page(tei_path)
@@ -130,21 +215,16 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
         status = "OK"
         issue_notes = []
 
-        # Seiten-Mismatch
-        if expected_pages > 0 and actual_pb > 0:
-            diff = abs(actual_pb - expected_pages)
-            if diff > 0:
-                ratio = actual_pb / expected_pages
-                if ratio < 0.8 or ratio > 1.3:
-                    status = "MISMATCH"
-                    issue_notes.append(
-                        f"Seiten-Mismatch: erwartet {expected_pages}, TEI hat {actual_pb} pb"
-                    )
-                elif diff > 0:
-                    status = "MINOR"
-                    issue_notes.append(
-                        f"Seiten-Differenz: erwartet {expected_pages}, TEI hat {actual_pb} pb"
-                    )
+        # Seiten-Mismatch (auf reconciled effective count, nicht roher pb-Zahl)
+        effective = recon["effective_pages"]
+        if recon["count_status"] in ("MISMATCH", "MINOR"):
+            status = recon["count_status"]
+            issue_notes.append(
+                f"Seiten-{'Mismatch' if status == 'MISMATCH' else 'Differenz'}: "
+                f"erwartet {expected_pages}, TEI effektiv {effective} "
+                f"(pb={actual_pb}, Splits={recon['split_pages']}, "
+                f"Deckblatt={recon['leading_cover']})"
+            )
 
         # Leere Seiten
         if empty_pages:
@@ -165,6 +245,9 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
         doc_result = {
             "expected_pages": expected_pages,
             "actual_pb": actual_pb,
+            "effective_pages": effective,
+            "split_pages": recon["split_pages"],
+            "leading_cover": recon["leading_cover"],
             "pdf_pages": pdf_pages,
             "status": status,
             "issues": issue_notes,

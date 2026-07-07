@@ -46,6 +46,12 @@ LEGACY_WHO_RE = re.compile(r"^(agent-screening|quality-screen|quality-pass|claud
 _REVISION_RE = re.compile(r"(<revisionDesc[^>]*>)(.*?)(</revisionDesc>)", re.DOTALL)
 _CHANGE_RE = re.compile(r"<change\b([^>]*)>(.*?)</change>", re.DOTALL)
 _WHO_RE = re.compile(r'who\s*=\s*"([^"]*)"')
+_N_RE = re.compile(r'\bn\s*=\s*"([^"]*)"')
+
+# Signatur der markereigenen Eintraege: das n-Attribut traegt entweder einen
+# Stromnamen (History-Zeile) oder "{stream}-summary" (Summen-Zeile). Nur solche
+# Eintraege ersetzt der Marker bei jedem Lauf; alles andere bleibt unangetastet.
+MARKER_N_VALUES = frozenset(STREAMS) | frozenset(f"{s}-summary" for s in STREAMS)
 
 
 def _xml_escape(s):
@@ -68,6 +74,12 @@ def is_legacy_change(attrs):
     if not m:
         return False
     return bool(LEGACY_WHO_RE.match(m.group(1)))
+
+
+def is_marker_change(attrs):
+    """True if this <change> was written by this marker (own n-signature)."""
+    m = _N_RE.search(attrs or "")
+    return bool(m) and m.group(1) in MARKER_N_VALUES
 
 
 def build_change_for_history_entry(stream, entry):
@@ -118,11 +130,14 @@ def project_doc(doc_id, manifest, dry_run, keep_legacy):
 
     open_tag, body, close_tag = rev_match.group(1), rev_match.group(2), rev_match.group(3)
 
-    # Bestehende changes filtern (Legacy raus, Rest behalten)
+    # Bestehende changes filtern: Legacy raus, eigene fruehere Projektionen raus
+    # (werden unten frisch aus dem Manifest neu gebaut -> idempotent), Rest behalten.
     kept_raw = []
     for full, attrs in parse_changes(body):
         if not keep_legacy and is_legacy_change(attrs):
             report["removed_legacy"] += 1
+            continue
+        if is_marker_change(attrs):
             continue
         kept_raw.append(full)
 

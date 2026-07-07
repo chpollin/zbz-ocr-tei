@@ -22,6 +22,164 @@ from scripts.tei.tei_xml_utils import normalize_for_tei, reading_order_permutati
 # Speaker-Erkennung: "Name:" am Zeilenanfang (Interview/Debate)
 SPEAKER_PATTERN = re.compile(r'^([A-Z][a-zA-Z\u00e9\u00e8\u00ea\u00e0\u00e2\u00fc\u00f6\u00e4\s.\-]+?):\s*')
 
+# ---------------------------------------------------------------------------
+# Chrome-Projektion: gedruckte Seitenzahl + Filter-Absatz-Verwerfung
+# ---------------------------------------------------------------------------
+# Beide Defekte teilen eine Ursache: match_paragraphs_to_regions entfernt _filter/_skip-
+# Regionen (Kopf-/Fusszeilen, Deckblatt-Metadaten) aus der Regionsliste, laesst die zuge-
+# hoerigen OCR-Absaetze aber stehen. Bei Laengen-Mismatch werden sie positionsbasiert echten
+# Regionen zugeordnet oder als bbox-loser Ueberhang angehaengt. drop_filter_echoes verwirft
+# diese Absaetze VOR dem Matching; detect_page_number liest die gedruckte Seitenzahl aus der
+# Fusszeilen-Filter-Region, damit <pb n=...> die Druckseite statt der Scan-Nummer traegt.
+
+_TOKEN_RE = re.compile(r"\w+", re.UNICODE)
+
+# Plausible gedruckte Seitenzahl in einer Filter-Region: reine Ziffern, Punkt-Notation
+# (7.14), optional in eckigen Klammern ([248]). Auf 4 Stellen begrenzt. Eine allein
+# stehende vierstellige Jahreszahl waere formgleich und wuerde fehlgelesen; solche
+# isolierten Jahres-Filterregionen kommen im Korpus-Chrome nicht vor.
+_PAGE_NUMBER_RE = re.compile(r"^\[?\s*(\d{1,4}(?:\.\d{1,4})?)\s*\]?$")
+
+# Schwelle fuer "Absatz ist Echo einer Filter-Region": ein Absatz wird nur verworfen, wenn
+# fast alle seine Wort-Tokens auch in den Filter-Regionen vorkommen. Konservativ nach oben
+# kalibriert -- lieber eine Deckblattzeile durchlassen als echten Fliesstext verwerfen, der
+# ein Metadaten-Wort (z.B. "ETH-Bibliothek") nur nebenbei nutzt.
+_FILTER_ECHO_MIN_COVERAGE = 0.8
+
+
+def _tokens(text: str) -> set[str]:
+    return {t.lower() for t in _TOKEN_RE.findall(text)}
+
+
+def _filter_regions(regions: list[dict]) -> list[dict]:
+    return [
+        r for r in regions
+        if r.get("zbz_tag") in ("_filter", "_skip") and (r.get("text") or "").strip()
+    ]
+
+
+def detect_page_number(regions: list[dict]) -> str | None:
+    """Gedruckte Seitenzahl aus einer _filter/_skip-Region, sonst None.
+
+    Durchsucht die Chrome-Regionen (Kopf-/Fusszeile) nach einem plausiblen Seitenzahl-Text
+    und gibt dessen numerischen Wert zurueck, damit Step 1 <pb n=...> auf die Druckseite
+    statt die laufende Scan-Nummer setzen kann. Keine seitenuebergreifende Interpolation.
+    """
+    for r in _filter_regions(regions):
+        m = _PAGE_NUMBER_RE.match(r["text"].strip())
+        if m:
+            return m.group(1)
+    return None
+
+
+def drop_filter_echoes(paragraphs: list[str], regions: list[dict]) -> list[str]:
+    """Verwirft OCR-Absaetze, die eine _filter/_skip-Region wiederholen, vor dem Matching.
+
+    Ein Absatz faellt, wenn seine Wort-Tokens zu mindestens _FILTER_ECHO_MIN_COVERAGE von der
+    Vereinigung aller Filter-Region-Tokens abgedeckt sind. Das faengt Deckblatt-/Kopf-/Fusszeilen-
+    Text ebenso wie den Seitenzahl-Absatz (siehe detect_page_number). Absaetze ohne Tokens bleiben.
+    """
+    filters = _filter_regions(regions)
+    if not filters:
+        return paragraphs
+    filter_bag: set[str] = set()
+    for r in filters:
+        filter_bag |= _tokens(r["text"])
+
+    kept = []
+    for para in paragraphs:
+        toks = _tokens(para)
+        if toks and len(toks & filter_bag) / len(toks) >= _FILTER_ECHO_MIN_COVERAGE:
+            continue
+        kept.append(para)
+    return kept
+
+
+# ---------------------------------------------------------------------------
+# Dokumentweiter Seitenzahl-Interpolations-Pass
+# ---------------------------------------------------------------------------
+# detect_page_number liest die gedruckte Zahl nur dort, wo eine Fusszeilen-Filter-
+# Region existiert. Wo sie fehlt, faellt pb@n auf die Scan-Nummer zurueck. Der Pass
+# fuellt solche Luecken aus den erkannten Nachbarn, aber nur wo die Arithmetik
+# eindeutig ist. Regel (forward-verankert): ein linker Anker (erkannte Zahl auf einer
+# frueheren Seite) setzt den Folgewert fort; existiert zusaetzlich ein rechter Anker,
+# muss er denselben Wert stuetzen, sonst bleibt Fallback. Eine reine Rueckwaerts-
+# Extrapolation (nur rechter Anker) fuellt NICHT -- unpaginiertes Frontmatter (Deckblatt)
+# vor der ersten gedruckten Zahl behaelt so seine Scan-Nummer.
+# Erschlossene Zahlen werden in eckige Klammern gesetzt (ZBZ-Referenzkonvention,
+# z.B. reference_tei: n="[249]"); erkannte Zahlen bleiben blank.
+
+# Per-Dokument-Cache der erschlossenen Luecken; process_page_step1 wird pro Seite
+# aufgerufen, der Pass braucht aber das ganze Dokument. Innerhalb eines Laufs sind die
+# Layout-Daten stabil, daher ist die einmalige Projektion pro doc_id deterministisch.
+_INTERP_CACHE: dict[str, dict[int, int]] = {}
+
+
+def interpolate_document_pb(detected: dict[int, int], pages: list[int]) -> dict[int, int]:
+    """Fuellt Luecken gedruckter Seitenzahlen forward-verankert und konsistenzgeprueft.
+
+    Args:
+        detected: erkannte, rein ganzzahlige Druckseitenzahl je Seite (Punktnotation und
+                  nicht-numerische Werte sind vom Aufrufer ausgeschlossen).
+        pages: existierende Seitennummern des Dokuments.
+
+    Returns:
+        Seite -> erschlossene Ganzzahl, nur fuer Luecken (Seiten ohne Erkennung) und nur
+        dort, wo die Regel genau einen Wert stuetzt. Fehlt eine Seite im Ergebnis, bleibt
+        der Scan-Nummern-Fallback.
+    """
+    result: dict[int, int] = {}
+    for p in pages:
+        if p in detected:
+            continue
+        left = max((q for q in detected if q < p), default=None)
+        right = min((q for q in detected if q > p), default=None)
+        forward = detected[left] + (p - left) if left is not None else None
+        backward = detected[right] - (right - p) if right is not None else None
+        if forward is None:
+            continue  # no left anchor -> no backward-only extrapolation (frontmatter)
+        if backward is not None and backward != forward:
+            continue  # neighbors contradict -> ambiguous
+        result[p] = forward
+    return result
+
+
+def _scan_printed_numbers(doc_id: str) -> tuple[list[int], dict[int, int]]:
+    """Probt die Seiten 1..N eines Dokuments und sammelt rein ganzzahlige Druckseitenzahlen.
+
+    Eine Seite existiert, solange sie OCR-Text oder Layout hat; die Suche stoppt an der
+    ersten fehlenden Seite (Seiten sind konventionsgemaess 1..N zusammenhaengend).
+    """
+    pages: list[int] = []
+    detected: dict[int, int] = {}
+    page = 1
+    while True:
+        layout = load_layout_gemini(doc_id, page)
+        ocr = load_ocr_text(doc_id, page)
+        if not layout and not ocr:
+            break
+        pages.append(page)
+        if layout and layout.get("regions"):
+            printed = detect_page_number(layout["regions"])
+            if printed and printed.isdigit():
+                detected[page] = int(printed)
+        page += 1
+    return pages, detected
+
+
+def resolve_pb_number(doc_id: str, page: int, printed_this_page: str | None) -> str:
+    """Bestimmt pb@n: erkannt (blank), erschlossen ([n]) oder Scan-Nummer-Fallback."""
+    if printed_this_page:
+        return printed_this_page
+    interp = _INTERP_CACHE.get(doc_id)
+    if interp is None:
+        pages, detected = _scan_printed_numbers(doc_id)
+        interp = interpolate_document_pb(detected, pages)
+        _INTERP_CACHE[doc_id] = interp
+    if page in interp:
+        return f"[{interp[page]}]"
+    return str(page)
+
 
 # ---------------------------------------------------------------------------
 # Absatz-Region-Matching (erweitert)
@@ -170,8 +328,13 @@ def _compute_facsimile_zones(matched: list[dict], layout: dict | None, page: int
     return {"zones": zones, "image_width": img_w, "image_height": img_h}
 
 
-def _build_tei_body(matched: list[dict], page: int, genre: str | None, is_interview: bool) -> str:
+def _build_tei_body(
+    matched: list[dict], page: int, genre: str | None, is_interview: bool, pb_n: str
+) -> str:
     """Baut das TEI body-Fragment aus gematchten Regionen.
+
+    pb_n ist die @n des <pb> (gedruckte Seitenzahl oder Scan-Nummer als Fallback); die
+    @facs-Referenz bleibt scan-basiert (#facs_{page}), da sie auf das Scan-Bild zeigt.
 
     Returns:
         TEI-XML Fragment als String.
@@ -190,7 +353,7 @@ def _build_tei_body(matched: list[dict], page: int, genre: str | None, is_interv
         div_type_attr = 'type="conversation"'
 
     lines.append(f"      <div {div_type_attr}>")
-    lines.append(f'        <pb facs="#facs_{page}" n="{page}"/>')
+    lines.append(f'        <pb facs="#facs_{page}" n="{pb_n}"/>')
 
     fn_counter = 0
     any_content_emitted = False
@@ -292,8 +455,12 @@ def process_page_step1(
     layout = load_layout_gemini(doc_id, page)
     paragraphs = split_paragraphs(ocr_text)
 
+    printed = None
     if layout and layout.get("regions"):
-        matched = match_paragraphs_to_regions(paragraphs, layout["regions"])
+        regions = layout["regions"]
+        printed = detect_page_number(regions)
+        paragraphs = drop_filter_echoes(paragraphs, regions)
+        matched = match_paragraphs_to_regions(paragraphs, regions)
     else:
         matched = [
             {"text": p, "zbz_tag": "zb_paragraph", "label": "text",
@@ -301,8 +468,12 @@ def process_page_step1(
             for i, p in enumerate(paragraphs)
         ]
 
+    # Detected number on this page stays blank; a gap is filled from neighbors
+    # ([n], bracketed) or falls back to the running scan number.
+    pb_n = resolve_pb_number(doc_id, page, printed)
+
     facsimile_data = _compute_facsimile_zones(matched, layout, page)
     is_interview = genre in ("interview", "debate", "conversation")
-    tei_fragment = _build_tei_body(matched, page, genre, is_interview)
+    tei_fragment = _build_tei_body(matched, page, genre, is_interview, pb_n)
 
     return tei_fragment, facsimile_data
