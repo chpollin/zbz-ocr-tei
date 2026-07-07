@@ -343,7 +343,7 @@ def _merge_page_divs(xml_text: str, genre: str = None) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Post-Assembly: Editionsrichtlinien-Konformitaet (Audit 2026-06-08)
+# Post-Assembly: Editionsrichtlinien-Konformitaet
 # ---------------------------------------------------------------------------
 
 _XML_ID_ATTR = "{http://www.w3.org/XML/1998/namespace}id"

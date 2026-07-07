@@ -9,10 +9,9 @@ Konsumenten:
   - scripts/edition/generate_edition_data.py  (Per-Seiten-Mirror-Splitter)
   - scripts/tei/tei_blank_marker.py            (Leerseiten-Marker)
 
-Frueher war diese Logik (Regex + Positionsregel + Chunk-Grenzen) in beiden
-Dateien dupliziert und nur per Kommentar synchron gehalten -- ein Drift haette
-Marker auf der falschen Seite platziert (stiller Off-by-Page-Bug). Beide
-Konsumenten teilen jetzt PB_RE/BODY_INNER_RE und iter_page_spans().
+Beide Konsumenten muessen PB_RE/BODY_INNER_RE und iter_page_spans() teilen; eine
+eigene, abweichende Segmentierung wuerde Marker auf der falschen Seite platzieren
+(stiller Off-by-Page-Bug).
 """
 
 import re

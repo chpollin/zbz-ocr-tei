@@ -69,15 +69,10 @@ from scripts.eval.cer_statistics_runner import collect_records
 SCHEMA_VERSION = "0.3"
 TOOL_VERSION = "0.1.0"
 
-# Scope-Status: die fruehere hartkodierte 6er-Ausschlussliste (SCOPE_MISMATCH_REASONS,
-# Session 39) wurde ENTFERNT. Verifiziert an den Rohdaten (2026-05-27): sie war
-# inkohaerent -- schloss Doc 570 (112 % Mehrtext, Voll-CER 113 %) NICHT aus, aber Doc
-# 3020 (0.5 % Mehrtext) schon -- und folgte keinem reproduzierbaren Kriterium. Sie
-# diente nur dazu, eine scope-inklusive Subset-Kennzahl "fair" zu machen.
-# Konsequenz: kein Doc wird mehr ausgeschlossen. Die scope-robuste PRIMAERkennzahl ist
-# die Fidelity-CER ueber ALLE Docs (rechnet den Pipeline-Mehrtext pro Doc heraus). Der
-# rohe end_to_end (scope-inklusiv) bleibt als Diagnose, ist aber KEIN Qualitaetsmass.
-# Siehe decisions.md (CER-Scope-Entscheidung 2026-05-27).
+# No document is excluded from scope. The scope-robust PRIMARY metric is the
+# fidelity CER over ALL docs (per-doc pipeline surplus factored out); the raw
+# end_to_end (scope-inclusive) stays diagnostic and is NOT a quality measure.
+# Rationale: decisions.md (CER scope decision).
 
 # Char-Klassen fuer HCPR (Levchenko 2025 §3 Adaption)
 HCPR_CLASSES = {

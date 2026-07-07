@@ -660,10 +660,9 @@ def build_statistics(
     # ueber records nach Sprache (records-Metadaten enthalten language).
     diacritic = _aggregate_diacritic(records)
 
-    # Per-Dok-Liste fuer Frontend. WICHTIG: 'cer' ist hier IDENTISCH zur Headline
-    # (r.weighted_cer == doc_cer, case-sensitive Volltext-CER). Frueher stand hier
-    # cer_by_regime['nfc_hyphen'] -- ein OHNE Alignment gerechneter Wert, der von der
-    # Headline abwich. cer_casefold ist die case-insensitive Sekundaer-Zahl.
+    # Per-doc list for the frontend. 'cer' MUST equal the headline value
+    # (r.weighted_cer == doc_cer, case-sensitive full-text CER); cer_casefold is
+    # the case-insensitive secondary figure.
     per_doc = []
     for r in records:
         per_doc.append({

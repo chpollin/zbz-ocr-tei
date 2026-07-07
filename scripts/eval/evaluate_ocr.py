@@ -66,7 +66,6 @@ def extract_text_from_tei(tei_path: Path) -> str:
         if '}' in elem.tag:
             elem.tag = elem.tag.split('}')[1]
 
-    # Text aus body extrahieren
     body = root.find('.//body')
     if body is None:
         return ""

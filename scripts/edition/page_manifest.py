@@ -47,12 +47,11 @@ MIRROR_PAGES = ROOT / "docs" / "data" / "pages"
 OUT_DIR = ROOT / "output" / "tei_final"
 
 GENERATOR = "page_manifest-v4"
-# E77: Kollaps auf drei Stufen (Variante A, E67-konform). Die Pipeline produziert
-# OCR/Layout/TEI fuer alle 285 Docs deterministisch, der Default-Zustand ist also
-# "Pipeline-Output existiert, kein Mensch hat verifiziert", nicht "nichts da".
-# Ampel: unverifiziert (neutral/grau), in_arbeit (gelb), verifiziert (gruen).
-# `bearbeitet` + `fertig` (E66/E67) zusammengefuehrt. Rot bleibt reserviert fuer
-# einen spaeteren expliziten Problem/Reject-Status.
+# Three-level workflow status (E67/E77). The pipeline produces OCR/layout/TEI for
+# every doc deterministically, so the default state means "pipeline output exists,
+# no human has verified" rather than "nothing there". Traffic light: unverifiziert
+# (neutral/gray), in_arbeit (yellow), verifiziert (green); red stays reserved for a
+# future explicit problem/reject status.
 VALID_STATUS = ("unverifiziert", "in_arbeit", "verifiziert")
 DEFAULT_STATUS = "unverifiziert"
 # Map alter Status-Werte auf die neuen (idempotent ueber Re-Laeufe).

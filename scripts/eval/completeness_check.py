@@ -141,12 +141,10 @@ def check_text_per_page(tei_path: Path) -> list[dict]:
 def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
     """Fuehrt Vollstaendigkeits-Check durch."""
 
-    # Metadaten laden
     with open(DOC_METADATA_PATH, "r", encoding="utf-8") as f:
         metadata = json.load(f)
     docs_meta = metadata.get("documents", {})
 
-    # Dokumente bestimmen
     if doc_ids:
         target_ids = doc_ids
     else:
@@ -166,14 +164,11 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
         if not tei_path.exists():
             continue
 
-        # Erwartete Seitenzahl aus Metadaten
         expected_pages = docs_meta.get(doc_id, {}).get("page_count", 0)
 
-        # Tatsaechliche <pb>-Elemente + facs-Struktur
         content = tei_path.read_text(encoding="utf-8")
         actual_pb, facs_indices, all_have_facs = extract_pb_facs(content)
 
-        # PDF-Seitenzahl als dritte Quelle
         pdf_path = SCANS_DIR / f"{doc_id}.pdf"
         pdf_pages = count_pdf_pages(pdf_path) if pdf_path.exists() else -1
 
@@ -182,16 +177,12 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
             expected_pages, actual_pb, facs_indices, all_have_facs, pdf_pages
         )
 
-        # Textlaenge pro Seite
         page_stats = check_text_per_page(tei_path)
 
-        # Leere Seiten identifizieren (weniger als 50 Zeichen)
         empty_pages = [p for p in page_stats if p["char_count"] < 50]
 
-        # Sehr kurze Seiten (weniger als 200 Zeichen, aber nicht leer)
         short_pages = [p for p in page_stats if 50 <= p["char_count"] < 200]
 
-        # Durchschnittliche Textlaenge pro Seite
         char_counts = [p["char_count"] for p in page_stats if p["char_count"] > 50]
         avg_chars = sum(char_counts) / len(char_counts) if char_counts else 0
 
@@ -203,7 +194,6 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
                 if p["char_count"] > 50 and p["char_count"] < avg_chars * 0.3
             ]
 
-        # Bewertung
         status = "OK"
         issue_notes = []
 
@@ -218,7 +208,6 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
                 f"Deckblatt={recon['leading_cover']})"
             )
 
-        # Leere Seiten
         if empty_pages:
             if status == "OK":
                 status = "WARNING"
@@ -226,7 +215,6 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
                 f"{len(empty_pages)} leere Seite(n): {[p['page'] for p in empty_pages[:5]]}"
             )
 
-        # Sehr duenne Seiten
         if thin_pages:
             if status == "OK":
                 status = "WARNING"
@@ -257,7 +245,6 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
         if status != "OK":
             issues.append((doc_id, doc_result))
 
-        # Output
         marker = f"  [{status}]" if status != "OK" else ""
         notes = "; ".join(issue_notes) if issue_notes else ""
         print(
@@ -266,7 +253,6 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
             f"{marker}  {notes}"
         )
 
-    # Zusammenfassung
     statuses = [d["status"] for d in documents.values()]
     summary = {
         "total_documents": len(documents),
@@ -290,7 +276,6 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
         "documents": documents,
     }
 
-    # JSON speichern
     output_json = EVALUATION_DIR / "completeness_check.json"
     EVALUATION_DIR.mkdir(parents=True, exist_ok=True)
     with open(output_json, "w", encoding="utf-8") as f:

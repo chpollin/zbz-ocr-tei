@@ -38,8 +38,8 @@ THUMB_QUALITY = 70
 
 FEATURED_DOCS = ["2310", "1000", "1330", "1540"]
 
-# E77: Workflow-Status auf drei Stufen (Variante A, E67-konform). Alte Werte beim
-# Mirror-Lesen auf die neuen mappen, damit Catalog + Histogramm konsistent sind.
+# Three-level workflow status (E67/E77); legacy values are mapped on mirror read
+# so catalog and histogram stay consistent.
 DEFAULT_STREAM_STATUS = "unverifiziert"
 _STREAM_STATUS_MIGRATION = {"offen": "unverifiziert", "bearbeitet": "in_arbeit", "fertig": "verifiziert"}
 

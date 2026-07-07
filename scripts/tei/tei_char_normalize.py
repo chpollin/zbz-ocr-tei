@@ -1,7 +1,7 @@
 """Bestandskorrektur: gerader Apostroph U+0027 zwischen zwei Buchstaben -> U+2019.
 
-Operator-freigegebene erste Bestandskorrektur (2026-07-07, Modus hybrid: nur die
-sichere Klasse). Korrigiert exakt die Klasse `straight_apostrophe` aus
+Operator-freigegebene Bestandskorrektur (Modus hybrid: nur die sichere Klasse;
+Freigabe in decisions.md E94). Korrigiert exakt die Klasse `straight_apostrophe` aus
 scripts/eval/char_lint_audit.py; deren Regex `_APOSTROPHE_RE` wird importiert und 1:1
 uebernommen, damit Vorher/Nachher-Messung (char_lint_audit) und Korrektur deckungs-
 gleich sind. KEINE anderen Klassen (keine Guillemets, keine Leerzeichen).
@@ -13,7 +13,7 @@ laeuft byte-schonend ueber den Rohtext (keine XML-Neuserialisierung), analog zu 
 Schwester-Tools tei_blank_marker.py / tei_status_marker.py: das `<text>`-Segment wird
 in Tags/Kommentare (verbatim) und Textknoten (korrigiert) zerlegt, alles andere bleibt
 Byte fuer Byte erhalten. Voraussetzung, dass Rohtext-Sicht und geparste Sicht
-deckungsgleich sind: keine `&apos;`-Entities im Korpus (verifiziert 2026-07-07).
+deckungsgleich sind: keine `&apos;`-Entities im Korpus (dort verifiziert).
 
 Kontrakt (Projektkonvention, vgl. tei_blank_marker.py):
   --dry-run   Report je Dokument (Anzahl Ersetzungen), nichts an den TEI-Daten schreiben.
