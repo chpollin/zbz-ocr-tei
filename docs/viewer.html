@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/tokens.css?v=7">
   <link rel="stylesheet" href="assets/css/base.css?v=7">
-  <link rel="stylesheet" href="assets/css/viewer.css?v=15">
+  <link rel="stylesheet" href="assets/css/viewer.css?v=16">
   <script src="https://cdn.jsdelivr.net/npm/openseadragon@5.0.1/build/openseadragon/openseadragon.min.js"></script>
 </head>
 <body class="viewer-body">
@@ -136,6 +136,8 @@
                 <button class="mode-btn" data-text-source="tei" aria-pressed="false" title="TEI rendered as reading view (read-only)">Rendered</button>
                 <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI-XML source (full document)">TEI-XML</button>
               </div>
+              <button class="panel__edit-toggle" id="btn-markup" aria-pressed="false" disabled
+                      title="Highlight annotations in the rendered view (entities, foreign text, footnotes, editorial interventions)">Markup</button>
               <button class="panel__edit-toggle" id="btn-edit-ocr" aria-pressed="false"
                       title="Correct the raw OCR text of this page">Edit OCR</button>
               <button class="panel__edit-toggle" id="btn-edit-xml" aria-pressed="false"
@@ -187,12 +189,12 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="assets/js/core.js?v=5"></script>
-  <script src="assets/js/tei-render.js?v=3"></script>
+  <script src="assets/js/core.js?v=6"></script>
+  <script src="assets/js/tei-render.js?v=4"></script>
   <script src="assets/js/download.js?v=2"></script>
   <script src="assets/js/fs-access.js?v=5"></script>
-  <script src="assets/js/layout-editor.js?v=3"></script>
-  <script src="assets/js/transcription-editor.js?v=3"></script>
-  <script src="assets/js/viewer.js?v=15"></script>
+  <script src="assets/js/layout-editor.js?v=4"></script>
+  <script src="assets/js/transcription-editor.js?v=4"></script>
+  <script src="assets/js/viewer.js?v=16"></script>
 </body>
 </html>

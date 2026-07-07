@@ -91,12 +91,27 @@ there. Switching the view tab exits edit mode; this replaces the TEI-to-XML redi
 introduced earlier in the session, since the rendered view no longer has any edit
 entry point (viewer.html, viewer.js).
 
+A third pass extended the rendered view to the measured element inventory (script
+over all final and reference TEIs). Corrected or newly rendered: lb with break="no"
+no longer forces a line break (hyphenation; the previous rendering split words),
+figures appear as labeled placeholder with caption instead of being skipped,
+footnotes carry their number as a superscript badge, lists, tables, listBibl,
+epigraph, and gap render structurally, front and back parts render (the reference
+TEIs carry content there, the old renderer showed body only), and entities
+(persName, orgName, placeName), bibl, and ref get identifiable spans respectively
+links with tooltips. A Markup toggle in the rendered view highlights the annotation
+classes in accent colors and shows a per-page legend with counts; with the toggle
+off the reading view is unchanged. Asset changes require bumping the ?v= query in
+viewer.html, otherwise browsers serve the stale cached CSS/JS.
+
 **Decisions** All fixes stay inside the existing modules and callbacks; no editor
 rewrite, no new dependency. The well-formedness gate reuses ZBZ.parseXml instead of
 adding a schema check in the browser; RelaxNG validation remains the job of the
 pipeline validator. Edit entry points are per target rather than per current tab, so
 the read-only nature of the rendered view is expressed by the absence of an edit
-button instead of a runtime redirect.
+button instead of a runtime redirect. The renderer covers entity markup although the
+pipeline emits none (entity linking removed with E71), because reference and future
+curated TEIs carry it and flow through the same viewer.
 
 **Status** Verified in the running viewer: region click-select leaves the workflow
 status untouched while a real drag still dirties the stream; an OCR edit flips the OCR

@@ -39,7 +39,8 @@
         manifestDirty: false, // unsaved status changes
         dirtyStreams: new Set(), // which streams have changed since the last save
         layoutDirty: false,   // unsaved layout change (current page)
-        textDirty: false      // unsaved text change (current page)
+        textDirty: false,     // unsaved text change (current page)
+        teiMarkup: false      // markup mode in the rendered view (annotation highlighting + legend)
     };
 
     // E77: workflow status per stream, three levels: unverifiziert -> in_arbeit -> verifiziert -> unverifiziert
@@ -71,6 +72,7 @@
         btnImageEdit:   $('#btn-image-edit'),
         btnEditOcr:     $('#btn-edit-ocr'),
         btnEditXml:     $('#btn-edit-xml'),
+        btnMarkup:      $('#btn-markup'),
         textSourceBtns: $$('.mode-btn[data-text-source]'),
         imageBody:      $('#image-body'),
         textBody:       $('#text-body'),
@@ -845,7 +847,7 @@
             }
             state.teiXml = xml;
             ZBZ.TeiRender.render(xml, refs.textBody);
-            ensureTextEditableState();
+            applyTeiMarkup();
         }
         else if (state.textSource === 'xml') {
             // Must load the FULL final TEI: saving overwrites {doc}_final.xml as a
@@ -966,6 +968,45 @@
         }
     }
 
+    // ---- Markup mode (rendered view): annotation highlighting + legend ----
+    // Label / selector / legend-dot modifier; counts come from the rendered DOM.
+    const MARKUP_LEGEND = [
+        ['Entities',   '.tei__entity',  'entity'],
+        ['Foreign',    '.tei__foreign', 'foreign'],
+        ['Footnotes',  '.tei__note',    'note'],
+        ['Editorial',  '.tei__corr',    'corr'],
+        ['Unclear',    '.tei__unclear', 'unclear'],
+        ['Figures',    '.tei__figure',  'figure'],
+        ['Links',      '.tei__ref',     'ref'],
+        ['Sections',   '.tei__div[data-type]:not([data-type="text"]), .tei__front, .tei__back', 'div']
+    ];
+
+    function applyTeiMarkup() {
+        if (refs.btnMarkup) {
+            refs.btnMarkup.disabled = state.textSource !== 'tei';
+            refs.btnMarkup.setAttribute('aria-pressed', (state.textSource === 'tei' && state.teiMarkup) ? 'true' : 'false');
+        }
+        const old = refs.textBody.querySelector('.tei-legend');
+        if (old) old.remove();
+        const wrap = refs.textBody.querySelector('.tei');
+        if (!wrap || state.textSource !== 'tei') return;
+        wrap.classList.toggle('tei--markup', state.teiMarkup);
+        if (!state.teiMarkup) return;
+        const legend = ZBZ.el('div', { cls: 'tei-legend' });
+        let any = false;
+        MARKUP_LEGEND.forEach(([label, sel, mod]) => {
+            const n = wrap.querySelectorAll(sel).length;
+            if (!n) return;
+            any = true;
+            const chip = ZBZ.el('span', { cls: 'tei-legend__chip tei-legend__chip--' + mod });
+            chip.appendChild(ZBZ.el('span', { cls: 'tei-legend__dot' }));
+            chip.appendChild(document.createTextNode(label + ' ' + n));
+            legend.appendChild(chip);
+        });
+        if (!any) legend.appendChild(ZBZ.el('span', { cls: 'tei-legend__empty', text: 'No annotations on this page' }));
+        refs.textBody.insertBefore(legend, wrap);
+    }
+
     // Each edit button binds edit mode to its source (Edit OCR -> ocr, Edit XML -> xml).
     // The rendered TEI view has no edit entry point: it cannot be round-tripped
     // (transcription-editor reads innerText only), save/export take TEI edits
@@ -1021,6 +1062,7 @@
         if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
         state.textSource = src;
         refs.textSourceBtns.forEach(b => b.setAttribute('aria-pressed', b.getAttribute('data-text-source') === src ? 'true' : 'false'));
+        applyTeiMarkup();   // button enable state; the render callback re-applies highlighting
         renderTextPanel();
         return true;
     }
@@ -1080,6 +1122,10 @@
         refs.btnImageEdit.addEventListener('click', () => setImageEdit(!state.imageEdit));
         refs.btnEditOcr.addEventListener('click', () => toggleEdit('ocr'));
         refs.btnEditXml.addEventListener('click', () => toggleEdit('xml'));
+        if (refs.btnMarkup) refs.btnMarkup.addEventListener('click', () => {
+            state.teiMarkup = !state.teiMarkup;
+            applyTeiMarkup();
+        });
         refs.textSourceBtns.forEach(b => b.addEventListener('click', () => setTextSource(b.getAttribute('data-text-source'))));
 
         // Save (all streams directly to repo) + Export dropdown (single-file download)

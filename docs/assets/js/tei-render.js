@@ -39,6 +39,7 @@
                 break;
 
             case 'p':
+            case 'ab':
                 el = ZBZ.el('p', { cls: 'tei__p' });
                 renderChildren(node, el);
                 target.appendChild(el);
@@ -51,7 +52,123 @@
             }
 
             case 'lb':
-                target.appendChild(document.createElement('br'));
+                // break="no" marks hyphenation (word continues); a <br> would split the word
+                if (node.getAttribute('break') !== 'no') target.appendChild(document.createElement('br'));
+                break;
+
+            case 'div': {
+                el = ZBZ.el('div', { cls: 'tei__div' });
+                const dtype = node.getAttribute('type');
+                if (dtype) el.setAttribute('data-type', dtype);
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+            }
+
+            case 'front':
+            case 'back':
+                el = ZBZ.el('div', { cls: 'tei__' + tag, attrs: { 'data-type': tag } });
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+
+            case 'title': {
+                const ttype = node.getAttribute('type');
+                el = ZBZ.el('span', { cls: 'tei__title' + (ttype ? ' tei__title--' + ttype : '') });
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+            }
+
+            case 'persName':
+            case 'orgName':
+            case 'placeName':
+            case 'name': {
+                const ref = node.getAttribute('ref') || '';
+                el = ZBZ.el('span', {
+                    cls: 'tei__entity tei__entity--' + tag.toLowerCase(),
+                    attrs: { title: tag + (ref ? ' · ' + ref : '') }
+                });
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+            }
+
+            case 'bibl': {
+                const ref = node.getAttribute('ref') || '';
+                el = ZBZ.el('span', { cls: 'tei__bibl', attrs: ref ? { title: 'bibl · ' + ref } : { title: 'bibl' } });
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+            }
+
+            case 'listBibl':
+                el = ZBZ.el('div', { cls: 'tei__listbibl' });
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+
+            case 'ref': {
+                const href = node.getAttribute('target') || '';
+                if (/^https?:\/\//.test(href)) {
+                    el = ZBZ.el('a', { cls: 'tei__ref', attrs: { href, target: '_blank', rel: 'noopener', title: href } });
+                } else {
+                    el = ZBZ.el('span', { cls: 'tei__ref', attrs: href ? { title: href } : {} });
+                }
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+            }
+
+            case 'list':
+                el = ZBZ.el('ul', { cls: 'tei__list' });
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+
+            case 'item':
+                el = ZBZ.el('li', { cls: 'tei__item' });
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+
+            case 'table': {
+                el = ZBZ.el('table', { cls: 'tei__table' });
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+            }
+
+            case 'row': {
+                el = document.createElement('tr');
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+            }
+
+            case 'cell': {
+                el = document.createElement('td');
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+            }
+
+            case 'gap': {
+                const desc = node.querySelector && node.querySelector('desc');
+                target.appendChild(ZBZ.el('span', {
+                    cls: 'tei__gap', text: '[…]',
+                    attrs: { title: 'gap' + (desc ? ' · ' + desc.textContent : '') }
+                }));
+                break;
+            }
+
+            case 'epigraph':
+                el = ZBZ.el('div', { cls: 'tei__epigraph' });
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+
+            case 'anchor':
                 break;
 
             case 'hi': {
@@ -64,14 +181,18 @@
             }
 
             case 'foreign': {
-                el = ZBZ.el('span', { cls: 'tei__foreign', attrs: { lang: node.getAttribute('xml:lang') || '' } });
+                const lang = node.getAttribute('xml:lang') || '';
+                el = ZBZ.el('span', { cls: 'tei__foreign', attrs: { lang, title: 'foreign' + (lang ? ' · ' + lang : '') } });
                 renderChildren(node, el);
                 target.appendChild(el);
                 break;
             }
 
             case 'note': {
-                el = ZBZ.el('span', { cls: 'tei__note' });
+                const place = node.getAttribute('place');
+                el = ZBZ.el('span', { cls: 'tei__note' + (place ? ' tei__note--' + place : '') });
+                const n = node.getAttribute('n');
+                if (n) el.appendChild(ZBZ.el('span', { cls: 'tei__note-n', text: n }));
                 renderChildren(node, el);
                 target.appendChild(el);
                 break;
@@ -100,17 +221,39 @@
             }
 
             case 'choice': {
+                // Show the corrected reading; keep the original visible via tooltip
                 const corr = node.querySelector('corr');
-                if (corr) renderChildren(corr, target);
-                else renderChildren(node, target);
+                const sic = node.querySelector('sic');
+                if (corr) {
+                    el = ZBZ.el('span', {
+                        cls: 'tei__corr',
+                        attrs: sic ? { title: 'sic: ' + sic.textContent } : {}
+                    });
+                    renderChildren(corr, el);
+                    target.appendChild(el);
+                } else {
+                    renderChildren(node, target);
+                }
                 break;
             }
 
             case 'space':
-                target.appendChild(document.createTextNode(' '));
+                if (node.getAttribute('dim') === 'vertical') {
+                    target.appendChild(ZBZ.el('div', { cls: 'tei__space' }));
+                } else {
+                    target.appendChild(document.createTextNode(' '));
+                }
                 break;
 
-            case 'figure':
+            case 'figure': {
+                // The image itself is not embedded; show a placeholder + caption
+                el = ZBZ.el('div', { cls: 'tei__figure' });
+                el.appendChild(ZBZ.el('span', { cls: 'tei__figure-label', text: 'Figure' }));
+                renderChildren(node, el);
+                target.appendChild(el);
+                break;
+            }
+
             case 'graphic':
                 // Images are not embedded in the viewer.
                 break;
@@ -144,9 +287,17 @@
             container.appendChild(ZBZ.el('div', { cls: 'empty', text: 'TEI could not be parsed.' }));
             return;
         }
-        const body = doc.querySelector('text > body') || doc.querySelector('body') || doc.documentElement;
         const wrap = ZBZ.el('div', { cls: 'tei' });
-        renderChildren(body, wrap);
+        const text = doc.querySelector('TEI > text') || doc.querySelector('text');
+        if (text) {
+            // front and back carry content in the reference/curated TEIs; render all three parts
+            ['front', 'body', 'back'].forEach(part => {
+                const partEl = text.querySelector(':scope > ' + part);
+                if (partEl) renderNode(partEl, wrap);
+            });
+        } else {
+            renderChildren(doc.querySelector('body') || doc.documentElement, wrap);
+        }
         container.appendChild(wrap);
     }
 

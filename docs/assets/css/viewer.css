@@ -581,6 +581,90 @@
 .tei__sp { margin: 0.5em 0 0.5em; }
 .tei__speaker { font-weight: 600; color: var(--h-text-secondary); }
 .tei__unclear { background: var(--h-ocker-subtle); }
+.tei__front, .tei__back { margin: 0 0 1.2em; }
+.tei__title { display: block; }
+.tei__title--sub { font-size: var(--h-base); color: var(--h-text-secondary); }
+.tei__note-n {
+  vertical-align: super;
+  font-size: 0.7em;
+  font-family: var(--h-font-heading);
+  color: var(--h-footnote);
+  margin-right: 0.4em;
+}
+.tei__space { height: 1em; }
+.tei__figure {
+  margin: 0.8em 0;
+  padding: var(--h-space-sm) var(--h-space-md);
+  border: 1px dashed var(--h-border-emphasis);
+  border-radius: var(--h-radius);
+  font-size: var(--h-sm);
+  color: var(--h-text-secondary);
+}
+.tei__figure-label {
+  display: block;
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-caption);
+}
+.tei__figure .tei__p { margin: 0.2em 0 0; }
+.tei__list { margin: 0 0 0.8em 1.4em; padding: 0; }
+.tei__item { margin: 0 0 0.2em; }
+.tei__table { border-collapse: collapse; margin: 0 0 1em; }
+.tei__table td { border: 1px solid var(--h-border); padding: 2px 10px; }
+.tei__listbibl { margin: 0 0 1em; }
+.tei__listbibl .tei__bibl { display: block; margin-bottom: 0.3em; }
+.tei__epigraph { font-style: italic; margin: 0 0 1em var(--h-space-md); }
+.tei__gap { color: var(--h-text-muted); }
+a.tei__ref { color: var(--h-preussischblau); }
+
+/* Markup mode: annotation scanning in the rendered view (toggle in panel header).
+   Accent colors mark annotations (accents, not surfaces): entities Prussian blue,
+   foreign olive green, editorial interventions brick red, unclear ocker. */
+.tei--markup .tei__entity { background: var(--h-preussischblau-subtle); border-bottom: 1px solid var(--h-preussischblau); }
+.tei--markup .tei__foreign { background: var(--h-olivgruen-subtle); border-bottom: 1px dotted var(--h-olivgruen); }
+.tei--markup .tei__corr { background: var(--h-ziegelrot-subtle); border-bottom: 1px dashed var(--h-ziegelrot); }
+.tei--markup .tei__unclear { border-bottom: 1px dotted var(--h-ocker); }
+.tei--markup .tei__note { border-left-color: var(--h-footnote); }
+.tei--markup .tei__bibl { border-bottom: 1px dotted var(--h-text-muted); }
+.tei--markup .tei__div[data-type]:not([data-type="text"])::before,
+.tei--markup .tei__front::before,
+.tei--markup .tei__back::before {
+  content: attr(data-type);
+  display: inline-block;
+  margin: 0.4em 0 0.2em;
+  padding: 0 var(--h-space-sm);
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: var(--h-tracking-caps);
+  text-transform: uppercase;
+  color: var(--h-text-muted);
+  border: 1px solid var(--h-border);
+  border-radius: var(--h-radius-sm);
+}
+
+/* Legend above the rendered text (markup mode) */
+.tei-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--h-space-sm) var(--h-space-md);
+  margin: 0 0 var(--h-space-md);
+  padding-bottom: var(--h-space-sm);
+  border-bottom: 1px solid var(--h-border);
+  font-family: var(--h-font-heading);
+  font-size: var(--h-xs);
+  letter-spacing: 0.03em;
+  color: var(--h-text-secondary);
+}
+.tei-legend__chip { display: inline-flex; align-items: center; gap: 0.35em; }
+.tei-legend__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--h-text-muted); }
+.tei-legend__chip--entity .tei-legend__dot { background: var(--h-preussischblau); }
+.tei-legend__chip--foreign .tei-legend__dot { background: var(--h-olivgruen); }
+.tei-legend__chip--note .tei-legend__dot { background: var(--h-footnote); }
+.tei-legend__chip--corr .tei-legend__dot { background: var(--h-ziegelrot); }
+.tei-legend__chip--unclear .tei-legend__dot { background: var(--h-ocker); }
+.tei-legend__empty { color: var(--h-text-muted); }
 
 /* XML View */
 .xml-view {
