@@ -57,6 +57,45 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-07-07 Session 86: Healing rerun executed, gates green, reports and statistics moved to the post-run state
+
+**Occasion** The operator re-ran `tei_pb_folio --strip-folio-echo` after the E95
+tool repair; the rerun healed exactly the 14 orphaned speaker wrappers in the four
+interview documents and changed no page number corpus-wide (run report: 0 pb
+changes, sp_healed 7/1/1/5).
+
+**Goal** Verify the healed corpus end to end, re-measure the CER, and project the
+executed stock runs into the work report, the final report, and the register.
+
+**Course** Gates green: pytest 1370 passed / 1 skipped, `tei_validator --all`
+285/285 valid (2018 informative warnings in 256 documents, dominated by the two
+curation signals W17 with 830 and W19 with 827 instances). After-audits:
+`pb_number_audit` now classifies 204 documents printed_folio, 37 scan_sequence,
+10 mixed, 34 undetermined; `body_note_audit` drops from 63 candidates to 3 (the
+two facsimile-confirmed genuine footnotes in 1530 and 3040 plus one new
+borderline case, doc 20 page 196, curation worklist); `char_lint_audit` keeps
+straight apostrophes at zero. CER re-measured (seed 42, B = 10 000): fidelity
+mean 2.50% (CI [1.65%; 3.54%]), median 1.37% (CI [1.08%; 2.56%]); paired against
+raw OCR 17/25 documents improved, -9.66 pp, p = 0.0066. `docs/data/
+cer_statistics.json` regenerated (also carries the corrected citation strings).
+Both stock-run slots in `reports/arbeitsbericht-v3.md` filled, its 6.3 figures
+updated, `knowledge/final-report.md` 6.3 updated, E94/E95 register entries closed
+as executed.
+
+**Decisions** None new; this session executes E94/E95.
+
+**Status** Corpus healed and fully green; the published statistics artifact
+reflects the post-run state. Local commits await the push gate.
+
+**Next steps**
+1. Push the pending commits (operator gate).
+2. Doc-30 adjudication (E91 loss reading versus calibration), then fill the
+   remaining report slot.
+3. 1520 p70 re-OCR (gated, one paid call); M3 reading-order rollout
+   (operator-gated).
+4. Mirror regeneration `generate_edition_data --mirror-only` so the viewer shows
+   the corrected corpus.
+
 ### 2026-07-07 Session 85: E94 stock runs executed; echo-strip sp defect found, repaired, healing pending
 
 **Occasion** The operator executed both pending stock runs (`tei_pb_folio

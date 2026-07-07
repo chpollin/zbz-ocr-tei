@@ -625,20 +625,20 @@ pipeline failure and bound what is reachable.
 ### 6.3 Corpus Result and Data Situation
 
 Headline result of the current corpus (n = 25, seed 42, B = 10,000, state of
-the 2026-06-08 statistics run, reproducible via
+the 2026-07-07 statistics run (after the stock-correction wave, decisions E94/E95), reproducible via
 `python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`):
 
 | Metric | Mean | Median | 95% CI (mean) | Measures |
 | :---- | ----: | ----: | :---- | :---- |
-| fidelity CER (primary) | 2.71% | 1.40% | [1.77%, 3.82%] | real OCR and transcription fidelity (micro average 2.13%) |
-| full-text CER (diagnosis) | 18.94% | 12.13% | [10.26%, 30.09%] | full divergence including surplus text; no quality measure |
-| scope rate (surplus text) | 16.23% | 7.06% | | pipeline text beyond the selective reference; no error |
+| fidelity CER (primary) | 2.50% | 1.37% | [1.65%, 3.54%] | real OCR and transcription fidelity (micro average 2.06%) |
+| full-text CER (diagnosis) | 18.79% | 12.13% | [10.17%, 29.93%] | full divergence including surplus text; no quality measure |
+| scope rate (surplus text) | 16.29% | 7.03% | | pipeline text beyond the selective reference; no error |
 
 These values are to be read print-calibrated: the Transkribus quality bands
 (under 2% publication-ready, 2 to 5% research-usable) stem primarily from
 handwriting recognition practice and flatter a pure print OCR task where the
 bar sits higher. Decisive is therefore the comparison with the print OCR
-literature below: the fidelity median of 1.40% lies between the best
+literature below: the fidelity median of 1.37% lies between the best
 specialized print stack (Transkribus with LLM post-correction, 0.84%;
 Crosilla et al. 2025) and Transkribus alone (3.67%), solid for historical
 print but not at the top; the technical optimum is reached only by the best
@@ -658,9 +658,9 @@ printed image. Genuine text loss is the exception across the corpus; the
 true character recognition performance therefore lies below the cited
 values.
 
-The end-to-end pipeline beats raw Mistral OCR by 9.45 percentage points of
-fidelity CER (paired bootstrap, p = 0.013, n = 25, significant at alpha =
-0.05). An earlier figure of -14.83 pp (p = 0.0004) was an artifact of the
+The end-to-end pipeline beats raw Mistral OCR by 9.66 percentage points of
+fidelity CER (paired bootstrap, p = 0.0066, n = 25, 17 of 25 documents
+improved, significant at alpha = 0.05). An earlier figure of -14.83 pp (p = 0.0004) was an artifact of the
 old trimmed, lowercased comparison and is retracted.
 
 An independent counter-check (2026-07-03) reproduced every headline and
@@ -687,7 +687,12 @@ counts as verified running text when a contiguous run of at least 150
 characters of its text occurs in the body of the reference (`MIN_MATCH` in
 `tei_footnote_demote.py`). Beyond the five demoted documents, 6 candidates were
 held back as reference-verified genuine footnotes, 11 remain for manual
-checking, and 1 is a page number.
+checking, and 1 is a page number. The continuation for the rest of the
+corpus followed on 2026-07-07 as a verdict-driven stock run over all 63
+facsimile-verified `body_note_audit` candidates (59 unwraps to `<p>`, 2
+quote conversions, 2 genuine footnotes preserved, 19 marker promotions in
+26 documents; decisions E94/E95), lowering the audit's candidate count
+from 63 to 3.
 
 | Doc | Blocks | Fidelity before | after |
 | :---- | :---- | ----: | ----: |
@@ -710,29 +715,29 @@ reference. The full three-number decomposition per document is in
 | Doc | Type | Lang | Fidelity % | Main cause |
 | :---- | :---- | :---- | ----: | :---- |
 | 30 | A | FR | 11.59 | double page: genuine text loss, counter-check-verified; reordering alone does not recover it (E91) |
-| 1910 | B | DE | 7.70 | residue after footnote demotion + scope |
+| 1910 | B | DE | 2.81 | residue cleared by the verdict-driven demotion (E94) |
 | 760 | D | FR | 5.87 | double page: lost picture captions and unsegmented pagination, counter-check-verified (E91); reading order itself holds at the facsimile |
 | 1440 | B | DE | 5.87 | scope + faulty reference |
-| 300 | D | FR | 5.05 | scope + extra pages |
+| 300 | D | FR | 5.00 | scope + extra pages |
 | 1410 | B | FR | 4.24 | scope + extra pages |
-| 130 | A | FR | 2.94 | nearly clean |
-| 560 | A | FR | 2.61 | clean |
-| 290 | A | FR | 2.60 | fixed by footnote demotion |
+| 130 | A | FR | 2.93 | nearly clean |
+| 560 | A | FR | 2.50 | clean |
+| 290 | A | FR | 2.56 | fixed by footnote demotion |
 | 2310 | A | FR | 2.46 | scope (JSTOR cover) |
-| 1520 | C | FR | 2.10 | extra pages; footnote demotion applied |
+| 1520 | C | FR | 2.08 | extra pages; footnote demotion applied |
 | 2530 | B | FR | 1.83 | clean |
-| 90 | A | DE | 1.40 | fixed by footnote demotion |
+| 90 | A | DE | 1.28 | fixed by footnote demotion |
 | 890 | B | DE | 1.37 | scope |
 | 40 | C | FR | 1.20 | clean; footnote demotion applied |
 | 1060 | A | DE | 1.14 | scope |
-| 1180 | A | FR | 1.12 | clean |
-| 3040 | B | FR | 1.09 | scope (footnotes) |
+| 1180 | A | FR | 1.08 | clean |
+| 3040 | B | FR | 1.26 | scope (footnotes) |
 | 3020 | B | DE | 1.06 | clean |
 | 1330 | D | FR | 1.03 | scope |
-| 570 | A | FR | 0.93 | scope (extreme) |
+| 570 | A | FR | 0.79 | scope (extreme) |
 | 100 | A | FR | 0.85 | clean |
-| 2635 | A | DE | 0.76 | clean |
-| 830 | D | FR | 0.75 | clean |
+| 2635 | A | DE | 0.73 | clean |
+| 830 | D | FR | 0.69 | clean |
 | 580 | A | FR | 0.30 | scope (extreme) |
 
 For the 260 documents without ground truth, the dictionary hit rate serves
@@ -802,7 +807,7 @@ one place, with per-finding status.
 | :---- | :---- | :---- | :---- | :---- |
 | 1 | OCR duplication (a text block captured twice) | doc 30 | Mistral repeated a paragraph | fixed manually (fidelity 18.25 to 11.59%); no automatic deduplication stage exists |
 | 2 | scrambled reading order on double pages and columns | W19 worklist, prominently 30, 760 | landscape scans and column layouts; the old assembly sorted by y position only | fix built and previewed (E90); corpus rollout operator-gated (M3), residue of 39 pages to facsimile review (section 7) |
-| 3 | running text wrongly marked as footnote | 290, 1910, 90, 40, 1520 | Gemini layout QA over-detects footnote regions; the text falls out of the fidelity comparison (rule E5) | largely fixed by reference-verified demotion (2026-06-08); 11 candidates remain for manual checking; an automatic demote stays unsafe because genuine long footnotes exist |
+| 3 | running text wrongly marked as footnote | 290, 1910, 90, 40, 1520 | Gemini layout QA over-detects footnote regions; the text falls out of the fidelity comparison (rule E5) | fixed by reference-verified demotion (2026-06-08) and the corpus-wide verdict-driven demotion (2026-07-07, E94); the remaining audit candidates are facsimile-confirmed genuine footnotes plus one new borderline case |
 | 4 | scope: surplus text against selective references | for example 570, 580, 2310, 300, 3040 | the reference TEIs are partial transcriptions; the pipeline additionally captures covers, front matter, neighboring articles | no defect; disclosed as a diagnostic quantity via the fidelity/scope separation |
 | 5 | faulty reference | 1440 | the Transkribus ground truth itself contains a transcription error; the more correct pipeline is penalized | not fixable (ground truth by definition; example 5) |
 | 6 | CER thresholds HTR-calibrated | methodology | the Transkribus quality bands stem from handwriting recognition and flatter a print OCR task | fixed (print-calibrated framing; comparison with print OCR literature) |
