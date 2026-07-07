@@ -44,14 +44,14 @@ from scripts.config import (
 
 TOOL_VERSION = "1.0"
 
-# Verifizierte Soll-Werte (Stand projekt.md 2026-05-27) fuer den Drift-Check.
-# Diese Baseline IST die Knowledge-Behauptung -- bei Knowledge-Updates hier nachziehen.
+# Verified target values (as of project.md 2026-05-27) for the drift check.
+# This baseline IS the knowledge claim; update here when the knowledge docs change.
 KNOWLEDGE_CLAIMS = {
-    "masterfile_texts": 325,   # projekt.md: Masterfile-Texte (Text-Ebene)
-    "pdfs": 286,               # projekt.md: als PDF geliefert
-    "tei_produced": 285,       # projekt.md: produktiv (finales TEI)
-    "pages_total": 7186,       # projekt.md: Seiten bibliografisch (Masterfile)
-    "pages_processed": 4122,   # projekt.md: Seiten verarbeitet (OCR-md, volatil bei Re-OCR)
+    "masterfile_texts": 325,   # project.md: Masterfile texts (text level)
+    "pdfs": 286,               # project.md: delivered as PDF
+    "tei_produced": 285,       # project.md: productive (final TEI)
+    "pages_total": 7186,       # project.md: bibliographic pages (Masterfile)
+    "pages_processed": 4122,   # project.md: processed pages (OCR md, volatile on re-OCR)
 }
 
 

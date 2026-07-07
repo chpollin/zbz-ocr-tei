@@ -7,7 +7,7 @@ Generiert visuellen HTML-Report mit Diff-Ansicht.
 CER-VERTRAG (kanonische Definition, gilt fuer das ganze Projekt)
 =====================================================================
 Verbindlich verifiziert gegen OCR-D, dinglehopper, Transkribus, jiwer
-(siehe knowledge/quality.md, Abschnitt "Externe Verifikation").
+(siehe knowledge/final-report.md, Abschnitt Externe Verifikation).
 
 - Formel:        CER = Levenshtein(ref, hyp) / len(ref)   (Transkribus-Konvention,
                  Denominator = Referenzlaenge). Kann >1.0 werden; das wird NICHT
@@ -521,7 +521,7 @@ def classify_edit_operations(reference: str, hypothesis: str,
     fidelity_distance + scope_insertion_distance == Levenshtein(ref, hyp), d.h.
     cer (=total/N) ist identisch zu calculate_cer; cer_fidelity + scope_insertion_rate == cer.
     Asymmetrie ist beabsichtigt: vollstaendiger sein als die Referenz ist kein Fehler,
-    unvollstaendiger sein schon (siehe knowledge/quality.md, Scope-Diskussion).
+    unvollstaendiger sein schon (siehe knowledge/specification.md, Quality measurement).
     """
     fid = 0
     scope_ins = 0

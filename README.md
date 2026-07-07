@@ -30,7 +30,7 @@ End-to-end pipeline for the estate of Jeanne Hersch: the delivered PDFs are turn
 layout, and schema-valid TEI. The corpus funnel from catalogued texts to digitized to delivered
 as PDF to final TEI is generated and drift-checked by `python -m scripts.eval.corpus_audit`; the
 current figures and the four-unit page reconciliation live in
-[knowledge/projekt.md §Korpus](knowledge/projekt.md).
+[knowledge/project.md §Corpus](knowledge/project.md).
 
 ```
 PDF-Scans -> Images -> OCR (Mistral) ──┐
@@ -51,7 +51,7 @@ Notes:
   extensions are `@facs` cross-linking on the text and a provenance drawer in the viewer (see
   [knowledge/workflow.md](knowledge/workflow.md)).
 
-Component status per stage: [knowledge/projekt.md §Komponenten-Status](knowledge/projekt.md).
+Component status per stage: [knowledge/project.md §Component Status](knowledge/project.md).
 Engines and TEI mapping: [knowledge/pipeline.md](knowledge/pipeline.md).
 
 ## Quality
@@ -63,7 +63,8 @@ literature rather than HTR quality bands (E80), placing the pipeline in the soli
 historical print. Caveat: the ZBZ reference TEIs are partial transcriptions, so naive full-text CER
 is a diagnostic artifact, not a quality measure. Full methodology, stratified values, limitations,
 and the literature comparison, with all current values: [docs/methode.html](docs/methode.html) and
-[knowledge/quality.md](knowledge/quality.md).
+[knowledge/final-report.md](knowledge/final-report.md); the normative method is in
+[knowledge/specification.md](knowledge/specification.md).
 
 Live corpus overview with current per-document status:
 [chpollin.github.io/zbz-ocr-tei](https://chpollin.github.io/zbz-ocr-tei/) (or `docs/index.html`
@@ -103,16 +104,16 @@ Pending / not done:
 
 Measurement caveat: ground truth exists only for the 25 reference documents, so corpus-wide quality
 (dictionary hit rate) is an estimate, not a measurement. See
-[knowledge/quality.md](knowledge/quality.md).
+[knowledge/specification.md](knowledge/specification.md), quality measurement section.
 
 ## Frontend
 
 Static site under `docs/`, deployed via GitHub Pages, no backend; all data is loaded from static
 JSON/XML/MD files under `docs/data/`. The viewer (`docs/viewer.html`) is a single-page inspector
 (OpenSeadragon facsimile, layout overlay, OCR/TEI panel, per-panel edit toggle) with a single
-"Speichern" button that persists all unsaved streams at once, written directly into the working
+"Save" button that persists all unsaved streams at once, written directly into the working
 tree via the File System Access API (Chromium) or exported as downloads. Architecture, save
-mechanism, CDN dependencies, and design system: [knowledge/viewer.md](knowledge/viewer.md).
+mechanism, CDN dependencies, and design system: [knowledge/workflow.md](knowledge/workflow.md).
 
 ```bash
 python -m http.server 8000 -d docs    # http://localhost:8000/
@@ -147,15 +148,14 @@ Complete CLI reference: [CLAUDE.md §Commands](CLAUDE.md).
 | Topic | File |
 |---|---|
 | Navigation (start here) | [knowledge/index.md](knowledge/index.md) |
-| Project + milestones + corpus | [knowledge/projekt.md](knowledge/projekt.md) |
+| Project + milestones + corpus | [knowledge/project.md](knowledge/project.md) |
 | Pipeline + engines + TEI mapping | [knowledge/pipeline.md](knowledge/pipeline.md) |
-| End-to-end workflow + save mechanism + round-trip + provenance concept | [knowledge/workflow.md](knowledge/workflow.md) |
-| Quality (CER, validation, screening) | [knowledge/quality.md](knowledge/quality.md) |
-| Viewer (frontend architecture, OSD, edit toggles, export) | [knowledge/viewer.md](knowledge/viewer.md) |
-| Frontend findings (bugs/UX/a11y per severity) | [knowledge/frontend-gaps.md](knowledge/frontend-gaps.md) |
-| Ecosystem synthesis (zbz / szd-htr / teiCrafter) | [knowledge/oekosystem-synthese.md](knowledge/oekosystem-synthese.md) |
-| Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastruktur.md](knowledge/infrastruktur.md) |
-| Methodology + Promptotyping | [knowledge/methodik.md](knowledge/methodik.md) |
+| End-to-end workflow + viewer + save mechanism + round-trip + provenance concept | [knowledge/workflow.md](knowledge/workflow.md) |
+| Requirements, quality method, validation rules, epics + user stories | [knowledge/specification.md](knowledge/specification.md) |
+| Ecosystem synthesis (zbz / szd-htr / teiCrafter) | [knowledge/ecosystem-synthesis.md](knowledge/ecosystem-synthesis.md) |
+| Infrastructure (Azure, Podman, CI/CD) | [knowledge/infrastructure.md](knowledge/infrastructure.md) |
+| Methodology + Promptotyping | [knowledge/methodology.md](knowledge/methodology.md) |
+| Final work report (delivery synthesis) | [knowledge/final-report.md](knowledge/final-report.md) |
 | Decisions + open items | [knowledge/decisions.md](knowledge/decisions.md) |
 | Session journal | [knowledge/journal.md](knowledge/journal.md) |
 

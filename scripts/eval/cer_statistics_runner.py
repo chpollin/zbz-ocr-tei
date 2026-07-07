@@ -67,7 +67,7 @@ def _detect_scope_mismatch(eval_result: dict) -> tuple[str, str | None]:
     Seitenzahl-Heuristik (page_ratio >= 1.5 -> 'partial') markierte zwar Doppelseiten-
     Spreads (Doc 30, 760), wurde aber in cer_statistics_full ohnehin auf 'full'
     ueberschrieben -- sie war wirkungsloser, irrefuehrender Code und ist hier entfernt.
-    Damit stimmen Code und quality.md ("scope_status ist immer full") wieder ueberein;
+    Damit stimmen Code und knowledge/specification.md ("scope_status ist immer full") wieder ueberein;
     die scope-robuste Qualitaetszahl bleibt die Fidelity-CER. eval_result wird fuer
     Signatur-Kompatibilitaet beibehalten, aber nicht mehr ausgewertet.
     """

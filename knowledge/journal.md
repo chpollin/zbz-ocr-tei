@@ -1,5 +1,5 @@
 ---
-title: Arbeitsjournal
+title: Work Journal
 type: journal
 project:
   name: zbz-ocr-tei
@@ -8,7 +8,7 @@ method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: draft
-language: de
+language: en
 created: 2026-01-29
 updated: 2026-07-07
 tags: [zbz-ocr-tei, journal]
@@ -19,472 +19,364 @@ template:
 related: [decisions, index]
 ---
 
-# Arbeitsjournal
+# Work Journal
 
-Chronologische Entwicklungsgeschichte des Projekts, neueste Eintraege zuerst. Das Journal
-verdichtet je Sitzung Anlass, Verlauf, Entscheidungen und Stand. Es ist weder Git-Log noch
-Sitzungsprotokoll: einzelne Commits stehen in der Git-History, Entscheidungs-Begruendungen
-im Register [decisions.md](decisions.md).
+Chronological development history of the project, newest entries first. The journal
+condenses occasion, course, decisions, and status for each session. It is neither a git
+log nor a meeting protocol: individual commits belong in the git history, decision
+rationale in the register [decisions.md](decisions.md).
 
-## Format-Kontrakt
+## Format Contract
 
-Jeder Eintrag wird am Sitzungsende geschrieben; beim Wiedereinstieg wird zuerst der oberste
-Eintrag gelesen. Neue Eintraege stehen immer direkt unter der Ueberschrift "Eintraege".
-Bestehende Eintraege werden nie nachtraeglich geaendert; Korrekturen sind neue Eintraege
-mit Verweis auf den alten.
+Each entry is written at the end of the session; on re-entry, the topmost entry is read
+first. New entries always appear directly under the heading "Entries". Existing entries
+are never changed retroactively; corrections are new entries referencing the old one.
 
-Feste Feldreihenfolge pro Eintrag: **Anlass** (1 Satz: warum diese Arbeit jetzt),
-**Ziel** (1 Satz), **Verlauf** (1 bis 4 Absaetze, mit Belegstellen), **Entscheidungen**
-(je Punkt: was, warum, verworfene Alternative; Registernummer falls vorhanden),
-**Stand** (1 Absatz, allein lesbar; optional Commit-Hash als Savepoint),
-**Naechste Schritte** (nummeriert), **Dead Ends** (optional, mit Begruendung).
-Pflichtfelder: Anlass, Ziel, Verlauf, Stand, Naechste Schritte.
+Fixed field order per entry: **Occasion** (one sentence: why this work now),
+**Goal** (one sentence), **Course** (at most one paragraph, with references),
+**Decisions** (per point: what, why, rejected alternative; register number if
+available), **Status** (a few sentences, self-contained; optional commit hash as
+savepoint), **Next steps** (numbered), **Dead Ends** (optional, with rationale).
+Required fields: Occasion, Goal, Course, Status, Next steps.
 
-Formregeln: formell und projektbezogen; Fachbegriffe und Abkuerzungen beim ersten
-Auftreten im Eintrag erklaeren; Zahlen mit Bezugsgroesse. Nicht hinein gehoeren:
-Spezifikation (gehoert in [decisions.md](decisions.md) bzw. die Fach-Docs), Code-Diffs
-und Commit-Texte, stundengenaue Protokolle, Selbstbewertungen, Notizen ueber die Pflege
-der Dokumentation selbst, Personennamen (Rollen und Organisationen verwenden).
+Compact standard: entries are distilled knowledge, not protocols. Keep every decision,
+identifier, figure, and hash; drop narrative detail. The full-length originals of all
+entries up to session 79 remain in the git history.
 
-Die Sitzungen 1 bis 68 stehen unveraendert im Kompakt-Archiv weiter unten (eine Zeile
-pro Sitzung); ab Sitzung 69 gilt die Eintragsstruktur der Vorlage Journal v0.2.
+Style rules: formal and project-specific; explain technical terms on first use within
+the entry; quantities with reference unit. Not included here: specifications (they
+belong in [decisions.md](decisions.md) or the domain docs), code diffs and commit
+texts, hour-by-hour protocols, self-assessments, notes on documentation maintenance
+itself, personal names (use roles and organisations instead).
 
-## Eintraege
+Translated to English and compacted on 2026-07-07 by operator decision; knowledge
+preserved, pre-compaction entries in git history.
 
-### 2026-07-07 Sitzung 79: Doku-Korrektheits-Pass (README, CLAUDE.md, knowledge/ und referenzierte Aussenstellen)
+Sessions 1 to 68 remain in the compact archive below (one line per session); from
+session 69 onwards the entry structure of Journal template v0.2 applies.
 
-**Anlass** Operator-Auftrag, den Knowledge-Ordner, README.md und CLAUDE.md auf ausschliesslich richtige und konstruktive Aussagen zu pruefen und Befunde zu beheben.
+## Entries
 
-**Ziel** Faktisch falsche, kollidierende und fehlende Doku-Aussagen identifizieren und beheben, ohne Code- oder Datenaenderung.
+### 2026-07-07 Session 80: Knowledge restructuring completed, site in English, final report v2, push
 
-**Verlauf** Audit ueber die Triade plus die von ihr referenzierten Aussenstellen (scripts/README.md als Inventar, docs/methode.html als oeffentliche Methodenseite). Neun Befunde, alle behoben. Faktisch falsch: CLAUDE.md und methode.html behaupteten, `docs/data/cer_statistics.json` sei nicht eingecheckt, waehrend die Git-Historie die Datei seit 2026-04-27 als bewusst mitgefuehrtes Beleg-Artefakt der CER-Entwicklung zeigt; quality.md nannte als Validation-Report-Pfad `tei_unified`, der Validator schreibt seit der Default-Umstellung (Sitzung 76) in das validierte Verzeichnis, per Default `tei_final` (der alte Pfad haette auf einen veralteten Report mit Fehlalarm-Zahlen gefuehrt); das README zaehlte 10 statt 12 Knowledge-Dokumente. Kollidierend bzw. unvollstaendig: die Kennung M3 bezeichnete zweierlei (entfernter NER-Meilenstein in projekt.md gegen Strukturfix-Auslieferung in Journal/E90), das README verschwieg den Lesereihenfolge-Defekt samt wartendem Rollout, und der M5-Punkt der Pending-Liste las sich als eigene Bringschuld statt als ZBZ-Aufgabe. Konstruktive Luecken: die M3-Werkzeuge `reading_order_audit` und `tei_reassemble_preview` fehlten in der CLI-Referenz (CLAUDE.md) und im Inventar (scripts/README.md), samt ihrer Testsuiten; der E82-Caveat zu `ocr_dedup` war ueberholt. Zusaetzlich wurden ungebundene volatile Testzahlen aus CLAUDE.md, methode.html und scripts/README.md gestrichen.
+**Occasion** Operator assignment to work everything off up to one push and one compact report, including the dissolution of viewer.md, quality.md, and frontend-gaps.md into other knowledge documents.
 
-Zweite Welle auf Operator-Zuruf: neue Markdown-Stilregeln (kein Bold-Emphasis, kein Gedankenstrich-Konnektor, keine volatilen Mengenangaben in durablen Dokumenten) in CLAUDE.md §Code-Konventionen kodifiziert und per Subagent vollstaendig auf das README angewandt. Das README wurde zugleich per SSoT-Deduplikation verschlankt: Komponenten-Tabelle, Verzeichnisbaum, Engine- und CDN-Tabellen sowie der lange Quick-Start entfielen, jeweils nach Verifikation, dass jeder Fakt im Ziel-Knowledge-Dokument existiert; einziger echter Umzug war impressum.html als fuenfte statische Seite nach viewer.md. Entbundene Zaehlungen in CLAUDE.md und index.md wurden qualitativ gefasst.
+**Goal** A pushed repository state in which the documentation set is English, deduplicated, and correct: specification and final report exist, the three dissolved documents are gone without dangling references, and the docs/ site speaks English.
 
-**Entscheidungen** `cer_statistics.json` bleibt versioniert, weil die Git-Historie bewusstes Mitfuehren belegt (jeder CER-Commit aktualisiert die Datei); verworfen wurde das Enttracken, die falschen Texte waren der Defekt. M3-Kollision per Kennungs-Hinweis in projekt.md geloest statt Umnummerierung, weil die Journaleintraege 74 bis 78 der primaere Wiedereinstieg sind und ein zweiter Name Alias-Drift erzeugt. Volatile Testzahlen gestrichen statt gepflegt, weil kein Drift-Waechter existiert und die Kommandos ihre Zahl selbst melden. Keine neue Registernummer (Doku-Hygiene, kein Architekturentscheid); E82 per Inline-Annotation praezisiert. Stilregeln gelten prospektiv, der Bold-/Gedankenstrich-Bestand in knowledge/ wurde nicht flaechig umgeschrieben. Operator-Entscheide im Anschluss: die gesamte Markdown-Doku wird englisch, einschliesslich Journal, Entscheidungsregister und reports/; die vier deutsch benannten Knowledge-Dateien werden englisch umbenannt (project, methodology, infrastructure, ecosystem-synthesis); vor der Uebersetzungswelle ein Savepoint-Commit.
+**Course** Integration first: workflow.md absorbed the viewer knowledge (pages, modes, editors, blank pages, workflow status model, Hersch design system), infrastructure.md the viewer deployment, specification.md the normative quality method plus the validation rule catalog (R1-R7, W1-W19, Z1-Z6/Z8) and the open frontend requirements (N1/N3/N6/N7 plus page strip and provenance panel), ecosystem-synthesis.md the six-frontend survey with its stale H1-H5 risk list corrected to the fixed state. Then the three source files were deleted and every reference remapped (README, data/README, scripts/README, project/pipeline/methodology/index, CLAUDE.md, six Python docstrings). knowledge/final-report.md was authored as v2 of the 2026-05-27 work report, same structure, English, updated values (fidelity mean 2.71%, median 1.40%, CI [1.77, 3.82], paired gain -9.45 pp at p=0.013), the schema-validation placeholder resolved (285/285, warning docs 145), the footnote-demotion and E90 reading-order chapters added, appendix cleaned (no ocr_dedup.py, JSZip correctly marked planned). Site wave: viewer.html, methode.html, about.html, impressum.html translated in the main loop (methode.html also fixed the Nosova-to-Levchenko attribution and the stability status; about.html the stale download-only persistence claim); the eight JS modules were translated by three Sonnet agents in parallel, a fourth swept the Markdown set (result: zero broken links, zero German prose outside exempt categories). Data values `unverifiziert | in_arbeit | verifiziert` and all `zbz_tag` values remained invariant throughout; only display labels changed.
 
-**Stand** Beide Wellen umgesetzt und verifiziert: alle neun Befunde behoben, README frei von Bold, Gedankenstrichen und volatilen Zahlen, Links geprueft, Code und Lieferbestand unangetastet. Dieser Stand wird als Savepoint committet; die Uebersetzungswelle folgt als eigene Einheit. M3 bleibt unveraendert operator-gated (Sitzung 78).
+**Decisions** Dissolution mapping: normative content to specification.md, operative viewer knowledge to workflow.md, measured values to final-report.md (dated snapshot, therefore allowed to carry figures); rejected keeping a thin quality.md stub because the SSoT rule forbids two homes per fact. The final report lives in knowledge/ as a versioned document, reports/ keeps only the generated M3 preview artifact. Foreground Sonnet agents for bulk translation after two background fleets had died silently on this host; the main loop keeps integration and authoring.
 
-**Naechste Schritte**
-1. Uebersetzungswelle: alle Markdown-Dokumente englisch (inkl. Journal/Register/Reports), Renames + Querverweis-Sweep, danach eigener Commit.
-2. Operator-Entscheid M3 (unveraendert offen): Trockenlauf abnehmen, Auslieferung freigeben, 39 Restseiten am Faksimile sichten.
+**Status** pytest green on the laptop (326 passed, 9 skipped; the skips are the data-bound gates whose data lives at the workstation). Committed and pushed this session on top of savepoint `16b3323c`.
 
-### 2026-06-21 Sitzung 78: Ursache der 39 Restseiten isoliert (Count-Mismatch, nicht Geometrie-Gap; korrigiert Sitzung 77)
+**Next steps**
+1. Workstation, M3 rollout: re-run `reading_order_audit` and `tei_reassemble_preview --all`, confirm 831 to 39, then release `tei_unified --all --reassemble`; afterwards full pytest, `tei_validator --all`, `corpus_audit`, mirror regeneration via `generate_edition_data`.
+2. Workstation, residual pages: `reading_order_audit --worklist`, review the 39 pages at the facsimile (35 count mismatches, 4 column edge cases).
+3. Workstation, stability measurement (released): 5 documents times 3 runs, report per-document CER spread, close `stability.status` in `cer_statistics.json`.
+4. Workstation, fresh frontend gap analysis on the full corpus; findings land in specification.md.
+5. teiCrafter handover preparation (TEI control + inline-GND annotation); entity gate Z1-Z4 turns sharp there.
+6. Backlog: translate the report strings of `tei_reassemble_preview.py` so the regenerated M3 report is English (current artifact is German).
 
-**Anlass** Operator-Auftrag, weiterzumachen. Autonom moeglich war nicht die gated M3-Auslieferung, sondern die in Sitzung 77 offen gelassene Ursachenklaerung der 39 verbleibenden W19-Seiten.
+### 2026-07-07 Session 79: Documentation correctness pass, style rules, README slimming
 
-**Ziel** Verstehen, warum die Reassemblierung 39 Seiten nicht auf null bringt, und ob ein sicherer Fix existiert oder die Seiten der Faksimile-Sicht gehoeren.
+**Occasion** Operator assignment: knowledge folder, README, and CLAUDE.md must contain only correct and constructive statements.
 
-**Verlauf** Sitzung 77 hatte die Ursache als Geometrie-Gap zwischen Ordnungsstufe (Region-Bboxes) und Pruefstufe (Zonen-Bboxes) vermutet. Die Diagnose widerlegt das: `reading_order_permutation` ist idempotent, und 35 der 39 Restseiten haben einen OCR-Absatz-gegen-Layout-Region-Count-Mismatch (etwa 810 S.56: 3 Absaetze gegen 236 Regionen, 1240 S.3: 50 gegen 61). Im Mismatch-Zweig von `match_paragraphs_to_regions` werden die Absaetze per Index an einen Ausschnitt der umsortierten Regionen gepaart, der emittierte Zonen-Ausschnitt ist dann nicht kanonisch, und W19 schlaegt zu Recht an. Die uebrigen 4 Restseiten haben 1:1-Count, aber eine Layout-Geometrie, die die Spaltenerkennung bricht (sub-60%-breiter Kopf, dessen Mitte in die zweite Spalte ragt, etwa 460 S.1).
+**Goal** Find and fix factually wrong, colliding, and missing documentation statements without touching code or data.
 
-**Entscheidungen** Den naheliegenden Fix verworfen, den emittierten Zonen-Ausschnitt nachzusortieren, um W19 auf null zu zwingen: das schaltet die Warnung stumm, ohne den Count-Mismatch zu beheben, der ein Upstream-Segmentierungsproblem ist (Wegdokumentieren-Antipattern). Die 39 Restseiten sind damit als die genuinen Faksimile-Sicht-Faelle ausgewiesen, nicht als Tool-Defekt. Korrigiert die Ursachenangabe aus Sitzung 77 (kein Geometrie-Gap); decisions.md E90 entsprechend nachgezogen.
+**Course** Nine findings, all fixed: a false "not checked in" claim about `cer_statistics.json` (CLAUDE.md and methode.html; git history proves the file is a deliberate evidence artifact), the validator report path still pointing to `tei_unified` after the Session 76 default change, a wrong knowledge-doc count in the README, the M3 identifier collision (removed NER milestone versus structural-fix delivery), the README concealing the reading-order defect and pending rollout, the M5 pending item misread as an own obligation, the M3 tools missing from the CLI reference and inventory, unbound volatile test counts, and the stale E82 `ocr_dedup` caveat. A second wave codified new Markdown style rules (no bold emphasis, no dash connectors, no volatile quantities in durable documents) in CLAUDE.md and slimmed the README by SSoT deduplication after verifying every fact exists in its target knowledge doc.
 
-**Stand** Ursache der 39 Restseiten verifiziert (35 Count-Mismatch, 4 Spaltenerkennung-Grenzfall), reproduzierbar ueber Layout-/OCR-Cache. Kein Code geaendert, nur die Diagnose und die Doku-Korrektur. Die Reassemblierung bleibt bei 831 auf 39; die 39 sind genau die Seiten, auf denen automatische Korrektur unzuverlaessig ist.
+**Decisions** `cer_statistics.json` stays versioned (history proves intent; untracking rejected). M3 collision resolved by an identifier note in project.md, not renumbering (avoids alias drift against journal entries 74 to 78). Volatile counts removed rather than maintained (no drift watcher exists). Subsequent operator decisions: all Markdown documentation becomes English including journal, register, and reports; four knowledge files renamed to English; savepoint commit before the translation wave; reports/ collapses into one final work report in knowledge/; journal entries are compacted to a distilled standard.
 
-**Naechste Schritte**
-1. Operator-Entscheid M3 (gated): Trockenlauf abnehmen, Auslieferung freigeben, die 39 Restseiten am Faksimile sichten.
-2. Optional separat: den Count-Mismatch upstream angehen (OCR-Absatz- gegen Layout-Region-Segmentierung), nicht die W19-Reihenfolge nachbessern.
+**Status** Both waves done and verified; savepoint `16b3323c`. The translation, integration, and consolidation wave runs as its own unit on top. M3 remains operator-gated (Session 78).
 
-### 2026-06-21 Sitzung 77: M3-Reassemble-Vorschau gebaut (reversibler Trockenlauf, W19 831 auf 39)
+**Next steps**
+1. Finish translation wave, integrate viewer/quality/frontend-gaps into other docs, write final report, sweep, commit, push.
+2. Operator decision M3 at the workstation: accept dry run, release delivery, review the 39 remaining pages at the facsimile.
 
-**Anlass** Synchronisation mit der Forschungsleitstelle deckte auf, dass der order-Auftrag dieser Iteration noch offen war: ein verifizierter Trockenlauf der Lesereihenfolge-Korrektur. Die Sitzungen 75/76 (Triage-Audit, Validator-Fix) waren benachbart, aber nicht das bestellte Artefakt.
+### 2026-06-21 Session 78: Root cause of the 39 remaining pages isolated (count mismatch, not geometry gap; corrects Session 77)
 
-**Ziel** Beweisen, dass die Korpus-Neugenerierung die W19-betroffenen Seiten korrigiert, ohne die ausgelieferte Source of Truth zu ueberschreiben, samt deterministischem Vorher-Nachher-Bericht und Tests.
+**Occasion** Operator assignment to continue; the open item was the root-cause analysis of the 39 W19 pages that reassembly does not fix.
 
-**Verlauf** Zunaechst die Maschinerie verifiziert: der M1-Lesereihenfolge-Fix sitzt in `tei_step1.match_paragraphs_to_regions`, und `reassemble` re-rechnet Step 1, also greift M1 im Reassemble-Pfad. `process_document` schreibt nach `tei_unified/{id}/` (Arbeitsbereich), nicht nach `tei_final`, die Vorschau ist damit von Natur aus reversibel. Ein Machbarkeitstest (Dok 2530) bestaetigte W19 1 auf 0 in unter zwei Sekunden, offline. Das neue Werkzeug `scripts/tei/tei_reassemble_preview.py` reassembliert je betroffenes Dokument und kopiert das Ergebnis flach nach `output/tei_preview`. W19 wird mit der geteilten Logik (`iter_page_zone_bboxes` + `reading_order_permutation`) gezaehlt, dieselbe wie Validator und Audit.
+**Goal** Understand why the 39 pages stay, and whether a safe fix exists or they belong to facsimile review.
 
-Beim Probelauf zeigte sich, dass die Reassemblierung nicht durchweg offline ist: wo der Step-2-Refinement-Cache kalt ist, versucht sie einen Gemini-Call (Dok 3040 schlug ohne API-Key fehl). Da die Lesereihenfolge in Step 1 entsteht und von der Text-Verfeinerung unabhaengig ist, laeuft die Vorschau nun mit `dry_run=True`: gecachte Seiten nutzen den warmen Cache, kalte fallen auf das Step-1-Scaffold zurueck, kein API-Call, keine Kosten. `tei_final` blieb in allen Laeufen byte-identisch (per SHA256 geprueft).
+**Course** The Session 77 hypothesis (geometry gap between region and zone bboxes) is refuted: `reading_order_permutation` is idempotent. 35 of 39 pages have an OCR-paragraph versus layout-region count mismatch (810 p.56: 3 against 236; 1240 p.3: 50 against 61); in the mismatch branch of `match_paragraphs_to_regions` the emitted zone slice becomes non-canonical, so W19 fires correctly. The remaining 4 pages have 1:1 counts but a geometry that breaks column detection (sub-60% header protruding into the second column, e.g. 460 p.1).
 
-Der Vollbericht ueber alle 216 betroffenen Dokumente: W19 sinkt von 831 auf 39 Seiten, 188 Dokumente gehen vollstaendig auf 0, 28 behalten zusammen 39 Restseiten. Die schweren Faelle kollabieren stark (810 von 54 auf 1, 1520 von 40 auf 1, 1830 von 11 auf 1), groesster Rest ist 1240 (13 auf 7). Das literale M3-Gruen-Kriterium "0 W19" wird durch Reassemblierung allein nicht erreicht. Ein Idempotenz-Test schloss Nicht-Idempotenz der Permutation aus; Ursache ist, dass die Ordnungsstufe (Step 1, Region-Bboxes) und die Pruefstufe (W19, Faksimile-Zonen-Bboxes) verschiedene Geometriequellen nutzen und an Grenzfaellen auseinanderfallen.
+**Decisions** Rejected re-sorting the emitted zone slice to force W19 to zero: it silences the warning without fixing the upstream segmentation problem. The 39 pages are genuine facsimile-review cases, not tool defects. E90 updated; corrects Session 77.
 
-**Entscheidungen** Vorschau offline und kostenfrei ueber `dry_run=True`, weil die W19-Aussage von der gated, kostenpflichtigen Text-Verfeinerung unabhaengig ist; verworfen wurde der Live-Pfad, der ohne Cache scheitert und Kosten verursacht. Bericht deterministisch (sortiert, ohne Zeitstempel), damit Re-Laeufe sauber diffen. Den residualen Geometrie-Gap nicht autonom gefixt, da er ein Design-Entscheid ist (welche Bbox-Basis massgeblich ist) und die W19-Definition beruehrt; als naechster Schritt dokumentiert, nicht gebaut. Keine neue E-Nummer (E90 fortgeschrieben), Rollout bleibt operator-gated.
+**Status** Root cause verified (35 count mismatch, 4 column edge cases), reproducible from the caches. No code changed. Reassembly stays at 831 to 39.
 
-**Stand** Werkzeug, Tests (6, davon ein gated Pipeline-Test auf Dok 890) und deterministischer Bericht `reports/m3-reassemble-preview.md` liegen vor; volle Suite 1187 gruen. Die Vorschau beweist die Lesereihenfolge-Korrektur reversibel: 831 auf 39 W19-Seiten, `tei_final` unberuehrt. Die 39 Restseiten ueber 28 Dokumente sind die Faksimile-Sicht-Worklist, weitgehend deckungsgleich mit der fragilen Triage aus Sitzung 75.
+**Next steps**
+1. Operator decision M3 (gated): accept dry run, release delivery, review the 39 pages.
+2. Optionally address the count mismatch upstream (OCR paragraph versus layout region segmentation).
 
-**Naechste Schritte**
-1. Operator-Entscheid M3: den Trockenlauf abnehmen und die Auslieferung freigeben (gated), oder zuerst den Geometrie-Gap schliessen.
-2. Ordnungs- und Pruefstufe auf dieselbe Bbox-Basis bringen, um die 39 Restseiten gegen 0 zu fuehren (Design-Entscheid offen).
+### 2026-06-21 Session 77: M3 reassemble preview built (reversible dry run, W19 831 to 39)
 
-### 2026-06-21 Sitzung 76: Bestandsverifikation (Stichproben + Vollpruefung) und Validator-Default auf die SoT korrigiert
+**Occasion** Research coordination sync revealed the ordered artifact of this iteration was still open: a verified dry run of the reading-order correction.
 
-**Anlass** Operator-Frage, ob der gelieferte Datenbestand tatsaechlich verifizierbar ist, mit der Aufforderung, Stichproben-Workflows durchzugehen und die Daten zu pruefen statt nur den Git-Stand.
+**Goal** Prove that corpus regeneration corrects the W19 pages without overwriting the delivered source of truth, with a deterministic before/after report and tests.
 
-**Ziel** Die Liefer-Aussage "schemavalidiert und ZBZ-konform" mit reproduzierbarer Messung belegen, an echten Dokumenten Inhalt und Lesefluss stichprobenhaft pruefen, und etwaige Befunde aus dem Pruefweg selbst aufdecken.
+**Course** The M1 fix sits in `tei_step1.match_paragraphs_to_regions` and reassembly recomputes step 1, so it applies. `process_document` writes to the `tei_unified/` workspace, never to `tei_final`, making the preview inherently reversible. The new tool `scripts/tei/tei_reassemble_preview.py` reassembles every W19-affected document into `output/tei_preview` and counts W19 with the same shared logic as validator and audit. Cold step-2 caches would trigger Gemini calls, so the preview runs with `dry_run=True` (warm cache used, cold pages fall back to the step-1 scaffold, no API cost). Result over all 216 affected documents: W19 drops from 831 to 39 pages, 188 documents reach 0, 28 keep 39 pages; `tei_final` stayed byte-identical (SHA256).
 
-**Verlauf** Die maschinellen Pruefungen liefen read-only ueber die SoT `output/tei_final` (E43, n=285). Schema (`zbz_hersch.rng`) 285/285 valide, ZBZ-Konformitaet Z1-Z8 285/285 konform ohne Verstoss. Das Reading-Order-Audit reproduziert exakt 216 Docs / 831 Seiten, davon 557 robust und 274 fragil ueber 145 Docs, und der Korpus-Trichter (corpus_audit) bestaetigt 285 finale TEI. Das Warnungsprofil ist durchweg nicht-blockierend: groesster Posten W17 (844, leere `<speaker>`-Slots als Kurations-Slot), gefolgt von W19 (831, Lesereihenfolge), W16/W15/W18/W6 als Auszeichnungs-Feinheiten. Drei Inhaltsstichproben wurden im Klartext gelesen: 2310 (franzoesische Jaspers-Rezension, alle 17 Absaetze mit sauberem Text und korrekten Akzenten), 760 (Chagall, Œ-Ligatur und UTF-8 korrekt), 810 (deutscher Zweispalter, korrekte Umlaute und ß, Entitaeten Hersch/Jungk/Schubert erkennbar). An 810 Seite 7 wurde der Lesereihenfolge-Defekt direkt belegt: die gelieferte Reihenfolge verschraenkt die beiden Spalten nach y-Position (x-Mitte wechselt 14/19/26/72/27/72...), der M1-Fix gruppiert links vollstaendig vor rechts.
+**Decisions** Preview offline and free via `dry_run=True` (reading order originates in step 1, independent of paid refinement; live path rejected). Report deterministic (sorted, no timestamps). The residual gap not fixed autonomously (design decision touching the W19 definition). No new register number (E90 continued); rollout stays operator-gated.
 
-Im Pruefweg fiel ein Werkzeug-Fallstrick auf: der Validator-Default `--all` (und `--doc` sowie das No-Argument-`validate_all`) zielte auf das veraltete Zwischenverzeichnis `tei_unified` (55 valide / 230 invalide gegen das aktuelle Schema), nicht auf die ausgelieferte SoT `tei_final`, waehrend `conformity_all` bereits korrekt auf `tei_final` defaultete. Das dokumentierte Pruefkommando haette so einen Fehlalarm auf den falschen Dateien erzeugt. Der Default wurde auf `tei_final` umgestellt; `--doc` loest jetzt layout-tolerant auf (flach `{id}_final.xml`, sonst verschachtelt `{id}/{id}_final.xml`); `--dir` ueberschreibt weiter fuer den Zwischenstand. Der Pipeline-Selbstcheck in `tei_unified.py` und die CER-Referenz bleiben unberuehrt, da sie ihr Verzeichnis explizit uebergeben.
+**Status** Tool, 6 tests, and deterministic report `reports/m3-reassemble-preview.md` in place; full suite 1187 green. The 39 remaining pages over 28 documents are the facsimile worklist.
 
-**Entscheidungen** Validator-Default von `tei_unified` auf `tei_final` korrigiert, weil das dokumentierte Kommando den Lieferbestand pruefen muss, nicht den Zwischenstand; verworfen wurde, nur die Doku anzupassen, da der falsche Default selbst der Defekt ist (Lektion "Drift fixen, nicht wegdokumentieren"). Kein Eingriff am Lieferbestand und keine neue Registernummer, da reiner Werkzeug-Fix.
+**Next steps**
+1. Operator decision M3: accept the dry run and release the delivery, or close the geometry gap first.
 
-**Stand** SoT `tei_final` ist auf der maschinell pruefbaren Ebene vollstaendig gruen (Schema und ZBZ-Konformitaet je 285/285), die Warnungen sind Editor-Kurations-Hinweise. Der Validator pruefte per Default das falsche Verzeichnis; das ist behoben, `--all` zielt jetzt auf die SoT (285/285 valide bestaetigt), `--doc` ist layout-tolerant. Volle Suite 1179 gruen. Die Inhaltsstichproben bestaetigen gute OCR-Qualitaet und belegen den Lesereihenfolge-Defekt als real im Lieferbestand.
+### 2026-06-21 Session 76: Delivery verification (samples plus full check), validator default fixed to the SoT
 
-**Naechste Schritte**
-1. M3-Zuschnitt durch Operator entscheiden (robuste Mehrheit nach Stichprobe vertrauen plus 274 fragile Seiten sichten, oder stueckweise).
-2. Genre-Inferenz und `xml:lang` an Docs mit `div@type=None` (z.B. 760/810) bleibt Kurationsluecke, nicht-blockierend.
+**Occasion** Operator question whether the delivered corpus is actually verifiable, with instruction to check the data, not just the git state.
 
-### 2026-06-21 Sitzung 75: M3-Triage -- Lesereihenfolge-Audit (robust/fragil) + geteilte W19-Extraktion
+**Goal** Back the delivery claim "schema-valid and ZBZ-conformant" with reproducible measurement, sample real content, and surface any findings from the verification path itself.
 
-**Anlass** Operator-Auftrag nach der Milestone-Runde: weiter am Ziel arbeiten, und was autonom entscheidbar ist, gleich umsetzen. Der groesste Qualitaetshebel M3 (Reihenfolge-Fix auf den Lieferbestand) ist operator-gated; autonom moeglich ist, M3 entscheidbar und sicher zu machen, statt am Bestand zu schreiben.
+**Course** Read-only checks over the SoT `output/tei_final` (n=285): schema 285/285 valid, ZBZ conformity Z1-Z8 285/285. The reading-order audit reproduces 216 documents / 831 pages (557 robust, 274 fragile over 145 documents); corpus funnel confirmed. Warning profile non-blocking throughout, largest items W17 (844 empty speaker slots, a curation slot) and W19 (831). Three content samples (2310 French, 760 Chagall with correct ligatures, 810 German two-column) confirm OCR quality; 810 p.7 directly evidences the interleaved column order the M1 fix corrects. A tool pitfall surfaced: the validator default targeted the stale `tei_unified` directory and would have produced a false alarm; the default now points to `tei_final`, `--doc` resolves layout-tolerantly, `--dir` still overrides.
 
-**Ziel** Die W19-Menge so triagieren, dass die operator-gated Auslieferung nicht blind ueber den ganzen Bestand laufen muss. Trennen, welche Umsortierungen schwellwert-unabhaengig (vertraubar) und welche Grenzfaelle (Sicht noetig) sind.
+**Decisions** Validator default corrected instead of documented around (the wrong default was itself the defect). No register number (pure tool fix).
 
-**Verlauf** Verhaltenswahrender Refactor: die Seiten-/Zonen-Extraktion aus `_check_reading_order` als geteilten Generator `iter_page_zone_bboxes` nach tei_xml_utils gezogen, damit Validator-W19 und das Audit exakt dieselbe handlungsrelevante Seitenmenge sehen und nicht auseinanderdriften. `reading_order_permutation` um optionale Schwellwert-Parameter (wide_w_pct/column_gap_pct) erweitert, Defaults verhaltenswahrend (bestehende Aufrufer unveraendert). Neues Diagnose-Werkzeug `scripts/eval/reading_order_audit.py`: fuer jede Seite, die der Fix umsortieren wuerde (W19), wird die kanonische Permutation unter Schwellwert-Perturbation (WIDE 60 +/-5, GAP 12 +/-3) neu berechnet; bleibt sie gleich, ist die Seite robust, kippt sie, ist sie fragil. Schreibt nichts am Lieferbestand. Neun Tests (`tests/test_reading_order_audit.py`), volle Suite 1179. Commit `8aa3a87d`.
+**Status** SoT fully green at the machine-checkable level; warnings are curation signals. Full suite 1179 green. The reading-order defect is confirmed real in the delivered corpus.
 
-**Befund (Messung, reproduzierbar via `python -m scripts.eval.reading_order_audit`)** 831 umzusortierende Seiten ueber 216 Dokumente; davon 557 robust, 274 fragil; 145 Dokumente tragen mindestens eine fragile Seite. Stark gestreut: Dok 810 allein 54 Seiten (33 fragil), waehrend etwa 520 mit 9/0 vollstaendig robust ist. Damit schrumpft die eigentliche Sicht-Arbeit von "216 Dokumente pruefen" auf 274 fragile Seiten plus eine Stichprobe ueber die robuste Mehrheit.
+**Next steps**
+1. Operator decides the M3 cut (trust robust majority after sampling plus review of the 274 fragile pages, or piecewise).
 
-**Entscheidungen** Unter [[E90]] als M3-Vorbereitung dokumentiert, bewusst keine neue E-Nummer (der Rollout selbst bleibt unratifiziert und operator-gated; konsistent mit der W19-Kennungslektion, kein vorgreifendes Label). Empfehlung fuer den M3-Zuschnitt aus der Persona: die 557 robusten Seiten nach einer kleinen Sicht-Stichprobe vertrauen, die 274 fragilen Seiten (Worklist via `--worklist`) einzeln am Faksimile sichten. "Robust" heisst schwellwert-unabhaengig, nicht bewiesen korrekt, daher die Stichprobe. Offene Operator-Frage bleibt der Zuschnitt: stueckweise per Worklist oder Blanket nach Stichprobe.
+### 2026-06-21 Session 75: M3 triage, reading-order audit (robust/fragile) with shared W19 extraction
 
-**Stand** HEAD `8aa3a87d` auf main (Code), synchron mit origin, Arbeitsbaum sauber. Audit-Instrument abnahmereif (maschinell gruen, volle Suite 1179). Kein Eingriff am Lieferbestand. Der W19-Korpusbefund aus den Operator-Rueckfragen (216/285) ist mit dieser Sitzung im Repo persistiert, zuvor lag er nur in der Leitstellen-Handoff. Savepoint `8aa3a87d`.
+**Occasion** Operator assignment after the milestone round: make the operator-gated M3 decidable and safe instead of writing to the corpus.
 
-**Naechste Schritte** M3 wartet auf die operator-gated Zuschnittentscheidung. Bis dahin kein Eingriff am Bestand; das Audit liefert auf Abruf (`--worklist`) die fragile Seitenliste als Sicht-Grundlage.
+**Goal** Triage the W19 set into threshold-independent (trustable) reorderings and edge cases needing review.
 
-### 2026-06-21 Sitzung 74: Milestone-Runde -- Lesereihenfolge spalten-/bandbewusst (M1) + Validator-Warnung W19 (M2)
+**Course** Behaviour-preserving refactor first: page/zone extraction moved into the shared generator `iter_page_zone_bboxes` so validator and audit see the same page set; `reading_order_permutation` gained optional threshold parameters with behaviour-preserving defaults. New diagnostic `scripts/eval/reading_order_audit.py` recomputes the canonical permutation under threshold perturbation (WIDE 60 +/-5, GAP 12 +/-3): stable means robust, flipping means fragile. Finding: 831 pages over 216 documents; 557 robust, 274 fragile, 145 documents carry at least one fragile page. Review work shrinks from 216 documents to 274 pages plus a sample over the robust majority.
 
-**Anlass** Milestone-Runde der Forschungsleitstelle: aus der Editionsphilologie-Persona die naechsten zwei Milestones bestimmen, bauen, verifizieren, sichern, den dritten scopen und die Rest-Roadmap melden.
+**Decisions** Documented under E90 as M3 preparation, deliberately no new register number (rollout unratified). Recommendation: trust robust pages after a small sample; review fragile pages individually (`--worklist`).
 
-**Ziel** Die belegten strukturellen Defekte angehen, die laut [[E80]]/decisions.md den hohen CER-Tail tragen (strukturell, nicht Zeichenerkennung). Konkret die offene Doppelseiten-Lesereihenfolge (decisions.md, 30/760), die die Fussnoten-Ueberdetektion (290/1910/90, ueber [[E85]] bereits referenzbelegt teilkorrigiert) ergaenzt.
+**Status** Audit instrument acceptance-ready, 9 tests, full suite 1179; no write to the corpus. Savepoint `8aa3a87d`.
 
-**Verlauf** Befund am Code: `match_paragraphs_to_regions` sortierte die Layout-Regionen rein nach `y_pct` (tei_step1.py:45 live, tei_generator.py:140 Legacy, identischer Bug). Die Layout-Erkennung liefert Regionen aber bereits linke-Spalte-zuerst; die reine y-Sortierung verschraenkt linke und rechte Spalte bei Zwei-Spaltern und Doppelseiten wieder. Kein gespeichertes `reading_order`-Feld, nur Geometrie. **M1** Eine geteilte reine Funktion `reading_order_permutation` in tei_xml_utils.py: vollbreite Bloecke (w>=60%) segmentieren die Seite in waagrechte Baender, innerhalb eines Bands liest man Spalte fuer Spalte (x-Mitten-Abstand >12% = Spaltensteg) links nach rechts, je Spalte oben nach unten. Einspaltig faellt das exakt auf die alte y-Reihenfolge zurueck (keine Regression). Beide Aufrufstellen darauf gezogen (Bug-Duplikat aufgeloest). Neun Tests (`tests/test_reading_order.py`), volle Suite 1164. Commit `6f51eac2`. **M2** Validator-Warnung W19 (`_check_reading_order`, tei_validator.py): vergleicht je Seite die ausgelieferte Block-Reihenfolge (Body-`@facs` -> Zonen-Geometrie) gegen die kanonische Lesereihenfolge derselben Zonen, dieselbe Funktion wiederverwendet. Weicht sie ab, liegt eine Spalten-Verschraenkung vor; nicht-blockierend. Damit wird der noch nicht neugenerierte 285er-Bestand auf genau die betroffenen Dokumente gescoped. Vier Tests, volle Suite 1168. Commit `f72743ac`. Beide nach main gepusht.
+**Next steps**
+1. M3 waits for the operator cut decision.
 
-**Entscheidungen** Als [[E90]] registriert (konsistent mit E84/E85, wo Strukturfix plus Validator-Warnung ein E-Eintrag wurden; loest den offenen Defekt (b) generatorseitig). Kennungs-Klarstellung: das implementierte W19 ist die Lesereihenfolge-Warnung; die E85-Notiz "3 W19-Diagnose-Specs" war ein provisorisches Sammel-Label fuer nie implementierte Diagnose-Vorschlaege (Validator reichte real nur bis W18), mit E90 ueberholt, kuenftige Specs ab W20. Philologische Trennung als Persona-Urteil: den Generator reparieren und den Restbestand sichtbar machen, statt ausgelieferten Editionstext per Geometrie-Heuristik blind umzuschreiben. Eine automatische Block-Umordnung im Lieferbestand waere ohne Kurationsblick philologisch nicht verantwortbar, weil die Heuristik auf komplexen historischen Layouts irren kann; sie bleibt deshalb operator-gated (M3).
+### 2026-06-21 Session 74: Milestone round, column/band-aware reading order (M1) plus validator warning W19 (M2)
 
-**Stand** HEAD `f72743ac` auf main, synchron mit origin, Arbeitsbaum sauber. Beide Milestones abnahmereif (maschinell gruen, volle Suite 1168). Der M1-Fix wirkt auf kuenftige Generierung; der ausgelieferte 285er-Bestand ist erst nach Neugenerierung korrigiert (operator-gated, [[E84]]-konsistent). Savepoint `f72743ac`.
+**Occasion** Milestone round of research coordination: pick, build, and verify the next two milestones from the edition-philology persona, scope the third.
 
-**Milestone 3 (gescopt, nicht gebaut)** Strukturfix-Auslieferung an den Lieferbestand: die Lesereihenfolge (M1) plus die offenen E84-Strukturfixes per Korpus-Neugenerierung (`tei_unified --all --reassemble`) auf die von W19 gemeldeten Dokumente ausrollen. Ergebnis-Artefakt: neu generierte `tei_final` mit kanonischer Reihenfolge auf den betroffenen Seiten. Verifikation/Gruen-Kriterium: `tei_validator --all` meldet 0 W19; Schema und ZBZ-Konformitaet bleiben 285/285; der Fidelity-CER der betroffenen Docs (30/760) sinkt. Nicht gebaut, weil die Neugenerierung die SoT neu schreibt und mit den Kurations-Lanes (Fussnoten 1910/290/90) zu koordinieren ist (E84-Gate, Operator-Entscheidung).
+**Goal** Address the proven structural defects behind the high CER tail (E80): the double-page reading order complementing the footnote overdetection.
 
-**Verbleibende Milestones bis Projektvollendung (Sach-Roadmap)**
-1. Strukturfix-Auslieferung an den 285er-Bestand per Neugenerierung (= M3, operator-gated, schreibt die SoT neu).
-2. Entitaetsbezogenes Konformitaets-Gate (Z1-Z4) erstmals scharf auf kuratierten Inline-GND-Output anwenden (haengt am teicrafter-editor-Modellwechsel, cross-lane).
-3. Fussnoten-Restbestand (290/1910/90-Rest, nicht sicher auto-fixbar) kurativ aufloesen, analog zur W17/W19-Sichtbarmachung.
-4. LLM-OCR-Stabilitaet quantifizieren (Re-Run-Varianz, 5 Docs x 3 Laeufe), um die publizierte Fidelity-Zahl mit einer Schwankungsbreite zu versehen (operator-gated wegen API-Kosten).
-5. ZBZ-Rueckfragen schliessen (O8 Header-Metadaten, O13 Schlagworte, O27 Bildunterschrift-Widerspruch), extern bei der ZB Zuerich.
+**Course** Finding: `match_paragraphs_to_regions` sorted regions purely by `y_pct` (live and legacy call site, identical bug), re-interleaving columns that layout detection had already delivered left-first. M1: shared pure function `reading_order_permutation` (full-width blocks at w>=60% segment the page into bands; within a band, columns split at >12% x-center gap are read left to right, top to bottom per column; single-column pages fall back exactly to the old order). Both call sites converged; 9 tests; commit `6f51eac2`. M2: non-blocking validator warning W19 compares delivered block order against the canonical order of the same zones, scoping the not-yet-regenerated corpus; 4 tests; commit `f72743ac`.
 
-**Naechste Schritte** M3 ist operator-gated; bis zur Freigabe der Korpus-Neugenerierung kein weiterer Eingriff am Lieferbestand. W19 laeuft ab jetzt im bestehenden Validierungs-Gate mit und weist den Umfang aus.
+**Decisions** Registered as E90. W19 naming clarified (the E85 note "3 W19 diagnosis specs" was a provisional label for never-implemented proposals; future specs start at W20). Philological judgment: repair the generator and make the backlog visible instead of blindly rewriting delivered edition text by geometric heuristic; automatic reordering of the delivered corpus stays operator-gated (M3, green criteria: 0 W19, schema and conformity stay 285/285, fidelity CER of 30/760 drops).
 
-### 2026-06-21 Sitzung 73: Konsolidierungsteil 1 (Code-Base) verifiziert, Waisen-Zettel entfernt
+**Status** Both milestones acceptance-ready, full suite 1168, savepoint `f72743ac`. Remaining roadmap: M3 rollout; entity gate Z1-Z4 on curated inline-GND output; footnote residue curation; LLM OCR stability quantification; ZBZ questions O8/O13/O27.
 
-**Anlass** Naechste Arbeitsphase der Forschungsleitstelle, offen war der noch nicht als eigener Durchgang ausgefuehrte Konsolidierungsteil 1 (Code-Base verhaltenswahrend bereinigen).
+**Next steps**
+1. M3 operator-gated; W19 runs in the validation gate and reports the scope.
 
-**Ziel** Pruefen, ob die Code-Base verhaltenswahrenden Rueckbau braucht, und nur nachweislich Totes entfernen.
+### 2026-06-21 Session 73: Consolidation part 1 (code base) verified, orphan note removed
 
-**Verlauf** Survey ueber alle getrackten Skripte und Tests. Der einzige augenscheinliche Redundanz-Kandidat, die drei Dateien `cer_statistics.py` / `cer_statistics_runner.py` / `cer_statistics_full.py`, ist keine Redundanz, sondern bewusste getestete Schichtung (reine Statistik-Library mit 55 Tests, korpus-abhaengiger Datensammler, Orchestrator-CLI); ein Zusammenlegen waere ein Architekturbruch. Der tote OCR-Dedup-Pfad war bereits in [[E75]] entfernt. Genau ein veralteter Artefakt blieb: `HANDOFF-cc3.md` im Repo-Root, ein zeitpunktbezogener Uebergabezettel (2026-06-07), dessen Aktionspunkte vollstaendig als [[E89]] gebaut sind und der null Referenzen im Repo hat (git grep). Entfernt (Commit `0e1712c3`). Committete Gates danach gruen (1027 passed ueber test_tei_schema, test_zbz_conformity, test_tei_surface_graphic, test_scripts_health, test_cer_statistics).
+**Occasion** Next work phase of research coordination; the code-base consolidation pass was still open.
 
-**Entscheidungen** Keine neue Registernummer. CER-Statistik-Schichtung bewusst nicht zusammengelegt (Architekturbruch, kein verhaltenswahrender Rueckbau).
+**Goal** Check whether the code base needs behaviour-preserving cleanup; remove only what is provably dead.
 
-**Stand** Code-Base konsolidiert, kein weiterer verhaltenswahrender Rueckbau ohne Scope-Ausweitung erkennbar. HEAD `0e1712c3` auf main, synchron mit origin, Arbeitsbaum sauber. Savepoint `0e1712c3`.
+**Course** Survey over all tracked scripts and tests. The only apparent redundancy, the three `cer_statistics*` files, is deliberate tested layering (pure statistics library, corpus-dependent collector, orchestrator CLI); merging would break the architecture. One stale artifact remained: `HANDOFF-cc3.md` in the repo root, a dated handover note fully superseded by E89 with zero references; removed (commit `0e1712c3`). Committed gates green afterwards.
 
-**Naechste Schritte**
-1. Niedrige Prioritaet, fuer die Vault-/Knowledge-Session: die Caveats in decisions.md und quality.md sagen "das in CLAUDE.md referenzierte ocr_dedup.py"; CLAUDE.md referenziert es nicht mehr, nur der historische Arbeitsbericht (Anhang A). Reine Caveat-Praezisierung, kein Defekt.
-2. Unveraendert: entitaetsbezogenes Konformitaets-Gate (Z1-Z4) erstmals auf kuratierten Inline-GND-Output anwenden, sobald teicrafter-editor sein Ausgabemodell umstellt.
+**Decisions** No new register number. CER statistics layering deliberately kept.
 
-### 2026-06-21 Sitzung 72: Unabhaengige Verifikation der ZBZ-Lieferung + Konsolidierungsbericht an die Forschungsleitstelle
+**Status** Code base consolidated; savepoint `0e1712c3`.
 
-**Anlass.** Nach Abschluss der Order (Sitzung 71) war der ausgelieferte Bestand unabhaengig
-nachzupruefen und der Stand vollstaendig an die Forschungsleitstelle zu berichten, inklusive
-des fuer die Vault-Session bestimmten Wissens-Deltas.
+**Next steps**
+1. Entity conformity gate Z1-Z4 on curated inline-GND output once teiCrafter switches its output model.
 
-**Ziel.** Die drei Konformitaets-Gates auf dem realen Bestand reproduzieren und die Reichweite
-des Konformitaets-Gates praezise benennen.
+### 2026-06-21 Session 72: Independent verification of the ZBZ delivery, consolidation report to research coordination
 
-**Verlauf.** Die drei Pruefungen wurden direkt auf `output/tei_final` (285 Dateien) ausgefuehrt:
-Schema plus Projektregeln (`tei_validator --all --dir output/tei_final`) 285 valide / 0 invalide /
-145 mit nicht-blockierender Warnung; ZBZ-Konformitaet (`--conformity`) 285 konform / 0 Verletzungen;
-die committeten Gates `test_tei_schema.py` und `test_zbz_conformity.py` zusammen 583 passed. Befund
-zur Reichweite: der Bestand traegt 0 Dateien mit `ref="GND:"`, 6 nackte `<persName>` und 400 `<bibl>`
-(ueberwiegend Abbildungs- und Quellenverweise, keine Normdaten-Verknuepfung). Die entitaetsbezogenen
-Konformitaetsregeln (Z1-Z4) laufen also auf einem authority-freien Korpus leer; das Gate wird erst
-scharf, sobald kuratierte Inline-GND-Dokumente durchlaufen.
+**Occasion** After completing the order (Session 71), the delivered corpus had to be verified independently and reported.
 
-**Stand.** Lieferbestand unabhaengig verifiziert, Ergebnis deckt sich mit den committeten Tests aus
-Sitzung 71. An die Forschungsleitstelle berichtet: handoff bereinigt (Vor-Order-Staende entfernt) und
-um das Vault-Wissens-Delta ergaenzt (Inline-GND ersetzt standOff in den Vault-Dokumenten,
-teiCrafter-Atom-Korrektur, Entscheidungen A/B und E87 als aufgeloest). Keine offenen Gates, Lane ruht.
+**Goal** Reproduce the three conformity gates on the real corpus and state the gate's reach precisely.
 
-**Naechste Schritte.**
-1. teiCrafter-Ausgabemodell auf Inline-GND umstellen (lane teicrafter-editor); danach den
-   Konformitaets-Gate erstmals auf kuratierten Output anwenden.
-2. ZBZ-Rueckfragen O27 (Bildunterschrift-Widerspruch), O13 (Schlagworte), O8 (Header-Metadaten)
-   ueber den Operator klaeren.
+**Course** Checks directly on `output/tei_final` (285 files): schema plus project rules 285 valid / 0 invalid / 145 with non-blocking warnings; ZBZ conformity 285 conformant / 0 violations; committed gates together 583 passed. Reach finding: the corpus carries 0 files with `ref="GND:"`, 6 bare `<persName>`, 400 `<bibl>` without authority linking; the entity rules Z1-Z4 idle on an authority-free corpus and become sharp only once curated inline-GND documents pass through (lesson L14).
 
-### 2026-06-21 Sitzung 71: ZBZ-Order umgesetzt -- Inline-GND-Schema (E88), Konformitaetspruefung, Seitenbild-Anbindung (E89)
+**Status** Delivery independently verified, matching the committed tests. Handoff to research coordination updated with the vault knowledge delta. No open gates.
 
-**Anlass.** Die Forschungsleitstelle hat das uebergebene ZBZ-Material ausgewertet und drei
-Aufgaben erteilt (order-zbz-ocr-tei.md): das Auszeichnungsmodell auf die ZBZ-Editionsregeln
-festlegen, die ZBZ-Konformitaet des ausgelieferten Bestands nachweisen, und die Seitenbild-
-Anbindung nach ZBZ-Regeln erzeugen. Korrigiert Sitzung 70, in der das standOff-Modell (E87)
-gebaut wurde, bevor das ZBZ-Material vorlag.
+**Next steps**
+1. Switch the teiCrafter output model to inline GND, then apply the conformity gate to curated output.
+2. Clarify ZBZ questions O27, O13, O8 via the operator.
 
-**Ziel.** Die drei Auftragspunkte umsetzen und je gegen committete Artefakte verifizieren,
-Inline-GND als maßgebliches Liefermodell verankern.
+### 2026-06-21 Session 71: ZBZ order implemented: inline-GND schema (E88), conformity check, page-image linking (E89)
 
-**Verlauf.** (1) Modell: Der vollstaendige Schema-Diff zeigte, dass das aktive Schema die
-ZBZ-Pruefvorlage plus E68 plus E87 ist; jede Diff-Zeile ist ein E68- oder E87-Element plus drei
-`@ref`-Pattern-Stellen. Der ausgelieferte Bestand ist seit E71 entitaetenfrei (kein standOff,
-kein `#zbz-`, kein `<name>`), das Entfernen von E87 daher risikolos. E87 zurueckgenommen, die
-`@ref`-Pattern auf GND-only verengt; aktives Schema jetzt exakt ZBZ-Pruefvorlage + E68
-(Restdiff nur noch E68, verifiziert). 285/285 weiterhin valide, standOff-Guard-Test neu. (2)
-Konformitaet: Befund, dass das alte Richtlinien-Arbeitsexemplar (E49) byte-identisch zur neuen
-ZBZ-README ist und der Validator viele Editionsregeln schon als R/W-Regeln kodiert. Ergaenzt um
-die Inline-GND-Modellregeln, die ein RelaxNG nicht ausdruecken kann (Normdaten nur GND, nur
-Person/Org/Werk, Rendering-Vokabular, `pb facs/n`), als `zbz_conformity.py` mit
-`--conformity`-Modus. 285/285 konform, 0 Verletzungen. (3) Seitenbild: Befund, dass `<pb facs>`
-die bindende Form ist (alle 285), das Surface-`<graphic>` aber fehlte bzw. der Leerseiten-
-Platzhalter `{N}.png` auf eine nicht existente Datei zeigte. Jede Surface bekommt nun `<graphic
-url="{doc_id}_p{NNN}.png"/>` als erstes Kind; alle 4108 referenzierten Bilder existieren.
-
-Nebenbefunde als ZBZ-Rueckfragen festgehalten: die ZBZ-README widerspricht sich bei
-Bildunterschriften (O27); der Header-Widerspruch (idno gefordert, Schema verbot es) wird durch
-E68 aufgeloest (vgl. O8).
-
-**Entscheidungen.** E88 (Inline-GND als Liefermodell, standOff aus Schema entfernt; verworfen:
-rohe Uebernahme der ZBZ-Vorlage, weil ihr die E68-Kopf-Elemente fehlen und alle 285 invalidieren
-wuerden). E89 (`<graphic>` als erstes Surface-Kind, Adressschema `{doc_id}_p{NNN}.png`; verworfen:
-absolute GitHub-Pages-URL und IIIF, da Hosting offen und ein relativer Pfad die ZBZ-Vorgabe ist).
-O26 geschlossen, O25 geschlossen, O27 eroeffnet.
-
-**Stand.** Alle drei Auftragspunkte umgesetzt, gegen committete Tests verifiziert: Schema-Gate
-(Inline-GND-Positivtest + standOff-Guard), `test_zbz_conformity.py` (285/285 konform),
-`test_tei_surface_graphic.py` (Surface-Graphics + Korpus). Volle Suite gruen. Drei Commits auf
-main (per order: alles in main, keine eigenen Branches): E88-Schema, Task-2-Konformitaet,
-E89-Seitenbild. Lane entblockt, keine offenen Gates.
-
-**Naechste Schritte.**
-1. teiCrafter-Ausgabemodell an Inline-GND angleichen (Delta an die Forschungsleitstelle gemeldet,
-   beruehrt lane teicrafter-editor).
-2. ZBZ-Rueckfragen klaeren: Bildunterschrift-Widerspruch (O27), Schlagworte (O13), Header-
-   Metadaten aus Alma (O8).
-3. Optional: E84-Strukturfixes per Korpus-Neugenerierung ausrollen (Koordination mit den
-   Kurations-Lanes).
-
-### 2026-06-21 Sitzung 70: Schema-Erweiterung teiCrafter-standOff (E87) + Faksimile-Befund + Warnungs-Angleichung
-
-**Anlass.** Im Kurations-Editor teiCrafter annotierte ZBZ-Dokumente waren gegen ihr
-eigenes Schema invalide, weil das ODD-Subset (E48) das `standOff`-Register und das
-generische `<name>` weggelassen hatte; `{id}_final.xml` ist aber teiCrafters natives Format.
-
-**Ziel.** Das Schema so erweitern, dass kuratierte Dokumente schemavalide werden, die
-Entscheidung dokumentieren, den finalen TEI-Bestand regressionspruefen und die
-Wissensdokumente auf einen konsistenten, verifizierten Stand bringen.
-
-**Verlauf.** Datenvertrag aus `ResearchTools/teiCrafter` (`docs/js/editor/standoff.js`)
-erhoben: `standOff` mit `listPerson`/`listPlace`/`listOrg`/`listEvent`/`listBibl`,
-Entitaeten mit Namens-Element plus `<idno>`-Normdaten und `resp="#ai"`, editoriale
-`<note target>`, `<respStmt>` mit `<name>AI</name>`, In-Text-Mentions `<name ref>`. Schema
-nach Muster E68 minimal erweitert: `standOff` an `model.resource` gehaengt, `name` an
-`model.nameLike.agent` (deckt in einem Zug Inline-Mentions und den respStmt-Namen), elf
-neue Element-Defines plus ein dediziertes standOff-Werkregister, weil das geteilte
-ODD-reduzierte `bibl` weder `<title>` noch `@resp` zulaesst und unangetastet bleibt.
-`@resp`/`@ref`/`@target` reiten auf vorhandenen Attribut-Klassen. Verifiziert: synthetisches
-kuratiertes Dokument valide, alle 285 `tei_final` weiterhin valide (keine Regression), neues
-git-getracktes Schema-Gate, Suite gruen. Faksimile geprueft: der Generator erzeugt
-`surface`/`zone`/`@facs` selbst und vollstaendig, nur der Surface->Bild-Zeiger `<graphic>`
-fehlt im Normalfall (`build_facsimile`, `tei_step3.py`). Warnungszahlen quer durch quality/
-pipeline/projekt angeglichen.
-
-**Entscheidungen.** E87 (Schema-Erweiterung teiCrafter-standOff, Begruendung in
-[decisions.md](decisions.md)). O25 eroeffnet: Faksimile-`<graphic>` pipeline-seitig erzeugen,
-URL-Schema und SoT-Regeneration operator-gated. Warnungs-Divergenz aufgeloest: 15 aktive
-Warn-Regeln (W1-W7, W11-W18; W8-W10 seit E71 entfallen) gegenueber 121 Dokumenten mit
-mindestens einer Warnung auf `tei_unified` -- zwei Groessen, vorher unter einem Wort vermengt.
-
-**Stand.** Schema erweitert und kompiliert, Schema-Gate 288 gruen. Wissensdokumente
-(decisions, quality, pipeline, projekt, oekosystem-synthese, index) konsistent und gegen
-den gemessenen Stand verifiziert. Branch `chore/frontmatter-migration`.
-
-**Naechste Schritte.**
-1. Operator-Entscheidung zu [decisions.md O25] (URL-Schema fuer Surface-`<graphic>`).
-2. Bei Zustimmung: `build_facsimile` um `<graphic>` als erstes Surface-Kind erweitern, alle
-   285 `tei_final` regenerieren, Schema-Gate erneut.
-
-### 2026-06-10 Sitzung 69: Repository-Audit mit Umsetzungswelle (E86)
-
-**Anlass.** Vor der ZBZ-Abnahme sollte das gesamte Repository begutachtet werden
-(Code, Prozesse, Dokumentation), einschliesslich bekannter Fehler im Viewer-Frontend.
-
-**Ziel.** Alle verifizierten Befunde in einem Durchgang beheben und die Wissensbasis
-redundanzfrei auf den tatsaechlichen Projektstand bringen.
-
-**Verlauf.** Im Viewer wurde das Datenverlust-Risiko des XML-Modus behoben: Der Modus
-lud bisher nur die Einzelseite, waehrend der Speichern-Knopf das Gesamtdokument
-`output/tei_final/{doc}_final.xml` ueberschreibt; jetzt laedt er das Gesamtdokument,
-und ein Save-Guard weist unvollstaendige TEI-Inhalte ab. Dazu kamen die uebrigen
-Befunde der Frontend-Gap-Analyse vom 2026-06-07: ein "Gehe zu Seite"-Feld mit
-Tastaturnavigation, aktuelle Status-Ampeln im Katalog (der Katalog laedt die
-Pro-Objekt-Manifeste nach und korrigiert damit das veraltete Aggregat), klare
-Fehlermeldungen mit Wiederholen-Knopf, Fokus-Fuehrung im Modal sowie
-Bedienbarkeit von Layout-Editor und Text-Editor per Tastatur und Screenreader.
-
-Auf Prozessseite prueft seither ein GitHub-Actions-Workflow die komplette Testsuite
-bei jedem Push und Pull Request; `requirements.txt` wurde fuer frische Umgebungen
-lauffaehig gemacht (fehlende Pakete ergaenzt, sechs ungenutzte entfernt), und zwei
-Transkribus-Skripte schliessen ihre Dateihandles jetzt auch im Fehlerfall.
-
-In der Dokumentation wurden die veralteten CER-Kennzahlen site-weit auf den kanonischen
-Stand gezogen (Fidelity-CER Mean 2,71 %, Median 1,40 %, ueber alle 25 Referenzdokumente);
-das Entscheidungsregister fuehrt die Eintraege ab E64 als Unterkapitel mit Begruendung
-und Datum; die Roadmap in workflow.md trennt Erledigtes von Offenem in verstaendlicher
-Sprache; Zustaendigkeiten sind als Rollen statt Personennamen notiert.
-
-**Entscheidungen.**
-- Der XML-Modus zeigt und speichert das Gesamtdokument (E86). Die Alternative, weiter
-  die Einzelseite zu zeigen und das Speichern zu sperren, wurde verworfen, weil der
-  Gesamtdokument-Weg dem Design der Speicherarchitektur (E72) entspricht und Kuration
-  ohne Umweg erlaubt.
-- Die vier verbliebenen Frontend-Befunde N1/N3/N6/N7 (Komfort, kein Fehlerrisiko)
-  werden bis nach der ZBZ-Abnahme zurueckgestellt, damit der Stand fuer die Abnahme
-  stabil bleibt.
-- `data/curated_tei/` wird als vorgesehen fuer kuenftig von Hand verifizierte TEI und
-  derzeit leer deklariert. Die bisherige Bezeichnung als Gold-Standard wurde verworfen,
-  weil noch keines der 285 Dokumente fachlich verifiziert ist.
-
-**Stand.** Testsuite 563 gruen, 285/285 Dokumente schema-valide, alle H- und M-Befunde
-der Gap-Analyse behoben, Wissensbasis konsistent mit dem Repo-Stand. Erste inhaltliche
-Kurationsschritte ueber den Viewer liegen vor: In den Dokumenten 3200 und 760 wurden
-Werktitel als `<bibl>` ausgezeichnet (kanonisch in `tei_final`, Mirror konsistent).
-Offen bleiben die zurueckgestellten N-Befunde sowie die fachliche Verifikation der
-Inhalte (855 von 855 Datenstroemen stehen auf `unverifiziert`). Savepoint: Commits
-52fd7733 bis 6a73478f auf `cc3/session-2026-06-07`.
-
-**Naechste Schritte.**
-1. Render-Check der TEI-Daten in der teiCrafter-Integration nach Testplan T1-T9
-   (`reports/test-plan-zbz-teicrafter-2026-06-07.md`).
-2. Fachliche Kuration im Viewer beginnen (Status-Pills, Strom fuer Strom).
-3. Nach der ZBZ-Abnahme die zurueckgestellten Befunde N1/N3/N6/N7 umsetzen.
+**Occasion** Research coordination issued three tasks from the evaluated ZBZ material; corrects Session 70, which built the standOff model (E87) before the ZBZ material was available.
+
+**Goal** Implement and verify all three task items; anchor inline GND as the binding delivery model.
+
+**Course** (1) Model: the schema diff showed the active schema equals the ZBZ template plus E68 plus E87; the corpus is entity-free since E71, so removing E87 was risk-free. E87 reverted, `@ref` patterns narrowed to GND-only; active schema now exactly ZBZ template plus E68; 285/285 still valid, new standOff guard test. (2) Conformity: editorial rules already partly encoded as R/W rules were complemented by the inline-GND model rules RelaxNG cannot express (`zbz_conformity.py`, `--conformity` mode): 285/285 conformant. (3) Page image: `<pb facs>` is the binding form; every surface now gets `<graphic url="{doc_id}_p{NNN}.png"/>` as first child; all 4108 referenced images exist.
+
+**Decisions** E88 (inline GND as delivery model; raw ZBZ template adoption rejected, it would invalidate all 285). E89 (surface graphic with relative address scheme; absolute URL and IIIF rejected, hosting open). O26 and O25 closed, O27 opened.
+
+**Status** All three items implemented and test-gated (schema gate, `test_zbz_conformity.py`, `test_tei_surface_graphic.py`); full suite green; three commits on main.
+
+**Next steps**
+1. Align teiCrafter output model with inline GND.
+2. Clarify O27, O13, O8 with ZBZ.
+
+### 2026-06-21 Session 70: Schema extension teiCrafter standOff (E87), facsimile finding, warning alignment
+
+**Occasion** Documents annotated in teiCrafter were invalid against their own schema because the ODD subset lacked `standOff` and generic `<name>`.
+
+**Goal** Make curated documents schema-valid, document the decision, regression-check the corpus, align the knowledge docs.
+
+**Course** Data contract lifted from teiCrafter; schema minimally extended following the E68 pattern (standOff, name, eleven element defines plus a dedicated standOff work register). Verified: synthetic curated document valid, all 285 `tei_final` still valid, new tracked schema gate. Facsimile check: the generator produces `surface`/`zone`/`@facs` completely, only the surface-to-image pointer `<graphic>` was missing (opened O25). Warning figures aligned across the knowledge docs (15 active warning rules W1-W7, W11-W18 versus documents-with-warnings, previously conflated).
+
+**Decisions** E87 (later reverted by E88 in Session 71). O25 opened.
+
+**Status** Schema extended and gated; knowledge docs consistent with the measured state.
+
+**Next steps**
+1. Operator decision O25 (URL scheme for surface graphics).
+
+### 2026-06-10 Session 69: Repository audit with implementation wave (E86)
+
+**Occasion** Before ZBZ acceptance the whole repository was to be reviewed, including known viewer defects.
+
+**Goal** Fix all verified findings in one pass and bring the knowledge base redundancy-free to the actual state.
+
+**Course** Viewer: the XML mode's data-loss risk fixed (it loaded a single page while saving overwrote the whole `_final.xml`; now it loads the whole document and a save guard rejects incomplete TEI). Remaining gap-analysis findings fixed: go-to-page with keyboard navigation, live status lamps in the catalog, clear error messages with retry, modal focus management, keyboard/screen-reader operability of both editors. Process: GitHub Actions runs the full test suite on every push/PR; `requirements.txt` made runnable for fresh environments; two Transkribus scripts close file handles on error. Documentation: stale CER figures pulled to the canonical state site-wide; decision register entries from E64 as dated subchapters; roadmap separated done from open.
+
+**Decisions** XML mode shows and saves the whole document (E86; single-page alternative rejected as inconsistent with the save architecture E72). Four comfort findings N1/N3/N6/N7 deferred until after ZBZ acceptance. `data/curated_tei/` declared reserved and currently empty (gold-standard label rejected, nothing is verified yet).
+
+**Status** Suite 563 green, 285/285 schema-valid, all high and medium findings fixed. First content curation via the viewer exists (work titles as `<bibl>` in 3200 and 760). All 855 streams `unverifiziert`.
+
+**Next steps**
+1. Render check of the TEI data in the teiCrafter integration.
+2. Begin content curation in the viewer.
+3. Implement deferred N findings after acceptance.
 
 ---
 
-## Kompakt-Archiv (Sitzungen 1 bis 68)
+## Compact Archive (Sessions 1 to 68)
 
-Eine Zeile pro Sitzung, neueste zuerst. Begruendungen im
-[Entscheidungsregister](decisions.md), Details in der Git-History.
+One line per session, newest first. Rationale in the [decision register](decisions.md),
+details in the git history.
 
-### Juni 2026 — Abnahme-Vorbereitung
+### June 2026: acceptance preparation
 
-| # | Datum | Thema |
+| # | Date | Topic |
 |---|---|---|
-| 68 | 2026-06-08 | Doc-30-Bereinigung und Tail-Analyse (E82): ein dupliziertes OCR-Blockpaar entfernt (Fidelity-CER 18,25 -> 11,59 %). Die Analyse der verbliebenen Ausreisser zeigt strukturelle Ursachen (Fussnoten-Ueberdetektion, Scope-Differenzen, Doppelseiten), keine Schwaechen der Zeichenerkennung. Korpus-Mean 4,26 -> 3,99 % konsistent publiziert. |
-| 67 | 2026-06-08 | Transkribus-Export/Upload (E81): Pipeline-PAGE-XML rueckspielbar nach Transkribus (`edition.transkribus_export` baut Bundles, `edition.transkribus_upload` laedt via REST in eine Collection). Stichprobe 18 Docs gebaut, Doc 1500 in der Plattform verifiziert; Auth nur via Env-Vars. |
-| 66 | 2026-06-08 | CER-Einordnung print-kalibriert (E80): da der Korpus aus Druckseiten besteht, ist der Vergleich mit Handschriften-Benchmarks unangemessen; die Bewertung wurde am Print-Literaturvergleich ausgerichtet und wertende Zuschreibungen entfernt. Geaendert: quality.md, methode.html, Arbeitsbericht. |
-| 65 | 2026-06-07 | M2.4 Bild-URL-Schema + ZBZ-Testplan fuer die teiCrafter-Integration: Bildregel pro `<surface xml:id="facs_K">` ist `{id}_p{KKK}.png` mit K = Scan-Position (nicht `@n`; Edge Case 2310 beachten), Deployment live verifiziert (GitHub Pages, kein IIIF), Demo-Objekt 1540 gewaehlt. Erstellt: `reports/bericht-m2-2026-06-07.md` + Testplan T1-T9. |
-| 64 | 2026-06-07 | Frontend-Gap-Analyse ueber 6 Frontends (live + statisch): Hersch-HOCH-Befunde H1 (TEI-XML-Edit kann `_final.xml` ueberschreiben) bis H5 (Modal ohne Fokus-Trap), Token-Disziplin bestaetigt. Neues Knowledge-Doc [frontend-gaps.md](frontend-gaps.md) als SSoT + datierter Bericht in `reports/`. |
-| 63 | 2026-06-07 | Viewer-Kuration: ein Speichern-Knopf (E78) + Mirror-Write-Fix (E79). Gespeicherte Korrekturen verschwanden nach dem Seiten-Reload, weil der Viewer nur aus `docs/data/` liest, E72 aber nur nach `output/` schrieb; seitdem spiegelt jeder Speichervorgang die identische Nutzlast in beide Ablagen, der Viewer liest kuratierte Daten zuerst. Einzel-Downloads im Export-Dropdown. |
-| 62 | 2026-06-07 | Workflow-Status von vier auf drei Stufen kollabiert (E77): `unverifiziert\|in_arbeit\|verifiziert`, eine Farbe je Stufe (grau/gelb/gruen), rot reserviert. Backend + Frontend + CSS umgestellt, neues Gate `test_workflow_status.py`, Suite 525 gruen; keine Mirror-Regeneration noetig (alle 285 Docs standen auf `unverifiziert`). |
-| 61 | 2026-06-03 | Abnahme-Tiefenanalyse + Repo-Hygiene + MMSID-Entfernung (E76): Korpus-Invarianten am realen Datenbestand verifiziert (524 Tests gruen, 285/285 schema-valide, 0 Drift), Abnahme-Befunde dokumentiert (855 Stroeme `unverifiziert`, 195 leere Container-Titel, Doc 10 unvollstaendig). Die Projektion der Alma-Katalognummer (MMSID) in den TEI-Header wurde nach Vorlage des Spezifikations-Konflikts entfernt, da Katalog-Metadaten in der ZBZ-Domaene liegen (O8); Root-README abnahmetauglich neu gefasst. |
+| 68 | 2026-06-08 | Doc-30 cleanup and tail analysis (E82): duplicated OCR block pair removed (fidelity CER 18.25 to 11.59 %); remaining outliers have structural causes, not character recognition. Corpus mean 4.26 to 3.99 % published consistently. |
+| 67 | 2026-06-08 | Transkribus export/upload (E81): pipeline PAGE-XML playable back into Transkribus (bundle builder plus REST upload); sample of 18 documents built, doc 1500 verified on the platform; auth via env vars only. |
+| 66 | 2026-06-08 | CER framing print-calibrated (E80): print corpus must not be judged by handwriting benchmarks; evaluation anchored to print literature, evaluative labels removed. |
+| 65 | 2026-06-07 | M2.4 image URL scheme plus ZBZ test plan for the teiCrafter integration: `{id}_p{KKK}.png` with K as scan position; deployment verified live (GitHub Pages, no IIIF); demo object 1540. |
+| 64 | 2026-06-07 | Frontend gap analysis over 6 frontends: Hersch high findings H1 (TEI edit could overwrite `_final.xml`) to H5 (modal without focus trap); token discipline confirmed; frontend-gaps.md created as SSoT. |
+| 63 | 2026-06-07 | Viewer curation: one save button (E78) plus mirror-write fix (E79); every save now writes both the canonical `output/` location and the `docs/data/` mirror, viewer reads curated data first. |
+| 62 | 2026-06-07 | Workflow status collapsed from four to three stages (E77): `unverifiziert`/`in_arbeit`/`verifiziert`, one colour per stage, red reserved; new gate `test_workflow_status.py`. |
+| 61 | 2026-06-03 | Acceptance deep analysis, repo hygiene, MMSID removal (E76): corpus invariants verified on real data; Alma catalog number projection removed (catalog metadata is ZBZ domain, O8); root README rewritten for acceptance. |
 
-### Mai 2026 — Viewer-Datenversorgung + Deploy-Vorbereitung + Edition-Uplift
+### May 2026: viewer data supply, deploy preparation, edition uplift
 
-| # | Datum | Thema |
+| # | Date | Topic |
 |---|---|---|
-| 60 | 2026-05-27 | Frontend-UI-Review aller 5 `docs/`-Seiten + Quick-Wins: blockierendes `window.prompt()` fuers Bearbeiter-Kuerzel durch Inline-Feld ersetzt, Statuswechsel erst bei echter Aenderung statt beim Oeffnen, Dirty-Marker pro Strom, Mobile-/Filter-/Sortier-Fixes, JS-Cache-Versionierung (`?v=`). Bewusst offen gelassen: toter Panel-Divider, TEI-gerendert-Edit ohne Speicherpfad, Umlaut-Transliteration der UI-Chrome, fragmentierte Sprachfilter. |
-| 59 | 2026-05-27 | Repository-Aufraeum-Welle W1-W5 (10 Commits): Doku-Drift + tote NER-Reste + Hex-zu-Token bereinigt, OCR-Quellen auf `loaders.OCR_SOURCES` vereinheitlicht, inkohaerente CER-Scope-Ausschlussliste entfernt (alle Metriken n=25, Fidelity 4,26/1,83 bleibt exakt, E73), Schematron dokumentiert statt gebaut (E74), `ocr_dedup` + DoclingOCR-Engine entfernt (E75). Suite 524 gruen. |
-| 58 | 2026-05-27 | Direkt-Schreiben-Loop fuer die Viewer-Kuration (E72): `ZBZ.FsAccess` schreibt per File System Access API in den freigegebenen Repo-Ordner (Chromium, Download-Fallback), und `loaders.py` konsumiert kuratierte Layout-/OCR-Dateien real in `--reassemble`. Gate `test_curated_loaders.py`. |
-| 57 | 2026-05-27 | Doku-Korrektheits-Welle: alle Markdown-Docs gegen den realen Repo-Stand auditiert (Entscheidungs-Zaehler, Agent-Screening-Reste in workflow.md, fehlende Artefakte, Test-Inventar) und parallel zu E70/E71 nachgezogen. Kein Commit (gemischter Tree). |
-| 56 | 2026-05-27 | NER/Entity-Linking vollstaendig entfernt (E71): nur ~2,6 % der ~30.500 Erwaehnungen trugen echte GND-IDs, die Verlinkung war nie lieferfaehig. Code, Daten und Frontend-Anteile entfernt, deterministischer Tag-Strip ueber alle 285 TEI, 285/285 schema-valide. |
-| 55 | 2026-05-27 | CER-Methodik tief geprueft + korrigiert (E70): ZBZ-Referenzen sind selektive Teiltranskriptionen, das alte Alignment-Trimming verbarg das. Neue Fidelity/Scope-Zerlegung, Headline Fidelity Mean 4,26 %/Median 1,83 % ueber alle 25 Docs, drei CER-Pfade vereinheitlicht, Paired-Test korrigiert. 18 goldene Tests, Suite 507 gruen. |
-| 54 | 2026-05-27 | Hygiene + Korrektheits-Welle (E69): stiller Validator-CER-Importfehler behoben, `<pb>`-Splitter-Duplikat zu `pb_split.py` zusammengefuehrt (byte-identisch ueber alle 285 Finals verifiziert), `build_tei_header` auf den Liefer-Vertrag gehoben (idno + biblStruct + langUsage). Suite 503 gruen. |
-| 53 | 2026-05-27 | Schema-Regression entdeckt + behoben (E68): die ausgelieferte Schicht `tei_final` wurde nie batch-validiert und stand bei 0/285 valide (teiHeader-Elemente fehlten im ODD-Subset). Schema ergaenzt, 285/285 valide, neues Gate `test_tei_schema.py`. |
-| 52 | 2026-05-26 | E66-Abschluss: `tei_status_marker` ueber alle 285 Docs (285 irrefuehrende Agent-Screening-Eintraege raus, 855 ehrliche Workflow-Eintraege rein), 4 Commits gepusht, Frontend-Audit mit 15 priorisierten Befunden, tote Screening-Badges entfernt. |
-| 51 | 2026-05-26 | Catalog-UI-Refactor + Ampel-Reframing (E67): Status `offen` umbenannt in `unverifiziert` (Pipeline-Output existiert, ist nur ungeprueft), rot reserviert; Filter, Spalten-Sortierung und Workflow-Spalte ueberarbeitet, Footer + Impressum site-weit konsistent. |
-| 50 | 2026-05-26 | Agent-Screening abgeschafft, Workflow-Status pro Strom eingefuehrt (E66): menschengesetzte Statuswerte je Datenstrom mit Provenienz-History im Pro-Objekt-Manifest; Catalog + Viewer umgestellt, `tei_status_marker` projiziert die History in den `<revisionDesc>`. |
-| 49 | 2026-05-26 | Leerseiten-Manifest + TEI-Marker (E63 Phase 2; E65): `page_manifest.py` detektiert deterministisch 79 Leerseiten in 15 Docs (OCR-Regel + Docling=0, cross-validiert, 0 Konflikte), `tei_blank_marker.py` projiziert `<pb type="blank"/>` und leert Junk-Bodies. 0 Schema-Regression. |
-| 48 | 2026-05-26 | Viewer-UI verdichtet (E64): totes OCR-Engine-Dropdown entfernt (Viewer = ausgelieferte Edition = Mistral), Doc-Subbar + Toolbar fusioniert, Edit-Toggles heissen "Layout"/"Text". |
-| 47 | 2026-05-26 | Viewer-Live-Review + Leerseiten-Welle (E63): Leerseiten zeigten OCR-Muell + Phantom-Regionen; Blank-Handling im Viewer gebaut und Architektur entschieden: Pro-Objekt-Manifest als SSoT fuer Seiten-Fakten, TEI-Marker als Projektion daraus. |
-| 46 | 2026-05-26 | Methode-Seite `docs/methode.html` als schlanke Nachfolgerin des abgeschafften CER-Dashboards (E62): Headline-CER, Stratifizierung, Literaturvergleich, Limitations, Werkzeug-Doku. |
-| 45 | 2026-05-25 | Edition-Uplift-Welle gestartet (E58-E61): OpenSeadragon 5.0.1 als Faksimile-Renderer, Polygone explizit ausgeschlossen (Druck-Korpus), Edit-Toggle pro Panel statt globaler Mode-Leiste, Export-Modul mit JSZip geplant. |
-| 44 | 2026-05-25 | Befund-Fixes + Konsistenz-Refactoring: TEI-Doppelkodierung `&amp;amp;` behoben, Knowledge-Drift nach E56/E57 bereinigt, `<pb>`-Splitter balanciert jetzt `<div>`-Grenzen. Alle 4970 ausgelieferten XML wohlgeformt (vorher 327 nicht). |
-| 43 | 2026-05-25 | Viewer auf vollen Korpus erweitert (E57): Mirror-Generator fuer alle 285 Docs (8083 Layout-, 4117 OCR-, 4115 TEI-Seiten via `<pb>`-Splitting), dreistufiger Pfad-Resolver, GitHub-Pages-tauglich. Bildlieferung bleibt lokal. |
+| 60 | 2026-05-27 | Frontend UI review of all 5 docs/ pages plus quick wins: blocking prompt replaced by inline field, dirty markers per stream, mobile/filter/sort fixes, JS cache versioning. |
+| 59 | 2026-05-27 | Repository cleanup wave W1-W5: documentation drift, dead NER remnants, hex-to-token fixed; OCR sources unified on `loaders.OCR_SOURCES`; incoherent CER scope exclusion removed (E73); Schematron documented instead of built (E74); `ocr_dedup` and DoclingOCR engine removed (E75). |
+| 58 | 2026-05-27 | Direct-write loop for viewer curation (E72): File System Access API writes into the repo folder (Chromium, download fallback); `loaders.py` consumes curated files in `--reassemble`. |
+| 57 | 2026-05-27 | Documentation correctness wave: all Markdown audited against the real repo state alongside E70/E71. |
+| 56 | 2026-05-27 | NER/entity linking fully removed (E71): only ~2.6 % of ~30,500 mentions carried real GND ids; deterministic tag strip over all 285 TEI, 285/285 schema-valid. |
+| 55 | 2026-05-27 | CER methodology deep-checked and corrected (E70): ZBZ references are selective partial transcriptions; new fidelity/scope decomposition, three CER paths unified, paired test corrected. |
+| 54 | 2026-05-27 | Hygiene and correctness wave (E69): silent validator CER import error fixed, `<pb>` splitter deduplicated into `pb_split.py` (byte-identical over all 285 finals), `build_tei_header` lifted to the delivery contract. |
+| 53 | 2026-05-27 | Schema regression found and fixed (E68): the delivered layer `tei_final` had never been batch-validated and stood at 0/285 valid; schema extended, 285/285 valid, new gate `test_tei_schema.py`. |
+| 52 | 2026-05-26 | E66 completion: `tei_status_marker` over all 285 documents (misleading agent-screening entries out, honest workflow entries in); frontend audit with 15 prioritised findings. |
+| 51 | 2026-05-26 | Catalog UI refactor plus traffic-light reframing (E67): status `offen` renamed to `unverifiziert`, red reserved; filters, sorting, workflow column reworked. |
+| 50 | 2026-05-26 | Agent screening abolished, per-stream workflow status introduced (E66): human-set status per data stream with provenance history in the per-object manifest. |
+| 49 | 2026-05-26 | Blank-page manifest plus TEI marker (E63 phase 2; E65): 79 blank pages in 15 documents detected deterministically, `<pb type="blank"/>` projected, junk bodies emptied. |
+| 48 | 2026-05-26 | Viewer UI condensed (E64): dead OCR engine dropdown removed (viewer = delivered edition = Mistral), doc subbar and toolbar fused. |
+| 47 | 2026-05-26 | Viewer live review plus blank-page wave (E63): per-object manifest decided as SSoT for page facts, TEI marker as projection. |
+| 46 | 2026-05-26 | Method page `docs/methode.html` as lean successor of the abolished CER dashboard (E62). |
+| 45 | 2026-05-25 | Edition uplift wave started (E58-E61): OpenSeadragon facsimile renderer, edit toggle per panel, JSZip export module planned. |
+| 44 | 2026-05-25 | Finding fixes plus consistency refactoring: TEI double encoding fixed, `<pb>` splitter balances `<div>` boundaries; all 4970 delivered XML well-formed. |
+| 43 | 2026-05-25 | Viewer extended to the full corpus (E57): mirror generator for all 285 documents, three-stage path resolver, GitHub-Pages ready; image delivery stays local. |
 
-### April 2026 — Frontend-Radikalkur + Wissenschaftliche CER-Re-Evaluation
+### April 2026: frontend radical cut, scientific CER re-evaluation
 
-| # | Datum | Thema |
+| # | Date | Topic |
 |---|---|---|
-| 42 | 2026-04-27 | Knowledge-Konsolidierung (25 auf 10 Docs) + Frontend-Radikalreduktion: Edition, Diagnostik, CER-Dashboard und Curation Editor abgeschafft, neue Single-Page-App `docs/viewer.html` (Faksimile + OCR/TEI + Layout-/Transkriptions-Editor). 9 auf 1 HTML, 23 auf 6 JS, CSS minus 84 %. E56. |
-| 41 | 2026-04-27 | CER wissenschaftlich fundiert: BCa-Bootstrap-CIs (B=10000, Seed=42), Paired-Test E2E vs OCR-only, Selektionsbias ehrlich geflaggt, Pagewise-vs-Global-Artefakt diagnostiziert und in [quality.md](quality.md) dokumentiert. E54/E55. |
+| 42 | 2026-04-27 | Knowledge consolidation (25 to 10 docs) plus frontend radical reduction: 9 to 1 HTML, 23 to 6 JS, CSS minus 84 %; new single-page viewer (E56). |
+| 41 | 2026-04-27 | CER scientifically grounded: BCa bootstrap CIs (B=10000, seed 42), paired test E2E versus OCR-only, selection bias flagged honestly (E54/E55). |
 
-### Maerz 2026 — Pipeline-Konsolidierung + Edition
+### March 2026: pipeline consolidation plus edition
 
-| # | Datum | Thema |
+| # | Date | Topic |
 |---|---|---|
-| 40 | 2026-03-27 | Frontend-Refactoring Phase 1+2: CSS-Token-Konsolidierung, HTML-Semantik (Skip-Nav, ARIA), JS-Foundation-Layer (`zbz-core.js`), Unified TEI Renderer. |
-| 39 | 2026-03-26 | OCR-Diagnostik Abschluss: 6 Scope-Mismatches identifiziert; bereinigte Statistik n=19 Mean 4.18% / Median 1.83%. |
-| 38 | 2026-03-26 | Diagnostik-UI Rewrite: 4 Tabs, ZBZ.Diagnostik-Namespace, Search-Index 279→285 (XML-Parsing-Fix). |
-| 37 | 2026-03-26 | Diagnostik-Datenproduktion: W10-Tiefenanalyse, Corpus-Statistik (285 Docs / 4.108 Seiten), Validierungs-Timeline. |
-| 36 | 2026-03-26 | Edition-Sync Fortsetzung: Log-Tab, Seitenzaehlung 383→4.117. |
-| 35 | 2026-03-26 | Edition-Synchronisation: Katalog 15→285 Docs, Wikidata-Resume-Flag, revisionDesc im Reader. |
-| 34 | 2026-03-26 | TEI-Qualitaet: ref-Pattern in `zbz_hersch.rng` erweitert (GND + #zbz), 285/285 schema-valide. Heuristische lb-Injection (10.635 lb in 46 Docs), Post-Assembly-Fixes W3/W4/W7. |
-| 33 | 2026-03-26 | OCR-Diagnostik + Eval-Optimierung: Symmetrische Normalisierung, Hyphen, CI-Alignment. Mean CER 9.33%→5.97%, Median 5.52%→2.42%. |
-| 32 | 2026-03-26 | End-to-End CER Benchmark (E51): TEI-vs-TEI Eval, `benchmark_cer.py`, Median 5.5%. Sub-Projekt CER-Verbesserung definiert. |
-| 31 | 2026-03-26 | Neues Schema `zbz_hersch.rng` + verbindliche Editionsrichtlinien ZBZ eingearbeitet (18 Dateien). E48/E49/E50 (Dual-Attribut). |
-| 30 | 2026-03-15 | Hersch Design-System: Migration auf Anthrazit+Ziegelrot+EB Garamond+Jost. Zweistufige CSS-Tokens (`--h-*` / `--ed-*`). Hersch-Komponenten (Seuil, Etonnement, Polyphonie). |
-| 29 | 2026-03-15 | NEEDS_REVIEW 32→0: 20 neue Entity-Stopwoerter (E45), Strukturfixes, OCR-Dedup `ocr_dedup.py` (E46). Finalstand 242 APPROVED / 43 WITH_NOTES / 0 NEEDS_REVIEW. |
-| 28 | 2026-03-15 | Edition Frontend Refactoring: Discovery Hub, Volltextsuche, Galerie, Screening + Curation Workflow getrennt, 5 Curation-States. |
-| 27 | 2026-03-15 | Agent-Based Quality Screening Rollout 285/285 (58 Batches, 4 Tiers): 210 APPROVED, 43 WITH_NOTES, 32 NEEDS_REVIEW. revisionDesc-Standard etabliert (E42), `output/tei_final/` als Single Source of Truth (E43). |
-| 26 | 2026-03-15 | TEI Validation Quality Gate refactored: 2-Ebenen (Errors/Warnings), W1-W11, HTML-Report. Entity-Tagging typkorrekt mit internen IDs. div-Merge. `--reassemble` Flag. 284/285 VALID. |
-| 25 | 2026-03-14 | Frontend-Konsolidierung: Edition nach `docs/`, Pipeline-UI nach `docs/infrastruktur/`. ES5→ES6+ in 13 JS-Dateien. |
-| 24 | 2026-03-12 | Viewer-Erweiterung: WD/zbz-ID Support, GND-0%-Bug behoben (`entity_index.py` schrieb GND nie ins TEI-XML — Fix + Cache-Backfill, 0%→21.7%). |
-| 23 | 2026-03-09 | NER Completion + TEI Entity Injection: 285 Docs, 11.685 Entities, 26.197 Mentions. Wikidata-Linking gestartet. |
-| 22 | 2026-03-09 | Knowledge-Refactoring: EDITION + CURATION getrennt. NER Production Run 285 Docs, 4.100 Index-Eintraege. |
-| 19-21 | 2026-03-08–09 | Curation Editor Phasen 2-5: Block-Toolbar, Entity-Kuration mit Autocomplete, Review-Workflow (3 Status), TEI-Validierung. `data/tei_curated/` als git-tracked Gold-Standard. |
-| 17-18 | 2026-03-08 | tei_unified Refactoring (Orchestrator ~1100→~70 Z.). NER-Robustheit (Diakritik, Retry, Surname-Matching). NER Production Phase 1 (7 Qualitaetsverbesserungen, E35). |
-| 14-16 | 2026-03-06–07 | Unified TEI Pipeline (E32): 4 Stufen (Scaffold + Gemini + Assembly + Validation). NER Pipeline (E34): Gemini Flash Lite, 6 Entity-Typen, Wikidata-Reconciliation. |
-| 12-13 | 2026-03-06 | Gemini Vision TEI (E30, superseded). Dokumenttyp-spezifische Prompts (4-Ebenen). Layout-QA Full Run E31 (14.708 Korrekturen). |
-| 11 | 2026-03-05 | Gemini-Dokumentklassifikation (E27, Stage 1a). Online-Demo (E28). Gemini OCR-Korrektur Stage 2b (E29). |
-| 9-10 | 2026-03-03–04 | docling-serve API (E24), Gemini Layout QA + Detect (E25/E26): 3 Modi (qa/detect/auto). |
+| 40 | 2026-03-27 | Frontend refactoring phases 1+2: CSS token consolidation, HTML semantics, JS foundation layer, unified TEI renderer. |
+| 39 | 2026-03-26 | OCR diagnostics closing: 6 scope mismatches identified; cleaned statistics n=19 mean 4.18 % / median 1.83 %. |
+| 38 | 2026-03-26 | Diagnostics UI rewrite: 4 tabs, search index 279 to 285 (XML parsing fix). |
+| 37 | 2026-03-26 | Diagnostics data production: W10 deep analysis, corpus statistics, validation timeline. |
+| 36 | 2026-03-26 | Edition sync continuation: log tab, page count 383 to 4117. |
+| 35 | 2026-03-26 | Edition synchronisation: catalog 15 to 285 documents, revisionDesc in the reader. |
+| 34 | 2026-03-26 | TEI quality: ref pattern extended (GND plus #zbz), 285/285 schema-valid; heuristic lb injection (10,635 lb in 46 documents). |
+| 33 | 2026-03-26 | OCR diagnostics plus eval optimisation: symmetric normalisation, hyphens, CI alignment; mean CER 9.33 to 5.97 %, median 5.52 to 2.42 %. |
+| 32 | 2026-03-26 | End-to-end CER benchmark (E51): TEI-versus-TEI eval, median 5.5 %. |
+| 31 | 2026-03-26 | New schema `zbz_hersch.rng` plus binding ZBZ editorial guidelines incorporated (E48/E49/E50). |
+| 30 | 2026-03-15 | Hersch design system: anthracite plus brick red plus EB Garamond plus Jost, two-level CSS tokens. |
+| 29 | 2026-03-15 | NEEDS_REVIEW 32 to 0: 20 new entity stopwords (E45), structure fixes, OCR dedup tool (E46; removed later by E75). |
+| 28 | 2026-03-15 | Edition frontend refactoring: discovery hub, full-text search, gallery, screening and curation workflow separated. |
+| 27 | 2026-03-15 | Agent-based quality screening rollout 285/285; revisionDesc standard (E42), `output/tei_final/` as single source of truth (E43). |
+| 26 | 2026-03-15 | TEI validation quality gate refactored: two levels (errors/warnings), W1-W11, HTML report; `--reassemble` flag. |
+| 25 | 2026-03-14 | Frontend consolidation: edition to `docs/`, ES5 to ES6+ in 13 JS files. |
+| 24 | 2026-03-12 | Viewer extension: GND 0 % bug fixed (`entity_index.py` never wrote GND into the TEI; fix plus cache backfill, 0 to 21.7 %). |
+| 23 | 2026-03-09 | NER completion plus TEI entity injection: 285 documents, 11,685 entities, 26,197 mentions. |
+| 22 | 2026-03-09 | Knowledge refactoring: EDITION and CURATION separated; NER production run over 285 documents. |
+| 19-21 | 2026-03-08 to 09 | Curation editor phases 2-5: block toolbar, entity curation with autocomplete, review workflow, TEI validation. |
+| 17-18 | 2026-03-08 | tei_unified refactoring (orchestrator ~1100 to ~70 lines); NER robustness; NER production phase 1 (E35). |
+| 14-16 | 2026-03-06 to 07 | Unified TEI pipeline (E32): four stages; NER pipeline (E34): Gemini Flash Lite, six entity types, Wikidata reconciliation. |
+| 12-13 | 2026-03-06 | Gemini vision TEI (E30, superseded); document-type-specific prompts; layout QA full run E31 (14,708 corrections). |
+| 11 | 2026-03-05 | Gemini document classification (E27), online demo (E28), Gemini OCR correction stage 2b (E29). |
+| 9-10 | 2026-03-03 to 04 | docling-serve API (E24), Gemini layout QA plus detect (E25/E26): three modes. |
 
-### Februar 2026 — Pipeline-Aufbau
+### February 2026: pipeline build-up
 
-| # | Datum | Thema |
+| # | Date | Topic |
 |---|---|---|
-| 7-8 | 2026-02-25–27 | Scope-Expansion (E21): Full Pipeline (OCR + Layout + PAGE-XML + NER/GND + TEI). Pilot 15 Docs, page-by-page Comparison (E16/E18). Data Delivery E23 (286 PDFs, 25 TEI-XMLs). |
-| 4-6 | 2026-02-14–20 | Mistral OCR 3 als Production Engine (E6). Azure-Integration. PAGE-XML + METS Export (E13, Schema 2013-07-15). Dashboard-Redesign (E15). |
-| 1-3 | 2026-01-29–02-14 | Initiale Quellenanalyse: 286 PDFs, 4 Dokumenttypen (A-D), Sprachverteilung FR 66% / DE 30%. Hybrid Pipeline-Entscheidung (E1): Docling Layout + LLM-OCR Text. |
+| 7-8 | 2026-02-25 to 27 | Scope expansion (E21): full pipeline (OCR, layout, PAGE-XML, NER/GND, TEI); pilot 15 documents; data delivery E23 (286 PDFs, 25 TEI). |
+| 4-6 | 2026-02-14 to 20 | Mistral OCR as production engine (E6); Azure integration; PAGE-XML plus METS export (E13); dashboard redesign (E15). |
+| 1-3 | 2026-01-29 to 02-14 | Initial source analysis: 286 PDFs, four document types (A-D), language split FR 66 % / DE 30 %; hybrid pipeline decision (E1): Docling layout plus LLM OCR text. |
 
-Aeltere Detail-Eintraege im Git-Verlauf erhalten.
+Older detail entries preserved in the git history.
 
 ---
 
-## Learnings
+## Lessons
 
-Aus den Sessions destillierte Beobachtungen, die fuer kuenftige Arbeit relevant bleiben:
+Observations distilled from the sessions that stay relevant for future work:
 
-- **L1** Validierung muss actionable sein. False-Positive-Quote >50% macht Reports nutzlos. Jede Warning braucht eine konkrete Aktion.
-- **L2** Entity-Typ darf nicht verloren gehen. `annotate_entities()` braucht `(tag, id)` aus dem Index, nicht nur Namen.
-- **L3** Stopwort-Filter ist essenziell. Gattungsbegriffe (Mensch, Gott, Wahl) erzeugen ohne Filter ~30% False Positives.
-- **L4** Seiten-Fragmente zu Dokument-Struktur mergen. ZBZ-Referenz hat 1 top-level div. Post-Assembly-Merge ist deterministisch und kostenlos.
-- **L5** Step-2-Cache invalidieren bei Prompt-Aenderungen. `--force` regeneriert nicht den Step-2-Cache.
-- **L6** LLM-NER hat ~5-10% False Positives. Inhaerent. Loesung: Curation Editor, nicht Code-Fix.
-- **L7** Page-Numbering-Drift macht Pagewise-CER unbrauchbar. Content-aligned Eval (`evaluate_tei_vs_tei`) ist immun.
-- **L8** Mehrsprachige Codes korrekt parsen. "fra/deu" zerfaellt sonst zu "und". Betrifft ~40 Docs.
-- **L9** facsimile/pb synchron halten. Leere surfaces fuer Seiten ohne Layout-Zones.
-- **L10** Interne IDs (zbz-p/o/l/w.N) als primaere Referenz. GND in `ref`, intern in `corresp` (Dual-Attribut, E50).
-- **L11** Eine server-lose Persistenz hat zwei Wahrheiten: den kanonischen Konsum-Ort (`output/`, Pipeline) und den Lese-Ort des Frontends (`docs/data/`-Mirror). Wer nur in den ersten schreibt, speichert real, aber unsichtbar fuer den Kuratierenden.
-- **L12** Bei parallelen Instanzen im selben Tree sind `git status` + Verifikation gegen den realen Dateistand Pflicht; ein "file modified since read"-Konflikt ist das Signal zum Zuruecktreten, nicht zum Erzwingen.
-- **L13** Eine Prosa-Zahl ("285/285 valide") ist kein Beleg. Die ausgelieferte SSoT braucht ein automatisiertes Gate, keine Behauptung.
-- **L14** Ein gruenes Konformitaets-Gate ist nur so scharf wie der Bestand, ueber den es laeuft. "285/285 konform" heisst auf dem entitaetenfreien `tei_final` "keine Verletzung", nicht "Entitaeten korrekt GND-ausgezeichnet"; die entitaetsbezogenen Regeln (Z1-Z4) greifen erst nach der Inline-GND-Kuration durch teiCrafter.
-- **L15** Zeitungslayouts versagen systematisch (>40 Zones, OCR-Halluzinationen). ~3% des Korpus.
-- **L16** Tier-2-Docs (4-8 Seiten) haben 85%+ APPROVED-Rate, Tier-1 (1-3 Seiten) nur 40%.
+- L1: Validation must be actionable. A false-positive rate above 50 % makes reports useless; every warning needs a concrete action.
+- L2: Entity type must not get lost; annotation needs `(tag, id)` from the index, not just names.
+- L3: A stopword filter is essential; generic nouns produce ~30 % false positives without it.
+- L4: Merge page fragments into document structure; the ZBZ reference has one top-level div, and the post-assembly merge is deterministic and free.
+- L5: Invalidate the step-2 cache on prompt changes; `--force` does not regenerate it.
+- L6: LLM NER carries ~5-10 % inherent false positives; the answer is a curation editor, not a code fix.
+- L7: Page-numbering drift breaks pagewise CER; content-aligned evaluation is immune.
+- L8: Parse multilingual codes correctly ("fra/deu" otherwise decays to "und"); affects ~40 documents.
+- L9: Keep facsimile and pb in sync; empty surfaces for pages without layout zones.
+- L10: Internal ids as primary reference; GND in `ref`, internal in `corresp` (dual attribute, E50).
+- L11: Server-less persistence has two truths: the canonical consumption location (`output/`) and the frontend's read location (`docs/data/` mirror). Writing only to the first saves for real but invisibly for the curator.
+- L12: With parallel instances in the same tree, `git status` plus verification against the real file state is mandatory; a "file modified since read" conflict is the signal to step back, not to force.
+- L13: A prose figure ("285/285 valid") is no evidence; the delivered SSoT needs an automated gate, not a claim.
+- L14: A green conformity gate is only as sharp as the corpus it runs over; on the entity-free `tei_final`, "285/285 conformant" means "no violation", not "entities correctly GND-tagged". The entity rules Z1-Z4 bite only after inline-GND curation.
+- L15: Newspaper layouts fail systematically (>40 zones, OCR hallucinations); ~3 % of the corpus.
+- L16: Tier-2 documents (4-8 pages) reached 85 %+ APPROVED rate, tier-1 (1-3 pages) only 40 %.
 
 <!--
-Eintrags-Template zum Kopieren (neuen Eintrag direkt unter "## Eintraege" einfuegen):
+Entry template (insert new entries directly under "## Entries"):
 
-### YYYY-MM-DD Sitzung N: Sitzungstitel
+### YYYY-MM-DD Session N: session title
 
-**Anlass.** [Ein Satz: warum diese Arbeit jetzt.]
+**Occasion** [One sentence: why this work now.]
 
-**Ziel.** [Ein Satz: was am Ende stehen sollte.]
+**Goal** [One sentence: what should exist at the end.]
 
-**Verlauf.** [Ein bis vier Absaetze. Was tatsaechlich geschah, mit Belegstellen.
-Fachbegriffe beim ersten Auftreten erklaeren.]
+**Course** [At most one paragraph: what actually happened, with references. Distill.]
 
-**Entscheidungen.**
-- [Was, warum, verworfene Alternative. Registernummer falls vorhanden.]
+**Decisions**
+- [What, why, rejected alternative. Register number if available.]
 
-**Stand.** [Ein Absatz, allein lesbar: was steht, was ist offen.
-Optional Commit-Hash als Savepoint.]
+**Status** [A few sentences, readable on their own. Optional commit hash as savepoint.]
 
-**Naechste Schritte.**
-1. [Konkret genug als Sitzungseinstieg.]
+**Next steps**
+1. [Concrete enough to start the next session.]
 
-**Dead Ends.** [Optional: versucht und verworfen, mit Begruendung.]
+**Dead Ends** [Optional: tried and rejected, with rationale.]
 -->
