@@ -356,6 +356,20 @@ Documents: [journal.md](journal.md) session 85
 
 ---
 
+### E96 Doc 1520 page 70: leaked refusal replaced by an honest partial transcription (2026-07-07)
+
+Occasion: E94 finding, Mistral OCR degenerated into a repetition loop on this page and the correction layer's refusal text leaked into the delivered TEI. The operator supplied a Gemini API key and authorized `gemini-3.5-flash` for the gated single-page re-OCR.
+
+Findings: the page is largely illegible in the delivered scan (very faint print plus verso bleed-through, which is also why Mistral looped). Two vision passes diverged tellingly. The fluent pass produced complete text that is partly reconstructed from world knowledge; contrast-enhanced facsimile bands refute it at verifiable spots (printed "Ce chiffre historique universel" where it wrote "Ce double mouvement", printed "en Iran" where it wrote "en Perse"). The honesty-prompted pass marked the same zones `[...]`. Machine transcription of this scan has a hard ceiling.
+
+Decision: the delivered TEI carries an honest partial transcription, facsimile-verified anchors and two-pass consensus verbatim, every unresolved span as `[...]`, and no footer digit (the passes read 253/256 in the faded footer, but `pb n="[64]"` stands in an unbroken bracketed sequence [59]..[70] with stable offset 6 and outranks the illegible digit). Rejected alternative: the fluent single-pass text, because it fabricates unreadable regions.
+
+Execution: full backup to `output/_backup_pre_1520_p70_reocr/`; new base text written to `mistral_results/` (the canonical target of the Gemini-vision engine), refusal removed from `llm_corrected_c/`, poisoned per-page step-1 caches removed, `tei_final` page 70 patched surgically (pb tag, folio, and all stock corrections untouched). Validator 0 errors, schema gate green, mirror regenerated. The page remains a curation case; full transcription needs a better scan (ZBZ).
+
+Documents: [journal.md](journal.md) session 87
+
+---
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |

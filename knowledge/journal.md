@@ -57,6 +57,38 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-07-07 Session 87: 1520 p70 leaked refusal replaced (gated re-OCR executed, E96)
+
+**Occasion** The operator supplied a Gemini API key and authorized `gemini-3.5-flash`
+for the gated single-page re-OCR of doc 1520 page 70, whose delivered TEI carried a
+leaked LLM refusal (E94 finding; root cause a Mistral repetition loop on a nearly
+illegible page).
+
+**Goal** Remove the refusal from the delivered corpus and put the most honest
+machine-recoverable text in its place.
+
+**Course** Two vision passes over 200/300-DPI renders diverged: the fluent pass
+partly reconstructed the faint zones from world knowledge (refuted at the
+contrast-enhanced facsimile: printed "Ce chiffre historique universel" and
+"en Iran" against its "Ce double mouvement" and "en Perse"), the honesty-prompted
+pass marked the same zones `[...]`. Composed a conservative partial transcription
+(facsimile-verified anchors plus two-pass consensus verbatim, `[...]` elsewhere,
+no footer digit; `pb n="[64]"` confirmed by the unbroken bracketed sequence).
+Streams repaired with full backup, `tei_final` patched surgically, validator and
+schema gate green, mirror regenerated (register E96).
+
+**Decisions** Honest partial transcription over fluent reconstruction; the faded
+footer digit stays out because the interpolated folio sequence outranks it (E96).
+
+**Status** The refusal is gone from the delivered corpus; the page content is
+partial by design and needs human curation from a better scan. Commit pending.
+
+**Next steps**
+1. Push (operator gate).
+2. Doc-30 adjudication, then the last report slot.
+3. M3 reading-order rollout (operator-gated).
+4. Ask ZBZ for a better scan of 1520 page 70 for full curation.
+
 ### 2026-07-07 Session 86: Healing rerun executed, gates green, reports and statistics moved to the post-run state
 
 **Occasion** The operator re-ran `tei_pb_folio --strip-folio-echo` after the E95
