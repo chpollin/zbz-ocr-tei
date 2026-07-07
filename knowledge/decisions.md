@@ -370,6 +370,18 @@ Documents: [journal.md](journal.md) session 87
 
 ---
 
+### E97 Doc 30 adjudicated: E91 text-loss reading confirmed, the calibration conflict was a sampling gap (2026-07-07)
+
+Occasion: E94 left open the contradiction between the counter-check (E91: the CER outlier is genuine text loss on double pages) and the facsimile calibration (complete text on the double pages it sampled, suggesting a pure alignment problem).
+
+Adjudication (facsimile-verified): the three missing blocks of doc 30 (540/451/194 normalized characters via the canonical alignment) all sit at reference positions 0-6 percent, i.e. on the left half of the FIRST double page (printed page [222]). The scan shows this text fully legible; it is absent from the delivered TEI and from every OCR stream (grep across mistral/ocr_results/gemini_corrected/llm_corrected). Both prior findings are therefore correct: the calibration sample (facs 2-4) did not include the affected page, and only its generalization to "pure alignment problem" was wrong.
+
+Consequence: the fidelity outlier (11.59 percent) is genuine recognition loss of one double-page half; a reading-order correction cannot recover it. Repair path: targeted single-page re-OCR of scan page 1 following the E96 pattern (gated). The adjudication slot in `reports/arbeitsbericht-v3.md` is filled.
+
+Documents: [journal.md](journal.md) session 88
+
+---
+
 ## Open items
 
 | # | Question | Context | Blocks | Clarification |

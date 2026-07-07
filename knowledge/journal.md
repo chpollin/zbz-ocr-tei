@@ -57,6 +57,42 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-07-07 Session 88: Doc 30 adjudicated (E97), arbeitsbericht v3 finalized
+
+**Occasion** The operator asked for the best answers to three involvement questions
+(doc-30 adjudication, report audience and redundancy policy, sequencing of the
+remaining backlog) and their integration into the work report, which stays v3.
+
+**Goal** Resolve the doc-30 contradiction with evidence, then bring the report to a
+fully measured, internally consistent state.
+
+**Course** Doc-30 adjudication via canonical alignment plus facsimile: the three
+missing blocks (540/451/194 chars) all lie on the left half of the first double
+page (printed page [222]), fully legible on the scan and absent from every OCR
+stream and the delivered TEI; the E94 calibration had sampled facs 2-4 and missed
+the affected page, so E91's text-loss reading stands and the "pure alignment"
+generalization falls (register E97). Report updates: adjudication slot filled,
+preamble now records the v3 delta instead of open values, 1520-p70 item moved to
+repaired state (E96), decision count and register pointers refreshed, two
+colon-connector sentences and one triad reformulated, the doubled three-stream
+definition and status-value listing single-sourced, M3 bullet gains the
+preview-rebuild condition after the stock runs.
+
+**Decisions** Doc 30 is genuine recognition loss of a double-page half, repair via
+targeted single-page re-OCR after the E96 pattern (E97). Report audience stays ZBZ
+project management first; reader-guiding cross-references remain, true double
+definitions were removed. Backlog order: report final now, M3 rollout after a
+preview rebuild, run-to-run pilot stays a gated outstanding item.
+
+**Status** All report slots are filled and all named figures measured; the report
+is internally consistent with registers E94 to E97. Commit pending push gate.
+
+**Next steps**
+1. Push (operator gate).
+2. Targeted re-OCR of doc 30 scan page 1 (gated, E96 pattern).
+3. M3 preview rebuild, then rollout decision.
+4. Run-to-run pilot (5 documents x 3 runs, gated).
+
 ### 2026-07-07 Session 87: 1520 p70 leaked refusal replaced (gated re-OCR executed, E96)
 
 **Occasion** The operator supplied a Gemini API key and authorized `gemini-3.5-flash`
