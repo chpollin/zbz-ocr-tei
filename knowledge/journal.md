@@ -57,6 +57,52 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-07-07 Session 84: E92/E94 tooling refactored, behavior equivalence proven
+
+**Occasion** The E92/E94 wave was built by parallel agents, so the marker tools and
+audits each carried private copies of the same scaffolding; the operator asked for a
+refactoring pass before the pending stock runs.
+
+**Goal** Single-source the duplicated scaffolding without changing any tool's
+behavior, verified against the already dry-run-verified state of the two pending
+stock corrections.
+
+**Course** Three agent lanes on disjoint file sets. Lane one extracted
+`scripts/tei/marker_common.py` (backup-then-write, final-file iteration) and rewired
+the five active marker tools; lane two extracted `scripts/eval/audit_common.py`
+(discovery, tolerant parse, report writer, `--dir` CLI) and rewired the five audits
+plus the completeness check; lane three examined the thirteen new test files and
+found the apparent fixture duplication superficial (each builder is tailored to its
+audit), so it changed no test and only fixed inventory drift in `scripts/README.md`.
+Orchestrator follow-up: dead code removed (`count_pb_elements`, one dead import),
+direct unit tests added for the shared undo path (`tests/test_marker_common.py`).
+Equivalence evidence: dry-runs of `tei_pb_folio --strip-folio-echo` and
+`tei_body_note_demote --promote-footnotes` byte-identical to pre-refactor baselines
+(folio sources 1753/1033/151/208/970/79, 1212 echoes; 59 demotions, 2 quotes,
+2 preserved, 19 promotions, 0 unmatched), all six audit JSONs unchanged except the
+completeness timestamp, full suite green.
+
+**Decisions** Shared helpers stay per domain (`tei/` and `eval/` each own their
+module); lifting the remaining ~15 duplicated lines into `scripts/core/` was
+rejected as an abstraction level without present need. Historical one-shot tools
+(`tei_footnote_demote`, `tei_footnote_marker_strip`, `tei_surface_graphic`) left
+untouched because their write path also regenerates the mirror. Unused diagnostic
+JSON fields (`confidence`/`examples` in pb_number_audit, `note_count` in
+body_note_audit) kept: audit reports are human-facing and the fields carry triage
+value.
+
+**Status** Refactor committed as 6726c409, not pushed. The two stock runs remain
+pending and their verified dry-run figures still hold on the refactored code.
+
+**Next steps**
+1. Operator runs `tei_pb_folio --strip-folio-echo`, then `tei_body_note_demote
+   --promote-footnotes`, then gates (`pytest`, `tei_validator --all`, after-audits).
+2. Operator adjudications: document 30 (E91 conflict), 1520 page 70 re-OCR.
+3. Fill the marked slots in `reports/arbeitsbericht-v3.md` and update
+   `final-report.md` once runs and adjudications are through.
+4. Legacy status labels (`bearbeitet`/`fertig`) in `tei_status_marker.py` removable
+   once no pre-E77 manifests remain.
+
 ### 2026-07-07 Session 83: Guideline conformity explored end to end; ground-truth map, knowledge corrections, implementation packages started
 
 **Occasion** Operator questions following the merge: do the delivered TEIs meet the
