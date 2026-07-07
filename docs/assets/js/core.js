@@ -129,6 +129,19 @@
         } catch (e) { return null; }
     };
 
+    // Well-formedness check on the RAW string (namespaces intact, so line/column
+    // positions match what the user sees). Returns null when well-formed, otherwise
+    // a short human-readable position string.
+    ZBZ.xmlWellFormedError = (xml) => {
+        try {
+            const doc = new DOMParser().parseFromString(xml || '', 'text/xml');
+            const err = doc.querySelector('parsererror');
+            if (!err) return null;
+            const m = (err.textContent || '').match(/line[ :]*(\d+)[^\d]*column[ :]*(\d+)/i);
+            return m ? 'line ' + m[1] + ', column ' + m[2] : 'position unknown';
+        } catch (e) { return 'position unknown'; }
+    };
+
     ZBZ.highlightXml = (xml) => {
         let s = ZBZ.esc(xml);
         s = s.replace(/(&lt;\?[\s\S]*?\?&gt;)/g, '<span class="xml-decl">$1</span>');

@@ -272,13 +272,16 @@
         if (from === newStatus) return;
         s.status = newStatus;
         if (!Array.isArray(s.history)) s.history = [];
-        s.history.push({
+        const entry = {
             at: new Date().toISOString(),
             by: (opts && opts.by) || getAuthor(),
             from: from,
             to: newStatus,
             note: (opts && opts.note) || null
-        });
+        };
+        s.history.push(entry);
+        // Entries created before initials are set get backfilled on commitIdentityEdit
+        if (entry.by === 'anonym') anonEntries.push(entry);
         state.manifestDirty = true;
         state.dirtyStreams.add(stream);
         renderStatusPills();
@@ -293,16 +296,20 @@
     }
 
     function autoStartArbeit(stream) {
-        // On first touch of an edit toggle: unverifiziert -> in_arbeit
+        // On the first real change in the editor: unverifiziert -> in_arbeit
         if (!state.manifest) return;
         if (streamStatus(stream) === 'unverifiziert') {
-            setStreamStatus(stream, 'in_arbeit', { note: 'auto: edit toggle activated' });
+            setStreamStatus(stream, 'in_arbeit', { note: 'auto: first edit in viewer' });
         }
     }
 
     // ============================================================ Identity chip (Initials) ============================================================
 
     let identityCancelling = false; // ESC cancels without the blur handler committing
+    // History entries created this session while no initials were set; backfilled once
+    // initials arrive. Saved manifests are never rewritten (past provenance stays).
+    const anonEntries = [];
+    let identityPrompted = false;   // ask once per session, never block the save
 
     function currentAuthor() {
         return (window.localStorage && localStorage.getItem('zbz.workflow.by')) || '';
@@ -326,6 +333,11 @@
         if (window.localStorage) {
             if (v) localStorage.setItem('zbz.workflow.by', v);
             else localStorage.removeItem('zbz.workflow.by');
+        }
+        if (v && anonEntries.length) {
+            anonEntries.forEach(e => { if (e.by === 'anonym') e.by = v; });
+            anonEntries.length = 0;
+            renderStatusPills();   // pill tooltips show the last history entry
         }
         refs.identityInput.hidden = true;
         refs.btnIdentity.hidden = false;
@@ -394,6 +406,15 @@
         const dm = state.manifestDirty;
         if (!dl && !dt && !dm) { ZBZ.toast('Nothing to save', 'warn'); return; }
 
+        // Provenance: history entries carry the editor initials into the delivered
+        // revisionDesc. Ask once when none are set; a second Save proceeds as "anonym".
+        if (dm && !currentAuthor() && !identityPrompted) {
+            identityPrompted = true;
+            ZBZ.toast('No initials set: history entries will say "anonym". Enter initials (top right) or press Save again to keep "anonym".', 'warn');
+            startIdentityEdit();
+            return;
+        }
+
         // Direct save: on Chromium a repo folder must be connected. If not,
         // connect once (with first-use info). If that fails (user cancels or denies
         // write access), abort with a clear message instead of silently depositing the
@@ -428,10 +449,12 @@
                     const isTei = (state.textSource === 'xml' || state.textSource === 'tei');
                     if (isTei) {
                         // writeTei replaces the whole SoT file -- only accept a complete TEI document
-                        if (content.indexOf('<teiHeader') === -1 || content.indexOf('</TEI>') === -1) {
+                        const incomplete = content.indexOf('<teiHeader') === -1 || content.indexOf('</TEI>') === -1;
+                        const wfError = incomplete ? null : ZBZ.xmlWellFormedError(content);
+                        if (incomplete) {
                             ZBZ.toast('TEI not saved: content is not a complete TEI document (teiHeader/TEI root missing). Edit is retained unsaved.', 'err');
-                        } else if (!ZBZ.parseXml(content)) {
-                            ZBZ.toast('TEI not saved: XML is not well-formed. Fix the markup in XML mode; the edit is retained unsaved.', 'err');
+                        } else if (wfError) {
+                            ZBZ.toast('TEI not saved: XML is not well-formed (' + wfError + '). Fix the markup in XML mode; the edit is retained unsaved.', 'err');
                         } else {
                             if (!(await persistSilent(
                                 () => ZBZ.FsAccess.writeTei(state.doc.id, content),
