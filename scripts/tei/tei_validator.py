@@ -353,11 +353,13 @@ def _check_reading_order(root, warnings):
 
     Vergleicht, in welcher Reihenfolge die Body-Bloecke ihre Facsimile-Zonen referenzieren,
     mit der spalten-/bandbewussten Lesereihenfolge derselben Zonen (reading_order_permutation,
-    geteilt mit dem Generator). Weicht sie ab, liegt eine Spalten-Verschraenkung vor, der Defekt
-    der frueheren reinen y-Sortierung bei Doppelseiten/Mehrspaltern. Nicht-blockierend: der
-    Befund weist den Kurations- bzw. Neugenerierungs-Bedarf eines Dokuments aus, ohne
-    ausgelieferten Editionstext maschinell umzuschreiben. Greift nur, wo Zonen-Koordinaten
-    vorliegen; neu generierte Dokumente (Generator-Fix) sind kanonisch und loesen nicht aus.
+    geteilt mit dem Generator). Der Befund ist ein VERDACHTSSIGNAL mit zwei moeglichen
+    Ursachen: tatsaechlich verschraenkter Text (Defekt der frueheren y-Sortierung) ODER eine
+    korrupte Block-zu-Zonen-Zuordnung bei korrektem Text. Die CER-Probe ueber alle
+    Referenzdokumente ergab, dass im Altbestand die zweite Ursache dominiert (E99); ein
+    maschinelles Umordnen ist deshalb ausgeschlossen und die Aufloesung Kurationsarbeit am
+    Faksimile. Greift nur, wo Zonen-Koordinaten vorliegen; neu generierte Dokumente
+    (Generator-Fix) sind kanonisch und loesen nicht aus.
     """
     for page, zids, bboxes, line in iter_page_zone_bboxes(root):
         if reading_order_permutation(bboxes) != list(range(len(bboxes))):
@@ -365,7 +367,7 @@ def _check_reading_order(root, warnings):
                 "line": line,
                 "message": (
                     f"Lesereihenfolge Seite {page}: {len(zids)} Bloecke nicht in kanonischer "
-                    f"Spalten-/Lese-Ordnung (Doppelseite/Mehrspalter, Kuration/Neugenerierung)"
+                    f"Spalten-/Lese-Ordnung (Text- ODER Zonen-Defekt, Faksimile-Kuration; E99)"
                 ),
                 "rule": "W19",
             })

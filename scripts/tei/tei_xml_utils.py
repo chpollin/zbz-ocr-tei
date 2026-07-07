@@ -128,20 +128,14 @@ def reading_order_permutation(
     return order
 
 
-def iter_page_zone_bboxes(root):
-    """Seiten mit ihren Faksimile-Zonen-Bboxes in Liefer-(Dokument-)Reihenfolge.
+def build_zone_bbox(root) -> dict:
+    """Zonen-id -> Bbox in Seitenprozent ({x_pct,y_pct,w_pct,h_pct}) fuer alle Surfaces.
 
-    Liefert (page, zone_ids, bboxes, line) je Seite, deren Body-Bloecke ueber
-    @facs="#facs_<page>_r_<n>" auf Faksimile-Zonen zeigen, beschraenkt auf Seiten mit >= 2
-    referenzierten Zonen, bei denen ALLE referenzierten Zonen Surface-Koordinaten aufloesen.
-    bboxes in Seitenprozent ({x_pct,y_pct,w_pct,h_pct}), dieselbe Geometrie, die W19 und der
-    Generator nutzen. line ist die sourceline des ersten Blocks (0, falls der Parser keine
-    fuehrt). Geteilt von tei_validator (W19) und dem Lesereihenfolge-Audit, damit beide exakt
-    dieselbe handlungsrelevante Seitenmenge sehen und nicht auseinanderdriften.
+    Einzige Geometrie-Quelle fuer W19 (iter_page_zone_bboxes), das Lesereihenfolge-
+    Audit und tei_reading_order_fix; eine abweichende Zweitberechnung wuerde Fixer
+    und Warnung auf verschiedene Seitenmengen zeigen lassen.
     """
     xml_id = "{http://www.w3.org/XML/1998/namespace}id"
-    ref_re = re.compile(r"^#facs_(\d+)_r_(\d+)$")
-
     zone_bbox = {}
     for surface in root.findall(f".//{{{TEI_NS}}}surface"):
         try:
@@ -168,6 +162,22 @@ def iter_page_zone_bboxes(root):
                 "w_pct": (lrx - ulx) / pw * 100.0,
                 "h_pct": (lry - uly) / ph * 100.0,
             }
+    return zone_bbox
+
+
+def iter_page_zone_bboxes(root):
+    """Seiten mit ihren Faksimile-Zonen-Bboxes in Liefer-(Dokument-)Reihenfolge.
+
+    Liefert (page, zone_ids, bboxes, line) je Seite, deren Body-Bloecke ueber
+    @facs="#facs_<page>_r_<n>" auf Faksimile-Zonen zeigen, beschraenkt auf Seiten mit >= 2
+    referenzierten Zonen, bei denen ALLE referenzierten Zonen Surface-Koordinaten aufloesen.
+    bboxes in Seitenprozent ({x_pct,y_pct,w_pct,h_pct}), dieselbe Geometrie, die W19 und der
+    Generator nutzen. line ist die sourceline des ersten Blocks (0, falls der Parser keine
+    fuehrt). Geteilt von tei_validator (W19) und dem Lesereihenfolge-Audit, damit beide exakt
+    dieselbe handlungsrelevante Seitenmenge sehen und nicht auseinanderdriften.
+    """
+    ref_re = re.compile(r"^#facs_(\d+)_r_(\d+)$")
+    zone_bbox = build_zone_bbox(root)
 
     if not zone_bbox:
         return
