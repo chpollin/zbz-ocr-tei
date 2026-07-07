@@ -31,6 +31,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="815" lry="623">
+      <graphic url="2350_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="99" uly="37" lrx="396" lry="108" />
       <zone xml:id="facs_1_r_2" ulx="409" uly="57" lrx="480" lry="67" />
       <zone xml:id="facs_1_r_3" ulx="409" uly="83" lrx="572" lry="109" />
@@ -39,11 +40,13 @@
       <zone xml:id="facs_1_r_6" ulx="409" uly="470" lrx="705" lry="505" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="818" lry="647">
+      <graphic url="2350_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="91" uly="41" lrx="399" lry="142" />
       <zone xml:id="facs_2_r_2" ulx="412" uly="328" lrx="709" lry="570" />
       <zone xml:id="facs_2_r_3" ulx="68" uly="453" lrx="384" lry="570" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="786" lry="635">
+      <graphic url="2350_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="71" uly="52" lrx="367" lry="227" />
       <zone xml:id="facs_3_r_2" ulx="389" uly="53" lrx="529" lry="70" />
       <zone xml:id="facs_3_r_3" ulx="375" uly="79" lrx="689" lry="467" />
@@ -51,21 +54,25 @@
       <zone xml:id="facs_3_r_5" ulx="371" uly="528" lrx="675" lry="572" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="818" lry="602">
+      <graphic url="2350_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="94" uly="40" lrx="409" lry="300" />
       <zone xml:id="facs_4_r_2" ulx="657" uly="183" lrx="723" lry="203" />
       <zone xml:id="facs_4_r_3" ulx="432" uly="340" lrx="720" lry="465" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="793" lry="631">
+      <graphic url="2350_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="88" uly="50" lrx="358" lry="128" />
       <zone xml:id="facs_5_r_2" ulx="61" uly="209" lrx="381" lry="565" />
       <zone xml:id="facs_5_r_3" ulx="398" uly="294" lrx="426" lry="311" />
       <zone xml:id="facs_5_r_4" ulx="393" uly="398" lrx="699" lry="540" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="818" lry="599">
+      <graphic url="2350_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="88" uly="68" lrx="414" lry="546" />
       <zone xml:id="facs_6_r_2" ulx="427" uly="362" lrx="723" lry="497" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="818" lry="599">
+      <graphic url="2350_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="101" uly="37" lrx="416" lry="122" />
       <zone xml:id="facs_7_r_2" ulx="427" uly="75" lrx="600" lry="100" />
       <zone xml:id="facs_7_r_3" ulx="426" uly="166" lrx="724" lry="358" />
@@ -145,10 +152,8 @@
         <p>
           Das hat wieder etwas mit Kant zu tun. Wenn Kant vom »kategorischen Imperativ« spricht, wirft man ihm oft vor, daß das ein rein formeller Ausdruck sei, der den Menschen niemals
         </p>
-      <pb facs="#facs_4" n="4" />
-        <p facs="#facs_4_r_1">
-          52
-        </p>
+      <pb facs="#facs_4" n="[52]" />
+        
         <p facs="#facs_4_r_2">
           helfen kann zu wissen, was sie tun sollen. Der Begriff ist aber nur deswegen so abstrakt, weil er den konkretesten Punkt der Existenz bezeichnet, nämlich den Punkt, wo sich ein Mensch in seiner Situation wirklich entscheidet. »Ethisch entscheiden« bedeutet: nicht unter dem Zwang von Ursachen, nicht in der Reihe einer Kette von Ursachen und Folgen, sondern »quer zur Zeit«, in der Absolutheit dessen, was nicht in der Zeit ist, die eigene Entscheidung treffen. Und es ist so wahr, was Kant selbst gesagt hat: daß wohl kein Mensch je aus rein kategorischem Imperativ gehandelt hätte. Ist also der kategorische Imperativ unwirklich? Der Begriff bedeutet, daß es möglich ist, aus dem kategorischen Imperativ heraus zu handeln. Und diese Möglichkeit ist eine ethische Notwendigkeit, d. h. eine Pflicht. Ob dieser Pflicht empirisch gefolgt wird oder nicht, das bleibt in der Schwebe. In einem bestimmten Sinn inszeniert Jaspers Existenz. Und um sie zu inszenieren, beschreibt er die verschiedenen »Richtungen«, in denen das Subjekt handeln oder suchen oder etwas tun kann. Nennen wir, um schneller vorwärtszukommen, die drei Arten von Perspektiven, die der Mensch in sich selbst vorfindet. Diese Begriffe sind hier unentbehrlich, ich muß sie anführen.
         </p>
@@ -173,7 +178,7 @@
         <p>
           Nun finden wir bei Jaspers die zwei Hauptbegriffe, Vernunft und Existenz. Vernunft ist das, was im Subjekt überall und immer Einheit sucht. Sie schafft Einheiten und sie sucht die Einheit. Und diese Vernunft ist gerade deswegen so wesentlich, weil die Einheit des Ganzen in keinem Bereich, und noch weniger in der Summe der Bereiche, je zu erreichen ist. Weil Vernunft immer
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[53]" />
         <p facs="#facs_5_r_1">
           Einheit will, weil das Subjekt auf die Vernunft nie verzichten kann, erfährt es immer wieder die Unmöglichkeit, eine Totalität zu besitzen. Es versucht dies immer wieder, und es erfährt, daß es das nicht kann. Diese Erfahrung wird bei Jaspers nach allen Richtungen und in allen Perspektiven als philosophische Übung ständig wiederholt. Sie hat folgenden Sinn:
         </p>
@@ -195,7 +200,7 @@
         <p>
           Es gibt auch »Wahrheit für Existenz«. Da aber Existenz die Wahrheit nie als Gegenstand besitzt, kommt sie dazu, im Austausch mit der anderen Existenz Wahrheit zu suchen. Deswegen hat das Wort Kommunikation bei Jaspers ein solches Gewicht. Manche glauben, daß Kommunikation bei ihm nur autobiographisch, von seinem Eheleben her, zu verstehen sei. Sein Eheleben ist tatsächlich entscheidend für Jaspers gewesen. Aber die Kommunikation ist noch viel mehr; denn sie ist die Bedingung der Suche nach Wahrheit. Wer wirklich auf der Suche nach der Wahrheit ist, kann nicht dogmatisch sein, sondern in Kommunikation mit anderen Wahrheitssuchenden. Hier spielen die Grenzsituationen und das Scheitern eine wesentliche Rolle. Es gibt für existentielle Wahrheit keinen direkten Ausdruck. Das wäre ein Widerspruch in sich selbst. Es gibt nur die Möglichkeit, im Austausch mit der anderen Existenz zu versuchen, den Sinn der Chiffre zu entziffern, und hier besonders den Sinn des Scheiterns zu entziffern. Daraus ergibt sich natürlich, daß das Wissen von Wahrheit immer, wie Jaspers sagte, in der Schwebe bleibt. Über diese Auffassung ärgern sich viele Leute, Gläubige wie
         </p>
-      <pb facs="#facs_6" n="6" />
+      <pb facs="#facs_6" n="[54]" />
         <p facs="#facs_6_r_1">
           Empiriker. Wenn nach Jaspers jeder Ausdruck existentieller Wahrheit in der Schwebe bleibt, so bedeutet das keineswegs, daß er sich dabei vom Dasein entfernt oder daß er das Gewicht des Gegebenen unterschätzt. Im Gegenteil: Kommunikation von Existenz zur Existenz geschieht nur in der Geschichtlichkeit beider. Es gibt also keine Wortwörtlichkeit in diesem Gebiet. Sobald Existenz und Transzendenz im Denken miteinbezogen werden, hat man es nie mehr mit der Buchstäblichkeit, mit buchstäblichem Verstehen des Bewußtseins überhaupt zu tun, sondern mit den Chiffren. – Hier möchte ich eine Randbemerkung machen: Jaspers hat eine ausführliche Diskussion mit dem Theologen Bultmann geführt. Jaspers als Philosoph hielt sich kaum für einen Christen, er hätte bestimmt nicht den Anspruch erhoben, er »hätte den Glauben«, oder, wie man auf Französisch sagt, »avoir la foi«. Und doch hat Jaspers, der Philosoph, gegen Bultmann, den Theologen, die Wortwörtlichkeit der Heiligen Schrift verteidigt, die Bultmann entmythologisieren wollte. Warum? Das klingt paradox. Aber man kann das ganz gut verstehen. Wer die Heilige Schrift buchstäblich verstehen will, muß dazu kommen, sie zu modernisieren, damit sie von den modernen Menschen angenommen wird. Wer aber die Heilige Schrift für eine Chiffre hält, ist überzeugt, daß sie durch echte Existenz erst dann vollzogen wird, wenn sie in ihrer Buchstäblichkeit als Chiffre angeboten wird. Und hier möchte ich an einen katholischen Priester erinnern, Pater Fessard, der oft geschrieben hat, das Symbol sei nicht eine Entrealisierung der Religion, weil es wirklicher sei als die Tatsache. Wie kann das Symbol wirklicher sein als die Tatsache? Wie kann die Chiffre wirklicher sein als das Wortwörtliche? Wie ist das zu verstehen? Existentiell bedeutet »wirklich sein«: durch den existentiellen Entschluss bestätigt. Bestätigt durch das, was man tut. Das Symbol ist durch seine Wirkung im existentiellen Leben wirklich. Und nicht durch die mehr oder weniger objektivierte Vorstellung. Das ist bei Jaspers, wie ich glaube, ganz wesentlich. Der Sinn der Chiffren ist also nicht von ihrer existentiellen Wirkung auf den zu trennen, der versucht, sie zu verstehen und zu deuten. Chiffren haben nie eine objektiv fixierte Wirklichkeit. Und was Jaspers im Grunde der Offenbarungsreligion vorgeworfen hat, war, daß meistens
         </p>
@@ -217,7 +222,7 @@
         <p>
           Wenn sich Jaspers auf das Absolute der Transzendenz bezieht, und das tut er immer wieder, wenn er von Existenz spricht, so wird dadurch alles andere relativiert. Alles ist relativ, aber nur in
         </p>
-      <pb facs="#facs_7" n="7" />
+      <pb facs="#facs_7" n="[55]" />
         <p facs="#facs_7_r_1">
           bezug auf das Absolute. Das Relative selbst wird als Relatives, mit ganzem Gewicht des Relativen in unserer Daseinssituation wichtig genommen; aber als relativ. Das <hi rendition="#i">hic et nunc</hi> der Geschichte müssen wir auf uns nehmen. Aber gerade der Bezug auf das Absolute verhindert, daß wir irgendwelche relative empirische Wirklichkeit zum Absoluten erheben, daß wir irgendwelche Verabsolutierung vollziehen. Das Absolute ist zunächst einmal auch ein Mittel, nicht aus dem Relativen ein falsches Absolutes zu machen.
         </p>

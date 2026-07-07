@@ -33,6 +33,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="833" lry="1277">
+      <graphic url="2460_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="334" uly="231" lrx="571" lry="251" />
       <zone xml:id="facs_1_r_2" ulx="302" uly="286" lrx="603" lry="325" />
       <zone xml:id="facs_1_r_3" ulx="174" uly="340" lrx="731" lry="386" />
@@ -41,12 +42,14 @@
       <zone xml:id="facs_1_r_6" ulx="294" uly="1073" lrx="607" lry="1095" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="833" lry="1277">
+      <graphic url="2460_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="234" uly="833" lrx="575" lry="847" />
       <zone xml:id="facs_2_r_2" ulx="251" uly="869" lrx="560" lry="961" />
       <zone xml:id="facs_2_r_3" ulx="307" uly="984" lrx="502" lry="999" />
       <zone xml:id="facs_2_r_4" ulx="267" uly="1038" lrx="542" lry="1090" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="833" lry="1277">
+      <graphic url="2460_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="143" uly="100" lrx="732" lry="176" />
       <zone xml:id="facs_3_r_2" ulx="342" uly="202" lrx="535" lry="224" />
       <zone xml:id="facs_3_r_3" ulx="115" uly="308" lrx="760" lry="492" />
@@ -55,6 +58,7 @@
       <zone xml:id="facs_3_r_6" ulx="115" uly="1046" lrx="757" lry="1102" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="833" lry="1277">
+      <graphic url="2460_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="102" uly="100" lrx="745" lry="158" />
       <zone xml:id="facs_4_r_2" ulx="100" uly="151" lrx="746" lry="257" />
       <zone xml:id="facs_4_r_3" ulx="99" uly="253" lrx="745" lry="488" />
@@ -63,6 +67,7 @@
       <zone xml:id="facs_4_r_6" ulx="99" uly="1044" lrx="743" lry="1096" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="833" lry="1277">
+      <graphic url="2460_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="101" uly="103" lrx="747" lry="363" />
       <zone xml:id="facs_5_r_2" ulx="100" uly="354" lrx="746" lry="641" />
       <zone xml:id="facs_5_r_3" ulx="101" uly="634" lrx="745" lry="769" />
@@ -70,6 +75,7 @@
       <zone xml:id="facs_5_r_5" ulx="122" uly="1020" lrx="586" lry="1046" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="833" lry="1277">
+      <graphic url="2460_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="104" uly="102" lrx="750" lry="465" />
       <zone xml:id="facs_6_r_2" ulx="104" uly="472" lrx="749" lry="705" />
       <zone xml:id="facs_6_r_3" ulx="103" uly="697" lrx="749" lry="927" />
@@ -77,6 +83,7 @@
       <zone xml:id="facs_6_r_5" ulx="102" uly="1120" lrx="130" lry="1149" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="833" lry="1277">
+      <graphic url="2460_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="107" uly="106" lrx="753" lry="237" />
       <zone xml:id="facs_7_r_2" ulx="108" uly="231" lrx="753" lry="440" />
       <zone xml:id="facs_7_r_3" ulx="106" uly="436" lrx="752" lry="619" />
@@ -84,6 +91,7 @@
       <zone xml:id="facs_7_r_5" ulx="107" uly="712" lrx="751" lry="1103" />
     </surface>
     <surface xml:id="facs_8" ulx="0" uly="0" lrx="833" lry="1277">
+      <graphic url="2460_p008.png"/>
       <zone xml:id="facs_8_r_1" ulx="97" uly="105" lrx="742" lry="283" />
       <zone xml:id="facs_8_r_2" ulx="97" uly="281" lrx="743" lry="569" />
       <zone xml:id="facs_8_r_3" ulx="95" uly="560" lrx="742" lry="771" />
@@ -94,7 +102,7 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[133]" />
         <head facs="#facs_1_r_1">
           GB 5274
         </head>
@@ -113,7 +121,7 @@
         <p facs="#facs_1_r_6">
           k 84 45456 - 8<lb facs="#facs_1_l_6_1" n="N001" />Mied. Ind. hand.
         </p>
-      <pb facs="#facs_2" n="2" />
+      <pb facs="#facs_2" n="[134]" />
         <p facs="#facs_2_r_1">
           CIP-Kurztitelaufnahme der Deutschen Bibliothek
         </p>
@@ -129,125 +137,113 @@
         <p>
           STIMMALBIBLIOTHE<lb facs="#facs_2_l_5_1" n="N001" />ZURICH
         </p>
-      <pb facs="#facs_3" n="3" />
-        <p facs="#facs_3_r_1">
-          135
-        </p>
+      <pb facs="#facs_3" n="[135]" />
+        
         <p facs="#facs_3_r_2">
-          Les Efforts Oecuméniques des Chrétiens considérés d'un point de vue non chrétien
+          Les Efforts Oecuméniques des Chrétiens considérés d’un point de vue non chrétien
         </p>
         <p facs="#facs_3_r_3">
           JEANNE HERSCH
         </p>
         <p facs="#facs_3_r_4">
-          Il est habituel d'entendre les chrétiens parler du «scandale des frères séparés», à propos des trois Eglises chrétiennes, catholique-romaine, orthodoxe et réformée. Le plus souvent, il s'agit d'ailleurs sous nos latitudes des catholiques et des protestants, comme si la séparation de l'Eglise d'Orient et de l'Eglise d'Occident était maintenant assez ancienne pour que «le scandale» se soit atténué dans la conscience contemporaine.
+          Il est habituel d’entendre les chrétiens parler du «scandale des frères séparés», à propos des trois Eglises chrétiennes, catholique-romaine, orthodoxe et réformée. Le plus souvent, il s’agit d’ailleurs sous nos latitudes des catholiques et des protestants, comme si la séparation de l’Eglise d’Orient et de l’Eglise d’Occident était maintenant assez ancienne pour que «le scandale» se soit atténué dans la conscience contemporaine.
         </p>
         <p facs="#facs_3_r_5">
-          J'ai sans doute tort de me mêler – exceptionnellement – de tels problèmes, étant née juive, ayant été élevée hors de toute confession religieuse, et ayant surtout cherché à approfondir, à la suite de mon maître Karl Jaspers, «la foi philosophique». Mais il y a si longtemps que je cherche à comprendre, de toute ma sympathie et avec tout mon respect, la foi des uns et des autres, qu'on me pardonnera peut-être mon indiscrétion d'aujourd'hui. D'autant plus que c'est justement le professeur Buri, que nous voulons honorer ici, qui a bien voulu me faire – sans doute en souvenir de Karl Jaspers – l'insigne honneur de prononcer la laudatio en m'attribuant le doctorat de théologie honoris causa de l'Université de Bâle.
+          J’ai sans doute tort de me mêler – exceptionnellement – de tels problèmes, étant née juive, ayant été élevée hors de toute confession religieuse, et ayant surtout cherché à approfondir, à la suite de mon maître Karl Jaspers, «la foi philosophique». Mais il y a si longtemps que je cherche à comprendre, de toute ma sympathie et avec tout mon respect, la foi des uns et des autres, qu’on me pardonnera peut-être mon indiscrétion d’aujourd’hui. D’autant plus que c’est justement le professeur Buri, que nous voulons honorer ici, qui a bien voulu me faire – sans doute en souvenir de Karl Jaspers – l’insigne honneur de prononcer la laudatio en m’attribuant le doctorat de théologie honoris causa de l’Université de Bâle.
         </p>
         <p facs="#facs_3_r_6">
-          Qu'il y ait «scandale» dans la séparation des frères chrétiens, je ne l'ai jamais compris. Il y a scandale, certes, lorsque les adeptes d'une religion de l'amour se tuent, se brûlent les uns les autres. Il y a scandale déjà lorsqu'ils mutilent les églises les uns des autres en détruisant à coups de marteaux les têtes des saints et des prophètes qui en ornent les portails ou les chapiteaux. Mais si Dieu est transcendant, comment n'y aurait-il pas séparation entre les voies où s'engage l'approche des hommes? S'il n'y en avait qu'une, cela me paraîtrait inquiétant et me ferait douter de la transcendance du Dieu des croyants. La finitude humaine trouve même, me semble-t-il, dans la pluralité des voies, une sorte de compensation qui pourrait être agréable à Dieu.
+          Qu’il y ait «scandale» dans la séparation des frères chrétiens, je ne l’ai jamais compris. Il y a scandale, certes, lorsque les adeptes d’une religion de l’amour se tuent, se brûlent les uns les autres. Il y a scandale déjà lorsqu’ils mutilent les églises les uns des autres en détruisant à coups de marteaux les têtes des saints et des prophètes qui en ornent les portails ou les chapiteaux. Mais si Dieu est transcendant, comment n’y aurait-il pas séparation entre les voies où s’engage l’approche des hommes? S’il n’y en avait qu’une, cela me paraîtrait inquiétant et me ferait douter de la transcendance du Dieu des croyants. La finitude humaine trouve même, me semble-t-il, dans la pluralité des voies, une sorte de compensation qui pourrait être agréable à Dieu.
         </p>
         <p>
-          Bien plus: elle offre peut-être aux frères séparés l'occasion et l'instrument d'un progrès, d'un approfondissement, à condition qu'au départ
+          Bien plus: elle offre peut-être aux frères séparés l’occasion et l’instrument d’un progrès, d’un approfondissement, à condition qu’au départ
         </p>
-      <pb facs="#facs_4" n="4" />
+      <pb facs="#facs_4" n="[136]" />
         <p facs="#facs_4_r_1">
-          toute résistance de l'autre à leur propre approche ne soit pas à leurs yeux le symptôme d'un refus d'ouverture ou d'une volonté de puissance.
+          toute résistance de l’autre à leur propre approche ne soit pas à leurs yeux le symptôme d’un refus d’ouverture ou d’une volonté de puissance.
         </p>
         <p facs="#facs_4_r_2">
-          La diversité des grandes philosophies m'a appris que, dans chacune d'elles, les points qui résistent le plus, qui soulèvent en apparence les objections les plus évidentes, coïncident précisément avec les intuitions les plus profondes. Il est probable qu'il en va de même pour les religions.
+          La diversité des grandes philosophies m’a appris que, dans chacune d’elles, les points qui résistent le plus, qui soulèvent en apparence les objections les plus évidentes, coïncident précisément avec les intuitions les plus profondes. Il est probable qu’il en va de même pour les religions.
         </p>
         <p facs="#facs_4_r_3">
-          Certaines divergences sont subalternes et ont leurs causes dans des circonstances historiques, des conditions sociales, ou même dans le langage. Il est alors mesquin de les maintenir. Mais il en est d'autres — et les distinguer n'est pas toujours facile — qui opposent des prises de position réellement incompatibles entre elles. Au nom même de la transcendance de Dieu, il ne convient pas alors de chercher avant tout à faire plier l'autre, ni même à plier soi-même par gain de paix et d'unité. S'il s'agit d'une incompatibilité importante, il importe d'en chercher le sens, la portée, l'impact.
+          Certaines divergences sont subalternes et ont leurs causes dans des circonstances historiques, des conditions sociales, ou même dans le langage. Il est alors mesquin de les maintenir. Mais il en est d’autres — et les distinguer n’est pas toujours facile — qui opposent des prises de position réellement incompatibles entre elles. Au nom même de la transcendance de Dieu, il ne convient pas alors de chercher avant tout à faire plier l’autre, ni même à plier soi-même par gain de paix et d’unité. S’il s’agit d’une incompatibilité importante, il importe d’en chercher le sens, la portée, l’impact.
         </p>
         <p facs="#facs_4_r_4">
-          Je voudrais essayer de donner ici un ou deux exemples d'incompatibilités de cet ordre, entre catholiques et protestants.
+          Je voudrais essayer de donner ici un ou deux exemples d’incompatibilités de cet ordre, entre catholiques et protestants.
         </p>
         <p facs="#facs_4_r_5">
-          Commençons par l'une des plus éclatantes — qui n'en sont sans doute pas pour autant les plus profondes. Pour les catholiques le pape, lorsqu'il s'exprime en certaines circonstances solennelles et bien définies, dispose de l'infaillibilité, et les fidèles doivent se soumettre à l'autorité de sa parole. Pour les réformés, « tout protestant est pape, une Bible à la main ».
+          Commençons par l’une des plus éclatantes — qui n’en sont sans doute pas pour autant les plus profondes. Pour les catholiques le pape, lorsqu’il s’exprime en certaines circonstances solennelles et bien définies, dispose de l’infaillibilité, et les fidèles doivent se soumettre à l’autorité de sa parole. Pour les réformés, « tout protestant est pape, une Bible à la main ».
         </p>
         <p facs="#facs_4_r_6">
-          Les protestants ne voient dans le dogme de l'infaillibilité qu'une survivance rétrograde de l'esprit monarchique et une méfiance craintive devant le jugement critique de chaque personne humaine. Ils reconnaissent volontiers l'importance de l'unité ecclésiale que ce dogme devrait sauvegarder, mais à leurs yeux cette unité doit découler d'une recherche commune de la vérité, et non d'une parole se prétendant vraie du seul fait de l'autorité d'un homme, fût-il pape. Cette prétention à elle seule leur paraît sacrilège. Ils soulignent d'autre part qu'il s'agit d'un dogme tardif, très éloigné des sources de la Révélation. En somme, à leurs yeux, le dogme de l'infaillibilité est triplement sacrilège : à l'égard du don de Dieu, qui permet à chaque homme de chercher le vrai par sa propre réflexion libre, — à l'égard de Dieu lui-même, au nom de qui le pape se permet abusivement de parler, — à l'égard de l'Écriture, dont des textes tardifs usurpent l'autorité.
+          Les protestants ne voient dans le dogme de l’infaillibilité qu’une survivance rétrograde de l’esprit monarchique et une méfiance craintive devant le jugement critique de chaque personne humaine. Ils reconnaissent volontiers l’importance de l’unité ecclésiale que ce dogme devrait sauvegarder, mais à leurs yeux cette unité doit découler d’une recherche commune de la vérité, et non d’une parole se prétendant vraie du seul fait de l’autorité d’un homme, fût-il pape. Cette prétention à elle seule leur paraît sacrilège. Ils soulignent d’autre part qu’il s’agit d’un dogme tardif, très éloigné des sources de la Révélation. En somme, à leurs yeux, le dogme de l’infaillibilité est triplement sacrilège : à l’égard du don de Dieu, qui permet à chaque homme de chercher le vrai par sa propre réflexion libre, — à l’égard de Dieu lui-même, au nom de qui le pape se permet abusivement de parler, — à l’égard de l’Écriture, dont des textes tardifs usurpent l’autorité.
         </p>
         <p>
-          Pour les catholiques, le dogme de l'infaillibilité n'est pas survenu comme un événement isolé dans l'histoire de leur Église. Leur Église
+          Pour les catholiques, le dogme de l’infaillibilité n’est pas survenu comme un événement isolé dans l’histoire de leur Église. Leur Église
         </p>
-        <p>
-          136
-        </p>
-      <pb facs="#facs_5" n="5" />
+        
+      <pb facs="#facs_5" n="[137]" />
         <p facs="#facs_5_r_1">
-          tout entière est comme un développement de la Révélation initiale dans l'histoire, elle-même insérée dans un passé. L'histoire de l'Eglise est la Révélation continue, à travers avatars et péchés de la condition charnelle, mais toujours accompagnée, en tant que telle, par le Saint-Esprit, qui parle à travers elle, au fil du temps. Le refus du dogme par les protestants au nom de la conscience individuelle, virtuellement contemporaine du Christ et dont la capacité critique vient de Dieu même, leur apparaît comme un subjectivisme abstrait, rejetant en quelque sorte le domaine de la foi hors du temps et privant l'Eglise de toute présence et autorité réelles tout au long de l'histoire.
+          tout entière est comme un développement de la Révélation initiale dans l’histoire, elle-même insérée dans un passé. L’histoire de l’Eglise est la Révélation continue, à travers avatars et péchés de la condition charnelle, mais toujours accompagnée, en tant que telle, par le Saint-Esprit, qui parle à travers elle, au fil du temps. Le refus du dogme par les protestants au nom de la conscience individuelle, virtuellement contemporaine du Christ et dont la capacité critique vient de Dieu même, leur apparaît comme un subjectivisme abstrait, rejetant en quelque sorte le domaine de la foi hors du temps et privant l’Eglise de toute présence et autorité réelles tout au long de l’histoire.
         </p>
         <p facs="#facs_5_r_2">
-          Les catholiques voudraient que les protestants reconnaissent, eux aussi, la qualité historiquement «accompagnée» de l'Eglise au fil de son histoire, ce qui leur permettrait de comprendre et d'admettre le dogme de l'infaillibilité. Les protestants voudraient que les catholiques reviennent à la pureté originelle de «la Parole de Dieu», à la contemporanéité avec le Christ, ce qui les ferait renoncer à l'infaillibilité papale et rétablir l'exigence ultime et sans concession de la conscience individuelle. Les efforts oecuméniques pourraient amener des catholiques à se dire qu'après tout l'infaillibilité n'est pas si importante, qu'elle ne se rattache pas à la nature la plus profonde de l'Eglise, et que l'unité, la fin du «scandale des frères séparés» vaut bien qu'on la sacrifie.
+          Les catholiques voudraient que les protestants reconnaissent, eux aussi, la qualité historiquement «accompagnée» de l’Eglise au fil de son histoire, ce qui leur permettrait de comprendre et d’admettre le dogme de l’infaillibilité. Les protestants voudraient que les catholiques reviennent à la pureté originelle de «la Parole de Dieu», à la contemporanéité avec le Christ, ce qui les ferait renoncer à l’infaillibilité papale et rétablir l’exigence ultime et sans concession de la conscience individuelle. Les efforts oecuméniques pourraient amener des catholiques à se dire qu’après tout l’infaillibilité n’est pas si importante, qu’elle ne se rattache pas à la nature la plus profonde de l’Eglise, et que l’unité, la fin du «scandale des frères séparés» vaut bien qu’on la sacrifie.
         </p>
         <p facs="#facs_5_r_3">
-          Les efforts oecuméniques pourraient amener des protestants à penser qu'après tout l'infaillibilité est limitée, et que d'ailleurs, de toute façon, l'autorité du pape est aujourd'hui en fait assez réduite dans ses effets réels; l'unité, la fin du «scandale des frères séparés», demande peut-être, dès lors, qu'on l'accepte au niveau d'une déférence plutôt théorique.
+          Les efforts oecuméniques pourraient amener des protestants à penser qu’après tout l’infaillibilité est limitée, et que d’ailleurs, de toute façon, l’autorité du pape est aujourd’hui en fait assez réduite dans ses effets réels; l’unité, la fin du «scandale des frères séparés», demande peut-être, dès lors, qu’on l’accepte au niveau d’une déférence plutôt théorique.
         </p>
         <p facs="#facs_5_r_4">
-          Mais ne serait-ce pas, dans les deux cas, un triste appauvrissement de la religion chrétienne? Le caractère inconciliable, sur ce point, des deux confessions n'exclut peut-être pas que dans sa profondeur transcendante – au-delà de tout credo humain – un christianisme qu'aucune pensée humaine ne pourrait posséder soit à la fois l'absolu ponctuel, transtemporel, d'une conscience, juge ultime et à tout instant contemporaine du Christ (Kierkegaard), et une Eglise embourbée dans l'histoire relative, dont elle traîne avec elle les erreurs et les crimes, mais accompagnée pourtant par une transcendance qui s'efforce encore, dans l'incarnation, de parler de temps en temps le langage des hommes?
+          Mais ne serait-ce pas, dans les deux cas, un triste appauvrissement de la religion chrétienne? Le caractère inconciliable, sur ce point, des deux confessions n’exclut peut-être pas que dans sa profondeur transcendante – au-delà de tout credo humain – un christianisme qu’aucune pensée humaine ne pourrait posséder soit à la fois l’absolu ponctuel, transtemporel, d’une conscience, juge ultime et à tout instant contemporaine du Christ (Kierkegaard), et une Eglise embourbée dans l’histoire relative, dont elle traîne avec elle les erreurs et les crimes, mais accompagnée pourtant par une transcendance qui s’efforce encore, dans l’incarnation, de parler de temps en temps le langage des hommes?
         </p>
         <p facs="#facs_5_r_5">
-          Telle serait l'une des richesses des «frères séparés».
+          Telle serait l’une des richesses des «frères séparés».
         </p>
-        <p>
-          137
-        </p>
-      <pb facs="#facs_6" n="6" />
+        
+      <pb facs="#facs_6" n="[138]" />
         <p facs="#facs_6_r_1">
-          Certains diront que ce que je viens d'écrire justifie la recherche d'accords œcuméniques puisque des croyances apparemment inconciliables « peuvent correspondre à des aspects qui coexistent » dans la transcendance. Pourtant les confessions authentiquement vécues par les fidèles mêlent transcendance et immanence au point de les rendre indiscernables, chacune étant aussi indispensable à la réalité de l'autre que l'est, dans la condition temporelle de l'homme, l'âme au corps et le corps à l'âme. La transcendance sans l'immanence se perd dans l'abstraction et le verbalisme, dans la gratuité d'un angélisme imaginaire. L'immanence sans la transcendance n'est plus que superstition et magie. Aussi les efforts des théologiens tendent-ils à aiguiser la faculté de discerner entre immanence et transcendance et à les purifier l'une par l'autre, ne fût-ce que pour qu'elles s'imprègnent ensuite l'une l'autre et que leur unité, jamais donnée, reste l'épreuve décisive de l'authenticité de la foi.
+          Certains diront que ce que je viens d’écrire justifie la recherche d’accords œcuméniques puisque des croyances apparemment inconciliables « peuvent correspondre à des aspects qui coexistent » dans la transcendance. Pourtant les confessions authentiquement vécues par les fidèles mêlent transcendance et immanence au point de les rendre indiscernables, chacune étant aussi indispensable à la réalité de l’autre que l’est, dans la condition temporelle de l’homme, l’âme au corps et le corps à l’âme. La transcendance sans l’immanence se perd dans l’abstraction et le verbalisme, dans la gratuité d’un angélisme imaginaire. L’immanence sans la transcendance n’est plus que superstition et magie. Aussi les efforts des théologiens tendent-ils à aiguiser la faculté de discerner entre immanence et transcendance et à les purifier l’une par l’autre, ne fût-ce que pour qu’elles s’imprègnent ensuite l’une l’autre et que leur unité, jamais donnée, reste l’épreuve décisive de l’authenticité de la foi.
         </p>
         <p facs="#facs_6_r_2">
-          La tolérance civile des temps modernes tend à situer l'unité du seul Dieu au niveau de la transcendance, et l'exclusive, implicite ou explicite, entre attitudes inconciliables de chaque confession, dans l'immanence. Il devient ainsi possible d'admettre une pluralité de langages et de rites entre les confessions, qui convergent pourtant, à travers la foi vécue, vers la transcendance du Dieu unique, et de renforcer ainsi l'exigence existentielle de l'unité sans la réduire à une généralité, sans la séparer de son incarnation confessionnelle, qui est à la fois, pour le croyant, unique, et une parmi les autres.
+          La tolérance civile des temps modernes tend à situer l’unité du seul Dieu au niveau de la transcendance, et l’exclusive, implicite ou explicite, entre attitudes inconciliables de chaque confession, dans l’immanence. Il devient ainsi possible d’admettre une pluralité de langages et de rites entre les confessions, qui convergent pourtant, à travers la foi vécue, vers la transcendance du Dieu unique, et de renforcer ainsi l’exigence existentielle de l’unité sans la réduire à une généralité, sans la séparer de son incarnation confessionnelle, qui est à la fois, pour le croyant, unique, et une parmi les autres.
         </p>
         <p facs="#facs_6_r_3">
-          En revanche, les compromis œcuméniques formulés, tout préparés pour les croyants grâce à « l'ouverture d'esprit » des négociateurs, simplifient évidemment les choses. Je crains qu'ils ne laissent échapper, ce faisant, le feu central qui fait vivre, dans chacune des confessions, son approche propre de la transcendance, incompatible avec l'autre : la foi en la présence transcendante continuée au fil de l'histoire dans l'une, la foi en la contemporanéité hic et nunc de la conscience absolue dans l'autre. L'accord négocié compense-t-il un tel appauvrissement existentiel?
+          En revanche, les compromis œcuméniques formulés, tout préparés pour les croyants grâce à « l’ouverture d’esprit » des négociateurs, simplifient évidemment les choses. Je crains qu’ils ne laissent échapper, ce faisant, le feu central qui fait vivre, dans chacune des confessions, son approche propre de la transcendance, incompatible avec l’autre : la foi en la présence transcendante continuée au fil de l’histoire dans l’une, la foi en la contemporanéité hic et nunc de la conscience absolue dans l’autre. L’accord négocié compense-t-il un tel appauvrissement existentiel?
         </p>
         <p facs="#facs_6_r_4">
-          Je crois rejoindre ainsi, par un chemin différent, — comme si souvent au cours de ma vie — la pensée de Karl Jaspers, lorsqu'il polémiquait contre la « démythologisation » de Bultmann. On se souvient de ce débat paradoxal entre un théologien protestant et un philosophe qui ne se disait même pas chrétien, se situant de façon plus large dans « la tradition biblique » : le premier voulait adapter l'Écriture à l'intelligence moderne,
+          Je crois rejoindre ainsi, par un chemin différent, — comme si souvent au cours de ma vie — la pensée de Karl Jaspers, lorsqu’il polémiquait contre la « démythologisation » de Bultmann. On se souvient de ce débat paradoxal entre un théologien protestant et un philosophe qui ne se disait même pas chrétien, se situant de façon plus large dans « la tradition biblique » : le premier voulait adapter l’Écriture à l’intelligence moderne,
         </p>
-        <p facs="#facs_6_r_5">
-          138
-        </p>
-      <pb facs="#facs_7" n="7" />
+        
+      <pb facs="#facs_7" n="[139]" />
         <p facs="#facs_7_r_1">
-          formée par les sciences, la rendre plus acceptable en la dépouillant de ce qu'elle peut avoir de «mythique»; le second voulait lui conserver sa littéralité parce qu'à ses yeux, c'était ainsi seulement qu'elle pouvait conserver son efficacité de «chiffre», d'«écriture chiffrée» de la transcendance, parlant à la liberté de la foi.
+          formée par les sciences, la rendre plus acceptable en la dépouillant de ce qu’elle peut avoir de «mythique»; le second voulait lui conserver sa littéralité parce qu’à ses yeux, c’était ainsi seulement qu’elle pouvait conserver son efficacité de «chiffre», d'«écriture chiffrée» de la transcendance, parlant à la liberté de la foi.
         </p>
         <p facs="#facs_7_r_2">
-          De cette «tradition biblique» dont il se réclamait, Jaspers ne rejetait qu'une seule chose: le «Ausschließlichkeitsanspruch», l'exigence d'exclusivité, au niveau de la transcendance. Toute expression de la transcendance se faisant nécessairement en langage humain est nécessairement aussi inadéquate. L'approche de la transcendance ne saurait donc se faire par la possession de sa parole, mais seulement par la communication entre les hommes, ce «liebender Kampf», ce combat livré sans fin par amour, – amour de l'autre et de l'inaccessible vérité.
+          De cette «tradition biblique» dont il se réclamait, Jaspers ne rejetait qu’une seule chose: le «Ausschließlichkeitsanspruch», l’exigence d’exclusivité, au niveau de la transcendance. Toute expression de la transcendance se faisant nécessairement en langage humain est nécessairement aussi inadéquate. L’approche de la transcendance ne saurait donc se faire par la possession de sa parole, mais seulement par la communication entre les hommes, ce «liebender Kampf», ce combat livré sans fin par amour, – amour de l’autre et de l’inaccessible vérité.
         </p>
         <p facs="#facs_7_r_3">
-          Mais tout en rejetant «la prétention à l'exclusivité» de la tradition biblique, Jaspers reconnaissait que toute adhésion à une confession déterminée implique forcément une telle exclusive, – «chiffre» à son tour, sans doute, de la vérité visée dans la transcendance. C'est à cause de la priorité absolue, pour lui, du Dieu unique et transcendant qu'il s'en est tenu, quant à lui, toute sa vie, à ce qu'il a appelé «la foi philosophique».
+          Mais tout en rejetant «la prétention à l’exclusivité» de la tradition biblique, Jaspers reconnaissait que toute adhésion à une confession déterminée implique forcément une telle exclusive, – «chiffre» à son tour, sans doute, de la vérité visée dans la transcendance. C’est à cause de la priorité absolue, pour lui, du Dieu unique et transcendant qu’il s’en est tenu, quant à lui, toute sa vie, à ce qu’il a appelé «la foi philosophique».
         </p>
         <p facs="#facs_7_r_4">
-          La place me manque pour illustrer mon propos par d'autres exemples un tant soit peu développés. Je me contenterai de mentionner l'un ou l'autre, laissant au lecteur le soin d'y réfléchir.
+          La place me manque pour illustrer mon propos par d’autres exemples un tant soit peu développés. Je me contenterai de mentionner l’un ou l’autre, laissant au lecteur le soin d’y réfléchir.
         </p>
         <p facs="#facs_7_r_5">
-          Ainsi: j'ai assisté un dimanche à une messe oecuménique retransmise à la télévision. Comme il est encore interdit aux catholiques de s'unir aux protestants dans l'eucharistie, on ne s'est pas servi d'hosties, mais d'une corbeille pleine de morceaux de pain. Selon les attitudes des participants, ceux-ci ressentirent la cérémonie comme un dépassement du «scandale» et un progrès vers l'unité grâce à une eucharistie débarrassée de toute superstition rétrograde, – ou bien comme un culte célébré au niveau de l'exigence morale d'une fraternité pure, – ou encore comme le simulacre d'une messe dépouillée de sa réalité centrale. Ce fut certainement d'une grande ambiguïté. A mon sens, ce ne fut ni une messe, ni un culte, – tout au plus la manifestation commune d'une bonne volonté dont on évacuait les enjeux. Or il s'agissait d'enjeux d'un grand prix: à savoir, de la nature et du sens, de la permanence actuelle du sacrifice divin. Pour les catholiques, il y avait là un noeud de tous les problèmes: le réalisme de leur foi, auquel le temps qui passe ne saurait rien changer,
+          Ainsi: j’ai assisté un dimanche à une messe oecuménique retransmise à la télévision. Comme il est encore interdit aux catholiques de s’unir aux protestants dans l’eucharistie, on ne s’est pas servi d’hosties, mais d’une corbeille pleine de morceaux de pain. Selon les attitudes des participants, ceux-ci ressentirent la cérémonie comme un dépassement du «scandale» et un progrès vers l’unité grâce à une eucharistie débarrassée de toute superstition rétrograde, – ou bien comme un culte célébré au niveau de l’exigence morale d’une fraternité pure, – ou encore comme le simulacre d’une messe dépouillée de sa réalité centrale. Ce fut certainement d’une grande ambiguïté. A mon sens, ce ne fut ni une messe, ni un culte, – tout au plus la manifestation commune d’une bonne volonté dont on évacuait les enjeux. Or il s’agissait d’enjeux d’un grand prix: à savoir, de la nature et du sens, de la permanence actuelle du sacrifice divin. Pour les catholiques, il y avait là un noeud de tous les problèmes: le réalisme de leur foi, auquel le temps qui passe ne saurait rien changer,
         </p>
-        <p>
-          139
-        </p>
-      <pb facs="#facs_8" n="8" />
-        <p facs="#facs_8_r_1">
-          140
-        </p>
+        
+      <pb facs="#facs_8" n="[140]" />
+        
         <p facs="#facs_8_r_2">
-          alors qu'il s'actualise en revanche tout au long du temps. Pour les protestants, c'était la pureté toute spirituelle de leur offrande qui venait s'engluer dans cette corbeille, et aucun plaisir d'expérience fraternelle au niveau social ne pouvait justifier un tel mélange. Les uns et les autres y perdaient la sorte de réalité propre à leur foi confessionnelle. Et le christianisme tout entier y perdait l'efficace d'une opposition irréductible, avec sa portée transcendantale.
+          alors qu’il s’actualise en revanche tout au long du temps. Pour les protestants, c’était la pureté toute spirituelle de leur offrande qui venait s’engluer dans cette corbeille, et aucun plaisir d’expérience fraternelle au niveau social ne pouvait justifier un tel mélange. Les uns et les autres y perdaient la sorte de réalité propre à leur foi confessionnelle. Et le christianisme tout entier y perdait l’efficace d’une opposition irréductible, avec sa portée transcendantale.
         </p>
         <p facs="#facs_8_r_3">
-          Ici nous sommes en pleine métaphysique: il s'agit non de conventions sociales, de rites, mais d'être et d'absolu. Quand des protestants s'indignent contre le fait que l'Église catholique se refuse à admettre le divorce, ils méconnaissent l'être du sacrement du mariage, dont, avec la meilleure volonté du monde, les catholiques, le voudraient-ils, ne peuvent pas se libérer. Quand les catholiques reprochent aux protestants de céder au laxisme de l'époque, ils méconnaissent l'exigence absolue de rectitude hic et nunc, incompatible avec le maintien apparent d'une union défunte. Un compromis entre les uns et les autres permettrait sans doute un modus vivendi plus commode, mais se ferait à la fois aux dépens de l'être et de l'exigence absolue.
+          Ici nous sommes en pleine métaphysique: il s’agit non de conventions sociales, de rites, mais d’être et d’absolu. Quand des protestants s’indignent contre le fait que l’Église catholique se refuse à admettre le divorce, ils méconnaissent l’être du sacrement du mariage, dont, avec la meilleure volonté du monde, les catholiques, le voudraient-ils, ne peuvent pas se libérer. Quand les catholiques reprochent aux protestants de céder au laxisme de l’époque, ils méconnaissent l’exigence absolue de rectitude hic et nunc, incompatible avec le maintien apparent d’une union défunte. Un compromis entre les uns et les autres permettrait sans doute un modus vivendi plus commode, mais se ferait à la fois aux dépens de l’être et de l’exigence absolue.
         </p>
         <p facs="#facs_8_r_4">
-          Quand un célèbre théologien qui se croit catholique prétend exiger de son Église qu'elle lui donne le droit de parler en son nom, je pense qu'il devrait se reconnaître protestant, – tout comme lorsqu'il tire argument de la date d'un dogme pour en contester la vérité. Pourquoi ne serait-il pas protestant? – D'autre part, beaucoup des reproches que des protestants – et parfois des catholiques – adressent au pape actuel concernent des prises de position auxquelles l'Église catholique ne saurait renoncer sans se renier elle-même. Ne peut-on pas accepter que le pape soit catholique?
+          Quand un célèbre théologien qui se croit catholique prétend exiger de son Église qu’elle lui donne le droit de parler en son nom, je pense qu’il devrait se reconnaître protestant, – tout comme lorsqu’il tire argument de la date d’un dogme pour en contester la vérité. Pourquoi ne serait-il pas protestant? – D’autre part, beaucoup des reproches que des protestants – et parfois des catholiques – adressent au pape actuel concernent des prises de position auxquelles l’Église catholique ne saurait renoncer sans se renier elle-même. Ne peut-on pas accepter que le pape soit catholique?
         </p>
         <p facs="#facs_8_r_5">
-          Les tentatives oecuméniques faites pour venir à bout du « scandale des frères séparés » me paraissent souvent plus profanes que chrétiennes. On essaye de « se rencontrer à mi-chemin », de se faire « des concessions » équilibrées, de pratiquer « fraternité et ouverture ». Mais s'agira-t-il finalement de théologie oecuménique – ou de laïcisation?
+          Les tentatives oecuméniques faites pour venir à bout du « scandale des frères séparés » me paraissent souvent plus profanes que chrétiennes. On essaye de « se rencontrer à mi-chemin », de se faire « des concessions » équilibrées, de pratiquer « fraternité et ouverture ». Mais s’agira-t-il finalement de théologie oecuménique – ou de laïcisation?
         </p>
         <p>
-          Je ne suis pas chrétienne, mais j'aime que les chrétiens soient chrétiens, – les catholiques catholiques, les protestants protestants. Je crois que les diverses confessions chrétiennes, – comme aussi l'Église d'Orient avec son épanouissement en profondeur du dogme trinitaire, dont je n'ai rien dit ici – constituent ensemble, à travers leurs oppositions inconciliables, la richesse vivante du christianisme, et qu'ensemble elles préservent, à travers leurs efforts de connaissance, le Dieu inconnu.
+          Je ne suis pas chrétienne, mais j’aime que les chrétiens soient chrétiens, – les catholiques catholiques, les protestants protestants. Je crois que les diverses confessions chrétiennes, – comme aussi l’Église d’Orient avec son épanouissement en profondeur du dogme trinitaire, dont je n’ai rien dit ici – constituent ensemble, à travers leurs oppositions inconciliables, la richesse vivante du christianisme, et qu’ensemble elles préservent, à travers leurs efforts de connaissance, le Dieu inconnu.
         </p>
       </div>
       </body></text>

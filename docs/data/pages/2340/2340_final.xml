@@ -39,11 +39,13 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="1241" lry="1754">
+      <graphic url="2340_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="305" uly="385" lrx="965" lry="424" />
       <zone xml:id="facs_1_r_2" ulx="737" uly="615" lrx="963" lry="692" />
       <zone xml:id="facs_1_r_3" ulx="661" uly="1324" lrx="963" lry="1396" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="1241" lry="1754">
+      <graphic url="2340_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="282" uly="380" lrx="845" lry="478" />
       <zone xml:id="facs_2_r_2" ulx="341" uly="1106" lrx="752" lry="1169" />
       <zone xml:id="facs_2_r_3" ulx="282" uly="1196" lrx="714" lry="1254" />
@@ -52,6 +54,7 @@
       <zone xml:id="facs_2_r_6" ulx="323" uly="1397" lrx="725" lry="1462" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="1241" lry="1754">
+      <graphic url="2340_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="251" uly="414" lrx="868" lry="444" />
       <zone xml:id="facs_3_r_2" ulx="249" uly="463" lrx="962" lry="849" />
       <zone xml:id="facs_3_r_3" ulx="250" uly="847" lrx="962" lry="928" />
@@ -59,6 +62,7 @@
       <zone xml:id="facs_3_r_5" ulx="249" uly="1212" lrx="961" lry="1433" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="1241" lry="1754">
+      <graphic url="2340_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="274" uly="412" lrx="983" lry="563" />
       <zone xml:id="facs_4_r_2" ulx="280" uly="684" lrx="990" lry="1001" />
       <zone xml:id="facs_4_r_3" ulx="286" uly="999" lrx="991" lry="1150" />
@@ -66,6 +70,7 @@
       <zone xml:id="facs_4_r_5" ulx="289" uly="1363" lrx="995" lry="1421" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="1241" lry="1754">
+      <graphic url="2340_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="215" uly="404" lrx="925" lry="457" />
       <zone xml:id="facs_5_r_2" ulx="213" uly="457" lrx="928" lry="586" />
       <zone xml:id="facs_5_r_3" ulx="215" uly="582" lrx="927" lry="710" />
@@ -77,7 +82,7 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[87]" />
         <head facs="#facs_1_r_1">
           IN DIE ZUKUNFT BEGLEITEN
         </head>
@@ -87,7 +92,7 @@
         <p facs="#facs_1_r_3">
           Selbstverlag der Internationalen Pädagogischen Werktagung Salzburg
         </p>
-      <pb facs="#facs_2" n="2" />
+      <pb facs="#facs_2" n="[88]" />
         <p facs="#facs_2_r_1">
           Veröffentlichung der<lb facs="#facs_2_l_1_1" n="N001" />Salzburger Internationalen Pädagogischen Werktagungen:<lb facs="#facs_2_l_1_2" n="N002" />Tagungsbericht der 34. Werktagung 1985<lb facs="#facs_2_l_1_3" n="N003" />Band XXXX
         </p>
@@ -106,7 +111,7 @@
         <p facs="#facs_2_r_6">
           (Jr. 12375-40)
         </p>
-      <pb facs="#facs_3" n="3" />
+      <pb facs="#facs_3" n="[89]" />
         <p facs="#facs_3_r_1">
           Jeanne Hersch<lb facs="#facs_3_l_1_1" n="N001" />89
         </p>
@@ -125,7 +130,7 @@
         <p>
           Alle Fächer (nicht nur die sogenannten „Humanitäten“) sollten in den Schulen letztlich diesem Zweck dienen. Auch die Wissenschaften, in deren Geschichte die Anstrengungen der Menschen sich zeigen, die sich frei, durch hartnäckige Forschung, um mehr Wissen, also um mehr Wahrheit, bemühten – und da können junge Leute erfahren, wie unauflösbar verbunden Freiheit und Wahrheit für die Menschen sind. Jede freie Entscheidung setzt voraus, daß man sich um ein Verständnis der wahren Lage, der wahren Situation bemüht hat. Jede Anstrengung für mehr Wahrheit setzt voraus, daß der Suchende frei ist für Forschung und Urteil. Es gibt
         </p>
-      <pb facs="#facs_4" n="4" />
+      <pb facs="#facs_4" n="[90]" />
         <p facs="#facs_4_r_1">
           Jeanne Hersch
         </p>
@@ -147,7 +152,7 @@
         <p>
           Zukunft ist nicht Paradies; sie bleibt zeitlich, sie gehört zum Menschsein in der Zeit. Auch diese Erfahrung des Zeitdaseins gehört zur Erzie-
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[91]" />
         <p facs="#facs_5_r_1">
           Erziehung zwischen Resignation und Hoffnung
         </p>

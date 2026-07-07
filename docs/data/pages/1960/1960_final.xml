@@ -39,6 +39,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="1267" lry="1738">
+      <graphic url="1960_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="115" uly="168" lrx="394" lry="314" />
       <zone xml:id="facs_1_r_2" ulx="402" uly="364" lrx="585" lry="401" />
       <zone xml:id="facs_1_r_3" ulx="433" uly="453" lrx="964" lry="493" />
@@ -58,6 +59,7 @@
       <zone xml:id="facs_1_r_17" ulx="375" uly="950" lrx="480" lry="971" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="1241" lry="1710">
+      <graphic url="1960_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="499" uly="1160" lrx="10820" lry="1780" />
       <zone xml:id="facs_2_r_2" ulx="443" uly="2049" lrx="9946" lry="4199" />
       <zone xml:id="facs_2_r_3" ulx="517" uly="4502" lrx="8262" lry="4829" />
@@ -68,6 +70,7 @@
       <zone xml:id="facs_2_r_8" ulx="552" uly="15640" lrx="7899" lry="16340" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="1225" lry="1710">
+      <graphic url="1960_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="82" uly="133" lrx="325" lry="182" />
       <zone xml:id="facs_3_r_2" ulx="619" uly="133" lrx="852" lry="176" />
       <zone xml:id="facs_3_r_3" ulx="894" uly="133" lrx="1146" lry="172" />
@@ -101,6 +104,7 @@
       <zone xml:id="facs_3_r_31" ulx="779" uly="1284" lrx="1017" lry="1299" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="1241" lry="1710">
+      <graphic url="1960_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="60" uly="119" lrx="413" lry="208" />
       <zone xml:id="facs_4_r_2" ulx="58" uly="207" lrx="414" lry="405" />
       <zone xml:id="facs_4_r_3" ulx="811" uly="229" lrx="1174" lry="1501" />
@@ -110,6 +114,7 @@
       <zone xml:id="facs_4_r_7" ulx="812" uly="1496" lrx="1173" lry="1636" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="1209" lry="1709">
+      <graphic url="1960_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="262" uly="155" lrx="864" lry="644" />
       <zone xml:id="facs_5_r_2" ulx="262" uly="772" lrx="655" lry="929" />
       <zone xml:id="facs_5_r_3" ulx="262" uly="967" lrx="614" lry="992" />
@@ -121,6 +126,7 @@
       <zone xml:id="facs_5_r_9" ulx="845" uly="1532" lrx="1148" lry="1608" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="1241" lry="1709">
+      <graphic url="1960_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="819" uly="118" lrx="1180" lry="1032" />
       <zone xml:id="facs_6_r_2" ulx="72" uly="121" lrx="425" lry="302" />
       <zone xml:id="facs_6_r_3" ulx="444" uly="122" lrx="803" lry="651" />
@@ -134,6 +140,7 @@
       <zone xml:id="facs_6_r_11" ulx="60" uly="1543" lrx="420" lry="1635" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="1209" lry="1708">
+      <graphic url="1960_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="806" uly="317" lrx="1180" lry="849" />
       <zone xml:id="facs_7_r_2" ulx="54" uly="514" lrx="794" lry="630" />
       <zone xml:id="facs_7_r_3" ulx="54" uly="646" lrx="412" lry="695" />
@@ -148,7 +155,7 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[22]" />
         <p facs="#facs_1_r_1">
           Elektronischer Dokumentenlieferdienst<lb facs="#facs_1_l_1_1" n="N001" />UB Wirtschaft - SWA<lb facs="#facs_1_l_1_2" n="N002" />Postfach<lb facs="#facs_1_l_1_3" n="N003" />CH-4003 Basel<lb facs="#facs_1_l_1_4" n="N004" />kopien-ubw-swa@unibas.ch
         </p>
@@ -174,7 +181,7 @@
           Signatur<lb facs="#facs_1_l_8_1" n="N001" />UBW Zq 1539
         </p>
         <p facs="#facs_1_r_9">
-          Zeitschrift<lb facs="#facs_1_l_9_1" n="N001" />Swiss Chem Schweizerische Zeitschrift für die chemische Industrie = revue suisse pour l'industrie chimique = rivista svizzera per l'industria chimica
+          Zeitschrift<lb facs="#facs_1_l_9_1" n="N001" />Swiss Chem Schweizerische Zeitschrift für die chemische Industrie = revue suisse pour l’industrie chimique = rivista svizzera per l’industria chimica
         </p>
         <p facs="#facs_1_r_10">
           ISSN<lb facs="#facs_1_l_10_1" n="N001" />0251-1703
@@ -200,7 +207,7 @@
         <p facs="#facs_1_r_17">
           Vermerk Bibliothek
         </p>
-      <pb facs="#facs_2" n="2" />
+      <pb facs="#facs_2" n="[23]" />
         <p facs="#facs_2_r_1">
           Lack- und Farbenindustrie/VSLF
         </p>
@@ -231,7 +238,7 @@
         <p>
           SWISS CHEM 4 (1982) Nr. 7-8
         </p>
-      <pb facs="#facs_3" n="3" />
+      <pb facs="#facs_3" n="[24]" />
         <p facs="#facs_3_r_1">
           Interesse an der Zusammenarbeit mit ausländischen Firmen.
         </p>
@@ -325,7 +332,7 @@
         <p facs="#facs_3_r_31">
           SWISS CHEM 4 (1982) Nr. 7-8
         </p>
-      <pb facs="#facs_4" n="4" />
+      <pb facs="#facs_4" n="[25]" />
         <p facs="#facs_4_r_1">
           Lack- und Farbenindustrie/VSLF
         </p>
@@ -356,7 +363,7 @@
         <p>
           SWISS CHEM 4 (1982) Nr. 7-8
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[26]" />
         <p facs="#facs_5_r_1">
           26<lb facs="#facs_5_l_1_1" n="N001" />SWISS CHEM 4 (1982) Nr. 7.8
         </p>
@@ -402,7 +409,7 @@
         <p>
           Technische Produkte, Industriebedarf<lb facs="#facs_5_l_15_1" n="N001" />Sonnhalde 297<lb facs="#facs_5_l_15_2" n="N002" />5705 HALLWIL<lb facs="#facs_5_l_15_3" n="N003" />Telefon 064-54 32-71
         </p>
-      <pb facs="#facs_6" n="6" />
+      <pb facs="#facs_6" n="[27]" />
         <p facs="#facs_6_r_1">
           Lack- und Farbenindustrie/VSLF
         </p>
@@ -448,7 +455,7 @@
         <p>
           SWISS CHEM 4 (1982) Nr. 7-8
         </p>
-      <pb facs="#facs_7" n="7" />
+      <pb facs="#facs_7" n="[28]" />
         <p facs="#facs_7_r_1">
           Lack- und Farbenindustrie/VSLF
         </p>

@@ -39,6 +39,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="1021" lry="803">
+      <graphic url="870_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="97" uly="90" lrx="477" lry="552" />
       <zone xml:id="facs_1_r_2" ulx="557" uly="150" lrx="785" lry="219" />
       <zone xml:id="facs_1_r_3" ulx="557" uly="232" lrx="651" lry="252" />
@@ -51,11 +52,13 @@
       <zone xml:id="facs_1_r_10" ulx="97" uly="600" lrx="158" lry="610" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="1001" lry="811">
+      <graphic url="870_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="534" uly="131" lrx="905" lry="180" />
       <zone xml:id="facs_2_r_2" ulx="85" uly="154" lrx="461" lry="294" />
       <zone xml:id="facs_2_r_3" ulx="537" uly="181" lrx="912" lry="441" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="1046" lry="839">
+      <graphic url="870_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="564" uly="225" lrx="946" lry="363" />
       <zone xml:id="facs_3_r_2" ulx="401" uly="295" lrx="488" lry="315" />
       <zone xml:id="facs_3_r_3" ulx="100" uly="333" lrx="489" lry="443" />
@@ -63,6 +66,7 @@
       <zone xml:id="facs_3_r_5" ulx="245" uly="657" lrx="484" lry="701" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="1002" lry="807">
+      <graphic url="870_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="522" uly="96" lrx="906" lry="188" />
       <zone xml:id="facs_4_r_2" ulx="525" uly="197" lrx="907" lry="323" />
       <zone xml:id="facs_4_r_3" ulx="54" uly="208" lrx="457" lry="485" />
@@ -74,6 +78,7 @@
       <zone xml:id="facs_4_r_9" ulx="531" uly="1089" lrx="911" lry="1121" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="1057" lry="855">
+      <graphic url="870_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="571" uly="105" lrx="962" lry="206" />
       <zone xml:id="facs_5_r_2" ulx="107" uly="133" lrx="506" lry="178" />
       <zone xml:id="facs_5_r_3" ulx="566" uly="281" lrx="956" lry="554" />
@@ -81,6 +86,7 @@
       <zone xml:id="facs_5_r_5" ulx="98" uly="684" lrx="498" lry="743" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="1047" lry="824">
+      <graphic url="870_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="100" uly="98" lrx="494" lry="242" />
       <zone xml:id="facs_6_r_2" ulx="562" uly="186" lrx="851" lry="210" />
       <zone xml:id="facs_6_r_3" ulx="100" uly="247" lrx="494" lry="341" />
@@ -96,7 +102,7 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[322]" />
         <p facs="#facs_1_r_1">
           322 ETHICS AND SOCIAL JUSTICE
         </p>
@@ -115,12 +121,12 @@
         <p facs="#facs_1_r_6">
           Jeanne Hersch
         </p>
-        <note place="foot" n="1" xml:id="fn1-1" facs="#facs_1_r_7">
+        <p facs="#facs_1_r_7">
           If I were to consider this task in my personal capacity as a philosopher, I would conceive of it in a completely different manner. I would try to ask philosophical questions about the Universal Declaration of Human Rights, including the compatibility or incompatibility which might exist between different aspects of the Declaration. But I address myself to the topic under consideration, not primarily as a philosopher, but rather as the representative of an organization which has attempted to deal with human rights as a world problem.
-        </note>
-        <note place="foot" n="2" xml:id="fn1-2" facs="#facs_1_r_8">
-          UNESCO, as an organization, officially has two chief aims. These aims, raisons d'être of the organization, are first, the construction and safeguarding of peace, and second, the development and implementation of human rights. Some might not consider it to be evident that the defense of peace and the development and implementation of human rights always go hand in hand. But because UNESCO has been conceived in this way, it should be made clear that the peace which UNESCO is to defend may not be defined simply as the absence of armed conflict. Instead, it is a peace in which human rights must be, at least to a degree, respected. Such a concept of peace—a peace designed for the ultimate service of man—requires that peace and human rights be considered reciprocally necessary. One cannot implement and establish human rights if there is no peace, and there is not a true peace if it is not one in which human rights are implemented and established.
-        </note>
+        </p>
+        <p facs="#facs_1_r_8">
+          UNESCO, as an organization, officially has two chief aims. These aims, raisons d’être of the organization, are first, the construction and safeguarding of peace, and second, the development and implementation of human rights. Some might not consider it to be evident that the defense of peace and the development and implementation of human rights always go hand in hand. But because UNESCO has been conceived in this way, it should be made clear that the peace which UNESCO is to defend may not be defined simply as the absence of armed conflict. Instead, it is a peace in which human rights must be, at least to a degree, respected. Such a concept of peace—a peace designed for the ultimate service of man—requires that peace and human rights be considered reciprocally necessary. One cannot implement and establish human rights if there is no peace, and there is not a true peace if it is not one in which human rights are implemented and established.
+        </p>
         <p facs="#facs_1_r_9">
           We are, this year, celebrating the twentieth anniversary of the Universal Declaration of Human Rights. I should like to stress some of the important differences which emerge when we compare the world situation of 1948 and the world situation of 1968. The Universal Declaration was adopted by the United Nations General Assembly in 1948, two years after the creation of UNESCO, and shortly after the end of the
         </p>
@@ -160,7 +166,7 @@
           sources we could get in touch with) to send us texts. We asked them to send us anything—a piece of an epic, proverbs, a fragment of a play, a tale, an inscription on a rock or stone, a song or some piece of old legislation which reflects a sense for human rights. In fact, we said, send us any kind of literature you want; we are curious about anything you consider to have a relationship with or a sense of human rights.
         </p>
         <p facs="#facs_3_r_3">
-          This was our starting point, and we waited. We had set up a huge net. It was our way of fishing all around the world and we didn't have the slightest idea what we would come up with, or even if we would come up with anything at all.
+          This was our starting point, and we waited. We had set up a huge net. It was our way of fishing all around the world and we didn’t have the slightest idea what we would come up with, or even if we would come up with anything at all.
         </p>
         <p facs="#facs_3_r_4">
           The first thing which came, came from Burundi. Burundi sent us some proverbs and two tales. This seemed to be a very good beginning. In the end, we were confronted with a mountain of texts from all time and all parts of the world.
@@ -195,7 +201,7 @@
         <p>
           Next, we found a group of themes which are about civil freedoms,
         </p>
-      <pb facs="#facs_4" n="4" />
+      <pb facs="#facs_4" n="[328]" />
         <p facs="#facs_4_r_1">
           328 ETHICS AND SOCIAL JUSTICE
         </p>
@@ -238,7 +244,7 @@
         <p>
           In the end, texts from the most varied traditions refer to the sources and ends of the rights and the dignity of man. Some refer to a moral absolute, others to natural rights. Some refer to God as being the
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[330]" />
         <p facs="#facs_5_r_1">
           330 ETHICS AND SOCIAL JUSTICE
         </p>
@@ -246,7 +252,7 @@
           common Father or the common Creator, others refer to nature as common to all people. Thus, though the justifications may be very different, in all cases the human being as such, conceived in a fraternal way, is the source from which all justifications of rights spring.
         </p>
         <p facs="#facs_5_r_3">
-          From this mountain of texts we received, a book of more than five hundred pages has been printed, with more than a thousand fragments from all sorts of sources, times, and places. The current that runs through these texts is a very deep sense of brotherhood, a sense of what a man is qua man, not only as a biological being. There is always in a man a mysterious possibility which remains open, so that one can never reduce a human being to a fact. Every human being, as long as he is breathing, has a possibility to create himself in another way. Thus there are legends and stories in which somebody who may always have been despised grows in a certain way, or does something which is absolutely unexpected, so that one wonders at the development of man through himself. So it is that human rights are grounded not on facts, but on the possibility of man's freedom.
+          From this mountain of texts we received, a book of more than five hundred pages has been printed, with more than a thousand fragments from all sorts of sources, times, and places. The current that runs through these texts is a very deep sense of brotherhood, a sense of what a man is qua man, not only as a biological being. There is always in a man a mysterious possibility which remains open, so that one can never reduce a human being to a fact. Every human being, as long as he is breathing, has a possibility to create himself in another way. Thus there are legends and stories in which somebody who may always have been despised grows in a certain way, or does something which is absolutely unexpected, so that one wonders at the development of man through himself. So it is that human rights are grounded not on facts, but on the possibility of man’s freedom.
         </p>
         <p facs="#facs_5_r_4">
           What strikes one when reading these texts is seeing that most human beings and most cultures contain something of the Kantian idea, that the human being should never be used only as a means, but always taken also as an end. And this is proposed not because he is such a perfect being, but because he can change, he has the ability of becoming. That is why he deserves and he requires respect, why he has rights. In very different ways, the necessity for this respect is recognized everywhere, even when it is violated, and even if its only expression is a cry of despair. The sense for this respect, in one way or another, is both more common and more different than one would think before looking into the texts. It seems to me, then, that in order to understand this, we must make use of a faculty other than reason. We need imagination, the kind of sympathetic imagination which enables us to understand different cultures and what it means to be respected and treated like a human being in all of them.
@@ -270,9 +276,9 @@
           What is the function of the Universal Declaration today? First of all, it is a kind of moral charter which is common, at least theoretically, to all nations. It is not univocal, but it at least gives to people a minimum common reference so they may talk together and prepare for the future. It also is an instrument for victims everywhere, whose rights have been offended. The victims can use, at least to a degree, the Universal Declaration to defend themselves. Another function which is most important is the following: there must be a minimum of common air which international civil servants and international organizations can breathe in order to be able to think. No one has the right to make use of his personal ideas when he is working on the level of an international organization. But the Universal Declaration of Human Rights provides the base upon which international organizations may flourish and develop. It is also the point of departure for more precise juridical conventions, i.e., it provides the clear possibility of applying the pressure of international opinion upon absolute sovereign states. When states have signed and ratified a convention, for example the convention against discrimination in education, the international organization asks the member states to give a report every second year saying what is done in their country towards the implementation of the conventions they have ratified. They are required to report and the report is read and discussed in public, on the international scene. Here we have the pressure of international opinion, which, though not juridical, is still somehow above national absolute sovereignty.
         </p>
         <p>
-          I think also that the Universal Declaration may play a very important role in each nation's self-examination, in helping each country to control itself and to ask itself what it is doing towards the implementation of human rights. This is really an exercise which I think should be widespread in international life. Usually people believe, especially if they are citizens of old democracies, that they have an innate respect for human rights—that at worst there are only details which are not in proper order, at least in their own soul, if not in their own country. Now that is not true at all. As soon as there is a lack of apartments, or a lack of work, or a lack of anything essential to your own life, your family, or the people you love, you at once find a good reason for exercising your rights against those who are living next door, especially if the per-
+          I think also that the Universal Declaration may play a very important role in each nation’s self-examination, in helping each country to control itself and to ask itself what it is doing towards the implementation of human rights. This is really an exercise which I think should be widespread in international life. Usually people believe, especially if they are citizens of old democracies, that they have an innate respect for human rights—that at worst there are only details which are not in proper order, at least in their own soul, if not in their own country. Now that is not true at all. As soon as there is a lack of apartments, or a lack of work, or a lack of anything essential to your own life, your family, or the people you love, you at once find a good reason for exercising your rights against those who are living next door, especially if the per-
         </p>
-      <pb facs="#facs_6" n="6" />
+      <pb facs="#facs_6" n="[331]" />
         <p facs="#facs_6_r_1">
           332 ETHICS AND SOCIAL JUSTICE
         </p>
@@ -295,7 +301,7 @@
           F. E. SPARSHOTT Chairman, Department of Ethics, Victoria University of the University of Toronto. Publications include: An Enquiry into Goodness (1958); The Structure of Aesthetics (1963); A Divided Voice (1965); The Concept of Criticism (1967); "Socrates and Thrasymachus", The Monist (1966).
         </p>
         <p facs="#facs_6_r_8">
-          JAMES GUTMANN Professor Emeritus of Philosophy, Columbia University. Publications include: Spinoza's Ethics (1955); Marcus Aurelius (1964); "Cassirer's Humanism", Philosophy of E. Cassirer (1949); "Mystical Experience and Human Values", Horizons of a Philosopher (1962); "Post-Kantian Romanticism", Dictionary of History of Ideas (1969).
+          JAMES GUTMANN Professor Emeritus of Philosophy, Columbia University. Publications include: Spinoza’s Ethics (1955); Marcus Aurelius (1964); "Cassirer’s Humanism", Philosophy of E. Cassirer (1949); "Mystical Experience and Human Values", Horizons of a Philosopher (1962); "Post-Kantian Romanticism", Dictionary of History of Ideas (1969).
         </p>
         <p facs="#facs_6_r_9">
           SIDNEY HOOK Professor of Philosophy, New York University; Guggenheim Fellow (1928-1929); Fellow, Center for Advanced Studies (1960-1961); President, Eastern Division, American Philosophical Association (1959-1960). Publications include: From Hegel to Marx (1936); Heresy,

@@ -39,6 +39,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="1024" lry="1200">
+      <graphic url="2635_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="428" uly="84" lrx="574" lry="109" />
       <zone xml:id="facs_1_r_2" ulx="309" uly="117" lrx="696" lry="181" />
       <zone xml:id="facs_1_r_3" ulx="91" uly="240" lrx="495" lry="488" />
@@ -49,6 +50,7 @@
       <zone xml:id="facs_1_r_8" ulx="906" uly="1110" lrx="936" lry="1134" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="1024" lry="1200">
+      <graphic url="2635_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="556" uly="84" lrx="963" lry="327" />
       <zone xml:id="facs_2_r_2" ulx="126" uly="88" lrx="534" lry="608" />
       <zone xml:id="facs_2_r_3" ulx="560" uly="462" lrx="969" lry="1005" />
@@ -58,6 +60,7 @@
       <zone xml:id="facs_2_r_7" ulx="135" uly="1004" lrx="540" lry="1106" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="1024" lry="1200">
+      <graphic url="2635_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="546" uly="87" lrx="953" lry="468" />
       <zone xml:id="facs_3_r_2" ulx="116" uly="131" lrx="526" lry="671" />
       <zone xml:id="facs_3_r_3" ulx="550" uly="463" lrx="955" lry="588" />
@@ -67,6 +70,7 @@
       <zone xml:id="facs_3_r_7" ulx="124" uly="945" lrx="528" lry="1110" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="1024" lry="1200">
+      <graphic url="2635_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="511" uly="77" lrx="914" lry="214" />
       <zone xml:id="facs_4_r_2" ulx="82" uly="102" lrx="486" lry="395" />
       <zone xml:id="facs_4_r_3" ulx="511" uly="211" lrx="917" lry="553" />
@@ -80,6 +84,7 @@
       <zone xml:id="facs_4_r_11" ulx="902" uly="1106" lrx="917" lry="1133" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="1024" lry="1200">
+      <graphic url="2635_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="553" uly="87" lrx="957" lry="268" />
       <zone xml:id="facs_5_r_2" ulx="123" uly="93" lrx="527" lry="174" />
       <zone xml:id="facs_5_r_3" ulx="124" uly="171" lrx="530" lry="415" />
@@ -115,7 +120,7 @@
         <p facs="#facs_1_r_8">
           21
         </p>
-      <pb facs="#facs_2" n="2" />
+      <pb facs="#facs_2" n="[22]" />
         <p facs="#facs_2_r_1">
           Vielleicht kann man es überhaupt nicht anders, als indem man mitleidet. Wenn man aber mitleidet, leidet man nie ganz wie derjenige, mit dem man leidet. Das läßt dem Zeugen in uns, eine bestimmte Fähigkeit zu sehen, worum es hier geht, eine Fähigkeit, die man vielleicht gar nicht hat, wenn man vom eigenen Leid zu sprechen versucht. Aber selbst da: Wir sprechen von Mitleid; ich frage mich, bis zu welchem Grad wir wirklich fähig sind mitzuleiden. Das fremde Leiden stört uns. Wir möchten viel lieber, daß es das nicht gibt. Es gehört zu unserem Wohlbefinden, daß es kein Leid um uns herum gibt, wenn wir nicht ausgesprochen böse Menschen sind. Aber ob wir wirklich die Fähigkeit haben mitzuleiden, weiß ich nicht. Im Grunde gibt es unter den Menschen — und ich will damit gar nicht sagen, daß ich den Menschen für schlecht halte — es gibt unter den Menschen eine Art Lebenskampf, der nie ganz aufhört. Dieser Kampf fällt ganz besonders auf, wenn es um kleine Dinge geht, eher als um große. Zum Beispiel: Ihr Kind soll eine Schule besuchen, die in der Nähe Ihres Hauses liegt; es sind da zwei Parallelklassen, deren Lehrer einen sehr ungleichen pädagogischen Ruf genießen. Sie beeilen sich dann, Ihr Kind in die bessere Klasse einzuschreiben. Und es ist doch klar, daß Ihr Kind einen Platz besetzt, den ein anderes Kind nicht haben wird, dadurch daß Sie es früher eingeschrieben haben.
         </p>
@@ -140,10 +145,8 @@
         <p>
           Beobachten wir etwa eine Ente, unter einem runden Blatt, auf einem Teich. Die Ente dreht erschrockene Augen nach allen Seiten. Es ist ihr Schicksal, und das der Lebewesen überhaupt, den größten Teil ihres Lebens damit zu verbringen, daß sie ihre Nahrung suchen müssen
         </p>
-        <p>
-          22
-        </p>
-      <pb facs="#facs_3" n="3" />
+        
+      <pb facs="#facs_3" n="[24]" />
         <p facs="#facs_3_r_1">
           unter der Gefahr, selbst Nahrung zu werden. Das ist das Gesetz der Natur.
         </p>
@@ -168,10 +171,8 @@
         <p>
           Nun meine zweite kleine Geschichte. Vor kurzer Zeit habe ich eine Lesung gemacht und nachher eines meiner Bücher unterschrieben. Und da wartete ein Junge, etwa 17, 18 Jahre alt, der mit mir reden wollte. Als die Leute weg waren, sagte mir der Junge folgendes: »Ich hatte eine Schwester. Sie ist mit 30 Jahren gestorben, nachdem ein Arzt einen Fehler gemacht hat. Was für einen Sinn sehen Sie darin?«
         </p>
-        <p>
-          24
-        </p>
-      <pb facs="#facs_4" n="4" />
+        
+      <pb facs="#facs_4" n="[25]" />
         <p facs="#facs_4_r_1">
           Die Frage war eine Herausforderung. Er glaubte, ich gebe keine Antwort darauf. Und es war furchtbar schwer, eine Antwort zu geben. Da gab es das Leid der Schwester, das Leid der nächsten Leute, das Absurde davon, von dem Leid des Arztes nicht zu sprechen: die Frage des Sinnes. So ein Ereignis hat keinen Sinn, nicht mehr Sinn als ein Autounfall. Nicht mehr Sinn als die Geschichte des Käfers. Das ist reine, sozusagen blinde, Kausalität. Ich habe schnell überlegt und zu diesem Burschen gesagt: »Wissen Sie, ich glaube, so ein Unglück hat von Natur aus keinen gegebenen Sinn. Aber es ist möglich, diesem Unglück einen Sinn zu geben. Es liegt an Ihnen, dem Verlust Ihrer Schwester einen Sinn zu geben durch das, was Sie aus Ihrem Leben machen werden. Was Sie aus Ihrem Leben machen werden, dadurch wird der Verlust Ihrer Schwester einen Sinn haben oder nicht. Es hängt von Ihnen ab.«
         </p>
@@ -205,10 +206,8 @@
         <p facs="#facs_4_r_11">
           Es ist mir auch aufgefallen, daß wir bis jetzt eigentlich nur von Leidverminderung gesprochen haben; aber es geht auch um einen Kampf für absolute Dinge, die wir
         </p>
-        <p>
-          25
-        </p>
-      <pb facs="#facs_5" n="5" />
+        
+      <pb facs="#facs_5" n="[26]" />
         <p facs="#facs_5_r_1">
           wollen, und für die wir manchmal bereit sind, zu leiden und sogar den anderen Leid zuzufügen. Wir wären keine Menschen, wenn wir nur gute Menschen in dem Sinn wären, daß wir das Leid lindern würden.
         </p>
@@ -224,9 +223,7 @@
         <p facs="#facs_5_r_5">
           Es gibt eine enge Beziehung zwischen Leid und Wert des Lebens. Und ich glaube, es gibt im Menschsein — jetzt werde ich vielleicht etwas sehr Unvernünftiges sagen — eine bestimmte Verbindung zwischen jenem Absoluten, das Koriagin und Solschenizyn jenseits der Furcht erlebt haben, und andererseits einem bestimmten Leicht-Sinn. Vielleicht gehört es zur richtigen Einstellung zum Leid, daß man fähig wird, einen bestimmten Leicht-Sinn zu pflegen. Ich sage absichtlich Leicht-Sinn und nicht Leicht-Sinn. Es ist eine bestimmte Leichtigkeit. Die Leute, die am schwersten sterben, sind vielleicht nicht die, die das Leben am meisten lieben, sondern die, die sich an das »Gewicht« angeklammert haben, an das Schwere. Es gehört zu einem entschlossenen Sinn für das Absolute, daß eine bestimmte Leichtigkeit ins Leben hineinkommt. Viele Dinge werden dann leicht genommen, und man wird fähig, das Leid besser zu ertragen und zu bekämpfen.
         </p>
-        <p>
-          26
-        </p>
+        
       </div>
       </body></text>
 </TEI>

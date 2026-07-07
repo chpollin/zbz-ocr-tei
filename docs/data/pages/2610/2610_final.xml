@@ -39,6 +39,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="988" lry="755">
+      <graphic url="2610_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="665" uly="157" lrx="769" lry="174" />
       <zone xml:id="facs_1_r_2" ulx="561" uly="191" lrx="865" lry="217" />
       <zone xml:id="facs_1_r_3" ulx="522" uly="235" lrx="908" lry="492" />
@@ -46,22 +47,26 @@
       <zone xml:id="facs_1_r_5" ulx="523" uly="612" lrx="881" lry="628" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="974" lry="734">
+      <graphic url="2610_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="87" uly="107" lrx="242" lry="153" />
       <zone xml:id="facs_2_r_2" ulx="520" uly="199" lrx="895" lry="514" />
       <zone xml:id="facs_2_r_3" ulx="82" uly="339" lrx="466" lry="554" />
       <zone xml:id="facs_2_r_4" ulx="519" uly="533" lrx="565" lry="559" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="991" lry="731">
+      <graphic url="2610_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="530" uly="154" lrx="910" lry="210" />
       <zone xml:id="facs_3_r_2" ulx="193" uly="228" lrx="403" lry="279" />
       <zone xml:id="facs_3_r_3" ulx="622" uly="235" lrx="716" lry="256" />
       <zone xml:id="facs_3_r_4" ulx="530" uly="280" lrx="908" lry="516" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="971" lry="724">
+      <graphic url="2610_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="84" uly="70" lrx="458" lry="609" />
       <zone xml:id="facs_4_r_2" ulx="502" uly="70" lrx="875" lry="609" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="988" lry="735">
+      <graphic url="2610_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="94" uly="71" lrx="479" lry="251" />
       <zone xml:id="facs_5_r_2" ulx="522" uly="71" lrx="906" lry="290" />
       <zone xml:id="facs_5_r_3" ulx="522" uly="293" lrx="906" lry="615" />
@@ -71,7 +76,7 @@
   <text>
     <body>
 <div n="1" type="speech">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[11]" />
         <head facs="#facs_1_r_1">
           JEANNE HERSCH
         </head>
@@ -87,10 +92,8 @@
         <note place="foot" n="1" xml:id="fn1-1" facs="#facs_1_r_5">
           * Die vorliegende Fassung folgt dem in freier Rede gehaltenen Referat.
         </note>
-        <p>
-          11
-        </p>
-      <pb facs="#facs_2" n="2" />
+        
+      <pb facs="#facs_2" n="[12]" />
         <p facs="#facs_2_r_1">
           12<lb facs="#facs_2_l_1_1" n="N001" />13
         </p>
@@ -109,7 +112,7 @@
         <p>
           Das gibt es ja auch in deutschen Gedichten, die ich ganz besonders mag. Am besten gebe ich Ihnen ein deutsches Beispiel, etwa Der Panther von Rilke. Der Panther ist ein solches Gedicht, und nicht umsonst hat der Dichter dieses Gedicht, wie das ganze Buch der Bilder im Jardin des Plantes in Paris verfaßt, also im französischen Erlebnis der Kunst und der Dichtung. Er schreibt:
         </p>
-      <pb facs="#facs_3" n="3" />
+      <pb facs="#facs_3" n="[13]" />
         <p facs="#facs_3_r_1">
           Sein Blick ist vom Vorübergehen der Stäbe so müd' geworden, daß er nichts mehr hält. Ihm ist, als ob es tausend Stäbe gäbe und hinter tausend Stäben keine Welt. Der weiche Gang geschmeidig starker Schritte, der sich im allerkleinsten Kreise dreht, ist wie ein Tanz von Kraft um eine Mitte, in der betäubt ein großer Wille steht. Nur manchmal schiebt der Vorhang der Pupille sich lautlos auf — Dann geht ein Bild hinein, geht durch der Glieder angespannte Stille — und hört im Herzen auf zu sein.
         </p>
@@ -117,10 +120,10 @@
           In diesem Gedicht, glaube ich, haben Sie die vollkommenste Übereinstimmung aller Elemente mit dem, was der Dichter wollte, was der Dichter fühlte, die Laute, die variierenden Rhythmen, die sozusagen innere körperliche Erfahrung, die der Leser beim Lesen mitmacht, denn dieses Bild geht wirklich in uns hinein. „[...] durch der Glieder angespannte Stille — und hört im Herzen auf zu sein“. Es ist ein dichterisches Ereignis, das einen Körper hinterläßt.
         </p>
         <p facs="#facs_3_r_3">
-          Solche Beispiele scheinen mir auf deutsch, wenn nicht selten, so doch für das, was man im Deutschen für Dichtung hält, nicht unentbehrlich. Aus demselben Grund ist also Racine in Frankreich von jedem Kind und Greis selbstverständlich als ganz großer Dichter anerkannt, selbst wenn man ihn nicht mehr liest. In meiner Jugend habe ich mit Überraschung entdeckt, daß dieser ganz große Dichter im Ausland gar nicht als solcher anerkannt werden kann, eventuell als guter Dramatiker, als ein Mann, der Tragödien schreiben kann, aber als Dichter kaum. Die Schlichtheit des poetischen Körpers bei Racine ist etwas, was im deutschen und überhaupt im anderssprachigen Raum sehr selten zu finden ist. Wenn man z. B. einen Vers von Racine betrachtet, der besonders berühmt ist: „Je ne l'ai pas encore embrassé aujourd'hui“ (ich habe ihn heute noch nicht geküßt), so kann man ihn gar nicht analysieren, und da erlebt man das große Geheimnis. Es gibt ein Buch von Raïssa Maritain über Dichtung, in dem sie behauptet, daß da, wo es Dichtung gibt, immer ein Geheimnis sei, immer etwas Geheimnisvolles, ohne Geheimnis gäbe es keine Dichtung. Dann gibt sie Beispiele, Mallarmé etwa und andere Dichter erhellen dieses Geheimnis ganz schön, ohne es verschwinden zu lassen. Später aber versucht sie, das Geheimnis bei Dichtern zu kommentieren, deren Dichtung ganz schlicht und klar zu sein scheint — und da kann sie nichts mehr erhellen. Es gibt keinen Kommentar — was soll man kommentieren bei: „Je ne l'ai pas encore embrassé aujourd'hui“, oder wenn sie ein Gedicht von La Fontaine bespricht:
+          Solche Beispiele scheinen mir auf deutsch, wenn nicht selten, so doch für das, was man im Deutschen für Dichtung hält, nicht unentbehrlich. Aus demselben Grund ist also Racine in Frankreich von jedem Kind und Greis selbstverständlich als ganz großer Dichter anerkannt, selbst wenn man ihn nicht mehr liest. In meiner Jugend habe ich mit Überraschung entdeckt, daß dieser ganz große Dichter im Ausland gar nicht als solcher anerkannt werden kann, eventuell als guter Dramatiker, als ein Mann, der Tragödien schreiben kann, aber als Dichter kaum. Die Schlichtheit des poetischen Körpers bei Racine ist etwas, was im deutschen und überhaupt im anderssprachigen Raum sehr selten zu finden ist. Wenn man z. B. einen Vers von Racine betrachtet, der besonders berühmt ist: „Je ne l’ai pas encore embrassé aujourd’hui“ (ich habe ihn heute noch nicht geküßt), so kann man ihn gar nicht analysieren, und da erlebt man das große Geheimnis. Es gibt ein Buch von Raïssa Maritain über Dichtung, in dem sie behauptet, daß da, wo es Dichtung gibt, immer ein Geheimnis sei, immer etwas Geheimnisvolles, ohne Geheimnis gäbe es keine Dichtung. Dann gibt sie Beispiele, Mallarmé etwa und andere Dichter erhellen dieses Geheimnis ganz schön, ohne es verschwinden zu lassen. Später aber versucht sie, das Geheimnis bei Dichtern zu kommentieren, deren Dichtung ganz schlicht und klar zu sein scheint — und da kann sie nichts mehr erhellen. Es gibt keinen Kommentar — was soll man kommentieren bei: „Je ne l’ai pas encore embrassé aujourd’hui“, oder wenn sie ein Gedicht von La Fontaine bespricht:
         </p>
         <p facs="#facs_3_r_4">
-          Maître Corbeau sur un arbre perché<lb facs="#facs_3_l_4_1" n="N001" />tenait dans son bec un fromage,<lb facs="#facs_3_l_4_2" n="N002" />Maître Renard par l'odeur alléché<lb facs="#facs_3_l_4_3" n="N003" />lui tint à peu près ce langage.
+          Maître Corbeau sur un arbre perché<lb facs="#facs_3_l_4_1" n="N001" />tenait dans son bec un fromage,<lb facs="#facs_3_l_4_2" n="N002" />Maître Renard par l’odeur alléché<lb facs="#facs_3_l_4_3" n="N003" />lui tint à peu près ce langage.
         </p>
         <p>
           Ist das Dichtung? Für Deutsche bezweifle ich es; aber für Franzosen ist das Dichtung, und was da gelungen ist, diese Art schlichter Übereinstimmung und Reduzierung der Elemente, ist einzigartig. Wenn ich recht habe, wenn solche Grundunterschiede wirklich da sind, dann stellen sich als Folge davon die Probleme zeitgenössischer Ströme für die Dichtung in den verschiedenen Sprachgebieten unterschiedlich. Es gibt etwas Gemeinsames, aber es gibt sicher grundlegende Unterschiede und ich würde vorschlagen, daß man vielleicht einmal ein Seminar über solche Probleme in zwei Sprachen führen sollte.
@@ -134,7 +137,7 @@
         <p>
           Man muß aber erkennen, daß auch vor dieser Situation die Verbindung von Wort und Laut immer problematisch gewesen ist. Das ist das Ursprünglichste im Leben, daß Wort und Laut zusammenpassen. Aber es ist schon sehr lange her, daß man sich gefragt hat: Wie kann man ein Gedicht, das schon existiert, mit Musik verbinden? Wie kann man Musik, die schon existiert, mit einem Text verbinden? Das ist von jeher problematisch gewesen. Im spontanen
         </p>
-      <pb facs="#facs_4" n="4" />
+      <pb facs="#facs_4" n="[14]" />
         <p facs="#facs_4_r_1">
           16<lb facs="#facs_4_l_1_1" n="N001" />17
         </p>
@@ -150,7 +153,7 @@
         <p>
           Dieses Gefühl hat eine Ähnlichkeit mit dem, was in allen Leuten vor sich gegangen ist. Merken Sie: Wenn man außerhalb einer Kirche steht und die Stimme — nicht das Wort —, die Stimme des Pfarrers hört, dann kann man sich eine Vorstellung von seinem Alter machen, abgesehen von der Qualität der Stimme; denn es ist ein Generationsmerkmal, daß die Älteren, die ganz Alten noch die frühere Beredsamkeit, den Eloquenzton wahren. Später, nach all dem, was wir erlebt haben, ist dieser Ton verschwunden. Man wagt es nicht mehr. Man hat kein Recht mehr auf eine bestimmte Stimme, auf eine bestimmte Proklamation, auf bestimmte große Worte. Den Musikern und Dichtern geht es genauso. Sie sind empfindlicher, empfindsamer, und ihnen geht es genauso, — als könnte ein Kunstwerk heute eigentlich nur unerlöst sein. Eine Art Lüge, weil es vollkommen sein soll und auf Vollkommenheit haben wir kein Recht. Als wäre das eine Grundpflicht jedes Augenblicks, immer wieder alle Ausdrucksmittel dazu zu gebrauchen, um zu entlarven, um die Dichtung oder die Musik zu einem „grincement“ zu bringen, um Dinge lächerlich zu machen, und je erhabener sie aussehen, desto lächerlicher soll man sie machen. Wenn es gelingt, ein Gedicht zu schaffen oder ein musikalisches Werk, so ist es irgendwie gegen die tiefste Absicht, wenn die Klinge, die Rhythmen, die Bilder, die Nuancen wirklich zu jener notwendigen Einheit kommen, die den Körper eines Kunstwerkes ausmacht. Ein Kunstwerk enthält — selbst wenn die größte Gewalt darin herrscht — eine Art Frieden in sich, den Frieden dessen, was ist, wie ich vorher sagte. Und die Künstler heute haben das Gefühl, diese Ruhe sei fast etwas Verbotenes. Vielleicht lassen sie sich zu sehr durch die Last einer Vergangenheit niederdrücken oder durch einen Akti
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[15]" />
         <p facs="#facs_5_r_1">
           18
         </p>

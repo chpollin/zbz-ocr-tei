@@ -40,11 +40,13 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="1199" lry="1761">
+      <graphic url="2220_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="10" uly="306" lrx="1179" lry="1054" />
       <zone xml:id="facs_1_r_2" ulx="146" uly="1327" lrx="215" lry="1351" />
       <zone xml:id="facs_1_r_3" ulx="121" uly="1353" lrx="183" lry="1376" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="1232" lry="1754">
+      <graphic url="2220_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="721" uly="84" lrx="1026" lry="308" />
       <zone xml:id="facs_2_r_2" ulx="142" uly="123" lrx="313" lry="167" />
       <zone xml:id="facs_2_r_3" ulx="146" uly="195" lrx="412" lry="227" />
@@ -68,11 +70,13 @@
       <zone xml:id="facs_2_r_21" ulx="148" uly="841" lrx="392" lry="857" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="1236" lry="1763">
+      <graphic url="2220_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="799" uly="122" lrx="1099" lry="250" />
       <zone xml:id="facs_3_r_2" ulx="365" uly="360" lrx="731" lry="436" />
       <zone xml:id="facs_3_r_3" ulx="794" uly="360" lrx="893" lry="378" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="1238" lry="1757">
+      <graphic url="2220_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="67" uly="107" lrx="1079" lry="177" />
       <zone xml:id="facs_4_r_2" ulx="71" uly="189" lrx="410" lry="217" />
       <zone xml:id="facs_4_r_3" ulx="70" uly="232" lrx="713" lry="276" />
@@ -84,6 +88,7 @@
       <zone xml:id="facs_4_r_9" ulx="67" uly="1535" lrx="573" lry="1602" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="1234" lry="1747">
+      <graphic url="2220_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="148" uly="100" lrx="653" lry="161" />
       <zone xml:id="facs_5_r_2" ulx="667" uly="103" lrx="1182" lry="1591" />
       <zone xml:id="facs_5_r_3" ulx="145" uly="208" lrx="656" lry="1355" />
@@ -91,6 +96,7 @@
       <zone xml:id="facs_5_r_5" ulx="135" uly="1643" lrx="172" lry="1678" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="1228" lry="1757">
+      <graphic url="2220_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="68" uly="115" lrx="578" lry="221" />
       <zone xml:id="facs_6_r_2" ulx="68" uly="248" lrx="578" lry="807" />
       <zone xml:id="facs_6_r_3" ulx="66" uly="833" lrx="577" lry="1283" />
@@ -98,12 +104,14 @@
       <zone xml:id="facs_6_r_5" ulx="592" uly="1471" lrx="1101" lry="1604" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="1236" lry="1744">
+      <graphic url="2220_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="139" uly="106" lrx="653" lry="1297" />
       <zone xml:id="facs_7_r_2" ulx="667" uly="106" lrx="1178" lry="637" />
       <zone xml:id="facs_7_r_3" ulx="665" uly="689" lrx="1177" lry="1594" />
       <zone xml:id="facs_7_r_4" ulx="140" uly="1325" lrx="650" lry="1592" />
     </surface>
     <surface xml:id="facs_8" ulx="0" uly="0" lrx="1232" lry="1757">
+      <graphic url="2220_p008.png"/>
       <zone xml:id="facs_8_r_1" ulx="72" uly="108" lrx="582" lry="169" />
       <zone xml:id="facs_8_r_2" ulx="71" uly="189" lrx="582" lry="1393" />
       <zone xml:id="facs_8_r_3" ulx="597" uly="1203" lrx="1106" lry="1387" />
@@ -112,7 +120,7 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[2]" />
         <head facs="#facs_1_r_1">
           Bern, 3. Juli 1985<lb facs="#facs_1_l_1_1" n="N001" />27/1985
         </head>
@@ -131,7 +139,7 @@
         <p>
           Schweizerische Ärztezeitung Bulletin des médecins suisses Bollettino dei medici svizzeri
         </p>
-      <pb facs="#facs_2" n="2" />
+      <pb facs="#facs_2" n="[1237]" />
         <p facs="#facs_2_r_1">
           Schweizerische Ärztezeitung / Bulletin des médecins suisses Band 66, 1985, Heft 27 3.7.85
         </p>
@@ -139,7 +147,7 @@
           Impressum
         </p>
         <p facs="#facs_2_r_3">
-          Verantwortlich für die Redaktion:<lb facs="#facs_2_l_3_1" n="N001" />Carlo Grassi, Dr. med. h.c.<lb facs="#facs_2_l_3_2" n="N002" />Generalsekretariat der Schweiz. Ärzteorganisation<lb facs="#facs_2_l_3_3" n="N003" />3000 Bern 16, Elfenstr. 18, Tel. 031 435543<lb facs="#facs_2_l_3_4" n="N004" />Stellvertretung: Dr. iur. Karl Appert,<lb facs="#facs_2_l_3_5" n="N005" />Schweizer Ärzte-Information,<lb facs="#facs_2_l_3_6" n="N006" />8008 Zürich, Seefeldstr. 198, Tel. 01 56 05 05<lb facs="#facs_2_l_3_7" n="N007" />Lic. iur F.-X. Deschenaux,<lb facs="#facs_2_l_3_8" n="N008" />Service romand d'information médicale<lb facs="#facs_2_l_3_9" n="N009" />1010 Lausanne, Case postale, rte d'Oron,<lb facs="#facs_2_l_3_10" n="N010" />tél. 021 321874<lb facs="#facs_2_l_3_11" n="N011" />Redaktionssekretariat: Frau Charlotte Borer<lb facs="#facs_2_l_3_12" n="N012" />3000 Bern 16, Elfenstr. 18, Tel. 031 435543
+          Verantwortlich für die Redaktion:<lb facs="#facs_2_l_3_1" n="N001" />Carlo Grassi, Dr. med. h.c.<lb facs="#facs_2_l_3_2" n="N002" />Generalsekretariat der Schweiz. Ärzteorganisation<lb facs="#facs_2_l_3_3" n="N003" />3000 Bern 16, Elfenstr. 18, Tel. 031 435543<lb facs="#facs_2_l_3_4" n="N004" />Stellvertretung: Dr. iur. Karl Appert,<lb facs="#facs_2_l_3_5" n="N005" />Schweizer Ärzte-Information,<lb facs="#facs_2_l_3_6" n="N006" />8008 Zürich, Seefeldstr. 198, Tel. 01 56 05 05<lb facs="#facs_2_l_3_7" n="N007" />Lic. iur F.-X. Deschenaux,<lb facs="#facs_2_l_3_8" n="N008" />Service romand d’information médicale<lb facs="#facs_2_l_3_9" n="N009" />1010 Lausanne, Case postale, rte d’Oron,<lb facs="#facs_2_l_3_10" n="N010" />tél. 021 321874<lb facs="#facs_2_l_3_11" n="N011" />Redaktionssekretariat: Frau Charlotte Borer<lb facs="#facs_2_l_3_12" n="N012" />3000 Bern 16, Elfenstr. 18, Tel. 031 435543
         </p>
         <p facs="#facs_2_r_4">
           Aufsichtskommission:<lb facs="#facs_2_l_4_1" n="N001" />Dr. K. Zimmermann, 8008 Zürich<lb facs="#facs_2_l_4_2" n="N002" />Dr. L. Fierz, 3000 Bern<lb facs="#facs_2_l_4_3" n="N003" />Dr. A. Hunziker, 8001 Zürich<lb facs="#facs_2_l_4_4" n="N004" />Dr. P. Oehrl, 1009 Pully<lb facs="#facs_2_l_4_5" n="N005" />Dr. F. Schönenberger, 1700 Freiburg<lb facs="#facs_2_l_4_6" n="N006" />Dr. A. Seiler, 3000 Bern
@@ -154,16 +162,16 @@
           Druck und Spedition: Büchler «Co.AG, »Schweizerische Ärztezeitung«, 3084 Wabern.
         </p>
         <p facs="#facs_2_r_8">
-          Responsable pour la rédaction:<lb facs="#facs_2_l_8_1" n="N001" />Carlo Grassi, D° méd. h.c.<lb facs="#facs_2_l_8_2" n="N002" />Secrétariat général des institutions du corps médical suisse, Elfenstr. 18, 3000 Bern 16<lb facs="#facs_2_l_8_3" n="N003" />Remplaçant: Dr. iur. Karl Appert,<lb facs="#facs_2_l_8_4" n="N004" />Schweizer Ärzte-Information,<lb facs="#facs_2_l_8_5" n="N005" />8008 Zürich, Seefeldstr. 198, Tel. 01 56 05 05<lb facs="#facs_2_l_8_6" n="N006" />Lic. iur. F.-X. Deschenaux,<lb facs="#facs_2_l_8_7" n="N007" />Service romand d'information médicale<lb facs="#facs_2_l_8_8" n="N008" />1010 Lausanne, Case postale, rte d'Oron,<lb facs="#facs_2_l_8_9" n="N009" />tél. 021 321874<lb facs="#facs_2_l_8_10" n="N010" />Secrétariat de rédaction: Mme Charlotte Borer<lb facs="#facs_2_l_8_11" n="N011" />3000 Berne 16, Elfenstrasse 18, tél. 031 435543
+          Responsable pour la rédaction:<lb facs="#facs_2_l_8_1" n="N001" />Carlo Grassi, D° méd. h.c.<lb facs="#facs_2_l_8_2" n="N002" />Secrétariat général des institutions du corps médical suisse, Elfenstr. 18, 3000 Bern 16<lb facs="#facs_2_l_8_3" n="N003" />Remplaçant: Dr. iur. Karl Appert,<lb facs="#facs_2_l_8_4" n="N004" />Schweizer Ärzte-Information,<lb facs="#facs_2_l_8_5" n="N005" />8008 Zürich, Seefeldstr. 198, Tel. 01 56 05 05<lb facs="#facs_2_l_8_6" n="N006" />Lic. iur. F.-X. Deschenaux,<lb facs="#facs_2_l_8_7" n="N007" />Service romand d’information médicale<lb facs="#facs_2_l_8_8" n="N008" />1010 Lausanne, Case postale, rte d’Oron,<lb facs="#facs_2_l_8_9" n="N009" />tél. 021 321874<lb facs="#facs_2_l_8_10" n="N010" />Secrétariat de rédaction: Mme Charlotte Borer<lb facs="#facs_2_l_8_11" n="N011" />3000 Berne 16, Elfenstrasse 18, tél. 031 435543
         </p>
         <p facs="#facs_2_r_9">
           Commission de surveillance:<lb facs="#facs_2_l_9_1" n="N001" />D° K. Zimmermann, 8008 Zurich<lb facs="#facs_2_l_9_2" n="N002" />D° L. Fierz, 3000 Berne<lb facs="#facs_2_l_9_3" n="N003" />D° A. Hunziker, 8001 Zurich<lb facs="#facs_2_l_9_4" n="N004" />D° P. Oehrl, 1009 Pully<lb facs="#facs_2_l_9_5" n="N005" />D° F. Schönenberger, 1700 Fribourg<lb facs="#facs_2_l_9_6" n="N006" />D° A. Seiler, 3000 Berne
         </p>
         <p facs="#facs_2_r_10">
-          Dernier délai pour les articles originaux et les communications: le lundi matin de la semaine précédant celle de la parution.<lb facs="#facs_2_l_10_1" n="N001" />Les textes signés ne reflètent que l'opinion de l'auteur.<lb facs="#facs_2_l_10_2" n="N002" />Toute la correspondance relative au «Bulletin des médecins suisses» de même que les manuscrits qui lui sont destinés doivent être adressés à la rédaction et non à l'éditeur.
+          Dernier délai pour les articles originaux et les communications: le lundi matin de la semaine précédant celle de la parution.<lb facs="#facs_2_l_10_1" n="N001" />Les textes signés ne reflètent que l’opinion de l’auteur.<lb facs="#facs_2_l_10_2" n="N002" />Toute la correspondance relative au «Bulletin des médecins suisses» de même que les manuscrits qui lui sont destinés doivent être adressés à la rédaction et non à l’éditeur.
         </p>
         <p facs="#facs_2_r_11">
-          Editions, régie des annonces et abonnements:<lb facs="#facs_2_l_11_1" n="N001" />Hans Huber SA, Länggassstrasse 76, Case postale, 3000 Berne 9, tél. 031 242533. – Paraît tous les huit jours. – Abonnement annuel Suisse Fr.110.-; étranger Fr.a.174.- (incl. frais de ports et d'expédition). – Compte de chèques postaux 30-6675. La durée d'abonnement se renouvelle automatiquement chaque année si vous n'annulliez pas l'abonnement par écrit jusqu'au 1er octobre. Dernier délai pour la remise des annonces: commerciales, 3 semaines avant la parution; offres et demandes d'emploi, le mardi (16 h) de la semaine précédant la parution.<lb facs="#facs_2_l_11_2" n="N002" />On peut s'abonner directement par la poste dans les pays ci-après: Allemagne, Belgique, Danemark, Finlande, Italie, Luxembourg, Norvège, Portugal et Suède.
+          Editions, régie des annonces et abonnements:<lb facs="#facs_2_l_11_1" n="N001" />Hans Huber SA, Länggassstrasse 76, Case postale, 3000 Berne 9, tél. 031 242533. – Paraît tous les huit jours. – Abonnement annuel Suisse Fr.110.-; étranger Fr.a.174.- (incl. frais de ports et d’expédition). – Compte de chèques postaux 30-6675. La durée d’abonnement se renouvelle automatiquement chaque année si vous n’annulliez pas l’abonnement par écrit jusqu’au 1er octobre. Dernier délai pour la remise des annonces: commerciales, 3 semaines avant la parution; offres et demandes d’emploi, le mardi (16 h) de la semaine précédant la parution.<lb facs="#facs_2_l_11_2" n="N002" />On peut s’abonner directement par la poste dans les pays ci-après: Allemagne, Belgique, Danemark, Finlande, Italie, Luxembourg, Norvège, Portugal et Suède.
         </p>
         <p facs="#facs_2_r_12">
           Impression et expédition: Büchler «Cie SA, »Bulletin des médecins suisses», 3084 Wabern.
@@ -178,7 +186,7 @@
           1139 Schweizerische Medizinische Interfakultätskommission<lb facs="#facs_2_l_15_1" n="N001" />Der Bericht über die Beratungen der Interfakultätskommission vom 25. Mai 1985 in Bern fasst die bei diesem Anlass gehaltenen zwei Referate über den Stellenwert des Pharmaze-studiums in der Ausbildung der Medizinalpersonen und die wichtigsten Punkte der anschliessenden Diskussion zusammen. An der gleichen Sitzung orientierte der Präsident der FMH über die Pläne zur Durchführung eines Pilotversuches einer «Gesundheitskasse» nach dem Vorbild der amerikanischen HMO. Auch diese Information wird in ihren wichtigsten Punkten zusammengefasst.
         </p>
         <p facs="#facs_2_r_16">
-          1240 Commission Interfacultés Médicale Suisse (CIMS)<lb facs="#facs_2_l_16_1" n="N001" />Réunie le 25 mai, la CIMS a entendu deux exposés au sujet de la place des études de pharmacie dans la formation à l'exercice d'une activité du domaine médical. On trouve résumés, ci-après, ces exposés et la discussion qui en est résultée. À la même séance, le président de la FMH a donné une information sur l'essai pilote de «caisse de santé» (HMO).
+          1240 Commission Interfacultés Médicale Suisse (CIMS)<lb facs="#facs_2_l_16_1" n="N001" />Réunie le 25 mai, la CIMS a entendu deux exposés au sujet de la place des études de pharmacie dans la formation à l’exercice d’une activité du domaine médical. On trouve résumés, ci-après, ces exposés et la discussion qui en est résultée. À la même séance, le président de la FMH a donné une information sur l’essai pilote de «caisse de santé» (HMO).
         </p>
         <p facs="#facs_2_r_17">
           1241 Milieutherapie und Zwangsmassnahmen<lb facs="#facs_2_l_17_1" n="N001" />Die Psychiatrische Universitätsklinik Waldau-Bern lud Anfang November 1984 zu einem aus dem In- und Ausland stark besuchten Symposium unter dem Thema «Milieutherapie und Zwangsmassnahmen» nach Bern ein. Die Referate wurden auf Band aufgenommen und ins reine geschrieben.<lb facs="#facs_2_l_17_2" n="N002" />Durch das nun seit einigen Jahren in Kraft stehende Gesetz über den fürsorgerischen Freiheitsentzug verdienen die gehaltenen Vorträge die besondere Aufmerksamkeit der Ärzte.<lb facs="#facs_2_l_17_3" n="N003" />In Absprache mit dem ärztlichen Direktor der «Waldau», Prof. Dr. med. W. Böker – mit dem auch die Auswahl getroffen wurde –, veröffentlichen wir einige der besonders auch für die Ärzte informativen Texte:
@@ -195,17 +203,17 @@
         <p facs="#facs_2_r_21">
           1254 Wie erlebt der Patient unsere Zwangsmassnahmen – und wie erleben wir sie?<lb facs="#facs_2_l_21_1" n="N001" />Prof. K. Ernst
         </p>
-      <pb facs="#facs_3" n="3" />
+      <pb facs="#facs_3" n="[1256]" />
         <p facs="#facs_3_r_1">
           Bern, 3. Juli 1985<lb facs="#facs_3_l_1_1" n="N001" />66. Jahrgang<lb facs="#facs_3_l_1_2" n="N002" />Erscheint jeden Mittwoch
         </p>
         <p facs="#facs_3_r_2">
-          |   | 1256 Zwangsmassnahmen in der Psychiatrie: medizinisch-ethische und rechtliche Aspekte aus der Sicht des Kantonsarztes Prof. H. E. Bürgi | 1266 Todesfälle / Décès / Decessi Praxiseröffnungen / Nouveaux cabinets médicaux / Apertura di nuovi studi medici Ernennungen / Nominations / Nomine  |<lb facs="#facs_3_l_2_1" n="N001" />| --- | --- | --- |<lb facs="#facs_3_l_2_2" n="N002" />|   | 1258 Herabsetzung des Unfallrisikos beim Fussballspiel Dr. rer. pol. K. Wegmüller Die tragischen Vorkommnisse beim Cupfinal von Brüssel sind noch immer traurige Gegenwart. Dem Artikel des Chefs der Abteilung Sport der Schweizerischen Beratungsstelle für Unfallverhütung (BfU) kommt deshalb besondere Bedeutung zu. Vielleicht äussern sich auch Sportärzte zu diesem Thema. |   |<lb facs="#facs_3_l_2_3" n="N003" />|  Medizinische Fachgesellschaften Sociétés de médecine Società di specialisti | 1261 Schweizerische Gesellschaft für Pathologie/Fachausschuss der Pathologen FMH Empfehlungen zur Neubeurteilung von histologischen und zytologischen Präparaten | Offizielle Bekanntmachungen Communications officielles Comunicazioni ufficiali  |<lb facs="#facs_3_l_2_4" n="N004" />|   | 1262 Société suisse de pathologie / Groupement professionnel des pathologies FMH Recommandations pour la réévaluation de diagnostics de préparations histologiques et cytologiques par plusieurs pathologies | 1267 Aufnahme von Mitgliedern Admission de membres  |<lb facs="#facs_3_l_2_5" n="N005" />|  Rechtswesen Questions juridiques Questioni giuridiche | 1263 Drogendelikt, Vermögenseinziehung und soziale Eingliederung Dr. iur. R. Bernhard Das Bundesgericht hatte sich im Zusammenhang mit einem Drogendelikt auch mit der Frage auseinanderzusetzen, in welchem Umfange ein Drogendelinquent verpflichtet werden kann, den durch den Drogenverkauf erzielten Gewinn an die Staatskasse abzuliefern, und inwiefern allfällige Unterstützungspflichten des Verurteilten bei der Zumessung zu berücksichtigen seien. Dans une affaire d'infraction à la loi sur les stupéfiants, le Tribunal fédéral a dû se prononcer sur l'obligation qui peut être faite au délinquant de restituer à l'Etat le bénéfice réalisé par la vente de drogues. | 1267 CHUV: Exposé sur les relations entre l'hospitalisation publique et privée  |<lb facs="#facs_3_l_2_6" n="N006" />|   |  | 1267 Hypophysen-Sprechstunde Inselspital Bern  |<lb facs="#facs_3_l_2_7" n="N007" />|   |  | 1267 Symposium: Somatostatin in der gastroent. Therapie, Basel  |<lb facs="#facs_3_l_2_8" n="N008" />|   |  | 1268 Fortbildung Privatklinik Obach  |<lb facs="#facs_3_l_2_9" n="N009" />|   |  | 1268 Bourses d'études fédérales  |<lb facs="#facs_3_l_2_10" n="N010" />|   |  | 1269 Cours VESKA de gestion hospitalière  |<lb facs="#facs_3_l_2_11" n="N011" />|   |  | 1270 Fachtagung: Leistungsdaten und Informatik  |<lb facs="#facs_3_l_2_12" n="N012" />|   |  | Kongresskalender Dates à retenir Date da ricordare  |<lb facs="#facs_3_l_2_13" n="N013" />|   |  | 1271 Heute mit unvollständigem Kalender  |<lb facs="#facs_3_l_2_14" n="N014" />|   |  | Stellenvermittlung Office de placement Ufficio di collocamento  |<lb facs="#facs_3_l_2_15" n="N015" />|   |  | 1276 Stellenvermittlungsanzeiger des Ärztesekretariates, Elfenstrasse 18, 3006 Bern  |<lb facs="#facs_3_l_2_16" n="N016" />|  Die Meinung der Leser Le coin du lecteur La tribuna del lettore | 1264 Leser antworten: Der Persönlichkeitsschutz beim ärztlichen Handeln. Überlegungen eines Chefarztes zu einem Beitrag aus den in der «SÄZ» publizierten Vortragstexten zum Thema «Arzt und Recht». |   |<lb facs="#facs_3_l_2_17" n="N017" />|  Bücher Bibliographie Bibliografia | 1265 Konflikte im Alltag / Interdisziplinäre Sozialmedizin, Sozialarbeit in der ambulanten Medizin / Die Gesteine und ihre Mineralien / Spätlegasthenie und funktionaler Analphabetismus / Arbeiten zur Theorie und Praxis der Rehabilitation in Medizin, Psychologie und Sonderpädagogik, Früherkennung und Früherziehung behinderter Kinder. |   |
+          |   | 1256 Zwangsmassnahmen in der Psychiatrie: medizinisch-ethische und rechtliche Aspekte aus der Sicht des Kantonsarztes Prof. H. E. Bürgi | 1266 Todesfälle / Décès / Decessi Praxiseröffnungen / Nouveaux cabinets médicaux / Apertura di nuovi studi medici Ernennungen / Nominations / Nomine  |<lb facs="#facs_3_l_2_1" n="N001" />| --- | --- | --- |<lb facs="#facs_3_l_2_2" n="N002" />|   | 1258 Herabsetzung des Unfallrisikos beim Fussballspiel Dr. rer. pol. K. Wegmüller Die tragischen Vorkommnisse beim Cupfinal von Brüssel sind noch immer traurige Gegenwart. Dem Artikel des Chefs der Abteilung Sport der Schweizerischen Beratungsstelle für Unfallverhütung (BfU) kommt deshalb besondere Bedeutung zu. Vielleicht äussern sich auch Sportärzte zu diesem Thema. |   |<lb facs="#facs_3_l_2_3" n="N003" />|  Medizinische Fachgesellschaften Sociétés de médecine Società di specialisti | 1261 Schweizerische Gesellschaft für Pathologie/Fachausschuss der Pathologen FMH Empfehlungen zur Neubeurteilung von histologischen und zytologischen Präparaten | Offizielle Bekanntmachungen Communications officielles Comunicazioni ufficiali  |<lb facs="#facs_3_l_2_4" n="N004" />|   | 1262 Société suisse de pathologie / Groupement professionnel des pathologies FMH Recommandations pour la réévaluation de diagnostics de préparations histologiques et cytologiques par plusieurs pathologies | 1267 Aufnahme von Mitgliedern Admission de membres  |<lb facs="#facs_3_l_2_5" n="N005" />|  Rechtswesen Questions juridiques Questioni giuridiche | 1263 Drogendelikt, Vermögenseinziehung und soziale Eingliederung Dr. iur. R. Bernhard Das Bundesgericht hatte sich im Zusammenhang mit einem Drogendelikt auch mit der Frage auseinanderzusetzen, in welchem Umfange ein Drogendelinquent verpflichtet werden kann, den durch den Drogenverkauf erzielten Gewinn an die Staatskasse abzuliefern, und inwiefern allfällige Unterstützungspflichten des Verurteilten bei der Zumessung zu berücksichtigen seien. Dans une affaire d’infraction à la loi sur les stupéfiants, le Tribunal fédéral a dû se prononcer sur l’obligation qui peut être faite au délinquant de restituer à l’Etat le bénéfice réalisé par la vente de drogues. | 1267 CHUV: Exposé sur les relations entre l’hospitalisation publique et privée  |<lb facs="#facs_3_l_2_6" n="N006" />|   |  | 1267 Hypophysen-Sprechstunde Inselspital Bern  |<lb facs="#facs_3_l_2_7" n="N007" />|   |  | 1267 Symposium: Somatostatin in der gastroent. Therapie, Basel  |<lb facs="#facs_3_l_2_8" n="N008" />|   |  | 1268 Fortbildung Privatklinik Obach  |<lb facs="#facs_3_l_2_9" n="N009" />|   |  | 1268 Bourses d’études fédérales  |<lb facs="#facs_3_l_2_10" n="N010" />|   |  | 1269 Cours VESKA de gestion hospitalière  |<lb facs="#facs_3_l_2_11" n="N011" />|   |  | 1270 Fachtagung: Leistungsdaten und Informatik  |<lb facs="#facs_3_l_2_12" n="N012" />|   |  | Kongresskalender Dates à retenir Date da ricordare  |<lb facs="#facs_3_l_2_13" n="N013" />|   |  | 1271 Heute mit unvollständigem Kalender  |<lb facs="#facs_3_l_2_14" n="N014" />|   |  | Stellenvermittlung Office de placement Ufficio di collocamento  |<lb facs="#facs_3_l_2_15" n="N015" />|   |  | 1276 Stellenvermittlungsanzeiger des Ärztesekretariates, Elfenstrasse 18, 3006 Bern  |<lb facs="#facs_3_l_2_16" n="N016" />|  Die Meinung der Leser Le coin du lecteur La tribuna del lettore | 1264 Leser antworten: Der Persönlichkeitsschutz beim ärztlichen Handeln. Überlegungen eines Chefarztes zu einem Beitrag aus den in der «SÄZ» publizierten Vortragstexten zum Thema «Arzt und Recht». |   |<lb facs="#facs_3_l_2_17" n="N017" />|  Bücher Bibliographie Bibliografia | 1265 Konflikte im Alltag / Interdisziplinäre Sozialmedizin, Sozialarbeit in der ambulanten Medizin / Die Gesteine und ihre Mineralien / Spätlegasthenie und funktionaler Analphabetismus / Arbeiten zur Theorie und Praxis der Rehabilitation in Medizin, Psychologie und Sonderpädagogik, Früherkennung und Früherziehung behinderter Kinder. |   |
         </p>
         <p facs="#facs_3_r_3">
           Schweizerische Ärztezeitung / Bulletin des médecins suisses Band 66, 1985, Heft 27 3.7.85
         </p>
-      <pb facs="#facs_4" n="4" />
+      <pb facs="#facs_4" n="[1257]" />
         <p facs="#facs_4_r_1">
           Tagung Milieutherapie und Zwangsmassnahmen
         </p>
@@ -236,7 +244,7 @@
         <p>
           ¹ Referat, gehalten an der Tagung «Milieutherapie und Zwangsmassnahmen» vom 9./10. November 1984 in der Psychiatrischen Universitätsklinik Bern.
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[1258]" />
         <p facs="#facs_5_r_1">
           dert, es ist, als wäre es ein magischer Stock – une baguette magique – und damit entsteht all das.
         </p>
@@ -252,7 +260,7 @@
         <p facs="#facs_5_r_5">
           Schweizerische Ärztezeitung / Bulletin des médecins suisses Band 66, 1985, Heft 27 3.7.85
         </p>
-      <pb facs="#facs_6" n="6" />
+      <pb facs="#facs_6" n="[1259]" />
         <p facs="#facs_6_r_1">
           haben, dann ist sie eben, wie sie ist, ihre Form, wie sie vorne ist, hat ihre Konsequenzen hinten. Sie können es nicht wechseln, Sie haben nicht diese «malleabilité» des Traumes.
         </p>
@@ -274,9 +282,9 @@
         <p>
           Schweizerische Ärztezeitung / Bulletin des médecins suisses Band 66, 1985, Heft 27 3.7.85
         </p>
-      <pb facs="#facs_7" n="7" />
+      <pb facs="#facs_7" n="[1260]" />
         <p facs="#facs_7_r_1">
-          denkt sehr rational, und wenn man ihr zuhört, hat man das Gefühl, dass sie ein freier Mensch ist, vernünftig und frei. Sie hat die Wahl, und sie entscheidet für das, was am wenigsten schädlich sein wird. Also im Determinismus, mit Überlegen der Wahrscheinlichkeit usw., während Antigone nur sagt: «Ich gehorche den Gesetzen der Götter.» Ich gehorche den Gesetzen der Götter, was meint sie damit? Sie meint damit: «Du kannst schön reden, ich höre dir nicht zu», und das ist eigentlich ein Zeichen von Krankheit, wenn man nicht fähig ist zuzuhören. Ich höre dir nicht zu, denn ich weiß ganz genau, fundamental und unbedingt, was ich zu tun habe, und das muss getan werden um jeden Preis. Ist Antigone krank? Muss man bei ihr irgendwelche Zwangsmassnahmen anwenden? Dann Phädra: Phädra liebt Hypolyt, ihren Schwiegersohn. Und Hypolyt liebt jemanden anderen. Ich kann mich erinnern: Einmal in der Schule in meiner Jugend, da habe ich «Phèdre» mit den Schülern gelesen. Und ein Schüler hat den Finger erhoben und gesagt: «Wissen Sie, ich verstehe das nicht. Du moment qu'elle voit qu'avec Hypolytte ça ne peut rien donner, pourquoi est-ce qu'elle l'aime?» Also, da sie sieht, dass es mit Hypolyt zu nichts führt, warum liebt sie ihn? Das war so einfach. Ja, warum liebt sie ihn? Weil sie ihn eben liebt. Das ist ein anderer Fall als jener von Antigone, aber hier kann man sich wieder fragen: Ist diese Liebe, diese Leidenschaft Phèdre selbst, oder ist es wie ein Parasit auf der Freiheit von Phädra, der sie dazu zwingt, alles zu tun, was sie in der Tragödie tut, sich selbst zu verraten usw. Wo ist da die Freiheit? Soll man also Phädra psychoanalysieren, um ihr ihre Freiheit zurückzugeben? Sie sehen die Zweideutigkeit der Sache. Die Zweideutigkeit der Sache ist ganz gefährlich. Denn wenn man vernünftig und mittelmäßig sagen würde, diese absolute Liebe – und das ist nicht dasselbe, nicht wahr, ich sage nicht, dass das dasselbe ist, ich habe absichtlich zwei verschiedene Fälle gegeben, eine Leidenschaft und eine ethische Verpflichtung bei Antigone –, diese Absolutheit der Bindung, die das Subjekt dann verwirklicht, ohne Wahl, ist das eine Krankheit, oder ist das gerade der höchste Punkt der Freiheit?
+          denkt sehr rational, und wenn man ihr zuhört, hat man das Gefühl, dass sie ein freier Mensch ist, vernünftig und frei. Sie hat die Wahl, und sie entscheidet für das, was am wenigsten schädlich sein wird. Also im Determinismus, mit Überlegen der Wahrscheinlichkeit usw., während Antigone nur sagt: «Ich gehorche den Gesetzen der Götter.» Ich gehorche den Gesetzen der Götter, was meint sie damit? Sie meint damit: «Du kannst schön reden, ich höre dir nicht zu», und das ist eigentlich ein Zeichen von Krankheit, wenn man nicht fähig ist zuzuhören. Ich höre dir nicht zu, denn ich weiß ganz genau, fundamental und unbedingt, was ich zu tun habe, und das muss getan werden um jeden Preis. Ist Antigone krank? Muss man bei ihr irgendwelche Zwangsmassnahmen anwenden? Dann Phädra: Phädra liebt Hypolyt, ihren Schwiegersohn. Und Hypolyt liebt jemanden anderen. Ich kann mich erinnern: Einmal in der Schule in meiner Jugend, da habe ich «Phèdre» mit den Schülern gelesen. Und ein Schüler hat den Finger erhoben und gesagt: «Wissen Sie, ich verstehe das nicht. Du moment qu’elle voit qu’avec Hypolytte ça ne peut rien donner, pourquoi est-ce qu’elle l’aime?» Also, da sie sieht, dass es mit Hypolyt zu nichts führt, warum liebt sie ihn? Das war so einfach. Ja, warum liebt sie ihn? Weil sie ihn eben liebt. Das ist ein anderer Fall als jener von Antigone, aber hier kann man sich wieder fragen: Ist diese Liebe, diese Leidenschaft Phèdre selbst, oder ist es wie ein Parasit auf der Freiheit von Phädra, der sie dazu zwingt, alles zu tun, was sie in der Tragödie tut, sich selbst zu verraten usw. Wo ist da die Freiheit? Soll man also Phädra psychoanalysieren, um ihr ihre Freiheit zurückzugeben? Sie sehen die Zweideutigkeit der Sache. Die Zweideutigkeit der Sache ist ganz gefährlich. Denn wenn man vernünftig und mittelmäßig sagen würde, diese absolute Liebe – und das ist nicht dasselbe, nicht wahr, ich sage nicht, dass das dasselbe ist, ich habe absichtlich zwei verschiedene Fälle gegeben, eine Leidenschaft und eine ethische Verpflichtung bei Antigone –, diese Absolutheit der Bindung, die das Subjekt dann verwirklicht, ohne Wahl, ist das eine Krankheit, oder ist das gerade der höchste Punkt der Freiheit?
         </p>
         <p facs="#facs_7_r_2">
           Ich glaube, dass es eine Ebene gibt – Gott sei Dank –, wo wir alltäglich vernünftig leben können, und da hat man die Wahl, aber wenn man überhaupt die Ebene der absoluten Verpflichtung, der absoluten Entscheidung, ohne Wahl, einfach verwerfen würde, dann würde auch die mittelmäßige Freiheit ihren Nerv und ihren Sinn verlieren. Man muss sehr bescheiden sein in der Berufung auf die absolute Freiheit. Und ich glaube, dass Leute, die sich rechtfertigen dadurch, dass sie absolut handeln, meistens
@@ -290,12 +298,12 @@
         <p>
           Schweizerische Ärztezeitung / Bulletin des médecins suisses Band 66, 1985, Heft 27 3.7.85
         </p>
-      <pb facs="#facs_8" n="8" />
+      <pb facs="#facs_8" n="[1261]" />
         <p facs="#facs_8_r_1">
           Objektivität in dieser Richtung zu erreichen, mindestens innerhalb des psychiatrischen Berufs.
         </p>
         <p facs="#facs_8_r_2">
-          Nun habe ich alles verwickelt und sage trotzdem: Die Merkmale sind da und die müssen festgelegt und vertieft werden. Behandlung, psychiatrische Behandlung kann nur natürlich, nicht im Dienste einer Gesellschaft, sondern nur im Dienste der möglichen Freiheit des Patienten sein, unter einer Beschränkung selbstverständlich, dass das nicht andere Menschen bedroht. Und da ist die Grenze. Da ist wieder eine faktische Grenze, da sind die Grenzen, von denen ich am Anfang sprach, wir sind eben nicht in der absoluten, reinen Freiheit. Das gibt es nicht. Wenn Bedrohungen da sind für andere, besonders für Kinder usw., dann geht es nicht. Und wenn man sagt, der Patient muss einverstanden sein, dann finde ich ganz klar, dass, wenn der Patient die Fähigkeit hat, einverstanden zu sein, die Behandlung natürlich gerechtfertigt ist. Aber sie hat weniger Berechtigung, als wenn er unfähig ist, denn dann ist er viel kränker. Da, wo er am meisten krank ist, kann er doch gar nicht »ja« sagen. Denn er ist eben nicht mehr frei. Wenn es darum geht, jemanden zu behandeln, damit er nach Möglichkeit wieder die Freiheit erwirbt, dann kann man sich natürlich nicht auf diese Zusage verlassen. Das sind also schreckliche Probleme. Ich finde, die Psychiater haben einen schrecklichen Beruf. Aber das müssen sie eben, weil sie ihn gewählt haben, auf sich nehmen. Was mich erstaunt, ist, dass manche trotz aller Schwierigkeiten, trotz aller Unlösbarkeit im Grunde allein entscheiden wollen. Dieses Alleinentscheiden-Wollen verstehe ich nicht. Mir scheint, ich möchte nach Möglichkeit in solchen Fällen nie allein entscheiden, sondern mit einem oder zwei Kollegen. Denn es ist zu schwierig, als dass man es für sich selbst nimmt, genau wie mit den anderen Fortschritten der Medizin und allen Problemen, die sich heute stellen. Ich kann mir nicht einen Menschen, einen ernsthaften Menschen vorstellen, der den Anspruch erhebt, allein – seul après Dieu – über diese Sachen zu entscheiden. Aber auf der andern Seite möchte ich doch an das französische Proverbe erinnern, das sagt: «Qui veut faire l'ange fait la bête.» Es gibt in unserer Zeit eine Tendenz zur Engelhaftigkeit. Et qui veut faire l'ange fait la bête. Diejenigen, die keine Zwangsmassnahmen
+          Nun habe ich alles verwickelt und sage trotzdem: Die Merkmale sind da und die müssen festgelegt und vertieft werden. Behandlung, psychiatrische Behandlung kann nur natürlich, nicht im Dienste einer Gesellschaft, sondern nur im Dienste der möglichen Freiheit des Patienten sein, unter einer Beschränkung selbstverständlich, dass das nicht andere Menschen bedroht. Und da ist die Grenze. Da ist wieder eine faktische Grenze, da sind die Grenzen, von denen ich am Anfang sprach, wir sind eben nicht in der absoluten, reinen Freiheit. Das gibt es nicht. Wenn Bedrohungen da sind für andere, besonders für Kinder usw., dann geht es nicht. Und wenn man sagt, der Patient muss einverstanden sein, dann finde ich ganz klar, dass, wenn der Patient die Fähigkeit hat, einverstanden zu sein, die Behandlung natürlich gerechtfertigt ist. Aber sie hat weniger Berechtigung, als wenn er unfähig ist, denn dann ist er viel kränker. Da, wo er am meisten krank ist, kann er doch gar nicht »ja« sagen. Denn er ist eben nicht mehr frei. Wenn es darum geht, jemanden zu behandeln, damit er nach Möglichkeit wieder die Freiheit erwirbt, dann kann man sich natürlich nicht auf diese Zusage verlassen. Das sind also schreckliche Probleme. Ich finde, die Psychiater haben einen schrecklichen Beruf. Aber das müssen sie eben, weil sie ihn gewählt haben, auf sich nehmen. Was mich erstaunt, ist, dass manche trotz aller Schwierigkeiten, trotz aller Unlösbarkeit im Grunde allein entscheiden wollen. Dieses Alleinentscheiden-Wollen verstehe ich nicht. Mir scheint, ich möchte nach Möglichkeit in solchen Fällen nie allein entscheiden, sondern mit einem oder zwei Kollegen. Denn es ist zu schwierig, als dass man es für sich selbst nimmt, genau wie mit den anderen Fortschritten der Medizin und allen Problemen, die sich heute stellen. Ich kann mir nicht einen Menschen, einen ernsthaften Menschen vorstellen, der den Anspruch erhebt, allein – seul après Dieu – über diese Sachen zu entscheiden. Aber auf der andern Seite möchte ich doch an das französische Proverbe erinnern, das sagt: «Qui veut faire l’ange fait la bête.» Es gibt in unserer Zeit eine Tendenz zur Engelhaftigkeit. Et qui veut faire l’ange fait la bête. Diejenigen, die keine Zwangsmassnahmen
         </p>
         <p facs="#facs_8_r_3">
           wollen, die die absolute Freiheit beanspruchen und keine Begrenzung annehmen, die reden, als wären wir im Absoluten, hier und jetzt, in der Zeit, die – glaube ich – haben nicht genügend Sinn für Freiheit. Und das möchte ich jetzt auch betonen. Wir sollten nach Möglichkeit genaue und objektive Kriterien finden. Aber die genügen nicht. Jenseits dieser Kriterien gibt es etwas anderes, das, was wir bei Antigone, das, was wir bei Phèdre, das, was wir sonst bei Menschen finden. Und da kann sich der Psychiater nur auf eines verlassen – wie wir alle übrigens, wir Erzieher – auf unseren eigenen Sinn für Freiheit. Ich glaube, dass Psychiater die Freiheit leugnen, nicht hier, sondern wirklich, denn es gibt Leute, viele Leute, die Freiheit theoretisch mit dem Mund leugnen und die einen tiefen Sinn für Freiheit im alltäglichen Leben haben und umgekehrt. Es gibt solche, die von der Freiheit reden und keinen Sinn für Freiheit haben. Da gibt es grosse Unterschiede zwischen der Welt der Worte und der Welt des Erlebten. Aber ich glaube, dass, je schärfer der Sinn, der persönliche Sinn für Freiheit auf allen ihren Ebenen, desto klarer sieht der Mensch die unvermeidlichen und zum Teil unentbehrlichen Zwänge. Er nimmt sie an, um sie zu beherrschen, nicht um sie abzuschaffen. Je schärfer der Sinn für Freiheit, desto delikater der Sinn für die Zwänge und umgekehrt. Diejenigen, die glauben, die Zwänge leugnen oder ignorieren zu können, sind meistens Leute, die eine falsche Vorstellung von der Freiheit haben und weniger echten Sinn für sie. Worin besteht diese Falschheit? Sie besteht darin, dass man sich die Freiheit wie eine Tatsache vorstellt. Etwas Tatsächliches. Und wenn man diese Vorstellung hat, dann kann man natürlich nicht mehr verstehen, was diese Polarität von Freiheit und gegebenen Zwängen ist. Also geht es darum, dass diejenigen, die mit der Freiheit der Menschen zu tun haben, ihren eigenen Sinn für Freiheit wirklich pflegen, vertiefen, raffinieren und verdeutlichen.

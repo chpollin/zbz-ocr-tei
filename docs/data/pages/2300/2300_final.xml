@@ -39,6 +39,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="750" lry="1200">
+      <graphic url="2300_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="51" uly="109" lrx="486" lry="178" />
       <zone xml:id="facs_2_r_2" ulx="51" uly="217" lrx="244" lry="241" />
       <zone xml:id="facs_2_r_3" ulx="49" uly="278" lrx="702" lry="514" />
@@ -49,6 +50,7 @@
       <zone xml:id="facs_2_r_8" ulx="50" uly="1033" lrx="700" lry="1107" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="750" lry="1200">
+      <graphic url="2300_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="48" uly="41" lrx="700" lry="95" />
       <zone xml:id="facs_3_r_2" ulx="48" uly="86" lrx="702" lry="279" />
       <zone xml:id="facs_3_r_3" ulx="48" uly="271" lrx="702" lry="462" />
@@ -57,6 +59,7 @@
       <zone xml:id="facs_3_r_6" ulx="50" uly="933" lrx="702" lry="1101" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="750" lry="1200">
+      <graphic url="2300_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="48" uly="45" lrx="699" lry="122" />
       <zone xml:id="facs_4_r_2" ulx="47" uly="115" lrx="699" lry="258" />
       <zone xml:id="facs_4_r_3" ulx="47" uly="253" lrx="698" lry="392" />
@@ -67,12 +70,14 @@
       <zone xml:id="facs_4_r_8" ulx="45" uly="961" lrx="698" lry="1106" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="750" lry="1200">
+      <graphic url="2300_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="50" uly="42" lrx="701" lry="120" />
       <zone xml:id="facs_5_r_2" ulx="51" uly="122" lrx="704" lry="518" />
       <zone xml:id="facs_5_r_3" ulx="48" uly="518" lrx="701" lry="913" />
       <zone xml:id="facs_5_r_4" ulx="53" uly="913" lrx="703" lry="1103" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="750" lry="1200">
+      <graphic url="2300_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="47" uly="51" lrx="702" lry="218" />
       <zone xml:id="facs_6_r_2" ulx="48" uly="216" lrx="701" lry="383" />
       <zone xml:id="facs_6_r_3" ulx="47" uly="384" lrx="701" lry="596" />
@@ -80,6 +85,7 @@
       <zone xml:id="facs_6_r_5" ulx="48" uly="1056" lrx="700" lry="1110" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="750" lry="1200">
+      <graphic url="2300_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="51" uly="37" lrx="702" lry="84" />
       <zone xml:id="facs_7_r_2" ulx="51" uly="78" lrx="702" lry="198" />
       <zone xml:id="facs_7_r_3" ulx="49" uly="195" lrx="702" lry="341" />
@@ -91,7 +97,7 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_2" n="2" />
+        <pb facs="#facs_2" n="[2]" />
         <head facs="#facs_2_r_1">
           Journal of the British Society for Phenomenology, Vol. 17, No. 1, January 1986
         </head>
@@ -119,7 +125,7 @@
         <p>
           The subject is alive, and as such it has needs and wants, it is threatened by death, it has vital interests for which it must fight. As such, it is also concretely located in space and time, under certain circumstances
         </p>
-      <pb facs="#facs_3" n="3" />
+      <pb facs="#facs_3" n="[3]" />
         <p facs="#facs_3_r_1">
           which it did not choose, but upon which its life is dependent. This is what Jaspers calls Dasein.
         </p>
@@ -141,7 +147,7 @@
         <p>
           4
         </p>
-      <pb facs="#facs_4" n="4" />
+      <pb facs="#facs_4" n="[4]" />
         <p facs="#facs_4_r_1">
           means: Existence is in time. But it does somehow cross time (Jaspers says: <hi rendition="#i">quer zur Zeit</hi>), as in time everything is relative and interdependent whereas Existence is like the eruption in time of the absolute of beyond.
         </p>
@@ -169,7 +175,7 @@
         <p>
           5
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[5]" />
         <p facs="#facs_5_r_1">
           present act of Existence. There is a greater similarity to Kant, where “pure reason”, theory is only freeing space, but the steps towards Transcendence are steps of “practical reason”, of freedom.
         </p>
@@ -185,7 +191,7 @@
         <p>
           6
         </p>
-      <pb facs="#facs_6" n="6" />
+      <pb facs="#facs_6" n="[6]" />
         <p facs="#facs_6_r_1">
           questions then arise: “Who am I? What am I here for?” The social duties and tasks are no answer. It is necessary, but not enough, to find the way to one’s own solitary responsibility and freedom. The self is looking for a truth which it cannot reach by itself, but only in a communication with another self, a truth in which both are at the same time absolutely rooted, each in terms of its own human translation of Transcendence, and totally ready to recognize the translation of the other.
         </p>
@@ -204,7 +210,7 @@
         <p>
           7
         </p>
-      <pb facs="#facs_7" n="7" />
+      <pb facs="#facs_7" n="[7]" />
         <p facs="#facs_7_r_1">
           transcendent message, which remains always “in suspense” (“in der Schwebe”).
         </p>

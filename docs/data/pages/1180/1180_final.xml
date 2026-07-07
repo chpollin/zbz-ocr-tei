@@ -39,12 +39,14 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="713" lry="1174">
+      <graphic url="1180_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="429" uly="15" lrx="663" lry="79" />
       <zone xml:id="facs_1_r_2" ulx="549" uly="104" lrx="662" lry="156" />
       <zone xml:id="facs_1_r_3" ulx="166" uly="306" lrx="665" lry="352" />
       <zone xml:id="facs_1_r_4" ulx="324" uly="387" lrx="669" lry="433" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="740" lry="1172">
+      <graphic url="1180_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="30" uly="11" lrx="236" lry="35" />
       <zone xml:id="facs_2_r_2" ulx="32" uly="56" lrx="636" lry="85" />
       <zone xml:id="facs_2_r_3" ulx="31" uly="99" lrx="143" lry="118" />
@@ -55,6 +57,7 @@
       <zone xml:id="facs_2_r_8" ulx="473" uly="1084" lrx="687" lry="1132" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="740" lry="1172">
+      <graphic url="1180_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="66" uly="93" lrx="718" lry="166" />
       <zone xml:id="facs_3_r_2" ulx="63" uly="163" lrx="720" lry="283" />
       <zone xml:id="facs_3_r_3" ulx="66" uly="329" lrx="159" lry="350" />
@@ -65,6 +68,7 @@
       <zone xml:id="facs_3_r_8" ulx="20" uly="1079" lrx="713" lry="1127" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="740" lry="1172">
+      <graphic url="1180_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="34" uly="96" lrx="682" lry="147" />
       <zone xml:id="facs_4_r_2" ulx="36" uly="145" lrx="682" lry="214" />
       <zone xml:id="facs_4_r_3" ulx="35" uly="263" lrx="137" lry="284" />
@@ -75,6 +79,7 @@
       <zone xml:id="facs_4_r_8" ulx="39" uly="1034" lrx="730" lry="1133" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="740" lry="1172">
+      <graphic url="1180_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="58" uly="92" lrx="708" lry="236" />
       <zone xml:id="facs_5_r_2" ulx="55" uly="233" lrx="708" lry="379" />
       <zone xml:id="facs_5_r_3" ulx="52" uly="375" lrx="709" lry="562" />
@@ -83,6 +88,7 @@
       <zone xml:id="facs_5_r_6" ulx="8" uly="1079" lrx="702" lry="1128" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="740" lry="1172">
+      <graphic url="1180_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="30" uly="91" lrx="692" lry="211" />
       <zone xml:id="facs_6_r_2" ulx="31" uly="209" lrx="692" lry="283" />
       <zone xml:id="facs_6_r_3" ulx="32" uly="351" lrx="144" lry="373" />
@@ -92,6 +98,7 @@
       <zone xml:id="facs_6_r_7" ulx="39" uly="1060" lrx="736" lry="1131" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="740" lry="1172">
+      <graphic url="1180_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="58" uly="87" lrx="710" lry="323" />
       <zone xml:id="facs_7_r_2" ulx="56" uly="342" lrx="710" lry="651" />
       <zone xml:id="facs_7_r_3" ulx="56" uly="695" lrx="161" lry="716" />
@@ -100,6 +107,7 @@
       <zone xml:id="facs_7_r_6" ulx="56" uly="1045" lrx="706" lry="1096" />
     </surface>
     <surface xml:id="facs_8" ulx="0" uly="0" lrx="740" lry="1172">
+      <graphic url="1180_p008.png"/>
       <zone xml:id="facs_8_r_1" ulx="34" uly="86" lrx="685" lry="325" />
       <zone xml:id="facs_8_r_2" ulx="37" uly="370" lrx="140" lry="391" />
       <zone xml:id="facs_8_r_3" ulx="36" uly="392" lrx="688" lry="511" />
@@ -110,7 +118,7 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[216]" />
         <div type="text">
 <head>
           <hi rendition="#b">JAHRESBERICHT</hi><lb facs="#facs_1_l_1_1" n="N001" />
@@ -129,7 +137,7 @@
           <head>Universitäts-Bibliothek Basel</head>
         </figure>
       </div>
-<pb facs="#facs_2" n="2" />
+<pb facs="#facs_2" n="[217]" />
         <div type="text">
 <head facs="#facs_2_r_1">
           Jeanne Hersch, Genève:
@@ -160,40 +168,40 @@
             </note>
           </div>
         </div>
-      <pb facs="#facs_3" n="3" />
+      <pb facs="#facs_3" n="[218]" />
         <div type="text">
 <p facs="#facs_3_r_1">
-          <lb facs="#facs_3_r_1" n="N001" />le nombre est grand, et plus le facteur de l'intentionalité individuelle se <lb facs="#facs_3_r_1" n="N002" />trouve noyé; dès lors, les lois naturelles reprennent en quelque sorte le <lb facs="#facs_3_r_1" n="N003" />dessus.
+          <lb facs="#facs_3_r_1" n="N001" />le nombre est grand, et plus le facteur de l’intentionalité individuelle se <lb facs="#facs_3_r_1" n="N002" />trouve noyé; dès lors, les lois naturelles reprennent en quelque sorte le <lb facs="#facs_3_r_1" n="N003" />dessus.
         </p>
         <p facs="#facs_3_r_2">
-          <lb facs="#facs_3_r_2" n="N001" />Une troisième source d'embarras, c'est le nombre et la diversité extrême des <lb facs="#facs_3_r_2" n="N002" />disciplines considérées, par exemple: science économique — psychanalyse — <lb facs="#facs_3_r_2" n="N003" />science juridique. Les différences entre elles sont si radicales qu'on risque, <lb facs="#facs_3_r_2" n="N004" />en parlant de toutes à la fois, de se perdre dans l'abstraction, ou alors d'at<lb facs="#facs_3_r_2" n="N005" break="no" />tribuer à toutes ce qui n'est vrai que de l'une d'entre elles.
+          <lb facs="#facs_3_r_2" n="N001" />Une troisième source d’embarras, c’est le nombre et la diversité extrême des <lb facs="#facs_3_r_2" n="N002" />disciplines considérées, par exemple: science économique — psychanalyse — <lb facs="#facs_3_r_2" n="N003" />science juridique. Les différences entre elles sont si radicales qu’on risque, <lb facs="#facs_3_r_2" n="N004" />en parlant de toutes à la fois, de se perdre dans l’abstraction, ou alors d’at<lb facs="#facs_3_r_2" n="N005" break="no" />tribuer à toutes ce qui n’est vrai que de l’une d’entre elles.
         </p>
         <p>
           <lb facs="#facs_3_r_3" n="N001" />1ère thèse:
         </p>
         <p facs="#facs_3_r_4">
-          <lb facs="#facs_3_r_4" n="N001" />Les sciences humaines ont pour objet les divers aspects d'une réalité dont <lb facs="#facs_3_r_4" n="N002" />l'essence et l'essentiel leur échappent. Elles ne peuvent ni réduire cet <lb facs="#facs_3_r_4" n="N003" />„essentiel" à un objet de savoir, ni l'ignorer, car c'est grâce à son irréducti<lb facs="#facs_3_r_4" n="N004" break="no" />bilité qu'elles ont chacune un champ d'étude, une raison d'être et un sens.
+          <lb facs="#facs_3_r_4" n="N001" />Les sciences humaines ont pour objet les divers aspects d’une réalité dont <lb facs="#facs_3_r_4" n="N002" />l’essence et l’essentiel leur échappent. Elles ne peuvent ni réduire cet <lb facs="#facs_3_r_4" n="N003" />„essentiel" à un objet de savoir, ni l’ignorer, car c’est grâce à son irréducti<lb facs="#facs_3_r_4" n="N004" break="no" />bilité qu’elles ont chacune un champ d’étude, une raison d’être et un sens.
         </p>
         <p facs="#facs_3_r_5">
-          <lb facs="#facs_3_r_5" n="N001" />Il y a là un paradoxe fondamental: cela même qui fait que les sciences <lb facs="#facs_3_r_5" n="N002" />humaines ne sont pas des sciences de la nature, mais des disciplines <foreign xml:lang="lat">sui <lb facs="#facs_3_r_5" n="N003" />generis</foreign>, c'est cela même qu'elles ne peuvent pas connaître, au sens rigoureux <lb facs="#facs_3_r_5" n="N004" />du terme. Ce qui les constitue, c'est cela même qui leur échappe. C'est ce <lb facs="#facs_3_r_5" n="N005" />qui appartient en propre à l'être humain et le distingue de tous les autres <lb facs="#facs_3_r_5" n="N006" />êtres que nous connaissons en ce monde: une capacité de visée volontaire et <lb facs="#facs_3_r_5" n="N007" />consciente, source de toute espèce de sens.
+          <lb facs="#facs_3_r_5" n="N001" />Il y a là un paradoxe fondamental: cela même qui fait que les sciences <lb facs="#facs_3_r_5" n="N002" />humaines ne sont pas des sciences de la nature, mais des disciplines <foreign xml:lang="lat">sui <lb facs="#facs_3_r_5" n="N003" />generis</foreign>, c’est cela même qu’elles ne peuvent pas connaître, au sens rigoureux <lb facs="#facs_3_r_5" n="N004" />du terme. Ce qui les constitue, c’est cela même qui leur échappe. C’est ce <lb facs="#facs_3_r_5" n="N005" />qui appartient en propre à l’être humain et le distingue de tous les autres <lb facs="#facs_3_r_5" n="N006" />êtres que nous connaissons en ce monde: une capacité de visée volontaire et <lb facs="#facs_3_r_5" n="N007" />consciente, source de toute espèce de sens.
         </p>
         <p facs="#facs_3_r_6">
-          <lb facs="#facs_3_r_6" n="N001" />Le sens est une composante <foreign xml:lang="lat">sine qua non</foreign>, à mon avis, de toute discipline <lb facs="#facs_3_r_6" n="N002" />appartenant aux sciences humaines. La chute d'une pierre peut entraîner des <lb facs="#facs_3_r_6" n="N003" />conséquences graves, mais elle n'a pas de sens. L'étude de cette chute <lb facs="#facs_3_r_6" n="N004" />appartient aux sciences de la nature. En revanche, si on entreprend d'étudier <lb facs="#facs_3_r_6" n="N005" />le processus par lequel la science exacte étudie elle-même la chute de la <lb facs="#facs_3_r_6" n="N006" />pierre, on retrouve un domaine où il y a une intention et un sens. Celui qui <lb facs="#facs_3_r_6" n="N007" />étudie la chute de la pierre est animé par une volonté de savoir, d'atteindre <lb facs="#facs_3_r_6" n="N008" />une vérité exacte, par une visée normative; et il va exprimer le résultat de ses <lb facs="#facs_3_r_6" n="N009" />recherches dans un langage qui aura un sens.
+          <lb facs="#facs_3_r_6" n="N001" />Le sens est une composante <foreign xml:lang="lat">sine qua non</foreign>, à mon avis, de toute discipline <lb facs="#facs_3_r_6" n="N002" />appartenant aux sciences humaines. La chute d’une pierre peut entraîner des <lb facs="#facs_3_r_6" n="N003" />conséquences graves, mais elle n’a pas de sens. L’étude de cette chute <lb facs="#facs_3_r_6" n="N004" />appartient aux sciences de la nature. En revanche, si on entreprend d’étudier <lb facs="#facs_3_r_6" n="N005" />le processus par lequel la science exacte étudie elle-même la chute de la <lb facs="#facs_3_r_6" n="N006" />pierre, on retrouve un domaine où il y a une intention et un sens. Celui qui <lb facs="#facs_3_r_6" n="N007" />étudie la chute de la pierre est animé par une volonté de savoir, d’atteindre <lb facs="#facs_3_r_6" n="N008" />une vérité exacte, par une visée normative; et il va exprimer le résultat de ses <lb facs="#facs_3_r_6" n="N009" />recherches dans un langage qui aura un sens.
         </p>
         <p facs="#facs_3_r_7">
-          <lb facs="#facs_3_r_7" n="N001" />Ainsi donc les sciences exactes devraient être — beaucoup plus qu'elles ne le <lb facs="#facs_3_r_7" n="N002" />sont — des objets d'étude pour les sciences humaines. Il y a dans toute <lb facs="#facs_3_r_7" n="N003" />science exacte une volonté, une intention immédiatement normative, visée <lb facs="#facs_3_r_7" n="N004" />de vérité, volonté d'éviter l'erreur. Et cette visée, qui est la condition d'un <lb facs="#facs_3_r_7" n="N005" />champ de recherche propre pour les sciences humaines, est en même temps <lb facs="#facs_3_r_7" n="N006" />irréductible à leur savoir. La psychologie de la recherche, par exemple, peut <lb facs="#facs_3_r_7" n="N007" />approcher d'aussi près que possible ce quelque chose d'irréductible, dans son <lb facs="#facs_3_r_7" n="N008" />contexte de „juste avant" ou de „juste après". Mais l'intention qui porte <lb facs="#facs_3_r_7" n="N009" />l'acte échappe au savoir. Et toute recherche, dans les sciences humaines, <lb facs="#facs_3_r_7" n="N010" />s'accomplit autour de cet élément irréductible.
+          <lb facs="#facs_3_r_7" n="N001" />Ainsi donc les sciences exactes devraient être — beaucoup plus qu’elles ne le <lb facs="#facs_3_r_7" n="N002" />sont — des objets d’étude pour les sciences humaines. Il y a dans toute <lb facs="#facs_3_r_7" n="N003" />science exacte une volonté, une intention immédiatement normative, visée <lb facs="#facs_3_r_7" n="N004" />de vérité, volonté d’éviter l’erreur. Et cette visée, qui est la condition d’un <lb facs="#facs_3_r_7" n="N005" />champ de recherche propre pour les sciences humaines, est en même temps <lb facs="#facs_3_r_7" n="N006" />irréductible à leur savoir. La psychologie de la recherche, par exemple, peut <lb facs="#facs_3_r_7" n="N007" />approcher d’aussi près que possible ce quelque chose d’irréductible, dans son <lb facs="#facs_3_r_7" n="N008" />contexte de „juste avant" ou de „juste après". Mais l’intention qui porte <lb facs="#facs_3_r_7" n="N009" />l’acte échappe au savoir. Et toute recherche, dans les sciences humaines, <lb facs="#facs_3_r_7" n="N010" />s’accomplit autour de cet élément irréductible.
         </p>
         <p facs="#facs_3_r_8">
           <lb facs="#facs_3_r_8" n="N001" />Or cet élément irréductible est supposé connu parce que celui qui mène la <lb facs="#facs_3_r_8" n="N002" />recherche en sciences humaines est lui-même animé par ce centre irré<lb facs="#facs_3_r_8" n="N003" break="no" />
         </p>
       </div>
-<pb facs="#facs_4" n="4" />
+<pb facs="#facs_4" n="[219]" />
         <div type="text">
 <p facs="#facs_4_r_1">
           <lb facs="#facs_4_r_1" n="N001" />ductible, cette visée du connaître vrai. Il le connaît donc en effet, subjectivement, dans sa subjectivité de chercheur scientifique.
         </p>
         <p facs="#facs_4_r_2">
-          <lb facs="#facs_4_r_2" n="N001" />Ainsi, il y a toujours, pour ainsi dire, un „centre limite“ où l'homme transcende ce qu'il sait, et même ce qu'il peut savoir, pour pouvoir vouloir savoir.
+          <lb facs="#facs_4_r_2" n="N001" />Ainsi, il y a toujours, pour ainsi dire, un „centre limite“ où l’homme transcende ce qu’il sait, et même ce qu’il peut savoir, pour pouvoir vouloir savoir.
         </p>
         </div>
 <div n="2">
@@ -201,79 +209,77 @@
             <lb facs="#facs_4_r_3" n="N001" />2ème thèse:
           </head>
           <p facs="#facs_4_r_4">
-            <lb facs="#facs_4_r_4" n="N001" />Les champs des diverses sciences humaines ont entre eux une interdépendance et une unité réelles infiniment plus denses que ne peut l'être aucun objet d'une „recherche interdisciplinaire“. C'est pourquoi „l'interdisciplinarité“ doit, dans les sciences humaines plus encore que dans les sciences de la nature, organiser la convergence de disciplines aux méthodes toujours mieux spécifiées, et nullement l'amalgame de méthodes générales.
+            <lb facs="#facs_4_r_4" n="N001" />Les champs des diverses sciences humaines ont entre eux une interdépendance et une unité réelles infiniment plus denses que ne peut l’être aucun objet d’une „recherche interdisciplinaire“. C’est pourquoi „l’interdisciplinarité“ doit, dans les sciences humaines plus encore que dans les sciences de la nature, organiser la convergence de disciplines aux méthodes toujours mieux spécifiées, et nullement l’amalgame de méthodes générales.
           </p>
           <p facs="#facs_4_r_5">
-            <lb facs="#facs_4_r_5" n="N001" />Cette thèse s'oppose à bien des tendances contemporaines. L'interdisciplinarité ne repose pas, à mon avis, sur des méthodes communes à plusieurs disciplines. Dans sa conférence, que vous entendrez tout à l'heure, M. Fleiner insiste sur l'intuition comme méthode commune. Mais l'intuition n'est pas une méthode. Elle est un cran d'arrêt, une limite de la méthode. Elle est une source, non un chemin. Au contraire, les méthodes de chaque discipline doivent être aussi spécifiques que possible; et ainsi chacune progressera. Ces méthodes spécifiées convergent alors vers un objet, dont elles permettent de saisir des aspects, mais qu'elles ne réduisent pas. La densité de l'objet continue à résister.
+            <lb facs="#facs_4_r_5" n="N001" />Cette thèse s’oppose à bien des tendances contemporaines. L’interdisciplinarité ne repose pas, à mon avis, sur des méthodes communes à plusieurs disciplines. Dans sa conférence, que vous entendrez tout à l’heure, M. Fleiner insiste sur l’intuition comme méthode commune. Mais l’intuition n’est pas une méthode. Elle est un cran d’arrêt, une limite de la méthode. Elle est une source, non un chemin. Au contraire, les méthodes de chaque discipline doivent être aussi spécifiques que possible; et ainsi chacune progressera. Ces méthodes spécifiées convergent alors vers un objet, dont elles permettent de saisir des aspects, mais qu’elles ne réduisent pas. La densité de l’objet continue à résister.
           </p>
           <p facs="#facs_4_r_6">
-            <lb facs="#facs_4_r_6" n="N001" />Dans la réalité qui est l'objet des sciences humaines, on a affaire à une interpénétration extraordinairement dense du donné individuel et social, du corps, de la pensée, de l'esprit. Les rues et le droit, la police et la morale, les styles sociaux et les styles individuels, l'économie et la spiritualité, tout cela se pénètre et se traverse complètement. Les sciences humaines devraient avoir un sens aigu de la pluralité des réalités auxquelles elles ont affaire, et de leur interpénétration, — ce que les Anglais appellent <foreign xml:lang="eng">pervasiveness</foreign>.
+            <lb facs="#facs_4_r_6" n="N001" />Dans la réalité qui est l’objet des sciences humaines, on a affaire à une interpénétration extraordinairement dense du donné individuel et social, du corps, de la pensée, de l’esprit. Les rues et le droit, la police et la morale, les styles sociaux et les styles individuels, l’économie et la spiritualité, tout cela se pénètre et se traverse complètement. Les sciences humaines devraient avoir un sens aigu de la pluralité des réalités auxquelles elles ont affaire, et de leur interpénétration, — ce que les Anglais appellent <foreign xml:lang="eng">pervasiveness</foreign>.
           </p>
           <p facs="#facs_4_r_7">
-            <lb facs="#facs_4_r_7" n="N001" />Ainsi, par exemple, les plans d'appartements qu'on peut faire dans un immeuble locatif ont une importance culturelle considérable. Lorsqu'on dessine un très grand living et une série de toutes petites cages à lapin où les gens iront juste dormir, cela entraîne un mode de vie où tout le monde est toujours ensemble, ou on ne parle presque jamais à deux, où on ne se retire que pour dormir. Cela aura des conséquences culturelles lointaines et profondes: pensez à notre littérature traditionnelle, au rôle du dialogue — je dis bien dialogue, c'est-à-dire conversation à deux, et non pas à plusieurs.
+            <lb facs="#facs_4_r_7" n="N001" />Ainsi, par exemple, les plans d’appartements qu’on peut faire dans un immeuble locatif ont une importance culturelle considérable. Lorsqu’on dessine un très grand living et une série de toutes petites cages à lapin où les gens iront juste dormir, cela entraîne un mode de vie où tout le monde est toujours ensemble, ou on ne parle presque jamais à deux, où on ne se retire que pour dormir. Cela aura des conséquences culturelles lointaines et profondes: pensez à notre littérature traditionnelle, au rôle du dialogue — je dis bien dialogue, c’est-à-dire conversation à deux, et non pas à plusieurs.
           </p>
           <p facs="#facs_4_r_8">
-            <lb facs="#facs_4_r_8" n="N001" />C'est aussi à cause de cette <foreign xml:lang="eng">pervasiveness</foreign>, de l'interpénétration incarnatoire, que c'est, à mon avis, une grande sottise de parler du matérialisme de la technique. La technique n'est pas matérialiste. Le téléphone n'est pas matérialiste, il permet l'échange des idées et le contact des esprits, il permet 219
+            <lb facs="#facs_4_r_8" n="N001" />C’est aussi à cause de cette <foreign xml:lang="eng">pervasiveness</foreign>, de l’interpénétration incarnatoire, que c’est, à mon avis, une grande sottise de parler du matérialisme de la technique. La technique n’est pas matérialiste. Le téléphone n’est pas matérialiste, il permet l’échange des idées et le contact des esprits, il permet 219
           </p>
         </div>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[220]" />
         <div type="text">
 <p facs="#facs_5_r_1">
-          <lb facs="#facs_5_r_1" n="N001" />de surmonter la distance et change les conditions de la communication. Il en <lb facs="#facs_5_r_1" n="N002" />va de même des transports. Il en va de même de la chirurgie, et de toutes les <lb facs="#facs_5_r_1" n="N003" />techniques qui permettent de conserver des êtres qui nous sont chers, qui <lb facs="#facs_5_r_1" n="N004" />nous parlent, que nous comprenons. Il n'y a rien dans tout cela qui soit <lb facs="#facs_5_r_1" n="N005" />purement matériel. La technique a besoin d'une défense spiritualiste, qu'elle <lb facs="#facs_5_r_1" n="N006" />mérite pleinement.
+          <lb facs="#facs_5_r_1" n="N001" />de surmonter la distance et change les conditions de la communication. Il en <lb facs="#facs_5_r_1" n="N002" />va de même des transports. Il en va de même de la chirurgie, et de toutes les <lb facs="#facs_5_r_1" n="N003" />techniques qui permettent de conserver des êtres qui nous sont chers, qui <lb facs="#facs_5_r_1" n="N004" />nous parlent, que nous comprenons. Il n’y a rien dans tout cela qui soit <lb facs="#facs_5_r_1" n="N005" />purement matériel. La technique a besoin d’une défense spiritualiste, qu’elle <lb facs="#facs_5_r_1" n="N006" />mérite pleinement.
         </p>
         <p facs="#facs_5_r_2">
-          <lb facs="#facs_5_r_2" n="N001" />Cette réalité, cette densité complexe et interpénétrée, il ne faut pas la <lb facs="#facs_5_r_2" n="N002" />réduire, si on veut la comprendre. A ce qu'il me semble, on tente trop <lb facs="#facs_5_r_2" n="N003" />souvent, dans les sciences humaines, de réduire l'objet à la simplicité d'une <lb facs="#facs_5_r_2" n="N004" />seule composante pour s'imaginer alors la comprendre. Mais réduire, ce n'est <lb facs="#facs_5_r_2" n="N005" />justement pas comprendre. Comprendre, dans les sciences humaines, c'est ne <lb facs="#facs_5_r_2" n="N006" />pas réduire, c'est rencontrer la résistance de la complexité de l'objet.
+          <lb facs="#facs_5_r_2" n="N001" />Cette réalité, cette densité complexe et interpénétrée, il ne faut pas la <lb facs="#facs_5_r_2" n="N002" />réduire, si on veut la comprendre. A ce qu’il me semble, on tente trop <lb facs="#facs_5_r_2" n="N003" />souvent, dans les sciences humaines, de réduire l’objet à la simplicité d’une <lb facs="#facs_5_r_2" n="N004" />seule composante pour s’imaginer alors la comprendre. Mais réduire, ce n’est <lb facs="#facs_5_r_2" n="N005" />justement pas comprendre. Comprendre, dans les sciences humaines, c’est ne <lb facs="#facs_5_r_2" n="N006" />pas réduire, c’est rencontrer la résistance de la complexité de l’objet.
         </p>
         <p facs="#facs_5_r_3">
-          <lb facs="#facs_5_r_3" n="N001" />Je crois que le purisme, dans les sciences humaines, est destructeur de son <lb facs="#facs_5_r_3" n="N002" />objet, et qu'au contraire, il faut avoir le sens de l'interpénétration, complexe, <lb facs="#facs_5_r_3" n="N003" />des données matérielles et des éléments normatifs, qui constitue justement <lb facs="#facs_5_r_3" n="N004" />cet extraordinaire tissu, psychologique et social, ambigu, incarné, que <lb facs="#facs_5_r_3" n="N005" />j'aimerais appeler <hi rendition="#i">symbolique</hi>. Je l'appelle <hi rendition="#i">symbolique</hi> parce que dans l'idée de <lb facs="#facs_5_r_3" n="N006" />symbole, vous avez l'indissociabilité d'un corps et d'un sens. Or toute la <lb facs="#facs_5_r_3" n="N007" />réalité qu'étudient les sciences humaines est ainsi <hi rendition="#i">symbolique</hi>.
+          <lb facs="#facs_5_r_3" n="N001" />Je crois que le purisme, dans les sciences humaines, est destructeur de son <lb facs="#facs_5_r_3" n="N002" />objet, et qu’au contraire, il faut avoir le sens de l’interpénétration, complexe, <lb facs="#facs_5_r_3" n="N003" />des données matérielles et des éléments normatifs, qui constitue justement <lb facs="#facs_5_r_3" n="N004" />cet extraordinaire tissu, psychologique et social, ambigu, incarné, que <lb facs="#facs_5_r_3" n="N005" />j’aimerais appeler <hi rendition="#i">symbolique</hi>. Je l’appelle <hi rendition="#i">symbolique</hi> parce que dans l’idée de <lb facs="#facs_5_r_3" n="N006" />symbole, vous avez l’indissociabilité d’un corps et d’un sens. Or toute la <lb facs="#facs_5_r_3" n="N007" />réalité qu’étudient les sciences humaines est ainsi <hi rendition="#i">symbolique</hi>.
         </p>
         <p facs="#facs_5_r_4">
           <lb facs="#facs_5_r_4" n="N001" />est à mon sens <hi rendition="#i">symbolique</hi>.
         </p>
         <p facs="#facs_5_r_5">
-          <lb facs="#facs_5_r_5" n="N001" />D'autre part, ce que je viens de dire ne me conduit pas du tout, sur un point, <lb facs="#facs_5_r_5" n="N002" />aux mêmes conclusions que celles de M. Fleiner. Je crois que dans tous les <lb facs="#facs_5_r_5" n="N003" />domaines des sciences humaines le fait et le droit s'interpénètrent. Mais cela <lb facs="#facs_5_r_5" n="N004" />ne permet pas de passer du fait au droit. Toute réalité étudiée dans les <lb facs="#facs_5_r_5" n="N005" />sciences humaines est à la fois fait et droit. <foreign xml:lang="de">Sein und Sollen</foreign>. Elle l'est déjà <lb facs="#facs_5_r_5" n="N006" />dans cette nature symbolique dont je parlais tout à l'heure. Mais cela n'a pas <lb facs="#facs_5_r_5" n="N007" />du tout pour conséquence qu'on puisse passer sans autre du fait au droit.
+          <lb facs="#facs_5_r_5" n="N001" />D’autre part, ce que je viens de dire ne me conduit pas du tout, sur un point, <lb facs="#facs_5_r_5" n="N002" />aux mêmes conclusions que celles de M. Fleiner. Je crois que dans tous les <lb facs="#facs_5_r_5" n="N003" />domaines des sciences humaines le fait et le droit s’interpénètrent. Mais cela <lb facs="#facs_5_r_5" n="N004" />ne permet pas de passer du fait au droit. Toute réalité étudiée dans les <lb facs="#facs_5_r_5" n="N005" />sciences humaines est à la fois fait et droit. <foreign xml:lang="de">Sein und Sollen</foreign>. Elle l’est déjà <lb facs="#facs_5_r_5" n="N006" />dans cette nature symbolique dont je parlais tout à l’heure. Mais cela n’a pas <lb facs="#facs_5_r_5" n="N007" />du tout pour conséquence qu’on puisse passer sans autre du fait au droit.
         </p>
         <p facs="#facs_5_r_6">
-          <lb facs="#facs_5_r_6" n="N001" />Quand nous étudions des réalités humaines, nous constatons qu'il existe des <lb facs="#facs_5_r_6" n="N002" />normes. Par exemple, un sociologue s'introduit dans une société tout à fait <lb facs="#facs_5_r_6" n="N003" />étrangère à la sienne, il y observe l'efficacité de certaines normes, et il les <lb facs="#facs_5_r_6" n="N004" />décrit dans le livre qu'il écrit. Mais comment peut-il comprendre qu'il y a des <lb facs="#facs_5_r_6" n="N005" />normes? Parce que lui, il vient d'une société où il a eu l'expérience <lb facs="#facs_5_r_6" n="N006" />subjective de normes sociales qui étaient valables pour lui. Et comme il sait <lb facs="#facs_5_r_6" n="N007" />subjectivement ce qu'est une norme, qu'il en connaît l'impérativité, quand il <lb facs="#facs_5_r_6" n="N008" />arrive dans une autre société, il sait déchiffrer ces autres normes qui lui sont <lb facs="#facs_5_r_6" n="N009" />tout à fait étrangères, mais dont l'impérativité ne lui est nullement étrangère, <lb facs="#facs_5_r_6" n="N010" />parce qu'elle est humaine et sociale. S'il ne connaissait pas subjectivement <lb facs="#facs_5_r_6" n="N011" />l'impérativité des normes, il regarderait les mouvements qui se produisent dans <lb facs="#facs_5_r_6" n="N012" />cette société étrangère sans leur trouver aucune espèce de signification <lb facs="#facs_5_r_6" n="N013" />normative. Il serait comme un aveugle devant des couleurs, il ne les <lb facs="#facs_5_r_6" n="N014" />comprendrait pas.
+          <lb facs="#facs_5_r_6" n="N001" />Quand nous étudions des réalités humaines, nous constatons qu’il existe des <lb facs="#facs_5_r_6" n="N002" />normes. Par exemple, un sociologue s’introduit dans une société tout à fait <lb facs="#facs_5_r_6" n="N003" />étrangère à la sienne, il y observe l’efficacité de certaines normes, et il les <lb facs="#facs_5_r_6" n="N004" />décrit dans le livre qu’il écrit. Mais comment peut-il comprendre qu’il y a des <lb facs="#facs_5_r_6" n="N005" />normes? Parce que lui, il vient d’une société où il a eu l’expérience <lb facs="#facs_5_r_6" n="N006" />subjective de normes sociales qui étaient valables pour lui. Et comme il sait <lb facs="#facs_5_r_6" n="N007" />subjectivement ce qu’est une norme, qu’il en connaît l’impérativité, quand il <lb facs="#facs_5_r_6" n="N008" />arrive dans une autre société, il sait déchiffrer ces autres normes qui lui sont <lb facs="#facs_5_r_6" n="N009" />tout à fait étrangères, mais dont l’impérativité ne lui est nullement étrangère, <lb facs="#facs_5_r_6" n="N010" />parce qu’elle est humaine et sociale. S’il ne connaissait pas subjectivement <lb facs="#facs_5_r_6" n="N011" />l’impérativité des normes, il regarderait les mouvements qui se produisent dans <lb facs="#facs_5_r_6" n="N012" />cette société étrangère sans leur trouver aucune espèce de signification <lb facs="#facs_5_r_6" n="N013" />normative. Il serait comme un aveugle devant des couleurs, il ne les <lb facs="#facs_5_r_6" n="N014" />comprendrait pas.
         </p>
         <p facs="#facs_5_r_7">
-          <lb facs="#facs_5_r_7" n="N001" />Mais constater des normes, ce n'est pas du tout les accepter. Le contre-<lb break="no" facs="#facs_5_r_7" n="N002" />courant reste toujours possible, et souvent légitime.
+          <lb facs="#facs_5_r_7" n="N001" />Mais constater des normes, ce n’est pas du tout les accepter. Le contre-<lb break="no" facs="#facs_5_r_7" n="N002" />courant reste toujours possible, et souvent légitime.
         </p>
-        <p facs="#facs_5_r_8">
-          <lb facs="#facs_5_r_8" n="N001" />220
-        </p>
+        
       </div>
-<pb facs="#facs_6" n="6" />
+<pb facs="#facs_6" n="[221]" />
         <div type="text">
 <p facs="#facs_6_r_1">
-          <lb facs="#facs_6_r_1" n="N001" />Il y a une grande différence entre une norme étudiée et une norme obéie, <lb facs="#facs_6_r_1" n="N002" />entre telle norme particulière que l'on peut constater du dehors parce qu'on <lb facs="#facs_6_r_1" n="N003" />a l'expérience subjective d'une norme, et l'impérativité de la norme re<lb facs="#facs_6_r_1" n="N004" break="no" />connue, dont la racine est à chercher dans cette intention et cette volonté <lb facs="#facs_6_r_1" n="N005" />irréductible de la personne, dont j'ai parlé au début.
+          <lb facs="#facs_6_r_1" n="N001" />Il y a une grande différence entre une norme étudiée et une norme obéie, <lb facs="#facs_6_r_1" n="N002" />entre telle norme particulière que l’on peut constater du dehors parce qu’on <lb facs="#facs_6_r_1" n="N003" />a l’expérience subjective d’une norme, et l’impérativité de la norme re<lb facs="#facs_6_r_1" n="N004" break="no" />connue, dont la racine est à chercher dans cette intention et cette volonté <lb facs="#facs_6_r_1" n="N005" />irréductible de la personne, dont j’ai parlé au début.
         </p>
         <p facs="#facs_6_r_2">
-          <lb facs="#facs_6_r_2" n="N001" />Les trois thèses suivantes énumèrent quelques-unes des attentes du monde <lb facs="#facs_6_r_2" n="N002" />contemporain à l'égard des sciences humaines. Ces attentes sont, comme on <lb facs="#facs_6_r_2" n="N003" />va voir, très considérables, peut-être excessives.
+          <lb facs="#facs_6_r_2" n="N001" />Les trois thèses suivantes énumèrent quelques-unes des attentes du monde <lb facs="#facs_6_r_2" n="N002" />contemporain à l’égard des sciences humaines. Ces attentes sont, comme on <lb facs="#facs_6_r_2" n="N003" />va voir, très considérables, peut-être excessives.
         </p>
         <p>
           <lb facs="#facs_6_r_3" n="N001" />3ème thèse:
         </p>
         <p facs="#facs_6_r_4">
-          <lb facs="#facs_6_r_4" n="N001" />Il se trouve que les hommes ont aujourd'hui, au niveau de leur vie indivi<lb facs="#facs_6_r_4" n="N002" break="no" />duelle, de celle des sociétés et même de l'espèce, des pouvoirs nouveaux <lb facs="#facs_6_r_4" n="N003" />entre les mains, dont les conséquences sont illimitées et qui ne cessent de <lb facs="#facs_6_r_4" n="N004" />croître chaque jour. Ces pouvoirs sont encore „à l'état sauvage“, c'est-à-dire <lb facs="#facs_6_r_4" n="N005" />qu'il n'existe, quant à leur usage, aucun consensus moral, ni dans la société, <lb facs="#facs_6_r_4" n="N006" />ni même dans la profession, et à plus forte raison aucune juridiction. — Cette <lb facs="#facs_6_r_4" n="N007" />situation s'est créée en un temps où il n'existe plus, de par le monde, <lb facs="#facs_6_r_4" n="N008" />d'autorité ayant pour charge de dire ce qui est bien et ce qui est mal. On <lb facs="#facs_6_r_4" n="N009" />interroge alors les sciences humaines.
+          <lb facs="#facs_6_r_4" n="N001" />Il se trouve que les hommes ont aujourd’hui, au niveau de leur vie indivi<lb facs="#facs_6_r_4" n="N002" break="no" />duelle, de celle des sociétés et même de l’espèce, des pouvoirs nouveaux <lb facs="#facs_6_r_4" n="N003" />entre les mains, dont les conséquences sont illimitées et qui ne cessent de <lb facs="#facs_6_r_4" n="N004" />croître chaque jour. Ces pouvoirs sont encore „à l’état sauvage“, c’est-à-dire <lb facs="#facs_6_r_4" n="N005" />qu’il n’existe, quant à leur usage, aucun consensus moral, ni dans la société, <lb facs="#facs_6_r_4" n="N006" />ni même dans la profession, et à plus forte raison aucune juridiction. — Cette <lb facs="#facs_6_r_4" n="N007" />situation s’est créée en un temps où il n’existe plus, de par le monde, <lb facs="#facs_6_r_4" n="N008" />d’autorité ayant pour charge de dire ce qui est bien et ce qui est mal. On <lb facs="#facs_6_r_4" n="N009" />interroge alors les sciences humaines.
         </p>
         <p facs="#facs_6_r_5">
-          <lb facs="#facs_6_r_5" n="N001" />Les nouveaux pouvoirs auxquels il est fait allusion ici sont, par exemple, les <lb facs="#facs_6_r_5" n="N002" />nouvelles capacités d'expérimentation, notamment celles qui touchent <lb facs="#facs_6_r_5" n="N003" />directement à l'homme lui-même : les recherches sur le cerveau, les inter<lb facs="#facs_6_r_5" n="N004" break="no" />ventions génétiques, les bébés-éprouvettes, l'intervention dans l'hérédité, <lb facs="#facs_6_r_5" n="N005" />dans les capacités intellectuelles et les dons, les interventions psychiatriques, <lb facs="#facs_6_r_5" n="N006" />électriques et chimiques, extraordinairement efficaces, etc. Pensez à un film, <lb facs="#facs_6_r_5" n="N007" />par exemple, comme „Orange mécanique“, qui m'a plongée plusieurs jours <lb facs="#facs_6_r_5" n="N008" />dans un abîme de perplexité. Est-ce qu'un criminel déchaîné contre la <lb facs="#facs_6_r_5" n="N009" />société peut être „réduit“ par les moyens dont on dispose aujourd'hui ? Devant <lb facs="#facs_6_r_5" n="N010" />de tels pouvoirs, les membres des professions concernées sont eux-mêmes <lb facs="#facs_6_r_5" n="N011" />dans le plus grand désaccord. J'ai entendu des discussions entre médecins : ils <lb facs="#facs_6_r_5" n="N012" />sont en profond désaccord sur la légitimité ou l'illégitimité de pouvoirs dont <lb facs="#facs_6_r_5" n="N013" />ils disposent déjà ; la perplexité, les divergences sont extrêmes. Il n'y a plus <lb facs="#facs_6_r_5" n="N014" />d'autorité reconnue, et comme on a besoin d'une réponse, on se tourne vers <lb facs="#facs_6_r_5" n="N015" />la science, pour qu'elle dise ce qui est bien et ce qui est mal — et surtout vers <lb facs="#facs_6_r_5" n="N016" />les sciences humaines.
+          <lb facs="#facs_6_r_5" n="N001" />Les nouveaux pouvoirs auxquels il est fait allusion ici sont, par exemple, les <lb facs="#facs_6_r_5" n="N002" />nouvelles capacités d’expérimentation, notamment celles qui touchent <lb facs="#facs_6_r_5" n="N003" />directement à l’homme lui-même : les recherches sur le cerveau, les inter<lb facs="#facs_6_r_5" n="N004" break="no" />ventions génétiques, les bébés-éprouvettes, l’intervention dans l’hérédité, <lb facs="#facs_6_r_5" n="N005" />dans les capacités intellectuelles et les dons, les interventions psychiatriques, <lb facs="#facs_6_r_5" n="N006" />électriques et chimiques, extraordinairement efficaces, etc. Pensez à un film, <lb facs="#facs_6_r_5" n="N007" />par exemple, comme „Orange mécanique“, qui m’a plongée plusieurs jours <lb facs="#facs_6_r_5" n="N008" />dans un abîme de perplexité. Est-ce qu’un criminel déchaîné contre la <lb facs="#facs_6_r_5" n="N009" />société peut être „réduit“ par les moyens dont on dispose aujourd’hui ? Devant <lb facs="#facs_6_r_5" n="N010" />de tels pouvoirs, les membres des professions concernées sont eux-mêmes <lb facs="#facs_6_r_5" n="N011" />dans le plus grand désaccord. J’ai entendu des discussions entre médecins : ils <lb facs="#facs_6_r_5" n="N012" />sont en profond désaccord sur la légitimité ou l’illégitimité de pouvoirs dont <lb facs="#facs_6_r_5" n="N013" />ils disposent déjà ; la perplexité, les divergences sont extrêmes. Il n’y a plus <lb facs="#facs_6_r_5" n="N014" />d’autorité reconnue, et comme on a besoin d’une réponse, on se tourne vers <lb facs="#facs_6_r_5" n="N015" />la science, pour qu’elle dise ce qui est bien et ce qui est mal — et surtout vers <lb facs="#facs_6_r_5" n="N016" />les sciences humaines.
         </p>
         <p>
           <lb facs="#facs_6_r_6" n="N001" />4ème thèse:
         </p>
         <p facs="#facs_6_r_7">
-          <lb facs="#facs_6_r_7" n="N001" />En même temps, une double évolution, en partie contradictoire, s'est <lb facs="#facs_6_r_7" n="N002" />accomplie dans la conscience contemporaine, sous la double influence, ici <lb facs="#facs_6_r_7" n="N003" />divergente, des sciences exactes et des techniques. D'une part, on pense <lb facs="#facs_6_r_7" n="N004" />221
+          <lb facs="#facs_6_r_7" n="N001" />En même temps, une double évolution, en partie contradictoire, s’est <lb facs="#facs_6_r_7" n="N002" />accomplie dans la conscience contemporaine, sous la double influence, ici <lb facs="#facs_6_r_7" n="N003" />divergente, des sciences exactes et des techniques. D’une part, on pense <lb facs="#facs_6_r_7" n="N004" />221
         </p>
       </div>
-<pb facs="#facs_7" n="7" />
+<pb facs="#facs_7" n="[222]" />
         <div type="text">
 <p facs="#facs_7_r_1">
-          <lb facs="#facs_7_r_1" n="N001" />pouvoir appliquer à l'homme et à tous les domaines humains les principes<lb facs="#facs_7_r_1" n="N002" /> d'explications dérivatifs et réductifs des sciences de la nature, de manière à<lb facs="#facs_7_r_1" n="N003" /> faire apparaître les réalités humaines et l'homme même comme des effets ou<lb facs="#facs_7_r_1" n="N004" /> des produits de données connues ou à connaître. D'autre part, les triomphes<lb facs="#facs_7_r_1" n="N005" /> de la technique suggèrent que tous les maux humains ne sont que des pro<lb facs="#facs_7_r_1" n="N006" break="no" />blèmes dont la solution est imminente. L'explication réductive, à la limite,<lb facs="#facs_7_r_1" n="N007" /> assure l'innocence universelle et ruine l'imputabilité, fondement du droit, en<lb facs="#facs_7_r_1" n="N008" /> même temps que toute morale; reste la maladie, psychologique ou sociale. La<lb facs="#facs_7_r_1" n="N009" /> solution universelle des maux humains promet un paradis terrestre. Des deux<lb facs="#facs_7_r_1" n="N010" /> côtés, on se tourne vers les sciences humaines.
+          <lb facs="#facs_7_r_1" n="N001" />pouvoir appliquer à l’homme et à tous les domaines humains les principes<lb facs="#facs_7_r_1" n="N002" /> d’explications dérivatifs et réductifs des sciences de la nature, de manière à<lb facs="#facs_7_r_1" n="N003" /> faire apparaître les réalités humaines et l’homme même comme des effets ou<lb facs="#facs_7_r_1" n="N004" /> des produits de données connues ou à connaître. D’autre part, les triomphes<lb facs="#facs_7_r_1" n="N005" /> de la technique suggèrent que tous les maux humains ne sont que des pro<lb facs="#facs_7_r_1" n="N006" break="no" />blèmes dont la solution est imminente. L’explication réductive, à la limite,<lb facs="#facs_7_r_1" n="N007" /> assure l’innocence universelle et ruine l’imputabilité, fondement du droit, en<lb facs="#facs_7_r_1" n="N008" /> même temps que toute morale; reste la maladie, psychologique ou sociale. La<lb facs="#facs_7_r_1" n="N009" /> solution universelle des maux humains promet un paradis terrestre. Des deux<lb facs="#facs_7_r_1" n="N010" /> côtés, on se tourne vers les sciences humaines.
         </p>
         <p facs="#facs_7_r_2">
-          <lb facs="#facs_7_r_2" n="N001" />Les techniques triomphantes aboutissent à une espèce de médicalisation<lb facs="#facs_7_r_2" n="N002" /> générale de tous les problèmes et de toutes les difficultés. On s'attaque par<lb facs="#facs_7_r_2" n="N003" /> exemple au problème de l'aggressivité, on cherche les moyens techniques de<lb facs="#facs_7_r_2" n="N004" /> la supprimer chez les êtres humains. Mais on oublie le fait qu'une certaine<lb facs="#facs_7_r_2" n="N005" /> aggressivité est liée à l'amour: si les êtres humains sont aggressifs, c'est<lb facs="#facs_7_r_2" n="N006" /> d'abord que, dans leur condition, tout ce qu'ils aiment est périssable, donc<lb facs="#facs_7_r_2" n="N007" /> toujours menacé. Par conséquent, lorsqu'ils aiment quelqu'un ou quelque<lb facs="#facs_7_r_2" n="N008" /> chose, l'attitude défensive, et donc aggressive aussi, est à peu près inévitable.<lb facs="#facs_7_r_2" n="N009" /> Si on voulait vraiment supprimer l'aggressivité, il faudrait supprimer l'affec<lb facs="#facs_7_r_2" n="N010" break="no" />tivité. On se dit qu'on pourrait ainsi supprimer les conflits, et on demande<lb facs="#facs_7_r_2" n="N011" /> aux sciences humaines — quoi? de permettre à l'homme de cesser d'être un<lb facs="#facs_7_r_2" n="N012" /> homme, de devenir une sorte d'animal angélique, de fuir la condition<lb facs="#facs_7_r_2" n="N013" /> humaine dans sa spécificité.
+          <lb facs="#facs_7_r_2" n="N001" />Les techniques triomphantes aboutissent à une espèce de médicalisation<lb facs="#facs_7_r_2" n="N002" /> générale de tous les problèmes et de toutes les difficultés. On s’attaque par<lb facs="#facs_7_r_2" n="N003" /> exemple au problème de l’aggressivité, on cherche les moyens techniques de<lb facs="#facs_7_r_2" n="N004" /> la supprimer chez les êtres humains. Mais on oublie le fait qu’une certaine<lb facs="#facs_7_r_2" n="N005" /> aggressivité est liée à l’amour: si les êtres humains sont aggressifs, c’est<lb facs="#facs_7_r_2" n="N006" /> d’abord que, dans leur condition, tout ce qu’ils aiment est périssable, donc<lb facs="#facs_7_r_2" n="N007" /> toujours menacé. Par conséquent, lorsqu’ils aiment quelqu’un ou quelque<lb facs="#facs_7_r_2" n="N008" /> chose, l’attitude défensive, et donc aggressive aussi, est à peu près inévitable.<lb facs="#facs_7_r_2" n="N009" /> Si on voulait vraiment supprimer l’aggressivité, il faudrait supprimer l’affec<lb facs="#facs_7_r_2" n="N010" break="no" />tivité. On se dit qu’on pourrait ainsi supprimer les conflits, et on demande<lb facs="#facs_7_r_2" n="N011" /> aux sciences humaines — quoi? de permettre à l’homme de cesser d’être un<lb facs="#facs_7_r_2" n="N012" /> homme, de devenir une sorte d’animal angélique, de fuir la condition<lb facs="#facs_7_r_2" n="N013" /> humaine dans sa spécificité.
         </p>
         </div>
 <div n="2">
@@ -281,35 +287,33 @@
             <lb facs="#facs_7_r_3" n="N001" />5ème thèse:
           </head>
           <p facs="#facs_7_r_4">
-            <lb facs="#facs_7_r_4" n="N001" />Le changement est devenu la devise de l'époque. Tout change, et il faut tout<lb facs="#facs_7_r_4" n="N002" /> changer, la vie, l'homme, la société. Nous sommes en plein millénarisme<lb facs="#facs_7_r_4" n="N003" /> scientifique. Changer est une valeur en soi. Changer supprimera le mal et le<lb facs="#facs_7_r_4" n="N004" /> malheur. Mais changer l'homme, la société, pour en faire quoi? On ne sait<lb facs="#facs_7_r_4" n="N005" /> pas. Et on interroge les sciences humaines.
+            <lb facs="#facs_7_r_4" n="N001" />Le changement est devenu la devise de l’époque. Tout change, et il faut tout<lb facs="#facs_7_r_4" n="N002" /> changer, la vie, l’homme, la société. Nous sommes en plein millénarisme<lb facs="#facs_7_r_4" n="N003" /> scientifique. Changer est une valeur en soi. Changer supprimera le mal et le<lb facs="#facs_7_r_4" n="N004" /> malheur. Mais changer l’homme, la société, pour en faire quoi? On ne sait<lb facs="#facs_7_r_4" n="N005" /> pas. Et on interroge les sciences humaines.
           </p>
           <p facs="#facs_7_r_5">
-            <lb facs="#facs_7_r_5" n="N001" />Ici, le problème posé est celui des fins. Tous ces efforts pour faire quoi? Or<lb facs="#facs_7_r_5" n="N002" /> justement, dans le domaine des fins, les sciences humaines sont selon moi<lb facs="#facs_7_r_5" n="N003" /> incompétentes, à cause de leur centre irréductible. Aussi leur efficacité,<lb facs="#facs_7_r_5" n="N004" /> lorsqu'elles cherchent à répondre à cette attente, est-elle essentiellement<lb facs="#facs_7_r_5" n="N005" /> négative. C'est un des éléments qui expliquent pourquoi les troubles étudiants<lb facs="#facs_7_r_5" n="N006" /> ont été si intenses particulièrement parmi ceux qui faisaient des études de<lb facs="#facs_7_r_5" n="N007" /> sciences humaines. Lorsque ces sciences prétendent déterminer des fins,<lb facs="#facs_7_r_5" n="N008" /> elles suppriment le sens, et même leur propre sens.
+            <lb facs="#facs_7_r_5" n="N001" />Ici, le problème posé est celui des fins. Tous ces efforts pour faire quoi? Or<lb facs="#facs_7_r_5" n="N002" /> justement, dans le domaine des fins, les sciences humaines sont selon moi<lb facs="#facs_7_r_5" n="N003" /> incompétentes, à cause de leur centre irréductible. Aussi leur efficacité,<lb facs="#facs_7_r_5" n="N004" /> lorsqu’elles cherchent à répondre à cette attente, est-elle essentiellement<lb facs="#facs_7_r_5" n="N005" /> négative. C’est un des éléments qui expliquent pourquoi les troubles étudiants<lb facs="#facs_7_r_5" n="N006" /> ont été si intenses particulièrement parmi ceux qui faisaient des études de<lb facs="#facs_7_r_5" n="N007" /> sciences humaines. Lorsque ces sciences prétendent déterminer des fins,<lb facs="#facs_7_r_5" n="N008" /> elles suppriment le sens, et même leur propre sens.
           </p>
           <p facs="#facs_7_r_6">
-            <lb facs="#facs_7_r_6" n="N001" />Du même coup, elles détruisent chez les êtres humains, le sens du sens. Or<lb facs="#facs_7_r_6" n="N002" /> quand un être humain a vu mourir en lui le sens du sens, il ne sait plus vivre.<lb facs="#facs_7_r_6" n="N003" /> Même si les sciences humaines se mettent au service d'une révolution déter
+            <lb facs="#facs_7_r_6" n="N001" />Du même coup, elles détruisent chez les êtres humains, le sens du sens. Or<lb facs="#facs_7_r_6" n="N002" /> quand un être humain a vu mourir en lui le sens du sens, il ne sait plus vivre.<lb facs="#facs_7_r_6" n="N003" /> Même si les sciences humaines se mettent au service d’une révolution déter
           </p>
         </div>
-      <pb facs="#facs_8" n="8" />
+      <pb facs="#facs_8" n="[223]" />
         <div type="text">
 <p facs="#facs_8_r_1">
-          <lb facs="#facs_8_r_1" n="N001" />minée, cette révolution n'a alors pas de sens. Lorsque le sens manque, on se débat; et lorsqu'on se débat contre l'absence du sens parce qu'on étouffe, <lb facs="#facs_8_r_1" n="N002" />parce que le sens est l'air respirable de l'âme, alors on recourt à la violence. La violence, le désarroi, la mort du sens engendrent une espèce de cercle <lb facs="#facs_8_r_1" n="N003" />vicieux: on en revient à réclamer une boussole et des remèdes aux sciences humaines. Si bien que celles-ci sont à la fois le recours et la destruction, la <lb facs="#facs_8_r_1" n="N004" />destruction et le recours. Rien d'étonnant si ces sciences, qui ont toujours souffert du désir nostalgique d'égaler la sécurité méthodologique des sciences <lb facs="#facs_8_r_1" n="N005" />exactes, se sont laissé gagner par l'hybris. On attend d'elles ce qu'à d'autres époques on attendait de la suprême sagesse et des dieux.
+          <lb facs="#facs_8_r_1" n="N001" />minée, cette révolution n’a alors pas de sens. Lorsque le sens manque, on se débat; et lorsqu’on se débat contre l’absence du sens parce qu’on étouffe, <lb facs="#facs_8_r_1" n="N002" />parce que le sens est l’air respirable de l’âme, alors on recourt à la violence. La violence, le désarroi, la mort du sens engendrent une espèce de cercle <lb facs="#facs_8_r_1" n="N003" />vicieux: on en revient à réclamer une boussole et des remèdes aux sciences humaines. Si bien que celles-ci sont à la fois le recours et la destruction, la <lb facs="#facs_8_r_1" n="N004" />destruction et le recours. Rien d’étonnant si ces sciences, qui ont toujours souffert du désir nostalgique d’égaler la sécurité méthodologique des sciences <lb facs="#facs_8_r_1" n="N005" />exactes, se sont laissé gagner par l’hybris. On attend d’elles ce qu’à d’autres époques on attendait de la suprême sagesse et des dieux.
         </p>
         <p facs="#facs_8_r_2">
           <lb facs="#facs_8_r_2" n="N001" />6ème thèse:
         </p>
         <p facs="#facs_8_r_3">
-          <lb facs="#facs_8_r_3" n="N001" />En même temps, les sciences humaines se débattent dans un extrême désarroi, et les grandes organisations internationales qui voudraient leur donner <lb facs="#facs_8_r_3" n="N002" />un rôle opérationnel dans leurs activités d'éducation, de promotion des Droits de l'homme et du développement, n'y réussissant guère. Peut-être la <lb facs="#facs_8_r_3" n="N003" />faute en est-elle à cette hybris même.
+          <lb facs="#facs_8_r_3" n="N001" />En même temps, les sciences humaines se débattent dans un extrême désarroi, et les grandes organisations internationales qui voudraient leur donner <lb facs="#facs_8_r_3" n="N002" />un rôle opérationnel dans leurs activités d’éducation, de promotion des Droits de l’homme et du développement, n’y réussissant guère. Peut-être la <lb facs="#facs_8_r_3" n="N003" />faute en est-elle à cette hybris même.
         </p>
         <p facs="#facs_8_r_4">
-          <lb facs="#facs_8_r_4" n="N001" />Les sciences humaines sont plus nécessaires que jamais. Mais il ne leur appartient pas de résorber ou diluer l'humain qui les porte et qui leur résiste. <lb facs="#facs_8_r_4" n="N002" />Ce n'est pas à elles de dire les finalités ou de les ruiner. Elles ont pour tâche de décrire, de faire mieux comprendre ce qui est, en extension et en pro<lb facs="#facs_8_r_4" n="N003" break="no" />fondeur, parfois de prévoir des évolutions probables, — menaces ou espérances appelant des décisions humaines. Elles font apparaître des liens entre <lb facs="#facs_8_r_4" n="N004" />causes et conséquences, afin que ces décisions soient plus conscientes et plus lucides. Mais elles ne peuvent remplir ces tâches que si elles puissent <lb facs="#facs_8_r_4" n="N005" />elles-mêmes leurs sens, leur mesure, leur sens des limites, dans ce qui les porte et qu'elles ne maîtrisent pas: la liberté humaine.
+          <lb facs="#facs_8_r_4" n="N001" />Les sciences humaines sont plus nécessaires que jamais. Mais il ne leur appartient pas de résorber ou diluer l’humain qui les porte et qui leur résiste. <lb facs="#facs_8_r_4" n="N002" />Ce n’est pas à elles de dire les finalités ou de les ruiner. Elles ont pour tâche de décrire, de faire mieux comprendre ce qui est, en extension et en pro<lb facs="#facs_8_r_4" n="N003" break="no" />fondeur, parfois de prévoir des évolutions probables, — menaces ou espérances appelant des décisions humaines. Elles font apparaître des liens entre <lb facs="#facs_8_r_4" n="N004" />causes et conséquences, afin que ces décisions soient plus conscientes et plus lucides. Mais elles ne peuvent remplir ces tâches que si elles puissent <lb facs="#facs_8_r_4" n="N005" />elles-mêmes leurs sens, leur mesure, leur sens des limites, dans ce qui les porte et qu’elles ne maîtrisent pas: la liberté humaine.
         </p>
         <p facs="#facs_8_r_5">
-          <lb facs="#facs_8_r_5" n="N001" />Je crois qu'il importe pour les sciences humaines d'accomplir ce que mon maître Jaspers appelait: <foreign xml:lang="deu"><hi rendition="#i">sich bescheiden</hi></foreign>, l'acte de se restreindre. <lb facs="#facs_8_r_5" n="N002" />Consentir à des aspects partiels, à des méthodes spécifiques. Ramener l'homme à sa condition, l'aider à accepter celle-ci, avec son irréductibilité à <lb facs="#facs_8_r_5" n="N003" />un savoir. L'aider à assumer son centre existentiel, son rapport au transcendant, son recours au permanent pour fonder et pour justifier le change<lb facs="#facs_8_r_5" n="N004" break="no" />ment. Et essentiellement: son besoin d'un sens.
+          <lb facs="#facs_8_r_5" n="N001" />Je crois qu’il importe pour les sciences humaines d’accomplir ce que mon maître Jaspers appelait: <foreign xml:lang="deu"><hi rendition="#i">sich bescheiden</hi></foreign>, l’acte de se restreindre. <lb facs="#facs_8_r_5" n="N002" />Consentir à des aspects partiels, à des méthodes spécifiques. Ramener l’homme à sa condition, l’aider à accepter celle-ci, avec son irréductibilité à <lb facs="#facs_8_r_5" n="N003" />un savoir. L’aider à assumer son centre existentiel, son rapport au transcendant, son recours au permanent pour fonder et pour justifier le change<lb facs="#facs_8_r_5" n="N004" break="no" />ment. Et essentiellement: son besoin d’un sens.
         </p>
-        <p>
-          <lb facs="#facs_8" n="N001" />223
-        </p>
+        
       </div>
 </div>
 </body></text>

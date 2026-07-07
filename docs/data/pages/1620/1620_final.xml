@@ -32,6 +32,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="534" lry="741">
+      <graphic url="1620_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="115" uly="40" lrx="270" lry="61" />
       <zone xml:id="facs_1_r_2" ulx="142" uly="87" lrx="243" lry="117" />
       <zone xml:id="facs_1_r_3" ulx="139" uly="457" lrx="445" lry="495" />
@@ -40,12 +41,14 @@
       <zone xml:id="facs_1_r_6" ulx="136" uly="598" lrx="450" lry="676" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="1042" lry="738">
+      <graphic url="1620_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="56" uly="105" lrx="394" lry="411" />
       <zone xml:id="facs_2_r_2" ulx="642" uly="201" lrx="977" lry="319" />
       <zone xml:id="facs_2_r_3" ulx="642" uly="347" lrx="979" lry="651" />
       <zone xml:id="facs_2_r_4" ulx="57" uly="415" lrx="389" lry="638" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="1035" lry="744">
+      <graphic url="1620_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="59" uly="82" lrx="386" lry="127" />
       <zone xml:id="facs_3_r_2" ulx="636" uly="83" lrx="971" lry="251" />
       <zone xml:id="facs_3_r_3" ulx="58" uly="193" lrx="392" lry="460" />
@@ -54,6 +57,7 @@
       <zone xml:id="facs_3_r_6" ulx="638" uly="580" lrx="976" lry="683" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="1042" lry="734">
+      <graphic url="1620_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="636" uly="81" lrx="963" lry="169" />
       <zone xml:id="facs_4_r_2" ulx="54" uly="97" lrx="299" lry="114" />
       <zone xml:id="facs_4_r_3" ulx="53" uly="128" lrx="391" lry="175" />
@@ -65,6 +69,7 @@
       <zone xml:id="facs_4_r_9" ulx="956" uly="663" lrx="979" lry="681" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="521" lry="756">
+      <graphic url="1620_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="54" uly="91" lrx="179" lry="101" />
       <zone xml:id="facs_5_r_2" ulx="54" uly="114" lrx="384" lry="226" />
       <zone xml:id="facs_5_r_3" ulx="54" uly="236" lrx="384" lry="458" />
@@ -101,7 +106,7 @@
         <p>
           Ansprache von<lb facs="#facs_1_l_8_1" n="N001" />Frau Professor Dr. Dr. h.c. Jeanne Hersch<lb facs="#facs_1_l_8_2" n="N002" />anlässlich der Übergabe des<lb facs="#facs_1_l_8_3" n="N003" />Landis &amp; Gyr Förderungspreises für Literatur<lb facs="#facs_1_l_8_4" n="N004" />an Emil Zopfl am 11. November 1979 in Zug
         </p>
-      <pb facs="#facs_2" n="2" />
+      <pb facs="#facs_2" n="[2]" />
         <p facs="#facs_2_r_1">
           2<lb facs="#facs_2_l_1_1" n="N001" />3
         </p>
@@ -123,7 +128,7 @@
         <p>
           Da es aber um literarische Werke geht, die zur Kunst gehören sollen, bleibt eine solche Entscheidung nicht ohne Folgen im Stil, in der Form der Werke. Die geschichtliche Entwicklung und Veränderung des Stils und der Form überhaupt vollzieht sich nicht mehr durch die natürliche Evolution und den normalen Wunsch nach Veränderung und Erneuerung des Geschmacks. Der zur Auflehnung rufende Schriftsteller sucht mit Absicht nach Gewaltmitteln des Stils, der Form, der Darstellung. Selten kann er dabei vermeiden, daß das gewalttätige Element dabei ein bestimmtes Gefühl der Willkür erweckt, die der wesentlichen Notwendigkeit und formellen Einheit eines Kunstwerkes widerspricht. Freilich entsteht dabei etwas anderes, was auch der Kunst zugehört: eine Überraschung, ein Schock des Neuen, Unerwarteten, Unerhörten, wodurch der Leser auf eigentliche Weise wach und freiheitsfähig wird. Auch die klassische Kunst aber, wenn man sie wirklich empfängt, kann diese Wirkung haben: ich erinnere an das Gedicht von Rilke, wo nach einer kurzen Beschreibung vom Torso Apollos, der Dichter plötzlich mit dem Vers schließt: «Du sollst dein Leben ändern» — Man muß aber traurig feststellen, daß bei vielen zeitgenössischen, unerwarteten und durch ihre Willkür selbst wirkenden neuen Gestaltungen das
         </p>
-      <pb facs="#facs_3" n="3" />
+      <pb facs="#facs_3" n="[4]" />
         <p facs="#facs_3_r_1">
           4<lb facs="#facs_3_l_1_1" n="N001" />5
         </p>
@@ -151,7 +156,7 @@
         <p>
           Aus dieser doppelten Grundforderung ist es verständlich, daß man die Kultur so oft, und ohne je zu einem Schluß zu kommen, auf zwei entgegengesetzte Weisen eingeschätzt hat: als eine konservative Realität, die die Menschen der Gegenwart zu Gefangenen der Vergangenheit macht, und ihnen sozusagen so schweres und geliebtes Gepäck mitzutragen gibt, daß sie jede Fähigkeit verlieren, eine andere Zukunft zu gestalten — andererseits als eine Schulung zum Antikonformismus, durch die die Menschen ständig lernen, sich dem schon Daselenden nie zu unterwerfen, sich immer dagegen auf
         </p>
-      <pb facs="#facs_4" n="4" />
+      <pb facs="#facs_4" n="[6]" />
         <p facs="#facs_4_r_1">
           zulehnen, so daß sie durch dieses «Nein» gezwungen werden, radikal Neues zu erfinden und zu verwirklichen.
         </p>
@@ -185,7 +190,7 @@
         <p>
           J.H.
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[7]" />
         <p facs="#facs_5_r_1">
           (Aus: Persönlichkeiten Europas)
         </p>

@@ -31,6 +31,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="902" lry="705">
+      <graphic url="1220_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="97" uly="65" lrx="350" lry="94" />
       <zone xml:id="facs_1_r_2" ulx="527" uly="76" lrx="584" lry="94" />
       <zone xml:id="facs_1_r_3" ulx="98" uly="86" lrx="300" lry="119" />
@@ -43,6 +44,7 @@
       <zone xml:id="facs_1_r_10" ulx="648" uly="397" lrx="803" lry="469" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="872" lry="705">
+      <graphic url="1220_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="457" uly="69" lrx="791" lry="172" />
       <zone xml:id="facs_2_r_2" ulx="83" uly="75" lrx="416" lry="174" />
       <zone xml:id="facs_2_r_3" ulx="457" uly="188" lrx="789" lry="214" />
@@ -53,6 +55,7 @@
       <zone xml:id="facs_2_r_8" ulx="457" uly="522" lrx="789" lry="538" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="869" lry="715">
+      <graphic url="1220_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="81" uly="67" lrx="416" lry="271" />
       <zone xml:id="facs_3_r_2" ulx="456" uly="88" lrx="793" lry="209" />
       <zone xml:id="facs_3_r_3" ulx="542" uly="213" lrx="791" lry="237" />
@@ -64,6 +67,7 @@
       <zone xml:id="facs_3_r_9" ulx="80" uly="523" lrx="411" lry="542" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="869" lry="719">
+      <graphic url="1220_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="80" uly="63" lrx="413" lry="129" />
       <zone xml:id="facs_4_r_2" ulx="76" uly="182" lrx="411" lry="324" />
       <zone xml:id="facs_4_r_3" ulx="455" uly="217" lrx="788" lry="310" />
@@ -73,6 +77,7 @@
       <zone xml:id="facs_4_r_7" ulx="75" uly="506" lrx="405" lry="568" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="882" lry="725">
+      <graphic url="1220_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="385" uly="76" lrx="420" lry="126" />
       <zone xml:id="facs_5_r_2" ulx="462" uly="78" lrx="800" lry="318" />
       <zone xml:id="facs_5_r_3" ulx="80" uly="133" lrx="421" lry="301" />
@@ -81,6 +86,7 @@
       <zone xml:id="facs_5_r_6" ulx="758" uly="652" lrx="802" lry="688" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="866" lry="712">
+      <graphic url="1220_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="83" uly="69" lrx="420" lry="154" />
       <zone xml:id="facs_6_r_2" ulx="465" uly="69" lrx="801" lry="220" />
       <zone xml:id="facs_6_r_3" ulx="83" uly="158" lrx="420" lry="318" />
@@ -90,6 +96,7 @@
       <zone xml:id="facs_6_r_7" ulx="465" uly="412" lrx="801" lry="573" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="879" lry="725">
+      <graphic url="1220_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="458" uly="79" lrx="797" lry="212" />
       <zone xml:id="facs_7_r_2" ulx="85" uly="82" lrx="111" lry="97" />
       <zone xml:id="facs_7_r_3" ulx="112" uly="82" lrx="422" lry="303" />
@@ -100,12 +107,14 @@
       <zone xml:id="facs_7_r_8" ulx="85" uly="326" lrx="422" lry="594" />
     </surface>
     <surface xml:id="facs_8" ulx="0" uly="0" lrx="886" lry="708">
+      <graphic url="1220_p008.png"/>
       <zone xml:id="facs_8_r_1" ulx="91" uly="78" lrx="433" lry="290" />
       <zone xml:id="facs_8_r_2" ulx="472" uly="296" lrx="806" lry="430" />
       <zone xml:id="facs_8_r_3" ulx="94" uly="341" lrx="430" lry="374" />
       <zone xml:id="facs_8_r_4" ulx="92" uly="535" lrx="319" lry="554" />
     </surface>
     <surface xml:id="facs_9" ulx="0" uly="0" lrx="879" lry="725">
+      <graphic url="1220_p009.png"/>
       <zone xml:id="facs_9_r_1" ulx="84" uly="97" lrx="133" lry="116" />
       <zone xml:id="facs_9_r_2" ulx="84" uly="119" lrx="421" lry="272" />
       <zone xml:id="facs_9_r_3" ulx="458" uly="122" lrx="792" lry="298" />
@@ -118,7 +127,7 @@
   <text>
     <body>
 <div type="interview">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[66]" />
         <div type="text">
 <p facs="#facs_1_r_1">
           <lb facs="#facs_1_l_1_1" n="N001" />66<lb facs="#facs_1_l_1_2" n="N002" />67
@@ -204,7 +213,7 @@
             <lb facs="#facs_2_r_8" n="N001" />J. H.: Das Wort «Gott» ist ein sehr geheimnisvolles Wort. Man muß suchen, was man damit meint, oder noch mehr, wie man
           </p>
         </sp>
-      </div><pb facs="#facs_3" n="3" />
+      </div><pb facs="#facs_3" n="[70]" />
         <div type="text"><p facs="#facs_3_r_1">
           <lb facs="#facs_3_r_1" n="N001" />damit lebt. Es ist ein vieldeutiges Wort. Man kann sich unter Gott den alten Mann mit dem Bart vorstellen, der da oben auf einer Wolke thront und von dem Gagarin sagte, er sei ihm nicht begegnet. Wenn ich statt Gott Transzendenz sage, dann meine ich nicht etwas uns empirisch Gegebenes, auch nicht etwas durch den Verstand Bewiesenes oder Gewußtes. Ich würde sagen: Transzendenz ist immer mit uns. Damit meine ich folgendes: Wir Menschen leben mit einem Sinn. Jedes Wort, jede Tat bezieht sich auf einen Sinn. Tatsachen haben durch sich allein keinen Sinn. Ein Sinn ist auch nicht rational zu erklären. Wir können natürlich rational rechtfertigen, daß wir dies und jenes uns als Ziel gesetzt haben. Aber die Bedeutung eines Zieles können wir aus den Tatsachen nicht herausholen. Da gibt es eine ganz klare Unmöglichkeit.
         </p>
@@ -248,7 +257,7 @@
         <p facs="#facs_3_r_9">
           <lb facs="#facs_3_r_9" n="N001" />Also die Wurzel der Ideologie ist Transzendenz. Daher kommt ihre Wirkungskraft. Aber es ist Transzendenz in Übersetzung auf ein irdisches Projekt, das historisch bedingt ist und das mit meinem besseren Wissen und Gewissen zusammenhängt: wie ich die Möglichkeiten der Zeit sehe, wie ich die Tatsachen beurteile und ergreife. Wie kann man heutzutage in dieser Richtung handeln? Welche Menschen kann ich mit meiner Absicht gewinnen? Wie kann ich einer Partei beitreten? Wie und in welchen Grenzen ist das Programm dieser Partei für mich annehmbar? Das alles gehört zur Ebene der historisch gegebenen und zu beurteilenden Fakten. Es ist eine sachliche Übersetzung in relative Möglichkeiten, die ich ergreifen kann.
         </p>
-      </div><pb facs="#facs_4" n="4" />
+      </div><pb facs="#facs_4" n="[72]" />
         <div type="text"><p facs="#facs_4_r_1">
           <lb facs="#facs_4_r_1" n="N001" />Der große Unterschied zwischen der transzendenten oder religiösen Ebene und der Ebene der Ideologien ist der, daß die transzendente Ebene absolut und unbedingt ist, während die Überzeugung relativ und historisch bedingt ist. Das hat Folgen. Zum Beispiel: Wenn ich einer irdischen Institution beitrete, dann nur bedingt. Wenn eine Zeit kommt, wo meine Partei etwas tut, das für mich unannehmbar ist, trete ich aus ihr aus. Dasselbe würde ich von der Kirche sagen.
         </p>
@@ -379,7 +388,7 @@
             <lb facs="#facs_6_r_7" n="N001" />J. H.: Wenn ich richtig unterrichtet bin, gibt es doch jetzt in der <lb facs="#facs_6_r_7" n="N002" />Kirche starke und stärker werdende Strömungen, die sich gegen <lb facs="#facs_6_r_7" n="N003" />die Verabsolutierung des Politischen wenden, die sich für das <lb facs="#facs_6_r_7" n="N004" />echt Religiöse im echt antiklerikalen Sinne einsetzen, das heißt <lb facs="#facs_6_r_7" n="N005" />für das Religiöse, das sich nicht mit dem Politischen identifizie<lb facs="#facs_6_r_7" n="N006" break="no" />ren läßt, das aber sehr wohl den Gläubigen zu den Problemen <lb facs="#facs_6_r_7" n="N007" />des heutigen Tages führt, so daß er aus seiner religiösen Wurzel <lb facs="#facs_6_r_7" n="N008" />heraus sich den politischen Problemen stellt, aber das auf der <lb facs="#facs_6_r_7" n="N009" />Ebene des Politischen. Diese echt religiöse Tendenz wächst, <lb facs="#facs_6_r_7" n="N010" />während diejenigen, die sich politisch modernisieren wollen, <lb facs="#facs_6_r_7" n="N011" />auf der politischen Ebene gewinnen, aber auf der religiösen <lb facs="#facs_6_r_7" n="N012" />Ebene mehr und mehr verlieren.
           </p>
         </sp>
-      <pb facs="#facs_7" n="7" />
+      <pb facs="#facs_7" n="[78]" />
         <sp>
           <speaker>H.</speaker>
           <p facs="#facs_7_r_1">
@@ -422,7 +431,7 @@
             <lb facs="#facs_7_r_8" n="N001" />H.: Marxisten und Christen sind miteinander ins Gespräch<lb facs="#facs_7_r_8" n="N002" /> gekommen. Vatikan und Weltkirchenrat, aber auch einzelne<lb facs="#facs_7_r_8" n="N003" /> Kirchen unterhalten sozusagen offizielle oder inoffizielle<lb facs="#facs_7_r_8" n="N004" /> Kontakte mit dem Kreml und anderen sozialistischen Staaten.<lb facs="#facs_7_r_8" n="N005" />Casaroli fährt nach Warschau, Budapest, Prag, Moskau, Gromyko<lb facs="#facs_7_r_8" n="N006" /> besucht den Papst usw. Daneben gibt es Gespräche zwischen<lb facs="#facs_7_r_8" n="N007" /> Partei-Philosophen und christlichen Professoren, also<lb facs="#facs_7_r_8" n="N008" /> Theologen. Und auf einer anderen Ebene schließlich noch<lb facs="#facs_7_r_8" n="N009" /> Gespräche zwischen dissidenten Marxisten – Bloch, Garaudy<lb facs="#facs_7_r_8" n="N010" /> usw. –, die von ihren Parteien ausgeschlossen wurden, und<lb facs="#facs_7_r_8" n="N011" /> Christen, die ebenfalls nicht im offiziellen Auftrag ihrer<lb facs="#facs_7_r_8" n="N012" /> Kirchen, zum Teil unter stiller oder offener Mißbilligung ihrer<lb facs="#facs_7_r_8" n="N013" /> Kirchen, miteinander reden. Auf den ersten beiden Ebenen<lb facs="#facs_7_r_8" n="N014" /> geht es wohl um politische Akte, taktische Schachzüge, um<lb facs="#facs_7_r_8" n="N015" /> politische Zweckmäßigkeit. Bleiben wir bei der dritten Ebene.<lb facs="#facs_7_r_8" n="N016" /> Was trennt Marxisten, die ja betont Marxisten bleiben wollen,<lb facs="#facs_7_r_8" n="N017" /> und Christen, die ebenfalls Christen bleiben wollen,<lb facs="#facs_7_r_8" n="N018" /> voneinander, und wo können sie gemeinsam versuchen,<lb facs="#facs_7_r_8" n="N019" /> sagen wir, die Welt, die Wirklichkeit zu verändern?
           </p>
         </sp>
-      <pb facs="#facs_8" n="8" />
+      <pb facs="#facs_8" n="[80]" />
         <sp>
           <speaker>J. H.</speaker>
           <p facs="#facs_8_r_1">
@@ -464,7 +473,7 @@
         </p>
       </div>
 <div n="1" type="interview">
-        <pb facs="#facs_9" n="82" />
+        <pb facs="#facs_9" n="[82]" />
         <div type="text"><p facs="#facs_9_r_1">
           <lb facs="#facs_9_r_1" n="N001" />Bilder sind, daß alles ganz anders ist, und es gibt gebildete Leute,<lb facs="#facs_9_r_1" n="N002" /> die nur an Vorstellungen oder an irdisches Räsonnement<lb facs="#facs_9_r_1" n="N003" /> glauben.
         </p>
@@ -489,7 +498,7 @@
         <p facs="#facs_9_r_6">
           <lb facs="#facs_9_r_6" n="N001" />Das ist es, was wirkliche Christen von den Marxisten trennt.
         </p>
-        <pb facs="#facs_9" n="83" />
+        <pb facs="#facs_9" n="[83]" />
         <p>
           <lb facs="#facs_9_r_7" n="N001" />Jeanne Hersch
         </p>

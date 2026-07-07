@@ -31,6 +31,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="784" lry="666">
+      <graphic url="790_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="83" uly="77" lrx="351" lry="161" />
       <zone xml:id="facs_1_r_2" ulx="402" uly="79" lrx="543" lry="101" />
       <zone xml:id="facs_1_r_3" ulx="406" uly="187" lrx="591" lry="205" />
@@ -39,17 +40,20 @@
       <zone xml:id="facs_1_r_6" ulx="406" uly="546" lrx="709" lry="600" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="835" lry="699">
+      <graphic url="790_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="431" uly="76" lrx="714" lry="289" />
       <zone xml:id="facs_2_r_2" ulx="105" uly="77" lrx="383" lry="302" />
       <zone xml:id="facs_2_r_3" ulx="436" uly="425" lrx="717" lry="579" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="814" lry="668">
+      <graphic url="790_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="110" uly="79" lrx="384" lry="359" />
       <zone xml:id="facs_3_r_2" ulx="434" uly="112" lrx="702" lry="171" />
       <zone xml:id="facs_3_r_3" ulx="437" uly="256" lrx="714" lry="350" />
       <zone xml:id="facs_3_r_4" ulx="125" uly="483" lrx="257" lry="502" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="790" lry="675">
+      <graphic url="790_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="105" uly="79" lrx="289" lry="169" />
       <zone xml:id="facs_4_r_2" ulx="430" uly="79" lrx="614" lry="169" />
       <zone xml:id="facs_4_r_3" ulx="430" uly="171" lrx="614" lry="303" />
@@ -66,6 +70,7 @@
       <zone xml:id="facs_4_r_14" ulx="430" uly="464" lrx="614" lry="543" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="815" lry="670">
+      <graphic url="790_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="103" uly="77" lrx="368" lry="356" />
       <zone xml:id="facs_5_r_2" ulx="414" uly="198" lrx="451" lry="215" />
       <zone xml:id="facs_5_r_3" ulx="414" uly="236" lrx="694" lry="388" />
@@ -75,22 +80,26 @@
       <zone xml:id="facs_5_r_7" ulx="98" uly="575" lrx="113" lry="587" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="815" lry="665">
+      <graphic url="790_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="112" uly="138" lrx="372" lry="211" />
       <zone xml:id="facs_6_r_2" ulx="453" uly="419" lrx="715" lry="544" />
       <zone xml:id="facs_6_r_3" ulx="95" uly="492" lrx="384" lry="555" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="810" lry="664">
+      <graphic url="790_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="116" uly="93" lrx="389" lry="242" />
       <zone xml:id="facs_7_r_2" ulx="497" uly="260" lrx="713" lry="374" />
       <zone xml:id="facs_7_r_3" ulx="115" uly="510" lrx="396" lry="561" />
     </surface>
     <surface xml:id="facs_8" ulx="0" uly="0" lrx="815" lry="668">
+      <graphic url="790_p008.png"/>
       <zone xml:id="facs_8_r_1" ulx="434" uly="127" lrx="715" lry="293" />
       <zone xml:id="facs_8_r_2" ulx="114" uly="137" lrx="389" lry="294" />
       <zone xml:id="facs_8_r_3" ulx="628" uly="325" lrx="669" lry="339" />
       <zone xml:id="facs_8_r_4" ulx="448" uly="408" lrx="471" lry="421" />
     </surface>
     <surface xml:id="facs_9" ulx="0" uly="0" lrx="790" lry="685">
+      <graphic url="790_p009.png"/>
       <zone xml:id="facs_9_r_1" ulx="410" uly="70" lrx="684" lry="119" />
       <zone xml:id="facs_9_r_2" ulx="81" uly="77" lrx="355" lry="140" />
       <zone xml:id="facs_9_r_3" ulx="410" uly="128" lrx="684" lry="148" />
@@ -354,7 +363,7 @@
         <p>
           Ich denke jetzt an Pestalozzi. Er hat zu seiner Zeit eine große Denkarbeit geleistet, die, so glaube ich, auch heute noch gültig ist in bezug auf die Erziehung des Menschen. Um Pestalozzi herum waren eine ganze Reihe bedeutender Menschen, die seine Ideen aufgenommen, gelehrt, praktiziert und auch propagiert haben. Man hat über diese Ideen also gesprochen. Heute scheint mir, wir leben, was die Schule anbetrifft – auch auf andern Gebieten – ein wenig von der Hand in den Mund. Gewiß kann man nicht alles planen, aber wir müßten die Dinge überdenken, eben
         </p>
-      <pb facs="#facs_8" n="8" />
+      <pb facs="#facs_8" n="[72]" />
         <p facs="#facs_8_r_1">
           72<lb facs="#facs_8_l_1_1" n="N001" />73
         </p>
@@ -403,7 +412,7 @@
             Meinen Sie nicht, daß man auch die Erkenntnisse der Psychologie in der Schule vermehrt verwerten müßte?
           </p>
         </sp>
-      <pb facs="#facs_9" n="9" />
+      <pb facs="#facs_9" n="[73]" />
         <p facs="#facs_9_r_1">
           Ich würde sagen, ja, aber wiederum: ohne Aberglauben. Es ist ein Aberglaube, von der Psychologie die Lösung aller Probleme zu erwarten. Ein wahrer Psychologe denkt nicht so. Er weiß: Die Psychologie weiß etwas vom Menschen, aber er soll nicht zu ihrem Objekt reduziert werden.
         </p>

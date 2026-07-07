@@ -39,10 +39,12 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="849" lry="1253">
+      <graphic url="1460_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="0" uly="164" lrx="833" lry="268" />
       <zone xml:id="facs_1_r_2" ulx="320" uly="1093" lrx="424" lry="1165" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="825" lry="1205">
+      <graphic url="1460_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="41" uly="124" lrx="406" lry="157" />
       <zone xml:id="facs_2_r_2" ulx="39" uly="168" lrx="806" lry="219" />
       <zone xml:id="facs_2_r_3" ulx="428" uly="247" lrx="810" lry="734" />
@@ -55,6 +57,7 @@
       <zone xml:id="facs_2_r_10" ulx="37" uly="1045" lrx="409" lry="1120" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="825" lry="1205">
+      <graphic url="1460_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="27" uly="130" lrx="401" lry="380" />
       <zone xml:id="facs_3_r_2" ulx="416" uly="134" lrx="793" lry="260" />
       <zone xml:id="facs_3_r_3" ulx="419" uly="290" lrx="700" lry="316" />
@@ -62,6 +65,7 @@
       <zone xml:id="facs_3_r_5" ulx="29" uly="375" lrx="411" lry="1126" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="825" lry="1205">
+      <graphic url="1460_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="32" uly="135" lrx="407" lry="888" />
       <zone xml:id="facs_4_r_2" ulx="424" uly="228" lrx="799" lry="476" />
       <zone xml:id="facs_4_r_3" ulx="425" uly="505" lrx="727" lry="549" />
@@ -69,6 +73,7 @@
       <zone xml:id="facs_4_r_5" ulx="33" uly="883" lrx="408" lry="1127" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="825" lry="1205">
+      <graphic url="1460_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="20" uly="134" lrx="400" lry="311" />
       <zone xml:id="facs_5_r_2" ulx="417" uly="183" lrx="797" lry="812" />
       <zone xml:id="facs_5_r_3" ulx="25" uly="301" lrx="410" lry="1132" />
@@ -76,6 +81,7 @@
       <zone xml:id="facs_5_r_5" ulx="425" uly="886" lrx="800" lry="1129" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="825" lry="1205">
+      <graphic url="1460_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="427" uly="130" lrx="711" lry="181" />
       <zone xml:id="facs_6_r_2" ulx="33" uly="132" lrx="412" lry="615" />
       <zone xml:id="facs_6_r_3" ulx="425" uly="200" lrx="804" lry="682" />
@@ -84,6 +90,7 @@
       <zone xml:id="facs_6_r_6" ulx="424" uly="688" lrx="803" lry="1126" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="825" lry="1205">
+      <graphic url="1460_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="20" uly="138" lrx="400" lry="384" />
       <zone xml:id="facs_7_r_2" ulx="416" uly="140" lrx="796" lry="448" />
       <zone xml:id="facs_7_r_3" ulx="24" uly="383" lrx="400" lry="524" />
@@ -101,7 +108,7 @@
   <text>
     <body>
 <div n="1" type="speech">
-  <pb facs="#facs_1" n="1" />
+  <pb facs="#facs_1" n="[1]" />
   <div type="text">
 <head>
     <lb facs="#facs_1_l_1" n="N001" />Institut für Rehabilitation
@@ -121,7 +128,7 @@
     <lb facs="#facs_1_l_6" n="N002" /><foreign xml:lang="fra">Cécité</foreign>
   </p>
 </div>
-<pb facs="#facs_2" n="114" />
+<pb facs="#facs_2" n="[114]" />
         <div type="text">
 <head facs="#facs_2_r_1">
           <title type="main">Die Integration des Behinderten</title>
@@ -151,7 +158,7 @@
             <lb facs="#facs_2_r_10" n="N001" />Die beschriebenen zwei Aspekte gehören normalerweise zusammen. Wenn die objektive Seite der Integration gelöst ist, dann gibt es grosse Chancen (keine Sicherheit, aber grosse Chancen) auch für die subjektive Integration. Und wo die Integration objektiv nicht verwirklicht ist, kann das subjektive Gefühl der Integration schwerlich erlangt werden. Also haben wir zuerst die Pflicht, die objektiven Voraussetzungen zu schaffen. Das ist eine sehr wichtige Vorbedingung. Wie wichtig sie ist, illustriert die bekannte Tatsache, dass die Zahl der Selbstmorde in den freien Berufen viel grösser ist als in den stark durchorganisierten Berufen. Der Mensch träumt oft von freien Berufen;
           </p>
         </div>
-      <pb facs="#facs_3" n="115" />
+      <pb facs="#facs_3" n="[115]" />
         <div type="text">
 <p facs="#facs_3_r_1">
           <lb facs="#facs_3_r_1" n="N001" />es ist ein tiefes Bedürfnis des Menschen, arbeiten zu können, was er will, sich alles <lb facs="#facs_3_r_1" n="N002" />einzurichten, wie er es will. Aber seltsamerweise gibt es in den stark organisierten Be<lb facs="#facs_3_r_1" n="N003" break="no" />rufen weniger Selbstmorde als in den freien Berufen: Berufe der Intellektuellen oder der <lb facs="#facs_3_r_1" n="N004" />allein zu Hause arbeitenden Handwerker. Das heisst, dass die Unterstützung durch <lb facs="#facs_3_r_1" n="N005" />den Rahmen für das menschliche Wesen viel wichtiger ist, als man glaubt.
@@ -169,7 +176,7 @@
           <lb facs="#facs_3_r_5" n="N001" />Zwischen dem subjektiven und dem objektiven Aspekt gibt es somit Beziehungen, <lb facs="#facs_3_r_5" n="N002" />wobei das Objektive im Vordergrund steht. Aber das ist nicht alles. Zwischen dem <lb facs="#facs_3_r_5" n="N003" />subjektiven und objektiven Aspekt gibt es auch paradoxe Beziehungen, die manchmal <lb facs="#facs_3_r_5" n="N004" />in Widerspruch zueinander stehen, nicht immer harmonieren. So verlangt das sub<lb facs="#facs_3_r_5" n="N005" break="no" />jektive Integrationsgefühl zum Beispiel nicht nur, dass man objektiv einen Platz in der <lb facs="#facs_3_r_5" n="N006" />Gesellschaft hat, sondern dass man seinen eigenen Platz hat; nicht nur irgendeinen <lb facs="#facs_3_r_5" n="N007" />Platz, sondern einen einzigartigen Platz, einen Platz, an welchem man nach seinem <lb facs="#facs_3_r_5" n="N008" />Gefühl Unersetzliches tut. Jeder Mensch empfindet sich selbst als eine Ausnahme. Wir <lb facs="#facs_3_r_5" n="N009" />benennen nur uns selbst mit «ich» und keinen andern so, auch wenn wir ihn lieben. <lb facs="#facs_3_r_5" n="N010" />Dieses Ich-sagen impliziert eine Einstellung, bei der Sie beispielweise wollen, dass man <lb facs="#facs_3_r_5" n="N011" />es merkt, wenn Sie verschwinden. Das bedeutet einmal, dass Sie in der Gesellschaft <lb facs="#facs_3_r_5" n="N012" />einen einzigartigen und fast nicht ersetzbaren Platz haben. Und zweitens – ein weiterer <lb facs="#facs_3_r_5" n="N013" />Widerspruch – wollen Sie zwar, dass dieser Platz und die Arbeit, die Sie leisten, <lb facs="#facs_3_r_5" n="N014" />unersetzlich sind, aber Sie wollen sie frei tun, Sie wollen nicht gezwungen sein, diese <lb facs="#facs_3_r_5" n="N015" />unersetzliche Arbeit zu leisten. Sie wollen frei eine unersetzliche Arbeit haben, die als <lb facs="#facs_3_r_5" n="N016" />solche anerkannt wird. Wenn man zu sehr integriert ist, wenn man zu sehr in einem <lb facs="#facs_3_r_5" n="N017" />Ganzen eingeschlossen ist, in welchem
         </p>
       </div>
-<pb facs="#facs_4" n="4" />
+<pb facs="#facs_4" n="[4]" />
         <div type="text">
 <p facs="#facs_4_r_1">
           <lb facs="#facs_4_r_1" n="N001" />116
@@ -190,7 +197,7 @@
           <lb facs="#facs_4_r_6" n="N001" />Die Behinderten und jene, die sie pflegen, <lb facs="#facs_4_r_6" n="N002" />sind alle in dieser Gesellschaft, und man <lb facs="#facs_4_r_6" n="N003" />atmet diese Luft jeden Tag, diese Luft der <lb facs="#facs_4_r_6" n="N004" />Sehnsucht nach Integration und der Ableh<lb break="no" facs="#facs_4_r_6" n="N005" />nung der Integration. In der heutigen Ge<lb break="no" facs="#facs_4_r_6" n="N006" />sellschaft ist das Problem der Behinderten – <lb facs="#facs_4_r_6" n="N007" />entschuldigen Sie, ich meine es nicht bos<lb break="no" facs="#facs_4_r_6" n="N008" />haft – gewissermassen Mode geworden. Man <lb facs="#facs_4_r_6" n="N009" />hat, glaube ich, in allen Behörden und allen <lb facs="#facs_4_r_6" n="N010" />Kreisen der Gesellschaft noch nie so viel <lb facs="#facs_4_r_6" n="N011" />von Behinderten gesprochen. Gerade weil <lb facs="#facs_4_r_6" n="N012" />sie eine Randgruppe sind. Wenn Sie an das <lb facs="#facs_4_r_6" n="N013" />denken, was ich vorhin sagte, an dieses <lb facs="#facs_4_r_6" n="N014" />Nicht-dazu-gehören-wollen zum grossen <lb facs="#facs_4_r_6" n="N015" />Strom der Gesellschaft, diese Ablehnung <lb facs="#facs_4_r_6" n="N016" />des grossen Stroms, so bekommen die am <lb facs="#facs_4_r_6" n="N017" />Rande Stehenden Prestige, man interes<lb break="no" facs="#facs_4_r_6" n="N018" />siert sich für sie. Und das ist für die Hilfe <lb facs="#facs_4_r_6" n="N019" />an den Behinderten günstig. Diese Motiva<lb break="no" facs="#facs_4_r_6" n="N020" />tion ist zwar nicht immer von sehr guter <lb facs="#facs_4_r_6" n="N021" />Qualität, aber sie ist praktisch günstig. Und <lb facs="#facs_4_r_6" n="N022" />zudem ist eine entwickelte Gesellschaft wie <lb facs="#facs_4_r_6" n="N023" />die unsrige eine reiche Gesellschaft, die es
         </p>
       </div>
-<pb facs="#facs_5" n="117" />
+<pb facs="#facs_5" n="[117]" />
         <div type="text">
 <p facs="#facs_5_r_1">
           <lb facs="#facs_5_r_1" n="N001" />sich leisten kann, sich nicht nur um die Probleme der grossen <lb facs="#facs_5_r_1" n="N002" />Masse, sondern auch um die Ränder zu kümmern und also Sorge <lb facs="#facs_5_r_1" n="N003" />zu tragen für die Behinderten, mehr als es je in der Vergangen<lb facs="#facs_5_r_1" n="N004" break="no" />heit der Fall gewesen ist. Das sind vorerst alles einmal günstige <lb facs="#facs_5_r_1" n="N005" />Auswirkungen.
@@ -213,7 +220,7 @@
           <lb facs="#facs_5_r_6" n="N001" />Es ist vorerst klar, dass man bei allen Behinderten bestimmte <lb facs="#facs_5_r_6" n="N002" />Fähigkeiten entwickeln kann. Das ist eine Frage der Einbil<lb facs="#facs_5_r_6" n="N003" break="no" />dungskraft. Meines Erachtens geht es dabei nicht nur darum, <lb facs="#facs_5_r_6" n="N004" />wenn jemand nicht laufen kann, ihm zu helfen, sich zu bewe<lb facs="#facs_5_r_6" n="N005" break="no" />gen, oder wenn jemand nicht hören kann, ihm zu helfen, besser <lb facs="#facs_5_r_6" n="N006" />zu hören. Sondern wenn jemand auf einem Gebiet behindert <lb facs="#facs_5_r_6" n="N007" />ist, gilt es, andere Gebiete zu finden, also irgendwie
         </p>
       </div>
-<pb facs="#facs_6" n="118" />
+<pb facs="#facs_6" n="[118]" />
         <div type="text">
 <p facs="#facs_6_r_2">
           <lb facs="#facs_6_r_2" n="N001" />zu kompensieren zu versuchen, zu sehen, <lb facs="#facs_6_r_2" n="N002" />ob irgendwo etwas entwickelt werden kann, <lb facs="#facs_6_r_2" n="N003" />was das Leben erfüllt. Natürlich – das ist <lb facs="#facs_6_r_2" n="N004" />eine Banalität – müssen wir vorher in jedem <lb facs="#facs_6_r_2" n="N005" />nur möglichen Ausmass die objektive Inte<lb break="no" facs="#facs_6_r_2" n="N006" />gration begünstigen, um dem Behinderten die <lb facs="#facs_6_r_2" n="N007" />Möglichkeit zu geben, sich in der Ge<lb break="no" facs="#facs_6_r_2" n="N008" />sellschaft als Produktiver und als Konsu<lb break="no" facs="#facs_6_r_2" n="N009" />ment zu betätigen. Selbst wenn das manch<lb break="no" facs="#facs_6_r_2" n="N010" />mal fast eine Illusion ist, ist diese Illusion <lb facs="#facs_6_r_2" n="N011" />unendlich wichtig. Es ist ebenso klar, dass <lb facs="#facs_6_r_2" n="N012" />es dazu Kredite braucht, und ich weiss, <lb facs="#facs_6_r_2" n="N013" />dass im Bereich der Behindertenhilfe alles <lb facs="#facs_6_r_2" n="N014" />sehr viel Geld kostet. Alles dafür Notwen<lb break="no" facs="#facs_6_r_2" n="N015" />dige sollte nach Möglichkeit beschafft wer<lb break="no" facs="#facs_6_r_2" n="N016" />den, und zwar nicht nur wegen der Behin<lb break="no" facs="#facs_6_r_2" n="N017" />derten, sondern auch, weil die Gesellschaft <lb facs="#facs_6_r_2" n="N018" />ihren Sinn und ihre Würde verlieren würde, <lb facs="#facs_6_r_2" n="N019" />wenn sie nicht alles ihr Mögliche für ihre <lb facs="#facs_6_r_2" n="N020" />Behinderten tut.
@@ -234,7 +241,7 @@
           <lb facs="#facs_6_r_6" n="N021" />Manchmal verführt man die Behinderten <lb facs="#facs_6_r_6" n="N022" />zu übertriebenen Leistungen, so dass sie <lb facs="#facs_6_r_6" n="N023" />sagen können: Wir tun genau so wie die <lb facs="#facs_6_r_6" n="N024" />andern. Warum sollen sie genau so tun wie <lb facs="#facs_6_r_6" n="N025" />die andern? Sie tun ja etwas eigenes, das <lb facs="#facs_6_r_6" n="N026" />einen eigenen Sinn hat. Es ist damit wie <lb facs="#facs_6_r_6" n="N027" />mit dem Sinn, den man der Gesundheit und <lb facs="#facs_6_r_6" n="N028" />dem Leben zu geben hat. Die Weltgesund<lb break="no" facs="#facs_6_r_6" n="N029" />heitsorganisation hat eine Definition der <lb facs="#facs_6_r_6" n="N030" />Gesundheit gegeben: Gesundheit = Wohl<lb break="no" facs="#facs_6_r_6" n="N031" />befinden. Ich finde das falsch. Wenn Sie <lb facs="#facs_6_r_6" n="N032" />einen guten Wagen haben, ist der Wagen <lb facs="#facs_6_r_6" n="N033" />nicht gut, weil er auf der Autobahn gut <lb facs="#facs_6_r_6" n="N034" />fährt, sondern weil dieser Wagen fähig ist, <lb facs="#facs_6_r_6" n="N035" />auch auf Steinen und schlechten Wegen zu <lb facs="#facs_6_r_6" n="N036" />fahren. Gesundheit ist die Fähigkeit, das <lb facs="#facs_6_r_6" n="N037" />Menschsein mit all seinen Schwierigkeiten zu <lb facs="#facs_6_r_6" n="N038" />ertragen. Also auch das Leiden, wenn es sein
         </p>
       </div>
-<pb facs="#facs_7" n="7" />
+<pb facs="#facs_7" n="[7]" />
   <div type="text">
 <p facs="#facs_7_r_1">
     <lb facs="#facs_7_r_1" n="N001" />muss. Ich pflege das Leiden nicht, aber ich muss auch leiden, wenn es sein <lb facs="#facs_7_r_1" n="N002" />muss. Jeder von uns hat Begrenzungen zu ertragen, Mangel zu ertragen, <lb facs="#facs_7_r_1" n="N003" />Mangel an Gaben, die er haben möchte, an Fähigkeiten, die er gerne <lb facs="#facs_7_r_1" n="N004" />hätte. Auf irgendeine Weise sind wir alle mehr oder weniger behindert, wenn <lb facs="#facs_7_r_1" n="N005" />dies auch nicht ganz vergleichbar ist. Selbst wenn man alles getan hat, um <lb facs="#facs_7_r_1" n="N006" />die Dinge zu verbessern, so ist es noch nötig, den Rest zu ertragen.
@@ -255,7 +262,7 @@
       <lb facs="#facs_7_r_5" n="N001" /><foreign xml:lang="fra">Quelques réflexions au sujet du travail social avec des groupes de malades SP et leur entourage</foreign>
     </head>
     <p facs="#facs_7_r_6">
-      <lb facs="#facs_7_r_6" n="N001" /><foreign xml:lang="fra">Extraits d'un travail élaboré dans le cadre du service social vaudois de Pro Infirmis par R.-M. Huguet et C. Besson après cinq ans d'activité en travail social avec des groupes. août 1976</foreign>
+      <lb facs="#facs_7_r_6" n="N001" /><foreign xml:lang="fra">Extraits d’un travail élaboré dans le cadre du service social vaudois de Pro Infirmis par R.-M. Huguet et C. Besson après cinq ans d’activité en travail social avec des groupes. août 1976</foreign>
     </p>
     </div>
 <div n="3">
@@ -263,16 +270,16 @@
         <lb facs="#facs_7_r_7" n="N001" /><foreign xml:lang="fra">Introduction</foreign>
       </head>
       <p facs="#facs_7_r_8">
-        <lb facs="#facs_7_r_8" n="N001" /><foreign xml:lang="fra">Il est bon de situer le travail social avec des groupes dans son contexte, le service social; la définition suivante précise ce terme: «Le service social est l'art de mettre en œuvre par la science des relations humaines les ressources de la personne, du groupe et</foreign>
+        <lb facs="#facs_7_r_8" n="N001" /><foreign xml:lang="fra">Il est bon de situer le travail social avec des groupes dans son contexte, le service social; la définition suivante précise ce terme: «Le service social est l’art de mettre en œuvre par la science des relations humaines les ressources de la personne, du groupe et</foreign>
       </p>
       <p facs="#facs_7_r_9">
         <lb facs="#facs_7_r_9" n="N001" /><foreign xml:lang="fra">de la collectivité pour une meilleure adaptation sociale».</foreign>
       </p>
       <p facs="#facs_7_r_10">
-        <lb facs="#facs_7_r_10" n="N001" /><foreign xml:lang="fra">Nous connaissons surtout l'aide individualisée qui met en contact une personne qui vient demander aide et conseils avec un assistant social. Ils s'entretiennent ensemble pour chercher une solution à la situation. Ces échanges sont basés sur le respect de la personne qui s'adresse au service social.</foreign>
+        <lb facs="#facs_7_r_10" n="N001" /><foreign xml:lang="fra">Nous connaissons surtout l’aide individualisée qui met en contact une personne qui vient demander aide et conseils avec un assistant social. Ils s’entretiennent ensemble pour chercher une solution à la situation. Ces échanges sont basés sur le respect de la personne qui s’adresse au service social.</foreign>
       </p>
       <p facs="#facs_7_r_11">
-        <lb facs="#facs_7_r_11" n="N001" /><foreign xml:lang="fra">Le travail social de groupe est moins connu, mais il représente aussi une possibilité d'aide. La définition de Gisela Konopka dit:</foreign>
+        <lb facs="#facs_7_r_11" n="N001" /><foreign xml:lang="fra">Le travail social de groupe est moins connu, mais il représente aussi une possibilité d’aide. La définition de Gisela Konopka dit:</foreign>
       </p>
       <p facs="#facs_7_r_12">
         <lb facs="#facs_7_r_12" n="N001" /><foreign xml:lang="fra">«Le travail social de groupe est une méthode qui aide des individus et les <lb break="no" facs="#facs_7_r_12" n="N002" />groupes»</foreign>

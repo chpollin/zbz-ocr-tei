@@ -32,6 +32,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="945" lry="1300">
+      <graphic url="1630_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="200" uly="343" lrx="726" lry="546" />
       <zone xml:id="facs_1_r_2" ulx="288" uly="642" lrx="645" lry="666" />
       <zone xml:id="facs_1_r_3" ulx="390" uly="886" lrx="541" lry="921" />
@@ -41,6 +42,7 @@
       <zone xml:id="facs_1_r_7" ulx="146" uly="1047" lrx="791" lry="1136" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="945" lry="1300">
+      <graphic url="1630_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="171" uly="229" lrx="697" lry="435" />
       <zone xml:id="facs_2_r_2" ulx="260" uly="531" lrx="614" lry="553" />
       <zone xml:id="facs_2_r_3" ulx="359" uly="676" lrx="514" lry="705" />
@@ -54,14 +56,17 @@
       <zone xml:id="facs_2_r_11" ulx="579" uly="1086" lrx="743" lry="1151" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="945" lry="1300">
+      <graphic url="1630_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="194" uly="939" lrx="832" lry="981" />
       <zone xml:id="facs_3_r_2" ulx="194" uly="1019" lrx="832" lry="1060" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="945" lry="1300">
+      <graphic url="1630_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="375" uly="179" lrx="501" lry="202" />
       <zone xml:id="facs_4_r_2" ulx="116" uly="227" lrx="760" lry="1151" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="945" lry="1300">
+      <graphic url="1630_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="199" uly="283" lrx="399" lry="317" />
       <zone xml:id="facs_5_r_2" ulx="296" uly="328" lrx="681" lry="363" />
       <zone xml:id="facs_5_r_3" ulx="202" uly="382" lrx="774" lry="499" />
@@ -146,7 +151,7 @@
         <p facs="#facs_3_r_2">
           Reproduction of the articles in this booklet is authorised, subject to indication of the source with a copy to the International Commission of Jurists. This booklet has also been published in French and Spanish.
         </p>
-      <pb facs="#facs_4" n="4" />
+      <pb facs="#facs_4" n="[3]" />
         <p facs="#facs_4_r_1">
           CONTENTS
         </p>
@@ -186,7 +191,7 @@
         <p>
           Opinions expressed in the Comments are those of the authors.
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[48]" />
         <p facs="#facs_5_r_1">
           JEANNE HERSCH
         </p>
@@ -208,9 +213,7 @@
         <p facs="#facs_5_r_7">
           Jeanne Hersch<lb facs="#facs_5_l_7_1" n="N001" />Geneva<lb facs="#facs_5_l_7_2" n="N002" />Professor of Philosophy and writer<lb facs="#facs_5_l_7_3" n="N003" />former Member of the Executive Council<lb facs="#facs_5_l_7_4" n="N004" />of UNESCO
         </p>
-        <p>
-          48
-        </p>
+        
       </div>
       </body></text>
 </TEI>

@@ -39,6 +39,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="784" lry="1183">
+      <graphic url="1510_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="91" uly="36" lrx="692" lry="176" />
       <zone xml:id="facs_1_r_2" ulx="11" uly="239" lrx="768" lry="277" />
       <zone xml:id="facs_1_r_3" ulx="318" uly="354" lrx="777" lry="549" />
@@ -49,6 +50,7 @@
       <zone xml:id="facs_1_r_8" ulx="12" uly="485" lrx="118" lry="513" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="723" lry="1107">
+      <graphic url="1510_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="195" uly="130" lrx="518" lry="199" />
       <zone xml:id="facs_2_r_2" ulx="250" uly="238" lrx="470" lry="264" />
       <zone xml:id="facs_2_r_3" ulx="43" uly="309" lrx="677" lry="411" />
@@ -58,6 +60,7 @@
       <zone xml:id="facs_2_r_7" ulx="52" uly="937" lrx="681" lry="985" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="723" lry="1107">
+      <graphic url="1510_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="57" uly="68" lrx="686" lry="287" />
       <zone xml:id="facs_3_r_2" ulx="57" uly="288" lrx="684" lry="340" />
       <zone xml:id="facs_3_r_3" ulx="57" uly="336" lrx="686" lry="389" />
@@ -69,6 +72,7 @@
       <zone xml:id="facs_3_r_9" ulx="51" uly="839" lrx="682" lry="981" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="723" lry="1107">
+      <graphic url="1510_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="38" uly="48" lrx="678" lry="170" />
       <zone xml:id="facs_4_r_2" ulx="41" uly="171" lrx="679" lry="319" />
       <zone xml:id="facs_4_r_3" ulx="41" uly="316" lrx="679" lry="367" />
@@ -78,6 +82,7 @@
       <zone xml:id="facs_4_r_7" ulx="663" uly="990" lrx="685" lry="1023" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="723" lry="1107">
+      <graphic url="1510_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="53" uly="65" lrx="681" lry="164" />
       <zone xml:id="facs_5_r_2" ulx="52" uly="158" lrx="683" lry="260" />
       <zone xml:id="facs_5_r_3" ulx="51" uly="259" lrx="679" lry="403" />
@@ -92,13 +97,13 @@
   <text>
     <body>
 <div n="1">
-  <pb facs="#facs_1" n="1" />
+  <pb facs="#facs_1" n="[1]" />
   <div type="text">
 <head>
     <title type="main">CADMOS</title>
   </head>
   <ab type="redactional" hand="unknown">
-    <lb facs="#facs_1_r_3" n="N001" />Cahiers trimestriels de l'Institut Universitaire d'Etudes Européennes de Genève et du Centre Européen de la Culture
+    <lb facs="#facs_1_r_3" n="N001" />Cahiers trimestriels de l’Institut Universitaire d’Etudes Européennes de Genève et du Centre Européen de la Culture
   </ab>
   </div>
 <div n="2">
@@ -123,8 +128,8 @@
   </div>
 <div n="2">
     <head>
-      <title type="main">L'INDIVIDU EST-IL CONDAMNÉ ?</title>
-      <lb facs="#facs_1_r_7" n="N001" /><title type="sub">Réflexions sur l'idéologie de la « mort de l'homme »</title>
+      <title type="main">L’INDIVIDU EST-IL CONDAMNÉ ?</title>
+      <lb facs="#facs_1_r_7" n="N001" /><title type="sub">Réflexions sur l’idéologie de la « mort de l’homme »</title>
     </head>
   </div>
   <div type="text">
@@ -132,112 +137,112 @@
     <head>Illustration</head>
   </figure>
 </div>
-<pb facs="#facs_2" n="35" />
+<pb facs="#facs_2" n="[35]" />
         <div type="text">
 <head facs="#facs_2_r_1">
-          <lb facs="#facs_2_r_1" n="N001" />« L'homme est mort »<lb facs="#facs_2_r_1" n="N002" />— qui le DIT ?
+          <lb facs="#facs_2_r_1" n="N001" />« L’homme est mort »<lb facs="#facs_2_r_1" n="N002" />— qui le DIT ?
         </head>
         <p facs="#facs_2_r_3">
           <lb facs="#facs_2_r_3" n="N001" />par JEANNE HERSCH
         </p>
         <p facs="#facs_2_r_4">
-          <lb facs="#facs_2_r_4" n="N001" />Affirmer que « l'homme est mort », c'est prétendre constater un fait.<lb facs="#facs_2_r_4" n="N002" /> Un fait, pour exister en tant que tel, n'a pas besoin d'être dit. Il<lb facs="#facs_2_r_4" n="N003" /> possède, à son niveau, une évidence propre, qui, pour lui, est suffisante.<lb facs="#facs_2_r_4" n="N004" /> Il peut servir de point d'appui.
+          <lb facs="#facs_2_r_4" n="N001" />Affirmer que « l’homme est mort », c’est prétendre constater un fait.<lb facs="#facs_2_r_4" n="N002" /> Un fait, pour exister en tant que tel, n’a pas besoin d’être dit. Il<lb facs="#facs_2_r_4" n="N003" /> possède, à son niveau, une évidence propre, qui, pour lui, est suffisante.<lb facs="#facs_2_r_4" n="N004" /> Il peut servir de point d’appui.
         </p>
         <p facs="#facs_2_r_5">
-          <lb facs="#facs_2_r_5" n="N001" />La mort de l'homme, est-ce, dans ce sens, un fait, que l'on puisse<lb facs="#facs_2_r_5" n="N002" /> constater et sur lequel on puisse prendre appui — pour dispenser les<lb facs="#facs_2_r_5" n="N003" /> autres, et se dispenser soi-même, de « vivre en homme », de façon que<lb facs="#facs_2_r_5" n="N004" /> l'homme soit encore vivant ?
+          <lb facs="#facs_2_r_5" n="N001" />La mort de l’homme, est-ce, dans ce sens, un fait, que l’on puisse<lb facs="#facs_2_r_5" n="N002" /> constater et sur lequel on puisse prendre appui — pour dispenser les<lb facs="#facs_2_r_5" n="N003" /> autres, et se dispenser soi-même, de « vivre en homme », de façon que<lb facs="#facs_2_r_5" n="N004" /> l’homme soit encore vivant ?
         </p>
         <p facs="#facs_2_r_6">
-          <lb facs="#facs_2_r_6" n="N001" />Nous traversons une époque étrange. D'un côté, nous prétendons<lb facs="#facs_2_r_6" n="N002" /> refuser toutes les données naturelles et sociales de notre condition et les<lb facs="#facs_2_r_6" n="N003" /> remplacer par de libres décrets, au nom des droits de la personne<lb facs="#facs_2_r_6" n="N004" /> humaine. Mais de l'autre, partout où il nous appartiendrait de porter<lb facs="#facs_2_r_6" n="N005" /> et d'incarner nos valeurs dans le réel qui nous est effectivement donné,<lb facs="#facs_2_r_6" n="N006" /> nous reculons devant les décisions à prendre, nous leur substituons des<lb facs="#facs_2_r_6" n="N007" /> constatations, des nécessités et des lois. Ainsi, par exemple, même dans<lb facs="#facs_2_r_6" n="N008" /> le domaine de la culture, où tant de données nouvelles ont transformé<lb facs="#facs_2_r_6" n="N009" /> à la fois les qualités, les dimensions, les perspectives, les possibilités et<lb facs="#facs_2_r_6" n="N010" /> les besoins, nous n'osons pas chercher à savoir quelle culture nous<lb facs="#facs_2_r_6" n="N011" /> voulons : nous nous contentons de décrire, d'analyser, parfois de criti<lb facs="#facs_2_r_6" n="N012" break="no" />quer et d'évaluer — sans nous demander par référence à quoi — ce<lb facs="#facs_2_r_6" n="N013" /> qu'il nous est possible de constater autour de nous.
+          <lb facs="#facs_2_r_6" n="N001" />Nous traversons une époque étrange. D’un côté, nous prétendons<lb facs="#facs_2_r_6" n="N002" /> refuser toutes les données naturelles et sociales de notre condition et les<lb facs="#facs_2_r_6" n="N003" /> remplacer par de libres décrets, au nom des droits de la personne<lb facs="#facs_2_r_6" n="N004" /> humaine. Mais de l’autre, partout où il nous appartiendrait de porter<lb facs="#facs_2_r_6" n="N005" /> et d’incarner nos valeurs dans le réel qui nous est effectivement donné,<lb facs="#facs_2_r_6" n="N006" /> nous reculons devant les décisions à prendre, nous leur substituons des<lb facs="#facs_2_r_6" n="N007" /> constatations, des nécessités et des lois. Ainsi, par exemple, même dans<lb facs="#facs_2_r_6" n="N008" /> le domaine de la culture, où tant de données nouvelles ont transformé<lb facs="#facs_2_r_6" n="N009" /> à la fois les qualités, les dimensions, les perspectives, les possibilités et<lb facs="#facs_2_r_6" n="N010" /> les besoins, nous n’osons pas chercher à savoir quelle culture nous<lb facs="#facs_2_r_6" n="N011" /> voulons : nous nous contentons de décrire, d’analyser, parfois de criti<lb facs="#facs_2_r_6" n="N012" break="no" />quer et d’évaluer — sans nous demander par référence à quoi — ce<lb facs="#facs_2_r_6" n="N013" /> qu’il nous est possible de constater autour de nous.
         </p>
         <p facs="#facs_2_r_7">
-          <lb facs="#facs_2_r_7" n="N001" />Pour Socrate, à travers Platon, « le meilleur » ne s'élucirait que<lb facs="#facs_2_r_7" n="N002" /> pour l'homme acharné à descendre et à monter sans repos du monde<lb facs="#facs_2_r_7" n="N003" /> des Idées à celui des choses et de celui des choses à celui des Idées.<lb facs="#facs_2_r_7" n="N004" /> Nous avons oublié cette leçon fondamentale : nous croyons que « le<lb facs="#facs_2_r_7" n="N005" /> meilleur » dérive des « faits ».
+          <lb facs="#facs_2_r_7" n="N001" />Pour Socrate, à travers Platon, « le meilleur » ne s’élucirait que<lb facs="#facs_2_r_7" n="N002" /> pour l’homme acharné à descendre et à monter sans repos du monde<lb facs="#facs_2_r_7" n="N003" /> des Idées à celui des choses et de celui des choses à celui des Idées.<lb facs="#facs_2_r_7" n="N004" /> Nous avons oublié cette leçon fondamentale : nous croyons que « le<lb facs="#facs_2_r_7" n="N005" /> meilleur » dérive des « faits ».
         </p>
         <p facs="#facs_2_r_8">
-          <lb facs="#facs_2_r_8" n="N001" />Pourtant, à l'inverse, nous ne sommes pas des empiristes réalistes,<lb facs="#facs_2_r_8" n="N002" /> qui croiraient à « l'être des faits ». Tout en substituant la constatation
+          <lb facs="#facs_2_r_8" n="N001" />Pourtant, à l’inverse, nous ne sommes pas des empiristes réalistes,<lb facs="#facs_2_r_8" n="N002" /> qui croiraient à « l’être des faits ». Tout en substituant la constatation
         </p>
       </div>
-<pb facs="#facs_3" n="3" />
+<pb facs="#facs_3" n="[3]" />
         <div type="text">
 <p facs="#facs_3_r_1">
-          <lb facs="#facs_3_r_1" n="N001" />des faits à l'élucidation de notre vouloir, nous substituons encore aux<lb facs="#facs_3_r_1" n="N002" /> faits eux-mêmes leur interprétation, en mots, dans un langage. Nos<lb facs="#facs_3_r_1" n="N003" /> contemporains s'émerveillent d'avoir enfin compris que « les faits<lb facs="#facs_3_r_1" n="N004" /> bruts n'existent pas », et d'être ainsi délivrés d'une naïveté grossière.<lb facs="#facs_3_r_1" n="N005" /> Chacun sait désormais que faits et interprétations sont inextricable<lb break="no" facs="#facs_3_r_1" n="N006" />ment mêlés. Les esprits avancés vont plus loin : les faits ne sont que des<lb facs="#facs_3_r_1" n="N007" /> interprétations. A partir de là, les virtuoses brillent : subtilités, ingénio<lb break="no" facs="#facs_3_r_1" n="N008" />sités engendrent et remplacent le réel. L'histoire peut être remodelée<lb facs="#facs_3_r_1" n="N009" /> sans fin.
+          <lb facs="#facs_3_r_1" n="N001" />des faits à l’élucidation de notre vouloir, nous substituons encore aux<lb facs="#facs_3_r_1" n="N002" /> faits eux-mêmes leur interprétation, en mots, dans un langage. Nos<lb facs="#facs_3_r_1" n="N003" /> contemporains s’émerveillent d’avoir enfin compris que « les faits<lb facs="#facs_3_r_1" n="N004" /> bruts n’existent pas », et d’être ainsi délivrés d’une naïveté grossière.<lb facs="#facs_3_r_1" n="N005" /> Chacun sait désormais que faits et interprétations sont inextricable<lb break="no" facs="#facs_3_r_1" n="N006" />ment mêlés. Les esprits avancés vont plus loin : les faits ne sont que des<lb facs="#facs_3_r_1" n="N007" /> interprétations. A partir de là, les virtuoses brillent : subtilités, ingénio<lb break="no" facs="#facs_3_r_1" n="N008" />sités engendrent et remplacent le réel. L’histoire peut être remodelée<lb facs="#facs_3_r_1" n="N009" /> sans fin.
         </p>
         <p facs="#facs_3_r_2">
           <lb facs="#facs_3_r_2" n="N001" />Ainsi se trouvent dilués et désagrégés simultanément le sens du<lb facs="#facs_3_r_2" n="N002" /> donné et la capacité de vouloir.
         </p>
         <p facs="#facs_3_r_3">
-          <lb facs="#facs_3_r_3" n="N001" />Les trois questions de Kant : « Que puis-je savoir ? », « Que dois-je<lb facs="#facs_3_r_3" n="N002" /> faire ? », « Qu'ai-je à espérer ? » perdent à la fois leur différence et leur<lb facs="#facs_3_r_3" n="N003" /> sens.
+          <lb facs="#facs_3_r_3" n="N001" />Les trois questions de Kant : « Que puis-je savoir ? », « Que dois-je<lb facs="#facs_3_r_3" n="N002" /> faire ? », « Qu’ai-je à espérer ? » perdent à la fois leur différence et leur<lb facs="#facs_3_r_3" n="N003" /> sens.
         </p>
         <p facs="#facs_3_r_4">
-          <lb facs="#facs_3_r_4" n="N001" />Toute transcendance disparaît quand l'immanence donnée se volati<lb break="no" facs="#facs_3_r_4" n="N002" />lise et produit d'elle-même les valeurs.
+          <lb facs="#facs_3_r_4" n="N001" />Toute transcendance disparaît quand l’immanence donnée se volati<lb break="no" facs="#facs_3_r_4" n="N002" />lise et produit d’elle-même les valeurs.
         </p>
         <p facs="#facs_3_r_5">
-          <lb facs="#facs_3_r_5" n="N001" />C'est le règne, alors, d'une sorte de monisme barbouillé, pour lequel<lb facs="#facs_3_r_5" n="N002" /> il n'y a plus de limites nulle part, et qui permet toutes les totalisations,<lb facs="#facs_3_r_5" n="N003" /> dans la chimère indistincte d'une dimension unitaire.
+          <lb facs="#facs_3_r_5" n="N001" />C’est le règne, alors, d’une sorte de monisme barbouillé, pour lequel<lb facs="#facs_3_r_5" n="N002" /> il n’y a plus de limites nulle part, et qui permet toutes les totalisations,<lb facs="#facs_3_r_5" n="N003" /> dans la chimère indistincte d’une dimension unitaire.
         </p>
         <p facs="#facs_3_r_6">
-          <lb facs="#facs_3_r_6" n="N001" />On dit alors : « L'homme est mort. »
+          <lb facs="#facs_3_r_6" n="N001" />On dit alors : « L’homme est mort. »
         </p>
         <p facs="#facs_3_r_7">
-          <lb facs="#facs_3_r_7" n="N001" />Mais c'est encore substituer une constatation à une décision.
+          <lb facs="#facs_3_r_7" n="N001" />Mais c’est encore substituer une constatation à une décision.
         </p>
         <p facs="#facs_3_r_8">
-          <lb facs="#facs_3_r_8" n="N001" />Qui donc est-il, ce « on » du « on dit » ? S'il est vrai que « l'homme est<lb facs="#facs_3_r_8" n="N002" /> mort », qui donc, alors, peut le dire ?
+          <lb facs="#facs_3_r_8" n="N001" />Qui donc est-il, ce « on » du « on dit » ? S’il est vrai que « l’homme est<lb facs="#facs_3_r_8" n="N002" /> mort », qui donc, alors, peut le dire ?
         </p>
         <p facs="#facs_3_r_9">
-          <lb facs="#facs_3_r_9" n="N001" />Seul l'homme peut dire. Et s'il peut dire, s'il possède un langage, ce<lb facs="#facs_3_r_9" n="N002" /> n'est pas à cause de ses cordes vocales. C'est d'abord et fondamentale<lb break="no" facs="#facs_3_r_9" n="N003" />ment parce qu'il y a pour lui une réalité donnée, qui est comme elle est<lb facs="#facs_3_r_9" n="N004" /> et non autrement, alors qu'il peut en même temps imaginer, désirer,<lb facs="#facs_3_r_9" n="N005" /> vouloir une réalité différente de celle qui lui est donnée. Pour com<lb break="no" facs="#facs_3_r_9" n="N006" />mencer, cette réalité donnée, il veut qu'elle soit dite, il veut la dire — il<lb facs="#facs_3_r_9" n="N007" /> veut donc que son dire soit vrai. Sans reconnaissance d'un donné et<lb facs="#facs_3_r_9" n="N008" /> sans vouloir du vrai, dire est impossible.
+          <lb facs="#facs_3_r_9" n="N001" />Seul l’homme peut dire. Et s’il peut dire, s’il possède un langage, ce<lb facs="#facs_3_r_9" n="N002" /> n’est pas à cause de ses cordes vocales. C’est d’abord et fondamentale<lb break="no" facs="#facs_3_r_9" n="N003" />ment parce qu’il y a pour lui une réalité donnée, qui est comme elle est<lb facs="#facs_3_r_9" n="N004" /> et non autrement, alors qu’il peut en même temps imaginer, désirer,<lb facs="#facs_3_r_9" n="N005" /> vouloir une réalité différente de celle qui lui est donnée. Pour com<lb break="no" facs="#facs_3_r_9" n="N006" />mencer, cette réalité donnée, il veut qu’elle soit dite, il veut la dire — il<lb facs="#facs_3_r_9" n="N007" /> veut donc que son dire soit vrai. Sans reconnaissance d’un donné et<lb facs="#facs_3_r_9" n="N008" /> sans vouloir du vrai, dire est impossible.
         </p>
         <p facs="#facs_3_r_10">
-          <lb facs="#facs_3_r_10" n="N001" />L'énoncé « l'homme <choice><sic>et</sic><corr>est</corr></choice> mort », étant un dire qui se veut vrai, n'a donc,<lb facs="#facs_3_r_10" n="N002" /> en tant que constatation, aucun sens. Il n'en a un que si un homme<lb facs="#facs_3_r_10" n="N003" /> veut, décide, choisit, d'annoncer son suicide d'homme. Dans la mesure<lb facs="#facs_3_r_10" n="N004" /> où le donné dépend de son vouloir, il va faire en sorte que l'homme —<lb facs="#facs_3_r_10" n="N005" /> et son dire — disparaissent et rendent l'univers à la cécité et au<lb facs="#facs_3_r_10" n="N006" /> silence.
+          <lb facs="#facs_3_r_10" n="N001" />L’énoncé « l’homme <choice><sic>et</sic><corr>est</corr></choice> mort », étant un dire qui se veut vrai, n’a donc,<lb facs="#facs_3_r_10" n="N002" /> en tant que constatation, aucun sens. Il n’en a un que si un homme<lb facs="#facs_3_r_10" n="N003" /> veut, décide, choisit, d’annoncer son suicide d’homme. Dans la mesure<lb facs="#facs_3_r_10" n="N004" /> où le donné dépend de son vouloir, il va faire en sorte que l’homme —<lb facs="#facs_3_r_10" n="N005" /> et son dire — disparaissent et rendent l’univers à la cécité et au<lb facs="#facs_3_r_10" n="N006" /> silence.
         </p>
         <p facs="#facs_3_r_11">
           <lb facs="#facs_3_r_11" n="N001" />36
         </p>
       </div>
-<pb facs="#facs_4" n="4" />
+<pb facs="#facs_4" n="[4]" />
         <div type="text">
 <p facs="#facs_4_r_1">
-          <lb facs="#facs_4_r_1" n="N001" />Il est évident que l'énoncé « l'homme est mort » n'appelle nullement <lb facs="#facs_4_r_1" n="N002" />l'examen littéral qu'expriment les lignes qui précèdent. Il est tout juste <lb facs="#facs_4_r_1" n="N003" />bon pour allumer le sombre scintillement dont se repait avec <lb facs="#facs_4_r_1" n="N004" />prédilection une certaine frivolité contemporaine. Formule à effet, qui <lb facs="#facs_4_r_1" n="N005" />se voudrait sensationnelle.
+          <lb facs="#facs_4_r_1" n="N001" />Il est évident que l’énoncé « l’homme est mort » n’appelle nullement <lb facs="#facs_4_r_1" n="N002" />l’examen littéral qu’expriment les lignes qui précèdent. Il est tout juste <lb facs="#facs_4_r_1" n="N003" />bon pour allumer le sombre scintillement dont se repait avec <lb facs="#facs_4_r_1" n="N004" />prédilection une certaine frivolité contemporaine. Formule à effet, qui <lb facs="#facs_4_r_1" n="N005" />se voudrait sensationnelle.
         </p>
         <p facs="#facs_4_r_2">
-          <lb facs="#facs_4_r_2" n="N001" />En réalité, les hommes faits, connus, qui la propagent, n'y croient <lb facs="#facs_4_r_2" n="N002" />pas eux-mêmes. Ce sont des hypocrites et des irresponsables. Ils savent <lb facs="#facs_4_r_2" n="N003" />très bien que l'homme — au sens fort où ils prétendent prendre ce mot <lb facs="#facs_4_r_2" n="N004" />— n'est pas de l'ordre du fait, n'est ni « vivant », ni « mort », mais de <lb facs="#facs_4_r_2" n="N005" />l'ordre de l'exigence morale et de l'espérance métaphysique, — c'est-à-dire <lb facs="#facs_4_r_2" n="N006" />que l'homme, avec l'aide de Dieu, peut s'affirmer vivant.
+          <lb facs="#facs_4_r_2" n="N001" />En réalité, les hommes faits, connus, qui la propagent, n’y croient <lb facs="#facs_4_r_2" n="N002" />pas eux-mêmes. Ce sont des hypocrites et des irresponsables. Ils savent <lb facs="#facs_4_r_2" n="N003" />très bien que l’homme — au sens fort où ils prétendent prendre ce mot <lb facs="#facs_4_r_2" n="N004" />— n’est pas de l’ordre du fait, n’est ni « vivant », ni « mort », mais de <lb facs="#facs_4_r_2" n="N005" />l’ordre de l’exigence morale et de l’espérance métaphysique, — c’est-à-dire <lb facs="#facs_4_r_2" n="N006" />que l’homme, avec l’aide de Dieu, peut s’affirmer vivant.
         </p>
         <p facs="#facs_4_r_3">
-          <lb facs="#facs_4_r_3" n="N001" />Mais les jeunes, parfois, se laissent tromper par « la mort de <lb facs="#facs_4_r_3" n="N002" />l'homme ». Il leur arrive d'en mourir, eux, pour de bon.
+          <lb facs="#facs_4_r_3" n="N001" />Mais les jeunes, parfois, se laissent tromper par « la mort de <lb facs="#facs_4_r_3" n="N002" />l’homme ». Il leur arrive d’en mourir, eux, pour de bon.
         </p>
         <p facs="#facs_4_r_4">
-          <lb facs="#facs_4_r_4" n="N001" />Tout en me méfiant de l'amour qu'en tant qu'Européenne je porte à <lb facs="#facs_4_r_4" n="N002" />l'Europe, je ne peux m'empêcher de penser que l'Europe est le lieu où <lb facs="#facs_4_r_4" n="N003" />l'homme a le mieux accepté sa condition d'homme. « Le mieux » — je <lb facs="#facs_4_r_4" n="N004" />veux dire : le plus spécifiquement, le plus concrètement et le plus active<lb facs="#facs_4_r_4" n="N005" break="no" />ment. « Sa condition d'homme », c'est-à-dire toutes les formes de sa <lb facs="#facs_4_r_4" n="N006" />finitude. Il a reconnu la solide cohérence donnée — non-humaine, non <lb facs="#facs_4_r_4" n="N007" />choisie — de la réalité dont il dépend. Il l'a explorée, admirée, partielle<lb facs="#facs_4_r_4" n="N008" break="no" />ment pliée à ses fins. Il a reconnu à la fois les conditionnements de sa <lb facs="#facs_4_r_4" n="N009" />liberté et son irréductible absolu. Il a reconnu et mis à nu le mal, et l'a <lb facs="#facs_4_r_4" n="N010" />en même temps justifié comme indispensable et combattu comme inac<lb facs="#facs_4_r_4" n="N011" break="no" />ceptable. Il a bravé la mort de mille manières, sans jamais abdiquer <lb facs="#facs_4_r_4" n="N012" />devant elle ni oublier ou farder sa victoire finale. Il a admis et assumé <lb facs="#facs_4_r_4" n="N013" />en même temps l'unicité essentielle de chaque être humain et son con<lb facs="#facs_4_r_4" n="N014" break="no" />ditionnement dans la multitude innombrable. Il a su qu'il appartenait <lb facs="#facs_4_r_4" n="N015" />à la pesanteur, à la chimie, à l'hérédité, et en même temps à autre <lb facs="#facs_4_r_4" n="N016" />chose, qui reste à jamais inaccessible, refusé, et source de sens pour <lb facs="#facs_4_r_4" n="N017" />tout le reste.
+          <lb facs="#facs_4_r_4" n="N001" />Tout en me méfiant de l’amour qu’en tant qu’Européenne je porte à <lb facs="#facs_4_r_4" n="N002" />l’Europe, je ne peux m’empêcher de penser que l’Europe est le lieu où <lb facs="#facs_4_r_4" n="N003" />l’homme a le mieux accepté sa condition d’homme. « Le mieux » — je <lb facs="#facs_4_r_4" n="N004" />veux dire : le plus spécifiquement, le plus concrètement et le plus active<lb facs="#facs_4_r_4" n="N005" break="no" />ment. « Sa condition d’homme », c’est-à-dire toutes les formes de sa <lb facs="#facs_4_r_4" n="N006" />finitude. Il a reconnu la solide cohérence donnée — non-humaine, non <lb facs="#facs_4_r_4" n="N007" />choisie — de la réalité dont il dépend. Il l’a explorée, admirée, partielle<lb facs="#facs_4_r_4" n="N008" break="no" />ment pliée à ses fins. Il a reconnu à la fois les conditionnements de sa <lb facs="#facs_4_r_4" n="N009" />liberté et son irréductible absolu. Il a reconnu et mis à nu le mal, et l’a <lb facs="#facs_4_r_4" n="N010" />en même temps justifié comme indispensable et combattu comme inac<lb facs="#facs_4_r_4" n="N011" break="no" />ceptable. Il a bravé la mort de mille manières, sans jamais abdiquer <lb facs="#facs_4_r_4" n="N012" />devant elle ni oublier ou farder sa victoire finale. Il a admis et assumé <lb facs="#facs_4_r_4" n="N013" />en même temps l’unicité essentielle de chaque être humain et son con<lb facs="#facs_4_r_4" n="N014" break="no" />ditionnement dans la multitude innombrable. Il a su qu’il appartenait <lb facs="#facs_4_r_4" n="N015" />à la pesanteur, à la chimie, à l’hérédité, et en même temps à autre <lb facs="#facs_4_r_4" n="N016" />chose, qui reste à jamais inaccessible, refusé, et source de sens pour <lb facs="#facs_4_r_4" n="N017" />tout le reste.
         </p>
         <p facs="#facs_4_r_5">
-          <lb facs="#facs_4_r_5" n="N001" />C'est cette acceptation, à ce que je crois, plus que toute autre <lb facs="#facs_4_r_5" n="N002" />condition favorable, qui a permis, en Europe, le développement de la <lb facs="#facs_4_r_5" n="N003" />science, de la technique et de l'histoire.
+          <lb facs="#facs_4_r_5" n="N001" />C’est cette acceptation, à ce que je crois, plus que toute autre <lb facs="#facs_4_r_5" n="N002" />condition favorable, qui a permis, en Europe, le développement de la <lb facs="#facs_4_r_5" n="N003" />science, de la technique et de l’histoire.
         </p>
         <p facs="#facs_4_r_6">
-          <lb facs="#facs_4_r_6" n="N001" />Accepter sa condition d'homme, c'est consentir à des déterminations <lb facs="#facs_4_r_6" n="N002" />limitatives, qui spécifient des disciplines en refusant la totalité. Ainsi <lb facs="#facs_4_r_6" n="N003" />les méthodes propres aux diverses sciences donnent une portée précise <lb facs="#facs_4_r_6" n="N004" />aux résultats que chacune a permis d'obtenir et qui n'ont de sens que
+          <lb facs="#facs_4_r_6" n="N001" />Accepter sa condition d’homme, c’est consentir à des déterminations <lb facs="#facs_4_r_6" n="N002" />limitatives, qui spécifient des disciplines en refusant la totalité. Ainsi <lb facs="#facs_4_r_6" n="N003" />les méthodes propres aux diverses sciences donnent une portée précise <lb facs="#facs_4_r_6" n="N004" />aux résultats que chacune a permis d’obtenir et qui n’ont de sens que
         </p>
         <p facs="#facs_4_r_7">
           <lb facs="#facs_4_r_7" n="N001" />37
         </p>
       </div>
-<pb facs="#facs_5" n="5" />
+<pb facs="#facs_5" n="[5]" />
         <div type="text">
 <p facs="#facs_5_r_1">
-          <lb facs="#facs_5_r_1" n="N001" />par rapport à ces méthodes mêmes. Fécondes, mais restrictives, les <lb facs="#facs_5_r_1" n="N002" />méthodes ouvrent à la recherche des chemins sans fin, mais aussi sans <lb facs="#facs_5_r_1" n="N003" />totalité ; elles engendrent des cohérences pleines de promesses, jamais <lb facs="#facs_5_r_1" n="N004" />achevées, flottantes, qu'elles permettent d'accroître à petits pas.
+          <lb facs="#facs_5_r_1" n="N001" />par rapport à ces méthodes mêmes. Fécondes, mais restrictives, les <lb facs="#facs_5_r_1" n="N002" />méthodes ouvrent à la recherche des chemins sans fin, mais aussi sans <lb facs="#facs_5_r_1" n="N003" />totalité ; elles engendrent des cohérences pleines de promesses, jamais <lb facs="#facs_5_r_1" n="N004" />achevées, flottantes, qu’elles permettent d’accroître à petits pas.
         </p>
         <p facs="#facs_5_r_2">
-          <lb facs="#facs_5_r_2" n="N001" />Le développement européen a été le contraire de l'exigence aujourd'hui <lb facs="#facs_5_r_2" n="N002" />à la mode : « Tout, tout de suite ». Au contraire : il a fallu accepter et <lb facs="#facs_5_r_2" n="N003" />vouloir, vouloir et espérer. Sinon, il y aurait eu peut-être de <lb facs="#facs_5_r_2" n="N004" />l'agitation, mais pas d'histoire.
+          <lb facs="#facs_5_r_2" n="N001" />Le développement européen a été le contraire de l’exigence aujourd’hui <lb facs="#facs_5_r_2" n="N002" />à la mode : « Tout, tout de suite ». Au contraire : il a fallu accepter et <lb facs="#facs_5_r_2" n="N003" />vouloir, vouloir et espérer. Sinon, il y aurait eu peut-être de <lb facs="#facs_5_r_2" n="N004" />l’agitation, mais pas d’histoire.
         </p>
         <p facs="#facs_5_r_3">
-          <lb facs="#facs_5_r_3" n="N001" />Pas plus que les sciences, l'histoire en Europe ne s'est mise en <lb facs="#facs_5_r_3" n="N002" />marche vers une perfection totale annoncée ou promise dans un futur <lb facs="#facs_5_r_3" n="N003" />temporel. Elle a consenti au temps, bien sûr, et elle y travaille, mais <lb facs="#facs_5_r_3" n="N004" />sans y trouver son sens, fût-ce dans le plus lointain avenir. Le sens <lb facs="#facs_5_r_3" n="N005" />reste actuel, dans le présent de ceux qui vivent leur histoire par la <lb facs="#facs_5_r_3" n="N006" />transcendance de leur liberté.
+          <lb facs="#facs_5_r_3" n="N001" />Pas plus que les sciences, l’histoire en Europe ne s’est mise en <lb facs="#facs_5_r_3" n="N002" />marche vers une perfection totale annoncée ou promise dans un futur <lb facs="#facs_5_r_3" n="N003" />temporel. Elle a consenti au temps, bien sûr, et elle y travaille, mais <lb facs="#facs_5_r_3" n="N004" />sans y trouver son sens, fût-ce dans le plus lointain avenir. Le sens <lb facs="#facs_5_r_3" n="N005" />reste actuel, dans le présent de ceux qui vivent leur histoire par la <lb facs="#facs_5_r_3" n="N006" />transcendance de leur liberté.
         </p>
         <p facs="#facs_5_r_4">
-          <lb facs="#facs_5_r_4" n="N001" />L'homme n'est pas mort. Mais il semble, aujourd'hui, souvent fati<lb facs="#facs_5_r_4" n="N002" break="no" />gué. Fatigué d'être vivant et d'avoir à être un homme. Dostoïevski l'a <lb facs="#facs_5_r_4" n="N003" />dit depuis longtemps : la liberté est le plus lourd des cadeaux.
+          <lb facs="#facs_5_r_4" n="N001" />L’homme n’est pas mort. Mais il semble, aujourd’hui, souvent fati<lb facs="#facs_5_r_4" n="N002" break="no" />gué. Fatigué d’être vivant et d’avoir à être un homme. Dostoïevski l’a <lb facs="#facs_5_r_4" n="N003" />dit depuis longtemps : la liberté est le plus lourd des cadeaux.
         </p>
         <p facs="#facs_5_r_5">
-          <lb facs="#facs_5_r_5" n="N001" />Certes, si les Européens sont définitivement fatigués d'être des hom<lb facs="#facs_5_r_5" n="N002" break="no" />mes, c'est-à-dire des êtres libres, alors il n'y aura plus d'Europe. Mais <lb facs="#facs_5_r_5" n="N003" />alors, qu'importe l'Europe ?
+          <lb facs="#facs_5_r_5" n="N001" />Certes, si les Européens sont définitivement fatigués d’être des hom<lb facs="#facs_5_r_5" n="N002" break="no" />mes, c’est-à-dire des êtres libres, alors il n’y aura plus d’Europe. Mais <lb facs="#facs_5_r_5" n="N003" />alors, qu’importe l’Europe ?
         </p>
         <p facs="#facs_5_r_6">
-          <lb facs="#facs_5_r_6" n="N001" />Celui qui dit : « L'homme est mort » vit tout de même. Seulement il <lb facs="#facs_5_r_6" n="N002" />abdique. Il veut tuer l'homme en lui parce qu'il est las.
+          <lb facs="#facs_5_r_6" n="N001" />Celui qui dit : « L’homme est mort » vit tout de même. Seulement il <lb facs="#facs_5_r_6" n="N002" />abdique. Il veut tuer l’homme en lui parce qu’il est las.
         </p>
         <p facs="#facs_5_r_7">
-          <lb facs="#facs_5_r_7" n="N001" />Pour reprendre force et courage, écoutons les dissidents de l'Est <lb facs="#facs_5_r_7" n="N002" />européen. Certains d'entre eux se sont délestés de tout, sauf de leur <lb facs="#facs_5_r_7" n="N003" />dignité d'homme. Ils ont dépassé toute peur. Dans leurs ouvrages les <lb facs="#facs_5_r_7" n="N004" />plus amers, nous respirons une étrange, triomphante alacrité.
+          <lb facs="#facs_5_r_7" n="N001" />Pour reprendre force et courage, écoutons les dissidents de l’Est <lb facs="#facs_5_r_7" n="N002" />européen. Certains d’entre eux se sont délestés de tout, sauf de leur <lb facs="#facs_5_r_7" n="N003" />dignité d’homme. Ils ont dépassé toute peur. Dans leurs ouvrages les <lb facs="#facs_5_r_7" n="N004" />plus amers, nous respirons une étrange, triomphante alacrité.
         </p>
         <p facs="#facs_5_r_8">
           <lb facs="#facs_5_r_8" n="N001" />JEANNE HERSCH

@@ -40,12 +40,14 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="819" lry="1292">
+      <graphic url="1410_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="500" uly="47" lrx="751" lry="77" />
       <zone xml:id="facs_1_r_2" ulx="650" uly="306" lrx="757" lry="368" />
       <zone xml:id="facs_1_r_3" ulx="46" uly="408" lrx="771" lry="678" />
       <zone xml:id="facs_1_r_4" ulx="819" uly="1292" lrx="1478" lry="1380" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="819" lry="1293">
+      <graphic url="1410_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="434" uly="45" lrx="455" lry="68" />
       <zone xml:id="facs_2_r_2" ulx="38" uly="63" lrx="144" lry="93" />
       <zone xml:id="facs_2_r_3" ulx="425" uly="67" lrx="494" lry="88" />
@@ -54,6 +56,7 @@
       <zone xml:id="facs_2_r_6" ulx="33" uly="970" lrx="184" lry="989" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="819" lry="1292">
+      <graphic url="1410_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="36" uly="91" lrx="742" lry="169" />
       <zone xml:id="facs_3_r_2" ulx="39" uly="180" lrx="666" lry="227" />
       <zone xml:id="facs_3_r_3" ulx="425" uly="180" lrx="524" lry="206" />
@@ -68,6 +71,7 @@
       <zone xml:id="facs_3_r_12" ulx="420" uly="986" lrx="789" lry="1231" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="819" lry="1292">
+      <graphic url="1410_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="40" uly="81" lrx="412" lry="282" />
       <zone xml:id="facs_4_r_2" ulx="427" uly="83" lrx="791" lry="174" />
       <zone xml:id="facs_4_r_3" ulx="430" uly="202" lrx="684" lry="224" />
@@ -82,6 +86,7 @@
       <zone xml:id="facs_4_r_12" ulx="433" uly="1138" lrx="800" lry="1252" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="819" lry="1292">
+      <graphic url="1410_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="32" uly="67" lrx="401" lry="312" />
       <zone xml:id="facs_5_r_2" ulx="417" uly="68" lrx="671" lry="112" />
       <zone xml:id="facs_5_r_3" ulx="416" uly="132" lrx="786" lry="598" />
@@ -95,6 +100,7 @@
       <zone xml:id="facs_5_r_11" ulx="412" uly="1119" lrx="783" lry="1237" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="819" lry="1292">
+      <graphic url="1410_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="31" uly="81" lrx="402" lry="196" />
       <zone xml:id="facs_6_r_2" ulx="420" uly="171" lrx="785" lry="346" />
       <zone xml:id="facs_6_r_3" ulx="31" uly="190" lrx="404" lry="307" />
@@ -128,7 +134,7 @@
         <p facs="#facs_1_r_4">
           Organ des Schweizerischen Verbandes für Berufsberatung
           <lb facs="#facs_1_l_4_1" n="N001" />
-          <foreign xml:lang="fra">Organe de l'association suisse pour l'orientation scolaire et professionnelle</foreign>
+          <foreign xml:lang="fra">Organe de l’association suisse pour l’orientation scolaire et professionnelle</foreign>
         </p>
       </div>
 <pb facs="#facs_2" n="6" />
@@ -146,12 +152,12 @@
           <foreign xml:lang="fra">Préavis</foreign>
         </p>
         <p facs="#facs_2_r_5">
-          <foreign xml:lang="fra">L'Assemblée générale jubilaire de l'Association suisse pour l'orientation scolaire et professionnelle aura lieu vendredi, 24 juin 1977, au Palais des congrès (Kleiner Tonhallesaal) à Zurich.</foreign>
+          <foreign xml:lang="fra">L’Assemblée générale jubilaire de l’Association suisse pour l’orientation scolaire et professionnelle aura lieu vendredi, 24 juin 1977, au Palais des congrès (Kleiner Tonhallesaal) à Zurich.</foreign>
         </p>
         <table facs="#facs_2_r_6">
           <row>
             <cell>Herausgeber / <foreign xml:lang="fra">Editeur</foreign>:</cell>
-            <cell>Zentralsekretariat des Schweizerischen Verbandes für Berufsberatung<lb facs="#facs_2_l_6_1" n="N001" /><foreign xml:lang="fra">Secrétariat général de l'Association suisse pour l'orientation scolaire et professionnelle</foreign><lb facs="#facs_2_l_6_2" n="N002" />8032 Zürich, Eidmattstrasse 51, Telefon 01 - 32 55 42, Postcheck 80 - 18812</cell>
+            <cell>Zentralsekretariat des Schweizerischen Verbandes für Berufsberatung<lb facs="#facs_2_l_6_1" n="N001" /><foreign xml:lang="fra">Secrétariat général de l’Association suisse pour l’orientation scolaire et professionnelle</foreign><lb facs="#facs_2_l_6_2" n="N002" />8032 Zürich, Eidmattstrasse 51, Telefon 01 - 32 55 42, Postcheck 80 - 18812</cell>
           </row>
           <row>
             <cell>Redaktion / <foreign xml:lang="fra">Rédaction</foreign>:</cell>
@@ -163,7 +169,7 @@
           </row>
           <row>
             <cell>Jahresabonnement / <foreign xml:lang="fra">Abonnement annuel</foreign>:</cell>
-            <cell>Fr. 30.-<lb facs="#facs_2_l_6_7" n="N003" /><foreign xml:lang="fra">für Verbandsmitglieder / pour les membres de l'association</foreign> Fr. 25.-<lb facs="#facs_2_l_6_8" n="N004" /><foreign xml:lang="fra">für das Ausland / pour l'étranger</foreign> Fr. 35.-</cell>
+            <cell>Fr. 30.-<lb facs="#facs_2_l_6_7" n="N003" /><foreign xml:lang="fra">für Verbandsmitglieder / pour les membres de l’association</foreign> Fr. 25.-<lb facs="#facs_2_l_6_8" n="N004" /><foreign xml:lang="fra">für das Ausland / pour l’étranger</foreign> Fr. 35.-</cell>
           </row>
           <row>
             <cell>Einzelhefte / <foreign xml:lang="fra">Numéros isolés</foreign>:</cell>

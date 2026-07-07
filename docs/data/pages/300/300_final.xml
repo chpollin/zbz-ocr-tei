@@ -39,6 +39,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="1253" lry="1732">
+      <graphic url="300_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="120" uly="157" lrx="730" lry="297" />
       <zone xml:id="facs_1_r_2" ulx="443" uly="452" lrx="971" lry="490" />
       <zone xml:id="facs_1_r_3" ulx="120" uly="576" lrx="182" lry="597" />
@@ -64,6 +65,7 @@
       <zone xml:id="facs_1_r_23" ulx="384" uly="1051" lrx="552" lry="1072" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="977" lry="1410">
+      <graphic url="300_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="396" uly="26" lrx="614" lry="65" />
       <zone xml:id="facs_2_r_2" ulx="71" uly="112" lrx="936" lry="329" />
       <zone xml:id="facs_2_r_3" ulx="84" uly="648" lrx="556" lry="717" />
@@ -76,6 +78,7 @@
       <zone xml:id="facs_2_r_10" ulx="664" uly="1130" lrx="936" lry="1273" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="1024" lry="1421">
+      <graphic url="300_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="249" uly="114" lrx="736" lry="157" />
       <zone xml:id="facs_3_r_2" ulx="297" uly="290" lrx="681" lry="344" />
       <zone xml:id="facs_3_r_3" ulx="512" uly="628" lrx="833" lry="672" />
@@ -87,6 +90,7 @@
       <zone xml:id="facs_3_r_9" ulx="67" uly="1098" lrx="477" lry="1297" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="1017" lry="1455">
+      <graphic url="300_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="101" uly="99" lrx="513" lry="148" />
       <zone xml:id="facs_4_r_2" ulx="101" uly="164" lrx="514" lry="545" />
       <zone xml:id="facs_4_r_3" ulx="546" uly="297" lrx="958" lry="702" />
@@ -171,7 +175,7 @@
         <p facs="#facs_1_r_23">
           Vermerk Bibliothek
         </p>
-      <pb facs="#facs_2" n="2" />
+      <pb facs="#facs_2" n="[23]" />
         <p facs="#facs_2_r_1">
           Janvier 1953
         </p>
@@ -184,17 +188,15 @@
         <p facs="#facs_2_r_4">
           TROISIÈME ANNÉE
         </p>
-        <p facs="#facs_2_r_5">
-          23
-        </p>
+        
         <p facs="#facs_2_r_6">
-          La Birmanie, une Yougoslavie d'Orient<lb facs="#facs_2_l_6_1" n="N001" />La crise tunisienne
+          La Birmanie, une Yougoslavie d’Orient<lb facs="#facs_2_l_6_1" n="N001" />La crise tunisienne
         </p>
         <p facs="#facs_2_r_7">
-          Jean Follain<lb facs="#facs_2_l_7_1" n="N001" />Au jour le jour<lb facs="#facs_2_l_7_2" n="N002" />Essenine, poète de la campagne russe<lb facs="#facs_2_l_7_3" n="N003" />Poèmes inédits<lb facs="#facs_2_l_7_4" n="N004" />Silone et l'espérance du "cafone"<lb facs="#facs_2_l_7_5" n="N005" />Une poignée de mûres
+          Jean Follain<lb facs="#facs_2_l_7_1" n="N001" />Au jour le jour<lb facs="#facs_2_l_7_2" n="N002" />Essenine, poète de la campagne russe<lb facs="#facs_2_l_7_3" n="N003" />Poèmes inédits<lb facs="#facs_2_l_7_4" n="N004" />Silone et l’espérance du "cafone"<lb facs="#facs_2_l_7_5" n="N005" />Une poignée de mûres
         </p>
         <p facs="#facs_2_r_8">
-          La politique américaine des visas<lb facs="#facs_2_l_8_1" n="N001" />Le Grand Guignol judiciaire de Prague<lb facs="#facs_2_l_8_2" n="N002" />"Cléricalisme" et "anticléricalisme", dans l'Italie actuelle<lb facs="#facs_2_l_8_3" n="N003" />En attendant une exposition du cubisme<lb facs="#facs_2_l_8_4" n="N004" />Les Mondes insolites<lb facs="#facs_2_l_8_5" n="N005" />Jean Guéhenno, biographe de Jean-Jacques
+          La politique américaine des visas<lb facs="#facs_2_l_8_1" n="N001" />Le Grand Guignol judiciaire de Prague<lb facs="#facs_2_l_8_2" n="N002" />"Cléricalisme" et "anticléricalisme", dans l’Italie actuelle<lb facs="#facs_2_l_8_3" n="N003" />En attendant une exposition du cubisme<lb facs="#facs_2_l_8_4" n="N004" />Les Mondes insolites<lb facs="#facs_2_l_8_5" n="N005" />Jean Guéhenno, biographe de Jean-Jacques
         </p>
         <p facs="#facs_2_r_9">
           FRANÇOIS BONDY<lb facs="#facs_2_l_9_1" n="N001" />J.-M. HERTRICH
@@ -225,33 +227,31 @@
           
         </p>
         <p facs="#facs_3_r_5">
-          HEIDELBERG n'était encore pour moi qu'un château rose démantelé au-dessus d'un Neckar compromis par les chansons et les cartes postales. J'avais 18 ans. J'étais venue là, au hasard, apprendre l'allemand mieux que je ne l'avais fait à l'école. À côté de cours de langue et de littérature allemande, je suivais ceux qui correspondaient aux examens prévus dans ma ville natale. Il
+          HEIDELBERG n’était encore pour moi qu’un château rose démantelé au-dessus d’un Neckar compromis par les chansons et les cartes postales. J’avais 18 ans. J’étais venue là, au hasard, apprendre l’allemand mieux que je ne l’avais fait à l’école. À côté de cours de langue et de littérature allemande, je suivais ceux qui correspondaient aux examens prévus dans ma ville natale. Il
         </p>
         <p facs="#facs_3_r_6">
-          y a eu, par exemple, certain séminaire de littérature latine où un Privatdozent consciencieux se demandait si l'expression <hi rendition="#i">Dique Deaeque omnes</hi>, dans l'invocation placée au début des Géorgiques, englobait aussi les dieux nommés dans les vers précédents, ou bien ne concernait que les autres dieux.
+          y a eu, par exemple, certain séminaire de littérature latine où un Privatdozent consciencieux se demandait si l’expression <hi rendition="#i">Dique Deaeque omnes</hi>, dans l’invocation placée au début des Géorgiques, englobait aussi les dieux nommés dans les vers précédents, ou bien ne concernait que les autres dieux.
         </p>
         <p facs="#facs_3_r_7">
           Un jour, une jeune fille me dit distraitement :
         </p>
         <p facs="#facs_3_r_8">
-          - Connaissez-vous Jaspers ?<lb facs="#facs_3_l_8_1" n="N001" />- Non. Qui était-il ?<lb facs="#facs_3_l_8_2" n="N002" />- Allez-y une fois, me dit la jeune fille, qui elle-même n'y allait guère. C'est intéressant.
+          - Connaissez-vous Jaspers ?<lb facs="#facs_3_l_8_1" n="N001" />- Non. Qui était-il ?<lb facs="#facs_3_l_8_2" n="N002" />- Allez-y une fois, me dit la jeune fille, qui elle-même n’y allait guère. C’est intéressant.
         </p>
         <p facs="#facs_3_r_9">
-          C'est ainsi, parfois, que l'essentiel entre dans une vie.
+          C’est ainsi, parfois, que l’essentiel entre dans une vie.
         </p>
         <p>
-          J'y allai donc. C'était dans l'aula de la vieille université. J'étais assise de côté, dans l'embrasure d'une fenêtre. Jaspers, quand il commença à parler, leva la main. Je n'oublierai jamais ce moment, cette voix, cette main, sans doute justement parce que je les ai alors si ardemment oubliés. La main levée, avec les trois premiers doigts tendus, les autres repliés, n'a été alors que la pointe visible d'une recherche à laquelle quelque chose en moi, qu'aucun enseignement n'avait pu auparavant atteindre, essayait en vain de participer.
+          J’y allai donc. C’était dans l’aula de la vieille université. J’étais assise de côté, dans l’embrasure d’une fenêtre. Jaspers, quand il commença à parler, leva la main. Je n’oublierai jamais ce moment, cette voix, cette main, sans doute justement parce que je les ai alors si ardemment oubliés. La main levée, avec les trois premiers doigts tendus, les autres repliés, n’a été alors que la pointe visible d’une recherche à laquelle quelque chose en moi, qu’aucun enseignement n’avait pu auparavant atteindre, essayait en vain de participer.
         </p>
         <p>
-          Je ne comprenais rien. Je tombais au milieu d'un cours, je connaissais mal la langue, je n'avais à peu près aucune préparation philosophique. J'étais pourtant pleine de joie, car je comprenais qu'il y avait là quelque chose à comprendre. À cette évidence éclatante, Jaspers n'avait presque pas de part, isolé qu'il était dans son prestige d'instrument parfait. Aucune « communication », entre lui et moi, à cette époque. Il était nécessaire, mais tout
+          Je ne comprenais rien. Je tombais au milieu d’un cours, je connaissais mal la langue, je n’avais à peu près aucune préparation philosophique. J’étais pourtant pleine de joie, car je comprenais qu’il y avait là quelque chose à comprendre. À cette évidence éclatante, Jaspers n’avait presque pas de part, isolé qu’il était dans son prestige d’instrument parfait. Aucune « communication », entre lui et moi, à cette époque. Il était nécessaire, mais tout
         </p>
         <p>
           87
         </p>
-      <pb facs="#facs_4" n="4" />
-        <p facs="#facs_4_r_1">
-          88
-        </p>
+      <pb facs="#facs_4" n="[88]" />
+        
         <p facs="#facs_4_r_2">
           PREUVES
         </p>
@@ -259,19 +259,19 @@
           se passait en moi-même. Lui, plus grand que nature, il était « un chiffre de la transcendance ».
         </p>
         <p facs="#facs_4_r_4">
-          Si j'ai dû, par la suite, beaucoup travailler sous la lampe, le soir, avant de comprendre sa pensée dans sa transparente mobilité, il ne m'a cependant jamais étonné. L'étudiant qui m'exposa le début du cours que j'avais manqué ne comprenait pas comment je pouvais terminer les phrases qu'il commençait à lire dans ses notes. Souvent, j'ai eu l'impression, sans oser m'avouer une aussi monstrueuse présomption, que j'aurais pu donner les cours, écrire les livres de Jaspers. Et si je veux le dire ici, c'est que cet aveu est peut-être un hommage : seules les très grandes choses, celles qui sont le plus simplement proches de moi, prennent pour ceux auxquels elles s'offrent cet air d'évidence et de très vieux souvenir perdu.
+          Si j’ai dû, par la suite, beaucoup travailler sous la lampe, le soir, avant de comprendre sa pensée dans sa transparente mobilité, il ne m’a cependant jamais étonné. L’étudiant qui m’exposa le début du cours que j’avais manqué ne comprenait pas comment je pouvais terminer les phrases qu’il commençait à lire dans ses notes. Souvent, j’ai eu l’impression, sans oser m’avouer une aussi monstrueuse présomption, que j’aurais pu donner les cours, écrire les livres de Jaspers. Et si je veux le dire ici, c’est que cet aveu est peut-être un hommage : seules les très grandes choses, celles qui sont le plus simplement proches de moi, prennent pour ceux auxquels elles s’offrent cet air d’évidence et de très vieux souvenir perdu.
         </p>
         <p facs="#facs_4_r_5">
-          Jaspers m'étonna pourtant par la suite. C'est lorsque je l'ai vu réagir à une théorie, une situation, un être humain, un conflit. Alors, toute sa philosophie se ramasse en un seul acte. Le double mouvement, sans incertitudes, sans repentirs et sans outrances, par lequel, avant toute décision, il plonge et s'élève à la fois, saisissant l'essentiel par une sorte de consentement intérieur sans réserve, et se dégageant souverainement jusqu'à l'indépendance sereine qui permet d'inventer. Le seul comportement juste, comment en rendre la fraîcheur, l'immédiateté ? Cette justesse ignore l'à-peu-près, le compromis. Le respect d'autrui s'y exprime par la précision et la clarté due à l'autre, quel qu'il soit.
+          Jaspers m’étonna pourtant par la suite. C’est lorsque je l’ai vu réagir à une théorie, une situation, un être humain, un conflit. Alors, toute sa philosophie se ramasse en un seul acte. Le double mouvement, sans incertitudes, sans repentirs et sans outrances, par lequel, avant toute décision, il plonge et s’élève à la fois, saisissant l’essentiel par une sorte de consentement intérieur sans réserve, et se dégageant souverainement jusqu’à l’indépendance sereine qui permet d’inventer. Le seul comportement juste, comment en rendre la fraîcheur, l’immédiateté ? Cette justesse ignore l’à-peu-près, le compromis. Le respect d’autrui s’y exprime par la précision et la clarté due à l’autre, quel qu’il soit.
         </p>
         <p facs="#facs_4_r_6">
-          Mais il y a plus : Jaspers vise toujours, on dirait presque sans le vouloir, l'obstacle au cœur. Il est difficile de donner à ceux qui ne l'ont pas connu l'idée d'une telle rencontre entre mesure et radicalité. J'entends encore les termes opposés qui tombaient dans ses cours : « Sich bescheiden..., nicht verabsolutieren..., grenzenlose Kommunikation..., absolute Forderung... » C'est ainsi qu'il devait, bien plus tard, quand, après des années de silence et une effroyable guerre, la parole lui fut rendue, résoudre l'angoissant problème du moment. De quoi parler aux jeunes qui avaient vu s'effondrer dans le désastre et le mensonge tout ce qu'ils avaient appris à croire, ces jeunes pour qui toute voix humaine pouvait sembler condamnée à ne plus susciter d'emblée que des réflexes de défense et
+          Mais il y a plus : Jaspers vise toujours, on dirait presque sans le vouloir, l’obstacle au cœur. Il est difficile de donner à ceux qui ne l’ont pas connu l’idée d’une telle rencontre entre mesure et radicalité. J’entends encore les termes opposés qui tombaient dans ses cours : « Sich bescheiden..., nicht verabsolutieren..., grenzenlose Kommunikation..., absolute Forderung... » C’est ainsi qu’il devait, bien plus tard, quand, après des années de silence et une effroyable guerre, la parole lui fut rendue, résoudre l’angoissant problème du moment. De quoi parler aux jeunes qui avaient vu s’effondrer dans le désastre et le mensonge tout ce qu’ils avaient appris à croire, ces jeunes pour qui toute voix humaine pouvait sembler condamnée à ne plus susciter d’emblée que des réflexes de défense et
         </p>
         <p facs="#facs_4_r_7">
-          de méfiance ? Jaspers visa l'obstacle au cœur : il nomma la méfiance, l'expliqua ; et il choisit le sujet le plus insupportable, celui de la culpabilité. Il parla sans pathos, ne faisant à ses auditeurs l'injure d'aucune indulgence ni la flatterie d'aucune exagération prestigieuse. Il esquissa en acte un schéma limpide, classique, pouvant servir à n'importe quel examen de conscience collectif.
+          de méfiance ? Jaspers visa l’obstacle au cœur : il nomma la méfiance, l’expliqua ; et il choisit le sujet le plus insupportable, celui de la culpabilité. Il parla sans pathos, ne faisant à ses auditeurs l’injure d’aucune indulgence ni la flatterie d’aucune exagération prestigieuse. Il esquissa en acte un schéma limpide, classique, pouvant servir à n’importe quel examen de conscience collectif.
         </p>
         <p facs="#facs_4_r_8">
-          Bien n'est à la fois plus proche et plus inexplicablement différent du « Kitsch » que les plus grands chefs-d'œuvre de la peinture. Bien n'est à la fois plus proche et plus différent du « Schwelgen » que la vraie philosophie. L'enseignement de Jaspers, je m'en souviens, se déroulant tout entier aux confins où la transcendance attire et rejette la connaissance humaine, ne cessait jamais de refuser satisfaction. À peine essayait-on de jouir de soi à propos d'une nouvelle conquête spirituelle qu'on en était chassé avec rigueur. Impossible de se contenter. On était jeté d'une pensée à une autre, d'un élan à une limite, d'une impossibilité à une exigence, et l'appel philosophique retentissait à travers toute la pensée, réclamant enfin le dépassement de la pensée — vers les actes de la vie qui, à leur tour, ne trouvent leur plein sens que lorsqu'ils ne suffisent pas.
+          Bien n’est à la fois plus proche et plus inexplicablement différent du « Kitsch » que les plus grands chefs-d’œuvre de la peinture. Bien n’est à la fois plus proche et plus différent du « Schwelgen » que la vraie philosophie. L’enseignement de Jaspers, je m’en souviens, se déroulant tout entier aux confins où la transcendance attire et rejette la connaissance humaine, ne cessait jamais de refuser satisfaction. À peine essayait-on de jouir de soi à propos d’une nouvelle conquête spirituelle qu’on en était chassé avec rigueur. Impossible de se contenter. On était jeté d’une pensée à une autre, d’un élan à une limite, d’une impossibilité à une exigence, et l’appel philosophique retentissait à travers toute la pensée, réclamant enfin le dépassement de la pensée — vers les actes de la vie qui, à leur tour, ne trouvent leur plein sens que lorsqu’ils ne suffisent pas.
         </p>
         <p facs="#facs_4_r_9">
           À travers tout cela, quelque chose était solide, inébranlable : on voyait un homme prendre appui sur la vérité, et sur elle seule.
@@ -280,13 +280,13 @@
           JEANNE HERSCH
         </p>
         <p>
-          L'accueil aux réfugiés de Berlin
+          L’accueil aux réfugiés de Berlin
         </p>
         <p>
-          L'AFFLUX de plus en plus considérable des réfugiés vers le secteur libre de Berlin pose dès l'arrivée d'écrasants problèmes matériels en face desquels tous les moyens sont insuffisants.
+          L’AFFLUX de plus en plus considérable des réfugiés vers le secteur libre de Berlin pose dès l’arrivée d’écrasants problèmes matériels en face desquels tous les moyens sont insuffisants.
         </p>
         <p>
-          De nombreux intellectuels et artistes — écrivains, professeurs, musiciens, peintres, sculpteurs — se trouvent parmi les réfugiés. Ils sont entièrement dépaysés : le régime totalitaire leur avait imposé une discipline sévère, leur avait prescrit une façon d'écrire, d'ensei
+          De nombreux intellectuels et artistes — écrivains, professeurs, musiciens, peintres, sculpteurs — se trouvent parmi les réfugiés. Ils sont entièrement dépaysés : le régime totalitaire leur avait imposé une discipline sévère, leur avait prescrit une façon d’écrire, d’ensei
         </p>
       </div>
       </body></text>

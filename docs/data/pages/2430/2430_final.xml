@@ -32,10 +32,12 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="879" lry="1243">
+      <graphic url="2430_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="131" uly="400" lrx="750" lry="500" />
       <zone xml:id="facs_1_r_2" ulx="286" uly="903" lrx="614" lry="976" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="876" lry="1242">
+      <graphic url="2430_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="118" uly="342" lrx="334" lry="368" />
       <zone xml:id="facs_2_r_2" ulx="118" uly="450" lrx="519" lry="490" />
       <zone xml:id="facs_2_r_3" ulx="821" uly="470" lrx="832" lry="491" />
@@ -43,6 +45,7 @@
       <zone xml:id="facs_2_r_5" ulx="118" uly="604" lrx="372" lry="624" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="876" lry="1242">
+      <graphic url="2430_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="67" uly="240" lrx="765" lry="282" />
       <zone xml:id="facs_3_r_2" ulx="65" uly="296" lrx="386" lry="326" />
       <zone xml:id="facs_3_r_3" ulx="455" uly="355" lrx="818" lry="924" />
@@ -50,17 +53,20 @@
       <zone xml:id="facs_3_r_5" ulx="456" uly="924" lrx="818" lry="1115" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="874" lry="1241">
+      <graphic url="2430_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="67" uly="67" lrx="432" lry="424" />
       <zone xml:id="facs_4_r_2" ulx="67" uly="448" lrx="434" lry="1063" />
       <zone xml:id="facs_4_r_3" ulx="460" uly="823" lrx="824" lry="1113" />
       <zone xml:id="facs_4_r_4" ulx="70" uly="1062" lrx="432" lry="1113" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="874" lry="1241">
+      <graphic url="2430_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="62" uly="69" lrx="429" lry="1113" />
       <zone xml:id="facs_5_r_2" ulx="453" uly="258" lrx="820" lry="1065" />
       <zone xml:id="facs_5_r_3" ulx="457" uly="1060" lrx="820" lry="1113" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="874" lry="1241">
+      <graphic url="2430_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="67" uly="65" lrx="432" lry="166" />
       <zone xml:id="facs_6_r_2" ulx="456" uly="138" lrx="821" lry="729" />
       <zone xml:id="facs_6_r_3" ulx="67" uly="182" lrx="430" lry="445" />
@@ -68,11 +74,13 @@
       <zone xml:id="facs_6_r_5" ulx="458" uly="753" lrx="822" lry="1107" />
     </surface>
     <surface xml:id="facs_7" ulx="0" uly="0" lrx="876" lry="1242">
+      <graphic url="2430_p007.png"/>
       <zone xml:id="facs_7_r_1" ulx="64" uly="64" lrx="432" lry="1108" />
       <zone xml:id="facs_7_r_2" ulx="455" uly="67" lrx="819" lry="492" />
       <zone xml:id="facs_7_r_3" ulx="456" uly="516" lrx="822" lry="1109" />
     </surface>
     <surface xml:id="facs_8" ulx="0" uly="0" lrx="879" lry="1243">
+      <graphic url="2430_p008.png"/>
       <zone xml:id="facs_8_r_1" ulx="77" uly="74" lrx="433" lry="303" />
       <zone xml:id="facs_8_r_2" ulx="467" uly="74" lrx="823" lry="303" />
     </surface>
@@ -80,7 +88,7 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[9]" />
         <head facs="#facs_1_r_1">
           d<lb facs="#facs_1_l_1_1" n="N001" />422
         </head>
@@ -93,7 +101,7 @@
         <p>
           1987
         </p>
-      <pb facs="#facs_2" n="2" />
+      <pb facs="#facs_2" n="[10]" />
         <p facs="#facs_2_r_1">
           Inhaltsübersicht
         </p>
@@ -109,10 +117,8 @@
         <p facs="#facs_2_r_5">
           2<lb facs="#facs_2_l_5_1" n="N001" />1840464
         </p>
-      <pb facs="#facs_3" n="3" />
-        <p facs="#facs_3_r_1">
-          11
-        </p>
+      <pb facs="#facs_3" n="[11]" />
+        
         <p facs="#facs_3_r_2">
           Die Probleme der Eingliederung der elektronischen Medien in das demokratische Gefüge der Schweiz
         </p>
@@ -128,10 +134,8 @@
         <p>
           Nun haben aber die Schweizer Radiozuhörer und Fernsehzuschauer insgesamt nicht das Gefühl, das heutige Angebot der Medien hänge zu stark vom Willen des Staates oder der Privatwirtschaft ab, sondern eher – ja vorwiegend – vom Willen der Programmschaffenden. Was nicht heis-
         </p>
-      <pb facs="#facs_4" n="4" />
-        <p facs="#facs_4_r_1">
-          12
-        </p>
+      <pb facs="#facs_4" n="[12]" />
+        
         <p facs="#facs_4_r_2">
           sen will, dass es keine Rolle spielt, ob diese Programmschaffenden von der staatlichen Autorität bzw. dem Druck der Werbung abhängig sind oder nicht – es spielt sogar eine sehr grosse Rolle. Doch das ist nicht der springende Punkt. Die Entscheidungen fällen nämlich die Programmschaffenden selbst: Sie sind es, die tagtäglich auf das einwirken – und einwirken müssen –, was ich eingangs als ethische Affektivität der Bevölkerung bezeichnet habe und von der sich in der Folge Stellungnahmen in sämtlichen Bereichen ableiten.
         </p>
@@ -144,7 +148,7 @@
         <p>
           4. Wer aber verbirgt sich hinter diesem Sammelbegriff? Ich möchte gleich an dieser Stelle festhalten, dass es mir nicht darum geht, Einzelpersonen anzugreifen; es geht mir um den effektiven Status im allgemeinen. Die Programmschaffenden hatten sich nie dem Volksentscheid einer Wahl – und demzufolge auch keiner Wiederwahl – zu stellen, das heisst, sie müssen nie die Sanktionen der öffentlichen Meinung hinnehmen,
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[13]" />
         <p facs="#facs_5_r_1">
           weshalb sie sie im Gegensatz zu jedem Volksvertreter auch nicht zum vornherein bei ihren Entscheiden berücksichtigen müssen. Man verlangt von ihnen keine bestimmte Ausbildung, keinen bestimmten Abschluss. Soviel ich weiß, eignen sie sich ihre beruflichen Kenntnisse für gewöhnlich erst im Laufe ihrer Tätigkeit an – was zwar natürlich niemanden daran hindert, ein guter oder sogar ausgezeichneter Programmschaffender zu werden, aber trotzdem den Interessen der Fernsehzuschauer insofern zuwiderläuft, als es jede noch so geringe Garantie objektiver Auswahlkriterien ausschließt. Wie also werden die Programmschaffenden rekrutiert? Es scheint wahrscheinlich – und nur natürlich –, dass hierbei das Prinzip der Kooptation zur Anwendung gelangt, wodurch die jeweiligen Produktionsequipen logischerweise ständig an Pluralität verlieren bzw. an Homogenität gewinnen – ob man das nun will oder nicht.
         </p>
@@ -157,10 +161,8 @@
         <p>
           Die Schaffung einer «unabhängigen» Klageinstanz war zwar eine gute Idee,
         </p>
-        <p>
-          13
-        </p>
-      <pb facs="#facs_6" n="6" />
+        
+      <pb facs="#facs_6" n="[14]" />
         <p facs="#facs_6_r_1">
           aber sie wird nicht imstande sein, die eben geschilderte Grundsituation zu ändern, deren Ursprung in der Natur der Sache liegt.
         </p>
@@ -176,10 +178,8 @@
         <p facs="#facs_6_r_5">
           7. Aus dem Vorangegangenen wird ersichtlich, dass die elektronischen Medien in unserer Demokratie nur dann den ihrer Macht entsprechenden Platz einnehmen können, wenn sie weder vom Staat noch vom industriell/finanziellen Interessenkonflikt abhängen und nicht in den Händen einheitlicher, einseitiger Teams von Programmschaffenden liegen, die genausowenig gewählt wie kontrolliert werden können. Die Lösung des Problems gestaltet sich um so schwieriger, da sich die Technik dieser Medien an sich in einer Periode
         </p>
-        <p>
-          14
-        </p>
-      <pb facs="#facs_7" n="7" />
+        
+      <pb facs="#facs_7" n="[15]" />
         <p facs="#facs_7_r_1">
           ständigen Wandels befindet, durch die sich ihre Möglichkeiten permanent vervielfachen, und es schwierig ist, sich vorzustellen, was sich abspielen wird, sobald einmal all die Satellitenprogramme das Land überfluten. Welche Bedeutung besitzt dann noch die Streitfrage des Monopols?
         </p>
@@ -195,13 +195,9 @@
         <p>
           Kein System von Regeln, Prinzipien und Verboten eignet sich dazu, die elektronischen Medien in die Demokratie einzugliedern. Es liegt in der Natur der Sache, dass das Aussergewöhnliche, das Anomale in ihnen immer mehr als den ihm gebührenden Platz einnehmen wird, und das in allen
         </p>
-        <p>
-          15
-        </p>
-      <pb facs="#facs_8" n="8" />
-        <p facs="#facs_8_r_1">
-          16
-        </p>
+        
+      <pb facs="#facs_8" n="[16]" />
+        
         <p facs="#facs_8_r_2">
           Bereichen. Genauso wie es in der Natur der Sache liegt, dass die Medien die Zukunft mehr reizt als die Gegenwart und dass sie sich in der Praxis nicht für das entscheiden, was jeder sieht, sondern für das, was jeder lieber nicht sähe. Man muss diese nonkonformistische «Natur» der Medien erkennen und akzeptieren, mit ihrem gesamten Anteil an Subjektivität und Stimulation, den sie mit sich bringt. Denn hier steht die Freiheit, die unerlässliche Freiheit der Programmschaffenden auf dem Spiel. Aber aus eben diesen Gründen kann diese Freiheit nicht spielen, wenn ihren Vertretern nicht von einer zumindest indirekt vom Volk gewählten Kontrollstelle ausgleichend Ausbildungs- und Auswahlbedingungen auferlegt werden.
         </p>

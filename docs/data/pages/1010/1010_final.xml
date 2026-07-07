@@ -39,6 +39,7 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="1746" lry="2747">
+      <graphic url="1010_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="17" uly="17" lrx="109" lry="66" />
       <zone xml:id="facs_1_r_2" ulx="94" uly="64" lrx="352" lry="92" />
       <zone xml:id="facs_1_r_3" ulx="110" uly="171" lrx="1561" lry="438" />
@@ -77,6 +78,7 @@
       <zone xml:id="facs_1_r_36" ulx="768" uly="1980" lrx="885" lry="2006" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="1775" lry="2748">
+      <graphic url="1010_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="26" uly="133" lrx="1525" lry="222" />
       <zone xml:id="facs_2_r_2" ulx="431" uly="240" lrx="841" lry="527" />
       <zone xml:id="facs_2_r_3" ulx="861" uly="248" lrx="1266" lry="411" />
@@ -140,6 +142,7 @@
       <zone xml:id="facs_2_r_61" ulx="508" uly="2608" lrx="834" lry="2657" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="1754" lry="2720">
+      <graphic url="1010_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="1340" uly="110" lrx="1728" lry="389" />
       <zone xml:id="facs_3_r_2" ulx="50" uly="115" lrx="1140" lry="217" />
       <zone xml:id="facs_3_r_3" ulx="55" uly="263" lrx="461" lry="409" />
@@ -191,13 +194,13 @@
             Médecine &amp; Hygiène
           </p>
           <p facs="#facs_1_r_3">
-            JOURNAL SUISSE D'INFORMATIONS MÉDICALES<lb facs="#facs_1_l_3_1" n="N001" />Réservé à la corporation médicale<lb facs="#facs_1_l_3_2" n="N002" />Paraît chaque semaine<lb facs="#facs_1_l_3_3" n="N003" />Dr Léon WEBER-BAULER †<lb facs="#facs_1_l_3_4" n="N004" />Premier rédacteur en chef<lb facs="#facs_1_l_3_5" n="N005" />(1943-1956)<lb facs="#facs_1_l_3_6" n="N006" />Rédacteur en chef : Dr Pierre Rentchnick<lb facs="#facs_1_l_3_7" n="N007" />Président du Conseil d'administration : Dr R. Joris<lb facs="#facs_1_l_3_8" n="N008" />Directeur : J.-P. Balavoine
+            JOURNAL SUISSE D’INFORMATIONS MÉDICALES<lb facs="#facs_1_l_3_1" n="N001" />Réservé à la corporation médicale<lb facs="#facs_1_l_3_2" n="N002" />Paraît chaque semaine<lb facs="#facs_1_l_3_3" n="N003" />Dr Léon WEBER-BAULER †<lb facs="#facs_1_l_3_4" n="N004" />Premier rédacteur en chef<lb facs="#facs_1_l_3_5" n="N005" />(1943-1956)<lb facs="#facs_1_l_3_6" n="N006" />Rédacteur en chef : Dr Pierre Rentchnick<lb facs="#facs_1_l_3_7" n="N007" />Président du Conseil d’administration : Dr R. Joris<lb facs="#facs_1_l_3_8" n="N008" />Directeur : J.-P. Balavoine
           </p>
           <p facs="#facs_1_r_4">
             Le philosophe devant les progrès de la science médicale<lb facs="#facs_1_l_4_1" n="N001" />(voir page 1183)
           </p>
           <p facs="#facs_1_r_5">
-            Système d'information hospitalier : contraintes
+            Système d’information hospitalier : contraintes
           </p>
           <p facs="#facs_1_r_6">
             Ordinateurs : utilisation dans un service de chirurgie
@@ -213,31 +216,31 @@
 <div n="2">
           <div type="text">
 <head>
-            <title type="main">L'ordinateur en chirurgie, anesthésie et soins intensifs</title>
+            <title type="main">L’ordinateur en chirurgie, anesthésie et soins intensifs</title>
           </head>
           <p facs="#facs_1_r_10">
-            Cinq ans d'utilisation en temps réel à la clinique thoracique de l'Hôpital Karolinska à Stockholm *
+            Cinq ans d’utilisation en temps réel à la clinique thoracique de l’Hôpital Karolinska à Stockholm *
           </p>
           <p facs="#facs_1_r_11">
             par R. Bussien¹ (Lausanne), O. Norlandes² (Stockholm) et S. O. Pettersson³ (Järfälla, Suède)
           </p>
           <p facs="#facs_1_r_12">
-            La prise rapide de décision est le préalable au fonctionnement rationnel de la médecine intensive moderne. Les multiples données en provenance des équipements qui servent au diagnostic, au traitement ou à la surveillance des malades précaires viennent s'ajouter aux mesures conventionnelles des paramètres physiologiques et aux soins effectués par le personnel infirmier, aux résultats du laboratoire et aux examens physiques médicaux. La consignation manuscrite de ces données et leur consultation traditionnelle ne garantissent plus la prise rapide de décisions optimales concernant les malades.
+            La prise rapide de décision est le préalable au fonctionnement rationnel de la médecine intensive moderne. Les multiples données en provenance des équipements qui servent au diagnostic, au traitement ou à la surveillance des malades précaires viennent s’ajouter aux mesures conventionnelles des paramètres physiologiques et aux soins effectués par le personnel infirmier, aux résultats du laboratoire et aux examens physiques médicaux. La consignation manuscrite de ces données et leur consultation traditionnelle ne garantissent plus la prise rapide de décisions optimales concernant les malades.
           </p>
           <p facs="#facs_1_r_13">
-            A la clinique thoracique de l'Hôpital Karolinska, à Stockholm, une application électronique en temps réel a été mise en place pour maîtriser ce flux accru de données et le transformer en information facilitant la prise accélérée de décision. Il s'agit d'un système interactif de communication qui fonctionne depuis cinq ans sans interruption.
+            A la clinique thoracique de l’Hôpital Karolinska, à Stockholm, une application électronique en temps réel a été mise en place pour maîtriser ce flux accru de données et le transformer en information facilitant la prise accélérée de décision. Il s’agit d’un système interactif de communication qui fonctionne depuis cinq ans sans interruption.
           </p>
           <p facs="#facs_1_r_14">
-            Environ 9000 opérés thoraciques ont été enregistrés par le système. Les résultats obtenus sont positifs sur le plan de la technologie, des soins aux malades, de l'organisation du travail et de la gestion financière hospitalière.
+            Environ 9000 opérés thoraciques ont été enregistrés par le système. Les résultats obtenus sont positifs sur le plan de la technologie, des soins aux malades, de l’organisation du travail et de la gestion financière hospitalière.
           </p>
           </div>
 <div n="3">
             <head>Historique</head>
             <p facs="#facs_1_r_16">
-              En 1967, après quelques mois de pourparlers entre l'Hôpital Karolinska de Stockholm, le Gouvernement suédois et la firme suédoise d'électronique Stansaab, l'installation d'un système en temps réel de traitement électronique des données était décidé et se réalisait sans délai à la clinique thoracique (17 lits) de l'Hôpital Karolinska (1800 lits).
+              En 1967, après quelques mois de pourparlers entre l’Hôpital Karolinska de Stockholm, le Gouvernement suédois et la firme suédoise d’électronique Stansaab, l’installation d’un système en temps réel de traitement électronique des données était décidé et se réalisait sans délai à la clinique thoracique (17 lits) de l’Hôpital Karolinska (1800 lits).
             </p>
             <p facs="#facs_1_r_17">
-              Le système, conçu à l'origine pour l'armée de l'air, devait servir une application médicale : — permettre, jour et nuit, l'entrée directe dans
+              Le système, conçu à l’origine pour l’armée de l’air, devait servir une application médicale : — permettre, jour et nuit, l’entrée directe dans
             </p>
           </div>
           <div n="3">
@@ -247,31 +250,31 @@
               Le système, essentiellement système de communication, repose sur un hardware constitué principalement (Fig. 1) :
             </p>
             <p facs="#facs_1_r_21">
-              - d'un ordinateur Stansaab, Censor 908, instrument rapide du transit et du traitement en temps réel des données (64 K bytes de
+              - d’un ordinateur Stansaab, Censor 908, instrument rapide du transit et du traitement en temps réel des données (64 K bytes de
             </p>
             <note place="foot" n="*" xml:id="fn1-1">
               <p facs="#facs_1_r_22">
-                <lb facs="#facs_1_l_22_1" n="N001" />* Communication présentée aux Journées d'informatique médicale à Toulouse, 5-9 mars 1973.<lb facs="#facs_1_l_22_1" n="N002" />¹ Service d'anesthésie, Hôpital communal universitaire, Lausanne, et clinique thoracique, Hôpital Karolinska, Stockholm (Suède).<lb facs="#facs_1_l_22_2" n="N003" />² Chef du service d'anesthésie, clinique thoracique, Hôpital Karolinska, Stockholm (Suède).<lb facs="#facs_1_l_22_3" n="N004" />³ Stansaab Elektronik AB, Järfälla (Suède).
+                <lb facs="#facs_1_l_22_1" n="N001" />* Communication présentée aux Journées d’informatique médicale à Toulouse, 5-9 mars 1973.<lb facs="#facs_1_l_22_1" n="N002" />¹ Service d’anesthésie, Hôpital communal universitaire, Lausanne, et clinique thoracique, Hôpital Karolinska, Stockholm (Suède).<lb facs="#facs_1_l_22_2" n="N003" />² Chef du service d’anesthésie, clinique thoracique, Hôpital Karolinska, Stockholm (Suède).<lb facs="#facs_1_l_22_3" n="N004" />³ Stansaab Elektronik AB, Järfälla (Suède).
               </p>
             </note>
-            <p facs="#facs_1_r_23">b) la mémoire centrale ; temps d'accès 0,5µsec) ;</p>
+            <p facs="#facs_1_r_23">b) la mémoire centrale ; temps d’accès 0,5µsec) ;</p>
             <p facs="#facs_1_r_24">
-              - d'une mémoire auxiliaire à disque magnétique Burroughs (2 × 10⁶ bytes de mémoire accessoire ; temps moyen d'accès : 17 µsec.) où sont stockés programmes d'application et données :
+              - d’une mémoire auxiliaire à disque magnétique Burroughs (2 × 10⁶ bytes de mémoire accessoire ; temps moyen d’accès : 17 µsec.) où sont stockés programmes d’application et données :
             </p>
             <p facs="#facs_1_r_25">
-              - de terminaux d'entrée-sortie (8 unités d'affichage Stansaab Grafoskop, 50 interphones Intercom 411 (fig. 2), 1 lecteur-perforateur de ruban et 2 imprimantes lentes) ;<lb facs="#facs_1_l_25_1" n="N001" />- d'un convertisseur analogique, digital, cinq canaux ;
+              - de terminaux d’entrée-sortie (8 unités d’affichage Stansaab Grafoskop, 50 interphones Intercom 411 (fig. 2), 1 lecteur-perforateur de ruban et 2 imprimantes lentes) ;<lb facs="#facs_1_l_25_1" n="N001" />- d’un convertisseur analogique, digital, cinq canaux ;
             </p>
             <p facs="#facs_1_r_26">
-              - d'une interface reliant le système par batch à l'IBM/360-40 de l'Hôpital Karolinska (KS)
+              - d’une interface reliant le système par batch à l’IBM/360-40 de l’Hôpital Karolinska (KS)
             </p>
           </div>
         </div>
         <div type="text">
 <figure>
-          <head facs="#facs_1_r_27">Fig. 1. — Configuration générale de l'ordinateur installé à la clinique thoracique de l'Hôpital Karolinska, à Stockholm.</head>
+          <head facs="#facs_1_r_27">Fig. 1. — Configuration générale de l’ordinateur installé à la clinique thoracique de l’Hôpital Karolinska, à Stockholm.</head>
         </figure>
         <figure>
-          <head facs="#facs_1_r_29">Fig. 2. — Station Intercom 411 (en haut) et unité d'affichage Grafoskop (en bas). Clinique thoracique de l'Hôpital Karolinska à Stockholm.</head>
+          <head facs="#facs_1_r_29">Fig. 2. — Station Intercom 411 (en haut) et unité d’affichage Grafoskop (en bas). Clinique thoracique de l’Hôpital Karolinska à Stockholm.</head>
         </figure>
         
           <p facs="#facs_1_r_30">Suite page suivante (1166)</p>
@@ -281,13 +284,13 @@
             Tantum<lb facs="#facs_1_l_33_1" n="N001" />Trade Mark<lb facs="#facs_1_l_33_2" n="N002" />Crème
           </p>
           <p facs="#facs_1_r_34">
-            un mode d'application plus pratique et plus efficace<lb facs="#facs_1_l_34_1" n="N001" />pénètre jusqu'au foyer de l'inflammation<lb facs="#facs_1_l_34_2" n="N002" />atteint une concentration locale optimale.
+            un mode d’application plus pratique et plus efficace<lb facs="#facs_1_l_34_1" n="N001" />pénètre jusqu’au foyer de l’inflammation<lb facs="#facs_1_l_34_2" n="N002" />atteint une concentration locale optimale.
           </p>
           <p facs="#facs_1_r_35">Tubes de 20 et 100 g à 5 % de benzydiamine</p>
           <p facs="#facs_1_r_36">Laboratoires Sauter S.A. Vernier-Genève</p>
         
       </div>
-<pb facs="#facs_2" n="2" />
+<pb facs="#facs_2" n="[2052]" />
         <div type="text">
 <head facs="#facs_2_r_1">
           MÉDECINE ET HYGIÈNE
@@ -303,58 +306,58 @@
           J. Hersch
         </p>
         <p facs="#facs_2_r_5">
-          <lb facs="#facs_2_r_5" n="N001" />Mon sujet étant trop vaste, je ne parlerai pas de des problèmes bien connus, difficiles et peut-être insolubles, que pour aujourd'hui l'organisation de la profession médicale : la marque de « vue d'ensemble » par suite d'une spécialisation excessive, la surcharge des pressions qui ne peuvent fixer que des rendements lointains, les caisses-maladies et la « médicine de masse », les conséquences démographiques et sociales des progrès médicaux, le prix de certains traitements, le choix de ceux qui procurent en bénéficier, etc.
+          <lb facs="#facs_2_r_5" n="N001" />Mon sujet étant trop vaste, je ne parlerai pas de des problèmes bien connus, difficiles et peut-être insolubles, que pour aujourd’hui l’organisation de la profession médicale : la marque de « vue d’ensemble » par suite d’une spécialisation excessive, la surcharge des pressions qui ne peuvent fixer que des rendements lointains, les caisses-maladies et la « médicine de masse », les conséquences démographiques et sociales des progrès médicaux, le prix de certains traitements, le choix de ceux qui procurent en bénéficier, etc.
         </p>
         <p facs="#facs_2_r_6">
-          <lb facs="#facs_2_r_6" n="N001" />Ce que je voudrais ici mettre en lumière, c'est surtout une certaine perplexité, suscitée par les individus et la société, par les progrès incontestables et extraordinaires réalisés dans la science médicale. Perplexité si profonde qu'elle touche parfois au sens que l'homme a de lui-même et qu'elle semble massacrer ce qu'il est devenu courant d'appeler « vue identique ».
+          <lb facs="#facs_2_r_6" n="N001" />Ce que je voudrais ici mettre en lumière, c’est surtout une certaine perplexité, suscitée par les individus et la société, par les progrès incontestables et extraordinaires réalisés dans la science médicale. Perplexité si profonde qu’elle touche parfois au sens que l’homme a de lui-même et qu’elle semble massacrer ce qu’il est devenu courant d’appeler « vue identique ».
         </p>
         <p facs="#facs_2_r_7">
-          <lb facs="#facs_2_r_7" n="N001" /><hi rendition="#sup">*</hi> Professeur de philosophie à l'université.
+          <lb facs="#facs_2_r_7" n="N001" /><hi rendition="#sup">*</hi> Professeur de philosophie à l’université.
         </p>
         <figure facs="#facs_2_r_8">
-          <head>** Conférence duerais à l'Aula de l'université, le 11 juin à l'occasion du 110e anniversaire de la Société médicale de Genève.</head>
+          <head>** Conférence duerais à l’Aula de l’université, le 11 juin à l’occasion du 110e anniversaire de la Société médicale de Genève.</head>
         </figure>
         <p facs="#facs_2_r_9">
-          <lb facs="#facs_2_r_9" n="N001" />tité». Et il s'agit bien de « l'homme » et non pas du « maladie ». En effet, il importe de comprendre que l'influence de la science médicale déborde de loin le secteur « médicalisé », qui lui-même ne cesse de s'étendre. Elle agit sur la sensibilité de la société entière. Elle y modifie de façon diffuse, à tous les niveaux, le sens que chacun a de soi, de l'autre, du bonheur, de la valeur, de la santé. Il y met des vends qui s'épargissent sur l'eau et qui vont bien au-delà de la conscience claire. C'est pourquoi la responsabilité du corps médical est immense, même en dehors des problèmes de souffrance, de vie ou de mort, qui ne cessent de l'obséder.
+          <lb facs="#facs_2_r_9" n="N001" />tité». Et il s’agit bien de « l’homme » et non pas du « maladie ». En effet, il importe de comprendre que l’influence de la science médicale déborde de loin le secteur « médicalisé », qui lui-même ne cesse de s’étendre. Elle agit sur la sensibilité de la société entière. Elle y modifie de façon diffuse, à tous les niveaux, le sens que chacun a de soi, de l’autre, du bonheur, de la valeur, de la santé. Il y met des vends qui s’épargissent sur l’eau et qui vont bien au-delà de la conscience claire. C’est pourquoi la responsabilité du corps médical est immense, même en dehors des problèmes de souffrance, de vie ou de mort, qui ne cessent de l’obséder.
         </p>
         <p facs="#facs_2_r_10">
-          <lb facs="#facs_2_r_10" n="N001" />Il y a quelques années, M. Jevko, qui était alors une directrice du Bureau international du travail, a fait une conférence remarquable. Il montrait que « les nouveaux pouvoirs » des hommes, dans tous les domaines terrestres interplanétaires, fond des mers, atome, biologie moléculaire, génétique, médecine, et en particulier psychiatrie), alors qu'ils sont incomparablement plus puissants que les pouvoirs anciens, se trouvent encore « à l'état sauvage ». Ils ne sont régis par aucun droit ni par aucune morale commune, et il n'existe même pas, dans la plupart des cas, de cette déontologique professionnel à leur sujet. Un consensus paraît intranscrite et aucune autorité n'a compétence pour délimiter ce qui est légitime et ce qui ne l'est pas. Greffes du cœur, expérimentation sur des êtres humains, notion de la santé, avortement, euthanasie, interventions génétiques imminentes, types de traitements psychologiques, chimiques ou psychanalytiques, etc. — autant de questions sur lesquelles les médecins s'opposent jusqu'aux extrêmes, jusqu'à l'indignation et la révolte, sans qu'une autorité puisse trancher, sans qu'apparaisse une référence commune.
+          <lb facs="#facs_2_r_10" n="N001" />Il y a quelques années, M. Jevko, qui était alors une directrice du Bureau international du travail, a fait une conférence remarquable. Il montrait que « les nouveaux pouvoirs » des hommes, dans tous les domaines terrestres interplanétaires, fond des mers, atome, biologie moléculaire, génétique, médecine, et en particulier psychiatrie), alors qu’ils sont incomparablement plus puissants que les pouvoirs anciens, se trouvent encore « à l’état sauvage ». Ils ne sont régis par aucun droit ni par aucune morale commune, et il n’existe même pas, dans la plupart des cas, de cette déontologique professionnel à leur sujet. Un consensus paraît intranscrite et aucune autorité n’a compétence pour délimiter ce qui est légitime et ce qui ne l’est pas. Greffes du cœur, expérimentation sur des êtres humains, notion de la santé, avortement, euthanasie, interventions génétiques imminentes, types de traitements psychologiques, chimiques ou psychanalytiques, etc. — autant de questions sur lesquelles les médecins s’opposent jusqu’aux extrêmes, jusqu’à l’indignation et la révolte, sans qu’une autorité puisse trancher, sans qu’apparaisse une référence commune.
         </p>
         <p facs="#facs_2_r_11">
-          <lb facs="#facs_2_r_11" n="N001" />Face à ces divergences l'homme, déjà égaré par les menaces de fin du monde et les promesses de paradis immédiats qui l'assaillent à la fois de toutes parts, perd le sens de sa vie. Il ne sait plus ce qu'il est, ni si ses conquêtes ont un sens.
+          <lb facs="#facs_2_r_11" n="N001" />Face à ces divergences l’homme, déjà égaré par les menaces de fin du monde et les promesses de paradis immédiats qui l’assaillent à la fois de toutes parts, perd le sens de sa vie. Il ne sait plus ce qu’il est, ni si ses conquêtes ont un sens.
         </p>
         <p facs="#facs_2_r_12">
-          <lb facs="#facs_2_r_12" n="N001" />Or, à ce qu'il me semble, les divergences ne proviennent pas tant du fait que les uns et les autres invoqueraient des valeurs différentes, que du « vœux » de les uns et les autres n'osant les affronter. Par exemple : ils veulent obtenir des résultats invocables : diminution de la souffrance, reprise du travail, réadaptation au contexte social ; — ou bien : ils consolèrent ce « bon » (madioune de quelle manière le traitement atteint un allière de sens de la vie), « la raison de vivre », la capacité de vieillir et de regarder la mort en face ; — ou encore du se préoccupent des effets plus vastes, plus étendus, plus définis aussi ; de quelle manière l'acte médical médical s'il ou allère-t-il l'image que l'homme a de lui-même, de ce qu'il est, de ce qu'il peut et doit être, comme aussi de ce qui lui est dû, — ou cela dans tout l'ensemble du contexte social, chez les contemporains que l'acte médical ne que la santé ? Est-ce de savoir encaisser — ou de n'être pas mis à l'épreuve ? Une bonne voiture, est-ce celle qui coule moelfeusement sur une autoroute de valeurs — ou celle qui reste d'agir, qu'elle est un mauvais chemin plein de céds de pouls ?
+          <lb facs="#facs_2_r_12" n="N001" />Or, à ce qu’il me semble, les divergences ne proviennent pas tant du fait que les uns et les autres invoqueraient des valeurs différentes, que du « vœux » de les uns et les autres n’osant les affronter. Par exemple : ils veulent obtenir des résultats invocables : diminution de la souffrance, reprise du travail, réadaptation au contexte social ; — ou bien : ils consolèrent ce « bon » (madioune de quelle manière le traitement atteint un allière de sens de la vie), « la raison de vivre », la capacité de vieillir et de regarder la mort en face ; — ou encore du se préoccupent des effets plus vastes, plus étendus, plus définis aussi ; de quelle manière l’acte médical médical s’il ou allère-t-il l’image que l’homme a de lui-même, de ce qu’il est, de ce qu’il peut et doit être, comme aussi de ce qui lui est dû, — ou cela dans tout l’ensemble du contexte social, chez les contemporains que l’acte médical ne que la santé ? Est-ce de savoir encaisser — ou de n’être pas mis à l’épreuve ? Une bonne voiture, est-ce celle qui coule moelfeusement sur une autoroute de valeurs — ou celle qui reste d’agir, qu’elle est un mauvais chemin plein de céds de pouls ?
         </p>
         <p facs="#facs_2_r_13">
-          <lb facs="#facs_2_r_13" n="N001" />La régulation des naissances, la généralisation des nouvelles techniques d'avortement
+          <lb facs="#facs_2_r_13" n="N001" />La régulation des naissances, la généralisation des nouvelles techniques d’avortement
         </p>
         <p facs="#facs_2_r_14">
           <lb facs="#facs_2_r_14" n="N001" />par J. Hersch<hi rendition="#sup">*</hi> (Genève)
         </p>
         <p facs="#facs_2_r_15">
-          <lb facs="#facs_2_r_15" n="N001" />concerne pas directement. Ainsi il est évident que l'usage généralisé des tranquillisants modifie même chez ceux qui n'y ont pas recours lui, sens de ce qui peut, ou non, être supporté. Parallèlement l'enthasis de généralisés modifierait profondément le sens, diffus en quelque sorte dans le corps lui-même, de « ce qu'est un être humain vivant », cette sorte de sympathie respectueuse qui interdit qu'on le touche, qui fait qu'on s'écarte comme instinctivement dans la vue pour éviter de heurter celui qui vient en sens inverse.
+          <lb facs="#facs_2_r_15" n="N001" />concerne pas directement. Ainsi il est évident que l’usage généralisé des tranquillisants modifie même chez ceux qui n’y ont pas recours lui, sens de ce qui peut, ou non, être supporté. Parallèlement l’enthasis de généralisés modifierait profondément le sens, diffus en quelque sorte dans le corps lui-même, de « ce qu’est un être humain vivant », cette sorte de sympathie respectueuse qui interdit qu’on le touche, qui fait qu’on s’écarte comme instinctivement dans la vue pour éviter de heurter celui qui vient en sens inverse.
         </p>
         <p facs="#facs_2_r_16">
-          <lb facs="#facs_2_r_16" n="N001" />Il y a ainsi toute une culture diffuse dans l'affectivité et dans le corps, qui est peut-être l'obstacle le plus résistant aux tentatives de la barbarie. La médecine en progrès invite, semble-t-il, à transformer tout cela, à le remplacer par des motifs « rationnels », c'est-à-dire ne pressent en considération que la lutte contre la souffrance et la conquête du bonheur.
+          <lb facs="#facs_2_r_16" n="N001" />Il y a ainsi toute une culture diffuse dans l’affectivité et dans le corps, qui est peut-être l’obstacle le plus résistant aux tentatives de la barbarie. La médecine en progrès invite, semble-t-il, à transformer tout cela, à le remplacer par des motifs « rationnels », c’est-à-dire ne pressent en considération que la lutte contre la souffrance et la conquête du bonheur.
         </p>
         </div>
 <div n="2">
-          <head facs="#facs_2_r_17">Sait-on bien ce que l'on fait ?</head>
+          <head facs="#facs_2_r_17">Sait-on bien ce que l’on fait ?</head>
           <p facs="#facs_2_r_18">
-            <lb facs="#facs_2_r_18" n="N001" />Certes, nous vous avons une immense reconnaissance. Mensieurs les médecins. Il y a quelques temps, un étudiant a parlé du « vœux » total de notre civilisation. J'ai boudi. Je lui ai demandé s'il regrettait la Cour des Monstres, les villes décimées par la peste, les membres coupés sans anesthésie, les pluies ancestrales au fer rouge. Et pourtant, chaque grand progrès a son ombre portée problématique. Ainsi le prolongement de la vie ; presque tous s'en réjouissent, pour eux-mêmes et pour leurs proches, — mais si le critère est le bonheur, la somme du bonheur est sans doute plus grande si la masse de l'humanité vit plus jeune en se retrouvant plus vite. D'ailleurs, le critère est-il bien le bonheur ? La diminution de la « masse » de la douleur et de l'angoisse par les tranquillisants amène à poser la question : qu'est-ce
+            <lb facs="#facs_2_r_18" n="N001" />Certes, nous vous avons une immense reconnaissance. Mensieurs les médecins. Il y a quelques temps, un étudiant a parlé du « vœux » total de notre civilisation. J’ai boudi. Je lui ai demandé s’il regrettait la Cour des Monstres, les villes décimées par la peste, les membres coupés sans anesthésie, les pluies ancestrales au fer rouge. Et pourtant, chaque grand progrès a son ombre portée problématique. Ainsi le prolongement de la vie ; presque tous s’en réjouissent, pour eux-mêmes et pour leurs proches, — mais si le critère est le bonheur, la somme du bonheur est sans doute plus grande si la masse de l’humanité vit plus jeune en se retrouvant plus vite. D’ailleurs, le critère est-il bien le bonheur ? La diminution de la « masse » de la douleur et de l’angoisse par les tranquillisants amène à poser la question : qu’est-ce
           </p>
           <p facs="#facs_2_r_19">
-            <lb facs="#facs_2_r_19" n="N001" />sont sans doute nécessaires pour éviter aux hommes des épreuves atroces, mais à tout être aveugle pour ne pas voir combien cela transforme le vécu des relations sexuelles et de l'amour.
+            <lb facs="#facs_2_r_19" n="N001" />sont sans doute nécessaires pour éviter aux hommes des épreuves atroces, mais à tout être aveugle pour ne pas voir combien cela transforme le vécu des relations sexuelles et de l’amour.
           </p>
           <p facs="#facs_2_r_20">
-            <lb facs="#facs_2_r_20" n="N001" />Bien plus, cette énorme extension du décret personnel change assez la manière de traiter sa propre vie. Il ne s'agit pas ici notamment de la simple opposition du modernisme et des étruspeules. C'est toute l'affectivité morale diffuse dans la société qui se trouve transformée. Et pourtant, la liberté de décider pour soi a toujours des limites : choisit-on un parent ? son siècle ? Lorsqu'on veut éliminer totalement l'élément non choisi (destin, on sort de la condition humaine et on perd les données de la liberté réelle en s'installant dans la fiction).
+            <lb facs="#facs_2_r_20" n="N001" />Bien plus, cette énorme extension du décret personnel change assez la manière de traiter sa propre vie. Il ne s’agit pas ici notamment de la simple opposition du modernisme et des étruspeules. C’est toute l’affectivité morale diffuse dans la société qui se trouve transformée. Et pourtant, la liberté de décider pour soi a toujours des limites : choisit-on un parent ? son siècle ? Lorsqu’on veut éliminer totalement l’élément non choisi (destin, on sort de la condition humaine et on perd les données de la liberté réelle en s’installant dans la fiction).
           </p>
           <p facs="#facs_2_r_21">
-            <lb facs="#facs_2_r_21" n="N001" />Prenons encore un exemple. Dans la vulgarisation sur les greffes d'organes, on présente presque toujours le sujet comme un obstacle à la vie. Or pour le seul conteneur, pour le public, ce rejet conforme l'unité essentielle d'une personne, il prouve qu'elle n'est pas faite de pièces détachées. Le public a le sentiment que lorsque le rejet sera vaincu, la personne sera « défaillante », « décomposée », — comme lorsqu'on la prive, en psychiatrie, de son affectivité pour vaincre son agressivité. Ici encore, les conséquences d'une telle destruction de l'unité personnelle seraient (seront ? sont ?) incalculables. Car le sens de l'irremplaçable et de l'unique condition en le sens de la vie. Il implique aussi qu'on s'oppose à souffrir.
+            <lb facs="#facs_2_r_21" n="N001" />Prenons encore un exemple. Dans la vulgarisation sur les greffes d’organes, on présente presque toujours le sujet comme un obstacle à la vie. Or pour le seul conteneur, pour le public, ce rejet conforme l’unité essentielle d’une personne, il prouve qu’elle n’est pas faite de pièces détachées. Le public a le sentiment que lorsque le rejet sera vaincu, la personne sera « défaillante », « décomposée », — comme lorsqu’on la prive, en psychiatrie, de son affectivité pour vaincre son agressivité. Ici encore, les conséquences d’une telle destruction de l’unité personnelle seraient (seront ? sont ?) incalculables. Car le sens de l’irremplaçable et de l’unique condition en le sens de la vie. Il implique aussi qu’on s’oppose à souffrir.
           </p>
           <p facs="#facs_2_r_22">
-            <lb facs="#facs_2_r_22" n="N001" />Il y a, les sentiments qui profond et étrange paradoxe dans le monde, et tout particulièrement dans la médecine, d'aujourd'hui. D'une part, une immense bienveillance indulgence, percutoire, en refus de juger, on offret pour supprimer toute peine, une « humanité » com
+            <lb facs="#facs_2_r_22" n="N001" />Il y a, les sentiments qui profond et étrange paradoxe dans le monde, et tout particulièrement dans la médecine, d’aujourd’hui. D’une part, une immense bienveillance indulgence, percutoire, en refus de juger, on offret pour supprimer toute peine, une « humanité » com
           </p>
           <p facs="#facs_2_r_23">
             <lb facs="#facs_2_r_23" n="N001" />Suite page suivante (1184)
@@ -364,47 +367,47 @@
           <head facs="#facs_2_r_24">NOUVEAUTÉ issue de la recherche Wyeth</head>
           <p facs="#facs_2_r_25">Maintenant une anxiolyse plus profonde déjà avec 1 mg</p>
           <p facs="#facs_2_r_26">
-            <lb facs="#facs_2_r_26" n="N001" />Aussi bien expérimentalement que dans les épreuves cliniques il est apparu que l'effet anxiolytique et tranquillisant du TEMESTA dépasse, à posologies égales, ceux des autres dérivés de la benzodiazépine. Tous les effets propres aux benzodiazépines n'apparaissent pas simultanément avec le TEMESTA mais se montrent avec une posologie croissante dans l'ordre : anxiolyse — effet tranquillisant — induction du sommeil — relaxation musculaire — amnésie — ataxie. On peut séparer ces effets en adaptant les posologies. Le seuil de l'ataxie se trouve très haut comparé à l'effet anxiolytique, tranquillisant.
+            <lb facs="#facs_2_r_26" n="N001" />Aussi bien expérimentalement que dans les épreuves cliniques il est apparu que l’effet anxiolytique et tranquillisant du TEMESTA dépasse, à posologies égales, ceux des autres dérivés de la benzodiazépine. Tous les effets propres aux benzodiazépines n’apparaissent pas simultanément avec le TEMESTA mais se montrent avec une posologie croissante dans l’ordre : anxiolyse — effet tranquillisant — induction du sommeil — relaxation musculaire — amnésie — ataxie. On peut séparer ces effets en adaptant les posologies. Le seuil de l’ataxie se trouve très haut comparé à l’effet anxiolytique, tranquillisant.
           </p>
           <p facs="#facs_2_r_27">TEMESTA 1.0</p>
           <p facs="#facs_2_r_28">
-            <lb facs="#facs_2_r_28" n="N001" />TEMESTA 1.0 = 1 mg de processus par comprimé<lb facs="#facs_2_l_28_1" n="N002" />TEMESTA 1.0 = 1 mg de l'oxygène par comprimé<lb facs="#facs_2_l_28_2" n="N003" />TEMESTA 1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_28_3" n="N004" />TEMESTA 1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_28_4" n="N005" />TEMESTA 1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_28_5" n="N006" />TEMESTA 1.0 = 1 mg dans l'oxygène
+            <lb facs="#facs_2_r_28" n="N001" />TEMESTA 1.0 = 1 mg de processus par comprimé<lb facs="#facs_2_l_28_1" n="N002" />TEMESTA 1.0 = 1 mg de l’oxygène par comprimé<lb facs="#facs_2_l_28_2" n="N003" />TEMESTA 1.0 = 1 mg dans l’oxygène<lb facs="#facs_2_l_28_3" n="N004" />TEMESTA 1.0 = 1 mg dans l’oxygène<lb facs="#facs_2_l_28_4" n="N005" />TEMESTA 1.0 = 1 mg dans l’oxygène<lb facs="#facs_2_l_28_5" n="N006" />TEMESTA 1.0 = 1 mg dans l’oxygène
           </p>
           <p facs="#facs_2_r_29">
-            <lb facs="#facs_2_r_29" n="N001" />1.0 = 1 mg de l'oxygène<lb facs="#facs_2_l_29_1" n="N002" />1.0 = 1 mg dans l'oxygène<lb facs="#facs_2_l_29_2" n="N003" />TEMESTA 1.0 = 1 mg dans l'oxygène
+            <lb facs="#facs_2_r_29" n="N001" />1.0 = 1 mg de l’oxygène<lb facs="#facs_2_l_29_1" n="N002" />1.0 = 1 mg dans l’oxygène<lb facs="#facs_2_l_29_2" n="N003" />TEMESTA 1.0 = 1 mg dans l’oxygène
           </p>
           <p facs="#facs_2_r_30">Temesta</p>
           <p facs="#facs_2_r_31">
-            <lb facs="#facs_2_r_31" n="N001" />L'araignage d'oxygène, modèle et face par l'arabe compliquant d'être<lb facs="#facs_2_l_31_1" n="N002" />l'araignage d'oxygène, modèle d'origine amylose comme les<lb facs="#facs_2_l_31_2" n="N003" />d'autres graisses, modèle géolico-indulguant et autres modèles<lb facs="#facs_2_l_31_3" n="N004" />d'origine amylose, est un type de graisse, non d'oxygène, non de l'oxygène<lb facs="#facs_2_l_31_4" n="N005" />et non de l'oxygène. Elle est le plus souvent utilisée dans l'addiction de la<lb facs="#facs_2_l_31_5" n="N006" />somme, de la sorcellerie, de la sorcellerie, de la sorcellerie<lb facs="#facs_2_l_31_6" n="N007" />et de la sorcellerie. Elle est aussi le plus souvent utilisée dans l'addiction de la sorcellerie<lb facs="#facs_2_l_31_7" n="N008" />et de la sorcellerie.
+            <lb facs="#facs_2_r_31" n="N001" />L’araignage d’oxygène, modèle et face par l’arabe compliquant d’être<lb facs="#facs_2_l_31_1" n="N002" />l’araignage d’oxygène, modèle d’origine amylose comme les<lb facs="#facs_2_l_31_2" n="N003" />d’autres graisses, modèle géolico-indulguant et autres modèles<lb facs="#facs_2_l_31_3" n="N004" />d’origine amylose, est un type de graisse, non d’oxygène, non de l’oxygène<lb facs="#facs_2_l_31_4" n="N005" />et non de l’oxygène. Elle est le plus souvent utilisée dans l’addiction de la<lb facs="#facs_2_l_31_5" n="N006" />somme, de la sorcellerie, de la sorcellerie, de la sorcellerie<lb facs="#facs_2_l_31_6" n="N007" />et de la sorcellerie. Elle est aussi le plus souvent utilisée dans l’addiction de la sorcellerie<lb facs="#facs_2_l_31_7" n="N008" />et de la sorcellerie.
           </p>
           <p facs="#facs_2_r_32">Temesta</p>
           <p facs="#facs_2_r_33">
-            <lb facs="#facs_2_r_33" n="N001" />L'arazepam-Wy 4036
+            <lb facs="#facs_2_r_33" n="N001" />L’arazepam-Wy 4036
           </p>
           <note place="foot" n="1" xml:id="fn2-1" facs="#facs_2_r_34">
-            <lb facs="#facs_2_r_34" n="N001" />Tranquillissant de la série des benzodiazépines possédant un profond effet anxiolytique et un large spectre d'indications.
+            <lb facs="#facs_2_r_34" n="N001" />Tranquillissant de la série des benzodiazépines possédant un profond effet anxiolytique et un large spectre d’indications.
           </note>
           <p facs="#facs_2_r_35">
-            <lb facs="#facs_2_r_35" n="N001" />Déjà de l'expérience dans 25 pays chez plus d'un million de patients.
+            <lb facs="#facs_2_r_35" n="N001" />Déjà de l’expérience dans 25 pays chez plus d’un million de patients.
           </p>
           <p facs="#facs_2_r_37">Temesta</p>
           <p facs="#facs_2_r_38">
-            <lb facs="#facs_2_r_38" n="N001" />L'arazepam-Wy 4036
+            <lb facs="#facs_2_r_38" n="N001" />L’arazepam-Wy 4036
           </p>
           <p facs="#facs_2_r_39">
-            <lb facs="#facs_2_r_39" n="N001" />Une de la première égine, en cas de schisme cardiaque et chez les malades dans un état général diminué en n'angénie que de l'angie chronique.
+            <lb facs="#facs_2_r_39" n="N001" />Une de la première égine, en cas de schisme cardiaque et chez les malades dans un état général diminué en n’angénie que de l’angie chronique.
           </p>
           <p facs="#facs_2_r_40">
-            <lb facs="#facs_2_r_40" n="N001" />En cas d'implément cardiaque et d'hypoparose (au patient sans TEMESTA comme avait pour d'autres benzodiazépines ou psychologues dans l'angie du corps), le nombre de patients est de 100. On y a, par d'exposants de l'utilisation du TEMESTA si « on déprémient » le nouveau contexte ne pensaient en indiquant qu'il y a un « mal pour un patient » (100).
+            <lb facs="#facs_2_r_40" n="N001" />En cas d’implément cardiaque et d’hypoparose (au patient sans TEMESTA comme avait pour d’autres benzodiazépines ou psychologues dans l’angie du corps), le nombre de patients est de 100. On y a, par d’exposants de l’utilisation du TEMESTA si « on déprémient » le nouveau contexte ne pensaient en indiquant qu’il y a un « mal pour un patient » (100).
           </p>
           <p facs="#facs_2_r_41">
-            <lb facs="#facs_2_r_41" n="N001" />Lait d'un traitement avec TEMESTA, surtout à des débuts de la vie psychique plus intense, c'est jamais à une dépression des troubles de la vie. Il y a une dépression de la vie, de l'angie chronique, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du corps, de l'angie du
+            <lb facs="#facs_2_r_41" n="N001" />Lait d’un traitement avec TEMESTA, surtout à des débuts de la vie psychique plus intense, c’est jamais à une dépression des troubles de la vie. Il y a une dépression de la vie, de l’angie chronique, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du corps, de l’angie du
           </p>
           <p facs="#facs_2_r_42">
-            <lb facs="#facs_2_r_42" n="N001" />Le succès thérapeutique en cas d'infections respiratoires et gastro-intestinales risque d'être compromis par les nausées et les vomissements.
+            <lb facs="#facs_2_r_42" n="N001" />Le succès thérapeutique en cas d’infections respiratoires et gastro-intestinales risque d’être compromis par les nausées et les vomissements.
           </p>
           <p facs="#facs_2_r_43">
-            <lb facs="#facs_2_r_43" n="N001" />Le succès thérapeutique en cas d'infections respiratoires
+            <lb facs="#facs_2_r_43" n="N001" />Le succès thérapeutique en cas d’infections respiratoires
           </p>
           <p facs="#facs_2_r_44">ITINEROL B6</p>
           <p facs="#facs_2_r_45">
@@ -421,7 +424,7 @@
             <lb facs="#facs_2_r_49" n="N001" /><hi rendition="#sup">*</hi> Admis aux caisses.
           </p>
           <p facs="#facs_2_r_50">
-            <lb facs="#facs_2_r_50" n="N001" />Posologie selon le prospectus d'emballage ou selon le Fichier suisse des spécialités (Gastro-intestinalis 17/03).
+            <lb facs="#facs_2_r_50" n="N001" />Posologie selon le prospectus d’emballage ou selon le Fichier suisse des spécialités (Gastro-intestinalis 17/03).
           </p>
           <p facs="#facs_2_r_51">
             <lb facs="#facs_2_r_51" n="N001" />Aucune contre-indication.
@@ -451,7 +454,7 @@
             <lb facs="#facs_2_r_59" n="N001" />HYSTA LABORATORIEL N.B.A.
           </p>
           <p facs="#facs_2_r_60">
-            <lb facs="#facs_2_r_60" n="N001" />PREFECTURES DE L'ASSOCIATION
+            <lb facs="#facs_2_r_60" n="N001" />PREFECTURES DE L’ASSOCIATION
           </p>
           <p facs="#facs_2_r_61">
             <lb facs="#facs_2_r_61" n="N001" />TEMESTA 2.0
@@ -463,7 +466,7 @@
             <lb facs="#facs_2_r_63" n="N001" />1.12.4. 100%
           </p>
         </div>
-      <pb facs="#facs_3" n="1184" />
+      <pb facs="#facs_3" n="[2053]" />
         <div type="text">
 <ab type="redactional" hand="unknown">
           <lb facs="#facs_3_r_1" n="N001" />PAGE 1184 / N° 1066 / 15 AOUT 1973
@@ -473,32 +476,32 @@
 <div n="2">
           <head>Intoxications à la thyroxine</head>
           <p facs="#facs_3_r_4">
-            <lb facs="#facs_3_r_4" n="N001" />Les malades qui absorbent certains médicaments sans en faire part à leurs médecins peuvent poser de graves problèmes de diagnostic. C'est ce que démontre le Dr Richard F. Harvey dans un article du British Medical Journal (2, 35, 1973), dans lequel il traite des malades qui abusent de thyroxine.
+            <lb facs="#facs_3_r_4" n="N001" />Les malades qui absorbent certains médicaments sans en faire part à leurs médecins peuvent poser de graves problèmes de diagnostic. C’est ce que démontre le Dr Richard F. Harvey dans un article du British Medical Journal (2, 35, 1973), dans lequel il traite des malades qui abusent de thyroxine.
           </p>
           <p facs="#facs_3_r_5">
-            <lb facs="#facs_3_r_5" n="N001" />Il cite quatre cas de patientes de tous âges, présentant des troubles mentaux certains, des symptômes cliniques d'hyperthyroïdie, une tachycardie, et qui sont hyperkinétiques.
+            <lb facs="#facs_3_r_5" n="N001" />Il cite quatre cas de patientes de tous âges, présentant des troubles mentaux certains, des symptômes cliniques d’hyperthyroïdie, une tachycardie, et qui sont hyperkinétiques.
           </p>
           <p facs="#facs_3_r_6">
             <lb facs="#facs_3_r_6" n="N001" />Chez ces malades qui niaient prendre des comprimés contenant de la thyroxine, les tests effectués ont fini par révéler une intoxication exogène par cette substance.
           </p>
           <p facs="#facs_3_r_7">
-            <lb facs="#facs_3_r_7" n="N001" />De l'examen de ces quatre cas, il ressort selon le Dr Harvey, que bien que les tests de fonctionnement de la thyroïde soient essentiels à l'établissement du diagnostic, le médecin ne doit pas perdre de vue la possibilité que son malade absorbe des médicaments à son insu. Les résultats des tests communs aux malades examinés - coexistence d'un taux sérique en T4 élevé et d'une très faible captation d'iode radio-actif, ne peuvent avoir qu'un nombre limité d'explications. La plus plausible est une thyrotoxicose accompagnée d'une ingestion d'iode assez forte pour saturer la glande en iode et empêcher la fixation d'iode radio-actif. L'anamnèse révélant une absorption d'iode ou un examen radiologique récent avec l'emploi d'un matériel radio-opaque à base d'iode, le discordance entre les taux sériques de thyroxine et de PBI, ou la présence d'une quantité très augmentée d'iode dans les urines, devraient faciliter le diagnostic. Il est préférable de mesurer le taux de T4 plutôt que celui de PBI, parce que la coexistence d'un PBI élevé et d'une fixation d'iode radio-actif faible est fréquente chez les sujets euthyroïdiens, qui ont reçu un excès d'iode de source exogène.
+            <lb facs="#facs_3_r_7" n="N001" />De l’examen de ces quatre cas, il ressort selon le Dr Harvey, que bien que les tests de fonctionnement de la thyroïde soient essentiels à l’établissement du diagnostic, le médecin ne doit pas perdre de vue la possibilité que son malade absorbe des médicaments à son insu. Les résultats des tests communs aux malades examinés - coexistence d’un taux sérique en T4 élevé et d’une très faible captation d’iode radio-actif, ne peuvent avoir qu’un nombre limité d’explications. La plus plausible est une thyrotoxicose accompagnée d’une ingestion d’iode assez forte pour saturer la glande en iode et empêcher la fixation d’iode radio-actif. L’anamnèse révélant une absorption d’iode ou un examen radiologique récent avec l’emploi d’un matériel radio-opaque à base d’iode, le discordance entre les taux sériques de thyroxine et de PBI, ou la présence d’une quantité très augmentée d’iode dans les urines, devraient faciliter le diagnostic. Il est préférable de mesurer le taux de T4 plutôt que celui de PBI, parce que la coexistence d’un PBI élevé et d’une fixation d’iode radio-actif faible est fréquente chez les sujets euthyroïdiens, qui ont reçu un excès d’iode de source exogène.
           </p>
           <p facs="#facs_3_r_8">
-            <lb facs="#facs_3_r_8" n="N001" />Une seconde possibilité bien moins vraisemblable est celle d'une thyrotoxicose dans une thyroïde ectopique. Dans ce cas rare, la thyroïde peut être rétrosternale ou linguale, et son absorption d'iode peut ne pas être détectée par un scanning normal.
+            <lb facs="#facs_3_r_8" n="N001" />Une seconde possibilité bien moins vraisemblable est celle d’une thyrotoxicose dans une thyroïde ectopique. Dans ce cas rare, la thyroïde peut être rétrosternale ou linguale, et son absorption d’iode peut ne pas être détectée par un scanning normal.
           </p>
           <p facs="#facs_3_r_9">
-            <lb facs="#facs_3_r_9" n="N001" />Une dernière possibilité enfin : une thyroïdie aiguë (de Quervain), amenant la glande thyroïde endommagée à libérer de grandes quantités de thyroxine dans le sang, peut aboutir aussi à la coexistence des deux symptômes précisés. Symptômes qui s'accompagnent d'un léger goitre dans ce cas et qui donc ne devraient pas poser de problème de diagnostic.
+            <lb facs="#facs_3_r_9" n="N001" />Une dernière possibilité enfin : une thyroïdie aiguë (de Quervain), amenant la glande thyroïde endommagée à libérer de grandes quantités de thyroxine dans le sang, peut aboutir aussi à la coexistence des deux symptômes précisés. Symptômes qui s’accompagnent d’un léger goitre dans ce cas et qui donc ne devraient pas poser de problème de diagnostic.
           </p>
           <p facs="#facs_3_r_10">
-            <lb facs="#facs_3_r_10" n="N001" />Si le test révèle une captation faible en iode radio-actif et que cela n'est dû ni à un excès d'iode, ni à une glande thyroïde ectopique, ni à une thyroïdie de Quervain (ni à des facteurs techniques tels que le vomissement de la dose test ou une faute dans le comptage), c'est sans doute que ce taux sérique élevé est de source exogène.
+            <lb facs="#facs_3_r_10" n="N001" />Si le test révèle une captation faible en iode radio-actif et que cela n’est dû ni à un excès d’iode, ni à une glande thyroïde ectopique, ni à une thyroïdie de Quervain (ni à des facteurs techniques tels que le vomissement de la dose test ou une faute dans le comptage), c’est sans doute que ce taux sérique élevé est de source exogène.
           </p>
           <p facs="#facs_3_r_11">
-            <lb facs="#facs_3_r_11" n="N001" />On peut comparer le comportement des «thyroxinomanes» à celui des personnes abusant de laxatifs ou d'autres produits tels que des diurétiques ou des anticoagulants.
+            <lb facs="#facs_3_r_11" n="N001" />On peut comparer le comportement des «thyroxinomanes» à celui des personnes abusant de laxatifs ou d’autres produits tels que des diurétiques ou des anticoagulants.
           </p>
           <p>En résumé</p>
           <p facs="#facs_3_r_13">
-            <lb facs="#facs_3_r_13" n="N001" />La possibilité d'une prise d'hormones thyroïdiennes dissimulée doit être envisagée chez les malades qui présentent des symptômes cliniques d'hyperthyroïdie (sans goitre), des troubles psychiatriques, et dont les tests thyroïdiens sont discordants.
+            <lb facs="#facs_3_r_13" n="N001" />La possibilité d’une prise d’hormones thyroïdiennes dissimulée doit être envisagée chez les malades qui présentent des symptômes cliniques d’hyperthyroïdie (sans goitre), des troubles psychiatriques, et dont les tests thyroïdiens sont discordants.
           </p>
           <p facs="#facs_3_r_14">
             <lb facs="#facs_3_r_14" n="N001" />M. Tache
@@ -506,12 +509,12 @@
         </div>
         <div type="text">
 <figure>
-          <head>Fièvre et douleurs chez l'enfant?</head>
+          <head>Fièvre et douleurs chez l’enfant?</head>
         </figure>
         </div>
 <div n="2">
           <p facs="#facs_3_r_17">
-            <lb facs="#facs_3_r_17" n="N001" />L'Epizon, sous forme de Rectocaps, est un antipyrétique et un analgésique — sans phénacétine — dont la composition a été conçue spécifiquement pour l'enfant, comme médication par voie rectale exempte de risque.
+            <lb facs="#facs_3_r_17" n="N001" />L’Epizon, sous forme de Rectocaps, est un antipyrétique et un analgésique — sans phénacétine — dont la composition a été conçue spécifiquement pour l’enfant, comme médication par voie rectale exempte de risque.
           </p>
           <p facs="#facs_3_r_18">
             <lb facs="#facs_3_r_18" n="N001" />Comp.: Paracetamolum 0,14 g, Propyphenazonum 0,14 g, Aether guaiacolglycerinatus 0,1 g, Codeinum phosphoricum 0,005 g. Excip. pro caps. rectal. gelatin. obduct.
@@ -532,36 +535,36 @@
             <lb facs="#facs_3_r_23" n="N001" />(Suite de la page 1183)
           </p>
           <p facs="#facs_3_r_24">
-            <lb facs="#facs_3_r_24" n="N001" />patissante. D'autre part, une tendance à dissoudre ou à décomposer ce qui est proprement humain dans l'homme, à traiter l'homme tout juste comme un animal «innocent», se comportant de ne pas souffrir, ou comme un produit passif et irresponsable de facteurs externes, ou encore comme une machine faite de pièces détachées et remplaçables. «L'humanité» du médecin semble nier, par la qualité de sa bienveillance, «l'humanité» du patient.
+            <lb facs="#facs_3_r_24" n="N001" />patissante. D’autre part, une tendance à dissoudre ou à décomposer ce qui est proprement humain dans l’homme, à traiter l’homme tout juste comme un animal «innocent», se comportant de ne pas souffrir, ou comme un produit passif et irresponsable de facteurs externes, ou encore comme une machine faite de pièces détachées et remplaçables. «L’humanité» du médecin semble nier, par la qualité de sa bienveillance, «l’humanité» du patient.
           </p>
           <p facs="#facs_3_r_25">
-            <lb facs="#facs_3_r_25" n="N001" />Il ne reste plus alors qu'à généraliser et commercialiser les formes du secours médical là où c'est faisable, ce qui conduit à médicaliser un surtout à psychiatriser la vie entière. Pour échapper à la solitude, on paye une entrée et on peut s'associer en cercle par terre et se toucher les doigts de pied. Le monde devient une vaste clinique aux techniques innombrables — pour qui ?
+            <lb facs="#facs_3_r_25" n="N001" />Il ne reste plus alors qu’à généraliser et commercialiser les formes du secours médical là où c’est faisable, ce qui conduit à médicaliser un surtout à psychiatriser la vie entière. Pour échapper à la solitude, on paye une entrée et on peut s’associer en cercle par terre et se toucher les doigts de pied. Le monde devient une vaste clinique aux techniques innombrables — pour qui ?
           </p>
           <p facs="#facs_3_r_26">
-            <lb facs="#facs_3_r_26" n="N001" />Mon maître, Karl Jaspers, dont la formation fut celle non d'un philosophe, mais d'un médecin psychiatre, a écrit un jour que le rapport médecin-patient, idéalement, s'établit entre deux hommes raisonnables, où celui qui possède une compétence scientifique aide l'autre. Cela implique que le patient veut comprendre, et agir en conséquence, et que même si le pronostic est mauvais il garde la force, devant l'incertitude qui subsiste toujours, de ne pas renoncer complètement.
+            <lb facs="#facs_3_r_26" n="N001" />Mon maître, Karl Jaspers, dont la formation fut celle non d’un philosophe, mais d’un médecin psychiatre, a écrit un jour que le rapport médecin-patient, idéalement, s’établit entre deux hommes raisonnables, où celui qui possède une compétence scientifique aide l’autre. Cela implique que le patient veut comprendre, et agir en conséquence, et que même si le pronostic est mauvais il garde la force, devant l’incertitude qui subsiste toujours, de ne pas renoncer complètement.
           </p>
           <p facs="#facs_3_r_27">
-            <lb facs="#facs_3_r_27" n="N001" />Mais le malade est rarement cet être raisonnable, et il attend de médecin qu'il accomplisse non seulement ce qu'il peut, mais aussi ce qu'il ne peut pas. Alors le médecin peut renoncer à la raison chez son malade. Il consent, dit Jaspers, à la formidable chute qui s'est produite de nos jours dans l'évaluation de ce qu'on peut attendre d'un être humain. Il veut guérir son patient comme on guérit des animaux.
+            <lb facs="#facs_3_r_27" n="N001" />Mais le malade est rarement cet être raisonnable, et il attend de médecin qu’il accomplisse non seulement ce qu’il peut, mais aussi ce qu’il ne peut pas. Alors le médecin peut renoncer à la raison chez son malade. Il consent, dit Jaspers, à la formidable chute qui s’est produite de nos jours dans l’évaluation de ce qu’on peut attendre d’un être humain. Il veut guérir son patient comme on guérit des animaux.
           </p>
           <p facs="#facs_3_r_28">
-            <lb facs="#facs_3_r_28" n="N001" />Mais il peut aussi s'obstiner à en appeler à la raison de l'autre, appuyé sur sa science et sur le respect humain.
+            <lb facs="#facs_3_r_28" n="N001" />Mais il peut aussi s’obstiner à en appeler à la raison de l’autre, appuyé sur sa science et sur le respect humain.
           </p>
           <p facs="#facs_3_r_29">
-            <lb facs="#facs_3_r_29" n="N001" />Je sais : tout cela est loin des urgences de souffrance, de mort, d'égarement, loin de tout ce qui harcèle et dévore la vie des médecins. Tout cela est loin aussi des problèmes rencontrés : quelle médecine pratique, quel niveau de soins choisir quand on ne peut pas tout faire, — quels patients recevoir et lesquels abandonner, — quel est le moment licite pour passer de l'essai d'un remède sur des animaux à l'essai sur l'homme, — quelle doit être la part de la recherche et quelle doit être la part de la pratique ?...
+            <lb facs="#facs_3_r_29" n="N001" />Je sais : tout cela est loin des urgences de souffrance, de mort, d’égarement, loin de tout ce qui harcèle et dévore la vie des médecins. Tout cela est loin aussi des problèmes rencontrés : quelle médecine pratique, quel niveau de soins choisir quand on ne peut pas tout faire, — quels patients recevoir et lesquels abandonner, — quel est le moment licite pour passer de l’essai d’un remède sur des animaux à l’essai sur l’homme, — quelle doit être la part de la recherche et quelle doit être la part de la pratique ?...
           </p>
           <p facs="#facs_3_r_30">
-            <lb facs="#facs_3_r_30" n="N001" />La recherche aujourd'hui fascine les meilleurs esprits. Il semble parfois que nous aurons bientôt quantité de chercheurs en pédagogie, mais personne pour enseigner dans les classes, quantité de chercheurs en médecine et personne pour nous soigner.
+            <lb facs="#facs_3_r_30" n="N001" />La recherche aujourd’hui fascine les meilleurs esprits. Il semble parfois que nous aurons bientôt quantité de chercheurs en pédagogie, mais personne pour enseigner dans les classes, quantité de chercheurs en médecine et personne pour nous soigner.
           </p>
           <p facs="#facs_3_r_31">
-            <lb facs="#facs_3_r_31" n="N001" />Soignez-nous quand même, ô médecin ! Et exigez de nous, vos malades, que nous soyons des hommes, doués de raison et capables de volonté. Traitez-nous comme tels. Cela nous aidera à l'être.
+            <lb facs="#facs_3_r_31" n="N001" />Soignez-nous quand même, ô médecin ! Et exigez de nous, vos malades, que nous soyons des hommes, doués de raison et capables de volonté. Traitez-nous comme tels. Cela nous aidera à l’être.
           </p>
           <p facs="#facs_3_r_32">
-            <lb facs="#facs_3_r_32" n="N001" />Adresse de l'auteur : Mme Jeanne Hersch, avenue Pierre-Odier 14, 1208 Genève.
+            <lb facs="#facs_3_r_32" n="N001" />Adresse de l’auteur : Mme Jeanne Hersch, avenue Pierre-Odier 14, 1208 Genève.
           </p>
         </div>
         <div n="2" type="bibliography">
           <head>MÉDECINE ET HYGIÈNE</head>
-          <p>Prix d'abonnement</p>
+          <p>Prix d’abonnement</p>
           <p>Suisse</p>
           <table>
             <row>

@@ -31,10 +31,12 @@
   </teiHeader>
   <facsimile>
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="810" lry="669">
+      <graphic url="1080_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="434" uly="74" lrx="506" lry="92" />
       <zone xml:id="facs_1_r_2" ulx="434" uly="154" lrx="654" lry="203" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="739" lry="634">
+      <graphic url="1080_p002.png"/>
       <zone xml:id="facs_2_r_1" ulx="385" uly="123" lrx="656" lry="148" />
       <zone xml:id="facs_2_r_2" ulx="383" uly="145" lrx="660" lry="244" />
       <zone xml:id="facs_2_r_3" ulx="380" uly="312" lrx="660" lry="427" />
@@ -42,6 +44,7 @@
       <zone xml:id="facs_2_r_5" ulx="644" uly="564" lrx="662" lry="576" />
     </surface>
     <surface xml:id="facs_3" ulx="0" uly="0" lrx="770" lry="616">
+      <graphic url="1080_p003.png"/>
       <zone xml:id="facs_3_r_1" ulx="109" uly="41" lrx="406" lry="166" />
       <zone xml:id="facs_3_r_2" ulx="421" uly="58" lrx="696" lry="155" />
       <zone xml:id="facs_3_r_3" ulx="422" uly="152" lrx="695" lry="291" />
@@ -52,6 +55,7 @@
       <zone xml:id="facs_3_r_8" ulx="113" uly="508" lrx="407" lry="537" />
     </surface>
     <surface xml:id="facs_4" ulx="0" uly="0" lrx="723" lry="652">
+      <graphic url="1080_p004.png"/>
       <zone xml:id="facs_4_r_1" ulx="364" uly="45" lrx="566" lry="147" />
       <zone xml:id="facs_4_r_2" ulx="70" uly="50" lrx="353" lry="134" />
       <zone xml:id="facs_4_r_3" ulx="70" uly="149" lrx="353" lry="163" />
@@ -64,6 +68,7 @@
       <zone xml:id="facs_4_r_10" ulx="694" uly="590" lrx="719" lry="606" />
     </surface>
     <surface xml:id="facs_5" ulx="0" uly="0" lrx="740" lry="651">
+      <graphic url="1080_p005.png"/>
       <zone xml:id="facs_5_r_1" ulx="78" uly="65" lrx="367" lry="111" />
       <zone xml:id="facs_5_r_2" ulx="73" uly="164" lrx="365" lry="390" />
       <zone xml:id="facs_5_r_3" ulx="375" uly="189" lrx="661" lry="494" />
@@ -73,6 +78,7 @@
       <zone xml:id="facs_5_r_7" ulx="73" uly="518" lrx="359" lry="532" />
     </surface>
     <surface xml:id="facs_6" ulx="0" uly="0" lrx="739" lry="630">
+      <graphic url="1080_p006.png"/>
       <zone xml:id="facs_6_r_1" ulx="84" uly="38" lrx="375" lry="151" />
       <zone xml:id="facs_6_r_2" ulx="386" uly="86" lrx="660" lry="219" />
       <zone xml:id="facs_6_r_3" ulx="81" uly="150" lrx="374" lry="319" />
@@ -84,14 +90,14 @@
   <text>
     <body>
 <div n="1">
-        <pb facs="#facs_1" n="1" />
+        <pb facs="#facs_1" n="[1]" />
         <head facs="#facs_1_r_1">
           Jeanne Hersch
         </head>
         <p facs="#facs_1_r_2">
           <lb facs="#facs_1_r_2" n="N001" />Kann der Marxismus wissenschaftlich <lb facs="#facs_1_r_2" n="N002" />beurteilt werden?
         </p>
-      <pb facs="#facs_2" n="226" />
+      <pb facs="#facs_2" n="[226]" />
         <p facs="#facs_2_r_1">
           <lb facs="#facs_2_r_1" n="N001" />Dieses Problem einigermaßen deutlich zu umreißen er<lb break="no" facs="#facs_2_r_1" n="N002" />weist sich schon vom Beginn an als schwierig.
         </p>
@@ -107,7 +113,7 @@
         <p facs="#facs_2_r_5">
           <lb facs="#facs_2_r_5" n="N001" />227
         </p>
-      <pb facs="#facs_3" n="228" />
+      <pb facs="#facs_3" n="[228]" />
         <p facs="#facs_3_r_1">
           <lb facs="#facs_3_r_1" n="N001" />Wesen der Sache gehört? Und weiter: Wenn vom Ursprung her die Theorie keine Beschreibung eines sich unabhängig <lb facs="#facs_3_r_1" n="N002" />von ihr vollziehenden Prozesses sein darf, sondern ihre Wahrheit erst darin findet, daß sie selbst zu einem <lb facs="#facs_3_r_1" n="N003" />wesentlichen Faktor dieses Prozesses wird, also zur Tat, die die Wirklichkeit verändert – kurz: wenn die Theorie <lb facs="#facs_3_r_1" n="N004" />zur «Praxis» wird, was wird dann aus der in den Naturwissenschaften als entscheidend geltenden empirischen <lb facs="#facs_3_r_1" n="N005" />Nachprüfung?
         </p>
@@ -135,7 +141,7 @@
         <p facs="#facs_3_r_9">
           <lb facs="#facs_3_r_9" n="N001" />Auf der soziologischen Ebene beansprucht Marx keineswegs, als erster den Klassenkampf beschrieben und analysiert zu <lb facs="#facs_3_r_9" n="N002" />haben. Das haben – so meint er – bürgerliche Wirtschaftsgelehrte vor ihm getan. Was er für seinen neuen Beitrag <lb facs="#facs_3_r_9" n="N003" />hält, spricht er in seinem Brief an Joseph Weydemeyer vom 5. März 1852 ganz klar aus; er hat einen dreifachen <lb facs="#facs_3_r_9" n="N004" />Beweis erbracht, und zwar: Die Existenz von verschiedenen Klassen ist nur an bestimmte Phasen der geschichtlichen <lb facs="#facs_3_r_9" n="N005" />Entwicklung der Produktion gebunden; dem Klassenkampf folgt gemäß dem Gesetz der Geschichte eine Diktatur <lb facs="#facs_3_r_9" n="N006" />des Proletariats; diese Diktatur selbst ist nur ein Übergang, der nach Aufhebung aller Klassen zur klassenlosen <lb facs="#facs_3_r_9" n="N007" />Gesellschaft führt.
         </p>
-      <pb facs="#facs_4" n="230" />
+      <pb facs="#facs_4" n="[230]" />
         <p facs="#facs_4_r_1">
           <lb facs="#facs_4_r_1" n="N001" />Der erste Beweis wurzelt im historischen Materialismus. Indem man von der Philosophie zur Wirtschaftslehre überwechselt, «beweist» man, daß der Kapitalismus seine eigenen Totengräber hervorbringt und daß er – mit der Unabänderlichkeit eines Naturvorganges – im Sozialismus münden muß.
         </p>
@@ -166,7 +172,7 @@
         <p facs="#facs_4_r_10">
           <lb facs="#facs_4_r_10" n="N001" />Man könnte als Beispiel anführen: Ein moderner Nationalökonom wird die Brauchbarkeit jener Formeln von Marx prüfen, die den Unterschied zwischen der Rate des Mehrwertes und der des Profits betreffen. So viel ich höre, ist die Gültigkeit der Formeln und der Theorie allseits umstritten. Schumpeter sagt, daß die Theorie «Arbeit–Wert»
         </p>
-      <pb facs="#facs_5" n="5" />
+      <pb facs="#facs_5" n="[5]" />
         <p facs="#facs_5_r_1">
           <lb facs="#facs_5_r_1" n="N001" />tot und begraben ist. François Perroux stellt fest, daß diese Theorie von einer großen Anzahl Marxisten und von all <lb facs="#facs_5_r_1" n="N002" />denen, die auf dem Gebiete der Wirtschaftslehre einige Geltung haben, verworfen ist (Der Wert, S. 53).
         </p>
@@ -188,7 +194,7 @@
         <p facs="#facs_5_r_7">
           <lb facs="#facs_5_r_7" n="N001" />Unveränderlich ist nach Marx einzig und allein die Abstraktion der Bewegung – <foreign xml:lang="lat">mors immortalis</foreign>. In dem Nach<lb break="no" facs="#facs_5_r_7" n="N002" />
         </p>
-      <pb facs="#facs_6" n="233" />
+      <pb facs="#facs_6" n="[233]" />
         <p facs="#facs_6_r_1">
           <lb facs="#facs_6_l_1_1" n="N001" />wort des «Kapitals» betont Marx noch einmal: Alles was <lb facs="#facs_6_l_1_2" n="N002" />existiert, wird von der Dialektik in den Strom der <lb facs="#facs_6_l_1_3" n="N003" />Bewegung mitgenommen; die Dialektik schließt im <lb facs="#facs_6_l_1_4" n="N004" />positiven Verständnis der wirklichen Dinge deren <lb facs="#facs_6_l_1_5" n="N005" />unumgängliche Negation und deren notwendige <lb facs="#facs_6_l_1_6" n="N006" />Aufhebung ein. Also, auf die Geschichte angewandt, <lb facs="#facs_6_l_1_7" n="N007" />wieder: die bürgerliche Gesellschaft, der Klassen<lb break="no" facs="#facs_6_l_1_8" n="N008" />kampf und die Diktatur des Proletariats, die <lb facs="#facs_6_l_1_9" n="N009" />klassenlose Gesellschaft.
         </p>
