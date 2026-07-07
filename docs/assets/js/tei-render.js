@@ -1,8 +1,8 @@
 /**
  * tei-render.js — TEI-XML → DOM
  *
- * Rendert ein TEI-XML-Dokument als lesbaren Text in ein Container-Element.
- * Verwendet die .tei__* CSS-Klassen aus viewer.css.
+ * Renders a TEI-XML document as readable text into a container element.
+ * Uses the .tei__* CSS classes from viewer.css.
  *
  * Namespace: ZBZ.TeiRender
  */
@@ -16,7 +16,7 @@
     };
 
     /**
-     * Rekursiv ein TEI-XML-Element rendern.
+     * Recursively render a TEI-XML element.
      * @param {Node} node
      * @param {HTMLElement} target
      */
@@ -112,16 +112,16 @@
 
             case 'figure':
             case 'graphic':
-                // Bilder werden im Viewer nicht eingebunden.
+                // Images are not embedded in the viewer.
                 break;
 
             case 'teiHeader':
             case 'facsimile':
-                // Metadaten/Faksimile-Block uebersprungen.
+                // Metadata/facsimile block skipped.
                 break;
 
             default:
-                // Fallback: Kinder direkt rendern.
+                // Fallback: render children directly.
                 renderChildren(node, target);
         }
     }
@@ -133,7 +133,7 @@
     }
 
     /**
-     * Hauptfunktion: TEI-XML als String oder Doc in einen Container rendern.
+     * Main function: render TEI-XML as a string or Document into a container.
      * @param {string|Document} xml
      * @param {HTMLElement} container
      */
@@ -141,7 +141,7 @@
         container.innerHTML = '';
         const doc = (typeof xml === 'string') ? ZBZ.parseXml(xml) : xml;
         if (!doc) {
-            container.appendChild(ZBZ.el('div', { cls: 'empty', text: 'TEI nicht parsbar.' }));
+            container.appendChild(ZBZ.el('div', { cls: 'empty', text: 'TEI could not be parsed.' }));
             return;
         }
         const body = doc.querySelector('text > body') || doc.querySelector('body') || doc.documentElement;
@@ -151,7 +151,7 @@
     }
 
     /**
-     * XML-Quelltext mit Syntax-Highlighting in den Container schreiben.
+     * Write XML source with syntax highlighting into the container.
      */
     function renderXml(xml, container) {
         container.innerHTML = '';

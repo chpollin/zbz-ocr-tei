@@ -1,46 +1,46 @@
 /**
- * catalog.js — Korpus-Uebersicht (docs/index.html)
+ * catalog.js — Corpus overview (docs/index.html)
  *
- * Liest data/catalog.json und rendert:
- * - Such-/Filter-Bar (Sprache, Typ, Form, Stream, Status)
- * - Tabelle mit Title/Autor/Datum/Lang/Typ/Form/Seiten/Workflow
- *   Spaltenheader sind klickbar fuer Sortierung.
+ * Reads data/catalog.json and renders:
+ * - Search/filter bar (language, type, form, stream, status)
+ * - Table with title/author/date/lang/type/form/pages/workflow.
+ *   Column headers are clickable for sorting.
  *
- * Workflow-Statuswerte pro Strom: unverifiziert | in_arbeit | verifiziert (E77)
+ * Workflow status values per stream: unverifiziert | in_arbeit | verifiziert (E77)
  *
- * Namespace: ZBZ.Catalog (initialisiert von DOMContentLoaded)
+ * Namespace: ZBZ.Catalog (initialized by DOMContentLoaded)
  */
 (function () {
     'use strict';
     const $ = ZBZ.$;
     const $$ = ZBZ.$$;
 
-    // ---- Konfiguration ----
+    // ---- Configuration ----
     const STREAMS         = ['ocr', 'layout', 'tei'];
     const STREAM_LABEL    = { ocr: 'OCR', layout: 'Layout', tei: 'TEI-XML' };
     const STATUS_LABEL    = {
-        unverifiziert: 'unverifiziert',
-        in_arbeit:     'in Arbeit',
-        verifiziert:   'verifiziert'
+        unverifiziert: 'unverified',
+        in_arbeit:     'in progress',
+        verifiziert:   'verified'
     };
-    // Map alter Status-Werte (offen, bearbeitet, fertig) auf neue.
+    // Map legacy status values (offen, bearbeitet, fertig) to current ones.
     const STATUS_LEGACY = { offen: 'unverifiziert', bearbeitet: 'in_arbeit', fertig: 'verifiziert' };
     const FORM_LABEL = {
-        journalArticle: 'Zeitschriftenartikel',
-        book:           'Monografie',
-        bookSection:    'Buchkapitel',
-        encyclopedia:   'Lexikonartikel',
-        brochure:       'Broschuere',
+        journalArticle: 'Journal article',
+        book:           'Monograph',
+        bookSection:    'Book chapter',
+        encyclopedia:   'Encyclopedia article',
+        brochure:       'Brochure',
         interview:      'Interview',
-        anthology:      'Anthologie',
-        other:          'Sonstige'
+        anthology:      'Anthology',
+        other:          'Other'
     };
-    // Layout-Typ (Masterfile): same labels as the type filter options
+    // Layout type (Masterfile): same labels as the type filter options
     const TYPE_LABEL = {
-        A: 'Einspaltig',
-        B: 'Zweispaltig',
-        C: 'Monografie',
-        D: 'Spezial'
+        A: 'Single-column',
+        B: 'Two-column',
+        C: 'Monograph',
+        D: 'Special'
     };
 
     // ---- State ----
@@ -71,7 +71,7 @@
     async function init() {
         const data = await ZBZ.fetchJSON('data/catalog.json');
         if (!data) {
-            refs.rows.innerHTML = '<div class="doc-table__empty">catalog.json nicht gefunden. <code>python -m scripts.edition.generate_edition_data</code></div>';
+            refs.rows.innerHTML = '<div class="doc-table__empty">catalog.json not found. <code>python -m scripts.edition.generate_edition_data</code></div>';
             return;
         }
         state.catalog = data;
@@ -83,8 +83,8 @@
         applyFilters();
         renderSortIndicators();
 
-        const gen = data.generated ? new Date(data.generated).toLocaleDateString('de-CH') : '';
-        refs.generated.textContent = gen ? `Generiert ${gen}` : '';
+        const gen = data.generated ? new Date(data.generated).toLocaleDateString('en-GB') : '';
+        refs.generated.textContent = gen ? `Generated ${gen}` : '';
         ZBZ.log('Catalog', 'init done, ' + state.docs.length + ' docs');
 
         refreshWorkflowFromManifests();
@@ -125,7 +125,7 @@
         ).join(', ');
     }
 
-    // ============================================================ Filter-Befuellung ============================================================
+    // ============================================================ Filter population ============================================================
 
     function populateFilters() {
         const langs = new Set();
@@ -148,15 +148,15 @@
 
     // ============================================================ Filter + Sort ============================================================
 
-    // Der Strom-Filter grenzt nur ein, AUF WELCHEN Strom sich ein gewaehlter Status
-    // bezieht. Ohne Status ist er wirkungslos -> bis dahin deaktivieren (und einen
-    // verwaisten ?stream= aus der URL raeumen), damit er nicht aktiv wirkt ohne Effekt.
+    // The stream filter only narrows WHICH stream a selected status applies to.
+    // Without a status it has no effect, so disable it (and clear an orphaned ?stream=
+    // from the URL) to prevent it from appearing active with no visible result.
     function syncStreamControl() {
         const hasStatus = !!state.filters.status;
         refs.filterStream.disabled = !hasStatus;
         refs.filterStream.title = hasStatus
-            ? 'Strom, auf den sich der Status bezieht'
-            : 'Erst einen Status waehlen, dann den Strom eingrenzen';
+            ? 'Stream the status applies to'
+            : 'Choose a status first, then narrow by stream';
         if (!hasStatus && state.filters.stream) {
             state.filters.stream = '';
             refs.filterStream.value = '';
@@ -203,7 +203,7 @@
                 case 'author': av = (a.author || '').toLowerCase(); bv = (b.author || '').toLowerCase(); break;
                 case 'date': {
                     av = a.date || ''; bv = b.date || '';
-                    // Leere Datumswerte (88/285) immer ans Ende, unabhaengig von der Richtung.
+                    // Empty date values always sort last, regardless of direction.
                     if (!av && !bv) return 0;
                     if (!av) return 1;
                     if (!bv) return -1;
@@ -226,8 +226,7 @@
         if (curField === field) {
             state.sort = field + '-' + (curDir === 'asc' ? 'desc' : 'asc');
         } else {
-            // Default-Richtung: id/pages/date numerisch absteigend macht selten Sinn,
-            // Text-Felder beginnen mit asc; pages beginnt mit desc (viele zuerst).
+            // Default direction: pages starts descending (most pages first); text fields start ascending.
             const defaultDir = (field === 'pages') ? 'desc' : 'asc';
             state.sort = field + '-' + defaultDir;
         }
@@ -253,7 +252,7 @@
         updateCount();
         refs.rows.innerHTML = '';
         if (state.filtered.length === 0) {
-            refs.rows.innerHTML = '<div class="doc-table__empty">Keine Dokumente fuer diese Filter.</div>';
+            refs.rows.innerHTML = '<div class="doc-table__empty">No documents match these filters.</div>';
             return;
         }
         const frag = document.createDocumentFragment();
@@ -266,8 +265,8 @@
         const n = state.filtered.length;
         const total = state.docs.length;
         refs.count.textContent = (n === total)
-            ? total + ' Dokumente'
-            : n + ' von ' + total + ' Dokumenten';
+            ? total + ' documents'
+            : n + ' of ' + total + ' documents';
     }
 
     function rowFor(d) {
@@ -299,7 +298,7 @@
             cls: 'col-title',
             html:
                 `<span class="col-title__id">${ZBZ.esc(d.id)}</span>` +
-                `<span class="col-title__name">${ZBZ.esc(d.title || 'Dokument ' + d.id)}</span>`
+                `<span class="col-title__name">${ZBZ.esc(d.title || 'Document ' + d.id)}</span>`
         });
 
         const author = ZBZ.el('div', { cls: 'col-author', text: d.author || '—' });
@@ -308,12 +307,12 @@
         const type   = ZBZ.el('div', {
             cls: 'col-type',
             text: TYPE_LABEL[d.type] || d.type || '—',
-            attrs: d.type ? { title: 'Layout-Typ ' + d.type } : {}
+            attrs: d.type ? { title: 'Layout type ' + d.type } : {}
         });
         const form   = ZBZ.el('div', { cls: 'col-form',   text: formLabel });
         const pages  = ZBZ.el('div', { cls: 'col-pages',  text: String(d.page_count || '—') });
 
-        // Workflow: drei Ampel-Zeilen (Dot + Label). Status im Tooltip.
+        // Workflow: three traffic-light rows (dot + label). Status shown in tooltip.
         const workflow = ZBZ.el('div', {
             cls: 'col-workflow',
             attrs: { 'aria-label': workflowAriaLabel(d) }
@@ -323,7 +322,7 @@
             const sm = (d.streams || {})[s] || {};
             let tip;
             if (st === 'unverifiziert') {
-                tip = STREAM_LABEL[s] + ': Pipeline-Output existiert, noch nicht menschlich verifiziert';
+                tip = STREAM_LABEL[s] + ': pipeline output exists, not yet verified by a human';
             } else {
                 tip = STREAM_LABEL[s] + ': ' + STATUS_LABEL[st]
                     + (sm.last_by ? ' · ' + sm.last_by : '')
@@ -343,7 +342,7 @@
         return a;
     }
 
-    // ============================================================ URL-State ============================================================
+    // ============================================================ URL state ============================================================
 
     function applyUrlState() {
         const q  = ZBZ.getParam('q')       || '';
@@ -414,7 +413,7 @@
             applyFilters();
         });
 
-        // Klickbare Spalten-Sortierung
+        // Clickable column sorting
         $$('.col-sort').forEach(btn => {
             btn.addEventListener('click', () => toggleSort(btn.getAttribute('data-sort')));
         });

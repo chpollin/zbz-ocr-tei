@@ -1,16 +1,16 @@
 /**
- * layout-editor.js — Layout-Region-Editor
+ * layout-editor.js - Layout region editor
  *
- * Operationen:
- *  - BBox-Drag (Region verschieben)
- *  - BBox-Resize (Eckpunkte ziehen)
- *  - Region-Typ aendern (Dropdown im Toolbar)
- *  - Region hinzufuegen (Drag auf leere Faksimile-Flaeche)
- *  - Region loeschen (selektiert + Delete-Button/Taste)
- *  - Reading-Order aendern (Drag&Drop in Region-Liste rechts)
+ * Operations:
+ *  - BBox drag (move region)
+ *  - BBox resize (pull corner handles)
+ *  - Region type change (dropdown in toolbar)
+ *  - Add region (drag on empty facsimile area)
+ *  - Delete region (selected + Delete button/key)
+ *  - Change reading order (drag-and-drop in region list on the right)
  *
- * Koordinaten sind Prozent (0-100) relativ zum Bild.
- * Onchange-Callback bekommt das neue `regions[]`-Array.
+ * Coordinates are percentages (0-100) relative to the image.
+ * The onChange callback receives the new `regions[]` array.
  *
  * Namespace: ZBZ.LayoutEditor
  */
@@ -23,7 +23,7 @@
     // ---- State ----
     const state = {
         overlay: null,        // .facsimile__overlay
-        regions: [],          // Live-Liste (Referenz auf layout.regions)
+        regions: [],          // live list (reference to layout.regions)
         selectedIdx: null,
         onChange: null,
         mode: 'idle',         // idle | dragging | resizing | creating
@@ -33,7 +33,7 @@
     // ============================================================ Public ============================================================
 
     /**
-     * Editor an einem Overlay-Element anhaengen.
+     * Attach the editor to an overlay element.
      * @param {HTMLElement} overlay - .facsimile__overlay
      * @param {Object} layout - { regions: [...] }
      * @param {Function} onChange - (regions) => void
@@ -64,12 +64,12 @@
         state.mode = 'idle';
         state.dragData = null;
 
-        // Region-Liste im Image-Body wieder entfernen
+        // Remove the region list from the image body
         const list = document.querySelector('.region-list-container');
         if (list) list.remove();
     }
 
-    // ============================================================ Selektion ============================================================
+    // ============================================================ Selection ============================================================
 
     function selectRegion(idx) {
         state.selectedIdx = idx;
@@ -106,14 +106,14 @@
         const rcy = document.getElementById('rc-y');
         const rcw = document.getElementById('rc-w');
         const rch = document.getElementById('rc-h');
-        // Nur ueberschreiben wenn nicht gerade im Input-Fokus (vermeidet Cursor-Reset waehrend des Tippens)
+        // Only overwrite when the input is not focused (avoids cursor reset while typing)
         if (rcx && document.activeElement !== rcx) rcx.value = fmt(r.bbox.x_pct);
         if (rcy && document.activeElement !== rcy) rcy.value = fmt(r.bbox.y_pct);
         if (rcw && document.activeElement !== rcw) rcw.value = fmt(r.bbox.w_pct);
         if (rch && document.activeElement !== rch) rch.value = fmt(r.bbox.h_pct);
     }
 
-    // ============================================================ Overlay-Events ============================================================
+    // ============================================================ Overlay events ============================================================
 
     // pointer events cover mouse + touch/pen; CSS sets touch-action:none on .editing
     let _onPointerDown, _onPointerMove, _onPointerUp, _onKeyDown;
@@ -128,10 +128,10 @@
             if (regionEl) {
                 const idx = parseInt(regionEl.getAttribute('data-region-idx'), 10);
                 selectRegion(idx);
-                if (e.shiftKey || e.altKey) return; // Modifier = nur selektieren
+                if (e.shiftKey || e.altKey) return; // modifier = select only
                 startDrag(e, idx);
             } else {
-                // Klick ins Leere → Selektion aufheben oder neue Region anlegen
+                // Click on empty area: clear selection or start new region
                 if (state.mode === 'create-pending') {
                     startCreate(e);
                 } else {
@@ -175,7 +175,7 @@
             } else if (e.key === 'Escape') {
                 if (state.mode === 'create-pending' || state.mode === 'creating') {
                     e.preventDefault();
-                    // Falls schon angefangen zu zeichnen: die neu erzeugte Region wieder entfernen
+                    // If drawing was already started: remove the newly created region
                     if (state.mode === 'creating' && state.dragData) {
                         state.regions.splice(state.dragData.idx, 1);
                         state.selectedIdx = null;
@@ -186,7 +186,7 @@
                     redrawOverlay();
                     renderRegionList();
                     updateToolbarForSelection();
-                    ZBZ.toast('Region-Erstellung abgebrochen', 'info');
+                    ZBZ.toast('Region creation cancelled', 'info');
                 } else if (state.selectedIdx != null) {
                     selectRegion(null);
                 }
@@ -336,7 +336,7 @@
         const btnAdd = document.getElementById('btn-region-add');
         const btnDel = document.getElementById('btn-region-delete');
 
-        // Type-Wechsel
+        // Type change
         sel.onchange = () => {
             if (state.selectedIdx == null) return;
             state.regions[state.selectedIdx].zbz_tag = sel.value;
@@ -346,17 +346,17 @@
             state.onChange(state.regions);
         };
 
-        // Region hinzufuegen (Mode "create-pending")
+        // Add region (mode "create-pending")
         btnAdd.onclick = () => {
             state.mode = 'create-pending';
             if (state.overlay) state.overlay.classList.add('creating');
-            ZBZ.toast('Auf Faksimile ziehen, um Region zu erzeugen (ESC bricht ab)', 'info');
+            ZBZ.toast('Drag on facsimile to create a region (ESC cancels)', 'info');
         };
 
-        // Loeschen
+        // Delete
         btnDel.onclick = () => deleteSelected();
 
-        // Coord-Inputs (Live-Edit der selektierten Region)
+        // Coord inputs (live edit for the selected region)
         ['x', 'y', 'w', 'h'].forEach(key => {
             const inp = document.getElementById('rc-' + key);
             if (!inp) return;
@@ -369,7 +369,7 @@
                 const clamped = clamp(val, 0, 100);
                 const k = key + '_pct';
                 r.bbox[k] = clamped;
-                // Konsistenz erzwingen (x + w <= 100, y + h <= 100)
+                // Enforce consistency (x + w <= 100, y + h <= 100)
                 if (key === 'x' || key === 'w') {
                     r.bbox.w_pct = clamp(r.bbox.w_pct, 0.5, 100 - r.bbox.x_pct);
                 }
@@ -400,9 +400,9 @@
                     height: r.bbox.h_pct + '%'
                 }
             });
-            // Label oben links
+            // Label top-left
             el.appendChild(ZBZ.el('span', { cls: 'region__label', text: '#' + (idx + 1) + ' ' + ZBZ.regionTypeLabel(r.zbz_tag) }));
-            // Resize-Handles
+            // Resize handles
             ['nw', 'ne', 'sw', 'se'].forEach(c => {
                 el.appendChild(ZBZ.el('div', {
                     cls: 'region__handle region__handle--' + c,
@@ -424,14 +424,14 @@
         if (idx === state.selectedIdx) updateCoordInputs(idx);
     }
 
-    // ============================================================ Region-Liste (Reading-Order) ============================================================
+    // ============================================================ Region list (reading order) ============================================================
 
     function renderRegionList() {
-        // Liste in den Image-Body unter dem Faksimile haengen
+        // Append the list to the image body below the facsimile
         let container = document.querySelector('.region-list-container');
         if (!container) {
             container = ZBZ.el('div', { cls: 'region-list-container' });
-            container.appendChild(ZBZ.el('h3', { cls: 'region-list-container__title', text: 'Reading-Order (Drag zum Verschieben, Klick selektiert)' }));
+            container.appendChild(ZBZ.el('h3', { cls: 'region-list-container__title', text: 'Reading order (drag to reorder, click to select)' }));
             const ul = ZBZ.el('ul', { cls: 'region-list' });
             container.appendChild(ul);
             const body = state.overlay && state.overlay.closest('.panel__body');
@@ -446,7 +446,7 @@
                 attrs: { draggable: 'true', 'data-idx': idx }
             });
             li.appendChild(ZBZ.el('span', { cls: 'region-list__index', text: '#' + (idx + 1) }));
-            li.appendChild(ZBZ.el('span', { cls: 'region-list__label', text: (r.text || '').slice(0, 60) || '(kein Text)' }));
+            li.appendChild(ZBZ.el('span', { cls: 'region-list__label', text: (r.text || '').slice(0, 60) || '(no text)' }));
             li.appendChild(ZBZ.el('span', { cls: 'region-list__type', text: ZBZ.regionTypeLabel(r.zbz_tag) }));
             if (r.bbox) {
                 li.appendChild(ZBZ.el('span', {

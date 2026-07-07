@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hersch Pipeline — Korpus</title>
+  <title>Hersch Pipeline &middot; Corpus</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -21,15 +21,15 @@
         <span>Pipeline</span>
       </a>
       <div class="site-header__center">
-        <p class="site-header__sub">Nachlass Jeanne Hersch, ZBZ &middot; OCR / Layout / TEI</p>
+        <p class="site-header__sub">Jeanne Hersch papers, ZBZ &middot; OCR / Layout / TEI</p>
         <span class="site-header__exp-badge"
-              title="Experimentelle Inspektions-Umgebung der laufenden OCR-/TEI-Pipeline. Gebaut nach der Methode des Promptotyping (dhcraft.org/promptotyping). Inhalte sind generierte Pipeline-Ergebnisse, nicht editorisch geprueft.">Experimentell</span>
+              title="Experimental inspection environment of the running OCR/TEI pipeline. Built with the Promptotyping method (dhcraft.org/promptotyping). Contents are generated pipeline results, not editorially reviewed.">Experimental</span>
       </div>
-      <nav class="site-header__nav" aria-label="Hauptnavigation">
-        <a href="index.html" aria-current="page">Korpus</a>
-        <a href="methode.html">Methode</a>
+      <nav class="site-header__nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Corpus</a>
+        <a href="methode.html">Method</a>
         <a href="about.html">About</a>
-        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-header__icon" aria-label="GitHub-Repository" title="GitHub-Repository"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-header__icon" aria-label="GitHub repository" title="GitHub repository"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
       </nav>
     </div>
   </header>
@@ -40,63 +40,63 @@
     <section class="filter-bar" aria-label="Filter">
       <div class="filter-bar__inner">
         <div class="filter-bar__search">
-          <input class="input" id="search" type="search" placeholder="Suchen nach Titel, Autor, ID, Beschreibung…" aria-label="Suchen">
+          <input class="input" id="search" type="search" placeholder="Search by title, author, ID, description&hellip;" aria-label="Search">
         </div>
         <div class="filter-bar__group">
-          <select class="input" id="filter-lang" aria-label="Sprache">
-            <option value="">Alle Sprachen</option>
+          <select class="input" id="filter-lang" aria-label="Language">
+            <option value="">All languages</option>
           </select>
-          <select class="input" id="filter-type" aria-label="Layout-Typ">
-            <option value="">Alle Typen</option>
-            <option value="A">A &middot; Einspaltig</option>
-            <option value="B">B &middot; Zweispaltig</option>
-            <option value="C">C &middot; Monografie</option>
-            <option value="D">D &middot; Spezial</option>
+          <select class="input" id="filter-type" aria-label="Layout type">
+            <option value="">All types</option>
+            <option value="A">A &middot; Single-column</option>
+            <option value="B">B &middot; Two-column</option>
+            <option value="C">C &middot; Monograph</option>
+            <option value="D">D &middot; Special</option>
           </select>
-          <select class="input" id="filter-form" aria-label="Publikationsform">
-            <option value="">Alle Formen</option>
+          <select class="input" id="filter-form" aria-label="Publication form">
+            <option value="">All forms</option>
           </select>
-          <select class="input" id="filter-stream" aria-label="Strom">
-            <option value="">Strom (egal)</option>
+          <select class="input" id="filter-stream" aria-label="Stream">
+            <option value="">Stream (any)</option>
             <option value="ocr">OCR</option>
             <option value="layout">Layout</option>
             <option value="tei">TEI</option>
           </select>
           <select class="input" id="filter-status" aria-label="Status">
-            <option value="">Status (egal)</option>
-            <option value="unverifiziert">unverifiziert</option>
-            <option value="in_arbeit">in Arbeit</option>
-            <option value="verifiziert">verifiziert</option>
+            <option value="">Status (any)</option>
+            <option value="unverifiziert">unverified</option>
+            <option value="in_arbeit">in progress</option>
+            <option value="verifiziert">verified</option>
           </select>
-          <button class="btn btn--ghost" id="filter-reset" title="Filter zuruecksetzen">Zuruecksetzen</button>
+          <button class="btn btn--ghost" id="filter-reset" title="Reset filters">Reset</button>
         </div>
         <span class="filter-bar__count" id="result-count" aria-live="polite"></span>
       </div>
     </section>
 
-    <!-- ============================================================ Status-Legende ============================================================ -->
-    <div class="status-legend" aria-label="Legende Workflow-Status">
-      <span class="status-legend__title">Workflow-Ampel</span>
-      <span class="status-legend__item"><span class="col-workflow__dot col-workflow__dot--unverifiziert"></span>unverifiziert &middot; Pipeline-Output, noch nicht menschlich geprueft</span>
-      <span class="status-legend__item"><span class="col-workflow__dot col-workflow__dot--in_arbeit"></span>in Arbeit</span>
-      <span class="status-legend__item"><span class="col-workflow__dot col-workflow__dot--verifiziert"></span>verifiziert &middot; menschlich freigegeben</span>
+    <!-- ============================================================ Status legend ============================================================ -->
+    <div class="status-legend" aria-label="Workflow status legend">
+      <span class="status-legend__title">Workflow status</span>
+      <span class="status-legend__item"><span class="col-workflow__dot col-workflow__dot--unverifiziert"></span>unverified &middot; pipeline output, not yet reviewed by a human</span>
+      <span class="status-legend__item"><span class="col-workflow__dot col-workflow__dot--in_arbeit"></span>in progress</span>
+      <span class="status-legend__item"><span class="col-workflow__dot col-workflow__dot--verifiziert"></span>verified &middot; approved by a human</span>
     </div>
 
-    <!-- ============================================================ Tabelle ============================================================ -->
-    <section class="doc-table" aria-label="Dokumentenliste">
+    <!-- ============================================================ Table ============================================================ -->
+    <section class="doc-table" aria-label="Document list">
       <header class="doc-table__head" id="doc-head">
         <span   class="col-thumb"></span>
-        <button class="col-title col-sort"    data-sort="title"  type="button" aria-label="Nach Titel sortieren">Titel</button>
-        <button class="col-author col-sort"   data-sort="author" type="button" aria-label="Nach Autor sortieren">Autor</button>
-        <button class="col-date col-sort"     data-sort="date"   type="button" aria-label="Nach Datum sortieren">Datum</button>
-        <button class="col-lang col-sort"     data-sort="lang"   type="button" aria-label="Nach Sprache sortieren">Sprache</button>
-        <button class="col-type col-sort"     data-sort="type"   type="button" aria-label="Nach Typ sortieren">Typ</button>
-        <button class="col-form col-sort"     data-sort="form"   type="button" aria-label="Nach Form sortieren">Form</button>
-        <button class="col-pages col-sort"    data-sort="pages"  type="button" aria-label="Nach Seitenzahl sortieren">Seiten</button>
+        <button class="col-title col-sort"    data-sort="title"  type="button" aria-label="Sort by title">Title</button>
+        <button class="col-author col-sort"   data-sort="author" type="button" aria-label="Sort by author">Author</button>
+        <button class="col-date col-sort"     data-sort="date"   type="button" aria-label="Sort by date">Date</button>
+        <button class="col-lang col-sort"     data-sort="lang"   type="button" aria-label="Sort by language">Language</button>
+        <button class="col-type col-sort"     data-sort="type"   type="button" aria-label="Sort by type">Type</button>
+        <button class="col-form col-sort"     data-sort="form"   type="button" aria-label="Sort by form">Form</button>
+        <button class="col-pages col-sort"    data-sort="pages"  type="button" aria-label="Sort by page count">Pages</button>
         <span   class="col-workflow">Workflow</span>
       </header>
       <div class="doc-table__body" id="doc-rows">
-        <div class="doc-table__empty">Lade Korpus…</div>
+        <div class="doc-table__empty">Loading corpus&hellip;</div>
       </div>
     </section>
 
@@ -106,11 +106,11 @@
     <div class="site-footer__inner">
       <div class="site-footer__col">
         <span>Edition: Zentralbibliothek Zuerich</span>
-        <span>Technische Umsetzung: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a></span>
+        <span>Technical implementation: <a href="https://dhcraft.org" target="_blank" rel="noopener">Digital Humanities Craft OG</a></span>
       </div>
       <div class="site-footer__col site-footer__col--right">
-        <a href="impressum.html">Impressum</a>
-        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-footer__icon" aria-label="GitHub-Repository">
+        <a href="impressum.html">Legal notice</a>
+        <a href="https://github.com/chpollin/zbz-ocr-tei" target="_blank" rel="noopener" class="site-footer__icon" aria-label="GitHub repository">
           <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         </a>
         <span id="generated-info" class="site-footer__generated">—</span>
@@ -118,7 +118,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/core.js?v=4"></script>
-  <script src="assets/js/catalog.js?v=5"></script>
+  <script src="assets/js/core.js?v=5"></script>
+  <script src="assets/js/catalog.js?v=7"></script>
 </body>
 </html>

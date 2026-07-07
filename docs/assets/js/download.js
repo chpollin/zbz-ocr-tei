@@ -1,8 +1,7 @@
 /**
- * download.js — Datei-Download-Trigger
+ * download.js - File download trigger
  *
- * Bietet Inhalte als Download an. Persistenz erfolgt manuell durch den Nutzer
- * (kein Server-Backend).
+ * Offers content as a download. Persistence is manual (no server backend).
  *
  * Namespace: ZBZ.Download
  */
@@ -10,7 +9,7 @@
     'use strict';
 
     /**
-     * Loest einen Browser-Download aus.
+     * Trigger a browser download.
      * @param {string} filename
      * @param {string} content
      * @param {string} mime
@@ -27,7 +26,7 @@
     }
 
     /**
-     * Speichert Layout-Regions als JSON.
+     * Save layout regions as JSON.
      */
     function layout(doc, page, regions, sourceMeta) {
         const out = Object.assign({}, sourceMeta || {}, {
@@ -40,9 +39,9 @@
     }
 
     /**
-     * Speichert OCR/Transkription als Markdown. Kanonischer Name ohne Suffix, damit
-     * die Datei bei manueller Ablage in output/ocr_curated/ direkt vom Loader
-     * (scripts/core/loaders.py, hoechste Prioritaet) gelesen wird.
+     * Save OCR/transcription as Markdown. Canonical name without suffix so the file
+     * is read directly by the loader (scripts/core/loaders.py, highest priority)
+     * when placed manually in output/ocr_curated/.
      */
     function text(doc, page, content) {
         const fname = `${doc}_p${page}.md`;
@@ -50,7 +49,7 @@
     }
 
     /**
-     * Speichert TEI als XML.
+     * Save TEI as XML.
      */
     function tei(doc, content, suffix) {
         const fname = `${doc}${suffix ? '_' + suffix : '_curated'}.xml`;
@@ -58,10 +57,9 @@
     }
 
     /**
-     * Speichert das Pro-Objekt-Manifest (Workflow-Status + History + Leerseiten) als JSON.
-     * Datei muss vom Anwender manuell nach output/tei_final/{doc}_manifest.json kopiert
-     * werden; danach `python -m scripts.generate_edition_data --mirror-only`, damit der
-     * neue Stand wieder im Mirror landet.
+     * Save the per-object manifest (workflow status + history + blank pages) as JSON.
+     * The file must be copied manually to output/tei_final/{doc}_manifest.json;
+     * then run `python -m scripts.generate_edition_data --mirror-only` to update the mirror.
      */
     function manifest(doc, manifestObj) {
         const fname = `${doc}_manifest.json`;
