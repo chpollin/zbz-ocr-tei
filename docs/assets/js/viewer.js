@@ -427,6 +427,8 @@
                         // writeTei replaces the whole SoT file -- only accept a complete TEI document
                         if (content.indexOf('<teiHeader') === -1 || content.indexOf('</TEI>') === -1) {
                             ZBZ.toast('TEI not saved: content is not a complete TEI document (teiHeader/TEI root missing). Edit is retained unsaved.', 'err');
+                        } else if (!ZBZ.parseXml(content)) {
+                            ZBZ.toast('TEI not saved: XML is not well-formed. Fix the markup in XML mode; the edit is retained unsaved.', 'err');
                         } else {
                             if (!(await persistSilent(
                                 () => ZBZ.FsAccess.writeTei(state.doc.id, content),
@@ -912,12 +914,15 @@
 
     function ensureTextEditableState() {
         if (state.textEdit && ZBZ.TranscriptionEditor) {
-            ZBZ.TranscriptionEditor.attach(refs.textBody, state.textSource, (newContent) => {
+            // Bind the stream at attach time: a debounced commit may fire after
+            // state.textSource already changed (tab switch mid-debounce).
+            const src = state.textSource;
+            ZBZ.TranscriptionEditor.attach(refs.textBody, src, (newContent) => {
                 state._currentEditedText = newContent;
                 state.textDirty = true;
                 renderSaveState();
                 // E66: first real text change -> set corresponding stream to in_arbeit
-                autoStartArbeit(state.textSource === 'ocr' ? 'ocr' : 'tei');
+                autoStartArbeit(src === 'ocr' ? 'ocr' : 'tei');
             });
         }
     }
@@ -992,6 +997,23 @@
     }
 
     function setTextSource(src) {
+        // Same redirect as setTextEdit: TEI editing only in XML mode. Without this,
+        // switching to the TEI tab while edit mode is active would attach the editor
+        // to the rendered view, whose edits cannot be saved.
+        if (state.textEdit && src === 'tei') {
+            ZBZ.toast('TEI editing uses XML mode (rendered view is read-only)', 'info');
+            src = 'xml';
+        }
+        if (src === state.textSource) return;
+        // Text edits are per source; switching drops them (mirrors confirmLeavePage)
+        if (state.textDirty) {
+            if (!window.confirm('Unsaved text changes will be lost when switching the text source. Switch anyway?')) return;
+            state.textDirty = false;
+            state._currentEditedText = null;
+            renderSaveState();
+        }
+        // Detach before re-render: cancels pending debounced commits of the old source
+        if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
         state.textSource = src;
         refs.textSourceBtns.forEach(b => b.setAttribute('aria-pressed', b.getAttribute('data-text-source') === src ? 'true' : 'false'));
         renderTextPanel();

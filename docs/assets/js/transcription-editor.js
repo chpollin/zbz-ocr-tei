@@ -71,6 +71,9 @@
     }
 
     function detach(container) {
+        // Drop any pending debounced commit: it would otherwise fire after a
+        // source/tab switch and attribute the edit to the wrong stream.
+        if (_onInput && _onInput.cancel) _onInput.cancel();
         const c = container || state.container;
         if (!c) return;
         const targets = $$('[contenteditable="true"]', c);

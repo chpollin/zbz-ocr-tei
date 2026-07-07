@@ -146,12 +146,32 @@
         };
         _onPointerUp = (e) => {
             if (state.mode === 'dragging' || state.mode === 'resizing' || state.mode === 'creating') {
+                const creating = state.mode === 'creating';
+                const changed = creating || bboxChanged();
+                const dragIdx = state.dragData ? state.dragData.idx : null;
                 state.mode = 'idle';
                 state.dragData = null;
                 if (state.overlay) state.overlay.classList.remove('creating');
-                state.onChange(state.regions);
-                renderRegionList();
-                redrawOverlay();
+                // Degenerate create (click without drag): discard the zero-size region
+                if (creating && dragIdx != null) {
+                    const r = state.regions[dragIdx];
+                    if (r && r.bbox && (r.bbox.w_pct < 0.5 || r.bbox.h_pct < 0.5)) {
+                        state.regions.splice(dragIdx, 1);
+                        state.selectedIdx = null;
+                        redrawOverlay();
+                        renderRegionList();
+                        updateToolbarForSelection();
+                        ZBZ.toast('Region too small, discarded. Drag to draw a region.', 'warn');
+                        return;
+                    }
+                }
+                // A click-select starts a drag with zero movement; only a real
+                // bbox change may dirty the state and flip the workflow status.
+                if (changed) {
+                    state.onChange(state.regions);
+                    renderRegionList();
+                    redrawOverlay();
+                }
             }
         };
         _onKeyDown = (e) => {
@@ -197,6 +217,17 @@
         document.addEventListener('pointerup', _onPointerUp);
         document.addEventListener('keydown', _onKeyDown);
         redrawOverlay();
+    }
+
+    // Compare the dragged/resized bbox against its state at pointerdown
+    function bboxChanged() {
+        const d = state.dragData;
+        if (!d || !d.origBbox) return false;
+        const r = state.regions[d.idx];
+        if (!r || !r.bbox) return false;
+        const o = d.origBbox;
+        return r.bbox.x_pct !== o.x_pct || r.bbox.y_pct !== o.y_pct ||
+               r.bbox.w_pct !== o.w_pct || r.bbox.h_pct !== o.h_pct;
     }
 
     function unbindOverlayEvents(overlay) {

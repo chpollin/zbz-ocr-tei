@@ -57,6 +57,50 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-07-07 Session 82: Viewer edit modes hardened after live inspection (layout selection, text-stream race, TEI redirect, well-formedness gate)
+
+**Occasion** A live inspection of the viewer edit modes (Edit Layout, Edit Text, the
+OCR/TEI/XML tabs) against document 100 surfaced four defects in the curation surface.
+
+**Goal** Confirm each suspected defect in the code, fix it locally, and verify the fix
+in the running viewer.
+
+**Course** Browser test plus code reading confirmed four defects. First, a plain
+click-select of a layout region fired the change callback on pointer-up regardless of
+movement, marking the layout stream dirty and flipping its workflow status to
+in_arbeit; a bbox comparison against the pointer-down state now gates the callback
+(layout-editor.js), and a degenerate zero-size region from a click during create mode
+is discarded with a notice. Second, the debounced text-edit commit (250 ms) survived
+editor detach and read the stream from the current tab state, so an OCR edit followed
+by a quick tab switch was attributed to the TEI stream and could never be saved; the
+debounce is now cancellable and cancelled on detach, the stream is bound at attach
+time, and a source switch detaches explicitly (core.js, transcription-editor.js,
+viewer.js). Third, switching to the TEI tab while edit mode was active attached the
+editor to the rendered view, whose edits do not round-trip; setTextSource now applies
+the same redirect to XML mode that setTextEdit already had. Fourth, saving edited XML
+overwrote the source-of-truth final TEI with only a substring check; a DOMParser
+well-formedness gate (ZBZ.parseXml) now precedes the write. Additionally, switching
+the text source with unsaved text edits now asks for confirmation and then drops them,
+mirroring the existing page-navigation guard.
+
+**Decisions** All four fixes stay inside the existing modules and callbacks; no
+editor rewrite, no new dependency. The well-formedness gate reuses ZBZ.parseXml
+instead of adding a schema check in the browser; RelaxNG validation remains the job of
+the pipeline validator.
+
+**Status** Verified in the running viewer: region click-select leaves the workflow
+status untouched while a real drag still dirties the stream; an OCR edit flips the OCR
+pill; the TEI tab redirects to XML mode in edit state with an explanatory toast. The
+parser gate was unit-checked in the page console (well-formed accepted; broken tag,
+stray ampersand, truncated document rejected). All four files pass node --check. Save
+to repo (File System Access path) was not exercised end to end because it requires the
+interactive folder picker.
+
+**Next steps**
+
+1. Exercise the full save round trip (connect repo folder, save layout/text/manifest, reload) manually in Chromium.
+2. Consider surfacing the malformed-XML error position (line/column from the parsererror text) in the toast.
+
 ### 2026-07-07 Session 81: Merge of the English knowledge base with the local counter-check commits, E91 ported
 
 **Occasion** Local main carried two unpushed commits of 2026-07-03 (independent CER

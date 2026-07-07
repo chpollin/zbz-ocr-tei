@@ -274,11 +274,14 @@
     // ---- Debounce ----
     ZBZ.debounce = (fn, ms) => {
         let t;
-        return function () {
+        const debounced = function () {
             const args = arguments, ctx = this;
             clearTimeout(t);
             t = setTimeout(() => fn.apply(ctx, args), ms);
         };
+        // cancel: drop a pending call (editors must not commit after detach)
+        debounced.cancel = () => clearTimeout(t);
+        return debounced;
     };
 
     // ---- Event bus (simple) ----
