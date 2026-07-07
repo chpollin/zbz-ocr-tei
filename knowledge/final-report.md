@@ -117,7 +117,7 @@ delivered from the project-built. Under `data/source/` lie the starting data
 delivered by the ZB: the PDF scans, the reference TEIs created manually via
 Transkribus together with their PAGE-XML exports, the master file, and the
 editorial guidelines. Beside them stand project-built reference data: the
-project-specific TEI schema `schema/zbz_hersch.rng` and the folder
+project-specific TEI schema `data/schema/zbz_hersch.rng` and the folder
 `curated_tei/`, reserved for hand-verified edition TEIs and empty until a
 document has been verified by a domain expert. The LLM-produced document
 classification lies in `doc_metadata.json` so it is not recomputed on every
@@ -499,7 +499,7 @@ normalization as the grapheme-cluster definition (OCR-D),[^16]
 case-sensitive default (jiwer and general tool practice; OCR-D provides
 case-ignoring only in a dedicated letter-accuracy metric), full-text
 comparison without alignment trimming (dinglehopper),[^17] and the paired
-bootstrap with BCa confidence interval for deltas (Singh 2025).[^18] The
+bootstrap with BCa confidence interval for deltas (Du 2025).[^18] The
 comparability of CER values between different tools remains limited even
 under a nominally identical metric, among other reasons because already the
 transformation of structured ground truth into comparison text becomes an
@@ -683,8 +683,9 @@ since the comparison excludes footnotes (rule E5), this text counted as
 deletions and inflated their CER. Verified against the ZBZ reference (the
 text stands in its body there), the blocks were demoted to `<p>`,
 evidence-based rather than guessed; the discriminator is that a footnote
-counts as verified running text when its first 120 characters occur in the
-body of the reference. Beyond the five demoted documents, 6 candidates were
+counts as verified running text when a contiguous run of at least 150
+characters of its text occurs in the body of the reference (`MIN_MATCH` in
+`tei_footnote_demote.py`). Beyond the five demoted documents, 6 candidates were
 held back as reference-verified genuine footnotes, 11 remain for manual
 checking, and 1 is a page number.
 
@@ -708,9 +709,9 @@ reference. The full three-number decomposition per document is in
 
 | Doc | Type | Lang | Fidelity % | Main cause |
 | :---- | :---- | :---- | ----: | :---- |
-| 30 | A | FR | 11.59 | reading order (double page; W19/M3) |
+| 30 | A | FR | 11.59 | double page: genuine text loss, counter-check-verified; reordering alone does not recover it (E91) |
 | 1910 | B | DE | 7.70 | residue after footnote demotion + scope |
-| 760 | D | FR | 5.87 | reading order (double page; W19/M3) |
+| 760 | D | FR | 5.87 | double page: lost picture captions and unsegmented pagination, counter-check-verified (E91); reading order itself holds at the facsimile |
 | 1440 | B | DE | 5.87 | scope + faulty reference |
 | 300 | D | FR | 5.05 | scope + extra pages |
 | 1410 | B | FR | 4.24 | scope + extra pages |
@@ -846,8 +847,9 @@ From scan to page image:
 
 Text recognition:
 
-- `scripts/ocr/ocr_pipeline.py` steers text recognition and calls Mistral,
-  Docling, or Gemini depending on document type.
+- `scripts/ocr/ocr_pipeline.py` steers text recognition and calls Mistral
+  (base engine) or Gemini (opt-in) per document; Docling contributes layout
+  only, no text (E75).
 - `scripts/ocr/gemini_ocr_correct.py` supplies replacement and correction
   OCR with Gemini in two variants, text-only or additionally with the scan
   image.
@@ -886,18 +888,26 @@ TEI generation:
 - `scripts/tei/tei_unified.py` orchestrates the TEI stages, scaffold,
   refinement, assembly, and validation.
 - `scripts/tei/tei_step1.py` builds the rule-based deterministic TEI
-  scaffold from text and layout.
+  scaffold from text and layout and sorts the page regions by the canonical
+  column- and band-aware reading-order permutation (E90).
 - `scripts/tei/tei_step2.py` refines the scaffold multimodally with Gemini
   and then cleans up frequent model errors.
 - `scripts/tei/tei_step3.py` joins the page fragments into the whole
   document, header, facsimile, and body, and applies document-wide
-  corrections, among them the canonical reading-order permutation (E90).
+  corrections and conformity passes (div merge, figure IDs, title-main,
+  foreign-language normalization).
 - `scripts/tei/tei_generator.py`, `scripts/tei/tei_mapping_prompt.py`, and
   `scripts/tei/tei_xml_utils.py` supply shared building blocks, the
   Markdown-to-TEI conversion, the mapping table for the Gemini prompt, and
   the XML helpers.
 - `scripts/tei/tei_footnote_demote.py` demotes reference-verified footnote
-  blocks to paragraphs (section 6.3).
+  blocks to paragraphs (section 6.3);
+  `scripts/tei/tei_footnote_marker_strip.py` strips leading footnote
+  markers from notes, keeping the number in `@n` only.
+- `scripts/tei/tei_surface_graphic.py` writes the page image reference as
+  `<graphic>` into every facsimile surface (E89);
+  `scripts/tei/pb_split.py` holds the shared page-segmentation rule (page =
+  sequential `<pb>` position).
 
 Validation and evaluation:
 
@@ -931,6 +941,103 @@ Frontend data:
 
 - `scripts/edition/generate_edition_data.py` produces the catalog, the
   search index, the thumbnails, and the per-page mirror under `docs/data/`.
+
+## Appendix B: Ground-Truth Map and Known Reference Deviations
+
+All 25 reference TEIs (`data/source/reference_tei/`) were read in full against
+the editorial guidelines on 2026-07-07 (three parallel readers). This appendix
+records which guideline phenomenon is attested where and which known deviations
+every reference-based check (CER benchmark, `structure_audit`, `--compare-ref`)
+must treat as expected rather than as pipeline error.
+
+Concordance finding. The body coding of the references follows the guidelines
+in the load-bearing conventions (genre div types, page breaks with bracketed
+supplied numbers, hyphenation including the page-break rule, the footnote ID
+scheme `fn{page}-{no}`, the inline GND entity model, the rendition
+vocabulary). Two restrictions hold corpus-wide: no reference fulfils the
+header requirement (all carry the raw Transkribus export stub instead of the
+ALMA citation with MMSID and publication form, so header comparisons against
+the references are meaningless), and all carry the undocumented root attribute
+`type="naegeli"`. The subfolder `Pilot/` is a superseded precursor; the main
+set emerged from it by migrating work references from `corresp="GND:…"` to
+`ref="GND:…"`, with document 560 as the overlooked migration rest.
+
+Phenomenon map (best exemplars):
+
+| Phenomenon | Best evidence |
+|---|---|
+| Lexicon entry (`div type="entry"`, `head type="lemma"`, `bibliography` with `listBibl`) | 3040 |
+| Review (`div type="review"`, head as `bibl` with GND) | 2310, 570; 560 with footnote in the review head |
+| Interview (`sp`/`speaker`, speaker with GND persName) | 3020, 1440 |
+| Double page (two `pb` sharing one `facs`, distinct `n`) | 760, 30, 2635 |
+| Figures (`figure` with `xml:id`, `graphic`, `anchor` start/end pairs) | 760, 2635, 830 |
+| Footnotes (`note place="foot"`, `@n`, `xml:id` per scheme) | 290, 130, 560 |
+| Title structure (`title type="main"` plus several `sub`, persName in title) | 1060, 290, 100, 40 |
+| Hyphenation across the page break | 1910 |
+| Supplied page number `n="[…]"` | 290, 30, 3020, 90, 40, 760 |
+| Dot-notation page numbers (`7.15`, `3.32`) | 760, 830 |
+| `front` (editorial preface) | 890, 1410, 2635 |
+| `back` (`translation` with MLA + Swisscovery `ref`, `reprint`, `otherEdition`) | 40, 1520, 300, 830 |
+| `foreign xml:lang` (correct 3-letter codes) | 3020, 300, 90, 2635 |
+| Renditions | `#i` throughout; `#u` 1060; `#b` 890; `#g` 90; `#sup` 3040 |
+| `choice/sic/corr` | 1180, 2310, 3020, 570 |
+| Entity density (persName/orgName/bibl with GND) | 580, 1330, 2635, 1910 |
+| Lists, dialogue as `list` | 890, 2530, 1330, 300 |
+| Table (`table/row/cell`), deep div nesting | only 1520 |
+| `epigraph`, `div type="text"` (both outside the guideline catalog) | 1440 |
+
+Never attested in the ground truth and therefore not validatable against it:
+marginalia (`note place="right/left"`), multi-page footnotes with
+`@next`/`@prev`, `unclear`, `gap`, the div types `conversation` and
+`dedication`, the renditions `#sub` and `#k`. For these only the guideline
+itself applies.
+
+Known deviations of the ground truth (the exception catalog):
+
+1. Header stub instead of ALMA header, all 25 (see above).
+2. Root `type="naegeli"`, all 25; in 2310 with a whitespace defect.
+3. Foreign-language practice split between document groups: correct
+   `foreign xml:lang` in one group (300, 2635, 3020, 90), italics-only
+   marking in another (1060, 1180, 1520); 1910 carries the literal
+   placeholder `xml:lang="[fre]"`.
+4. `break="yes"` as an undocumented, partly wrong value (1060, 1330, 2530,
+   30, 3040, 890).
+5. Only `rendition="#i"` is broadly realized; `#u`/`#b`/`#g`/`#sup` occur in
+   one document each, `#sub`/`#k` never.
+6. `rend="italic"`/`"bold"`/`"superscript"` instead of `rendition="#…"`:
+   2530, 1180 (mixed within one paragraph), 1410, 3040.
+7. GND references without the `GND:` prefix: 290, 1330, 1520, 3040 (there
+   also one persName without any `ref`); `corresp` instead of `ref` on work
+   `bibl`: 100, 30, 560.
+8. Adjectivized person names tagged against the guideline's own rule: 1910.
+9. One footnote without `xml:id` beside correctly tagged siblings: 290.
+10. Entities inside picture captions despite the explicit ban: 760
+    (systematic).
+11. Data hygiene singletons: doubled uncorrected `choice` text (1910),
+    trailing slash in `graphic` URLs (760, 2635, 830), a line-region ID as
+    page `facs` (830), whitespace in a page number (560), `@n` on `p`
+    instead of `lb` (90), `pb` without `facs` (1910, 3020), `pb` inside a
+    paragraph (1060, 1440), lowercase line numbering with leading space
+    (130), author credit in the text body (1410).
+12. 3020 types a panel discussion as `interview` where the guideline
+    reserves `conversation`; spoken exchange is coded as `sp` in 3020 but as
+    a dash `list` in 300.
+
+Reference 1520 is not well-formed: three structurally identical crossed
+`item`/`p` nestings (around lines 6936, 6979, 6995; the parser reveals them
+only one at a time). The repair swaps the closing-tag order to
+`</p></item>` at each spot, leaving the text content unchanged; the corrected
+copy `output/1520_reference_fixed.xml` parses cleanly. The original stays
+untouched as ZBZ source datum; the correction goes to ZBZ as a proposal, and
+after adoption the document returns to the 25-document benchmark.
+
+Consequences. Reference-based checks measure against a ground truth that is
+guideline-true in the body, empty in the header, and locally flawed; the
+exception catalog above belongs in every scoring logic. The phenomena the
+ground truth never shows can only be checked against guideline plus
+facsimile. The GND prefix and `corresp`/`ref` drift matters for future
+entity work (teiCrafter lane): the reference practice serves as a model only
+after normalization.
 
 [^1]: Zentralbibliothek Zurich. "Jeanne Hersch: Digitale Neuauflage der Schriften". [https://www.zb.uzh.ch/de/jeanne-hersch-digitale-neuauflage-der-schriften](https://www.zb.uzh.ch/de/jeanne-hersch-digitale-neuauflage-der-schriften).
 
@@ -966,4 +1073,4 @@ Frontend data:
 
 [^17]: dinglehopper. Same URL as note 15.
 
-[^18]: Singh et al. 2025, "When +1% Is Not Enough". arXiv:2511.19794. Basis of the paired-bootstrap protocol; further methodological sources: Levchenko 2025, arXiv:2510.06743 (HCPR); Crosilla, Klic, Colavizza 2025, arXiv:2503.15195 (LLM-HTR benchmarks); Kanerva and Ledins 2025, arXiv:2502.01205 (language dependence of LLM post-correction).
+[^18]: Du, W. 2025, "When +1% Is Not Enough: A Paired Bootstrap Protocol for Evaluating Small Improvements". arXiv:2511.19794. Basis of the paired-bootstrap protocol; further methodological sources: Levchenko 2025, arXiv:2510.06743 (HCPR); Crosilla, Klic, Colavizza 2025, arXiv:2503.15195 (LLM-HTR benchmarks); Kanerva and Ledins 2025, arXiv:2502.01205 (language dependence of LLM post-correction).

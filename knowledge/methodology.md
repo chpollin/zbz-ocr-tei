@@ -10,7 +10,7 @@ method:
 status: complete
 created: 2026-03-15
 updated: 2026-07-07
-dependencies: [pipeline, viewer]
+dependencies: [pipeline, workflow]
 source: "papers/Paper.md (workshop contribution DHd/DH, DHCraft & ZBZ)"
 ---
 
@@ -141,7 +141,7 @@ python -m scripts.eval.quality_proxy --all --html                   # quality pr
 python -m scripts.eval.completeness_check --html                    # completeness check (pages)
 python -m scripts.eval.benchmark_cer --all --html                   # CER benchmark (25 GT docs)
 python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # scientific CER statistics
-python -m pytest tests/test_cer_statistics.py -q               # 55 tests for the statistics library
+python -m pytest tests/test_cer_statistics.py -q               # statistics library (BCa/paired/HCPR)
 ```
 
 The output is `docs/data/cer_statistics.json` (deterministic; the HTML dashboard that

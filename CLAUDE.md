@@ -123,6 +123,11 @@ python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000  # scie
 python -m scripts.eval.corpus_audit                             # corpus audit: corpus funnel + drift check
 python -m scripts.eval.structure_audit                          # structure audit: pipeline TEI vs 25 ground truth (diagnosis, no gate; E84)
 python -m scripts.eval.reading_order_audit                      # W19 triage robust/fragile (E90, basis of the M3 view; --worklist: fragile pages per document)
+python -m scripts.eval.char_lint_audit                          # character normalization audit: apostrophes, guillemets, space classes (E92)
+python -m scripts.eval.pb_number_audit                          # pb@n plausibility + per-document semantics classification (E92)
+python -m scripts.eval.hi_preservation_audit                    # OCR emphasis signal survival into tei_final (E92/E93)
+python -m scripts.eval.relation_integrity_audit                 # next/prev pairs, anchors, title-main, sp/speaker (E92)
+python -m scripts.eval.body_note_audit                          # body-as-note candidates (footnote overdetection, E92)
 python -m scripts.tei.tei_reassemble_preview --all              # M3 dry run: reassembly preview -> output/tei_preview + report, tei_final untouched
 python -m pytest tests/test_cer_statistics.py -q                # statistics library (BCa/paired/HCPR)
 python -m pytest tests/test_corpus_audit.py -q                  # corpus invariants + delivered distribution + completeness gate
@@ -133,6 +138,8 @@ python -m pytest tests/test_tei_validator.py -q                 # validator: ref
 python -m pytest tests/test_pb_split.py -q                      # <pb> segmentation: pb_split.py byte-identical (E69)
 python -m pytest tests/test_tei_conformance.py -q               # conformance fixes: div-n/type, figure-xmlid, head-lemma, title-main, foreign-lang (E84)
 python -m pytest tests/test_reading_order.py tests/test_reading_order_audit.py tests/test_reassemble_preview.py -q  # reading order: permutation + W19 triage + M3 preview (E90)
+python -m pytest tests/test_char_lint_audit.py tests/test_pb_number_audit.py tests/test_hi_preservation_audit.py tests/test_relation_integrity_audit.py tests/test_body_note_audit.py -q  # guideline-conformity audits (E92)
+python -m pytest tests/test_char_normalize.py tests/test_pb_folio.py tests/test_body_note_demote.py tests/test_status_marker.py tests/test_completeness_check.py tests/test_step1_filter.py -q  # stock-correction tools + step-1 fixes (E92/E94)
 ```
 
 The output `docs/data/cer_statistics.json` is versioned as evidence of the published CER values and deterministically regenerable with seed 42. The interactive CER dashboard was abolished with E56. The methodology is covered in [knowledge/specification.md](knowledge/specification.md), quality measurement section.
@@ -172,6 +179,24 @@ python -m scripts.tei.tei_validator --doc {DOC_ID}                       # singl
 python -m scripts.tei.tei_validator --all --report                       # JSON report
 python -m scripts.tei.tei_validator --all --html-report                  # HTML report
 ```
+
+## Stock corrections (operator-gated, E94)
+
+Reversible marker runs on `output/tei_final/`, each with backup, idempotent, and
+audit-measured before/after. Always run `--dry-run` first; after a real run, re-run
+the matching audit plus `tei_validator --all` and the pytest gates.
+
+```bash
+python -m scripts.tei.tei_char_normalize --dry-run               # apostrophe normalization preview
+python -m scripts.tei.tei_char_normalize                         # run (backup: output/_backup_pre_char_normalize/)
+python -m scripts.tei.tei_pb_folio --dry-run --strip-folio-echo  # printed-folio pb@n + footer-echo preview
+python -m scripts.tei.tei_pb_folio --strip-folio-echo            # run (backup: output/_backup_pre_pb_folio/)
+python -m scripts.tei.tei_body_note_demote --dry-run --promote-footnotes  # verdict-driven demotion preview
+python -m scripts.tei.tei_body_note_demote --promote-footnotes   # run (backup: output/_backup_pre_body_note_demote/)
+```
+
+The demotion run consumes the facsimile-verified verdicts in
+`output/audits/body_note_verdicts.json` (E94) and never touches notes judged genuine.
 
 ## Quality screening (deprecated, E66)
 

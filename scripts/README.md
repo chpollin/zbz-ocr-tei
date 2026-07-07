@@ -16,8 +16,8 @@ Pipeline stages and data flow are in [../knowledge/pipeline.md](../knowledge/pip
 | `core/` | shared loaders | `loaders.py` (OCR/layout discovery) |
 | `ocr/` | text layer | `ocr_pipeline` (Mistral base + opt-in Gemini vision OCR `-e gemini`), `gemini_ocr_correct`, `llm_postprocess` (Haiku, optional E17), `classify_docs` (Gemini metadata) |
 | `layout/` | layout + export | `run_layout_analysis` (Docling local), `run_layout_cloud` (docling-serve), `layout_qa_gemini` (QA/detect/auto), `generate_layout_overlays`, `page_xml_generator` + `mets_generator` |
-| `tei/` | TEI generation | `tei_unified` (orchestrator), `tei_step1/2/3` (scaffold/Gemini/assembly), `pb_split` (`<pb>` segmentation, E69), `tei_generator`, `tei_mapping_prompt`, `tei_xml_utils`, `tei_validator`, `tei_add_revision`, `tei_blank_marker`, `tei_status_marker` (E66), `tei_reassemble_preview` (M3 dry run, E90) |
-| `eval/` | quality | `evaluate_ocr` (CER/WER engine), `eval_report` (HTML), `benchmark_cer`, `cer_statistics` + `_runner` + `_full` (BCa/paired/HCPR), `quality_proxy`, `completeness_check`, `corpus_audit`, `structure_audit` (E84), `reading_order_audit` (W19 triage, E90) |
+| `tei/` | TEI generation | `tei_unified` (orchestrator), `tei_step1/2/3` (scaffold/Gemini/assembly), `pb_split` (`<pb>` segmentation, E69), `tei_generator`, `tei_mapping_prompt`, `tei_xml_utils`, `tei_validator`, `tei_add_revision`, `tei_blank_marker`, `tei_status_marker` (E66), `tei_reassemble_preview` (M3 dry run, E90), `tei_footnote_demote` (E85), `tei_surface_graphic` (E89), `tei_char_normalize` + `tei_pb_folio` + `tei_body_note_demote` (stock corrections, E94) |
+| `eval/` | quality | `evaluate_ocr` (CER/WER engine), `eval_report` (HTML), `benchmark_cer`, `cer_statistics` + `_runner` + `_full` (BCa/paired/HCPR), `quality_proxy`, `completeness_check`, `corpus_audit`, `structure_audit` (E84), `reading_order_audit` (W19 triage, E90), `char_lint_audit` + `pb_number_audit` + `hi_preservation_audit` + `relation_integrity_audit` + `body_note_audit` (guideline-conformity audits, E92) |
 | `edition/` | frontend data + export | `generate_edition_data` (catalog + mirror), `page_manifest` (per-object manifest), `extract_pages` (PDF -> PNG), `transkribus_export` (PAGE-XML upload bundle) + `transkribus_upload` (REST upload into a collection) |
 
 ## Common entry points
@@ -50,6 +50,11 @@ Gates per domain:
 - `test_pb_split.py`: `<pb>` segmentation byte-identical (E69)
 - `test_reading_order.py` / `test_reading_order_audit.py` / `test_reassemble_preview.py`: reading order (permutation, W19 triage, M3 preview, E90)
 - `test_scripts_health.py`: syntax + internal imports of all `scripts/`
+- `test_char_lint_audit.py` / `test_pb_number_audit.py` / `test_hi_preservation_audit.py` / `test_relation_integrity_audit.py` / `test_body_note_audit.py`: guideline-conformity audits (E92)
+- `test_step1_filter.py`: step-1 pb@n detection, filter-echo drop, folio interpolation (E92)
+- `test_status_marker.py`: idempotent revisionDesc projection (E66)
+- `test_completeness_check.py`: page-count reconciliation (split double pages, covers)
+- `test_char_normalize.py` / `test_pb_folio.py` / `test_body_note_demote.py`: stock-correction tools (E94)
 
 ## Conventions
 

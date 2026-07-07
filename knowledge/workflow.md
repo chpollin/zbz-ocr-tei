@@ -523,18 +523,14 @@ In the `<revisionDesc>` of the `_complete.xml`, the items from
 Provenance thus lives inside the TEI, not in parallel next to it. Single
 source of truth in exactly one file.
 
-### 6.4 Rough Effort Estimate
+### 6.4 Implementation State
 
-| Step | Effort |
-|---|---|
-| Extend `tei_unified.py step3 (Assembly)` with a `<facsimile>` + `<zone>` generator | ~3 h |
-| Annotate body elements with `@facs` (mapping region <-> body) | ~2 h |
-| Assemble `<revisionDesc>` from `provenance.json` | ~1 h |
-| Re-run on the corpus + validation against `zbz_hersch.rng` | ~2 h |
-| Schema adaptation in `zbz_hersch.rng` if needed (`@type` on `<zone>`, `@facs` on body) | ~1 h |
-| Total | ~9 h pipeline wave |
-
-Separate from the UI wave; should be its own stage package.
+Parts of this plan are already realized in the delivered TEI: step 1
+computes pixel zones per region, the assembly writes `<facsimile>` with one
+surface per page (page-image reference per E89), and body elements carry
+`@facs`. Open remain the machine-readable `provenance.json` (section 5.2)
+and assembling the extended `<revisionDesc>` from it. Both stay a pipeline
+package of their own, separate from the UI wave.
 
 ---
 
@@ -550,7 +546,7 @@ Separate from the UI wave; should be its own stage package.
 ### Open
 
 - ZIP export per document (E61): all pipeline artifacts of an object as one download (JSZip), optionally collected from the corpus overview.
-- Provenance extension of the pipeline: tie body elements to the layout zones via `@facs` and produce a machine-readable `provenance.json` (effort estimate in section 6.4). A provenance panel in the viewer builds on this.
+- Provenance extension of the pipeline: tie body elements to the layout zones via `@facs` and produce a machine-readable `provenance.json` (implementation state in section 6.4). A provenance panel in the viewer builds on this.
 - Further expansion ideas for the corpus overview and about page (hero section, charts, print CSS) as well as the remaining frontend findings N1/N3/N6/N7 are deliberately deferred until after ZBZ acceptance.
 
 The decisions of the uplift wave are documented as E58-E67 in [decisions.md](decisions.md);

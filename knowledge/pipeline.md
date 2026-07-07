@@ -58,7 +58,7 @@ coOCR / Transkribus (E13). Both derive independently from layout JSON + OCR.
 | Stage | Task | Script | Output | Status |
 |---|---|---|---|---|
 | 1 | PDF -> PNG | `scripts/edition/extract_pages.py` | PNG (`docs/images/`) | Production |
-| 1a | Document classification (Gemini) | `scripts/ocr/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (285 docs, E27) |
+| 1a | Document classification (Gemini) | `scripts/ocr/classify_docs.py` | `data/doc_metadata.json` + `output/classification/` | Production (full corpus, E27) |
 | 2 | OCR | `scripts/ocr/ocr_pipeline.py` (`-e mistral` base, `-e gemini` opt-in vision OCR) | page Markdown (`output/mistral_results/`) | Production |
 | 2a | LLM post-correction (optional) | `scripts/ocr/llm_postprocess.py` | `output/llm_corrected_c/` | Production, E17: optional |
 | 2b | Gemini OCR correction (optional) | `scripts/ocr/gemini_ocr_correct.py` | `output/gemini_corrected_a/` / `_b/` | Sample (E29) |
@@ -67,9 +67,9 @@ coOCR / Transkribus (E13). Both derive independently from layout JSON + OCR.
 | 3b | Overlay generator | `scripts/layout/generate_layout_overlays.py` | PNGs + side-by-side compare | Production |
 | 4 | PAGE-XML + METS | `scripts/layout/page_xml_generator.py` + `mets_generator.py` | `output/page_xml/` | Production |
 | 5 | TEI-XML (rule-based) | `scripts/tei/tei_generator.py` | `output/tei/` | Production |
-| 5b | Unified TEI Pipeline (E32) | `scripts/tei/tei_unified.py` | `output/tei_unified/` | 285/285 |
+| 5b | Unified TEI Pipeline (E32) | `scripts/tei/tei_unified.py` | `output/tei_unified/` | Production (full corpus) |
 | 5b+ | Post-assembly fixes | `tei_step3.py` | fixes E/F/G + heuristic lb injection | Production (Session 34) |
-| 5c | TEI validation | `scripts/tei/tei_validator.py` | JSON + HTML report | 285/285 schema-valid; warnings informative (15 rules, 121 docs on `tei_unified`) |
+| 5c | TEI validation | `scripts/tei/tei_validator.py` | JSON + HTML report | schema-valid across the delivered corpus (gate: `tests/test_tei_schema.py`); warnings informative (rule catalog in [specification.md](specification.md), current tallies via `python -m scripts.tei.tei_validator --all --report`) |
 | 6 | Evaluation | `scripts/eval/evaluate_ocr.py` + `benchmark_cer.py` + `cer_statistics_full.py` | `output/evaluation/` + `docs/data/cer_statistics.json` | Production |
 
 Manual curation (E56): takes place in the pipeline viewer (`docs/viewer.html`) with
@@ -81,8 +81,8 @@ Previously (E36) a FastAPI curation server ran at localhost:8000; it has been re
 Quality assurance (E66): the former agent screening is abolished (no human had granted
 the "APPROVED" statuses; the agent certified itself). Replacement: a human-set
 workflow status per stream (`unverifiziert | in_arbeit | verifiziert` for each of OCR/layout/TEI, three levels since E77),
-set in the viewer, with history in the per-object manifest and projection into the `<revisionDesc>`. Status:
-285/285 `unverifiziert`. Details: [workflow.md](workflow.md), workflow status section.
+set in the viewer, with history in the per-object manifest and projection into the `<revisionDesc>`. Status
+distribution: see the manifests (`python -m scripts.edition.page_manifest --dry-run`). Details: [workflow.md](workflow.md), workflow status section.
 
 ---
 
@@ -324,7 +324,7 @@ into the header by `tei_status_marker.py` (E66):
 
 Status values (three levels since E77): `unverifiziert` | `in_arbeit` | `verifiziert`. The former
 agent screening (status values `APPROVED`/`NEEDS_REVIEW`/...) was abolished with E66; no human
-had granted those "APPROVED" statuses. Status: 285/285 `unverifiziert`. The viewer shows the status as a traffic-light pill.
+had granted those "APPROVED" statuses. All streams start `unverifiziert` as the handover default. The viewer shows the status as a traffic-light pill.
 
 ### Element Inventory
 
@@ -360,7 +360,7 @@ had granted those "APPROVED" statuses. Status: 285/285 `unverifiziert`. The view
 
 The generator itself produces `<facsimile>`, `<surface ulx uly lrx lry>`, `<zone>` with
 pixel coordinates and the complete `@facs` binding line<->zone. The page break carries
-`<pb facs="#facs_N" n="Seitenzahl"/>` (ZBZ editorial guidelines, all 285). So that this
+`<pb facs="#facs_N" n="Seitenzahl"/>` (ZBZ editorial guidelines, whole corpus). So that this
 reference resolves to the image in a self-contained way, every `<surface>` carries a `<graphic url>`
 as its first child (the schema requires graphic before zone). Address scheme: relative filename
 `{doc_id}_p{NNN}.png` (physically in `docs/images/{doc_id}/`, sequential to `facs_N`). Produced
@@ -379,12 +379,12 @@ supersedes teiCrafter's hard-coded demo path.
 | Phase | Content | Status |
 |---|---|---|
 | 0 | Pilot: layout eval + OCR + TEI on 15 docs | Done |
-| 1 | Scale layout: Docling + Gemini QA on 285 docs | Done |
-| 2 | PAGE-XML generator + METS | Done (285 docs) |
+| 1 | Scale layout: Docling + Gemini QA on the full corpus | Done |
+| 2 | PAGE-XML generator + METS | Done (full corpus) |
 | 3 | NER + Wikidata linking | Removed (E71, 2026-05-27) |
-| 4 | TEI-XML with PAGE-XML | Done (285/285 schema-valid) |
+| 4 | TEI-XML with PAGE-XML | Done (schema-valid, gate-tested) |
 | 5 | Extended evaluation (CER benchmark) | Done, see [final-report.md](final-report.md) |
-| 6 | Production run + scholarly curation | In progress: 285/285 generated, workflow status `unverifiziert` (E66), curation open |
+| 6 | Production run + scholarly curation | In progress: full corpus generated, workflow status `unverifiziert` (E66), curation open |
 
 Cross-cutting (parallel to phases 3-6): pipeline viewer with edit mode, see [workflow.md](workflow.md). The earlier public reading edition (E33) and the curation editor (E36) were retired with E56.
 
@@ -422,7 +422,7 @@ The full pipeline output (`output/`) is gitignored and only available locally. F
 | 1330 | D | DE/FR | 6 | bilingual anthology |
 | 1540 | C | DE | 8 | German monograph |
 
-With E57 (per-page mirror), layout, OCR, and TEI data for ALL 285 docs additionally
+With E57 (per-page mirror), layout, OCR, and TEI data for the whole corpus additionally
 live in `docs/data/pages/`; the viewer therefore works on GitHub Pages for the entire
 corpus, only facsimile images are missing outside the 4 DEMO docs (image delivery
 local-only, 4 GB).

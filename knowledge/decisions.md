@@ -84,7 +84,7 @@ Consolidated register of all decisions and open questions. Cross-cutting, collec
 
 ---
 
-## Decided (E64-E91, detail)
+## Decided (E64-E94, detail)
 
 More recent decisions with full rationale as dedicated sections.
 
@@ -301,6 +301,43 @@ possible dedicated reporting category for apparatus insertions, and the doc 30/7
 correction via M3 (operator-gated, E90).
 
 Documents: [final-report.md](final-report.md), [cer-gegenprobe-2026-07-03.md](../reports/cer-gegenprobe-2026-07-03.md)
+
+### E92 Guideline conformity quantified corpus-wide: four audit instruments plus step-1 generator fixes (2026-07-07)
+
+Occasion: operator question whether the delivered TEI satisfies the ZBZ editorial guidelines beyond schema validity. The session built a ground-truth map of the 25 reference TEIs (consolidated as Appendix B of [final-report.md](final-report.md), including the exception catalog of reference-side defects and the ill-formed 1520.xml) and quantified every suspicion with four new offline audit instruments in `scripts/eval/`, each test-gated, JSON output to `output/audits/`:
+
+- `char_lint_audit.py`: typewriter apostrophe U+0027 between letters, guillemet deviations, space before punctuation (incl. U+00A0), U+00AC residue.
+- `pb_number_audit.py`: scan-sequence suspicion on pb@n, digit-only paragraphs in the body, cross-check against layout footer regions.
+- `hi_preservation_audit.py`: survival of the OCR emphasis signal into the delivered TEI (per page, via `pb_split.iter_page_spans`).
+- `relation_integrity_audit.py`: `@next`/`@prev` pairs, anchor pairs, title-main cardinality, `sp`/`speaker` context.
+
+Measured state (snapshot 2026-07-07): character normalization is the largest gap (241 documents with letter-internal U+0027 at 88,978 occurrences; 228 with guillemet deviations at 16,013; 215 with space-before-punctuation at 9,928); print pagination is broadly missing (245 documents with scan-sequence pb@n, 226 with a layout-footer/pb mismatch, 191 with digit-only paragraphs); hi survival is nearly clean pipeline-side (18 pages in 12 documents); relations are nearly clean (one `@next`/`@prev` case in doc 1350; `sp`/`speaker` outside interview context concentrated in doc 1240).
+
+Generator fixes (step 1, test-first): `detect_page_number` reads the printed page number from layout `_filter`/`_skip` footer regions into pb@n (fallback stays the scan number), and `drop_filter_echoes` stops filtered-region text (footer page numbers, cover boilerplate) from leaking into the body through positional paragraph matching. Verified on the doc 570 scaffold regeneration. Both act on regeneration; correcting the delivered corpus runs over the operator-gated marker path (deterministic post-steps on `tei_final` with backup and before/after audit measurement).
+
+Documents: [final-report.md](final-report.md) (Appendix B), [journal.md](journal.md) session 83
+
+### E93 Image-based italics re-detection rejected; `<hi>` stays OCR-signal-bound (2026-07-07)
+
+Occasion: the reference TEIs mark italics roughly an order of magnitude more often than the delivered corpus, and the loss chain was traced end to end. Mistral OCR emits `*emphasis*` markers on only a minority of pages; the step-1 scaffold preserves the emitted markers nearly completely (`md_to_tei_inline`); step 3 strips nothing; the Gemini refinement image channel is instructed to verify existing emphasis, and only where semantically relevant. The dominant loss therefore sits in the OCR engine, before the pipeline.
+
+The apparent fixes, sharpening the Gemini prompt from verify to detect or adding an image-based re-detection pass, are rejected (operator ratified 2026-07-07): the OCR signal is the only machine-readable evidence for italics the pipeline has, an instructed LLM detection is non-deterministic run to run, and the footnote overdetection precedent (E82, repaired by E85) shows what instructed detection does to corpus-wide stock. No Gemini prompt change ships.
+
+Consequence: `<hi>` in pipeline output remains bound to the OCR emphasis signal, guarded by `hi_preservation_audit` (E92). Complete rendering markup per guideline vocabulary (`#i` etc.) is downstream curation at the facsimile, in the viewer or in teiCrafter.
+
+Documents: [final-report.md](final-report.md), [specification.md](specification.md)
+
+### E94 Stock-correction wave ratified: printed-folio pb@n, hybrid correction mode, targeted verification depth (2026-07-07)
+
+Operator ratifications after the calibration round, answered as three conceptual questions: (1) `pb@n` carries the printed page number in square brackets, matching the corpus-wide bracket convention of the ZBZ references; pages without a reliable signal keep the unbracketed scan number. (2) Correction mode hybrid: safe classes are corrected machine-side as reversible marker runs with backup; unsafe classes (space type, dehyphenation residue) stay curation worklists. (3) Verification depth: targeted adjudication of known conflicts plus supplementary samples of under-covered strata, instead of a full stratified sample.
+
+Executed: `tei_char_normalize.py` normalized the letter-internal typewriter apostrophe corpus-wide (88,978 occurrences in 241 documents to U+2019; after-audit 0; backup `output/_backup_pre_char_normalize/`; schema, header, and validator gates green). The tool imports the audit regex, so measurement and correction share one definition.
+
+Built and dry-run verified, corpus write pending (the session's permission mode blocked the write; the operator executes or re-authorizes): `tei_pb_folio.py` (folio from footer detection 1753 pages, interpolation 1033, stable offset 151, bracketing of already printed folio 208, fallback 970; `--strip-folio-echo` removes 1212 stray page-number paragraphs) and `tei_body_note_demote.py` (verdict-driven: 59 demotions to `<p>`, 2 epigraphs to `<quote>`, 2 genuine footnotes untouched, 19 conservative footnote promotions reversing the verified role swap of body and footnote). The verdicts come from the facsimile verification of all 63 `body_note_audit` candidates and are persisted in `output/audits/body_note_verdicts.json`.
+
+Findings feeding later decisions: the sampled doc-30 double pages show no character loss, conflicting with the E91 loss classification (adjudication pending); Mistral OCR degenerated into a repetition loop on doc 1520 page 70 and the correction layer's refusal text leaked into the delivered TEI (single-page re-OCR gated); `<foreign>` markup exists in only 30 of 285 documents while at least 27 foreign-less documents carry unmarked Latin/Greek phrases, with an inconsistent de/deu language code; a naive OCR-versus-TEI volume audit was tested and rejected because about 90 percent of its hits are the intentional e-periodica boilerplate filtering (a filtered triage variant plus a refusal-string check and a duplicate-facs check remain recommended).
+
+Documents: [journal.md](journal.md) session 83, [specification.md](specification.md)
 
 ---
 

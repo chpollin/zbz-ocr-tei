@@ -51,9 +51,10 @@ teiCrafter is the bottleneck.
 
 - Mandate: Zentralbibliothek Zuerich, contractor DHCraft, confirmed 2026-02-14.
   Estate of the philosopher Jeanne Hersch.
-- Corpus: 325 cataloged -> 289 digitized -> 286 PDF (~4,120 pages) -> 285 final TEI
-  (doc 10 incomplete). 71% FR / 25% DE, 1931-1998, mainly journal articles and contributions
-  to edited volumes.
+- Corpus: 325 cataloged -> 289 digitized -> 286 PDF -> 285 final TEI (doc 10 incomplete);
+  page and language tallies reproducibly via `python -m scripts.eval.corpus_audit`
+  (physical PDF pages and bibliographic Masterfile pages differ by source). Mainly FR,
+  secondarily DE, 1931-1998, mostly journal articles and contributions to edited volumes.
 - Delivery target: a high-quality, schema-valid dataset plus curation tool;
   ZBZ builds the edition downstream (Oxygen/Alma/Swisscovery). Pipeline finished and delivered;
   the scholarly verification is ZBZ's task, tracked via the workflow status (all streams
@@ -69,15 +70,18 @@ teiCrafter is the bottleneck.
   manifest carries workflow status plus history.
   Important: `{id}_final.xml` IS teiCrafter's native format; it opens directly, text editing
   without conversion.
-- Quality (E70/E73/E85, SoT): fidelity CER median 1.40% / mean 2.71% (n=25, BCa bootstrap
-  seed 42). Full-text CER (mean 18.94%) is a diagnostic, not a quality measure (ZBZ references
-  are partial transcriptions). Pipeline gain vs. raw OCR -9.45 pp (p=0.013, significant; E85);
-  the earlier headline "-14.83 pp" was retracted (trimming artifact). 285/285 schema-valid
-  (E68). Dictionary hit rate median 97.7% = estimate (GT only for 25 docs; the proxy
-  demonstrably does not generalize, LOOCV R^2 < 0).
+- Quality (E70/E73/E85, SoT): the measured values live in [final-report.md](final-report.md)
+  section 6 and `docs/data/cer_statistics.json` (reproducible via
+  `python -m scripts.eval.cer_statistics_full --seed 42 --bootstrap-n 10000`); any citation
+  of the fidelity values must name the scope threshold `SCOPE_BLOCK_MIN = 50` (E91).
+  Full-text CER is a diagnostic only (ZBZ references are partial transcriptions); an earlier
+  pipeline-gain headline was retracted as a trimming artifact. The whole delivered corpus is
+  schema-valid (E68). The dictionary hit rate is an estimate; the proxy demonstrably does
+  not generalize (LOOCV R^2 < 0).
 - Workflow status (E66/E67/E77): per stream (OCR/layout/TEI) three levels
   `unverifiziert | in_arbeit | verifiziert`, traffic light gray/yellow/green, red reserved.
-  Current state: all 285 unverified in all streams.
+  Streams start `unverifiziert` as the handover default; current distribution via the
+  per-object manifests.
 
 ---
 
@@ -145,7 +149,7 @@ teiCrafter is the bottleneck.
   offline RelaxNG (TEI All) plus Schematron (Python/lxml). MVP gate = well-formed AND L1 text
   fidelity AND L3 counts preserved; L2 schema counts only NEW errors relative to the input
   (non-gating).
-- Tests: byte-identical round trip 294/294 real files (285 Hersch + 4 SZD + 5 synthetic);
+- Tests: byte-identical round trip across all real files (Hersch corpus + SZD samples + synthetic);
   browser click-through confirmed 2026-06-04 (synthetic Wenzelsbibel). Real files only
   gitignored (license); only synthetic material is committed.
 - Design: a research tool, not a consumer product; cream surfaces, serif reading text / sans
@@ -295,9 +299,9 @@ an IIIF counterpart).
 
 ### Open in zbz
 
-M5 scholarly curation (855/855 streams unverified); O8 header metadata from Alma, 195/285
-headers with an empty container/journal title (spec conflict with the edition guidelines,
-deliberate per E76); O13 editorial details; O18 multimodal OCR correction untested;
+M5 scholarly curation (streams still at the `unverifiziert` handover default); O8 header
+metadata from Alma, many headers with an empty container/journal title (spec conflict with
+the edition guidelines, deliberate per E76); O13 editorial details; O18 multimodal OCR correction untested;
 containerization/CI-CD only drafted; facsimiles online for only 4 demo docs; LLM variance
 unmeasured (`stability: open`).
 

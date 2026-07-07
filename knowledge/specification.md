@@ -56,6 +56,10 @@ newest ratified register entry wins and this document is updated to match.
   human-only, with provenance history in the per-object manifest and deterministic
   projection into the TEI `<revisionDesc>` at handover (E66).
 - R-BLANK: safe blank pages are marked as `<pb type="blank"/>` (E63/E65).
+- R-PBN: `pb@n` carries the printed page number in square brackets where footer
+  detection, interpolation, or a stable scan-to-print offset supports it; pages
+  without a reliable signal keep the unbracketed scan number (E94, ratified
+  2026-07-07; corpus application via `tei_pb_folio`, run operator-gated).
 - R-PERSISTENCE: every viewer save writes the payload canonically to `output/` and
   mirrors it to `docs/data/`, so both the pipeline and the server-less viewer see the
   same state (E72/E78/E79).
@@ -80,7 +84,7 @@ HTR quality bands (E80). The method is binding since the correctness wave
   `cer_fidelity + scope_insertion_rate = cer` (full text).
 - Confidence intervals: BCa bootstrap, B=10000, seed 42, the document as the
   resampling unit (CER distributions are skewed). The pipeline gain over raw
-  OCR uses a paired bootstrap on per-document deltas (Singh 2025,
+  OCR uses a paired bootstrap on per-document deltas (Du 2025,
   arXiv:2511.19794).
 - Published in parallel: four normalization regimes (raw / nfc / nfc_hyphen /
   nfc_hyphen_case) and a frequency-based HCPR adaption for diacritic
@@ -169,8 +173,12 @@ markup inside captions) is an open ZBZ question (O27).
 
 - O8 header metadata from Alma, O13 subject headings, O27 caption contradiction: with
   ZBZ (see [decisions.md](decisions.md)).
-- Footnote overdetection residue on documents 290/1910/90 (E82 defect a): curation, not
-  safely auto-fixable.
+- Footnote overdetection (E82 defect a): resolved for the reference-covered blocks by
+  the verified demotion E85 (documents 290, 1910, 90, 40, 1520). The reference-less
+  remainder was quantified by `body_note_audit` and facsimile-verified case by case
+  (verdicts persisted in `output/audits/body_note_verdicts.json`); the correction runs
+  via `tei_body_note_demote` (E94, operator-gated). Below-threshold notes and genuine
+  footnotes lost to the role swap outside the candidate set remain a curation risk.
 
 ### Frontend requirements (deferred until after ZBZ acceptance)
 

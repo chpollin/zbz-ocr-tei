@@ -139,8 +139,8 @@ and [final-report.md](final-report.md).
 | M1 | OCR validated | >=93% accuracy for all types | Done |
 | M2 | Layout + PAGE-XML | regions + bbox + PAGE-XML for all docs | Done |
 | M3 | NER + Wikidata | recall >70%, linking >50% | Removed (E71, 2026-05-27; linking in the output not deliverable) |
-| M4 | TEI-XML | DTA-conformant, schema-valid | Done (285/285 valid against `zbz_hersch.rng`) |
-| M5 | Data handover to ZBZ | 285 docs processed + delivered schema-valid; scholarly verification is a ZBZ task (tracked via workflow status) | Data delivered (285/285 generated); all streams `unverifiziert` as handover default (E66/E67); scholarly curation lies with ZBZ |
+| M4 | TEI-XML | DTA-conformant, schema-valid | Done (whole corpus valid against `zbz_hersch.rng`, gate `tests/test_tei_schema.py`) |
+| M5 | Data handover to ZBZ | full corpus processed + delivered schema-valid; scholarly verification is a ZBZ task (tracked via workflow status) | Data delivered; all streams `unverifiziert` as handover default (E66/E67); scholarly curation lies with ZBZ |
 
 > The identifier "M3" carries a second meaning. In the current substantive roadmap
 > (journal session 74 ff., [decisions.md](decisions.md) E90) it designates the
@@ -161,9 +161,9 @@ and [final-report.md](final-report.md).
 | PAGE-XML generator | Done | `page_xml_generator.py` + METS |
 | Document classification | Done | `classify_docs.py` (E27) |
 | NER + entity linking | Removed (E71) | removed from pipeline + output; linking was not deliverable |
-| Unified TEI pipeline | Done | 285/285 schema-valid (E32) |
+| Unified TEI pipeline | Done | schema-valid across the corpus (E32) |
 | TEI validator | Done | RelaxNG + 7 project rules (R1-R7) + 16 active warning rules (W1-W7, W11-W19; W15-W18 since E84, W19 reading order since E90) |
-| Workflow status per stream (E66/E67) | Done (data model) | replaces agent screening; 285/285 `unverifiziert`, settable in the viewer, provenance in the manifest |
+| Workflow status per stream (E66/E67) | Done (data model) | replaces agent screening; streams start `unverifiziert`, settable in the viewer, provenance in the manifest |
 | Pipeline viewer (E56) | Done | `docs/viewer.html` single page with layout + transcription editor; persistence directly into repo + mirror (E72/E78/E79), download as fallback |
 | Viewer edition uplift (May 2026) | largely implemented | Delivered: E58 (OSD facsimile), E60 (edit toggle per panel), E62 (method page), E63/E65 (blank-page manifest + TEI marker), E66/E67 (workflow status + traffic-light reframing + catalog refactor). Open: E61 (export module, JSZip; planned, not yet wired into the code), complete TEI (`<facsimile>`/`<zone>`) + provenance drawer (planned, separate pipeline wave), OSD layout editor integration, viewer.js module split. Open frontend findings: [specification.md](specification.md), frontend requirements |
 | Workflow + provenance | Concept documented | [workflow.md](workflow.md) describes data flow, save mechanism, round trip, the `_complete.xml` and `provenance.json` concept |

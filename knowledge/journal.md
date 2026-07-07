@@ -57,6 +57,131 @@ session 69 onwards the entry structure of Journal template v0.2 applies.
 
 ## Entries
 
+### 2026-07-07 Session 83: Guideline conformity explored end to end; ground-truth map, knowledge corrections, implementation packages started
+
+**Occasion** Operator questions following the merge: do the delivered TEIs meet the
+ZBZ coding rules beyond formal validity, how were they generated, and how can quality
+be checked in a fully automated process.
+
+**Goal** Establish the verified state (validation vs. verification), reconstruct the
+generation path, map the editorial guidelines against validator and ground truth,
+correct the knowledge base, and start every immediately implementable package.
+
+**Course** Four multi-agent exploration rounds. First, corpus state: every delivered
+document is machine-valid with zero schema and project errors; warnings are dominated
+by the speaker curation slots (W17) and legacy reading order (W19); human verification
+has not begun (curated_tei empty, only document 30 ever touched, its manifest ahead of
+its revisionDesc). Second, generation trace: two phases, the tei_unified three-step
+pipeline (deterministic scaffold, Gemini refinement, deterministic assembly plus
+conformity passes) and the downstream markers writing into tei_final; the delivered
+tei_final is a frozen, post-processed state decoupled from the current tei_unified
+output. Third, coverage matrix and facsimile deep check (570, 760): the faithfulness
+core of the guidelines is machine-unchecked (transcription norms, classification
+correctness, relation integrity), and the deep check found systematic violations
+invisible to the validator, printed page numbers in the body instead of pb@n,
+unsegmented double-page scans, transcribed covers and title pages, italics loss, and
+incomplete character normalization, while text accuracy stays near reference level and
+the reading order held even on the three-column double page. Fourth, all 25 reference
+TEIs inventoried against the guidelines: body coding is guideline-true in the load-
+bearing conventions, the teiHeader is a Transkribus stub corpus-wide, and the ground
+truth carries its own catalogued errors (GND prefix drift, corresp/ref migration rest,
+break="yes", entities in captions, the ill-formed 1520).
+
+**Decisions** Quality architecture in three tiers: validation (deterministic,
+corpus-wide), AI-agent verification (evidence-bound findings on stratified facsimile
+samples, never granting the verifiziert status, lesson from the abolished E66
+screening), and expert verification (operator adjudicates, sole source of green).
+Deterministic audits run before image-based sampling. The hi audit was rescoped to a
+signal-survival check after measurement showed the OCR layer itself carries emphasis
+only on a small fraction of pages. Knowledge corrections applied: footnote demotion
+discriminator corrected to the contiguous 150-character window (MIN_MATCH), documents
+30/760 cause attribution aligned with the E91 counter-check, Appendix A engine and
+step assignments fixed, the E85-resolved footnote residue updated in specification.md,
+volatile quantities replaced by script pointers in pipeline/project/methodology/
+ecosystem-synthesis, and the effort-hours table in workflow.md replaced by an
+implementation-state note.
+
+**Status** Knowledge corrections done. Ground-truth map and the ground-truth exception
+catalog consolidated as Appendix B of [final-report.md](final-report.md) (operator
+decision: one final report instead of scattered report files; the 1520 repair proposal
+lives there too, corrected copy under `output/`).
+Four implementation agents launched: diagnostic audits (character lint, pb@n
+plausibility, hi survival, relation integrity), the deterministic pb@n projection plus
+filter-leak fix in step 1, the rendering-loss root cause (delivered: Mistral OCR is
+the main loss source, the Gemini image channel is practically unused because the
+prompt verifies instead of detects, and a promotion lag tei_unified to tei_final
+withholds existing markup, e.g. document 890), and the stock diagnoses (page-count
+mismatches, 1520 repair proposal, status-marker catch-up for document 30).
+
+Post-compact implementation round completed (five agents, full suite green at 1258):
+`tei_status_marker` is idempotent (marker-owned changes carry `n="{stream}"` /
+`n="{stream}-summary"` and are replaced, foreign entries survive; new
+test_status_marker.py); `completeness_check` reconciles split double pages (duplicate
+facs) and leading library covers (min facs above 1) with capped corrections, the 14
+phantom mismatches drop to 0 while synthetic genuine gaps still report (new
+test_completeness_check.py); step 1 interpolates missing printed page numbers from
+consistent neighbor anchors, supplied values bracketed per reference convention
+(570 p3 becomes `n="[249]"`, tei_final hash-verified untouched). Register entries
+E92 (audits plus step-1 fixes) and E93 (image-based italics re-detection rejected)
+written; TEMP note deleted.
+
+Calibration round of agent verification completed on 29 stratified facsimile pages,
+findings evidence-bound, adjudication with the operator: (a) footnote overdetection
+persists broadly outside reference coverage, 9 of 10 sampled long notes are body or
+block quotes as note (pattern: page-head block, block after a `*`-divider, right page
+of a double spread); (b) the W19-fragile triage is a weak predictor of wrong order
+(5 of 6 sampled orders correct) but surfaces real omissions of non-article blocks
+(ads, SOMMAIRE, editorial boards, license boilerplate), a defect class no rule covers;
+(c) pb@n semantics are inconsistent corpus-wide (facs position, printed folio, or
+mixed within one document), and the references bracket every page number; (d) the
+char-lint apostrophe class holds at the facsimile while the space-before-punctuation
+class is largely a false positive on French typography (thin space is correct print);
+(e) foreign markup coverage and speaker modeling are uneven across documents;
+(f) conflict to adjudicate: the sampled doc-30 double pages show no character loss
+(both print pages complete, outlier alignment-driven), which contradicts the E91
+classification of doc 30 as genuine text loss.
+
+Follow-up instruments built the same day (three agents, full suite green at 1289):
+`body_note_audit.py` scores body-as-note candidates (missing start marker plus length
+as the load-bearing signals; 100 percent precision on the 9 calibration pages) and
+reports 63 candidate notes in 26 documents, 60 of them in 24 reference-less documents;
+the char-lint space class is split into a sharp class (genuine extra character, 1988
+occurrences, mostly TOC dot leaders) and a low-severity `space_type` class (regular
+instead of narrow no-break space in French context, 13931), while a dehyphenation-
+residue class was tested and rejected as non-deterministic (a 40-candidate sample was
+almost entirely false positive on the bilingual corpus); `pb_number_audit.py` now
+classifies pb@n semantics per document, corpus distribution 224 scan_sequence,
+18 printed_folio, 9 mixed, 34 undetermined, none bracketed (the references bracket
+everything), with doc 110 resolved as scan_sequence carrying a reconstructable
+printed-folio offset of 2.
+
+Afternoon wave, operator ratifications and first stock correction (E94): pb@n
+convention decided (printed folio, bracketed, fallback scan number), correction mode
+hybrid, verification depth targeted. The apostrophe normalization ran as the first
+stock correction (88,978 occurrences in 241 documents to zero, gates green, backup
+kept). All 63 body-as-note candidates were verified at the facsimile: 59 body text,
+2 epigraphs, 2 genuine footnotes, with the role-swap pattern (the genuine footnote
+sits as a trailing p with marker while body text got the note frame) confirmed on
+39 pages; verdicts persisted in `output/audits/body_note_verdicts.json`. The demote
+tool and the printed-folio tool are built and dry-run verified; their corpus writes
+are pending because the session permission mode blocked the write, so the operator
+executes or re-authorizes. Supplementary sample: foreign markup exists in 30 of 285
+documents, at least 27 foreign-less documents carry unmarked Latin/Greek phrases,
+the German code is split de/deu; one leaked LLM refusal found in the delivered
+corpus (doc 1520 page 70, root cause a Mistral repetition loop in the base OCR,
+single-page re-OCR gated); a naive volume-divergence audit was rejected (about
+90 percent of hits are the intentional e-periodica boilerplate filtering), a
+filtered triage variant plus refusal-string and duplicate-facs checks recommended.
+
+**Next steps** 1. Operator executes or re-authorizes the two pending stock runs
+(`tei_pb_folio --strip-folio-echo`, `tei_body_note_demote --promote-footnotes`),
+followed by gates and after-audits. 2. Operator adjudications: doc-30 conflict with
+E91, 1520 page 70 re-OCR, sending the 1520 reference repair to ZBZ. 3. final-report
+update with before/after values once the runs are through. 4. Re-promotion of newer
+tei_unified states and the M3 reading-order rollout decision (E90 evidence).
+5. Mirror regeneration after the frontend instance finishes; commit and push on a
+clean tree after approval.
+
 ### 2026-07-07 Session 82: Viewer edit modes hardened after live inspection (layout selection, text-stream race, TEI redirect, well-formedness gate)
 
 **Occasion** A live inspection of the viewer edit modes (Edit Layout, Edit Text, the
@@ -90,6 +215,13 @@ the single context-dependent "Edit text" toggle was replaced by two explicit but
 there. Switching the view tab exits edit mode; this replaces the TEI-to-XML redirect
 introduced earlier in the session, since the rendered view no longer has any edit
 entry point (viewer.html, viewer.js).
+
+A fourth pass hardened provenance after the operator's live save test wrote a
+history entry as "anonym": Save now asks once for initials when none are set (the
+save itself never blocks), history entries created before initials arrive are
+backfilled once they are committed, the automatic note text was corrected to "auto:
+first edit in viewer" (the transition fires on the first real change), and the
+rejection toast for malformed XML names line and column from the parser error.
 
 A third pass extended the rendered view to the measured element inventory (script
 over all final and reference TEIs). Corrected or newly rendered: lb with break="no"
