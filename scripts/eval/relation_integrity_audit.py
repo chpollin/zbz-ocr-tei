@@ -17,14 +17,14 @@ Aufruf:
 
 Quelle der Wahrheit fuer Pfade: scripts/config.py (TEI_FINAL_DIR).
 """
-import argparse
-import json
-import xml.etree.ElementTree as ET
-from pathlib import Path
+from scripts.config import TEI_NS
+from scripts.eval.audit_common import (
+    iter_final_tei,
+    parse_tei,
+    resolve_tei_dir,
+    write_audit_report,
+)
 
-from scripts.config import OUTPUT_DIR, TEI_FINAL_DIR, TEI_NS
-
-AUDIT_OUTPUT_DIR = OUTPUT_DIR / "audits"
 _XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 _SPEECH_DIV_TYPES = {"interview", "conversation"}
 
@@ -116,10 +116,9 @@ def audit_root(root) -> dict:
 
 
 def audit_document(tei_path):
-    try:
-        root = ET.parse(str(tei_path)).getroot()
-    except (ET.ParseError, OSError) as exc:
-        return None, str(exc)
+    root, err = parse_tei(tei_path)
+    if err:
+        return None, err
     return audit_root(root), None
 
 
@@ -127,18 +126,18 @@ _CATEGORIES = ("note_links", "anchor_pairs", "head_titles", "speech_context")
 
 
 def audit_corpus(tei_dir) -> dict:
-    files = sorted(Path(tei_dir).glob("*_final.xml"))
     docs = {}
     errors = []
-    for f in files:
-        doc_id = f.stem.replace("_final", "")
+    total = 0
+    for doc_id, f in iter_final_tei(tei_dir):
+        total += 1
         findings, err = audit_document(f)
         if err:
             errors.append((doc_id, err))
             continue
         if any(findings[c] for c in _CATEGORIES):
             docs[doc_id] = findings
-    return {"total_files": len(files), "docs": docs, "errors": errors}
+    return {"total_files": total, "docs": docs, "errors": errors}
 
 
 def _print_summary(summary):
@@ -166,8 +165,6 @@ def _print_summary(summary):
 
 
 def _write_report(summary, tei_dir):
-    AUDIT_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = AUDIT_OUTPUT_DIR / "relation_integrity_audit.json"
     docs = summary["docs"]
     payload = {
         "audit": "relation_integrity",
@@ -183,17 +180,11 @@ def _write_report(summary, tei_dir):
         "documents": docs,
         "errors": summary["errors"],
     }
-    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\n  JSON-Report: {out}")
+    write_audit_report("relation_integrity_audit", payload)
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Relations-Integritaet (Diagnose, schreibt nichts an den TEI-Daten)"
-    )
-    parser.add_argument("--dir", help="Alternatives TEI-Verzeichnis (Default tei_final)")
-    args = parser.parse_args()
-    tei_dir = Path(args.dir) if args.dir else TEI_FINAL_DIR
+    tei_dir = resolve_tei_dir("Relations-Integritaet (Diagnose, schreibt nichts an den TEI-Daten)")
     summary = audit_corpus(tei_dir)
     _print_summary(summary)
     _write_report(summary, tei_dir)

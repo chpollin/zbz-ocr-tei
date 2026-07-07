@@ -37,14 +37,13 @@ Aufruf:
 import argparse
 import json
 import re
-import shutil
 import sys
 from collections import Counter
-from pathlib import Path
 
 from scripts.config import LAYOUT_DIR, OUTPUT_DIR, TEI_FINAL_DIR
 from scripts.core.loaders import load_layout_gemini
 from scripts.eval.pb_number_audit import classify_document, read_layout_page_numbers
+from scripts.tei.marker_common import backup_and_write, iter_final_files
 from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
 from scripts.tei.tei_step1 import detect_page_number, interpolate_document_pb
 
@@ -302,21 +301,9 @@ def process_doc(doc_id, dry_run, strip_echo):
     report["changed"] = new_raw != raw
 
     if not dry_run and report["changed"]:
-        BACKUP_DIR.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(final_path, BACKUP_DIR / f"{doc_id}_final.xml")
-        final_path.write_text(new_raw, encoding="utf-8")
+        backup_and_write(final_path, BACKUP_DIR, new_raw)
 
     return report
-
-
-def _docs_to_process(only_doc):
-    out = []
-    for f in sorted(TEI_FINAL_DIR.glob("*_final.xml")):
-        doc_id = f.stem.replace("_final", "")
-        if only_doc and doc_id != only_doc:
-            continue
-        out.append(doc_id)
-    return out
 
 
 def _print_validation(reports):
@@ -392,7 +379,7 @@ def main():
                     help="Absaetze, die exakt die ermittelte Folio wiederholen, als Echo entfernen")
     args = ap.parse_args()
 
-    docs = _docs_to_process(args.doc)
+    docs = [doc_id for doc_id, _ in iter_final_files(args.doc)]
     if not docs:
         print(f"[FEHLER] keine tei_final-Dokumente gefunden{' fuer ' + args.doc if args.doc else ''}",
               file=sys.stderr)

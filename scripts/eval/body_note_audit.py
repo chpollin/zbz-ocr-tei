@@ -29,15 +29,18 @@ Aufruf:
 
 Quelle der Wahrheit fuer Pfade: scripts/config.py (TEI_FINAL_DIR, REFERENCE_TEI_DIR).
 """
-import argparse
-import json
 import re
-import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from scripts.config import OUTPUT_DIR, REFERENCE_TEI_DIR, TEI_FINAL_DIR, TEI_NS
+from scripts.config import REFERENCE_TEI_DIR, TEI_NS
+from scripts.eval.audit_common import (
+    doc_id_from_path,
+    iter_final_tei,
+    parse_tei,
+    resolve_tei_dir,
+    write_audit_report,
+)
 
-AUDIT_OUTPUT_DIR = OUTPUT_DIR / "audits"
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 
 # --- calibration constants (tuned on the E82 facsimile-calibrated examples) ---
@@ -250,11 +253,10 @@ def analyze_document(root, doc_id: str) -> dict:
 
 def audit_document(tei_path, reference_ids=frozenset()):
     """Diagnose one document. Returns (findings, error_text)."""
-    doc_id = Path(tei_path).stem.replace("_final", "")
-    try:
-        root = ET.parse(str(tei_path)).getroot()
-    except (ET.ParseError, OSError) as exc:
-        return None, str(exc)
+    doc_id = doc_id_from_path(tei_path)
+    root, err = parse_tei(tei_path)
+    if err:
+        return None, err
     res = analyze_document(root, doc_id)
     res["doc"] = doc_id
     res["has_reference"] = doc_id in reference_ids
@@ -271,13 +273,14 @@ def _reference_ids(reference_dir) -> set:
 def audit_corpus(tei_dir, reference_ids=None) -> dict:
     if reference_ids is None:
         reference_ids = _reference_ids(REFERENCE_TEI_DIR)
-    files = sorted(Path(tei_dir).glob("*_final.xml"))
     documents = []
     errors = []
-    for f in files:
+    total = 0
+    for doc_id, f in iter_final_tei(tei_dir):
+        total += 1
         res, err = audit_document(f, reference_ids=reference_ids)
         if err:
-            errors.append((f.stem.replace("_final", ""), err))
+            errors.append((doc_id, err))
             continue
         if res["candidates"]:
             documents.append(res)
@@ -285,7 +288,7 @@ def audit_corpus(tei_dir, reference_ids=None) -> dict:
     total_cand = sum(len(d["candidates"]) for d in documents)
     total_cand_nr = sum(len(d["candidates"]) for d in documents if not d["has_reference"])
     return {
-        "total_files": len(files),
+        "total_files": total,
         "documents": documents,
         "errors": errors,
         "corpus_totals": {
@@ -318,8 +321,6 @@ def _print_summary(summary):
 
 
 def _write_report(summary, tei_dir):
-    AUDIT_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = AUDIT_OUTPUT_DIR / "body_note_audit.json"
     payload = {
         "audit": "body_note",
         "tei_dir": str(tei_dir),
@@ -334,17 +335,11 @@ def _write_report(summary, tei_dir):
         "documents": summary["documents"],
         "errors": summary["errors"],
     }
-    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\n  JSON-Report: {out}")
+    write_audit_report("body_note_audit", payload)
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Body-als-Note-Audit (Diagnose, schreibt nichts an den TEI-Daten)"
-    )
-    parser.add_argument("--dir", help="Alternatives TEI-Verzeichnis (Default tei_final)")
-    args = parser.parse_args()
-    tei_dir = Path(args.dir) if args.dir else TEI_FINAL_DIR
+    tei_dir = resolve_tei_dir("Body-als-Note-Audit (Diagnose, schreibt nichts an den TEI-Daten)")
     summary = audit_corpus(tei_dir)
     _print_summary(summary)
     _write_report(summary, tei_dir)

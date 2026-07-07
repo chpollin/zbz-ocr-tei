@@ -38,10 +38,11 @@ Keine LLM-/API-Aufrufe.
 import argparse
 import json
 import re
-import shutil
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Optional
+
+from scripts.tei.marker_common import backup_and_write
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 FINAL_DIR = ROOT / "output" / "tei_final"
@@ -356,9 +357,7 @@ def process_document(doc_id, entries, promote, dry_run, validator):
     result["changed"] = new_raw != raw
 
     if not dry_run and result["changed"]:
-        BACKUP_DIR.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(final_path, BACKUP_DIR / f"{doc_id}_final.xml")
-        final_path.write_text(new_raw, encoding="utf-8")
+        backup_and_write(final_path, BACKUP_DIR, new_raw)
 
     return result
 

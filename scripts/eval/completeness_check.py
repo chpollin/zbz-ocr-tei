@@ -22,15 +22,7 @@ from scripts.config import (
     SCANS_DIR,
     TEI_FINAL_DIR,
 )
-
-
-def count_pb_elements(tei_path: Path) -> int:
-    """Zaehlt <pb>-Elemente in einer TEI-Datei."""
-    try:
-        content = tei_path.read_text(encoding="utf-8")
-        return len(re.findall(r"<pb\s", content))
-    except Exception:
-        return 0
+from scripts.eval.audit_common import doc_id_from_path
 
 
 def extract_pb_facs(content: str) -> tuple[int, list[int], bool]:
@@ -159,7 +151,7 @@ def run(doc_ids: list[str] | None = None, generate_html: bool = False) -> dict:
         target_ids = doc_ids
     else:
         target_ids = sorted(
-            p.stem.replace("_final", "")
+            doc_id_from_path(p)
             for p in TEI_FINAL_DIR.glob("*_final.xml")
         )
 

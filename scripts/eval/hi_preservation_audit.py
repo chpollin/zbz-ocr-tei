@@ -17,15 +17,17 @@ Aufruf:
 
 Quelle der Wahrheit fuer Pfade: scripts/config.py (TEI_FINAL_DIR, MISTRAL_RESULTS_DIR).
 """
-import argparse
-import json
 import re
 from pathlib import Path
 
-from scripts.config import MISTRAL_RESULTS_DIR, OUTPUT_DIR, TEI_FINAL_DIR
+from scripts.config import MISTRAL_RESULTS_DIR
+from scripts.eval.audit_common import (
+    doc_id_from_path,
+    iter_final_tei,
+    resolve_tei_dir,
+    write_audit_report,
+)
 from scripts.tei.pb_split import BODY_INNER_RE, iter_page_spans
-
-AUDIT_OUTPUT_DIR = OUTPUT_DIR / "audits"
 
 # Markdown emphasis: runs of * or _ around non-space content (bold ** counts as a signal too).
 # Underscore needs non-word boundaries so snake_case identifiers do not match.
@@ -63,7 +65,7 @@ def span_has_hi(content: str) -> bool:
 
 def audit_document(tei_path, mistral_dir=MISTRAL_RESULTS_DIR):
     """Diagnose one document. Returns (findings, error_text)."""
-    doc_id = Path(tei_path).stem.replace("_final", "")
+    doc_id = doc_id_from_path(tei_path)
     try:
         tei_text = Path(tei_path).read_text(encoding="utf-8", errors="replace")
     except OSError as exc:
@@ -98,17 +100,17 @@ def audit_document(tei_path, mistral_dir=MISTRAL_RESULTS_DIR):
 
 
 def audit_corpus(tei_dir, mistral_dir=MISTRAL_RESULTS_DIR) -> dict:
-    files = sorted(Path(tei_dir).glob("*_final.xml"))
     docs = {}
     errors = []
-    for f in files:
-        doc_id = f.stem.replace("_final", "")
+    total = 0
+    for doc_id, f in iter_final_tei(tei_dir):
+        total += 1
         findings, err = audit_document(f, mistral_dir=mistral_dir)
         if err:
             errors.append((doc_id, err))
             continue
         docs[doc_id] = findings
-    return {"total_files": len(files), "docs": docs, "errors": errors}
+    return {"total_files": total, "docs": docs, "errors": errors}
 
 
 def _print_summary(summary):
@@ -135,8 +137,6 @@ def _print_summary(summary):
 
 
 def _write_report(summary, tei_dir):
-    AUDIT_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = AUDIT_OUTPUT_DIR / "hi_preservation_audit.json"
     docs = summary["docs"]
     payload = {
         "audit": "hi_preservation",
@@ -151,17 +151,11 @@ def _write_report(summary, tei_dir):
         "documents": docs,
         "errors": summary["errors"],
     }
-    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\n  JSON-Report: {out}")
+    write_audit_report("hi_preservation_audit", payload)
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="hi-Erhaltung (Diagnose, schreibt nichts an den TEI-Daten)"
-    )
-    parser.add_argument("--dir", help="Alternatives TEI-Verzeichnis (Default tei_final)")
-    args = parser.parse_args()
-    tei_dir = Path(args.dir) if args.dir else TEI_FINAL_DIR
+    tei_dir = resolve_tei_dir("hi-Erhaltung (Diagnose, schreibt nichts an den TEI-Daten)")
     summary = audit_corpus(tei_dir)
     _print_summary(summary)
     _write_report(summary, tei_dir)

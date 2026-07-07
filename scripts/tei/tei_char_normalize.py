@@ -30,11 +30,11 @@ Aufruf:
 import argparse
 import json
 import re
-import shutil
 from pathlib import Path
 
 from scripts.config import OUTPUT_DIR, TEI_FINAL_DIR
 from scripts.eval.char_lint_audit import _APOSTROPHE_RE as APOSTROPHE_RE
+from scripts.tei.marker_common import backup_and_write, iter_final_files
 
 BACKUP_DIR = OUTPUT_DIR / "_backup_pre_char_normalize"
 REPORT_PATH = OUTPUT_DIR / "audits" / "char_normalize_run.json"
@@ -98,17 +98,8 @@ def process_file(path: Path, backup_dir: Path, dry_run: bool) -> tuple[int, bool
     new_raw, count = normalize_document(raw)
     changed = count > 0 and new_raw != raw
     if changed and not dry_run:
-        backup_dir.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(path, backup_dir / path.name)
-        path.write_text(new_raw, encoding="utf-8")
+        backup_and_write(path, backup_dir, new_raw)
     return count, changed
-
-
-def _iter_files(doc: str | None):
-    files = sorted(TEI_FINAL_DIR.glob("*_final.xml"))
-    if doc:
-        files = [f for f in files if f.stem == f"{doc}_final"]
-    return files
 
 
 def _write_report(records: list[dict], dry_run: bool) -> None:
@@ -135,7 +126,7 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true", help="nichts schreiben, nur Bericht")
     args = ap.parse_args()
 
-    files = _iter_files(args.doc)
+    files = list(iter_final_files(args.doc))
     if not files:
         target = args.doc or "tei_final"
         print(f"[FEHLER] keine finale TEI fuer {target}")
@@ -143,8 +134,7 @@ def main() -> None:
 
     records = []
     total = changed_docs = 0
-    for f in files:
-        doc_id = f.stem.replace("_final", "")
+    for doc_id, f in files:
         count, changed = process_file(f, BACKUP_DIR, args.dry_run)
         records.append({"doc_id": doc_id, "count": count, "changed": changed})
         total += count
