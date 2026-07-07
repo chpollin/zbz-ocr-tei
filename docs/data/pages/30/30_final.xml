@@ -42,8 +42,11 @@
     <surface xml:id="facs_1" ulx="0" uly="0" lrx="950" lry="616">
       <graphic url="30_p001.png"/>
       <zone xml:id="facs_1_r_1" ulx="513" uly="72" lrx="843" lry="220" />
-      <zone xml:id="facs_1_r_2" ulx="210" uly="162" lrx="373" lry="173" />
-      <zone xml:id="facs_1_r_3" ulx="128" uly="205" lrx="453" lry="300" />
+      <zone xml:id="facs_1_r_2" ulx="514" uly="238" lrx="843" lry="514" />
+      <zone xml:id="facs_1_r_3" ulx="128" uly="458" lrx="453" lry="506" />
+      <zone xml:id="facs_1_r_4" ulx="128" uly="206" lrx="453" lry="301" />
+      <zone xml:id="facs_1_r_5" ulx="128" uly="322" lrx="453" lry="347" />
+      <zone xml:id="facs_1_r_6" ulx="128" uly="355" lrx="453" lry="450" />
     </surface>
     <surface xml:id="facs_2" ulx="0" uly="0" lrx="960" lry="613">
       <graphic url="30_p002.png"/>
@@ -74,16 +77,25 @@
   <text>
     <body>
 <div n="1">
-  <pb facs="#facs_1" n="[1]" />
+  <pb facs="#facs_1" n="[222]" />
   <head>L’OBSTACLE DU LANGAGE</head>
+  <p facs="#facs_1_r_4">
+    Entre l’esprit et la matière l’antinomie est si irréductible que la théorie ne peut la surmonter sans sacrifier l’un des termes à l’autre. Pourtant, il n’est aucune réalisation, aucune actualisation de l’esprit qui ne soit matérielle. La force, ou mieux le caractère spirituel de l’esprit s’affirme avec d’autant plus d’éclat qu’il ébranle, forme, imprègne une plus lourde masse de matière. C’est la pauvreté de matière qui fait la faiblesse du romantisme.
+  </p>
+  <p facs="#facs_1_r_5">
+    Il y a de même, entre l’activité philosophique et le langage, une antinomie invincible.
+  </p>
+  <p facs="#facs_1_r_6">
+    D’abord, le langage est un système composé d’éléments quasi atomiques — les mots —, statiques, limités, doués d’une existence objective analogue à celle des choses et irréductibles comme elles. (Une chose est irréductible. Une table ne peut pas être réduite à une autre réalité. Si on la brûle, si on la décompose en atomes, on la détruit en tant que table, mais on ne la réduit pas.)
+  </p>
+  <p facs="#facs_1_r_3">
+    <lb facs="#facs_1_r_3" n="N001" />Dans ce système du langage, en outre, les éléments ne valent <lb facs="#facs_1_r_3" n="N002" />pas en soi, mais par leurs relations; ils n’ont qu’une réalité <lb facs="#facs_1_r_3" n="N003" />fonctionnelle, et jamais substantielle. Il ne s’agit pas ici, cela <lb facs="#facs_1_r_3" n="N004" />va de soi, de la poésie qui, elle, viole la nature du langage <lb facs="#facs_1_r_3" n="N005" />jusqu’au miracle.
+  </p>
   <p facs="#facs_1_r_1">
     <lb facs="#facs_1_r_1" n="N001" />Enfin, le langage est un système conçu, mais qui n’existe <lb facs="#facs_1_r_1" n="N002" />pas comme tel. Concrètement, il représente la possibilité de <lb facs="#facs_1_r_1" n="N003" />juxtaposer indéfiniment les systèmes en miniature que sont les <lb facs="#facs_1_r_1" n="N004" />phrases. A cette juxtaposition il ne donne par lui-même aucune <lb facs="#facs_1_r_1" n="N005" />forme, il n’impose nulle hiérarchie. Il y a une syntaxe de la <lb facs="#facs_1_r_1" n="N006" />proposition, il y a une syntaxe de la phrase, mais il n’y a pas de <lb facs="#facs_1_r_1" n="N007" />syntaxe de la composition. Ici le langage s’ouvre sur l’indéfini <lb facs="#facs_1_r_1" n="N008" />de l’esprit. Il ignore toute clé de voûte, et l’absolu, semble-t-il, <lb facs="#facs_1_r_1" n="N009" />immobiliserait mortellement sa course. C’est pourquoi il est <lb facs="#facs_1_r_1" n="N010" />justement nommé « discursif ».
   </p>
   <p facs="#facs_1_r_2">
     <lb facs="#facs_1_r_2" n="N001" />L’activité philosophique, si diverse qu’elle ait été, s’oppose <lb facs="#facs_1_r_2" n="N002" />au moins à l’un ou à l’autre de ces caractères fondamentaux <lb facs="#facs_1_r_2" n="N003" />du langage, et peut-être à tous. Certains philosophes ont cherché <lb facs="#facs_1_r_2" n="N004" />l’être dans la substance unique et immuable, d’autres dans les <lb facs="#facs_1_r_2" n="N005" />relations, les transitions, l’écoulement. Les philosophes de la <lb facs="#facs_1_r_2" n="N006" />substance absolue se sont trouvés forcément en lutte avec le <lb facs="#facs_1_r_2" n="N007" />caractère discursif du langage. Il semble que seul eût été adapté <lb facs="#facs_1_r_2" n="N008" />à leur pensée un mot unique, gravé une fois pour toutes sur <lb facs="#facs_1_r_2" n="N009" />l’éternité; — ou bien, puisque l’éternité ne nous appartient pas, <lb facs="#facs_1_r_2" n="N010" />ce même mot répété, interminablement répété à tous les instants <lb facs="#facs_1_r_2" n="N011" />du temps. Or, non seulement le langage ne permet pas l’arrêt <lb facs="#facs_1_r_2" n="N012" />sur un de ses termes, mais le terme une fois séparé ainsi se <lb facs="#facs_1_r_2" n="N013" />trouverait réduit à rien, car il n’existe que par la relation qui le <lb facs="#facs_1_r_2" n="N014" />lie à autre chose. L’obstination de Socrate, telle qu’elle apparaît <lb facs="#facs_1_r_2" n="N015" />dans les dialogues platoniciens, pour fixer avant tout la définition <lb facs="#facs_1_r_2" n="N016" />d’un mot, a une efficacité multiple. L’un de ses sens, et non des <lb facs="#facs_1_r_2" n="N017" />moindres, est de retenir et d’isoler, au moyen du langage même, <lb facs="#facs_1_r_2" n="N018" />un terme que le langage voudrait entraîner vers la mer continue <lb facs="#facs_1_r_2" n="N019" />et confuse des mots. — Quant aux philosophes de l’écoulement,
-  </p>
-  <p facs="#facs_1_r_3">
-    <lb facs="#facs_1_r_3" n="N001" />Dans ce système du langage, en outre, les éléments ne valent <lb facs="#facs_1_r_3" n="N002" />pas en soi, mais par leurs relations; ils n’ont qu’une réalité <lb facs="#facs_1_r_3" n="N003" />fonctionnelle, et jamais substantielle. Il ne s’agit pas ici, cela <lb facs="#facs_1_r_3" n="N004" />va de soi, de la poésie qui, elle, viole la nature du langage <lb facs="#facs_1_r_3" n="N005" />jusqu’au miracle.
   </p>
 <pb facs="#facs_2" n="[224]" />
         <p facs="#facs_2_r_1">
