@@ -83,10 +83,20 @@ well-formedness gate (ZBZ.parseXml) now precedes the write. Additionally, switch
 the text source with unsaved text edits now asks for confirmation and then drops them,
 mirroring the existing page-navigation guard.
 
-**Decisions** All four fixes stay inside the existing modules and callbacks; no
-editor rewrite, no new dependency. The well-formedness gate reuses ZBZ.parseXml
-instead of adding a schema check in the browser; RelaxNG validation remains the job of
-the pipeline validator.
+In a second pass on operator feedback the text-panel controls were clarified. The
+source tabs are now labeled OCR, Rendered, and TEI-XML (previously OCR, TEI, XML), and
+the single context-dependent "Edit text" toggle was replaced by two explicit buttons,
+"Edit OCR" and "Edit XML", each of which switches to its source and opens edit mode
+there. Switching the view tab exits edit mode; this replaces the TEI-to-XML redirect
+introduced earlier in the session, since the rendered view no longer has any edit
+entry point (viewer.html, viewer.js).
+
+**Decisions** All fixes stay inside the existing modules and callbacks; no editor
+rewrite, no new dependency. The well-formedness gate reuses ZBZ.parseXml instead of
+adding a schema check in the browser; RelaxNG validation remains the job of the
+pipeline validator. Edit entry points are per target rather than per current tab, so
+the read-only nature of the rendered view is expressed by the absence of an edit
+button instead of a runtime redirect.
 
 **Status** Verified in the running viewer: region click-select leaves the workflow
 status untouched while a real drag still dirties the stream; an OCR edit flips the OCR

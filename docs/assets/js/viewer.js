@@ -69,7 +69,8 @@
         btnNext:        $('#btn-next'),
         pageGoto:       $('#page-goto'),
         btnImageEdit:   $('#btn-image-edit'),
-        btnTextEdit:    $('#btn-text-edit'),
+        btnEditOcr:     $('#btn-edit-ocr'),
+        btnEditXml:     $('#btn-edit-xml'),
         textSourceBtns: $$('.mode-btn[data-text-source]'),
         imageBody:      $('#image-body'),
         textBody:       $('#text-body'),
@@ -965,25 +966,30 @@
         }
     }
 
+    // Each edit button binds edit mode to its source (Edit OCR -> ocr, Edit XML -> xml).
+    // The rendered TEI view has no edit entry point: it cannot be round-tripped
+    // (transcription-editor reads innerText only), save/export take TEI edits
+    // exclusively from XML mode.
+    function updateEditButtons() {
+        refs.btnEditOcr.setAttribute('aria-pressed', (state.textEdit && state.textSource === 'ocr') ? 'true' : 'false');
+        refs.btnEditXml.setAttribute('aria-pressed', (state.textEdit && state.textSource === 'xml') ? 'true' : 'false');
+    }
+
+    function toggleEdit(src) {
+        if (state.textEdit && state.textSource === src) { setTextEdit(false); return; }
+        if (state.textSource !== src && !setTextSource(src)) return; // user kept unsaved edits
+        setTextEdit(true);
+    }
+
     function setTextEdit(on) {
         const prev = state.textEdit;
         state.textEdit = !!on;
-        refs.btnTextEdit.setAttribute('aria-pressed', state.textEdit ? 'true' : 'false');
+        updateEditButtons();
 
         if (prev === state.textEdit) return;
 
         // Always detach editor before mode switch; ensureTextEditableState() re-attaches when needed
         if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
-
-        // TEI editing only in XML mode: the rendered TEI cannot be round-tripped
-        // (transcription-editor reads innerText only), and save/export take TEI edits
-        // exclusively from XML mode. Editing on the rendered TEI would lose changes on save.
-        // Switch to the XML source when text edit is activated on rendered TEI.
-        if (state.textEdit && state.textSource === 'tei') {
-            ZBZ.toast('TEI editing uses XML mode (rendered view is read-only)', 'info');
-            setTextSource('xml');   // renders XML + ensureTextEditableState() attaches the editor
-            return;
-        }
 
         // OCR panel rendering switches: rendered Markdown <-> raw text.
         // renderTextPanel() handles blank page (notice) and edit/read mode consistently.
@@ -996,27 +1002,27 @@
         // real text change (onChange in ensureTextEditableState), not on opening.
     }
 
+    // Returns false only when the user cancels the unsaved-changes confirm.
     function setTextSource(src) {
-        // Same redirect as setTextEdit: TEI editing only in XML mode. Without this,
-        // switching to the TEI tab while edit mode is active would attach the editor
-        // to the rendered view, whose edits cannot be saved.
-        if (state.textEdit && src === 'tei') {
-            ZBZ.toast('TEI editing uses XML mode (rendered view is read-only)', 'info');
-            src = 'xml';
-        }
-        if (src === state.textSource) return;
+        if (src === state.textSource) return true;
         // Text edits are per source; switching drops them (mirrors confirmLeavePage)
         if (state.textDirty) {
-            if (!window.confirm('Unsaved text changes will be lost when switching the text source. Switch anyway?')) return;
+            if (!window.confirm('Unsaved text changes will be lost when switching the text source. Switch anyway?')) return false;
             state.textDirty = false;
             state._currentEditedText = null;
             renderSaveState();
+        }
+        // Switching the view exits edit mode; re-render below shows the read view
+        if (state.textEdit) {
+            state.textEdit = false;
+            updateEditButtons();
         }
         // Detach before re-render: cancels pending debounced commits of the old source
         if (ZBZ.TranscriptionEditor) ZBZ.TranscriptionEditor.detach(refs.textBody);
         state.textSource = src;
         refs.textSourceBtns.forEach(b => b.setAttribute('aria-pressed', b.getAttribute('data-text-source') === src ? 'true' : 'false'));
         renderTextPanel();
+        return true;
     }
 
     // ============================================================ Save (direct write or download) ============================================================
@@ -1072,7 +1078,8 @@
         });
 
         refs.btnImageEdit.addEventListener('click', () => setImageEdit(!state.imageEdit));
-        refs.btnTextEdit.addEventListener('click', () => setTextEdit(!state.textEdit));
+        refs.btnEditOcr.addEventListener('click', () => toggleEdit('ocr'));
+        refs.btnEditXml.addEventListener('click', () => toggleEdit('xml'));
         refs.textSourceBtns.forEach(b => b.addEventListener('click', () => setTextSource(b.getAttribute('data-text-source'))));
 
         // Save (all streams directly to repo) + Export dropdown (single-file download)

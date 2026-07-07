@@ -132,12 +132,14 @@
             <span class="panel__title" id="text-panel-title">Transcription</span>
             <div class="panel__header-actions">
               <div role="group" aria-label="Text source" class="toolbar__mode toolbar__mode--inline">
-                <button class="mode-btn" data-text-source="ocr" aria-pressed="true"  title="Raw OCR text">OCR</button>
-                <button class="mode-btn" data-text-source="tei" aria-pressed="false" title="TEI rendered">TEI</button>
-                <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI as XML source">XML</button>
+                <button class="mode-btn" data-text-source="ocr" aria-pressed="true"  title="Raw OCR text (Mistral)">OCR</button>
+                <button class="mode-btn" data-text-source="tei" aria-pressed="false" title="TEI rendered as reading view (read-only)">Rendered</button>
+                <button class="mode-btn" data-text-source="xml" aria-pressed="false" title="TEI-XML source (full document)">TEI-XML</button>
               </div>
-              <button class="panel__edit-toggle" id="btn-text-edit" aria-pressed="false"
-                      title="Edit the current text source">Edit text</button>
+              <button class="panel__edit-toggle" id="btn-edit-ocr" aria-pressed="false"
+                      title="Correct the raw OCR text of this page">Edit OCR</button>
+              <button class="panel__edit-toggle" id="btn-edit-xml" aria-pressed="false"
+                      title="Edit the TEI-XML source (whole document)">Edit XML</button>
             </div>
           </div>
           <div class="panel__body panel__body--paper" id="text-body">
